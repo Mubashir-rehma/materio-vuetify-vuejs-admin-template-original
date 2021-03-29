@@ -1,0 +1,7 @@
+export const tooltipAlignment = ''
+export const tooltipColor = ''
+export const tooltipEvent = ''
+export const tooltipVModal = ''
+export const tooltipTransition = ''
+export const tooltipOnVariousElements = ''
+export const tooltipDelay = ''

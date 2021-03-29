@@ -1,0 +1,7 @@
+export const paginationBasic = ''
+export const paginationColor = ''
+export const paginationCircle = ''
+export const paginationDisabled = ''
+export const paginationIcons = ''
+export const paginationLength = ''
+export const paginationTotalVisible = ''

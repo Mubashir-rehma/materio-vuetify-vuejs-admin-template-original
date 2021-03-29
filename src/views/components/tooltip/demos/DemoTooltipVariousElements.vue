@@ -1,0 +1,53 @@
+<template>
+  <div class="demo-space-x">
+    <v-tooltip top>
+      <template #activator="{ on, attrs }">
+        <v-icon
+          v-bind="attrs"
+          large
+          v-on="on"
+        >
+          {{ icons.mdiAccount }}
+        </v-icon>
+      </template>
+      <span>Tooltip on Icon</span>
+    </v-tooltip>
+
+    <v-tooltip top>
+      <template #activator="{ on, attrs }">
+        <v-avatar
+          v-bind="attrs"
+          color="info"
+          v-on="on"
+        >
+          <v-img src="/images/avatars/4.png"></v-img>
+        </v-avatar>
+      </template>
+      <span>Tooltip on Avatar</span>
+    </v-tooltip>
+
+    <v-tooltip top>
+      <template #activator="{ on, attrs }">
+        <v-btn
+          color="primary"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          Button
+        </v-btn>
+      </template>
+      <span>Tooltip</span>
+    </v-tooltip>
+  </div>
+</template>
+
+<script>
+import { mdiAccount } from '@mdi/js'
+
+export default {
+  setup() {
+    return { icons: { mdiAccount } }
+  },
+}
+</script>

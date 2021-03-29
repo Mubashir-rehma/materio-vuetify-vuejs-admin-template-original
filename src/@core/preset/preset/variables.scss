@@ -1,0 +1,9 @@
+@import '~vuetify/src/styles/styles.sass';
+
+// Custom Variables
+$card-spacer: 20px;
+$card-spacer-content: 16px;
+
+// Vuetify Overrides
+$card-subtitle-padding: $card-spacer-content $card-spacer;
+$card-actions-padding: $card-spacer-content $card-spacer;

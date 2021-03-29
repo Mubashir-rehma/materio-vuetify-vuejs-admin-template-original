@@ -1,0 +1,8 @@
+export const dialogBasic = ''
+export const dialogPersistent = ''
+export const dialogScrollable = ''
+export const dialogLoader = ''
+export const dialogNesting = ''
+export const dialogOverflowed = ''
+export const dialogFullScreen = ''
+export const dialogForm = ''

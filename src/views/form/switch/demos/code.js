@@ -1,0 +1,8 @@
+export const switchBasic = ''
+export const switchFlat = ''
+export const switchColor = ''
+export const switchInset = ''
+export const switchModelAsArray = ''
+export const switchStates = ''
+export const switchLabelSlot = ''
+export const switchTrueAndFalseValue = ''

@@ -1,0 +1,65 @@
+<template>
+  <div class="demo-space-x d-flex flex-wrap">
+    <!-- bottom -->
+    <div class="mr-6">
+      <v-badge
+        bottom
+        overlap
+        content="1"
+      >
+        <v-avatar>
+          <v-img src="/images/avatars/3.png"></v-img>
+        </v-avatar>
+      </v-badge>
+    </div>
+
+    <!-- left -->
+    <div class="mr-6">
+      <v-badge
+        left
+        overlap
+        :icon="icons.mdiBell"
+      >
+        <v-avatar>
+          <v-img src="/images/avatars/5.png"></v-img>
+        </v-avatar>
+      </v-badge>
+    </div>
+
+    <!-- overlap -->
+    <div class="mr-6">
+      <v-badge
+        overlap
+        content="3"
+      >
+        <v-avatar>
+          <v-img src="/images/avatars/8.png"></v-img>
+        </v-avatar>
+      </v-badge>
+    </div>
+
+    <!-- inline -->
+    <div>
+      <v-badge
+        inline
+        content="5"
+      >
+        <v-avatar>
+          <v-img src="/images/avatars/4.png"></v-img>
+        </v-avatar>
+      </v-badge>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mdiBell } from '@mdi/js'
+
+export default {
+  setup() {
+    return {
+      icons: { mdiBell },
+    }
+  },
+}
+</script>

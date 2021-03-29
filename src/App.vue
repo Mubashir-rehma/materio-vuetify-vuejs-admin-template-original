@@ -1,32 +1,59 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <component :is="resolveLayoutVariant">
+    <transition
+      :name="appRouteTransition"
+      mode="out-in"
+      appear
+    >
+      <router-view></router-view>
+    </transition>
+  </component>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+// eslint-disable-next-line object-curly-newline
+import { computed } from '@vue/composition-api'
+// eslint-disable-next-line import/no-unresolved
+import useAppConfig from '@core/@app-config/useAppConfig'
+import { useRouter } from '@core/utils'
+import { useLayout } from '@core/layouts/composable/useLayout'
+
+// Layouts
+const LayoutContentVerticalNav = () => import('@/layouts/variants/content/vertical-nav/LayoutContentVerticalNav.vue')
+// eslint-disable-next-line arrow-body-style
+const LayoutContentHorizontalNav = () => {
+  return import('@/layouts/variants/content/horizontal-nav/LayoutContentHorizontalNav.vue')
 }
+const LayoutBlank = () => import('@/layouts/variants/blank/LayoutBlank.vue')
 
-#nav {
-  padding: 30px;
+export default {
+  components: {
+    LayoutContentVerticalNav,
+    LayoutContentHorizontalNav,
+    LayoutBlank,
+  },
+  setup() {
+    const { route } = useRouter()
+    const { appContentLayoutNav, appRouteTransition } = useAppConfig()
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    const { handleBreakpointLayoutSwitch } = useLayout()
+    handleBreakpointLayoutSwitch()
 
-    &.router-link-exact-active {
-      color: #42b983;
+    // TODO: I guess, we can use enum here if there's some kind of magic in TypeScript so we don't have to define strings as hard coded. Imagine if we change the name of layout 🤔
+    const resolveLayoutVariant = computed(() => {
+      // TODO: We aren't getting suggestions
+      if (route.value.meta.layout === 'content') {
+        if (appContentLayoutNav.value === 'vertical') return 'layout-content-vertical-nav'
+        if (appContentLayoutNav.value === 'horizontal') return 'layout-content-horizontal-nav'
+      }
+
+      return 'layout-blank'
+    })
+
+    return {
+      resolveLayoutVariant,
+      appRouteTransition,
     }
-  }
+  },
 }
-</style>
+</script>

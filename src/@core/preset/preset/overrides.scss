@@ -1,0 +1,61 @@
+@import './variables.scss';
+@import '~vuetify/src/components/VCard/_variables.scss';
+@import '~vuetify/src/components/VBadge/_variables.scss';
+
+.demo-space-x {
+  margin-top: -$card-spacer-content;
+  & > * {
+    margin-right: $card-spacer-content;
+    margin-top: $card-spacer-content;
+  }
+}
+.demo-space-y {
+  & > * {
+    margin-bottom: $card-spacer-content;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.v-card {
+  .v-card__title {
+    line-height: 1;
+    padding-top: $card-spacer;
+  }
+  .v-card__title ~ .v-card__title {
+    padding-top: $card-spacer-content;
+  }
+
+  .v-card__subtitle,
+  .v-card__text,
+  .v-card__actions {
+    padding-top: 0 !important;
+
+    &:last-child {
+      padding-bottom: $card-spacer;
+    }
+  }
+
+  .v-divider + {
+    .v-card__subtitle,
+    .v-card__text,
+    .v-card__actions {
+      padding-top: $card-spacer-content !important;
+    }
+  }
+
+  .v-card__actions {
+    &.dense {
+      padding: 0 calc(#{$card-spacer} - 8px) calc(#{$card-spacer} - 8px);
+    }
+  }
+}
+
+// We have replace the icon with svg icon badge don't have any style for svg inside the badge.
+.v-badge__badge {
+  .v-icon {
+    height: $badge-font-size;
+    width: $badge-font-size;
+  }
+}

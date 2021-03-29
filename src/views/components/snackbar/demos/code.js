@@ -1,0 +1,8 @@
+export const snackbarDefault = ''
+export const snackbarWithAction = ''
+export const snackbarMultiline = ''
+export const snackbarTimeout = ''
+export const snackbarVariants = ''
+export const snackbarVertical = ''
+export const snackbarPosition = ''
+export const snackbarTransition = ''

@@ -1,0 +1,8 @@
+export const badgePosition = ''
+export const badgeStyle = ''
+export const badgeType = ''
+export const badgeColor = ''
+export const badgeShowOnHover = ''
+export const badgeDynamicNotifications = ''
+export const badgeTabs = ''
+export const badgeAvatarStatus = ''

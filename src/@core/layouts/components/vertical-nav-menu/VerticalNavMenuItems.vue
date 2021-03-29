@@ -1,5 +1,9 @@
 <template>
-  <v-list :expand="verticalMenuExpand">
+  <v-list
+    expand
+    shaped
+    dense
+  >
     <component
       :is="resolveNavItemComponent(item)"
       v-for="item in items"

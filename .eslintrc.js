@@ -39,11 +39,6 @@ module.exports = {
     // add new line above comment
     'newline-before-return': 'error',
 
-    // Fix: EsLint no-shadow issue
-    // Reference: https://stackoverflow.com/questions/63961803/eslint-says-all-enums-in-typescript-app-are-already-declared-in-the-upper-scope
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': ['error'],
-
     // add new line below import
     'import/newline-after-import': ['error', { count: 1 }],
 

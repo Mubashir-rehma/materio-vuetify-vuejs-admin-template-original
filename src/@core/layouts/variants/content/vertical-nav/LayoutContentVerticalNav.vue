@@ -6,7 +6,7 @@
       v-model="toggleVerticalNavMenu"
       app
       :right="$vuetify.rtl"
-      :mini-variant="menuIsVerticalNavMini"
+      :expand-on-hover.sync="menuIsVerticalNavMini"
     >
       <vertical-nav-menu />
     </v-navigation-drawer>

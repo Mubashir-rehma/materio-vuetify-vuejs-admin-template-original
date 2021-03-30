@@ -5,5 +5,137 @@ $card-spacer: 20px;
 $card-spacer-content: 16px;
 
 // Vuetify Overrides
+// https://vuetifyjs.com/en/api/vuetify/#sass-variables
+$color-pack: false;
+
+// Typography
+$body-font-family: 'Inter', sans-serif;
+
+// ! $headings -> button seems useless
+$headings: (
+  'h1': (
+    'size': 96px,
+    'weight': 300,
+    'line-height': 112px,
+    'letter-spacing': -1.5px,
+    'font-family': $heading-font-family,
+    'text-transform': false,
+  ),
+  'h2': (
+    'size': 60px,
+    'weight': 300,
+    'line-height': 72px,
+    'letter-spacing': -0.5px,
+    'font-family': $heading-font-family,
+    'text-transform': false,
+  ),
+  'h3': (
+    'size': 48px,
+    'weight': 400,
+    'line-height': 56px,
+    'letter-spacing': 0,
+    'font-family': $heading-font-family,
+    'text-transform': false,
+  ),
+  'h4': (
+    'size': 34px,
+    'weight': 400,
+    'line-height': 42px,
+    'letter-spacing': 0.25px,
+    'font-family': $heading-font-family,
+    'text-transform': false,
+  ),
+  'h5': (
+    'size': 24px,
+    'weight': 400,
+    'line-height': 32px,
+    'letter-spacing': 0,
+    'font-family': $heading-font-family,
+    'text-transform': false,
+  ),
+  'h6': (
+    'size': 20px,
+    'weight': 500,
+    'line-height': 32px,
+    'letter-spacing': 0.15px,
+    'font-family': $heading-font-family,
+    'text-transform': false,
+  ),
+  'subtitle-1': (
+    'size': 16px,
+    'weight': 400,
+    'line-height': 28px,
+    'letter-spacing': 0.15px,
+    'font-family': $body-font-family,
+    'text-transform': false,
+  ),
+  'subtitle-2': (
+    'size': 14px,
+    'weight': 500,
+    'line-height': 22px,
+    'letter-spacing': 0.1px,
+    'font-family': $body-font-family,
+    'text-transform': false,
+  ),
+  'body-1': (
+    'size': 16px,
+    'weight': 400,
+    'line-height': 24px,
+    'letter-spacing': 0.15px,
+    'font-family': $body-font-family,
+    'text-transform': false,
+  ),
+  'body-2': (
+    'size': 14px,
+    'weight': 400,
+    'line-height': 20px,
+    'letter-spacing': 0.15px,
+    'font-family': $body-font-family,
+    'text-transform': false,
+  ),
+  'button': (
+    'size': 12px,
+    'weight': 500,
+    'line-height': 14px,
+    'letter-spacing': 0.3px,
+    'font-family': $body-font-family,
+    'text-transform': uppercase,
+  ),
+  'caption': (
+    'size': 12px,
+    'weight': 400,
+    'line-height': 20px,
+    'letter-spacing': 0.4px,
+    'font-family': $body-font-family,
+    'text-transform': false,
+  ),
+  'overline': (
+    'size': 12px,
+    'weight': 400,
+    'line-height': 32px,
+    'letter-spacing': 1px,
+    'font-family': $body-font-family,
+    'text-transform': uppercase,
+  ),
+);
+
+// Component
+$btn-sizes: (
+  'x-small': 20,
+  'small': 30,
+  'default': 38,
+  'large': 42,
+  'x-large': 52,
+);
+// ! Need to update font size for `x-small` and `x-large`
+$btn-font-sizes: (
+  'x-small': 0.625rem,
+  'small': 0.75rem,
+  'default': 0.875rem,
+  'large': 0.938rem,
+  'x-large': 1rem,
+);
+$btn-letter-spacing: 0.01875rem;
 $card-subtitle-padding: $card-spacer-content $card-spacer;
 $card-actions-padding: $card-spacer-content $card-spacer;
+$card-border-radius: 6px;

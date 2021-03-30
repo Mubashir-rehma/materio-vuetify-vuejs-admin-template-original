@@ -1,12 +1,12 @@
 <template>
-  <v-app>
+  <v-app :class="{'nav-drawer-mini': menuIsVerticalNavMini}">
     <v-navigation-drawer
       v-if="!menuIsMenuHidden"
       ref="layoutDrawer"
       v-model="toggleVerticalNavMenu"
       app
       :right="$vuetify.rtl"
-      :expand-on-hover.sync="menuIsVerticalNavMini"
+      :expand-on-hover="menuIsVerticalNavMini"
     >
       <vertical-nav-menu />
     </v-navigation-drawer>
@@ -94,5 +94,21 @@ export default {
 
 .app-content-container {
   padding: $content-padding-vertical-navigation-menu;
+}
+
+// Vuetify Fix
+// https://github.com/vuetifyjs/vuetify/issues/13327
+$nav-drawer-mini-width: 56px;
+
+.v-application {
+  &.nav-drawer-mini {
+    .v-main {
+      padding-left: $nav-drawer-mini-width !important;
+    }
+    .v-footer,
+    .v-app-bar {
+      left: $nav-drawer-mini-width !important;
+    }
+  }
 }
 </style>

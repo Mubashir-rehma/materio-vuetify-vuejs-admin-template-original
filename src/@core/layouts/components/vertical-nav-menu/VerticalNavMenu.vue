@@ -1,5 +1,9 @@
 <template>
-  <div class="vertical-nav-menu-container">
+  <div
+    class="vertical-nav-menu-container"
+    @mouseenter="isMouseOver = true"
+    @mouseleave="isMouseOver = false"
+  >
     <slot name="v-nav-menu-header">
       <vertical-nav-menu-header></vertical-nav-menu-header>
     </slot>
@@ -15,6 +19,7 @@
 <script>
 import navMenuItems from '@/navigation/vertical'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
+import { provide, ref } from '@vue/composition-api'
 import VerticalNavMenuHeader from './VerticalNavMenuHeader.vue'
 import VerticalNavMenuItems from './VerticalNavMenuItems.vue'
 
@@ -34,9 +39,13 @@ export default {
       wheelPropagation: false,
     }
 
+    const isMouseOver = ref(false)
+    provide('isMouseOver', isMouseOver)
+
     return {
       perfectScrollbarOptions,
       navMenuItems,
+      isMouseOver,
     }
   },
 }

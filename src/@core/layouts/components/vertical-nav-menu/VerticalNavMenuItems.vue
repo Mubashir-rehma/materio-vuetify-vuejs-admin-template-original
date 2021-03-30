@@ -1,7 +1,7 @@
 <template>
   <v-list
     expand
-    :shaped="!menuIsVerticalNavMini"
+    :shaped="controlledIsListShaped"
     class="vertical-nav-menu-items"
   >
     <component
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+// eslint-disable-next-line object-curly-newline
+import { computed, inject, ref, watch } from '@vue/composition-api'
 import useNav from '@/@core/layouts/composable/useNav'
 import themeConfig from '@themeConfig'
 import useAppConfig from '@core/@app-config/useAppConfig'
@@ -36,18 +38,28 @@ export default {
   setup() {
     const { resolveNavItemComponent } = useNav()
     const { menuIsVerticalNavMini } = useAppConfig()
+    const isMouseOver = inject('isMouseOver')
+    const isListShaped = computed(
+      () => !menuIsVerticalNavMini.value || (menuIsVerticalNavMini.value && isMouseOver.value),
+    )
+    const controlledIsListShaped = ref(isListShaped.value)
+    watch(isListShaped, value => {
+      if (value) controlledIsListShaped.value = true
+      else {
+        setTimeout(() => {
+          controlledIsListShaped.value = false
+        }, 200)
+      }
+    })
 
     return {
       verticalMenuExpand: themeConfig.menu.verticalMenuExpand,
       resolveNavItemComponent,
       menuIsVerticalNavMini,
+      isMouseOver,
+      isListShaped,
+      controlledIsListShaped,
     }
-  },
-  watch: {
-    '$route.name': function (to, from) {
-      console.log('to :>> ', to)
-      console.log('from :>> ', from)
-    },
   },
 }
 </script>

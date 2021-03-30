@@ -16,10 +16,10 @@
       </v-list-item-content>
       <v-list-item-icon @click="menuIsVerticalNavMini = !menuIsVerticalNavMini">
         <v-icon v-show="!menuIsVerticalNavMini">
-          {{ icons.mdiRadioboxBlank }}
+          {{ icons.mdiRecordCircleOutline }}
         </v-icon>
         <v-icon v-show="menuIsVerticalNavMini">
-          {{ icons.mdiRecordCircleOutline }}
+          {{ icons.mdiRadioboxBlank }}
         </v-icon>
       </v-list-item-icon>
     </v-list-item>

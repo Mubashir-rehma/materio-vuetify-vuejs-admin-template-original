@@ -19,7 +19,7 @@
 <script>
 import navMenuItems from '@/navigation/vertical'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
-import { provide, ref } from '@vue/composition-api'
+import { watch, provide, ref } from '@vue/composition-api'
 import VerticalNavMenuHeader from './VerticalNavMenuHeader.vue'
 import VerticalNavMenuItems from './VerticalNavMenuItems.vue'
 
@@ -40,7 +40,17 @@ export default {
     }
 
     const isMouseOver = ref(false)
+    const controlledIsMouseOver = ref(isMouseOver.value)
+    watch(isMouseOver, value => {
+      if (value) controlledIsMouseOver.value = true
+      else {
+        setTimeout(() => {
+          controlledIsMouseOver.value = false
+        }, 200)
+      }
+    })
     provide('isMouseOver', isMouseOver)
+    provide('controlledIsMouseOver', controlledIsMouseOver)
 
     return {
       perfectScrollbarOptions,

@@ -31,6 +31,8 @@ import useNav from '@/@core/layouts/composable/useNav'
 import useAppConfig from '@core/@app-config/useAppConfig'
 // eslint-disable-next-line object-curly-newline
 import { computed, inject, onMounted, ref, watch } from '@vue/composition-api'
+import { controlledComputed } from '@vueuse/core'
+import { useRouter } from '@core/utils'
 import VerticalNavMenuLink from './VerticalNavMenuLink.vue'
 import VerticalNavMenuSubheader from './VerticalNavMenuSubheader.vue'
 
@@ -66,7 +68,11 @@ export default {
     }
 
     // Manual Control of Opening and closing group
-    const isGroupActive = computed(() => isNavGroupActive(props.item.children))
+    const { route } = useRouter()
+    const isGroupActive = controlledComputed(
+      () => route.value.name,
+      () => isNavGroupActive(props.item.children),
+    )
 
     watch(menuIsVerticalNavMini, val => {
       if (val) isGroupExpanded.value = false

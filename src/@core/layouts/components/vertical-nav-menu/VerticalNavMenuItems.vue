@@ -48,7 +48,7 @@ export default {
       else {
         setTimeout(() => {
           controlledIsListShaped.value = false
-        }, 200)
+        }, 100)
       }
     })
 

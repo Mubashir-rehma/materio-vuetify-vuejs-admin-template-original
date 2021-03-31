@@ -8,7 +8,7 @@
       :right="$vuetify.rtl"
       :expand-on-hover="menuIsVerticalNavMini"
     >
-      <vertical-nav-menu />
+      <vertical-nav-menu :nav-menu-items="navMenuItems" />
     </v-navigation-drawer>
 
     <v-app-bar
@@ -58,6 +58,12 @@ export default {
   components: {
     AppContentContainer,
     VerticalNavMenu,
+  },
+  props: {
+    navMenuItems: {
+      type: Array,
+      required: true,
+    },
   },
   setup() {
     const $vuetify = getVuetify()

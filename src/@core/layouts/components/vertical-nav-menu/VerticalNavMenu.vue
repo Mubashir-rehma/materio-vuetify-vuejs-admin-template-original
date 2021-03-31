@@ -41,9 +41,6 @@ import VerticalNavMenuLink from '@core/layouts/components/vertical-nav-menu/comp
 import useVerticalNavMenu from '@/@core/layouts/composable/vertical-nav/useVerticalNavMenu'
 import useAppConfig from '@core/@app-config/useAppConfig'
 
-// Other
-import navMenuItems from '@/navigation/vertical'
-
 // 3rd Party
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
@@ -56,6 +53,12 @@ export default {
 
     // 3rd Party
     PerfectScrollbar,
+  },
+  props: {
+    navMenuItems: {
+      type: Array,
+      required: true,
+    },
   },
   setup() {
     const { resolveNavItemComponent, isMouseHovered } = useVerticalNavMenu()
@@ -89,7 +92,6 @@ export default {
     return {
       resolveNavItemComponent,
       perfectScrollbarOptions,
-      navMenuItems,
       isMouseHovered,
       isListShaped,
     }

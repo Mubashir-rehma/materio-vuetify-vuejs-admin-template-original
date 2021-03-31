@@ -1,5 +1,8 @@
 <template>
-  <v-list-item v-bind="navLinkProps(item)">
+  <v-list-item
+    v-bind="navLinkProps(item)"
+    class="vertical-nav-menu-link"
+  >
     <v-list-item-icon>
       <v-icon :small="!item.icon">
         {{ item.icon || alternateIcon }}

@@ -142,6 +142,14 @@ export default {
       //   background-color: map-get($material, 'states', 'selected') !important;
       // }
     }
+
+    &.vertical-nav-menu-link {
+      .v-list-item__icon {
+        .v-icon {
+          transition: none !important;
+        }
+      }
+    }
   }
 }
 </style>

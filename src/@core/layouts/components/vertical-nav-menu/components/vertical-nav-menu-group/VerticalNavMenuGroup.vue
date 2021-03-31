@@ -2,6 +2,7 @@
   <v-list-group
     ref="refVListGroup"
     :prepend-icon="item.icon"
+    class="vertical-nav-menu-group"
     @click="updateGroupOpen(!isOpen)"
   >
     <template #activator>
@@ -104,3 +105,15 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.vertical-nav-menu-group {
+  &.v-list-group--active > .v-list-group__header > .v-list-group__header__append-icon .v-icon {
+    transform: none;
+  }
+
+  & > .v-list-group__header > .v-list-group__header__append-icon .v-icon {
+    transform: rotate(-90deg);
+  }
+}
+</style>

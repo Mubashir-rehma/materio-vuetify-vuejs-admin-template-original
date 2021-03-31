@@ -2,7 +2,7 @@
   <v-list-group
     ref="refVListGroup"
     :prepend-icon="item.icon"
-    :value="isNavGroupActive(item.children) && !menuIsVerticalNavMini"
+    @click="updateGroupOpen(!isOpen)"
   >
     <template #activator>
       <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -28,7 +28,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { computed, inject, onMounted, ref, watch } from '@vue/composition-api'
+import { computed, inject, ref, watch } from '@vue/composition-api'
 
 // SFCs
 import VerticalNavMenuSectionTitle from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-section-title/VerticalNavMenuSectionTitle.vue'
@@ -38,12 +38,10 @@ import useVerticalNavMenu from '@/@core/layouts/composable/vertical-nav/useVerti
 // Composable
 import useNav from '@/@core/layouts/composable/useNav'
 import useAppConfig from '@core/@app-config/useAppConfig'
+import useVerticalNavGroup from '@core/layouts/composable/vertical-nav/useVerticalNavGroup'
 
 // Other
-import { useRouter } from '@core/utils'
-
-// 3rd Party
-import { controlledComputed } from '@vueuse/core'
+import themeConfig from '@themeConfig'
 
 export default {
   name: 'VerticalNavMenuGroup',
@@ -59,9 +57,12 @@ export default {
   },
   setup(props) {
     const { resolveNavItemComponent } = useVerticalNavMenu()
+    const { isOpen, updateGroupOpen } = useVerticalNavGroup(props.item)
     const { isNavGroupActive } = useNav()
     const { menuIsVerticalNavMini } = useAppConfig()
-    const isMouseOver = inject('isMouseOver')
+    const isMouseHovered = inject('isMouseHovered')
+
+    const isAccordion = themeConfig.menu.verticalMenuAccordion
 
     // Template ref
     const refVListGroup = ref(null)
@@ -73,33 +74,22 @@ export default {
         refVListGroup.value.isActive = value
       },
     })
-    const setGroupExpanded = val => {
-      isGroupExpanded.value = val
-    }
-
-    // Manual Control of Opening and closing group
-    const { route } = useRouter()
-    const isGroupActive = controlledComputed(
-      () => route.value.name,
-      () => isNavGroupActive(props.item.children),
-    )
+    watch(isOpen, value => {
+      if (isAccordion) isGroupExpanded.value = value
+    })
 
     watch(menuIsVerticalNavMini, val => {
       if (val) isGroupExpanded.value = false
       else {
-        isGroupExpanded.value = isGroupActive.value
+        isGroupExpanded.value = isOpen.value
       }
     })
 
-    watch(isMouseOver, value => {
+    watch(isMouseHovered, value => {
       if (menuIsVerticalNavMini.value) {
-        if (value) isGroupExpanded.value = isGroupActive.value
+        if (value) isGroupExpanded.value = isOpen.value
         else isGroupExpanded.value = false
       }
-    })
-
-    onMounted(() => {
-      setGroupExpanded(isGroupActive.value)
     })
 
     return {
@@ -107,7 +97,9 @@ export default {
       isNavGroupActive,
       menuIsVerticalNavMini,
       refVListGroup,
-      isMouseOver,
+      isMouseHovered,
+      isOpen,
+      updateGroupOpen,
     }
   },
 }

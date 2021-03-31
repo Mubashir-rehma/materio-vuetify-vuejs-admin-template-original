@@ -13,7 +13,7 @@ const themeConfig = {
   menu: {
     isMenuHidden: false,
     isVerticalNavMini: false,
-    verticalMenuExpand: false,
+    verticalMenuAccordion: true,
     groupChildIcon: mdiCheckboxBlankCircleOutline,
   },
   appBar: {

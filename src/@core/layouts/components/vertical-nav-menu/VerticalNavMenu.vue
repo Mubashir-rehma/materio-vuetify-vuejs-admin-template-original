@@ -1,8 +1,8 @@
 <template>
   <div
     class="vertical-nav-menu-container"
-    @mouseenter="isMouseOver = true"
-    @mouseleave="isMouseOver = false"
+    @mouseenter="isMouseHovered = true"
+    @mouseleave="isMouseHovered = false"
   >
     <slot name="v-nav-menu-header">
       <vertical-nav-menu-header></vertical-nav-menu-header>
@@ -13,7 +13,7 @@
     >
       <v-list
         expand
-        :shaped="controlledIsListShaped"
+        :shaped="isListShaped"
         class="vertical-nav-menu-items"
       >
         <component
@@ -29,7 +29,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { watch, provide, ref, computed } from '@vue/composition-api'
+import { watch, ref, computed, provide } from '@vue/composition-api'
 
 // SFCs
 import VerticalNavMenuHeader from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-header/VerticalNavMenuHeader.vue'
@@ -58,46 +58,40 @@ export default {
     PerfectScrollbar,
   },
   setup() {
-    const { resolveNavItemComponent } = useVerticalNavMenu()
+    const { resolveNavItemComponent, isMouseHovered } = useVerticalNavMenu()
     const { menuIsVerticalNavMini } = useAppConfig()
+    provide('isMouseHovered', isMouseHovered)
 
-    const isMouseOver = ref(false)
-    const controlledIsMouseOver = ref(isMouseOver.value)
-    watch(isMouseOver, value => {
-      if (value) controlledIsMouseOver.value = true
+    // ? Q: Why `isMouseHoveredTransitioned` instead of `isMouseHovered`
+    // ? A: Assign false after transition is complete* (*Just before complete)
+    const isMouseHoveredTransitioned = ref(isMouseHovered.value)
+    watch(isMouseHovered, value => {
+      if (value) isMouseHoveredTransitioned.value = true
       else {
+        // ! Actual time is 200 but we are assigning 100 because it is only used in isListShaped
         setTimeout(() => {
-          controlledIsMouseOver.value = false
-        }, 200)
-      }
-    })
-    provide('isMouseOver', isMouseOver)
-    provide('controlledIsMouseOver', controlledIsMouseOver)
-
-    const isListShaped = computed(
-      () => !menuIsVerticalNavMini.value || (menuIsVerticalNavMini.value && isMouseOver.value),
-    )
-    const controlledIsListShaped = ref(isListShaped.value)
-    watch(isListShaped, value => {
-      if (value) controlledIsListShaped.value = true
-      else {
-        setTimeout(() => {
-          controlledIsListShaped.value = false
+          isMouseHoveredTransitioned.value = false
         }, 100)
       }
     })
+
+    const isListShaped = computed(
+      () => !menuIsVerticalNavMini.value || (menuIsVerticalNavMini.value && isMouseHoveredTransitioned.value),
+    )
 
     const perfectScrollbarOptions = {
       maxScrollbarLength: 60,
       wheelPropagation: false,
     }
 
+    provide('openGroups', ref([]))
+
     return {
       resolveNavItemComponent,
       perfectScrollbarOptions,
       navMenuItems,
-      isMouseOver,
-      controlledIsListShaped,
+      isMouseHovered,
+      isListShaped,
     }
   },
 }

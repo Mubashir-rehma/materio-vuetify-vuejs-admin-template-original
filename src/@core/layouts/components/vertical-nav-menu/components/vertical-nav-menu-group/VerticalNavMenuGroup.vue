@@ -27,20 +27,29 @@
 </template>
 
 <script>
-import useNav from '@/@core/layouts/composable/useNav'
-import useAppConfig from '@core/@app-config/useAppConfig'
 // eslint-disable-next-line object-curly-newline
 import { computed, inject, onMounted, ref, watch } from '@vue/composition-api'
-import { controlledComputed } from '@vueuse/core'
+
+// SFCs
+import VerticalNavMenuSectionTitle from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-section-title/VerticalNavMenuSectionTitle.vue'
+import VerticalNavMenuLink from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-link/VerticalNavMenuLink.vue'
+import useVerticalNavMenu from '@/@core/layouts/composable/vertical-nav/useVerticalNavMenu'
+
+// Composable
+import useNav from '@/@core/layouts/composable/useNav'
+import useAppConfig from '@core/@app-config/useAppConfig'
+
+// Other
 import { useRouter } from '@core/utils'
-import VerticalNavMenuLink from './VerticalNavMenuLink.vue'
-import VerticalNavMenuSubheader from './VerticalNavMenuSubheader.vue'
+
+// 3rd Party
+import { controlledComputed } from '@vueuse/core'
 
 export default {
   name: 'VerticalNavMenuGroup',
   components: {
     VerticalNavMenuLink,
-    VerticalNavMenuSubheader,
+    VerticalNavMenuSectionTitle,
   },
   props: {
     item: {
@@ -49,7 +58,8 @@ export default {
     },
   },
   setup(props) {
-    const { resolveNavItemComponent, isNavGroupActive } = useNav()
+    const { resolveNavItemComponent } = useVerticalNavMenu()
+    const { isNavGroupActive } = useNav()
     const { menuIsVerticalNavMini } = useAppConfig()
     const isMouseOver = inject('isMouseOver')
 

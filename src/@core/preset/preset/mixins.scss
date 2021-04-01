@@ -1,0 +1,35 @@
+// ? Original Vuetify Mixin: states
+@mixin app-states($material) {
+  &::before {
+    opacity: 1;
+    background-color: inherit;
+  }
+
+  &:hover::before {
+    background-color: rgba(94, 86, 105, map-deep-get($material, 'states', 'hover'));
+    // opacity: 1 !important;
+  }
+
+  &:focus::before {
+    background-color: rgba(94, 86, 105, map-deep-get($material, 'states', 'focus'));
+    // opacity: 1 !important;
+  }
+
+  &--active {
+    @include app-active-states($material);
+  }
+}
+
+// ? Original Vuetify Mixin: active-states
+@mixin app-active-states($material) {
+  &:hover::before,
+  &::before {
+    background-color: rgba(94, 86, 105, map-deep-get($material, 'states', 'activated'));
+    // opacity: 1 !important;
+  }
+
+  &:focus::before {
+    background-color: rgba(94, 86, 105, map-deep-get($material, 'states', 'pressed'));
+    // opacity: 1 !important;
+  }
+}

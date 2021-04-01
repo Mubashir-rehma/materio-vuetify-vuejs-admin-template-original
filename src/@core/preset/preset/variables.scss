@@ -44,13 +44,13 @@ $material-light: (
   'dividers': rgba(map-get($shades, 'black'), 0.12),
   'text': (
     'theme': map-get($shades, 'white'),
-    'primary': rgba(94, 86, 105, 0.87),
+    // updated
+      'primary': rgba(94, 86, 105, 0.87),
     // updated
       'secondary': rgba(94, 86, 105, 0.68),
     // updated
       'disabled': rgba(94, 86, 105, 0.38),
-    // updated
-      'link': map-get($blue, 'darken-2'),
+    'link': map-get($blue, 'darken-2'),
     'link-hover': map-get($grey, 'darken-3'),
   ),
   'icons': (

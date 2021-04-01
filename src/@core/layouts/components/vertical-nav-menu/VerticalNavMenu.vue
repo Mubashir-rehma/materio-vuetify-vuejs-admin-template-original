@@ -105,7 +105,9 @@ export default {
 
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
+@import '~@core/preset/preset/mixins.scss';
 
+// Set Perfect Scrollbar Container Height
 .vertical-nav-menu-container {
   height: 100%;
   .ps-nav-menu-items {
@@ -130,17 +132,22 @@ export default {
   }
 
   .v-list-item {
+    @include app-states($material);
+
     height: 42px;
-    // min-height: unset;
+    color: map-deep-get($material, 'text', 'primary');
+
     &.v-list-item--active {
       &:not(.v-list-group__header) {
         color: white;
         background-image: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
       }
-
-      // &.v-list-group__header {
-      //   background-color: map-get($material, 'states', 'selected') !important;
-      // }
+      &.v-list-group__header {
+        background-color: rgba(
+          map-deep-get($material, 'text', 'primary'),
+          map-deep-get($material, 'states', 'activated')
+        );
+      }
     }
 
     &.vertical-nav-menu-link {

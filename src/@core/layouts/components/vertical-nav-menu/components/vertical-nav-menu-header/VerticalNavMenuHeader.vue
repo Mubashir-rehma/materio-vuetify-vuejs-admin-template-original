@@ -1,29 +1,34 @@
 <template>
-  <v-list>
-    <v-list-item>
-      <v-list-item-icon>
-        <v-img
-          :src="appLogo"
-          max-height="30px"
-          max-width="30px"
-          alt="logo"
-        ></v-img>
-      </v-list-item-icon>
-      <v-list-item-content>
-        <v-list-item-title class="title">
-          {{ appName }}
-        </v-list-item-title>
-      </v-list-item-content>
-      <v-list-item-icon @click="menuIsVerticalNavMini = !menuIsVerticalNavMini">
-        <v-icon v-show="!menuIsVerticalNavMini">
-          {{ icons.mdiRecordCircleOutline }}
-        </v-icon>
-        <v-icon v-show="menuIsVerticalNavMini">
-          {{ icons.mdiRadioboxBlank }}
-        </v-icon>
-      </v-list-item-icon>
-    </v-list-item>
-  </v-list>
+  <div class="vertical-nav-header d-flex align-items-center justify-md-space-between pl-4 pr-2 pt-4">
+    <router-link
+      to="/"
+      class="d-flex align-items-center text-decoration-none"
+    >
+      <v-img
+        :src="appLogo"
+        max-height="30px"
+        max-width="30px"
+        alt="logo"
+        contain
+        class="mr-3"
+      ></v-img>
+      <h2 class="app-title">
+        {{ appName }}
+      </h2>
+    </router-link>
+
+    <div
+      class="d-flex"
+      @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
+    >
+      <v-icon v-show="!menuIsVerticalNavMini">
+        {{ icons.mdiRecordCircleOutline }}
+      </v-icon>
+      <v-icon v-show="menuIsVerticalNavMini">
+        {{ icons.mdiRadioboxBlank }}
+      </v-icon>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -49,3 +54,17 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.app-title {
+  color: #5d5962;
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+// .vertical-nav-header {
+//   .v-navigation-drawer--mini-variant & {
+//     padding-left: 14px !important;
+//   }
+// }
+</style>

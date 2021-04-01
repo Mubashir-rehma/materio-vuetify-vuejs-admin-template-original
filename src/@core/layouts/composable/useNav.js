@@ -21,20 +21,13 @@ export default () => {
     return props
   })
 
-  const resolveNavItemComponent = item => {
-    if (item.subheader) return 'vertical-nav-menu-subheader'
-    if (item.children) return 'vertical-nav-menu-group'
-
-    return 'vertical-nav-menu-link'
-  }
-
   /**
    * Return route name for navigation link
    * If link is string then it will assume it is route-name
    * IF link is object it will resolve the object and will return the link
    * @param {Object, String} link navigation link object/string
    */
-  const resolveNavDataRouteName = link => {
+  const resolveNavLinkRouteName = link => {
     if (isObject(link.to)) {
       const { route } = router.resolve(link.to)
 
@@ -53,7 +46,7 @@ export default () => {
     const matchedRoutes = router.currentRoute.matched
 
     // Check if provided route matches route's matched route
-    const resolveRoutedName = resolveNavDataRouteName(link)
+    const resolveRoutedName = resolveNavLinkRouteName(link)
 
     if (!resolveRoutedName) return false
 
@@ -81,9 +74,8 @@ export default () => {
   }
 
   return {
-    resolveNavItemComponent,
     navLinkProps,
-    resolveNavDataRouteName,
+    resolveNavLinkRouteName,
     isNavLinkActive,
     isNavGroupActive,
   }

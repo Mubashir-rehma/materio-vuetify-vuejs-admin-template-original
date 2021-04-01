@@ -1,7 +1,7 @@
 <template>
   <v-subheader>
-    <span v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseOver)">{{ item.subheader }}</span>
-    <v-icon v-show="menuIsVerticalNavMini && !isMouseOver">
+    <span v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)">{{ item.subheader }}</span>
+    <v-icon v-show="menuIsVerticalNavMini && !isMouseHovered">
       {{ icons.mdiDotsHorizontal }}
     </v-icon>
   </v-subheader>
@@ -21,11 +21,11 @@ export default {
   },
   setup() {
     const { menuIsVerticalNavMini } = useAppConfig()
-    const isMouseOver = inject('isMouseOver')
+    const isMouseHovered = inject('isMouseHovered')
 
     return {
       menuIsVerticalNavMini,
-      isMouseOver,
+      isMouseHovered,
       icons: {
         mdiDotsHorizontal,
       },

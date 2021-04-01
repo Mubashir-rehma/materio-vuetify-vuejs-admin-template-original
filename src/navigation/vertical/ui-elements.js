@@ -115,6 +115,10 @@ export default [
         title: 'Textarea',
         to: 'form-textarea',
       },
+      {
+        title: 'Textfield',
+        to: 'form-textfield',
+      },
     ],
   },
 ]

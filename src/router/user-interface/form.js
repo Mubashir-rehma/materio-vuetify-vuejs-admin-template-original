@@ -79,6 +79,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/textfield',
+    name: 'form-textfield',
+    component: () => import('@/views/form/textfield/Textfield.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

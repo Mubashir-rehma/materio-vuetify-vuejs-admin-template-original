@@ -119,6 +119,10 @@ export default [
         title: 'Textfield',
         to: 'form-textfield',
       },
+      {
+        title: 'Form Layout',
+        to: 'form-layout',
+      },
     ],
   },
 ]

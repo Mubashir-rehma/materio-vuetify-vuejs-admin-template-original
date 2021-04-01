@@ -87,6 +87,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/form-layout',
+    name: 'form-layout',
+    component: () => import('@/views/form/form-layout/FormLayout.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

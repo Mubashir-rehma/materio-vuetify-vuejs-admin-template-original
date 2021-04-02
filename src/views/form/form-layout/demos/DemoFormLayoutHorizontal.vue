@@ -103,14 +103,12 @@
         offset-md="4"
         cols="12"
       >
-        <v-btn
-          color="primary"
-          class="mr-2"
-        >
+        <v-btn color="primary">
           Submit
         </v-btn>
         <v-btn
           type="reset"
+          class="mx-2"
           outlined
         >
           Reset

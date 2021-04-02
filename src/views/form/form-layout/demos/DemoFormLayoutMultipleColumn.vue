@@ -95,15 +95,13 @@
       </v-col>
 
       <v-col cols="12">
-        <v-btn
-          color="primary"
-          class="mr-2"
-        >
+        <v-btn color="primary">
           Submit
         </v-btn>
         <v-btn
           type="reset"
           outlined
+          class="mx-2"
         >
           Reset
         </v-btn>

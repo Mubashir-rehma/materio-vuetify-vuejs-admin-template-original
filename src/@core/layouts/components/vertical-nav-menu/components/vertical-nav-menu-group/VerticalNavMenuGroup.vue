@@ -3,6 +3,7 @@
     ref="refVListGroup"
     :prepend-icon="item.icon"
     class="vertical-nav-menu-group"
+    :class="[{'vertical-nav-menu-group-active': isActive}, ...rootThemeClasses]"
     @click="updateGroupOpen(!isOpen)"
   >
     <template #activator>
@@ -56,9 +57,18 @@ export default {
       required: true,
     },
   },
+  computed: {
+    // From Vuetify's `vuetify/src/mixins/themeable/index.ts` mixin
+    rootThemeClasses() {
+      return {
+        'theme--dark': this.$vuetify.isDark,
+        'theme--light': !this.$vuetify.isDark,
+      }
+    },
+  },
   setup(props) {
     const { resolveNavItemComponent } = useVerticalNavMenu()
-    const { isOpen, updateGroupOpen } = useVerticalNavGroup(props.item)
+    const { isOpen, updateGroupOpen, isActive } = useVerticalNavGroup(props.item)
     const { isNavGroupActive } = useNav()
     const { menuIsVerticalNavMini } = useAppConfig()
     const isMouseHovered = inject('isMouseHovered')
@@ -100,6 +110,7 @@ export default {
       refVListGroup,
       isMouseHovered,
       isOpen,
+      isActive,
       updateGroupOpen,
     }
   },
@@ -107,13 +118,19 @@ export default {
 </script>
 
 <style lang="scss">
-.vertical-nav-menu-group {
+@import '~vuetify/src/styles/styles.sass';
+
+@include theme(vertical-nav-menu-group) using ($material) {
   &.v-list-group--active > .v-list-group__header > .v-list-group__header__append-icon .v-icon {
     transform: none;
   }
 
   & > .v-list-group__header > .v-list-group__header__append-icon .v-icon {
     transform: rotate(-90deg);
+  }
+
+  &.vertical-nav-menu-group-active .v-list-group__header {
+    background-color: rgba(map-deep-get($material, 'text', 'primary'), map-deep-get($material, 'states', 'selected'));
   }
 }
 </style>

@@ -13,7 +13,7 @@
     >
       <v-list
         expand
-        :shaped="isListShaped"
+        shaped
         class="vertical-nav-menu-items"
       >
         <component
@@ -29,7 +29,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { watch, ref, computed, provide } from '@vue/composition-api'
+import { ref, provide } from '@vue/composition-api'
 
 // SFCs
 import VerticalNavMenuHeader from '@core/layouts/components/vertical-nav-menu/components/vertical-nav-menu-header/VerticalNavMenuHeader.vue'
@@ -39,7 +39,6 @@ import VerticalNavMenuLink from '@core/layouts/components/vertical-nav-menu/comp
 
 // Composable
 import useVerticalNavMenu from '@/@core/layouts/composable/vertical-nav/useVerticalNavMenu'
-import useAppConfig from '@core/@app-config/useAppConfig'
 
 // 3rd Party
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
@@ -62,25 +61,7 @@ export default {
   },
   setup() {
     const { resolveNavItemComponent, isMouseHovered } = useVerticalNavMenu()
-    const { menuIsVerticalNavMini } = useAppConfig()
     provide('isMouseHovered', isMouseHovered)
-
-    // ? Q: Why `isMouseHoveredTransitioned` instead of `isMouseHovered`
-    // ? A: Assign false after transition is complete* (*Just before complete)
-    const isMouseHoveredTransitioned = ref(isMouseHovered.value)
-    watch(isMouseHovered, value => {
-      if (value) isMouseHoveredTransitioned.value = true
-      else {
-        // ! Actual time is 200 but we are assigning 100 because it is only used in isListShaped
-        setTimeout(() => {
-          isMouseHoveredTransitioned.value = false
-        }, 100)
-      }
-    })
-
-    const isListShaped = computed(
-      () => !menuIsVerticalNavMini.value || (menuIsVerticalNavMini.value && isMouseHoveredTransitioned.value),
-    )
 
     const perfectScrollbarOptions = {
       maxScrollbarLength: 60,
@@ -93,7 +74,6 @@ export default {
       resolveNavItemComponent,
       perfectScrollbarOptions,
       isMouseHovered,
-      isListShaped,
     }
   },
 }
@@ -106,6 +86,21 @@ export default {
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
 @import '~@core/preset/preset/mixins.scss';
+
+.app-navigation-menu {
+  transition-duration: 0.4s !important;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1), ease !important;
+  will-change: box-shadow, transform !important;
+
+  .v-navigation-drawer__border {
+    background-color: transparent !important;
+  }
+
+  &.v-navigation-drawer--open-on-hover.v-navigation-drawer--is-mouseover {
+    @include elevation(9);
+    // @include elevationTransition();
+  }
+}
 
 // Set Perfect Scrollbar Container Height
 .vertical-nav-menu-container {
@@ -136,6 +131,8 @@ export default {
 
     height: 42px;
     color: map-deep-get($material, 'text', 'primary');
+    // ? Reason: In collapsed mode due to modified mini width & flex grow icon change position while collapsing the drawer
+    justify-content: flex-start !important;
 
     &.v-list-item--active {
       &:not(.v-list-group__header) {

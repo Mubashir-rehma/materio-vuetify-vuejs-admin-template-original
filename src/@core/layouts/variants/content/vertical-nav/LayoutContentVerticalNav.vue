@@ -6,16 +6,24 @@
       v-model="toggleVerticalNavMenu"
       app
       :right="$vuetify.rtl"
+      mini-variant-width="68"
       :expand-on-hover="menuIsVerticalNavMini"
+      color="#f4f5fa"
+      class="app-navigation-menu"
     >
       <vertical-nav-menu :nav-menu-items="navMenuItems" />
     </v-navigation-drawer>
 
     <v-app-bar
       v-if="appBarType !== 'hidden'"
+      ref="refAppBar"
       app
       :absolute="appBarType === 'static'"
       flat
+      :elevate-on-scroll="appBarType !== 'static'"
+      :elevation="appBarType !== 'static' ? 3 : 0"
+      class="mx-auto"
+      :color="appBarColor"
     >
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.mdAndDown"
@@ -39,6 +47,7 @@
       inset
       :absolute="footerType === 'static'"
       padless
+      class="mx-auto"
     >
       <v-col cols="12">
         {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
@@ -48,7 +57,7 @@
 </template>
 
 <script>
-import { ref, watch } from '@vue/composition-api'
+import { ref, watch, watchEffect } from '@vue/composition-api'
 import AppContentContainer from '@core/layouts/components/app-content-container/AppContentContainer.vue'
 import { getVuetify } from '@/@core/utils'
 import useAppConfig from '@core/@app-config/useAppConfig'
@@ -66,12 +75,22 @@ export default {
     },
   },
   setup() {
-    const $vuetify = getVuetify()
-
-    const toggleVerticalNavMenu = ref(true)
-
     // eslint-disable-next-line object-curly-newline
     const { menuIsVerticalNavMini, menuIsMenuHidden, appBarType, footerType } = useAppConfig()
+    const $vuetify = getVuetify()
+
+    const refAppBar = ref(null)
+    const appBarColor = ref('transparent')
+    watchEffect(
+      () => {
+        if (refAppBar.value) {
+          appBarColor.value = refAppBar.value.hideShadow || appBarType.value === 'static' ? 'transparent' : 'white'
+        }
+      },
+      { flush: 'post' },
+    )
+
+    const toggleVerticalNavMenu = ref(true)
 
     // TODO: Check do we need below watch
     watch(
@@ -90,6 +109,10 @@ export default {
       menuIsMenuHidden,
       appBarType,
       footerType,
+      appBarColor,
+
+      // Template ref
+      refAppBar,
     }
   },
 }
@@ -114,6 +137,17 @@ $nav-drawer-mini-width: 56px;
     .v-footer,
     .v-app-bar {
       left: $nav-drawer-mini-width !important;
+    }
+  }
+
+  .v-app-bar,
+  .v-footer {
+    max-width: calc(1440px - (1.72rem * 2));
+    border-radius: 0 0 14px 14px !important;
+
+    @media screen and (max-width: 1711px) {
+      margin-left: 1.72rem !important;
+      margin-right: 1.72rem !important;
     }
   }
 }

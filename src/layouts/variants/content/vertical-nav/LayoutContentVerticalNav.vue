@@ -12,8 +12,9 @@
         </div>
 
         <!-- Right Content: I18n, Light/Dark, Notification & User Dropdown -->
-        <div>
+        <div class="d-flex align-center">
           <app-bar-i18n></app-bar-i18n>
+          <app-bar-theme-switcher class="ml-4"></app-bar-theme-switcher>
         </div>
       </div>
     </template>
@@ -31,6 +32,7 @@ import navMenuItems from '@/navigation/vertical'
 // App Bar Components
 import AppBarSearch from '@core/layouts/components/app-bar/AppBarSearch.vue'
 import AppBarI18n from '@core/layouts/components/app-bar/AppBarI18n.vue'
+import AppBarThemeSwitcher from '@core/layouts/components/app-bar/AppBarThemeSwitcher.vue'
 
 export default {
   components: {
@@ -40,6 +42,7 @@ export default {
     // App Bar Components
     AppBarSearch,
     AppBarI18n,
+    AppBarThemeSwitcher,
   },
   setup() {
     return {

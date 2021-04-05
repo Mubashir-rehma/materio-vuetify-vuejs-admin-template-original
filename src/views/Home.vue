@@ -2,34 +2,29 @@
   <div>
     <v-card>
       <v-card-title>
-        <h4>Routes</h4>
+        <h4>{{ $t('hello') }}</h4>
       </v-card-title>
       <v-card-actions>
-        <v-list
-          dense
-          width="100%"
+        <v-btn
+          color="primary"
+          @click="loadLanguageAsync('fr')"
         >
-          <v-list-item-group color="primary">
-            <v-list-item
-              v-for="(item, i) in items"
-              :key="i"
-              :to="{ name: item.name }"
-            >
-              <v-list-item-content>
-                <v-list-item-title v-text="item.name"></v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
+          Franch
+        </v-btn>
       </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
+import { loadLanguageAsync } from '@/plugins/i18n'
+
 export default {
   data: () => ({
     items: [],
   }),
+  methods: {
+    loadLanguageAsync,
+  },
 }
 </script>

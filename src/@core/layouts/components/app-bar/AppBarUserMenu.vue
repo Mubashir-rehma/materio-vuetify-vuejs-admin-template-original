@@ -8,13 +8,22 @@
     </div>
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-avatar
-          v-bind="attrs"
-          size="40"
-          v-on="on"
+        <v-badge
+          bottom
+          color="success"
+          overlap
+          offset-x="12"
+          offset-y="12"
+          dot
         >
-          <v-img src="/images/avatars/1.png"></v-img>
-        </v-avatar>
+          <v-avatar
+            large
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-img src="/images/avatars/1.png"></v-img>
+          </v-avatar>
+        </v-badge>
       </template>
       <v-list>
         <!-- Profile -->

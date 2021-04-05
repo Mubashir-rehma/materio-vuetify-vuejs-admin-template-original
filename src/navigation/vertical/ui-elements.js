@@ -123,6 +123,10 @@ export default [
         title: 'Form Layout',
         to: 'form-layout',
       },
+      {
+        title: 'Form validation',
+        to: 'form-validation',
+      },
     ],
   },
 ]

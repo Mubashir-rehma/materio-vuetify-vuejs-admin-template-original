@@ -95,6 +95,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/validation',
+    name: 'form-validation',
+    component: () => import('@/views/form/validation/Validation.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

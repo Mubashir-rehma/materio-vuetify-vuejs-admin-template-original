@@ -111,6 +111,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/monthpicker',
+    name: 'form-month-picker',
+    component: () => import('@/views/form/month-picker/MonthPicker.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

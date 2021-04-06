@@ -5,7 +5,7 @@
       lg="6"
     >
       <v-menu
-        ref="menu1"
+        ref="menuref"
         v-model="menu1"
         :close-on-content-click="false"
         transition="scale-transition"

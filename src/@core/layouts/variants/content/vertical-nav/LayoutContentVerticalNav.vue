@@ -25,12 +25,7 @@
       class="mx-auto"
       :color="appBarColor"
     >
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.mdAndDown"
-        @click="toggleVerticalNavMenu = true"
-      ></v-app-bar-nav-icon>
-
-      <v-toolbar-title>menuIsVerticalNavMini: {{ menuIsVerticalNavMini }}</v-toolbar-title>
+      <slot name="navbar"></slot>
     </v-app-bar>
 
     <slot name="v-app-content"></slot>
@@ -61,7 +56,7 @@ import { ref, watch, watchEffect } from '@vue/composition-api'
 import AppContentContainer from '@core/layouts/components/app-content-container/AppContentContainer.vue'
 import { getVuetify } from '@/@core/utils'
 import useAppConfig from '@core/@app-config/useAppConfig'
-import VerticalNavMenu from '@/@core/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
+import VerticalNavMenu from '@core/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
 
 export default {
   components: {

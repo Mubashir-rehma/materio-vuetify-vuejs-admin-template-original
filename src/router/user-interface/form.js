@@ -103,6 +103,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/datepicker',
+    name: 'form-datepicker',
+    component: () => import('@/views/form/datepicker/Datepicker.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

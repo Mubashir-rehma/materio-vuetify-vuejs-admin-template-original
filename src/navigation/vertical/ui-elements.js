@@ -127,6 +127,10 @@ export default [
         title: 'Form validation',
         to: 'form-validation',
       },
+      {
+        title: 'Form datepicker',
+        to: 'form-datepicker',
+      },
     ],
   },
 ]

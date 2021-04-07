@@ -127,6 +127,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/rating',
+    name: 'form-rating',
+    component: () => import('@/views/form/rating/Rating.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

@@ -139,6 +139,10 @@ export default [
         title: 'Form Time Picker',
         to: 'form-time-picker',
       },
+      {
+        title: 'Rating',
+        to: 'form-rating',
+      },
     ],
   },
 ]

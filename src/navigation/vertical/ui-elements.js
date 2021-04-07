@@ -135,6 +135,10 @@ export default [
         title: 'Form Month Picker',
         to: 'form-month-picker',
       },
+      {
+        title: 'Form Time Picker',
+        to: 'form-time-picker',
+      },
     ],
   },
 ]

@@ -119,6 +119,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/form/timepicker',
+    name: 'form-time-picker',
+    component: () => import('@/views/form/time-picker/TimePicker.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTables

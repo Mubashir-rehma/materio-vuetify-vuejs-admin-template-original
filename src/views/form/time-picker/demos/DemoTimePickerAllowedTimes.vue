@@ -1,0 +1,32 @@
+<template>
+  <v-row justify="center">
+    <v-time-picker
+      v-model="time"
+      :allowed-hours="allowedHours"
+      :allowed-minutes="allowedMinutes"
+      format="24hr"
+      scrollable
+      min="9:30"
+      max="22:15"
+    ></v-time-picker>
+  </v-row>
+</template>
+
+<script>
+import { defineComponent, ref } from '@vue/composition-api'
+
+export default defineComponent({
+  setup() {
+    const time = ref('11:15')
+
+    const allowedHours = value => value % 2
+    const allowedMinutes = value => value >= 10 && value <= 50
+
+    return {
+      time,
+      allowedHours,
+      allowedMinutes,
+    }
+  },
+})
+</script>

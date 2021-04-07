@@ -1,0 +1,97 @@
+<template>
+  <v-menu
+    offset-y
+    eager
+    attach
+  >
+    <template v-slot:activator="{ on, attrs }">
+      <v-btn
+        ref="refActivator"
+        :color="isActive ? 'primary' : null"
+        depressed
+        rounded
+        v-bind="attrs"
+        v-on="on"
+      >
+        {{ item.title }}
+        <v-icon>
+          {{ icons.mdiChevronDown }}
+        </v-icon>
+      </v-btn>
+    </template>
+    <v-list ref="refContent">
+      <v-list-item-group
+        color="primary"
+      >
+        <component
+          :is="resolveNavComponent(child)"
+          v-for="child in item.children"
+          :key="child.subheader || child.title"
+          :item="child"
+        ></component>
+      </v-list-item-group>
+    </v-list>
+  </v-menu>
+</template>
+
+<script>
+import { mdiChevronDown } from '@mdi/js'
+import { computed, provide, ref } from '@vue/composition-api'
+import { useMouseInElement } from '@vueuse/core'
+
+import HorizontalNavMenuGroup from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-group/HorizontalNavMenuGroup.vue'
+import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-link/HorizontalNavMenuLink.vue'
+import useHorizontalNavMenuHeaderGroup from './useHorizontalNavMenuHeaderGroup'
+
+export default {
+  components: {
+    HorizontalNavMenuGroup,
+    HorizontalNavMenuLink,
+  },
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
+    // eslint-disable-next-line object-curly-newline
+    const { isActive, updateIsActive, isOpen, updateGroupOpen } = useHorizontalNavMenuHeaderGroup(props.item)
+
+    const resolveNavComponent = item => {
+      if (item.children) return 'horizontal-nav-menu-group'
+
+      return 'horizontal-nav-menu-link'
+    }
+
+    const refActivator = ref(null)
+    const refContent = ref(null)
+    const { isOutside: isMouseOutsideOfActivator } = useMouseInElement(refActivator)
+    const { isOutside: isMouseOutsideOfContent } = useMouseInElement(refContent)
+
+    const isMenuOpen = computed(() => !(isMouseOutsideOfContent.value && isMouseOutsideOfActivator.value))
+    provide('isParentMenuOpen', isMenuOpen)
+
+    return {
+      isOpen,
+      isActive,
+      updateGroupOpen,
+      updateIsActive,
+
+      resolveNavComponent,
+
+      // Mouse
+      refActivator,
+      refContent,
+      isMouseOutsideOfActivator,
+      isMouseOutsideOfContent,
+      isMenuOpen,
+
+      // icons
+      icons: {
+        mdiChevronDown,
+      },
+    }
+  },
+}
+</script>

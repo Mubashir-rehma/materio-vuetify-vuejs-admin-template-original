@@ -23,13 +23,74 @@ title
 route: [route_obj/route_name] (I have to resolve name somehow from the route obj)
 
 */
-import dashboard from './dashboard'
-import apps from './apps'
-import pages from './pages'
-import chartsAndMaps from './charts-and-maps'
-import uiElements from './ui-elements'
-import formAndTable from './forms-and-table'
-import others from './others'
+// import dashboard from './dashboard'
+// import apps from './apps'
+// import pages from './pages'
+// import chartsAndMaps from './charts-and-maps'
+// import uiElements from './ui-elements'
+// import formAndTable from './forms-and-table'
+// import others from './others'
 
 // Array of sections
-export default [...dashboard, ...apps, ...uiElements, ...formAndTable, ...pages, ...chartsAndMaps, ...others]
+// export default [...dashboard, ...apps, ...uiElements, ...formAndTable, ...pages, ...chartsAndMaps, ...others]
+import { mdiArchiveAlertOutline } from '@mdi/js'
+
+export default [
+  {
+    title: 'tooltip',
+    to: 'components-tooltip',
+  },
+  {
+    title: 'Components',
+    icon: mdiArchiveAlertOutline,
+    children: [
+      {
+        title: 'Alert',
+        icon: mdiArchiveAlertOutline,
+        to: 'components-alert',
+      },
+      {
+        title: 'Button',
+        icon: mdiArchiveAlertOutline,
+        to: 'components-button',
+      },
+    ],
+  },
+  {
+    title: 'User Interface',
+    icon: mdiArchiveAlertOutline,
+    children: [
+      {
+        title: 'Badge',
+        icon: mdiArchiveAlertOutline,
+        to: 'components-badge',
+      },
+      {
+        title: 'Menu',
+        icon: mdiArchiveAlertOutline,
+        to: 'components-menu',
+      },
+      {
+        title: 'Components',
+        icon: mdiArchiveAlertOutline,
+        children: [
+          {
+            title: 'Avatar',
+            icon: mdiArchiveAlertOutline,
+            to: 'components-avatar',
+          },
+          {
+            title: 'List',
+            icon: mdiArchiveAlertOutline,
+            to: 'components-list',
+          },
+        ],
+      },
+      {
+        title: 'Dialog',
+        icon: mdiArchiveAlertOutline,
+        to: 'components-dialog',
+      },
+    ],
+  },
+]

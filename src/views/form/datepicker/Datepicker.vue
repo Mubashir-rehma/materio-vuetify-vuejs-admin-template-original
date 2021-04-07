@@ -183,55 +183,6 @@
       </app-card-code>
     </v-col>
 
-    <!-- birthday picker -->
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <app-card-code
-        title="Birthday picker"
-        :code="codeSnippets.datepickerBirthdayPicker"
-      >
-        <v-card-text>
-          Starting with year picker by default, restricting dates range and closing the picker menu after selecting the day make the perfect birthday picker.
-        </v-card-text>
-        <v-card-text>
-          <demo-datepicker-birthday-picker></demo-datepicker-birthday-picker>
-        </v-card-text>
-      </app-card-code>
-    </v-col>
-
-    <!-- Dialog and menu -->
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <app-card-code
-        title="Dialog and menu"
-        :code="codeSnippets.datepickerDialogAndMenu"
-      >
-        <v-card-text>
-          <demo-datepicker-dialog-and-menu></demo-datepicker-dialog-and-menu>
-        </v-card-text>
-      </app-card-code>
-    </v-col>
-
-    <!-- Formatting -->
-    <v-col cols="12">
-      <app-card-code
-        title="Formatting"
-        :code="codeSnippets.datepickerFormatting"
-      >
-        <v-card-text>
-          If you need to display date in the custom format (different than YYYY-MM-DD) you need to use the formatting function.
-        </v-card-text>
-
-        <v-card-text>
-          <demo-datepicker-formatting></demo-datepicker-formatting>
-        </v-card-text>
-      </app-card-code>
-    </v-col>
-
     <!-- Date buttons -->
     <v-col
       cols="12"
@@ -247,6 +198,64 @@
 
         <v-card-text>
           <demo-datepicker-date-button></demo-datepicker-date-button>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
+    <!-- Dialog and menu -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Dialog and menu"
+        :code="codeSnippets.datepickerDialogAndMenu"
+      >
+        <v-card-text>
+          When integrating a picker into a <code>v-text-field</code>, it is recommended to use the <code>readonly</code> prop. This will prevent mobile keyboards from triggering. To save vertical space, you can also hide the picker title.
+        </v-card-text>
+        <v-card-text>
+          Pickers expose a slot that allow you to hook into save and cancel functionality. This will maintain an old value which can be replaced if the user cancels.
+        </v-card-text>
+        <v-card-text>
+          <demo-datepicker-dialog-and-menu></demo-datepicker-dialog-and-menu>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
+    <!-- Formatting -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Formatting"
+        :code="codeSnippets.datepickerFormatting"
+      >
+        <v-card-text>
+          If you need to display date in the custom format (different than YYYY-MM-DD) you need to use the formatting function.
+        </v-card-text>
+
+        <v-card-text>
+          <demo-datepicker-formatting></demo-datepicker-formatting>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
+    <!-- birthday picker -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Birthday picker"
+        :code="codeSnippets.datepickerBirthdayPicker"
+      >
+        <v-card-text>
+          Starting with year picker by default, restricting dates range and closing the picker menu after selecting the day make the perfect birthday picker.
+        </v-card-text>
+        <v-card-text>
+          <demo-datepicker-birthday-picker></demo-datepicker-birthday-picker>
         </v-card-text>
       </app-card-code>
     </v-col>

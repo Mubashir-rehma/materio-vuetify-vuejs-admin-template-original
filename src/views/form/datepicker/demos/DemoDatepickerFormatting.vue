@@ -32,7 +32,9 @@
           @input="menu1 = false"
         ></v-date-picker>
       </v-menu>
-      <p>Date in ISO format: <strong>{{ date }}</strong></p>
+      <p class="mb-0">
+        Date in ISO format: <strong>{{ date }}</strong>
+      </p>
     </v-col>
 
     <v-col
@@ -53,7 +55,7 @@
             label="Date (read only text field)"
             hint="MM/DD/YYYY format"
             persistent-hint
-            prepend-icon="mdi-calendar"
+            :prepend-icon="icons.mdiCalendar"
             readonly
             v-bind="attrs"
             v-on="on"
@@ -66,7 +68,9 @@
           @input="menu2 = false"
         ></v-date-picker>
       </v-menu>
-      <p>Date in ISO format: <strong>{{ date }}</strong></p>
+      <p class="mb-0">
+        Date in ISO format: <strong>{{ date }}</strong>
+      </p>
     </v-col>
   </v-row>
 </template>

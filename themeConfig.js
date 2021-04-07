@@ -6,7 +6,7 @@ const themeConfig = {
     logo: '/logo.svg',
     isDark: false,
     isRtl: false,
-    contentLayoutNav: 'vertical',
+    contentLayoutNav: 'horizontal',
     routeTransition: 'scroll-x-transition',
     contentWidth: 'boxed',
   },

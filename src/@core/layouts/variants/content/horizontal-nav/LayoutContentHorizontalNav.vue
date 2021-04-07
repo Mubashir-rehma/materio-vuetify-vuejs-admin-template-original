@@ -20,7 +20,7 @@
     >
       <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Navigation Menu</v-toolbar-title>
+      <horizontal-nav-menu :nav-menu-items="navMenuItems"></horizontal-nav-menu>
     </v-app-bar>
 
     <slot name="v-app-content"></slot>
@@ -48,10 +48,18 @@
 <script>
 import AppContentContainer from '@core/layouts/components/app-content-container/AppContentContainer.vue'
 import useAppConfig from '@core/@app-config/useAppConfig'
+import HorizontalNavMenu from '@/@core/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue'
 
 export default {
   components: {
     AppContentContainer,
+    HorizontalNavMenu,
+  },
+  props: {
+    navMenuItems: {
+      type: Array,
+      required: true,
+    },
   },
   setup() {
     const { menuIsMenuHidden, appBarType, footerType } = useAppConfig()

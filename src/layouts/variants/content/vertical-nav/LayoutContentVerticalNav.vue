@@ -14,6 +14,7 @@
           <app-bar-search
             :shall-show-full-search.sync="shallShowFullSearch"
             :data="appBarSearchData"
+            :filter="searchFilterFunc"
           ></app-bar-search>
         </div>
 
@@ -62,12 +63,22 @@ export default {
     // Search
     const shallShowFullSearch = ref(false)
 
+    const searchFilterFunc = (item, queryText, itemText) => {
+      // console.log('item :>> ', item)
+      // console.log('queryText :>> ', queryText)
+      // console.log('itemText :>> ', itemText)
+      if (item.header || item.divider) return true
+
+      return itemText.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+    }
+
     return {
       navMenuItems,
 
       // Search
       shallShowFullSearch,
       appBarSearchData,
+      searchFilterFunc,
     }
   },
 }

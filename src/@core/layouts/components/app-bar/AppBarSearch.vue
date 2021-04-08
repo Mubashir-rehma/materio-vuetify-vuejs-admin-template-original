@@ -15,6 +15,7 @@
         rounded
         attach
         hide-details
+        :filter="filter"
         auto-select-first
         :prepend-inner-icon="icons.mdiMagnify"
         autofocus

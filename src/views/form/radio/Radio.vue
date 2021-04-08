@@ -151,25 +151,6 @@
         </v-card-text>
       </app-card-code>
     </v-col>
-
-    <!-- validation blue -->
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <app-card-code
-        title="Validation on Blur"
-        :code="codeSnippets.radioValidationOnBlur"
-      >
-        <v-card-text>
-          Delays validation until blur event.
-        </v-card-text>
-
-        <v-card-text>
-          <demo-radio-validation-on-blur></demo-radio-validation-on-blur>
-        </v-card-text>
-      </app-card-code>
-    </v-col>
   </v-row>
 </template>
 
@@ -185,7 +166,6 @@ import DemoRadioMandatory from './demos/DemoRadioMandatory.vue'
 import DemoRadioLabelSlot from './demos/DemoRadioLabelSlot.vue'
 import DemoRadioIcon from './demos/DemoRadioIcon.vue'
 import DemoRadioValidation from './demos/DemoRadioValidation.vue'
-import DemoRadioValidationOnBlur from './demos/DemoRadioValidationOnBlur.vue'
 
 // code
 import {
@@ -197,7 +177,6 @@ import {
   radioLabelSlot,
   radioIcon,
   radioValidation,
-  radioValidationOnBlur,
 } from './demos/code'
 
 export default {
@@ -211,7 +190,6 @@ export default {
     DemoRadioLabelSlot,
     DemoRadioIcon,
     DemoRadioValidation,
-    DemoRadioValidationOnBlur,
   },
   setup() {
     return {
@@ -224,7 +202,6 @@ export default {
         radioLabelSlot,
         radioIcon,
         radioValidation,
-        radioValidationOnBlur,
       },
     }
   },

@@ -33,6 +33,10 @@
   .v-card__actions {
     padding-top: 0 !important;
 
+    @at-root .v-card &:nth-child(1) {
+      padding-top: $card-spacer !important;
+    }
+
     &:last-child {
       padding-bottom: $card-spacer;
     }

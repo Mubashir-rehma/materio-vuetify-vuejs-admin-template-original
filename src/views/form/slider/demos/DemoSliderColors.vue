@@ -26,7 +26,7 @@
 export default {
   setup() {
     const slider1 = { label: 'color', val: 25, color: 'error' }
-    const slider2 = { label: 'track-color', val: 75, color: 'success' }
+    const slider2 = { label: 'track-color', val: 75, color: 'error' }
     const slider3 = { label: 'thumb-color', val: 50, color: 'error' }
 
     return { slider1, slider2, slider3 }

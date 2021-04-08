@@ -10,7 +10,7 @@
         :code="codeSnippets.paginationBasic"
       >
         <v-card-text>
-          The <code>v-pagination</code> component is used to separate long sets of data so that it is easier for a user to consume information.
+          The <code>v-pagination</code> component is used to separate long sets of data.
         </v-card-text>
 
         <v-card-text>
@@ -65,7 +65,7 @@
         :code="codeSnippets.paginationIcons"
       >
         <v-card-text>
-          Previous and next page icons can be customized with the <code>prev-icon</code> and <code>next-icon</code> props.
+          Customize previous and next icons using <code>prev-icon</code> and <code>next-icon</code> props.
         </v-card-text>
 
         <v-card-text>

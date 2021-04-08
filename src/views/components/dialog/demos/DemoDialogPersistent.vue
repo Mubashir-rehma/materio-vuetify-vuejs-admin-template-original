@@ -2,7 +2,7 @@
   <v-dialog
     v-model="isDialogVisible"
     persistent
-    max-width="290"
+    width="500"
   >
     <template #activator="{ on, attrs }">
       <v-btn

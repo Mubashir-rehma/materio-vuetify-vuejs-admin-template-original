@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn
-      :color="isAlertVisible ? 'error' : 'success'"
+      color="primary"
       class="mb-4"
       @click="isAlertVisible = !isAlertVisible"
     >

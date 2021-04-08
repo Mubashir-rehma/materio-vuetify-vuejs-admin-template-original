@@ -67,7 +67,6 @@ export default {
       { label: 'Barbados', value: 'barbados' },
       { label: 'Belarus', value: 'belarus' },
       { label: 'Belgium', value: 'belgium' },
-      { label: 'Belgium', value: 'belgium' },
       { label: 'Belize', value: 'belize' },
       { label: 'Benin', value: 'benin' },
       { label: 'Bhutan', value: 'bhutan' },

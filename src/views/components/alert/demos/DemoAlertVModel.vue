@@ -11,7 +11,7 @@
 
     <!-- button -->
     <v-btn
-      :color="isAlertVisible ? 'error' : 'success'"
+      color="primary"
       @click="isAlertVisible = !isAlertVisible"
     >
       {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}

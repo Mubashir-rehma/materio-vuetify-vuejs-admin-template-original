@@ -133,25 +133,6 @@
       </app-card-code>
     </v-col>
 
-    <!-- expandable -->
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <app-card-code
-        title="Expandable"
-        :code="codeSnippets.chipExpandable"
-      >
-        <v-card-text>
-          Chips can be combined with <code>v-menu</code> to enable a specific set of actions for a chip.
-        </v-card-text>
-
-        <v-card-text>
-          <demo-chip-expandable></demo-chip-expandable>
-        </v-card-text>
-      </app-card-code>
-    </v-col>
-
     <!-- in selects -->
     <v-col
       cols="12"
@@ -167,6 +148,25 @@
 
         <v-card-text>
           <demo-chip-in-selects></demo-chip-in-selects>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
+    <!-- expandable -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Expandable"
+        :code="codeSnippets.chipExpandable"
+      >
+        <v-card-text>
+          Chips can be combined with <code>v-menu</code> to enable a specific set of actions for a chip.
+        </v-card-text>
+
+        <v-card-text>
+          <demo-chip-expandable></demo-chip-expandable>
         </v-card-text>
       </app-card-code>
     </v-col>

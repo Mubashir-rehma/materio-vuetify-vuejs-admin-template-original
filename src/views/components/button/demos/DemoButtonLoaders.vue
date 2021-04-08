@@ -1,20 +1,20 @@
 <template>
   <div class="demo-space-x">
     <v-btn
-      :loading="loading"
-      :disabled="loading"
+      :loading="loadings.loading1"
+      :disabled="loadings.loading1"
       color="primary"
-      @click="loader = 'loading'"
+      @click="triggerLoading('loading1')"
     >
       Accept Terms
     </v-btn>
 
     <v-btn
-      :loading="loading3"
-      :disabled="loading3"
+      :loading="loadings.loading2"
+      :disabled="loadings.loading2"
       color="secondary"
       class="white--text"
-      @click="loader = 'loading3'"
+      @click="triggerLoading('loading2')"
     >
       Upload
       <v-icon
@@ -26,10 +26,10 @@
     </v-btn>
 
     <v-btn
-      :loading="loading2"
-      :disabled="loading2"
+      :loading="loadings.loading3"
+      :disabled="loadings.loading3"
       color="success"
-      @click="loader = 'loading2'"
+      @click="triggerLoading('loading3')"
     >
       Custom Loader
       <template #loader>
@@ -38,10 +38,10 @@
     </v-btn>
 
     <v-btn
-      :loading="loading4"
-      :disabled="loading4"
+      :loading="loadings.loading4"
+      :disabled="loadings.loading4"
       color="info"
-      @click="loader = 'loading4'"
+      @click="triggerLoading('loading4')"
     >
       Icon Loader
       <template #loader>
@@ -52,12 +52,12 @@
     </v-btn>
 
     <v-btn
-      :loading="loading5"
-      :disabled="loading5"
+      :loading="loadings.loading5"
+      :disabled="loadings.loading5"
       color="warning"
       class="white--text"
       fab
-      @click="loader = 'loading5'"
+      @click="triggerLoading('loading5')"
     >
       <v-icon dark>
         {{ icons.mdiCloudUpload }}
@@ -72,20 +72,25 @@ import { mdiCloudUpload, mdiCached } from '@mdi/js'
 
 export default {
   setup() {
-    const loader = ref()
-    const loading = ref(false)
-    const loading2 = ref(false)
-    const loading3 = ref(false)
-    const loading4 = ref(false)
-    const loading5 = ref(false)
+    const loadings = ref({
+      loading1: false,
+      loading2: false,
+      loading3: false,
+      loading4: false,
+      loading5: false,
+    })
+
+    const triggerLoading = loadingIndex => {
+      loadings.value[loadingIndex] = true
+
+      setTimeout(() => {
+        loadings.value[loadingIndex] = false
+      }, 3000)
+    }
 
     return {
-      loader,
-      loading,
-      loading2,
-      loading3,
-      loading4,
-      loading5,
+      loadings,
+      triggerLoading,
 
       // icon
       icons: { mdiCloudUpload, mdiCached },

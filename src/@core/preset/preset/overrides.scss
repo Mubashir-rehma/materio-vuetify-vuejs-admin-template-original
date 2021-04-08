@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import '~vuetify/src/components/VCard/_variables.scss';
 @import '~vuetify/src/components/VBadge/_variables.scss';
+@import './classes.scss';
 
 .demo-space-x {
   margin-top: -$card-spacer-content;

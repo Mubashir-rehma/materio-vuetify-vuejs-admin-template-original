@@ -10,6 +10,8 @@
       :rules="nameRules"
       label="Name"
       required
+      outlined
+      dense
     ></v-text-field>
 
     <v-text-field
@@ -17,6 +19,8 @@
       :rules="emailRules"
       label="E-mail"
       required
+      outlined
+      dense
     ></v-text-field>
 
     <v-select
@@ -25,6 +29,8 @@
       :rules="[v => !!v || 'Item is required']"
       label="Item"
       required
+      outlined
+      dense
     ></v-select>
 
     <v-checkbox
@@ -32,6 +38,7 @@
       :rules="[v => !!v || 'You must agree to continue!']"
       label="Do you agree?"
       required
+      class="mt-0"
     ></v-checkbox>
 
     <v-btn
@@ -71,17 +78,9 @@ export default defineComponent({
       v => (v && v.length <= 10) || 'Name must be less than 10 characters',
     ]
     const email = ref('')
-    const emailRules = [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-    ]
+    const emailRules = [v => !!v || 'E-mail is required', v => /.+@.+\..+/.test(v) || 'E-mail must be valid']
     const select = ref(null)
-    const items = [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4',
-    ]
+    const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
     const checkbox = ref(false)
     const form = ref(null)
 

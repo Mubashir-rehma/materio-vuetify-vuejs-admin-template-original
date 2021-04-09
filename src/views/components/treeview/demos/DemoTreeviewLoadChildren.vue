@@ -114,6 +114,8 @@
 
 <script>
 import { mdiAccount } from '@mdi/js'
+import { ref, watch, computed } from '@vue/composition-api'
+import axios from '@axios'
 
 const avatars = [
   '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
@@ -126,50 +128,59 @@ const avatars = [
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export default {
-  data: () => ({
-    active: [],
-    avatar: null,
-    open: [],
-    users: [],
-    icons: { mdiAccount },
-  }),
+  setup() {
+    const active = ref([])
+    const avatar = ref(null)
+    const open = ref([])
+    const users = ref([])
 
-  computed: {
-    items() {
-      return [
-        {
-          name: 'Users',
-          children: this.users,
-        },
-      ]
-    },
-    selected() {
-      if (!this.active.length) return undefined
+    const items = computed(() => [
+      {
+        name: 'Users',
+        children: users.value,
+      },
+    ])
 
-      const id = this.active[0]
+    const selected = computed(() => {
+      if (!active.value.length) return undefined
 
-      return this.users.find(user => user.id === id)
-    },
-  },
+      const id = active.value[0]
 
-  watch: {
-    selected: 'randomAvatar',
-  },
+      return users.value.find(user => user.id === id)
+    })
 
-  methods: {
-    async fetchUsers(item) {
-      // Remove in 6 months and say
-      // you've made optimizations! :)
+    const randomAvatar = () => {
+      avatar.value = avatars[Math.floor(Math.random() * avatars.length)]
+    }
+
+    const fetchUsers = async item => {
+      // Delay for demo purpose
       await pause(1500)
 
-      return fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(json => item.children.push(...json))
+      return axios
+        .get('https://jsonplaceholder.typicode.com/users')
+        .then(res => {
+          item.children.push(...res.data)
+        })
         .catch(err => console.warn(err))
-    },
-    randomAvatar() {
-      this.avatar = avatars[Math.floor(Math.random() * avatars.length)]
-    },
+    }
+
+    watch(selected, randomAvatar)
+
+    return {
+      items,
+      active,
+      avatar,
+      open,
+      users,
+      selected,
+      fetchUsers,
+
+      // Icons
+      icons: {
+        mdiAccount,
+      },
+    }
   },
 }
 </script>

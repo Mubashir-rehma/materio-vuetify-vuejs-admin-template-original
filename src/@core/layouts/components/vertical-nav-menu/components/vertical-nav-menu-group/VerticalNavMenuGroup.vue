@@ -90,7 +90,7 @@ export default {
     })
 
     watch(menuIsVerticalNavMini, val => {
-      if (val) isGroupExpanded.value = false
+      if (val && !isMouseHovered) isGroupExpanded.value = false
       else {
         isGroupExpanded.value = isOpen.value
       }

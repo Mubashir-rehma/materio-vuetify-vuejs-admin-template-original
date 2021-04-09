@@ -108,3 +108,19 @@ button {
     }
   }
 }
+
+// Vuetify Fix: Time picker active time should be primary
+.v-picker--time {
+  .v-time-picker-clock__hand {
+    &.accent {
+      background-color: var(--v-primary-base) !important;
+      border-color: var(--v-primary-base) !important;
+    }
+  }
+  .v-time-picker-clock__item--active {
+    &.accent {
+      background-color: var(--v-primary-base) !important;
+      border-color: var(--v-primary-base) !important;
+    }
+  }
+}

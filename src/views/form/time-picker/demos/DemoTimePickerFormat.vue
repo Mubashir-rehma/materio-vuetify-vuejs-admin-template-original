@@ -1,10 +1,8 @@
 <template>
-  <v-row justify="center">
-    <v-time-picker
-      v-model="picker"
-      format="24hr"
-    ></v-time-picker>
-  </v-row>
+  <v-time-picker
+    v-model="picker"
+    format="24hr"
+  ></v-time-picker>
 </template>
 
 <script>

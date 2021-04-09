@@ -3,7 +3,6 @@
     <v-col
       cols="12"
       md="6"
-      class="text-center"
     >
       <h2>Start:</h2>
       <v-time-picker
@@ -14,7 +13,6 @@
     <v-col
       cols="12"
       md="6"
-      class="text-center"
     >
       <h2>End:</h2>
       <v-time-picker

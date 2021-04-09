@@ -1,10 +1,8 @@
 <template>
-  <v-row justify="center">
-    <v-time-picker
-      v-model="picker"
-      ampm-in-title
-    ></v-time-picker>
-  </v-row>
+  <v-time-picker
+    v-model="picker"
+    ampm-in-title
+  ></v-time-picker>
 </template>
 
 <script>

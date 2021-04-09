@@ -1,15 +1,13 @@
 <template>
-  <v-row justify="center">
-    <v-time-picker
-      v-model="time"
-      :allowed-hours="allowedHours"
-      :allowed-minutes="allowedMinutes"
-      format="24hr"
-      scrollable
-      min="9:30"
-      max="22:15"
-    ></v-time-picker>
-  </v-row>
+  <v-time-picker
+    v-model="time"
+    :allowed-hours="allowedHours"
+    :allowed-minutes="allowedMinutes"
+    format="24hr"
+    scrollable
+    min="9:30"
+    max="22:15"
+  ></v-time-picker>
 </template>
 
 <script>

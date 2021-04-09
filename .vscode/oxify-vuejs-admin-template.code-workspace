@@ -1,0 +1,100 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		// JS
+		"javascript.updateImportsOnFileMove.enabled": "always",
+		// JSON
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		"[jsonc]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		// Extension: Emmet
+		"emmet.includeLanguages": {
+			"markdown": "html"
+		},
+		// Extension: Git
+		"git.rebaseWhenSync": true,
+		// Extension: Prettier
+		"prettier.requireConfig": true,
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[markdown]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[scss]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		// Extension: Vetur
+		"vetur.experimental.templateInterpolationService": false,
+		"vetur.validation.template": false,
+		"vetur.format.defaultFormatter.html": "none",
+		"[vue]": {
+			"editor.defaultFormatter": "octref.vetur",
+		},
+		// Extension: ESLint
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.organizeImports": true,
+		},
+		"eslint.validate": [
+			"vue",
+			"html",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact"
+		],
+		"eslint.alwaysShowStatus": true,
+		"eslint.format.enable": true,
+		"eslint.packageManager": "yarn",
+		// Extension: cSpell
+		"cSpell.words": [
+			"Appbar",
+			"Customizer",
+			"Vetur",
+			"Vuetify",
+			"vuex"
+		],
+	},
+	"extensions": {
+		"recommendations": [
+			"octref.vetur",
+			"sdras.vue-vscode-snippets",
+			"gamunu.vscode-yarn",
+			"jasonnutter.search-node-modules",
+			"mrmlnc.vscode-scss",
+			"syler.sass-indented",
+			"christian-kohler.npm-intellisense",
+			"xabikos.javascriptsnippets",
+			"zignd.html-css-class-completion",
+			"esbenp.prettier-vscode",
+			"dbaeumer.vscode-eslint",
+			"eamodio.gitlens",
+			// "znck.vue-language-features",
+			"kisstkondoros.vscode-codemetrics",
+			"quicktype.quicktype",
+			"streetsidesoftware.code-spell-checker",
+			"editorconfig.editorconfig",
+			"usernamehw.errorlens",
+			"aaron-bond.better-comments",
+			"formulahendry.auto-close-tag",
+			"formulahendry.auto-rename-tag",
+			"yzhang.markdown-all-in-one",
+			"davidanson.vscode-markdownlint",
+			"cipchk.cssrem",
+		]
+	},
+}

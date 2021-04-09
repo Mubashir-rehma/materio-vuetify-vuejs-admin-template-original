@@ -5,7 +5,7 @@
       dark
       :icon="icons.mdiFirework"
     >
-      Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Vivamus quis mi. Quisque ut nisi. Maecenas malesuada.
+      Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi.
     </v-alert>
 
     <v-alert
@@ -13,7 +13,7 @@
       dark
       :icon="icons.mdiMaterialDesign"
     >
-      Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. In ut quam vitae odio lacinia tincidunt.
+      Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit.
     </v-alert>
 
     <v-alert
@@ -22,7 +22,7 @@
       :icon="icons.mdiVuetify"
       class="mb-0"
     >
-      Praesent congue erat at massa. Nullam vel sem. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapiens.
+      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
     </v-alert>
   </div>
 </template>

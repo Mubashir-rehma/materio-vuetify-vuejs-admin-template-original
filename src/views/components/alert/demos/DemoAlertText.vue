@@ -4,29 +4,42 @@
       text
       color="primary"
     >
-      Maecenas nec odio et ante tincidunt tempus. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci.
+      Maecenas nec odio et ante tincidunt tempus. Sed mollis, eros et ultrices tempus.
     </v-alert>
 
     <v-alert
       text
       color="secondary"
     >
-      Nullam tincidunt adipiscing enim. In consectetuer turpis ut velit. Maecenas egestas arcu quis ligula mattis placerat. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.
+      Nullam tincidunt adipiscing enim. In consectetuer turpis ut velit.
     </v-alert>
 
     <v-alert
       text
       color="success"
     >
-      Vestibulum ullamcorper mauris at ligula. Nulla porta dolor. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Curabitur at lacus ac velit ornare lobortis.
+      Vestibulum ullamcorper mauris at ligula. Nulla porta dolor.
     </v-alert>
 
     <v-alert
       text
       color="info"
-      class="mb-0"
     >
-      Praesent blandit laoreet nibh. Praesent nonummy mi in odio. Phasellus tempus. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Duis leo.
+      Praesent blandit laoreet nibh. Praesent nonummy mi in odio. Phasellus tempus. Mauris turpis nunc.
+    </v-alert>
+
+    <v-alert
+      text
+      color="warning"
+    >
+      Marzipan topping croissant cake sweet roll ice cream soufflé chocolate. Jelly beans chupa chups tootsie roll biscuit.
+    </v-alert>
+
+    <v-alert
+      text
+      color="error"
+    >
+      Marzipan topping croissant cake sweet roll ice cream soufflé chocolate. Jelly beans chupa chups tootsie roll biscuit.
     </v-alert>
   </div>
 </template>

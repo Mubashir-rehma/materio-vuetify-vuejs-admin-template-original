@@ -14,6 +14,18 @@
 
     <v-avatar
       size="35"
+      color="secondary"
+    >
+      <v-icon
+        color="white"
+        size="18"
+      >
+        {{ icons.mdiAppleIcloud }}
+      </v-icon>
+    </v-avatar>
+
+    <v-avatar
+      size="35"
       color="success"
     >
       <v-icon
@@ -38,6 +50,18 @@
 
     <v-avatar
       size="35"
+      color="warning"
+    >
+      <v-icon
+        color="white"
+        size="18"
+      >
+        {{ icons.mdiAlert }}
+      </v-icon>
+    </v-avatar>
+
+    <v-avatar
+      size="35"
       color="error"
     >
       <v-icon
@@ -52,7 +76,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiHomeOutline, mdiBell, mdiAccount, mdiMessage } from '@mdi/js'
+import { mdiHomeOutline, mdiBell, mdiAccount, mdiMessage, mdiAppleIcloud, mdiAlert } from '@mdi/js'
 
 export default {
   setup() {
@@ -62,6 +86,8 @@ export default {
         mdiBell,
         mdiAccount,
         mdiMessage,
+        mdiAppleIcloud,
+        mdiAlert,
       },
     }
   },

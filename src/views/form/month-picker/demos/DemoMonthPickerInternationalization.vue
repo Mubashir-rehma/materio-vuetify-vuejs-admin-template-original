@@ -5,9 +5,9 @@
       md="6"
     >
       <v-date-picker
-        v-model="date"
+        v-model="picker"
         type="month"
-        readonly
+        locale="th"
       ></v-date-picker>
     </v-col>
 
@@ -16,23 +16,23 @@
       md="6"
     >
       <v-date-picker
-        v-model="date"
+        v-model="picker"
         type="month"
-        disabled
+        locale="sv-se"
       ></v-date-picker>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 
 export default defineComponent({
   setup() {
-    const date = new Date().toISOString().substr(0, 7)
+    const picker = ref(new Date().toISOString().substr(0, 7))
 
     return {
-      date,
+      picker,
     }
   },
 })

@@ -96,3 +96,15 @@ button {
     }
   }
 }
+
+// Vuetify Fix: month picker header text should be primary
+
+.v-date-picker-header {
+  .v-date-picker-header__value {
+    .accent--text {
+      button:hover {
+        color: var(--v-primary-base);
+      }
+    }
+  }
+}

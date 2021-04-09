@@ -132,6 +132,22 @@
         </v-card-text>
       </app-card-code>
     </v-col>
+
+    <!-- Internationalization -->
+    <v-col cols="12">
+      <app-card-code
+        title="Internationalization"
+        :code="codeSnippets.monthPickerInternationalization"
+      >
+        <v-card-text>
+          The month picker supports internationalization through the JavaScript Date object. Specify a BCP 47 language tag using the <code>locale</code> prop.
+        </v-card-text>
+
+        <v-card-text>
+          <demo-month-picker-internationalization></demo-month-picker-internationalization>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
   </v-row>
 </template>
 
@@ -147,6 +163,7 @@ import DemoMonthPickerMultiple from './demos/DemoMonthPickerMultiple.vue'
 import DemoMonthPickerReadonlyAndDisabled from './demos/DemoMonthPickerReadonlyAndDisabled.vue'
 import DemoMonthPickerWidth from './demos/DemoMonthPickerWidth.vue'
 import DemoMonthPickerDialogAndMenu from './demos/DemoMonthPickerDialogAndMenu.vue'
+import DemoMonthPickerInternationalization from './demos/DemoMonthPickerInternationalization.vue'
 
 // code
 import {
@@ -157,6 +174,7 @@ import {
   monthPickerReadonlyAndDisabled,
   monthPickerWidth,
   monthPickerDialogAndMenu,
+  monthPickerInternationalization,
 } from './demos/code'
 
 export default defineComponent({
@@ -169,6 +187,7 @@ export default defineComponent({
     DemoMonthPickerReadonlyAndDisabled,
     DemoMonthPickerWidth,
     DemoMonthPickerDialogAndMenu,
+    DemoMonthPickerInternationalization,
   },
   setup() {
     return {
@@ -180,6 +199,7 @@ export default defineComponent({
         monthPickerReadonlyAndDisabled,
         monthPickerWidth,
         monthPickerDialogAndMenu,
+        monthPickerInternationalization,
       },
     }
   },

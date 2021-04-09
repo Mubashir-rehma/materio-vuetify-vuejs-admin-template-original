@@ -1,8 +1,7 @@
 <template>
-  <div class="text-center">
-    <v-rating
-      dense
-      background-color="primary"
-    ></v-rating>
-  </div>
+  <v-rating
+    dense
+    background-color="warning"
+    color="warning"
+  ></v-rating>
 </template>

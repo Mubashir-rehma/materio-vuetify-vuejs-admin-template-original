@@ -1,16 +1,14 @@
 <template>
-  <div class="text-center">
-    <v-rating v-model="rating">
-      <template v-slot:item="props">
-        <v-icon
-          :color="props.isFilled ? 'success' : 'secondary'"
-          @click="props.click"
-        >
-          {{ props.isFilled ? icons.mdiEmoticonExcitedOutline : icons.mdiEmoticonSadOutline }}
-        </v-icon>
-      </template>
-    </v-rating>
-  </div>
+  <v-rating v-model="rating">
+    <template v-slot:item="props">
+      <v-icon
+        :color="props.isFilled ? 'success' : 'secondary'"
+        @click="props.click"
+      >
+        {{ props.isFilled ? icons.mdiEmoticonExcitedOutline : icons.mdiEmoticonSadOutline }}
+      </v-icon>
+    </template>
+  </v-rating>
 </template>
 
 <script>

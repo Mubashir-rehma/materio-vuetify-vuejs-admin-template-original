@@ -1,8 +1,7 @@
 <template>
-  <div class="text-center">
-    <v-rating
-      background-color="primary"
-      clearable
-    ></v-rating>
-  </div>
+  <v-rating
+    background-color="warning"
+    color="warning"
+    clearable
+  ></v-rating>
 </template>

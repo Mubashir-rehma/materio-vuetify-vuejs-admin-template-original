@@ -1,5 +1,6 @@
 <template>
-  <div class="text-center">
-    <v-rating background-color="primary"></v-rating>
-  </div>
+  <v-rating
+    background-color="warning"
+    color="warning"
+  ></v-rating>
 </template>

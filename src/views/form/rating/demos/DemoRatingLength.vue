@@ -1,8 +1,7 @@
 <template>
-  <div class="text-center">
+  <div>
     <v-slider
       v-model="length"
-      color="error"
       min="1"
       max="7"
       label="Custom length"

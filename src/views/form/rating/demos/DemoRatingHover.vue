@@ -1,8 +1,7 @@
 <template>
-  <div class="text-center">
-    <v-rating
-      hover
-      background-color="primary"
-    ></v-rating>
-  </div>
+  <v-rating
+    hover
+    background-color="warning"
+    color="warning"
+  ></v-rating>
 </template>

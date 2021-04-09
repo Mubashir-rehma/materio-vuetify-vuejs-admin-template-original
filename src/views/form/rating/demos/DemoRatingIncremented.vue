@@ -1,14 +1,11 @@
 <template>
-  <div class="text-center">
-    <v-rating
-      v-model="rating"
-      color="warning"
-      background-color="secondary"
-      empty-icon="$ratingFull"
-      half-increments
-      hover
-    ></v-rating>
-  </div>
+  <v-rating
+    v-model="rating"
+    color="warning"
+    background-color="warning"
+    half-increments
+    hover
+  ></v-rating>
 </template>
 
 <script>

@@ -10,6 +10,16 @@ button {
   }
 }
 
+// Vuetify Fix: `dense` prop isn't working with SVG icons
+.v-chip {
+  .v-chip__content {
+    .v-icon--dense {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
 .demo-space-x {
   margin-top: -$card-spacer-content;
   & > * {
@@ -64,7 +74,7 @@ button {
   }
 }
 
-// We have replace the icon with svg icon badge don't have any style for svg inside the badge.
+// Vuetify Fix: We have replace the icon with svg icon badge don't have any style for svg inside the badge.
 .v-badge__badge {
   .v-icon {
     height: $badge-font-size;

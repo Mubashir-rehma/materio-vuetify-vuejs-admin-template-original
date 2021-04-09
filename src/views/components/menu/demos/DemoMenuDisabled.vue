@@ -8,7 +8,6 @@
       <v-btn
         color="primary"
         v-bind="attrs"
-        disabled
         v-on="on"
       >
         Dropdown

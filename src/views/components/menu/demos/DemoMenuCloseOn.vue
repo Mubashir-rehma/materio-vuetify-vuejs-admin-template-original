@@ -46,9 +46,6 @@
           :key="index"
         >
           <v-list-item-title>
-            <v-icon>
-              {{ icons.mdiArrowRight }}
-            </v-icon>
             {{ item.title }}
           </v-list-item-title>
         </v-list-item>
@@ -59,7 +56,6 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiArrowRight } from '@mdi/js'
 
 export default {
   setup() {
@@ -71,7 +67,6 @@ export default {
       closeOnClick,
       closeOnContentClick,
       items,
-      icons: { mdiArrowRight },
     }
   },
 }

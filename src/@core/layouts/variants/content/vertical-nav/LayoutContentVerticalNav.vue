@@ -22,10 +22,14 @@
       flat
       :elevate-on-scroll="appBarType !== 'static'"
       :elevation="appBarType !== 'static' ? 3 : 0"
-      class="mx-auto"
+      class="mx-auto app-bar-static"
+      :class="{'px-5 app-bar-shinked': scrollY > 50}"
       :color="appBarColor"
     >
-      <slot name="navbar"></slot>
+      <slot
+        name="navbar"
+        :isVerticalNavMenuActive.sync="toggleVerticalNavMenu"
+      ></slot>
     </v-app-bar>
 
     <slot name="v-app-content"></slot>
@@ -35,6 +39,12 @@
         <slot></slot>
       </app-content-container>
     </v-main>
+    <v-overlay
+      :value="$store.state.app.shallContentShowOverlay"
+      z-index="4"
+      absolute
+      class="content-overlay"
+    ></v-overlay>
 
     <v-footer
       v-if="footerType !== 'hidden'"
@@ -57,6 +67,7 @@ import AppContentContainer from '@core/layouts/components/app-content-container/
 import { getVuetify } from '@/@core/utils'
 import useAppConfig from '@core/@app-config/useAppConfig'
 import VerticalNavMenu from '@core/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
+import { useWindowScroll } from '@vueuse/core'
 
 export default {
   components: {
@@ -98,6 +109,8 @@ export default {
       },
     )
 
+    const { y: scrollY } = useWindowScroll()
+
     return {
       toggleVerticalNavMenu,
       menuIsVerticalNavMini,
@@ -105,6 +118,7 @@ export default {
       appBarType,
       footerType,
       appBarColor,
+      scrollY,
 
       // Template ref
       refAppBar,
@@ -143,6 +157,17 @@ $nav-drawer-mini-width: 56px;
     @media screen and (max-width: 1711px) {
       margin-left: 1.72rem !important;
       margin-right: 1.72rem !important;
+    }
+  }
+
+  .v-app-bar {
+    &.app-bar-static {
+      will-change: padding, background-color;
+      transition: padding 0.2s ease, background-color 0.18s ease;
+
+      ::v-deep > .v-toolbar__content {
+        padding: 0;
+      }
     }
   }
 }

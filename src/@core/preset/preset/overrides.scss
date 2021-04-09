@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import '~vuetify/src/components/VCard/_variables.scss';
 @import '~vuetify/src/components/VBadge/_variables.scss';
+@import './classes.scss';
 
 .demo-space-x {
   margin-top: -$card-spacer-content;
@@ -31,6 +32,10 @@
   .v-card__text,
   .v-card__actions {
     padding-top: 0 !important;
+
+    @at-root .v-card &:nth-child(1) {
+      padding-top: $card-spacer !important;
+    }
 
     &:last-child {
       padding-bottom: $card-spacer;

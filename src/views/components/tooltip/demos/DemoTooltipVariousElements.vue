@@ -2,15 +2,16 @@
   <div class="demo-space-x">
     <v-tooltip top>
       <template #activator="{ on, attrs }">
-        <v-icon
+        <v-btn
+          color="primary"
+          dark
           v-bind="attrs"
-          large
           v-on="on"
         >
-          {{ icons.mdiAccount }}
-        </v-icon>
+          Button
+        </v-btn>
       </template>
-      <span>Tooltip on Icon</span>
+      <span>Tooltip</span>
     </v-tooltip>
 
     <v-tooltip top>
@@ -28,16 +29,15 @@
 
     <v-tooltip top>
       <template #activator="{ on, attrs }">
-        <v-btn
-          color="primary"
-          dark
+        <v-icon
           v-bind="attrs"
+          large
           v-on="on"
         >
-          Button
-        </v-btn>
+          {{ icons.mdiAccount }}
+        </v-icon>
       </template>
-      <span>Tooltip</span>
+      <span>Tooltip on Icon</span>
     </v-tooltip>
   </div>
 </template>

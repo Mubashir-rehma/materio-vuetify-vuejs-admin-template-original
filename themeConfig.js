@@ -2,11 +2,11 @@ import { mdiCheckboxBlankCircleOutline } from '@mdi/js'
 
 const themeConfig = {
   app: {
-    name: 'Maxify',
+    name: 'Materio',
     logo: '/logo.svg',
     isDark: false,
     isRtl: false,
-    contentLayoutNav: 'horizontal',
+    contentLayoutNav: 'vertical',
     routeTransition: 'scroll-x-transition',
     contentWidth: 'boxed',
   },

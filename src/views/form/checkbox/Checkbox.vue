@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="match-height">
     <!-- basic -->
     <v-col
       cols="12"

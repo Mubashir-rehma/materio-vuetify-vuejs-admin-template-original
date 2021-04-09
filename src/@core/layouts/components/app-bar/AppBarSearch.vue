@@ -1,8 +1,14 @@
 <template>
-  <div>
+  <div @scroll.prevent.stop>
     <v-icon @click="shallShowFullSearchLocal = !shallShowFullSearchLocal">
       {{ icons.mdiMagnify }}
     </v-icon>
+
+    <!-- This is clever hack to hide scrolling 😉 -->
+    <v-dialog
+      v-model="shallShowFullSearchLocal"
+      hide-overlay
+    ></v-dialog>
     <v-expand-transition>
       <v-autocomplete
         v-show="shallShowFullSearchLocal"

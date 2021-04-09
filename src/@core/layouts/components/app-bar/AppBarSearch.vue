@@ -31,6 +31,50 @@
       >
         <!-- @blur="shallShowFullSearchLocal = false" -->
         <template #selection></template>
+        <template #item="{ item, on, attrs }">
+          <div
+            v-bind="attrs"
+            v-on="on"
+          >
+            <div v-if="getSearchResultType(item) === 'pages'">
+              <v-icon class="mr-4">
+                {{ item.icon }}
+              </v-icon>
+              <span>{{ item.title }}</span>
+            </div>
+            <div
+              v-else-if="getSearchResultType(item) === 'files'"
+              class="d-flex align-center py-2"
+            >
+              <v-icon class="mr-4">
+                {{ item.icon }}
+              </v-icon>
+              <div class="d-flex flex-column flex-grow-1">
+                <span class="d-block">{{ item.title }}</span>
+                <small class="text--secondary">by {{ item.by }}</small>
+              </div>
+              <small class="text--secondary">{{ item.size }}</small>
+            </div>
+
+            <!-- Contact -->
+            <div
+              v-else-if="getSearchResultType(item) === 'contacts'"
+              class="d-flex align-center py-2"
+            >
+              <v-avatar
+                class="mr-4"
+                size="40"
+              >
+                <v-img :src="item.avatar"></v-img>
+              </v-avatar>
+              <div class="d-flex flex-column flex-grow-1">
+                <span class="d-block">{{ item.title }}</span>
+                <small class="text--secondary">{{ item.email }}</small>
+              </div>
+              <small class="text--secondary">{{ item.time }}</small>
+            </div>
+          </div>
+        </template>
       </v-autocomplete>
     </v-expand-transition>
   </div>
@@ -82,10 +126,20 @@ export default {
       shallShowFullSearchLocal.value = true
     })
 
+    // Result type
+    const getSearchResultType = item => {
+      if (item.to !== undefined) return 'pages'
+      if (item.size !== undefined) return 'files'
+      if (item.email !== undefined) return 'contacts'
+
+      return null
+    }
+
     return {
       shallShowFullSearchLocal,
       searchQuery,
       valueSelected,
+      getSearchResultType,
 
       icons: {
         mdiMagnify,
@@ -124,12 +178,17 @@ export default {
   }
   // Content - Result
   .v-menu__content {
+    @include style-scroll-bar();
     // border-top-left-radius: 14px !important;
     // border-bottom-left-radius: 14px !important;
     border-radius: 12px !important;
     top: calc(64px + 0.625rem) !important;
 
-    @include style-scroll-bar();
+    .v-list-item {
+      > [id^='list-item'] {
+        width: 100%;
+      }
+    }
   }
 
   @at-root .v-app-bar.app-bar-shinked & {

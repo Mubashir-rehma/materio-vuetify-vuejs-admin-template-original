@@ -1,6 +1,7 @@
 <template>
   <v-treeview
     selectable
+    selected-color="primary"
     :items="items"
   ></v-treeview>
 </template>

@@ -84,6 +84,22 @@ export default [
             icon: mdiArchiveAlertOutline,
             to: 'components-list',
           },
+          {
+            title: 'Extra Components',
+            icon: mdiArchiveAlertOutline,
+            children: [
+              {
+                title: 'Snackbar',
+                icon: mdiArchiveAlertOutline,
+                to: 'components-snackbar',
+              },
+              {
+                title: 'Expansion Panels',
+                icon: mdiArchiveAlertOutline,
+                to: 'components-expansion-panel',
+              },
+            ],
+          },
         ],
       },
       {

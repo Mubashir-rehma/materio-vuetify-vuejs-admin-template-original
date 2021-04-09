@@ -2,6 +2,7 @@
   <v-list-item
     v-bind="navLinkProps(item)"
     class="vertical-nav-menu-link"
+    active-class="gradient-primary"
   >
     <v-list-item-icon>
       <v-icon :small="!item.icon">

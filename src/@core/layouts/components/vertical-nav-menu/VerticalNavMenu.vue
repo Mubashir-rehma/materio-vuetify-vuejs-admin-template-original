@@ -137,7 +137,7 @@ export default {
     &.v-list-item--active {
       &:not(.v-list-group__header) {
         color: white;
-        background-image: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
+        // background-image: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
       }
       &.v-list-group__header {
         background-color: rgba(

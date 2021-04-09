@@ -2,7 +2,6 @@
   <v-menu
     offset-x
     attach
-    absolute
   >
     <template v-slot:activator="{ on, attrs }">
       <v-list-item
@@ -108,6 +107,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

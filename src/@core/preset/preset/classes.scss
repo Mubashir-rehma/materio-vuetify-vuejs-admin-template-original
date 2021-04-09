@@ -4,3 +4,7 @@
     height: 100%;
   }
 }
+
+.gradient-primary {
+  background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
+}

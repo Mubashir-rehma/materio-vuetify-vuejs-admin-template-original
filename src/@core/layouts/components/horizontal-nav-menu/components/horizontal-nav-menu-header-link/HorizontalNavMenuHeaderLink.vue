@@ -4,6 +4,7 @@
     depressed
     rounded
     :to="{ name: item.to }"
+    active-class="gradient-primary"
   >
     {{ item.title }}
   </v-btn>

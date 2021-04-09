@@ -3,6 +3,7 @@
     offset-y
     eager
     attach
+    class="horizontal-nav-header-group"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-btn
@@ -11,6 +12,7 @@
         depressed
         rounded
         v-bind="attrs"
+        :class="isActive ? 'gradient-primary' : null"
         v-on="on"
       >
         {{ item.title }}
@@ -95,3 +97,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.horizontal-nav-header-group {
+  .v-menu__content {
+    contain: none !important;
+    overflow: visible !important;
+  }
+}
+</style>

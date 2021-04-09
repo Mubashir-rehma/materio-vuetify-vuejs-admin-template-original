@@ -3,6 +3,13 @@
 @import '~vuetify/src/components/VBadge/_variables.scss';
 @import './classes.scss';
 
+// Remove outline from button on focus
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
 .demo-space-x {
   margin-top: -$card-spacer-content;
   & > * {

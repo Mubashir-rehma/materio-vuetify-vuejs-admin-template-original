@@ -81,3 +81,18 @@ button {
     width: $badge-font-size;
   }
 }
+
+// Vuetify Fix: Calendar default color should be primary but they add accent class
+.v-date-picker-table {
+  .v-date-picker-table__current,
+  .v-btn--active {
+    &.accent {
+      background-color: var(--v-primary-base) !important;
+      border-color: var(--v-primary-base) !important;
+    }
+    &.accent--text {
+      color: var(--v-primary-base) !important;
+      caret-color: var(--v-primary-base) !important;
+    }
+  }
+}

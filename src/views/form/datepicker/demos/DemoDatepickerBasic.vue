@@ -1,10 +1,5 @@
 <template>
-  <v-row
-    justify="center"
-    class="mt-1"
-  >
-    <v-date-picker v-model="picker"></v-date-picker>
-  </v-row>
+  <v-date-picker v-model="picker"></v-date-picker>
 </template>
 
 <script>

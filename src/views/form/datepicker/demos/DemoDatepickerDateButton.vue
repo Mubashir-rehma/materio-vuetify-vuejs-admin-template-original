@@ -1,11 +1,9 @@
 <template>
-  <v-row justify="center">
-    <v-date-picker
-      v-model="date"
-      @contextmenu:year="contextMenu"
-      @dblclick:date="dblClick"
-    ></v-date-picker>
-  </v-row>
+  <v-date-picker
+    v-model="date"
+    @contextmenu:year="contextMenu"
+    @dblclick:date="dblClick"
+  ></v-date-picker>
 </template>
 
 <script>

@@ -40,15 +40,15 @@
     <!-- Readonly and disabled-->
     <v-col cols="12">
       <app-card-code
-        title="Readonly"
-        :code="codeSnippets.datepickerReadonly"
+        title="Readonly And Disabled"
+        :code="codeSnippets.datepickerReadonlyAndDisabled"
       >
         <v-card-text>
-          Selecting new date could be disabled by adding <code>readonly</code> prop.
+          Selecting new date could be disabled by adding <code>readonly</code> or <code>disabled</code> prop.
         </v-card-text>
 
         <v-card-text>
-          <demo-datepicker-readonly></demo-datepicker-readonly>
+          <demo-datepicker-readonly-and-disabled></demo-datepicker-readonly-and-disabled>
         </v-card-text>
       </app-card-code>
     </v-col>
@@ -259,6 +259,22 @@
         </v-card-text>
       </app-card-code>
     </v-col>
+
+    <!-- Internationalization -->
+    <v-col cols="12">
+      <app-card-code
+        title="Internationalization"
+        :code="codeSnippets.datepickerInternationalization"
+      >
+        <v-card-text>
+          The date picker supports internationalization through the JavaScript Date object. Specify a BCP 47 language tag using the <code>locale</code> prop, and then set the first day of the week with the <code>first-day-of-week</code> prop.
+        </v-card-text>
+
+        <v-card-text>
+          <demo-datepicker-internationalization></demo-datepicker-internationalization>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
   </v-row>
 </template>
 
@@ -269,7 +285,7 @@ import { defineComponent } from '@vue/composition-api'
 // demos
 import DemoDatepickerBasic from './demos/DemoDatepickerBasic.vue'
 import DemoDatepickerColors from './demos/DemoDatepickerColors.vue'
-import DemoDatepickerReadonly from './demos/DemoDatepickerReadonly.vue'
+import DemoDatepickerReadonlyAndDisabled from './demos/DemoDatepickerReadonlyAndDisabled.vue'
 import DemoDatepickerAllowedDates from './demos/DemoDatepickerAllowedDates.vue'
 import DemoDatepickerIcons from './demos/DemoDatepickerIcons.vue'
 import DemoDatepickerMultiple from './demos/DemoDatepickerMultiple.vue'
@@ -281,12 +297,13 @@ import DemoDatepickerDateButton from './demos/DemoDatepickerDateButton.vue'
 import DemoDatepickerBirthdayPicker from './demos/DemoDatepickerBirthdayPicker.vue'
 import DemoDatepickerDialogAndMenu from './demos/DemoDatepickerDialogAndMenu.vue'
 import DemoDatepickerFormatting from './demos/DemoDatepickerFormatting.vue'
+import DemoDatepickerInternationalization from './demos/DemoDatepickerInternationalization.vue'
 
 // code
 import {
   datepickerBasic,
   datepickerColors,
-  datepickerReadonly,
+  datepickerReadonlyAndDisabled,
   datepickerAllowedDates,
   datepickerIcons,
   datepickerMultiple,
@@ -298,6 +315,7 @@ import {
   datepickerBirthdayPicker,
   datepickerDialogAndMenu,
   datepickerFormatting,
+  datepickerInternationalization,
 } from './demos/code'
 
 export default defineComponent({
@@ -305,7 +323,7 @@ export default defineComponent({
     AppCardCode,
     DemoDatepickerBasic,
     DemoDatepickerColors,
-    DemoDatepickerReadonly,
+    DemoDatepickerReadonlyAndDisabled,
     DemoDatepickerAllowedDates,
     DemoDatepickerIcons,
     DemoDatepickerMultiple,
@@ -317,13 +335,14 @@ export default defineComponent({
     DemoDatepickerBirthdayPicker,
     DemoDatepickerDialogAndMenu,
     DemoDatepickerFormatting,
+    DemoDatepickerInternationalization,
   },
   setup() {
     return {
       codeSnippets: {
         datepickerBasic,
         datepickerColors,
-        datepickerReadonly,
+        datepickerReadonlyAndDisabled,
         datepickerAllowedDates,
         datepickerIcons,
         datepickerMultiple,
@@ -335,6 +354,7 @@ export default defineComponent({
         datepickerBirthdayPicker,
         datepickerDialogAndMenu,
         datepickerFormatting,
+        datepickerInternationalization,
       },
     }
   },

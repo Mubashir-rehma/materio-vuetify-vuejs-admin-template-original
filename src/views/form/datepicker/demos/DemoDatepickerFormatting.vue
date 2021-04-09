@@ -32,7 +32,7 @@
           @input="menu1 = false"
         ></v-date-picker>
       </v-menu>
-      <p class="mb-0">
+      <p class="mb-0 mt-4">
         Date in ISO format: <strong>{{ date }}</strong>
       </p>
     </v-col>
@@ -68,7 +68,7 @@
           @input="menu2 = false"
         ></v-date-picker>
       </v-menu>
-      <p class="mb-0">
+      <p class="mb-0 mt-4">
         Date in ISO format: <strong>{{ date }}</strong>
       </p>
     </v-col>
@@ -76,9 +76,8 @@
 </template>
 
 <script>
-import {
-  computed, defineComponent, ref, watch,
-} from '@vue/composition-api'
+// eslint-disable-next-line object-curly-newline
+import { computed, defineComponent, ref, watch } from '@vue/composition-api'
 import { mdiCalendar } from '@mdi/js'
 
 export default defineComponent({

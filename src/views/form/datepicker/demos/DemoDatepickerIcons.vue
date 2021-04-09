@@ -1,15 +1,10 @@
 <template>
-  <v-row
-    justify="center"
-    class="mt-1"
-  >
-    <v-date-picker
-      v-model="picker"
-      :year-icon="icons.mdiCalendarBlank"
-      :prev-icon="icons.mdiSkipPrevious"
-      :next-icon="icons.mdiSkipNext"
-    ></v-date-picker>
-  </v-row>
+  <v-date-picker
+    v-model="picker"
+    :year-icon="icons.mdiCalendarBlank"
+    :prev-icon="icons.mdiSkipPrevious"
+    :next-icon="icons.mdiSkipNext"
+  ></v-date-picker>
 </template>
 
 <script>

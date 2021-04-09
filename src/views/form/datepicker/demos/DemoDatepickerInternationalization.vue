@@ -3,35 +3,34 @@
     <v-col
       cols="12"
       md="6"
-      class="text-center"
     >
       <v-date-picker
-        v-model="date"
-        readonly
+        v-model="picker"
+        :first-day-of-week="0"
+        locale="zh-cn"
       ></v-date-picker>
     </v-col>
-
     <v-col
       cols="12"
       md="6"
-      class="text-center"
     >
       <v-date-picker
-        v-model="date"
-        disabled
+        v-model="picker"
+        :first-day-of-week="1"
+        locale="sv-se"
       ></v-date-picker>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 
 export default defineComponent({
   setup() {
-    const date = new Date().toISOString().substr(0, 10)
+    const picker = ref(new Date().toISOString().substr(0, 10))
 
-    return { date }
+    return { picker }
   },
 })
 </script>

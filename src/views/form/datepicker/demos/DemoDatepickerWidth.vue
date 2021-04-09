@@ -1,10 +1,8 @@
 <template>
-  <v-row align="center">
-    <v-date-picker
-      v-model="date"
-      full-width
-    ></v-date-picker>
-  </v-row>
+  <v-date-picker
+    v-model="date"
+    full-width
+  ></v-date-picker>
 </template>
 
 <script>

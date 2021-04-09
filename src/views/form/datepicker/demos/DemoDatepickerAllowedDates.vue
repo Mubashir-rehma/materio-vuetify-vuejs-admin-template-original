@@ -1,13 +1,11 @@
 <template>
-  <v-row justify="center">
-    <v-date-picker
-      v-model="date"
-      :allowed-dates="allowedDates"
-      class="mt-4"
-      min="2016-06-15"
-      max="2018-03-20"
-    ></v-date-picker>
-  </v-row>
+  <v-date-picker
+    v-model="date"
+    :allowed-dates="allowedDates"
+    class="mt-4"
+    min="2016-06-15"
+    max="2018-03-20"
+  ></v-date-picker>
 </template>
 
 <script>

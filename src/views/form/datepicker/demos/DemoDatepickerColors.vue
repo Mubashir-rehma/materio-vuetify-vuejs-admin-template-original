@@ -1,13 +1,8 @@
 <template>
-  <v-row
-    justify="space-around"
-    class="mt-1"
-  >
-    <v-date-picker
-      v-model="picker"
-      color="success"
-    ></v-date-picker>
-  </v-row>
+  <v-date-picker
+    v-model="picker"
+    color="success"
+  ></v-date-picker>
 </template>
 
 <script>

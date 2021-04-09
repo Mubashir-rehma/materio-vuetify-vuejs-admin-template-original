@@ -13,7 +13,7 @@
           <v-icon v-text="item.icon"></v-icon>
         </v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
         </v-list-item-content>
         <v-list-item-icon>
           <v-icon v-text="icons.mdiChevronRight"></v-icon>
@@ -44,6 +44,7 @@ import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/
 import { mdiChevronRight } from '@mdi/js'
 import { ref, computed, inject } from '@vue/composition-api'
 import { useMouseInElement } from '@vueuse/core'
+import { useUtils } from '@core/libs/i18n'
 import useHorizontalNavMenuGroup from './useHorizontalNavMenuGroup'
 
 export default {
@@ -84,6 +85,9 @@ export default {
       () => !(isMouseOutsideOfContent.value && isMouseOutsideOfActivator.value) || isParentMenuOpen.value,
     )
 
+    // i18n
+    const { t } = useUtils()
+
     return {
       refChildDropdown,
       openChildDropdownOnLeft,
@@ -98,6 +102,9 @@ export default {
       refContent,
       isMenuOpen,
       isParentMenuOpen,
+
+      // i18n
+      t,
 
       // icons
       icons: {

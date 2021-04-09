@@ -15,7 +15,7 @@
         :class="isActive ? 'gradient-primary' : null"
         v-on="on"
       >
-        {{ item.title }}
+        {{ t(item.title) }}
         <v-icon>
           {{ icons.mdiChevronDown }}
         </v-icon>
@@ -43,6 +43,7 @@ import { useMouseInElement } from '@vueuse/core'
 
 import HorizontalNavMenuGroup from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-group/HorizontalNavMenuGroup.vue'
 import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-link/HorizontalNavMenuLink.vue'
+import { useUtils } from '@core/libs/i18n'
 import useHorizontalNavMenuHeaderGroup from './useHorizontalNavMenuHeaderGroup'
 
 export default {
@@ -74,6 +75,9 @@ export default {
     const isMenuOpen = computed(() => !(isMouseOutsideOfContent.value && isMouseOutsideOfActivator.value))
     provide('isParentMenuOpen', isMenuOpen)
 
+    // i18n
+    const { t } = useUtils()
+
     return {
       isOpen,
       isActive,
@@ -88,6 +92,9 @@ export default {
       isMouseOutsideOfActivator,
       isMouseOutsideOfContent,
       isMenuOpen,
+
+      // i18n
+      t,
 
       // icons
       icons: {

@@ -10,7 +10,7 @@
       </v-icon>
     </v-list-item-icon>
 
-    <v-list-item-title>{{ item.title }}</v-list-item-title>
+    <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
     <v-list-item-action v-if="item.badge">
       <v-badge
         :color="item.badgeColor"
@@ -25,6 +25,7 @@
 <script>
 import useNav from '@/@core/layouts/composable/useNav'
 import themeConfig from '@themeConfig'
+import { useUtils } from '@core/libs/i18n'
 
 export default {
   props: {
@@ -35,10 +36,14 @@ export default {
   },
   setup() {
     const { navLinkProps } = useNav()
+    const { t } = useUtils()
 
     return {
       navLinkProps,
       alternateIcon: themeConfig.menu.groupChildIcon,
+
+      // i18n
+      t,
     }
   },
 }

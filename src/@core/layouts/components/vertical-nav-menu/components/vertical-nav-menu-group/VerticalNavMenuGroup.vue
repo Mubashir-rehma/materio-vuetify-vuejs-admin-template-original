@@ -7,7 +7,7 @@
     @click="updateGroupOpen(!isOpen)"
   >
     <template #activator>
-      <v-list-item-title>{{ item.title }}</v-list-item-title>
+      <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
 
       <v-list-item-action v-if="item.badge">
         <v-badge
@@ -41,6 +41,7 @@ import useVerticalNavMenu from '@/@core/layouts/composable/vertical-nav/useVerti
 import useNav from '@/@core/layouts/composable/useNav'
 import useAppConfig from '@core/@app-config/useAppConfig'
 import useVerticalNavGroup from '@core/layouts/composable/vertical-nav/useVerticalNavGroup'
+import { useUtils } from '@core/libs/i18n'
 
 // Other
 import themeConfig from '@themeConfig'
@@ -103,6 +104,9 @@ export default {
       }
     })
 
+    // I18n
+    const { t } = useUtils()
+
     return {
       resolveNavItemComponent,
       isNavGroupActive,
@@ -112,6 +116,9 @@ export default {
       isOpen,
       isActive,
       updateGroupOpen,
+
+      // i18n
+      t,
     }
   },
 }

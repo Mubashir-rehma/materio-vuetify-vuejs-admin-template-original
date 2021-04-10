@@ -84,8 +84,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        class="white--text"
-        color="green darken-1"
+        color="success"
         depressed
       >
         Save
@@ -98,6 +97,8 @@
 </template>
 
 <script>
+import axios from '@axios'
+import { computed, defineComponent, ref } from '@vue/composition-api'
 import {
   mdiContentSave,
   mdiBeer,
@@ -108,29 +109,58 @@ import {
   mdiBookmarkMinus,
 } from '@mdi/js'
 
-export default {
-  data: () => ({
-    breweries: [],
-    isLoading: false,
-    tree: [],
-    types: [],
-    icons: {
-      mdiContentSave,
-      mdiBeer,
-      mdiSilverware,
-      mdiChevronDown,
-      mdiBookmark,
-      mdiBookmarkOutline,
-      mdiBookmarkMinus,
-    },
-  }),
+export default defineComponent({
+  setup() {
+    const breweries = ref([])
+    const isLoading = ref(false)
+    const tree = ref([])
+    const types = ref([])
 
-  computed: {
-    items() {
-      const children = this.types.map(type => ({
+    const fetch = () => {
+      // eslint-disable-next-line no-useless-return
+      if (breweries.value.length) return
+
+      // eslint-disable-next-line consistent-return
+      return (
+        axios
+          .get('https://api.openbrewerydb.org/breweries')
+          .then(res => {
+            console.log(res.data)
+
+            return res.data
+          })
+          // eslint-disable-next-line no-return-assign
+          .then(data => {
+            console.log(data)
+
+            // eslint-disable-next-line no-return-assign
+            return (breweries.value = data)
+          })
+          .catch(err => console.log(err))
+      )
+    }
+    const getName = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`
+
+    const getChildren = type => {
+      const breweriesClone = []
+
+      // eslint-disable-next-line no-restricted-syntax
+      for (const brewery of breweries.value) {
+        // eslint-disable-next-line no-continue
+        if (brewery.brewery_type !== type) continue
+
+        breweriesClone.push({
+          ...brewery,
+          name: getName(brewery.name),
+        })
+      }
+    }
+
+    const items = computed(() => {
+      const children = types.value.map(type => ({
         id: type,
-        name: this.getName(type),
-        children: this.getChildren(type),
+        name: getName(type),
+        children: getChildren(type),
       }))
 
       return [
@@ -140,58 +170,30 @@ export default {
           children,
         },
       ]
-    },
-    shouldShowTree() {
-      return this.breweries.length > 0 && !this.isLoading
-    },
+    })
+
+    const shouldShowTree = computed(() => breweries.value.length > 0 && !isLoading.value)
+
+    return {
+      breweries,
+      isLoading,
+      tree,
+      types,
+      items,
+      shouldShowTree,
+      fetch,
+      getName,
+      getChildren,
+      icons: {
+        mdiContentSave,
+        mdiBeer,
+        mdiSilverware,
+        mdiChevronDown,
+        mdiBookmark,
+        mdiBookmarkOutline,
+        mdiBookmarkMinus,
+      },
+    }
   },
-
-  watch: {
-    breweries(val) {
-      this.types = val
-        .reduce((acc, cur) => {
-          const type = cur.brewery_type
-
-          if (!acc.includes(type)) acc.push(type)
-
-          return acc
-        }, [])
-        .sort()
-    },
-  },
-
-  methods: {
-    fetch() {
-      if (this.breweries.length) return
-
-      // eslint-disable-next-line consistent-return
-      return (
-        fetch('https://api.openbrewerydb.org/breweries')
-          .then(res => res.json())
-          // eslint-disable-next-line no-return-assign
-          .then(data => (this.breweries = data))
-          .catch(err => console.log(err))
-      )
-    },
-    getChildren(type) {
-      const breweries = []
-
-      // eslint-disable-next-line no-restricted-syntax
-      for (const brewery of this.breweries) {
-        // eslint-disable-next-line no-continue
-        if (brewery.brewery_type !== type) continue
-
-        breweries.push({
-          ...brewery,
-          name: this.getName(brewery.name),
-        })
-      }
-
-      return breweries.sort((a, b) => (a.name > b.name ? 1 : -1))
-    },
-    getName(name) {
-      return `${name.charAt(0).toUpperCase()}${name.slice(1)}`
-    },
-  },
-}
+})
 </script>

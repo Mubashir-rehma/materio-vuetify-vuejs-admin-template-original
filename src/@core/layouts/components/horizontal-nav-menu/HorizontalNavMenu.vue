@@ -1,5 +1,5 @@
 <template>
-  <ul class="horizontal-nav-menu">
+  <ul class="horizontal-nav-menu pl-0">
     <component
       :is="resolveNavHeaderComponent(item)"
       v-for="item in navMenuItems"
@@ -37,3 +37,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.horizontal-nav-menu {
+  > *:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+</style>

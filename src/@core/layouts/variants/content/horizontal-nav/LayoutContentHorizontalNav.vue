@@ -5,10 +5,10 @@
       app
       height="60"
       :absolute="appBarType === 'static'"
+      :class="{'app-system-bar-boxed': appContentWidth === 'boxed'}"
+      class="app-system-bar"
     >
-      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Navbar</v-toolbar-title>
+      <slot name="navbar"></slot>
     </v-system-bar>
 
     <!-- Horizontal Nav Menu -->
@@ -18,9 +18,10 @@
       app
       :absolute="appBarType === 'static'"
     >
-      <v-app-bar-nav-icon v-if="$vuetify.breakpoint.mdAndDown"></v-app-bar-nav-icon>
-
-      <horizontal-nav-menu :nav-menu-items="navMenuItems"></horizontal-nav-menu>
+      <horizontal-nav-menu
+        :nav-menu-items="navMenuItems"
+        :class="{'horizontal-nav-menu-boxed mx-auto': appContentWidth === 'boxed'}"
+      ></horizontal-nav-menu>
     </v-app-bar>
 
     <slot name="v-app-content"></slot>
@@ -62,12 +63,14 @@ export default {
     },
   },
   setup() {
-    const { menuIsMenuHidden, appBarType, footerType } = useAppConfig()
+    // eslint-disable-next-line object-curly-newline
+    const { menuIsMenuHidden, appBarType, footerType, appContentWidth } = useAppConfig()
 
     return {
       menuIsMenuHidden,
       appBarType,
       footerType,
+      appContentWidth,
     }
   },
 }
@@ -81,5 +84,49 @@ export default {
   &.app-content-container-boxed {
     padding: $boxed-content-padding-horizontal-navigation-menu;
   }
+}
+
+.v-application {
+  // System bar
+  .app-system-bar {
+    padding: 0 !important;
+    &.app-system-bar-boxed {
+      ::v-deep > div:first-child {
+        padding: $boxed-content-padding-horizontal-navigation-menu !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        color: red !important;
+      }
+    }
+    ::v-deep > div:first-child {
+      padding-left: $content-padding-vertical-navigation-menu !important;
+      padding-right: $content-padding-vertical-navigation-menu !important;
+    }
+  }
+
+  // App Bar
+  .v-app-bar {
+    ::v-deep .v-toolbar__content {
+      padding: 0;
+    }
+
+    .horizontal-nav-menu {
+      padding-left: $content-padding-vertical-navigation-menu !important;
+      padding-right: $content-padding-vertical-navigation-menu !important;
+
+      &.horizontal-nav-menu-boxed {
+        width: 1440px;
+        padding: $boxed-content-padding-horizontal-navigation-menu !important;
+      }
+    }
+  }
+
+  // @media screen and (max-width: 1711px) {
+  //   margin-left: 1.72rem !important;
+  //   margin-right: 1.72rem !important;
+  // }
 }
 </style>

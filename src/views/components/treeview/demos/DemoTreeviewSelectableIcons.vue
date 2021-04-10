@@ -98,7 +98,8 @@
 
 <script>
 import axios from '@axios'
-import { computed, defineComponent, ref } from '@vue/composition-api'
+// eslint-disable-next-line object-curly-newline
+import { computed, defineComponent, ref, watch } from '@vue/composition-api'
 import {
   mdiContentSave,
   mdiBeer,
@@ -117,43 +118,33 @@ export default defineComponent({
     const types = ref([])
 
     const fetch = () => {
-      // eslint-disable-next-line no-useless-return
-      if (breweries.value.length) return
+      if (breweries.value.length) return null
 
-      // eslint-disable-next-line consistent-return
-      return (
-        axios
-          .get('https://api.openbrewerydb.org/breweries')
-          .then(res => {
-            console.log(res.data)
-
-            return res.data
-          })
-          // eslint-disable-next-line no-return-assign
-          .then(data => {
-            console.log(data)
-
-            // eslint-disable-next-line no-return-assign
-            return (breweries.value = data)
-          })
-          .catch(err => console.log(err))
-      )
+      return axios
+        .get('https://api.openbrewerydb.org/breweries')
+        .then(response => {
+          breweries.value = response.data
+        })
+        .catch(err => console.error(err))
     }
+
     const getName = name => `${name.charAt(0).toUpperCase()}${name.slice(1)}`
 
     const getChildren = type => {
-      const breweriesClone = []
+      const breweriesLocal = []
 
       // eslint-disable-next-line no-restricted-syntax
       for (const brewery of breweries.value) {
         // eslint-disable-next-line no-continue
         if (brewery.brewery_type !== type) continue
 
-        breweriesClone.push({
+        breweriesLocal.push({
           ...brewery,
           name: getName(brewery.name),
         })
       }
+
+      return breweriesLocal.sort((a, b) => (a.name > b.name ? 1 : -1))
     }
 
     const items = computed(() => {
@@ -173,6 +164,18 @@ export default defineComponent({
     })
 
     const shouldShowTree = computed(() => breweries.value.length > 0 && !isLoading.value)
+
+    watch(breweries, val => {
+      types.value = val
+        .reduce((acc, cur) => {
+          const type = cur.brewery_type
+
+          if (!acc.includes(type)) acc.push(type)
+
+          return acc
+        }, [])
+        .sort()
+    })
 
     return {
       breweries,

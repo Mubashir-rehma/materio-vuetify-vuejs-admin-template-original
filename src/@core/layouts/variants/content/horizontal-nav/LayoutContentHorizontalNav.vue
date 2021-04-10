@@ -98,7 +98,6 @@ export default {
         max-width: 1440px;
         margin-left: auto;
         margin-right: auto;
-        color: red !important;
       }
     }
     ::v-deep > div:first-child {

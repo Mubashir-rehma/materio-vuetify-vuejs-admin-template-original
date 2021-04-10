@@ -10,7 +10,9 @@
         v-on="on"
       >
         <v-list-item-icon>
-          <v-icon v-text="item.icon"></v-icon>
+          <v-icon :small="!item.icon">
+            {{ item.icon || alternateIcon }}
+          </v-icon>
         </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
@@ -45,6 +47,7 @@ import { mdiChevronRight } from '@mdi/js'
 import { ref, computed, inject } from '@vue/composition-api'
 import { useMouseInElement } from '@vueuse/core'
 import { useUtils } from '@core/libs/i18n'
+import themeConfig from '@themeConfig'
 import useHorizontalNavMenuGroup from './useHorizontalNavMenuGroup'
 
 export default {
@@ -102,6 +105,9 @@ export default {
       refContent,
       isMenuOpen,
       isParentMenuOpen,
+
+      // alternate icons
+      alternateIcon: themeConfig.menu.groupChildIcon,
 
       // i18n
       t,

@@ -15,6 +15,12 @@
         :class="isActive ? 'gradient-primary' : null"
         v-on="on"
       >
+        <v-icon
+          dark
+          left
+        >
+          {{ item.icon }}
+        </v-icon>
         {{ t(item.title) }}
         <v-icon>
           {{ icons.mdiChevronDown }}

@@ -1,255 +1,171 @@
+// eslint-disable-next-line object-curly-newline
+import { mdiArchiveOutline, mdiCircleOutline, mdiContentCopy } from '@mdi/js'
+
 export default [
   {
-    header: 'User Interface',
-    icon: 'LayersIcon',
+    title: 'Components',
+    icon: mdiArchiveOutline,
     children: [
       {
-        title: 'Typography',
-        route: 'ui-typography',
-        icon: 'TypeIcon',
+        icons: mdiCircleOutline,
+        title: 'Alert',
+        to: 'components-alert',
       },
       {
-        title: 'Colors',
-        route: 'ui-colors',
-        icon: 'DropletIcon',
+        icons: mdiCircleOutline,
+        title: 'Avatar',
+        to: 'components-avatar',
       },
       {
-        title: 'Feather',
-        route: 'ui-feather',
-        icon: 'EyeIcon',
+        icons: mdiCircleOutline,
+        title: 'Badge',
+        to: 'components-badge',
       },
       {
-        title: 'Cards',
-        icon: 'CreditCardIcon',
-        children: [
-          {
-            title: 'Basic',
-            route: 'card-basic',
-          },
-          {
-            title: 'Advance',
-            route: 'card-advance',
-          },
-          {
-            title: 'Statistic',
-            route: 'card-statistic',
-          },
-          {
-            title: 'Analytic',
-            route: 'card-analytic',
-          },
-          {
-            title: 'Card Action',
-            route: 'card-action',
-          },
-        ],
+        icons: mdiCircleOutline,
+        title: 'Button',
+        to: 'components-button',
       },
       {
-        title: 'Components',
-        icon: 'ArchiveIcon',
-        children: [
-          {
-            title: 'Alert',
-            route: 'components-alert',
-          },
-          {
-            title: 'Aspect',
-            route: 'components-aspect',
-          },
-          {
-            title: 'Avatar',
-            route: 'components-avatar',
-          },
-          {
-            title: 'Badge',
-            route: 'components-badge',
-          },
-          {
-            title: 'Breadcrumb',
-            route: 'components-breadcrumb',
-          },
-          {
-            title: 'Button',
-            route: 'components-button',
-          },
-          {
-            title: 'Button Group',
-            route: 'components-button-group',
-          },
-          {
-            title: 'Button Toolbar',
-            route: 'components-button-toolbar',
-          },
-          {
-            title: 'Calendar',
-            route: 'components-calendar',
-          },
-          {
-            title: 'Carousel',
-            route: 'components-carousel',
-          },
-          {
-            title: 'Collapse',
-            route: 'components-collapse',
-          },
-          {
-            title: 'Dropdown',
-            route: 'components-dropdown',
-          },
-          {
-            title: 'Embed',
-            route: 'components-embed',
-          },
-          {
-            title: 'Image',
-            route: 'components-image',
-          },
-          {
-            title: 'List Group',
-            route: 'components-list-group',
-          },
-          {
-            title: 'Media Objects',
-            route: 'components-media',
-          },
-          {
-            title: 'Modal',
-            route: 'components-modal',
-          },
-          {
-            title: 'Nav',
-            route: 'components-nav',
-          },
-          {
-            title: 'Overlay',
-            route: 'components-overlay',
-          },
-          {
-            title: 'Pagination',
-            route: 'components-pagination',
-          },
-          {
-            title: 'Pagination Nav',
-            route: 'components-pagination-nav',
-          },
-          {
-            title: 'Pill',
-            route: 'components-pill',
-          },
-          {
-            title: 'Pill Badge',
-            route: 'components-pill-badge',
-          },
-          {
-            title: 'Popover',
-            route: 'components-popover',
-          },
-          {
-            title: 'Progress',
-            route: 'components-progress',
-          },
-          {
-            title: 'Sidebar',
-            route: 'components-sidebar',
-          },
-          {
-            title: 'spinner',
-            route: 'components-spinner',
-          },
-          {
-            title: 'Tab',
-            route: 'components-tab',
-          },
-          {
-            title: 'Time',
-            route: 'components-time',
-          },
-          {
-            title: 'Timeline',
-            route: 'components-timeline',
-          },
-          {
-            title: 'Toasts',
-            route: 'components-toasts',
-          },
-          {
-            title: 'Tooltip',
-            route: 'components-tooltip',
-          },
-        ],
+        icons: mdiCircleOutline,
+        title: 'Menu',
+        to: 'components-menu',
       },
       {
-        title: 'Extensions',
-        icon: 'PlusCircleIcon',
-        children: [
-          {
-            title: 'Sweet Alert',
-            route: 'extensions-sweet-alert',
-          },
-          {
-            title: 'Toastification',
-            route: 'extensions-toastification',
-          },
-          {
-            title: 'Slider',
-            route: 'extensions-slider',
-          },
-          {
-            title: 'Drag & Drop',
-            route: 'extensions-drag-and-drop',
-          },
-
-          {
-            title: 'Tour',
-            route: 'extensions-tour',
-          },
-
-          {
-            title: 'Clipboard',
-            route: 'extensions-clipboard',
-          },
-          {
-            title: 'Context Menu',
-            route: 'extensions-context-menu',
-          },
-
-          {
-            title: 'Swiper',
-            route: 'extensions-swiper',
-          },
-
-          // {
-          //   title: 'Tree',
-          //   route: 'extensions-tree',
-          // },
-
-          {
-            title: 'I18n',
-            route: 'extensions-i18n',
-          },
-        ],
+        icons: mdiCircleOutline,
+        title: 'Expansion Panel',
+        to: 'components-expansion-panel',
       },
       {
-        title: 'Page Layouts',
-        icon: 'LayoutIcon',
-        children: [
-          {
-            title: 'Layout Boxed',
-            route: 'page-layout-boxed-layout',
-          },
-          {
-            title: 'Without Menu',
-            route: 'page-layout-without-menu',
-          },
-          {
-            title: 'Layout Empty',
-            route: 'page-layout-layout-empty',
-          },
-          {
-            title: 'Layout Blank',
-            route: 'page-layout-layout-blank',
-          },
-        ],
+        icons: mdiCircleOutline,
+        title: 'List',
+        to: 'components-list',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Dialog',
+        to: 'components-dialog',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Pagination',
+        to: 'components-pagination',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Tabs',
+        to: 'components-tabs',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Tooltip',
+        to: 'components-tooltip',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Chip',
+        to: 'components-chip',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Snackbar',
+        to: 'components-snackbar',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Treeview',
+        to: 'components-treeview',
+      },
+    ],
+  },
+  {
+    title: 'Form',
+    icon: mdiContentCopy,
+    children: [
+      {
+        icons: mdiCircleOutline,
+        title: 'Autocomplete',
+        to: 'form-autocomplete',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Checkbox',
+        to: 'form-checkbox',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Combobox',
+        to: 'form-combobox',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'File Input',
+        to: 'form-file-input',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Radio',
+        to: 'form-radio',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Range Slider',
+        to: 'form-range-slider',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Select',
+        to: 'form-select',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Slider',
+        to: 'form-slider',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Switch',
+        to: 'form-switch',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Textarea',
+        to: 'form-textarea',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Textfield',
+        to: 'form-textfield',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Form Layout',
+        to: 'form-layout',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Form validation',
+        to: 'form-validation',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Form datepicker',
+        to: 'form-datepicker',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Form Month Picker',
+        to: 'form-month-picker',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Form Time Picker',
+        to: 'form-time-picker',
+      },
+      {
+        icons: mdiCircleOutline,
+        title: 'Rating',
+        to: 'form-rating',
       },
     ],
   },

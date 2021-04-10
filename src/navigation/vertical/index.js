@@ -30,8 +30,8 @@ tag
 tagVariant
 
 */
+import chartsAndMaps from './charts-and-maps'
 import uiElements from './ui-elements'
-import chartsAndMap from './charts-and-map'
 
 // Array of sections
-export default [...uiElements, ...chartsAndMap]
+export default [...uiElements, ...chartsAndMaps]

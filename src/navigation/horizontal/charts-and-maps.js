@@ -1,14 +1,19 @@
-import { mdiChartPie, mdiCircleOutline } from '@mdi/js'
+import { mdiChartPie } from '@mdi/js'
 
 export default [
   {
-    title: 'Charts',
+    title: 'Charts & Maps',
     icon: mdiChartPie,
     children: [
       {
-        icons: mdiCircleOutline,
-        title: 'Apex Chart',
-        to: 'apex-chart',
+        title: 'Charts',
+        icon: mdiChartPie,
+        children: [
+          {
+            title: 'Apex Chart',
+            to: 'apex-chart',
+          },
+        ],
       },
     ],
   },

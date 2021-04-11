@@ -1,115 +1,86 @@
+// eslint-disable-next-line object-curly-newline
+import { mdiCheckboxMarkedCircleOutline, mdiCheckboxMarkedOutline, mdiContentCopy } from '@mdi/js'
+
 export default [
   {
-    header: 'Forms & Tables',
-    icon: 'EditIcon',
+    title: 'Forms & Tables',
+    icon: mdiCheckboxMarkedOutline,
     children: [
       {
-        title: 'Forms Elements',
-        icon: 'CopyIcon',
+        title: 'Forms elements',
+        icon: mdiContentCopy,
         children: [
           {
-            title: 'Input',
-            route: 'forms-element-input',
-          },
-          {
-            title: 'Input Group',
-            route: 'forms-element-input-group',
-          },
-          {
-            title: 'Input Mask',
-            route: 'forms-element-input-mask',
-          },
-          {
-            title: 'Textarea',
-            route: 'forms-element-textarea',
-          },
-          {
-            title: 'Auto Suggest',
-            route: 'extensions-auto-suggest',
+            title: 'Autocomplete',
+            to: 'form-autocomplete',
           },
           {
             title: 'Checkbox',
-            route: 'forms-element-checkbox',
+            to: 'form-checkbox',
           },
           {
-            title: 'Radio',
-            route: 'forms-element-radio',
-          },
-          {
-            title: 'Switch',
-            route: 'forms-element-switch',
-          },
-          {
-            title: 'Select',
-            route: 'forms-element-select',
-          },
-          {
-            title: 'Vue Select',
-            route: 'extensions-vue-select',
-          },
-          {
-            title: 'Spinbutton',
-            route: 'forms-element-spinbutton',
+            title: 'Combobox',
+            to: 'form-combobox',
           },
           {
             title: 'File Input',
-            route: 'forms-element-file-input',
+            to: 'form-file-input',
           },
           {
-            title: 'Quill Editor',
-            route: 'extensions-quill-editor',
+            title: 'Radio',
+            to: 'form-radio',
           },
           {
-            title: 'Form Datepicker',
-            route: 'forms-element-datepicker',
+            title: 'Range Slider',
+            to: 'form-range-slider',
           },
           {
-            title: 'Form Timepicker',
-            route: 'forms-element-timepicker',
+            title: 'Select',
+            to: 'form-select',
           },
           {
-            title: 'Date Time Picker',
-            route: 'extensions-date-time-picker',
+            title: 'Slider',
+            to: 'form-slider',
           },
           {
-            title: 'Form Rating',
-            route: 'forms-element-rating',
+            title: 'Switch',
+            to: 'form-switch',
           },
           {
-            title: 'Form Tag',
-            route: 'forms-element-tag',
+            title: 'Textarea',
+            to: 'form-textarea',
+          },
+          {
+            title: 'Textfield',
+            to: 'form-textfield',
+          },
+          {
+            title: 'Date Picker',
+            to: 'form-datepicker',
+          },
+          {
+            title: 'Month Picker',
+            to: 'form-month-picker',
+          },
+          {
+            title: 'Time Picker',
+            to: 'form-time-picker',
+          },
+          {
+            title: 'Rating',
+            to: 'form-rating',
           },
         ],
       },
       {
+        icon: mdiContentCopy,
         title: 'Form Layout',
-        route: 'form-layout',
-        icon: 'CopyIcon',
+        to: 'form-layout',
       },
       {
-        title: 'Form Wizard',
-        route: 'form-wizard',
-        icon: 'PackageIcon',
-      },
-      {
-        title: 'Form Validation',
-        route: 'form-validation',
-        icon: 'CheckCircleIcon',
-      },
-      {
-        title: 'Form Repeater',
-        route: 'form-repeater',
-        icon: 'CopyIcon',
-      },
-      {
-        title: 'BS Table',
-        route: 'table-bs-table',
-        icon: 'ServerIcon',
-      },
-      {
-        title: 'Good Table',
-        route: 'table-good-table',
-        icon: 'GridIcon',
+        icon: mdiCheckboxMarkedCircleOutline,
+        title: 'Form validation',
+        to: 'form-validation',
       },
     ],
   },

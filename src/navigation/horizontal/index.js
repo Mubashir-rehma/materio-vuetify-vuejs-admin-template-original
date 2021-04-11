@@ -35,10 +35,11 @@ route: [route_obj/route_name] (I have to resolve name somehow from the route obj
 // export default [...dashboard, ...apps, ...uiElements, ...formAndTable, ...pages, ...chartsAndMaps, ...others]
 // import { mdiArchiveAlertOutline } from '@mdi/js'
 import chartsAndMaps from './charts-and-maps'
+import formAndTable from './forms-and-table'
 import uiElements from './ui-elements'
 
 // Array of sections
-export default [...uiElements, ...chartsAndMaps]
+export default [...uiElements, ...formAndTable, ...chartsAndMaps]
 
 // export default [
 //   {

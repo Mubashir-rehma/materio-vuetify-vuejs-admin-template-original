@@ -2,7 +2,7 @@ const formTables = [
   {
     path: '/form/autocomplete',
     name: 'form-autocomplete',
-    component: () => import('@/views/form/autocomplete/Autocomplete.vue'),
+    component: () => import('@/views/forms/form-elements/autocomplete/Autocomplete.vue'),
     meta: {
       layout: 'content',
     },
@@ -10,7 +10,7 @@ const formTables = [
   {
     path: '/form/checkbox',
     name: 'form-checkbox',
-    component: () => import('@/views/form/checkbox/Checkbox.vue'),
+    component: () => import('@/views/forms/form-elements/checkbox/Checkbox.vue'),
     meta: {
       layout: 'content',
     },
@@ -18,7 +18,7 @@ const formTables = [
   {
     path: '/form/combobox',
     name: 'form-combobox',
-    component: () => import('@/views/form/combobox/Combobox.vue'),
+    component: () => import('@/views/forms/form-elements/combobox/Combobox.vue'),
     meta: {
       layout: 'content',
     },
@@ -26,7 +26,7 @@ const formTables = [
   {
     path: '/form/file-input',
     name: 'form-file-input',
-    component: () => import('@/views/form/file-input/FileInput.vue'),
+    component: () => import('@/views/forms/form-elements/file-input/FileInput.vue'),
     meta: {
       layout: 'content',
     },
@@ -34,7 +34,7 @@ const formTables = [
   {
     path: '/form/radio',
     name: 'form-radio',
-    component: () => import('@/views/form/radio/Radio.vue'),
+    component: () => import('@/views/forms/form-elements/radio/Radio.vue'),
     meta: {
       layout: 'content',
     },
@@ -42,7 +42,7 @@ const formTables = [
   {
     path: '/form/range-slider',
     name: 'form-range-slider',
-    component: () => import('@/views/form/range-slider/RangeSlider.vue'),
+    component: () => import('@/views/forms/form-elements/range-slider/RangeSlider.vue'),
     meta: {
       layout: 'content',
     },
@@ -50,7 +50,7 @@ const formTables = [
   {
     path: '/form/select',
     name: 'form-select',
-    component: () => import('@/views/form/select/Select.vue'),
+    component: () => import('@/views/forms/form-elements/select/Select.vue'),
     meta: {
       layout: 'content',
     },
@@ -58,7 +58,7 @@ const formTables = [
   {
     path: '/form/slider',
     name: 'form-slider',
-    component: () => import('@/views/form/slider/Slider.vue'),
+    component: () => import('@/views/forms/form-elements/slider/Slider.vue'),
     meta: {
       layout: 'content',
     },
@@ -66,7 +66,7 @@ const formTables = [
   {
     path: '/form/switch',
     name: 'form-switch',
-    component: () => import('@/views/form/switch/Switch.vue'),
+    component: () => import('@/views/forms/form-elements/switch/Switch.vue'),
     meta: {
       layout: 'content',
     },
@@ -74,7 +74,7 @@ const formTables = [
   {
     path: '/form/textarea',
     name: 'form-textarea',
-    component: () => import('@/views/form/textarea/Textarea.vue'),
+    component: () => import('@/views/forms/form-elements/textarea/Textarea.vue'),
     meta: {
       layout: 'content',
     },
@@ -82,23 +82,7 @@ const formTables = [
   {
     path: '/form/textfield',
     name: 'form-textfield',
-    component: () => import('@/views/form/textfield/Textfield.vue'),
-    meta: {
-      layout: 'content',
-    },
-  },
-  {
-    path: '/form/form-layout',
-    name: 'form-layout',
-    component: () => import('@/views/form/form-layout/FormLayout.vue'),
-    meta: {
-      layout: 'content',
-    },
-  },
-  {
-    path: '/form/validation',
-    name: 'form-validation',
-    component: () => import('@/views/form/validation/Validation.vue'),
+    component: () => import('@/views/forms/form-elements/textfield/Textfield.vue'),
     meta: {
       layout: 'content',
     },
@@ -106,7 +90,7 @@ const formTables = [
   {
     path: '/form/datepicker',
     name: 'form-datepicker',
-    component: () => import('@/views/form/datepicker/Datepicker.vue'),
+    component: () => import('@/views/forms/form-elements/datepicker/Datepicker.vue'),
     meta: {
       layout: 'content',
     },
@@ -114,7 +98,7 @@ const formTables = [
   {
     path: '/form/monthpicker',
     name: 'form-month-picker',
-    component: () => import('@/views/form/month-picker/MonthPicker.vue'),
+    component: () => import('@/views/forms/form-elements/month-picker/MonthPicker.vue'),
     meta: {
       layout: 'content',
     },
@@ -122,7 +106,7 @@ const formTables = [
   {
     path: '/form/timepicker',
     name: 'form-time-picker',
-    component: () => import('@/views/form/time-picker/TimePicker.vue'),
+    component: () => import('@/views/forms/form-elements/time-picker/TimePicker.vue'),
     meta: {
       layout: 'content',
     },
@@ -130,7 +114,23 @@ const formTables = [
   {
     path: '/form/rating',
     name: 'form-rating',
-    component: () => import('@/views/form/rating/Rating.vue'),
+    component: () => import('@/views/forms/form-elements/rating/Rating.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
+    path: '/form/form-layout',
+    name: 'form-layout',
+    component: () => import('@/views/forms/form-layout/FormLayout.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
+    path: '/form/validation',
+    name: 'form-validation',
+    component: () => import('@/views/forms/form-validation/FormValidation.vue'),
     meta: {
       layout: 'content',
     },

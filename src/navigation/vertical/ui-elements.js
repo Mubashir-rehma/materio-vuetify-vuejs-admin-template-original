@@ -1,4 +1,4 @@
-import { mdiArchiveOutline, mdiContentCopy, mdiHome } from '@mdi/js'
+import { mdiArchiveOutline, mdiHome } from '@mdi/js'
 
 export default [
   {
@@ -68,80 +68,6 @@ export default [
       {
         title: 'Treeview',
         to: 'components-treeview',
-      },
-    ],
-  },
-  {
-    title: 'Form',
-    icon: mdiContentCopy,
-    children: [
-      {
-        title: 'Autocomplete',
-        to: 'form-autocomplete',
-      },
-      {
-        title: 'Checkbox',
-        to: 'form-checkbox',
-      },
-      {
-        title: 'Combobox',
-        to: 'form-combobox',
-      },
-      {
-        title: 'File Input',
-        to: 'form-file-input',
-      },
-      {
-        title: 'Radio',
-        to: 'form-radio',
-      },
-      {
-        title: 'Range Slider',
-        to: 'form-range-slider',
-      },
-      {
-        title: 'Select',
-        to: 'form-select',
-      },
-      {
-        title: 'Slider',
-        to: 'form-slider',
-      },
-      {
-        title: 'Switch',
-        to: 'form-switch',
-      },
-      {
-        title: 'Textarea',
-        to: 'form-textarea',
-      },
-      {
-        title: 'Textfield',
-        to: 'form-textfield',
-      },
-      {
-        title: 'Form Layout',
-        to: 'form-layout',
-      },
-      {
-        title: 'Form validation',
-        to: 'form-validation',
-      },
-      {
-        title: 'Form datepicker',
-        to: 'form-datepicker',
-      },
-      {
-        title: 'Form Month Picker',
-        to: 'form-month-picker',
-      },
-      {
-        title: 'Form Time Picker',
-        to: 'form-time-picker',
-      },
-      {
-        title: 'Rating',
-        to: 'form-rating',
       },
     ],
   },

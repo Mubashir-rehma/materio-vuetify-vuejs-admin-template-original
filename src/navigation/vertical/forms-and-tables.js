@@ -1,0 +1,83 @@
+import { mdiCheckboxMarkedCircleOutline, mdiContentCopy } from '@mdi/js'
+
+export default [
+  {
+    subheader: 'Forms & Tables',
+  },
+  {
+    title: 'Forms Elements',
+    icon: mdiContentCopy,
+    children: [
+      {
+        title: 'Autocomplete',
+        to: 'form-autocomplete',
+      },
+      {
+        title: 'Checkbox',
+        to: 'form-checkbox',
+      },
+      {
+        title: 'Combobox',
+        to: 'form-combobox',
+      },
+      {
+        title: 'File Input',
+        to: 'form-file-input',
+      },
+      {
+        title: 'Radio',
+        to: 'form-radio',
+      },
+      {
+        title: 'Range Slider',
+        to: 'form-range-slider',
+      },
+      {
+        title: 'Select',
+        to: 'form-select',
+      },
+      {
+        title: 'Slider',
+        to: 'form-slider',
+      },
+      {
+        title: 'Switch',
+        to: 'form-switch',
+      },
+      {
+        title: 'Textarea',
+        to: 'form-textarea',
+      },
+      {
+        title: 'Textfield',
+        to: 'form-textfield',
+      },
+      {
+        title: 'Date Picker',
+        to: 'form-datepicker',
+      },
+      {
+        title: 'Month Picker',
+        to: 'form-month-picker',
+      },
+      {
+        title: 'Time Picker',
+        to: 'form-time-picker',
+      },
+      {
+        title: 'Rating',
+        to: 'form-rating',
+      },
+    ],
+  },
+  {
+    title: 'Form Layout',
+    to: 'form-layout',
+    icon: mdiContentCopy,
+  },
+  {
+    icon: mdiCheckboxMarkedCircleOutline,
+    title: 'Form validation',
+    to: 'form-validation',
+  },
+]

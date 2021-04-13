@@ -1,0 +1,6 @@
+export const codeBasic = ''
+export const codeMarkerPolygon = ''
+export const codePopup = ''
+export const codeGeoJSON = ''
+export const codeLayerGroup = ''
+export const codeCustomIcon = ''

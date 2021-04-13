@@ -16,6 +16,10 @@ export default [
         title: 'Chartjs',
         to: 'chartjs-chart',
       },
+      {
+        title: 'Leaflet',
+        to: 'leaflet-maps',
+      },
     ],
   },
 ]

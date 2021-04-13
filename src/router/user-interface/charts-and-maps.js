@@ -15,6 +15,14 @@ const charts = [
       layout: 'content',
     },
   },
+  {
+    path: '/charts-and-maps/maps/leaflet',
+    name: 'leaflet-maps',
+    component: () => import('@/views/charts-and-maps/maps/leaflet/Leaflet.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default charts

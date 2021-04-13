@@ -5,7 +5,7 @@
     attach
     class="horizontal-nav-header-group"
   >
-    <template v-slot:activator="{ on, attrs }">
+    <template #activator="{ on, attrs }">
       <v-btn
         ref="refActivator"
         :color="isActive ? 'primary' : null"

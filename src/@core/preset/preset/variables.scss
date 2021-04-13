@@ -1,11 +1,18 @@
 @import '~vuetify/src/styles/styles.sass';
 
-// Custom Variables
+// ————————————————————————————————————
+//* ——— CUSTOM VARIABLES
+// ————————————————————————————————————
+
 $card-spacer: 20px;
 $card-spacer-content: 16px;
 
-// Vuetify Overrides
+// ————————————————————————————————————
+//* ——— VUETIFY
+// ————————————————————————————————————
+
 // https://vuetifyjs.com/en/api/vuetify/#sass-variables
+
 $color-pack: false;
 
 // Typography
@@ -488,7 +495,14 @@ $headings: (
   ),
 );
 
-// Component
+// ————————————————————————————————————
+//* ——— COMPONENTS
+// ————————————————————————————————————
+
+//
+//* ——— Button ——————————————————
+//
+
 $btn-sizes: (
   'x-small': 20,
   'small': 30,
@@ -505,7 +519,24 @@ $btn-font-sizes: (
   'x-large': 1rem,
 );
 $btn-letter-spacing: 0.01875rem;
+
+//
+//* ——— Card ——————————————————
+//
+
 $card-subtitle-padding: $card-spacer-content $card-spacer;
 $card-actions-padding: $card-spacer-content $card-spacer;
 $card-border-radius: 6px;
 $card-elevation: 6;
+
+//
+//* ——— Switch ——————————————————
+//
+
+$switch-thumb-elevation: 1;
+
+//
+//* ——— Menu ——————————————————
+//
+
+$menu-content-border-radius: 6px;

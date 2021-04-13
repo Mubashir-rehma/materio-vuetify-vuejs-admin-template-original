@@ -40,7 +40,8 @@ export default {
 
 <style lang="scss">
 .horizontal-nav-menu {
-  > *:not(:last-child) {
+  // ? As v-menu is sibling of button activator we also have to exclude it
+  > *:not(:last-child):not(.v-menu) {
     margin-right: 8px;
   }
 }

@@ -1,4 +1,4 @@
-import { mdiChartPie } from '@mdi/js'
+import { mdiChartDonut } from '@mdi/js'
 
 export default [
   {
@@ -6,7 +6,7 @@ export default [
   },
   {
     title: 'Charts',
-    icon: mdiChartPie,
+    icon: mdiChartDonut,
     children: [
       {
         title: 'Apex Chart',

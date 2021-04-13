@@ -48,10 +48,10 @@ button {
   .v-card__subtitle,
   .v-card__text,
   .v-card__actions {
-    padding-top: 0 !important;
+    padding-top: 0;
 
     @at-root .v-card &:nth-child(1) {
-      padding-top: $card-spacer !important;
+      padding-top: $card-spacer;
     }
 
     &:last-child {
@@ -63,7 +63,7 @@ button {
     .v-card__subtitle,
     .v-card__text,
     .v-card__actions {
-      padding-top: $card-spacer-content !important;
+      padding-top: $card-spacer-content;
     }
   }
 
@@ -121,6 +121,72 @@ button {
     &.accent {
       background-color: var(--v-primary-base) !important;
       border-color: var(--v-primary-base) !important;
+    }
+  }
+}
+
+//
+//* ——— Expansion Panel ——————————————————
+//
+
+// .v-expansion-panel {
+//   &::before {
+//     @include elevation(3, !important);
+//   }
+// }
+
+//
+//* ——— Dialog ——————————————————
+//
+
+// Add some space between divider and buttons
+.v-dialog {
+  .v-divider + .v-card__actions {
+    padding-top: $card-spacer-content !important;
+  }
+}
+
+//
+//* ——— Pagination ——————————————————
+//
+
+.v-pagination__item,
+.v-pagination__navigation {
+  box-shadow: none !important;
+}
+
+//
+//* ——— AutoComplete & Select ——————————————————
+//
+
+.v-autocomplete,
+.v-select {
+  .v-input__icon--clear {
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+//
+//* ——— Textarea ——————————————————
+//
+
+// ? Reason: Textarea hover underline color is too dark
+.v-text-field:not(.v-input--has-state):hover > .v-input__control > .v-input__slot:before {
+  border-color: rgba(map-get($shades, 'black'), 0.28) !important;
+}
+
+//
+//* ——— Date Picker ——————————————————
+//
+
+.v-date-picker-table {
+  .v-btn {
+    &.v-btn--active.v-btn--disabled {
+      color: #fff !important;
+      opacity: 0.5;
     }
   }
 }

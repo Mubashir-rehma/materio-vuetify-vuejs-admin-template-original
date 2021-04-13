@@ -11,12 +11,9 @@
       v-for="folder in folders"
       :key="folder.title"
     >
-      <v-list-item-avatar color="grey lighten-1">
-        <v-icon
-          dark
-          size="30"
-        >
-          {{ mdiFolder }}
+      <v-list-item-avatar>
+        <v-icon size="30">
+          {{ mdiFolderOutline }}
         </v-icon>
       </v-list-item-avatar>
 
@@ -72,7 +69,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiClipboardTextOutline, mdiGestureTapButton, mdiInformation, mdiFolder } from '@mdi/js'
+import { mdiClipboardTextOutline, mdiGestureTapButton, mdiInformation, mdiFolderOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -109,7 +106,7 @@ export default {
       files,
       folders,
       mdiInformation,
-      mdiFolder,
+      mdiFolderOutline,
     }
   },
 }

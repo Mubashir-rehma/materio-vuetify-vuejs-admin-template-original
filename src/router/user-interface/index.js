@@ -1,5 +1,5 @@
+import chartsAndMaps from './charts-and-maps'
 import components from './components'
 import form from './form'
-import charts from './charts'
 
-export default [...components, ...form, ...charts]
+export default [...components, ...form, ...chartsAndMaps]

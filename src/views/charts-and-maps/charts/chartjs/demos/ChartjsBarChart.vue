@@ -1,0 +1,45 @@
+<template>
+  <v-card>
+    <v-card-title>
+      <span>Latest Statistics</span>
+      <v-spacer></v-spacer>
+      <v-icon
+        size="18"
+        class="mr-1"
+      >
+        {{ icons.mdiCalendarBlankOutline }}
+      </v-icon>
+      <span class="subtitle-2">2019-05-01 to 2019-05-10</span>
+    </v-card-title>
+
+    <!-- chart -->
+    <v-card-text class="mt-5">
+      <chartjs-component-bar-chart
+        :height="400"
+        :data="chartjsData.latestBarChart.data"
+        :options="chartjsData.latestBarChart.options"
+      />
+    </v-card-text>
+  </v-card>
+</template>
+
+<script>
+import { defineComponent } from '@vue/composition-api'
+import { mdiCalendarBlankOutline } from '@mdi/js'
+import ChartjsComponentBarChart from './charts-components/ChartjsComponentBarChart.vue'
+import chartjsData from './chartjsData'
+
+export default defineComponent({
+  components: {
+    ChartjsComponentBarChart,
+  },
+  setup() {
+    return {
+      chartjsData,
+      icons: {
+        mdiCalendarBlankOutline,
+      },
+    }
+  },
+})
+</script>

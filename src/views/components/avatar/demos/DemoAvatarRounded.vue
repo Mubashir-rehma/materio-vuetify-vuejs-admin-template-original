@@ -9,7 +9,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
 
@@ -22,7 +22,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
 
@@ -35,7 +35,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
 
@@ -48,7 +48,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
 
@@ -61,7 +61,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
 
@@ -74,20 +74,20 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
   </div>
 </template>
 
 <script>
-import { mdiAccount } from '@mdi/js'
+import { mdiAccountOutline } from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
-        mdiAccount,
+        mdiAccountOutline,
       },
     }
   },

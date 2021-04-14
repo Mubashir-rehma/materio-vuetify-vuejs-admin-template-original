@@ -1,10 +1,10 @@
 <template>
   <v-text-field
     v-model="message"
-    :append-icon="marker ? mdiMapMarker : mdiMapMarkerOff"
-    :append-outer-icon="message ? mdiSend : mdiMicrophone"
+    :append-icon="marker ? mdiMapMarkerOutline : mdiMapMarkerOffOutline"
+    :append-outer-icon="message ? mdiSendOutline : mdiMicrophone"
     filled
-    :clear-icon="mdiCloseCircle"
+    :clear-icon="mdiCloseCircleOutline"
     clearable
     label="Message"
     type="text"
@@ -18,11 +18,11 @@
 <script>
 import { defineComponent, ref } from '@vue/composition-api'
 import {
-  mdiMapMarker,
-  mdiSend,
-  mdiCloseCircle,
+  mdiMapMarkerOutline,
+  mdiSendOutline,
+  mdiCloseCircleOutline,
   mdiMicrophone,
-  mdiMapMarkerOff,
+  mdiMapMarkerOffOutline,
 } from '@mdi/js'
 
 export default defineComponent({
@@ -58,11 +58,11 @@ export default defineComponent({
       sendMessage,
       toggleMarker,
       clearMessage,
-      mdiMapMarker,
-      mdiSend,
-      mdiCloseCircle,
+      mdiMapMarkerOutline,
+      mdiSendOutline,
+      mdiCloseCircleOutline,
       mdiMicrophone,
-      mdiMapMarkerOff,
+      mdiMapMarkerOffOutline,
     }
   },
 })

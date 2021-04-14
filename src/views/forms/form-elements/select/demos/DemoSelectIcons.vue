@@ -6,7 +6,7 @@
       menu-props="auto"
       label="Select"
       hide-details
-      :prepend-icon="icons.mdiMap"
+      :prepend-icon="icons.mdiMapOutline"
       single-line
       class="pt-0"
     ></v-select>
@@ -14,7 +14,7 @@
     <v-select
       v-model="selectedOption2"
       :items="states"
-      :append-outer-icon="icons.mdiMap"
+      :append-outer-icon="icons.mdiMapOutline"
       menu-props="auto"
       hide-details
       label="Select"
@@ -25,7 +25,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiMap } from '@mdi/js'
+import { mdiMapOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -66,7 +66,7 @@ export default {
       states,
 
       icons: {
-        mdiMap,
+        mdiMapOutline,
       },
     }
   },

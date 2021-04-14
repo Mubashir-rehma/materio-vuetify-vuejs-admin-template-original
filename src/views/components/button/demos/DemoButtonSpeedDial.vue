@@ -19,7 +19,7 @@
             {{ icons.mdiClose }}
           </v-icon>
           <v-icon v-else>
-            {{ icons.mdiAccountCircle }}
+            {{ icons.mdiAccountCircleOutline }}
           </v-icon>
         </v-btn>
       </template>
@@ -46,7 +46,7 @@
         small
         color="error"
       >
-        <v-icon>{{ icons.mdiDelete }}</v-icon>
+        <v-icon>{{ icons.mdiDeleteOutline }}</v-icon>
       </v-btn>
     </v-speed-dial>
   </div>
@@ -55,7 +55,7 @@
 <script>
 import { ref } from '@vue/composition-api'
 // eslint-disable-next-line object-curly-newline
-import { mdiClose, mdiAccountCircle, mdiPencil, mdiPlus, mdiDelete } from '@mdi/js'
+import { mdiClose, mdiAccountCircleOutline, mdiPencil, mdiPlus, mdiDeleteOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -65,10 +65,10 @@ export default {
       fab,
       icons: {
         mdiClose,
-        mdiAccountCircle,
+        mdiAccountCircleOutline,
         mdiPencil,
         mdiPlus,
-        mdiDelete,
+        mdiDeleteOutline,
       },
     }
   },

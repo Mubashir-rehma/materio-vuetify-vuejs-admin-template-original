@@ -38,7 +38,7 @@
               icon
               @click="fav = !fav"
             >
-              <v-icon>{{ icons.mdiHeart }}</v-icon>
+              <v-icon>{{ icons.mdiHeartOutline }}</v-icon>
             </v-btn>
           </v-list-item-action>
         </v-list-item>
@@ -51,11 +51,11 @@
 
       <v-card-actions>
         <v-btn icon>
-          <v-icon>{{ icons.mdiHeart }}</v-icon>
+          <v-icon>{{ icons.mdiHeartOutline }}</v-icon>
         </v-btn>
 
         <v-btn icon>
-          <v-icon>{{ icons.mdiBookmark }}</v-icon>
+          <v-icon>{{ icons.mdiBookmarkOutline }}</v-icon>
         </v-btn>
 
         <v-btn icon>
@@ -68,7 +68,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiHeart, mdiBookmark, mdiShareVariant } from '@mdi/js'
+import { mdiHeartOutline, mdiBookmarkOutline, mdiShareVariant } from '@mdi/js'
 
 export default {
   setup() {
@@ -85,8 +85,8 @@ export default {
 
       // Icons
       icons: {
-        mdiHeart,
-        mdiBookmark,
+        mdiHeartOutline,
+        mdiBookmarkOutline,
         mdiShareVariant,
       },
     }

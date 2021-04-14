@@ -14,7 +14,7 @@
     >
       <template #prepend="{ item }">
         <v-icon v-if="item.children">
-          {{ item.id === 1 ? icons.mdiHomeVariant : icons.mdiFolderNetwork }}
+          {{ item.id === 1 ? icons.mdiHomeVariantOutline : icons.mdiFolderNetworkOutline }}
         </v-icon>
       </template>
     </v-treeview>
@@ -23,7 +23,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiCloseCircleOutline, mdiFolderNetwork, mdiHomeVariant } from '@mdi/js'
+import { mdiCloseCircleOutline, mdiFolderNetworkOutline, mdiHomeVariantOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -105,7 +105,7 @@ export default {
       caseSensitive,
 
       // icons
-      icons: { mdiCloseCircleOutline, mdiFolderNetwork, mdiHomeVariant },
+      icons: { mdiCloseCircleOutline, mdiFolderNetworkOutline, mdiHomeVariantOutline },
     }
   },
 }

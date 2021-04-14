@@ -27,20 +27,27 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-// eslint-disable-next-line object-curly-newline
-import { mdiFolder, mdiAccountMultiple, mdiStar, mdiHistory, mdiCheckCircle, mdiUpload, mdiCloudUpload } from '@mdi/js'
+import {
+  mdiFolderOutline,
+  mdiAccountMultipleOutline,
+  mdiStarOutline,
+  mdiHistory,
+  mdiCheckCircleOutline,
+  mdiUploadOutline,
+  mdiCloudUploadOutline,
+} from '@mdi/js'
 
 export default {
   setup() {
     const selectedItem = ref(0)
     const items = [
-      { text: 'My Files', icon: mdiFolder },
-      { text: 'Shared with me', icon: mdiAccountMultiple },
-      { text: 'Starred', icon: mdiStar },
+      { text: 'My Files', icon: mdiFolderOutline },
+      { text: 'Shared with me', icon: mdiAccountMultipleOutline },
+      { text: 'Starred', icon: mdiStarOutline },
       { text: 'Recent', icon: mdiHistory },
-      { text: 'Offline', icon: mdiCheckCircle },
-      { text: 'Uploads', icon: mdiUpload },
-      { text: 'Backups', icon: mdiCloudUpload },
+      { text: 'Offline', icon: mdiCheckCircleOutline },
+      { text: 'Uploads', icon: mdiUploadOutline },
+      { text: 'Backups', icon: mdiCloudUploadOutline },
     ]
 
     return { selectedItem, items }

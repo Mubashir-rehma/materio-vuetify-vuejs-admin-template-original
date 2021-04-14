@@ -9,7 +9,7 @@
   >
     <template #prepend="{ item, open }">
       <v-icon v-if="!item.file">
-        {{ open ? icons.mdiFolderOpen : icons.mdiFolder }}
+        {{ open ? icons.mdiFolderOpenOutline : icons.mdiFolderOutline }}
       </v-icon>
       <v-icon v-else>
         {{ files[item.file] }}
@@ -24,13 +24,13 @@ import {
   mdiLanguageHtml5,
   mdiNodejs,
   mdiCodeJson,
-  mdiLanguageMarkdown,
-  mdiFilePdf,
-  mdiFileImage,
+  mdiLanguageMarkdownOutline,
+  mdiFilePdfBoxOutline,
+  mdiFileImageOutline,
   mdiFileDocumentOutline,
-  mdiFileExcel,
-  mdiFolderOpen,
-  mdiFolder,
+  mdiFileExcelOutline,
+  mdiFolderOpenOutline,
+  mdiFolderOutline,
 } from '@mdi/js'
 
 export default {
@@ -40,11 +40,11 @@ export default {
       html: mdiLanguageHtml5,
       js: mdiNodejs,
       json: mdiCodeJson,
-      md: mdiLanguageMarkdown,
-      pdf: mdiFilePdf,
-      png: mdiFileImage,
+      md: mdiLanguageMarkdownOutline,
+      pdf: mdiFilePdfBoxOutline,
+      png: mdiFileImageOutline,
       txt: mdiFileDocumentOutline,
-      xls: mdiFileExcel,
+      xls: mdiFileExcelOutline,
     }
 
     const tree = ref([])
@@ -112,8 +112,8 @@ export default {
 
       // icons
       icons: {
-        mdiFolderOpen,
-        mdiFolder,
+        mdiFolderOpenOutline,
+        mdiFolderOutline,
       },
     }
   },

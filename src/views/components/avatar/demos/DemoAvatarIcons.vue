@@ -20,7 +20,7 @@
         color="white"
         size="18"
       >
-        {{ icons.mdiAppleIcloud }}
+        {{ icons.mdiCloudOutline }}
       </v-icon>
     </v-avatar>
 
@@ -32,7 +32,7 @@
         color="white"
         size="18"
       >
-        {{ icons.mdiBell }}
+        {{ icons.mdiBellOutline }}
       </v-icon>
     </v-avatar>
 
@@ -44,7 +44,7 @@
         color="white"
         size="18"
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
     </v-avatar>
 
@@ -56,7 +56,7 @@
         color="white"
         size="18"
       >
-        {{ icons.mdiAlert }}
+        {{ icons.mdiAlertOutline }}
       </v-icon>
     </v-avatar>
 
@@ -68,7 +68,7 @@
         color="white"
         size="18"
       >
-        {{ icons.mdiMessage }}
+        {{ icons.mdiMessageOutline }}
       </v-icon>
     </v-avatar>
   </div>
@@ -76,18 +76,18 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiHomeOutline, mdiBell, mdiAccount, mdiMessage, mdiAppleIcloud, mdiAlert } from '@mdi/js'
+import { mdiHomeOutline, mdiBellOutline, mdiAccountOutline, mdiMessageOutline, mdiCloudOutline, mdiAlertOutline } from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
         mdiHomeOutline,
-        mdiBell,
-        mdiAccount,
-        mdiMessage,
-        mdiAppleIcloud,
-        mdiAlert,
+        mdiBellOutline,
+        mdiAccountOutline,
+        mdiMessageOutline,
+        mdiCloudOutline,
+        mdiAlertOutline,
       },
     }
   },

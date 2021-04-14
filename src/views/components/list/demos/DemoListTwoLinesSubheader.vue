@@ -16,7 +16,7 @@
           dark
           size="30"
         >
-          {{ mdiFolder }}
+          {{ mdiFolderOutline }}
         </v-icon>
       </v-list-item-avatar>
 
@@ -29,7 +29,7 @@
       <v-list-item-action>
         <v-btn icon>
           <v-icon color="grey lighten-1">
-            {{ mdiInformation }}
+            {{ mdiInformationOutline }}
           </v-icon>
         </v-btn>
       </v-list-item-action>
@@ -62,7 +62,7 @@
       <v-list-item-action>
         <v-btn icon>
           <v-icon color="grey lighten-1">
-            {{ mdiInformation }}
+            {{ mdiInformationOutline }}
           </v-icon>
         </v-btn>
       </v-list-item-action>
@@ -72,7 +72,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiClipboardTextOutline, mdiGestureTapButton, mdiInformation, mdiFolder } from '@mdi/js'
+import { mdiClipboardTextOutline, mdiGestureTapButton, mdiInformationOutline, mdiFolderOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -108,8 +108,8 @@ export default {
     return {
       files,
       folders,
-      mdiInformation,
-      mdiFolder,
+      mdiInformationOutline,
+      mdiFolderOutline,
     }
   },
 }

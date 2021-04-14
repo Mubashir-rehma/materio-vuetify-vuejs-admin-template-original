@@ -2,22 +2,22 @@
   <div>
     <v-text-field
       label="Prepend"
-      :prepend-icon="icons.mdiMapMarker"
+      :prepend-icon="icons.mdiMapMarkerOutline"
     ></v-text-field>
 
     <v-text-field
       label="Prepend inner"
-      :prepend-inner-icon="icons.mdiMapMarker"
+      :prepend-inner-icon="icons.mdiMapMarkerOutline"
     ></v-text-field>
 
     <v-text-field
       label="Append"
-      :append-icon="icons.mdiMapMarker"
+      :append-icon="icons.mdiMapMarkerOutline"
     ></v-text-field>
 
     <v-text-field
       label="Append outer"
-      :append-outer-icon="icons.mdiMapMarker"
+      :append-outer-icon="icons.mdiMapMarkerOutline"
       hide-details
     ></v-text-field>
   </div>
@@ -25,13 +25,13 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import { mdiMapMarker } from '@mdi/js'
+import { mdiMapMarkerOutline } from '@mdi/js'
 
 export default defineComponent({
   setup() {
     return {
       icons: {
-        mdiMapMarker,
+        mdiMapMarkerOutline,
       },
     }
   },

@@ -2,13 +2,13 @@
   <v-tabs vertical>
     <v-tab>
       <v-icon left>
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
       Option 1
     </v-tab>
     <v-tab>
       <v-icon left>
-        {{ icons.mdiLock }}
+        {{ icons.mdiLockOutline }}
       </v-icon>
       Option 2
     </v-tab>
@@ -62,14 +62,14 @@
 </template>
 
 <script>
-import { mdiAccount, mdiLock, mdiAccessPoint } from '@mdi/js'
+import { mdiAccountOutline, mdiLockOutline, mdiAccessPoint } from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
-        mdiAccount,
-        mdiLock,
+        mdiAccountOutline,
+        mdiLockOutline,
         mdiAccessPoint,
       },
     }

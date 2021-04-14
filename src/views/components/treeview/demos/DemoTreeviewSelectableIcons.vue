@@ -64,7 +64,7 @@
                 left
                 small
               >
-                {{ icons.mdiBeer }}
+                {{ icons.mdiBeerOutline }}
               </v-icon>
               {{ selection.name }}
             </v-chip>
@@ -89,7 +89,7 @@
       >
         Save
         <v-icon right>
-          {{ icons.mdiContentSave }}
+          {{ icons.mdiContentSaveOutline }}
         </v-icon>
       </v-btn>
     </v-card-actions>
@@ -101,8 +101,8 @@ import axios from '@axios'
 // eslint-disable-next-line object-curly-newline
 import { computed, defineComponent, ref, watch } from '@vue/composition-api'
 import {
-  mdiContentSave,
-  mdiBeer,
+  mdiContentSaveOutline,
+  mdiBeerOutline,
   mdiSilverware,
   mdiChevronDown,
   mdiBookmark,
@@ -188,8 +188,8 @@ export default defineComponent({
       getName,
       getChildren,
       icons: {
-        mdiContentSave,
-        mdiBeer,
+        mdiContentSaveOutline,
+        mdiBeerOutline,
         mdiSilverware,
         mdiChevronDown,
         mdiBookmark,

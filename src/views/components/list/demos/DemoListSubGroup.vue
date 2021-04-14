@@ -2,7 +2,7 @@
   <v-list>
     <v-list-item>
       <v-list-item-icon>
-        <v-icon>{{ mdiHome }}</v-icon>
+        <v-icon>{{ mdiHomeOutline }}</v-icon>
       </v-list-item-icon>
 
       <v-list-item-title>Home</v-list-item-title>
@@ -10,7 +10,7 @@
 
     <v-list-group
       :value="true"
-      :prepend-icon="mdiAccountCircle"
+      :prepend-icon="mdiAccountCircleOutline"
     >
       <template #activator>
         <v-list-item-title>Users</v-list-item-title>
@@ -72,9 +72,9 @@ import {
   mdiPlusOutline,
   mdiFileOutline,
   mdiUpdate,
-  mdiDelete,
-  mdiHome,
-  mdiAccountCircle,
+  mdiDeleteOutline,
+  mdiHomeOutline,
+  mdiAccountCircleOutline,
 } from '@mdi/js'
 
 export default {
@@ -88,14 +88,14 @@ export default {
       ['Create', mdiPlusOutline],
       ['Read', mdiFileOutline],
       ['Update', mdiUpdate],
-      ['Delete', mdiDelete],
+      ['Delete', mdiDeleteOutline],
     ]
 
     return {
       admins,
       cruds,
-      mdiHome,
-      mdiAccountCircle,
+      mdiHomeOutline,
+      mdiAccountCircleOutline,
     }
   },
 }

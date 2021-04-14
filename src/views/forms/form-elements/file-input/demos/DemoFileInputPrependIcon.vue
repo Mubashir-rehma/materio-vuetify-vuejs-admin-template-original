@@ -2,17 +2,17 @@
   <v-file-input
     label="File input"
     filled
-    :prepend-icon="icons.mdiCamera"
+    :prepend-icon="icons.mdiCameraOutline"
     hide-details
   ></v-file-input>
 </template>
 
 <script>
-import { mdiCamera } from '@mdi/js'
+import { mdiCameraOutline } from '@mdi/js'
 
 export default {
   setup() {
-    return { icons: { mdiCamera } }
+    return { icons: { mdiCameraOutline } }
   },
 }
 </script>

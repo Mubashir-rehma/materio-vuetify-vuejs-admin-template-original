@@ -16,7 +16,7 @@
       >
         <template #prepend="{ item }">
           <v-icon v-if="!item.children">
-            {{ icons.mdiAccount }}
+            {{ icons.mdiAccountOutline }}
           </v-icon>
         </template>
       </v-treeview>
@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import { mdiAccount } from '@mdi/js'
+import { mdiAccountOutline } from '@mdi/js'
 import { ref, watch, computed } from '@vue/composition-api'
 import axios from '@axios'
 
@@ -178,7 +178,7 @@ export default {
 
       // Icons
       icons: {
-        mdiAccount,
+        mdiAccountOutline,
       },
     }
   },

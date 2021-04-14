@@ -18,7 +18,7 @@
       color="secondary"
     >
       <v-icon dark>
-        {{ icons.mdiAccountCircle }}
+        {{ icons.mdiAccountCircleOutline }}
       </v-icon>
     </v-btn>
 
@@ -69,7 +69,7 @@
 <script>
 import {
   mdiMinus,
-  mdiAccountCircle,
+  mdiAccountCircleOutline,
   mdiPlus,
   mdiFormatListBulletedSquare,
   mdiGreasePencil,
@@ -81,7 +81,7 @@ export default {
     return {
       icons: {
         mdiMinus,
-        mdiAccountCircle,
+        mdiAccountCircleOutline,
         mdiPlus,
         mdiFormatListBulletedSquare,
         mdiGreasePencil,

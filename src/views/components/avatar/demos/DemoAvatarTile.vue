@@ -9,7 +9,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAlertOctagon }}
+        {{ icons.mdiAlertOctagramOutline }}
       </v-icon>
     </v-avatar>
     <v-avatar
@@ -33,7 +33,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiPlay }}
+        {{ icons.mdiPlayBoxOutline }}
       </v-icon>
     </v-avatar>
     <v-avatar
@@ -57,7 +57,7 @@
         color="white"
         size="25"
       >
-        {{ icons.mdiAlert }}
+        {{ icons.mdiAlertOutline }}
       </v-icon>
     </v-avatar>
     <v-avatar
@@ -77,17 +77,17 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiAlertOctagon, mdiAlarm, mdiPlay, mdiWifi, mdiAlert, mdiAlertCircleOutline } from '@mdi/js'
+import { mdiAlertOctagramOutline, mdiAlarm, mdiPlayBoxOutline, mdiWifi, mdiAlertOutline, mdiAlertCircleOutline } from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
-        mdiAlertOctagon,
+        mdiAlertOctagramOutline,
         mdiAlarm,
-        mdiPlay,
+        mdiPlayBoxOutline,
         mdiWifi,
-        mdiAlert,
+        mdiAlertOutline,
         mdiAlertCircleOutline,
       },
     }

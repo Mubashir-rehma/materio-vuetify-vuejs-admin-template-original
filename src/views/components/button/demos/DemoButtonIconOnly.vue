@@ -5,7 +5,7 @@
       color="primary"
     >
       <v-icon>
-        {{ icons.mdiPackageDown }}
+        {{ icons.mdiBriefcaseDownloadOutline }}
       </v-icon>
     </v-btn>
 
@@ -14,7 +14,7 @@
       color="secondary"
     >
       <v-icon>
-        {{ icons.mdiAccountPlus }}
+        {{ icons.mdiAccountPlusOutline }}
       </v-icon>
     </v-btn>
 
@@ -29,39 +29,39 @@
       icon
       color="info"
     >
-      <v-icon>{{ icons.mdiThumbUp }}</v-icon>
+      <v-icon>{{ icons.mdiThumbUpOutline }}</v-icon>
     </v-btn>
 
     <v-btn
       icon
       color="warning"
     >
-      <v-icon>{{ icons.mdiStarFace }}</v-icon>
+      <v-icon>{{ icons.mdiStarOutline }}</v-icon>
     </v-btn>
 
     <v-btn
       icon
       color="error"
     >
-      <v-icon>{{ icons.mdiHeart }}</v-icon>
+      <v-icon>{{ icons.mdiHeartOutline }}</v-icon>
     </v-btn>
   </div>
 </template>
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiPackageDown, mdiAccountPlus, mdiMagnify, mdiHeart, mdiStarFace, mdiThumbUp } from '@mdi/js'
+import { mdiBriefcaseDownloadOutline, mdiAccountPlusOutline, mdiMagnify, mdiHeartOutline, mdiStarOutline, mdiThumbUpOutline } from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
-        mdiPackageDown,
-        mdiAccountPlus,
+        mdiBriefcaseDownloadOutline,
+        mdiAccountPlusOutline,
         mdiMagnify,
-        mdiHeart,
-        mdiStarFace,
-        mdiThumbUp,
+        mdiHeartOutline,
+        mdiStarOutline,
+        mdiThumbUpOutline,
       },
     }
   },

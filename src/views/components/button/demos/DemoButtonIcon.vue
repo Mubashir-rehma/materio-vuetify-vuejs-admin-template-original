@@ -21,7 +21,7 @@
         dark
         left
       >
-        {{ icons.mdiMinusCircle }}
+        {{ icons.mdiMinusCircleOutline }}
       </v-icon>Cancel
     </v-btn>
 
@@ -34,7 +34,7 @@
         dark
         right
       >
-        {{ icons.mdiCloudUpload }}
+        {{ icons.mdiCloudUploadOutline }}
       </v-icon>
     </v-btn>
 
@@ -55,7 +55,7 @@
       dark
     >
       <v-icon dark>
-        {{ icons.mdiWrench }}
+        {{ icons.mdiWrenchOutline }}
       </v-icon>
     </v-btn>
 
@@ -74,10 +74,10 @@
 import {
   mdiCheckboxMarkedCircleOutline,
   mdiCancel,
-  mdiMinusCircle,
+  mdiMinusCircleOutline,
   mdiArrowLeft,
-  mdiWrench,
-  mdiCloudUpload,
+  mdiWrenchOutline,
+  mdiCloudUploadOutline,
 } from '@mdi/js'
 
 export default {
@@ -86,10 +86,10 @@ export default {
       icons: {
         mdiCheckboxMarkedCircleOutline,
         mdiCancel,
-        mdiMinusCircle,
+        mdiMinusCircleOutline,
         mdiArrowLeft,
-        mdiWrench,
-        mdiCloudUpload,
+        mdiWrenchOutline,
+        mdiCloudUploadOutline,
       },
     }
   },

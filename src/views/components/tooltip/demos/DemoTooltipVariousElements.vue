@@ -34,7 +34,7 @@
           large
           v-on="on"
         >
-          {{ icons.mdiAccount }}
+          {{ icons.mdiAccountOutline }}
         </v-icon>
       </template>
       <span>Tooltip on Icon</span>
@@ -43,11 +43,11 @@
 </template>
 
 <script>
-import { mdiAccount } from '@mdi/js'
+import { mdiAccountOutline } from '@mdi/js'
 
 export default {
   setup() {
-    return { icons: { mdiAccount } }
+    return { icons: { mdiAccountOutline } }
   },
 }
 </script>

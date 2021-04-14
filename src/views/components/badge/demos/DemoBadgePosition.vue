@@ -18,7 +18,7 @@
       <v-badge
         left
         overlap
-        :icon="icons.mdiBell"
+        :icon="icons.mdiBellOutline"
       >
         <v-avatar>
           <v-img src="/images/avatars/5.png"></v-img>
@@ -53,12 +53,12 @@
 </template>
 
 <script>
-import { mdiBell } from '@mdi/js'
+import { mdiBellOutline } from '@mdi/js'
 
 export default {
   setup() {
     return {
-      icons: { mdiBell },
+      icons: { mdiBellOutline },
     }
   },
 }

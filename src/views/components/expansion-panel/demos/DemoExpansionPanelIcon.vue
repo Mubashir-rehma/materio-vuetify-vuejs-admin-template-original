@@ -6,7 +6,7 @@
           Server Down
           <template #actions>
             <v-icon color="error">
-              {{ icons.mdiAlertCircle }}
+              {{ icons.mdiAlertCircleOutline }}
             </v-icon>
           </template>
         </v-expansion-panel-header>
@@ -34,7 +34,7 @@
           High Memory usage
           <template #actions>
             <v-icon color="warning">
-              {{ icons.mdiAlert }}
+              {{ icons.mdiAlertOutline }}
             </v-icon>
           </template>
         </v-expansion-panel-header>
@@ -47,15 +47,15 @@
 </template>
 
 <script>
-import { mdiAlertCircle, mdiCheck, mdiAlert } from '@mdi/js'
+import { mdiAlertCircleOutline, mdiCheck, mdiAlertOutline } from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
-        mdiAlertCircle,
+        mdiAlertCircleOutline,
         mdiCheck,
-        mdiAlert,
+        mdiAlertOutline,
       },
     }
   },

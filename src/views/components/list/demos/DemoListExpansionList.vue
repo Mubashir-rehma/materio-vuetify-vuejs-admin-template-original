@@ -26,20 +26,20 @@
 
 <script>
 import {
-  mdiTicket,
+  mdiTicketConfirmationOutline,
   mdiSilverwareForkKnife,
-  mdiSchool,
+  mdiSchoolOutline,
   mdiRun,
-  mdiBottleTonicPlus,
+  mdiBottleTonicPlusOutline,
   mdiContentCut,
-  mdiTag,
+  mdiTagOutline,
 } from '@mdi/js'
 
 export default {
   setup() {
     const items = [
       {
-        action: mdiTicket,
+        action: mdiTicketConfirmationOutline,
         items: [{ title: 'List Item' }],
         title: 'Attractions',
       },
@@ -49,7 +49,7 @@ export default {
         title: 'Dining',
       },
       {
-        action: mdiSchool,
+        action: mdiSchoolOutline,
         items: [{ title: 'List Item' }],
         title: 'Education',
       },
@@ -59,7 +59,7 @@ export default {
         title: 'Family',
       },
       {
-        action: mdiBottleTonicPlus,
+        action: mdiBottleTonicPlusOutline,
         items: [{ title: 'List Item' }],
         title: 'Health',
       },
@@ -69,7 +69,7 @@ export default {
         title: 'Office',
       },
       {
-        action: mdiTag,
+        action: mdiTagOutline,
         items: [{ title: 'List Item' }],
         title: 'Promotions',
       },

@@ -1,11 +1,11 @@
-import { mdiArchiveOutline, mdiHome } from '@mdi/js'
+import { mdiArchiveOutline, mdiHomeOutline } from '@mdi/js'
 
 export default [
   {
     subheader: 'User Interface',
   },
   {
-    icon: mdiHome,
+    icon: mdiHomeOutline,
     title: 'home',
     to: 'home',
   },

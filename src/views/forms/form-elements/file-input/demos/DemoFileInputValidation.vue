@@ -3,13 +3,13 @@
     :rules="rules"
     accept="image/png, image/jpeg, image/bmp"
     placeholder="Pick an avatar"
-    :prepend-icon="icons.mdiCamera"
+    :prepend-icon="icons.mdiCameraOutline"
     label="Avatar"
   ></v-file-input>
 </template>
 
 <script>
-import { mdiCamera } from '@mdi/js'
+import { mdiCameraOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -19,7 +19,7 @@ export default {
         !value || value.size < 1000000 || 'Avatar size should be less than 1 MB!',
     ]
 
-    return { rules, icons: { mdiCamera } }
+    return { rules, icons: { mdiCameraOutline } }
   },
 }
 </script>

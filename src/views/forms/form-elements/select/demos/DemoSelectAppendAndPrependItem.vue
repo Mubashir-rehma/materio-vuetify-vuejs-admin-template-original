@@ -29,7 +29,7 @@
       <v-list-item disabled>
         <v-list-item-avatar color="grey lighten-3">
           <v-icon>
-            {{ icons.mdiFoodApple }}
+            {{ icons.mdiFoodAppleOutline }}
           </v-icon>
         </v-list-item-avatar>
 
@@ -64,7 +64,7 @@
 <script>
 /* eslint-disable object-curly-newline */
 import { computed, ref, nextTick } from '@vue/composition-api'
-import { mdiCloseBox, mdiMinusBox, mdiCheckboxBlankOutline, mdiFoodApple } from '@mdi/js'
+import { mdiCloseBoxOutline, mdiMinusBoxOutline, mdiCheckboxBlankOutline, mdiFoodAppleOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -122,9 +122,9 @@ export default {
 
     const likesSomeFruit = computed(() => selectedFruits.value.length > 0 && !likesAllFruit.value)
     const icon = computed(() => {
-      if (likesAllFruit.value) return mdiCloseBox
+      if (likesAllFruit.value) return mdiCloseBoxOutline
 
-      if (likesSomeFruit.value) return mdiMinusBox
+      if (likesSomeFruit.value) return mdiMinusBoxOutline
 
       return mdiCheckboxBlankOutline
     })
@@ -149,7 +149,7 @@ export default {
 
       // icons
       icons: {
-        mdiFoodApple,
+        mdiFoodAppleOutline,
       },
     }
   },

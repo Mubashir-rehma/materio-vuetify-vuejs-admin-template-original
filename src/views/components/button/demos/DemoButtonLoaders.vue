@@ -21,7 +21,7 @@
         right
         dark
       >
-        {{ icons.mdiCloudUpload }}
+        {{ icons.mdiCloudUploadOutline }}
       </v-icon>
     </v-btn>
 
@@ -60,7 +60,7 @@
       @click="triggerLoading('loading5')"
     >
       <v-icon dark>
-        {{ icons.mdiCloudUpload }}
+        {{ icons.mdiCloudUploadOutline }}
       </v-icon>
     </v-btn>
   </div>
@@ -68,7 +68,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiCloudUpload, mdiCached } from '@mdi/js'
+import { mdiCloudUploadOutline, mdiCached } from '@mdi/js'
 
 export default {
   setup() {
@@ -93,7 +93,7 @@ export default {
       triggerLoading,
 
       // icon
-      icons: { mdiCloudUpload, mdiCached },
+      icons: { mdiCloudUploadOutline, mdiCached },
     }
   },
 

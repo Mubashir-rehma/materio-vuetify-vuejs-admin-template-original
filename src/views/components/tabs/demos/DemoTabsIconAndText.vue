@@ -12,12 +12,12 @@
 
       <v-tab>
         Favorites
-        <v-icon>{{ icons.mdiHeart }}</v-icon>
+        <v-icon>{{ icons.mdiHeartOutline }}</v-icon>
       </v-tab>
 
       <v-tab>
         Nearby
-        <v-icon>{{ icons.mdiAccountBox }}</v-icon>
+        <v-icon>{{ icons.mdiAccountBoxOutline }}</v-icon>
       </v-tab>
     </v-tabs>
 
@@ -36,7 +36,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiPhone, mdiHeart, mdiAccountBox } from '@mdi/js'
+import { mdiPhone, mdiHeartOutline, mdiAccountBoxOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -44,7 +44,7 @@ export default {
     const tabItemText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     `
 
-    return { currentTab, tabItemText, icons: { mdiPhone, mdiHeart, mdiAccountBox } }
+    return { currentTab, tabItemText, icons: { mdiPhone, mdiHeartOutline, mdiAccountBoxOutline } }
   },
 }
 </script>

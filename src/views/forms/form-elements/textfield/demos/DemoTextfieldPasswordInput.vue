@@ -6,7 +6,7 @@
     >
       <v-text-field
         v-model="password"
-        :append-icon="show1 ? icons.mdiEye : icons.mdiEyeOff"
+        :append-icon="show1 ? icons.mdiEyeOutline : icons.mdiEyeOffOutline"
         :rules="[rules.required, rules.min]"
         :type="show1 ? 'text' : 'password'"
         name="input-10-1"
@@ -22,7 +22,7 @@
       sm="6"
     >
       <v-text-field
-        :append-icon="show2 ? icons.mdiEye : icons.mdiEyeOff"
+        :append-icon="show2 ? icons.mdiEyeOutline : icons.mdiEyeOffOutline"
         :rules="[rules.required, rules.min]"
         :type="show2 ? 'text' : 'password'"
         name="input-10-2"
@@ -38,7 +38,7 @@
 
 <script>
 import { defineComponent, ref } from '@vue/composition-api'
-import { mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 
 export default defineComponent({
   setup() {
@@ -59,8 +59,8 @@ export default defineComponent({
 
       // icons
       icons: {
-        mdiEyeOff,
-        mdiEye,
+        mdiEyeOffOutline,
+        mdiEyeOutline,
       },
     }
   },

@@ -5,7 +5,7 @@
         left
         dense
       >
-        {{ icons.mdiAccount }}
+        {{ icons.mdiAccountOutline }}
       </v-icon>
       Account
     </v-chip>
@@ -25,7 +25,7 @@
         left
         dense
       >
-        {{ icons.mdiCakeVariant }}
+        {{ icons.mdiCake }}
       </v-icon>
       1 Year
     </v-chip>
@@ -35,7 +35,7 @@
         left
         dense
       >
-        {{ icons.mdiBell }}
+        {{ icons.mdiBellOutline }}
       </v-icon>
       Notification
     </v-chip>
@@ -45,7 +45,7 @@
         left
         dense
       >
-        {{ icons.mdiForum }}
+        {{ icons.mdiForumOutline }}
       </v-icon>
       Message
     </v-chip>
@@ -55,7 +55,7 @@
         left
         dense
       >
-        {{ icons.mdiAlert }}
+        {{ icons.mdiAlertOutline }}
       </v-icon>
       Warning
     </v-chip>
@@ -73,20 +73,27 @@
 </template>
 
 <script>
-// eslint-disable-next-line object-curly-newline
-import { mdiAccount, mdiStarOutline, mdiCakeVariant, mdiBell, mdiAlertCircleOutline, mdiAlert, mdiForum } from '@mdi/js'
+import {
+  mdiAccountOutline,
+  mdiStarOutline,
+  mdiCake,
+  mdiBellOutline,
+  mdiAlertCircleOutline,
+  mdiAlertOutline,
+  mdiForumOutline,
+} from '@mdi/js'
 
 export default {
   setup() {
     return {
       icons: {
-        mdiAccount,
+        mdiAccountOutline,
         mdiStarOutline,
-        mdiCakeVariant,
-        mdiBell,
+        mdiCake,
+        mdiBellOutline,
         mdiAlertCircleOutline,
-        mdiAlert,
-        mdiForum,
+        mdiAlertOutline,
+        mdiForumOutline,
       },
     }
   },

@@ -30,7 +30,7 @@ const themeConfig = {
     light: {
       primary: '#9155FD',
       accent: '#0d6efd',
-      secondary: '#656971',
+      secondary: '#8A8D93',
       success: '#56CA00',
       info: '#16B1FF',
       warning: '#FFB400',
@@ -39,7 +39,7 @@ const themeConfig = {
     dark: {
       primary: '#9155FD',
       accent: '#0d6efd',
-      secondary: '#656971',
+      secondary: '#8A8D93',
       success: '#56CA00',
       info: '#16B1FF',
       warning: '#FFB400',

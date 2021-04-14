@@ -11,11 +11,8 @@
       v-for="folder in folders"
       :key="folder.title"
     >
-      <v-list-item-avatar color="grey lighten-1">
-        <v-icon
-          dark
-          size="30"
-        >
+      <v-list-item-avatar>
+        <v-icon size="30">
           {{ mdiFolderOutline }}
         </v-icon>
       </v-list-item-avatar>

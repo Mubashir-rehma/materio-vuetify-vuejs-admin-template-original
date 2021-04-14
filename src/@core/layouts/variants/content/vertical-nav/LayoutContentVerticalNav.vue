@@ -1,5 +1,8 @@
 <template>
-  <v-app :class="{'nav-drawer-mini': menuIsVerticalNavMini}">
+  <v-app
+    :class="{'nav-drawer-mini': menuIsVerticalNavMini}"
+    class="content-layout vertical-nav"
+  >
     <v-navigation-drawer
       v-if="!menuIsMenuHidden"
       ref="layoutDrawer"

@@ -204,4 +204,30 @@ export default {
     }
   }
 }
+
+// ————————————————————————————————————
+//* ——— Horionral Nav
+// ————————————————————————————————————
+
+.content-layout.horizontal-nav {
+  .app-system-bar {
+    // Assigning 7 z-index so that search result can be seen on top of navigation menu
+    z-index: 7;
+
+    .v-text-field {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    // Remove 3rem padding from both side.
+    // ? 3rem is applied to navbar-content-container
+    .app-bar-autocomplete-box {
+      max-width: calc(100% - 3rem * 2);
+
+      // .v-menu__content {
+      //   z-index: 2;
+      // }
+    }
+  }
+}
 </style>

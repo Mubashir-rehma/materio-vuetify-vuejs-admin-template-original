@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="content-layout horizontal-nav">
     <!-- Navbar -->
     <v-system-bar
       app
@@ -31,6 +31,12 @@
         <slot></slot>
       </app-content-container>
     </v-main>
+    <v-overlay
+      :value="$store.state.app.shallContentShowOverlay"
+      z-index="6"
+      absolute
+      class="content-overlay"
+    ></v-overlay>
 
     <v-footer
       v-if="footerType !== 'hidden'"

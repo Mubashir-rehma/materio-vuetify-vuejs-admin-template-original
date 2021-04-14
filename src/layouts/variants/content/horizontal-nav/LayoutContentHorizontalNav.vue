@@ -28,6 +28,12 @@
           <app-bar-user-menu></app-bar-user-menu>
         </div>
       </div>
+      <v-overlay
+        :value="$store.state.app.shallContentShowOverlay"
+        z-index="5"
+        absolute
+        class="system-bar-overlay"
+      ></v-overlay>
     </template>
 
     <!-- App Content -->

@@ -14,6 +14,7 @@ $shades: (
 
 $card-spacer: 20px;
 $card-spacer-content: 16px;
+$component-border-color: rgba(map-get($shades, 'black'), 0.22);
 
 // ————————————————————————————————————
 //* ——— VUETIFY
@@ -31,10 +32,15 @@ $body-font-family: 'Inter', sans-serif;
 $material-light: map-deep-merge(
   $material-light,
   (
+    'app-bar': map-get($shades, 'white'),
     'background': #f4f5fa,
     'chips': rgba(map-get($shades, 'black'), 0.06),
     'dividers': rgba(map-get($shades, 'black'), 0.14),
     'input-bottom-line': rgba(map-get($shades, 'black'), 0.14),
+    'inputs': (
+      // ! Value of `map-deep-get($material-light, 'text-fields', 'filled')`
+      'solo-inverted': rgba(map-get($shades, 'black'), 0.03),
+    ),
     'text-fields': (
       'filled': rgba(map-get($shades, 'black'), 0.03),
       'filled-hover': rgba(map-get($shades, 'black'), 0.08),
@@ -42,9 +48,8 @@ $material-light: map-deep-merge(
       'outlined-hover': rgba(map-get($shades, 'black'), 0.28),
       'outlined-disabled': rgba(map-get($shades, 'black'), 0.22),
     ),
-    'inputs': (
-      // ! Value of `map-deep-get($material-light, 'text-fields', 'filled')`
-      'solo-inverted': rgba(map-get($shades, 'black'), 0.03),
+    'status-bar': (
+      'regular': map-get($shades, 'white'),
     ),
   )
 );

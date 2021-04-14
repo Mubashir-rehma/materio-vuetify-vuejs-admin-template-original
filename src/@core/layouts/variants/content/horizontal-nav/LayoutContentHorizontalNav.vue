@@ -3,7 +3,7 @@
     <!-- Navbar -->
     <v-system-bar
       app
-      height="60"
+      height="68"
       :absolute="appBarType === 'static'"
       :class="{'app-system-bar-boxed': appContentWidth === 'boxed'}"
       class="app-system-bar"
@@ -16,6 +16,7 @@
       v-if="!menuIsMenuHidden"
       class="navigation-menu"
       app
+      height="64"
       :absolute="appBarType === 'static'"
     >
       <horizontal-nav-menu
@@ -96,6 +97,8 @@ export default {
   // System bar
   .app-system-bar {
     padding: 0 !important;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.14);
+
     &.app-system-bar-boxed {
       ::v-deep > div:first-child {
         padding: $boxed-content-padding-horizontal-navigation-menu !important;

@@ -4,6 +4,7 @@
     depressed
     rounded
     :to="{ name: item.to }"
+    large
     active-class="gradient-primary"
   >
     <v-icon

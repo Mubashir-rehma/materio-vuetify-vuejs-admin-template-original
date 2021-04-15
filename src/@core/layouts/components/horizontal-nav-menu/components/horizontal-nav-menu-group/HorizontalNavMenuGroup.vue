@@ -2,11 +2,14 @@
   <v-menu
     offset-x
     attach
+    open-on-hover
   >
     <template v-slot:activator="{ on, attrs }">
       <v-list-item
         ref="refActivator"
         v-bind="attrs"
+        :class="{'horizontal-nav-menu-group-active': isActive}"
+        class="horizontal-nav-menu-group"
         v-on="on"
       >
         <v-list-item-icon>
@@ -120,3 +123,15 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+
+@include theme(horizontal-nav-menu-group) using ($material) {
+  color: map-deep-get($material, 'text', 'primary');
+
+  &.horizontal-nav-menu-group-active {
+    background: rgba(map-deep-get($shades, 'black'), map-deep-get($material, 'states', 'selected'));
+  }
+}
+</style>

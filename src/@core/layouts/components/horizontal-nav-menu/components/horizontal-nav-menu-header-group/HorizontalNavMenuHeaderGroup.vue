@@ -3,6 +3,7 @@
     offset-y
     eager
     attach
+    open-on-hover
     class="horizontal-nav-header-group"
   >
     <template #activator="{ on, attrs }">
@@ -10,6 +11,7 @@
         ref="refActivator"
         :color="isActive ? 'primary' : null"
         depressed
+        large
         rounded
         v-bind="attrs"
         :class="isActive ? 'gradient-primary' : null"
@@ -112,10 +114,22 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+
 .horizontal-nav-header-group {
+  > .v-menu__content {
+    padding-top: 11px;
+  }
+
   .v-menu__content {
     contain: none !important;
     overflow: visible !important;
+    box-shadow: none;
+
+    > .v-list {
+      border-radius: 6px;
+      @include elevation(8);
+    }
   }
 }
 </style>

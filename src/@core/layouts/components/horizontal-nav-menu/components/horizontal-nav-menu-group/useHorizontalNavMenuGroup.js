@@ -1,9 +1,11 @@
 // eslint-disable-next-line object-curly-newline
 import useNav from '@core/layouts/composable/useNav'
-import { nextTick, ref } from '@vue/composition-api'
+import { useRouter } from '@core/utils'
+import { nextTick, ref, watch } from '@vue/composition-api'
 
 export default function useHorizontalNavMenuGroup(item) {
   const { isNavGroupActive } = useNav()
+  const { route } = useRouter()
 
   // ------------------------------------------------
   // childDropdown
@@ -50,6 +52,8 @@ export default function useHorizontalNavMenuGroup(item) {
   const updateIsActive = () => {
     isActive.value = isNavGroupActive(item.children)
   }
+
+  watch(() => route.value.name, updateIsActive, { immediate: true })
 
   return {
     isOpen,

@@ -6,7 +6,7 @@
     <v-navigation-drawer
       v-if="!menuIsMenuHidden"
       ref="layoutDrawer"
-      v-model="toggleVerticalNavMenu"
+      v-model="isVerticalNavMenuActive"
       app
       :right="$vuetify.rtl"
       mini-variant-width="68"
@@ -31,7 +31,8 @@
     >
       <slot
         name="navbar"
-        :isVerticalNavMenuActive.sync="toggleVerticalNavMenu"
+        :isVerticalNavMenuActive="isVerticalNavMenuActive"
+        :toggleVerticalNavMenuActive="toggleVerticalNavMenuActive"
       ></slot>
     </v-app-bar>
 
@@ -99,23 +100,28 @@ export default {
       { flush: 'post' },
     )
 
-    const toggleVerticalNavMenu = ref(true)
+    const isVerticalNavMenuActive = ref(true)
 
     // TODO: Check do we need below watch
     watch(
       () => $vuetify?.breakpoint.mdAndDown,
       value => {
-        toggleVerticalNavMenu.value = !value
+        isVerticalNavMenuActive.value = !value
       },
       {
         immediate: true,
       },
     )
 
+    const toggleVerticalNavMenuActive = () => {
+      isVerticalNavMenuActive.value = !isVerticalNavMenuActive.value
+    }
+
     const { y: scrollY } = useWindowScroll()
 
     return {
-      toggleVerticalNavMenu,
+      isVerticalNavMenuActive,
+      toggleVerticalNavMenuActive,
       menuIsVerticalNavMini,
       menuIsMenuHidden,
       appBarType,

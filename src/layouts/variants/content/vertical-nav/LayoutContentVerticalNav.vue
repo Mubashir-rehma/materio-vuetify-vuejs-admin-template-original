@@ -1,7 +1,7 @@
 <template>
   <layout-content-vertical-nav :nav-menu-items="navMenuItems">
     <slot></slot>
-    <template #navbar>
+    <template #navbar="{ toggleVerticalNavMenuActive }">
       <div
         class="navbar-content-container"
         :class="{'expanded-search': shallShowFullSearch}"
@@ -10,6 +10,7 @@
         <div class="d-flex align-center">
           <v-app-bar-nav-icon
             v-if="$vuetify.breakpoint.mdAndDown"
+            @click="toggleVerticalNavMenuActive"
           ></v-app-bar-nav-icon>
           <app-bar-search
             :shall-show-full-search.sync="shallShowFullSearch"

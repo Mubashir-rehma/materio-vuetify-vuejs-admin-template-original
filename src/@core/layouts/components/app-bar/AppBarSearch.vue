@@ -156,6 +156,7 @@ export default {
   position: absolute;
   width: 100%;
   top: 0;
+  left: 0;
   height: 100%;
   border-radius: 14px;
   border-top-left-radius: 0;

@@ -12,7 +12,7 @@
         contain
         class="mr-3"
       ></v-img>
-      <h2 class="app-title">
+      <h2 class="app-title text--primary">
         {{ appName }}
       </h2>
     </router-link>
@@ -56,9 +56,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// TODO: This is duplicated in LayoutContentHorizontalNav.vue
 .app-title {
-  color: #5d5962;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 

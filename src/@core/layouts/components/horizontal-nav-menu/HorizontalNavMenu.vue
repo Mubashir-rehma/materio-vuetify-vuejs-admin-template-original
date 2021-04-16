@@ -51,5 +51,10 @@ export default {
   > *:not(:last-child):not(.v-menu) {
     margin-right: 8px;
   }
+  > .v-btn {
+    .v-icon {
+      transition: none !important;
+    }
+  }
 }
 </style>

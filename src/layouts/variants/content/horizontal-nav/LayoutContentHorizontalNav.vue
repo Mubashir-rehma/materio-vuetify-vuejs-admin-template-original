@@ -14,15 +14,32 @@
           <v-app-bar-nav-icon
             v-if="$vuetify.breakpoint.mdAndDown"
           ></v-app-bar-nav-icon>
-          <app-bar-search
-            :shall-show-full-search.sync="shallShowFullSearch"
-            :data="appBarSearchData"
-            :filter="searchFilterFunc"
-          ></app-bar-search>
+          <router-link
+            to="/"
+            class="d-flex align-items-center text-decoration-none"
+          >
+            <v-img
+              :src="appLogo"
+              max-height="30px"
+              max-width="30px"
+              alt="logo"
+              contain
+              class="mr-3"
+            ></v-img>
+            <h2 class="app-title text--primary">
+              {{ appName }}
+            </h2>
+          </router-link>
         </div>
 
         <!-- Right Content: I18n, Light/Dark, Notification & User Dropdown -->
         <div class="d-flex align-center">
+          <app-bar-search
+            :shall-show-full-search.sync="shallShowFullSearch"
+            :data="appBarSearchData"
+            :filter="searchFilterFunc"
+            class="mr-4"
+          ></app-bar-search>
           <app-bar-i18n></app-bar-i18n>
           <app-bar-theme-switcher class="mx-4"></app-bar-theme-switcher>
           <app-bar-user-menu></app-bar-user-menu>
@@ -59,6 +76,8 @@ import appBarSearchData from '@/assets/app-bar-search-data'
 
 import { ref } from '@vue/composition-api'
 
+import themeConfig from '@themeConfig'
+
 export default {
   components: {
     LayoutContentHorizontalNav,
@@ -89,12 +108,22 @@ export default {
       shallShowFullSearch,
       appBarSearchData,
       searchFilterFunc,
+
+      // App Config
+      appName: themeConfig.app.name,
+      appLogo: themeConfig.app.logo,
     }
   },
 }
 </script>
 
 <style lang="scss" scoped>
+// TODO: This is duplicated in VerticalNavMenuHeader.vue
+.app-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .navbar-content-container {
   height: 100%;
   display: flex;

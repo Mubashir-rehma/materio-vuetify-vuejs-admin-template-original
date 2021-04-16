@@ -15,7 +15,7 @@
         large
         rounded
         v-bind="attrs"
-        :class="[{'gradient-primary': isActive}, { 'menu-open': isMenuActive }]"
+        :class="[{'gradient-primary group-activator-active': isActive}, { 'menu-open': isMenuActive }]"
         v-on="on"
       >
         <v-icon
@@ -134,6 +134,9 @@ export default {
   // ? If you only want this style of this component than use selector `> .menu-open` instead of `.menu-open`
   .menu-open {
     background: rgba(map-deep-get($shades, 'black'), map-deep-get($material, 'states', 'hover'));
+  }
+  > .group-activator-active {
+    box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
   }
 }
 

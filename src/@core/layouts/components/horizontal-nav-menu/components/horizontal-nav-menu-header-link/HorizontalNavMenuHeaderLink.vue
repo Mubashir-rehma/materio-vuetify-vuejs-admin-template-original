@@ -5,7 +5,8 @@
     rounded
     :to="{ name: item.to }"
     large
-    active-class="gradient-primary"
+    class="horizontal-nav-menu-header-link"
+    active-class="gradient-primary header-link-active"
   >
     <v-icon
       dark
@@ -50,3 +51,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.horizontal-nav-menu-header-link.header-link-active {
+  box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
+}
+</style>

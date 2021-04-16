@@ -1,5 +1,6 @@
 <template>
   <v-menu
+    ref="refMenu"
     offset-y
     eager
     attach
@@ -14,7 +15,7 @@
         large
         rounded
         v-bind="attrs"
-        :class="isActive ? 'gradient-primary' : null"
+        :class="[{'gradient-primary': isActive}, { 'menu-open': isMenuActive }]"
         v-on="on"
       >
         <v-icon
@@ -45,8 +46,9 @@
 </template>
 
 <script>
+// eslint-disable-next-line object-curly-newline
+import { computed, provide, ref, watchEffect } from '@vue/composition-api'
 import { mdiChevronDown } from '@mdi/js'
-import { computed, provide, ref } from '@vue/composition-api'
 import { useMouseInElement } from '@vueuse/core'
 
 import HorizontalNavMenuGroup from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-group/HorizontalNavMenuGroup.vue'
@@ -86,6 +88,13 @@ export default {
     // i18n
     const { t } = useUtils()
 
+    // Templare ref & internal value
+    const refMenu = ref(null)
+    const isMenuActive = ref(false)
+    watchEffect(() => {
+      isMenuActive.value = refMenu.value ? refMenu.value.isActive : false
+    })
+
     return {
       isOpen,
       isActive,
@@ -100,6 +109,10 @@ export default {
       isMouseOutsideOfActivator,
       isMouseOutsideOfContent,
       isMenuOpen,
+
+      // Template Ref and internal Properties
+      refMenu,
+      isMenuActive,
 
       // i18n
       t,
@@ -116,9 +129,17 @@ export default {
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
 
+@include theme(horizontal-nav-menu) using ($material) {
+  // ! Below style will also affect HorizontalNavGroup
+  // ? If you only want this style of this component than use selector `> .menu-open` instead of `.menu-open`
+  .menu-open {
+    background: rgba(map-deep-get($shades, 'black'), map-deep-get($material, 'states', 'hover'));
+  }
+}
+
 .horizontal-nav-header-group {
   > .v-menu__content {
-    padding-top: 11px;
+    padding-top: 13px;
   }
 
   .v-menu__content {

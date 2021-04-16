@@ -12,5 +12,14 @@
             "@import '~vuetify/src/components/V${1:ComponentName}/_variables.scss';;"
         ],
         "description": "Import Vuetify Component SASS variables"
+    },
+    "Vuetify - Use theme Mixin": {
+        "prefix": "inc-theme",
+        "body": [
+            "@include theme(${1:component/class}) using (\\$material) {",
+            "  ${2:selector}",
+            "}"
+        ],
+        "description": "Vuetify - Use theme Mixin"
     }
 }

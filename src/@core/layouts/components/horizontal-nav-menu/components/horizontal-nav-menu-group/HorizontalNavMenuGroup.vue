@@ -1,5 +1,6 @@
 <template>
   <v-menu
+    ref="refMenu"
     offset-x
     attach
     open-on-hover
@@ -8,7 +9,7 @@
       <v-list-item
         ref="refActivator"
         v-bind="attrs"
-        :class="{'horizontal-nav-menu-group-active': isActive}"
+        :class="[{'horizontal-nav-menu-group-active': isActive}, { 'menu-open': isMenuActive }]"
         class="horizontal-nav-menu-group"
         v-on="on"
       >
@@ -45,9 +46,9 @@ import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/
 
 // import useHorizontalNavMenu from '@core/layouts/composable/horizontal-nav/useHorizontalNavMenu'
 
-// Composition Function
+// eslint-disable-next-line object-curly-newline
+import { ref, computed, inject, watchEffect } from '@vue/composition-api'
 import { mdiChevronRight } from '@mdi/js'
-import { ref, computed, inject } from '@vue/composition-api'
 import { useMouseInElement } from '@vueuse/core'
 import { useUtils } from '@core/libs/i18n'
 import themeConfig from '@themeConfig'
@@ -94,6 +95,13 @@ export default {
     // i18n
     const { t } = useUtils()
 
+    // Templare ref & internal value
+    const refMenu = ref(null)
+    const isMenuActive = ref(false)
+    watchEffect(() => {
+      isMenuActive.value = refMenu.value ? refMenu.value.isActive : false
+    })
+
     return {
       refChildDropdown,
       openChildDropdownOnLeft,
@@ -115,6 +123,10 @@ export default {
       // i18n
       t,
 
+      // Template Ref and internal Properties
+      refMenu,
+      isMenuActive,
+
       // icons
       icons: {
         mdiChevronRight,
@@ -132,6 +144,10 @@ export default {
 
   &.horizontal-nav-menu-group-active {
     background: rgba(map-deep-get($shades, 'black'), map-deep-get($material, 'states', 'selected'));
+  }
+
+  + .v-menu .v-menu__content {
+    top: -8px !important;
   }
 }
 </style>

@@ -97,7 +97,8 @@ export default {
   // System bar
   .app-system-bar {
     padding: 0 !important;
-    border-bottom: thin solid rgba(94, 86, 105, 0.14);
+    // border-bottom: thin solid rgba(94, 86, 105, 0.14);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.09);
 
     &.app-system-bar-boxed {
       ::v-deep > div:first-child {

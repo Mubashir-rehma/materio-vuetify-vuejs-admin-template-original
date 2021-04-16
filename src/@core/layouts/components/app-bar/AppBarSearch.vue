@@ -223,10 +223,13 @@ export default {
     // ? 3rem is applied to navbar-content-container
     .app-bar-autocomplete-box {
       max-width: calc(100% - 3rem * 2);
+    }
 
-      // .v-menu__content {
-      //   z-index: 2;
-      // }
+    // ? In Full content contet have padding of 1.72rem
+    &:not(.app-system-bar-boxed) {
+      .app-bar-autocomplete-box {
+        max-width: calc(100% - 1.72rem * 2);
+      }
     }
   }
 }

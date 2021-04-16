@@ -4,7 +4,6 @@
     offset-y
     eager
     attach
-    open-on-hover
     class="horizontal-nav-header-group"
   >
     <template #activator="{ on, attrs }">

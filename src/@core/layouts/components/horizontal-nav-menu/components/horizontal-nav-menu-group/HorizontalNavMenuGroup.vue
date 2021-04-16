@@ -3,7 +3,9 @@
     ref="refMenu"
     offset-x
     attach
-    open-on-hover
+    offset-overflow
+    eager
+    :left="openChildMenuLeft"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-list-item
@@ -27,9 +29,7 @@
       </v-list-item>
     </template>
     <v-list ref="refContent">
-      <v-list-item-group
-        color="primary"
-      >
+      <v-list-item-group color="primary">
         <component
           :is="resolveNavComponent(child)"
           v-for="child in item.children"
@@ -47,7 +47,7 @@ import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/
 // import useHorizontalNavMenu from '@core/layouts/composable/horizontal-nav/useHorizontalNavMenu'
 
 // eslint-disable-next-line object-curly-newline
-import { ref, computed, inject, watchEffect } from '@vue/composition-api'
+import { ref, computed, inject, watchEffect, watch, nextTick } from '@vue/composition-api'
 import { mdiChevronRight } from '@mdi/js'
 import { useMouseInElement } from '@vueuse/core'
 import { useUtils } from '@core/libs/i18n'
@@ -66,14 +66,8 @@ export default {
     },
   },
   setup(props) {
-    const {
-      refChildDropdown,
-      isActive,
-      isOpen,
-      updateGroupOpen,
-      updateIsActive,
-      openChildDropdownOnLeft,
-    } = useHorizontalNavMenuGroup(props.item)
+    // eslint-disable-next-line object-curly-newline
+    const { isActive, isOpen, updateGroupOpen, updateIsActive } = useHorizontalNavMenuGroup(props.item)
 
     const resolveNavComponent = item => {
       if (item.children) return 'horizontal-nav-menu-group'
@@ -102,9 +96,21 @@ export default {
       isMenuActive.value = refMenu.value ? refMenu.value.isActive : false
     })
 
+    // Template ref Child Menu
+    const openChildMenuLeft = ref(false)
+    watch(isMenuActive, () => {
+      nextTick(() => {
+        setTimeout(() => {
+          const childDropdownWidth = refContent.value.$el.offsetWidth
+          const windowContentWidth = window.innerWidth - 16
+          const { left: childDropdownLeft } = refContent.value.$el.getBoundingClientRect()
+          const shallDropLeft = childDropdownLeft + childDropdownWidth - windowContentWidth
+          openChildMenuLeft.value = shallDropLeft > 0
+        }, 20)
+      })
+    })
+
     return {
-      refChildDropdown,
-      openChildDropdownOnLeft,
       resolveNavComponent,
       isOpen,
       isActive,
@@ -126,6 +132,9 @@ export default {
       // Template Ref and internal Properties
       refMenu,
       isMenuActive,
+
+      // Template ref child menu
+      openChildMenuLeft,
 
       // icons
       icons: {

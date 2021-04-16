@@ -3,6 +3,7 @@
     ref="refMenu"
     offset-x
     attach
+    open-on-hover
     offset-overflow
     eager
     :left="openChildMenuLeft"

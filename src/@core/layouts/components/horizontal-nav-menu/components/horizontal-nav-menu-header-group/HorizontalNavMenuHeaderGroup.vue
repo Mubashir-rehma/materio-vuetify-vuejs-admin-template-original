@@ -3,6 +3,7 @@
     ref="refMenu"
     offset-y
     eager
+    open-on-hover
     attach
     class="horizontal-nav-header-group"
   >

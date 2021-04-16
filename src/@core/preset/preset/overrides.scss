@@ -190,3 +190,19 @@ button {
     }
   }
 }
+
+//
+//* ——— Button ——————————————————
+//
+
+.v-btn--is-elevated {
+  @include elevation(3, !important);
+
+  &:hover {
+    @include elevation(4, !important);
+  }
+
+  &:active {
+    @include elevation(2, !important);
+  }
+}

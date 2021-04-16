@@ -4,7 +4,6 @@
     offset-x
     attach
     open-on-hover
-    offset-overflow
     eager
     :left="openChildMenuLeft"
   >
@@ -48,9 +47,10 @@ import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/
 // import useHorizontalNavMenu from '@core/layouts/composable/horizontal-nav/useHorizontalNavMenu'
 
 // eslint-disable-next-line object-curly-newline
-import { ref, computed, inject, watchEffect, watch, nextTick } from '@vue/composition-api'
+import { ref, computed, inject, watchEffect, nextTick, watch } from '@vue/composition-api'
 import { mdiChevronRight } from '@mdi/js'
-import { useMouseInElement } from '@vueuse/core'
+// eslint-disable-next-line object-curly-newline
+import { useMouseInElement, until, useWindowSize, invoke } from '@vueuse/core'
 import { useUtils } from '@core/libs/i18n'
 import themeConfig from '@themeConfig'
 import useHorizontalNavMenuGroup from './useHorizontalNavMenuGroup'
@@ -99,17 +99,24 @@ export default {
 
     // Template ref Child Menu
     const openChildMenuLeft = ref(false)
-    watch(isMenuActive, () => {
-      nextTick(() => {
-        setTimeout(() => {
-          const childDropdownWidth = refContent.value.$el.offsetWidth
-          const windowContentWidth = window.innerWidth - 16
-          const { left: childDropdownLeft } = refContent.value.$el.getBoundingClientRect()
-          const shallDropLeft = childDropdownLeft + childDropdownWidth - windowContentWidth
-          openChildMenuLeft.value = shallDropLeft > 0
-        }, 20)
+    const { width } = useWindowSize()
+    const updateMenuDropLeft = async () => {
+      invoke(async () => {
+        await until(isMenuActive).toBeTruthy()
+
+        nextTick(() => {
+          setTimeout(() => {
+            console.log('object')
+            const childDropdownWidth = refContent.value.$el.offsetWidth
+            const windowContentWidth = window.innerWidth - 16
+            const { left: childDropdownLeft } = refContent.value.$el.getBoundingClientRect()
+            const shallDropLeft = childDropdownLeft + childDropdownWidth - windowContentWidth
+            openChildMenuLeft.value = shallDropLeft > 0
+          }, 20)
+        })
       })
-    })
+    }
+    watch(width, updateMenuDropLeft, { immediate: true, flush: 'post' })
 
     return {
       resolveNavComponent,

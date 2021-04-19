@@ -206,3 +206,16 @@ button {
     @include elevation(2, !important);
   }
 }
+
+//
+//* ——— Date Picker ——————————————————
+//
+
+@include theme(v-picker) using ($material) {
+  // ? `.v-application--wrap` is used to make sure pickers shown in/from dialog/input don't have border.
+  @at-root .v-application--wrap .v-picker {
+    .v-picker__body {
+      border: 1px solid rgba(map-deep-get($shades, 'black'), 0.22);
+    }
+  }
+}

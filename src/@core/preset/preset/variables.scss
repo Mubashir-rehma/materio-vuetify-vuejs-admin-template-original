@@ -51,6 +51,9 @@ $material-light: map-deep-merge(
     'status-bar': (
       'regular': map-get($shades, 'white'),
     ),
+    'picker': (
+      'clock': #f5f5f5,
+    ),
   )
 );
 
@@ -370,3 +373,9 @@ $chip-icon-size: 20px;
 //
 
 $snackbar-background-color: rgba(59, 55, 68, 0.9);
+
+//
+//* ——— Time Picker ——————————————————
+//
+
+$time-picker-title-btn-height: 32px;

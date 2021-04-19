@@ -6,12 +6,13 @@
     open-on-hover
     eager
     :left="openChildMenuLeft"
+    max-height="70vh"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-list-item
         ref="refActivator"
         v-bind="attrs"
-        :class="[{'horizontal-nav-menu-group-active': isActive}, { 'menu-open': isMenuActive }]"
+        :class="[{'horizontal-nav-menu-group-active': isActive}, { 'menu-open': isMenuActive }, { 'scrollable': isContentScrollable }]"
         class="horizontal-nav-menu-group"
         v-on="on"
       >
@@ -98,25 +99,33 @@ export default {
     })
 
     // Template ref Child Menu
+    const isContentScrollable = ref(false)
     const openChildMenuLeft = ref(false)
-    const { width } = useWindowSize()
+    const { width, height } = useWindowSize()
     const updateMenuDropLeft = async () => {
       invoke(async () => {
         await until(isMenuActive).toBeTruthy()
 
         nextTick(() => {
           setTimeout(() => {
-            console.log('object')
             const childDropdownWidth = refContent.value.$el.offsetWidth
             const windowContentWidth = window.innerWidth - 16
             const { left: childDropdownLeft } = refContent.value.$el.getBoundingClientRect()
             const shallDropLeft = childDropdownLeft + childDropdownWidth - windowContentWidth
             openChildMenuLeft.value = shallDropLeft > 0
-          }, 20)
+
+            // Add scroll to child dd if don't have much space
+
+            const refContentTop = refContent.value.$el.getBoundingClientRect().top
+            const refContentHeight = refContent.value.$el.getBoundingClientRect().height
+            if (window.innerHeight - refContentTop - refContentHeight - 28 < 1) {
+              isContentScrollable.value = true
+            }
+          }, 25)
         })
       })
     }
-    watch(width, updateMenuDropLeft, { immediate: true, flush: 'post' })
+    watch([width, height], updateMenuDropLeft, { immediate: true, flush: 'post', deep: true })
 
     return {
       resolveNavComponent,
@@ -143,6 +152,7 @@ export default {
 
       // Template ref child menu
       openChildMenuLeft,
+      isContentScrollable,
 
       // icons
       icons: {
@@ -155,6 +165,7 @@ export default {
 
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
+@import '~@core/preset/preset/mixins.scss';
 
 @include theme(horizontal-nav-menu-group) using ($material) {
   color: map-deep-get($material, 'text', 'primary');
@@ -163,8 +174,19 @@ export default {
     background: rgba(map-deep-get($shades, 'black'), map-deep-get($material, 'states', 'selected'));
   }
 
-  + .v-menu .v-menu__content {
+  &:first-child + .v-menu > .v-menu__content {
     top: -8px !important;
+  }
+
+  &.scrollable {
+    + .v-menu .v-menu__content {
+      overflow-y: auto !important;
+      @include style-scroll-bar();
+      .v-list {
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+    }
   }
 }
 </style>

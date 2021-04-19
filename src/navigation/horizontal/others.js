@@ -1,35 +1,34 @@
+// eslint-disable-next-line object-curly-newline
+import { mdiDotsHorizontal, mdiEyeOffOutline, mdiFileDocumentOutline, mdiLifebuoy, mdiMenu } from '@mdi/js'
+
 export default [
   {
-    header: 'Others',
-    icon: 'MoreHorizontalIcon',
+    title: 'Others',
+    icon: mdiDotsHorizontal,
     children: [
-      {
-        title: 'Access Control',
-        route: 'access-control',
-        icon: 'ShieldIcon',
-        // acl: {
-        action: 'read',
-        resource: 'ACL',
-        // },
-      },
+      // {
+      //   title: 'Access Control',
+      //   to: 'access-control',
+      //   icon: 'ShieldIcon',
+      // },
       {
         title: 'Menu Levels',
-        icon: 'MenuIcon',
+        icon: mdiMenu,
         children: [
           {
             title: 'Menu Level 2.1',
-            route: null,
+            to: null,
           },
           {
             title: 'Menu Level 2.2',
             children: [
               {
                 title: 'Menu Level 3.1',
-                route: null,
+                to: null,
               },
               {
                 title: 'Menu Level 3.2',
-                route: null,
+                to: null,
               },
             ],
           },
@@ -37,19 +36,19 @@ export default [
       },
       {
         title: 'Disabled Menu',
-        route: null,
-        icon: 'EyeOffIcon',
+        to: null,
+        icon: mdiEyeOffOutline,
         disabled: true,
       },
       {
         title: 'Raise Support',
         href: 'https://pixinvent.ticksy.com/',
-        icon: 'LifeBuoyIcon',
+        icon: mdiLifebuoy,
       },
       {
         title: 'Documentation',
         href: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/documentation',
-        icon: 'FileTextIcon',
+        icon: mdiFileDocumentOutline,
       },
     ],
   },

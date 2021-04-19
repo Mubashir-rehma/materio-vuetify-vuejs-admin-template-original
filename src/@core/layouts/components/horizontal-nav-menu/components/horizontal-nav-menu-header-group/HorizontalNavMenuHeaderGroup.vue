@@ -149,7 +149,7 @@ export default {
   .v-menu__content {
     contain: none !important;
     overflow: visible !important;
-    box-shadow: none;
+    // box-shadow: none;
 
     > .v-list {
       border-radius: 6px;

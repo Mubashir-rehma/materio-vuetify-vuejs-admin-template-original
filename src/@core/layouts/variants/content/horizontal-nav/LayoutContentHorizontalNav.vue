@@ -1,5 +1,8 @@
 <template>
-  <v-app class="content-layout horizontal-nav">
+  <v-app
+    class="content-layout horizontal-nav"
+    :class="{'content-full': appContentWidth === 'full'}"
+  >
     <!-- Navbar -->
     <v-system-bar
       app
@@ -137,5 +140,24 @@ export default {
   //   margin-left: 1.72rem !important;
   //   margin-right: 1.72rem !important;
   // }
+
+  // Footer
+  .v-footer > div {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    // Padding value is from `$boxed-content-padding-horizontal-navigation-menu`
+    // We will keep top and buttom padding value of footer as it is
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    @at-root .content-layout.content-full {
+      .v-footer > div {
+        max-width: unset;
+        padding-left: $content-padding-vertical-navigation-menu !important;
+        padding-right: $content-padding-vertical-navigation-menu !important;
+      }
+    }
+  }
 }
 </style>

@@ -57,6 +57,7 @@
       :absolute="footerType === 'static'"
       padless
       :class="{'mx-auto': appContentWidth !== 'full'}"
+      :color="footerType === 'static' ? 'transparent' : null"
     >
       <v-col cols="12">
         {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
@@ -162,7 +163,6 @@ $nav-drawer-mini-width: 68px;
   .v-app-bar,
   .v-footer {
     max-width: calc(1440px - (1.72rem * 2));
-    border-radius: 0 0 14px 14px !important;
 
     @at-root .v-application.content-full {
       .v-footer,
@@ -178,6 +178,8 @@ $nav-drawer-mini-width: 68px;
   }
 
   .v-app-bar {
+    border-radius: 0 0 14px 14px !important;
+
     &.app-bar-static {
       will-change: padding, background-color;
       transition: padding 0.2s ease, background-color 0.18s ease;

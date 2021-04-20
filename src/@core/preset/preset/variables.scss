@@ -15,6 +15,7 @@ $shades: (
 $card-spacer: 20px;
 $card-spacer-content: 16px;
 $component-border-color: rgba(map-get($shades, 'black'), 0.22);
+$customizer-form-icons: true;
 
 // ————————————————————————————————————
 //* ——— VUETIFY
@@ -382,3 +383,10 @@ $snackbar-background-color: rgba(59, 55, 68, 0.9);
 //
 
 $time-picker-title-btn-height: 32px;
+
+//
+//* ——— TreeView ——————————————————
+//
+
+$treeview-node-height: 40px;
+$treeview-node-height-dense: 36px;

@@ -219,3 +219,20 @@ button {
     }
   }
 }
+
+//
+//* ——— Form ——————————————————
+//
+
+@if $customizer-form-icons {
+  .v-input {
+    .v-input__icon {
+      .v-icon__svg {
+        font-size: 20px;
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

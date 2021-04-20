@@ -26,7 +26,7 @@
       :elevate-on-scroll="appBarType !== 'static'"
       :elevation="appBarType !== 'static' ? 3 : 0"
       class="mx-auto app-bar-static"
-      :class="{'px-5 app-bar-shinked': scrollY > 50}"
+      :class="{'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY > 50}"
       :color="appBarColor"
     >
       <slot
@@ -168,6 +168,8 @@ $nav-drawer-mini-width: 68px;
       .v-footer,
       .v-app-bar {
         max-width: unset;
+        margin-left: $content-padding-vertical-navigation-menu !important;
+        margin-right: $content-padding-vertical-navigation-menu !important;
       }
     }
 

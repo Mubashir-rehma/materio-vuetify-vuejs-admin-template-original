@@ -1,6 +1,6 @@
 <template>
   <v-app
-    :class="{'nav-drawer-mini': menuIsVerticalNavMini}"
+    :class="[{'nav-drawer-mini': menuIsVerticalNavMini}, {'content-full': appContentWidth === 'full'}]"
     class="content-layout vertical-nav"
   >
     <v-navigation-drawer
@@ -56,7 +56,7 @@
       inset
       :absolute="footerType === 'static'"
       padless
-      class="mx-auto"
+      :class="{'mx-auto': appContentWidth !== 'full'}"
     >
       <v-col cols="12">
         {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
@@ -86,7 +86,7 @@ export default {
   },
   setup() {
     // eslint-disable-next-line object-curly-newline
-    const { menuIsVerticalNavMini, menuIsMenuHidden, appBarType, footerType } = useAppConfig()
+    const { menuIsVerticalNavMini, menuIsMenuHidden, appBarType, footerType, appContentWidth } = useAppConfig()
     const $vuetify = getVuetify()
 
     const refAppBar = ref(null)
@@ -127,6 +127,7 @@ export default {
       appBarType,
       footerType,
       appBarColor,
+      appContentWidth,
       scrollY,
 
       // Template ref
@@ -145,7 +146,7 @@ export default {
 
 // Vuetify Fix
 // https://github.com/vuetifyjs/vuetify/issues/13327
-$nav-drawer-mini-width: 56px;
+$nav-drawer-mini-width: 68px;
 
 .v-application {
   &.nav-drawer-mini {
@@ -162,6 +163,13 @@ $nav-drawer-mini-width: 56px;
   .v-footer {
     max-width: calc(1440px - (1.72rem * 2));
     border-radius: 0 0 14px 14px !important;
+
+    @at-root .v-application.content-full {
+      .v-footer,
+      .v-app-bar {
+        max-width: unset;
+      }
+    }
 
     @media screen and (max-width: 1711px) {
       margin-left: 1.72rem !important;

@@ -94,6 +94,23 @@
       </app-card-code>
     </v-col>
 
+    <!-- validation -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Validation"
+        :code="codeSnippets.sliderValidation"
+      >
+        <v-card-text>Vuetify includes simple validation through the <code>rules</code> prop.</v-card-text>
+
+        <v-card-text>
+          <demo-slider-validation class="mt-6"></demo-slider-validation>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
     <!-- mix max  -->
     <v-col
       cols="12"
@@ -128,23 +145,6 @@
 
         <v-card-text>
           <demo-slider-step></demo-slider-step>
-        </v-card-text>
-      </app-card-code>
-    </v-col>
-
-    <!-- validation -->
-    <v-col
-      cols="12"
-      md="6"
-    >
-      <app-card-code
-        title="Validation"
-        :code="codeSnippets.sliderValidation"
-      >
-        <v-card-text>Vuetify includes simple validation through the <code>rules</code> prop.</v-card-text>
-
-        <v-card-text>
-          <demo-slider-validation></demo-slider-validation>
         </v-card-text>
       </app-card-code>
     </v-col>

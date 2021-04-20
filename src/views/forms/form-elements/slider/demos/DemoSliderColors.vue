@@ -10,6 +10,7 @@
       v-model="slider2.val"
       :label="slider2.label"
       :track-color="slider2.color"
+      class="my-6"
     ></v-slider>
 
     <v-slider

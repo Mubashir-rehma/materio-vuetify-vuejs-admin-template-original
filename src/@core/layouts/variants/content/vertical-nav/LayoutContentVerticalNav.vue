@@ -150,6 +150,11 @@ export default {
 $nav-drawer-mini-width: 68px;
 
 .v-application {
+  .v-main,
+  .v-footer {
+    transition-duration: 0.3s;
+  }
+
   &.nav-drawer-mini {
     .v-main {
       padding-left: $nav-drawer-mini-width !important;
@@ -184,7 +189,7 @@ $nav-drawer-mini-width: 68px;
 
     &.app-bar-static {
       will-change: padding, background-color;
-      transition: padding 0.2s ease, background-color 0.18s ease;
+      transition: padding 0.2s ease, background-color 0.18s ease, left 0.3s ease;
 
       ::v-deep > .v-toolbar__content {
         padding: 0;

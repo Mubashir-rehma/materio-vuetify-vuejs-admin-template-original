@@ -5,7 +5,7 @@
     active-class="gradient-primary"
   >
     <v-list-item-icon>
-      <v-icon :small="!item.icon">
+      <v-icon :class="{'alternate-icon-small': !item.icon}">
         {{ item.icon || alternateIcon }}
       </v-icon>
     </v-list-item-icon>
@@ -52,8 +52,15 @@ export default {
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
 
-.vertical-nav-menu-link.v-list-item--active {
-  box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
-  @include elevationTransition();
+.vertical-nav-menu-link {
+  &.v-list-item--active {
+    box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
+    @include elevationTransition();
+  }
+  .alternate-icon-small {
+    font-size: 14px;
+    height: 14px;
+    width: 14px;
+  }
 }
 </style>

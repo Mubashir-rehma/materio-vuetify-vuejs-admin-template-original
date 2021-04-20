@@ -129,7 +129,8 @@ export default {
   .v-list-item {
     @include app-states($material);
 
-    height: 42px;
+    height: 44px;
+    min-height: 44px;
     color: map-deep-get($material, 'text', 'primary');
     // ? Reason: In collapsed mode due to modified mini width & flex grow icon change position while collapsing the drawer
     justify-content: flex-start !important;

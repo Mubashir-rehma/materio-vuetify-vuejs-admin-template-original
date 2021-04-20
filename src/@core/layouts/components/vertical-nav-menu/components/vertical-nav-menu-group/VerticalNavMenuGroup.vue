@@ -4,6 +4,7 @@
     :prepend-icon="item.icon"
     class="vertical-nav-menu-group"
     :class="[{'vertical-nav-menu-group-active': isActive}, ...rootThemeClasses]"
+    :value="isActive"
     @click="updateGroupOpen(!isOpen)"
   >
     <template #activator>

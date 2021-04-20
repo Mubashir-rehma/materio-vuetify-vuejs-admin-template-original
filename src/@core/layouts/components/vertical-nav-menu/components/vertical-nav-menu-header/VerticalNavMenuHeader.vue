@@ -59,7 +59,11 @@ export default {
 // TODO: This is duplicated in LayoutContentHorizontalNav.vue
 .app-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
 }
 
 // .vertical-nav-header {

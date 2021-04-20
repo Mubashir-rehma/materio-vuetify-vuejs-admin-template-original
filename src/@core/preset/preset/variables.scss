@@ -54,6 +54,9 @@ $material-light: map-deep-merge(
     'picker': (
       'clock': #f5f5f5,
     ),
+    'icons': (
+      'active': map-deep-get($material-light, 'text', 'primary'),
+    ),
   )
 );
 

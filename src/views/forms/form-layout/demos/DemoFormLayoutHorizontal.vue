@@ -3,14 +3,14 @@
     <v-row>
       <v-col
         cols="12"
-        md="4"
+        md="3"
       >
         <label for="firstname">First Name</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="firstname"
@@ -24,14 +24,14 @@
 
       <v-col
         cols="12"
-        sm="4"
+        md="3"
       >
         <label for="email">Email</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="email"
@@ -45,14 +45,14 @@
 
       <v-col
         cols="12"
-        sm="4"
+        md="3"
       >
         <label for="mobile">Mobile</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="mobile"
@@ -67,14 +67,14 @@
 
       <v-col
         cols="12"
-        sm="4"
+        md="3"
       >
         <label for="password">Password</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="password"
@@ -88,7 +88,7 @@
       </v-col>
 
       <v-col
-        offset-md="4"
+        offset-md="3"
         cols="12"
       >
         <v-checkbox
@@ -100,7 +100,7 @@
       </v-col>
 
       <v-col
-        offset-md="4"
+        offset-md="3"
         cols="12"
       >
         <v-btn color="primary">

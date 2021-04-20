@@ -40,6 +40,7 @@ button {
   .v-card__title {
     line-height: 1;
     padding-top: $card-spacer;
+    padding-bottom: $card-spacer;
   }
   .v-card__title ~ .v-card__title {
     padding-top: $card-spacer-content;

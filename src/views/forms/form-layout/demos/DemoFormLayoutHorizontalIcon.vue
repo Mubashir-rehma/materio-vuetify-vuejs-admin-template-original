@@ -3,14 +3,14 @@
     <v-row>
       <v-col
         cols="12"
-        md="4"
+        md="3"
       >
         <label for="firstnameHorizontalIcons">First Name</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="firstnameHorizontalIcons"
@@ -25,14 +25,14 @@
 
       <v-col
         cols="12"
-        sm="4"
+        md="3"
       >
         <label for="emailHorizontalIcons">Email</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="emailHorizontalIcons"
@@ -47,14 +47,14 @@
 
       <v-col
         cols="12"
-        sm="4"
+        md="3"
       >
         <label for="mobileHorizontalIcons">Mobile</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="mobileHorizontalIcons"
@@ -70,14 +70,14 @@
 
       <v-col
         cols="12"
-        sm="4"
+        md="3"
       >
         <label for="passwordHorizontalIcons">Password</label>
       </v-col>
 
       <v-col
         cols="12"
-        md="8"
+        md="9"
       >
         <v-text-field
           id="passwordHorizontalIcons"
@@ -92,7 +92,7 @@
       </v-col>
 
       <v-col
-        offset-md="4"
+        offset-md="3"
         cols="12"
       >
         <v-checkbox
@@ -104,7 +104,7 @@
       </v-col>
 
       <v-col
-        offset-md="4"
+        offset-md="3"
         cols="12"
       >
         <v-btn color="primary">

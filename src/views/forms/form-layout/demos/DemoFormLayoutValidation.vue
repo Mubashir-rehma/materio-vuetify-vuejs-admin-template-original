@@ -41,28 +41,28 @@
       class="mt-0"
     ></v-checkbox>
 
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      @click="validate"
-    >
-      Validate
-    </v-btn>
-
-    <v-btn
-      color="error"
-      class="mx-4"
-      @click="reset"
-    >
-      Reset Form
-    </v-btn>
-
-    <v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>
+    <div class="mt-4">
+      <v-btn
+        :disabled="!valid"
+        color="success"
+        @click="validate"
+      >
+        Validate
+      </v-btn>
+      <v-btn
+        color="error"
+        class="mx-4"
+        @click="reset"
+      >
+        Reset Form
+      </v-btn>
+      <v-btn
+        color="warning"
+        @click="resetValidation"
+      >
+        Reset Validation
+      </v-btn>
+    </div>
   </v-form>
 </template>
 

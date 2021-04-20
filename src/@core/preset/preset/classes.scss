@@ -8,3 +8,19 @@
 .gradient-primary {
   background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
 }
+
+.multi-col-validation {
+  &.v-form {
+    .v-text-field__details {
+      margin-bottom: 0 !important;
+      min-height: unset;
+
+      .v-messages:not([role='alert']) {
+        min-height: unset;
+        .v-messages__wrapper {
+          min-height: unset;
+        }
+      }
+    }
+  }
+}

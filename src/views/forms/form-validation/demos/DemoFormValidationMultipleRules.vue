@@ -1,5 +1,8 @@
 <template>
-  <v-form ref="form">
+  <v-form
+    ref="form"
+    class="multi-col-validation"
+  >
     <v-row>
       <v-col
         cols="12"
@@ -71,10 +74,9 @@
 </template>
 
 <script>
+// eslint-disable-next-line object-curly-newline
+import { required, emailValidator, passwordValidator, confirmedValidator } from '@core/utils/validation'
 import { defineComponent, ref } from '@vue/composition-api'
-import {
-  required, emailValidator, passwordValidator, confirmedValidator,
-} from '@core/utils/validation'
 
 export default defineComponent({
   setup() {

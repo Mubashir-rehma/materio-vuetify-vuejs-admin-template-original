@@ -121,7 +121,7 @@ export default defineComponent({
     const country = ref('')
     const company = ref('')
     const email = ref('')
-    const checkbox = ref(true)
+    const checkbox = ref(false)
 
     return {
       firstName,

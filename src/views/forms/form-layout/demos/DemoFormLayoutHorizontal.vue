@@ -127,7 +127,7 @@ export default defineComponent({
     const email = ref('')
     const mobile = ref()
     const password = ref()
-    const checkbox = ref(true)
+    const checkbox = ref(false)
 
     return {
       firstname,

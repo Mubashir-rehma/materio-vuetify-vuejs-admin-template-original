@@ -123,10 +123,9 @@
 </template>
 
 <script>
+// eslint-disable-next-line object-curly-newline
+import { mdiAccountOutline, mdiEmailOutline, mdiCellphone, mdiLockOutline } from '@mdi/js'
 import { defineComponent, ref } from '@vue/composition-api'
-import {
-  mdiAccountOutline, mdiEmailOutline, mdiCellphone, mdiLockOutline,
-} from '@mdi/js'
 
 export default defineComponent({
   setup() {
@@ -134,7 +133,7 @@ export default defineComponent({
     const email = ref('')
     const mobile = ref()
     const password = ref()
-    const checkbox = ref(true)
+    const checkbox = ref(false)
 
     return {
       firstname,

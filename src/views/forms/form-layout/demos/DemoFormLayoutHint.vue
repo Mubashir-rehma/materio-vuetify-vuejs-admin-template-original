@@ -69,7 +69,7 @@ export default defineComponent({
     const email = ref('')
     const mobile = ref()
     const password = ref()
-    const checkbox = ref(true)
+    const checkbox = ref(false)
     const value = ref(null)
     const items = ['foo', 'bar', 'fizz', 'buzz']
     const values = []

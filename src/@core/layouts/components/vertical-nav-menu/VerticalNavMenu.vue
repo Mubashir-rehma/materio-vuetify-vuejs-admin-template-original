@@ -106,23 +106,23 @@ export default {
 .vertical-nav-menu-container {
   height: 100%;
   .ps-nav-menu-items {
-    height: calc(100% - 74px) !important;
+    height: calc(100% - 42px) !important;
   }
 }
 
 @include theme(vertical-nav-menu-items) using ($material) {
   .v-list-item__icon {
     &:first-child {
-      margin-top: 12px;
-      margin-bottom: 12px;
+      margin: 0 12px 0 0;
+      align-self: center;
     }
     margin-right: 12px;
   }
 
   // Center align small icon
   .v-list-group__items .v-list-item__icon {
-    margin-top: 16px;
-    margin-left: 3px;
+    margin-top: 0px;
+    margin-left: 5px;
     margin-right: 9px;
   }
 

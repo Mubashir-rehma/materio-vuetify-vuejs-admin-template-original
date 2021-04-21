@@ -36,6 +36,8 @@ module.exports = {
       },
     ],
 
+    'linebreak-style': 'off',
+
     // add new line above comment
     'newline-before-return': 'error',
 

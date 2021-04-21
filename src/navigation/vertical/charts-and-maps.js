@@ -2,7 +2,7 @@ import { mdiChartDonut } from '@mdi/js'
 
 export default [
   {
-    subheader: 'Charts and Maps',
+    subheader: 'CHARTS AND MAPS',
   },
   {
     title: 'Charts',

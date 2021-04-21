@@ -217,7 +217,7 @@ export default {
     PerfectScrollbar,
   },
   setup() {
-    const isCustomizerOpen = ref(true)
+    const isCustomizerOpen = ref(false)
     // eslint-disable-next-line object-curly-newline
     const {
       appContentLayoutNav,

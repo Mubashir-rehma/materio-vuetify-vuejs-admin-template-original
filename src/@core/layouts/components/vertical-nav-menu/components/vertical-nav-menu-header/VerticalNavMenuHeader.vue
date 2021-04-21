@@ -1,5 +1,5 @@
 <template>
-  <div class="vertical-nav-header d-flex align-items-center justify-space-between pl-6 pr-2 pt-5">
+  <div class="vertical-nav-header d-flex align-items-center justify-space-between pl-6 pr-5 pt-5">
     <router-link
       to="/"
       class="d-flex align-items-center text-decoration-none"
@@ -18,13 +18,19 @@
     </router-link>
 
     <div
-      class="d-flex"
+      class="d-flex align-center"
       @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
     >
-      <v-icon v-show="!menuIsVerticalNavMini">
+      <v-icon
+        v-show="!menuIsVerticalNavMini"
+        size="20"
+      >
         {{ icons.mdiRecordCircleOutline }}
       </v-icon>
-      <v-icon v-show="menuIsVerticalNavMini">
+      <v-icon
+        v-show="menuIsVerticalNavMini"
+        size="20"
+      >
         {{ icons.mdiRadioboxBlank }}
       </v-icon>
     </div>

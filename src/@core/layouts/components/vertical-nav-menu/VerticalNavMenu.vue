@@ -97,6 +97,14 @@ export default {
     padding: 0 18px 0 24px;
   }
 
+  .v-list-item {
+    margin-bottom: 0.375rem;
+  }
+
+  .v-list-group .v-list-group__header .v-list-item__icon.v-list-group__header__append-icon {
+    min-width: 24px;
+  }
+
   .v-navigation-drawer__border {
     background-color: transparent !important;
   }
@@ -116,6 +124,13 @@ export default {
 }
 
 @include theme(vertical-nav-menu-items) using ($material) {
+  padding-right: 20px !important;
+  @at-root .app-navigation-menu:not(.v-navigation-drawer--is-mouseover) {
+    .vertical-nav-menu-items {
+      padding-right: 0 !important;
+    }
+  }
+
   .v-subheader:not(:first-child) {
     margin-top: 18px;
   }

@@ -1,17 +1,20 @@
 <template>
   <v-subheader>
-    <span class="title-wrapper">
+    <span
+      class="title-wrapper"
+      :class="{'no-style': !isMouseHovered}"
+    >
       <span v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)">{{ t(item.subheader) }}</span>
     </span>
     <v-icon v-show="menuIsVerticalNavMini && !isMouseHovered">
-      {{ icons.mdiDotsHorizontal }}
+      {{ icons.mdiMinus }}
     </v-icon>
   </v-subheader>
 </template>
 
 <script>
 import useAppConfig from '@core/@app-config/useAppConfig'
-import { mdiDotsHorizontal } from '@mdi/js'
+import { mdiMinus } from '@mdi/js'
 import { inject } from '@vue/composition-api'
 import { useUtils } from '@core/libs/i18n'
 
@@ -36,7 +39,7 @@ export default {
 
       // Icons
       icons: {
-        mdiDotsHorizontal,
+        mdiMinus,
       },
     }
   },
@@ -48,20 +51,26 @@ export default {
   white-space: nowrap;
   position: relative;
 
+  .v-icon {
+    color: map-deep-get($material, 'dividers');
+  }
+
   .title-wrapper {
-    width: 100%;
-    // text-align: center;
-    position: absolute;
-    left: 0;
-    border-bottom: 1px solid map-deep-get($material, 'dividers');
-    line-height: 0.1em;
-    // margin: 10px 0 20px;
+    &:not(.no-style) {
+      width: 100%;
+      // text-align: center;
+      position: absolute;
+      left: 0;
+      border-bottom: 1px solid map-deep-get($material, 'dividers');
+      line-height: 0.1em;
+      // margin: 10px 0 20px;
+    }
   }
 
   .title-wrapper span {
     background: map-deep-get($material, 'background');
     padding: 0 10px;
-    margin-left: 24px;
+    margin-left: 16px;
   }
 }
 </style>

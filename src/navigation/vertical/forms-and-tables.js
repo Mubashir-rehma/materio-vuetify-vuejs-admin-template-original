@@ -2,7 +2,7 @@ import { mdiCheckboxMarkedCircleOutline, mdiContentCopy } from '@mdi/js'
 
 export default [
   {
-    subheader: 'Forms & Tables',
+    subheader: 'FORMS & TABLES',
   },
   {
     title: 'Forms Elements',

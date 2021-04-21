@@ -1,14 +1,19 @@
 <template>
   <v-subheader>
-    <span
-      class="title-wrapper"
-      :class="{'no-style': !isMouseHovered}"
-    >
-      <span v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)">{{ t(item.subheader) }}</span>
-    </span>
-    <v-icon v-show="menuIsVerticalNavMini && !isMouseHovered">
-      {{ icons.mdiMinus }}
-    </v-icon>
+    <v-slide-x-transition hide-on-leave>
+      <span
+        v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)"
+        class="title-wrapper"
+        :class="{'no-style': menuIsVerticalNavMini && !isMouseHovered}"
+      >
+        <span>{{ t(item.subheader) }}</span>
+      </span>
+    </v-slide-x-transition>
+    <v-slide-x-transition>
+      <v-icon v-show="menuIsVerticalNavMini && !isMouseHovered">
+        {{ icons.mdiMinus }}
+      </v-icon>
+    </v-slide-x-transition>
   </v-subheader>
 </template>
 

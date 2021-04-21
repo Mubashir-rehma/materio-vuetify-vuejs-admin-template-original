@@ -12,28 +12,36 @@
         contain
         class="mr-3"
       ></v-img>
-      <h2 class="app-title text--primary">
-        {{ appName }}
-      </h2>
+      <v-slide-x-transition>
+        <h2
+          v-show="!(menuIsVerticalNavMini && !isMouseHovered)"
+          class="app-title text--primary"
+        >
+          {{ appName }}
+        </h2>
+      </v-slide-x-transition>
     </router-link>
 
-    <div
-      class="d-flex align-center"
-      @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
-    >
-      <v-icon
-        v-show="!menuIsVerticalNavMini"
-        size="20"
+    <v-slide-x-transition>
+      <div
+        v-show="!(menuIsVerticalNavMini && !isMouseHovered)"
+        class="d-flex align-center ml-1"
+        @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
       >
-        {{ icons.mdiRecordCircleOutline }}
-      </v-icon>
-      <v-icon
-        v-show="menuIsVerticalNavMini"
-        size="20"
-      >
-        {{ icons.mdiRadioboxBlank }}
-      </v-icon>
-    </div>
+        <v-icon
+          v-show="!menuIsVerticalNavMini"
+          size="20"
+        >
+          {{ icons.mdiRecordCircleOutline }}
+        </v-icon>
+        <v-icon
+          v-show="menuIsVerticalNavMini"
+          size="20"
+        >
+          {{ icons.mdiRadioboxBlank }}
+        </v-icon>
+      </div>
+    </v-slide-x-transition>
   </div>
 </template>
 
@@ -41,13 +49,16 @@
 import { mdiRadioboxBlank, mdiRecordCircleOutline } from '@mdi/js'
 import useAppConfig from '@core/@app-config/useAppConfig'
 import themeConfig from '@themeConfig'
+import { inject } from '@vue/composition-api'
 
 export default {
   setup() {
     const { menuIsVerticalNavMini } = useAppConfig()
+    const isMouseHovered = inject('isMouseHovered')
 
     return {
       menuIsVerticalNavMini,
+      isMouseHovered,
       appName: themeConfig.app.name,
       appLogo: themeConfig.app.logo,
 

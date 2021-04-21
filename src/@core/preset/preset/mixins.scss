@@ -59,3 +59,13 @@
     display: none;
   }
 }
+
+@mixin class-generator($map) {
+  @each $name, $styles in $map {
+    #{$name} {
+      @each $key, $value in $styles {
+        #{$key}: $value;
+      }
+    }
+  }
+}

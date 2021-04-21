@@ -14,134 +14,189 @@
       :right="!$vuetify.rtl"
       temporary
       absolute
+      width="400"
     >
       <!-- Heading -->
-      <div>
-        <h3 class="px-4 py-2">
-          Customizer
-        </h3>
+      <div class="app-customizer-header customizer-section py-3">
+        <h6
+          class="text-h6"
+          style="font-weight: 700"
+        >
+          THEME CUSTOMIZER
+        </h6>
+        <span class="text--secondary">Customize and preview in real time</span>
+        <v-btn
+          icon
+          class="icon-customizer-close"
+          @click="isCustomizerOpen = false"
+        >
+          <v-icon>
+            {{ icons.mdiClose }}
+          </v-icon>
+        </v-btn>
+      </div>
+
+      <v-divider></v-divider>
+
+      <perfect-scrollbar
+        :options="perfectScrollbarOptions"
+        class="ps-customizer"
+      >
+        <!-- Section: Themeing -->
+        <div class="customizer-section">
+          <p class="text-xs text--disabled">
+            THEMING
+          </p>
+          <!-- Skin -->
+          <span>Skin</span>
+          <v-radio-group
+            v-model="skin"
+            class="mt-0"
+            hide-details
+            row
+          >
+            <v-radio
+              v-for="option in skinOptions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+            ></v-radio>
+          </v-radio-group>
+          <!-- Mode -->
+          <span class="mt-6 d-inline-block mb-1">Mode</span>
+          <div class="d-flex align-center">
+            <span class="text--secondary">Light</span>
+            <v-switch
+              v-model="isDark"
+              hide-details
+              class="mt-0 mx-2"
+            ></v-switch>
+            <span class="text--secondary">Dark</span>
+          </div>
+        </div>
         <v-divider></v-divider>
-      </div>
-
-      <!-- Dark Mode -->
-      <div class="pa-4">
-        <v-switch
-          v-model="isDark"
-          label="Dark Mode"
-        ></v-switch>
-      </div>
-
-      <!-- RTL -->
-      <div class="pa-4">
-        <v-switch
-          v-model="isRtl"
-          label="RTL"
-        ></v-switch>
-      </div>
-
-      <div class="pa-4">
-        <v-btn-toggle
-          v-model="selectedTheme"
-          mandatory
-          @change="(value) => { themes = themeVariants[value] }"
-        >
-          <v-btn value="vuexy">
-            vuexy
-          </v-btn>
-
-          <v-btn value="frest">
-            frest
-          </v-btn>
-        </v-btn-toggle>
-      </div>
-
-      <!-- Nav Type -->
-      <div
-        v-show="$vuetify.breakpoint.lgAndUp"
-        class="pa-4"
-      >
-        <v-btn-toggle
-          v-model="appContentLayoutNav"
-          mandatory
-        >
-          <v-btn value="vertical">
-            vertical
-          </v-btn>
-
-          <v-btn value="horizontal">
-            horizontal
-          </v-btn>
-        </v-btn-toggle>
-      </div>
-
-      <!-- Content Width -->
-      <div class="pa-4">
-        <v-btn-toggle
-          v-model="appContentWidth"
-          mandatory
-        >
-          <v-btn value="full">
-            full
-          </v-btn>
-
-          <v-btn value="boxed">
-            boxed
-          </v-btn>
-        </v-btn-toggle>
-      </div>
-
-      <!-- Menu Hidden -->
-      <div class="pa-4">
-        <v-switch
-          v-model="menuIsMenuHidden"
-          label="Hide Navigation Menu"
-        ></v-switch>
-      </div>
-
-      <!-- Vertical Menu Collapsed -->
-      <div class="pa-4">
-        <v-switch
-          v-model="menuIsVerticalNavMini"
-          label="Mini Vertical Menu"
-        ></v-switch>
-      </div>
-
-      <!-- App Bar Type -->
-      <v-radio-group
-        v-model="appBarType"
-        row
-        mandatory
-        :label="appContentLayoutNav === 'vertical' ? 'AppBar Type' : 'AppBar & Navigation Type'"
-      >
-        <v-radio
-          v-for="appBarType in appBarTypes"
-          :key="appBarType"
-          :label="appBarType"
-          :value="appBarType"
-        ></v-radio>
-      </v-radio-group>
-
-      <!-- Footer Type -->
-      <v-radio-group
-        v-model="footerType"
-        row
-        mandatory
-        label="Footer Type"
-      >
-        <v-radio
-          v-for="footerType in footerTypes"
-          :key="footerType"
-          :label="footerType"
-          :value="footerType"
-        ></v-radio>
-      </v-radio-group>
-
-      <!-- Router Transition -->
-      <v-select
-        v-model="appRouteTransition"
-        :items="routerTransitionOptions"
-        outline
-      ></v-select>
+        <!-- Section: Themeing -->
+        <div class="customizer-section">
+          <p class="text-xs text--disabled">
+            LAYOUT
+          </p>
+          <!-- Content Width -->
+          <span>Content Width</span>
+          <v-radio-group
+            v-model="appContentWidth"
+            class="mt-0"
+            hide-details
+            row
+          >
+            <v-radio
+              v-for="option in appContentWidthOptions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+            ></v-radio>
+          </v-radio-group>
+          <!-- AppBar Type -->
+          <span class="mt-6 d-inline-block">AppBar Type</span>
+          <v-radio-group
+            v-model="appBarType"
+            class="mt-0"
+            hide-details
+            row
+          >
+            <v-radio
+              v-for="option in appBarTypeOptions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+            ></v-radio>
+          </v-radio-group>
+          <!-- Footer Type -->
+          <span class="mt-6 d-inline-block">Footer Type</span>
+          <v-radio-group
+            v-model="footerType"
+            class="mt-0"
+            hide-details
+            row
+          >
+            <v-radio
+              v-for="option in footerTypeOptions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+            ></v-radio>
+          </v-radio-group>
+        </div>
+        <v-divider></v-divider>
+        <!-- Section: Menu -->
+        <div class="customizer-section">
+          <p class="text-xs text--disabled">
+            MENU
+          </p>
+          <!-- Menu Layout -->
+          <span>Menu Layout</span>
+          <v-radio-group
+            v-model="appContentLayoutNav"
+            class="mt-0"
+            hide-details
+            row
+          >
+            <v-radio
+              v-for="option in appContentLayoutNavOptions"
+              :key="option.value"
+              :label="option.label"
+              :value="option.value"
+            ></v-radio>
+          </v-radio-group>
+          <!-- Menu Collapsed -->
+          <div class="d-flex align-center justify-space-between mt-6">
+            <span class="text--secondary">Menu Collapsed</span>
+            <v-switch
+              v-model="menuIsVerticalNavMini"
+              hide-details
+              class="mt-0 ml-2"
+            ></v-switch>
+          </div>
+          <!-- Menu Hidden -->
+          <div class="d-flex align-center justify-space-between mt-6">
+            <span class="text--secondary">Menu Hidden</span>
+            <v-switch
+              v-model="menuIsMenuHidden"
+              hide-details
+              class="mt-0 ml-2"
+            ></v-switch>
+          </div>
+        </div>
+        <v-divider></v-divider>
+        <!-- Section: Misc -->
+        <div class="customizer-section">
+          <p class="text-xs text--disabled">
+            MISC
+          </p>
+          <!-- RTL -->
+          <div class="d-flex align-center justify-space-between mt-6">
+            <span class="text--secondary">RTL</span>
+            <v-switch
+              v-model="isRtl"
+              hide-details
+              class="mt-0 ml-2"
+            ></v-switch>
+          </div>
+          <!-- Router Transition -->
+          <v-row class="mt-6 align-center">
+            <v-col><span class="text--secondary">Router Transition</span></v-col>
+            <v-col col="4">
+              <v-select
+                v-model="appRouteTransition"
+                :items="routerTransitionOptions"
+                outlined
+                hide-details
+                dense
+                class="select-router-transition"
+              ></v-select>
+            </v-col>
+          </v-row>
+        </div>
+      </perfect-scrollbar>
     </v-navigation-drawer>
   </div>
 </template>
@@ -150,13 +205,19 @@
 import { computed, ref } from '@vue/composition-api'
 import useAppConfig from '@core/@app-config/useAppConfig'
 
-import { mdiCog } from '@mdi/js'
+import { mdiCog, mdiClose } from '@mdi/js'
 
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import themeVariants from './themeVariants'
 
+// 3rd Party
+
 export default {
+  components: {
+    PerfectScrollbar,
+  },
   setup() {
-    const isCustomizerOpen = ref(false)
+    const isCustomizerOpen = ref(true)
     // eslint-disable-next-line object-curly-newline
     const {
       appContentLayoutNav,
@@ -174,14 +235,6 @@ export default {
     // TODO: Vue 3 Update: Use export const in `./themeVariants.ts` and use computed getter and setter to update the theme
     const selectedTheme = ref('vuexy')
 
-    const appBarTypes = computed(() => {
-      const types = ['fixed', 'static', 'hidden']
-      if (appContentLayoutNav.value === 'horizontal') types.splice(-1, 1)
-
-      return types
-    })
-
-    const footerTypes = ['fixed', 'static', 'hidden']
     const routerTransitionOptions = [
       { text: 'Fab', value: 'fab-transition' },
       { text: 'Fade', value: 'fade-transition' },
@@ -197,27 +250,86 @@ export default {
       { text: 'Slide Y Reverse', value: 'slide-y-reverse-transition' },
     ]
 
+    const skin = ref('default')
+    const skinOptions = [
+      { label: 'Default', value: 'default' },
+      { label: 'Bordered', value: 'bordered' },
+      { label: 'Semi Dark', value: 'semi-dark' },
+    ]
+
+    const appContentWidthOptions = [
+      { label: 'Full Width', value: 'full' },
+      { label: 'Boxed', value: 'boxed' },
+    ]
+
+    const appBarTypeOptions = computed(() => {
+      const types = [
+        { label: 'Fixed', value: 'fixed' },
+        { label: 'Static', value: 'static' },
+        { label: 'Hidden', value: 'hidden' },
+      ]
+      if (appContentLayoutNav.value === 'horizontal') types.splice(-1, 1)
+
+      return types
+    })
+
+    const footerTypeOptions = [
+      { label: 'Fixed', value: 'fixed' },
+      { label: 'Static', value: 'static' },
+      { label: 'Hidden', value: 'hidden' },
+    ]
+
+    const appContentLayoutNavOptions = [
+      { label: 'Vertical', value: 'vertical' },
+      { label: 'Horizontal', value: 'horizontal' },
+    ]
+
+    const perfectScrollbarOptions = {
+      maxScrollbarLength: 60,
+      wheelPropagation: false,
+    }
+
     return {
       isCustomizerOpen,
       selectedTheme,
       appRouteTransition,
       themeVariants,
+
+      // App Content Layout Nav
+      appContentLayoutNavOptions,
       appContentLayoutNav,
+
+      // Skin
+      skinOptions,
+
+      // App Content Width
       appContentWidth,
+      appContentWidthOptions,
+
       menuIsMenuHidden,
       menuIsVerticalNavMini,
+
+      // AppBar Type
       appBarType,
+      appBarTypeOptions,
+
+      // Footer Type
       footerType,
-      appBarTypes,
-      footerTypes,
+      footerTypeOptions,
+
       isDark,
       isRtl,
       themes,
       routerTransitionOptions,
+      skin,
+
+      // Perfect scrollbar options
+      perfectScrollbarOptions,
 
       // Icons
       icons: {
         mdiCog,
+        mdiClose,
       },
     }
   },
@@ -225,6 +337,10 @@ export default {
 </script>
 
 <style lang="scss">
+.ps-customizer {
+  height: calc(100% - 81px) !important;
+}
+
 .app-customizer-toggler {
   position: fixed;
   right: -22px;
@@ -235,5 +351,19 @@ export default {
 
 .app-customizer {
   z-index: 6;
+
+  .app-customizer-header {
+    position: relative;
+    .icon-customizer-close {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .customizer-section {
+    padding: 24px;
+  }
 }
 </style>

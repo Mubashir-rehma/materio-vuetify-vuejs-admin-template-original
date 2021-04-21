@@ -92,6 +92,11 @@ export default {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1), ease !important;
   will-change: box-shadow, transform !important;
 
+  .v-list-item,
+  .v-subheader {
+    padding: 0 18px 0 24px;
+  }
+
   .v-navigation-drawer__border {
     background-color: transparent !important;
   }
@@ -106,11 +111,15 @@ export default {
 .vertical-nav-menu-container {
   height: 100%;
   .ps-nav-menu-items {
-    height: calc(100% - 42px) !important;
+    height: calc(100% - 45px) !important;
   }
 }
 
 @include theme(vertical-nav-menu-items) using ($material) {
+  .v-subheader:not(:first-child) {
+    margin-top: 18px;
+  }
+
   .v-list-item__icon {
     &:first-child {
       margin: 0 12px 0 0;

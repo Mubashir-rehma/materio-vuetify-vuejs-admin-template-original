@@ -17,7 +17,7 @@
           dot
         >
           <v-avatar
-            large
+            size="40px"
             v-bind="attrs"
             v-on="on"
           >

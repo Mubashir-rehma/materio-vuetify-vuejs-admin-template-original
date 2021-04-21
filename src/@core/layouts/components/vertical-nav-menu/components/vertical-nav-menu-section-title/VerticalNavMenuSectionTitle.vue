@@ -1,6 +1,8 @@
 <template>
   <v-subheader>
-    <span v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)">{{ t(item.subheader) }}</span>
+    <span class="title-wrapper">
+      <span v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)">{{ t(item.subheader) }}</span>
+    </span>
     <v-icon v-show="menuIsVerticalNavMini && !isMouseHovered">
       {{ icons.mdiDotsHorizontal }}
     </v-icon>
@@ -42,7 +44,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.v-subheader {
+@include theme(v-subheader) using ($material) {
   white-space: nowrap;
+  position: relative;
+
+  .title-wrapper {
+    width: 100%;
+    // text-align: center;
+    position: absolute;
+    left: 0;
+    border-bottom: 1px solid map-deep-get($material, 'dividers');
+    line-height: 0.1em;
+    // margin: 10px 0 20px;
+  }
+
+  .title-wrapper span {
+    background: map-deep-get($material, 'background');
+    padding: 0 10px;
+    margin-left: 24px;
+  }
 }
 </style>

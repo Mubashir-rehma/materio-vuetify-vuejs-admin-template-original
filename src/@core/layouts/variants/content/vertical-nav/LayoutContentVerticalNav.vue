@@ -169,18 +169,33 @@ $nav-drawer-mini-width: 68px;
   .v-footer {
     max-width: calc(1440px - (1.72rem * 2));
 
-    @at-root .v-application.content-full {
-      .v-footer,
-      .v-app-bar {
-        max-width: unset;
-        margin-left: $content-padding-vertical-navigation-menu !important;
-        margin-right: $content-padding-vertical-navigation-menu !important;
+    @at-root .v-application {
+      &.content-full {
+        .v-footer,
+        .v-app-bar {
+          max-width: unset;
+          margin-left: $content-padding-vertical-navigation-menu !important;
+          margin-right: $content-padding-vertical-navigation-menu !important;
+        }
       }
-    }
-
-    @media screen and (max-width: 1711px) {
-      margin-left: 1.72rem !important;
-      margin-right: 1.72rem !important;
+      &:not(.nav-drawer-mini) {
+        @media screen and (max-width: 1711px) {
+          .v-footer,
+          .v-app-bar {
+            margin-left: 1.72rem !important;
+            margin-right: 1.72rem !important;
+          }
+        }
+      }
+      &.nav-drawer-mini {
+        @media screen and (max-width: 1523px) {
+          .v-footer,
+          .v-app-bar {
+            margin-left: 1.72rem !important;
+            margin-right: 1.72rem !important;
+          }
+        }
+      }
     }
   }
 
@@ -194,6 +209,19 @@ $nav-drawer-mini-width: 68px;
       ::v-deep > .v-toolbar__content {
         padding: 0;
       }
+    }
+  }
+}
+
+.v-application.content-layout {
+  @media #{map-get($display-breakpoints, 'md-and-down')} {
+    .v-main,
+    .v-footer,
+    .v-app-bar {
+      // TODO: This is not working
+      max-width: unset;
+      left: 0 !important;
+      padding-left: 0 !important;
     }
   }
 }

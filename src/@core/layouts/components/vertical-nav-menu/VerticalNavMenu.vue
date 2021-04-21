@@ -119,13 +119,13 @@ export default {
 .vertical-nav-menu-container {
   height: 100%;
   .ps-nav-menu-items {
-    height: calc(100% - 45px) !important;
+    height: calc(100% - 53px) !important;
   }
 }
 
 @include theme(vertical-nav-menu-items) using ($material) {
   padding-right: 20px !important;
-  @at-root .app-navigation-menu:not(.v-navigation-drawer--is-mouseover) {
+  @at-root .app-navigation-menu.v-navigation-drawer--mini-variant:not(.v-navigation-drawer--is-mouseover) {
     .vertical-nav-menu-items {
       padding-right: 0 !important;
     }

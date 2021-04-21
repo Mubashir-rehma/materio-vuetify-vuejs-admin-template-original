@@ -1,5 +1,5 @@
 <template>
-  <div class="vertical-nav-header d-flex align-items-center justify-space-between pl-6 pr-5 pt-5">
+  <div class="vertical-nav-header d-flex align-items-center justify-space-between pl-6 pr-5 pt-5 pb-2">
     <router-link
       to="/"
       class="d-flex align-items-center text-decoration-none"

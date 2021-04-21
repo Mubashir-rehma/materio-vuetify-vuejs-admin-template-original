@@ -12,6 +12,7 @@
       mini-variant-width="68"
       :expand-on-hover="menuIsVerticalNavMini"
       color="#f4f5fa"
+      width="260"
       class="app-navigation-menu"
     >
       <vertical-nav-menu :nav-menu-items="navMenuItems" />

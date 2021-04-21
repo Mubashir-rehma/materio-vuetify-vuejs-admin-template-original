@@ -1,8 +1,16 @@
 @import './mixins';
 
-.cursor-pointer {
-  cursor: pointer;
+// ————————————————————————————————————
+//* ——— Color
+// ————————————————————————————————————
+
+.gradient-primary {
+  background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
 }
+
+// ————————————————————————————————————
+//* ——— Grid
+// ————————————————————————————————————
 
 // Card match height
 .row.match-height {
@@ -11,10 +19,7 @@
   }
 }
 
-.gradient-primary {
-  background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
-}
-
+// Removes large space when form is used with validation
 .multi-col-validation {
   &.v-form {
     .v-text-field__details {
@@ -34,6 +39,10 @@
 // ————————————————————————————————————
 //* ——— Typography
 // ————————————————————————————————————
+
+//
+//* ——— Font Sizes ——————————————————
+//
 
 // According to TailwindCSS
 $font-sizes: (
@@ -76,17 +85,15 @@ $font-sizes: (
   // 'text-6xl': ( 'font-size': 3.75rem, 'line-height': 1 ),
   // 'text-7xl': ( 'font-size': 4.5rem, 'line-height': 1 ),
   // 'text-8xl': ( 'font-size': 6rem, 'line-height': 1 ),
-  // 'text-9xl': ( 'font-size': 8rem, 'line-height': 1 ),,,
+  // 'text-9xl': ( 'font-size': 8rem, 'line-height': 1 ),,,,,,,
 );
 
-@mixin class-generator($map) {
-  @each $name, $styles in $map {
-    #{$name} {
-      @each $key, $value in $styles {
-        #{$key}: $value;
-      }
-    }
-  }
-}
-
 @include class-generator($font-sizes);
+
+// ————————————————————————————————————
+//* ——— Misc
+// ————————————————————————————————————
+
+.cursor-pointer {
+  cursor: pointer;
+}

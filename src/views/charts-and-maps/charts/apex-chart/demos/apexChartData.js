@@ -40,9 +40,9 @@ const chartColors = {
     series5: '#FFA1A1',
   },
   area: {
-    series3: '#a4f8cd',
-    series2: '#60f2ca',
-    series1: '#2bdac7',
+    series3: '#e0cffe',
+    series2: '#b992fe',
+    series1: '#ab7efd',
   },
 }
 
@@ -387,7 +387,7 @@ export default {
         candlestick: {
           colors: {
             upward: $themeColors.success,
-            downward: $themeColors.danger,
+            downward: $themeColors.error,
           },
         },
         bar: {
@@ -629,7 +629,7 @@ export default {
         chartColors.donut.series1,
         chartColors.donut.series5,
         chartColors.donut.series3,
-        chartColors.donut.series2,
+        $themeColors.info,
       ],
       dataLabels: {
         enabled: true,
@@ -716,7 +716,7 @@ export default {
   radialBarChart: {
     series: [80, 50, 35],
     chartOptions: {
-      colors: [chartColors.donut.series1, chartColors.donut.series2, chartColors.donut.series4],
+      colors: [$themeColors.warning, $themeColors.info, $themeColors.primary],
       plotOptions: {
         radialBar: {
           size: 185,

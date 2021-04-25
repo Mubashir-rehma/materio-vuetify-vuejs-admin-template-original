@@ -1,4 +1,4 @@
-const formTables = [
+const formTable = [
   {
     path: '/form/autocomplete',
     name: 'form-autocomplete',
@@ -135,6 +135,14 @@ const formTables = [
       layout: 'content',
     },
   },
+  {
+    path: '/table/simple-table',
+    name: 'table-simple',
+    component: () => import('@/views/tables/simple-table/SimpleTable.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
-export default formTables
+export default formTable

@@ -1,0 +1,5 @@
+export const codeTableBasic = ''
+export const codeTableDark = ''
+export const codeTableDense = ''
+export const codeTableHeight = ''
+export const codeTableFixedHeader = ''

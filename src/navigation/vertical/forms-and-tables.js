@@ -80,4 +80,14 @@ export default [
     title: 'Form validation',
     to: 'form-validation',
   },
+  {
+    title: 'Tables',
+    icon: mdiContentCopy,
+    children: [
+      {
+        title: 'Simple Table',
+        to: 'table-simple',
+      },
+    ],
+  },
 ]

@@ -1,6 +1,8 @@
 export const avatarColors = ''
+export const avatarInitials = ''
 export const avatarSizes = ''
 export const avatarIcons = ''
 export const avatarRounded = ''
 export const avatarTile = ''
 export const avatarImages = ''
+export const avatarGroup = ''

@@ -19,6 +19,25 @@
       </app-card-code>
     </v-col>
 
+    <!-- actionable avatar -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Avatar Initials"
+        :code="codeSnippets.avatarInitials"
+      >
+        <v-card-text>
+          Use <code>v-avatar-light-bg</code> with text color class for avatar initials.
+        </v-card-text>
+
+        <v-card-text>
+          <demo-avatar-initials></demo-avatar-initials>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
     <!-- sizes -->
     <v-col
       cols="12"
@@ -115,6 +134,25 @@
         </v-card-text>
       </app-card-code>
     </v-col>
+
+    <!-- Avatar Group -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Avatar Group"
+        :code="codeSnippets.avatarGroup"
+      >
+        <v-card-text>
+          Use <code>v-avatar-group</code> class along with <code>rootThemeClasses</code> for avatar group
+        </v-card-text>
+
+        <v-card-text>
+          <demo-avatar-group></demo-avatar-group>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
   </v-row>
 </template>
 
@@ -123,25 +161,38 @@ import AppCardCode from '@core/components/app-card-code/AppCardCode.vue'
 
 // demos
 import DemoAvatarColors from './demos/DemoAvatarColors.vue'
+import DemoAvatarInitials from './demos/DemoAvatarInitials.vue'
 import DemoAvatarSize from './demos/DemoAvatarSize.vue'
 import DemoAvatarIcons from './demos/DemoAvatarIcons.vue'
 import DemoAvatarRounded from './demos/DemoAvatarRounded.vue'
 import DemoAvatarTile from './demos/DemoAvatarTile.vue'
 import DemoAvatarImages from './demos/DemoAvatarImages.vue'
+import DemoAvatarGroup from './demos/DemoAvatarGroup.vue'
 
 // code
 // eslint-disable-next-line object-curly-newline
-import { avatarColors, avatarSizes, avatarIcons, avatarRounded, avatarTile, avatarImages } from './demos/code'
+import {
+  avatarColors,
+  avatarInitials,
+  avatarSizes,
+  avatarIcons,
+  avatarRounded,
+  avatarTile,
+  avatarImages,
+  avatarGroup,
+} from './demos/code'
 
 export default {
   components: {
     AppCardCode,
     DemoAvatarColors,
+    DemoAvatarInitials,
     DemoAvatarSize,
     DemoAvatarIcons,
     DemoAvatarRounded,
     DemoAvatarTile,
     DemoAvatarImages,
+    DemoAvatarGroup,
   },
   setup() {
     return {
@@ -152,6 +203,8 @@ export default {
         avatarRounded,
         avatarTile,
         avatarImages,
+        avatarInitials,
+        avatarGroup,
       },
     }
   },

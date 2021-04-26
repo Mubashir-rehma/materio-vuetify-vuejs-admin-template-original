@@ -76,6 +76,7 @@ export default {
     background: map-deep-get($material, 'background');
     padding: 0 10px;
     margin-left: 16px;
+    font-size: 0.75rem;
   }
 }
 </style>

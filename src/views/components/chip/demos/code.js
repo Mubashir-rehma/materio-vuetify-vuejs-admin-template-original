@@ -1,6 +1,7 @@
 export const chipColor = ''
 export const chipOutlined = ''
 export const chipLabel = ''
+export const chipLight = ''
 export const chipClosable = ''
 export const chipWithIcons = ''
 export const chipPill = ''

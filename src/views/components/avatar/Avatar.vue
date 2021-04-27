@@ -19,7 +19,7 @@
       </app-card-code>
     </v-col>
 
-    <!-- actionable avatar -->
+    <!-- Avatar Initials -->
     <v-col
       cols="12"
       md="6"

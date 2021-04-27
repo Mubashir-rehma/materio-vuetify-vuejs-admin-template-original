@@ -222,6 +222,19 @@ button {
 }
 
 //
+//* ——— Chip ——————————————————
+//
+
+// Modify small chip
+.v-chip {
+  &.v-size--small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 8px;
+  }
+}
+
+//
 //* ——— Form ——————————————————
 //
 

@@ -61,11 +61,11 @@
 }
 
 // ——— Class Generator using SCSS Map ——————— //
-@mixin class-generator($map) {
+@mixin class-generator($map, $important: false) {
   @each $name, $styles in $map {
     #{$name} {
       @each $key, $value in $styles {
-        #{$key}: $value;
+        #{$key}: $value if($important, !important, null);
       }
     }
   }
@@ -74,7 +74,7 @@
 // ——— Light background generator ——————— //
 //! With this you have to give text color to the component you want light bg
 // e.g. class="avatar-initial primary--text" for primary light bg
-@mixin light-bg-provider($component, $opacity:0.12) {
+@mixin light-bg-provider($component, $opacity: 0.12) {
   .v-application .#{$component}.#{$component}-light-bg {
     background-color: transparent !important;
 

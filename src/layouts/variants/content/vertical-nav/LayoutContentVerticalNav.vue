@@ -24,7 +24,7 @@
           <app-bar-i18n></app-bar-i18n>
           <app-bar-theme-switcher class="mx-4"></app-bar-theme-switcher>
           <app-bar-notification></app-bar-notification>
-          <app-bar-user-menu></app-bar-user-menu>
+          <app-bar-user-menu class="ml-4"></app-bar-user-menu>
         </div>
       </div>
     </template>

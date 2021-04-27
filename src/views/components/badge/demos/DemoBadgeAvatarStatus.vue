@@ -7,6 +7,7 @@
       offset-x="12"
       offset-y="12"
       dot
+      bordered
     >
       <v-avatar large>
         <v-img src="/images/avatars/7.png"></v-img>
@@ -20,6 +21,7 @@
       offset-y="12"
       overlap
       dot
+      bordered
     >
       <v-avatar large>
         <v-img src="/images/avatars/6.png"></v-img>
@@ -33,6 +35,7 @@
       offset-y="12"
       overlap
       dot
+      bordered
     >
       <v-avatar large>
         <v-img src="/images/avatars/5.png"></v-img>

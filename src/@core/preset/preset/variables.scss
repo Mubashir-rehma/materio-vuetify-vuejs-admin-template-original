@@ -354,6 +354,7 @@ $menu-content-border-radius: 6px;
 //
 
 $list-item-action-icon-margin: 12px;
+$list-item-icon-margin: 12px 0;
 
 //
 //* ——— Dialog ——————————————————
@@ -368,7 +369,7 @@ $dialog-card-actions-padding: 0 $card-spacer $card-spacer;
 //
 
 $tooltip-background-color: rgba(59, 55, 68, 0.9);
-// $tooltip-font-size: 0.75rem;
+$tooltip-font-size: 0.75rem;
 
 //
 //* ——— Chip ——————————————————

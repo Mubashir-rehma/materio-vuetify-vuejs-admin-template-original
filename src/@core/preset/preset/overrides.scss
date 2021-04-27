@@ -130,11 +130,11 @@ button {
 //* ——— Expansion Panel ——————————————————
 //
 
-// .v-expansion-panel {
-//   &::before {
-//     @include elevation(3, !important);
-//   }
-// }
+.v-expansion-panel {
+  &.v-expansion-panel--active {
+    @include elevation(3, !important);
+  }
+}
 
 //
 //* ——— Dialog ——————————————————

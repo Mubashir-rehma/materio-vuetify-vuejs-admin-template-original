@@ -156,6 +156,15 @@ button {
   box-shadow: none !important;
 }
 
+@include theme(v-pagination) using ($material) {
+  .v-pagination__item,
+  .v-pagination__navigation {
+    &:hover {
+      background-color: rgba(map-get($shades, 'black'), map-deep-get($material, 'states', 'hover'));
+    }
+  }
+}
+
 //
 //* ——— AutoComplete & Select ——————————————————
 //

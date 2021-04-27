@@ -85,14 +85,13 @@
         <v-spacer></v-spacer>
         <v-btn
           color="error"
-          text
+          outlined
           @click="isDialogVisible = false"
         >
           Close
         </v-btn>
         <v-btn
           color="success"
-          text
           @click="isDialogVisible = false"
         >
           Save

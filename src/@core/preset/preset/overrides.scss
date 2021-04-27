@@ -3,6 +3,30 @@
 @import '~vuetify/src/components/VBadge/_variables.scss';
 @import './classes.scss';
 
+// * Change the font size of content
+@include theme(v-application) using ($material) {
+  color: map-deep-get($material, 'text', 'secondary') !important;
+}
+@include theme(v-card) using ($material) {
+  color: map-deep-get($material, 'text', 'secondary') !important;
+}
+@include theme(v-sheet) using ($material) {
+  color: map-deep-get($material, 'text', 'secondary') !important;
+
+  .v-card__title {
+    color: map-deep-get($material, 'text', 'primary') !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: map-deep-get($material, 'text', 'primary') !important;
+  }
+}
+
 // Remove outline from button on focus
 button {
   &:focus {

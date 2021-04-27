@@ -1,6 +1,5 @@
 <template>
-  <DIV>
-    <span>hello</span>
+  <div>
     <v-autocomplete
       v-model="friends"
       :disabled="isUpdating"

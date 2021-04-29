@@ -293,6 +293,9 @@ button {
     height: 20px;
     padding: 0 8px;
   }
+  .v-chip__close svg {
+    opacity: 0.38;
+  }
 }
 
 //
@@ -417,6 +420,27 @@ button {
 
     input {
       min-height: 42px;
+    }
+  }
+}
+
+//
+//* ——— Tabs ——————————————————
+//
+
+.v-tabs {
+  &.v-tabs--vertical {
+    .v-tabs-slider-wrapper {
+      right: 0 !important;
+      left: unset !important;
+    }
+  }
+}
+
+@include theme(v-tabs) using ($material) {
+  &.v-tabs--vertical {
+    .v-slide-group__wrapper {
+      border-right: thin solid map-get($material, 'dividers');
     }
   }
 }

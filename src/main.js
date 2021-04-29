@@ -6,6 +6,9 @@ import vuetify from './plugins/vuetify'
 import router from './router'
 import store from './store'
 
+// Axios Mock Adapter
+import '@/@fake-db/db'
+
 Vue.config.productionTip = false
 
 new Vue({

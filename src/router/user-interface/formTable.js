@@ -143,6 +143,14 @@ const formTable = [
       layout: 'content',
     },
   },
+  {
+    path: '/table/data-table',
+    name: 'table-data-table',
+    component: () => import('@/views/tables/datatable/Datatable.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default formTable

@@ -1,5 +1,5 @@
 // eslint-disable-next-line object-curly-newline
-import { mdiCheckboxMarkedCircleOutline, mdiCheckboxMarkedOutline, mdiContentCopy } from '@mdi/js'
+import { mdiCheckboxMarkedCircleOutline, mdiCheckboxMarkedOutline, mdiContentCopy, mdiTableOfContents } from '@mdi/js'
 
 export default [
   {
@@ -81,6 +81,20 @@ export default [
         icon: mdiCheckboxMarkedCircleOutline,
         title: 'Form validation',
         to: 'form-validation',
+      },
+      {
+        title: 'Tables',
+        icon: mdiTableOfContents,
+        children: [
+          {
+            title: 'Simple Table',
+            to: 'table-simple',
+          },
+          {
+            title: 'Datatable',
+            to: 'table-data-table',
+          },
+        ],
       },
     ],
   },

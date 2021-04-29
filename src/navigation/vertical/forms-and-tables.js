@@ -88,6 +88,10 @@ export default [
         title: 'Simple Table',
         to: 'table-simple',
       },
+      {
+        title: 'Datatable',
+        to: 'table-data-table',
+      },
     ],
   },
 ]

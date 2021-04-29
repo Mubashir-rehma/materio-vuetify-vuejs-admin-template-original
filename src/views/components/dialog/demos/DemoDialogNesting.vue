@@ -20,22 +20,21 @@
           Biscuit fruitcake marshmallow jelly beans jujubes halvah cupcake topping. Chocolate cookie jelly-o toffee tart oat cake. Tart sugar plum gingerbread halvah muffin sweet. Cake halvah tart soufflé pudding.
         </v-card-text>
         <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="error"
+            dark
+            outlined
+            @click="isDialogVisible = false"
+          >
+            Close
+          </v-btn>
           <v-btn
             color="primary"
-            text
             dark
             @click="isDialogTwoShow = !isDialogTwoShow"
           >
             Open Dialog 2
-          </v-btn>
-
-          <v-btn
-            color="error"
-            text
-            dark
-            @click="isDialogVisible = false"
-          >
-            Close
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -54,7 +53,6 @@
         <v-card-actions>
           <v-btn
             color="primary"
-            text
             @click="isDialogTwoShow = false"
           >
             Close

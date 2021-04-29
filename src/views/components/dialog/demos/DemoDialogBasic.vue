@@ -15,7 +15,7 @@
     </template>
 
     <v-card>
-      <v-card-title class="primary--text grey lighten-2">
+      <v-card-title>
         Privacy Policy
       </v-card-title>
 
@@ -27,7 +27,6 @@
         <v-spacer></v-spacer>
         <v-btn
           color="primary"
-          text
           @click="isDialogVisible = false"
         >
           I accept

@@ -35,14 +35,13 @@
         <v-spacer></v-spacer>
         <v-btn
           color="error"
-          text
+          outlined
           @click="isDialogVisible = false"
         >
           Disagree
         </v-btn>
         <v-btn
-          color="green darken-1"
-          text
+          color="success"
           @click="isDialogVisible = false"
         >
           Agree

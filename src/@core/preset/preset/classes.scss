@@ -85,10 +85,57 @@ $font-sizes: (
   // 'text-6xl': ( 'font-size': 3.75rem, 'line-height': 1 ),
   // 'text-7xl': ( 'font-size': 4.5rem, 'line-height': 1 ),
   // 'text-8xl': ( 'font-size': 6rem, 'line-height': 1 ),
-  // 'text-9xl': ( 'font-size': 8rem, 'line-height': 1 ),,,,,,,
+  // 'text-9xl': ( 'font-size': 8rem, 'line-height': 1 ),,,,,,,,,,,,,,,,,,
 );
 
-@include class-generator($font-sizes);
+@include class-generator($font-sizes, $important: true);
+
+//
+//* ——— Font Size ——————————————————
+//
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+// ————————————————————————————————————
+//* ——— Components
+// ————————————————————————————————————
+
+//
+//* ——— Avatar ——————————————————
+//
+
+// For creating initial avatars
+@include light-bg-provider(v-avatar);
+
+// FOr avatar group
+// TODO: We might need to use custom variable here instead of shade->white
+@include theme(v-avatar-group) using ($material) {
+  display: flex;
+  align-items: center;
+  > * {
+    &:not(:first-child) {
+      margin-left: -0.8rem;
+    }
+
+    border: 2px solid map-deep-get($shades, 'white');
+    transition: transform 0.25s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-5px) scale(1.05);
+      z-index: 2;
+      @include elevation(2);
+    }
+  }
+}
+
+//
+//* ——— Chip ——————————————————
+//
+
+// For creating initial avatars
+@include light-bg-provider(v-chip);
 
 // ————————————————————————————————————
 //* ——— Misc

@@ -3,16 +3,16 @@
     v-model="toggleExclusive"
     mandatory
   >
-    <v-btn>
+    <v-btn depressed>
       <v-icon>{{ icons.mdiFormatAlignLeft }}</v-icon>
     </v-btn>
-    <v-btn>
+    <v-btn depressed>
       <v-icon>{{ icons.mdiFormatAlignCenter }}</v-icon>
     </v-btn>
-    <v-btn>
+    <v-btn depressed>
       <v-icon>{{ icons.mdiFormatAlignRight }}</v-icon>
     </v-btn>
-    <v-btn>
+    <v-btn depressed>
       <v-icon>{{ icons.mdiFormatAlignJustify }}</v-icon>
     </v-btn>
   </v-btn-toggle>

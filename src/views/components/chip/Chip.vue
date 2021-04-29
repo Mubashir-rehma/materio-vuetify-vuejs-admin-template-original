@@ -57,6 +57,25 @@
       </app-card-code>
     </v-col>
 
+    <!-- label -->
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <app-card-code
+        title="Light"
+        :code="codeSnippets.chipLight"
+      >
+        <v-card-text>
+          Use <code>v-chip-light-bg</code> class with relative text color class for creating light chip.
+        </v-card-text>
+
+        <v-card-text>
+          <demo-chip-light></demo-chip-light>
+        </v-card-text>
+      </app-card-code>
+    </v-col>
+
     <!-- closable -->
     <v-col
       cols="12"
@@ -181,6 +200,7 @@ import AppCardCode from '@core/components/app-card-code/AppCardCode.vue'
 import DemoChipColor from './demos/DemoChipColor.vue'
 import DemoChipOutlined from './demos/DemoChipOutlined.vue'
 import DemoChipLabel from './demos/DemoChipLabel.vue'
+import DemoChipLight from './demos/DemoChipLight.vue'
 import DemoChipClosable from './demos/DemoChipClosable.vue'
 import DemoChipWithIcon from './demos/DemoChipWithIcon.vue'
 import DemoChipPill from './demos/DemoChipPill.vue'
@@ -193,6 +213,7 @@ import {
   chipColor,
   chipOutlined,
   chipLabel,
+  chipLight,
   chipClosable,
   chipWithIcons,
   chipPill,
@@ -207,6 +228,7 @@ export default {
     DemoChipColor,
     DemoChipOutlined,
     DemoChipLabel,
+    DemoChipLight,
     DemoChipClosable,
     DemoChipWithIcon,
     DemoChipPill,
@@ -220,6 +242,7 @@ export default {
         chipColor,
         chipOutlined,
         chipLabel,
+        chipLight,
         chipClosable,
         chipWithIcons,
         chipPill,

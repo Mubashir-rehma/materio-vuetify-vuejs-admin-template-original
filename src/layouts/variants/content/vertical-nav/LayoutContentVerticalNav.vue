@@ -23,7 +23,8 @@
         <div class="d-flex align-center">
           <app-bar-i18n></app-bar-i18n>
           <app-bar-theme-switcher class="mx-4"></app-bar-theme-switcher>
-          <app-bar-user-menu></app-bar-user-menu>
+          <app-bar-notification></app-bar-notification>
+          <app-bar-user-menu class="ml-4"></app-bar-user-menu>
         </div>
       </div>
     </template>
@@ -43,6 +44,7 @@ import AppBarSearch from '@core/layouts/components/app-bar/AppBarSearch.vue'
 import AppBarI18n from '@core/layouts/components/app-bar/AppBarI18n.vue'
 import AppBarThemeSwitcher from '@core/layouts/components/app-bar/AppBarThemeSwitcher.vue'
 import AppBarUserMenu from '@core/layouts/components/app-bar/AppBarUserMenu.vue'
+import AppBarNotification from '@core/layouts/components/app-bar/AppBarNotification.vue'
 
 // Search Data
 import appBarSearchData from '@/assets/app-bar-search-data'
@@ -59,6 +61,7 @@ export default {
     AppBarI18n,
     AppBarThemeSwitcher,
     AppBarUserMenu,
+    AppBarNotification,
   },
   setup() {
     // Search

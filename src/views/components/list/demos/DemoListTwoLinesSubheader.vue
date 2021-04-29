@@ -12,7 +12,7 @@
       :key="folder.title"
     >
       <v-list-item-avatar>
-        <v-icon size="30">
+        <v-icon size="26">
           {{ mdiFolderOutline }}
         </v-icon>
       </v-list-item-avatar>
@@ -45,7 +45,7 @@
       <v-list-item-avatar :color="file.color">
         <v-icon
           dark
-          size="30"
+          size="26"
           v-text="file.icon"
         ></v-icon>
       </v-list-item-avatar>

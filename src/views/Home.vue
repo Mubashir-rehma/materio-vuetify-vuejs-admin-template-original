@@ -1,41 +1,43 @@
 <template>
-  <v-autocomplete
-    v-model="friends"
-    :disabled="isUpdating"
-    :items="people"
-    item-text="name"
-    item-value="name"
-    multiple
-  >
-    <template v-slot:selection="data">
-      <v-chip
-        v-bind="data.attrs"
-        :input-value="data.selected"
-        close
-        @click="data.select"
-        @click:close="remove(data.item)"
-      >
-        <v-avatar left>
-          <v-img :src="data.item.avatar"></v-img>
-        </v-avatar>
-        {{ data.item.name }}
-      </v-chip>
-    </template>
-    <template v-slot:item="data">
-      <template v-if="typeof data.item !== 'object'">
-        <v-list-item-content v-text="data.item"></v-list-item-content>
+  <div>
+    <v-autocomplete
+      v-model="friends"
+      :disabled="isUpdating"
+      :items="people"
+      item-text="name"
+      item-value="name"
+      multiple
+    >
+      <template v-slot:selection="data">
+        <v-chip
+          v-bind="data.attrs"
+          :input-value="data.selected"
+          close
+          @click="data.select"
+          @click:close="remove(data.item)"
+        >
+          <v-avatar left>
+            <v-img :src="data.item.avatar"></v-img>
+          </v-avatar>
+          {{ data.item.name }}
+        </v-chip>
       </template>
-      <template v-else>
-        <v-list-item-avatar>
-          <img :src="data.item.avatar">
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title>{{ data.item.name }}</v-list-item-title>
-          <v-list-item-subtitle>{{ data.item.group }}</v-list-item-subtitle>
-        </v-list-item-content>
+      <template v-slot:item="data">
+        <template v-if="typeof data.item !== 'object'">
+          <v-list-item-content v-text="data.item"></v-list-item-content>
+        </template>
+        <template v-else>
+          <v-list-item-avatar>
+            <img :src="data.item.avatar">
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>{{ data.item.name }}</v-list-item-title>
+            <v-list-item-subtitle>{{ data.item.group }}</v-list-item-subtitle>
+          </v-list-item-content>
+        </template>
       </template>
-    </template>
-  </v-autocomplete>
+    </v-autocomplete>
+  </DIV>
 </template>
 
 <script>

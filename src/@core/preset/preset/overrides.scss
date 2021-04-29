@@ -3,6 +3,30 @@
 @import '~vuetify/src/components/VBadge/_variables.scss';
 @import './classes.scss';
 
+// * Change the font size of content
+@include theme(v-application) using ($material) {
+  color: map-deep-get($material, 'text', 'secondary') !important;
+}
+@include theme(v-card) using ($material) {
+  color: map-deep-get($material, 'text', 'secondary') !important;
+}
+@include theme(v-sheet) using ($material) {
+  color: map-deep-get($material, 'text', 'secondary') !important;
+
+  .v-card__title {
+    color: map-deep-get($material, 'text', 'primary') !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: map-deep-get($material, 'text', 'primary') !important;
+  }
+}
+
 // Remove outline from button on focus
 button {
   &:focus {
@@ -130,11 +154,39 @@ button {
 //* ——— Expansion Panel ——————————————————
 //
 
-// .v-expansion-panel {
-//   &::before {
-//     @include elevation(3, !important);
-//   }
-// }
+@include theme(v-expansion-panels) using ($material) {
+  .v-expansion-panel-content__wrap {
+    color: map-deep-get($material, 'text', 'secondary');
+  }
+}
+
+.v-expansion-panels {
+  &.v-expansion-panels--focusable {
+    .v-expansion-panel--active {
+      > .v-expansion-panel-header {
+        min-height: unset;
+      }
+    }
+
+    .v-expansion-panel-content__wrap {
+      padding-top: 1rem;
+    }
+  }
+}
+
+.v-expansion-panel {
+  &.v-expansion-panel--active {
+    @include elevation(3, !important);
+  }
+
+  .v-expansion-panel-header {
+    padding: 1rem;
+  }
+
+  .v-expansion-panel-content__wrap {
+    padding: 0rem 1rem 1rem;
+  }
+}
 
 //
 //* ——— Dialog ——————————————————
@@ -154,6 +206,15 @@ button {
 .v-pagination__item,
 .v-pagination__navigation {
   box-shadow: none !important;
+}
+
+@include theme(v-pagination) using ($material) {
+  .v-pagination__item,
+  .v-pagination__navigation {
+    &:hover {
+      background-color: rgba(map-get($shades, 'black'), map-deep-get($material, 'states', 'hover'));
+    }
+  }
 }
 
 //
@@ -222,6 +283,64 @@ button {
 }
 
 //
+//* ——— Chip ——————————————————
+//
+
+// Modify small chip
+.v-chip {
+  &.v-size--small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 8px;
+  }
+}
+
+//
+//* ——— Snackbar ——————————————————
+//
+
+.v-snack__content {
+  color: map-get($shades, 'white');
+  letter-spacing: 0.25px;
+  // line-height: 1.5;
+}
+
+//
+//* ——— Menu ——————————————————
+//
+
+.v-menu__content {
+  min-width: 10rem !important;
+}
+
+//
+//* ——— List ——————————————————
+//
+
+@include theme(v-list) using ($material) {
+  color: map-deep-get($material, 'text', 'primary');
+
+  &.primary,
+  &.secondary,
+  &.accent,
+  &.success,
+  &.error,
+  &.warning,
+  &.info {
+    > .v-list-item {
+      color: map-deep-get($material, 'text', 'secondary');
+    }
+  }
+}
+
+@include theme(v-list-item) using ($material) {
+  &:not(.v-list-item--active):not(.v-list-item--disabled),
+  &:not(.v-list-item--active):not(.v-list-item--disabled) .v-list-item__title {
+    color: map-deep-get($material, 'text', 'secondary') !important;
+  }
+}
+
+//
 //* ——— Form ——————————————————
 //
 
@@ -234,6 +353,70 @@ button {
         width: 20px;
         margin-right: 10px;
       }
+    }
+  }
+}
+
+//
+//* ——— Slider ——————————————————
+//
+
+.v-slider__track-background {
+  opacity: 0.38;
+}
+
+//
+//* ——— Date Picker ——————————————————
+//
+
+// .v-date-picker-title__year {
+//   font-size: 0.75rem !important;
+//   letter-spacing: 1px;
+// }
+
+//
+//* ——— Text Field ——————————————————
+//
+
+// .v-text-field--outlined .v-label {
+//   top: 50% !important;
+//   transform: translateY(-50%);
+// }
+
+// ? Extra styles due to height update
+.v-text-field {
+  margin-top: 0 !important;
+}
+
+.v-text-field__details {
+  margin-bottom: 8px;
+}
+
+.v-input:not(.v-select) {
+  &:not(.v-text-field--filled):not(.v-text-field--solo) {
+    input {
+      min-height: 42px;
+      padding-bottom: 0;
+    }
+  }
+
+  ::placeholder {
+    font-size: 0.875em;
+  }
+}
+
+//
+//* ——— Select ——————————————————
+//
+
+.v-select {
+  &:not(.v-text-field--filled):not(.v-text-field--outlined):not(.v-text-field--solo) {
+    .v-select__selection--comma {
+      margin-top: 15px;
+    }
+
+    input {
+      min-height: 42px;
     }
   }
 }

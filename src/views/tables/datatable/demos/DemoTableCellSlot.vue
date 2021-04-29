@@ -9,6 +9,7 @@
       <div class="d-flex align-center">
         <v-avatar
           :color="item.avatar ? '' : 'primary'"
+          :class="item.avatar ? '' : 'v-avatar-light-bg primary--text'"
           size="32"
         >
           <v-img
@@ -17,7 +18,6 @@
           ></v-img>
           <span
             v-else
-            class="white--text"
           >{{ item.full_name.slice(0,2).toUpperCase() }}</span>
         </v-avatar>
         <div class="d-flex flex-column ml-3">
@@ -32,6 +32,8 @@
       <v-chip
         small
         :color="statusColor[status[item.status]]"
+        :class="`${statusColor[status[item.status]]}--text`"
+        class="v-chip-light-bg"
       >
         {{ status[item.status] }}
       </v-chip>
@@ -79,7 +81,11 @@
 <script>
 import { defineComponent } from '@vue/composition-api'
 import {
-  mdiSquareEditOutline, mdiDotsVertical, mdiFileDocumentOutline, mdiArchiveOutline, mdiDeleteOutline,
+  mdiSquareEditOutline,
+  mdiDotsVertical,
+  mdiFileDocumentOutline,
+  mdiArchiveOutline,
+  mdiDeleteOutline,
 } from '@mdi/js'
 import data from '../datatable'
 
@@ -87,11 +93,11 @@ export default defineComponent({
   setup() {
     const statusColor = {
       /* eslint-disable key-spacing */
-      Current      : 'primary',
-      Professional : 'success',
-      Rejected     : 'error',
-      Resigned     : 'warning',
-      Applied      : 'info',
+      Current: 'primary',
+      Professional: 'success',
+      Rejected: 'error',
+      Resigned: 'warning',
+      Applied: 'info',
       /* eslint-enable key-spacing */
     }
 

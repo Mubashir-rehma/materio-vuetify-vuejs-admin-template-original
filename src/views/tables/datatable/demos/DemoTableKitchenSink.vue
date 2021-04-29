@@ -46,10 +46,12 @@
             :key="index"
             size="26"
             :color="category.color"
+            :class="`${category.color}--text`"
+            class="v-avatar-light-bg"
           >
             <v-icon
-              dark
               size="20"
+              :color="category.color"
             >
               {{ category.icon }}
             </v-icon>
@@ -64,17 +66,15 @@
           <v-avatar
             size="1.875rem"
             color="primary"
+            class="v-avatar-light-bg primary--text"
           >
             <v-img
               v-if="item.buyer.avatar"
               :src="item.buyer.avatar"
             ></v-img>
-            <span
-              v-else
-              class="white--text"
-            >{{ item.buyer.name.slice(0,2).toUpperCase() }}</span>
+            <span v-else>{{ item.buyer.name.slice(0,2).toUpperCase() }}</span>
           </v-avatar>
-          <span class="font-weight-bold ml-2">{{ item.buyer.name }}</span>
+          <span class="text-no-wrap font-weight-bold ml-2">{{ item.buyer.name }}</span>
         </div>
       </template>
 
@@ -90,6 +90,8 @@
       <template #[`item.status`]="{item}">
         <v-chip
           :color="statusColor[item.payment.status]"
+          :class="`${statusColor[item.payment.status]}--text`"
+          class="v-chip-light-bg"
           small
         >
           {{ item.payment.status }}
@@ -189,8 +191,9 @@ export default defineComponent({
     }
   },
   created() {
-    this.$http.get('/data-table/data')
-      .then(res => { this.productList = res.data })
+    this.$http.get('/data-table/data').then(res => {
+      this.productList = res.data
+    })
   },
 })
 </script>

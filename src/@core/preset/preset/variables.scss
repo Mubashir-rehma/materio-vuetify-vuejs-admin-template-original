@@ -42,6 +42,9 @@ $material-light: map-deep-merge(
       // ! Value of `map-deep-get($material-light, 'text-fields', 'filled')`
       'solo-inverted': rgba(map-get($shades, 'black'), 0.03),
     ),
+    'text': (
+      'secondary': rgba(map-get($shades, 'black'), 0.68),
+    ),
     'text-fields': (
       'filled': rgba(map-get($shades, 'black'), 0.03),
       'filled-hover': rgba(map-get($shades, 'black'), 0.08),
@@ -56,7 +59,8 @@ $material-light: map-deep-merge(
       'clock': #f5f5f5,
     ),
     'icons': (
-      'active': map-deep-get($material-light, 'text', 'primary'),
+      // ! Value of `map-deep-get($material-light, 'text', 'secondary')`
+      'active': rgba(map-get($shades, 'black'), 0.68),
     ),
   )
 );
@@ -336,6 +340,7 @@ $card-subtitle-padding: $card-spacer-content $card-spacer;
 $card-actions-padding: $card-spacer-content $card-spacer;
 $card-border-radius: 6px;
 $card-elevation: 6;
+$card-text-line-height: 1.5;
 
 //
 //* ——— Switch ——————————————————
@@ -347,7 +352,7 @@ $switch-thumb-elevation: 1;
 //* ——— Menu ——————————————————
 //
 
-$menu-content-border-radius: 6px;
+$menu-content-border-radius: 5px;
 
 //
 //* ——— List ——————————————————
@@ -397,3 +402,28 @@ $time-picker-title-btn-height: 32px;
 
 $treeview-node-height: 40px;
 $treeview-node-height-dense: 36px;
+
+//
+//* ——— Text Field ——————————————————
+//
+
+$text-field-filled-full-width-outlined-slot-min-height: 3rem;
+
+// `top` property value for outline input (When not focused)
+$text-field-outlined-label-position-x: 14px;
+$text-field-outlined-label-position-y: -21px;
+
+// `top` property value for filled input
+$text-field-filled-full-width-label-top: 17px;
+$text-field-filled-full-width-label-active-transform: translateY(-9px) scale(0.75) !default;
+
+// Text Field w/o outlined label alignment
+$text-field-label-top: 13px;
+
+//
+//* ——— Select ——————————————————
+//
+
+// Adjust selected option height (shall be same as text field)
+// ? We have overridden it in `overrides.scss`
+// $select-selections-margin: 15px 4px 7px 0;

@@ -1,5 +1,8 @@
 <template>
-  <v-menu offset-y>
+  <v-menu
+    offset-y
+    nudge-bottom="10"
+  >
     <!-- Activator -->
     <template v-slot:activator="{ on, attrs }">
       <div
@@ -19,7 +22,7 @@
     </template>
 
     <!-- Options List -->
-    <v-list>
+    <v-list dense>
       <v-list-item-group
         :value="$i18n.locale"
         color="primary"

@@ -444,3 +444,28 @@ button {
     }
   }
 }
+
+//
+//* ——— Table ——————————————————
+//
+
+.v-data-table {
+  th {
+    font-weight: 600;
+  }
+
+  .v-data-footer__select {
+    .v-input__append-inner {
+      align-self: center;
+    }
+  }
+}
+
+@include theme(v-data-table) using ($material) {
+  th {
+    color: map-deep-get($material, 'text', 'primary') !important;
+  }
+  td {
+    color: map-deep-get($material, 'text', 'secondary') !important;
+  }
+}

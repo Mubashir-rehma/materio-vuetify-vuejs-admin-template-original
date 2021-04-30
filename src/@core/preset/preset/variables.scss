@@ -427,3 +427,12 @@ $text-field-label-top: 13px;
 // Adjust selected option height (shall be same as text field)
 // ? We have overridden it in `overrides.scss`
 // $select-selections-margin: 15px 4px 7px 0;
+
+//
+//* ——— Table ——————————————————
+//
+
+$data-table-regular-header-height: 3.375rem;
+$data-table-regular-row-height: 3.125rem;
+$data-table-dense-header-height: 2.375rem;
+$data-table-dense-row-height: 2.125rem;

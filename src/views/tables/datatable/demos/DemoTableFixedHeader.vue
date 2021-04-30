@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="data"
+    :items="userList"
     :items-per-page="10"
     fixed-header
     height="300"
@@ -27,6 +27,11 @@
       </div>
     </template>
 
+    <!-- salary -->
+    <template #[`item.salary`]="{item}">
+      {{ `$ ${item.salary}` }}
+    </template>
+
     <!-- status -->
     <template #[`item.status`]="{item}">
       <v-chip
@@ -38,55 +43,12 @@
         {{ status[item.status] }}
       </v-chip>
     </template>
-
-    <!-- action -->
-    <template #[`item.actions`]="">
-      <!-- more menus -->
-      <v-menu left>
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            icon
-            v-bind="attrs"
-            v-on="on"
-          >
-            <v-icon size="18">
-              {{ icons.mdiDotsVertical }}
-            </v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-            v-for="(item, i) in menuItems"
-            :key="i"
-          >
-            <v-list-item-title>
-              <v-icon size="20">
-                {{ item.icon }}
-              </v-icon>
-              {{ item.title }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-
-      <!-- edit -->
-      <v-icon size="18">
-        {{ icons.mdiSquareEditOutline }}
-      </v-icon>
-    </template>
   </v-data-table>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import {
-  mdiSquareEditOutline,
-  mdiDotsVertical,
-  mdiFileDocumentOutline,
-  mdiArchiveOutline,
-  mdiDeleteOutline,
-} from '@mdi/js'
+import { mdiSquareEditOutline, mdiDotsVertical } from '@mdi/js'
 import data from '../datatable'
 
 export default defineComponent({
@@ -105,18 +67,12 @@ export default defineComponent({
       headers: [
         { text: 'NAME', value: 'full_name' },
         { text: 'EMAIL', value: 'email' },
-        { text: 'Date', value: 'start_date' },
+        { text: 'DATE', value: 'start_date' },
         { text: 'SALARY', value: 'salary' },
         { text: 'AGE', value: 'age' },
         { text: 'STATUS', value: 'status' },
-        { text: 'ACTIONS', value: 'actions' },
       ],
-      data,
-      menuItems: [
-        { title: 'Details', icon: mdiFileDocumentOutline },
-        { title: 'Archive', icon: mdiArchiveOutline },
-        { title: 'Delete', icon: mdiDeleteOutline },
-      ],
+      userList: data,
       status: {
         1: 'Current',
         2: 'Professional',

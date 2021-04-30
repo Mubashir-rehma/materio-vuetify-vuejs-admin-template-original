@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="data"
+    :items="userList"
     :items-per-page="5"
     dense
   ></v-data-table>
@@ -18,11 +18,11 @@ export default defineComponent({
         { text: 'ID', sortable: false, value: 'id' },
         { text: 'NAME', value: 'full_name' },
         { text: 'EMAIL', value: 'email' },
-        { text: 'Date', value: 'start_date' },
-        { text: 'SALARY', value: 'salary' },
+        { text: 'DATE', value: 'start_date' },
+        { text: 'EXPERIENCE', value: 'experience' },
         { text: 'AGE', value: 'age' },
       ],
-      data,
+      userList: data,
     }
   },
 })

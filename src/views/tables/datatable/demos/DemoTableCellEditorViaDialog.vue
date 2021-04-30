@@ -26,6 +26,7 @@
               <small>{{ item.post }}</small>
             </div>
           </div>
+
           <!-- {{ item.full_name }} -->
           <template v-slot:input>
             <v-text-field
@@ -46,7 +47,7 @@
           large
           persistent
         >
-          {{ item.salary }}
+          {{ `$ ${item.salary}` }}
           <template v-slot:input>
             <div class="mt-4 title">
               Update Salary
@@ -58,6 +59,8 @@
               single-line
               counter
               autofocus
+              type="number"
+              prefix="$"
             ></v-text-field>
           </template>
         </v-edit-dialog>
@@ -74,60 +77,19 @@
           {{ status[item.status] }}
         </v-chip>
       </template>
-
-      <!-- action -->
-      <template #[`item.actions`]="">
-        <!-- more menus -->
-        <v-menu left>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              icon
-              v-bind="attrs"
-              v-on="on"
-            >
-              <v-icon size="18">
-                {{ icons.mdiDotsVertical }}
-              </v-icon>
-            </v-btn>
-          </template>
-
-          <v-list>
-            <v-list-item
-              v-for="(item, i) in menuItems"
-              :key="i"
-            >
-              <v-list-item-title>
-                <v-icon size="20">
-                  {{ item.icon }}
-                </v-icon>
-                {{ item.title }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-
-        <!-- edit -->
-        <v-icon size="18">
-          {{ icons.mdiSquareEditOutline }}
-        </v-icon>
-      </template>
     </v-data-table>
   </div>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import {
-  mdiSquareEditOutline,
-  mdiDotsVertical,
-  mdiFileDocumentOutline,
-  mdiArchiveOutline,
-  mdiDeleteOutline,
-} from '@mdi/js'
+import { mdiSquareEditOutline, mdiDotsVertical } from '@mdi/js'
 import data from '../datatable'
 
 export default defineComponent({
   setup() {
+    const userList = []
+
     return {
       snack: false,
       snackColor: '',
@@ -136,16 +98,10 @@ export default defineComponent({
       headers: [
         { text: 'NAME', value: 'full_name' },
         { text: 'EMAIL', value: 'email' },
-        { text: 'Date', value: 'start_date' },
+        { text: 'DATE', value: 'start_date' },
         { text: 'SALARY', value: 'salary' },
         { text: 'AGE', value: 'age' },
         { text: 'STATUS', value: 'status' },
-        { text: 'ACTIONS', value: 'actions' },
-      ],
-      menuItems: [
-        { title: 'Details', icon: mdiFileDocumentOutline },
-        { title: 'Archive', icon: mdiArchiveOutline },
-        { title: 'Delete', icon: mdiDeleteOutline },
       ],
       statusColor: {
         /* eslint-disable key-spacing */
@@ -167,8 +123,11 @@ export default defineComponent({
         mdiSquareEditOutline,
         mdiDotsVertical,
       },
-      userList: data,
+      userList,
     }
+  },
+  created() {
+    this.userList = JSON.parse(JSON.stringify(data))
   },
 })
 </script>

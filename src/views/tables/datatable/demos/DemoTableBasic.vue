@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="data"
+    :items="userData"
     :items-per-page="5"
   ></v-data-table>
 </template>
@@ -12,16 +12,18 @@ import data from '../datatable'
 
 export default defineComponent({
   setup() {
+    const userData = data
+
     return {
       headers: [
         { text: 'ID', sortable: false, value: 'id' },
         { text: 'NAME', value: 'full_name' },
         { text: 'EMAIL', value: 'email' },
-        { text: 'Date', value: 'start_date' },
-        { text: 'SALARY', value: 'salary' },
+        { text: 'DATE', value: 'start_date' },
+        { text: 'EXPERIENCE', value: 'experience' },
         { text: 'AGE', value: 'age' },
       ],
-      data,
+      userData,
     }
   },
 })

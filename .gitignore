@@ -18,6 +18,7 @@ pnpm-debug.log*
 .vscode/*
 !.vscode/*.code-snippets
 !.vscode/*.code-workspace
+!.vscode/extensions.json
 *.suo
 *.ntvs*
 *.njsproj

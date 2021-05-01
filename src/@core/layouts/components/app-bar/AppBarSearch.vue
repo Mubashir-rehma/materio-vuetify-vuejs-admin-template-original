@@ -1,13 +1,14 @@
 <template>
-  <div @scroll.prevent.stop>
-    <v-icon @click="shallShowFullSearchLocal = !shallShowFullSearchLocal">
+  <div>
+    <v-icon @click="shallShowFullSearchLocal = true">
       {{ icons.mdiMagnify }}
     </v-icon>
 
     <!-- This is clever hack to hide scrolling 😉 -->
     <v-dialog
-      v-model="shallShowFullSearchLocal"
+      :value="shallShowFullSearchLocal"
       hide-overlay
+      persistent
     ></v-dialog>
     <v-expand-transition>
       <v-autocomplete
@@ -28,6 +29,7 @@
         :menu-props="{ maxHeight: 500, transition: 'slide-y-transition' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
+        @blur="shallShowFullSearchLocal = false"
       >
         <!-- @blur="shallShowFullSearchLocal = false" -->
         <template #selection></template>

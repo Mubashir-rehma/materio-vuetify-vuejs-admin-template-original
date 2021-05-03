@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import pages from './pages'
 import userInterface from './user-interface'
 
 Vue.use(VueRouter)
@@ -34,6 +35,7 @@ const routes = [
     },
   },
   ...userInterface,
+  ...pages,
 ]
 
 const router = new VueRouter({

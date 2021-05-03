@@ -1,4 +1,4 @@
-import { mdiChartDonut } from '@mdi/js'
+import { mdiChartDonut, mdiMapOutline } from '@mdi/js'
 
 export default [
   {
@@ -18,6 +18,11 @@ export default [
             to: 'chartjs-chart',
           },
         ],
+      },
+      {
+        icon: mdiMapOutline,
+        title: 'Leaflet Maps',
+        to: 'leaflet-maps',
       },
     ],
   },

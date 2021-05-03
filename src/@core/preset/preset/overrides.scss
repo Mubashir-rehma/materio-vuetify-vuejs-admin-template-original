@@ -302,10 +302,12 @@ button {
 //* ——— Snackbar ——————————————————
 //
 
-.v-snack__content {
-  color: map-get($shades, 'white');
-  letter-spacing: 0.25px;
-  // line-height: 1.5;
+.v-snack__wrapper:not([class*='--text']) {
+  .v-snack__content {
+    color: map-get($shades, 'white');
+    letter-spacing: 0.25px;
+    // line-height: 1.5;
+  }
 }
 
 //

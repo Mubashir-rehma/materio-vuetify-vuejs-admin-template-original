@@ -15,16 +15,6 @@
       top
     >
       Donut sweet marshmallow cookie bonbon pastry tootsie roll.
-      <template #action="{ attrs }">
-        <v-btn
-          color="error"
-          text
-          v-bind="attrs"
-          @click="isShapedSnackbarVisible = false"
-        >
-          Close
-        </v-btn>
-      </template>
     </v-snackbar>
 
     <!-- rounded toggle btn-->
@@ -43,17 +33,6 @@
       right
     >
       Jelly chocolate bar candy canes apple pie.
-
-      <template #action="{ attrs }">
-        <v-btn
-          color="error"
-          text
-          v-bind="attrs"
-          @click="isRoundedSnackbarVisible = false"
-        >
-          Close
-        </v-btn>
-      </template>
     </v-snackbar>
 
     <!-- color toggle btn-->
@@ -72,16 +51,6 @@
       color="primary"
     >
       Ice cream cake candy canes.
-      <template #action="{ attrs }">
-        <v-btn
-          color="error"
-          text
-          v-bind="attrs"
-          @click="isColorSnackbarVisible = false"
-        >
-          Close
-        </v-btn>
-      </template>
     </v-snackbar>
 
     <!-- text toggle btn-->
@@ -100,16 +69,6 @@
       color="primary"
     >
       Pie icing biscuit soufflé liquorice topping.
-      <template #action="{ attrs }">
-        <v-btn
-          color="error"
-          text
-          v-bind="attrs"
-          @click="isTextSnackbarVisible = false"
-        >
-          Close
-        </v-btn>
-      </template>
     </v-snackbar>
 
     <!-- outline toggle btn-->
@@ -129,16 +88,6 @@
       color="error"
     >
       Oat cake caramels sesame snaps candy.
-      <template #action="{ attrs }">
-        <v-btn
-          color="error"
-          text
-          v-bind="attrs"
-          @click="isOutlinedSnackbarVisible = false"
-        >
-          Close
-        </v-btn>
-      </template>
     </v-snackbar>
 
     <!-- Tile toggle btn-->
@@ -157,16 +106,23 @@
       tile
     >
       Dessert tootsie wafer ice cream toffee jelly-o.
-      <template #action="{ attrs }">
-        <v-btn
-          color="error"
-          text
-          v-bind="attrs"
-          @click="isTileSnackbarVisible = false"
-        >
-          Close
-        </v-btn>
-      </template>
+    </v-snackbar>
+
+    <!-- Light Snackbar -->
+    <v-btn
+      color="primary"
+      @click="isSnackbarLightVisible = true"
+    >
+      Light
+    </v-btn>
+
+    <v-snackbar
+      v-model="isSnackbarLightVisible"
+      color="white"
+      content-class="text--secondary"
+      top
+    >
+      Hello, I'm a light snackbar
     </v-snackbar>
   </div>
 </template>
@@ -182,6 +138,7 @@ export default {
     const isTextSnackbarVisible = ref(false)
     const isOutlinedSnackbarVisible = ref(false)
     const isTileSnackbarVisible = ref(false)
+    const isSnackbarLightVisible = ref(false)
 
     return {
       isShapedSnackbarVisible,
@@ -190,6 +147,7 @@ export default {
       isTextSnackbarVisible,
       isOutlinedSnackbarVisible,
       isTileSnackbarVisible,
+      isSnackbarLightVisible,
     }
   },
 }

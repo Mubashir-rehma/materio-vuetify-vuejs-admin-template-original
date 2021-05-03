@@ -14,6 +14,14 @@
       Facere modi esse illo officia saepe dolorum libero velit architecto voluptates fugiat sint dignissimos at aliquam distinctio repudiandae, incidunt aspernatur dolor deserunt?
       <template #action="{ attrs }">
         <v-btn
+          color="success"
+          text
+          v-bind="attrs"
+          @click="isSnackbarVisible = false"
+        >
+          Undo
+        </v-btn>
+        <v-btn
           color="error"
           text
           v-bind="attrs"

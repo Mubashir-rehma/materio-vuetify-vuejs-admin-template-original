@@ -1,11 +1,16 @@
 // eslint-disable-next-line object-curly-newline
-import { mdiArchiveOutline, mdiCreditCardOutline, mdiLayersTripleOutline } from '@mdi/js'
+import { mdiAlphaTBoxOutline, mdiArchiveOutline, mdiCreditCardOutline, mdiLayersTripleOutline } from '@mdi/js'
 
 export default [
   {
     title: 'User Interface',
     icon: mdiLayersTripleOutline,
     children: [
+      {
+        icon: mdiAlphaTBoxOutline,
+        title: 'Typography',
+        to: 'ui-typography',
+      },
       {
         title: 'Cards',
         icon: mdiCreditCardOutline,

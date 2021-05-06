@@ -8,6 +8,14 @@ const pages = [
     },
   },
   {
+    path: '/ui/typography',
+    name: 'ui-typography',
+    component: () => import('@/views/pages/typography/Typography.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
     path: '/cards/basic',
     name: 'card-basic',
     component: () => import('@/views/pages/cards/card-basic/CardBasic.vue'),

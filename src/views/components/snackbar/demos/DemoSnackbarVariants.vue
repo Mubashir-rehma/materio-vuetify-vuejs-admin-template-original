@@ -13,6 +13,7 @@
       v-model="isShapedSnackbarVisible"
       shaped
       top
+      :light="$vuetify.theme.dark"
     >
       Donut sweet marshmallow cookie bonbon pastry tootsie roll.
     </v-snackbar>
@@ -30,6 +31,7 @@
       v-model="isRoundedSnackbarVisible"
       rounded="pill"
       top
+      :light="$vuetify.theme.dark"
       right
     >
       Jelly chocolate bar candy canes apple pie.
@@ -48,6 +50,7 @@
       v-model="isColorSnackbarVisible"
       bottom
       right
+      :light="$vuetify.theme.dark"
       color="primary"
     >
       Ice cream cake candy canes.
@@ -65,6 +68,7 @@
     <v-snackbar
       v-model="isTextSnackbarVisible"
       bottom
+      :light="$vuetify.theme.dark"
       text
       color="primary"
     >
@@ -85,6 +89,7 @@
       left
       bottom
       outlined
+      :light="$vuetify.theme.dark"
       color="error"
     >
       Oat cake caramels sesame snaps candy.
@@ -103,26 +108,10 @@
       v-model="isTileSnackbarVisible"
       top
       left
+      :light="$vuetify.theme.dark"
       tile
     >
       Dessert tootsie wafer ice cream toffee jelly-o.
-    </v-snackbar>
-
-    <!-- Light Snackbar -->
-    <v-btn
-      color="primary"
-      @click="isSnackbarLightVisible = true"
-    >
-      Light
-    </v-btn>
-
-    <v-snackbar
-      v-model="isSnackbarLightVisible"
-      color="white"
-      content-class="text--secondary"
-      top
-    >
-      Hello, I'm a light snackbar
     </v-snackbar>
   </div>
 </template>
@@ -138,7 +127,6 @@ export default {
     const isTextSnackbarVisible = ref(false)
     const isOutlinedSnackbarVisible = ref(false)
     const isTileSnackbarVisible = ref(false)
-    const isSnackbarLightVisible = ref(false)
 
     return {
       isShapedSnackbarVisible,
@@ -147,7 +135,6 @@ export default {
       isTextSnackbarVisible,
       isOutlinedSnackbarVisible,
       isTileSnackbarVisible,
-      isSnackbarLightVisible,
     }
   },
 }

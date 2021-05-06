@@ -7,7 +7,10 @@
       Open Snackbar
     </v-btn>
 
-    <v-snackbar v-model="isSnackbarVisible">
+    <v-snackbar
+      v-model="isSnackbarVisible"
+      :light="$vuetify.theme.dark"
+    >
       Hello, I'm a snackbar
     </v-snackbar>
   </div>

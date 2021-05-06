@@ -13,6 +13,7 @@
 
     <v-snackbar
       v-model="isSnackbarTopVisible"
+      :light="$vuetify.theme.dark"
       top
     >
       I'm a top snackbar.
@@ -31,6 +32,7 @@
 
     <v-snackbar
       v-model="isSnackbarTopRightVisible"
+      :light="$vuetify.theme.dark"
       right
       top
     >
@@ -50,6 +52,7 @@
 
     <v-snackbar
       v-model="isSnackbarRightVisible"
+      :light="$vuetify.theme.dark"
       right
       centered
     >
@@ -69,6 +72,7 @@
 
     <v-snackbar
       v-model="isSnackbarBottomRightVisible"
+      :light="$vuetify.theme.dark"
       right
     >
       I'm a bottom right snackbar.
@@ -85,7 +89,10 @@
       </v-icon>
     </v-btn>
 
-    <v-snackbar v-model="isSnackbarBottomVisible">
+    <v-snackbar
+      v-model="isSnackbarBottomVisible"
+      :light="$vuetify.theme.dark"
+    >
       I'm a bottom snackbar.
     </v-snackbar>
 
@@ -102,6 +109,7 @@
 
     <v-snackbar
       v-model="isSnackbarBottomLeftVisible"
+      :light="$vuetify.theme.dark"
       left
     >
       I'm a bottom left snackbar.
@@ -120,6 +128,7 @@
 
     <v-snackbar
       v-model="isSnackbarLeftVisible"
+      :light="$vuetify.theme.dark"
       centered
       left
     >
@@ -137,6 +146,7 @@
 
     <v-snackbar
       v-model="isSnackbarTopLeftVisible"
+      :light="$vuetify.theme.dark"
       top
       left
     >
@@ -156,6 +166,7 @@
 
     <v-snackbar
       v-model="isSnackbarCenteredVisible"
+      :light="$vuetify.theme.dark"
       centered
     >
       I'm a center right snackbar.

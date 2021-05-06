@@ -10,6 +10,7 @@
     <v-snackbar
       v-model="isSnackbarVisible"
       :timeout="2000"
+      :light="$vuetify.theme.dark"
     >
       My timeout is set to 2000.
     </v-snackbar>

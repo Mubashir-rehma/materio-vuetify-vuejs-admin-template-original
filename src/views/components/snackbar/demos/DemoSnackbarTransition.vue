@@ -10,6 +10,7 @@
 
     <v-snackbar
       v-model="isSnackbarFadeVisible"
+      :light="$vuetify.theme.dark"
       transition="fade-transition"
       left
     >
@@ -26,6 +27,7 @@
 
     <v-snackbar
       v-model="isSnackbarScaleVisible"
+      :light="$vuetify.theme.dark"
       transition="scale-transition"
     >
       I'm a scale transition snackbar.
@@ -41,6 +43,7 @@
 
     <v-snackbar
       v-model="isSnackbarScrollReveseVisible"
+      :light="$vuetify.theme.dark"
       transition="scroll-y-reverse-transition"
       right
     >

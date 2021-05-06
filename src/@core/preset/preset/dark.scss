@@ -1,0 +1,9 @@
+// ? This includes dark theme related style
+
+.v-alert {
+  &.v-sheet.theme--dark {
+    &:not([class*='--text']) {
+      color: #fff !important;
+    }
+  }
+}

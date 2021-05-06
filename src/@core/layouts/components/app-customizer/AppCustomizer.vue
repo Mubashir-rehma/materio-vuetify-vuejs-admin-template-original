@@ -13,8 +13,9 @@
       v-model="isCustomizerOpen"
       :right="!$vuetify.rtl"
       temporary
-      absolute
+      fixed
       width="400"
+      class="app-customizer-drawer"
     >
       <!-- Heading -->
       <div class="app-customizer-header customizer-section py-3">
@@ -349,8 +350,12 @@ export default {
   background: var(--v-primary-base);
 }
 
+@include theme(app-customizer-drawer) using ($material) {
+  background-color: map-deep-get($material, 'cards');
+}
+
 .app-customizer {
-  z-index: 6;
+  z-index: 7;
 
   .app-customizer-header {
     position: relative;

@@ -10,6 +10,7 @@
     <v-snackbar
       v-model="isSnackbarVisible"
       vertical
+      :light="$vuetify.theme.dark"
     >
       Facere modi esse illo officia saepe dolorum libero velit architecto voluptates fugiat sint dignissimos at aliquam distinctio repudiandae, incidunt aspernatur dolor deserunt?
       <template #action="{ attrs }">

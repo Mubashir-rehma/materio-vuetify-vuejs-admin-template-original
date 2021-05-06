@@ -7,7 +7,10 @@
       Open Snackbar
     </v-btn>
 
-    <v-snackbar v-model="isSnackbarVisibility">
+    <v-snackbar
+      v-model="isSnackbarVisibility"
+      :light="$vuetify.theme.dark"
+    >
       Hello, I'm a snackbar with actions.
 
       <template #action="{ attrs }">

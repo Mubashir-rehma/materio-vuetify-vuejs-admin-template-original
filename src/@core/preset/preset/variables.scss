@@ -6,6 +6,11 @@ $shades: (
   'transparent': transparent,
 );
 
+$primary-shade--light: #5e5669;
+$primary-shade--dark: #e7e3fc;
+$shadow-color--light: $primary-shade--light;
+$shadow-color--dark: #131120;
+
 @import '~vuetify/src/styles/styles.sass';
 
 // ————————————————————————————————————
@@ -14,7 +19,7 @@ $shades: (
 
 $card-spacer: 20px;
 $card-spacer-content: 16px;
-$component-border-color: rgba(map-get($shades, 'black'), 0.22);
+$component-border-color: rgba($primary-shade--light, 0.22);
 $customizer-form-icons: true;
 
 // ————————————————————————————————————
@@ -29,28 +34,100 @@ $border-radius-root: 5px;
 // Typography
 $body-font-family: 'Inter', sans-serif;
 
-// Themes
+//
+//* ——— Override Light Theme's Pure Black to Primary Shade ——————————————————
+//
+// ? This will just update the black to `$primary-shade--light`
+//
+
+$material-light: map-deep-merge(
+  $material-light,
+  (
+    'calendar': (
+      'text-color': $primary-shade--light,
+      'past-color': rgba($primary-shade--light, 0.38),
+    ),
+    'code': (
+      'background': rgba($primary-shade--light, 0.05),
+    ),
+    'dividers': rgba($primary-shade--light, 0.12),
+    'text': (
+      'primary': rgba($primary-shade--light, 0.87),
+      'secondary': rgba($primary-shade--light, 0.6),
+      'disabled': rgba($primary-shade--light, 0.38),
+    ),
+    'icons': (
+      'active': rgba($primary-shade--light, 0.54),
+      'inactive': rgba($primary-shade--light, 0.38),
+    ),
+    'inputs': (
+      'box': rgba($primary-shade--light, 0.04),
+      'solo-inverted': rgba($primary-shade--light, 0.06),
+    ),
+    'buttons': (
+      'disabled': rgba($primary-shade--light, 0.26),
+      'focused': rgba($primary-shade--light, 0.12),
+    ),
+    'selection-controls': (
+      'disabled': rgba($primary-shade--light, 0.26),
+      'track': (
+        'inactive': rgba($primary-shade--light, 0.38),
+        'disabled': rgba($primary-shade--light, 0.12),
+      ),
+    ),
+    'slider': (
+      'active': rgba($primary-shade--light, 0.38),
+      'inactive': rgba($primary-shade--light, 0.26),
+      'disabled': rgba($primary-shade--light, 0.26),
+      'discrete': $primary-shade--light,
+    ),
+    'toggle-buttons': (
+      'color': $primary-shade--light,
+    ),
+    'text-fields': (
+      'filled': rgba($primary-shade--light, 0.06),
+      'filled-hover': rgba($primary-shade--light, 0.12),
+      'outlined': rgba($primary-shade--light, 0.38),
+      'outlined-disabled': rgba($primary-shade--light, 0.26),
+      'outlined-hover': rgba($primary-shade--light, 0.86),
+    ),
+    'input-bottom-line': rgba($primary-shade--light, 0.42),
+    'stepper': (
+      'completed': rgba($primary-shade--light, 0.87),
+      'hover': rgba($primary-shade--light, 0.54),
+    ),
+    'fg-color': $primary-shade--light,
+    'text-color': $primary-shade--light,
+  )
+);
+
+//
+//* ——— Override Values of Light Theme ——————————————————
+//
+// ? This will just update the black to `$primary-shade--light`
+//
+
 $material-light: map-deep-merge(
   $material-light,
   (
     'app-bar': map-get($shades, 'white'),
     'background': #f4f5fa,
-    'chips': rgba(map-get($shades, 'black'), 0.06),
-    'dividers': rgba(map-get($shades, 'black'), 0.14),
-    'input-bottom-line': rgba(map-get($shades, 'black'), 0.14),
+    'chips': rgba($primary-shade--light, 0.06),
+    'dividers': rgba($primary-shade--light, 0.14),
+    'input-bottom-line': rgba($primary-shade--light, 0.14),
     'inputs': (
       // ! Value of `map-deep-get($material-light, 'text-fields', 'filled')`
-      'solo-inverted': rgba(map-get($shades, 'black'), 0.03),
+        'solo-inverted': rgba($primary-shade--light, 0.03),
     ),
     'text': (
-      'secondary': rgba(map-get($shades, 'black'), 0.68),
+      'secondary': rgba($primary-shade--light, 0.68),
     ),
     'text-fields': (
-      'filled': rgba(map-get($shades, 'black'), 0.03),
-      'filled-hover': rgba(map-get($shades, 'black'), 0.08),
-      'outlined': rgba(map-get($shades, 'black'), 0.14),
-      'outlined-hover': rgba(map-get($shades, 'black'), 0.28),
-      'outlined-disabled': rgba(map-get($shades, 'black'), 0.22),
+      'filled': rgba($primary-shade--light, 0.03),
+      'filled-hover': rgba($primary-shade--light, 0.08),
+      'outlined': rgba($primary-shade--light, 0.14),
+      'outlined-hover': rgba($primary-shade--light, 0.28),
+      'outlined-disabled': rgba($primary-shade--light, 0.22),
     ),
     'status-bar': (
       'regular': map-get($shades, 'white'),
@@ -60,246 +137,369 @@ $material-light: map-deep-merge(
     ),
     'icons': (
       // ! Value of `map-deep-get($material-light, 'text', 'secondary')`
-      'active': rgba(map-get($shades, 'black'), 0.68),
+        'active': rgba($primary-shade--light, 0.68),
     ),
+    // * New
+      'primary-shade': $primary-shade--light,
+    'shadow-color': $shadow-color--light,
   )
 );
 
-$shadow-key-umbra: (
-  0: (
-    0px 0px 0px 0px $shadow-key-umbra-opacity,
-  ),
-  1: (
-    0 1px 3px 0 rgba(94, 86, 105, 0.2),
-  ),
-  2: (
-    0 1px 3px 0 rgba(94, 86, 105, 0.2),
-  ),
-  3: (
-    0 4px 8px -4px rgba(94, 86, 105, 0.42),
-  ),
-  4: (
-    0 6px 18px -8px rgba(94, 86, 105, 0.56),
-  ),
-  5: (
-    0px 3px 5px -1px $shadow-key-umbra-opacity,
-  ),
-  6: (
-    0 2px 10px 0 rgba(94, 86, 105, 0.1),
-  ),
-  7: (
-    0px 4px 5px -2px $shadow-key-umbra-opacity,
-  ),
-  8: (
-    0 4px 14px 0 rgba(94, 86, 105, 0.14),
-  ),
-  9: (
-    0 5px 6px -3px rgba(94, 86, 105, 0.2),
-  ),
-  10: (
-    0px 6px 6px -3px $shadow-key-umbra-opacity,
-  ),
-  11: (
-    0px 6px 7px -4px $shadow-key-umbra-opacity,
-  ),
-  12: (
-    0 7px 8px -4px rgba(94, 86, 105, 0.2),
-  ),
-  13: (
-    0px 7px 8px -4px $shadow-key-umbra-opacity,
-  ),
-  14: (
-    0px 7px 9px -4px $shadow-key-umbra-opacity,
-  ),
-  15: (
-    0px 8px 9px -5px $shadow-key-umbra-opacity,
-  ),
-  16: (
-    0 8px 10px -5px rgba(94, 86, 105, 0.2),
-  ),
-  17: (
-    0px 8px 11px -5px $shadow-key-umbra-opacity,
-  ),
-  18: (
-    0px 9px 11px -5px $shadow-key-umbra-opacity,
-  ),
-  19: (
-    0px 9px 12px -6px $shadow-key-umbra-opacity,
-  ),
-  20: (
-    0px 10px 13px -6px $shadow-key-umbra-opacity,
-  ),
-  21: (
-    0px 10px 13px -6px $shadow-key-umbra-opacity,
-  ),
-  22: (
-    0px 10px 14px -6px $shadow-key-umbra-opacity,
-  ),
-  23: (
-    0px 11px 14px -7px $shadow-key-umbra-opacity,
-  ),
-  24: (
-    0 18px 42px -6px rgba(94, 86, 105, 0.18),
-  ),
+//
+//* ——— Override Dark Theme's Pure White to Primary Shade ——————————————————
+//
+// ? This will just update the white to `$primary-shade--dark`
+//
+
+$material-dark: map-deep-merge(
+  $material-dark,
+  (
+    'calendar': (
+      'text-color': $primary-shade--dark,
+      'past-color': rgba($primary-shade--dark, 0.5),
+    ),
+    'code': (
+      'background': rgba($primary-shade--dark, 0.1),
+    ),
+    'kbd': (
+      'color': $primary-shade--dark,
+    ),
+    'dividers': rgba($primary-shade--dark, 0.12),
+    'text': (
+      'theme': $primary-shade--dark,
+      'primary': $primary-shade--dark,
+      'secondary': rgba($primary-shade--dark, 0.7),
+      'disabled': rgba($primary-shade--dark, 0.5),
+    ),
+    'icons': (
+      'active': $primary-shade--dark,
+      'inactive': rgba($primary-shade--dark, 0.5),
+    ),
+    'inputs': (
+      'box': $primary-shade--dark,
+      'solo-inverted': rgba($primary-shade--dark, 0.16),
+      'solo-inverted-focused': $primary-shade--dark,
+    ),
+    'buttons': (
+      'disabled': rgba($primary-shade--dark, 0.3),
+      'focused': rgba($primary-shade--dark, 0.12),
+      'focused-alt': rgba($primary-shade--dark, 0.1),
+    ),
+    'selection-controls': (
+      'disabled': rgba($primary-shade--dark, 0.3),
+      'track': (
+        'inactive': rgba($primary-shade--dark, 0.3),
+        'disabled': rgba($primary-shade--dark, 0.1),
+      ),
+    ),
+    'slider': (
+      'active': rgba($primary-shade--dark, 0.3),
+      'inactive': rgba($primary-shade--dark, 0.2),
+      'disabled': rgba($primary-shade--dark, 0.2),
+      'discrete': $primary-shade--dark,
+    ),
+    'tabs': rgba($primary-shade--dark, 0.6),
+    'toggle-buttons': (
+      'color': $primary-shade--dark,
+    ),
+    'text-fields': (
+      'filled': rgba($primary-shade--dark, 0.08),
+      'filled-hover': rgba($primary-shade--dark, 0.16),
+      'outlined': rgba($primary-shade--dark, 0.24),
+      'outlined-disabled': rgba($primary-shade--dark, 0.16),
+      'outlined-hover': $primary-shade--dark,
+    ),
+    'input-bottom-line': rgba($primary-shade--dark, 0.7),
+    'stepper': (
+      'active': rgba($primary-shade--dark, 1),
+      'completed': rgba($primary-shade--dark, 0.87),
+      'hover': rgba($primary-shade--dark, 0.75),
+    ),
+    'color-picker': (
+      'checkerboard': rgba($primary-shade--dark, 0.12),
+    ),
+    'fg-color': $primary-shade--dark,
+    'text-color': $primary-shade--dark,
+  )
 );
 
-// ! `$shadow-key-penumbra-opacity` is useless now because we have different opacity per elevation level
-$shadow-key-penumbra: (
-  0: (
-    0px 0px 0px 0px $shadow-key-penumbra-opacity,
-  ),
-  1: (
-    0 2px 1px -1px rgba(94, 86, 105, 0.12),
-  ),
-  2: (
-    0 3px 1px -2px rgba(94, 86, 105, 0.12),
-  ),
-  3: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  4: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  5: (
-    0px 5px 8px 0px $shadow-key-penumbra-opacity,
-  ),
-  6: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  7: (
-    0px 7px 10px 1px $shadow-key-penumbra-opacity,
-  ),
-  8: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  9: (
-    0 3px 16px 2px rgba(94, 86, 105, 0.12),
-  ),
-  10: (
-    0px 10px 14px 1px $shadow-key-penumbra-opacity,
-  ),
-  11: (
-    0px 11px 15px 1px $shadow-key-penumbra-opacity,
-  ),
-  12: (
-    0 5px 22px 4px rgba(94, 86, 105, 0.12),
-  ),
-  13: (
-    0px 13px 19px 2px $shadow-key-penumbra-opacity,
-  ),
-  14: (
-    0px 14px 21px 2px $shadow-key-penumbra-opacity,
-  ),
-  15: (
-    0px 15px 22px 2px $shadow-key-penumbra-opacity,
-  ),
-  16: (
-    0 6px 30px 5px rgba(94, 86, 105, 0.12),
-  ),
-  17: (
-    0px 17px 26px 2px $shadow-key-penumbra-opacity,
-  ),
-  18: (
-    0px 18px 28px 2px $shadow-key-penumbra-opacity,
-  ),
-  19: (
-    0px 19px 29px 2px $shadow-key-penumbra-opacity,
-  ),
-  20: (
-    0px 20px 31px 3px $shadow-key-penumbra-opacity,
-  ),
-  21: (
-    0px 21px 33px 3px $shadow-key-penumbra-opacity,
-  ),
-  22: (
-    0px 22px 35px 3px $shadow-key-penumbra-opacity,
-  ),
-  23: (
-    0px 23px 36px 3px $shadow-key-penumbra-opacity,
-  ),
-  24: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
+//
+//* ——— Override Values of Light Theme ——————————————————
+//
+// ? This will just update the black to `$primary-shade--light`
+//
+
+$material-dark: map-deep-merge(
+  $material-dark,
+  (
+    'app-bar': map-get($shades, 'black'),
+    'background': #28243d,
+    'cards': #312d4b,
+    'chips': rgba($primary-shade--dark, 0.06),
+    'dividers': rgba($primary-shade--dark, 0.14),
+    'input-bottom-line': rgba($primary-shade--dark, 0.14),
+    'inputs': (
+      // ! Value of `map-deep-get($material-dark, 'text-fields', 'filled')`
+        'solo-inverted': rgba($primary-shade--dark, 0.03),
+    ),
+    'text': (
+      'secondary': rgba($primary-shade--dark, 0.68),
+    ),
+    'text-fields': (
+      'filled': rgba($primary-shade--dark, 0.03),
+      'filled-hover': rgba($primary-shade--dark, 0.08),
+      'outlined': rgba($primary-shade--dark, 0.14),
+      'outlined-hover': rgba($primary-shade--dark, 0.28),
+      'outlined-disabled': rgba($primary-shade--dark, 0.22),
+    ),
+    'status-bar': (
+      'regular': map-get($shades, 'black'),
+    ),
+    'icons': (
+      // ! Value of `map-deep-get($material-light, 'text', 'secondary')`
+        'active': rgba($primary-shade--dark, 0.68),
+    ),
+    // * New
+      'primary-shade': $primary-shade--dark,
+    'shadow-color': $shadow-color--dark,
+  )
 );
 
-// ! `$shadow-key-ambient-opacity` is useless now because we have different opacity per elevation level
-$shadow-key-ambient: (
-  0: (
-    0px 0px 0px 0px $shadow-key-ambient-opacity,
-  ),
-  1: (
-    0 1px 1px 0 rgba(94, 86, 105, 0.14),
-  ),
-  2: (
-    0 2px 2px 0 rgba(94, 86, 105, 0.14),
-  ),
-  3: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  4: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  5: (
-    0px 1px 14px 0px $shadow-key-ambient-opacity,
-  ),
-  6: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  7: (
-    0px 2px 16px 1px $shadow-key-ambient-opacity,
-  ),
-  8: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-  9: (
-    0 9px 12px 1px rgba(94, 86, 105, 0.14),
-  ),
-  10: (
-    0px 4px 18px 3px $shadow-key-ambient-opacity,
-  ),
-  11: (
-    0px 4px 20px 3px $shadow-key-ambient-opacity,
-  ),
-  12: (
-    0 12px 17px 2px rgba(94, 86, 105, 0.14),
-  ),
-  13: (
-    0px 5px 24px 4px $shadow-key-ambient-opacity,
-  ),
-  14: (
-    0px 5px 26px 4px $shadow-key-ambient-opacity,
-  ),
-  15: (
-    0px 6px 28px 5px $shadow-key-ambient-opacity,
-  ),
-  16: (
-    0 16px 24px 2px rgba(94, 86, 105, 0.14),
-  ),
-  17: (
-    0px 6px 32px 5px $shadow-key-ambient-opacity,
-  ),
-  18: (
-    0px 7px 34px 6px $shadow-key-ambient-opacity,
-  ),
-  19: (
-    0px 7px 36px 6px $shadow-key-ambient-opacity,
-  ),
-  20: (
-    0px 8px 38px 7px $shadow-key-ambient-opacity,
-  ),
-  21: (
-    0px 8px 40px 7px $shadow-key-ambient-opacity,
-  ),
-  22: (
-    0px 8px 42px 7px $shadow-key-ambient-opacity,
-  ),
-  23: (
-    0px 9px 44px 8px $shadow-key-ambient-opacity,
-  ),
-  24: (
-    0px 0px 0px 0px rgba(0, 0, 0, 0),
-  ),
-);
+// $shadow-key-umbra: (
+//   0: (
+//     0px 0px 0px 0px $shadow-key-umbra-opacity,
+//   ),
+//   1: (
+//     0 1px 3px 0 rgba(94, 86, 105, 0.2),
+//   ),
+//   2: (
+//     0 1px 3px 0 rgba(94, 86, 105, 0.2),
+//   ),
+//   3: (
+//     0 4px 8px -4px rgba(94, 86, 105, 0.42),
+//   ),
+//   4: (
+//     0 6px 18px -8px rgba(94, 86, 105, 0.56),
+//   ),
+//   5: (
+//     0px 3px 5px -1px $shadow-key-umbra-opacity,
+//   ),
+//   6: (
+//     0 2px 10px 0 rgba(94, 86, 105, 0.1),
+//   ),
+//   7: (
+//     0px 4px 5px -2px $shadow-key-umbra-opacity,
+//   ),
+//   8: (
+//     0 4px 14px 0 rgba(94, 86, 105, 0.14),
+//   ),
+//   9: (
+//     0 5px 6px -3px rgba(94, 86, 105, 0.2),
+//   ),
+//   10: (
+//     0px 6px 6px -3px $shadow-key-umbra-opacity,
+//   ),
+//   11: (
+//     0px 6px 7px -4px $shadow-key-umbra-opacity,
+//   ),
+//   12: (
+//     0 7px 8px -4px rgba(94, 86, 105, 0.2),
+//   ),
+//   13: (
+//     0px 7px 8px -4px $shadow-key-umbra-opacity,
+//   ),
+//   14: (
+//     0px 7px 9px -4px $shadow-key-umbra-opacity,
+//   ),
+//   15: (
+//     0px 8px 9px -5px $shadow-key-umbra-opacity,
+//   ),
+//   16: (
+//     0 8px 10px -5px rgba(94, 86, 105, 0.2),
+//   ),
+//   17: (
+//     0px 8px 11px -5px $shadow-key-umbra-opacity,
+//   ),
+//   18: (
+//     0px 9px 11px -5px $shadow-key-umbra-opacity,
+//   ),
+//   19: (
+//     0px 9px 12px -6px $shadow-key-umbra-opacity,
+//   ),
+//   20: (
+//     0px 10px 13px -6px $shadow-key-umbra-opacity,
+//   ),
+//   21: (
+//     0px 10px 13px -6px $shadow-key-umbra-opacity,
+//   ),
+//   22: (
+//     0px 10px 14px -6px $shadow-key-umbra-opacity,
+//   ),
+//   23: (
+//     0px 11px 14px -7px $shadow-key-umbra-opacity,
+//   ),
+//   24: (
+//     0 18px 42px -6px rgba(94, 86, 105, 0.18),
+//   ),
+// );
+
+// // ! `$shadow-key-penumbra-opacity` is useless now because we have different opacity per elevation level
+// $shadow-key-penumbra: (
+//   0: (
+//     0px 0px 0px 0px $shadow-key-penumbra-opacity,
+//   ),
+//   1: (
+//     0 2px 1px -1px rgba(94, 86, 105, 0.12),
+//   ),
+//   2: (
+//     0 3px 1px -2px rgba(94, 86, 105, 0.12),
+//   ),
+//   3: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   4: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   5: (
+//     0px 5px 8px 0px $shadow-key-penumbra-opacity,
+//   ),
+//   6: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   7: (
+//     0px 7px 10px 1px $shadow-key-penumbra-opacity,
+//   ),
+//   8: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   9: (
+//     0 3px 16px 2px rgba(94, 86, 105, 0.12),
+//   ),
+//   10: (
+//     0px 10px 14px 1px $shadow-key-penumbra-opacity,
+//   ),
+//   11: (
+//     0px 11px 15px 1px $shadow-key-penumbra-opacity,
+//   ),
+//   12: (
+//     0 5px 22px 4px rgba(94, 86, 105, 0.12),
+//   ),
+//   13: (
+//     0px 13px 19px 2px $shadow-key-penumbra-opacity,
+//   ),
+//   14: (
+//     0px 14px 21px 2px $shadow-key-penumbra-opacity,
+//   ),
+//   15: (
+//     0px 15px 22px 2px $shadow-key-penumbra-opacity,
+//   ),
+//   16: (
+//     0 6px 30px 5px rgba(94, 86, 105, 0.12),
+//   ),
+//   17: (
+//     0px 17px 26px 2px $shadow-key-penumbra-opacity,
+//   ),
+//   18: (
+//     0px 18px 28px 2px $shadow-key-penumbra-opacity,
+//   ),
+//   19: (
+//     0px 19px 29px 2px $shadow-key-penumbra-opacity,
+//   ),
+//   20: (
+//     0px 20px 31px 3px $shadow-key-penumbra-opacity,
+//   ),
+//   21: (
+//     0px 21px 33px 3px $shadow-key-penumbra-opacity,
+//   ),
+//   22: (
+//     0px 22px 35px 3px $shadow-key-penumbra-opacity,
+//   ),
+//   23: (
+//     0px 23px 36px 3px $shadow-key-penumbra-opacity,
+//   ),
+//   24: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+// );
+
+// // ! `$shadow-key-ambient-opacity` is useless now because we have different opacity per elevation level
+// $shadow-key-ambient: (
+//   0: (
+//     0px 0px 0px 0px $shadow-key-ambient-opacity,
+//   ),
+//   1: (
+//     0 1px 1px 0 rgba(94, 86, 105, 0.14),
+//   ),
+//   2: (
+//     0 2px 2px 0 rgba(94, 86, 105, 0.14),
+//   ),
+//   3: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   4: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   5: (
+//     0px 1px 14px 0px $shadow-key-ambient-opacity,
+//   ),
+//   6: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   7: (
+//     0px 2px 16px 1px $shadow-key-ambient-opacity,
+//   ),
+//   8: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+//   9: (
+//     0 9px 12px 1px rgba(94, 86, 105, 0.14),
+//   ),
+//   10: (
+//     0px 4px 18px 3px $shadow-key-ambient-opacity,
+//   ),
+//   11: (
+//     0px 4px 20px 3px $shadow-key-ambient-opacity,
+//   ),
+//   12: (
+//     0 12px 17px 2px rgba(94, 86, 105, 0.14),
+//   ),
+//   13: (
+//     0px 5px 24px 4px $shadow-key-ambient-opacity,
+//   ),
+//   14: (
+//     0px 5px 26px 4px $shadow-key-ambient-opacity,
+//   ),
+//   15: (
+//     0px 6px 28px 5px $shadow-key-ambient-opacity,
+//   ),
+//   16: (
+//     0 16px 24px 2px rgba(94, 86, 105, 0.14),
+//   ),
+//   17: (
+//     0px 6px 32px 5px $shadow-key-ambient-opacity,
+//   ),
+//   18: (
+//     0px 7px 34px 6px $shadow-key-ambient-opacity,
+//   ),
+//   19: (
+//     0px 7px 36px 6px $shadow-key-ambient-opacity,
+//   ),
+//   20: (
+//     0px 8px 38px 7px $shadow-key-ambient-opacity,
+//   ),
+//   21: (
+//     0px 8px 40px 7px $shadow-key-ambient-opacity,
+//   ),
+//   22: (
+//     0px 8px 42px 7px $shadow-key-ambient-opacity,
+//   ),
+//   23: (
+//     0px 9px 44px 8px $shadow-key-ambient-opacity,
+//   ),
+//   24: (
+//     0px 0px 0px 0px rgba(0, 0, 0, 0),
+//   ),
+// );
 
 // ————————————————————————————————————
 //* ——— COMPONENTS
@@ -390,6 +590,7 @@ $chip-icon-size: 20px;
 //
 
 $snackbar-background-color: rgba(59, 55, 68, 0.9);
+$snackbar-color: #fff;
 
 //
 //* ——— Time Picker ——————————————————

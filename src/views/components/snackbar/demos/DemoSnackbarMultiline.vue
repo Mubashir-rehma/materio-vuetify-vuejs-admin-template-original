@@ -10,6 +10,7 @@
     <v-snackbar
       v-model="isSnackbarVisible"
       multi-line
+      :light="$vuetify.theme.dark"
     >
       I'm a multi-line snackbar.
 

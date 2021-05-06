@@ -6,8 +6,8 @@ export default () => {
     const $vuetify = getVuetify()
 
     return {
-      'theme--dark': $vuetify.isDark,
-      'theme--light': !$vuetify.isDark,
+      'theme--dark': $vuetify.theme.dark,
+      'theme--light': !$vuetify.theme.dark,
     }
   })
 

@@ -11,7 +11,6 @@
       :right="$vuetify.rtl"
       mini-variant-width="68"
       :expand-on-hover="menuIsVerticalNavMini"
-      color="#f4f5fa"
       width="260"
       class="app-navigation-menu"
     >
@@ -68,7 +67,7 @@
 </template>
 
 <script>
-import { ref, watch, watchEffect } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 import AppContentContainer from '@core/layouts/components/app-content-container/AppContentContainer.vue'
 import { getVuetify } from '@/@core/utils'
 import useAppConfig from '@core/@app-config/useAppConfig'
@@ -90,17 +89,6 @@ export default {
     // eslint-disable-next-line object-curly-newline
     const { menuIsVerticalNavMini, menuIsMenuHidden, appBarType, footerType, appContentWidth } = useAppConfig()
     const $vuetify = getVuetify()
-
-    const refAppBar = ref(null)
-    const appBarColor = ref('transparent')
-    watchEffect(
-      () => {
-        if (refAppBar.value) {
-          appBarColor.value = refAppBar.value.hideShadow || appBarType.value === 'static' ? 'transparent' : 'white'
-        }
-      },
-      { flush: 'post' },
-    )
 
     const isVerticalNavMenuActive = ref(true)
 
@@ -128,12 +116,8 @@ export default {
       menuIsMenuHidden,
       appBarType,
       footerType,
-      appBarColor,
       appContentWidth,
       scrollY,
-
-      // Template ref
-      refAppBar,
     }
   },
 }
@@ -144,6 +128,10 @@ export default {
 
 .app-content-container {
   padding: $content-padding-vertical-navigation-menu;
+}
+
+@include theme(app-navigation-menu) using ($material) {
+  background-color: map-deep-get($material, 'background');
 }
 
 // Vuetify Fix
@@ -202,15 +190,28 @@ $nav-drawer-mini-width: 68px;
 
   .v-app-bar {
     border-radius: 0 0 14px 14px !important;
+    &.v-toolbar:not(.app-bar-shinked) {
+      background-color: transparent;
+    }
 
     &.app-bar-static {
       will-change: padding, background-color;
       transition: padding 0.2s ease, background-color 0.18s ease, left 0.3s ease;
 
+      &.v-toolbar.v-sheet:not(.v-app-bar--is-scrolled) {
+        box-shadow: none !important;
+      }
+
       ::v-deep > .v-toolbar__content {
         padding: 0;
       }
     }
+  }
+}
+
+@include theme(v-app-bar) using ($material) {
+  &.v-toolbar.app-bar-shinked {
+    background-color: map-deep-get($material, 'cards');
   }
 }
 

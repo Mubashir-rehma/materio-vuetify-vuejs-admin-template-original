@@ -1,7 +1,25 @@
+// Variable Overrides
 @import './variables.scss';
-@import '~vuetify/src/components/VCard/_variables.scss';
-@import '~vuetify/src/components/VBadge/_variables.scss';
+
+// Dark Styles
+@import './dark.scss';
+
+// Custom Classes
 @import './classes.scss';
+
+// Component Variables
+@import '~vuetify/src/components/VAppBar/_variables.scss';
+@import '~vuetify/src/components/VAlert/_variables.scss';
+@import '~vuetify/src/components/VBadge/_variables.scss';
+@import '~vuetify/src/components/VBanner/_variables.scss';
+@import '~vuetify/src/components/VCard/_variables.scss';
+@import '~vuetify/src/components/VDialog/_variables.scss';
+@import '~vuetify/src/components/VFooter/_variables.scss';
+@import '~vuetify/src/components/VNavigationDrawer/_variables.scss';
+@import '~vuetify/src/components/VList/_variables.scss';
+@import '~vuetify/src/components/VSnackbar/_variables.scss';
+@import '~vuetify/src/components/VStepper/_variables.scss';
+@import '~vuetify/src/components/VToolbar/_variables.scss';
 
 // * Change the font size of content
 @include theme(v-application) using ($material) {
@@ -33,6 +51,145 @@ button {
     outline: none;
   }
 }
+
+// ————————————————————————————————————
+//* ——— Shadows
+// ————————————————————————————————————
+
+@include app-elevation(elevation-1, 1, true);
+
+@include app-elevation(elevation-2, 2, true);
+
+@include app-elevation(elevation-3, 3, true);
+
+@include app-elevation(elevation-4, 4, true);
+
+@include app-elevation(elevation-6, 5, true);
+
+@include app-elevation(elevation-8, 8, true);
+
+@include app-elevation(elevation-9, 9, true);
+
+@include app-elevation(elevation-12, 12, true);
+
+@include app-elevation(elevation-16, 16, true);
+
+@include app-elevation(elevation-24, 24, true);
+
+//
+//* ——— Override Vuetify Usage of `elevation` mixin ——————————————————
+//
+
+@include app-elevation('v-item-group.v-bottom-navigation', 4, true);
+
+// Button
+@include app-elevation('v-btn--is-elevated', 2, true);
+@include app-elevation('v-btn--is-elevated::after', 4, true);
+@include app-elevation('v-btn--is-elevated::active', 8, true);
+@include app-elevation('v-btn--is-elevated.v-btn-fab', 6, true);
+@include app-elevation('v-btn--is-elevated.v-btn-fab::after', 8, true);
+@include app-elevation('v-btn--is-elevated.v-btn-fab::active', 12, true);
+
+// Card
+@include app-elevation('v-sheet.v-card--hover::hover', $card-hover-elevation, true);
+@include app-elevation('v-sheet.v-card--hover::focus', $card-hover-elevation, true);
+@include app-elevation('v-card--raised', $card-raised-elevation, true);
+
+// Chip
+@include app-elevation('v-chip--clickable::active', 2, true);
+
+// Color Picker
+@include app-elevation('v-color-picker', 2, true);
+
+// Color Picker Preview
+@include app-elevation('v-color-picker__preview:not(.v-slider--disabled) .v-slider__thumb', 3, true);
+
+// Dialog
+@include app-elevation('v-dialog', $dialog-elevation, true);
+
+// Expansion Panel
+@include app-elevation('v-expansion-panel::before', 2, true);
+
+// Menu
+@include app-elevation('v-menu__content', 2, true);
+
+// Navigation Drawer
+@include app-elevation(
+  'v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close)',
+  $navigation-drawer-mobile-temporary-elevation,
+  true
+);
+@include app-elevation(
+  'v-navigation-drawer--temporary:not(.v-navigation-drawer--close)',
+  $navigation-drawer-mobile-temporary-elevation,
+  true
+);
+
+// Pagination
+@include app-elevation('v-pagination__item', 2, true);
+@include app-elevation('v-pagination__item--active', 4, true);
+@include app-elevation('v-pagination__navigation', 2, true);
+
+// VStepper
+@include app-elevation('v-stepper', $stepper-elevation, true);
+@include app-elevation('v-stepper__content', $stepper-header-elevation, true);
+
+// VSwitch
+@include app-elevation(
+  'v-input--switch:not(v-input--switch--flat):not(v-input--switch--inset) .v-input--switch__thumb',
+  $switch-thumb-elevation,
+  true
+);
+
+// VTextField
+@include app-elevation(
+  'v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) > .v-input__control > .v-input__slot',
+  2,
+  true
+);
+
+// VTimeline
+@include app-elevation('v-timeline-item__dot', 1, true);
+
+// VToolbar
+@include app-elevation('v-toolbar', 4, true);
+
+// Code
+@include app-elevation('v-application.kbd', 4, true);
+
+// VSheet
+// ! Check it
+// @include app-elevation('v-sheet:not(.v-sheet--outlined)', 4, true);
+
+//
+//* ——— Components Which uses `sheet` mixin ——————————————————
+//
+
+// Alert
+@include app-elevation('v-sheet.v-alert:not(.v-sheet--outlined)', $alert-elevation);
+
+// VAppBar
+@include app-elevation('v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined)', $app-bar-elevation, true);
+
+// VBanner
+@include app-elevation('v-sheet.v-banner:not(.v-sheet--outlined)', $banner-elevation, true);
+
+// VCard
+@include app-elevation('v-sheet.v-card:not(.v-sheet--outlined)', $card-elevation, true);
+
+// VFooter
+@include app-elevation('v-sheet.v-footer:not(.v-sheet--outlined)', $footer-elevation, true);
+
+// VList
+@include app-elevation('v-sheet.v-list:not(.v-sheet--outlined)', $list-elevation, true);
+
+// VSnackbar
+@include app-elevation('v-sheet.v-snack__wrapper:not(.v-sheet--outlined)', $snackbar-elevation, true);
+
+// VToolbar
+@include app-elevation('v-sheet.v-toolbar:not(.v-sheet--outlined)', $toolbar-elevation, true);
+
+//* ——— /shadows —————————————————— //
 
 // Vuetify Fix: `dense` prop isn't working with SVG icons
 .v-chip {
@@ -212,7 +369,7 @@ button {
   .v-pagination__item,
   .v-pagination__navigation {
     &:hover {
-      background-color: rgba(map-get($shades, 'black'), map-deep-get($material, 'states', 'hover'));
+      background-color: rgba(map-get($material, 'primary-shade'), map-deep-get($material, 'states', 'hover'));
     }
   }
 }
@@ -236,8 +393,10 @@ button {
 //
 
 // ? Reason: Textarea hover underline color is too dark
-.v-text-field:not(.v-input--has-state):hover > .v-input__control > .v-input__slot:before {
-  border-color: rgba(map-get($shades, 'black'), 0.28) !important;
+@include theme(v-text-field) using ($material) {
+  &:not(.v-input--has-state):hover > .v-input__control > .v-input__slot:before {
+    border-color: rgba(map-get($material, 'primary-shade'), 0.28) !important;
+  }
 }
 
 //
@@ -273,11 +432,11 @@ button {
 //* ——— Date Picker ——————————————————
 //
 
-@include theme(v-picker) using ($material) {
-  // ? `.v-application--wrap` is used to make sure pickers shown in/from dialog/input don't have border.
-  @at-root .v-application--wrap .v-picker {
+@at-root .v-application--wrap {
+  @include theme(v-picker) using ($material) {
+    // ? `.v-application--wrap` is used to make sure pickers shown in/from dialog/input don't have border.
     .v-picker__body {
-      border: 1px solid rgba(map-deep-get($shades, 'black'), 0.22);
+      border: 1px solid rgba(map-deep-get($material, 'primary-shade'), 0.22);
     }
   }
 }
@@ -302,11 +461,18 @@ button {
 //* ——— Snackbar ——————————————————
 //
 
-.v-snack__wrapper:not([class*='--text']) {
+.v-snack__wrapper {
   .v-snack__content {
-    color: map-get($shades, 'white');
     letter-spacing: 0.25px;
     // line-height: 1.5;
+  }
+}
+
+@include theme-diff(v-snack__wrapper, #5e5669, map-get($shades, 'white')) using ($property-value) {
+  &:not([class*='--text']) {
+    .v-snack__content {
+      color: $property-value;
+    }
   }
 }
 

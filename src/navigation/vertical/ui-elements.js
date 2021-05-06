@@ -1,4 +1,4 @@
-import { mdiArchiveOutline, mdiHomeOutline } from '@mdi/js'
+import { mdiArchiveOutline, mdiCreditCardOutline, mdiHomeOutline } from '@mdi/js'
 
 export default [
   {
@@ -8,6 +8,16 @@ export default [
     icon: mdiHomeOutline,
     title: 'home',
     to: 'home',
+  },
+  {
+    title: 'Cards',
+    icon: mdiCreditCardOutline,
+    children: [
+      {
+        title: 'Basic',
+        to: 'card-basic',
+      },
+    ],
   },
   {
     title: 'Components',

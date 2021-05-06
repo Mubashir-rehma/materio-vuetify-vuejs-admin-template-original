@@ -1,93 +1,348 @@
 <template>
-  <div>
-    <v-autocomplete
-      v-model="friends"
-      :disabled="isUpdating"
-      :items="people"
-      item-text="name"
-      item-value="name"
-      multiple
+  <v-row>
+    <v-col
+      cols="12"
+      sm="4"
     >
-      <template v-slot:selection="data">
-        <v-chip
-          v-bind="data.attrs"
-          :input-value="data.selected"
-          close
-          @click="data.select"
-          @click:close="remove(data.item)"
-        >
-          <v-avatar left>
-            <v-img :src="data.item.avatar"></v-img>
-          </v-avatar>
-          {{ data.item.name }}
-        </v-chip>
-      </template>
-      <template v-slot:item="data">
-        <template v-if="typeof data.item !== 'object'">
-          <v-list-item-content v-text="data.item"></v-list-item-content>
-        </template>
-        <template v-else>
-          <v-list-item-avatar>
-            <img :src="data.item.avatar">
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>{{ data.item.name }}</v-list-item-title>
-            <v-list-item-subtitle>{{ data.item.group }}</v-list-item-subtitle>
-          </v-list-item-content>
-        </template>
-      </template>
-    </v-autocomplete>
-  </DIV>
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem voluptatibus earum harum a, explicabo mollitia dolores fugiat placeat! Optio eaque nam cumque amet odit earum est debitis repellendus nemo, laborum rerum labore voluptatibus, pariatur molestias enim. Debitis magnam, officiis repellendus voluptatem eaque fugiat unde esse, eos hic non enim natus quo possimus consequatur blanditiis perspiciatis?</v-card-text>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-subtitle>Lorem ipsum dolor sit amet.</v-card-subtitle>
+        <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem voluptatibus earum harum a, explicabo mollitia dolores fugiat placeat! Optio eaque nam cumque amet odit earum est debitis repellendus nemo, laborum rerum labore voluptatibus, pariatur molestias enim. Debitis magnam, officiis repellendus voluptatem eaque fugiat unde esse, eos hic non enim natus quo possimus consequatur blanditiis perspiciatis?</v-card-text>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-img src="/images/pages/1.jpg" />
+        <v-card-title>Card Title</v-card-title>
+        <v-card-subtitle>Lorem ipsum dolor sit amet.</v-card-subtitle>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn color="primary">
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            outlined
+          >
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions class="dense">
+          <v-btn
+            color="primary"
+            text
+          >
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn color="primary">
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            outlined
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions class="dense">
+          <v-btn
+            color="primary"
+            text
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            rounded
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            tile
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions class="dense">
+          <v-btn
+            color="primary"
+            plain
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+
+    <!-- With Expansion Panel -->
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn color="primary">
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            small
+            fab
+            color="primary"
+            @click="show = !show"
+          >
+            <v-icon>{{ mdiArrowDown }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-expand-transition>
+          <div v-show="show">
+            <v-divider></v-divider>
+
+            <v-card-text>
+              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+            </v-card-text>
+          </div>
+        </v-expand-transition>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            outlined
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            icon
+            outlined
+            color="primary"
+            @click="show = !show"
+          >
+            <v-icon>{{ mdiArrowDown }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-expand-transition>
+          <div v-show="show">
+            <v-divider></v-divider>
+
+            <v-card-text>
+              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+            </v-card-text>
+          </div>
+        </v-expand-transition>
+      </v-card>
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="4"
+    >
+      <v-card>
+        <v-card-title>Card Title</v-card-title>
+        <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam perferendis reprehenderit possimus fugit nostrum eius aut porro, quidem placeat? Nemo!</v-card-text>
+        <v-card-actions class="dense">
+          <v-btn
+            color="primary"
+            text
+          >
+            <v-icon left>
+              {{ mdiCartOutline }}
+            </v-icon>
+            Click
+          </v-btn>
+
+          <v-spacer></v-spacer>
+
+          <v-btn
+            icon
+            color="primary"
+            @click="show = !show"
+          >
+            <v-icon>{{ mdiArrowDown }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-expand-transition>
+          <div v-show="show">
+            <v-divider></v-divider>
+
+            <v-card-text>
+              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+            </v-card-text>
+          </div>
+        </v-expand-transition>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
+import { mdiCartOutline, mdiArrowDown } from '@mdi/js'
+import { ref } from '@vue/composition-api'
+
 export default {
-  data() {
-    const srcs = {
-      1: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-      2: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-      3: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-      4: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-      5: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-    }
+  setup() {
+    const show = ref(false)
 
     return {
-      autoUpdate: true,
-      friends: ['Sandra Adams', 'Britta Holt'],
-      isUpdating: false,
-      name: 'Midnight Crew',
-      people: [
-        { header: 'Group 1' },
-        { name: 'Sandra Adams', group: 'Group 1', avatar: srcs[1] },
-        { name: 'Ali Connors', group: 'Group 1', avatar: srcs[2] },
-        { name: 'Trevor Hansen', group: 'Group 1', avatar: srcs[3] },
-        { name: 'Tucker Smith', group: 'Group 1', avatar: srcs[2] },
-        { divider: true },
-        { header: 'Group 2' },
-        { name: 'Britta Holt', group: 'Group 2', avatar: srcs[4] },
-        { name: 'Jane Smith ', group: 'Group 2', avatar: srcs[5] },
-        { name: 'John Smith', group: 'Group 2', avatar: srcs[1] },
-        { name: 'Sandra Williams', group: 'Group 2', avatar: srcs[3] },
-      ],
-      title: 'The summer breeze',
+      mdiCartOutline,
+      mdiArrowDown,
+      show,
     }
-  },
-
-  watch: {
-    isUpdating(val) {
-      if (val) {
-        setTimeout(() => {
-          this.isUpdating = false
-        }, 3000)
-      }
-    },
-  },
-
-  methods: {
-    remove(item) {
-      const index = this.friends.indexOf(item.name)
-      if (index >= 0) this.friends.splice(index, 1)
-    },
   },
 }
 </script>
+
+<style>
+</style>

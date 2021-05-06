@@ -11,6 +11,9 @@ $primary-shade--dark: #e7e3fc;
 $shadow-color--light: $primary-shade--light;
 $shadow-color--dark: #131120;
 
+// Typography
+$body-font-family: 'Inter', sans-serif;
+
 @import '~vuetify/src/styles/styles.sass';
 
 // ————————————————————————————————————
@@ -30,9 +33,6 @@ $customizer-form-icons: true;
 
 $color-pack: false;
 $border-radius-root: 5px;
-
-// Typography
-$body-font-family: 'Inter', sans-serif;
 
 //
 //* ——— Override Light Theme's Pure Black to Primary Shade ——————————————————

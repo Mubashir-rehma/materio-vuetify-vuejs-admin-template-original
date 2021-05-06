@@ -13,7 +13,7 @@
           Influencing The Influencer
         </v-card-title>
 
-        <v-card-text class="body-1">
+        <v-card-text>
           Cancun is back, better than ever! Over a hundred Mexico resorts have reopened and the state tourism minister predicts Cancun will draw as many visitors in 2006 as it did two years ago.
         </v-card-text>
       </v-card>
@@ -32,58 +32,60 @@
           src="/images/pages/2.jpg"
         />
 
-        <v-avatar
-          size="60"
-          color="white"
-          class="avatar-center"
-        >
-          <v-img src="/images/avatars/1.png"></v-img>
-        </v-avatar>
+        <v-card-text class="position-relative">
+          <!-- User Avatar -->
+          <v-avatar
+            size="60"
+            color="white"
+            class="avatar-center"
+          >
+            <v-img src="/images/avatars/1.png"></v-img>
+          </v-avatar>
 
-        <div class="d-flex justify-space-between flex-wrap">
-          <div>
-            <v-card-title class="pt-0">
-              Robert Meyer
-            </v-card-title>
-            <v-card-subtitle>London, UK</v-card-subtitle>
+          <!-- Title, Subtitle & Action Button -->
+          <div class="d-flex justify-space-between flex-wrap pt-12">
+            <div class="mr-2 mb-2">
+              <v-card-title class="pt-0 px-0">
+                Robert Meyer
+              </v-card-title>
+              <v-card-subtitle class="text-xs pa-0">
+                London, UK
+              </v-card-subtitle>
+            </div>
+            <v-btn color="primary">
+              send request
+            </v-btn>
           </div>
 
-          <v-btn
-            color="primary"
-            class="mx-5"
-          >
-            send request
-          </v-btn>
-        </div>
+          <!-- Mutual Friends -->
+          <div class="d-flex justify-space-between align-center mt-8">
+            <span class="text-base">
+              18 mutual friends
+            </span>
 
-        <v-card-text class="d-flex justify-space-between align-center">
-          <span class="text-base">
-            18 mutual friends
-          </span>
-
-          <div
-            class="v-avatar-group"
-            :class="rootThemeClasses"
-          >
-            <v-avatar>
-              <v-img src="/images/avatars/1.png"></v-img>
-            </v-avatar>
-
-            <v-avatar>
-              <v-img src="/images/avatars/2.png"></v-img>
-            </v-avatar>
-
-            <v-avatar>
-              <v-img src="/images/avatars/3.png"></v-img>
-            </v-avatar>
-            <v-avatar
-              color="secondary"
-              class="v-avatar-light-bg secondary--text"
+            <div
+              class="v-avatar-group"
+              :class="rootThemeClasses"
             >
-              <h2 class="text--primary ">
+              <v-avatar size="40">
+                <v-img src="/images/avatars/1.png"></v-img>
+              </v-avatar>
+
+              <v-avatar size="40">
+                <v-img src="/images/avatars/2.png"></v-img>
+              </v-avatar>
+
+              <v-avatar size="40">
+                <v-img src="/images/avatars/3.png"></v-img>
+              </v-avatar>
+              <v-avatar
+                size="40"
+                color="#f5f5f5"
+                class="text-lg font-weight-medium text--disabled"
+              >
                 +4
-              </h2>
-            </v-avatar>
+              </v-avatar>
+            </div>
           </div>
         </v-card-text>
       </v-card>
@@ -102,7 +104,7 @@
           Popular Uses Of The Internet
         </v-card-title>
 
-        <v-card-text class="body-1">
+        <v-card-text>
           Although cards can support multiple actions, UI controls, and an overflow menu.
         </v-card-text>
 
@@ -141,7 +143,7 @@
       sm="6"
       cols="12"
     >
-      <v-card>
+      <v-card class="d-flex align-center">
         <div class="d-flex justify-space-between flex-wrap flex-md-nowrap flex-column flex-md-row">
           <div class="mx-auto">
             <v-img
@@ -158,7 +160,7 @@
             <v-card-text>
               Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
             </v-card-text>
-            <v-card-text class="body-1">
+            <v-card-text class="text--primary text-base">
               <span>Price :</span> <span class="font-weight-bold">$899</span>
             </v-card-text>
 
@@ -473,7 +475,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import useVuetify from '@core/utils/vuetify'
 import {
   mdiChevronUp,
@@ -487,7 +489,7 @@ import {
   mdiHelpCircleOutline,
 } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const { rootThemeClasses } = useVuetify()
     const isCardDetailsVisible = false
@@ -512,7 +514,7 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>
@@ -520,6 +522,7 @@ export default defineComponent({
   top: -2rem;
   left: 1rem;
   border: 3px solid white;
+  position: absolute;
 }
 
 // membership pricing

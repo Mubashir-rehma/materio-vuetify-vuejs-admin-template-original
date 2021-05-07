@@ -7,7 +7,7 @@
       <v-card>
         <v-tabs
           v-model="tab"
-          class="tab-index elevation-3"
+          class="tab-index"
         >
           <v-tab
             v-for="item in items"
@@ -45,7 +45,7 @@
         <v-tabs
           v-model="tab2"
           centered
-          class="tab-index elevation-3"
+          class="tab-index"
         >
           <v-tab
             v-for="item in items"

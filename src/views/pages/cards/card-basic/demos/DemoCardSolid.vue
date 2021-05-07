@@ -13,36 +13,44 @@
       >
         <v-card-title>
           <v-icon
-            large
             left
-            size="16"
+            size="1.5rem"
+            color="white"
           >
             {{ data.icon }}
           </v-icon>
           <span>{{ data.title }}</span>
         </v-card-title>
 
-        <v-card-text class="white--text text-base">
+        <v-card-text class="white--text">
           {{ data.text }}
         </v-card-text>
 
         <v-card-actions class="justify-space-between">
           <div>
-            <v-avatar size="40">
+            <v-avatar size="34">
               <v-img :src="`/images/avatars/${data.avatarImg}`"></v-img>
             </v-avatar>
             <span class="white--text ml-2">{{ data.avatarName }}</span>
           </div>
 
-          <div>
-            <v-icon class="mr-1">
+          <div class="white--text">
+            <v-icon
+              class="mr-1"
+              color="white"
+              size="1rem"
+            >
               {{ icons.mdiHeart }}
             </v-icon>
-            <span class="subheading mr-2">{{ data.likes }}</span>
-            <v-icon class="mr-1">
+            <span class="text-sm mr-4">{{ data.likes }}</span>
+            <v-icon
+              class="mr-1"
+              color="white"
+              size="1rem"
+            >
               {{ icons.mdiShareVariant }}
             </v-icon>
-            <span class="subheading">{{ data.share }}</span>
+            <span class="text-sm">{{ data.share }}</span>
           </div>
         </v-card-actions>
       </v-card>

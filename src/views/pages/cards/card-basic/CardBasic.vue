@@ -1,19 +1,19 @@
 <template>
   <div>
-    <p class="text-2xl mb-10">
-      Basic Card
+    <p class="text-2xl mb-6">
+      Basic Cards
     </p>
 
     <demo-card-basic></demo-card-basic>
 
-    <p class="text-2xl mt-14 mb-10">
-      Navigation Card
+    <p class="text-2xl mt-14 mb-6">
+      Navigation Cards
     </p>
 
     <demo-card-navigation></demo-card-navigation>
 
-    <p class="text-2xl mt-14 mb-10">
-      Solid Card
+    <p class="text-2xl mt-14 mb-6">
+      Solid Cards
     </p>
 
     <demo-card-solid></demo-card-solid>

@@ -420,6 +420,20 @@ button {
 //* ——— Button ——————————————————
 //
 
+.v-application {
+  .v-btn:not(.v-btn--outlined) {
+    &.primary,
+    &.secondary,
+    &.accent,
+    &.success,
+    &.error,
+    &.warning,
+    &.info {
+      color: map-deep-get($shades, 'white');
+    }
+  }
+}
+
 .v-btn--is-elevated {
   @include elevation(3, !important);
 
@@ -599,6 +613,8 @@ button {
 //
 //* ——— Tabs ——————————————————
 //
+
+@include app-elevation('v-tabs:not(.v-tabs--vertical)', 3, true);
 
 .v-tabs {
   &.v-tabs--vertical {

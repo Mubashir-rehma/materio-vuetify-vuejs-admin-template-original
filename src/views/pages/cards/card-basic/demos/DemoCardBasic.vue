@@ -108,7 +108,7 @@
           Although cards can support multiple actions, UI controls, and an overflow menu.
         </v-card-text>
 
-        <v-card-actions>
+        <v-card-actions class="dense">
           <v-btn
             color="primary"
             text
@@ -130,7 +130,7 @@
           <div v-show="isCardDetailsVisible">
             <v-divider></v-divider>
 
-            <v-card-text class="body-1">
+            <v-card-text>
               I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
             </v-card-text>
           </div>
@@ -164,14 +164,14 @@
               <span>Price :</span> <span class="font-weight-bold">$899</span>
             </v-card-text>
 
-            <v-card-actions class="d-flex justify-space-between">
+            <v-card-actions class="d-flex justify-space-between dense">
               <v-btn
                 text
                 color="primary"
                 dark
               >
                 <v-icon>{{ icons.mdiCartPlus }}</v-icon>
-                <span class="ml-2">Add to carts</span>
+                <span class="ml-2">Add to cart</span>
               </v-btn>
 
               <v-btn icon>
@@ -192,7 +192,7 @@
         <div class="d-flex flex-column-reverse flex-md-row">
           <div>
             <v-card-title>
-              Stumptown Roasters.
+              Stumptown Roasters
             </v-card-title>
             <v-card-text class="d-flex align-center flex-wrap body-1">
               <v-rating
@@ -200,15 +200,15 @@
                 color="warning"
                 background-color="warning"
                 dense
-                class="mr-3"
+                class="mr-3 flex-shrink-0"
               ></v-rating>
-              <span>5 Star | 98 reviews</span>
+              <span class="text-sm">5 Star | 98 reviews</span>
             </v-card-text>
             <v-card-text>
               Before there was a United States of America, there were coffee houses, because how are you supposed to build.
             </v-card-text>
 
-            <v-card-actions>
+            <v-card-actions class="dense">
               <v-btn
                 text
                 color="primary"
@@ -248,8 +248,8 @@
       <v-card>
         <v-img src="/images/pages/6.jpg"></v-img>
         <v-card-title>Apple Watch</v-card-title>
-        <v-card-text class="text-base">
-          <p class="text-xl">
+        <v-card-text>
+          <p class="text--primary text-base">
             $249.40
           </p>
           3.1GHz 6-core 10th-generation Intel Core i5 processor, Turbo Boost up to 4.5GHz
@@ -286,11 +286,15 @@
             order-lg="1"
           >
             <v-card-title>Lifetime Membership</v-card-title>
-            <v-card-text class="text-base">
+            <v-card-text>
               Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath. Though, most of these notes are not fundamentally necessary, they are such that you can use them for a good laugh, at a drinks party or for picking up women or men.
             </v-card-text>
-            <v-divider></v-divider>
-            <v-card-actions class="d-flex justify-space-between flex-wrap">
+
+            <v-card-text>
+              <v-divider></v-divider>
+            </v-card-text>
+
+            <v-card-actions class="d-flex justify-center">
               <div>
                 <p class="d-flex align-center mb-6">
                   <v-icon color="primary">
@@ -310,6 +314,7 @@
                 v-if="$vuetify.breakpoint.smAndUp"
                 vertical
                 inset
+                class="mx-md-8 mx-sm-4"
               >
               </v-divider>
 
@@ -339,12 +344,12 @@
             class="memberpricing-bg"
           >
             <div class="membership-pricing">
-              <p class="mt-16">
+              <p class="mt-16 text--primary">
                 <sub class="text-2xl">$</sub>
                 <sup class="font-weight-semibold">899</sup>
                 <sub class="text-xl">USD</sub>
               </p>
-              <p class="font-weight-medium my-6">
+              <p class="my-6 text--secondary text-sm">
                 5 Tips For Offshore Software Development
               </p>
 
@@ -368,14 +373,14 @@
     >
       <v-card>
         <v-card-title>Influencing The Influencer</v-card-title>
-        <v-card-text class="text-base">
+        <v-card-text>
           Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in front of their desktops, while delivery people scan bar codes with handhelds and workers in the field stay in touch.
         </v-card-text>
-        <v-card-text class="text-base">
+        <v-card-text>
           If you’re in the market for new desktops, notebooks, or PDAs, there are a myriad of choices. Here’s a rundown of some of the best systems available.
         </v-card-text>
 
-        <v-card-actions>
+        <v-card-actions class="dense">
           <v-btn
             color="primary"
             text
@@ -402,7 +407,7 @@
             background-color="warning"
             dense
           ></v-rating>
-          <span class="ml-3">5 Star | 98 reviews</span>
+          <span class="ml-3 text-sm">5 Star | 98 reviews</span>
         </v-card-text>
 
         <v-card-text>
@@ -412,7 +417,7 @@
           become fast, easy and simple. If you want your promotional material to be an eye-catching
         </v-card-text>
 
-        <v-card-actions>
+        <v-card-actions class="dense">
           <v-btn
             text
             color="primary"
@@ -443,21 +448,21 @@
             color="primary"
             class="v-avatar-light-bg primary--text mt-10"
             icon
-            size="60"
+            size="50"
           >
             <v-icon
-              size="35"
+              size="2rem"
               color="primary"
             >
               {{ icons.mdiHelpCircleOutline }}
             </v-icon>
           </v-avatar>
-          <h6 class="text-xl mt-4">
+          <h6 class="text-xl mt-4 font-weight-medium">
             Support
           </h6>
         </v-card-text>
 
-        <v-card-text class="text-base">
+        <v-card-text>
           According to us blisters are a very common thing and we come across them very often in our daily lives. It is a very common occurrence like cold or fever depending upon your lifestyle.
         </v-card-text>
 

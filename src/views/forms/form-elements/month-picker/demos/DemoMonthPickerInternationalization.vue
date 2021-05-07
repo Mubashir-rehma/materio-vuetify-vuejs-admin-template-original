@@ -8,6 +8,7 @@
         v-model="picker"
         type="month"
         locale="th"
+        color="primary"
       ></v-date-picker>
     </v-col>
 
@@ -18,6 +19,7 @@
       <v-date-picker
         v-model="picker"
         type="month"
+        color="primary"
         locale="sv-se"
       ></v-date-picker>
     </v-col>

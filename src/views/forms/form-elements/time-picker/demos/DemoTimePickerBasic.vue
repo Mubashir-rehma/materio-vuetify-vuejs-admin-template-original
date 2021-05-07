@@ -1,3 +1,6 @@
 <template>
-  <v-time-picker format="ampm"></v-time-picker>
+  <v-time-picker
+    format="ampm"
+    color="primary"
+  ></v-time-picker>
 </template>

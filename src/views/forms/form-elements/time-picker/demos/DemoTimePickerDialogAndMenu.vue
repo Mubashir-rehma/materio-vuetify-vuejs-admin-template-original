@@ -25,6 +25,7 @@
         <v-time-picker
           v-if="menu2"
           v-model="time"
+          color="primary"
           full-width
           @click:minute="$refs.menu.save(time)"
         ></v-time-picker>
@@ -52,6 +53,7 @@
         <v-time-picker
           v-if="modal2"
           v-model="time"
+          color="primary"
           full-width
         >
           <v-spacer></v-spacer>

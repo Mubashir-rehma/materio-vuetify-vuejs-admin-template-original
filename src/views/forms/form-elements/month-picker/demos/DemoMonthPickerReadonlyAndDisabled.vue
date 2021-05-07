@@ -8,6 +8,7 @@
         v-model="date"
         type="month"
         readonly
+        color="primary"
       ></v-date-picker>
     </v-col>
 
@@ -18,6 +19,7 @@
       <v-date-picker
         v-model="date"
         type="month"
+        color="primary"
         disabled
       ></v-date-picker>
     </v-col>

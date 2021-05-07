@@ -5,6 +5,7 @@
     :year-icon="icons.mdiCalendarBlank"
     :prev-icon="icons.mdiSkipPrevious"
     :next-icon="icons.mdiSkipNext"
+    color="primary"
   ></v-date-picker>
 </template>
 

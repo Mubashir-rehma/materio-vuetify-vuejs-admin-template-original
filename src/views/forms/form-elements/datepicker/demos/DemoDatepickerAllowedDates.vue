@@ -1,6 +1,7 @@
 <template>
   <v-date-picker
     v-model="date"
+    color="primary"
     :allowed-dates="allowedDates"
     class="mt-4"
     min="2016-06-15"

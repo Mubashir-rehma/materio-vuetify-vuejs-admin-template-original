@@ -2,6 +2,7 @@
   <v-time-picker
     v-model="picker"
     format="24hr"
+    color="primary"
   ></v-time-picker>
 </template>
 

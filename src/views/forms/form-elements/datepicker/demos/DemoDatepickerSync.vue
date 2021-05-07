@@ -7,6 +7,7 @@
       <v-date-picker
         ref="picker"
         v-model="date"
+        color="primary"
         :picker-date.sync="pickerDate"
         full-width
       ></v-date-picker>

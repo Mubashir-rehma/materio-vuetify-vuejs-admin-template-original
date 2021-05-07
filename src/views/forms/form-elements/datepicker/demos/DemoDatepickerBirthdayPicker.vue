@@ -23,6 +23,7 @@
       v-model="date"
       :max="new Date().toISOString().substr(0, 10)"
       min="1950-01-01"
+      color="primary"
       @change="save"
     ></v-date-picker>
   </v-menu>

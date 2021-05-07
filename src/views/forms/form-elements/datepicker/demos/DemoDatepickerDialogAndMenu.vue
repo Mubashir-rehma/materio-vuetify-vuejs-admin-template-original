@@ -22,6 +22,7 @@
         <v-date-picker
           v-model="date"
           scrollable
+          color="primary"
         >
           <v-btn
             text
@@ -62,6 +63,7 @@
         </template>
         <v-date-picker
           v-model="date"
+          color="primary"
           @input="menu2 = false"
         ></v-date-picker>
       </v-menu>

@@ -7,6 +7,7 @@
     scrollable
     min="9:30"
     max="22:15"
+    color="primary"
   ></v-time-picker>
 </template>
 

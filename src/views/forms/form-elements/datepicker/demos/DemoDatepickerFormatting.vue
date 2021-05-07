@@ -29,6 +29,7 @@
         <v-date-picker
           v-model="date"
           no-title
+          color="primary"
           @input="menu1 = false"
         ></v-date-picker>
       </v-menu>
@@ -65,6 +66,7 @@
         <v-date-picker
           v-model="date"
           no-title
+          color="primary"
           @input="menu2 = false"
         ></v-date-picker>
       </v-menu>

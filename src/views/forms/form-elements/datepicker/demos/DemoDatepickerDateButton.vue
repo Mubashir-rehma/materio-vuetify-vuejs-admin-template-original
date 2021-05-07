@@ -1,6 +1,7 @@
 <template>
   <v-date-picker
     v-model="date"
+    color="primary"
     @contextmenu:year="contextMenu"
     @dblclick:date="dblClick"
   ></v-date-picker>

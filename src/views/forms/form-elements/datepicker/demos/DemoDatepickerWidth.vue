@@ -1,6 +1,7 @@
 <template>
   <v-date-picker
     v-model="date"
+    color="primary"
     full-width
   ></v-date-picker>
 </template>

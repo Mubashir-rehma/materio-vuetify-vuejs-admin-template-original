@@ -2,6 +2,7 @@
   <v-date-picker
     v-model="picker"
     type="month"
+    color="primary"
   ></v-date-picker>
 </template>
 

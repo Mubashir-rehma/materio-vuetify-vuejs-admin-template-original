@@ -3,6 +3,7 @@
     <v-date-picker
       v-model="date"
       full-width
+      color="primary"
       type="month"
       class="mt-4"
     ></v-date-picker>

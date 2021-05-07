@@ -6,6 +6,7 @@
     class="mt-4"
     min="2017-06"
     max="2019-10"
+    color="primary"
   ></v-date-picker>
 </template>
 

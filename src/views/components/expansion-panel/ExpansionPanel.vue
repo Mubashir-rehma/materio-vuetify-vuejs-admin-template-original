@@ -8,7 +8,7 @@
       <app-card-code
         title="Default"
         :code="codeSnippets.exPanelDefault"
-        class="mb-6"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           Expansion panels in their simplest form display a list of expandable items. However, with the <code>multiple</code> prop, the expansion-panel can remain open until explicitly closed.
@@ -28,7 +28,7 @@
       <app-card-code
         title="Accordion"
         :code="codeSnippets.exPanelAccordion"
-        class="mb-6"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           Use <code>accordion</code> prop to create Accordion Panels. <span class="font-weight-bold">Accordion</span> expansion-panel hasn’t got margins around active panel.
@@ -48,7 +48,7 @@
       <app-card-code
         title="Focusable"
         :code="codeSnippets.exPanelFocusable"
-        class="mb-6"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           The expansion-panel headers can be made focusable with the prop <code>focusable</code>.
@@ -68,7 +68,7 @@
       <app-card-code
         title="Inset"
         :code="codeSnippets.exPanelInset"
-        class="mb-6"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           Use <code>inset</code> prop to create Inset Panels. <span class="font-weight-bold">inset</span> expansion-panel becomes smaller when activated.
@@ -88,7 +88,7 @@
       <app-card-code
         title="Popout"
         :code="codeSnippets.exPanelPopout"
-        class="mb-6"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           Use <code>popout</code> prop to create expansion-panel with <span class="font-weight-bold">popout</span> design. With it, expansion-panel is enlarged when activated.
@@ -108,6 +108,7 @@
       <app-card-code
         title="Custom Icon"
         :code="codeSnippets.exPanelIcon"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           Expand action icon can be customized with <code>expand-icon</code> prop or the <code>actions</code> slot.
@@ -127,7 +128,7 @@
       <app-card-code
         title="Model"
         :code="codeSnippets.exPanelModel"
-        class="mb-6"
+        class="v-card-transparent-outlined"
       >
         <v-card-text>
           Expansion panels can be controlled externally by modifying the <code>v-model</code>. If <code>multiple</code> prop is used then it is an array containing the indices of the open items.

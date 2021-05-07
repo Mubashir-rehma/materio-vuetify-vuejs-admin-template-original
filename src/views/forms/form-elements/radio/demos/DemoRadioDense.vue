@@ -15,7 +15,9 @@
         value="radio-2"
       ></v-radio>
     </v-radio-group>
-    <hr>
+
+    <v-divider></v-divider>
+
     <v-radio-group
       v-model="rowRadio"
       row

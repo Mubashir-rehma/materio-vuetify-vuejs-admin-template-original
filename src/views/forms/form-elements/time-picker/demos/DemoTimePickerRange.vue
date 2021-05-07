@@ -7,6 +7,7 @@
       <h2>Start:</h2>
       <v-time-picker
         v-model="start"
+        color="primary"
         :max="end"
       ></v-time-picker>
     </v-col>
@@ -18,6 +19,7 @@
       <v-time-picker
         v-model="end"
         :min="start"
+        color="primary"
       ></v-time-picker>
     </v-col>
   </v-row>

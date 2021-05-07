@@ -50,7 +50,6 @@
       v-model="isColorSnackbarVisible"
       bottom
       right
-      :light="$vuetify.theme.dark"
       color="primary"
     >
       Ice cream cake candy canes.

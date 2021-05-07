@@ -2,6 +2,7 @@
   <v-time-picker
     v-model="picker"
     scrollable
+    color="primary"
   ></v-time-picker>
 </template>
 

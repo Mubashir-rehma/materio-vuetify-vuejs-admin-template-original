@@ -3,6 +3,7 @@
     v-model="months"
     type="month"
     multiple
+    color="primary"
   ></v-date-picker>
 </template>
 

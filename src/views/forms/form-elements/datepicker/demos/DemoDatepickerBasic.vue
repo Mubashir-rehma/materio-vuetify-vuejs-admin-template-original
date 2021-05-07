@@ -1,5 +1,8 @@
 <template>
-  <v-date-picker v-model="picker"></v-date-picker>
+  <v-date-picker
+    v-model="picker"
+    color="primary"
+  ></v-date-picker>
 </template>
 
 <script>

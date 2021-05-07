@@ -7,6 +7,7 @@
       <v-date-picker
         v-model="date"
         readonly
+        color="primary"
       ></v-date-picker>
     </v-col>
 
@@ -16,6 +17,7 @@
     >
       <v-date-picker
         v-model="date"
+        color="primary"
         disabled
       ></v-date-picker>
     </v-col>

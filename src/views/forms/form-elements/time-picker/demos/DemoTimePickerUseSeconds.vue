@@ -2,6 +2,7 @@
   <v-time-picker
     v-model="picker"
     use-seconds
+    color="primary"
   ></v-time-picker>
 </template>
 

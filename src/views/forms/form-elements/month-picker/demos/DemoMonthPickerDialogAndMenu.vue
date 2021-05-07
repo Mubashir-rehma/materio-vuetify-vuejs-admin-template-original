@@ -26,6 +26,7 @@
           type="month"
           no-title
           scrollable
+          color="primary"
         >
           <v-spacer></v-spacer>
           <v-btn
@@ -67,6 +68,7 @@
         <v-date-picker
           v-model="date"
           type="month"
+          color="primary"
           scrollable
         >
           <v-spacer></v-spacer>

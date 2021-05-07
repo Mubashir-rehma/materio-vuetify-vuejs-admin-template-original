@@ -8,6 +8,7 @@
         v-model="picker"
         :first-day-of-week="0"
         locale="zh-cn"
+        color="primary"
       ></v-date-picker>
     </v-col>
     <v-col
@@ -17,6 +18,7 @@
       <v-date-picker
         v-model="picker"
         :first-day-of-week="1"
+        color="primary"
         locale="sv-se"
       ></v-date-picker>
     </v-col>

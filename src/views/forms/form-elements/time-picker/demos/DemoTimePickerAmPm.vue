@@ -2,6 +2,7 @@
   <v-time-picker
     v-model="picker"
     ampm-in-title
+    color="primary"
   ></v-time-picker>
 </template>
 

@@ -46,6 +46,7 @@
         <v-icon
           dark
           size="26"
+          color="white"
           v-text="file.icon"
         ></v-icon>
       </v-list-item-avatar>

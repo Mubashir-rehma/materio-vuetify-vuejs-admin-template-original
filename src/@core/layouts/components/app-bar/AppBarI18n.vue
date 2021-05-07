@@ -22,10 +22,9 @@
     </template>
 
     <!-- Options List -->
-    <v-list dense>
+    <v-list>
       <v-list-item-group
         :value="$i18n.locale"
-        color="primary"
         @change="updateActiveLocale"
       >
         <v-list-item

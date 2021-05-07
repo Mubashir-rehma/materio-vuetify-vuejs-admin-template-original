@@ -19,6 +19,7 @@
         item-value="title"
         class="app-bar-autocomplete-box"
         return-object
+        :color="$vuetify.theme.dark ? 'white' : null"
         rounded
         attach
         hide-details
@@ -31,7 +32,6 @@
         @keyup.esc="shallShowFullSearchLocal = false"
         @blur="shallShowFullSearchLocal = false"
       >
-        <!-- @blur="shallShowFullSearchLocal = false" -->
         <template #selection></template>
         <template #item="{ item, on, attrs }">
           <div
@@ -123,8 +123,8 @@ export default {
     }
 
     // Hotkey
-    const { shift_k: shiftK } = useMagicKeys()
-    whenever(shiftK, () => {
+    const { slash } = useMagicKeys()
+    whenever(slash, () => {
       shallShowFullSearchLocal.value = true
     })
 
@@ -154,6 +154,12 @@ export default {
 <style lang="scss">
 @import '~@core/preset/preset/mixins.scss';
 
+@include theme(app-bar-autocomplete-box) using ($material) {
+  div[role='combobox'] {
+    background-color: map-deep-get($material, 'cards');
+  }
+}
+
 .app-bar-autocomplete-box {
   position: absolute;
   width: 100%;
@@ -171,7 +177,6 @@ export default {
 
   div[role='combobox'] {
     height: 100%;
-    background-color: #fff;
     z-index: 10;
     padding: 0 20px !important;
 
@@ -182,8 +187,8 @@ export default {
   // Content - Result
   .v-menu__content {
     @include style-scroll-bar();
-    // border-top-left-radius: 14px !important;
-    // border-bottom-left-radius: 14px !important;
+    max-width: unset;
+    width: 100%;
     border-radius: 12px !important;
     top: calc(64px + 0.625rem) !important;
 

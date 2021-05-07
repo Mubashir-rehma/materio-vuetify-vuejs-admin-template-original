@@ -1,5 +1,9 @@
 <template>
-  <v-card class="app-card-code">
+  <v-card
+    class="app-card-code"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     <!-- Title -->
     <v-card-title>
       {{ title }}

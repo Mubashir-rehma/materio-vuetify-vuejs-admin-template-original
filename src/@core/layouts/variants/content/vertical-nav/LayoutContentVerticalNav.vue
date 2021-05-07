@@ -27,7 +27,6 @@
       :elevation="appBarType !== 'static' ? 3 : 0"
       class="mx-auto app-bar-static"
       :class="{ 'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY }"
-      :color="appBarColor"
     >
       <slot
         name="navbar"

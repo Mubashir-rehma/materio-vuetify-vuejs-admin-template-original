@@ -21,5 +21,12 @@
             "}"
         ],
         "description": "Vuetify - Use theme Mixin"
+    },
+    "SCSS: Map Deep Get": {
+        "prefix": "map-deep-get-from-material",
+        "body": [
+            "map-deep-get(\\$material, ${1})"
+        ],
+        "description": "SCSS: Map Deep Get"
     }
 }

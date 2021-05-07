@@ -83,83 +83,79 @@ button {
 @include app-elevation('v-item-group.v-bottom-navigation', 4, true);
 
 // Button
-@include app-elevation('v-btn--is-elevated', 2, true);
-@include app-elevation('v-btn--is-elevated::after', 4, true);
-@include app-elevation('v-btn--is-elevated::active', 8, true);
-@include app-elevation('v-btn--is-elevated.v-btn-fab', 6, true);
-@include app-elevation('v-btn--is-elevated.v-btn-fab::after', 8, true);
-@include app-elevation('v-btn--is-elevated.v-btn-fab::active', 12, true);
+@include app-elevation('v-btn--is-elevated', 2);
+@include app-elevation('v-btn--is-elevated::after', 4);
+@include app-elevation('v-btn--is-elevated::active', 8);
+@include app-elevation('v-btn--is-elevated.v-btn-fab', 6);
+@include app-elevation('v-btn--is-elevated.v-btn-fab::after', 8);
+@include app-elevation('v-btn--is-elevated.v-btn-fab::active', 12);
 
 // Card
-@include app-elevation('v-sheet.v-card--hover::hover', $card-hover-elevation, true);
-@include app-elevation('v-sheet.v-card--hover::focus', $card-hover-elevation, true);
-@include app-elevation('v-card--raised', $card-raised-elevation, true);
+@include app-elevation('v-sheet.v-card--hover:hover', $card-hover-elevation);
+@include app-elevation('v-sheet.v-card--hover:focus', $card-hover-elevation);
+@include app-elevation('v-card--raised', $card-raised-elevation);
 
 // Chip
-@include app-elevation('v-chip--clickable::active', 2, true);
+@include app-elevation('v-chip--clickable:active', 2);
 
 // Color Picker
-@include app-elevation('v-color-picker', 2, true);
+@include app-elevation('v-color-picker', 2);
 
 // Color Picker Preview
-@include app-elevation('v-color-picker__preview:not(.v-slider--disabled) .v-slider__thumb', 3, true);
+@include app-elevation('v-color-picker__preview:not(.v-slider--disabled) .v-slider__thumb', 3);
 
 // Dialog
-@include app-elevation('v-dialog', $dialog-elevation, true);
+@include app-elevation('v-dialog', $dialog-elevation);
 
 // Expansion Panel
-@include app-elevation('v-expansion-panel::before', 2, true);
+@include app-elevation('v-expansion-panel::before', 2);
 
 // Menu
-@include app-elevation('v-menu__content', 2, true);
+@include app-elevation('v-menu__content', 2);
 
 // Navigation Drawer
 @include app-elevation(
   'v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close)',
-  $navigation-drawer-mobile-temporary-elevation,
-  true
+  $navigation-drawer-mobile-temporary-elevation
 );
 @include app-elevation(
   'v-navigation-drawer--temporary:not(.v-navigation-drawer--close)',
-  $navigation-drawer-mobile-temporary-elevation,
-  true
+  $navigation-drawer-mobile-temporary-elevation
 );
 
 // Pagination
-@include app-elevation('v-pagination__item', 2, true);
-@include app-elevation('v-pagination__item--active', 4, true);
-@include app-elevation('v-pagination__navigation', 2, true);
+@include app-elevation('v-pagination__item', 2);
+@include app-elevation('v-pagination__item--active', 4);
+@include app-elevation('v-pagination__navigation', 2);
 
 // VStepper
-@include app-elevation('v-stepper', $stepper-elevation, true);
-@include app-elevation('v-stepper__content', $stepper-header-elevation, true);
+@include app-elevation('v-stepper', $stepper-elevation);
+@include app-elevation('v-stepper__content', $stepper-header-elevation);
 
 // VSwitch
 @include app-elevation(
   'v-input--switch:not(v-input--switch--flat):not(v-input--switch--inset) .v-input--switch__thumb',
-  $switch-thumb-elevation,
-  true
+  $switch-thumb-elevation
 );
 
 // VTextField
 @include app-elevation(
   'v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) > .v-input__control > .v-input__slot',
-  2,
-  true
+  2
 );
 
 // VTimeline
-@include app-elevation('v-timeline-item__dot', 1, true);
+@include app-elevation('v-timeline-item__dot', 1);
 
 // VToolbar
-@include app-elevation('v-toolbar', 4, true);
+@include app-elevation('v-toolbar', 4);
 
 // Code
-@include app-elevation('v-application.kbd', 4, true);
+@include app-elevation('v-application.kbd', 4);
 
 // VSheet
 // ! Check it
-// @include app-elevation('v-sheet:not(.v-sheet--outlined)', 4, true);
+// @include app-elevation('v-sheet:not(.v-sheet--outlined)', 4);
 
 //
 //* ——— Components Which uses `sheet` mixin ——————————————————
@@ -364,9 +360,12 @@ button {
 //* ——— Pagination ——————————————————
 //
 
-.v-pagination__item,
-.v-pagination__navigation {
-  box-shadow: none !important;
+// ? We have to use various selectors because `!important` isn't working
+.v-application[class*='theme'] {
+  .v-pagination__item,
+  .v-pagination__navigation {
+    box-shadow: none !important;
+  }
 }
 
 @include theme(v-pagination) using ($material) {
@@ -434,17 +433,9 @@ button {
   }
 }
 
-.v-btn--is-elevated {
-  @include elevation(3, !important);
-
-  &:hover {
-    @include elevation(4, !important);
-  }
-
-  &:active {
-    @include elevation(2, !important);
-  }
-}
+@include app-elevation(v-btn--is-elevated, 3, !important);
+@include app-elevation('v-btn--is-elevated:hover', 4, !important);
+@include app-elevation('v-btn--is-elevated:active', 2, !important);
 
 //
 //* ——— Date Picker ——————————————————
@@ -456,6 +447,13 @@ button {
     .v-picker__body {
       border: 1px solid rgba(map-deep-get($material, 'primary-shade'), 0.22);
     }
+  }
+}
+
+@include theme-diff(v-picker, map-get($shades, 'white'), map-deep-get($material-dark, 'background')) using
+  ($property-value) {
+  .v-picker__actions {
+    background-color: $property-value;
   }
 }
 
@@ -472,6 +470,9 @@ button {
   }
   .v-chip__close svg {
     opacity: 0.38;
+  }
+  &:not(.v-chip--no-color):not(.v-chip--outlined) {
+    color: #fff !important;
   }
 }
 
@@ -502,32 +503,38 @@ button {
   min-width: 10rem !important;
 }
 
+// @include theme(v-menu__content) using ($material) {
+//   & > .v-list {
+//     color: map-deep-get($material, 'text', 'pirmary');
+//   }
+// }
+
 //
 //* ——— List ——————————————————
 //
 
-@include theme(v-list) using ($material) {
-  color: map-deep-get($material, 'text', 'primary');
+// @include theme(v-list) using ($material) {
+//   color: map-deep-get($material, 'text', 'primary');
 
-  &.primary,
-  &.secondary,
-  &.accent,
-  &.success,
-  &.error,
-  &.warning,
-  &.info {
-    > .v-list-item {
-      color: map-deep-get($material, 'text', 'secondary');
-    }
-  }
-}
+//   &.primary,
+//   &.secondary,
+//   &.accent,
+//   &.success,
+//   &.error,
+//   &.warning,
+//   &.info {
+//     > .v-list-item {
+//       color: map-deep-get($material, 'text', 'secondary');
+//     }
+//   }
+// }
 
-@include theme(v-list-item) using ($material) {
-  &:not(.v-list-item--active):not(.v-list-item--disabled),
-  &:not(.v-list-item--active):not(.v-list-item--disabled) .v-list-item__title {
-    color: map-deep-get($material, 'text', 'secondary') !important;
-  }
-}
+// @include theme(v-list-item) using ($material) {
+//   &:not(.v-list-item--active):not(.v-list-item--disabled),
+//   &:not(.v-list-item--active):not(.v-list-item--disabled) .v-list-item__title {
+//     color: map-deep-get($material, 'text', 'secondary') !important;
+//   }
+// }
 
 //
 //* ——— Form ——————————————————

@@ -119,6 +119,7 @@ $material-light: map-deep-merge(
       // ! Value of `map-deep-get($material-light, 'text-fields', 'filled')`
         'solo-inverted': rgba($primary-shade--light, 0.03),
     ),
+    'tabs': rgba($primary-shade--light, 0.76),
     'text': (
       'secondary': rgba($primary-shade--light, 0.68),
     ),
@@ -128,6 +129,11 @@ $material-light: map-deep-merge(
       'outlined': rgba($primary-shade--light, 0.14),
       'outlined-hover': rgba($primary-shade--light, 0.28),
       'outlined-disabled': rgba($primary-shade--light, 0.22),
+    ),
+    'selection-controls': (
+      'thumb': (
+        'inactive': #fafafa,
+      ),
     ),
     'status-bar': (
       'regular': map-get($shades, 'white'),
@@ -224,9 +230,7 @@ $material-dark: map-deep-merge(
 );
 
 //
-//* ——— Override Values of Light Theme ——————————————————
-//
-// ? This will just update the black to `$primary-shade--light`
+//* ——— Override Values of Dark Theme ——————————————————
 //
 
 $material-dark: map-deep-merge(
@@ -242,7 +246,11 @@ $material-dark: map-deep-merge(
       // ! Value of `map-deep-get($material-dark, 'text-fields', 'filled')`
         'solo-inverted': rgba($primary-shade--dark, 0.03),
     ),
+    'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
+      // ! It is only used in pagination
+        'theme': map-get($shades, 'white'),
+      'primary': rgba($primary-shade--dark, 0.87),
       'secondary': rgba($primary-shade--dark, 0.68),
     ),
     'text-fields': (
@@ -252,12 +260,25 @@ $material-dark: map-deep-merge(
       'outlined-hover': rgba($primary-shade--dark, 0.28),
       'outlined-disabled': rgba($primary-shade--dark, 0.22),
     ),
+    'selection-controls': (
+      'thumb': (
+        'inactive': #e0e0e0,
+      ),
+    ),
     'status-bar': (
       'regular': map-get($shades, 'black'),
     ),
     'icons': (
       // ! Value of `map-deep-get($material-light, 'text', 'secondary')`
         'active': rgba($primary-shade--dark, 0.68),
+    ),
+    'picker': (
+      // ! Value of `map-deep-get($material-dark, 'background')`
+        'body': #28243d,
+      // ! Value of `map-deep-get($material-dark, 'cards')`
+        'clock': #312d4b,
+      // ! Value of `map-deep-get($material-dark, 'background')`
+        'indeterminateTime': #28243d,
     ),
     // * New
       'primary-shade': $primary-shade--dark,
@@ -575,6 +596,7 @@ $dialog-card-actions-padding: 0 $card-spacer $card-spacer;
 //
 
 $tooltip-background-color: rgba(59, 55, 68, 0.9);
+$tooltip-text-color: #fff;
 $tooltip-font-size: 0.75rem;
 
 //
@@ -584,6 +606,12 @@ $tooltip-font-size: 0.75rem;
 // As we have SVG this isn't working
 // We have used `dense` prop for v-icon
 $chip-icon-size: 20px;
+
+//
+//* ——— Date Picker ——————————————————
+//
+
+$date-picker-header-button-font-weight: 500;
 
 //
 //* ——— Snackbar ——————————————————

@@ -136,6 +136,26 @@ $font-sizes: (
 }
 
 //
+//* ——— Card ——————————————————
+//
+
+// ? We have to use various selectors because `!important` isn't working
+.v-application[class*='theme'] {
+  .v-card-transparent-outlined {
+    &.v-card.v-sheet:not(.v-card---outlined) {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+@include theme(v-card-transparent-outlined) using ($material) {
+  &.v-card {
+    border: thin solid map-deep-get($material, 'dividers');
+  }
+}
+
+//
 //* ——— Chip ——————————————————
 //
 

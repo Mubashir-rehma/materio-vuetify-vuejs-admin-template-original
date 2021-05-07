@@ -523,6 +523,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~@core/preset/preset/mixins.scss';
+
 .avatar-center {
   top: -2rem;
   left: 1rem;
@@ -531,8 +533,11 @@ export default {
 }
 
 // membership pricing
+@include theme--child(memberpricing-bg) using ($material) {
+  background-color: rgba(map-deep-get($material, 'primary-shade'), map-deep-get($material, 'states', 'hover'));
+}
+
 .memberpricing-bg {
-  background-color: rgba(94, 86, 105, 0.04);
   position: relative;
 }
 .membership-pricing {

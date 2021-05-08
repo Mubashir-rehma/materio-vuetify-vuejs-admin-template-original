@@ -18,17 +18,17 @@
       color="success"
       size="49"
     >
-      <h2 class="white--text">
+      <span class="white--text text-2xl">
         PI
-      </h2>
+      </span>
     </v-avatar>
     <v-avatar
       color="error"
       size="70"
     >
-      <h1 class="white--text">
+      <span class="white--text text-4xl">
         PI
-      </h1>
+      </span>
     </v-avatar>
   </div>
 </template>

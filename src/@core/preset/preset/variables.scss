@@ -120,7 +120,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,
+      // 'group': map-get($grey, 'lighten-3'),,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -239,7 +239,8 @@ $material-dark: map-deep-merge(
 $material-dark: map-deep-merge(
   $material-dark,
   (
-    'app-bar': map-get($shades, 'black'),
+    // ! Value of `map-deep-get($material-dark, 'cards')`
+      'app-bar': #312d4b,
     'background': #28243d,
     'cards': #312d4b,
     'chips': rgba($primary-shade--dark, 0.06),
@@ -247,19 +248,19 @@ $material-dark: map-deep-merge(
     'input-bottom-line': rgba($primary-shade--dark, 0.14),
     'inputs': (
       // ! Value of `map-deep-get($material-dark, 'text-fields', 'filled')`
-        'solo-inverted': rgba($primary-shade--dark, 0.03),
+        'solo-inverted': rgba($primary-shade--dark, 0.03)
     ),
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,
+      // 'group': map-get($grey, 'lighten-3'),,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
       // ! It is only used in pagination
         'theme': map-get($shades, 'white'),
       'primary': rgba($primary-shade--dark, 0.87),
-      'secondary': rgba($primary-shade--dark, 0.68),
+      'secondary': rgba($primary-shade--dark, 0.68)
     ),
     'text-fields': (
       'filled': rgba($primary-shade--dark, 0.03),
@@ -274,11 +275,12 @@ $material-dark: map-deep-merge(
       ),
     ),
     'status-bar': (
-      'regular': map-get($shades, 'black'),
+      // ! Value of `map-deep-get($material-dark, 'cards')`
+        'regular': #312d4b
     ),
     'icons': (
       // ! Value of `map-deep-get($material-light, 'text', 'secondary')`
-        'active': rgba($primary-shade--dark, 0.68),
+        'active': rgba($primary-shade--dark, 0.68)
     ),
     'picker': (
       // ! Value of `map-deep-get($material-dark, 'background')`
@@ -286,11 +288,11 @@ $material-dark: map-deep-merge(
       // ! Value of `map-deep-get($material-dark, 'cards')`
         'clock': #312d4b,
       // ! Value of `map-deep-get($material-dark, 'background')`
-        'indeterminateTime': #28243d,
+        'indeterminateTime': #28243d
     ),
     // * New
       'primary-shade': $primary-shade--dark,
-    'shadow-color': $shadow-color--dark,
+    'shadow-color': $shadow-color--dark
   )
 );
 

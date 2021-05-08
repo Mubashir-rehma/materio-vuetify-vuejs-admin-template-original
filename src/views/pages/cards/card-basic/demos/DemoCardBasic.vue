@@ -54,7 +54,7 @@
             </div>
             <!-- Mutual Friends -->
             <div class="d-flex justify-space-between align-center mt-8">
-              <span class="text-base">
+              <span class="text--primary font-weight-medium">
                 18 mutual friends
               </span>
               <div

@@ -104,8 +104,6 @@ $material-light: map-deep-merge(
 //
 //* ——— Override Values of Light Theme ——————————————————
 //
-// ? This will just update the black to `$primary-shade--light`
-//
 
 $material-light: map-deep-merge(
   $material-light,
@@ -118,6 +116,11 @@ $material-light: map-deep-merge(
     'inputs': (
       // ! Value of `map-deep-get($material-light, 'text-fields', 'filled')`
         'solo-inverted': rgba($primary-shade--light, 0.03),
+    ),
+    'table': (
+      'active': rgba($primary-shade--light, 0.08),
+      'hover': rgba($primary-shade--light, 0.04),
+      // 'group': map-get($grey, 'lighten-3'),,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -245,6 +248,11 @@ $material-dark: map-deep-merge(
     'inputs': (
       // ! Value of `map-deep-get($material-dark, 'text-fields', 'filled')`
         'solo-inverted': rgba($primary-shade--dark, 0.03),
+    ),
+    'table': (
+      'active': rgba($primary-shade--dark, 0.08),
+      'hover': rgba($primary-shade--dark, 0.04),
+      // 'group': map-get($grey, 'lighten-3'),,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (

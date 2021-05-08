@@ -618,6 +618,14 @@ button {
 }
 
 //
+//* ——— Switch ——————————————————
+//
+
+.v-input--selection-controls__ripple:before {
+  opacity: 0.08 !important;
+}
+
+//
 //* ——— Tabs ——————————————————
 //
 
@@ -652,6 +660,17 @@ button {
   .v-data-footer__select {
     .v-input__append-inner {
       align-self: center;
+    }
+
+    .v-select {
+      margin-bottom: 6px !important;
+
+      > .v-input__control > .v-input__slot {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
     }
   }
 }

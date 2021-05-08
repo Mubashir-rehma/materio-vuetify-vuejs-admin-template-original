@@ -19,7 +19,7 @@
           >
             {{ data.icon }}
           </v-icon>
-          <span>{{ data.title }}</span>
+          <span class="white--text">{{ data.title }}</span>
         </v-card-title>
 
         <v-card-text class="white--text">

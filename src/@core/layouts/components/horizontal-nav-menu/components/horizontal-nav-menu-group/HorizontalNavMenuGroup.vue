@@ -3,10 +3,10 @@
     ref="refMenu"
     offset-x
     attach
-    open-on-hover
     eager
     :left="openChildMenuLeft"
     max-height="70vh"
+    content-class="list-style"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-list-item

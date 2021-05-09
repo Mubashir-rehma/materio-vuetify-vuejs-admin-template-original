@@ -33,7 +33,7 @@
         <!-- Profile -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiAccountOutline }}
             </v-icon>
           </v-list-item-icon>
@@ -45,7 +45,7 @@
         <!-- Email -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiEmailOutline }}
             </v-icon>
           </v-list-item-icon>
@@ -57,7 +57,7 @@
         <!-- Task -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiCheckboxMarkedOutline }}
             </v-icon>
           </v-list-item-icon>
@@ -69,7 +69,7 @@
         <!-- Chat -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiChatOutline }}
             </v-icon>
           </v-list-item-icon>
@@ -83,7 +83,7 @@
         <!-- Settings -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiCogOutline }}
             </v-icon>
           </v-list-item-icon>
@@ -95,7 +95,7 @@
         <!-- Pricing -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiCurrencyUsd }}
             </v-icon>
           </v-list-item-icon>
@@ -107,7 +107,7 @@
         <!-- FAQ -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiHelpCircleOutline }}
             </v-icon>
           </v-list-item-icon>
@@ -119,7 +119,7 @@
         <!-- Logout -->
         <v-list-item :to="{ name: 'components-alert' }">
           <v-list-item-icon class="mr-2">
-            <v-icon>
+            <v-icon size="22">
               {{ icons.mdiLogoutVariant }}
             </v-icon>
           </v-list-item-icon>

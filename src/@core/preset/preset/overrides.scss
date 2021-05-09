@@ -500,7 +500,38 @@ button {
 //
 
 .v-menu__content {
-  min-width: 10rem !important;
+  @at-root .v-application & {
+    width: 10rem;
+  }
+
+  &:not(.list-style) {
+    .v-list-item {
+      height: 2.375rem;
+      min-height: 2.375rem;
+
+      .v-list-item__icon {
+        margin: 8px 0;
+      }
+    }
+
+    .v-list.v-list--dense {
+      .v-list-item {
+        min-height: 2rem;
+        height: 2rem;
+      }
+
+      .v-list-item__icon {
+        margin: 5px 0;
+      }
+
+      .v-list-item__title,
+      .v-list-item__subtitle,
+      .v-list-item .v-list-item__title,
+      .v-list-item .v-list-item__subtitle {
+        font-size: 0.875rem;
+      }
+    }
+  }
 }
 
 // @include theme(v-menu__content) using ($material) {

@@ -2,10 +2,10 @@
   <v-menu
     ref="refMenu"
     offset-y
-    eager
-    open-on-hover
+    eagers
     attach
     class="horizontal-nav-header-group"
+    content-class="list-style elevation-0"
   >
     <template #activator="{ on, attrs }">
       <v-btn
@@ -30,7 +30,10 @@
         </v-icon>
       </v-btn>
     </template>
-    <v-list ref="refContent">
+    <v-list
+      ref="refContent"
+      elevation="9"
+    >
       <v-list-item-group
         color="primary"
       >
@@ -139,6 +142,9 @@ export default {
     box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
     @include elevationTransition();
   }
+  .v-list-item__icon {
+    align-self: center;
+  }
 }
 
 .horizontal-nav-header-group {
@@ -147,9 +153,10 @@ export default {
   }
 
   .v-menu__content {
+    min-width: 260px;
+    width: unset;
     contain: none !important;
     overflow: visible !important;
-    // box-shadow: none;
 
     > .v-list {
       border-radius: 6px;

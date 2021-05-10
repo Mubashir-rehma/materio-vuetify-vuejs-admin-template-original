@@ -32,7 +32,7 @@
     </template>
     <v-list
       ref="refContent"
-      elevation="9"
+      elevation="8"
     >
       <v-list-item-group
         color="primary"

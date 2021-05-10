@@ -6,13 +6,13 @@
     eager
     :left="openChildMenuLeft"
     max-height="70vh"
-    content-class="list-style"
+    :content-class="contentClasses"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-list-item
         ref="refActivator"
         v-bind="attrs"
-        :class="[{'horizontal-nav-menu-group-active': isActive}, { 'menu-open': isMenuActive }, { 'scrollable': isContentScrollable }]"
+        :class="[{'horizontal-nav-menu-group-active': isActive}, { 'menu-open': isMenuActive }]"
         class="horizontal-nav-menu-group"
         v-on="on"
       >
@@ -25,11 +25,14 @@
           <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
         </v-list-item-content>
         <v-list-item-icon>
-          <v-icon v-text="icons.mdiChevronRight"></v-icon>
+          <v-icon>{{ icons.mdiChevronRight }}</v-icon>
         </v-list-item-icon>
       </v-list-item>
     </template>
-    <v-list ref="refContent">
+    <v-list
+      ref="refContent"
+      elevation="8"
+    >
       <v-list-item-group color="primary">
         <component
           :is="resolveNavComponent(child)"
@@ -118,7 +121,11 @@ export default {
 
             const refContentTop = refContent.value.$el.getBoundingClientRect().top
             const refContentHeight = refContent.value.$el.getBoundingClientRect().height
-            if (window.innerHeight - refContentTop - refContentHeight - 28 < 1) {
+            console.log(
+              'window.innerHeight - refContentTop - refContentHeight - 28 :>> ',
+              window.innerHeight - refContentTop - refContentHeight - 28,
+            )
+            if (window.innerHeight - refContentTop - refContentHeight - 28 < 50) {
               isContentScrollable.value = true
             }
           }, 25)
@@ -126,6 +133,14 @@ export default {
       })
     }
     watch([width, height], updateMenuDropLeft, { immediate: true, flush: 'post', deep: true })
+
+    const contentClasses = computed(() => {
+      const classes = ['list-style', 'elevation-0']
+
+      if (isContentScrollable.value) classes.push('horizontal-nav-menu-group-scrollable')
+
+      return classes.join(' ')
+    })
 
     return {
       resolveNavComponent,
@@ -139,6 +154,7 @@ export default {
       refContent,
       isMenuOpen,
       isParentMenuOpen,
+      contentClasses,
 
       // alternate icons
       alternateIcon: themeConfig.menu.groupChildIcon,
@@ -177,9 +193,11 @@ export default {
   &:first-child + .v-menu > .v-menu__content {
     top: -8px !important;
   }
+}
 
-  &.scrollable {
-    + .v-menu .v-menu__content {
+.horizontal-nav-menu {
+  .horizontal-nav-menu-group-scrollable {
+    &.v-menu__content {
       overflow-y: auto !important;
       @include style-scroll-bar();
       .v-list {

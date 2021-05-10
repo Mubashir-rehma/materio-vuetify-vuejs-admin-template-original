@@ -27,35 +27,59 @@
         auto-select-first
         :prepend-inner-icon="icons.mdiMagnify"
         autofocus
-        :menu-props="{ maxHeight: 500, transition: 'slide-y-transition' }"
+        :menu-props="{ maxHeight: 500, transition: 'slide-y-transition', contentClass: 'list-style' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
         @blur="shallShowFullSearchLocal = false"
       >
+        <!-- Slot: Selection -->
         <template #selection></template>
+
+        <!-- Slot: Append -->
+        <template #append>
+          <v-icon
+            @click="shallShowFullSearchLocal = false"
+          >
+            {{ icons.mdiClose }}
+          </v-icon>
+        </template>
+
+        <!-- Slot: Item -->
         <template #item="{ item, on, attrs }">
           <div
             v-bind="attrs"
             v-on="on"
           >
-            <div v-if="getSearchResultType(item) === 'pages'">
-              <v-icon class="mr-4">
+            <!-- Section: Pages -->
+            <div
+              v-if="getSearchResultType(item) === 'pages'"
+              class="d-flex align-content-end"
+            >
+              <v-icon
+                size="20px"
+                class="mr-3"
+              >
                 {{ item.icon }}
               </v-icon>
-              <span>{{ item.title }}</span>
+              <span class="text-sm">{{ item.title }}</span>
             </div>
+
+            <!-- Section: Files -->
             <div
               v-else-if="getSearchResultType(item) === 'files'"
               class="d-flex align-center py-2"
             >
-              <v-icon class="mr-4">
+              <v-icon
+                size="20px"
+                class="mr-3"
+              >
                 {{ item.icon }}
               </v-icon>
               <div class="d-flex flex-column flex-grow-1">
                 <span class="d-block">{{ item.title }}</span>
-                <small class="text--secondary">by {{ item.by }}</small>
+                <small class="text--secondary text-xs">by {{ item.by }}</small>
               </div>
-              <small class="text--secondary">{{ item.size }}</small>
+              <small class="text--secondary text-xs">{{ item.size }}</small>
             </div>
 
             <!-- Contact -->
@@ -64,16 +88,16 @@
               class="d-flex align-center py-2"
             >
               <v-avatar
-                class="mr-4"
+                class="mr-3"
                 size="40"
               >
                 <v-img :src="item.avatar"></v-img>
               </v-avatar>
               <div class="d-flex flex-column flex-grow-1">
-                <span class="d-block">{{ item.title }}</span>
-                <small class="text--secondary">{{ item.email }}</small>
+                <span class="d-block text-sm">{{ item.title }}</span>
+                <small class="text--secondary text-xs">{{ item.email }}</small>
               </div>
-              <small class="text--secondary">{{ item.time }}</small>
+              <small class="text--secondary text-xs">{{ item.time }}</small>
             </div>
           </div>
         </template>
@@ -83,7 +107,7 @@
 </template>
 
 <script>
-import { mdiMagnify } from '@mdi/js'
+import { mdiMagnify, mdiClose } from '@mdi/js'
 import { useVModel, useMagicKeys, whenever } from '@vueuse/core'
 import { ref, watch } from '@vue/composition-api'
 import { useRouter } from '@core/utils'
@@ -145,6 +169,7 @@ export default {
 
       icons: {
         mdiMagnify,
+        mdiClose,
       },
     }
   },
@@ -180,8 +205,19 @@ export default {
     z-index: 10;
     padding: 0 20px !important;
 
-    .v-input__prepend-inner {
+    .v-input__prepend-inner,
+    .v-input__append-inner {
       align-self: center;
+      margin-top: -2px;
+      svg {
+        font-size: 24px;
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    .v-input__prepend-inner {
+      margin-left: 4px;
     }
   }
   // Content - Result
@@ -191,6 +227,17 @@ export default {
     width: 100%;
     border-radius: 12px !important;
     top: calc(64px + 0.625rem) !important;
+
+    .v-subheader {
+      text-transform: uppercase;
+      letter-spacing: 0.21px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    @include theme(v-subheader) using ($material) {
+      color: map-deep-get($material, 'text', 'disabled');
+    }
 
     .v-list-item {
       > [id^='list-item'] {

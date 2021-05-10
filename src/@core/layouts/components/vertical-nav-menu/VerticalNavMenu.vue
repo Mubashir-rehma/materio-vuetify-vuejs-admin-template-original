@@ -94,7 +94,7 @@ export default {
 
   .v-list-item,
   .v-subheader {
-    padding: 0 18px 0 24px;
+    padding: 0 18px 0 22px;
   }
 
   .v-list-item {

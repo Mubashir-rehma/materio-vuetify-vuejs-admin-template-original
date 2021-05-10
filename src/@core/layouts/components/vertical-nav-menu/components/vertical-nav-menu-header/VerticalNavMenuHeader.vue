@@ -10,7 +10,7 @@
         max-width="30px"
         alt="logo"
         contain
-        class="mr-3"
+        class="app-logo mr-3"
       ></v-img>
       <v-slide-x-transition>
         <h2
@@ -81,6 +81,14 @@ export default {
   font-style: normal;
   line-height: normal;
   letter-spacing: 0.3px;
+}
+
+// ? Adjust this `translateX` value to keep logo in center when vertical nav menu is collapsed (Value depends on your logo)
+.app-logo {
+  transition: all 0.18s ease-in-out;
+  .v-navigation-drawer--mini-variant & {
+    transform: translateX(-4px);
+  }
 }
 
 // .vertical-nav-header {

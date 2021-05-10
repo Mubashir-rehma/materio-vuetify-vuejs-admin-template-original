@@ -2,12 +2,14 @@
   <div class="app-customizer">
     <v-btn
       icon
-      class="app-customizer-toggler rounded-0 rounded-l-xl"
+      class="app-customizer-toggler rounded-0 rounded-l-lg"
       color="white"
       large
       @click="isCustomizerOpen = !isCustomizerOpen"
     >
-      <v-icon>{{ icons.mdiCog }}</v-icon>
+      <v-icon size="25">
+        {{ icons.mdiCog }}
+      </v-icon>
     </v-btn>
     <v-navigation-drawer
       v-model="isCustomizerOpen"
@@ -20,8 +22,7 @@
       <!-- Heading -->
       <div class="app-customizer-header customizer-section py-3">
         <h6
-          class="text-h6"
-          style="font-weight: 700"
+          class="font-weight-semibold text-xl text--primary"
         >
           THEME CUSTOMIZER
         </h6>
@@ -49,10 +50,10 @@
             THEMING
           </p>
           <!-- Skin -->
-          <span>Skin</span>
+          <span class="text--primary">Skin</span>
           <v-radio-group
             v-model="skin"
-            class="mt-0"
+            class="mt-1"
             hide-details
             row
           >
@@ -64,15 +65,15 @@
             ></v-radio>
           </v-radio-group>
           <!-- Mode -->
-          <span class="mt-6 d-inline-block mb-1">Mode</span>
+          <span class="mt-6 d-inline-block mb-2 text--primary">Mode</span>
           <div class="d-flex align-center">
-            <span class="text--secondary">Light</span>
+            <span class="text--secondary text-sm">Light</span>
             <v-switch
               v-model="isDark"
               hide-details
               class="mt-0 mx-2"
             ></v-switch>
-            <span class="text--secondary">Dark</span>
+            <span class="text--secondary text-sm">Dark</span>
           </div>
         </div>
         <v-divider></v-divider>
@@ -82,10 +83,10 @@
             LAYOUT
           </p>
           <!-- Content Width -->
-          <span>Content Width</span>
+          <span class="text--primary">Content Width</span>
           <v-radio-group
             v-model="appContentWidth"
-            class="mt-0"
+            class="mt-1"
             hide-details
             row
           >
@@ -97,10 +98,10 @@
             ></v-radio>
           </v-radio-group>
           <!-- AppBar Type -->
-          <span class="mt-6 d-inline-block">AppBar Type</span>
+          <span class="mt-6 d-inline-block text--primary">AppBar Type</span>
           <v-radio-group
             v-model="appBarType"
-            class="mt-0"
+            class="mt-1"
             hide-details
             row
           >
@@ -112,10 +113,10 @@
             ></v-radio>
           </v-radio-group>
           <!-- Footer Type -->
-          <span class="mt-6 d-inline-block">Footer Type</span>
+          <span class="mt-6 d-inline-block text--primary">Footer Type</span>
           <v-radio-group
             v-model="footerType"
-            class="mt-0"
+            class="mt-1"
             hide-details
             row
           >
@@ -134,10 +135,10 @@
             MENU
           </p>
           <!-- Menu Layout -->
-          <span>Menu Layout</span>
+          <span class="text--primary">Menu Layout</span>
           <v-radio-group
             v-model="appContentLayoutNav"
-            class="mt-0"
+            class="mt-1"
             hide-details
             row
           >
@@ -148,18 +149,23 @@
               :value="option.value"
             ></v-radio>
           </v-radio-group>
+
           <!-- Menu Collapsed -->
-          <div class="d-flex align-center justify-space-between mt-6">
-            <span class="text--secondary">Menu Collapsed</span>
+          <div
+            v-if="appContentLayoutNav === 'vertical'"
+            class="d-flex align-center justify-space-between mt-6"
+          >
+            <span class="text--primary">Menu Collapsed</span>
             <v-switch
               v-model="menuIsVerticalNavMini"
               hide-details
               class="mt-0 ml-2"
             ></v-switch>
           </div>
+
           <!-- Menu Hidden -->
           <div class="d-flex align-center justify-space-between mt-6">
-            <span class="text--secondary">Menu Hidden</span>
+            <span class="text--primary">Menu Hidden</span>
             <v-switch
               v-model="menuIsMenuHidden"
               hide-details
@@ -175,7 +181,7 @@
           </p>
           <!-- RTL -->
           <div class="d-flex align-center justify-space-between mt-6">
-            <span class="text--secondary">RTL</span>
+            <span class="text--primary">RTL</span>
             <v-switch
               v-model="isRtl"
               hide-details
@@ -184,7 +190,7 @@
           </div>
           <!-- Router Transition -->
           <v-row class="mt-6 align-center">
-            <v-col><span class="text--secondary">Router Transition</span></v-col>
+            <v-col><span class="text--primary">Router Transition</span></v-col>
             <v-col col="4">
               <v-select
                 v-model="appRouteTransition"
@@ -357,11 +363,15 @@ export default {
 .app-customizer {
   z-index: 7;
 
+  .v-label {
+    font-size: 0.875rem;
+  }
+
   .app-customizer-header {
     position: relative;
     .icon-customizer-close {
       position: absolute;
-      right: 24px;
+      right: 20px;
       top: 50%;
       transform: translateY(-50%);
     }

@@ -11,7 +11,7 @@
     <v-icon
       dark
       left
-      :small="!item.icon"
+      :size="item.icon ? 22 : 15"
     >
       {{ item.icon || alternateIcon }}
     </v-icon>

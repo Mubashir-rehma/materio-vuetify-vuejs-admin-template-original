@@ -1,7 +1,7 @@
 <template>
   <v-list-item v-bind="linkProps">
     <v-list-item-icon>
-      <v-icon :small="!item.icon">
+      <v-icon :size="item.icon ? 22 : 15">
         {{ item.icon || alternateIcon }}
       </v-icon>
     </v-list-item-icon>

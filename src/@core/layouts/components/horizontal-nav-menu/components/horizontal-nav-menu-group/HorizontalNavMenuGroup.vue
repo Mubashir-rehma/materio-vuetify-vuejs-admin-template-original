@@ -17,7 +17,7 @@
         v-on="on"
       >
         <v-list-item-icon>
-          <v-icon :small="!item.icon">
+          <v-icon :size="item.icon ? 22 : 20">
             {{ item.icon || alternateIcon }}
           </v-icon>
         </v-list-item-icon>
@@ -121,10 +121,6 @@ export default {
 
             const refContentTop = refContent.value.$el.getBoundingClientRect().top
             const refContentHeight = refContent.value.$el.getBoundingClientRect().height
-            console.log(
-              'window.innerHeight - refContentTop - refContentHeight - 28 :>> ',
-              window.innerHeight - refContentTop - refContentHeight - 28,
-            )
             if (window.innerHeight - refContentTop - refContentHeight - 28 < 50) {
               isContentScrollable.value = true
             }
@@ -135,7 +131,7 @@ export default {
     watch([width, height], updateMenuDropLeft, { immediate: true, flush: 'post', deep: true })
 
     const contentClasses = computed(() => {
-      const classes = ['list-style', 'elevation-0']
+      const classes = ['list-style', 'elevation-8']
 
       if (isContentScrollable.value) classes.push('horizontal-nav-menu-group-scrollable')
 

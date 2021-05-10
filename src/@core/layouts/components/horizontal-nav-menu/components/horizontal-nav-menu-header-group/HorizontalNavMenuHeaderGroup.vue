@@ -15,17 +15,19 @@
         large
         rounded
         v-bind="attrs"
+        class="text-capitalize text-base font-weight-regular"
         :class="[{'gradient-primary group-activator-active': isActive}, { 'menu-open': isMenuActive }]"
         v-on="on"
       >
         <v-icon
           dark
           left
+          size="22"
         >
           {{ item.icon }}
         </v-icon>
-        {{ t(item.title) }}
-        <v-icon>
+        <span>{{ t(item.title) }}</span>
+        <v-icon size="20">
           {{ icons.mdiChevronDown }}
         </v-icon>
       </v-btn>
@@ -138,12 +140,19 @@ export default {
   .menu-open {
     background: rgba(map-deep-get($shades, 'black'), map-deep-get($material, 'states', 'hover'));
   }
+}
+
+.horizontal-nav-menu {
   > .group-activator-active {
     box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
     @include elevationTransition();
   }
   .v-list-item__icon {
     align-self: center;
+  }
+  .v-list-item {
+    min-height: 42px;
+    max-height: 42px;
   }
 }
 
@@ -153,8 +162,8 @@ export default {
   }
 
   .v-menu__content {
-    min-width: 260px;
-    width: unset;
+    // min-width: 260px;
+    width: 260px;
     contain: none !important;
     overflow: visible !important;
 

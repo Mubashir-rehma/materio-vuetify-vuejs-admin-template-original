@@ -30,6 +30,16 @@
       </app-card-code>
     </v-col>
 
+    <!-- row selection -->
+    <v-col cols="12">
+      <app-card-code
+        title="Row selection"
+        :code="codeSnippets.codeTableRowSelection"
+      >
+        <demo-table-row-selection></demo-table-row-selection>
+      </app-card-code>
+    </v-col>
+
     <!-- fixed header -->
     <v-col cols="12">
       <app-card-code
@@ -116,6 +126,7 @@ import DemoTableRowEditingViaDialog from './demos/DemoTableRowEditingViaDialog.v
 import DemoTableCellEditorViaDialog from './demos/DemoTableCellEditorViaDialog.vue'
 import DemoTableExternalPagination from './demos/DemoTableExternalPagination.vue'
 import DemoTableKitchenSink from './demos/DemoTableKitchenSink.vue'
+import DemoTableRowSelection from './demos/DemoTableRowSelection.vue'
 
 // code
 import {
@@ -129,6 +140,7 @@ import {
   codeTableCellEditingViaDialog,
   codeTableExternalPagination,
   codeTableKitchenSink,
+  codeTableRowSelection,
 } from './demos/code'
 
 export default {
@@ -144,6 +156,7 @@ export default {
     DemoTableCellEditorViaDialog,
     DemoTableExternalPagination,
     DemoTableKitchenSink,
+    DemoTableRowSelection,
   },
   setup() {
     return {
@@ -158,6 +171,7 @@ export default {
         codeTableCellEditingViaDialog,
         codeTableExternalPagination,
         codeTableKitchenSink,
+        codeTableRowSelection,
       },
     }
   },

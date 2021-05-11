@@ -19,6 +19,10 @@ export default [
             title: 'Basic',
             to: 'card-basic',
           },
+          {
+            title: 'Statistics',
+            to: 'card-statistics',
+          },
         ],
       },
       {

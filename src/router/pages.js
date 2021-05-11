@@ -23,6 +23,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/cards/statistics',
+    name: 'card-statistics',
+    component: () => import('@/views/pages/cards/card-statistics/CardStatistics.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

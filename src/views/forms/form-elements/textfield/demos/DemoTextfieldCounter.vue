@@ -20,9 +20,7 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
+export default {
   setup() {
     const title = 'Preliminary report'
     const description = 'California is a state in the western United States'
@@ -34,5 +32,5 @@ export default defineComponent({
       rules,
     }
   },
-})
+}
 </script>

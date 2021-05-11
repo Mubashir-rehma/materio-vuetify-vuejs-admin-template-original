@@ -67,9 +67,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const valid = ref(true)
     const name = ref('')
@@ -110,5 +110,5 @@ export default defineComponent({
       resetValidation,
     }
   },
-})
+}
 </script>

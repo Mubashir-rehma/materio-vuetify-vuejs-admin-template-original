@@ -46,10 +46,10 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import { required, emailValidator } from '@core/utils/validation'
 
-export default defineComponent({
+export default {
   setup() {
     const firstName = ref('')
     const email = ref('')
@@ -69,5 +69,5 @@ export default defineComponent({
       emailValidator,
     }
   },
-})
+}
 </script>

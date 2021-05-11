@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const firstname = ref('')
     const email = ref('')
@@ -74,5 +74,5 @@ export default defineComponent({
       checkbox,
     }
   },
-})
+}
 </script>

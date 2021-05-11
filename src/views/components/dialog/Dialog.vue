@@ -163,7 +163,6 @@ import DemoDialogFullScreen from './demos/DemoDialogFullScreen.vue'
 import DemoDialogForm from './demos/DemoDialogForm.vue'
 
 // code
-// eslint-disable-next-line object-curly-newline
 import {
   dialogBasic,
   dialogPersistent,

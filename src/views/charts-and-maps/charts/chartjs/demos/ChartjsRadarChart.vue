@@ -12,11 +12,10 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import ChartjsComponentRadarChart from './charts-components/ChartjsComponentRadarChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentRadarChart,
   },
@@ -25,5 +24,5 @@ export default defineComponent({
       chartjsData,
     }
   },
-})
+}
 </script>

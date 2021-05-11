@@ -24,10 +24,9 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import { mdiMapMarkerOutline } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     return {
       icons: {
@@ -35,5 +34,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

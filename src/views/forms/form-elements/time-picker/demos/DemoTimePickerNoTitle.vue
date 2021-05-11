@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const picker = ref(null)
 
@@ -16,5 +16,5 @@ export default defineComponent({
       picker,
     }
   },
-})
+}
 </script>

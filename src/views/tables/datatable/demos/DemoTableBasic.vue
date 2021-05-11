@@ -7,10 +7,9 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import data from '../datatable'
 
-export default defineComponent({
+export default {
   setup() {
     const userData = data
 
@@ -26,5 +25,5 @@ export default defineComponent({
       userData,
     }
   },
-})
+}
 </script>

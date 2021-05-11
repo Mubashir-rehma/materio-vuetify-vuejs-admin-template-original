@@ -32,11 +32,10 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import ChartjsComponentScatterChart from './charts-components/ChartjsComponentScatterChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentScatterChart,
   },
@@ -45,5 +44,5 @@ export default defineComponent({
       chartjsData,
     }
   },
-})
+}
 </script>

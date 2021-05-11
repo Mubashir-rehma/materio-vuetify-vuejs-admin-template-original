@@ -27,9 +27,7 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
+export default {
   setup() {
     const date = new Date().toISOString().substr(0, 7)
 
@@ -37,5 +35,5 @@ export default defineComponent({
       date,
     }
   },
-})
+}
 </script>

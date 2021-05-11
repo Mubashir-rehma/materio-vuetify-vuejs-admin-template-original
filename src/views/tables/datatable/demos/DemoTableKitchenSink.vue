@@ -106,7 +106,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import {
   mdiMagnify,
   mdiDeleteOutline,
@@ -132,7 +132,7 @@ import {
   mdiDesktopMac,
 } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const search = ref('')
     const productList = ref([])
@@ -195,5 +195,5 @@ export default defineComponent({
       this.productList = res.data
     })
   },
-})
+}
 </script>

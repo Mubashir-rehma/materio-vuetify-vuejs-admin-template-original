@@ -194,7 +194,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoRatingBasic from './demos/DemoRatingBasic.vue'
@@ -222,7 +221,7 @@ import {
   ratingItemSlot,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoRatingBasic,
@@ -252,5 +251,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

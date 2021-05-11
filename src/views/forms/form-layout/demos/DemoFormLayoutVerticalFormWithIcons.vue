@@ -61,9 +61,9 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { mdiAccountOutline, mdiEmailOutline, mdiCellphone, mdiLockOutline } from '@mdi/js'
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const firstname = ref('')
     const email = ref('')
@@ -87,5 +87,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const start = ref(null)
     const end = ref(null)
 
     return { start, end }
   },
-})
+}
 </script>

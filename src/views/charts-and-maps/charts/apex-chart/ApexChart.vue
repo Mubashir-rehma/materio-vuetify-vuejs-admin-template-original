@@ -210,8 +210,6 @@
 </template>
 
 <script>
-import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 import { mdiCalendarBlankOutline } from '@mdi/js'
 
 // demos
@@ -226,9 +224,8 @@ import DemoApexChartStatistics from './demos/DemoApexChartStatistics.vue'
 import DemoApexChartMobileComparison from './demos/DemoApexChartMobileComparison.vue'
 import DemoApexChartExpenseRatio from './demos/DemoApexChartExpenseRatio.vue'
 
-export default defineComponent({
+export default {
   components: {
-    AppCardCode,
     DemoApexChartLineChart,
     DemoApexChartDataScience,
     DemoApexChartNewTechnologiesData,
@@ -247,5 +244,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

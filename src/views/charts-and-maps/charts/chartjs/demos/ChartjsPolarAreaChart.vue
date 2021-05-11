@@ -44,21 +44,15 @@
 
 <script>
 import { mdiDotsVertical } from '@mdi/js'
-import { defineComponent } from '@vue/composition-api'
 import ChartjsComponentPolarAreaChart from './charts-components/ChartjsComponentPolarAreaChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentPolarAreaChart,
-
   },
   setup() {
-    const items = [
-      { title: 'Last 28 Days' },
-      { title: 'Last Month' },
-      { title: 'Last Year' },
-    ]
+    const items = [{ title: 'Last 28 Days' }, { title: 'Last Month' }, { title: 'Last Year' }]
 
     return {
       items,
@@ -68,5 +62,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

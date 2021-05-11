@@ -318,7 +318,6 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 
 // demos
@@ -361,7 +360,7 @@ import {
   textfieldPasswordInput,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoTextfieldBasic,
@@ -405,5 +404,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

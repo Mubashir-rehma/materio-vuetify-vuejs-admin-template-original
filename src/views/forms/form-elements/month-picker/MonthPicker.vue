@@ -153,7 +153,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoMonthPickerBasic from './demos/DemoMonthPickerBasic.vue'
@@ -177,7 +176,7 @@ import {
   monthPickerInternationalization,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoMonthPickerBasic,
@@ -203,5 +202,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

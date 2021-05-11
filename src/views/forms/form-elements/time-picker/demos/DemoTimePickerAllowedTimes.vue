@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const time = ref('11:15')
 
@@ -27,5 +27,5 @@ export default defineComponent({
       allowedMinutes,
     }
   },
-})
+}
 </script>

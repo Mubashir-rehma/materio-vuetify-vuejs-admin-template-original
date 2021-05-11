@@ -67,7 +67,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoTableBasic from './demos/DemoTableBasic.vue'
@@ -77,11 +76,10 @@ import DemoTableHeight from './demos/DemoTableHeight.vue'
 import DemoTableFixedHeader from './demos/DemoTableFixedHeader.vue'
 
 // code
-import {
-  codeTableBasic, codeTableDark, codeTableDense, codeTableHeight,
-} from './demos/code'
+// eslint-disable-next-line object-curly-newline
+import { codeTableBasic, codeTableDark, codeTableDense, codeTableHeight } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoTableBasic,
@@ -100,5 +98,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

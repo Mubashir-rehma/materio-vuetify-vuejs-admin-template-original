@@ -37,10 +37,10 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import { mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const show1 = ref(false)
     const show2 = ref(true)
@@ -64,5 +64,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

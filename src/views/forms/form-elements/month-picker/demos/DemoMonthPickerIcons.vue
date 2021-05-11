@@ -10,10 +10,9 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import { mdiCalendarBlank, mdiSkipPrevious, mdiSkipNext } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const picker = new Date().toISOString().substr(0, 7)
 
@@ -26,5 +25,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

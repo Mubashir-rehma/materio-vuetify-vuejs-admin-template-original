@@ -6,9 +6,7 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
+export default {
   setup() {
     const picker = new Date().toISOString().substr(0, 10)
     const picker2 = new Date().toISOString().substr(0, 10)
@@ -18,5 +16,5 @@ export default defineComponent({
       picker2,
     }
   },
-})
+}
 </script>

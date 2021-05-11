@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import { computed, defineComponent, ref } from '@vue/composition-api'
+import { computed, ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const textfieldValue = ref('')
 
@@ -34,5 +34,5 @@ export default defineComponent({
       color,
     }
   },
-})
+}
 </script>

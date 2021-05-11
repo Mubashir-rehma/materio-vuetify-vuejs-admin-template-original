@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import {
   mdiMapMarkerOutline,
   mdiSendOutline,
@@ -25,7 +25,7 @@ import {
   mdiMapMarkerOffOutline,
 } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const password = ref('Password')
     const show = ref(false)
@@ -65,5 +65,5 @@ export default defineComponent({
       mdiMapMarkerOffOutline,
     }
   },
-})
+}
 </script>

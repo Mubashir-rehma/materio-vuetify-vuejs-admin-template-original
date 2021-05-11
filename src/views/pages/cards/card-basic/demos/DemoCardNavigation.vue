@@ -79,9 +79,7 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
+export default {
   setup() {
     return {
       tab: null,
@@ -91,7 +89,7 @@ export default defineComponent({
         'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards…',
     }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

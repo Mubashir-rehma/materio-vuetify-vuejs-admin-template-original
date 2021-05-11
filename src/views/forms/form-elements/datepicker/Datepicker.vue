@@ -280,7 +280,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoDatepickerBasic from './demos/DemoDatepickerBasic.vue'
@@ -318,7 +317,7 @@ import {
   datepickerInternationalization,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoDatepickerBasic,
@@ -358,5 +357,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

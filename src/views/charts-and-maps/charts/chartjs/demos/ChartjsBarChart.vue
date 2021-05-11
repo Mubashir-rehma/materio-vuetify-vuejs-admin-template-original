@@ -24,12 +24,11 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import { mdiCalendarBlankOutline } from '@mdi/js'
 import ChartjsComponentBarChart from './charts-components/ChartjsComponentBarChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentBarChart,
   },
@@ -41,5 +40,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

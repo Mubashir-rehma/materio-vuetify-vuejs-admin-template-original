@@ -9,10 +9,9 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import { mdiFileFindOutline } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     return {
       icons: {
@@ -20,5 +19,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

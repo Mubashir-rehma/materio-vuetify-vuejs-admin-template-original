@@ -72,10 +72,10 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import { mdiCalendar } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const date = new Date().toISOString().substr(0, 10)
     const menu = ref(false)
@@ -96,5 +96,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

@@ -79,10 +79,10 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { computed, defineComponent, ref, watch } from '@vue/composition-api'
+import { computed, ref, watch } from '@vue/composition-api'
 import { mdiCalendar } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     // const vm = getCurrentInstance().proxy
     const date = ref(new Date().toISOString().substr(0, 10))
@@ -126,5 +126,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

@@ -178,7 +178,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import {
   required,
   emailValidator,
@@ -193,7 +193,7 @@ import {
   alphaDashValidator,
 } from '@core/utils/validation'
 
-export default defineComponent({
+export default {
   setup() {
     const requiredField = ref('')
     const numberBetween10to20 = ref('')
@@ -243,5 +243,5 @@ export default defineComponent({
       alphaDashValidator,
     }
   },
-})
+}
 </script>

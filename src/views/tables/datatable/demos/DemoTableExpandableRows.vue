@@ -60,11 +60,11 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import { mdiSquareEditOutline, mdiDotsVertical } from '@mdi/js'
 import data from '../datatable'
 
-export default defineComponent({
+export default {
   setup() {
     const statusColor = {
       /* eslint-disable key-spacing */
@@ -104,5 +104,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

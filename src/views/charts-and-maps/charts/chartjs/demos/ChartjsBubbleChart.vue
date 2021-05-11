@@ -20,11 +20,10 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import ChartjsComponentBubbleChart from './charts-components/ChartjsComponentBubbleChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentBubbleChart,
   },
@@ -33,5 +32,5 @@ export default defineComponent({
       chartjsData,
     }
   },
-})
+}
 </script>

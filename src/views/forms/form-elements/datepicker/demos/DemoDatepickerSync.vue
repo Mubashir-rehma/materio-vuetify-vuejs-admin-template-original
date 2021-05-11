@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import { defineComponent, ref, watch } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const date = new Date().toISOString().substr(0, 10)
     const pickerDate = ref(null)
@@ -66,5 +66,5 @@ export default defineComponent({
       allNotes,
     }
   },
-})
+}
 </script>

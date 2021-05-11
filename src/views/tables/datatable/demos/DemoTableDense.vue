@@ -8,10 +8,9 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import data from '../datatable'
 
-export default defineComponent({
+export default {
   setup() {
     return {
       headers: [
@@ -25,5 +24,5 @@ export default defineComponent({
       userList: data,
     }
   },
-})
+}
 </script>

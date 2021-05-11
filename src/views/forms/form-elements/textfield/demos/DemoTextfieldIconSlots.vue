@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import { mdiHelpCircleOutline, mdiMenu, mdiTarget } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const message = ref('Hey!')
     const loading = ref(false)
@@ -64,7 +64,7 @@ export default defineComponent({
 
       setTimeout(() => {
         loading.value = false
-        message.value = 'You\'ve clicked me!'
+        message.value = "You've clicked me!"
       }, 2000)
     }
 
@@ -79,5 +79,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

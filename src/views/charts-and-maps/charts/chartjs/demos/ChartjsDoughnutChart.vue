@@ -46,27 +46,37 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-import {
-  mdiMonitor, mdiTabletAndroid, mdiArrowUp, mdiArrowDown,
-} from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { mdiMonitor, mdiTabletAndroid, mdiArrowUp, mdiArrowDown } from '@mdi/js'
 import ChartjsComponentDoughnutChart from './charts-components/ChartjsComponentDoughnutChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentDoughnutChart,
   },
   setup() {
     const stockData = [
       {
-        device: 'Desktop', symbol: mdiMonitor, color: 'primary', percentage: 80, upDown: 2,
+        device: 'Desktop',
+        symbol: mdiMonitor,
+        color: 'primary',
+        percentage: 80,
+        upDown: 2,
       },
       {
-        device: 'Mobile', symbol: mdiTabletAndroid, color: 'warning', percentage: 10, upDown: 8,
+        device: 'Mobile',
+        symbol: mdiTabletAndroid,
+        color: 'warning',
+        percentage: 10,
+        upDown: 8,
       },
       {
-        device: 'Tablet', symbol: mdiTabletAndroid, color: 'success', percentage: 10, upDown: -5,
+        device: 'Tablet',
+        symbol: mdiTabletAndroid,
+        color: 'success',
+        percentage: 10,
+        upDown: -5,
       },
     ]
 
@@ -77,5 +87,5 @@ export default defineComponent({
       stockData,
     }
   },
-})
+}
 </script>

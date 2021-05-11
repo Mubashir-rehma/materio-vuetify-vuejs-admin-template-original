@@ -126,7 +126,7 @@
 
 <script>
 /* eslint-disable global-require */
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import {
   LMap,
@@ -213,8 +213,7 @@ const tileProviders = [
   {
     name: 'OpenStreetMap',
     visible: true,
-    attribution:
-      '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    attribution: '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   },
   {
@@ -226,7 +225,7 @@ const tileProviders = [
   },
 ]
 
-export default defineComponent({
+export default {
   components: {
     LMap,
     LTileLayer,
@@ -322,10 +321,12 @@ export default defineComponent({
         markersVisible: true,
       },
     ]
-    const bounds = ref(latLngBounds(
-      { lat: 51.476483373501964, lng: -0.14668464136775586 },
-      { lat: 51.52948330894063, lng: -0.019140238291583955 },
-    ))
+    const bounds = ref(
+      latLngBounds(
+        { lat: 51.476483373501964, lng: -0.14668464136775586 },
+        { lat: 51.52948330894063, lng: -0.019140238291583955 },
+      ),
+    )
 
     const alert = item => {
       // eslint-disable-next-line no-unused-vars
@@ -376,5 +377,5 @@ export default defineComponent({
       fitPolyline,
     }
   },
-})
+}
 </script>

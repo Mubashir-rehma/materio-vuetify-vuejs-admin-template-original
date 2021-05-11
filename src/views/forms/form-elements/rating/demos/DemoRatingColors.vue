@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const rating = ref(4)
 
@@ -50,5 +50,5 @@ export default defineComponent({
       rating,
     }
   },
-})
+}
 </script>

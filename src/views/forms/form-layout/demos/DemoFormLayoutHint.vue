@@ -61,9 +61,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const username = ref('')
     const email = ref('')
@@ -85,5 +85,5 @@ export default defineComponent({
       values,
     }
   },
-})
+}
 </script>

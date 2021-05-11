@@ -35,11 +35,8 @@
 
 <script>
 /* eslint-disable global-require */
-import { defineComponent } from '@vue/composition-api'
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import {
-  LMap, LTileLayer, LMarker, LIcon,
-} from 'vue2-leaflet'
+import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
 import { latLng, icon, Icon } from 'leaflet'
 import { codeCustomIcon } from './code'
 
@@ -51,13 +48,12 @@ Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 })
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     LMap,
     LTileLayer,
     LMarker,
-    LIcon,
   },
   setup() {
     const zoom = 13
@@ -86,13 +82,13 @@ export default defineComponent({
       codeCustomIcon,
     }
   },
-})
+}
 /* eslint-disable global-require */
 </script>
 
 <style lang="scss">
-.vue2leaflet-map{
-  &.leaflet-container{
+.vue2leaflet-map {
+  &.leaflet-container {
     height: 350px;
   }
 }

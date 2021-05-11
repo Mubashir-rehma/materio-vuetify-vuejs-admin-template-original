@@ -37,7 +37,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoFormValidationSimple from './demos/DemoFormValidationSimple.vue'
@@ -47,7 +46,7 @@ import DemoFormValidationTypes from './demos/DemoFormValidationTypes.vue'
 // code
 import { formValidation, formValidationValidatingMultipleRules, formValidationTypes } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoFormValidationSimple,
@@ -63,5 +62,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

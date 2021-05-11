@@ -65,7 +65,6 @@
   </v-row>
 </template>
 <script>
-import { defineComponent } from '@vue/composition-api'
 import ChartjsBarChart from './demos/ChartjsBarChart.vue'
 import ChartjsHorizontalBarChart from './demos/ChartjsHorizontalBarChart.vue'
 import ChartjsLineChart from './demos/ChartjsLineChart.vue'
@@ -76,7 +75,7 @@ import ChartjsDoughnutChart from './demos/ChartjsDoughnutChart.vue'
 import ChartjsScatterChart from './demos/ChartjsScatterChart.vue'
 import ChartjsLineAreaChart from './demos/ChartjsLineAreaChart.vue'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsBarChart,
     ChartjsHorizontalBarChart,
@@ -88,6 +87,5 @@ export default defineComponent({
     ChartjsScatterChart,
     ChartjsLineAreaChart,
   },
-  setup() {},
-})
+}
 </script>

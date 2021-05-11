@@ -31,10 +31,10 @@
 
 <script>
 /* eslint-disable no-unused-expressions */
-import { defineComponent, ref, watch } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 import { mdiCalendar } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const date = ref(null)
     const menu = ref(false)
@@ -62,5 +62,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

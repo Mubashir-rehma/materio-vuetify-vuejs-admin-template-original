@@ -7,16 +7,15 @@
   />
 </template>
 <script>
-import { defineComponent } from '@vue/composition-api'
 import VueApexCharts from 'vue-apexcharts'
 import apexChatData from './apexChartData'
 
-export default defineComponent({
+export default {
   components: {
     VueApexCharts,
   },
   setup() {
     return { apexChatData }
   },
-})
+}
 </script>

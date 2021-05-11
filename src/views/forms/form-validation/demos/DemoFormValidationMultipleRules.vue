@@ -76,9 +76,9 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { required, emailValidator, passwordValidator, confirmedValidator } from '@core/utils/validation'
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const name = ref('')
     const email = ref('')
@@ -105,5 +105,5 @@ export default defineComponent({
       confirmedValidator,
     }
   },
-})
+}
 </script>

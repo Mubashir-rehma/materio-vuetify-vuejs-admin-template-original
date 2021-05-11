@@ -99,7 +99,7 @@
 <script>
 import axios from '@axios'
 // eslint-disable-next-line object-curly-newline
-import { computed, defineComponent, ref, watch } from '@vue/composition-api'
+import { computed, ref, watch } from '@vue/composition-api'
 import {
   mdiContentSaveOutline,
   mdiBeerOutline,
@@ -110,7 +110,7 @@ import {
   mdiBookmarkMinus,
 } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const breweries = ref([])
     const isLoading = ref(false)
@@ -198,5 +198,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

@@ -21,18 +21,15 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-// demos
 import DemoCardBasic from './demos/DemoCardBasic.vue'
 import DemoCardNavigation from './demos/DemoCardNavigation.vue'
 import DemoCardSolid from './demos/DemoCardSolid.vue'
 
-export default defineComponent({
+export default {
   components: {
     DemoCardBasic,
     DemoCardNavigation,
     DemoCardSolid,
   },
-})
+}
 </script>

@@ -18,11 +18,10 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import ChartjsComponentLineChart from './charts-components/ChartjsComponentLineChart.vue'
 import chartjsData from './chartjsData'
 
-export default defineComponent({
+export default {
   components: {
     ChartjsComponentLineChart,
   },
@@ -45,5 +44,5 @@ export default defineComponent({
       chartjsData,
     }
   },
-})
+}
 </script>

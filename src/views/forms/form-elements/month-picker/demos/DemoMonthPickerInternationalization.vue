@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const picker = ref(new Date().toISOString().substr(0, 7))
 
@@ -37,5 +37,5 @@ export default defineComponent({
       picker,
     }
   },
-})
+}
 </script>

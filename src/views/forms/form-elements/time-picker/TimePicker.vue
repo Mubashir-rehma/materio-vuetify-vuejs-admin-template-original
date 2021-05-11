@@ -171,7 +171,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoTimePickerBasic from './demos/DemoTimePickerBasic.vue'
@@ -197,7 +196,7 @@ import {
   timePickerDialogAndMenu,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoTimePickerBasic,
@@ -225,5 +224,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

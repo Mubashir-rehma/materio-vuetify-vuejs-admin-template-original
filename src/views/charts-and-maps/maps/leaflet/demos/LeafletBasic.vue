@@ -20,13 +20,12 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import { LMap, LTileLayer, LCircle } from 'vue2-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { codeBasic } from './code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     LMap,
@@ -36,9 +35,9 @@ export default defineComponent({
   setup() {
     const url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     const zoom = 8
-    const center = [47.313220, -1.319482]
+    const center = [47.31322, -1.319482]
     const circle = {
-      center: [47.413220, -1.0482],
+      center: [47.41322, -1.0482],
       radius: 4500,
       color: '#EA5455',
     }
@@ -51,12 +50,12 @@ export default defineComponent({
       codeBasic,
     }
   },
-})
+}
 </script>
 
 <style lang="scss">
-.vue2leaflet-map{
-  &.leaflet-container{
+.vue2leaflet-map {
+  &.leaflet-container {
     height: 350px;
   }
 }

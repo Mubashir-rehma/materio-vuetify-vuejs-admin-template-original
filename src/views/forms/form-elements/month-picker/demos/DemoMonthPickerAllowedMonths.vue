@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const date = ref('2017-12')
 
@@ -24,5 +24,5 @@ export default defineComponent({
       allowedMonths,
     }
   },
-})
+}
 </script>

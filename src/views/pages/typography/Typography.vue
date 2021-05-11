@@ -13,16 +13,13 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-// demos
 import DemoHeadlines from './demos/DemoHeadlines.vue'
 import DemoTexts from './demos/DemoTexts.vue'
 
-export default defineComponent({
+export default {
   components: {
     DemoHeadlines,
     DemoTexts,
   },
-})
+}
 </script>

@@ -78,10 +78,10 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 import { mdiClockTimeFourOutline } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const time = ref(null)
     const menu2 = ref(false)
@@ -96,5 +96,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

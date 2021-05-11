@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import { defineComponent, ref, set } from '@vue/composition-api'
+import { ref, set } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   setup() {
     const date = new Date().toISOString().substr(0, 10)
     const done = ref([false, false, false])
@@ -39,5 +39,5 @@ export default defineComponent({
       dblClick,
     }
   },
-})
+}
 </script>

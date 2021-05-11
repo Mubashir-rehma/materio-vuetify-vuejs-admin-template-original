@@ -104,7 +104,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // Demos
 import DemoTableBasic from './demos/DemoTableBasic.vue'
@@ -132,7 +131,7 @@ import {
   codeTableKitchenSink,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     DemoTableBasic,
     AppCardCode,
@@ -162,5 +161,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

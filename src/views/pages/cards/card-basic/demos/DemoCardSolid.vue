@@ -59,11 +59,10 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 // eslint-disable-next-line object-curly-newline
 import { mdiTwitter, mdiHeart, mdiShareVariant, mdiFacebook, mdiLinkedin } from '@mdi/js'
 
-export default defineComponent({
+export default {
   setup() {
     const solidCardData = [
       {
@@ -110,5 +109,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

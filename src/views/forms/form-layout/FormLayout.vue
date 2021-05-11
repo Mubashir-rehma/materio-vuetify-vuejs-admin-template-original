@@ -106,7 +106,6 @@
 
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import { defineComponent } from '@vue/composition-api'
 
 // demos
 import DemoFormLayoutHorizontal from './demos/DemoFormLayoutHorizontal.vue'
@@ -128,7 +127,7 @@ import {
   formLayoutValidation,
 } from './demos/code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     DemoFormLayoutHorizontal,
@@ -152,5 +151,5 @@ export default defineComponent({
       },
     }
   },
-})
+}
 </script>

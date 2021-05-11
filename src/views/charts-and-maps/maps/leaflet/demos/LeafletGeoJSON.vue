@@ -16,12 +16,11 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import { LMap, LTileLayer, LGeoJson } from 'vue2-leaflet'
 import { codeGeoJSON } from './code'
 
-export default defineComponent({
+export default {
   components: {
     AppCardCode,
     LMap,
@@ -29,13 +28,15 @@ export default defineComponent({
     LGeoJson,
   },
   async created() {
-    const response = await fetch('https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson')
+    const response = await fetch(
+      'https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson',
+    )
     this.geojson = await response.json()
   },
   setup() {
     const url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     const zoom = 8
-    const center = [47.313220, -1.319482]
+    const center = [47.31322, -1.319482]
     const geojson = null
 
     return {
@@ -46,12 +47,12 @@ export default defineComponent({
       codeGeoJSON,
     }
   },
-})
+}
 </script>
 
 <style lang="scss">
-.vue2leaflet-map{
-  &.leaflet-container{
+.vue2leaflet-map {
+  &.leaflet-container {
     height: 350px;
   }
 }

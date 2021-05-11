@@ -18,14 +18,12 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
-import {
-  LMap, LTileLayer, LMarker, LPopup,
-} from 'vue2-leaflet'
+// eslint-disable-next-line object-curly-newline
+import { LMap, LTileLayer, LMarker, LPopup } from 'vue2-leaflet'
 import { codePopup } from './code'
 
-export default defineComponent({
+export default {
   components: {
     LMap,
     LTileLayer,
@@ -36,8 +34,8 @@ export default defineComponent({
   setup() {
     const url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     const zoom = 8
-    const center = [47.313220, -1.319482]
-    const markerLatLng = [47.313220, -1.319482, { draggable: 'true' }]
+    const center = [47.31322, -1.319482]
+    const markerLatLng = [47.31322, -1.319482, { draggable: 'true' }]
 
     return {
       url,
@@ -47,12 +45,12 @@ export default defineComponent({
       codePopup,
     }
   },
-})
+}
 </script>
 
 <style lang="scss">
-.vue2leaflet-map{
-  &.leaflet-container{
+.vue2leaflet-map {
+  &.leaflet-container {
     height: 350px;
   }
 }

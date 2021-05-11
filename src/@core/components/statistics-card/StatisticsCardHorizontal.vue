@@ -2,7 +2,7 @@
   <v-card outlined>
     <div class="d-flex align-center">
       <v-avatar
-        color="white"
+        :color="$vuetify.theme.dark ? '#312d4b': '#fff'"
         rounded
         size="44"
         class="elevation-4"

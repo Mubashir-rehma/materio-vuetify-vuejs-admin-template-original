@@ -1,6 +1,6 @@
 import { isEmpty } from './index'
 
-export const required = value => (value.length ? true : 'This field is required')
+export const required = value => (value && value.length ? true : 'This field is required')
 export const emailValidator = value => {
   if (isEmpty(value)) {
     return true
@@ -22,10 +22,16 @@ export const passwordValidator = password => {
   /* eslint-enable no-useless-escape */
   const validPassword = regExp.test(password)
 
-  return validPassword || 'Your Password must contain at least one uppercase, one lowercase, one special character and one digit'
+  return (
+    // eslint-disable-next-line operator-linebreak
+    validPassword ||
+    'Field must contain at least one uppercase, lowercase, special character and digit with min 8 chars'
+  )
 }
 
-export const confirmedValidator = (value, target) => value === target || 'The Confirm Password field confirmation does not match'
+export const confirmedValidator = (value, target) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  value === target || 'The Confirm Password field confirmation does not match'
 
 export const between = (value, min, max) => () => {
   const valueAsNumber = Number(value)
@@ -96,5 +102,5 @@ export const alphaDashValidator = value => {
 
   const valueAsString = String(value)
 
-  return (/^[0-9A-Z_-]*$/i).test(valueAsString) || 'All Character is not valid'
+  return /^[0-9A-Z_-]*$/i.test(valueAsString) || 'All Character is not valid'
 }

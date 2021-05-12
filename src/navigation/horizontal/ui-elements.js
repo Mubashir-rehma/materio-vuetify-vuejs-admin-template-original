@@ -82,6 +82,10 @@ export default [
             to: 'components-snackbar',
           },
           {
+            title: 'Stepper',
+            to: 'components-stepper',
+          },
+          {
             title: 'Treeview',
             to: 'components-treeview',
           },

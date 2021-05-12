@@ -162,6 +162,118 @@ $font-sizes: (
 // For creating initial avatars
 @include light-bg-provider(v-chip);
 
+//
+//* ——— Stepper ——————————————————
+//
+
+.v-stepper {
+  &.custom-header {
+    .v-stepper__step {
+      &:not(.v-stepper__step--active):not(.v-stepper__step--complete):not(.v-stepper__step--error) {
+        .v-stepper__step__step {
+          background: var(--v-primary-base) !important;
+          opacity: 0.12;
+        }
+      }
+    }
+  }
+}
+
+@include app-elevation('custom-header.v-stepper .v-stepper__step.v-stepper__step--active .v-stepper__step__step', 2);
+
+.custom-header {
+  &.v-stepper {
+    // ? Disable text-shadow from Vuetify
+    .v-stepper__step--active .v-stepper__label {
+      text-shadow: none !important;
+    }
+
+    // ? Update divider height/border-width
+    .v-divider {
+      border-width: 3px;
+      position: relative;
+      border-radius: 6px;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 6px;
+        width: 100%;
+        background: var(--v-primary-base);
+        width: 0;
+        transition: all 0.1s ease-in-out;
+        position: absolute;
+        top: -3px;
+        left: -2%;
+        border-radius: 6px;
+      }
+    }
+
+    // Update divider color if previous step is completed
+    .v-stepper__step.v-stepper__step--complete {
+      + .v-divider {
+        // background: var(--v-primary-base);
+        &::after {
+          width: 104%;
+        }
+      }
+    }
+
+    .v-stepper__step {
+      .v-stepper__step__step {
+        position: relative;
+        transform: scale(0.9);
+      }
+
+      &.v-stepper__step--complete {
+        .v-icon__svg {
+          font-size: 18px;
+          height: 18px;
+          width: 18px;
+        }
+      }
+
+      &.v-stepper__step--active {
+        .v-stepper__step__step {
+          transform: scale(0.8);
+
+          &::after {
+            content: '';
+            display: block;
+            background: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: scale(0.5);
+          }
+        }
+      }
+
+      &.v-stepper__step--inactive {
+        .v-stepper__step__step {
+          transform: scale(0.8);
+
+          &::after {
+            content: '';
+            display: block;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: scale(0.75);
+          }
+        }
+      }
+    }
+  }
+}
+
 // ————————————————————————————————————
 //* ——— Misc
 // ————————————————————————————————————

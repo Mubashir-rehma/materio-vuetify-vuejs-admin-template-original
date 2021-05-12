@@ -129,7 +129,7 @@ button {
 @include app-elevation('v-pagination__navigation', 2);
 
 // VStepper
-@include app-elevation('v-stepper', $stepper-elevation);
+@include app-elevation('v-stepper:not(.v-sheet--outlined)', $stepper-elevation);
 @include app-elevation('v-stepper__content', $stepper-header-elevation);
 
 // VSwitch
@@ -471,7 +471,7 @@ button {
   .v-chip__close svg {
     opacity: 0.38;
   }
-  &:not(.v-chip--no-color):not(.v-chip--outlined) {
+  &:not(.v-chip-light-bg):not(.v-chip--no-color):not(.v-chip--outlined) {
     color: #fff !important;
   }
 }

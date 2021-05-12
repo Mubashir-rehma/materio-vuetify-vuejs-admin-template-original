@@ -120,7 +120,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -253,7 +253,7 @@ $material-dark: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
@@ -667,6 +667,15 @@ $text-field-label-top: 13px;
 // Adjust selected option height (shall be same as text field)
 // ? We have overridden it in `overrides.scss`
 // $select-selections-margin: 15px 4px 7px 0;
+
+//
+//* ——— Stepper ——————————————————
+//
+
+$stepper-border-radius: $card-border-radius;
+$stepper-elevation: 6;
+$stepper-header-elevation: 0;
+$stepper-content-padding: 24px;
 
 //
 //* ——— Table ——————————————————

@@ -104,6 +104,14 @@ const components = [
     },
   },
   {
+    path: '/components/stepper',
+    name: 'components-stepper',
+    component: () => import('@/views/components/stepper/Stepper.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
     path: '/components/treeview',
     name: 'components-treeview',
     component: () => import('@/views/components/treeview/Treeview.vue'),

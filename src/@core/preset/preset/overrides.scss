@@ -720,3 +720,6 @@ button {
     color: map-deep-get($material, 'text', 'secondary') !important;
   }
 }
+
+// apex chart style overrides
+@import './libs/apex-chart.scss';

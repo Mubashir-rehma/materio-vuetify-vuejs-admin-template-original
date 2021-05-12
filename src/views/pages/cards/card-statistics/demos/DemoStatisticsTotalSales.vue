@@ -32,7 +32,6 @@
 <script>
 import { ref } from '@vue/composition-api'
 import VueApexCharts from 'vue-apexcharts'
-import { getVuetify } from '@core/utils'
 
 import { mdiChevronUp } from '@mdi/js'
 
@@ -41,15 +40,12 @@ export default {
     VueApexCharts,
   },
   setup() {
-    const $vuetify = getVuetify()
-
     // chart options
     const totalSalesChart = ref({
       series: [85, 20, 30, 50],
       chartOptions: {
         stroke: {
           width: 5,
-          colors: $vuetify.theme.dark ? '#312d4b' : '#fff',
         },
         legend: {
           show: false,
@@ -69,14 +65,12 @@ export default {
                   fontFamily: 'Inter',
                   offsetY: 15,
                   fontWeight: 400,
-                  color: $vuetify.theme.dark ? '#fff' : 'rgba(94, 86, 105, 0.68)',
                 },
                 value: {
                   fontSize: '1.25rem',
                   fontFamily: 'Inter',
                   fontWeight: 'bold',
                   offsetY: -20,
-                  color: $vuetify.theme.dark ? '#fff' : 'rgba(94, 86, 105, 0.68)',
                   formatter(val) {
                     // eslint-disable-next-line radix
                     return `${parseInt(val)}%`
@@ -89,7 +83,6 @@ export default {
                   label: '1 Quarter',
                   fontFamily: 'Inter',
                   fontWeight: 400,
-                  color: $vuetify.theme.dark ? '#fff' : 'rgba(94, 86, 105, 0.68)',
                   formatter() {
                     return '18%'
                   },

@@ -662,6 +662,12 @@ button {
 
 @include app-elevation('v-tabs:not(.v-tabs--vertical)', 3, true);
 
+// tabs shadow 
+.v-tabs:not(.v-tabs--vertical){
+  position: relative;
+  z-index: 1;
+}
+
 .v-tabs {
   &.v-tabs--vertical {
     .v-tabs-slider-wrapper {

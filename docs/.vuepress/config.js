@@ -117,15 +117,15 @@ module.exports = {
     },
   },
   plugins: [
-    // [
-    //   '@vuepress/medium-zoom',
-    //   {
-    //     selector: 'img.medium-zoom',
-    //     options: {
-    //       background: '#0e0e0ecc',
-    //       margin: 50,
-    //     },
-    //   },
-    // ],
+    [
+      '@vuepress/medium-zoom',
+      {
+        selector: 'img.medium-zoom',
+        options: {
+          background: '#0e0e0ecc',
+          margin: 50,
+        },
+      },
+    ],
   ],
 }

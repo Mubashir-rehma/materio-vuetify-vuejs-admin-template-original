@@ -6,14 +6,17 @@
           Total Sales
         </v-card-title>
         <v-card-text class="text-no-wrap pb-0">
-          <p class="mb-0">
+          <p class="text-xs mb-0">
             Calculated in last 7 days
           </p>
-          <span class="text-xl font-weight-bold text--primary">$25,980</span>
-          <v-icon color="success">
+          <span class="text-xl font-weight-semibold text--primary mr-1">$25,980</span>
+          <v-icon
+            size="20"
+            color="success"
+          >
             {{ icons.mdiChevronUp }}
           </v-icon>
-          <span class="success--text">15.6%</span>
+          <span class="success--text text-xs font-weight-semibold">15.6%</span>
         </v-card-text>
       </div>
       <div>
@@ -45,7 +48,7 @@ export default {
       series: [85, 20, 30, 50],
       chartOptions: {
         stroke: {
-          width: 5,
+          width: 2,
         },
         legend: {
           show: false,

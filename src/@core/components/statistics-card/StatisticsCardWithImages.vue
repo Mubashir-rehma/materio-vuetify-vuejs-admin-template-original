@@ -2,14 +2,15 @@
   <v-card>
     <div class="d-flex">
       <div>
-        <v-card-title class="text-base font-weight-bold">
+        <v-card-title class="text-base font-weight-semibold">
           {{ statTitle }}
         </v-card-title>
-        <v-card-text class="d-flex">
-          <h2 class="text-2xl">
+        <v-card-text class="d-flex align-center">
+          <h2 class="text-2xl font-weight-semibold">
             {{ statistics }}
-          </h2> <span
-            class="text-xs"
+          </h2>
+          <span
+            class="text-xs ml-1"
             :class="checkChange(change) ? 'success--text':'error--text'"
           > {{ change }}</span>
         </v-card-text>
@@ -17,7 +18,7 @@
           <v-chip
             small
             :color="chipColor"
-            class="v-chip-light-bg font-weight-bold"
+            class="v-chip-light-bg font-weight-semibold"
             :class="`${chipColor}--text`"
           >
             {{ chipText }}

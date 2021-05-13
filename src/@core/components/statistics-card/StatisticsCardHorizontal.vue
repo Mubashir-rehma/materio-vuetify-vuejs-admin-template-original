@@ -5,7 +5,7 @@
         :color="$vuetify.theme.dark ? '#312d4b': '#fff'"
         rounded
         size="44"
-        class="elevation-4"
+        class="elevation-3"
       >
         <v-icon
           size="30"
@@ -19,10 +19,10 @@
         <span class="text-xs">{{ statTitle }}</span>
         <p class="text-no-wrap mb-0">
           <span
-            class="text-xl font-weight-bold"
+            class="text-xl font-weight-semibold text--primary"
           >{{ statistics }}</span>
           <v-icon
-            size="24"
+            size="20"
             :color="checkChange(change) ? 'success':'error'"
           >
             {{ checkChange(change) ?mdiChevronUp :mdiChevronDown }}

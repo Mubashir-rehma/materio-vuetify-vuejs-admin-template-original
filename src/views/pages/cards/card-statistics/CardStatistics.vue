@@ -255,9 +255,9 @@
         sm="4"
       >
         <statistics-card-area-chart
-          :stat-title="revenueAreaChart.statTitle"
-          :statistics="revenueAreaChart.statistics"
-          :chart-series="revenueAreaChart.series"
+          :stat-title="growthAreaChart.statTitle"
+          :statistics="growthAreaChart.statistics"
+          :chart-series="growthAreaChart.series"
         ></statistics-card-area-chart>
       </v-col>
       <v-col
@@ -299,7 +299,6 @@
 </template>
 
 <script>
-import { ref } from '@vue/composition-api'
 import StatisticsCardHorizontal from '@/@core/components/statistics-card/StatisticsCardHorizontal.vue'
 import StatisticsCardVertical from '@/@core/components/statistics-card/StatisticsCardVertical.vue'
 import StatisticsCardWithImages from '@core/components/statistics-card/StatisticsCardWithImages.vue'
@@ -309,7 +308,6 @@ import StatisticsCardAreaChart from '@core/components/statistics-card/Statistics
 import StatisticsCardRadialBarChart from '@core/components/statistics-card/StatisticsCardRadialBarChart.vue'
 import StatisticsCardSessionBarChart from '@core/components/statistics-card/StatisticsCardSessionBarChart.vue'
 import StatisticsCardProfitLineChart from '@core/components/statistics-card/StatisticsCardProfitLineChart.vue'
-import { getVuetify } from '@core/utils'
 
 // eslint-disable-next-line object-curly-newline
 import { mdiAccountOutline, mdiCurrencyUsd, mdiTrendingUp, mdiPoll, mdiLabelVariantOutline, mdiCheck } from '@mdi/js'
@@ -334,8 +332,6 @@ export default {
     DemoStatisticsTotalSales,
   },
   setup() {
-    const $vuetify = getVuetify()
-
     // transparent background card
     const newCustomerOptions = {
       statTitle: 'New Customers',
@@ -371,65 +367,6 @@ export default {
       icon: mdiPoll,
       color: 'warning',
     }
-
-    // chart options
-    const totalSalesChart = ref({
-      series: [85, 20, 30, 50],
-      chartOptions: {
-        stroke: {
-          width: 5,
-          colors: $vuetify.theme.dark ? '#312d4b' : '#fff',
-        },
-        legend: {
-          show: false,
-        },
-        colors: ['#9155fd', '#d4d5d7', '#ffb400', '#ff4c51'],
-        dataLabels: {
-          enabled: false,
-        },
-        plotOptions: {
-          pie: {
-            donut: {
-              size: '80%',
-              labels: {
-                show: true,
-                name: {
-                  fontSize: '0.75rem',
-                  fontFamily: 'Inter',
-                  offsetY: 15,
-                  fontWeight: 400,
-                  color: $vuetify.theme.dark ? '#fff' : 'rgba(94, 86, 105, 0.68)',
-                },
-                value: {
-                  fontSize: '1.25rem',
-                  fontFamily: 'Inter',
-                  fontWeight: 'bold',
-                  offsetY: -20,
-                  color: $vuetify.theme.dark ? '#fff' : 'rgba(94, 86, 105, 0.68)',
-                  formatter(val) {
-                    // eslint-disable-next-line radix
-                    return `${parseInt(val)}%`
-                  },
-                },
-
-                total: {
-                  show: true,
-                  fontSize: '0.75rem',
-                  label: '1 Quarter',
-                  fontFamily: 'Inter',
-                  fontWeight: 400,
-                  color: $vuetify.theme.dark ? '#fff' : 'rgba(94, 86, 105, 0.68)',
-                  formatter() {
-                    return '18%'
-                  },
-                },
-              },
-            },
-          },
-        },
-        labels: ['1 Quarter', '2 Quarter', '3 Quarter', '4 Quarter'],
-      },
-    })
 
     // vertical card options
     const newProjectOptions = {
@@ -564,9 +501,9 @@ export default {
       ],
     }
 
-    const revenueAreaChart = {
-      statTitle: 'Total Revenue',
-      statistics: '$35.4k',
+    const growthAreaChart = {
+      statTitle: 'Total Groth',
+      statistics: '42.5k',
       series: [
         {
           name: 'Subscribers',
@@ -596,7 +533,6 @@ export default {
       totalRevenueOptions,
       newTransactions,
       totalProfit,
-      totalSalesChart,
 
       // horizontal card
       newProjectOptions,
@@ -616,7 +552,7 @@ export default {
       sessionBarChart,
       revenueLineChart,
       barChartWithGap,
-      revenueAreaChart,
+      growthAreaChart,
       salesRadialChart,
       profitLineChart,
     }

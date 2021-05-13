@@ -4,6 +4,7 @@
       <v-avatar
         :color="color"
         size="38"
+        class="elevation-3"
       >
         <v-icon
           size="24"
@@ -17,17 +18,17 @@
         {{ mdiDotsVertical }}
       </v-icon>
     </v-card-title>
-    <v-card-text class="text-no-wrap font-weight-bold text--primary">
-      <p class="mb-1">
+    <v-card-text class="text-no-wrap text--primary">
+      <p class="font-weight-semibold text-sm mb-1">
         {{ statTitle }}
       </p>
 
-      <span class="text-2xl">{{ statistics }}</span>
+      <span class="font-weight-semibold text-2xl">{{ statistics }}</span>
       <span
-        class="percentage text-xs font-weight-light"
+        class="percentage text-xs"
         :class="checkChange(change) ? 'success--text':'error--text'"
       > {{ change }}</span>
-      <p class="font-weight-light text-xs mt-2 mb-0">
+      <p class="text-xs text--secondary mt-2 mb-0">
         {{ subtitle }}
       </p>
     </v-card-text>

@@ -1,7 +1,7 @@
 <template>
   <v-card>
-    <v-card-title class="justify-space-between">
-      <span>Statistics Card</span>
+    <v-card-title class="text-base justify-space-between">
+      <span class="font-weight-semibold">Statistics Card</span>
       <v-icon class="cursor-pointer">
         {{ icons.mdiDotsVertical }}
       </v-icon>
@@ -31,7 +31,7 @@
               <p class="text-xs mb-0">
                 Sales
               </p>
-              <span class="text-xl font-weight-bold">245k</span>
+              <span class="text--primary text-xl font-weight-bold">245k</span>
             </div>
           </div>
         </v-col>
@@ -58,7 +58,7 @@
               <p class="text-xs mb-0">
                 Customers
               </p>
-              <span class="text-xl font-weight-bold">12.5k</span>
+              <span class="text--primary  text-xl font-weight-bold">12.5k</span>
             </div>
           </div>
         </v-col>
@@ -83,9 +83,9 @@
             </v-avatar>
             <div class="ml-3">
               <p class="text-xs mb-0">
-                Producs
+                Product
               </p>
-              <span class="text-xl font-weight-bold">1.54k</span>
+              <span class="text--primary text-xl font-weight-bold">1.54k</span>
             </div>
           </div>
         </v-col>
@@ -112,7 +112,7 @@
               <p class="text-xs mb-0">
                 Revenue
               </p>
-              <span class="text-xl font-weight-bold">$88k</span>
+              <span class="text--primary text-xl font-weight-bold">$88k</span>
             </div>
           </div>
         </v-col>

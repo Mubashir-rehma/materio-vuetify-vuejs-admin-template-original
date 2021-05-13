@@ -4,6 +4,7 @@ import {
   mdiAlphaBBoxOutline,
   mdiAlphaTBoxOutline,
   mdiBellOutline,
+  mdiChartDonut,
   mdiCheckboxBlankOutline,
   mdiCheckboxMarkedOutline,
   mdiCheckCircleOutline,
@@ -17,8 +18,10 @@ import {
   mdiFormatAlignCenter,
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
+  mdiMapOutline,
   mdiMemory,
   mdiPlus,
+  mdiPoll,
   mdiPound,
   mdiRadioboxMarked,
   mdiRayVertex,
@@ -32,7 +35,11 @@ import {
 // prettier-ignore
 export default [
   { header: 'Pages' },
+  //ui
+  { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },
   // Cards
+  { title: 'Card Basic', to: { name: 'card-basic' }, icon: mdiCreditCardOutline },
+  { title: 'Card Statistics', to: { name: 'card-statistics' }, icon: mdiCreditCardOutline },
   { title: 'Card Actions', to: { name: 'card-actions' }, icon: mdiCreditCardOutline },
 
   // Components
@@ -68,7 +75,15 @@ export default [
   { title: 'Form Month Picker', to: { name: 'form-month-picker' }, icon: mdiClockOutline },
   { title: 'Form Time Picker', to: { name: 'form-time-picker' }, icon: mdiClockOutline },
   { title: 'Rating', to: { name: 'form-rating' }, icon: mdiStarOutline },
-  { title: 'Apex Chart', to: { name: 'apex-chart' }, icon: mdiStarOutline },
+
+  // chart and maps
+  { title: 'Apex Chart', to: { name: 'apex-chart' }, icon: mdiChartDonut },
+  { title: 'Chartjs', to: { name: 'chartjs-chart' }, icon: mdiPoll },
+  { title: 'Leaflet Maps', to: { name: 'leaflet-maps' }, icon: mdiMapOutline },
+
+  // tables
+  { title: 'Simple Table', to: { name: 'table-simple' }, icon: mdiContentCopy },
+  { title: 'Datatable', to: { name: 'table-data-table' }, icon: mdiContentCopy },
 
   // Files
   { header: 'Files' },

@@ -120,7 +120,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -253,7 +253,7 @@ $material-dark: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
@@ -290,6 +290,8 @@ $material-dark: map-deep-merge(
       // ! Value of `map-deep-get($material-dark, 'background')`
         'indeterminateTime': #28243d
     ),
+    // ! Value of `map-deep-get($material-dark, 'cards')`
+      'bg-color': #312d4b,
     // * New
       'primary-shade': $primary-shade--dark,
     'shadow-color': $shadow-color--dark

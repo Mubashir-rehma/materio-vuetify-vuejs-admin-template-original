@@ -194,6 +194,12 @@ $font-sizes: (
 
 @include app-elevation('custom-header.v-stepper .v-stepper__step.v-stepper__step--active .v-stepper__step__step', 2);
 
+// ? Set inner circle color of inactive step dark compatible
+@include theme('custom-header.v-stepper .v-stepper__step.v-stepper__step--inactive .v-stepper__step__step::after') using
+  ($material) {
+  background-color: map-deep-get($material, 'cards');
+}
+
 .custom-header {
   &.v-stepper {
     // ? Disable text-shadow from Vuetify
@@ -272,7 +278,7 @@ $font-sizes: (
           &::after {
             content: '';
             display: block;
-            background: #fff;
+            // background: #fff;
             position: absolute;
             top: 0;
             left: 0;

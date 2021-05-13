@@ -2,9 +2,7 @@
   <v-row>
     <v-col cols="12">
       <!-- Main Card -->
-      <app-card-actions
-        @refresh="refetchData"
-      >
+      <app-card-actions @refresh="refetchData">
         <template slot="title">
           Card Actions
         </template>

@@ -1,5 +1,5 @@
 <template>
-  <v-form>
+  <v-form class="multi-col-validation">
     <v-row>
       <v-col
         cols="12"

@@ -101,6 +101,26 @@
         </v-card-text>
       </app-card-code>
     </v-col>
+
+    <!-- form with tabs -->
+    <v-col cols="12">
+      <app-card-code
+        title="Form with Tabs"
+        :code="codeSnippets.formLayoutTabs"
+      >
+        <demo-form-layout-tabs></demo-form-layout-tabs>
+      </app-card-code>
+    </v-col>
+
+    <!-- collapsible -->
+    <v-col cols="12">
+      <app-card-code
+        title="Collapsible Section"
+        :code="codeSnippets.formLayoutCollapsible"
+      >
+        <demo-form-layout-collapsible></demo-form-layout-collapsible>
+      </app-card-code>
+    </v-col>
   </v-row>
 </template>
 
@@ -115,6 +135,8 @@ import DemoFormLayoutVerticalFormWithIcons from './demos/DemoFormLayoutVerticalF
 import DemoFormLayoutMultipleColumn from './demos/DemoFormLayoutMultipleColumn.vue'
 import DemoFormLayoutHint from './demos/DemoFormLayoutHint.vue'
 import DemoFormLayoutValidation from './demos/DemoFormLayoutValidation.vue'
+import DemoFormLayoutTabs from './demos/DemoFormLayoutTabs.vue'
+import DemoFormLayoutCollapsible from './demos/DemoFormLayoutCollapsible.vue'
 
 // code
 import {
@@ -125,6 +147,8 @@ import {
   formLayoutMultipleColumn,
   formLayoutHint,
   formLayoutValidation,
+  formLayoutTabs,
+  formLayoutCollapsible,
 } from './demos/code'
 
 export default {
@@ -137,6 +161,8 @@ export default {
     DemoFormLayoutMultipleColumn,
     DemoFormLayoutHint,
     DemoFormLayoutValidation,
+    DemoFormLayoutTabs,
+    DemoFormLayoutCollapsible,
   },
   setup() {
     return {
@@ -148,6 +174,8 @@ export default {
         formLayoutMultipleColumn,
         formLayoutHint,
         formLayoutValidation,
+        formLayoutTabs,
+        formLayoutCollapsible,
       },
     }
   },

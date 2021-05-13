@@ -12,5 +12,12 @@
             "@import '~@user-variables;"
         ],
         "description": "Import User SASS variables"
-    }
+    },
+    "Import from Vue composition API plugin": {
+        "prefix": "icompapi",
+        "body": [
+            "import { ${1:ref} } from '@vue/composition-api'"
+        ],
+        "description": "Import from Vue composition API plugin"
+    },
 }

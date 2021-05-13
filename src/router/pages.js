@@ -31,6 +31,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/cards/actions',
+    name: 'card-actions',
+    component: () => import('@/views/pages/cards/card-actions/CardActions.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

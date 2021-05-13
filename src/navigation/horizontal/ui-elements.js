@@ -23,6 +23,10 @@ export default [
             title: 'Statistics',
             to: 'card-statistics',
           },
+          {
+            title: 'Actions',
+            to: 'card-actions',
+          },
         ],
       },
       {

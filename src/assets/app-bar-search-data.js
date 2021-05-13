@@ -32,6 +32,10 @@ import {
 // prettier-ignore
 export default [
   { header: 'Pages' },
+  // Cards
+  { title: 'Card Actions', to: { name: 'card-actions' }, icon: mdiCreditCardOutline },
+
+  // Components
   { title: 'Alert', to: { name: 'components-alert' }, icon: mdiAlertOutline },
   { title: 'Avatar', to: { name: 'components-avatar' }, icon: mdiAccountOutline },
   { title: 'Badge', to: { name: 'components-badge' }, icon: mdiTagOutline },

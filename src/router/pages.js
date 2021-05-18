@@ -16,6 +16,14 @@ const pages = [
     },
   },
   {
+    path: '/ui/gamification',
+    name: 'ui-gamification',
+    component: () => import('@/views/pages/gamification/Gamification.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
     path: '/cards/basic',
     name: 'card-basic',
     component: () => import('@/views/pages/cards/card-basic/CardBasic.vue'),

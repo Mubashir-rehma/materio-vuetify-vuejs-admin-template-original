@@ -10,6 +10,7 @@ import {
   mdiCheckCircleOutline,
   mdiClockOutline,
   mdiContentCopy,
+  mdiControllerClassicOutline,
   mdiCreditCardOutline,
   mdiDebugStepOver,
   mdiDotsHorizontal,
@@ -37,6 +38,7 @@ export default [
   { header: 'Pages' },
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },
+  { title: 'Gamification', to: { name: 'ui-gamification' }, icon: mdiControllerClassicOutline },
   // Cards
   { title: 'Card Basic', to: { name: 'card-basic' }, icon: mdiCreditCardOutline },
   { title: 'Card Statistics', to: { name: 'card-statistics' }, icon: mdiCreditCardOutline },

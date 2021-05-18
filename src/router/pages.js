@@ -39,6 +39,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/cards/advance',
+    name: 'card-advance',
+    component: () => import('@/views/pages/cards/card-advance/CardAdvance.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

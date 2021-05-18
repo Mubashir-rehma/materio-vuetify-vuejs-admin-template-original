@@ -28,6 +28,10 @@ export default [
         to: 'card-statistics',
       },
       {
+        title: 'Advance',
+        to: 'card-advance',
+      },
+      {
         title: 'Actions',
         to: 'card-actions',
       },

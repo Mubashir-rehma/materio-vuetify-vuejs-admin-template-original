@@ -1,0 +1,66 @@
+<template>
+  <v-card>
+    <v-img src="/images/pages/cafe-badilico.jpg"></v-img>
+    <v-card-text class="d-flex align-center">
+      <div>
+        <v-card-title class="pl-0">
+          Cafe Badilico
+        </v-card-title>
+        <v-card-subtitle class="d-flex align-center pl-0 pb-0">
+          <v-rating
+            dense
+            background-color="warning"
+            color="warning"
+            :value="5"
+          ></v-rating>
+          <span class="ml-3">5 Star (245)</span>
+        </v-card-subtitle>
+      </div>
+      <v-spacer></v-spacer>
+      <v-icon class="cursor-pointer">
+        {{ icons.mdiDotsVertical }}
+      </v-icon>
+    </v-card-text>
+    <v-card-text>
+      <p>
+        Italian Cafe
+      </p>
+      <p>The refrigerated dairy aisle of your local grocery store can be a great source tasty, convenient selections for your.</p>
+      <v-divider></v-divider>
+      <p class="text-base text--primary mt-3">
+        Tonight’s availability
+      </p>
+      <div>
+        <v-chip class="mr-3">
+          5:30PM
+        </v-chip>
+        <v-chip class="mr-3">
+          7:00PM
+        </v-chip>
+        <v-chip>7:15PM</v-chip>
+      </div>
+    </v-card-text>
+    <v-card-actions class="dense">
+      <v-btn
+        text
+        color="primary"
+      >
+        Book Now
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+
+<script>
+import { mdiDotsVertical } from '@mdi/js'
+
+export default {
+  setup() {
+    return {
+      icons: {
+        mdiDotsVertical,
+      },
+    }
+  },
+}
+</script>

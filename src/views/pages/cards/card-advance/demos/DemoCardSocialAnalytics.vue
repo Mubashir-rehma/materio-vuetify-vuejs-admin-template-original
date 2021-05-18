@@ -1,0 +1,80 @@
+<template>
+  <v-card>
+    <v-card-title>
+      <span>Social Analytics</span>
+      <v-spacer></v-spacer>
+      <v-icon class="cursor-pointer">
+        {{ icons.mdiDotsVertical }}
+      </v-icon>
+    </v-card-title>
+    <v-card-text>
+      <div
+        v-for="(data,index) in socialAnalytics"
+        :key="data.avatar"
+        :class="`d-flex align-center ${index > 0 ?'mt-4':''}`"
+      >
+        <v-avatar
+          :color="data.color"
+          size="40"
+          :class="`v-avatar-light-bg ${data.color}--text`"
+        >
+          <v-img
+            contain
+            height="20"
+            :src="data.avatar"
+          ></v-img>
+        </v-avatar>
+        <div class="ml-4">
+          <h2 class="text-xl">
+            {{ data.title }}
+          </h2>
+          <p class="mb-0">
+            {{ data.subtitle }}
+          </p>
+        </div>
+      </div>
+    </v-card-text>
+  </v-card>
+</template>
+
+<script>
+import { mdiDotsVertical } from '@mdi/js'
+
+export default {
+  setup() {
+    const socialAnalytics = [
+      {
+        avatar: '/images/pages/heart-medical.png',
+        color: 'primary',
+        title: '42.8k',
+        subtitle: 'Number of like',
+      },
+      {
+        avatar: '/images/pages/graph-bar.png',
+        color: 'warning',
+        title: '21.2k',
+        subtitle: 'Number of Followers',
+      },
+      {
+        avatar: '/images/pages/comment-alt-lines.png',
+        color: 'info',
+        title: '2.4k',
+        subtitle: 'Number of Comments',
+      },
+      {
+        avatar: '/images/pages/user.png',
+        color: 'success',
+        title: '389.50k',
+        subtitle: 'Number of Visits',
+      },
+    ]
+
+    return {
+      socialAnalytics,
+      icons: {
+        mdiDotsVertical,
+      },
+    }
+  },
+}
+</script>

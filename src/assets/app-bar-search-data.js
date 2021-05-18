@@ -40,6 +40,7 @@ export default [
   // Cards
   { title: 'Card Basic', to: { name: 'card-basic' }, icon: mdiCreditCardOutline },
   { title: 'Card Statistics', to: { name: 'card-statistics' }, icon: mdiCreditCardOutline },
+  { title: 'Card Advance', to: { name: 'card-advance' }, icon: mdiCreditCardOutline },
   { title: 'Card Actions', to: { name: 'card-actions' }, icon: mdiCreditCardOutline },
 
   // Components

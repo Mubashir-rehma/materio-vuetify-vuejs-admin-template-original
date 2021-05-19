@@ -71,6 +71,14 @@ const pages = [
       layout: 'blank',
     },
   },
+  {
+    path: '/pages/authentication/register-v1',
+    name: 'auth-register-v1',
+    component: () => import('@/views/pages/authentication/register-v1/Register-v1.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

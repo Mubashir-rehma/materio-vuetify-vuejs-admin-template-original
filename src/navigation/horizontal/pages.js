@@ -14,6 +14,11 @@ export default [
             to: 'auth-login-v1',
             target: '_blank',
           },
+          {
+            title: 'Register V1',
+            to: 'auth-register-v1',
+            target: '_blank',
+          },
 
           // {
           //   title: 'Login v2',

@@ -1,5 +1,6 @@
 import {
   mdiAccountOutline,
+  mdiAccountPlusOutline,
   mdiAlertOutline,
   mdiAlphaBBoxOutline,
   mdiAlphaTBoxOutline,
@@ -20,6 +21,7 @@ import {
   mdiFormatAlignCenter,
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
+  mdiLockOutline,
   mdiMapOutline,
   mdiMemory,
   mdiPlus,
@@ -37,6 +39,9 @@ import {
 // prettier-ignore
 export default [
   { header: 'Pages' },
+  // authentication
+  { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },
+  { title: 'Register v1', to: { name: 'auth-register-v1' }, icon: mdiAccountPlusOutline },
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },
   { title: 'Gamification', to: { name: 'ui-gamification' }, icon: mdiControllerClassicOutline },

@@ -40,10 +40,11 @@
               >
                 <v-text-field
                   outlined
-                  type="password"
+                  :type="isPasswordVisible ? 'text' : 'password'"
                   label="Password"
                   placeholder="Password"
-                  hide-details
+                  :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
+                  @click:append="isPasswordVisible = !isPasswordVisible"
                 ></v-text-field>
               </v-col>
               <v-col
@@ -133,16 +134,22 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle } from '@mdi/js'
+import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+import { ref } from '@vue/composition-api'
 
 export default {
   setup() {
+    const isPasswordVisible = ref(false)
+
     return {
+      isPasswordVisible,
       icons: {
         mdiFacebook,
         mdiTwitter,
         mdiGithub,
         mdiGoogle,
+        mdiEye,
+        mdiEyeOff,
       },
     }
   },

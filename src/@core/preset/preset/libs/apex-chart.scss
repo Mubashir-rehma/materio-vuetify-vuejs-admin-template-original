@@ -7,7 +7,7 @@
   }
   .apexcharts-tooltip {
     background: map-deep-get($shades, 'white');
-    border-color: map-deep-get($material-light, 'dividers');  
+    border-color: map-deep-get($material-light, 'dividers');
     .apexcharts-tooltip-title {
       background: map-deep-get($shades, 'white') !important;
       border-color: map-deep-get($material-light, 'dividers') !important;

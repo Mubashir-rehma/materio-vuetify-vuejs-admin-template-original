@@ -29,7 +29,7 @@ import {
   mdiStarOutline,
   mdiTagOutline,
   mdiToggleSwitchOffOutline,
-  mdiViewGridOutline,
+  mdiViewGridOutline
 } from '@mdi/js'
 
 /* eslint-disable */
@@ -44,6 +44,7 @@ export default [
   { title: 'Card Statistics', to: { name: 'card-statistics' }, icon: mdiCreditCardOutline },
   { title: 'Card Advance', to: { name: 'card-advance' }, icon: mdiCreditCardOutline },
   { title: 'Card Actions', to: { name: 'card-actions' }, icon: mdiCreditCardOutline },
+  { title: 'Card Chart', to: { name: 'card-chart' }, icon: mdiChartBar },
 
   // Components
   { title: 'Alert', to: { name: 'components-alert' }, icon: mdiAlertOutline },

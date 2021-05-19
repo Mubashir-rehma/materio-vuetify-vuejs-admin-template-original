@@ -41,6 +41,10 @@ export default [
             title: 'Actions',
             to: 'card-actions',
           },
+          {
+            title: 'Chart',
+            to: 'card-chart',
+          },
         ],
       },
       {

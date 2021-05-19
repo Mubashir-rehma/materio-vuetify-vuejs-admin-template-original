@@ -7,6 +7,9 @@
 // Custom Classes
 @import './classes.scss';
 
+// Mixins
+@import './mixins';
+
 // Component Variables
 @import '~vuetify/src/components/VAppBar/_variables.scss';
 @import '~vuetify/src/components/VAlert/_variables.scss';
@@ -171,7 +174,7 @@ button {
 @include app-elevation('v-sheet.v-banner:not(.v-sheet--outlined)', $banner-elevation, true);
 
 // VCard
-@include app-elevation('v-sheet.v-card:not(.v-sheet--outlined)', $card-elevation, true);
+@include app-elevation('v-sheet.v-card:not(.v-sheet--outlined)', $card-elevation);
 
 // VFooter
 @include app-elevation('v-sheet.v-footer:not(.v-sheet--outlined)', $footer-elevation, true);
@@ -662,8 +665,8 @@ button {
 
 @include app-elevation('v-tabs:not(.v-tabs--vertical)', 3, true);
 
-// tabs shadow 
-.v-tabs:not(.v-tabs--vertical){
+// tabs shadow
+.v-tabs:not(.v-tabs--vertical) {
   position: relative;
   z-index: 1;
 }
@@ -718,6 +721,16 @@ button {
   }
   td {
     color: map-deep-get($material, 'text', 'secondary') !important;
+  }
+}
+
+//
+//* ——— Timeline ——————————————————
+//
+
+.v-timeline {
+  .v-timeline-item:last-child {
+    padding-bottom: 0;
   }
 }
 

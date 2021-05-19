@@ -293,6 +293,44 @@ $font-sizes: (
   }
 }
 
+//
+//* ——— Timeline ——————————————————
+//
+
+.timeline-custom-dense {
+  padding-top: 0 !important;
+
+  .v-timeline-item {
+    justify-content: flex-end;
+  }
+  .v-timeline-item__body {
+    max-width: unset !important;
+  }
+  .v-timeline-item__divider {
+    min-width: unset;
+    margin-right: 1rem;
+  }
+  &:not(.v-timeline--reverse):before {
+    left: 11px !important;
+  }
+}
+
+@include app-elevation('v-timeline.timeline-custom-dots .v-timeline-item__inner-dot', 1, true);
+.v-timeline.timeline-custom-dots {
+  .v-timeline-item__divider {
+    align-items: flex-start;
+  }
+
+  .v-timeline-item__dot {
+    box-shadow: none !important;
+  }
+  .v-timeline-item__inner-dot {
+    height: 12px;
+    margin: 6px;
+    width: 12px;
+  }
+}
+
 // ————————————————————————————————————
 //* ——— Misc
 // ————————————————————————————————————

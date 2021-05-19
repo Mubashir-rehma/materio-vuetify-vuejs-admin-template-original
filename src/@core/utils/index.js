@@ -47,3 +47,11 @@ export const getInitialName = fullName =>
     .split(' ')
     .map(n => n[0])
     .join('')
+
+// ——— Add Alpha To color ——————— //
+
+export const addAlpha = (color, opacity) => {
+  const opacityLocal = Math.round(Math.min(Math.max(opacity || 1, 0), 1) * 255)
+
+  return color + opacityLocal.toString(16).toUpperCase()
+}

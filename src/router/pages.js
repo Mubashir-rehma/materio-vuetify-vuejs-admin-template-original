@@ -48,6 +48,14 @@ const pages = [
     },
   },
   {
+    path: '/cards/chart',
+    name: 'card-chart',
+    component: () => import('@/views/pages/cards/card-chart/CardChart.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
     path: '/cards/advance',
     name: 'card-advance',
     component: () => import('@/views/pages/cards/card-advance/CardAdvance.vue'),

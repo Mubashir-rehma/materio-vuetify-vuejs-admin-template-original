@@ -4,6 +4,7 @@ import {
   mdiAlphaBBoxOutline,
   mdiAlphaTBoxOutline,
   mdiBellOutline,
+  mdiChartBar,
   mdiChartDonut,
   mdiCheckboxBlankOutline,
   mdiCheckboxMarkedOutline,
@@ -29,7 +30,7 @@ import {
   mdiStarOutline,
   mdiTagOutline,
   mdiToggleSwitchOffOutline,
-  mdiViewGridOutline
+  mdiViewGridOutline,
 } from '@mdi/js'
 
 /* eslint-disable */

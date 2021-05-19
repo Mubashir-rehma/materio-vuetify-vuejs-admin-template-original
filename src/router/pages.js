@@ -79,6 +79,14 @@ const pages = [
       layout: 'blank',
     },
   },
+  {
+    path: '/pages/authentication/forget-password-v1',
+    name: 'auth-forgot-password-v1',
+    component: () => import('@/views/pages/authentication/forgot-password-v1/ForgotPassword-v1.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

@@ -21,6 +21,7 @@ import {
   mdiFormatAlignCenter,
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
+  mdiKeyOutline,
   mdiLockOutline,
   mdiMapOutline,
   mdiMemory,
@@ -42,6 +43,8 @@ export default [
   // authentication
   { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },
   { title: 'Register v1', to: { name: 'auth-register-v1' }, icon: mdiAccountPlusOutline },
+  { title: 'Forgot Password v1', to: { name: 'auth-forgot-password-v1' }, icon: mdiKeyOutline },
+
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },
   { title: 'Gamification', to: { name: 'ui-gamification' }, icon: mdiControllerClassicOutline },

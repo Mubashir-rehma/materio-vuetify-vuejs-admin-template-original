@@ -21,6 +21,11 @@ export default [
             to: 'auth-register-v1',
             target: '_blank',
           },
+          {
+            title: 'Forgot Password V1',
+            to: 'auth-forgot-password-v1',
+            target: '_blank',
+          },
         ],
       },
     ],

@@ -57,7 +57,10 @@
                   class="mt-0"
                 >
                 </v-checkbox>
-                <a href="#">Forgot Password?</a>
+                <a
+                  href="#"
+                  class="link-color"
+                >Forgot Password?</a>
               </v-col>
               <v-col cols="12">
                 <v-btn
@@ -76,7 +79,10 @@
           <p class="mb-0 mr-2">
             New on our platform?
           </p>
-          <a href="#">Create an account</a>
+          <a
+            href="#"
+            class="link-color"
+          >Create an account</a>
         </v-card-text>
         <v-card-text class="d-flex align-center">
           <v-divider class="mr-5"></v-divider>
@@ -112,6 +118,7 @@
     <!-- background triangle shape  -->
     <v-img
       class="auth-mask-bg"
+      height="173"
       :src="`/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`"
     ></v-img>
 
@@ -184,6 +191,9 @@ export default {
     .auth-tree-3 {
       bottom: 0;
       right: 0;
+    }
+    .link-color {
+      color: rgba(145, 85, 253, 0.68);
     }
   }
   .auth-inner {

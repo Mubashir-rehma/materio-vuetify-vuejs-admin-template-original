@@ -37,10 +37,11 @@ route: [route_obj/route_name] (I have to resolve name somehow from the route obj
 import chartsAndMaps from './charts-and-maps'
 import formAndTable from './forms-and-table'
 import others from './others'
+import pages from './pages'
 import uiElements from './ui-elements'
 
 // Array of sections
-export default [...uiElements, ...formAndTable, ...chartsAndMaps, ...others]
+export default [...uiElements, ...pages, ...formAndTable, ...chartsAndMaps, ...others]
 
 // export default [
 //   {

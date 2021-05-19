@@ -63,6 +63,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/authentication/login-v1',
+    name: 'auth-login-v1',
+    component: () => import('@/views/pages/authentication/login-v1/Login-v1.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

@@ -30,9 +30,10 @@ tag
 tagVariant
 
 */
+import appAndPages from './app-and-pages'
 import chartsAndMaps from './charts-and-maps'
 import formsAndTables from './forms-and-tables'
 import uiElements from './ui-elements'
 
 // Array of sections
-export default [...uiElements, ...formsAndTables, ...chartsAndMaps]
+export default [...appAndPages, ...uiElements, ...formsAndTables, ...chartsAndMaps]

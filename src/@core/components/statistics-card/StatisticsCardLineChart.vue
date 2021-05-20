@@ -1,10 +1,11 @@
 <template>
-  <v-card>
+  <v-card class="d-flex flex-column">
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
     <vue-apex-charts
       :options="chartOptionsComputed"
+      class="flex-grow-1"
       :series="chartSeries"
     ></vue-apex-charts>
     <v-card-text class="font-weight-semibold text-center text--primary">
@@ -30,78 +31,83 @@ export default {
       type: Object,
       default: null,
     },
+    chartColor: {
+      type: String,
+      required: true,
+    },
   },
-  setup(prop) {
+  setup(props) {
     const chartOptions = {
       grid: {
         show: false,
-        padding: {
-          top: 10,
-          left: 10,
-          right: 30,
-        },
       },
       chart: {
         type: 'line',
+        offsetX: -8,
         dropShadow: {
           enabled: true,
-          top: 25,
-          left: 2,
-          blur: 3,
-          color: '#9155fd',
+          top: 10,
+          blur: 4,
+          color: props.chartColor,
           opacity: 0.09,
         },
         toolbar: {
           show: false,
         },
-        sparkline: {
-          enabled: true,
-        },
       },
       markers: {
-        size: 1,
-        colors: '#9155fd',
-        strokeColors: '#9155fd',
-        strokeWidth: 3,
-        strokeOpacity: 1,
-        strokeDashArray: 0,
-        fillOpacity: 1,
+        size: 6,
+        colors: 'transparent',
+        strokeColors: 'transparent',
+        strokeWidth: 4,
         discrete: [
           {
             seriesIndex: 0,
-            dataPointIndex: 3,
-            fillColor: '#ffffff',
-            strokeColor: '#9155fd',
-            size: 5,
+            dataPointIndex: props.chartSeries[0].data.length - 1,
+            fillColor: '#fff',
+            strokeColor: props.chartColor,
+            size: 6,
           },
         ],
-        shape: 'circle',
-        radius: 2,
         hover: {
-          size: 3,
+          size: 7,
         },
       },
       stroke: {
         width: 5,
         curve: 'smooth',
+        lineCap: 'round',
       },
       xaxis: {
-        type: 'numeric',
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: false,
+        },
       },
-      colors: ['#9155fd'],
+      yaxis: {
+        labels: {
+          show: false,
+        },
+      },
       tooltip: {
-        x: { show: false },
+        enabled: false,
       },
+      colors: [props.chartColor],
     }
 
     const chartOptionsComputed = computed(() => {
-      if (prop.chartConfig === null) {
+      if (props.chartConfig === null) {
         const options = JSON.parse(JSON.stringify(chartOptions))
 
         return options
       }
 
-      return prop.chartConfig
+      return props.chartConfig
     })
 
     return {

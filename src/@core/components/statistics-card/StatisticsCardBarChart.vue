@@ -1,10 +1,11 @@
 <template>
-  <v-card>
+  <v-card class="d-flex flex-column">
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
     <vue-apex-charts
       id="sessions-chart"
+      class="flex-grow-1"
       :options="chartOptionsComputed"
       :series="chartSeries"
     ></vue-apex-charts>
@@ -72,7 +73,8 @@ export default {
       plotOptions: {
         bar: {
           columnWidth: '25%',
-          endingShape: 'rounded',
+
+          // borderRadius: 4,
         },
         distributed: true,
       },
@@ -80,6 +82,9 @@ export default {
         labels: {
           show: false,
         },
+      },
+      stroke: {
+        lineCap: 'round',
       },
     }
 

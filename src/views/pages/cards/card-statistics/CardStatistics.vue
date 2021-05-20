@@ -236,6 +236,7 @@
           :stat-title="revenueLineChart.statTitle"
           :statistics="revenueLineChart.statistics"
           :chart-series="revenueLineChart.series"
+          :chart-color="$vuetify.theme.currentTheme.primary"
         ></statistics-card-line-chart>
       </v-col>
       <v-col
@@ -269,6 +270,7 @@
           :stat-title="salesRadialChart.statTitle"
           :statistics="salesRadialChart.statistics"
           :chart-series="salesRadialChart.series"
+          :chart-color="$vuetify.theme.currentTheme.info"
         ></statistics-card-radial-bar-chart>
       </v-col>
       <v-col
@@ -291,6 +293,7 @@
           :stat-title="profitLineChart.statTitle"
           :statistics="profitLineChart.statistics"
           :chart-series="profitLineChart.series"
+          :chart-color="$vuetify.theme.currentTheme.primary"
         ></statistics-card-profit-line-chart>
       </v-col>
       <!-- / statistics card with chart -->

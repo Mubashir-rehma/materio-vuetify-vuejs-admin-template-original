@@ -1,11 +1,13 @@
 <template>
-  <v-card>
+  <v-card class="stats-card-radial-bar d-flex flex-column">
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
 
     <vue-apex-charts
+      id="stats-card-radial-bar-chart"
       type="radialBar"
+      class="flex-grow-1"
       :options="chartOptionsComputed"
       :series="chartSeries"
     ></vue-apex-charts>
@@ -33,42 +35,34 @@ export default {
       type: Object,
       default: null,
     },
+    chartColor: {
+      type: String,
+      required: true,
+    },
   },
-  setup(prop) {
+  setup(props) {
     const chartOptions = {
       chart: {
         sparkline: {
           enabled: true,
         },
-        dropShadow: {
-          enabled: true,
-          blur: 3,
-          left: 1,
-          top: 1,
-          opacity: 0.1,
-        },
       },
-      colors: ['#16b1ff'],
+      colors: [props.chartColor],
       plotOptions: {
         radialBar: {
-          offsetY: -5,
           startAngle: -90,
           endAngle: 90,
           hollow: {
             size: '65%',
-          },
-          track: {
-            background: '#ebe9f1',
-            strokeWidth: '65%',
           },
           dataLabels: {
             name: {
               show: false,
             },
             value: {
-              color: '#5e5669de',
               fontSize: '1.25rem',
               fontWeight: '600',
+              offsetY: 0,
             },
           },
         },
@@ -76,21 +70,16 @@ export default {
       stroke: {
         lineCap: 'round',
       },
-      grid: {
-        padding: {
-          bottom: 30,
-        },
-      },
     }
 
     const chartOptionsComputed = computed(() => {
-      if (prop.chartConfig === null) {
+      if (props.chartConfig === null) {
         const options = JSON.parse(JSON.stringify(chartOptions))
 
         return options
       }
 
-      return prop.chartConfig
+      return props.chartConfig
     })
 
     return {
@@ -99,3 +88,19 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+@import '~@core/preset/preset/mixins.scss';
+
+@include theme--child(stats-card-radial-bar) using ($material) {
+  #stats-card-radial-bar-chart {
+    .apexcharts-canvas {
+      .apexcharts-text {
+        &.apexcharts-datalabel-value {
+          fill: map-deep-get($material, 'text', 'primary');
+        }
+      }
+    }
+  }
+}
+</style>

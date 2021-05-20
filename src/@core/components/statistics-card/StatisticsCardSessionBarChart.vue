@@ -1,9 +1,9 @@
 <template>
-  <v-card>
+  <v-card class="d-flex flex-column">
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
-    <v-card-text>
+    <v-card-text class="flex-grow-1">
       <vue-apex-charts
         :options="chartOptionsComputed"
         :series="chartSeries"

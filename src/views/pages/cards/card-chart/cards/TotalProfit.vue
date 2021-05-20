@@ -29,7 +29,7 @@
                 <p class="mb-0 font-weight-bold text-2xl">
                   $482.85k
                 </p>
-                <small class="text--secondary text-xs">Last month balance $234.40k</small>
+                <small class="text--secondary text-xs text-no-wrap">Last month balance $234.40k</small>
               </div>
               <v-spacer></v-spacer>
               <v-btn

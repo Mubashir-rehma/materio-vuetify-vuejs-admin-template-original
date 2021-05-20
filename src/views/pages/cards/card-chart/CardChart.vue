@@ -10,66 +10,77 @@
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <total-visitors></total-visitors>
       </v-col>
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <weekly-sales></weekly-sales>
       </v-col>
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <total-revenue></total-revenue>
       </v-col>
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <weekly-overview></weekly-overview>
       </v-col>
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <performance></performance>
       </v-col>
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <analytics></analytics>
       </v-col>
       <v-col
         cols="12"
         md="4"
+        sm="6"
       >
         <sales-state></sales-state>
       </v-col>
       <v-col
         cols="12"
         md="3"
+        sm="6"
       >
         <total-profit-radial></total-profit-radial>
       </v-col>
       <v-col
         cols="12"
         md="3"
+        sm="4"
       >
         <total-sales></total-sales>
       </v-col>
       <v-col
         cols="12"
         md="3"
+        sm="4"
       >
         <total-visits></total-visits>
       </v-col>
       <v-col
         cols="12"
         md="3"
+        sm="4"
       >
         <revenue-report></revenue-report>
       </v-col>
@@ -83,7 +94,7 @@
       </v-col>
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <sales-overview></sales-overview>
       </v-col>

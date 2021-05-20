@@ -7,7 +7,7 @@
         </p>
         <p>
           <span class="text-2xl font-weight-semibold mr-1">$21,845</span>
-          <small class="success--text text-xs">
+          <small class="success--text text-xs text-no-wrap">
             <v-icon
               color="success"
               size="22"

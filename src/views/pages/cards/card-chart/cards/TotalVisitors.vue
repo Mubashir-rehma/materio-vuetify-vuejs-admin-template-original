@@ -49,7 +49,6 @@ export default {
       legend: {
         show: true,
         position: 'bottom',
-        offsetY: 10,
       },
       plotOptions: {
         pie: {

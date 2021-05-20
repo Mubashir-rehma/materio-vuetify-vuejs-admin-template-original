@@ -87,6 +87,14 @@ const pages = [
       layout: 'blank',
     },
   },
+  {
+    path: '/pages/authentication/reset-password-v1',
+    name: 'auth-reset-password-v1',
+    component: () => import('@/views/pages/authentication/reset-password-v1/ResetPassword-v1.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

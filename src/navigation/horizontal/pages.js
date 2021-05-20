@@ -24,6 +24,11 @@ export default [
             to: 'auth-forgot-password-v1',
             target: '_blank',
           },
+          {
+            title: 'Reset Password V1',
+            to: 'auth-reset-password-v1',
+            target: '_blank',
+          },
 
           // {
           //   title: 'Login v2',

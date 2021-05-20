@@ -49,6 +49,7 @@
                   @click:append="isPasswordVisible = !isPasswordVisible"
                 ></v-text-field>
               </v-col>
+
               <v-col
                 cols="12"
                 class="d-flex align-center justify-space-between pt-0"
@@ -59,10 +60,9 @@
                   class="mt-0"
                 >
                 </v-checkbox>
-                <a
-                  href="#"
-                  class="link-color"
-                >Forgot Password?</a>
+
+                <!-- forget link -->
+                <a href="forget-password-v1">Forgot Password?</a>
               </v-col>
               <v-col cols="12">
                 <v-btn
@@ -81,16 +81,17 @@
           <p class="mb-0 mr-2">
             New on our platform?
           </p>
-          <a
-            href="#"
-            class="link-color"
-          >Create an account</a>
+          <a href="register-v1">Create an account</a>
         </v-card-text>
+
+        <!-- divider -->
         <v-card-text class="d-flex align-center">
           <v-divider class="mr-5"></v-divider>
           <span>or</span>
           <v-divider class="ml-5"></v-divider>
         </v-card-text>
+
+        <!-- socail links -->
         <v-card-actions class="d-flex justify-center pb-8">
           <a
             href="#"
@@ -170,48 +171,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.auth-wrapper {
-  display: flex;
-  min-height: calc(var(--vh, 1vh) * 100);
-  width: 100%;
-  flex-basis: 100%;
-  &.auth-v1 {
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    a {
-      text-decoration: unset;
-    }
-    .auth-mask-bg {
-      position: absolute;
-      bottom: 0;
-    }
-    .auth-tree,
-    .auth-tree-3 {
-      position: absolute;
-    }
-    .auth-tree {
-      bottom: 0;
-      left: 0;
-    }
-    .auth-tree-3 {
-      bottom: 0;
-      right: 0;
-    }
-    .link-color {
-      color: rgba(145, 85, 253, 0.68);
-    }
-  }
-  .auth-inner {
-    width: 28rem;
-    height: 36.25rem;
-  }
-}
-
-@media (max-width: 540px) {
-  .auth-tree,
-  .auth-tree-3 {
-    display: none;
-  }
-}
+@import '@core/preset/preset/auth.scss';
 </style>

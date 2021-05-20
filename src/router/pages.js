@@ -66,7 +66,7 @@ const pages = [
   {
     path: '/pages/authentication/login-v1',
     name: 'auth-login-v1',
-    component: () => import('@/views/pages/authentication/login-v1/Login-v1.vue'),
+    component: () => import('@/views/pages/authentication/Login-v1.vue'),
     meta: {
       layout: 'blank',
     },
@@ -74,7 +74,7 @@ const pages = [
   {
     path: '/pages/authentication/register-v1',
     name: 'auth-register-v1',
-    component: () => import('@/views/pages/authentication/register-v1/Register-v1.vue'),
+    component: () => import('@/views/pages/authentication/Register-v1.vue'),
     meta: {
       layout: 'blank',
     },
@@ -82,7 +82,7 @@ const pages = [
   {
     path: '/pages/authentication/forget-password-v1',
     name: 'auth-forgot-password-v1',
-    component: () => import('@/views/pages/authentication/forgot-password-v1/ForgotPassword-v1.vue'),
+    component: () => import('@/views/pages/authentication/ForgotPassword-v1.vue'),
     meta: {
       layout: 'blank',
     },
@@ -90,7 +90,7 @@ const pages = [
   {
     path: '/pages/authentication/reset-password-v1',
     name: 'auth-reset-password-v1',
-    component: () => import('@/views/pages/authentication/reset-password-v1/ResetPassword-v1.vue'),
+    component: () => import('@/views/pages/authentication/ResetPassword-v1.vue'),
     meta: {
       layout: 'blank',
     },

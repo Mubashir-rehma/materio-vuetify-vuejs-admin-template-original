@@ -1,0 +1,48 @@
+.auth-wrapper {
+  display: flex;
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  flex-basis: 100%;
+  &.auth-v1 {
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    a {
+      text-decoration: unset;
+      color: rgba(145, 85, 253, 0.68);
+    }
+    .auth-mask-bg {
+      position: absolute;
+      bottom: 0;
+    }
+    .auth-tree,
+    .auth-tree-3 {
+      position: absolute;
+    }
+    .auth-tree {
+      bottom: 0;
+      left: 0;
+    }
+    .auth-tree-3 {
+      bottom: 0;
+      right: 0;
+    }
+
+    // auth card
+    .auth-inner {
+      width: 28rem;
+      height: 36.25rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+// auth bg and tree hide in sm screen
+.auth-v1{
+  .auth-tree,
+  .auth-tree-3 ,
+  .auth-mask-bg{
+      display: none;
+    }
+  }
+}

@@ -72,10 +72,7 @@
                   class="mt-0"
                 >
                   <template #label>
-                    <span class="mr-2">I agree to</span><a
-                      href="#"
-                      class="link-color"
-                    >privacy policy & terms</a>
+                    <span class="mr-2">I agree to</span><a href="#">privacy policy & terms</a>
                   </template>
                 </v-checkbox>
               </v-col>
@@ -97,10 +94,7 @@
           <p class="mb-0 mr-2">
             Already have an account?
           </p>
-          <a
-            href="#"
-            class="link-color"
-          >Sign in instead</a>
+          <a href="login-v1">Sign in instead</a>
         </v-card-text>
         <v-card-text class="d-flex align-center">
           <v-divider class="mr-5"></v-divider>
@@ -188,48 +182,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.auth-wrapper {
-  display: flex;
-  min-height: calc(var(--vh, 1vh) * 100);
-  width: 100%;
-  flex-basis: 100%;
-  &.auth-v1 {
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    a {
-      text-decoration: unset;
-    }
-    .auth-mask-bg {
-      position: absolute;
-      bottom: 0;
-    }
-    .auth-tree,
-    .auth-tree-3 {
-      position: absolute;
-    }
-    .auth-tree {
-      bottom: 0;
-      left: 0;
-    }
-    .auth-tree-3 {
-      bottom: 0;
-      right: 0;
-    }
-    .link-color {
-      color: rgba(145, 85, 253, 0.68);
-    }
-  }
-  .auth-inner {
-    width: 28rem;
-    height: 37rem;
-  }
-}
-
-@media (max-width: 540px) {
-  .auth-tree,
-  .auth-tree-3 {
-    display: none;
-  }
-}
+@import '@core/preset/preset/auth.scss';
 </style>

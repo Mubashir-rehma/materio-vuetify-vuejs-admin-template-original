@@ -42,6 +42,7 @@ export default [
   { header: 'Pages' },
   // authentication
   { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },
+  { title: 'Login v2', to: { name: 'auth-login-v2' }, icon: mdiLockOutline },
   { title: 'Register v1', to: { name: 'auth-register-v1' }, icon: mdiAccountPlusOutline },
   { title: 'Forgot Password v1', to: { name: 'auth-forgot-password-v1' }, icon: mdiKeyOutline },
   { title: 'Reset Password v1', to: { name: 'auth-reset-password-v1' }, icon: mdiKeyOutline },

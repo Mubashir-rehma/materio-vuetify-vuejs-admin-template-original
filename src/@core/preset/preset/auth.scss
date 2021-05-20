@@ -3,14 +3,18 @@
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   flex-basis: 100%;
+
+  // common style for both v1 and v2
+  a {
+      text-decoration: unset;
+      color: rgba(145, 85, 253, 0.68);
+  }
+  // auth v1
   &.auth-v1 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    a {
-      text-decoration: unset;
-      color: rgba(145, 85, 253, 0.68);
-    }
+   
     .auth-mask-bg {
       position: absolute;
       bottom: 0;
@@ -32,6 +36,41 @@
     .auth-inner {
       width: 28rem;
       height: 36.25rem;
+    }
+  }
+
+  //auth v2 
+  &.auth-v2{
+    align-items: flex-start;
+    .auth-inner{
+      height: 100vh;
+      margin: 0;
+      .auth-bg{
+        background: #fff;
+      }
+      .brand-logo{
+        text-decoration: unset;
+        position: absolute;
+        top: 1.83rem;
+        left: 2.5rem;
+        z-index: 1;
+        .app-title{
+          color: #5d5962;
+        }
+      }
+
+      .auth-mask-bg,
+      .auth-tree,
+      .auth-3d-group{
+        position: absolute;
+        bottom: 0;
+      }
+      .auth-tree{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+     
     }
   }
 }

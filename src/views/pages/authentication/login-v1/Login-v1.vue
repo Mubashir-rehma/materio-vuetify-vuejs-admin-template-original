@@ -27,6 +27,7 @@
             <v-row>
               <v-col cols="12">
                 <v-text-field
+                  v-model="email"
                   outlined
                   label="Email"
                   placeholder="email"
@@ -39,6 +40,7 @@
                 class="pt-0"
               >
                 <v-text-field
+                  v-model="password"
                   outlined
                   :type="isPasswordVisible ? 'text' : 'password'"
                   label="Password"
@@ -147,9 +149,13 @@ import { ref } from '@vue/composition-api'
 export default {
   setup() {
     const isPasswordVisible = ref(false)
+    const email = ref('')
+    const password = ref('')
 
     return {
       isPasswordVisible,
+      email,
+      password,
       icons: {
         mdiFacebook,
         mdiTwitter,

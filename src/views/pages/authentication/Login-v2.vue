@@ -55,113 +55,102 @@
           lg="12"
           class="mx-auto my-auto"
         >
-          <v-card-text class="pb-2">
-            <p class="text-2xl font-weight-semibold text--primary mb-1">
-              Welcome to Materialize! 👋🏻
-            </p>
-            <p class="mb-0">
-              Please sign-in to your account and start the adventure
-            </p>
-          </v-card-text>
+          <v-card flat>
+            <v-card-text class="pb-2">
+              <p class="text-2xl font-weight-semibold text--primary mb-1">
+                Welcome to Materialize! 👋🏻
+              </p>
+              <p class="mb-0">
+                Please sign-in to your account and start the adventure
+              </p>
+            </v-card-text>
 
-          <!-- login form -->
-          <v-card-text>
-            <v-form class="multi-col-validation">
-              <v-row>
-                <v-col cols="12">
-                  <v-text-field
-                    v-model="email"
-                    outlined
-                    label="Email"
-                    placeholder="email"
-                    hide-details
-                  ></v-text-field>
-                </v-col>
+            <!-- login form -->
+            <v-card-text>
+              <v-form class="multi-col-validation">
+                <v-row>
+                  <v-col cols="12">
+                    <v-text-field
+                      v-model="email"
+                      outlined
+                      label="Email"
+                      placeholder="email"
+                      hide-details
+                    ></v-text-field>
+                  </v-col>
 
-                <v-col
-                  cols="12"
-                  class="py-0"
-                >
-                  <v-text-field
-                    v-model="password"
-                    outlined
-                    :type="isPasswordVisible ? 'text' : 'password'"
-                    label="Password"
-                    placeholder="Password"
-                    :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
-                    @click:append="isPasswordVisible = !isPasswordVisible"
-                  ></v-text-field>
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  class="d-flex align-center justify-space-between pt-0"
-                >
-                  <v-checkbox
-                    hide-details
-                    label="Remember Me"
-                    class="mt-0"
+                  <v-col
+                    cols="12"
+                    class="py-0"
                   >
-                  </v-checkbox>
+                    <v-text-field
+                      v-model="password"
+                      outlined
+                      :type="isPasswordVisible ? 'text' : 'password'"
+                      label="Password"
+                      placeholder="Password"
+                      :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
+                      @click:append="isPasswordVisible = !isPasswordVisible"
+                    ></v-text-field>
+                  </v-col>
 
-                  <!-- forget link -->
-                  <a href="forget-password-v2">Forgot Password?</a>
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  class="pb-1"
-                >
-                  <v-btn
-                    block
-                    color="primary"
+                  <v-col
+                    cols="12"
+                    class="d-flex align-center justify-space-between pt-0"
                   >
-                    Login
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-card-text>
+                    <v-checkbox
+                      hide-details
+                      label="Remember Me"
+                      class="mt-0"
+                    >
+                    </v-checkbox>
 
-          <!-- create new account  -->
-          <v-card-text class="d-flex align-center justify-center pb-1">
-            <p class="mb-0 mr-2">
-              New on our platform?
-            </p>
-            <a href="register-v2">Create an account</a>
-          </v-card-text>
+                    <!-- forget link -->
+                    <a href="forget-password-v2">Forgot Password?</a>
+                  </v-col>
 
-          <!-- divider -->
-          <v-card-text class="d-flex align-center">
-            <v-divider class="mr-5"></v-divider>
-            <span>or</span>
-            <v-divider class="ml-5"></v-divider>
-          </v-card-text>
+                  <v-col
+                    cols="12"
+                    class="pb-1"
+                  >
+                    <v-btn
+                      block
+                      color="primary"
+                    >
+                      Login
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </v-form>
+            </v-card-text>
 
-          <!-- socail links -->
-          <v-card-actions class="d-flex justify-center pt-0">
-            <a
-              href="#"
-              class="mr-4"
-            >
-              <v-icon color="#4267b2">{{ icons.mdiFacebook }}</v-icon>
-            </a>
-            <a
-              href="#"
-              class="mr-4"
-            >
-              <v-icon color="#1da1f2">{{ icons.mdiTwitter }}</v-icon>
-            </a>
-            <a
-              href="#"
-              class="mr-4"
-            >
-              <v-icon color="#272727">{{ icons.mdiGithub }}</v-icon>
-            </a>
-            <a href="#">
-              <v-icon color="#db4437">{{ icons.mdiGoogle }}</v-icon>
-            </a>
-          </v-card-actions>
+            <!-- create new account  -->
+            <v-card-text class="d-flex align-center justify-center pb-1">
+              <p class="mb-0 mr-2">
+                New on our platform?
+              </p>
+              <a href="register-v2">Create an account</a>
+            </v-card-text>
+
+            <!-- divider -->
+            <v-card-text class="d-flex align-center">
+              <v-divider class="mr-5"></v-divider>
+              <span>or</span>
+              <v-divider class="ml-5"></v-divider>
+            </v-card-text>
+
+            <!-- socail links -->
+            <v-card-actions class="d-flex justify-center pt-0">
+              <a
+                v-for="link in socialLink"
+                :key="link.icon"
+                href="javascript:void(0)"
+                class="mr-4"
+              >
+                <v-icon :color="link.color">{{ link.icon }}</v-icon>
+              </a>
+            </v-card-actions>
+          </v-card>
         </v-col>
       </v-col>
     </v-row>
@@ -178,16 +167,31 @@ export default {
     const isPasswordVisible = ref(false)
     const email = ref('')
     const password = ref('')
+    const socialLink = [
+      {
+        icon: mdiFacebook,
+        color: '#4267b2',
+      },
+      {
+        icon: mdiTwitter,
+        color: '#1da1f2',
+      },
+      {
+        icon: mdiGithub,
+        color: '#272727',
+      },
+      {
+        icon: mdiGoogle,
+        color: '#db4437',
+      },
+    ]
 
     return {
       isPasswordVisible,
       email,
       password,
+      socialLink,
       icons: {
-        mdiFacebook,
-        mdiTwitter,
-        mdiGithub,
-        mdiGoogle,
         mdiEye,
         mdiEyeOff,
       },

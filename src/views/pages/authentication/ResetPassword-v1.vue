@@ -1,17 +1,24 @@
 <template>
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
-      <v-card id="login-card">
-        <v-card-title class="d-flex align-center justify-center text-2xl font-weight-semibold pt-11">
-          <div class="logo mr-3">
-            <v-img
-              height="27"
-              max-width="37"
-              src="/logo.svg"
-            ></v-img>
-          </div>
-          <span>Materialize</span>
+      <v-card>
+        <!-- logo and title -->
+        <v-card-title class="d-flex align-center justify-center pt-11">
+          <a
+            href="/"
+            class="d-flex align-center"
+          >
+            <div class="logo mr-3">
+              <v-img
+                max-height="30"
+                max-width="30"
+                src="/logo.svg"
+              ></v-img>
+            </div>
+            <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
+          </a>
         </v-card-title>
+
         <v-card-text>
           <p class="text-2xl font-weight-semibold text--primary mb-0">
             Reset Password 🔒
@@ -64,6 +71,7 @@
           </v-form>
         </v-card-text>
 
+        <!-- back to login -->
         <v-card-actions class="d-flex justify-center align-center">
           <a href="login-v1">
             <v-icon color="primary">{{ icons.mdiChevronLeft }}</v-icon>

@@ -1,17 +1,23 @@
 <template>
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
-      <v-card id="login-card">
-        <v-card-title class="d-flex align-center justify-center text-2xl font-weight-semibold pt-11">
-          <div class="logo mr-3">
-            <v-img
-              height="27"
-              max-width="37"
-              src="/logo.svg"
-            ></v-img>
-          </div>
-          <span>Materialize</span>
+      <v-card>
+        <v-card-title class="d-flex align-center justify-center pt-11">
+          <a
+            href="/"
+            class="d-flex align-center"
+          >
+            <div class="logo mr-3">
+              <v-img
+                max-height="30"
+                max-width="30"
+                src="/logo.svg"
+              ></v-img>
+            </div>
+            <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
+          </a>
         </v-card-title>
+
         <v-card-text>
           <p class="text-2xl font-weight-semibold text--primary mb-0">
             Adventure starts here 🚀
@@ -72,7 +78,7 @@
                   class="mt-0"
                 >
                   <template #label>
-                    <span class="mr-2">I agree to</span><a href="#">privacy policy & terms</a>
+                    <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy & terms</a>
                   </template>
                 </v-checkbox>
               </v-col>
@@ -96,32 +102,23 @@
           </p>
           <a href="login-v1">Sign in instead</a>
         </v-card-text>
+
+        <!-- divider -->
         <v-card-text class="d-flex align-center">
           <v-divider class="mr-5"></v-divider>
           <span>or</span>
           <v-divider class="ml-5"></v-divider>
         </v-card-text>
+
+        <!-- social link -->
         <v-card-actions class="d-flex justify-center pb-8">
           <a
-            href="#"
+            v-for="link in socialLink"
+            :key="link.icon"
+            href="javascript:void(0)"
             class="mr-4"
           >
-            <v-icon color="#4267b2">{{ icons.mdiFacebook }}</v-icon>
-          </a>
-          <a
-            href="#"
-            class="mr-4"
-          >
-            <v-icon color="#1da1f2">{{ icons.mdiTwitter }}</v-icon>
-          </a>
-          <a
-            href="#"
-            class="mr-4"
-          >
-            <v-icon color="#272727">{{ icons.mdiGithub }}</v-icon>
-          </a>
-          <a href="#">
-            <v-icon color="#db4437">{{ icons.mdiGoogle }}</v-icon>
+            <v-icon :color="link.color">{{ link.icon }}</v-icon>
           </a>
         </v-card-actions>
       </v-card>
@@ -162,17 +159,32 @@ export default {
     const username = ref('')
     const email = ref('')
     const password = ref('')
+    const socialLink = [
+      {
+        icon: mdiFacebook,
+        color: '#4267b2',
+      },
+      {
+        icon: mdiTwitter,
+        color: '#1da1f2',
+      },
+      {
+        icon: mdiGithub,
+        color: '#272727',
+      },
+      {
+        icon: mdiGoogle,
+        color: '#db4437',
+      },
+    ]
 
     return {
       isPasswordVisible,
       username,
       email,
       password,
+      socialLink,
       icons: {
-        mdiFacebook,
-        mdiTwitter,
-        mdiGithub,
-        mdiGoogle,
         mdiEye,
         mdiEyeOff,
       },

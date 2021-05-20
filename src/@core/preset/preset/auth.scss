@@ -9,6 +9,11 @@
       text-decoration: unset;
       color: rgba(145, 85, 253, 0.68);
   }
+
+  // common logo text color
+  .app-title{
+    color: #5d5962 !important;
+  }
   // auth v1
   &.auth-v1 {
     align-items: center;
@@ -54,9 +59,6 @@
         top: 1.83rem;
         left: 2.5rem;
         z-index: 1;
-        .app-title{
-          color: #5d5962;
-        }
       }
 
       .auth-mask-bg,

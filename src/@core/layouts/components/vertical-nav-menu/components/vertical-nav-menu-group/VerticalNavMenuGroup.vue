@@ -1,12 +1,16 @@
 <template>
   <v-list-group
     ref="refVListGroup"
-    :prepend-icon="item.icon"
     class="vertical-nav-menu-group"
     :class="[{'vertical-nav-menu-group-active': isActive}, ...rootThemeClasses]"
     :value="isActive"
     @click="updateGroupOpen(!isOpen)"
   >
+    <template #prependIcon>
+      <v-icon :class="{'alternate-icon-small': !item.icon}">
+        {{ item.icon || alternateIcon }}
+      </v-icon>
+    </template>
     <template #activator>
       <v-list-item-title>{{ t(item.title) }}</v-list-item-title>
 
@@ -118,6 +122,9 @@ export default {
       isActive,
       updateGroupOpen,
 
+      // Alternate Icon
+      alternateIcon: themeConfig.menu.groupChildIcon,
+
       // i18n
       t,
     }
@@ -140,5 +147,11 @@ export default {
   &.vertical-nav-menu-group-active .v-list-group__header {
     background-color: rgba(map-deep-get($material, 'text', 'primary'), map-deep-get($material, 'states', 'selected'));
   }
+}
+
+.alternate-icon-small {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
 }
 </style>

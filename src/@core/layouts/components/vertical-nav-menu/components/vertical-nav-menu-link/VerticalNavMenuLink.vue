@@ -57,10 +57,5 @@ export default {
     box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
     @include elevationTransition();
   }
-  .alternate-icon-small {
-    font-size: 14px;
-    height: 14px;
-    width: 14px;
-  }
 }
 </style>

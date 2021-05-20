@@ -5,7 +5,7 @@
         <v-card-title>
           Total Sales
         </v-card-title>
-        <v-card-text class="text-no-wrap pb-0">
+        <v-card-text class="text-no-wrap">
           <p class="text-xs mb-0">
             Calculated in last 7 days
           </p>
@@ -21,11 +21,9 @@
       </div>
       <div>
         <vue-apex-charts
-          type="donut"
-          height="150"
-          width="150"
-          :options="totalSalesChart.chartOptions"
-          :series="totalSalesChart.series"
+          id="chart-stats-total-sales"
+          :options="chartOptions"
+          :series="chartSeries"
         />
       </div>
     </div>
@@ -33,7 +31,6 @@
 </template>
 
 <script>
-import { ref } from '@vue/composition-api'
 import VueApexCharts from 'vue-apexcharts'
 
 import { mdiChevronUp } from '@mdi/js'
@@ -43,63 +40,58 @@ export default {
     VueApexCharts,
   },
   setup() {
-    // chart options
-    const totalSalesChart = ref({
-      series: [85, 20, 30, 50],
-      chartOptions: {
-        stroke: {
-          width: 2,
+    const chartSeries = [85, 20, 30, 50]
+    const chartOptions = {
+      chart: {
+        offsetY: 7,
+        type: 'donut',
+        sparkline: {
+          enabled: true,
         },
-        legend: {
-          show: false,
-        },
-        colors: ['#9155fd', '#d4d5d7', '#ffb400', '#ff4c51'],
-        dataLabels: {
+        animations: {
           enabled: false,
         },
-        plotOptions: {
-          pie: {
-            donut: {
-              size: '80%',
-              labels: {
+      },
+      stroke: {
+        colors: ['#fff'],
+        width: 8,
+      },
+      grid: {
+        padding: {
+          bottom: 10,
+        },
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              name: {
+                fontSize: '14px',
+                offsetY: 25,
+              },
+              value: {
+                offsetY: -13,
+                formatter(value) {
+                  return `${value}k`
+                },
+              },
+              total: {
                 show: true,
-                name: {
-                  fontSize: '0.75rem',
-                  fontFamily: 'Inter',
-                  offsetY: 15,
-                  fontWeight: 400,
-                },
-                value: {
-                  fontSize: '1.25rem',
-                  fontFamily: 'Inter',
-                  fontWeight: 'bold',
-                  offsetY: -20,
-                  formatter(val) {
-                    // eslint-disable-next-line radix
-                    return `${parseInt(val)}%`
-                  },
-                },
-
-                total: {
-                  show: true,
-                  fontSize: '0.75rem',
-                  label: '1 Quarter',
-                  fontFamily: 'Inter',
-                  fontWeight: 400,
-                  formatter() {
-                    return '18%'
-                  },
+                label: '1 Quater',
+                formatter() {
+                  return '18%'
                 },
               },
             },
           },
         },
-        labels: ['1 Quarter', '2 Quarter', '3 Quarter', '4 Quarter'],
       },
-    })
+    }
 
     return {
-      totalSalesChart,
+      chartSeries,
+      chartOptions,
 
       // icons
       icons: {
@@ -109,3 +101,28 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+#chart-stats-total-sales {
+  max-width: 150px;
+  height: auto;
+  .apexcharts-pie {
+    .apexcharts-pie-series .apexcharts-pie-area {
+      stroke-width: 10;
+    }
+  }
+  .apexcharts-canvas {
+    .apexcharts-text {
+      &.apexcharts-datalabel-value {
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+      &.apexcharts-datalabel-label {
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+        transform: translateY(-7px);
+      }
+    }
+  }
+}
+</style>

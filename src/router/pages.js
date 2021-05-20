@@ -80,6 +80,14 @@ const pages = [
     },
   },
   {
+    path: '/pages/authentication/register-v2',
+    name: 'auth-register-v2',
+    component: () => import('@/views/pages/authentication/Register-v2.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
+  {
     path: '/pages/authentication/forget-password-v1',
     name: 'auth-forgot-password-v1',
     component: () => import('@/views/pages/authentication/ForgotPassword-v1.vue'),

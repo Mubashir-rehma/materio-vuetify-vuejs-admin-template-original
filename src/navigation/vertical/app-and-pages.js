@@ -27,6 +27,11 @@ export default [
             target: '_blank',
           },
           {
+            title: 'Register V2',
+            to: 'auth-register-v2',
+            target: '_blank',
+          },
+          {
             title: 'Forgot Password V1',
             to: 'auth-forgot-password-v1',
             target: '_blank',

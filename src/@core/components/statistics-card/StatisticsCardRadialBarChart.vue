@@ -98,6 +98,7 @@ export default {
       .apexcharts-text {
         &.apexcharts-datalabel-value {
           fill: map-deep-get($material, 'text', 'primary');
+          font-weight: 600;
         }
       }
     }

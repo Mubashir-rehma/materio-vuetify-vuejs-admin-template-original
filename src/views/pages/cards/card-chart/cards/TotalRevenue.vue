@@ -99,9 +99,6 @@ export default {
             },
             value: {
               fontSize: '2.125rem',
-
-              // ! This isn't working???
-              fontWeight: 600,
               offsetY: -10,
               formatter(value) {
                 return `${value}k`
@@ -110,7 +107,6 @@ export default {
             total: {
               show: true,
               label: '2021',
-              color: 'rgba(94, 86, 105, 0.68)',
               formatter(value) {
                 return `${value.globals.seriesTotals.reduce((total, num) => total + num)}k`
               },
@@ -150,7 +146,6 @@ export default {
   .apexcharts-canvas {
     .apexcharts-text {
       &.apexcharts-datalabel-value {
-        fill: map-deep-get($material-light, 'text', 'primary');
         font-weight: 600;
       }
     }

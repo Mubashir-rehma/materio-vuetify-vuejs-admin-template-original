@@ -156,3 +156,14 @@
     }
   }
 }
+
+@include theme--child(apex-chart-canvas) using ($material) {
+  .apexcharts-text {
+    &.apexcharts-datalabel-value {
+      fill: map-deep-get($material, 'text', 'primary') !important;
+    }
+    &.apexcharts-datalabel-label {
+      fill: map-deep-get($material, 'text', 'secondary') !important;
+    }
+  }
+}

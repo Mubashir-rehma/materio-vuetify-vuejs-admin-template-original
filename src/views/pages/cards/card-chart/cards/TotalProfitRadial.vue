@@ -97,16 +97,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-#total-revenue-chart {
-  .apexcharts-canvas {
-    .apexcharts-text {
-      &.apexcharts-datalabel-value {
-        fill: map-deep-get($material-light, 'text', 'primary');
-        font-weight: 600;
-      }
-    }
-  }
-}
-</style>

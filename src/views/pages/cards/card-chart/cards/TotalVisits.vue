@@ -133,7 +133,6 @@ export default {
   .apexcharts-canvas {
     .apexcharts-text {
       &.apexcharts-datalabel-value {
-        fill: map-deep-get($material-light, 'text', 'primary');
         font-weight: 600;
         font-size: 1.5rem;
       }

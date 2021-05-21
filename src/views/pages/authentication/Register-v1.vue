@@ -195,7 +195,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '@core/preset/preset/auth.scss';
-.auth-inner {
-  z-index: 1;
-}
 </style>

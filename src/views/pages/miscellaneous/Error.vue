@@ -1,5 +1,5 @@
 <template>
-  <div class="misc-under-maintenance">
+  <div class="misc-error">
     <v-img
       class="misc-bg"
       height="226"
@@ -8,21 +8,21 @@
 
     <v-img
       class="misc-tree"
-      src="/images/misc/tree.png"
+      src="/images/misc/tree-4.png"
     ></v-img>
 
     <div class="app-title text-center">
       <h2 class="text-2xl font-weight-semibold text--primary">
-        Under Maintenance! 🚧
+        Page Not Found ⚠️
       </h2>
       <p class="text-sm">
-        Sorry for the inconvenience but we're performing some maintenance at the moment
+        we couldn't find the page you are looking for
       </p>
 
       <div class="misc-characters d-flex justify-center">
         <v-img
           max-width="424"
-          src="/images/3d-characters/pose-36.png"
+          src="/images/3d-characters/pose-5.png"
         ></v-img>
       </div>
 
@@ -41,13 +41,13 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.misc-under-maintenance {
+.misc-error {
   overflow: hidden;
   .app-title {
     margin-top: 6.25rem;
   }
   .misc-characters {
-    margin-left: 17rem;
+    margin-left: 13rem;
     margin-bottom: 3.313rem;
     margin-top: 5rem;
   }
@@ -69,7 +69,7 @@ export default {}
 }
 
 @media (max-width: 550px) {
-  .misc-under-maintenance {
+  .misc-error {
     .misc-tree {
       height: 150px !important;
       width: 150px;

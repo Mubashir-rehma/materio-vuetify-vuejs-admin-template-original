@@ -135,6 +135,14 @@ const pages = [
       layout: 'blank',
     },
   },
+  {
+    path: '/pages/miscellaneous/error',
+    name: 'misc-error',
+    component: () => import('@/views/pages/miscellaneous/Error.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

@@ -60,6 +60,11 @@ export default [
             to: 'misc-under-maintenance',
             target: '_blank',
           },
+          {
+            title: 'Error',
+            to: 'misc-error',
+            target: '_blank',
+          },
         ],
       },
 

@@ -22,6 +22,7 @@ import {
   mdiFormatAlignCenter,
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
+  mdiHelpCircleOutline,
   mdiKeyOutline,
   mdiLockOutline,
   mdiMapOutline,
@@ -53,6 +54,7 @@ export default [
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },
+  { title: 'Error', to: { name: 'misc-error' }, icon: mdiHelpCircleOutline },
 
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },

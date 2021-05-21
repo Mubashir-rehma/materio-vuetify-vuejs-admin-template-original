@@ -66,6 +66,11 @@ export default [
             to: 'misc-error',
             target: '_blank',
           },
+          {
+            title: 'Coming Soon',
+            to: 'misc-coming-soon',
+            target: '_blank',
+          },
         ],
       },
     ],

@@ -55,6 +55,7 @@ export default [
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },
   { title: 'Error', to: { name: 'misc-error' }, icon: mdiHelpCircleOutline },
+  { title: 'Coming Soon', to: { name: 'misc-coming-soon' }, icon: mdiClockOutline },
 
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },

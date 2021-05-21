@@ -143,6 +143,14 @@ const pages = [
       layout: 'blank',
     },
   },
+  {
+    path: '/pages/miscellaneous/coming-soon',
+    name: 'misc-coming-soon',
+    component: () => import('@/views/pages/miscellaneous/ComingSoon.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

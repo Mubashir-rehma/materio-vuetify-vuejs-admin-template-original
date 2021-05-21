@@ -72,6 +72,14 @@ const pages = [
     },
   },
   {
+    path: '/pages/authentication/login-v2',
+    name: 'auth-login-v2',
+    component: () => import('@/views/pages/authentication/Login-v2.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
+  {
     path: '/pages/authentication/register-v1',
     name: 'auth-register-v1',
     component: () => import('@/views/pages/authentication/Register-v1.vue'),
@@ -104,9 +112,9 @@ const pages = [
     },
   },
   {
-    path: '/pages/authentication/login-v2',
-    name: 'auth-login-v2',
-    component: () => import('@/views/pages/authentication/Login-v2.vue'),
+    path: '/pages/authentication/reset-password-v2',
+    name: 'auth-reset-password-v2',
+    component: () => import('@/views/pages/authentication/ResetPassword-v2.vue'),
     meta: {
       layout: 'blank',
     },

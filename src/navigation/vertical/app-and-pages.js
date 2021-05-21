@@ -41,6 +41,11 @@ export default [
             to: 'auth-reset-password-v1',
             target: '_blank',
           },
+          {
+            title: 'Reset Password V2',
+            to: 'auth-reset-password-v2',
+            target: '_blank',
+          },
         ],
       },
     ],

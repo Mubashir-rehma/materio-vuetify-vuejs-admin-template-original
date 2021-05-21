@@ -33,7 +33,7 @@ export default {
       default: null,
     },
   },
-  setup(prop) {
+  setup(props) {
     const chartOptions = {
       chart: {
         stacked: true,
@@ -89,13 +89,13 @@ export default {
     }
 
     const chartOptionsComputed = computed(() => {
-      if (prop.chartConfig === null) {
+      if (props.chartConfig === null) {
         const options = JSON.parse(JSON.stringify(chartOptions))
 
         return options
       }
 
-      return prop.chartConfig
+      return props.chartConfig
     })
 
     return {

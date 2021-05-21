@@ -127,6 +127,14 @@ const pages = [
       layout: 'blank',
     },
   },
+  {
+    path: '/pages/miscellaneous/under-maintenance',
+    name: 'misc-under-maintenance',
+    component: () => import('@/views/pages/miscellaneous/UnderMaintenance.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
 ]
 
 export default pages

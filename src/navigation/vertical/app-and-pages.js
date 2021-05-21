@@ -53,6 +53,16 @@ export default [
           },
         ],
       },
+      {
+        title: 'Miscellaneous',
+        children: [
+          {
+            title: 'Under Maintenance',
+            to: 'misc-under-maintenance',
+            target: '_blank',
+          },
+        ],
+      },
     ],
   },
 ]

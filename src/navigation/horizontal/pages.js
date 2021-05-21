@@ -51,6 +51,17 @@ export default [
           },
         ],
       },
+      {
+        title: 'Miscellaneous',
+        icon: mdiFileOutline,
+        children: [
+          {
+            title: 'Under Maintenance',
+            to: 'misc-under-maintenance',
+            target: '_blank',
+          },
+        ],
+      },
 
       // {
       //   title: 'Account Settings',

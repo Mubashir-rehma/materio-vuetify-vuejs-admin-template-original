@@ -18,6 +18,7 @@ import {
   mdiDotsHorizontal,
   mdiFamilyTree,
   mdiFileMusicOutline,
+  mdiFileOutline,
   mdiFormatAlignCenter,
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
@@ -49,6 +50,9 @@ export default [
   { title: 'Forgot Password v2', to: { name: 'auth-forgot-password-v2' }, icon: mdiKeyOutline },
   { title: 'Reset Password v1', to: { name: 'auth-reset-password-v1' }, icon: mdiKeyOutline },
   { title: 'Reset Password v2', to: { name: 'auth-reset-password-v2' }, icon: mdiKeyOutline },
+
+  // misc
+  { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },
 
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },

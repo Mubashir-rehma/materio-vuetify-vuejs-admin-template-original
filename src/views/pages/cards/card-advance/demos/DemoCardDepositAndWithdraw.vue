@@ -19,7 +19,7 @@
             :src="data.img"
           ></v-img>
           <div class="ml-3">
-            <p class="font-weight-semibold mb-0">
+            <p class="font-weight-semibold mb-0 text--primary">
               {{ data.title }}
             </p>
             <span class="text-xs">{{ data.subtitle }}</span>
@@ -54,7 +54,7 @@
             :src="data.img"
           ></v-img>
           <div class="ml-3">
-            <p class="font-weight-semibold mb-0">
+            <p class="font-weight-semibold mb-0 text--primary">
               {{ data.title }}
             </p>
             <span class="text-xs">{{ data.subtitle }}</span>

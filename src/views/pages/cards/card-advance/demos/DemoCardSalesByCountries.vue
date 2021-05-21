@@ -22,7 +22,7 @@
         </v-avatar>
         <div class="ml-3">
           <div class="font-weight-semibold">
-            <span class="text--primary text-base">{{ data.amount }}</span>
+            <span class="text--primary text-base mr-1">{{ data.amount }}</span>
             <v-icon
               size="20"
               :color="data.change.charAt(0) === '+' ? 'success':'error'"

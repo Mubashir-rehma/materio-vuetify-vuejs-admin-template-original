@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <div class="d-flex align-center justify-space-between">
+    <div class="d-flex align-center justify-space-between mb-4">
       <div>
         <v-card-title>
           <span>Finance Summary</span>

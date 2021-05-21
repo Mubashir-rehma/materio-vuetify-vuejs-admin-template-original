@@ -18,7 +18,7 @@
         </v-avatar>
 
         <div class="ml-3">
-          <p class="font-weight-medium mb-0">
+          <p class="font-weight-medium mb-0 text--primary">
             {{ data.title }}
           </p>
           <v-icon size="14">

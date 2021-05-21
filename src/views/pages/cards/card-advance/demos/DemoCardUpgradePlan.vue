@@ -39,7 +39,7 @@
         <sub>/Year</sub>
       </div>
       <div class="payment-details">
-        <p class="font-weight-semibold">
+        <p class="font-weight-semibold text--primary">
           Payment details
         </p>
 

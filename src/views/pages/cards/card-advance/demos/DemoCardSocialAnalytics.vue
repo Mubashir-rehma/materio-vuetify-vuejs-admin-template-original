@@ -25,7 +25,7 @@
           ></v-img>
         </v-avatar>
         <div class="ml-4">
-          <h2 class="text-xl">
+          <h2 class="text-xl font-weight-semibold">
             {{ data.title }}
           </h2>
           <p class="mb-0">

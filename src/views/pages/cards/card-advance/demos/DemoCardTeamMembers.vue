@@ -35,7 +35,7 @@
               <v-img :src="team.avatar"></v-img>
             </v-avatar>
             <div class="text-no-wrap ml-3">
-              <p class="font-weight-medium mb-0">
+              <p class="font-weight-medium mb-0 text--primary">
                 {{ team.title }}
               </p>
               <span class="text-xs">{{ team.subtitle }}</span>
@@ -52,7 +52,7 @@
           </td>
           <td>
             <p class="font-weight-semibold mb-0">
-              <span class="primary--text">{{ team.task.split('/')[0] }}</span>/{{ team.task.split('/')[1] }}
+              <span class="primary--text">{{ team.task.split('/')[0] }}</span>/<span class="text--primary">{{ team.task.split('/')[1] }}</span>
             </p>
           </td>
           <td class="d-flex align-center justify-center">

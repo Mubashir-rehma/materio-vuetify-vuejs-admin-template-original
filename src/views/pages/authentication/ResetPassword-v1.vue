@@ -73,8 +73,14 @@
 
         <!-- back to login -->
         <v-card-actions class="d-flex justify-center align-center">
-          <a href="login-v1">
-            <v-icon color="primary">{{ icons.mdiChevronLeft }}</v-icon>
+          <a
+            href="login-v1"
+            class="text-sm"
+          >
+            <v-icon
+              size="24"
+              color="primary"
+            >{{ icons.mdiChevronLeft }}</v-icon>
             <span>Back to login</span>
           </a>
         </v-card-actions>

@@ -40,7 +40,7 @@
           max-width="100%"
           height="692"
           class="auth-3d-group"
-          src="/images/3d-characters/group.png"
+          src="/images/3d-characters/illustration-forgot-password.png"
         ></v-img>
       </v-col>
 
@@ -56,12 +56,12 @@
           class="mx-auto my-auto"
         >
           <v-card flat>
-            <v-card-text class="pb-2">
-              <p class="text-2xl font-weight-semibold text--primary mb-1">
-                Welcome to Materio! 👋🏻
+            <v-card-text>
+              <p class="text-2xl font-weight-semibold text--primary mb-0">
+                Forgot Password? 🔒
               </p>
-              <p class="mb-0">
-                Please sign-in to your account and start the adventure
+              <p class="mt-3 mb-3">
+                Enter your email and we'll send you instructions to reset your password
               </p>
             </v-card-text>
 
@@ -69,7 +69,10 @@
             <v-card-text>
               <v-form class="multi-col-validation">
                 <v-row>
-                  <v-col cols="12">
+                  <v-col
+                    cols="12"
+                    class="pb-2"
+                  >
                     <v-text-field
                       v-model="email"
                       outlined
@@ -79,75 +82,28 @@
                     ></v-text-field>
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    class="py-0"
-                  >
-                    <v-text-field
-                      v-model="password"
-                      outlined
-                      :type="isPasswordVisible ? 'text' : 'password'"
-                      label="Password"
-                      placeholder="Password"
-                      :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
-                      @click:append="isPasswordVisible = !isPasswordVisible"
-                    ></v-text-field>
-                  </v-col>
-
-                  <v-col
-                    cols="12"
-                    class="d-flex align-center justify-space-between pt-0"
-                  >
-                    <v-checkbox
-                      hide-details
-                      label="Remember Me"
-                      class="mt-0"
-                    >
-                    </v-checkbox>
-
-                    <!-- forget link -->
-                    <a href="forget-password-v2">Forgot Password?</a>
-                  </v-col>
-
-                  <v-col
-                    cols="12"
-                    class="pb-1"
-                  >
+                  <v-col cols="12">
                     <v-btn
                       block
                       color="primary"
                     >
-                      Login
+                      Send reset link
                     </v-btn>
                   </v-col>
                 </v-row>
               </v-form>
             </v-card-text>
 
-            <!-- create new account  -->
-            <v-card-text class="d-flex align-center justify-center pb-1">
-              <p class="mb-0 mr-2">
-                New on our platform?
-              </p>
-              <a href="register-v2">Create an account</a>
-            </v-card-text>
-
-            <!-- divider -->
-            <v-card-text class="d-flex align-center">
-              <v-divider class="mr-5"></v-divider>
-              <span>or</span>
-              <v-divider class="ml-5"></v-divider>
-            </v-card-text>
-
-            <!-- socail links -->
-            <v-card-actions class="d-flex justify-center pt-0">
+            <v-card-actions class="d-flex justify-center align-center">
               <a
-                v-for="link in socialLink"
-                :key="link.icon"
-                href="javascript:void(0)"
-                class="mr-4"
+                href="login-v2"
+                class="text-sm"
               >
-                <v-icon :color="link.color">{{ link.icon }}</v-icon>
+                <v-icon
+                  size="24"
+                  color="primary"
+                >{{ icons.mdiChevronLeft }}</v-icon>
+                <span>Back to login</span>
               </a>
             </v-card-actions>
           </v-card>
@@ -158,42 +114,19 @@
 </template>
 
 <script>
-// eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiChevronLeft } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
   setup() {
     const isPasswordVisible = ref(false)
     const email = ref('')
-    const password = ref('')
-    const socialLink = [
-      {
-        icon: mdiFacebook,
-        color: '#4267b2',
-      },
-      {
-        icon: mdiTwitter,
-        color: '#1da1f2',
-      },
-      {
-        icon: mdiGithub,
-        color: '#272727',
-      },
-      {
-        icon: mdiGoogle,
-        color: '#db4437',
-      },
-    ]
 
     return {
       isPasswordVisible,
       email,
-      password,
-      socialLink,
       icons: {
-        mdiEye,
-        mdiEyeOff,
+        mdiChevronLeft,
       },
     }
   },
@@ -202,4 +135,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '@core/preset/preset/auth.scss';
+.auth-wrapper {
+  &.auth-v2 {
+    .auth-3d-group {
+      bottom: 15% !important;
+    }
+  }
+}
 </style>

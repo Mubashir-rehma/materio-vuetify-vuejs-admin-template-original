@@ -104,6 +104,14 @@ const pages = [
     },
   },
   {
+    path: '/pages/authentication/forget-password-v2',
+    name: 'auth-forgot-password-v2',
+    component: () => import('@/views/pages/authentication/ForgotPassword-v2.vue'),
+    meta: {
+      layout: 'blank',
+    },
+  },
+  {
     path: '/pages/authentication/reset-password-v1',
     name: 'auth-reset-password-v1',
     component: () => import('@/views/pages/authentication/ResetPassword-v1.vue'),

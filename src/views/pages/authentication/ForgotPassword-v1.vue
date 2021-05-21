@@ -17,6 +17,7 @@
             <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
           </a>
         </v-card-title>
+
         <v-card-text>
           <p class="text-2xl font-weight-semibold text--primary mb-0">
             Forgot Password? 🔒
@@ -53,8 +54,14 @@
         </v-card-text>
 
         <v-card-actions class="d-flex justify-center align-center">
-          <a href="login-v1">
-            <v-icon color="primary">{{ icons.mdiChevronLeft }}</v-icon>
+          <a
+            href="login-v1"
+            class="text-sm"
+          >
+            <v-icon
+              size="24"
+              color="primary"
+            >{{ icons.mdiChevronLeft }}</v-icon>
             <span>Back to login</span>
           </a>
         </v-card-actions>
@@ -86,7 +93,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line object-curly-newline
 import { mdiChevronLeft } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 

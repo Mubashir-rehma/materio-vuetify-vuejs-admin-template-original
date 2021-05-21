@@ -35,46 +35,20 @@ export default [
             target: '_blank',
           },
           {
+            title: 'Forgot Password V2',
+            to: 'auth-forgot-password-v2',
+            target: '_blank',
+          },
+          {
             title: 'Reset Password V1',
             to: 'auth-reset-password-v1',
             target: '_blank',
           },
-
-          // {
-          //   title: 'Login v2',
-          //   to: 'auth-login-v2',
-          //   target: '_blank',
-          // },
-          // {
-          //   title: 'Register v1',
-          //   to: 'auth-register-v1',
-          //   target: '_blank',
-          // },
-          // {
-          //   title: 'Register v2',
-          //   to: 'auth-register-v2',
-          //   target: '_blank',
-          // },
-          // {
-          //   title: 'Forgot Password v1',
-          //   to: 'auth-forgot-password-v1',
-          //   target: '_blank',
-          // },
-          // {
-          //   title: 'Forgot Password v2',
-          //   to: 'auth-forgot-password-v2',
-          //   target: '_blank',
-          // },
-          // {
-          //   title: 'Reset Password v1',
-          //   to: 'auth-reset-password-v1',
-          //   target: '_blank',
-          // },
-          // {
-          //   title: 'Reset Password v2',
-          //   to: 'auth-reset-password-v2',
-          //   target: '_blank',
-          // },
+          {
+            title: 'Reset Password V2',
+            to: 'auth-reset-password-v2',
+            target: '_blank',
+          },
         ],
       },
 

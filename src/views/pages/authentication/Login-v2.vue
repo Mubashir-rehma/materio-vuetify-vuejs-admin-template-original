@@ -58,7 +58,7 @@
           <v-card flat>
             <v-card-text class="pb-2">
               <p class="text-2xl font-weight-semibold text--primary mb-1">
-                Welcome to Materialize! 👋🏻
+                Welcome to Materio! 👋🏻
               </p>
               <p class="mb-0">
                 Please sign-in to your account and start the adventure

@@ -19,7 +19,7 @@
         </v-card-title>
         <v-card-text>
           <p class="text-2xl font-weight-semibold text--primary mb-0">
-            Welcome to Materialize! 👋🏻
+            Welcome to Materio! 👋🏻
           </p>
           <p class="mt-3">
             Please sign-in to your account and start the adventure

@@ -7,6 +7,9 @@ export default {
     themes: {
       ...themeConfig.themes,
     },
-    dark: { dark: localStorage.getItem('active-theme') || themeConfig.app.isDark },
+    dark:
+      localStorage.getItem('active-theme') === undefined
+        ? themeConfig.app.isDark
+        : localStorage.getItem('active-theme'),
   },
 }

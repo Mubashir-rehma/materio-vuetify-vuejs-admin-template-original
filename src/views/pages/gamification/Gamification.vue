@@ -1,124 +1,190 @@
 <template>
   <v-row>
+    <!-- congratulations john card -->
     <v-col
       cols="12"
       md="4"
       sm="6"
       order="2"
       order-md="1"
-      class="mb-10 mb-md-0"
+      class="mb-10"
     >
-      <v-card>
-        <v-card-title>Congratulations John! 🥳</v-card-title>
-        <v-card-subtitle>Best seller of the month</v-card-subtitle>
-        <v-card-text class="d-flex align-center">
-          <div>
-            <p class="text-2xl font-weight-semibold primary--text mb-0">
-              $42.8k
-            </p>
-            <p>78% of target 🤟🏻</p>
-            <v-btn color="primary">
-              View Sales
-            </v-btn>
-          </div>
-          <v-spacer></v-spacer>
-          <v-img
-            contain
-            height="108"
-            max-width="83"
-            src="/images/misc/trophy.png"
-          ></v-img>
-        </v-card-text>
+      <v-card class="triangle-card">
+        <v-row>
+          <v-col cols="8">
+            <v-card-title class="app-title text-no-wrap pt-2">
+              Congratulations John! 🥳
+            </v-card-title>
+            <v-card-subtitle class="text-no-wrap">
+              Best seller of the month
+            </v-card-subtitle>
+            <v-card-text class="d-flex align-center pb-2">
+              <div>
+                <p class="text-2xl font-weight-semibold primary--text mb-0">
+                  $42.8k
+                </p>
+                <p>78% of target 🤟🏻</p>
+                <v-btn
+                  small
+                  color="primary"
+                >
+                  View Sales
+                </v-btn>
+              </div>
+            </v-card-text>
+          </v-col>
+          <v-col cols="4">
+            <v-img
+              contain
+              width="166px"
+              height="190px"
+              :src="`/images/misc/triangle-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              class="triangle-bg"
+            ></v-img>
+            <v-img
+              contain
+              height="108"
+              max-width="83"
+              class="gamification-trophy"
+              src="/images/misc/trophy.png"
+            ></v-img>
+          </v-col>
+        </v-row>
       </v-card>
     </v-col>
+
+    <!-- congratulations flora -->
     <v-col
       cols="12"
       md="8"
       order="1"
       order-md="2"
-      class="align-self-end mb-10 mb-md-3"
+      class="align-self-end mb-10 mt-sm-10 mt-md-0"
     >
-      <v-card class="flora-card">
+      <v-card class="ps-3">
         <v-row>
-          <v-col cols="6">
-            <v-card-title class="text-2xl">
-              <span>Congratulations</span> <span class="font-weight-bold mx-1">Flora!</span><span>🎉</span>
+          <v-col
+            cols="8"
+            sm="6"
+          >
+            <v-card-title class="app-title d-flex flex-nowrap text-2xl">
+              <span class="text-no-wrap">Congratulations</span>
+              <span class="text-no-wrap font-weight-semibold mx-1">John!</span>
+              <span>🎉</span>
             </v-card-title>
             <v-card-text>
               You have done 72% 🤩 more sales today.
               Check your new raising badge in your profile.
             </v-card-text>
           </v-col>
-          <v-col cols="6">
-            <v-img
-              height="200"
-              width="324"
-              src="/images/3d-characters/illustration-flora.png"
-              class="flora-img"
-            ></v-img>
+          <v-col
+            cols="4"
+            sm="6"
+          >
+            <div>
+              <v-img
+                width="120"
+                src="/images/misc/tree-4.png"
+                class="gamification-tree-4"
+              ></v-img>
+              <v-img
+                width="128"
+                src="/images/3d-characters/pose-2.png"
+                class="gamification-john-pose-2"
+              ></v-img>
+              <v-img
+                width="100"
+                src="/images/misc/tree.png"
+                class="gamification-tree"
+              ></v-img>
+            </div>
           </v-col>
         </v-row>
       </v-card>
     </v-col>
+
+    <!-- welcome back john -->
     <v-col
       cols="12"
       md="8"
       order="4"
       order-md="3"
-      class="align-self-end"
+      class="align-self-end mb-sm-10 mt-sm-10 mt-md-0"
     >
-      <v-card class="john-card">
+      <v-card class="john-card ps-3">
         <v-row>
-          <v-col cols="6">
-            <v-card-title class="text-2xl">
-              <span>Welcome back </span> <span class="font-weight-bold mx-1">John!</span> <span>🥳</span>
+          <v-col
+            cols="8"
+            sm="6"
+          >
+            <v-card-title class="app-title d-flex flex-nowrap text-2xl pt-4">
+              <span class="text-no-wrap">Welcome back </span>
+              <span class="text-no-wrap font-weight-bold mx-1">John!</span>
+              <span>🥳</span>
             </v-card-title>
-            <v-card-text>
+            <v-card-text class="pb-4">
               You have 4 task to finish today,
               Your already completed 68% 😍 task good job.
             </v-card-text>
           </v-col>
-          <v-col cols="6">
-            <v-img
-              height="200"
-              width="324"
-              src="/images/3d-characters/illustration-john.png"
-              class="john-img"
-            ></v-img>
+          <v-col
+            cols="4"
+            sm="6"
+          >
+            <div>
+              <v-img
+                width="120"
+                src="/images/misc/tree-2.png"
+                class="gamification-tree-4"
+              ></v-img>
+              <v-img
+                width="141"
+                src="/images/3d-characters/pose-m-1.png"
+                class="gamification-john-pose-2"
+              ></v-img>
+              <v-img
+                width="100"
+                src="/images/misc/tree.png"
+                class="gamification-tree"
+              ></v-img>
+            </div>
           </v-col>
         </v-row>
       </v-card>
     </v-col>
+
+    <!-- upgrade account -->
     <v-col
       cols="12"
       md="4"
       sm="6"
       order="3"
       order-md="4"
-      class="mb-10 mb-md-0 mt-3"
+      class="mb-10"
     >
       <v-card class="triangle-card">
         <v-row>
-          <v-col
-            cols="8"
-            class="py-0"
-          >
-            <v-card-title>Upgrade Account 👩🏻‍💻</v-card-title>
-            <v-card-subtitle>Add 15 team members</v-card-subtitle>
-            <v-card-text>
+          <v-col cols="8">
+            <v-card-title class="app-title text-no-wrap pt-2">
+              Upgrade Account 👩🏻‍💻
+            </v-card-title>
+            <v-card-subtitle class="text-no-wrap">
+              Add 15 team members
+            </v-card-subtitle>
+            <v-card-text class="pb-2">
               <p class="text-2xl font-weight-semibold primary--text mb-0">
                 $199
               </p>
               <p>40% OFF 🤩</p>
-              <v-btn color="primary">
+              <v-btn
+                small
+                color="primary"
+              >
                 Upgrade Plan
               </v-btn>
             </v-card-text>
           </v-col>
-          <v-col
-            cols="4"
-            class="py-0"
-          >
+          <v-col cols="4">
             <v-img
               contain
               width="166px"
@@ -130,6 +196,7 @@
               contain
               height="176"
               max-width="45"
+              class="ms-6"
               src="/images/3d-characters/pose-m-9.png"
             ></v-img>
           </v-col>
@@ -140,21 +207,56 @@
 </template>
 
 <style lang="scss" scoped>
-.flora-card,
-.john-card {
-  position: relative;
-  .flora-img,
-  .john-img {
-    position: absolute;
-    bottom: 0;
-  }
-}
 .triangle-card {
   position: relative;
   .triangle-bg {
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+  .gamification-trophy {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+  }
+}
+.gamification-tree-4,
+.gamification-john-pose-2,
+.gamification-tree {
+  position: absolute;
+}
+.gamification-tree {
+  top: 10%;
+  right: 0;
+}
+.gamification-john-pose-2 {
+  bottom: 0;
+  right: 15%;
+}
+.gamification-tree-4 {
+  bottom: 0;
+  right: 30%;
+}
+
+@media (max-width: 600px) {
+  .gamification-tree,
+  .gamification-tree-4 {
+    display: none;
+  }
+  .gamification-john-pose-2 {
+    right: 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .gamification-john-pose-2 {
+    max-width: 70px;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-title {
+    font-size: 1.2rem !important;
   }
 }
 </style>

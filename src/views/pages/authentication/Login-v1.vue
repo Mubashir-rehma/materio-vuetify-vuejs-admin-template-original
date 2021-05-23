@@ -2,9 +2,9 @@
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
       <v-card>
-        <v-card-title class="d-flex align-center justify-center pt-11">
-          <a
-            href="/"
+        <v-card-title class="d-flex align-center justify-center py-7">
+          <router-link
+            to="/"
             class="d-flex align-center"
           >
             <div class="logo mr-3">
@@ -14,98 +14,102 @@
                 src="/logo.svg"
               ></v-img>
             </div>
-            <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
-          </a>
+            <h2 class="app-title text-2xl font-weight-semibold">
+              Materio
+            </h2>
+          </router-link>
         </v-card-title>
         <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-0">
+          <p class="text-2xl font-weight-semibold text--primary mb-2">
             Welcome to Materio! 👋🏻
           </p>
-          <p class="mt-3">
+          <p class="mb-2">
             Please sign-in to your account and start the adventure
           </p>
         </v-card-text>
 
         <!-- login form -->
         <v-card-text>
-          <v-form class="multi-col-validation">
-            <v-row>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="email"
-                  outlined
-                  label="Email"
-                  placeholder="email"
-                  hide-details
-                ></v-text-field>
-              </v-col>
+          <v-form>
+            <div class="mb-3">
+              <v-text-field
+                v-model="email"
+                outlined
+                label="Email"
+                placeholder="Email"
+                hide-details
+              ></v-text-field>
+            </div>
 
-              <v-col
-                cols="12"
-                class="pt-0"
+            <div>
+              <v-text-field
+                v-model="password"
+                outlined
+                :type="isPasswordVisible ? 'text' : 'password'"
+                label="Password"
+                placeholder="Password"
+                :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                hide-details
+                @click:append="isPasswordVisible = !isPasswordVisible"
+              ></v-text-field>
+            </div>
+
+            <div class="d-flex align-center justify-space-between flex-wrap">
+              <v-checkbox
+                label="Remember Me"
+                hide-details
               >
-                <v-text-field
-                  v-model="password"
-                  outlined
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  label="Password"
-                  placeholder="Password"
-                  :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
-                  @click:append="isPasswordVisible = !isPasswordVisible"
-                ></v-text-field>
-              </v-col>
+              </v-checkbox>
 
-              <v-col
-                cols="12"
-                class="d-flex align-center justify-space-between pt-0"
+              <!-- forget link -->
+              <router-link
+                :to="{name:'auth-forgot-password-v1'}"
+                class="ml-3 mt-5"
               >
-                <v-checkbox
-                  hide-details
-                  label="Remember Me"
-                  class="mt-0"
-                >
-                </v-checkbox>
+                Forgot Password?
+              </router-link>
+            </div>
 
-                <!-- forget link -->
-                <a href="forget-password-v1">Forgot Password?</a>
-              </v-col>
-              <v-col cols="12">
-                <v-btn
-                  block
-                  color="primary"
-                >
-                  Login
-                </v-btn>
-              </v-col>
-            </v-row>
+            <div class="mt-4">
+              <v-btn
+                block
+                color="primary"
+              >
+                Login
+              </v-btn>
+            </div>
           </v-form>
         </v-card-text>
 
         <!-- create new account  -->
-        <v-card-text class="d-flex align-center justify-center">
+        <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
           <p class="mb-0 mr-2">
             New on our platform?
           </p>
-          <a href="register-v1">Create an account</a>
+          <router-link :to="{name:'auth-register-v1'}">
+            Create an account
+          </router-link>
         </v-card-text>
 
         <!-- divider -->
-        <v-card-text class="d-flex align-center">
-          <v-divider class="mr-5"></v-divider>
-          <span>or</span>
-          <v-divider class="ml-5"></v-divider>
+        <v-card-text class="d-flex align-center mt-2">
+          <v-divider></v-divider>
+          <span class="mx-5">or</span>
+          <v-divider></v-divider>
         </v-card-text>
 
         <!-- socail links -->
-        <v-card-actions class="d-flex justify-center pb-8">
-          <a
+        <v-card-actions class="d-flex justify-center">
+          <v-btn
             v-for="link in socialLink"
             :key="link.icon"
-            href="javascript:void(0)"
-            class="mr-4"
+            icon
+            class="ml-1"
           >
-            <v-icon :color="link.color">{{ link.icon }}</v-icon>
-          </a>
+            <v-icon :color="link.color">
+              {{ link.icon }}
+            </v-icon>
+          </v-btn>
         </v-card-actions>
       </v-card>
     </div>

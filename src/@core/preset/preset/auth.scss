@@ -3,6 +3,7 @@
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   flex-basis: 100%;
+  padding: 1.5rem;
 
   // common style for both v1 and v2
   a {
@@ -42,6 +43,9 @@
       width: 28rem;
       height: 36.25rem;
       z-index: 1;
+      .v-card{
+        padding: 0.9375rem 0.875rem;
+      }
     }
   }
 

@@ -96,7 +96,7 @@ const pages = [
     },
   },
   {
-    path: '/pages/authentication/forget-password-v1',
+    path: '/pages/authentication/forgot-password-v1',
     name: 'auth-forgot-password-v1',
     component: () => import('@/views/pages/authentication/ForgotPassword-v1.vue'),
     meta: {
@@ -104,7 +104,7 @@ const pages = [
     },
   },
   {
-    path: '/pages/authentication/forget-password-v2',
+    path: '/pages/authentication/forgot-password-v2',
     name: 'auth-forgot-password-v2',
     component: () => import('@/views/pages/authentication/ForgotPassword-v2.vue'),
     meta: {

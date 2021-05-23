@@ -2,9 +2,10 @@
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
       <v-card>
-        <v-card-title class="d-flex align-center justify-center pt-11">
-          <a
-            href="/"
+        <!-- logo -->
+        <v-card-title class="d-flex align-center justify-center py-7">
+          <router-link
+            to="/"
             class="d-flex align-center"
           >
             <div class="logo mr-3">
@@ -14,112 +15,109 @@
                 src="/logo.svg"
               ></v-img>
             </div>
-            <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
-          </a>
+            <h2 class="text-2xl font-weight-semibold">
+              Materio
+            </h2>
+          </router-link>
         </v-card-title>
 
+        <!-- title -->
         <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-0">
+          <p class="text-2xl font-weight-semibold text--primary mb-2">
             Adventure starts here 🚀
           </p>
-          <p class="mt-3">
+          <p class="mb-2">
             Make your app management easy and fun!
           </p>
         </v-card-text>
 
         <!-- login form -->
         <v-card-text>
-          <v-form class="multi-col-validation">
-            <v-row>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="username"
-                  outlined
-                  label="Username"
-                  placeholder="Username"
-                  hide-details
-                ></v-text-field>
-              </v-col>
+          <v-form>
+            <div class="mb-3">
+              <v-text-field
+                v-model="username"
+                outlined
+                label="Username"
+                placeholder="Username"
+                hide-details
+              ></v-text-field>
+            </div>
 
-              <v-col
-                cols="12"
-                class="pt-0"
-              >
-                <v-text-field
-                  v-model="email"
-                  outlined
-                  label="Email"
-                  placeholder="Email"
-                  hide-details
-                ></v-text-field>
-              </v-col>
+            <div class="mb-3">
+              <v-text-field
+                v-model="email"
+                outlined
+                label="Email"
+                placeholder="Email"
+                hide-details
+              ></v-text-field>
+            </div>
 
-              <v-col
-                cols="12"
-                class="pt-0"
-              >
-                <v-text-field
-                  v-model="password"
-                  outlined
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  label="Password"
-                  placeholder="Password"
-                  :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
-                  @click:append="isPasswordVisible = !isPasswordVisible"
-                ></v-text-field>
-              </v-col>
+            <div>
+              <v-text-field
+                v-model="password"
+                outlined
+                :type="isPasswordVisible ? 'text' : 'password'"
+                label="Password"
+                placeholder="Password"
+                :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                hide-details
+                @click:append="isPasswordVisible = !isPasswordVisible"
+              ></v-text-field>
+            </div>
 
-              <v-col
-                cols="12"
-                class="pt-0"
-              >
-                <v-checkbox
-                  hide-details
-                  class="mt-0"
-                >
-                  <template #label>
+            <div>
+              <v-checkbox hide-details>
+                <template #label>
+                  <div class="d-flex align-center flex-wrap">
                     <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy & terms</a>
-                  </template>
-                </v-checkbox>
-              </v-col>
+                  </div>
+                </template>
+              </v-checkbox>
+            </div>
 
-              <v-col cols="12">
-                <v-btn
-                  block
-                  color="primary"
-                >
-                  Sign Up
-                </v-btn>
-              </v-col>
-            </v-row>
+            <div class="mt-4">
+              <v-btn
+                block
+                color="primary"
+              >
+                Sign Up
+              </v-btn>
+            </div>
           </v-form>
         </v-card-text>
 
         <!-- create new account  -->
-        <v-card-text class="d-flex align-center justify-center">
+        <v-card-text class="d-flex align-center justify-center mt-2">
           <p class="mb-0 mr-2">
             Already have an account?
           </p>
-          <a href="login-v1">Sign in instead</a>
+          <router-link :to="{name:'auth-login-v1'}">
+            Sign in instead
+          </router-link>
         </v-card-text>
 
         <!-- divider -->
-        <v-card-text class="d-flex align-center">
+        <v-card-text class="d-flex align-center mt-2">
           <v-divider class="mr-5"></v-divider>
           <span>or</span>
           <v-divider class="ml-5"></v-divider>
         </v-card-text>
 
         <!-- social link -->
-        <v-card-actions class="d-flex justify-center pb-8">
-          <a
+        <v-card-actions class="d-flex justify-center">
+          <v-btn
             v-for="link in socialLink"
             :key="link.icon"
+            icon
             href="javascript:void(0)"
-            class="mr-4"
+            class="ml-1"
           >
-            <v-icon :color="link.color">{{ link.icon }}</v-icon>
-          </a>
+            <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
+              {{ link.icon }}
+            </v-icon>
+          </v-btn>
         </v-card-actions>
       </v-card>
     </div>
@@ -163,18 +161,22 @@ export default {
       {
         icon: mdiFacebook,
         color: '#4267b2',
+        colorInDark: '#4267b2',
       },
       {
         icon: mdiTwitter,
         color: '#1da1f2',
+        colorInDark: '#1da1f2',
       },
       {
         icon: mdiGithub,
         color: '#272727',
+        colorInDark: '#fff',
       },
       {
         icon: mdiGoogle,
-        color: '#db4437',
+        color: '#1da1f2',
+        colorInDark: '#db4437',
       },
     ]
 

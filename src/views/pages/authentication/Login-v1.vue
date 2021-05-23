@@ -2,6 +2,7 @@
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
       <v-card>
+        <!-- logo -->
         <v-card-title class="d-flex align-center justify-center py-7">
           <router-link
             to="/"
@@ -14,11 +15,13 @@
                 src="/logo.svg"
               ></v-img>
             </div>
-            <h2 class="app-title text-2xl font-weight-semibold">
+            <h2 class="text-2xl font-weight-semibold">
               Materio
             </h2>
           </router-link>
         </v-card-title>
+
+        <!-- title -->
         <v-card-text>
           <p class="text-2xl font-weight-semibold text--primary mb-2">
             Welcome to Materio! 👋🏻

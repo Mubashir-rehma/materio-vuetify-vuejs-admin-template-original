@@ -11,7 +11,7 @@
       <p class="text-xs mb-0">
         Plase make the payment to start enjoying all the features of our premuim plan as soon as possible.
       </p>
-      <div class="plan-banner d-flex align-center">
+      <div class="plan-banner d-flex align-center flex-wrap">
         <v-avatar
           rounded
           class="banner-avatar"
@@ -32,11 +32,13 @@
 
         <v-spacer></v-spacer>
 
-        <sup>
-          <span class="text-xs font-weight-medium text--primary">$</span>
-        </sup>
-        <sup><h1 class="text-2xl">5,250</h1></sup>
-        <sub>/Year</sub>
+        <div class="d-flex align-center mt-2">
+          <sup>
+            <span class="text-xs font-weight-medium text--primary">$</span>
+          </sup>
+          <sup><h1 class="text-2xl">5,250</h1></sup>
+          <sub>/Year</sub>
+        </div>
       </div>
       <div class="payment-details">
         <p class="font-weight-semibold text--primary">
@@ -46,7 +48,7 @@
         <div
           v-for="data in paymentDetails"
           :key="data.cardNo"
-          class="d-flex"
+          class="d-flex align-center flex-wrap"
         >
           <v-avatar rounded>
             <v-img
@@ -134,8 +136,7 @@ export default {
 }
 .payment-details {
   .cvv {
-    width: 1rem;
-    height: 1.875rem;
+    max-width: 3.5rem;
   }
 }
 </style>

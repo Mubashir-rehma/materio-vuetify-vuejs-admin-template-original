@@ -2,9 +2,9 @@
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
       <v-card>
-        <v-card-title class="d-flex align-center justify-center pt-11">
-          <a
-            href="/"
+        <v-card-title class="d-flex align-center justify-center py-7">
+          <router-link
+            to="/"
             class="d-flex align-center"
           >
             <div class="logo mr-3">
@@ -14,56 +14,57 @@
                 src="/logo.svg"
               ></v-img>
             </div>
-            <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
-          </a>
+            <h2 class="text-2xl font-weight-semibold">
+              Materio
+            </h2>
+          </router-link>
         </v-card-title>
 
         <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-0">
+          <p class="text-2xl font-weight-semibold text--primary mb-2">
             Forgot Password? 🔒
           </p>
-          <p class="mt-3">
+          <p class="mb-2">
             Enter your email and we'll send you instructions to reset your password
           </p>
         </v-card-text>
 
         <!-- login form -->
         <v-card-text>
-          <v-form class="multi-col-validation">
-            <v-row>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="email"
-                  outlined
-                  label="Email"
-                  placeholder="email"
-                  hide-details
-                ></v-text-field>
-              </v-col>
-
-              <v-col cols="12">
-                <v-btn
-                  block
-                  color="primary"
-                >
-                  Send reset link
-                </v-btn>
-              </v-col>
-            </v-row>
+          <v-form>
+            <div class="mb-4">
+              <v-text-field
+                v-model="email"
+                outlined
+                label="Email"
+                placeholder="email"
+                hide-details
+              ></v-text-field>
+            </div>
+            <div>
+              <v-btn
+                block
+                color="primary"
+              >
+                Send reset link
+              </v-btn>
+            </div>
           </v-form>
         </v-card-text>
 
         <v-card-actions class="d-flex justify-center align-center">
-          <a
-            href="login-v1"
-            class="text-sm"
+          <router-link
+            :to="{name:'auth-login-v1'}"
+            class="d-flex align-center text-sm"
           >
             <v-icon
               size="24"
               color="primary"
-            >{{ icons.mdiChevronLeft }}</v-icon>
+            >
+              {{ icons.mdiChevronLeft }}
+            </v-icon>
             <span>Back to login</span>
-          </a>
+          </router-link>
         </v-card-actions>
       </v-card>
     </div>

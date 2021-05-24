@@ -3,9 +3,9 @@
     <div class="auth-inner">
       <v-card>
         <!-- logo and title -->
-        <v-card-title class="d-flex align-center justify-center pt-11">
-          <a
-            href="/"
+        <v-card-title class="d-flex align-center justify-center py-7">
+          <router-link
+            to="/"
             class="d-flex align-center"
           >
             <div class="logo mr-3">
@@ -15,74 +15,75 @@
                 src="/logo.svg"
               ></v-img>
             </div>
-            <h2 class="app-title text-2xl font-weight-semibold">Materio</h2>
-          </a>
+            <h2 class="text-2xl font-weight-semibold">
+              Materio
+            </h2>
+          </router-link>
         </v-card-title>
 
         <v-card-text>
-          <p class="text-2xl font-weight-semibold text--primary mb-0">
+          <p class="text-2xl font-weight-semibold text--primary mb-2">
             Reset Password 🔒
           </p>
-          <p class="mt-3">
+          <p class="mb-2">
             Your new password must be different from previously used passwords
           </p>
         </v-card-text>
 
         <!-- login form -->
         <v-card-text>
-          <v-form class="multi-col-validation">
-            <v-row>
-              <v-col cols="12">
-                <v-text-field
-                  v-model="password"
-                  outlined
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  label="New Password"
-                  placeholder="New Password"
-                  :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
-                  @click:append="isPasswordVisible = !isPasswordVisible"
-                ></v-text-field>
-              </v-col>
+          <v-form>
+            <div class="mb-3">
+              <v-text-field
+                v-model="password"
+                outlined
+                :type="isPasswordVisible ? 'text' : 'password'"
+                label="New Password"
+                placeholder="New Password"
+                :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                hide-details
+                @click:append="isPasswordVisible = !isPasswordVisible"
+              ></v-text-field>
+            </div>
 
-              <v-col
-                cols="12"
-                class="pt-0"
+            <div>
+              <v-text-field
+                v-model="cPassword"
+                outlined
+                :type="isCPasswordVisible ? 'text' : 'password'"
+                label="Confirm Password"
+                placeholder="Confirm Password"
+                :append-icon="isCPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                hide-details
+                @click:append="isCPasswordVisible = !isCPasswordVisible"
+              ></v-text-field>
+            </div>
+
+            <div class="mt-4">
+              <v-btn
+                block
+                color="primary"
               >
-                <v-text-field
-                  v-model="cPassword"
-                  outlined
-                  :type="isCPasswordVisible ? 'text' : 'password'"
-                  label="Confirm Password"
-                  placeholder="Confirm Password"
-                  :append-icon="isCPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
-                  @click:append="isCPasswordVisible = !isCPasswordVisible"
-                ></v-text-field>
-              </v-col>
-
-              <v-col cols="12">
-                <v-btn
-                  block
-                  color="primary"
-                >
-                  Set New Password
-                </v-btn>
-              </v-col>
-            </v-row>
+                Set New Password
+              </v-btn>
+            </div>
           </v-form>
         </v-card-text>
 
         <!-- back to login -->
         <v-card-actions class="d-flex justify-center align-center">
-          <a
-            href="login-v1"
-            class="text-sm"
+          <router-link
+            :to="{name:'auth-login-v1'}"
+            class="d-flex align-center text-sm"
           >
             <v-icon
               size="24"
               color="primary"
-            >{{ icons.mdiChevronLeft }}</v-icon>
+            >
+              {{ icons.mdiChevronLeft }}
+            </v-icon>
             <span>Back to login</span>
-          </a>
+          </router-link>
         </v-card-actions>
       </v-card>
     </div>

@@ -126,9 +126,9 @@
 
                 <!-- create new account  -->
                 <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
-                  <p class="mb-0 mr-2">
+                  <span class="mr-2">
                     New on our platform?
-                  </p>
+                  </span>
                   <router-link :to="{name:'auth-register-v2'}">
                     Create an account
                   </router-link>

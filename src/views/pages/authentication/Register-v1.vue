@@ -90,9 +90,9 @@
 
         <!-- create new account  -->
         <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
-          <p class="mb-0 mr-2">
+          <span class="mr-2">
             Already have an account?
-          </p>
+          </span>
           <router-link :to="{name:'auth-login-v1'}">
             Sign in instead
           </router-link>

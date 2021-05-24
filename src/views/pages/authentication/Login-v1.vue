@@ -64,7 +64,7 @@
               >
               </v-checkbox>
 
-              <!-- forget link -->
+              <!-- forgot link -->
               <router-link
                 :to="{name:'auth-forgot-password-v1'}"
                 class="ml-3 mt-5"
@@ -86,9 +86,9 @@
 
         <!-- create new account  -->
         <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
-          <p class="mb-0 mr-2">
+          <span class="mr-2">
             New on our platform?
-          </p>
+          </span>
           <router-link :to="{name:'auth-register-v1'}">
             Create an account
           </router-link>
@@ -101,7 +101,7 @@
           <v-divider></v-divider>
         </v-card-text>
 
-        <!-- socail links -->
+        <!-- social links -->
         <v-card-actions class="d-flex justify-center">
           <v-btn
             v-for="link in socialLink"

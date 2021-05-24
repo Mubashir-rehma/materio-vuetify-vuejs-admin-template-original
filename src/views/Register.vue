@@ -36,16 +36,16 @@
             height="226"
             width="300"
             class="auth-tree"
-            src="/images/misc/tree-3.png"
+            src="/images/misc/tree-2.png"
           ></v-img>
 
           <!-- 3d character -->
           <v-img
             contain
             max-width="100%"
-            height="692"
+            height="710"
             class="auth-3d-group"
-            src="/images/3d-characters/group.png"
+            src="/images/3d-characters/illustration-register-v2.png"
           ></v-img>
         </v-col>
 
@@ -62,29 +62,40 @@
               class="mx-auto"
             >
               <v-card flat>
-                <v-card-text class="pb-2">
+                <v-card-text>
                   <p class="text-2xl font-weight-semibold text--primary mb-2">
-                    Welcome to Materio! 👋🏻
+                    Adventure starts here 🚀
                   </p>
                   <p class="mb-2">
-                    Please sign-in to your account and start the adventure
+                    Make your app management easy and fun!
                   </p>
                 </v-card-text>
 
                 <!-- login form -->
                 <v-card-text>
                   <v-form
-                    ref="loginForm"
+                    ref="registerForm"
                     @submit.prevent="handleFormSubmit"
                   >
                     <div>
                       <v-text-field
+                        v-model="username"
+                        outlined
+                        label="Username"
+                        :error-messages="errorMessages.username"
+                        :rules="[validators.required, validators.alphaValidator]"
+                        placeholder="Username"
+                      ></v-text-field>
+                    </div>
+
+                    <div>
+                      <v-text-field
                         v-model="email"
                         outlined
-                        label="Email"
-                        placeholder="email"
                         :error-messages="errorMessages.email"
                         :rules="[validators.required, validators.emailValidator]"
+                        label="Email"
+                        placeholder="Email"
                       ></v-text-field>
                     </div>
 
@@ -96,26 +107,20 @@
                         label="Password"
                         :error-messages="errorMessages.password"
                         placeholder="Password"
-                        :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
                         :rules="[validators.required, validators.passwordValidator]"
+                        :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
                         @click:append="isPasswordVisible = !isPasswordVisible"
                       ></v-text-field>
                     </div>
 
-                    <div class="d-flex align-center justify-space-between flex-wrap">
-                      <v-checkbox
-                        hide-details
-                        label="Remember Me"
-                      >
+                    <div>
+                      <v-checkbox hide-details>
+                        <template #label>
+                          <div class="d-flex align-center flex-wrap">
+                            <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy & terms</a>
+                          </div>
+                        </template>
                       </v-checkbox>
-
-                      <!-- forget link -->
-                      <router-link
-                        :to="{name:'auth-forgot-password'}"
-                        class="ml-3 mt-5"
-                      >
-                        Forgot Password?
-                      </router-link>
                     </div>
 
                     <div class="mt-6">
@@ -124,7 +129,7 @@
                         color="primary"
                         type="submit"
                       >
-                        Login
+                        Sign Up
                       </v-btn>
                     </div>
                   </v-form>
@@ -133,10 +138,10 @@
                 <!-- create new account  -->
                 <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
                   <p class="mb-0 mr-2">
-                    New on our platform?
+                    Already have an account?
                   </p>
-                  <router-link :to="{name:'auth-register'}">
-                    Create an account
+                  <router-link :to="{name:'auth-login'}">
+                    Sign in instead
                   </router-link>
                 </v-card-text>
 
@@ -147,7 +152,7 @@
                   <v-divider></v-divider>
                 </v-card-text>
 
-                <!-- socail links -->
+                <!-- social links -->
                 <v-card-actions class="d-flex justify-center">
                   <v-btn
                     v-for="link in socialLink"
@@ -173,23 +178,23 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { required, emailValidator, passwordValidator, alphaValidator } from '@core/utils/validation'
 import { ref } from '@vue/composition-api'
-import { required, emailValidator, passwordValidator } from '@core/utils/validation'
 import axios from '@axios'
 import { useRouter } from '@core/utils'
 
 export default {
   setup() {
-    // Template Ref
-    const loginForm = ref(null)
+    // Template Refs
+    const registerForm = ref(null)
 
     const { router } = useRouter()
 
     const isPasswordVisible = ref(false)
-
-    // TODO: Remove this login details
-    const email = ref('admin@demo.com')
-    const password = ref('Admin@demo#123')
+    const username = ref('bhuro')
+    const email = ref('user@mai.com')
+    const password = ref('Jay@cLEVISION#123')
     const errorMessages = ref([])
     const socialLink = [
       {
@@ -215,7 +220,7 @@ export default {
     ]
 
     const handleFormSubmit = () => {
-      const isFormValid = loginForm.value.validate()
+      const isFormValid = registerForm.value.validate()
 
       if (!isFormValid) return
 
@@ -230,7 +235,7 @@ export default {
       */
 
       axios
-        .post('/auth/login', { email: email.value, password: password.value })
+        .post('/auth/register', { username: username.value, email: email.value, password: password.value })
         .then(response => {
           const { accessToken } = response.data
 
@@ -261,19 +266,19 @@ export default {
         })
         .catch(error => {
           // TODO: Show notification
-          console.error('Oops, Unable to login!')
+          console.error('Oops, Unable to Register!')
           console.log('error :>> ', error.response)
           errorMessages.value = error.response.data.error
         })
     }
 
     return {
-      handleFormSubmit,
-
       isPasswordVisible,
+      username,
       email,
       password,
       errorMessages,
+      handleFormSubmit,
       socialLink,
       icons: {
         mdiEye,
@@ -283,10 +288,11 @@ export default {
         required,
         emailValidator,
         passwordValidator,
+        alphaValidator,
       },
 
       // Template Refs
-      loginForm,
+      registerForm,
     }
   },
 }
@@ -294,4 +300,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '@core/preset/preset/auth.scss';
+.auth-wrapper {
+  &.auth-v2 {
+    .auth-3d-group {
+      bottom: 10% !important;
+    }
+  }
+}
 </style>

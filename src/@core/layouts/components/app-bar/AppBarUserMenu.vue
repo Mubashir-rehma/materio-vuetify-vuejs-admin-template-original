@@ -2,9 +2,9 @@
   <div class="d-flex align-center">
     <div class="d-flex flex-column mr-2 text-right">
       <span>
-        John Doe
+        {{ userData.fullName || userData.username }}
       </span>
-      <small class="text--secondary">Admin</small>
+      <small class="text--secondary">{{ userData.role }}</small>
     </div>
     <v-menu
       offset-y
@@ -23,9 +23,21 @@
           <v-avatar
             size="40px"
             v-bind="attrs"
+            color="primary"
+            class="v-avatar-light-bg primary--text"
             v-on="on"
           >
-            <v-img src="/images/avatars/1.png"></v-img>
+            <v-img
+              v-if="userData.avatar"
+              src="/images/avatars/1.png"
+            ></v-img>
+            <v-icon
+              v-else
+              color="primary"
+              size="28"
+            >
+              {{ icons.mdiAccountOutline }}
+            </v-icon>
           </v-avatar>
         </v-badge>
       </template>
@@ -117,7 +129,7 @@
         </v-list-item>
 
         <!-- Logout -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item @click="logoutUser">
           <v-list-item-icon class="mr-2">
             <v-icon size="22">
               {{ icons.mdiLogoutVariant }}
@@ -143,10 +155,33 @@ import {
   mdiHelpCircleOutline,
   mdiLogoutVariant,
 } from '@mdi/js'
+import { useRouter } from '@core/utils'
 
 export default {
   setup() {
+    const { router } = useRouter()
+    const userData = JSON.parse(localStorage.getItem('userData'))
+
+    const logoutUser = () => {
+      // Remove userData from localStorage
+      // ? We just removed token from localStorage. If you like, you can also make API call to backend to blacklist used token
+      localStorage.removeItem('accessToken')
+
+      // Remove userData & Ability from localStorage
+      localStorage.removeItem('userData')
+      localStorage.removeItem('userAbility')
+
+      // Reset ability
+      // this.$ability.update(initialAbility)
+
+      // Redirect to login page
+      router.push({ name: 'auth-login' })
+    }
+
     return {
+      logoutUser,
+      userData,
+
       icons: {
         mdiAccountOutline,
         mdiEmailOutline,

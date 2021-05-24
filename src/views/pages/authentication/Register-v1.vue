@@ -61,7 +61,7 @@
                 :type="isPasswordVisible ? 'text' : 'password'"
                 label="Password"
                 placeholder="Password"
-                :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                :append-icon="isPasswordVisible ? icons.mdiEyeOff : icons.mdiEye"
                 hide-details
                 @click:append="isPasswordVisible = !isPasswordVisible"
               ></v-text-field>
@@ -89,7 +89,7 @@
         </v-card-text>
 
         <!-- create new account  -->
-        <v-card-text class="d-flex align-center justify-center mt-2">
+        <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
           <p class="mb-0 mr-2">
             Already have an account?
           </p>
@@ -100,9 +100,9 @@
 
         <!-- divider -->
         <v-card-text class="d-flex align-center mt-2">
-          <v-divider class="mr-5"></v-divider>
-          <span>or</span>
-          <v-divider class="ml-5"></v-divider>
+          <v-divider></v-divider>
+          <span class="mx-5">or</span>
+          <v-divider></v-divider>
         </v-card-text>
 
         <!-- social link -->

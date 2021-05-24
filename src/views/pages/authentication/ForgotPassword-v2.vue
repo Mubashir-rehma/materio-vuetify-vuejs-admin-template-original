@@ -53,63 +53,65 @@
           lg="4"
           class="d-flex align-center auth-bg"
         >
-          <v-col
-            cols="12"
-            sm="8"
-            md="6"
-            lg="12"
-            class="mx-auto"
-          >
-            <v-card flat>
-              <v-card-text>
-                <p class="text-2xl font-weight-semibold text--primary mb-2">
-                  Forgot Password? 🔒
-                </p>
-                <p class="mb-2">
-                  Enter your email and we'll send you instructions to reset your password
-                </p>
-              </v-card-text>
+          <v-row>
+            <v-col
+              cols="12"
+              sm="8"
+              md="6"
+              lg="12"
+              class="mx-auto"
+            >
+              <v-card flat>
+                <v-card-text>
+                  <p class="text-2xl font-weight-semibold text--primary mb-2">
+                    Forgot Password? 🔒
+                  </p>
+                  <p class="mb-2">
+                    Enter your email and we'll send you instructions to reset your password
+                  </p>
+                </v-card-text>
 
-              <!-- login form -->
-              <v-card-text>
-                <v-form>
-                  <div class="mb-4">
-                    <v-text-field
-                      v-model="email"
-                      outlined
-                      label="Email"
-                      placeholder="email"
-                      hide-details
-                    ></v-text-field>
-                  </div>
+                <!-- login form -->
+                <v-card-text>
+                  <v-form>
+                    <div class="mb-4">
+                      <v-text-field
+                        v-model="email"
+                        outlined
+                        label="Email"
+                        placeholder="email"
+                        hide-details
+                      ></v-text-field>
+                    </div>
 
-                  <div>
-                    <v-btn
-                      block
+                    <div>
+                      <v-btn
+                        block
+                        color="primary"
+                      >
+                        Send reset link
+                      </v-btn>
+                    </div>
+                  </v-form>
+                </v-card-text>
+
+                <v-card-actions class="d-flex justify-center align-center">
+                  <router-link
+                    :to="{name:'auth-login-v2'}"
+                    class="d-flex align-center text-sm"
+                  >
+                    <v-icon
+                      size="24"
                       color="primary"
                     >
-                      Send reset link
-                    </v-btn>
-                  </div>
-                </v-form>
-              </v-card-text>
-
-              <v-card-actions class="d-flex justify-center align-center">
-                <router-link
-                  :to="{name:'auth-login-v2'}"
-                  class="d-flex align-center text-sm"
-                >
-                  <v-icon
-                    size="24"
-                    color="primary"
-                  >
-                    {{ icons.mdiChevronLeft }}
-                  </v-icon>
-                  <span>Back to login</span>
-                </router-link>
-              </v-card-actions>
-            </v-card>
-          </v-col>
+                      {{ icons.mdiChevronLeft }}
+                    </v-icon>
+                    <span>Back to login</span>
+                  </router-link>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </div>

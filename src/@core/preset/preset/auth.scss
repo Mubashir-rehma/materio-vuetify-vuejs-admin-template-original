@@ -69,6 +69,13 @@
       .auth-row{
         height: 100%;
       }
+      .auth-bg{
+        .v-card{
+          max-width: 40rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
 
       .auth-mask-bg,
       .auth-tree,

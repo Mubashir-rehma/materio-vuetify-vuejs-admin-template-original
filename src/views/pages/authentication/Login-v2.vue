@@ -63,10 +63,10 @@
             >
               <v-card flat>
                 <v-card-text class="pb-2">
-                  <p class="text-2xl font-weight-semibold text--primary mb-1">
+                  <p class="text-2xl font-weight-semibold text--primary mb-2">
                     Welcome to Materio! 👋🏻
                   </p>
-                  <p class="mb-0">
+                  <p class="mb-2">
                     Please sign-in to your account and start the adventure
                   </p>
                 </v-card-text>
@@ -142,11 +142,12 @@
                 </v-card-text>
 
                 <!-- socail links -->
-                <v-card-actions class="d-flex justify-center pt-0">
+                <v-card-actions class="d-flex justify-center">
                   <v-btn
                     v-for="link in socialLink"
                     :key="link.icon"
                     icon
+                    href="javascript:void(0)"
                     class="ml-1"
                   >
                     <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
@@ -191,7 +192,7 @@ export default {
       },
       {
         icon: mdiGoogle,
-        color: '#1da1f2',
+        color: '#db4437',
         colorInDark: '#db4437',
       },
     ]

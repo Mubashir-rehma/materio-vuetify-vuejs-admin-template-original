@@ -107,6 +107,7 @@
             v-for="link in socialLink"
             :key="link.icon"
             icon
+            href="javascript:void(0)"
             class="ml-1"
           >
             <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
@@ -170,7 +171,7 @@ export default {
       },
       {
         icon: mdiGoogle,
-        color: '#1da1f2',
+        color: '#db4437',
         colorInDark: '#db4437',
       },
     ]

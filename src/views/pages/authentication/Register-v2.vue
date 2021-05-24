@@ -63,10 +63,10 @@
             >
               <v-card flat>
                 <v-card-text>
-                  <p class="text-2xl font-weight-semibold text--primary mb-0">
+                  <p class="text-2xl font-weight-semibold text--primary mb-2">
                     Adventure starts here 🚀
                   </p>
-                  <p class="mt-3">
+                  <p class="mb-2">
                     Make your app management easy and fun!
                   </p>
                 </v-card-text>
@@ -197,7 +197,7 @@ export default {
       },
       {
         icon: mdiGoogle,
-        color: '#1da1f2',
+        color: '#db4437',
         colorInDark: '#db4437',
       },
     ]

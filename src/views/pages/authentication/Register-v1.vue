@@ -175,7 +175,7 @@ export default {
       },
       {
         icon: mdiGoogle,
-        color: '#1da1f2',
+        color: '#db4437',
         colorInDark: '#db4437',
       },
     ]

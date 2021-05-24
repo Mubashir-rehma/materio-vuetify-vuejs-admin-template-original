@@ -77,7 +77,7 @@
               </v-checkbox>
             </div>
 
-            <div class="mt-4">
+            <div class="mt-6">
               <v-btn
                 block
                 color="primary"

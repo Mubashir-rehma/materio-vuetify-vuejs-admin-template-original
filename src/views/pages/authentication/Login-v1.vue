@@ -73,7 +73,7 @@
               </router-link>
             </div>
 
-            <div class="mt-4">
+            <div class="mt-6">
               <v-btn
                 block
                 color="primary"
@@ -109,7 +109,7 @@
             icon
             class="ml-1"
           >
-            <v-icon :color="link.color">
+            <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
               {{ link.icon }}
             </v-icon>
           </v-btn>
@@ -156,18 +156,22 @@ export default {
       {
         icon: mdiFacebook,
         color: '#4267b2',
+        colorInDark: '#4267b2',
       },
       {
         icon: mdiTwitter,
         color: '#1da1f2',
+        colorInDark: '#1da1f2',
       },
       {
         icon: mdiGithub,
         color: '#272727',
+        colorInDark: '#fff',
       },
       {
         icon: mdiGoogle,
-        color: '#db4437',
+        color: '#1da1f2',
+        colorInDark: '#db4437',
       },
     ]
 

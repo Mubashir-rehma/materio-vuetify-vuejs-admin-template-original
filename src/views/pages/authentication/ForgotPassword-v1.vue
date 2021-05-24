@@ -113,6 +113,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@core/preset/preset/auth.scss';
 </style>

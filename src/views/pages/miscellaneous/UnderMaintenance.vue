@@ -28,7 +28,7 @@
 
       <v-btn
         color="primary"
-        href="/"
+        to="/"
       >
         Back to home
       </v-btn>

@@ -31,41 +31,49 @@
     <v-card-text class="text-center">
       <v-row>
         <v-col cols="3">
-          <v-icon size="30">
-            {{ icons.mdiStarOutline }}
-          </v-icon>
-          <p class="text--primary mb-0">
+          <div>
+            <v-icon size="30">
+              {{ icons.mdiStarOutline }}
+            </v-icon>
+          </div>
+          <span class="text-no-wrap text--primary">
             Intrested
-          </p>
+          </span>
         </v-col>
         <v-col cols="3">
-          <v-icon size="30">
-            {{ icons.mdiCheckCircleOutline }}
-          </v-icon>
-          <p class="text--primary mb-0">
+          <div>
+            <v-icon size="30">
+              {{ icons.mdiCheckCircleOutline }}
+            </v-icon>
+          </div>
+          <span class="text-no-wrap text--primary">
             Joined
-          </p>
+          </span>
         </v-col>
         <v-col cols="3">
-          <v-icon
-            size="30"
-            color="primary"
-          >
-            {{ icons.mdiAccountOutline }}
-          </v-icon>
-          <p class="primary--text mb-0">
+          <div>
+            <v-icon
+              size="30"
+              color="primary"
+            >
+              {{ icons.mdiAccountOutline }}
+            </v-icon>
+          </div>
+          <span class="text-no-wrap primary--text">
             Invited
-          </p>
+          </span>
         </v-col>
         <v-col cols="3">
-          <v-icon
-            size="30"
-          >
-            {{ icons.mdiDotsHorizontal }}
-          </v-icon>
-          <p class="text--primary mb-0">
+          <div>
+            <v-icon
+              size="30"
+            >
+              {{ icons.mdiDotsHorizontal }}
+            </v-icon>
+          </div>
+          <span class="text-no-wrap text--primary">
             More
-          </p>
+          </span>
         </v-col>
       </v-row>
     </v-card-text>

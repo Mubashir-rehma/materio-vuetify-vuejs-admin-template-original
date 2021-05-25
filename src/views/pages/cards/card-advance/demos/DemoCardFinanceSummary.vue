@@ -2,11 +2,12 @@
   <v-card>
     <div class="d-flex align-center justify-space-between mb-4">
       <div>
-        <v-card-title>
-          <span>Finance Summary</span>
+        <v-card-title class="text-no-wrap">
+          Finance Summary
         </v-card-title>
         <v-card-subtitle>Check out each Column for more details</v-card-subtitle>
       </div>
+
       <v-avatar
         color="primary"
         size="48"
@@ -20,14 +21,16 @@
         </v-icon>
       </v-avatar>
     </div>
-    <v-card-text class="d-flex align-center mb-3">
-      <div class="width-50">
+
+    <v-card-text class="d-flex align-center flex-wrap text-no-wrap mb-3">
+      <div class="finance-summery-left-content-width">
         <span>Annual Companies Taxes</span>
         <h2 class="text-xl font-weight-semibold">
           $1450.35
         </h2>
       </div>
-      <div class="width-50">
+
+      <div class="finance-summery-right-content-width">
         <span>Next Tax Review Date</span>
         <h2 class="text-xl font-weight-semibold">
           July 14, 2021
@@ -35,27 +38,29 @@
       </div>
     </v-card-text>
 
-    <v-card-text class="d-flex align-center mb-3">
-      <div class="width-50">
+    <v-card-text class="d-flex align-center flex-wrap text-no-wrap mb-3">
+      <div class="finance-summery-left-content-width">
         <span>Average Product Price</span>
         <h2 class="text-xl font-weight-semibold">
           $85.50
         </h2>
       </div>
-      <div class="width-50">
+
+      <div class="finance-summery-right-content-width">
         <span>Satisfaction Rate</span>
         <div class="d-flex align-center">
           <v-progress-linear
             v-model="progress"
             height="6"
           ></v-progress-linear>
-          <span class="text-base font-weight-semibold ml-4">{{ progress }}%</span>
+          <span class="text-base font-weight-semibold ml-4">{{ Math.ceil(progress) }}%</span>
         </div>
       </div>
     </v-card-text>
+
     <v-card-actions>
       <div
-        class="v-avatar-group width-50"
+        class="v-avatar-group finance-summery-left-content-width"
         :class="rootThemeClasses"
       >
         <v-avatar size="40">
@@ -107,7 +112,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.width-50 {
-  width: 50%;
+.finance-summery-left-content-width {
+  width: 224px;
+}
+.finance-summery-right-content-width {
+  width: 176px;
 }
 </style>

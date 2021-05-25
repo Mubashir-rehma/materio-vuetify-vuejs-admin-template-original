@@ -13,11 +13,11 @@
           color="error"
           small
         >
-          <div class="d-flex">
+          <div class="d-flex align-start">
             <div>
-              <p class="font-weight-semibold text--primary mb-0">
+              <h4 class="font-weight-semibold">
                 8 Invoices have been paid
-              </p>
+              </h4>
               <span>Invoices have been paid to the company.</span>
               <div class="d-flex mt-1">
                 <v-img
@@ -30,18 +30,18 @@
               </div>
             </div>
             <v-spacer></v-spacer>
-            <span class="text-xs mr-6">Wednesday</span>
+            <span class="text-xs  text-no-wrap mt-1 ml-2 mr-6">Wednesday</span>
           </div>
         </v-timeline-item>
         <v-timeline-item
           color="primary"
           small
         >
-          <div class="d-flex">
+          <div class="d-flex align-start">
             <div>
-              <p class="font-weight-semibold mb-0 text--primary">
+              <h4 class="font-weight-semibold">
                 Create a new project for client 😎
-              </p>
+              </h4>
               <p class="mb-1">
                 Invoices have been paid to the company.
               </p>
@@ -51,22 +51,22 @@
               <span class="font-weight-semibold ml-3 text--primary">John Doe (Client)</span>
             </div>
             <v-spacer></v-spacer>
-            <span class="text-xs mr-6">April, 18</span>
+            <span class="text-xs text-no-wrap mt-1 ml-2 mr-6">April, 18</span>
           </div>
         </v-timeline-item>
         <v-timeline-item
           color="info"
           small
         >
-          <div class="d-flex">
+          <div class="d-flex align-start">
             <div>
-              <p class="font-weight-semibold mb-0 text--primary">
+              <h4 class="font-weight-semibold">
                 Order #37745 from September
-              </p>
+              </h4>
               <span>Invoices have been paid to the company.</span>
             </div>
             <v-spacer></v-spacer>
-            <span class="text-xs mr-6">January, 10</span>
+            <span class="text-xs text-no-wrap mt-1 ml-2 mr-6">January, 10</span>
           </div>
         </v-timeline-item>
       </v-timeline>

@@ -3,31 +3,32 @@
     <v-card-title>
       <span>Website Statistics</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+      <v-icon class="cursor-pointer mr-n1">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-title>
 
-    <v-card-text class="d-flex align-center justify-space-between">
+    <v-card-text class="d-flex align-center justify-space-between pb-1 pt-5">
       <div>
-        <p class="text-5xl font-weight-semibold text--primary mb-0">
+        <p class="text-5xl font-weight-semibold text--primary mb-2">
           4,590
         </p>
         <span class="text-base">Total Traffic</span>
       </div>
-      <vue-apex-charts
-        height="60"
-        width="150"
-        :options="chartOptions"
-        :series="series"
-      ></vue-apex-charts>
+
+      <div class="chart-wrapper">
+        <vue-apex-charts
+          :options="chartOptions"
+          :series="series"
+        ></vue-apex-charts>
+      </div>
     </v-card-text>
 
     <v-card-text>
       <div
         v-for="(data,index) in websiteStatistics"
         :key="data.title"
-        :class="`statistics-table d-flex align-center pt-3 ${index !== websiteStatistics.length - 1 ? 'mb-3':''}`"
+        :class="`statistics-table d-flex align-center pt-3 ${index > 0 ? 'mt-3':''}`"
       >
         <span :class="`badge-sm ${data.color}`"></span>
         <span class="ml-2">{{ data.title }}</span>
@@ -57,7 +58,6 @@ export default {
     const chartOptions = {
       chart: {
         type: 'bar',
-        stacked: false,
         toolbar: {
           show: false,
         },
@@ -68,11 +68,10 @@ export default {
         padding: {
           left: 0,
           right: 0,
-          top: -45,
+          top: -60,
           bottom: -30,
         },
       },
-
       colors: ['#9155fd'],
       plotOptions: {
         bar: {
@@ -167,6 +166,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.chart-wrapper {
+  max-width: 130px;
+}
 .statistics-table {
   border-top: solid 1px rgba(93, 89, 98, 0.14);
   .badge-sm {

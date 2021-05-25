@@ -3,7 +3,7 @@
     <v-card-title>
       <span>Team Members</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+      <v-icon class="cursor-pointer mr-n1">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-title>

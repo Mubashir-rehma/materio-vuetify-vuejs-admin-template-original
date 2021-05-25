@@ -3,45 +3,52 @@
     <v-card-title>
       <span>Transaction</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+      <v-icon class="cursor-pointer mr-n1">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-title>
+
     <v-card-text>
-      <div
-        v-for="(data,index) in transactionData"
-        :key="data.transaction"
-        class="d-flex align-center "
-        :class="index !== 0 ? 'mt-6':''"
-      >
-        <v-avatar
-          size="40"
-          rounded
-          :color="data.avatarColor"
-          :class="`v-avatar-light-bg ${data.avatarColor}--text`"
+      <v-list class="pt-1">
+        <v-list-item
+          v-for="(data,index) in transactionData"
+          :key="data.transaction"
+          class="d-flex align-center px-0"
+          :class="index > 0 ? 'mt-4':''"
         >
-          <v-img
-            max-height="20"
-            max-width="20"
-            contain
-            :src="data.avatar"
-          ></v-img>
-        </v-avatar>
-        <div class="ml-3">
-          <p class="text--primary mb-0 text-sm font-weight-semibold">
-            {{ data.title }}
-          </p>
-          <span class="text-xs">{{ data.subtitle }}</span>
-        </div>
-        <v-spacer></v-spacer>
-        <span class="text-base font-weight-semibold mr-1 text--primary">{{ data.transaction }}</span>
-        <v-icon
-          size="22"
-          :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
-        >
-          {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}
-        </v-icon>
-      </div>
+          <v-avatar
+            size="40"
+            rounded
+            :color="data.avatarColor"
+            :class="`v-avatar-light-bg ${data.avatarColor}--text`"
+          >
+            <v-img
+              max-height="20"
+              max-width="20"
+              contain
+              :src="data.avatar"
+            ></v-img>
+          </v-avatar>
+
+          <div class="ml-3">
+            <h4 class="font-weight-semibold text-no-wrap">
+              {{ data.title }}
+            </h4>
+            <span class="text-xs text-no-wrap">{{ data.subtitle }}</span>
+          </div>
+          <v-spacer></v-spacer>
+
+          <div class="d-flex align-center">
+            <span class="text-base font-weight-semibold text--primary mr-1">{{ data.transaction }}</span>
+            <v-icon
+              size="22"
+              :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
+            >
+              {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}
+            </v-icon>
+          </div>
+        </v-list-item>
+      </v-list>
     </v-card-text>
   </v-card>
 </template>
@@ -57,7 +64,7 @@ export default {
         avatarColor: 'error',
         title: 'Paypal',
         subtitle: 'Received Money',
-        transaction: '+$24,820',
+        transaction: '+$2,482',
       },
       {
         avatar: '/images/pages/credit-card.svg',

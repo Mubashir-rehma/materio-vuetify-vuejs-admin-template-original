@@ -3,45 +3,53 @@
     <v-card-title>
       <span>Sales by Countries</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+      <v-icon class="cursor-pointer mr-n1">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-title>
-    <v-card-text>
-      <div
-        v-for="(data,index) in salesByCountries"
-        :key="data.country"
-        :class="`d-flex align-center ${index > 0 ? 'mt-6':''}`"
-      >
-        <v-avatar
-          :color="data.color"
-          size="40"
-          :class="`v-avatar-light-bg ${data.color}--text font-weight-medium`"
-        >
-          <span class="text-base">{{ data.abbr }}</span>
-        </v-avatar>
-        <div class="ml-3">
-          <div class="font-weight-semibold">
-            <span class="text--primary text-base mr-1">{{ data.amount }}</span>
-            <v-icon
-              size="20"
-              :color="data.change.charAt(0) === '+' ? 'success':'error'"
-            >
-              {{ data.change.charAt(0) === '+' ? icons.mdiChevronUp: icons.mdiChevronDown }}
-            </v-icon>
-            <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'success--text':'error--text'}`">{{ data.change.slice(1) }}</span>
-          </div>
-          <span class="text-xs">{{ data.country }}</span>
-        </div>
 
-        <v-spacer></v-spacer>
-        <div>
-          <p class="text--primary font-weight-semibold mb-0">
-            {{ data.sales }}
-          </p>
-          <span class="text-xs">Sales</span>
-        </div>
-      </div>
+    <v-card-text>
+      <v-list>
+        <v-list-item
+          v-for="(data,index) in salesByCountries"
+          :key="data.country"
+          :class="`d-flex align-center px-0 ${index > 0 ? 'mt-4':''}`"
+        >
+          <v-avatar
+            :color="data.color"
+            size="40"
+            :class="`v-avatar-light-bg ${data.color}--text font-weight-medium`"
+          >
+            <span class="text-base">{{ data.abbr }}</span>
+          </v-avatar>
+
+          <div class="ml-3">
+            <div class="font-weight-semibold">
+              <span class="text--primary text-base mr-1">{{ data.amount }}</span>
+
+              <v-icon
+                size="20"
+                :color="data.change.charAt(0) === '+' ? 'success':'error'"
+              >
+                {{ data.change.charAt(0) === '+' ? icons.mdiChevronUp: icons.mdiChevronDown }}
+              </v-icon>
+
+              <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'success--text':'error--text'}`">{{ data.change.slice(1) }}</span>
+            </div>
+
+            <span class="text-xs">{{ data.country }}</span>
+          </div>
+
+          <v-spacer></v-spacer>
+
+          <div>
+            <h4 class="font-weight-semibold">
+              {{ data.sales }}
+            </h4>
+            <span class="text-xs">Sales</span>
+          </div>
+        </v-list-item>
+      </v-list>
     </v-card-text>
   </v-card>
 </template>

@@ -6,27 +6,32 @@
         <v-spacer></v-spacer>
         <span class="text-xs light-grey">View All</span>
       </v-card-title>
+
       <v-card-text>
-        <div
-          v-for="(data,index) in deposit"
-          :key="data.img"
-          :class="`d-flex align-center flex-column flex-sm-row ${index > 0 ? 'mt-6':''}`"
-        >
-          <v-img
-            contain
-            max-height="30"
-            max-width="30"
-            :src="data.img"
-          ></v-img>
-          <div class="ml-3">
-            <p class="font-weight-semibold mb-0 text--primary">
-              {{ data.title }}
-            </p>
-            <span class="text-xs">{{ data.subtitle }}</span>
-          </div>
-          <v-spacer></v-spacer>
-          <span class="font-weight-semibold success--text">{{ data.amount }}</span>
-        </div>
+        <v-list>
+          <v-list-item
+            v-for="(data,index) in deposit"
+            :key="data.img"
+            :class="`d-flex align-center flex-column flex-sm-row text-center text-sm-left px-0 ${index > 0 ? 'mt-sm-4':''}`"
+          >
+            <v-img
+              contain
+              max-height="30"
+              max-width="30"
+              :src="data.img"
+            ></v-img>
+
+            <div class="ml-sm-3 mt-1">
+              <h4 class="font-weight-semibold">
+                {{ data.title }}
+              </h4>
+              <span class="text-xs">{{ data.subtitle }}</span>
+            </div>
+
+            <v-spacer></v-spacer>
+            <span class="font-weight-semibold success--text">{{ data.amount }}</span>
+          </v-list-item>
+        </v-list>
       </v-card-text>
     </div>
 
@@ -43,25 +48,29 @@
       </v-card-title>
 
       <v-card-text>
-        <div
-          v-for="(data,index) in withdraw"
-          :key="data.img"
-          :class="`d-flex align-center flex-column flex-sm-row ${index > 0 ? 'mt-6':''}`"
-        >
-          <v-img
-            max-height="30"
-            max-width="30"
-            :src="data.img"
-          ></v-img>
-          <div class="ml-3">
-            <p class="font-weight-semibold mb-0 text--primary">
-              {{ data.title }}
-            </p>
-            <span class="text-xs">{{ data.subtitle }}</span>
-          </div>
-          <v-spacer></v-spacer>
-          <span class="font-weight-semibold error--text">{{ data.amount }}</span>
-        </div>
+        <v-list>
+          <v-list-item
+            v-for="(data,index) in withdraw"
+            :key="data.img"
+            :class="`d-flex align-center flex-column flex-sm-row text-center text-sm-left px-0 ${index > 0 ? 'mt-sm-4':''}`"
+          >
+            <v-img
+              max-height="30"
+              max-width="30"
+              :src="data.img"
+            ></v-img>
+
+            <div class="ml-sm-3 mt-1">
+              <h4 class="font-weight-semibold">
+                {{ data.title }}
+              </h4>
+              <span class="text-xs">{{ data.subtitle }}</span>
+            </div>
+
+            <v-spacer></v-spacer>
+            <span class="font-weight-semibold error--text">{{ data.amount }}</span>
+          </v-list-item>
+        </v-list>
       </v-card-text>
     </div>
   </v-card>

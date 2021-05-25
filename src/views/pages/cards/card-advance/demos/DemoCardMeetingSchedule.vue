@@ -3,38 +3,43 @@
     <v-card-title>
       <span>Meeting Schedule</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+      <v-icon class="cursor-pointer mr-n1">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-title>
-    <v-card-text>
-      <div
-        v-for="(data,index) in meetingSchedule"
-        :key="data.title"
-        :class="`d-flex align-center ${index > 0 ? 'mt-6':''}`"
-      >
-        <v-avatar size="38">
-          <v-img :src="data.avatar"></v-img>
-        </v-avatar>
 
-        <div class="ml-3">
-          <p class="font-weight-medium mb-0 text--primary">
-            {{ data.title }}
-          </p>
-          <v-icon size="14">
-            {{ icons.mdiCalendarBlankOutline }}
-          </v-icon>
-          <span class="text-xs ml-1">{{ data.dateAndTime }}</span>
-        </div>
-        <v-spacer></v-spacer>
-        <v-chip
-          small
-          :color="data.chipColor"
-          :class="`v-chip-light-bg ${data.chipColor}--text font-weight-semibold`"
+    <v-card-text>
+      <v-list class="pt-0">
+        <v-list-item
+          v-for="(data,index) in meetingSchedule"
+          :key="data.title"
+          :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-4':''}`"
         >
-          {{ data.chipText }}
-        </v-chip>
-      </div>
+          <v-avatar size="38">
+            <v-img :src="data.avatar"></v-img>
+          </v-avatar>
+
+          <div class="text-no-wrap ml-3">
+            <p class="font-weight-medium mb-0 text--primary">
+              {{ data.title }}
+            </p>
+            <v-icon size="14">
+              {{ icons.mdiCalendarBlankOutline }}
+            </v-icon>
+            <span class="text-xs ml-1">{{ data.dateAndTime }}</span>
+          </div>
+
+          <v-spacer></v-spacer>
+
+          <v-chip
+            small
+            :color="data.chipColor"
+            :class="`v-chip-light-bg ${data.chipColor}--text font-weight-semibold`"
+          >
+            {{ data.chipText }}
+          </v-chip>
+        </v-list-item>
+      </v-list>
     </v-card-text>
   </v-card>
 </template>

@@ -3,18 +3,21 @@
     <v-card-title>
       Upgrade Your Plan
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+      <v-icon class="cursor-pointer mr-n1">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-title>
+
     <v-card-text>
       <p class="text-xs mb-0">
         Plase make the payment to start enjoying all the features of our premuim plan as soon as possible.
       </p>
+
       <div class="plan-banner d-flex align-center flex-wrap">
         <v-avatar
           rounded
           class="banner-avatar"
+          size="43"
         >
           <v-img
             contain
@@ -23,7 +26,8 @@
             src="/images/pages/bag.svg"
           ></v-img>
         </v-avatar>
-        <div class="ml-3 font-weight-medium">
+
+        <div class="font-weight-medium ml-3">
           <p class="text--primary mb-0">
             Platinum
           </p>
@@ -40,8 +44,9 @@
           <sub>/Year</sub>
         </div>
       </div>
+
       <div class="payment-details">
-        <p class="font-weight-semibold text--primary">
+        <p class="font-weight-semibold text--primary mb-1">
           Payment details
         </p>
 
@@ -57,13 +62,16 @@
               :src="data.avatarImg"
             ></v-img>
           </v-avatar>
-          <div class="ml-3">
+
+          <div class="mx-3">
             <p class="font-weight-medium text--primary mb-0">
               {{ data.title }}
             </p>
             <span class="text-xs">{{ data.cardNo }}</span>
           </div>
+
           <v-spacer></v-spacer>
+
           <v-text-field
             outlined
             class="cvv"
@@ -73,17 +81,19 @@
           ></v-text-field>
         </div>
 
-        <p class="text-xs primary--text font-weight-medium">
+        <p class="text-xs primary--text font-weight-medium mt-2">
           Add Payment Method
         </p>
       </div>
+
       <v-text-field
         outlined
         placeholder="Email Address"
-        class="mb-4"
+        class="mt-5 mb-4"
         dense
         hide-details
       ></v-text-field>
+
       <v-btn
         block
         color="primary"
@@ -123,7 +133,7 @@ export default {
   background-color: rgba(145, 85, 253, 0.12);
   padding: 0.563rem 0.688rem;
   border-radius: 4px;
-  margin: 0.875rem 0.563rem 1.125rem 0;
+  margin: 0.875rem 0 1.125rem 0;
   .banner-avatar {
     border: solid 1px var(--v-primary-base);
     border-radius: 4px;

@@ -1,12 +1,14 @@
 <template>
   <v-card>
     <v-img src="/images/pages/cafe-badilico.jpg"></v-img>
+
     <v-card-text class="d-flex align-center">
       <div>
         <v-card-title class="pl-0">
           Cafe Badilico
         </v-card-title>
-        <v-card-subtitle class="d-flex align-center pl-0 pb-0">
+
+        <v-card-subtitle class="d-flex align-center flex-wrap pl-0 pb-0">
           <v-rating
             dense
             background-color="warning"
@@ -16,8 +18,10 @@
           <span class="ml-3">5 Star (245)</span>
         </v-card-subtitle>
       </div>
+
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer">
+
+      <v-icon class="cursor-pointer mr-n2">
         {{ icons.mdiDotsVertical }}
       </v-icon>
     </v-card-text>
@@ -30,11 +34,11 @@
       <p class="text-base text--primary mt-3">
         Tonight’s availability
       </p>
-      <div>
-        <v-chip class="mr-3">
+      <div class="demo-space-x">
+        <v-chip>
           5:30PM
         </v-chip>
-        <v-chip class="mr-3">
+        <v-chip>
           7:00PM
         </v-chip>
         <v-chip>7:15PM</v-chip>

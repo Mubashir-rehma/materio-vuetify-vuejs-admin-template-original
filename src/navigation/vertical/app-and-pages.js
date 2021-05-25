@@ -73,6 +73,10 @@ export default [
           },
         ],
       },
+      {
+        title: 'Knowledge Base',
+        to: 'page-knowledge-base',
+      },
     ],
   },
 ]

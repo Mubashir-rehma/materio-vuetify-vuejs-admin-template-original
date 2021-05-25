@@ -1,0 +1,49 @@
+@import './variables.scss';
+
+#knowledge-base-search{
+  .knowledge-base-bg{
+    //  width: 100%;
+    //  height: 20.063rem;
+    padding: 5.5rem;
+     background-image: url('/images/misc/knowledge-base-bg-light.png');
+     background-size: cover;
+  }
+
+  // search input
+  .kb-search-input{
+    max-width: 28.125rem;
+    background-color: map-get($shades , 'white' );
+    border-radius: 5px;
+  }
+
+  // kb-character-wrapper bg
+  .kb-character-wrapper{
+    position: relative;
+    height: 12.5rem;
+    background: rgba(94, 86, 105, 0.08);
+    padding-top: 1.438rem;
+    
+    .v-image{
+      position: absolute;
+      bottom: 0;
+      left:0;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width:600px) {
+  #knowledge-base-search {
+    .knowledge-base-bg{
+      padding: 1.5rem !important;
+    }
+  } 
+}
+
+@media (max-width:400px) {
+  #knowledge-base-search {
+   .kb-title{
+     font-size: 1rem !important;
+   }
+  } 
+}

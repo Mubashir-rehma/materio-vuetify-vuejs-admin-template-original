@@ -1,15 +1,28 @@
 // ? This includes dark theme related style
+.v-application{
+  &.theme--dark{
+    .v-alert {
+      &.v-sheet.theme--dark {
+        &:not([class*='--text']) {
+          color: #fff !important;
+        }
+      }
+    }
 
-.v-alert {
-  &.v-sheet.theme--dark {
-    &:not([class*='--text']) {
-      color: #fff !important;
+  // knowledge base page
+    #knowledge-base-search{
+      .knowledge-base-bg{
+        background-image: url('/images/misc/knowledge-base-bg-dark.png') !important;
+      }
+
+      .kb-search-input{
+        background-color: map-get($material-dark , 'cards' );
+      }
+
+      // kb-character-wrapper bg
+      .kb-character-wrapper{
+        background: rgba(231, 227, 252, 0.08);
+      }
     }
   }
-}
-
-
-// auth page 
-.auth-wrapper{
-  
 }

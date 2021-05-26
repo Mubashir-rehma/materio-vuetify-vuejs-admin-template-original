@@ -1,0 +1,207 @@
+<template>
+  <section id="knowledge-base">
+    <!-- seach banner  -->
+    <v-card
+      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7"
+    >
+      <v-card-text>
+        <p class="kb-title text-2xl font-weight-semibold primary--text mb-2">
+          Hello, how can we help?
+        </p>
+        <p>or choose a category to quickly find the help you need</p>
+
+        <v-form class="kb-search-input mx-auto">
+          <v-text-field
+            v-model="knowledgeBaseSearchQuery"
+            outlined
+            placeholder="Ask a question...."
+            :prepend-inner-icon="icons.mdiMagnify"
+            hide-details
+            class="kb-search-input"
+          ></v-text-field>
+        </v-form>
+      </v-card-text>
+    </v-card>
+
+    <!-- kb search content -->
+    <div id="knowledge-base-content">
+      <v-row class="kb-search-content-info match-height">
+        <v-col
+          v-for="item in filteredKB"
+          :key="item.character"
+          md="4"
+          sm="6"
+          cols="12"
+          class="kb-search-content"
+        >
+          <v-card>
+            <!-- title -->
+            <v-card-title class="kbc-title">
+              <v-icon
+                :color="item.color ? item.color:'' "
+                :class="`mr-3 ${item.class ? item.class :''}`"
+              >
+                {{ item.icon }}
+              </v-icon>
+
+              <span>{{ item.title }}</span>
+            </v-card-title>
+
+            <v-list class="kbc-questions mt-2">
+              <v-list-item
+                v-for="que in item.questions"
+                :key="que.question"
+                class="text-sm px-5"
+                :to="{ name: 'pages-knowledge-base-question', params: { category: $route.params.category, slug: que.slug } }"
+              >
+                <v-icon
+                  size="14"
+                  class="mr-2"
+                  color="secondary"
+                >
+                  {{ icons.mdiCheckboxBlankCircleOutline }}
+                </v-icon>
+
+                <span class="text--secondary">{{ que.question }}</span>
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-col>
+
+        <!-- no result found -->
+        <v-col
+          v-show="!filteredKB.length"
+          cols="12"
+          class="text-center"
+        >
+          <h4 class="mt-4">
+            Search result not found!!
+          </h4>
+        </v-col>
+      </v-row>
+    </div>
+  </section>
+</template>
+
+<script>
+/* eslint-disable implicit-arrow-linebreak */
+import {
+  mdiMagnify,
+  mdiCogOutline,
+  mdiCheckboxBlankCircleOutline,
+  mdiLink,
+  mdiCurrencyUsd,
+  mdiLockOpenOutline,
+  mdiCellphoneCog,
+  mdiInformationOutline,
+} from '@mdi/js'
+import { computed, ref } from '@vue/composition-api'
+
+export default {
+  setup() {
+    const knowledgeBaseSearchQuery = ref('')
+
+    const kbContentData = [
+      {
+        category: 'account-settings',
+        icon: mdiCogOutline,
+        color: 'primary',
+        title: 'Account Settings (5)',
+        questions: [
+          { question: 'How Secure Is My Password?', slug: 'How Secure Is My Password?' },
+          { question: 'Can I Change My Username?', slug: 'Can I Change My Username?' },
+          { question: 'Where Can I Upload My Avatar?', slug: 'Where Can I Upload My Avatar?' },
+          { question: 'How Do I Change My Timezone?', slug: 'How Do I Change My Timezone?' },
+          { question: 'How Do I Change My Password?', slug: 'How Do I Change My Password?' },
+        ],
+      },
+      {
+        category: 'api-questions',
+        icon: mdiLink,
+        color: 'success',
+        title: 'API Questions (5)',
+        questions: [
+          { question: 'What Technologies Are Used?', slug: 'what-technologies-are-used' },
+          { question: 'What Are The API Limits?', slug: 'what-are-the-api-limits' },
+          { question: 'Why Was My Application Rejected?', slug: 'why-was-my-application-rejected' },
+          { question: 'Where can I find the documentation?', slug: 'where-can-i-find-the-documentation' },
+          { question: 'How Do I Get An API Key?', slug: 'how-do-i-get-an-api-key' },
+        ],
+      },
+      {
+        category: 'billing',
+        icon: mdiCurrencyUsd,
+        color: 'error',
+        title: 'Billing (5)',
+        questions: [
+          { question: 'Can I Contact A Salés Rep?', slug: 'can-i-contact-a-salés-rep' },
+          { question: 'Do I Need To Pay VAT?', slug: 'do-i-need-to-pay-vat' },
+          { question: 'Can I Get A Refund?', slug: 'can-i-get-a-refund' },
+          { question: 'Difference Annual & Monthly Billing', slug: 'difference-annual-monthly-billing' },
+          { question: 'What Happens If The Price Increases?', slug: 'what-happens-if-the-price-increases' },
+        ],
+      },
+      {
+        category: 'copyright-legal',
+        icon: mdiLockOpenOutline,
+        color: 'error',
+        title: 'Copyright & Legal (5)',
+        questions: [
+          { question: 'How Do I Contact Legal?', slug: 'how-do-i-contact-legal' },
+          { question: 'Where Are Your Offices Located?', slug: 'where-are-your-offices-located' },
+          { question: 'Who Owns The Copyright On Text?', slug: 'who-owns-the-copyright-on-text' },
+          { question: 'Our Content Policy', slug: 'our-content-policy' },
+          { question: 'How Do I File A DMCA?', slug: 'how-do-i-file-a-dmca' },
+        ],
+      },
+      {
+        category: 'mobile-apps',
+        icon: mdiCellphoneCog,
+        color: 'info',
+        title: 'Mobile Apps (5)',
+        questions: [
+          { question: 'How Do I Download The Android App?', slug: 'how-do-i-download-the-android-app' },
+          { question: 'How To Download Our iPad App', slug: 'how-to-download-our-i-pad-app' },
+          { question: 'Where Can I Upload My Avatar?', slug: 'where-can-i-upload-my-avatar' },
+          { question: 'Can I Use My Android Phone?', slug: 'can-i-use-my-android-phone' },
+          { question: 'Is There An iOS App?', slug: 'is-there-an-i-os-app' },
+        ],
+      },
+      {
+        category: 'using-knowHow',
+        icon: mdiInformationOutline,
+        class: 'text--primary',
+        title: 'Using KnowHow (4)',
+        questions: [
+          { question: 'Customization', slug: 'Customization' },
+          { question: 'Upgrading', slug: 'Upgrading' },
+          { question: 'Customizing Your Theme', slug: 'Customizing Your Theme' },
+          { question: 'Upgrading Your Theme', slug: 'Upgrading Your Theme' },
+        ],
+      },
+    ]
+
+    const filteredKB = computed(() => {
+      const knowledgeBaseSearchQueryLower = knowledgeBaseSearchQuery.value.toLowerCase()
+
+      return kbContentData.filter(
+        item =>
+          // eslint-disable-next-line operator-linebreak
+          item.title.toLowerCase().includes(knowledgeBaseSearchQueryLower) ||
+          item.questions.filter(queObj => queObj.question.toLowerCase().includes(knowledgeBaseSearchQueryLower)).length,
+      )
+    })
+
+    return {
+      knowledgeBaseSearchQuery,
+      kbContentData,
+      filteredKB,
+      icons: { mdiMagnify, mdiCheckboxBlankCircleOutline },
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+@import '@core/preset/preset/knowledge-base.scss';
+</style>

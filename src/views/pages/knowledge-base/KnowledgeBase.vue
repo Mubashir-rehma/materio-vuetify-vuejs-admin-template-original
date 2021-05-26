@@ -1,5 +1,5 @@
 <template>
-  <section id="knowledge-base-search">
+  <section id="knowledge-base">
     <!-- seach banner  -->
     <v-card
       class="knowledge-base-bg d-flex align-center justify-center text-center mb-7"
@@ -36,7 +36,7 @@
         >
           <v-card
             color="text-center cursor-pointer"
-            @click.native="$router.push({ name: 'pages-knowledge-base-category', params: { category: item.category } })"
+            @click.native="$router.push({ name: 'page-knowledge-base-category', params: { category: item.category } })"
           >
             <div class="kb-character-wrapper">
               <v-img

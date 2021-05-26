@@ -37,8 +37,10 @@
   // knowledge base category link color changed
   .kbc-questions{
     .v-list-item--link{
-       color: map-get($material-light , 'cards' ) ;
-       &:hover{
+       color: map-get($material-light , 'cards' );
+       &:hover,
+       &:focus{
+         color: map-get($material-light , 'cards' ) !important;
          span{
            color: var(--v-primary-base) !important;
          }

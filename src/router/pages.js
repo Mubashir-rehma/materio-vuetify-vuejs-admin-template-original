@@ -167,6 +167,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/knowledge-base/:category/:slug',
+    name: 'page-knowledge-base-question',
+    component: () => import('@/views/pages/knowledge-base/KnowledgeBaseQuestion.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

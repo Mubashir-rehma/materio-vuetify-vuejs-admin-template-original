@@ -51,12 +51,12 @@
               <v-list-item
                 v-for="que in item.questions"
                 :key="que.question"
-                class="text-sm px-5"
-                :to="{ name: 'pages-knowledge-base-question', params: { category: $route.params.category, slug: que.slug } }"
+                class="align-start text-sm px-5"
+                :to="{ name: 'page-knowledge-base-question', params: { category: $route.params.category, slug: que.slug } }"
               >
                 <v-icon
                   size="14"
-                  class="mr-2"
+                  class="mr-2 mt-1"
                   color="secondary"
                 >
                   {{ icons.mdiCheckboxBlankCircleOutline }}
@@ -108,11 +108,11 @@ export default {
         color: 'primary',
         title: 'Account Settings (5)',
         questions: [
-          { question: 'How Secure Is My Password?', slug: 'How Secure Is My Password?' },
-          { question: 'Can I Change My Username?', slug: 'Can I Change My Username?' },
-          { question: 'Where Can I Upload My Avatar?', slug: 'Where Can I Upload My Avatar?' },
-          { question: 'How Do I Change My Timezone?', slug: 'How Do I Change My Timezone?' },
-          { question: 'How Do I Change My Password?', slug: 'How Do I Change My Password?' },
+          { question: 'How Secure Is My Password?', slug: 'how-secure-is-my-password' },
+          { question: 'Can I Change My Username?', slug: 'can-i-change-my-username' },
+          { question: 'Where Can I Upload My Avatar?', slug: 'where-can-i-upload-my-avatar' },
+          { question: 'How Do I Change My Timezone?', slug: 'how-do-i-change-my-timezone' },
+          { question: 'How Do I Change My Password?', slug: 'how-do-i-change-my-password' },
         ],
       },
       {
@@ -173,10 +173,10 @@ export default {
         class: 'text--primary',
         title: 'Using KnowHow (4)',
         questions: [
-          { question: 'Customization', slug: 'Customization' },
-          { question: 'Upgrading', slug: 'Upgrading' },
-          { question: 'Customizing Your Theme', slug: 'Customizing Your Theme' },
-          { question: 'Upgrading Your Theme', slug: 'Upgrading Your Theme' },
+          { question: 'Customization', slug: 'customization' },
+          { question: 'Upgrading', slug: 'upgrading' },
+          { question: 'Customizing Your Theme', slug: 'customizing-your-theme' },
+          { question: 'Upgrading Your Theme', slug: 'upgrading-your-theme' },
         ],
       },
     ]

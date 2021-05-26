@@ -63,7 +63,11 @@
             >
               <v-card flat>
                 <v-card-text class="pb-2">
-                  <p class="text-2xl font-weight-semibold text--primary mb-2">
+                  <!-- TODO: Remove this click event modification -->
+                  <p
+                    class="text-2xl font-weight-semibold text--primary mb-2"
+                    @click="email='client@demo.com'; password='Client@demo#123'"
+                  >
                     Welcome to Materio! 👋🏻
                   </p>
                   <p class="mb-2">
@@ -173,7 +177,7 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
-import { ref } from '@vue/composition-api'
+import { ref, getCurrentInstance } from '@vue/composition-api'
 import { required, emailValidator, passwordValidator } from '@core/utils/validation'
 import axios from '@axios'
 import { useRouter } from '@core/utils'
@@ -183,6 +187,7 @@ export default {
     // Template Ref
     const loginForm = ref(null)
 
+    const vm = getCurrentInstance().proxy
     const { router } = useRouter()
 
     const isPasswordVisible = ref(false)
@@ -245,17 +250,21 @@ export default {
             const { user } = response.data
             const { ability: userAbility } = user
 
-            // ? Set user's ability in localStorage for Access Control
+            // Set user ability
+            // ? https://casl.js.org/v5/en/guide/intro#update-rules
+            vm.$ability.update(userAbility)
+
+            // Set user's ability in localStorage for Access Control
             localStorage.setItem('userAbility', JSON.stringify(userAbility))
 
-            // ? We will store `userAbility` in localStorage separate from userData
-            // ? Hence, we are just removing it from user object
+            // We will store `userAbility` in localStorage separate from userData
+            // Hence, we are just removing it from user object
             delete user.ability
 
-            // ? Set user's data in localStorage for UI/Other purpose
+            // Set user's data in localStorage for UI/Other purpose
             localStorage.setItem('userData', JSON.stringify(user))
 
-            // ? On success redirect to home
+            // On success redirect to home
             router.push('/')
           })
         })

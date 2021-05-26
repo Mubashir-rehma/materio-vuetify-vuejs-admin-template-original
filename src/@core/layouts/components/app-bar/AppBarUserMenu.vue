@@ -156,9 +156,12 @@ import {
   mdiLogoutVariant,
 } from '@mdi/js'
 import { useRouter } from '@core/utils'
+import { initialAbility } from '@/plugins/acl/config'
+import { getCurrentInstance } from '@vue/composition-api'
 
 export default {
   setup() {
+    const vm = getCurrentInstance().proxy
     const { router } = useRouter()
     const userData = JSON.parse(localStorage.getItem('userData'))
 
@@ -172,7 +175,7 @@ export default {
       localStorage.removeItem('userAbility')
 
       // Reset ability
-      // this.$ability.update(initialAbility)
+      vm.$ability.update(initialAbility)
 
       // Redirect to login page
       router.push({ name: 'auth-login' })

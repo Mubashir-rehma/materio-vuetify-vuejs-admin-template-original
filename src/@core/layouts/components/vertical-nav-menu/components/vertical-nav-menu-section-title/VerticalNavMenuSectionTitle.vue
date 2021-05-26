@@ -1,5 +1,5 @@
 <template>
-  <v-subheader>
+  <v-subheader v-if="canViewVerticalNavMenuHeader(item)">
     <v-slide-x-transition hide-on-leave>
       <span
         v-show="!menuIsVerticalNavMini || (menuIsVerticalNavMini && isMouseHovered)"
@@ -22,6 +22,7 @@ import useAppConfig from '@core/@app-config/useAppConfig'
 import { mdiMinus } from '@mdi/js'
 import { inject } from '@vue/composition-api'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 
 export default {
   props: {
@@ -34,6 +35,7 @@ export default {
     const { menuIsVerticalNavMini } = useAppConfig()
     const isMouseHovered = inject('isMouseHovered')
     const { t } = useUtils()
+    const { canViewVerticalNavMenuHeader } = useAclUtils()
 
     return {
       menuIsVerticalNavMini,
@@ -41,6 +43,9 @@ export default {
 
       // i18n
       t,
+
+      // ACL
+      canViewVerticalNavMenuHeader,
 
       // Icons
       icons: {

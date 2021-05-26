@@ -1,13 +1,13 @@
+// Axios Mock Adapter
+import '@/@fake-db/db'
 import { i18n } from '@/plugins/i18n'
 import '@/plugins/vue-composition-api'
 import Vue from 'vue'
 import App from './App.vue'
+import './plugins/acl'
 import vuetify from './plugins/vuetify'
 import router from './router'
 import store from './store'
-
-// Axios Mock Adapter
-import '@/@fake-db/db'
 
 Vue.config.productionTip = false
 

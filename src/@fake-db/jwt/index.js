@@ -35,7 +35,11 @@ const data = {
         },
         {
           action: 'read',
-          subject: 'Auth',
+          subject: 'Dashboard',
+        },
+        {
+          action: 'read',
+          subject: 'Public',
         },
       ],
     },

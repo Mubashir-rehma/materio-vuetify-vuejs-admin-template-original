@@ -1,5 +1,6 @@
 <template>
   <v-menu
+    v-if="canViewVerticalNavMenuGroup(item)"
     ref="refMenu"
     offset-x
     attach
@@ -56,6 +57,7 @@ import { mdiChevronRight } from '@mdi/js'
 // eslint-disable-next-line object-curly-newline
 import { useMouseInElement, until, useWindowSize, invoke } from '@vueuse/core'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 import themeConfig from '@themeConfig'
 import useHorizontalNavMenuGroup from './useHorizontalNavMenuGroup'
 
@@ -93,6 +95,9 @@ export default {
 
     // i18n
     const { t } = useUtils()
+
+    // ACL
+    const { canViewVerticalNavMenuGroup } = useAclUtils()
 
     // Templare ref & internal value
     const refMenu = ref(null)
@@ -157,6 +162,9 @@ export default {
 
       // i18n
       t,
+
+      // ACL
+      canViewVerticalNavMenuGroup,
 
       // Template Ref and internal Properties
       refMenu,

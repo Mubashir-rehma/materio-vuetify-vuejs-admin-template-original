@@ -14,6 +14,8 @@ export default [
     icon: mdiHomeOutline,
     title: 'home',
     to: 'home',
+    action: 'read',
+    resource: 'Dashboard',
   },
   {
     icon: mdiAlphaTBoxOutline,

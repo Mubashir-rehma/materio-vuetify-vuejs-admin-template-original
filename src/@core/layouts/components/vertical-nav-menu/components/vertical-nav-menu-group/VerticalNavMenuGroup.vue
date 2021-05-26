@@ -1,5 +1,6 @@
 <template>
   <v-list-group
+    v-if="canViewVerticalNavMenuGroup(item)"
     ref="refVListGroup"
     class="vertical-nav-menu-group"
     :class="[{'vertical-nav-menu-group-active': isActive}, ...rootThemeClasses]"
@@ -47,6 +48,7 @@ import useNav from '@/@core/layouts/composable/useNav'
 import useAppConfig from '@core/@app-config/useAppConfig'
 import useVerticalNavGroup from '@core/layouts/composable/vertical-nav/useVerticalNavGroup'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 
 // Other
 import themeConfig from '@themeConfig'
@@ -75,6 +77,7 @@ export default {
   setup(props) {
     const { resolveNavItemComponent } = useVerticalNavMenu()
     const { isOpen, updateGroupOpen, isActive } = useVerticalNavGroup(props.item)
+    const { canViewVerticalNavMenuGroup } = useAclUtils()
     const { isNavGroupActive } = useNav()
     const { menuIsVerticalNavMini } = useAppConfig()
     const isMouseHovered = inject('isMouseHovered')
@@ -127,6 +130,9 @@ export default {
 
       // i18n
       t,
+
+      // ACL
+      canViewVerticalNavMenuGroup,
     }
   },
 }

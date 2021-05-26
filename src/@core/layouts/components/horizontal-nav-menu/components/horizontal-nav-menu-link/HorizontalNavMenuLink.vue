@@ -1,5 +1,8 @@
 <template>
-  <v-list-item v-bind="linkProps">
+  <v-list-item
+    v-if="canViewHorizontalNavMenuLink(item)"
+    v-bind="linkProps"
+  >
     <v-list-item-icon>
       <v-icon :size="item.icon ? 22 : 15">
         {{ item.icon || alternateIcon }}
@@ -14,6 +17,7 @@
 <script>
 import useHorizontalNavMenuLink from '@core/layouts/composable/horizontal-nav/useHorizontalNavMenuLink'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 import themeConfig from '@themeConfig'
 
 export default {
@@ -30,6 +34,9 @@ export default {
     // i18n
     const { t } = useUtils()
 
+    // ACL
+    const { canViewHorizontalNavMenuLink } = useAclUtils()
+
     return {
       isActive,
       linkProps,
@@ -40,6 +47,9 @@ export default {
 
       // i18n
       t,
+
+      // ACL
+      canViewHorizontalNavMenuLink,
     }
   },
 }

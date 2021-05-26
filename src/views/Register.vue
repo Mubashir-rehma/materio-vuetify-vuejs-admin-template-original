@@ -180,7 +180,7 @@
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
 // eslint-disable-next-line object-curly-newline
 import { required, emailValidator, passwordValidator, alphaValidator } from '@core/utils/validation'
-import { ref } from '@vue/composition-api'
+import { ref, getCurrentInstance } from '@vue/composition-api'
 import axios from '@axios'
 import { useRouter } from '@core/utils'
 
@@ -189,6 +189,7 @@ export default {
     // Template Refs
     const registerForm = ref(null)
 
+    const vm = getCurrentInstance().proxy
     const { router } = useRouter()
 
     const isPasswordVisible = ref(false)
@@ -249,6 +250,10 @@ export default {
           axios.get('/auth/me').then(response => {
             const { user } = response.data
             const { ability: userAbility } = user
+
+            // Set user ability
+            // ? https://casl.js.org/v5/en/guide/intro#update-rules
+            vm.$ability.update(userAbility)
 
             // ? Set user's ability in localStorage for Access Control
             localStorage.setItem('userAbility', JSON.stringify(userAbility))

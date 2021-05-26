@@ -1,5 +1,6 @@
 <template>
   <v-menu
+    v-if="canViewHorizontalNavMenuHeaderGroup(item)"
     ref="refMenu"
     offset-y
     eagers
@@ -59,6 +60,7 @@ import { useMouseInElement } from '@vueuse/core'
 import HorizontalNavMenuGroup from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-group/HorizontalNavMenuGroup.vue'
 import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-link/HorizontalNavMenuLink.vue'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 import useHorizontalNavMenuHeaderGroup from './useHorizontalNavMenuHeaderGroup'
 
 export default {
@@ -93,6 +95,9 @@ export default {
     // i18n
     const { t } = useUtils()
 
+    // ACL
+    const { canViewHorizontalNavMenuHeaderGroup } = useAclUtils()
+
     // Templare ref & internal value
     const refMenu = ref(null)
     const isMenuActive = ref(false)
@@ -121,6 +126,9 @@ export default {
 
       // i18n
       t,
+
+      // CASL
+      canViewHorizontalNavMenuHeaderGroup,
 
       // icons
       icons: {

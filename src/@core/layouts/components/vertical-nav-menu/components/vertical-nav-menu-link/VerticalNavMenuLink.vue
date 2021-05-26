@@ -1,5 +1,6 @@
 <template>
   <v-list-item
+    v-if="canViewVerticalNavMenuLink(item)"
     v-bind="navLinkProps(item)"
     class="vertical-nav-menu-link"
     active-class="gradient-primary"
@@ -26,6 +27,7 @@
 import useNav from '@/@core/layouts/composable/useNav'
 import themeConfig from '@themeConfig'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 
 export default {
   props: {
@@ -37,6 +39,7 @@ export default {
   setup() {
     const { navLinkProps } = useNav()
     const { t } = useUtils()
+    const { canViewVerticalNavMenuLink } = useAclUtils()
 
     return {
       navLinkProps,
@@ -44,6 +47,9 @@ export default {
 
       // i18n
       t,
+
+      // ACL
+      canViewVerticalNavMenuLink,
     }
   },
 }

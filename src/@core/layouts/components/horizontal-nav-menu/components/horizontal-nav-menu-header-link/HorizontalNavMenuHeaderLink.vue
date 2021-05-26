@@ -1,5 +1,6 @@
 <template>
   <v-btn
+    v-if="canViewHorizontalNavMenuHeaderLink(item)"
     :color="isActive ? 'primary' : null"
     depressed
     rounded
@@ -22,6 +23,7 @@
 <script>
 import useHorizontalNavMenuHeaderLink from '@core/layouts/composable/horizontal-nav/useHorizontalNavMenuHeaderLink'
 import { useUtils } from '@core/libs/i18n'
+import { useUtils as useAclUtils } from '@core/libs/acl'
 import themeConfig from '@themeConfig'
 
 export default {
@@ -35,6 +37,9 @@ export default {
   setup(props) {
     const { isActive, updateIsActive } = useHorizontalNavMenuHeaderLink(props.item)
 
+    // ACL
+    const { canViewHorizontalNavMenuHeaderLink } = useAclUtils()
+
     // i18n
     const { t } = useUtils()
 
@@ -47,6 +52,9 @@ export default {
 
       // i18n
       t,
+
+      // ACL
+      canViewHorizontalNavMenuHeaderLink,
     }
   },
 }

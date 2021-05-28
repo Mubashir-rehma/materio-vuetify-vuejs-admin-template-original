@@ -76,6 +76,10 @@ export default [
         title: 'Knowledge Base',
         to: 'page-knowledge-base',
       },
+      {
+        title: 'Account Settings',
+        to: 'page-account-settings',
+      },
 
       // {
       //   title: 'Account Settings',

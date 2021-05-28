@@ -11,6 +11,7 @@ import {
   mdiCheckboxMarkedOutline,
   mdiCheckCircleOutline,
   mdiClockOutline,
+  mdiCogOutline,
   mdiContentCopy,
   mdiControllerClassicOutline,
   mdiCreditCardOutline,
@@ -23,6 +24,7 @@ import {
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
   mdiHelpCircleOutline,
+  mdiInformationOutline,
   mdiKeyOutline,
   mdiLockOutline,
   mdiMapOutline,
@@ -51,6 +53,10 @@ export default [
   { title: 'Forgot Password v2', to: { name: 'auth-forgot-password-v2' }, icon: mdiKeyOutline },
   { title: 'Reset Password v1', to: { name: 'auth-reset-password-v1' }, icon: mdiKeyOutline },
   { title: 'Reset Password v2', to: { name: 'auth-reset-password-v2' }, icon: mdiKeyOutline },
+  { title: 'Knowledge Base', to: { name: 'page-knowledge-base' }, icon: mdiInformationOutline },
+  { title: 'Knowledge Base Category', to: { name: 'page-knowledge-base-category' }, icon: mdiInformationOutline },
+  { title: 'Knowledge Base Question', to: { name: 'page-knowledge-base-question' }, icon: mdiInformationOutline },
+  { title: 'Account Settings', to: { name: 'page-account-settings' }, icon: mdiCogOutline },
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },

@@ -184,6 +184,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/account-settings',
+    name: 'page-account-settings',
+    component: () => import('@/views/pages/account-settings/AccountSettings.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

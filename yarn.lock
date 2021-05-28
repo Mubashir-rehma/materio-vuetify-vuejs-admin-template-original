@@ -2018,10 +2018,9 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apexcharts@^3.26.2:
+apexcharts@vrushank/apexcharts.js:
   version "3.26.3"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.26.3.tgz#9cf25eb4dd9daedf94f566e5513fcea08de46e2b"
-  integrity sha512-zbP7RBBV2CGffoVMIuTCUG64YbEUzV8IIT7iNVLMtY/OAVXTjPksDxSqKIniTvgJoscKe6sx4P56qDpBSU19VA==
+  resolved "https://codeload.github.com/vrushank/apexcharts.js/tar.gz/71fb97f50717dd74f08539b15861e3e1350274ff"
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"

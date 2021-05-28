@@ -39,6 +39,7 @@ export default {
         stacked: true,
         type: 'bar',
         height: '120',
+        offsetX: -5,
         toolbar: { show: false },
       },
       grid: {
@@ -68,13 +69,13 @@ export default {
       dataLabels: {
         enabled: false,
       },
-
       colors: ['#8a8d93', '#ff4c51'],
       plotOptions: {
         bar: {
           columnWidth: '25%',
-
-          // borderRadius: 4,
+          borderRadius: 4,
+          startingShape: 'rounded',
+          endingShape: 'rounded',
         },
         distributed: true,
       },

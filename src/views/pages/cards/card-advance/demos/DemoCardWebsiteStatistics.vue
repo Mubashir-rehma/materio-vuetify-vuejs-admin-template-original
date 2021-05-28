@@ -24,7 +24,7 @@
       </div>
     </v-card-text>
 
-    <v-card-text>
+    <v-card-text class="mt-2">
       <div
         v-for="(data,index) in websiteStatistics"
         :key="data.title"
@@ -61,23 +61,21 @@ export default {
         toolbar: {
           show: false,
         },
+        sparkline: {
+          enabled: true,
+        },
       },
       grid: {
         show: false,
-
-        padding: {
-          left: 0,
-          right: 0,
-          top: -60,
-          bottom: -30,
-        },
       },
       colors: ['#9155fd'],
       plotOptions: {
         bar: {
           horizontal: false,
-          columnWidth: '25%',
+          columnWidth: '30%',
           startingShape: 'rounded',
+          endingShape: 'rounded',
+          borderRadius: 4,
         },
       },
       legend: {

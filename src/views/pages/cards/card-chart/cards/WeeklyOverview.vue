@@ -101,6 +101,8 @@ export default {
         bar: {
           columnWidth: '50%',
           borderRadius: 8,
+          startingShape: 'rounded',
+          endingShape: 'rounded',
         },
       },
       stroke: {

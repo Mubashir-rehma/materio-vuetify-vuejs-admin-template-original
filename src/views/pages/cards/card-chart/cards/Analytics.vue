@@ -88,6 +88,8 @@ export default {
         bar: {
           borderRadius: 10,
           columnWidth: '41%',
+          startingShape: 'rounded',
+          endingShape: 'rounded',
         },
       },
       xaxis: {

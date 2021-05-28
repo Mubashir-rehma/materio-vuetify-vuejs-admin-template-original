@@ -160,6 +160,8 @@ export default {
         bar: {
           borderRadius: 10,
           columnWidth: '38%',
+          startingShape: 'rounded',
+          endingShape: 'rounded',
         },
       },
       xaxis: {

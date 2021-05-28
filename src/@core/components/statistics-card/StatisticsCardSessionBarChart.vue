@@ -57,9 +57,11 @@ export default {
         bar: {
           horizontal: false,
           columnWidth: '20%',
+          borderRadius: 4,
           startingShape: 'rounded',
+          endingShape: 'rounded',
           colors: {
-            backgroundBarColors: ['#5e566914'],
+            backgroundBarColors: ['#5e566914', '#5e566914', '#5e566914', '#5e566914', '#5e566914'],
             backgroundBarRadius: 5,
           },
         },

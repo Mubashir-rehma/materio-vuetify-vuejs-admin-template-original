@@ -72,6 +72,8 @@ export default {
         bar: {
           columnWidth: '70%',
           borderRadius: 8,
+          startingShape: 'rounded',
+          endingShape: 'rounded',
         },
       },
       yaxis: {

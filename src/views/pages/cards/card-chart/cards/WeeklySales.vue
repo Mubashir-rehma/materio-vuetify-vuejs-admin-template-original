@@ -104,9 +104,11 @@ export default {
       },
       plotOptions: {
         bar: {
-          columnWidth: '65%',
+          columnWidth: '60%',
           distributed: true,
           borderRadius: 4,
+          startingShape: 'rounded',
+          endingShape: 'rounded',
         },
       },
       dataLabels: {

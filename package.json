@@ -16,7 +16,7 @@
     "@vue/composition-api": "^1.0.0-rc.5",
     "@vuetify/cli-plugin-utils": "^0.0.9",
     "@vueuse/core": "^4.8.1",
-    "apexcharts": "^3.26.2",
+    "apexcharts": "vrushank/apexcharts.js",
     "axios": "^0.21.1",
     "axios-mock-adapter": "^1.19.0",
     "chart.js": "2.9.4",

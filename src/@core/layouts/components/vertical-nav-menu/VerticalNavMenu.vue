@@ -147,7 +147,6 @@ export default {
   .v-list-group__items .v-list-item__icon {
     margin-top: 0px;
     margin-left: 5px;
-    margin-right: 9px;
   }
 
   .v-list-item {

@@ -26,6 +26,7 @@
             <v-list-item
               v-for="que in item.questions"
               :key="que.question"
+              :ripple="false"
               class="align-start text-sm px-5"
               href="javascript:void(0)"
             >

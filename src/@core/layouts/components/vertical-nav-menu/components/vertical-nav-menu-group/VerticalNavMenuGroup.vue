@@ -150,7 +150,7 @@ export default {
     transform: rotate(-90deg);
   }
 
-  &.vertical-nav-menu-group-active .v-list-group__header {
+  &.vertical-nav-menu-group-active > .v-list-group__header {
     background-color: rgba(map-deep-get($material, 'text', 'primary'), map-deep-get($material, 'states', 'selected'));
   }
 }

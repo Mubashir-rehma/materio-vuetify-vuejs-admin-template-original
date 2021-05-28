@@ -11,6 +11,7 @@ import {
   mdiCheckboxMarkedOutline,
   mdiCheckCircleOutline,
   mdiClockOutline,
+  mdiCloseOctagonOutline,
   mdiCogOutline,
   mdiContentCopy,
   mdiControllerClassicOutline,
@@ -57,6 +58,7 @@ export default [
   { title: 'Knowledge Base Category', to: { name: 'page-knowledge-base-category' }, icon: mdiInformationOutline },
   { title: 'Knowledge Base Question', to: { name: 'page-knowledge-base-question' }, icon: mdiInformationOutline },
   { title: 'Account Settings', to: { name: 'page-account-settings' }, icon: mdiCogOutline },
+  { title: 'Not Authorized', to: { name: 'misc-not-authorized' }, icon: mdiCloseOctagonOutline },
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },

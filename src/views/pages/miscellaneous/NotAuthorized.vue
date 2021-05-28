@@ -1,5 +1,5 @@
 <template>
-  <div class="misc-under-maintenance">
+  <div class="misc-not-authorized">
     <v-img
       class="misc-bg"
       height="226"
@@ -8,21 +8,21 @@
 
     <v-img
       class="misc-tree"
-      src="/images/misc/tree.png"
+      src="/images/misc/tree-2.png"
     ></v-img>
 
     <div class="app-title text-center">
       <h2 class="text-2xl font-weight-semibold text--primary">
-        Not Authorized 🚧
+        You are not authorized! 🔐
       </h2>
-      <p class="text-sm">
-        Sorry for the inconvenience but we're performing some maintenance at the moment
+      <p class="text-sm mx-4">
+        You don’t have permission to access this page. Go Home!
       </p>
 
       <div class="misc-characters d-flex justify-center">
         <v-img
-          max-width="424"
-          src="/images/3d-characters/pose-36.png"
+          max-width="476"
+          src="/images/3d-characters/pose-f-9.png"
         ></v-img>
       </div>
 
@@ -41,15 +41,15 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.misc-under-maintenance {
+.misc-not-authorized {
   overflow: hidden;
   .app-title {
     margin-top: 6.25rem;
   }
   .misc-characters {
-    margin-left: 17rem;
+    margin-left: 15rem;
     margin-bottom: 3.313rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   .misc-bg,
   .misc-tree {
@@ -69,7 +69,7 @@ export default {}
 }
 
 @media (max-width: 550px) {
-  .misc-under-maintenance {
+  .misc-not-authorized {
     .misc-tree {
       height: 150px !important;
       width: 150px;

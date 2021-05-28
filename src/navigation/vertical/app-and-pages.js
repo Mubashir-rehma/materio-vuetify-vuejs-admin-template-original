@@ -71,6 +71,11 @@ export default [
             to: 'misc-coming-soon',
             target: '_blank',
           },
+          {
+            title: 'Not Authorized',
+            to: 'misc-not-authorized',
+            target: '_blank',
+          },
         ],
       },
       {

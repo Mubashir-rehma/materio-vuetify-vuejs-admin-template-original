@@ -85,6 +85,10 @@ export default [
         title: 'Account Settings',
         to: 'page-account-settings',
       },
+      {
+        title: 'Pricing',
+        to: 'page-pricing',
+      },
 
       // {
       //   title: 'Account Settings',

@@ -16,6 +16,7 @@ import {
   mdiContentCopy,
   mdiControllerClassicOutline,
   mdiCreditCardOutline,
+  mdiCurrencyUsd,
   mdiDebugStepOver,
   mdiDotsHorizontal,
   mdiFamilyTree,
@@ -59,6 +60,7 @@ export default [
   { title: 'Knowledge Base Question', to: { name: 'page-knowledge-base-question' }, icon: mdiInformationOutline },
   { title: 'Account Settings', to: { name: 'page-account-settings' }, icon: mdiCogOutline },
   { title: 'Not Authorized', to: { name: 'misc-not-authorized' }, icon: mdiCloseOctagonOutline },
+  { title: 'Pricing', to: { name: 'page-pricing' }, icon: mdiCurrencyUsd },
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },

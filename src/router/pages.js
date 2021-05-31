@@ -192,6 +192,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/pricing',
+    name: 'page-pricing',
+    component: () => import('@/views/pages/pricing/Pricing.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

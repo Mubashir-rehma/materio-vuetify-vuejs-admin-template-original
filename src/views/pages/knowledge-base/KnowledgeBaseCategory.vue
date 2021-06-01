@@ -2,7 +2,8 @@
   <section id="knowledge-base">
     <!-- seach banner  -->
     <v-card
-      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7"
+      flat
+      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7 rounded-0"
     >
       <v-card-text>
         <p class="kb-title text-2xl font-weight-semibold primary--text mb-2">

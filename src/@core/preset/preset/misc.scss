@@ -1,0 +1,42 @@
+#misc {
+  overflow: hidden;
+  padding: 1rem;
+
+  .app-title {
+    margin-top: 5.25rem;
+  }
+
+  .misc-characters {
+    margin-bottom: 3.313rem;
+    margin-top: 5rem;
+  }
+
+  .misc-bg,
+  .misc-tree {
+    position: absolute;
+  }
+
+  .misc-bg {
+    bottom: 0;
+  }
+
+  .misc-tree {
+    height: 226px;
+    max-width: 300px;
+    left: 0;
+    bottom: 8%;
+  }
+  
+  .misc-input-width {
+    max-width: 15.125rem;
+  }
+}
+
+@media (max-width: 550px) {
+  #misc {
+    .misc-tree {
+      height: 150px !important;
+      width: 150px;
+    }
+  }
+}

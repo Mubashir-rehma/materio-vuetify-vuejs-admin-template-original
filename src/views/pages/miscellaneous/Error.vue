@@ -1,5 +1,5 @@
 <template>
-  <div class="misc-error">
+  <div id="misc">
     <v-img
       class="misc-bg"
       height="226"
@@ -21,14 +21,15 @@
 
       <div class="misc-characters d-flex justify-center">
         <v-img
-          max-width="424"
-          src="/images/3d-characters/pose-5.png"
+          max-width="700"
+          src="/images/3d-characters/error.png"
         ></v-img>
       </div>
 
       <v-btn
         color="primary"
         to="/"
+        class="mb-4"
       >
         Back to home
       </v-btn>
@@ -40,40 +41,6 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
-.misc-error {
-  overflow: hidden;
-  .app-title {
-    margin-top: 6.25rem;
-  }
-  .misc-characters {
-    margin-left: 13rem;
-    margin-bottom: 3.313rem;
-    margin-top: 5rem;
-  }
-  .misc-bg,
-  .misc-tree {
-    position: absolute;
-  }
-
-  .misc-bg {
-    bottom: 0;
-  }
-
-  .misc-tree {
-    height: 226px;
-    max-width: 300px;
-    left: 0;
-    bottom: 8%;
-  }
-}
-
-@media (max-width: 550px) {
-  .misc-error {
-    .misc-tree {
-      height: 150px !important;
-      width: 150px;
-    }
-  }
-}
+<style lang="scss">
+@import '@core/preset/preset/misc.scss';
 </style>

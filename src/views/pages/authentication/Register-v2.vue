@@ -24,29 +24,31 @@
           lg="8"
           class="d-none d-lg-block position-relative overflow-hidden"
         >
-          <!-- triangle bg -->
-          <v-img
-            height="362"
-            class="auth-mask-bg"
-            :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-          ></v-img>
+          <div class="auth-illustrator-wrapper">
+            <!-- triangle bg -->
+            <v-img
+              height="362"
+              class="auth-mask-bg"
+              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+            ></v-img>
 
-          <!-- tree -->
-          <v-img
-            height="226"
-            width="300"
-            class="auth-tree"
-            src="/images/misc/tree-2.png"
-          ></v-img>
+            <!-- tree -->
+            <v-img
+              height="226"
+              width="300"
+              class="auth-tree"
+              src="/images/misc/tree-2.png"
+            ></v-img>
 
-          <!-- 3d character -->
-          <v-img
-            contain
-            max-width="100%"
-            height="710"
-            class="auth-3d-group"
-            src="/images/3d-characters/illustration-register-v2.png"
-          ></v-img>
+            <!-- 3d character -->
+            <v-img
+              contain
+              max-width="100%"
+              height="710"
+              class="auth-3d-group"
+              :src="`/images/3d-characters/illustration-register-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+            ></v-img>
+          </div>
         </v-col>
 
         <v-col
@@ -219,14 +221,4 @@ export default {
 
 <style lang="scss">
 @import '@core/preset/preset/auth.scss';
-</style>
-
-<style lang="scss" scoped>
-.auth-wrapper {
-  &.auth-v2 {
-    .auth-3d-group {
-      bottom: 10% !important;
-    }
-  }
-}
 </style>

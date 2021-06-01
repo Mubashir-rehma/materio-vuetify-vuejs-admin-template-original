@@ -37,7 +37,7 @@
                 v-model="email"
                 outlined
                 label="Email"
-                placeholder="email"
+                placeholder="Email"
                 hide-details
               ></v-text-field>
             </div>

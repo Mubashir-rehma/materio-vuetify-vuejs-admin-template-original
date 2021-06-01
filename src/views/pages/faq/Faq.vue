@@ -2,6 +2,7 @@
   <section id="faq">
     <!-- seach banner  -->
     <v-card
+      flat
       class="faq-bg d-flex align-center justify-center text-center mb-7"
     >
       <v-card-text>

@@ -68,7 +68,13 @@
 
       .auth-row{
         height: 100%;
+        .auth-illustrator-wrapper{
+          width: 100%;
+          height: 100%;
+          padding: 5rem 0 5rem 6rem;
+        }
       }
+
       .auth-bg{
         .v-card{
           max-width: 40rem;
@@ -77,17 +83,19 @@
         }
       }
 
-      .auth-mask-bg,
-      .auth-tree,
-      .auth-3d-group{
+      .auth-mask-bg{
         position: absolute;
         bottom: 0;
+        right: 0;
+        left: 0;
       }
 
       .auth-tree{
         left: 0;
+        left: 2.125rem;
+        bottom: 2.688rem;
+        position: absolute;
       }
-     
     }
   }
 }

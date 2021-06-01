@@ -90,6 +90,10 @@ export default [
         title: 'Pricing',
         to: 'page-pricing',
       },
+      {
+        title: 'FAQ',
+        to: 'page-faq',
+      },
     ],
   },
 ]

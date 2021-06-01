@@ -40,5 +40,17 @@
         }
       }
     }
+
+    // faq
+
+    #faq{
+      .faq-bg{
+        background-image: url('/images/misc/knowledge-base-bg-dark.png') !important;
+      }
+
+      .faq-search-input{
+        background-color: map-get($material-dark , 'cards' );
+      }
+    }
   }
 }

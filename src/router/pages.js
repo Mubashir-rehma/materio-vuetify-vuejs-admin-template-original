@@ -200,6 +200,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/faq',
+    name: 'page-faq',
+    component: () => import('@/views/pages/faq/Faq.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

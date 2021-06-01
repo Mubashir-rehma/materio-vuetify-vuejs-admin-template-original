@@ -61,6 +61,7 @@ export default [
   { title: 'Account Settings', to: { name: 'page-account-settings' }, icon: mdiCogOutline },
   { title: 'Not Authorized', to: { name: 'misc-not-authorized' }, icon: mdiCloseOctagonOutline },
   { title: 'Pricing', to: { name: 'page-pricing' }, icon: mdiCurrencyUsd },
+  { title: 'FAQ', to: { name: 'page-faq' }, icon: mdiHelpCircleOutline },
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },

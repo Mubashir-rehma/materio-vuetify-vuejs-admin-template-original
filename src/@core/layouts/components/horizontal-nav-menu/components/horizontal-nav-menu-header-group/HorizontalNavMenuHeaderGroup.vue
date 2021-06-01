@@ -141,6 +141,7 @@ export default {
 
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
+@import '~@core/preset/preset/mixins.scss';
 
 @include theme(horizontal-nav-menu) using ($material) {
   // ! Below style will also affect HorizontalNavGroup
@@ -177,8 +178,10 @@ export default {
 
     > .v-list {
       border-radius: 6px;
-      @include elevation(8);
+      // @include elevation(8);
     }
   }
 }
+
+@include app-elevation('horizontal-nav-header-group .v-menu__content > .v-list', 8);
 </style>

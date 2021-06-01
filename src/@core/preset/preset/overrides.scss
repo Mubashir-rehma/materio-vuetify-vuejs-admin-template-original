@@ -334,11 +334,9 @@ button {
   }
 }
 
-.v-expansion-panel {
-  &.v-expansion-panel--active {
-    @include elevation(3, !important);
-  }
+@include app-elevation('v-expansion-panel.v-expansion-panel--active', 3, true);
 
+.v-expansion-panel {
   .v-expansion-panel-header {
     padding: 1rem;
   }

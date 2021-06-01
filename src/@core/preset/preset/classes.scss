@@ -124,10 +124,12 @@ $font-sizes: (
     &:hover {
       transform: translateY(-5px) scale(1.05);
       z-index: 2;
-      @include elevation(2);
+      // @include elevation(2);
     }
   }
 }
+
+@include app-elevation('v-avatar-group > *:hover', 2);
 
 @include theme(v-avatar-group) using ($material) {
   > * {

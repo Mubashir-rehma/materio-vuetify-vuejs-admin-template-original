@@ -109,11 +109,13 @@ export default {
     background-color: transparent !important;
   }
 
-  &.v-navigation-drawer--open-on-hover.v-navigation-drawer--is-mouseover {
-    @include elevation(9);
-    // @include elevationTransition();
-  }
+  // &.v-navigation-drawer--open-on-hover.v-navigation-drawer--is-mouseover {
+  //   @include elevation(9);
+  //   @include elevationTransition();
+  // }
 }
+
+@include app-elevation('app-navigation-menu.v-navigation-drawer--open-on-hover.v-navigation-drawer--is-mouseover', 9);
 
 // Set Perfect Scrollbar Container Height
 .vertical-nav-menu-container {

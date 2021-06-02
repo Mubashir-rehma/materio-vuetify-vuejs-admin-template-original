@@ -3,6 +3,7 @@ import {
   mdiArchiveOutline,
   mdiControllerClassicOutline,
   mdiCreditCardOutline,
+  mdiEyeOutline,
   mdiLayersTripleOutline,
 } from '@mdi/js'
 
@@ -15,6 +16,11 @@ export default [
         icon: mdiAlphaTBoxOutline,
         title: 'Typography',
         to: 'ui-typography',
+      },
+      {
+        icon: mdiEyeOutline,
+        title: 'Icons',
+        to: 'ui-icons',
       },
       {
         icon: mdiControllerClassicOutline,

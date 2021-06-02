@@ -19,6 +19,7 @@ import {
   mdiCurrencyUsd,
   mdiDebugStepOver,
   mdiDotsHorizontal,
+  mdiEyeOutline,
   mdiFamilyTree,
   mdiFileMusicOutline,
   mdiFileOutline,
@@ -62,6 +63,7 @@ export default [
   { title: 'Not Authorized', to: { name: 'misc-not-authorized' }, icon: mdiCloseOctagonOutline },
   { title: 'Pricing', to: { name: 'page-pricing' }, icon: mdiCurrencyUsd },
   { title: 'FAQ', to: { name: 'page-faq' }, icon: mdiHelpCircleOutline },
+  { title: 'Icons', to: { name: 'ui-icons' }, icon: mdiEyeOutline },
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },

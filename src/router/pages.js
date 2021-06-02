@@ -208,6 +208,14 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/icons',
+    name: 'ui-icons',
+    component: () => import('@/views/pages/icons/Icons.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default pages

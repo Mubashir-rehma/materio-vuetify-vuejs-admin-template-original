@@ -28,17 +28,6 @@
       .kbc-title{
         background-color:rgba(231, 227, 252, 0.08);
       }
-
-       .kbc-questions{
-        .v-list-item--link{
-          color: map-get($material-dark , 'cards' );
-          &:hover,
-          &:focus{
-            color: map-get($material-dark , 'cards' ) !important;
-            background-color: map-get($material-dark , 'cards' ) ;
-          }
-        }
-      }
     }
 
     // faq

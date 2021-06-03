@@ -6,13 +6,12 @@
         to="/"
         class="brand-logo d-flex align-center"
       >
-        <div class="logo">
-          <v-img
-            max-height="30"
-            max-width="30"
-            src="/logo.svg"
-          ></v-img>
-        </div>
+        <v-img
+          max-height="30"
+          max-width="30"
+          src="/logo.svg"
+        ></v-img>
+
         <h2 class="text--primary ml-3">
           Materio
         </h2>
@@ -29,7 +28,7 @@
             <v-img
               height="362"
               class="auth-mask-bg"
-              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
             ></v-img>
 
             <!-- tree -->
@@ -46,7 +45,7 @@
               max-width="100%"
               height="692"
               class="auth-3d-group"
-              :src="`/images/3d-characters/group-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              :src="`/images/3d-characters/group-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
             ></v-img>
           </div>
         </v-col>
@@ -76,53 +75,50 @@
                 <!-- login form -->
                 <v-card-text>
                   <v-form>
-                    <div class="mb-3">
-                      <v-text-field
-                        v-model="email"
-                        outlined
-                        label="Email"
-                        placeholder="Email"
-                        hide-details
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="email"
+                      outlined
+                      label="Email"
+                      placeholder="Email"
+                      hide-details
+                      class="mb-3"
+                    ></v-text-field>
 
-                    <div>
-                      <v-text-field
-                        v-model="password"
-                        outlined
-                        :type="isPasswordVisible ? 'text' : 'password'"
-                        label="Password"
-                        placeholder="Password"
-                        :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye "
-                        hide-details
-                        @click:append="isPasswordVisible = !isPasswordVisible"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="password"
+                      outlined
+                      :type="isPasswordVisible ? 'text' : 'password'"
+                      label="Password"
+                      placeholder="Password"
+                      :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
+                      hide-details
+                      @click:append="isPasswordVisible = !isPasswordVisible"
+                    ></v-text-field>
 
                     <div class="d-flex align-center justify-space-between flex-wrap">
                       <v-checkbox
                         hide-details
                         label="Remember Me"
+                        class="mr-3 "
                       >
                       </v-checkbox>
 
                       <!-- forget link -->
                       <router-link
                         :to="{name:'auth-forgot-password-v2'}"
-                        class="ml-3 mt-5"
+                        class="mt-5"
                       >
                         Forgot Password?
                       </router-link>
                     </div>
 
-                    <div class="mt-6">
-                      <v-btn
-                        block
-                        color="primary"
-                      >
-                        Login
-                      </v-btn>
-                    </div>
+                    <v-btn
+                      block
+                      class="mt-6"
+                      color="primary"
+                    >
+                      Login
+                    </v-btn>
                   </v-form>
                 </v-card-text>
 
@@ -149,10 +145,9 @@
                     v-for="link in socialLink"
                     :key="link.icon"
                     icon
-                    href="javascript:void(0)"
                     class="ml-1"
                   >
-                    <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
+                    <v-icon :color="$vuetify.theme.dark ? link.colorInDark : link.color">
                       {{ link.icon }}
                     </v-icon>
                   </v-btn>
@@ -168,7 +163,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
@@ -205,8 +200,8 @@ export default {
       password,
       socialLink,
       icons: {
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
     }
   },

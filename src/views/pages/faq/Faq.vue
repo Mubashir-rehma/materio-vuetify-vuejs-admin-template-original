@@ -3,7 +3,7 @@
     <!-- seach banner  -->
     <v-card
       flat
-      class="faq-bg d-flex align-center justify-center text-center mb-7"
+      class="faq-bg d-flex align-center justify-center text-center mb-9"
     >
       <v-card-text>
         <p class="faq-title text-2xl font-weight-semibold primary--text mb-2">
@@ -122,10 +122,12 @@
               {{ contact.icon }}
             </v-icon>
           </v-avatar>
-          <p class="mb-2">
+
+          <p class="text-xl text--primary font-weight-medium mb-2">
             {{ contact.contact }}
           </p>
-          <p class="mb-0">
+
+          <p class="text-sm mb-0">
             {{ contact.tagLine }}
           </p>
         </v-card>

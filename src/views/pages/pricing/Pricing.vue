@@ -1,28 +1,35 @@
 <template>
   <v-card
     id="pricing-plan"
-    class="text-center py-15"
+    class="text-center py-sm-15 py-5"
   >
     <v-card-text>
-      <div class="mx-auto w-50">
-        <h1 class="font-weight-medium mb-5">
-          Pricing Plans
-        </h1>
-        <p class="mb-3">
-          All plans include 40+ advanced tools and features to boost your product. Choose the best plan to fit your needs.
-        </p>
+      <v-row>
+        <v-col
+          cols="12"
+          md="6"
+          sm="8"
+          class="mx-auto"
+        >
+          <h1 class="font-weight-medium mb-5">
+            Pricing Plans
+          </h1>
+          <p class="mb-3">
+            All plans include 40+ advanced tools and features to boost your product. Choose the best plan to fit your needs.
+          </p>
 
-        <!--plan switch -->
-        <div class="d-flex align-center justify-center">
-          <span class="font-weight-semibold">Monthly</span>
-          <v-switch
-            v-model="status"
-            value="annually"
-            class="mx-3"
-          ></v-switch>
-          <span class="font-weight-semibold">Annually</span>
-        </div>
-      </div>
+          <!--plan switch -->
+          <div class="d-flex align-center justify-center">
+            <span class="font-weight-semibold">Monthly</span>
+            <v-switch
+              v-model="status"
+              value="annually"
+              class="mx-3"
+            ></v-switch>
+            <span class="font-weight-semibold">Annually</span>
+          </div>
+        </v-col>
+      </v-row>
     </v-card-text>
 
     <v-card-text class="mt-3 pb-15">
@@ -75,12 +82,12 @@
                 </div>
                 <!--/ annual plan -->
 
-                <v-card-text class="mt-4">
-                  <v-list dense>
-                    <v-list-item
+                <v-card-text class="mt-5">
+                  <div class="pb-2">
+                    <div
                       v-for="benefits in pricing.basicPlan.planBenefits"
                       :key="benefits"
-                      class="align-start text-left"
+                      class="d-flex align-start text-sm px-5 my-4 cursor-pointer text-left"
                     >
                       <v-icon
                         size="14"
@@ -89,8 +96,8 @@
                         {{ icons.mdiCheckboxBlankCircleOutline }}
                       </v-icon>
                       <span class="text-sm text--secondary">{{ benefits }}</span>
-                    </v-list-item>
-                  </v-list>
+                    </div>
+                  </div>
 
                   <!-- plan button -->
                   <v-btn
@@ -157,12 +164,12 @@
                 </div>
                 <!--/ annual plan -->
 
-                <v-card-text class="mt-4">
-                  <v-list dense>
-                    <v-list-item
+                <v-card-text class="mt-5">
+                  <div class="pb-2">
+                    <div
                       v-for="benefits in pricing.standardPlan.planBenefits"
                       :key="benefits"
-                      class="align-start text-left"
+                      class="d-flex align-start text-sm px-5 my-4 cursor-pointer text-left"
                     >
                       <v-icon
                         size="14"
@@ -171,8 +178,8 @@
                         {{ icons.mdiCheckboxBlankCircleOutline }}
                       </v-icon>
                       <span class="text-sm text--secondary">{{ benefits }}</span>
-                    </v-list-item>
-                  </v-list>
+                    </div>
+                  </div>
 
                   <!-- plan button -->
                   <v-btn
@@ -224,12 +231,12 @@
                 </div>
                 <!--/ annual plan -->
 
-                <v-card-text class="mt-4">
-                  <v-list dense>
-                    <v-list-item
+                <v-card-text class="mt-5">
+                  <div class="pb-2">
+                    <div
                       v-for="benefits in pricing.enterprisePlan.planBenefits"
                       :key="benefits"
-                      class="align-start text-left"
+                      class="d-flex align-start text-sm px-5 my-4 cursor-pointer text-left"
                     >
                       <v-icon
                         size="14"
@@ -238,8 +245,8 @@
                         {{ icons.mdiCheckboxBlankCircleOutline }}
                       </v-icon>
                       <span class="text-sm text--secondary">{{ benefits }}</span>
-                    </v-list-item>
-                  </v-list>
+                    </div>
+                  </div>
 
                   <!-- plan button -->
                   <v-btn
@@ -441,12 +448,10 @@ export default {
 @import '@core/preset/preset/variables';
 
 #pricing-plan {
-  .w-50 {
-    width: 50%;
-  }
   .popular {
     border-color: rgba(145, 85, 253, 0.3);
   }
+
   .pricing-free-trial {
     background-color: rgba(145, 85, 253, 0.04);
     position: relative;
@@ -461,6 +466,7 @@ export default {
     .v-expansion-panels {
       .v-expansion-panel {
         box-shadow: none !important;
+        margin-bottom: -1px;
         &::before {
           box-shadow: none;
         }

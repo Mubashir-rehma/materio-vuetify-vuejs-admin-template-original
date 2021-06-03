@@ -140,7 +140,7 @@
                     dense
                     hide-details
                     :type="isPasswordVisible ? 'text' : 'password'"
-                    :append-icon="isPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
+                    :append-icon="isPasswordVisible ? icons.mdiEyeOutline : icons.mdiEyeOffOutline"
                     @click:append="isPasswordVisible = !isPasswordVisible"
                   ></v-text-field>
                 </v-col>
@@ -156,7 +156,7 @@
                     dense
                     hide-details
                     :type="isCPasswordVisible ? 'text' : 'password'"
-                    :append-icon="isCPasswordVisible ? icons.mdiEye : icons.mdiEyeOff"
+                    :append-icon="isCPasswordVisible ? icons.mdiEyeOutline : icons.mdiEyeOffOutline"
                     @click:append="isCPasswordVisible = !isCPasswordVisible"
                   ></v-text-field>
                 </v-col>
@@ -261,7 +261,7 @@
 
 <script>
 import { ref } from '@vue/composition-api'
-import { mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -313,8 +313,8 @@ export default {
 
       // icons
       icons: {
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
     }
   },

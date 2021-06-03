@@ -3,13 +3,15 @@
     <!-- seach banner  -->
     <v-card
       flat
-      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7 rounded-0"
+      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7"
     >
       <v-card-text>
         <p class="kb-title text-2xl font-weight-semibold primary--text mb-2">
           Hello, how can we help?
         </p>
-        <p>or choose a category to quickly find the help you need</p>
+        <p class="mb-7">
+          or choose a category to quickly find the help you need
+        </p>
 
         <v-form class="kb-search-input mx-auto">
           <v-text-field

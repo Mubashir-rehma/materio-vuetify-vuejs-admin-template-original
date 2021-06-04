@@ -62,6 +62,7 @@ export default {
         toolbar: {
           show: false,
         },
+        offsetX: -15,
       },
       legend: {
         show: false,
@@ -81,6 +82,7 @@ export default {
         },
       },
       yaxis: {
+        tickAmount: 1,
         labels: {
           offsetY: 3,
           formatter: value => `$${kFormatter(value, 0)}`,
@@ -88,6 +90,9 @@ export default {
       },
       grid: {
         strokeDashArray: 12,
+        padding: {
+          right: 0,
+        },
       },
       markers: {
         size: 4,
@@ -107,6 +112,14 @@ export default {
       },
       stroke: {
         width: [2, 2],
+      },
+      states: {
+        hover: {
+          filter: {
+            type: 'darken',
+            value: '0.9',
+          },
+        },
       },
     }
 

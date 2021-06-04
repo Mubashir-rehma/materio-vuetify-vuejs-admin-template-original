@@ -18,6 +18,7 @@
       <vue-apex-charts
         :options="chartOptions"
         :series="chartData"
+        class="mb-2"
       ></vue-apex-charts>
       <!-- Revenue -->
       <div class="d-flex">
@@ -145,15 +146,15 @@ export default {
     const chartData = [
       {
         name: 'PRODUCT A',
-        data: [16000, 7000, 16000, 18000, 15000, 35000, 16000],
+        data: [16000, 12000, 16000, 18000, 15000, 35000, 16000],
       },
       {
         name: 'PRODUCT B',
-        data: [7000, 12000, 10000, 0, 6000, 9000, 4000],
+        data: [10000, 12000, 10000, 0, 10000, 10000, 10000],
       },
       {
         name: 'PRODUCT C',
-        data: [0, 15000, 0, 0, 8000, 0, 5000],
+        data: [0, 15000, 0, 0, 12000, 0, 10000],
       },
     ]
 

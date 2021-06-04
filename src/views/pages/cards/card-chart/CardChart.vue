@@ -52,7 +52,7 @@
       <v-col
         cols="12"
         md="4"
-        sm="6"
+        sm="12"
       >
         <sales-state></sales-state>
       </v-col>
@@ -66,21 +66,21 @@
       <v-col
         cols="12"
         md="3"
-        sm="4"
+        sm="6"
       >
         <total-sales></total-sales>
       </v-col>
       <v-col
         cols="12"
         md="3"
-        sm="4"
+        sm="6"
       >
         <total-visits></total-visits>
       </v-col>
       <v-col
         cols="12"
         md="3"
-        sm="4"
+        sm="6"
       >
         <revenue-report></revenue-report>
       </v-col>

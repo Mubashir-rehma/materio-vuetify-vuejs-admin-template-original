@@ -44,55 +44,63 @@ export default {
       grid: {
         show: false,
         padding: {
-          left: -10,
+          right: 0,
+          left: 0,
         },
       },
       chart: {
-        type: 'line',
+        type: 'area',
         toolbar: {
           show: false,
         },
-        dropShadow: {
-          enabled: true,
-          top: 18,
-          left: 0,
-          blur: 5,
-          opacity: 0.2,
-          color: $vuetify.theme.currentTheme.primary,
-        },
+      },
+      dataLabels: {
+        enabled: false,
       },
       stroke: {
-        width: 5,
         curve: 'smooth',
+        width: 2.5,
       },
-      colors: [$vuetify.theme.currentTheme.primary],
-      legend: {
-        show: false,
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 0.9,
+          opacityFrom: 0.5,
+          opacityTo: 0.2,
+          stops: [0, 80, 100],
+        },
       },
       xaxis: {
-        labels: {
+        type: 'numeric',
+        lines: {
           show: false,
         },
         axisBorder: {
           show: false,
         },
-        axisTicks: {
-          show: false,
-        },
+        labels: { show: false },
       },
       yaxis: {
-        labels: {
-          show: false,
+        show: false,
+      },
+      tooltip: {
+        x: { show: false },
+      },
+      theme: {
+        monochrome: {
+          enabled: true,
+          color: $vuetify.theme.currentTheme.primary,
+          shadeTo: 'light',
+          shadeIntensity: 0.65,
         },
-        min: 0,
       },
       markers: {
         size: 1,
         colors: ['transparent'],
         strokeColors: 'transparent',
         strokeWidth: 4,
-        offsetX: -6,
-        offsetY: 5,
+        offsetX: -8,
+        offsetY: 2,
         discrete: [
           {
             seriesIndex: 0,

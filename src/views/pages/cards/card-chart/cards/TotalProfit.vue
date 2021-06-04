@@ -24,7 +24,7 @@
         >
           <v-card elevation="0">
             <!-- Title/Header -->
-            <v-card-title class="align-start pt-0">
+            <v-card-title class="align-start pt-0 flex-nowrap">
               <div>
                 <p class="mb-0 font-weight-bold text-2xl">
                   $482.85k
@@ -211,15 +211,15 @@ export default {
     const chartData = [
       {
         name: 'PRODUCT A',
-        data: [29000, 22000, 28000, 19000, 30000, 21000, 35000],
+        data: [29000, 22000, 25000, 19000, 30000, 21000, 35000],
       },
       {
         name: 'PRODUCT B',
-        data: [0, 16000, 7000, 15000, 0, 12000, 9000],
+        data: [0, 16000, 11000, 15000, 0, 12000, 9000],
       },
       {
         name: 'PRODUCT C',
-        data: [0, 0, 0, 14000, 0, 7000, 8000],
+        data: [0, 0, 0, 14000, 0, 11000, 12000],
       },
     ]
 

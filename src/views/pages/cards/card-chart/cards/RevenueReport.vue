@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="text-sm font-weight-semibold">Revenue Report</span>
+      <span class="text-sm font-weight-semibold mb-1">Revenue Report</span>
       <v-spacer></v-spacer>
       <v-chip
         class="v-chip-light-bg secondary--text font-weight-semibold"
@@ -59,9 +59,10 @@ export default {
         markers: {
           radius: 15,
         },
+        offsetY: 8,
       },
       stroke: {
-        width: 5,
+        width: 2,
         colors: ['#fff'],
       },
       dataLabels: {
@@ -70,7 +71,7 @@ export default {
       colors: [$vuetify.theme.currentTheme.success, $vuetify.theme.currentTheme.secondary],
       plotOptions: {
         bar: {
-          columnWidth: '70%',
+          columnWidth: '50%',
           borderRadius: 8,
           startingShape: 'rounded',
           endingShape: 'rounded',

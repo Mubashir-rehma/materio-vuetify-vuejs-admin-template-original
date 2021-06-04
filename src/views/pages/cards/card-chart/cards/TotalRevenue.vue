@@ -21,7 +21,7 @@
       ></vue-apex-charts>
 
       <!-- Stats -->
-      <div class="d-flex justify-space-around">
+      <div class="d-flex justify-space-around mt-2">
         <!-- New Users -->
         <div class="text-center">
           <div class="d-flex align-center justify-center">

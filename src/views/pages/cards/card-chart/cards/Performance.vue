@@ -46,7 +46,7 @@ export default {
       colors: [$vuetify.theme.currentTheme.primary, $vuetify.theme.currentTheme.info],
       plotOptions: {
         radar: {
-          size: 100,
+          size: 110,
           polygons: {
             strokeColors: ['#ebe9f1', 'transparent', 'transparent', 'transparent', 'transparent', 'transparent'],
           },

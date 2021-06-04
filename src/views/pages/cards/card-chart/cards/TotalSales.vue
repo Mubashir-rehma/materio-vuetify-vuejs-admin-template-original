@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="align-start">
+    <v-card-title class="align-start flex-nowrap">
       <div>
         <p class="mb-2 text-sm font-weight-semibold">
           Total Sales

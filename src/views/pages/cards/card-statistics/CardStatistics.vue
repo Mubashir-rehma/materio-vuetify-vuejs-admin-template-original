@@ -228,7 +228,7 @@
     <v-row class="match-height">
       <!--statistics card with chart -->
       <v-col
-        cols="12"
+        cols="6"
         md="2"
         sm="4"
       >
@@ -240,7 +240,7 @@
         ></statistics-card-line-chart>
       </v-col>
       <v-col
-        cols="12"
+        cols="6"
         md="2"
         sm="4"
       >
@@ -251,7 +251,7 @@
         ></statistics-card-bar-chart>
       </v-col>
       <v-col
-        cols="12"
+        cols="6"
         md="2"
         sm="4"
       >
@@ -262,7 +262,7 @@
         ></statistics-card-area-chart>
       </v-col>
       <v-col
-        cols="12"
+        cols="6"
         md="2"
         sm="4"
       >
@@ -274,7 +274,7 @@
         ></statistics-card-radial-bar-chart>
       </v-col>
       <v-col
-        cols="12"
+        cols="6"
         md="2"
         sm="4"
       >
@@ -285,7 +285,7 @@
         ></statistics-card-session-bar-chart>
       </v-col>
       <v-col
-        cols="12"
+        cols="6"
         md="2"
         sm="4"
       >

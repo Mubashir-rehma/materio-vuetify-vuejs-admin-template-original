@@ -333,6 +333,14 @@ $font-sizes: (
   }
 }
 
+.v-timeline {
+  &.no-dots-shadow {
+    .v-timeline-item__dot {
+      box-shadow: none !important;
+    }
+  }
+}
+
 // ————————————————————————————————————
 //* ——— Misc
 // ————————————————————————————————————

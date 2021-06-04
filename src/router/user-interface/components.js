@@ -112,6 +112,14 @@ const components = [
     },
   },
   {
+    path: '/components/timeline',
+    name: 'components-timeline',
+    component: () => import('@/views/components/timeline/Timeline.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
     path: '/components/treeview',
     name: 'components-treeview',
     component: () => import('@/views/components/treeview/Treeview.vue'),

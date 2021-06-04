@@ -120,6 +120,10 @@ export default [
         to: 'components-stepper',
       },
       {
+        title: 'Timeline',
+        to: 'components-timeline',
+      },
+      {
         title: 'Treeview',
         to: 'components-treeview',
       },

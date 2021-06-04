@@ -95,6 +95,7 @@ export default [
   { title: 'Chip', to: { name: 'components-chip' }, icon: mdiMemory },
   { title: 'Snackbar', to: { name: 'components-snackbar' }, icon: mdiBellOutline },
   { title: 'Stepper', to: { name: 'components-stepper' }, icon: mdiDebugStepOver },
+  { title: 'Timeline', to: { name: 'components-timeline' }, icon: mdiClockOutline },
   { title: 'Treeview', to: { name: 'components-treeview' }, icon: mdiFamilyTree },
   { title: 'Autocomplete', to: { name: 'form-autocomplete' }, icon: mdiFormatAlignLeft },
   { title: 'Checkbox', to: { name: 'form-checkbox' }, icon: mdiCheckboxMarkedOutline },

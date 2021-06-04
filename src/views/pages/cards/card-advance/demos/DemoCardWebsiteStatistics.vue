@@ -3,9 +3,15 @@
     <v-card-title>
       <span>Website Statistics</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer mr-n1">
-        {{ icons.mdiDotsVertical }}
-      </v-icon>
+
+      <v-btn
+        icon
+        class="mr-n1"
+      >
+        <v-icon>
+          {{ icons.mdiDotsVertical }}
+        </v-icon>
+      </v-btn>
     </v-card-title>
 
     <v-card-text class="d-flex align-center justify-space-between pb-1 pt-5">

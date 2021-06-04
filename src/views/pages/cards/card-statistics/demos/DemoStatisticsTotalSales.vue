@@ -19,6 +19,7 @@
           <span class="success--text text-xs font-weight-semibold">15.6%</span>
         </v-card-text>
       </div>
+
       <div>
         <vue-apex-charts
           id="chart-stats-total-sales"

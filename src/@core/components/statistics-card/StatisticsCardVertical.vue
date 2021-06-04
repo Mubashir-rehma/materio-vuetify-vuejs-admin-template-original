@@ -14,9 +14,11 @@
         </v-icon>
       </v-avatar>
 
-      <v-icon class="cursor-pointer">
-        {{ mdiDotsVertical }}
-      </v-icon>
+      <v-btn icon>
+        <v-icon>
+          {{ mdiDotsVertical }}
+        </v-icon>
+      </v-btn>
     </v-card-title>
     <v-card-text class="text-no-wrap text--primary">
       <p class="font-weight-semibold text-sm mb-1">

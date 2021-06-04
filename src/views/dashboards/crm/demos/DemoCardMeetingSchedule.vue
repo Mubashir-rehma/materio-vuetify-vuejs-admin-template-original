@@ -3,9 +3,12 @@
     <v-card-title>
       <span>Meeting Schedule</span>
       <v-spacer></v-spacer>
-      <v-icon class="cursor-pointer mr-n1">
-        {{ icons.mdiDotsVertical }}
-      </v-icon>
+
+      <v-btn icon>
+        <v-icon>
+          {{ icons.mdiDotsVertical }}
+        </v-icon>
+      </v-btn>
     </v-card-title>
 
     <v-card-text>

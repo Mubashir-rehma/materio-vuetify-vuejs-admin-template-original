@@ -2,10 +2,14 @@
   <v-card>
     <v-card-title class="text-base justify-space-between">
       <span class="font-weight-semibold">Statistics Card</span>
-      <v-icon class="cursor-pointer">
-        {{ icons.mdiDotsVertical }}
-      </v-icon>
+
+      <v-btn icon>
+        <v-icon>
+          {{ icons.mdiDotsVertical }}
+        </v-icon>
+      </v-btn>
     </v-card-title>
+
     <v-card-text>
       <v-row>
         <v-col

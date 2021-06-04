@@ -4,8 +4,11 @@
       <span>Meeting Schedule</span>
       <v-spacer></v-spacer>
 
-      <v-btn>
-        <v-icon class="cursor-pointer mr-n1">
+      <v-btn
+        class="mr-n1"
+        icon
+      >
+        <v-icon>
           {{ icons.mdiDotsVertical }}
         </v-icon>
       </v-btn>

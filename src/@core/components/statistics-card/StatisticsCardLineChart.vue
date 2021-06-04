@@ -3,11 +3,13 @@
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
+
     <vue-apex-charts
       :options="chartOptionsComputed"
       class="flex-grow-1"
       :series="chartSeries"
     ></vue-apex-charts>
+
     <v-card-text class="font-weight-semibold text-center text--primary">
       {{ statTitle }}
     </v-card-text>

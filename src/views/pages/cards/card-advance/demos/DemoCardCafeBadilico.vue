@@ -21,9 +21,14 @@
 
       <v-spacer></v-spacer>
 
-      <v-icon class="cursor-pointer mr-n2">
-        {{ icons.mdiDotsVertical }}
-      </v-icon>
+      <v-btn
+        icon
+        class="mr-n1"
+      >
+        <v-icon>
+          {{ icons.mdiDotsVertical }}
+        </v-icon>
+      </v-btn>
     </v-card-text>
     <v-card-text>
       <p>

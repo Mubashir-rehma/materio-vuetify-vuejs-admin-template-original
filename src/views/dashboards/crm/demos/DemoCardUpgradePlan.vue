@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon class="cursor-pointer mr-n1">
+        <v-icon>
           {{ icons.mdiDotsVertical }}
         </v-icon>
       </v-btn>

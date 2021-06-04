@@ -3,6 +3,7 @@
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
+
     <v-card-text class="flex-grow-1">
       <vue-apex-charts
         type="area"
@@ -10,6 +11,7 @@
         :series="chartSeries"
       ></vue-apex-charts>
     </v-card-text>
+
     <v-card-text class="font-weight-semibold text-center text--primary">
       {{ statTitle }}
     </v-card-text>

@@ -27,6 +27,7 @@ import {
   mdiFormatAlignLeft,
   mdiFormatListBulleted,
   mdiHelpCircleOutline,
+  mdiHomeOutline,
   mdiInformationOutline,
   mdiKeyOutline,
   mdiLockOutline,
@@ -47,6 +48,10 @@ import {
 // prettier-ignore
 export default [
   { header: 'Pages' },
+
+  // dashboard
+  { title: 'CRM', to: { name: 'dashboard-crm' }, icon: mdiHomeOutline },
+
   // authentication
   { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },
   { title: 'Login v2', to: { name: 'auth-login-v2' }, icon: mdiLockOutline },

@@ -1,6 +1,7 @@
 import { canNavigate } from '@/plugins/acl/routeProtection'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import dashboard from './dashboard'
 import pages from './pages'
 import userInterface from './user-interface'
 
@@ -67,6 +68,7 @@ const routes = [
       redirectIfLoggedIn: true,
     },
   },
+  ...dashboard,
   ...userInterface,
   ...pages,
   {

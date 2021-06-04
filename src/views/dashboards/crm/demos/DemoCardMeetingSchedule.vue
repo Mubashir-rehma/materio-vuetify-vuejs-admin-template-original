@@ -3,16 +3,13 @@
     <v-card-title>
       <span>Meeting Schedule</span>
       <v-spacer></v-spacer>
-
-      <v-btn>
-        <v-icon class="cursor-pointer mr-n1">
-          {{ icons.mdiDotsVertical }}
-        </v-icon>
-      </v-btn>
+      <v-icon class="cursor-pointer mr-n1">
+        {{ icons.mdiDotsVertical }}
+      </v-icon>
     </v-card-title>
 
     <v-card-text>
-      <v-list class="pt-0">
+      <v-list class="py-0">
         <v-list-item
           v-for="(data,index) in meetingSchedule"
           :key="data.title"

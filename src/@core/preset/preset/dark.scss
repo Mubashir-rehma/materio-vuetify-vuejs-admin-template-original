@@ -1,6 +1,8 @@
+@import './mixins';
+
 // ? This includes dark theme related style
-.v-application{
-  &.theme--dark{
+.v-application {
+  &.theme--dark {
     .v-alert {
       &.v-sheet.theme--dark {
         &:not([class*='--text']) {
@@ -9,37 +11,41 @@
       }
     }
 
-  // knowledge base page
-    #knowledge-base{
-      .knowledge-base-bg{
+    // knowledge base page
+    #knowledge-base {
+      .knowledge-base-bg {
         background-image: url('/images/misc/knowledge-base-bg-dark.png') !important;
       }
 
-      .kb-search-input{
-        background-color: map-get($material-dark , 'cards' );
+      .kb-search-input {
+        background-color: map-get($material-dark, 'cards');
       }
 
       // kb-character-wrapper bg
-      .kb-character-wrapper{
+      .kb-character-wrapper {
         background: rgba(231, 227, 252, 0.08);
       }
 
       // category
-      .kbc-title{
-        background-color:rgba(231, 227, 252, 0.08);
+      .kbc-title {
+        background-color: rgba(231, 227, 252, 0.08);
       }
     }
 
     // faq
 
-    #faq{
-      .faq-bg{
+    #faq {
+      .faq-bg {
         background-image: url('/images/misc/knowledge-base-bg-dark.png') !important;
       }
 
-      .faq-search-input{
-        background-color: map-get($material-dark , 'cards' );
+      .faq-search-input {
+        background-color: map-get($material-dark, 'cards');
       }
     }
   }
+}
+
+@include theme--child('apexcharts-bar-area') using ($material) {
+  stroke: map-deep-get($material, 'cards');
 }

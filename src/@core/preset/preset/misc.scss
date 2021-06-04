@@ -2,22 +2,24 @@
   overflow: hidden;
   padding: 1rem;
 
-  .app-title {
+  .page-title {
     margin-top: 5.25rem;
   }
 
-  .misc-characters {
+  .misc-character {
     margin-bottom: 3.313rem;
     margin-top: 5rem;
   }
 
-  .misc-bg,
+  .misc-mask,
   .misc-tree {
     position: absolute;
   }
 
-  .misc-bg {
+  .misc-mask {
     bottom: 0;
+    right: 0;
+    left: 0;
   }
 
   .misc-tree {
@@ -34,6 +36,9 @@
 
 @media (max-width: 550px) {
   #misc {
+    .page-title {
+      margin-top: 3rem;
+    }
     .misc-tree {
       height: 150px !important;
       width: 150px;

@@ -6,14 +6,14 @@
         to="/"
         class="brand-logo d-flex align-center"
       >
-        <div class="logo">
-          <v-img
-            max-height="30"
-            max-width="30"
-            src="/logo.svg"
-          ></v-img>
-        </div>
-        <h2 class="text--primary ml-3">
+        <v-img
+          max-height="30"
+          max-width="30"
+          src="/logo.svg"
+          class="mr-3"
+        ></v-img>
+
+        <h2 class="text--primary">
           Materio
         </h2>
       </router-link>
@@ -24,29 +24,31 @@
           lg="8"
           class="d-none d-lg-block position-relative overflow-hidden"
         >
-          <!-- triangle bg -->
-          <v-img
-            height="362"
-            class="auth-mask-bg"
-            :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-          ></v-img>
+          <div class="auth-illustrator-wrapper">
+            <!-- triangle bg -->
+            <v-img
+              height="362"
+              class="auth-mask-bg"
+              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+            ></v-img>
 
-          <!-- tree -->
-          <v-img
-            height="226"
-            width="300"
-            class="auth-tree"
-            src="/images/misc/tree-3.png"
-          ></v-img>
+            <!-- tree -->
+            <v-img
+              height="226"
+              width="300"
+              class="auth-tree"
+              src="/images/misc/tree-4.png"
+            ></v-img>
 
-          <!-- 3d character -->
-          <v-img
-            contain
-            max-width="100%"
-            height="692"
-            class="auth-3d-group"
-            src="/images/3d-characters/group.png"
-          ></v-img>
+            <!-- 3d character -->
+            <v-img
+              contain
+              max-width="100%"
+              height="692"
+              class="auth-3d-group"
+              :src="`/images/3d-characters/group-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
+            ></v-img>
+          </div>
         </v-col>
 
         <v-col
@@ -81,30 +83,26 @@
                     ref="loginForm"
                     @submit.prevent="handleFormSubmit"
                   >
-                    <div>
-                      <v-text-field
-                        v-model="email"
-                        outlined
-                        label="Email"
-                        placeholder="email"
-                        :error-messages="errorMessages.email"
-                        :rules="[validators.required, validators.emailValidator]"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="email"
+                      outlined
+                      label="Email"
+                      placeholder="email"
+                      :error-messages="errorMessages.email"
+                      :rules="[validators.required, validators.emailValidator]"
+                    ></v-text-field>
 
-                    <div>
-                      <v-text-field
-                        v-model="password"
-                        outlined
-                        :type="isPasswordVisible ? 'text' : 'password'"
-                        label="Password"
-                        :error-messages="errorMessages.password"
-                        placeholder="Password"
-                        :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
-                        :rules="[validators.required, validators.passwordValidator]"
-                        @click:append="isPasswordVisible = !isPasswordVisible"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="password"
+                      outlined
+                      :type="isPasswordVisible ? 'text' : 'password'"
+                      label="Password"
+                      :error-messages="errorMessages.password"
+                      placeholder="Password"
+                      :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
+                      :rules="[validators.required, validators.passwordValidator]"
+                      @click:append="isPasswordVisible = !isPasswordVisible"
+                    ></v-text-field>
 
                     <div class="d-flex align-center justify-space-between flex-wrap">
                       <v-checkbox
@@ -122,15 +120,14 @@
                       </router-link>
                     </div>
 
-                    <div class="mt-6">
-                      <v-btn
-                        block
-                        color="primary"
-                        type="submit"
-                      >
-                        Login
-                      </v-btn>
-                    </div>
+                    <v-btn
+                      block
+                      color="primary"
+                      type="submit"
+                      class="mt-6"
+                    >
+                      Login
+                    </v-btn>
                   </v-form>
                 </v-card-text>
 
@@ -157,7 +154,6 @@
                     v-for="link in socialLink"
                     :key="link.icon"
                     icon
-                    href="javascript:void(0)"
                     class="ml-1"
                   >
                     <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
@@ -176,7 +172,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref, getCurrentInstance } from '@vue/composition-api'
 import { required, emailValidator, passwordValidator } from '@core/utils/validation'
 import axios from '@axios'
@@ -285,8 +281,8 @@ export default {
       errorMessages,
       socialLink,
       icons: {
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
       validators: {
         required,

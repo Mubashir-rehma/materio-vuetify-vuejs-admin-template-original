@@ -6,15 +6,14 @@
         to="/"
         class="brand-logo d-flex align-center"
       >
-        <div class="logo">
-          <v-img
-            max-height="30"
-            max-width="30"
-            src="/logo.svg"
-          ></v-img>
-        </div>
+        <v-img
+          max-height="30"
+          max-width="30"
+          src="/logo.svg"
+          class="mr-3"
+        ></v-img>
 
-        <h2 class="text--primary ml-3">
+        <h2 class="text--primary">
           Materio
         </h2>
       </router-link>
@@ -77,24 +76,21 @@
                 <!-- login form -->
                 <v-card-text>
                   <v-form>
-                    <div class="mb-4">
-                      <v-text-field
-                        v-model="email"
-                        outlined
-                        label="Email"
-                        placeholder="Email"
-                        hide-details
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="email"
+                      outlined
+                      label="Email"
+                      placeholder="Email"
+                      hide-details
+                      class="mb-4"
+                    ></v-text-field>
 
-                    <div>
-                      <v-btn
-                        block
-                        color="primary"
-                      >
-                        Send reset link
-                      </v-btn>
-                    </div>
+                    <v-btn
+                      block
+                      color="primary"
+                    >
+                      Send reset link
+                    </v-btn>
                   </v-form>
                 </v-card-text>
 

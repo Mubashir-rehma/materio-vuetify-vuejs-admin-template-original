@@ -6,14 +6,14 @@
         to="/"
         class="brand-logo d-flex align-center"
       >
-        <div class="logo">
-          <v-img
-            max-height="30"
-            max-width="30"
-            src="/logo.svg"
-          ></v-img>
-        </div>
-        <h2 class="text--primary ml-3">
+        <v-img
+          max-height="30"
+          max-width="30"
+          src="/logo.svg"
+          class="mr-3"
+        ></v-img>
+
+        <h2 class="text--primary">
           Materio
         </h2>
       </router-link>
@@ -24,29 +24,31 @@
           lg="8"
           class="d-none d-lg-block position-relative overflow-hidden"
         >
-          <!-- triangle bg -->
-          <v-img
-            height="362"
-            class="auth-mask-bg"
-            :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-          ></v-img>
+          <div class="auth-illustrator-wrapper">
+            <!-- triangle bg -->
+            <v-img
+              height="362"
+              class="auth-mask-bg"
+              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+            ></v-img>
 
-          <!-- tree -->
-          <v-img
-            height="226"
-            width="300"
-            class="auth-tree"
-            src="/images/misc/tree-2.png"
-          ></v-img>
+            <!-- tree -->
+            <v-img
+              height="226"
+              width="300"
+              class="auth-tree"
+              src="/images/misc/tree-2.png"
+            ></v-img>
 
-          <!-- 3d character -->
-          <v-img
-            contain
-            max-width="100%"
-            height="710"
-            class="auth-3d-group"
-            src="/images/3d-characters/illustration-register-v2.png"
-          ></v-img>
+            <!-- 3d character -->
+            <v-img
+              contain
+              max-width="100%"
+              height="710"
+              class="auth-3d-group"
+              :src="`/images/3d-characters/illustration-register-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+            ></v-img>
+          </div>
         </v-col>
 
         <v-col
@@ -77,61 +79,52 @@
                     ref="registerForm"
                     @submit.prevent="handleFormSubmit"
                   >
-                    <div>
-                      <v-text-field
-                        v-model="username"
-                        outlined
-                        label="Username"
-                        :error-messages="errorMessages.username"
-                        :rules="[validators.required, validators.alphaValidator]"
-                        placeholder="Username"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="username"
+                      outlined
+                      label="Username"
+                      :error-messages="errorMessages.username"
+                      :rules="[validators.required, validators.alphaValidator]"
+                      placeholder="Username"
+                    ></v-text-field>
 
-                    <div>
-                      <v-text-field
-                        v-model="email"
-                        outlined
-                        :error-messages="errorMessages.email"
-                        :rules="[validators.required, validators.emailValidator]"
-                        label="Email"
-                        placeholder="Email"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="email"
+                      outlined
+                      :error-messages="errorMessages.email"
+                      :rules="[validators.required, validators.emailValidator]"
+                      label="Email"
+                      placeholder="Email"
+                    ></v-text-field>
 
-                    <div>
-                      <v-text-field
-                        v-model="password"
-                        outlined
-                        :type="isPasswordVisible ? 'text' : 'password'"
-                        label="Password"
-                        :error-messages="errorMessages.password"
-                        placeholder="Password"
-                        :rules="[validators.required, validators.passwordValidator]"
-                        :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
-                        @click:append="isPasswordVisible = !isPasswordVisible"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="password"
+                      outlined
+                      :type="isPasswordVisible ? 'text' : 'password'"
+                      label="Password"
+                      :error-messages="errorMessages.password"
+                      placeholder="Password"
+                      :rules="[validators.required, validators.passwordValidator]"
+                      :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
+                      @click:append="isPasswordVisible = !isPasswordVisible"
+                    ></v-text-field>
 
-                    <div>
-                      <v-checkbox hide-details>
-                        <template #label>
-                          <div class="d-flex align-center flex-wrap">
-                            <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy & terms</a>
-                          </div>
-                        </template>
-                      </v-checkbox>
-                    </div>
+                    <v-checkbox hide-details>
+                      <template #label>
+                        <div class="d-flex align-center flex-wrap">
+                          <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
+                        </div>
+                      </template>
+                    </v-checkbox>
 
-                    <div class="mt-6">
-                      <v-btn
-                        block
-                        color="primary"
-                        type="submit"
-                      >
-                        Sign Up
-                      </v-btn>
-                    </div>
+                    <v-btn
+                      block
+                      color="primary"
+                      type="submit"
+                      class="mt-6"
+                    >
+                      Sign Up
+                    </v-btn>
                   </v-form>
                 </v-card-text>
 
@@ -158,7 +151,6 @@
                     v-for="link in socialLink"
                     :key="link.icon"
                     icon
-                    href="javascript:void(0)"
                     class="ml-1"
                   >
                     <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
@@ -177,7 +169,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 // eslint-disable-next-line object-curly-newline
 import { required, emailValidator, passwordValidator, alphaValidator } from '@core/utils/validation'
 import { ref, getCurrentInstance } from '@vue/composition-api'
@@ -286,8 +278,8 @@ export default {
       handleFormSubmit,
       socialLink,
       icons: {
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
       validators: {
         required,
@@ -305,11 +297,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '@core/preset/preset/auth.scss';
-.auth-wrapper {
-  &.auth-v2 {
-    .auth-3d-group {
-      bottom: 10% !important;
-    }
-  }
-}
 </style>

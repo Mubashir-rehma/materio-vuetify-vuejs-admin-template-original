@@ -6,14 +6,14 @@
         to="/"
         class="brand-logo d-flex align-center"
       >
-        <div class="logo">
-          <v-img
-            max-height="30"
-            max-width="30"
-            src="/logo.svg"
-          ></v-img>
-        </div>
-        <h2 class="text--primary ml-3">
+        <v-img
+          max-height="30"
+          max-width="30"
+          src="/logo.svg"
+          class="mr-3"
+        ></v-img>
+
+        <h2 class="text--primary">
           Materio
         </h2>
       </router-link>
@@ -29,7 +29,7 @@
             <v-img
               height="362"
               class="auth-mask-bg"
-              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
             ></v-img>
 
             <!-- tree -->
@@ -46,7 +46,7 @@
               max-width="100%"
               height="692"
               class="auth-3d-group"
-              :src="`/images/3d-characters/illustration-reset-password-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              :src="`/images/3d-characters/illustration-reset-password-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
             ></v-img>
           </div>
         </v-col>
@@ -76,40 +76,36 @@
                 <!-- login form -->
                 <v-card-text>
                   <v-form>
-                    <div class="mb-3">
-                      <v-text-field
-                        v-model="password"
-                        outlined
-                        :type="isPasswordVisible ? 'text' : 'password'"
-                        label="New Password"
-                        placeholder="New Password"
-                        :append-icon="isPasswordVisible ? icons.mdiEyeOff : icons.mdiEye "
-                        hide-details
-                        @click:append="isPasswordVisible = !isPasswordVisible"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="password"
+                      outlined
+                      :type="isPasswordVisible ? 'text' : 'password'"
+                      label="New Password"
+                      placeholder="New Password"
+                      :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline "
+                      hide-details
+                      class="mb-3"
+                      @click:append="isPasswordVisible = !isPasswordVisible"
+                    ></v-text-field>
 
-                    <div>
-                      <v-text-field
-                        v-model="cPassword"
-                        outlined
-                        :type="isCPasswordVisible ? 'text' : 'password'"
-                        label="Confirm Password"
-                        placeholder="Confirm Password"
-                        :append-icon="isCPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
-                        hide-details
-                        @click:append="isCPasswordVisible = !isCPasswordVisible"
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="confirmPassword"
+                      outlined
+                      :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                      label="Confirm Password"
+                      placeholder="Confirm Password"
+                      :append-icon="isConfirmPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
+                      hide-details
+                      @click:append="isConfirmPasswordVisible = !isConfirmPasswordVisible"
+                    ></v-text-field>
 
-                    <div class="mt-4">
-                      <v-btn
-                        block
-                        color="primary"
-                      >
-                        Set New Password
-                      </v-btn>
-                    </div>
+                    <v-btn
+                      block
+                      color="primary"
+                      class="mt-4"
+                    >
+                      Set New Password
+                    </v-btn>
                   </v-form>
                 </v-card-text>
 
@@ -139,25 +135,25 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiChevronLeft, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiChevronLeft, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
   setup() {
     const isPasswordVisible = ref(false)
-    const isCPasswordVisible = ref(false)
+    const isConfirmPasswordVisible = ref(false)
     const password = ref('')
-    const cPassword = ref('')
+    const confirmPassword = ref('')
 
     return {
       isPasswordVisible,
-      isCPasswordVisible,
+      isConfirmPasswordVisible,
       password,
-      cPassword,
+      confirmPassword,
       icons: {
         mdiChevronLeft,
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
     }
   },

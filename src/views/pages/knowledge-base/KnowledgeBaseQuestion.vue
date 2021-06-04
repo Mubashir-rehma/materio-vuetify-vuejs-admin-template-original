@@ -12,23 +12,22 @@
           v-for="item in kbContentData"
           :key="item.character"
         >
-          <v-card-title class="kbc-title text-no-wrap">
+          <v-card-title class="kbc-title d-flex flex-nowrap">
             <v-icon
               color="primary"
               class="mr-3"
             >
               {{ item.icon }}
             </v-icon>
-            <span>{{ item.title }}</span>
+
+            <span class="text-truncate">{{ item.title }} ({{ item.questions.length }})</span>
           </v-card-title>
 
-          <v-list class="kbc-questions mt-2">
-            <v-list-item
+          <div class="kb-questions py-1">
+            <div
               v-for="que in item.questions"
               :key="que.question"
-              :ripple="false"
-              class="align-start text-sm px-5"
-              href="javascript:void(0)"
+              class="kb-question d-flex align-start text-sm px-5 my-6 cursor-pointer"
             >
               <v-icon
                 size="14"
@@ -37,12 +36,12 @@
               >
                 {{ icons.mdiCheckboxBlankCircleOutline }}
               </v-icon>
-
               <span class="text--secondary">{{ que.question }}</span>
-            </v-list-item>
-          </v-list>
+            </div>
+          </div>
         </v-card>
       </v-col>
+
       <v-col
         cols="12"
         md="7"
@@ -79,11 +78,11 @@
           </v-card-text>
 
           <v-card-text>
-            <v-list class="kbc-questions py-0 pl-2">
+            <v-list class="kb-questions py-0 pl-2">
               <v-list-item
                 v-for="topic in article.postTopics"
                 :key="topic"
-                class="align-start cursor-pointer text-sm"
+                class="d-flex align-start cursor-pointer text-sm"
               >
                 <v-icon
                   size="14"
@@ -115,7 +114,7 @@ export default {
         category: 'account-settings',
         icon: mdiCogOutline,
         color: 'primary',
-        title: 'Account Settings (5)',
+        title: 'Account Settings',
         questions: [
           { question: 'How Secure Is My Password?', slug: 'how-secure-is-my-password' },
           { question: 'Can I Change My Username?', slug: 'can-i-change-my-username' },

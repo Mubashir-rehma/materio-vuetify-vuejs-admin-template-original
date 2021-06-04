@@ -1,20 +1,20 @@
 <template>
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
-      <v-card>
+      <v-card class="auth-card">
         <!-- logo -->
         <v-card-title class="d-flex align-center justify-center py-7">
           <router-link
             to="/"
             class="d-flex align-center"
           >
-            <div class="logo mr-3">
-              <v-img
-                max-height="30"
-                max-width="30"
-                src="/logo.svg"
-              ></v-img>
-            </div>
+            <v-img
+              max-height="30"
+              max-width="30"
+              src="/logo.svg"
+              class="mr-3"
+            ></v-img>
+
             <h2 class="text-2xl font-weight-semibold">
               Materio
             </h2>
@@ -34,57 +34,50 @@
         <!-- login form -->
         <v-card-text>
           <v-form>
-            <div class="mb-3">
-              <v-text-field
-                v-model="username"
-                outlined
-                label="Username"
-                placeholder="Username"
-                hide-details
-              ></v-text-field>
-            </div>
+            <v-text-field
+              v-model="username"
+              outlined
+              label="Username"
+              placeholder="Username"
+              hide-details
+              class="mb-3"
+            ></v-text-field>
 
-            <div class="mb-3">
-              <v-text-field
-                v-model="email"
-                outlined
-                label="Email"
-                placeholder="Email"
-                hide-details
-              ></v-text-field>
-            </div>
+            <v-text-field
+              v-model="email"
+              outlined
+              label="Email"
+              placeholder="Email"
+              hide-details
+              class="mb-3"
+            ></v-text-field>
 
-            <div>
-              <v-text-field
-                v-model="password"
-                outlined
-                :type="isPasswordVisible ? 'text' : 'password'"
-                label="Password"
-                placeholder="Password"
-                :append-icon="isPasswordVisible ? icons.mdiEyeOff : icons.mdiEye"
-                hide-details
-                @click:append="isPasswordVisible = !isPasswordVisible"
-              ></v-text-field>
-            </div>
+            <v-text-field
+              v-model="password"
+              outlined
+              :type="isPasswordVisible ? 'text' : 'password'"
+              label="Password"
+              placeholder="Password"
+              :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
+              hide-details
+              @click:append="isPasswordVisible = !isPasswordVisible"
+            ></v-text-field>
 
-            <div>
-              <v-checkbox hide-details>
-                <template #label>
-                  <div class="d-flex align-center flex-wrap">
-                    <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy & terms</a>
-                  </div>
-                </template>
-              </v-checkbox>
-            </div>
+            <v-checkbox hide-details>
+              <template #label>
+                <div class="d-flex align-center flex-wrap">
+                  <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
+                </div>
+              </template>
+            </v-checkbox>
 
-            <div class="mt-6">
-              <v-btn
-                block
-                color="primary"
-              >
-                Sign Up
-              </v-btn>
-            </div>
+            <v-btn
+              block
+              color="primary"
+              class="mt-6"
+            >
+              Sign Up
+            </v-btn>
           </v-form>
         </v-card-text>
 
@@ -111,7 +104,6 @@
             v-for="link in socialLink"
             :key="link.icon"
             icon
-            href="javascript:void(0)"
             class="ml-1"
           >
             <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
@@ -136,6 +128,7 @@
       height="185"
       src="/images/misc/tree.png"
     ></v-img>
+
     <!-- tree  -->
     <v-img
       class="auth-tree-3"
@@ -148,7 +141,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
@@ -187,8 +180,8 @@ export default {
       password,
       socialLink,
       icons: {
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
     }
   },

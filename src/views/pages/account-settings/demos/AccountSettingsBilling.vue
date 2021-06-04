@@ -27,6 +27,7 @@
                   <v-radio
                     value="cod-cheque"
                     label="COD/Cheque"
+                    class="mt-3 mt-md-0"
                   ></v-radio>
                 </v-radio-group>
               </v-col>
@@ -85,7 +86,7 @@
                   class="mt-0"
                 >
                   <template #label>
-                    <h3 class="text-xl font-weight-semibold">
+                    <h3 class="text-xl font-weight-medium">
                       Your Current Plan
                     </h3>
                   </template>
@@ -100,19 +101,21 @@
                 </v-chip>
 
                 <v-list dense>
-                  <v-list-item>
+                  <v-list-item class="px-0">
                     <v-icon size="20">
                       {{ icons.mdiAccountOutline }}
                     </v-icon>
                     <span class="ms-2">5 Users</span>
                   </v-list-item>
-                  <v-list-item>
+
+                  <v-list-item class="px-0">
                     <v-icon size="20">
                       {{ icons.mdiCloudOutline }}
                     </v-icon>
                     <span class="ms-2">10 GB storage</span>
                   </v-list-item>
-                  <v-list-item>
+
+                  <v-list-item class="px-0">
                     <v-icon size="20">
                       {{ icons.mdiHelpCircleOutline }}
                     </v-icon>

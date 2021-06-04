@@ -1,20 +1,20 @@
 <template>
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
-      <v-card>
+      <v-card class="auth-card">
         <!-- logo and title -->
         <v-card-title class="d-flex align-center justify-center py-7">
           <router-link
             to="/"
             class="d-flex align-center"
           >
-            <div class="logo mr-3">
-              <v-img
-                max-height="30"
-                max-width="30"
-                src="/logo.svg"
-              ></v-img>
-            </div>
+            <v-img
+              max-height="30"
+              max-width="30"
+              src="/logo.svg"
+              class="mr-3"
+            ></v-img>
+
             <h2 class="text-2xl font-weight-semibold">
               Materio
             </h2>
@@ -33,40 +33,36 @@
         <!-- login form -->
         <v-card-text>
           <v-form>
-            <div class="mb-3">
-              <v-text-field
-                v-model="password"
-                outlined
-                :type="isPasswordVisible ? 'text' : 'password'"
-                label="New Password"
-                placeholder="New Password"
-                :append-icon="isPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
-                hide-details
-                @click:append="isPasswordVisible = !isPasswordVisible"
-              ></v-text-field>
-            </div>
+            <v-text-field
+              v-model="password"
+              outlined
+              :type="isPasswordVisible ? 'text' : 'password'"
+              label="New Password"
+              placeholder="New Password"
+              :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
+              hide-details
+              class="mb-3"
+              @click:append="isPasswordVisible = !isPasswordVisible"
+            ></v-text-field>
 
-            <div>
-              <v-text-field
-                v-model="cPassword"
-                outlined
-                :type="isCPasswordVisible ? 'text' : 'password'"
-                label="Confirm Password"
-                placeholder="Confirm Password"
-                :append-icon="isCPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
-                hide-details
-                @click:append="isCPasswordVisible = !isCPasswordVisible"
-              ></v-text-field>
-            </div>
+            <v-text-field
+              v-model="confirmPassword"
+              outlined
+              :type="isConfirmPasswordVisible ? 'text' : 'password'"
+              label="Confirm Password"
+              placeholder="Confirm Password"
+              :append-icon="isConfirmPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
+              hide-details
+              @click:append="isConfirmPasswordVisible = !isConfirmPasswordVisible"
+            ></v-text-field>
 
-            <div class="mt-4">
-              <v-btn
-                block
-                color="primary"
-              >
-                Set New Password
-              </v-btn>
-            </div>
+            <v-btn
+              block
+              color="primary"
+              class="mt-4"
+            >
+              Set New Password
+            </v-btn>
           </v-form>
         </v-card-text>
 
@@ -102,6 +98,7 @@
       height="185"
       src="/images/misc/tree.png"
     ></v-img>
+
     <!-- tree  -->
     <v-img
       class="auth-tree-3"
@@ -114,25 +111,25 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiChevronLeft, mdiEye, mdiEyeOff } from '@mdi/js'
+import { mdiChevronLeft, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
   setup() {
     const isPasswordVisible = ref(false)
-    const isCPasswordVisible = ref(false)
+    const isConfirmPasswordVisible = ref(false)
     const password = ref('')
-    const cPassword = ref('')
+    const confirmPassword = ref('')
 
     return {
       isPasswordVisible,
-      isCPasswordVisible,
+      isConfirmPasswordVisible,
       password,
-      cPassword,
+      confirmPassword,
       icons: {
         mdiChevronLeft,
-        mdiEye,
-        mdiEyeOff,
+        mdiEyeOutline,
+        mdiEyeOffOutline,
       },
     }
   },

@@ -15,7 +15,7 @@
               <v-text-field
                 v-model="currentPassword"
                 :type="isCurrentPasswordVisible ? 'text' : 'password'"
-                :append-icon="isCurrentPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                :append-icon="isCurrentPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                 label="Current Password"
                 outlined
                 @click:append="isCurrentPasswordVisible = !isCurrentPasswordVisible"
@@ -25,7 +25,7 @@
               <v-text-field
                 v-model="newPassword"
                 :type="isNewPasswordVisible ? 'text' : 'password'"
-                :append-icon="isNewPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                :append-icon="isNewPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                 label="New Password"
                 outlined
                 hint="Make sure it's at least 8 characters."
@@ -37,7 +37,7 @@
               <v-text-field
                 v-model="cPassword"
                 :type="isCPasswordVisible ? 'text' : 'password'"
-                :append-icon="isCPasswordVisible ? icons.mdiEyeOff:icons.mdiEye"
+                :append-icon="isCPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                 label="Confirm New Password"
                 outlined
                 class="mt-3"
@@ -119,7 +119,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiKeyOutline, mdiLockOpenOutline, mdiEyeOff, mdiEye } from '@mdi/js'
+import { mdiKeyOutline, mdiLockOpenOutline, mdiEyeOffOutline, mdiEyeOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
@@ -141,8 +141,8 @@ export default {
       icons: {
         mdiKeyOutline,
         mdiLockOpenOutline,
-        mdiEyeOff,
-        mdiEye,
+        mdiEyeOffOutline,
+        mdiEyeOutline,
       },
     }
   },

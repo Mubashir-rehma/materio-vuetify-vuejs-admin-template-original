@@ -3,13 +3,15 @@
     <!-- seach banner  -->
     <v-card
       flat
-      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7 rounded-0"
+      class="knowledge-base-bg d-flex align-center justify-center text-center mb-7"
     >
       <v-card-text>
         <p class="kb-title text-2xl font-weight-semibold primary--text mb-2">
           Hello, how can we help?
         </p>
-        <p>or choose a category to quickly find the help you need</p>
+        <p class="mb-7">
+          or choose a category to quickly find the help you need
+        </p>
 
         <v-form class="kb-search-input mx-auto">
           <v-text-field
@@ -37,7 +39,7 @@
         >
           <v-card>
             <!-- title -->
-            <v-card-title class="kbc-title">
+            <v-card-title class="kbc-title d-flex flex-nowrap">
               <v-icon
                 :color="item.color ? item.color:'' "
                 :class="`mr-3 ${item.class ? item.class :''}`"
@@ -45,15 +47,15 @@
                 {{ item.icon }}
               </v-icon>
 
-              <span>{{ item.title }}</span>
+              <span class="text-truncate">{{ item.title }} ({{ item.questions.length }})</span>
             </v-card-title>
 
-            <v-list class="kbc-questions mt-2">
-              <v-list-item
+            <div class="kb-questions py-1">
+              <div
                 v-for="que in item.questions"
                 :key="que.question"
-                class="align-start text-sm px-5"
-                :to="{ name: 'page-knowledge-base-question', params: { category: $route.params.category, slug: que.slug } }"
+                class="kb-question d-flex align-start text-sm px-5 my-6 cursor-pointer"
+                @click="$router.push({ name: 'page-knowledge-base-question', params: { category: $route.params.category, slug: que.slug } })"
               >
                 <v-icon
                   size="14"
@@ -64,8 +66,8 @@
                 </v-icon>
 
                 <span class="text--secondary">{{ que.question }}</span>
-              </v-list-item>
-            </v-list>
+              </div>
+            </div>
           </v-card>
         </v-col>
 
@@ -107,7 +109,7 @@ export default {
         category: 'account-settings',
         icon: mdiCogOutline,
         color: 'primary',
-        title: 'Account Settings (5)',
+        title: 'Account Settings',
         questions: [
           { question: 'How Secure Is My Password?', slug: 'how-secure-is-my-password' },
           { question: 'Can I Change My Username?', slug: 'can-i-change-my-username' },
@@ -120,7 +122,7 @@ export default {
         category: 'api-questions',
         icon: mdiLink,
         color: 'success',
-        title: 'API Questions (5)',
+        title: 'API Questions',
         questions: [
           { question: 'What Technologies Are Used?', slug: 'what-technologies-are-used' },
           { question: 'What Are The API Limits?', slug: 'what-are-the-api-limits' },
@@ -133,7 +135,7 @@ export default {
         category: 'billing',
         icon: mdiCurrencyUsd,
         color: 'error',
-        title: 'Billing (5)',
+        title: 'Billing',
         questions: [
           { question: 'Can I Contact A Salés Rep?', slug: 'can-i-contact-a-salés-rep' },
           { question: 'Do I Need To Pay VAT?', slug: 'do-i-need-to-pay-vat' },
@@ -145,8 +147,8 @@ export default {
       {
         category: 'copyright-legal',
         icon: mdiLockOpenOutline,
-        color: 'error',
-        title: 'Copyright & Legal (5)',
+        color: 'warning',
+        title: 'Copyright & Legal',
         questions: [
           { question: 'How Do I Contact Legal?', slug: 'how-do-i-contact-legal' },
           { question: 'Where Are Your Offices Located?', slug: 'where-are-your-offices-located' },
@@ -159,7 +161,7 @@ export default {
         category: 'mobile-apps',
         icon: mdiCellphoneCog,
         color: 'info',
-        title: 'Mobile Apps (5)',
+        title: 'Mobile Apps',
         questions: [
           { question: 'How Do I Download The Android App?', slug: 'how-do-i-download-the-android-app' },
           { question: 'How To Download Our iPad App', slug: 'how-to-download-our-i-pad-app' },
@@ -172,7 +174,7 @@ export default {
         category: 'using-knowHow',
         icon: mdiInformationOutline,
         class: 'text--primary',
-        title: 'Using KnowHow (4)',
+        title: 'Using KnowHow',
         questions: [
           { question: 'Customization', slug: 'customization' },
           { question: 'Upgrading', slug: 'upgrading' },

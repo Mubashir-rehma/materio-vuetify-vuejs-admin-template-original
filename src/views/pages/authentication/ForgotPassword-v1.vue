@@ -1,19 +1,19 @@
 <template>
   <div class="auth-wrapper auth-v1">
     <div class="auth-inner">
-      <v-card>
+      <v-card class="auth-card">
         <v-card-title class="d-flex align-center justify-center py-7">
           <router-link
             to="/"
             class="d-flex align-center"
           >
-            <div class="logo mr-3">
-              <v-img
-                max-height="30"
-                max-width="30"
-                src="/logo.svg"
-              ></v-img>
-            </div>
+            <v-img
+              max-height="30"
+              max-width="30"
+              src="/logo.svg"
+              class="mr-3"
+            ></v-img>
+
             <h2 class="text-2xl font-weight-semibold">
               Materio
             </h2>
@@ -32,23 +32,21 @@
         <!-- login form -->
         <v-card-text>
           <v-form>
-            <div class="mb-4">
-              <v-text-field
-                v-model="email"
-                outlined
-                label="Email"
-                placeholder="Email"
-                hide-details
-              ></v-text-field>
-            </div>
-            <div>
-              <v-btn
-                block
-                color="primary"
-              >
-                Send reset link
-              </v-btn>
-            </div>
+            <v-text-field
+              v-model="email"
+              outlined
+              label="Email"
+              placeholder="Email"
+              hide-details
+              class="mb-4"
+            ></v-text-field>
+
+            <v-btn
+              block
+              color="primary"
+            >
+              Send reset link
+            </v-btn>
           </v-form>
         </v-card-text>
 
@@ -83,6 +81,7 @@
       height="185"
       src="/images/misc/tree.png"
     ></v-img>
+
     <!-- tree  -->
     <v-img
       class="auth-tree-3"

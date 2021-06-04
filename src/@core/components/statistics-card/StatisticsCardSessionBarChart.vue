@@ -32,6 +32,10 @@ export default {
       type: Object,
       default: null,
     },
+    chartColor: {
+      type: Array,
+      required: true,
+    },
   },
   setup(props) {
     const chartOptions = {
@@ -52,7 +56,7 @@ export default {
         },
       },
 
-      colors: ['#ff4c51', '#9155fd', '#ff4c51', '#9155fd', '#9155fd'],
+      colors: props.chartColor,
       plotOptions: {
         bar: {
           horizontal: false,
@@ -60,6 +64,7 @@ export default {
           borderRadius: 4,
           startingShape: 'rounded',
           endingShape: 'rounded',
+          distributed: true,
           colors: {
             backgroundBarColors: ['#5e566914', '#5e566914', '#5e566914', '#5e566914', '#5e566914'],
             backgroundBarRadius: 5,

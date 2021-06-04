@@ -282,6 +282,13 @@
           :stat-title="sessionBarChart.statTitle"
           :statistics="sessionBarChart.statistics"
           :chart-series="sessionBarChart.series"
+          :chart-color="[
+            $vuetify.theme.currentTheme.error,
+            $vuetify.theme.currentTheme.primary,
+            $vuetify.theme.currentTheme.error,
+            $vuetify.theme.currentTheme.primary,
+            $vuetify.theme.currentTheme.primary
+          ]"
         ></statistics-card-session-bar-chart>
       </v-col>
       <v-col

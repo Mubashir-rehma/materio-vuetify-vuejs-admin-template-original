@@ -9,6 +9,10 @@ export default [
         title: 'CRM',
         to: 'dashboard-crm',
       },
+      {
+        title: 'Analytics',
+        to: 'dashboard-analytics',
+      },
     ],
   },
 ]

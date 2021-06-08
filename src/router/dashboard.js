@@ -7,6 +7,14 @@ const dashboard = [
       layout: 'content',
     },
   },
+  {
+    path: '/dashboards/analytics',
+    name: 'dashboard-analytics',
+    component: () => import('@/views/dashboards/analytics/Analytics.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default dashboard

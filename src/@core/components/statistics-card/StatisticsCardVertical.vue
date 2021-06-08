@@ -20,7 +20,8 @@
         </v-icon>
       </v-btn>
     </v-card-title>
-    <v-card-text class="text-no-wrap text--primary">
+
+    <v-card-text class="text-no-wrap text--primary mt-3">
       <p class="font-weight-semibold text-sm mb-1">
         {{ statTitle }}
       </p>

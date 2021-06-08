@@ -12,7 +12,7 @@
       <v-card class="triangle-card">
         <v-row>
           <v-col cols="8">
-            <v-card-title class="app-title text-no-wrap pt-2">
+            <v-card-title class="title text-no-wrap pt-2">
               Congratulations John! 🥳
             </v-card-title>
             <v-card-subtitle class="text-no-wrap">
@@ -67,7 +67,7 @@
             cols="8"
             sm="6"
           >
-            <v-card-title class="app-title d-flex flex-nowrap text-2xl">
+            <v-card-title class="title d-flex flex-nowrap text-2xl">
               <span class="text-no-wrap">Congratulations</span>
               <span class="text-no-wrap font-weight-semibold mx-1">John!</span>
               <span>🎉</span>
@@ -117,7 +117,7 @@
             cols="8"
             sm="6"
           >
-            <v-card-title class="app-title d-flex flex-nowrap text-2xl pt-4">
+            <v-card-title class="title d-flex flex-nowrap text-2xl pt-4">
               <span class="text-no-wrap">Welcome back </span>
               <span class="text-no-wrap font-weight-bold mx-1">John!</span>
               <span>🥳</span>
@@ -165,7 +165,7 @@
       <v-card class="triangle-card">
         <v-row>
           <v-col cols="8">
-            <v-card-title class="app-title text-no-wrap pt-2">
+            <v-card-title class="title text-no-wrap pt-2">
               Upgrade Account 👩🏻‍💻
             </v-card-title>
             <v-card-subtitle class="text-no-wrap">
@@ -255,7 +255,7 @@
 }
 
 @media (max-width: 400px) {
-  .app-title {
+  .title {
     font-size: 1.2rem !important;
   }
 }

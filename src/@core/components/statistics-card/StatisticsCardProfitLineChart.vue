@@ -3,13 +3,12 @@
     <v-card-title class="font-weight-semibold">
       {{ statistics }}
     </v-card-title>
-    <v-card-text class="flex-grow-1">
-      <vue-apex-charts
-        type="line"
-        :options="chartOptionsComputed"
-        :series="chartSeries"
-      ></vue-apex-charts>
-    </v-card-text>
+    <vue-apex-charts
+      type="line"
+      :height="chartHeight"
+      :options="chartOptionsComputed"
+      :series="chartSeries"
+    ></vue-apex-charts>
     <v-card-text class="font-weight-semibold text-center text--primary">
       {{ statTitle }}
     </v-card-text>
@@ -37,6 +36,10 @@ export default {
       type: String,
       required: true,
     },
+    chartHeight: {
+      type: String,
+      default: 'auto',
+    },
   },
   setup(props) {
     const chartOptions = {
@@ -58,8 +61,10 @@ export default {
           },
         },
         padding: {
-          top: -20,
-          bottom: -20,
+          top: -30,
+          right: 20,
+          left: 20,
+          bottom: -10,
         },
       },
       stroke: {

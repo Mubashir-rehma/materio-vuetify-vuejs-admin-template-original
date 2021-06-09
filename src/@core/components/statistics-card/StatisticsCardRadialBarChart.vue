@@ -12,7 +12,7 @@
       :series="chartSeries"
     ></vue-apex-charts>
 
-    <v-card-text class="font-weight-semibold text-center text--primary">
+    <v-card-text class="font-weight-semibold text-center text--primary mt-10">
       {{ statTitle }}
     </v-card-text>
   </v-card>

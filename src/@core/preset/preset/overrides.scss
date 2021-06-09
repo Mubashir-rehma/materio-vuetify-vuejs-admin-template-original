@@ -121,6 +121,7 @@ button {
   'v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close)',
   $navigation-drawer-mobile-temporary-elevation
 );
+
 @include app-elevation(
   'v-navigation-drawer--temporary:not(.v-navigation-drawer--close)',
   $navigation-drawer-mobile-temporary-elevation
@@ -708,6 +709,17 @@ button {
         &::after {
           display: none;
         }
+      }
+    }
+  }
+}
+
+// v-table header change only in light theme
+.v-application{
+  &.theme--light{
+    .v-data-table{
+      th{
+        background-color: #fafafa !important;
       }
     }
   }

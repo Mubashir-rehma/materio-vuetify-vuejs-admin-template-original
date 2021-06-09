@@ -20,13 +20,11 @@
         </v-card-text>
       </div>
 
-      <div>
-        <vue-apex-charts
-          id="chart-stats-total-sales"
-          :options="chartOptions"
-          :series="chartSeries"
-        />
-      </div>
+      <vue-apex-charts
+        id="chart-stats-total-sales"
+        :options="chartOptions"
+        :series="chartSeries"
+      />
     </div>
   </v-card>
 </template>

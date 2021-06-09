@@ -13,6 +13,10 @@ export default [
         title: 'Analytics',
         to: 'dashboard-analytics',
       },
+      {
+        title: 'eCommerce',
+        to: 'dashboard-eCommerce',
+      },
     ],
   },
 ]

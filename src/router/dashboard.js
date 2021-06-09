@@ -15,6 +15,14 @@ const dashboard = [
       layout: 'content',
     },
   },
+  {
+    path: '/dashboards/eCommerce',
+    name: 'dashboard-eCommerce',
+    component: () => import('@/views/dashboards/ecommerce/Ecommerce.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default dashboard

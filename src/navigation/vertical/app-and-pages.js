@@ -1,8 +1,18 @@
-import { mdiFileOutline } from '@mdi/js'
+import { mdiFileDocumentOutline, mdiFileOutline } from '@mdi/js'
 
 export default [
   {
     subheader: 'APP AND PAGES',
+  },
+  {
+    title: 'Invoice',
+    icon: mdiFileDocumentOutline,
+    children: [
+      {
+        title: 'Invoice List',
+        to: 'apps-invoice-list',
+      },
+    ],
   },
   {
     title: 'Pages',

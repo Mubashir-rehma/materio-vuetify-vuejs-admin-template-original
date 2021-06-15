@@ -694,40 +694,41 @@ button {
 .v-data-table {
   th {
     font-weight: 600;
+    background-color: #fafafa !important;
   }
 
-  .v-data-footer__select {
-    .v-input__append-inner {
-      align-self: center;
-    }
+  .v-data-footer{
+    .v-data-footer__select {
+      margin-left: 14px;
+      .v-input__append-inner {
+        align-self: center;
+      }
 
-    .v-select {
-      margin-bottom: 6px !important;
+      .v-select {
+        margin-bottom: 6px !important;
+        margin-left: 6px;
 
-      > .v-input__control > .v-input__slot {
-        &::before,
-        &::after {
-          display: none;
+        > .v-input__control > .v-input__slot {
+          &::before,
+          &::after {
+            display: none;
+          }
         }
       }
     }
-  }
-}
 
-// v-table header change only in light theme
-.v-application{
-  &.theme--light{
-    .v-data-table{
-      th{
-        background-color: #fafafa !important;
-      }
+    .v-data-footer__pagination{
+      margin-left: auto;
     }
   }
 }
+
+
 
 @include theme(v-data-table) using ($material) {
   th {
     color: map-deep-get($material, 'text', 'primary') !important;
+    border-top: thin solid map-deep-get($material, 'dividers');
   }
   td {
     color: map-deep-get($material, 'text', 'secondary') !important;

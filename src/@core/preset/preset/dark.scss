@@ -43,9 +43,21 @@
         background-color: map-get($material-dark, 'cards');
       }
     }
+
+// ————————————————————————————————————
+//* ——— Data table
+// ————————————————————————————————————
+  .v-data-table{
+    th {
+        font-weight: 600;
+        background-color: #3b355a !important;
+      }
+    }
   }
 }
 
 @include theme--child('apexcharts-bar-area') using ($material) {
   stroke: map-deep-get($material, 'cards');
 }
+
+

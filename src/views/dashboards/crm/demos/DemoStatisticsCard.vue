@@ -1,9 +1,15 @@
 <template>
   <v-card>
-    <v-card-title class="text-base justify-space-between">
-      <span class="font-weight-semibold">Statistics Card</span>
+    <v-card-title class="align-start">
+      <span>Statistics Card</span>
 
-      <v-btn icon>
+      <v-spacer></v-spacer>
+
+      <v-btn
+        icon
+        small
+        class="mr-n1"
+      >
         <v-icon class="cursor-pointer">
           {{ icons.mdiDotsVertical }}
         </v-icon>

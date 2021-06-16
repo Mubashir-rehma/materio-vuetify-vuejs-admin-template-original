@@ -20,12 +20,13 @@
     <v-card-text>
       <!-- Chart -->
       <vue-apex-charts
+        height="250"
         :options="chartOptions"
         :series="chartData"
       ></vue-apex-charts>
 
       <!-- Stats -->
-      <div class="d-flex justify-space-around flex-wrap">
+      <div class="d-flex justify-space-around flex-wrap mt-5">
         <div class="d-flex align-center">
           <v-avatar
             class="v-avatar-light-bg primary--text"
@@ -40,12 +41,13 @@
             </v-icon>
           </v-avatar>
           <div class="ml-4 d-flex flex-column">
-            <p class="text--primary font-weight-semibold mb-0 text-base">
+            <p class="text--primary font-weight-semibold text-base mb-0">
               21.8k
             </p>
             <span>Sales</span>
           </div>
         </div>
+
         <div class="d-flex align-center">
           <v-avatar
             class="v-avatar-light-bg success--text"
@@ -60,7 +62,7 @@
             </v-icon>
           </v-avatar>
           <div class="ml-4 d-flex flex-column">
-            <p class="text--primary font-weight-semibold mb-0 text-base">
+            <p class="text--primary font-weight-semibold text-base mb-0">
               21.8k
             </p>
             <span>Sales</span>
@@ -96,7 +98,6 @@ export default {
         addAlpha($vuetify.theme.currentTheme.primary, 0.1),
       ],
       chart: {
-        height: 350,
         type: 'bar',
         toolbar: {
           show: false,

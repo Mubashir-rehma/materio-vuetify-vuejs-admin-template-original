@@ -81,6 +81,58 @@ export default {
           show: false,
         },
       },
+      responsive: [
+        {
+          breakpoint: 3000,
+          options: {
+            plotOptions: {
+              bar: {
+                columnWidth: '50%',
+              },
+            },
+          },
+        },
+        {
+          breakpoint: 1500,
+          options: {
+            plotOptions: {
+              bar: {
+                columnWidth: '60%',
+              },
+            },
+          },
+        },
+        {
+          breakpoint: 959,
+          options: {
+            plotOptions: {
+              bar: {
+                columnWidth: '45%',
+              },
+            },
+          },
+        },
+        {
+          breakpoint: 700,
+          options: {
+            plotOptions: {
+              bar: {
+                columnWidth: '50%',
+              },
+            },
+          },
+        },
+        {
+          breakpoint: 600,
+          options: {
+            plotOptions: {
+              bar: {
+                columnWidth: '45%',
+              },
+            },
+          },
+        },
+      ],
     }
 
     const chartData = [

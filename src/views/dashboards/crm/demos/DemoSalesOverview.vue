@@ -30,6 +30,7 @@
         <v-col
           cols="12"
           sm="6"
+          class="d-flex flex-column justify-center"
         >
           <div class="d-flex align-center">
             <v-avatar
@@ -107,7 +108,7 @@ export default {
     const $vuetify = getVuetify()
 
     const chartOptions = {
-      labels: ['Apparel', 'Electronics', 'FMCG', 'Other Sales'],
+      labels: ['Apparel', 'Electronics', 'FMCG', 'Other Sales', 'Alt'],
       colors: [
         $vuetify.theme.currentTheme.primary,
         addAlpha($vuetify.theme.currentTheme.primary, 0.7),
@@ -153,7 +154,7 @@ export default {
       },
     }
 
-    const chartData = [12, 24.5, 12, 50]
+    const chartData = [12, 24.5, 15, 50, 3]
 
     return {
       chartOptions,

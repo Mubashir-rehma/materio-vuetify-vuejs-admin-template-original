@@ -102,6 +102,19 @@
             <small>September, 20</small>
           </div>
         </v-timeline-item>
+        <v-timeline-item
+          small
+          color="warning"
+        >
+          <div class="d-flex justify-space-between">
+            <div>
+              <p class="mb-0 text--primary font-weight-semibold">
+                Public Meeting
+              </p>
+            </div>
+            <small>September, 30</small>
+          </div>
+        </v-timeline-item>
       </v-timeline>
     </v-card-text>
   </v-card>

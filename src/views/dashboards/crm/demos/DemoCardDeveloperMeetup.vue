@@ -1,6 +1,11 @@
 <template>
   <v-card>
-    <v-img src="/images/pages/developerMeetup.jpg"></v-img>
+    <v-img
+      height="160"
+      width="100%"
+      src="/images/pages/developerMeetup.jpg"
+    ></v-img>
+
     <v-card-text class="d-flex mt-5">
       <v-avatar
         size="54"
@@ -22,12 +27,16 @@
         <p class="text-base font-weight-semibold text--primary mb-0">
           Developer Meetup
         </p>
-        <span class="text-xs">The WordPress open source, free software project is the community behind the…</span>
+        <p class="text-xs mb-0">
+          The WordPress open source, free software project is the community behind the…
+        </p>
       </div>
     </v-card-text>
+
     <v-card-text>
       <v-divider></v-divider>
     </v-card-text>
+
     <v-card-text class="text-center">
       <v-row>
         <v-col cols="3">

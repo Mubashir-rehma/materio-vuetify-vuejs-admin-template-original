@@ -65,8 +65,7 @@ export default {
 <style lang="scss" scoped>
 .avatar-img {
   position: absolute;
-  top: -21px;
-  right: 0;
+  right: 5%;
   bottom: 0;
 }
 </style>

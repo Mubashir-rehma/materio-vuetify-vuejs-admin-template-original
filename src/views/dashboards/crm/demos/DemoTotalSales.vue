@@ -1,13 +1,13 @@
 <template>
   <v-card>
-    <v-card-title class="align-start">
+    <v-card-title class="align-start flex-nowrap">
       <div>
         <p class="mb-2 text-sm font-weight-semibold">
           Total Sales
         </p>
-        <p>
+        <p class="text-no-wrap">
           <span class="text-2xl font-weight-semibold mr-1">$21,845</span>
-          <small class="success--text text-xs text-no-wrap">
+          <small class="success--text text-xs ">
             <v-icon
               color="success"
               size="22"
@@ -57,6 +57,7 @@ export default {
         show: false,
         padding: {
           left: 0,
+          top: -100,
           bottom: -10,
         },
       },

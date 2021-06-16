@@ -106,6 +106,7 @@
               :stat-title="growthAreaChart.statTitle"
               :statistics="growthAreaChart.statistics"
               :chart-series="growthAreaChart.series"
+              chart-height="100"
             ></statistics-card-area-chart>
           </v-col>
           <v-col
@@ -195,7 +196,7 @@ export default {
       chipText: 'Year of 2021',
       chipColor: 'primary',
       avatar: '/images/avatars/9.png',
-      avatarWidth: '112',
+      avatarWidth: '115',
     }
     const sessionsOptions = {
       statTitle: 'Sessions',
@@ -204,7 +205,7 @@ export default {
       chipText: 'Last Week',
       chipColor: 'secondary',
       avatar: '/images/avatars/10.png',
-      avatarWidth: '86',
+      avatarWidth: '90',
     }
 
     const growthAreaChart = {
@@ -237,6 +238,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

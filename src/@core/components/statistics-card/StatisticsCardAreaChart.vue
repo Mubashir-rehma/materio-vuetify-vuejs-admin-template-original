@@ -7,6 +7,7 @@
     <v-card-text class="flex-grow-1">
       <vue-apex-charts
         type="area"
+        :height="chartHeight"
         :options="chartOptionsComputed"
         :series="chartSeries"
       ></vue-apex-charts>
@@ -34,6 +35,10 @@ export default {
     chartConfig: {
       type: Object,
       default: null,
+    },
+    chartHeight: {
+      type: String,
+      default: 'auto',
     },
   },
 

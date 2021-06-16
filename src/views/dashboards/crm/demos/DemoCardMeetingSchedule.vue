@@ -12,10 +12,10 @@
     </v-card-title>
 
     <v-card-text>
-      <v-list class="py-0">
+      <v-list class="pt-0 mt-n1">
         <v-list-item
           v-for="(data,index) in meetingSchedule"
-          :key="data.title"
+          :key="data.avatar"
           :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-4':''}`"
         >
           <v-avatar size="38">

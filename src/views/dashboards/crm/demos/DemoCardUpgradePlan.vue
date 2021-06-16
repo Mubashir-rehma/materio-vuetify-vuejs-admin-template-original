@@ -84,7 +84,7 @@
           ></v-text-field>
         </div>
 
-        <p class="text-xs primary--text font-weight-medium mt-2">
+        <p class="text-xs primary--text font-weight-medium mt-2 mb-1">
           Add Payment Method
         </p>
       </div>
@@ -92,7 +92,7 @@
       <v-text-field
         outlined
         placeholder="Email Address"
-        class="mt-5 mb-4"
+        class="mb-4"
         dense
         hide-details
       ></v-text-field>

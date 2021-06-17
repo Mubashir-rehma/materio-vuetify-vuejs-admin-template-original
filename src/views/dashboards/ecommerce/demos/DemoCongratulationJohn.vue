@@ -1,6 +1,6 @@
 <template>
-  <v-card class="ps-3">
-    <v-row>
+  <v-card>
+    <v-row class="ma-0 pa-0">
       <v-col
         cols="8"
         sm="6"
@@ -30,7 +30,7 @@
             class="gamification-tree-4"
           ></v-img>
           <v-img
-            width="128"
+            width="121"
             src="/images/3d-characters/pose-2.png"
             class="gamification-john-pose-2"
           ></v-img>

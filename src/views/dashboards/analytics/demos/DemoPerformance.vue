@@ -15,7 +15,7 @@
 
     <!-- Chart -->
     <vue-apex-charts
-      height="300px"
+      height="320px"
       :options="chartOptions"
       :series="chartData"
     ></vue-apex-charts>

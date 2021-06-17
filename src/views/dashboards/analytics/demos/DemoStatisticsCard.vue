@@ -1,16 +1,20 @@
 <template>
   <v-card>
-    <v-card-title class="justify-space-between">
+    <v-card-title class="align-start">
       <span class="font-weight-semibold">Statistics Card</span>
-
-      <v-btn icon>
+      <v-spacer></v-spacer>
+      <v-btn
+        icon
+        small
+        class="mr-n3"
+      >
         <v-icon>
           {{ icons.mdiDotsVertical }}
         </v-icon>
       </v-btn>
     </v-card-title>
 
-    <v-card-subtitle class="font-weight-semibold mb-8">
+    <v-card-subtitle class="font-weight-semibold mb-8 mt-n5">
       <span class="text--primary">Total 48.5% groth</span>
       <span>😎 this month</span>
     </v-card-subtitle>

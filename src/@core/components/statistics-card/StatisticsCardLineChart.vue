@@ -5,6 +5,7 @@
     </v-card-title>
 
     <vue-apex-charts
+      :height="chartHeight"
       :options="chartOptionsComputed"
       class="flex-grow-1"
       :series="chartSeries"
@@ -36,6 +37,10 @@ export default {
     chartColor: {
       type: String,
       required: true,
+    },
+    chartHeight: {
+      type: String,
+      default: 'auto',
     },
   },
   setup(props) {

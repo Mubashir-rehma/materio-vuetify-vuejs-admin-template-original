@@ -14,7 +14,11 @@
         </v-icon>
       </v-avatar>
 
-      <v-btn icon>
+      <v-btn
+        small
+        icon
+        class="mr-n3"
+      >
         <v-icon>
           {{ mdiDotsVertical }}
         </v-icon>

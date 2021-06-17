@@ -79,7 +79,7 @@
 <script>
 import { ref } from '@vue/composition-api'
 // eslint-disable-next-line object-curly-newline
-import { mdiEmailOutline, mdiChartPie, mdiArrowDown, mdiTrendingUp } from '@mdi/js'
+import { mdiEmailOutline, mdiChartTimelineVariant, mdiArrowDown, mdiTrendingUp } from '@mdi/js'
 
 export default {
   setup() {
@@ -115,7 +115,7 @@ export default {
       },
       {
         id: '#1304',
-        trending: mdiChartPie,
+        trending: mdiChartTimelineVariant,
         trendingColor: 'warning',
         avatar: '2.png',
         avatarColor: 'primary',
@@ -126,7 +126,7 @@ export default {
       },
       {
         id: '#7900',
-        trending: mdiChartPie,
+        trending: mdiChartTimelineVariant,
         trendingColor: 'warning',
         avatar: '3.png',
         avatarColor: 'primary',
@@ -169,7 +169,7 @@ export default {
       },
       {
         id: '#81618',
-        trending: mdiChartPie,
+        trending: mdiChartTimelineVariant,
         trendingColor: 'warning',
         fullName: 'Abbie Webster',
         avatarColor: 'success',

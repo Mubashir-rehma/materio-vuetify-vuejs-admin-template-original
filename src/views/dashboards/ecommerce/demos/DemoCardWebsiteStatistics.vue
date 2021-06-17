@@ -1,12 +1,13 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Website Statistics</span>
       <v-spacer></v-spacer>
 
       <v-btn
         icon
-        class="mr-n1"
+        small
+        class="mr-n2"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -42,7 +43,7 @@
         <span class="font-weight-semibold text--primary mr-6">{{ data.traffic }}</span>
         <span class="font-weight-semibold text--primary mr-1">{{ data.percentage.slice(1) }}</span>
         <v-icon
-          size="25"
+          size="20"
           :color="data.percentage.charAt(0) === '+' ? 'success' :'error'"
         >
           {{ data.percentage.charAt(0) === '+' ? icons.mdiChevronUp:icons.mdiChevronDown }}

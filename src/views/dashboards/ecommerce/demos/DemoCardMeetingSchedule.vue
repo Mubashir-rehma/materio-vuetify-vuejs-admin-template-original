@@ -5,8 +5,9 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        class="mr-n1"
+        class="mr-n2"
         icon
+        small
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}

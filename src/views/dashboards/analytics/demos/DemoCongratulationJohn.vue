@@ -1,19 +1,19 @@
 <template>
   <v-card class="triangle-card">
-    <v-row>
+    <v-row class="ma-0 pa-0">
       <v-col cols="8">
-        <v-card-title class="title text-no-wrap pt-2">
+        <v-card-title class="title text-no-wrap pt-1 pl-2">
           Congratulations John! 🥳
         </v-card-title>
-        <v-card-subtitle class="text-no-wrap">
-          Best seller of the month
+        <v-card-subtitle class="text-no-wrap pl-2">
+          You have won Trophy
         </v-card-subtitle>
-        <v-card-text class="d-flex align-center pb-2">
+        <v-card-text class="d-flex align-center mt-2 pb-2 pl-2">
           <div>
-            <p class="text-2xl font-weight-semibold primary--text mb-0">
+            <p class="text-xl font-weight-semibold primary--text mb-2">
               $42.8k
             </p>
-            <p>78% of target 🤟🏻</p>
+
             <v-btn
               small
               color="primary"
@@ -23,11 +23,12 @@
           </div>
         </v-card-text>
       </v-col>
+
       <v-col cols="4">
         <v-img
           contain
-          width="166px"
-          height="190px"
+          height="180"
+          width="159"
           :src="`/images/misc/triangle-${$vuetify.theme.dark ? 'dark':'light'}.png`"
           class="triangle-bg"
         ></v-img>
@@ -58,7 +59,7 @@ export default {}
   .analytics-trophy {
     position: absolute;
     bottom: 10%;
-    right: 10%;
+    right: 8%;
   }
 }
 

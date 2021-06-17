@@ -1,11 +1,12 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Transaction</span>
       <v-spacer></v-spacer>
       <v-btn
         icon
-        class="mr-n1"
+        small
+        class="mr-n2"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -14,7 +15,7 @@
     </v-card-title>
 
     <v-card-text>
-      <v-list class="pt-1 pb-0">
+      <v-list class="py-0">
         <v-list-item
           v-for="(data,index) in transactionData"
           :key="data.transaction"
@@ -46,7 +47,7 @@
           <div class="d-flex align-center">
             <span class="text-base font-weight-semibold text--primary mr-1">{{ data.transaction }}</span>
             <v-icon
-              size="22"
+              size="20"
               :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
             >
               {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}

@@ -3,7 +3,7 @@
     <v-col
       cols="12"
       md="8"
-      class="align-self-end mb-3"
+      class="align-self-end"
     >
       <demo-congratulation-john></demo-congratulation-john>
     </v-col>
@@ -48,7 +48,7 @@
       cols="12"
       md="4"
     >
-      <v-row>
+      <v-row class="match-height">
         <v-col cols="12">
           <demo-statistics-total-sales></demo-statistics-total-sales>
         </v-col>
@@ -61,6 +61,7 @@
             :statistics="revenueLineChart.statistics"
             :chart-series="revenueLineChart.series"
             :chart-color="$vuetify.theme.currentTheme.primary"
+            chart-height="130"
           ></statistics-card-line-chart>
         </v-col>
         <v-col
@@ -149,7 +150,8 @@
 </template>
 
 <script>
-import { mdiTrendingUp, mdiCurrencyUsd, mdiCheck } from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { mdiTrendingUp, mdiCurrencyUsd, mdiCheck, mdiChartTimelineVariant } from '@mdi/js'
 import StatisticsCardVertical from '@/@core/components/statistics-card/StatisticsCardVertical.vue'
 import StatisticsCardLineChart from '@core/components/statistics-card/StatisticsCardLineChart.vue'
 import StatisticsCardRadialBarChart from '@core/components/statistics-card/StatisticsCardRadialBarChart.vue'
@@ -214,7 +216,7 @@ export default {
 
     const logisticsOptions = {
       statTitle: 'Logistics',
-      icon: mdiCurrencyUsd,
+      icon: mdiChartTimelineVariant,
       color: 'error',
       subtitle: 'Revenue Increase',
       statistics: '44.10k',

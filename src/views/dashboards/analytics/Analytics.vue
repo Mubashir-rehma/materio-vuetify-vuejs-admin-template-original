@@ -131,12 +131,12 @@ import StatisticsCardSessionBarChart from '@core/components/statistics-card/Stat
 // demos
 import DemoCongratulationJohn from './demos/DemoCongratulationJohn.vue'
 import DemoStatisticsCard from './demos/DemoStatisticsCard.vue'
-import DemoWeeklyOverview from './demos/DemoWeeklyOverview.vue'
 import DemoCardTotalEarning from './demos/DemoCardTotalEarning.vue'
 import DemoPerformance from './demos/DemoPerformance.vue'
 import DemoCardDepositAndWithdraw from './demos/DemoCardDepositAndWithdraw.vue'
 import DemoCardSalesByCountries from './demos/DemoCardSalesByCountries.vue'
 import DemoUserTable from './demos/DemoUserTable.vue'
+import DemoWeeklyOverview from './demos/DemoWeeklyOverview.vue'
 
 export default {
   components: {
@@ -145,12 +145,12 @@ export default {
     StatisticsCardSessionBarChart,
     DemoCongratulationJohn,
     DemoStatisticsCard,
-    DemoWeeklyOverview,
     DemoCardTotalEarning,
     DemoPerformance,
     DemoCardDepositAndWithdraw,
     DemoCardSalesByCountries,
     DemoUserTable,
+    DemoWeeklyOverview,
   },
   setup() {
     const profitLineChart = {

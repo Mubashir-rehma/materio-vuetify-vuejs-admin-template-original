@@ -12,6 +12,7 @@
 
         <vue-apex-charts
           id="total-profit-chart"
+          height="320"
           :options="chartOptions"
           :series="chartData"
         ></vue-apex-charts>
@@ -157,7 +158,7 @@ export default {
       plotOptions: {
         bar: {
           borderRadius: 10,
-          columnWidth: '38%',
+          columnWidth: '35%',
           startingShape: 'rounded',
           endingShape: 'rounded',
         },
@@ -193,12 +194,12 @@ export default {
       },
       responsive: [
         {
-          breakpoint: 1650,
+          breakpoint: 1400,
           options: {
             plotOptions: {
               bar: {
                 borderRadius: 10,
-                columnWidth: '50%',
+                columnWidth: '45%',
               },
             },
           },

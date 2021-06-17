@@ -5,7 +5,7 @@
         <v-card-title>
           Total Sales
         </v-card-title>
-        <v-card-text class="text-no-wrap">
+        <v-card-text class="text-no-wrap mt-4">
           <p class="text-xs mb-0">
             Calculated in last 7 days
           </p>
@@ -22,6 +22,7 @@
 
       <vue-apex-charts
         id="chart-stats-total-sales"
+        height="140"
         :options="chartOptions"
         :series="chartSeries"
       />

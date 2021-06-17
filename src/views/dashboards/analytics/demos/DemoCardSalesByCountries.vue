@@ -15,7 +15,7 @@
     </v-card-title>
 
     <v-card-text>
-      <v-list>
+      <v-list class="pb-0">
         <v-list-item
           v-for="(data,index) in salesByCountries"
           :key="data.country"

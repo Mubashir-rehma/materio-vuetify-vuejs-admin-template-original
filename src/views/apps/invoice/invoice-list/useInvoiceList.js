@@ -1,7 +1,7 @@
 import store from '@/store'
 import {
   mdiAlertCircleOutline,
-  mdiChartPie,
+  mdiChartTimelineVariant,
   mdiCheckCircleOutline,
   mdiContentSaveOutline,
   mdiDownloadCircleOutline,
@@ -68,7 +68,7 @@ export default function useInvoicesList() {
   // *===============================================---*
 
   const resolveInvoiceStatusVariantAndIcon = status => {
-    if (status === 'Partial Payment') return { variant: 'warning', icon: mdiChartPie }
+    if (status === 'Partial Payment') return { variant: 'warning', icon: mdiChartTimelineVariant }
     if (status === 'Paid') return { variant: 'success', icon: mdiCheckCircleOutline }
     if (status === 'Downloaded') return { variant: 'info', icon: mdiDownloadCircleOutline }
     if (status === 'Draft') return { variant: 'secondary', icon: mdiContentSaveOutline }

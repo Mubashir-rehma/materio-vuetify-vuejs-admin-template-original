@@ -69,7 +69,7 @@
 import {
   mdiSquareEditOutline,
   mdiDotsVertical,
-  mdiChartPie,
+  mdiChartTimelineVariant,
   mdiAccountOutline,
   mdiPencilOutline,
   mdiCogOutline,
@@ -87,7 +87,7 @@ export default {
     }
 
     const role = {
-      Maintainer: { icon: mdiChartPie, color: 'primary' },
+      Maintainer: { icon: mdiChartTimelineVariant, color: 'primary' },
       Subscriber: { icon: mdiAccountOutline, color: 'warning' },
       Editor: { icon: mdiPencilOutline, color: 'info' },
       Author: { icon: mdiCogOutline, color: 'success' },

@@ -4,6 +4,7 @@
     ref="refMenu"
     offset-y
     eagers
+    :open-on-hover="shallOpenGroupOnHover"
     attach
     class="horizontal-nav-header-group"
     content-class="list-style elevation-0"
@@ -61,6 +62,7 @@ import HorizontalNavMenuGroup from '@core/layouts/components/horizontal-nav-menu
 import HorizontalNavMenuLink from '@core/layouts/components/horizontal-nav-menu/components/horizontal-nav-menu-link/HorizontalNavMenuLink.vue'
 import { useUtils } from '@core/libs/i18n'
 import { useUtils as useAclUtils } from '@core/libs/acl'
+import themeConfig from '@themeConfig'
 import useHorizontalNavMenuHeaderGroup from './useHorizontalNavMenuHeaderGroup'
 
 export default {
@@ -112,6 +114,9 @@ export default {
       updateIsActive,
 
       resolveNavComponent,
+
+      // Open Menu on Hover
+      shallOpenGroupOnHover: themeConfig.menu.horizontalNavMenuGroupOpenOnHover,
 
       // Mouse
       refActivator,

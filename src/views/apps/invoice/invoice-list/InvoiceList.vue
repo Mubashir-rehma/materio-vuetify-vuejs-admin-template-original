@@ -80,9 +80,8 @@
       :headers="tableColumns"
       :items="invoiceListTable"
       :options.sync="options"
-      :server-items-length="50"
+      :server-items-length="totalInvoiceListTable"
       :loading="loading"
-      :search="searchQuery"
       show-select
     >
       <!-- trending header -->

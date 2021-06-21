@@ -7,6 +7,14 @@ const apps = [
       layout: 'content',
     },
   },
+  {
+    path: '/apps/user/list',
+    name: 'apps-user-list',
+    component: () => import('@/views/apps/user/user-list/UserList.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default apps

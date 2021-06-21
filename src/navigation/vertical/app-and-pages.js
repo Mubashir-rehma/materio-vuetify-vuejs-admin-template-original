@@ -15,6 +15,16 @@ export default [
     ],
   },
   {
+    title: 'User',
+    icon: mdiFileDocumentOutline,
+    children: [
+      {
+        title: 'User List',
+        to: 'apps-user-list',
+      },
+    ],
+  },
+  {
     title: 'Pages',
     icon: mdiFileOutline,
     children: [

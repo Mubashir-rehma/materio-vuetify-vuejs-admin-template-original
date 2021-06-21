@@ -318,6 +318,14 @@ $font-sizes: (
 }
 
 @include app-elevation('v-timeline.timeline-custom-dots .v-timeline-item__inner-dot', 1, true);
+@include theme(v-timeline) using ($material) {
+  &.v-timeline.timeline-custom-dots.card-content {
+    .v-card__text {
+      background-color: map-deep-get($material, 'cards');
+      border: thin solid map-deep-get($material, 'dividers');
+    }
+  }
+}
 .v-timeline.timeline-custom-dots {
   .v-timeline-item__divider {
     align-items: flex-start;
@@ -330,6 +338,21 @@ $font-sizes: (
     height: 12px;
     margin: 6px;
     width: 12px;
+  }
+
+  &.card-content {
+    .v-timeline-item .v-timeline-item__body > .v-card:before,
+    .v-timeline-item .v-timeline-item__body .v-card:after {
+      top: 15px;
+    }
+
+    .v-timeline-item__dot {
+      margin-top: 13px;
+    }
+
+    .v-card__title {
+      padding: 12px;
+    }
   }
 }
 
@@ -355,4 +378,8 @@ $font-sizes: (
 
 .position-absolute {
   position: absolute;
+}
+
+.w-full {
+  width: 100%;
 }

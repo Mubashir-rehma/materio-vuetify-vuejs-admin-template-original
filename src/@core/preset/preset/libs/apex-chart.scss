@@ -1,6 +1,19 @@
 // Variable Overrides
 @import '../variables.scss';
 
+@include theme--child('apexcharts-canvas .apexcharts-text') using ($material) {
+  fill: map-deep-get($material, 'text', 'secondary');
+}
+@include theme--child('apexcharts-canvas .apexcharts-tooltip-text') using ($material) {
+  fill: map-deep-get($material, 'text', 'secondary');
+}
+@include theme--child('apexcharts-canvas .apexcharts-datalabel-label') using ($material) {
+  fill: map-deep-get($material, 'text', 'secondary');
+}
+@include theme--child('apexcharts-canvas .apexcharts-datalabel') using ($material) {
+  fill: map-deep-get($material, 'text', 'secondary');
+}
+
 .apexcharts-canvas {
   line[stroke='transparent'] {
     display: none;
@@ -29,12 +42,13 @@
       border-bottom-color: map-deep-get($material-light, 'background');
     }
   }
+
   .apexcharts-text,
   .apexcharts-tooltip-text,
   .apexcharts-datalabel-label,
   .apexcharts-datalabel {
     font-family: $body-font-family !important;
-    fill: map-deep-get($material-light, 'text', 'secondary');
+    // fill: map-deep-get($material-light, 'text', 'secondary');
     font-weight: 400;
     filter: none;
   }

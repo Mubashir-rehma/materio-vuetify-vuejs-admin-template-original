@@ -106,6 +106,9 @@
           {{ item.payment.status }}
         </v-chip>
       </template>
+      <template #[`item.delete`]="">
+        <a><v-icon>{{ icons.mdiDeleteOutline }}</v-icon></a>
+      </template>
     </v-data-table>
   </div>
 </template>
@@ -188,6 +191,7 @@ export default {
         { text: 'BUYERS', value: 'buyer' },
         { text: 'PAYMENT', value: 'payment' },
         { text: 'STATUS', value: 'status' },
+        { text: 'DELETE', value: 'delete' },
       ],
       categoryIconFilter,
       productList,

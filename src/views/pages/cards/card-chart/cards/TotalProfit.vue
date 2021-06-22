@@ -10,7 +10,7 @@
           <v-card-title class="px-0 pt-0">
             Total Profit
           </v-card-title>
-          <v-card-text class="px-0">
+          <v-card-text class="px-0 h-full d-flex align-center">
             <vue-apex-charts
               id="total-profit-chart"
               :options="chartOptions"

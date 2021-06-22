@@ -1,5 +1,5 @@
 <template>
-  <v-card class="chart-card-total-visitors">
+  <v-card class="chart-card-total-visitors d-flex flex-column">
     <v-card-title>
       <span>Total Visitors</span>
       <v-spacer></v-spacer>
@@ -17,6 +17,7 @@
       id="chart-total-visitors"
       :options="chartOptions"
       :series="chartData"
+      class="d-flex flex-grow-1 align-center"
     ></vue-apex-charts>
   </v-card>
 </template>

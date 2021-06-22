@@ -24,6 +24,7 @@
             id="chart-sales-overview"
             :options="chartOptions"
             :series="chartData"
+            class="h-full d-flex align-center"
           ></vue-apex-charts>
         </v-col>
 

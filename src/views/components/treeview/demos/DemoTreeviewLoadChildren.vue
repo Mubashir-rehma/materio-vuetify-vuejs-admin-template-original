@@ -37,7 +37,7 @@
       <v-scroll-y-transition mode="out-in">
         <div
           v-if="!selected"
-          class="title grey--text text--lighten-1 font-weight-light"
+          class="title font-weight-light"
           style="align-self: center;"
         >
           Select a User

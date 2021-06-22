@@ -25,7 +25,7 @@
 
       <v-list-item-action>
         <v-btn icon>
-          <v-icon color="grey lighten-1">
+          <v-icon>
             {{ mdiInformationOutline }}
           </v-icon>
         </v-btn>
@@ -59,7 +59,7 @@
 
       <v-list-item-action>
         <v-btn icon>
-          <v-icon color="grey lighten-1">
+          <v-icon>
             {{ mdiInformationOutline }}
           </v-icon>
         </v-btn>

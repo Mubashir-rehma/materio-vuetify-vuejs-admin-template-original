@@ -1,4 +1,5 @@
 const pages = [
+  // TODO: Remove playground page
   {
     path: '/pages/playground',
     name: 'page-playground',

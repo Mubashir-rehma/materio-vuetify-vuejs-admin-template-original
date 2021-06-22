@@ -502,10 +502,6 @@ button {
 //
 
 .v-menu__content {
-  @at-root .v-application & {
-    width: 10rem;
-  }
-
   &:not(.list-style) {
     .v-list-item {
       height: 2.375rem;
@@ -697,7 +693,7 @@ button {
     background-color: #fafafa !important;
   }
 
-  .v-data-footer{
+  .v-data-footer {
     .v-data-footer__select {
       margin-left: 14px;
       .v-input__append-inner {
@@ -717,13 +713,11 @@ button {
       }
     }
 
-    .v-data-footer__pagination{
+    .v-data-footer__pagination {
       margin-left: auto;
     }
   }
 }
-
-
 
 @include theme(v-data-table) using ($material) {
   th {

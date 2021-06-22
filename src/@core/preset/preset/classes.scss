@@ -317,7 +317,7 @@ $font-sizes: (
   }
 }
 
-@include app-elevation('v-timeline.timeline-custom-dots .v-timeline-item__inner-dot', 1, true);
+// @include app-elevation('v-timeline.timeline-custom-dots .v-timeline-item__inner-dot', 1, true);
 @include theme(v-timeline) using ($material) {
   &.v-timeline.timeline-custom-dots.card-content {
     .v-card__text {
@@ -333,11 +333,31 @@ $font-sizes: (
 
   .v-timeline-item__dot {
     box-shadow: none !important;
+    position: relative;
   }
   .v-timeline-item__inner-dot {
     height: 12px;
     margin: 6px;
     width: 12px;
+
+    // Box shadow of dots
+    @include themeable() using ($color, $value) {
+      &.#{$color} {
+        &::before {
+          background-color: $value;
+          border-radius: inherit;
+          bottom: 0;
+          content: '';
+          left: 0;
+          opacity: 0.12;
+          position: absolute;
+          pointer-events: none;
+          right: 0;
+          top: 0;
+          transform: scale(0.8);
+        }
+      }
+    }
   }
 
   &.card-content {

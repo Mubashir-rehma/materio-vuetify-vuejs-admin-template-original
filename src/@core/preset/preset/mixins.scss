@@ -164,3 +164,21 @@
     @content ($darkThemePropertyValue);
   }
 }
+
+// TODO: Move this in variables
+$theme-colors: (
+  'primary': var(--v-primary-base),
+  'secondary': var(--v-secondary-base),
+  'accent': var(--v-accent-base),
+  'error': var(--v-error-base),
+  'info': var(--v-info-base),
+  'success': var(--v-success-base),
+  'warning': var(--v-warning-base),
+);
+
+// Ability to create style based on theme colors
+@mixin themeable() {
+  @each $color, $value in $theme-colors {
+    @content ($color, $value);
+  }
+}

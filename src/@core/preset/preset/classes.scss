@@ -163,6 +163,9 @@ $font-sizes: (
 
 // For creating initial avatars
 @include light-bg-provider(v-chip);
+.v-chip-light-bg {
+  font-weight: 500;
+}
 
 //
 //* ——— Stepper ——————————————————

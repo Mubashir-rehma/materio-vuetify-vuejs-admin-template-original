@@ -1,43 +1,50 @@
 <template>
-  <v-card>
-    <v-card-title>
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        :append-icon="icons.mdiMagnify"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
+  <div>
+    <v-card-text>
+      <v-row>
+        <v-col
+          cols="4"
+          offset="8"
+        >
+          <v-text-field
+            v-model="search"
+            :append-icon="icons.mdiMagnify"
+            label="Search"
+            single-line
+            hide-details
+            outlined
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-card-text>
 
+    <!-- Table -->
     <v-data-table
       :headers="headers"
       :items="productList"
       :search="search"
       :items-per-page="5"
+      class="table-kitchen-sink"
     >
       <!-- product -->
       <template #[`item.product`]="{item}">
-        <div class="d-flex">
+        <div class="d-flex align-center">
           <div>
             <v-img
               :src="item.product.image"
-              height="70"
-              width="70"
+              height="40"
+              width="40"
             ></v-img>
           </div>
           <div class="d-flex flex-column ml-3">
-            <span class="d-block font-weight-bold text-truncate">{{ item.product.name }}</span>
-            <span class="caption">{{ item.product.brand }}</span>
+            <span class="d-block font-weight-semibold text-truncate text--primary">{{ item.product.name }}</span>
+            <span class="text-xs">{{ item.product.brand }}</span>
           </div>
         </div>
       </template>
-
       <template #[`item.date`]="{item}">
         <span class="text-no-wrap">{{ item.date }}</span>
       </template>
-
       <!-- category -->
       <template #[`item.category`]="{item}">
         <div class="d-flex align-center">
@@ -52,6 +59,7 @@
             <v-icon
               size="20"
               :color="category.color"
+              class="rounded-0"
             >
               {{ category.icon }}
             </v-icon>
@@ -59,7 +67,6 @@
           <span class="ml-1 text-no-wrap">{{ item.product.category }}</span>
         </div>
       </template>
-
       <!-- buyer -->
       <template #[`item.buyer`]="{item}">
         <div class="d-flex align-center">
@@ -74,18 +81,20 @@
             ></v-img>
             <span v-else>{{ item.buyer.name.slice(0,2).toUpperCase() }}</span>
           </v-avatar>
-          <span class="text-no-wrap font-weight-bold ml-2">{{ item.buyer.name }}</span>
+          <span class="text-no-wrap font-weight-semibold text--primary ml-2">{{ item.buyer.name }}</span>
         </div>
       </template>
-
       <!-- payment -->
       <template #[`item.payment`]="{item}">
         <div class="d-flex flex-column">
-          <span :class="item.payment.received_payment_status === 'Unpaid' ? 'secondary--text':'primary--text'">{{ item.payment.paid_amount !== item.payment.total ? `${item.payment.paid_amount} / ${item.payment.total}`:`${item.payment.total}` }}</span>
-          <span class="caption text-no-wrap">{{ item.payment.received_payment_status }}</span>
+          <!-- <span :class="item.payment.received_payment_status === 'Unpaid' ? 'secondary--text':'primary--text'">{{ item.payment.paid_amount !== item.payment.total ? `${item.payment.paid_amount} / ${item.payment.total}`:`${item.payment.total}` }}</span> -->
+          <div class="d-flex align-center">
+            <span class="primary--text font-weight-medium">${{ item.payment.paid_amount }}</span>
+            <span v-if="item.payment.paid_amount !== item.payment.total">/{{ item.payment.total }}</span>
+          </div>
+          <span class="text-xs text-no-wrap">{{ item.payment.received_payment_status }}</span>
         </div>
       </template>
-
       <!-- status -->
       <template #[`item.status`]="{item}">
         <v-chip
@@ -97,12 +106,8 @@
           {{ item.payment.status }}
         </v-chip>
       </template>
-
-      <template #[`item.delete`]="">
-        <a><v-icon>{{ icons.mdiDeleteOutline }}</v-icon></a>
-      </template>
     </v-data-table>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -183,7 +188,6 @@ export default {
         { text: 'BUYERS', value: 'buyer' },
         { text: 'PAYMENT', value: 'payment' },
         { text: 'STATUS', value: 'status' },
-        { text: 'DELETE', value: 'delete' },
       ],
       categoryIconFilter,
       productList,
@@ -197,3 +201,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.table-kitchen-sink ::v-deep {
+  .v-data-table-header {
+    white-space: nowrap;
+  }
+}
+</style>

@@ -7,9 +7,17 @@
     <slot name="v-nav-menu-header">
       <vertical-nav-menu-header></vertical-nav-menu-header>
     </slot>
+
+    <!-- Shadow -->
+    <div
+      :class="{'d-block': shallShadowBottom}"
+      class="shadow-bottom"
+    />
+
     <perfect-scrollbar
       class="ps-nav-menu-items"
       :options="perfectScrollbarOptions"
+      @ps-scroll-y="evt => { shallShadowBottom = evt.srcElement.scrollTop > 0 }"
     >
       <v-list
         expand
@@ -68,12 +76,16 @@ export default {
       wheelPropagation: false,
     }
 
+    // Shadow bottom is UI specific and can be removed by user => It's not in `useVerticalNavMenu`
+    const shallShadowBottom = ref(false)
+
     provide('openGroups', ref([]))
 
     return {
       resolveNavItemComponent,
       perfectScrollbarOptions,
       isMouseHovered,
+      shallShadowBottom,
     }
   },
 }
@@ -122,6 +134,29 @@ export default {
   height: 100%;
   .ps-nav-menu-items {
     height: calc(100% - 53px) !important;
+  }
+
+  // menu scroll shadow
+  .shadow-bottom {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    height: 50px;
+    width: 100%;
+    left: -6px;
+    pointer-events: none;
+    margin-top: -0.7rem;
+    filter: blur(5px);
+  }
+}
+
+@include theme--child(vertical-nav-menu-container) using ($material) {
+  .shadow-bottom {
+    background: linear-gradient(
+      map-deep-get($material, 'background') 41%,
+      hsla(0, 0%, 100%, 0.11) 95%,
+      hsla(0, 0%, 100%, 0)
+    );
   }
 }
 

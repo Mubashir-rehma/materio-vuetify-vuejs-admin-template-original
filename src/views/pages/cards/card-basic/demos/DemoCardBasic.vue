@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row>
+    <v-row class="match-height">
       <!-- Influencing The Influencer -->
       <v-col
         md="4"
@@ -83,6 +83,7 @@
         md="4"
         sm="6"
         cols="12"
+        class="align-self-start"
       >
         <v-card>
           <v-img src="/images/pages/3.jpg"></v-img>
@@ -117,8 +118,7 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-    </v-row>
-    <v-row class="match-height">
+
       <!-- Apple iPhone 11 Pro -->
       <v-col
         sm="6"
@@ -213,13 +213,12 @@
           </div>
         </v-card>
       </v-col>
-    </v-row>
-    <v-row>
       <!-- Apple Watch card -->
       <v-col
         lg="4"
         sm="6"
         cols="12"
+        class="align-self-start"
       >
         <v-card>
           <v-img src="/images/pages/6.jpg"></v-img>
@@ -403,6 +402,7 @@
         cols="12"
         md="6"
         lg="4"
+        class="align-self-start"
       >
         <v-card color="text-center">
           <v-card-text class="d-flex flex-column justify-center align-center">

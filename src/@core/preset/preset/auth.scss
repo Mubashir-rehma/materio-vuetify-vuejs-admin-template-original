@@ -10,8 +10,7 @@
 
   // common style for both v1 and v2
   a {
-      text-decoration: unset;
-      color: rgba(145, 85, 253, 0.68);
+    text-decoration: unset;
   }
 
   // auth v1
@@ -43,22 +42,22 @@
       width: 28rem;
       height: 36.25rem;
       z-index: 1;
-      .auth-card{
+      .auth-card {
         padding: 0.9375rem 0.875rem;
       }
     }
   }
 
-  //auth v2 
-  &.auth-v2{
+  //auth v2
+  &.auth-v2 {
     align-items: flex-start;
-    
-    .auth-inner{
+
+    .auth-inner {
       height: 100vh;
       width: 100%;
       margin: 0;
-     
-      .brand-logo{
+
+      .brand-logo {
         text-decoration: unset;
         position: absolute;
         top: 1.83rem;
@@ -66,31 +65,31 @@
         z-index: 1;
       }
 
-      .auth-row{
+      .auth-row {
         height: 100%;
-        .auth-illustrator-wrapper{
+        .auth-illustrator-wrapper {
           width: 100%;
           height: 100%;
           padding: 5rem 0 5rem 6rem;
         }
       }
 
-      .auth-bg{
-        .v-card{
+      .auth-bg {
+        .v-card {
           max-width: 40rem;
           margin-left: auto;
           margin-right: auto;
         }
       }
 
-      .auth-mask-bg{
+      .auth-mask-bg {
         position: absolute;
         bottom: 0;
         right: 0;
         left: 0;
       }
 
-      .auth-tree{
+      .auth-tree {
         left: 0;
         left: 2.125rem;
         bottom: 2.688rem;
@@ -101,9 +100,9 @@
 }
 
 @include theme--child(auth-wrapper) using ($material) {
-  &.auth-v2{
-    .auth-inner{
-       .auth-bg{
+  &.auth-v2 {
+    .auth-inner {
+      .auth-bg {
         background: map-deep-get($material, 'cards');
       }
     }
@@ -111,11 +110,11 @@
 }
 
 @media (max-width: 600px) {
-// auth bg and tree hide in sm screen
-.auth-v1{
-  .auth-tree,
-  .auth-tree-3 ,
-  .auth-mask-bg{
+  // auth bg and tree hide in sm screen
+  .auth-v1 {
+    .auth-tree,
+    .auth-tree-3,
+    .auth-mask-bg {
       display: none;
     }
   }

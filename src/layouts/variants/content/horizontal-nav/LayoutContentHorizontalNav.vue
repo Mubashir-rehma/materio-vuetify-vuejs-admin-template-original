@@ -55,7 +55,7 @@
 
     <!-- App Content -->
     <template #v-app-content>
-      <app-customizer></app-customizer>
+      <app-customizer class="d-none d-md-block"></app-customizer>
     </template>
   </layout-content-horizontal-nav>
 </template>

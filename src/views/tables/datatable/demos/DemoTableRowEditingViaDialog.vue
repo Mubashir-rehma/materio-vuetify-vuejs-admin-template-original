@@ -46,7 +46,7 @@
             <span v-else>{{ item.full_name.slice(0,2).toUpperCase() }}</span>
           </v-avatar>
           <div class="d-flex flex-column ml-3">
-            <span class="d-block font-weight-bold text-truncate">{{ item.full_name }}</span>
+            <span class="d-block font-weight-semibold text--primary text-truncate">{{ item.full_name }}</span>
             <small>{{ item.post }}</small>
           </div>
         </div>
@@ -54,7 +54,7 @@
 
       <!-- salary -->
       <template #[`item.salary`]="{item}">
-        {{ `$ ${item.salary}` }}
+        {{ `$${item.salary}` }}
       </template>
 
       <!-- status -->

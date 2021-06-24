@@ -33,6 +33,7 @@ import {
   mdiLockOutline,
   mdiMapOutline,
   mdiMemory,
+  mdiMessageTextOutline,
   mdiPlus,
   mdiPoll,
   mdiPound,
@@ -53,6 +54,10 @@ export default [
   { title: 'CRM', to: { name: 'dashboard-crm' }, icon: mdiHomeOutline },
   { title: 'Analytics', to: { name: 'dashboard-analytics' }, icon: mdiHomeOutline },
   { title: 'eCommerce', to: { name: 'dashboard-eCommerce' }, icon: mdiHomeOutline },
+
+  // Apps
+  { title: 'Chat', to: { name: 'apps-chat' }, icon: mdiMessageTextOutline },
+
 
   // authentication
   { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },

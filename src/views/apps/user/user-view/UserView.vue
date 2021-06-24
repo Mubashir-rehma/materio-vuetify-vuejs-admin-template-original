@@ -202,5 +202,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@core/preset/preset/user.scss';
+@import '@core/preset/preset/apps/user.scss';
 </style>

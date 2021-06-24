@@ -723,10 +723,7 @@
     <v-col cols="6">
       <h4>Skeleton Loader</h4>
 
-      <v-sheet
-        :color="`grey ${theme.isDark ? 'darken-2' : 'lighten-4'}`"
-        class="pa-3"
-      >
+      <v-sheet class="pa-3">
         <v-skeleton-loader
           class="mx-auto"
           max-width="300"

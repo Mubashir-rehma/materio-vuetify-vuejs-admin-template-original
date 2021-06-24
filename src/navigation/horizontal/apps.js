@@ -1,4 +1,4 @@
-import { mdiFileDocumentOutline, mdiPackageVariantClosed } from '@mdi/js'
+import { mdiFileDocumentOutline, mdiPackageVariantClosed, mdiMessageTextOutline } from '@mdi/js'
 
 export default [
   {
@@ -14,6 +14,11 @@ export default [
             to: 'apps-invoice-list',
           },
         ],
+      },
+      {
+        title: 'Chat',
+        icon: mdiMessageTextOutline,
+        to: 'apps-chat',
       },
       {
         title: 'User',

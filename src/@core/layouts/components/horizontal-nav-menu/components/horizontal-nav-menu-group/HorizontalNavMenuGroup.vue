@@ -4,6 +4,7 @@
     ref="refMenu"
     offset-x
     attach
+    :open-on-hover="shallOpenGroupOnHover"
     eager
     :left="openChildMenuLeft"
     max-height="70vh"
@@ -159,6 +160,9 @@ export default {
 
       // alternate icons
       alternateIcon: themeConfig.menu.groupChildIcon,
+
+      // Open Menu on Hover
+      shallOpenGroupOnHover: themeConfig.menu.horizontalNavMenuGroupOpenOnHover,
 
       // i18n
       t,

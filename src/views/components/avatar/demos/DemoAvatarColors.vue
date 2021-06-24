@@ -3,7 +3,6 @@
     <v-avatar
       color="primary"
       size="40"
-      class="lighten-4"
     >
       <span class="text-lg white--text">PI</span>
     </v-avatar>

@@ -27,7 +27,7 @@
     <template #append-item>
       <v-divider class="mb-2"></v-divider>
       <v-list-item disabled>
-        <v-list-item-avatar color="grey lighten-3">
+        <v-list-item-avatar>
           <v-icon>
             {{ icons.mdiFoodAppleOutline }}
           </v-icon>

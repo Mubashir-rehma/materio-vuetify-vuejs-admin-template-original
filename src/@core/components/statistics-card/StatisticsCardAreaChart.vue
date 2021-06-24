@@ -68,7 +68,7 @@ export default {
         gradient: {
           shadeIntensity: 0.9,
           opacityFrom: 0.5,
-          opacityTo: 0.2,
+          opacityTo: 0.1,
           stops: [0, 80, 100],
         },
       },

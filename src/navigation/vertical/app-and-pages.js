@@ -1,8 +1,13 @@
-import { mdiFileDocumentOutline, mdiFileOutline } from '@mdi/js'
+import { mdiFileDocumentOutline, mdiFileOutline, mdiMessageTextOutline } from '@mdi/js'
 
 export default [
   {
     subheader: 'APP AND PAGES',
+  },
+  {
+    title: 'Chat',
+    icon: mdiMessageTextOutline,
+    to: 'apps-chat',
   },
   {
     title: 'Invoice',

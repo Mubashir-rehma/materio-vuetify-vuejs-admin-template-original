@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="d-flex flex-column">
     <v-card-title>
       <div>
         <p class="mb-2">
@@ -17,7 +17,7 @@
         </v-icon>
       </v-btn>
     </v-card-title>
-    <v-card-text>
+    <v-card-text class="ma-auto">
       <!-- Chart -->
       <vue-apex-charts
         :options="chartOptions"

@@ -9,6 +9,7 @@
         <v-icon
           size="24"
           color="white"
+          class="rounded-0"
         >
           {{ icon }}
         </v-icon>

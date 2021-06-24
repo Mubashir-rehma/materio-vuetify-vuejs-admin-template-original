@@ -3,7 +3,7 @@
     offset-y
     left
     nudge-bottom="10"
-    content-class="elevation-9"
+    content-class="elevation-9 list-style"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-icon

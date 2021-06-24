@@ -66,8 +66,8 @@ export default {
         gradient: {
           shadeIntensity: 0.9,
           opacityFrom: 0.5,
-          opacityTo: 0.2,
-          stops: [0, 80, 100],
+          opacityTo: 0.08,
+          stops: [0, 90, 100],
         },
       },
       xaxis: {
@@ -79,6 +79,9 @@ export default {
           show: false,
         },
         labels: { show: false },
+        axisTicks: {
+          show: false,
+        },
       },
       yaxis: {
         show: false,

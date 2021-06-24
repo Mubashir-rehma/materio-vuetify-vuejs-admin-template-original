@@ -15,6 +15,7 @@ const themeConfig = {
     isVerticalNavMini: false,
     verticalMenuAccordion: true,
     groupChildIcon: mdiCheckboxBlankCircleOutline,
+    horizontalNavMenuGroupOpenOnHover: false,
   },
   appBar: {
     /*

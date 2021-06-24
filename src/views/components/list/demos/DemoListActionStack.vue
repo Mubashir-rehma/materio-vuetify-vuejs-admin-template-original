@@ -25,10 +25,7 @@
             <v-list-item-action>
               <v-list-item-action-text v-text="item.action"></v-list-item-action-text>
 
-              <v-icon
-                v-if="!active"
-                color="grey lighten-1"
-              >
+              <v-icon v-if="!active">
                 {{ mdiStarOutline }}
               </v-icon>
 

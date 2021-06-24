@@ -12,7 +12,8 @@ const data = [
       image: '/images/eCommerce/9.png',
       hasFreeShipping: false,
       rating: 4,
-      description: 'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
+      description:
+        'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
     },
     date: '30 Apr 2020',
     buyer: {
@@ -37,7 +38,8 @@ const data = [
       image: '/images/eCommerce/7.png',
       hasFreeShipping: true,
       rating: 4,
-      description: 'Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use\n    voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with\n    Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.',
+      description:
+        'Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use\n    voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with\n    Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.',
     },
     date: '11 Jul 2020',
     buyer: {
@@ -53,10 +55,89 @@ const data = [
   },
   {
     product: {
+      id: 17,
+      name: 'Nike Air Max',
+      slug: '72-9301-speaker-wire-harness-adapter-for-most-plymouth-dodge-and-mitsubishi-vehicles-multi-17',
+      description:
+        'With a bold application of colorblocking inspired by modern art styles, the Nike Air Max 270 React sneaker is constructed with layers of lightweight material to achieve its artful look and comfortable feel.',
+      brand: 'Nike',
+      category: 'Shoes',
+      price: 81.99,
+      image: '/images/eCommerce/11.png',
+      hasFreeShipping: true,
+      rating: 5,
+    },
+    date: '06 Jan 2021',
+    buyer: {
+      name: 'Ethan Lee',
+      avatar: '/images/avatars/1.png',
+    },
+    payment: {
+      total: 726,
+      received_payment_status: 'Partially Paid',
+      paid_amount: 126,
+      status: 'Confirmed',
+    },
+  },
+  {
+    product: {
+      id: 2,
+      name: 'Bose Frames Tenor',
+      slug: 'bose-frames-tenor-rectangular-polarized-bluetooth-audio-sunglasses-2',
+      description:
+        'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
+      brand: 'Bose',
+      category: 'Glass',
+      price: 249,
+      image: '/images/eCommerce/26.png',
+      hasFreeShipping: false,
+      rating: 4,
+    },
+    date: '21 Aug 2020',
+    buyer: {
+      name: 'Scott Miller',
+      avatar: '/images/avatars/7.png',
+    },
+    payment: {
+      total: 646,
+      received_payment_status: 'Partially Paid',
+      paid_amount: 345,
+      status: 'Confirmed',
+    },
+  },
+  {
+    product: {
+      id: 25,
+      name: 'Apple iMac 27-inch',
+      slug: 'apple-i-mac-27-inch-25',
+      brand: 'Apple',
+      category: 'IMac',
+      price: 999.99,
+      image: '/images/eCommerce/3.png',
+      hasFreeShipping: true,
+      rating: 4,
+      description:
+        'The all-in-one for all. If you can dream it, you can do it on iMac. It\u2019s beautifully & incredibly intuitive and\n    packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n    experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n    capabilities, and an even more stunning Retina 5K display. It\u2019s the desktop that does it all \u2014 better and faster\n    than ever.',
+    },
+    date: '21 Aug 2020',
+    buyer: {
+      name: 'Brandon Brooks',
+      avatar: '/images/avatars/5.png',
+    },
+    payment: {
+      total: 1005,
+      received_payment_status: 'Partially Paid',
+      paid_amount: 21,
+      status: 'Confirmed',
+    },
+  },
+  {
+    product: {
       id: 12,
       name: 'Adidas Mens Tech Response Shoes',
       slug: 'adidas-mens-tech-response-shoes-12',
-      description: 'Comfort + performance.  Designed with materials that are durable, lightweight and extremely comfortable. Core performance delivers the perfect mix of fit, style and all-around performance.',
+      description:
+        'Comfort + performance.  Designed with materials that are durable, lightweight and extremely comfortable. Core performance delivers the perfect mix of fit, style and all-around performance.',
       brand: 'Adidas',
       category: 'Shoes',
       price: 54.59,
@@ -87,7 +168,8 @@ const data = [
       image: '/images/eCommerce/3.png',
       hasFreeShipping: true,
       rating: 4,
-      description: 'The all-in-one for all. If you can dream it, you can do it on iMac. It\u2019s beautifully & incredibly intuitive and\n    packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n    experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n    capabilities, and an even more stunning Retina 5K display. It\u2019s the desktop that does it all \u2014 better and faster\n    than ever.',
+      description:
+        'The all-in-one for all. If you can dream it, you can do it on iMac. It\u2019s beautifully & incredibly intuitive and\n    packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n    experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n    capabilities, and an even more stunning Retina 5K display. It\u2019s the desktop that does it all \u2014 better and faster\n    than ever.',
     },
     date: '21 Aug 2020',
     buyer: {
@@ -112,7 +194,8 @@ const data = [
       image: '/images/eCommerce/4.png',
       hasFreeShipping: true,
       rating: 3,
-      description: 'Omnidirectional detachable boom mic upgrades the headphones into a professional headset for gaming, business,\n    podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice\n    activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device\n    turns any home into a smart device on a smartphone or tablet.',
+      description:
+        'Omnidirectional detachable boom mic upgrades the headphones into a professional headset for gaming, business,\n    podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice\n    activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device\n    turns any home into a smart device on a smartphone or tablet.',
     },
     date: '12 Nov 2020',
     buyer: {
@@ -137,7 +220,8 @@ const data = [
       image: '/images/eCommerce/8.png',
       hasFreeShipping: false,
       rating: 5,
-      description: 'Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n    and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n    You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.',
+      description:
+        'Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n    and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n    You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.',
     },
     date: '19 Apr 2021',
     buyer: {
@@ -153,31 +237,6 @@ const data = [
   },
   {
     product: {
-      id: 17,
-      name: 'Nike Air Max',
-      slug: '72-9301-speaker-wire-harness-adapter-for-most-plymouth-dodge-and-mitsubishi-vehicles-multi-17',
-      description: 'With a bold application of colorblocking inspired by modern art styles, the Nike Air Max 270 React sneaker is constructed with layers of lightweight material to achieve its artful look and comfortable feel.',
-      brand: 'Nike',
-      category: 'Shoes',
-      price: 81.99,
-      image: '/images/eCommerce/11.png',
-      hasFreeShipping: true,
-      rating: 5,
-    },
-    date: '06 Jan 2021',
-    buyer: {
-      name: 'Ethan Lee',
-      avatar: '/images/avatars/1.png',
-    },
-    payment: {
-      total: 726,
-      received_payment_status: 'Partially Paid',
-      paid_amount: 126,
-      status: 'Confirmed',
-    },
-  },
-  {
-    product: {
       id: 23,
       name: 'Apple - MacBook Air\u00ae',
       slug: 'apple-mac-book-air-latest-model-13-3-display-silver-23',
@@ -187,7 +246,8 @@ const data = [
       image: '/images/eCommerce/5.png',
       hasFreeShipping: false,
       rating: 4,
-      description: 'MacBook Air is a thin, lightweight laptop from Apple. MacBook Air features up to 8GB of memory, a\n    fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,\n    light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,\n better.',
+      description:
+        'MacBook Air is a thin, lightweight laptop from Apple. MacBook Air features up to 8GB of memory, a\n    fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,\n    light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,\n better.',
     },
     date: '25 Dec 2020',
     buyer: {
@@ -212,7 +272,8 @@ const data = [
       image: '/images/eCommerce/3.png',
       hasFreeShipping: true,
       rating: 4,
-      description: 'The all-in-one for all. If you can dream it, you can do it on iMac. It\u2019s beautifully & incredibly intuitive and\n    packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n    experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n capabilities, and an even more stunning Retina 5K display. It\u2019s the desktop that does it all \u2014 better and faster\n than ever.',
+      description:
+        'The all-in-one for all. If you can dream it, you can do it on iMac. It\u2019s beautifully & incredibly intuitive and\n    packed with tools that let you take any idea to the next level. And the new 27-inch model elevates the\n    experience in way, with faster processors and graphics, expanded memory and storage, enhanced audio and video\n capabilities, and an even more stunning Retina 5K display. It\u2019s the desktop that does it all \u2014 better and faster\n than ever.',
     },
     date: '19 May 2020',
     buyer: {
@@ -231,7 +292,8 @@ const data = [
       id: 8,
       name: 'PlayStation 4 Console',
       slug: 'play-station-4-console-8',
-      description: 'All the greatest, games, TV, music and more. Connect with your friends to broadcast and celebrate your epic moments at the press of the Share button to Twitch, YouTube, Facebook and Twitter.',
+      description:
+        'All the greatest, games, TV, music and more. Connect with your friends to broadcast and celebrate your epic moments at the press of the Share button to Twitch, YouTube, Facebook and Twitter.',
       brand: 'Sony',
       category: 'Gaming',
       price: 339.95,
@@ -278,31 +340,6 @@ const data = [
   },
   {
     product: {
-      id: 2,
-      name: 'Bose Frames Tenor',
-      slug: 'bose-frames-tenor-rectangular-polarized-bluetooth-audio-sunglasses-2',
-      description: 'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
-      brand: 'Bose',
-      category: 'Glass',
-      price: 249,
-      image: '/images/eCommerce/26.png',
-      hasFreeShipping: false,
-      rating: 4,
-    },
-    date: '21 Aug 2020',
-    buyer: {
-      name: 'Scott Miller',
-      avatar: '/images/avatars/7.png',
-    },
-    payment: {
-      total: 646,
-      received_payment_status: 'Partially Paid',
-      paid_amount: 345,
-      status: 'Confirmed',
-    },
-  },
-  {
-    product: {
       id: 19,
       name: 'OnePlus 7 Pro ',
       slug: 'one-plus-7-pro-19',
@@ -312,7 +349,8 @@ const data = [
       image: '/images/eCommerce/9.png',
       hasFreeShipping: false,
       rating: 4,
-      description: 'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
+      description:
+        'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
     },
     date: '28 Jan 2021',
     buyer: {
@@ -337,7 +375,8 @@ const data = [
       image: '/images/eCommerce/5.png',
       hasFreeShipping: false,
       rating: 4,
-      description: 'MacBook Air is a thin, lightweight laptop from Apple. MacBook Air features up to 8GB of memory, a\n    fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,\n    light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,\n better.',
+      description:
+        'MacBook Air is a thin, lightweight laptop from Apple. MacBook Air features up to 8GB of memory, a\n    fifth-generation Intel Core processor, Thunderbolt 2, great built-in apps, and all-day battery life.1 Its thin,\n    light, and durable enough to take everywhere you go-and powerful enough to do everything once you get there,\n better.',
     },
     date: '20 Aug 2020',
     buyer: {
@@ -356,7 +395,8 @@ const data = [
       id: 9,
       name: 'Giotto 32oz Leakproof BPA Free Drinking Water',
       slug: 'giotto-32oz-leakproof-bpa-free-drinking-water-9',
-      description: 'With unique inspirational quote and time markers on it,this water bottle is great for measuring your daily intake of water,reminding you stay hydrated and drink enough water throughout the day.A must have for any fitness goals including weight loss,appetite control and overall health.',
+      description:
+        'With unique inspirational quote and time markers on it,this water bottle is great for measuring your daily intake of water,reminding you stay hydrated and drink enough water throughout the day.A must have for any fitness goals including weight loss,appetite control and overall health.',
       brand: '3M',
       category: 'Home',
       price: 16.99,
@@ -381,7 +421,8 @@ const data = [
       id: 13,
       name: 'Laptop Bag',
       slug: 'laptop-bag-13',
-      description: 'TSA FRIENDLY- A separate DIGI SMART compartment can hold 15.6 inch Laptop as well as 15 inch, 14 inch Macbook, 12.9 inch iPad, and tech accessories like charger for quick TSA checkpoint when traveling',
+      description:
+        'TSA FRIENDLY- A separate DIGI SMART compartment can hold 15.6 inch Laptop as well as 15 inch, 14 inch Macbook, 12.9 inch iPad, and tech accessories like charger for quick TSA checkpoint when traveling',
       brand: 'TAS',
       category: 'Bag',
       price: 29.99,
@@ -431,7 +472,8 @@ const data = [
       id: 14,
       name: 'Wireless Charger 5W Max',
       slug: 'wireless-charger-5-w-max-14',
-      description: 'Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.',
+      description:
+        'Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.',
       brand: '3M',
       category: 'Electronics',
       price: 10.83,
@@ -456,7 +498,8 @@ const data = [
       id: 15,
       name: 'Vankyo leisure 3 mini projector',
       slug: '3-m-filtrete-vacuum-belt-for-select-hoover-t-series-upright-vacuums-15',
-      description: 'SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you.',
+      description:
+        'SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you.',
       brand: 'Vankyo Store',
       category: 'Projector',
       price: 99.99,
@@ -481,7 +524,8 @@ const data = [
       id: 12,
       name: 'Adidas Mens Tech Response Shoes',
       slug: 'adidas-mens-tech-response-shoes-12',
-      description: 'Comfort + performance.  Designed with materials that are durable, lightweight and extremely comfortable. Core performance delivers the perfect mix of fit, style and all-around performance.',
+      description:
+        'Comfort + performance.  Designed with materials that are durable, lightweight and extremely comfortable. Core performance delivers the perfect mix of fit, style and all-around performance.',
       brand: 'Adidas',
       category: 'Shoes',
       price: 54.59,
@@ -506,7 +550,8 @@ const data = [
       id: 18,
       name: 'Logitech K380 Wireless Keyboard',
       slug: 'acer-11-6-chromebook-intel-celeron-2-gb-memory-16-gb-e-mmc-flash-memory-moonstone-white-18',
-      description: 'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
+      description:
+        'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
@@ -531,7 +576,8 @@ const data = [
       id: 3,
       name: 'Willful Smart Watch for Men Women 2020,',
       slug: 'willful-smart-watch-for-men-women-2020-3',
-      description: 'Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.',
+      description:
+        'Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.',
       brand: 'Willful',
       category: 'Smart Watch',
       price: 29.99,
@@ -562,7 +608,8 @@ const data = [
       image: '/images/eCommerce/6.png',
       hasFreeShipping: false,
       rating: 3,
-      description: 'The Nintendo Switch Pro Controller is one of the priciest \'baseline\' controllers in the current console\n generation, but it\'s also sturdy, feels good to play with, has an excellent direction pad, and features\n    impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don\'t need an\n    adapter to use it with your PC.',
+      description:
+        "The Nintendo Switch Pro Controller is one of the priciest 'baseline' controllers in the current console\n generation, but it's also sturdy, feels good to play with, has an excellent direction pad, and features\n    impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don't need an\n    adapter to use it with your PC.",
     },
     date: '09 Jan 2021',
     buyer: {
@@ -581,7 +628,8 @@ const data = [
       id: 4,
       name: 'Ronyes Unisex College Bag Bookbags for Women',
       slug: 'ronyes-unisex-college-bag-bookbags-for-women-4',
-      description: 'Made of high quality water-resistant material; padded and adjustable shoulder straps; external USB with built-in charging cable offers a convenient charging',
+      description:
+        'Made of high quality water-resistant material; padded and adjustable shoulder straps; external USB with built-in charging cable offers a convenient charging',
       brand: 'Ronyes',
       category: 'Bag',
       price: 23.99,
@@ -606,7 +654,8 @@ const data = [
       id: 10,
       name: 'Oculus Quest All-in-one VR',
       slug: 'oculus-quest-all-in-one-vr-10',
-      description: 'All-in-one VR: No PC. No wires. No limits. Oculus quest is an all-in-one gaming system built for virtual reality. Now you can play almost anywhere with just a VR headset and controllers. Oculus touch controllers: arm yourself with the award-winning Oculus touch controllers. Your slashes, throws and grab appear in VR with intuitive, realistic Precision, transporting your hands and gestures right into the game',
+      description:
+        'All-in-one VR: No PC. No wires. No limits. Oculus quest is an all-in-one gaming system built for virtual reality. Now you can play almost anywhere with just a VR headset and controllers. Oculus touch controllers: arm yourself with the award-winning Oculus touch controllers. Your slashes, throws and grab appear in VR with intuitive, realistic Precision, transporting your hands and gestures right into the game',
       brand: 'Oculus',
       category: 'VR',
       price: 645,
@@ -631,7 +680,8 @@ const data = [
       id: 11,
       name: 'Handbags for Women Large Designer bag',
       slug: 'handbags-for-women-large-designer-bag-11',
-      description: 'Classic Hobo Purse: Top zipper closure, with 2 side zipper pockets design and elegant tassels decoration, fashionable and practical handbags for women, perfect for shopping, dating, travel and business',
+      description:
+        'Classic Hobo Purse: Top zipper closure, with 2 side zipper pockets design and elegant tassels decoration, fashionable and practical handbags for women, perfect for shopping, dating, travel and business',
       brand: 'Hobo',
       category: 'Bag',
       price: 39.99,
@@ -656,7 +706,8 @@ const data = [
       id: 18,
       name: 'Logitech K380 Wireless Keyboard',
       slug: 'acer-11-6-chromebook-intel-celeron-2-gb-memory-16-gb-e-mmc-flash-memory-moonstone-white-18',
-      description: 'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
+      description:
+        'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
@@ -687,7 +738,8 @@ const data = [
       image: '/images/eCommerce/7.png',
       hasFreeShipping: true,
       rating: 4,
-      description: 'Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use\n    voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with\n    Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.',
+      description:
+        'Simplify your everyday life with the Google Home, a voice-activated speaker powered by the Google Assistant. Use\n    voice commands to enjoy music, get answers from Google and manage everyday tasks. Google Home is compatible with\n    Android and iOS operating systems, and can control compatible smart devices such as Chromecast or Nest.',
     },
     date: '25 Feb 2021',
     buyer: {
@@ -706,7 +758,8 @@ const data = [
       id: 3,
       name: 'Willful Smart Watch for Men Women 2020,',
       slug: 'willful-smart-watch-for-men-women-2020-3',
-      description: 'Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.',
+      description:
+        'Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.',
       brand: 'Willful',
       category: 'Smart Watch',
       price: 29.99,
@@ -731,7 +784,8 @@ const data = [
       id: 18,
       name: 'Logitech K380 Wireless Keyboard',
       slug: 'acer-11-6-chromebook-intel-celeron-2-gb-memory-16-gb-e-mmc-flash-memory-moonstone-white-18',
-      description: 'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
+      description:
+        'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
@@ -756,7 +810,8 @@ const data = [
       id: 14,
       name: 'Wireless Charger 5W Max',
       slug: 'wireless-charger-5-w-max-14',
-      description: 'Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.',
+      description:
+        'Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.',
       brand: '3M',
       category: 'Electronics',
       price: 10.83,
@@ -781,7 +836,8 @@ const data = [
       id: 2,
       name: 'Bose Frames Tenor',
       slug: 'bose-frames-tenor-rectangular-polarized-bluetooth-audio-sunglasses-2',
-      description: 'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
+      description:
+        'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
       brand: 'Bose',
       category: 'Glass',
       price: 249,
@@ -812,7 +868,8 @@ const data = [
       image: '/images/eCommerce/4.png',
       hasFreeShipping: true,
       rating: 3,
-      description: 'Omnidirectional detachable boom mic upgrades the headphones into a professional headset for gaming, business,\n    podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice\n    activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device\n    turns any home into a smart device on a smartphone or tablet.',
+      description:
+        'Omnidirectional detachable boom mic upgrades the headphones into a professional headset for gaming, business,\n    podcasting and taking calls on the go. Better pick up your voice. Control most electric devices through voice\n    activation, or schedule a ride with Uber and order a pizza. OneOdio A71 Wired Headphones voice-controlled device\n    turns any home into a smart device on a smartphone or tablet.',
     },
     date: '15 Sep 2020',
     buyer: {
@@ -831,7 +888,8 @@ const data = [
       id: 2,
       name: 'Bose Frames Tenor',
       slug: 'bose-frames-tenor-rectangular-polarized-bluetooth-audio-sunglasses-2',
-      description: 'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
+      description:
+        'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
       brand: 'Bose',
       category: 'Glass',
       price: 249,
@@ -856,7 +914,8 @@ const data = [
       id: 2,
       name: 'Bose Frames Tenor',
       slug: 'bose-frames-tenor-rectangular-polarized-bluetooth-audio-sunglasses-2',
-      description: 'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
+      description:
+        'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
       brand: 'Bose',
       category: 'Glass',
       price: 249,
@@ -887,7 +946,8 @@ const data = [
       image: '/images/eCommerce/9.png',
       hasFreeShipping: false,
       rating: 4,
-      description: 'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
+      description:
+        'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
     },
     date: '21 Oct 2020',
     buyer: {
@@ -906,7 +966,8 @@ const data = [
       id: 4,
       name: 'Ronyes Unisex College Bag Bookbags for Women',
       slug: 'ronyes-unisex-college-bag-bookbags-for-women-4',
-      description: 'Made of high quality water-resistant material; padded and adjustable shoulder straps; external USB with built-in charging cable offers a convenient charging',
+      description:
+        'Made of high quality water-resistant material; padded and adjustable shoulder straps; external USB with built-in charging cable offers a convenient charging',
       brand: 'Ronyes',
       category: 'Bag',
       price: 23.99,
@@ -937,7 +998,8 @@ const data = [
       image: '/images/eCommerce/8.png',
       hasFreeShipping: false,
       rating: 5,
-      description: 'Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n    and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n    You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.',
+      description:
+        'Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n    and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n    You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.',
     },
     date: '01 Jul 2020',
     buyer: {
@@ -956,7 +1018,8 @@ const data = [
       id: 11,
       name: 'Handbags for Women Large Designer bag',
       slug: 'handbags-for-women-large-designer-bag-11',
-      description: 'Classic Hobo Purse: Top zipper closure, with 2 side zipper pockets design and elegant tassels decoration, fashionable and practical handbags for women, perfect for shopping, dating, travel and business',
+      description:
+        'Classic Hobo Purse: Top zipper closure, with 2 side zipper pockets design and elegant tassels decoration, fashionable and practical handbags for women, perfect for shopping, dating, travel and business',
       brand: 'Hobo',
       category: 'Bag',
       price: 39.99,
@@ -981,7 +1044,8 @@ const data = [
       id: 18,
       name: 'Logitech K380 Wireless Keyboard',
       slug: 'acer-11-6-chromebook-intel-celeron-2-gb-memory-16-gb-e-mmc-flash-memory-moonstone-white-18',
-      description: 'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
+      description:
+        'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
@@ -1006,7 +1070,8 @@ const data = [
       id: 3,
       name: 'Willful Smart Watch for Men Women 2020,',
       slug: 'willful-smart-watch-for-men-women-2020-3',
-      description: 'Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.',
+      description:
+        'Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.',
       brand: 'Willful',
       category: 'Smart Watch',
       price: 29.99,
@@ -1031,7 +1096,8 @@ const data = [
       id: 2,
       name: 'Bose Frames Tenor',
       slug: 'bose-frames-tenor-rectangular-polarized-bluetooth-audio-sunglasses-2',
-      description: 'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
+      description:
+        'Redesigned for luxury \u2014 Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen',
       brand: 'Bose',
       category: 'Glass',
       price: 249,
@@ -1056,7 +1122,8 @@ const data = [
       id: 17,
       name: 'Nike Air Max',
       slug: '72-9301-speaker-wire-harness-adapter-for-most-plymouth-dodge-and-mitsubishi-vehicles-multi-17',
-      description: 'With a bold application of colorblocking inspired by modern art styles, the Nike Air Max 270 React sneaker is constructed with layers of lightweight material to achieve its artful look and comfortable feel.',
+      description:
+        'With a bold application of colorblocking inspired by modern art styles, the Nike Air Max 270 React sneaker is constructed with layers of lightweight material to achieve its artful look and comfortable feel.',
       brand: 'Nike',
       category: 'Shoes',
       price: 81.99,
@@ -1081,7 +1148,8 @@ const data = [
       id: 15,
       name: 'Vankyo leisure 3 mini projector',
       slug: '3-m-filtrete-vacuum-belt-for-select-hoover-t-series-upright-vacuums-15',
-      description: 'SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you.',
+      description:
+        'SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you.',
       brand: 'Vankyo Store',
       category: 'Projector',
       price: 99.99,
@@ -1112,7 +1180,8 @@ const data = [
       image: '/images/eCommerce/6.png',
       hasFreeShipping: false,
       rating: 3,
-      description: 'The Nintendo Switch Pro Controller is one of the priciest \'baseline\' controllers in the current console\n    generation, but it\'s also sturdy, feels good to play with, has an excellent direction pad, and features\n impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don\'t need an\n    adapter to use it with your PC.',
+      description:
+        "The Nintendo Switch Pro Controller is one of the priciest 'baseline' controllers in the current console\n    generation, but it's also sturdy, feels good to play with, has an excellent direction pad, and features\n impressive motion sensors and vibration systems. On top of all of that, it uses Bluetooth, so you don't need an\n    adapter to use it with your PC.",
     },
     date: '28 May 2020',
     buyer: {
@@ -1131,7 +1200,8 @@ const data = [
       id: 18,
       name: 'Logitech K380 Wireless Keyboard',
       slug: 'acer-11-6-chromebook-intel-celeron-2-gb-memory-16-gb-e-mmc-flash-memory-moonstone-white-18',
-      description: 'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
+      description:
+        'Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.',
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
@@ -1162,7 +1232,8 @@ const data = [
       image: '/images/eCommerce/9.png',
       hasFreeShipping: false,
       rating: 4,
-      description: 'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
+      description:
+        'The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels\n    very premium but\u2019s it\u2019s also very heavy. The Nebula Blue variant looks slick but it\u2019s quite slippery, which\n    makes single-handed use a real challenge. It has a massive 6.67-inch \u2018Fluid AMOLED\u2019 display with a QHD+\n    resolution, 90Hz refresh rate and support for HDR 10+ content. The display produces vivid colours, deep blacks\n    and has good viewing angles.',
     },
     date: '25 Mar 2021',
     buyer: {
@@ -1187,7 +1258,8 @@ const data = [
       image: '/images/eCommerce/8.png',
       hasFreeShipping: false,
       rating: 5,
-      description: 'Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n    and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n    You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.',
+      description:
+        'Sony 4K Ultra HD LED TV has 4K HDR Support. The TV provides clear visuals and provides distinct sound quality\n    and an immersive experience. This TV has Yes HDMI ports & Yes USB ports. Connectivity options included are HDMI.\n    You can connect various gadgets such as your laptop using the HDMI port. The TV comes with a 1 Year warranty.',
     },
     date: '13 Apr 2021',
     buyer: {
@@ -1206,7 +1278,8 @@ const data = [
       id: 14,
       name: 'Wireless Charger 5W Max',
       slug: 'wireless-charger-5-w-max-14',
-      description: 'Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.',
+      description:
+        'Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.',
       brand: '3M',
       category: 'Electronics',
       price: 10.83,
@@ -1231,7 +1304,8 @@ const data = [
       id: 15,
       name: 'Vankyo leisure 3 mini projector',
       slug: '3-m-filtrete-vacuum-belt-for-select-hoover-t-series-upright-vacuums-15',
-      description: 'SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you.',
+      description:
+        'SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you.',
       brand: 'Vankyo Store',
       category: 'Projector',
       price: 99.99,

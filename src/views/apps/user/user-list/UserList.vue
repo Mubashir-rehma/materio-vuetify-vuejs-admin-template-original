@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div id="user-list">
     <!-- app drawer -->
     <user-list-add-new
       :is-add-new-user-sidebar-active.sync="isAddNewUserSidebarActive"
       :role-options="roleOptions"
       :plan-options="planOptions"
-      @refetch-data="refetchData"
     ></user-list-add-new>
 
     <!-- list filters -->
-    <v-card class="user-list">
+    <v-card>
       <v-card-title class="text-base pb-0">
         Search Filter
       </v-card-title>
       <v-row class="px-2 ma-0">
+        <!-- role filter -->
         <v-col
           cols="12"
           sm="4"
@@ -31,6 +31,7 @@
           ></v-select>
         </v-col>
 
+        <!-- plan filter -->
         <v-col
           cols="12"
           sm="4"
@@ -48,6 +49,7 @@
           ></v-select>
         </v-col>
 
+        <!-- status filter -->
         <v-col
           cols="12"
           sm="4"
@@ -68,6 +70,7 @@
 
       <v-divider class="mt-4"></v-divider>
 
+      <!-- actions -->
       <v-card-text class="d-flex align-center flex-wrap mb-1">
         <v-select
           :items="actionList"
@@ -81,6 +84,7 @@
         <v-spacer></v-spacer>
 
         <div class="d-flex align-center flex-wrap">
+          <!-- search -->
           <v-text-field
             v-model="searchQuery"
             placeholder="Search"
@@ -129,7 +133,13 @@
             </v-avatar>
 
             <div class="d-flex flex-column ml-3">
-              <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.fullName }}</span>
+              <router-link
+                :to="{ name : 'apps-user-view', params : { id : item.id } }"
+                tag="span"
+                class="text--primary font-weight-semibold text-truncate cursor-pointer"
+              >
+                {{ item.fullName }}
+              </router-link>
               <small>@{{ item.username }}</small>
             </div>
           </div>
@@ -172,7 +182,7 @@
         </template>
 
         <!-- actions -->
-        <template #item.actions>
+        <template #[`item.actions`]="{item}">
           <v-menu
             bottom
             left
@@ -189,17 +199,28 @@
 
             <v-list>
               <v-list-item
-                v-for="(item, i) in actions"
-                :key="i"
+                :to="{name:'apps-user-view',params:{id:item.id}}"
               >
                 <v-list-item-title>
                   <v-icon
                     size="20"
                     class="mr-2"
                   >
-                    {{ item.icon }}
+                    {{ icons.mdiFileDocumentOutline }}
                   </v-icon>
-                  <span>{{ item.title }}</span>
+                  <span>Details</span>
+                </v-list-item-title>
+              </v-list-item>
+
+              <v-list-item link>
+                <v-list-item-title>
+                  <v-icon
+                    size="20"
+                    class="mr-2"
+                  >
+                    {{ icons.mdiDeleteOutline }}
+                  </v-icon>
+                  <span>Delete</span>
                 </v-list-item-title>
               </v-list-item>
             </v-list>
@@ -241,7 +262,6 @@ export default {
     const isAddNewUserSidebarActive = ref(false)
 
     const {
-      fetchUsers,
       userListTable,
       tableColumns,
       searchQuery,
@@ -251,8 +271,7 @@ export default {
       totalUserListTable,
       loading,
       options,
-      refetchData,
-
+      fetchUsers,
       resolveUserRoleVariant,
       resolveUserRoleIcon,
       resolveUserStatusVariant,
@@ -275,19 +294,13 @@ export default {
       { title: 'Basic', value: 'basic' },
       { title: 'Company', value: 'company' },
       { title: 'Enterprise', value: 'enterprise' },
-      { title: 'Team', value: 'team' },
+      { title: 'Standard', value: 'standard' },
     ]
 
     const statusOptions = [
       { title: 'Pending', value: 'pending' },
       { title: 'Active', value: 'active' },
       { title: 'Inactive', value: 'inactive' },
-    ]
-
-    const actions = [
-      { title: 'Details', icon: mdiFileDocumentOutline },
-      { title: 'Edit', icon: mdiSquareEditOutline },
-      { title: 'Delete', icon: mdiDeleteOutline },
     ]
 
     return {
@@ -302,11 +315,9 @@ export default {
       roleOptions,
       planOptions,
       statusOptions,
-      actions,
       loading,
       options,
       isAddNewUserSidebarActive,
-      refetchData,
       avatarText,
       resolveUserRoleVariant,
       resolveUserRoleIcon,
@@ -315,7 +326,9 @@ export default {
       // icons
       icons: {
         mdiSquareEditOutline,
+        mdiFileDocumentOutline,
         mdiDotsVertical,
+        mdiDeleteOutline,
         mdiPlus,
       },
     }
@@ -323,13 +336,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.user-list {
-  .user-actions {
-    max-width: 120px;
-  }
-  .user-search {
-    max-width: 170px;
-  }
-}
+<style lang="scss">
+@import '@core/preset/preset/user.scss';
 </style>

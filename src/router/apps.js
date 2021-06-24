@@ -15,6 +15,14 @@ const apps = [
       layout: 'content',
     },
   },
+  {
+    path: '/apps/user/view/:id',
+    name: 'apps-user-view',
+    component: () => import('@/views/apps/user/user-view/UserView.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 ]
 
 export default apps

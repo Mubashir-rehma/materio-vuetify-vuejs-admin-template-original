@@ -174,6 +174,7 @@ const pages = [
     component: () => import('@/views/pages/knowledge-base/KnowledgeBaseCategory.vue'),
     meta: {
       layout: 'content',
+      navActiveLink: 'page-knowledge-base',
     },
   },
   {
@@ -182,6 +183,7 @@ const pages = [
     component: () => import('@/views/pages/knowledge-base/KnowledgeBaseQuestion.vue'),
     meta: {
       layout: 'content',
+      navActiveLink: 'page-knowledge-base',
     },
   },
   {

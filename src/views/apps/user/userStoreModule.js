@@ -14,6 +14,14 @@ export default {
           .catch(error => reject(error))
       })
     },
+    fetchUser(ctx, { id }) {
+      return new Promise((resolve, reject) => {
+        axios
+          .get(`/apps/user/users/${id}`)
+          .then(response => resolve(response))
+          .catch(error => reject(error))
+      })
+    },
     addUser(ctx, userData) {
       return new Promise((resolve, reject) => {
         axios

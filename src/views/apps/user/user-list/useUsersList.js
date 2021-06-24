@@ -44,22 +44,19 @@ export default function useUsersList() {
       })
   }
 
-  const refetchData = () => {
-    fetchUsers()
-  }
-
   watch([searchQuery, roleFilter, planFilter, statusFilter, options], () => {
     loading.value = true
     setTimeout(() => {
       loading.value = false
     }, 1000)
 
-    refetchData()
+    fetchUsers()
   })
 
   // *===============================================---*
   // *--------- UI ---------------------------------------*
   // *===============================================---*
+
   const resolveUserRoleVariant = role => {
     if (role === 'subscriber') return 'primary'
     if (role === 'author') return 'warning'
@@ -77,7 +74,7 @@ export default function useUsersList() {
     if (role === 'editor') return mdiPencilOutline
     if (role === 'admin') return mdiDnsOutline
 
-    return 'UserIcon'
+    return mdiAccountOutline
   }
 
   const resolveUserStatusVariant = status => {
@@ -98,7 +95,6 @@ export default function useUsersList() {
     totalUserListTable,
     loading,
     options,
-    refetchData,
     fetchUsers,
     resolveUserRoleVariant,
     resolveUserRoleIcon,

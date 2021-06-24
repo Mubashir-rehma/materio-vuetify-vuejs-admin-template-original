@@ -25,7 +25,7 @@ const data = {
       country: 'Albania',
       contact: '(472) 607-9137',
       email: 'hredmore1@imgur.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '8.png',
     },
@@ -51,7 +51,7 @@ const data = {
       country: 'China',
       contact: '(923) 690-6806',
       email: 'crisby3@wordpress.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'inactive',
       avatar: '8.png',
     },
@@ -116,7 +116,7 @@ const data = {
       country: 'China',
       contact: '(978) 146-5443',
       email: 'fscotfurth8@dailymotion.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '2.png',
     },
@@ -142,7 +142,7 @@ const data = {
       country: 'United States',
       contact: '(176) 532-6824',
       email: 'jwharltona@oakley.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'inactive',
       avatar: '4.png',
     },
@@ -155,7 +155,7 @@ const data = {
       country: 'Peru',
       contact: '(234) 464-0600',
       email: 'shallamb@hugedomains.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '5.png',
     },
@@ -181,7 +181,7 @@ const data = {
       country: 'Democratic Republic of the Congo',
       contact: '(167) 135-7392',
       email: 'mkraused@stanford.edu',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'active',
       avatar: '5.png',
     },
@@ -233,7 +233,7 @@ const data = {
       country: 'Yemen',
       contact: '(901) 916-9287',
       email: 'bbinerh@mozilla.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'active',
       avatar: '7.png',
     },
@@ -259,7 +259,7 @@ const data = {
       country: 'Honduras',
       contact: '(569) 683-1292',
       email: 'wburlandj@uiuc.edu',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'inactive',
       avatar: '6.png',
     },
@@ -272,7 +272,7 @@ const data = {
       country: 'USA',
       contact: '(829) 537-0057',
       email: 'irena.dubrovna@wayne.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'active',
       avatar: '1.png',
     },
@@ -311,7 +311,7 @@ const data = {
       country: 'Brazil',
       contact: '(700) 783-7498',
       email: 'chatherleighn@washington.edu',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '2.png',
     },
@@ -363,7 +363,7 @@ const data = {
       country: 'Portugal',
       contact: '(412) 476-0854',
       email: 'bkildayr@mashable.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'active',
       avatar: '',
     },
@@ -376,7 +376,7 @@ const data = {
       country: 'Sweden',
       contact: '(170) 683-1520',
       email: 'cpinyons@behance.net',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'active',
       avatar: '7.png',
     },
@@ -389,7 +389,7 @@ const data = {
       country: 'Slovenia',
       contact: '(332) 803-1983',
       email: 'imallindinet@shinystat.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '',
     },
@@ -467,7 +467,7 @@ const data = {
       country: 'Belarus',
       contact: '(882) 933-2180',
       email: 'brosebothamz@tripadvisor.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'inactive',
       avatar: '',
     },
@@ -506,7 +506,7 @@ const data = {
       country: 'Finland',
       contact: '(531) 731-0928',
       email: 'twidmore12@bravesites.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '',
     },
@@ -532,7 +532,7 @@ const data = {
       country: 'Haiti',
       contact: '(315) 329-3578',
       email: 'ebaldetti14@theguardian.com',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '',
     },
@@ -545,7 +545,7 @@ const data = {
       country: 'Indonesia',
       contact: '(323) 175-6741',
       email: 'brossiter15@craigslist.org',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'inactive',
       avatar: '',
     },
@@ -571,7 +571,7 @@ const data = {
       country: 'Guatemala',
       contact: '(531) 758-8335',
       email: 'vkoschek17@abc.net.au',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'active',
       avatar: '',
     },
@@ -584,7 +584,7 @@ const data = {
       country: 'China',
       contact: '(659) 385-6808',
       email: 'cperot18@goo.ne.jp',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'pending',
       avatar: '3.png',
     },
@@ -636,7 +636,7 @@ const data = {
       country: 'Sweden',
       contact: '(694) 676-1275',
       email: 'pdurber1c@gov.uk',
-      currentPlan: 'team',
+      currentPlan: 'standard',
       status: 'inactive',
       avatar: '',
     },
@@ -671,11 +671,6 @@ mock.onGet('/apps/user/users').reply(config => {
   /* eslint-enable */
 
   const queryLowered = q.toLowerCase()
-
-  // const roleLowered = role.toLowerCase()
-  // const planLowered = plan.toLowerCase()
-  // const statusLowered = status.toLowerCase()
-
   const total = data.users.length
 
   let filteredData = data.users.filter(
@@ -736,4 +731,28 @@ mock.onPost('/apps/user/users').reply(config => {
   data.users.push(user)
 
   return [201, { user }]
+})
+
+// ------------------------------------------------
+// GET: Return Single User
+// ------------------------------------------------
+mock.onGet(/\/apps\/user\/users\/\d+/).reply(config => {
+  // Get event id from URL
+  let userId = config.url.substring(config.url.lastIndexOf('/') + 1)
+
+  // Convert Id to number
+  userId = Number(userId)
+
+  const userIndex = data.users.findIndex(e => e.id === userId)
+  const user = data.users[userIndex]
+  Object.assign(user, {
+    taskDone: 1230,
+    projectDone: 568,
+    taxId: 'Tax-8894',
+    language: 'English',
+  })
+
+  if (user) return [200, user]
+
+  return [404]
 })

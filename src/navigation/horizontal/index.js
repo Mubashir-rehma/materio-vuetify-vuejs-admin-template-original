@@ -34,6 +34,7 @@ route: [route_obj/route_name] (I have to resolve name somehow from the route obj
 // Array of sections
 // export default [...dashboard, ...apps, ...uiElements, ...formAndTable, ...pages, ...chartsAndMaps, ...others]
 // import { mdiArchiveAlertOutline } from '@mdi/js'
+import apps from './apps'
 import chartsAndMaps from './charts-and-maps'
 import dashboard from './dashboard'
 import formAndTable from './forms-and-table'
@@ -42,7 +43,7 @@ import pages from './pages'
 import uiElements from './ui-elements'
 
 // Array of sections
-export default [...dashboard, ...uiElements, ...pages, ...formAndTable, ...chartsAndMaps, ...others]
+export default [...dashboard, ...apps, ...uiElements, ...pages, ...formAndTable, ...chartsAndMaps, ...others]
 
 // export default [
 //   {

@@ -22,6 +22,10 @@ export default [
         title: 'User List',
         to: 'apps-user-list',
       },
+      {
+        title: 'User View',
+        to: { name: 'apps-user-view', params: { id: 21 } },
+      },
     ],
   },
   {

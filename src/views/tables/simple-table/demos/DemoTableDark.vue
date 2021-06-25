@@ -3,19 +3,19 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left text-uppercase">
+          <th class="text-left text-uppercase text--primary">
             Dessert (100g serving)
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase text--primary">
             Calories
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase text--primary">
             Fat (g)
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase text--primary">
             Carbs (g)
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase text--primary">
             Protein (g)
           </th>
         </tr>

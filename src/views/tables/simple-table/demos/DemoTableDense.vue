@@ -6,16 +6,16 @@
           <th class="text-left text-uppercase">
             Dessert (100g serving)
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase">
             Calories
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase">
             Fat (g)
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase">
             Carbs (g)
           </th>
-          <th class="text-left text-uppercase">
+          <th class="text-center text-uppercase">
             Protein (g)
           </th>
         </tr>

@@ -1,79 +1,81 @@
 <template>
-  <v-data-table
-    v-model="selected"
-    :headers="tableColumnHeaders"
-    :items="userlist"
-    item-key="name"
-    show-select
-    hide-default-footer
-    class="elevation-1"
-  >
-    <!-- trending header -->
-    <template #[`header.status`]>
-      <v-icon size="22">
-        {{ icons.mdiTrendingUp }}
-      </v-icon>
-    </template>
-
-    <!-- trending  -->
-    <template #[`item.status`]="{item}">
-      <v-avatar
-        size="30"
-        :color="item.statusColor"
-        :class="`v-avatar-light-bg ${item.statusColor}--text`"
-      >
-        <v-icon
-          size="18"
-          :color="item.statusColor"
-        >
-          {{ item.status }}
+  <v-card>
+    <v-data-table
+      v-model="selected"
+      :headers="tableColumnHeaders"
+      :items="userlist"
+      item-key="name"
+      show-select
+      hide-default-footer
+      class="table-rounded"
+    >
+      <!-- trending header -->
+      <template #[`header.status`]>
+        <v-icon size="22">
+          {{ icons.mdiTrendingUp }}
         </v-icon>
-      </v-avatar>
-    </template>
+      </template>
 
-    <!-- client -->
-    <template #[`item.client`]="{item}">
-      <div class="d-flex align-center">
+      <!-- trending  -->
+      <template #[`item.status`]="{item}">
         <v-avatar
-          :color="item.avatar ? '' : item.avatarColor"
-          :class="`v-avatar-light-bg ${item.avatarColor}--text`"
           size="30"
+          :color="item.statusColor"
+          :class="`v-avatar-light-bg ${item.statusColor}--text`"
         >
-          <v-img
-            v-if="item.avatar"
-            :src="`/images/avatars/${item.avatar}`"
-          ></v-img>
-          <span
-            v-else
-            class="font-weight-medium"
-          >{{ item.fullName.slice(0,2).toUpperCase() }}</span>
+          <v-icon
+            size="18"
+            :color="item.statusColor"
+          >
+            {{ item.status }}
+          </v-icon>
         </v-avatar>
+      </template>
 
-        <div class="d-flex flex-column ml-3">
-          <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.fullName }}</span>
-          <span class="text-xs">{{ item.email }}</span>
+      <!-- client -->
+      <template #[`item.client`]="{item}">
+        <div class="d-flex align-center">
+          <v-avatar
+            :color="item.avatar ? '' : item.avatarColor"
+            :class="`v-avatar-light-bg ${item.avatarColor}--text`"
+            size="30"
+          >
+            <v-img
+              v-if="item.avatar"
+              :src="`/images/avatars/${item.avatar}`"
+            ></v-img>
+            <span
+              v-else
+              class="font-weight-medium"
+            >{{ item.fullName.slice(0,2).toUpperCase() }}</span>
+          </v-avatar>
+
+          <div class="d-flex flex-column ml-3">
+            <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.fullName }}</span>
+            <span class="text-xs">{{ item.email }}</span>
+          </div>
         </div>
-      </div>
-    </template>
+      </template>
 
-    <!-- total -->
-    <template #[`item.total`]="{item}">
-      ${{ item.total }}
-    </template>
+      <!-- total -->
+      <template #[`item.total`]="{item}">
+        ${{ item.total }}
+      </template>
 
-    <!-- Balance -->
-    <template #[`item.balance`]="{item}">
-      <span v-if="typeof item.balance === 'number'"> ${{ item.balance }}</span>
-      <v-chip
-        v-else
-        small
-        :color="chipColor[item.balance]"
-        :class="`v-chip-light-bg ${chipColor[item.balance]}--text font-weight-semibold`"
-      >
-        {{ item.balance }}
-      </v-chip>
-    </template>
-  </v-data-table>
+      <!-- Balance -->
+      <template #[`item.balance`]="{item}">
+        <span v-if="typeof item.balance === 'number'"> ${{ item.balance }}</span>
+        <v-chip
+          v-else
+          small
+          :color="chipColor[item.balance]"
+          :class="`v-chip-light-bg ${chipColor[item.balance]}--text font-weight-semibold`"
+        >
+          {{ item.balance }}
+        </v-chip>
+      </template>
+    </v-data-table>
+  </v-card>
 </template>
 
 <script>

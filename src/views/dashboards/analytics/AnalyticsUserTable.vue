@@ -1,66 +1,69 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="userListData"
-    item-key="name"
-    hide-default-footer
-    show-select
-  >
-    <!-- name -->
-    <template #[`item.fullName`]="{item}">
-      <div class="d-flex align-center">
-        <v-avatar
-          :color="item.avatar ? '' : 'primary'"
-          :class="item.avatar ? '' : 'v-avatar-light-bg primary--text'"
-          size="32"
-        >
-          <v-img
-            v-if="item.avatar"
-            :src="`/images/avatars/${item.avatar}`"
-          ></v-img>
-          <span
-            v-else
-            class="font-weight-medium"
-          >{{ item.fullName.slice(0,2).toUpperCase() }}</span>
-        </v-avatar>
-
-        <div class="d-flex flex-column ml-3">
-          <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.fullName }}</span>
-          <small>{{ item.userName }}</small>
-        </div>
-      </div>
-    </template>
-
-    <template #[`item.role`]="{item}">
-      <div class="d-flex align-center">
-        <v-avatar
-          size="30"
-          :color="role[item.role].color"
-          :class="`v-avatar-light-bg ${role[item.role].color}--text me-3`"
-        >
-          <v-icon
-            size="20"
-            :color="role[item.role].color"
+  <v-card>
+    <v-data-table
+      :headers="headers"
+      :items="userListData"
+      item-key="name"
+      hide-default-footer
+      show-select
+      class="table-rounded"
+    >
+      <!-- name -->
+      <template #[`item.fullName`]="{item}">
+        <div class="d-flex align-center">
+          <v-avatar
+            :color="item.avatar ? '' : 'primary'"
+            :class="item.avatar ? '' : 'v-avatar-light-bg primary--text'"
+            size="32"
           >
-            {{ role[item.role].icon }}
-          </v-icon>
-        </v-avatar>
-        <span>{{ item.role }}</span>
-      </div>
-    </template>
+            <v-img
+              v-if="item.avatar"
+              :src="`/images/avatars/${item.avatar}`"
+            ></v-img>
+            <span
+              v-else
+              class="font-weight-medium"
+            >{{ item.fullName.slice(0,2).toUpperCase() }}</span>
+          </v-avatar>
 
-    <!-- status -->
-    <template #[`item.status`]="{item}">
-      <v-chip
-        small
-        :color="statusColor[item.status]"
-        :class="`${statusColor[item.status]}--text`"
-        class="v-chip-light-bg font-weight-semibold text-capitalize"
-      >
-        {{ item.status }}
-      </v-chip>
-    </template>
-  </v-data-table>
+          <div class="d-flex flex-column ml-3">
+            <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.fullName }}</span>
+            <small>{{ item.userName }}</small>
+          </div>
+        </div>
+      </template>
+
+      <template #[`item.role`]="{item}">
+        <div class="d-flex align-center">
+          <v-avatar
+            size="30"
+            :color="role[item.role].color"
+            :class="`v-avatar-light-bg ${role[item.role].color}--text me-3`"
+          >
+            <v-icon
+              size="20"
+              :color="role[item.role].color"
+            >
+              {{ role[item.role].icon }}
+            </v-icon>
+          </v-avatar>
+          <span>{{ item.role }}</span>
+        </div>
+      </template>
+
+      <!-- status -->
+      <template #[`item.status`]="{item}">
+        <v-chip
+          small
+          :color="statusColor[item.status]"
+          :class="`${statusColor[item.status]}--text`"
+          class="v-chip-light-bg font-weight-semibold text-capitalize"
+        >
+          {{ item.status }}
+        </v-chip>
+      </template>
+    </v-data-table>
+  </v-card>
 </template>
 
 <script>

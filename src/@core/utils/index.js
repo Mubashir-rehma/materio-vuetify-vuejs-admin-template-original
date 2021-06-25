@@ -3,6 +3,18 @@ import { getCurrentInstance, reactive, toRefs, watch } from '@vue/composition-ap
 
 export const isObject = obj => typeof obj === 'object' && obj !== null
 
+export const isToday = date => {
+  const today = new Date()
+
+  return (
+    /* eslint-disable operator-linebreak */
+    date.getDate() === today.getDate() &&
+    date.getMonth() === today.getMonth() &&
+    date.getFullYear() === today.getFullYear()
+    /* eslint-enable */
+  )
+}
+
 export const getVuetify = () => {
   const ins = getCurrentInstance()?.proxy
 

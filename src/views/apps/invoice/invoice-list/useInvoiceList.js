@@ -6,6 +6,7 @@ import {
   mdiContentSaveOutline,
   mdiDownloadCircleOutline,
   mdiEmailOutline,
+  mdiClose,
 } from '@mdi/js'
 import { ref, watch } from '@vue/composition-api'
 
@@ -49,6 +50,7 @@ export default function useInvoicesList() {
         const { filteredData, total } = response.data
         invoiceListTable.value = filteredData
         totalInvoiceListTable.value = total
+        loading.value = false
       })
       .catch(error => {
         console.log(error)
@@ -56,10 +58,8 @@ export default function useInvoicesList() {
   }
 
   watch([searchQuery, statusFilter, options], () => {
+    // start loading
     loading.value = true
-    setTimeout(() => {
-      loading.value = false
-    }, 1000)
     fetchInvoices()
   })
 
@@ -75,7 +75,7 @@ export default function useInvoicesList() {
     if (status === 'Sent') return { variant: 'primary', icon: mdiEmailOutline }
     if (status === 'Past Due') return { variant: 'error', icon: mdiAlertCircleOutline }
 
-    return { variant: 'secondary', icon: 'XIcon' }
+    return { variant: 'secondary', icon: mdiClose }
   }
 
   const resolveClientAvatarVariant = status => {

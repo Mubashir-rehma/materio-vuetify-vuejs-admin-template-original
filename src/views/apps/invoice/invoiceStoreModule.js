@@ -12,8 +12,7 @@ export default {
           .get('/apps/invoice/invoices', { params: queryParams })
           .then(response => {
             resolve(response)
-          })
-          .catch(error => reject(error))
+          }).catch(error => reject(error))
       })
     },
   },

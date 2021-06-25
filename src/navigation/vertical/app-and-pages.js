@@ -1,4 +1,9 @@
-import { mdiFileDocumentOutline, mdiFileOutline, mdiMessageTextOutline } from '@mdi/js'
+import {
+  mdiAccountOutline,
+  mdiFileDocumentOutline,
+  mdiFileOutline,
+  mdiMessageTextOutline,
+} from '@mdi/js'
 
 export default [
   {
@@ -21,7 +26,7 @@ export default [
   },
   {
     title: 'User',
-    icon: mdiFileDocumentOutline,
+    icon: mdiAccountOutline,
     children: [
       {
         title: 'User List',

@@ -739,6 +739,17 @@ button {
   }
 }
 
+@media (max-width: 450px) {
+  .v-data-table {
+    .v-data-footer {
+      .v-data-footer__select {
+        min-width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
 //
 //* ——— Timeline ——————————————————
 //

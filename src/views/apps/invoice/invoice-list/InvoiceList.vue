@@ -3,16 +3,20 @@
     <!-- search -->
     <v-card-text class="d-flex align-center flex-wrap">
       <div class="d-flex align-center mt-4">
+        <!-- actions -->
         <v-select
+          v-model="selectedAction"
           label="Actions"
           single-line
           outlined
           dense
-          :items="['Delete','Edit','View','Send']"
+          :items="actions"
           hide-details
+          :disabled="Boolean(!selectedTableData.length)"
           class="invoice-list-actions mr-3"
         ></v-select>
 
+        <!-- create invoice -->
         <v-btn
           color="primary"
           class="mr-3"
@@ -32,23 +36,23 @@
       <div class="d-flex align-center mt-4">
         <v-text-field
           v-model="searchQuery"
-          label="Search Invoice"
           single-line
           dense
           outlined
           hide-details
+          placeholder="Search Invoice"
           class="invoice-list-search mr-3"
         ></v-text-field>
 
         <v-select
           v-model="statusFilter"
-          :items="status "
-          label="Select Status"
+          :items="statusOptions"
           single-line
           outlined
           dense
           hide-details
           clearable
+          placeholder="Select Status"
           class="invoice-list-status"
         ></v-select>
       </div>
@@ -56,12 +60,14 @@
 
     <!-- table -->
     <v-data-table
+      v-model="selectedTableData"
       :headers="tableColumns"
       :items="invoiceListTable"
       :options.sync="options"
       :server-items-length="totalInvoiceListTable"
       :loading="loading"
       show-select
+      class="text-no-wrap"
     >
       <!-- trending header -->
       <template #[`header.trending`]>
@@ -199,7 +205,7 @@
 
             <v-list>
               <v-list-item
-                v-for="(item, i) in items"
+                v-for="(item, i) in actionOptions"
                 :key="i"
                 href="javascript:void(0)"
               >
@@ -257,38 +263,58 @@ export default {
       if (store.hasModule(INVOICE_APP_STORE_MODULE_NAME)) store.unregisterModule(INVOICE_APP_STORE_MODULE_NAME)
     })
 
+    const {
+      invoiceListTable,
+      searchQuery,
+      tableColumns,
+      options,
+      statusFilter,
+      totalInvoiceListTable,
+      loading,
+
+      resolveInvoiceStatusVariantAndIcon,
+      resolveClientAvatarVariant,
+      fetchInvoices,
+    } = useInvoicesList()
+
+    // fetch invoices
+    fetchInvoices()
+
+    const selectedTableData = ref([])
+
+    const statusOptions = ref(['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due'])
+
+    const actions = ['Delete', 'Edit', 'Send']
+
+    const selectedAction = ref('')
+
+    const actionOptions = [
+      { title: 'Download', icon: mdiDownloadOutline },
+      { title: 'Edit', icon: mdiPencilOutline },
+      { title: 'Delete', icon: mdiDeleteOutline },
+      { title: 'Duplicate', icon: mdiContentCopy },
+    ]
+
     const checkType = data => {
       if (typeof data === 'number') return 'number'
       if (typeof data === 'string') return 'string'
 
       return 0
     }
-    const {
-      resolveInvoiceStatusVariantAndIcon,
-      resolveClientAvatarVariant,
-      invoiceListTable,
-      fetchInvoices,
-      searchQuery,
-      tableColumns,
-      options,
-      statusFilter,
-      totalInvoiceListTable,
-      loading,
-    } = useInvoicesList()
-
-    fetchInvoices()
-
-    const status = ref(['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due'])
 
     return {
       tableColumns,
       searchQuery,
-      status,
+      statusOptions,
       statusFilter,
       options,
       totalInvoiceListTable,
       invoiceListTable,
       loading,
+      actions,
+      selectedTableData,
+      actionOptions,
+      selectedAction,
 
       checkType,
       avatarText,
@@ -302,12 +328,6 @@ export default {
         mdiDotsVertical,
         mdiEyeOutline,
       },
-      items: [
-        { title: 'Download', icon: mdiDownloadOutline },
-        { title: 'Edit', icon: mdiPencilOutline },
-        { title: 'Delete', icon: mdiDeleteOutline },
-        { title: 'Duplicate', icon: mdiContentCopy },
-      ],
     }
   },
 }
@@ -322,7 +342,7 @@ export default {
     max-width: 10.625rem;
   }
   .invoice-list-status{
-    max-width: 10.31rem;
+    max-width: 11.3rem;
   }
 }
 </style>

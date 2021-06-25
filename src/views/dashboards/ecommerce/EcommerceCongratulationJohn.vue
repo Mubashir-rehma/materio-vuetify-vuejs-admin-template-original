@@ -5,9 +5,9 @@
         cols="8"
         sm="6"
       >
-        <v-card-title class="title d-flex flex-nowrap text-2xl">
+        <v-card-title class="greeting-title d-flex flex-nowrap text-2xl">
           <span class="text-no-wrap">Congratulations</span>
-          <span class="text-no-wrap font-weight-semibold mx-1">John!</span>
+          <span class="text-no-wrap font-weight-bold mx-1">John!</span>
           <span>🎉</span>
         </v-card-title>
 
@@ -81,7 +81,7 @@
 }
 
 @media (max-width: 400px) {
-  .title {
+  .greeting-title {
     font-size: 1.2rem !important;
   }
 }

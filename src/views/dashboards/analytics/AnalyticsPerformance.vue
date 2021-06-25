@@ -1,11 +1,12 @@
 <template>
   <v-card>
-    <v-card-title>
-      Performance
+    <v-card-title class="align-start">
+      <span>Performance</span>
       <v-spacer></v-spacer>
       <v-btn
         icon
         small
+        class="mr-n3 mt-n1"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

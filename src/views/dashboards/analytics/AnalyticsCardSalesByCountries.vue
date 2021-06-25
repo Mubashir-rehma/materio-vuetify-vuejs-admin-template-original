@@ -1,12 +1,14 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Sales by Countries</span>
+
       <v-spacer></v-spacer>
 
       <v-btn
         icon
-        class="mr-n1"
+        small
+        class="mr-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -43,7 +45,7 @@
               <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'success--text':'error--text'}`">{{ data.change.slice(1) }}</span>
             </div>
 
-            <span class="text-xs">{{ data.country }}</span>
+            <span class="text-xs text--secondary">{{ data.country }}</span>
           </div>
 
           <v-spacer></v-spacer>

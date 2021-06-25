@@ -1,10 +1,14 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Meeting Schedule</span>
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn
+        class="mr-n3 mt-n1"
+        icon
+        small
+      >
         <v-icon>
           {{ icons.mdiDotsVertical }}
         </v-icon>
@@ -12,10 +16,10 @@
     </v-card-title>
 
     <v-card-text>
-      <v-list class="pt-0 mt-n1">
+      <v-list class="pt-0">
         <v-list-item
           v-for="(data,index) in meetingSchedule"
-          :key="data.avatar"
+          :key="data.title"
           :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-4':''}`"
         >
           <v-avatar size="38">
@@ -26,10 +30,16 @@
             <p class="font-weight-medium mb-0 text--primary">
               {{ data.title }}
             </p>
-            <v-icon size="14">
-              {{ icons.mdiCalendarBlankOutline }}
-            </v-icon>
-            <span class="text-xs ml-1">{{ data.dateAndTime }}</span>
+
+            <div>
+              <v-icon
+                size="14"
+                class="mr-1"
+              >
+                {{ icons.mdiCalendarBlankOutline }}
+              </v-icon>
+              <span class="text-xs text--secondary">{{ data.dateAndTime }}</span>
+            </div>
           </div>
 
           <v-spacer></v-spacer>
@@ -87,13 +97,6 @@ export default {
         dateAndTime: '14 Aug | 04:15-05:30',
         chipText: 'Business',
         chipColor: 'primary',
-      },
-      {
-        avatar: '/images/avatars/1.png',
-        title: 'Meeting with Carl',
-        dateAndTime: '05 Oct | 10:00-12:45',
-        chipText: 'Party',
-        chipColor: 'warning',
       },
     ]
 

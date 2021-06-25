@@ -2,7 +2,7 @@
   <v-card>
     <v-card-title class="align-start flex-nowrap">
       <div>
-        <p class="mb-2 text-sm font-weight-semibold">
+        <p class="text-sm font-weight-semibold mb-2 ">
           Total Sales
         </p>
         <p class="text-no-wrap">
@@ -17,9 +17,11 @@
         </p>
       </div>
       <v-spacer></v-spacer>
+
       <v-btn
         icon
         small
+        class="mt-n1 mr-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}
@@ -78,7 +80,6 @@ export default {
           opacityFrom: 1,
           opacityTo: 0.4,
           stops: [0, 100, 100],
-          colorStops: [],
         },
       },
       stroke: {

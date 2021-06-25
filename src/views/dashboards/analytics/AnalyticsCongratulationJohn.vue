@@ -1,5 +1,5 @@
 <template>
-  <v-card class="triangle-card">
+  <v-card class="greeting-card">
     <v-row class="ma-0 pa-0">
       <v-col cols="8">
         <v-card-title class="title text-no-wrap pt-1 pl-2">
@@ -30,13 +30,13 @@
           height="180"
           width="159"
           :src="`/images/misc/triangle-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-          class="triangle-bg"
+          class="greeting-card-bg"
         ></v-img>
         <v-img
           contain
           height="108"
           max-width="83"
-          class="analytics-trophy"
+          class="greeting-card-trophy"
           src="/images/misc/trophy.png"
         ></v-img>
       </v-col>
@@ -44,28 +44,18 @@
   </v-card>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style lang="scss" scoped>
-.triangle-card {
+.greeting-card {
   position: relative;
-  .triangle-bg {
+  .greeting-card-bg {
     position: absolute;
     bottom: 0;
     right: 0;
   }
-  .analytics-trophy {
+  .greeting-card-trophy {
     position: absolute;
     bottom: 10%;
     right: 8%;
-  }
-}
-
-@media (max-width: 400px) {
-  .title {
-    font-size: 1.2rem !important;
   }
 }
 </style>

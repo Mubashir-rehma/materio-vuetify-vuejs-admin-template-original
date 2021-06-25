@@ -4,13 +4,13 @@
       cols="12"
       md="4"
     >
-      <demo-congratulation-john></demo-congratulation-john>
+      <analytics-congratulation-john></analytics-congratulation-john>
     </v-col>
     <v-col
       cols="12"
       md="8"
     >
-      <demo-statistics-card></demo-statistics-card>
+      <analytics-statistics-card></analytics-statistics-card>
     </v-col>
 
     <v-col
@@ -18,7 +18,7 @@
       sm="6"
       md="4"
     >
-      <demo-weekly-overview></demo-weekly-overview>
+      <analytics-weekly-overview></analytics-weekly-overview>
     </v-col>
 
     <v-col
@@ -26,7 +26,7 @@
       md="4"
       sm="6"
     >
-      <demo-card-total-earning></demo-card-total-earning>
+      <analytics-card-total-earning></analytics-card-total-earning>
     </v-col>
 
     <v-col
@@ -98,26 +98,26 @@
       cols="12"
       md="4"
     >
-      <demo-performance></demo-performance>
+      <analytics-performance></analytics-performance>
     </v-col>
     <v-col
       cols="12"
       md="8"
     >
-      <demo-card-deposit-and-withdraw></demo-card-deposit-and-withdraw>
+      <analytics-card-deposit-and-withdraw></analytics-card-deposit-and-withdraw>
     </v-col>
 
     <v-col
       cols="12"
       md="4"
     >
-      <demo-card-sales-by-countries></demo-card-sales-by-countries>
+      <analytics-card-sales-by-countries></analytics-card-sales-by-countries>
     </v-col>
     <v-col
       cols="12"
       md="8"
     >
-      <demo-user-table></demo-user-table>
+      <analytics-user-table></analytics-user-table>
     </v-col>
   </v-row>
 </template>
@@ -129,28 +129,28 @@ import StatisticsCardVertical from '@/@core/components/statistics-card/Statistic
 import StatisticsCardSessionBarChart from '@core/components/statistics-card/StatisticsCardSessionBarChart.vue'
 
 // demos
-import DemoCongratulationJohn from './demos/DemoCongratulationJohn.vue'
-import DemoStatisticsCard from './demos/DemoStatisticsCard.vue'
-import DemoCardTotalEarning from './demos/DemoCardTotalEarning.vue'
-import DemoPerformance from './demos/DemoPerformance.vue'
-import DemoCardDepositAndWithdraw from './demos/DemoCardDepositAndWithdraw.vue'
-import DemoCardSalesByCountries from './demos/DemoCardSalesByCountries.vue'
-import DemoUserTable from './demos/DemoUserTable.vue'
-import DemoWeeklyOverview from './demos/DemoWeeklyOverview.vue'
+import AnalyticsCongratulationJohn from './AnalyticsCongratulationJohn.vue'
+import AnalyticsStatisticsCard from './AnalyticsStatisticsCard.vue'
+import AnalyticsCardTotalEarning from './AnalyticsCardTotalEarning.vue'
+import AnalyticsPerformance from './AnalyticsPerformance.vue'
+import AnalyticsCardDepositAndWithdraw from './AnalyticsCardDepositAndWithdraw.vue'
+import AnalyticsCardSalesByCountries from './AnalyticsCardSalesByCountries.vue'
+import AnalyticsUserTable from './AnalyticsUserTable.vue'
+import AnalyticsWeeklyOverview from './AnalyticsWeeklyOverview.vue'
 
 export default {
   components: {
     StatisticsCardProfitLineChart,
     StatisticsCardVertical,
     StatisticsCardSessionBarChart,
-    DemoCongratulationJohn,
-    DemoStatisticsCard,
-    DemoCardTotalEarning,
-    DemoPerformance,
-    DemoCardDepositAndWithdraw,
-    DemoCardSalesByCountries,
-    DemoUserTable,
-    DemoWeeklyOverview,
+    AnalyticsCongratulationJohn,
+    AnalyticsStatisticsCard,
+    AnalyticsCardTotalEarning,
+    AnalyticsPerformance,
+    AnalyticsCardDepositAndWithdraw,
+    AnalyticsCardSalesByCountries,
+    AnalyticsUserTable,
+    AnalyticsWeeklyOverview,
   },
   setup() {
     const profitLineChart = {

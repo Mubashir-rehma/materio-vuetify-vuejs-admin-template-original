@@ -5,7 +5,7 @@
       md="8"
       class="align-self-end"
     >
-      <demo-congratulation-john></demo-congratulation-john>
+      <ecommerce-congratulation-john></ecommerce-congratulation-john>
     </v-col>
     <v-col
       cols="12"
@@ -41,7 +41,7 @@
       cols="12"
       md="8"
     >
-      <demo-total-profit></demo-total-profit>
+      <ecommerce-total-profit></ecommerce-total-profit>
     </v-col>
 
     <v-col
@@ -50,7 +50,7 @@
     >
       <v-row class="match-height">
         <v-col cols="12">
-          <demo-statistics-total-sales></demo-statistics-total-sales>
+          <ecommerce-statistics-total-sales></ecommerce-statistics-total-sales>
         </v-col>
         <v-col
           cols="12"
@@ -82,7 +82,7 @@
       cols="12"
       md="4"
     >
-      <demo-card-transaction></demo-card-transaction>
+      <ecommerce-card-transaction></ecommerce-card-transaction>
     </v-col>
 
     <v-col
@@ -121,7 +121,7 @@
           cols="12"
           class="mt-3"
         >
-          <demo-new-visitor-chart></demo-new-visitor-chart>
+          <ecommerce-new-visitor-chart></ecommerce-new-visitor-chart>
         </v-col>
       </v-row>
     </v-col>
@@ -130,21 +130,21 @@
       cols="12"
       md="4"
     >
-      <demo-card-website-statistics></demo-card-website-statistics>
+      <ecommerce-card-website-statistics></ecommerce-card-website-statistics>
     </v-col>
 
     <v-col
       cols="12"
       md="8"
     >
-      <demo-user-table></demo-user-table>
+      <ecommerce-user-table></ecommerce-user-table>
     </v-col>
 
     <v-col
       cols="12"
       md="4"
     >
-      <demo-card-meeting-schedule></demo-card-meeting-schedule>
+      <ecommerce-card-meeting-schedule></ecommerce-card-meeting-schedule>
     </v-col>
   </v-row>
 </template>
@@ -157,28 +157,28 @@ import StatisticsCardLineChart from '@core/components/statistics-card/Statistics
 import StatisticsCardRadialBarChart from '@core/components/statistics-card/StatisticsCardRadialBarChart.vue'
 
 // demos
-import DemoCongratulationJohn from './demos/DemoCongratulationJohn.vue'
-import DemoTotalProfit from './demos/DemoTotalProfit.vue'
-import DemoStatisticsTotalSales from './demos/DemoStatisticsTotalSales.vue'
-import DemoCardTransaction from './demos/DemoCardTransaction.vue'
-import DemoNewVisitorChart from './demos/DemoNewVisitorChart.vue'
-import DemoCardWebsiteStatistics from './demos/DemoCardWebsiteStatistics.vue'
-import DemoUserTable from './demos/DemoUserTable.vue'
-import DemoCardMeetingSchedule from './demos/DemoCardMeetingSchedule.vue'
+import EcommerceCongratulationJohn from './EcommerceCongratulationJohn.vue'
+import EcommerceTotalProfit from './EcommerceTotalProfit.vue'
+import EcommerceStatisticsTotalSales from './EcommerceStatisticsTotalSales.vue'
+import EcommerceCardTransaction from './EcommerceCardTransaction.vue'
+import EcommerceNewVisitorChart from './EcommerceNewVisitorChart.vue'
+import EcommerceCardWebsiteStatistics from './EcommerceCardWebsiteStatistics.vue'
+import EcommerceUserTable from './EcommerceUserTable.vue'
+import EcommerceCardMeetingSchedule from './EcommerceCardMeetingSchedule.vue'
 
 export default {
   components: {
     StatisticsCardVertical,
     StatisticsCardLineChart,
     StatisticsCardRadialBarChart,
-    DemoCongratulationJohn,
-    DemoTotalProfit,
-    DemoStatisticsTotalSales,
-    DemoCardTransaction,
-    DemoNewVisitorChart,
-    DemoCardWebsiteStatistics,
-    DemoUserTable,
-    DemoCardMeetingSchedule,
+    EcommerceCongratulationJohn,
+    EcommerceTotalProfit,
+    EcommerceStatisticsTotalSales,
+    EcommerceCardTransaction,
+    EcommerceNewVisitorChart,
+    EcommerceCardWebsiteStatistics,
+    EcommerceUserTable,
+    EcommerceCardMeetingSchedule,
   },
   setup() {
     const transactionsOptions = {

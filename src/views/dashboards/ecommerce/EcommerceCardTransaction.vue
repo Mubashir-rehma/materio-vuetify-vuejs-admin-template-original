@@ -6,7 +6,7 @@
       <v-btn
         icon
         small
-        class="mr-n2"
+        class="mr-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -40,12 +40,14 @@
             <h4 class="font-weight-semibold text-no-wrap">
               {{ data.title }}
             </h4>
-            <span class="text-xs text-no-wrap">{{ data.subtitle }}</span>
+            <span class="text-xs text--secondary text-no-wrap">{{ data.subtitle }}</span>
           </div>
           <v-spacer></v-spacer>
 
           <div class="d-flex align-center">
-            <span class="text-base font-weight-semibold text--primary mr-1">{{ data.transaction }}</span>
+            <h4 class="text-base font-weight-semibold mr-1">
+              {{ data.transaction }}
+            </h4>
             <v-icon
               size="20"
               :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"

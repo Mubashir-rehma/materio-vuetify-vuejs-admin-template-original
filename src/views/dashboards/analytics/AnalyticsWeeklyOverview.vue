@@ -15,6 +15,7 @@
         </v-icon>
       </v-btn>
     </v-card-title>
+
     <v-card-text>
       <!-- Chart -->
       <vue-apex-charts
@@ -24,9 +25,12 @@
       ></vue-apex-charts>
 
       <div class="d-flex align-center">
-        <span class="text--primary text-2xl font-weight-semibold mr-4">45%</span>
+        <h3 class="text-2xl font-weight-semibold mr-4">
+          45%
+        </h3>
         <span>Your sales perfomance in 45% 🤩 better compare to last month</span>
       </div>
+
       <v-btn
         block
         color="primary"
@@ -52,9 +56,18 @@ export default {
   },
   setup() {
     const $vuetify = getVuetify()
+    const customChartColor = '#f5f5f5'
 
     const chartOptions = {
-      colors: ['#f5f5f5', '#f5f5f5', '#f5f5f5', '#f5f5f5', $vuetify.theme.currentTheme.primary, '#f5f5f5', '#f5f5f5'],
+      colors: [
+        customChartColor,
+        customChartColor,
+        customChartColor,
+        customChartColor,
+        $vuetify.theme.currentTheme.primary,
+        customChartColor,
+        customChartColor,
+      ],
       chart: {
         type: 'bar',
         toolbar: {
@@ -66,7 +79,7 @@ export default {
         bar: {
           columnWidth: '40%',
           distributed: true,
-          borderRadius: 10,
+          borderRadius: 8,
           startingShape: 'rounded',
           endingShape: 'rounded',
         },
@@ -95,7 +108,7 @@ export default {
       },
       yaxis: {
         show: true,
-        tickAmount: 1,
+        tickAmount: 4,
         labels: {
           offsetY: 3,
           formatter: value => `$${kFormatter(value, 0)}`,

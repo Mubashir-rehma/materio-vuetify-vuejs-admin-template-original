@@ -1,11 +1,14 @@
 <template>
   <v-card>
-    <v-card-title>
-      Activity Timeline
+    <v-card-title class="align-start">
+      <span>Activity Timeline</span>
+
       <v-spacer></v-spacer>
+
       <v-btn
         icon
         small
+        class="mt-n1 mr-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

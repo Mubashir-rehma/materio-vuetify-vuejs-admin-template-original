@@ -1,10 +1,14 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       Upgrade Your Plan
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn
+        icon
+        small
+        class="mt-n1 mr-n3"
+      >
         <v-icon>
           {{ icons.mdiDotsVertical }}
         </v-icon>
@@ -137,6 +141,7 @@ export default {
   padding: 0.563rem 0.688rem;
   border-radius: 4px;
   margin: 0.875rem 0 1.125rem 0;
+
   .banner-avatar {
     border: solid 1px var(--v-primary-base);
     border-radius: 4px;

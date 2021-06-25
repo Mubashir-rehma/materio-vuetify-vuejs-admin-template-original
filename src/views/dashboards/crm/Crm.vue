@@ -44,7 +44,7 @@
         order="5"
         order-md="3"
       >
-        <demo-statistics-card></demo-statistics-card>
+        <crm-statistics-card></crm-statistics-card>
       </v-col>
 
       <v-col
@@ -54,7 +54,7 @@
         order="3"
         order-md="4"
       >
-        <demo-total-sales></demo-total-sales>
+        <crm-total-sales></crm-total-sales>
       </v-col>
 
       <v-col
@@ -64,7 +64,7 @@
         order="4"
         order-md="5"
       >
-        <demo-revenue-report></demo-revenue-report>
+        <crm-revenue-report></crm-revenue-report>
       </v-col>
 
       <v-col
@@ -73,7 +73,7 @@
         sm="12"
         order="6"
       >
-        <demo-sales-overview></demo-sales-overview>
+        <crm-sales-overview></crm-sales-overview>
       </v-col>
     </v-row>
 
@@ -82,14 +82,14 @@
         cols="12"
         sm="6"
       >
-        <demo-activity-timeline></demo-activity-timeline>
+        <crm-activity-timeline></crm-activity-timeline>
       </v-col>
       <v-col
         cols="12"
         sm="6"
         md="4"
       >
-        <demo-weekly-sales></demo-weekly-sales>
+        <crm-weekly-sales></crm-weekly-sales>
       </v-col>
 
       <v-col
@@ -131,7 +131,7 @@
         sm="6"
         md="4"
       >
-        <demo-card-upgrade-plan></demo-card-upgrade-plan>
+        <crm-card-upgrade-plan></crm-card-upgrade-plan>
       </v-col>
 
       <v-col
@@ -139,7 +139,7 @@
         md="4"
         sm="6"
       >
-        <demo-card-meeting-schedule></demo-card-meeting-schedule>
+        <crm-card-meeting-schedule></crm-card-meeting-schedule>
       </v-col>
 
       <v-col
@@ -147,7 +147,7 @@
         md="4"
         sm="6"
       >
-        <demo-card-developer-meetup></demo-card-developer-meetup>
+        <crm-card-developer-meetup></crm-card-developer-meetup>
       </v-col>
     </v-row>
   </div>
@@ -162,30 +162,31 @@ import StatisticsCardVertical from '@/@core/components/statistics-card/Statistic
 import { mdiLabelVariantOutline } from '@mdi/js'
 
 // demos
-import DemoStatisticsCard from './demos/DemoStatisticsCard.vue'
-import DemoTotalSales from './demos/DemoTotalSales.vue'
-import DemoRevenueReport from './demos/DemoRevenueReport.vue'
-import DemoSalesOverview from './demos/DemoSalesOverview.vue'
-import DemoActivityTimeline from './demos/DemoActivityTimeline.vue'
-import DemoWeeklySales from './demos/DemoWeeklySales.vue'
-import DemoCardUpgradePlan from './demos/DemoCardUpgradePlan.vue'
-import DemoCardMeetingSchedule from './demos/DemoCardMeetingSchedule.vue'
-import DemoCardDeveloperMeetup from './demos/DemoCardDeveloperMeetup.vue'
+import CrmStatisticsCard from './CrmStatisticsCard.vue'
+import CrmTotalSales from './CrmTotalSales.vue'
+import CrmRevenueReport from './CrmRevenueReport.vue'
+import CrmSalesOverview from './CrmSalesOverview.vue'
+import CrmActivityTimeline from './CrmActivityTimeline.vue'
+import CrmWeeklySales from './CrmWeeklySales.vue'
+import CrmCardUpgradePlan from './CrmCardUpgradePlan.vue'
+import CrmCardMeetingSchedule from './CrmCardMeetingSchedule.vue'
+import CrmCardDeveloperMeetup from './CrmCardDeveloperMeetup.vue'
 
 export default {
   components: {
     StatisticsCardWithImages,
     StatisticsCardAreaChart,
     StatisticsCardVertical,
-    DemoStatisticsCard,
-    DemoTotalSales,
-    DemoRevenueReport,
-    DemoSalesOverview,
-    DemoActivityTimeline,
-    DemoWeeklySales,
-    DemoCardUpgradePlan,
-    DemoCardMeetingSchedule,
-    DemoCardDeveloperMeetup,
+
+    CrmStatisticsCard,
+    CrmTotalSales,
+    CrmRevenueReport,
+    CrmSalesOverview,
+    CrmActivityTimeline,
+    CrmWeeklySales,
+    CrmCardUpgradePlan,
+    CrmCardMeetingSchedule,
+    CrmCardDeveloperMeetup,
   },
   setup() {
     // card with images
@@ -205,7 +206,7 @@ export default {
       chipText: 'Last Week',
       chipColor: 'secondary',
       avatar: '/images/avatars/10.png',
-      avatarWidth: '90',
+      avatarWidth: '89',
     }
 
     const growthAreaChart = {

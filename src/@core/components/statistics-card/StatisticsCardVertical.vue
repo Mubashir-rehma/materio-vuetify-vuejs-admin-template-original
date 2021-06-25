@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="justify-space-between">
+    <v-card-title class="align-start">
       <v-avatar
         :color="color"
         size="38"
@@ -14,11 +14,12 @@
           {{ icon }}
         </v-icon>
       </v-avatar>
+      <v-spacer></v-spacer>
 
       <v-btn
         small
         icon
-        class="mr-n3"
+        class="mr-n3 mt-n1"
       >
         <v-icon>
           {{ mdiDotsVertical }}

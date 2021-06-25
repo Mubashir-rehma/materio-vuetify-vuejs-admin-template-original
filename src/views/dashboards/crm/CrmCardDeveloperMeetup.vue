@@ -6,7 +6,7 @@
       src="/images/pages/developerMeetup.jpg"
     ></v-img>
 
-    <v-card-text class="d-flex mt-5">
+    <v-card-text class="d-flex align-center mt-5">
       <v-avatar
         size="54"
         rounded
@@ -14,9 +14,9 @@
         class="v-avatar-light-bg primary--text mt-1"
       >
         <div>
-          <p class="font-weight-medium mb-0">
+          <span class="font-weight-medium">
             Jan
-          </p>
+          </span>
           <p class="text-xl primary--text font-weight-bold mb-0">
             24
           </p>
@@ -24,9 +24,9 @@
       </v-avatar>
 
       <div class="ml-3">
-        <p class="text-base font-weight-semibold text--primary mb-0">
+        <h4 class="text-base font-weight-semibold">
           Developer Meetup
-        </p>
+        </h4>
         <p class="text-xs mb-0">
           The WordPress open source, free software project is the community behind the…
         </p>
@@ -86,9 +86,11 @@
         </v-col>
       </v-row>
     </v-card-text>
+
     <v-card-text>
       <v-divider></v-divider>
     </v-card-text>
+
     <v-card-text>
       <div
         v-for="(data,index) in developerMeetup"

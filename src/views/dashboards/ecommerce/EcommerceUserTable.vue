@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     v-model="selected"
-    :headers="headers"
+    :headers="tableColumnHeaders"
     :items="userlist"
     item-key="name"
     show-select
@@ -9,30 +9,30 @@
     class="elevation-1"
   >
     <!-- trending header -->
-    <template #header.trending="{}">
+    <template #[`header.status`]>
       <v-icon size="22">
         {{ icons.mdiTrendingUp }}
       </v-icon>
     </template>
 
     <!-- trending  -->
-    <template #item.trending="{item}">
+    <template #[`item.status`]="{item}">
       <v-avatar
         size="30"
-        :color="item.trendingColor"
-        :class="`v-avatar-light-bg ${item.trendingColor}--text`"
+        :color="item.statusColor"
+        :class="`v-avatar-light-bg ${item.statusColor}--text`"
       >
         <v-icon
           size="18"
-          :color="item.trendingColor"
+          :color="item.statusColor"
         >
-          {{ item.trending }}
+          {{ item.status }}
         </v-icon>
       </v-avatar>
     </template>
 
     <!-- client -->
-    <template #item.client="{item}">
+    <template #[`item.client`]="{item}">
       <div class="d-flex align-center">
         <v-avatar
           :color="item.avatar ? '' : item.avatarColor"
@@ -57,12 +57,12 @@
     </template>
 
     <!-- total -->
-    <template #item.total="{item}">
+    <template #[`item.total`]="{item}">
       ${{ item.total }}
     </template>
 
     <!-- Balance -->
-    <template #item.balance="{item}">
+    <template #[`item.balance`]="{item}">
       <span v-if="typeof item.balance === 'number'"> ${{ item.balance }}</span>
       <v-chip
         v-else
@@ -89,13 +89,13 @@ export default {
       Unpaid: 'error',
     }
 
-    const headers = [
+    const tableColumnHeaders = [
       {
         text: '#ID',
         align: 'start',
         value: 'id',
       },
-      { text: 'Trending', value: 'trending' },
+      { text: 'Status', value: 'status' },
       { text: 'CLIENT', value: 'client' },
       { text: 'TOTAL', value: 'total' },
       { text: 'BALANCE', value: 'balance' },
@@ -104,8 +104,8 @@ export default {
     const userlist = [
       {
         id: '#2798',
-        trending: mdiEmailOutline,
-        trendingColor: 'primary',
+        status: mdiEmailOutline,
+        statusColor: 'primary',
         avatar: '1.png',
         avatarColor: 'primary',
         fullName: 'Joseph Wheeler',
@@ -115,8 +115,8 @@ export default {
       },
       {
         id: '#1304',
-        trending: mdiChartTimelineVariant,
-        trendingColor: 'warning',
+        status: mdiChartTimelineVariant,
+        statusColor: 'warning',
         avatar: '2.png',
         avatarColor: 'primary',
         fullName: 'May Lloyd',
@@ -126,8 +126,8 @@ export default {
       },
       {
         id: '#7900',
-        trending: mdiChartTimelineVariant,
-        trendingColor: 'warning',
+        status: mdiChartTimelineVariant,
+        statusColor: 'warning',
         avatar: '3.png',
         avatarColor: 'primary',
         fullName: 'William Mckinney',
@@ -137,8 +137,8 @@ export default {
       },
       {
         id: '#63036',
-        trending: mdiArrowDown,
-        trendingColor: 'info',
+        status: mdiArrowDown,
+        statusColor: 'info',
         avatarColor: 'primary',
         fullName: 'Isabel Briggs',
         email: 'wafe@wavkes.net',
@@ -147,8 +147,8 @@ export default {
       },
       {
         id: '#33052',
-        trending: mdiEmailOutline,
-        trendingColor: 'primary',
+        status: mdiEmailOutline,
+        statusColor: 'primary',
         avatar: '5.png',
         avatarColor: 'primary',
         fullName: 'Warren Clarke',
@@ -158,8 +158,8 @@ export default {
       },
       {
         id: '#23579',
-        trending: mdiArrowDown,
-        trendingColor: 'info',
+        status: mdiArrowDown,
+        statusColor: 'info',
         avatar: '4.png',
         avatarColor: 'primary',
         fullName: 'Adeline Bennett',
@@ -169,8 +169,8 @@ export default {
       },
       {
         id: '#81618',
-        trending: mdiChartTimelineVariant,
-        trendingColor: 'warning',
+        status: mdiChartTimelineVariant,
+        statusColor: 'warning',
         fullName: 'Abbie Webster',
         avatarColor: 'success',
         email: 'noj@ej.org',
@@ -181,7 +181,7 @@ export default {
 
     return {
       selected,
-      headers,
+      tableColumnHeaders,
       userlist,
       chipColor,
       icons: {

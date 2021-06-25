@@ -7,7 +7,7 @@
       <v-btn
         icon
         small
-        class="mr-n2"
+        class="mr-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -38,8 +38,10 @@
         :class="`statistics-table d-flex align-center pt-3 ${index > 0 ? 'mt-3':''}`"
       >
         <span :class="`badge-sm ${data.color}`"></span>
-        <span class="ml-2">{{ data.title }}</span>
+        <span class="text--primary ml-2">{{ data.title }}</span>
+
         <v-spacer></v-spacer>
+
         <span class="font-weight-semibold text--primary mr-6">{{ data.traffic }}</span>
         <span class="font-weight-semibold text--primary mr-1">{{ data.percentage.slice(1) }}</span>
         <v-icon
@@ -57,11 +59,15 @@
 import { mdiDotsVertical, mdiChevronUp, mdiChevronDown } from '@mdi/js'
 import VueApexCharts from 'vue-apexcharts'
 
+import { getVuetify } from '@core/utils'
+
 export default {
   components: {
     VueApexCharts,
   },
   setup() {
+    const $vuetify = getVuetify()
+
     const chartOptions = {
       chart: {
         type: 'bar',
@@ -75,7 +81,7 @@ export default {
       grid: {
         show: false,
       },
-      colors: ['#9155fd'],
+      colors: [$vuetify.theme.currentTheme.primary],
       plotOptions: {
         bar: {
           horizontal: false,

@@ -34,12 +34,15 @@
 import VueApexCharts from 'vue-apexcharts'
 
 import { mdiChevronUp } from '@mdi/js'
+import { getVuetify } from '@core/utils'
 
 export default {
   components: {
     VueApexCharts,
   },
   setup() {
+    const $vuetify = getVuetify()
+
     const chartSeries = [85, 20, 30, 50]
     const chartOptions = {
       chart: {
@@ -61,7 +64,12 @@ export default {
           bottom: 10,
         },
       },
-      colors: ['#9155fd', '#d4d5d7', '#ffb400', '#ff4c51'],
+      colors: [
+        $vuetify.theme.currentTheme.primary,
+        '#E9EAEC',
+        $vuetify.theme.currentTheme.warning,
+        $vuetify.theme.currentTheme.error,
+      ],
       plotOptions: {
         pie: {
           donut: {

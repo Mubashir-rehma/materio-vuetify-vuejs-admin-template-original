@@ -103,7 +103,7 @@ export default {
       {
         avatar: '/images/pages/aviato.png',
         title: 'Aviato',
-        subtitle: 'HTML & Anguler',
+        subtitle: 'HTML & angular',
         earning: '$1,2450.80',
         progress: '30',
         color: 'secondary',

@@ -11,6 +11,7 @@
       <v-btn
         icon
         small
+        class="mt-n8 mr-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

@@ -268,6 +268,16 @@ button {
   }
 }
 
+.v-badge--dot {
+  .v-badge__badge {
+    height: 10px !important;
+    width: 10px !important;
+    &::after {
+      border-width: 2px !important;
+    }
+  }
+}
+
 // Vuetify Fix: Calendar default color should be primary but they add accent class
 .v-date-picker-table {
   .v-date-picker-table__current,

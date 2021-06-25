@@ -1,0 +1,18 @@
+{
+    "VAvatar w/ Image": {
+        "prefix": "avatar-w-img",
+        "body": [
+            "<v-avatar>",
+            "  <v-img src=\"/images/avatars/1.png\"></v-img>",
+            "</v-avatar>"
+        ],
+        "description": "VAvatar w/ Image"
+    },
+    "VIcon": {
+        "prefix": "v-icon",
+        "body": [
+            "<v-icon>{{ icons. }}</v-icon>"
+        ],
+        "description": "VIcon"
+    }
+}

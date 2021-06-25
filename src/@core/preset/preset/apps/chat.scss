@@ -1,1 +1,52 @@
+@import '~@core/preset/preset/mixins.scss';
 
+.ps-chat-left-sidebar {
+  height: calc(100% - 75px) !important;
+}
+
+// ————————————————————————————————————
+//* ——— Chat left Sidebar
+// ————————————————————————————————————
+
+.chat-left-sidebar {
+  .chat-contact {
+    .chat-meta {
+      .v-badge__badge {
+        height: 18px;
+        min-width: 18px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    &.active-chat-contact {
+      p {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+@include theme--child(chat-left-sidebar) using ($material) {
+  .chat-contact {
+    &:hover {
+      background-color: rgba(map-deep-get($material, 'primary-shade'), map-deep-get($material, 'states', 'hover'));
+    }
+  }
+}
+
+// ————————————————————————————————————
+//* ——— Chat Content Area
+// ————————————————————————————————————
+
+@include theme--child(chat-content-area) using ($material) {
+  background-color: rgba(map-deep-get($material, 'primary-shade'), 0.04);
+}
+
+.chat-content-area {
+  .ps-chat-log {
+    height: calc(100% - 160px);
+  }
+}

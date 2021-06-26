@@ -1,6 +1,14 @@
 import store from '@/store'
-// eslint-disable-next-line object-curly-newline
-import { mdiAccountOutline, mdiCogOutline, mdiDatabaseOutline, mdiDnsOutline, mdiPencilOutline } from '@mdi/js'
+import {
+  mdiAccountCheckOutline,
+  mdiAccountOutline,
+  mdiAccountPlusOutline,
+  mdiAccountRemoveOutline,
+  mdiCogOutline,
+  mdiDatabaseOutline,
+  mdiDnsOutline,
+  mdiPencilOutline,
+} from '@mdi/js'
 import { ref, watch } from '@vue/composition-api'
 
 export default function useUsersList() {
@@ -12,7 +20,12 @@ export default function useUsersList() {
     { text: 'ROLE', value: 'role' },
     { text: 'PLAN', value: 'currentPlan' },
     { text: 'STATUS', value: 'status' },
-    { text: 'Actions', value: 'actions', align: 'center' },
+    {
+      text: 'Actions',
+      value: 'actions',
+      align: 'center',
+      sortable: false,
+    },
   ]
 
   const searchQuery = ref('')
@@ -22,6 +35,7 @@ export default function useUsersList() {
   const totalUserListTable = ref(0)
   const loading = ref(false)
   const options = ref({})
+  const userTotalLocal = ref([])
 
   // fetch data
   const fetchUsers = () => {
@@ -34,10 +48,14 @@ export default function useUsersList() {
         plan: planFilter.value,
       })
       .then(response => {
-        const { filteredData, total } = response.data
+        const { filteredData, total, userTotal } = response.data
 
         userListTable.value = filteredData
         totalUserListTable.value = total
+        userTotalLocal.value = userTotal
+
+        // remove loading state
+        loading.value = false
       })
       .catch(error => {
         console.log(error)
@@ -46,10 +64,6 @@ export default function useUsersList() {
 
   watch([searchQuery, roleFilter, planFilter, statusFilter, options], () => {
     loading.value = true
-    setTimeout(() => {
-      loading.value = false
-    }, 1000)
-
     fetchUsers()
   })
 
@@ -85,6 +99,15 @@ export default function useUsersList() {
     return 'primary'
   }
 
+  const resolveUserTotalIcon = total => {
+    if (total === 'Total Users') return { icon: mdiAccountOutline, color: 'primary' }
+    if (total === 'Paid Users') return { icon: mdiAccountPlusOutline, color: 'error' }
+    if (total === 'Active Users') return { icon: mdiAccountCheckOutline, color: 'success' }
+    if (total === 'Pending Users') return { icon: mdiAccountRemoveOutline, color: 'warning' }
+
+    return { icon: mdiAccountOutline, color: 'primary' }
+  }
+
   return {
     userListTable,
     tableColumns,
@@ -95,9 +118,11 @@ export default function useUsersList() {
     totalUserListTable,
     loading,
     options,
+    userTotalLocal,
     fetchUsers,
     resolveUserRoleVariant,
     resolveUserRoleIcon,
     resolveUserStatusVariant,
+    resolveUserTotalIcon,
   }
 }

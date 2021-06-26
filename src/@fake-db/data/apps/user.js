@@ -708,7 +708,16 @@ mock.onGet('/apps/user/users').reply(config => {
     filteredData = filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage)
   }
 
-  return [200, { filteredData, total }]
+  // user data total
+
+  const userTotal = [
+    { title: 'Total Users', total: '21,459' },
+    { title: 'Paid Users', total: '4,567' },
+    { title: 'Active Users', total: '19,860' },
+    { title: 'Pending Users', total: '237' },
+  ]
+
+  return [200, { filteredData, total, userTotal }]
 })
 
 // ------------------------------------------------

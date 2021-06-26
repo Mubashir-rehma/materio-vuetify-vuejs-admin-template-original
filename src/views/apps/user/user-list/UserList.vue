@@ -7,10 +7,44 @@
       :plan-options="planOptions"
     ></user-list-add-new>
 
+    <!-- user total card -->
+    <v-row class="mb-5">
+      <v-col
+        v-for="total in userTotalLocal"
+        :key="total.total"
+        cols="12"
+        sm="6"
+        md="3"
+      >
+        <v-card>
+          <v-card-text class="d-flex align-center justify-space-between pa-4">
+            <div>
+              <h2 class="font-weight-semibold mb-1">
+                {{ total.total }}
+              </h2>
+              <span>{{ total.title }}</span>
+            </div>
+
+            <v-avatar
+              :color="resolveUserTotalIcon(total.title).color"
+              :class="`v-avatar-light-bg ${resolveUserTotalIcon(total.title).color}--text`"
+            >
+              <v-icon
+                size="25"
+                :color="resolveUserTotalIcon(total.title).color"
+              >
+                {{ resolveUserTotalIcon(total.title).icon }}
+              </v-icon>
+            </v-avatar>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
     <!-- list filters -->
     <v-card>
-      <v-card-title class="text-base pb-0">
-        Search Filter
+      <v-card-title>
+        Search &amp; Filter
       </v-card-title>
       <v-row class="px-2 ma-0">
         <!-- role filter -->
@@ -72,35 +106,41 @@
 
       <!-- actions -->
       <v-card-text class="d-flex align-center flex-wrap mb-1">
-        <v-select
-          :items="actionList"
+        <!-- search -->
+        <v-text-field
+          v-model="searchQuery"
+          placeholder="Search"
           outlined
-          dense
-          placeholder="Actions"
           hide-details
-          class="user-actions mt-4 mt-sm-1 me-1"
-        ></v-select>
+          dense
+          class="user-search mt-4 mt-sm-1 mr-3"
+        >
+        </v-text-field>
 
         <v-spacer></v-spacer>
 
         <div class="d-flex align-center flex-wrap">
-          <!-- search -->
-          <v-text-field
-            v-model="searchQuery"
-            placeholder="Search"
-            outlined
-            hide-details
-            dense
-            class="user-search me-4 mt-4 mt-sm-1"
-          ></v-text-field>
-
           <v-btn
             color="primary"
-            class="mt-4 mt-sm-1"
+            class="mt-4 mt-sm-1 me-3"
             @click.stop="isAddNewUserSidebarActive = !isAddNewUserSidebarActive"
           >
             <v-icon>{{ icons.mdiPlus }}</v-icon>
             <span>Add New User</span>
+          </v-btn>
+
+          <v-btn
+            color="secondary"
+            outlined
+            class="mt-4 mt-sm-1"
+          >
+            <v-icon
+              size="17"
+              class="mr-1"
+            >
+              {{ icons.mdiExportVariant }}
+            </v-icon>
+            <span>Export</span>
           </v-btn>
         </div>
       </v-card-text>
@@ -233,7 +273,15 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { mdiSquareEditOutline, mdiDotsVertical, mdiPlus, mdiFileDocumentOutline, mdiDeleteOutline } from '@mdi/js'
+import {
+  mdiSquareEditOutline,
+  mdiDotsVertical,
+  mdiPlus,
+  mdiFileDocumentOutline,
+  mdiDeleteOutline,
+  mdiExportVariant,
+  mdiAccountOutline,
+} from '@mdi/js'
 import store from '@/store'
 import { onUnmounted, ref } from '@vue/composition-api'
 
@@ -259,8 +307,6 @@ export default {
       if (store.hasModule(USER_APP_STORE_MODULE_NAME)) store.unregisterModule(USER_APP_STORE_MODULE_NAME)
     })
 
-    const isAddNewUserSidebarActive = ref(false)
-
     const {
       userListTable,
       tableColumns,
@@ -271,16 +317,19 @@ export default {
       totalUserListTable,
       loading,
       options,
+      userTotalLocal,
+
       fetchUsers,
       resolveUserRoleVariant,
       resolveUserRoleIcon,
       resolveUserStatusVariant,
+      resolveUserTotalIcon,
     } = useUsersList()
 
     // fetch user data
     fetchUsers()
 
-    const actionList = ['Delete', 'Edit', 'View', 'Send']
+    const isAddNewUserSidebarActive = ref(false)
 
     const roleOptions = [
       { title: 'Admin', value: 'admin' },
@@ -311,17 +360,19 @@ export default {
       planFilter,
       statusFilter,
       totalUserListTable,
-      actionList,
       roleOptions,
       planOptions,
       statusOptions,
       loading,
       options,
+      userTotalLocal,
       isAddNewUserSidebarActive,
+
       avatarText,
       resolveUserRoleVariant,
       resolveUserRoleIcon,
       resolveUserStatusVariant,
+      resolveUserTotalIcon,
 
       // icons
       icons: {
@@ -330,6 +381,8 @@ export default {
         mdiDotsVertical,
         mdiDeleteOutline,
         mdiPlus,
+        mdiExportVariant,
+        mdiAccountOutline,
       },
     }
   },

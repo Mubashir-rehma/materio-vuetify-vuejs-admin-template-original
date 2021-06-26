@@ -8,9 +8,6 @@
   background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
 }
 
-.bg-card {
-}
-
 @include theme--child(bg-card) using ($material) {
   background-color: map-deep-get($material, 'cards');
 }
@@ -23,19 +20,55 @@
 //* ——— Layout
 // ————————————————————————————————————
 
-// Set height for contents like apps to don't increase the height for longer content and stick to fixed height
-.max-h-content-container {
-  // 48px => Footer
-  // 1.72rem => .app-content-container padding
-  height: calc(100vh - 48px - (1.72rem * 2));
-
-  .v-app-bar ~ .v-main & {
-    // 48px => Footer
-    // 1.72rem => .app-content-container padding
-    // 64px => AppBar
-    height: calc(100vh - 48px - (1.72rem * 2) - 64px);
+// #region `max-h-content-container` class
+.vertical-nav {
+  // Set height for contents like apps to don't increase the height for longer content and stick to fixed height
+  .v-main {
+    // If AppBar & Footer is present
+    &[style='padding: 64px 0px 48px 260px;'] {
+      .max-h-content-container {
+        height: calc(100vh - 64px - 48px - (1.72rem * 2));
+      }
+    }
+    // If AppBar is present and Footer is not present
+    &[style='padding: 64px 0px 0px 260px;'] {
+      .max-h-content-container {
+        height: calc(100vh - 64px - (1.72rem * 2));
+      }
+    }
+    // If AppBar is not present and Footer is present
+    &[style='padding: 0px 0px 48px 260px;'] {
+      .max-h-content-container {
+        height: calc(100vh - 48px - (1.72rem * 2));
+      }
+    }
+    // If AppBar & footer both are not present
+    &[style='padding: 0px 0px 0px 260px;'] {
+      .max-h-content-container {
+        height: calc(100vh - (1.72rem * 2));
+      }
+    }
   }
 }
+
+.horizontal-nav {
+  // Set height for contents like apps to don't increase the height for longer content and stick to fixed height
+  .v-main {
+    // If AppBar+SystemBar & Footer are present
+    &[style='padding: 132px 0px 48px;'] {
+      .max-h-content-container {
+        height: calc(100vh - 132px - 48px - (1.72rem * 2));
+      }
+    }
+    // If AppBar+SystemBar are present & Footer is not present
+    &[style='padding: 132px 0px 0px;'] {
+      .max-h-content-container {
+        height: calc(100vh - 132px - (1.72rem * 2));
+      }
+    }
+  }
+}
+// #endregion
 
 // ————————————————————————————————————
 //* ——— Grid

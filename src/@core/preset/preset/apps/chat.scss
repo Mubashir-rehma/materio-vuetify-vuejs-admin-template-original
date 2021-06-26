@@ -83,6 +83,27 @@
 
 .chat-content-area {
   .ps-chat-log {
-    height: calc(100% - 160px);
+    height: calc(100% - 140px);
+  }
+
+  .chat-log {
+    .chat-group {
+      .chat-body {
+        max-width: 50%;
+      }
+
+      .chat-content {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+
+        &.chat-left {
+          border-top-right-radius: 6px;
+        }
+
+        &.chat-right {
+          border-top-left-radius: 6px;
+        }
+      }
+    }
   }
 }

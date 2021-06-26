@@ -9,6 +9,24 @@
 }
 
 // ————————————————————————————————————
+//* ——— Layout
+// ————————————————————————————————————
+
+// Set height for contents like apps to don't increase the height for longer content and stick to fixed height
+.max-h-content-container {
+  // 48px => Footer
+  // 1.72rem => .app-content-container padding
+  height: calc(100vh - 48px - (1.72rem * 2));
+
+  .v-app-bar ~ .v-main & {
+    // 48px => Footer
+    // 1.72rem => .app-content-container padding
+    // 64px => AppBar
+    height: calc(100vh - 48px - (1.72rem * 2) - 64px);
+  }
+}
+
+// ————————————————————————————————————
 //* ——— Grid
 // ————————————————————————————————————
 

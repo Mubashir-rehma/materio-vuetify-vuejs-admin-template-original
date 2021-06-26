@@ -1,5 +1,5 @@
 <template>
-  <v-card class="h-full position-relative overflow-hidden text-sm app-chat">
+  <v-card class="max-h-content-container app-chat position-relative overflow-hidden text-sm">
     <!-- Navigation Drawer: Left Sidebar -->
     <v-navigation-drawer
       v-model="isLeftSidebarOpen"
@@ -110,13 +110,16 @@
           :options="perfectScrollbarOptions"
           class="ps-chat-log h-full"
         >
-          <h1>Chat Log</h1>
+          <chat-log
+            :chat-data="activeChat"
+            :profile-user-avatar="profileUserDataMinimal.avatar"
+          ></chat-log>
         </perfect-scrollbar>
 
         <v-text-field
           placeholder="Type your message"
           solo
-          class="pa-5 flex-grow-0"
+          class="pb-5 px-5 flex-grow-0"
           hide-details
           height="50"
           background-color="white"
@@ -183,18 +186,24 @@ import { ref, onUnmounted, nextTick } from '@vue/composition-api'
 import { until, invoke } from '@vueuse/core'
 import { getVuetify } from '@core/utils'
 import store from '@/store'
-import ChatLeftSidebarContent from './ChatLeftSidebarContent.vue'
-import ChatUserProfileSidebarContent from './ChatUserProfileSidebarContent.vue'
-import ChatActiveChatUserProfileSidebarContent from './ChatActiveChatUserProfileSidebarContent.vue'
 import chatStoreModule from './chatStoreModule'
 import useChat from './useChat'
 
+// Local Components
+import ChatLeftSidebarContent from './ChatLeftSidebarContent.vue'
+import ChatUserProfileSidebarContent from './ChatUserProfileSidebarContent.vue'
+import ChatActiveChatUserProfileSidebarContent from './ChatActiveChatUserProfileSidebarContent.vue'
+import ChatLog from './ChatLog.vue'
+
 export default {
   components: {
+    PerfectScrollbar,
+    ChatLog,
+
+    // Local Components
     ChatLeftSidebarContent,
     ChatUserProfileSidebarContent,
     ChatActiveChatUserProfileSidebarContent,
-    PerfectScrollbar,
   },
   setup() {
     const { resolveAvatarBadgeVariant } = useChat()

@@ -28,7 +28,7 @@
           v-for="msgData in msgGrp.messages"
           :key="msgData.time"
           class="chat-content py-3 px-4 mb-2 elevation-1 mb-0"
-          :class="msgGrp.senderId === formattedChatData.contact.id ? 'white chat-left' : 'primary white--text chat-right'"
+          :class="msgGrp.senderId === formattedChatData.contact.id ? 'bg-card chat-left' : 'primary white--text chat-right'"
         >
           {{ msgData.msg }}
         </p>

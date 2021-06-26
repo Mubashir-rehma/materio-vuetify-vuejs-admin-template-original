@@ -65,7 +65,7 @@
         <span
           class="text-xs text--disabled"
           :class="rootThemeClasses"
-        >Personal Information</span>
+        >PERSONAL INFORMATION</span>
         <div class="d-flex align-center my-3">
           <v-icon class="mr-2">
             {{ icons.mdiEmailOutline }}
@@ -91,7 +91,7 @@
         <span
           class="text-xs text--disabled"
           :class="rootThemeClasses"
-        >Options</span>
+        >OPTIONS</span>
         <div class="d-flex align-center my-3">
           <v-icon class="mr-2">
             {{ icons.mdiBookmarkOutline }}

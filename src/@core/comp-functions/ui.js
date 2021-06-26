@@ -6,7 +6,6 @@ export const useResponsiveLeftSidebar = ({ sidebarWidth }) => {
   const $vuetify = getVuetify()
 
   const setInitialValue = () => {
-    console.log('setting initial value...')
     if ($vuetify.breakpoint.smAndDown) isLeftSidebarOpen.value = false
     else isLeftSidebarOpen.value = true
   }

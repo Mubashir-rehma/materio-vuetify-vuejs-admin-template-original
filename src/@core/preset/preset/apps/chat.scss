@@ -1,4 +1,5 @@
 @import '~@core/preset/preset/mixins.scss';
+@import '~vuetify/src/styles/styles.sass';
 
 .app-chat {
   .user-status-badge {
@@ -90,6 +91,9 @@
     .chat-group {
       .chat-body {
         max-width: 50%;
+        @media #{map-get($display-breakpoints, 'sm-and-down')} {
+          max-width: 75%;
+        }
       }
 
       .chat-content {

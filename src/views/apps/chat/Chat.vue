@@ -58,12 +58,17 @@
         <div class="d-flex align-center justify-space-between px-5 py-4">
           <!-- Sidebar Toggler, Avatar & Name -->
           <div class="d-flex align-center">
-            <v-icon
-              v-show="!isLeftSidebarOpen"
-              @click="isLeftSidebarOpen = true"
+            <v-btn
+              icon
+              class="mr-1 d-inline-block d-md-none"
             >
-              {{ icons.mdiMenu }}
-            </v-icon>
+              <v-icon
+                v-show="!isLeftSidebarOpen"
+                @click="isLeftSidebarOpen = true"
+              >
+                {{ icons.mdiMenu }}
+              </v-icon>
+            </v-btn>
             <v-badge
               bottom
               overlap
@@ -89,13 +94,13 @@
 
           <!-- Active Chat Actions -->
           <div>
-            <v-icon class="mr-2 cursor-pointer">
+            <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiPhone }}
             </v-icon>
-            <v-icon class="mr-2 cursor-pointer">
+            <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiVideoOutline }}
             </v-icon>
-            <v-icon class="mr-2 cursor-pointer">
+            <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiMagnify }}
             </v-icon>
             <v-icon class="cursor-pointer">
@@ -107,6 +112,7 @@
         <v-divider></v-divider>
 
         <perfect-scrollbar
+          ref="refChatLogPS"
           :options="perfectScrollbarOptions"
           class="ps-chat-log h-full"
         >
@@ -116,27 +122,39 @@
           ></chat-log>
         </perfect-scrollbar>
 
-        <v-text-field
-          placeholder="Type your message"
-          solo
-          class="pb-5 px-5 flex-grow-0"
-          hide-details
-          height="50"
-          background-color="white"
-        >
-          <template #append>
-            <v-icon>{{ icons.mdiMicrophone }}</v-icon>
-            <v-icon class="ml-2 mr-3">
-              {{ icons.mdiAttachment }}
-            </v-icon>
-            <v-btn
-              color="primary"
-              elevation="0"
-            >
-              Send
-            </v-btn>
-          </template>
-        </v-text-field>
+        <v-form @submit.prevent="sendMessage">
+          <v-text-field
+            :key="activeChat.contact.id"
+            v-model="chatInputMessage"
+            placeholder="Type your message"
+            solo
+            class="pb-5 px-5 flex-grow-0"
+            hide-details
+            height="50"
+            autofocus
+          >
+            <template #append>
+              <v-btn icon>
+                <v-icon>{{ icons.mdiMicrophone }}</v-icon>
+              </v-btn>
+              <v-btn
+                icon
+                class="mr-3"
+              >
+                <v-icon>
+                  {{ icons.mdiAttachment }}
+                </v-icon>
+              </v-btn>
+              <v-btn
+                color="primary"
+                elevation="0"
+                type="submit"
+              >
+                Send
+              </v-btn>
+            </template>
+          </v-text-field>
+        </v-form>
       </div>
 
       <!-- Start Conversation -->
@@ -146,7 +164,7 @@
       >
         <v-avatar
           size="109"
-          class="elevation-3 mb-6 white"
+          class="elevation-3 mb-6 bg-card"
         >
           <v-icon
             size="50"
@@ -156,7 +174,7 @@
           </v-icon>
         </v-avatar>
         <p
-          class="mb-0 px-6 py-1 font-weight-medium text-lg elevation-3 rounded-xl text--primary white"
+          class="mb-0 px-6 py-1 font-weight-medium text-lg elevation-3 rounded-xl text--primary bg-card"
           :class="[{ 'cursor-pointer': $vuetify.breakpoint.smAndDown }]"
           @click="startConversation"
         >

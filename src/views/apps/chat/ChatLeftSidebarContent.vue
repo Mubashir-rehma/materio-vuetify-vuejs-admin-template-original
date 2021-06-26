@@ -28,6 +28,12 @@
         dense
         :prepend-inner-icon="icons.mdiMagnify"
       ></v-text-field>
+      <v-icon
+        class="d-inline-flex d-md-none ml-1"
+        @click="$emit('close-left-sidebar')"
+      >
+        {{ icons.mdiClose }}
+      </v-icon>
     </div>
 
     <v-divider></v-divider>
@@ -45,7 +51,7 @@
         :key="`chat-${contact.id}`"
         :user="contact"
         is-chat-contact
-        :class="{'gradient-primary active-chat-contact': activeChatContactId === contact.id}"
+        :class="{'bg-gradient-primary active-chat-contact': activeChatContactId === contact.id}"
         @click="$emit('open-chat', contact.id)"
       />
 
@@ -64,7 +70,7 @@
 </template>
 
 <script>
-import { mdiMagnify } from '@mdi/js'
+import { mdiMagnify, mdiClose } from '@mdi/js'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import { ref, computed } from '@vue/composition-api'
 import ChatContact from './ChatContact.vue'
@@ -125,6 +131,7 @@ export default {
       // Icons
       icons: {
         mdiMagnify,
+        mdiClose,
       },
     }
   },

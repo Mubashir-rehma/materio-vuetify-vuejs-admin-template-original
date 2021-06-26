@@ -55,6 +55,7 @@
           outlined
           auto-grow
           class="mt-2"
+          rows="4"
         ></v-textarea>
       </div>
 

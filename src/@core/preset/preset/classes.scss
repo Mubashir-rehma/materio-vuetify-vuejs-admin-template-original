@@ -4,8 +4,19 @@
 //* ——— Color
 // ————————————————————————————————————
 
-.gradient-primary {
+.bg-gradient-primary {
   background: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
+}
+
+.bg-card {
+}
+
+@include theme--child(bg-card) using ($material) {
+  background-color: map-deep-get($material, 'cards');
+}
+
+@include theme--child(bg-body) using ($material) {
+  background-color: map-deep-get($material, 'background');
 }
 
 // ————————————————————————————————————

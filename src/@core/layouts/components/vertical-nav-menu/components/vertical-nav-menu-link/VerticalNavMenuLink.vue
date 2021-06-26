@@ -3,7 +3,7 @@
     v-if="canViewVerticalNavMenuLink(item)"
     v-bind="navLinkProps(item)"
     class="vertical-nav-menu-link"
-    active-class="gradient-primary"
+    active-class="bg-gradient-primary"
   >
     <v-list-item-icon>
       <v-icon :class="{'alternate-icon-small': !item.icon}">

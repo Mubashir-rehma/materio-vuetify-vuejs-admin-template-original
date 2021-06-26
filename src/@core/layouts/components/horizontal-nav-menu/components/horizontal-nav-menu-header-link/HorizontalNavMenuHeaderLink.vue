@@ -7,7 +7,7 @@
     :to="{ name: item.to }"
     large
     class="horizontal-nav-menu-header-link"
-    active-class="gradient-primary header-link-active"
+    active-class="bg-gradient-primary header-link-active"
   >
     <v-icon
       dark

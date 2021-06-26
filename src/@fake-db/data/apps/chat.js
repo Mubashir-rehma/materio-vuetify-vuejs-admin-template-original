@@ -134,7 +134,7 @@ const data = {
           },
         },
         {
-          message: 'Can I get details of my last transaction I made last month?',
+          message: 'Can I get details of my last transaction I made last month? 🤔',
           time: 'Mon Dec 11 2018 07:46:10 GMT+0000 (GMT)',
           senderId: 11,
           feedback: {
@@ -201,7 +201,7 @@ const data = {
           },
         },
         {
-          message: 'It should be Bootstrap 4 compatible.',
+          message: 'It should be Bootstrap 5 compatible.',
           time: 'Mon Dec 10 2018 07:45:55 GMT+0000 (GMT)',
           senderId: 1,
           feedback: {
@@ -221,7 +221,7 @@ const data = {
           },
         },
         {
-          message: 'Modern admin is the responsive bootstrap 4 admin template.!',
+          message: 'Vuexy admin is the responsive bootstrap 5 admin template.!',
           time: 'Mon Dec 10 2018 07:46:05 GMT+0000 (GMT)',
           senderId: 11,
           feedback: {
@@ -231,7 +231,7 @@ const data = {
           },
         },
         {
-          message: 'Looks clean and fresh UI.',
+          message: 'Looks clean and fresh UI. 😍',
           time: 'Mon Dec 10 2018 07:46:23 GMT+0000 (GMT)',
           senderId: 1,
           feedback: {
@@ -261,7 +261,7 @@ const data = {
           },
         },
         {
-          message: 'Thanks, from ThemeForest.',
+          message: 'Thanks, From our official site  😇',
           time: 'Mon Dec 10 2018 07:46:53 GMT+0000 (GMT)',
           senderId: 11,
           feedback: {
@@ -351,6 +351,11 @@ mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
     message,
     time: new Date(),
     senderId,
+    feedback: {
+      isSent: true,
+      isDelivered: false,
+      isSeen: false,
+    },
   }
 
   // If there's new chat for user create one

@@ -34,11 +34,12 @@ $customizer-form-icons: true;
 $color-pack: false;
 $border-radius-root: 5px;
 
-//
 //* ——— Override Light Theme's Pure Black to Primary Shade ——————————————————
 //
 // ? This will just update the black to `$primary-shade--light`
 //
+
+// #region Override Light Theme's Pure Black to Primary Shade
 
 $material-light: map-deep-merge(
   $material-light,
@@ -100,11 +101,13 @@ $material-light: map-deep-merge(
     'text-color': $primary-shade--light,
   )
 );
+// #endregion
 
 //
 //* ——— Override Values of Light Theme ——————————————————
 //
 
+// #region Override Light Theme
 $material-light: map-deep-merge(
   $material-light,
   (
@@ -120,7 +123,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -153,12 +156,15 @@ $material-light: map-deep-merge(
     'shadow-color': $shadow-color--light,
   )
 );
+// #endregion
 
 //
 //* ——— Override Dark Theme's Pure White to Primary Shade ——————————————————
 //
 // ? This will just update the white to `$primary-shade--dark`
 //
+
+// #region Override Dark Theme's Pure Black to Primary Shade
 
 $material-dark: map-deep-merge(
   $material-dark,
@@ -232,9 +238,13 @@ $material-dark: map-deep-merge(
   )
 );
 
+// #endregion
+
 //
 //* ——— Override Values of Dark Theme ——————————————————
 //
+
+// #region Override Dark Theme
 
 $material-dark: map-deep-merge(
   $material-dark,
@@ -250,10 +260,12 @@ $material-dark: map-deep-merge(
       // ! Value of `map-deep-get($material-dark, 'text-fields', 'filled')`
         'solo-inverted': rgba($primary-shade--dark, 0.03)
     ),
+    // ! Value of `map-deep-get($material-dark, 'cards')`
+      'navigation-drawer': #312d4b,
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
@@ -297,6 +309,8 @@ $material-dark: map-deep-merge(
     'shadow-color': $shadow-color--dark
   )
 );
+
+// #endregion
 
 // $shadow-key-umbra: (
 //   0: (

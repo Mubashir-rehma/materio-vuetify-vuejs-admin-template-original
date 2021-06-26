@@ -11,7 +11,7 @@
     "VIcon": {
         "prefix": "v-icon",
         "body": [
-            "<v-icon>{{ icons. }}</v-icon>"
+            "<v-icon>{{ icons.mdi${1} }}</v-icon>"
         ],
         "description": "VIcon"
     }

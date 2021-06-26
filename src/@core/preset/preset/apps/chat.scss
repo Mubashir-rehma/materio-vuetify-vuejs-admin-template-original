@@ -1,5 +1,18 @@
 @import '~@core/preset/preset/mixins.scss';
 
+.app-chat {
+  .user-status-badge {
+    &.v-badge--bordered .v-badge__badge {
+      height: 12px !important;
+      width: 12px !important;
+      border-radius: 6px;
+      &::after {
+        transform: none;
+      }
+    }
+  }
+}
+
 .ps-chat-left-sidebar {
   height: calc(100% - 75px) !important;
 }
@@ -14,6 +27,7 @@
       .v-badge__badge {
         height: 18px;
         min-width: 18px;
+        margin-top: 2px;
       }
     }
 
@@ -34,6 +48,28 @@
     &:hover {
       background-color: rgba(map-deep-get($material, 'primary-shade'), map-deep-get($material, 'states', 'hover'));
     }
+  }
+}
+
+// ————————————————————————————————————
+//* ——— User Profile Sidebar Content
+// ————————————————————————————————————
+
+.user-profile-sidebar-content {
+  .user-status-badge-lg {
+    &.v-badge--bordered .v-badge__badge {
+      height: 16px !important;
+      width: 16px !important;
+      border-radius: 8px;
+      min-width: unset;
+      &::after {
+        transform: none;
+      }
+    }
+  }
+
+  .ps-chat-user-profile-sidebar-content {
+    height: calc(100% - 218px);
   }
 }
 

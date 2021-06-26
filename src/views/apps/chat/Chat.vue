@@ -1,5 +1,6 @@
 <template>
-  <v-card class="h-full position-relative overflow-hidden text-sm">
+  <v-card class="h-full position-relative overflow-hidden text-sm app-chat">
+    <!-- Navigation Drawer: Left Sidebar -->
     <v-navigation-drawer
       v-model="isLeftSidebarOpen"
       width="374"
@@ -10,8 +11,39 @@
         :chats-contacts="chatsContacts"
         :contacts="contacts"
         :active-chat-contact-id="activeChat.contact ? activeChat.contact.id : null"
+        :profile-user-minimal-data="profileUserDataMinimal"
+        @close-left-sidebar="isLeftSidebarOpen = false"
         @open-chat="openChatOfContact"
+        @open-chat-user-profile-sidebar-content="isUserProfileSidebarOpen = true"
       ></chat-left-sidebar-content>
+    </v-navigation-drawer>
+
+    <!-- Navigation Drawer: User Profile -->
+    <v-navigation-drawer
+      v-model="isUserProfileSidebarOpen"
+      width="374"
+      absolute
+      temporary
+    >
+      <chat-user-profile-sidebar-content
+        :profile-user-data="profileUserData"
+        @close-user-profile-sidebar="isUserProfileSidebarOpen = false"
+      ></chat-user-profile-sidebar-content>
+    </v-navigation-drawer>
+
+    <!-- Navigation Drawer: Active Chat -->
+    <v-navigation-drawer
+      v-model="isActiveChatUserProfileSidebarOpen"
+      width="374"
+      absolute
+      temporary
+      right
+    >
+      <chat-active-chat-user-profile-sidebar-content
+        v-if="activeChat.contact"
+        :profile-user-data="activeChat.contact"
+        @close-active-chat-user-profile-sidebar="isActiveChatUserProfileSidebarOpen = false"
+      ></chat-active-chat-user-profile-sidebar-content>
     </v-navigation-drawer>
     <div
       class="chat-content-area h-full d-flex flex-column"
@@ -32,12 +64,24 @@
             >
               {{ icons.mdiMenu }}
             </v-icon>
-            <v-avatar
-              size="38"
-              class="mr-3"
+            <v-badge
+              bottom
+              overlap
+              dot
+              bordered
+              :color="resolveAvatarBadgeVariant(activeChat.contact.status)"
+              offset-x="11"
+              offset-y="11"
+              class="mr-3 user-status-badge"
             >
-              <v-img :src="activeChat.contact.avatar"></v-img>
-            </v-avatar>
+              <v-avatar
+                size="38"
+                class="cursor-pointer"
+                @click="isActiveChatUserProfileSidebarOpen = true"
+              >
+                <v-img :src="activeChat.contact.avatar"></v-img>
+              </v-avatar>
+            </v-badge>
             <p class="mb-0 text--primary font-weight-medium">
               {{ activeChat.contact.fullName }}
             </p>
@@ -136,17 +180,24 @@ import {
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
 import { ref, onUnmounted, nextTick } from '@vue/composition-api'
+import { until, invoke } from '@vueuse/core'
 import { getVuetify } from '@core/utils'
 import store from '@/store'
 import ChatLeftSidebarContent from './ChatLeftSidebarContent.vue'
+import ChatUserProfileSidebarContent from './ChatUserProfileSidebarContent.vue'
+import ChatActiveChatUserProfileSidebarContent from './ChatActiveChatUserProfileSidebarContent.vue'
 import chatStoreModule from './chatStoreModule'
+import useChat from './useChat'
 
 export default {
   components: {
     ChatLeftSidebarContent,
+    ChatUserProfileSidebarContent,
+    ChatActiveChatUserProfileSidebarContent,
     PerfectScrollbar,
   },
   setup() {
+    const { resolveAvatarBadgeVariant } = useChat()
     const $vuetify = getVuetify()
 
     const { isLeftSidebarOpen, contentStyles } = useResponsiveLeftSidebar({ sidebarWidth: 374 })
@@ -178,13 +229,16 @@ export default {
     // ? Will contain id, name and avatar & status
     const profileUserDataMinimal = ref({})
 
-    const shallShowUserProfileSidebar = ref(false)
-    const showUserProfileSidebar = () => {
+    const isUserProfileSidebarOpen = ref(false)
+
+    // * One time watch for fetching user profile sidebar data
+    invoke(async () => {
+      await until(isUserProfileSidebarOpen).toBe(true)
+
       store.dispatch('app-chat/getProfileUser').then(response => {
         profileUserData.value = response.data
-        shallShowUserProfileSidebar.value = true
       })
-    }
+    })
 
     // ————————————————————————————————————
     //* ——— Chats & Contacts
@@ -269,6 +323,12 @@ export default {
       })
     }
 
+    // ————————————————————————————————————
+    //* ——— Active Chat
+    // ————————————————————————————————————
+
+    const isActiveChatUserProfileSidebarOpen = ref(false)
+
     // Open Sidebar in smAndDown when "start conversation" is clicked
     const startConversation = () => {
       if ($vuetify.breakpoint.mdAndUp) return
@@ -282,6 +342,9 @@ export default {
     }
 
     return {
+      // useChat
+      resolveAvatarBadgeVariant,
+
       // Layout
       isLeftSidebarOpen,
       contentStyles,
@@ -290,7 +353,9 @@ export default {
       refChatLogPS,
 
       // User Profile Sidebar
-      showUserProfileSidebar,
+      profileUserDataMinimal,
+      profileUserData,
+      isUserProfileSidebarOpen,
 
       // Chat & Contacts
       chatsContacts,
@@ -301,6 +366,9 @@ export default {
       chatInputMessage,
       openChatOfContact,
       sendMessage,
+
+      // Active Chat
+      isActiveChatUserProfileSidebarOpen,
 
       // startConversation
       startConversation,

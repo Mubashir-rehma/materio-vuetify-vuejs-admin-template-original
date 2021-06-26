@@ -6,16 +6,21 @@
         overlap
         dot
         bordered
-        color="success"
+        :color="resolveAvatarBadgeVariant(profileUserMinimalData.status)"
         offset-x="11"
         offset-y="11"
-        class="mr-3"
+        class="mr-3 user-status-badge"
       >
-        <v-avatar size="2.375rem">
-          <v-img src="/images/avatars/1.png"></v-img>
+        <v-avatar
+          size="2.375rem"
+          class="cursor-pointer"
+          @click="$emit('open-chat-user-profile-sidebar-content', true); $vuetify.breakpoint.smAndDown && $emit('close-left-sidebar')"
+        >
+          <v-img :src="profileUserMinimalData.avatar"></v-img>
         </v-avatar>
       </v-badge>
       <v-text-field
+        v-model="searchQuery"
         placeholder="search..."
         hide-details
         outlined
@@ -36,7 +41,7 @@
         Chats
       </p>
       <chat-contact
-        v-for="contact in chatsContacts"
+        v-for="contact in filteredChatsContacts"
         :key="`chat-${contact.id}`"
         :user="contact"
         is-chat-contact
@@ -49,7 +54,7 @@
         Contacts
       </p>
       <chat-contact
-        v-for="contact in contacts"
+        v-for="contact in filteredContacts"
         :key="contact.id"
         :user="contact"
         @click="$emit('open-chat', contact.id)"
@@ -61,7 +66,9 @@
 <script>
 import { mdiMagnify } from '@mdi/js'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
+import { ref, computed } from '@vue/composition-api'
 import ChatContact from './ChatContact.vue'
+import useChat from './useChat'
 
 export default {
   components: {
@@ -81,15 +88,37 @@ export default {
       type: Number,
       default: null,
     },
+    profileUserMinimalData: {
+      type: Object,
+      required: true,
+    },
   },
-  setup() {
+  setup(props) {
+    const { resolveAvatarBadgeVariant } = useChat()
+
+    // Search Query
+    const searchQuery = ref('')
+
+    const searchFilterFunction = contact => contact.fullName.toLowerCase().includes(searchQuery.value.toLowerCase())
+    const filteredChatsContacts = computed(() => props.chatsContacts.filter(searchFilterFunction))
+    const filteredContacts = computed(() => props.contacts.filter(searchFilterFunction))
+
     // Perfect scrollbar options
     const perfectScrollbarOptions = {
       maxScrollbarLength: 60,
       wheelPropagation: false,
+      wheelSpeed: 0.7,
     }
 
     return {
+      // Use Chat
+      resolveAvatarBadgeVariant,
+
+      // Search
+      searchQuery,
+      filteredChatsContacts,
+      filteredContacts,
+
       // Perfect Scrollbar options
       perfectScrollbarOptions,
 

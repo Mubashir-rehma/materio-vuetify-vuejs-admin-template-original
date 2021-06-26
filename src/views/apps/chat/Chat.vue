@@ -87,13 +87,16 @@
                 <v-img :src="activeChat.contact.avatar"></v-img>
               </v-avatar>
             </v-badge>
-            <p class="mb-0 text--primary font-weight-medium">
-              {{ activeChat.contact.fullName }}
-            </p>
+            <div class="d-flex flex-column">
+              <p class="mb-0 text--primary font-weight-medium">
+                {{ activeChat.contact.fullName }}
+              </p>
+              <span class="text--disabled text-xs">{{ activeChat.contact.role }}</span>
+            </div>
           </div>
 
           <!-- Active Chat Actions -->
-          <div>
+          <div class="d-flex align-baseline">
             <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiPhone }}
             </v-icon>

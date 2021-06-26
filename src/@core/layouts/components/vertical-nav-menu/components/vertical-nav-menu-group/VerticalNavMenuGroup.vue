@@ -141,7 +141,7 @@ export default {
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
 
-@include theme(vertical-nav-menu-group) using ($material) {
+.vertical-nav-menu-group {
   &.v-list-group--active > .v-list-group__header > .v-list-group__header__append-icon .v-icon {
     transform: none;
   }
@@ -150,6 +150,12 @@ export default {
     transform: rotate(-90deg);
   }
 
+  & & .v-list-group__items .v-list-item__icon {
+    visibility: hidden;
+  }
+}
+
+@include theme(vertical-nav-menu-group) using ($material) {
   &.vertical-nav-menu-group-active > .v-list-group__header {
     background-color: rgba(map-deep-get($material, 'text', 'primary'), map-deep-get($material, 'states', 'selected'));
   }

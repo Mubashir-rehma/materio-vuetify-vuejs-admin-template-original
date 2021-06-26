@@ -40,7 +40,7 @@
 
     <perfect-scrollbar
       :options="perfectScrollbarOptions"
-      class="ps-chat-left-sidebar py-7 px-3"
+      class="ps-chat-left-sidebar pt-7 pb-3 px-3"
     >
       <!-- Chats -->
       <p class="font-weight-medium text-xl primary--text ml-3">

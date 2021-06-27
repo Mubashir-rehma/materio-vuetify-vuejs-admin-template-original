@@ -3,7 +3,7 @@
     <!-- user project list -->
     <v-card class="mb-7">
       <v-card-title>
-        User's Project List
+        Project List
       </v-card-title>
 
       <v-data-table
@@ -24,7 +24,7 @@
               <p class="font-weight-medium text--primary mb-n1">
                 {{ item.name }}
               </p>
-              <span class="text-xs">{{ item.project }}</span>
+              <span class="text-xs text--disabled">{{ item.project }}</span>
             </div>
           </div>
         </template>
@@ -35,7 +35,7 @@
           <v-progress-linear
             height="6"
             rounded
-            class="mt-1"
+            class="project-progress mt-1"
             :color="resolveUserProgressVariant(item.progress)"
             :value="item.progress"
           ></v-progress-linear>
@@ -55,94 +55,88 @@
           class="timeline-custom-dense timeline-custom-dots"
         >
           <v-timeline-item
-            small
             color="error"
+            small
           >
             <div class="d-flex justify-space-between">
-              <div>
-                <p class="mb-0 text--primary font-weight-medium">
-                  User login
-                </p>
-                <p class="mb-0">
-                  User login at 2:12pm
-                </p>
-              </div>
-              <span class="text-xs text-no-wrap">12 min ago</span>
+              <p class="text--primary font-weight-medium mb-1">
+                User login
+              </p>
+              <small>12 min ago</small>
             </div>
+            <p class="mb-0">
+              User login at 2:12pm
+            </p>
           </v-timeline-item>
 
           <v-timeline-item
-            small
             color="primary"
+            small
           >
             <div class="d-flex justify-space-between">
+              <p class="text--primary font-weight-medium mb-1">
+                Meeting with john
+              </p>
+              <small>45 min ago</small>
+            </div>
+
+            <p class="mb-1">
+              React Project meeting with john @10:15am
+            </p>
+
+            <div class="d-flex align-center mt-3">
+              <v-avatar
+                size="40"
+                class="mr-2"
+              >
+                <v-img src="/images/avatars/2.png"></v-img>
+              </v-avatar>
               <div>
-                <p class="mb-0 text--primary font-weight-medium">
-                  Meeting with john
+                <p class="text--primary font-weight-medium mb-0">
+                  Leona Watkins (Client)
                 </p>
-                <p class="mb-0">
-                  React Project meeting with john @10:15am
-                </p>
-                <span class="d-flex align-center mt-2">
-                  <div class="d-flex align-center">
-                    <v-avatar
-                      size="40"
-                      class="mr-2"
-                    >
-                      <v-img src="/images/avatars/2.png"></v-img>
-                    </v-avatar>
-                    <div>
-                      <p class="text--primary font-weight-medium mb-0">Leona Watkins (Client)</p>
-                      <span>CEO of pixinvent</span>
-                    </div>
-                  </div>
-                </span>
+                <span>CEO of pixinvent</span>
               </div>
-              <span class="text-xs text-no-wrap">45 min ago</span>
             </div>
           </v-timeline-item>
 
           <v-timeline-item
-            small
             color="info"
+            small
           >
             <div class="d-flex justify-space-between">
-              <div>
-                <p class="mb-0 text--primary font-weight-medium">
-                  Create a new react project for client
-                </p>
-                <p class="mb-0">
-                  Add files to new design folder
-                </p>
-              </div>
-              <span class="text-xs text-no-wrap">2 day ago</span>
+              <p class="text--primary font-weight-medium mb-1">
+                Create a new react project for client
+              </p>
+              <small>2 day ago</small>
             </div>
+            <p class="mb-0">
+              Add files to new design folder
+            </p>
           </v-timeline-item>
 
           <v-timeline-item
-            small
             color="success"
+            small
           >
             <div class="d-flex justify-space-between">
-              <div>
-                <p class="mb-0 text--primary font-weight-semibold">
-                  Create invoices for client
-                </p>
-                <p class="mb-0">
-                  Create new invoices and send to Leona Watkins
-                </p>
-                <span class="d-flex align-center mt-2">
-                  <v-icon
-                    color="error"
-                    class="mr-1"
-                  >
-                    {{ icons.mdiFilePdf }}
-                  </v-icon>
-                  <span class="text--primary font-weight-semibold text-sm">invoice.pdf</span>
-                </span>
-              </div>
-              <span class="text-xs text-no-wrap">12 min ago</span>
+              <p class="mb-0 text--primary font-weight-semibold">
+                Create invoices for client
+              </p>
+              <small>12 min ago</small>
             </div>
+            <p class="mb-0">
+              Create new invoices and send to Leona Watkins
+            </p>
+            <span class="d-flex align-center mt-2">
+              <v-icon
+                color="error"
+                class="mr-1"
+              >
+                {{ icons.mdiFilePdf }}
+              </v-icon>
+              <span class="text--primary font-weight-semibold text-sm">invoice.pdf</span>
+            </span>
           </v-timeline-item>
         </v-timeline>
       </v-card-text>
@@ -163,10 +157,11 @@ export default {
       {
         text: 'PROJECT',
         value: 'project',
+        sortable: false,
       },
-      { text: 'TOTAL TASK', value: 'totalTask' },
-      { text: 'PROGRESS', value: 'progress' },
-      { text: 'HOURS', value: 'hours' },
+      { text: 'TOTAL TASK', value: 'totalTask', sortable: false },
+      { text: 'PROGRESS', value: 'progress', sortable: false },
+      { text: 'HOURS', value: 'hours', sortable: false },
     ]
     const projectList = [
       {
@@ -248,3 +243,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.project-progress {
+  min-width: 4rem;
+}
+</style>

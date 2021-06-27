@@ -5,11 +5,11 @@
       <v-card-title>
         Connected Accounts
       </v-card-title>
-      <v-divider></v-divider>
+      <v-card-subtitle>
+        Display content from your connected accounts on your site
+      </v-card-subtitle>
+
       <v-card-text class="pb-2">
-        <p class="mb-1">
-          Display content from your connected accounts on your site
-        </p>
         <v-list
           dense
           class="py-0"
@@ -27,12 +27,12 @@
             ></v-img>
 
             <div>
-              <h4 class="font-weight-medium">
+              <v-list-item-title class="text-sm">
                 {{ account.title }}
-              </h4>
-              <p class="mb-0">
+              </v-list-item-title>
+              <v-list-item-subtitle class="mb-0">
                 {{ account.text }}
-              </p>
+              </v-list-item-subtitle>
             </div>
 
             <v-spacer></v-spacer>
@@ -48,11 +48,10 @@
       <v-card-title>
         Social Accounts
       </v-card-title>
-      <v-divider></v-divider>
+      <v-card-subtitle>
+        Display content from social accounts on your site
+      </v-card-subtitle>
       <v-card-text>
-        <p class="mb-3">
-          Display content from social accounts on your site
-        </p>
         <v-list
           dense
           class="py-0"
@@ -60,7 +59,7 @@
           <v-list-item
             v-for="(account,index) in socialAccounts"
             :key="account.title"
-            :class="`px-0 ${index > 0 ?'mt-6':''}`"
+            :class="`px-0 ${index > 0 ?'mt-6':'mt-3'}`"
           >
             <v-img
               max-width="35"
@@ -71,22 +70,28 @@
             ></v-img>
 
             <div>
-              <h4 class="font-weight-medium">
+              <v-list-item-title class="text-sm">
                 {{ account.title }}
-              </h4>
-              <a
-                v-if="account.connected"
-                :href="account.link"
-                class="text-decoration-none mb-0"
-              >
-                {{ account.link }}
-              </a>
-              <span v-else>Not connected</span>
+              </v-list-item-title>
+              <v-list-item-subtitle v-if="account.connected">
+                <a
+                  :href="account.link"
+                  target="_blank"
+                  rel="nofollow"
+                  class="text-decoration-none"
+                >
+                  {{ account.link }}
+                </a>
+              </v-list-item-subtitle>
+              <v-list-item-subtitle v-else>
+                Not connected
+              </v-list-item-subtitle>
             </div>
 
             <v-spacer></v-spacer>
 
             <v-btn
+              color="secondary"
               outlined
               min-width="38"
               class="px-0"
@@ -149,13 +154,13 @@ export default {
       {
         img: 'twitter.png',
         title: 'Twitter',
-        link: 'www.twitter.com/pixinvent',
+        link: 'https://twitter.com/pixinvent',
         connected: true,
       },
       {
         img: 'linkedin.png',
         title: 'Linkedin',
-        link: 'www.linkedin.com.pixinvent',
+        link: 'https://www.linkedin.com/company/pixinvent',
         connected: true,
       },
       {
@@ -174,7 +179,8 @@ export default {
       connectedAccounts,
       socialAccounts,
       icons: {
-        mdiClose, mdiLinkVariant,
+        mdiClose,
+        mdiLinkVariant,
       },
     }
   },

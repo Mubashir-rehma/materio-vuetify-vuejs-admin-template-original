@@ -32,6 +32,7 @@
               <v-icon
                 size="25"
                 :color="resolveUserTotalIcon(total.title).color"
+                class="rounded-0"
               >
                 {{ resolveUserTotalIcon(total.title).icon }}
               </v-icon>

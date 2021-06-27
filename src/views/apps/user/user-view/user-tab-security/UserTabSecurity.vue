@@ -6,8 +6,6 @@
         Change Password
       </v-card-title>
 
-      <v-divider></v-divider>
-
       <v-card-text>
         <v-alert
           color="warning"
@@ -69,23 +67,43 @@
       <v-card-title>
         Two-step verification
       </v-card-title>
-      <v-divider></v-divider>
+      <v-card-subtitle>
+        Keep your account secure with authentication step.
+      </v-card-subtitle>
 
       <v-card-text>
-        <p class="font-weight-medium text--primary">
-          Keep your account secure with authentication step.
-        </p>
+        <div>
+          <h4 class="font-weight-medium mb-1">
+            SMS
+          </h4>
+          <div class="d-flex align-center justify-space-between">
+            <span class="user-verification-number">{{ smsVerificationNumber }}</span>
+            <div>
+              <v-btn
+                icon
+                small
+                color="secondary"
+                @click="istwoFactorDialogOpen = !istwoFactorDialogOpen"
+              >
+                <v-icon size="20">
+                  {{ icons.mdiSquareEditOutline }}
+                </v-icon>
+              </v-btn>
+              <v-btn
+                icon
+                small
+              >
+                <v-icon size="20">
+                  {{ icons.mdiDeleteOutline }}
+                </v-icon>
+              </v-btn>
+            </div>
+          </div>
+        </div>
 
-        <v-text-field
-          v-model="smsVerificationNumber"
-          label="SMS"
-          :append-icon="icons.mdiSquareEditOutline"
-          clearable
-          :clear-icon="icons.mdiDeleteOutline"
-          hide-details
-          @click:append="istwoFactorDialogOpen = !istwoFactorDialogOpen"
-        ></v-text-field>
-        <p class="mb-0 mt-2">
+        <v-divider></v-divider>
+
+        <p class="mb-0 mt-4">
           Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in. Learn more.
         </p>
       </v-card-text>
@@ -117,6 +135,7 @@
       </v-data-table>
     </v-card>
 
+    <!-- dialog -->
     <v-dialog
       v-model="istwoFactorDialogOpen"
       max-width="650px"
@@ -133,9 +152,9 @@
 
           <v-form>
             <v-text-field
+              v-model="smsVerificationNumber"
               outlined
               dense
-              type="number"
               placeholder="Mobile number with country code"
               label="Mobile number with country code"
             ></v-text-field>
@@ -164,9 +183,8 @@
 </template>
 
 <script>
-import {
-  mdiSquareEditOutline, mdiDeleteOutline, mdiEyeOutline, mdiEyeOffOutline,
-} from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { mdiSquareEditOutline, mdiDeleteOutline, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
 export default {
@@ -179,10 +197,10 @@ export default {
     const isPasswordConfirmVisible = ref(false)
 
     const tableColumnHeaders = [
-      { text: 'BROWSER', value: 'browser' },
-      { text: 'DEVICE', value: 'device' },
-      { text: 'LOCATION', value: 'location' },
-      { text: 'RECENT ACTIVITY', value: 'recentActivity' },
+      { text: 'BROWSER', value: 'browser', sortable: false },
+      { text: 'DEVICE', value: 'device', sortable: false },
+      { text: 'LOCATION', value: 'location', sortable: false },
+      { text: 'RECENT ACTIVITY', value: 'recentActivity', sortable: false },
     ]
 
     const recenntDevices = [

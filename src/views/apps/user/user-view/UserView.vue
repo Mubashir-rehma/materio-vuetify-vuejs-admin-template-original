@@ -72,7 +72,7 @@
         <v-card-text class="text-center mt-n2 px-5">
           Choose the best plan for user.
         </v-card-text>
-        <v-card-text class="d-flex align-center mt-5 px-15">
+        <v-card-text class="d-flex align-center flex-wrap flex-sm-nowrap mt-5 px-15">
           <v-select
             v-model="selectedPlan"
             label="Choose Plan"
@@ -84,7 +84,10 @@
             hide-details
             class="mr-3"
           ></v-select>
-          <v-btn color="primary">
+          <v-btn
+            color="primary"
+            class="mt-3 mt-sm-0"
+          >
             Upgrade
           </v-btn>
         </v-card-text>
@@ -93,8 +96,8 @@
           <p class="font-weight-medium text--primary mb-2">
             User current plan is standard plan
           </p>
-          <div class="d-flex justify-space-between">
-            <div class="user-pricing">
+          <div class="d-flex justify-space-between flex-wrap">
+            <div class="user-pricing mr-3">
               <sup class="primary--text">$</sup>
               <span class="text-5xl font-weight-semibold primary--text">{{ resolveCurrentPlanValue(userData.currentPlan) }}</span>
               <sub class="text-base font-weight-light">/ month</sub>
@@ -102,6 +105,7 @@
             <v-btn
               color="error"
               outlined
+              class="mt-3"
             >
               Cancel Subscription
             </v-btn>
@@ -119,13 +123,13 @@ import store from '@/store'
 
 // eslint-disable-next-line object-curly-newline
 import { mdiAccountOutline, mdiLockOutline, mdiBookmarkOutline, mdiBellOutline, mdiLinkVariant } from '@mdi/js'
-import UserBioPanel from './UserBioPanel.vue'
+import UserBioPanel from './user-bio-panel/UserBioPanel.vue'
 import userStoreModule from '../userStoreModule'
-import UserTabOverview from './UserTabOverview.vue'
-import UserTabSecurity from './UserTabSecurity.vue'
-import UserTabBillingsPlans from './UserTabBillingsPlans.vue'
-import UserTabNotifications from './UserTabNotifications.vue'
-import UserTabConnection from './UserTabConnection.vue'
+import UserTabOverview from './user-tab-overview/UserTabOverview.vue'
+import UserTabSecurity from './user-tab-security/UserTabSecurity.vue'
+import UserTabBillingsPlans from './user-tab-billings-plans/UserTabBillingsPlans.vue'
+import UserTabNotifications from './user-tab-notifications/UserTabNotifications.vue'
+import UserTabConnection from './user-tab-connection/UserTabConnection.vue'
 
 export default {
   components: {
@@ -139,26 +143,6 @@ export default {
   setup() {
     const USER_APP_STORE_MODULE_NAME = 'app-user'
 
-    const userData = ref({})
-    const userTab = ref(null)
-    const plansList = [
-      { text: 'Basic - $0/month', value: 'basic' },
-      { text: 'Standard - $99/month', value: 'standard' },
-      { text: 'Enterprise - $499/month', value: 'enterprise' },
-      { text: 'Company - $999/month', value: 'company' },
-    ]
-
-    const selectedPlan = ref('')
-    const isPlanUpgradeDialogVisible = ref(false)
-
-    const tabs = [
-      { icon: mdiAccountOutline, title: 'Overview' },
-      { icon: mdiLockOutline, title: 'Security' },
-      { icon: mdiBookmarkOutline, title: 'Billing & Plan' },
-      { icon: mdiBellOutline, title: 'Notification' },
-      { icon: mdiLinkVariant, title: 'Connection' },
-    ]
-
     // Register module
     if (!store.hasModule(USER_APP_STORE_MODULE_NAME)) store.registerModule(USER_APP_STORE_MODULE_NAME, userStoreModule)
 
@@ -166,6 +150,11 @@ export default {
     onUnmounted(() => {
       if (store.hasModule(USER_APP_STORE_MODULE_NAME)) store.unregisterModule(USER_APP_STORE_MODULE_NAME)
     })
+
+    const userData = ref({})
+    const userTab = ref(null)
+    const selectedPlan = ref('')
+    const isPlanUpgradeDialogVisible = ref(false)
 
     store
       .dispatch('app-user/fetchUser', { id: router.currentRoute.params.id })
@@ -179,6 +168,22 @@ export default {
         }
       })
 
+    const plansList = [
+      { text: 'Basic - $0/month', value: 'basic' },
+      { text: 'Standard - $99/month', value: 'standard' },
+      { text: 'Enterprise - $499/month', value: 'enterprise' },
+      { text: 'Company - $999/month', value: 'company' },
+    ]
+
+    const tabs = [
+      { icon: mdiAccountOutline, title: 'Overview' },
+      { icon: mdiLockOutline, title: 'Security' },
+      { icon: mdiBookmarkOutline, title: 'Billing & Plan' },
+      { icon: mdiBellOutline, title: 'Notification' },
+      { icon: mdiLinkVariant, title: 'Connection' },
+    ]
+
+    // ui
     const resolveCurrentPlanValue = plan => {
       if (plan === 'basic') return '0'
       if (plan === 'standard') return '99'
@@ -189,12 +194,12 @@ export default {
     }
 
     return {
-      userData,
       tabs,
       userTab,
       plansList,
       selectedPlan,
       isPlanUpgradeDialogVisible,
+      userData,
       resolveCurrentPlanValue,
     }
   },

@@ -271,7 +271,7 @@ const data = {
       username: 'catwomen1940',
       country: 'USA',
       contact: '(829) 537-0057',
-      email: 'irena.dubrovna@wayne.com',
+      email: 'irena@wayne.com',
       currentPlan: 'standard',
       status: 'active',
       avatar: '1.png',

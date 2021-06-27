@@ -127,7 +127,7 @@
               class="px-0 mb-n2"
             >
               <span class="font-weight-medium mr-2">Role:</span>
-              <span class="text--secondary ">{{ userData.role }}</span>
+              <span class="text--secondary text-capitalize">{{ userData.role }}</span>
             </v-list-item>
             <v-list-item
               dense
@@ -180,157 +180,11 @@
         </v-card-actions>
       </v-card>
 
-      <!-- edit profile dialog -->
-      <v-dialog
-        v-model="isBioDialogOpen"
-        max-width="650px"
-      >
-        <v-card class="user-edit-info pa-sm-10 pa-3">
-          <v-card-title class="justify-center text-h5">
-            Edit User Information
-          </v-card-title>
-          <v-card-text class="text-center mt-n2">
-            Updating user details will receive a privacy audit.
-          </v-card-text>
-
-          <v-card-text class="mt-5">
-            <v-form class="multi-col-validation">
-              <v-row>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-text-field
-                    v-model="userData.fullName"
-                    outlined
-                    dense
-                    label="Full Name"
-                  ></v-text-field>
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-text-field
-                    v-model="userData.username"
-                    prefix="@"
-                    outlined
-                    dense
-                    label="Username"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-text-field
-                    v-model="userData.email"
-                    outlined
-                    dense
-                    label="Billing Email"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-select
-                    v-model="userData.status"
-                    :items="statusOptions"
-                    item-text="title"
-                    item-value="value"
-                    outlined
-                    dense
-                    label="Status"
-                  ></v-select>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-text-field
-                    v-model="userData.taxId"
-                    outlined
-                    dense
-                    label="Tax ID"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-text-field
-                    v-model="userData.contact"
-                    prefix="+1"
-                    outlined
-                    dense
-                    label="Contact"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-select
-                    v-model="userData.language"
-                    :items="languageOptions"
-                    outlined
-                    dense
-                    label="Language"
-                  ></v-select>
-                </v-col>
-                <v-col
-                  cols="12"
-                  sm="6"
-                >
-                  <v-select
-                    v-model="userData.country"
-                    :items="countries"
-                    outlined
-                    dense
-                    label="Country"
-                  ></v-select>
-                </v-col>
-
-                <v-col cols="12">
-                  <v-switch
-                    v-model="isBillingAddress"
-                    class="mt-0"
-                    hide-details
-                  >
-                    <template #label>
-                      <span class="font-weight-medium text--primary">Use as a billing address?</span>
-                    </template>
-                  </v-switch>
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  class="d-flex justify-center mt-3"
-                >
-                  <v-btn
-                    color="primary"
-                    class="mr-3"
-                    type="submit"
-                    @click.prevent="isBioDialogOpen = !isBioDialogOpen"
-                  >
-                    submit
-                  </v-btn>
-
-                  <v-btn
-                    outlined
-                    color="secondary"
-                    @click.prevent="isBioDialogOpen = !isBioDialogOpen"
-                  >
-                    Discard
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
+      <!-- edit profile dialog data -->
+      <user-bio-edit
+        :is-bio-dialog-open.sync="isBioDialogOpen"
+        :user-data="userData"
+      ></user-bio-edit>
     </v-col>
 
     <!-- user plan -->
@@ -371,7 +225,7 @@
             </v-list-item>
           </v-list>
 
-          <p class="d-flex font-weight-semibold text--primary mt-3 mb-2">
+          <p class="d-flex font-weight-semibold text--primary mt-5 mb-2">
             <span>Days</span>
             <v-spacer></v-spacer>
             <span>4 of 30 Days</span>
@@ -402,10 +256,13 @@
 import { mdiCheck, mdiBriefcaseVariantOutline, mdiCheckboxBlankCircle } from '@mdi/js'
 import { avatarText, kFormatter } from '@core/utils/filter'
 import { ref } from '@vue/composition-api'
-import countries from '@/@fake-db/data/other/countries'
-import useUsersList from '../user-list/useUsersList'
+import UserBioEdit from './UserBioEdit.vue'
+import useUsersList from '../../user-list/useUsersList'
 
 export default {
+  components: {
+    UserBioEdit,
+  },
   props: {
     userData: {
       type: Object,
@@ -417,35 +274,24 @@ export default {
     },
   },
   setup() {
-    const isBillingAddress = ref(true)
-
     const { resolveUserStatusVariant, resolveUserRoleVariant } = useUsersList()
 
     const isBioDialogOpen = ref(false)
+
     const standardPlan = {
       plan: 'Standard',
       price: 99,
       benefits: ['10 Users', 'Up to 10GB storage', 'Basic Support'],
     }
-    const statusOptions = [
-      { title: 'Pending', value: 'pending' },
-      { title: 'Active', value: 'active' },
-      { title: 'Inactive', value: 'inactive' },
-    ]
-
-    const languageOptions = ['English', 'Spanish', 'Portuguese', 'Russian', 'French', 'German']
 
     return {
       resolveUserStatusVariant,
       resolveUserRoleVariant,
       avatarText,
       kFormatter,
-      statusOptions,
-      standardPlan,
-      countries,
-      languageOptions,
-      isBillingAddress,
+
       isBioDialogOpen,
+      standardPlan,
       icons: {
         mdiCheck,
         mdiBriefcaseVariantOutline,

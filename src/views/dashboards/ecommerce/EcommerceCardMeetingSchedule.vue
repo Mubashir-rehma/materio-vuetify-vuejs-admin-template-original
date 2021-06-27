@@ -20,25 +20,27 @@
         <v-list-item
           v-for="(data,index) in meetingSchedule"
           :key="data.title"
-          :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-4':''}`"
+          :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-3':''}`"
         >
-          <v-avatar size="38">
+          <v-list-item-avatar size="38">
             <v-img :src="data.avatar"></v-img>
-          </v-avatar>
+          </v-list-item-avatar>
 
-          <div class="text-no-wrap ml-3">
-            <p class="font-weight-medium mb-0 text--primary">
+          <div class="text-no-wrap">
+            <v-list-item-title class="text-sm font-weight-medium">
               {{ data.title }}
-            </p>
+            </v-list-item-title>
 
-            <div>
+            <div class="d-flex align-center">
               <v-icon
                 size="14"
                 class="mr-1"
               >
                 {{ icons.mdiCalendarBlankOutline }}
               </v-icon>
-              <span class="text-xs text--secondary">{{ data.dateAndTime }}</span>
+              <v-list-item-subtitle class="text-xs">
+                {{ data.dateAndTime }}
+              </v-list-item-subtitle>
             </div>
           </div>
 

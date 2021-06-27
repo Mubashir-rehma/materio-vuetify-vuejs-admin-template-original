@@ -26,7 +26,7 @@
             size="40"
             rounded
             :color="data.avatarColor"
-            :class="`v-avatar-light-bg ${data.avatarColor}--text`"
+            :class="`v-avatar-light-bg ${data.avatarColor}--text mr-3`"
           >
             <v-img
               max-height="20"
@@ -36,11 +36,13 @@
             ></v-img>
           </v-avatar>
 
-          <div class="ml-3">
-            <h4 class="font-weight-semibold text-no-wrap">
+          <div>
+            <v-list-item-title class="text-sm font-weight-semibold">
               {{ data.title }}
-            </h4>
-            <span class="text-xs text--secondary text-no-wrap">{{ data.subtitle }}</span>
+            </v-list-item-title>
+            <v-list-item-subtitle class="text-xs">
+              {{ data.subtitle }}
+            </v-list-item-subtitle>
           </div>
           <v-spacer></v-spacer>
 

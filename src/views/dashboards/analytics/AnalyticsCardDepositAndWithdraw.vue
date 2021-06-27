@@ -22,10 +22,12 @@
             ></v-img>
 
             <div class="ml-sm-3 mt-1">
-              <h4 class="font-weight-semibold">
+              <v-list-item-title class="text-sm font-weight-semibold">
                 {{ data.title }}
-              </h4>
-              <span class="text-xs text--secondary">{{ data.subtitle }}</span>
+              </v-list-item-title>
+              <v-list-item-subtitle class="text-xs">
+                {{ data.subtitle }}
+              </v-list-item-subtitle>
             </div>
 
             <v-spacer></v-spacer>
@@ -61,10 +63,12 @@
             ></v-img>
 
             <div class="ml-sm-3 mt-1">
-              <h4 class="font-weight-semibold">
+              <v-list-item-title class="text-sm font-weight-semibold">
                 {{ data.title }}
-              </h4>
-              <span class="text-xs text--secondary">{{ data.subtitle }}</span>
+              </v-list-item-title>
+              <v-list-item-subtitle class="text-xs">
+                {{ data.subtitle }}
+              </v-list-item-subtitle>
             </div>
 
             <v-spacer></v-spacer>

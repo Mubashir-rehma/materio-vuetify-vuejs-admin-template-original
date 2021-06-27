@@ -45,7 +45,9 @@
               <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'success--text':'error--text'}`">{{ data.change.slice(1) }}</span>
             </div>
 
-            <span class="text-xs text--secondary">{{ data.country }}</span>
+            <v-list-item-subtitle class="text-xs">
+              {{ data.country }}
+            </v-list-item-subtitle>
           </div>
 
           <v-spacer></v-spacer>

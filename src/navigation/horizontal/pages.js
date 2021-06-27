@@ -1,4 +1,11 @@
-import { mdiFileOutline, mdiLockOutline } from '@mdi/js'
+import {
+  mdiCogOutline,
+  mdiCurrencyUsd,
+  mdiFileOutline,
+  mdiHelpCircleOutline,
+  mdiInformationOutline,
+  mdiLockOutline,
+} from '@mdi/js'
 
 export default [
   {
@@ -78,18 +85,22 @@ export default [
         ],
       },
       {
+        icon: mdiInformationOutline,
         title: 'Knowledge Base',
         to: 'page-knowledge-base',
       },
       {
+        icon: mdiCogOutline,
         title: 'Account Settings',
         to: 'page-account-settings',
       },
       {
+        icon: mdiCurrencyUsd,
         title: 'Pricing',
         to: 'page-pricing',
       },
       {
+        icon: mdiHelpCircleOutline,
         title: 'FAQ',
         to: 'page-faq',
       },

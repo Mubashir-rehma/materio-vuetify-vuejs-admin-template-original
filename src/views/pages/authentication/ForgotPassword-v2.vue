@@ -41,13 +41,15 @@
             ></v-img>
 
             <!-- 3d character -->
-            <v-img
-              contain
-              max-width="100%"
-              height="692"
-              class="auth-3d-group"
-              :src="`/images/3d-characters/illustration-forgot-password-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-            ></v-img>
+            <div class="d-flex align-center h-100">
+              <v-img
+                contain
+                max-width="100%"
+                height="692"
+                class="auth-3d-group"
+                :src="`/images/3d-characters/illustration-forgot-password-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              ></v-img>
+            </div>
           </div>
         </v-col>
 

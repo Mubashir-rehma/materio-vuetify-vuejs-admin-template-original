@@ -40,7 +40,7 @@
             ></v-img>
 
             <!-- 3d character -->
-            <div class="d-flex align-center h-100">
+            <div class="d-flex align-center h-full">
               <v-img
                 contain
                 max-width="100%"

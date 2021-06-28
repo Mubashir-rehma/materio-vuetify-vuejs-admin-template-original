@@ -78,9 +78,9 @@
                   :href="account.link"
                   target="_blank"
                   rel="nofollow"
-                  class="text-decoration-none"
+                  class="text-decoration-none text-truncate"
                 >
-                  {{ account.link }}
+                  {{ account.username }}
                 </a>
               </v-list-item-subtitle>
               <v-list-item-subtitle v-else>
@@ -155,12 +155,14 @@ export default {
         img: 'twitter.png',
         title: 'Twitter',
         link: 'https://twitter.com/pixinvent',
+        username: '@pixinvent',
         connected: true,
       },
       {
         img: 'linkedin.png',
         title: 'Linkedin',
         link: 'https://www.linkedin.com/company/pixinvent',
+        username: '@pixinvent',
         connected: true,
       },
       {

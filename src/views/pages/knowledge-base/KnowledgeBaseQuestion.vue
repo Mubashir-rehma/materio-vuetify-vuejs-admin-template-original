@@ -12,7 +12,7 @@
           v-for="item in kbContentData"
           :key="item.character"
         >
-          <v-card-title class="kbc-title d-flex flex-nowrap">
+          <v-card-title class="kbc-title align-center flex-nowrap">
             <v-icon
               color="primary"
               class="me-3"
@@ -50,11 +50,11 @@
         order-md="2"
       >
         <v-card>
-          <v-card-title>
+          <v-card-title class="flex-nowrap">
             <v-icon class="text--primary me-2">
               {{ article.titleIcon }}
             </v-icon>
-            <span>{{ article.title }}</span>
+            <span class="text-break">{{ article.title }}</span>
           </v-card-title>
           <v-card-text>Last updated on {{ article.lastUpdated }}</v-card-text>
 

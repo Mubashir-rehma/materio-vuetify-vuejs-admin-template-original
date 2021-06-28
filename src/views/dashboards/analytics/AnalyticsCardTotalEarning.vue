@@ -32,9 +32,9 @@
         </div>
       </div>
 
-      <p class="mt-2 font-weight-medium text--primary mb-0">
+      <h4 class="mt-2 font-weight-medium">
         Compared to $84,325 last year
-      </p>
+      </h4>
     </v-card-text>
 
     <v-card-text>
@@ -43,7 +43,7 @@
         :key="earning.avatar"
         :class="`d-flex align-center justify-space-between flex-wrap ${index >0 ? 'mt-8':''}`"
       >
-        <div class="d-flex align-center">
+        <div class="d-flex align-center me-3">
           <v-avatar
             rounded
             size="38"

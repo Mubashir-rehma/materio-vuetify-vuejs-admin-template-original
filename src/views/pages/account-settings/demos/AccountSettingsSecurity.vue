@@ -66,11 +66,11 @@
       <v-divider></v-divider>
 
       <div class="pa-3">
-        <v-card-title>
+        <v-card-title class="flex-nowrap">
           <v-icon class="text--primary me-3">
             {{ icons.mdiKeyOutline }}
           </v-icon>
-          <span>Two-factor authentication</span>
+          <span class="text-break">Two-factor authentication</span>
         </v-card-title>
 
         <v-card-text class="two-factor-auth text-center mx-auto">

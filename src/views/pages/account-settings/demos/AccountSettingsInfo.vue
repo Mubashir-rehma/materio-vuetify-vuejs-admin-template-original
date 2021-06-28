@@ -56,7 +56,7 @@
               v-model="optionsLocal.country"
               outlined
               label="Country"
-              :items="['USA','UK','INDIA','NEPAL']"
+              :items="['USA','UK','AUSTRALIA','BRAZIL']"
             ></v-select>
           </v-col>
 

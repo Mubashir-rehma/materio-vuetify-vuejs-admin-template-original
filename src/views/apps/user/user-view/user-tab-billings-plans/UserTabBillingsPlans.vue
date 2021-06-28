@@ -96,7 +96,9 @@
     <!-- payment cards -->
     <v-card class="mb-7">
       <v-card-title>
-        <span>Payment Methods</span>
+        <p class="mb-2 mb-sm-0">
+          Payment Methods
+        </p>
         <v-spacer></v-spacer>
         <v-btn color="primary">
           <v-icon
@@ -186,7 +188,9 @@
     <!-- Billing Address -->
     <v-card>
       <v-card-title>
-        <span>Billing Address</span>
+        <p class="mb-2 mb-sm-0">
+          Billing Address
+        </p>
         <v-spacer></v-spacer>
         <v-btn color="primary">
           Edit Address

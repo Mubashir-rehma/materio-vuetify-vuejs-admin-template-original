@@ -4,7 +4,7 @@
       <v-card-title>
         <span>Deposit</span>
         <v-spacer></v-spacer>
-        <span class="text-xs text--disabled">View All</span>
+        <span class="text-xs text--disabled cursor-pointer">View All</span>
       </v-card-title>
 
       <v-card-text>
@@ -44,7 +44,7 @@
       <v-card-title>
         <span>Withdraw</span>
         <v-spacer></v-spacer>
-        <span class="text-xs text--disabled">View All</span>
+        <span class="text-xs text--disabled cursor-pointer">View All</span>
       </v-card-title>
 
       <v-card-text>

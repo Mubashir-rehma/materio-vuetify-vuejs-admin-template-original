@@ -641,6 +641,17 @@ button {
 }
 
 //
+//* ——— Input ——————————————————
+//
+
+@include theme(v-input) using ($material) {
+  input,
+  textarea {
+    color: map-deep-get($material, 'text', 'secondary') !important;
+  }
+}
+
+//
 //* ——— Select ——————————————————
 //
 

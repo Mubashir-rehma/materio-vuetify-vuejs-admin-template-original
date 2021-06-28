@@ -38,6 +38,7 @@
         color="error"
         inline
         :content="user.chat.unseenMsgs"
+        class="number-badge"
       >
       </v-badge>
     </div>

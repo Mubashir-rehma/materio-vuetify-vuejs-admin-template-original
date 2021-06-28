@@ -25,10 +25,13 @@
         :class="msgGrp.senderId !== formattedChatData.contact.id ? 'align-end' : 'align-start'"
       >
         <p
-          v-for="msgData in msgGrp.messages"
+          v-for="(msgData, msgIndex) in msgGrp.messages"
           :key="msgData.time"
-          class="chat-content py-3 px-4 mb-2 elevation-1 mb-0"
-          :class="msgGrp.senderId === formattedChatData.contact.id ? 'bg-card chat-left' : 'primary white--text chat-right'"
+          class="chat-content py-3 px-4 elevation-1"
+          :class="[
+            msgGrp.senderId === formattedChatData.contact.id ? 'bg-card chat-left' : 'primary white--text chat-right',
+            msgGrp.messages.length-1 !== msgIndex ? 'mb-2' : 'mb-1'
+          ]"
         >
           {{ msgData.msg }}
         </p>

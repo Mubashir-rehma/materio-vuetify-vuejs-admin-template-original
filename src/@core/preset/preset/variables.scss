@@ -123,7 +123,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -265,7 +265,7 @@ $material-dark: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
@@ -589,6 +589,18 @@ $card-actions-padding: $card-spacer-content $card-spacer;
 $card-border-radius: 6px;
 $card-elevation: 6;
 $card-text-line-height: 1.5;
+
+//
+//* ——— Input ——————————————————
+//
+
+$input-font-size: 14px;
+
+//
+//* ——— Textarea ——————————————————
+//
+
+$textarea-line-height: 1.5rem;
 
 //
 //* ——— Switch ——————————————————

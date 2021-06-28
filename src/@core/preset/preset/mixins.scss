@@ -182,3 +182,15 @@ $theme-colors: (
     @content ($color, $value);
   }
 }
+
+// ————————————————————————————————————
+//* ——— Avatar
+// ————————————————————————————————————
+
+@mixin avatar-border($material, $always-white: false) {
+  @if ($always-white) {
+    border: 2px solid #fff;
+  } @else {
+    border: 2px solid map-deep-get($material, 'cards');
+  }
+}

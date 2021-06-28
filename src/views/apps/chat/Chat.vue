@@ -97,13 +97,13 @@
 
           <!-- Active Chat Actions -->
           <div class="d-flex align-baseline">
-            <v-icon class="me-3 cursor-pointer d-none d-sm-inline">
+            <v-icon class="me-3 cursor-pointer d-none d-sm-inline-flex">
               {{ icons.mdiPhone }}
             </v-icon>
-            <v-icon class="me-3 cursor-pointer d-none d-sm-inline">
+            <v-icon class="me-3 cursor-pointer d-none d-sm-inline-flex">
               {{ icons.mdiVideoOutline }}
             </v-icon>
-            <v-icon class="me-3 cursor-pointer d-none d-sm-inline">
+            <v-icon class="me-3 cursor-pointer d-none d-sm-inline-flex">
               {{ icons.mdiMagnify }}
             </v-icon>
             <v-icon class="cursor-pointer">
@@ -125,13 +125,16 @@
           ></chat-log>
         </perfect-scrollbar>
 
-        <v-form @submit.prevent="sendMessage">
+        <v-form
+          autocomplete="off"
+          @submit.prevent="sendMessage"
+        >
           <v-text-field
             :key="activeChat.contact.id"
             v-model="chatInputMessage"
             placeholder="Type your message"
             solo
-            class="pb-5 px-5 flex-grow-0"
+            class="pb-5 px-5 flex-grow-0 msg-input"
             hide-details
             height="50"
             autofocus

@@ -23,27 +23,34 @@
 // #region `max-h-content-container` class
 .vertical-nav {
   // Set height for contents like apps to don't increase the height for longer content and stick to fixed height
+  // ? We have 3 style tag because of responsiveness
   .v-main {
     // If AppBar & Footer is present
-    &[style='padding: 64px 0px 48px 260px;'] {
+    &[style='padding: 64px 0px 48px 260px;'],
+    &[style='padding: 64px 0px 48px;'],
+    &[style='padding: 56px 0px 48px;'] {
       .max-h-content-container {
         height: calc(100vh - 64px - 48px - (1.72rem * 2));
       }
     }
     // If AppBar is present and Footer is not present
-    &[style='padding: 64px 0px 0px 260px;'] {
+    &[style='padding: 64px 0px 0px 260px;'],
+    &[style='padding: 64px 0px 0px;'],
+    &[style='padding: 56px 0px 0px;'] {
       .max-h-content-container {
         height: calc(100vh - 64px - (1.72rem * 2));
       }
     }
     // If AppBar is not present and Footer is present
-    &[style='padding: 0px 0px 48px 260px;'] {
+    &[style='padding: 0px 0px 48px 260px;'],
+    &[style='padding: 0px 0px 48px;'] {
       .max-h-content-container {
         height: calc(100vh - 48px - (1.72rem * 2));
       }
     }
     // If AppBar & footer both are not present
-    &[style='padding: 0px 0px 0px 260px;'] {
+    &[style='padding: 0px 0px 0px 260px;'],
+    &[style='padding: 0px;'] {
       .max-h-content-container {
         height: calc(100vh - (1.72rem * 2));
       }
@@ -194,7 +201,13 @@ $font-sizes: (
 @include app-elevation('v-avatar-group > *:hover', 2);
 
 @include theme(v-avatar-group) using ($material) {
-  > * {
+  > .v-avatar {
+    border: 2px solid map-deep-get($material, 'cards');
+  }
+}
+
+@include theme--child(v-avatar) using ($material) {
+  &.bordered {
     border: 2px solid map-deep-get($material, 'cards');
   }
 }
@@ -493,5 +506,19 @@ $font-sizes: (
         }
       }
     }
+  }
+}
+
+// ————————————————————————————————————
+//* ——— Badge
+// ————————————————————————————————————
+
+.number-badge {
+  .v-badge__badge {
+    height: 20px;
+    width: 20px;
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 600;
   }
 }

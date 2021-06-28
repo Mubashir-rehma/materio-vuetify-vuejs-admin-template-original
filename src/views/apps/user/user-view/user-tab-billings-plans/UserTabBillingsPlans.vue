@@ -66,7 +66,7 @@
               rounded
             ></v-progress-linear>
             <p class="mt-2">
-              4 days remaining
+              Your plan requires update
             </p>
           </v-col>
 

@@ -5,7 +5,7 @@
     </v-card-title>
     <v-divider></v-divider>
     <v-card-text class="text--primary font-weight-medium">
-      Change to notification settings, the user will get the update.
+      You will receive notification for the below selected items.
     </v-card-text>
 
     <v-data-table
@@ -64,10 +64,10 @@
 export default {
   setup() {
     const tableColumn = [
-      { text: 'TYPE', value: 'type' },
-      { text: 'EMAIL', value: 'email' },
-      { text: 'BROWSER', value: 'browser' },
-      { text: 'APP', value: 'app' },
+      { text: 'TYPE', value: 'type', sortable: false },
+      { text: 'EMAIL', value: 'email', sortable: false },
+      { text: 'BROWSER', value: 'browser', sortable: false },
+      { text: 'APP', value: 'app', sortable: false },
     ]
     const notifications = [
       {

@@ -104,7 +104,10 @@
         <v-divider></v-divider>
 
         <p class="mb-0 mt-4">
-          Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in. Learn more.
+          Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in. <a
+            href="javascript:void(0)"
+            class="text-decoration-none"
+          >Learn more</a>.
         </p>
       </v-card-text>
     </v-card>

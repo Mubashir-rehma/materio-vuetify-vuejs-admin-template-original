@@ -7,10 +7,13 @@
           <span>Line Chart</span>
           <v-spacer></v-spacer>
           <span class="subtitle-2">
-            <v-icon size="18">
+            <v-icon
+              size="18"
+              class="me-1"
+            >
               {{ icons.mdiCalendarBlankOutline }}
             </v-icon>
-            2019-05-01 to 2019-05-10
+            <span>2019-05-01 to 2019-05-10</span>
           </span>
         </v-card-title>
         <v-card-subtitle>
@@ -29,10 +32,13 @@
           <span>Data Science</span>
           <v-spacer></v-spacer>
           <span class="subtitle-2">
-            <v-icon size="18">
+            <v-icon
+              size="18"
+              class="me-1"
+            >
               {{ icons.mdiCalendarBlankOutline }}
             </v-icon>
-            2019-05-01 to 2019-05-10
+            <span>2019-05-01 to 2019-05-10</span>
           </span>
         </v-card-title>
         <v-card-text>
@@ -104,10 +110,13 @@
           <span>Balance</span>
           <v-spacer></v-spacer>
           <span class="subtitle-2">
-            <v-icon size="18">
+            <v-icon
+              size="18"
+              class="me-1"
+            >
               {{ icons.mdiCalendarBlankOutline }}
             </v-icon>
-            2019-05-01 to 2019-05-10
+            <span>2019-05-01 to 2019-05-10</span>
           </span>
         </v-card-title>
         <v-card-text>
@@ -129,10 +138,13 @@
           Stocks Prices
           <v-spacer></v-spacer>
           <span class="subtitle-2">
-            <v-icon size="18">
+            <v-icon
+              size="18"
+              class="me-1"
+            >
               {{ icons.mdiCalendarBlankOutline }}
             </v-icon>
-            2019-05-01 to 2019-05-10
+            <span>2019-05-01 to 2019-05-10</span>
           </span>
         </v-card-title>
         <v-card-subtitle>

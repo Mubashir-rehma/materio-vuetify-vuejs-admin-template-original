@@ -1,12 +1,13 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Sales by Countries</span>
       <v-spacer></v-spacer>
 
       <v-btn
         icon
-        class="me-n1"
+        small
+        class="me-n3 mt-n2"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}

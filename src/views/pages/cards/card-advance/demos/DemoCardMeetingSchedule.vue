@@ -1,11 +1,12 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Meeting Schedule</span>
       <v-spacer></v-spacer>
 
       <v-btn
-        class="me-n1"
+        class="me-n3 mt-n2"
+        small
         icon
       >
         <v-icon>

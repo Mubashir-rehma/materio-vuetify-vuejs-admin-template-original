@@ -23,7 +23,8 @@
 
       <v-btn
         icon
-        class="me-n1"
+        small
+        class="me-n3"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -35,7 +36,9 @@
         Italian Cafe
       </p>
       <p>The refrigerated dairy aisle of your local grocery store can be a great source tasty, convenient selections for your.</p>
+
       <v-divider></v-divider>
+
       <p class="text-base text--primary mt-3">
         Tonight’s availability
       </p>

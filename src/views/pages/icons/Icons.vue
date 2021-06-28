@@ -9,22 +9,13 @@
         <template v-slot:activator="{ on, attrs }">
           <v-card
             v-bind="attrs"
-            class="icons-card mb-5 mx-2"
+            class="icons-card mb-6 me-6"
             v-on="on"
           >
-            <v-card-text class="d-flex align-center justify-center flex-column pt-5">
-              <div class="icon-wrapper">
-                <v-icon
-                  size="30"
-                  class="text--primary"
-                >
-                  {{ item.icon }}
-                </v-icon>
-              </div>
-
-              <p class="icons-text text-truncate mb-0 mt-2">
-                {{ item.name }}
-              </p>
+            <v-card-text class="py-3 px-4">
+              <v-icon size="30">
+                {{ item.icon }}
+              </v-icon>
             </v-card-text>
           </v-card>
         </template>
@@ -37,9 +28,10 @@
       <v-btn
         href="https://materialdesignicons.com/"
         target="_blank"
+        rel="nofollow"
         color="primary"
       >
-        Visit Material Design Icons
+        View All Material Design Icons
       </v-btn>
     </div>
   </div>
@@ -155,16 +147,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-#icons-container {
-  // card
-  .icons-card {
-    width: 128px;
-
-    .icons-text {
-      max-width: 90px;
-    }
-  }
-}
-</style>

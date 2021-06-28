@@ -9,7 +9,7 @@
           <p class="text-xs mb-0">
             Calculated in last 7 days
           </p>
-          <span class="text-xl font-weight-semibold text--primary mr-1">$25,980</span>
+          <span class="text-xl font-weight-semibold text--primary me-1">$25,980</span>
           <v-icon
             size="20"
             color="success"

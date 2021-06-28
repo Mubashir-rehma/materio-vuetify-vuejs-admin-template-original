@@ -13,7 +13,7 @@
             src="/logo.svg"
           ></v-img>
         </div>
-        <h2 class="text--primary ml-3">
+        <h2 class="text--primary ms-3">
           Materio
         </h2>
       </router-link>

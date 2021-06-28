@@ -1,7 +1,7 @@
 <template>
   <div class="demo-space-x d-flex flex-wrap">
     <!-- bottom -->
-    <div class="mr-6">
+    <div class="me-6">
       <v-badge
         bottom
         overlap
@@ -14,7 +14,7 @@
     </div>
 
     <!-- left -->
-    <div class="mr-6">
+    <div class="me-6">
       <v-badge
         left
         overlap
@@ -27,7 +27,7 @@
     </div>
 
     <!-- overlap -->
-    <div class="mr-6">
+    <div class="me-6">
       <v-badge
         overlap
         content="3"

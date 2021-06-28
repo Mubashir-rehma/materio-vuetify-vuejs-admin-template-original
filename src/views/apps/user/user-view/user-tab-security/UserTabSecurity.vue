@@ -125,7 +125,7 @@
           <div class="d-flex align-center">
             <v-avatar
               size="22"
-              class="mr-2"
+              class="me-2"
             >
               <v-img :src="`/images/logos/${item.browser}`"></v-img>
             </v-avatar>
@@ -163,7 +163,7 @@
               <v-btn
                 color="secondary"
                 outlined
-                class="mr-3 ml-auto"
+                class="me-3 ms-auto"
                 @click="istwoFactorDialogOpen = !istwoFactorDialogOpen"
               >
                 Cancel

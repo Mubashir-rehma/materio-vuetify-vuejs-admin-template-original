@@ -37,7 +37,7 @@
           <span class="d-flex align-center">
             <v-icon
               color="error"
-              class="mr-1"
+              class="me-1"
             >
               {{ icons.mdiFilePdf }}
             </v-icon>
@@ -71,7 +71,7 @@
             <span class="d-flex align-bottom mt-2">
               <v-avatar
                 size="40"
-                class="mr-2"
+                class="me-2"
               >
                 <v-img src="/images/avatars/2.png"></v-img>
               </v-avatar>
@@ -83,7 +83,7 @@
 
             <!-- Person Actions -->
             <div>
-              <v-icon class="mr-2">
+              <v-icon class="me-2">
                 {{ icons.mdiMessageTextOutline }}
               </v-icon>
               <v-icon>{{ icons.mdiPhone }}</v-icon>
@@ -103,7 +103,7 @@
               src="/images/pages/puma-shoes.jpg"
               class="rounded"
             ></v-img>
-            <div class="ml-4">
+            <div class="ms-4">
               <!-- Header -->
               <div class="d-flex justify-space-between">
                 <p class="mb-1 font-weight-semibold text-base text--primary">
@@ -158,7 +158,7 @@
           <div class="d-flex align-center">
             <v-avatar
               size="40"
-              class="mr-2"
+              class="me-2"
             >
               <v-img src="/images/avatars/1.png"></v-img>
             </v-avatar>

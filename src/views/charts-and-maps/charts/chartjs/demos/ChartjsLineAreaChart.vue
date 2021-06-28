@@ -7,7 +7,7 @@
         <v-icon size="18">
           {{ mdiCalendarBlankOutline }}
         </v-icon>
-        <span class="subtitle-2 ml-2">2019-05-01 to 2019-05-10</span>
+        <span class="subtitle-2 ms-2">2019-05-01 to 2019-05-10</span>
       </div>
     </v-card-title>
 

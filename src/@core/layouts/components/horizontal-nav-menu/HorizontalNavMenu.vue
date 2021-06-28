@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="horizontal-nav-menu pl-0"
+    class="horizontal-nav-menu ps-0"
     :class="rootThemeClasses"
   >
     <component

@@ -15,7 +15,7 @@
           :alt="$i18n.locale"
           height="14px"
           width="22px"
-          class="mr-2"
+          class="me-2"
         ></v-img>
         {{ locales.find(l => l.locale === $i18n.locale).title }}
       </div>
@@ -37,7 +37,7 @@
             height="14px"
             width="22px"
             :alt="locale.locale"
-            class="mr-2"
+            class="me-2"
           ></v-img>
           <v-list-item-title>{{ locale.title }}</v-list-item-title>
         </v-list-item>
@@ -86,6 +86,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

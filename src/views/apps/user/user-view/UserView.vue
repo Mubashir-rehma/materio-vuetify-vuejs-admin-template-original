@@ -28,7 +28,7 @@
           >
             <v-icon
               size="20"
-              class="mr-3"
+              class="me-3"
             >
               {{ tab.icon }}
             </v-icon>
@@ -82,7 +82,7 @@
             outlined
             dense
             hide-details
-            class="mr-3"
+            class="me-3"
           ></v-select>
           <v-btn
             color="primary"
@@ -97,7 +97,7 @@
             User current plan is standard plan
           </p>
           <div class="d-flex justify-space-between flex-wrap">
-            <div class="user-pricing mr-3">
+            <div class="user-pricing me-3">
               <sup class="primary--text">$</sup>
               <span class="text-5xl font-weight-semibold primary--text">{{ resolveCurrentPlanValue(userData.currentPlan) }}</span>
               <sub class="text-base font-weight-light">/ month</sub>

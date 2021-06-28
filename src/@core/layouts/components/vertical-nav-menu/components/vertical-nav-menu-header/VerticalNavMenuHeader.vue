@@ -1,5 +1,5 @@
 <template>
-  <div class="vertical-nav-header d-flex align-items-center justify-space-between pl-6 pr-5 pt-5 pb-2">
+  <div class="vertical-nav-header d-flex align-items-center justify-space-between ps-6 pe-5 pt-5 pb-2">
     <router-link
       to="/"
       class="d-flex align-items-center text-decoration-none"
@@ -10,7 +10,7 @@
         max-width="30px"
         alt="logo"
         contain
-        class="app-logo mr-3"
+        class="app-logo me-3"
       ></v-img>
       <v-slide-x-transition>
         <h2
@@ -25,7 +25,7 @@
     <v-slide-x-transition>
       <div
         v-show="!(menuIsVerticalNavMini && !isMouseHovered)"
-        class="d-flex align-center ml-1"
+        class="d-flex align-center ms-1"
         @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
       >
         <v-icon

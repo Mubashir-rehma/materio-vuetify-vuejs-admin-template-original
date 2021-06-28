@@ -33,7 +33,7 @@
               <span class="d-flex align-center mt-2">
                 <v-icon
                   color="error"
-                  class="mr-1"
+                  class="me-1"
                 >
                   {{ icons.mdiFilePdf }}
                 </v-icon>
@@ -59,7 +59,7 @@
                 <div class="d-flex align-center">
                   <v-avatar
                     size="26"
-                    class="mr-2"
+                    class="me-2"
                   >
                     <v-img src="/images/avatars/1.png"></v-img>
                   </v-avatar>

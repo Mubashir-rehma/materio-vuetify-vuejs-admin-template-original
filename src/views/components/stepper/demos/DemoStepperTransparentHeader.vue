@@ -54,7 +54,7 @@
           ></v-card>
           <v-btn
             color="primary"
-            class="mr-2"
+            class="me-2"
             @click="activeStep = 2"
           >
             Next
@@ -69,7 +69,7 @@
           ></v-card>
           <v-btn
             color="primary"
-            class="mr-2"
+            class="me-2"
             @click="activeStep = 3"
           >
             Next
@@ -90,7 +90,7 @@
           ></v-card>
           <v-btn
             color="primary"
-            class="mr-2"
+            class="me-2"
           >
             Complete
           </v-btn>

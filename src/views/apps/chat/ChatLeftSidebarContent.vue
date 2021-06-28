@@ -9,7 +9,7 @@
         :color="resolveAvatarBadgeVariant(profileUserMinimalData.status)"
         offset-x="11"
         offset-y="11"
-        class="mr-3 user-status-badge"
+        class="me-3 user-status-badge"
       >
         <v-avatar
           size="2.375rem"
@@ -29,7 +29,7 @@
         :prepend-inner-icon="icons.mdiMagnify"
       ></v-text-field>
       <v-icon
-        class="d-inline-flex d-md-none ml-1"
+        class="d-inline-flex d-md-none ms-1"
         @click="$emit('close-left-sidebar')"
       >
         {{ icons.mdiClose }}
@@ -43,7 +43,7 @@
       class="ps-chat-left-sidebar pt-7 pb-3 px-3"
     >
       <!-- Chats -->
-      <p class="font-weight-medium text-xl primary--text ml-3">
+      <p class="font-weight-medium text-xl primary--text ms-3">
         Chats
       </p>
       <chat-contact
@@ -56,7 +56,7 @@
       />
 
       <!-- Contacts -->
-      <p class="font-weight-medium text-xl primary--text mt-7 ml-3">
+      <p class="font-weight-medium text-xl primary--text mt-7 ms-3">
         Contacts
       </p>
       <chat-contact

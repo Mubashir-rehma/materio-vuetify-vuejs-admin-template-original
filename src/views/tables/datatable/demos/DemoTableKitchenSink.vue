@@ -36,7 +36,7 @@
               width="40"
             ></v-img>
           </div>
-          <div class="d-flex flex-column ml-3">
+          <div class="d-flex flex-column ms-3">
             <span class="d-block font-weight-semibold text-truncate text--primary">{{ item.product.name }}</span>
             <span class="text-xs">{{ item.product.brand }}</span>
           </div>
@@ -64,7 +64,7 @@
               {{ category.icon }}
             </v-icon>
           </v-avatar>
-          <span class="ml-1 text-no-wrap">{{ item.product.category }}</span>
+          <span class="ms-1 text-no-wrap">{{ item.product.category }}</span>
         </div>
       </template>
       <!-- buyer -->
@@ -81,13 +81,12 @@
             ></v-img>
             <span v-else>{{ item.buyer.name.slice(0,2).toUpperCase() }}</span>
           </v-avatar>
-          <span class="text-no-wrap font-weight-semibold text--primary ml-2">{{ item.buyer.name }}</span>
+          <span class="text-no-wrap font-weight-semibold text--primary ms-2">{{ item.buyer.name }}</span>
         </div>
       </template>
       <!-- payment -->
       <template #[`item.payment`]="{item}">
         <div class="d-flex flex-column">
-          <!-- <span :class="item.payment.received_payment_status === 'Unpaid' ? 'secondary--text':'primary--text'">{{ item.payment.paid_amount !== item.payment.total ? `${item.payment.paid_amount} / ${item.payment.total}`:`${item.payment.total}` }}</span> -->
           <div class="d-flex align-center">
             <span class="primary--text font-weight-medium">${{ item.payment.paid_amount }}</span>
             <span v-if="item.payment.paid_amount !== item.payment.total">/{{ item.payment.total }}</span>

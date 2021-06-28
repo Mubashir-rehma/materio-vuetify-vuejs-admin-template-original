@@ -31,20 +31,20 @@
             <v-avatar size="34">
               <v-img :src="`/images/avatars/${data.avatarImg}`"></v-img>
             </v-avatar>
-            <span class="white--text ml-2">{{ data.avatarName }}</span>
+            <span class="white--text ms-2">{{ data.avatarName }}</span>
           </div>
 
           <div class="white--text">
             <v-icon
-              class="mr-1"
+              class="me-1"
               color="white"
               size="1rem"
             >
               {{ icons.mdiHeart }}
             </v-icon>
-            <span class="text-sm mr-4">{{ data.likes }}</span>
+            <span class="text-sm me-4">{{ data.likes }}</span>
             <v-icon
-              class="mr-1"
+              class="me-1"
               color="white"
               size="1rem"
             >
@@ -69,8 +69,7 @@ export default {
         cardBg: 'info',
         title: 'Twitter Card',
         icon: mdiTwitter,
-        text:
-          '"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."',
+        text: '"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."',
         avatarImg: '4.png',
         avatarName: 'Mary Vaughn',
         likes: '1.2k',
@@ -80,8 +79,7 @@ export default {
         cardBg: 'primary',
         title: 'Facebook Card',
         icon: mdiFacebook,
-        text:
-          'You’ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an effective',
+        text: 'You’ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an effective',
         avatarImg: '1.png',
         avatarName: 'Eugene Clarke',
         likes: '3.2k',
@@ -91,8 +89,7 @@ export default {
         cardBg: 'success',
         title: 'Linkedin Card',
         icon: mdiLinkedin,
-        text:
-          'With the Internet spreading like wildfire and reaching every part of our daily life, more and more traffic is directed.',
+        text: 'With the Internet spreading like wildfire and reaching every part of our daily life, more and more traffic is directed.',
         avatarImg: '8.png',
         avatarName: 'Anne Burke1',
         likes: '1.2k',

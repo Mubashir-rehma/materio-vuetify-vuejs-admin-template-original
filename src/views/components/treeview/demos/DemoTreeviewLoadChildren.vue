@@ -77,7 +77,7 @@
             tag="v-card-text"
           >
             <v-col
-              class="text-right mr-4 mb-2"
+              class="text-right me-4 mb-2"
               tag="strong"
               cols="5"
             >
@@ -85,7 +85,7 @@
             </v-col>
             <v-col>{{ selected.company.name }}</v-col>
             <v-col
-              class="text-right mr-4 mb-2"
+              class="text-right me-4 mb-2"
               tag="strong"
               cols="5"
             >
@@ -98,7 +98,7 @@
               >{{ selected.website }}</a>
             </v-col>
             <v-col
-              class="text-right mr-4 mb-2"
+              class="text-right me-4 mb-2"
               tag="strong"
               cols="5"
             >

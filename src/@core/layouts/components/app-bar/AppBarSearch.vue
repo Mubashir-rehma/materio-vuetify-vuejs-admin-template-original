@@ -57,7 +57,7 @@
             >
               <v-icon
                 size="20px"
-                class="mr-3"
+                class="me-3"
               >
                 {{ item.icon }}
               </v-icon>
@@ -71,7 +71,7 @@
             >
               <v-icon
                 size="20px"
-                class="mr-3"
+                class="me-3"
               >
                 {{ item.icon }}
               </v-icon>
@@ -88,7 +88,7 @@
               class="d-flex align-center py-2"
             >
               <v-avatar
-                class="mr-3"
+                class="me-3"
                 size="40"
               >
                 <v-img :src="item.avatar"></v-img>

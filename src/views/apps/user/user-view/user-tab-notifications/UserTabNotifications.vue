@@ -46,7 +46,7 @@
     <v-card-actions>
       <v-btn
         color="primary"
-        class="mr-3"
+        class="me-3"
       >
         save changes
       </v-btn>
@@ -97,7 +97,8 @@ export default {
     ]
 
     return {
-      tableColumn, notifications,
+      tableColumn,
+      notifications,
     }
   },
 }

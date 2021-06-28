@@ -103,7 +103,7 @@
         cols="12"
         sm="6"
         md="5"
-        :class="index > 0 ? 'mr-auto': 'ml-auto'"
+        :class="index > 0 ? 'me-auto': 'ms-auto'"
       >
         <v-card
           class="faq-contact text-center pa-5"

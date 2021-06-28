@@ -6,7 +6,7 @@
       <v-btn
         icon
         small
-        class="mr-n3 mt-n1"
+        class="me-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -26,7 +26,7 @@
             size="40"
             rounded
             :color="data.avatarColor"
-            :class="`v-avatar-light-bg ${data.avatarColor}--text mr-3`"
+            :class="`v-avatar-light-bg ${data.avatarColor}--text me-3`"
           >
             <v-img
               max-height="20"
@@ -47,7 +47,7 @@
           <v-spacer></v-spacer>
 
           <div class="d-flex align-center">
-            <h4 class="text-base font-weight-semibold mr-1">
+            <h4 class="text-base font-weight-semibold me-1">
               {{ data.transaction }}
             </h4>
             <v-icon

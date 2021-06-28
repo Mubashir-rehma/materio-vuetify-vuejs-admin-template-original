@@ -11,7 +11,7 @@
       :color="resolveAvatarBadgeVariant(user.status)"
       offset-x="11"
       offset-y="11"
-      class="mr-3 user-status-badge"
+      class="me-3 user-status-badge"
       :value="isChatContact"
     >
       <v-avatar size="38">

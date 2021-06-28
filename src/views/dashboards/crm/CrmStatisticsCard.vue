@@ -8,7 +8,7 @@
       <v-btn
         icon
         small
-        class="mt-n1 mr-n3"
+        class="mt-n1 me-n3"
       >
         <v-icon class="cursor-pointer">
           {{ icons.mdiDotsVertical }}
@@ -17,7 +17,7 @@
     </v-card-title>
 
     <v-card-subtitle class="mb-7">
-      <span class="font-weight-semibold text--primary mr-1">Total 48.5% growth</span>
+      <span class="font-weight-semibold text--primary me-1">Total 48.5% growth</span>
       <span>😎 this month</span>
     </v-card-subtitle>
 
@@ -45,7 +45,7 @@
             </v-icon>
           </v-avatar>
 
-          <div class="ml-3">
+          <div class="ms-3">
             <p class="text-xs mb-0">
               {{ data.title }}
             </p>
@@ -60,12 +60,8 @@
 </template>
 
 <script>
-import {
-  mdiAccountOutline,
-  mdiTrendingUp,
-  mdiDotsVertical,
-  mdiLabelOutline,
-} from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { mdiAccountOutline, mdiTrendingUp, mdiDotsVertical, mdiLabelOutline } from '@mdi/js'
 
 export default {
   setup() {
@@ -99,7 +95,6 @@ export default {
       // icons
       icons: {
         mdiDotsVertical,
-
       },
     }
   },

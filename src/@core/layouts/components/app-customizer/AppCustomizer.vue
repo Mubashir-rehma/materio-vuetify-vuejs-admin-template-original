@@ -159,7 +159,7 @@
             <v-switch
               v-model="menuIsVerticalNavMini"
               hide-details
-              class="mt-0 ml-2"
+              class="mt-0 ms-2"
             ></v-switch>
           </div>
 
@@ -169,7 +169,7 @@
             <v-switch
               v-model="menuIsMenuHidden"
               hide-details
-              class="mt-0 ml-2"
+              class="mt-0 ms-2"
             ></v-switch>
           </div>
         </div>
@@ -185,7 +185,7 @@
             <v-switch
               v-model="isRtl"
               hide-details
-              class="mt-0 ml-2"
+              class="mt-0 ms-2"
             ></v-switch>
           </div>
           <!-- Router Transition -->

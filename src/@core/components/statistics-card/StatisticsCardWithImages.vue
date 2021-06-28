@@ -10,7 +10,7 @@
             {{ statistics }}
           </h2>
           <span
-            class="text-xs ml-1"
+            class="text-xs ms-1"
             :class="checkChange(change) ? 'success--text':'error--text'"
           > {{ change }}</span>
         </v-card-text>
@@ -26,7 +26,7 @@
         </v-card-text>
       </div>
       <v-spacer></v-spacer>
-      <div class="avatar-img">
+      <div class="illustrator-img">
         <v-img
           :width="avatarWidth"
           :src="avatar"
@@ -63,9 +63,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.avatar-img {
+.illustrator-img {
   position: absolute;
   right: 5%;
   bottom: 0;
+}
+
+.v-application {
+  &.v-application--is-rtl {
+    .illustrator-img {
+      left: 5%;
+      right: unset;
+    }
+  }
 }
 </style>

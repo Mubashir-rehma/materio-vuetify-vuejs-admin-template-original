@@ -131,7 +131,7 @@
             >
               <v-btn
                 color="primary"
-                class="mr-3"
+                class="me-3"
                 type="submit"
                 @click.prevent="onSubmit"
               >

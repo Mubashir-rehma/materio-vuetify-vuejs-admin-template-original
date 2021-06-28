@@ -23,7 +23,7 @@
         </div>
       </v-avatar>
 
-      <div class="ml-3">
+      <div class="ms-3">
         <h4 class="text-base font-weight-semibold">
           Developer Meetup
         </h4>
@@ -103,7 +103,7 @@
         >
           {{ data.icon }}
         </v-icon>
-        <div class="ml-2">
+        <div class="ms-2">
           <p class="text--primary mb-0">
             {{ data.title }}
           </p>

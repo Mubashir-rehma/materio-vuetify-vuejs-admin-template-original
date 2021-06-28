@@ -6,7 +6,7 @@
           Total Sales
         </p>
         <p class="text-no-wrap">
-          <span class="text-2xl font-weight-semibold mr-1">$21,845</span>
+          <span class="text-2xl font-weight-semibold me-1">$21,845</span>
           <small class="success--text text-xs ">
             <v-icon
               color="success"
@@ -21,7 +21,7 @@
       <v-btn
         icon
         small
-        class="mt-n1 mr-n3"
+        class="mt-n1 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

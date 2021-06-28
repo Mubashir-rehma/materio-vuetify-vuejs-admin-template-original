@@ -2,13 +2,13 @@
   <v-card class="greeting-card">
     <v-row class="ma-0 pa-0">
       <v-col cols="8">
-        <v-card-title class="title text-no-wrap pt-1 pl-2">
+        <v-card-title class="title text-no-wrap pt-1 ps-2">
           Congratulations John! 🥳
         </v-card-title>
-        <v-card-subtitle class="text-no-wrap pl-2">
+        <v-card-subtitle class="text-no-wrap ps-2">
           You have won Trophy
         </v-card-subtitle>
-        <v-card-text class="d-flex align-center mt-2 pb-2 pl-2">
+        <v-card-text class="d-flex align-center mt-2 pb-2 ps-2">
           <div>
             <p class="text-xl font-weight-semibold primary--text mb-2">
               $42.8k
@@ -56,6 +56,20 @@
     position: absolute;
     bottom: 10%;
     right: 8%;
+  }
+}
+// rtl
+.v-application {
+  &.v-application--is-rtl {
+    .greeting-card-bg {
+      right: initial;
+      left: 0;
+      transform: rotateY(180deg);
+    }
+    .greeting-card-trophy {
+      left: 8%;
+      right: initial;
+    }
   }
 }
 </style>

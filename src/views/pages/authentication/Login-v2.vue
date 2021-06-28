@@ -12,7 +12,7 @@
           src="/logo.svg"
         ></v-img>
 
-        <h2 class="text--primary ml-3">
+        <h2 class="text--primary ms-3">
           Materio
         </h2>
       </router-link>
@@ -101,7 +101,7 @@
                       <v-checkbox
                         hide-details
                         label="Remember Me"
-                        class="mr-3 "
+                        class="me-3 "
                       >
                       </v-checkbox>
 
@@ -126,7 +126,7 @@
 
                 <!-- create new account  -->
                 <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
-                  <span class="mr-2">
+                  <span class="me-2">
                     New on our platform?
                   </span>
                   <router-link :to="{name:'auth-register-v2'}">
@@ -147,7 +147,7 @@
                     v-for="link in socialLink"
                     :key="link.icon"
                     icon
-                    class="ml-1"
+                    class="ms-1"
                   >
                     <v-icon :color="$vuetify.theme.dark ? link.colorInDark : link.color">
                       {{ link.icon }}

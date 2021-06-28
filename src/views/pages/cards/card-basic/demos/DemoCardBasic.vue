@@ -40,7 +40,7 @@
             </v-avatar>
             <!-- Title, Subtitle & Action Button -->
             <div class="d-flex justify-space-between flex-wrap pt-12">
-              <div class="mr-2 mb-2">
+              <div class="me-2 mb-2">
                 <v-card-title class="pt-0 px-0">
                   Robert Meyer
                 </v-card-title>
@@ -151,7 +151,7 @@
                   dark
                 >
                   <v-icon>{{ icons.mdiCartPlus }}</v-icon>
-                  <span class="ml-2">Add to cart</span>
+                  <span class="ms-2">Add to cart</span>
                 </v-btn>
                 <v-btn icon>
                   <v-icon>{{ icons.mdiShareVariantOutline }}</v-icon>
@@ -178,7 +178,7 @@
                   color="warning"
                   background-color="warning"
                   dense
-                  class="mr-3 flex-shrink-0"
+                  class="me-3 flex-shrink-0"
                 ></v-rating>
                 <span class="text-sm">5 Star | 98 reviews</span>
               </v-card-text>
@@ -270,13 +270,13 @@
                     <v-icon color="primary">
                       {{ icons.mdiLockOpenOutline }}
                     </v-icon>
-                    <span class="ml-3">Full Access</span>
+                    <span class="ms-3">Full Access</span>
                   </p>
                   <p class="d-flex align-center mb-0">
                     <v-icon color="primary">
                       {{ icons.mdiAccountOutline }}
                     </v-icon>
-                    <span class="ml-3">15 Members</span>
+                    <span class="ms-3">15 Members</span>
                   </p>
                 </div>
                 <v-divider
@@ -291,13 +291,13 @@
                     <v-icon color="primary">
                       {{ icons.mdiStarOutline }}
                     </v-icon>
-                    <span class="ml-3">Access all Features</span>
+                    <span class="ms-3">Access all Features</span>
                   </p>
                   <p class="d-flex align-center mb-0">
                     <v-icon color="primary">
                       {{ icons.mdiTrendingUp }}
                     </v-icon>
-                    <span class="ml-3">Lifetime Free Update</span>
+                    <span class="ms-3">Lifetime Free Update</span>
                   </p>
                 </div>
               </v-card-actions>
@@ -371,7 +371,7 @@
               background-color="warning"
               dense
             ></v-rating>
-            <span class="ml-3 text-sm">5 Star | 98 reviews</span>
+            <span class="ms-3 text-sm">5 Star | 98 reviews</span>
           </v-card-text>
           <v-card-text>
             If you are looking for a new way to promote your business that won’t cost you more money, maybe printing is one of the options you won’t resist. Printing is a widely use process in making printed materials that are used for advertising.

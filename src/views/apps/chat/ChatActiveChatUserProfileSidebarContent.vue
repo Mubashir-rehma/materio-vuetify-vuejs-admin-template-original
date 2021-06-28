@@ -1,7 +1,7 @@
 <template>
   <div class="user-profile-sidebar-content h-full">
     <!-- Close Button -->
-    <div class="pt-2 mr-2 text-right">
+    <div class="pt-2 me-2 text-right">
       <v-btn
         icon
         small
@@ -67,19 +67,19 @@
           :class="rootThemeClasses"
         >PERSONAL INFORMATION</span>
         <div class="d-flex align-center my-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiEmailOutline }}
           </v-icon>
           <span>lucifer@email.com</span>
         </div>
         <div class="d-flex align-center mb-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiPhoneOutline }}
           </v-icon>
           <span>+1(123) 456 - 7890</span>
         </div>
         <div class="d-flex align-center">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiClockOutline }}
           </v-icon>
           <span>Mon - Fri 10AM - 8PM</span>
@@ -93,32 +93,32 @@
           :class="rootThemeClasses"
         >OPTIONS</span>
         <div class="d-flex align-center my-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiBookmarkOutline }}
           </v-icon>
           <span>Add Tag</span>
         </div>
         <div class="d-flex align-center mb-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiStarOutline }}
           </v-icon>
           <span>Important Contact</span>
         </div>
         <div class="d-flex align-center mb-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiImageOutline }}
           </v-icon>
           <span>Shared Media</span>
         </div>
         <div class="d-flex align-center mb-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiTrashCanOutline }}
           </v-icon>
           <span>Delete Contact</span>
         </div>
         <div class="d-flex align-center">
           <v-icon
-            class="mr-3 ml-1"
+            class="me-3 ms-1"
             size="18"
           >
             {{ icons.mdiBlockHelper }}

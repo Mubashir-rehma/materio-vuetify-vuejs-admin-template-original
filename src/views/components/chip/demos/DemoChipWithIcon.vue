@@ -2,7 +2,7 @@
   <div class="demo-space-x">
     <v-chip>
       <v-icon
-        class="mr-1"
+        class="me-1"
         size="18"
       >
         {{ icons.mdiAccountOutline }}
@@ -12,7 +12,7 @@
 
     <v-chip color="primary">
       <v-icon
-        class="mr-1"
+        class="me-1"
         size="18"
       >
         {{ icons.mdiStarOutline }}
@@ -23,7 +23,7 @@
     <v-chip color="secondary">
       <v-icon
         size="18"
-        class="mr-1"
+        class="me-1"
       >
         {{ icons.mdiCake }}
       </v-icon>
@@ -32,7 +32,7 @@
 
     <v-chip color="success">
       <v-icon
-        class="mr-1"
+        class="me-1"
         size="18"
       >
         {{ icons.mdiBellOutline }}
@@ -42,7 +42,7 @@
 
     <v-chip color="info">
       <v-icon
-        class="mr-1"
+        class="me-1"
         size="18"
       >
         {{ icons.mdiForumOutline }}
@@ -52,7 +52,7 @@
 
     <v-chip color="warning">
       <v-icon
-        class="mr-1"
+        class="me-1"
         size="18"
       >
         {{ icons.mdiAlertOutline }}
@@ -62,7 +62,7 @@
 
     <v-chip color="error">
       <v-icon
-        class="mr-1"
+        class="me-1"
         size="18"
       >
         {{ icons.mdiAlertCircleOutline }}

@@ -5,7 +5,7 @@
       :value="messages"
       color="success"
       overlap
-      class="mr-10"
+      class="me-10"
     >
       <v-icon large>
         {{ icons.mdiVuetify }}

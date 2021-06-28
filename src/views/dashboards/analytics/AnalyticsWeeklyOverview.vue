@@ -8,7 +8,7 @@
       <v-btn
         icon
         small
-        class="mt-n1 mr-n3"
+        class="mt-n1 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}
@@ -25,7 +25,7 @@
       ></vue-apex-charts>
 
       <div class="d-flex align-center">
-        <h3 class="text-2xl font-weight-semibold mr-4">
+        <h3 class="text-2xl font-weight-semibold me-4">
           45%
         </h3>
         <span>Your sales perfomance in 45% 🤩 better compare to last month</span>

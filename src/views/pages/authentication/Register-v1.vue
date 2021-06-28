@@ -12,7 +12,7 @@
               max-height="30"
               max-width="30"
               src="/logo.svg"
-              class="mr-3"
+              class="me-3"
             ></v-img>
 
             <h2 class="text-2xl font-weight-semibold">
@@ -66,7 +66,7 @@
             <v-checkbox hide-details>
               <template #label>
                 <div class="d-flex align-center flex-wrap">
-                  <span class="mr-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
+                  <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
                 </div>
               </template>
             </v-checkbox>
@@ -83,7 +83,7 @@
 
         <!-- create new account  -->
         <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
-          <span class="mr-2">
+          <span class="me-2">
             Already have an account?
           </span>
           <router-link :to="{name:'auth-login-v1'}">
@@ -104,7 +104,7 @@
             v-for="link in socialLink"
             :key="link.icon"
             icon
-            class="ml-1"
+            class="ms-1"
           >
             <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
               {{ link.icon }}

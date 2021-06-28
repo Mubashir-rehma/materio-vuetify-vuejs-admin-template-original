@@ -13,17 +13,17 @@
           :items="actions"
           hide-details
           :disabled="Boolean(!selectedTableData.length)"
-          class="invoice-list-actions mr-3"
+          class="invoice-list-actions me-3"
         ></v-select>
 
         <!-- create invoice -->
         <v-btn
           color="primary"
-          class="mr-3"
+          class="me-3"
         >
           <v-icon
             size="18"
-            class="mr-1"
+            class="me-1"
           >
             {{ icons.mdiPlus }}
           </v-icon>
@@ -41,7 +41,7 @@
           outlined
           hide-details
           placeholder="Search Invoice"
-          class="invoice-list-search mr-3"
+          class="invoice-list-search me-3"
         ></v-text-field>
 
         <v-select
@@ -115,7 +115,7 @@
             >{{ avatarText(item.client.name) }}</span>
           </v-avatar>
 
-          <div class="d-flex flex-column ml-3">
+          <div class="d-flex flex-column ms-3">
             <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.client.name }}</span>
             <span class="text-xs">{{ item.client.companyEmail }}</span>
           </div>
@@ -212,7 +212,7 @@
                 <v-list-item-title>
                   <v-icon
                     size="18"
-                    class="mr-2"
+                    class="me-2"
                   >
                     {{ item.icon }}
                   </v-icon>
@@ -334,14 +334,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#invoice-list{
-  .invoice-list-actions{
+#invoice-list {
+  .invoice-list-actions {
     max-width: 7.81rem;
   }
-  .invoice-list-search{
+  .invoice-list-search {
     max-width: 10.625rem;
   }
-  .invoice-list-status{
+  .invoice-list-status {
     max-width: 11.3rem;
   }
 }

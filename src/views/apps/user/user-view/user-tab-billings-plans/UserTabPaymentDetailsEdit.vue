@@ -91,7 +91,7 @@
             >
               <v-btn
                 color="primary"
-                class="mr-3"
+                class="me-3"
                 @click="$emit('update:is-plan-upgrade-open',false)"
               >
                 submit

@@ -13,7 +13,7 @@
       >
         <div class="d-flex align-center">
           <span
-            class="text-4xl font-weight-bold mr-3"
+            class="text-4xl font-weight-bold me-3"
             :class="stepValidationResult[1] ? 'text--primary' : 'error--text'"
           >01</span>
           <div class="d-flex flex-column">
@@ -39,7 +39,7 @@
       >
         <div class="d-flex align-center">
           <span
-            class="text-4xl font-weight-bold mr-3"
+            class="text-4xl font-weight-bold me-3"
             :class="stepValidationResult[2] ? 'text--primary' : 'error--text'"
           >02</span>
           <div class="d-flex flex-column">
@@ -64,7 +64,7 @@
       >
         <div class="d-flex align-center">
           <span
-            class="text-4xl font-weight-bold mr-3"
+            class="text-4xl font-weight-bold me-3"
             :class="stepValidationResult[3] ? 'text--primary' : 'error--text'"
           >03</span>
           <div class="d-flex flex-column">
@@ -148,7 +148,7 @@
 
         <v-btn
           color="primary"
-          class="mr-2"
+          class="me-2"
           @click="handleStepValidation(1)"
         >
           Next
@@ -222,7 +222,7 @@
 
         <v-btn
           color="primary"
-          class="mr-2"
+          class="me-2"
           @click="handleStepValidation(2)"
         >
           Next
@@ -304,7 +304,7 @@
         <!-- Action Buttons -->
         <v-btn
           color="primary"
-          class="mr-2"
+          class="me-2"
           @click="handleStepValidation(3, true, true)"
         >
           Complete

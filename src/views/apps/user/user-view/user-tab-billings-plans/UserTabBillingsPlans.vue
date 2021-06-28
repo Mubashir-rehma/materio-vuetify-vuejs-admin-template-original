@@ -13,7 +13,7 @@
             md="6"
           >
             <h4 class="mb-1">
-              <span class="font-weight-medium mr-1">Your Current Plan is</span>
+              <span class="font-weight-medium me-1">Your Current Plan is</span>
               <span>Basic</span>
             </h4>
             <p>A simple start for everyone</p>
@@ -24,7 +24,7 @@
             <p>We will send you a notification upon Subscription expiration</p>
 
             <div class="d-flex align-center">
-              <h4 class="font-weight-medium mr-2 mb-1">
+              <h4 class="font-weight-medium me-2 mb-1">
                 $99 Per Month
               </h4>
               <v-chip
@@ -76,7 +76,7 @@
           >
             <v-btn
               color="primary"
-              class="mr-3 mb-3 mb-sm-0"
+              class="me-3 mb-3 mb-sm-0"
               @click.stop="$emit('update:is-plan-upgrade-dialog-visible',true)"
             >
               Upgrade Plan
@@ -101,7 +101,7 @@
         <v-btn color="primary">
           <v-icon
             size="18"
-            class="mr-1"
+            class="me-1"
           >
             {{ icons.mdiPlus }}
           </v-icon>
@@ -124,7 +124,7 @@
                 :src="`/images/logos/${paymentCard.cardImg}`"
               ></v-img>
               <div class="text--primary font-weight-medium mt-2">
-                <span class="text-base mr-2">{{ paymentCard.owner }}</span>
+                <span class="text-base me-2">{{ paymentCard.owner }}</span>
 
                 <v-chip
                   v-if="paymentCard.cardStatus"
@@ -162,7 +162,7 @@
               <v-btn
                 color="secondary"
                 outlined
-                class="ml-3 mb-5"
+                class="ms-3 mb-5"
               >
                 <span class="d-none d-sm-block">Delete</span>
                 <v-icon
@@ -174,7 +174,7 @@
               </v-btn>
 
               <p class="mb-0">
-                <span class="mr-1">Card expires at</span>
+                <span class="me-1">Card expires at</span>
                 <span>{{ paymentCard.cardExpires }}</span>
               </p>
             </div>

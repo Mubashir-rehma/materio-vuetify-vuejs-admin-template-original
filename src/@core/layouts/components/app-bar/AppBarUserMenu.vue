@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-center">
-    <div class="d-flex flex-column mr-2 text-right">
+    <div class="d-flex flex-column me-2 text-right">
       <span>
         {{ userData.fullName || userData.username }}
       </span>
@@ -44,7 +44,7 @@
       <v-list>
         <!-- Profile -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiAccountOutline }}
             </v-icon>
@@ -56,7 +56,7 @@
 
         <!-- Email -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiEmailOutline }}
             </v-icon>
@@ -68,7 +68,7 @@
 
         <!-- Task -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiCheckboxMarkedOutline }}
             </v-icon>
@@ -80,7 +80,7 @@
 
         <!-- Chat -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiChatOutline }}
             </v-icon>
@@ -94,7 +94,7 @@
 
         <!-- Settings -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiCogOutline }}
             </v-icon>
@@ -106,7 +106,7 @@
 
         <!-- Pricing -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiCurrencyUsd }}
             </v-icon>
@@ -118,7 +118,7 @@
 
         <!-- FAQ -->
         <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiHelpCircleOutline }}
             </v-icon>
@@ -130,7 +130,7 @@
 
         <!-- Logout -->
         <v-list-item @click="logoutUser">
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiLogoutVariant }}
             </v-icon>
@@ -199,6 +199,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

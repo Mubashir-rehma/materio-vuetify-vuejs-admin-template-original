@@ -10,7 +10,7 @@
       step="1"
     >
       <div class="d-flex align-center">
-        <span class="text--primary text-4xl font-weight-bold mr-3">01</span>
+        <span class="text--primary text-4xl font-weight-bold me-3">01</span>
         <div class="d-flex flex-column">
           <span class="text--primary text-sm font-weight-semibold">Account Details</span>
           <span class="text--secondary text-xs">Setup your account details</span>
@@ -26,7 +26,7 @@
       ></v-card>
       <v-btn
         color="primary"
-        class="mr-2"
+        class="me-2"
         @click="activeStep = 2"
       >
         Next
@@ -39,7 +39,7 @@
       step="2"
     >
       <div class="d-flex align-center">
-        <span class="text--primary text-4xl font-weight-bold mr-3">02</span>
+        <span class="text--primary text-4xl font-weight-bold me-3">02</span>
         <div class="d-flex flex-column">
           <span class="text--primary text-sm font-weight-semibold">Personal Info</span>
           <span class="text--secondary text-xs">Setup Information</span>
@@ -55,7 +55,7 @@
       ></v-card>
       <v-btn
         color="primary"
-        class="mr-2"
+        class="me-2"
         @click="activeStep = 3"
       >
         Next
@@ -75,7 +75,7 @@
       step="3"
     >
       <div class="d-flex align-center">
-        <span class="text--primary text-4xl font-weight-bold mr-3">03</span>
+        <span class="text--primary text-4xl font-weight-bold me-3">03</span>
         <div class="d-flex flex-column">
           <span class="text--primary text-sm font-weight-semibold">Review &nbsp; Submit</span>
           <span class="text--secondary text-xs">Write a Review</span>
@@ -91,7 +91,7 @@
       ></v-card>
       <v-btn
         color="primary"
-        class="mr-2"
+        class="me-2"
       >
         Complete
       </v-btn>

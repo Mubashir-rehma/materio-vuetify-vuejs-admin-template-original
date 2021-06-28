@@ -11,7 +11,7 @@
               max-height="30"
               max-width="30"
               src="/logo.svg"
-              class="mr-3"
+              class="me-3"
             ></v-img>
 
             <h2 class="text-2xl font-weight-semibold">

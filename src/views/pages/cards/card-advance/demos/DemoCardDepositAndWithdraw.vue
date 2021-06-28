@@ -4,7 +4,7 @@
       <v-card-title>
         <span>Deposit</span>
         <v-spacer></v-spacer>
-        <span class="text-xs light-grey">View All</span>
+        <span class="text-xs text--disabled">View All</span>
       </v-card-title>
 
       <v-card-text>
@@ -21,7 +21,7 @@
               :src="data.img"
             ></v-img>
 
-            <div class="ml-sm-3 mt-1">
+            <div class="ms-sm-3 mt-1">
               <h4 class="font-weight-semibold">
                 {{ data.title }}
               </h4>
@@ -44,7 +44,7 @@
       <v-card-title>
         <span>Withdraw</span>
         <v-spacer></v-spacer>
-        <span class="text-xs light-grey">View All</span>
+        <span class="text-xs text--disabled">View All</span>
       </v-card-title>
 
       <v-card-text>
@@ -60,7 +60,7 @@
               :src="data.img"
             ></v-img>
 
-            <div class="ml-sm-3 mt-1">
+            <div class="ms-sm-3 mt-1">
               <h4 class="font-weight-semibold">
                 {{ data.title }}
               </h4>
@@ -153,11 +153,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.theme--light {
-  .light-grey {
-    color: rgba(94, 86, 105, 0.34);
-  }
-}
 .width-50 {
   width: 50%;
 }

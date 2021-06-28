@@ -22,7 +22,7 @@
             <v-img
               max-width="35"
               contain
-              class="mr-3"
+              class="me-3"
               :src="`/images/icons/${account.img}`"
             ></v-img>
 
@@ -65,7 +65,7 @@
               max-width="35"
               height="35"
               contain
-              class="mr-3"
+              class="me-3"
               :src="`/images/icons/${account.img}`"
             ></v-img>
 

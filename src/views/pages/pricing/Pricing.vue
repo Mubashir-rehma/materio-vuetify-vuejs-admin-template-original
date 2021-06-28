@@ -91,7 +91,7 @@
                     >
                       <v-icon
                         size="14"
-                        class="mr-2 mt-1"
+                        class="me-2 mt-1"
                       >
                         {{ icons.mdiCheckboxBlankCircleOutline }}
                       </v-icon>
@@ -173,7 +173,7 @@
                     >
                       <v-icon
                         size="14"
-                        class="mr-2 mt-1"
+                        class="me-2 mt-1"
                       >
                         {{ icons.mdiCheckboxBlankCircleOutline }}
                       </v-icon>
@@ -240,7 +240,7 @@
                     >
                       <v-icon
                         size="14"
-                        class="mr-2 mt-1"
+                        class="me-2 mt-1"
                       >
                         {{ icons.mdiCheckboxBlankCircleOutline }}
                       </v-icon>
@@ -410,23 +410,19 @@ export default {
     const faqsList = [
       {
         title: 'General settings',
-        desc:
-          'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
+        desc: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
       },
       {
         title: 'Users',
-        desc:
-          'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
+        desc: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
       },
       {
         title: 'Personal data',
-        desc:
-          'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
+        desc: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
       },
       {
         title: 'Advanced settings',
-        desc:
-          'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
+        desc: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
       },
     ]
 

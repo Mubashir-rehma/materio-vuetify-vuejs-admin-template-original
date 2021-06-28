@@ -24,7 +24,7 @@
       ></vue-apex-charts>
 
       <div class="d-flex align-center">
-        <span class="text--primary text-xl font-weight-semibold mr-4">45%</span>
+        <span class="text--primary text-xl font-weight-semibold me-4">45%</span>
         <span>Your sales perfomance in 45% 🤩 better compare to last month</span>
       </div>
       <v-btn

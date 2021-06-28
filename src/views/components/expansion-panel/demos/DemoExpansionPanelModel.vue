@@ -3,7 +3,7 @@
     <div class="mb-4">
       <v-btn
         color="primary"
-        class="mr-4"
+        class="me-4"
         @click="all"
       >
         all

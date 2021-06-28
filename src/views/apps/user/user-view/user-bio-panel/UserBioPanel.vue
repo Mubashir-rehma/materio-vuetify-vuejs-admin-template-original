@@ -33,13 +33,13 @@
           </v-chip>
         </v-card-title>
 
-        <v-card-text class="d-flex justify-center flex-wrap mt-2  pr-sm-0">
-          <div class="d-flex align-center mr-8 mb-4">
+        <v-card-text class="d-flex justify-center flex-wrap mt-2  pe-sm-0">
+          <div class="d-flex align-center me-8 mb-4">
             <v-avatar
               size="40"
               rounded
               color="primary"
-              class="v-avatar-light-bg primary--text mr-3"
+              class="v-avatar-light-bg primary--text me-3"
             >
               <v-icon
                 color="primary"
@@ -57,12 +57,12 @@
             </div>
           </div>
 
-          <div class="d-flex align-center mb-4 mr-4">
+          <div class="d-flex align-center mb-4 me-4">
             <v-avatar
               size="40"
               rounded
               color="primary"
-              class="v-avatar-light-bg primary--text mr-3"
+              class="v-avatar-light-bg primary--text me-3"
             >
               <v-icon
                 color="primary"
@@ -93,7 +93,7 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Username:</span>
+              <span class="font-weight-medium me-2">Username:</span>
               <span class="text--secondary">{{ userData.username }}</span>
             </v-list-item>
 
@@ -101,7 +101,7 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium text-no-wrap mr-2">Billing Email:</span>
+              <span class="font-weight-medium text-no-wrap me-2">Billing Email:</span>
               <span class="text--secondary">{{ userData.email }}</span>
             </v-list-item>
 
@@ -109,7 +109,7 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Status:</span>
+              <span class="font-weight-medium me-2">Status:</span>
               <span class="text--secondary">
                 <v-chip
                   small
@@ -126,14 +126,14 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Role:</span>
+              <span class="font-weight-medium me-2">Role:</span>
               <span class="text--secondary text-capitalize">{{ userData.role }}</span>
             </v-list-item>
             <v-list-item
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Tax ID:</span>
+              <span class="font-weight-medium me-2">Tax ID:</span>
               <span class="text--secondary">{{ userData.taxId }}</span>
             </v-list-item>
 
@@ -141,7 +141,7 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Contact:</span>
+              <span class="font-weight-medium me-2">Contact:</span>
               <span class="text--secondary">+1 {{ userData.contact }}</span>
             </v-list-item>
 
@@ -149,7 +149,7 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Language:</span>
+              <span class="font-weight-medium me-2">Language:</span>
               <span class="text--secondary">{{ userData.language }}</span>
             </v-list-item>
 
@@ -157,7 +157,7 @@
               dense
               class="px-0 mb-n2"
             >
-              <span class="font-weight-medium mr-2">Country:</span>
+              <span class="font-weight-medium me-2">Country:</span>
               <span class="text--secondary">{{ userData.country }}</span>
             </v-list-item>
           </v-list>
@@ -166,7 +166,7 @@
         <v-card-actions class="justify-center">
           <v-btn
             color="primary"
-            class="mr-3"
+            class="me-3"
             @click="isBioDialogOpen = !isBioDialogOpen"
           >
             Edit
@@ -195,7 +195,7 @@
             label
             color="primary"
             small
-            class="v-chip-light-bg primary--text font-weight-semibold mb-3 mr-3"
+            class="v-chip-light-bg primary--text font-weight-semibold mb-3 me-3"
           >
             {{ standardPlan.plan }}
           </v-chip>
@@ -217,7 +217,7 @@
             >
               <v-icon
                 size="10"
-                class="mr-2"
+                class="me-2"
               >
                 {{ icons.mdiCheckboxBlankCircle }}
               </v-icon>

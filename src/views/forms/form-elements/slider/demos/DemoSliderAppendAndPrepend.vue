@@ -9,7 +9,7 @@
           class="display-3 font-weight-light"
           v-text="bpm"
         ></span>
-        <span class="subheading font-weight-light mr-1">BPM</span>
+        <span class="subheading font-weight-light me-1">BPM</span>
         <v-fade-transition>
           <v-avatar
             v-if="isPlaying"

@@ -11,7 +11,7 @@
       <v-btn
         icon
         small
-        class="mt-n8 mr-n3"
+        class="mt-n8 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}
@@ -41,7 +41,7 @@
               {{ icons.mdiTrendingUp }}
             </v-icon>
           </v-avatar>
-          <div class="ml-4 d-flex flex-column">
+          <div class="ms-4 d-flex flex-column">
             <p class="text--primary font-weight-semibold text-base mb-0">
               21.8k
             </p>
@@ -62,7 +62,7 @@
               {{ icons.mdiCurrencyUsd }}
             </v-icon>
           </v-avatar>
-          <div class="ml-4 d-flex flex-column">
+          <div class="ms-4 d-flex flex-column">
             <p class="text--primary font-weight-semibold text-base mb-0">
               21.8k
             </p>

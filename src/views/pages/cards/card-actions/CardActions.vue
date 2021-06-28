@@ -119,7 +119,7 @@
         </template>
         <template slot="before-actions">
           <v-chip
-            class="v-chip-light-bg primary--text mr-3"
+            class="v-chip-light-bg primary--text me-3"
             color="primary"
             small
           >

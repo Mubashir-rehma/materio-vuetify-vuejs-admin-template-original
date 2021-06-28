@@ -4,18 +4,18 @@
 
     <v-card-text class="d-flex align-center">
       <div>
-        <v-card-title class="pl-0">
+        <v-card-title class="ps-0">
           Cafe Badilico
         </v-card-title>
 
-        <v-card-subtitle class="d-flex align-center flex-wrap pl-0 pb-0">
+        <v-card-subtitle class="d-flex align-center flex-wrap ps-0 pb-0">
           <v-rating
             dense
             background-color="warning"
             color="warning"
             :value="5"
           ></v-rating>
-          <span class="ml-3">5 Star (245)</span>
+          <span class="ms-3">5 Star (245)</span>
         </v-card-subtitle>
       </div>
 
@@ -23,7 +23,7 @@
 
       <v-btn
         icon
-        class="mr-n1"
+        class="me-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}

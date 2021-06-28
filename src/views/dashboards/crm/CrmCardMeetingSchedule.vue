@@ -7,7 +7,7 @@
       <v-btn
         icon
         small
-        class="mt-n1 mr-n3"
+        class="mt-n1 me-n3"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -33,7 +33,7 @@
             <div class="d-flex align-center">
               <v-icon
                 size="14"
-                class="mr-1"
+                class="me-1"
               >
                 {{ icons.mdiCalendarBlankOutline }}
               </v-icon>

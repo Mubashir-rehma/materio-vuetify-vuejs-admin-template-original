@@ -6,7 +6,7 @@
 
       <v-btn
         icon
-        class="mr-n1"
+        class="me-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -30,7 +30,7 @@
             :src="data.avatar"
           ></v-img>
         </v-avatar>
-        <div class="ml-4">
+        <div class="ms-4">
           <h2 class="text-xl font-weight-semibold">
             {{ data.title }}
           </h2>

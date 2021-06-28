@@ -13,7 +13,7 @@
 
     <div class="page-title text-center">
       <h2 class="text-2xl font-weight-semibold text--primary d-flex align-center justify-center">
-        <span class="mr-2">Page Not Found</span>
+        <span class="me-2">Page Not Found</span>
         <v-icon color="warning">
           {{ icons.mdiAlert }}
         </v-icon>

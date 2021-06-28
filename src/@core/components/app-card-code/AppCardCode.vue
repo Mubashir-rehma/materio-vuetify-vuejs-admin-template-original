@@ -24,7 +24,7 @@
       </v-slide-x-reverse-transition>
       <v-icon
         dense
-        class="ml-4"
+        class="ms-4"
         :color="isCodeCollapsed ? 'primary' : null"
         @click="isCodeCollapsed = !isCodeCollapsed"
       >

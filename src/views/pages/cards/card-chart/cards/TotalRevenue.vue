@@ -25,7 +25,7 @@
         <!-- New Users -->
         <div class="text-center">
           <div class="d-flex align-center justify-center">
-            <div class="pa-1 success rounded-circle mr-2"></div>
+            <div class="pa-1 success rounded-circle me-2"></div>
             <span class="text--primary font-weight-semibold text-base">856</span>
           </div>
           <span>New Users</span>
@@ -36,7 +36,7 @@
         <!-- Returning -->
         <div class="text-center">
           <div class="d-flex align-center justify-center">
-            <div class="pa-1 primary rounded-circle mr-2"></div>
+            <div class="pa-1 primary rounded-circle me-2"></div>
             <span class="text--primary font-weight-semibold text-base">345</span>
           </div>
           <span>Returning</span>
@@ -47,7 +47,7 @@
         <!-- Referrals -->
         <div class="text-center">
           <div class="d-flex align-center justify-center">
-            <div class="pa-1 secondary rounded-circle mr-2"></div>
+            <div class="pa-1 secondary rounded-circle me-2"></div>
             <span class="text--primary font-weight-semibold text-base">258</span>
           </div>
           <span>Referrals</span>

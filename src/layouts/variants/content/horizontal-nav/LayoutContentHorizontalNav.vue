@@ -24,7 +24,7 @@
               max-width="30px"
               alt="logo"
               contain
-              class="mr-3"
+              class="me-3"
             ></v-img>
             <h2 class="app-title text--primary">
               {{ appName }}
@@ -38,7 +38,7 @@
             :shall-show-full-search.sync="shallShowFullSearch"
             :data="appBarSearchData"
             :filter="searchFilterFunc"
-            class="mr-4"
+            class="me-4"
           ></app-bar-search>
           <app-bar-i18n></app-bar-i18n>
           <app-bar-theme-switcher class="mx-4"></app-bar-theme-switcher>

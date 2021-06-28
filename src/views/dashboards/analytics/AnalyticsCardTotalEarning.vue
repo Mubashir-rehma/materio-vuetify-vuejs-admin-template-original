@@ -7,7 +7,7 @@
       <v-btn
         icon
         small
-        class="mr-n3 mt-n2"
+        class="me-n3 mt-n2"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -28,7 +28,7 @@
           >
             {{ icons.mdiMenuUp }}
           </v-icon>
-          <span class="text-base font-weight-medium success--text ml-n2">10%</span>
+          <span class="text-base font-weight-medium success--text ms-n2">10%</span>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
             ></v-img>
           </v-avatar>
 
-          <div class="ml-3">
+          <div class="ms-3">
             <h4 class="font-weight-medium">
               {{ earning.title }}
             </h4>

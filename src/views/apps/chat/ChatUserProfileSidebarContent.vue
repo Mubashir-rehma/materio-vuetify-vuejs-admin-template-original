@@ -1,7 +1,7 @@
 <template>
   <div class="user-profile-sidebar-content h-full">
     <!-- Close Button -->
-    <div class="pt-2 mr-2 text-right">
+    <div class="pt-2 me-2 text-right">
       <v-btn
         icon
         small
@@ -86,25 +86,25 @@
           :class="rootThemeClasses"
         >SETTINGS</span>
         <div class="d-flex align-center my-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiCheckCircleOutline }}
           </v-icon>
           <span>Two-step Vertification</span>
         </div>
         <div class="d-flex align-center mb-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiBellOutline }}
           </v-icon>
           <span>Notification</span>
         </div>
         <div class="d-flex align-center mb-3">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiAccountOutline }}
           </v-icon>
           <span>Invite Friends</span>
         </div>
         <div class="d-flex align-center">
-          <v-icon class="mr-2">
+          <v-icon class="me-2">
             {{ icons.mdiTrashCanOutline }}
           </v-icon>
           <span>Delete Account</span>

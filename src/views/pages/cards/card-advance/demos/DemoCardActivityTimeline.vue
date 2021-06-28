@@ -26,11 +26,11 @@
                   max-width="26"
                   src="/images/pages/pdf.png"
                 ></v-img>
-                <span class="font-weight-semibold ml-2 text--primary">invoice.pdf</span>
+                <span class="font-weight-semibold ms-2 text--primary">invoice.pdf</span>
               </div>
             </div>
             <v-spacer></v-spacer>
-            <span class="text-xs  text-no-wrap mt-1 ml-2 mr-6">Wednesday</span>
+            <span class="text-xs  text-no-wrap mt-1 ms-2 me-6">Wednesday</span>
           </div>
         </v-timeline-item>
         <v-timeline-item
@@ -48,10 +48,10 @@
               <v-avatar size="26">
                 <v-img src="/images/avatars/1.png"></v-img>
               </v-avatar>
-              <span class="font-weight-semibold ml-3 text--primary">John Doe (Client)</span>
+              <span class="font-weight-semibold ms-3 text--primary">John Doe (Client)</span>
             </div>
             <v-spacer></v-spacer>
-            <span class="text-xs text-no-wrap mt-1 ml-2 mr-6">April, 18</span>
+            <span class="text-xs text-no-wrap mt-1 ms-2 me-6">April, 18</span>
           </div>
         </v-timeline-item>
         <v-timeline-item
@@ -66,7 +66,7 @@
               <span>Invoices have been paid to the company.</span>
             </div>
             <v-spacer></v-spacer>
-            <span class="text-xs text-no-wrap mt-1 ml-2 mr-6">January, 10</span>
+            <span class="text-xs text-no-wrap mt-1 ms-2 me-6">January, 10</span>
           </div>
         </v-timeline-item>
       </v-timeline>

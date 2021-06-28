@@ -6,7 +6,7 @@
       <v-btn
         icon
         small
-        class="mr-n3 mt-n1"
+        class="me-n3 mt-n1"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

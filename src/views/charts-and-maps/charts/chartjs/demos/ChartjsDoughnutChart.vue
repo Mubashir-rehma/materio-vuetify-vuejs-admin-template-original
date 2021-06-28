@@ -27,7 +27,7 @@
           >
             {{ stock.symbol }}
           </v-icon>
-          <span class="font-weight-bold ml-2 mr-2">{{ stock.device }}</span>
+          <span class="font-weight-bold ms-2 me-2">{{ stock.device }}</span>
           <span>- {{ stock.percentage }}%</span>
         </div>
         <div>

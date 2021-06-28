@@ -1,13 +1,30 @@
-.v-application{
-  &.v-application--is-rtl{
-
-
+.v-application {
+  &.v-application--is-rtl {
     // gramification
-    .triangle-card{
-      .triangle-bg{
+    .triangle-card {
+      .triangle-bg {
         transform: rotateY(180deg);
         left: 0;
         right: unset;
+      }
+    }
+
+    // table pagination
+    .v-data-table {
+      .v-data-footer {
+        .v-data-footer__select {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    @media (max-width: 450px) {
+      .v-data-table {
+        .v-data-footer {
+          .v-data-footer__select {
+            margin-right: 0;
+          }
+        }
       }
     }
   }

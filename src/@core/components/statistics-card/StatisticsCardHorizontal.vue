@@ -1,5 +1,8 @@
 <template>
-  <v-card outlined>
+  <v-card
+    outlined
+    class="statistics-horizontal"
+  >
     <div class="d-flex align-center">
       <v-avatar
         :color="$vuetify.theme.dark ? '#312d4b': '#fff'"
@@ -15,7 +18,7 @@
         </v-icon>
       </v-avatar>
 
-      <div class="ml-3">
+      <div class="ms-3">
         <span class="text-xs">{{ statTitle }}</span>
         <p class="text-no-wrap mb-0">
           <span
@@ -69,8 +72,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-card {
+.statistics-horizontal {
   background-color: transparent !important;
   padding: 1.25rem 4.063rem 1.125rem 1.25rem;
+}
+
+.v-application {
+  &.v-application--is-rtl {
+    .statistics-horizontal {
+      padding: 1.25rem 1.125rem 1.25rem 4.063rem;
+    }
+  }
 }
 </style>

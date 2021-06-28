@@ -8,7 +8,7 @@
       <v-btn
         icon
         small
-        class="mt-n1 mr-n3"
+        class="mt-n1 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}
@@ -36,7 +36,7 @@
               <span class="d-flex align-center mt-2">
                 <v-icon
                   color="error"
-                  class="mr-1"
+                  class="me-1"
                 >
                   {{ icons.mdiFilePdf }}
                 </v-icon>
@@ -62,7 +62,7 @@
                 <div class="d-flex align-center">
                   <v-avatar
                     size="26"
-                    class="mr-2"
+                    class="me-2"
                   >
                     <v-img src="/images/avatars/1.png"></v-img>
                   </v-avatar>

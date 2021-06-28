@@ -16,7 +16,7 @@
           <div class="d-flex align-center">
             <v-avatar
               size="33"
-              class="mr-3"
+              class="me-3"
             >
               <v-img :src="`/images/logos/${item.logo}`"></v-img>
             </v-avatar>
@@ -87,7 +87,7 @@
             <div class="d-flex align-center mt-3">
               <v-avatar
                 size="40"
-                class="mr-2"
+                class="me-2"
               >
                 <v-img src="/images/avatars/2.png"></v-img>
               </v-avatar>
@@ -131,7 +131,7 @@
             <span class="d-flex align-center mt-2">
               <v-icon
                 color="error"
-                class="mr-1"
+                class="me-1"
               >
                 {{ icons.mdiFilePdf }}
               </v-icon>

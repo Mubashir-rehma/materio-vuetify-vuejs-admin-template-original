@@ -6,7 +6,7 @@
       <v-btn
         icon
         small
-        class="mr-n3 mt-n1"
+        class="me-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -15,7 +15,7 @@
     </v-card-title>
 
     <v-card-subtitle class="mb-8 mt-n5">
-      <span class="font-weight-semibold text--primary mr-1">Total 48.5% groth</span>
+      <span class="font-weight-semibold text--primary me-1">Total 48.5% groth</span>
       <span>😎 this month</span>
     </v-card-subtitle>
 
@@ -42,7 +42,7 @@
               {{ resolveStatisticsIconVariation (data.title).icon }}
             </v-icon>
           </v-avatar>
-          <div class="ml-3">
+          <div class="ms-3">
             <p class="text-xs mb-0">
               {{ data.title }}
             </p>

@@ -114,7 +114,7 @@
           outlined
           hide-details
           dense
-          class="user-search mt-4 mt-sm-1 mr-3"
+          class="user-search mt-4 mt-sm-1 me-3"
         >
         </v-text-field>
 
@@ -137,7 +137,7 @@
           >
             <v-icon
               size="17"
-              class="mr-1"
+              class="me-1"
             >
               {{ icons.mdiExportVariant }}
             </v-icon>
@@ -173,7 +173,7 @@
               >{{ avatarText(item.fullName) }}</span>
             </v-avatar>
 
-            <div class="d-flex flex-column ml-3">
+            <div class="d-flex flex-column ms-3">
               <router-link
                 :to="{ name : 'apps-user-view', params : { id : item.id } }"
                 tag="span"
@@ -245,7 +245,7 @@
                 <v-list-item-title>
                   <v-icon
                     size="20"
-                    class="mr-2"
+                    class="me-2"
                   >
                     {{ icons.mdiFileDocumentOutline }}
                   </v-icon>
@@ -257,7 +257,7 @@
                 <v-list-item-title>
                   <v-icon
                     size="20"
-                    class="mr-2"
+                    class="me-2"
                   >
                     {{ icons.mdiDeleteOutline }}
                   </v-icon>

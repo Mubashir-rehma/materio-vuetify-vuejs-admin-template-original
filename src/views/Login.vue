@@ -10,7 +10,7 @@
           max-height="30"
           max-width="30"
           src="/logo.svg"
-          class="mr-3"
+          class="me-3"
         ></v-img>
 
         <h2 class="text--primary">
@@ -114,7 +114,7 @@
                       <!-- forget link -->
                       <router-link
                         :to="{name:'auth-forgot-password'}"
-                        class="ml-3 mt-5"
+                        class="ms-3 mt-5"
                       >
                         Forgot Password?
                       </router-link>
@@ -133,7 +133,7 @@
 
                 <!-- create new account  -->
                 <v-card-text class="d-flex align-center justify-center flex-wrap mt-2">
-                  <p class="mb-0 mr-2">
+                  <p class="mb-0 me-2">
                     New on our platform?
                   </p>
                   <router-link :to="{name:'auth-register'}">
@@ -154,7 +154,7 @@
                     v-for="link in socialLink"
                     :key="link.icon"
                     icon
-                    class="ml-1"
+                    class="ms-1"
                   >
                     <v-icon :color="$vuetify.theme.dark ? link.colorInDark:link.color">
                       {{ link.icon }}

@@ -6,7 +6,7 @@
 
       <v-btn
         icon
-        class="mr-n1"
+        class="me-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -37,10 +37,10 @@
         :class="`statistics-table d-flex align-center pt-3 ${index > 0 ? 'mt-3':''}`"
       >
         <span :class="`badge-sm ${data.color}`"></span>
-        <span class="ml-2">{{ data.title }}</span>
+        <span class="ms-2">{{ data.title }}</span>
         <v-spacer></v-spacer>
-        <span class="font-weight-semibold text--primary mr-6">{{ data.traffic }}</span>
-        <span class="font-weight-semibold text--primary mr-1">{{ data.percentage.slice(1) }}</span>
+        <span class="font-weight-semibold text--primary me-6">{{ data.traffic }}</span>
+        <span class="font-weight-semibold text--primary me-1">{{ data.percentage.slice(1) }}</span>
         <v-icon
           size="25"
           :color="data.percentage.charAt(0) === '+' ? 'success' :'error'"

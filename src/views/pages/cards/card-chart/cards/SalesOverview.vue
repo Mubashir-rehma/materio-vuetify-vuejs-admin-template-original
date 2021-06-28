@@ -43,7 +43,7 @@
                 {{ icons.mdiCurrencyUsd }}
               </v-icon>
             </v-avatar>
-            <div class="ml-4 d-flex flex-column">
+            <div class="ms-4 d-flex flex-column">
               <p class="text--primary mb-0 text-base">
                 Number of Sales
               </p>
@@ -57,33 +57,33 @@
             <tr>
               <td>
                 <div class="mb-0">
-                  <div class="stats-dot primary d-inline-block rounded-circle mr-2"></div>
+                  <div class="stats-dot primary d-inline-block rounded-circle me-2"></div>
                   <span>Apparel</span>
                 </div>
-                <span class="text-base text--primary font-weight-semibold ml-4">$1,840</span>
+                <span class="text-base text--primary font-weight-semibold ms-4">$1,840</span>
               </td>
               <td>
                 <div class="mb-0">
-                  <div class="stats-dot primary d-inline-block rounded-circle mr-2"></div>
+                  <div class="stats-dot primary d-inline-block rounded-circle me-2"></div>
                   <span>Electronic</span>
                 </div>
-                <span class="text-base text--primary font-weight-semibold ml-4">$11,420</span>
+                <span class="text-base text--primary font-weight-semibold ms-4">$11,420</span>
               </td>
             </tr>
             <tr>
               <td>
                 <div class="mb-0">
-                  <div class="stats-dot primary d-inline-block rounded-circle mr-2"></div>
+                  <div class="stats-dot primary d-inline-block rounded-circle me-2"></div>
                   <span>FMCG</span>
                 </div>
-                <span class="text-base text--primary font-weight-semibold ml-4">$30,234</span>
+                <span class="text-base text--primary font-weight-semibold ms-4">$30,234</span>
               </td>
               <td>
                 <div class="mb-0">
-                  <div class="stats-dot secondary d-inline-block rounded-circle mr-2"></div>
+                  <div class="stats-dot secondary d-inline-block rounded-circle me-2"></div>
                   <span>Other Sales</span>
                 </div>
-                <span class="text-base text--primary font-weight-semibold ml-4">$46,054</span>
+                <span class="text-base text--primary font-weight-semibold ms-4">$46,054</span>
               </td>
             </tr>
           </table>

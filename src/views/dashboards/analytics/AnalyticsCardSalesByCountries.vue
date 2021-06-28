@@ -8,7 +8,7 @@
       <v-btn
         icon
         small
-        class="mr-n3 mt-n1"
+        class="me-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -31,9 +31,9 @@
             <span class="text-base">{{ data.abbr }}</span>
           </v-avatar>
 
-          <div class="ml-3">
+          <div class="ms-3">
             <div class="font-weight-semibold">
-              <span class="text--primary text-base mr-1">{{ data.amount }}</span>
+              <span class="text--primary text-base me-1">{{ data.amount }}</span>
 
               <v-icon
                 size="20"

@@ -39,7 +39,7 @@
               {{ icons.mdiTrendingUp }}
             </v-icon>
           </v-avatar>
-          <div class="ml-4 d-flex flex-column">
+          <div class="ms-4 d-flex flex-column">
             <p class="text--primary font-weight-semibold mb-0 text-base">
               21.8k
             </p>
@@ -59,7 +59,7 @@
               {{ icons.mdiCurrencyUsd }}
             </v-icon>
           </v-avatar>
-          <div class="ml-4 d-flex flex-column">
+          <div class="ms-4 d-flex flex-column">
             <p class="text--primary font-weight-semibold mb-0 text-base">
               21.8k
             </p>

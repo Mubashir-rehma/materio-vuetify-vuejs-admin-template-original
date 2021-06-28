@@ -11,7 +11,7 @@
       <v-avatar
         color="primary"
         size="48"
-        class="v-avatar-light-bg primary--text mr-5"
+        class="v-avatar-light-bg primary--text me-5"
       >
         <v-icon
           size="30"
@@ -53,7 +53,7 @@
             v-model="progress"
             height="6"
           ></v-progress-linear>
-          <span class="text-base font-weight-semibold ml-4">{{ Math.ceil(progress) }}%</span>
+          <span class="text-base font-weight-semibold ms-4">{{ Math.ceil(progress) }}%</span>
         </div>
       </div>
     </v-card-text>

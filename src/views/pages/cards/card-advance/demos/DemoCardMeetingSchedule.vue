@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        class="mr-n1"
+        class="me-n1"
         icon
       >
         <v-icon>
@@ -25,14 +25,14 @@
             <v-img :src="data.avatar"></v-img>
           </v-avatar>
 
-          <div class="text-no-wrap ml-3">
+          <div class="text-no-wrap ms-3">
             <p class="font-weight-medium mb-0 text--primary">
               {{ data.title }}
             </p>
             <v-icon size="14">
               {{ icons.mdiCalendarBlankOutline }}
             </v-icon>
-            <span class="text-xs ml-1">{{ data.dateAndTime }}</span>
+            <span class="text-xs ms-1">{{ data.dateAndTime }}</span>
           </div>
 
           <v-spacer></v-spacer>

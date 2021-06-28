@@ -10,7 +10,7 @@
         </v-card-text>
 
         <v-card-text class="d-flex align-center font-weight-semibold pb-0">
-          <span class="text-xl text--primary mr-1">12,480</span>
+          <span class="text-xl text--primary me-1">12,480</span>
           <span class="text-xs success--text">+28%</span>
         </v-card-text>
       </v-col>

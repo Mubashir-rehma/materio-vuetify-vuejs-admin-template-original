@@ -22,7 +22,7 @@
             v-else
           >{{ item.full_name.slice(0,2).toUpperCase() }}</span>
         </v-avatar>
-        <div class="d-flex flex-column ml-3">
+        <div class="d-flex flex-column ms-3">
           <span class="d-block font-weight-semibold text--primary text-truncate">{{ item.full_name }}</span>
           <small>{{ item.post }}</small>
         </div>

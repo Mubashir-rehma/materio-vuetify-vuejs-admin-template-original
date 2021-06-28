@@ -8,7 +8,7 @@
     >
       <div
         class="chat-avatar"
-        :class="msgGrp.senderId !== formattedChatData.contact.id ? 'ml-4' : 'mr-4'"
+        :class="msgGrp.senderId !== formattedChatData.contact.id ? 'ms-4' : 'me-4'"
       >
         <!-- <b-avatar
           size="36"
@@ -33,7 +33,7 @@
           {{ msgData.msg }}
         </p>
         <div :class="{'text-right': msgGrp.senderId !== formattedChatData.contact.id}">
-          <span class="text-xs mr-1 text--disabled">{{ formatDate(msgGrp.messages[msgGrp.messages.length-1].time, { hour: 'numeric', minute: 'numeric' }) }}</span>
+          <span class="text-xs me-1 text--disabled">{{ formatDate(msgGrp.messages[msgGrp.messages.length-1].time, { hour: 'numeric', minute: 'numeric' }) }}</span>
           <v-icon
             v-if="msgGrp.senderId !== formattedChatData.contact.id"
             size="16"
@@ -140,6 +140,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

@@ -15,7 +15,7 @@
           <v-card-title class="kbc-title d-flex flex-nowrap">
             <v-icon
               color="primary"
-              class="mr-3"
+              class="me-3"
             >
               {{ item.icon }}
             </v-icon>
@@ -31,7 +31,7 @@
             >
               <v-icon
                 size="14"
-                class="mr-2 mt-1"
+                class="me-2 mt-1"
                 color="secondary"
               >
                 {{ icons.mdiCheckboxBlankCircleOutline }}
@@ -51,7 +51,7 @@
       >
         <v-card>
           <v-card-title>
-            <v-icon class="text--primary mr-2">
+            <v-icon class="text--primary me-2">
               {{ article.titleIcon }}
             </v-icon>
             <span>{{ article.title }}</span>
@@ -78,7 +78,7 @@
           </v-card-text>
 
           <v-card-text>
-            <v-list class="kb-questions py-0 pl-2">
+            <v-list class="kb-questions py-0 ps-2">
               <v-list-item
                 v-for="topic in article.postTopics"
                 :key="topic"
@@ -86,7 +86,7 @@
               >
                 <v-icon
                   size="14"
-                  class="mr-2 mt-1"
+                  class="me-2 mt-1"
                   color="secondary"
                 >
                   {{ icons.mdiCheckboxBlankCircleOutline }}

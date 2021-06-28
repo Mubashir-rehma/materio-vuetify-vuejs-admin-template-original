@@ -6,7 +6,7 @@
       <v-btn
         icon
         small
-        class="mr-n3 mt-n1"
+        class="me-n3 mt-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -35,7 +35,7 @@
                 {{ icons.mdiTrendingUp }}
               </v-icon>
             </v-avatar>
-            <div class="ml-3">
+            <div class="ms-3">
               <p class="text-xs mb-0">
                 Sales
               </p>
@@ -62,7 +62,7 @@
                 {{ icons.mdiAccountOutline }}
               </v-icon>
             </v-avatar>
-            <div class="ml-3">
+            <div class="ms-3">
               <p class="text-xs mb-0">
                 Customers
               </p>
@@ -89,7 +89,7 @@
                 {{ icons.mdiLabelOutline }}
               </v-icon>
             </v-avatar>
-            <div class="ml-3">
+            <div class="ms-3">
               <p class="text-xs mb-0">
                 Product
               </p>
@@ -116,7 +116,7 @@
                 {{ icons.mdiCurrencyUsd }}
               </v-icon>
             </v-avatar>
-            <div class="ml-3">
+            <div class="ms-3">
               <p class="text-xs mb-0">
                 Revenue
               </p>

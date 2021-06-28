@@ -126,7 +126,7 @@
               </v-radio>
               <span class="text-xl font-weight-bold">Free</span>
             </div>
-            <span class="ml-8">Friday, 15 Nov - Monday, 18 Nov</span>
+            <span class="ms-8">Friday, 15 Nov - Monday, 18 Nov</span>
           </div>
           <div
             class="delivery-options"
@@ -140,7 +140,7 @@
               </v-radio>
               <span class="text-xl font-weight-bold">$5.00</span>
             </div>
-            <span class="ml-8">Friday, 15 Nov - Sunday, 17 Nov</span>
+            <span class="ms-8">Friday, 15 Nov - Sunday, 17 Nov</span>
           </div>
           <div
             class="delivery-options"
@@ -154,7 +154,7 @@
               </v-radio>
               <span class="text-xl font-weight-bold">$10.00</span>
             </div>
-            <span class="ml-8">Friday, 15 Nov - Saturday, 16 Nov</span>
+            <span class="ms-8">Friday, 15 Nov - Saturday, 16 Nov</span>
           </div>
         </v-radio-group>
       </v-expansion-panel-content>
@@ -179,7 +179,7 @@
                   >
                     <v-radio value="credit-debit-card">
                       <template #label>
-                        <span class="text--primary text-base mr-1">Credit/Debit/ATM Card</span>
+                        <span class="text--primary text-base me-1">Credit/Debit/ATM Card</span>
                         <v-icon size="18">
                           {{ icons.mdiCreditCardOutline }}
                         </v-icon>
@@ -187,7 +187,7 @@
                     </v-radio>
                     <v-radio value="cash-on-delivery">
                       <template #label>
-                        <span class="text--primary text-base mr-1">Cash On Delivery</span>
+                        <span class="text--primary text-base me-1">Cash On Delivery</span>
                         <v-icon size="18">
                           {{ icons.mdiHelpCircleOutline }}
                         </v-icon>
@@ -245,7 +245,7 @@
           <v-col cols="12">
             <v-btn
               color="primary"
-              class="mr-5"
+              class="me-5"
             >
               Place Order
             </v-btn>

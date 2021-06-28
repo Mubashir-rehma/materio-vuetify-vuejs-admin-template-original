@@ -60,7 +60,7 @@
           <div class="d-flex align-center">
             <v-btn
               icon
-              class="mr-1 d-inline-block d-md-none"
+              class="me-1 d-inline-block d-md-none"
             >
               <v-icon
                 v-show="!isLeftSidebarOpen"
@@ -77,7 +77,7 @@
               :color="resolveAvatarBadgeVariant(activeChat.contact.status)"
               offset-x="11"
               offset-y="11"
-              class="mr-3 user-status-badge"
+              class="me-3 user-status-badge"
             >
               <v-avatar
                 size="38"
@@ -97,13 +97,13 @@
 
           <!-- Active Chat Actions -->
           <div class="d-flex align-baseline">
-            <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
+            <v-icon class="me-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiPhone }}
             </v-icon>
-            <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
+            <v-icon class="me-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiVideoOutline }}
             </v-icon>
-            <v-icon class="mr-3 cursor-pointer d-none d-sm-inline">
+            <v-icon class="me-3 cursor-pointer d-none d-sm-inline">
               {{ icons.mdiMagnify }}
             </v-icon>
             <v-icon class="cursor-pointer">
@@ -142,7 +142,7 @@
               </v-btn>
               <v-btn
                 icon
-                class="mr-3"
+                class="me-3"
               >
                 <v-icon>
                   {{ icons.mdiAttachment }}

@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-icon
         size="18"
-        class="mr-1"
+        class="me-1"
       >
         {{ icons.mdiCalendarBlankOutline }}
       </v-icon>

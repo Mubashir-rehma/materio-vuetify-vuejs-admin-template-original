@@ -42,7 +42,7 @@
             <v-card-title class="kbc-title d-flex flex-nowrap">
               <v-icon
                 :color="item.color ? item.color:'' "
-                :class="`mr-3 ${item.class ? item.class :''}`"
+                :class="`me-3 ${item.class ? item.class :''}`"
               >
                 {{ item.icon }}
               </v-icon>
@@ -59,7 +59,7 @@
               >
                 <v-icon
                   size="14"
-                  class="mr-2 mt-1"
+                  class="me-2 mt-1"
                   color="secondary"
                 >
                   {{ icons.mdiCheckboxBlankCircleOutline }}

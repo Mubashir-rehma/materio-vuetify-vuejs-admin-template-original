@@ -21,7 +21,7 @@
               :src="data.img"
             ></v-img>
 
-            <div class="ml-sm-3 mt-1">
+            <div class="ms-sm-3 mt-1">
               <v-list-item-title class="text-sm font-weight-semibold">
                 {{ data.title }}
               </v-list-item-title>
@@ -62,7 +62,7 @@
               :src="data.img"
             ></v-img>
 
-            <div class="ml-sm-3 mt-1">
+            <div class="ms-sm-3 mt-1">
               <v-list-item-title class="text-sm font-weight-semibold">
                 {{ data.title }}
               </v-list-item-title>

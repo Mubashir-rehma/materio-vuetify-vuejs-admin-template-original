@@ -59,8 +59,7 @@
       <!-- Statistics Card -->
       <v-col
         cols="12"
-        lg="8"
-        md="6"
+        md="8"
       >
         <demo-statistics-card></demo-statistics-card>
       </v-col>
@@ -68,8 +67,7 @@
       <!-- Total Sales -->
       <v-col
         cols="12"
-        lg="4"
-        md="6"
+        md="4"
       >
         <demo-statistics-total-sales></demo-statistics-total-sales>
       </v-col>

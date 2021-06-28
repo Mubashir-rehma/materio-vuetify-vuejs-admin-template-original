@@ -85,4 +85,22 @@
     font-size: 1.2rem !important;
   }
 }
+
+// rtl
+.v-application {
+  &.v-application--is-rtl {
+    .gamification-john-pose-2 {
+      right: initial;
+      left: 15%;
+    }
+    .gamification-tree {
+      right: initial;
+      left: 0;
+    }
+    .gamification-tree-4 {
+      left: 30%;
+      right: initial;
+    }
+  }
+}
 </style>

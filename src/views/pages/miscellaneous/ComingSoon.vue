@@ -25,7 +25,7 @@
           hide-details
           dense
           placeholder="Enter your email or username"
-          class="misc-input-width mr-3"
+          class="misc-input-width me-3"
         ></v-text-field>
 
         <v-btn color="primary">

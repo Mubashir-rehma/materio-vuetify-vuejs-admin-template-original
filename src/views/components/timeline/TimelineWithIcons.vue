@@ -48,7 +48,7 @@
           <span class="d-flex align-center">
             <v-icon
               color="error"
-              class="mr-1"
+              class="me-1"
             >
               {{ icons.mdiFilePdf }}
             </v-icon>
@@ -94,7 +94,7 @@
             <span class="d-flex align-bottom mt-2">
               <v-avatar
                 size="40"
-                class="mr-2"
+                class="me-2"
               >
                 <v-img src="/images/avatars/2.png"></v-img>
               </v-avatar>
@@ -106,7 +106,7 @@
 
             <!-- Person Actions -->
             <div>
-              <v-icon class="mr-2">
+              <v-icon class="me-2">
                 {{ icons.mdiMessageTextOutline }}
               </v-icon>
               <v-icon>{{ icons.mdiPhone }}</v-icon>
@@ -138,7 +138,7 @@
               src="/images/pages/puma-shoes.jpg"
               class="rounded"
             ></v-img>
-            <div class="ml-4">
+            <div class="ms-4">
               <!-- Header -->
               <div class="d-flex justify-space-between">
                 <p class="mb-1 font-weight-semibold text-base text--primary">
@@ -204,7 +204,7 @@
           <div class="d-flex align-center">
             <v-avatar
               size="40"
-              class="mr-2"
+              class="me-2"
             >
               <v-img src="/images/avatars/1.png"></v-img>
             </v-avatar>
@@ -248,7 +248,7 @@
           <table class="w-full mt-3">
             <tr>
               <td class="d-flex align-center pb-2">
-                <v-icon class="mr-1">
+                <v-icon class="me-1">
                   {{ icons.mdiWeb }}
                 </v-icon>
                 <span>IP Address</span>
@@ -259,7 +259,7 @@
             </tr>
             <tr>
               <td class="d-flex align-center pb-2">
-                <v-icon class="mr-1">
+                <v-icon class="me-1">
                   {{ icons.mdiCpu64Bit }}
                 </v-icon>
                 <span>CPU</span>
@@ -270,7 +270,7 @@
             </tr>
             <tr>
               <td class="d-flex align-center pb-2">
-                <v-icon class="mr-1">
+                <v-icon class="me-1">
                   {{ icons.mdiMemory }}
                 </v-icon>
                 <span>Memory</span>
@@ -284,7 +284,7 @@
           <v-divider class="mt-3"></v-divider>
           <div class="d-flex justify-space-between align-end">
             <div>
-              <v-icon class="mr-2">
+              <v-icon class="me-2">
                 {{ icons.mdiShareVariantOutline }}
               </v-icon>
               <v-icon>{{ icons.mdiReload }}</v-icon>
@@ -312,7 +312,7 @@
           <!-- Header -->
           <div class="d-flex justify-space-between">
             <div class="d-flex align-end mb-1">
-              <v-icon class="mr-1">
+              <v-icon class="me-1">
                 {{ icons.mdiMapMarkerOutline }}
               </v-icon>
               <p class="mb-0 text--primary font-weight-semibold">
@@ -338,10 +338,10 @@
 
           <div class="d-flex justify-space-between mt-4">
             <div>
-              <v-icon class="mr-2">
+              <v-icon class="me-2">
                 {{ icons.mdiLinkVariant }}
               </v-icon>
-              <v-icon class="mr-2">
+              <v-icon class="me-2">
                 {{ icons.mdiMessageTextOutline }}
               </v-icon>
               <v-icon>{{ icons.mdiAccountOutline }}</v-icon>

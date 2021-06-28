@@ -50,7 +50,7 @@
             >{{ item.fullName.slice(0,2).toUpperCase() }}</span>
           </v-avatar>
 
-          <div class="d-flex flex-column ml-3">
+          <div class="d-flex flex-column ms-3">
             <span class="d-block text--primary  font-weight-semibold text-truncate">{{ item.fullName }}</span>
             <span class="text-xs">{{ item.email }}</span>
           </div>

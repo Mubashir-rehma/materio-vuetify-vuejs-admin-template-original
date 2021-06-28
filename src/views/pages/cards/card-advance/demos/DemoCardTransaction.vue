@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-btn
         icon
-        class="mr-n1"
+        class="me-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -35,7 +35,7 @@
             ></v-img>
           </v-avatar>
 
-          <div class="ml-3">
+          <div class="ms-3">
             <h4 class="font-weight-semibold text-no-wrap">
               {{ data.title }}
             </h4>
@@ -44,7 +44,7 @@
           <v-spacer></v-spacer>
 
           <div class="d-flex align-center">
-            <span class="text-base font-weight-semibold text--primary mr-1">{{ data.transaction }}</span>
+            <span class="text-base font-weight-semibold text--primary me-1">{{ data.transaction }}</span>
             <v-icon
               size="22"
               :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"

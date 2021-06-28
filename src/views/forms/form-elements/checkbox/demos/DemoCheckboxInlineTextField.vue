@@ -4,7 +4,7 @@
       <v-checkbox
         v-model="includeFiles"
         hide-details
-        class="shrink mr-2 mt-0"
+        class="shrink me-2 mt-0"
       ></v-checkbox>
       <v-text-field label="Include files"></v-text-field>
     </v-row>
@@ -12,7 +12,7 @@
       <v-checkbox
         v-model="isInputEnabled"
         hide-details
-        class="shrink mr-2 mt-0"
+        class="shrink me-2 mt-0"
       ></v-checkbox>
       <v-text-field
         :disabled="!isInputEnabled"

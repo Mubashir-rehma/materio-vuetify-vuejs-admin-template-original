@@ -6,7 +6,7 @@
 
       <v-btn
         icon
-        class="mr-n1"
+        class="me-n1"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}
@@ -33,7 +33,7 @@
           ></v-img>
         </v-avatar>
 
-        <div class="font-weight-medium ml-3">
+        <div class="font-weight-medium ms-3">
           <p class="text--primary mb-0">
             Platinum
           </p>
@@ -104,7 +104,7 @@
         block
         color="primary"
       >
-        <span class="mr-1">Procees to payment</span>
+        <span class="me-1">Procees to payment</span>
         <v-icon size="20">
           {{ icons.mdiArrowRight }}
         </v-icon>

@@ -51,7 +51,7 @@
                 <!-- List Item: Profit -->
                 <v-list-item class="pa-0">
                   <v-list-item-avatar
-                    class="v-avatar-light-bg success--text"
+                    class="v-avatar-light-bg success--text justify-center"
                     size="40"
                     rounded
                   >
@@ -72,7 +72,7 @@
                 <!-- List Item: Income -->
                 <v-list-item class="pa-0">
                   <v-list-item-avatar
-                    class="v-avatar-light-bg primary--text"
+                    class="v-avatar-light-bg primary--text justify-center"
                     size="40"
                     rounded
                   >
@@ -94,7 +94,7 @@
                 <v-list-item class="pa-0">
                   <v-list-item-avatar
                     color="primary"
-                    class="v-avatar-light-bg secondary--text"
+                    class="v-avatar-light-bg secondary--text justify-center"
                     size="40"
                     rounded
                   >

@@ -1,11 +1,10 @@
 <template>
-  <v-card
-    class="chart-card-weekly-overview"
-    :class="[rootThemeClasses]"
-  >
+  <v-card>
     <v-card-title class="align-start">
       <span>Weekly Overview</span>
+
       <v-spacer></v-spacer>
+
       <v-btn
         icon
         small
@@ -16,18 +15,22 @@
         </v-icon>
       </v-btn>
     </v-card-title>
+
     <v-card-text>
       <!-- Chart -->
       <vue-apex-charts
-        id="chart-weekly-overview"
         :options="chartOptions"
         :series="chartData"
+        height="210"
       ></vue-apex-charts>
 
       <div class="d-flex align-center">
-        <span class="text--primary text-xl font-weight-semibold me-4">45%</span>
+        <h3 class="text-2xl font-weight-semibold me-4">
+          45%
+        </h3>
         <span>Your sales perfomance in 45% 🤩 better compare to last month</span>
       </div>
+
       <v-btn
         block
         color="primary"
@@ -43,11 +46,9 @@
 <script>
 import VueApexCharts from 'vue-apexcharts'
 // eslint-disable-next-line object-curly-newline
-import { mdiDotsVertical } from '@mdi/js'
-
-import { getVuetify } from '@core/utils'
-import useVuetify from '@core/utils/vuetify'
+import { mdiDotsVertical, mdiTrendingUp, mdiCurrencyUsd } from '@mdi/js'
 import { kFormatter } from '@core/utils/filter'
+import { getVuetify } from '@core/utils'
 
 export default {
   components: {
@@ -55,39 +56,66 @@ export default {
   },
   setup() {
     const $vuetify = getVuetify()
-    const { rootThemeClasses } = useVuetify()
+    const customChartColor = '#f5f5f5'
 
     const chartOptions = {
-      colors: ['#eee'],
+      colors: [
+        customChartColor,
+        customChartColor,
+        customChartColor,
+        customChartColor,
+        $vuetify.theme.currentTheme.primary,
+        customChartColor,
+        customChartColor,
+      ],
       chart: {
+        type: 'bar',
         toolbar: {
           show: false,
         },
         offsetX: -15,
       },
+      plotOptions: {
+        bar: {
+          columnWidth: '40%',
+          distributed: true,
+          borderRadius: 8,
+          startingShape: 'rounded',
+          endingShape: 'rounded',
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
       legend: {
         show: false,
       },
-      tooltip: {
-        enabled: false,
-      },
       xaxis: {
-        labels: {
-          show: false,
-        },
+        categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         axisBorder: {
           show: false,
         },
         axisTicks: {
           show: false,
         },
+        tickPlacement: 'on',
+        labels: {
+          show: false,
+          style: {
+            fontSize: '12px',
+          },
+        },
       },
       yaxis: {
-        tickAmount: 1,
+        show: true,
+        tickAmount: 4,
         labels: {
           offsetY: 3,
           formatter: value => `$${kFormatter(value, 0)}`,
         },
+      },
+      stroke: {
+        width: [2, 2],
       },
       grid: {
         strokeDashArray: 12,
@@ -95,69 +123,24 @@ export default {
           right: 0,
         },
       },
-      markers: {
-        size: 4,
-        colors: ['#fff'],
-        strokeColors: $vuetify.theme.currentTheme.primary,
-        hover: {
-          size: 4,
-        },
-      },
-      plotOptions: {
-        bar: {
-          columnWidth: '50%',
-          borderRadius: 8,
-          startingShape: 'rounded',
-          endingShape: 'rounded',
-        },
-      },
-      stroke: {
-        width: [2, 2],
-      },
-      states: {
-        hover: {
-          filter: {
-            type: 'darken',
-            value: '0.9',
-          },
-        },
-      },
     }
 
     const chartData = [
       {
-        name: 'Website Blog',
-        type: 'column',
-        data: [21000, 30000, 25000, 30000, 35000, 30000, 25000, 32000],
-      },
-      {
-        name: 'Social Media',
-        type: 'line',
-        data: [12000, 19000, 19000, 21000, 28000, 20000, 21000, 29000],
-        color: $vuetify.theme.currentTheme.primary,
+        data: [40, 60, 50, 60, 75, 60, 50, 65],
       },
     ]
 
     return {
       chartOptions,
       chartData,
-      rootThemeClasses,
 
       icons: {
         mdiDotsVertical,
+        mdiTrendingUp,
+        mdiCurrencyUsd,
       },
     }
   },
 }
 </script>
-
-<style lang="scss">
-@import '~@core/preset/preset/mixins.scss';
-
-@include theme-diff(chart-card-weekly-overview, #f5f5f5, #3b355a) using ($value) {
-  .apexcharts-bar-area {
-    fill: $value;
-    stroke: $value;
-  }
-}
-</style>

@@ -161,10 +161,20 @@ export default {
 }
 
 @include theme(vertical-nav-menu-items) using ($material) {
-  padding-right: 20px !important;
+  @include ltr() {
+    padding-right: 20px !important;
+  }
+  @include rtl() {
+    padding-left: 20px !important;
+  }
   @at-root .app-navigation-menu.v-navigation-drawer--mini-variant:not(.v-navigation-drawer--is-mouseover) {
     .vertical-nav-menu-items {
-      padding-right: 0 !important;
+      @include ltr() {
+        padding-right: 0 !important;
+      }
+      @include rtl() {
+        padding-left: 0 !important;
+      }
     }
   }
 
@@ -177,13 +187,23 @@ export default {
       margin: 0 12px 0 0;
       align-self: center;
     }
-    margin-right: 12px;
+    @include ltr() {
+      margin-right: 12px;
+    }
+    @include rtl() {
+      margin-left: 12px;
+    }
   }
 
   // Center align small icon
   .v-list-group__items .v-list-item__icon {
     margin-top: 0px;
-    margin-left: 5px;
+    @include ltr() {
+      margin-left: 5px;
+    }
+    @include rtl() {
+      margin-right: 5px;
+    }
   }
 
   .v-list-item {

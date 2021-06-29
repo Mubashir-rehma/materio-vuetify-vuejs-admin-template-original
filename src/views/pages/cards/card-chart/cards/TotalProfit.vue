@@ -10,13 +10,12 @@
           <v-card-title class="px-0 pt-0">
             Total Profit
           </v-card-title>
-          <v-card-text class="px-0 h-full d-flex align-center">
-            <vue-apex-charts
-              id="total-profit-chart"
-              :options="chartOptions"
-              :series="chartData"
-            ></vue-apex-charts>
-          </v-card-text>
+          <vue-apex-charts
+            id="total-profit-chart"
+            height="320"
+            :options="chartOptions"
+            :series="chartData"
+          ></vue-apex-charts>
         </v-col>
         <v-col
           cols="12"
@@ -151,7 +150,6 @@ export default {
       ],
       chart: {
         type: 'bar',
-        height: 350,
         stacked: true,
         toolbar: {
           show: false,
@@ -160,7 +158,7 @@ export default {
       plotOptions: {
         bar: {
           borderRadius: 10,
-          columnWidth: '38%',
+          columnWidth: '35%',
           startingShape: 'rounded',
           endingShape: 'rounded',
         },
@@ -201,7 +199,7 @@ export default {
             plotOptions: {
               bar: {
                 borderRadius: 10,
-                columnWidth: '50%',
+                columnWidth: '45%',
               },
             },
           },
@@ -243,9 +241,18 @@ export default {
 @import '~@core/preset/preset/mixins.scss';
 @import '~vuetify/src/styles/styles.sass';
 
+.total-profit-chart-col {
+  @include ltr() {
+    border-right: thin solid;
+  }
+  @include rtl() {
+    border-left: thin solid;
+  }
+}
+
 @include theme--child(total-profit-chart-col) using ($material) {
   @media #{map-get($display-breakpoints, 'sm-and-up')} {
-    border-right: thin solid map-get($material, 'dividers');
+    border-color: map-get($material, 'dividers');
   }
 }
 </style>

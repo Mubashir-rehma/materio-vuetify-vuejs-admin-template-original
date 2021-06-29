@@ -207,17 +207,28 @@
 </template>
 
 <style lang="scss" scoped>
+@import '~vuetify/src/styles/styles.sass';
 .triangle-card {
   position: relative;
   .triangle-bg {
     position: absolute;
     bottom: 0;
-    right: 0;
+    @include ltr() {
+      right: 0;
+    }
+    @include rtl() {
+      left: 0;
+    }
   }
   .gamification-trophy {
     position: absolute;
     bottom: 10%;
-    right: 8%;
+    @include ltr() {
+      right: 8%;
+    }
+    @include rtl() {
+      left: 8%;
+    }
   }
 }
 .gamification-tree-4,
@@ -227,15 +238,30 @@
 }
 .gamification-tree {
   top: 10%;
-  right: 0;
+  @include ltr() {
+    right: 0;
+  }
+  @include rtl() {
+    left: 0;
+  }
 }
 .gamification-john-pose-2 {
   bottom: 0;
-  right: 15%;
+  @include ltr() {
+    right: 15%;
+  }
+  @include rtl() {
+    left: 15%;
+  }
 }
 .gamification-tree-4 {
   bottom: 0;
-  right: 30%;
+  @include ltr() {
+    right: 30%;
+  }
+  @include rtl() {
+    left: 35%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -244,7 +270,12 @@
     display: none;
   }
   .gamification-john-pose-2 {
-    right: 5%;
+    @include ltr() {
+      right: 5%;
+    }
+    @include rtl() {
+      left: 5%;
+    }
   }
 }
 
@@ -257,28 +288,6 @@
 @media (max-width: 400px) {
   .page-title {
     font-size: 1.2rem !important;
-  }
-}
-
-// rtl
-.v-application {
-  &.v-application--is-rtl {
-    .gamification-tree {
-      left: 0;
-      right: initial;
-    }
-    .gamification-john-pose-2 {
-      left: 15%;
-      right: initial;
-    }
-    .gamification-tree-4 {
-      left: 30%;
-      right: initial;
-    }
-    .gamification-trophy {
-      left: 8%;
-      right: initial;
-    }
   }
 }
 </style>

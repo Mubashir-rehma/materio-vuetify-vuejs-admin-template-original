@@ -57,6 +57,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '~vuetify/src/styles/styles.sass';
 @include theme(v-subheader) using ($material) {
   white-space: nowrap;
   position: relative;
@@ -80,8 +81,14 @@ export default {
   .title-wrapper span {
     background: map-deep-get($material, 'background');
     padding: 0 10px;
-    margin-left: 16px;
     font-size: 0.75rem;
+
+    @include ltr() {
+      margin-left: 16px;
+    }
+    @include rtl() {
+      margin-right: 16px;
+    }
   }
 }
 </style>

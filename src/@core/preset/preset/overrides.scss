@@ -204,7 +204,12 @@ button {
 .demo-space-x {
   margin-top: -$card-spacer-content;
   & > * {
-    margin-right: $card-spacer-content;
+    @include ltr() {
+      margin-right: $card-spacer-content;
+    }
+    @include rtl() {
+      margin-left: $card-spacer-content;
+    }
     margin-top: $card-spacer-content;
   }
 }
@@ -586,7 +591,12 @@ button {
         font-size: 20px;
         height: 20px;
         width: 20px;
-        margin-right: 10px;
+        @include ltr() {
+          margin-right: 10px;
+        }
+        @include rtl() {
+          margin-left: 10px;
+        }
       }
     }
   }
@@ -716,15 +726,25 @@ button {
 
   .v-data-footer {
     .v-data-footer__select {
-      margin-left: 14px;
+      @include ltr() {
+        margin-left: 14px;
+      }
+
+      @include rtl() {
+        margin-right: 14px;
+      }
       .v-input__append-inner {
         align-self: center;
       }
 
       .v-select {
         margin-bottom: 6px !important;
-        margin-left: 6px;
-
+        @include ltr() {
+          margin-left: 6px;
+        }
+        @include rtl() {
+          margin-right: 6px;
+        }
         > .v-input__control > .v-input__slot {
           &::before,
           &::after {
@@ -755,7 +775,12 @@ button {
     .v-data-footer {
       .v-data-footer__select {
         min-width: 100%;
-        margin-left: 0;
+        @include ltr() {
+          margin-left: 0;
+        }
+        @include rtl() {
+          margin-right: 0;
+        }
       }
     }
   }

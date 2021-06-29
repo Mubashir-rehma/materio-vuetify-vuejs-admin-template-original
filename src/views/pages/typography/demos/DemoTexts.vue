@@ -1,12 +1,7 @@
 <template>
   <v-card>
-    <v-row class="ps-6">
-      <v-col cols="12">
-        <p class="text-xl mb-0">
-          Texts
-        </p>
-      </v-col>
-
+    <v-card-title>Texts</v-card-title>
+    <v-row class="ma-0 pb-5 px-2">
       <v-col
         cols="3"
         sm="2"

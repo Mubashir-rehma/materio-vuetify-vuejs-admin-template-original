@@ -31,7 +31,7 @@
           You can reduces the file input height with <code>dense</code> prop.
         </v-card-text>
 
-        <v-card-text>
+        <v-card-text class="mt-5">
           <demo-file-input-dense></demo-file-input-dense>
         </v-card-text>
       </app-card-code>

@@ -13,9 +13,9 @@
       >
         <v-card-title>
           <v-icon
-            left
             size="1.5rem"
             color="white"
+            class="me-2"
           >
             {{ data.icon }}
           </v-icon>

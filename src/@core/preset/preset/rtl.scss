@@ -8,24 +8,5 @@
         right: unset;
       }
     }
-
-    // table pagination
-    .v-data-table {
-      .v-data-footer {
-        .v-data-footer__select {
-          margin-right: 15px;
-        }
-      }
-    }
-
-    @media (max-width: 450px) {
-      .v-data-table {
-        .v-data-footer {
-          .v-data-footer__select {
-            margin-right: 0;
-          }
-        }
-      }
-    }
   }
 }

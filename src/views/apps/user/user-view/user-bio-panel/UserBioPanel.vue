@@ -33,7 +33,7 @@
           </v-chip>
         </v-card-title>
 
-        <v-card-text class="d-flex justify-center flex-wrap mt-2  pr-sm-0">
+        <v-card-text class="d-flex justify-center flex-wrap mt-2 pe-sm-0">
           <div class="d-flex align-center me-8 mb-4">
             <v-avatar
               size="40"

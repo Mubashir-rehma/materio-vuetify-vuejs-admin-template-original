@@ -172,14 +172,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-@import '~@core/preset/preset/mixins.scss';
-@import '~vuetify/src/styles/styles.sass';
-
-@include theme--child(total-profit-chart-col) using ($material) {
-  @media #{map-get($display-breakpoints, 'sm-and-up')} {
-    border-right: thin solid map-get($material, 'dividers');
-  }
-}
-</style>

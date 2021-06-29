@@ -1,10 +1,5 @@
 <template>
   <v-card flat>
-    <v-toolbar flat>
-      <v-icon>{{ icons.mdiSilverware }}</v-icon>
-      <v-toolbar-title>Local hotspots</v-toolbar-title>
-    </v-toolbar>
-
     <v-row>
       <v-col
         cols="12"
@@ -43,7 +38,7 @@
           <div
             v-if="tree.length === 0"
             key="title"
-            class="title font-weight-light grey--text pa-4 text-center"
+            class="title font-weight-light pa-4 text-center"
           >
             Select your favorite breweries
           </div>
@@ -55,16 +50,16 @@
             <v-chip
               v-for="(selection, i) in tree"
               :key="i"
-              color="grey"
+              color="secondary"
               dark
               small
-              class="ma-1"
+              class="v-chip-light-bg secondary--text ma-1"
             >
               <v-icon
                 left
                 small
               >
-                {{ icons.mdiBeerOutline }}
+                {{ icons.mdiTimerSandEmpty }}
               </v-icon>
               {{ selection.name }}
             </v-chip>
@@ -72,7 +67,7 @@
         </v-card-text>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
+
     <v-card-actions class="pb-0">
       <v-btn
         text
@@ -102,7 +97,7 @@ import axios from '@axios'
 import { computed, ref, watch } from '@vue/composition-api'
 import {
   mdiContentSaveOutline,
-  mdiBeerOutline,
+  mdiTimerSandEmpty,
   mdiSilverware,
   mdiChevronDown,
   mdiBookmark,
@@ -189,7 +184,7 @@ export default {
       getChildren,
       icons: {
         mdiContentSaveOutline,
-        mdiBeerOutline,
+        mdiTimerSandEmpty,
         mdiSilverware,
         mdiChevronDown,
         mdiBookmark,

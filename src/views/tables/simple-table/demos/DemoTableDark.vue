@@ -3,7 +3,7 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left text-uppercase text--primary">
+          <th class="text-uppercase text--primary">
             Dessert (100g serving)
           </th>
           <th class="text-center text-uppercase text--primary">

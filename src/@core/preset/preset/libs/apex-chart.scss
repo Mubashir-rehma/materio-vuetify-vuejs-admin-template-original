@@ -1,4 +1,5 @@
 // Variable Overrides
+@import '~vuetify/src/styles/styles.sass';
 @import '../variables.scss';
 
 @include theme--child('apexcharts-canvas .apexcharts-text') using ($material) {
@@ -76,7 +77,12 @@
       margin-top: 0.625rem;
     }
     .apexcharts-legend-text {
-      margin-left: 0.5rem;
+      @include ltr() {
+        margin-left: 0.5rem;
+      }
+      @include rtl() {
+        margin-right: 0.5rem;
+      }
       color: map-deep-get($material-light, 'text', 'secondary') !important;
       font-size: 1rem !important;
     }

@@ -2,14 +2,13 @@
   <v-navigation-drawer
     v-model="isAddNewUserSidebarActive"
     absolute
-    right
+    :right="!$vuetify.rtl"
     width="350"
     temporary
   >
     <v-card height="100%">
       <v-card-title>
         <span>Add New User</span>
-
         <v-spacer></v-spacer>
 
         <v-btn

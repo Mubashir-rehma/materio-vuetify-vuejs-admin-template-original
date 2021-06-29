@@ -38,9 +38,10 @@
           </span>
           <v-icon
             small
+            icon
             @click="parent.selectItem(item)"
           >
-            close
+            {{ icons.mdiClose }}
           </v-icon>
         </v-chip>
       </template>
@@ -81,7 +82,7 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { ref, watch } from '@vue/composition-api'
-import { mdiPencil, mdiCheck } from '@mdi/js'
+import { mdiPencil, mdiCheck, mdiClose } from '@mdi/js'
 
 export default {
   setup() {
@@ -110,10 +111,7 @@ export default {
       },
     ])
 
-    // const x = ref(0)
     const search = ref()
-
-    // const y = ref(0)
 
     const edit = (index, item) => {
       if (!editing.value) {
@@ -164,15 +162,17 @@ export default {
       editingIndex,
       menu,
       search,
-      edit,
-      filter,
       model,
       colors,
       nonce,
 
+      edit,
+      filter,
+
       icons: {
         mdiPencil,
         mdiCheck,
+        mdiClose,
       },
     }
   },

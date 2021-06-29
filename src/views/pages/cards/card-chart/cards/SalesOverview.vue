@@ -153,7 +153,7 @@ export default {
       },
     }
 
-    const chartData = [12, 26, 12, 50]
+    const chartData = [12, 26, 12, 50, 2]
 
     return {
       chartOptions,

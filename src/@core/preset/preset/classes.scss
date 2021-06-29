@@ -1,5 +1,5 @@
 @import './mixins';
-
+@import '~vuetify/src/styles/styles.sass';
 // ————————————————————————————————————
 //* ——— Color
 // ————————————————————————————————————
@@ -186,7 +186,12 @@ $font-sizes: (
   align-items: center;
   > * {
     &:not(:first-child) {
-      margin-left: -0.8rem;
+      @include ltr() {
+        margin-left: -0.8rem;
+      }
+      @include rtl() {
+        margin-right: -0.8rem;
+      }
     }
     transition: transform 0.25s ease, box-shadow 0.15s ease;
 
@@ -388,10 +393,21 @@ $font-sizes: (
   }
   .v-timeline-item__divider {
     min-width: unset;
-    margin-right: 1rem;
+    @include ltr() {
+      margin-right: 1rem;
+    }
+
+    @include rtl() {
+      margin-left: 1rem;
+    }
   }
   &:not(.v-timeline--reverse):before {
-    left: 11px !important;
+    @include ltr() {
+      left: 11px !important;
+    }
+    @include rtl() {
+      right: 11px !important;
+    }
   }
 }
 

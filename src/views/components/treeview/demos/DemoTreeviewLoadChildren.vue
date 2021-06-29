@@ -32,13 +32,12 @@
     <v-col
       cols="12"
       sm="6"
-      class="d-flex text-center"
+      class="d-flex justify-center"
     >
       <v-scroll-y-transition mode="out-in">
         <div
           v-if="!selected"
           class="title font-weight-light"
-          style="align-self: center;"
         >
           Select a User
         </div>
@@ -49,14 +48,15 @@
           flat
           max-width="400"
         >
-          <v-card-text>
+          <v-card-text class="text-center">
             <v-avatar
               v-if="avatar"
               size="88"
+              rounded
+              class="mb-6"
             >
               <v-img
-                :src="`https://avataaars.io/${avatar}`"
-                class="mb-6"
+                :src="`/images/avatars/${avatar}`"
               ></v-img>
             </v-avatar>
             <h3 class="headline mb-2">
@@ -117,13 +117,7 @@ import { mdiAccountOutline } from '@mdi/js'
 import { ref, watch, computed } from '@vue/composition-api'
 import axios from '@axios'
 
-const avatars = [
-  '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
-  '?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun',
-  '?accessoriesType=Prescription02&avatarStyle=Circle&clotheColor=Black&clotheType=ShirtVNeck&eyeType=Surprised&eyebrowType=Angry&facialHairColor=Blonde&facialHairType=Blank&hairColor=Blonde&hatColor=PastelOrange&mouthType=Smile&skinColor=Black&topType=LongHairNotTooLong',
-  '?accessoriesType=Round&avatarStyle=Circle&clotheColor=PastelOrange&clotheType=Overall&eyeType=Close&eyebrowType=AngryNatural&facialHairColor=Blonde&facialHairType=Blank&graphicType=Pizza&hairColor=Black&hatColor=PastelBlue&mouthType=Serious&skinColor=Light&topType=LongHairBigHair',
-  '?accessoriesType=Kurt&avatarStyle=Circle&clotheColor=Gray01&clotheType=BlazerShirt&eyeType=Surprised&eyebrowType=Default&facialHairColor=Red&facialHairType=Blank&graphicType=Selena&hairColor=Red&hatColor=Blue02&mouthType=Twinkle&skinColor=Pale&topType=LongHairCurly',
-]
+const avatars = ['1.png', '2.png', '3.png', '4.png', '6.png', '7.png', '8.png']
 
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
 

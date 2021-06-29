@@ -149,7 +149,6 @@ export default {
       ],
       chart: {
         type: 'bar',
-        height: 350,
         stacked: true,
         toolbar: {
           show: false,
@@ -241,9 +240,18 @@ export default {
 @import '~@core/preset/preset/mixins.scss';
 @import '~vuetify/src/styles/styles.sass';
 
+.total-profit-chart-col {
+  @include ltr() {
+    border-right: thin solid;
+  }
+  @include rtl() {
+    border-left: thin solid;
+  }
+}
+
 @include theme--child(total-profit-chart-col) using ($material) {
   @media #{map-get($display-breakpoints, 'sm-and-up')} {
-    border-right: thin solid map-get($material, 'dividers');
+    border-color: map-get($material, 'dividers');
   }
 }
 </style>

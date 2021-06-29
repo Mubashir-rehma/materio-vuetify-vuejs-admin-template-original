@@ -30,7 +30,7 @@
           You can reduces the text field height with dense prop.
         </v-card-text>
 
-        <v-card-text>
+        <v-card-text class="pt-5">
           <demo-textfield-dense></demo-textfield-dense>
         </v-card-text>
       </app-card-code>

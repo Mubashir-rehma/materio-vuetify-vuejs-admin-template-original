@@ -1,11 +1,11 @@
 <template>
   <v-card>
     <v-data-table
-      :headers="headers"
+      :headers="tableColumnHeaders"
       :items="userListData"
-      item-key="name"
-      hide-default-footer
       show-select
+      item-key="fullName"
+      hide-default-footer
       class="table-rounded"
     >
       <!-- name -->
@@ -143,7 +143,7 @@ export default {
         status: 'pending',
       },
       {
-        fullName: 'Isabel Briggs',
+        fullName: 'Cristina Briggs',
         userName: '@bgallemore6',
         primaryEmail: 'temiwiho@ohacma.gov',
         role: 'editor',
@@ -151,17 +151,18 @@ export default {
       },
     ]
 
-    return {
-      headers: [
-        { text: 'USER', value: 'fullName' },
-        { text: 'EMAIL', value: 'primaryEmail' },
-        { text: 'ROLE', value: 'role' },
-        { text: 'STATUS', value: 'status' },
-      ],
+    const tableColumnHeaders = [
+      { text: 'USER', value: 'fullName' },
+      { text: 'EMAIL', value: 'primaryEmail' },
+      { text: 'ROLE', value: 'role' },
+      { text: 'STATUS', value: 'status' },
+    ]
 
+    return {
       userListData,
       statusColor,
       role,
+      tableColumnHeaders,
 
       // icons
       icons: {

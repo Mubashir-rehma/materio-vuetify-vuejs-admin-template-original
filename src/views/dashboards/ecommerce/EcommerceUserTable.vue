@@ -4,7 +4,7 @@
       v-model="selected"
       :headers="tableColumnHeaders"
       :items="userlist"
-      item-key="name"
+      item-key="id"
       show-select
       hide-default-footer
       class="table-rounded"

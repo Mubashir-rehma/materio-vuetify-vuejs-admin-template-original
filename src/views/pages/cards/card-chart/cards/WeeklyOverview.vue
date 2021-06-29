@@ -3,12 +3,13 @@
     class="chart-card-weekly-overview"
     :class="[rootThemeClasses]"
   >
-    <v-card-title>
-      Weekly Overview
+    <v-card-title class="align-start">
+      <span>Weekly Overview</span>
       <v-spacer></v-spacer>
       <v-btn
         icon
         small
+        class="mt-n2 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

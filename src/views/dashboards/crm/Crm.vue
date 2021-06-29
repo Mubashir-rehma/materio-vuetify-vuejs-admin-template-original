@@ -197,7 +197,7 @@ export default {
       chipText: 'Year of 2021',
       chipColor: 'primary',
       avatar: '/images/avatars/9.png',
-      avatarWidth: '115',
+      avatarWidth: '111',
     }
     const sessionsOptions = {
       statTitle: 'Sessions',
@@ -206,7 +206,7 @@ export default {
       chipText: 'Last Week',
       chipColor: 'secondary',
       avatar: '/images/avatars/10.png',
-      avatarWidth: '89',
+      avatarWidth: '86',
     }
 
     const growthAreaChart = {

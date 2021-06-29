@@ -8,6 +8,7 @@
     label="Select"
     item-text="name"
     item-value="name"
+    :menu-props="{contentClass:'list-style'}"
     multiple
   >
     <template #selection="data">
@@ -19,7 +20,7 @@
         @click:close="remove(data.item)"
       >
         <v-avatar left>
-          <v-img :src="data.item.avatar"></v-img>
+          <v-img :src="`/images/avatars/${data.item.avatar}`"></v-img>
         </v-avatar>
         {{ data.item.name }}
       </v-chip>
@@ -32,7 +33,7 @@
 
       <template v-else>
         <v-list-item-avatar>
-          <v-img :src="data.item.avatar"></v-img>
+          <v-img :src="`/images/avatars/${data.item.avatar}`"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
@@ -54,11 +55,11 @@ import { ref } from '@vue/composition-api'
 export default {
   setup() {
     const srcs = {
-      1: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-      2: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-      3: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-      4: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-      5: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+      1: '1.png',
+      2: '2.png',
+      3: '3.png',
+      4: '4.png',
+      5: '5.png',
     }
 
     const friends = ref(['Sandra Adams', 'Britta Holt'])

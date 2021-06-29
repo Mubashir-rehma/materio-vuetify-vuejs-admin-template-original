@@ -6,6 +6,7 @@
       <v-btn
         icon
         small
+        class="mt-n2 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}
@@ -40,16 +41,11 @@ import VueApexCharts from 'vue-apexcharts'
 // eslint-disable-next-line object-curly-newline
 import { mdiDotsVertical } from '@mdi/js'
 
-// import { getVuetify } from '@core/utils'
-// import { kFormatter } from '@core/utils/filter'
-
 export default {
   components: {
     VueApexCharts,
   },
   setup() {
-    // const $vuetify = getVuetify()
-
     const chartOptions = {
       chart: {
         height: 350,

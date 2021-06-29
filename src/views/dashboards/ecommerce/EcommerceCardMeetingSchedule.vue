@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        class="me-n3 mt-n1"
+        class="me-n3 mt-n2"
         icon
         small
       >

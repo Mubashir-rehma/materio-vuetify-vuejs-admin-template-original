@@ -1,11 +1,12 @@
 <template>
   <v-card class="chart-card-total-visitors d-flex flex-column">
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Total Visitors</span>
       <v-spacer></v-spacer>
       <v-btn
         icon
         small
+        class="me-n3 mt-n2"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

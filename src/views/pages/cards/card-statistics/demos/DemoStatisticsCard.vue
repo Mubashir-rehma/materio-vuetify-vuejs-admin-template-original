@@ -1,12 +1,14 @@
 <template>
   <v-card>
-    <v-card-title class="text-base align-start">
-      <span class="font-weight-semibold">Statistics Card</span>
+    <v-card-title class="align-start">
+      <span class="font-weight-semibold text-base">Statistics Card</span>
+
       <v-spacer></v-spacer>
+
       <v-btn
         icon
         small
-        class="me-n3 mt-n1"
+        class="me-n3 mt-n2"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}

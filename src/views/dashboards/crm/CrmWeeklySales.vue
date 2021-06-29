@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <div>
         <p class="mb-2">
           Weekly Sales
@@ -11,7 +11,7 @@
       <v-btn
         icon
         small
-        class="mt-n8 me-n3"
+        class="mt-n2 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

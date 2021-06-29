@@ -1,11 +1,12 @@
 <template>
   <v-card>
-    <v-card-title>
+    <v-card-title class="align-start">
       <span>Sales Overview</span>
       <v-spacer></v-spacer>
       <v-btn
         icon
         small
+        class="mt-n2 me-n3"
       >
         <v-icon size="22">
           {{ icons.mdiDotsVertical }}

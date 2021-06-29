@@ -1,13 +1,13 @@
 <template>
   <v-card>
     <v-card-title class="align-start">
-      Upgrade Your Plan
+      <span>Upgrade Your Plan</span>
       <v-spacer></v-spacer>
 
       <v-btn
         icon
         small
-        class="mt-n1 me-n3"
+        class="mt-n2 me-n3"
       >
         <v-icon>
           {{ icons.mdiDotsVertical }}

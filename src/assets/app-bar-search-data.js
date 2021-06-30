@@ -39,6 +39,7 @@ import {
   mdiPound,
   mdiRadioboxMarked,
   mdiRayVertex,
+  mdiReceipt,
   mdiStarOutline,
   mdiTagOutline,
   mdiToggleSwitchOffOutline,
@@ -57,7 +58,9 @@ export default [
 
   // Apps
   { title: 'Chat', to: { name: 'apps-chat' }, icon: mdiMessageTextOutline },
-
+  { title: 'Invoice List', to: { name: 'apps-invoice-list' }, icon: mdiReceipt },
+  { title: 'User List', to: { name: 'apps-user-list' }, icon: mdiAccountOutline },
+  { title: 'User View', to: { name: 'apps-user-view' }, icon: mdiAccountOutline },
 
   // authentication
   { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },
@@ -68,23 +71,24 @@ export default [
   { title: 'Forgot Password v2', to: { name: 'auth-forgot-password-v2' }, icon: mdiKeyOutline },
   { title: 'Reset Password v1', to: { name: 'auth-reset-password-v1' }, icon: mdiKeyOutline },
   { title: 'Reset Password v2', to: { name: 'auth-reset-password-v2' }, icon: mdiKeyOutline },
+
+  // pages
   { title: 'Knowledge Base', to: { name: 'page-knowledge-base' }, icon: mdiInformationOutline },
-  { title: 'Knowledge Base Category', to: { name: 'page-knowledge-base-category' }, icon: mdiInformationOutline },
-  { title: 'Knowledge Base Question', to: { name: 'page-knowledge-base-question' }, icon: mdiInformationOutline },
   { title: 'Account Settings', to: { name: 'page-account-settings' }, icon: mdiCogOutline },
-  { title: 'Not Authorized', to: { name: 'misc-not-authorized' }, icon: mdiCloseOctagonOutline },
   { title: 'Pricing', to: { name: 'page-pricing' }, icon: mdiCurrencyUsd },
   { title: 'FAQ', to: { name: 'page-faq' }, icon: mdiHelpCircleOutline },
-  { title: 'Icons', to: { name: 'ui-icons' }, icon: mdiEyeOutline },
 
   // misc
   { title: 'Under Maintenance', to: { name: 'misc-under-maintenance' }, icon: mdiFileOutline },
   { title: 'Error', to: { name: 'misc-error' }, icon: mdiHelpCircleOutline },
   { title: 'Coming Soon', to: { name: 'misc-coming-soon' }, icon: mdiClockOutline },
+  { title: 'Not Authorized', to: { name: 'misc-not-authorized' }, icon: mdiCloseOctagonOutline },
 
   //ui
   { title: 'Typography', to: { name: 'ui-typography' }, icon: mdiAlphaTBoxOutline },
   { title: 'Gamification', to: { name: 'ui-gamification' }, icon: mdiControllerClassicOutline },
+  { title: 'Icons', to: { name: 'ui-icons' }, icon: mdiEyeOutline },
+
   // Cards
   { title: 'Card Basic', to: { name: 'card-basic' }, icon: mdiCreditCardOutline },
   { title: 'Card Statistics', to: { name: 'card-statistics' }, icon: mdiCreditCardOutline },
@@ -109,6 +113,8 @@ export default [
   { title: 'Stepper', to: { name: 'components-stepper' }, icon: mdiDebugStepOver },
   { title: 'Timeline', to: { name: 'components-timeline' }, icon: mdiClockOutline },
   { title: 'Treeview', to: { name: 'components-treeview' }, icon: mdiFamilyTree },
+
+  // forms elements
   { title: 'Autocomplete', to: { name: 'form-autocomplete' }, icon: mdiFormatAlignLeft },
   { title: 'Checkbox', to: { name: 'form-checkbox' }, icon: mdiCheckboxMarkedOutline },
   { title: 'Combobox', to: { name: 'form-combobox' }, icon: mdiCheckboxBlankOutline },
@@ -120,16 +126,18 @@ export default [
   { title: 'Switch', to: { name: 'form-switch' }, icon: mdiToggleSwitchOffOutline },
   { title: 'Textarea', to: { name: 'form-textarea' }, icon: mdiAlphaTBoxOutline },
   { title: 'Textfield', to: { name: 'form-textfield' }, icon: mdiAlphaTBoxOutline },
-  { title: 'Form Layout', to: { name: 'form-layout' }, icon: mdiViewGridOutline },
-  { title: 'Form Validation', to: { name: 'form-validation' }, icon: mdiCheckCircleOutline },
   { title: 'Form Datepicker', to: { name: 'form-datepicker' }, icon: mdiClockOutline },
   { title: 'Form Month Picker', to: { name: 'form-month-picker' }, icon: mdiClockOutline },
   { title: 'Form Time Picker', to: { name: 'form-time-picker' }, icon: mdiClockOutline },
   { title: 'Rating', to: { name: 'form-rating' }, icon: mdiStarOutline },
+  { title: 'Form Layout', to: { name: 'form-layout' }, icon: mdiViewGridOutline },
+  { title: 'Form Validation', to: { name: 'form-validation' }, icon: mdiCheckCircleOutline },
 
   // chart and maps
   { title: 'Apex Chart', to: { name: 'apex-chart' }, icon: mdiChartDonut },
   { title: 'Chartjs', to: { name: 'chartjs-chart' }, icon: mdiPoll },
+
+  // map
   { title: 'Leaflet Maps', to: { name: 'leaflet-maps' }, icon: mdiMapOutline },
 
   // tables

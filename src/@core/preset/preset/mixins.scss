@@ -133,8 +133,8 @@
 // ——— Light background generator ——————— //
 //! With this you have to give text color to the component you want light bg
 // e.g. class="avatar-initial primary--text" for primary light bg
-@mixin light-bg-provider($component, $opacity: 0.12) {
-  .v-application .#{$component}.#{$component}-light-bg {
+@mixin light-bg-provider($component, $inner-selector: '', $opacity: 0.12) {
+  .v-application .#{$component}.#{$component}-light-bg #{$inner-selector} {
     background-color: transparent !important;
 
     &::before {

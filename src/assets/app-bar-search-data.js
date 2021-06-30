@@ -19,6 +19,7 @@ import {
   mdiCurrencyUsd,
   mdiDebugStepOver,
   mdiDotsHorizontal,
+  mdiEmailOutline,
   mdiEyeOutline,
   mdiFamilyTree,
   mdiFileMusicOutline,
@@ -61,6 +62,7 @@ export default [
   { title: 'Invoice List', to: { name: 'apps-invoice-list' }, icon: mdiReceipt },
   { title: 'User List', to: { name: 'apps-user-list' }, icon: mdiAccountOutline },
   { title: 'User View', to: { name: 'apps-user-view' }, icon: mdiAccountOutline },
+  { title: 'Email', to: { name: 'apps-email' }, icon: mdiEmailOutline },
 
   // authentication
   { title: 'Login v1', to: { name: 'auth-login-v1' }, icon: mdiLockOutline },

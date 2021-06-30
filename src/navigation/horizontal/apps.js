@@ -1,8 +1,9 @@
 import {
-  mdiFileDocumentOutline,
   mdiAccountOutline,
-  mdiPackageVariantClosed,
+  mdiEmailOutline,
+  mdiFileDocumentOutline,
   mdiMessageTextOutline,
+  mdiPackageVariantClosed,
 } from '@mdi/js'
 
 export default [
@@ -24,6 +25,11 @@ export default [
         title: 'Chat',
         icon: mdiMessageTextOutline,
         to: 'apps-chat',
+      },
+      {
+        title: 'Email',
+        icon: mdiEmailOutline,
+        to: 'apps-email',
       },
       {
         title: 'User',

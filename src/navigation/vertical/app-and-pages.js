@@ -1,5 +1,6 @@
 import {
   mdiAccountOutline,
+  mdiEmailOutline,
   mdiFileDocumentOutline,
   mdiFileOutline,
   mdiMessageTextOutline,
@@ -13,6 +14,11 @@ export default [
     title: 'Chat',
     icon: mdiMessageTextOutline,
     to: 'apps-chat',
+  },
+  {
+    title: 'Email',
+    icon: mdiEmailOutline,
+    to: 'apps-email',
   },
   {
     title: 'Invoice',

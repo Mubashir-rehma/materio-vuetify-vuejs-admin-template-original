@@ -538,3 +538,11 @@ $font-sizes: (
     font-weight: 600;
   }
 }
+
+@include light-bg-provider(v-badge, '.v-badge__badge');
+.v-badge-light-bg {
+  font-weight: 500;
+  .v-badge__badge {
+    color: inherit;
+  }
+}

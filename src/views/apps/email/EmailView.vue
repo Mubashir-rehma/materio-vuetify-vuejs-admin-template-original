@@ -1,7 +1,7 @@
 <template>
   <div class="h-full">
     <!-- 1st Row -->
-    <div class="d-flex align-center px-6 py-2">
+    <div class="d-flex align-center px-sm-6 px-4 py-2">
       <!-- Back Button -->
       <v-btn
         icon
@@ -58,7 +58,7 @@
     <v-divider></v-divider>
 
     <!-- 2nd Row -->
-    <div class="d-flex align-center px-6 py-2">
+    <div class="d-flex align-center px-sm-6 px-4 py-2">
       <v-btn
         v-show="$route.params.folder !== 'trash'"
         icon
@@ -228,7 +228,7 @@
       <!-- Replies -->
       <!-- Earlier Email Messages -->
       <div
-        class="position-relative ma-7"
+        class="position-relative ma-sm-7 ma-4"
         :style="messagesWrapperStyles"
       >
         <div

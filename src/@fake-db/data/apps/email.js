@@ -136,7 +136,7 @@ const data = {
       from: {
         email: 'bposvner0@zdnet.com',
         name: 'Bobbie Posvner',
-        avatar: '/images/avatars/11.png',
+        avatar: '/images/avatars/6.png',
       },
       to: [
         {
@@ -214,7 +214,7 @@ const data = {
       from: {
         email: 'wmannering3@mozilla.org',
         name: 'Waldemar Mannering',
-        avatar: '/images/avatars/11.png',
+        avatar: '/images/avatars/2.png',
       },
       to: [
         {
@@ -240,7 +240,7 @@ const data = {
       from: {
         email: 'hfrostdyke4@scientificamerican.com',
         name: 'Heath Frostdyke',
-        avatar: '/images/avatars/9.png',
+        avatar: '/images/avatars/3.png',
       },
       to: [
         {
@@ -332,7 +332,7 @@ const data = {
       from: {
         email: 'efinessy7@sbwire.com',
         name: 'Eugenie Finessy',
-        avatar: '/images/avatars/2.png',
+        avatar: '/images/avatars/7.png',
       },
       to: [
         {
@@ -358,7 +358,7 @@ const data = {
       from: {
         email: 'tmckeurton8@163.com',
         name: 'Tadio McKeurton',
-        avatar: '/images/avatars/10.png',
+        avatar: '/images/avatars/4.png',
       },
       to: [
         {
@@ -384,7 +384,7 @@ const data = {
       from: {
         email: 'ebegg9@wikia.com',
         name: 'Eb Begg',
-        avatar: '/images/avatars/12.png',
+        avatar: '/images/avatars/8.png',
       },
       to: [
         {
@@ -410,7 +410,7 @@ const data = {
       from: {
         email: 'mspata@sina.com.cn',
         name: 'Modestine Spat',
-        avatar: '/images/avatars/9.png',
+        avatar: '/images/avatars/7.png',
       },
       to: [
         {
@@ -462,7 +462,7 @@ const data = {
       from: {
         email: 'nbartlesc@merriam-webster.com',
         name: 'Normand Bartles',
-        avatar: '/images/avatars/9.png',
+        avatar: '/images/avatars/1.png',
       },
       to: [
         {
@@ -488,7 +488,7 @@ const data = {
       from: {
         email: 'rgennd@dedecms.com',
         name: 'Robin Genn',
-        avatar: '/images/avatars/6.png',
+        avatar: '/images/avatars/4.png',
       },
       to: [
         {
@@ -540,7 +540,7 @@ const data = {
       from: {
         email: 'pcuzenf@mediafire.com',
         name: 'Penni Cuzen',
-        avatar: '/images/avatars/9.png',
+        avatar: '/images/avatars/1.png',
       },
       to: [
         {
@@ -573,7 +573,7 @@ const data = {
       from: {
         email: 'abaldersong@utexas.edu',
         name: 'Ardis Balderson',
-        avatar: '/images/avatars/12.png',
+        avatar: '/images/avatars/5.png',
       },
       to: [
         {
@@ -688,7 +688,7 @@ const data = {
           from: {
             email: 'johndoe@mail.com',
             name: 'John Doe',
-            avatar: '/images/avatars/11.png',
+            avatar: '/images/avatars/4.png',
           },
           to: [
             {
@@ -770,7 +770,7 @@ mock.onGet('/apps/email/emails').reply(config => {
   const filteredData = data.emails.filter(
     email =>
       /* eslint-disable operator-linebreak, implicit-arrow-linebreak */
-      email.subject.toLowerCase().includes(queryLowered) &&
+      (email.from.name.toLowerCase().includes(queryLowered) || email.subject.toLowerCase().includes(queryLowered)) &&
       isInFolder(email) &&
       (label ? email.labels.includes(label) : true),
   )

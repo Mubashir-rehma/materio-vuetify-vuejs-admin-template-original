@@ -42,6 +42,7 @@
           v-for="filter in emailFilters"
           :key="filter.title"
           :to="filter.to"
+          class="text--primary"
           exact-active-class="primary--text v-list-item--exact-active"
         >
           <v-list-item-icon class="mr-2">
@@ -202,6 +203,10 @@ export default {
 
     &.v-list-item--exact-active {
       border-color: var(--v-primary-base);
+    }
+
+    .v-list-item__icon {
+      align-items: end;
     }
 
     // label dot

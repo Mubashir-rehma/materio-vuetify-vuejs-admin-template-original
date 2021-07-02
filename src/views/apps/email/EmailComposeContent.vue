@@ -37,6 +37,7 @@
     <v-form>
       <!-- Field: To -->
       <v-combobox
+        :key="shallShowCCFIeld.toString() + shallShowBCCFIeld.toString()"
         v-model="composeData.to"
         :items="emailToOptions"
         :filter="filterEmailToOptions"
@@ -79,7 +80,7 @@
           <v-btn
             icon
             small
-            @click.stop="shallShowCCFIeld = !shallShowCCFIeld"
+            @click="shallShowCCFIeld = !shallShowCCFIeld"
           >
             Cc
           </v-btn>
@@ -87,7 +88,7 @@
             icon
             small
             class="mr-6 ml-1"
-            @click.stop="shallShowBCCFIeld = !shallShowBCCFIeld"
+            @click="shallShowBCCFIeld = !shallShowBCCFIeld"
           >
             Bcc
           </v-btn>
@@ -223,7 +224,7 @@
         >
           <template #activator="{ on, attrs }">
             <v-btn-toggle
-              class="mr-3"
+              class="send-btn-toggle mr-3"
               color="primary"
               borderless
             >
@@ -432,6 +433,24 @@ export default {
   .email-compose-message {
     .v-input__slot {
       padding-left: 23px !important;
+    }
+  }
+
+  .send-btn-toggle {
+    .v-btn {
+      height: 38px !important;
+      opacity: 1 !important;
+
+      &:nth-child(1) {
+        padding-left: 20px;
+        padding-right: 8px;
+      }
+      &:nth-child(2) {
+        // max-width: 20px;
+        min-width: unset !important;
+        padding-right: 6px;
+        padding-left: 6px;
+      }
     }
   }
 }

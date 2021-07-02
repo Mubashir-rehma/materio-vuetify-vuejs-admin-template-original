@@ -229,7 +229,7 @@
                 >
                 </v-badge>
               </template>
-              <span class="text-truncate mr-4 ml-sm-2 ml-0">{{ email.subject }}{{ email.subject }}{{ email.subject }}</span>
+              <span class="text-truncate mr-4 ml-sm-2 ml-0">{{ email.subject }}</span>
             </div>
             <v-spacer></v-spacer>
 

@@ -1,14 +1,33 @@
 <template>
   <div class="h-full">
-    <!-- Compose Button -->
-    <div class="pa-5">
-      <v-btn
-        block
-        color="primary"
-      >
-        Compose
-      </v-btn>
-    </div>
+    <!-- Compose -->
+    <v-dialog
+      v-model="isComposeDialogVisible"
+      width="700"
+      :fullscreen="isEmailComposeDialogFullscreen"
+      hide-overlay
+      content-class="email-compose-dialog ml-md-auto"
+      transition="slide-y-reverse-transition"
+    >
+      <template #activator="{ on, attrs }">
+        <!-- Compose Button -->
+        <div class="pa-5">
+          <v-btn
+            block
+            color="primary"
+            v-bind="attrs"
+            v-on="on"
+          >
+            Compose
+          </v-btn>
+        </div>
+      </template>
+
+      <email-compose-content
+        :is-dialog-fullscreen.sync="isEmailComposeDialogFullscreen"
+        @close-dialog="isComposeDialogVisible = false"
+      ></email-compose-content>
+    </v-dialog>
 
     <!-- Scrollable Area -->
     <perfect-scrollbar
@@ -93,16 +112,21 @@ import {
   mdiAlertOctagonOutline,
   mdiTrashCanOutline,
 } from '@mdi/js'
+import { ref } from '@vue/composition-api'
 
-// import { isDynamicRouteActive } from '@core/utils/utils'
+// Local Components
+import EmailComposeContent from './EmailComposeContent.vue'
 
 export default {
   components: {
+    // Local Components
+    EmailComposeContent,
+
     // 3rd Party
     PerfectScrollbar,
   },
   props: {
-    isEmailComposeModalVisible: {
+    isEmailComposeDialogVisible: {
       type: Boolean,
       required: true,
     },
@@ -112,11 +136,9 @@ export default {
     },
   },
   setup() {
-    const perfectScrollbarSettings = {
-      maxScrollbarLength: 60,
-      wheelPropagation: false,
-      wheelSpeed: 0.7,
-    }
+    // Compose Dialog
+    const isComposeDialogVisible = ref(false)
+    const isEmailComposeDialogFullscreen = ref(false)
 
     const emailFilters = [
       { title: 'Inbox', icon: mdiEmailOutline, to: { name: 'apps-email' } },
@@ -141,7 +163,18 @@ export default {
       return 'error'
     }
 
+    // Perfect Scrollbar
+    const perfectScrollbarSettings = {
+      maxScrollbarLength: 60,
+      wheelPropagation: false,
+      wheelSpeed: 0.7,
+    }
+
     return {
+      // Compose Dialog
+      isComposeDialogVisible,
+      isEmailComposeDialogFullscreen,
+
       // isDynamicRouteActive,
       resolveFilterBadgeColor,
 
@@ -157,6 +190,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@core/preset/preset/mixins.scss';
+
 .ps-email-left-sidebar {
   height: calc(100% - 78px);
 
@@ -179,4 +214,10 @@ export default {
     }
   }
 }
+
+.email-compose-dialog {
+  align-self: flex-end !important;
+}
+
+@include app-elevation(email-compose-dialog, 16);
 </style>

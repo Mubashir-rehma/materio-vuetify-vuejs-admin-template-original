@@ -5,9 +5,10 @@
       width="260"
       mobile-breakpoint="sm"
       absolute
+      :temporary="$vuetify.breakpoint.smAndDown"
     >
       <email-left-sidebar-content
-        :is-email-compose-modal-visible="isEmailComposeModalVisible"
+        :is-email-compose-dialog-visible="isEmailComposeDialogVisible"
         :emails-meta="emailsMeta"
       ></email-left-sidebar-content>
     </v-navigation-drawer>
@@ -31,22 +32,8 @@
           outlined
           hide-details
           class="email-search-input"
-          :prepend-icon="icons.mdiMagnify"
+          :prepend-inner-icon="icons.mdiMagnify"
         ></v-text-field>
-        <span>1-10 of 50</span>
-        <v-btn
-          icon
-          small
-          class="ml-3 mr-1"
-        >
-          <v-icon>{{ icons.mdiChevronLeft }}</v-icon>
-        </v-btn>
-        <v-btn
-          icon
-          small
-        >
-          <v-icon>{{ icons.mdiChevronRight }}</v-icon>
-        </v-btn>
       </div>
 
       <v-divider></v-divider>
@@ -56,12 +43,13 @@
         <v-checkbox
           class="d-flex mt-0 pt-0"
           hide-details
-          :value="selectAllEmailCheckbox"
+          :input-value="selectAllEmailCheckbox"
           :indeterminate="isSelectAllEmailCheckboxIndeterminate"
+          :disabled="!emails.length"
           @change="selectAllCheckboxUpdate"
         ></v-checkbox>
         <v-btn
-          v-show="selectedEmails.length"
+          v-show="selectedEmails.length && $route.params.folder !== 'trash'"
           icon
           small
           class="mr-3"
@@ -76,14 +64,13 @@
           icon
           small
           class="mr-3"
-          @click="markSelectedEmailsAsRead()"
+          @click="isAllSelectedMailAreRead ? markSelectedEmailsAsUnread() : markSelectedEmailsAsRead()"
         >
           <v-icon size="22">
-            {{ icons.mdiEmailOpenOutline }}
+            {{ isAllSelectedMailAreRead ? icons.mdiEmailOutline : icons.mdiEmailOpenOutline }}
           </v-icon>
         </v-btn>
         <v-menu
-
           offset-y
           min-width="140"
         >
@@ -103,7 +90,7 @@
           </template>
           <v-list>
             <v-list-item
-              v-for="folder in moveToFolderMenuListItems"
+              v-for="folder in moveToFolderMenuListItems($route)"
               :key="folder.title"
               link
               @click="moveSelectedEmailsToFolder(folder.value)"
@@ -203,10 +190,12 @@
             <v-checkbox
               class="d-flex mt-0 pt-0"
               hide-details
-              :value="selectedEmails.includes(email.id)"
+              :input-value="selectedEmails.includes(email.id)"
+              @click.stop
               @change="toggleSelectedMail(email.id)"
             ></v-checkbox>
             <v-btn
+              v-if="$vuetify.breakpoint.smAndUp"
               icon
               small
               class="mr-2"
@@ -219,22 +208,29 @@
             </v-btn>
             <v-avatar
               size="32"
-              class="mr-4"
+              class="mr-3 mr-sm-4"
             >
               <v-img :src="email.from.avatar"></v-img>
             </v-avatar>
-            <span class="text--primary text-base font-weight-medium mr-3">{{ email.from.name }}</span>
-            <v-badge
-              v-for="label in email.labels"
-              :key="label"
-              :color="resolveLabelColor(label)"
-              inline
-              :content="label"
-              class="email-label-chip text-capitalize v-badge-light-bg mr-2"
-              :class="`${resolveLabelColor(label)}--text`"
-            >
-            </v-badge>
-            <span class="text-truncate mr-4">{{ email.subject }}</span>
+            <div class="d-flex flex-column flex-sm-row text-truncate align-sm-center">
+              <!-- v-if="$vuetify.breakpoint.smAndUp" -->
+              <span
+                class="text--primary text-base font-weight-medium mr-3"
+              >{{ email.from.name }}</span>
+              <template v-if="$vuetify.breakpoint.smAndUp">
+                <v-badge
+                  v-for="label in email.labels"
+                  :key="label"
+                  :color="resolveLabelColor(label)"
+                  inline
+                  :content="label"
+                  class="email-label-chip text-capitalize v-badge-light-bg"
+                  :class="`${resolveLabelColor(label)}--text`"
+                >
+                </v-badge>
+              </template>
+              <span class="text-truncate mr-4 ml-sm-2 ml-0">{{ email.subject }}{{ email.subject }}{{ email.subject }}</span>
+            </div>
             <v-spacer></v-spacer>
 
             <!-- Time and Actions On Hover -->
@@ -250,6 +246,7 @@
                 </v-icon>
               </v-btn>
               <v-btn
+                v-show="$route.params.folder !== 'trash'"
                 icon
                 small
                 class="mr-2"
@@ -260,20 +257,13 @@
                 </v-icon>
               </v-btn>
               <v-btn
+                v-show="$route.params.folder !== 'spam'"
                 icon
                 small
-                class="mr-2"
+                @click.stop="moveSelectedEmailsToFolder('spam', [email.id])"
               >
                 <v-icon size="22">
-                  {{ icons.mdiArchiveArrowDownOutline }}
-                </v-icon>
-              </v-btn>
-              <v-btn
-                icon
-                small
-              >
-                <v-icon size="22">
-                  {{ icons.mdiClockOutline }}
+                  {{ icons.mdiAlertOctagonOutline, }}
                 </v-icon>
               </v-btn>
             </div>
@@ -289,6 +279,14 @@
             </div>
           </div>
         </v-hover>
+        <div
+          class="d-none text-center text--primary font-weight-medium"
+          :class="{'d-block': !emails.length}"
+        >
+          <p class="my-4">
+            No Items Found
+          </p>
+        </div>
       </perfect-scrollbar>
 
       <!-- Email Details -->
@@ -296,12 +294,18 @@
         v-model="isEmailDetailsOpen"
         right
         absolute
+        mobile-breakpoint="sm"
         width="100%"
+        class="email-view-navigation-drawer"
       >
         <email-view
           :email-view-data="emailViewData"
-          :opended-email-meta="{}"
+          :opended-email-meta="opendedEmailMeta"
           @close-email-view="isEmailDetailsOpen = false"
+          @change-opened-email="changeOpenedEmail"
+          @move-email-to-folder="moveOpenEmailToFolder"
+          @mark-email-unread="markOpenEmailAsUnread"
+          @update-email-label="updateOpenEmailLabel"
         ></email-view>
       </v-navigation-drawer>
     </div>
@@ -326,8 +330,7 @@ import {
   mdiEmailOpenOutline,
   mdiLabelOutline,
   mdiAttachment,
-  mdiArchiveArrowDownOutline,
-  mdiClockOutline,
+  mdiAlertOctagonOutline,
 } from '@mdi/js'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
@@ -447,6 +450,13 @@ export default {
     const selectAllCheckboxUpdate = val => {
       selectedEmails.value = val ? emails.value.map(mail => mail.id) : []
     }
+    const isAllSelectedMailAreRead = computed(() => {
+      // Get array of isRead property value from selected mails array
+      const emailsIsRead = selectedEmails.value.map(emailId => emails.value.find(email => email.id === emailId).isRead)
+
+      // Return icon based on selection
+      return emailsIsRead.every(emailIsRead => emailIsRead)
+    })
 
     // TODO: Add below watcher
     // ? Watcher to reset selectedEmails is somewhere below due to watch dependecy fullfilment
@@ -606,7 +616,7 @@ export default {
     //* ——— Compose
     // ————————————————————————————————————
 
-    const isEmailComposeModalVisible = ref(false)
+    const isEmailComposeDialogVisible = ref(false)
 
     // ————————————————————————————————————
     //* ——— Perfect Scrollbar
@@ -635,6 +645,7 @@ export default {
       selectAllEmailCheckbox,
       isSelectAllEmailCheckboxIndeterminate,
       selectAllCheckboxUpdate,
+      isAllSelectedMailAreRead,
 
       // Mail Actions
       toggleStarred,
@@ -654,7 +665,7 @@ export default {
       changeOpenedEmail,
 
       // Compose
-      isEmailComposeModalVisible,
+      isEmailComposeDialogVisible,
 
       // useEmail
       resolveLabelColor,
@@ -683,8 +694,7 @@ export default {
         mdiEmailOpenOutline,
         mdiLabelOutline,
         mdiAttachment,
-        mdiArchiveArrowDownOutline,
-        mdiClockOutline,
+        mdiAlertOctagonOutline,
       },
     }
   },

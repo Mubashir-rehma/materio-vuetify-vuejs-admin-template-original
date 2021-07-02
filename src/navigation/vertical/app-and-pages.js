@@ -8,7 +8,7 @@ import {
 
 export default [
   {
-    subheader: 'APP AND PAGES',
+    subheader: 'APPS AND PAGES',
   },
   {
     title: 'Chat',

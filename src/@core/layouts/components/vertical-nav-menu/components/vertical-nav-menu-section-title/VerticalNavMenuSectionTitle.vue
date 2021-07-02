@@ -58,6 +58,7 @@ export default {
 
 <style scoped lang="scss">
 @import '~vuetify/src/styles/styles.sass';
+
 @include theme(v-subheader) using ($material) {
   white-space: nowrap;
   position: relative;

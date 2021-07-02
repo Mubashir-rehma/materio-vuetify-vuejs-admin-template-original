@@ -1,5 +1,6 @@
 @import './mixins';
 @import '~vuetify/src/styles/styles.sass';
+
 // ————————————————————————————————————
 //* ——— Color
 // ————————————————————————————————————
@@ -532,7 +533,7 @@ $font-sizes: (
 .number-badge {
   .v-badge__badge {
     height: 20px;
-    width: 20px;
+    width: auto;
     padding: 4px 6px;
     font-size: 12px;
     font-weight: 600;

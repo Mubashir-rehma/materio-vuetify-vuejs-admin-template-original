@@ -67,3 +67,17 @@ export const addAlpha = (color, opacity) => {
 
   return color + opacityLocal.toString(16).toUpperCase()
 }
+
+// ——— Perfect Scrollbar Scroll to bottom ——————— //
+
+export const psScrollToBottom = psRef => () => {
+  const scrollEl = psRef.value.$el || psRef.value
+  scrollEl.scrollTop = scrollEl.scrollHeight
+}
+
+// ——— Perfect Scrollbar Scroll to bottom ——————— //
+
+export const psScrollToTop = psRef => () => {
+  const scrollEl = psRef.value.$el || psRef.value
+  scrollEl.scrollTop = 0
+}

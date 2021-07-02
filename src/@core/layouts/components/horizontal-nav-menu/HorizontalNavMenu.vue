@@ -47,6 +47,7 @@ export default {
 
 <style lang="scss">
 @import '~vuetify/src/styles/styles.sass';
+
 .horizontal-nav-menu {
   // ? As v-menu is sibling of button activator we also have to exclude it
   > *:not(:last-child):not(.v-menu) {

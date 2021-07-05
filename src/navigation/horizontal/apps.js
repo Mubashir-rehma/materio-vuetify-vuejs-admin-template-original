@@ -1,5 +1,6 @@
 import {
   mdiAccountOutline,
+  mdiCalendarOutline,
   mdiEmailOutline,
   mdiFileDocumentOutline,
   mdiMessageTextOutline,
@@ -11,6 +12,11 @@ export default [
     title: 'Apps',
     icon: mdiPackageVariantClosed,
     children: [
+      {
+        title: 'Calendar',
+        icon: mdiCalendarOutline,
+        to: 'apps-calendar',
+      },
       {
         title: 'Invoice',
         icon: mdiFileDocumentOutline,

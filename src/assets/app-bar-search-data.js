@@ -5,6 +5,7 @@ import {
   mdiAlphaBBoxOutline,
   mdiAlphaTBoxOutline,
   mdiBellOutline,
+  mdiCalendarOutline,
   mdiChartBar,
   mdiChartDonut,
   mdiCheckboxBlankOutline,
@@ -58,6 +59,7 @@ export default [
   { title: 'eCommerce', to: { name: 'dashboard-eCommerce' }, icon: mdiHomeOutline },
 
   // Apps
+  { title: 'Calendar', to: { name: 'apps-calendar' }, icon: mdiCalendarOutline },
   { title: 'Chat', to: { name: 'apps-chat' }, icon: mdiMessageTextOutline },
   { title: 'Invoice List', to: { name: 'apps-invoice-list' }, icon: mdiReceipt },
   { title: 'User List', to: { name: 'apps-user-list' }, icon: mdiAccountOutline },

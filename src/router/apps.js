@@ -1,5 +1,18 @@
 const apps = [
   {
+    path: '/apps/calendar',
+    name: 'apps-calendar',
+    component: () => import('@/views/apps/calendar/Calendar.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+
+  //
+  //* ——— Invoice ——————————————————
+  //
+
+  {
     path: '/apps/invoice/list',
     name: 'apps-invoice-list',
     component: () => import('@/views/apps/invoice/invoice-list/InvoiceList.vue'),

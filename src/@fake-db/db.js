@@ -1,4 +1,5 @@
 /* eslint-disable import/extensions */
+import './data/apps/calendar'
 import './data/apps/chat'
 import './data/apps/email'
 import './data/apps/invoice'

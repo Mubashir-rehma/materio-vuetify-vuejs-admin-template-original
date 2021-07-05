@@ -1,5 +1,6 @@
 import {
   mdiAccountOutline,
+  mdiCalendarOutline,
   mdiEmailOutline,
   mdiFileDocumentOutline,
   mdiFileOutline,
@@ -9,6 +10,11 @@ import {
 export default [
   {
     subheader: 'APPS AND PAGES',
+  },
+  {
+    title: 'Calendar',
+    icon: mdiCalendarOutline,
+    to: 'apps-calendar',
   },
   {
     title: 'Chat',

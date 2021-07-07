@@ -628,28 +628,6 @@ button {
 //   transform: translateY(-50%);
 // }
 
-// ? Extra styles due to height update
-.v-text-field {
-  margin-top: 0 !important;
-}
-
-.v-text-field__details {
-  margin-bottom: 8px;
-}
-
-.v-input:not(.v-select) {
-  &:not(.v-text-field--filled):not(.v-text-field--solo) {
-    input {
-      min-height: 42px;
-      padding-bottom: 0;
-    }
-  }
-
-  ::placeholder {
-    font-size: 0.875em;
-  }
-}
-
 //
 //* ——— Input ——————————————————
 //
@@ -664,18 +642,6 @@ button {
 //
 //* ——— Select ——————————————————
 //
-
-.v-select {
-  &:not(.v-text-field--filled):not(.v-text-field--outlined):not(.v-text-field--solo) {
-    .v-select__selection--comma {
-      margin-top: 15px;
-    }
-
-    input {
-      min-height: 42px;
-    }
-  }
-}
 
 //
 //* ——— Switch ——————————————————

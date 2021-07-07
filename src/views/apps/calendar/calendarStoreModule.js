@@ -29,9 +29,9 @@ export default {
   },
   getters: {},
   mutations: {
-    // SET_SELECTED_EVENTS(state, val) {
-    //   state.selectedCalendars = val
-    // },
+    SET_SELECTED_CALENDARS(state, val) {
+      state.selectedCalendars = val
+    },
   },
   actions: {
     fetchEvents({ state }) {

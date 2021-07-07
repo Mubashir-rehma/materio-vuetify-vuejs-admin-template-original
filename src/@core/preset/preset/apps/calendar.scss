@@ -76,6 +76,8 @@
               .v-btn {
                 color: map-deep-get($material, 'text', 'disabled');
               }
+
+              // border-right: $calendar-line-width solid map-deep-get($material, 'calendar', 'line-color') !important;
             }
           }
         }

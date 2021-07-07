@@ -12,6 +12,7 @@
             label="Search"
             single-line
             hide-details
+            dense
             outlined
           ></v-text-field>
         </v-col>

@@ -27,7 +27,10 @@
               sm="6"
               md="4"
             >
-              <v-text-field label="First Name"></v-text-field>
+              <v-text-field
+                label="First Name"
+                dense
+              ></v-text-field>
             </v-col>
             <v-col
               cols="12"
@@ -36,6 +39,7 @@
             >
               <v-text-field
                 label="Middle Name"
+                dense
                 hint="example of helper text only on focus"
               ></v-text-field>
             </v-col>
@@ -46,14 +50,19 @@
             >
               <v-text-field
                 label="Last Name"
+                dense
                 persistent-hint
               ></v-text-field>
             </v-col>
             <v-col cols="12">
-              <v-text-field label="Email"></v-text-field>
+              <v-text-field
+                label="Email"
+                dense
+              ></v-text-field>
             </v-col>
             <v-col cols="12">
               <v-text-field
+                dense
                 label="Password"
                 type="password"
               ></v-text-field>
@@ -65,6 +74,7 @@
               <v-select
                 :items="['0-17', '18-29', '30-54', '54+']"
                 label="Age"
+                dense
               ></v-select>
             </v-col>
             <v-col
@@ -74,6 +84,7 @@
               <v-autocomplete
                 :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
                 label="Interests"
+                dense
                 multiple
               ></v-autocomplete>
             </v-col>

@@ -6,12 +6,13 @@
   >
     <v-text-field
       v-model="name"
-      :counter="10"
       :rules="nameRules"
       label="Name"
       required
       outlined
       dense
+      hide-details="auto"
+      class="mb-6"
     ></v-text-field>
 
     <v-text-field
@@ -21,6 +22,8 @@
       required
       outlined
       dense
+      hide-details="auto"
+      class="mb-6"
     ></v-text-field>
 
     <v-select
@@ -29,6 +32,8 @@
       :rules="[v => !!v || 'Item is required']"
       label="Item"
       required
+      hide-details="auto"
+      class="mb-6"
       outlined
       dense
     ></v-select>

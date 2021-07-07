@@ -22,6 +22,7 @@
             <v-text-field
               v-model="optionsLocal.birthday"
               outlined
+              dense
               label="Birthday"
             ></v-text-field>
           </v-col>
@@ -33,6 +34,7 @@
             <v-text-field
               v-model="optionsLocal.phone"
               outlined
+              dense
               label="Phone"
             ></v-text-field>
           </v-col>
@@ -44,6 +46,7 @@
             <v-text-field
               v-model="optionsLocal.website"
               outlined
+              dense
               label="Website"
             ></v-text-field>
           </v-col>
@@ -55,6 +58,7 @@
             <v-select
               v-model="optionsLocal.country"
               outlined
+              dense
               label="Country"
               :items="['USA','UK','AUSTRALIA','BRAZIL']"
             ></v-select>
@@ -67,6 +71,7 @@
             <v-select
               v-model="optionsLocal.languages"
               outlined
+              dense
               multiple
               chips
               small-chips

@@ -43,6 +43,8 @@
           outlined
           :rules="[validators.required]"
           hide-details="auto"
+          dense
+          class="mb-6"
         ></v-text-field>
 
         <v-select
@@ -54,6 +56,9 @@
           :item-value="item => item.value"
           :items="$store.state['app-calendar'].calendarOptions"
           :rules="[validators.required]"
+          hide-details="auto"
+          dense
+          class="mb-6"
         >
           <!-- Selected Item Slot -->
           <template #selection="{ item }">
@@ -85,9 +90,9 @@
         <v-menu
           v-model="isStartDateMenuOpen"
           :close-on-content-click="false"
-          :nudge-right="40"
           transition="scale-transition"
           offset-y
+          eager
           min-width="auto"
         >
           <template v-slot:activator="{ on, attrs }">
@@ -96,6 +101,9 @@
               label="Start Date"
               readonly
               outlined
+              dense
+              class="mb-6"
+              hide-details="auto"
               v-bind="attrs"
               :rules="[validators.required]"
               v-on="on"
@@ -110,7 +118,6 @@
         <v-menu
           v-model="isEndDateMenuOpen"
           :close-on-content-click="false"
-          :nudge-right="40"
           transition="scale-transition"
           offset-y
           min-width="auto"
@@ -121,6 +128,9 @@
               label="End Date"
               readonly
               outlined
+              dense
+              class="mb-6"
+              hide-details="auto"
               v-bind="attrs"
               :rules="[validators.required]"
               v-on="on"
@@ -136,13 +146,16 @@
           v-model="eventLocal.timed"
           label="Timed"
           hide-details
-          class="mt-0 mb-7"
+          class="mt-0 mb-7 d-inline-flex"
         ></v-switch>
 
         <v-text-field
           v-model="eventLocal.extendedProps.url"
           type="url"
           outlined
+          dense
+          class="mb-6"
+          hide-details="auto"
           label="Event URL"
           placeholder="Event URL"
           :rules="[validators.urlValidator]"
@@ -155,8 +168,12 @@
           small-chips
           deletable-chips
           multiple
+          dense
+          class="mb-6"
+          hide-details="auto"
           label="Guests"
           placeholder="Guests"
+          :menu-props="{ offsetY: true }"
           :item-text="guest => guest.name"
           :item-value="guest => guest.name"
           :items="guestsOptions"
@@ -165,12 +182,12 @@
           <template #item="{ item }">
             <div class="d-flex align-center">
               <v-avatar
-                size="28"
+                size="25"
                 class="mr-2"
               >
                 <v-img :src="item.avatar"></v-img>
               </v-avatar>
-              <span>{{ item.name }}</span>
+              <span class="text-sm">{{ item.name }}</span>
             </div>
           </template>
         </v-select>
@@ -178,6 +195,9 @@
         <v-text-field
           v-model="eventLocal.extendedProps.location"
           label="Location"
+          dense
+          class="mb-6"
+          hide-details="auto"
           placeholder="Location"
           outlined
         ></v-text-field>
@@ -185,7 +205,6 @@
         <v-textarea
           v-model="eventLocal.extendedProps.description"
           outlined
-          auto-grow
           label="Description"
           placeholder="Description"
         ></v-textarea>
@@ -247,6 +266,9 @@ export default {
       // Only get date from event
       if (eventLocal.value.start) eventLocal.value.start = new Date(eventLocal.value.start).toISOString().substr(0, 10)
       if (eventLocal.value.end) eventLocal.value.end = new Date(eventLocal.value.end).toISOString().substr(0, 10)
+
+      // Reset Validation
+      refCalendarEventHandlerForm.value.resetValidation()
     }
     watch(
       () => props.event,
@@ -276,8 +298,6 @@ export default {
       const isFormValid = refCalendarEventHandlerForm.value.validate()
 
       if (!isFormValid) return
-
-      console.log('eventLocal.value :>> ', eventLocal.value)
 
       const eventData = JSON.parse(JSON.stringify(eventLocal.value))
 

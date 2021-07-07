@@ -1,8 +1,5 @@
 <template>
-  <v-form
-    ref="form"
-    class="multi-col-validation"
-  >
+  <v-form ref="form">
     <v-row>
       <v-col
         cols="12"
@@ -12,6 +9,7 @@
           v-model="name"
           outlined
           dense
+          hide-details="auto"
           placeholder="Your Name"
           :rules="[required]"
         ></v-text-field>
@@ -25,6 +23,7 @@
           v-model="email"
           outlined
           dense
+          hide-details="auto"
           placeholder="Your Email"
           :rules="[required,emailValidator]"
         ></v-text-field>
@@ -38,6 +37,7 @@
           v-model="password"
           outlined
           dense
+          hide-details="auto"
           type="password"
           placeholder="Your Password"
           :rules="[required,passwordValidator]"
@@ -51,6 +51,7 @@
         <v-text-field
           v-model="confirmPassword"
           outlined
+          hide-details="auto"
           dense
           type="password"
           placeholder="Confirm Password"

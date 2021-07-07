@@ -17,6 +17,7 @@
           <v-text-field
             v-model="knowledgeBaseSearchQuery"
             outlined
+            dense
             placeholder="Ask a question...."
             :prepend-inner-icon="icons.mdiMagnify"
             hide-details

@@ -18,6 +18,7 @@
                 :append-icon="isCurrentPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                 label="Current Password"
                 outlined
+                dense
                 @click:append="isCurrentPasswordVisible = !isCurrentPasswordVisible"
               ></v-text-field>
 
@@ -28,6 +29,7 @@
                 :append-icon="isNewPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                 label="New Password"
                 outlined
+                dense
                 hint="Make sure it's at least 8 characters."
                 persistent-hint
                 @click:append="isNewPasswordVisible = !isNewPasswordVisible"
@@ -40,6 +42,7 @@
                 :append-icon="isCPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                 label="Confirm New Password"
                 outlined
+                dense
                 class="mt-3"
                 @click:append="isCPasswordVisible = !isCPasswordVisible"
               ></v-text-field>

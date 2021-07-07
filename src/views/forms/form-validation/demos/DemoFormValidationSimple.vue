@@ -1,8 +1,5 @@
 <template>
-  <v-form
-    ref="form"
-    class="multi-col-validation"
-  >
+  <v-form ref="form">
     <v-row>
       <v-col
         cols="12"
@@ -13,6 +10,7 @@
           label="First Name"
           outlined
           dense
+          hide-details="auto"
           :rules="[required]"
         ></v-text-field>
       </v-col>
@@ -25,6 +23,7 @@
           v-model="email"
           label="Email"
           outlined
+          hide-details="auto"
           :rules="[required,emailValidator]"
           dense
         ></v-text-field>

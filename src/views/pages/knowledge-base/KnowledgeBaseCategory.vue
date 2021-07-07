@@ -20,6 +20,7 @@
             placeholder="Ask a question...."
             :prepend-inner-icon="icons.mdiMagnify"
             hide-details
+            dense
             class="kb-search-input"
           ></v-text-field>
         </v-form>

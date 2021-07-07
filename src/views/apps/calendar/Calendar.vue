@@ -5,6 +5,7 @@
       width="250"
       mobile-breakpoint="sm"
       absolute
+      style="z-index: 2"
     >
       <calendar-left-sidebar-content @open-evnt-handler-drawer="isEventHandlerDrawerActive = true"></calendar-left-sidebar-content>
     </v-navigation-drawer>
@@ -34,6 +35,15 @@
         v-if="refCalendar"
         class="calendar-header mx-6 my-5 d-flex align-center"
       >
+        <v-btn
+          icon
+          class="d-inline-block d-md-none mr-1"
+          @click="isLeftSidebarOpen = true"
+        >
+          <v-icon size="30">
+            {{ icons.mdiMenu }}
+          </v-icon>
+        </v-btn>
         <v-btn
           icon
           class="mr-1"
@@ -81,6 +91,8 @@
         :event-margin-bottom="5"
         @click:event="calenderHandleEventClick"
         @click:day="calendarHandleDayClick"
+        @click:time="calendarHandleDayClick"
+        @click:more="calendarHandleMoreClick"
       ></v-calendar>
     </div>
   </v-card>
@@ -89,7 +101,7 @@
 <script>
 // eslint-disable-next-line object-curly-newline
 import { onMounted, ref, onUnmounted, computed, watch } from '@vue/composition-api'
-import { mdiChevronLeft, mdiChevronRight } from '@mdi/js'
+import { mdiChevronLeft, mdiChevronRight, mdiMenu } from '@mdi/js'
 import { useResponsiveLeftSidebar } from '@core/comp-functions/ui'
 import store from '@/store'
 import calendarStoreModule from './calendarStoreModule'
@@ -198,19 +210,42 @@ export default {
     //* ——— Calendar Event Handler ——————————————————
     //
 
+    // TODO: Remove this once issue is resolved
+    // Please check: https://github.com/vuetifyjs/vuetify/issues/13900
+    const eventClickBugWorkaround = ref(false)
+
     const calenderHandleEventClick = eventObj => {
       // Grab only event object
       event.value = eventObj.event
 
       // eslint-disable-next-line no-use-before-define
       isEventHandlerDrawerActive.value = true
+
+      // Bug workaround
+      eventClickBugWorkaround.value = true
     }
 
     const calendarHandleDayClick = dayObj => {
+      // Bug workaround
+      if (eventClickBugWorkaround.value) {
+        eventClickBugWorkaround.value = false
+
+        return
+      }
+
       event.value.start = dayObj.date
 
       // eslint-disable-next-line no-use-before-define
       isEventHandlerDrawerActive.value = true
+    }
+
+    const calendarHandleMoreClick = ({ date }) => {
+      calendarValue.value = date
+
+      activeCalendarView.value = 'day'
+
+      // Bug workaround
+      eventClickBugWorkaround.value = true
     }
 
     //
@@ -218,6 +253,14 @@ export default {
     //
 
     const addEvent = eventData => {
+      // Only get date from event
+      /* eslint-disable no-param-reassign */
+      if (eventData.start) eventData.start = new Date(eventData.start).toISOString().substr(0, 10)
+      if (eventData.end) eventData.end = new Date(eventData.end).toISOString().substr(0, 10)
+
+      eventData.timed = false
+      /* eslint-enable */
+
       store.dispatch(`${CALENDAR_APP_STORE_MODULE_NAME}/addEvent`, { event: eventData }).then(() => {
         // TODO: Perform adding or refetching
         fetchEvents()
@@ -260,6 +303,9 @@ export default {
     // ————————————————————————————————————
 
     const isEventHandlerDrawerActive = ref(false)
+    watch(isEventHandlerDrawerActive, val => {
+      if (!val) clearEventData()
+    })
 
     return {
       // Left Sidebar
@@ -281,6 +327,7 @@ export default {
 
       calenderHandleEventClick,
       calendarHandleDayClick,
+      calendarHandleMoreClick,
 
       addEvent,
       updateEvent,
@@ -293,6 +340,7 @@ export default {
       icons: {
         mdiChevronLeft,
         mdiChevronRight,
+        mdiMenu,
       },
     }
   },

@@ -35,6 +35,7 @@
               <v-col cols="12">
                 <v-text-field
                   label="Name"
+                  dense
                   value="john Doe"
                   outlined
                 ></v-text-field>
@@ -44,6 +45,7 @@
                 <v-text-field
                   label="Card Number"
                   value="13563 21565 48789"
+                  dense
                   outlined
                 >
                 </v-text-field>
@@ -57,6 +59,7 @@
                   label="Expiry Date"
                   value="0524"
                   outlined
+                  dense
                 ></v-text-field>
               </v-col>
 
@@ -69,6 +72,7 @@
                   label="CVV Code"
                   value="0524"
                   outlined
+                  dense
                 ></v-text-field>
               </v-col>
             </v-row>

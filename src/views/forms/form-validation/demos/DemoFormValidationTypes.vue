@@ -1,8 +1,5 @@
 <template>
-  <v-form
-    ref="form"
-    class="multi-col-validation"
-  >
+  <v-form ref="form">
     <v-row>
       <v-col
         cols="12"
@@ -13,6 +10,7 @@
           placeholder="This field is required"
           outlined
           dense
+          hide-details="auto"
           :rules="[required]"
         ></v-text-field>
       </v-col>
@@ -26,6 +24,7 @@
           placeholder="Enter Number between 10 & 20"
           outlined
           dense
+          hide-details="auto"
           :rules="[required,between(numberBetween10to20,10,20)]"
         ></v-text-field>
       </v-col>
@@ -39,6 +38,7 @@
           placeholder="Must only consist of numbers"
           outlined
           dense
+          hide-details="auto"
           :rules="[required,integerValidator]"
         ></v-text-field>
       </v-col>
@@ -51,6 +51,7 @@
           v-model="matchRegularEx"
           placeholder="Must match the specified regular expression : ^([0-9]+)$ - numbers only"
           outlined
+          hide-details="auto"
           dense
           :rules="[required,regexValidator(matchRegularEx,'^([0-9]+)$')]"
         ></v-text-field>
@@ -64,6 +65,7 @@
           v-model="onlyAlphabeticCharacters"
           placeholder="Only alphabetic characters"
           outlined
+          hide-details="auto"
           dense
           :rules="[required,alphaValidator]"
         ></v-text-field>
@@ -77,6 +79,7 @@
           v-model="specifiedLength"
           placeholder="Length should not be less than the specified length : 3"
           outlined
+          hide-details="auto"
           dense
           :rules="[required,lengthValidator(specifiedLength,3)]"
         ></v-text-field>
@@ -90,6 +93,7 @@
           v-model="password"
           placeholder="Password Input Field"
           outlined
+          hide-details="auto"
           type="password"
           :rules="[required,passwordValidator]"
           dense
@@ -104,6 +108,7 @@
           v-model="digits"
           placeholder="The digits field must be numeric and exactly contain 3 digits"
           outlined
+          hide-details="auto"
           dense
           :rules="[required,lengthValidator(digits,3),integerValidator]"
         ></v-text-field>
@@ -117,6 +122,7 @@
           v-model="repeatePassword"
           placeholder="Repeat password must match"
           outlined
+          hide-details="auto"
           dense
           type="password"
           :rules="[required,confirmedValidator(repeatePassword,password)]"
@@ -131,6 +137,7 @@
           v-model="onlyAlphabeticNumbersDashesUnderscores"
           placeholder="Only alphabetic characters, numbers, dashes or underscores"
           outlined
+          hide-details="auto"
           dense
           :rules="[required,alphaDashValidator]"
         ></v-text-field>
@@ -144,6 +151,7 @@
           v-model="email"
           placeholder="Must be a valid email"
           outlined
+          hide-details="auto"
           :rules="[required,emailValidator]"
           dense
         ></v-text-field>
@@ -157,6 +165,7 @@
           v-model="validURL"
           placeholder="Must be a valid url"
           outlined
+          hide-details="auto"
           dense
           :rules="[required,urlValidator]"
         ></v-text-field>

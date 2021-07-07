@@ -87,7 +87,7 @@
       <v-stepper-content step="1">
         <v-form
           ref="step1Form"
-          class="pb-6 pt-2 multi-col-validation"
+          class="pb-6 pt-2"
         >
           <v-row>
             <v-col
@@ -98,6 +98,8 @@
                 v-model="userData.username"
                 label="Username"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required, validators.alphaDashValidator]"
                 placeholder="Username"
               ></v-text-field>
@@ -111,6 +113,8 @@
                 v-model="userData.email"
                 label="Email"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required, validators.emailValidator]"
                 placeholder="Email"
               ></v-text-field>
@@ -124,6 +128,8 @@
                 v-model="userData.password"
                 label="Password"
                 outlined
+                dense
+                hide-details="auto"
                 type="password"
                 :rules="[validators.required, validators.passwordValidator]"
                 placeholder="Password"
@@ -138,6 +144,8 @@
                 v-model="userData.confirmPassword"
                 label="Confirm Password"
                 outlined
+                dense
+                hide-details="auto"
                 type="password"
                 :rules="[validators.required, validators.confirmedValidator(userData.confirmPassword,userData.password)]"
                 placeholder="Confirm Password"
@@ -170,6 +178,8 @@
                 v-model="userData.firstName"
                 label="First Name"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required, validators.alphaValidator]"
                 placeholder="First Name"
               ></v-text-field>
@@ -183,6 +193,8 @@
                 v-model="userData.lastName"
                 label="Last Name"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required, validators.alphaValidator]"
                 placeholder="Last Name"
               ></v-text-field>
@@ -198,6 +210,8 @@
                 :menu-props="['offset-y']"
                 :rules="[validators.required]"
                 label="Country"
+                dense
+                hide-details="auto"
                 required
                 outlined
               ></v-select>
@@ -214,6 +228,8 @@
                 :rules="[validators.required]"
                 label="Language"
                 required
+                dense
+                hide-details="auto"
                 outlined
               ></v-select>
             </v-col>
@@ -252,6 +268,8 @@
                 v-model="userData.social.twitter"
                 label="Twitter"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required]"
                 placeholder="Twitter"
               ></v-text-field>
@@ -266,6 +284,8 @@
                 v-model="userData.social.facebook"
                 label="Facebook"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required]"
                 placeholder="Facebook"
               ></v-text-field>
@@ -280,6 +300,8 @@
                 v-model="userData.social.google"
                 label="Google"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required]"
                 placeholder="Google"
               ></v-text-field>
@@ -294,6 +316,8 @@
                 v-model="userData.social.linkedIn"
                 label="LinkedIn"
                 outlined
+                dense
+                hide-details="auto"
                 :rules="[validators.required]"
                 placeholder="LinkedIn"
               ></v-text-field>

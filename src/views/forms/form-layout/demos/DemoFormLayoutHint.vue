@@ -25,6 +25,7 @@
       persistent-hint
       outlined
       dense
+      class="mb-2"
       type="password"
       placeholder="password"
     ></v-text-field>

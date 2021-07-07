@@ -54,6 +54,7 @@
             <v-text-field
               v-model="accountDataLocale.username"
               label="Username"
+              dense
               outlined
             ></v-text-field>
           </v-col>
@@ -65,6 +66,7 @@
             <v-text-field
               v-model="accountDataLocale.name"
               label="Name"
+              dense
               outlined
             ></v-text-field>
           </v-col>
@@ -76,6 +78,7 @@
             <v-text-field
               v-model="accountDataLocale.email"
               label="E-mail"
+              dense
               outlined
             ></v-text-field>
           </v-col>
@@ -86,6 +89,7 @@
           >
             <v-text-field
               v-model="accountDataLocale.role"
+              dense
               label="Role"
               outlined
             ></v-text-field>
@@ -97,6 +101,7 @@
           >
             <v-select
               v-model="accountDataLocale.status"
+              dense
               outlined
               label="Status"
               :items="status"
@@ -109,6 +114,7 @@
           >
             <v-text-field
               v-model="accountDataLocale.company"
+              dense
               outlined
               label="Company"
             ></v-text-field>

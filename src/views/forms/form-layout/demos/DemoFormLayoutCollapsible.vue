@@ -199,6 +199,7 @@
                   <v-text-field
                     label="Card Number"
                     outlined
+                    dense
                     hide-details
                   >
                   </v-text-field>

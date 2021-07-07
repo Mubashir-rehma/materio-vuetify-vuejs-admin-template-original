@@ -602,6 +602,14 @@ button {
   }
 }
 
+.v-input {
+  &.error--text {
+    .v-text-field__details {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
 //
 //* ——— Slider ——————————————————
 //
@@ -637,6 +645,12 @@ button {
   textarea {
     color: map-deep-get($material, 'text', 'secondary') !important;
   }
+}
+
+// Remove transition for border
+// Fixes border width transition issue
+.v-text-field--outlined fieldset {
+  transition-property: color !important;
 }
 
 //

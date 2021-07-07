@@ -61,6 +61,7 @@
                 v-model="cardDetail.cardStatus"
                 label="Card Status"
                 outlined
+                dense
                 :items="['Primary','Expired','Active']"
               ></v-select>
             </v-col>
@@ -70,6 +71,7 @@
             >
               <v-text-field
                 outlined
+                dense
                 label="CVV"
               ></v-text-field>
             </v-col>

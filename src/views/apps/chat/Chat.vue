@@ -5,6 +5,7 @@
       v-model="isLeftSidebarOpen"
       width="374"
       mobile-breakpoint="sm"
+      :temporary="$vuetify.breakpoint.xsOnly"
       absolute
     >
       <chat-left-sidebar-content

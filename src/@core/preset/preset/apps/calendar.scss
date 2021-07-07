@@ -54,9 +54,51 @@
         @include theme(app-calendar) using ($material) {
           .v-calendar-weekly__head {
             .v-calendar-weekly__head-weekday {
-              color: map-deep-get($material, 'text', 'primary');
+              color: map-deep-get($material, 'text', 'primary') !important;
             }
           }
+        }
+      }
+    }
+  }
+
+  //
+  //* ——— Daily Head ——————————————————
+  //
+
+  .v-calendar-daily__head {
+    .v-calendar-daily_head-weekday {
+      font-size: 14px;
+      font-weight: 600;
+
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+      border-right: none !important;
+      text-transform: none;
+
+      @at-root {
+        @include theme(app-calendar) using ($material) {
+          .v-calendar-daily__head {
+            .v-calendar-daily_head-weekday {
+              color: map-deep-get($material, 'text', 'primary') !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .v-calendar-daily__body {
+    .v-calendar-daily__interval-text {
+      font-weight: 600;
+    }
+  }
+  @at-root {
+    @include theme(app-calendar) using ($material) {
+      .v-calendar-daily__body {
+        .v-calendar-daily__interval-text {
+          color: map-deep-get($material, 'text', 'secondary') !important;
         }
       }
     }

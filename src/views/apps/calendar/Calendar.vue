@@ -5,6 +5,7 @@
       width="250"
       mobile-breakpoint="sm"
       absolute
+      :temporary="$vuetify.breakpoint.xsOnly"
       style="z-index: 2"
     >
       <calendar-left-sidebar-content @open-evnt-handler-drawer="isEventHandlerDrawerActive = true"></calendar-left-sidebar-content>
@@ -33,7 +34,7 @@
     >
       <div
         v-if="refCalendar"
-        class="calendar-header mx-6 my-5 d-flex align-center"
+        class="calendar-header mx-6 my-5 d-flex align-center flex-wrap"
       >
         <v-btn
           icon
@@ -62,7 +63,7 @@
             {{ icons.mdiChevronRight }}
           </v-icon>
         </v-btn>
-        <p class="font-weight-semibold text-xl text--primary mb-0">
+        <p class="font-weight-semibold text-xl text--primary mb-0 mr-6">
           {{ refCalendar.title }}
         </p>
 
@@ -71,6 +72,7 @@
         <v-btn-toggle
           v-model="activeCalendarView"
           color="primary"
+          class="mt-3 mt-sm-0"
         >
           <v-btn
             v-for="calendarViewOption in calendarViewOptions"

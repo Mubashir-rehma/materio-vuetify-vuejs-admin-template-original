@@ -23,6 +23,7 @@ import {
   mdiEmailOutline,
   mdiEyeOutline,
   mdiFamilyTree,
+  mdiFileDocumentOutline,
   mdiFileMusicOutline,
   mdiFileOutline,
   mdiFormatAlignCenter,
@@ -41,7 +42,6 @@ import {
   mdiPound,
   mdiRadioboxMarked,
   mdiRayVertex,
-  mdiReceipt,
   mdiStarOutline,
   mdiTagOutline,
   mdiToggleSwitchOffOutline,
@@ -61,7 +61,16 @@ export default [
   // Apps
   { title: 'Calendar', to: { name: 'apps-calendar' }, icon: mdiCalendarOutline },
   { title: 'Chat', to: { name: 'apps-chat' }, icon: mdiMessageTextOutline },
-  { title: 'Invoice List', to: { name: 'apps-invoice-list' }, icon: mdiReceipt },
+
+  { title: 'Invoice List', to: { name: 'apps-invoice-list' }, icon: mdiFileDocumentOutline },
+  {
+    title: 'Invoice Preview',
+    to: { name: 'apps-invoice-preview', params: { id: 4987 } },
+    icon: mdiFileDocumentOutline,
+  },
+  { title: 'Invoice Edit', to: { name: 'apps-invoice-edit', params: { id: 4987 } }, icon: mdiFileDocumentOutline },
+  { title: 'Invoice Add', to: { name: 'apps-invoice-add' }, icon: mdiFileDocumentOutline },
+
   { title: 'User List', to: { name: 'apps-user-list' }, icon: mdiAccountOutline },
   { title: 'User View', to: { name: 'apps-user-view' }, icon: mdiAccountOutline },
   { title: 'Email', to: { name: 'apps-email' }, icon: mdiEmailOutline },

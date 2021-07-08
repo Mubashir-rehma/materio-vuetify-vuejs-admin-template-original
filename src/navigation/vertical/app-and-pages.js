@@ -31,8 +31,20 @@ export default [
     icon: mdiFileDocumentOutline,
     children: [
       {
-        title: 'Invoice List',
+        title: 'List',
         to: 'apps-invoice-list',
+      },
+      {
+        title: 'Preview',
+        to: { name: 'apps-invoice-preview', params: { id: 4987 } },
+      },
+      {
+        title: 'Edit',
+        route: { name: 'apps-invoice-edit', params: { id: 4987 } },
+      },
+      {
+        title: 'Add',
+        route: { name: 'apps-invoice-add' },
       },
     ],
   },

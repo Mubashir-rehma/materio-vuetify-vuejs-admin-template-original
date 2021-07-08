@@ -12,7 +12,16 @@ export default {
           .get('/apps/invoice/invoices', { params: queryParams })
           .then(response => {
             resolve(response)
-          }).catch(error => reject(error))
+          })
+          .catch(error => reject(error))
+      })
+    },
+    fetchInvoice(ctx, { id }) {
+      return new Promise((resolve, reject) => {
+        axios
+          .get(`/apps/invoice/invoices/${id}`)
+          .then(response => resolve(response))
+          .catch(error => reject(error))
       })
     },
   },

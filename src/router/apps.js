@@ -21,6 +21,19 @@ const apps = [
     },
   },
   {
+    path: '/apps/invoice/preview/:id',
+    name: 'apps-invoice-preview',
+    component: () => import('@/views/apps/invoice/invoice-preview/InvoicePreview.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+
+  //
+  //* ——— User ——————————————————
+  //
+
+  {
     path: '/apps/user/list',
     name: 'apps-user-list',
     component: () => import('@/views/apps/user/user-list/UserList.vue'),

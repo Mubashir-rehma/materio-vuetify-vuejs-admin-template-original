@@ -906,7 +906,7 @@ const data = [
 /* eslint-enable */
 
 // ------------------------------------------------
-// GET: Return Users
+// GET: Return Invoices
 // ------------------------------------------------
 
 mock.onGet('/apps/invoice/invoices').reply(config => {
@@ -963,4 +963,41 @@ mock.onGet('/apps/invoice/invoices').reply(config => {
   }
 
   return [200, { filteredData, total }]
+})
+
+// ------------------------------------------------
+// GET: Return Single Invoice
+// ------------------------------------------------
+mock.onGet(/\/apps\/invoice\/invoices\/\d+/).reply(config => {
+  // Get event id from URL
+  let invoiceId = config.url.substring(config.url.lastIndexOf('/') + 1)
+
+  // Convert Id to number
+  invoiceId = Number(invoiceId)
+
+  const invoiceIndex = data.findIndex(e => e.id === invoiceId)
+  const invoice = data[invoiceIndex]
+  const responseData = {
+    invoice,
+    paymentDetails: {
+      totalDue: '$12,110.55',
+      bankName: 'American Bank',
+      country: 'United States',
+      iban: 'ETD95476213874685',
+      swiftCode: 'BR91905',
+    },
+  }
+
+  if (invoice) return [200, responseData]
+
+  return [404]
+})
+
+// ------------------------------------------------
+// GET: Return Clients
+// ------------------------------------------------
+mock.onGet('/apps/invoice/clients').reply(() => {
+  const clients = data.map(invoice => invoice.client)
+
+  return [200, clients.slice(0, 5)]
 })

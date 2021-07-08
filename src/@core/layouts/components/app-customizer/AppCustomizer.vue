@@ -2,7 +2,8 @@
   <div class="app-customizer">
     <v-btn
       icon
-      class="app-customizer-toggler rounded-0 rounded-l-lg"
+      class="app-customizer-toggler rounded-0"
+      :class="$vuetify.rtl ? 'rounded-r-lg' : 'rounded-l-lg'"
       color="white"
       large
       @click="isCustomizerOpen = !isCustomizerOpen"
@@ -344,16 +345,23 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+
 .ps-customizer {
   height: calc(100% - 81px) !important;
 }
 
 .app-customizer-toggler {
   position: fixed;
-  right: -22px;
   top: 50%;
   transform: translateX(-50%);
   background: var(--v-primary-base);
+  @include ltr() {
+    right: -22px;
+  }
+  @include rtl() {
+    left: 20px;
+  }
 }
 
 @include theme(app-customizer-drawer) using ($material) {

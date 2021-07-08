@@ -25,7 +25,11 @@ export const useResponsiveLeftSidebar = ({ sidebarWidth }) => {
   const contentStyles = computed(() => {
     const styles = {}
 
-    styles.marginLeft = isLeftSidebarOpen.value && $vuetify.breakpoint.mdAndUp ? `${sidebarWidth}px` : null
+    console.log('$vuetify.rtl :>> ', $vuetify.rtl)
+
+    const marginDirection = $vuetify.rtl ? 'marginRight' : 'marginLeft'
+
+    styles[marginDirection] = isLeftSidebarOpen.value && $vuetify.breakpoint.mdAndUp ? `${sidebarWidth}px` : null
 
     return styles
   })

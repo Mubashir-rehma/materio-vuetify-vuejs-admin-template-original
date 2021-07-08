@@ -57,6 +57,7 @@
           :items="$store.state['app-calendar'].calendarOptions"
           :rules="[validators.required]"
           hide-details="auto"
+          :menu-props="{ offsetY: true }"
           dense
           class="mb-6"
         >
@@ -132,7 +133,7 @@
               class="mb-6"
               hide-details="auto"
               v-bind="attrs"
-              :rules="[validators.required]"
+              :rules="[validators.required, validators.endDateValidator]"
               v-on="on"
             ></v-text-field>
           </template>
@@ -169,11 +170,11 @@
           deletable-chips
           multiple
           dense
-          class="mb-6"
+          class="mb-6 select-guest"
           hide-details="auto"
           label="Guests"
           placeholder="Guests"
-          :menu-props="{ offsetY: true }"
+          :menu-props="{ offsetY: true, contentClass: 'list-style' }"
           :item-text="guest => guest.name"
           :item-value="guest => guest.name"
           :items="guestsOptions"
@@ -232,6 +233,7 @@ import { ref, watch } from '@vue/composition-api'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
 import { required, urlValidator } from '@core/utils/validation'
+import { dateInPast } from '@core/utils'
 import { mdiTrashCanOutline, mdiClose } from '@mdi/js'
 
 export default {
@@ -320,6 +322,16 @@ export default {
       wheelSpeed: 0.7,
     }
 
+    // ————————————————————————————————————
+    //* ——— Form Validator
+    // ————————————————————————————————————
+
+    const endDateValidator = val => {
+      if (!eventLocal.value.start) return true
+
+      return !dateInPast(new Date(val), new Date(eventLocal.value.start)) || 'End date is in past'
+    }
+
     return {
       // Template Refs
       refCalendarEventHandlerForm,
@@ -341,6 +353,7 @@ export default {
       validators: {
         required,
         urlValidator,
+        endDateValidator,
       },
 
       // Icons
@@ -356,5 +369,16 @@ export default {
 <style lang="scss">
 .ps-calendar-event-handler {
   height: calc(100% - 44px - 24px - 2px);
+
+  // Fixes: if chips row >2 => Create enough space between chips row & avoid first row chip touching the label
+  // Related Issue: https://github.com/vuetifyjs/vuetify/issues/13107
+  .select-guest {
+    .v-select__selections {
+      .v-chip--select {
+        margin-bottom: 6px;
+        margin-top: 6px;
+      }
+    }
+  }
 }
 </style>

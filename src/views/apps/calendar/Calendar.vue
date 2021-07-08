@@ -5,6 +5,7 @@
       width="250"
       mobile-breakpoint="sm"
       absolute
+      :right="$vuetify.rtl"
       :temporary="$vuetify.breakpoint.xsOnly"
       style="z-index: 2"
     >

@@ -149,7 +149,12 @@
   //
 
   .v-event {
-    transform: translateX(3px);
+    @include ltr() {
+      transform: translateX(3px);
+    }
+    @include rtl() {
+      transform: translateX(-3px);
+    }
 
     > div {
       padding-left: 8px !important;

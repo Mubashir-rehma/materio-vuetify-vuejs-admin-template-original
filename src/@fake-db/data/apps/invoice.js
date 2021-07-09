@@ -3,7 +3,7 @@ import mock from '@/@fake-db/mock'
 const data = [
   {
     id: 4987,
-    issuedDate: '13 Dec 2019',
+    issuedDate: '2019-12-13',
     client: {
       address: '7777 Mendez Plains',
       company: 'Hall-Robbins PLC',
@@ -17,11 +17,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Paid',
     balance: '$724',
-    dueDate: '23 Apr 2019',
+    dueDate: '2019-04-23',
   },
   {
     id: 4988,
-    issuedDate: '17 Jul 2019',
+    issuedDate: '2019-07-17',
     client: {
       address: '04033 Wesley Wall Apt. 961',
       company: 'Mccann LLC and Sons',
@@ -35,11 +35,11 @@ const data = [
     avatar: '1.png',
     invoiceStatus: 'Downloaded',
     balance: 0,
-    dueDate: '15 Dec 2019',
+    dueDate: '2019-12-15',
   },
   {
     id: 4989,
-    issuedDate: '19 Oct 2019',
+    issuedDate: '2019-10-19',
     client: {
       address: '5345 Robert Squares',
       company: 'Leonard-Garcia and Sons',
@@ -53,11 +53,11 @@ const data = [
     avatar: '2.png',
     invoiceStatus: 'Paid',
     balance: 0,
-    dueDate: '03 Nov 2019',
+    dueDate: '2019-11-03',
   },
   {
     id: 4990,
-    issuedDate: '06 Mar 2020',
+    issuedDate: '2020-03-06',
     client: {
       address: '19022 Clark Parks Suite 149',
       company: 'Smith, Miller and Henry LLC',
@@ -71,11 +71,11 @@ const data = [
     avatar: '3.png',
     invoiceStatus: 'Sent',
     balance: 0,
-    dueDate: '11 Feb 2020',
+    dueDate: '2020-02-11',
   },
   {
     id: 4991,
-    issuedDate: '08 Feb 2020',
+    issuedDate: '2020-02-08',
     client: {
       address: '8534 Saunders Hill Apt. 583',
       company: 'Garcia-Cameron and Sons',
@@ -89,11 +89,11 @@ const data = [
     avatar: '4.png',
     invoiceStatus: 'Draft',
     balance: '$815',
-    dueDate: '30 Jun 2019',
+    dueDate: '2019-06-30',
   },
   {
     id: 4992,
-    issuedDate: '26 Aug 2019',
+    issuedDate: '2019-08-26',
     client: {
       address: '661 Perez Run Apt. 778',
       company: 'Burnett-Young PLC',
@@ -107,11 +107,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Paid',
     balance: 2771,
-    dueDate: '24 Jun 2019',
+    dueDate: '2019-06-24',
   },
   {
     id: 4993,
-    issuedDate: '17 Sep 2019',
+    issuedDate: '2019-09-17',
     client: {
       address: '074 Long Union',
       company: 'Wilson-Lee LLC',
@@ -125,11 +125,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Draft',
     balance: '$407',
-    dueDate: '22 Nov 2019',
+    dueDate: '2019-11-22',
   },
   {
     id: 4994,
-    issuedDate: '11 Feb 2020',
+    issuedDate: '2020-02-11',
     client: {
       address: '5225 Ford Cape Apt. 840',
       company: 'Schwartz, Henry and Rhodes Group',
@@ -143,11 +143,11 @@ const data = [
     avatar: '5.png',
     invoiceStatus: 'Paid',
     balance: '-$205',
-    dueDate: '10 Feb 2020',
+    dueDate: '2020-02-10',
   },
   {
     id: 4995,
-    issuedDate: '26 Jan 2020',
+    issuedDate: '2020-01-26',
     client: {
       address: '23717 James Club Suite 277',
       company: 'Henderson-Holder PLC',
@@ -161,11 +161,11 @@ const data = [
     avatar: '6.png',
     invoiceStatus: 'Downloaded',
     balance: 3367,
-    dueDate: '24 Dec 2019',
+    dueDate: '2019-12-24',
   },
   {
     id: 4996,
-    issuedDate: '15 Jan 2020',
+    issuedDate: '2020-01-15',
     client: {
       address: '4528 Myers Gateway',
       company: 'Page-Wise PLC',
@@ -179,11 +179,11 @@ const data = [
     avatar: '7.png',
     invoiceStatus: 'Downloaded',
     balance: '$305',
-    dueDate: '02 Jun 2019',
+    dueDate: '2019-06-02',
   },
   {
     id: 4997,
-    issuedDate: '27 Sep 2019',
+    issuedDate: '2019-09-27',
     client: {
       address: '4234 Mills Club Suite 107',
       company: 'Turner PLC Inc',
@@ -197,11 +197,11 @@ const data = [
     avatar: '8.png',
     invoiceStatus: 'Partial Payment',
     balance: '$666',
-    dueDate: '18 Mar 2020',
+    dueDate: '2020-03-18',
   },
   {
     id: 4998,
-    issuedDate: '31 Jul 2019',
+    issuedDate: '2019-07-31',
     client: {
       address: '476 Keith Meadow',
       company: 'Levine-Dorsey PLC',
@@ -215,11 +215,11 @@ const data = [
     avatar: '2.png',
     invoiceStatus: 'Partial Payment',
     balance: 0,
-    dueDate: '17 Jan 2020',
+    dueDate: '2020-01-17',
   },
   {
     id: 4999,
-    issuedDate: '14 Feb 2020',
+    issuedDate: '2020-02-14',
     client: {
       address: '56381 Ashley Village Apt. 332',
       company: 'Hall, Thompson and Ramirez LLC',
@@ -233,11 +233,11 @@ const data = [
     avatar: '1.png',
     invoiceStatus: 'Paid',
     balance: 0,
-    dueDate: '01 Oct 2019',
+    dueDate: '2019-10-01',
   },
   {
     id: 5000,
-    issuedDate: '21 May 2019',
+    issuedDate: '2019-05-21',
     client: {
       address: '6946 Gregory Plaza Apt. 310',
       company: 'Lambert-Thomas Group',
@@ -251,11 +251,11 @@ const data = [
     avatar: '7.png',
     invoiceStatus: 'Paid',
     balance: 0,
-    dueDate: '22 May 2019',
+    dueDate: '2019-05-22',
   },
   {
     id: 5001,
-    issuedDate: '30 Jun 2019',
+    issuedDate: '2019-06-30',
     client: {
       address: '64351 Andrew Lights',
       company: 'Gregory-Haynes PLC',
@@ -269,11 +269,11 @@ const data = [
     avatar: '6.png',
     invoiceStatus: 'Partial Payment',
     balance: '-$202',
-    dueDate: '02 Aug 2019',
+    dueDate: '2019-08-02',
   },
   {
     id: 5002,
-    issuedDate: '21 Jun 2019',
+    issuedDate: '2019-06-21',
     client: {
       address: '5702 Sarah Heights',
       company: 'Wright-Schmidt LLC',
@@ -287,11 +287,11 @@ const data = [
     avatar: '5.png',
     invoiceStatus: 'Downloaded',
     balance: '$731',
-    dueDate: '15 Dec 2019',
+    dueDate: '2019-12-15',
   },
   {
     id: 5003,
-    issuedDate: '30 Dec 2019',
+    issuedDate: '2019-12-30',
     client: {
       address: '668 Robert Flats',
       company: 'Russell-Abbott Ltd',
@@ -305,11 +305,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Sent',
     balance: '-$344',
-    dueDate: '17 Sep 2019',
+    dueDate: '2019-09-17',
   },
   {
     id: 5004,
-    issuedDate: '27 May 2019',
+    issuedDate: '2019-05-27',
     client: {
       address: '55642 Chang Extensions Suite 373',
       company: 'Williams LLC Inc',
@@ -323,11 +323,11 @@ const data = [
     avatar: '4.png',
     invoiceStatus: 'Partial Payment',
     balance: '-$253',
-    dueDate: '16 Aug 2019',
+    dueDate: '2019-08-16',
   },
   {
     id: 5005,
-    issuedDate: '30 Jul 2019',
+    issuedDate: '2019-07-30',
     client: {
       address: '56694 Eric Orchard',
       company: 'Hudson, Bell and Phillips PLC',
@@ -341,11 +341,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Past Due',
     balance: 0,
-    dueDate: '01 Aug 2019',
+    dueDate: '2019-08-01',
   },
   {
     id: 5006,
-    issuedDate: '10 Jun 2019',
+    issuedDate: '2019-06-10',
     client: {
       address: '3727 Emma Island Suite 879',
       company: 'Berry, Gonzalez and Heath Inc',
@@ -359,11 +359,11 @@ const data = [
     avatar: '3.png',
     invoiceStatus: 'Downloaded',
     balance: '$883',
-    dueDate: '12 Apr 2019',
+    dueDate: '2019-04-12',
   },
   {
     id: 5007,
-    issuedDate: '01 Feb 2020',
+    issuedDate: '2020-02-01',
     client: {
       address: '953 Miller Common Suite 580',
       company: 'Martinez, Fuller and Chavez and Sons',
@@ -377,11 +377,11 @@ const data = [
     avatar: '2.png',
     invoiceStatus: 'Sent',
     balance: 0,
-    dueDate: '19 Nov 2019',
+    dueDate: '2019-11-19',
   },
   {
     id: 5008,
-    issuedDate: '22 Mar 2020',
+    issuedDate: '2020-03-22',
     client: {
       address: '808 Sullivan Street Apt. 135',
       company: 'Wilson and Sons LLC',
@@ -395,11 +395,11 @@ const data = [
     avatar: '1.png',
     invoiceStatus: 'Partial Payment',
     balance: 0,
-    dueDate: '30 Nov 2019',
+    dueDate: '2019-11-30',
   },
   {
     id: 5009,
-    issuedDate: '30 Nov 2019',
+    issuedDate: '2019-11-30',
     client: {
       address: '25135 Christopher Creek',
       company: 'Hawkins, Johnston and Mcguire PLC',
@@ -413,11 +413,11 @@ const data = [
     avatar: '8.png',
     invoiceStatus: 'Paid',
     balance: 0,
-    dueDate: '10 Sep 2019',
+    dueDate: '2019-09-10',
   },
   {
     id: 5010,
-    issuedDate: '06 Jan 2020',
+    issuedDate: '2020-01-06',
     client: {
       address: '81285 Rebecca Estates Suite 046',
       company: 'Huynh-Mills and Sons',
@@ -431,11 +431,11 @@ const data = [
     avatar: '7.png',
     invoiceStatus: 'Downloaded',
     balance: 0,
-    dueDate: '08 Dec 2019',
+    dueDate: '2019-12-08',
   },
   {
     id: 5011,
-    issuedDate: '01 Jun 2019',
+    issuedDate: '2019-06-01',
     client: {
       address: '3102 Briggs Dale Suite 118',
       company: 'Jones-Cooley and Sons',
@@ -449,11 +449,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '01 Feb 2020',
+    dueDate: '2020-02-01',
   },
   {
     id: 5012,
-    issuedDate: '30 Oct 2019',
+    issuedDate: '2019-10-30',
     client: {
       address: '811 Jill Skyway',
       company: 'Jones PLC Ltd',
@@ -467,11 +467,11 @@ const data = [
     avatar: '6.png',
     invoiceStatus: 'Partial Payment',
     balance: 0,
-    dueDate: '18 Oct 2019',
+    dueDate: '2019-10-18',
   },
   {
     id: 5013,
-    issuedDate: '05 Feb 2020',
+    issuedDate: '2020-02-05',
     client: {
       address: '2223 Brandon Inlet Suite 597',
       company: 'Jordan, Gomez and Ross Group',
@@ -485,11 +485,11 @@ const data = [
     avatar: '4.png',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '01 Nov 2019',
+    dueDate: '2019-11-01',
   },
   {
     id: 5014,
-    issuedDate: '01 Dec 2019',
+    issuedDate: '2019-12-01',
     client: {
       address: '08724 Barry Causeway',
       company: 'Gonzalez, Moody and Glover LLC',
@@ -503,11 +503,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Downloaded',
     balance: 0,
-    dueDate: '23 Sep 2019',
+    dueDate: '2019-09-23',
   },
   {
     id: 5015,
-    issuedDate: '16 Apr 2019',
+    issuedDate: '2019-04-16',
     client: {
       address: '073 Holt Ramp Apt. 755',
       company: 'Ashley-Pacheco Ltd',
@@ -521,11 +521,11 @@ const data = [
     avatar: '5.png',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '01 Apr 2019',
+    dueDate: '2019-04-01',
   },
   {
     id: 5016,
-    issuedDate: '24 Jan 2020',
+    issuedDate: '2020-01-24',
     client: {
       address: '984 Sherry Trail Apt. 953',
       company: 'Berry PLC Group',
@@ -539,11 +539,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Paid',
     balance: '$951',
-    dueDate: '30 Sep 2019',
+    dueDate: '2019-09-30',
   },
   {
     id: 5017,
-    issuedDate: '24 Feb 2020',
+    issuedDate: '2020-02-24',
     client: {
       address: '093 Jonathan Camp Suite 953',
       company: 'Allen Group Ltd',
@@ -557,11 +557,11 @@ const data = [
     avatar: '3.png',
     invoiceStatus: 'Partial Payment',
     balance: '-$153',
-    dueDate: '25 Aug 2019',
+    dueDate: '2019-08-25',
   },
   {
     id: 5018,
-    issuedDate: '29 Feb 2020',
+    issuedDate: '2020-02-29',
     client: {
       address: '4735 Kristie Islands Apt. 259',
       company: 'Chapman-Schneider LLC',
@@ -575,11 +575,11 @@ const data = [
     avatar: '2.png',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '10 Jul 2019',
+    dueDate: '2019-07-10',
   },
   {
     id: 5019,
-    issuedDate: '07 Aug 2019',
+    issuedDate: '2019-08-07',
     client: {
       address: '92218 Andrew Radial',
       company: 'Mcclure, Hernandez and Simon Ltd',
@@ -593,11 +593,11 @@ const data = [
     avatar: '1.png',
     invoiceStatus: 'Partial Payment',
     balance: '-$459',
-    dueDate: '14 Oct 2019',
+    dueDate: '2019-10-14',
   },
   {
     id: 5020,
-    issuedDate: '10 May 2019',
+    issuedDate: '2019-05-10',
     client: {
       address: '2342 Michelle Valley',
       company: 'Hamilton PLC and Sons',
@@ -611,11 +611,11 @@ const data = [
     avatar: '2.png',
     invoiceStatus: 'Past Due',
     balance: 0,
-    dueDate: '28 Mar 2019',
+    dueDate: '2019-03-28',
   },
   {
     id: 5021,
-    issuedDate: '02 Apr 2019',
+    issuedDate: '2019-04-02',
     client: {
       address: '16039 Brittany Terrace Apt. 128',
       company: 'Silva-Reeves LLC',
@@ -629,11 +629,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Sent',
     balance: 0,
-    dueDate: '06 Sep 2019',
+    dueDate: '2019-09-06',
   },
   {
     id: 5022,
-    issuedDate: '02 May 2019',
+    issuedDate: '2019-05-02',
     client: {
       address: '37856 Olsen Lakes Apt. 852',
       company: 'Solis LLC Ltd',
@@ -647,11 +647,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Sent',
     balance: 0,
-    dueDate: '09 May 2019',
+    dueDate: '2019-05-09',
   },
   {
     id: 5023,
-    issuedDate: '23 Mar 2020',
+    issuedDate: '2020-03-23',
     client: {
       address: '11489 Griffin Plaza Apt. 927',
       company: 'Munoz-Peters and Sons',
@@ -665,11 +665,11 @@ const data = [
     avatar: '4.png',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '23 Jul 2019',
+    dueDate: '2019-07-23',
   },
   {
     id: 5024,
-    issuedDate: '28 Sep 2019',
+    issuedDate: '2019-09-28',
     client: {
       address: '276 Michael Gardens Apt. 004',
       company: 'Shea, Velez and Garcia LLC',
@@ -683,11 +683,11 @@ const data = [
     avatar: '5.png',
     invoiceStatus: 'Partial Payment',
     balance: 0,
-    dueDate: '25 Sep 2019',
+    dueDate: '2019-09-25',
   },
   {
     id: 5025,
-    issuedDate: '21 Feb 2020',
+    issuedDate: '2020-02-21',
     client: {
       address: '633 Bell Well Apt. 057',
       company: 'Adams, Simmons and Brown Group',
@@ -701,11 +701,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Downloaded',
     balance: 0,
-    dueDate: '07 Jun 2019',
+    dueDate: '2019-06-07',
   },
   {
     id: 5026,
-    issuedDate: '24 May 2019',
+    issuedDate: '2019-05-24',
     client: {
       address: '1068 Lopez Fall',
       company: 'Williams-Lawrence and Sons',
@@ -719,11 +719,11 @@ const data = [
     avatar: '6.png',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '22 Oct 2019',
+    dueDate: '2019-10-22',
   },
   {
     id: 5027,
-    issuedDate: '13 Jan 2020',
+    issuedDate: '2020-01-13',
     client: {
       address: '86691 Mackenzie Light Suite 568',
       company: 'Deleon Inc LLC',
@@ -737,11 +737,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Sent',
     balance: 0,
-    dueDate: '04 Feb 2020',
+    dueDate: '2020-02-04',
   },
   {
     id: 5028,
-    issuedDate: '18 May 2019',
+    issuedDate: '2019-05-18',
     client: {
       address: '86580 Sarah Bridge',
       company: 'Farmer, Johnson and Anderson Group',
@@ -755,11 +755,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Paid',
     balance: '$361',
-    dueDate: '02 Mar 2020',
+    dueDate: '2020-03-02',
   },
   {
     id: 5029,
-    issuedDate: '29 Oct 2019',
+    issuedDate: '2019-10-29',
     client: {
       address: '49709 Edwin Ports Apt. 353',
       company: 'Sherman-Johnson PLC',
@@ -773,11 +773,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Paid',
     balance: 0,
-    dueDate: '25 Aug 2019',
+    dueDate: '2019-08-25',
   },
   {
     id: 5030,
-    issuedDate: '07 Apr 2019',
+    issuedDate: '2019-04-07',
     client: {
       address: '3856 Mathis Squares Apt. 584',
       company: 'Byrd LLC PLC',
@@ -791,11 +791,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Draft',
     balance: 0,
-    dueDate: '06 Mar 2020',
+    dueDate: '2020-03-06',
   },
   {
     id: 5031,
-    issuedDate: '21 Aug 2019',
+    issuedDate: '2019-08-21',
     client: {
       address: '141 Adrian Ridge Suite 550',
       company: 'Stone-Zimmerman Group',
@@ -809,11 +809,11 @@ const data = [
     avatar: '7.png',
     invoiceStatus: 'Partial Payment',
     balance: 0,
-    dueDate: '09 Jun 2019',
+    dueDate: '2019-06-09',
   },
   {
     id: 5032,
-    issuedDate: '31 May 2019',
+    issuedDate: '2019-05-31',
     client: {
       address: '01871 Kristy Square',
       company: 'Yang, Hansen and Hart PLC',
@@ -827,11 +827,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Past Due',
     balance: 0,
-    dueDate: '22 Oct 2019',
+    dueDate: '2019-10-22',
   },
   {
     id: 5033,
-    issuedDate: '12 Jul 2019',
+    issuedDate: '2019-07-12',
     client: {
       address: '075 Smith Views',
       company: 'Jenkins-Rosales Inc',
@@ -845,11 +845,11 @@ const data = [
     avatar: '4.png',
     invoiceStatus: 'Partial Payment',
     balance: 0,
-    dueDate: '22 Mar 2020',
+    dueDate: '2020-03-22',
   },
   {
     id: 5034,
-    issuedDate: '10 Jul 2019',
+    issuedDate: '2019-07-10',
     client: {
       address: '2577 Pearson Overpass Apt. 314',
       company: 'Mason-Reed PLC',
@@ -863,11 +863,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Paid',
     balance: 0,
-    dueDate: '22 Oct 2019',
+    dueDate: '2019-10-22',
   },
   {
     id: 5035,
-    issuedDate: '20 Jul 2019',
+    issuedDate: '2019-07-20',
     client: {
       address: '1770 Sandra Mountains Suite 636',
       company: 'Foster-Pham PLC',
@@ -881,11 +881,11 @@ const data = [
     avatar: '',
     invoiceStatus: 'Draft',
     balance: '$762',
-    dueDate: '12 Jun 2019',
+    dueDate: '2019-06-12',
   },
   {
     id: 5036,
-    issuedDate: '19 Apr 2019',
+    issuedDate: '2019-04-19',
     client: {
       address: '78083 Laura Pines',
       company: 'Richardson and Sons LLC',
@@ -899,7 +899,7 @@ const data = [
     avatar: '3.png',
     invoiceStatus: 'Paid',
     balance: '-$205',
-    dueDate: '25 Sep 2019',
+    dueDate: '2019-09-25',
   },
 ]
 

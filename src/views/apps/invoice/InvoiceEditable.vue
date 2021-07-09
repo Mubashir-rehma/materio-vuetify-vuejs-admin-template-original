@@ -1,5 +1,8 @@
 <template>
-  <v-card v-if="data.invoiceData">
+  <v-card
+    v-if="data.invoiceData"
+    class="app-invoice-editable"
+  >
     <!-- Header -->
     <v-card-text class="py-9 px-8">
       <div class="invoice-header d-flex flex-wrap justify-space-between">
@@ -99,8 +102,8 @@
 
     <!-- Payment Details -->
     <v-card-text class="py-9 px-8">
-      <div class="d-flex justify-space-between flex-wrap">
-        <div>
+      <div class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
+        <div class="mb-6 mb-sm-0">
           <p class="font-weight-semibold payment-details-header">
             Invoice To:
           </p>
@@ -338,8 +341,8 @@
 
     <!-- Total -->
     <v-card-text class="py-9 px-8">
-      <div class="d-flex justify-space-between">
-        <div>
+      <div class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
+        <div class="mb-6 mb-sm-0">
           <div class="mb-4 d-flex align-center">
             <span class="font-weight-semibold mr-2">Salesperson:</span>
             <v-text-field
@@ -347,6 +350,7 @@
               outlined
               dense
               hide-details="auto"
+              class="input-salesperson"
             ></v-text-field>
           </div>
           <v-text-field
@@ -355,10 +359,11 @@
             dense
             hide-details="auto"
             placeholder="Thanks for your business"
+            class="input-thanks-note"
           ></v-text-field>
         </div>
         <div>
-          <table>
+          <table class="w-full">
             <tr>
               <td class="pr-16">
                 Subtotal:
@@ -528,26 +533,36 @@ export default {
 <style lang="scss">
 @import '~@core/preset/preset/apps/invoice.scss';
 
-.header-inputs {
-  width: 122px;
-}
+.app-invoice-editable {
+  .input-salesperson {
+    width: 100px;
+  }
 
-.add-products-form {
-  .single-product-form {
-    &:not(:first-child) {
-      margin-top: 2rem;
+  .select-invoice-to {
+    width: 190px !important;
+  }
+
+  .header-inputs {
+    width: 122px;
+  }
+
+  .add-products-form {
+    .single-product-form {
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
     }
-  }
 
-  .header-spacer {
-    // This is according to item actions width
-    width: 39px;
-  }
-  .item-actions {
-    @at-root {
-      @include theme--child(add-products-form) using ($material) {
-        .item-actions {
-          border-left: thin solid map-deep-get($material, 'dividers');
+    .header-spacer {
+      // This is according to item actions width
+      width: 39px;
+    }
+    .item-actions {
+      @at-root {
+        @include theme--child(add-products-form) using ($material) {
+          .item-actions {
+            border-left: thin solid map-deep-get($material, 'dividers');
+          }
         }
       }
     }

@@ -28,6 +28,22 @@ const apps = [
       layout: 'content',
     },
   },
+  {
+    path: '/apps/invoice/add/',
+    name: 'apps-invoice-add',
+    component: () => import('@/views/apps/invoice/invoice-add/InvoiceAdd.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
+  {
+    path: '/apps/invoice/edit/:id',
+    name: 'apps-invoice-edit',
+    component: () => import('@/views/apps/invoice/invoice-edit/InvoiceEdit.vue'),
+    meta: {
+      layout: 'content',
+    },
+  },
 
   //
   //* ——— User ——————————————————

@@ -7,9 +7,9 @@
       <v-card v-if="invoiceData">
         <!-- Header -->
         <v-card-text class="py-9 px-8">
-          <div class="invoice-header d-flex flex-wrap justify-space-between">
+          <div class="invoice-header d-flex flex-wrap justify-space-between flex-column flex-sm-row">
             <!-- Left Content -->
-            <div>
+            <div class="mb-8 mb-sm-0">
               <div class="d-flex align-center mb-6">
                 <v-img
                   :src="appLogo"
@@ -37,7 +37,7 @@
                 <span class="font-weight-semibold">{{ invoiceData.issuedDate }}</span>
               </p>
               <p class="mb-2">
-                <span>Date Due: </span>
+                <span>Due Date: </span>
                 <span class="font-weight-semibold">{{ invoiceData.dueDate }}</span>
               </p>
             </div>
@@ -48,8 +48,8 @@
 
         <!-- Payment Details -->
         <v-card-text class="py-9 px-8">
-          <div class="d-flex justify-space-between flex-wrap">
-            <div>
+          <div class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
+            <div class="mb-8 mb-sm-0">
               <p class="font-weight-semibold payment-details-header">
                 Invoice To:
               </p>
@@ -146,8 +146,10 @@
                 v-for="item in purchasedProducts"
                 :key="item.name"
               >
-                <td>{{ item.name }}</td>
-                <td>
+                <td class="text-no-wrap">
+                  {{ item.name }}
+                </td>
+                <td class="text-no-wrap">
                   {{ item.description }}
                 </td>
                 <td>
@@ -166,8 +168,8 @@
 
         <!-- Total -->
         <v-card-text class="py-9 px-8">
-          <div class="d-flex justify-space-between">
-            <div>
+          <div class="d-flex justify-space-between flex-column flex-sm-row">
+            <div class="mb-2 mb-sm-0">
               <p class="mb-1">
                 <span class="font-weight-semibold">Salesperson:</span> <span>Jenny Parker</span>
               </p>
@@ -298,17 +300,7 @@ import { mdiSendOutline, mdiCurrencyUsd } from '@mdi/js'
 import themeConfig from '@themeConfig'
 import invoiceStoreModule from '../invoiceStoreModule'
 
-// Local Components
-// import Logo from '@core/layouts/components/Logo.vue'
-// import InvoiceSidebarSendInvoice from '../InvoiceSidebarSendInvoice.vue'
-// import InvoiceSidebarAddPayment from '../InvoiceSidebarAddPayment.vue'
-
 export default {
-  components: {
-    // Logo,
-    // InvoiceSidebarAddPayment,
-    // InvoiceSidebarSendInvoice,
-  },
   setup() {
     const invoiceData = ref(null)
     const paymentDetails = ref({})
@@ -371,13 +363,6 @@ export default {
       .then(response => {
         invoiceData.value = response.data.invoice
         paymentDetails.value = response.data.paymentDetails
-
-        // TODO: Remove console log
-        console.log('response.data.invoice')
-        console.log(JSON.stringify(response.data.invoice, null, 2))
-        console.log('------------')
-        console.log('response.data.paymentDetails')
-        console.log(JSON.stringify(response.data.paymentDetails, null, 2))
       })
       .catch(error => {
         if (error.response.status === 404) {
@@ -411,31 +396,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~vuetify/src/styles/styles.sass';
-@import '~@core/preset/preset/mixins.scss';
-
-.app-invoice-preview {
-  .payment-details-header {
-    margin-bottom: 0.813rem;
-  }
-
-  .purchased-items-table {
-    th {
-      background-color: transparent !important;
-    }
-
-    @at-root {
-      @include theme--child(v-data-table) using ($material) {
-        &.purchased-items-table {
-          > .v-data-table__wrapper > table > tbody > tr:last-child > td:not(.v-data-table__mobile-row),
-          > .v-data-table__wrapper > table > tbody > tr:last-child > th:not(.v-data-table__mobile-row) {
-            border-bottom: thin solid rgba(map-deep-get($material, 'primary-shade'), 0.14);
-          }
-        }
-      }
-    }
-  }
-}
+@import '~@core/preset/preset/apps/invoice.scss';
 
 @media print {
   .v-application {

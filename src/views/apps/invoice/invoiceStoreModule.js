@@ -24,5 +24,13 @@ export default {
           .catch(error => reject(error))
       })
     },
+    fetchClients() {
+      return new Promise((resolve, reject) => {
+        axios
+          .get('/apps/invoice/clients')
+          .then(response => resolve(response))
+          .catch(error => reject(error))
+      })
+    },
   },
 }

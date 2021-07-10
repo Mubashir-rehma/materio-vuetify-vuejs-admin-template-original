@@ -2,7 +2,7 @@
   <div id="user-list">
     <!-- app drawer -->
     <user-list-add-new
-      :is-add-new-user-sidebar-active.sync="isAddNewUserSidebarActive"
+      v-model="isAddNewUserSidebarActive"
       :role-options="roleOptions"
       :plan-options="planOptions"
     ></user-list-add-new>

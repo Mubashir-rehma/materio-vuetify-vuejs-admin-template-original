@@ -125,7 +125,10 @@
           <p class="mb-1">
             {{ data.invoiceData.client.company }}
           </p>
-          <p class="mb-1">
+          <p
+            v-if="data.invoiceData.client.address"
+            class="mb-1"
+          >
             {{ data.invoiceData.client.address }}, {{ data.invoiceData.client.country }}
           </p>
           <p class="mb-1">

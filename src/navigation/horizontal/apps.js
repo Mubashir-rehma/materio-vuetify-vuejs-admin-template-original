@@ -27,15 +27,15 @@ export default [
           },
           {
             title: 'Preview',
-            route: { name: 'apps-invoice-preview', params: { id: 4987 } },
+            to: { name: 'apps-invoice-preview', params: { id: 4987 } },
           },
           {
             title: 'Edit',
-            route: { name: 'apps-invoice-edit', params: { id: 4987 } },
+            to: { name: 'apps-invoice-edit', params: { id: 4987 } },
           },
           {
             title: 'Add',
-            route: { name: 'apps-invoice-add' },
+            to: { name: 'apps-invoice-add' },
           },
         ],
       },

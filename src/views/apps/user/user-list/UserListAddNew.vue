@@ -1,28 +1,26 @@
 <template>
   <v-navigation-drawer
-    v-model="isAddNewUserSidebarActive"
-    absolute
+    :value="isAddNewUserSidebarActive"
+    temporary
     :right="!$vuetify.rtl"
     width="350"
-    temporary
+    app
+    @input="(val) => $emit('update:is-add-new-user-sidebar-active', val)"
   >
     <v-card height="100%">
-      <v-card-title>
-        <span>Add New User</span>
+      <div class="drawer-header d-flex align-center mb-4">
+        <span class="font-weight-semibold text-base text--primary">Add New User</span>
         <v-spacer></v-spacer>
-
         <v-btn
           icon
           small
-          @click.stop="$emit('update:is-add-new-user-sidebar-active',false)"
+          @click="$emit('update:is-add-new-user-sidebar-active',false)"
         >
-          <v-icon size="18">
+          <v-icon size="22">
             {{ icons.mdiClose }}
           </v-icon>
         </v-btn>
-      </v-card-title>
-
-      <v-divider></v-divider>
+      </div>
 
       <v-card-text>
         <v-form
@@ -37,6 +35,8 @@
             :rules="[validators.required]"
             label="Full Name"
             placeholder="John Doe"
+            hide-details="auto"
+            class="mb-6"
           ></v-text-field>
 
           <v-text-field
@@ -46,6 +46,8 @@
             dense
             label="Username"
             placeholder="Username"
+            hide-details="auto"
+            class="mb-6"
           ></v-text-field>
 
           <v-text-field
@@ -56,6 +58,8 @@
             type="email"
             label="Email"
             placeholder="Email"
+            hide-details="auto"
+            class="mb-6"
           ></v-text-field>
 
           <v-text-field
@@ -66,6 +70,8 @@
             type="number"
             label="Contact"
             placeholder="Contact"
+            hide-details="auto"
+            class="mb-6"
           ></v-text-field>
 
           <v-text-field
@@ -75,6 +81,8 @@
             dense
             label="Company"
             placeholder="Company"
+            hide-details="auto"
+            class="mb-6"
           ></v-text-field>
 
           <v-select
@@ -84,6 +92,8 @@
             :items="countries"
             outlined
             dense
+            hide-details="auto"
+            class="mb-6"
           >
           </v-select>
 
@@ -96,6 +106,8 @@
             item-value="value"
             outlined
             dense
+            hide-details="auto"
+            class="mb-6"
           >
           </v-select>
 
@@ -108,6 +120,8 @@
             item-value="value"
             outlined
             dense
+            hide-details="auto"
+            class="mb-6"
           >
           </v-select>
 
@@ -140,6 +154,10 @@ import { ref } from '@vue/composition-api'
 import { required, emailValidator } from '@core/utils/validation'
 
 export default {
+  model: {
+    prop: 'isAddNewUserSidebarActive',
+    event: 'update:is-add-new-user-sidebar-active',
+  },
   props: {
     isAddNewUserSidebarActive: {
       type: Boolean,

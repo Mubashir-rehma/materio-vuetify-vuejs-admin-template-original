@@ -8,10 +8,7 @@
         icon
         small
         class="mr-1"
-        @click="
-          $emit('remove-event')
-          $emit('close-drawer')
-        "
+        @click=" $emit('remove-event'); $emit('close-drawer')"
       >
         <v-icon size="22">
           {{ icons.mdiTrashCanOutline }}

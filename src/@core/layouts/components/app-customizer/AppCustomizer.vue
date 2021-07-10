@@ -240,7 +240,6 @@ export default {
       themes,
     } = useAppConfig()
 
-    // TODO: Vue 3 Update: Use export const in `./themeVariants.ts` and use computed getter and setter to update the theme
     const selectedTheme = ref('vuexy')
 
     const routerTransitionOptions = [

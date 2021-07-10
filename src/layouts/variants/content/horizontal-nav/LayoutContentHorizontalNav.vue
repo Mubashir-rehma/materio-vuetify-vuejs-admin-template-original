@@ -118,7 +118,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// TODO: This is duplicated in VerticalNavMenuHeader.vue
 .app-title {
   font-size: 1.25rem;
   font-weight: 600;

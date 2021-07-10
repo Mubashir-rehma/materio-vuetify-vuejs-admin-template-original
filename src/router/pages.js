@@ -1,13 +1,4 @@
 const pages = [
-  // TODO: Remove playground page
-  {
-    path: '/pages/playground',
-    name: 'page-playground',
-    component: () => import('@/views/pages/playground-page/PlaygroundPage.vue'),
-    meta: {
-      layout: 'content',
-    },
-  },
   {
     path: '/ui/typography',
     name: 'ui-typography',

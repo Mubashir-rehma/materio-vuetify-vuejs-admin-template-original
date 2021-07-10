@@ -1,4 +1,3 @@
-// TODO: Vue 3 Update: Use export const and use computed getter and setter in `AppCustomizer` to update the theme
 const themeVariant = {
   vuexy: {
     light: {

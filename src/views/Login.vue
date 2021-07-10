@@ -65,11 +65,7 @@
             >
               <v-card flat>
                 <v-card-text class="pb-2">
-                  <!-- TODO: Remove this click event modification -->
-                  <p
-                    class="text-2xl font-weight-semibold text--primary mb-2"
-                    @click="email='client@demo.com'; password='Client@demo#123'"
-                  >
+                  <p class="text-2xl font-weight-semibold text--primary mb-2">
                     Welcome to Materio! 👋🏻
                   </p>
                   <p class="mb-2">
@@ -188,9 +184,8 @@ export default {
 
     const isPasswordVisible = ref(false)
 
-    // TODO: Remove this login details
-    const email = ref('admin@demo.com')
-    const password = ref('Admin@demo#123')
+    const email = ref('')
+    const password = ref('')
     const errorMessages = ref([])
     const socialLink = [
       {
@@ -265,7 +260,7 @@ export default {
           })
         })
         .catch(error => {
-          // TODO: Show notification
+          // TODO: Next Update - Show notification
           console.error('Oops, Unable to login!')
           console.log('error :>> ', error.response)
           errorMessages.value = error.response.data.error

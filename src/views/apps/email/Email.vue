@@ -172,7 +172,6 @@
       <v-divider></v-divider>
 
       <!-- EMails List -->
-      <!-- TODO: settings prop is not binding -->
       <perfect-scrollbar
         :settings="perfectScrollbarSettings"
         class="ps-emails-list"
@@ -458,7 +457,6 @@ export default {
       return emailsIsRead.every(emailIsRead => emailIsRead)
     })
 
-    // TODO: Add below watcher
     // ? Watcher to reset selectedEmails is somewhere below due to watch dependecy fullfilment
 
     // ————————————————————————————————————

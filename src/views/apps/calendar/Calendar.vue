@@ -103,7 +103,7 @@
 
 <script>
 // eslint-disable-next-line object-curly-newline
-import { onMounted, ref, onUnmounted, computed, watch } from '@vue/composition-api'
+import { ref, onUnmounted, computed, watch } from '@vue/composition-api'
 import { mdiChevronLeft, mdiChevronRight, mdiMenu } from '@mdi/js'
 import { useResponsiveLeftSidebar } from '@core/comp-functions/ui'
 import store from '@/store'
@@ -145,12 +145,6 @@ export default {
     // ————————————————————————————————————
 
     const refCalendar = ref(null)
-    onMounted(() => {
-      console.log('refCalendar.value :>> ', refCalendar.value)
-
-      // TODO: Remove this window attachment
-      window.calendar = refCalendar.value
-    })
 
     // ————————————————————————————————————
     //* ——— Calendar View/Type
@@ -265,7 +259,7 @@ export default {
       /* eslint-enable */
 
       store.dispatch(`${CALENDAR_APP_STORE_MODULE_NAME}/addEvent`, { event: eventData }).then(() => {
-        // TODO: Perform adding or refetching
+        // TODO: Next Update - Perform adding or refetching
         fetchEvents()
       })
     }

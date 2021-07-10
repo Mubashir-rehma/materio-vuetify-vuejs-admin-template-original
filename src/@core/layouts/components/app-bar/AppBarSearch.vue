@@ -30,7 +30,6 @@
         :menu-props="{ maxHeight: 500, transition: 'slide-y-transition', contentClass: 'list-style' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
-        @blur="shallShowFullSearchLocal = false"
       >
         <!-- Slot: Selection -->
         <template #selection></template>

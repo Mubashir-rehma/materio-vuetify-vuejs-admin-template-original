@@ -92,15 +92,18 @@
   }
 }
 
-// TODO: Fix track bg color for dark theme
 @mixin style-scroll-bar() {
   /* width */
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-    background: #fff;
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
+    background: #fff;
+  }
+
+  .v-application.theme--dark &::-webkit-scrollbar {
+    background: rgba(map-deep-get($material-dark, 'cards'), 1);
   }
 
   /* Track */
@@ -112,6 +115,10 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 0.5rem;
     background: #ccc;
+  }
+
+  .v-application.theme--dark &::-webkit-scrollbar-thumb {
+    background: rgba(map-deep-get($material-dark, 'background'), 1);
   }
 
   &::-webkit-scrollbar-corner {
@@ -164,17 +171,6 @@
     @content ($darkThemePropertyValue);
   }
 }
-
-// TODO: Move this in variables
-$theme-colors: (
-  'primary': var(--v-primary-base),
-  'secondary': var(--v-secondary-base),
-  'accent': var(--v-accent-base),
-  'error': var(--v-error-base),
-  'info': var(--v-info-base),
-  'success': var(--v-success-base),
-  'warning': var(--v-warning-base),
-);
 
 // Ability to create style based on theme colors
 @mixin themeable() {

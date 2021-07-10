@@ -224,7 +224,6 @@ $nav-drawer-mini-width: 68px;
     .v-main,
     .v-footer,
     .v-app-bar {
-      // TODO: This is not working
       max-width: unset;
       left: 0 !important;
       @include ltr() {

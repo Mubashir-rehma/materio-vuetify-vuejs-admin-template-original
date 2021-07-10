@@ -15,7 +15,6 @@
 
     <!-- User Avatar + Name + Role -->
     <div class="text-center px-6 pt-4">
-      <!-- TODO: Set badge color based on user status -->
       <v-badge
         bottom
         overlap

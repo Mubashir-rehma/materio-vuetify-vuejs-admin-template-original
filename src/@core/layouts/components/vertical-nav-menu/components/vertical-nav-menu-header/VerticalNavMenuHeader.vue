@@ -73,7 +73,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// TODO: This is duplicated in LayoutContentHorizontalNav.vue
 .app-title {
   font-size: 1.25rem;
   font-weight: 700;
@@ -90,10 +89,4 @@ export default {
     transform: translateX(-4px);
   }
 }
-
-// .vertical-nav-header {
-//   .v-navigation-drawer--mini-variant & {
-//     padding-left: 14px !important;
-//   }
-// }
 </style>

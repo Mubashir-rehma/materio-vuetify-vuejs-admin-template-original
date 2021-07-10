@@ -262,7 +262,7 @@ export default {
           })
         })
         .catch(error => {
-          // TODO: Show notification
+          // TODO: Next Update - Show notification
           console.error('Oops, Unable to Register!')
           console.log('error :>> ', error.response)
           errorMessages.value = error.response.data.error

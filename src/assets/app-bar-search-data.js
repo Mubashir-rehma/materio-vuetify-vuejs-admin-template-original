@@ -72,7 +72,7 @@ export default [
   { title: 'Invoice Add', to: { name: 'apps-invoice-add' }, icon: mdiFileDocumentOutline },
 
   { title: 'User List', to: { name: 'apps-user-list' }, icon: mdiAccountOutline },
-  { title: 'User View', to: { name: 'apps-user-view' }, icon: mdiAccountOutline },
+  { title: 'User View', to: { name: 'apps-user-view', params: { id: 21 } }, icon: mdiAccountOutline },
   { title: 'Email', to: { name: 'apps-email' }, icon: mdiEmailOutline },
 
   // authentication

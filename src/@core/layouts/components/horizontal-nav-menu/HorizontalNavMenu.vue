@@ -1,6 +1,6 @@
 <template>
-  <ul
-    class="horizontal-nav-menu ps-0"
+  <div
+    class="horizontal-nav-menu"
     :class="rootThemeClasses"
   >
     <component
@@ -9,7 +9,7 @@
       :key="item.header || item.title"
       :item="item"
     />
-  </ul>
+  </div>
 </template>
 
 <script>
@@ -61,6 +61,15 @@ export default {
   > .v-btn {
     .v-icon {
       transition: none !important;
+    }
+  }
+
+  // Fixes: Items drop on second row
+  @media screen and (min-width: 1264px) and (max-width: 1326px) {
+    .v-application .v-app-bar.v-toolbar.navigation-menu .v-toolbar__content & {
+      padding: 0 !important;
+      display: flex;
+      justify-content: center;
     }
   }
 }

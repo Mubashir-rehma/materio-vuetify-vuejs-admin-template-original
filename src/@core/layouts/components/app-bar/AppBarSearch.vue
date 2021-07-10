@@ -147,8 +147,9 @@ export default {
     }
 
     // Hotkey
-    const { slash } = useMagicKeys()
-    whenever(slash, () => {
+    // eslint-disable-next-line camelcase
+    const { ctrl_slash } = useMagicKeys()
+    whenever(ctrl_slash, () => {
       shallShowFullSearchLocal.value = true
     })
 

@@ -39,9 +39,7 @@ export default {
     const { handleBreakpointLayoutSwitch } = useLayout()
     handleBreakpointLayoutSwitch()
 
-    // TODO: I guess, we can use enum here if there's some kind of magic in TypeScript so we don't have to define strings as hard coded. Imagine if we change the name of layout 🤔
     const resolveLayoutVariant = computed(() => {
-      // TODO: We aren't getting suggestions
       if (route.value.meta.layout === 'content') {
         if (appContentLayoutNav.value === 'vertical') return 'layout-content-vertical-nav'
         if (appContentLayoutNav.value === 'horizontal') return 'layout-content-horizontal-nav'

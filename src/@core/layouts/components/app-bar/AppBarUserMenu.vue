@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-center">
-    <div class="d-flex flex-column me-2 text-right font-weight-medium">
+    <div class="flex-column me-2 text-right font-weight-medium d-none d-sm-flex">
       <span class="text--primary mb-n1">
         {{ userData.fullName || userData.username }}
       </span>

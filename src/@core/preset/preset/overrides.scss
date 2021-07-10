@@ -450,6 +450,34 @@ button {
   }
 }
 
+$btn-custom-heights: (
+  'x-small': 26,
+  'small': 30,
+  'default': 38,
+  'large': 42,
+  'x-large': 46,
+);
+
+.v-btn {
+  &:not(.v-btn--round) {
+    @each $name, $height in $btn-custom-heights {
+      &.v-size--#{$name} {
+        height: #{$height}px !important;
+        // min-width: #{round($size * 1.777777777777778)}px // default ratio
+      }
+    }
+  }
+}
+
+.v-btn--icon {
+  @each $name, $height in $btn-custom-heights {
+    &.v-size--#{$name} {
+      height: #{$height}px !important;
+      width: #{$height}px !important;
+    }
+  }
+}
+
 @include app-elevation(v-btn--is-elevated, 3, !important);
 @include app-elevation('v-btn--is-elevated:hover', 4, !important);
 @include app-elevation('v-btn--is-elevated:active', 2, !important);

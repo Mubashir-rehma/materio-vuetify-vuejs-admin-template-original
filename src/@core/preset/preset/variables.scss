@@ -128,7 +128,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,,,,,,,,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -277,7 +277,7 @@ $material-dark: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,,,,,,,,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
@@ -340,10 +340,10 @@ $alert-padding: 13px 16px;
 
 $btn-sizes: (
   'x-small': 20,
-  'small': 30,
-  'default': 38,
-  'large': 42,
-  'x-large': 52,
+  'small': 36,
+  'default': 52,
+  'large': 63,
+  'x-large': 77,
 );
 // ! Need to update font size for `x-small` and `x-large`
 $btn-font-sizes: (

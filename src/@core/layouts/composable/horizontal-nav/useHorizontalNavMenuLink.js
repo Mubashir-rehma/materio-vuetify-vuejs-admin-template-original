@@ -1,20 +1,25 @@
 import useNav from '@core/layouts/composable/useNav'
-import { ref } from '@vue/composition-api'
+import { useRouter } from '@core/utils'
+import { ref, watch } from '@vue/composition-api'
 
 export default function useHorizontalNavMenuLink(item) {
+  const { route } = useRouter()
   const { isNavLinkActive, navLinkProps } = useNav()
 
   const isActive = ref(false)
 
   const linkProps = navLinkProps.value(item)
 
-  const updateIsActive = () => {
-    isActive.value = isNavLinkActive(item)
-  }
+  watch(
+    () => route.value.name,
+    () => {
+      isActive.value = isNavLinkActive(item)
+    },
+    { immediate: true },
+  )
 
   return {
     isActive,
     linkProps,
-    updateIsActive,
   }
 }

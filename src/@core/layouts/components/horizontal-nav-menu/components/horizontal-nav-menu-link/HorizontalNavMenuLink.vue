@@ -2,6 +2,7 @@
   <v-list-item
     v-if="canViewHorizontalNavMenuLink(item)"
     v-bind="linkProps"
+    :class="{'v-item--active v-list-item--active': isActive}"
   >
     <v-list-item-icon>
       <v-icon :size="item.icon ? 22 : 15">
@@ -29,7 +30,7 @@ export default {
     },
   },
   setup(props) {
-    const { isActive, linkProps, updateIsActive } = useHorizontalNavMenuLink(props.item)
+    const { isActive, linkProps } = useHorizontalNavMenuLink(props.item)
 
     // i18n
     const { t } = useUtils()
@@ -40,7 +41,6 @@ export default {
     return {
       isActive,
       linkProps,
-      updateIsActive,
 
       // alternate icons
       alternateIcon: themeConfig.menu.groupChildIcon,

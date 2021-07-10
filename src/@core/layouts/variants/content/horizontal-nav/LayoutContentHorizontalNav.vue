@@ -48,6 +48,7 @@
       inset
       :absolute="footerType === 'static'"
       padless
+      :color="footerType === 'static' ? 'transparent' : null"
     >
       <v-col cols="12">
         {{ new Date().getFullYear() }} — <strong>Material Admin</strong>

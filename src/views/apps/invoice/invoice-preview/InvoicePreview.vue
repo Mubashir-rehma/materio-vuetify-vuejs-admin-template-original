@@ -234,7 +234,7 @@
       md="3"
     >
       <v-card>
-        <v-card-text class="pt-5">
+        <v-card-text>
           <v-btn
             color="primary"
             class="mb-3"

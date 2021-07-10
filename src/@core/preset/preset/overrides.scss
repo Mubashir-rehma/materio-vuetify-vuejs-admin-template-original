@@ -241,7 +241,7 @@ button {
   .v-card__actions {
     padding-top: 0;
 
-    @at-root .v-card &:nth-child(1) {
+    @at-root .v-card > :nth-child(1) {
       padding-top: $card-spacer;
     }
 

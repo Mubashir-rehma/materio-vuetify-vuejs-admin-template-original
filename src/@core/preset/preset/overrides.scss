@@ -260,7 +260,7 @@ button {
 
   .v-card__actions {
     &.dense {
-      padding: 0 calc(#{$card-spacer} - 8px) calc(#{$card-spacer} - 8px);
+      padding: 0 calc(#{$card-spacer} - 12px) calc(#{$card-spacer} - 12px);
     }
   }
 }

@@ -282,11 +282,11 @@ export default {
       margin-left: 3rem;
     }
 
-    // ? In Full content contet have padding of 1.72rem
+    // ? In Full content contet have padding of 1.5rem
     &:not(.app-system-bar-boxed) {
       .app-bar-autocomplete-box {
-        max-width: calc(100% - 1.72rem * 2);
-        margin-left: 1.72rem;
+        max-width: calc(100% - 1.5rem * 2);
+        margin-left: 1.5rem;
       }
     }
   }

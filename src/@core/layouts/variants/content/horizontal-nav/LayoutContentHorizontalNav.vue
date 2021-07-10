@@ -146,8 +146,8 @@ export default {
   }
 
   // @media screen and (max-width: 1711px) {
-  //   margin-left: 1.72rem !important;
-  //   margin-right: 1.72rem !important;
+  //   margin-left: 1.5rem !important;
+  //   margin-right: 1.5rem !important;
   // }
 
   // Footer

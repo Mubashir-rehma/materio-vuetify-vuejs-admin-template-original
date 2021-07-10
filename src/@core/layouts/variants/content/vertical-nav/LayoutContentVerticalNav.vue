@@ -155,7 +155,7 @@ $nav-drawer-mini-width: 68px;
 
   .v-app-bar,
   .v-footer {
-    max-width: calc(1440px - (1.72rem * 2));
+    max-width: calc(1440px - (1.5rem * 2));
 
     @at-root .v-application {
       &.content-full {
@@ -170,8 +170,8 @@ $nav-drawer-mini-width: 68px;
         @media screen and (max-width: 1711px) {
           .v-footer,
           .v-app-bar {
-            margin-left: 1.72rem !important;
-            margin-right: 1.72rem !important;
+            margin-left: 1.5rem !important;
+            margin-right: 1.5rem !important;
           }
         }
       }
@@ -179,8 +179,8 @@ $nav-drawer-mini-width: 68px;
         @media screen and (max-width: 1523px) {
           .v-footer,
           .v-app-bar {
-            margin-left: 1.72rem !important;
-            margin-right: 1.72rem !important;
+            margin-left: 1.5rem !important;
+            margin-right: 1.5rem !important;
           }
         }
       }

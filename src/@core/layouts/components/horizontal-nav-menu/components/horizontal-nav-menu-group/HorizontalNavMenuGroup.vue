@@ -19,7 +19,7 @@
         v-on="on"
       >
         <v-list-item-icon>
-          <v-icon :size="item.icon ? 22 : 20">
+          <v-icon :size="item.icon ? 22 : 15">
             {{ item.icon || alternateIcon }}
           </v-icon>
         </v-list-item-icon>

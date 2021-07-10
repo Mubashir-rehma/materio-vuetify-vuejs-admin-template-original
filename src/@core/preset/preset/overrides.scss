@@ -735,7 +735,12 @@ button {
     }
 
     .v-data-footer__pagination {
-      margin-left: auto;
+      @include ltr() {
+        margin-left: auto;
+      }
+      @include rtl() {
+        margin-right: auto;
+      }
     }
   }
 }

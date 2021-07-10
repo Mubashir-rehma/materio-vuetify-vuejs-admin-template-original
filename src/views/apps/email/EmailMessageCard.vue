@@ -9,7 +9,7 @@
     >
       <v-avatar
         size="38"
-        class="mr-3"
+        class="me-3"
       >
         <v-img :src="message.from.avatar"></v-img>
       </v-avatar>
@@ -21,11 +21,11 @@
       <v-spacer></v-spacer>
 
       <div class="my-1">
-        <span class="text--disabled text-xs mr-2 text-no-wrap">{{ formatDate(message.time, { dateStyle: 'long', timeStyle: 'short' }) }}</span>
+        <span class="text--disabled text-xs me-2 text-no-wrap">{{ formatDate(message.time, { dateStyle: 'long', timeStyle: 'short' }) }}</span>
         <v-btn
           icon
           small
-          class="mr-1"
+          class="me-1"
         >
           <v-icon size="22">
             {{ icons.mdiAttachment }}
@@ -34,7 +34,7 @@
         <v-btn
           icon
           small
-          class="mr-1"
+          class="me-1"
         >
           <v-icon size="22">
             {{ icons.mdiStarOutline }}
@@ -64,7 +64,7 @@
             >
               <v-list-item-icon>
                 <v-icon
-                  class="mr-2"
+                  class="me-2"
                   size="20"
                 >
                   {{ action.icon }}
@@ -98,7 +98,7 @@
           :key="index"
           :href="attachment.url"
           target="_blank"
-          class="mr-2"
+          class="me-2"
           tag="a"
           outlined
           download
@@ -106,7 +106,7 @@
           <v-img
             :src="attachment.thumbnail"
             width="16px"
-            class="mr-2"
+            class="me-2"
           />
           <span class="text-xs align-text-top">{{ attachment.fileName }}</span>
         </v-chip>

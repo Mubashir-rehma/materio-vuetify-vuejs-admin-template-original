@@ -218,7 +218,12 @@ export default {
     }
 
     .v-input__prepend-inner {
-      margin-left: 4px;
+      @include ltr() {
+        margin-left: 4px;
+      }
+      @include rtl() {
+        margin-right: 4px;
+      }
     }
   }
   // Content - Result
@@ -256,7 +261,12 @@ export default {
     .v-menu__content {
       max-width: unset;
       width: calc(100% + 20px * 2);
-      margin-left: -20px;
+      @include ltr() {
+        margin-left: -20px;
+      }
+      @include rtl() {
+        margin-right: -20px;
+      }
     }
   }
 }
@@ -279,14 +289,24 @@ export default {
     // ? 3rem is applied to navbar-content-container
     .app-bar-autocomplete-box {
       max-width: calc(100% - 3rem * 2);
-      margin-left: 3rem;
+      @include ltr() {
+        margin-left: 3rem;
+      }
+      @include rtl() {
+        margin-right: 3rem;
+      }
     }
 
     // ? In Full content contet have padding of 1.5rem
     &:not(.app-system-bar-boxed) {
       .app-bar-autocomplete-box {
         max-width: calc(100% - 1.5rem * 2);
-        margin-left: 1.5rem;
+        @include ltr() {
+          margin-left: 1.5rem;
+        }
+        @include rtl() {
+          margin-right: 1.5rem;
+        }
       }
     }
   }

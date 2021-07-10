@@ -145,7 +145,12 @@ $nav-drawer-mini-width: 68px;
 
   &.nav-drawer-mini {
     .v-main {
-      padding-left: $nav-drawer-mini-width !important;
+      @include ltr() {
+        padding-left: $nav-drawer-mini-width !important;
+      }
+      @include rtl() {
+        padding-right: $nav-drawer-mini-width !important;
+      }
     }
     .v-footer,
     .v-app-bar {
@@ -222,7 +227,12 @@ $nav-drawer-mini-width: 68px;
       // TODO: This is not working
       max-width: unset;
       left: 0 !important;
-      padding-left: 0 !important;
+      @include ltr() {
+        padding-left: 0 !important;
+      }
+      @include rtl() {
+        padding-right: 0 !important;
+      }
     }
   }
 }

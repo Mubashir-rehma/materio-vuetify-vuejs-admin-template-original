@@ -39,7 +39,7 @@
       >
         <v-btn
           icon
-          class="d-inline-block d-md-none mr-1"
+          class="d-inline-block d-md-none me-1"
           @click="isLeftSidebarOpen = true"
         >
           <v-icon size="30">
@@ -48,7 +48,7 @@
         </v-btn>
         <v-btn
           icon
-          class="mr-1"
+          class="me-1"
           @click="refCalendar.prev()"
         >
           <v-icon size="30">
@@ -57,14 +57,14 @@
         </v-btn>
         <v-btn
           icon
-          class="mr-3"
+          class="me-3"
           @click="refCalendar.next()"
         >
           <v-icon size="30">
             {{ icons.mdiChevronRight }}
           </v-icon>
         </v-btn>
-        <p class="font-weight-semibold text-xl text--primary mb-0 mr-6">
+        <p class="font-weight-semibold text-xl text--primary mb-0 me-6">
           {{ refCalendar.title }}
         </p>
 

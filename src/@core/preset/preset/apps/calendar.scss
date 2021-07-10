@@ -139,7 +139,12 @@
         font-size: 14px;
 
         // Add some margin on left as button is aligned to left now
-        margin-left: 4px;
+        @include ltr() {
+          margin-left: 4px;
+        }
+        @include rtl() {
+          margin-right: 4px;
+        }
       }
     }
   }
@@ -157,7 +162,12 @@
     }
 
     > div {
-      padding-left: 8px !important;
+      @include ltr() {
+        padding-left: 8px !important;
+      }
+      @include rtl() {
+        padding-right: 8px !important;
+      }
       width: calc(100% - 8px);
       overflow: hidden;
       font-weight: 600;

@@ -21,7 +21,7 @@
             block
           >
             <v-icon
-              class="mr-2"
+              class="me-2"
               left
             >
               {{ icons.mdiSendOutline }}

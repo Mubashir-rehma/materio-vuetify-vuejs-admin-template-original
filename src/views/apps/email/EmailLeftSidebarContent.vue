@@ -6,7 +6,7 @@
       width="700"
       :fullscreen="isEmailComposeDialogFullscreen"
       hide-overlay
-      content-class="email-compose-dialog ml-md-auto"
+      content-class="email-compose-dialog ms-md-auto"
       transition="slide-y-reverse-transition"
     >
       <template #activator="{ on, attrs }">
@@ -45,7 +45,7 @@
           class="text--primary"
           exact-active-class="primary--text v-list-item--exact-active"
         >
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-icon size="20">
               {{ filter.icon }}
             </v-icon>
@@ -84,7 +84,7 @@
           :to="label.to"
           exact-active-class="primary--text v-list-item--exact-active"
         >
-          <v-list-item-icon class="mr-2">
+          <v-list-item-icon class="me-2">
             <v-badge
               :color="label.color"
               dot

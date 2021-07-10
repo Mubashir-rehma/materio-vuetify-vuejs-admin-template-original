@@ -57,7 +57,7 @@
         <template #item="{ item: option }">
           <v-avatar
             size="22"
-            class="mr-2"
+            class="me-2"
           >
             <v-img :src="option.avatar"></v-img>
           </v-avatar>
@@ -87,7 +87,7 @@
           <v-btn
             icon
             small
-            class="mr-6 ml-1"
+            class="me-6 ms-1"
             @click="shallShowBCCFIeld = !shallShowBCCFIeld"
           >
             Bcc
@@ -120,7 +120,7 @@
         <template #item="{ item: option }">
           <v-avatar
             size="22"
-            class="mr-2"
+            class="me-2"
           >
             <v-img :src="option.avatar"></v-img>
           </v-avatar>
@@ -164,7 +164,7 @@
         <template #item="{ item: option }">
           <v-avatar
             size="22"
-            class="mr-2"
+            class="me-2"
           >
             <v-img :src="option.avatar"></v-img>
           </v-avatar>
@@ -224,7 +224,7 @@
         >
           <template #activator="{ on, attrs }">
             <v-btn-toggle
-              class="send-btn-toggle mr-3"
+              class="send-btn-toggle me-3"
               color="primary"
               borderless
             >
@@ -423,16 +423,31 @@ export default {
       align-self: center;
     }
     .v-input__prepend-inner {
-      margin-left: 10px;
+      @include ltr() {
+        margin-left: 10px;
+      }
+      @include rtl() {
+        margin-right: 10px;
+      }
     }
     .v-input__append-inner {
-      margin-right: 10px;
+      @include ltr() {
+        margin-right: 10px;
+      }
+      @include rtl() {
+        margin-left: 10px;
+      }
     }
   }
 
   .email-compose-message {
     .v-input__slot {
-      padding-left: 23px !important;
+      @include ltr() {
+        padding-left: 23px !important;
+      }
+      @include rtl() {
+        padding-right: 23px !important;
+      }
     }
   }
 
@@ -442,8 +457,18 @@ export default {
       opacity: 1 !important;
 
       &:nth-child(1) {
-        padding-left: 20px;
-        padding-right: 8px;
+        @include ltr() {
+          padding-left: 20px;
+        }
+        @include rtl() {
+          padding-right: 20px;
+        }
+        @include ltr() {
+          padding-right: 8px;
+        }
+        @include rtl() {
+          padding-left: 8px;
+        }
       }
       &:nth-child(2) {
         // max-width: 20px;

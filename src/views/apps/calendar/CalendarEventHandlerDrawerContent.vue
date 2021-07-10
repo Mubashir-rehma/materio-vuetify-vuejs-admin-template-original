@@ -7,7 +7,7 @@
         v-if="eventLocal.id"
         icon
         small
-        class="mr-1"
+        class="me-1"
         @click=" $emit('remove-event'); $emit('close-drawer')"
       >
         <v-icon size="22">
@@ -65,7 +65,7 @@
                 inline
                 :color="item.color"
                 dot
-                class="mr-2"
+                class="me-2"
               ></v-badge>
               <span>{{ item.label }}</span>
             </div>
@@ -78,7 +78,7 @@
                 inline
                 :color="item.color"
                 dot
-                class="mr-2 mb-1"
+                class="me-2 mb-1"
               ></v-badge>
               <span>{{ item.label }}</span>
             </div>
@@ -181,7 +181,7 @@
             <div class="d-flex align-center">
               <v-avatar
                 size="25"
-                class="mr-2"
+                class="me-2"
               >
                 <v-img :src="item.avatar"></v-img>
               </v-avatar>
@@ -209,7 +209,7 @@
 
         <v-btn
           color="primary"
-          class="mr-3"
+          class="me-3"
           type="submit"
         >
           {{ eventLocal.id ? 'Update' : 'Add ' }}

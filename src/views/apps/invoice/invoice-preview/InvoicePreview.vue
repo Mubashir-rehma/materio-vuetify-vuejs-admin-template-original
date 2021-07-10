@@ -17,7 +17,7 @@
                   max-width="30px"
                   alt="logo"
                   contain
-                  class="mr-3 "
+                  class="me-3 "
                 ></v-img>
                 <span class="text--primary font-weight-bold text-xl">
                   {{ appName }}
@@ -178,7 +178,7 @@
             <div>
               <table>
                 <tr>
-                  <td class="pr-16">
+                  <td class="pe-16">
                     Subtotal:
                   </td>
                   <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -186,7 +186,7 @@
                   </th>
                 </tr>
                 <tr>
-                  <td class="pr-16">
+                  <td class="pe-16">
                     Discount:
                   </td>
                   <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -194,7 +194,7 @@
                   </th>
                 </tr>
                 <tr>
-                  <td class="pr-16">
+                  <td class="pe-16">
                     Tax:
                   </td>
                   <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -205,7 +205,7 @@
               <v-divider class="mt-4 mb-3"></v-divider>
               <table class="w-full">
                 <tr>
-                  <td class="pr-16">
+                  <td class="pe-16">
                     Total:
                   </td>
                   <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -241,7 +241,7 @@
             block
           >
             <v-icon
-              class="mr-2"
+              class="me-2"
               left
             >
               {{ icons.mdiSendOutline }}
@@ -279,7 +279,7 @@
             block
           >
             <v-icon
-              class="mr-2"
+              class="me-2"
               left
             >
               {{ icons.mdiCurrencyUsd }}

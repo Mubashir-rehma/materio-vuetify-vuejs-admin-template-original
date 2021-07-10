@@ -6,7 +6,7 @@
       <v-btn
         icon
         small
-        class="mr-2"
+        class="me-2"
         @click="$emit('close-email-view')"
       >
         <v-icon size="28">
@@ -15,7 +15,7 @@
       </v-btn>
 
       <!-- Subject -->
-      <h1 class="font-weight-medium text-base mr-2 text-truncate">
+      <h1 class="font-weight-medium text-base me-2 text-truncate">
         {{ emailViewData.subject }}
       </h1>
 
@@ -63,7 +63,7 @@
         v-show="$route.params.folder !== 'trash'"
         icon
         small
-        class="mr-2"
+        class="me-2"
         @click="$emit('move-email-to-folder', 'trash')"
       >
         <v-icon size="22">
@@ -73,7 +73,7 @@
       <v-btn
         icon
         small
-        class="mr-2"
+        class="me-2"
         @click="$emit('mark-email-unread')"
       >
         <v-icon size="22">
@@ -88,7 +88,7 @@
           <v-btn
             icon
             small
-            class="mr-2"
+            class="me-2"
             v-bind="attrs"
             v-on="on"
           >
@@ -107,7 +107,7 @@
             <v-list-item-icon>
               <v-icon
                 size="20"
-                class="mr-2"
+                class="me-2"
               >
                 {{ folder.icon }}
               </v-icon>
@@ -126,7 +126,7 @@
           <v-btn
             icon
             small
-            class="mr-2"
+            class="me-2"
             v-bind="attrs"
             v-on="on"
           >
@@ -163,7 +163,7 @@
         v-if="emailViewData.replies && emailViewData.replies.length"
         icon
         small
-        class="mr-2"
+        class="me-2"
         @click="showWholeThread = !showWholeThread"
       >
         <v-icon size="22">

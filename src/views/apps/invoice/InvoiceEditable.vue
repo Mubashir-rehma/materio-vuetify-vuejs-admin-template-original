@@ -15,7 +15,7 @@
               max-width="30px"
               alt="logo"
               contain
-              class="mr-3"
+              class="me-3"
             ></v-img>
             <span class="text--primary font-weight-bold text-xl">
               {{ appName }}
@@ -28,7 +28,7 @@
         <!-- Right Content -->
         <div :class="$vuetify.rtl ? 'text-left' : 'text-right'">
           <div class="mb-4 d-flex align-center justify-end">
-            <span class="mr-2 font-weight-medium text-xl text--primary">Invoice:</span>
+            <span class="me-2 font-weight-medium text-xl text--primary">Invoice:</span>
             <v-text-field
               v-model.number="data.invoiceData.id"
               outlined
@@ -39,7 +39,7 @@
             ></v-text-field>
           </div>
           <div class="mb-4 d-flex align-center">
-            <span class="mr-2">Date Issued: </span>
+            <span class="me-2">Date Issued: </span>
             <v-menu
               v-model="isIssueDateMenuOpen"
               :close-on-content-click="false"
@@ -67,7 +67,7 @@
             </v-menu>
           </div>
           <div class="mb-2 d-flex align-center justify-end">
-            <span class="mr-2">Due Date: </span>
+            <span class="me-2">Due Date: </span>
             <v-menu
               v-model="isDueDateMenuOpen"
               :close-on-content-click="false"
@@ -347,7 +347,7 @@
       <div class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
         <div class="mb-6 mb-sm-0">
           <div class="mb-4 d-flex align-center">
-            <span class="font-weight-semibold mr-2">Salesperson:</span>
+            <span class="font-weight-semibold me-2">Salesperson:</span>
             <v-text-field
               v-model="data.salesperson"
               outlined
@@ -368,7 +368,7 @@
         <div>
           <table class="w-full">
             <tr>
-              <td class="pr-16">
+              <td class="pe-16">
                 Subtotal:
               </td>
               <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -376,7 +376,7 @@
               </th>
             </tr>
             <tr>
-              <td class="pr-16">
+              <td class="pe-16">
                 Discount:
               </td>
               <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -384,7 +384,7 @@
               </th>
             </tr>
             <tr>
-              <td class="pr-16">
+              <td class="pe-16">
                 Tax:
               </td>
               <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">
@@ -395,7 +395,7 @@
           <v-divider class="mt-4 mb-3"></v-divider>
           <table class="w-full">
             <tr>
-              <td class="pr-16">
+              <td class="pe-16">
                 Total:
               </td>
               <th :class="$vuetify.rtl ? 'text-left' : 'text-right'">

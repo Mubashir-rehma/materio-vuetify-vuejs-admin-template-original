@@ -52,7 +52,7 @@
           v-show="selectedEmails.length && $route.params.folder !== 'trash'"
           icon
           small
-          class="mr-3"
+          class="me-3"
           @click="moveSelectedEmailsToFolder('trash')"
         >
           <v-icon size="22">
@@ -63,7 +63,7 @@
           v-show="selectedEmails.length"
           icon
           small
-          class="mr-3"
+          class="me-3"
           @click="isAllSelectedMailAreRead ? markSelectedEmailsAsUnread() : markSelectedEmailsAsRead()"
         >
           <v-icon size="22">
@@ -79,7 +79,7 @@
               v-show="selectedEmails.length"
               icon
               small
-              class="mr-3"
+              class="me-3"
               v-bind="attrs"
               v-on="on"
             >
@@ -98,7 +98,7 @@
               <v-list-item-icon>
                 <v-icon
                   size="20"
-                  class="mr-2"
+                  class="me-2"
                 >
                   {{ folder.icon }}
                 </v-icon>
@@ -119,7 +119,7 @@
               icon
               small
               v-bind="attrs"
-              class="mr-3"
+              class="me-3"
               v-on="on"
             >
               <v-icon size="22">
@@ -152,7 +152,7 @@
         <v-btn
           icon
           small
-          class="mr-2"
+          class="me-2"
           @click="fetchEmails"
         >
           <v-icon size="21">
@@ -198,7 +198,7 @@
               v-if="$vuetify.breakpoint.smAndUp"
               icon
               small
-              class="mr-2"
+              class="me-2"
               :color="email.isStarred ? 'warning': null"
               @click.stop="toggleStarred(email)"
             >
@@ -208,14 +208,14 @@
             </v-btn>
             <v-avatar
               size="32"
-              class="mr-3 mr-sm-4"
+              class="me-3 me-sm-4"
             >
               <v-img :src="email.from.avatar"></v-img>
             </v-avatar>
             <div class="d-flex flex-column flex-sm-row text-truncate align-sm-center">
               <!-- v-if="$vuetify.breakpoint.smAndUp" -->
               <span
-                class="text--primary text-base font-weight-medium mr-3"
+                class="text--primary text-base font-weight-medium me-3"
               >{{ email.from.name }}</span>
               <template v-if="$vuetify.breakpoint.smAndUp">
                 <v-badge
@@ -229,7 +229,7 @@
                 >
                 </v-badge>
               </template>
-              <span class="text-truncate mr-4 ml-sm-2 ml-0">{{ email.subject }}</span>
+              <span class="text-truncate me-4 ms-sm-2 ms-0">{{ email.subject }}</span>
             </div>
             <v-spacer></v-spacer>
 
@@ -238,7 +238,7 @@
               <v-btn
                 icon
                 small
-                class="mr-2"
+                class="me-2"
                 @click.stop="email.isRead ? markSelectedEmailsAsUnread([email.id]) : markSelectedEmailsAsRead([email.id])"
               >
                 <v-icon size="22">
@@ -249,7 +249,7 @@
                 v-show="$route.params.folder !== 'trash'"
                 icon
                 small
-                class="mr-2"
+                class="me-2"
                 @click.stop="moveSelectedEmailsToFolder('trash', [email.id])"
               >
                 <v-icon size="22">
@@ -271,7 +271,7 @@
               <v-icon
                 v-if="email.attachments.length"
                 size="20"
-                class="mr-2"
+                class="me-2"
               >
                 {{ icons.mdiAttachment }}
               </v-icon>

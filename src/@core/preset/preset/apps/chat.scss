@@ -20,8 +20,18 @@
 
 .msg-input {
   .v-input__slot {
-    padding-left: 14px !important;
-    padding-right: 7px !important;
+    @include ltr() {
+      padding-left: 14px !important;
+    }
+    @include rtl() {
+      padding-right: 14px !important;
+    }
+    @include ltr() {
+      padding-right: 7px !important;
+    }
+    @include rtl() {
+      padding-left: 7px !important;
+    }
   }
 }
 

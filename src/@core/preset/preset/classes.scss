@@ -63,15 +63,15 @@
   // Set height for contents like apps to don't increase the height for longer content and stick to fixed height
   .v-main {
     // If AppBar+SystemBar & Footer are present
-    &[style='padding: 132px 0px 48px;'] {
+    &[style='padding: 128px 0px 48px;'] {
       .max-h-content-container {
-        height: calc(100vh - 132px - 48px - (1.5rem * 2));
+        height: calc(100vh - 128px - 48px - (1.5rem * 2));
       }
     }
     // If AppBar+SystemBar are present & Footer is not present
-    &[style='padding: 132px 0px 0px;'] {
+    &[style='padding: 128px 0px 0px;'] {
       .max-h-content-container {
-        height: calc(100vh - 132px - (1.5rem * 2));
+        height: calc(100vh - 128px - (1.5rem * 2));
       }
     }
   }

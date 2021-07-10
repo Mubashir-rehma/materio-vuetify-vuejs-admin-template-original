@@ -6,7 +6,7 @@
     <!-- Navbar -->
     <v-system-bar
       app
-      height="68"
+      height="64"
       :absolute="appBarType === 'static'"
       :class="{'app-system-bar-boxed': appContentWidth === 'boxed'}"
       class="app-system-bar"

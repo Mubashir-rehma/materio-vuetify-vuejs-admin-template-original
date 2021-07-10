@@ -1,10 +1,10 @@
 <template>
   <div class="d-flex align-center">
-    <div class="d-flex flex-column me-2 text-right">
-      <span>
+    <div class="d-flex flex-column me-2 text-right font-weight-medium">
+      <span class="text--primary mb-n1">
         {{ userData.fullName || userData.username }}
       </span>
-      <small class="text--secondary">{{ userData.role }}</small>
+      <small class="text--disabled text-capitalize">{{ userData.role }}</small>
     </div>
     <v-menu
       offset-y

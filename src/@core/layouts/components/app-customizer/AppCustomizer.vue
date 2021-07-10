@@ -388,5 +388,14 @@ export default {
   .customizer-section {
     padding: 24px;
   }
+
+  // Fixes Overlay is shown below SystemBar
+  @at-root {
+    .v-overlay {
+      & + .v-application--wrap > .v-system-bar {
+        z-index: 6 !important;
+      }
+    }
+  }
 }
 </style>

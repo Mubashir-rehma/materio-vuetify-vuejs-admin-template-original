@@ -262,7 +262,7 @@ export default {
 }
 
 // ————————————————————————————————————
-//* ——— Horionral Nav
+//* ——— Horizontal Nav
 // ————————————————————————————————————
 
 .content-layout.horizontal-nav {

@@ -20,6 +20,7 @@
         <v-btn
           color="primary"
           class="me-3"
+          :to="{ name: 'apps-invoice-add' }"
         >
           <v-icon
             size="18"
@@ -78,7 +79,12 @@
 
       <!-- id -->
       <template #[`item.id`]="{item}">
-        <span>#{{ item.id }}</span>
+        <router-link
+          class="font-weight-medium text-decoration-none"
+          :to="{ name: 'apps-invoice-preview', params: { id: item.id } }"
+        >
+          #{{ item.id }}
+        </router-link>
       </template>
 
       <!-- trending  -->

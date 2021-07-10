@@ -270,6 +270,7 @@
             color="secondary"
             block
             outlined
+            :to="{ name: 'apps-invoice-edit', params: { id: $route.params.id } }"
           >
             Edit Invoice
           </v-btn>

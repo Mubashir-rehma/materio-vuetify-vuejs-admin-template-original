@@ -81,6 +81,7 @@
 
     <v-divider></v-divider>
 
+    <!-- eslint-disable vue/no-v-html -->
     <div
       class="message-content ma-5"
       v-html="message.message"

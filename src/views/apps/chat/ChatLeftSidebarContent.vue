@@ -26,6 +26,7 @@
         outlined
         rounded
         dense
+        class="chat-search"
         :prepend-inner-icon="icons.mdiMagnify"
       ></v-text-field>
       <v-icon

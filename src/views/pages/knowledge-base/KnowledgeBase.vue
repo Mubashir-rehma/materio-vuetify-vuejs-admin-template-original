@@ -19,10 +19,18 @@
             outlined
             dense
             placeholder="Ask a question...."
-            :prepend-inner-icon="icons.mdiMagnify"
             hide-details
             class="kb-search-input"
-          ></v-text-field>
+          >
+            <template #prepend-inner>
+              <v-icon
+                size="23"
+                class="mx-1"
+              >
+                {{ icons.mdiMagnify }}
+              </v-icon>
+            </template>
+          </v-text-field>
         </v-form>
       </v-card-text>
     </v-card>

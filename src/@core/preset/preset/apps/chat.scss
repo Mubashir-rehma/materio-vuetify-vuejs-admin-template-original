@@ -12,6 +12,12 @@
       }
     }
   }
+
+  .chat-search {
+    &.v-text-field--rounded > .v-input__control > .v-input__slot {
+      padding: 0 16px;
+    }
+  }
 }
 
 .ps-chat-left-sidebar {

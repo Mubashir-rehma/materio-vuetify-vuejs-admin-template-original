@@ -39,7 +39,7 @@
         <v-tabs-items
           id="user-tabs-content"
           v-model="userTab"
-          class="mt-5"
+          class="mt-5 pa-1"
         >
           <v-tab-item>
             <user-tab-overview></user-tab-overview>

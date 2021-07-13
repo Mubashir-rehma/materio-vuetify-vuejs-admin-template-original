@@ -53,6 +53,11 @@
       ></v-overlay>
     </template>
 
+    <!-- Slot: footer -->
+    <template #footer>
+      {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
+    </template>
+
     <!-- App Content -->
     <template #v-app-content>
       <app-customizer class="d-none d-md-block"></app-customizer>

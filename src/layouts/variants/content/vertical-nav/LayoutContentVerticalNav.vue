@@ -1,6 +1,8 @@
 <template>
   <layout-content-vertical-nav :nav-menu-items="navMenuItems">
     <slot></slot>
+
+    <!-- Slot: Navbar -->
     <template #navbar="{ toggleVerticalNavMenuActive }">
       <div
         class="navbar-content-container"
@@ -28,6 +30,12 @@
         </div>
       </div>
     </template>
+
+    <!-- Slot: Footer -->
+    <template #footer>
+      {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
+    </template>
+
     <template #v-app-content>
       <app-customizer class="d-none d-md-block"></app-customizer>
     </template>

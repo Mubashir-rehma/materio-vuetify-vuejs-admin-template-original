@@ -184,8 +184,8 @@ export default {
 
     const isPasswordVisible = ref(false)
 
-    const email = ref('')
-    const password = ref('')
+    const email = ref('admin@demo.com')
+    const password = ref('Admin@demo#123')
     const errorMessages = ref([])
     const socialLink = [
       {

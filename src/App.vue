@@ -19,12 +19,9 @@ import { useRouter } from '@core/utils'
 import { useLayout } from '@core/layouts/composable/useLayout'
 
 // Layouts
-const LayoutContentVerticalNav = () => import('@/layouts/variants/content/vertical-nav/LayoutContentVerticalNav.vue')
-// eslint-disable-next-line arrow-body-style
-const LayoutContentHorizontalNav = () => {
-  return import('@/layouts/variants/content/horizontal-nav/LayoutContentHorizontalNav.vue')
-}
-const LayoutBlank = () => import('@/layouts/variants/blank/LayoutBlank.vue')
+import LayoutContentVerticalNav from '@/layouts/variants/content/vertical-nav/LayoutContentVerticalNav.vue'
+import LayoutContentHorizontalNav from '@/layouts/variants/content/horizontal-nav/LayoutContentHorizontalNav.vue'
+import LayoutBlank from '@/layouts/variants/blank/LayoutBlank.vue'
 
 export default {
   components: {
@@ -40,12 +37,9 @@ export default {
     handleBreakpointLayoutSwitch()
 
     const resolveLayoutVariant = computed(() => {
-      if (route.value.meta.layout === 'content') {
-        if (appContentLayoutNav.value === 'vertical') return 'layout-content-vertical-nav'
-        if (appContentLayoutNav.value === 'horizontal') return 'layout-content-horizontal-nav'
-      }
+      if (route.value.meta.layout === 'full') return 'layout-blank'
 
-      return 'layout-blank'
+      return `layout-content-${appContentLayoutNav.value}-nav`
     })
 
     return {

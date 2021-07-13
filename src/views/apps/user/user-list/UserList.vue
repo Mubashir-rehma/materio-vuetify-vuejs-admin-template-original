@@ -5,6 +5,7 @@
       v-model="isAddNewUserSidebarActive"
       :role-options="roleOptions"
       :plan-options="planOptions"
+      @refetch-data="fetchUsers"
     ></user-list-add-new>
 
     <!-- user total card -->
@@ -148,11 +149,14 @@
 
       <!-- table -->
       <v-data-table
+        v-model="selectedRows"
         :headers="tableColumns"
         :items="userListTable"
         :options.sync="options"
         :server-items-length="totalUserListTable"
         :loading="loading"
+        :sort-by="['id']"
+        :sort-desc="[true]"
         show-select
       >
         <!-- name -->
@@ -319,6 +323,7 @@ export default {
       loading,
       options,
       userTotalLocal,
+      selectedRows,
 
       fetchUsers,
       resolveUserRoleVariant,
@@ -368,12 +373,13 @@ export default {
       options,
       userTotalLocal,
       isAddNewUserSidebarActive,
-
+      selectedRows,
       avatarText,
       resolveUserRoleVariant,
       resolveUserRoleIcon,
       resolveUserStatusVariant,
       resolveUserTotalIcon,
+      fetchUsers,
 
       // icons
       icons: {

@@ -660,14 +660,13 @@ const data = {
 // ------------------------------------------------
 // GET: Return Users
 // ------------------------------------------------
-// mock.onGet('/apps/user/users').reply(() => [200, data])
 
 mock.onGet('/apps/user/users').reply(config => {
   // eslint-disable-next-line object-curly-newline
   const { q = '', options = {}, status = null, role = null, plan = null } = config.params
 
   // eslint-disable-next-line object-curly-newline
-  const { sortBy = '', sortDesc = '', page, itemsPerPage } = options
+  const { sortBy = [], sortDesc = [], page = 0, itemsPerPage = 0 } = options
   /* eslint-enable */
 
   const queryLowered = q.toLowerCase()

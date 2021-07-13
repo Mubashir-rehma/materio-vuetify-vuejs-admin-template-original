@@ -199,6 +199,7 @@ export default {
     const resetuserData = () => {
       userData.value = JSON.parse(JSON.stringify(blankUserData))
       resetForm()
+      emit('refetch-data')
       emit('update:is-add-new-user-sidebar-active', false)
     }
 

@@ -17,9 +17,9 @@ export default function useUsersList() {
   const tableColumns = [
     { text: 'USER', value: 'fullName' },
     { text: 'EMAIL', value: 'email' },
-    { text: 'ROLE', value: 'role' },
-    { text: 'PLAN', value: 'currentPlan' },
-    { text: 'STATUS', value: 'status' },
+    { text: 'ROLE', value: 'role', sortable: false },
+    { text: 'PLAN', value: 'currentPlan', sortable: false },
+    { text: 'STATUS', value: 'status', sortable: false },
     {
       text: 'Actions',
       value: 'actions',
@@ -36,6 +36,7 @@ export default function useUsersList() {
   const loading = ref(false)
   const options = ref({})
   const userTotalLocal = ref([])
+  const selectedRows = ref([])
 
   // fetch data
   const fetchUsers = () => {
@@ -64,6 +65,7 @@ export default function useUsersList() {
 
   watch([searchQuery, roleFilter, planFilter, statusFilter, options], () => {
     loading.value = true
+    selectedRows.value = []
     fetchUsers()
   })
 
@@ -119,6 +121,7 @@ export default function useUsersList() {
     loading,
     options,
     userTotalLocal,
+    selectedRows,
     fetchUsers,
     resolveUserRoleVariant,
     resolveUserRoleIcon,

@@ -37,7 +37,7 @@ export default {
     handleBreakpointLayoutSwitch()
 
     const resolveLayoutVariant = computed(() => {
-      if (route.value.meta.layout === 'full') return 'layout-blank'
+      if (route.value.meta.layout === 'blank') return 'layout-blank'
 
       return `layout-content-${appContentLayoutNav.value}-nav`
     })

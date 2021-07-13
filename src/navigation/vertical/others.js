@@ -1,4 +1,5 @@
-import { mdiMenu } from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { mdiEyeOffOutline, mdiFileDocumentOutline, mdiLifebuoy, mdiMenu } from '@mdi/js'
 
 export default [
   {
@@ -23,5 +24,21 @@ export default [
         ],
       },
     ],
+  },
+  {
+    title: 'Disabled Menu',
+    to: null,
+    icon: mdiEyeOffOutline,
+    disabled: true,
+  },
+  {
+    title: 'Raise Support',
+    href: 'https://pixinvent.ticksy.com/',
+    icon: mdiLifebuoy,
+  },
+  {
+    title: 'Documentation',
+    href: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/documentation',
+    icon: mdiFileDocumentOutline,
   },
 ]

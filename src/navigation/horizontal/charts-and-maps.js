@@ -14,7 +14,7 @@ export default [
             to: 'apex-chart',
           },
           {
-            title: 'chartjs',
+            title: 'Chartjs',
             to: 'chartjs-chart',
           },
         ],

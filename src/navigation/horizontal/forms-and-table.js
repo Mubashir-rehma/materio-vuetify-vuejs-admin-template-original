@@ -7,7 +7,7 @@ export default [
     icon: mdiCheckboxMarkedOutline,
     children: [
       {
-        title: 'Forms elements',
+        title: 'Forms Elements',
         icon: mdiContentCopy,
         children: [
           {

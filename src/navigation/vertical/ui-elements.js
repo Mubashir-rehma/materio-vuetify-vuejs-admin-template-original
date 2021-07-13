@@ -4,19 +4,11 @@ import {
   mdiControllerClassicOutline,
   mdiCreditCardOutline,
   mdiEyeOutline,
-  mdiHomeOutline,
 } from '@mdi/js'
 
 export default [
   {
     subheader: 'USER INTERFACE',
-  },
-  {
-    icon: mdiHomeOutline,
-    title: 'home',
-    to: 'home',
-    action: 'read',
-    resource: 'Dashboard',
   },
   {
     icon: mdiAlphaTBoxOutline,

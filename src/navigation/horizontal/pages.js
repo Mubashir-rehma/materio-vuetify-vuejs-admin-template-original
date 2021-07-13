@@ -17,12 +17,12 @@ export default [
         icon: mdiLockOutline,
         children: [
           {
-            title: 'Login v1',
+            title: 'Login V1',
             to: 'auth-login-v1',
             target: '_blank',
           },
           {
-            title: 'Login v2',
+            title: 'Login V2',
             to: 'auth-login-v2',
             target: '_blank',
           },

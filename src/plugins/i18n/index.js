@@ -8,8 +8,6 @@ export const i18n = new VueI18n({
   locale: 'en', // set locale
   fallbackLocale: 'en',
   messages, // set locale messages
-  // TODO: Remove it after you add all locales
-  silentTranslationWarn: true,
 })
 
 const loadedLanguages = ['en'] // our default language that is preloaded

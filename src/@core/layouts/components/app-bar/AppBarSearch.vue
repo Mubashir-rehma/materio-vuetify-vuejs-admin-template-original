@@ -36,19 +36,14 @@
 
         <!-- Slot: Append -->
         <template #append>
-          <v-icon
-            @click="shallShowFullSearchLocal = false"
-          >
+          <v-icon @click="shallShowFullSearchLocal = false">
             {{ icons.mdiClose }}
           </v-icon>
         </template>
 
         <!-- Slot: Item -->
-        <template #item="{ item, on, attrs }">
-          <div
-            v-bind="attrs"
-            v-on="on"
-          >
+        <template #item="{ item }">
+          <div>
             <!-- Section: Pages -->
             <div
               v-if="getSearchResultType(item) === 'pages'"

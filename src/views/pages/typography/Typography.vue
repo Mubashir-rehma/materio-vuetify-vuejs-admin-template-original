@@ -4,22 +4,22 @@
       cols="12"
       class="mb-6"
     >
-      <demo-headlines></demo-headlines>
+      <typography-headlines></typography-headlines>
     </v-col>
     <v-col cols="12">
-      <demo-texts></demo-texts>
+      <typography-texts></typography-texts>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import DemoHeadlines from './demos/DemoHeadlines.vue'
-import DemoTexts from './demos/DemoTexts.vue'
+import TypographyHeadlines from './TypographyHeadlines.vue'
+import TypographyTexts from './TypographyTexts.vue'
 
 export default {
   components: {
-    DemoHeadlines,
-    DemoTexts,
+    TypographyHeadlines,
+    TypographyTexts,
   },
 }
 </script>

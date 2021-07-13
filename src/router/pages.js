@@ -18,7 +18,7 @@ const pages = [
   {
     path: '/cards/basic',
     name: 'card-basic',
-    component: () => import('@/views/pages/cards/card-basic/CardBasic.vue'),
+    component: () => import('@/views/pages/cards/card-basic/Card.vue'),
     meta: {
       layout: 'content',
     },

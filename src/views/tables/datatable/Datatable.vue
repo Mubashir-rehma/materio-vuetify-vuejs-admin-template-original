@@ -6,7 +6,7 @@
         title="Basic"
         :code="codeSnippets.codeTableBasic"
       >
-        <demo-table-basic></demo-table-basic>
+        <datatable-basic></datatable-basic>
       </app-card-code>
     </v-col>
 
@@ -16,7 +16,7 @@
         title="Dense"
         :code="codeSnippets.codeTableDense"
       >
-        <demo-table-dense></demo-table-dense>
+        <datatable-dense></datatable-dense>
       </app-card-code>
     </v-col>
 
@@ -26,7 +26,7 @@
         title="Table Cell Slot"
         :code="codeSnippets.codeTableCellSlot"
       >
-        <demo-table-cell-slot></demo-table-cell-slot>
+        <datatable-cell-slot></datatable-cell-slot>
       </app-card-code>
     </v-col>
 
@@ -36,7 +36,7 @@
         title="Row selection"
         :code="codeSnippets.codeTableRowSelection"
       >
-        <demo-table-row-selection></demo-table-row-selection>
+        <datatable-row-selection></datatable-row-selection>
       </app-card-code>
     </v-col>
 
@@ -46,7 +46,7 @@
         title="Fixed Header"
         :code="codeSnippets.codeTableFixedHeader"
       >
-        <demo-table-fixed-header></demo-table-fixed-header>
+        <datatable-fixed-header></datatable-fixed-header>
       </app-card-code>
     </v-col>
 
@@ -56,7 +56,7 @@
         title="Grouping"
         :code="codeSnippets.codeTableGrouping"
       >
-        <demo-table-grouping></demo-table-grouping>
+        <datatable-grouping></datatable-grouping>
       </app-card-code>
     </v-col>
 
@@ -66,7 +66,7 @@
         title="Expandable Rows"
         :code="codeSnippets.codeTableExpandableRows"
       >
-        <demo-table-expandable-rows></demo-table-expandable-rows>
+        <datatable-expandable-rows></datatable-expandable-rows>
       </app-card-code>
     </v-col>
 
@@ -76,7 +76,7 @@
         title="Row Editing via dialog"
         :code="codeSnippets.codeTableRowEditingViaDialog"
       >
-        <demo-table-row-editing-via-dialog></demo-table-row-editing-via-dialog>
+        <datatable-row-editing-via-dialog></datatable-row-editing-via-dialog>
       </app-card-code>
     </v-col>
 
@@ -86,7 +86,7 @@
         title="Cell Editing via dialog"
         :code="codeSnippets.codeTableCellEditingViaDialog"
       >
-        <demo-table-cell-editor-via-dialog></demo-table-cell-editor-via-dialog>
+        <datatable-cell-editor-via-dialog></datatable-cell-editor-via-dialog>
       </app-card-code>
     </v-col>
 
@@ -96,7 +96,7 @@
         title="External Pagination"
         :code="codeSnippets.codeTableExternalPagination"
       >
-        <demo-table-external-pagination></demo-table-external-pagination>
+        <datatable-external-pagination></datatable-external-pagination>
       </app-card-code>
     </v-col>
 
@@ -106,7 +106,7 @@
         title="Kitchen Sink"
         :code="codeSnippets.codeTableKitchenSink"
       >
-        <demo-table-kitchen-sink></demo-table-kitchen-sink>
+        <datatable-kitchen-sink></datatable-kitchen-sink>
       </app-card-code>
     </v-col>
   </v-row>
@@ -115,18 +115,18 @@
 <script>
 import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 
-// Demos
-import DemoTableBasic from './demos/DemoTableBasic.vue'
-import DemoTableDense from './demos/DemoTableDense.vue'
-import DemoTableCellSlot from './demos/DemoTableCellSlot.vue'
-import DemoTableFixedHeader from './demos/DemoTableFixedHeader.vue'
-import DemoTableGrouping from './demos/DemoTableGrouping.vue'
-import DemoTableExpandableRows from './demos/DemoTableExpandableRows.vue'
-import DemoTableRowEditingViaDialog from './demos/DemoTableRowEditingViaDialog.vue'
-import DemoTableCellEditorViaDialog from './demos/DemoTableCellEditorViaDialog.vue'
-import DemoTableExternalPagination from './demos/DemoTableExternalPagination.vue'
-import DemoTableKitchenSink from './demos/DemoTableKitchenSink.vue'
-import DemoTableRowSelection from './demos/DemoTableRowSelection.vue'
+// demos
+import DatatableBasic from './DatatableBasic.vue'
+import DatatableDense from './DatatableDense.vue'
+import DatatableFixedHeader from './DatatableFixedHeader.vue'
+import DatatableGrouping from './DatatableGrouping.vue'
+import DatatableCellSlot from './DatatableCellSlot.vue'
+import DatatableExpandableRows from './DatatableExpandableRows.vue'
+import DatatableRowEditingViaDialog from './DatatableRowEditingViaDialog.vue'
+import DatatableCellEditorViaDialog from './DatatableCellEditorViaDialog.vue'
+import DatatableExternalPagination from './DatatableExternalPagination.vue'
+import DatatableKitchenSink from './DatatableKitchenSink.vue'
+import DatatableRowSelection from './DatatableRowSelection.vue'
 
 // code
 import {
@@ -141,22 +141,22 @@ import {
   codeTableExternalPagination,
   codeTableKitchenSink,
   codeTableRowSelection,
-} from './demos/code'
+} from './code'
 
 export default {
   components: {
-    DemoTableBasic,
     AppCardCode,
-    DemoTableDense,
-    DemoTableCellSlot,
-    DemoTableFixedHeader,
-    DemoTableGrouping,
-    DemoTableExpandableRows,
-    DemoTableRowEditingViaDialog,
-    DemoTableCellEditorViaDialog,
-    DemoTableExternalPagination,
-    DemoTableKitchenSink,
-    DemoTableRowSelection,
+    DatatableBasic,
+    DatatableDense,
+    DatatableCellSlot,
+    DatatableFixedHeader,
+    DatatableGrouping,
+    DatatableExpandableRows,
+    DatatableRowEditingViaDialog,
+    DatatableCellEditorViaDialog,
+    DatatableExternalPagination,
+    DatatableKitchenSink,
+    DatatableRowSelection,
   },
   setup() {
     return {

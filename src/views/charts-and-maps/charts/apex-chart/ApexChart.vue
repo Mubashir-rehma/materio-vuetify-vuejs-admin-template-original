@@ -20,7 +20,7 @@
           Commercial networks
         </v-card-subtitle>
         <v-card-text>
-          <demo-apex-chart-line-chart></demo-apex-chart-line-chart>
+          <apex-chart-line-chart></apex-chart-line-chart>
         </v-card-text>
       </v-card>
     </v-col>
@@ -42,7 +42,7 @@
           </span>
         </v-card-title>
         <v-card-text>
-          <demo-apex-chart-data-science></demo-apex-chart-data-science>
+          <apex-chart-data-science></apex-chart-data-science>
         </v-card-text>
       </v-card>
     </v-col>
@@ -78,7 +78,7 @@
           </v-btn-toggle>
         </v-card-title>
         <v-card-text>
-          <demo-apex-chart-new-technologies-data></demo-apex-chart-new-technologies-data>
+          <apex-chart-new-technologies-data></apex-chart-new-technologies-data>
         </v-card-text>
       </v-card>
     </v-col>
@@ -95,7 +95,7 @@
           Commercial networks & enterprises
         </v-card-subtitle>
         <v-card-text>
-          <demo-apex-chart-balance></demo-apex-chart-balance>
+          <apex-chart-balance></apex-chart-balance>
         </v-card-text>
       </v-card>
     </v-col>
@@ -123,7 +123,7 @@
           <h3>$74,382.72</h3>
         </v-card-text>
         <v-card-text>
-          <demo-apex-chart-bar></demo-apex-chart-bar>
+          <apex-chart-bar></apex-chart-bar>
         </v-card-text>
       </v-card>
     </v-col>
@@ -151,7 +151,7 @@
           $50,863.98
         </v-card-subtitle>
         <v-card-text>
-          <demo-apex-chart-stock-price></demo-apex-chart-stock-price>
+          <apex-chart-stock-price></apex-chart-stock-price>
         </v-card-text>
       </v-card>
     </v-col>
@@ -165,7 +165,7 @@
         <v-card-title>Daily Sales States</v-card-title>
 
         <v-card-text>
-          <demo-apex-chart-daily-sales-states></demo-apex-chart-daily-sales-states>
+          <apex-chart-daily-sales-states></apex-chart-daily-sales-states>
         </v-card-text>
       </v-card>
     </v-col>
@@ -181,7 +181,7 @@
         </v-card-title>
 
         <v-card-text>
-          <demo-apex-chart-statistics></demo-apex-chart-statistics>
+          <apex-chart-statistics></apex-chart-statistics>
         </v-card-text>
       </v-card>
     </v-col>
@@ -196,7 +196,7 @@
           Mobile Comparison
         </v-card-title>
         <v-card-text>
-          <demo-apex-chart-mobile-comparison></demo-apex-chart-mobile-comparison>
+          <apex-chart-mobile-comparison></apex-chart-mobile-comparison>
         </v-card-text>
       </v-card>
     </v-col>
@@ -214,7 +214,7 @@
           Spending on various categories
         </v-card-subtitle>
         <v-card-text>
-          <demo-apex-chart-expense-ratio></demo-apex-chart-expense-ratio>
+          <apex-chart-expense-ratio></apex-chart-expense-ratio>
         </v-card-text>
       </v-card>
     </v-col>
@@ -225,29 +225,29 @@
 import { mdiCalendarBlankOutline } from '@mdi/js'
 
 // demos
-import DemoApexChartLineChart from './demos/DemoApexChartLineChart.vue'
-import DemoApexChartDataScience from './demos/DemoApexChartDataScience.vue'
-import DemoApexChartNewTechnologiesData from './demos/DemoApexChartNewTechnologiesData.vue'
-import DemoApexChartBalance from './demos/DemoApexChartBalance.vue'
-import DemoApexChartStockPrice from './demos/DemoApexChartStockPrice.vue'
-import DemoApexChartBar from './demos/DemoApexChartBar.vue'
-import DemoApexChartDailySalesStates from './demos/DemoApexChartDailySalesStates.vue'
-import DemoApexChartStatistics from './demos/DemoApexChartStatistics.vue'
-import DemoApexChartMobileComparison from './demos/DemoApexChartMobileComparison.vue'
-import DemoApexChartExpenseRatio from './demos/DemoApexChartExpenseRatio.vue'
+import ApexChartLineChart from './ApexChartLineChart.vue'
+import ApexChartDataScience from './ApexChartDataScience.vue'
+import ApexChartNewTechnologiesData from './ApexChartNewTechnologiesData.vue'
+import ApexChartBalance from './ApexChartBalance.vue'
+import ApexChartStockPrice from './ApexChartStockPrice.vue'
+import ApexChartBar from './ApexChartBar.vue'
+import ApexChartDailySalesStates from './ApexChartDailySalesStates.vue'
+import ApexChartStatistics from './ApexChartStatistics.vue'
+import ApexChartMobileComparison from './ApexChartMobileComparison.vue'
+import ApexChartExpenseRatio from './ApexChartExpenseRatio.vue'
 
 export default {
   components: {
-    DemoApexChartLineChart,
-    DemoApexChartDataScience,
-    DemoApexChartNewTechnologiesData,
-    DemoApexChartBalance,
-    DemoApexChartStockPrice,
-    DemoApexChartBar,
-    DemoApexChartDailySalesStates,
-    DemoApexChartStatistics,
-    DemoApexChartMobileComparison,
-    DemoApexChartExpenseRatio,
+    ApexChartLineChart,
+    ApexChartDataScience,
+    ApexChartNewTechnologiesData,
+    ApexChartBalance,
+    ApexChartStockPrice,
+    ApexChartBar,
+    ApexChartDailySalesStates,
+    ApexChartStatistics,
+    ApexChartMobileComparison,
+    ApexChartExpenseRatio,
   },
   setup() {
     return {

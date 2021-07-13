@@ -1,10 +1,10 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="usreList"
+    :items="userList"
     :items-per-page="5"
-    item-key="full_name"
-    show-select
+    :expanded.sync="expanded"
+    show-expand
   >
     <!-- name -->
     <template #[`item.full_name`]="{item}">
@@ -18,9 +18,7 @@
             v-if="item.avatar"
             :src="`/images/avatars/${item.avatar}`"
           ></v-img>
-          <span
-            v-else
-          >{{ item.full_name.slice(0,2).toUpperCase() }}</span>
+          <span v-else>{{ item.full_name.slice(0,2).toUpperCase() }}</span>
         </v-avatar>
         <div class="d-flex flex-column ms-3">
           <span class="d-block font-weight-semibold text--primary text-truncate">{{ item.full_name }}</span>
@@ -29,6 +27,7 @@
       </div>
     </template>
 
+    <!-- salary -->
     <template #[`item.salary`]="{item}">
       {{ `$${item.salary}` }}
     </template>
@@ -44,12 +43,26 @@
         {{ status[item.status] }}
       </v-chip>
     </template>
+
+    <!-- expandad data -->
+    <template #expanded-item="{ headers, item }">
+      <td :colspan="headers.length">
+        <p class="my-1">
+          City: {{ item.city }}
+        </p>
+        <p class="mb-1">
+          Experience: {{ item.experience }}
+        </p>
+        <p>Post: {{ item.post }}</p>
+      </td>
+    </template>
   </v-data-table>
 </template>
 
 <script>
+import { ref } from '@vue/composition-api'
 import { mdiSquareEditOutline, mdiDotsVertical } from '@mdi/js'
-import data from '../datatable'
+import data from './datatable'
 
 export default {
   setup() {
@@ -62,6 +75,7 @@ export default {
       Applied: 'info',
       /* eslint-enable key-spacing */
     }
+    const expanded = ref([])
 
     return {
       headers: [
@@ -72,7 +86,7 @@ export default {
         { text: 'AGE', value: 'age' },
         { text: 'STATUS', value: 'status' },
       ],
-      usreList: data,
+      userList: data,
       status: {
         1: 'Current',
         2: 'Professional',
@@ -81,6 +95,7 @@ export default {
         5: 'Applied',
       },
       statusColor,
+      expanded,
 
       // icons
       icons: {

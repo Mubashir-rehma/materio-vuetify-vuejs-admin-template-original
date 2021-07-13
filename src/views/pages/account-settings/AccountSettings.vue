@@ -54,11 +54,11 @@ import {
 import { ref } from '@vue/composition-api'
 
 // demos
-import AccountSettingsAccount from './demos/AccountSettingsAccount.vue'
-import AccountSettingsSecurity from './demos/AccountSettingsSecurity.vue'
-import AccountSettingsInfo from './demos/AccountSettingsInfo.vue'
-import AccountSettingsBilling from './demos/AccountSettingsBilling.vue'
-import AccountSettingsNotification from './demos/AccountSettingsNotification.vue'
+import AccountSettingsAccount from './AccountSettingsAccount.vue'
+import AccountSettingsSecurity from './AccountSettingsSecurity.vue'
+import AccountSettingsInfo from './AccountSettingsInfo.vue'
+import AccountSettingsBilling from './AccountSettingsBilling.vue'
+import AccountSettingsNotification from './AccountSettingsNotification.vue'
 
 export default {
   components: {
@@ -92,8 +92,7 @@ export default {
         company: 'Google.inc',
       },
       information: {
-        bio:
-          'The name’s John Deo. I am a tireless seeker of knowledge, occasional purveyor of wisdom and also, coincidentally, a graphic designer. Algolia helps businesses across industries quickly create relevant 😎, scaLabel 😀, and lightning 😍 fast search and discovery experiences.',
+        bio: 'The name’s John Deo. I am a tireless seeker of knowledge, occasional purveyor of wisdom and also, coincidentally, a graphic designer. Algolia helps businesses across industries quickly create relevant 😎, scaLabel 😀, and lightning 😍 fast search and discovery experiences.',
         birthday: 'February 22, 1995',
         phone: '954-006-0844',
         website: 'https://pixinvent.com/',

@@ -65,15 +65,15 @@
   </v-row>
 </template>
 <script>
-import ChartjsBarChart from './demos/ChartjsBarChart.vue'
-import ChartjsHorizontalBarChart from './demos/ChartjsHorizontalBarChart.vue'
-import ChartjsLineChart from './demos/ChartjsLineChart.vue'
-import ChartjsRadarChart from './demos/ChartjsRadarChart.vue'
-import ChartjsPolarAreaChart from './demos/ChartjsPolarAreaChart.vue'
-import ChartjsBubbleChart from './demos/ChartjsBubbleChart.vue'
-import ChartjsDoughnutChart from './demos/ChartjsDoughnutChart.vue'
-import ChartjsScatterChart from './demos/ChartjsScatterChart.vue'
-import ChartjsLineAreaChart from './demos/ChartjsLineAreaChart.vue'
+import ChartjsBarChart from './ChartjsBarChart.vue'
+import ChartjsHorizontalBarChart from './ChartjsHorizontalBarChart.vue'
+import ChartjsLineChart from './ChartjsLineChart.vue'
+import ChartjsRadarChart from './ChartjsRadarChart.vue'
+import ChartjsPolarAreaChart from './ChartjsPolarAreaChart.vue'
+import ChartjsBubbleChart from './ChartjsBubbleChart.vue'
+import ChartjsDoughnutChart from './ChartjsDoughnutChart.vue'
+import ChartjsScatterChart from './ChartjsScatterChart.vue'
+import ChartjsLineAreaChart from './ChartjsLineAreaChart.vue'
 
 export default {
   components: {

@@ -61,7 +61,7 @@
         cols="12"
         md="8"
       >
-        <demo-statistics-card></demo-statistics-card>
+        <statistics-card></statistics-card>
       </v-col>
 
       <!-- Total Sales -->
@@ -69,7 +69,7 @@
         cols="12"
         md="4"
       >
-        <demo-statistics-total-sales></demo-statistics-total-sales>
+        <statistics-total-sales></statistics-total-sales>
       </v-col>
       <!-- vertical statistics card -->
       <v-col
@@ -321,8 +321,8 @@ import StatisticsCardProfitLineChart from '@core/components/statistics-card/Stat
 import { mdiAccountOutline, mdiCurrencyUsd, mdiTrendingUp, mdiPoll, mdiLabelVariantOutline, mdiCheck } from '@mdi/js'
 
 // demos
-import DemoStatisticsCard from './demos/DemoStatisticsCard.vue'
-import DemoStatisticsTotalSales from './demos/DemoStatisticsTotalSales.vue'
+import StatisticsCard from './CardStatisticsCard.vue'
+import StatisticsTotalSales from './CardStatisticsTotalSales.vue'
 
 export default {
   components: {
@@ -336,8 +336,8 @@ export default {
     StatisticsCardSessionBarChart,
     StatisticsCardProfitLineChart,
 
-    DemoStatisticsCard,
-    DemoStatisticsTotalSales,
+    StatisticsCard,
+    StatisticsTotalSales,
   },
   setup() {
     // transparent background card

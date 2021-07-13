@@ -1,17 +1,18 @@
 <template>
   <v-data-table
     :headers="headers"
-    :items="userList"
+    :items="userData"
     :items-per-page="5"
-    dense
   ></v-data-table>
 </template>
 
 <script>
-import data from '../datatable'
+import data from './datatable'
 
 export default {
   setup() {
+    const userData = data
+
     return {
       headers: [
         { text: 'ID', sortable: false, value: 'id' },
@@ -21,7 +22,7 @@ export default {
         { text: 'EXPERIENCE', value: 'experience' },
         { text: 'AGE', value: 'age' },
       ],
-      userList: data,
+      userData,
     }
   },
 }

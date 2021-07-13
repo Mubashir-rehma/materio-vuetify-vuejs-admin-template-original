@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import LeafletBasic from './demos/LeafletBasic.vue'
-import LeafletMarkerCirclePolygon from './demos/LeafletMarkerCirclePolygon.vue'
-import LeafletPopup from './demos/LeafletPopup.vue'
-import LeafletGeoJSON from './demos/LeafletGeoJSON.vue'
-import LeafletGroup from './demos/LeafletGroup.vue'
-import LeafletCustomIcon from './demos/LeafletCustomIcon.vue'
+import LeafletBasic from './LeafletBasic.vue'
+import LeafletMarkerCirclePolygon from './LeafletMarkerCirclePolygon.vue'
+import LeafletPopup from './LeafletPopup.vue'
+import LeafletGeoJSON from './LeafletGeoJSON.vue'
+import LeafletGroup from './LeafletGroup.vue'
+import LeafletCustomIcon from './LeafletCustomIcon.vue'
 
 export default {
   components: {

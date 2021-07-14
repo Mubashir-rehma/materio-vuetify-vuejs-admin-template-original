@@ -13,6 +13,7 @@
     <v-expand-transition>
       <v-autocomplete
         v-show="shallShowFullSearchLocal"
+        ref="refAutocomplete"
         :search-input.sync="searchQuery"
         :items="data"
         item-text="title"
@@ -26,10 +27,10 @@
         :filter="filter"
         auto-select-first
         :prepend-inner-icon="icons.mdiMagnify"
-        autofocus
         :menu-props="{ maxHeight: 500, transition: 'slide-y-transition', contentClass: 'list-style' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
+        @blur="shallShowFullSearchLocal = false"
       >
         <!-- Slot: Selection -->
         <template #selection></template>
@@ -125,10 +126,18 @@ export default {
   setup(props, { emit }) {
     const shallShowFullSearchLocal = useVModel(props, 'shallShowFullSearch', emit)
     const searchQuery = ref('')
+    const refAutocomplete = ref(null)
 
     watch(shallShowFullSearchLocal, value => {
       if (!value) searchQuery.value = ''
       store.commit('app/TOGGLE_CONTENT_OVERLAY', value)
+
+      // ? We create our own autofucs logic because `autofocus` prop was creating issue on `esc` key
+      if (value) {
+        setTimeout(() => {
+          refAutocomplete.value.focus()
+        }, 150)
+      }
     })
 
     const { router } = useRouter()
@@ -157,6 +166,7 @@ export default {
     }
 
     return {
+      refAutocomplete,
       shallShowFullSearchLocal,
       searchQuery,
       valueSelected,

@@ -11,24 +11,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/home',
-  },
-  {
-    path: '/home',
-    name: 'home',
-    component: () => import('@/views/Home.vue'),
-    meta: {
-      layout: 'content',
-      resource: 'Dashboard',
-    },
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/About.vue'),
-    meta: {
-      layout: 'content',
-    },
+    redirect: '/dashboards/crm',
   },
   {
     path: '/error-404',

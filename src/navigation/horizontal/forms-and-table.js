@@ -23,8 +23,16 @@ export default [
             to: 'form-combobox',
           },
           {
+            title: 'Date Picker',
+            to: 'form-datepicker',
+          },
+          {
             title: 'File Input',
             to: 'form-file-input',
+          },
+          {
+            title: 'Month Picker',
+            to: 'form-month-picker',
           },
           {
             title: 'Radio',
@@ -33,6 +41,10 @@ export default [
           {
             title: 'Range Slider',
             to: 'form-range-slider',
+          },
+          {
+            title: 'Rating',
+            to: 'form-rating',
           },
           {
             title: 'Select',
@@ -55,20 +67,8 @@ export default [
             to: 'form-textfield',
           },
           {
-            title: 'Date Picker',
-            to: 'form-datepicker',
-          },
-          {
-            title: 'Month Picker',
-            to: 'form-month-picker',
-          },
-          {
             title: 'Time Picker',
             to: 'form-time-picker',
-          },
-          {
-            title: 'Rating',
-            to: 'form-rating',
           },
         ],
       },

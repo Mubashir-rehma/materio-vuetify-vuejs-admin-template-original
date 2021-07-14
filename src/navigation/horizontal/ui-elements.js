@@ -74,9 +74,14 @@ export default [
             to: 'components-button',
           },
           {
-            title: 'Menu',
-            to: 'components-menu',
+            title: 'Chip',
+            to: 'components-chip',
           },
+          {
+            title: 'Dialog',
+            to: 'components-dialog',
+          },
+
           {
             title: 'Expansion Panel',
             to: 'components-expansion-panel',
@@ -86,25 +91,14 @@ export default [
             to: 'components-list',
           },
           {
-            title: 'Dialog',
-            to: 'components-dialog',
+            title: 'Menu',
+            to: 'components-menu',
           },
           {
             title: 'Pagination',
             to: 'components-pagination',
           },
-          {
-            title: 'Tabs',
-            to: 'components-tabs',
-          },
-          {
-            title: 'Tooltip',
-            to: 'components-tooltip',
-          },
-          {
-            title: 'Chip',
-            to: 'components-chip',
-          },
+
           {
             title: 'Snackbar',
             to: 'components-snackbar',
@@ -114,8 +108,16 @@ export default [
             to: 'components-stepper',
           },
           {
+            title: 'Tabs',
+            to: 'components-tabs',
+          },
+          {
             title: 'Timeline',
             to: 'components-timeline',
+          },
+          {
+            title: 'Tooltip',
+            to: 'components-tooltip',
           },
           {
             title: 'Treeview',

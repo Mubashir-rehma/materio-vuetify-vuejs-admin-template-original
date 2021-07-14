@@ -151,8 +151,8 @@ export default {
 
     // Hotkey
     // eslint-disable-next-line camelcase
-    const { ctrl_slash } = useMagicKeys()
-    whenever(ctrl_slash, () => {
+    const { ctrl_shift_slash } = useMagicKeys()
+    whenever(ctrl_shift_slash, () => {
       shallShowFullSearchLocal.value = true
     })
 

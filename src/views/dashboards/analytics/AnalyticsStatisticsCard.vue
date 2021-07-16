@@ -15,7 +15,7 @@
     </v-card-title>
 
     <v-card-subtitle class="mb-8 mt-n5">
-      <span class="font-weight-semibold text--primary me-1">Total 48.5% groth</span>
+      <span class="font-weight-semibold text--primary me-1">Total 48.5% Growth</span>
       <span>😎 this month</span>
     </v-card-subtitle>
 

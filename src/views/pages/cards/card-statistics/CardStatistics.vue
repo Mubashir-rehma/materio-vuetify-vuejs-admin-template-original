@@ -510,7 +510,7 @@ export default {
     }
 
     const growthAreaChart = {
-      statTitle: 'Total Groth',
+      statTitle: 'Total Growth',
       statistics: '42.5k',
       series: [
         {

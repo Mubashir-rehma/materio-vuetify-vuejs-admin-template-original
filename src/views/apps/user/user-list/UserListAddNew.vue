@@ -199,13 +199,13 @@ export default {
     const resetuserData = () => {
       userData.value = JSON.parse(JSON.stringify(blankUserData))
       resetForm()
-      emit('refetch-data')
       emit('update:is-add-new-user-sidebar-active', false)
     }
 
     const onSubmit = () => {
       if (valid.value) {
         store.dispatch('app-user/addUser', userData.value).then(() => {
+          emit('refetch-data')
           emit('update:is-add-new-user-sidebar-active', false)
         })
 

@@ -180,8 +180,7 @@
             <div class="d-flex flex-column ms-3">
               <router-link
                 :to="{ name : 'apps-user-view', params : { id : item.id } }"
-                tag="span"
-                class="text--primary font-weight-semibold text-truncate cursor-pointer"
+                class="text--primary font-weight-semibold text-truncate cursor-pointer text-decoration-none"
               >
                 {{ item.fullName }}
               </router-link>

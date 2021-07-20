@@ -48,7 +48,7 @@
 
         <!-- Payment Details -->
         <v-card-text class="py-9 px-8">
-          <div class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
+          <div class="payment-details d-flex justify-space-between flex-wrap flex-column flex-sm-row">
             <div class="mb-8 mb-sm-0">
               <p class="font-weight-semibold payment-details-header">
                 Invoice To:
@@ -168,7 +168,7 @@
 
         <!-- Total -->
         <v-card-text class="py-9 px-8">
-          <div class="d-flex justify-space-between flex-column flex-sm-row">
+          <div class="invoice-total d-flex justify-space-between flex-column flex-sm-row">
             <div class="mb-2 mb-sm-0">
               <p class="mb-1">
                 <span class="font-weight-semibold">Salesperson:</span> <span>Jenny Parker</span>
@@ -423,6 +423,16 @@ export default {
 
   .v-card {
     box-shadow: none !important;
+  }
+
+  .app-invoice-preview {
+    .invoice-header,
+    .payment-details,
+    .invoice-total {
+      &.d-flex {
+        flex-direction: row !important;
+      }
+    }
   }
 }
 </style>

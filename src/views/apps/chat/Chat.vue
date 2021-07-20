@@ -61,7 +61,7 @@
           <div class="d-flex align-center">
             <v-btn
               icon
-              class="me-1 d-inline-block d-md-none"
+              class="me-2 d-inline-block d-md-none"
             >
               <v-icon
                 v-show="!isLeftSidebarOpen"

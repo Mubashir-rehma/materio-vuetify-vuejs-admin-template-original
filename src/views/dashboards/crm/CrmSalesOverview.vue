@@ -99,12 +99,11 @@
 
 <script>
 import { mdiDotsVertical, mdiCurrencyUsd } from '@mdi/js'
-import VueApexCharts from 'vue-apexcharts'
 import { getVuetify, addAlpha } from '@core/utils'
 
 export default {
   components: {
-    VueApexCharts,
+    VueApexCharts: () => import('vue-apexcharts'),
   },
   setup() {
     const $vuetify = getVuetify()

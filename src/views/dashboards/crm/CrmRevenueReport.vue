@@ -21,13 +21,11 @@
 </template>
 
 <script>
-import VueApexCharts from 'vue-apexcharts'
-
 import { getVuetify } from '@core/utils'
 
 export default {
   components: {
-    VueApexCharts,
+    VueApexCharts: () => import('vue-apexcharts'),
   },
   setup() {
     const $vuetify = getVuetify()

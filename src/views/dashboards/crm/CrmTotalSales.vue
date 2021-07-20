@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import VueApexCharts from 'vue-apexcharts'
 // eslint-disable-next-line object-curly-newline
 import { mdiDotsVertical, mdiChevronUp } from '@mdi/js'
 
@@ -49,7 +48,7 @@ import { getVuetify } from '@core/utils'
 
 export default {
   components: {
-    VueApexCharts,
+    VueApexCharts: () => import('vue-apexcharts'),
   },
   setup() {
     const $vuetify = getVuetify()

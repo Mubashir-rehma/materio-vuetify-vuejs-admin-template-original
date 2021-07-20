@@ -20,11 +20,10 @@
 </template>
 
 <script>
-import VueApexCharts from 'vue-apexcharts'
 import { computed } from '@vue/composition-api'
 
 export default {
-  components: { VueApexCharts },
+  components: { VueApexCharts: () => import('vue-apexcharts') },
   props: {
     statistics: { type: String, default: '' },
     statTitle: { type: String, default: '' },

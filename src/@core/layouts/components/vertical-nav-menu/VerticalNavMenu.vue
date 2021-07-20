@@ -184,7 +184,12 @@ export default {
 
   .v-list-item__icon {
     &:first-child {
-      margin: 0 12px 0 0;
+      @include ltr() {
+        margin: 0 12px 0 0;
+      }
+      @include rtl() {
+        margin: 0 0 0 12px;
+      }
       align-self: center;
     }
     &.v-list-group__header__append-icon {

@@ -6,8 +6,8 @@ const themeConfig = {
     logo: '/logo.svg',
     isDark: false,
     isRtl: false,
-    contentLayoutNav: 'vertical',
-    routeTransition: 'scroll-x-transition',
+    contentLayoutNav: 'vertical', // vertical, horizontal
+    routeTransition: 'scroll-x-transition', // https://vuetifyjs.com/en/styles/transitions/#api
     contentWidth: 'boxed',
   },
   menu: {
@@ -22,10 +22,10 @@ const themeConfig = {
     ! In Content Layout Horizontal Nav type `hidden` value won't work
     ! In Content Layout Horizontal Nav type value of `type` will affect both Appbar and Horizontal Navigation Menu
     */
-    type: 'fixed',
+    type: 'fixed', // fixed, static, hidden
   },
   footer: {
-    type: 'static',
+    type: 'fixed', // fixed, static, hidden
   },
   themes: {
     light: {

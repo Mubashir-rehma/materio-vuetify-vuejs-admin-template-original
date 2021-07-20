@@ -12,4 +12,5 @@ export default {
         ? themeConfig.app.isDark
         : localStorage.getItem('active-theme') === 'dark',
   },
+  rtl: themeConfig.app.isRtl,
 }

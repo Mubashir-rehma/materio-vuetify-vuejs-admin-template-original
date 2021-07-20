@@ -751,11 +751,12 @@ $btn-custom-heights: (
         margin-right: 14px;
       }
       .v-input__append-inner {
-        align-self: center;
+        align-self: flex-start;
       }
 
       .v-select {
         margin-bottom: 6px !important;
+        margin-top: 8px !important;
         @include ltr() {
           margin-left: 6px;
         }

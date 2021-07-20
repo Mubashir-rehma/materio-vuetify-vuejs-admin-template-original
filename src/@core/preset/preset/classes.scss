@@ -27,12 +27,12 @@
   // ? We have 3 style tag because of responsiveness
   .v-main {
     // If AppBar & Footer is present
-    &[style='padding: 64px 0px 48px 260px;'],
-    &[style='padding: 64px 260px 48px 0px;'], // RTL
-    &[style='padding: 64px 0px 48px;'],
-    &[style='padding: 56px 0px 48px;'] {
+    &[style='padding: 64px 0px 56px 260px;'],
+    &[style='padding: 64px 260px 56px 0px;'], // RTL
+    &[style='padding: 64px 0px 56px;'],
+    &[style='padding: 56px 0px 56px;'] {
       .max-h-content-container {
-        height: calc(100vh - 64px - 48px - (1.5rem * 2));
+        height: calc(100vh - 64px - 56px - (1.5rem * 2));
       }
     }
     // If AppBar is present and Footer is not present
@@ -45,11 +45,11 @@
       }
     }
     // If AppBar is not present and Footer is present
-    &[style='padding: 0px 0px 48px 260px;'],
-    &[style='padding: 0px 260px 48px 0px;'], // RTL
-    &[style='padding: 0px 0px 48px;'] {
+    &[style='padding: 0px 0px 56px 260px;'],
+    &[style='padding: 0px 260px 56px 0px;'], // RTL
+    &[style='padding: 0px 0px 56px;'] {
       .max-h-content-container {
-        height: calc(100vh - 48px - (1.5rem * 2));
+        height: calc(100vh - 56px - (1.5rem * 2));
       }
     }
     // If AppBar & footer both are not present
@@ -67,9 +67,9 @@
   // Set height for contents like apps to don't increase the height for longer content and stick to fixed height
   .v-main {
     // If AppBar+SystemBar & Footer are present
-    &[style='padding: 128px 0px 48px;'] {
+    &[style='padding: 128px 0px 56px;'] {
       .max-h-content-container {
-        height: calc(100vh - 128px - 48px - (1.5rem * 2));
+        height: calc(100vh - 128px - 56px - (1.5rem * 2));
       }
     }
     // If AppBar+SystemBar are present & Footer is not present

@@ -30,7 +30,7 @@
     &[style='padding: 64px 0px 56px 260px;'],
     &[style='padding: 64px 260px 56px 0px;'], // RTL
     &[style='padding: 64px 0px 56px;'],
-    &[style='padding: 56px 0px 56px;'] {
+    &[style='padding: 56px 0px;'] {
       .max-h-content-container {
         height: calc(100vh - 64px - 56px - (1.5rem * 2));
       }

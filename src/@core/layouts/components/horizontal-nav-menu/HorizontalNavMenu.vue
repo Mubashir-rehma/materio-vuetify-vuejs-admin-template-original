@@ -65,11 +65,20 @@ export default {
   }
 
   // Fixes: Items drop on second row
-  @media screen and (min-width: 1264px) and (max-width: 1326px) {
+  @media screen and (max-width: 1400px) {
     .v-application .v-app-bar.v-toolbar.navigation-menu .v-toolbar__content & {
       padding: 0 !important;
       display: flex;
       justify-content: center;
+
+      > .v-btn {
+        @include ltr() {
+          margin-right: 0 !important;
+        }
+        @include rtl() {
+          margin-left: 0 !important;
+        }
+      }
     }
   }
 }

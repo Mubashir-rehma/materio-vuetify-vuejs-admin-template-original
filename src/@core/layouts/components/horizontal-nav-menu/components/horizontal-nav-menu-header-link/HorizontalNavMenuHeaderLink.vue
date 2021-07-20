@@ -6,7 +6,7 @@
     rounded
     :to="{ name: item.to }"
     large
-    class="horizontal-nav-menu-header-link"
+    class="horizontal-nav-menu-header-link px-6"
     active-class="bg-gradient-primary header-link-active"
   >
     <v-icon

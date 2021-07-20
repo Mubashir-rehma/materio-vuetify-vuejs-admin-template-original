@@ -38,8 +38,9 @@ export default {
 
     const resolveLayoutVariant = computed(() => {
       if (route.value.meta.layout === 'blank') return 'layout-blank'
+      if (route.value.meta.layout === 'content') return `layout-content-${appContentLayoutNav.value}-nav`
 
-      return `layout-content-${appContentLayoutNav.value}-nav`
+      return null
     })
 
     return {

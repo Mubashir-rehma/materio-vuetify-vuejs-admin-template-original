@@ -169,7 +169,7 @@ button {
 @include app-elevation('v-sheet.v-alert:not(.v-sheet--outlined)', $alert-elevation);
 
 // VAppBar
-@include app-elevation('v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined)', $app-bar-elevation, true);
+@include app-elevation('v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined)', $app-bar-elevation);
 
 // VBanner
 @include app-elevation('v-sheet.v-banner:not(.v-sheet--outlined)', $banner-elevation, true);
@@ -178,7 +178,7 @@ button {
 @include app-elevation('v-sheet.v-card:not(.v-sheet--outlined)', $card-elevation);
 
 // VFooter
-@include app-elevation('v-sheet.v-footer:not(.v-sheet--outlined)', $footer-elevation, true);
+@include app-elevation('v-sheet.v-footer:not(.v-sheet--outlined)', $footer-elevation);
 
 // VList
 @include app-elevation('v-sheet.v-list:not(.v-sheet--outlined)', $list-elevation);
@@ -187,7 +187,7 @@ button {
 @include app-elevation('v-sheet.v-snack__wrapper:not(.v-sheet--outlined)', $snackbar-elevation, true);
 
 // VToolbar
-@include app-elevation('v-sheet.v-toolbar:not(.v-sheet--outlined)', $toolbar-elevation, true);
+@include app-elevation('v-sheet.v-toolbar:not(.v-sheet--outlined)', $toolbar-elevation);
 
 //* ——— /shadows —————————————————— //
 

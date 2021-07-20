@@ -44,11 +44,11 @@
       }
     }
 
-// ————————————————————————————————————
-//* ——— Data table
-// ————————————————————————————————————
-  .v-data-table{
-    th {
+    // ————————————————————————————————————
+    //* ——— Data table
+    // ————————————————————————————————————
+    .v-data-table {
+      th {
         font-weight: 600;
         background-color: #3b355a !important;
       }
@@ -60,4 +60,17 @@
   stroke: map-deep-get($material, 'cards');
 }
 
+// ————————————————————————————————————
+//* ——— Perfect Scrollbar
+// ————————————————————————————————————
 
+.v-application.theme--dark {
+  .ps__rail-y,
+  .ps__rail-x {
+    background-color: map-deep-get($material-dark, 'cards');
+  }
+
+  .ps__thumb-y {
+    background-color: map-deep-get($material-dark, 'background');
+  }
+}

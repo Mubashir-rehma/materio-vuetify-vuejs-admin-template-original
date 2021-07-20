@@ -10,6 +10,7 @@
         max-width="30px"
         alt="logo"
         contain
+        eager
         class="app-logo me-3"
       ></v-img>
       <v-slide-x-transition>

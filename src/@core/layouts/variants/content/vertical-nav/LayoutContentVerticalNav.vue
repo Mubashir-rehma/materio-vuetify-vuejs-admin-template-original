@@ -17,6 +17,7 @@
       <vertical-nav-menu :nav-menu-items="navMenuItems" />
     </v-navigation-drawer>
 
+    <!-- TODO: All elevations are to bottom and footer requires shadow on top -->
     <v-app-bar
       v-if="appBarType !== 'hidden'"
       ref="refAppBar"
@@ -58,9 +59,12 @@
       :class="{'mx-auto': appContentWidth !== 'full'}"
       :color="footerType === 'static' ? 'transparent' : null"
     >
-      <v-col cols="12">
+      <div
+        :class="{'px-5': footerType === 'fixed'}"
+        class="py-4"
+      >
         <slot name="footer"></slot>
-      </v-col>
+      </div>
     </v-footer>
   </v-app>
 </template>
@@ -143,6 +147,17 @@ $nav-drawer-mini-width: 68px;
     transition-duration: 0.3s;
   }
 
+  .v-footer {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+  }
+  @include theme(v-footer) using ($material) {
+    // Elevation 3 with -y
+    &.v-footer--fixed {
+      box-shadow: 0 -4px 8px -4px rgba(map-deep-get($material, 'shadow-color'), 0.42) !important;
+    }
+  }
+
   &.nav-drawer-mini {
     .v-main {
       @include ltr() {
@@ -152,8 +167,8 @@ $nav-drawer-mini-width: 68px;
         padding-right: $nav-drawer-mini-width !important;
       }
     }
-    .v-footer,
-    .v-app-bar {
+    .app-navigation-menu ~ .v-footer,
+    .app-navigation-menu + .v-app-bar {
       left: $nav-drawer-mini-width !important;
     }
   }
@@ -161,6 +176,10 @@ $nav-drawer-mini-width: 68px;
   .v-app-bar,
   .v-footer {
     max-width: calc(1440px - (1.5rem * 2));
+    @media screen and (max-width: 1456px) {
+      margin-left: 1.5rem !important;
+      margin-right: 1.5rem !important;
+    }
 
     @at-root .v-application {
       &.content-full {
@@ -171,10 +190,11 @@ $nav-drawer-mini-width: 68px;
           margin-right: $content-padding-vertical-navigation-menu !important;
         }
       }
+
       &:not(.nav-drawer-mini) {
         @media screen and (max-width: 1711px) {
-          .v-footer,
-          .v-app-bar {
+          .app-navigation-menu ~ .v-footer,
+          .app-navigation-menu + .v-app-bar {
             margin-left: 1.5rem !important;
             margin-right: 1.5rem !important;
           }

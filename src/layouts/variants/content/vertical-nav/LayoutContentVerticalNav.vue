@@ -3,21 +3,25 @@
     <slot></slot>
 
     <!-- Slot: Navbar -->
-    <template #navbar="{ toggleVerticalNavMenuActive }">
+    <template #navbar="{ isVerticalNavMenuActive, toggleVerticalNavMenuActive }">
       <div
         class="navbar-content-container"
         :class="{'expanded-search': shallShowFullSearch}"
       >
         <!-- Left Content: Search -->
         <div class="d-flex align-center">
-          <v-app-bar-nav-icon
+          <v-icon
             v-if="$vuetify.breakpoint.mdAndDown"
+            class="me-3"
             @click="toggleVerticalNavMenuActive"
-          ></v-app-bar-nav-icon>
+          >
+            {{ icons.mdiMenu }}
+          </v-icon>
           <app-bar-search
             :shall-show-full-search.sync="shallShowFullSearch"
             :data="appBarSearchData"
             :filter="searchFilterFunc"
+            @update:shallShowFullSearch="handleShallShowFullSearchUpdate(isVerticalNavMenuActive, toggleVerticalNavMenuActive)"
           ></app-bar-search>
         </div>
 
@@ -53,6 +57,9 @@ import AppBarI18n from '@core/layouts/components/app-bar/AppBarI18n.vue'
 import AppBarThemeSwitcher from '@core/layouts/components/app-bar/AppBarThemeSwitcher.vue'
 import AppBarUserMenu from '@core/layouts/components/app-bar/AppBarUserMenu.vue'
 import AppBarNotification from '@core/layouts/components/app-bar/AppBarNotification.vue'
+import { mdiMenu } from '@mdi/js'
+
+import { getVuetify } from '@core/utils'
 
 // Search Data
 import appBarSearchData from '@/assets/app-bar-search-data'
@@ -72,25 +79,36 @@ export default {
     AppBarNotification,
   },
   setup() {
+    const $vuetify = getVuetify()
+
     // Search
     const shallShowFullSearch = ref(false)
 
     const searchFilterFunc = (item, queryText, itemText) => {
-      // console.log('item :>> ', item)
-      // console.log('queryText :>> ', queryText)
-      // console.log('itemText :>> ', itemText)
       if (item.header || item.divider) return true
 
       return itemText.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
     }
 
+    // ? Handles case where in <lg vertical nav menu is open and search is triggered using hotkey then searchbox is hidden behind vertical nav menu overlaty
+    const handleShallShowFullSearchUpdate = (isVerticalNavMenuActive, toggleVerticalNavMenuActive) => {
+      if ($vuetify.breakpoint.mdAndDown && isVerticalNavMenuActive) {
+        toggleVerticalNavMenuActive()
+      }
+    }
+
     return {
       navMenuItems,
+      handleShallShowFullSearchUpdate,
 
       // Search
       shallShowFullSearch,
       appBarSearchData,
       searchFilterFunc,
+
+      icons: {
+        mdiMenu,
+      },
     }
   },
 }

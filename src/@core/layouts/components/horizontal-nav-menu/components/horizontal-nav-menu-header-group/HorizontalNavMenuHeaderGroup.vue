@@ -17,7 +17,7 @@
         large
         rounded
         v-bind="attrs"
-        class="text-capitalize text-base font-weight-regular"
+        class="text-capitalize text-base font-weight-regular px-6"
         :class="[{'bg-gradient-primary group-activator-active': isActive}, { 'menu-open': isMenuActive }]"
         v-on="on"
       >

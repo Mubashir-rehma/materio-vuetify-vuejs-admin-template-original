@@ -110,7 +110,7 @@ export default {
   }
 
   .v-list-item {
-    margin-bottom: 0.375rem;
+    margin-top: 0.375rem;
   }
 
   .v-list-group .v-list-group__header .v-list-item__icon.v-list-group__header__append-icon {
@@ -170,10 +170,10 @@ export default {
   @at-root .app-navigation-menu.v-navigation-drawer--mini-variant:not(.v-navigation-drawer--is-mouseover) {
     .vertical-nav-menu-items {
       @include ltr() {
-        padding-right: 0 !important;
+        padding-right: 5px !important;
       }
       @include rtl() {
-        padding-left: 0 !important;
+        padding-left: 5px !important;
       }
     }
   }
@@ -187,11 +187,13 @@ export default {
       margin: 0 12px 0 0;
       align-self: center;
     }
-    @include ltr() {
-      margin-right: 12px;
-    }
-    @include rtl() {
-      margin-left: 12px;
+    &.v-list-group__header__append-icon {
+      @include ltr() {
+        margin-left: 4px;
+      }
+      @include rtl() {
+        margin-right: 4px;
+      }
     }
   }
 

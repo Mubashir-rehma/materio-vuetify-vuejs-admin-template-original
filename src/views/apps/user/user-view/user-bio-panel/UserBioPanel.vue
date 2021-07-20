@@ -189,7 +189,10 @@
 
     <!-- user plan -->
     <v-col cols="12">
-      <v-card class="user-plan">
+      <v-card
+        class="user-plan"
+        flat
+      >
         <v-card-title class="flex-start align-start justify-space-between pb-0">
           <v-chip
             label

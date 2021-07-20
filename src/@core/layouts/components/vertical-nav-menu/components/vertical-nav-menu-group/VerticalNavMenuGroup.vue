@@ -4,7 +4,7 @@
     ref="refVListGroup"
     class="vertical-nav-menu-group"
     :class="[{'vertical-nav-menu-group-active': isActive}, ...rootThemeClasses]"
-    :value="isActive"
+    :value="isGroupExpanded"
     @click="updateGroupOpen(!isOpen)"
   >
     <template #prependIcon>
@@ -116,6 +116,7 @@ export default {
     const { t } = useUtils()
 
     return {
+      isGroupExpanded,
       resolveNavItemComponent,
       isNavGroupActive,
       menuIsVerticalNavMini,

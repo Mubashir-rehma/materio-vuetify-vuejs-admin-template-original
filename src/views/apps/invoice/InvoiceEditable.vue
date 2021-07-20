@@ -277,6 +277,7 @@
                   hide-details="auto"
                   label="Cost"
                   placeholder="$"
+                  @input="val => { purchasedProduct.cost = Math.abs(val) }"
                 ></v-text-field>
               </v-col>
               <v-col
@@ -293,6 +294,7 @@
                   hide-details="auto"
                   label="Qty"
                   placeholder="Qty"
+                  @input="val => { purchasedProduct.qty = Math.abs(val) }"
                 ></v-text-field>
               </v-col>
               <v-col

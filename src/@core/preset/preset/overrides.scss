@@ -268,7 +268,9 @@ button {
     &.dense {
       padding: 0 calc(#{$card-spacer} - 12px) calc(#{$card-spacer} - 12px);
       .v-btn {
-        min-width: 68px;
+        &:not(.v-btn--icon) {
+          min-width: 68px;
+        }
       }
     }
   }

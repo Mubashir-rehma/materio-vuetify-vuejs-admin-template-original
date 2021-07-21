@@ -104,14 +104,14 @@
               <small class="text-xs white--text text-no-wrap">January, 10</small>
             </v-card-title>
             <v-card-text class="pt-4">
-              <div class="d-flex align-center mb-3">
+              <div class="d-flex align-sm-center mb-3 flex-sm-row flex-column">
                 <v-img
                   height="100"
                   width="100"
                   src="/images/pages/puma-shoes.jpg"
-                  class="rounded"
+                  class="rounded me-4"
                 ></v-img>
-                <div class="ms-4">
+                <div>
                   <span>PUMA presents the latest shoes from its collection. Light &amp; comfortable made with highly durable material.</span>
                 </div>
               </div>

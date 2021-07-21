@@ -8,6 +8,7 @@
       <v-timeline
         class="no-dots-shadow pb-4"
         align-top
+        :dense="$vuetify.breakpoint.smAndDown"
       >
         <!-- Timeline Item: Flight -->
         <v-timeline-item color="transparent">
@@ -89,7 +90,7 @@
           <v-divider class="my-4"></v-divider>
 
           <!-- Person -->
-          <div class="d-flex justify-space-between align-center">
+          <div class="d-flex justify-space-between align-center flex-wrap">
             <!-- Avatar & Personal Info -->
             <span class="d-flex align-bottom mt-2">
               <v-avatar
@@ -131,14 +132,14 @@
               </v-icon>
             </v-avatar>
           </template>
-          <div class="d-flex align-start mb-3">
+          <div class="d-flex align-start mb-3 flex-sm-row flex-column">
             <v-img
               height="100"
               width="100"
               src="/images/pages/puma-shoes.jpg"
-              class="rounded"
+              class="rounded me-4"
             ></v-img>
-            <div class="ms-4">
+            <div>
               <!-- Header -->
               <div class="d-flex justify-space-between">
                 <p class="mb-1 font-weight-semibold text-base text--primary">
@@ -151,20 +152,20 @@
           </div>
 
           <!-- Timeline Item: Meta Content -->
-          <div class="d-flex justify-space-between">
-            <div class="text-center">
+          <div class="d-flex justify-space-between flex-sm-row flex-column">
+            <div class="text-center mb-1">
               <p class="mb-1 text-base font-weight-semibold text--primary">
                 Customer
               </p>
               <span>Micheal Scott</span>
             </div>
-            <div class="text-center">
+            <div class="text-center mb-1">
               <p class="mb-1 text-base font-weight-semibold text--primary">
                 Price
               </p>
               <span>$375.00</span>
             </div>
-            <div class="text-center">
+            <div class="text-center mb-1">
               <p class="mb-1 text-base font-weight-semibold text--primary">
                 Quantity
               </p>
@@ -336,7 +337,7 @@
 
           <v-divider></v-divider>
 
-          <div class="d-flex justify-space-between mt-4">
+          <div class="d-flex justify-space-between mt-4 flex-wrap">
             <div>
               <v-icon class="me-2">
                 {{ icons.mdiLinkVariant }}

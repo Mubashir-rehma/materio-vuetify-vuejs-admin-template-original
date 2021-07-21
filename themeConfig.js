@@ -25,7 +25,7 @@ const themeConfig = {
     type: 'fixed', // fixed, static, hidden
   },
   footer: {
-    type: 'fixed', // fixed, static, hidden
+    type: 'static', // fixed, static, hidden
   },
   themes: {
     light: {

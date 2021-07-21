@@ -3,10 +3,15 @@
 // ? This includes dark theme related style
 .v-application {
   &.theme--dark {
-    .v-alert {
-      &.v-sheet.theme--dark {
-        &:not([class*='--text']) {
-          color: #fff !important;
+    @at-root {
+      .v-alert {
+        &.v-sheet.theme--dark {
+          &:not([class*='--text']) {
+            color: #fff !important;
+            svg {
+              color: #fff !important;
+            }
+          }
         }
       }
     }

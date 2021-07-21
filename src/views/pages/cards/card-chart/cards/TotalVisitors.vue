@@ -18,7 +18,7 @@
       id="chart-total-visitors"
       :options="chartOptions"
       :series="chartData"
-      class="d-flex flex-grow-1 align-center"
+      class="d-flex flex-grow-1 align-center mb-4"
     ></vue-apex-charts>
   </v-card>
 </template>

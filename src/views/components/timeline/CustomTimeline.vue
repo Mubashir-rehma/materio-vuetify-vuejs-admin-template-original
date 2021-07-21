@@ -96,14 +96,14 @@
           small
           color="info"
         >
-          <div class="d-flex align-start mb-3">
+          <div class="d-flex align-start mb-3 flex-sm-row flex-column">
             <v-img
               height="100"
               width="100"
               src="/images/pages/puma-shoes.jpg"
-              class="rounded"
+              class="rounded me-4"
             ></v-img>
-            <div class="ms-4">
+            <div>
               <!-- Header -->
               <div class="d-flex justify-space-between">
                 <p class="mb-1 font-weight-semibold text-base text--primary">

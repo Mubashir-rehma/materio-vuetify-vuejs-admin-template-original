@@ -655,6 +655,12 @@ $btn-custom-heights: (
   opacity: 0.38;
 }
 
+.v-slider__thumb-label-container {
+  svg {
+    color: #fff;
+  }
+}
+
 //
 //* ——— Date Picker ——————————————————
 //
@@ -688,6 +694,15 @@ $btn-custom-heights: (
 // Fixes border width transition issue
 .v-text-field--outlined fieldset {
   transition-property: color !important;
+}
+
+@include theme-diff(v-input, #fff, map-deep-get($material-light, 'text', 'secondary')) using ($value) {
+  &.v-text-field--solo-inverted.v-input--is-focused {
+    input,
+    textarea {
+      color: $value !important;
+    }
+  }
 }
 
 //

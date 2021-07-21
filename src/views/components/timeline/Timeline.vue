@@ -2,13 +2,13 @@
   <v-row>
     <v-col
       cols="12"
-      sm="6"
+      md="6"
     >
       <custom-timeline></custom-timeline>
     </v-col>
     <v-col
       cols="12"
-      sm="6"
+      md="6"
     >
       <custom-timeline-card></custom-timeline-card>
     </v-col>

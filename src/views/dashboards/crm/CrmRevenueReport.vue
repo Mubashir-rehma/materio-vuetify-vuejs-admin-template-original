@@ -91,42 +91,42 @@ export default {
           },
         },
         {
-          breakpoint: 1500,
+          breakpoint: 1580,
           options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '60%',
-              },
+            stroke: {
+              width: 3,
             },
           },
         },
         {
-          breakpoint: 959,
+          breakpoint: 1300,
           options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '45%',
-              },
+            stroke: {
+              width: 1,
             },
           },
         },
         {
-          breakpoint: 700,
+          breakpoint: 958,
           options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '50%',
-              },
+            stroke: {
+              width: 5,
+            },
+          },
+        },
+        {
+          breakpoint: 750,
+          options: {
+            stroke: {
+              width: 4,
             },
           },
         },
         {
           breakpoint: 600,
           options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '45%',
-              },
+            stroke: {
+              width: 3,
             },
           },
         },

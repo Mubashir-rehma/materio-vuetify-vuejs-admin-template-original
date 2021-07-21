@@ -3,10 +3,10 @@ import {
   mdiAlertCircleOutline,
   mdiChartTimelineVariant,
   mdiCheckCircleOutline,
+  mdiClose,
   mdiContentSaveOutline,
   mdiDownloadCircleOutline,
   mdiEmailOutline,
-  mdiClose,
 } from '@mdi/js'
 import { ref, watch } from '@vue/composition-api'
 
@@ -20,13 +20,13 @@ export default function useInvoicesList() {
       align: 'start',
       value: 'id',
     },
-    { text: 'Trending', value: 'trending' },
+    { text: 'Trending', value: 'trending', sortable: false },
     { text: 'CLIENT', value: 'client' },
     { text: 'TOTAL', value: 'total' },
     { text: 'DATE', value: 'issuedDate' },
     { text: 'BALANCE', value: 'balance' },
     {
-      text: 'Actions',
+      text: 'ACTIONS',
       value: 'actions',
       align: 'center',
       sortable: false,
@@ -38,6 +38,7 @@ export default function useInvoicesList() {
   const totalInvoiceListTable = ref(0)
   const loading = ref(false)
   const statusFilter = ref(null)
+  const selectedTableData = ref([])
 
   const fetchInvoices = () => {
     store
@@ -60,6 +61,7 @@ export default function useInvoicesList() {
   watch([searchQuery, statusFilter, options], () => {
     // start loading
     loading.value = true
+    selectedTableData.value = []
     fetchInvoices()
   })
 
@@ -97,7 +99,7 @@ export default function useInvoicesList() {
     statusFilter,
     totalInvoiceListTable,
     loading,
-
+    selectedTableData,
     fetchInvoices,
     resolveInvoiceStatusVariantAndIcon,
     resolveClientAvatarVariant,

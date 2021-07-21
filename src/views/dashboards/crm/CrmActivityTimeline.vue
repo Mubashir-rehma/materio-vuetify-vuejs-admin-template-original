@@ -25,11 +25,11 @@
           small
           color="error"
         >
-          <div class="d-flex justify-space-between">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               8 Invoices have been paid
             </h4>
-            <small>Wednesday</small>
+            <small class="text-no-wrap">Wednesday</small>
           </div>
           <p class="mb-0">
             Invoices have been paid to the company.
@@ -50,11 +50,11 @@
           small
           color="primary"
         >
-          <div class="d-flex justify-space-between">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               Create a new project for client 😎
             </h4>
-            <small>April, 18</small>
+            <small class="text-no-wrap">April, 18</small>
           </div>
           <p class="mb-0">
             Invoices have been paid to the company.
@@ -77,11 +77,11 @@
           small
           color="info"
         >
-          <div class="d-flex justify-space-between">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               Order #37745 from September
             </h4>
-            <small>January, 10</small>
+            <small class="text-no-wrap">January, 10</small>
           </div>
           <p class="mb-0">
             Invoices have been paid to the company.
@@ -91,11 +91,11 @@
           small
           color="success"
         >
-          <div class="d-flex justify-space-between">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               Client Meeting
             </h4>
-            <small>September, 20</small>
+            <small class="text-no-wrap">September, 20</small>
           </div>
           <p class="mb-0">
             Project meeting with john 👨🏻‍💻 @10:15am
@@ -105,11 +105,11 @@
           small
           color="warning"
         >
-          <div class="d-flex justify-space-between">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               Public Meeting
             </h4>
-            <small>September, 30</small>
+            <small class="text-no-wrap">September, 30</small>
           </div>
         </v-timeline-item>
       </v-timeline>

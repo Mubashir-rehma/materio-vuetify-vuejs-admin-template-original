@@ -58,11 +58,11 @@
             color="error"
             small
           >
-            <div class="d-flex justify-space-between">
-              <p class="text--primary font-weight-medium mb-1">
+            <div class="d-flex justify-space-between align-center flex-wrap">
+              <h4 class="font-weight-medium me-1">
                 User login
-              </p>
-              <small>12 min ago</small>
+              </h4>
+              <small class="text-no-wrap">12 min ago</small>
             </div>
             <p class="mb-0">
               User login at 2:12pm
@@ -73,11 +73,11 @@
             color="primary"
             small
           >
-            <div class="d-flex justify-space-between">
-              <p class="text--primary font-weight-medium mb-1">
+            <div class="d-flex justify-space-between align-center flex-wrap">
+              <h4 class="font-weight-medium me-1">
                 Meeting with john
-              </p>
-              <small>45 min ago</small>
+              </h4>
+              <small class="text-no-wrap">45 min ago</small>
             </div>
 
             <p class="mb-1">
@@ -104,11 +104,11 @@
             color="info"
             small
           >
-            <div class="d-flex justify-space-between">
-              <p class="text--primary font-weight-medium mb-1">
+            <div class="d-flex justify-space-between align-center flex-wrap">
+              <h4 class="font-weight-medium me-1">
                 Create a new react project for client
-              </p>
-              <small>2 day ago</small>
+              </h4>
+              <small class="text-no-wrap">2 day ago</small>
             </div>
             <p class="mb-0">
               Add files to new design folder
@@ -119,11 +119,11 @@
             color="success"
             small
           >
-            <div class="d-flex justify-space-between">
-              <p class="mb-0 text--primary font-weight-semibold">
+            <div class="d-flex justify-space-between align-center flex-wrap">
+              <h4 class="font-weight-semibold me-1">
                 Create invoices for client
-              </p>
-              <small>12 min ago</small>
+              </h4>
+              <small class="text-no-wrap">12 min ago</small>
             </div>
             <p class="mb-0">
               Create new invoices and send to Leona Watkins

@@ -13,11 +13,11 @@
           color="error"
           small
         >
-          <div class="d-flex align-start justify-space-between ">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex align-start justify-space-between flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               8 Invoices have been paid
             </h4>
-            <span class="text-xs  text-no-wrap mt-1 ms-2 me-6">Wednesday</span>
+            <small class="text-no-wrap">Wednesday</small>
           </div>
           <span>Invoices have been paid to the company.</span>
           <div class="d-flex align-center mt-1">
@@ -36,11 +36,11 @@
           color="primary"
           small
         >
-          <div class="d-flex justify-space-between align-start">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex justify-space-between align-start flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               Create a new project for client 😎
             </h4>
-            <span class="text-xs text-no-wrap mt-1 ms-2 me-6">April, 18</span>
+            <small class="text-no-wrap">April, 18</small>
           </div>
           <p class="mb-1">
             Invoices have been paid to the company.
@@ -58,11 +58,11 @@
           color="info"
           small
         >
-          <div class="d-flex align-start justify-space-between">
-            <h4 class="font-weight-semibold">
+          <div class="d-flex align-start justify-space-between flex-wrap">
+            <h4 class="font-weight-semibold me-1">
               Order #37745 from September
             </h4>
-            <span class="text-xs text-no-wrap mt-1 ms-2 me-6">January, 10</span>
+            <small class="text-no-wrap">January, 10</small>
           </div>
           <span>Invoices have been paid to the company.</span>
         </v-timeline-item>

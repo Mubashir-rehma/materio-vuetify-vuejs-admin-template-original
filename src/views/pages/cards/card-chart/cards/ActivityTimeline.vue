@@ -23,85 +23,78 @@
           small
           color="error"
         >
-          <div class="d-flex justify-space-between">
-            <div>
-              <p class="mb-0 text--primary font-weight-semibold">
-                8 Invoices have been paid
-              </p>
-              <p class="mb-0">
-                Invoices have been paid to the company.
-              </p>
-              <span class="d-flex align-center mt-2">
-                <v-icon
-                  color="error"
-                  class="me-1"
-                >
-                  {{ icons.mdiFilePdf }}
-                </v-icon>
-                <span class="text--primary font-weight-semibold text-sm">invoice.pdf</span>
-              </span>
-            </div>
-            <small>Wednesday</small>
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
+              8 Invoices have been paid
+            </h4>
+            <small class="text-no-wrap">Wednesday</small>
+          </div>
+
+          <span>Invoices have been paid to the company.</span>
+          <div class="d-flex align-center mt-2">
+            <v-icon
+              color="error"
+              class="me-1"
+            >
+              {{ icons.mdiFilePdf }}
+            </v-icon>
+            <h4 class="font-weight-semibold text-sm">
+              invoice.pdf
+            </h4>
           </div>
         </v-timeline-item>
+
         <v-timeline-item
           small
           color="primary"
         >
-          <div class="d-flex justify-space-between">
-            <div>
-              <p class="mb-0 text--primary font-weight-semibold">
-                Create a new project for client 😎
-              </p>
-              <p class="mb-0">
-                Invoices have been paid to the company.
-              </p>
-              <span class="d-flex align-center mt-2">
-                <div class="d-flex align-center">
-                  <v-avatar
-                    size="26"
-                    class="me-2"
-                  >
-                    <v-img src="/images/avatars/1.png"></v-img>
-                  </v-avatar>
-                  <span class="text--primary font-weight-semibold">John Doe (Client)</span>
-                </div>
-              </span>
-            </div>
-            <small>April, 18</small>
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
+              Create a new project for client 😎
+            </h4>
+            <small class="text-no-wrap">April, 18</small>
+          </div>
+
+          <span>Invoices have been paid to the company.</span>
+          <div class="d-flex align-center mt-2">
+            <v-avatar
+              size="26"
+              class="me-2"
+            >
+              <v-img src="/images/avatars/1.png"></v-img>
+            </v-avatar>
+            <h4 class="font-weight-semibold">
+              John Doe (Client)
+            </h4>
           </div>
         </v-timeline-item>
+
         <v-timeline-item
           small
           color="info"
         >
-          <div class="d-flex justify-space-between">
-            <div>
-              <p class="mb-0 text--primary font-weight-semibold">
-                Order #37745 from September
-              </p>
-              <p class="mb-0">
-                Invoices have been paid to the company.
-              </p>
-            </div>
-            <small>January, 10</small>
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
+              Order #37745 from September
+            </h4>
+            <small class="text-no-wrap">January, 10</small>
           </div>
+
+          <span>Invoices have been paid to the company.</span>
         </v-timeline-item>
+
         <v-timeline-item
           small
           color="success"
         >
-          <div class="d-flex justify-space-between">
-            <div>
-              <p class="mb-0 text--primary font-weight-semibold">
-                Client Meeting
-              </p>
-              <p class="mb-0">
-                Project meeting with john 👨🏻‍💻 @10:15am
-              </p>
-            </div>
-            <small>September, 20</small>
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="font-weight-semibold me-1">
+              Client Meeting
+            </h4>
+            <small class="text-no-wrap">September, 20</small>
           </div>
+
+          <span>Project meeting with john 👨🏻‍💻 @10:15am</span>
         </v-timeline-item>
       </v-timeline>
     </v-card-text>

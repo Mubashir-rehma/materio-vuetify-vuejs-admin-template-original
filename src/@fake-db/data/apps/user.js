@@ -274,7 +274,7 @@ const data = {
       email: 'irena@wayne.com',
       currentPlan: 'standard',
       status: 'active',
-      avatar: '1.png',
+      avatar: '2.png',
     },
     {
       id: 22,
@@ -352,7 +352,7 @@ const data = {
       email: 'gjacombsq@jigsy.com',
       currentPlan: 'enterprise',
       status: 'active',
-      avatar: '10.png',
+      avatar: '',
     },
     {
       id: 28,
@@ -670,7 +670,6 @@ mock.onGet('/apps/user/users').reply(config => {
   /* eslint-enable */
 
   const queryLowered = q.toLowerCase()
-  const total = data.users.length
 
   let filteredData = data.users.filter(
     user =>
@@ -706,6 +705,9 @@ mock.onGet('/apps/user/users').reply(config => {
   if (itemsPerPage > 0) {
     filteredData = filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage)
   }
+
+  // total availabel data length
+  const total = filteredData.length
 
   // user data total
 

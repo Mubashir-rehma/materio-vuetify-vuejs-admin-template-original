@@ -21,7 +21,7 @@ export default function useUsersList() {
     { text: 'PLAN', value: 'currentPlan', sortable: false },
     { text: 'STATUS', value: 'status', sortable: false },
     {
-      text: 'Actions',
+      text: 'ACTIONS',
       value: 'actions',
       align: 'center',
       sortable: false,

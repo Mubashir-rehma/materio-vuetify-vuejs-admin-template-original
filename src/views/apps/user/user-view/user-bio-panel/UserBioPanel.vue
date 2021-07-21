@@ -17,7 +17,7 @@
             ></v-img>
             <span
               v-else
-              class="font-weight-medium"
+              class="font-weight-semibold text-5xl"
             >{{ avatarText(userData.fullName) }}</span>
           </v-avatar>
 

@@ -55,7 +55,7 @@
             <user-tab-notifications></user-tab-notifications>
           </v-tab-item>
           <v-tab-item>
-            <user-tab-connection></user-tab-connection>
+            <user-tab-connections></user-tab-connections>
           </v-tab-item>
         </v-tabs-items>
       </v-col>
@@ -129,7 +129,7 @@ import UserTabOverview from './user-tab-overview/UserTabOverview.vue'
 import UserTabSecurity from './user-tab-security/UserTabSecurity.vue'
 import UserTabBillingsPlans from './user-tab-billings-plans/UserTabBillingsPlans.vue'
 import UserTabNotifications from './user-tab-notifications/UserTabNotifications.vue'
-import UserTabConnection from './user-tab-connection/UserTabConnection.vue'
+import UserTabConnections from './user-tab-connections/UserTabConnections.vue'
 
 export default {
   components: {
@@ -138,7 +138,7 @@ export default {
     UserTabSecurity,
     UserTabBillingsPlans,
     UserTabNotifications,
-    UserTabConnection,
+    UserTabConnections,
   },
   setup() {
     const USER_APP_STORE_MODULE_NAME = 'app-user'
@@ -179,8 +179,8 @@ export default {
       { icon: mdiAccountOutline, title: 'Overview' },
       { icon: mdiLockOutline, title: 'Security' },
       { icon: mdiBookmarkOutline, title: 'Billing & Plan' },
-      { icon: mdiBellOutline, title: 'Notification' },
-      { icon: mdiLinkVariant, title: 'Connection' },
+      { icon: mdiBellOutline, title: 'Notifications' },
+      { icon: mdiLinkVariant, title: 'Connections' },
     ]
 
     // ui

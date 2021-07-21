@@ -2,7 +2,7 @@
   <v-card id="invoice-list">
     <!-- search -->
     <v-card-text class="d-flex align-center flex-wrap">
-      <div class="d-flex align-center mt-4">
+      <div class="d-flex align-center mt-sm-2 mt-md-0">
         <!-- actions -->
         <v-select
           v-model="selectedAction"
@@ -28,13 +28,13 @@
           >
             {{ icons.mdiPlus }}
           </v-icon>
-          <span class="d-none d-sm-block">Create Invoice</span>
+          <span>Create Invoice</span>
         </v-btn>
       </div>
 
       <v-spacer></v-spacer>
 
-      <div class="d-flex align-center mt-4">
+      <div class="d-flex align-center mt-4 mt-sm-2 mt-md-0">
         <v-text-field
           v-model="searchQuery"
           single-line
@@ -199,6 +199,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
+                small
                 icon
                 v-bind="attrs"
                 v-on="on"
@@ -277,7 +278,7 @@ export default {
       statusFilter,
       totalInvoiceListTable,
       loading,
-
+      selectedTableData,
       resolveInvoiceStatusVariantAndIcon,
       resolveClientAvatarVariant,
       fetchInvoices,
@@ -285,8 +286,6 @@ export default {
 
     // fetch invoices
     fetchInvoices()
-
-    const selectedTableData = ref([])
 
     const statusOptions = ref(['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due'])
 

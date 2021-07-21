@@ -140,5 +140,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@core/preset/preset/auth.scss';
+@import '@core/preset/preset/pages/auth.scss';
 </style>

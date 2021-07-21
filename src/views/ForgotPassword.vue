@@ -139,7 +139,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@core/preset/preset/auth.scss';
+@import '@core/preset/preset/pages/auth.scss';
 .auth-wrapper {
   &.auth-v2 {
     .auth-3d-group {

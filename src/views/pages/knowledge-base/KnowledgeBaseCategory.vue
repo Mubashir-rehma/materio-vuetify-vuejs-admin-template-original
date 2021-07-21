@@ -215,5 +215,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@core/preset/preset/knowledge-base.scss';
+@import '@core/preset/preset/pages/knowledge-base.scss';
 </style>

@@ -281,5 +281,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@core/preset/preset/faq.scss';
+@import '@core/preset/preset/pages/faq.scss';
 </style>

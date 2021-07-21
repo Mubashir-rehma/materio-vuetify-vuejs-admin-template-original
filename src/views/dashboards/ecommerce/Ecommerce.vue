@@ -219,7 +219,7 @@ export default {
       icon: mdiChartTimelineVariant,
       color: 'error',
       subtitle: 'Revenue Increase',
-      statistics: '44.10k',
+      statistics: '44.1k',
       change: '+12%',
     }
 

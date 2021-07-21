@@ -26,37 +26,39 @@
           <v-avatar
             :color="data.color"
             size="40"
-            :class="`v-avatar-light-bg ${data.color}--text font-weight-medium`"
+            :class="`v-avatar-light-bg ${data.color}--text font-weight-medium me-3`"
           >
             <span class="text-base">{{ data.abbr }}</span>
           </v-avatar>
 
-          <div class="ms-3">
-            <div class="font-weight-semibold">
-              <span class="text--primary text-base me-1">{{ data.amount }}</span>
+          <div class="d-flex align-center flex-grow-1 flex-wrap">
+            <div class="me-2">
+              <div class="font-weight-semibold">
+                <span class="text--primary text-base me-1">{{ data.amount }}</span>
 
-              <v-icon
-                size="20"
-                :color="data.change.charAt(0) === '+' ? 'success':'error'"
-              >
-                {{ data.change.charAt(0) === '+' ? icons.mdiChevronUp: icons.mdiChevronDown }}
-              </v-icon>
+                <v-icon
+                  size="20"
+                  :color="data.change.charAt(0) === '+' ? 'success':'error'"
+                >
+                  {{ data.change.charAt(0) === '+' ? icons.mdiChevronUp: icons.mdiChevronDown }}
+                </v-icon>
 
-              <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'success--text':'error--text'}`">{{ data.change.slice(1) }}</span>
+                <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'success--text':'error--text'}`">{{ data.change.slice(1) }}</span>
+              </div>
+
+              <v-list-item-subtitle class="text-xs">
+                {{ data.country }}
+              </v-list-item-subtitle>
             </div>
 
-            <v-list-item-subtitle class="text-xs">
-              {{ data.country }}
-            </v-list-item-subtitle>
-          </div>
+            <v-spacer></v-spacer>
 
-          <v-spacer></v-spacer>
-
-          <div>
-            <h4 class="font-weight-semibold">
-              {{ data.sales }}
-            </h4>
-            <span class="text-xs">Sales</span>
+            <div>
+              <h4 class="font-weight-semibold">
+                {{ data.sales }}
+              </h4>
+              <span class="text-xs">Sales</span>
+            </div>
           </div>
         </v-list-item>
       </v-list>

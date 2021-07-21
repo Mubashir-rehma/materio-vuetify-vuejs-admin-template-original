@@ -7,7 +7,7 @@
     <vue-apex-charts
       id="stats-card-radial-bar-chart"
       type="radialBar"
-      class="flex-grow-1"
+      class="d-flex align-center flex-grow-1 "
       :options="chartOptionsComputed"
       :series="chartSeries"
       :height="chartHeight"

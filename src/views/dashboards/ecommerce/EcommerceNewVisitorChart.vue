@@ -14,7 +14,10 @@
           <span class="text-xs success--text">+28%</span>
         </v-card-text>
       </v-col>
-      <v-col cols="6">
+      <v-col
+        cols="6"
+        class="d-flex align-end"
+      >
         <vue-apex-charts
           :options="chartOptions"
           :series="chartData"

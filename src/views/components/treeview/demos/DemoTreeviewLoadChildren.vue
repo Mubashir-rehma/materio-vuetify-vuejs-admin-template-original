@@ -95,6 +95,7 @@
               <a
                 :href="`//${selected.website}`"
                 target="_blank"
+                rel="nofollow"
               >{{ selected.website }}</a>
             </v-col>
             <v-col

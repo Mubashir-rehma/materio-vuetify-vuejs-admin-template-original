@@ -20,38 +20,40 @@
         <v-list-item
           v-for="(data,index) in meetingSchedule"
           :key="data.avatar"
-          :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-3':''}`"
+          :class="`d-flex align-center px-0 ${index > 0 ? 'mt-3':''}`"
         >
           <v-list-item-avatar size="38">
             <v-img :src="data.avatar"></v-img>
           </v-list-item-avatar>
 
-          <div class="text-no-wrap">
-            <v-list-item-title class="text-sm font-weight-medium">
-              {{ data.title }}
-            </v-list-item-title>
-            <div class="d-flex align-center">
-              <v-icon
-                size="14"
-                class="me-1"
-              >
-                {{ icons.mdiCalendarBlankOutline }}
-              </v-icon>
-              <v-list-item-subtitle class="text-xs">
-                {{ data.dateAndTime }}
-              </v-list-item-subtitle>
+          <div class="d-flex align-center flex-wrap text-no-wrap flex-grow-1">
+            <div>
+              <v-list-item-title class="text-sm font-weight-medium">
+                {{ data.title }}
+              </v-list-item-title>
+              <div class="d-flex align-center">
+                <v-icon
+                  size="14"
+                  class="me-1"
+                >
+                  {{ icons.mdiCalendarBlankOutline }}
+                </v-icon>
+                <v-list-item-subtitle class="text-xs">
+                  {{ data.dateAndTime }}
+                </v-list-item-subtitle>
+              </div>
             </div>
+
+            <v-spacer></v-spacer>
+
+            <v-chip
+              small
+              :color="data.chipColor"
+              :class="`v-chip-light-bg ${data.chipColor}--text font-weight-semibold mt-1`"
+            >
+              {{ data.chipText }}
+            </v-chip>
           </div>
-
-          <v-spacer></v-spacer>
-
-          <v-chip
-            small
-            :color="data.chipColor"
-            :class="`v-chip-light-bg ${data.chipColor}--text font-weight-semibold`"
-          >
-            {{ data.chipText }}
-          </v-chip>
         </v-list-item>
       </v-list>
     </v-card-text>

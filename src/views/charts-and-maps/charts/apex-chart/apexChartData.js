@@ -147,7 +147,7 @@ export default {
         position: 'top',
         horizontalAlign: 'left',
         fontSize: '14px',
-        fontFamily: 'Montserrat',
+        fontFamily: '"Inter", sans-serif',
       },
       grid: {
         xaxis: {
@@ -229,7 +229,7 @@ export default {
         show: true,
         position: 'top',
         fontSize: '14px',
-        fontFamily: 'Montserrat',
+        fontFamily: '"Inter", sans-serif',
         horizontalAlign: 'left',
       },
       stroke: {
@@ -623,14 +623,9 @@ export default {
         show: true,
         position: 'bottom',
         fontSize: '14px',
-        fontFamily: 'Montserrat',
+        fontFamily: '"Inter", sans-serif',
       },
-      colors: [
-        chartColors.donut.series1,
-        chartColors.donut.series5,
-        chartColors.donut.series3,
-        $themeColors.info,
-      ],
+      colors: [chartColors.donut.series1, chartColors.donut.series5, chartColors.donut.series3, $themeColors.info],
       dataLabels: {
         enabled: true,
         formatter(val) {
@@ -645,11 +640,11 @@ export default {
               show: true,
               name: {
                 fontSize: '2rem',
-                fontFamily: 'Montserrat',
+                fontFamily: '"Inter", sans-serif',
               },
               value: {
                 fontSize: '1rem',
-                fontFamily: 'Montserrat',
+                fontFamily: '"Inter", sans-serif',
                 formatter(val) {
                   // eslint-disable-next-line radix
                   return `${parseInt(val)}%`
@@ -729,11 +724,11 @@ export default {
           dataLabels: {
             name: {
               fontSize: '2rem',
-              fontFamily: 'Montserrat',
+              fontFamily: '"Inter", sans-serif',
             },
             value: {
               fontSize: '1rem',
-              fontFamily: 'Montserrat',
+              fontFamily: '"Inter", sans-serif',
             },
             total: {
               show: true,
@@ -785,7 +780,7 @@ export default {
       legend: {
         show: true,
         fontSize: '14px',
-        fontFamily: 'Montserrat',
+        fontFamily: '"Inter", sans-serif',
       },
       yaxis: {
         show: false,

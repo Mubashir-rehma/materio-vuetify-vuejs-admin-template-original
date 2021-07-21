@@ -26,18 +26,20 @@
               :src="`/images/icons/${account.img}`"
             ></v-img>
 
-            <div>
-              <v-list-item-title class="text-sm">
-                {{ account.title }}
-              </v-list-item-title>
-              <v-list-item-subtitle class="mb-0">
-                {{ account.text }}
-              </v-list-item-subtitle>
+            <div class="d-flex align-center flex-grow-1 flex-wrap">
+              <div class="me-2">
+                <v-list-item-title class="text-sm">
+                  {{ account.title }}
+                </v-list-item-title>
+                <v-list-item-subtitle class="mb-0">
+                  {{ account.text }}
+                </v-list-item-subtitle>
+              </div>
+
+              <v-spacer></v-spacer>
+
+              <v-switch v-model="account.connected"></v-switch>
             </div>
-
-            <v-spacer></v-spacer>
-
-            <v-switch v-model="account.connected"></v-switch>
           </v-list-item>
         </v-list>
       </v-card-text>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row class="match-height">
+    <v-row>
       <!-- Influencing The Influencer -->
       <v-col
         md="4"
@@ -8,7 +8,10 @@
         cols="12"
       >
         <v-card>
-          <v-img src="/images/pages/1.jpg" />
+          <v-img
+            src="/images/pages/1.jpg"
+            height="250"
+          />
           <v-card-title>
             Influencing The Influencer
           </v-card-title>
@@ -26,8 +29,8 @@
         <v-card>
           <v-img
             class="white--text align-end"
-            height="200px"
             src="/images/pages/2.jpg"
+            height="250"
           />
           <v-card-text class="position-relative">
             <!-- User Avatar -->
@@ -86,7 +89,10 @@
         class="align-self-start"
       >
         <v-card>
-          <v-img src="/images/pages/3.jpg"></v-img>
+          <v-img
+            src="/images/pages/3.jpg"
+            height="250"
+          ></v-img>
           <v-card-title>
             Popular Uses Of The Internet
           </v-card-title>
@@ -248,7 +254,7 @@
         cols="12"
       >
         <v-card class="overflow-hidden">
-          <v-row>
+          <v-row class="ma-0 h-full">
             <v-col
               cols="12"
               sm="8"
@@ -265,7 +271,7 @@
                 <v-divider></v-divider>
               </v-card-text>
               <v-card-actions class="d-flex justify-center">
-                <div>
+                <div class="me-auto pe-4">
                   <p class="d-flex align-center mb-6">
                     <v-icon color="primary">
                       {{ icons.mdiLockOpenOutline }}
@@ -279,14 +285,15 @@
                     <span class="ms-3">15 Members</span>
                   </p>
                 </div>
+
                 <v-divider
                   v-if="$vuetify.breakpoint.smAndUp"
                   vertical
                   inset
-                  class="mx-md-8 mx-sm-4"
                 >
                 </v-divider>
-                <div class="mt-5 mt-sm-0">
+
+                <div class="ms-auto ps-4">
                   <p class="d-flex align-center mb-6">
                     <v-icon color="primary">
                       {{ icons.mdiStarOutline }}
@@ -344,6 +351,9 @@
           </v-card-text>
           <v-card-text>
             If you’re in the market for new desktops, notebooks, or PDAs, there are a myriad of choices. Here’s a rundown of some of the best systems available.
+          </v-card-text>
+          <v-card-text>
+            The following non-standard attributes are available on some browsers.
           </v-card-text>
           <v-card-actions class="dense">
             <v-btn

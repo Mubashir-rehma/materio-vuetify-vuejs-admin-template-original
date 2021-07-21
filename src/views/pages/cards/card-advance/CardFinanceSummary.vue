@@ -22,15 +22,15 @@
       </v-avatar>
     </div>
 
-    <v-card-text class="d-flex align-center flex-wrap text-no-wrap mb-3">
-      <div class="finance-summery-left-content-width">
+    <v-card-text class="d-flex align-center flex-wrap text-no-wrap">
+      <div class="finance-summery-left-content-width mb-3">
         <span>Annual Companies Taxes</span>
         <h2 class="text-xl font-weight-semibold">
           $1450.35
         </h2>
       </div>
 
-      <div class="finance-summery-right-content-width">
+      <div class="finance-summery-right-content-width mb-3">
         <span>Next Tax Review Date</span>
         <h2 class="text-xl font-weight-semibold">
           July 14, 2021
@@ -38,19 +38,19 @@
       </div>
     </v-card-text>
 
-    <v-card-text class="d-flex align-center flex-wrap text-no-wrap mb-3">
-      <div class="finance-summery-left-content-width">
+    <v-card-text class="d-flex align-center flex-wrap text-no-wrap">
+      <div class="finance-summery-left-content-width mb-3">
         <span>Average Product Price</span>
         <h2 class="text-xl font-weight-semibold">
           $85.50
         </h2>
       </div>
 
-      <div class="finance-summery-right-content-width">
+      <div class="finance-summery-right-content-width mb-3">
         <span>Satisfaction Rate</span>
         <div class="d-flex align-center">
           <v-progress-linear
-            v-model="progress"
+            :value="progress"
             height="6"
           ></v-progress-linear>
           <span class="text-base font-weight-semibold ms-4">{{ Math.ceil(progress) }}%</span>

@@ -20,31 +20,36 @@
         <v-list-item
           v-for="(data,index) in meetingSchedule"
           :key="data.title"
-          :class="`d-flex align-center flex-wrap px-0 ${index > 0 ? 'mt-4':''}`"
+          :class="`d-flex px-0 ${index > 0 ? 'mt-4':''}`"
         >
-          <v-avatar size="38">
+          <v-avatar
+            size="38"
+            class="me-3"
+          >
             <v-img :src="data.avatar"></v-img>
           </v-avatar>
 
-          <div class="text-no-wrap ms-3">
-            <p class="font-weight-medium mb-0 text--primary">
-              {{ data.title }}
-            </p>
-            <v-icon size="14">
-              {{ icons.mdiCalendarBlankOutline }}
-            </v-icon>
-            <span class="text-xs ms-1">{{ data.dateAndTime }}</span>
+          <div class="d-flex align-center flex-grow-1 flex-wrap text-no-wrap">
+            <div>
+              <p class="font-weight-medium mb-0 text--primary">
+                {{ data.title }}
+              </p>
+              <v-icon size="14">
+                {{ icons.mdiCalendarBlankOutline }}
+              </v-icon>
+              <span class="text-xs ms-1">{{ data.dateAndTime }}</span>
+            </div>
+
+            <v-spacer></v-spacer>
+
+            <v-chip
+              small
+              :color="data.chipColor"
+              :class="`v-chip-light-bg ${data.chipColor}--text font-weight-semibold mt-1`"
+            >
+              {{ data.chipText }}
+            </v-chip>
           </div>
-
-          <v-spacer></v-spacer>
-
-          <v-chip
-            small
-            :color="data.chipColor"
-            :class="`v-chip-light-bg ${data.chipColor}--text font-weight-semibold`"
-          >
-            {{ data.chipText }}
-          </v-chip>
         </v-list-item>
       </v-list>
     </v-card-text>

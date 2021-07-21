@@ -1,7 +1,7 @@
 <template>
   <v-card
     flat
-    class="pa-3"
+    class="pa-3 mt-2"
   >
     <v-card-text class="d-flex">
       <v-avatar
@@ -28,6 +28,7 @@
         <input
           ref="refInputEl"
           type="file"
+          accept=".jpeg,.png,.jpg,GIF"
           :hidden="true"
         />
 

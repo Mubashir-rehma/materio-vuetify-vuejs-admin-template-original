@@ -20,9 +20,10 @@
         </v-card-text>
       </div>
 
-      <div>
+      <div class="d-flex align-start">
         <vue-apex-charts
           id="chart-stats-total-sales"
+          height="120"
           :options="chartOptions"
           :series="chartSeries"
         />

@@ -796,6 +796,15 @@ $btn-custom-heights: (
       }
     }
   }
+
+  // remove box shadow from expanded content
+  > .v-data-table__wrapper {
+    tbody {
+      tr.v-data-table__expanded__content {
+        box-shadow: none !important;
+      }
+    }
+  }
 }
 
 @include theme(v-data-table) using ($material) {

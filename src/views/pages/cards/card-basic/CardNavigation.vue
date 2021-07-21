@@ -21,6 +21,7 @@
           <v-tab-item
             v-for="item in items"
             :key="item"
+            class="mt-2"
           >
             <v-card-title>
               Navigation Card
@@ -59,7 +60,7 @@
           <v-tab-item
             v-for="item in items"
             :key="item"
-            class="text-center"
+            class="text-center mt-2"
           >
             <v-card-title class="d-flex justify-center">
               Navigation Card
@@ -85,8 +86,7 @@ export default {
       tab: null,
       tab2: null,
       items: ['ITEM ONE', 'ITEM TWO', 'ITEM THREE'],
-      text:
-        'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards…',
+      text: 'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards…',
     }
   },
 }

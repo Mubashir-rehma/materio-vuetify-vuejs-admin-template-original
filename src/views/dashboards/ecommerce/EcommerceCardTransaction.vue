@@ -36,26 +36,29 @@
             ></v-img>
           </v-avatar>
 
-          <div>
-            <v-list-item-title class="text-sm font-weight-semibold">
-              {{ data.title }}
-            </v-list-item-title>
-            <v-list-item-subtitle class="text-xs">
-              {{ data.subtitle }}
-            </v-list-item-subtitle>
-          </div>
-          <v-spacer></v-spacer>
+          <div class="d-flex align-center flex-grow-1 flex-wrap">
+            <div class="me-2">
+              <v-list-item-title class="text-sm font-weight-semibold">
+                {{ data.title }}
+              </v-list-item-title>
+              <v-list-item-subtitle class="text-xs">
+                {{ data.subtitle }}
+              </v-list-item-subtitle>
+            </div>
 
-          <div class="d-flex align-center">
-            <h4 class="text-base font-weight-semibold me-1">
-              {{ data.transaction }}
-            </h4>
-            <v-icon
-              size="20"
-              :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
-            >
-              {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}
-            </v-icon>
+            <v-spacer></v-spacer>
+
+            <div class="d-flex align-center">
+              <h4 class="text-base font-weight-semibold me-1">
+                {{ data.transaction }}
+              </h4>
+              <v-icon
+                size="20"
+                :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
+              >
+                {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}
+              </v-icon>
+            </div>
           </div>
         </v-list-item>
       </v-list>

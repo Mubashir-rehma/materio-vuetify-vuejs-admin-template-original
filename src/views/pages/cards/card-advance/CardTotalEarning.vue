@@ -41,37 +41,38 @@
       <div
         v-for="(earning,index) in totalEarning"
         :key="earning.avatar"
-        :class="`d-flex align-center justify-space-between flex-wrap ${index >0 ? 'mt-6':''}`"
+        :class="`d-flex ${index >0 ? 'mt-6':''}`"
       >
-        <div class="d-flex align-center">
-          <v-avatar
-            rounded
-            size="38"
-            color="#5e56690a"
-          >
-            <v-img
-              contain
-              :src="earning.avatar"
-              height="20"
-            ></v-img>
-          </v-avatar>
+        <v-avatar
+          rounded
+          size="38"
+          color="#5e56690a"
+          class="me-3"
+        >
+          <v-img
+            contain
+            :src="earning.avatar"
+            height="20"
+          ></v-img>
+        </v-avatar>
 
-          <div class="ms-3">
+        <div class="d-flex align-center flex-grow-1 flex-wrap">
+          <div class="me-auto pe-2">
             <h4 class="font-weight-medium">
               {{ earning.title }}
             </h4>
             <span class="text-xs text-no-wrap">{{ earning.subtitle }}</span>
           </div>
-        </div>
 
-        <div>
-          <p class="text--primary font-weight-medium mb-1">
-            {{ earning.earning }}
-          </p>
-          <v-progress-linear
-            :value="earning.progress"
-            :color="earning.color"
-          ></v-progress-linear>
+          <div>
+            <p class="text--primary font-weight-medium mb-1">
+              {{ earning.earning }}
+            </p>
+            <v-progress-linear
+              :value="earning.progress"
+              :color="earning.color"
+            ></v-progress-linear>
+          </div>
         </div>
       </div>
     </v-card-text>

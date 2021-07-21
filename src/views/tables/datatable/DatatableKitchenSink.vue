@@ -28,7 +28,7 @@
       class="table-kitchen-sink"
     >
       <!-- product -->
-      <template #[`item.product`]="{item}">
+      <template #[`item.product.name`]="{item}">
         <div class="d-flex align-center">
           <div>
             <v-img
@@ -69,7 +69,7 @@
         </div>
       </template>
       <!-- buyer -->
-      <template #[`item.buyer`]="{item}">
+      <template #[`item.buyer.name`]="{item}">
         <div class="d-flex align-center">
           <v-avatar
             size="1.875rem"
@@ -185,13 +185,13 @@ export default {
       search,
       statusColor,
       headers: [
-        { text: 'PRODUCT', value: 'product' },
+        { text: 'PRODUCT', value: 'product.name' },
         { text: 'DATE', value: 'date' },
         { text: 'CATEGORY', value: 'category' },
-        { text: 'BUYERS', value: 'buyer' },
-        { text: 'PAYMENT', value: 'payment' },
-        { text: 'STATUS', value: 'status' },
-        { text: 'DELETE', value: 'delete' },
+        { text: 'BUYERS', value: 'buyer.name' },
+        { text: 'PAYMENT', value: 'payment', sortable: false },
+        { text: 'STATUS', value: 'status', sortable: false },
+        { text: 'DELETE', value: 'delete', sortable: false },
       ],
       categoryIconFilter,
       productList,

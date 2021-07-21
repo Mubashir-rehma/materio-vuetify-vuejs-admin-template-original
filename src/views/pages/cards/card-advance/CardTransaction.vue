@@ -19,14 +19,14 @@
         <v-list-item
           v-for="(data,index) in transactionData"
           :key="data.transaction"
-          class="d-flex align-center px-0"
+          class="d-flex px-0"
           :class="index > 0 ? 'mt-4':''"
         >
           <v-avatar
             size="40"
             rounded
             :color="data.avatarColor"
-            :class="`v-avatar-light-bg ${data.avatarColor}--text`"
+            :class="`v-avatar-light-bg ${data.avatarColor}--text me-3`"
           >
             <v-img
               max-height="20"
@@ -36,22 +36,25 @@
             ></v-img>
           </v-avatar>
 
-          <div class="ms-3">
-            <h4 class="font-weight-semibold text-no-wrap">
-              {{ data.title }}
-            </h4>
-            <span class="text-xs text-no-wrap">{{ data.subtitle }}</span>
-          </div>
-          <v-spacer></v-spacer>
+          <div class="d-flex align-center flex-grow-1 flex-wrap">
+            <div class="me-2">
+              <h4 class="font-weight-semibold text-no-wrap">
+                {{ data.title }}
+              </h4>
+              <span class="text-xs text-no-wrap">{{ data.subtitle }}</span>
+            </div>
 
-          <div class="d-flex align-center">
-            <span class="text-base font-weight-semibold text--primary me-1">{{ data.transaction }}</span>
-            <v-icon
-              size="22"
-              :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
-            >
-              {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}
-            </v-icon>
+            <v-spacer></v-spacer>
+
+            <div class="d-flex align-center">
+              <span class="text-base font-weight-semibold text--primary me-1">{{ data.transaction }}</span>
+              <v-icon
+                size="22"
+                :color="data.transaction.charAt(0) === '+' ? 'success' :'error'"
+              >
+                {{ data.transaction.charAt(0) === '+' ? icons.mdiChevronUp :icons.mdiChevronDown }}
+              </v-icon>
+            </div>
           </div>
         </v-list-item>
       </v-list>

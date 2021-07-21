@@ -32,12 +32,14 @@
         {{ statTitle }}
       </p>
 
-      <span class="font-weight-semibold text-2xl">{{ statistics }}</span>
-      <span
-        class="percentage text-xs"
-        :class="checkChange(change) ? 'success--text':'error--text'"
-      > {{ change }}</span>
-      <p class="text-xs text--secondary mt-2 mb-0">
+      <div class="d-flex align-end flex-wrap">
+        <span class="font-weight-semibold text-2xl me-1 mb-2">{{ statistics }}</span>
+        <span
+          class="percentage text-xs mb-2"
+          :class="checkChange(change) ? 'success--text':'error--text'"
+        > {{ change }}</span>
+      </div>
+      <p class="text-xs text--secondary mb-0">
         {{ subtitle }}
       </p>
     </v-card-text>

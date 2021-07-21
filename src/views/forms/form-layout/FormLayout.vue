@@ -114,12 +114,10 @@
 
     <!-- collapsible -->
     <v-col cols="12">
-      <app-card-code
-        title="Collapsible Section"
-        :code="codeSnippets.formLayoutCollapsible"
-      >
-        <demo-form-layout-collapsible></demo-form-layout-collapsible>
-      </app-card-code>
+      <h4 class="text-xl font-weight-medium mb-5">
+        Collapsible Section
+      </h4>
+      <demo-form-layout-collapsible></demo-form-layout-collapsible>
     </v-col>
   </v-row>
 </template>
@@ -148,7 +146,6 @@ import {
   formLayoutHint,
   formLayoutValidation,
   formLayoutTabs,
-  formLayoutCollapsible,
 } from './demos/code'
 
 export default {
@@ -175,7 +172,6 @@ export default {
         formLayoutHint,
         formLayoutValidation,
         formLayoutTabs,
-        formLayoutCollapsible,
       },
     }
   },

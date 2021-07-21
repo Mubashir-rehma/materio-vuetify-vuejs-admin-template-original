@@ -1,10 +1,11 @@
 <template>
   <v-card
     flat
+    class="mt-5"
   >
-    <v-form class="mt-3">
+    <v-form>
       <div class="px-3">
-        <v-card-text>
+        <v-card-text class="pt-5">
           <v-row>
             <v-col
               cols="12"
@@ -56,7 +57,7 @@
             >
               <v-img
                 contain
-                max-width="196"
+                max-width="170"
                 src="/images/3d-characters/pose-m-1.png"
                 class="security-character"
               ></v-img>

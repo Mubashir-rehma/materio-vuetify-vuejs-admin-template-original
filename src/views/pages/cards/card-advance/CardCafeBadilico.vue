@@ -11,6 +11,7 @@
         <v-card-subtitle class="d-flex align-center flex-wrap ps-0 pb-0">
           <v-rating
             dense
+            readonly
             background-color="warning"
             color="warning"
             :value="5"

@@ -1,10 +1,10 @@
 <template>
   <v-card
     flat
-    class="pa-3"
+    class="pa-3 mt-2"
   >
     <v-form class="multi-col-validation">
-      <v-card-text>
+      <v-card-text class="pt-5">
         <v-row>
           <v-col cols="12">
             <v-textarea

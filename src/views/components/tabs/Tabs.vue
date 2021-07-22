@@ -26,7 +26,7 @@
     >
       <app-card-code
         title="Icons and text"
-        :code="codeSnippets.tabsIconsAndText"
+        :code="codeSnippets.tabsIconAndText"
       >
         <v-card-text>Using <code>icons-with-text</code> prop increases the <code>v-tabs</code> height to 72px to allow for both icons as well as text to be used.</v-card-text>
 
@@ -149,7 +149,7 @@
         title="Programmatic Navigation"
         :code="codeSnippets.tabsProgrammaticNavigation"
       >
-        <demo-tabs-prigrammatic-navigation></demo-tabs-prigrammatic-navigation>
+        <demo-tabs-programmatic-navigation></demo-tabs-programmatic-navigation>
       </app-card-code>
     </v-col>
 
@@ -185,7 +185,7 @@ import DemoTabsIconAndText from './demos/DemoTabsIconAndText.vue'
 import DemoTabsPagination from './demos/DemoTabsPagination.vue'
 import DemoTabsVertical from './demos/DemoTabsVertical.vue'
 import DemoTabsAlignment from './demos/DemoTabsAlignment.vue'
-import DemoTabsPrigrammaticNavigation from './demos/DemoTabsPrigrammaticNavigation.vue'
+import DemoTabsProgrammaticNavigation from './demos/DemoTabsProgrammaticNavigation.vue'
 import DemoTabsDynamic from './demos/DemoTabsDynamic.vue'
 
 // code
@@ -194,7 +194,7 @@ import {
   tabsIcons,
   tabsFixed,
   tabsGrow,
-  tabsIconsAndText,
+  tabsIconAndText,
   tabsPagination,
   tabsAlignment,
   tabsVertical,
@@ -213,7 +213,7 @@ export default {
     DemoTabsPagination,
     DemoTabsVertical,
     DemoTabsAlignment,
-    DemoTabsPrigrammaticNavigation,
+    DemoTabsProgrammaticNavigation,
     DemoTabsDynamic,
   },
   setup() {
@@ -223,7 +223,7 @@ export default {
         tabsIcons,
         tabsFixed,
         tabsGrow,
-        tabsIconsAndText,
+        tabsIconAndText,
         tabsPagination,
         tabsAlignment,
         tabsVertical,

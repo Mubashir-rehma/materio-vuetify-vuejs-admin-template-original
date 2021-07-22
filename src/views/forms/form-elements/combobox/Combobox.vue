@@ -111,7 +111,7 @@
     >
       <app-card-code
         title="Advanced custom options"
-        :code="codeSnippets.comboboxAdvancedCustomOptions"
+        :code="codeSnippets.comboboxAdvanceCustomOptions"
       >
         <v-card-text>
           The <code>v-combobox</code> improves upon the added functionality from <code>v-select</code> and <code>v-autocomplete</code>. This provides you with an expansive interface to create truly customized implementations.
@@ -145,7 +145,7 @@ import {
   comboboxMultiple,
   comboboxClearable,
   comboboxNoDataWithChips,
-  comboboxAdvancedCustomOptions,
+  comboboxAdvanceCustomOptions,
 } from './demos/code'
 
 export default {
@@ -168,7 +168,7 @@ export default {
         comboboxMultiple,
         comboboxClearable,
         comboboxNoDataWithChips,
-        comboboxAdvancedCustomOptions,
+        comboboxAdvanceCustomOptions,
       },
     }
   },

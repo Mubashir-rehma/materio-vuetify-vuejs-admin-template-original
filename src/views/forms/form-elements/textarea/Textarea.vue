@@ -211,7 +211,7 @@
     >
       <app-card-code
         title="Validation On Blur"
-        :code="codeSnippets.textareaValidationOnblur"
+        :code="codeSnippets.textareaValidationOnBlur"
       >
         <v-card-text>
           Delays validation until blur event
@@ -255,7 +255,7 @@ import {
   textareaRows,
   textareaNoResize,
   textareaValidation,
-  textareaValidationOnblur,
+  textareaValidationOnBlur,
 } from './demos/code'
 
 export default {
@@ -288,7 +288,7 @@ export default {
         textareaRows,
         textareaNoResize,
         textareaValidation,
-        textareaValidationOnblur,
+        textareaValidationOnBlur,
       },
     }
   },

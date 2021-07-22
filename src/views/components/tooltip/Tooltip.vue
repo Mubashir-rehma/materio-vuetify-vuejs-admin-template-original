@@ -89,7 +89,7 @@
     <!-- tooltip on various elements -->
     <app-card-code
       title="Tooltip on Various Elements"
-      :code="codeSnippets.tooltipOnVariousElements"
+      :code="codeSnippets.tooltipVariousElements"
     >
       <v-card-text>
         Tooltips can wrap any element.
@@ -121,7 +121,7 @@ import {
   tooltipEvent,
   tooltipVModal,
   tooltipTransition,
-  tooltipOnVariousElements,
+  tooltipVariousElements,
   tooltipDelay,
 } from './demos/code'
 
@@ -144,7 +144,7 @@ export default {
         tooltipEvent,
         tooltipVModal,
         tooltipTransition,
-        tooltipOnVariousElements,
+        tooltipVariousElements,
         tooltipDelay,
       },
     }

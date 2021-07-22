@@ -190,7 +190,7 @@
     >
       <app-card-code
         title="Date buttons"
-        :code="codeSnippets.datepickerDateButtons"
+        :code="codeSnippets.datepickerDateButton"
       >
         <v-card-text>
           Handle events such as <code>@click</code>, <code>@dblclick</code>, <code>@mouseenter</code>, and more when interacting with date, month, and year buttons.
@@ -310,7 +310,7 @@ import {
   datepickerRange,
   datepickerShowSiblingMonths,
   datepickerWidth,
-  datepickerDateButtons,
+  datepickerDateButton,
   datepickerBirthdayPicker,
   datepickerDialogAndMenu,
   datepickerFormatting,
@@ -349,7 +349,7 @@ export default {
         datepickerRange,
         datepickerShowSiblingMonths,
         datepickerWidth,
-        datepickerDateButtons,
+        datepickerDateButton,
         datepickerBirthdayPicker,
         datepickerDialogAndMenu,
         datepickerFormatting,

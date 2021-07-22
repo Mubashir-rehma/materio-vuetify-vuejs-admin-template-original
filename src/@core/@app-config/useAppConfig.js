@@ -19,6 +19,13 @@ export default function useAppConfig() {
     },
   })
 
+  const appSkinVariant = computed({
+    get: () => store.state.appConfig.app.skinVariant,
+    set: value => {
+      store.commit('appConfig/UPDATE_APP_SKIN_VARIANT', value)
+    },
+  })
+
   const appContentWidth = computed({
     get: () => store.state.appConfig.app.contentWidth,
     set: value => {
@@ -84,6 +91,7 @@ export default function useAppConfig() {
   return {
     appContentLayoutNav,
     appRouteTransition,
+    appSkinVariant,
     appContentWidth,
     menuIsMenuHidden,
     menuIsVerticalNavMini,

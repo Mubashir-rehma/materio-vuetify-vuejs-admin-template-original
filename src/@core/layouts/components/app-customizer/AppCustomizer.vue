@@ -53,7 +53,7 @@
           <!-- Skin -->
           <span class="text--primary">Skin</span>
           <v-radio-group
-            v-model="skin"
+            v-model="appSkinVariant"
             class="mt-1"
             hide-details
             row
@@ -229,6 +229,7 @@ export default {
     // eslint-disable-next-line object-curly-newline
     const {
       appContentLayoutNav,
+      appSkinVariant,
       appContentWidth,
       appRouteTransition,
       menuIsVerticalNavMini,
@@ -257,7 +258,6 @@ export default {
       { text: 'Slide Y Reverse', value: 'slide-y-reverse-transition' },
     ]
 
-    const skin = ref('default')
     const skinOptions = [
       { label: 'Default', value: 'default' },
       { label: 'Bordered', value: 'bordered' },
@@ -307,6 +307,7 @@ export default {
       appContentLayoutNav,
 
       // Skin
+      appSkinVariant,
       skinOptions,
 
       // App Content Width
@@ -328,7 +329,6 @@ export default {
       isRtl,
       themes,
       routerTransitionOptions,
-      skin,
 
       // Perfect scrollbar options
       perfectScrollbarOptions,

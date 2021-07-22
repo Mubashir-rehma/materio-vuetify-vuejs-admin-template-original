@@ -8,6 +8,7 @@ const themeConfig = {
     isRtl: false,
     contentLayoutNav: 'vertical', // vertical, horizontal
     routeTransition: 'scroll-x-transition', // https://vuetifyjs.com/en/styles/transitions/#api
+    skinVariant: 'default', // default, bordered, semi-dark
     contentWidth: 'boxed',
   },
   menu: {

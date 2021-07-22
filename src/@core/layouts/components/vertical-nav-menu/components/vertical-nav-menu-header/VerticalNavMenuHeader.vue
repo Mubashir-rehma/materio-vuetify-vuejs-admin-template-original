@@ -32,12 +32,14 @@
         <v-icon
           v-show="!menuIsVerticalNavMini"
           size="20"
+          class="cursor-pointer"
         >
           {{ icons.mdiRecordCircleOutline }}
         </v-icon>
         <v-icon
           v-show="menuIsVerticalNavMini"
           size="20"
+          class="cursor-pointer"
         >
           {{ icons.mdiRadioboxBlank }}
         </v-icon>

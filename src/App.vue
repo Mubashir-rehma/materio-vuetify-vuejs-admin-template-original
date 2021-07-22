@@ -1,5 +1,8 @@
 <template>
-  <component :is="resolveLayoutVariant">
+  <component
+    :is="resolveLayoutVariant"
+    :class="`skin-variant--${appSkinVariant}`"
+  >
     <transition
       :name="appRouteTransition"
       mode="out-in"
@@ -31,7 +34,7 @@ export default {
   },
   setup() {
     const { route } = useRouter()
-    const { appContentLayoutNav, appRouteTransition } = useAppConfig()
+    const { appContentLayoutNav, appSkinVariant, appRouteTransition } = useAppConfig()
 
     const { handleBreakpointLayoutSwitch } = useLayout()
     handleBreakpointLayoutSwitch()
@@ -45,6 +48,7 @@ export default {
 
     return {
       resolveLayoutVariant,
+      appSkinVariant,
       appRouteTransition,
     }
   },

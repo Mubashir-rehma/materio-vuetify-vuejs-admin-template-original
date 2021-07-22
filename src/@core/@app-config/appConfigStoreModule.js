@@ -6,6 +6,7 @@ export default {
     app: {
       contentLayoutNav: themeConfig.app.contentLayoutNav,
       routeTransition: themeConfig.app.routeTransition,
+      skinVariant: themeConfig.app.skinVariant,
       contentWidth: themeConfig.app.contentWidth,
     },
     menu: {
@@ -27,7 +28,9 @@ export default {
     UPDATE_CONTENT_LAYOUT_NAV(state, value) {
       state.app.contentLayoutNav = value
     },
-
+    UPDATE_APP_SKIN_VARIANT(state, value) {
+      state.app.skinVariant = value
+    },
     UPDATE_APP_CONTENT_WIDTH(state, value) {
       state.app.contentWidth = value
     },

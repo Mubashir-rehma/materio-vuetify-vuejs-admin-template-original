@@ -118,11 +118,12 @@
           outlined
           :class="index < paymentCards.length -1 ? 'mb-4':''"
         >
-          <v-card-text class="d-flex align-center">
-            <div>
+          <v-card-text class="d-flex align-sm-center flex-column flex-sm-row">
+            <div class="mb-3 mb-sm-0">
               <v-img
                 contain
                 :max-width="paymentCard.imgWidth"
+                height="25"
                 :src="`/images/logos/${paymentCard.cardImg}`"
               ></v-img>
               <div class="text--primary font-weight-medium mt-2">
@@ -139,40 +140,28 @@
                 </v-chip>
               </div>
               <span>
-                <span class="text-xs">**** ****</span>
+                <span class="text-xs">**** **** **** </span>
                 <span>{{ paymentCard.cardLastDigit.substring(paymentCard.cardLastDigit.length - 4) }}</span>
               </span>
             </div>
 
             <v-spacer></v-spacer>
 
-            <div class="text-right">
+            <div class="text-sm-right">
               <v-btn
                 color="primary"
                 outlined
                 class="mb-5"
                 @click="editCardDetails(paymentCard.id)"
               >
-                <span class="d-none d-sm-block">Edit</span>
-                <v-icon
-                  size="20"
-                  class="d-block d-sm-none"
-                >
-                  {{ icons.mdiSquareEditOutline }}
-                </v-icon>
+                Edit
               </v-btn>
               <v-btn
                 color="secondary"
                 outlined
                 class="ms-3 mb-5"
               >
-                <span class="d-none d-sm-block">Delete</span>
-                <v-icon
-                  size="20"
-                  class="d-block d-sm-none"
-                >
-                  {{ icons.mdiDeleteOutline }}
-                </v-icon>
+                Delete
               </v-btn>
 
               <p class="mb-0">
@@ -332,7 +321,7 @@ export default {
         cardImg: 'visa.png',
         imgWidth: '60',
         owner: 'Mildred Wagner',
-        cardLastDigit: '4532361620705678',
+        cardLastDigit: '4532 3616 2070 5678',
         cardExpires: '02/24',
       },
       {

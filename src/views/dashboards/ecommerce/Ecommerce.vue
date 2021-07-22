@@ -11,6 +11,7 @@
       cols="12"
       sm="6"
       md="2"
+      class="align-self-end"
     >
       <statistics-card-vertical
         :change="transactionsOptions.change"
@@ -26,6 +27,7 @@
       cols="12"
       sm="6"
       md="2"
+      class="align-self-end"
     >
       <statistics-card-vertical
         :change="revenueOptions.change"

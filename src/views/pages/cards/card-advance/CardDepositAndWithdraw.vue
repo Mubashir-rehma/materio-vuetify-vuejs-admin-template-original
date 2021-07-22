@@ -85,31 +85,31 @@ export default {
   setup() {
     const deposit = [
       {
-        img: '/images/pages/gumroad.png',
+        img: '/images/logos/gumroad.png',
         title: 'Gumroad Account',
         subtitle: 'Sell UI Kit',
         amount: '+$4,650',
       },
       {
-        img: '/images/pages/mastercard.jpg',
+        img: '/images/logos/master.png',
         title: 'Mastercard',
         subtitle: 'Wallet deposit',
         amount: '+$92,705',
       },
       {
-        img: '/images/pages/stripe-account.png',
+        img: '/images/logos/stripe-account.png',
         title: 'Stripe Account',
         subtitle: 'iOS Application',
         amount: '+$957',
       },
       {
-        img: '/images/pages/american-bank.png',
+        img: '/images/logos/american-bank.png',
         title: 'American Bank',
         subtitle: 'Bank Transfer',
         amount: '+$6,837',
       },
       {
-        img: '/images/pages/bank-account.png',
+        img: '/images/logos/bank-account.png',
         title: 'Bank Account',
         subtitle: 'Wallet deposit',
         amount: '+$446',
@@ -117,31 +117,31 @@ export default {
     ]
     const withdraw = [
       {
-        img: '/images/pages/google-adsense.png',
+        img: '/images/logos/google.png',
         title: 'Google Adsense',
         subtitle: 'Paypal deposit',
         amount: '-$145',
       },
       {
-        img: '/images/pages/github-enterprise.png',
+        img: '/images/logos/github.png',
         title: 'Github Enterprise',
         subtitle: 'Security & compliance',
         amount: '-$1870',
       },
       {
-        img: '/images/pages/slack-logo.png',
+        img: '/images/logos/slack.png',
         title: 'Upgrade Slack Plan',
         subtitle: 'Debit card deposit',
         amount: '-$450',
       },
       {
-        img: '/images/pages/digital-ocean-logo.png',
+        img: '/images/logos/digital-ocean-logo.png',
         title: 'Digital Ocean',
         subtitle: 'Cloud Hosting',
         amount: '-$540',
       },
       {
-        img: '/images/pages/amazon-web-services-logo.png',
+        img: '/images/logos/amazon-web-services-logo.png',
         title: 'Bank Account',
         subtitle: 'Choosing a Cloud Platform',
         amount: '-$21',

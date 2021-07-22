@@ -18,7 +18,7 @@
               size="33"
               class="me-3"
             >
-              <v-img :src="`/images/logos/${item.logo}`"></v-img>
+              <v-img :src="`/images/icons/project-icons/${item.logo}`"></v-img>
             </v-avatar>
             <div class="text-no-wrap">
               <p class="font-weight-medium text--primary mb-n1">
@@ -165,7 +165,7 @@ export default {
     ]
     const projectList = [
       {
-        logo: 'logo-2.jpg',
+        logo: 'react.png',
         name: 'BGC eCommerce App',
         project: 'React Project',
         totalTask: '122/240',
@@ -173,15 +173,15 @@ export default {
         hours: '18:42',
       },
       {
-        logo: 'logo-1.jpg',
+        logo: 'figma.png',
         name: 'Falcon Logo Design',
-        project: 'UI/UX Project',
+        project: 'Figma Project',
         totalTask: '9/56',
         progress: 18,
         hours: '20:42',
       },
       {
-        logo: 'logo-3.jpg',
+        logo: 'vue.png',
         name: 'Dashboard Design',
         project: 'Vuejs Project',
         totalTask: '290/320',
@@ -189,31 +189,31 @@ export default {
         hours: '120:87',
       },
       {
-        logo: 'logo-4.jpg',
+        logo: 'xamarin.png',
         name: 'Foodista mobile app',
-        project: 'IPhone Project',
+        project: 'Xamarin Project',
         totalTask: '290/320',
         progress: 8,
         hours: '120:87',
       },
       {
-        logo: 'logo-5.jpg',
-        name: 'Dojo React Project',
-        project: 'React Project',
+        logo: 'python.png',
+        name: 'Dojo Email App',
+        project: 'Python Project',
         totalTask: '120/186',
         progress: 49,
         hours: '230:10',
       },
       {
-        logo: 'logo-6.jpg',
+        logo: 'sketch.png',
         name: 'Blockchain Website',
-        project: 'Python Project',
+        project: 'Sketch Project',
         totalTask: '99/109',
         progress: 92,
         hours: '342:41',
       },
       {
-        logo: 'logo-7.jpg',
+        logo: 'html.png',
         name: 'Hoffman Website',
         project: 'HTML Project',
         totalTask: '98/110',

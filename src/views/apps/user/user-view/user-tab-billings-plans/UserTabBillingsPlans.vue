@@ -326,7 +326,7 @@ export default {
       },
       {
         id: 3,
-        cardImg: 'ae.png',
+        cardImg: 'american-express.png',
         imgWidth: '80',
         owner: 'Lester Jennings',
         cardLastDigit: '6011 0009 9013 9424',

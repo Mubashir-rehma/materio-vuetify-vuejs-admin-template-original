@@ -120,8 +120,8 @@ import { mdiDotsVertical, mdiArrowRight } from '@mdi/js'
 export default {
   setup() {
     const paymentDetails = [
-      { avatarImg: '/images/pages/master-card.jpg', title: 'Credit card', cardNo: '2566 xxxx xxxx 8908' },
-      { avatarImg: '/images/pages/credit-card2.jpg', title: 'Credit card', cardNo: '8990 xxxx xxxx 6852' },
+      { avatarImg: '/images/logos/master-card.jpg', title: 'Credit card', cardNo: '2566 xxxx xxxx 8908' },
+      { avatarImg: '/images/logos/credit-card2.jpg', title: 'Credit card', cardNo: '8990 xxxx xxxx 6852' },
     ]
 
     return {

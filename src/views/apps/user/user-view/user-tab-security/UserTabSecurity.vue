@@ -208,28 +208,28 @@ export default {
 
     const recenntDevices = [
       {
-        browser: 'chrome-logo.png',
+        browser: 'chrome.png',
         name: 'Chrome on Windows',
         device: 'Dell XPS 15',
         location: 'United States',
         recentActivity: '10, Jan 2020 20:07',
       },
       {
-        browser: 'chrome-logo.png',
+        browser: 'chrome.png',
         name: 'Chrome on Android',
         device: 'Google Pixel 3a',
         location: 'Ghana',
         recentActivity: '11, Jan 2020 10:16',
       },
       {
-        browser: 'chrome-logo.png',
+        browser: 'chrome.png',
         name: 'Chrome on MacOS',
         device: 'Apple iMac',
         location: 'Mayotte',
         recentActivity: '11, Jan 2020 12:10',
       },
       {
-        browser: 'chrome-logo.png',
+        browser: 'chrome.png',
         name: 'Chrome on IPhone',
         device: 'Apple iPhone XR',
         location: 'Mauritania',

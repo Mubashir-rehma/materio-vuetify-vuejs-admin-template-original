@@ -24,7 +24,7 @@
               >
                 <template v-slot:append>
                   <img
-                    max-width="60"
+                    height="25"
                     :src="`/images/logos/${cardDetail.cardImg}`"
                     alt="card-logo"
                   />

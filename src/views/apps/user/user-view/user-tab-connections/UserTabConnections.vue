@@ -23,7 +23,7 @@
               max-width="35"
               contain
               class="me-3"
-              :src="`/images/icons/${account.img}`"
+              :src="`/images/logos/${account.img}`"
             ></v-img>
 
             <div class="d-flex align-center flex-grow-1 flex-wrap">
@@ -68,7 +68,7 @@
               height="35"
               contain
               class="me-3"
-              :src="`/images/icons/${account.img}`"
+              :src="`/images/logos/${account.img}`"
             ></v-img>
 
             <div>
@@ -134,7 +134,7 @@ export default {
         connected: true,
       },
       {
-        img: 'mailchimp.png',
+        img: 'mail-chimp.png',
         title: 'Mailchimp',
         text: 'Email marketing service',
         connected: false,

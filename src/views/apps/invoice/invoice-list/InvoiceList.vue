@@ -1,8 +1,8 @@
 <template>
   <v-card id="invoice-list">
     <!-- search -->
-    <v-card-text class="d-flex align-center flex-wrap">
-      <div class="d-flex align-center mt-sm-2 mt-md-0">
+    <v-card-text class="d-flex align-center flex-wrap pb-0">
+      <div class="d-flex align-center pb-5">
         <!-- actions -->
         <v-select
           v-model="selectedAction"
@@ -34,7 +34,7 @@
 
       <v-spacer></v-spacer>
 
-      <div class="d-flex align-center mt-4 mt-sm-2 mt-md-0">
+      <div class="d-flex align-center pb-5">
         <v-text-field
           v-model="searchQuery"
           single-line

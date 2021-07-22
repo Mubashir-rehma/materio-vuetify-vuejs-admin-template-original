@@ -7,14 +7,16 @@
         class="brand-logo d-flex align-center"
       >
         <v-img
-          max-height="30"
-          max-width="30"
-          src="/logo.svg"
-          class="me-3"
+          :src="appLogo"
+          max-height="30px"
+          max-width="30px"
+          alt="logo"
+          contain
+          class="me-3 "
         ></v-img>
 
         <h2 class="text--primary">
-          Materio
+          {{ appName }}
         </h2>
       </router-link>
       <!--/ brand logo -->
@@ -175,6 +177,7 @@ import { required, emailValidator, passwordValidator, alphaValidator } from '@co
 import { ref, getCurrentInstance } from '@vue/composition-api'
 import axios from '@axios'
 import { useRouter } from '@core/utils'
+import themeConfig from '@themeConfig'
 
 export default {
   setup() {
@@ -287,6 +290,10 @@ export default {
         passwordValidator,
         alphaValidator,
       },
+
+      // themeConfig
+      appName: themeConfig.app.name,
+      appLogo: themeConfig.app.logo,
 
       // Template Refs
       registerForm,

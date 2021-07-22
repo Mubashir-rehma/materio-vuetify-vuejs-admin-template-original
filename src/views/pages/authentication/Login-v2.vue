@@ -7,13 +7,16 @@
         class="brand-logo d-flex align-center"
       >
         <v-img
-          max-height="30"
-          max-width="30"
-          src="/logo.svg"
+          :src="appLogo"
+          max-height="30px"
+          max-width="30px"
+          alt="logo"
+          contain
+          class="me-3 "
         ></v-img>
 
-        <h2 class="text--primary ms-3">
-          Materio
+        <h2 class="text--primary">
+          {{ appName }}
         </h2>
       </router-link>
       <!--/ brand logo -->
@@ -167,6 +170,7 @@
 // eslint-disable-next-line object-curly-newline
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
+import themeConfig from '@themeConfig'
 
 export default {
   setup() {
@@ -201,6 +205,11 @@ export default {
       email,
       password,
       socialLink,
+
+      // themeConfig
+      appName: themeConfig.app.name,
+      appLogo: themeConfig.app.logo,
+
       icons: {
         mdiEyeOutline,
         mdiEyeOffOutline,

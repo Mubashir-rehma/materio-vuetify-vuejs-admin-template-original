@@ -27,13 +27,14 @@
           color="info"
           indeterminate
         ></v-progress-circular>
-        <img
+        <v-img
           v-else
-          width="24"
-          height="24"
-          src="/logo.svg"
-          alt=""
-        >
+          :src="appLogo"
+          max-height="30px"
+          max-width="30px"
+          alt="logo"
+          contain
+        ></v-img>
       </v-fade-transition>
     </template>
     <template v-slot:append-outer>
@@ -52,6 +53,7 @@
 <script>
 import { ref } from '@vue/composition-api'
 import { mdiHelpCircleOutline, mdiMenu, mdiTarget } from '@mdi/js'
+import themeConfig from '@themeConfig'
 
 export default {
   setup() {
@@ -72,6 +74,10 @@ export default {
       message,
       loading,
       clickMe,
+
+      // themeConfig
+      appLogo: themeConfig.app.logo,
+
       icons: {
         mdiHelpCircleOutline,
         mdiMenu,

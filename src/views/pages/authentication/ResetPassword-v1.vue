@@ -9,14 +9,16 @@
             class="d-flex align-center"
           >
             <v-img
-              max-height="30"
-              max-width="30"
-              src="/logo.svg"
-              class="me-3"
+              :src="appLogo"
+              max-height="30px"
+              max-width="30px"
+              alt="logo"
+              contain
+              class="me-3 "
             ></v-img>
 
             <h2 class="text-2xl font-weight-semibold">
-              Materio
+              {{ appName }}
             </h2>
           </router-link>
         </v-card-title>
@@ -113,6 +115,7 @@
 // eslint-disable-next-line object-curly-newline
 import { mdiChevronLeft, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
+import themeConfig from '@themeConfig'
 
 export default {
   setup() {
@@ -126,6 +129,11 @@ export default {
       isConfirmPasswordVisible,
       password,
       confirmPassword,
+
+      // themeConfig
+      appName: themeConfig.app.name,
+      appLogo: themeConfig.app.logo,
+
       icons: {
         mdiChevronLeft,
         mdiEyeOutline,

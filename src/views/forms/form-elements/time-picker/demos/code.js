@@ -1,5 +1,5 @@
 export const timePickerBasic = ''
-export const timePickerAllowedTime = ''
+export const timePickerAllowedTimes = ''
 export const timePickerAmPm = ''
 export const timePickerFormat = ''
 export const timePickerNoTitle = ''

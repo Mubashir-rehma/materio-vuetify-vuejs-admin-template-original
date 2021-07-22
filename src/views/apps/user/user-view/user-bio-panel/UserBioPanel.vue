@@ -231,10 +231,10 @@
           <p class="d-flex font-weight-semibold text--primary mt-5 mb-2">
             <span>Days</span>
             <v-spacer></v-spacer>
-            <span>4 of 30 Days</span>
+            <span>26 of 30 Days</span>
           </p>
           <v-progress-linear
-            value="75"
+            value="86"
             height="8"
             rounded
           ></v-progress-linear>

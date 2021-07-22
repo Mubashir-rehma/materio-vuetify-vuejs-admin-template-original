@@ -171,7 +171,7 @@
     <v-col cols="12">
       <app-card-code
         title="Sync"
-        :code="codeSnippets.datepickerPickerDate"
+        :code="codeSnippets.datepickerSync"
       >
         <v-card-text>
           You can watch the <code>picker-date</code> which is the displayed month/year (depending on the picker type and active view) to perform some action when it changes. This uses the <code>.sync</code> modifier.
@@ -306,7 +306,7 @@ import {
   datepickerAllowedDates,
   datepickerIcons,
   datepickerMultiple,
-  datepickerPickerDate,
+  datepickerSync,
   datepickerRange,
   datepickerShowSiblingMonths,
   datepickerWidth,
@@ -345,7 +345,7 @@ export default {
         datepickerAllowedDates,
         datepickerIcons,
         datepickerMultiple,
-        datepickerPickerDate,
+        datepickerSync,
         datepickerRange,
         datepickerShowSiblingMonths,
         datepickerWidth,

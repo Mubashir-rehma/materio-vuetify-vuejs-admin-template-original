@@ -2,7 +2,7 @@
   <div class="demo-space-y">
     <app-card-code
       title="Simple Form Validation"
-      :code="codeSnippet.formValidation"
+      :code="codeSnippet.formValidationSimple"
     >
       <v-card-text>
         To add validation to any input filed just used <code>rules</code> prop.
@@ -16,7 +16,7 @@
     <!-- Validating Multiple Rules -->
     <app-card-code
       title="Validating Multiple Rules"
-      :code="codeSnippet.formValidationValidatingMultipleRules"
+      :code="codeSnippet.formValidationMultipleRules"
     >
       <v-card-text>
         <demo-form-validation-multiple-rules></demo-form-validation-multiple-rules>
@@ -44,7 +44,7 @@ import DemoFormValidationMultipleRules from './demos/DemoFormValidationMultipleR
 import DemoFormValidationTypes from './demos/DemoFormValidationTypes.vue'
 
 // code
-import { formValidation, formValidationValidatingMultipleRules, formValidationTypes } from './demos/code'
+import { formValidationSimple, formValidationMultipleRules, formValidationTypes } from './demos/code'
 
 export default {
   components: {
@@ -56,8 +56,8 @@ export default {
   setup() {
     return {
       codeSnippet: {
-        formValidation,
-        formValidationValidatingMultipleRules,
+        formValidationSimple,
+        formValidationMultipleRules,
         formValidationTypes,
       },
     }

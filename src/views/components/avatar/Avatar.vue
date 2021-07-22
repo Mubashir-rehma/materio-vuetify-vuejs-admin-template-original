@@ -52,7 +52,7 @@
           The size <code>prop</code> allows you to define the height and width of <code>v-avatar</code>.
         </v-card-text>
         <v-card-text>
-          <demo-avatar-size></demo-avatar-size>
+          <demo-avatar-sizes></demo-avatar-sizes>
         </v-card-text>
       </app-card-code>
     </v-col>
@@ -162,7 +162,7 @@ import AppCardCode from '@core/components/app-card-code/AppCardCode.vue'
 // demos
 import DemoAvatarColors from './demos/DemoAvatarColors.vue'
 import DemoAvatarInitials from './demos/DemoAvatarInitials.vue'
-import DemoAvatarSize from './demos/DemoAvatarSize.vue'
+import DemoAvatarSizes from './demos/DemoAvatarSizes.vue'
 import DemoAvatarIcons from './demos/DemoAvatarIcons.vue'
 import DemoAvatarRounded from './demos/DemoAvatarRounded.vue'
 import DemoAvatarTile from './demos/DemoAvatarTile.vue'
@@ -187,7 +187,7 @@ export default {
     AppCardCode,
     DemoAvatarColors,
     DemoAvatarInitials,
-    DemoAvatarSize,
+    DemoAvatarSizes,
     DemoAvatarIcons,
     DemoAvatarRounded,
     DemoAvatarTile,

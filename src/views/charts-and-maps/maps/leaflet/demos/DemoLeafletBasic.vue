@@ -1,33 +1,23 @@
 <template>
-  <app-card-code
-    title="Basic Map"
-    :code="codeBasic"
+  <l-map
+    :zoom="zoom"
+    :center="center"
   >
-    <v-card-text>
-      <l-map
-        :zoom="zoom"
-        :center="center"
-      >
-        <l-tile-layer :url="url" />
-        <l-circle
-          :lat-lng="circle.center"
-          :radius="circle.radius"
-          :color="circle.color"
-        />
-      </l-map>
-    </v-card-text>
-  </app-card-code>
+    <l-tile-layer :url="url" />
+    <l-circle
+      :lat-lng="circle.center"
+      :radius="circle.radius"
+      :color="circle.color"
+    />
+  </l-map>
 </template>
 
 <script>
-import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import { LMap, LTileLayer, LCircle } from 'vue2-leaflet'
 import 'leaflet/dist/leaflet.css'
-import { codeBasic } from './code'
 
 export default {
   components: {
-    AppCardCode,
     LMap,
     LTileLayer,
     LCircle,
@@ -47,7 +37,6 @@ export default {
       zoom,
       center,
       circle,
-      codeBasic,
     }
   },
 }

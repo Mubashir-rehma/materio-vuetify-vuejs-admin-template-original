@@ -160,7 +160,7 @@
     >
       <app-card-code
         title="Dynamic Tabs"
-        :code="codeSnippets.tabsDynamicTabs"
+        :code="codeSnippets.tabsDynamic"
       >
         <v-card-text>
           Tabs can be dynamically added and removed. This allows you to update to any number and the <code>v-tabs</code> component will react.
@@ -199,7 +199,7 @@ import {
   tabsAlignment,
   tabsVertical,
   tabsProgrammaticNavigation,
-  tabsDynamicTabs,
+  tabsDynamic,
 } from './demos/code'
 
 export default {
@@ -228,7 +228,7 @@ export default {
         tabsAlignment,
         tabsVertical,
         tabsProgrammaticNavigation,
-        tabsDynamicTabs,
+        tabsDynamic,
       },
     }
   },

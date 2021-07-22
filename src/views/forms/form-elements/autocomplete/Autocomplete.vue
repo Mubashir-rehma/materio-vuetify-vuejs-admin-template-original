@@ -100,7 +100,7 @@
         <v-card-text>Use <code>chip</code> and <code>small-chips</code> prop to use chips in select.</v-card-text>
 
         <v-card-text>
-          <demo-autocomplete-chip></demo-autocomplete-chip>
+          <demo-autocomplete-chips></demo-autocomplete-chips>
         </v-card-text>
       </app-card-code>
     </v-col>
@@ -238,7 +238,7 @@ import DemoAutocompleteDense from './demos/DemoAutocompleteDense.vue'
 import DemoAutocompleteVariant from './demos/DemoAutocompleteVariant.vue'
 import DemoAutocompleteMultiple from './demos/DemoAutocompleteMultiple.vue'
 import DemoAutocompleteClearable from './demos/DemoAutocompleteClearable.vue'
-import DemoAutocompleteChip from './demos/DemoAutocompleteChip.vue'
+import DemoAutocompleteChips from './demos/DemoAutocompleteChips.vue'
 import DemoAutocompleteAutoSelectFirst from './demos/DemoAutocompleteAutoSelectFirst.vue'
 import DemoAutocompleteFilter from './demos/DemoAutocompleteFilter.vue'
 import DemoAutocompleteItemAndSelection from './demos/DemoAutocompleteItemAndSelection.vue'
@@ -272,7 +272,7 @@ export default {
     DemoAutocompleteVariant,
     DemoAutocompleteMultiple,
     DemoAutocompleteClearable,
-    DemoAutocompleteChip,
+    DemoAutocompleteChips,
     DemoAutocompleteAutoSelectFirst,
     DemoAutocompleteFilter,
     DemoAutocompleteItemAndSelection,

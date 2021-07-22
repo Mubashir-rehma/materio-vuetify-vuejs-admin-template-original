@@ -1,7 +1,7 @@
 export const checkboxBasic = ''
 export const checkboxDense = ''
 export const checkboxColors = ''
-export const checkboxModal = ''
+export const checkboxModelAsArray = ''
 export const checkboxIcon = ''
 export const checkboxValue = ''
 export const checkboxStates = ''

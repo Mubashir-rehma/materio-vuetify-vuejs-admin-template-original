@@ -1,28 +1,18 @@
 <template>
-  <app-card-code
-    title="GeoJSON Map"
-    :code="codeGeoJSON"
+  <l-map
+    :zoom="zoom"
+    :center="center"
   >
-    <v-card-text>
-      <l-map
-        :zoom="zoom"
-        :center="center"
-      >
-        <l-tile-layer :url="url" />
-        <l-geo-json :geojson="geojson" />
-      </l-map>
-    </v-card-text>
-  </app-card-code>
+    <l-tile-layer :url="url" />
+    <l-geo-json :geojson="geojson" />
+  </l-map>
 </template>
 
 <script>
-import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import { LMap, LTileLayer, LGeoJson } from 'vue2-leaflet'
-import { codeGeoJSON } from './code'
 
 export default {
   components: {
-    AppCardCode,
     LMap,
     LTileLayer,
     LGeoJson,
@@ -44,7 +34,6 @@ export default {
       zoom,
       center,
       geojson,
-      codeGeoJSON,
     }
   },
 }

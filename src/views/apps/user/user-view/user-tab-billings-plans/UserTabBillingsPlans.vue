@@ -58,10 +58,10 @@
             <p class="d-flex font-weight-semibold text--primary mt-3 mb-2">
               <span>Days</span>
               <v-spacer></v-spacer>
-              <span>4 of 30 Days</span>
+              <span>26 of 30 Days</span>
             </p>
             <v-progress-linear
-              value="85"
+              value="86"
               height="10"
               rounded
             ></v-progress-linear>
@@ -330,7 +330,7 @@ export default {
         imgWidth: '80',
         owner: 'Lester Jennings',
         cardLastDigit: '6011 0009 9013 9424',
-        cardExpires: '02/24',
+        cardExpires: '08/20',
         cardStatus: 'Expired',
       },
     ]

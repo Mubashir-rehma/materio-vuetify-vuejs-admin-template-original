@@ -83,7 +83,7 @@
 
 <script>
 import { mdiSquareEditOutline, mdiDotsVertical } from '@mdi/js'
-import data from './datatable'
+import data from '../datatable'
 
 export default {
   setup() {

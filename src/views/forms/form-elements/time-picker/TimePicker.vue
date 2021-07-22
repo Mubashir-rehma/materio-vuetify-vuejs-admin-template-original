@@ -26,7 +26,7 @@
     >
       <app-card-code
         title="Allowed times"
-        :code="codeSnippents.timePickerAllowedTime"
+        :code="codeSnippents.timePickerAllowedTimes"
       >
         <v-card-text>
           You can specify allowed times using arrays, objects, and functions. You can also specify time step/precision/interval - e.g. 10 minutes.
@@ -186,7 +186,7 @@ import DemoTimePickerDialogAndMenu from './demos/DemoTimePickerDialogAndMenu.vue
 // code
 import {
   timePickerBasic,
-  timePickerAllowedTime,
+  timePickerAllowedTimes,
   timePickerAmPm,
   timePickerFormat,
   timePickerNoTitle,
@@ -213,7 +213,7 @@ export default {
     return {
       codeSnippents: {
         timePickerBasic,
-        timePickerAllowedTime,
+        timePickerAllowedTimes,
         timePickerAmPm,
         timePickerFormat,
         timePickerNoTitle,

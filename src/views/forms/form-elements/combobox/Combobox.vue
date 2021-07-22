@@ -118,7 +118,7 @@
         </v-card-text>
 
         <v-card-text>
-          <demo-combobox-advance-custom-option></demo-combobox-advance-custom-option>
+          <demo-combobox-advance-custom-options></demo-combobox-advance-custom-options>
         </v-card-text>
       </app-card-code>
     </v-col>
@@ -135,7 +135,7 @@ import DemoComboboxVariant from './demos/DemoComboboxVariant.vue'
 import DemoComboboxMultiple from './demos/DemoComboboxMultiple.vue'
 import DemoComboboxClearable from './demos/DemoComboboxClearable.vue'
 import DemoComboboxNoDataWithChips from './demos/DemoComboboxNoDataWithChips.vue'
-import DemoComboboxAdvanceCustomOption from './demos/DemoComboboxAdvanceCustomOption.vue'
+import DemoComboboxAdvanceCustomOptions from './demos/DemoComboboxAdvanceCustomOptions.vue'
 
 // code
 import {
@@ -157,7 +157,7 @@ export default {
     DemoComboboxMultiple,
     DemoComboboxClearable,
     DemoComboboxNoDataWithChips,
-    DemoComboboxAdvanceCustomOption,
+    DemoComboboxAdvanceCustomOptions,
   },
   setup() {
     return {

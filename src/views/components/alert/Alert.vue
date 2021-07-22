@@ -14,7 +14,7 @@
     <!-- alert colors-->
     <app-card-code
       title="Colors"
-      :code="codeSnippets.alertColor"
+      :code="codeSnippets.alertColors"
       class="mb-6"
     >
       <v-card-text>
@@ -209,7 +209,7 @@ import DemoAlertType from './demos/DemoAlertType.vue'
 // code
 import {
   alertBasic,
-  alertColor,
+  alertColors,
   alertBorder,
   alertColoredBorder,
   alertDense,
@@ -248,7 +248,7 @@ export default {
         alertColoredBorder,
         alertDense,
         alertBasic,
-        alertColor,
+        alertColors,
         alertDismissible,
         alertIcons,
         alertVModel,

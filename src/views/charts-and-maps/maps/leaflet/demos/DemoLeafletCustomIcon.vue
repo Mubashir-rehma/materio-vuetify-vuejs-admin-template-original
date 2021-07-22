@@ -1,44 +1,35 @@
 <template>
-  <app-card-code
-    title="Custom Icon"
-    :code="codeCustomIcon"
+  <l-map
+    :zoom="zoom"
+    :center="center"
   >
-    <v-card-text>
-      <l-map
-        :zoom="zoom"
-        :center="center"
-      >
-        <l-tile-layer
-          :url="url"
-          :attribution="attribution"
-        />
+    <l-tile-layer
+      :url="url"
+      :attribution="attribution"
+    />
 
-        <!-- Use default icon -->
-        <l-marker :lat-lng="[47.41322, -1.219482]" />
+    <!-- Use default icon -->
+    <l-marker :lat-lng="[47.41322, -1.219482]" />
 
-        <!-- Use icon given in icon property -->
-        <l-marker
-          :lat-lng="[47.41322, -1.209482]"
-          :icon="iconData"
-        />
+    <!-- Use icon given in icon property -->
+    <l-marker
+      :lat-lng="[47.41322, -1.209482]"
+      :icon="iconData"
+    />
 
-        <!-- Create image icon (icon) from l-icon tag -->
-        <l-marker
-          :lat-lng="[47.41322, -1.199482]"
-          :icon="iconData2"
-        >
-        </l-marker>
-      </l-map>
-    </v-card-text>
-  </app-card-code>
+    <!-- Create image icon (icon) from l-icon tag -->
+    <l-marker
+      :lat-lng="[47.41322, -1.199482]"
+      :icon="iconData2"
+    >
+    </l-marker>
+  </l-map>
 </template>
 
 <script>
 /* eslint-disable global-require */
-import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
 import { latLng, icon, Icon } from 'leaflet'
-import { codeCustomIcon } from './code'
 
 // eslint-disable-next-line no-underscore-dangle
 delete Icon.Default.prototype._getIconUrl
@@ -50,7 +41,6 @@ Icon.Default.mergeOptions({
 
 export default {
   components: {
-    AppCardCode,
     LMap,
     LTileLayer,
     LMarker,
@@ -79,7 +69,6 @@ export default {
       attribution,
       iconData,
       iconData2,
-      codeCustomIcon,
     }
   },
 }

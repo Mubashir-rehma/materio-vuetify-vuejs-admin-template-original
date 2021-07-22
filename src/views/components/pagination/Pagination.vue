@@ -69,7 +69,7 @@
         </v-card-text>
 
         <v-card-text>
-          <demo-pagination-icon></demo-pagination-icon>
+          <demo-pagination-icons></demo-pagination-icons>
         </v-card-text>
       </app-card-code>
     </v-col>
@@ -141,7 +141,7 @@ import DemoPaginationBasic from './demos/DemoPaginationBasic.vue'
 import DemoPaginationColor from './demos/DemoPaginationColor.vue'
 import DemoPaginationCircle from './demos/DemoPaginationCircle.vue'
 import DemoPaginationDisabled from './demos/DemoPaginationDisabled.vue'
-import DemoPaginationIcon from './demos/DemoPaginationIcon.vue'
+import DemoPaginationIcons from './demos/DemoPaginationIcons.vue'
 import DemoPaginationLength from './demos/DemoPaginationLength.vue'
 import DemoPaginationTotalVisible from './demos/DemoPaginationTotalVisible.vue'
 
@@ -163,7 +163,7 @@ export default {
     DemoPaginationColor,
     DemoPaginationCircle,
     DemoPaginationDisabled,
-    DemoPaginationIcon,
+    DemoPaginationIcons,
     DemoPaginationLength,
     DemoPaginationTotalVisible,
   },

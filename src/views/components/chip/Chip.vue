@@ -102,7 +102,7 @@
     >
       <app-card-code
         title="Chip with Icon"
-        :code="codeSnippets.chipWithIcons"
+        :code="codeSnippets.chipWithIcon"
       >
         <v-card-text>
           Chips can use text or any icon available in the Material Icons font library.
@@ -215,7 +215,7 @@ import {
   chipLabel,
   chipLight,
   chipClosable,
-  chipWithIcons,
+  chipWithIcon,
   chipPill,
   chipSizes,
   chipExpandable,
@@ -244,7 +244,7 @@ export default {
         chipLabel,
         chipLight,
         chipClosable,
-        chipWithIcons,
+        chipWithIcon,
         chipPill,
         chipSizes,
         chipExpandable,

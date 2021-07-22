@@ -1,5 +1,5 @@
 export const alertBasic = ''
-export const alertColor = ''
+export const alertColors = ''
 export const alertBorder = ''
 export const alertColoredBorder = ''
 export const alertDense = ''

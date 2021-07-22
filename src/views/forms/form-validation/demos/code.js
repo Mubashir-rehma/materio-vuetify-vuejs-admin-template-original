@@ -1,3 +1,3 @@
-export const formValidation = ''
-export const formValidationValidatingMultipleRules = ''
+export const formValidationSimple = ''
+export const formValidationMultipleRules = ''
 export const formValidationTypes = ''

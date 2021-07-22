@@ -7,7 +7,7 @@
       <!-- default -->
       <app-card-code
         title="Default"
-        :code="codeSnippets.exPanelDefault"
+        :code="codeSnippets.expansionPanelDefault"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -27,7 +27,7 @@
       <!-- accordion -->
       <app-card-code
         title="Accordion"
-        :code="codeSnippets.exPanelAccordion"
+        :code="codeSnippets.expansionPanelAccordion"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -47,7 +47,7 @@
       <!-- focusable -->
       <app-card-code
         title="Focusable"
-        :code="codeSnippets.exPanelFocusable"
+        :code="codeSnippets.expansionPanelFocusable"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -67,7 +67,7 @@
       <!-- inset -->
       <app-card-code
         title="Inset"
-        :code="codeSnippets.exPanelInset"
+        :code="codeSnippets.expansionPanelInset"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -87,7 +87,7 @@
       <!-- popout  -->
       <app-card-code
         title="Popout"
-        :code="codeSnippets.exPanelPopout"
+        :code="codeSnippets.expansionPanelPopout"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -107,7 +107,7 @@
       <!-- custom icons -->
       <app-card-code
         title="Custom Icon"
-        :code="codeSnippets.exPanelIcon"
+        :code="codeSnippets.expansionPanelIcon"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -127,7 +127,7 @@
       <!-- model -->
       <app-card-code
         title="Model"
-        :code="codeSnippets.exPanelModel"
+        :code="codeSnippets.expansionPanelModel"
         class="v-card-transparent-outlined"
       >
         <v-card-text>
@@ -156,13 +156,13 @@ import DemoExpansionPanelIcon from './demos/DemoExpansionPanelIcon.vue'
 
 // code
 import {
-  exPanelDefault,
-  exPanelAccordion,
-  exPanelFocusable,
-  exPanelInset,
-  exPanelModel,
-  exPanelPopout,
-  exPanelIcon,
+  expansionPanelDefault,
+  expansionPanelAccordion,
+  expansionPanelFocusable,
+  expansionPanelInset,
+  expansionPanelModel,
+  expansionPanelPopout,
+  expansionPanelIcon,
 } from './demos/code'
 
 export default {
@@ -179,13 +179,13 @@ export default {
   setup() {
     return {
       codeSnippets: {
-        exPanelDefault,
-        exPanelAccordion,
-        exPanelFocusable,
-        exPanelInset,
-        exPanelModel,
-        exPanelPopout,
-        exPanelIcon,
+        expansionPanelDefault,
+        expansionPanelAccordion,
+        expansionPanelFocusable,
+        expansionPanelInset,
+        expansionPanelModel,
+        expansionPanelPopout,
+        expansionPanelIcon,
       },
     }
   },

@@ -126,7 +126,7 @@
       >
         <v-card-text>Lists can contain subheaders, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.</v-card-text>
 
-        <demo-list-two-lines-subheader></demo-list-two-lines-subheader>
+        <demo-list-two-lines-and-subheader></demo-list-two-lines-and-subheader>
       </app-card-code>
     </v-col>
 
@@ -210,7 +210,7 @@ import DemoListNav from './demos/DemoListNav.vue'
 import DemoListRounded from './demos/DemoListRounded.vue'
 import DemoListShaped from './demos/DemoListShaped.vue'
 import DemoListSubGroup from './demos/DemoListSubGroup.vue'
-import DemoListTwoLinesSubheader from './demos/DemoListTwoLinesSubheader.vue'
+import DemoListTwoLinesAndSubheader from './demos/DemoListTwoLinesAndSubheader.vue'
 import DemoListExpansionList from './demos/DemoListExpansionList.vue'
 import DemoListActionAndItemGroup from './demos/DemoListActionAndItemGroup.vue'
 import DemoListActionStack from './demos/DemoListActionStack.vue'
@@ -242,7 +242,7 @@ export default {
     DemoListRounded,
     DemoListShaped,
     DemoListSubGroup,
-    DemoListTwoLinesSubheader,
+    DemoListTwoLinesAndSubheader,
     DemoListExpansionList,
     DemoListActionAndItemGroup,
     DemoListActionStack,

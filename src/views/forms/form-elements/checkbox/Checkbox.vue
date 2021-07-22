@@ -60,7 +60,7 @@
     >
       <app-card-code
         title="Model as array"
-        :code="codeSnippets.checkboxModal"
+        :code="codeSnippets.checkboxModelAsArray"
       >
         <v-card-text>
           Multiple <code>v-checkbox</code>'s can share the same <code>v-model</code> by using an array.
@@ -186,7 +186,7 @@ import {
   checkboxBasic,
   checkboxDense,
   checkboxColors,
-  checkboxModal,
+  checkboxModelAsArray,
   checkboxIcon,
   checkboxValue,
   checkboxStates,
@@ -213,7 +213,7 @@ export default {
         checkboxBasic,
         checkboxDense,
         checkboxColors,
-        checkboxModal,
+        checkboxModelAsArray,
         checkboxIcon,
         checkboxValue,
         checkboxStates,

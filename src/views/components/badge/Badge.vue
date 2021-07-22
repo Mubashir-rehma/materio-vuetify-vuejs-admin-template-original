@@ -147,7 +147,7 @@
         </v-card-text>
 
         <v-card-text>
-          <demo-badge-tab></demo-badge-tab>
+          <demo-badge-tabs></demo-badge-tabs>
         </v-card-text>
       </app-card-code>
     </v-col>
@@ -164,7 +164,7 @@ import DemoBadgeType from './demos/DemoBadgeType.vue'
 import DemoBadgeColor from './demos/DemoBadgeColor.vue'
 import DemoBadgeShowOnHover from './demos/DemoBadgeShowOnHover.vue'
 import DemoBadgeDynamicNotifications from './demos/DemoBadgeDynamicNotifications.vue'
-import DemoBadgeTab from './demos/DemoBadgeTab.vue'
+import DemoBadgeTabs from './demos/DemoBadgeTabs.vue'
 import DemoBadgeAvatarStatus from './demos/DemoBadgeAvatarStatus.vue'
 
 // code
@@ -188,7 +188,7 @@ export default {
     DemoBadgeColor,
     DemoBadgeShowOnHover,
     DemoBadgeDynamicNotifications,
-    DemoBadgeTab,
+    DemoBadgeTabs,
     DemoBadgeAvatarStatus,
   },
   setup() {

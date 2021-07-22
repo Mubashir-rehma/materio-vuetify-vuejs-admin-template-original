@@ -105,7 +105,7 @@
     >
       <app-card-code
         title="Custom transitions"
-        :code="codeSnippets.menuTransition"
+        :code="codeSnippets.menuTransitions"
         class="mb-6"
       >
         <v-card-text>
@@ -180,7 +180,7 @@ import {
   menuDisabled,
   menuHover,
   menuTooltip,
-  menuTransition,
+  menuTransitions,
   menuPopover,
 } from './demos/code'
 
@@ -205,7 +205,7 @@ export default {
         menuDisabled,
         menuHover,
         menuTooltip,
-        menuTransition,
+        menuTransitions,
         menuPopover,
       },
     }

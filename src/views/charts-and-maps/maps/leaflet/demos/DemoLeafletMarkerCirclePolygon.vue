@@ -1,38 +1,29 @@
 <template>
-  <app-card-code
-    title="Marker, Circle & Polygon Map"
-    :code="codeMarkerPolygon"
+  <l-map
+    :zoom="zoom"
+    :center="center"
   >
-    <v-card-text>
-      <l-map
-        :zoom="zoom"
-        :center="center"
-      >
-        <l-tile-layer :url="url" />
-        <l-marker :lat-lng="markerLatLng" />
-        <l-circle
-          :lat-lng="circle.center"
-          :radius="circle.radius"
-          :color="circle.color"
-        />
-        <l-polygon
-          :lat-lngs="polygon.latlngs"
-          :color="polygon.color"
-        />
-      </l-map>
-    </v-card-text>
-  </app-card-code>
+    <l-tile-layer :url="url" />
+    <l-marker :lat-lng="markerLatLng" />
+    <l-circle
+      :lat-lng="circle.center"
+      :radius="circle.radius"
+      :color="circle.color"
+    />
+    <l-polygon
+      :lat-lngs="polygon.latlngs"
+      :color="polygon.color"
+    />
+  </l-map>
 </template>
 
 <script>
 /* eslint-disable global-require */
 
-import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 // eslint-disable-next-line object-curly-newline
 import { LMap, LTileLayer, LMarker, LCircle, LPolygon } from 'vue2-leaflet'
 import { Icon } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { codeMarkerPolygon } from './code'
 
 // eslint-disable-next-line no-underscore-dangle
 delete Icon.Default.prototype._getIconUrl
@@ -48,7 +39,6 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
-    AppCardCode,
     LCircle,
     LPolygon,
   },
@@ -96,7 +86,6 @@ export default {
       markerLatLng,
       circle,
       polygon,
-      codeMarkerPolygon,
     }
   },
 }

@@ -1,8 +1,5 @@
 <template>
-  <app-card-code
-    title="Layer Group"
-    :code="codeLayerGroup"
-  >
+  <div>
     <v-card-text>
       <v-btn
         color="primary"
@@ -121,13 +118,12 @@
         </l-layer-group>
       </l-map>
     </v-card-text>
-  </app-card-code>
+  </div>
 </template>
 
 <script>
 /* eslint-disable global-require */
 import { ref } from '@vue/composition-api'
-import AppCardCode from '@/@core/components/app-card-code/AppCardCode.vue'
 import {
   LMap,
   LTileLayer,
@@ -142,8 +138,6 @@ import {
   LControlLayers,
 } from 'vue2-leaflet'
 import { latLngBounds, Icon } from 'leaflet'
-
-import { codeLayerGroup } from './code'
 
 // eslint-disable-next-line no-underscore-dangle
 delete Icon.Default.prototype._getIconUrl
@@ -238,7 +232,6 @@ export default {
     LControlAttribution,
     LControlScale,
     LControlLayers,
-    AppCardCode,
   },
 
   setup() {
@@ -354,7 +347,6 @@ export default {
     return {
       center,
       opacity,
-      codeLayerGroup,
       token,
       mapOptions,
       zoom,

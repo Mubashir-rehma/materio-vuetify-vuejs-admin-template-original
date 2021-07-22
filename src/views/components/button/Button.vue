@@ -3,7 +3,7 @@
     <!-- colors -->
     <app-card-code
       title="Colors"
-      :code="codeSnippets.buttonColor"
+      :code="codeSnippets.buttonColors"
       class="mb-6"
     >
       <v-card-text>
@@ -259,7 +259,7 @@
     <!-- speed dial -->
     <app-card-code
       title="Speed dial"
-      :code="codeSnippets.buttonFloatingSpeedDial"
+      :code="codeSnippets.buttonSpeedDial"
     >
       <v-card-text>
         The speed-dial component has an very robust api for customizing your FAB experience exactly how you want.
@@ -296,7 +296,7 @@ import DemoButtonSpeedDial from './demos/DemoButtonSpeedDial.vue'
 
 // code
 import {
-  buttonColor,
+  buttonColors,
   buttonOutlined,
   buttonText,
   buttonRounded,
@@ -312,7 +312,7 @@ import {
   buttonLoaders,
   buttonPlain,
   buttonTile,
-  buttonFloatingSpeedDial,
+  buttonSpeedDial,
 } from './demos/code'
 
 export default {
@@ -341,7 +341,7 @@ export default {
   setup() {
     return {
       codeSnippets: {
-        buttonColor,
+        buttonColors,
         buttonOutlined,
         buttonText,
         buttonRounded,
@@ -357,7 +357,7 @@ export default {
         buttonLoaders,
         buttonPlain,
         buttonTile,
-        buttonFloatingSpeedDial,
+        buttonSpeedDial,
       },
     }
   },

@@ -2,6 +2,7 @@
 import '@/@fake-db/db'
 import { i18n } from '@/plugins/i18n'
 import '@/plugins/vue-composition-api'
+import '@/styles/styles.scss'
 import Vue from 'vue'
 import App from './App.vue'
 import './plugins/acl'

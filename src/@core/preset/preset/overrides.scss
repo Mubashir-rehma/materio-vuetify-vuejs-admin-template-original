@@ -266,7 +266,7 @@ button {
 
   .v-card__actions {
     &.dense {
-      padding: 0 calc(#{$card-spacer} - 12px) calc(#{$card-spacer} - 12px);
+      padding: 0 calc(#{$card-spacer} - 8px) calc(#{$card-spacer} - 8px);
       .v-btn {
         &:not(.v-btn--icon) {
           min-width: 68px;

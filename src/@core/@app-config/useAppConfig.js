@@ -23,6 +23,7 @@ export default function useAppConfig() {
     get: () => store.state.appConfig.app.skinVariant,
     set: value => {
       store.commit('appConfig/UPDATE_APP_SKIN_VARIANT', value)
+      localStorage.setItem('materio-skin-variant', value)
     },
   })
 

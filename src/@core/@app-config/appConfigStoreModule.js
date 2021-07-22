@@ -6,7 +6,9 @@ export default {
     app: {
       contentLayoutNav: themeConfig.app.contentLayoutNav,
       routeTransition: themeConfig.app.routeTransition,
-      skinVariant: themeConfig.app.skinVariant,
+      skinVariant: localStorage.getItem('materio-skin-variant')
+        ? localStorage.getItem('materio-skin-variant')
+        : themeConfig.app.skinVariant,
       contentWidth: themeConfig.app.contentWidth,
     },
     menu: {

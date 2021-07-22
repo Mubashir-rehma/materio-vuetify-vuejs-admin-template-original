@@ -34,7 +34,10 @@ export default function useUsersList() {
   const statusFilter = ref(null)
   const totalUserListTable = ref(0)
   const loading = ref(false)
-  const options = ref({})
+  const options = ref({
+    sortBy: ['id'],
+    sortDesc: [true],
+  })
   const userTotalLocal = ref([])
   const selectedRows = ref([])
 

@@ -155,8 +155,6 @@
         :options.sync="options"
         :server-items-length="totalUserListTable"
         :loading="loading"
-        :sort-by="['id']"
-        :sort-desc="[true]"
         show-select
       >
         <!-- name -->

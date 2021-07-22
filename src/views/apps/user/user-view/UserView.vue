@@ -94,7 +94,7 @@
         <v-divider></v-divider>
         <v-card-text class="px-15 pt-8">
           <p class="font-weight-medium text--primary mb-2">
-            User current plan is standard plan
+            User current plan is {{ userData.currentPlan }} plan
           </p>
           <div class="d-flex justify-space-between flex-wrap">
             <div class="user-pricing me-3">

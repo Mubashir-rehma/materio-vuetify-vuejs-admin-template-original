@@ -200,12 +200,12 @@
             small
             class="v-chip-light-bg primary--text font-weight-semibold mb-3 me-3"
           >
-            {{ standardPlan.plan }}
+            {{ userData.currentPlan }}
           </v-chip>
 
           <div class="user-pricing">
             <sup class="primary--text">$</sup>
-            <span class="text-5xl font-weight-semibold primary--text">{{ standardPlan.price }}</span>
+            <span class="text-5xl font-weight-semibold primary--text">{{ resolveCurrentPlanValue(userData.currentPlan) }}</span>
             <sub class="text-base font-weight-light">/ month</sub>
           </div>
         </v-card-title>
@@ -287,11 +287,22 @@ export default {
       benefits: ['10 Users', 'Up to 10GB storage', 'Basic Support'],
     }
 
+    // ui
+    const resolveCurrentPlanValue = plan => {
+      if (plan === 'basic') return '0'
+      if (plan === 'standard') return '99'
+      if (plan === 'enterprise') return '499'
+      if (plan === 'company') return '999'
+
+      return '0'
+    }
+
     return {
       resolveUserStatusVariant,
       resolveUserRoleVariant,
       avatarText,
       kFormatter,
+      resolveCurrentPlanValue,
 
       isBioDialogOpen,
       standardPlan,

@@ -135,21 +135,23 @@
           <p class="text-xs text--disabled">
             MENU
           </p>
-          <!-- Menu Layout -->
-          <span class="text--primary">Menu Layout</span>
-          <v-radio-group
-            v-model="appContentLayoutNav"
-            class="mt-1"
-            hide-details
-            row
-          >
-            <v-radio
-              v-for="option in appContentLayoutNavOptions"
-              :key="option.value"
-              :label="option.label"
-              :value="option.value"
-            ></v-radio>
-          </v-radio-group>
+          <template v-if="$vuetify.breakpoint.lgAndUp">
+            <!-- Menu Layout -->
+            <span class="text--primary">Menu Layout</span>
+            <v-radio-group
+              v-model="appContentLayoutNav"
+              class="mt-1"
+              hide-details
+              row
+            >
+              <v-radio
+                v-for="option in appContentLayoutNavOptions"
+                :key="option.value"
+                :label="option.label"
+                :value="option.value"
+              ></v-radio>
+            </v-radio-group>
+          </template>
 
           <!-- Menu Collapsed -->
           <div

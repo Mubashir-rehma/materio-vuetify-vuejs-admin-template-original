@@ -167,9 +167,11 @@ $nav-drawer-mini-width: 68px;
         padding-right: $nav-drawer-mini-width !important;
       }
     }
-    .app-navigation-menu ~ .v-footer,
-    .app-navigation-menu + .v-app-bar {
-      left: $nav-drawer-mini-width !important;
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
+      .app-navigation-menu ~ .v-footer,
+      .app-navigation-menu + .v-app-bar {
+        left: $nav-drawer-mini-width !important;
+      }
     }
   }
 

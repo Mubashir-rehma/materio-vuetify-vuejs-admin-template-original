@@ -1,4 +1,4 @@
-# Vuex Store - WIP
+# Vuex Store
 
 In this page you will understand usage of Vuex Store in our template
 
@@ -16,33 +16,25 @@ Let's find out what each store module has to offer.
 
 - ### app
 
-This store module is common and you can say general state, getters, mutations and actions are added in this module. This module handles whole app wise state like width of current window in which your app is running.
+This store module is common and you can say general state, getters, mutations and actions are added in this module. This module just contains single property for toggling content overlay.
 
 - ### app-config
 
-Existing of this module is due to `$themeConfig`. This module holds the state of themeConfig and on change of any state it handles it's extra efforts like updating localStorage, thanks to mutations provided in this module.
+Existing of this module is due to themeConfig. This module holds the state of themeConfig and on change of any state it handles it's extra efforts like updating localStorage, thanks to mutations provided in this module.
 
 ::: tip
 We also created composition function for this store module which makes updating state easier than ever before. 😎
 You can find this composition function in `@core/app-config/useAppConfig.js`. All you have to do is destructure the config option and use it.
 
 ```js
-const { skin } = useAppConfig()
+const { appSkinVariant } = useAppConfig()
 
 // Setting config value as easy as setting other property value
 // It will handle updating localStorage as well 😍
-skin.value = 'dark'
+appSkinVariant.value = 'bordered'
 ```
 
 :::
-
-- ### vertical-menu
-
-This store module is targeted to vertical menu. This module has single state of menu collapsed.
-
-- ### app-ecommerce
-
-This module handles state of eCommerce app. It has actions to perform API calls and have single state for now.
 
 - ### calendar
 
@@ -59,10 +51,6 @@ This module handles state of email app. Same as app-chat module it only has acti
 - ### app-invoice
 
 This module handles state of invoice app. Same as above two modules it only has actions for fetching and updating the data.
-
-- ### app-todo
-
-This module handles state of to-do app. It only has actions for fetching and updating the data.
 
 - ### app-user
 

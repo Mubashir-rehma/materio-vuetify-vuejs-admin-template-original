@@ -221,7 +221,7 @@ export default {
       if (!isFormValid) return
 
       /*
-        1. Make HTTP request to get accessToken
+        1. Make HTTP request to get accessToken (Register the user & login) (User will be added to the database and new generated access token will be sent for loggin in)
         2. Store received token in localStorage for future use
         3. Make another HTTP request for getting user information
         4. On successful response of user information redirect to home page

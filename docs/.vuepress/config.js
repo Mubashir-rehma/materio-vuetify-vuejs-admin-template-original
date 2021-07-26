@@ -36,17 +36,17 @@ module.exports = {
             '/guide/development/access-control',
           ],
         },
-        // {
-        //   title: 'Layout',
-        //   collapsable: false,
-        //   children: [
-        //     '/guide/layout/layout-types',
-        //     '/guide/layout/modifying-and-extending-layouts',
-        //     '/guide/layout/core-layouts',
-        //     '/guide/layout/content-renderer',
-        //     '/guide/layout/page-layout-examples',
-        //   ],
-        // },
+        {
+          title: 'Layout',
+          collapsable: false,
+          children: [
+            '/guide/layout/layout-types',
+            '/guide/layout/modifying-and-extending-layouts',
+            '/guide/layout/core-layouts',
+            '/guide/layout/content-renderer',
+            '/guide/layout/page-layout-examples',
+          ],
+        },
         // {
         //   title: 'Laravel Integration',
         //   collapsable: false,

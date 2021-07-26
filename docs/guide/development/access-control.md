@@ -1,4 +1,4 @@
-# Access Control (ACL) - WIP
+# Access Control (ACL)
 
 In this page you will understand usage of ACL in our template and how you can use it.
 
@@ -8,7 +8,7 @@ In this page you will understand usage of ACL in our template and how you can us
 
 ## Overview
 
-Unlike previous version of Materio, new Materio uses CASL package for providing access control. Which is future oriented (Supports Vue 3) and is more detailed on Access Control.
+Materio uses [CASL](https://casl.js.org) package for providing access control. Which is future oriented (Also supports Vue 3) and is more detailed on Access Control.
 
 You can find docs for CASL [here](https://casl.js.org/v5/en/guide/intro).
 
@@ -20,7 +20,7 @@ We used [JSON objects](https://casl.js.org/v5/en/guide/define-rules#json-objects
 
 ## ACL Flow
 
-You can find CASL configuration in `src/libs/acl` folder. Let's explore what each file contains:
+You can find CASL configuration in `src/plugins/acl` folder. Let's explore what each file contains:
 
 - **ability.js**: This file exports ACL ability
 - **config.js**: ACL configuration. Currently, contains initial ability of user.
@@ -28,11 +28,7 @@ You can find CASL configuration in `src/libs/acl` folder. Let's explore what eac
 - **routeProtection.js**: Route protection files.
 
 ::: warning
-Files might get updated/moved/removed in future updates to make structure more minimal and clutter free.
-:::
-
-::: warning
-Our current implementation of CASL/ACL stores the user ability in localStorage to keep it persist between browser refreshes/close. Ability array is nested under `userData` in localStorage. You can check API response of login in our [article](/articles/frontend-authentication-flow.md#login).
+Our current implementation of CASL/ACL stores the user ability in localStorage to keep it persist between browser refreshes/close. Ability array is stored using the key `userAbility` in localStorage.
 :::
 
 ### ability.js
@@ -42,7 +38,7 @@ It exports current user's ability. If user is not logged in or user's ability is
 Once user logs in ability is updated using `this.$ability.update(newAbility)`. Sample newAbility array:
 
 ```js
-newAbility: [
+const newAbility = [
   {
     action: 'read',
     subject: 'User',
@@ -50,30 +46,17 @@ newAbility: [
 ]
 ```
 
-Also, this same ability is stored in user's object `userData` in localStorage under `ability` property.
+Also, this same ability is stored in localStorage under `userAbility` key.
 
 ```js
-// User data stored in localStorage
-// Key Name: userData
-
 {
-  "id": 1,
-  "fullName": "John Doe",
-  "username": "johndoe",
-  "avatar": "/img/13-small.d796bffd.png",
-  "email": "admin@demo.com",
-  "ability": [
-    {
-      "action": "manage",
-      "subject": "all"
-    }
-  ],
-  // more...
+  "action": "manage",
+  "subject": "all"
 }
 ```
 
 ::: tip
-We are getting user ability on refresh from `userData` which is stored in localStorage. We have stored ability in `userData.ability`. If you have different approach for storing and retrieving ability then please update `src/libs/acl/ability.js` file.
+We are getting user ability on refresh from localStorage using `userAbility` key. If you have different approach for storing and retrieving ability then please update `src/libs/acl/ability.js` file and files mentioned in [Authentication](/guide/development/authentication.md) page.
 :::
 
 ## Route Protection
@@ -82,11 +65,11 @@ You can protect your route from being visited by other users through as well. We
 
 ```js{6,7}
 {
-  path: '/access-control',
-  name: 'access-control',
-  component: () => import('@/views/extensions/acl/AccessControl.vue'),
+  path: '/finance-summary',
+  name: 'finance-summary',
+  component: () => import('@/views/FinanceDetails.vue'),
   meta: {
-    resource: 'ACL',
+    resource: 'Finance',
     action: 'read',
   },
 },
@@ -97,8 +80,6 @@ Here, `resource` refers to `subject` in CASL [docs](https://casl.js.org/v5/en/gu
 Once you define ability for route using meta, if user don't have defined ability for visiting route then it will get redirected to not authorized page.
 
 If user is not logged in and try to visit the route with ability which user don't have then user will get redirected to login page instead of not authorized page.
-
-Read detailed article on route protection [here](/articles/how-to-add-acl-in-starter-kit.md).
 
 ### Omitting Defining `resource` and `action` for route
 
@@ -146,7 +127,7 @@ e.g. If you have vertical navigation menu group and your provided both options f
 export default [
   {
     title: 'Invoice',
-    icon: 'FileIcon',
+    icon: mdiFile,
 
     /** Both group child have `resource` and `action` defined
      * So, If I omit defining `resource` and `action` for group
@@ -190,5 +171,5 @@ Please note this scenarios apply to all three group types of navigation item:
 - Horizontal Navigation Menu Header Group
 
 ::: warning CAVEAT
-As header in vertical navigation menu is independent of it's child items if you want to hide header if all it's below items are hidden then you need to specify `resource` & `action` as well with other following items.
+As section title in vertical navigation menu is independent of it's child items if you want to hide header if all it's below items are hidden then you need to specify `resource` & `action` as well with other following items.
 :::

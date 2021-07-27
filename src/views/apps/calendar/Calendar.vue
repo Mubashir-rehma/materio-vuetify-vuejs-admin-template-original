@@ -5,6 +5,7 @@
       width="250"
       mobile-breakpoint="sm"
       absolute
+      touchless
       :right="$vuetify.rtl"
       :temporary="$vuetify.breakpoint.xsOnly"
       style="z-index: 2"
@@ -15,6 +16,7 @@
     <v-navigation-drawer
       v-model="isEventHandlerDrawerActive"
       right
+      touchless
       app
       temporary
       width="420"
@@ -92,6 +94,7 @@
         :type="activeCalendarView"
         :events="calendarEvents"
         :event-margin-bottom="5"
+        :event-text-color="getEventTextColor"
         @click:event="calenderHandleEventClick"
         @click:day="calendarHandleDayClick"
         @click:time="calendarHandleDayClick"
@@ -107,6 +110,7 @@ import { ref, onUnmounted, computed, watch } from '@vue/composition-api'
 import { mdiChevronLeft, mdiChevronRight, mdiMenu } from '@mdi/js'
 import { useResponsiveLeftSidebar } from '@core/comp-functions/ui'
 import store from '@/store'
+import { hexToRgb, getVuetify } from '@core/utils'
 import calendarStoreModule from './calendarStoreModule'
 
 // Local Components
@@ -134,6 +138,12 @@ export default {
     onUnmounted(() => {
       if (store.hasModule(CALENDAR_APP_STORE_MODULE_NAME)) store.unregisterModule(CALENDAR_APP_STORE_MODULE_NAME)
     })
+
+    // ————————————————————————————————————
+    //* ——— Vuetify Instance
+    // ————————————————————————————————————
+
+    const $vuetify = getVuetify()
 
     // ————————————————————————————————————
     //* ——— Left Sidebar
@@ -188,9 +198,14 @@ export default {
             fetchedEvent.start = new Date(fetchedEvent.start)
             fetchedEvent.end = new Date(fetchedEvent.end)
 
-            fetchedEvent.color = store.state[CALENDAR_APP_STORE_MODULE_NAME].calendarOptions.find(
+            const eventColor = store.state[CALENDAR_APP_STORE_MODULE_NAME].calendarOptions.find(
               calendar => calendar.label === fetchedEvent.extendedProps.calendar,
-            ).color
+            )
+
+            const rgbColor = hexToRgb($vuetify.theme.currentTheme[eventColor.color])
+
+            fetchedEvent.color = `rgba(${rgbColor.r},${rgbColor.g},${rgbColor.b}, 0.12)`
+            fetchedEvent.eventTextColor = eventColor.color
             /* eslint-enable */
           })
           calendarEvents.value = events
@@ -202,6 +217,8 @@ export default {
     }
 
     fetchEvents()
+
+    const getEventTextColor = e => e.eventTextColor
 
     //
     //* ——— Calendar Event Handler ——————————————————
@@ -311,6 +328,8 @@ export default {
 
       // Template Refs
       refCalendar,
+
+      getEventTextColor,
 
       // Calendar View/Type
       activeCalendarView,

@@ -1,8 +1,8 @@
 <template>
-  <div class="vertical-nav-header d-flex align-items-center justify-space-between ps-6 pe-5 pt-5 pb-2">
+  <div class="vertical-nav-header d-flex align-center justify-space-between ps-6 pe-5 pt-5 pb-2">
     <router-link
       to="/"
-      class="d-flex align-items-center text-decoration-none"
+      class="d-flex align-center text-decoration-none"
     >
       <v-img
         :src="appLogo"
@@ -26,6 +26,7 @@
     <v-slide-x-transition>
       <div
         v-show="!(menuIsVerticalNavMini && !isMouseHovered)"
+        v-if="$vuetify.breakpoint.lgAndUp"
         class="d-flex align-center ms-1"
         @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
       >
@@ -44,12 +45,20 @@
           {{ icons.mdiRadioboxBlank }}
         </v-icon>
       </div>
+      <v-icon
+        v-else
+        size="20"
+        class="d-inline-block"
+        @click="$emit('close-nav-menu')"
+      >
+        {{ icons.mdiClose }}
+      </v-icon>
     </v-slide-x-transition>
   </div>
 </template>
 
 <script>
-import { mdiRadioboxBlank, mdiRecordCircleOutline } from '@mdi/js'
+import { mdiRadioboxBlank, mdiRecordCircleOutline, mdiClose } from '@mdi/js'
 import useAppConfig from '@core/@app-config/useAppConfig'
 import themeConfig from '@themeConfig'
 import { inject } from '@vue/composition-api'
@@ -67,6 +76,7 @@ export default {
 
       // Icons
       icons: {
+        mdiClose,
         mdiRadioboxBlank,
         mdiRecordCircleOutline,
       },

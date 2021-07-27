@@ -5,9 +5,8 @@
     offset-x
     attach
     :open-on-hover="shallOpenGroupOnHover"
-    eager
     :left="openChildMenuLeft"
-    max-height="70vh"
+    max-height="60vh"
     :content-class="contentClasses"
   >
     <template v-slot:activator="{ on, attrs }">

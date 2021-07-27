@@ -26,6 +26,9 @@ import LayoutContentVerticalNav from '@/layouts/variants/content/vertical-nav/La
 import LayoutContentHorizontalNav from '@/layouts/variants/content/horizontal-nav/LayoutContentHorizontalNav.vue'
 import LayoutBlank from '@/layouts/variants/blank/LayoutBlank.vue'
 
+// Dynamic vh
+import useDynamicVh from '@core/utils/useDynamicVh'
+
 export default {
   components: {
     LayoutContentVerticalNav,
@@ -45,6 +48,8 @@ export default {
 
       return null
     })
+
+    useDynamicVh()
 
     return {
       resolveLayoutVariant,

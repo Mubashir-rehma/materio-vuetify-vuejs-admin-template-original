@@ -19,23 +19,66 @@
 //   @include remove-shadow-add-border('v-tabs:not(.v-tab--vertical)', 'border-bottom');
 // }
 
-@mixin remove-shadow-add-border($component, $border-property: 'border') {
+// ————————————————————————————————————
+//* ——— Bordered Mixin
+// ————————————————————————————————————
+
+@mixin remove-shadow-add-border($component, $border-property: 'border', $important: false) {
   .#{$component} {
     box-shadow: none !important;
   }
 
   @include theme($component) using ($material) {
-    #{$border-property}: 1px solid rgba(map-deep-get($material, 'primary-shade'), 0.22);
+    #{$border-property}: 1px solid rgba(map-deep-get($material, 'primary-shade'), 0.22) if($important, !important, null);
   }
 }
 
+// ————————————————————————————————————
+//* ——— Horizontal Nav Specific Styles
+// ————————————————————————————————————
+
+.v-application.skin-variant--bordered.horizontal-nav {
+  @include remove-shadow-add-border('navigation-menu', 'border-bottom');
+  @include remove-shadow-add-border('v-app-bar--fixed.v-app-bar--is-scrolled', 'border-bottom');
+
+  // Remove v-menu__content border from nav items
+  .horizontal-nav-menu {
+    > .v-menu > .v-menu__content {
+      border: none !important;
+
+      .v-list {
+        box-shadow: none !important;
+      }
+    }
+  }
+  @include remove-shadow-add-border('horizontal-nav-menu > .v-menu > .v-menu__content > .v-list');
+}
+
+// ————————————————————————————————————
+//* ——— Vertical Nav Specific Styles
+// ————————————————————————————————————
+.v-application.skin-variant--bordered.vertical-nav {
+  @include remove-shadow-add-border('v-app-bar--fixed.v-app-bar--is-scrolled');
+
+  .ps-nav-menu-items {
+    @include theme(v-subheader) using ($material) {
+      span {
+        background: map-deep-get($material, 'cards');
+      }
+    }
+  }
+}
+
+// ————————————————————————————————————
+//* ——— Bordered Styles
+// ————————————————————————————————————
+
 .v-application.skin-variant--bordered {
   @include remove-shadow-add-border('v-card:not(.v-card .v-card)');
-  @include remove-shadow-add-border('v-app-bar--fixed.v-app-bar--is-scrolled');
-  @include remove-shadow-add-border('v-footer.v-footer--fixed:not(.v-sheet--outlined)');
   @include remove-shadow-add-border(v-menu__content);
   @include remove-shadow-add-border(v-stepper);
   @include remove-shadow-add-border('v-tabs:not(.v-tab--vertical)', 'border-bottom');
+  @include remove-shadow-add-border('v-footer.v-footer--fixed:not(.v-sheet--outlined)');
 
   @at-root {
     @include theme('v-application.skin-variant--bordered .v-application--wrap') using ($material) {

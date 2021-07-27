@@ -5,7 +5,7 @@
     @mouseleave="isMouseHovered = false"
   >
     <slot name="v-nav-menu-header">
-      <vertical-nav-menu-header></vertical-nav-menu-header>
+      <vertical-nav-menu-header @close-nav-menu="$emit('close-nav-menu')"></vertical-nav-menu-header>
     </slot>
 
     <!-- Shadow -->
@@ -228,10 +228,7 @@ export default {
         // background-image: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
       }
       &.v-list-group__header {
-        background-color: rgba(
-          map-deep-get($material, 'text', 'primary'),
-          map-deep-get($material, 'states', 'activated')
-        );
+        background-color: rgba(map-deep-get($material, 'text', 'primary'), map-deep-get($material, 'states', 'hover'));
       }
     }
 

@@ -48,15 +48,9 @@
           class="text-xs text--disabled"
           :class="rootThemeClasses"
         >ABOUT</span>
-        <v-textarea
-          id="textarea-user-about"
-          v-model="profileUserData.about"
-          outlined
-          auto-grow
-          class="mt-2"
-          readonly
-          rows="4"
-        ></v-textarea>
+        <p class="mt-3">
+          {{ profileUserData.about }}
+        </p>
       </div>
 
       <!-- Personal Information -->

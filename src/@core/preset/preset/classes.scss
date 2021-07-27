@@ -29,10 +29,14 @@
     // If AppBar & Footer is present
     &[style='padding: 64px 0px 56px 260px;'],
     &[style='padding: 64px 260px 56px 0px;'], // RTL
-    &[style='padding: 64px 0px 56px;'],
+    &[style='padding: 64px 0px 56px;'] {
+      .max-h-content-container {
+        height: calc((var(--vh, 1vh) * 100) - 64px - 56px - (1.5rem * 2));
+      }
+    }
     &[style='padding: 56px 0px;'] {
       .max-h-content-container {
-        height: calc(100vh - 64px - 56px - (1.5rem * 2));
+        height: calc((var(--vh, 1vh) * 100) - (56px * 2) - (1.5rem * 2));
       }
     }
     // If AppBar is present and Footer is not present
@@ -41,7 +45,7 @@
     &[style='padding: 64px 0px 0px;'],
     &[style='padding: 56px 0px 0px;'] {
       .max-h-content-container {
-        height: calc(100vh - 64px - (1.5rem * 2));
+        height: calc((var(--vh, 1vh) * 100) - 56px - (1.5rem * 2));
       }
     }
     // If AppBar is not present and Footer is present
@@ -49,7 +53,7 @@
     &[style='padding: 0px 260px 56px 0px;'], // RTL
     &[style='padding: 0px 0px 56px;'] {
       .max-h-content-container {
-        height: calc(100vh - 56px - (1.5rem * 2));
+        height: calc((var(--vh, 1vh) * 100) - 56px - (1.5rem * 2));
       }
     }
     // If AppBar & footer both are not present
@@ -57,7 +61,7 @@
     &[style='padding: 0px 260px 0px 0px;'], // RTL
     &[style='padding: 0px;'] {
       .max-h-content-container {
-        height: calc(100vh - (1.5rem * 2));
+        height: calc((var(--vh, 1vh) * 100) - (1.5rem * 2));
       }
     }
   }
@@ -67,15 +71,15 @@
   // Set height for contents like apps to don't increase the height for longer content and stick to fixed height
   .v-main {
     // If AppBar+SystemBar & Footer are present
-    &[style='padding: 128px 0px 56px;'] {
+    &[style='padding: 128px 0px 48px;'] {
       .max-h-content-container {
-        height: calc(100vh - 128px - 56px - (1.5rem * 2));
+        height: calc((var(--vh, 1vh) * 100) - 128px - 48px - (1.5rem * 2));
       }
     }
     // If AppBar+SystemBar are present & Footer is not present
     &[style='padding: 128px 0px 0px;'] {
       .max-h-content-container {
-        height: calc(100vh - 128px - (1.5rem * 2));
+        height: calc((var(--vh, 1vh) * 100) - 128px - (1.5rem * 2));
       }
     }
   }

@@ -5,6 +5,7 @@
       width="260"
       mobile-breakpoint="sm"
       absolute
+      touchless
       :temporary="$vuetify.breakpoint.smAndDown"
     >
       <email-left-sidebar-content

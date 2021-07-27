@@ -2,6 +2,7 @@
   <v-menu
     offset-y
     nudge-bottom="10"
+    min-width="175"
   >
     <!-- Activator -->
     <template v-slot:activator="{ on, attrs }">

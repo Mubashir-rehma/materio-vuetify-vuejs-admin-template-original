@@ -2,6 +2,7 @@
   <v-navigation-drawer
     :value="isAddNewUserSidebarActive"
     temporary
+    touchless
     :right="!$vuetify.rtl"
     width="350"
     app

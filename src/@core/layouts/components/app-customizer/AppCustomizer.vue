@@ -246,10 +246,6 @@ export default {
     const selectedTheme = ref('vuexy')
 
     const routerTransitionOptions = [
-      { text: 'Fab', value: 'fab-transition' },
-      { text: 'Fade', value: 'fade-transition' },
-      { text: 'Expand', value: 'expand-transition' },
-      { text: 'Scale', value: 'scale-transition' },
       { text: 'Scroll X', value: 'scroll-x-transition' },
       { text: 'Scroll X Reverse', value: 'scroll-x-reverse-transition' },
       { text: 'Scroll Y', value: 'scroll-y-transition' },
@@ -258,13 +254,19 @@ export default {
       { text: 'Slide X Reverse', value: 'slide-x-reverse-transition' },
       { text: 'Slide Y', value: 'slide-y-transition' },
       { text: 'Slide Y Reverse', value: 'slide-y-reverse-transition' },
+      { text: 'Fade', value: 'fade-transition' },
     ]
 
-    const skinOptions = [
-      { label: 'Default', value: 'default' },
-      { label: 'Bordered', value: 'bordered' },
-      { label: 'Semi Dark', value: 'semi-dark' },
-    ]
+    const skinOptions = computed(() => {
+      const options = [
+        { label: 'Default', value: 'default' },
+        { label: 'Bordered', value: 'bordered' },
+        { label: 'Semi Dark', value: 'semi-dark' },
+      ]
+      if (appContentLayoutNav.value === 'horizontal') options.splice(-1, 1)
+
+      return options
+    })
 
     const appContentWidthOptions = [
       { label: 'Full Width', value: 'full' },

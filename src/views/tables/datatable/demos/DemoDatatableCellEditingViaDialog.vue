@@ -4,6 +4,10 @@
       :headers="headers"
       :items="userList"
     >
+      <template #top>
+        <v-card-text>Try editing <code class="mx-1">name</code> or <code class="mx-1">salary</code> column</v-card-text>
+      </template>
+
       <!-- name -->
       <template #[`item.full_name`]="{item}">
         <v-edit-dialog

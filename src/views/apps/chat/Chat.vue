@@ -4,6 +4,7 @@
     <v-navigation-drawer
       v-model="isLeftSidebarOpen"
       width="374"
+      touchless
       mobile-breakpoint="sm"
       :temporary="$vuetify.breakpoint.xsOnly"
       absolute
@@ -24,6 +25,7 @@
       v-model="isUserProfileSidebarOpen"
       width="374"
       absolute
+      touchless
       temporary
     >
       <chat-user-profile-sidebar-content
@@ -39,6 +41,7 @@
       absolute
       temporary
       right
+      touchless
     >
       <chat-active-chat-user-profile-sidebar-content
         v-if="activeChat.contact"
@@ -156,8 +159,14 @@
                 color="primary"
                 elevation="0"
                 type="submit"
+                :icon="$vuetify.breakpoint.xsOnly"
               >
-                Send
+                <template v-if="$vuetify.breakpoint.smAndUp">
+                  Send
+                </template>
+                <template v-else>
+                  <v-icon>{{ icons.mdiSendOutline }}</v-icon>
+                </template>
               </v-btn>
             </template>
           </v-text-field>
@@ -204,6 +213,7 @@ import {
   mdiDotsVertical,
   mdiAttachment,
   mdiMicrophone,
+  mdiSendOutline,
 } from '@mdi/js'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
@@ -308,8 +318,9 @@ export default {
         if (contact) contact.chat.unseenMsgs = 0
 
         // Scroll to bottom
-        // ! Enable It
-        // nextTick(() => { scrollToBottomInChatLog() })
+        nextTick(() => {
+          scrollToBottomInChatLog()
+        })
       })
 
       // if smAndDown =>  Close Chat & Contacts left sidebar
@@ -419,6 +430,7 @@ export default {
         mdiDotsVertical,
         mdiAttachment,
         mdiMicrophone,
+        mdiSendOutline,
       },
     }
   },

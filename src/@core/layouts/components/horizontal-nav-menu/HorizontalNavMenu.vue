@@ -82,4 +82,12 @@ export default {
     }
   }
 }
+
+.v-application.horizontal-nav {
+  .v-system-bar {
+    .app-bar-autocomplete-box {
+      left: 3rem !important;
+    }
+  }
+}
 </style>

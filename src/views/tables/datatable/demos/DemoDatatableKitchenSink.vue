@@ -3,8 +3,9 @@
     <v-card-text>
       <v-row>
         <v-col
-          cols="4"
-          offset="8"
+          cols="12"
+          offset-md="8"
+          md="4"
         >
           <v-text-field
             v-model="search"

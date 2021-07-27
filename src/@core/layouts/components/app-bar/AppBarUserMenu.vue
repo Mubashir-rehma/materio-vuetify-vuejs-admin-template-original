@@ -10,6 +10,7 @@
       offset-y
       left
       nudge-bottom="10"
+      min-width="200"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-badge
@@ -43,7 +44,7 @@
       </template>
       <v-list>
         <!-- Profile -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item :to="{ name: 'apps-user-view', params: { id: 21 } }">
           <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiAccountOutline }}
@@ -55,7 +56,7 @@
         </v-list-item>
 
         <!-- Email -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item :to="{ name: 'apps-email' }">
           <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiEmailOutline }}
@@ -66,20 +67,8 @@
           </v-list-item-content>
         </v-list-item>
 
-        <!-- Task -->
-        <v-list-item :to="{ name: 'components-alert' }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiCheckboxMarkedOutline }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Task</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-
         <!-- Chat -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item :to="{ name: 'apps-chat' }">
           <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiChatOutline }}
@@ -88,12 +77,21 @@
           <v-list-item-content>
             <v-list-item-title>Chat</v-list-item-title>
           </v-list-item-content>
+
+          <v-list-item-action>
+            <v-badge
+              inline
+              color="error"
+              content="2"
+            >
+            </v-badge>
+          </v-list-item-action>
         </v-list-item>
 
-        <v-divider></v-divider>
+        <v-divider class="my-2"></v-divider>
 
         <!-- Settings -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item :to="{ name: 'page-account-settings' }">
           <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiCogOutline }}
@@ -105,7 +103,7 @@
         </v-list-item>
 
         <!-- Pricing -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item :to="{ name: 'page-pricing' }">
           <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiCurrencyUsd }}
@@ -117,7 +115,7 @@
         </v-list-item>
 
         <!-- FAQ -->
-        <v-list-item :to="{ name: 'components-alert' }">
+        <v-list-item :to="{ name: 'page-faq' }">
           <v-list-item-icon class="me-2">
             <v-icon size="22">
               {{ icons.mdiHelpCircleOutline }}
@@ -127,6 +125,8 @@
             <v-list-item-title>FAQ</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <v-divider class="my-2"></v-divider>
 
         <!-- Logout -->
         <v-list-item @click="logoutUser">

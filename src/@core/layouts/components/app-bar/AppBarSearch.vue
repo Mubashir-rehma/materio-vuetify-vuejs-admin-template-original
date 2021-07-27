@@ -1,8 +1,14 @@
 <template>
   <div>
-    <v-icon @click="shallShowFullSearchLocal = true">
-      {{ icons.mdiMagnify }}
-    </v-icon>
+    <v-btn
+      icon
+      small
+      @click="shallShowFullSearchLocal = true"
+    >
+      <v-icon>
+        {{ icons.mdiMagnify }}
+      </v-icon>
+    </v-btn>
 
     <!-- This is clever hack to hide scrolling 😉 -->
     <v-dialog
@@ -44,7 +50,7 @@
 
         <!-- Slot: Item -->
         <template #item="{ item }">
-          <div>
+          <div class="w-full">
             <!-- Section: Pages -->
             <div
               v-if="getSearchResultType(item) === 'pages'"
@@ -74,7 +80,7 @@
                 <span class="d-block">{{ item.title }}</span>
                 <small class="text--secondary text-xs">by {{ item.by }}</small>
               </div>
-              <small class="text--secondary text-xs">{{ item.size }}</small>
+              <small class="text--secondary text-xs ms-auto">{{ item.size }}</small>
             </div>
 
             <!-- Contact -->

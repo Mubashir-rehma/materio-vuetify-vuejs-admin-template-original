@@ -7,7 +7,7 @@ const data = {
       id: 1,
       fullName: 'John Doe',
       username: 'johndoe',
-      password: 'Admin@demo#123',
+      password: 'admin',
       // eslint-disable-next-line global-require
       avatar: '/images/avatars/1.png',
       email: 'admin@demo.com',

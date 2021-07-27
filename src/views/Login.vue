@@ -98,7 +98,7 @@
                       :error-messages="errorMessages.password"
                       placeholder="Password"
                       :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
-                      :rules="[validators.required, validators.passwordValidator]"
+                      :rules="[validators.required]"
                       @click:append="isPasswordVisible = !isPasswordVisible"
                     ></v-text-field>
 
@@ -172,7 +172,7 @@
 // eslint-disable-next-line object-curly-newline
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref, getCurrentInstance } from '@vue/composition-api'
-import { required, emailValidator, passwordValidator } from '@core/utils/validation'
+import { required, emailValidator } from '@core/utils/validation'
 import axios from '@axios'
 import { useRouter } from '@core/utils'
 import themeConfig from '@themeConfig'
@@ -188,7 +188,7 @@ export default {
     const isPasswordVisible = ref(false)
 
     const email = ref('admin@demo.com')
-    const password = ref('Admin@demo#123')
+    const password = ref('admin')
     const errorMessages = ref([])
     const socialLink = [
       {
@@ -285,7 +285,6 @@ export default {
       validators: {
         required,
         emailValidator,
-        passwordValidator,
       },
 
       // themeConfig

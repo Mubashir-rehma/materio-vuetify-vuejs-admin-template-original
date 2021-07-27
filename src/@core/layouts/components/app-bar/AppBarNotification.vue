@@ -3,7 +3,7 @@
     offset-y
     left
     nudge-bottom="10"
-    content-class="elevation-9 list-style"
+    content-class="elevation-9 list-style notification-menu-content"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-icon
@@ -14,10 +14,16 @@
       </v-icon>
     </template>
     <v-card class="app-bar-notification-content-container">
-      <v-list class="py-0">
-        <v-list-item-group>
+      <perfect-scrollbar
+        class="ps-user-notifications"
+        :options="perfectScrollbarOptions"
+      >
+        <v-list class="py-0">
           <!-- Header -->
-          <v-list-item class="d-flex">
+          <v-list-item
+            class="d-flex"
+            link
+          >
             <div class="d-flex align-center justify-space-between flex-grow-1">
               <span class="font-weight-semibold">Notifications</span>
               <v-chip
@@ -32,7 +38,10 @@
 
           <!-- Notifications -->
           <template v-for="(notification, index) in notifications">
-            <v-list-item :key="notification.title">
+            <v-list-item
+              :key="notification.title"
+              link
+            >
               <!-- Avatar -->
               <v-list-item-avatar
                 :class="[{'v-avatar-light-bg primary--text justify-center': notification.user && !notification.user.avatar}]"
@@ -80,8 +89,8 @@
               Read All Notifications
             </v-btn>
           </v-list-item>
-        </v-list-item-group>
-      </v-list>
+        </v-list>
+      </perfect-scrollbar>
     </v-card>
   </v-menu>
 </template>
@@ -90,7 +99,14 @@
 import { mdiBellOutline } from '@mdi/js'
 import { getInitialName } from '@core/utils'
 
+// 3rd Party
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
+
 export default {
+  components: {
+    // 3rd Party
+    PerfectScrollbar,
+  },
   setup() {
     const notifications = [
       {
@@ -147,9 +163,15 @@ export default {
       },
     ]
 
+    const perfectScrollbarOptions = {
+      maxScrollbarLength: 60,
+      wheelPropagation: false,
+    }
+
     return {
       notifications,
       getInitialName,
+      perfectScrollbarOptions,
 
       icons: {
         mdiBellOutline,
@@ -160,11 +182,25 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+
 .app-bar-notification-content-container {
   .read-all-btn-list-item {
     padding-top: 14px;
     padding-bottom: 14px;
     min-height: unset;
+  }
+}
+
+.ps-user-notifications {
+  max-height: calc(var(--vh, 1vh) * 80);
+}
+
+.notification-menu-content {
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    min-width: calc(100vw - (1.5rem * 2)) !important;
+    left: 50% !important;
+    transform: translateX(-50%);
   }
 }
 </style>

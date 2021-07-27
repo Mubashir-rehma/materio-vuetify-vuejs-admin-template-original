@@ -58,6 +58,20 @@
         background-color: #3b355a !important;
       }
     }
+
+    // ————————————————————————————————————
+    //* ——— Prism Code Blocks
+    // ————————————————————————————————————
+
+    code[class*='language-'],
+    pre[class*='language-'] {
+      background: none !important;
+    }
+
+    *:not(pre) > code[class*='language-'],
+    pre[class*='language-'] {
+      background: map-deep-get($material-dark, 'background') !important;
+    }
   }
 }
 

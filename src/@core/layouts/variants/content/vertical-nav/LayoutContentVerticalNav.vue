@@ -14,7 +14,10 @@
       width="260"
       class="app-navigation-menu"
     >
-      <vertical-nav-menu :nav-menu-items="navMenuItems" />
+      <vertical-nav-menu
+        :nav-menu-items="navMenuItems"
+        @close-nav-menu="isVerticalNavMenuActive = false"
+      />
     </v-navigation-drawer>
 
     <!-- TODO: All elevations are to bottom and footer requires shadow on top -->
@@ -148,8 +151,8 @@ $nav-drawer-mini-width: 68px;
   }
 
   .v-footer {
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   @include theme(v-footer) using ($material) {
     // Elevation 3 with -y
@@ -160,11 +163,20 @@ $nav-drawer-mini-width: 68px;
 
   &.nav-drawer-mini {
     .v-main {
-      @include ltr() {
-        padding-left: $nav-drawer-mini-width !important;
-      }
-      @include rtl() {
-        padding-right: $nav-drawer-mini-width !important;
+      // We haven't used `ltr` & `rtl` mixin because those doesn't work with top-level selectors: https://github.com/vuetifyjs/vuetify/issues/13987
+      @at-root {
+        .nav-drawer-mini {
+          &.v-application--is-ltr {
+            .v-main {
+              padding-left: $nav-drawer-mini-width !important;
+            }
+          }
+          &.v-application--is-rtl {
+            .v-main {
+              padding-right: $nav-drawer-mini-width !important;
+            }
+          }
+        }
       }
     }
     @media #{map-get($display-breakpoints, 'lg-and-up')} {
@@ -215,7 +227,7 @@ $nav-drawer-mini-width: 68px;
   }
 
   .v-app-bar {
-    border-radius: 0 0 14px 14px !important;
+    border-radius: 0 0 10px 10px !important;
     &.v-toolbar:not(.app-bar-shinked) {
       background-color: transparent;
     }

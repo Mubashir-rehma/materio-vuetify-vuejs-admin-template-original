@@ -1,17 +1,17 @@
 <template>
   <div id="misc">
-    <v-img
+    <img
       class="misc-mask"
       height="226"
       :src="`/images/misc/misc-mask-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
-    ></v-img>
+    />
 
     <v-img
       class="misc-tree"
       src="/images/misc/tree-2.png"
     ></v-img>
 
-    <div class="page-title text-center mx-sm-5">
+    <div class="page-title text-center px-5">
       <h2 class="text-2xl font-weight-semibold text--primary">
         We are launching soon 🚀
       </h2>

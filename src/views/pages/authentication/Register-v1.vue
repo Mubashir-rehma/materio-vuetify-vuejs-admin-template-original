@@ -40,7 +40,7 @@
               v-model="username"
               outlined
               label="Username"
-              placeholder="Username"
+              placeholder="JohnDoe"
               hide-details
               class="mb-3"
             ></v-text-field>
@@ -49,7 +49,7 @@
               v-model="email"
               outlined
               label="Email"
-              placeholder="Email"
+              placeholder="john@example.com"
               hide-details
               class="mb-3"
             ></v-text-field>
@@ -59,13 +59,16 @@
               outlined
               :type="isPasswordVisible ? 'text' : 'password'"
               label="Password"
-              placeholder="Password"
+              placeholder="············"
               :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
               hide-details
               @click:append="isPasswordVisible = !isPasswordVisible"
             ></v-text-field>
 
-            <v-checkbox hide-details>
+            <v-checkbox
+              hide-details
+              class="mt-1"
+            >
               <template #label>
                 <div class="d-flex align-center flex-wrap">
                   <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
@@ -117,11 +120,11 @@
     </div>
 
     <!-- background triangle shape  -->
-    <v-img
+    <img
       class="auth-mask-bg"
-      height="120"
+      height="190"
       :src="`/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-    ></v-img>
+    >
 
     <!-- tree -->
     <v-img

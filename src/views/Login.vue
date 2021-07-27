@@ -24,15 +24,15 @@
       <v-row class="auth-row ma-0">
         <v-col
           lg="8"
-          class="d-none d-lg-block position-relative overflow-hidden"
+          class="d-none d-lg-block position-relative overflow-hidden pa-0"
         >
           <div class="auth-illustrator-wrapper">
             <!-- triangle bg -->
-            <v-img
+            <img
               height="362"
               class="auth-mask-bg"
               :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-            ></v-img>
+            />
 
             <!-- tree -->
             <v-img
@@ -43,19 +43,21 @@
             ></v-img>
 
             <!-- 3d character -->
-            <v-img
-              contain
-              max-width="100%"
-              height="692"
-              class="auth-3d-group"
-              :src="`/images/3d-characters/group-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
-            ></v-img>
+            <div class="d-flex align-center h-full pa-16 pe-0">
+              <v-img
+                contain
+                max-width="100%"
+                height="692"
+                class="auth-3d-group"
+                :src="`/images/3d-characters/group-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
+              ></v-img>
+            </div>
           </div>
         </v-col>
 
         <v-col
           lg="4"
-          class="d-flex align-center auth-bg"
+          class="d-flex align-center auth-bg pa-10 pb-0"
         >
           <v-row>
             <v-col
@@ -88,6 +90,8 @@
                       placeholder="email"
                       :error-messages="errorMessages.email"
                       :rules="[validators.required, validators.emailValidator]"
+                      hide-details="auto"
+                      class="mb-6"
                     ></v-text-field>
 
                     <v-text-field
@@ -99,6 +103,8 @@
                       placeholder="Password"
                       :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                       :rules="[validators.required]"
+                      hide-details="auto"
+                      class="mb-2"
                       @click:append="isPasswordVisible = !isPasswordVisible"
                     ></v-text-field>
 
@@ -106,13 +112,14 @@
                       <v-checkbox
                         hide-details
                         label="Remember Me"
+                        class="mt-0"
                       >
                       </v-checkbox>
 
                       <!-- forget link -->
                       <router-link
                         :to="{name:'auth-forgot-password'}"
-                        class="ms-3 mt-5"
+                        class="ms-3"
                       >
                         Forgot Password?
                       </router-link>

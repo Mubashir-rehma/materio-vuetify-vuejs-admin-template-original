@@ -1,6 +1,5 @@
 #misc {
   overflow: hidden;
-  padding: 1rem;
 
   .page-title {
     margin-top: 5.25rem;
@@ -18,8 +17,7 @@
 
   .misc-mask {
     bottom: 0;
-    right: 0;
-    left: 0;
+    width: 100%;
   }
 
   .misc-tree {
@@ -28,7 +26,7 @@
     left: 0;
     bottom: 8%;
   }
-  
+
   .misc-input-width {
     max-width: 15.125rem;
   }
@@ -39,9 +37,12 @@
     .page-title {
       margin-top: 3rem;
     }
-    .misc-tree {
-      height: 150px !important;
-      width: 150px;
-    }
+  }
+}
+
+@media (max-width: 600px) {
+  .misc-tree,
+  .misc-mask {
+    display: none;
   }
 }

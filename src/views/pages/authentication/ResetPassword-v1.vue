@@ -40,7 +40,7 @@
               outlined
               :type="isPasswordVisible ? 'text' : 'password'"
               label="New Password"
-              placeholder="New Password"
+              placeholder="············"
               :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
               hide-details
               class="mb-3"
@@ -52,7 +52,7 @@
               outlined
               :type="isConfirmPasswordVisible ? 'text' : 'password'"
               label="Confirm Password"
-              placeholder="Confirm Password"
+              placeholder="············"
               :append-icon="isConfirmPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline"
               hide-details
               @click:append="isConfirmPasswordVisible = !isConfirmPasswordVisible"
@@ -87,11 +87,11 @@
     </div>
 
     <!-- background triangle shape  -->
-    <v-img
+    <img
       class="auth-mask-bg"
-      height="173"
+      height="190"
       :src="`/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-    ></v-img>
+    >
 
     <!-- tree -->
     <v-img

@@ -24,15 +24,15 @@
       <v-row class="auth-row ma-0">
         <v-col
           lg="8"
-          class="d-none d-lg-block position-relative overflow-hidden"
+          class="d-none d-lg-block position-relative overflow-hidden pa-0"
         >
           <div class="auth-illustrator-wrapper">
             <!-- triangle bg -->
-            <v-img
+            <img
               height="362"
               class="auth-mask-bg"
               :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
-            ></v-img>
+            />
 
             <!-- tree -->
             <v-img
@@ -43,7 +43,7 @@
             ></v-img>
 
             <!-- 3d character -->
-            <div class="d-flex align-center h-full">
+            <div class="d-flex align-center h-full pa-16 pe-0">
               <v-img
                 contain
                 max-width="100%"
@@ -57,7 +57,7 @@
 
         <v-col
           lg="4"
-          class="d-flex align-center auth-bg"
+          class="d-flex align-center auth-bg pt-16"
         >
           <v-row>
             <v-col
@@ -85,7 +85,7 @@
                       outlined
                       :type="isPasswordVisible ? 'text' : 'password'"
                       label="New Password"
-                      placeholder="New Password"
+                      placeholder="············"
                       :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline : icons.mdiEyeOutline "
                       hide-details
                       class="mb-3"
@@ -97,7 +97,7 @@
                       outlined
                       :type="isConfirmPasswordVisible ? 'text' : 'password'"
                       label="Confirm Password"
-                      placeholder="Confirm Password"
+                      placeholder="············"
                       :append-icon="isConfirmPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                       hide-details
                       @click:append="isConfirmPasswordVisible = !isConfirmPasswordVisible"

@@ -1,17 +1,17 @@
 <template>
   <div id="misc">
-    <v-img
+    <img
       class="misc-mask"
       height="226"
-      :src="`/images/misc/misc-bg-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
-    ></v-img>
+      :src="`/images/misc/misc-mask-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
+    />
 
     <v-img
       class="misc-tree"
       src="/images/misc/tree-4.png"
     ></v-img>
 
-    <div class="page-title text-center">
+    <div class="page-title text-center px-4">
       <h2 class="text-2xl font-weight-semibold text--primary d-flex align-center justify-center">
         <span class="me-2">Page Not Found</span>
         <v-icon color="warning">

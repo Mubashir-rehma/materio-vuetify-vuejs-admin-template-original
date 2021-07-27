@@ -24,15 +24,15 @@
       <v-row class="auth-row ma-0">
         <v-col
           lg="8"
-          class="d-none d-lg-block position-relative overflow-hidden"
+          class="d-none d-lg-block position-relative overflow-hidden pa-0"
         >
           <div class="auth-illustrator-wrapper">
             <!-- triangle bg -->
-            <v-img
+            <img
               height="362"
               class="auth-mask-bg"
               :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-            ></v-img>
+            />
 
             <!-- tree -->
             <v-img
@@ -43,19 +43,21 @@
             ></v-img>
 
             <!-- 3d character -->
-            <v-img
-              contain
-              max-width="100%"
-              height="710"
-              class="auth-3d-group"
-              :src="`/images/3d-characters/illustration-register-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-            ></v-img>
+            <div class="d-flex align-center h-full pa-16 pe-0">
+              <v-img
+                contain
+                max-width="100%"
+                height="710"
+                class="auth-3d-group"
+                :src="`/images/3d-characters/illustration-register-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              ></v-img>
+            </div>
           </div>
         </v-col>
 
         <v-col
           lg="4"
-          class="d-flex align-center auth-bg"
+          class="d-flex align-center auth-bg pa-10 pb-0"
         >
           <v-row>
             <v-col
@@ -67,7 +69,7 @@
             >
               <v-card flat>
                 <v-card-text>
-                  <p class="text-2xl font-weight-semibold text--primary mb-2">
+                  <p class="text-2xl font-weight-semibold text--primary my-2">
                     Adventure starts here 🚀
                   </p>
                   <p class="mb-2">
@@ -88,6 +90,8 @@
                       :error-messages="errorMessages.username"
                       :rules="[validators.required, validators.alphaValidator]"
                       placeholder="Username"
+                      hide-details="auto"
+                      class="mb-6"
                     ></v-text-field>
 
                     <v-text-field
@@ -97,6 +101,8 @@
                       :rules="[validators.required, validators.emailValidator]"
                       label="Email"
                       placeholder="Email"
+                      hide-details="auto"
+                      class="mb-6"
                     ></v-text-field>
 
                     <v-text-field
@@ -108,10 +114,15 @@
                       placeholder="Password"
                       :rules="[validators.required, validators.passwordValidator]"
                       :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
+                      hide-details="auto"
+                      class="mb-2"
                       @click:append="isPasswordVisible = !isPasswordVisible"
                     ></v-text-field>
 
-                    <v-checkbox hide-details>
+                    <v-checkbox
+                      hide-details
+                      class="mt-0"
+                    >
                       <template #label>
                         <div class="d-flex align-center flex-wrap">
                           <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>
@@ -188,9 +199,9 @@ export default {
     const { router } = useRouter()
 
     const isPasswordVisible = ref(false)
-    const username = ref('bhuro')
-    const email = ref('user@mai.com')
-    const password = ref('Jay@cLEVISION#123')
+    const username = ref('johnDoe')
+    const email = ref('john@example.com')
+    const password = ref('john@MATERIO#123')
     const errorMessages = ref([])
     const socialLink = [
       {

@@ -38,7 +38,7 @@
               v-model="email"
               outlined
               label="Email"
-              placeholder="Email"
+              placeholder="john@example.com"
               hide-details
               class="mb-4"
             ></v-text-field>
@@ -70,11 +70,11 @@
     </div>
 
     <!-- background triangle shape  -->
-    <v-img
+    <img
       class="auth-mask-bg"
-      height="173"
+      height="190"
       :src="`/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-    ></v-img>
+    />
 
     <!-- tree -->
     <v-img

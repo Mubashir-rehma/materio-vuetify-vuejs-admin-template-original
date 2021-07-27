@@ -24,15 +24,15 @@
       <v-row class="auth-row ma-0">
         <v-col
           lg="8"
-          class="d-none d-lg-block position-relative overflow-hidden"
+          class="d-none d-lg-block position-relative overflow-hidden pa-0"
         >
           <div class="auth-illustrator-wrapper">
             <!-- triangle bg -->
-            <v-img
+            <img
               height="362"
               class="auth-mask-bg"
               :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-            ></v-img>
+            />
 
             <!-- tree -->
             <v-img
@@ -43,7 +43,7 @@
             ></v-img>
 
             <!-- 3d character -->
-            <div class="d-flex align-center h-full">
+            <div class="d-flex align-center h-full pa-16 pe-0">
               <v-img
                 contain
                 max-width="100%"
@@ -57,7 +57,7 @@
 
         <v-col
           lg="4"
-          class="d-flex align-center auth-bg"
+          class="d-flex align-center auth-bg pt-16"
         >
           <v-row>
             <v-col
@@ -84,7 +84,7 @@
                       v-model="username"
                       outlined
                       label="Username"
-                      placeholder="Username"
+                      placeholder="JohnDoe"
                       hide-details
                       class="mb-3"
                     ></v-text-field>
@@ -93,7 +93,7 @@
                       v-model="email"
                       outlined
                       label="Email"
-                      placeholder="Email"
+                      placeholder="john@example.com"
                       hide-details
                       class="mb-3"
                     ></v-text-field>
@@ -103,13 +103,16 @@
                       outlined
                       :type="isPasswordVisible ? 'text' : 'password'"
                       label="Password"
-                      placeholder="Password"
+                      placeholder="············"
                       :append-icon="isPasswordVisible ? icons.mdiEyeOffOutline:icons.mdiEyeOutline"
                       hide-details
                       @click:append="isPasswordVisible = !isPasswordVisible"
                     ></v-text-field>
 
-                    <v-checkbox hide-details>
+                    <v-checkbox
+                      hide-details
+                      class="mt-1"
+                    >
                       <template #label>
                         <div class="d-flex align-center flex-wrap">
                           <span class="me-2">I agree to</span><a href="javascript:void(0)">privacy policy &amp; terms</a>

@@ -14,6 +14,7 @@
           contain
           class="me-3 "
         ></v-img>
+
         <h2 class="text--primary">
           {{ appName }}
         </h2>
@@ -23,36 +24,40 @@
       <v-row class="auth-row ma-0">
         <v-col
           lg="8"
-          class="d-none d-lg-block position-relative overflow-hidden"
+          class="d-none d-lg-block position-relative overflow-hidden pa-0"
         >
-          <!-- triangle bg -->
-          <v-img
-            height="362"
-            class="auth-mask-bg"
-            :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
-          ></v-img>
+          <div class="auth-illustrator-wrapper">
+            <!-- triangle bg -->
+            <img
+              height="362"
+              class="auth-mask-bg"
+              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+            />
 
-          <!-- tree -->
-          <v-img
-            height="226"
-            width="300"
-            class="auth-tree"
-            src="/images/misc/tree-3.png"
-          ></v-img>
+            <!-- tree -->
+            <v-img
+              height="226"
+              width="300"
+              class="auth-tree"
+              src="/images/misc/tree-4.png"
+            ></v-img>
 
-          <!-- 3d character -->
-          <v-img
-            contain
-            max-width="100%"
-            height="692"
-            class="auth-3d-group"
-            src="/images/3d-characters/illustration-forgot-password.png"
-          ></v-img>
+            <!-- 3d character -->
+            <div class="d-flex align-center h-full pa-16 pe-0">
+              <v-img
+                contain
+                max-width="100%"
+                height="692"
+                class="auth-3d-group"
+                :src="`/images/3d-characters/illustration-forgot-password-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              ></v-img>
+            </div>
+          </div>
         </v-col>
 
         <v-col
           lg="4"
-          class="d-flex align-center auth-bg"
+          class="d-flex align-center auth-bg pa-10 pb-0"
         >
           <v-row>
             <v-col
@@ -75,24 +80,21 @@
                 <!-- login form -->
                 <v-card-text>
                   <v-form>
-                    <div class="mb-4">
-                      <v-text-field
-                        v-model="email"
-                        outlined
-                        label="Email"
-                        placeholder="email"
-                        hide-details
-                      ></v-text-field>
-                    </div>
+                    <v-text-field
+                      v-model="email"
+                      outlined
+                      label="Email"
+                      placeholder="john@example.com"
+                      hide-details
+                      class="mb-4"
+                    ></v-text-field>
 
-                    <div>
-                      <v-btn
-                        block
-                        color="primary"
-                      >
-                        Send reset link
-                      </v-btn>
-                    </div>
+                    <v-btn
+                      block
+                      color="primary"
+                    >
+                      Send reset link
+                    </v-btn>
                   </v-form>
                 </v-card-text>
 
@@ -145,13 +147,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@core/preset/preset/pages/auth.scss';
-.auth-wrapper {
-  &.auth-v2 {
-    .auth-3d-group {
-      bottom: 15% !important;
-    }
-  }
-}
 </style>

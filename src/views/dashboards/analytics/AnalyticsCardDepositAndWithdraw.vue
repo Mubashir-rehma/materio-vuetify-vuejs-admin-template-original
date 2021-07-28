@@ -1,87 +1,83 @@
 <template>
-  <v-card class="d-flex justify-space-between">
-    <div class="width-50">
-      <v-card-title>
-        <span>Deposit</span>
-        <v-spacer></v-spacer>
-        <span class="text-xs text--disabled">View All</span>
-      </v-card-title>
+  <v-card>
+    <div class="d-flex flex-sm-row flex-column">
+      <div class="flex-grow-1">
+        <v-card-title>
+          <span class="me-3">Deposit</span>
+          <v-spacer></v-spacer>
+          <span class="text-xs text--disabled cursor-pointer">View All</span>
+        </v-card-title>
 
-      <v-card-text>
-        <v-list>
-          <v-list-item
-            v-for="(data,index) in deposit"
-            :key="data.img"
-            :class="`d-flex align-center px-0 ${index > 0 ? 'mt-4':''}`"
-          >
-            <v-img
-              contain
-              max-height="30"
-              max-width="30"
-              :src="data.img"
-              class="me-3"
-            ></v-img>
+        <v-card-text>
+          <v-list>
+            <v-list-item
+              v-for="(data,index) in deposit"
+              :key="data.img"
+              :class="`d-flex px-0 ${index > 0 ? 'mt-4':''}`"
+            >
+              <v-img
+                contain
+                max-height="30"
+                max-width="30"
+                :src="data.img"
+                class="me-3"
+              ></v-img>
 
-            <div class="d-flex align-center flex-grow-1 flex-wrap">
-              <div class="me-2">
-                <v-list-item-title class="text-sm font-weight-semibold">
-                  {{ data.title }}
-                </v-list-item-title>
-                <v-list-item-subtitle class="text-xs">
-                  {{ data.subtitle }}
-                </v-list-item-subtitle>
+              <div class="d-flex align-center flex-grow-1 flex-wrap">
+                <div class="me-auto pe-2">
+                  <h4 class="font-weight-semibold">
+                    {{ data.title }}
+                  </h4>
+                  <span class="text-xs">{{ data.subtitle }}</span>
+                </div>
+
+                <span class="font-weight-semibold success--text">{{ data.amount }}</span>
               </div>
+            </v-list-item>
+          </v-list>
+        </v-card-text>
+      </div>
 
-              <v-spacer></v-spacer>
-              <span class="font-weight-semibold success--text">{{ data.amount }}</span>
-            </div>
-          </v-list-item>
-        </v-list>
-      </v-card-text>
-    </div>
+      <v-divider
+        class="my-sm-5 mx-5"
+        :vertical="$vuetify.breakpoint.smAndUp"
+      ></v-divider>
 
-    <v-divider
-      vertical
-      class="mx-sm-5"
-    ></v-divider>
+      <div class="flex-grow-1">
+        <v-card-title>
+          <span class="me-3">Withdraw</span>
+          <v-spacer></v-spacer>
+          <span class="text-xs text--disabled cursor-pointer">View All</span>
+        </v-card-title>
 
-    <div class="width-50">
-      <v-card-title>
-        <span>Withdraw</span>
-        <v-spacer></v-spacer>
-        <span class="text-xs text--disabled">View All</span>
-      </v-card-title>
+        <v-card-text>
+          <v-list>
+            <v-list-item
+              v-for="(data,index) in withdraw"
+              :key="data.img"
+              :class="`d-flex px-0 ${index > 0 ? 'mt-4':''}`"
+            >
+              <v-img
+                max-height="30"
+                max-width="30"
+                :src="data.img"
+                class="me-3"
+              ></v-img>
 
-      <v-card-text>
-        <v-list>
-          <v-list-item
-            v-for="(data,index) in withdraw"
-            :key="data.img"
-            :class="`d-flex align-center px-0 ${index > 0 ? 'mt-4':''}`"
-          >
-            <v-img
-              max-height="30"
-              max-width="30"
-              :src="data.img"
-              class="me-3"
-            ></v-img>
+              <div class="d-flex align-center flex-grow-1 flex-wrap">
+                <div class="me-auto pe-2">
+                  <h4 class="font-weight-semibold">
+                    {{ data.title }}
+                  </h4>
+                  <span class="text-xs">{{ data.subtitle }}</span>
+                </div>
 
-            <div class="d-flex align-center flex-grow-1 flex-wrap">
-              <div class="me-2">
-                <v-list-item-title class="text-sm font-weight-semibold">
-                  {{ data.title }}
-                </v-list-item-title>
-                <v-list-item-subtitle class="text-xs">
-                  {{ data.subtitle }}
-                </v-list-item-subtitle>
+                <span class="font-weight-semibold error--text">{{ data.amount }}</span>
               </div>
-
-              <v-spacer></v-spacer>
-              <span class="font-weight-semibold error--text">{{ data.amount }}</span>
-            </div>
-          </v-list-item>
-        </v-list>
-      </v-card-text>
+            </v-list-item>
+          </v-list>
+        </v-card-text>
+      </div>
     </div>
   </v-card>
 </template>
@@ -161,9 +157,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.width-50 {
-  width: 50%;
-}
-</style>

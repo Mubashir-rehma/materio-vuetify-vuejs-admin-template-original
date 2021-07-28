@@ -477,7 +477,7 @@ export default {
       },
     ]
     const currentBillingAddress = {
-      companyName: 'PIXINVENT',
+      companyName: 'Kelly Group',
       billingEmail: 'gertrude@gmail.com',
       taxID: 'TAX-875623',
       vatNumber: 'SDF754K77',

@@ -17,6 +17,16 @@
   background-color: map-deep-get($material, 'background');
 }
 
+.bg-blur {
+  backdrop-filter: blur(8px);
+
+  @at-root {
+    @include theme(bg-blur) using ($material) {
+      background-color: rgba(map-deep-get($material, 'cards'), 0.85) !important;
+    }
+  }
+}
+
 // ————————————————————————————————————
 //* ——— Layout
 // ————————————————————————————————————

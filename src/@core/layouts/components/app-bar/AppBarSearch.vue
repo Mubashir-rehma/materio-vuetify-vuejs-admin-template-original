@@ -3,6 +3,7 @@
     <v-btn
       icon
       small
+      class="app-bar-search-toggler"
       @click="shallShowFullSearchLocal = true"
     >
       <v-icon>
@@ -36,7 +37,6 @@
         :menu-props="{ maxHeight: 500, transition: 'slide-y-transition', contentClass: 'list-style' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
-        @blur="shallShowFullSearchLocal = false"
       >
         <!-- Slot: Selection -->
         <template #selection></template>

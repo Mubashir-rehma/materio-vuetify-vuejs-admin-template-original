@@ -138,7 +138,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -147,7 +147,7 @@ $material-light: map-deep-merge(
     'text-fields': (
       'filled': rgba($primary-shade--light, 0.03),
       'filled-hover': rgba($primary-shade--light, 0.08),
-      'outlined': rgba($primary-shade--light, 0.14),
+      'outlined': rgba($primary-shade--light, 0.22),
       'outlined-hover': rgba($primary-shade--light, 0.28),
       'outlined-disabled': rgba($primary-shade--light, 0.22),
     ),
@@ -287,7 +287,7 @@ $material-dark: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (
@@ -299,7 +299,7 @@ $material-dark: map-deep-merge(
     'text-fields': (
       'filled': rgba($primary-shade--dark, 0.03),
       'filled-hover': rgba($primary-shade--dark, 0.08),
-      'outlined': rgba($primary-shade--dark, 0.14),
+      'outlined': rgba($primary-shade--dark, 0.22),
       'outlined-hover': rgba($primary-shade--dark, 0.28),
       'outlined-disabled': rgba($primary-shade--dark, 0.22),
     ),

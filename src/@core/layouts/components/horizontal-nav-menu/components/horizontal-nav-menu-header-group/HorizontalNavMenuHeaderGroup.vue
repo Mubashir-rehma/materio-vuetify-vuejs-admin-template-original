@@ -12,7 +12,7 @@
     <template #activator="{ on, attrs }">
       <v-btn
         ref="refActivator"
-        :color="isActive ? 'primary' : null"
+        :color="isActive ? 'primary' : 'transparent'"
         depressed
         large
         rounded

@@ -156,15 +156,15 @@ export default {
       {
         img: 'twitter.png',
         title: 'Twitter',
-        link: 'https://twitter.com/pixinvent',
-        username: '@pixinvent',
+        link: 'https://twitter.com/theme_selection',
+        username: '@Theme_Selection',
         connected: true,
       },
       {
         img: 'linkedin.png',
         title: 'Linkedin',
-        link: 'https://www.linkedin.com/company/pixinvent',
-        username: '@pixinvent',
+        link: 'https://www.linkedin.com/company/themeselection',
+        username: '@ThemeSelection',
         connected: true,
       },
       {

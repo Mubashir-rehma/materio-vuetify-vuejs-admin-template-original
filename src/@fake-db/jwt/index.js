@@ -10,7 +10,7 @@ const data = {
       password: 'admin',
       // eslint-disable-next-line global-require
       avatar: '/images/avatars/1.png',
-      email: 'admin@demo.com',
+      email: 'admin@materio.com',
       role: 'admin',
       ability: [
         {
@@ -23,10 +23,10 @@ const data = {
       id: 2,
       fullName: 'Jane Doe',
       username: 'janedoe',
-      password: 'Client@demo#123',
+      password: 'client',
       // eslint-disable-next-line global-require
       avatar: '/images/avatars/1.png',
-      email: 'client@demo.com',
+      email: 'client@materio.com',
       role: 'client',
       ability: [
         {

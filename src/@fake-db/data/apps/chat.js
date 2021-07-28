@@ -201,7 +201,7 @@ const data = {
           },
         },
         {
-          message: 'It should be Bootstrap 5 compatible.',
+          message: 'It should use Vuetify Framework.',
           time: 'Mon Dec 10 2018 07:45:55 GMT+0000 (GMT)',
           senderId: 1,
           feedback: {
@@ -221,7 +221,7 @@ const data = {
           },
         },
         {
-          message: 'Vuexy admin is the responsive bootstrap 5 admin template.!',
+          message: 'Materio admin is the responsive Vuetify admin template.!',
           time: 'Mon Dec 10 2018 07:46:05 GMT+0000 (GMT)',
           senderId: 11,
           feedback: {

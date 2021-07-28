@@ -55,6 +55,13 @@ export default function useAppConfig() {
     },
   })
 
+  const appBarIsBlurred = computed({
+    get: () => store.state.appConfig.appBar.isBlurred,
+    set: value => {
+      store.commit('appConfig/UPDATE_APP_BAR_IS_BLURRED', value)
+    },
+  })
+
   const footerType = computed({
     get: () => store.state.appConfig.footer.type,
     set: value => {
@@ -97,6 +104,7 @@ export default function useAppConfig() {
     menuIsMenuHidden,
     menuIsVerticalNavMini,
     appBarType,
+    appBarIsBlurred,
     footerType,
     isDark,
     isRtl,

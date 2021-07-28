@@ -8,7 +8,7 @@
       app
       height="64"
       :absolute="appBarType === 'static'"
-      :class="{'app-system-bar-boxed': appContentWidth === 'boxed'}"
+      :class="[{'app-system-bar-boxed': appContentWidth === 'boxed'}, { 'bg-blur': appBarIsBlurred }]"
       class="app-system-bar"
     >
       <slot name="navbar"></slot>
@@ -18,6 +18,7 @@
     <v-app-bar
       v-if="!menuIsMenuHidden"
       class="navigation-menu"
+      :class="{ 'bg-blur': appBarIsBlurred }"
       app
       height="64"
       :absolute="appBarType === 'static'"
@@ -75,11 +76,12 @@ export default {
   },
   setup() {
     // eslint-disable-next-line object-curly-newline
-    const { menuIsMenuHidden, appBarType, footerType, appContentWidth } = useAppConfig()
+    const { menuIsMenuHidden, appBarType, appBarIsBlurred, footerType, appContentWidth } = useAppConfig()
 
     return {
       menuIsMenuHidden,
       appBarType,
+      appBarIsBlurred,
       footerType,
       appContentWidth,
     }

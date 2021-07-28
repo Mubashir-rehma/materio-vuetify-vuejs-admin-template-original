@@ -95,7 +95,7 @@
                 <p class="text--primary font-weight-medium mb-0">
                   Leona Watkins (Client)
                 </p>
-                <span>CEO of pixinvent</span>
+                <span>CEO of Kelly Group</span>
               </div>
             </div>
           </v-timeline-item>

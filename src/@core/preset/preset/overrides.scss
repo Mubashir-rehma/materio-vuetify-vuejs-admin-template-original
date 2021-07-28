@@ -114,7 +114,7 @@ button {
 @include app-elevation('v-expansion-panel::before', 2);
 
 // Menu
-@include app-elevation('v-menu__content', 2);
+@include app-elevation('v-menu__content', 8);
 
 // Navigation Drawer
 @include app-elevation(
@@ -686,19 +686,6 @@ $btn-custom-heights: (
 //
 //* ——— Input ——————————————————
 //
-
-@include theme(v-input) using ($material) {
-  input,
-  textarea {
-    color: map-deep-get($material, 'text', 'secondary') !important;
-  }
-}
-
-// Remove transition for border
-// Fixes border width transition issue
-.v-text-field--outlined fieldset {
-  transition-property: color !important;
-}
 
 @include theme-diff(v-input, #fff, map-deep-get($material-light, 'text', 'secondary')) using ($value) {
   &.v-text-field--solo-inverted.v-input--is-focused {

@@ -133,7 +133,7 @@ export default {
 .vertical-nav-menu-container {
   height: 100%;
   .ps-nav-menu-items {
-    height: calc(100% - 53px) !important;
+    height: calc(100% - 57px) !important;
   }
 
   // menu scroll shadow
@@ -153,10 +153,12 @@ export default {
 @include theme--child(vertical-nav-menu-container) using ($material) {
   .shadow-bottom {
     background: linear-gradient(
-      map-deep-get($material, 'background') 41%,
-      hsla(0, 0%, 100%, 0.11) 95%,
-      hsla(0, 0%, 100%, 0)
+      map-deep-get($material, 'background') 40%,
+      rgba(map-deep-get($material, 'background'), 0.1) 95%,
+      rgba(map-deep-get($material, 'background'), 0.05)
     );
+    margin-top: -0.5rem;
+    filter: blur(4px);
   }
 }
 
@@ -228,7 +230,10 @@ export default {
         // background-image: linear-gradient(98deg, #c48eff, var(--v-primary-base) 94%);
       }
       &.v-list-group__header {
-        background-color: rgba(map-deep-get($material, 'text', 'primary'), map-deep-get($material, 'states', 'hover'));
+        background-color: rgba(
+          map-deep-get($material, 'text', 'primary'),
+          map-deep-get($material, 'states', 'selected')
+        );
       }
     }
 

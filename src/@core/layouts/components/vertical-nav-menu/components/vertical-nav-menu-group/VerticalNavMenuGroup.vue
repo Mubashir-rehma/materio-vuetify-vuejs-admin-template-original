@@ -69,8 +69,8 @@ export default {
     // From Vuetify's `vuetify/src/mixins/themeable/index.ts` mixin
     rootThemeClasses() {
       return {
-        'theme--dark': this.$vuetify.isDark,
-        'theme--light': !this.$vuetify.isDark,
+        'theme--dark': this.$vuetify.theme.isDark,
+        'theme--light': !this.$vuetify.theme.isDark,
       }
     },
   },

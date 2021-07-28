@@ -82,10 +82,10 @@
 .v-application.theme--dark {
   .ps__rail-y,
   .ps__rail-x {
-    background-color: map-deep-get($material-dark, 'cards');
+    background-color: transparent !important;
   }
 
   .ps__thumb-y {
-    background-color: map-deep-get($material-dark, 'background');
+    background-color: map-deep-get($material-dark, 'cards');
   }
 }

@@ -484,7 +484,7 @@ export default {
         itemTitle: 'ABC Template',
         cost: 28,
         qty: 1,
-        description: 'Bootstrap 4 admin template.',
+        description: 'Vuetify admin template.',
       },
       {
         itemTitle: 'App Development',

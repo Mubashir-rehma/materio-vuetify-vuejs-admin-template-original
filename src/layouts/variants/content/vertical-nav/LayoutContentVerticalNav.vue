@@ -26,11 +26,11 @@
         </div>
 
         <!-- Right Content: I18n, Light/Dark, Notification & User Dropdown -->
-        <div class="d-flex align-center">
+        <div class="d-flex align-center right-row">
           <app-bar-i18n></app-bar-i18n>
           <app-bar-theme-switcher class="mx-4"></app-bar-theme-switcher>
           <app-bar-notification></app-bar-notification>
-          <app-bar-user-menu class="ms-4"></app-bar-user-menu>
+          <app-bar-user-menu></app-bar-user-menu>
         </div>
       </div>
     </template>
@@ -122,5 +122,25 @@ export default {
   align-items: center;
   flex-grow: 1;
   position: relative;
+}
+
+// ? Handle bg of autocomplete for blured appBar
+.v-app-bar.bg-blur {
+  .expanded-search {
+    ::v-deep .app-bar-autocomplete-box div[role='combobox'] {
+      background-color: transparent;
+    }
+
+    // ===
+
+    & > .right-row {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    ::v-deep .app-bar-search-toggler {
+      visibility: hidden;
+    }
+  }
 }
 </style>

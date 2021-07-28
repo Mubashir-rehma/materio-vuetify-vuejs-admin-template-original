@@ -1,4 +1,4 @@
-$nav-menu-bg-color: #221b2d;
+$nav-menu-bg-color: #1f1d31;
 
 @mixin semi-dark--bg($component, $white-opacity: 0.76, $style: 'all') {
   .#{$component} {
@@ -35,4 +35,14 @@ $nav-menu-bg-color: #221b2d;
 
   //   Style nav menu section title
   @include semi-dark--bg('app-navigation-menu .v-subheader .title-wrapper span');
+
+  .vertical-nav-menu-container {
+    .shadow-bottom {
+      background: linear-gradient(
+        $nav-menu-bg-color 40%,
+        rgba($nav-menu-bg-color, 0.1) 95%,
+        rgba($nav-menu-bg-color, 0.05)
+      );
+    }
+  }
 }

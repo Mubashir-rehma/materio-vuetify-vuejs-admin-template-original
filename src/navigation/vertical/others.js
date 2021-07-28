@@ -33,12 +33,13 @@ export default [
   },
   {
     title: 'Raise Support',
-    href: 'https://pixinvent.ticksy.com/',
+    href:
+      'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html',
     icon: mdiLifebuoy,
   },
   {
     title: 'Documentation',
-    href: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/documentation',
+    href: 'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation',
     icon: mdiFileDocumentOutline,
   },
 ]

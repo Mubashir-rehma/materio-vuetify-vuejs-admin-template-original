@@ -1,5 +1,5 @@
 <template>
-  <div class="vertical-nav-header d-flex align-center justify-space-between ps-6 pe-5 pt-5 pb-2">
+  <div class="vertical-nav-header d-flex align-center justify-space-between ps-6 pe-5 pt-5 pb-3">
     <router-link
       to="/"
       class="d-flex align-center text-decoration-none"
@@ -28,7 +28,7 @@
         v-show="!(menuIsVerticalNavMini && !isMouseHovered)"
         v-if="$vuetify.breakpoint.lgAndUp"
         class="d-flex align-center ms-1"
-        @click="menuIsVerticalNavMini = !menuIsVerticalNavMini"
+        @click.stop="menuIsVerticalNavMini = !menuIsVerticalNavMini"
       >
         <v-icon
           v-show="!menuIsVerticalNavMini"
@@ -49,7 +49,7 @@
         v-else
         size="20"
         class="d-inline-block"
-        @click="$emit('close-nav-menu')"
+        @click.stop="$emit('close-nav-menu')"
       >
         {{ icons.mdiClose }}
       </v-icon>

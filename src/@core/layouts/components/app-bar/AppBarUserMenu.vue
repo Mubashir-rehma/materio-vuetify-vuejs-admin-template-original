@@ -1,32 +1,57 @@
 <template>
-  <div class="d-flex align-center">
-    <div class="flex-column me-2 text-right font-weight-medium d-none d-sm-flex">
-      <span class="text--primary mb-n1">
-        {{ userData.fullName || userData.username }}
-      </span>
-      <small class="text--disabled text-capitalize">{{ userData.role }}</small>
-    </div>
-    <v-menu
-      offset-y
-      left
-      nudge-bottom="10"
-      min-width="200"
-    >
-      <template v-slot:activator="{ on, attrs }">
+  <v-menu
+    offset-y
+    left
+    nudge-bottom="10"
+    min-width="230"
+    content-class="user-profile-menu-content"
+  >
+    <template v-slot:activator="{ on, attrs }">
+      <v-badge
+        bottom
+        color="success"
+        overlap
+        offset-x="12"
+        offset-y="12"
+        class="ms-4"
+        dot
+      >
+        <v-avatar
+          size="40px"
+          v-bind="attrs"
+          color="primary"
+          class="v-avatar-light-bg primary--text"
+          v-on="on"
+        >
+          <v-img
+            v-if="userData.avatar"
+            src="/images/avatars/1.png"
+          ></v-img>
+          <v-icon
+            v-else
+            color="primary"
+            size="28"
+          >
+            {{ icons.mdiAccountOutline }}
+          </v-icon>
+        </v-avatar>
+      </v-badge>
+    </template>
+    <v-list>
+      <div class="pb-3 pt-2">
         <v-badge
           bottom
           color="success"
           overlap
           offset-x="12"
           offset-y="12"
+          class="ms-4"
           dot
         >
           <v-avatar
             size="40px"
-            v-bind="attrs"
             color="primary"
             class="v-avatar-light-bg primary--text"
-            v-on="on"
           >
             <v-img
               v-if="userData.avatar"
@@ -41,107 +66,117 @@
             </v-icon>
           </v-avatar>
         </v-badge>
-      </template>
-      <v-list>
-        <!-- Profile -->
-        <v-list-item :to="{ name: 'apps-user-view', params: { id: 21 } }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiAccountOutline }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Profile</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <div
+          class="d-inline-flex flex-column justify-center ms-3"
+          style="vertical-align:middle"
+        >
+          <span class="text--primary font-weight-semibold mb-n1">
+            {{ userData.fullName || userData.username }}
+          </span>
+          <small class="text--disabled text-capitalize">{{ userData.role }}</small>
+        </div>
+      </div>
 
-        <!-- Email -->
-        <v-list-item :to="{ name: 'apps-email' }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiEmailOutline }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Inbox</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+      <v-divider></v-divider>
 
-        <!-- Chat -->
-        <v-list-item :to="{ name: 'apps-chat' }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiChatOutline }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Chat</v-list-item-title>
-          </v-list-item-content>
+      <!-- Profile -->
+      <v-list-item :to="{ name: 'apps-user-view', params: { id: 21 } }">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiAccountOutline }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Profile</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
-          <v-list-item-action>
-            <v-badge
-              inline
-              color="error"
-              content="2"
-            >
-            </v-badge>
-          </v-list-item-action>
-        </v-list-item>
+      <!-- Email -->
+      <v-list-item :to="{ name: 'apps-email' }">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiEmailOutline }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Inbox</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
-        <v-divider class="my-2"></v-divider>
+      <!-- Chat -->
+      <v-list-item :to="{ name: 'apps-chat' }">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiChatOutline }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Chat</v-list-item-title>
+        </v-list-item-content>
 
-        <!-- Settings -->
-        <v-list-item :to="{ name: 'page-account-settings' }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiCogOutline }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-item-action>
+          <v-badge
+            inline
+            color="error"
+            content="2"
+          >
+          </v-badge>
+        </v-list-item-action>
+      </v-list-item>
 
-        <!-- Pricing -->
-        <v-list-item :to="{ name: 'page-pricing' }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiCurrencyUsd }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Pricing</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+      <v-divider class="my-2"></v-divider>
 
-        <!-- FAQ -->
-        <v-list-item :to="{ name: 'page-faq' }">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiHelpCircleOutline }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>FAQ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+      <!-- Settings -->
+      <v-list-item :to="{ name: 'page-account-settings' }">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiCogOutline }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Settings</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
-        <v-divider class="my-2"></v-divider>
+      <!-- Pricing -->
+      <v-list-item :to="{ name: 'page-pricing' }">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiCurrencyUsd }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Pricing</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
-        <!-- Logout -->
-        <v-list-item @click="logoutUser">
-          <v-list-item-icon class="me-2">
-            <v-icon size="22">
-              {{ icons.mdiLogoutVariant }}
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Logout</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-  </div>
+      <!-- FAQ -->
+      <v-list-item :to="{ name: 'page-faq' }">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiHelpCircleOutline }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>FAQ</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider class="my-2"></v-divider>
+
+      <!-- Logout -->
+      <v-list-item @click="logoutUser">
+        <v-list-item-icon class="me-2">
+          <v-icon size="22">
+            {{ icons.mdiLogoutVariant }}
+          </v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Logout</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>
@@ -199,3 +234,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.user-profile-menu-content {
+  .v-list-item {
+    min-height: 2.5rem !important;
+  }
+}
+</style>

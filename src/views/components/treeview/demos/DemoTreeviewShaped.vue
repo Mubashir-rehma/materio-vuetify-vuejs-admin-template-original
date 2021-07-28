@@ -33,7 +33,7 @@ export default {
                 name: 'src :',
                 children: [
                   { id: 8, name: 'index : ts' },
-                  { id: 9, name: 'bootstrap : ts' },
+                  { id: 9, name: 'src : ts' },
                 ],
               },
             ],

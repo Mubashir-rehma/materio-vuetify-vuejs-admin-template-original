@@ -30,7 +30,7 @@
       :elevate-on-scroll="appBarType !== 'static'"
       :elevation="appBarType !== 'static' ? 3 : 0"
       class="mx-auto app-bar-static"
-      :class="{ 'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY }"
+      :class="[{ 'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY }, { 'bg-blur': appBarIsBlurred && appBarType === 'fixed' && scrollY }]"
     >
       <slot
         name="navbar"
@@ -92,8 +92,9 @@ export default {
     },
   },
   setup() {
-    // eslint-disable-next-line object-curly-newline
-    const { menuIsVerticalNavMini, menuIsMenuHidden, appBarType, footerType, appContentWidth } = useAppConfig()
+    /* eslint-disable object-curly-newline, operator-linebreak */
+    const { menuIsVerticalNavMini, menuIsMenuHidden, appBarType, appBarIsBlurred, footerType, appContentWidth } =
+      useAppConfig()
     const $vuetify = getVuetify()
 
     const isVerticalNavMenuActive = ref(true)
@@ -121,6 +122,7 @@ export default {
       menuIsVerticalNavMini,
       menuIsMenuHidden,
       appBarType,
+      appBarIsBlurred,
       footerType,
       appContentWidth,
       scrollY,
@@ -228,6 +230,8 @@ $nav-drawer-mini-width: 68px;
 
   .v-app-bar {
     border-radius: 0 0 10px 10px !important;
+    z-index: 5;
+
     &.v-toolbar:not(.app-bar-shinked) {
       background-color: transparent;
     }

@@ -17,6 +17,7 @@ export default {
     },
     appBar: {
       type: themeConfig.appBar.type,
+      isBlurred: themeConfig.appBar.isBlurred,
     },
     footer: {
       type: themeConfig.footer.type,
@@ -44,6 +45,9 @@ export default {
     },
     UPDATE_APP_BAR_TYPE(state, value) {
       state.appBar.type = value
+    },
+    UPDATE_APP_BAR_IS_BLURRED(state, value) {
+      state.appBar.isBlurred = value
     },
     UPDATE_FOOTER_TYPE(state, value) {
       state.footer.type = value

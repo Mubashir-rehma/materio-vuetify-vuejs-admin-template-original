@@ -69,6 +69,18 @@
   }
 }
 
+@include theme('skin-variant--bordered.vertical-nav') using ($material) {
+  .vertical-nav-menu-container {
+    .shadow-bottom {
+      background: linear-gradient(
+        map-deep-get($material, 'cards') 40%,
+        rgba(map-deep-get($material, 'cards'), 0.1) 95%,
+        rgba(map-deep-get($material, 'cards'), 0.05)
+      );
+    }
+  }
+}
+
 // ————————————————————————————————————
 //* ——— Bordered Styles
 // ————————————————————————————————————

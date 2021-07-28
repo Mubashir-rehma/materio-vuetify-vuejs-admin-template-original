@@ -252,7 +252,6 @@
         </template>
         <email-message-card
           :message="emailViewData"
-          class="position-absolute"
           style="top:0;z-index:10"
         />
         <v-card

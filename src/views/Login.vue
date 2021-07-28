@@ -77,6 +77,20 @@
                   </p>
                 </v-card-text>
 
+                <v-card-text>
+                  <v-alert
+                    text
+                    color="primary"
+                  >
+                    <small class="d-block mb-1">
+                      Admin Email: <strong>admin@materio.com</strong> / Pass: <strong>admin</strong>
+                    </small>
+                    <small>
+                      Client Email: <strong>client@materio.com</strong> / Pass: <strong>client</strong>
+                    </small>
+                  </v-alert>
+                </v-card-text>
+
                 <!-- login form -->
                 <v-card-text>
                   <v-form
@@ -194,7 +208,7 @@ export default {
 
     const isPasswordVisible = ref(false)
 
-    const email = ref('admin@demo.com')
+    const email = ref('admin@materio.com')
     const password = ref('admin')
     const errorMessages = ref([])
     const socialLink = [

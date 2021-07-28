@@ -77,12 +77,15 @@
             <span class="text--secondary text-sm">Dark</span>
           </div>
         </div>
+
         <v-divider></v-divider>
+
         <!-- Section: Themeing -->
         <div class="customizer-section">
           <p class="text-xs text--disabled">
             LAYOUT
           </p>
+
           <!-- Content Width -->
           <span class="text--primary">Content Width</span>
           <v-radio-group
@@ -98,6 +101,7 @@
               :value="option.value"
             ></v-radio>
           </v-radio-group>
+
           <!-- AppBar Type -->
           <span class="mt-6 d-inline-block text--primary">AppBar Type</span>
           <v-radio-group
@@ -113,6 +117,7 @@
               :value="option.value"
             ></v-radio>
           </v-radio-group>
+
           <!-- Footer Type -->
           <span class="mt-6 d-inline-block text--primary">Footer Type</span>
           <v-radio-group
@@ -128,8 +133,20 @@
               :value="option.value"
             ></v-radio>
           </v-radio-group>
+
+          <!-- Blur -->
+          <div class="d-flex align-center justify-space-between mt-6">
+            <span class="text--primary">AppBar Blur</span>
+            <v-switch
+              v-model="appBarIsBlurred"
+              hide-details
+              class="mt-0 ms-2"
+            ></v-switch>
+          </div>
         </div>
+
         <v-divider></v-divider>
+
         <!-- Section: Menu -->
         <div class="customizer-section">
           <p class="text-xs text--disabled">
@@ -237,6 +254,7 @@ export default {
       menuIsVerticalNavMini,
       menuIsMenuHidden,
       appBarType,
+      appBarIsBlurred,
       footerType,
       isDark,
       isRtl,
@@ -323,6 +341,7 @@ export default {
 
       // AppBar Type
       appBarType,
+      appBarIsBlurred,
       appBarTypeOptions,
 
       // Footer Type

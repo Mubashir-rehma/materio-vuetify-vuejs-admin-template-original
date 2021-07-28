@@ -69,7 +69,7 @@
               class="mx-auto"
             >
               <v-card flat>
-                <v-card-text class="pb-2">
+                <v-card-text>
                   <p class="text-2xl font-weight-semibold text--primary mb-2">
                     Welcome to Materio! 👋🏻
                   </p>

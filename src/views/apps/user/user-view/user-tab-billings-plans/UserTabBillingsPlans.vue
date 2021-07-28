@@ -181,7 +181,10 @@
           Billing Address
         </p>
         <v-spacer></v-spacer>
-        <v-btn color="primary">
+        <v-btn
+          color="primary"
+          @click="isEditAddressDialogVisible =!isEditAddressDialogVisible"
+        >
           Edit Address
         </v-btn>
       </v-card-title>
@@ -199,7 +202,7 @@
                     Company Name:
                   </p>
                 </td>
-                <td><p>PIXINVENT</p></td>
+                <td><p>{{ currentBillingAddress.companyName }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -207,7 +210,7 @@
                     Billing Email:
                   </p>
                 </td>
-                <td><p>gertrude@gmail.com</p></td>
+                <td><p>{{ currentBillingAddress.billingEmail }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -215,7 +218,7 @@
                     Tax ID:
                   </p>
                 </td>
-                <td><p>TAX-875623</p></td>
+                <td><p>{{ currentBillingAddress.taxID }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -223,7 +226,7 @@
                     VAT Number:
                   </p>
                 </td>
-                <td><p>SDF754K77</p></td>
+                <td><p>{{ currentBillingAddress.vatNumber }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -233,7 +236,7 @@
                 </td>
                 <td>
                   <p class="mb-0">
-                    100 Water Plant Avenue, Building 1303 Wake Island
+                    {{ currentBillingAddress.address }}
                   </p>
                 </td>
               </tr>
@@ -250,7 +253,7 @@
                     Contact:
                   </p>
                 </td>
-                <td><p>+1(609) 933-44-22</p></td>
+                <td><p>{{ currentBillingAddress.contact }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -258,7 +261,7 @@
                     Country:
                   </p>
                 </td>
-                <td><p>Wake Island</p></td>
+                <td><p>{{ currentBillingAddress.country }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -266,7 +269,7 @@
                     State:
                   </p>
                 </td>
-                <td><p>Capholim</p></td>
+                <td><p>{{ currentBillingAddress.state }}</p></td>
               </tr>
               <tr>
                 <td class="billing-title">
@@ -274,13 +277,151 @@
                     Zip Code:
                   </p>
                 </td>
-                <td><p>403114</p></td>
+                <td><p>{{ currentBillingAddress.zipCode }}</p></td>
               </tr>
             </table>
           </v-col>
         </v-row>
       </v-card-text>
     </v-card>
+
+    <!-- edit address dialog -->
+    <v-dialog
+      v-model="isEditAddressDialogVisible"
+      max-width="650"
+    >
+      <v-card class="pa-sm-10 pa-3">
+        <v-card-title class="justify-center text-h5 px-5">
+          Edit Address
+        </v-card-title>
+        <v-card-text class="text-center mt-n2 px-5">
+          Add your billing address.
+        </v-card-text>
+        <v-card-text class="pt-5">
+          <v-form class="multi-col-validation">
+            <v-row>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="Company Name"
+                  outlined
+                  dense
+                  :value="currentBillingAddress.companyName"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="Email"
+                  outlined
+                  type="email"
+                  dense
+                  :value="currentBillingAddress.billingEmail"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="Tax ID"
+                  outlined
+                  dense
+                  :value="currentBillingAddress.taxID"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="VAT Number"
+                  outlined
+                  dense
+                  :value="currentBillingAddress.vatNumber"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-textarea
+                  label="Billing Address"
+                  outlined
+                  rows="2"
+                  :value="currentBillingAddress.address"
+                ></v-textarea>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="Contact"
+                  outlined
+                  dense
+                  :value="currentBillingAddress.contact"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-select
+                  label="Country"
+                  :items="countries"
+                  dense
+                  outlined
+                  :value="currentBillingAddress.country"
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="State"
+                  outlined
+                  dense
+                  :value="currentBillingAddress.state"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <v-text-field
+                  label="Zip Code                                "
+                  outlined
+                  dense
+                  :value="currentBillingAddress.zipCode"
+                ></v-text-field>
+              </v-col>
+              <v-col
+                cols="12"
+                class="d-flex justify-center"
+              >
+                <v-btn
+                  color="primary"
+                  class="me-3"
+                  @click="isEditAddressDialogVisible= false"
+                >
+                  Submit
+                </v-btn>
+                <v-btn
+                  outlined
+                  color="secondary"
+                  @click="isEditAddressDialogVisible= false"
+                >
+                  Cancel
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-form>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
 
     <!-- edit card details -->
     <user-tab-payment-details-edit
@@ -293,6 +434,7 @@
 <script>
 import { mdiPlus, mdiDeleteOutline, mdiSquareEditOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
+import countries from '@/@fake-db/data/other/countries'
 import UserTabPaymentDetailsEdit from './UserTabPaymentDetailsEdit.vue'
 
 export default {
@@ -334,7 +476,18 @@ export default {
         cardStatus: 'Expired',
       },
     ]
-
+    const currentBillingAddress = {
+      companyName: 'PIXINVENT',
+      billingEmail: 'gertrude@gmail.com',
+      taxID: 'TAX-875623',
+      vatNumber: 'SDF754K77',
+      address: '100 Water Plant Avenue, Building 1303 Wake Island',
+      contact: '+1(609) 933-44-22',
+      country: 'USA',
+      state: 'Capholim',
+      zipCode: '403114',
+    }
+    const isEditAddressDialogVisible = ref(false)
     const cardDetail = ref({})
     const isPlanUpgradeOpen = ref(false)
 
@@ -358,9 +511,12 @@ export default {
     }
 
     return {
+      countries,
       paymentCards,
       cardDetail,
       isPlanUpgradeOpen,
+      isEditAddressDialogVisible,
+      currentBillingAddress,
 
       resolvePaymentStatusVariant,
       editCardDetails,

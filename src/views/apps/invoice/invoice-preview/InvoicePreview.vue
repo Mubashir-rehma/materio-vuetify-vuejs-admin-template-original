@@ -239,6 +239,7 @@
             color="primary"
             class="mb-3"
             block
+            @click="isInvoiceSendSidebarActive = true"
           >
             <v-icon
               class="me-2"
@@ -277,6 +278,7 @@
           <v-btn
             color="success"
             block
+            @click="isAddPaymentSidebarActive = true"
           >
             <v-icon
               class="me-2"
@@ -289,6 +291,12 @@
         </v-card-text>
       </v-card>
     </v-col>
+
+    <!-- invoice send drawer -->
+    <invoice-sidebar-send-invoice v-model="isInvoiceSendSidebarActive"></invoice-sidebar-send-invoice>
+
+    <!-- invoice add payment drawer -->
+    <invoice-sidebar-add-payment v-model="isAddPaymentSidebarActive"></invoice-sidebar-add-payment>
   </v-row>
 </template>
 
@@ -300,11 +308,20 @@ import { mdiSendOutline, mdiCurrencyUsd } from '@mdi/js'
 
 import themeConfig from '@themeConfig'
 import invoiceStoreModule from '../invoiceStoreModule'
+import InvoiceSidebarSendInvoice from '../InvoiceSidebarSendInvoice.vue'
+import InvoiceSidebarAddPayment from '../InvoiceSidebarAddPayment.vue'
 
 export default {
+  components: {
+    InvoiceSidebarSendInvoice,
+    InvoiceSidebarAddPayment,
+  },
   setup() {
     const invoiceData = ref(null)
     const paymentDetails = ref({})
+
+    const isInvoiceSendSidebarActive = ref(false)
+    const isAddPaymentSidebarActive = ref(false)
 
     // Invoice Description
     // ? Your real data will contain this information
@@ -382,6 +399,10 @@ export default {
 
       // invoiceDescription,
       printInvoice,
+
+      // drawer
+      isInvoiceSendSidebarActive,
+      isAddPaymentSidebarActive,
 
       // themeConfig
       appName: themeConfig.app.name,

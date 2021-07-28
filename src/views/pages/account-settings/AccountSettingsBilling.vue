@@ -131,6 +131,7 @@
                   color="primary"
                   block
                   class="mt-2"
+                  @click="isPlanUpgradeDialogVisible = !isPlanUpgradeDialogVisible"
                 >
                   Upgrade Plan
                 </v-btn>
@@ -156,6 +157,59 @@
         </v-row>
       </v-form>
     </v-card-text>
+
+    <v-dialog
+      v-model="isPlanUpgradeDialogVisible"
+      max-width="650"
+    >
+      <v-card class="py-8">
+        <v-card-title class="justify-center text-h5 px-5">
+          Upgrade Plan
+        </v-card-title>
+        <v-card-text class="text-center mt-n2 px-5">
+          Choose the best plan for user.
+        </v-card-text>
+        <v-card-text class="d-flex align-center flex-wrap flex-sm-nowrap mt-5 px-15">
+          <v-select
+            v-model="selectedPlan"
+            label="Choose Plan"
+            :items="plansList"
+            item-text="text"
+            item-value="value"
+            outlined
+            dense
+            hide-details
+            class="me-3"
+          ></v-select>
+          <v-btn
+            color="primary"
+            class="mt-3 mt-sm-0"
+          >
+            Upgrade
+          </v-btn>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-text class="px-15 pt-8">
+          <p class="font-weight-medium text--primary mb-2">
+            User current plan is standard plan
+          </p>
+          <div class="d-flex justify-space-between flex-wrap">
+            <div class="user-pricing me-3">
+              <sup class="primary--text">$</sup>
+              <span class="text-5xl font-weight-semibold primary--text">99</span>
+              <sub class="text-base font-weight-light">/ month</sub>
+            </div>
+            <v-btn
+              color="error"
+              outlined
+              class="mt-3"
+            >
+              Cancel Subscription
+            </v-btn>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </v-card>
 </template>
 
@@ -167,10 +221,21 @@ export default {
   setup() {
     const selectedPaymentMethod = ref('credit-debit-atm-card')
     const currentPlan = ref(true)
+    const isPlanUpgradeDialogVisible = ref(false)
+    const selectedPlan = ref('standard')
+    const plansList = [
+      { text: 'Basic - $0/month', value: 'basic' },
+      { text: 'Standard - $99/month', value: 'standard' },
+      { text: 'Enterprise - $499/month', value: 'enterprise' },
+      { text: 'Company - $999/month', value: 'company' },
+    ]
 
     return {
       selectedPaymentMethod,
       currentPlan,
+      selectedPlan,
+      plansList,
+      isPlanUpgradeDialogVisible,
       icons: {
         mdiAccountOutline,
         mdiCloudOutline,

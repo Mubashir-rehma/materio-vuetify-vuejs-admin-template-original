@@ -87,20 +87,27 @@
         </router-link>
       </template>
 
-      <!-- trending  -->
+      <!-- status  -->
       <template #[`item.trending`]="{item}">
-        <v-avatar
-          size="30"
-          :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
-          :class="`v-avatar-light-bg ${resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant}--text`"
-        >
-          <v-icon
-            size="18"
-            :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
-          >
-            {{ resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).icon }}
-          </v-icon>
-        </v-avatar>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-avatar
+              size="30"
+              :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
+              :class="`v-avatar-light-bg ${resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant}--text`"
+              v-bind="attrs"
+              v-on="on"
+            >
+              <v-icon
+                size="18"
+                :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
+              >
+                {{ resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).icon }}
+              </v-icon>
+            </v-avatar>
+          </template>
+          <span>{{ item.invoiceStatus }}</span>
+        </v-tooltip>
       </template>
 
       <!-- client -->
@@ -156,7 +163,7 @@
       </template>
 
       <!-- actions -->
-      <template #[`item.actions`]>
+      <template #[`item.actions`]="{item}">
         <div class="d-flex align-center justify-center">
           <!-- delete -->
           <v-tooltip bottom>
@@ -182,6 +189,7 @@
                 icon
                 small
                 v-bind="attrs"
+                :to="{ name: 'apps-invoice-preview', params: { id: item.id } }"
                 v-on="on"
               >
                 <v-icon size="18">
@@ -212,7 +220,7 @@
 
             <v-list>
               <v-list-item
-                v-for="(item, i) in actionOptions"
+                v-for="(option, i) in actionOptions"
                 :key="i"
                 href="javascript:void(0)"
               >
@@ -221,9 +229,9 @@
                     size="18"
                     class="me-2"
                   >
-                    {{ item.icon }}
+                    {{ option.icon }}
                   </v-icon>
-                  <span>{{ item.title }}</span>
+                  <span>{{ option.title }}</span>
                 </v-list-item-title>
               </v-list-item>
             </v-list>

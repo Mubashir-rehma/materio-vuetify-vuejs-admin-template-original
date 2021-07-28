@@ -50,6 +50,21 @@
         order-md="2"
       >
         <v-card>
+          <v-card-text class="pb-0">
+            <v-btn
+              dark
+              color="primary"
+              @click.native="$router.push({ name: 'page-knowledge-base-category', params: { category: $route.params.category } })"
+            >
+              <v-icon
+                left
+                dark
+              >
+                {{ icons.mdiChevronLeft }}
+              </v-icon>
+              <span>Back</span>
+            </v-btn>
+          </v-card-text>
           <v-card-title class="flex-nowrap">
             <v-icon class="text--primary me-2">
               {{ article.titleIcon }}
@@ -105,7 +120,8 @@
 </template>
 
 <script>
-import { mdiCogOutline, mdiCheckboxBlankCircleOutline, mdiCellphoneCog } from '@mdi/js'
+// eslint-disable-next-line object-curly-newline
+import { mdiCogOutline, mdiCheckboxBlankCircleOutline, mdiCellphoneCog, mdiChevronLeft } from '@mdi/js'
 
 export default {
   setup() {
@@ -149,6 +165,7 @@ export default {
         mdiCogOutline,
         mdiCheckboxBlankCircleOutline,
         mdiCellphoneCog,
+        mdiChevronLeft,
       },
     }
   },

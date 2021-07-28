@@ -19,6 +19,7 @@
             color="primary"
             class="mb-3"
             block
+            @click="isInvoiceSendSidebarActive = true"
           >
             <v-icon
               class="me-2"
@@ -47,6 +48,7 @@
           <v-btn
             color="success"
             block
+            @click="isAddPaymentSidebarActive = true"
           >
             <v-icon
               class="me-2"
@@ -93,6 +95,12 @@
         ></v-switch>
       </div>
     </v-col>
+
+    <!-- invoice send drawer -->
+    <invoice-sidebar-send-invoice v-model="isInvoiceSendSidebarActive"></invoice-sidebar-send-invoice>
+
+    <!-- invoice add payment drawer -->
+    <invoice-sidebar-add-payment v-model="isAddPaymentSidebarActive"></invoice-sidebar-add-payment>
   </v-row>
 </template>
 
@@ -103,13 +111,20 @@ import store from '@/store'
 import router from '@/router'
 import InvoiceEditable from '../InvoiceEditable.vue'
 import invoiceStoreModule from '../invoiceStoreModule'
+import InvoiceSidebarSendInvoice from '../InvoiceSidebarSendInvoice.vue'
+import InvoiceSidebarAddPayment from '../InvoiceSidebarAddPayment.vue'
 
 export default {
   components: {
     InvoiceEditable,
+    InvoiceSidebarSendInvoice,
+    InvoiceSidebarAddPayment,
   },
   setup() {
     const INVOICE_APP_STORE_MODULE_NAME = 'app-invoice'
+
+    const isInvoiceSendSidebarActive = ref(false)
+    const isAddPaymentSidebarActive = ref(false)
 
     // Register module
     if (!store.hasModule(INVOICE_APP_STORE_MODULE_NAME)) {
@@ -158,6 +173,10 @@ export default {
     return {
       invoiceData,
       paymentMethods,
+
+      // drawer
+      isInvoiceSendSidebarActive,
+      isAddPaymentSidebarActive,
 
       // Icons
       icons: {

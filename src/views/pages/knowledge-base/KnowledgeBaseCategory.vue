@@ -19,7 +19,6 @@
             outlined
             placeholder="Ask a question...."
             hide-details
-            dense
             class="kb-search-input"
           >
             <template #prepend-inner>

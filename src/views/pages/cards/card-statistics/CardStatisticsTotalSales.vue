@@ -134,6 +134,7 @@ export default {
     #chart-stats-total-sales {
       path {
         stroke: #312d4b;
+        filter: none;
       }
     }
   }

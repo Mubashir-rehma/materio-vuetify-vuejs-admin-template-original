@@ -30,6 +30,7 @@ export default {
           data: [275, 90, 190, 205, 125, 85, 55, 87, 127, 150, 230, 280, 190],
           backgroundColor: '#ffcf5c',
           borderColor: 'transparent',
+          barThickness: 15,
         },
       ],
     },
@@ -149,7 +150,15 @@ export default {
       datasets: [
         {
           data: [710, 350, 470, 580, 230, 460, 120],
-          backgroundColor: [$themeColors.warning, $themeColors.info, $themeColors.warning, $themeColors.info, $themeColors.warning, $themeColors.info, $themeColors.warning],
+          backgroundColor: [
+            $themeColors.warning,
+            $themeColors.info,
+            $themeColors.warning,
+            $themeColors.info,
+            $themeColors.warning,
+            $themeColors.info,
+            $themeColors.warning,
+          ],
           borderColor: 'transparent',
           barThickness: 15,
         },

@@ -15,29 +15,38 @@
     >
       <!-- email -->
       <template #[`item.email`]="{item}">
-        <v-checkbox
-          v-model="item.email"
-          hide-details
-          dense
-        ></v-checkbox>
+        <v-row align="center justify-center">
+          <v-checkbox
+            v-model="item.email"
+            hide-details
+            dense
+            class="shrink"
+          ></v-checkbox>
+        </v-row>
       </template>
 
       <!-- browser -->
       <template #[`item.browser`]="{item}">
-        <v-checkbox
-          v-model="item.browser"
-          hide-details
-          dense
-        ></v-checkbox>
+        <v-row align="center justify-center">
+          <v-checkbox
+            v-model="item.browser"
+            hide-details
+            dense
+            class="shrink"
+          ></v-checkbox>
+        </v-row>
       </template>
 
       <!-- app -->
       <template #[`item.app`]="{item}">
-        <v-checkbox
-          v-model="item.app"
-          hide-details
-          dense
-        ></v-checkbox>
+        <v-row align="center justify-center">
+          <v-checkbox
+            v-model="item.app"
+            hide-details
+            dense
+            class="shrink"
+          ></v-checkbox>
+        </v-row>
       </template>
     </v-data-table>
 
@@ -64,10 +73,29 @@
 export default {
   setup() {
     const tableColumn = [
-      { text: 'TYPE', value: 'type', sortable: false },
-      { text: 'EMAIL', value: 'email', sortable: false },
-      { text: 'BROWSER', value: 'browser', sortable: false },
-      { text: 'APP', value: 'app', sortable: false },
+      {
+        text: 'TYPE',
+        value: 'type',
+        sortable: false,
+      },
+      {
+        text: 'EMAIL',
+        value: 'email',
+        sortable: false,
+        align: 'center',
+      },
+      {
+        text: 'BROWSER',
+        value: 'browser',
+        sortable: false,
+        align: 'center',
+      },
+      {
+        text: 'APP',
+        value: 'app',
+        sortable: false,
+        align: 'center',
+      },
     ]
     const notifications = [
       {

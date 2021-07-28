@@ -128,7 +128,7 @@ export default {
       { icon: mdiAlertCircleCheckOutline, name: 'mdiAlertCircleCheckOutline' },
       { icon: mdiAlertDecagramOutline, name: 'mdiAlertDecagramOutline' },
       { icon: mdiAlertMinusOutline, name: 'mdiAlertMinusOutline' },
-      { icon: mdiAlertOutline, name: mdiAlertOutline },
+      { icon: mdiAlertOutline, name: 'mdiAlertOutline' },
       { icon: mdiAlertPlusOutline, name: 'mdiAlertPlusOutline' },
       { icon: mdiCheckOutline, name: 'mdiCheckOutline' },
       { icon: mdiClipboardOutline, name: 'mdiClipboardOutline' },

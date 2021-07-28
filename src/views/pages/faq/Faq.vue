@@ -15,7 +15,6 @@
           <v-text-field
             v-model="knowledgeBaseSearchQuery"
             outlined
-            dense
             placeholder="Ask a question...."
             hide-details
             class="faq-search-input"

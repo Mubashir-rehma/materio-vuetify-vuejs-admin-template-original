@@ -75,10 +75,6 @@
   }
 }
 
-@include theme--child('apexcharts-bar-area') using ($material) {
-  stroke: map-deep-get($material, 'cards');
-}
-
 // ————————————————————————————————————
 //* ——— Perfect Scrollbar
 // ————————————————————————————————————

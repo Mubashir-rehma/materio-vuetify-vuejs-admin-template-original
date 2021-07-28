@@ -53,7 +53,8 @@
           <v-card-text class="pb-0">
             <v-btn
               dark
-              color="primary"
+              color="secondary"
+              outlined
               @click.native="$router.push({ name: 'page-knowledge-base-category', params: { category: $route.params.category } })"
             >
               <v-icon

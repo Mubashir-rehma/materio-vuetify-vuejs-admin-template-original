@@ -3,7 +3,7 @@
 @import '../variables.scss';
 
 @include theme--child('apexcharts-canvas .apexcharts-text') using ($material) {
-  fill: map-deep-get($material, 'text', 'secondary');
+  fill: map-deep-get($material, 'text', 'white');
 }
 @include theme--child('apexcharts-canvas .apexcharts-tooltip-text') using ($material) {
   fill: map-deep-get($material, 'text', 'secondary');
@@ -15,7 +15,19 @@
   fill: map-deep-get($material, 'text', 'secondary');
 }
 
+@include theme--child('apexcharts-canvas .apexcharts-bar-area') using ($material) {
+  stroke: map-deep-get($material, 'cards');
+}
+
 .apexcharts-canvas {
+  .apexcharts-series {
+    path {
+      filter: none;
+    }
+  }
+  .apexcharts-xcrosshairs.apexcharts-active {
+    opacity: 0;
+  }
   line[stroke='transparent'] {
     display: none;
   }

@@ -56,19 +56,21 @@
         class="mb-6"
       ></v-select>
 
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between mb-3">
         <span>Payment Terms</span>
         <v-switch
           hide-details="auto"
           :input-value="true"
+          class="mt-0"
         ></v-switch>
       </div>
 
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between mb-3">
         <span>Client Notes</span>
         <v-switch
           hide-details="auto"
           :input-value="false"
+          class="mt-0"
         ></v-switch>
       </div>
       <div class="d-flex align-center justify-space-between">
@@ -76,6 +78,7 @@
         <v-switch
           hide-details="auto"
           :input-value="false"
+          class="mt-0"
         ></v-switch>
       </div>
     </v-col>

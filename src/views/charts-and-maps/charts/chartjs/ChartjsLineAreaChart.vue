@@ -17,6 +17,7 @@
         :height="450"
         :data="chartjsData.lineAreaChart.data"
         :options="chartjsData.lineAreaChart.options"
+        :plugins="plugins"
       />
     </v-card-text>
   </v-card>
@@ -32,7 +33,21 @@ export default {
     ChartjsComponentLineChart,
   },
   setup() {
+    const plugins = [
+      // to add spacing between legends and chart
+      {
+        beforeInit(chart) {
+          /* eslint-disable func-names, no-param-reassign */
+          chart.legend.afterFit = function () {
+            this.height += 25
+          }
+          /* eslint-enable */
+        },
+      },
+    ]
+
     return {
+      plugins,
       chartjsData,
       mdiCalendarBlankOutline,
     }

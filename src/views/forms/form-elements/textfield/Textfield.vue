@@ -40,10 +40,10 @@
     <v-col cols="12">
       <app-card-code
         title="Variant"
-        :code="codeSnippets.textfieldVariant "
+        :code="codeSnippets.textfieldVariant"
       >
         <v-card-text>
-          Use <code>filled</code>, <code>flat</code>, <code>outlined</code>, <code>rounded</code>, <code>shaped</code>, <code>solo</code> and <code>solo-inverted</code> prop to change the look of file input.
+          Use <code>filled</code>, <code>flat</code>, <code>outlined</code>, <code>rounded</code>, <code>shaped</code>, <code>solo</code> and <code>solo-inverted</code> prop to change the look of input.
         </v-card-text>
 
         <v-card-text>

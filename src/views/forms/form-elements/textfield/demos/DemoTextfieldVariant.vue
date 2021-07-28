@@ -31,7 +31,7 @@
       md="6"
     >
       <v-text-field
-        label="Outlined"
+        label="Filled"
         filled
       ></v-text-field>
 

@@ -26,6 +26,7 @@
         :height="400"
         :data="chartjsData.scatterChart.data"
         :options="chartjsData.scatterChart.options"
+        :plugins="plugins"
       />
     </v-card-text>
   </v-card>
@@ -40,7 +41,21 @@ export default {
     ChartjsComponentScatterChart,
   },
   setup() {
+    const plugins = [
+      // to add spacing between legends and chart
+      {
+        beforeInit(chart) {
+          /* eslint-disable func-names, no-param-reassign */
+          chart.legend.afterFit = function () {
+            this.height += 20
+          }
+          /* eslint-enable */
+        },
+      },
+    ]
+
     return {
+      plugins,
       chartjsData,
     }
   },

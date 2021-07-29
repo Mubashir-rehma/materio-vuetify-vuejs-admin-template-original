@@ -34,6 +34,7 @@
           <v-btn
             dark
             text
+            class="my-auto"
             @click="isDialogVisible = false"
           >
             Save

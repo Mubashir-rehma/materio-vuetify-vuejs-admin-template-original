@@ -107,7 +107,7 @@
       <v-divider class="mt-4"></v-divider>
 
       <!-- actions -->
-      <v-card-text class="d-flex align-center flex-wrap mb-1">
+      <v-card-text class="d-flex align-center flex-wrap pb-0">
         <!-- search -->
         <v-text-field
           v-model="searchQuery"
@@ -115,7 +115,7 @@
           outlined
           hide-details
           dense
-          class="user-search mt-4 mt-sm-1 me-3"
+          class="user-search me-3 mb-4"
         >
         </v-text-field>
 
@@ -124,7 +124,7 @@
         <div class="d-flex align-center flex-wrap">
           <v-btn
             color="primary"
-            class="mt-4 mt-sm-1 me-3"
+            class="mb-4 me-3"
             @click.stop="isAddNewUserSidebarActive = !isAddNewUserSidebarActive"
           >
             <v-icon>{{ icons.mdiPlus }}</v-icon>
@@ -134,7 +134,7 @@
           <v-btn
             color="secondary"
             outlined
-            class="mt-4 mt-sm-1"
+            class="mb-4"
           >
             <v-icon
               size="17"

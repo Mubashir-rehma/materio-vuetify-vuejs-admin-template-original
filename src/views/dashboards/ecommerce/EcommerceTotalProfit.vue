@@ -239,16 +239,16 @@ export default {
 <style lang="scss">
 @import '~@core/preset/preset/mixins.scss';
 @import '~vuetify/src/styles/styles.sass';
-
-.total-profit-chart-col {
-  @include ltr() {
-    border-right: thin solid;
-  }
-  @include rtl() {
-    border-left: thin solid;
+@media #{map-get($display-breakpoints, 'sm-and-up')} {
+  .total-profit-chart-col {
+    @include ltr() {
+      border-right: thin solid;
+    }
+    @include rtl() {
+      border-left: thin solid;
+    }
   }
 }
-
 @include theme--child(total-profit-chart-col) using ($material) {
   @media #{map-get($display-breakpoints, 'sm-and-up')} {
     border-color: map-get($material, 'dividers');

@@ -623,10 +623,11 @@ $btn-custom-heights: (
 //* ——— Form ——————————————————
 //
 
-@if $customizer-form-icons {
-  .v-input {
-    .v-input__prepend-inner {
-      .v-input__icon:not(.v-input__icon--append-outer) {
+@if $customize-form-icons {
+  .v-input.v-input--dense {
+    .v-input__prepend-inner,
+    .v-input__append-inner {
+      .v-input__icon {
         .v-icon__svg {
           font-size: 20px;
           height: 20px;

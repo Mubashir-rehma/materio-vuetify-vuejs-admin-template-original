@@ -23,7 +23,7 @@ $body-font-family: 'Inter', sans-serif;
 $card-spacer: 20px;
 $card-spacer-content: 16px;
 $component-border-color: rgba($primary-shade--light, 0.22);
-$customizer-form-icons: true;
+$customize-form-icons: true;
 
 $theme-colors: (
   'primary': var(--v-primary-base),
@@ -138,7 +138,7 @@ $material-light: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--light, 0.08),
       'hover': rgba($primary-shade--light, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--light, 0.76),
     'text': (
@@ -287,7 +287,7 @@ $material-dark: map-deep-merge(
     'table': (
       'active': rgba($primary-shade--dark, 0.08),
       'hover': rgba($primary-shade--dark, 0.04),
-      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,
+      // 'group': map-get($grey, 'lighten-3'),,,,,,,,,,
     ),
     'tabs': rgba($primary-shade--dark, 0.76),
     'text': (

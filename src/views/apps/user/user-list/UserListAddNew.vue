@@ -4,7 +4,7 @@
     temporary
     touchless
     :right="!$vuetify.rtl"
-    width="350"
+    :width="$vuetify.breakpoint.smAndUp ? 350 : '100%'"
     app
     @input="(val) => $emit('update:is-add-new-user-sidebar-active', val)"
   >

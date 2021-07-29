@@ -18,7 +18,7 @@
           width="22px"
           class="me-2"
         ></v-img>
-        {{ locales.find(l => l.locale === $i18n.locale).title }}
+        <span v-if="$vuetify.breakpoint.smAndUp">{{ locales.find(l => l.locale === $i18n.locale).title }}</span>
       </div>
     </template>
 

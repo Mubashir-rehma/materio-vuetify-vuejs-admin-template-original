@@ -36,7 +36,7 @@
     </template>
     <v-list
       ref="refContent"
-      elevation="8"
+      :elevation="$vuetify.theme.dark ? 9 : 8"
     >
       <v-list-item-group
         color="primary"

@@ -59,13 +59,14 @@
           height="200px"
         ></v-card>
 
-        <v-btn
-          color="primary"
-          class="me-2"
-          @click="activeStep = 2"
-        >
-          Next
-        </v-btn>
+        <div class="d-flex justify-end">
+          <v-btn
+            color="primary"
+            @click="activeStep = 2"
+          >
+            Next
+          </v-btn>
+        </div>
       </v-stepper-content>
 
       <!-- Stepper Content: Step 2 -->
@@ -76,20 +77,20 @@
           height="200px"
         ></v-card>
 
-        <v-btn
-          color="primary"
-          class="me-2"
-          @click="activeStep = 3"
-        >
-          Next
-        </v-btn>
-
-        <v-btn
-          text
-          @click="activeStep = 1"
-        >
-          Previous
-        </v-btn>
+        <div class="d-flex justify-space-between">
+          <v-btn
+            outlined
+            @click="activeStep = 1"
+          >
+            Previous
+          </v-btn>
+          <v-btn
+            color="primary"
+            @click="activeStep = 3"
+          >
+            Next
+          </v-btn>
+        </div>
       </v-stepper-content>
 
       <!-- Stepper Content: Step 3 -->
@@ -100,19 +101,20 @@
           height="200px"
         ></v-card>
 
-        <v-btn
-          color="primary"
-          class="me-2"
-        >
-          Complete
-        </v-btn>
-
-        <v-btn
-          text
-          @click="activeStep = 2"
-        >
-          Previous
-        </v-btn>
+        <div class="d-flex justify-space-between">
+          <v-btn
+            outlined
+            @click="activeStep = 2"
+          >
+            Previous
+          </v-btn>
+          <v-btn
+            color="primary"
+            class="me-2"
+          >
+            Complete
+          </v-btn>
+        </div>
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>

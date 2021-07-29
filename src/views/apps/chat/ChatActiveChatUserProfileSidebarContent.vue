@@ -1,7 +1,10 @@
 <template>
   <div class="user-profile-sidebar-content h-full">
     <!-- Close Button -->
-    <div class="pt-2 me-2 text-right">
+    <div
+      class="pt-2 me-2"
+      :class="$vuetify.rtl ? 'text-left' : 'text-right'"
+    >
       <v-btn
         icon
         small
@@ -24,8 +27,18 @@
         offset-y="18"
         class="user-status-badge-lg mb-5"
       >
-        <v-avatar size="80">
-          <v-img :src="profileUserData.avatar"></v-img>
+        <v-avatar
+          size="80"
+          :class="`v-avatar-light-bg ${resolveAvatarBadgeVariant(profileUserData.status)}--text`"
+        >
+          <v-img
+            v-if="profileUserData.avatar"
+            :src="profileUserData.avatar"
+          ></v-img>
+          <span
+            v-else
+            class="text-3xl"
+          >{{ avatarText(profileUserData.fullName) }}</span>
         </v-avatar>
       </v-badge>
       <h2 class="mb-1 font-weight-medium text-base">
@@ -138,6 +151,7 @@ import {
 } from '@mdi/js'
 import useVuetify from '@core/utils/vuetify'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
+import { avatarText } from '@core/utils/filter'
 import useChat from './useChat'
 
 export default {
@@ -178,6 +192,9 @@ export default {
 
       // Vuetify
       rootThemeClasses,
+
+      // Filter
+      avatarText,
 
       // Icons
       icons: {

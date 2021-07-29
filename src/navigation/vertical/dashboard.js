@@ -4,6 +4,8 @@ export default [
   {
     title: 'Dashboards',
     icon: mdiHomeOutline,
+    badge: '3',
+    badgeColor: 'warning',
     children: [
       {
         title: 'CRM',

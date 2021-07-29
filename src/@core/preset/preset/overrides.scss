@@ -624,19 +624,31 @@ $btn-custom-heights: (
 //
 
 @if $customize-form-icons {
-  .v-input.v-input--dense {
+  .v-input {
+    &.v-input--dense {
+      .v-input__prepend-inner,
+      .v-input__append-inner {
+        .v-input__icon {
+          .v-icon__svg {
+            font-size: 20px;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+    }
     .v-input__prepend-inner,
     .v-input__append-inner {
       .v-input__icon {
-        .v-icon__svg {
-          font-size: 20px;
-          height: 20px;
-          width: 20px;
-          @include ltr() {
-            margin-right: 10px;
-          }
-          @include rtl() {
-            margin-left: 10px;
+        .v-icon {
+          transform-origin: 10px;
+          .v-icon__svg {
+            @include ltr() {
+              margin-right: 10px;
+            }
+            @include rtl() {
+              margin-left: 10px;
+            }
           }
         }
       }

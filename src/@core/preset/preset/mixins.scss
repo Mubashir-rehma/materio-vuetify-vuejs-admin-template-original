@@ -97,8 +97,14 @@
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
+    @include ltr() {
+      border-top-right-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+    @include rtl() {
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+    }
     background: #fff;
   }
 
@@ -143,6 +149,10 @@
 @mixin light-bg-provider($component, $inner-selector: '', $opacity: 0.12) {
   .v-application .#{$component}.#{$component}-light-bg #{$inner-selector} {
     background-color: transparent !important;
+
+    &.bg-static-white {
+      background-color: white !important;
+    }
 
     &::before {
       background-color: currentColor;

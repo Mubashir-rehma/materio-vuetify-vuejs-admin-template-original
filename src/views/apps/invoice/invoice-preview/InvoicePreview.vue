@@ -134,7 +134,7 @@
                   COST
                 </th>
                 <th>
-                  QTY
+                  HOURS
                 </th>
                 <th>
                   PRICE
@@ -156,7 +156,7 @@
                   {{ item.cost }}
                 </td>
                 <td>
-                  {{ item.qty }}
+                  {{ item.hours }}
                 </td>
                 <td class="text-center">
                   {{ item.price }}
@@ -327,31 +327,31 @@ export default {
     // ? Your real data will contain this information
     const purchasedProducts = [
       {
-        name: 'Vuexy Admin Template',
-        description: 'HTML admin template',
+        name: 'Premium Branding Package',
+        description: 'Branding & Promotion',
         cost: 98,
-        qty: 1,
+        hours: 15,
         price: 32,
       },
       {
-        name: 'Frest Admin Templatecream sandwich',
-        description: 'Angular Admin Template',
+        name: 'SMM',
+        description: 'Social media templates',
         cost: 49,
-        qty: 1,
+        hours: 14,
         price: 28,
       },
       {
-        name: 'Apex Admin Template',
-        description: 'HTML Admin Template',
+        name: 'Web Design',
+        description: 'Web designing package',
         cost: 30,
-        qty: 1,
+        hours: 12,
         price: 24,
       },
       {
-        name: 'Robust Admin Template',
-        description: 'React Admin Template',
+        name: 'SEO',
+        description: 'Search engine optimization',
         cost: 12,
-        qty: 1,
+        hours: 5,
         price: 22,
       },
     ]

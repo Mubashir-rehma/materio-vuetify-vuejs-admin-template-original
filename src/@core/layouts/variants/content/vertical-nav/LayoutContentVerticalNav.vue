@@ -28,7 +28,7 @@
       :absolute="appBarType === 'static'"
       flat
       :elevate-on-scroll="appBarType !== 'static'"
-      :elevation="appBarType !== 'static' ? 3 : 0"
+      :elevation="appBarType !== 'static' ? $vuetify.theme.isDark ? 4: 3 : 0"
       class="mx-auto app-bar-static"
       :class="[{ 'px-5 app-bar-shinked': appBarType === 'fixed' && scrollY }, { 'bg-blur': appBarIsBlurred && appBarType === 'fixed' && scrollY }]"
     >

@@ -5,6 +5,7 @@
       width="260"
       mobile-breakpoint="sm"
       absolute
+      :right="$vuetify.rtl"
       touchless
       :temporary="$vuetify.breakpoint.smAndDown"
     >
@@ -292,7 +293,7 @@
       <!-- Email Details -->
       <v-navigation-drawer
         v-model="isEmailDetailsOpen"
-        right
+        :right="!$vuetify.rtl"
         absolute
         mobile-breakpoint="sm"
         width="100%"

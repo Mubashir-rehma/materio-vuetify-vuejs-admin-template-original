@@ -54,18 +54,17 @@
         height="200px"
       ></v-card>
       <v-btn
-        color="primary"
-        class="me-2"
-        @click="activeStep = 3"
-      >
-        Next
-      </v-btn>
-
-      <v-btn
-        text
+        outlined
         @click="activeStep = 1"
       >
         Previous
+      </v-btn>
+      <v-btn
+        color="primary"
+        class="ms-2"
+        @click="activeStep = 3"
+      >
+        Next
       </v-btn>
     </v-stepper-content>
 
@@ -90,17 +89,16 @@
         height="200px"
       ></v-card>
       <v-btn
-        color="primary"
-        class="me-2"
-      >
-        Complete
-      </v-btn>
-
-      <v-btn
-        text
+        outlined
         @click="activeStep = 2"
       >
         Previous
+      </v-btn>
+      <v-btn
+        color="primary"
+        class="ms-2"
+      >
+        Complete
       </v-btn>
     </v-stepper-content>
   </v-stepper>

@@ -1,6 +1,7 @@
 <template>
   <div
     class="chat-contact d-flex align-center pa-3 cursor-pointer rounded-lg"
+    :class="{'bg-gradient-primary active-chat-contact': isActive}"
     v-on="$listeners"
   >
     <v-badge
@@ -14,8 +15,16 @@
       class="me-3 user-status-badge"
       :value="isChatContact"
     >
-      <v-avatar size="38">
-        <v-img :src="user.avatar"></v-img>
+      <v-avatar
+        size="38"
+        class="v-avatar-light-bg"
+        :class="[{'bg-static-white': isChatContact && isActive}, `${resolveAvatarBadgeVariant(user.status)}--text`]"
+      >
+        <v-img
+          v-if="user.avatar"
+          :src="user.avatar"
+        ></v-img>
+        <span v-else>{{ avatarText(user.fullName) }}</span>
       </v-avatar>
     </v-badge>
     <div class="flex-grow-1 overflow-hidden">
@@ -46,7 +55,7 @@
 </template>
 
 <script>
-import { formatDateToMonthShort } from '@core/utils/filter'
+import { formatDateToMonthShort, avatarText } from '@core/utils/filter'
 import useChat from './useChat'
 
 export default {
@@ -57,13 +66,17 @@ export default {
     },
     isChatContact: {
       type: Boolean,
-      dedfault: false,
+      default: false,
+    },
+    isActive: {
+      type: Boolean,
+      default: false,
     },
   },
   setup() {
     const { resolveAvatarBadgeVariant } = useChat()
 
-    return { formatDateToMonthShort, resolveAvatarBadgeVariant }
+    return { formatDateToMonthShort, resolveAvatarBadgeVariant, avatarText }
   },
 }
 </script>

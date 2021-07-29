@@ -401,7 +401,12 @@ export default {
     position: relative;
     .icon-customizer-close {
       position: absolute;
-      right: 20px;
+      @include ltr() {
+        right: 20px;
+      }
+      @include rtl() {
+        left: 20px;
+      }
       top: 50%;
       transform: translateY(-50%);
     }

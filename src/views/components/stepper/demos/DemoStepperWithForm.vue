@@ -154,13 +154,15 @@
           </v-row>
         </v-form>
 
-        <v-btn
-          color="primary"
-          class="me-2"
-          @click="handleStepValidation(1)"
-        >
-          Next
-        </v-btn>
+        <div class="d-flex justify-end">
+          <v-btn
+            color="primary"
+            class="me-2"
+            @click="handleStepValidation(1)"
+          >
+            Next
+          </v-btn>
+        </div>
       </v-stepper-content>
 
       <!-- Stepper Content: Step 2 -->
@@ -236,20 +238,20 @@
           </v-row>
         </v-form>
 
-        <v-btn
-          color="primary"
-          class="me-2"
-          @click="handleStepValidation(2)"
-        >
-          Next
-        </v-btn>
-
-        <v-btn
-          text
-          @click="handleStepValidation(2, false)"
-        >
-          Previous
-        </v-btn>
+        <div class="d-flex justify-space-between">
+          <v-btn
+            outlined
+            @click="handleStepValidation(2, false)"
+          >
+            Previous
+          </v-btn>
+          <v-btn
+            color="primary"
+            @click="handleStepValidation(2)"
+          >
+            Next
+          </v-btn>
+        </div>
       </v-stepper-content>
 
       <!-- Stepper Content: Step 3 -->
@@ -326,20 +328,20 @@
         </v-form>
 
         <!-- Action Buttons -->
-        <v-btn
-          color="primary"
-          class="me-2"
-          @click="handleStepValidation(3, true, true)"
-        >
-          Complete
-        </v-btn>
-
-        <v-btn
-          text
-          @click="handleStepValidation(3, false)"
-        >
-          Previous
-        </v-btn>
+        <div class="d-flex justify-space-between">
+          <v-btn
+            outlined
+            @click="handleStepValidation(3, false)"
+          >
+            Previous
+          </v-btn>
+          <v-btn
+            color="primary"
+            @click="handleStepValidation(3, true, true)"
+          >
+            Complete
+          </v-btn>
+        </div>
 
         <v-snackbar v-model="isFormSubmittedSnackbarVisible">
           Form Submitted Successfully.

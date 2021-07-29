@@ -22,6 +22,7 @@
       app
       height="64"
       :absolute="appBarType === 'static'"
+      :elevation="$vuetify.theme.isDark ? 4 : 3"
     >
       <horizontal-nav-menu
         :nav-menu-items="navMenuItems"

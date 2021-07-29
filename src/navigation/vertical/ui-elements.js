@@ -28,6 +28,8 @@ export default [
   {
     title: 'Cards',
     icon: mdiCreditCardOutline,
+    badge: 'New',
+    badgeColor: 'success',
     children: [
       {
         title: 'Basic',

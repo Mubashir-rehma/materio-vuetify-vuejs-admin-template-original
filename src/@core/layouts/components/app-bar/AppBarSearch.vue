@@ -35,7 +35,6 @@
         hide-details
         :filter="filter"
         auto-select-first
-        :prepend-inner-icon="icons.mdiMagnify"
         :menu-props="{ maxHeight: 500, transition: 'slide-y-transition', contentClass: 'list-style' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
@@ -43,6 +42,15 @@
       >
         <!-- Slot: Selection -->
         <template #selection></template>
+
+        <template #prepend-inner>
+          <v-icon
+            size="22"
+            class="mr-1"
+          >
+            {{ icons.mdiMagnify }}
+          </v-icon>
+        </template>
 
         <!-- Slot: Append -->
         <template #append>
@@ -79,7 +87,10 @@
               >
                 {{ item.icon }}
               </v-icon>
-              <div class="d-flex flex-column flex-grow-1">
+              <div
+                class="d-flex flex-column flex-grow-1"
+                :class="{'align-start': $vuetify.rtl}"
+              >
                 <span class="d-block">{{ item.title }}</span>
                 <small class="text--secondary text-xs">by {{ item.by }}</small>
               </div>

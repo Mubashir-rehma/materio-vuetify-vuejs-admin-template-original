@@ -3,6 +3,8 @@
     offset-y
     nudge-bottom="10"
     min-width="175"
+    left
+    :elevation="$vuetify.theme.dark ? 9 : 8"
   >
     <!-- Activator -->
     <template v-slot:activator="{ on, attrs }">

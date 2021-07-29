@@ -3,7 +3,8 @@
     offset-y
     left
     nudge-bottom="10"
-    content-class="elevation-9 list-style notification-menu-content"
+    :elevation="$vuetify.theme.dark ? 9 : 8"
+    content-class="list-style notification-menu-content"
   >
     <template v-slot:activator="{ on, attrs }">
       <v-icon

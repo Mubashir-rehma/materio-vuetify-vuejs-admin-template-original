@@ -18,7 +18,10 @@
     <v-list-item-title :class="{'white--text': isActive}">
       {{ t(item.title) }}
     </v-list-item-title>
-    <v-list-item-action v-if="item.badge">
+    <v-list-item-action
+      v-if="item.badge"
+      class="flex-shrink-0"
+    >
       <v-badge
         :color="item.badgeColor"
         inline

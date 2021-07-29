@@ -42,7 +42,7 @@ const data = {
       role: 'Town planner',
       about:
         'Soufflé soufflé caramels sweet roll. Jelly lollipop sesame snaps bear claw jelly beans sugar plum sugar plum.',
-      avatar: '/images/avatars/3.png',
+      avatar: '',
       status: 'busy',
     },
     {
@@ -51,7 +51,7 @@ const data = {
       role: 'Data scientist',
       about:
         'Chupa chups candy canes chocolate bar marshmallow liquorice muffin. Lemon drops oat cake tart liquorice tart cookie. Jelly-o cookie tootsie roll halvah.',
-      avatar: '/images/avatars/4.png',
+      avatar: '',
       status: 'online',
     },
     {
@@ -77,7 +77,7 @@ const data = {
       role: 'Special educational needs teacher',
       about:
         'Biscuit powder oat cake donut brownie ice cream I love soufflé. I love tootsie roll I love powder tootsie roll.',
-      avatar: '/images/avatars/7.png',
+      avatar: '',
       status: 'online',
     },
     {

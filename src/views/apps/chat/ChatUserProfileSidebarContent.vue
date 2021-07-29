@@ -24,8 +24,18 @@
         offset-y="18"
         class="user-status-badge-lg mb-5"
       >
-        <v-avatar size="80">
-          <v-img :src="profileUserData.avatar"></v-img>
+        <v-avatar
+          size="80"
+          :class="`v-avatar-light-bg ${resolveAvatarBadgeVariant(profileUserData.status)}--text`"
+        >
+          <v-img
+            v-if="profileUserData.avatar"
+            :src="profileUserData.avatar"
+          ></v-img>
+          <span
+            v-else
+            class="text-3xl"
+          >{{ avatarText(profileUserData.fullName) }}</span>
         </v-avatar>
       </v-badge>
       <h2 class="mb-1 font-weight-medium text-base">
@@ -125,6 +135,7 @@
 // eslint-disable-next-line object-curly-newline
 import { mdiClose, mdiCheckCircleOutline, mdiBellOutline, mdiAccountOutline, mdiTrashCanOutline } from '@mdi/js'
 import useVuetify from '@core/utils/vuetify'
+import { avatarText } from '@core/utils/filter'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import useChat from './useChat'
 
@@ -166,6 +177,9 @@ export default {
 
       // Vuetify
       rootThemeClasses,
+
+      // Filter
+      avatarText,
 
       // Icons
       icons: {

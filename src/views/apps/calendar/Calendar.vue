@@ -15,7 +15,7 @@
 
     <v-navigation-drawer
       v-model="isEventHandlerDrawerActive"
-      right
+      :right="!$vuetify.rtl"
       touchless
       app
       temporary

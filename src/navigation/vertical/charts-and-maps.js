@@ -7,6 +7,8 @@ export default [
   {
     title: 'Charts',
     icon: mdiChartDonut,
+    badge: '3',
+    badgeColor: 'error',
     children: [
       {
         title: 'Apex Chart',

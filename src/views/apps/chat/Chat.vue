@@ -5,6 +5,7 @@
       v-model="isLeftSidebarOpen"
       width="374"
       touchless
+      :right="$vuetify.rtl"
       mobile-breakpoint="sm"
       :temporary="$vuetify.breakpoint.xsOnly"
       absolute
@@ -25,6 +26,7 @@
       v-model="isUserProfileSidebarOpen"
       width="374"
       absolute
+      :right="$vuetify.rtl"
       touchless
       temporary
     >
@@ -40,7 +42,7 @@
       width="374"
       absolute
       temporary
-      right
+      :right="!$vuetify.rtl"
       touchless
     >
       <chat-active-chat-user-profile-sidebar-content
@@ -59,7 +61,10 @@
         class="h-full"
       >
         <!-- Navbar -->
-        <div class="d-flex align-center justify-space-between px-5 py-4">
+        <div
+          class="d-flex align-center justify-space-between px-5 py-4"
+          style="height:72px"
+        >
           <!-- Sidebar Toggler, Avatar & Name -->
           <div class="d-flex align-center">
             <v-btn
@@ -86,9 +91,14 @@
               <v-avatar
                 size="38"
                 class="cursor-pointer"
+                :class="`v-avatar-light-bg ${resolveAvatarBadgeVariant(activeChat.contact.status)}--text`"
                 @click="isActiveChatUserProfileSidebarOpen = true"
               >
-                <v-img :src="activeChat.contact.avatar"></v-img>
+                <v-img
+                  v-if="activeChat.contact.avatar"
+                  :src="activeChat.contact.avatar"
+                ></v-img>
+                <span v-else>{{ avatarText(activeChat.contact.fullName) }}</span>
               </v-avatar>
             </v-badge>
             <div class="d-flex flex-column">
@@ -220,6 +230,7 @@ import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import { ref, onUnmounted, nextTick } from '@vue/composition-api'
 import { until, invoke } from '@vueuse/core'
 import { getVuetify } from '@core/utils'
+import { avatarText } from '@core/utils/filter'
 import store from '@/store'
 import chatStoreModule from './chatStoreModule'
 import useChat from './useChat'
@@ -420,6 +431,9 @@ export default {
 
       // Perfect Scrollbar
       perfectScrollbarOptions,
+
+      // Filter
+      avatarText,
 
       icons: {
         mdiMenu,

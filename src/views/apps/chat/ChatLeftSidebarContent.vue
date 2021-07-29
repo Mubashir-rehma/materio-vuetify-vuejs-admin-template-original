@@ -14,9 +14,14 @@
         <v-avatar
           size="2.375rem"
           class="cursor-pointer"
+          :class="`v-avatar-light-bg ${resolveAvatarBadgeVariant(profileUserMinimalData.status)}--text`"
           @click="$emit('open-chat-user-profile-sidebar-content', true); $vuetify.breakpoint.smAndDown && $emit('close-left-sidebar')"
         >
-          <v-img :src="profileUserMinimalData.avatar"></v-img>
+          <v-img
+            v-if="profileUserMinimalData.avatar"
+            :src="profileUserMinimalData.avatar"
+          ></v-img>
+          <span v-else>{{ avatarText(profileUserMinimalData.fullName) }}</span>
         </v-avatar>
       </v-badge>
       <v-text-field
@@ -52,6 +57,7 @@
         :key="`chat-${contact.id}`"
         :user="contact"
         is-chat-contact
+        :is-active="activeChatContactId === contact.id"
         :class="{'bg-gradient-primary active-chat-contact': activeChatContactId === contact.id}"
         @click="$emit('open-chat', contact.id)"
       />
@@ -74,6 +80,7 @@
 import { mdiMagnify, mdiClose } from '@mdi/js'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import { ref, computed } from '@vue/composition-api'
+import { avatarText } from '@core/utils/filter'
 import ChatContact from './ChatContact.vue'
 import useChat from './useChat'
 
@@ -128,6 +135,9 @@ export default {
 
       // Perfect Scrollbar options
       perfectScrollbarOptions,
+
+      // Filter
+      avatarText,
 
       // Icons
       icons: {

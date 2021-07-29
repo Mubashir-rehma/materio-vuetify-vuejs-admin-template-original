@@ -155,7 +155,7 @@ export default {
             {
               itemTitle: 'App Design',
               cost: 24,
-              qty: 2,
+              hours: 2,
               description: 'Designed UI kit & app pages.',
             },
           ],

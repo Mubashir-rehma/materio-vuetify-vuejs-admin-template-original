@@ -216,7 +216,7 @@
                 cols="12"
                 md="2"
               >
-                <span>Qty</span>
+                <span>Hours</span>
               </v-col>
               <v-col
                 cols="12"
@@ -286,15 +286,15 @@
                 sm="4"
               >
                 <v-text-field
-                  v-model.number="purchasedProduct.qty"
+                  v-model.number="purchasedProduct.hours"
                   outlined
                   dense
                   min="0"
                   type="number"
                   hide-details="auto"
-                  label="Qty"
-                  placeholder="Qty"
-                  @input="val => { purchasedProduct.qty = Math.abs(val) }"
+                  label="Hours"
+                  placeholder="Hours"
+                  @input="val => { purchasedProduct.hours = Math.abs(val) }"
                 ></v-text-field>
               </v-col>
               <v-col
@@ -304,7 +304,7 @@
               >
                 <p class="my-2">
                   <span class="d-inline d-md-none">Price: </span>
-                  <span>${{ purchasedProduct.cost * purchasedProduct.qty }}</span>
+                  <span>${{ purchasedProduct.cost * purchasedProduct.hours }}</span>
                 </p>
               </v-col>
             </v-row>
@@ -471,34 +471,34 @@ export default {
       {
         itemTitle: 'App Design',
         cost: 24,
-        qty: 1,
+        hours: 1,
         description: 'Designed UI kit & app pages.',
       },
       {
         itemTitle: 'App Customization',
         cost: 26,
-        qty: 1,
+        hours: 1,
         description: 'Customization & Bug Fixes.',
       },
       {
         itemTitle: 'ABC Template',
         cost: 28,
-        qty: 1,
+        hours: 1,
         description: 'Vuetify admin template.',
       },
       {
         itemTitle: 'App Development',
         cost: 32,
-        qty: 1,
+        hours: 1,
         description: 'Native App Development.',
       },
     ]
 
     const updateItemForm = (index, val) => {
-      const { cost, qty, description } = val
+      const { cost, hours, description } = val
       /* eslint-disable no-param-reassign */
       props.data.purchasedProducts[index].cost = cost
-      props.data.purchasedProducts[index].qty = qty
+      props.data.purchasedProducts[index].hours = hours
       props.data.purchasedProducts[index].description = description
       /* eslint-enable */
     }
@@ -507,7 +507,7 @@ export default {
       props.data.purchasedProducts.push({
         itemTitle: '',
         cost: 0,
-        qty: 0,
+        hours: 0,
         description: '',
       })
     }

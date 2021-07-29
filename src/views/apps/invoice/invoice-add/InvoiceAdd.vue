@@ -118,7 +118,7 @@ export default {
         {
           itemTitle: '',
           cost: 0,
-          qty: 0,
+          hours: 0,
           description: '',
         },
       ],

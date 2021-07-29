@@ -956,15 +956,14 @@ mock.onGet('/apps/invoice/invoices').reply(config => {
     })
   }
 
-  // per page data
-  if (itemsPerPage > 0) {
-    filteredData = filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage)
-  }
-
-  // total availabel data length
-  const total = filteredData.length
-
-  return [200, { filteredData, total }]
+  return [
+    200,
+    {
+      filteredData:
+        itemsPerPage !== -1 ? filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage) : filteredData,
+      total: filteredData.length,
+    },
+  ]
 })
 
 // ------------------------------------------------

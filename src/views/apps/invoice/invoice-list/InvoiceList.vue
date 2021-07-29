@@ -289,11 +289,7 @@ export default {
       selectedTableData,
       resolveInvoiceStatusVariantAndIcon,
       resolveClientAvatarVariant,
-      fetchInvoices,
     } = useInvoicesList()
-
-    // fetch invoices
-    fetchInvoices()
 
     const statusOptions = ref(['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due'])
 

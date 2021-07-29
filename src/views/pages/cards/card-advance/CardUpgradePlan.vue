@@ -30,7 +30,7 @@
             contain
             width="23"
             height="20"
-            src="/images/pages/bag.svg"
+            src="/images/pages/briefcase.png"
           ></v-img>
         </v-avatar>
 

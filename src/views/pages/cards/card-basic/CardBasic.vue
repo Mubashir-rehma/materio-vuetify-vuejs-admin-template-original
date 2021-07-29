@@ -9,7 +9,7 @@
       >
         <v-card>
           <v-img
-            src="/images/pages/1.jpg"
+            src="/images/pages/1.png"
             height="250"
           />
           <v-card-title>
@@ -29,7 +29,7 @@
         <v-card>
           <v-img
             class="white--text align-end"
-            src="/images/pages/2.jpg"
+            src="/images/pages/2.png"
             height="250"
           />
           <v-card-text class="position-relative">
@@ -90,7 +90,7 @@
       >
         <v-card>
           <v-img
-            src="/images/pages/3.jpg"
+            src="/images/pages/3.png"
             height="250"
           ></v-img>
           <v-card-title>

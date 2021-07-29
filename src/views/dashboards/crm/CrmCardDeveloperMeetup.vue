@@ -3,7 +3,7 @@
     <v-img
       height="160"
       width="100%"
-      src="/images/pages/developerMeetup.jpg"
+      src="/images/pages/developerMeetup.png"
     ></v-img>
 
     <v-card-text class="d-flex align-center mt-5">

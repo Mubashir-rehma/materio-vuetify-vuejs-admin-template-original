@@ -73,35 +73,35 @@ export default {
   setup() {
     const transactionData = [
       {
-        avatar: '/images/pages/paypal.svg',
+        avatar: '/images/pages/paypal.png',
         avatarColor: 'error',
         title: 'Paypal',
         subtitle: 'Received Money',
         transaction: '+$2,482',
       },
       {
-        avatar: '/images/pages/credit-card.svg',
+        avatar: '/images/pages/credit-card.png',
         avatarColor: 'success',
         title: 'Credit Card',
         subtitle: 'Digital Ocean',
         transaction: '-$1,250',
       },
       {
-        avatar: '/images/pages/card-atm.svg',
+        avatar: '/images/pages/atm-card.png',
         avatarColor: 'warning',
         title: 'Mastercard',
         subtitle: 'Netflix',
         transaction: '-$99',
       },
       {
-        avatar: '/images/pages/wallet.svg',
+        avatar: '/images/pages/wallet.png',
         avatarColor: 'primary',
         title: 'Wallet',
         subtitle: "Mac'D",
         transaction: '-$82',
       },
       {
-        avatar: '/images/pages/arrow-growth.svg',
+        avatar: '/images/pages/arrow-growth.png',
         avatarColor: 'info',
         title: 'Trasnfer',
         subtitle: 'Refund',

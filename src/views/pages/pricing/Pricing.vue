@@ -52,37 +52,39 @@
                 outlined
                 class="text-center"
               >
-                <!-- image -->
-                <v-img
-                  contain
-                  max-height="90"
-                  :src="pricing.basicPlan.imgSrc"
-                  class="mx-auto mt-14 mb-8"
-                ></v-img>
-
-                <!-- title -->
-                <h1 class="text-2xl font-weight-medium">
-                  {{ pricing.basicPlan.title }}
-                </h1>
-                <p>{{ pricing.basicPlan.subtitle }}</p>
-
-                <!-- annual plan -->
-                <div class="annual-plan">
-                  <div class="plan-price d-flex align-center justify-center">
-                    <sup class="text-sm text-primary">$</sup>
-                    <span class="pricing-basic-value text-5xl primary--text font-weight-semibold">
-                      {{ status ? pricing.basicPlan.yearlyPlan.perMonth: pricing.basicPlan.monthlyPrice }}
-                    </span>
-                    <sub class="pricing-duration text-sm mb-n3">/month</sub>
+                <v-card-text>
+                  <!-- image -->
+                  <div class="d-flex justify-center">
+                    <img
+                      :src="pricing.basicPlan.imgSrc"
+                      class="mx-auto mt-3"
+                    >
                   </div>
-                  <small
-                    v-if="status"
-                    class="annual-pricing"
-                  >USD {{ pricing.basicPlan.yearlyPlan.totalAnnual }} / year</small>
-                </div>
-                <!--/ annual plan -->
 
-                <v-card-text class="mt-5">
+                  <!-- title -->
+                  <h1 class="text-2xl font-weight-medium">
+                    {{ pricing.basicPlan.title }}
+                  </h1>
+                  <p>{{ pricing.basicPlan.subtitle }}</p>
+
+                  <!-- annual plan -->
+                  <div class="annual-plan">
+                    <div class="plan-price d-flex align-center justify-center">
+                      <sup class="text-sm text-primary">$</sup>
+                      <span class="pricing-basic-value text-5xl primary--text font-weight-semibold">
+                        {{ status ? pricing.basicPlan.yearlyPlan.perMonth: pricing.basicPlan.monthlyPrice }}
+                      </span>
+                      <sub class="pricing-duration text-sm mb-n3">/month</sub>
+                    </div>
+                    <small
+                      v-if="status"
+                      class="annual-pricing"
+                    >USD {{ pricing.basicPlan.yearlyPlan.totalAnnual }} / year</small>
+                  </div>
+                <!--/ annual plan -->
+                </v-card-text>
+
+                <v-card-text>
                   <div class="pb-2">
                     <div
                       v-for="benefits in pricing.basicPlan.planBenefits"
@@ -120,51 +122,53 @@
                 outlined
                 class="popular text-center"
               >
-                <!-- chip -->
-                <div
-                  v-show="pricing.standardPlan.popularPlan"
-                  class="pricing-badge text-right ma-3"
-                >
-                  <v-chip
-                    small
-                    color="primary"
-                    class="v-chip-light-bg primary--text font-weight-semibold"
+                <v-card-text>
+                  <!-- chip -->
+                  <div
+                    v-show="pricing.standardPlan.popularPlan"
+                    class="pricing-badge text-right mt-n3"
                   >
-                    Popular
-                  </v-chip>
-                </div>
-
-                <!-- image -->
-                <v-img
-                  contain
-                  max-height="110"
-                  :src="pricing.standardPlan.imgSrc"
-                  class="mx-auto mb-5"
-                ></v-img>
-
-                <!-- title -->
-                <h1 class="text-2xl font-weight-medium">
-                  {{ pricing.standardPlan.title }}
-                </h1>
-                <p>{{ pricing.standardPlan.subtitle }}</p>
-
-                <!-- annual plan -->
-                <div class="annual-plan">
-                  <div class="plan-price d-flex align-center justify-center">
-                    <sup class="text-sm text-primary">$</sup>
-                    <span class="pricing-basic-value text-5xl primary--text font-weight-semibold">
-                      {{ status ? pricing.standardPlan.yearlyPlan.perMonth: pricing.standardPlan.monthlyPrice }}
-                    </span>
-                    <sub class="pricing-duration text-sm mb-n3">/month</sub>
+                    <v-chip
+                      small
+                      color="primary"
+                      class="v-chip-light-bg primary--text font-weight-semibold"
+                    >
+                      Popular
+                    </v-chip>
                   </div>
-                  <small
-                    v-if="status"
-                    class="annual-pricing"
-                  >USD {{ pricing.standardPlan.yearlyPlan.totalAnnual }} / year</small>
-                </div>
-                <!--/ annual plan -->
 
-                <v-card-text class="mt-5">
+                  <!-- image -->
+                  <div class="d-flex justify-center">
+                    <img
+                      :src="pricing.standardPlan.imgSrc"
+                      class="mx-auto"
+                    >
+                  </div>
+
+                  <!-- title -->
+                  <h1 class="text-2xl font-weight-medium">
+                    {{ pricing.standardPlan.title }}
+                  </h1>
+                  <p>{{ pricing.standardPlan.subtitle }}</p>
+
+                  <!-- annual plan -->
+                  <div class="annual-plan">
+                    <div class="plan-price d-flex align-center justify-center">
+                      <sup class="text-sm text-primary">$</sup>
+                      <span class="pricing-basic-value text-5xl primary--text font-weight-semibold">
+                        {{ status ? pricing.standardPlan.yearlyPlan.perMonth: pricing.standardPlan.monthlyPrice }}
+                      </span>
+                      <sub class="pricing-duration text-sm mb-n3">/month</sub>
+                    </div>
+                    <small
+                      v-if="status"
+                      class="annual-pricing"
+                    >USD {{ pricing.standardPlan.yearlyPlan.totalAnnual }} / year</small>
+                  </div>
+                <!--/ annual plan -->
+                </v-card-text>
+
+                <v-card-text>
                   <div class="pb-2">
                     <div
                       v-for="benefits in pricing.standardPlan.planBenefits"
@@ -201,37 +205,39 @@
                 outlined
                 class="text-center"
               >
-                <!-- image -->
-                <v-img
-                  contain
-                  max-width="70"
-                  :src="pricing.enterprisePlan.imgSrc"
-                  class="mx-auto mt-5 mb-3"
-                ></v-img>
-
-                <!-- title -->
-                <h1 class="text-2xl font-weight-medium">
-                  {{ pricing.enterprisePlan.title }}
-                </h1>
-                <p>{{ pricing.enterprisePlan.subtitle }}</p>
-
-                <!-- annual plan -->
-                <div class="annual-plan">
-                  <div class="plan-price d-flex align-center justify-center">
-                    <sup class="text-sm text-primary">$</sup>
-                    <span class="pricing-basic-value text-5xl primary--text font-weight-semibold">
-                      {{ status ? pricing.enterprisePlan.yearlyPlan.perMonth: pricing.enterprisePlan.monthlyPrice }}
-                    </span>
-                    <sub class="pricing-duration text-sm mb-n3">/month</sub>
+                <v-card-text>
+                  <!-- image -->
+                  <div class="d-flex justify-center">
+                    <img
+                      :src="pricing.enterprisePlan.imgSrc"
+                      class="mx-auto mb-3"
+                    >
                   </div>
-                  <small
-                    v-if="status"
-                    class="annual-pricing"
-                  >USD {{ pricing.enterprisePlan.yearlyPlan.totalAnnual }} / year</small>
-                </div>
-                <!--/ annual plan -->
 
-                <v-card-text class="mt-5">
+                  <!-- title -->
+                  <h1 class="text-2xl font-weight-medium">
+                    {{ pricing.enterprisePlan.title }}
+                  </h1>
+                  <p>{{ pricing.enterprisePlan.subtitle }}</p>
+
+                  <!-- annual plan -->
+                  <div class="annual-plan">
+                    <div class="plan-price d-flex align-center justify-center">
+                      <sup class="text-sm text-primary">$</sup>
+                      <span class="pricing-basic-value text-5xl primary--text font-weight-semibold">
+                        {{ status ? pricing.enterprisePlan.yearlyPlan.perMonth: pricing.enterprisePlan.monthlyPrice }}
+                      </span>
+                      <sub class="pricing-duration text-sm mb-n3">/month</sub>
+                    </div>
+                    <small
+                      v-if="status"
+                      class="annual-pricing"
+                    >USD {{ pricing.enterprisePlan.yearlyPlan.totalAnnual }} / year</small>
+                  </div>
+                <!--/ annual plan -->
+                </v-card-text>
+
+                <v-card-text>
                   <div class="pb-2">
                     <div
                       v-for="benefits in pricing.enterprisePlan.planBenefits"
@@ -354,7 +360,7 @@ export default {
         currentPlan: true,
         popularPlan: false,
         subtitle: 'A simple start for everyone',
-        imgSrc: '/images/misc/tree-1.png',
+        imgSrc: '/images/misc/pricing-tree-1.png',
         yearlyPlan: {
           perMonth: 0,
           totalAnnual: 0,
@@ -373,7 +379,7 @@ export default {
         popularPlan: true,
         currentPlan: false,
         subtitle: 'For small to medium businesses',
-        imgSrc: '/images/misc/tree-s-2.png',
+        imgSrc: '/images/misc/pricing-tree-2.png',
         yearlyPlan: {
           perMonth: 40,
           totalAnnual: 480,
@@ -392,7 +398,7 @@ export default {
         currentPlan: false,
         title: 'Enterprise',
         subtitle: 'Solution for big organizations',
-        imgSrc: '/images/misc/tree-s-4.png',
+        imgSrc: '/images/misc/pricing-tree-3.png',
         yearlyPlan: {
           perMonth: 80,
           totalAnnual: 960,

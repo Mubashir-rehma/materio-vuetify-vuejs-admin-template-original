@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img src="/images/pages/activity-timeline.jpg"></v-img>
+    <v-img src="/images/pages/activity-timeline.png"></v-img>
     <v-card-title>Activity Timeline</v-card-title>
 
     <v-card-text>
@@ -25,7 +25,7 @@
               contain
               height="26"
               max-width="26"
-              src="/images/pages/pdf.png"
+              src="/images/icons/file-icons/pdf.png"
             ></v-img>
             <h4 class="font-weight-semibold ms-2">
               invoice.pdf

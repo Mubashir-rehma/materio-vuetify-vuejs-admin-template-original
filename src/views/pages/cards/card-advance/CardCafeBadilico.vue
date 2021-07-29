@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img src="/images/pages/cafe-badilico.jpg"></v-img>
+    <v-img src="/images/pages/cafe-badilico.png"></v-img>
 
     <v-card-text class="d-flex align-center">
       <div>

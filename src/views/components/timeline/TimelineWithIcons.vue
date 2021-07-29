@@ -136,7 +136,7 @@
             <v-img
               height="100"
               width="100"
-              src="/images/pages/puma-shoes.jpg"
+              src="/images/pages/puma-shoes.jpeg"
               class="rounded me-4"
             ></v-img>
             <div>

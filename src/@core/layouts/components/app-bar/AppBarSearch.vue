@@ -21,8 +21,10 @@
       <v-autocomplete
         v-show="shallShowFullSearchLocal"
         ref="refAutocomplete"
-        :search-input.sync="searchQuery"
-        :items="data"
+        :search-input.sync="searchQueryLocal"
+        :items="searchQueryLocal ? data : []"
+        hide-no-data
+        no-data-text=""
         item-text="title"
         item-value="title"
         class="app-bar-autocomplete-box"
@@ -37,6 +39,7 @@
         :menu-props="{ maxHeight: 500, transition: 'slide-y-transition', contentClass: 'list-style' }"
         @input="valueSelected"
         @keyup.esc="shallShowFullSearchLocal = false"
+        @blur="shallShowFullSearchLocal = false"
       >
         <!-- Slot: Selection -->
         <template #selection></template>
@@ -128,14 +131,19 @@ export default {
       type: Function,
       default: null,
     },
+    searchQuery: {
+      type: [String, null],
+      default: '',
+    },
   },
   setup(props, { emit }) {
     const shallShowFullSearchLocal = useVModel(props, 'shallShowFullSearch', emit)
-    const searchQuery = ref('')
+    const searchQueryLocal = useVModel(props, 'searchQuery', emit)
+
     const refAutocomplete = ref(null)
 
     watch(shallShowFullSearchLocal, value => {
-      if (!value) searchQuery.value = ''
+      if (!value) searchQueryLocal.value = ''
       store.commit('app/TOGGLE_CONTENT_OVERLAY', value)
 
       // ? We create our own autofucs logic because `autofocus` prop was creating issue on `esc` key
@@ -152,7 +160,7 @@ export default {
         router.push(value.to).catch(() => {})
       }
       shallShowFullSearchLocal.value = false
-      searchQuery.value = ''
+      searchQueryLocal.value = ''
     }
 
     // Hotkey
@@ -172,9 +180,9 @@ export default {
     }
 
     return {
+      searchQueryLocal,
       refAutocomplete,
       shallShowFullSearchLocal,
-      searchQuery,
       valueSelected,
       getSearchResultType,
 

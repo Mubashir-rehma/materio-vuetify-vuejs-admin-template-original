@@ -21,6 +21,7 @@
             :shall-show-full-search.sync="shallShowFullSearch"
             :data="appBarSearchData"
             :filter="searchFilterFunc"
+            :search-query.sync="appBarSearchQuery"
             @update:shallShowFullSearch="handleShallShowFullSearchUpdate(isVerticalNavMenuActive, toggleVerticalNavMenuActive)"
           ></app-bar-search>
         </div>
@@ -64,7 +65,7 @@ import { getVuetify } from '@core/utils'
 // Search Data
 import appBarSearchData from '@/assets/app-bar-search-data'
 
-import { ref } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 
 export default {
   components: {
@@ -82,12 +83,41 @@ export default {
     const $vuetify = getVuetify()
 
     // Search
+    const appBarSearchQuery = ref('')
     const shallShowFullSearch = ref(false)
-
+    const maxItemsInGroup = 5
+    const totalItemsInGroup = ref({
+      pages: 0,
+      files: 0,
+      contacts: 0,
+    })
+    watch(appBarSearchQuery, () => {
+      totalItemsInGroup.value = {
+        pages: 0,
+        files: 0,
+        contacts: 0,
+      }
+    })
     const searchFilterFunc = (item, queryText, itemText) => {
       if (item.header || item.divider) return true
 
-      return itemText.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+      const itemGroup = (() => {
+        if (item.to !== undefined) return 'pages'
+        if (item.size !== undefined) return 'files'
+        if (item.email !== undefined) return 'contacts'
+
+        return null
+      })()
+
+      const isMatched = itemText.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+
+      if (isMatched) {
+        if (itemGroup === 'pages') totalItemsInGroup.value.pages += 1
+        else if (itemGroup === 'files') totalItemsInGroup.value.files += 1
+        else if (itemGroup === 'contacts') totalItemsInGroup.value.contacts += 1
+      }
+
+      return appBarSearchQuery.value && isMatched && totalItemsInGroup.value[itemGroup] <= maxItemsInGroup
     }
 
     // ? Handles case where in <lg vertical nav menu is open and search is triggered using hotkey then searchbox is hidden behind vertical nav menu overlaty
@@ -102,6 +132,7 @@ export default {
       handleShallShowFullSearchUpdate,
 
       // Search
+      appBarSearchQuery,
       shallShowFullSearch,
       appBarSearchData,
       searchFilterFunc,

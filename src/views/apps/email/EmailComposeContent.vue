@@ -342,7 +342,7 @@ export default {
       { avatar: '/images/avatars/5.png', name: 'Gabrielle Robertson', email: 'luutam@ho.gi' },
       { avatar: '/images/avatars/7.png', name: 'Lori Spears', email: 'zicsanroc@erher.mc' },
       { avatar: '/images/avatars/9.png', name: 'Sandy Vega', email: 'ibuam@cimenuze.to' },
-      { avatar: '/images/avatars/11.png', name: 'Cheryl May', email: 'kivcuci@kagwabum.tr' },
+      { avatar: '/images/avatars/4.png', name: 'Cheryl May', email: 'kivcuci@kagwabum.tr' },
     ]
     const filterEmailToOptions = (item, queryText) => {
       const q = queryText.toLowerCase()

@@ -59,6 +59,9 @@
 // ————————————————————————————————————
 .v-application.skin-variant--bordered.vertical-nav {
   @include remove-shadow-add-border('v-app-bar--fixed.v-app-bar--is-scrolled');
+  .v-app-bar {
+    border: 1px solid transparent;
+  }
 
   .ps-nav-menu-items {
     @include theme(v-subheader) using ($material) {

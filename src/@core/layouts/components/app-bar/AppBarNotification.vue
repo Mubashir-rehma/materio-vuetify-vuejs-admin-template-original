@@ -2,7 +2,7 @@
   <v-menu
     offset-y
     left
-    nudge-bottom="10"
+    nudge-bottom="22"
     :elevation="$vuetify.theme.dark ? 9 : 8"
     content-class="list-style notification-menu-content"
   >

@@ -10,6 +10,7 @@
     >
       <router-view></router-view>
     </transition>
+    <buy-now></buy-now>
   </component>
 </template>
 
@@ -29,11 +30,14 @@ import LayoutBlank from '@/layouts/variants/blank/LayoutBlank.vue'
 // Dynamic vh
 import useDynamicVh from '@core/utils/useDynamicVh'
 
+import BuyNow from '@/components/BuyNow.vue'
+
 export default {
   components: {
     LayoutContentVerticalNav,
     LayoutContentHorizontalNav,
     LayoutBlank,
+    BuyNow,
   },
   setup() {
     const { route } = useRouter()

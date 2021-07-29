@@ -701,14 +701,6 @@ mock.onGet('/apps/user/users').reply(config => {
     })
   }
 
-  // per page data
-  if (itemsPerPage > 0) {
-    filteredData = filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage)
-  }
-
-  // total availabel data length
-  const total = filteredData.length
-
   // user data total
 
   const userTotal = [
@@ -718,7 +710,15 @@ mock.onGet('/apps/user/users').reply(config => {
     { title: 'Pending Users', total: '237' },
   ]
 
-  return [200, { filteredData, total, userTotal }]
+  return [
+    200,
+    {
+      filteredData:
+        itemsPerPage !== -1 ? filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage) : filteredData,
+      total: filteredData.length,
+      userTotal,
+    },
+  ]
 })
 
 // ------------------------------------------------

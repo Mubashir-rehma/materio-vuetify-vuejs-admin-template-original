@@ -329,9 +329,6 @@ export default {
       resolveUserTotalIcon,
     } = useUsersList()
 
-    // fetch user data
-    fetchUsers()
-
     const isAddNewUserSidebarActive = ref(false)
 
     const roleOptions = [

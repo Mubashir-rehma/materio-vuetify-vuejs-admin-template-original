@@ -439,8 +439,9 @@ export const avatarSizes = `
     <v-avatar
       color="primary"
       size="21"
+      class="d-inline-flex align-center"
     >
-      <span class="white--text caption">PI</span>
+      <small class="white--text">PI</small>
     </v-avatar>
 
     <v-avatar

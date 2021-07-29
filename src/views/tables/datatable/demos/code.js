@@ -7,6 +7,10 @@ export const datatableCellEditingViaDialog = `
       :headers="headers"
       :items="userList"
     >
+      <template #top>
+        <v-card-text>Try editing <code class="mx-1">name</code> or <code class="mx-1">salary</code> column</v-card-text>
+      </template>
+
       <!-- name -->
       <template #[\`item.full_name\`]="{item}">
         <v-edit-dialog
@@ -1396,8 +1400,9 @@ export const datatableKitchenSink = `
     <v-card-text>
       <v-row>
         <v-col
-          cols="4"
-          offset="8"
+          cols="12"
+          offset-md="8"
+          md="4"
         >
           <v-text-field
             v-model="search"

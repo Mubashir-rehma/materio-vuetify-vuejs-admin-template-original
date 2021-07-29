@@ -389,6 +389,7 @@ export const selectSelectionSlot = `
     multiple
     clearable
     hide-details
+    :menu-props="{contentClass:'list-style'}"
   >
     <template #selection="data">
       <v-chip

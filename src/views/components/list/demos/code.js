@@ -442,7 +442,7 @@ export default {
     const items = [
       { header: 'Today' },
       {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+        avatar: '/images/avatars/1.png',
         title: 'Brunch this weekend?',
         subtitle: {
           name: 'Ali Connors',
@@ -451,7 +451,7 @@ export default {
       },
       { divider: true, inset: true },
       {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+        avatar: '/images/avatars/3.png',
         title: 'Summer BBQ ',
         subtitle: {
           name: 'to Alex, Scott, Jennifer',
@@ -460,7 +460,7 @@ export default {
       },
       { divider: true, inset: true },
       {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+        avatar: '/images/avatars/2.png',
         title: 'Oui oui',
         subtitle: {
           name: 'Sandra Adams',

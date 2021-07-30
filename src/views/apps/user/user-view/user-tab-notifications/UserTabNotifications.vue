@@ -15,7 +15,10 @@
     >
       <!-- email -->
       <template #[`item.email`]="{item}">
-        <v-row align="center justify-center">
+        <v-row
+          align="center"
+          justify="center"
+        >
           <v-checkbox
             v-model="item.email"
             hide-details
@@ -27,7 +30,10 @@
 
       <!-- browser -->
       <template #[`item.browser`]="{item}">
-        <v-row align="center justify-center">
+        <v-row
+          align="center"
+          justify="center"
+        >
           <v-checkbox
             v-model="item.browser"
             hide-details
@@ -39,7 +45,10 @@
 
       <!-- app -->
       <template #[`item.app`]="{item}">
-        <v-row align="center justify-center">
+        <v-row
+          align="center"
+          justify="center"
+        >
           <v-checkbox
             v-model="item.app"
             hide-details

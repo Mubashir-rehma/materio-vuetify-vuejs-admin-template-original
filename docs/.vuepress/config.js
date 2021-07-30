@@ -5,7 +5,7 @@ module.exports = {
   // head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     lastUpdated: 'Last Updated',
-    // logo: '/logo.svg',
+    logo: '/logo.svg',
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },

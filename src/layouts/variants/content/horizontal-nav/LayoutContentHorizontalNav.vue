@@ -38,6 +38,7 @@
             :shall-show-full-search.sync="shallShowFullSearch"
             :data="appBarSearchData"
             :filter="searchFilterFunc"
+            :search-query.sync="appBarSearchQuery"
             class="me-4"
           ></app-bar-search>
           <app-bar-i18n></app-bar-i18n>
@@ -81,7 +82,7 @@ import AppBarNotification from '@core/layouts/components/app-bar/AppBarNotificat
 // Search Data
 import appBarSearchData from '@/assets/app-bar-search-data'
 
-import { ref } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 
 import themeConfig from '@themeConfig'
 
@@ -99,20 +100,49 @@ export default {
   },
   setup() {
     // Search
+    const appBarSearchQuery = ref('')
     const shallShowFullSearch = ref(false)
+    const maxItemsInGroup = 5
+    const totalItemsInGroup = ref({
+      pages: 0,
+      files: 0,
+      contacts: 0,
+    })
+    watch(appBarSearchQuery, () => {
+      totalItemsInGroup.value = {
+        pages: 0,
+        files: 0,
+        contacts: 0,
+      }
+    })
 
     const searchFilterFunc = (item, queryText, itemText) => {
-      // console.log('queryText :>> ', queryText)
-      // console.log('itemText :>> ', itemText)
       if (item.header || item.divider) return true
 
-      return itemText.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+      const itemGroup = (() => {
+        if (item.to !== undefined) return 'pages'
+        if (item.size !== undefined) return 'files'
+        if (item.email !== undefined) return 'contacts'
+
+        return null
+      })()
+
+      const isMatched = itemText.toLocaleLowerCase().indexOf(queryText.toLocaleLowerCase()) > -1
+
+      if (isMatched) {
+        if (itemGroup === 'pages') totalItemsInGroup.value.pages += 1
+        else if (itemGroup === 'files') totalItemsInGroup.value.files += 1
+        else if (itemGroup === 'contacts') totalItemsInGroup.value.contacts += 1
+      }
+
+      return appBarSearchQuery.value && isMatched && totalItemsInGroup.value[itemGroup] <= maxItemsInGroup
     }
 
     return {
       navMenuItems,
 
       // Search
+      appBarSearchQuery,
       shallShowFullSearch,
       appBarSearchData,
       searchFilterFunc,

@@ -3,7 +3,6 @@
         "formulahendry.auto-rename-tag",
         "octref.vetur",
         "sdras.vue-vscode-snippets",
-        "jasonnutter.search-node-modules",
         "mrmlnc.vscode-scss",
         "syler.sass-indented",
         "christian-kohler.npm-intellisense",
@@ -15,12 +14,18 @@
         "streetsidesoftware.code-spell-checker",
         "editorconfig.editorconfig",
         "usernamehw.errorlens",
-        "aaron-bond.better-comments",
         "formulahendry.auto-close-tag",
         "yzhang.markdown-all-in-one",
         "davidanson.vscode-markdownlint",
-        "sibiraj-s.vscode-scss-formatter",
         "cipchk.cssrem",
-        "mgmcdermott.vscode-language-babel"
+        "mgmcdermott.vscode-language-babel",
+        "atishay-jain.all-autocomplete",
+        "steoates.autoimport",
+        "coenraads.bracket-pair-colorizer",
+        "wmaurer.change-case",
+        "exodiusstudios.comment-anchors",
+        "ionutvmi.path-autocomplete",
+        "visualstudioexptteam.vscodeintellicode",
+        "massi.javascript-docstrings"
     ]
 }

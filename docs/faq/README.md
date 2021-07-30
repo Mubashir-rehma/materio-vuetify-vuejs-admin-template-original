@@ -57,8 +57,6 @@ info "fsevents@2.3.1" is an optional dependency and failed compatibility check. 
 info fsevents@1.2.13: The platform "linux" is incompatible with this module.
 info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
 [3/4] Linking dependencies...
-warning " > bootstrap@4.5.3" has unmet peer dependency "jquery@1.9.1 - 3".
-warning " > bootstrap@4.5.3" has unmet peer dependency "popper.js@^1.16.1".
 warning " > vue2-leaflet@2.6.0" has unmet peer dependency "@types/leaflet@^1.5.7".
 warning "@vue/eslint-config-airbnb > eslint-import-resolver-webpack@0.13.0" has unmet peer dependency "webpack@>=1.11.0".
 warning " > sass-loader@10.1.0" has unmet peer dependency "webpack@^4.36.0 || ^5.0.0".

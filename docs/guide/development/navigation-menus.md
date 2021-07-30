@@ -55,7 +55,7 @@ Besides internal route of app you can also create link for external sites:
 ```js
 {
   title: 'Documentation',
-  href: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/documentation',
+  href: 'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation',
   icon: mdiFile,
 },
 ```

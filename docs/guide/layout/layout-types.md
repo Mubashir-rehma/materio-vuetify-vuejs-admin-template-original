@@ -10,9 +10,9 @@ Basically this is blank page and you will create everything from scratch.
 
 Template Example:
 
-- [Login V1](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/pages/authentication/login-v1)
-- [Register V1](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/pages/authentication/register-v1)
-- [Forgot Password v1](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/pages/authentication/forgot-password-v1)
+- [Login V1](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/demo-1/pages/authentication/login-v1)
+- [Register V1](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/demo-1/pages/authentication/register-v1)
+- [Forgot Password v1](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/demo-1/pages/authentication/forgot-password-v1)
 
 ### How to enable blank layout for specific route?
 

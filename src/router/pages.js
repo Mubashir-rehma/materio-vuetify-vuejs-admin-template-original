@@ -210,6 +210,15 @@ const pages = [
       layout: 'content',
     },
   },
+  {
+    path: '/pages/access-control',
+    name: 'page-access-control',
+    component: () => import('@/views/pages/access-control/AccessControl.vue'),
+    meta: {
+      layout: 'content',
+      resource: 'Demo',
+    },
+  },
 ]
 
 export default pages

@@ -1,9 +1,16 @@
 // eslint-disable-next-line object-curly-newline
-import { mdiEyeOffOutline, mdiFileDocumentOutline, mdiLifebuoy, mdiMenu } from '@mdi/js'
+import { mdiEyeOffOutline, mdiFileDocumentOutline, mdiLifebuoy, mdiMenu, mdiShieldOutline } from '@mdi/js'
 
 export default [
   {
     subheader: 'Others',
+  },
+  {
+    title: 'Access Control',
+    to: { name: 'page-access-control' },
+    icon: mdiShieldOutline,
+    resource: 'Public',
+    action: 'read',
   },
   {
     title: 'Menu Levels',

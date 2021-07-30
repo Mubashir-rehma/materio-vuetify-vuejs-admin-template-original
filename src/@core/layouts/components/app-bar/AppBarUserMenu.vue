@@ -25,7 +25,7 @@
         >
           <v-img
             v-if="userData.avatar"
-            src="@/assets/images/avatars/1.png"
+            :src="userData.avatar"
           ></v-img>
           <v-icon
             v-else

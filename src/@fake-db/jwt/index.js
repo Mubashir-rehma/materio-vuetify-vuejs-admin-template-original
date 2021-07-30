@@ -25,7 +25,7 @@ const data = {
       username: 'janedoe',
       password: 'client',
       // eslint-disable-next-line global-require
-      avatar: require('@/assets/images/avatars/1.png'),
+      avatar: require('@/assets/images/avatars/2.png'),
       email: 'client@materio.com',
       role: 'client',
       ability: [
@@ -35,7 +35,7 @@ const data = {
         },
         {
           action: 'read',
-          subject: 'Dashboard',
+          subject: 'Demo',
         },
         {
           action: 'read',

@@ -9,9 +9,19 @@ import userInterface from './user-interface'
 Vue.use(VueRouter)
 
 const routes = [
+  // ? We are redirecting to different pages based on role.
+  // NOTE: Role is just for UI purposes. ACL is based on abilities.
   {
     path: '/',
-    redirect: '/dashboards/crm',
+    redirect: () => {
+      const userData = JSON.parse(localStorage.getItem('userData'))
+      const userRole = userData && userData.role ? userData.role : null
+
+      if (userRole === 'admin') return { name: 'dashboard-crm' }
+      if (userRole === 'client') return { name: 'page-access-control' }
+
+      return { name: 'auth-login' }
+    },
   },
   {
     path: '/error-404',

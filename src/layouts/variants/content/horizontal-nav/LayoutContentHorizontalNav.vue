@@ -57,7 +57,18 @@
 
     <!-- Slot: footer -->
     <template #footer>
-      {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
+      <div class="d-flex justify-space-between">
+        <span>COPYRIGHT &copy; {{ new Date().getFullYear() }} ThemeSelection, All rights Reserved</span>
+        <div class="d-flex align-center">
+          <span>Hand-crafted &amp; Made with</span>
+          <v-icon
+            color="error"
+            class="ms-2"
+          >
+            {{ icons.mdiHeartOutline }}
+          </v-icon>
+        </div>
+      </div>
     </template>
 
     <!-- App Content -->
@@ -85,6 +96,7 @@ import appBarSearchData from '@/assets/app-bar-search-data'
 import { ref, watch } from '@vue/composition-api'
 
 import themeConfig from '@themeConfig'
+import { mdiHeartOutline } from '@mdi/js'
 
 export default {
   components: {
@@ -150,6 +162,11 @@ export default {
       // App Config
       appName: themeConfig.app.name,
       appLogo: themeConfig.app.logo,
+
+      // Icons
+      icons: {
+        mdiHeartOutline,
+      },
     }
   },
 }

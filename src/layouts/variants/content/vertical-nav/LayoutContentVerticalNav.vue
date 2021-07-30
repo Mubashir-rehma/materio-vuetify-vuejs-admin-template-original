@@ -38,7 +38,18 @@
 
     <!-- Slot: Footer -->
     <template #footer>
-      {{ new Date().getFullYear() }} — <strong>Material Admin</strong>
+      <div class="d-flex justify-space-between">
+        <span>COPYRIGHT &copy; {{ new Date().getFullYear() }} ThemeSelection, All rights Reserved</span>
+        <div class="d-flex align-center">
+          <span>Hand-crafted &amp; Made with</span>
+          <v-icon
+            color="error"
+            class="ms-2"
+          >
+            {{ icons.mdiHeartOutline }}
+          </v-icon>
+        </div>
+      </div>
     </template>
 
     <template #v-app-content>
@@ -58,7 +69,7 @@ import AppBarI18n from '@core/layouts/components/app-bar/AppBarI18n.vue'
 import AppBarThemeSwitcher from '@core/layouts/components/app-bar/AppBarThemeSwitcher.vue'
 import AppBarUserMenu from '@core/layouts/components/app-bar/AppBarUserMenu.vue'
 import AppBarNotification from '@core/layouts/components/app-bar/AppBarNotification.vue'
-import { mdiMenu } from '@mdi/js'
+import { mdiMenu, mdiHeartOutline } from '@mdi/js'
 
 import { getVuetify } from '@core/utils'
 
@@ -139,6 +150,7 @@ export default {
 
       icons: {
         mdiMenu,
+        mdiHeartOutline,
       },
     }
   },

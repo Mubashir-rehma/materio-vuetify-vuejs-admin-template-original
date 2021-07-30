@@ -115,6 +115,7 @@ button {
 
 // Menu
 @include app-elevation('v-menu__content', 8);
+@include app-elevation('v-menu__content.theme--dark', 9);
 
 // Navigation Drawer
 @include app-elevation(

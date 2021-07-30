@@ -64,7 +64,7 @@
     >
       <div
         :class="{'px-5': footerType === 'fixed'}"
-        class="py-4"
+        class="py-4 w-full"
       >
         <slot name="footer"></slot>
       </div>

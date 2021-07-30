@@ -9,7 +9,7 @@ const data = [
       brand: 'Philips',
       category: 'Smart Phone',
       price: 14.99,
-      image: '/images/eCommerce/9.png',
+      image: require('@/assets/images/eCommerce/9.png'),
       hasFreeShipping: false,
       rating: 4,
       description:
@@ -18,7 +18,7 @@ const data = [
     date: '30 Apr 2020',
     buyer: {
       name: 'Ana Smith',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 984,
@@ -35,7 +35,7 @@ const data = [
       brand: 'Google',
       category: 'Google Home',
       price: 129.29,
-      image: '/images/eCommerce/7.png',
+      image: require('@/assets/images/eCommerce/7.png'),
       hasFreeShipping: true,
       rating: 4,
       description:
@@ -44,7 +44,7 @@ const data = [
     date: '11 Jul 2020',
     buyer: {
       name: 'Lindsay Green',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 1101,
@@ -63,14 +63,14 @@ const data = [
       brand: 'Nike',
       category: 'Shoes',
       price: 81.99,
-      image: '/images/eCommerce/11.png',
+      image: require('@/assets/images/eCommerce/11.png'),
       hasFreeShipping: true,
       rating: 5,
     },
     date: '06 Jan 2021',
     buyer: {
       name: 'Ethan Lee',
-      avatar: '/images/avatars/1.png',
+      avatar: require('@/assets/images/avatars/1.png'),
     },
     payment: {
       total: 726,
@@ -89,14 +89,14 @@ const data = [
       brand: 'Bose',
       category: 'Glass',
       price: 249,
-      image: '/images/eCommerce/26.png',
+      image: require('@/assets/images/eCommerce/26.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '21 Aug 2020',
     buyer: {
       name: 'Scott Miller',
-      avatar: '/images/avatars/7.png',
+      avatar: require('@/assets/images/avatars/7.png'),
     },
     payment: {
       total: 646,
@@ -113,7 +113,7 @@ const data = [
       brand: 'Apple',
       category: 'IMac',
       price: 999.99,
-      image: '/images/eCommerce/3.png',
+      image: require('@/assets/images/eCommerce/3.png'),
       hasFreeShipping: true,
       rating: 4,
       description:
@@ -122,7 +122,7 @@ const data = [
     date: '21 Aug 2020',
     buyer: {
       name: 'Brandon Brooks',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 1005,
@@ -141,14 +141,14 @@ const data = [
       brand: 'Adidas',
       category: 'Shoes',
       price: 54.59,
-      image: '/images/eCommerce/16.png',
+      image: require('@/assets/images/eCommerce/16.png'),
       hasFreeShipping: false,
       rating: 5,
     },
     date: '10 Mar 2021',
     buyer: {
       name: 'Henry Mann',
-      avatar: '/images/avatars/6.png',
+      avatar: require('@/assets/images/avatars/6.png'),
     },
     payment: {
       total: 1114,
@@ -165,7 +165,7 @@ const data = [
       brand: 'Apple',
       category: 'IMac',
       price: 999.99,
-      image: '/images/eCommerce/3.png',
+      image: require('@/assets/images/eCommerce/3.png'),
       hasFreeShipping: true,
       rating: 4,
       description:
@@ -174,7 +174,7 @@ const data = [
     date: '21 Aug 2020',
     buyer: {
       name: 'Brandon Brooks',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 1005,
@@ -191,7 +191,7 @@ const data = [
       brand: 'OneOdio',
       category: 'Headphone',
       price: 49.99,
-      image: '/images/eCommerce/4.png',
+      image: require('@/assets/images/eCommerce/4.png'),
       hasFreeShipping: true,
       rating: 3,
       description:
@@ -200,7 +200,7 @@ const data = [
     date: '12 Nov 2020',
     buyer: {
       name: 'Grant Wright',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 207,
@@ -217,7 +217,7 @@ const data = [
       brand: 'Apple',
       category: 'Smart TV',
       price: 7999.99,
-      image: '/images/eCommerce/8.png',
+      image: require('@/assets/images/eCommerce/8.png'),
       hasFreeShipping: false,
       rating: 5,
       description:
@@ -226,7 +226,7 @@ const data = [
     date: '19 Apr 2021',
     buyer: {
       name: 'Amanda Sanchez',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 1119,
@@ -243,7 +243,7 @@ const data = [
       brand: 'Apple',
       category: 'Mac',
       price: 999.99,
-      image: '/images/eCommerce/5.png',
+      image: require('@/assets/images/eCommerce/5.png'),
       hasFreeShipping: false,
       rating: 4,
       description:
@@ -252,7 +252,7 @@ const data = [
     date: '25 Dec 2020',
     buyer: {
       name: 'Kathy Estrada',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 1221,
@@ -269,7 +269,7 @@ const data = [
       brand: 'Apple',
       category: 'IMac',
       price: 999.99,
-      image: '/images/eCommerce/3.png',
+      image: require('@/assets/images/eCommerce/3.png'),
       hasFreeShipping: true,
       rating: 4,
       description:
@@ -278,7 +278,7 @@ const data = [
     date: '19 May 2020',
     buyer: {
       name: 'William Lopez',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 973,
@@ -297,14 +297,14 @@ const data = [
       brand: 'Sony',
       category: 'Gaming',
       price: 339.95,
-      image: '/images/eCommerce/20.png',
+      image: require('@/assets/images/eCommerce/20.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '27 Mar 2021',
     buyer: {
       name: 'Colleen Taylor',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 1235,
@@ -322,14 +322,14 @@ const data = [
       brand: 'Toshiba',
       category: 'Storage Device',
       price: 69.99,
-      image: '/images/eCommerce/23.png',
+      image: require('@/assets/images/eCommerce/23.png'),
       hasFreeShipping: true,
       rating: 2,
     },
     date: '21 Jun 2020',
     buyer: {
       name: 'Melanie Olson',
-      avatar: '/images/avatars/6.png',
+      avatar: require('@/assets/images/avatars/6.png'),
     },
     payment: {
       total: 780,
@@ -346,7 +346,7 @@ const data = [
       brand: 'Philips',
       category: 'Smart Phone',
       price: 14.99,
-      image: '/images/eCommerce/9.png',
+      image: require('@/assets/images/eCommerce/9.png'),
       hasFreeShipping: false,
       rating: 4,
       description:
@@ -355,7 +355,7 @@ const data = [
     date: '28 Jan 2021',
     buyer: {
       name: 'Cynthia Cannon',
-      avatar: '/images/avatars/7.png',
+      avatar: require('@/assets/images/avatars/7.png'),
     },
     payment: {
       total: 1073,
@@ -372,7 +372,7 @@ const data = [
       brand: 'Apple',
       category: 'Mac',
       price: 999.99,
-      image: '/images/eCommerce/5.png',
+      image: require('@/assets/images/eCommerce/5.png'),
       hasFreeShipping: false,
       rating: 4,
       description:
@@ -381,7 +381,7 @@ const data = [
     date: '20 Aug 2020',
     buyer: {
       name: 'David Archer',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 224,
@@ -400,14 +400,14 @@ const data = [
       brand: '3M',
       category: 'Home',
       price: 16.99,
-      image: '/images/eCommerce/19.png',
+      image: require('@/assets/images/eCommerce/19.png'),
       hasFreeShipping: true,
       rating: 4,
     },
     date: '29 Dec 2020',
     buyer: {
       name: 'Michael Cervantes',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 960,
@@ -426,14 +426,14 @@ const data = [
       brand: 'TAS',
       category: 'Bag',
       price: 29.99,
-      image: '/images/eCommerce/15.png',
+      image: require('@/assets/images/eCommerce/15.png'),
       hasFreeShipping: true,
       rating: 5,
     },
     date: '15 Aug 2020',
     buyer: {
       name: 'Nathaniel Marshall',
-      avatar: '/images/avatars/6.png',
+      avatar: require('@/assets/images/avatars/6.png'),
     },
     payment: {
       total: 1423,
@@ -451,14 +451,14 @@ const data = [
       brand: 'Toshiba',
       category: 'Storage Device',
       price: 69.99,
-      image: '/images/eCommerce/23.png',
+      image: require('@/assets/images/eCommerce/23.png'),
       hasFreeShipping: true,
       rating: 2,
     },
     date: '03 Jan 2021',
     buyer: {
       name: 'Tiffany Ross',
-      avatar: '/images/avatars/4.png',
+      avatar: require('@/assets/images/avatars/4.png'),
     },
     payment: {
       total: 663,
@@ -477,7 +477,7 @@ const data = [
       brand: '3M',
       category: 'Electronics',
       price: 10.83,
-      image: '/images/eCommerce/14.png',
+      image: require('@/assets/images/eCommerce/14.png'),
       hasFreeShipping: true,
       rating: 3,
     },
@@ -503,7 +503,7 @@ const data = [
       brand: 'Vankyo Store',
       category: 'Projector',
       price: 99.99,
-      image: '/images/eCommerce/13.png',
+      image: require('@/assets/images/eCommerce/13.png'),
       hasFreeShipping: true,
       rating: 2,
     },
@@ -529,14 +529,14 @@ const data = [
       brand: 'Adidas',
       category: 'Shoes',
       price: 54.59,
-      image: '/images/eCommerce/16.png',
+      image: require('@/assets/images/eCommerce/16.png'),
       hasFreeShipping: false,
       rating: 5,
     },
     date: '24 Jul 2020',
     buyer: {
       name: 'Kara Gonzalez',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 1325,
@@ -555,14 +555,14 @@ const data = [
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
-      image: '/images/eCommerce/10.png',
+      image: require('@/assets/images/eCommerce/10.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '07 Jan 2021',
     buyer: {
       name: 'Katherine Tate',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 582,
@@ -581,14 +581,14 @@ const data = [
       brand: 'Willful',
       category: 'Smart Watch',
       price: 29.99,
-      image: '/images/eCommerce/25.png',
+      image: require('@/assets/images/eCommerce/25.png'),
       hasFreeShipping: true,
       rating: 5,
     },
     date: '29 Aug 2020',
     buyer: {
       name: 'Ashley Douglas DDS',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 1092,
@@ -605,7 +605,7 @@ const data = [
       brand: 'Sharp',
       category: 'Gaming',
       price: 429.99,
-      image: '/images/eCommerce/6.png',
+      image: require('@/assets/images/eCommerce/6.png'),
       hasFreeShipping: false,
       rating: 3,
       description:
@@ -614,7 +614,7 @@ const data = [
     date: '09 Jan 2021',
     buyer: {
       name: 'Eric Gregory',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 939,
@@ -633,14 +633,14 @@ const data = [
       brand: 'Ronyes',
       category: 'Bag',
       price: 23.99,
-      image: '/images/eCommerce/24.png',
+      image: require('@/assets/images/eCommerce/24.png'),
       hasFreeShipping: true,
       rating: 2,
     },
     date: '06 May 2020',
     buyer: {
       name: 'Taylor Hernandez',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 1129,
@@ -659,14 +659,14 @@ const data = [
       brand: 'Oculus',
       category: 'VR',
       price: 645,
-      image: '/images/eCommerce/18.png',
+      image: require('@/assets/images/eCommerce/18.png'),
       hasFreeShipping: false,
       rating: 1,
     },
     date: '29 Dec 2020',
     buyer: {
       name: 'Justin Patterson',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 252,
@@ -685,14 +685,14 @@ const data = [
       brand: 'Hobo',
       category: 'Bag',
       price: 39.99,
-      image: '/images/eCommerce/17.png',
+      image: require('@/assets/images/eCommerce/17.png'),
       hasFreeShipping: true,
       rating: 3,
     },
     date: '19 Dec 2020',
     buyer: {
       name: 'Judy Cummings',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 1369,
@@ -711,14 +711,14 @@ const data = [
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
-      image: '/images/eCommerce/10.png',
+      image: require('@/assets/images/eCommerce/10.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '02 Jan 2021',
     buyer: {
       name: 'Linda Buchanan',
-      avatar: '/images/avatars/7.png',
+      avatar: require('@/assets/images/avatars/7.png'),
     },
     payment: {
       total: 351,
@@ -735,7 +735,7 @@ const data = [
       brand: 'Google',
       category: 'Google Home',
       price: 129.29,
-      image: '/images/eCommerce/7.png',
+      image: require('@/assets/images/eCommerce/7.png'),
       hasFreeShipping: true,
       rating: 4,
       description:
@@ -744,7 +744,7 @@ const data = [
     date: '25 Feb 2021',
     buyer: {
       name: 'Brian Perez',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 506,
@@ -763,7 +763,7 @@ const data = [
       brand: 'Willful',
       category: 'Smart Watch',
       price: 29.99,
-      image: '/images/eCommerce/25.png',
+      image: require('@/assets/images/eCommerce/25.png'),
       hasFreeShipping: true,
       rating: 5,
     },
@@ -789,14 +789,14 @@ const data = [
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
-      image: '/images/eCommerce/10.png',
+      image: require('@/assets/images/eCommerce/10.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '30 Sep 2020',
     buyer: {
       name: 'Katherine Clark',
-      avatar: '/images/avatars/1.png',
+      avatar: require('@/assets/images/avatars/1.png'),
     },
     payment: {
       total: 1246,
@@ -815,14 +815,14 @@ const data = [
       brand: '3M',
       category: 'Electronics',
       price: 10.83,
-      image: '/images/eCommerce/14.png',
+      image: require('@/assets/images/eCommerce/14.png'),
       hasFreeShipping: true,
       rating: 3,
     },
     date: '26 Mar 2021',
     buyer: {
       name: 'Jose Murphy',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 383,
@@ -841,14 +841,14 @@ const data = [
       brand: 'Bose',
       category: 'Glass',
       price: 249,
-      image: '/images/eCommerce/26.png',
+      image: require('@/assets/images/eCommerce/26.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '01 Dec 2020',
     buyer: {
       name: 'Jeffrey Rose',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 902,
@@ -865,7 +865,7 @@ const data = [
       brand: 'OneOdio',
       category: 'Headphone',
       price: 49.99,
-      image: '/images/eCommerce/4.png',
+      image: require('@/assets/images/eCommerce/4.png'),
       hasFreeShipping: true,
       rating: 3,
       description:
@@ -874,7 +874,7 @@ const data = [
     date: '15 Sep 2020',
     buyer: {
       name: 'Amber Hunt',
-      avatar: '/images/avatars/7.png',
+      avatar: require('@/assets/images/avatars/7.png'),
     },
     payment: {
       total: 379,
@@ -893,14 +893,14 @@ const data = [
       brand: 'Bose',
       category: 'Glass',
       price: 249,
-      image: '/images/eCommerce/26.png',
+      image: require('@/assets/images/eCommerce/26.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '08 Apr 2021',
     buyer: {
       name: 'Christopher Haas',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 7,
@@ -919,14 +919,14 @@ const data = [
       brand: 'Bose',
       category: 'Glass',
       price: 249,
-      image: '/images/eCommerce/26.png',
+      image: require('@/assets/images/eCommerce/26.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '21 Oct 2020',
     buyer: {
       name: 'Stephen Mccormick',
-      avatar: '/images/avatars/6.png',
+      avatar: require('@/assets/images/avatars/6.png'),
     },
     payment: {
       total: 186,
@@ -943,7 +943,7 @@ const data = [
       brand: 'Philips',
       category: 'Smart Phone',
       price: 14.99,
-      image: '/images/eCommerce/9.png',
+      image: require('@/assets/images/eCommerce/9.png'),
       hasFreeShipping: false,
       rating: 4,
       description:
@@ -952,7 +952,7 @@ const data = [
     date: '21 Oct 2020',
     buyer: {
       name: 'Matthew Reyes',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 198,
@@ -971,14 +971,14 @@ const data = [
       brand: 'Ronyes',
       category: 'Bag',
       price: 23.99,
-      image: '/images/eCommerce/24.png',
+      image: require('@/assets/images/eCommerce/24.png'),
       hasFreeShipping: true,
       rating: 2,
     },
     date: '16 May 2020',
     buyer: {
       name: 'Ricardo Morgan',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 519,
@@ -995,7 +995,7 @@ const data = [
       brand: 'Apple',
       category: 'Smart TV',
       price: 7999.99,
-      image: '/images/eCommerce/8.png',
+      image: require('@/assets/images/eCommerce/8.png'),
       hasFreeShipping: false,
       rating: 5,
       description:
@@ -1004,7 +1004,7 @@ const data = [
     date: '01 Jul 2020',
     buyer: {
       name: 'William Castillo',
-      avatar: '/images/avatars/4.png',
+      avatar: require('@/assets/images/avatars/4.png'),
     },
     payment: {
       total: 10,
@@ -1023,14 +1023,14 @@ const data = [
       brand: 'Hobo',
       category: 'Bag',
       price: 39.99,
-      image: '/images/eCommerce/17.png',
+      image: require('@/assets/images/eCommerce/17.png'),
       hasFreeShipping: true,
       rating: 3,
     },
     date: '04 Jul 2020',
     buyer: {
       name: 'James Coleman',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 897,
@@ -1049,14 +1049,14 @@ const data = [
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
-      image: '/images/eCommerce/10.png',
+      image: require('@/assets/images/eCommerce/10.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '19 Feb 2021',
     buyer: {
       name: 'Michael Summers',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 653,
@@ -1075,14 +1075,14 @@ const data = [
       brand: 'Willful',
       category: 'Smart Watch',
       price: 29.99,
-      image: '/images/eCommerce/25.png',
+      image: require('@/assets/images/eCommerce/25.png'),
       hasFreeShipping: true,
       rating: 5,
     },
     date: '03 Mar 2021',
     buyer: {
       name: 'Jeremiah Espinoza',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 913,
@@ -1101,7 +1101,7 @@ const data = [
       brand: 'Bose',
       category: 'Glass',
       price: 249,
-      image: '/images/eCommerce/26.png',
+      image: require('@/assets/images/eCommerce/26.png'),
       hasFreeShipping: false,
       rating: 4,
     },
@@ -1127,14 +1127,14 @@ const data = [
       brand: 'Nike',
       category: 'Shoes',
       price: 81.99,
-      image: '/images/eCommerce/11.png',
+      image: require('@/assets/images/eCommerce/11.png'),
       hasFreeShipping: true,
       rating: 5,
     },
     date: '29 Dec 2020',
     buyer: {
       name: 'Juan Wilson',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
     },
     payment: {
       total: 779,
@@ -1153,7 +1153,7 @@ const data = [
       brand: 'Vankyo Store',
       category: 'Projector',
       price: 99.99,
-      image: '/images/eCommerce/13.png',
+      image: require('@/assets/images/eCommerce/13.png'),
       hasFreeShipping: true,
       rating: 2,
     },
@@ -1177,7 +1177,7 @@ const data = [
       brand: 'Sharp',
       category: 'Gaming',
       price: 429.99,
-      image: '/images/eCommerce/6.png',
+      image: require('@/assets/images/eCommerce/6.png'),
       hasFreeShipping: false,
       rating: 3,
       description:
@@ -1186,7 +1186,7 @@ const data = [
     date: '28 May 2020',
     buyer: {
       name: 'Jessica Glass',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 1065,
@@ -1205,14 +1205,14 @@ const data = [
       brand: 'Logitech',
       category: 'Keyboard',
       price: 81.99,
-      image: '/images/eCommerce/10.png',
+      image: require('@/assets/images/eCommerce/10.png'),
       hasFreeShipping: false,
       rating: 4,
     },
     date: '17 May 2020',
     buyer: {
       name: 'Gary Herman',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 432,
@@ -1229,7 +1229,7 @@ const data = [
       brand: 'Philips',
       category: 'Smart Phone',
       price: 14.99,
-      image: '/images/eCommerce/9.png',
+      image: require('@/assets/images/eCommerce/9.png'),
       hasFreeShipping: false,
       rating: 4,
       description:
@@ -1238,7 +1238,7 @@ const data = [
     date: '25 Mar 2021',
     buyer: {
       name: 'Adam Williams',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
     },
     payment: {
       total: 1402,
@@ -1255,7 +1255,7 @@ const data = [
       brand: 'Apple',
       category: 'Smart TV',
       price: 7999.99,
-      image: '/images/eCommerce/8.png',
+      image: require('@/assets/images/eCommerce/8.png'),
       hasFreeShipping: false,
       rating: 5,
       description:
@@ -1283,14 +1283,14 @@ const data = [
       brand: '3M',
       category: 'Electronics',
       price: 10.83,
-      image: '/images/eCommerce/14.png',
+      image: require('@/assets/images/eCommerce/14.png'),
       hasFreeShipping: true,
       rating: 3,
     },
     date: '07 Aug 2020',
     buyer: {
       name: 'Sharon Moss',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
     },
     payment: {
       total: 823,
@@ -1309,14 +1309,14 @@ const data = [
       brand: 'Vankyo Store',
       category: 'Projector',
       price: 99.99,
-      image: '/images/eCommerce/13.png',
+      image: require('@/assets/images/eCommerce/13.png'),
       hasFreeShipping: true,
       rating: 2,
     },
     date: '23 Feb 2021',
     buyer: {
       name: 'Scott Buchanan',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
     },
     payment: {
       total: 183,

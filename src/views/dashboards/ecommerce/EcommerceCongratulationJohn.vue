@@ -26,17 +26,17 @@
         <div>
           <v-img
             width="120"
-            src="/images/misc/tree-4.png"
+            src="@/assets/images/misc/tree-4.png"
             class="gamification-tree-4"
           ></v-img>
           <v-img
             width="121"
-            src="/images/3d-characters/pose-2.png"
+            src="@/assets/images/3d-characters/pose-2.png"
             class="gamification-john-pose-2"
           ></v-img>
           <v-img
             width="100"
-            src="/images/misc/tree.png"
+            src="@/assets/images/misc/tree.png"
             class="gamification-tree"
           ></v-img>
         </div>

@@ -73,7 +73,7 @@
                 size="40"
                 class="me-2"
               >
-                <v-img src="/images/avatars/2.png"></v-img>
+                <v-img src="@/assets/images/avatars/2.png"></v-img>
               </v-avatar>
               <div class="d-flex flex-column">
                 <p class="text--primary font-weight-semibold mb-0">Rebecca Godman</p>
@@ -100,7 +100,7 @@
             <v-img
               height="100"
               width="100"
-              src="/images/pages/puma-shoes.jpeg"
+              src="@/assets/images/pages/puma-shoes.jpeg"
               class="rounded me-4"
             ></v-img>
             <div>
@@ -160,7 +160,7 @@
               size="40"
               class="me-2"
             >
-              <v-img src="/images/avatars/1.png"></v-img>
+              <v-img src="@/assets/images/avatars/1.png"></v-img>
             </v-avatar>
             <span class="text--primary font-weight-semibold">John Doe (Client)</span>
           </div>

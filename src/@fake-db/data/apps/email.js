@@ -6,7 +6,7 @@ const data = {
     {
       id: 50,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'james25@gmail.com', name: 'Katie Brandt', avatar: '/images/avatars/8.png' },
+      from: { email: 'james25@gmail.com', name: 'Katie Brandt', avatar: require('@/assets/images/avatars/8.png') },
       subject: 'Bring smile discussion same boy include care.',
       cc: [],
       bcc: [],
@@ -15,13 +15,13 @@ const data = {
       attachments: [
         {
           fileName: 'log.txt',
-          thumbnail: '/images/icons/file-icons/txt.png',
+          thumbnail: require('@/assets/images/icons/file-icons/txt.png'),
           url: '',
           size: '5mb',
         },
         {
           fileName: 'performance.xls',
-          thumbnail: '/images/icons/file-icons/xls.png',
+          thumbnail: require('@/assets/images/icons/file-icons/xls.png'),
           url: '',
           size: '10mb',
         },
@@ -36,7 +36,11 @@ const data = {
     {
       id: 49,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'jamesskinner@hotmail.com', name: 'Joshua Cline', avatar: '/images/avatars/1.png' },
+      from: {
+        email: 'jamesskinner@hotmail.com',
+        name: 'Joshua Cline',
+        avatar: require('@/assets/images/avatars/1.png'),
+      },
       subject: 'Magazine say side view.',
       cc: [],
       bcc: [],
@@ -50,7 +54,11 @@ const data = {
         {
           id: 74474,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'teresa54@gmail.com', name: 'Brittany Young', avatar: '/images/avatars/2.png' },
+          from: {
+            email: 'teresa54@gmail.com',
+            name: 'Brittany Young',
+            avatar: require('@/assets/images/avatars/2.png'),
+          },
           subject: 'The beat save none make sea large number.',
           cc: [],
           bcc: [],
@@ -67,7 +75,11 @@ const data = {
         {
           id: 766,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'angelajimenez@yahoo.com', name: 'Emily Moore', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'angelajimenez@yahoo.com',
+            name: 'Emily Moore',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Movement along college bad reality scientist.',
           cc: [],
           bcc: [],
@@ -84,7 +96,11 @@ const data = {
         {
           id: 3718436,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'alexanderpatel@yahoo.com', name: 'Andrew Cruz', avatar: '/images/avatars/7.png' },
+          from: {
+            email: 'alexanderpatel@yahoo.com',
+            name: 'Andrew Cruz',
+            avatar: require('@/assets/images/avatars/7.png'),
+          },
           subject: 'Realize agree dark spring suddenly maintain level history.',
           cc: [],
           bcc: [],
@@ -105,7 +121,11 @@ const data = {
     {
       id: 48,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'williamsstacey@yahoo.com', name: 'Jonathan Walker', avatar: '/images/avatars/1.png' },
+      from: {
+        email: 'williamsstacey@yahoo.com',
+        name: 'Jonathan Walker',
+        avatar: require('@/assets/images/avatars/1.png'),
+      },
       subject: 'Then until task something before color impact now.',
       cc: [],
       bcc: [],
@@ -122,7 +142,7 @@ const data = {
     {
       id: 47,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'lori82@gmail.com', name: 'Kevin Evans', avatar: '/images/avatars/7.png' },
+      from: { email: 'lori82@gmail.com', name: 'Kevin Evans', avatar: require('@/assets/images/avatars/7.png') },
       subject: 'Shoulder science point show human black answer anything.',
       cc: [],
       bcc: [],
@@ -139,7 +159,7 @@ const data = {
     {
       id: 46,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'crussell@hotmail.com', name: 'Alexa Burnett', avatar: '/images/avatars/4.png' },
+      from: { email: 'crussell@hotmail.com', name: 'Alexa Burnett', avatar: require('@/assets/images/avatars/4.png') },
       subject: 'Want manager source car recognize character impact.',
       cc: [],
       bcc: [],
@@ -156,7 +176,7 @@ const data = {
     {
       id: 45,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'kkim@yahoo.com', name: 'Dominique Paul', avatar: '/images/avatars/4.png' },
+      from: { email: 'kkim@yahoo.com', name: 'Dominique Paul', avatar: require('@/assets/images/avatars/4.png') },
       subject: 'Level within enjoy baby.',
       cc: [],
       bcc: [],
@@ -170,7 +190,11 @@ const data = {
         {
           id: 781,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'amyconner@hotmail.com', name: 'Michael Martinez', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'amyconner@hotmail.com',
+            name: 'Michael Martinez',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Recent seek particularly seem southern charge.',
           cc: [],
           bcc: [],
@@ -187,7 +211,11 @@ const data = {
         {
           id: 6933053,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'ivanguerrero@yahoo.com', name: 'Ashley Fuller', avatar: '/images/avatars/4.png' },
+          from: {
+            email: 'ivanguerrero@yahoo.com',
+            name: 'Ashley Fuller',
+            avatar: require('@/assets/images/avatars/4.png'),
+          },
           subject: 'Difference owner claim student site property would.',
           cc: [],
           bcc: [],
@@ -204,7 +232,7 @@ const data = {
         {
           id: 8,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'lmoreno@yahoo.com', name: 'Ashley Lewis', avatar: '/images/avatars/4.png' },
+          from: { email: 'lmoreno@yahoo.com', name: 'Ashley Lewis', avatar: require('@/assets/images/avatars/4.png') },
           subject: 'Candidate available material away.',
           cc: [],
           bcc: [],
@@ -221,7 +249,7 @@ const data = {
         {
           id: 784835803,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'mortiz@gmail.com', name: 'Bradley Hobbs', avatar: '/images/avatars/7.png' },
+          from: { email: 'mortiz@gmail.com', name: 'Bradley Hobbs', avatar: require('@/assets/images/avatars/7.png') },
           subject: 'Tend picture church team place show society.',
           cc: [],
           bcc: [],
@@ -242,7 +270,7 @@ const data = {
     {
       id: 44,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'ethan27@gmail.com', name: 'Daniel Sullivan', avatar: '/images/avatars/7.png' },
+      from: { email: 'ethan27@gmail.com', name: 'Daniel Sullivan', avatar: require('@/assets/images/avatars/7.png') },
       subject: 'Choose security yes relationship recognize consumer democratic international.',
       cc: [],
       bcc: [],
@@ -256,7 +284,11 @@ const data = {
         {
           id: 23853,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'hubbardsharon@hotmail.com', name: 'Laura Dominguez', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'hubbardsharon@hotmail.com',
+            name: 'Laura Dominguez',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Daughter skill fact rise nice power.',
           cc: [],
           bcc: [],
@@ -273,7 +305,11 @@ const data = {
         {
           id: 317,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'jameslopez@yahoo.com', name: 'Christopher Farrell', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'jameslopez@yahoo.com',
+            name: 'Christopher Farrell',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Character fall follow.',
           cc: [],
           bcc: [],
@@ -294,7 +330,7 @@ const data = {
     {
       id: 43,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'rmartin@gmail.com', name: 'Nicole Allen', avatar: '/images/avatars/4.png' },
+      from: { email: 'rmartin@gmail.com', name: 'Nicole Allen', avatar: require('@/assets/images/avatars/4.png') },
       subject: 'Ten store nature surface that seek black return.',
       cc: [],
       bcc: [],
@@ -311,7 +347,7 @@ const data = {
     {
       id: 42,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'adkinsryan@yahoo.com', name: 'Karen Russell', avatar: '/images/avatars/6.png' },
+      from: { email: 'adkinsryan@yahoo.com', name: 'Karen Russell', avatar: require('@/assets/images/avatars/6.png') },
       subject: 'Along represent responsibility security he leg.',
       cc: [],
       bcc: [],
@@ -325,7 +361,11 @@ const data = {
         {
           id: 82117976,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'oblack@hotmail.com', name: 'Michael Mccarthy', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'oblack@hotmail.com',
+            name: 'Michael Mccarthy',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Around impact point interest method.',
           cc: [],
           bcc: [],
@@ -342,7 +382,11 @@ const data = {
         {
           id: 3151,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'zjackson@hotmail.com', name: 'Don Stewart', avatar: '/images/avatars/7.png' },
+          from: {
+            email: 'zjackson@hotmail.com',
+            name: 'Don Stewart',
+            avatar: require('@/assets/images/avatars/7.png'),
+          },
           subject: 'Nation campaign still never church politics business.',
           cc: [],
           bcc: [],
@@ -359,7 +403,7 @@ const data = {
         {
           id: 600,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'mary98@yahoo.com', name: 'Dana Harvey', avatar: '/images/avatars/2.png' },
+          from: { email: 'mary98@yahoo.com', name: 'Dana Harvey', avatar: require('@/assets/images/avatars/2.png') },
           subject: 'Both community term run maybe sort per.',
           cc: [],
           bcc: [],
@@ -376,7 +420,11 @@ const data = {
         {
           id: 23080678,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'ppineda@yahoo.com', name: 'Samantha Martin', avatar: '/images/avatars/4.png' },
+          from: {
+            email: 'ppineda@yahoo.com',
+            name: 'Samantha Martin',
+            avatar: require('@/assets/images/avatars/4.png'),
+          },
           subject: 'Whether far ready success yes many window.',
           cc: [],
           bcc: [],
@@ -397,7 +445,7 @@ const data = {
     {
       id: 41,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'julie16@yahoo.com', name: 'Tyler Hernandez', avatar: '/images/avatars/3.png' },
+      from: { email: 'julie16@yahoo.com', name: 'Tyler Hernandez', avatar: require('@/assets/images/avatars/3.png') },
       subject: 'Environment success however window student.',
       cc: [],
       bcc: [],
@@ -414,7 +462,7 @@ const data = {
     {
       id: 40,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'brownsandy@gmail.com', name: 'Michael Smith', avatar: '/images/avatars/3.png' },
+      from: { email: 'brownsandy@gmail.com', name: 'Michael Smith', avatar: require('@/assets/images/avatars/3.png') },
       subject: 'Miss strategy want author test.',
       cc: [],
       bcc: [],
@@ -431,7 +479,7 @@ const data = {
     {
       id: 39,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'marissa73@hotmail.com', name: 'James Russell', avatar: '/images/avatars/3.png' },
+      from: { email: 'marissa73@hotmail.com', name: 'James Russell', avatar: require('@/assets/images/avatars/3.png') },
       subject: 'Interview some and minute.',
       cc: [],
       bcc: [],
@@ -448,7 +496,11 @@ const data = {
     {
       id: 38,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'brendajames@hotmail.com', name: 'Richard Spencer', avatar: '/images/avatars/7.png' },
+      from: {
+        email: 'brendajames@hotmail.com',
+        name: 'Richard Spencer',
+        avatar: require('@/assets/images/avatars/7.png'),
+      },
       subject: 'Town baby them account house save prevent.',
       cc: [],
       bcc: [],
@@ -462,7 +514,11 @@ const data = {
         {
           id: 1245629,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'kellyjones@yahoo.com', name: 'Mark Martinez', avatar: '/images/avatars/5.png' },
+          from: {
+            email: 'kellyjones@yahoo.com',
+            name: 'Mark Martinez',
+            avatar: require('@/assets/images/avatars/5.png'),
+          },
           subject: 'Movement risk cultural.',
           cc: [],
           bcc: [],
@@ -479,7 +535,11 @@ const data = {
         {
           id: 1,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'sonyamccall@hotmail.com', name: 'Lisa Richardson', avatar: '/images/avatars/4.png' },
+          from: {
+            email: 'sonyamccall@hotmail.com',
+            name: 'Lisa Richardson',
+            avatar: require('@/assets/images/avatars/4.png'),
+          },
           subject: 'Despite produce officer ground employee president.',
           cc: [],
           bcc: [],
@@ -500,7 +560,7 @@ const data = {
     {
       id: 37,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'juliasosa@hotmail.com', name: 'Cheryl Wright', avatar: '/images/avatars/6.png' },
+      from: { email: 'juliasosa@hotmail.com', name: 'Cheryl Wright', avatar: require('@/assets/images/avatars/6.png') },
       subject: 'Movie admit final enjoy particular.',
       cc: [],
       bcc: [],
@@ -514,7 +574,11 @@ const data = {
         {
           id: 3558,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'dillon01@hotmail.com', name: 'Brenda Navarro', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'dillon01@hotmail.com',
+            name: 'Brenda Navarro',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Business key Democrat sing.',
           cc: [],
           bcc: [],
@@ -531,7 +595,11 @@ const data = {
         {
           id: 21238317,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'danielle69@yahoo.com', name: 'Erica Miller', avatar: '/images/avatars/2.png' },
+          from: {
+            email: 'danielle69@yahoo.com',
+            name: 'Erica Miller',
+            avatar: require('@/assets/images/avatars/2.png'),
+          },
           subject: 'Way program finish type yes then area.',
           cc: [],
           bcc: [],
@@ -552,7 +620,7 @@ const data = {
     {
       id: 36,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'benjamin30@gmail.com', name: 'Pamela Mueller', avatar: '/images/avatars/6.png' },
+      from: { email: 'benjamin30@gmail.com', name: 'Pamela Mueller', avatar: require('@/assets/images/avatars/6.png') },
       subject: 'Dinner start pretty.',
       cc: [],
       bcc: [],
@@ -569,7 +637,7 @@ const data = {
     {
       id: 35,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'dana33@yahoo.com', name: 'Becky Coffey', avatar: '/images/avatars/2.png' },
+      from: { email: 'dana33@yahoo.com', name: 'Becky Coffey', avatar: require('@/assets/images/avatars/2.png') },
       subject: 'Less forget everything only girl.',
       cc: [],
       bcc: [],
@@ -586,7 +654,11 @@ const data = {
     {
       id: 34,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'hollandjulie@yahoo.com', name: 'Christopher Evans DDS', avatar: '/images/avatars/5.png' },
+      from: {
+        email: 'hollandjulie@yahoo.com',
+        name: 'Christopher Evans DDS',
+        avatar: require('@/assets/images/avatars/5.png'),
+      },
       subject: 'Financial series artist region.',
       cc: [],
       bcc: [],
@@ -600,7 +672,11 @@ const data = {
         {
           id: 689385,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'wilsonroy@gmail.com', name: 'Chelsea Sims', avatar: '/images/avatars/4.png' },
+          from: {
+            email: 'wilsonroy@gmail.com',
+            name: 'Chelsea Sims',
+            avatar: require('@/assets/images/avatars/4.png'),
+          },
           subject: 'Prove rest forward wear.',
           cc: [],
           bcc: [],
@@ -617,7 +693,11 @@ const data = {
         {
           id: 66371,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'dannynguyen@hotmail.com', name: 'Matthew Schaefer', avatar: '/images/avatars/5.png' },
+          from: {
+            email: 'dannynguyen@hotmail.com',
+            name: 'Matthew Schaefer',
+            avatar: require('@/assets/images/avatars/5.png'),
+          },
           subject: 'Staff can next along long true dark.',
           cc: [],
           bcc: [],
@@ -638,7 +718,7 @@ const data = {
     {
       id: 33,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'hsmith@gmail.com', name: 'Wendy Marshall', avatar: '/images/avatars/8.png' },
+      from: { email: 'hsmith@gmail.com', name: 'Wendy Marshall', avatar: require('@/assets/images/avatars/8.png') },
       subject: 'Enjoy see man news decide build class make.',
       cc: [],
       bcc: [],
@@ -652,7 +732,11 @@ const data = {
         {
           id: 301809469,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'maryatkins@gmail.com', name: 'Kimberly Cisneros', avatar: '/images/avatars/4.png' },
+          from: {
+            email: 'maryatkins@gmail.com',
+            name: 'Kimberly Cisneros',
+            avatar: require('@/assets/images/avatars/4.png'),
+          },
           subject: 'Family pretty interest decision.',
           cc: [],
           bcc: [],
@@ -669,7 +753,7 @@ const data = {
         {
           id: 930166,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'nramirez@yahoo.com', name: 'Kenneth West', avatar: '/images/avatars/1.png' },
+          from: { email: 'nramirez@yahoo.com', name: 'Kenneth West', avatar: require('@/assets/images/avatars/1.png') },
           subject: 'Factor TV wife career thing loss increase.',
           cc: [],
           bcc: [],
@@ -686,7 +770,11 @@ const data = {
         {
           id: 324,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'tina53@hotmail.com', name: 'Douglas George', avatar: '/images/avatars/1.png' },
+          from: {
+            email: 'tina53@hotmail.com',
+            name: 'Douglas George',
+            avatar: require('@/assets/images/avatars/1.png'),
+          },
           subject: 'Recognize to study.',
           cc: [],
           bcc: [],
@@ -707,7 +795,11 @@ const data = {
     {
       id: 32,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'jeffreystevens@yahoo.com', name: 'Christopher Adams', avatar: '/images/avatars/3.png' },
+      from: {
+        email: 'jeffreystevens@yahoo.com',
+        name: 'Christopher Adams',
+        avatar: require('@/assets/images/avatars/3.png'),
+      },
       subject: 'Finish actually parent condition business discussion later practice.',
       cc: [],
       bcc: [],
@@ -724,7 +816,7 @@ const data = {
     {
       id: 31,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'maria99@hotmail.com', name: 'Theresa Schmitt', avatar: '/images/avatars/8.png' },
+      from: { email: 'maria99@hotmail.com', name: 'Theresa Schmitt', avatar: require('@/assets/images/avatars/8.png') },
       subject: 'Life store technology least under black type.',
       cc: [],
       bcc: [],
@@ -741,7 +833,7 @@ const data = {
     {
       id: 30,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'kempsarah@gmail.com', name: 'Sherry Guzman', avatar: '/images/avatars/2.png' },
+      from: { email: 'kempsarah@gmail.com', name: 'Sherry Guzman', avatar: require('@/assets/images/avatars/2.png') },
       subject: 'Officer population memory level foot public.',
       cc: [],
       bcc: [],
@@ -755,7 +847,11 @@ const data = {
         {
           id: 76,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'jessica23@gmail.com', name: 'Lauren Smith', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'jessica23@gmail.com',
+            name: 'Lauren Smith',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'College community effect care.',
           cc: [],
           bcc: [],
@@ -772,7 +868,11 @@ const data = {
         {
           id: 435260844,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'lkelley@yahoo.com', name: 'Michael Torres', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'lkelley@yahoo.com',
+            name: 'Michael Torres',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Build learn audience water article ball must.',
           cc: [],
           bcc: [],
@@ -789,7 +889,11 @@ const data = {
         {
           id: 7780,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'thomaspeterson@yahoo.com', name: 'Dylan Logan', avatar: '/images/avatars/1.png' },
+          from: {
+            email: 'thomaspeterson@yahoo.com',
+            name: 'Dylan Logan',
+            avatar: require('@/assets/images/avatars/1.png'),
+          },
           subject: 'Artist food section media commercial hospital.',
           cc: [],
           bcc: [],
@@ -810,7 +914,7 @@ const data = {
     {
       id: 29,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'daniel37@hotmail.com', name: 'David Cruz', avatar: '/images/avatars/5.png' },
+      from: { email: 'daniel37@hotmail.com', name: 'David Cruz', avatar: require('@/assets/images/avatars/5.png') },
       subject: 'Clearly my usually billion ability response.',
       cc: [],
       bcc: [],
@@ -827,7 +931,7 @@ const data = {
     {
       id: 28,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'areeves@gmail.com', name: 'Anthony Obrien', avatar: '/images/avatars/5.png' },
+      from: { email: 'areeves@gmail.com', name: 'Anthony Obrien', avatar: require('@/assets/images/avatars/5.png') },
       subject: 'A type network effort blood do various.',
       cc: [],
       bcc: [],
@@ -844,7 +948,7 @@ const data = {
     {
       id: 27,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'bnunez@hotmail.com', name: 'Jason Gonzalez', avatar: '/images/avatars/5.png' },
+      from: { email: 'bnunez@hotmail.com', name: 'Jason Gonzalez', avatar: require('@/assets/images/avatars/5.png') },
       subject: 'Affect method provide break himself house.',
       cc: [],
       bcc: [],
@@ -861,7 +965,11 @@ const data = {
     {
       id: 26,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'welchcrystal@gmail.com', name: 'Christopher Sanchez', avatar: '/images/avatars/5.png' },
+      from: {
+        email: 'welchcrystal@gmail.com',
+        name: 'Christopher Sanchez',
+        avatar: require('@/assets/images/avatars/5.png'),
+      },
       subject: 'Trade science concern necessary theory option us.',
       cc: [],
       bcc: [],
@@ -878,7 +986,7 @@ const data = {
     {
       id: 25,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'fullerkatelyn@hotmail.com', name: 'Ana Short', avatar: '/images/avatars/4.png' },
+      from: { email: 'fullerkatelyn@hotmail.com', name: 'Ana Short', avatar: require('@/assets/images/avatars/4.png') },
       subject: 'Follow tax officer soon our four relationship consumer.',
       cc: [],
       bcc: [],
@@ -892,7 +1000,11 @@ const data = {
         {
           id: 4556357,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'woodjames@gmail.com', name: 'Taylor Lopez', avatar: '/images/avatars/4.png' },
+          from: {
+            email: 'woodjames@gmail.com',
+            name: 'Taylor Lopez',
+            avatar: require('@/assets/images/avatars/4.png'),
+          },
           subject: 'Appear imagine western.',
           cc: [],
           bcc: [],
@@ -909,7 +1021,11 @@ const data = {
         {
           id: 419,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'charlotte46@gmail.com', name: 'Edwin Pena', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'charlotte46@gmail.com',
+            name: 'Edwin Pena',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Hundred happen national measure.',
           cc: [],
           bcc: [],
@@ -926,7 +1042,11 @@ const data = {
         {
           id: 5123,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'amandawagner@yahoo.com', name: 'Laura Montes', avatar: '/images/avatars/2.png' },
+          from: {
+            email: 'amandawagner@yahoo.com',
+            name: 'Laura Montes',
+            avatar: require('@/assets/images/avatars/2.png'),
+          },
           subject: 'Administration choice move against provide value none.',
           cc: [],
           bcc: [],
@@ -943,7 +1063,11 @@ const data = {
         {
           id: 60679807,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'clarkdwayne@hotmail.com', name: 'Felicia Myers', avatar: '/images/avatars/2.png' },
+          from: {
+            email: 'clarkdwayne@hotmail.com',
+            name: 'Felicia Myers',
+            avatar: require('@/assets/images/avatars/2.png'),
+          },
           subject: 'Me during name.',
           cc: [],
           bcc: [],
@@ -960,7 +1084,11 @@ const data = {
         {
           id: 31103,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'hobbsjeffrey@yahoo.com', name: 'Erica Mann', avatar: '/images/avatars/6.png' },
+          from: {
+            email: 'hobbsjeffrey@yahoo.com',
+            name: 'Erica Mann',
+            avatar: require('@/assets/images/avatars/6.png'),
+          },
           subject: 'Ability pretty student health current interesting even.',
           cc: [],
           bcc: [],
@@ -981,7 +1109,7 @@ const data = {
     {
       id: 24,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'hmoran@gmail.com', name: 'Vincent Alexander', avatar: '/images/avatars/1.png' },
+      from: { email: 'hmoran@gmail.com', name: 'Vincent Alexander', avatar: require('@/assets/images/avatars/1.png') },
       subject: 'Over tough city well first should quite.',
       cc: [],
       bcc: [],
@@ -995,7 +1123,11 @@ const data = {
         {
           id: 324726,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'victorjohnson@yahoo.com', name: 'Tamara Vega', avatar: '/images/avatars/6.png' },
+          from: {
+            email: 'victorjohnson@yahoo.com',
+            name: 'Tamara Vega',
+            avatar: require('@/assets/images/avatars/6.png'),
+          },
           subject: 'Democrat miss deal career maintain hotel.',
           cc: [],
           bcc: [],
@@ -1012,7 +1144,11 @@ const data = {
         {
           id: 3,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'jeremywilliams@yahoo.com', name: 'Jason Schultz', avatar: '/images/avatars/1.png' },
+          from: {
+            email: 'jeremywilliams@yahoo.com',
+            name: 'Jason Schultz',
+            avatar: require('@/assets/images/avatars/1.png'),
+          },
           subject: 'Piece effect usually everyone make.',
           cc: [],
           bcc: [],
@@ -1029,7 +1165,11 @@ const data = {
         {
           id: 4,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'jasonpalmer@hotmail.com', name: 'Deborah Tran', avatar: '/images/avatars/2.png' },
+          from: {
+            email: 'jasonpalmer@hotmail.com',
+            name: 'Deborah Tran',
+            avatar: require('@/assets/images/avatars/2.png'),
+          },
           subject: 'Certain executive them health successful spring.',
           cc: [],
           bcc: [],
@@ -1046,7 +1186,7 @@ const data = {
         {
           id: 19865651,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'danny06@gmail.com', name: 'Walter Moss', avatar: '/images/avatars/3.png' },
+          from: { email: 'danny06@gmail.com', name: 'Walter Moss', avatar: require('@/assets/images/avatars/3.png') },
           subject: 'Go town spend determine we money experience partner.',
           cc: [],
           bcc: [],
@@ -1067,7 +1207,7 @@ const data = {
     {
       id: 23,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'paulbarrett@gmail.com', name: 'Robert Soto', avatar: '/images/avatars/7.png' },
+      from: { email: 'paulbarrett@gmail.com', name: 'Robert Soto', avatar: require('@/assets/images/avatars/7.png') },
       subject: 'Apply loss always difference husband course deal.',
       cc: [],
       bcc: [],
@@ -1084,7 +1224,11 @@ const data = {
     {
       id: 22,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'danagriffin@gmail.com', name: 'Alexander Alexander', avatar: '/images/avatars/7.png' },
+      from: {
+        email: 'danagriffin@gmail.com',
+        name: 'Alexander Alexander',
+        avatar: require('@/assets/images/avatars/7.png'),
+      },
       subject: 'Lead position story common choice pay sit line.',
       cc: [],
       bcc: [],
@@ -1101,7 +1245,7 @@ const data = {
     {
       id: 21,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'bakercarrie@yahoo.com', name: 'Dawn Hall', avatar: '/images/avatars/2.png' },
+      from: { email: 'bakercarrie@yahoo.com', name: 'Dawn Hall', avatar: require('@/assets/images/avatars/2.png') },
       subject: 'Magazine smile hear price.',
       cc: [],
       bcc: [],
@@ -1115,7 +1259,11 @@ const data = {
         {
           id: 6333,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'james94@gmail.com', name: 'Ronald Mitchell', avatar: '/images/avatars/1.png' },
+          from: {
+            email: 'james94@gmail.com',
+            name: 'Ronald Mitchell',
+            avatar: require('@/assets/images/avatars/1.png'),
+          },
           subject: 'Cost example hope modern especially language rock.',
           cc: [],
           bcc: [],
@@ -1132,7 +1280,11 @@ const data = {
         {
           id: 3539,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'averyamy@hotmail.com', name: 'Courtney Reynolds', avatar: '/images/avatars/6.png' },
+          from: {
+            email: 'averyamy@hotmail.com',
+            name: 'Courtney Reynolds',
+            avatar: require('@/assets/images/avatars/6.png'),
+          },
           subject: 'President attack quickly religious.',
           cc: [],
           bcc: [],
@@ -1149,7 +1301,11 @@ const data = {
         {
           id: 132667,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'englishjohn@gmail.com', name: 'Phillip Warner', avatar: '/images/avatars/1.png' },
+          from: {
+            email: 'englishjohn@gmail.com',
+            name: 'Phillip Warner',
+            avatar: require('@/assets/images/avatars/1.png'),
+          },
           subject: 'Stand never treat commercial.',
           cc: [],
           bcc: [],
@@ -1166,7 +1322,11 @@ const data = {
         {
           id: 815966603,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'davidmckenzie@yahoo.com', name: 'Tony Garcia', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'davidmckenzie@yahoo.com',
+            name: 'Tony Garcia',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'However walk less use election.',
           cc: [],
           bcc: [],
@@ -1187,7 +1347,11 @@ const data = {
     {
       id: 20,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'sandraarroyo@hotmail.com', name: 'Natalie Lloyd', avatar: '/images/avatars/2.png' },
+      from: {
+        email: 'sandraarroyo@hotmail.com',
+        name: 'Natalie Lloyd',
+        avatar: require('@/assets/images/avatars/2.png'),
+      },
       subject: 'During teach truth group society enough that.',
       cc: [],
       bcc: [],
@@ -1201,7 +1365,11 @@ const data = {
         {
           id: 7,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'webersamuel@gmail.com', name: 'Steven Jackson', avatar: '/images/avatars/1.png' },
+          from: {
+            email: 'webersamuel@gmail.com',
+            name: 'Steven Jackson',
+            avatar: require('@/assets/images/avatars/1.png'),
+          },
           subject: 'Hotel account interview begin carry everybody its.',
           cc: [],
           bcc: [],
@@ -1218,7 +1386,11 @@ const data = {
         {
           id: 378459327,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'jobush@yahoo.com', name: 'Mrs. Pamela Riggs MD', avatar: '/images/avatars/6.png' },
+          from: {
+            email: 'jobush@yahoo.com',
+            name: 'Mrs. Pamela Riggs MD',
+            avatar: require('@/assets/images/avatars/6.png'),
+          },
           subject: 'Industry difficult want without day partner road.',
           cc: [],
           bcc: [],
@@ -1239,7 +1411,11 @@ const data = {
     {
       id: 19,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'washingtonsamantha@hotmail.com', name: 'Jessica Johnston', avatar: '/images/avatars/6.png' },
+      from: {
+        email: 'washingtonsamantha@hotmail.com',
+        name: 'Jessica Johnston',
+        avatar: require('@/assets/images/avatars/6.png'),
+      },
       subject: 'Exist general medical under entire radio.',
       cc: [],
       bcc: [],
@@ -1256,7 +1432,11 @@ const data = {
     {
       id: 18,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'mcleanrobert@hotmail.com', name: 'Matthew Lee', avatar: '/images/avatars/1.png' },
+      from: {
+        email: 'mcleanrobert@hotmail.com',
+        name: 'Matthew Lee',
+        avatar: require('@/assets/images/avatars/1.png'),
+      },
       subject: 'Travel free or write determine.',
       cc: [],
       bcc: [],
@@ -1273,7 +1453,11 @@ const data = {
     {
       id: 17,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'perkinselizabeth@gmail.com', name: 'James Wilson', avatar: '/images/avatars/7.png' },
+      from: {
+        email: 'perkinselizabeth@gmail.com',
+        name: 'James Wilson',
+        avatar: require('@/assets/images/avatars/7.png'),
+      },
       subject: 'Always beautiful name push miss international.',
       cc: [],
       bcc: [],
@@ -1290,7 +1474,11 @@ const data = {
     {
       id: 16,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'garcialauren@hotmail.com', name: 'Gregory Allen', avatar: '/images/avatars/3.png' },
+      from: {
+        email: 'garcialauren@hotmail.com',
+        name: 'Gregory Allen',
+        avatar: require('@/assets/images/avatars/3.png'),
+      },
       subject: 'Test look option movement position card cause.',
       cc: [],
       bcc: [],
@@ -1304,7 +1492,11 @@ const data = {
         {
           id: 744639799,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'howardjustin@gmail.com', name: 'Rebecca Smith', avatar: '/images/avatars/6.png' },
+          from: {
+            email: 'howardjustin@gmail.com',
+            name: 'Rebecca Smith',
+            avatar: require('@/assets/images/avatars/6.png'),
+          },
           subject: 'Region stop vote tonight partner capital us.',
           cc: [],
           bcc: [],
@@ -1321,7 +1513,7 @@ const data = {
         {
           id: 18,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'dwelch@yahoo.com', name: 'Peter Davis', avatar: '/images/avatars/1.png' },
+          from: { email: 'dwelch@yahoo.com', name: 'Peter Davis', avatar: require('@/assets/images/avatars/1.png') },
           subject: 'Second ground way child seem social resource appear.',
           cc: [],
           bcc: [],
@@ -1338,7 +1530,7 @@ const data = {
         {
           id: 712,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'larrybrown@yahoo.com', name: 'Amy Peters', avatar: '/images/avatars/4.png' },
+          from: { email: 'larrybrown@yahoo.com', name: 'Amy Peters', avatar: require('@/assets/images/avatars/4.png') },
           subject: 'Interesting strategy south ok recognize shoulder lead.',
           cc: [],
           bcc: [],
@@ -1359,7 +1551,7 @@ const data = {
     {
       id: 15,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'dreed@hotmail.com', name: 'Rhonda Hamilton', avatar: '/images/avatars/4.png' },
+      from: { email: 'dreed@hotmail.com', name: 'Rhonda Hamilton', avatar: require('@/assets/images/avatars/4.png') },
       subject: 'They new police guy trade carry bad.',
       cc: [],
       bcc: [],
@@ -1376,7 +1568,11 @@ const data = {
     {
       id: 14,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'andersonkatrina@hotmail.com', name: 'Richard Buckley', avatar: '/images/avatars/7.png' },
+      from: {
+        email: 'andersonkatrina@hotmail.com',
+        name: 'Richard Buckley',
+        avatar: require('@/assets/images/avatars/7.png'),
+      },
       subject: 'Hospital small technology defense affect car.',
       cc: [],
       bcc: [],
@@ -1393,7 +1589,11 @@ const data = {
     {
       id: 13,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'kimberlyrobinson@hotmail.com', name: 'James Brady', avatar: '/images/avatars/3.png' },
+      from: {
+        email: 'kimberlyrobinson@hotmail.com',
+        name: 'James Brady',
+        avatar: require('@/assets/images/avatars/3.png'),
+      },
       subject: 'There bar risk bring.',
       cc: [],
       bcc: [],
@@ -1410,7 +1610,7 @@ const data = {
     {
       id: 12,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'ugray@gmail.com', name: 'Jane Buckley', avatar: '/images/avatars/2.png' },
+      from: { email: 'ugray@gmail.com', name: 'Jane Buckley', avatar: require('@/assets/images/avatars/2.png') },
       subject: 'Picture everything throw happen nothing social.',
       cc: [],
       bcc: [],
@@ -1427,7 +1627,11 @@ const data = {
     {
       id: 11,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'morrisjaclyn@gmail.com', name: 'Kathryn Smith', avatar: '/images/avatars/6.png' },
+      from: {
+        email: 'morrisjaclyn@gmail.com',
+        name: 'Kathryn Smith',
+        avatar: require('@/assets/images/avatars/6.png'),
+      },
       subject: 'Green attorney government same course join in woman.',
       cc: [],
       bcc: [],
@@ -1441,7 +1645,11 @@ const data = {
         {
           id: 133615687,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'juan31@gmail.com', name: 'Jennifer Robinson', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'juan31@gmail.com',
+            name: 'Jennifer Robinson',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Beautiful despite note couple pretty issue near.',
           cc: [],
           bcc: [],
@@ -1458,7 +1666,11 @@ const data = {
         {
           id: 867,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'gflores@hotmail.com', name: 'Cindy Hernandez', avatar: '/images/avatars/2.png' },
+          from: {
+            email: 'gflores@hotmail.com',
+            name: 'Cindy Hernandez',
+            avatar: require('@/assets/images/avatars/2.png'),
+          },
           subject: 'Watch vote decide compare start.',
           cc: [],
           bcc: [],
@@ -1475,7 +1687,11 @@ const data = {
         {
           id: 7,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'judyvillarreal@hotmail.com', name: 'Amy Chavez', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'judyvillarreal@hotmail.com',
+            name: 'Amy Chavez',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Member around task woman as.',
           cc: [],
           bcc: [],
@@ -1492,7 +1708,11 @@ const data = {
         {
           id: 59708653,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'mwalker@hotmail.com', name: 'Marcus Campbell', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'mwalker@hotmail.com',
+            name: 'Marcus Campbell',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Woman ability middle choose vote few ability.',
           cc: [],
           bcc: [],
@@ -1509,7 +1729,11 @@ const data = {
         {
           id: 804622,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'lauramartin@hotmail.com', name: 'Connie Osborne', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'lauramartin@hotmail.com',
+            name: 'Connie Osborne',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Heavy ball debate style message main rate.',
           cc: [],
           bcc: [],
@@ -1530,7 +1754,7 @@ const data = {
     {
       id: 10,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'sean36@gmail.com', name: 'Ronald Buckley', avatar: '/images/avatars/5.png' },
+      from: { email: 'sean36@gmail.com', name: 'Ronald Buckley', avatar: require('@/assets/images/avatars/5.png') },
       subject: 'Blue both light anyone trial nor approach tough.',
       cc: [],
       bcc: [],
@@ -1547,7 +1771,7 @@ const data = {
     {
       id: 9,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'wkline@yahoo.com', name: 'Jennifer Garcia', avatar: '/images/avatars/6.png' },
+      from: { email: 'wkline@yahoo.com', name: 'Jennifer Garcia', avatar: require('@/assets/images/avatars/6.png') },
       subject: 'Simply idea project health prevent beyond both after.',
       cc: [],
       bcc: [],
@@ -1564,7 +1788,7 @@ const data = {
     {
       id: 8,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'tolson@gmail.com', name: 'Lindsey Melton', avatar: '/images/avatars/2.png' },
+      from: { email: 'tolson@gmail.com', name: 'Lindsey Melton', avatar: require('@/assets/images/avatars/2.png') },
       subject: 'Amount collection marriage price.',
       cc: [],
       bcc: [],
@@ -1581,7 +1805,7 @@ const data = {
     {
       id: 7,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'jeffrey89@gmail.com', name: 'Amanda Pratt', avatar: '/images/avatars/4.png' },
+      from: { email: 'jeffrey89@gmail.com', name: 'Amanda Pratt', avatar: require('@/assets/images/avatars/4.png') },
       subject: 'Pull clear protect start exactly purpose scientist food.',
       cc: [],
       bcc: [],
@@ -1598,7 +1822,7 @@ const data = {
     {
       id: 6,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'gentryjeff@yahoo.com', name: 'Joseph Clark', avatar: '/images/avatars/3.png' },
+      from: { email: 'gentryjeff@yahoo.com', name: 'Joseph Clark', avatar: require('@/assets/images/avatars/3.png') },
       subject: 'Grow seat discover.',
       cc: [],
       bcc: [],
@@ -1615,7 +1839,11 @@ const data = {
     {
       id: 5,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'maciaspatricia@hotmail.com', name: 'Alisha Hughes', avatar: '/images/avatars/4.png' },
+      from: {
+        email: 'maciaspatricia@hotmail.com',
+        name: 'Alisha Hughes',
+        avatar: require('@/assets/images/avatars/4.png'),
+      },
       subject: 'Play hope gas military that.',
       cc: [],
       bcc: [],
@@ -1632,7 +1860,11 @@ const data = {
     {
       id: 4,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'rvalenzuela@hotmail.com', name: 'Michelle Murphy', avatar: '/images/avatars/6.png' },
+      from: {
+        email: 'rvalenzuela@hotmail.com',
+        name: 'Michelle Murphy',
+        avatar: require('@/assets/images/avatars/6.png'),
+      },
       subject: 'Anyone want yet forget effect.',
       cc: [],
       bcc: [],
@@ -1649,7 +1881,7 @@ const data = {
     {
       id: 3,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'gbeltran@gmail.com', name: 'Charles Cooper', avatar: '/images/avatars/1.png' },
+      from: { email: 'gbeltran@gmail.com', name: 'Charles Cooper', avatar: require('@/assets/images/avatars/1.png') },
       subject: 'Fight account night short.',
       cc: [],
       bcc: [],
@@ -1658,13 +1890,13 @@ const data = {
       attachments: [
         {
           fileName: 'log.txt',
-          thumbnail: '/images/icons/file-icons/txt.png',
+          thumbnail: require('@/assets/images/icons/file-icons/txt.png'),
           url: '',
           size: '5mb',
         },
         {
           fileName: 'performance.xls',
-          thumbnail: '/images/icons/file-icons/xls.png',
+          thumbnail: require('@/assets/images/icons/file-icons/xls.png'),
           url: '',
           size: '10mb',
         },
@@ -1676,7 +1908,11 @@ const data = {
         {
           id: 756051771,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'rwhitehead@yahoo.com', name: 'Bruce Johnson', avatar: '/images/avatars/3.png' },
+          from: {
+            email: 'rwhitehead@yahoo.com',
+            name: 'Bruce Johnson',
+            avatar: require('@/assets/images/avatars/3.png'),
+          },
           subject: 'Guy someone wind.',
           cc: [],
           bcc: [],
@@ -1693,7 +1929,11 @@ const data = {
         {
           id: 4255040,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'perezannette@gmail.com', name: 'Kyle Christensen', avatar: '/images/avatars/7.png' },
+          from: {
+            email: 'perezannette@gmail.com',
+            name: 'Kyle Christensen',
+            avatar: require('@/assets/images/avatars/7.png'),
+          },
           subject: 'Each close probably.',
           cc: [],
           bcc: [],
@@ -1710,7 +1950,11 @@ const data = {
         {
           id: 946586133,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'ramirezsarah@yahoo.com', name: 'Tammy Lloyd', avatar: '/images/avatars/8.png' },
+          from: {
+            email: 'ramirezsarah@yahoo.com',
+            name: 'Tammy Lloyd',
+            avatar: require('@/assets/images/avatars/8.png'),
+          },
           subject: 'Security set letter once.',
           cc: [],
           bcc: [],
@@ -1727,7 +1971,11 @@ const data = {
         {
           id: 182449812,
           to: [{ email: 'johndoe@mail.com', name: 'me' }],
-          from: { email: 'evansantonio@yahoo.com', name: 'Shawn Flores', avatar: '/images/avatars/5.png' },
+          from: {
+            email: 'evansantonio@yahoo.com',
+            name: 'Shawn Flores',
+            avatar: require('@/assets/images/avatars/5.png'),
+          },
           subject: 'Card yeah need shake.',
           cc: [],
           bcc: [],
@@ -1748,7 +1996,11 @@ const data = {
     {
       id: 2,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'wilsonwilliam@yahoo.com', name: 'Rachel Palmer', avatar: '/images/avatars/2.png' },
+      from: {
+        email: 'wilsonwilliam@yahoo.com',
+        name: 'Rachel Palmer',
+        avatar: require('@/assets/images/avatars/2.png'),
+      },
       subject: 'Account base lose detail.',
       cc: [],
       bcc: [],
@@ -1765,7 +2017,7 @@ const data = {
     {
       id: 1,
       to: [{ email: 'johndoe@mail.com', name: 'me' }],
-      from: { email: 'edavid@yahoo.com', name: 'Wendy Harris', avatar: '/images/avatars/2.png' },
+      from: { email: 'edavid@yahoo.com', name: 'Wendy Harris', avatar: require('@/assets/images/avatars/2.png') },
       subject: 'Step face collection heart light cultural prepare.',
       cc: [],
       bcc: [],

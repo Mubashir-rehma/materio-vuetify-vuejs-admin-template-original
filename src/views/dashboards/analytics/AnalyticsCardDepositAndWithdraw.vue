@@ -87,31 +87,31 @@ export default {
   setup() {
     const deposit = [
       {
-        img: '/images/logos/gumroad.png',
+        img: require('@/assets/images/logos/gumroad.png'),
         title: 'Gumroad Account',
         subtitle: 'Sell UI Kit',
         amount: '+$4,650',
       },
       {
-        img: '/images/logos/master.png',
+        img: require('@/assets/images/logos/master.png'),
         title: 'Mastercard',
         subtitle: 'Wallet deposit',
         amount: '+$92,705',
       },
       {
-        img: '/images/logos/stripe-account.png',
+        img: require('@/assets/images/logos/stripe-account.png'),
         title: 'Stripe Account',
         subtitle: 'iOS Application',
         amount: '+$957',
       },
       {
-        img: '/images/logos/american-bank.png',
+        img: require('@/assets/images/logos/american-bank.png'),
         title: 'American Bank',
         subtitle: 'Bank Transfer',
         amount: '+$6,837',
       },
       {
-        img: '/images/logos/bank-account.png',
+        img: require('@/assets/images/logos/bank-account.png'),
         title: 'Bank Account',
         subtitle: 'Wallet deposit',
         amount: '+$446',
@@ -119,31 +119,31 @@ export default {
     ]
     const withdraw = [
       {
-        img: '/images/logos/google.png',
+        img: require('@/assets/images/logos/google.png'),
         title: 'Google Adsense',
         subtitle: 'Paypal deposit',
         amount: '-$145',
       },
       {
-        img: '/images/logos/github.png',
+        img: require('@/assets/images/logos/github.png'),
         title: 'Github Enterprise',
         subtitle: 'Security & compliance',
         amount: '-$1870',
       },
       {
-        img: '/images/logos/slack.png',
+        img: require('@/assets/images/logos/slack.png'),
         title: 'Upgrade Slack Plan',
         subtitle: 'Debit card deposit',
         amount: '-$450',
       },
       {
-        img: '/images/logos/digital-ocean-logo.png',
+        img: require('@/assets/images/logos/digital-ocean-logo.png'),
         title: 'Digital Ocean',
         subtitle: 'Cloud Hosting',
         amount: '-$540',
       },
       {
-        img: '/images/logos/amazon-web-services-logo.png',
+        img: require('@/assets/images/logos/amazon-web-services-logo.png'),
         title: 'Bank Account',
         subtitle: 'Choosing a Cloud Platform',
         amount: '-$21',

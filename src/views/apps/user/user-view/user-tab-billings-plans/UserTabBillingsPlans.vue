@@ -124,7 +124,7 @@
                 contain
                 :max-width="paymentCard.imgWidth"
                 height="25"
-                :src="`/images/logos/${paymentCard.cardImg}`"
+                :src="require(`@/assets/images/logos/${paymentCard.cardImg}`)"
               ></v-img>
               <div class="text--primary font-weight-medium mt-2">
                 <span class="text-base me-2">{{ paymentCard.owner }}</span>

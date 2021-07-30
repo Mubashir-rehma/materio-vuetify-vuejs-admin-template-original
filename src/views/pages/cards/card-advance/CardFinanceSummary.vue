@@ -64,18 +64,18 @@
         :class="rootThemeClasses"
       >
         <v-avatar size="40">
-          <v-img src="/images/avatars/1.png"></v-img>
+          <v-img src="@/assets/images/avatars/1.png"></v-img>
         </v-avatar>
 
         <v-avatar size="40">
-          <v-img src="/images/avatars/2.png"></v-img>
+          <v-img src="@/assets/images/avatars/2.png"></v-img>
         </v-avatar>
 
         <v-avatar size="40">
-          <v-img src="/images/avatars/3.png"></v-img>
+          <v-img src="@/assets/images/avatars/3.png"></v-img>
         </v-avatar>
         <v-avatar size="40">
-          <v-img src="/images/avatars/4.png"></v-img>
+          <v-img src="@/assets/images/avatars/4.png"></v-img>
         </v-avatar>
       </div>
 

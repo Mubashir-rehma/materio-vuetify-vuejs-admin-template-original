@@ -56,7 +56,7 @@
               class="mb-6"
             >
               <v-img
-                :src="`/images/avatars/${avatar}`"
+                :src="require(`@/assets/images/avatars/${avatar}`)"
               ></v-img>
             </v-avatar>
             <h3 class="headline mb-2">

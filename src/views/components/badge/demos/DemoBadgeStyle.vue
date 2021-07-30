@@ -36,7 +36,7 @@
       offset-y="12"
     >
       <v-avatar>
-        <v-img src="/images/avatars/8.png"></v-img>
+        <v-img src="@/assets/images/avatars/8.png"></v-img>
       </v-avatar>
     </v-badge>
   </div>

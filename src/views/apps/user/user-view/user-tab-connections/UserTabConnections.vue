@@ -23,7 +23,7 @@
               max-width="35"
               contain
               class="me-3"
-              :src="`/images/logos/${account.img}`"
+              :src="require(`@/assets/images/logos/${account.img}`)"
             ></v-img>
 
             <div class="d-flex align-center flex-grow-1 flex-wrap">
@@ -68,7 +68,7 @@
               height="35"
               contain
               class="me-3"
-              :src="`/images/logos/${account.img}`"
+              :src="require(`@/assets/images/logos/${account.img}`)"
             ></v-img>
 
             <div>

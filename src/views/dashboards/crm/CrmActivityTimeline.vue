@@ -65,7 +65,7 @@
                 size="26"
                 class="me-2"
               >
-                <v-img src="/images/avatars/1.png"></v-img>
+                <v-img src="@/assets/images/avatars/1.png"></v-img>
               </v-avatar>
               <h4 class="font-weight-semibold">
                 John Doe (Client)

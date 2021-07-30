@@ -7,7 +7,7 @@ const dayBeforePreviousDay = new Date(new Date().getTime() - 24 * 60 * 60 * 1000
 const data = {
   profileUser: {
     id: 11,
-    avatar: '/images/avatars/1.png',
+    avatar: require('@/assets/images/avatars/1.png'),
     fullName: 'John Doe',
     role: 'admin',
     about:
@@ -24,7 +24,7 @@ const data = {
       fullName: 'Gavin Griffith',
       role: 'Frontend Developer',
       about: 'Cake pie jelly jelly beans. Marzipan lemon drops halvah cake. Pudding cookie lemon drops icing',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
       status: 'offline',
     },
     {
@@ -33,7 +33,7 @@ const data = {
       role: 'UI/UX Designer',
       about:
         'Toffee caramels jelly-o tart gummi bears cake I love ice cream lollipop. Sweet liquorice croissant candy danish dessert icing. Cake macaroon gingerbread toffee sweet.',
-      avatar: '/images/avatars/2.png',
+      avatar: require('@/assets/images/avatars/2.png'),
       status: 'busy',
     },
     {
@@ -59,7 +59,7 @@ const data = {
       fullName: 'Bryan Murray',
       role: 'Dietitian',
       about: 'Cake pie jelly jelly beans. Marzipan lemon drops halvah cake. Pudding cookie lemon drops icing',
-      avatar: '/images/avatars/5.png',
+      avatar: require('@/assets/images/avatars/5.png'),
       status: 'busy',
     },
     {
@@ -68,7 +68,7 @@ const data = {
       role: 'Marketing executive',
       about:
         'Toffee caramels jelly-o tart gummi bears cake I love ice cream lollipop. Sweet liquorice croissant candy danish dessert icing. Cake macaroon gingerbread toffee sweet.',
-      avatar: '/images/avatars/6.png',
+      avatar: require('@/assets/images/avatars/6.png'),
       status: 'online',
     },
     {
@@ -86,7 +86,7 @@ const data = {
       role: 'Advertising copywriter',
       about:
         'Bear claw ice cream lollipop gingerbread carrot cake. Brownie gummi bears chocolate muffin croissant jelly I love marzipan wafer.',
-      avatar: '/images/avatars/3.png',
+      avatar: require('@/assets/images/avatars/3.png'),
       status: 'away',
     },
     {
@@ -95,7 +95,7 @@ const data = {
       role: 'Designer, television/film set',
       about:
         'Gummies gummi bears I love candy icing apple pie I love marzipan bear claw. I love tart biscuit I love candy canes pudding chupa chups liquorice croissant.',
-      avatar: '/images/avatars/8.png',
+      avatar: require('@/assets/images/avatars/8.png'),
       status: 'offline',
     },
     {
@@ -103,7 +103,7 @@ const data = {
       fullName: 'Blake Carter',
       role: 'Building surveyor',
       about: 'Cake pie jelly jelly beans. Marzipan lemon drops halvah cake. Pudding cookie lemon drops icing',
-      avatar: '/images/avatars/4.png',
+      avatar: require('@/assets/images/avatars/4.png'),
       status: 'away',
     },
   ],

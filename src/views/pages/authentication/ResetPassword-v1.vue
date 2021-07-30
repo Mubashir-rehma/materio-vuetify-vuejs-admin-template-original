@@ -90,7 +90,7 @@
     <img
       class="auth-mask-bg"
       height="190"
-      :src="`/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+      :src="require(`@/assets/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`)"
     >
 
     <!-- tree -->
@@ -98,7 +98,7 @@
       class="auth-tree"
       width="247"
       height="185"
-      src="/images/misc/tree.png"
+      src="@/assets/images/misc/tree.png"
     ></v-img>
 
     <!-- tree  -->
@@ -106,7 +106,7 @@
       class="auth-tree-3"
       width="377"
       height="289"
-      src="/images/misc/tree-3.png"
+      src="@/assets/images/misc/tree-3.png"
     ></v-img>
   </div>
 </template>

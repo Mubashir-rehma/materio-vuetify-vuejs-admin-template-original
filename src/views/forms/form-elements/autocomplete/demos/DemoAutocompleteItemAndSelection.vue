@@ -20,7 +20,7 @@
         @click:close="remove(data.item)"
       >
         <v-avatar left>
-          <v-img :src="`/images/avatars/${data.item.avatar}`"></v-img>
+          <v-img :src="require(`@/assets/images/avatars/${data.item.avatar}`)"></v-img>
         </v-avatar>
         {{ data.item.name }}
       </v-chip>
@@ -33,7 +33,7 @@
 
       <template v-else>
         <v-list-item-avatar>
-          <v-img :src="`/images/avatars/${data.item.avatar}`"></v-img>
+          <v-img :src="require(`@/assets/images/avatars/${data.item.avatar}`)"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>

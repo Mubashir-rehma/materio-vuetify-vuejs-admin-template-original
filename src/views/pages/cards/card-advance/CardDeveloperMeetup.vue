@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img src="/images/pages/developerMeetup.png"></v-img>
+    <v-img src="@/assets/images/pages/developerMeetup.png"></v-img>
     <v-card-text class="d-flex mt-5">
       <v-avatar
         size="54"

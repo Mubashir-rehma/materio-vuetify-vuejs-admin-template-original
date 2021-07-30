@@ -130,7 +130,7 @@
               size="22"
               class="me-2"
             >
-              <v-img :src="`/images/logos/${item.browser}`"></v-img>
+              <v-img :src="require(`@/assets/images/logos/${item.browser}`)"></v-img>
             </v-avatar>
             <span class="text--primary text-no-wrap font-weight-medium">{{ item.name }}</span>
           </div>

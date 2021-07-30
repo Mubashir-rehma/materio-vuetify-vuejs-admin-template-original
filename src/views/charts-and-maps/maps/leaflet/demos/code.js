@@ -211,13 +211,13 @@ export default {
     const url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     const attribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     const iconData = icon({
-      iconUrl: '/images/misc/leaf-green.png',
+      iconUrl: require('@/assets/images/misc/leaf-green.png'),
       iconSize: [25, 50],
       iconAnchor: [16, 37],
     })
 
     const iconData2 = icon({
-      iconUrl: '/images/misc/leaf-red.png',
+      iconUrl: require('@/assets/images/misc/leaf-red.png'),
       iconSize: [25, 50],
       iconAnchor: [16, 37],
     })

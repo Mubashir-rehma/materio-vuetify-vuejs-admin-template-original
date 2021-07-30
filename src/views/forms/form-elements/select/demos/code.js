@@ -432,11 +432,11 @@ export default {
     const name = ref('Midnight Crew')
 
     const people = ref([
-      { name: 'Sandra Adams', avatar: '/images/avatars/1.png' },
-      { name: 'Ali Connors', avatar: '/images/avatars/2.png' },
-      { name: 'Trevor Hansen', avatar: '/images/avatars/3.png' },
-      { name: 'Tucker Smith', avatar: '/images/avatars/4.png' },
-      { name: 'Britta Holt', avatar: '/images/avatars/5.png' },
+      { name: 'Sandra Adams', avatar: require('@/assets/images/avatars/1.png') },
+      { name: 'Ali Connors', avatar: require('@/assets/images/avatars/2.png') },
+      { name: 'Trevor Hansen', avatar: require('@/assets/images/avatars/3.png') },
+      { name: 'Tucker Smith', avatar: require('@/assets/images/avatars/4.png') },
+      { name: 'Britta Holt', avatar: require('@/assets/images/avatars/5.png') },
     ])
 
     return {

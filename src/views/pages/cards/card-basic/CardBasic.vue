@@ -9,7 +9,7 @@
       >
         <v-card>
           <v-img
-            src="/images/pages/1.png"
+            src="@/assets/images/pages/1.png"
             height="250"
           />
           <v-card-title>
@@ -29,7 +29,7 @@
         <v-card>
           <v-img
             class="white--text align-end"
-            src="/images/pages/2.png"
+            src="@/assets/images/pages/2.png"
             height="250"
           />
           <v-card-text class="position-relative">
@@ -39,7 +39,7 @@
               color="white"
               class="avatar-center"
             >
-              <v-img src="/images/avatars/1.png"></v-img>
+              <v-img src="@/assets/images/avatars/1.png"></v-img>
             </v-avatar>
             <!-- Title, Subtitle & Action Button -->
             <div class="d-flex justify-space-between flex-wrap pt-12">
@@ -65,16 +65,16 @@
                 :class="rootThemeClasses"
               >
                 <v-avatar size="40">
-                  <v-img src="/images/avatars/1.png"></v-img>
+                  <v-img src="@/assets/images/avatars/1.png"></v-img>
                 </v-avatar>
                 <v-avatar size="40">
-                  <v-img src="/images/avatars/2.png"></v-img>
+                  <v-img src="@/assets/images/avatars/2.png"></v-img>
                 </v-avatar>
                 <v-avatar size="40">
-                  <v-img src="/images/avatars/3.png"></v-img>
+                  <v-img src="@/assets/images/avatars/3.png"></v-img>
                 </v-avatar>
                 <v-avatar size="40">
-                  <v-img src="/images/avatars/4.png"></v-img>
+                  <v-img src="@/assets/images/avatars/4.png"></v-img>
                 </v-avatar>
               </div>
             </div>
@@ -90,7 +90,7 @@
       >
         <v-card>
           <v-img
-            src="/images/pages/3.png"
+            src="@/assets/images/pages/3.png"
             height="250"
           ></v-img>
           <v-card-title>
@@ -136,7 +136,7 @@
               <v-img
                 width="220"
                 height="100%"
-                src="/images/eCommerce/2.png"
+                src="@/assets/images/eCommerce/2.png"
               ></v-img>
             </div>
             <v-divider :vertical="$vuetify.breakpoint.mdAndUp"></v-divider>
@@ -210,7 +210,7 @@
             </div>
             <div class="pa-4">
               <v-img
-                src="/images/pages/5.jpg"
+                src="@/assets/images/pages/5.jpg"
                 :class="$vuetify.breakpoint.mdAndUp ? 'rounded-lg':'rounded-0'"
                 height="100%"
                 :max-width="$vuetify.breakpoint.mdAndUp ? '220':'100%'"
@@ -227,7 +227,7 @@
         class="align-self-start"
       >
         <v-card>
-          <v-img src="/images/pages/6.jpg"></v-img>
+          <v-img src="@/assets/images/pages/6.jpg"></v-img>
           <v-card-title>Apple Watch</v-card-title>
           <v-card-text>
             <p class="text--primary text-base">

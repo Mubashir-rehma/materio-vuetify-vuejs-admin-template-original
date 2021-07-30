@@ -88,7 +88,7 @@ export default {
   setup() {
     const totalEarning = [
       {
-        avatar: '/images/pages/zipcar.png',
+        avatar: require('@/assets/images/pages/zipcar.png'),
         title: 'Zipcar',
         subtitle: 'Vuejs, React & HTML',
         earning: '$24,895.65',
@@ -96,7 +96,7 @@ export default {
         color: 'primary',
       },
       {
-        avatar: '/images/pages/bitbank.png',
+        avatar: require('@/assets/images/pages/bitbank.png'),
         title: 'Bitbank',
         subtitle: 'Sketch, Figma & XD',
         earning: '$8,6500.20',
@@ -104,7 +104,7 @@ export default {
         color: 'info',
       },
       {
-        avatar: '/images/pages/aviato.png',
+        avatar: require('@/assets/images/pages/aviato.png'),
         title: 'Aviato',
         subtitle: 'HTML & angular',
         earning: '$1,2450.80',

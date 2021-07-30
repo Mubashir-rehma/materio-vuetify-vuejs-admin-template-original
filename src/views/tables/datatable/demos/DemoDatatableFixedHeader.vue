@@ -16,7 +16,7 @@
         >
           <v-img
             v-if="item.avatar"
-            :src="`/images/avatars/${item.avatar}`"
+            :src="require(`@/assets/images/avatars/${item.avatar}`)"
           ></v-img>
           <span v-else>{{ item.full_name.slice(0,2).toUpperCase() }}</span>
         </v-avatar>

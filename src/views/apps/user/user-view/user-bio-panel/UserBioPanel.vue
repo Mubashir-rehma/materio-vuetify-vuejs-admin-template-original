@@ -13,7 +13,7 @@
           >
             <v-img
               v-if="userData.avatar"
-              :src="`/images/avatars/${userData.avatar}`"
+              :src="require(`@/assets/images/avatars/${userData.avatar}`)"
             ></v-img>
             <span
               v-else

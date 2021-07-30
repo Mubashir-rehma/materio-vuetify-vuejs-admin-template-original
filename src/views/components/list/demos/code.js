@@ -442,7 +442,7 @@ export default {
     const items = [
       { header: 'Today' },
       {
-        avatar: '/images/avatars/1.png',
+        avatar: require('@/assets/images/avatars/1.png'),
         title: 'Brunch this weekend?',
         subtitle: {
           name: 'Ali Connors',
@@ -451,7 +451,7 @@ export default {
       },
       { divider: true, inset: true },
       {
-        avatar: '/images/avatars/3.png',
+        avatar: require('@/assets/images/avatars/3.png'),
         title: 'Summer BBQ ',
         subtitle: {
           name: 'to Alex, Scott, Jennifer',
@@ -460,7 +460,7 @@ export default {
       },
       { divider: true, inset: true },
       {
-        avatar: '/images/avatars/2.png',
+        avatar: require('@/assets/images/avatars/2.png'),
         title: 'Oui oui',
         subtitle: {
           name: 'Sandra Adams',

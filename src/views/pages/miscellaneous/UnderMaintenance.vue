@@ -3,12 +3,12 @@
     <img
       class="misc-mask"
       height="226"
-      :src="`/images/misc/misc-mask-${$vuetify.theme.dark ? 'dark' : 'light'}.png`"
+      :src="require(`@/assets/images/misc/misc-mask-${$vuetify.theme.dark ? 'dark' : 'light'}.png`)"
     />
 
     <v-img
       class="misc-tree"
-      src="/images/misc/tree.png"
+      src="@/assets/images/misc/tree.png"
     ></v-img>
 
     <div class="page-title text-center px-5">
@@ -22,7 +22,7 @@
       <div class="misc-character d-flex justify-center">
         <v-img
           max-width="700"
-          src="/images/3d-characters/under-maintenance.png"
+          src="@/assets/images/3d-characters/under-maintenance.png"
         ></v-img>
       </div>
 

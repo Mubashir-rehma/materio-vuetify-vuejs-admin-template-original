@@ -3,7 +3,7 @@ import { mdiCheckboxBlankCircleOutline } from '@mdi/js'
 const themeConfig = {
   app: {
     name: 'MATERIO',
-    logo: '/logo.svg',
+    logo: require('@/assets/images/svg/logo.svg'),
     isDark: false,
     isRtl: false,
     contentLayoutNav: 'vertical', // vertical, horizontal

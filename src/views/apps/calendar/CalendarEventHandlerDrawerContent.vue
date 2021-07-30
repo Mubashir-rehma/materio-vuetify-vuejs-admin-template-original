@@ -285,12 +285,12 @@ export default {
     const isEndDateMenuOpen = ref(false)
 
     const guestsOptions = [
-      { avatar: '/images/avatars/1.png', name: 'Jane Foster' },
-      { avatar: '/images/avatars/3.png', name: 'Donna Frank' },
-      { avatar: '/images/avatars/5.png', name: 'Gabrielle Robertson' },
-      { avatar: '/images/avatars/7.png', name: 'Lori Spears' },
-      { avatar: '/images/avatars/6.png', name: 'Sandy Vega' },
-      { avatar: '/images/avatars/2.png', name: 'Cheryl May' },
+      { avatar: require('@/assets/images/avatars/1.png'), name: 'Jane Foster' },
+      { avatar: require('@/assets/images/avatars/3.png'), name: 'Donna Frank' },
+      { avatar: require('@/assets/images/avatars/5.png'), name: 'Gabrielle Robertson' },
+      { avatar: require('@/assets/images/avatars/7.png'), name: 'Lori Spears' },
+      { avatar: require('@/assets/images/avatars/6.png'), name: 'Sandy Vega' },
+      { avatar: require('@/assets/images/avatars/2.png'), name: 'Cheryl May' },
     ]
 
     const handleFormSubmit = () => {

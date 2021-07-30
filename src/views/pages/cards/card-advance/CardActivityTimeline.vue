@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-img src="/images/pages/activity-timeline.png"></v-img>
+    <v-img src="@/assets/images/pages/activity-timeline.png"></v-img>
     <v-card-title>Activity Timeline</v-card-title>
 
     <v-card-text>
@@ -25,7 +25,7 @@
               contain
               height="26"
               max-width="26"
-              src="/images/icons/file-icons/pdf.png"
+              src="@/assets/images/icons/file-icons/pdf.png"
             ></v-img>
             <h4 class="font-weight-semibold ms-2">
               invoice.pdf
@@ -47,7 +47,7 @@
           </p>
           <div class="d-flex align-center">
             <v-avatar size="26">
-              <v-img src="/images/avatars/1.png"></v-img>
+              <v-img src="@/assets/images/avatars/1.png"></v-img>
             </v-avatar>
             <h4 class="font-weight-semibold ms-3">
               John Doe (Client)

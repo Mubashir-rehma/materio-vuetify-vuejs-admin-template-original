@@ -196,7 +196,7 @@ export default {
       change: '+38%',
       chipText: 'Year of 2021',
       chipColor: 'primary',
-      avatar: '/images/avatars/9.png',
+      avatar: require('@/assets/images/avatars/9.png'),
       avatarWidth: '111',
     }
     const sessionsOptions = {
@@ -205,7 +205,7 @@ export default {
       change: '-22%',
       chipText: 'Last Week',
       chipColor: 'secondary',
-      avatar: '/images/avatars/10.png',
+      avatar: require('@/assets/images/avatars/10.png'),
       avatarWidth: '86',
     }
 

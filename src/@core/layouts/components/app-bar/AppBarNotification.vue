@@ -112,7 +112,7 @@ export default {
     const notifications = [
       {
         user: {
-          avatar: '/images/avatars/4.png',
+          avatar: require('@/assets/images/avatars/4.png'),
           name: 'Flora Downey',
         },
         title: 'Congratulation John! 🎉 ',
@@ -130,7 +130,7 @@ export default {
       },
       {
         user: {
-          avatar: '/images/avatars/5.png',
+          avatar: require('@/assets/images/avatars/5.png'),
           name: 'Bertram Gilfoyle',
         },
         title: 'New message received',
@@ -139,7 +139,7 @@ export default {
       },
       {
         service: {
-          icon: '/images/svg/paypal.svg',
+          icon: require('@/assets/images/svg/paypal.svg'),
         },
         title: 'Paypal',
         subtitle: 'Received Payment',
@@ -147,7 +147,7 @@ export default {
       },
       {
         user: {
-          avatar: '/images/avatars/3.png',
+          avatar: require('@/assets/images/avatars/3.png'),
           name: 'John Smith',
         },
         title: 'Revised Order 📦',
@@ -156,7 +156,7 @@ export default {
       },
       {
         service: {
-          icon: '/images/svg/chart.svg',
+          icon: require('@/assets/images/svg/chart.svg'),
         },
         title: 'Finance report has been generated',
         subtitle: '25 hrs ago',

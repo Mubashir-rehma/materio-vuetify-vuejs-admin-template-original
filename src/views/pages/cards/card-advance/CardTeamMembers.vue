@@ -118,7 +118,7 @@ export default {
 
     const teamMembers = [
       {
-        avatar: '/images/avatars/1.png',
+        avatar: require('@/assets/images/avatars/1.png'),
         title: 'Dean Hogan',
         subtitle: 'iOS Developer',
         chipText: 'Zipcar',
@@ -128,7 +128,7 @@ export default {
         chartColor: '#9155fd',
       },
       {
-        avatar: '/images/avatars/8.png',
+        avatar: require('@/assets/images/avatars/8.png'),
         title: 'Hilda Rice',
         subtitle: 'iOS Developer',
         chipText: 'Brandi',
@@ -138,7 +138,7 @@ export default {
         chartColor: '#56ca00',
       },
       {
-        avatar: '/images/avatars/5.png',
+        avatar: require('@/assets/images/avatars/5.png'),
         title: 'Andrew Obrien',
         subtitle: 'iOS Developer',
         chipText: 'Payers',
@@ -148,7 +148,7 @@ export default {
         chartColor: '#ffb400',
       },
       {
-        avatar: '/images/avatars/2.png',
+        avatar: require('@/assets/images/avatars/2.png'),
         title: 'Eleanor Price',
         subtitle: 'iOS Developer',
         chipText: 'Bitbank',
@@ -158,7 +158,7 @@ export default {
         chartColor: '#ff4c51',
       },
       {
-        avatar: '/images/avatars/3.png',
+        avatar: require('@/assets/images/avatars/3.png'),
         title: 'Carl Oliver',
         subtitle: 'iOS Developer',
         chipText: 'Aviato',

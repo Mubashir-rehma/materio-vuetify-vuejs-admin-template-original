@@ -428,7 +428,8 @@ export default {
   .app-navigation-menu,
   .v-app-bar,
   .v-footer,
-  .app-invoice-preview.row .col-12:last-child {
+  .product-buy-now,
+  .app-invoice-preview.row .col-12:last-of-type {
     display: none !important;
   }
 

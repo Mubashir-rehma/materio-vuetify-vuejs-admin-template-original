@@ -438,7 +438,7 @@ export default {
       change: '+38%',
       chipText: 'Year of 2021',
       chipColor: 'primary',
-      avatar: '/images/avatars/9.png',
+      avatar: require('@/assets/images/avatars/9.png'),
       avatarWidth: '112',
     }
 
@@ -448,7 +448,7 @@ export default {
       change: '-22%',
       chipText: 'Last Week',
       chipColor: 'secondary',
-      avatar: '/images/avatars/10.png',
+      avatar: require('@/assets/images/avatars/10.png'),
       avatarWidth: '86',
     }
 
@@ -458,7 +458,7 @@ export default {
       change: '+59%',
       chipText: 'Daily Customers',
       chipColor: 'info',
-      avatar: '/images/avatars/11.png',
+      avatar: require('@/assets/images/avatars/11.png'),
       avatarWidth: '88',
     }
 
@@ -468,7 +468,7 @@ export default {
       change: '+26%',
       chipText: 'Last Month',
       chipColor: 'warning',
-      avatar: '/images/avatars/12.png',
+      avatar: require('@/assets/images/avatars/12.png'),
       avatarWidth: '73',
     }
 

@@ -337,12 +337,12 @@ export default {
 
     // Email To Option
     const emailToOptions = [
-      { avatar: '/images/avatars/1.png', name: 'Jane Foster', email: 'amiibi@he.zw' },
-      { avatar: '/images/avatars/3.png', name: 'Donna Frank', email: 'ocuejesov@riwwapop.ye' },
-      { avatar: '/images/avatars/5.png', name: 'Gabrielle Robertson', email: 'luutam@ho.gi' },
-      { avatar: '/images/avatars/7.png', name: 'Lori Spears', email: 'zicsanroc@erher.mc' },
-      { avatar: '/images/avatars/9.png', name: 'Sandy Vega', email: 'ibuam@cimenuze.to' },
-      { avatar: '/images/avatars/4.png', name: 'Cheryl May', email: 'kivcuci@kagwabum.tr' },
+      { avatar: require('@/assets/images/avatars/1.png'), name: 'Jane Foster', email: 'amiibi@he.zw' },
+      { avatar: require('@/assets/images/avatars/3.png'), name: 'Donna Frank', email: 'ocuejesov@riwwapop.ye' },
+      { avatar: require('@/assets/images/avatars/5.png'), name: 'Gabrielle Robertson', email: 'luutam@ho.gi' },
+      { avatar: require('@/assets/images/avatars/7.png'), name: 'Lori Spears', email: 'zicsanroc@erher.mc' },
+      { avatar: require('@/assets/images/avatars/2.png'), name: 'Sandy Vega', email: 'ibuam@cimenuze.to' },
+      { avatar: require('@/assets/images/avatars/4.png'), name: 'Cheryl May', email: 'kivcuci@kagwabum.tr' },
     ]
     const filterEmailToOptions = (item, queryText) => {
       const q = queryText.toLowerCase()

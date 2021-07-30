@@ -14,7 +14,7 @@
       </template>
 
       <v-avatar>
-        <v-img src="/images/avatars/1.png"></v-img>
+        <v-img src="@/assets/images/avatars/1.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -24,7 +24,7 @@
       overlap
     >
       <v-avatar>
-        <v-img src="/images/avatars/2.png"></v-img>
+        <v-img src="@/assets/images/avatars/2.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -35,7 +35,7 @@
       overlap
     >
       <v-avatar>
-        <v-img src="/images/avatars/3.png"></v-img>
+        <v-img src="@/assets/images/avatars/3.png"></v-img>
       </v-avatar>
     </v-badge>
   </div>

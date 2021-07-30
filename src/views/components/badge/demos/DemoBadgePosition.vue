@@ -8,7 +8,7 @@
         content="1"
       >
         <v-avatar>
-          <v-img src="/images/avatars/3.png"></v-img>
+          <v-img src="@/assets/images/avatars/3.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>
@@ -21,7 +21,7 @@
         :icon="icons.mdiBellOutline"
       >
         <v-avatar>
-          <v-img src="/images/avatars/5.png"></v-img>
+          <v-img src="@/assets/images/avatars/5.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>
@@ -33,7 +33,7 @@
         content="3"
       >
         <v-avatar>
-          <v-img src="/images/avatars/8.png"></v-img>
+          <v-img src="@/assets/images/avatars/8.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>
@@ -45,7 +45,7 @@
         content="5"
       >
         <v-avatar>
-          <v-img src="/images/avatars/4.png"></v-img>
+          <v-img src="@/assets/images/avatars/4.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>

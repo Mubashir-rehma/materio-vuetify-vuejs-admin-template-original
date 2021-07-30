@@ -29,7 +29,7 @@
           contain
           height="180"
           width="159"
-          :src="`/images/misc/triangle-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+          :src="require(`@/assets/images/misc/triangle-${$vuetify.theme.dark ? 'dark':'light'}.png`)"
           class="greeting-card-bg"
         ></v-img>
         <v-img
@@ -37,7 +37,7 @@
           height="108"
           max-width="83"
           class="greeting-card-trophy"
-          src="/images/misc/trophy.png"
+          src="@/assets/images/misc/trophy.png"
         ></v-img>
       </v-col>
     </v-row>

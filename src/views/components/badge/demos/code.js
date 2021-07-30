@@ -155,7 +155,7 @@ export const badgeStyle = `
       offset-y="12"
     >
       <v-avatar>
-        <v-img src="/images/avatars/8.png"></v-img>
+        <v-img src="@/assets/images/avatars/8.png"></v-img>
       </v-avatar>
     </v-badge>
   </div>
@@ -179,7 +179,7 @@ export const badgeType = `
       </template>
 
       <v-avatar>
-        <v-img src="/images/avatars/1.png"></v-img>
+        <v-img src="@/assets/images/avatars/1.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -189,7 +189,7 @@ export const badgeType = `
       overlap
     >
       <v-avatar>
-        <v-img src="/images/avatars/2.png"></v-img>
+        <v-img src="@/assets/images/avatars/2.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -200,7 +200,7 @@ export const badgeType = `
       overlap
     >
       <v-avatar>
-        <v-img src="/images/avatars/3.png"></v-img>
+        <v-img src="@/assets/images/avatars/3.png"></v-img>
       </v-avatar>
     </v-badge>
   </div>
@@ -235,7 +235,7 @@ export const badgeAvatarStatus = `
       bordered
     >
       <v-avatar large>
-        <v-img src="/images/avatars/7.png"></v-img>
+        <v-img src="@/assets/images/avatars/7.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -249,7 +249,7 @@ export const badgeAvatarStatus = `
       bordered
     >
       <v-avatar large>
-        <v-img src="/images/avatars/6.png"></v-img>
+        <v-img src="@/assets/images/avatars/6.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -263,7 +263,7 @@ export const badgeAvatarStatus = `
       bordered
     >
       <v-avatar large>
-        <v-img src="/images/avatars/5.png"></v-img>
+        <v-img src="@/assets/images/avatars/5.png"></v-img>
       </v-avatar>
     </v-badge>
   </div>
@@ -385,7 +385,7 @@ export const badgePosition = `
         content="1"
       >
         <v-avatar>
-          <v-img src="/images/avatars/3.png"></v-img>
+          <v-img src="@/assets/images/avatars/3.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>
@@ -398,7 +398,7 @@ export const badgePosition = `
         :icon="icons.mdiBellOutline"
       >
         <v-avatar>
-          <v-img src="/images/avatars/5.png"></v-img>
+          <v-img src="@/assets/images/avatars/5.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>
@@ -410,7 +410,7 @@ export const badgePosition = `
         content="3"
       >
         <v-avatar>
-          <v-img src="/images/avatars/8.png"></v-img>
+          <v-img src="@/assets/images/avatars/8.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>
@@ -422,7 +422,7 @@ export const badgePosition = `
         content="5"
       >
         <v-avatar>
-          <v-img src="/images/avatars/4.png"></v-img>
+          <v-img src="@/assets/images/avatars/4.png"></v-img>
         </v-avatar>
       </v-badge>
     </div>

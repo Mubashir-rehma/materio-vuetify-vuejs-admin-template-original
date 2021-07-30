@@ -18,7 +18,7 @@
               size="33"
               class="me-3"
             >
-              <v-img :src="`/images/icons/project-icons/${item.logo}`"></v-img>
+              <v-img :src="require(`@/assets/images/icons/project-icons/${item.logo}`)"></v-img>
             </v-avatar>
             <div class="text-no-wrap">
               <p class="font-weight-medium text--primary mb-n1">
@@ -89,7 +89,7 @@
                 size="40"
                 class="me-2"
               >
-                <v-img src="/images/avatars/2.png"></v-img>
+                <v-img src="@/assets/images/avatars/2.png"></v-img>
               </v-avatar>
               <div>
                 <p class="text--primary font-weight-medium mb-0">

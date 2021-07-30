@@ -25,7 +25,7 @@
                 <template v-slot:append>
                   <img
                     height="25"
-                    :src="`/images/logos/${cardDetail.cardImg}`"
+                    :src="require(`@/assets/images/logos/${cardDetail.cardImg}`)"
                     alt="card-logo"
                   />
                 </template>

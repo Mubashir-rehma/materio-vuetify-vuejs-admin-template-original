@@ -300,7 +300,7 @@
               contain
               height="278"
               max-width="250"
-              src="/images/3d-characters/pose-fs-9.png"
+              src="@/assets/images/3d-characters/pose-fs-9.png"
               class="pricing-trial-img mx-auto"
               alt="svg img"
             />
@@ -360,7 +360,7 @@ export default {
         currentPlan: true,
         popularPlan: false,
         subtitle: 'A simple start for everyone',
-        imgSrc: '/images/misc/pricing-tree-1.png',
+        imgSrc: require('@/assets/images/misc/pricing-tree-1.png'),
         yearlyPlan: {
           perMonth: 0,
           totalAnnual: 0,
@@ -379,7 +379,7 @@ export default {
         popularPlan: true,
         currentPlan: false,
         subtitle: 'For small to medium businesses',
-        imgSrc: '/images/misc/pricing-tree-2.png',
+        imgSrc: require('@/assets/images/misc/pricing-tree-2.png'),
         yearlyPlan: {
           perMonth: 40,
           totalAnnual: 480,
@@ -398,7 +398,7 @@ export default {
         currentPlan: false,
         title: 'Enterprise',
         subtitle: 'Solution for big organizations',
-        imgSrc: '/images/misc/pricing-tree-3.png',
+        imgSrc: require('@/assets/images/misc/pricing-tree-3.png'),
         yearlyPlan: {
           perMonth: 80,
           totalAnnual: 960,

@@ -10,7 +10,7 @@
       bordered
     >
       <v-avatar large>
-        <v-img src="/images/avatars/7.png"></v-img>
+        <v-img src="@/assets/images/avatars/7.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -24,7 +24,7 @@
       bordered
     >
       <v-avatar large>
-        <v-img src="/images/avatars/6.png"></v-img>
+        <v-img src="@/assets/images/avatars/6.png"></v-img>
       </v-avatar>
     </v-badge>
 
@@ -38,7 +38,7 @@
       bordered
     >
       <v-avatar large>
-        <v-img src="/images/avatars/5.png"></v-img>
+        <v-img src="@/assets/images/avatars/5.png"></v-img>
       </v-avatar>
     </v-badge>
   </div>

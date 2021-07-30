@@ -22,7 +22,7 @@
         <v-list-item>
           <v-list-item-avatar>
             <img
-              src="/images/avatars/1.png"
+              src="@/assets/images/avatars/1.png"
               alt="John"
             >
           </v-list-item-avatar>

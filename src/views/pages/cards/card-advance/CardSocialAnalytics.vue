@@ -51,25 +51,25 @@ export default {
   setup() {
     const socialAnalytics = [
       {
-        avatar: '/images/pages/heart-medical.png',
+        avatar: require('@/assets/images/pages/heart-medical.png'),
         color: 'primary',
         title: '42.8k',
         subtitle: 'Number of like',
       },
       {
-        avatar: '/images/pages/graph-bar.png',
+        avatar: require('@/assets/images/pages/graph-bar.png'),
         color: 'warning',
         title: '21.2k',
         subtitle: 'Number of Followers',
       },
       {
-        avatar: '/images/pages/comment-alt-lines.png',
+        avatar: require('@/assets/images/pages/comment-alt-lines.png'),
         color: 'info',
         title: '2.4k',
         subtitle: 'Number of Comments',
       },
       {
-        avatar: '/images/pages/user.png',
+        avatar: require('@/assets/images/pages/user.png'),
         color: 'success',
         title: '389.50k',
         subtitle: 'Number of Visits',

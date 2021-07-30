@@ -91,42 +91,42 @@ export default {
     const knowledgeBaseSearchQuery = ref('')
     const kbContentData = [
       {
-        character: '/images/3d-characters/pose-f-3.png',
+        character: require('@/assets/images/3d-characters/pose-f-3.png'),
         category: 'sales-automation',
         characterSize: '139',
         title: 'Sales Automation 👩🏻‍💻',
         desc: 'There is perhaps no better demonstration of the folly of image of our tiny world.',
       },
       {
-        character: '/images/3d-characters/pose-f-28.png',
+        character: require('@/assets/images/3d-characters/pose-f-28.png'),
         category: 'marketing-automation',
         characterSize: '188',
         title: 'Marketing Automation 🚀',
         desc: 'Look again at that dot. That’s here. That’s home. That’s us. On it everyone you love.',
       },
       {
-        character: '/images/3d-characters/pose-m-34.png',
+        character: require('@/assets/images/3d-characters/pose-m-34.png'),
         category: 'api-questions',
         characterSize: '126',
         title: 'API Questions 📱',
         desc: 'Every hero and coward, every creator and destroyer of civilization.',
       },
       {
-        character: '/images/3d-characters/pose-f-39.png',
+        character: require('@/assets/images/3d-characters/pose-f-39.png'),
         category: 'email-marketing',
         characterSize: '172',
         title: 'Email Marketing ✉️',
         desc: 'There is perhaps no better demonstration of the folly of human conceits.',
       },
       {
-        character: '/images/3d-characters/pose-m-14.png',
+        character: require('@/assets/images/3d-characters/pose-m-14.png'),
         category: 'personalization',
         characterSize: '163',
         title: 'Personalization 🤩',
         desc: 'It has been said that astronomy is a humbling and character experience.',
       },
       {
-        character: '/images/3d-characters/pose-m-5.png',
+        character: require('@/assets/images/3d-characters/pose-m-5.png'),
         category: 'demand-generation',
         characterSize: '156',
         title: 'Demand Generation 🤟🏻',

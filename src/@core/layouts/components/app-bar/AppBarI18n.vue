@@ -14,7 +14,7 @@
         v-on="on"
       >
         <v-img
-          :src="`/images/flags/${$i18n.locale}.png`"
+          :src="require(`@/assets/images/flags/${$i18n.locale}.png`)"
           :alt="$i18n.locale"
           height="14px"
           width="22px"
@@ -60,17 +60,17 @@ export default {
     const locales = [
       {
         title: 'English',
-        img: '/images/flags/en.png',
+        img: require('@/assets/images/flags/en.png'),
         locale: 'en',
       },
       {
         title: 'French',
-        img: '/images/flags/fr.png',
+        img: require('@/assets/images/flags/fr.png'),
         locale: 'fr',
       },
       {
         title: 'Arabic',
-        img: '/images/flags/ar.png',
+        img: require('@/assets/images/flags/ar.png'),
         locale: 'ar',
       },
     ]

@@ -21,7 +21,7 @@
           color="info"
           v-on="on"
         >
-          <v-img src="/images/avatars/4.png"></v-img>
+          <v-img src="@/assets/images/avatars/4.png"></v-img>
         </v-avatar>
       </template>
       <span>Tooltip on Avatar</span>

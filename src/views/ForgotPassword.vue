@@ -31,7 +31,7 @@
             <img
               height="362"
               class="auth-mask-bg"
-              :src="`/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+              :src="require(`@/assets/images/misc/mask-v2-${$vuetify.theme.dark ? 'dark':'light'}.png`)"
             />
 
             <!-- tree -->
@@ -39,7 +39,7 @@
               height="226"
               width="300"
               class="auth-tree"
-              src="/images/misc/tree-4.png"
+              src="@/assets/images/misc/tree-4.png"
             ></v-img>
 
             <!-- 3d character -->
@@ -49,7 +49,7 @@
                 max-width="100%"
                 height="692"
                 class="auth-3d-group"
-                :src="`/images/3d-characters/illustration-forgot-password-${$vuetify.theme.dark ? 'dark':'light'}.png`"
+                :src="require(`@/assets/images/3d-characters/illustration-forgot-password-${$vuetify.theme.dark ? 'dark':'light'}.png`)"
               ></v-img>
             </div>
           </div>

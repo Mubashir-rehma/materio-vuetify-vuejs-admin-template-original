@@ -44,4 +44,4 @@ Visit article on [updating the template](https://themeselection.com/demo/materio
 
 ## License Details
 
-For details about license please check the `LICENSE.MD` file in the root of the GitHub repository. You can also read more about licensing here: [https://store.vuetifyjs.com/licenses](https://store.vuetifyjs.com/licenses)
+For details about license please check the [`LICENSE.md`](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/blob/main/LICENSE.MD) file in the root of the GitHub repository. You can also read more about licensing here: [https://store.vuetifyjs.com/licenses](https://store.vuetifyjs.com/licenses)

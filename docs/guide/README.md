@@ -20,7 +20,7 @@ Next, certainly you want to create new pages and want to get started with your p
 
 For styling our new materio have managed to provide separate space for your style where you can write your own style and don't accidentally delete ours. Make sure to check out [Template Styles](/guide/development/template-styles.md) for it.
 
-In **Components** section we have provided docs for changes or extra features provided on top of existing BootstrapVue components.
+In **Components** section we have provided docs for changes or extra features provided on top of existing Vuetify components.
 
 In **Custom Components** section you will find custom components created by us.
 

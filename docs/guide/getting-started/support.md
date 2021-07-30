@@ -14,7 +14,7 @@ You can ask Vuetify framework related queries at their [discord server](https://
 
 Good candidates for framework support are:
 
-1. How to use x component (x means any BootstrapVue Component)
+1. How to use x component (x means any Vuetify Component)
 2. x component not working as expected
 
 ## Third Party Package Support

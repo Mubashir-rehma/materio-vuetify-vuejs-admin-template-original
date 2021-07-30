@@ -6,7 +6,7 @@ tagline: Production Ready, Carefully Crafted, Extensive Vuetifty Admin Template
 actionText: Get Started →
 actionLink: /guide/
 features:
-  - title: Based on BootstrapVue
+  - title: Based on Vuetify
     details: Vuetify is a Vue UI Library with beautifully handcrafted Material Components.
   - title: Composition API
     details: Composition API is a set of additive, function-based APIs that allow flexible composition of component logic.

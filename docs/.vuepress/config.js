@@ -1,5 +1,5 @@
 module.exports = {
-  base: process.env.NODE_ENV === 'production' ? '/demo/materio-vuetify-vuejs-admin-template/documentation' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/demo/materio-vuetify-vuejs-admin-template/documentation/' : '/',
   title: 'Materio',
   port: 7777,
   // head: [['link', { rel: 'icon', href: '/favicon.ico' }]],

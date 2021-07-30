@@ -189,7 +189,7 @@ Horizontal layout provides below slots/scoped-slots to render your custom conten
 
 ### navbar (scoped slot)
 
-Same as vertical layout. For rendering your own navbar content.
+Same as content layout. For rendering your own navbar content w/ vertical nav.
 
 <!-- prettier-ignore-start -->
 ```html{5-12}
@@ -244,12 +244,12 @@ _Result:_
 
 ### default slot
 
-_Same as vertical layout_
+_Same as content layout w/ vertical nav_
 
 ### footer slot
 
-_Same as vertical layout_
+_Same as content layout w/ vertical nav_
 
 ### v-app-content
 
-_Same as vertical layout_
+_Same as content layout w/ vertical nav_

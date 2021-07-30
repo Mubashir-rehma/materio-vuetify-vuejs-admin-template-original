@@ -1,30 +1,32 @@
 # Getting Support - WIP
 
-In this page you will find how to get support and how to raise perfect support ticket to resolve your issues quickly with minimum conversation. We value your time 🕝
+In this page you will find how to get support and how to raise perfect GitHub issue to resolve your issues quickly with minimum conversation. We value your time 🕝
 
-## Raising Support Ticket
+## Raising GitHub Issue
 
-Raising support ticket in support portal is as simple as commenting on post. However, If you want get your issues resolved quickly please follow below guide:
+Raising GitHub issue in GitHub is as simple as commenting on post. However, If you want get your issues resolved quickly please follow below guide:
 
 ### Finding existing solution
 
-There might be case that you issue is already resolved and you are the one who is facing due to some issue. So before creating new support ticket please search it in our [FAQ page](/faq/) where we listed most common questions/issues asked in our support portal.
+There might be case that you issue is already resolved and you are the one who is facing due to some issue. So before creating new GitHub issue please search it in our [FAQ page](/faq/) where we listed most common questions/issues asked in GitHub or you can search for the same in GitHub .
 
-### Ticket Type
+### Issue Type
 
-Add ticket type to your ticket title to let community understand what your ticket is about. This also helps to find related tickets using ticket type.
+Add issue type to your issue title to let community understand what your issue is about. This also help in finding related issues using issue type.
 
-So, your ticket till will be like `[question] how to change theme?`
+So, your issue shall be like `[question] how to change theme?`
 
-Some common ticket types are listed below:
+Some common issue types are listed below:
 
-- **question** - If you are asking question
-- **installation** - If you have anything related to installation
-- **auth** - If you have anything related to JWT or Auth
-- **acl** - If you have anything related to Access Control
-- **feat-req** - If you have any feature request for our template
-- **bug** - If you find any bug in template
-- **other** - if your ticket doesn't related to above mentioned ticket types
+| Type         | Description                                                  |
+| :----------- | :----------------------------------------------------------- |
+| question     | If you are asking question                                   |
+| installation | If you have anything related to installation                 |
+| auth         | If you have anything related to JWT or Auth                  |
+| acl          | If you have anything related to Access Control               |
+| feat         | If you have any feature request for our template             |
+| bug          | If you find any bug in template                              |
+| other        | if your issue doesn't related to above mentioned issue types |
 
 Good examples can be: 💯
 
@@ -36,17 +38,17 @@ Good examples can be: 💯
 - [acl] How to disable certain routes for some user
 - [auth] I get redirected to login page even after login on refresh
 
-### New Issue - New ticket
+### New Query - New Issue
 
-Following above suggestion, it will be good if you create another support ticket if you have any other question/issue which is not related to your current ticket.
+Following above suggestion, it will be good if you create another GitHub issue if you have any other question/issue which is not related to your current issue.
 
-Let's say you opened ticket for installation issue and want to ask about some component usage then it will be better to close installation ticket and open another ticket for that component to make support portal more accurate and easy find place.
+Let's say you opened issue for installation issue and want to ask about some component usage then it will be better to close installation issue and open another issue for that component to make GitHub issues more accurate and easy to find place.
 
 ### Template Version
 
 Mentioning which version of our template you are using will help us to answer more accurately and will mitigate one question from our side.
 
-Mentioning template version include if you are using Vue only, Vue + Laravel, Vue Starter-kit. Also, if you are using some other technology with our template then mention it will also help us in resolving issue quickly. [e.g. Vuexy Vue + Firebase]
+Mentioning template version include if you are using Vue full version or Vue Starter-kit. Also, if you are using some other technology with our template then mention it will also help us in resolving issue quickly. [e.g. Vuexy Vue + Firebase]
 
 Good examples can be: 💯
 
@@ -75,12 +77,12 @@ Never upload our package or modified version of our package on public sites wher
 
 ## Support Portal
 
-Once you have purchase our template, You can get support at our [support portal](https://pixinvent.ticksy.com/) by raising support ticket.
+Once you have purchase our template, You can get support at our [support portal](https://pixinvent.ticksy.com/) by raising GitHub issue.
 
-Please make sure to follow standards defined in [Raising Support Ticket](#raising-support-ticket) section.
+Please make sure to follow standards defined in [Raising GitHub Issue](#raising-support-ticket) section.
 
 ::: tip Don't want to waste time?
-Creating perfect support ticket (Following our Guide) will increase the chances of getting issue resolved with minimum conversation and time.
+Creating perfect GitHub issue (Following our Guide) will increase the chances of getting issue resolved with minimum conversation and time.
 :::
 
 ### Framework Support
@@ -96,4 +98,4 @@ Good candidates for framework support are:
 
 Same as framework support, if you have any query regarding how to use any provided package other than their UI you can ask it in their respective **Github** repo issue section.
 
-[Create Support Ticket](https://pixinvent.ticksy.com/)
+[Create GitHub Issue](https://pixinvent.ticksy.com/)

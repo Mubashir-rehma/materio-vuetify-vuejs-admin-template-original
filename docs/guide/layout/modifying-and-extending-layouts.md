@@ -26,7 +26,7 @@ Import blank layout from core layout and use it's default slot to render route u
 ```vue
 <template>
   <layout-blank>
-    <router-view />
+    <slot></slot>
   </layout-blank>
 </template>
 
@@ -55,7 +55,7 @@ Import content layout w/ vertical nav from core layouts and use it's default slo
 ```vue
 <template>
   <layout-content-vertical-nav :nav-menu-items="navMenuItems">
-    <router-view />
+    <slot></slot>
 
     <!-- Slot: Navbar -->
     <template #navbar>
@@ -93,7 +93,6 @@ export default {
   },
 }
 </script>
-
 ```
 <!-- prettier-ignore-end -->
 
@@ -112,7 +111,7 @@ Import content layout w/ horizontal nav from core layouts and use it's default s
     <!-- Slot: Navbar -->
     <template #navbar>
       <div class="navbar-content-container w-full">
-        <p class="mb-0">
+        <p class="px-1 mb-0">
           I am in navbar, Everything else is removed
         </p>
       </div>

@@ -10,17 +10,17 @@ module.exports = {
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
-      { text: 'Demo', link: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/' },
+      { text: 'Demo', link: 'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/demo-1/' },
       { text: 'Purchase', link: 'https://1.envato.market/vuexy_admin' },
     ],
     sidebar: {
       '/guide/': [
         ['', 'Welcome'],
-        // {
-        //   title: 'Getting Started',
-        //   collapsable: false,
-        //   children: ['/guide/getting-started/support', '/guide/getting-started/gitlab-access'],
-        // },
+        {
+          title: 'Getting Started',
+          collapsable: false,
+          children: ['/guide/getting-started/support', '/guide/getting-started/github-access'],
+        },
         {
           title: 'Development',
           collapsable: false,
@@ -43,8 +43,6 @@ module.exports = {
             '/guide/layout/layout-types',
             '/guide/layout/modifying-and-extending-layouts',
             '/guide/layout/core-layouts',
-            '/guide/layout/content-renderer',
-            '/guide/layout/page-layout-examples',
           ],
         },
         // {

@@ -1,0 +1,58 @@
+name: Deploy
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: ./scripts/gen-demos.sh
+      - name: Upload artifacts for deployment
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation-new
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+      - name: Upload dist content via scp
+        uses: appleboy/scp-action@master
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+        with:
+          source: dist/*
+          target: ${{ secrets.PROJECTDIR }}
+
+      - name: Replace old demos with new
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+          script: rm -rf ${{ secrets.PROJECTDIR }}/demo-* && mv ${{ secrets.PROJECTDIR }}/dist/* ${{ secrets.PROJECTDIR }} && rm -rf ${{ secrets.PROJECTDIR }}/dist

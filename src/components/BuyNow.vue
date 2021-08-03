@@ -16,6 +16,7 @@ export default {}
 
 <style lang="scss" scoped>
 .product-buy-now {
+  z-index: 4;
   bottom: 5%;
   right: 79px;
   position: fixed;

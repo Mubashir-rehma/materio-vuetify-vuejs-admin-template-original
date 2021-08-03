@@ -16,7 +16,7 @@ If you can't find your issue/problem/question listed here then you can [raise su
 
 Our base framework [Vuetify](https://vuetifyjs.com/) still in development for Vue 3 at the time of writing this FAQ. You can find roadmap in their [docs](https://vuetifyjs.com/en/introduction/roadmap/), please follow it for upcoming Vue 3 updates.
 
-As we also use third party libraries, till they provide support for vue 3 or till we find alternative libraries for them it is not advisable to use template with Vue 3.
+Once Vuetify 3 Titan will be stable we will start developing for Vue 3 + Vuetify 3 Titan support in Materio.
 
 However, we are providing Vue 3 Ready template (still using Vue 2 but with power of Vue 3 Composition API as plugin).
 

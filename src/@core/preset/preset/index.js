@@ -12,9 +12,9 @@ export default {
       ...themeConfig.themes,
     },
     dark:
-      localStorage.getItem('active-theme') === null
+      localStorage.getItem('materio-active-theme') === null
         ? themeConfig.app.isDark
-        : localStorage.getItem('active-theme') === 'dark',
+        : localStorage.getItem('materio-active-theme') === 'dark',
   },
   rtl: themeConfig.app.isRtl,
 }

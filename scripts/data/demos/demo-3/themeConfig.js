@@ -9,7 +9,7 @@ const themeConfig = {
     contentLayoutNav: 'vertical', // vertical, horizontal
     routeTransition: 'scroll-x-transition', // https://vuetifyjs.com/en/styles/transitions/#api
     // ! `semi-dark` isn't available for horizontal nav menu
-    skinVariant: 'bordered', // default, bordered, semi-dark
+    skinVariant: 'semi-dark', // default, bordered, semi-dark
     contentWidth: 'boxed',
   },
   menu: {

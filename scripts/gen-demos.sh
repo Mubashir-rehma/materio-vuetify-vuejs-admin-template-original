@@ -1,5 +1,3 @@
-NUM_OF_DEMOS=2
-
 # Backup themeConfig & vue.config.js
 mv themeConfig.js themeConfig.js.bak
 mv vue.config.js vue.config.js.bak

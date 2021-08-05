@@ -56,7 +56,7 @@ export default {
   },
   setup() {
     const $vuetify = getVuetify()
-    const customChartColor = '#f5f5f5'
+    const customChartColor = $vuetify.theme.isDark ? '#3b3559' : '#f5f5f5'
 
     const chartOptions = {
       colors: [

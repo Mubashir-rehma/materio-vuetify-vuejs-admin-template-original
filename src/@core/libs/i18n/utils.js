@@ -10,7 +10,7 @@ import { getCurrentInstance } from '@vue/composition-api'
 export const t = key => {
   const vm = getCurrentInstance().proxy
 
-  return vm.$t ? vm.$t(key) : key
+  return vm.$i18n && vm.$t ? vm.$t(key) : key
 }
 
 export const _ = null

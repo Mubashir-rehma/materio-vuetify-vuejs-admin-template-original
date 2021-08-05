@@ -216,15 +216,14 @@ export default {
 }
 
 .app-bar-autocomplete-box {
-  position: absolute;
+  position: absolute !important;
   width: 100%;
   top: 0;
   left: 0;
   height: 100%;
-  border-radius: 14px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  z-index: 6 !important;
+  border-radius: 14px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 
   .v-input__control {
     height: 100%;

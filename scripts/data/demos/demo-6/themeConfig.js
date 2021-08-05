@@ -4,7 +4,7 @@ const themeConfig = {
   app: {
     name: 'MATERIO',
     logo: require('@/assets/images/svg/logo.svg'),
-    isDark: false,
+    isDark: true,
     isRtl: false,
     contentLayoutNav: 'horizontal', // vertical, horizontal
     routeTransition: 'scroll-x-transition', // https://vuetifyjs.com/en/styles/transitions/#api

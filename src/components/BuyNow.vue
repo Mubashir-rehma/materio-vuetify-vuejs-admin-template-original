@@ -2,7 +2,7 @@
   <v-btn
     color="error"
     class="product-buy-now"
-    href="#"
+    :href="buyNowUrl"
     target="_blank"
     rel="nofollow"
   >
@@ -11,7 +11,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      buyNowUrl: this.$root.buyNowUrl || 'https://themeselection.com',
+    }
+  },
+  watch: {
+    buyNowUrl(val) {
+      this.$root.buyNowUrl = val
+    },
+  },
+  created() {
+    const { marketplace } = this.$route.query
+    if (marketplace === 'vuetify') this.buyNowUrl = 'https://store.vuetify.com'
+    if (marketplace === 'themeforest') this.buyNowUrl = 'https://themeforest.net'
+  },
+}
 </script>
 
 <style lang="scss" scoped>

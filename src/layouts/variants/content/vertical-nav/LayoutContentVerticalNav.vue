@@ -177,6 +177,10 @@ export default {
       background-color: transparent;
     }
 
+    > .d-flex > button.v-icon {
+      display: none;
+    }
+
     // ===
 
     & > .right-row {

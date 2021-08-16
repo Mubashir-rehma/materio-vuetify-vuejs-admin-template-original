@@ -7,7 +7,7 @@ export default [
   {
     title: 'Charts',
     icon: mdiChartDonut,
-    badge: '3',
+    badge: '2',
     badgeColor: 'error',
     children: [
       {

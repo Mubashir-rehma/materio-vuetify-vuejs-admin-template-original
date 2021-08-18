@@ -1,4 +1,3 @@
-// Axios Mock Adapter
 import '@/@fake-db/db'
 import { i18n } from '@/plugins/i18n'
 import '@/plugins/vue-composition-api'

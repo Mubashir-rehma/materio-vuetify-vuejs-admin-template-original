@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      buyNowUrl: this.$root.buyNowUrl || 'https://themeselection.com',
+      buyNowUrl: this.$root.buyNowUrl || 'https://themeselection.com/products/materio-vuetify-vuejs-admin-template',
     }
   },
   watch: {
@@ -24,8 +24,9 @@ export default {
   },
   created() {
     const { marketplace } = this.$route.query
-    if (marketplace === 'vuetify') this.buyNowUrl = 'https://store.vuetify.com'
-    if (marketplace === 'themeforest') this.buyNowUrl = 'https://themeforest.net'
+    if (marketplace === 'vuetify') {
+      this.buyNowUrl = 'https://store.vuetifyjs.com/products/materio-vuetify-vuejs-admin-template'
+    }
   },
 }
 </script>

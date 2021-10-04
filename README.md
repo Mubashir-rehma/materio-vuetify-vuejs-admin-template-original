@@ -36,7 +36,7 @@ Please read the [documentation](https://themeselection.com/demo/materio-vuetify-
 
 ## Support
 
-Visit [Getting Support](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.md) guide for getting support for materio admin.
+Visit [Getting Support](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html) guide for getting support for materio admin.
 
 ## Updating the template
 

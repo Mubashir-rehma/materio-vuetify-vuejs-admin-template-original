@@ -11,6 +11,7 @@ module.exports = {
         '@core': path.resolve(__dirname, 'src/@core'),
         '@axios': path.resolve(__dirname, 'src/plugins/axios.js'),
         '@user-variables': path.resolve(__dirname, 'src/styles/variables.scss'),
+        apexcharts: path.resolve(__dirname, 'node_modules/apexcharts-clevision'),
       },
     },
   },

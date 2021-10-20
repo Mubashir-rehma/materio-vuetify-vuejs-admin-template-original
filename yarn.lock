@@ -1829,9 +1829,10 @@ anymatch@^3.0.0, anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@vrushank/apexcharts.js:
-  version "3.26.3"
-  resolved "https://codeload.github.com/vrushank/apexcharts.js/tar.gz/71fb97f50717dd74f08539b15861e3e1350274ff"
+apexcharts-clevision@^3.28.3:
+  version "3.28.3"
+  resolved "https://registry.yarnpkg.com/apexcharts-clevision/-/apexcharts-clevision-3.28.3.tgz#b3fde6955423e9690d2f3f10f973cf6d20066963"
+  integrity sha512-8jUXJMxC5agfK9g9XK68cRlWDtTtzJvBvye+vu8bvKsLM5ZCBMAJ8Qp3jssGaPzlxU/QftStD0ObI3Kr6Kxg+g==
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"

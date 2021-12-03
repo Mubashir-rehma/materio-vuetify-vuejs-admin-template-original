@@ -49,6 +49,11 @@ module.exports = {
       },
     ],
 
+    'array-element-newline': ['error', 'consistent'],
+    'array-bracket-newline': ['error', 'consistent'],
+
+    'vue/multi-word-component-names': 'off',
+
     // Plugin: eslint-plugin-import
     'import/prefer-default-export': 'off',
 

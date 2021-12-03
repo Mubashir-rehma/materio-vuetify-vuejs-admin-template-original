@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+
 </script>
 
 <template>
-  <p>Home</p>
-  <Hello />
+  <p>Hello component</p>
 </template>
 
 <style lang="scss">

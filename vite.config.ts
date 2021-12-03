@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
 import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
@@ -13,6 +14,9 @@ export default defineConfig({
       nuxtStyle: true,
     }),
     Layouts(),
+    Components({
+      dts: true,
+    }),
   ],
   resolve: {
     alias: {

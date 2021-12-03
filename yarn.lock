@@ -3495,6 +3495,18 @@ unbox-primitive@^1.0.1:
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
 
+unplugin-auto-import@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/unplugin-auto-import/-/unplugin-auto-import-0.5.1.tgz#e1d4447c0da73b092cf73d9afac9c6e681715510"
+  integrity sha512-Q3CvNbCB7nLbu+JdrF6jYs0Nx7kHmV2KzDcZHzTrdri3EhU1lUOgto+ce+Jw01Ds7RxBi9lwWwF3QoFwFPul1A==
+  dependencies:
+    "@antfu/utils" "^0.3.0"
+    "@rollup/pluginutils" "^4.1.1"
+    local-pkg "^0.4.0"
+    magic-string "^0.25.7"
+    resolve "^1.20.0"
+    unplugin "^0.2.21"
+
 unplugin-vue-components@^0.17.2:
   version "0.17.2"
   resolved "https://registry.yarnpkg.com/unplugin-vue-components/-/unplugin-vue-components-0.17.2.tgz#db7e669fac3cc36b87ba056f63e2eaa47a7f1b9b"
@@ -3511,7 +3523,7 @@ unplugin-vue-components@^0.17.2:
     resolve "^1.20.0"
     unplugin "^0.2.13"
 
-unplugin@^0.2.13:
+unplugin@^0.2.13, unplugin@^0.2.21:
   version "0.2.21"
   resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-0.2.21.tgz#7852cddd9f78f0b32881812fd2efd5a39dcc64e5"
   integrity sha512-IJ15/L5XbhnV7J09Zjk0FT5HEkBjkXucWAXQWRsmEtUxmmxwh23yavrmDbCF6ZPxWiVB28+wnKIHePTRRpQPbQ==

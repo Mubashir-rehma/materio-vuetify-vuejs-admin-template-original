@@ -1,4 +1,5 @@
 import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
@@ -16,6 +17,13 @@ export default defineConfig({
     Layouts(),
     Components({
       dts: true,
+    }),
+    AutoImport({
+      imports: [
+        'vue',
+
+        // '@vueuse/core'
+      ],
     }),
   ],
   resolve: {

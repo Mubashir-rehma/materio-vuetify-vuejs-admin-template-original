@@ -1,0 +1,37 @@
+{
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // SCSS
+    "[scss]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    // JSON
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // Vue
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    },
+    // Extension: ESLint
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true,
+    },
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.packageManager": "yarn",
+    // Extension: Stylelint
+    "stylelint.packageManager": "yarn",
+    "stylelint.validate": [
+        "css",
+        "scss",
+        "vue"
+    ],
+    // Extension: Spell Checker
+    "cSpell.words": [
+        "stylelint"
+    ],
+}

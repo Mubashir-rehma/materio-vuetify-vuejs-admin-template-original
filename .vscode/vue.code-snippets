@@ -1,0 +1,20 @@
+{
+    "Vue SFC Typescript": {
+        "prefix": "vue-sfc-ts",
+        "body": [
+            "<script lang=\"ts\" setup>",
+            "",
+            "</script>",
+            "",
+            "<template>",
+            "  ",
+            "</template>",
+            "",
+            "<style lang=\"scss\">",
+            "",
+            "</style>",
+            ""
+        ],
+        "description": "Vue SFC Typescript"
+    }
+}

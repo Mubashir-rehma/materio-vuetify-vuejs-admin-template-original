@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-idiomatic-order"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "**/*.scss"
+            ],
+            "customSyntax": "postcss-scss"
+        },
+        {
+            "files": [
+                "**/*.vue"
+            ],
+            "customSyntax": "postcss-html"
+        }
+    ],
+    "rules": {
+        "max-line-length": [
+            120,
+            {
+                "ignore": "comments"
+            }
+        ]
+    }
+}

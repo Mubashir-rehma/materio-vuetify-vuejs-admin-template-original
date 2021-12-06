@@ -1,0 +1,147 @@
+@use "./placeholders";
+@use "./variables";
+
+.layout-horizontal-nav {
+  .nav-item-icon {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    &:hover > a {
+      @extend %horizontal-nav-item-hover-styles;
+    }
+
+    a {
+      @extend %horizontal-nav-item;
+    }
+
+    &.sub-item {
+      a {
+        &.router-link-active {
+          @extend %horizontal-nav-sub-nav-link-styles;
+        }
+      }
+    }
+
+    &:not(.sub-item) {
+      a {
+        @extend %horizontal-nav-items-roundness;
+
+        &.router-link-active {
+          @extend %nav-link-active-styles;
+        }
+      }
+    }
+  }
+
+  .nav-group {
+    .popper-triggerer {
+      .nav-group-label {
+        @extend %horizontal-nav-item;
+      }
+    }
+
+    // For indicating opened groups when navigating in group children
+    &:hover > .popper-triggerer > .nav-group-label {
+      @extend %horizontal-nav-item-hover-styles;
+    }
+
+    // 👉 Top level group
+    &:not(.sub-item) {
+      > .popper-triggerer {
+        position: relative;
+
+        /*
+          ℹ️ The Bridge
+          This after pseudo will work as bridge when we have space between popper triggerer and popper content
+          Initially it will have pointer events none for normal behavior and once the content is shown it will
+            work as bridge by setting pointer events to `auto`
+        */
+        &::after {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 20px;
+          content: "";
+          pointer-events: none;
+        }
+      }
+
+      // Enable the pseudo bridge when content is shown by setting pointer events to `auto`
+      &.show-content > .popper-triggerer::after {
+        pointer-events: auto;
+      }
+
+      > .popper-triggerer > .nav-group-label {
+        @extend %horizontal-nav-items-roundness;
+      }
+
+      &.active {
+        > .popper-triggerer > .nav-group-label {
+          @extend %nav-link-active-styles;
+        }
+      }
+
+      > .popper-content {
+        // ℹ️ Add space between popper wrapper & content
+        top: variables.$horizontal-nav-padding !important;
+      }
+    }
+
+    // 👉 Sub group
+    &.sub-item {
+      &.active {
+        > .popper-triggerer > .nav-group-label {
+          @extend %horizontal-nav-sub-nav-group-styles;
+        }
+      }
+    }
+
+    .nav-group-arrow {
+      /*
+        ℹ️ ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)
+        but we wrote generally because we don't want to become so specific
+      */
+      margin-left: auto;
+      font-size: 1.2rem;
+    }
+
+    &.right {
+      .nav-group-arrow {
+        transform: rotateZ(270deg);
+      }
+    }
+
+    .nav-item-title {
+      margin-right: 0.3rem;
+    }
+
+    .popper-content {
+      @extend %horizontal-nav-popper-content-initial-styles;
+
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px 3px rgb(0 0 0 / 10%);
+
+      // Set max-height for the popper content
+      > div {
+        // 120px is combined height of navbar & horizontal nav
+        max-height: calc((var(--vh, 1vh) * 100) - 120px - 4rem);
+      }
+    }
+
+    &.show-content > .popper-content {
+      @extend %horizontal-nav-popper-content-visible-styles;
+    }
+
+    // Set width of inner nav group and link
+    .nav-group,
+    .nav-link {
+      min-width: 12rem;
+    }
+  }
+}

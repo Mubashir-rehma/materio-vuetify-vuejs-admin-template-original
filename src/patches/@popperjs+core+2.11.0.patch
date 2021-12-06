@@ -1,0 +1,12 @@
+diff --git a/node_modules/@popperjs/core/package.json b/node_modules/@popperjs/core/package.json
+index df91f3d..9add2a1 100644
+--- a/node_modules/@popperjs/core/package.json
++++ b/node_modules/@popperjs/core/package.json
+@@ -26,6 +26,7 @@
+     "/dist",
+     "/lib"
+   ],
++  "type": "module",
+   "sideEffects": false,
+   "scripts": {
+     "clean": "rimraf lib && rimraf dist && rimraf test/visual/dist",

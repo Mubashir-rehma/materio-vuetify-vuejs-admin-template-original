@@ -1,9 +1,14 @@
 import { createPinia } from 'pinia'
+// Styles
+import 'uno.css'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import App from './App.vue'
+import './plugins/layouts'
+import './styles/master/index.scss'
+
 
 console.log('routes :>> ', routes)
 console.log('setupLayouts :>> ', setupLayouts(routes))

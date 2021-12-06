@@ -1,0 +1,200 @@
+@use "./placeholders";
+
+.layout-nav-type-vertical {
+  // 👉 Layout Vertical nav
+  .layout-vertical-nav {
+    background-color: #fff;
+
+    // 👉 Nav header
+    .nav-header {
+      overflow: hidden;
+
+      // 👉 Vertical nav header
+      padding: 1rem 1.3rem;
+
+      // TEMPLATE: Check if we need to move this to master
+      .app-logo {
+        flex-shrink: 0;
+        transition: transform 0.25s ease-in-out;
+      }
+
+      .app-title {
+        margin-left: 0.9rem;
+      }
+    }
+
+    // 👉 Nav section title
+    .nav-section-title {
+      @extend %nav-items-space;
+
+      opacity: 0.35;
+
+      &:not(:first-child) {
+        padding-top: 2rem;
+      }
+
+      .placeholder-icon {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+
+    // Nav item badge
+    .nav-item-badge {
+      display: inline-block;
+      padding: 0.35em 0.65em;
+      background-color: #9155fd;
+      border-radius: 1.5rem;
+      color: #fff;
+      font-size: 0.75em;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    // 👉 Nav group & Link
+    .nav-link,
+    .nav-group {
+      overflow: hidden;
+
+      // &.active {
+      //   > :first-child {
+      //     background-color: color.adjust(#fff, $lightness: -7%);
+      //   }
+      // }
+
+      // ❗ This is just for quick styling please do not use this in template style
+      // ℹ️ `active` class is added to li tag which is parent of `:first-child` and `router-link-active` class added to first child of li tag
+      // &:not(.active) {
+      //   > :first-child {
+      //     &:not(.router-link-active) {
+      //       &:hover {
+      //         background-color: color.adjust(#fff, $lightness: -3%);
+      //       }
+      //     }
+      //   }
+      // }
+
+      > :first-child {
+        @extend %nav-items-space;
+        @extend %nav-items-roundness;
+
+        // ❗ This is just for quick styling please do not use this in template style
+        transition: background-color 0.15s ease-in-out;
+        will-change: background-color;
+      }
+
+      .nav-item-icon {
+        @extend %vertical-nav-items-icon;
+      }
+    }
+
+    // 👉 Vertical nav link
+    .nav-link {
+      > .router-link-exact-active {
+        @extend %nav-link-active-styles;
+      }
+
+      > :not(.router-link-exact-active) {
+        &:hover {
+          @extend %nav-items-hover-styles;
+        }
+      }
+    }
+
+    // 👉 Nav group
+    .nav-group-arrow {
+      font-size: 1.5rem;
+    }
+
+    .nav-group {
+      // Reduce the size of icon if link/group is inside group
+      .nav-group,
+      .nav-link {
+        .nav-item-icon {
+          // ℹ️ ml will be normal icon font-size - small icon font-size / 2
+          margin-left: 0.3rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      > .nav-group-children {
+        transition: all 0.18s ease;
+      }
+
+      // Hide icons for 3rd level
+      & .nav-group {
+        .nav-link .nav-item-icon {
+          visibility: hidden;
+        }
+      }
+
+      .nav-group-arrow {
+        transform-origin: center;
+        transition: transform 0.15s ease-in-out;
+        will-change: transform;
+      }
+
+      // Rotate arrow icon if group is opened
+      &.open {
+        > .nav-group-label .nav-group-arrow {
+          transform: rotateZ(90deg);
+        }
+      }
+
+      > :first-child:hover {
+        @extend %nav-items-hover-styles;
+      }
+
+      &.active > :first-child {
+        @extend %nav-group-active-styles;
+      }
+    }
+  }
+
+  &.layout-vertical-nav-collapsed {
+    .layout-vertical-nav {
+      &:not(.hovered) {
+        .app-logo {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+}
+
+// 👉 Transitions
+.vertical-nav-section-title-enter-active,
+.vertical-nav-section-title-leave-active {
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.vertical-nav-section-title-enter-from,
+.vertical-nav-section-title-leave-to {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+.vertical-nav-item-enter-active,
+.vertical-nav-item-leave-active {
+  transition: opacity 0.1s ease-in-out, transform 0.12s ease-in-out;
+}
+
+.vertical-nav-item-enter-from,
+.vertical-nav-item-leave-to {
+  opacity: 0;
+  transform: translateX(-15px);
+}
+
+.vertical-nav-app-title-enter-active,
+.vertical-nav-app-title-leave-active {
+  transition: opacity 0.1s ease-in-out, transform 0.12s ease-in-out;
+}
+
+.vertical-nav-app-title-enter-from,
+.vertical-nav-app-title-leave-to {
+  opacity: 0;
+  transform: translateX(-15px);
+}

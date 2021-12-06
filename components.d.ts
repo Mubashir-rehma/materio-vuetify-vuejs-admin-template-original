@@ -4,7 +4,18 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    DefaultLayoutWithHorizontalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithHorizontalNav.vue')['default']
+    DefaultLayoutWithVerticalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithVerticalNav.vue')['default']
     Hello: typeof import('./src/components/Hello.vue')['default']
+    HorizontalNav: typeof import('./src/@core/layouts/components/HorizontalNav.vue')['default']
+    HorizontalNavGroup: typeof import('./src/@core/layouts/components/HorizontalNavGroup.vue')['default']
+    HorizontalNavLink: typeof import('./src/@core/layouts/components/HorizontalNavLink.vue')['default']
+    HorizontalNavPopper: typeof import('./src/@core/layouts/components/HorizontalNavPopper.vue')['default']
+    TheCustomizer: typeof import('./src/components/TheCustomizer.vue')['default']
+    VerticalNav: typeof import('./src/@core/layouts/components/VerticalNav.vue')['default']
+    VerticalNavGroup: typeof import('./src/@core/layouts/components/VerticalNavGroup.vue')['default']
+    VerticalNavLink: typeof import('./src/@core/layouts/components/VerticalNavLink.vue')['default']
+    VerticalNavSectionTitle: typeof import('./src/@core/layouts/components/VerticalNavSectionTitle.vue')['default']
   }
 }
 

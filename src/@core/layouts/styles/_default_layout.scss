@@ -1,0 +1,42 @@
+// These are styles which are both common in layout w/ vertical nav & horizontal nav
+@use "@layouts/styles/placeholders";
+
+.layout-wrapper {
+  display: flex;
+}
+
+.layout-navbar {
+  .layout-content-width-boxed & {
+    .navbar-content-container {
+      @extend %boxed-content;
+    }
+  }
+}
+
+.layout-page-content {
+  width: 100%;
+  flex-grow: 1;
+
+  .layout-content-width-boxed & {
+    @extend %boxed-content;
+  }
+}
+
+.layout-footer {
+  bottom: 0;
+
+  .layout-footer-sticky & {
+    position: sticky;
+    will-change: transform;
+  }
+
+  .layout-footer-hidden & {
+    display: none;
+  }
+
+  .layout-content-width-boxed & {
+    .footer-content-container {
+      @extend %boxed-content;
+    }
+  }
+}

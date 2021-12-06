@@ -1,0 +1,20 @@
+// placeholders
+@use "@configured-variables" as variables;
+
+%boxed-content {
+  max-width: variables.$layout-boxed-content-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%layout-navbar-hidden {
+  display: none;
+}
+
+// ℹ️ We created this placeholder even it is being used in just layout w/ vertical nav because in future we might apply style to both navbar & horizontal nav separately
+%layout-navbar-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+}

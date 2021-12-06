@@ -1,0 +1,19 @@
+// @use "@/styles/style.scss";
+
+// 👉 Vertical nav
+$layout-vertical-nav-z-index: 12 !default;
+$layout-vertical-nav-width: 260px !default;
+$layout-vertical-nav-collapsed-width: 80px !default;
+
+// 👉 Horizontal nav
+$layout-horizontal-nav-z-index: 11 !default;
+
+// 👉 Navbar
+$layout-vertical-nav-layout-navbar-z-index: 11 !default;
+$layout-horizontal-nav-layout-navbar-z-index: 11 !default;
+
+// 👉 Main content
+$layout-boxed-content-width: 1440px;
+
+// 👉 Layout overlay
+$layout-overlay-z-index: 11 !default;

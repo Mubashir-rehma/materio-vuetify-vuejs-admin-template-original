@@ -18,6 +18,7 @@ export interface Config {
     contentWidth: 'boxed' | 'fluid'
     contentLayoutNav: 'vertical' | 'horizontal'
     overlayNavFromBreakpoint: number
+    enableI18n: boolean
   }
   navbar: {
     type: 'sticky' | 'static' | 'hidden'
@@ -54,6 +55,7 @@ export const config = ref<Config>({
     contentWidth: 'boxed',
     contentLayoutNav: 'vertical',
     overlayNavFromBreakpoint: breakpointsVuetify.md,
+    enableI18n: true,
   },
   navbar: {
     type: 'sticky',

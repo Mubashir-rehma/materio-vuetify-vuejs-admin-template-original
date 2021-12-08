@@ -14,7 +14,7 @@ const props = defineProps<{
 
 const route = useRoute()
 const router = useRouter()
-const { isVerticalNavCollapsed, isVerticalNavMini } = useLayouts()
+const { isVerticalNavCollapsed, isVerticalNavMini, dynamicI18nProps } = useLayouts()
 const hideTitleAndBadge = isVerticalNavMini()
 
 // ℹ️ This will allow use to store temporary group state when menu is collapsed & not hovered
@@ -173,14 +173,24 @@ export default {
         class="nav-item-icon"
       />
       <transition-group name="vertical-nav-item">
-        <span v-show="!hideTitleAndBadge" key="title" class="nav-item-title">{{ item.title }}</span>
-        <span
+        <component
+          :is=" config.app.enableI18n ? 'i18n-t' : 'span'"
+          v-bind="dynamicI18nProps(item.title, 'span')"
+          v-show="!hideTitleAndBadge"
+          key="title"
+          class="nav-item-title"
+          v-text="item.title"
+        />
+        <component
+          :is="config.app.enableI18n ? 'i18n-t': 'span'"
+          v-bind="dynamicI18nProps(item.badgeContent, 'span')"
           v-show="!hideTitleAndBadge"
           v-if="item.badgeContent"
           key="badge"
           class="nav-item-badge"
           :class="item.badgeClass"
-        >{{ item.badgeContent }}</span>
+          v-text="item.badgeContent"
+        />
       </transition-group>
       <div class="nav-group-arrow" :class="config.icons.chevronRight" />
     </div>

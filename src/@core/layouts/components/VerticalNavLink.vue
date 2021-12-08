@@ -4,7 +4,7 @@ import { config } from '@layouts/config'
 import type { NavLink } from '@layouts/types'
 import { getComputedNavLinkToProp } from '@layouts/utils'
 
-const { isVerticalNavMini } = useLayouts()
+const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
 
 const hideTitleAndBadge = isVerticalNavMini()
 
@@ -24,14 +24,24 @@ defineProps<{
         class="nav-item-icon"
       />
       <transition-group name="vertical-nav-item">
-        <span v-show="!hideTitleAndBadge" key="title" class="nav-item-title">{{ item.title }}</span>
-        <span
+        <component
+          :is="config.app.enableI18n ? 'i18n-t': 'span'"
+          v-show="!hideTitleAndBadge"
+          key="title"
+          class="nav-item-title"
+          v-bind="dynamicI18nProps(item.title, 'span')"
+          v-text="item.title"
+        />
+        <component
+          :is="config.app.enableI18n ? 'i18n-t': 'span'"
           v-if="item.badgeContent"
           v-show="!hideTitleAndBadge"
           key="badge"
           class="nav-item-badge"
           :class="item.badgeClass"
-        >{{ item.badgeContent }}</span>
+          v-bind="dynamicI18nProps(item.badgeContent, 'span')"
+          v-text="item.badgeContent"
+        />
       </transition-group>
     </component>
   </li>

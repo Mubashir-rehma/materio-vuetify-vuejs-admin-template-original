@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useLayouts } from '@layouts'
 import { HorizontalNavLink, HorizontalNavPopper } from '@layouts/components'
 import { config } from '@layouts/config'
 import type { NavGroup } from '@layouts/types'
@@ -19,6 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const route = useRoute()
 const router = useRouter()
+const { dynamicI18nProps } = useLayouts()
 
 const isGroupActive = ref(false)
 
@@ -46,7 +48,12 @@ export default {
         :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <span class="nav-item-title">{{ item.title }}</span>
+      <component
+        :is="config.app.enableI18n ? 'i18n-t': 'span'"
+        v-bind="dynamicI18nProps(item.title, 'span')"
+        class="nav-item-title"
+        v-text="item.title"
+      />
       <div class="nav-group-arrow" :class="config.icons.chevronDown" />
     </div>
 

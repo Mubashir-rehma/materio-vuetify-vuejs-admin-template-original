@@ -83,6 +83,15 @@ export const useLayouts = () => {
     return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value)
   }
 
+  const dynamicI18nProps = computed(() => (key: string, tag = 'span') => {
+    const isI18nEnabled = config.value.app.enableI18n
+
+    return {
+      keypath: isI18nEnabled ? key : null,
+      tag: isI18nEnabled ? tag : null,
+    }
+  })
+
   return {
     navbarType,
     footerType,
@@ -93,5 +102,6 @@ export const useLayouts = () => {
     isLessThanOverlayNavBreakpoint,
     _layoutClasses,
     isVerticalNavMini,
+    dynamicI18nProps,
   }
 }

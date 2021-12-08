@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useLayouts } from '@layouts'
 import { config } from '@layouts/config'
 import type { NavLink } from '@layouts/types'
 import { getComputedNavLinkToProp } from '@layouts/utils'
@@ -13,6 +14,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   isSubItem: false,
 })
+
+const { dynamicI18nProps } = useLayouts()
 </script>
 
 <template>
@@ -25,7 +28,12 @@ const props = withDefaults(defineProps<Props>(), {
         :class="item.icon || config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <span class="nav-item-title">{{ item.title }}</span>
+      <component
+        :is="config.app.enableI18n ? 'i18n-t': 'span'"
+        class="nav-item-title"
+        v-bind="dynamicI18nProps(item.title, 'span')"
+        v-text="item.title"
+      />
     </component>
   </li>
 </template>

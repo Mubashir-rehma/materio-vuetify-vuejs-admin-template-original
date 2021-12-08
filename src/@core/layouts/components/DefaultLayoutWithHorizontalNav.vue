@@ -53,11 +53,10 @@ defineProps<{
 @use "@layouts/styles/placeholders";
 
 .layout-wrapper {
-  flex-direction: column;
-
   &.layout-nav-type-horizontal {
     // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
     min-height: 100%;
+    flex-direction: column;
   }
 
   // If both navbar & horizontal nav sticky

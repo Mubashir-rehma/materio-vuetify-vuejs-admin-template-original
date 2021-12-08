@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
+import type { VerticalNavItems } from '@layouts/types'
 
 const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint } = useLayouts()
 const { width: windowWidth } = useWindowSize()
@@ -29,7 +30,7 @@ watch(windowWidth, value => {
 })
 
 defineProps<{
-  navItems: NavItems
+  navItems: VerticalNavItems
 }>()
 </script>
 

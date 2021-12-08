@@ -23,10 +23,9 @@
 }
 
 .layout-footer {
-  bottom: 0;
-
   .layout-footer-sticky & {
     position: sticky;
+    bottom: 0;
     will-change: transform;
   }
 

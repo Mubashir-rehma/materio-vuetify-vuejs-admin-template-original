@@ -21,6 +21,12 @@
       "@layouts": [
         "src/@core/layouts"
       ],
+      "@core/*": [
+        "src/@core/*"
+      ],
+      "@core": [
+        "src/@core"
+      ],
     },
     "lib": [
       "esnext",

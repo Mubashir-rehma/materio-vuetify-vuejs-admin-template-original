@@ -6,12 +6,10 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import App from './App.vue'
+import i18n from './plugins/i18n'
 import './plugins/layouts'
 import './styles/master/index.scss'
 
-
-console.log('routes :>> ', routes)
-console.log('setupLayouts :>> ', setupLayouts(routes))
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,5 +20,5 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
+app.use(i18n)
 app.mount('#app')

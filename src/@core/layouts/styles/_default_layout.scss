@@ -1,6 +1,11 @@
 // These are styles which are both common in layout w/ vertical nav & horizontal nav
 @use "@layouts/styles/placeholders";
 
+html,
+body {
+  min-height: 100%;
+}
+
 .layout-wrapper {
   display: flex;
 }

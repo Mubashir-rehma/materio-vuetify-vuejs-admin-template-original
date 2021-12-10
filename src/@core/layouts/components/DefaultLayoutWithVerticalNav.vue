@@ -97,7 +97,7 @@ defineProps<{
 
   .layout-content-wrapper {
     display: flex;
-    overflow: auto;
+    min-height: calc(var(--vh, 1vh) * 100);
     flex-direction: column;
     flex-grow: 1;
     transition: padding-left 0.2s ease-in-out;

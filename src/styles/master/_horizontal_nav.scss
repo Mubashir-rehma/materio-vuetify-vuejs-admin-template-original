@@ -1,5 +1,6 @@
 @use "./placeholders";
 @use "./variables";
+@use "@layouts/styles/mixins";
 
 .layout-horizontal-nav {
   .nav-item-icon {
@@ -113,8 +114,7 @@
       .nav-group-arrow {
         transform: rotateZ(270deg);
 
-        // RTL Style
-        [dir="rtl"] & {
+        @include mixins.rtl {
           transform: rotateZ(90deg);
         }
       }

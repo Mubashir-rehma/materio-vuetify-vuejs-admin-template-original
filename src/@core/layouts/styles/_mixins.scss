@@ -1,0 +1,9 @@
+@use "./variables";
+
+@mixin rtl {
+    @if variables.$enable-rtl-styles {
+        [dir="rtl"] & {
+            @content;
+        }
+    }
+}

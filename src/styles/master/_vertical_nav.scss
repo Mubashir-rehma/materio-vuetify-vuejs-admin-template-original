@@ -1,4 +1,5 @@
 @use "./placeholders";
+@use "@layouts/styles/mixins";
 
 .layout-nav-type-vertical {
   // 👉 Layout Vertical nav
@@ -160,7 +161,7 @@
         .app-logo {
           transform: translateX(4px);
 
-          [dir="rtl"] & {
+          @include mixins.rtl {
             transform: translateX(-4px);
           }
         }
@@ -180,7 +181,7 @@
   opacity: 0;
   transform: translateX(15px);
 
-  [dir="rtl"] & {
+  @include mixins.rtl {
     transform: translateX(-15px);
   }
 }
@@ -195,7 +196,7 @@
   opacity: 0;
   transform: translateX(-15px);
 
-  [dir="rtl"] & {
+  @include mixins.rtl {
     transform: translateX(15px);
   }
 }
@@ -210,7 +211,7 @@
   opacity: 0;
   transform: translateX(-15px);
 
-  [dir="rtl"] & {
+  @include mixins.rtl {
     transform: translateX(15px);
   }
 }

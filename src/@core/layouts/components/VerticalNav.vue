@@ -87,6 +87,7 @@ defineProps<{
 
 <style lang="scss">
 @use "@configured-variables" as variables;
+@use "@layouts/styles/mixins";
 
 // 👉 Vertical Nav
 .layout-vertical-nav {
@@ -139,7 +140,7 @@ defineProps<{
     &:not(.visible) {
       transform: translateX(-#{variables.$layout-vertical-nav-width});
 
-      [dir="rtl"] & {
+      @include mixins.rtl {
         transform: translateX(variables.$layout-vertical-nav-width);
       }
     }

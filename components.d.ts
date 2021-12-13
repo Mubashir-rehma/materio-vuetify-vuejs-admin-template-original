@@ -6,7 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     DefaultLayoutWithHorizontalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithHorizontalNav.vue')['default']
     DefaultLayoutWithVerticalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithVerticalNav.vue')['default']
-    Hello: typeof import('./src/components/Hello.vue')['default']
     HorizontalNav: typeof import('./src/@core/layouts/components/HorizontalNav.vue')['default']
     HorizontalNavGroup: typeof import('./src/@core/layouts/components/HorizontalNavGroup.vue')['default']
     HorizontalNavLink: typeof import('./src/@core/layouts/components/HorizontalNavLink.vue')['default']

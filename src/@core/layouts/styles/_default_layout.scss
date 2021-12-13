@@ -1,9 +1,10 @@
 // These are styles which are both common in layout w/ vertical nav & horizontal nav
+@use "@layouts/styles/rtl";
 @use "@layouts/styles/placeholders";
 
 html,
 body {
-  min-height: 100%;
+  min-block-size: 100%;
 }
 
 .layout-wrapper {
@@ -19,8 +20,8 @@ body {
 }
 
 .layout-page-content {
-  width: 100%;
   flex-grow: 1;
+  inline-size: 100%;
 
   .layout-content-width-boxed & {
     @extend %boxed-content;
@@ -30,7 +31,7 @@ body {
 .layout-footer {
   .layout-footer-sticky & {
     position: sticky;
-    bottom: 0;
+    inset-block-end: 0;
     will-change: transform;
   }
 

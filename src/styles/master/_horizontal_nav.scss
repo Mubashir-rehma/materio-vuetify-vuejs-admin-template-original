@@ -3,8 +3,8 @@
 
 .layout-horizontal-nav {
   .nav-item-icon {
-    margin-right: 0.75rem;
     font-size: 1.2rem;
+    margin-inline-end: 0.75rem;
   }
 
   .nav-link {
@@ -60,11 +60,11 @@
         */
         &::after {
           position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          height: 20px;
+          block-size: 20px;
           content: "";
+          inline-size: 100%;
+          inset-block-start: 100%;
+          inset-inline-start: 0;
           pointer-events: none;
         }
       }
@@ -86,7 +86,7 @@
 
       > .popper-content {
         // ℹ️ Add space between popper wrapper & content
-        top: variables.$horizontal-nav-padding !important;
+        inset-block-start: variables.$horizontal-nav-padding !important;
       }
     }
 
@@ -100,37 +100,42 @@
     }
 
     .nav-group-arrow {
+      font-size: 1.2rem;
+
       /*
         ℹ️ ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)
         but we wrote generally because we don't want to become so specific
       */
-      margin-left: auto;
-      font-size: 1.2rem;
+      margin-inline-start: auto;
     }
 
-    &.right {
+    &.popper-inline-end {
       .nav-group-arrow {
         transform: rotateZ(270deg);
+
+        // RTL Style
+        [dir="rtl"] & {
+          transform: rotateZ(90deg);
+        }
       }
     }
 
     .nav-item-title {
-      margin-right: 0.3rem;
+      margin-inline-end: 0.3rem;
     }
 
     .popper-content {
       @extend %horizontal-nav-popper-content-initial-styles;
 
-      padding-top: 0.3rem;
-      padding-bottom: 0.3rem;
       background-color: white;
       border-radius: 6px;
       box-shadow: 0 2px 5px 3px rgb(0 0 0 / 10%);
+      padding-block: 0.3rem;
 
       // Set max-height for the popper content
       > div {
         // 120px is combined height of navbar & horizontal nav
-        max-height: calc((var(--vh, 1vh) * 100) - 120px - 4rem);
+        max-block-size: calc((var(--vh, 1vh) * 100) - 120px - 4rem);
       }
     }
 
@@ -141,7 +146,7 @@
     // Set width of inner nav group and link
     .nav-group,
     .nav-link {
-      min-width: 12rem;
+      min-inline-size: 12rem;
     }
   }
 }

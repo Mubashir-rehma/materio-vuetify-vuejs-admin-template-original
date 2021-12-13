@@ -34,4 +34,24 @@
     "cSpell.words": [
         "stylelint"
     ],
+    // Extension: fabiospampinato.vscode-highlight
+    "highlight.regexFlags": "gi",
+    "highlight.regexes": {
+        "(translate|margin:|padding:|margin-left|margin-right|rotate|text-align|border-top|border-right|border-bottom|border-left|float|background-position|transform|width|height|top|left|bottom|right|float|clear)": [
+            {
+                // "rangeBehavior": 1,
+                "borderWidth": "1px",
+                "borderColor": "tomato",
+                "borderStyle": "solid"
+            }
+        ],
+        "(overflow-x:|overflow-y:)": [
+            {
+                // "rangeBehavior": 1,
+                "borderWidth": "1px",
+                "borderColor": "green",
+                "borderStyle": "solid"
+            }
+        ]
+    }
 }

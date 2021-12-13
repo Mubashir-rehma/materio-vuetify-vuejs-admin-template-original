@@ -19,6 +19,7 @@ export interface Config {
     contentLayoutNav: 'vertical' | 'horizontal'
     overlayNavFromBreakpoint: number
     enableI18n: boolean
+    isRtl: boolean
   }
   navbar: {
     type: 'sticky' | 'static' | 'hidden'
@@ -56,6 +57,7 @@ export const config = ref<Config>({
     contentLayoutNav: 'vertical',
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
+    isRtl: true,
   },
   navbar: {
     type: 'sticky',

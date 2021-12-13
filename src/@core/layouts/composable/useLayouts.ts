@@ -13,6 +13,10 @@ export const useLayouts = () => {
     },
   })
 
+  const _setAppDir = (dir: 'ltr' | 'rtl') => {
+    document.documentElement.setAttribute('dir', dir)
+  }
+
   const footerType = computed({
     get() {
       return config.value.footer.type
@@ -92,6 +96,16 @@ export const useLayouts = () => {
     }
   })
 
+  const isAppRtl = computed({
+    get() {
+      return config.value.app.isRtl
+    },
+    set(value: typeof config.value.app.isRtl) {
+      config.value.app.isRtl = value
+      _setAppDir(value ? 'rtl' : 'ltr')
+    },
+  })
+
   return {
     navbarType,
     footerType,
@@ -103,5 +117,7 @@ export const useLayouts = () => {
     _layoutClasses,
     isVerticalNavMini,
     dynamicI18nProps,
+    isAppRtl,
+    _setAppDir,
   }
 }

@@ -54,17 +54,17 @@ defineProps<{
 
 .layout-wrapper {
   &.layout-nav-type-horizontal {
+    flex-direction: column;
     // // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
     // min-height: 100%;
-    min-height: calc(var(--vh, 1vh) * 100);
-    flex-direction: column;
+    min-block-size: calc(var(--vh, 1vh) * 100);
   }
 
   // If both navbar & horizontal nav sticky
   &.layout-navbar-sticky.horizontal-nav-sticky {
     .layout-navbar-and-nav-container {
       position: sticky;
-      top: 0;
+      inset-block-start: 0;
       will-change: transform;
     }
   }

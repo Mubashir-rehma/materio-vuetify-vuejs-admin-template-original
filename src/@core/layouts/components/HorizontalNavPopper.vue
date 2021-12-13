@@ -3,15 +3,17 @@ import type { Instance } from '@popperjs/core'
 import { createPopper } from '@popperjs/core'
 
 interface Props {
-  right?: boolean
+  popperInlineEnd?: boolean
   tag?: string
   contentContainerTag?: string
+  isRtl?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  right: false,
+  popperInlineEnd: false,
   tag: 'div',
   contentContainerTag: 'div',
+  isRTL: false,
 })
 
 const refPopperContainer = ref<HTMLElement>()
@@ -21,7 +23,7 @@ let popperIns: Instance = null
 
 onMounted(() => {
   popperIns = createPopper(refPopperContainer.value, refPopper.value, {
-    placement: props.right ? 'right-start' : 'bottom-start',
+    placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : (props.isRtl ? 'bottom-end' : 'bottom-start'),
     modifiers: [
       {
         name: 'preventOverflow',
@@ -60,7 +62,7 @@ const hideContent = () => {
 </script>
 
 <template>
-  <div class="nav-popper" :class="[{'right': right}, {'show-content': isContentShown}]">
+  <div class="nav-popper" :class="[{'popper-inline-end': popperInlineEnd}, {'show-content': isContentShown}]">
     <div ref="refPopperContainer" class="popper-triggerer" @mouseenter="showContent" @mouseleave="hideContent">
       <slot />
     </div>

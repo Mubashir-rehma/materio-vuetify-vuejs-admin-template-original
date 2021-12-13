@@ -5,6 +5,7 @@
     "mgmcdermott.vscode-language-babel",
     "editorconfig.editorconfig",
     "xabikos.javascriptsnippets",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "fabiospampinato.vscode-highlight"
   ]
 }

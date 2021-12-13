@@ -3,6 +3,9 @@
         "stylelint-config-standard-scss",
         "stylelint-config-idiomatic-order"
     ],
+    "plugins": [
+        "stylelint-use-logical-spec"
+    ],
     "overrides": [
         {
             "files": [
@@ -23,6 +26,7 @@
             {
                 "ignore": "comments"
             }
-        ]
+        ],
+        "liberty/use-logical-spec": true
     }
 }

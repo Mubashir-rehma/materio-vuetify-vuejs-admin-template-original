@@ -7,14 +7,14 @@ import { isNavGroupActive } from '@layouts/utils'
 
 interface Props {
   item: NavGroup
-  childrenOnRight?: boolean
+  childrenAtEnd?: boolean
 
   // ℹ️ We haven't added this prop in vertical nav because we don't need such differentiation in vertical nav for styling
   isSubItem?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  childrenOnRight: false,
+  childrenAtEnd: false,
   isSubItem: false,
 })
 
@@ -42,7 +42,14 @@ export default {
 </script>
 
 <template>
-  <HorizontalNavPopper class="nav-group" tag="li" content-container-tag="ul" :class="[{ active: isGroupActive },{'children-on-right': childrenOnRight}, {'sub-item': isSubItem}]" :right="childrenOnRight">
+  <HorizontalNavPopper
+    :is-rtl="config.app.isRtl"
+    class="nav-group"
+    tag="li"
+    content-container-tag="ul"
+    :class="[{ active: isGroupActive },{'children-at-end': childrenAtEnd}, {'sub-item': isSubItem}]"
+    :popper-inline-end="childrenAtEnd"
+  >
     <div class="nav-group-label">
       <div
         :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
@@ -63,7 +70,7 @@ export default {
         v-for="child in item.children"
         :key="child.title"
         :item="child"
-        children-on-right
+        children-at-end
         is-sub-item
       />
     </template>

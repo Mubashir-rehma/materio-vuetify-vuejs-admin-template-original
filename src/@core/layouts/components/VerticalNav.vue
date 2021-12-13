@@ -2,7 +2,7 @@
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
 import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@layouts/components'
 import { config } from '@layouts/config'
-import type { NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
+import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
 
 const refNav = ref()
 
@@ -15,7 +15,7 @@ const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isV
 
 const hideTitleAndIcon = isVerticalNavMini(isHovered)
 
-const resolveNavItemComponent = (item: NavLink|NavSectionTitle) => {
+const resolveNavItemComponent = (item: NavLink|NavSectionTitle|NavGroup) => {
   if ('heading' in item) return VerticalNavSectionTitle
   if ('children' in item) return VerticalNavGroup
 
@@ -92,11 +92,11 @@ defineProps<{
 .layout-vertical-nav {
   position: fixed;
   z-index: variables.$layout-vertical-nav-z-index;
-  left: 0;
   display: flex;
-  width: variables.$layout-vertical-nav-width;
-  height: 100%;
   flex-direction: column;
+  block-size: 100%;
+  inline-size: variables.$layout-vertical-nav-width;
+  inset-inline-start: 0;
 
   // TODO: Improve this transition
   transition: all 0.25s ease-in-out;
@@ -113,7 +113,7 @@ defineProps<{
 
   // TODO: Check there is duplicated CSS in future
   .app-title {
-    margin-right: auto;
+    margin-inline-end: auto;
   }
 
   .nav-items {
@@ -124,13 +124,13 @@ defineProps<{
   }
 
   .nav-item-title {
-    margin-right: auto;
+    margin-inline-end: auto;
   }
 
   // 👉 Collapsed
   .layout-vertical-nav-collapsed & {
     &:not(.hovered) {
-      width: variables.$layout-vertical-nav-collapsed-width;
+      inline-size: variables.$layout-vertical-nav-collapsed-width;
     }
   }
 
@@ -138,6 +138,10 @@ defineProps<{
   &.overlay-nav {
     &:not(.visible) {
       transform: translateX(-#{variables.$layout-vertical-nav-width});
+
+      [dir="rtl"] & {
+        transform: translateX(variables.$layout-vertical-nav-width);
+      }
     }
   }
 }

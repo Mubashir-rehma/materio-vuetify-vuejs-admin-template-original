@@ -93,15 +93,15 @@ defineProps<{
 
 .layout-wrapper.layout-nav-type-vertical {
   // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
-  height: 100%;
+  block-size: 100%;
 
   .layout-content-wrapper {
     display: flex;
-    min-height: calc(var(--vh, 1vh) * 100);
     flex-direction: column;
     flex-grow: 1;
-    transition: padding-left 0.2s ease-in-out;
-    will-change: padding-left;
+    min-block-size: calc(var(--vh, 1vh) * 100);
+    transition: padding-inline-start 0.2s ease-in-out;
+    will-change: padding-inline-start;
   }
 
   .layout-navbar {
@@ -120,12 +120,9 @@ defineProps<{
   .layout-overlay {
     position: fixed;
     z-index: variables.$layout-overlay-z-index;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: rgb(0 0 0 / 60%);
     cursor: pointer;
+    inset: 0;
     opacity: 0;
     pointer-events: none;
 
@@ -140,12 +137,12 @@ defineProps<{
   }
 
   &:not(.layout-overlay-nav) .layout-content-wrapper {
-    padding-left: variables.$layout-vertical-nav-width;
+    padding-inline-start: variables.$layout-vertical-nav-width;
   }
 
   // Adjust right column pl when vertical nav is collapsed
   &.layout-vertical-nav-collapsed .layout-content-wrapper {
-    padding-left: variables.$layout-vertical-nav-collapsed-width;
+    padding-inline-start: variables.$layout-vertical-nav-collapsed-width;
   }
 }
 </style>

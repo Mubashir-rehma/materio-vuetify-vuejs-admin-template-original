@@ -7,7 +7,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import routes from '~pages'
 import App from './App.vue'
 import i18n from './plugins/i18n'
-import './plugins/layouts'
+import layoutsPlugin from './plugins/layouts'
 import './styles/master/index.scss'
 
 
@@ -20,5 +20,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(layoutsPlugin)
 app.use(i18n)
 app.mount('#app')

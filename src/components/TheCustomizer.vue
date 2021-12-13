@@ -4,7 +4,7 @@
 import { useLayouts } from '@layouts'
 
 const {
-  navbarType, footerType, isVerticalNavCollapsed, appContentWidth, appContentLayoutNav, horizontalNavType,
+  navbarType, footerType, isVerticalNavCollapsed, appContentWidth, appContentLayoutNav, horizontalNavType, isAppRtl,
 } = useLayouts()
 
 watch(navbarType, val => {
@@ -152,6 +152,33 @@ watch(navbarType, val => {
       value="horizontal"
     >
     <label for="default-horizontal">horizontal</label>
+  </div>
+
+  <br><br>
+
+  <!-- 👉 Default layout Nav -->
+  <h2 style=" display: inline-block;border-bottom: 1px solid rgb(204 204 204);">
+    Direction
+  </h2>
+  <div>
+    <input
+      id="direction-ltr"
+      v-model="isAppRtl"
+      type="radio"
+      name="direction"
+      :value="false"
+    >
+    <label for="direction-ltr">LTR</label>
+  </div>
+  <div>
+    <input
+      id="direction-rtl"
+      v-model="isAppRtl"
+      type="radio"
+      name="direction"
+      :value="true"
+    >
+    <label for="direction-rtl">RTL</label>
   </div>
 
   <br><br>

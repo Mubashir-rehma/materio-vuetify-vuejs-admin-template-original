@@ -19,7 +19,7 @@
       }
 
       .app-title {
-        margin-left: 0.9rem;
+        margin-inline-start: 0.9rem;
       }
     }
 
@@ -30,12 +30,11 @@
       opacity: 0.35;
 
       &:not(:first-child) {
-        padding-top: 2rem;
+        padding-block-start: 2rem;
       }
 
       .placeholder-icon {
-        margin-right: auto;
-        margin-left: auto;
+        margin-inline: auto;
       }
     }
 
@@ -114,9 +113,10 @@
       .nav-group,
       .nav-link {
         .nav-item-icon {
-          // ℹ️ ml will be normal icon font-size - small icon font-size / 2
-          margin-left: 0.3rem;
           font-size: 0.9rem;
+
+          // ℹ️ ml will be normal icon font-size - small icon font-size / 2
+          margin-inline-start: 0.3rem;
         }
       }
 
@@ -159,6 +159,10 @@
       &:not(.hovered) {
         .app-logo {
           transform: translateX(4px);
+
+          [dir="rtl"] & {
+            transform: translateX(-4px);
+          }
         }
       }
     }
@@ -175,6 +179,10 @@
 .vertical-nav-section-title-leave-to {
   opacity: 0;
   transform: translateX(15px);
+
+  [dir="rtl"] & {
+    transform: translateX(-15px);
+  }
 }
 
 .vertical-nav-item-enter-active,
@@ -186,6 +194,10 @@
 .vertical-nav-item-leave-to {
   opacity: 0;
   transform: translateX(-15px);
+
+  [dir="rtl"] & {
+    transform: translateX(15px);
+  }
 }
 
 .vertical-nav-app-title-enter-active,
@@ -197,4 +209,8 @@
 .vertical-nav-app-title-leave-to {
   opacity: 0;
   transform: translateX(-15px);
+
+  [dir="rtl"] & {
+    transform: translateX(15px);
+  }
 }

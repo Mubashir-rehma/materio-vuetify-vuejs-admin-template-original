@@ -8,6 +8,20 @@
     margin-inline-end: 0.75rem;
   }
 
+  // Disabled nav items
+  .nav-link,
+  .nav-group {
+    &.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    // Set width of inner nav group and link
+    &.sub-item {
+      min-inline-size: 12rem;
+    }
+  }
+
   .nav-link {
     &:hover > a {
       @extend %horizontal-nav-item-hover-styles;
@@ -141,12 +155,6 @@
 
     &.show-content > .popper-content {
       @extend %horizontal-nav-popper-content-visible-styles;
-    }
-
-    // Set width of inner nav group and link
-    .nav-group,
-    .nav-link {
-      min-inline-size: 12rem;
     }
   }
 }

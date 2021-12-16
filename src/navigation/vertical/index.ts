@@ -4,24 +4,24 @@ import type { VerticalNavItems } from '@layouts/types'
 export default [
   { heading: 'Dashboards' },
   {
-    title: 'Home', icon: 'i-mdi-home', to: 'index',
+    title: 'Home', icon: 'i-mdi-home', to: 'index', action: 'read', subject: 'Auth',
   },
   {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
     children: [
       {
-        title: 'Analytics', to: 'dashboards-analytics',
+        title: 'Analytics', to: 'dashboards-analytics', action: 'read', subject: 'Admin',
       },
       {
-        title: 'CRM', to: 'dashboards-crm',
+        title: 'CRM', to: 'dashboards-crm', action: 'read', subject: 'Auth',
       },
     ],
     badgeContent: '2',
   },
   { heading: 'Apps & Pages' },
   {
-    title: 'Calendar', icon: 'i-mdi-calendar-blank-outline', to: 'calendar',
+    title: 'Calendar', icon: 'i-mdi-calendar-blank-outline', to: 'calendar', action: 'read', subject: 'Auth',
   },
   {
     title: 'User',
@@ -38,6 +38,7 @@ export default [
   {
     title: 'Invoice',
     icon: 'i-mdi-currency-usd',
+
     children: [
       { title: 'List', to: 'invoice-list' },
       { title: 'Detail', to: 'invoice-detail' },
@@ -51,18 +52,18 @@ export default [
     children: [
       {
         title: 'Level 2.1',
-        to: 'other-nav-level-2.1',
+        to: null,
       },
       {
         title: 'Level 3',
         children: [
           {
             title: 'Level 3.1',
-            to: 'other-nav-level-3-nav-level-3.1',
+            to: null,
           },
           {
             title: 'Level 3.2',
-            to: 'other-nav-level-3-nav-level-3.2',
+            to: null,
           },
         ],
       },

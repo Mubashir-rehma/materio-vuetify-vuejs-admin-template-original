@@ -89,6 +89,11 @@
       .nav-item-icon {
         @extend %vertical-nav-items-icon;
       }
+
+      &.disabled {
+        opacity: 0.35;
+        pointer-events: none;
+      }
     }
 
     // 👉 Vertical nav link

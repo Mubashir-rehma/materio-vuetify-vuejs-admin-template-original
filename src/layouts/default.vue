@@ -4,6 +4,8 @@ import navItems from '@/navigation/vertical'
 import { useDynamicVhCssProperty, useLayouts } from '@layouts'
 import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWithHorizontalNav.vue'
 import DefaultLayoutWithVerticalNav from '@layouts/components/DefaultLayoutWithVerticalNav.vue'
+import { config } from '@layouts/config'
+const { width: windowWidth } = useWindowSize()
 
 // TODO: Use lazy imports
 // const DefaultLayoutWithHorizontalNav = () => import('@layouts/components').then(({ DefaultLayoutWithHorizontalNav: comp }) => comp)
@@ -19,7 +21,7 @@ const { appContentLayoutNav } = useLayouts()
       <!-- navbar -->
       <template #navbar="{ toggleVerticalOverlayNavActive }">
         <div style="display: flex; height: 100%; align-items: center;">
-          <button @click="toggleVerticalOverlayNavActive(true)">
+          <button v-if="windowWidth < config.app.overlayNavFromBreakpoint" @click="toggleVerticalOverlayNavActive(true)">
             Toggle
           </button>
           <span>Navbar Content..</span>

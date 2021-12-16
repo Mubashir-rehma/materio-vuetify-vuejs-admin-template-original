@@ -2,6 +2,7 @@
 import { useLayouts } from '@layouts'
 import { HorizontalNavLink, HorizontalNavPopper } from '@layouts/components'
 import { config } from '@layouts/config'
+import { canViewNavMenuGroup } from '@layouts/plugins/casl'
 import type { NavGroup } from '@layouts/types'
 import { isNavGroupActive } from '@layouts/utils'
 
@@ -43,11 +44,12 @@ export default {
 
 <template>
   <HorizontalNavPopper
+    v-if="canViewNavMenuGroup(item)"
     :is-rtl="config.app.isRtl"
     class="nav-group"
     tag="li"
     content-container-tag="ul"
-    :class="[{ active: isGroupActive },{'children-at-end': childrenAtEnd}, {'sub-item': isSubItem}]"
+    :class="[{ active: isGroupActive },{'children-at-end': childrenAtEnd}, {'sub-item': isSubItem}, {'disabled': item.disable}]"
     :popper-inline-end="childrenAtEnd"
   >
     <div class="nav-group-label">
@@ -80,11 +82,10 @@ export default {
 <style lang="scss">
 .layout-horizontal-nav {
   .nav-group {
-    cursor: pointer;
-
     .nav-group-label {
       display: flex;
       align-items: center;
+      cursor: pointer;
     }
 
     .popper-content {

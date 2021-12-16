@@ -1,10 +1,8 @@
 <script lang="ts" setup>
-
-// TODO: vue-router imports are auto imported already
-import { useRoute, useRouter } from 'vue-router'
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
 import { VerticalNavLink } from '@layouts/components'
 import { config } from '@layouts/config'
+import { canViewNavMenuGroup } from '@layouts/plugins/casl'
 import type { NavGroup } from '@layouts/types'
 import { isNavGroupActive, openGroups } from '@layouts/utils'
 
@@ -164,8 +162,9 @@ export default {
 
 <template>
   <li
+    v-if="canViewNavMenuGroup(item)"
     class="nav-group"
-    :class="[{ active: isGroupActive }, { open: isGroupOpen }]"
+    :class="[{ active: isGroupActive }, { open: isGroupOpen }, { 'disabled': item.disable }]"
   >
     <div class="nav-group-label" @click="isGroupOpen = !isGroupOpen">
       <div

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useLayouts } from '@layouts'
 import { config } from '@layouts/config'
+import { can } from '@layouts/plugins/casl'
 import type { NavLink } from '@layouts/types'
 import { getComputedNavLinkToProp } from '@layouts/utils'
 
@@ -14,7 +15,7 @@ defineProps<{
 </script>
 
 <template>
-  <li class="nav-link">
+  <li v-if="can(item.action, item.subject)" class="nav-link" :class="{ 'disabled': item.disable }">
     <component
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"

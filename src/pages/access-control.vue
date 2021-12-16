@@ -1,10 +1,10 @@
-<template>
-  <p>crm</p>
-</template>
-
 <script lang="ts" setup>
 
 </script>
+
+<template>
+  <p>Access control</p>
+</template>
 
 <style lang="scss">
 
@@ -13,5 +13,5 @@
 <route lang="yaml">
 meta:
   action: read
-  subject: Admin
+  subject: AclDemo
 </route>

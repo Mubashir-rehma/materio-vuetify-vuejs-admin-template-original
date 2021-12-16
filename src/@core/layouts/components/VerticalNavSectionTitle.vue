@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useLayouts } from '@layouts'
 import { config } from '@layouts/config'
+import { can } from '@layouts/plugins/casl'
 import type { NavSectionTitle } from '@layouts/types'
 
 const { isVerticalNavMini } = useLayouts()
@@ -13,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <li class="nav-section-title">
+  <li v-if="can(item.action, item.subject)" class="nav-section-title">
     <div class="title-wrapper">
       <transition name="vertical-nav-section-title" mode="out-in">
         <component

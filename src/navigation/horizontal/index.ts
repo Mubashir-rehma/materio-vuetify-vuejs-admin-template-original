@@ -3,25 +3,26 @@ import type { HorizontalNavItems } from '@layouts/types'
 
 export default [
   {
-    title: 'Home', to: 'index', icon: 'i-mdi-home-outline',
+    title: 'Home', to: 'index', icon: 'i-mdi-home-outline', action: 'read', subject: 'Auth',
   },
   {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
     children: [
       {
-        title: 'Analytics', to: 'dashboards-analytics', icon: 'i-mdi-analytics',
+        title: 'Analytics', to: 'dashboards-analytics', icon: 'i-mdi-analytics', action: 'read', subject: 'Admin',
       },
       {
-        title: 'CRM', to: 'dashboards-crm', icon: 'i-mdi-monitor-dashboard',
+        title: 'CRM', to: 'dashboards-crm', icon: 'i-mdi-monitor-dashboard', action: 'read', subject: 'Auth',
       },
     ],
   },
   {
     title: 'Apps & Pages',
     icon: 'i-mdi-package-variant',
+
     children: [
-      { title: 'Calendar', to: 'calendar', icon: 'i-mdi-calendar-blank' },
+      { title: 'Calendar', to: 'calendar', icon: 'i-mdi-calendar-blank', action: 'read', subject: 'Auth' },
       {
         title: 'User',
         icon: 'i-mdi-account-outline',
@@ -65,6 +66,7 @@ export default [
           },
           {
             title: 'Alert 4',
+
             children: [
               {
                 title: 'Admin',
@@ -170,18 +172,18 @@ export default [
         children: [
           {
             title: 'Level 2.1',
-            to: 'other-nav-level-2.1',
+            to: null,
           },
           {
             title: 'Level 3',
             children: [
               {
                 title: 'Level 3.1',
-                to: 'other-nav-level-3-nav-level-3.1',
+                to: null,
               },
               {
                 title: 'Level 3.2',
-                to: 'other-nav-level-3-nav-level-3.2',
+                to: null,
               },
             ],
           },

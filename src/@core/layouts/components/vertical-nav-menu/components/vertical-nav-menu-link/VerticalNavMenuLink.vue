@@ -73,5 +73,9 @@ export default {
     box-shadow: 0 5px 10px -4px rgba(94, 86, 105, 0.42);
     @include elevationTransition();
   }
+
+  .v-list-item__title {
+    z-index: 1;
+  }
 }
 </style>

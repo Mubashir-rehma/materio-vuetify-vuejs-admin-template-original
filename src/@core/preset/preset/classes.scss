@@ -100,6 +100,18 @@
         height: calc((var(--vh, 1vh) * 100) - 128px - (1.5rem * 2));
       }
     }
+    // If SystemBar & Footer are present & AppBar is not present
+    &[style='padding: 64px 0px 48px;'] {
+      .max-h-content-container {
+        height: calc((var(--vh, 1vh) * 100) - 64px - 48px - (1.5rem * 2));
+      }
+    }
+    // If SystemBar & Footer are not present & AppBar is present
+    &[style='padding: 64px 0px 0px;'] {
+      .max-h-content-container {
+        height: calc((var(--vh, 1vh) * 100) - 64px - (1.5rem * 2));
+      }
+    }
   }
 }
 // #endregion

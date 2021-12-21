@@ -1,0 +1,16 @@
+{
+    "Prettier ignore start": {
+        "prefix": "prettier-ignore-start",
+        "body": [
+            "<!-- prettier-ignore-start -->"
+        ],
+        "description": "Prettier ignore start"
+    },
+    "Prettier ignore end": {
+        "prefix": "prettier-ignore-end",
+        "body": [
+            "<!-- prettier-ignore-end -->"
+        ],
+        "description": "Prettier ignore end"
+    }
+}

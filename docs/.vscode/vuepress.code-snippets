@@ -1,0 +1,25 @@
+{
+    "Vuepress code group": {
+        "prefix": "code-group",
+        "body": [
+            "<code-group>",
+            "<code-block title=\"TS\">",
+            "",
+            "```ts",
+            "${1}",
+            "```",
+            "",
+            "</code-block>",
+            "",
+            "<code-block title=\"JS\">",
+            "",
+            "```js",
+            "",
+            "```",
+            "",
+            "</code-block>",
+            "</code-group>"
+        ],
+        "description": "Vuepress code group"
+    }
+}

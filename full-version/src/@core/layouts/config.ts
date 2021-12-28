@@ -1,52 +1,8 @@
 /* @unocss-include */
-import type { Breakpoints } from '@vueuse/core'
+import type { Config } from '@layouts/types'
 import { breakpointsVuetify } from '@vueuse/core'
 
-// TODO: Export this to def file and use it instead of string
-export const enum NavbarTypes {
-  Sticky = 'sticky',
-  Static = 'static',
-  Hidden = 'hidden'
-}
-
-// TODO: Export this from def file
 // TODO: Try to optimize this object so whole object is not reactive
-export interface Config {
-  app: {
-    title: string
-    logo: string
-    contentWidth: 'boxed' | 'fluid'
-    contentLayoutNav: 'vertical' | 'horizontal'
-    overlayNavFromBreakpoint: number
-    enableI18n: boolean
-    isRtl: boolean
-  }
-  navbar: {
-    type: 'sticky' | 'static' | 'hidden'
-  }
-  footer: {
-    type: 'sticky' | 'static' | 'hidden'
-  }
-  verticalNav: {
-    isVerticalNavCollapsed: boolean
-    defaultNavItemIconClass: string
-  }
-  horizontalNav: {
-    type: 'sticky' | 'static' | 'hidden'
-  }
-  icons: {
-    chevronDown: string
-    chevronRight: string
-    close: string
-    verticalNavPinned: string
-    verticalNavUnPinned: string
-    sectionTitlePlaceholder: string
-  }
-
-  // TODO: Check do we need this breakpoints config
-  breakpoints: Breakpoints
-}
-
 export const config = ref<Config>({
   app: {
     title: 'Sneat',

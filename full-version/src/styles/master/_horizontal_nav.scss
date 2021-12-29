@@ -101,7 +101,7 @@
 
       > .popper-content {
         // ℹ️ Add space between popper wrapper & content
-        inset-block-start: variables.$horizontal-nav-padding !important;
+        margin-block-start: variables.$horizontal-nav-padding !important;
       }
     }
 

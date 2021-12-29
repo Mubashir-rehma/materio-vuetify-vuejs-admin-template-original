@@ -75,6 +75,10 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['error'],
 
     '@typescript-eslint/consistent-type-imports': 'error',
+
+    // Plugin: eslint-plugin-promise
+    'promise/always-return': 'off',
+    'promise/catch-or-return': 'off',
   },
   settings: {
     // 'import/parsers': {

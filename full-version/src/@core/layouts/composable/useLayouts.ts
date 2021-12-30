@@ -3,13 +3,16 @@ import { config } from '@layouts/config'
 import type { MaybeRef } from '@vueuse/shared'
 import type { Ref } from 'vue'
 
+// TODO: Use config from this composition instead of getting it via config object
+// TODO: Check if we need useLayout?
+
 export const useLayouts = () => {
   const navbarType = computed({
     get() {
-      return config.value.navbar.type
+      return config.navbar.type.value
     },
-    set(value: typeof config.value.navbar.type) {
-      config.value.navbar.type = value
+    set(value: typeof config.navbar.type.value) {
+      config.navbar.type.value = value
     },
   })
 
@@ -19,51 +22,51 @@ export const useLayouts = () => {
 
   const footerType = computed({
     get() {
-      return config.value.footer.type
+      return config.footer.type.value
     },
-    set(value: typeof config.value.footer.type) {
-      config.value.footer.type = value
+    set(value: typeof config.footer.type.value) {
+      config.footer.type.value = value
     },
   })
 
   const isVerticalNavCollapsed = computed({
     get() {
-      return config.value.verticalNav.isVerticalNavCollapsed
+      return config.verticalNav.isVerticalNavCollapsed.value
     },
-    set(val: typeof config.value.verticalNav.isVerticalNavCollapsed) {
-      config.value.verticalNav.isVerticalNavCollapsed = val
+    set(val: typeof config.verticalNav.isVerticalNavCollapsed.value) {
+      config.verticalNav.isVerticalNavCollapsed.value = val
     },
   })
 
   const appContentWidth = computed({
     get() {
-      return config.value.app.contentWidth
+      return config.app.contentWidth.value
     },
-    set(val: typeof config.value.app.contentWidth) {
-      config.value.app.contentWidth = val
+    set(val: typeof config.app.contentWidth.value) {
+      config.app.contentWidth.value = val
     },
   })
 
   const appContentLayoutNav = computed({
     get() {
-      return config.value.app.contentLayoutNav
+      return config.app.contentLayoutNav.value
     },
-    set(val: typeof config.value.app.contentLayoutNav) {
-      config.value.app.contentLayoutNav = val
+    set(val: typeof config.app.contentLayoutNav.value) {
+      config.app.contentLayoutNav.value = val
     },
   })
 
   const horizontalNavType = computed({
     get() {
-      return config.value.horizontalNav.type
+      return config.horizontalNav.type.value
     },
-    set(value: typeof config.value.horizontalNav.type) {
-      config.value.horizontalNav.type = value
+    set(value: typeof config.horizontalNav.type.value) {
+      config.horizontalNav.type.value = value
     },
   })
 
   const isLessThanOverlayNavBreakpoint = computed(() => {
-    return (windowWidth: MaybeRef<number>) => unref(windowWidth) < config.value.app.overlayNavFromBreakpoint
+    return (windowWidth: MaybeRef<number>) => unref(windowWidth) < config.app.overlayNavFromBreakpoint
   })
 
   const _layoutClasses = computed(() => (windowWidth: MaybeRef<number>) => [
@@ -88,7 +91,7 @@ export const useLayouts = () => {
   }
 
   const dynamicI18nProps = computed(() => (key: string, tag = 'span') => {
-    const isI18nEnabled = config.value.app.enableI18n
+    const isI18nEnabled = config.app.enableI18n
 
     return {
       keypath: isI18nEnabled ? key : null,
@@ -98,10 +101,10 @@ export const useLayouts = () => {
 
   const isAppRtl = computed({
     get() {
-      return config.value.app.isRtl
+      return config.app.isRtl.value
     },
-    set(value: typeof config.value.app.isRtl) {
-      config.value.app.isRtl = value
+    set(value: typeof config.app.isRtl.value) {
+      config.app.isRtl.value = value
       _setAppDir(value ? 'rtl' : 'ltr')
     },
   })

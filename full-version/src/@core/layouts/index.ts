@@ -8,11 +8,11 @@ import { mergeConfig } from './utils'
 const { _setAppDir } = useLayouts()
 
 export const createLayouts = (userConfig?: PartialDeep<Config>): Plugin => {
-  mergeConfig(config.value, userConfig)
+  mergeConfig(config, userConfig)
 
   return (): void => {
     console.info('installing layouts...')
-    _setAppDir(config.value.app.isRtl ? 'rtl' : 'ltr')
+    _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }
 }
 

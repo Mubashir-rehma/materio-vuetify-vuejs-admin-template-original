@@ -3,28 +3,28 @@ import type { Config } from '@layouts/types'
 import { breakpointsVuetify } from '@vueuse/core'
 
 // TODO: Try to optimize this object so whole object is not reactive
-export const config = ref<Config>({
+export const config: Config = {
   app: {
     title: 'Sneat',
     logo: '/src/assets/logo.svg',
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
-    contentWidth: 'boxed',
-    contentLayoutNav: 'vertical',
+    contentWidth: ref('boxed'),
+    contentLayoutNav: ref('vertical'),
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
-    isRtl: false,
+    isRtl: ref(false),
   },
   navbar: {
-    type: 'sticky',
+    type: ref('sticky'),
   },
-  footer: { type: 'static' },
+  footer: { type: ref('static') },
   verticalNav: {
-    isVerticalNavCollapsed: false,
+    isVerticalNavCollapsed: ref(false),
     defaultNavItemIconClass: 'i-mdi-circle-outline',
   },
   horizontalNav: {
-    type: 'sticky',
+    type: ref('sticky'),
   },
   icons: {
     chevronDown: 'i-mdi-chevron-down',
@@ -35,4 +35,4 @@ export const config = ref<Config>({
     sectionTitlePlaceholder: 'i-mdi-minus',
   },
   breakpoints: breakpointsVuetify,
-})
+}

@@ -1,28 +1,29 @@
 import type { Breakpoints } from '@vueuse/core'
+import type { Ref } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 export interface Config {
   app: {
     title: string
     logo: string
-    contentWidth: 'boxed' | 'fluid'
-    contentLayoutNav: 'vertical' | 'horizontal'
+    contentWidth: Ref<'boxed' | 'fluid'>
+    contentLayoutNav: Ref<'vertical' | 'horizontal'>
     overlayNavFromBreakpoint: number
     enableI18n: boolean
-    isRtl: boolean
+    isRtl: Ref<boolean>
   }
   navbar: {
-    type: 'sticky' | 'static' | 'hidden'
+    type: Ref<'sticky' | 'static' | 'hidden'>
   }
   footer: {
-    type: 'sticky' | 'static' | 'hidden'
+    type: Ref<'sticky' | 'static' | 'hidden'>
   }
   verticalNav: {
-    isVerticalNavCollapsed: boolean
+    isVerticalNavCollapsed: Ref<boolean>
     defaultNavItemIconClass: string
   }
   horizontalNav: {
-    type: 'sticky' | 'static' | 'hidden'
+    type: Ref<'sticky' | 'static' | 'hidden'>
   }
   icons: {
     chevronDown: string

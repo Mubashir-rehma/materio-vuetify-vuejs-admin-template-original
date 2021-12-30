@@ -28,6 +28,7 @@ module.exports = {
             '/beginner-guide/layouts.md',
             '/beginner-guide/authentication.md',
             '/beginner-guide/access-control.md',
+            '/beginner-guide/splash-screen.md',
           ],
         },
         {

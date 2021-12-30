@@ -2,23 +2,10 @@
 @use "./horizontal_nav";
 @use "./default_layout_w_vertical_nav";
 @use "./default_layout_w_horizontal_nav";
-@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css";
-
-// 👉 Variables
-
-$body-bg: #f4f5fa;
 
 /* stylelint-disable-next-line selector-id-pattern */
 #app {
   block-size: 100%;
-}
-
-body,
-html {
-  margin: 0;
-  background-color: $body-bg;
-  font-family: system-ui, sans-serif;
-  font-size: 16px;
 }
 
 a {

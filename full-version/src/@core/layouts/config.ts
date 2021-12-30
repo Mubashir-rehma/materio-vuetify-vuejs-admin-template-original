@@ -10,7 +10,7 @@ export const config = ref<Config>({
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
     contentWidth: 'boxed',
-    contentLayoutNav: 'horizontal',
+    contentLayoutNav: 'vertical',
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: false,

@@ -1,6 +1,7 @@
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import presetIcons from '@unocss/preset-icons'
 import vue from '@vitejs/plugin-vue'
+import vuetify from '@vuetify/vite-plugin'
 import path from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -14,6 +15,11 @@ import Layouts from 'vite-plugin-vue-layouts'
 export default defineConfig({
   plugins: [
     vue(),
+
+    // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+    vuetify({
+      autoImport: true,
+    }),
     Unocss({
       presets: [
         presetIcons({ /* options */ }),
@@ -48,6 +54,7 @@ export default defineConfig({
       include: [path.resolve(__dirname, './src/locales/**')],
     }),
   ],
+  define: { 'process.env': {} },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

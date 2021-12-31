@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
 import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@layouts/components'
 import { config } from '@layouts/config'
@@ -20,6 +21,11 @@ const resolveNavItemComponent = (item: NavLink|NavSectionTitle|NavGroup) => {
   if ('children' in item) return VerticalNavGroup
 
   return VerticalNavLink
+}
+
+const perfectScrollbarSettings = {
+  maxScrollbarLength: 60,
+  wheelPropagation: false,
 }
 
 defineProps<{
@@ -46,7 +52,10 @@ defineProps<{
         >
         <!-- 👉 App title -->
         <transition name="vertical-nav-app-title">
-          <span v-show="!hideTitleAndIcon" class="app-title">{{ config.app.title }}</span>
+          <span
+            v-show="!hideTitleAndIcon"
+            class="app-title"
+          >{{ config.app.title }}</span>
         </transition>
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
@@ -74,14 +83,18 @@ defineProps<{
       </slot>
     </div>
     <slot name="before-nav-items" />
-    <ul class="nav-items">
+    <PerfectScrollbar
+      tag="ul"
+      class="nav-items"
+      :options="perfectScrollbarSettings"
+    >
       <component
         :is="resolveNavItemComponent(item)"
         v-for="(item, index) in navItems"
         :key="index"
         :item="item"
       />
-    </ul>
+    </PerfectScrollbar>
   </aside>
 </template>
 
@@ -118,10 +131,13 @@ defineProps<{
   }
 
   .nav-items {
-    overflow-x: hidden;
+    height: 100%;
 
-    // ℹ️ We used `overflow-y` instead of `overflow` to mitigate overflow x. Revert back if any issue found.
-    overflow-y: auto;
+    // ℹ️ We no loner needs this overflow styles as perfect scrollbar applies it
+    // overflow-x: hidden;
+
+    // // ℹ️ We used `overflow-y` instead of `overflow` to mitigate overflow x. Revert back if any issue found.
+    // overflow-y: auto;
   }
 
   .nav-item-title {

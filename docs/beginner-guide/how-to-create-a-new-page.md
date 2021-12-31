@@ -6,7 +6,7 @@ Just create new file in `/src/pages` directory and you will have new page with a
 
 Create a new file named `about.vue` in `/src/pages` directory with the following content:
 
-```html
+```vue
 <template>
   <p>This is about page</p>
 </template>
@@ -28,7 +28,7 @@ To create a URL which has something like `http://localhost:8080/dashboard/analyt
 
 Let's create a new directory named `dashboard` in `/src/pages` directory. Inside this directory let's create a new file `analytics.vue` with the following content.
 
-```html
+```vue
 <template>
   <p>This is analytics page inside dashboard directory.</p>
 </template>
@@ -46,7 +46,7 @@ Let's assume we want to create a dynamic route like `http://localhost:8080/users
 
 For this create new directory named `users` in `/src/pages` and inside `/src/pages/users` create a new file with the name `[id].vue`. Place below content inside this newly create file:
 
-```html
+```vue
 <template>
   <div>
     <p>This is user details page.</p>
@@ -65,7 +65,7 @@ If you visit [http:localhost:8080/users/2](http:localhost:8080/users/2) then it 
 
 For this all you have to do is create `[...404].vue` file inside `/src/pages` directory.
 
-```html
+```vue
 <template>
   <div>
     <p>Oops, You are lost</p>
@@ -87,7 +87,7 @@ We want to render 404 page in blank layout instead of default layout (of course 
 For this you have to create `route` block in your vue file to define layout. Update `/src/pages/[...404].vue` as below:
 
 <!-- prettier-ignore-start -->
-```html
+```vue
 <template>
   <div>
     <p>Oops, You are lost</p>

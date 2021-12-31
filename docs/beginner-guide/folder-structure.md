@@ -25,7 +25,7 @@ Place your component in this directory. Components in this dir will be auto-regi
 
 It will automatically turn this
 
-```html
+```vue
 <template>
   <div>
     <HelloWorld msg="Hello Vue 3.0 + Vite" />
@@ -33,15 +33,15 @@ It will automatically turn this
 </template>
 
 <script>
-  export default {
-    name: "App",
-  };
+export default {
+  name: 'App',
+}
 </script>
 ```
 
 into this
 
-```html
+```vue
 <template>
   <div>
     <HelloWorld msg="Hello Vue 3.0 + Vite" />
@@ -49,14 +49,14 @@ into this
 </template>
 
 <script>
-  import HelloWorld from "./src/components/HelloWorld.vue";
+import HelloWorld from './src/components/HelloWorld.vue'
 
-  export default {
-    name: "App",
-    components: {
-      HelloWorld,
-    },
-  };
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+  },
+}
 </script>
 ```
 
@@ -82,7 +82,7 @@ Contains your app pages. Just create a new file and new route will be auto gener
 :::details Show me basic example 👀
 
 1. Create a new file in pages directory `/src/pages/about.vue` with following content
-   ```html
+   ```vue
    <template>
      <p>This is about page</p>
    </template>

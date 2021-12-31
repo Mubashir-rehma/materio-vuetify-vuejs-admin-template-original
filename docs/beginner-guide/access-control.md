@@ -24,7 +24,7 @@ For protecting routes based on ability, all you have to do is add meta to that r
 In [How to create a new page](/beginner-guide/how-to-create-a-new-page.md) guide we created a dashboard analytics page. Let's add `action` & `subject` meta to this route by updating the file as below:
 
 <!-- prettier-ignore-start -->
-```html{5-9}
+```vue{5-9}
 <template>
   <p>This is analytics page inside dashboard directory.</p>
 </template>

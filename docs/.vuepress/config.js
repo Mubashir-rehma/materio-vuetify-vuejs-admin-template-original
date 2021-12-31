@@ -32,6 +32,11 @@ module.exports = {
           ],
         },
         {
+          title: 'Plugins',
+          collapsable: false,
+          children: ['/beginner-guide/plugins/perfect-scrollbar'],
+        },
+        {
           title: 'Support',
           collapsable: false,
           children: ['/beginner-guide/getting-support', '/beginner-guide/github-access'],

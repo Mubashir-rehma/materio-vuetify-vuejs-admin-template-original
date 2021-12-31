@@ -1,7 +1,19 @@
 <script lang="ts" setup>
 import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
+import { config } from '@layouts/config'
 import type { VerticalNavItems } from '@layouts/types'
+
+const router = useRouter()
+const shallShowPageLoading = ref(false)
+router.beforeEach(() => {
+  console.info('setting to true')
+  shallShowPageLoading.value = true
+})
+router.afterEach(() => {
+  console.info('setting to false')
+  shallShowPageLoading.value = false
+})
 
 const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint } = useLayouts()
 const { width: windowWidth } = useWindowSize()
@@ -67,6 +79,14 @@ defineProps<{
 
       <!-- 👉 Content Area -->
       <main class="layout-page-content">
+        <template v-if="config.app.showPerPageLoader">
+          <div
+            v-show="shallShowPageLoading"
+            class="layout-per-page-loader"
+          >
+            loading....
+          </div>
+        </template>
         <slot />
       </main>
 

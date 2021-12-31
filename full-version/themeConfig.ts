@@ -13,6 +13,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: false,
+    showPerPageLoader: true,
   },
   navbar: {
     type: 'sticky',

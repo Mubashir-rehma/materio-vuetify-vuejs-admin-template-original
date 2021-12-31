@@ -14,6 +14,7 @@ export const config: Config = {
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: ref(false),
+    showPerPageLoader: true,
   },
   navbar: {
     type: ref('sticky'),

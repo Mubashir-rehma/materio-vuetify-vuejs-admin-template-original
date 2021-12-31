@@ -15,6 +15,9 @@
       "@/*": [
         "src/*"
       ],
+      "@themeConfig": [
+        "themeConfig.ts"
+      ],
       "@layouts/*": [
         "src/@core/layouts/*"
       ],
@@ -43,6 +46,7 @@
     "vite.config.*",
     "env.d.ts",
     "src/**/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "themeConfig.ts",
   ]
 }

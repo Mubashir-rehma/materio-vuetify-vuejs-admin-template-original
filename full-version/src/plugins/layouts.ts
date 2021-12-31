@@ -1,10 +1,6 @@
-/* @unocss-include */
 import { createLayouts } from '@layouts'
 import '@layouts/styles/index.scss'
+import { layoutConfig } from '@themeConfig'
 
-export default createLayouts({ /* layout config */ })
-// export default createLayouts({
-//   app: {
-//     contentLayoutNav: 'horizontal',
-//   },
-// })
+// ℹ️ We generate layout config from our themeConfig so you don't have to write config twice
+export default createLayouts(layoutConfig)

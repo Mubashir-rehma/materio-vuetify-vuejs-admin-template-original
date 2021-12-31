@@ -2,28 +2,28 @@ import type { Breakpoints } from '@vueuse/core'
 import type { Ref } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
-export interface Config {
+export interface UserConfig {
   app: {
     title: string
     logo: string
-    contentWidth: Ref<'boxed' | 'fluid'>
-    contentLayoutNav: Ref<'vertical' | 'horizontal'>
+    contentWidth: 'boxed' | 'fluid'
+    contentLayoutNav: 'vertical' | 'horizontal'
     overlayNavFromBreakpoint: number
     enableI18n: boolean
-    isRtl: Ref<boolean>
+    isRtl: boolean
   }
   navbar: {
-    type: Ref<'sticky' | 'static' | 'hidden'>
+    type: 'sticky' | 'static' | 'hidden'
   }
   footer: {
-    type: Ref<'sticky' | 'static' | 'hidden'>
+    type: 'sticky' | 'static' | 'hidden'
   }
   verticalNav: {
-    isVerticalNavCollapsed: Ref<boolean>
+    isVerticalNavCollapsed: boolean
     defaultNavItemIconClass: string
   }
   horizontalNav: {
-    type: Ref<'sticky' | 'static' | 'hidden'>
+    type: 'sticky' | 'static' | 'hidden'
   }
   icons: {
     chevronDown: string
@@ -36,6 +36,44 @@ export interface Config {
 
   // TODO: Check do we need this breakpoints config
   breakpoints: Breakpoints
+}
+
+/*
+  TODO: use MergeDeep for DRY
+   Waiting for https://github.com/sindresorhus/type-fest/issues/150
+*/
+export interface Config {
+  app: {
+    title: UserConfig['app']['title']
+    logo: UserConfig['app']['logo']
+    contentWidth: Ref<UserConfig['app']['contentWidth']>
+    contentLayoutNav: Ref<UserConfig['app']['contentLayoutNav']>
+    overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
+    enableI18n: UserConfig['app']['enableI18n']
+    isRtl: Ref<UserConfig['app']['isRtl']>
+  }
+  navbar: {
+    type: Ref<UserConfig['navbar']['type']>
+  }
+  footer: {
+    type: Ref<UserConfig['footer']['type']>
+  }
+  verticalNav: {
+    isVerticalNavCollapsed: Ref<UserConfig['verticalNav']['isVerticalNavCollapsed']>
+    defaultNavItemIconClass: UserConfig['verticalNav']['defaultNavItemIconClass']
+  }
+  horizontalNav: {
+    type: Ref<UserConfig['horizontalNav']['type']>
+  }
+  icons: {
+    chevronDown: UserConfig['icons']['chevronDown']
+    chevronRight: UserConfig['icons']['chevronRight']
+    close: UserConfig['icons']['close']
+    verticalNavPinned: UserConfig['icons']['verticalNavPinned']
+    verticalNavUnPinned: UserConfig['icons']['verticalNavUnPinned']
+    sectionTitlePlaceholder: UserConfig['icons']['sectionTitlePlaceholder']
+  }
+  breakpoints: UserConfig['breakpoints']
 }
 
 // TODO: Find a way to get action & subject from user types instead of writing string

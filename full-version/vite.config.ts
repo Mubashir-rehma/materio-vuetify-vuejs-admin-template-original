@@ -58,6 +58,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@themeConfig': fileURLToPath(new URL('./themeConfig.ts', import.meta.url)),
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/@core/layouts', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/styles/_variables.scss', import.meta.url)),

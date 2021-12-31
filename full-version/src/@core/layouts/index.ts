@@ -1,14 +1,34 @@
 import { useLayouts } from '@layouts'
-import type { PartialDeep } from 'type-fest'
 import type { InjectionKey, Plugin, Ref } from 'vue'
-import type { Config } from './config'
 import { config } from './config'
-import { mergeConfig } from './utils'
+import type { UserConfig } from './types'
 
 const { _setAppDir } = useLayouts()
 
-export const createLayouts = (userConfig?: PartialDeep<Config>): Plugin => {
-  mergeConfig(config, userConfig)
+export const createLayouts = (userConfig: UserConfig): Plugin => {
+  // TODO: Find a better way to assign config
+  config.app.title = userConfig.app.title
+  config.app.logo = userConfig.app.logo
+  config.app.contentWidth = ref(userConfig.app.contentWidth)
+  config.app.contentLayoutNav = ref(userConfig.app.contentLayoutNav)
+  config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
+  config.app.enableI18n = userConfig.app.enableI18n
+  config.app.isRtl = ref(userConfig.app.isRtl)
+
+  config.navbar.type = ref(userConfig.navbar.type)
+  config.footer.type = ref(userConfig.footer.type)
+
+  config.verticalNav.isVerticalNavCollapsed = ref(userConfig.verticalNav.isVerticalNavCollapsed)
+  config.verticalNav.defaultNavItemIconClass = userConfig.verticalNav.defaultNavItemIconClass
+
+  config.horizontalNav.type = ref(userConfig.horizontalNav.type)
+
+  config.icons.chevronDown = userConfig.icons.chevronDown
+  config.icons.chevronRight = userConfig.icons.chevronRight
+  config.icons.close = userConfig.icons.close
+  config.icons.verticalNavPinned = userConfig.icons.verticalNavPinned
+  config.icons.verticalNavUnPinned = userConfig.icons.verticalNavUnPinned
+  config.icons.sectionTitlePlaceholder = userConfig.icons.sectionTitlePlaceholder
 
   return (): void => {
     console.info('installing layouts...')

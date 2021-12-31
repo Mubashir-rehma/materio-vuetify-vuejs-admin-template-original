@@ -1,30 +1,29 @@
 /* @unocss-include */
-import type { Config } from '@layouts/types'
+import { defineThemeConfig } from '@core'
 import { breakpointsVuetify } from '@vueuse/core'
 
-// TODO: Try to optimize this object so whole object is not reactive
-export const config: Config = {
+export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
-    title: 'Title',
+    title: 'Sneat',
     logo: '/src/assets/logo.svg',
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
-    contentWidth: ref('boxed'),
-    contentLayoutNav: ref('vertical'),
+    contentWidth: 'boxed',
+    contentLayoutNav: 'vertical',
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
-    isRtl: ref(false),
+    isRtl: false,
   },
   navbar: {
-    type: ref('sticky'),
+    type: 'sticky',
   },
-  footer: { type: ref('static') },
+  footer: { type: 'static' },
   verticalNav: {
-    isVerticalNavCollapsed: ref(false),
+    isVerticalNavCollapsed: false,
     defaultNavItemIconClass: 'i-mdi-circle-outline',
   },
   horizontalNav: {
-    type: ref('sticky'),
+    type: 'sticky',
   },
   icons: {
     chevronDown: 'i-mdi-chevron-down',
@@ -35,4 +34,4 @@ export const config: Config = {
     sectionTitlePlaceholder: 'i-mdi-minus',
   },
   breakpoints: breakpointsVuetify,
-}
+})

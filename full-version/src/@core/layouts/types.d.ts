@@ -11,7 +11,6 @@ export interface UserConfig {
     overlayNavFromBreakpoint: number
     enableI18n: boolean
     isRtl: boolean
-    showPerPageLoader: boolean
   }
   navbar: {
     type: 'sticky' | 'static' | 'hidden'
@@ -52,7 +51,6 @@ export interface Config {
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
     isRtl: Ref<UserConfig['app']['isRtl']>
-    showPerPageLoader: UserConfig['app']['showPerPageLoader']
   }
   navbar: {
     type: Ref<UserConfig['navbar']['type']>

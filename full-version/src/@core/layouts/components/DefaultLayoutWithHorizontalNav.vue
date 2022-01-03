@@ -6,6 +6,15 @@ import type { HorizontalNavItems } from '@layouts/types'
 const { _layoutClasses: layoutClasses } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 
+const router = useRouter()
+const shallShowPageLoading = ref(false)
+router.beforeEach(() => {
+  shallShowPageLoading.value = true
+})
+router.afterEach(() => {
+  shallShowPageLoading.value = false
+})
+
 defineProps<{
   navItems: HorizontalNavItems
 }>()
@@ -36,7 +45,17 @@ defineProps<{
     </div>
 
     <main class="layout-page-content">
-      <slot />
+      <template v-if="$slots['content-loading']">
+        <template v-if="shallShowPageLoading">
+          <slot name="content-loading" />
+        </template>
+        <template v-else>
+          <slot />
+        </template>
+      </template>
+      <template v-else>
+        <slot />
+      </template>
     </main>
 
     <!-- 👉 Footer -->
@@ -59,6 +78,11 @@ defineProps<{
     // // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
     // min-height: 100%;
     min-block-size: calc(var(--vh, 1vh) * 100);
+
+    .layout-page-content {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   // If both navbar & horizontal nav sticky

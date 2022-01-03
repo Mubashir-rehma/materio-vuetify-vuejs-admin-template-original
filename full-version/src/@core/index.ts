@@ -13,7 +13,6 @@ export const defineThemeConfig = (userConfig: UserThemeConfig): { themeConfig: T
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
         isRtl: ref(userConfig.app.isRtl),
-        showPerPageLoader: userConfig.app.showPerPageLoader,
       },
       navbar: { type: ref(userConfig.navbar.type) },
       footer: { type: ref(userConfig.footer.type) },
@@ -43,7 +42,6 @@ export const defineThemeConfig = (userConfig: UserThemeConfig): { themeConfig: T
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
         isRtl: userConfig.app.isRtl,
-        showPerPageLoader: userConfig.app.showPerPageLoader,
       },
       navbar: {
         type: userConfig.navbar.type,

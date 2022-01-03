@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const route = useRoute()
 const router = useRouter()
-const { dynamicI18nProps } = useLayouts()
+const { dynamicI18nProps, isAppRtl } = useLayouts()
 
 const isGroupActive = ref(false)
 
@@ -45,7 +45,7 @@ export default {
 <template>
   <HorizontalNavPopper
     v-if="canViewNavMenuGroup(item)"
-    :is-rtl="config.app.isRtl"
+    :is-rtl="isAppRtl"
     class="nav-group"
     tag="li"
     content-container-tag="ul"
@@ -63,7 +63,10 @@ export default {
         class="nav-item-title"
         v-text="item.title"
       />
-      <div class="nav-group-arrow" :class="config.icons.chevronDown" />
+      <div
+        class="nav-group-arrow"
+        :class="config.icons.chevronDown"
+      />
     </div>
 
     <template #content>

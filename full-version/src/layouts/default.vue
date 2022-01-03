@@ -31,6 +31,18 @@ const { appContentLayoutNav } = useLayouts()
         </div>
       </template>
 
+      <template #content-loading>
+        <div
+          style="height:100%; display: flex;align-items: center; justify-content: center;"
+        >
+          <v-progress-circular
+            :size="70"
+            color="primary"
+            indeterminate
+          />
+        </div>
+      </template>
+
       <!-- Pages -->
       <router-view />
 
@@ -46,6 +58,18 @@ const { appContentLayoutNav } = useLayouts()
       <template #navbar>
         <div>
           <span>Navbar Content..</span>
+        </div>
+      </template>
+
+      <template #content-loading>
+        <div
+          style="display: flex;align-items: center; justify-content: center;flex-grow: 1;"
+        >
+          <v-progress-circular
+            :size="70"
+            color="primary"
+            indeterminate
+          />
         </div>
       </template>
 

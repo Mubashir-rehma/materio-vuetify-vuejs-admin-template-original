@@ -1,9 +1,8 @@
 <script lang="ts">
+import type { PropType } from 'vue'
 import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
-import { config } from '@layouts/config'
 import type { VerticalNavItems } from '@layouts/types'
-import type { PropType } from 'vue'
 
 export default defineComponent({
   props: {
@@ -68,8 +67,6 @@ export default defineComponent({
           h(
             'div',
             { class: 'navbar-content-container' },
-
-            // TODO: This should be scoped slots
             slots.navbar?.({
               toggleVerticalOverlayNavActive: toggleIsOverlayNavActive,
             }),
@@ -81,9 +78,11 @@ export default defineComponent({
       const main = h(
         'main',
         { class: 'layout-page-content' },
-        config.app.showPerPageLoader
-          ? shallShowPageLoading.value ? h('p', 'loading') : slots.default?.()
-          : h('div', {}, slots.default?.()),
+
+        // 💡 Only show loading if `content-loading` slot is used
+        slots['content-loading']
+          ? shallShowPageLoading.value ? slots['content-loading']?.() : slots.default?.()
+          : slots.default?.(),
       )
 
       // 👉 Footer
@@ -108,11 +107,23 @@ export default defineComponent({
         },
       )
 
-      return h('div', { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value)] }, [
-        verticalNav,
-        h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]),
-        layoutOverlay,
-      ])
+      return h(
+        'div',
+        { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value)] },
+        [
+          verticalNav,
+          h(
+            'div',
+            { class: 'layout-content-wrapper' },
+            [
+              navbar,
+              main,
+              footer,
+            ],
+          ),
+          layoutOverlay,
+        ],
+      )
     }
   },
 })

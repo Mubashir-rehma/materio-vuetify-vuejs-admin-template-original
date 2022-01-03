@@ -10,7 +10,6 @@ export interface UserThemeConfig {
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
     isRtl: UserConfig['app']['isRtl']
-    showPerPageLoader: UserConfig['app']['showPerPageLoader']
   }
   navbar: {
     type: UserConfig['navbar']['type']
@@ -51,7 +50,6 @@ export interface ThemeConfig {
     overlayNavFromBreakpoint: UserThemeConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserThemeConfig['app']['enableI18n']
     isRtl: Ref<UserThemeConfig['app']['isRtl']>
-    showPerPageLoader: UserThemeConfig['app']['showPerPageLoader']
   }
   navbar: {
     type: Ref<UserThemeConfig['navbar']['type']>

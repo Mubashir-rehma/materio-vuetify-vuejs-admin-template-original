@@ -9,11 +9,10 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
     contentWidth: 'boxed',
-    contentLayoutNav: 'vertical',
+    contentLayoutNav: 'horizontal',
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: false,
-    showPerPageLoader: true,
   },
   navbar: {
     type: 'sticky',

@@ -14,7 +14,6 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
   config.app.enableI18n = userConfig.app.enableI18n
   config.app.isRtl = ref(userConfig.app.isRtl)
-  config.app.showPerPageLoader = userConfig.app.showPerPageLoader
 
   config.navbar.type = ref(userConfig.navbar.type)
   config.footer.type = ref(userConfig.footer.type)

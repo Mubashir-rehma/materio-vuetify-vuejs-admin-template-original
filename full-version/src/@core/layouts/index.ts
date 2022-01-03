@@ -13,12 +13,14 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.app.contentLayoutNav = ref(userConfig.app.contentLayoutNav)
   config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
   config.app.enableI18n = userConfig.app.enableI18n
-  config.app.isRtl = ref(userConfig.app.isRtl)
+  const localStorageIsAppRtl = localStorage.getItem('isAppRtl')
+  config.app.isRtl = ref(localStorageIsAppRtl ? JSON.parse(localStorageIsAppRtl) : userConfig.app.isRtl)
 
   config.navbar.type = ref(userConfig.navbar.type)
   config.footer.type = ref(userConfig.footer.type)
 
-  config.verticalNav.isVerticalNavCollapsed = ref(userConfig.verticalNav.isVerticalNavCollapsed)
+  const localStorageIsVerticalNavCollapsed = localStorage.getItem('isVerticalNavCollapsed')
+  config.verticalNav.isVerticalNavCollapsed = ref(localStorageIsVerticalNavCollapsed ? JSON.parse(localStorageIsVerticalNavCollapsed) : userConfig.verticalNav.isVerticalNavCollapsed)
   config.verticalNav.defaultNavItemIconClass = userConfig.verticalNav.defaultNavItemIconClass
 
   config.horizontalNav.type = ref(userConfig.horizontalNav.type)
@@ -32,6 +34,15 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
 
   return (): void => {
     console.info('installing layouts...')
+
+    watch(config.verticalNav.isVerticalNavCollapsed, val => {
+      localStorage.setItem('isVerticalNavCollapsed', String(val))
+    })
+
+    watch(config.app.isRtl, val => {
+      localStorage.setItem('isAppRtl', String(val))
+    })
+
     _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }
 }

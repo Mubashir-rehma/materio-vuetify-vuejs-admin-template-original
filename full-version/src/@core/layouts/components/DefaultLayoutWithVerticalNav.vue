@@ -1,111 +1,122 @@
-<script lang="ts" setup>
+<script lang="ts">
 import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
 import { config } from '@layouts/config'
 import type { VerticalNavItems } from '@layouts/types'
+import type { PropType } from 'vue'
 
-const router = useRouter()
-const shallShowPageLoading = ref(false)
-router.beforeEach(() => {
-  console.info('setting to true')
-  shallShowPageLoading.value = true
+export default defineComponent({
+  props: {
+    navItems: {
+      type: Array as PropType<VerticalNavItems>,
+      required: true,
+    },
+  },
+  setup(props, { slots }) {
+    const { width: windowWidth } = useWindowSize()
+    const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint } = useLayouts()
+
+    const isOverlayNavActive = ref(false)
+    const isLayoutOverlayVisible = ref(false)
+    const toggleIsOverlayNavActive = useToggle(isOverlayNavActive)
+
+    // ℹ️ This is alternative to below two commented watcher
+    // We want to show overlay if overlay nav is visible and want to hide overlay if overlay is hidden and vice versa.
+    biSyncRef(isOverlayNavActive, isLayoutOverlayVisible)
+
+    // watch(isOverlayNavActive, value => {
+    //   // Sync layout overlay with overlay nav
+    //   isLayoutOverlayVisible.value = value
+    // })
+
+    // watch(isLayoutOverlayVisible, value => {
+    //   // If overlay is closed via click, close hide overlay nav
+    //   if (!value) isOverlayNavActive.value = false
+    // })
+
+    // ℹ️ Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
+    watch(windowWidth, value => {
+      if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value) isLayoutOverlayVisible.value = false
+    })
+
+    const router = useRouter()
+    const shallShowPageLoading = ref(false)
+    router.beforeEach(() => {
+      console.info('setting to true')
+      shallShowPageLoading.value = true
+    })
+    router.afterEach(() => {
+      console.info('setting to false')
+      shallShowPageLoading.value = false
+    })
+
+    return () => {
+      const verticalNav = h(
+        VerticalNav,
+        { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems },
+        {
+          'nav-header': slots['vertical-nav-header']?.(),
+          'before-nav-items': slots['before-vertical-nav-items']?.(),
+        },
+      )
+
+      // 👉 Navbar
+      const navbar = h(
+        'header',
+        { class: 'layout-navbar' },
+        [
+          h(
+            'div',
+            { class: 'navbar-content-container' },
+
+            // TODO: This should be scoped slots
+            slots.navbar?.({
+              toggleVerticalOverlayNavActive: toggleIsOverlayNavActive,
+            }),
+          ),
+        ],
+      )
+
+      // 👉 Content area
+      const main = h(
+        'main',
+        { class: 'layout-page-content' },
+        config.app.showPerPageLoader
+          ? shallShowPageLoading.value ? h('p', 'loading') : slots.default?.()
+          : h('div', {}, slots.default?.()),
+      )
+
+      // 👉 Footer
+      const footer = h(
+        'footer',
+        { class: 'layout-footer' },
+        [
+          h(
+            'div',
+            { class: 'footer-content-container' },
+            slots.footer?.(),
+          ),
+        ],
+      )
+
+      // 👉 Overlay
+      const layoutOverlay = h(
+        'div',
+        {
+          class: ['layout-overlay', { visible: isLayoutOverlayVisible.value }],
+          onClick: () => { isLayoutOverlayVisible.value = !isLayoutOverlayVisible.value },
+        },
+      )
+
+      return h('div', { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value)] }, [
+        verticalNav,
+        h('div', { class: 'layout-content-wrapper' }, [navbar, main, footer]),
+        layoutOverlay,
+      ])
+    }
+  },
 })
-router.afterEach(() => {
-  console.info('setting to false')
-  shallShowPageLoading.value = false
-})
-
-const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint } = useLayouts()
-const { width: windowWidth } = useWindowSize()
-
-const isOverlayNavActive = ref(false)
-const isLayoutOverlayVisible = ref(false)
-const toggleIsOverlayNavActive = useToggle(isOverlayNavActive)
-
-// ℹ️ This is alternative to below two commented watcher
-// We want to show overlay if overlay nav is visible and want to hide overlay if overlay is hidden and vice versa.
-biSyncRef(isOverlayNavActive, isLayoutOverlayVisible)
-
-// watch(isOverlayNavActive, value => {
-//   // Sync layout overlay with overlay nav
-//   isLayoutOverlayVisible.value = value
-// })
-
-// watch(isLayoutOverlayVisible, value => {
-//   // If overlay is closed via click, close hide overlay nav
-//   if (!value) isOverlayNavActive.value = false
-// })
-
-// ℹ️ Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
-watch(windowWidth, value => {
-  if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value) isLayoutOverlayVisible.value = false
-})
-
-defineProps<{
-  navItems: VerticalNavItems
-}>()
 </script>
-
-<template>
-  <div
-    class="layout-wrapper"
-    :class="layoutClasses(windowWidth)"
-  >
-    <!-- 👉 Vertical Nav -->
-    <VerticalNav
-      :is-overlay-nav-active="isOverlayNavActive"
-      :toggle-is-overlay-nav-active="toggleIsOverlayNavActive"
-      :nav-items="navItems"
-    >
-      <!-- TODO: Make it dynamic -->
-      <template #nav-header>
-        <slot name="vertical-nav-header" />
-      </template>
-      <template #before-nav-items>
-        <slot name="before-vertical-nav-items" />
-      </template>
-    </VerticalNav>
-
-    <div class="layout-content-wrapper">
-      <!-- 👉 Navbar -->
-      <header class="layout-navbar">
-        <div class="navbar-content-container">
-          <slot
-            name="navbar"
-            :toggleVerticalOverlayNavActive="toggleIsOverlayNavActive"
-          />
-        </div>
-      </header>
-
-      <!-- 👉 Content Area -->
-      <main class="layout-page-content">
-        <template v-if="config.app.showPerPageLoader">
-          <div
-            v-show="shallShowPageLoading"
-            class="layout-per-page-loader"
-          >
-            loading....
-          </div>
-        </template>
-        <slot />
-      </main>
-
-      <!-- 👉 Footer -->
-      <footer class="layout-footer">
-        <div class="footer-content-container">
-          <slot name="footer" />
-        </div>
-      </footer>
-    </div>
-
-    <!-- 👉 Overlay -->
-    <div
-      class="layout-overlay"
-      :class="{'visible': isLayoutOverlayVisible}"
-      @click="isLayoutOverlayVisible = !isLayoutOverlayVisible"
-    />
-  </div>
-</template>
 
 <style lang="scss">
 @use "@configured-variables" as variables;

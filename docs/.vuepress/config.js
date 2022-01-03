@@ -3,8 +3,7 @@ module.exports = {
   description: 'This is desc',
   themeConfig: {
     nav: [
-      { text: 'Beginner Guide', link: '/beginner-guide/' },
-      { text: 'Advanced Guide', link: '/advanced-guide/' },
+      { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
       {
@@ -14,32 +13,32 @@ module.exports = {
       { text: 'Purchase', link: 'https://1.envato.market/vuexy_admin' },
     ],
     sidebar: {
-      '/beginner-guide/': [
+      '/guide/': [
         ['', 'Welcome'],
         {
           title: 'Getting Started',
           collapsable: false,
           children: [
-            '/beginner-guide/installation',
-            '/beginner-guide/folder-structure',
-            '/beginner-guide/how-to-create-a-new-page',
-            '/beginner-guide/styles',
-            '/beginner-guide/navigation-menu',
-            '/beginner-guide/layouts.md',
-            '/beginner-guide/authentication.md',
-            '/beginner-guide/access-control.md',
-            '/beginner-guide/splash-screen.md',
+            '/guide/installation',
+            '/guide/folder-structure',
+            '/guide/how-to-create-a-new-page',
+            '/guide/styles',
+            '/guide/navigation-menu',
+            '/guide/layouts.md',
+            '/guide/authentication.md',
+            '/guide/access-control.md',
+            '/guide/splash-screen.md',
           ],
         },
         {
           title: 'Plugins',
           collapsable: false,
-          children: ['/beginner-guide/plugins/perfect-scrollbar'],
+          children: ['/guide/plugins/perfect-scrollbar'],
         },
         {
           title: 'Support',
           collapsable: false,
-          children: ['/beginner-guide/getting-support', '/beginner-guide/github-access'],
+          children: ['/guide/getting-support', '/guide/github-access'],
         },
       ],
     },

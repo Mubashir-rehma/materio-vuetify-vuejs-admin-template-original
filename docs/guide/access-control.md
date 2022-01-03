@@ -21,7 +21,7 @@ We have configured [`router.beforeEach`](https://router.vuejs.org/guide/advanced
 
 For protecting routes based on ability, all you have to do is add meta to that route via [`route`](https://github.com/hannoeru/vite-plugin-pages#sfc-custom-block-for-route-data) block.
 
-In [How to create a new page](/beginner-guide/how-to-create-a-new-page.md) guide we created a dashboard analytics page. Let's add `action` & `subject` meta to this route by updating the file as below:
+In [How to create a new page](/guide/how-to-create-a-new-page.md) guide we created a dashboard analytics page. Let's add `action` & `subject` meta to this route by updating the file as below:
 
 <!-- prettier-ignore-start -->
 ```vue{5-9}

@@ -14,7 +14,7 @@ In this page you will learn how to add navigation items in vertical navigation &
 | ...and so on              |                                                     |
 
 :::details view code snippet with levels as comments
-<<< @/code-snippets/beginner-guide/navigation-menu/item-level-demo.js
+<<< @/code-snippets/guide/navigation-menu/item-level-demo.js
 :::
 
 ## Vertical nav
@@ -37,11 +37,11 @@ Check below code snippet to add nav link:
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-link.ts
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-link.ts
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-link.js
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-link.js
 </code-block>
 </code-group>
 
@@ -55,11 +55,11 @@ Check below code snippet to add nav group:
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-group.ts{11-24}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-group.ts{11-24}
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-group.js{9-22}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-group.js{9-22}
 </code-block>
 </code-group>
 
@@ -73,11 +73,11 @@ Check below code snippet to add nav section title:
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-section-title.ts{6-8}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-section-title.ts{6-8}
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-section-title.js{4-6}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-section-title.js{4-6}
 </code-block>
 </code-group>
 
@@ -101,11 +101,11 @@ Check below code snippet to add link:
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/horizontal-nav-link.ts
+<<< @/code-snippets/guide/navigation-menu/horizontal-nav-link.ts
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/horizontal-nav-link.js
+<<< @/code-snippets/guide/navigation-menu/horizontal-nav-link.js
 </code-block>
 </code-group>
 
@@ -119,11 +119,11 @@ Check below code snippet to add group:
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/horizontal-nav-group.ts{11-26}
+<<< @/code-snippets/guide/navigation-menu/horizontal-nav-group.ts{11-26}
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/horizontal-nav-group.js{9-24}
+<<< @/code-snippets/guide/navigation-menu/horizontal-nav-group.js{9-24}
 </code-block>
 </code-group>
 
@@ -139,11 +139,11 @@ You can optionally pass `badgeContent` & `badgeClass` property to add badge to t
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-badge.ts{10-11,16-17}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-badge.ts{10-11,16-17}
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-badge.js{8-9,14-15}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-badge.js{8-9,14-15}
 </code-block>
 </code-group>
 
@@ -157,10 +157,10 @@ You can disable any item by simply setting `disable` property to `true`
 
 <code-group>
 <code-block title="TS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-link-disabled.ts{10}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-link-disabled.ts{10}
 </code-block>
 
 <code-block title="JS">
-<<< @/code-snippets/beginner-guide/navigation-menu/vertical-nav-link-disabled.js{8}
+<<< @/code-snippets/guide/navigation-menu/vertical-nav-link-disabled.js{8}
 </code-block>
 </code-group>

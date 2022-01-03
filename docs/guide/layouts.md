@@ -51,7 +51,7 @@ We do provide simple config to update logo and title of the app via theme config
 
 Blank layout doesn't contain any element. It is completely blank so you can create pages however you like.
 
-Please read [this](/beginner-guide/how-to-create-a-new-page.md#using-different-layout) guide to set blank layout for your page.
+Please read [this](/guide/how-to-create-a-new-page.md#using-different-layout) guide to set blank layout for your page.
 
 ## Extending layouts
 

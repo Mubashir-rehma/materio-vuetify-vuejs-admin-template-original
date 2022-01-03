@@ -25,7 +25,7 @@ To resolve such installation issue:
 - run `yarn cache clean` or `npm cache clean`
 - Try using yarn if possible (Recommended).
 
-After following about steps still, you are getting the error please [raise support](/beginner-guide/getting-support.md) at our support portal with the below details:
+After following about steps still, you are getting the error please [raise support](/guide/getting-support.md) at our support portal with the below details:
 
 - Your OS information, Node version, npm/yarn version, Template/Package version
 - Mention if you are able to run fresh VueJS project using Vue CLI without our template
@@ -104,4 +104,4 @@ You can update the logo and text from `themeConfig.{ts|js}` file. Please update 
 
 ## How to update navbar or footer
 
-You can use layout slots to add your custom navbar or footer. Please refer to [layout](/beginner-guide/layouts.md) docs for example with code snippet.
+You can use layout slots to add your custom navbar or footer. Please refer to [layout](/guide/layouts.md) docs for example with code snippet.

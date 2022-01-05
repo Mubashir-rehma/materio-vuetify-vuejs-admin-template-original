@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.3](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v1.0.3) (2022-01-05)
+
+### Fixed
+
+- Apps don't get full height with horizontal nav if horizontal nav is hidden
+- Vertical nav's active link color is not pure white
+
+### Added
+
+- `lintOnSave` option added in `vue.config.js` file
+
 ## [1.0.2](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v1.0.2) (2021-11-12)
 
 ### Fixed

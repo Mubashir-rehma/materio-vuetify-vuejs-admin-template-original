@@ -75,7 +75,7 @@
         */
         &::after {
           position: absolute;
-          block-size: 20px;
+          block-size: variables.$horizontal-nav-padding;
           content: "";
           inline-size: 100%;
           inset-block-start: 100%;

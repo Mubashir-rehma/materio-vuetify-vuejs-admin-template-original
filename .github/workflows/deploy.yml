@@ -56,3 +56,20 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
           script: rm -rf ${{ secrets.PROJECTDIR }}/demo-* && mv ${{ secrets.PROJECTDIR }}/dist/* ${{ secrets.PROJECTDIR }} && rm -rf ${{ secrets.PROJECTDIR }}/dist
+          
+      - name: Convert changelog.md to changelog.html
+        uses: jd-0001/gh-action-md-to-html@v1.0.0
+        with:
+          files: '[["CHANGELOG.md","CHANGELOG.html"]]'
+          
+
+      - name: Upload changelog file via scp
+        uses: appleboy/scp-action@master
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+        with:
+          source: CHANGELOG.html
+          target: ${{ secrets.TARGETDIR }}

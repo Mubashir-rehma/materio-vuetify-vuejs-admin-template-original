@@ -60,7 +60,7 @@ jobs:
       - name: Convert changelog.md to changelog.html
         uses: jd-0001/gh-action-md-to-html@v1.0.0
         with:
-          files: '[["CHANGELOG.md","CHANGELOG.html"]]'
+          files: '[["CHANGELOG.md","changelog.html"]]'
           
 
       - name: Upload changelog file via scp
@@ -71,5 +71,5 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
         with:
-          source: CHANGELOG.html
+          source: changelog.html
           target: ${{ secrets.TARGETDIR }}

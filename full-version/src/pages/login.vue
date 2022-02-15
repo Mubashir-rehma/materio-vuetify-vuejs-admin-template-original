@@ -5,6 +5,9 @@ import { initialAbility } from '@/plugins/casl/ability'
 import type { AppAbility } from '@/plugins/casl/AppAbility'
 import axios from '@axios'
 
+const route = useRoute()
+const router = useRouter()
+
 const ability = useAbility<AppAbility>()
 
 const email = ref('admin@demo.com')
@@ -22,6 +25,9 @@ const login = () => {
 
       localStorage.setItem('userData', JSON.stringify(userData))
       localStorage.setItem('accessToken', JSON.stringify(accessToken))
+
+      if (route.query.to) router.replace(String(route.query.to))
+      else router.replace('/')
 
       return null
     })
@@ -56,8 +62,16 @@ const logout = () => {
   <br>
   <br>
   <form @submit.prevent="login">
-    <input v-model="email" type="text" placeholder="email">
-    <input v-model="password" type="text" placeholder="password">
+    <input
+      v-model="email"
+      type="text"
+      placeholder="email"
+    >
+    <input
+      v-model="password"
+      type="text"
+      placeholder="password"
+    >
     <button>Submit</button>
   </form>
 </template>

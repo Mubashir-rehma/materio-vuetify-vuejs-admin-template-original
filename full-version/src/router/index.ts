@@ -18,7 +18,8 @@ router.beforeEach((to, _, next) => {
 
   if (!canNavigate(to)) {
     // Redirect to login if not logged in
-    if (!isLoggedIn) return next({ name: 'login' })
+    // ℹ️ Only add `to` query param if `to` route is not index route
+    if (!isLoggedIn) return next({ name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } })
 
     // If logged in => not authorized
     return next({ name: 'not-authorized' })

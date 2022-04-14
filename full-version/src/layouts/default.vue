@@ -32,7 +32,9 @@ const { appContentLayoutNav } = useLayouts()
       </template>
 
       <!-- Pages -->
-      <router-view />
+      <div style="padding:2rem">
+        <router-view />
+      </div>
 
       <!-- Footer -->
       <template #footer>

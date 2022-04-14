@@ -45,6 +45,15 @@ export default [
       { title: 'Add', to: 'invoice-add' },
     ],
   },
+  { heading: 'UI Elements' },
+  {
+    title: 'Components',
+    icon: 'i-mdi-archive-outline',
+    children: [
+      { title: 'Alert', to: 'components-alert' },
+      { title: 'Button', to: 'components-button' },
+    ],
+  },
   { heading: 'Other' },
   {
     title: 'Nav Levels',

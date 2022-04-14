@@ -1,0 +1,17 @@
+$card-spacer-content: 2rem;
+.demo-space-x {
+    margin-top: -$card-spacer-content;
+    & > * {
+        margin-right: $card-spacer-content;
+        margin-left: $card-spacer-content;
+        margin-top: $card-spacer-content;
+    }
+}
+.demo-space-y {
+    & > * {
+        margin-bottom: $card-spacer-content;
+        &:last-child {
+            margin: .5rem;
+        }
+    }
+}

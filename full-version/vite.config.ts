@@ -11,6 +11,8 @@ import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 
+// TODO: use the latest version which resolves the dynamic icons issue: https://github.com/unocss/unocss/issues/544#event-6300481520
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -33,9 +35,32 @@ export default defineConfig({
     Components({
       dirs: [
         'src/@core/layouts/components',
+        'src/@core/components',
         'src/components',
       ],
       dts: true,
+      resolvers: [
+        {
+          type: 'component',
+          resolve: (name: string) => {
+            const regex = /^Demo([A-Z][a-z]+)/g
+            const result = regex.exec(name)
+
+            // console.log('name :>> ', name)
+            // console.log('result :>> ', result)
+            // console.log('----')
+
+            if (result) {
+              const compDir = result[1].toLowerCase()
+
+              // console.log('compDir :>> ', compDir)
+              // console.log(`@/views/components/${compDir}/demos/${name}.vue`)
+
+              return { importName: 'default', path: `@/views/components/${compDir}/demos/${name}.vue` }
+            }
+          },
+        },
+      ],
     }),
     AutoImport({
       imports: [
@@ -45,6 +70,31 @@ export default defineConfig({
 
         'vue-i18n',
       ],
+
+      // resolvers: [
+      //   (name: string) => {
+      //     const regex = /^emoCode([A-Z][a-z]+)/g
+      //     const result = regex.exec(name)
+
+      //     // console.log('name :>> ', name)
+      //     // console.log('result :>> ', result)
+      //     // console.log('----')
+
+      //     if (result) {
+      //       const compDir = result[1].toLowerCase()
+      //       console.log('result :>> ', result)
+
+      //       console.log('compDir :>> ', compDir)
+      //       console.log(`@/views/components/${compDir}/demos/d${name}`)
+      //       console.log('name[7].toLowerCase() + name.substring(8) :>> ', name[7].toLowerCase() + name.substring(8))
+      //       console.log(`d${name}`)
+
+      //       return { importName: `d${name}`, path: `@/views/components/${compDir}/demos/d${name}` }
+      //     }
+
+      //     // if (name.includes('Alert')) console.log('name :>> ', name)
+      //   },
+      // ],
     }),
     VueI18n({
       runtimeOnly: true,

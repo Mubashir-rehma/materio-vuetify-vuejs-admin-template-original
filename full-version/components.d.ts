@@ -4,8 +4,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppCardCode: typeof import('./src/@core/components/AppCardCode.vue')['default']
     DefaultLayoutWithHorizontalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithHorizontalNav.vue')['default']
     DefaultLayoutWithVerticalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithVerticalNav.vue')['default']
+    DemoAlertBasic: typeof import('@/views/components/alert/demos/DemoAlertBasic.vue')['default']
+    DemoAlertBorder: typeof import('@/views/components/alert/demos/DemoAlertBorder.vue')['default']
+    DemoAlertColoredBorder: typeof import('@/views/components/alert/demos/DemoAlertColoredBorder.vue')['default']
+    DemoAlertColors: typeof import('@/views/components/alert/demos/DemoAlertColors.vue')['default']
+    DemoAlertIcons: typeof import('@/views/components/alert/demos/DemoAlertIcons.vue')['default']
     HorizontalNav: typeof import('./src/@core/layouts/components/HorizontalNav.vue')['default']
     HorizontalNavGroup: typeof import('./src/@core/layouts/components/HorizontalNavGroup.vue')['default']
     HorizontalNavLink: typeof import('./src/@core/layouts/components/HorizontalNavLink.vue')['default']

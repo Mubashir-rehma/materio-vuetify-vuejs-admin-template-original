@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import AppCardCode from '@core/components/AppCardCode.vue'
+import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
 </script>
 
 <template>
   <!-- Basic -->
   <AppCardCode
     title="Basic"
-    :code="codeDemoAlertBasic"
+    :code="demoCode.basic"
   >
     <DemoAlertBasic />
   </AppCardCode>
@@ -14,7 +14,7 @@ import AppCardCode from '@core/components/AppCardCode.vue'
   <!-- Colors -->
   <AppCardCode
     title="Colors"
-    :code="codeDemoAlertColors"
+    :code="demoCode.colors"
   >
     <p>The <code>color</code> prop is used to change the background color of the alert.</p>
     <DemoAlertColors />
@@ -23,7 +23,7 @@ import AppCardCode from '@core/components/AppCardCode.vue'
   <!-- Icons -->
   <AppCardCode
     title="Icons"
-    :code="codeDemoAlertIcons"
+    :code="demoCode.icons"
   >
     <p>The icon prop allows you to add an icon to the beginning of the alert component. If a type is provided, this will override the default type icon.</p>
     <DemoAlertIcons />
@@ -32,7 +32,7 @@ import AppCardCode from '@core/components/AppCardCode.vue'
   <!-- Border -->
   <AppCardCode
     title="Border"
-    :code="codeDemoAlertBorder"
+    :code="demoCode.border"
   >
     <p>The Border prop allows you to add an Border to the beginning of the alert component. If a type is provided, this will override the default type Border.</p>
     <DemoAlertBorder />
@@ -41,7 +41,7 @@ import AppCardCode from '@core/components/AppCardCode.vue'
   <!-- ColoredBorder -->
   <AppCardCode
     title="ColoredBorder"
-    :code="codeDemoAlertColoredBorder"
+    :code="demoCode.coloredBorder"
   >
     <p>The colored-border prop removes the alert background in order to accent the border prop.</p>
     <DemoAlertColoredBorder />

@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-escape */
 
-export const buttonGroup = `
+export const buttonGroup = {
+  ts: `
 <template>
   <v-btn-toggle
     v-model="toggleExclusive"
@@ -44,9 +45,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const buttonLoaders = `
+export const buttonLoaders = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -176,9 +180,12 @@ export default {
   }
 }
 </style>
-`
+`,
+  js: '',
+}
 
-export const buttonOutlined = `
+export const buttonOutlined = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -219,9 +226,12 @@ export const buttonOutlined = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonIconOnly = `
+export const buttonIconOnly = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -291,9 +301,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const buttonText = `
+export const buttonText = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -334,9 +347,12 @@ export const buttonText = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonDepressed = `
+export const buttonDepressed = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -382,9 +398,12 @@ export const buttonDepressed = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonRounded = `
+export const buttonRounded = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -425,9 +444,12 @@ export const buttonRounded = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonPlain = `
+export const buttonPlain = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -473,9 +495,12 @@ export const buttonPlain = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonIcon = `
+export const buttonIcon = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -573,9 +598,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const buttonTile = `
+export const buttonTile = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -616,9 +644,12 @@ export const buttonTile = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonRouter = `
+export const buttonRouter = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -650,9 +681,12 @@ export const buttonRouter = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonLink = `
+export const buttonLink = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -670,9 +704,12 @@ export const buttonLink = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonSpeedDial = `
+export const buttonSpeedDial = {
+  ts: `
 <template>
   <div id="create">
     <v-speed-dial
@@ -764,9 +801,12 @@ export default {
   position: relative;
 }
 </style>
-`
+`,
+  js: '',
+}
 
-export const buttonColors = `
+export const buttonColors = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn color="primary">
@@ -789,9 +829,12 @@ export const buttonColors = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonSizing = `
+export const buttonSizing = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -829,9 +872,12 @@ export const buttonSizing = `
     </v-btn>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonBlock = `
+export const buttonBlock = {
+  ts: `
 <template>
   <v-row>
     <v-col
@@ -860,9 +906,12 @@ export const buttonBlock = `
     </v-col>
   </v-row>
 </template>
-`
+`,
+  js: '',
+}
 
-export const buttonFloating = `
+export const buttonFloating = {
+  ts: `
 <template>
   <div class="demo-space-x">
     <v-btn
@@ -956,4 +1005,6 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}

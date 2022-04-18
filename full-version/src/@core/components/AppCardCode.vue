@@ -1,13 +1,20 @@
 <script lang="ts" setup>
 
 // PrismJS
-import 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
-import Prism from 'vue-prism-component'
+import 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css';
+import Prism from 'vue-prism-component';
+
+const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts')
+
+type CodeProp = {
+  ts: string
+  js: string
+}
 
 interface Props {
   title: string
-  code: string
+  code: CodeProp
   codeLanguage?: string
   noPadding?: boolean
 }
@@ -25,13 +32,30 @@ const isCodeShown = ref(false)
     <v-card-header>
       <v-card-header-text class="d-flex items-center justify-space-between">
         <v-card-title>{{ props.title }}</v-card-title>
-        <v-btn
-          icon="mdi-code-braces"
-          :color="isCodeShown ? 'primary': null"
-          size="x-small"
-          variant="text"
-          @click="isCodeShown = !isCodeShown"
-        />
+        <div class="d-flex items-center gap-x-4">
+          <!-- Language Selector -->
+          <v-btn-toggle
+            v-model="preferredCodeLanguage"
+            shaped
+            mandatory
+            density="compact"
+          >
+            <v-btn value="ts">
+              <v-icon>mdi-language-typescript</v-icon>
+            </v-btn>
+
+            <v-btn value="js">
+              <v-icon>mdi-language-javascript</v-icon>
+            </v-btn>
+          </v-btn-toggle>
+          <v-btn
+            icon="mdi-code-tags"
+            :color="isCodeShown ? 'primary': null"
+            size="x-small"
+            variant="text"
+            @click="isCodeShown = !isCodeShown"
+          />
+        </div>
       </v-card-header-text>
     </v-card-header>
     <slot v-if="noPadding" />
@@ -44,7 +68,7 @@ const isCodeShown = ref(false)
 
         <v-card-text>
           <prism :language="props.codeLanguage">
-            {{ props.code }}
+            {{ props.code[preferredCodeLanguage] }}
           </prism>
         </v-card-text>
       </div>

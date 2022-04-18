@@ -23,6 +23,11 @@ export default defineConfig({
       autoImport: true,
     }),
     Unocss({
+      rules: [
+        [/^gap-(\d+)$/, ([, d]) => ({ gap: `${d / 4}rem` })],
+        [/^gap-x-(\d+)$/, ([, d]) => ({ 'column-gap': `${d / 4}rem` })],
+        [/^gap-y-(\d+)$/, ([, d]) => ({ 'row-gap': `${d / 4}rem` })],
+      ],
       presets: [
         presetIcons({ /* options */ }),
       ],
@@ -70,31 +75,6 @@ export default defineConfig({
 
         'vue-i18n',
       ],
-
-      // resolvers: [
-      //   (name: string) => {
-      //     const regex = /^emoCode([A-Z][a-z]+)/g
-      //     const result = regex.exec(name)
-
-      //     // console.log('name :>> ', name)
-      //     // console.log('result :>> ', result)
-      //     // console.log('----')
-
-      //     if (result) {
-      //       const compDir = result[1].toLowerCase()
-      //       console.log('result :>> ', result)
-
-      //       console.log('compDir :>> ', compDir)
-      //       console.log(`@/views/components/${compDir}/demos/d${name}`)
-      //       console.log('name[7].toLowerCase() + name.substring(8) :>> ', name[7].toLowerCase() + name.substring(8))
-      //       console.log(`d${name}`)
-
-      //       return { importName: `d${name}`, path: `@/views/components/${compDir}/demos/d${name}` }
-      //     }
-
-      //     // if (name.includes('Alert')) console.log('name :>> ', name)
-      //   },
-      // ],
     }),
     VueI18n({
       runtimeOnly: true,

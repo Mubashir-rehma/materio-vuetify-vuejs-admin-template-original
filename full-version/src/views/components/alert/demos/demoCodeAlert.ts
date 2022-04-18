@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-escape */
 
-export const alertBorder = `
+export const border = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -41,9 +42,12 @@ export const alertBorder = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertColoredBorder = `
+export const coloredBorder = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -101,9 +105,12 @@ export const alertColoredBorder = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertIcons = `
+export const icons = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -148,9 +155,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const alertOutlined = `
+export const outlined = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -197,9 +207,12 @@ export const alertOutlined = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertElevation = `
+export const elevation = {
+  ts: `
 <template>
   <div>
     <v-slider
@@ -231,9 +244,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const alertType = `
+export const type = {
+  ts: `
 <template>
   <div>
     <v-alert type="info">
@@ -256,9 +272,12 @@ export const alertType = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertDismissible = `
+export const dismissible = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -299,9 +318,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const alertVModel = `
+export const vModel = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -334,9 +356,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const alertColors = `
+export const colors = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -383,9 +408,12 @@ export const alertColors = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertTransition = `
+export const transition = {
+  ts: `
 <template>
   <div>
     <v-btn
@@ -423,9 +451,12 @@ export default {
   },
 }
 </script>
-`
+`,
+  js: '',
+}
 
-export const alertDense = `
+export const dense = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -478,9 +509,12 @@ export const alertDense = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertText = `
+export const text = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -526,9 +560,12 @@ export const alertText = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}
 
-export const alertBasic = `
+export const basic = {
+  ts: `
 <template>
   <div>
     <v-alert
@@ -540,4 +577,6 @@ export const alertBasic = `
     </v-alert>
   </div>
 </template>
-`
+`,
+  js: '',
+}

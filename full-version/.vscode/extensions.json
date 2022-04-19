@@ -6,6 +6,7 @@
     "editorconfig.editorconfig",
     "xabikos.javascriptsnippets",
     "stylelint.vscode-stylelint",
-    "fabiospampinato.vscode-highlight"
+    "fabiospampinato.vscode-highlight",
+    "GitHub.vscode-pull-request-github"
   ]
 }

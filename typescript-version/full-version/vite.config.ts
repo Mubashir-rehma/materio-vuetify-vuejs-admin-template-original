@@ -29,7 +29,13 @@ export default defineConfig({
         [/^gap-y-(\d+)$/, ([, d]) => ({ 'row-gap': `${d / 4}rem` })],
       ],
       presets: [
-        presetIcons({ /* options */ }),
+        presetIcons({
+          scale: 1.5,
+          extraProperties: {
+            'display': 'inline-block',
+            'vertical-align': 'middle',
+          },
+        }),
       ],
     }),
     Pages({

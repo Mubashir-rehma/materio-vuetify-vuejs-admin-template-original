@@ -110,16 +110,14 @@
     }
 
     // 👉 Nav group
-    .nav-group-arrow {
-      font-size: 1.5rem;
-    }
+    .nav-group-arrow {}
 
     .nav-group {
       // Reduce the size of icon if link/group is inside group
       .nav-group,
       .nav-link {
         .nav-item-icon {
-          font-size: 0.9rem;
+          @include mixins.icon-size(0.9rem);
 
           // ℹ️ ml will be normal icon font-size - small icon font-size / 2
           margin-inline-start: 0.3rem;

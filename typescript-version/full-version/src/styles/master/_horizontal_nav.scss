@@ -4,7 +4,6 @@
 
 .layout-horizontal-nav {
   .nav-item-icon {
-    font-size: 1.2rem;
     margin-inline-end: 0.75rem;
   }
 
@@ -115,7 +114,7 @@
     }
 
     .nav-group-arrow {
-      font-size: 1.2rem;
+      @include mixins.icon-size(1.25rem);
 
       /*
         ℹ️ ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)

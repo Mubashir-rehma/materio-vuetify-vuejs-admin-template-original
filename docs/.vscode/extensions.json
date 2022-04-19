@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "esbenp.prettier-vscode",
-        "johnsoncodehk.volar"
+        "johnsoncodehk.volar",
+        "exodiusstudios.comment-anchors",
+        "mgmcdermott.vscode-language-babel",
+        "editorconfig.editorconfig",
+        "GitHub.vscode-pull-request-github"
     ]
 }

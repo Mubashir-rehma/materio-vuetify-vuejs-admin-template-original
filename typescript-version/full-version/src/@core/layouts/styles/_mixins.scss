@@ -7,3 +7,9 @@
         }
     }
 }
+
+// Mixin that accepts number and apply height width in rem
+@mixin icon-size($size) {
+    height: $size;
+    width: $size;
+}

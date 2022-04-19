@@ -21,12 +21,11 @@ const { appContentLayoutNav } = useLayouts()
       <!-- navbar -->
       <template #navbar="{ toggleVerticalOverlayNavActive }">
         <div style="display: flex; height: 100%; align-items: center;">
-          <button
+          <div
             v-if="windowWidth < config.app.overlayNavFromBreakpoint"
+            class="i-mdi-menu cursor-pointer"
             @click="toggleVerticalOverlayNavActive(true)"
-          >
-            Toggle
-          </button>
+          />
           <span>Navbar Content..</span>
         </div>
       </template>

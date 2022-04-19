@@ -1,0 +1,5 @@
+// Vuetify variable overrides
+
+@use "vuetify/styles" with (
+  $color-pack: false,
+);

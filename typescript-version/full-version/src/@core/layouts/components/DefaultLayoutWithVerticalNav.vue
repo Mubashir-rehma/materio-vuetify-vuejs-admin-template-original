@@ -21,7 +21,7 @@ export default defineComponent({
 
     // ℹ️ This is alternative to below two commented watcher
     // We want to show overlay if overlay nav is visible and want to hide overlay if overlay is hidden and vice versa.
-    biSyncRef(isOverlayNavActive, isLayoutOverlayVisible)
+    syncRef(isOverlayNavActive, isLayoutOverlayVisible)
 
     // watch(isOverlayNavActive, value => {
     //   // Sync layout overlay with overlay nav
@@ -35,7 +35,8 @@ export default defineComponent({
 
     // ℹ️ Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
     watch(windowWidth, value => {
-      if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value) isLayoutOverlayVisible.value = false
+      if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value)
+        isLayoutOverlayVisible.value = false
     })
 
     const router = useRouter()

@@ -12,6 +12,7 @@ export default defineComponent({
     },
   },
   setup(props, { slots }) {
+    const { y: windowScrollY } = useWindowScroll()
     const { width: windowWidth } = useWindowSize()
     const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint } = useLayouts()
 
@@ -110,7 +111,7 @@ export default defineComponent({
 
       return h(
         'div',
-        { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value)] },
+        { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value, windowScrollY.value)] },
         [
           verticalNav,
           h(

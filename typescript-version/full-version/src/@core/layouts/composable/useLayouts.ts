@@ -69,7 +69,7 @@ export const useLayouts = () => {
     return (windowWidth: MaybeRef<number>) => unref(windowWidth) < config.app.overlayNavFromBreakpoint
   })
 
-  const _layoutClasses = computed(() => (windowWidth: MaybeRef<number>) => [
+  const _layoutClasses = computed(() => (windowWidth: MaybeRef<number>, windowScrollY: MaybeRef<number>) => [
     `layout-nav-type-${appContentLayoutNav.value}`,
     `layout-navbar-${navbarType.value}`,
     `layout-footer-${footerType.value}`,
@@ -77,6 +77,7 @@ export const useLayouts = () => {
     { [`horizontal-nav-${horizontalNavType.value}`]: appContentLayoutNav.value === 'horizontal' },
     `layout-content-width-${appContentWidth.value}`,
     { 'layout-overlay-nav': isLessThanOverlayNavBreakpoint.value(windowWidth) },
+    { 'window-scrolled': unref(windowScrollY) },
   ])
 
   /*

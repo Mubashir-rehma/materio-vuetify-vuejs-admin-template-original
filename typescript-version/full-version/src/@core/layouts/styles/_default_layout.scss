@@ -1,6 +1,7 @@
 // These are styles which are both common in layout w/ vertical nav & horizontal nav
 @use "@layouts/styles/rtl";
 @use "@layouts/styles/placeholders";
+@use "@configured-variables" as variables;
 
 html,
 body {
@@ -11,10 +12,20 @@ body {
   display: flex;
 }
 
-.layout-navbar {
-  .layout-content-width-boxed & {
+@if variables.$layout-vertical-nav-navbar-is-contained {
+  .layout-navbar {
+    .layout-content-width-boxed & {
+      @extend %boxed-content;
+
+      padding: 0 2rem;
+    }
+  }
+} @else {
+  .layout-navbar {
     .navbar-content-container {
       @extend %boxed-content;
+
+      padding: 0 2rem;
     }
   }
 }

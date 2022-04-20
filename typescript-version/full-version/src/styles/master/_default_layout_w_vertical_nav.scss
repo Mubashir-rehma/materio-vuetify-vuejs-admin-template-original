@@ -1,9 +1,35 @@
+@use "@configured-variables" as variables;
+
 .layout-wrapper.layout-nav-type-vertical {
   // 👉 Layout navbar
-  .layout-navbar {
-    padding: 1.2rem;
-    background-color: #fff;
-    box-shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
+  @if variables.$layout-vertical-nav-navbar-is-contained {
+    .layout-navbar {
+      .navbar-content-container {
+        padding: 1.2rem 0;
+        transition: padding 0.2s ease, background-color 0.18s ease, left 0.3s ease;
+
+        @at-root {
+          .layout-wrapper.window-scrolled .layout-navbar {
+            .navbar-content-container {
+              padding: 1.2rem;
+              backdrop-filter: blur(8px);
+              background-color: hsl(0deg 0% 100% / 90%) !important;
+              box-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%) !important;
+            }
+          }
+        }
+
+        @if variables.$layout-vertical-nav-navbar-is-contained {
+          border-radius: 0 0 6px 6px;
+        }
+      }
+    }
+  } @else {
+    .layout-navbar {
+      padding: 1.2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
+    }
   }
 
   // 👉 Layout footer

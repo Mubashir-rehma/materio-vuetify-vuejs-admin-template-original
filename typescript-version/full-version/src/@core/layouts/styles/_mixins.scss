@@ -1,15 +1,15 @@
 @use "@configured-variables" as variables;
 
 @mixin rtl {
-    @if variables.$enable-rtl-styles {
-        [dir="rtl"] & {
-            @content;
-        }
+  @if variables.$enable-rtl-styles {
+    [dir="rtl"] & {
+      @content;
     }
+  }
 }
 
 // Mixin that accepts number and apply height width in rem
 @mixin icon-size($size) {
-    height: $size;
-    width: $size;
+  block-size: $size;
+  inline-size: $size;
 }

@@ -1,7 +1,7 @@
 @use "./mixins";
 
 .i-mdi-chevron-right {
-    @include mixins.rtl {
-        transform: rotate(180deg);
-    }
+  @include mixins.rtl {
+    transform: rotate(180deg);
+  }
 }

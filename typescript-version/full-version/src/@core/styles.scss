@@ -1,18 +1,20 @@
 $card-spacer-content: 2rem;
 
 .demo-space-x {
-    margin-top: -$card-spacer-content;
-    & > * {
-        margin-right: $card-spacer-content;
-        margin-left: $card-spacer-content;
-        margin-top: $card-spacer-content;
-    }
+  margin-block-start: -$card-spacer-content;
+
+  & > * {
+    margin-block-start: $card-spacer-content;
+    margin-inline: $card-spacer-content;
+  }
 }
+
 .demo-space-y {
-    & > * {
-        margin-bottom: $card-spacer-content;
-        &:last-child {
-            margin: .5rem;
-        }
+  & > * {
+    margin-block-end: $card-spacer-content;
+
+    &:last-child {
+      margin: 0.5rem;
     }
+  }
 }

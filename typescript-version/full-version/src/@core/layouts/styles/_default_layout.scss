@@ -12,20 +12,12 @@ body {
   display: flex;
 }
 
-@if variables.$layout-vertical-nav-navbar-is-contained {
-  .layout-navbar {
-    .layout-content-width-boxed & {
-      @extend %boxed-content;
+.layout-navbar {
+  inline-size: 100%;
 
-      padding: 0 2rem;
-    }
-  }
-} @else {
-  .layout-navbar {
+  .layout-content-width-boxed & {
     .navbar-content-container {
       @extend %boxed-content;
-
-      padding: 0 2rem;
     }
   }
 }

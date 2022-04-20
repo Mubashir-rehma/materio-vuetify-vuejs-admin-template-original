@@ -150,6 +150,20 @@ export default defineComponent({
 
   .layout-navbar {
     z-index: variables.$layout-vertical-nav-layout-navbar-z-index;
+
+    @at-root {
+      .layout-wrapper.layout-nav-type-vertical.layout-content-width-boxed .layout-navbar {
+        @if variables.$layout-vertical-nav-navbar-is-contained {
+          @extend %boxed-content;
+
+          padding: 0 2rem;
+        } @else {
+          .navbar-content-container {
+            padding: 0 2rem;
+          }
+        }
+      }
+    }
   }
 
   &.layout-navbar-sticky .layout-navbar {

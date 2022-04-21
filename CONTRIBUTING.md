@@ -197,3 +197,24 @@ addEventListener('resize', calculateTooltipPosition)
 ```
 
 Great! Now, we can calculate the tooltip position in just 3 lines. 😍
+
+
+## 🛠 Development
+
+### 🏗 Project Setup
+
+1. Clone this repo in your machine using `git clone $repo_url`
+2. Open `typescript-version/full-version` in vscode
+3. Install workspace recommended extensions by typing `@recommended` in extension filter
+
+### ⬅️ RTL
+
+Our admin template is RTL compatible. We write RTL logical properties to make sure our style works in both LTR & RTL directions.
+
+We use stylelint and its various plugin to format SCSS. One of its plugins converts CSS property into logical property on save. e.g. If you write `margin-right: 1rem;` then it will convert it to `margin-inline-end: 1rem;` 🤯
+
+Moreover, to take an extra step toward safety, we configured one of recommended vscode extension `fabiospampinato.vscode-highlight` to highlight the words which might needs RTL conversion.
+
+However, there's a downside to this. Extension we used can't determine if we are writing SCSS or something else. So it marks on all places where it finds the sensitive word.
+
+If this highlighting behavior might annoy you, you can simply disable extension `fabiospampinato.vscode-highlight`.

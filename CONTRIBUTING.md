@@ -13,7 +13,7 @@ Besides UI & UX we also focus on DX (Developer Experience). Please read the full
 
 ### 🖖 Easy to understand
 
-First of all, folder structure of the template should be easy to understand so that new developers can easily graps it. It will also allow them to easily find code/file they are looking for
+First of all, folder structure of the template should be easy to understand so that new developers can easily grasp it. It will also allow them to easily find code/file they are looking for
 
 ### 🏃‍♂️💨 Quick to get started
 

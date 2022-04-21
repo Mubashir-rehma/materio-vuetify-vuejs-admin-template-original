@@ -118,3 +118,11 @@ export interface NavGroup extends Partial<AclProperties> {
 
 export declare type VerticalNavItems = (NavLink|NavGroup|NavSectionTitle)[]
 export declare type HorizontalNavItems = (NavLink|NavGroup)[]
+
+// 👉 Components ========================
+
+interface I18nLanguage {
+  label: string
+  flagpackClass: string
+  i18nLang: string
+}

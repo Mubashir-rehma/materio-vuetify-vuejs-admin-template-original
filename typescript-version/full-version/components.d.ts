@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     HorizontalNavGroup: typeof import('./src/@core/layouts/components/HorizontalNavGroup.vue')['default']
     HorizontalNavLink: typeof import('./src/@core/layouts/components/HorizontalNavLink.vue')['default']
     HorizontalNavPopper: typeof import('./src/@core/layouts/components/HorizontalNavPopper.vue')['default']
+    I18n: typeof import('./src/@core/layouts/components/navbar/I18n.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCustomizer: typeof import('./src/components/TheCustomizer.vue')['default']

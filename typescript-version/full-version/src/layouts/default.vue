@@ -2,10 +2,13 @@
 import navItemsHorizontal from '@/navigation/horizontal'
 import navItems from '@/navigation/vertical'
 import { useDynamicVhCssProperty, useLayouts } from '@layouts'
+import type { NavBarI18n as NavBarI18nType } from '@layouts/components'
+import { NavBarI18n } from '@layouts/components'
 import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWithHorizontalNav.vue'
 import DefaultLayoutWithVerticalNav from '@layouts/components/DefaultLayoutWithVerticalNav.vue'
 import { config } from '@layouts/config'
 const { width: windowWidth } = useWindowSize()
+const { locale } = useI18n()
 
 // TODO: Use lazy imports
 // const DefaultLayoutWithHorizontalNav = () => import('@layouts/components').then(({ DefaultLayoutWithHorizontalNav: comp }) => comp)
@@ -13,6 +16,26 @@ const { width: windowWidth } = useWindowSize()
 
 useDynamicVhCssProperty()
 const { appContentLayoutNav } = useLayouts()
+
+// Navbar Components
+
+const i18nCompLanguages: InstanceType<typeof NavBarI18nType>['languages'] = [
+  {
+    label: 'English',
+    flagpackClass: 'i-flagpack-us',
+    i18nLang: 'en',
+  },
+  {
+    label: 'French',
+    flagpackClass: 'i-flagpack-fr',
+    i18nLang: 'fr',
+  },
+  {
+    label: 'Arabic',
+    flagpackClass: 'i-flagpack-ae',
+    i18nLang: 'ar',
+  },
+]
 </script>
 
 <template>
@@ -27,11 +50,12 @@ const { appContentLayoutNav } = useLayouts()
             @click="toggleVerticalOverlayNavActive(true)"
           />
           <span>Navbar Content..</span>
+          <NavBarI18n :languages="i18nCompLanguages" />
         </div>
       </template>
 
       <!-- Pages -->
-      <div style="padding:2rem">
+      <div style="padding: 2rem;">
         <router-view />
       </div>
 

@@ -1,6 +1,6 @@
 # Contributing
 
-We try to make our admin template best in class so developers don't have to look for any other resource while developing their apps.
+We try to make our admin template the best in class so developers don't have to look for any other resources while developing their apps.
 
 Besides UI & UX we also focus on DX (Developer Experience). Please read the full guide to understand how to contribute to our template.
 
@@ -17,7 +17,7 @@ First of all, folder structure of the template should be easy to understand so t
 
 ### 🏃‍♂️💨 Quick to get started
 
-No one wants spend their week in understanding the template. Hence, our template should be provide:
+No one wants to spend their week understanding the template. Hence, our template should provide:
 - Easy installation
 - Quick customization
 - Detailed documentation
@@ -26,11 +26,11 @@ No one wants spend their week in understanding the template. Hence, our template
 
 > _"Code is written once but read many times"_
 
-As author of the code we know what's going on in our code but for other developers it is benificial to write the readable code. For writing readable code:
+As an author of the code, we know what's going on in our code but for other developers, it is beneficial to write the readable code. For writing readable code:
 - Comment the code
 - Format the code _(it is automated via formatters like prettier, eslint, etc)_
 - Refactor if required
-- Add whitepsaces if needed
+- Add whitespaces if needed
 - Follow [zen of python](https://peps.python.org/pep-0020/#the-zen-of-python)
 - Self descriptive naming of variables, methods, classes, etc.
 
@@ -91,7 +91,7 @@ Below is example of why commenting the code improves readability
 </template>
 ```
 
-Moreover, if your code is logical and complex it should be commented properly so we don't have to log/debug it in order to understand how it works.
+Moreover, if your code is logical and complex it should be commented properly so we don't have to log/debug it to understand how it works.
 
 Writing descriptive names is also great boost to code readability. Let's see an example:
 
@@ -104,7 +104,7 @@ const reload = () => {}
 
 It is not clear what this variable refers to. We have to read the whole code and understand its context to working with it.
 
-With function name, name of function doesn't tell what it reloads. Does it reloads page or something else?
+With function name, name of function doesn't tell what it reloads. Does it reload the page or something else?
 
 #### With descriptive name
 
@@ -115,9 +115,9 @@ const reloadTableData = () => {}
 
 This variable is now self descriptive, meaning we can just look at the name of variable and understand that it is for layout overlay.
 
-With self descriptive name like `reloadTableData` you can easily understand than it will just reload the table data and won't affect any other on going process.
+With self descriptive name like `reloadTableData` you can easily understand that it will just reload the table data and won't affect any other ongoing process.
 
-This kind of self descriptive names will allow use to easily skim through code and allow us changing portion of the code without worry of breaking the whole code.
+This kind of self descriptive name will allow users to easily skim through code and allow us changing portion of the code without worrying about breaking the whole code.
 
 
 ### ♻️ DRY
@@ -125,9 +125,9 @@ This kind of self descriptive names will allow use to easily skim through code a
 > _"Do not Repeat Yourself"_
 
 
-Loosly speaking DRY means no duplicate code. DRY, code refactoring and code reusability are closely related terms.
+Loosely speaking DRY means no duplicate code. DRY, code refactoring and code reusability are closely related terms.
 
-In order to keep your code DRY (no duplication) you have to refactor it.
+To keep your code DRY (no duplication), you have to refactor it.
 
 Assume, you want to update the tooltip position each time there's a change in window size or window is scrolled.
 
@@ -168,7 +168,7 @@ We removed duplicate code where we were writing `getTooltipPosition{X|Y}` multip
 
 Moreover, we also wrapped `window.addEventListener` in `addEventListener` for reusability.
 
-Refactored code might be longer in this small code example but this will be greatly helpful in real world or large code base.
+Refactored code might be longer in this small code example but this will be greatly helpful in real world or large codebase.
 
 Let's calculate tooltip position in multiple places:
 

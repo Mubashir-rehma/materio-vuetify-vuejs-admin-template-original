@@ -1,0 +1,22 @@
+{
+    "Vuetify Menu -- Parent Activator": {
+        "prefix": "v-menu",
+        "body": [
+            "<v-btn color=\"primary\">",
+            "  Activator",
+            "  <v-menu activator=\"parent\">",
+            "    <v-list>",
+            "      <v-list-item",
+            "        v-for=\"(item, index) in ['apple', 'banana', 'cherry']\"",
+            "        :key=\"index\"",
+            "        :value=\"index\"",
+            "      >",
+            "        <v-list-item-title>{{ item }}</v-list-item-title>",
+            "      </v-list-item>",
+            "    </v-list>",
+            "  </v-menu>",
+            "</v-btn>"
+        ],
+        "description": "We use menu component with parent activator mostly because it is compact and easy to understand."
+    }
+}

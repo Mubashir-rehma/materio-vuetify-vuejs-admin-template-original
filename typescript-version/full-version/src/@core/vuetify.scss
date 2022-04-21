@@ -3,3 +3,17 @@
 @use "vuetify/styles" with (
   $color-pack: false,
 );
+
+// ========================================
+// ==== Vuetify overrides
+// ========================================
+
+// We will write styles that are missing in v3 of vuetify comparing to v2
+
+.v-alert {
+  margin-block-end: 1rem;
+}
+
+p {
+  margin-block-end: 1rem;
+}

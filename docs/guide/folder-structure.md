@@ -2,7 +2,7 @@
 
 ## @core
 
-This directory contains our core files and your are intended to change these files.
+This directory contains our core files and you are not intended to change these files.
 
 ## @fake-db
 
@@ -93,12 +93,6 @@ Contains your app pages. Just create a new file and new route will be auto gener
 :::
 
 Related: [How to create a new page](#)
-
-## patches
-
-This directory contains patches for node_modules directory. Your are intended to change these files.
-
-(_Will get removed in any upcoming update of our template._)
 
 ## plugins
 

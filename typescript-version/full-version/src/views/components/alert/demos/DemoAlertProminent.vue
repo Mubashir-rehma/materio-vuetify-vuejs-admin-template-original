@@ -1,10 +1,10 @@
 <template>
   <v-alert
     prominent
-    type="error"
+    type="info"
   >
     <template #text>
-      Nunc nonummy metus. Nunc interdum lacus sit amet orci Nullam dictum felis eu pede.
+      Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
     </template>
 
     <template #append>
@@ -18,20 +18,20 @@
   </v-alert>
 
   <v-alert
-    color="blue-grey-darken-2"
+    color="success"
     density="compact"
     icon="mdi-school"
     prominent
   >
-    Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Aenean ut eros et nisl sagittis vestibulum. Sed aliquam ultrices mauris. Donec vitae orci sed dolor rutrum auctor.
+    Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
   </v-alert>
 
   <v-alert
     icon="mdi-shield-lock-outline"
     prominent
-    type="info"
+    type="warning"
     class="mb-0"
   >
-    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Sed in libero ut nibh placerat accumsan.. Curabitur blandit mollis lacus. Curabitur blandit mollis lacus.
+    Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
   </v-alert>
 </template>

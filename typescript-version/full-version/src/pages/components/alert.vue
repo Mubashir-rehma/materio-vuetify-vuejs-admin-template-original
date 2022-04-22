@@ -76,7 +76,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     title="Closable"
     :code="demoCode.closable"
   >
-    <p>The <code>closable</code> prop adds a close button to the end of the alert component. Clicking this button will set its value to false and effectively hide the alert. You can restore the alert by binding <code>v-model</code> and setting it to true. The close icon automatically has an aria-label applied that can be changed by modifying the <code>close-label</code> prop or changing <code>close</code> value in your locale.</p>
+    <p>The <code>closable</code> prop adds a close button to the end of the alert component. Clicking this button will set its value to false and effectively hide the alert.</p>
 
     <DemoAlertClosable />
   </AppCardCode>
@@ -96,7 +96,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     title="Outlined"
     :code="demoCode.outlined"
   >
-    <p>The <code>variant</code> prop provides an easy way to change the overall style of your alerts. The <code>variant="outlined"</code> prop inverts the style of an alert, inheriting the currently applied <code>color</code>, applying it to the text and border, and making its background transparent.</p>
+    <p>The <code>variant="outlined"</code> prop inverts the style of an alert, inheriting the currently applied <code>color</code>, applying it to the text and border, and making its background transparent.</p>
 
     <DemoAlertOutlined />
   </AppCardCode>

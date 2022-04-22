@@ -7,13 +7,12 @@ const isAlertVisible = ref(true)
 <template>
   <v-alert
     v-model="isAlertVisible"
-    border="top"
     closable
     close-label="Close Alert"
     color="primary"
     class="mb-0"
   >
-    Aenean imperdiet. Quisque id odio. Cras dapibus. Pellentesque ut neque. Cras dapibus. Vivamus consectetuer hendrerit lacus. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
   </v-alert>
 
   <!-- Button -->

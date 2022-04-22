@@ -218,3 +218,7 @@ Moreover, to take an extra step toward safety, we configured one of recommended 
 However, there's a downside to this. Extension we used can't determine if we are writing SCSS or something else. So it marks on all places where it finds the sensitive word.
 
 If this highlighting behavior might annoy you, you can simply disable extension `fabiospampinato.vscode-highlight`.
+
+## Commit Convention
+
+We follow conventional commits in this repo. Please read the quick guide [here](https://www.conventionalcommits.org/en/v1.0.0/#summary).

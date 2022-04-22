@@ -5,12 +5,11 @@ const isAlertVisible = ref(true)
 </script>
 
 <template>
-  <div class="alert-wrapper">
+  <div class="alert-demo-v-model-wrapper">
     <v-alert
       v-model="isAlertVisible"
       color="warning"
       variant="contained-text"
-      transition="slide-y-transition"
     >
       non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
     </v-alert>
@@ -26,7 +25,7 @@ const isAlertVisible = ref(true)
 </template>
 
 <style lang="scss">
-.alert-wrapper {
+.alert-demo-v-model-wrapper {
   block-size: 96px;
 }
 </style>

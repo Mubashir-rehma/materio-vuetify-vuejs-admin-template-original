@@ -41,12 +41,12 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertBorder />
   </AppCardCode>
 
-  <!-- ColoredBorder -->
+  <!-- Colored Border -->
   <AppCardCode
-    title="ColoredBorder"
+    title="Colored Border"
     :code="demoCode.coloredBorder"
   >
-    <p>The <code>colored-border</code> prop removes the alert background in order to accent the <code>border</code> prop. If a type is set, it will use the type’s default color. If no <code>color</code> or <code>type</code> is set, the color will default to the inverted color of the applied theme (black for light and white/gray for dark).</p>
+    <p>The <code>colored-border</code> prop removes the alert background in order to accent the <code>border</code> prop. If a type is set, it will use the type's default color. If no <code>color</code> or <code>type</code> is set, the color will default to the inverted color of the applied theme (black for light and white/gray for dark).</p>
 
     <DemoAlertColoredBorder />
   </AppCardCode>
@@ -56,7 +56,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     title="Density"
     :code="demoCode.density"
   >
-    <p>The <code>density</code> prop decreases the height of the alert based upon 1 of 3 levels of density; <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</p>
+    <p>The <code>density</code> prop decreases the height of the alert based upon 1 of 3 levels of density. <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</p>
 
     <DemoAlertDensity />
   </AppCardCode>

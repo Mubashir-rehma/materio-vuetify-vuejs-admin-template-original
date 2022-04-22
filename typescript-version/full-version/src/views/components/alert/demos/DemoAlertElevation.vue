@@ -17,7 +17,6 @@ const alertShadow = ref(5)
   <v-alert
     color="primary"
     :elevation="alertShadow"
-    class="ma-0"
   >
     I'm an alert with box shadow.
   </v-alert>

@@ -1,32 +1,31 @@
+<script lang="ts" setup>
+
+const isAlertVisible = ref(true)
+
+</script>
+
 <template>
-  <div>
+  <div class="alert-demo-v-model-wrapper">
     <v-alert
       v-model="isAlertVisible"
       color="warning"
-      text
-      transition="slide-y-transition"
+      variant="contained-text"
     >
       non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
     </v-alert>
-
-    <!-- button -->
-    <v-btn
-      color="primary"
-      @click="isAlertVisible = !isAlertVisible"
-    >
-      {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
-    </v-btn>
   </div>
+
+  <!-- button -->
+  <v-btn
+    color="primary"
+    @click="isAlertVisible = !isAlertVisible"
+  >
+    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
+  </v-btn>
 </template>
 
-<script>
-import { ref } from '@vue/composition-api'
-
-export default {
-  setup() {
-    const isAlertVisible = ref(true)
-
-    return { isAlertVisible }
-  },
+<style lang="scss">
+.alert-demo-v-model-wrapper {
+  block-size: 96px;
 }
-</script>
+</style>

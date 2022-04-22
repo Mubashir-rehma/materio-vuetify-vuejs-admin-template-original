@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-space-y">
     <v-alert type="info">
       I'm a alert with a <strong>type</strong> of info
     </v-alert>
@@ -12,10 +12,7 @@
       I'm a alert with a <strong>type</strong> of warning
     </v-alert>
 
-    <v-alert
-      type="error"
-      class="mb-0"
-    >
+    <v-alert type="error">
       I'm a alert with a <strong>type</strong> of error
     </v-alert>
   </div>

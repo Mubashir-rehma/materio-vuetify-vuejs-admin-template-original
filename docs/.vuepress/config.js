@@ -20,6 +20,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/guide/installation',
+            '/guide/vscode-setup',
             '/guide/folder-structure',
             '/guide/how-to-create-a-new-page',
             '/guide/styles',

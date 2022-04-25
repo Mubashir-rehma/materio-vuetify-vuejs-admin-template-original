@@ -43,12 +43,12 @@ export default [
       {
         title: 'Raise Support',
         href:
-          'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html',
+          'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html',
         icon: mdiLifebuoy,
       },
       {
         title: 'Documentation',
-        href: 'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation',
+        href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation',
         icon: mdiFileDocumentOutline,
       },
     ],

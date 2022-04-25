@@ -2,7 +2,7 @@ const path = require('path')
 const { mergeSassVariables } = require('@vuetify/cli-plugin-utils')
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/demo/materio-vuetify-vuejs-admin-template/demo-5' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/materio-vuetify-vuejs-admin-template/demo-5' : '/',
   outputDir: 'dist/demo-5',
   transpileDependencies: ['vuetify'],
   configureWebpack: {
@@ -12,6 +12,7 @@ module.exports = {
         '@core': path.resolve(__dirname, 'src/@core'),
         '@axios': path.resolve(__dirname, 'src/plugins/axios.js'),
         '@user-variables': path.resolve(__dirname, 'src/styles/variables.scss'),
+        apexcharts: path.resolve(__dirname, 'node_modules/apexcharts-clevision'),
       },
     },
   },

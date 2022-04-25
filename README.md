@@ -32,15 +32,15 @@
 
 ## Documentation
 
-Please read the [documentation](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation) for getting started.
+Please read the [documentation](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation) for getting started.
 
 ## Support
 
-Visit [Getting Support](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html) guide for getting support for materio admin.
+Visit [Getting Support](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html) guide for getting support for materio admin.
 
 ## Updating the template
 
-Visit article on [updating the template](https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation/articles/how-to-update-materio-to-latest-version.html) to latest version.
+Visit article on [updating the template](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/articles/how-to-update-materio-to-latest-version.html) to latest version.
 
 ## License Details
 

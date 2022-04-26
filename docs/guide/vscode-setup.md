@@ -20,13 +20,13 @@ We also provided the snippet for adding the comment anchors. You can find this s
 
 We use "👉" for adding anchors to the code. You can get this emoji by writing `cm-` (press `ctrl`/`cmd` + `space` if popup doesn't open) and choosing `cm-hand-emoji` snippet.
 
-<img :src="$withBase('/images/guide/vscode-comment-anchors-snippets.png')" alt="vscode-recommended-extensions.png" class="medium-zoom">
+<img :src="$withBase('/images/guide/vscode-comment-anchors-snippets.png')" alt="vscode-comment-anchors-snippets" class="medium-zoom">
 
 ## Secondary Sidebar 🦸
 
 Secondary sidebar is game changer for code navigation when combined with this extension. Press `ctrl`/`cmd` + `shift` + `p` and search for secondary sidebar.
 
-<img :src="$withBase('/images/guide/vscode-enable-secondary-sidebar.png')" alt="vscode-recommended-extensions.png" class="medium-zoom">
+<img :src="$withBase('/images/guide/vscode-enable-secondary-sidebar.png')" alt="vscode-enable-secondary-sidebar" class="medium-zoom">
 
 After this you will get the new sidebar on the right. Now drag the comment anchors extension panel from left sidebar to right sidebar.
 
@@ -36,7 +36,7 @@ With above changes now you code editor will look like below. Notice, main sideba
 
 Once, you have the file with the comments anchor setup you will get the list of anchors in secondary sidebar that is placed on right.
 
-<!-- TODO: #28 Add GIF showing demo of code navigation using comment anchors -->
+<img :src="$withBase('/images/guide/vscode-comment-anchor-demo.gif')" alt="vscode-recommended-extensions.png" class="medium-zoom">
 
 ## Snippets
 

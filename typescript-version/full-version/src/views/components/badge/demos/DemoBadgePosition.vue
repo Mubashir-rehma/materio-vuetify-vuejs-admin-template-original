@@ -37,7 +37,7 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     <!-- Bottom Start -->
     <v-badge
       location="top-start"
-      content="5"
+      content="4"
     >
       <v-avatar size="48">
         <v-img :src="avatar1" />

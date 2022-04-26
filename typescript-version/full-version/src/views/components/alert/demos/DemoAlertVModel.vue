@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-
 const isAlertVisible = ref(true)
-
 </script>
 
 <template>

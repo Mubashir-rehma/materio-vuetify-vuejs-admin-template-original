@@ -3,7 +3,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
 </script>
 
 <template>
-  <!-- Colors -->
+  <!-- 👉 Colors -->
   <AppCardCode
     title="Colors"
     :code="demoCode.buttonColors"
@@ -13,7 +13,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonColors />
   </AppCardCode>
 
-  <!-- Outlined -->
+  <!-- 👉 Outlined -->
   <AppCardCode
     title="Outlined"
     :code="demoCode.buttonOutlined"
@@ -23,7 +23,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonOutlined />
   </AppCardCode>
 
-  <!-- Flat -->
+  <!-- 👉 Flat -->
   <AppCardCode
     title="Flat"
     :code="demoCode.buttonFlat"
@@ -33,7 +33,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonFlat />
   </AppCardCode>
 
-  <!-- Rounded -->
+  <!-- 👉 Rounded -->
   <AppCardCode
     title="Rounded"
     :code="demoCode.buttonRounded"
@@ -43,7 +43,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonRounded />
   </AppCardCode>
 
-  <!-- Text -->
+  <!-- 👉 Text -->
   <AppCardCode
     title="Text"
     :code="demoCode.buttonText"
@@ -53,7 +53,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonText />
   </AppCardCode>
 
-  <!-- Plain -->
+  <!-- 👉 Plain -->
   <AppCardCode
     title="Plain"
     :code="demoCode.buttonPlain"
@@ -63,7 +63,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonPlain />
   </AppCardCode>
 
-  <!-- Contained Text -->
+  <!-- 👉 Contained Text -->
   <AppCardCode
     title="Contained Text"
     :code="demoCode.buttonPlain"
@@ -73,7 +73,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonContainedText />
   </AppCardCode>
 
-  <!-- Icon -->
+  <!-- 👉 Icon -->
   <AppCardCode
     title="Icon"
     :code="demoCode.buttonIcon"
@@ -83,7 +83,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonIcon />
   </AppCardCode>
 
-  <!-- Icon Only -->
+  <!-- 👉 Icon Only -->
   <AppCardCode
     title="Icon Only"
     :code="demoCode.buttonIconOnly"
@@ -93,7 +93,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonIconOnly />
   </AppCardCode>
 
-  <!-- Sizing -->
+  <!-- 👉 Sizing -->
   <AppCardCode
     title="Sizing"
     :code="demoCode.buttonSizing"
@@ -103,7 +103,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonSizing />
   </AppCardCode>
 
-  <!-- Block Button -->
+  <!-- 👉 Block Button -->
   <AppCardCode
     title="Block Button"
     :code="demoCode.buttonBlock"
@@ -113,7 +113,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonBlock />
   </AppCardCode>
 
-  <!-- Router -->
+  <!-- 👉 Router -->
   <AppCardCode
     title="Router"
     :code="demoCode.buttonRouter"
@@ -130,7 +130,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonRouter />
   </AppCardCode>
 
-  <!-- Link -->
+  <!-- 👉 Link -->
   <AppCardCode
     title="Link"
     :code="demoCode.buttonLink"
@@ -147,7 +147,7 @@ import * as demoCode from '@/views/components/button/demos/demoCodeButton'
     <DemoButtonLink />
   </AppCardCode>
 
-  <!-- Button Group -->
+  <!-- 👉 Button Group -->
   <AppCardCode
     title="Group Button"
     :code="demoCode.buttonGroup"

@@ -8,7 +8,7 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
       cols="12"
       md="6"
     >
-      <!-- Colors -->
+      <!-- 👉 Colors -->
       <AppCardCode
         title="Colors"
         :code="demoCode.colors"
@@ -23,7 +23,7 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
       md="6"
       cols="12"
     >
-      <!-- Sizes -->
+      <!-- 👉 Sizes -->
       <AppCardCode
         title="Sizes"
         :code="demoCode.sizes"
@@ -38,7 +38,7 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
       cols="12"
       md="6"
     >
-      <!-- Icons -->
+      <!-- 👉 Icons -->
       <AppCardCode
         title="Icons"
         :code="demoCode.icons"
@@ -53,7 +53,7 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
       cols="12"
       md="6"
     >
-      <!-- Tile -->
+      <!-- 👉 Tile -->
       <AppCardCode
         title="Tile"
         :code="demoCode.tile"
@@ -68,7 +68,7 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
       cols="12"
       md="6"
     >
-      <!-- Images -->
+      <!-- 👉 Images -->
       <AppCardCode
         title="Avatar Images"
         :code="demoCode.images"

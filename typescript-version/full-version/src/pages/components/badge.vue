@@ -8,7 +8,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Style -->
+      <!-- 👉 Style -->
       <AppCardCode
         title="Style"
         :code="demoCode.style"
@@ -23,7 +23,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Color -->
+      <!-- 👉 Color -->
       <AppCardCode
         title="Color"
         :code="demoCode.color"
@@ -38,7 +38,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Position -->
+      <!-- 👉 Position -->
       <AppCardCode
         title="Position"
         :code="demoCode.position"
@@ -53,7 +53,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Icon -->
+      <!-- 👉 Icon -->
       <AppCardCode
         title="Icon"
         :code="demoCode.icon"
@@ -68,7 +68,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Avatar Status -->
+      <!-- 👉 Avatar Status -->
       <AppCardCode
         title="Avatar Status"
         :code="demoCode.avatarStatus"
@@ -83,7 +83,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Dynamic notifications -->
+      <!-- 👉 Dynamic notifications -->
       <AppCardCode
         title="Dynamic notifications"
         :code="demoCode.dynamicNotifications"
@@ -98,7 +98,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Show on hover -->
+      <!-- 👉 Show on hover -->
       <AppCardCode
         title="Show on hover"
         :code="demoCode.showOnHover"
@@ -113,7 +113,7 @@ import * as demoCode from '@/views/components/badge/demos/demoCodeBadge'
       cols="12"
       md="6"
     >
-      <!-- Tabs -->
+      <!-- 👉 Tabs -->
       <AppCardCode
         title="Tabs"
         :code="demoCode.tabs"

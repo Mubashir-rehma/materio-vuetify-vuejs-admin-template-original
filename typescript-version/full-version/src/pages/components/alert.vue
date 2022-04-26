@@ -3,7 +3,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
 </script>
 
 <template>
-  <!-- Basic -->
+  <!-- 👉 Basic -->
   <AppCardCode
     title="Basic"
     :code="demoCode.basic"
@@ -11,7 +11,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertBasic />
   </AppCardCode>
 
-  <!-- Colors -->
+  <!-- 👉 Colors -->
   <AppCardCode
     title="Colors"
     :code="demoCode.colors"
@@ -21,7 +21,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertColors />
   </AppCardCode>
 
-  <!-- Icons -->
+  <!-- 👉 Icons -->
   <AppCardCode
     title="Icons"
     :code="demoCode.icons"
@@ -31,7 +31,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertIcons />
   </AppCardCode>
 
-  <!-- Border -->
+  <!-- 👉 Border -->
   <AppCardCode
     title="Border"
     :code="demoCode.border"
@@ -41,7 +41,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertBorder />
   </AppCardCode>
 
-  <!-- Colored Border -->
+  <!-- 👉 Colored Border -->
   <AppCardCode
     title="Colored Border"
     :code="demoCode.coloredBorder"
@@ -51,7 +51,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertColoredBorder />
   </AppCardCode>
 
-  <!-- Density -->
+  <!-- 👉 Density -->
   <AppCardCode
     title="Density"
     :code="demoCode.density"
@@ -61,7 +61,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertDensity />
   </AppCardCode>
 
-  <!-- Type -->
+  <!-- 👉 Type -->
   <AppCardCode
     title="Type"
     :code="demoCode.type"
@@ -71,7 +71,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertType />
   </AppCardCode>
 
-  <!-- Closable  -->
+  <!-- 👉 Closable  -->
   <AppCardCode
     title="Closable"
     :code="demoCode.closable"
@@ -81,7 +81,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertClosable />
   </AppCardCode>
 
-  <!-- V-model support -->
+  <!-- 👉 V-model support -->
   <AppCardCode
     title="v-model support"
     :code="demoCode.vModel"
@@ -91,7 +91,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertVModel />
   </AppCardCode>
 
-  <!-- Outlined -->
+  <!-- 👉 Outlined -->
   <AppCardCode
     title="Outlined"
     :code="demoCode.outlined"
@@ -101,7 +101,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertOutlined />
   </AppCardCode>
 
-  <!-- Text -->
+  <!-- 👉 Text -->
   <AppCardCode
     title="Text"
     :code="demoCode.text"
@@ -111,7 +111,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertText />
   </AppCardCode>
 
-  <!-- Elevation -->
+  <!-- 👉 Elevation -->
   <AppCardCode
     title="Elevation"
     :code="demoCode.elevation"
@@ -121,7 +121,7 @@ import * as demoCode from '@/views/components/alert/demos/demoCodeAlert'
     <DemoAlertElevation />
   </AppCardCode>
 
-  <!-- Prominent -->
+  <!-- 👉 Prominent -->
   <AppCardCode
     title="Prominent"
     :code="demoCode.prominent"

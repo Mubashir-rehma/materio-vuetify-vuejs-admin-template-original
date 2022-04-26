@@ -16,7 +16,7 @@
 
     <v-btn
       color="success"
-      :to="{ name: 'alert'}"
+      :to="{ name: 'components-alert'}"
     >
       Named Router
     </v-btn>

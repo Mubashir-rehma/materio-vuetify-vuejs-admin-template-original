@@ -17,7 +17,7 @@
       sm="6"
     >
       <v-btn
-        outlined
+        variant="outlined"
         color="primary"
         block
       >

@@ -1,43 +1,35 @@
+<script lang="ts" setup>
+const toggleExclusive = ref(1)
+</script>
+
 <template>
   <v-btn-toggle
     v-model="toggleExclusive"
-    mandatory
+    divided
   >
-    <v-btn depressed>
-      <v-icon>{{ icons.mdiFormatAlignLeft }}</v-icon>
+    <v-btn
+      flat
+      variant="outlined"
+    >
+      <v-icon>mdi-format-align-left</v-icon>
     </v-btn>
-    <v-btn depressed>
-      <v-icon>{{ icons.mdiFormatAlignCenter }}</v-icon>
+    <v-btn
+      flat
+      variant="outlined"
+    >
+      <v-icon>mdi-format-align-center</v-icon>
     </v-btn>
-    <v-btn depressed>
-      <v-icon>{{ icons.mdiFormatAlignRight }}</v-icon>
+    <v-btn
+      flat
+      variant="outlined"
+    >
+      <v-icon>mdi-format-align-right</v-icon>
     </v-btn>
-    <v-btn depressed>
-      <v-icon>{{ icons.mdiFormatAlignJustify }}</v-icon>
+    <v-btn
+      flat
+      variant="outlined"
+    >
+      <v-icon>mdi-format-align-justify</v-icon>
     </v-btn>
   </v-btn-toggle>
 </template>
-
-<script>
-import { ref } from '@vue/composition-api'
-// eslint-disable-next-line object-curly-newline
-import { mdiFormatAlignLeft, mdiFormatAlignCenter, mdiFormatAlignRight, mdiFormatAlignJustify } from '@mdi/js'
-
-export default {
-  setup() {
-    const toggleExclusive = ref(undefined)
-
-    return {
-      toggleExclusive,
-
-      // icon
-      icons: {
-        mdiFormatAlignLeft,
-        mdiFormatAlignCenter,
-        mdiFormatAlignRight,
-        mdiFormatAlignJustify,
-      },
-    }
-  },
-}
-</script>

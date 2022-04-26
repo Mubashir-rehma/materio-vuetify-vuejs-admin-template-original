@@ -1,40 +1,25 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
-      rounded
-      color="primary"
-    >
-      Primary
+    <v-btn color="primary">
+      Normal Button
     </v-btn>
     <v-btn
-      rounded
+      rounded="lg"
       color="secondary"
     >
-      Secondary
+      Rounded Button
     </v-btn>
     <v-btn
-      rounded
+      :rounded="0"
       color="success"
     >
-      Success
+      Tile Button
     </v-btn>
     <v-btn
-      rounded
+      rounded="pill"
       color="info"
     >
-      Info
-    </v-btn>
-    <v-btn
-      rounded
-      color="warning"
-    >
-      Warning
-    </v-btn>
-    <v-btn
-      rounded
-      color="error"
-    >
-      Error
+      Pill Button
     </v-btn>
   </div>
 </template>

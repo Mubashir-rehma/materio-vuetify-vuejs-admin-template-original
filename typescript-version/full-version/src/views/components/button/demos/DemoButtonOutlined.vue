@@ -1,37 +1,37 @@
 <template>
   <div class="demo-space-x">
     <v-btn
-      outlined
+      variant="outlined"
       color="primary"
     >
       Primary
     </v-btn>
     <v-btn
-      outlined
+      variant="outlined"
       color="secondary"
     >
       Secondary
     </v-btn>
     <v-btn
-      outlined
+      variant="outlined"
       color="success"
     >
       Success
     </v-btn>
     <v-btn
-      outlined
+      variant="outlined"
       color="info"
     >
       Info
     </v-btn>
     <v-btn
-      outlined
+      variant="outlined"
       color="warning"
     >
       Warning
     </v-btn>
     <v-btn
-      outlined
+      variant="outlined"
       color="error"
     >
       Error

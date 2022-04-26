@@ -1,45 +1,45 @@
 <template>
   <div class="demo-space-x">
     <v-btn
-      depressed
       color="primary"
+      variant="contained-text"
     >
-      primary
+      Primary
     </v-btn>
 
     <v-btn
-      depressed
       color="secondary"
+      variant="contained-text"
     >
       Secondary
     </v-btn>
 
     <v-btn
-      depressed
       color="success"
+      variant="contained-text"
     >
       Success
     </v-btn>
 
     <v-btn
       color="info"
-      depressed
+      variant="contained-text"
     >
       Info
     </v-btn>
 
     <v-btn
       color="warning"
-      depressed
+      variant="contained-text"
     >
-      Warning
+      warning
     </v-btn>
 
     <v-btn
       color="error"
-      depressed
+      variant="contained-text"
     >
-      Error
+      error
     </v-btn>
   </div>
 </template>

@@ -1,34 +1,32 @@
 <template>
   <div class="demo-space-x">
     <v-btn
-      x-large
+      size="x-large"
       color="primary"
-      dark
     >
       Extra large Button
     </v-btn>
+
     <v-btn
       color="success"
-      dark
-      large
+      size="large"
     >
       Large Button
     </v-btn>
-    <v-btn
-      color="info"
-      dark
-    >
+
+    <v-btn color="info">
       Normal Button
     </v-btn>
+
     <v-btn
-      small
+      size="small"
       color="warning"
-      dark
     >
       Small Button
     </v-btn>
+
     <v-btn
-      x-small
+      size="x-small"
       color="error"
     >
       Extra small Button

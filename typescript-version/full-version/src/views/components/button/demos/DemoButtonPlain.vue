@@ -2,42 +2,42 @@
   <div class="demo-space-x">
     <v-btn
       color="primary"
-      plain
+      variant="plain"
     >
       Primary
     </v-btn>
 
     <v-btn
       color="secondary"
-      plain
+      variant="plain"
     >
       Secondary
     </v-btn>
 
     <v-btn
       color="success"
-      plain
+      variant="plain"
     >
       Success
     </v-btn>
 
     <v-btn
       color="info"
-      plain
+      variant="plain"
     >
       Info
     </v-btn>
 
     <v-btn
       color="warning"
-      plain
+      variant="plain"
     >
       warning
     </v-btn>
 
     <v-btn
       color="error"
-      plain
+      variant="plain"
     >
       error
     </v-btn>

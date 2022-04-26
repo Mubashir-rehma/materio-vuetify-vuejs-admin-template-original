@@ -1,37 +1,42 @@
 <template>
   <div class="demo-space-x">
     <v-btn
-      tile
+      flat
       color="primary"
     >
-      Primary
+      primary
     </v-btn>
+
     <v-btn
-      tile
+      flat
       color="secondary"
     >
       Secondary
     </v-btn>
+
     <v-btn
-      tile
+      flat
       color="success"
     >
       Success
     </v-btn>
+
     <v-btn
-      tile
+      flat
       color="info"
     >
       Info
     </v-btn>
+
     <v-btn
-      tile
+      flat
       color="warning"
     >
       Warning
     </v-btn>
+
     <v-btn
-      tile
+      flat
       color="error"
     >
       Error

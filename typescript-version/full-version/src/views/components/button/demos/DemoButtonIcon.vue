@@ -1,97 +1,42 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
-      color="primary"
-      dark
-    >
+    <v-btn color="primary">
       Accept
       <v-icon
-        dark
-        right
-      >
-        {{ icons.mdiCheckboxMarkedCircleOutline }}
-      </v-icon>
+        end
+        icon="mdi-checkbox-marked-circle-outline"
+      />
     </v-btn>
 
-    <v-btn
-      color="secondary"
-      dark
-    >
+    <v-btn color="secondary">
       <v-icon
-        dark
-        left
-      >
-        {{ icons.mdiMinusCircleOutline }}
-      </v-icon>Cancel
+        start
+        icon="mdi-minus-circle-outline"
+      />Cancel
     </v-btn>
 
-    <v-btn
-      color="success"
-      dark
-    >
+    <v-btn color="success">
       Upload
       <v-icon
-        dark
-        right
-      >
-        {{ icons.mdiCloudUploadOutline }}
-      </v-icon>
+        end
+        icon="mdi-cloud-upload-outline"
+      />
     </v-btn>
 
-    <v-btn
-      color="info"
-      dark
-    >
+    <v-btn color="info">
       <v-icon
-        dark
-        left
-      >
-        {{ icons.mdiArrowLeft }}
-      </v-icon>Back
+        start
+        icon="mdi-arrow-left"
+      />
+      Back
     </v-btn>
 
-    <v-btn
-      color="warning"
-      dark
-    >
-      <v-icon dark>
-        {{ icons.mdiWrenchOutline }}
-      </v-icon>
+    <v-btn color="warning">
+      <v-icon icon="mdi-wrench-outline" />
     </v-btn>
 
-    <v-btn
-      color="error"
-      dark
-    >
-      <v-icon dark>
-        {{ icons.mdiCancel }}
-      </v-icon>
+    <v-btn color="error">
+      <v-icon icon="mdi-cancel" />
     </v-btn>
   </div>
 </template>
-
-<script>
-import {
-  mdiCheckboxMarkedCircleOutline,
-  mdiCancel,
-  mdiMinusCircleOutline,
-  mdiArrowLeft,
-  mdiWrenchOutline,
-  mdiCloudUploadOutline,
-} from '@mdi/js'
-
-export default {
-  setup() {
-    return {
-      icons: {
-        mdiCheckboxMarkedCircleOutline,
-        mdiCancel,
-        mdiMinusCircleOutline,
-        mdiArrowLeft,
-        mdiWrenchOutline,
-        mdiCloudUploadOutline,
-      },
-    }
-  },
-}
-</script>

@@ -2,68 +2,50 @@
   <div class="demo-space-x">
     <v-btn
       icon
+      variant="text"
       color="primary"
     >
-      <v-icon>
-        {{ icons.mdiBriefcaseDownloadOutline }}
-      </v-icon>
+      <v-icon icon="mdi-briefcase-download-outline" />
     </v-btn>
 
     <v-btn
       icon
+      variant="text"
       color="secondary"
     >
-      <v-icon>
-        {{ icons.mdiAccountPlusOutline }}
-      </v-icon>
+      <v-icon icon="mdi-account-plus-outline" />
     </v-btn>
 
     <v-btn
       icon
+      variant="text"
       color="success"
     >
-      <v-icon>{{ icons.mdiMagnify }}</v-icon>
+      <v-icon icon="mdi-magnify" />
     </v-btn>
 
     <v-btn
       icon
+      variant="text"
       color="info"
     >
-      <v-icon>{{ icons.mdiThumbUpOutline }}</v-icon>
+      <v-icon icon="mdi-thumb-up-outline" />
     </v-btn>
 
     <v-btn
       icon
+      variant="text"
       color="warning"
     >
-      <v-icon>{{ icons.mdiStarOutline }}</v-icon>
+      <v-icon icon="mdi-star-outline" />
     </v-btn>
 
     <v-btn
       icon
+      variant="text"
       color="error"
     >
-      <v-icon>{{ icons.mdiHeartOutline }}</v-icon>
+      <v-icon icon="mdi-heart-outline" />
     </v-btn>
   </div>
 </template>
-
-<script>
-// eslint-disable-next-line object-curly-newline
-import { mdiBriefcaseDownloadOutline, mdiAccountPlusOutline, mdiMagnify, mdiHeartOutline, mdiStarOutline, mdiThumbUpOutline } from '@mdi/js'
-
-export default {
-  setup() {
-    return {
-      icons: {
-        mdiBriefcaseDownloadOutline,
-        mdiAccountPlusOutline,
-        mdiMagnify,
-        mdiHeartOutline,
-        mdiStarOutline,
-        mdiThumbUpOutline,
-      },
-    }
-  },
-}
-</script>

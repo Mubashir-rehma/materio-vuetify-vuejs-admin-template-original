@@ -53,6 +53,7 @@ export default [
       { title: 'Alert', to: 'components-alert' },
       { title: 'Avatar', to: 'components-avatar' },
       { title: 'Button', to: 'components-button' },
+      { title: 'Badge', to: 'components-badge' },
     ],
   },
   { heading: 'Other' },

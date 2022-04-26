@@ -6,7 +6,7 @@ $card-spacer-content: 2rem;
 
   & > * {
     margin-block-start: $card-spacer-content;
-    margin-inline: $card-spacer-content;
+    margin-inline-end: $card-spacer-content;
   }
 }
 

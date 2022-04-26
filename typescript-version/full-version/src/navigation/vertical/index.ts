@@ -51,6 +51,7 @@ export default [
     icon: 'i-mdi-archive-outline',
     children: [
       { title: 'Alert', to: 'components-alert' },
+      { title: 'Avatar', to: 'components-avatar' },
       { title: 'Button', to: 'components-button' },
     ],
   },

@@ -1,8 +1,9 @@
 // Vuetify variable overrides
+@use "vuetify/styles";
 
-@use "vuetify/styles" with (
-  $color-pack: false,
-);
+// @use "vuetify/styles" with (
+//   $color-pack: false,
+// );
 
 // ========================================
 // ==== Vuetify overrides

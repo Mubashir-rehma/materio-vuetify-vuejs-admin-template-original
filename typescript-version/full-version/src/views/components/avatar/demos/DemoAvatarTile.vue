@@ -1,0 +1,69 @@
+<template>
+  <div class="demo-space-x">
+    <v-avatar
+      rounded="0"
+      color="primary"
+    >
+      <v-icon
+        color="white"
+        size="25"
+        icon="mdi-account-outline"
+      />
+    </v-avatar>
+
+    <v-avatar
+      rounded="0"
+      color="secondary"
+    >
+      <v-icon
+        color="white"
+        size="25"
+        icon="mdi-account-outline"
+      />
+    </v-avatar>
+
+    <v-avatar
+      rounded="0"
+      color="success"
+    >
+      <v-icon
+        color="white"
+        size="25"
+        icon="mdi-account-outline"
+      />
+    </v-avatar>
+
+    <v-avatar
+      rounded="0"
+      color="info"
+    >
+      <v-icon
+        color="white"
+        size="25"
+        icon="mdi-account-outline"
+      />
+    </v-avatar>
+
+    <v-avatar
+      rounded="0"
+      color="warning"
+    >
+      <v-icon
+        color="white"
+        size="25"
+        icon="mdi-account-outline"
+      />
+    </v-avatar>
+
+    <v-avatar
+      rounded="0"
+      color="error"
+    >
+      <v-icon
+        color="white"
+        size="25"
+        icon="mdi-account-outline"
+      />
+    </v-avatar>
+  </div>
+</template>

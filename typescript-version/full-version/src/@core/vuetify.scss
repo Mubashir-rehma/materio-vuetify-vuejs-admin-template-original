@@ -1,9 +1,7 @@
 // Vuetify variable overrides
-@use "vuetify/styles";
-
-// @use "vuetify/styles" with (
-//   $color-pack: false,
-// );
+@use "vuetify/styles" with (
+  $color-pack: false,
+);
 
 // ========================================
 // ==== Vuetify overrides
@@ -13,4 +11,9 @@
 
 p {
   margin-block-end: 1rem;
+}
+
+.text-white {
+  // We had to provide !important because badge icon don't get color white without !important
+  color: #fff !important;
 }

@@ -5,28 +5,18 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 <template>
   <div class="demo-space-x d-flex align-center flex-wrap">
     <!-- default -->
-    <v-badge
-      content="1"
-      color="primary"
-    >
-      <v-btn
-        color="primary"
-        variant="outlined"
-      >
+    <v-badge content="1">
+      <v-btn variant="outlined">
         Default
       </v-btn>
     </v-badge>
 
     <!-- bordered -->
     <v-badge
-      color="primary"
       content="5"
       bordered
     >
-      <v-btn
-        variant="outlined"
-        color="primary"
-      >
+      <v-btn variant="outlined">
         Border
       </v-btn>
     </v-badge>
@@ -34,7 +24,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     <!-- dot -->
     <v-badge
       dot
-      color="primary"
       location="bottom-right"
       offset-x="3"
       offset-y="3"
@@ -48,7 +37,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     <v-badge
       inline
       content="5"
-      color="primary"
     >
       <v-avatar size="48">
         <v-img :src="avatar1" />
@@ -59,7 +47,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     <v-badge
       rounded="0"
       content="5"
-      color="primary"
     >
       <v-avatar>
         <v-img :src="avatar1" />

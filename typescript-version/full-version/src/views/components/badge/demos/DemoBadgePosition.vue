@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png';
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
 </script>
 
 <template>
@@ -7,7 +7,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png';
     <!-- Top End -->
     <v-badge
       content="1"
-      color="primary"
       location="top-end"
     >
       <v-avatar size="48">
@@ -17,7 +16,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png';
 
     <!-- Bottom End -->
     <v-badge
-      color="primary"
       location="bottom-end"
       content="2"
     >
@@ -28,7 +26,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png';
 
     <!-- Bottom Start -->
     <v-badge
-      color="primary"
       location="bottom-start"
       content="3"
     >
@@ -39,7 +36,6 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png';
 
     <!-- Bottom Start -->
     <v-badge
-      color="primary"
       location="top-start"
       content="5"
     >

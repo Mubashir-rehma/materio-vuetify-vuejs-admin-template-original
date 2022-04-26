@@ -5,7 +5,7 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 <template>
   <div class="demo-space-x">
     <!-- avatar -->
-    <v-badge color="primary">
+    <v-badge>
       <template #badge>
         <v-avatar size="15">
           <v-icon
@@ -22,10 +22,7 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     </v-badge>
 
     <!-- icon -->
-    <v-badge
-      color="primary"
-      icon="mdi-lock-open-outline"
-    >
+    <v-badge icon="mdi-lock-open-outline">
       <v-avatar>
         <v-img :src="avatar1" />
       </v-avatar>

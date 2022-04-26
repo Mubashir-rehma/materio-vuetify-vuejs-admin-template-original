@@ -6,7 +6,6 @@
     <v-tab>
       <v-badge
         content="3"
-        color="primary"
         :offset-x="-12"
         :offset-y="-4"
       >
@@ -19,7 +18,6 @@
         content="1"
         :offset-x="-12"
         :offset-y="-4"
-        color="primary"
       >
         Item Two
       </v-badge>
@@ -30,7 +28,6 @@
         content="2"
         :offset-x="-12"
         :offset-y="-4"
-        color="primary"
       >
         Item Three
       </v-badge>

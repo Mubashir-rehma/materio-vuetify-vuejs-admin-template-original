@@ -17,10 +17,7 @@ const notifications = ref<number|null>(null)
     </v-badge>
 
     <div class="demo-space-x">
-      <v-btn
-        color="primary"
-        @click="notifications = (notifications || 0) + 1"
-      >
+      <v-btn @click="notifications = (notifications || 0) + 1">
         Send Message
       </v-btn>
 

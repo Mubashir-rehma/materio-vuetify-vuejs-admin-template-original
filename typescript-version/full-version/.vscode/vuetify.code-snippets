@@ -18,5 +18,12 @@
             "</v-btn>"
         ],
         "description": "We use menu component with parent activator mostly because it is compact and easy to understand."
+    },
+    "Vuetify CSS variable": {
+        "prefix": "vuetify-css-var",
+        "body": [
+            "rgb(var(--v-${1:theme}))"
+        ],
+        "description": "Vuetify CSS variable"
     }
 }

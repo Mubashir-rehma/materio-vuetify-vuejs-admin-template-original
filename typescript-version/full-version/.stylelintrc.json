@@ -27,7 +27,6 @@
                 "ignore": "comments"
             }
         ],
-        "liberty/use-logical-spec": true,
-        "color-function-notation": "legacy"
+        "liberty/use-logical-spec": true
     }
 }

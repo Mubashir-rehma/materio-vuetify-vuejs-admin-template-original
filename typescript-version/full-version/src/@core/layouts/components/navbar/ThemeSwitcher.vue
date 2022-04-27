@@ -8,6 +8,7 @@ const { isDark } = useThemeConfig()
   <v-btn
     icon
     variant="text"
+    color="default"
     @click="isDark = !isDark"
   >
     <v-icon :icon="isDark ? 'mdi-weather-night' : 'mdi-weather-sunny'" />

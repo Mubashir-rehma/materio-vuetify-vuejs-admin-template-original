@@ -12,7 +12,10 @@ const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i
 </script>
 
 <template>
-  <v-btn variant="text">
+  <v-btn
+    variant="text"
+    color="default"
+  >
     <div :class="[selectI18nLocale?.flagpackClass, 'me-2']" />
     <span>{{ selectI18nLocale?.label }}</span>
 

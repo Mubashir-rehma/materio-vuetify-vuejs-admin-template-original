@@ -85,6 +85,10 @@ defineProps<{
     }
   }
 
+  .layout-navbar-and-nav-container {
+    z-index: 1;
+  }
+
   // If both navbar & horizontal nav sticky
   &.layout-navbar-sticky.horizontal-nav-sticky {
     .layout-navbar-and-nav-container {

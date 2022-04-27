@@ -10,6 +10,7 @@ export interface UserConfig {
     contentLayoutNav: 'vertical' | 'horizontal'
     overlayNavFromBreakpoint: number
     enableI18n: boolean
+    isDark: boolean
     isRtl: boolean
   }
   navbar: {
@@ -88,8 +89,21 @@ export interface NavSectionTitle extends Partial<AclProperties> {
 }
 
 // 👉 Vertical nav link
-declare type ATagTargetAttrValues = '_blank'|'_self'|'_parent'|'_top'|'framename'
-declare type ATagRelAttrValues = 'alternate'|'author'|'bookmark'|'external'|'help'|'license'|'next'|'nofollow'|'noopener'|'noreferrer'|'prev'|'search'|'tag'
+declare type ATagTargetAttrValues = '_blank' | '_self' | '_parent' | '_top' | 'framename'
+declare type ATagRelAttrValues =
+  | 'alternate'
+  | 'author'
+  | 'bookmark'
+  | 'external'
+  | 'help'
+  | 'license'
+  | 'next'
+  | 'nofollow'
+  | 'noopener'
+  | 'noreferrer'
+  | 'prev'
+  | 'search'
+  | 'tag'
 
 export interface NavLinkProps {
   to?: RouteLocationRaw | string | null
@@ -112,12 +126,12 @@ export interface NavGroup extends Partial<AclProperties> {
   icon?: string
   badgeContent?: string
   badgeClass?: string
-  children: (NavLink|NavGroup)[]
+  children: (NavLink | NavGroup)[]
   disable?: boolean
 }
 
-export declare type VerticalNavItems = (NavLink|NavGroup|NavSectionTitle)[]
-export declare type HorizontalNavItems = (NavLink|NavGroup)[]
+export declare type VerticalNavItems = (NavLink | NavGroup | NavSectionTitle)[]
+export declare type HorizontalNavItems = (NavLink | NavGroup)[]
 
 // 👉 Components ========================
 

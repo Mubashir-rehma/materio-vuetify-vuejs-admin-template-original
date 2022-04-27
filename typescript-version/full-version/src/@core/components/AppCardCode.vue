@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 
 // PrismJS
-import 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
-import Prism from 'vue-prism-component';
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import Prism from 'vue-prism-component'
 
 const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts')
 
-type CodeProp = {
+interface CodeProp {
   ts: string
   js: string
 }

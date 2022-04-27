@@ -9,6 +9,7 @@ export interface UserThemeConfig {
     contentLayoutNav: UserConfig['app']['contentLayoutNav']
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
+    isDark: UserConfig['app']['isDark']
     isRtl: UserConfig['app']['isRtl']
   }
   navbar: {
@@ -49,6 +50,7 @@ export interface ThemeConfig {
     contentLayoutNav: Ref<UserThemeConfig['app']['contentLayoutNav']>
     overlayNavFromBreakpoint: UserThemeConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserThemeConfig['app']['enableI18n']
+    isDark: Ref<UserThemeConfig['app']['isRtl']>
     isRtl: Ref<UserThemeConfig['app']['isRtl']>
   }
   navbar: {

@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCustomizer: typeof import('./src/components/TheCustomizer.vue')['default']
+    ThemeSwitcher: typeof import('./src/@core/layouts/components/navbar/ThemeSwitcher.vue')['default']
     VerticalNav: typeof import('./src/@core/layouts/components/VerticalNav.vue')['default']
     VerticalNavGroup: typeof import('./src/@core/layouts/components/VerticalNavGroup.vue')['default']
     VerticalNavLink: typeof import('./src/@core/layouts/components/VerticalNavLink.vue')['default']

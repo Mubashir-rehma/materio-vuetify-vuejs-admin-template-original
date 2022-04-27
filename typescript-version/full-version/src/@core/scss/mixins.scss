@@ -1,0 +1,13 @@
+@mixin themed($property, $light-value, $dark-value) {
+  @at-root {
+    .v-theme {
+      &--light {
+        #{$property}: $light-value;
+      }
+
+      &--dark {
+        #{$property}: $dark-value;
+      }
+    }
+  }
+}

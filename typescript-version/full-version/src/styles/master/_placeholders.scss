@@ -18,11 +18,11 @@
 }
 
 %nav-items-hover-styles {
-  background-color: color.adjust(#fff, $lightness: -3%);
+  background-color: rgb(var(--app-nav-group-active-hover-background-color));
 }
 
 %nav-group-active-styles {
-  background-color: color.adjust(#fff, $lightness: -7%);
+  background-color: rgb(var(--app-nav-group-active-background-color));
 }
 
 %nav-link-active-styles {

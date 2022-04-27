@@ -15,7 +15,11 @@ defineProps<{
 </script>
 
 <template>
-  <li v-if="can(item.action, item.subject)" class="nav-link" :class="{ 'disabled': item.disable }">
+  <li
+    v-if="can(item.action, item.subject)"
+    class="nav-link"
+    :class="{ 'disabled': item.disable }"
+  >
     <component
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"

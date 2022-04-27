@@ -12,6 +12,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     contentLayoutNav: 'vertical',
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
+    isDark: false,
     isRtl: false,
   },
   navbar: {

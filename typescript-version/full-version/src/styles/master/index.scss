@@ -3,13 +3,45 @@
 @use "./default_layout_w_vertical_nav";
 @use "./default_layout_w_horizontal_nav";
 
+/* stylelint-disable-next-line selector-class-pattern */
+.v-theme {
+  &--light,
+  &--dark {
+    // Apex admin colors
+    --v-theme-primary: 161, 105, 255 !important;
+    --v-theme-secondary: 103, 116, 146 !important;
+    --v-theme-on-secondary: 255, 255, 255 !important;
+    --v-theme-success: 76, 196, 97 !important;
+    --v-theme-info: 61, 147, 232 !important;
+    --v-theme-warning: 248, 134, 38 !important;
+    --v-theme-error: 246, 96, 96 !important;
+  }
+}
+/* stylelint-disable-next-line selector-class-pattern */
+.v-theme--light {
+  --v-theme-background: 241, 241, 241 !important;
+
+  // Custom CSS variables
+  --app-nav-group-active-background-color: 237, 237, 237;
+  --app-nav-group-active-hover-background-color: 247, 247, 247;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.v-theme--dark {
+  --v-theme-surface: 47, 47, 47 !important;
+
+  // Custom CSS variables
+  --app-nav-group-active-background-color: 65, 65, 65;
+  --app-nav-group-active-hover-background-color: 55, 55, 55;
+}
+
 /* stylelint-disable-next-line selector-id-pattern */
 #app {
   block-size: 100%;
 }
 
 .v-application {
-  background-color: #f1f1f1;
+  background-color: rgb(var(--v-theme-background));
 }
 
 a {

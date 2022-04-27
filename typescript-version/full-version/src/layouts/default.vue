@@ -3,7 +3,7 @@ import navItemsHorizontal from '@/navigation/horizontal'
 import navItems from '@/navigation/vertical'
 import { useDynamicVhCssProperty, useLayouts } from '@layouts'
 import type { NavBarI18n as NavBarI18nType } from '@layouts/components'
-import { NavBarI18n } from '@layouts/components'
+import { NavBarI18n, ThemeSwitcher } from '@layouts/components'
 import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWithHorizontalNav.vue'
 import DefaultLayoutWithVerticalNav from '@layouts/components/DefaultLayoutWithVerticalNav.vue'
 import { config } from '@layouts/config'
@@ -51,6 +51,7 @@ const i18nCompLanguages: InstanceType<typeof NavBarI18nType>['languages'] = [
           />
           <span>Navbar Content..</span>
           <NavBarI18n :languages="i18nCompLanguages" />
+          <ThemeSwitcher />
         </div>
       </template>
 

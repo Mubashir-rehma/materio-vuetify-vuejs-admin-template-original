@@ -1,7 +1,9 @@
 import type { UserConfig as LayoutConfig } from '@layouts/types'
 import type { ThemeConfig, UserThemeConfig } from './types'
 
-export const defineThemeConfig = (userConfig: UserThemeConfig): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
+export const defineThemeConfig = (
+  userConfig: UserThemeConfig,
+): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
   // TODO: Improve config assignment
   return {
     themeConfig: {
@@ -12,6 +14,7 @@ export const defineThemeConfig = (userConfig: UserThemeConfig): { themeConfig: T
         contentLayoutNav: ref(userConfig.app.contentLayoutNav),
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
+        isDark: ref(userConfig.app.isDark),
         isRtl: ref(userConfig.app.isRtl),
       },
       navbar: { type: ref(userConfig.navbar.type) },
@@ -68,3 +71,5 @@ export const defineThemeConfig = (userConfig: UserThemeConfig): { themeConfig: T
     },
   }
 }
+
+export { useThemeConfig } from './composable/useThemeConfig'

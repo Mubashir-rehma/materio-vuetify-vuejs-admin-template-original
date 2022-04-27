@@ -5,6 +5,7 @@ import type { UserConfig } from './types'
 
 const { _setAppDir } = useLayouts()
 
+// 🔌 Plugin
 export const createLayouts = (userConfig: UserConfig): Plugin => {
   // TODO: Find a better way to assign config
   config.app.title = userConfig.app.title
@@ -20,7 +21,11 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.footer.type = ref(userConfig.footer.type)
 
   const localStorageIsVerticalNavCollapsed = localStorage.getItem('isVerticalNavCollapsed')
-  config.verticalNav.isVerticalNavCollapsed = ref(localStorageIsVerticalNavCollapsed ? JSON.parse(localStorageIsVerticalNavCollapsed) : userConfig.verticalNav.isVerticalNavCollapsed)
+  config.verticalNav.isVerticalNavCollapsed = ref(
+    localStorageIsVerticalNavCollapsed
+      ? JSON.parse(localStorageIsVerticalNavCollapsed)
+      : userConfig.verticalNav.isVerticalNavCollapsed,
+  )
   config.verticalNav.defaultNavItemIconClass = userConfig.verticalNav.defaultNavItemIconClass
 
   config.horizontalNav.type = ref(userConfig.horizontalNav.type)
@@ -51,4 +56,3 @@ export const injectionKeyIsVerticalNavHovered: InjectionKey<Ref<boolean>> = Symb
 
 export { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 export { useLayouts } from './composable/useLayouts'
-

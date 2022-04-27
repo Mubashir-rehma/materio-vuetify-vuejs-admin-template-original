@@ -2,8 +2,8 @@
 
 %nav-styles {
   backdrop-filter: blur(8px);
-  background-color: hsl(0deg 0% 100% / 90%);
-  box-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
+  background-color: rgba(var(--v-theme-surface), 0.9);
+  box-shadow: 0 4px 8px -4px rgba(94, 86, 105, 42%);
 }
 
 .layout-wrapper.layout-nav-type-vertical {

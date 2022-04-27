@@ -1,15 +1,18 @@
 @use "./placeholders";
 @use "./variables";
 @use "@layouts/styles/mixins";
+@use "@core/scss/mixins" as coreMixins;
 
 .layout-horizontal-nav {
+  // 👉 Icon styles
   .nav-item-icon {
     margin-inline-end: 0.75rem;
   }
 
-  // Disabled nav items
+  // 👉 Common styles for nav group & nav link
   .nav-link,
   .nav-group {
+    // 👉 Disabled nav items
     &.disabled {
       opacity: 0.35;
       pointer-events: none;
@@ -21,23 +24,19 @@
     }
   }
 
+  // SECTION Nav Link
   .nav-link {
-    &:hover > a {
-      @extend %horizontal-nav-item-hover-styles;
-    }
-
     a {
       @extend %horizontal-nav-item;
+
+      // Adds before psudo element to style hover state
+      @include coreMixins.state-before;
+
+      // Adds vuetify states
+      @include coreMixins.states($active: false);
     }
 
-    &.sub-item {
-      a {
-        &.router-link-active {
-          @extend %horizontal-nav-sub-nav-link-styles;
-        }
-      }
-    }
-
+    // 👉 Top level nav link
     &:not(.sub-item) {
       a {
         @extend %horizontal-nav-items-roundness;
@@ -47,8 +46,21 @@
         }
       }
     }
+
+    // 👉 Sub link
+    &.sub-item {
+      a {
+        &.router-link-active {
+          // ℹ️ We will not use active styles from material here because we want to use primary color for active link
+          @extend %horizontal-nav-sub-nav-link-styles;
+        }
+      }
+    }
   }
 
+  // !SECTION
+
+  // SECTION Nav Group
   .nav-group {
     .popper-triggerer {
       .nav-group-label {
@@ -56,9 +68,12 @@
       }
     }
 
-    // For indicating opened groups when navigating in group children
-    &:hover > .popper-triggerer > .nav-group-label {
-      @extend %horizontal-nav-item-hover-styles;
+    > .popper-triggerer > .nav-group-label {
+      // Adds before psudo element to style hover state
+      @include coreMixins.state-before;
+
+      // Adds vuetify states
+      @include coreMixins.states($active: false);
     }
 
     // 👉 Top level group
@@ -107,9 +122,7 @@
     // 👉 Sub group
     &.sub-item {
       &.active {
-        > .popper-triggerer > .nav-group-label {
-          @extend %horizontal-nav-sub-nav-group-styles;
-        }
+        @include coreMixins.active-states("> .popper-triggerer > .nav-group-label::before");
       }
     }
 
@@ -140,7 +153,7 @@
     .popper-content {
       @extend %horizontal-nav-popper-content-initial-styles;
 
-      background-color: white;
+      background-color: rgb(var(--v-theme-surface));
       border-radius: 6px;
       box-shadow: 0 2px 5px 3px rgb(0 0 0 / 10%);
       padding-block: 0.3rem;
@@ -156,4 +169,6 @@
       @extend %horizontal-nav-popper-content-visible-styles;
     }
   }
+
+  // !SECTION
 }

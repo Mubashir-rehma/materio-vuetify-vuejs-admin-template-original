@@ -11,3 +11,54 @@
     }
   }
 }
+
+// ℹ️ This mixin is inspired from vuetify for adding hover styles via before pseudo element
+@mixin state-before() {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    background: currentcolor;
+    block-size: 100%;
+    border-radius: inherit;
+    content: "";
+    inline-size: 100%;
+    inset: 0;
+    opacity: 0;
+  }
+}
+
+// ℹ️ This is exact copy of vuetify mixin "states" (packages/vuetify/src/styles/tools/_states.sass)
+@mixin states($selector: "&::before", $active: true) {
+  &:hover {
+    #{$selector} {
+      opacity: calc(0.04 * var(--v-theme-overlay-multiplier));
+    }
+  }
+
+  &:focus-visible {
+    #{$selector} { opacity: calc(0.12 * var(--v-theme-overlay-multiplier)); }
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      #{$selector} { opacity: calc(0.12 * var(--v-theme-overlay-multiplier)); }
+    }
+  }
+
+  @if $active {
+    &--active { @include active-states($selector); }
+  }
+}
+
+// ℹ️ This is exact copy of vuetify mixin "active-states" (packages/vuetify/src/styles/tools/_states.sass)
+@mixin active-states($selector: "::before") {
+  &:hover#{$selector},
+  #{$selector} {
+    opacity: calc(0.12 * var(--v-theme-overlay-multiplier));
+  }
+
+  &:focus {
+    #{$selector} { opacity: calc(0.16 * var(--v-theme-overlay-multiplier)); }
+  }
+}

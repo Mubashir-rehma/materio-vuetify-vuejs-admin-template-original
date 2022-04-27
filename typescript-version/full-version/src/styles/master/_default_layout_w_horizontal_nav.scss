@@ -5,13 +5,13 @@
   .layout-navbar {
     box-sizing: border-box;
     padding: 1.2rem;
-    background-color: #fff;
+    background-color: rgb(var(--v-theme-surface));
   }
 
   .layout-horizontal-nav {
     box-sizing: border-box;
     padding: variables.$horizontal-nav-padding;
-    background-color: #fff;
+    background-color: rgb(var(--v-theme-surface));
   }
 
   // 👉 App footer

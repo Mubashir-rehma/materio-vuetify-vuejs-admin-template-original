@@ -26,7 +26,7 @@
 
     // 👉 Nav section title
     .nav-section-title {
-      @extend %nav-items-space;
+      @extend %vertical-nav-item;
 
       opacity: 0.35;
 
@@ -78,8 +78,8 @@
       // }
 
       > :first-child {
-        @extend %nav-items-space;
-        @extend %nav-items-roundness;
+        @extend %vertical-nav-item;
+        @extend %vertical-nav-items-roundness;
 
         // ❗ This is just for quick styling please do not use this in template style
         transition: background-color 0.15s ease-in-out;

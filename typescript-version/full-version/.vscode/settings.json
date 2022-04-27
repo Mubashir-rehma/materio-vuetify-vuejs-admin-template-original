@@ -34,7 +34,9 @@
     // Extension: Spell Checker
     "cSpell.words": [
         "flagpack",
-        "stylelint"
+        "psudo",
+        "stylelint",
+        "vuetify"
     ],
     // Extension: Comment Anchors
     "commentAnchors.tags.list": [

@@ -1,17 +1,23 @@
 // 👉 Placeholders
 @use "sass:color";
+@use "@core/scss/mixins";
 
-%nav-items-roundness {
+// SECTION Vertical nav
+// TODO: This placeholder is too specific. Make it more generic (changing the name will do the trick).
+%vertical-nav-items-roundness {
   border-radius: 0.4rem;
 }
 
-%nav-items-space {
+// Common styles for all nav items including section title
+%vertical-nav-item {
   padding: 1.35rem 0.75rem;
   margin: 0 1rem;
   block-size: 1.5rem;
   white-space: nowrap;
 }
 
+// Common styles for nav item icon styles
+// ℹ️ Nav group's children icon styles are not here (Adjusts height, width & margin)
 %vertical-nav-items-icon {
   flex-shrink: 0;
   margin-inline-end: 1rem;
@@ -26,30 +32,27 @@
 }
 
 %nav-link-active-styles {
-  background-color: #10b981;
-  color: white;
+  background-color: rgb(var(--v-theme-primary));
+  color: rgb(var(--v-theme-on-primary));
 }
 
-// 👉 Horizontal nav
+// !SECTION
+
+// SECTION Horizontal nav
+// Common styles for all nav items
 %horizontal-nav-item {
   padding: 0.7rem 1rem;
 }
 
-%horizontal-nav-item-hover-styles {
-  background-color: #f7f7f7;
-}
-
+// TODO: This placeholder is too specific. Make it more generic (changing the name will do the trick).
 %horizontal-nav-items-roundness {
   border-radius: 0.4rem;
 }
 
 %horizontal-nav-sub-nav-link-styles {
-  background: rgb(16 185 129 / 10%);
-  color: rgb(16 185 129);
-}
-
-%horizontal-nav-sub-nav-group-styles {
-  background: rgba(0 0 0 / 10%);
+  /* stylelint-disable-next-line color-function-notation */
+  background: rgba(var(--v-theme-primary), 0.1);
+  color: rgb(var(--v-theme-primary));
 }
 
 %horizontal-nav-popper-content-initial-styles {
@@ -59,3 +62,5 @@
 %horizontal-nav-popper-content-visible-styles {
   display: block;
 }
+
+// !SECTION

@@ -72,6 +72,8 @@ const i18nCompLanguages: InstanceType<typeof NavBarI18nType>['languages'] = [
       <template #navbar>
         <div>
           <span>Navbar Content..</span>
+          <NavBarI18n :languages="i18nCompLanguages" />
+          <ThemeSwitcher />
         </div>
       </template>
 

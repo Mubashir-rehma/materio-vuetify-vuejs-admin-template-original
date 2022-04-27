@@ -13,8 +13,8 @@ const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i
 
 <template>
   <v-btn variant="text">
-    <div :class="[selectI18nLocale.flagpackClass, 'mr-2']" />
-    <span>{{ selectI18nLocale.label }}</span>
+    <div :class="[selectI18nLocale?.flagpackClass, 'me-2']" />
+    <span>{{ selectI18nLocale?.label }}</span>
 
     <!-- Menu -->
     <v-menu activator="parent">

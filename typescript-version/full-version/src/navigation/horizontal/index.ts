@@ -52,112 +52,12 @@ export default [
         title: 'Components',
         icon: 'i-mdi-home',
         children: [
-          {
-            title: 'Alert 1',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Avatar 2',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 3',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 4',
-
-            children: [
-              {
-                title: 'Admin',
-                to: 'dashboards-crm',
-              },
-            ],
-          },
-          {
-            title: 'Alert 5',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 6',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 7',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 8',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 9',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 10',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 11',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 12',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 13',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 14',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 15',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 16',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 17',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 18',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 19',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 20',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 21',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 22',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 23',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 24',
-            to: 'dashboards-crm',
-          },
-          {
-            title: 'Alert 25',
-            to: 'dashboards-crm',
-          },
+          { title: 'Alert', to: 'components-alert' },
+          { title: 'Avatar', to: 'components-avatar' },
+          { title: 'Button', to: 'components-button' },
+          { title: 'Badge', to: 'components-badge' },
+          { title: 'Chip', to: 'components-chip' },
+          { title: 'Dialog', to: 'components-dialog' },
         ],
       },
     ],

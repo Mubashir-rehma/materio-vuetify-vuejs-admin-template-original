@@ -58,6 +58,7 @@ export default [
           { title: 'Badge', to: 'components-badge' },
           { title: 'Chip', to: 'components-chip' },
           { title: 'Dialog', to: 'components-dialog' },
+          { title: 'Pagination', to: 'components-pagination' },
         ],
       },
     ],

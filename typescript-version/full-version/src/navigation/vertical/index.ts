@@ -55,6 +55,7 @@ export default [
       { title: 'Button', to: 'components-button' },
       { title: 'Badge', to: 'components-badge' },
       { title: 'Chip', to: 'components-chip' },
+      { title: 'Pagination', to: 'components-pagination' },
     ],
   },
   { heading: 'Other' },

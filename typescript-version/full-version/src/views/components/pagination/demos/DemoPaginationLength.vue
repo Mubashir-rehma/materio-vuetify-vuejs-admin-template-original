@@ -5,6 +5,6 @@ const currentPage = ref(1)
 <template>
   <v-pagination
     v-model="currentPage"
-    :length="7"
+    :length="15"
   />
 </template>

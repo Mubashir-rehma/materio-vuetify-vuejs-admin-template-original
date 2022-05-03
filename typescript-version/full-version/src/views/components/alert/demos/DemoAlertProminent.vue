@@ -7,15 +7,6 @@
       <template #text>
         Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
       </template>
-
-      <template #append>
-        <v-btn
-          size="small"
-          variant="text"
-        >
-          Take action
-        </v-btn>
-      </template>
     </v-alert>
 
     <v-alert

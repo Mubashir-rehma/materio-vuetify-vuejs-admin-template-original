@@ -54,6 +54,7 @@ export default [
       { title: 'Avatar', to: 'components-avatar' },
       { title: 'Button', to: 'components-button' },
       { title: 'Badge', to: 'components-badge' },
+      { title: 'Chip', to: 'components-chip' },
     ],
   },
   { heading: 'Other' },

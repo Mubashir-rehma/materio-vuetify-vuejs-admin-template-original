@@ -56,6 +56,7 @@ export default [
       { title: 'Badge', to: 'components-badge' },
       { title: 'Chip', to: 'components-chip' },
       { title: 'Pagination', to: 'components-pagination' },
+      { title: 'Expansion Panel', to: 'components-expansion-panel' },
     ],
   },
   { heading: 'Forms & Tables' },

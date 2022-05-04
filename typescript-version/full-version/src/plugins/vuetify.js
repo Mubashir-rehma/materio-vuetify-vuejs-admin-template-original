@@ -20,6 +20,10 @@ export default createVuetify({
       // set v-btn default color to primary
       color: 'primary',
     },
+    VTabs: {
+      // set v-tabs default color to primary
+      color: 'primary',
+    },
     VCheckbox: {
       // set v-checkbox default color to primary
       color: 'primary',

@@ -76,6 +76,7 @@ export default [
           { title: 'List', to: 'components-list' },
           { title: 'Menu', to: 'components-menu' },
           { title: 'Snackbar', to: 'components-snackbar' },
+          { title: 'Tabs', to: 'components-tabs' },
         ],
       },
     ],

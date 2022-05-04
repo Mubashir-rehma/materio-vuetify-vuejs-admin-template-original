@@ -1,0 +1,26 @@
+<script lang="ts" setup>
+const isTooltipVisible = ref(false)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <v-btn
+      color="primary"
+      @click="isTooltipVisible = !isTooltipVisible"
+    >
+      toggle tooltip
+    </v-btn>
+
+    <v-tooltip
+      v-model="isTooltipVisible"
+      anchor="top"
+    >
+      <template #activator="{ props }">
+        <v-icon v-bind="props">
+          mdi-instagram
+        </v-icon>
+      </template>
+      <span>Programmatic tooltip</span>
+    </v-tooltip>
+  </div>
+</template>

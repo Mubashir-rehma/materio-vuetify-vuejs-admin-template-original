@@ -24,6 +24,10 @@ export default createVuetify({
       // set v-tabs default color to primary
       color: 'primary',
     },
+    VTooltip: {
+      // set v-tooltip default anchor to top
+      anchor: 'top',
+    },
     VCheckbox: {
       // set v-checkbox default color to primary
       color: 'primary',

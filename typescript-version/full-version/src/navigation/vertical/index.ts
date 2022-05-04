@@ -77,6 +77,7 @@ export default [
       { title: 'Menu', to: 'components-menu' },
       { title: 'Snackbar', to: 'components-snackbar' },
       { title: 'Tabs', to: 'components-tabs' },
+      { title: 'Tooltip', to: 'components-tooltip' },
     ],
   },
   { heading: 'Forms & Tables' },

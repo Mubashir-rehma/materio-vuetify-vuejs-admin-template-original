@@ -16,10 +16,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: [
-    'vue',
-    '@typescript-eslint',
-  ],
+  plugins: ['vue', '@typescript-eslint'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -28,7 +25,7 @@ module.exports = {
     'max-len': 'off',
 
     // we don't want it
-    'semi': ['error', 'never'],
+    semi: ['error', 'never'],
 
     // add parens ony when required in arrow function
     'arrow-parens': ['error', 'as-needed'],
@@ -79,6 +76,9 @@ module.exports = {
     // Plugin: eslint-plugin-promise
     'promise/always-return': 'off',
     'promise/catch-or-return': 'off',
+
+    // Internal Rules
+    'valid-appcardcode-code-prop': 'error',
   },
   settings: {
     // 'import/parsers': {

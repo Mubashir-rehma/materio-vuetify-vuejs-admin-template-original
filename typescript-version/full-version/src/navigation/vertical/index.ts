@@ -4,24 +4,38 @@ import type { VerticalNavItems } from '@layouts/types'
 export default [
   { heading: 'Dashboards' },
   {
-    title: 'Home', icon: 'i-mdi-home', to: 'index', action: 'read', subject: 'Auth',
+    title: 'Home',
+    icon: 'i-mdi-home',
+    to: 'index',
+    action: 'read',
+    subject: 'Auth',
   },
   {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
     children: [
       {
-        title: 'Analytics', to: 'dashboards-analytics', action: 'read', subject: 'Admin',
+        title: 'Analytics',
+        to: 'dashboards-analytics',
+        action: 'read',
+        subject: 'Admin',
       },
       {
-        title: 'CRM', to: 'dashboards-crm', action: 'read', subject: 'Auth',
+        title: 'CRM',
+        to: 'dashboards-crm',
+        action: 'read',
+        subject: 'Auth',
       },
     ],
     badgeContent: '2',
   },
   { heading: 'Apps & Pages' },
   {
-    title: 'Calendar', icon: 'i-mdi-calendar-blank-outline', to: 'calendar', action: 'read', subject: 'Auth',
+    title: 'Calendar',
+    icon: 'i-mdi-calendar-blank-outline',
+    to: 'calendar',
+    action: 'read',
+    subject: 'Auth',
   },
   {
     title: 'User',
@@ -33,7 +47,9 @@ export default [
     ],
   },
   {
-    title: 'Email', icon: 'i-mdi-email-outline', to: 'email',
+    title: 'Email',
+    icon: 'i-mdi-email-outline',
+    to: 'email',
   },
   {
     title: 'Invoice',
@@ -58,6 +74,7 @@ export default [
       { title: 'Pagination', to: 'components-pagination' },
       { title: 'Expansion Panel', to: 'components-expansion-panel' },
       { title: 'List', to: 'components-list' },
+      { title: 'Menu', to: 'components-menu' },
     ],
   },
   { heading: 'Forms & Tables' },
@@ -93,6 +110,8 @@ export default [
     ],
   },
   {
-    title: 'Typography', icon: 'i-mdi-netflix', to: 'typography',
+    title: 'Typography',
+    icon: 'i-mdi-netflix',
+    to: 'typography',
   },
 ] as VerticalNavItems

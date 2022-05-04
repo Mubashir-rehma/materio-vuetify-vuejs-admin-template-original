@@ -3,17 +3,29 @@ import type { HorizontalNavItems } from '@layouts/types'
 
 export default [
   {
-    title: 'Home', to: 'index', icon: 'i-mdi-home-outline', action: 'read', subject: 'Auth',
+    title: 'Home',
+    to: 'index',
+    icon: 'i-mdi-home-outline',
+    action: 'read',
+    subject: 'Auth',
   },
   {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
     children: [
       {
-        title: 'Analytics', to: 'dashboards-analytics', icon: 'i-mdi-analytics', action: 'read', subject: 'Admin',
+        title: 'Analytics',
+        to: 'dashboards-analytics',
+        icon: 'i-mdi-analytics',
+        action: 'read',
+        subject: 'Admin',
       },
       {
-        title: 'CRM', to: 'dashboards-crm', icon: 'i-mdi-monitor-dashboard', action: 'read', subject: 'Auth',
+        title: 'CRM',
+        to: 'dashboards-crm',
+        icon: 'i-mdi-monitor-dashboard',
+        action: 'read',
+        subject: 'Auth',
       },
     ],
   },
@@ -52,6 +64,7 @@ export default [
         title: 'Components',
         icon: 'i-mdi-home',
         children: [
+          { title: 'Menu', to: 'components-menu' },
           { title: 'Alert', to: 'components-alert' },
           { title: 'Avatar', to: 'components-avatar' },
           { title: 'Button', to: 'components-button' },
@@ -61,6 +74,7 @@ export default [
           { title: 'Pagination', to: 'components-pagination' },
           { title: 'Expansion Panel', to: 'components-expansion-panel' },
           { title: 'List', to: 'components-list' },
+          { title: 'Menu', to: 'components-menu' },
         ],
       },
     ],
@@ -109,7 +123,9 @@ export default [
         ],
       },
       {
-        title: 'Typography', icon: 'i-mdi-netflix', to: 'typography',
+        title: 'Typography',
+        icon: 'i-mdi-netflix',
+        to: 'typography',
       },
     ],
   },

@@ -57,6 +57,7 @@ export default [
       { title: 'Chip', to: 'components-chip' },
       { title: 'Pagination', to: 'components-pagination' },
       { title: 'Expansion Panel', to: 'components-expansion-panel' },
+      { title: 'List', to: 'components-list' },
     ],
   },
   { heading: 'Forms & Tables' },

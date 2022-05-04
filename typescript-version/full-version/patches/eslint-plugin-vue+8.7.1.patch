@@ -86,7 +86,7 @@ index 0000000..feecfb1
 +  }
 +}
 diff --git a/node_modules/eslint-plugin-vue/lib/utils/casing.js b/node_modules/eslint-plugin-vue/lib/utils/casing.js
-index b2f2e89..3448f0e 100644
+index b2f2e89..5e8ca69 100644
 --- a/node_modules/eslint-plugin-vue/lib/utils/casing.js
 +++ b/node_modules/eslint-plugin-vue/lib/utils/casing.js
 @@ -9,6 +9,15 @@
@@ -113,7 +113,7 @@ index b2f2e89..3448f0e 100644
 +  return lowerFirstChar(
 +    str
 +      .replace(/[-_](\w)/gu, (_, c) => (c ? c.toUpperCase() : ''))
-+      .replace(' ', '')
++      .replace(/\s*/g, '')
 +  )
  }
  

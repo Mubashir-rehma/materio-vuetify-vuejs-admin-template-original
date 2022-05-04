@@ -75,6 +75,7 @@ export default [
           { title: 'Expansion Panel', to: 'components-expansion-panel' },
           { title: 'List', to: 'components-list' },
           { title: 'Menu', to: 'components-menu' },
+          { title: 'Snackbar', to: 'components-snackbar' },
         ],
       },
     ],

@@ -77,6 +77,33 @@ module.exports = {
     'promise/always-return': 'off',
     'promise/catch-or-return': 'off',
 
+    // ESLint plugin vue
+    'vue/block-tag-newline': 'error',
+    'vue/component-api-style': 'error',
+    'vue/component-name-in-template-casing': 'error',
+    'vue/custom-event-name-casing': 'error',
+    'vue/define-macros-order': 'error',
+    'vue/html-comment-content-newline': 'error',
+    'vue/html-comment-content-spacing': 'error',
+    'vue/html-comment-indent': 'error',
+    'vue/match-component-file-name': 'error',
+    'vue/no-child-content': 'error',
+    'vue/no-duplicate-attr-inheritance': 'error',
+    'vue/no-empty-component-block': 'error',
+    'vue/no-multiple-objects-in-class': 'error',
+    'vue/no-reserved-component-names': 'error',
+    'vue/no-template-target-blank': 'error',
+    'vue/no-useless-mustaches': 'error',
+    'vue/no-useless-v-bind': 'error',
+    'vue/padding-line-between-blocks': 'error',
+    'vue/prefer-separate-static-class': 'error',
+    'vue/prefer-true-attribute-shorthand': 'error',
+    'vue/v-on-function-call': 'error',
+
+    // -- Extension Rules
+    'vue/no-irregular-whitespace': 'error',
+    'vue/template-curly-spacing': 'error',
+
     // Internal Rules
     'valid-appcardcode-code-prop': 'error',
   },

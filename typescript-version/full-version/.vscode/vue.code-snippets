@@ -54,7 +54,7 @@
         "description": "We frequently uses composable in our components and writing const {} = useModule() is tedious. This snippet helps you to write it quickly."
     },
     "template interpolation": {
-        "prefix": "{",
+        "prefix": "cc",
         "body": [
             "{{ ${1} }}"
         ],

@@ -35,4 +35,5 @@ export const canViewNavMenuGroup = (item: NavGroup) => {
   return can(item.action, item.subject) && hasAnyVisibleChild
 }
 
-export const canNavigate = (to: RouteLocationNormalized) => to.matched.some(route => ability.can(route.meta.action, route.meta.subject))
+export const canNavigate = (to: RouteLocationNormalized) =>
+  to.matched.some(route => ability.can(route.meta.action, route.meta.subject))

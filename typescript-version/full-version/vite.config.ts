@@ -33,7 +33,7 @@ export default defineConfig({
         presetIcons({
           scale: 1.5,
           extraProperties: {
-            'display': 'inline-block',
+            display: 'inline-block',
             'vertical-align': 'middle',
           },
         }),
@@ -45,11 +45,7 @@ export default defineConfig({
     }),
     Layouts(),
     Components({
-      dirs: [
-        'src/@core/layouts/components',
-        'src/@core/components',
-        'src/components',
-      ],
+      dirs: ['src/@core/layouts/components', 'src/@core/components', 'src/components'],
       dts: true,
       resolvers: [
         {
@@ -75,13 +71,7 @@ export default defineConfig({
       ],
     }),
     AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        '@vueuse/core',
-
-        'vue-i18n',
-      ],
+      imports: ['vue', 'vue-router', '@vueuse/core', 'vue-i18n'],
     }),
     VueI18n({
       runtimeOnly: true,
@@ -97,7 +87,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@themeConfig': fileURLToPath(new URL('./themeConfig.ts', import.meta.url)),
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
-      '@layouts': fileURLToPath(new URL('./src/@core/layouts', import.meta.url)),
+      '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/styles/_variables.scss', import.meta.url)),
       '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
     },

@@ -73,7 +73,12 @@ export const useLayouts = () => {
     `layout-nav-type-${appContentLayoutNav.value}`,
     `layout-navbar-${navbarType.value}`,
     `layout-footer-${footerType.value}`,
-    { 'layout-vertical-nav-collapsed': isVerticalNavCollapsed.value && appContentLayoutNav.value === 'vertical' && !isLessThanOverlayNavBreakpoint.value(windowWidth) },
+    {
+      'layout-vertical-nav-collapsed':
+        isVerticalNavCollapsed.value &&
+        appContentLayoutNav.value === 'vertical' &&
+        !isLessThanOverlayNavBreakpoint.value(windowWidth),
+    },
     { [`horizontal-nav-${horizontalNavType.value}`]: appContentLayoutNav.value === 'horizontal' },
     `layout-content-width-${appContentWidth.value}`,
     { 'layout-overlay-nav': isLessThanOverlayNavBreakpoint.value(windowWidth) },

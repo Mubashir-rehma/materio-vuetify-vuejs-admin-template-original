@@ -19,10 +19,10 @@
         "themeConfig.ts"
       ],
       "@layouts/*": [
-        "src/@core/layouts/*"
+        "src/@layouts/*"
       ],
       "@layouts": [
-        "src/@core/layouts"
+        "src/@layouts"
       ],
       "@core/*": [
         "src/@core/*"

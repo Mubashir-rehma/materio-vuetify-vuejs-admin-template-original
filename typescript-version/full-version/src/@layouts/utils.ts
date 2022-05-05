@@ -4,7 +4,8 @@ import type { Router } from 'vue-router'
 
 export const mergeConfig = <T>(current: T, updates: PartialDeep<T>): T => {
   for (const key of Object.keys(updates)) {
-    if (!Object.prototype.hasOwnProperty.call(current, key) || typeof updates[key] !== 'object') current[key] = updates[key]
+    if (!Object.prototype.hasOwnProperty.call(current, key) || typeof updates[key] !== 'object')
+      current[key] = updates[key]
     else mergeConfig(current[key], updates[key])
   }
 
@@ -68,10 +69,11 @@ export const isNavLinkActive = (link: NavLink, router: Router) => {
  * Check if nav group is active
  * @param {Array} children Group children
  */
-export const isNavGroupActive = (children: (NavLink|NavGroup)[], router: Router): boolean => children.some(child => {
-  // If child have children => It's group => Go deeper(recursive)
-  if ('children' in child) return isNavGroupActive(child.children, router)
+export const isNavGroupActive = (children: (NavLink | NavGroup)[], router: Router): boolean =>
+  children.some(child => {
+    // If child have children => It's group => Go deeper(recursive)
+    if ('children' in child) return isNavGroupActive(child.children, router)
 
-  // else it's link => Check for matched Route
-  return isNavLinkActive(child, router)
-})
+    // else it's link => Check for matched Route
+    return isNavLinkActive(child, router)
+  })

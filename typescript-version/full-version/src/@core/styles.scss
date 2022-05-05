@@ -1,4 +1,5 @@
-$card-spacer-content: 2rem;
+// TODO: Use vuetify SCSS variable here
+$card-spacer-content: 16px;
 
 .demo-space-x {
   margin-block-start: -$card-spacer-content;

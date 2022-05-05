@@ -1,5 +1,10 @@
+// TODO: Update vuetify heading line height according to MUI
 @use "vuetify/styles" with (
   $color-pack: false,
+  // $card-item-padding: 20px,
+  // $card-text-padding: 20px,
+  // $card-actions-padding: 12px, /* It is $card-item-padding - button_padding */
+  // $card-actions-min-height: unset,
 );
 
 // ========================================
@@ -16,3 +21,69 @@ p {
   // We had to provide !important because badge icon don't get color white without !important
   color: #fff !important;
 }
+
+// Remove once merged: https://github.com/vuetifyjs/vuetify/pull/15048
+.v-card-text {
+  & + & {
+    padding-block-start: 0;
+  }
+}
+
+// ========================================
+// SECTION: Vuetify loader issues
+// ========================================
+
+// SECTION: Can't override $card-item-padding var
+// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
+// After solution: Add `$card-item-padding: 20px` variable override
+
+.v-card-header {
+  padding: 20px;
+}
+
+// !SECTION
+
+// SECTION: Can't override $card-text-padding var
+// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
+// After solution: Add `$card-text-padding: 20px` variable override
+
+.v-card-content,
+.v-card-text {
+  padding: 20px;
+}
+
+// !SECTION
+
+// SECTION: Can't override $card-actions-padding var
+// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
+// After solution: Calculate "$card-item-padding - button_padding" then Add `$card-text-padding: $value` variable override
+
+.v-card-actions {
+  padding: 0 12px 12px;
+}
+
+// !SECTION
+
+// SECTION: Can't override $card-actions-min-height var
+// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
+// After solution: Add `$card-actions-min-height: unset` variable override
+
+// Vuetify overrides
+.v-card-actions {
+  min-block-size: unset;
+}
+
+// !SECTION
+
+// SECTION: Can't override $card-title-line-height var
+// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
+// After solution: Resolve todo LINK: src/@core/vuetify.scss:1
+
+// Vuetify overrides
+.v-card .v-card-title {
+  line-height: 1.6;
+}
+
+// !SECTION
+
+// !SECTION

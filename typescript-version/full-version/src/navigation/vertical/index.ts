@@ -85,22 +85,10 @@ export default [
     title: 'Forms Elements',
     icon: 'i-mdi-content-copy',
     children: [
-      { title: 'Checkbox', to: 'forms-checkbox' },
-    ],
-  },
-  { heading: 'Forms & Tables' },
-  {
-    title: 'Forms Elements',
-    icon: 'i-mdi-content-copy',
-    children: [
       { title: 'Combobox', to: 'forms-combobox' },
+      { title: 'Textfield', to: 'forms-textfield' },
+      { title: 'File Input', to: 'forms-file-input' }
     ],
-  },
-  { heading: 'Forms & Tables' },
-  {
-    title: 'Forms Elements',
-    icon: 'i-mdi-content-copy',
-    children: [{ title: 'File Input', to: 'forms-file-input' }],
   },
   { heading: 'Other' },
   {

@@ -88,6 +88,14 @@ export default [
       { title: 'Checkbox', to: 'forms-checkbox' },
     ],
   },
+  { heading: 'Forms & Tables' },
+  {
+    title: 'Forms Elements',
+    icon: 'i-mdi-content-copy',
+    children: [
+      { title: 'Combobox', to: 'forms-combobox' },
+    ],
+  },
   { heading: 'Other' },
   {
     title: 'Nav Levels',

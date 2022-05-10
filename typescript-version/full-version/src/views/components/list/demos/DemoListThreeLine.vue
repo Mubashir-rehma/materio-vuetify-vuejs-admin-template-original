@@ -41,7 +41,7 @@ const items = [
 
 <template>
   <v-list
-    three-line
+    lines="three"
     :items="items"
   >
     <template #subtitle="{ subtitle }">

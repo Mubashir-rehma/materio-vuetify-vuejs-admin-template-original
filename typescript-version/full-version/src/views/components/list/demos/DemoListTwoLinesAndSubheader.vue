@@ -30,7 +30,7 @@ const folders = [
 </script>
 
 <template>
-  <v-list two-line>
+  <v-list lines="two">
     <v-list-subheader inset>
       Folders
     </v-list-subheader>

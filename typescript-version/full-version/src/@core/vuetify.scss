@@ -29,6 +29,11 @@ p {
   }
 }
 
+// Remove it onces fixed
+.v-avatar {
+  flex-shrink: 0;
+}
+
 // ========================================
 // SECTION: Vuetify loader issues
 // ========================================

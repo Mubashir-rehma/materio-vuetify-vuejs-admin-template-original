@@ -140,3 +140,16 @@ interface I18nLanguage {
   flagpackClass: string
   i18nLang: string
 }
+
+// avatar | text | icon
+// Thanks: https://stackoverflow.com/a/60617060/10796681
+type Notification = {
+  title: str
+  subtitle: str
+  time: str
+  color?: str
+} & (
+  | { img: str; text?: never; icon?: never }
+  | { img?: never; text: str; icon?: never }
+  | { img?: never; text?: never; icon: str }
+)

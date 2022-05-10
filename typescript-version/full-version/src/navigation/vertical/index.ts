@@ -85,9 +85,11 @@ export default [
     title: 'Forms Elements',
     icon: 'i-mdi-content-copy',
     children: [
+      { title: 'Checkbox', to: 'forms-checkbox' },
       { title: 'Combobox', to: 'forms-combobox' },
       { title: 'Textfield', to: 'forms-textfield' },
-      { title: 'File Input', to: 'forms-file-input' }
+      { title: 'File Input', to: 'forms-file-input' },
+      { title: 'Range Slider', to: 'forms-range-slider' },
     ],
   },
   { heading: 'Other' },

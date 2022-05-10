@@ -32,6 +32,10 @@ export default createVuetify({
       // set v-checkbox default color to primary
       color: 'primary',
     },
+    VRangeSlider: {
+      // set v-range-slider default color to primary
+      color: 'primary',
+    },
   },
   icons: {
     defaultSet: 'mdi',

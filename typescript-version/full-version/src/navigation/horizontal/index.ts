@@ -94,6 +94,10 @@ export default [
             title: 'Checkbox',
             to: 'forms-checkbox',
           },
+          {
+            title: 'Range Slider',
+            to: 'forms-range-slider',
+          },
         ],
       },
     ],

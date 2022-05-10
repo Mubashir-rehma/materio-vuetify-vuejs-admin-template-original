@@ -115,6 +115,22 @@ export default [
     ],
   },
   {
+    title: 'Forms & Tables',
+    icon: 'i-mdi-checkbox-multiple-outline',
+    children: [
+      {
+        title: 'Forms Elements',
+        icon: 'i-mdi-content-copy',
+        children: [
+          {
+            title: 'File Input',
+            to: 'forms-file-input',
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: 'Other',
     icon: 'i-mdi-home',
     children: [

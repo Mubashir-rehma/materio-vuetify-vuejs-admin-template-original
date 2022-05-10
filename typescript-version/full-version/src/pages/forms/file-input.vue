@@ -1,0 +1,203 @@
+<script setup lang="ts">
+import * as demoCode from '@/views/forms/file-input/demos/demoCodeFileInput'
+// Demos
+import DemoFileInputAccept from '@/views/forms/file-input/demos/DemoFileInputAccept.vue'
+import DemoFileInputBasic from '@/views/forms/file-input/demos/DemoFileInputBasic.vue'
+import DemoFileInputChips from '@/views/forms/file-input/demos/DemoFileInputChips.vue'
+import DemoFileInputCounter from '@/views/forms/file-input/demos/DemoFileInputCounter.vue'
+import DemoFileInputDensity from '@/views/forms/file-input/demos/DemoFileInputDensity.vue'
+import DemoFileInputLoading from '@/views/forms/file-input/demos/DemoFileInputLoading.vue'
+import DemoFileInputMultiple from '@/views/forms/file-input/demos/DemoFileInputMultiple.vue'
+import DemoFileInputPrependIcon from '@/views/forms/file-input/demos/DemoFileInputPrependIcon.vue'
+import DemoFileInputSelectionSlot from '@/views/forms/file-input/demos/DemoFileInputSelectionSlot.vue'
+import DemoFileInputShowSize from '@/views/forms/file-input/demos/DemoFileInputShowSize.vue'
+import DemoFileInputValidation from '@/views/forms/file-input/demos/DemoFileInputValidation.vue'
+import DemoFileInputVariant from '@/views/forms/file-input/demos/DemoFileInputVariant.vue'
+
+
+</script>
+
+<template>
+  <v-row>
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Basic -->
+      <AppCardCode
+        title="Basic"
+        :code="demoCode.basic"
+      >
+        <p>The <code>v-file-input</code> component is used to selecting files.</p>
+
+        <DemoFileInputBasic />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Density -->
+      <AppCardCode
+        title="Density"
+        :code="demoCode.density"
+      >
+        <p>You can reduces the file input height with <code>density</code> prop.  Available options are: <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</p>
+
+        <DemoFileInputDensity />
+      </AppCardCode>
+    </v-col>
+
+    <v-col cols="12">
+      <!-- 👉 Variant -->
+      <AppCardCode
+        title="Variant"
+        :code="demoCode.variant"
+      >
+        <p>use <code>contained</code>, <code>filled</code>, <code>outlined</code>, <code>plain</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of file input.</p>
+
+        <DemoFileInputVariant />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Accept -->
+      <AppCardCode
+        title="Accept"
+        :code="demoCode.accept"
+      >
+        <p><code>v-file-input</code> component can accept only specific media formats/file types if you want.</p>
+
+        <DemoFileInputAccept />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Chips -->
+      <AppCardCode
+        title="Chips"
+        :code="demoCode.chips"
+      >
+        <p>Use <code>chip</code> prop to display the selected file as a chip.</p>
+
+        <DemoFileInputChips />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Counter -->
+      <AppCardCode
+        title="Counter"
+        :code="demoCode.counter"
+      >
+        <p>When using the <code>show-size</code> property along with <code>counter</code>, the total number of files and size will be displayed under the input.</p>
+
+        <DemoFileInputCounter />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Multiple -->
+      <AppCardCode
+        title="Multiple"
+        :code="demoCode.multiple"
+      >
+        <p>
+          The <code>v-file-input</code> can contain multiple files at the same time when using the <code>multiple</code> prop.
+        </p>
+
+        <DemoFileInputMultiple />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Prepend icon -->
+      <AppCardCode
+        title="Prepend icon"
+        :code="demoCode.prependIcon"
+      >
+        <p>
+          The <code>v-file-input</code> has a default <code>prepend-icon</code> that can be set on the component or adjusted globally.
+        </p>
+
+        <DemoFileInputPrependIcon />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Show size -->
+      <AppCardCode
+        title="Show size"
+        :code="demoCode.showSize"
+      >
+        <p>The displayed size of the selected file(s) can be configured with the <code>show-size</code> property.</p>
+
+        <DemoFileInputShowSize />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Validation -->
+      <AppCardCode
+        title="Validation"
+        :code="demoCode.validation"
+      >
+        <p>You can use the <code>rules</code> prop to create your own custom validation parameters.</p>
+
+        <DemoFileInputValidation />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Selection slot -->
+      <AppCardCode
+        title="Selection slot"
+        :code="demoCode.selectionSlot"
+      >
+        <p>Using the <code>selection</code> slot, you can customize the appearance of your input selections.</p>
+
+        <DemoFileInputSelectionSlot />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Loading -->
+      <AppCardCode
+        title="Loading"
+        :code="demoCode.loading"
+      >
+        <p>Use <code>loading</code> prop to displays linear progress bar.</p>
+
+        <DemoFileInputLoading />
+      </AppCardCode>
+    </v-col>
+  </v-row>
+</template>

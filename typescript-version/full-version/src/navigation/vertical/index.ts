@@ -96,6 +96,12 @@ export default [
       { title: 'Combobox', to: 'forms-combobox' },
     ],
   },
+  { heading: 'Forms & Tables' },
+  {
+    title: 'Forms Elements',
+    icon: 'i-mdi-content-copy',
+    children: [{ title: 'File Input', to: 'forms-file-input' }],
+  },
   { heading: 'Other' },
   {
     title: 'Nav Levels',

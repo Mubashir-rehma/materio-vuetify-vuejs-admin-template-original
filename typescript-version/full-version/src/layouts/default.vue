@@ -81,6 +81,9 @@ const notifications: Notification[] = [
         </div>
       </template>
 
+      <!-- Customizer -->
+      <Customizer />
+
       <!-- Pages -->
       <div style="padding: 2rem;">
         <router-view />

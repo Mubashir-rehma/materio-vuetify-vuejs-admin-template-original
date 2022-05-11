@@ -14,6 +14,7 @@ export interface UserThemeConfig {
   }
   navbar: {
     type: UserConfig['navbar']['type']
+    navbarBlur: UserConfig['navbar']['navbarBlur']
   }
   footer: {
     type: UserConfig['footer']['type']
@@ -55,6 +56,7 @@ export interface ThemeConfig {
   }
   navbar: {
     type: Ref<UserThemeConfig['navbar']['type']>
+    navbarBlur: Ref<UserThemeConfig['navbar']['navbarBlur']>
   }
   footer: {
     type: Ref<UserThemeConfig['footer']['type']>

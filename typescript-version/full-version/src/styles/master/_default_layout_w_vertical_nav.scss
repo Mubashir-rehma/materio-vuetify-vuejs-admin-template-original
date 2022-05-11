@@ -1,6 +1,10 @@
 @use "@configured-variables" as variables;
 
-%nav-styles {
+%scrolled-sticky-nav-styles {
+  background-color: rgb(var(--v-theme-surface));
+}
+
+%navbar-blur-styles {
   backdrop-filter: blur(8px);
   /* stylelint-disable-next-line color-function-notation */
   background-color: rgb(var(--v-theme-surface), 0.9);
@@ -12,12 +16,24 @@
   &.window-scrolled {
     &.layout-navbar-sticky {
       .layout-navbar {
-        @extend %nav-styles;
+        @extend %scrolled-sticky-nav-styles;
+
+        &.navbar-blur {
+          @extend %navbar-blur-styles;
+        }
       }
 
       @if variables.$layout-vertical-nav-navbar-is-contained {
-        &.layout-content-width-boxed .layout-navbar .navbar-content-container {
-          @extend %nav-styles;
+        &.layout-content-width-boxed .layout-navbar {
+          &.navbar-blur {
+            .navbar-content-container {
+              @extend %navbar-blur-styles;
+            }
+          }
+
+          .navbar-content-container {
+            @extend %scrolled-sticky-nav-styles;
+          }
         }
       }
     }

@@ -15,6 +15,8 @@
     "[vue]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     },
+    // Extension: Volar
+    "volar.preview.port": 3000,
     // Extension: ESLint
     "eslint.options": {
         "rulePaths": [
@@ -38,6 +40,7 @@
     ],
     // Extension: Spell Checker
     "cSpell.words": [
+        "Customizer",
         "flagpack",
         "psudo",
         "stylelint",

@@ -14,7 +14,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const { y: windowScrollY } = useWindowScroll()
     const { width: windowWidth } = useWindowSize()
-    const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint } = useLayouts()
+    const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint, isNavbarBlurEnabled } = useLayouts()
 
     const isOverlayNavActive = ref(false)
     const isLayoutOverlayVisible = ref(false)
@@ -64,7 +64,7 @@ export default defineComponent({
       // 👉 Navbar
       const navbar = h(
         'header',
-        { class: 'layout-navbar' },
+        { class: ['layout-navbar', { 'navbar-blur': isNavbarBlurEnabled.value }] },
         [
           h(
             'div',

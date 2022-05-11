@@ -1,5 +1,6 @@
 /* @unocss-include */
 import { defineThemeConfig } from '@core'
+import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 import { breakpointsVuetify } from '@vueuse/core'
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
@@ -8,17 +9,18 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     logo: '/src/assets/logo.svg',
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
-    contentWidth: 'boxed',
-    contentLayoutNav: 'vertical',
+    contentWidth: EnumContentWidth.Boxed,
+    contentLayoutNav: EnumAppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isDark: false,
     isRtl: false,
   },
   navbar: {
-    type: 'sticky',
+    type: EnumNavbarType.Sticky,
+    navbarBlur: true,
   },
-  footer: { type: 'static' },
+  footer: { type: EnumFooterType.Static },
   verticalNav: {
     isVerticalNavCollapsed: false,
     defaultNavItemIconClass: 'i-mdi-circle-outline',

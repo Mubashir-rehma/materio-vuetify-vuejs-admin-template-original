@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    '@antfu',
+    '@antfu/eslint-config-vue',
     'plugin:vue/vue3-recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',

@@ -1,23 +1,25 @@
 import type { Breakpoints } from '@vueuse/core'
 import type { Ref } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
+import type { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from './enums'
 
 export interface UserConfig {
   app: {
     title: string
     logo: string
-    contentWidth: 'boxed' | 'fluid'
-    contentLayoutNav: 'vertical' | 'horizontal'
+    contentWidth: EnumContentWidth
+    contentLayoutNav: EnumAppContentLayoutNav
     overlayNavFromBreakpoint: number
     enableI18n: boolean
     isDark: boolean
     isRtl: boolean
   }
   navbar: {
-    type: 'sticky' | 'static' | 'hidden'
+    type: EnumNavbarType
+    navbarBlur: boolean
   }
   footer: {
-    type: 'sticky' | 'static' | 'hidden'
+    type: EnumFooterType
   }
   verticalNav: {
     isVerticalNavCollapsed: boolean
@@ -55,6 +57,7 @@ export interface Config {
   }
   navbar: {
     type: Ref<UserConfig['navbar']['type']>
+    navbarBlur: Ref<UserConfig['navbar']['navbarBlur']>
   }
   footer: {
     type: Ref<UserConfig['footer']['type']>

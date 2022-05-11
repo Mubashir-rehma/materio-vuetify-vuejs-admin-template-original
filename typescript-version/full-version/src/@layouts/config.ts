@@ -1,4 +1,5 @@
 /* @unocss-include */
+import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 import type { Config } from '@layouts/types'
 import { breakpointsVuetify } from '@vueuse/core'
 
@@ -9,16 +10,17 @@ export const config: Config = {
     logo: '/src/assets/logo.svg',
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
-    contentWidth: ref('boxed'),
-    contentLayoutNav: ref('vertical'),
+    contentWidth: ref(EnumContentWidth.Boxed),
+    contentLayoutNav: ref(EnumAppContentLayoutNav.Vertical),
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: ref(false),
   },
   navbar: {
-    type: ref('sticky'),
+    type: ref(EnumNavbarType.Sticky),
+    navbarBlur: ref(true),
   },
-  footer: { type: ref('static') },
+  footer: { type: ref(EnumFooterType.Static) },
   verticalNav: {
     isVerticalNavCollapsed: ref(false),
     defaultNavItemIconClass: 'i-mdi-circle-outline',

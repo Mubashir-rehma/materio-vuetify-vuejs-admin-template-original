@@ -16,6 +16,15 @@ export const useLayouts = () => {
     },
   })
 
+  const isNavbarBlurEnabled = computed({
+    get() {
+      return config.navbar.navbarBlur.value
+    },
+    set(value: typeof config.navbar.navbarBlur.value) {
+      config.navbar.navbarBlur.value = value
+    },
+  })
+
   const _setAppDir = (dir: 'ltr' | 'rtl') => {
     document.documentElement.setAttribute('dir', dir)
   }
@@ -75,9 +84,9 @@ export const useLayouts = () => {
     `layout-footer-${footerType.value}`,
     {
       'layout-vertical-nav-collapsed':
-        isVerticalNavCollapsed.value &&
-        appContentLayoutNav.value === 'vertical' &&
-        !isLessThanOverlayNavBreakpoint.value(windowWidth),
+        isVerticalNavCollapsed.value
+        && appContentLayoutNav.value === 'vertical'
+        && !isLessThanOverlayNavBreakpoint.value(windowWidth),
     },
     { [`horizontal-nav-${horizontalNavType.value}`]: appContentLayoutNav.value === 'horizontal' },
     `layout-content-width-${appContentWidth.value}`,
@@ -117,6 +126,7 @@ export const useLayouts = () => {
 
   return {
     navbarType,
+    isNavbarBlurEnabled,
     footerType,
     isVerticalNavCollapsed,
     appContentWidth,

@@ -1,5 +1,5 @@
-import type { UserConfig as LayoutConfig } from '@layouts/types'
-import type { ThemeConfig, UserThemeConfig } from './types'
+import type { UserConfig as LayoutConfig } from '@layouts/types';
+import type { ThemeConfig, UserThemeConfig } from './types';
 
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
@@ -17,7 +17,7 @@ export const defineThemeConfig = (
         isDark: ref(userConfig.app.isDark),
         isRtl: ref(userConfig.app.isRtl),
       },
-      navbar: { type: ref(userConfig.navbar.type) },
+      navbar: { type: ref(userConfig.navbar.type), navbarBlur: ref(userConfig.navbar.navbarBlur) },
       footer: { type: ref(userConfig.footer.type) },
       verticalNav: {
         isVerticalNavCollapsed: ref(userConfig.verticalNav.isVerticalNavCollapsed),
@@ -45,9 +45,11 @@ export const defineThemeConfig = (
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
         isRtl: userConfig.app.isRtl,
+        isDark: userConfig.app.isDark,
       },
       navbar: {
         type: userConfig.navbar.type,
+        navbarBlur: userConfig.navbar.navbarBlur,
       },
       footer: {
         type: userConfig.footer.type,
@@ -72,4 +74,5 @@ export const defineThemeConfig = (
   }
 }
 
-export { useThemeConfig } from './composable/useThemeConfig'
+export { useThemeConfig } from './composable/useThemeConfig';
+

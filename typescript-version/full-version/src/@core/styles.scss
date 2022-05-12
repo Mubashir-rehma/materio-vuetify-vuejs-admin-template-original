@@ -1,6 +1,13 @@
 // TODO: Use vuetify SCSS variable here
 $card-spacer-content: 16px;
 
+// Card match height
+.row.match-height {
+  .v-card {
+    block-size: 100%;
+  }
+}
+
 .demo-space-x {
   margin-block-start: -$card-spacer-content;
 

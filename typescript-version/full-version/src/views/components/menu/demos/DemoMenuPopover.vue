@@ -34,17 +34,9 @@ const menu = ref(false)
       </v-card-text>
 
       <v-card-actions>
-        <v-btn icon>
-          <v-icon>mdi-heart-outline</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-bookmark-outline</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-share-variant </v-icon>
-        </v-btn>
+        <v-btn icon="mdi-heart-outline" />
+        <v-btn icon="mdi-bookmark-outline" />
+        <v-btn icon="mdi-share-variant " />
       </v-card-actions>
     </v-card>
   </v-menu>

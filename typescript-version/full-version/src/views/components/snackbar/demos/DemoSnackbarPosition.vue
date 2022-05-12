@@ -49,7 +49,7 @@ const isSnackbarCenteredVisible = ref(false)
       I'm a top right snackbar.
     </v-snackbar>
 
-    <!-- center right-->
+    <!-- center right -->
     <v-btn
       icon
       color="primary"
@@ -68,7 +68,7 @@ const isSnackbarCenteredVisible = ref(false)
       I'm a center right snackbar.
     </v-snackbar>
 
-    <!-- bottom right-->
+    <!-- bottom right -->
     <v-btn
       icon
       color="primary"
@@ -103,7 +103,7 @@ const isSnackbarCenteredVisible = ref(false)
       I'm a bottom snackbar.
     </v-snackbar>
 
-    <!-- bottom left-->
+    <!-- bottom left -->
     <v-btn
       icon
       color="primary"
@@ -121,7 +121,7 @@ const isSnackbarCenteredVisible = ref(false)
       I'm a bottom left snackbar.
     </v-snackbar>
 
-    <!-- center left-->
+    <!-- center left -->
     <v-btn
       icon
       color="primary"
@@ -140,7 +140,7 @@ const isSnackbarCenteredVisible = ref(false)
       I'm a center left snackbar.
     </v-snackbar>
 
-    <!-- top left-->
+    <!-- top left -->
     <v-btn
       icon
       color="primary"

@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-
+// TODO: Rename this to `TheCustomizer.vue`
 // import { useTheme } from 'vuetify'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useThemeConfig } from '@core/composable/useThemeConfig'

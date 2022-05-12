@@ -30,11 +30,9 @@
         "prefix": "v-btn-icon",
         "body": [
             "<v-btn",
-            "  icon",
+            "  icon=\"mdi-${1:icon}\"",
             "  variant=\"text\"",
-            ">",
-            "  <v-icon icon=\"mdi-${1:icon}\" />",
-            "</v-btn>"
+            "/>"
         ],
         "description": "Icon only button"
     },

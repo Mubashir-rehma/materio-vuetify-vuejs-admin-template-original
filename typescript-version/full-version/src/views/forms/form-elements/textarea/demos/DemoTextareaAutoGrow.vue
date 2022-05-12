@@ -1,0 +1,12 @@
+<script setup lang="ts">
+const textareaValue = ref('The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.')
+</script>
+
+<template>
+  <v-textarea
+    v-model="textareaValue"
+    label="Auto Grow"
+    auto-grow
+    hide-details
+  />
+</template>

@@ -7,8 +7,6 @@ const { _setAppDir } = useLayouts()
 
 // 🔌 Plugin
 export const createLayouts = (userConfig: UserConfig): Plugin => {
-  console.log('userConfig.navbar.navbarBlur :>> ', userConfig.navbar.navbarBlur)
-
   // TODO: Find a better way to assign config
   config.app.title = userConfig.app.title
   config.app.logo = userConfig.app.logo
@@ -21,8 +19,6 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
 
   config.navbar.type.value = userConfig.navbar.type
   config.navbar.navbarBlur.value = userConfig.navbar.navbarBlur
-
-  console.log('config.navbar.navbarBlur.value :>> ', config.navbar.navbarBlur.value)
 
   config.footer.type.value = userConfig.footer.type
 

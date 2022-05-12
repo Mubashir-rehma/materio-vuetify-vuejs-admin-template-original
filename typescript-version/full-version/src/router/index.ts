@@ -12,14 +12,15 @@ const router = createRouter({
 router.beforeEach((to, _, next) => {
   const isLoggedIn = isUserLoggedIn()
 
-  console.log('isLoggedIn :>> ', isLoggedIn)
+  // console.log('isLoggedIn :>> ', isLoggedIn)
 
-  console.log('canNavigate(to) :>> ', canNavigate(to))
+  // console.log('canNavigate(to) :>> ', canNavigate(to))
 
   if (!canNavigate(to)) {
     // Redirect to login if not logged in
     // ℹ️ Only add `to` query param if `to` route is not index route
-    if (!isLoggedIn) return next({ name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } })
+    if (!isLoggedIn)
+      return next({ name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } })
 
     // If logged in => not authorized
     return next({ name: 'not-authorized' })

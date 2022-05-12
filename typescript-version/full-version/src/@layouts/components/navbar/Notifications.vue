@@ -19,6 +19,7 @@ const props = defineProps<Props>()
       variant="text"
       color="default"
     >
+      <!-- TODO: Check why we can't use `icon` prop here for btn -->
       <v-icon icon="mdi-bell-outline" />
       <v-menu
         activator="parent"

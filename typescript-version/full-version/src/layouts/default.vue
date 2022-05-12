@@ -3,7 +3,7 @@ import navItemsHorizontal from '@/navigation/horizontal'
 import navItems from '@/navigation/vertical'
 import { useDynamicVhCssProperty, useLayouts } from '@layouts'
 import type { NavBarI18n as NavBarI18nType } from '@layouts/components'
-import { NavBarI18n, Notifications, ThemeSwitcher } from '@layouts/components'
+import { NavBarI18n, Notifications, ThemeSwitcher, UserProfile } from '@layouts/components'
 import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWithHorizontalNav.vue'
 import DefaultLayoutWithVerticalNav from '@layouts/components/DefaultLayoutWithVerticalNav.vue'
 import { config } from '@layouts/config'
@@ -71,13 +71,16 @@ const notifications: Notification[] = [
             class="i-mdi-menu cursor-pointer"
             @click="toggleVerticalOverlayNavActive(true)"
           />
-          <span>Navbar Content..</span>
+
+          <v-spacer />
+
           <NavBarI18n :languages="i18nCompLanguages" />
           <ThemeSwitcher />
           <Notifications
             :notifications-count="10"
             :notifications="notifications"
           />
+          <UserProfile />
         </div>
       </template>
 

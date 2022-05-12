@@ -5,8 +5,16 @@
 // ------------------------------------------------------------------------------
 
 const utils = require('eslint-plugin-vue/lib/utils')
-function toCamelCase(str) {
-  return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
+function toPascalCase(str) {
+  const words = str.match(/[a-z]+/gi)
+  if (!words)
+    return ''
+
+  return words
+    .map(word => {
+      return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
+    })
+    .join('')
 }
 
 // ------------------------------------------------------------------------------
@@ -17,7 +25,7 @@ module.exports = {
   meta: {
     type: 'problem',
     docs: {
-      description: 'require valid prop for "AppCardCode" component',
+      description: 'require valid demo SFC for "AppCardCode" component',
       categories: ['base'],
       url: 'https://eslint.vuejs.org/rules/require-component-is.html',
     },
@@ -31,18 +39,20 @@ module.exports = {
       /** @param {VElement} node */
       'VElement[name=\'appcardcode\']': function (node) {
         const prop_title = utils.getAttribute(node, 'title')
-        const prop_code = utils.getDirective(node, 'bind', 'code')
-
         const titleValue = prop_title.value.value
-        const demoCodeProperty = prop_code.value.expression.property.name
 
-        const camelCasedTitle = toCamelCase(titleValue)
+        const pascalCaseTitle = toPascalCase(titleValue)
 
-        if (camelCasedTitle !== demoCodeProperty) {
+        const demoNode = node.children.find(child => child.type === 'VElement' && child.name.startsWith('demo'))
+        const demoNodeSfcName = demoNode.rawName
+        const pattern = new RegExp(`Demo[a-zA-z]+${pascalCaseTitle}`)
+        const demoSfcMatch = demoNodeSfcName.search(pattern)
+
+        if (demoSfcMatch !== 0) {
           context.report({
             node,
-            loc: prop_code.value.expression.property.loc,
-            message: `Expected 'code' prop value to match the camelcase value of title prop value. Expected: '${camelCasedTitle}', Actual: '${demoCodeProperty}'`,
+            loc: demoNode.loc,
+            message: `Expected Demo SFC to match the pascal case value of title prop value. Expected: 'Demo[a-zA-Z]+${pascalCaseTitle}', Actual: '${demoNodeSfcName}'`,
           })
         }
       },

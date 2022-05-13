@@ -38,6 +38,11 @@ export default defineConfig({
             'display': 'inline-block',
             'vertical-align': 'middle',
           },
+
+          // collections: {
+          //   mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default),
+          //   flagpack: () => import('@iconify-json/flagpack/icons.json').then(i => i.default),
+          // },
         }),
       ],
     }),

@@ -6,6 +6,7 @@ module.exports = {
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
+      { text: 'Code Examples', link: '/code-examples/fetching-nav-items-from-api' },
       {
         text: 'Demo',
         link: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/',
@@ -42,6 +43,15 @@ module.exports = {
           children: ['/guide/getting-support', '/guide/github-access'],
         },
       ],
+      '/code-examples/': [
+        {
+          title: 'Layout',
+          collapsable: false,
+          children: [
+            '/code-examples/fetching-nav-items-from-api',
+          ]
+        }
+      ]
     },
   },
 }

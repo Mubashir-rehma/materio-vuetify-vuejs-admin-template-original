@@ -164,3 +164,7 @@ You can disable any item by simply setting `disable` property to `true`
 <<< @/code-snippets/guide/navigation-menu/vertical-nav-link-disabled.js{8}
 </code-block>
 </code-group>
+
+## Fetching nav items from API
+
+Some times we might have to fetch the nav items from API rather than hard coding them in file.

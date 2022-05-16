@@ -5,6 +5,12 @@ import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@lay
 import { config } from '@layouts/config'
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
 
+defineProps<{
+  navItems: VerticalNavItems
+  isOverlayNavActive: boolean
+  toggleIsOverlayNavActive: (value: boolean) => void
+}>()
+
 const refNav = ref()
 
 const { width: windowWidth } = useWindowSize()
@@ -16,9 +22,11 @@ const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isV
 
 const hideTitleAndIcon = isVerticalNavMini(isHovered)
 
-const resolveNavItemComponent = (item: NavLink|NavSectionTitle|NavGroup) => {
-  if ('heading' in item) return VerticalNavSectionTitle
-  if ('children' in item) return VerticalNavGroup
+const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => {
+  if ('heading' in item)
+    return VerticalNavSectionTitle
+  if ('children' in item)
+    return VerticalNavGroup
 
   return VerticalNavLink
 }
@@ -27,19 +35,13 @@ const perfectScrollbarSettings = {
   maxScrollbarLength: 60,
   wheelPropagation: false,
 }
-
-defineProps<{
-  navItems: VerticalNavItems
-  isOverlayNavActive: boolean
-  toggleIsOverlayNavActive: (value: boolean) => void
-}>()
 </script>
 
 <template>
   <aside
     ref="refNav"
     class="layout-vertical-nav"
-    :class="[{'overlay-nav': isLessThanOverlayNavBreakpoint(windowWidth)}, { 'hovered': isHovered }, {'visible': isOverlayNavActive}]"
+    :class="[{ 'overlay-nav': isLessThanOverlayNavBreakpoint(windowWidth) }, { hovered: isHovered }, { visible: isOverlayNavActive }]"
   >
     <!-- 👉 Header -->
     <div class="nav-header">
@@ -131,7 +133,7 @@ defineProps<{
   }
 
   .nav-items {
-    height: 100%;
+    block-size: 100%;
 
     // ℹ️ We no loner needs this overflow styles as perfect scrollbar applies it
     // overflow-x: hidden;
@@ -141,7 +143,10 @@ defineProps<{
   }
 
   .nav-item-title {
+    overflow: hidden;
     margin-inline-end: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   // 👉 Collapsed

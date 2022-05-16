@@ -30,6 +30,7 @@ export default defineConfig({
         [/^gap-(\d+)$/, ([, d]) => ({ gap: `${d / 4}rem` })],
         [/^gap-x-(\d+)$/, ([, d]) => ({ 'column-gap': `${d / 4}rem` })],
         [/^gap-y-(\d+)$/, ([, d]) => ({ 'row-gap': `${d / 4}rem` })],
+        ['truncate', { 'text-overflow': 'ellipsis', 'overflow': 'hidden', 'white-space': 'nowrap' }],
       ],
       presets: [
         presetIcons({

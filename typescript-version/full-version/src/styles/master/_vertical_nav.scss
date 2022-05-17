@@ -1,5 +1,6 @@
 @use "./placeholders";
 @use "@layouts/styles/mixins";
+@use "@core/scss/mixins" as coreMixins;
 
 .layout-nav-type-vertical {
   // 👉 Layout Vertical nav
@@ -102,10 +103,12 @@
         @extend %nav-link-active-styles;
       }
 
-      > :not(.router-link-exact-active) {
-        &:hover {
-          @extend %nav-items-hover-styles;
-        }
+      > a {
+        // Adds before psudo element to style hover state
+        @include coreMixins.state-before;
+
+        // Adds vuetify states
+        @include coreMixins.states($active: false);
       }
     }
 
@@ -145,8 +148,12 @@
         }
       }
 
-      > :first-child:hover {
-        @extend %nav-items-hover-styles;
+      > :first-child {
+        // Adds before psudo element to style hover state
+        @include coreMixins.state-before;
+
+        // Adds vuetify states
+        @include coreMixins.states($active: false);
       }
 
       &.active > :first-child {

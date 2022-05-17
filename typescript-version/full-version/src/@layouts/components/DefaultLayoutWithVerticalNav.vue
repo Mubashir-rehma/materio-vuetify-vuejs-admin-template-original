@@ -42,14 +42,6 @@ export default defineComponent({
 
     const router = useRouter()
     const shallShowPageLoading = ref(false)
-    router.beforeEach(() => {
-      console.info('setting to true')
-      shallShowPageLoading.value = true
-    })
-    router.afterEach(() => {
-      console.info('setting to false')
-      shallShowPageLoading.value = false
-    })
 
     return () => {
       const verticalNav = h(
@@ -77,14 +69,26 @@ export default defineComponent({
       )
 
       // 👉 Content area
+      let mainChildren = slots.default?.()
+
+      // 💡 Only show loading and attach `beforeEach` & `afterEach` hooks if `content-loading` slot is used
+      if (slots['content-loading']) {
+        router.beforeEach(() => {
+          console.info('setting to true')
+          shallShowPageLoading.value = true
+        })
+        router.afterEach(() => {
+          console.info('setting to false')
+          shallShowPageLoading.value = false
+        })
+
+        mainChildren = shallShowPageLoading.value ? slots['content-loading']?.() : slots.default?.()
+      }
+
       const main = h(
         'main',
         { class: 'layout-page-content' },
-
-        // 💡 Only show loading if `content-loading` slot is used
-        slots['content-loading']
-          ? shallShowPageLoading.value ? slots['content-loading']?.() : slots.default?.()
-          : slots.default?.(),
+        mainChildren,
       )
 
       // 👉 Footer

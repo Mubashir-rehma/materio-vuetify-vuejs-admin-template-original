@@ -20,6 +20,21 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar';
     </v-col>
 
     <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Initials -->
+      <AppCardCode
+        title="Initials"
+        :code="demoCode.initials"
+      >
+        <p>Use <code>v-avatar-light-bg</code> with text color class for avatar initials.</p>
+
+        <DemoAvatarInitials />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
       md="6"
       cols="12"
     >

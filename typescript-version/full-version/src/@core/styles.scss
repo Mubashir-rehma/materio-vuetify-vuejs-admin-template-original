@@ -1,3 +1,6 @@
+// TODO: Use vuetify SCSS variable here
+@import "scss/mixins";
+
 $card-spacer-content: 16px;
 
 // Card match height
@@ -25,6 +28,10 @@ $card-spacer-content: 16px;
     }
   }
 }
+
+
+// ℹ️ Avatar light bg
+@include light-bg-provider(v-avatar)
 
 // ——— Avatar Group ——————— //
 .v-avatar-group {

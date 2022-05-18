@@ -62,3 +62,26 @@
     #{$selector} { opacity: calc(0.16 * var(--v-theme-overlay-multiplier)); }
   }
 }
+
+// ——— Light background generator ——————— //
+// ℹ️ With this you have to give text color to the component you want light bg
+// e.g. class="avatar-initial text-primary" for primary light bg
+@mixin light-bg-provider($component, $inner-selector: "", $opacity: 0.12) {
+  .v-application .#{$component}.#{$component}-light-bg #{$inner-selector} {
+    background-color: transparent !important;
+
+    &.bg-static-white {
+      background-color: white !important;
+    }
+
+    &::before {
+      position: absolute;
+      background-color: currentcolor;
+      border-radius: inherit;
+      content: "";
+      inset: 0;
+      opacity: $opacity;
+      pointer-events: none;
+    }
+  }
+}

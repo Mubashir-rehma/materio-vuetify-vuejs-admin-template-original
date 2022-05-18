@@ -68,6 +68,11 @@ export default [
         ],
       },
       {
+        title: 'Typography',
+        icon: 'i-mdi-alpha-t-box-outline',
+        to: 'pages-typography',
+      },
+      {
         title: 'Components',
         icon: 'i-mdi-home',
         children: [

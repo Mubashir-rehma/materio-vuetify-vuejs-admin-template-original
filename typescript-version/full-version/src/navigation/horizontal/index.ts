@@ -164,6 +164,11 @@ export default [
           },
         ],
       },
+      {
+        title: 'Form Validation',
+        icon: 'i-mdi-checkbox-marked-circle-outline',
+        to: 'forms-form-validation',
+      },
     ],
   },
   {

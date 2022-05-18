@@ -124,6 +124,16 @@ p {
   line-height: 1.6;
 }
 
+// Remove margin-bottom of v-input_details (validation error message)
+.v-row {
+  .v-col,
+  [class^="v-col-*"] {
+    .v-input__details {
+      margin-block-end: 0;
+    }
+  }
+}
+
 // !SECTION
 
 // !SECTION

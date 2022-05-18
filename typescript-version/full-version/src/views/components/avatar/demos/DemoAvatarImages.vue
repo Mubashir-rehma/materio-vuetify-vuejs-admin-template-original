@@ -5,7 +5,6 @@ import avatar3Src from '@/assets/images/avatars/avatar-3.png'
 import avatar4Src from '@/assets/images/avatars/avatar-4.png'
 import avatar5Src from '@/assets/images/avatars/avatar-5.png'
 import avatar6Src from '@/assets/images/avatars/avatar-6.png'
-
 </script>
 
 <template>

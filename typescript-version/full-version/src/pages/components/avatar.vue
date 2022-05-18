@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
+import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar';
 </script>
 
 <template>
@@ -70,12 +70,27 @@ import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar'
     >
       <!-- 👉 Images -->
       <AppCardCode
-        title="Avatar Images"
+        title="Images"
         :code="demoCode.images"
       >
         <p>You can use <code>v-img</code> in default slot of <code>v-avatar</code> component for rendering image.</p>
 
         <DemoAvatarImages />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Group -->
+      <AppCardCode
+        title="Group"
+        :code="demoCode.group"
+      >
+        <p>Use <code>v-avatar-group</code> class as a wrapper of avatars.</p>
+
+        <DemoAvatarGroup />
       </AppCardCode>
     </v-col>
   </v-row>

@@ -1,5 +1,6 @@
 // TODO: Update vuetify heading line height according to MUI
-@use "vuetify/styles" with (
+@use "sass:map";
+@use "vuetify/styles" as * with (
   $color-pack: false,
   // $card-item-padding: 20px,
   // $card-text-padding: 20px,
@@ -126,3 +127,18 @@ p {
 // !SECTION
 
 // !SECTION
+
+// TODO Mixin should be moved in mixin file
+@mixin elevation($z, $important: false) {
+  /* stylelint-disable-next-line max-line-length */
+  box-shadow: map.get($shadow-key-umbra, $z), map.get($shadow-key-penumbra, $z), map.get($shadow-key-ambient, $z) if($important, !important, null);
+}
+
+// Avatar Group
+.v-avatar-group {
+  > * {
+    &:hover {
+      @include elevation(2);
+    }
+  }
+}

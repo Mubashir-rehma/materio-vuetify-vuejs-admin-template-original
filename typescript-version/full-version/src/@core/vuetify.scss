@@ -11,6 +11,40 @@
 // ==== Vuetify overrides
 // ========================================
 
+// TODO: In vuetify v-card-title should be high emphasis
+
+// font-color override
+.v-application,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6,
+.text-button,
+.text-overline,
+.v-card-title {
+
+  /* stylelint-disable-next-line color-function-notation */
+  color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+}
+
+// text class color override
+.text-body-1,
+.text-body-2,
+.text-subtitle-1,
+.text-subtitle-2 {
+
+  /* stylelint-disable-next-line color-function-notation */
+  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+}
+
 // We will write styles that are missing in v3 of vuetify comparing to v2
 
 p {

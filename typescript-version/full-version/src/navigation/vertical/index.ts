@@ -63,6 +63,13 @@ export default [
   },
   { heading: 'UI Elements' },
   {
+    title: 'Cards',
+    icon: 'i-mdi-credit-card-outline',
+    children: [
+      { title: 'Basic', to: 'pages-cards-card-basic' },
+    ],
+  },
+  {
     title: 'Components',
     icon: 'i-mdi-archive-outline',
     children: [

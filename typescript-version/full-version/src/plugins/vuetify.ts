@@ -1,11 +1,11 @@
 // Styles
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
+
 // Vuetify
 import type { ThemeDefinition } from 'vuetify'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
-
 
 const myCustomLightTheme: ThemeDefinition = {
   dark: false,
@@ -52,6 +52,10 @@ export default createVuetify({
     VRangeSlider: {
       // set v-range-slider default color to primary
       color: 'primary',
+    },
+    VRating: {
+      // set v-rating default color to primary
+      color: 'warning',
     },
   },
   icons: {

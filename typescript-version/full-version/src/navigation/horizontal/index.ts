@@ -61,6 +61,13 @@ export default [
     icon: 'i-mdi-home',
     children: [
       {
+        title: 'Cards',
+        icon: 'i-mdi-credit-card-outline',
+        children: [
+          { title: 'Basic', to: 'pages-cards-card-basic' },
+        ],
+      },
+      {
         title: 'Components',
         icon: 'i-mdi-home',
         children: [

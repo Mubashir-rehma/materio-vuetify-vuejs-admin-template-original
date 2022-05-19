@@ -65,6 +65,10 @@ export default createVuetify({
       // set v-rating default color to primary
       color: 'warning',
     },
+    VProgressCircular: {
+      // set v-progress-circular default color to primary
+      color: 'primary',
+    },
   },
   icons: {
     defaultSet: 'mdi',

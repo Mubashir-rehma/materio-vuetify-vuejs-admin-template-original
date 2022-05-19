@@ -88,7 +88,9 @@ module.exports = {
     'vue/html-comment-indent': 'error',
     'vue/match-component-file-name': 'error',
     'vue/no-child-content': 'error',
-    'vue/no-duplicate-attr-inheritance': 'error',
+
+    // NOTE this rule only supported in SFC,  Users of the unplugin-vue-define-options should disable that rule: https://github.com/vuejs/eslint-plugin-vue/issues/1886
+    // 'vue/no-duplicate-attr-inheritance': 'error',
     'vue/no-empty-component-block': 'error',
     'vue/no-multiple-objects-in-class': 'error',
     'vue/no-reserved-component-names': 'error',

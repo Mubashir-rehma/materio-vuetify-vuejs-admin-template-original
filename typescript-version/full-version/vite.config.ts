@@ -1,13 +1,14 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import presetIcons from '@unocss/preset-icons'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vuetify from '@vuetify/vite-plugin'
-import path from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { fileURLToPath } from 'url'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -88,6 +89,7 @@ export default defineConfig({
       // TODO: use `fileURLToPath`
       include: [path.resolve(__dirname, './src/locales/**')],
     }),
+    DefineOptions(),
   ],
   define: { 'process.env': {} },
   resolve: {

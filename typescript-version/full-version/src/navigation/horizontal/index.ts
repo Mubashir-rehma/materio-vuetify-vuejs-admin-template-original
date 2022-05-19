@@ -112,6 +112,11 @@ export default [
           },
         ],
       },
+      {
+        title: 'Form Layouts',
+        icon: 'i-mdi-checkbox-marked-circle-outline',
+        to: 'forms-form-layouts',
+      },
     ],
   },
   {

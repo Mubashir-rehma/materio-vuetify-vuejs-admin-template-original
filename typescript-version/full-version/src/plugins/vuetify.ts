@@ -1,11 +1,11 @@
 // Styles
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
-
 // Vuetify
 import type { ThemeDefinition } from 'vuetify'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
+
 
 const myCustomLightTheme: ThemeDefinition = {
   dark: false,
@@ -48,6 +48,14 @@ export default createVuetify({
     VCheckbox: {
       // set v-checkbox default color to primary
       color: 'primary',
+    },
+    VRadioGroup: {
+      // set v-radio-group default inline:true
+      inline: true,
+    },
+    VSelect: {
+      // set v-select default transition:"fade-transition"
+      transition: 'fade-transition',
     },
     VRangeSlider: {
       // set v-range-slider default color to primary

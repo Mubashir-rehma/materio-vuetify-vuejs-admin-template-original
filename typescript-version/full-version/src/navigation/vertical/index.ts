@@ -94,7 +94,7 @@ export default [
   },
   { heading: 'Forms & Tables' },
   {
-    title: 'Forms Elements',
+    title: 'Form Elements',
     icon: 'i-mdi-content-copy',
     children: [
       { title: 'Checkbox', to: 'forms-checkbox' },
@@ -109,6 +109,11 @@ export default [
     title: 'Form Validation',
     icon: 'i-mdi-checkbox-marked-circle-outline',
     to: 'forms-form-validation',
+  },
+  {
+    title: 'Form Layouts',
+    icon: 'i-mdi-checkbox-marked-circle-outline',
+    to: 'forms-form-layouts',
   },
   { heading: 'Other' },
   {

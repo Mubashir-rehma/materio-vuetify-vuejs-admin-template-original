@@ -108,6 +108,10 @@ export default [
             to: 'forms-checkbox',
           },
           {
+            title: 'Radio',
+            to: 'forms-radio',
+          },
+          {
             title: 'Range Slider',
             to: 'forms-range-slider',
           },

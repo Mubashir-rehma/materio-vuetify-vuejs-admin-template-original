@@ -103,6 +103,7 @@ export default [
       { title: 'Textfield', to: 'forms-textfield' },
       { title: 'File Input', to: 'forms-file-input' },
       { title: 'Slider', to: 'forms-slider' },
+      { title: 'Radio', to: 'forms-radio' },
       { title: 'Range Slider', to: 'forms-range-slider' },
       { title: 'Rating', to: 'forms-rating' },
       { title: 'Textarea', to: 'forms-textarea' },

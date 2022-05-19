@@ -1,20 +1,12 @@
 <script lang="ts" setup>
 import type { VForm } from 'vuetify/components'
+import { emailValidator, requiredValidator } from '@core/utils/validation'
 
 const name = ref('')
-const nameRules = [
-  (v: string) => !!v || 'Name is required',
-  (v: string) => (v && v.length <= 10) || 'Name must be less than 10 characters',
-]
-
 const email = ref('')
-const emailRules = [(v: string) => !!v || 'E-mail is required', (v: string) => /.+@.+\..+/.test(v) || 'E-mail must be valid']
-
 const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'] as const
 const select = ref<typeof items[number]>()
-
 const checkbox = ref(false)
-
 const form = ref<VForm>()
 </script>
 
@@ -25,7 +17,7 @@ const form = ref<VForm>()
   >
     <v-text-field
       v-model="name"
-      :rules="nameRules"
+      :rules="[requiredValidator]"
       label="Name"
       required
       variant="outlined"
@@ -36,7 +28,7 @@ const form = ref<VForm>()
 
     <v-text-field
       v-model="email"
-      :rules="emailRules"
+      :rules="[emailValidator, requiredValidator]"
       label="E-mail"
       required
       variant="outlined"
@@ -48,7 +40,7 @@ const form = ref<VForm>()
     <v-select
       v-model="select"
       :items="items"
-      :rules="[(v: string) => !!v || 'Item is required']"
+      :rules="[requiredValidator]"
       label="Item"
       name="select"
       required
@@ -59,7 +51,7 @@ const form = ref<VForm>()
 
     <v-checkbox
       v-model="checkbox"
-      :rules="[(v: string) => !!v || 'You must agree to continue!']"
+      :rules="[requiredValidator]"
       label="Do you agree?"
       required
       hide-details="auto"

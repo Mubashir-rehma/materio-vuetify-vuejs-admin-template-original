@@ -41,7 +41,7 @@ const confirmPassword = ref('')
           hide-details="auto"
           placeholder="Your Email"
           persistent-placeholder
-          :rules="[requiredValidator,emailValidator]"
+          :rules="[requiredValidator, emailValidator]"
         />
       </v-col>
 
@@ -57,7 +57,7 @@ const confirmPassword = ref('')
           type="password"
           placeholder="Your Password"
           persistent-placeholder
-          :rules="[requiredValidator,passwordValidator]"
+          :rules="[requiredValidator, passwordValidator]"
         />
       </v-col>
 
@@ -73,7 +73,7 @@ const confirmPassword = ref('')
           type="password"
           placeholder="Confirm Password"
           persistent-placeholder
-          :rules="[requiredValidator,confirmedValidator(confirmPassword,password)]"
+          :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
         />
       </v-col>
 

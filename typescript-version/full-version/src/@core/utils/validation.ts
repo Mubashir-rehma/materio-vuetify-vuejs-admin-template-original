@@ -1,7 +1,7 @@
 import { isEmpty, isEmptyArray, isNullOrUndefined } from './index'
 
 // 👉 Required Validator
-export const requiredValidator = (value: unknown): string|boolean => {
+export const requiredValidator = (value: unknown): string | boolean => {
   if (isNullOrUndefined(value) || isEmptyArray(value) || value === false)
     return 'This field is required'
 
@@ -9,7 +9,7 @@ export const requiredValidator = (value: unknown): string|boolean => {
 }
 
 // 👉 Email Validator
-export const emailValidator = (value: unknown): boolean|string => {
+export const emailValidator = (value: unknown): boolean | string => {
   if (isEmpty(value))
     return true
 
@@ -22,7 +22,7 @@ export const emailValidator = (value: unknown): boolean|string => {
 }
 
 // 👉 Password Validator
-export const passwordValidator = (password: string): boolean|string => {
+export const passwordValidator = (password: string): boolean | string => {
   const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/
 
   const validPassword = regExp.test(password)
@@ -35,7 +35,7 @@ export const passwordValidator = (password: string): boolean|string => {
 }
 
 // 👉 Confirm Password Validator
-export const confirmedValidator = (value: string, target: string): boolean|string =>
+export const confirmedValidator = (value: string, target: string): boolean | string =>
 
   value === target || 'The Confirm Password field confirmation does not match'
 
@@ -58,7 +58,7 @@ export const integerValidator = (value: unknown) => {
 }
 
 // 👉 Regex Validator
-export const regexValidator = (value: unknown, regex: RegExp|string): boolean|string => {
+export const regexValidator = (value: unknown, regex: RegExp | string): boolean | string => {
   if (isEmpty(value))
     return true
 

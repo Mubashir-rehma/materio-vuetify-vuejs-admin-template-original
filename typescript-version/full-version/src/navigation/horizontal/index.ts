@@ -115,6 +115,7 @@ export default [
             title: 'Rating',
             to: 'forms-rating',
           },
+          { title: 'Slider', to: 'forms-slider' },
         ],
       },
       {

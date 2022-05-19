@@ -102,6 +102,7 @@ export default [
       { title: 'Combobox', to: 'forms-combobox' },
       { title: 'Textfield', to: 'forms-textfield' },
       { title: 'File Input', to: 'forms-file-input' },
+      { title: 'Slider', to: 'forms-slider' },
       { title: 'Range Slider', to: 'forms-range-slider' },
       { title: 'Rating', to: 'forms-rating' },
       { title: 'Textarea', to: 'forms-textarea' },

@@ -69,6 +69,10 @@ export default createVuetify({
       // set v-progress-circular default color to primary
       color: 'primary',
     },
+    VSlider: {
+      // set v-slider default color to primary
+      color: 'primary',
+    },
   },
   icons: {
     defaultSet: 'mdi',

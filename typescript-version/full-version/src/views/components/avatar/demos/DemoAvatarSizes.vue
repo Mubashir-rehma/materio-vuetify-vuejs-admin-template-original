@@ -11,7 +11,7 @@
       color="secondary"
       size="small"
     >
-      <span class="text-white">PI</span>
+      <span>PI</span>
     </v-avatar>
 
     <v-avatar color="success">
@@ -22,14 +22,14 @@
       color="info"
       size="large"
     >
-      <span class="text-h6">PI</span>
+      <span class="text-h6 text-white">PI</span>
     </v-avatar>
 
     <v-avatar
       color="error"
       size="x-large"
     >
-      <span class="text-h5">PI</span>
+      <span class="text-h5 text-white">PI</span>
     </v-avatar>
   </div>
 </template>

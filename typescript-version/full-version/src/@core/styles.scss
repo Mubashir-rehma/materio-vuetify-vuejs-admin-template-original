@@ -32,7 +32,6 @@ $card-spacer-content: 16px;
 // ℹ️ Avatar light bg
 @include light-bg-provider(v-avatar);
 
-// ——— Avatar Group ——————— //
 .v-avatar-group {
   display: flex;
   align-items: center;

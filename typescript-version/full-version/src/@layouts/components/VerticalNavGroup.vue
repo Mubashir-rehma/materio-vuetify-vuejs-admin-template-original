@@ -184,14 +184,18 @@ export default {
         class="nav-item-icon"
       />
       <transition-group name="vertical-nav-item">
+        <!-- 👉 Title -->
         <component
           :is=" config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.title, 'span')"
           v-show="!hideTitleAndBadge"
           key="title"
           class="nav-item-title"
-          v-text="item.title"
-        />
+        >
+          {{ item.title }}
+        </component>
+
+        <!-- 👉 Badge -->
         <component
           :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.badgeContent, 'span')"
@@ -200,13 +204,16 @@ export default {
           key="badge"
           class="nav-item-badge"
           :class="item.badgeClass"
-          v-text="item.badgeContent"
+        >
+          {{ item.badgeContent }}
+        </component>
+        <div
+          v-show="!hideTitleAndBadge"
+          key="arrow"
+          class="nav-group-arrow"
+          :class="config.icons.chevronRight"
         />
       </transition-group>
-      <div
-        class="nav-group-arrow"
-        :class="config.icons.chevronRight"
-      />
     </div>
     <ul
       ref="refGroupChildren"

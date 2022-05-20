@@ -5,20 +5,20 @@ import { can } from '@layouts/plugins/casl'
 import type { NavLink } from '@layouts/types'
 import { getComputedNavLinkToProp } from '@layouts/utils'
 
-const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
-
-const hideTitleAndBadge = isVerticalNavMini()
-
 defineProps<{
   item: NavLink
 }>()
+
+const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
+
+const hideTitleAndBadge = isVerticalNavMini()
 </script>
 
 <template>
   <li
     v-if="can(item.action, item.subject)"
     class="nav-link"
-    :class="{ 'disabled': item.disable }"
+    :class="{ disabled: item.disable }"
   >
     <component
       :is="item.to ? 'RouterLink' : 'a'"
@@ -29,24 +29,29 @@ defineProps<{
         class="nav-item-icon"
       />
       <transition-group name="vertical-nav-item">
+        <!-- 👉 Title -->
         <component
-          :is="config.app.enableI18n ? 'i18n-t': 'span'"
+          :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-show="!hideTitleAndBadge"
           key="title"
           class="nav-item-title"
           v-bind="dynamicI18nProps(item.title, 'span')"
-          v-text="item.title"
-        />
+        >
+          {{ item.title }}
+        </component>
+
+        <!-- 👉 Badge -->
         <component
-          :is="config.app.enableI18n ? 'i18n-t': 'span'"
+          :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-if="item.badgeContent"
           v-show="!hideTitleAndBadge"
           key="badge"
           class="nav-item-badge"
           :class="item.badgeClass"
           v-bind="dynamicI18nProps(item.badgeContent, 'span')"
-          v-text="item.badgeContent"
-        />
+        >
+          {{ item.badgeContent }}
+        </component>
       </transition-group>
     </component>
   </li>

@@ -1,27 +1,10 @@
 // Styles
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
-// Vuetify
-import type { ThemeDefinition } from 'vuetify'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
-
-
-const myCustomLightTheme: ThemeDefinition = {
-  dark: false,
-  colors: {
-    'background': '#FFFFFF',
-    'surface': '#FFFFFF',
-    'primary': '#000',
-    'primary-darken-1': '#3700B3',
-    'secondary': '#03DAC6',
-    'secondary-darken-1': '#018786',
-    'error': '#B00020',
-    'info': '#2196F3',
-    'success': '#4CAF50',
-    'warning': '#FB8C00',
-  },
-}
+const { isDark } = useThemeConfig()
 
 export default createVuetify({
   defaults: {
@@ -82,9 +65,32 @@ export default createVuetify({
     },
   },
   theme: {
-    defaultTheme: 'myCustomLightTheme',
+    defaultTheme: isDark.value ? 'dark' : 'light',
     themes: {
-      myCustomLightTheme,
+      light: {
+        dark: false,
+        colors: {
+          'primary': '#a169ff',
+          'secondary': '#677492',
+          'on-secondary': '#fff',
+          'success': '#40c057',
+          'info': '#2f8be6',
+          'warning': '#f77e17',
+          'error': '#f55252',
+        },
+      },
+      dark: {
+        dark: true,
+        colors: {
+          'primary': '#a169ff',
+          'secondary': '#677492',
+          'on-secondary': '#fff',
+          'success': '#40c057',
+          'info': '#2f8be6',
+          'warning': '#f77e17',
+          'error': '#f55252',
+        },
+      },
     },
   },
 })

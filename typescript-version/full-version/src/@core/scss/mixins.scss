@@ -52,10 +52,10 @@
   }
 }
 
-// ℹ️ This is exact copy of vuetify mixin "active-states" (packages/vuetify/src/styles/tools/_states.sass)
+// ℹ️ This mixin is slightly modified version of vuetify mixin "active-states" (packages/vuetify/src/styles/tools/_states.sass)
 @mixin active-states($selector: "::before") {
   &:hover#{$selector},
-  #{$selector} {
+  &#{$selector} {
     opacity: calc(0.12 * var(--v-theme-overlay-multiplier));
   }
 

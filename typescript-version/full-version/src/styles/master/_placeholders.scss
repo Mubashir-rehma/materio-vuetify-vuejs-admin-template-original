@@ -23,8 +23,8 @@
   margin-inline-end: 1rem;
 }
 
-%nav-group-active-styles {
-  background-color: rgb(var(--app-nav-group-active-background-color));
+%nav-group-open-active-styles {
+  @include mixins.active-states;
 }
 
 %nav-link-active-styles {

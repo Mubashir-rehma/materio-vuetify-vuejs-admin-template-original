@@ -112,6 +112,7 @@
       }
     }
 
+    // 👉 Vertical nav group
     .nav-group {
       // Reduce the size of icon if link/group is inside group
       .nav-group,
@@ -157,8 +158,11 @@
         @include coreMixins.states($active: false);
       }
 
-      &.active > :first-child {
-        @extend %nav-group-active-styles;
+      &.active,
+      &.open {
+        > :first-child {
+          @extend %nav-group-open-active-styles;
+        }
       }
     }
   }

@@ -21,7 +21,8 @@ let tempIsOpen = null
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered)
 watch(isVerticalNavHovered, val => {
   // If menu is not collapsed ignore
-  if (!isVerticalNavCollapsed.value) return
+  if (!isVerticalNavCollapsed.value)
+    return
 
   // If mouse is dragged out of nav menu
   if (!val) {
@@ -59,18 +60,19 @@ const isAnyChildOpen = (children: NavGroup['children']): boolean => {
   return children.some(child => {
     let result = openGroups.value.includes(child.title)
 
-    if ('children' in child) result = isAnyChildOpen(child.children) || result
+    if ('children' in child)
+      result = isAnyChildOpen(child.children) || result
 
     return result
   })
 }
 
 /*
-  Watch for route changes, more specifically route name. Do note that this won't trigger if route's param or query is updated.
+  Watch for route changes, more specifically route path. Do note that this won't trigger if route's query is updated.
 
   updates isActive & isOpen based on active state of group.
 */
-watch(() => route.name, () => {
+watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
   isGroupOpen.value = isActive
@@ -95,8 +97,10 @@ watch(isGroupOpen, (val: boolean) => {
   const grpIndex = openGroups.value.indexOf(props.item.title)
 
   // update openGroups array for addition/removal of current group
-  if (val && grpIndex === -1) openGroups.value.push(props.item.title)
-  else if (!val && grpIndex !== -1) openGroups.value.splice(grpIndex, 1)
+  if (val && grpIndex === -1)
+    openGroups.value.push(props.item.title)
+  else if (!val && grpIndex !== -1)
+    openGroups.value.splice(grpIndex, 1)
 }, { immediate: true })
 
 /*
@@ -107,7 +111,8 @@ watch(isGroupOpen, (val: boolean) => {
   It will handle assigning height based on open state of group for the first time when layout is loaded
 */
 watch(groupChildrenMaxHeight, val => {
-  if (isGroupOpen.value) groupChildrenDomHeight.value = val
+  if (isGroupOpen.value)
+    groupChildrenDomHeight.value = val
 })
 
 /*
@@ -125,15 +130,18 @@ watch(groupChildrenMaxHeight, val => {
 watch(openGroups, val => {
   // Prevent closing recently opended inactive group.
   const lastOpendedGroup = val[val.length - 1]
-  if (lastOpendedGroup === props.item.title) return
+  if (lastOpendedGroup === props.item.title)
+    return
 
   const isActive = isNavGroupActive(props.item.children, router)
 
   // Goal of this watcher is to close inactive groups. So don't do anything for active groups.
-  if (isActive) return
+  if (isActive)
+    return
 
   // We won't close group if any of child group is open in current group
-  if (isAnyChildOpen(props.item.children)) return
+  if (isAnyChildOpen(props.item.children))
+    return
 
   isGroupOpen.value = isActive
   isGroupActive.value = isActive
@@ -141,7 +149,8 @@ watch(openGroups, val => {
 
 const updateGroupChildrenMaxHeight = () => {
   const height = refGroupChildren.value?.scrollHeight
-  if (height) groupChildrenMaxHeight.value = height
+  if (height)
+    groupChildrenMaxHeight.value = height
 }
 
 // Set the height of current group for toggling/updating when open state is updated intially
@@ -164,9 +173,12 @@ export default {
   <li
     v-if="canViewNavMenuGroup(item)"
     class="nav-group"
-    :class="[{ active: isGroupActive }, { open: isGroupOpen }, { 'disabled': item.disable }]"
+    :class="[{ active: isGroupActive }, { open: isGroupOpen }, { disabled: item.disable }]"
   >
-    <div class="nav-group-label" @click="isGroupOpen = !isGroupOpen">
+    <div
+      class="nav-group-label"
+      @click="isGroupOpen = !isGroupOpen"
+    >
       <div
         :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
@@ -181,7 +193,7 @@ export default {
           v-text="item.title"
         />
         <component
-          :is="config.app.enableI18n ? 'i18n-t': 'span'"
+          :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.badgeContent, 'span')"
           v-show="!hideTitleAndBadge"
           v-if="item.badgeContent"
@@ -191,7 +203,10 @@ export default {
           v-text="item.badgeContent"
         />
       </transition-group>
-      <div class="nav-group-arrow" :class="config.icons.chevronRight" />
+      <div
+        class="nav-group-arrow"
+        :class="config.icons.chevronRight"
+      />
     </div>
     <ul
       ref="refGroupChildren"

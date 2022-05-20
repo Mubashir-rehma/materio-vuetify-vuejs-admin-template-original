@@ -26,11 +26,11 @@ const { dynamicI18nProps, isAppRtl } = useLayouts()
 const isGroupActive = ref(false)
 
 /*
-  Watch for route changes, more specifically route name. Do note that this won't trigger if route's param or query is updated.
+  Watch for route changes, more specifically route path. Do note that this won't trigger if route's query is updated.
 
   updates isActive & isOpen based on active state of group.
 */
-watch(() => route.name, () => {
+watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
   isGroupActive.value = isActive
 }, { immediate: true })
@@ -49,7 +49,7 @@ export default {
     class="nav-group"
     tag="li"
     content-container-tag="ul"
-    :class="[{ active: isGroupActive },{'children-at-end': childrenAtEnd}, {'sub-item': isSubItem}, {'disabled': item.disable}]"
+    :class="[{ active: isGroupActive }, { 'children-at-end': childrenAtEnd }, { 'sub-item': isSubItem }, { disabled: item.disable }]"
     :popper-inline-end="childrenAtEnd"
   >
     <div class="nav-group-label">
@@ -58,7 +58,7 @@ export default {
         class="nav-item-icon"
       />
       <component
-        :is="config.app.enableI18n ? 'i18n-t': 'span'"
+        :is="config.app.enableI18n ? 'i18n-t' : 'span'"
         v-bind="dynamicI18nProps(item.title, 'span')"
         class="nav-item-title"
         v-text="item.title"

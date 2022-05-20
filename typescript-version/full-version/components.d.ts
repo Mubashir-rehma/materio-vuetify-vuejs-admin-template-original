@@ -9,21 +9,9 @@ declare module '@vue/runtime-core' {
     AppCardCode: typeof import('./src/@core/components/AppCardCode.vue')['default']
     Customizer: typeof import('./src/@core/components/Customizer.vue')['default']
     CustomizerSection: typeof import('./src/@core/components/CustomizerSection.vue')['default']
-    DefaultLayoutWithHorizontalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithHorizontalNav.vue')['default']
-    DefaultLayoutWithVerticalNav: typeof import('./src/@core/layouts/components/DefaultLayoutWithVerticalNav.vue')['default']
-    HorizontalNav: typeof import('./src/@core/layouts/components/HorizontalNav.vue')['default']
-    HorizontalNavGroup: typeof import('./src/@core/layouts/components/HorizontalNavGroup.vue')['default']
-    HorizontalNavLink: typeof import('./src/@core/layouts/components/HorizontalNavLink.vue')['default']
-    HorizontalNavPopper: typeof import('./src/@core/layouts/components/HorizontalNavPopper.vue')['default']
-    I18n: typeof import('./src/@core/layouts/components/navbar/I18n.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCustomizer: typeof import('./src/components/TheCustomizer.vue')['default']
-    ThemeSwitcher: typeof import('./src/@core/layouts/components/navbar/ThemeSwitcher.vue')['default']
-    VerticalNav: typeof import('./src/@core/layouts/components/VerticalNav.vue')['default']
-    VerticalNavGroup: typeof import('./src/@core/layouts/components/VerticalNavGroup.vue')['default']
-    VerticalNavLink: typeof import('./src/@core/layouts/components/VerticalNavLink.vue')['default']
-    VerticalNavSectionTitle: typeof import('./src/@core/layouts/components/VerticalNavSectionTitle.vue')['default']
   }
 }
 

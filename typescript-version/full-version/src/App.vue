@@ -26,6 +26,7 @@ watch(isDark, value => {
 <template>
   <!-- TODO: Remove this and use vuetify API for Adding RTL initial value -->
   <v-app
+    :theme="isDark ? 'dark' : 'light'"
     :style="{ direction: isAppRtl ? 'rtl' : 'ltr' }"
   >
     <v-main>

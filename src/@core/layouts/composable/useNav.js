@@ -37,6 +37,16 @@ export default () => {
     return link.to
   }
 
+  const resolveNavLinkPath = link => {
+    if (isObject(link.to)) {
+      const { route } = router.resolve(link.to)
+
+      return route.path
+    }
+
+    return link.to
+  }
+
   /**
    * Check if nav-link is active
    * @param {Object} link nav-link object
@@ -47,6 +57,13 @@ export default () => {
 
     // Check if provided route matches route's matched route
     const resolveRoutedName = resolveNavLinkRouteName(link)
+
+    // If link want active state on exact route then compare current route path instead of path name
+    if (link.exactActive === true) {
+      const resolvedRouteLink = resolveNavLinkPath(link)
+
+      return resolvedRouteLink === router.currentRoute.path
+    }
 
     if (!resolveRoutedName) return false
 
@@ -76,6 +93,7 @@ export default () => {
   return {
     navLinkProps,
     resolveNavLinkRouteName,
+    resolveNavLinkPath,
     isNavLinkActive,
     isNavGroupActive,
   }

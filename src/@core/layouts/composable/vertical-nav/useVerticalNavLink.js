@@ -11,7 +11,7 @@ export default function useVerticalNavMenuLink(item) {
   const linkProps = navLinkProps.value(item)
 
   watch(
-    () => route.value.name,
+    () => route.value.path,
     () => {
       isActive.value = isNavLinkActive(item)
     },

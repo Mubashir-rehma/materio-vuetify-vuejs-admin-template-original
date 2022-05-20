@@ -15,10 +15,20 @@ const router = useRouter()
 const { isVerticalNavCollapsed, isVerticalNavMini, dynamicI18nProps } = useLayouts()
 const hideTitleAndBadge = isVerticalNavMini()
 
-// ℹ️ This will allow use to store temporary group state when menu is collapsed & not hovered
-let tempIsOpen = null
+/*
+  ℹ️[id=tempIsOpen] This will allow us to store temporary group state when menu is collapsed & not hovered
+  Loosely speaking this is the open state of nav group when menu is not collapsed
 
-const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered)
+  Initial we might have collapsed nav menu and we want to keep active group collapsed.
+  In this scenario `tempIsOpen` should be true because when mouse is hovered we will assign `isOpen` value to `isGroupOpen`.
+*/
+let tempIsOpen = false
+
+/*
+  ℹ️ We provided default value `ref(false)` because inject will return `T | undefined`
+  Docs: https://vuejs.org/api/composition-api-dependency-injection.html#inject
+*/
+const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
 watch(isVerticalNavHovered, val => {
   // If menu is not collapsed ignore
   if (!isVerticalNavCollapsed.value)
@@ -33,7 +43,30 @@ watch(isVerticalNavHovered, val => {
   // If mouse is dragged in nav menu
   else {
     isGroupOpen.value = tempIsOpen && isGroupActive.value
-    tempIsOpen = null
+    tempIsOpen = false
+  }
+})
+
+/*
+  ℹ️ We have to add watcher for `isVerticalNavCollapsed` to open & close the group when menu collapse state is changed
+  We can't rely on watcher for `isVerticalNavHovered` because nav menu can be collapsed via customizer (basically without entering mouse inside nav menu)
+  Hence, watcher for `isVerticalNavHovered` won't get triggered and there will no change in open state of nav group when menu is collapsed via customizer.
+*/
+watch(isVerticalNavCollapsed, value => {
+  // If mouse in nav menu `isVerticalNavHovered` watcher will take care of open/close group
+  if (isVerticalNavHovered.value)
+    return
+
+  // If nav menu is collapsed => collapse group and assign the current state to `tempIsOpen`
+  if (value) {
+    tempIsOpen = isGroupOpen.value
+    isGroupOpen.value = false
+  }
+
+  // If nav menu is expanded => expand group and assign the current state to `tempIsOpen`
+  else {
+    isGroupOpen.value = tempIsOpen && isGroupActive.value
+    tempIsOpen = false
   }
 })
 
@@ -75,8 +108,12 @@ const isAnyChildOpen = (children: NavGroup['children']): boolean => {
 watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
-  isGroupOpen.value = isActive
+  // Don't open group if vertical nav is collapsed
+  isGroupOpen.value = isActive && !isVerticalNavCollapsed.value
   isGroupActive.value = isActive
+
+  // Why? => LINK src/@layouts/components/VerticalNavGroup.vue#tempIsOpen
+  tempIsOpen = isActive
 }, { immediate: true })
 
 /*
@@ -105,7 +142,7 @@ watch(isGroupOpen, (val: boolean) => {
 
 /*
   Watch for groupChildrenCalculatedMaxHeight
-  💡 We will use watchOnce instead of watch because we will calculate height once only.
+  💡 We have to use `watch` instead of `watchOnce` because we use `useResizeObserver` which will calculate height on window resize.
 
   Without this watcher active group has height of 0 on initial load but we want to auto open/(assign height) to active group
   It will handle assigning height based on open state of group for the first time when layout is loaded

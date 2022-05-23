@@ -3,13 +3,6 @@ import type { HorizontalNavItems } from '@layouts/types'
 
 export default [
   {
-    title: 'Home',
-    to: 'index',
-    icon: 'i-mdi-home-outline',
-    action: 'read',
-    subject: 'Auth',
-  },
-  {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
     children: [

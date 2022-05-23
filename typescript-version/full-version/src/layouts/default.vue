@@ -85,7 +85,7 @@ const notifications: Notification[] = [
       </template>
 
       <!-- Customizer -->
-      <Customizer />
+      <TheCustomizer />
 
       <!-- Pages -->
       <div style="padding: 2rem;">

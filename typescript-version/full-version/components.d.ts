@@ -7,11 +7,10 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppCardActions: typeof import('./src/@core/components/AppCardActions.vue')['default']
     AppCardCode: typeof import('./src/@core/components/AppCardCode.vue')['default']
-    Customizer: typeof import('./src/@core/components/Customizer.vue')['default']
     CustomizerSection: typeof import('./src/@core/components/CustomizerSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheCustomizer: typeof import('./src/components/TheCustomizer.vue')['default']
+    TheCustomizer: typeof import('./src/@core/components/TheCustomizer.vue')['default']
   }
 }
 

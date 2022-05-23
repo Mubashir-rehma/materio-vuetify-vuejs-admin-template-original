@@ -4,13 +4,6 @@ import type { VerticalNavItems } from '@layouts/types'
 export default [
   { heading: 'Dashboards' },
   {
-    title: 'Home',
-    icon: 'i-mdi-home',
-    to: 'index',
-    action: 'read',
-    subject: 'Auth',
-  },
-  {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
     children: [

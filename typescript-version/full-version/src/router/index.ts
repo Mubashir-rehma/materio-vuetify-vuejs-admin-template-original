@@ -6,7 +6,10 @@ import { getHomeRouteForLoggedInUser, getUserData, isUserLoggedIn } from './util
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
+  routes: [
+    { path: '/', redirect: { name: 'dashboards-analytics' } },
+    ...setupLayouts(routes),
+  ],
 })
 
 router.beforeEach((to, _, next) => {

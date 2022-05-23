@@ -4,6 +4,8 @@ import type { ThemeConfig, UserThemeConfig } from './types';
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
 ): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
+  const localStorageIsDark = localStorage.getItem(`${userConfig.app.title}-isDark`)
+
   // TODO: Improve config assignment
   return {
     themeConfig: {
@@ -14,7 +16,7 @@ export const defineThemeConfig = (
         contentLayoutNav: ref(userConfig.app.contentLayoutNav),
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
-        isDark: ref(userConfig.app.isDark),
+        isDark: ref(localStorageIsDark ? JSON.parse(localStorageIsDark) : userConfig.app.isDark),
         isRtl: ref(userConfig.app.isRtl),
       },
       navbar: { type: ref(userConfig.navbar.type), navbarBlur: ref(userConfig.navbar.navbarBlur) },

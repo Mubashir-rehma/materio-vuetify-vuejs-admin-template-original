@@ -44,6 +44,7 @@ export const useLayouts = () => {
     },
     set(val: typeof config.verticalNav.isVerticalNavCollapsed.value) {
       config.verticalNav.isVerticalNavCollapsed.value = val
+      localStorage.setItem(`${config.app.title}-isVerticalNavCollapsed`, val.toString())
     },
   })
 
@@ -53,6 +54,7 @@ export const useLayouts = () => {
     },
     set(val: typeof config.app.contentWidth.value) {
       config.app.contentWidth.value = val
+      localStorage.setItem(`${config.app.title}-contentWidth`, val.toString())
     },
   })
 
@@ -120,6 +122,7 @@ export const useLayouts = () => {
     },
     set(value: typeof config.app.isRtl.value) {
       config.app.isRtl.value = value
+      localStorage.setItem(`${config.app.title}-isRtl`, value.toString())
       _setAppDir(value ? 'rtl' : 'ltr')
     },
   })

@@ -1,28 +1,35 @@
 import { useLayouts } from '@layouts'
 import type { InjectionKey, Plugin, Ref } from 'vue'
 import { config } from './config'
+import { EnumContentWidth } from './enums'
 import type { UserConfig } from './types'
 
 const { _setAppDir } = useLayouts()
 
 // 🔌 Plugin
 export const createLayouts = (userConfig: UserConfig): Plugin => {
+  const localStorageIsRtl = localStorage.getItem(`${userConfig.app.title}-isRtl`)
+  const localStorageIsVerticalNavCollapsed = localStorage.getItem(`${userConfig.app.title}-isVerticalNavCollapsed`)
+  const localStorageContentWidth = (() => {
+    const storageValue = localStorage.getItem(`${userConfig.app.title}-contentWidth`)
+
+    return Object.values(EnumContentWidth).find(v => v === storageValue)
+  })()
+
   // TODO: Find a better way to assign config
   config.app.title = userConfig.app.title
   config.app.logo = userConfig.app.logo
-  config.app.contentWidth.value = userConfig.app.contentWidth
+  config.app.contentWidth.value = localStorageContentWidth || userConfig.app.contentWidth
   config.app.contentLayoutNav.value = userConfig.app.contentLayoutNav
   config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
   config.app.enableI18n = userConfig.app.enableI18n
-  const localStorageIsAppRtl = localStorage.getItem('isAppRtl')
-  config.app.isRtl.value = localStorageIsAppRtl ? JSON.parse(localStorageIsAppRtl) : userConfig.app.isRtl
+  config.app.isRtl.value = localStorageIsRtl ? JSON.parse(localStorageIsRtl) : userConfig.app.isRtl
 
   config.navbar.type.value = userConfig.navbar.type
   config.navbar.navbarBlur.value = userConfig.navbar.navbarBlur
 
   config.footer.type.value = userConfig.footer.type
 
-  const localStorageIsVerticalNavCollapsed = localStorage.getItem('isVerticalNavCollapsed')
   config.verticalNav.isVerticalNavCollapsed.value
     = localStorageIsVerticalNavCollapsed
       ? JSON.parse(localStorageIsVerticalNavCollapsed)
@@ -42,13 +49,13 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   return (): void => {
     console.info('installing layouts...')
 
-    watch(config.verticalNav.isVerticalNavCollapsed, val => {
-      localStorage.setItem('isVerticalNavCollapsed', String(val))
-    })
+    // watch(config.verticalNav.isVerticalNavCollapsed, val => {
+    //   localStorage.setItem('isVerticalNavCollapsed', String(val))
+    // })
 
-    watch(config.app.isRtl, val => {
-      localStorage.setItem('isAppRtl', String(val))
-    })
+    // watch(config.app.isRtl, val => {
+    //   localStorage.setItem('isAppRtl', String(val))
+    // })
 
     _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }

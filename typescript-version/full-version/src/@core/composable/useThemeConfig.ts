@@ -7,6 +7,7 @@ export const useThemeConfig = () => {
     },
     set(value: typeof themeConfig.app.isDark.value) {
       themeConfig.app.isDark.value = value
+      localStorage.setItem(`${themeConfig.app.title}-isDark`, value.toString())
     },
   })
 

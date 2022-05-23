@@ -5,7 +5,7 @@ import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@lay
 import { config } from '@layouts/config'
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
 
-defineProps<{
+const props = defineProps<{
   navItems: VerticalNavItems
   isOverlayNavActive: boolean
   toggleIsOverlayNavActive: (value: boolean) => void
@@ -35,13 +35,28 @@ const perfectScrollbarSettings = {
   maxScrollbarLength: 60,
   wheelPropagation: false,
 }
+
+/*
+  ℹ️ Close overlay side when route is changed
+  Close overlay vertical nav when link is clicked
+*/
+const route = useRoute()
+watch(() => route.name, () => {
+  props.toggleIsOverlayNavActive(false)
+})
 </script>
 
 <template>
   <aside
     ref="refNav"
     class="layout-vertical-nav"
-    :class="[{ 'overlay-nav': isLessThanOverlayNavBreakpoint(windowWidth) }, { hovered: isHovered }, { visible: isOverlayNavActive }]"
+    :class="[
+      {
+        'overlay-nav': isLessThanOverlayNavBreakpoint(windowWidth),
+        'hovered': isHovered,
+        'visible': isOverlayNavActive,
+      },
+    ]"
   >
     <!-- 👉 Header -->
     <div class="nav-header">

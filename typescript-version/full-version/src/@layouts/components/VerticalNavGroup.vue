@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
-import { VerticalNavLink } from '@layouts/components'
+import { TransitionExpand, VerticalNavLink } from '@layouts/components'
 import { config } from '@layouts/config'
 import { canViewNavMenuGroup } from '@layouts/plugins/casl'
 import type { NavGroup } from '@layouts/types'
@@ -71,15 +71,6 @@ watch(isVerticalNavCollapsed, value => {
   }
 })
 
-// This is group child ul element ref.
-const refGroupChildren = ref<HTMLElement>()
-
-// This is the height we are gonna toggle. We set it to 0 because all groups will be closed at first
-const groupChildrenDomHeight = ref(0)
-
-// It will hold children (ul) height.
-const groupChildrenMaxHeight = ref(0)
-
 const isGroupActive = ref(false)
 const isGroupOpen = ref(false)
 
@@ -98,6 +89,15 @@ const isAnyChildOpen = (children: NavGroup['children']): boolean => {
       result = isAnyChildOpen(child.children) || result
 
     return result
+  })
+}
+
+const collapseChildren = (children: NavGroup['children']) => {
+  children.forEach(child => {
+    if ('children' in child)
+      collapseChildren(child.children)
+
+    openGroups.value = openGroups.value.filter(group => group !== child.title)
   })
 }
 
@@ -120,38 +120,26 @@ watch(() => route.path, () => {
 /*
   Watch for isGroupOpen
 
-    1. Assign height based on open state of group
-    2. Find group index for adding/removing group from openGroups array
-    3. update openGroups array for addition/removal of current group
+    1. Find group index for adding/removing group from openGroups array
+    2. update openGroups array for addition/removal of current group
 
   We need `immediate: true` because without it initially opened group is not added in openGroups array
 */
 watch(isGroupOpen, (val: boolean) => {
-  // Assign height based on open state of group
-  // set to 0 if group is closed
-  groupChildrenDomHeight.value = val ? groupChildrenMaxHeight.value : 0
-
   // Find group index for adding/removing group from openGroups array
   const grpIndex = openGroups.value.indexOf(props.item.title)
 
   // update openGroups array for addition/removal of current group
-  if (val && grpIndex === -1)
-    openGroups.value.push(props.item.title)
-  else if (!val && grpIndex !== -1)
+
+  // If group is opened => Add it to `openGroups` array
+  if (val && grpIndex === -1) { openGroups.value.push(props.item.title) }
+
+  // If group is closed remove itself and its children from the `openGroups`
+  else if (!val && grpIndex !== -1) {
     openGroups.value.splice(grpIndex, 1)
+    collapseChildren(props.item.children)
+  }
 }, { immediate: true })
-
-/*
-  Watch for groupChildrenCalculatedMaxHeight
-  💡 We have to use `watch` instead of `watchOnce` because we use `useResizeObserver` which will calculate height on window resize.
-
-  Without this watcher active group has height of 0 on initial load but we want to auto open/(assign height) to active group
-  It will handle assigning height based on open state of group for the first time when layout is loaded
-*/
-watch(groupChildrenMaxHeight, val => {
-  if (isGroupOpen.value)
-    groupChildrenDomHeight.value = val
-})
 
 /*
   Watch for openGroups
@@ -166,9 +154,9 @@ watch(groupChildrenMaxHeight, val => {
       For this we will fetch recently added group in openGroups array and won't perform closing operation if recently added group is current group
 */
 watch(openGroups, val => {
-  // Prevent closing recently opended inactive group.
-  const lastOpendedGroup = val[val.length - 1]
-  if (lastOpendedGroup === props.item.title)
+  // Prevent closing recently opened inactive group.
+  const lastOpenedGroup = val[val.length - 1]
+  if (lastOpenedGroup === props.item.title)
     return
 
   const isActive = isNavGroupActive(props.item.children, router)
@@ -184,21 +172,6 @@ watch(openGroups, val => {
   isGroupOpen.value = isActive
   isGroupActive.value = isActive
 }, { deep: true })
-
-const updateGroupChildrenMaxHeight = () => {
-  const height = refGroupChildren.value?.scrollHeight
-  if (height)
-    groupChildrenMaxHeight.value = height
-}
-
-// Set the height of current group for toggling/updating when open state is updated intially
-onMounted(updateGroupChildrenMaxHeight)
-
-/*
-  We have to add resize observer to calculate maxHeight when inner/nested group is opened.
-  This is because onMounted hook will not calculate height including inner groups height.
-*/
-useResizeObserver(refGroupChildren, updateGroupChildrenMaxHeight)
 </script>
 
 <script lang="ts">
@@ -211,7 +184,13 @@ export default {
   <li
     v-if="canViewNavMenuGroup(item)"
     class="nav-group"
-    :class="[{ active: isGroupActive }, { open: isGroupOpen }, { disabled: item.disable }]"
+    :class="[
+      {
+        active: isGroupActive,
+        open: isGroupOpen,
+        disabled: item.disable,
+      },
+    ]"
   >
     <div
       class="nav-group-label"
@@ -253,18 +232,19 @@ export default {
         />
       </transition-group>
     </div>
-    <ul
-      ref="refGroupChildren"
-      :style="{ maxHeight: `${groupChildrenDomHeight}px` }"
-      class="nav-group-children"
-    >
-      <component
-        :is="'children' in child ? 'VerticalNavGroup' : VerticalNavLink"
-        v-for="child in item.children"
-        :key="child.title"
-        :item="child"
-      />
-    </ul>
+    <TransitionExpand>
+      <ul
+        v-show="isGroupOpen"
+        class="nav-group-children"
+      >
+        <component
+          :is="'children' in child ? 'VerticalNavGroup' : VerticalNavLink"
+          v-for="child in item.children"
+          :key="child.title"
+          :item="child"
+        />
+      </ul>
+    </TransitionExpand>
   </li>
 </template>
 
@@ -275,10 +255,6 @@ export default {
       display: flex;
       align-items: center;
       cursor: pointer;
-    }
-
-    &-children {
-      will-change: max-height;
     }
   }
 }

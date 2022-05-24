@@ -1,0 +1,87 @@
+<!-- Thanks: https://markus.oberlehner.net/blog/transition-to-height-auto-with-vue/ -->
+
+<script lang="ts">
+import { Transition } from 'vue'
+export default defineComponent({
+  name: 'TransitionExpand',
+  setup(_, { slots }) {
+    const onEnter = (element: HTMLElement) => {
+      const width = getComputedStyle(element).width
+
+      element.style.width = width
+      element.style.position = 'absolute'
+      element.style.visibility = 'hidden'
+      element.style.height = 'auto'
+
+      const height = getComputedStyle(element).height
+
+      element.style.width = null
+      element.style.position = null
+      element.style.visibility = null
+      element.style.height = 0
+
+      // Force repaint to make sure the
+      // animation is triggered correctly.
+      getComputedStyle(element).height
+
+      // Trigger the animation.
+      // We use `requestAnimationFrame` because we need
+      // to make sure the browser has finished
+      // painting after setting the `height`
+      // to `0` in the line above.
+      requestAnimationFrame(() => {
+        element.style.height = height
+      })
+    }
+
+    const onAfterEnter = (element: HTMLElement) => {
+      element.style.height = 'auto'
+    }
+    const onLeave = (element: HTMLElement) => {
+      const height = getComputedStyle(element).height
+
+      element.style.height = height
+
+      // Force repaint to make sure the
+      // animation is triggered correctly.
+      getComputedStyle(element).height
+
+      requestAnimationFrame(() => {
+        element.style.height = 0
+      })
+    }
+
+    return () => h(h(Transition, {
+      name: 'expand',
+    }), {
+      onEnter,
+      onAfterEnter,
+      onLeave,
+    }, slots.default?.())
+  },
+})
+</script>
+
+<style>
+.expand-enter-active,
+.expand-leave-active {
+  overflow: hidden;
+
+  /* TODO: Allow overriding duration & transition-timing-function via SCSS var */
+  transition: height 0.25s ease;
+}
+
+.expand-enter,
+.expand-leave-to {
+  block-size: 0;
+}
+</style>
+
+<style scoped>
+* {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translateZ(0);
+  will-change: height;
+}
+</style>

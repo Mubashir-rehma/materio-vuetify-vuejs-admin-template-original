@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/tabs/demos/demoCodeTabs'
+import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"
@@ -38,10 +38,10 @@ import * as demoCode from '@/views/components/tabs/demos/demoCodeTabs'
       cols="12"
       md="6"
     >
-      <!-- 👉 Vertical Tabs -->
+      <!-- 👉 Vertical -->
       <AppCardCode
-        title="Vertical Tabs"
-        :code="demoCode.verticalTabs"
+        title="Vertical"
+        :code="demoCode.vertical"
       >
         <p>The <code>vertical</code> prop allows for <code>v-tab</code> components to stack vertically.</p>
 
@@ -90,15 +90,15 @@ import * as demoCode from '@/views/components/tabs/demos/demoCodeTabs'
       >
         <p><code>prev-icon</code> and <code>next-icon</code> props can be used for applying custom pagination icons.</p>
 
-        <DemoTabsIcons />
+        <DemoTabsCustomIcons />
       </AppCardCode>
     </v-col>
 
     <v-col cols="12">
       <!-- 👉 Fixed tabs -->
       <AppCardCode
-        title="Fixed tabs"
-        :code="demoCode.fixedTabs"
+        title="Fixed"
+        :code="demoCode.fixed"
       >
         <p>The <code>fixed-tabs</code> prop forces <code>v-tab</code> to take up all available space up to the maximum width (300px).</p>
 
@@ -137,8 +137,8 @@ import * as demoCode from '@/views/components/tabs/demos/demoCodeTabs'
     >
       <!-- 👉 Dynamic Tabs -->
       <AppCardCode
-        title="Dynamic Tabs"
-        :code="demoCode.dynamicTabs"
+        title="Dynamic"
+        :code="demoCode.dynamic"
       >
         <p>Tabs can be dynamically added and removed. This allows you to update to any number and the <code>v-tabs</code> component will react.</p>
 

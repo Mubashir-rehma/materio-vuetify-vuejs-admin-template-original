@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/pagination/demos/demoCodePagination'
+import * as demoCode from '@/views/demos/components/pagination/demoCodePagination'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

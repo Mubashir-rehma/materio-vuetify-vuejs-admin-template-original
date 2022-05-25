@@ -1,23 +1,9 @@
 <script setup lang="ts">
-
-// Demos
-import DemoCheckboxBasic from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxBasic.vue'
-import DemoCheckboxColors from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxColors.vue'
-import DemoCheckboxDensity from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxDensity.vue'
-import DemoCheckboxIcon from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxIcon.vue'
-import DemoCheckboxInlineTextField from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxInlineTextField.vue'
-import DemoCheckboxLabelSlot from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxLabelSlot.vue'
-import DemoCheckboxModelAsArray from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxModelAsArray.vue'
-import DemoCheckboxStates from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxStates.vue'
-import DemoCheckboxValue from '@/views/forms/form-elements/checkbox/demos/DemoCheckboxValue.vue'
-
-// code
-import * as demoCode from '@/views/forms/form-elements/checkbox/demos/demoCodeCheckbox'
-
+import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCheckbox'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"
@@ -104,7 +90,7 @@ import * as demoCode from '@/views/forms/form-elements/checkbox/demos/demoCodeCh
       >
         <p>Use <code>false-value</code> and <code>true-value</code> prop to sets value for truthy and falsy state</p>
 
-        <DemoCheckboxValue />
+        <DemoCheckboxCheckboxValue />
       </AppCardCode>
     </v-col>
 

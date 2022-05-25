@@ -1,19 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/radio/demos/demoCodeRadio'
-// 👉 Demos
-import DemoRadioBasic from '@/views/forms/form-elements/radio/demos/DemoRadioBasic.vue'
-import DemoRadioColors from '@/views/forms/form-elements/radio/demos/DemoRadioColors.vue'
-import DemoRadioDensity from '@/views/forms/form-elements/radio/demos/DemoRadioDensity.vue'
-import DemoRadioIcon from '@/views/forms/form-elements/radio/demos/DemoRadioIcon.vue'
-import DemoRadioInline from '@/views/forms/form-elements/radio/demos/DemoRadioInline.vue'
-import DemoRadioLabelSlot from '@/views/forms/form-elements/radio/demos/DemoRadioLabelSlot.vue'
-import DemoRadioValidation from '@/views/forms/form-elements/radio/demos/DemoRadioValidation.vue'
-
-
+import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

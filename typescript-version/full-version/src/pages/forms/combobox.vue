@@ -1,20 +1,9 @@
 <script lang="ts" setup>
-
-// code
-import * as demoCode from '@/views/forms/form-elements/combobox/demos/demoCodeCombobox'
-
-// demos
-import DemoComboboxBasic from '@/views/forms/form-elements/combobox/demos/DemoComboboxBasic.vue'
-import DemoComboboxClearable from '@/views/forms/form-elements/combobox/demos/DemoComboboxClearable.vue'
-import DemoComboboxDensity from '@/views/forms/form-elements/combobox/demos/DemoComboboxDensity.vue'
-import DemoComboboxMultiple from '@/views/forms/form-elements/combobox/demos/DemoComboboxMultiple.vue'
-import DemoComboboxNoDataWithChips from '@/views/forms/form-elements/combobox/demos/DemoComboboxNoDataWithChips.vue'
-import DemoComboboxVariant from '@/views/forms/form-elements/combobox/demos/DemoComboboxVariant.vue'
-
+import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCombobox'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

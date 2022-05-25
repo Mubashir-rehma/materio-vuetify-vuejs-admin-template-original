@@ -1,67 +1,77 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/tooltip/demos/demoCodeTooltip'
-
-//  Demos
-import DemoTooltipDelayOnHover from '@/views/components/tooltip/demos/DemoTooltipDelayOnHover.vue'
-
+import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 </script>
 
 <template>
-  <!-- 👉 Anchor -->
-  <AppCardCode
-    title="Anchor"
-    :code="demoCode.anchor"
-  >
-    <p>Use the <code>anchor</code> prop to specify on which side of the element the tooltip should show</p>
+  <v-row>
+    <v-col cols="12">
+      <!-- 👉 Anchor -->
+      <AppCardCode
+        title="Anchor"
+        :code="demoCode.anchor"
+      >
+        <p>Use the <code>anchor</code> prop to specify on which side of the element the tooltip should show</p>
 
-    <DemoTooltipAnchor />
-  </AppCardCode>
+        <DemoTooltipAnchor />
+      </AppCardCode>
+    </v-col>
 
-  <!-- 👉 Events -->
-  <AppCardCode
-    title="Events"
-    :code="demoCode.events"
-  >
-    <DemoTooltipEvent />
-  </AppCardCode>
+    <v-col cols="12">
+      <!-- 👉 Events -->
+      <AppCardCode
+        title="Events"
+        :code="demoCode.events"
+      >
+        <DemoTooltipEvents />
+      </AppCardCode>
+    </v-col>
 
-  <!-- 👉 Delay On Hover -->
-  <AppCardCode
-    title="Delay On Hover"
-    :code="demoCode.delayOnHover"
-  >
-    <p>Delay (in ms) after which tooltip opens (when <code>open-on-hover</code> prop is set to true)</p>
+    <v-col cols="12">
+      <!-- 👉 Delay On Hover -->
+      <AppCardCode
+        title="Delay On Hover"
+        :code="demoCode.delayOnHover"
+      >
+        <p>Delay (in ms) after which tooltip opens (when <code>open-on-hover</code> prop is set to true)</p>
 
-    <DemoTooltipDelayOnHover />
-  </AppCardCode>
+        <DemoTooltipDelayOnHover />
+      </AppCardCode>
+    </v-col>
 
-  <!-- 👉 V-model Support -->
-  <AppCardCode
-    title="V-Model Support"
-    :code="demoCode.vModel"
-  >
-    <p>Tooltip visibility can be programmatically changed using <code>v-model</code>.</p>
+    <v-col cols="12">
+      <!-- 👉 V-model Support -->
+      <AppCardCode
+        title="V-Model Support"
+        :code="demoCode.vModelSupport"
+      >
+        <p>Tooltip visibility can be programmatically changed using <code>v-model</code>.</p>
 
-    <DemoTooltipVModel />
-  </AppCardCode>
+        <DemoTooltipVModelSupport />
+      </AppCardCode>
+    </v-col>
 
-  <!-- 👉 Transition -->
-  <AppCardCode
-    title="Transition"
-    :code="demoCode.transition"
-  >
-    <p>Use <code>transition</code> prop to sets the component transition.</p>
+    <v-col cols="12">
+      <!-- 👉 Transition -->
+      <AppCardCode
+        title="Transition"
+        :code="demoCode.transition"
+      >
+        <p>Use <code>transition</code> prop to sets the component transition.</p>
 
-    <DemoTooltipTransition />
-  </AppCardCode>
+        <DemoTooltipTransition />
+      </AppCardCode>
+    </v-col>
 
-  <!-- 👉 Tooltip on Various Elements -->
-  <AppCardCode
-    title="Tooltip on Various Elements"
-    :code="demoCode.tooltipOnVariousElements"
-  >
-    <p>Tooltips can wrap any element.</p>
+    <v-col cols="12">
+      <!-- 👉 Tooltip on Various Elements -->
+      <AppCardCode
+        title="Tooltip on Various Elements"
+        :code="demoCode.tooltipOnVariousElements"
+      >
+        <p>Tooltips can wrap any element.</p>
 
-    <DemoTooltipVariousElements />
-  </AppCardCode>
+        <DemoTooltipTooltipOnVariousElements />
+      </AppCardCode>
+    </v-col>
+  </v-row>
 </template>

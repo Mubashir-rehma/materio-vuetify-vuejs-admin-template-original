@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/snackbar/demos/demoCodeSnackbar'
+import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"
@@ -45,7 +45,7 @@ import * as demoCode from '@/views/components/snackbar/demos/demoCodeSnackbar'
       >
         <p>The <code>multi-line</code> property extends the height of the <code>v-snackbar</code> to give you a little more room for content.</p>
 
-        <DemoSnackbarMultiline />
+        <DemoSnackbarMultiLine />
       </AppCardCode>
     </v-col>
 

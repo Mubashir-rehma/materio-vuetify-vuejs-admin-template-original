@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/chip/demos/demoCodeChip'
+import * as demoCode from '@/views/demos/components/chip/demoCodeChip'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"
@@ -70,7 +70,7 @@ import * as demoCode from '@/views/components/chip/demos/demoCodeChip'
     >
       <!-- 👉 Chip With Icon -->
       <AppCardCode
-        title="Chip With Icon"
+        title="With Icon"
         :code="demoCode.withIcon"
       >
         <p>Chips can use text or any icon available in the Material Icons font library.</p>
@@ -100,7 +100,7 @@ import * as demoCode from '@/views/components/chip/demos/demoCodeChip'
     >
       <!-- 👉 In Selects -->
       <AppCardCode
-        title="In Select"
+        title="In Selects"
         :code="demoCode.inSelects"
       >
         <p>Selects can use <code>chips</code> to display the selected data. Try adding your own tags below.</p>

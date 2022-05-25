@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/menu/demos/demoCodeMenu'
-
-// Demos
-import DemoMenuActivatorAndTooltip from '@/views/components/menu/demos/DemoMenuActivatorAndTooltip.vue'
-
+import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

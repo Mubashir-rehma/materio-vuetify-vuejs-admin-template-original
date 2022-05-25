@@ -1,27 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/textfield/demos/demoCodeTextfield'
-
-// Demos
-import DemoTextfieldBasic from '@/views/forms/form-elements/textfield/demos/DemoTextfieldBasic.vue'
-import DemoTextfieldClearable from '@/views/forms/form-elements/textfield/demos/DemoTextfieldClearable.vue'
-import DemoTextfieldCounter from '@/views/forms/form-elements/textfield/demos/DemoTextfieldCounter.vue'
-import DemoTextfieldCustomColors from '@/views/forms/form-elements/textfield/demos/DemoTextfieldCustomColors.vue'
-import DemoTextfieldDensity from '@/views/forms/form-elements/textfield/demos/DemoTextfieldDensity.vue'
-import DemoTextfieldIconEvents from '@/views/forms/form-elements/textfield/demos/DemoTextfieldIconEvents.vue'
-import DemoTextfieldIcons from '@/views/forms/form-elements/textfield/demos/DemoTextfieldIcons.vue'
-import DemoTextfieldIconSlots from '@/views/forms/form-elements/textfield/demos/DemoTextfieldIconSlots.vue'
-import DemoTextfieldLabelSlot from '@/views/forms/form-elements/textfield/demos/DemoTextfieldLabelSlot.vue'
-import DemoTextfieldPasswordInput from '@/views/forms/form-elements/textfield/demos/DemoTextfieldPasswordInput.vue'
-import DemoTextfieldPrefixesAndSuffixes from '@/views/forms/form-elements/textfield/demos/DemoTextfieldPrefixesAndSuffixes.vue'
-import DemoTextfieldSingleLine from '@/views/forms/form-elements/textfield/demos/DemoTextfieldSingleLine.vue'
-import DemoTextfieldState from '@/views/forms/form-elements/textfield/demos/DemoTextfieldState.vue'
-import DemoTextfieldValidation from '@/views/forms/form-elements/textfield/demos/DemoTextfieldValidation.vue'
-import DemoTextfieldVariant from '@/views/forms/form-elements/textfield/demos/DemoTextfieldVariant.vue'
-
+import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeTextfield'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

@@ -1,21 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/rating/demos/demoCodeRating'
-
-// 👉 Demos
-import DemoRatingBasic from '@/views/forms/form-elements/rating/demos/DemoRatingBasic.vue'
-import DemoRatingClearable from '@/views/forms/form-elements/rating/demos/DemoRatingClearable.vue'
-import DemoRatingColors from '@/views/forms/form-elements/rating/demos/DemoRatingColors.vue'
-import DemoRatingDensity from '@/views/forms/form-elements/rating/demos/DemoRatingDensity.vue'
-import DemoRatingHover from '@/views/forms/form-elements/rating/demos/DemoRatingHover.vue'
-import DemoRatingIncremented from '@/views/forms/form-elements/rating/demos/DemoRatingIncremented.vue'
-import DemoRatingItemSlot from '@/views/forms/form-elements/rating/demos/DemoRatingItemSlot.vue'
-import DemoRatingLength from '@/views/forms/form-elements/rating/demos/DemoRatingLength.vue'
-import DemoRatingReadonly from '@/views/forms/form-elements/rating/demos/DemoRatingReadonly.vue'
-import DemoRatingSize from '@/views/forms/form-elements/rating/demos/DemoRatingSize.vue'
+import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRating'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

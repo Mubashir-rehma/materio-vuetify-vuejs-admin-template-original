@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/list/demos/demoCodeList'
+import * as demoCode from '@/views/demos/components/list/demoCodeList'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"
@@ -72,17 +72,15 @@ import * as demoCode from '@/views/components/list/demos/demoCodeList'
       cols="12"
       md="6"
     >
-      <!-- 👉 Shaped -->
+      <!-- 👉 Action and item group -->
       <AppCardCode
-        title="Shaped"
+        title="Action and item group"
         no-padding
-        :code="demoCode.shaped"
+        :code="demoCode.actionAndItemGroup"
       >
-        <v-card-text>
-          Shaped lists have rounded borders on one side of the <code>v-list-item</code>.
-        </v-card-text>
+        <v-card-text>A <code>three-line</code> list with actions. Utilizing <code>v-list-group</code>, easily connect actions to your tiles.</v-card-text>
 
-        <DemoListShaped />
+        <DemoListActionAndItemGroup />
       </AppCardCode>
     </v-col>
 
@@ -140,15 +138,17 @@ import * as demoCode from '@/views/components/list/demos/demoCodeList'
       cols="12"
       md="6"
     >
-      <!-- 👉 Action and item group -->
+      <!-- 👉 Shaped -->
       <AppCardCode
-        title="Action and item group"
+        title="Shaped"
         no-padding
-        :code="demoCode.actionAndItemGroup"
+        :code="demoCode.shaped"
       >
-        <v-card-text>A <code>three-line</code> list with actions. Utilizing <code>v-list-group</code>, easily connect actions to your tiles.</v-card-text>
+        <v-card-text>
+          Shaped lists have rounded borders on one side of the <code>v-list-item</code>.
+        </v-card-text>
 
-        <DemoListActionAndItemGroup />
+        <DemoListShaped />
       </AppCardCode>
     </v-col>
   </v-row>

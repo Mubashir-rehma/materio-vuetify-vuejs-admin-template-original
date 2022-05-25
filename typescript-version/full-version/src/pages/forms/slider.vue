@@ -1,24 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/slider/demos/demoCodeSlider'
-
-// 👉 Demos
-import DemoSliderAppendAndPrepend from '@/views/forms/form-elements/slider/demos/DemoSliderAppendAndPrepend.vue'
-import DemoSliderAppendTextField from '@/views/forms/form-elements/slider/demos/DemoSliderAppendTextField.vue'
-import DemoSliderBasic from '@/views/forms/form-elements/slider/demos/DemoSliderBasic.vue'
-import DemoSliderColors from '@/views/forms/form-elements/slider/demos/DemoSliderColors.vue'
-import DemoSliderDisabledAndReadonly from '@/views/forms/form-elements/slider/demos/DemoSliderDisabledAndReadonly.vue'
-import DemoSliderIcons from '@/views/forms/form-elements/slider/demos/DemoSliderIcons.vue'
-import DemoSliderMinAndMax from '@/views/forms/form-elements/slider/demos/DemoSliderMinAndMax.vue'
-import DemoSliderSize from '@/views/forms/form-elements/slider/demos/DemoSliderSize.vue'
-import DemoSliderStep from '@/views/forms/form-elements/slider/demos/DemoSliderStep.vue'
-import DemoSliderThumb from '@/views/forms/form-elements/slider/demos/DemoSliderThumb.vue'
-import DemoSliderTicks from '@/views/forms/form-elements/slider/demos/DemoSliderTicks.vue'
-import DemoSliderValidation from '@/views/forms/form-elements/slider/demos/DemoSliderValidation.vue'
-import DemoSliderVertical from '@/views/forms/form-elements/slider/demos/DemoSliderVertical.vue'
+import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlider'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

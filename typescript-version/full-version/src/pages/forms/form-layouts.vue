@@ -1,16 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-layout/demos/demoCodeFormLayout'
-
-// 👉 Demos
-import DemoFormLayoutCollapsible from '@/views/forms/form-layout/demos/DemoFormLayoutCollapsible.vue'
-import DemoFormLayoutHint from '@/views/forms/form-layout/demos/DemoFormLayoutHint.vue'
-import DemoFormLayoutHorizontal from '@/views/forms/form-layout/demos/DemoFormLayoutHorizontal.vue'
-import DemoFormLayoutHorizontalIcon from '@/views/forms/form-layout/demos/DemoFormLayoutHorizontalIcon.vue'
-import DemoFormLayoutMultipleColumn from '@/views/forms/form-layout/demos/DemoFormLayoutMultipleColumn.vue'
-import DemoFormLayoutTabs from '@/views/forms/form-layout/demos/DemoFormLayoutTabs.vue'
-import DemoFormLayoutValidation from '@/views/forms/form-layout/demos/DemoFormLayoutValidation.vue'
-import DemoFormLayoutVerticalForm from '@/views/forms/form-layout/demos/DemoFormLayoutVerticalForm.vue'
-import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos/DemoFormLayoutVerticalFormWithIcons.vue'
+import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
 </script>
 
 <template>
@@ -24,7 +13,7 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos
         title="Horizontal Form"
         :code="demoCode.horizontalForm"
       >
-        <DemoFormLayoutHorizontal />
+        <DemoFormLayoutHorizontalForm />
       </AppCardCode>
     </v-col>
 
@@ -37,7 +26,7 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos
         title="Horizontal Form with Icons"
         :code="demoCode.horizontalFormWithIcons"
       >
-        <DemoFormLayoutHorizontalIcon />
+        <DemoFormLayoutHorizontalFormWithIcons />
       </AppCardCode>
     </v-col>
 
@@ -76,7 +65,9 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos
         <DemoFormLayoutMultipleColumn />
       </AppCardCode>
     </v-col>
+  </v-row>
 
+  <v-row class="match-height my-3">
     <v-col
       cols="12"
       md="6"
@@ -86,7 +77,7 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos
         title="Form Hint"
         :code="demoCode.formHint"
       >
-        <DemoFormLayoutHint />
+        <DemoFormLayoutFormHint />
       </AppCardCode>
     </v-col>
 
@@ -99,10 +90,12 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos
         title="Form Validation"
         :code="demoCode.formValidation"
       >
-        <DemoFormLayoutValidation />
+        <DemoFormLayoutFormValidation />
       </AppCardCode>
     </v-col>
+  </v-row>
 
+  <v-row>
     <v-col cols="12">
       <!-- 👉 Form with Tabs -->
       <AppCardCode
@@ -110,12 +103,13 @@ import DemoFormLayoutVerticalFormWithIcons from '@/views/forms/form-layout/demos
         no-padding
         :code="demoCode.formWithTabs"
       >
-        <DemoFormLayoutTabs />
+        <DemoFormLayoutFormWithTabs />
       </AppCardCode>
     </v-col>
 
     <v-col cols="12">
       <!-- 👉 Collapsible Section -->
+
       <h4 class="text-h6 font-weight-medium mb-5">
         Collapsible Section
       </h4>

@@ -1,23 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/file-input/demos/demoCodeFileInput'
-
-// Demos
-import DemoFileInputAccept from '@/views/forms/form-elements/file-input/demos/DemoFileInputAccept.vue'
-import DemoFileInputBasic from '@/views/forms/form-elements/file-input/demos/DemoFileInputBasic.vue'
-import DemoFileInputChips from '@/views/forms/form-elements/file-input/demos/DemoFileInputChips.vue'
-import DemoFileInputCounter from '@/views/forms/form-elements/file-input/demos/DemoFileInputCounter.vue'
-import DemoFileInputDensity from '@/views/forms/form-elements/file-input/demos/DemoFileInputDensity.vue'
-import DemoFileInputLoading from '@/views/forms/form-elements/file-input/demos/DemoFileInputLoading.vue'
-import DemoFileInputMultiple from '@/views/forms/form-elements/file-input/demos/DemoFileInputMultiple.vue'
-import DemoFileInputPrependIcon from '@/views/forms/form-elements/file-input/demos/DemoFileInputPrependIcon.vue'
-import DemoFileInputSelectionSlot from '@/views/forms/form-elements/file-input/demos/DemoFileInputSelectionSlot.vue'
-import DemoFileInputShowSize from '@/views/forms/form-elements/file-input/demos/DemoFileInputShowSize.vue'
-import DemoFileInputValidation from '@/views/forms/form-elements/file-input/demos/DemoFileInputValidation.vue'
-import DemoFileInputVariant from '@/views/forms/form-elements/file-input/demos/DemoFileInputVariant.vue'
+import * as demoCode from '@/views/demos/forms/file-input/demoCodeFileInput'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

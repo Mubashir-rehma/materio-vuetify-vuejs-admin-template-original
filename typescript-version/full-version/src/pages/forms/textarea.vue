@@ -1,22 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/textarea/demos/demoCodeTextarea'
-
-// 👉 Demos
-import DemoTextareaBasic from '@/views/forms/form-elements/textarea/demos/DemoTextareaBasic.vue'
-import DemoTextareaAutoGrow from '@/views/forms/form-elements/textarea/demos/DemoTextareaAutoGrow.vue'
-import DemoTextareaVariant from '@/views/forms/form-elements/textarea/demos/DemoTextareaVariant.vue'
-import DemoTextareaStates from '@/views/forms/form-elements/textarea/demos/DemoTextareaStates.vue'
-import DemoTextareaClearable from '@/views/forms/form-elements/textarea/demos/DemoTextareaClearable.vue'
-import DemoTextareaCounter from '@/views/forms/form-elements/textarea/demos/DemoTextareaCounter.vue'
-import DemoTextareaIcons from '@/views/forms/form-elements/textarea/demos/DemoTextareaIcons.vue'
-import DemoTextareaRows from '@/views/forms/form-elements/textarea/demos/DemoTextareaRows.vue'
-import DemoTextareaNoResize from '@/views/forms/form-elements/textarea/demos/DemoTextareaNoResize.vue'
-import DemoTextareaValidation from '@/views/forms/form-elements/textarea/demos/DemoTextareaValidation.vue'
-import DemoTextareaBrowserAutocomplete from '@/views/forms/form-elements/textarea/demos/DemoTextareaBrowserAutocomplete.vue'
+import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTextarea'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

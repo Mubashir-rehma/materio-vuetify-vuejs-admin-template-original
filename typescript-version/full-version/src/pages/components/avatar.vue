@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import * as demoCode from '@/views/components/avatar/demos/demoCodeAvatar';
+import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"

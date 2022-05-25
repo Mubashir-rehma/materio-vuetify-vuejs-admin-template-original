@@ -4,14 +4,6 @@
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import Prism from 'vue-prism-component'
-
-const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts')
-
-interface CodeProp {
-  ts: string
-  js: string
-}
-
 interface Props {
   title: string
   code: CodeProp
@@ -19,16 +11,23 @@ interface Props {
   noPadding?: boolean
 }
 
+interface CodeProp {
+  ts: string
+  js: string
+}
+
 const props = withDefaults(defineProps<Props>(), {
   codeLanguage: 'markup',
   noPadding: false,
 })
 
+const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts')
+
 const isCodeShown = ref(false)
 </script>
 
 <template>
-  <v-card class="mb-6">
+  <v-card>
     <v-card-header>
       <v-card-header-text class="d-flex items-center justify-space-between">
         <v-card-title>{{ props.title }}</v-card-title>
@@ -50,7 +49,7 @@ const isCodeShown = ref(false)
           </v-btn-toggle>
           <v-btn
             icon="mdi-code-tags"
-            :color="isCodeShown ? 'primary': null"
+            :color="isCodeShown ? 'primary' : null"
             size="x-small"
             variant="text"
             @click="isCodeShown = !isCodeShown"

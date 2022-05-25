@@ -1,13 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/form-elements/range-slider/demos/demoCodeRangeSlider'
-
-// 👉 Demos
-import DemoRangeSliderBasic from '@/views/forms/form-elements/range-slider/demos/DemoRangeSliderBasic.vue'
-import DemoRangeSliderColor from '@/views/forms/form-elements/range-slider/demos/DemoRangeSliderColor.vue'
-import DemoRangeSliderDisabled from '@/views/forms/form-elements/range-slider/demos/DemoRangeSliderDisabled.vue'
-import DemoRangeSliderStep from '@/views/forms/form-elements/range-slider/demos/DemoRangeSliderStep.vue'
-import DemoRangeSliderThumbLabel from '@/views/forms/form-elements/range-slider/demos/DemoRangeSliderThumbLabel.vue'
-import DemoRangeSliderVertical from '@/views/forms/form-elements/range-slider/demos/DemoRangeSliderVertical.vue'
+import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCodeRangeSlider'
 </script>
 
 <template>

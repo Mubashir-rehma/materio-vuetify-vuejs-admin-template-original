@@ -1,18 +1,9 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/expansion-panel/demos/demoCodeExpansionPanel'
-
-// demos
-import DemoExpansionPanelAccordion from '@/views/components/expansion-panel/demos/DemoExpansionPanelAccordion.vue'
-import DemoExpansionPanelBasic from '@/views/components/expansion-panel/demos/DemoExpansionPanelBasic.vue'
-import DemoExpansionPanelIcon from '@/views/components/expansion-panel/demos/DemoExpansionPanelIcon.vue'
-import DemoExpansionPanelInset from '@/views/components/expansion-panel/demos/DemoExpansionPanelInset.vue'
-import DemoExpansionPanelModel from '@/views/components/expansion-panel/demos/DemoExpansionPanelModel.vue'
-import DemoExpansionPanelPopout from '@/views/components/expansion-panel/demos/DemoExpansionPanelPopout.vue'
-
+import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpansionPanel'
 </script>
 
 <template>
-  <v-row>
+  <v-row class="match-height">
     <v-col
       cols="12"
       md="6"
@@ -91,7 +82,7 @@ import DemoExpansionPanelPopout from '@/views/components/expansion-panel/demos/D
       >
         <p>Expand action icon can be customized with <code>expand-icon</code> prop or the <code>actions</code> slot.</p>
 
-        <DemoExpansionPanelIcon />
+        <DemoExpansionPanelCustomIcon />
       </AppCardCode>
     </v-col>
 

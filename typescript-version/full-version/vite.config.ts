@@ -1,14 +1,14 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import presetIcons from '@unocss/preset-icons'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vuetify from '@vuetify/vite-plugin'
-import path from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
-import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -51,30 +51,8 @@ export default defineConfig({
     Pages({}),
     Layouts(),
     Components({
-      dirs: ['src/@core/layouts/components', 'src/@core/components', 'src/components'],
+      dirs: ['src/@core/layouts/components', 'src/@core/components', 'src/components', 'src/views/demos'],
       dts: true,
-      resolvers: [
-        {
-          type: 'component',
-          resolve: (name: string) => {
-            const regex = /^Demo([A-Z][a-z]+)/g
-            const result = regex.exec(name)
-
-            // console.log('name :>> ', name)
-            // console.log('result :>> ', result)
-            // console.log('----')
-
-            if (result) {
-              const compDir = result[1].toLowerCase()
-
-              // console.log('compDir :>> ', compDir)
-              // console.log(`@/views/components/${compDir}/demos/${name}.vue`)
-
-              return { importName: 'default', path: `@/views/components/${compDir}/demos/${name}.vue` }
-            }
-          },
-        },
-      ],
     }),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', 'vue-i18n'],

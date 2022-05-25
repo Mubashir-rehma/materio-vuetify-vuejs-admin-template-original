@@ -1,28 +1,29 @@
 <script setup lang="tsx">
-
-// TODO: Rename this to `TheCustomizer.vue`
-// import { useTheme } from 'vuetify'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { EnumSkins } from '@core/enums'
 import { useLayouts } from '@layouts'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+
+// TODO: Rename this to `TheCustomizer.vue`
+// import { useTheme } from 'vuetify'
 
 const isNavDrawerOpen = ref(false)
 const { isDark, skin } = useThemeConfig()
 
-// const theme = useTheme()
-// console.log('theme :>> ', theme)
-// const themeLight = theme.getTheme('light')
+// 👉 Primary Color
+const { themes, setTheme } = useTheme()
+const initialThemeColors = JSON.parse(JSON.stringify(themes.value.light.colors))
+const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
 
-// theme.setTheme('light', {
-//   dark: themeLight.dark,
-//   variables: themeLight.variables,
-//   colors: {
-//     ...themeLight.colors,
-//     primary: '#000',
-//   },
-// })
+const setPrimaryColor = (color: string) => {
+  themes.value.light.colors.primary = color
+  themes.value.dark.colors.primary = color
+
+  setTheme('light', themes.value.light)
+  setTheme('dark', themes.value.dark)
+}
 
 const {
   navbarType, footerType, isVerticalNavCollapsed, appContentWidth, appContentLayoutNav, horizontalNavType, isAppRtl, isNavbarBlurEnabled,
@@ -107,7 +108,28 @@ const perfectScrollbarSettings = {
         </div>
 
         <!-- 👉 Primary color -->
-        <!-- <div v-for="(color, i) in colors" :key="i"></div> -->
+        <span>
+          Primary Color
+        </span>
+        <div class="d-flex gap-x-4 mt-2">
+          <div
+            v-for="color in colors"
+            :key="color"
+            style="width: 3rem; height: 3rem; border-radius: 0.5rem; transition: all 0.25s ease;"
+            :style="[`background-color: ${initialThemeColors[color]};`]"
+            class="cursor-pointer d-flex align-center justify-center"
+            :class="{ 'elevation-4': themes.light.colors.primary === initialThemeColors[color] }"
+            @click="setPrimaryColor(initialThemeColors[color])"
+          >
+            <VFadeTransition>
+              <v-icon
+                v-show="themes.light.colors.primary === initialThemeColors[color]"
+                icon="mdi-check"
+                color="white"
+              />
+            </VFadeTransition>
+          </div>
+        </div>
       </CustomizerSection>
       <!-- !SECTION -->
 

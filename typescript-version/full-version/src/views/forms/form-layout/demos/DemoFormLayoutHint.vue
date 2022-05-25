@@ -5,17 +5,12 @@ const password = ref<string>()
 const checkbox = ref(false)
 const items = ['foo', 'bar', 'fizz', 'buzz'] as const
 const values = ref<typeof items[number][]>([])
-const commonConfig = {
-  variant: 'outlined',
-  density: 'compact',
-}
 </script>
 
 <template>
   <v-form @submit.prevent>
     <!-- 👉 Username -->
     <v-text-field
-      v-bind="commonConfig"
       v-model="username"
       label="Username"
       placeholder="Username"
@@ -24,7 +19,6 @@ const commonConfig = {
     <!-- 👉 Email -->
     <v-text-field
       v-model="email"
-      v-bind="commonConfig"
       label="Email"
       type="email"
       hint="Enter a Valid Email"
@@ -34,7 +28,6 @@ const commonConfig = {
     <!-- 👉 Password -->
     <v-text-field
       v-model="password"
-      v-bind="commonConfig"
       label="Password"
       type="password"
       persistent-hint
@@ -45,7 +38,6 @@ const commonConfig = {
     <!-- 👉 Autocomplete -->
     <v-autocomplete
       v-model="values"
-      v-bind="commonConfig"
       :items="items"
       chips
       multiple

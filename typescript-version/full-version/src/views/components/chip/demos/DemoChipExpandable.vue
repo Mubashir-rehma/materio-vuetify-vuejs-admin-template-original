@@ -28,7 +28,7 @@ const isMenuVisible = ref(false)
           <v-btn
             size="x-small"
             icon
-            flat
+            variant="plain"
             @click="isMenuVisible = false"
           >
             <v-icon

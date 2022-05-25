@@ -37,8 +37,10 @@ export default createVuetify({
       inline: true,
     },
     VSelect: {
-      // set v-select default transition:"fade-transition"
       transition: 'fade-transition',
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
     },
     VRangeSlider: {
       // set v-range-slider default color to primary
@@ -54,6 +56,31 @@ export default createVuetify({
     },
     VSlider: {
       // set v-slider default color to primary
+      color: 'primary',
+    },
+    VTextField: {
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
+    },
+    VAutocomplete: {
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
+    },
+    VCombobox: {
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
+    },
+    VFileInput: {
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
+    },
+    VTextarea: {
+      variant: 'outlined',
+      density: 'compact',
       color: 'primary',
     },
   },

@@ -10,5 +10,6 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     label="Combobox"
     multiple
     clearable
+    clear-icon="mdi-close-circle-outline"
   />
 </template>

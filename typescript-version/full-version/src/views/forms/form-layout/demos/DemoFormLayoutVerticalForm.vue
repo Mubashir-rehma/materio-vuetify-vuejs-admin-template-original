@@ -11,25 +11,20 @@ const checkbox = ref(false)
     <v-text-field
       v-model="firstName"
       label="First Name"
-      variant="outlined"
-      density="compact"
       placeholder="First Name"
+      hide-details
     />
 
     <v-text-field
       v-model="email"
       label="Email"
       type="email"
-      variant="outlined"
-      density="compact"
       placeholder="Email"
     />
 
     <v-text-field
       v-model="mobile"
       label="Mobile"
-      variant="outlined"
-      density="compact"
       type="number"
       placeholder="Number"
     />
@@ -37,8 +32,6 @@ const checkbox = ref(false)
     <v-text-field
       v-model="password"
       label="Password"
-      variant="outlined"
-      density="compact"
       type="password"
       placeholder="password"
       hide-details

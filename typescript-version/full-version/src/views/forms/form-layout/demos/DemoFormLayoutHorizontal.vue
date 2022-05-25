@@ -24,8 +24,6 @@ const checkbox = ref(false)
         <v-text-field
           id="firstName"
           v-model="firstName"
-          variant="outlined"
-          density="compact"
           placeholder="First Name"
           persistent-placeholder
           hide-details
@@ -47,8 +45,6 @@ const checkbox = ref(false)
         <v-text-field
           id="email"
           v-model="email"
-          variant="outlined"
-          density="compact"
           placeholder="Email"
           persistent-placeholder
           hide-details
@@ -71,8 +67,6 @@ const checkbox = ref(false)
           id="mobile"
           v-model="mobile"
           type="number"
-          variant="outlined"
-          density="compact"
           placeholder="Number"
           persistent-placeholder
           hide-details
@@ -95,8 +89,6 @@ const checkbox = ref(false)
           id="password"
           v-model="password"
           type="password"
-          variant="outlined"
-          density="compact"
           placeholder="Password"
           persistent-placeholder
           hide-details

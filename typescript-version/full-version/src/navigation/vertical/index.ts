@@ -103,14 +103,14 @@ export default [
     ],
   },
   {
+    title: 'Form Layouts',
+    icon: 'i-mdi-content-copy',
+    to: 'forms-form-layouts',
+  },
+  {
     title: 'Form Validation',
     icon: 'i-mdi-checkbox-marked-circle-outline',
     to: 'forms-form-validation',
-  },
-  {
-    title: 'Form Layouts',
-    icon: 'i-mdi-checkbox-marked-circle-outline',
-    to: 'forms-form-layouts',
   },
   { heading: 'Other' },
   {

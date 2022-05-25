@@ -6,7 +6,6 @@ const removeChips = (item: string) => {
   chips.value.splice(chips.value.indexOf(item), 1)
   chips.value = [...chips.value]
 }
-
 </script>
 
 <template>
@@ -18,7 +17,6 @@ const removeChips = (item: string) => {
     closable-chips
     :items="items"
     hide-details
-    variant="outlined"
     label="Your favorite hobbies"
     prepend-icon="mdi-filter-variant"
   />

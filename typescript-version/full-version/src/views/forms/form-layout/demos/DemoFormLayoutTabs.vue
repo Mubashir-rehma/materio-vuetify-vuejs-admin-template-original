@@ -48,8 +48,6 @@ const isCPasswordVisible = ref(false)
               >
                 <v-text-field
                   v-model="firstName"
-                  variant="outlined"
-                  density="compact"
                   label="First name"
                   hide-details
                 />
@@ -61,8 +59,6 @@ const isCPasswordVisible = ref(false)
               >
                 <v-text-field
                   v-model="lastName"
-                  variant="outlined"
-                  density="compact"
                   label="Last name"
                   hide-details
                 />
@@ -76,8 +72,6 @@ const isCPasswordVisible = ref(false)
                   v-model="country"
                   :items="countryList"
                   label="Country"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -93,8 +87,6 @@ const isCPasswordVisible = ref(false)
                   chips
                   clearable
                   label="Language"
-                  density="compact"
-                  variant="outlined"
                   hide-details
                 />
               </v-col>
@@ -107,8 +99,6 @@ const isCPasswordVisible = ref(false)
                   type="number"
                   label="Birth Date"
                   placeholder="YYYY-MM-DD"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -120,8 +110,6 @@ const isCPasswordVisible = ref(false)
                   v-model="phoneNo"
                   type="number"
                   label="Phone No."
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -139,8 +127,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="username"
                   label="Username"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -152,8 +138,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="email"
                   label="Email"
-                  variant="outlined"
-                  density="compact"
                   suffix="@example.com"
                   hide-details
                 />
@@ -166,8 +150,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="password"
                   label="Password"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
@@ -182,8 +164,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="cPassword"
                   label="Confirm Password"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
@@ -204,8 +184,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="twitterLink"
                   label="Twitter"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -216,8 +194,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="facebookLink"
                   label="Facebook"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -228,8 +204,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="googlePlusLink"
                   label="Google+"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -240,8 +214,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="linkedInLink"
                   label="LinkedIn"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -252,8 +224,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="instagramLink"
                   label="Instagram"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>
@@ -264,8 +234,6 @@ const isCPasswordVisible = ref(false)
                 <v-text-field
                   v-model="quoraLink"
                   label="Quora"
-                  variant="outlined"
-                  density="compact"
                   hide-details
                 />
               </v-col>

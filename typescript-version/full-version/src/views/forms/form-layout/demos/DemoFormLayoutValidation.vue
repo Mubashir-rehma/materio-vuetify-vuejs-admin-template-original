@@ -20,8 +20,6 @@ const form = ref<VForm>()
       :rules="[requiredValidator]"
       label="Name"
       required
-      variant="outlined"
-      density="compact"
       hide-details="auto"
       class="mb-6"
     />
@@ -31,8 +29,6 @@ const form = ref<VForm>()
       :rules="[emailValidator, requiredValidator]"
       label="E-mail"
       required
-      variant="outlined"
-      density="compact"
       hide-details="auto"
       class="mb-6"
     />
@@ -44,8 +40,6 @@ const form = ref<VForm>()
       label="Item"
       name="select"
       required
-      variant="outlined"
-      density="compact"
       hide-details="auto"
     />
 

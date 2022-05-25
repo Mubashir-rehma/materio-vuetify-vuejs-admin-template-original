@@ -14,13 +14,12 @@ watch(selectedList, value => {
     v-model="selectedList"
     v-model:search-input="search"
     :items="items"
-    hide-selected
-    :hide-no-data="false"
     hint="Maximum of 5 tags"
     label="Add some tags"
     multiple
     persistent-hint
     small-chips
+    :hide-no-data="false"
   >
     <template #no-data>
       <v-list-item>

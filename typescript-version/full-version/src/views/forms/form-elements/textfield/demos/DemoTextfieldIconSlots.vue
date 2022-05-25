@@ -22,6 +22,7 @@ const clickMe = () => {
     label="Message"
     variant="outlined"
     type="text"
+    clear-icon="mdi-close-circle-outline"
     hide-details
   >
     <!-- Prepend -->

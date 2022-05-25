@@ -13,8 +13,8 @@
     <v-tab>Account</v-tab>
   </v-tabs>
 
-  <!-- Right -->
-  <v-tabs right>
+  <!-- End -->
+  <v-tabs end>
     <v-tab>Home</v-tab>
     <v-tab>Service</v-tab>
     <v-tab>Account</v-tab>

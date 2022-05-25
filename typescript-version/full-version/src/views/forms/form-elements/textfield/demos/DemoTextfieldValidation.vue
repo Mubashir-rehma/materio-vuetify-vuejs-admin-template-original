@@ -18,6 +18,7 @@ const rules = {
       v-model="email"
       :rules="[rules.required, rules.email]"
       label="E-mail"
+      hide-details="auto"
     />
   </v-form>
 </template>

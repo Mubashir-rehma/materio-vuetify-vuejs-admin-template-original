@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/forms/file-input/demos/demoCodeFileInput'
+import * as demoCode from '@/views/forms/form-elements/file-input/demos/demoCodeFileInput'
+
 // Demos
-import DemoFileInputAccept from '@/views/forms/file-input/demos/DemoFileInputAccept.vue'
-import DemoFileInputBasic from '@/views/forms/file-input/demos/DemoFileInputBasic.vue'
-import DemoFileInputChips from '@/views/forms/file-input/demos/DemoFileInputChips.vue'
-import DemoFileInputCounter from '@/views/forms/file-input/demos/DemoFileInputCounter.vue'
-import DemoFileInputDensity from '@/views/forms/file-input/demos/DemoFileInputDensity.vue'
-import DemoFileInputLoading from '@/views/forms/file-input/demos/DemoFileInputLoading.vue'
-import DemoFileInputMultiple from '@/views/forms/file-input/demos/DemoFileInputMultiple.vue'
-import DemoFileInputPrependIcon from '@/views/forms/file-input/demos/DemoFileInputPrependIcon.vue'
-import DemoFileInputSelectionSlot from '@/views/forms/file-input/demos/DemoFileInputSelectionSlot.vue'
-import DemoFileInputShowSize from '@/views/forms/file-input/demos/DemoFileInputShowSize.vue'
-import DemoFileInputValidation from '@/views/forms/file-input/demos/DemoFileInputValidation.vue'
-import DemoFileInputVariant from '@/views/forms/file-input/demos/DemoFileInputVariant.vue'
-
-
+import DemoFileInputAccept from '@/views/forms/form-elements/file-input/demos/DemoFileInputAccept.vue'
+import DemoFileInputBasic from '@/views/forms/form-elements/file-input/demos/DemoFileInputBasic.vue'
+import DemoFileInputChips from '@/views/forms/form-elements/file-input/demos/DemoFileInputChips.vue'
+import DemoFileInputCounter from '@/views/forms/form-elements/file-input/demos/DemoFileInputCounter.vue'
+import DemoFileInputDensity from '@/views/forms/form-elements/file-input/demos/DemoFileInputDensity.vue'
+import DemoFileInputLoading from '@/views/forms/form-elements/file-input/demos/DemoFileInputLoading.vue'
+import DemoFileInputMultiple from '@/views/forms/form-elements/file-input/demos/DemoFileInputMultiple.vue'
+import DemoFileInputPrependIcon from '@/views/forms/form-elements/file-input/demos/DemoFileInputPrependIcon.vue'
+import DemoFileInputSelectionSlot from '@/views/forms/form-elements/file-input/demos/DemoFileInputSelectionSlot.vue'
+import DemoFileInputShowSize from '@/views/forms/form-elements/file-input/demos/DemoFileInputShowSize.vue'
+import DemoFileInputValidation from '@/views/forms/form-elements/file-input/demos/DemoFileInputValidation.vue'
+import DemoFileInputVariant from '@/views/forms/form-elements/file-input/demos/DemoFileInputVariant.vue'
 </script>
 
 <template>

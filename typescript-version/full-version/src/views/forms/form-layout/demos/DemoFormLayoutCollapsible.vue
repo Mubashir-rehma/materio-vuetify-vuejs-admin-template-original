@@ -49,9 +49,7 @@ const paymentMethods = [
             >
               <v-text-field
                 label="Full Name"
-                density="compact"
                 hide-details
-                variant="outlined"
               />
             </v-col>
 
@@ -62,9 +60,7 @@ const paymentMethods = [
             >
               <v-text-field
                 label="Phone No"
-                density="compact"
                 hide-details
-                variant="outlined"
               />
             </v-col>
 
@@ -72,7 +68,6 @@ const paymentMethods = [
             <v-col cols="12">
               <v-textarea
                 label="Address"
-                variant="outlined"
                 rows="3"
                 hide-details
               />
@@ -85,9 +80,7 @@ const paymentMethods = [
             >
               <v-text-field
                 label="Pincode"
-                density="compact"
                 hide-details
-                variant="outlined"
               />
             </v-col>
 
@@ -98,9 +91,7 @@ const paymentMethods = [
             >
               <v-text-field
                 label="Landmark"
-                density="compact"
                 hide-details
-                variant="outlined"
               />
             </v-col>
 
@@ -111,9 +102,7 @@ const paymentMethods = [
             >
               <v-text-field
                 label="City"
-                density="compact"
                 hide-details
-                variant="outlined"
               />
             </v-col>
 
@@ -124,8 +113,6 @@ const paymentMethods = [
             >
               <v-select
                 :items="stateList"
-                variant="outlined"
-                density="compact"
                 label="State"
                 hide-details
               />
@@ -249,8 +236,6 @@ const paymentMethods = [
                 <v-col cols="12">
                   <v-text-field
                     label="Card Number"
-                    variant="outlined"
-                    density="compact"
                     hide-details
                   />
                 </v-col>
@@ -262,8 +247,6 @@ const paymentMethods = [
                 >
                   <v-text-field
                     label="Name"
-                    variant="outlined"
-                    density="compact"
                     hide-details
                   />
                 </v-col>
@@ -275,8 +258,6 @@ const paymentMethods = [
                 >
                   <v-text-field
                     label="Expiry Date"
-                    density="compact"
-                    variant="outlined"
                     hide-details
                   />
                 </v-col>
@@ -288,8 +269,6 @@ const paymentMethods = [
                 >
                   <v-text-field
                     label="CVV Code"
-                    variant="outlined"
-                    density="compact"
                     hide-details
                   />
                 </v-col>

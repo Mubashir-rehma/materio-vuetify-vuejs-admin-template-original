@@ -19,7 +19,10 @@ const isInputEnabled = ref(false)
       sm="11"
       cols="10"
     >
-      <v-text-field label="Include files" />
+      <v-text-field
+        label="Include files"
+        hide-details
+      />
     </v-col>
   </v-row>
 

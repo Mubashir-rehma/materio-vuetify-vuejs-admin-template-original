@@ -11,5 +11,6 @@ const rules = [
     accept="image/png, image/jpeg, image/bmp"
     placeholder="Pick an avatar"
     prepend-icon="mdi-camera-outline"
+    hide-details="auto"
   />
 </template>

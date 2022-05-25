@@ -1,3 +1,4 @@
+import { EnumSkins } from '@core/enums';
 import type { UserConfig as LayoutConfig } from '@layouts/types';
 import type { ThemeConfig, UserThemeConfig } from './types';
 
@@ -5,6 +6,11 @@ export const defineThemeConfig = (
   userConfig: UserThemeConfig,
 ): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
   const localStorageIsDark = localStorage.getItem(`${userConfig.app.title}-isDark`)
+  const localStorageSkin = (() => {
+    const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
+
+    return Object.values(EnumSkins).find(v => v === storageValue)
+  })()
 
   // TODO: Improve config assignment
   return {
@@ -18,6 +24,7 @@ export const defineThemeConfig = (
         enableI18n: userConfig.app.enableI18n,
         isDark: ref(localStorageIsDark ? JSON.parse(localStorageIsDark) : userConfig.app.isDark),
         isRtl: ref(userConfig.app.isRtl),
+        skin: ref(localStorageSkin || userConfig.app.skin),
       },
       navbar: { type: ref(userConfig.navbar.type), navbarBlur: ref(userConfig.navbar.navbarBlur) },
       footer: { type: ref(userConfig.footer.type) },

@@ -1,5 +1,6 @@
 /* @unocss-include */
 import { defineThemeConfig } from '@core'
+import { EnumSkins } from '@core/enums'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 import { breakpointsVuetify } from '@vueuse/core'
 
@@ -15,6 +16,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     enableI18n: true,
     isDark: false,
     isRtl: false,
+    skin: EnumSkins.Default,
   },
   navbar: {
     type: EnumNavbarType.Sticky,

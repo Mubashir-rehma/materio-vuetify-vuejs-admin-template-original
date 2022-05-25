@@ -1,15 +1,21 @@
 <script lang="ts" setup>
+import type { Component } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
 import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@layouts/components'
 import { config } from '@layouts/config'
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
 
-const props = defineProps<{
+interface Props {
+  tag?: string | Component
   navItems: VerticalNavItems
   isOverlayNavActive: boolean
   toggleIsOverlayNavActive: (value: boolean) => void
-}>()
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  tag: 'aside',
+})
 
 const refNav = ref()
 
@@ -47,7 +53,8 @@ watch(() => route.name, () => {
 </script>
 
 <template>
-  <aside
+  <component
+    :is="props.tag"
     ref="refNav"
     class="layout-vertical-nav"
     :class="[
@@ -112,7 +119,7 @@ watch(() => route.name, () => {
         :item="item"
       />
     </PerfectScrollbar>
-  </aside>
+  </component>
 </template>
 
 <style lang="scss">

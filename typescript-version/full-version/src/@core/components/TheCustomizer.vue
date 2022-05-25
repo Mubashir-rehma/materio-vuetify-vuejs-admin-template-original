@@ -1,13 +1,15 @@
 <script setup lang="tsx">
+
 // TODO: Rename this to `TheCustomizer.vue`
 // import { useTheme } from 'vuetify'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { EnumSkins } from '@core/enums'
 import { useLayouts } from '@layouts'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 const isNavDrawerOpen = ref(false)
-const { isDark } = useThemeConfig()
+const { isDark, skin } = useThemeConfig()
 
 // const theme = useTheme()
 // console.log('theme :>> ', theme)
@@ -75,17 +77,20 @@ const perfectScrollbarSettings = {
         :divider="false"
       >
         <!-- 👉 Skin -->
-        <!--
-          <p>Skin</p>
-          <v-radio-group inline>
+        <span>Skins</span>
+
+        <v-radio-group
+          v-model="skin"
+          inline
+        >
           <v-radio
-          v-for="skin in skins"
-          :key="skin"
-          label="skin"
-          :value="skin.toLocalLowercase()"
+            v-for="key in Object.keys(EnumSkins)"
+            v-show="!(key === 'Semi Dark' && isDark)"
+            :key="key"
+            :label="key"
+            :value="EnumSkins[key]"
           />
-          </v-radio-group>
-        -->
+        </v-radio-group>
 
         <!-- 👉 Mode -->
         <span>
@@ -95,7 +100,7 @@ const perfectScrollbarSettings = {
           <span class="text-medium-emphasis">Light</span>
           <v-switch
             v-model="isDark"
-            hide-details
+
             class="ms-2 mt-0"
             label="Dark"
           />
@@ -114,7 +119,6 @@ const perfectScrollbarSettings = {
         <v-radio-group
           v-model="appContentWidth"
           inline
-          hide-details
         >
           <v-radio
             v-for="key in Object.keys(EnumContentWidth)"
@@ -129,7 +133,6 @@ const perfectScrollbarSettings = {
         <v-radio-group
           v-model="navbarType"
           inline
-          hide-details
         >
           <v-radio
             v-for="key in Object.keys(EnumNavbarType)"
@@ -144,7 +147,6 @@ const perfectScrollbarSettings = {
         <v-radio-group
           v-model="footerType"
           inline
-          hide-details
         >
           <v-radio
             v-for="key in Object.keys(EnumFooterType)"
@@ -160,7 +162,7 @@ const perfectScrollbarSettings = {
           <v-spacer />
           <v-switch
             v-model="isNavbarBlurEnabled"
-            hide-details
+
             class="ms-2 mt-0"
           />
         </div>
@@ -174,7 +176,6 @@ const perfectScrollbarSettings = {
         <v-radio-group
           v-model="appContentLayoutNav"
           inline
-          hide-details
         >
           <v-radio
             v-for="key in Object.keys(EnumAppContentLayoutNav)"
@@ -190,7 +191,7 @@ const perfectScrollbarSettings = {
           <v-spacer />
           <v-switch
             v-model="isVerticalNavCollapsed"
-            hide-details
+
             class="ms-2 mt-0"
           />
         </div>
@@ -205,7 +206,7 @@ const perfectScrollbarSettings = {
           <v-spacer />
           <v-switch
             v-model="isAppRtl"
-            hide-details
+
             class="ms-2 mt-0"
           />
         </div>

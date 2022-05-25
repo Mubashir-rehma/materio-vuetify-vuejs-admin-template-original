@@ -1,5 +1,6 @@
 import type { UserConfig } from '@layouts/types'
 import type { Ref } from 'vue'
+import type { EnumSkins } from './enums'
 
 export interface UserThemeConfig {
   app: {
@@ -11,6 +12,7 @@ export interface UserThemeConfig {
     enableI18n: UserConfig['app']['enableI18n']
     isDark: UserConfig['app']['isDark']
     isRtl: UserConfig['app']['isRtl']
+    skin: EnumSkins
   }
   navbar: {
     type: UserConfig['navbar']['type']
@@ -53,6 +55,7 @@ export interface ThemeConfig {
     enableI18n: UserThemeConfig['app']['enableI18n']
     isDark: Ref<UserThemeConfig['app']['isRtl']>
     isRtl: Ref<UserThemeConfig['app']['isRtl']>
+    skin: Ref<UserThemeConfig['app']['skin']>
   }
   navbar: {
     type: Ref<UserThemeConfig['navbar']['type']>

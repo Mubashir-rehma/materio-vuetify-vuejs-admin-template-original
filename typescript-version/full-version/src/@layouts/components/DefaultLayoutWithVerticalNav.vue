@@ -10,6 +10,10 @@ export default defineComponent({
       type: Array as PropType<VerticalNavItems>,
       required: true,
     },
+    verticalNavAttrs: {
+      type: Object as PropType<Record<string, any>>,
+      default: () => ({}),
+    },
   },
   setup(props, { slots }) {
     const { y: windowScrollY } = useWindowScroll()
@@ -46,7 +50,7 @@ export default defineComponent({
     return () => {
       const verticalNav = h(
         VerticalNav,
-        { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems },
+        { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems, ...props.verticalNavAttrs },
         {
           'nav-header': slots['vertical-nav-header']?.(),
           'before-nav-items': slots['before-vertical-nav-items']?.(),

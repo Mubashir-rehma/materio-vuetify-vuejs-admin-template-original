@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import navItemsHorizontal from '@/navigation/horizontal'
 import navItems from '@/navigation/vertical'
+import { useSkins } from '@core/composable/useSkins'
 import { useDynamicVhCssProperty, useLayouts } from '@layouts'
 import type { NavBarI18n as NavBarI18nType } from '@layouts/components'
 import { NavBarI18n, Notifications, ThemeSwitcher, UserProfile } from '@layouts/components'
@@ -10,6 +11,10 @@ import { config } from '@layouts/config'
 import type { Notification } from '@layouts/types'
 const { width: windowWidth } = useWindowSize()
 const { locale } = useI18n()
+const { useValidSkin, layoutAttrs } = useSkins()
+
+// NOTE: You have to use this to prevent invalid theme configuration (skin & theme combination)
+useValidSkin()
 
 // TODO: Use lazy imports
 // const DefaultLayoutWithHorizontalNav = () => import('@layouts/components').then(({ DefaultLayoutWithHorizontalNav: comp }) => comp)
@@ -62,7 +67,10 @@ const notifications: Notification[] = [
 
 <template>
   <template v-if="appContentLayoutNav === 'vertical'">
-    <DefaultLayoutWithVerticalNav :nav-items="navItems">
+    <DefaultLayoutWithVerticalNav
+      :nav-items="navItems"
+      v-bind="layoutAttrs"
+    >
       <!-- navbar -->
       <template #navbar="{ toggleVerticalOverlayNavActive }">
         <div style="display: flex; height: 100%; align-items: center;">

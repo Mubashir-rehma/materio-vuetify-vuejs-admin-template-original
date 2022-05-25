@@ -61,3 +61,25 @@ $card-spacer-content: 16px;
 .whitespace-no-wrap {
   white-space: nowrap;
 }
+
+// 👉 Skins
+
+// Bordered
+
+// ————————————————————————————————————
+//* ——— Bordered Mixin
+// ————————————————————————————————————
+
+@mixin remove-shadow-add-border($component, $border-property: "border", $important: false) {
+  #{$component} {
+    background-color: rgb(var(--v-theme-background));
+    box-shadow: none !important;
+
+    /* stylelint-disable-next-line color-function-notation */
+    #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
+  }
+}
+
+.skin--bordered {
+  @include remove-shadow-add-border(".v-card");
+}

@@ -118,6 +118,10 @@ export default [
             to: 'forms-rating',
           },
           { title: 'Slider', to: 'forms-slider' },
+          {
+            title: 'Switch',
+            to: 'forms-switch',
+          },
         ],
       },
       {

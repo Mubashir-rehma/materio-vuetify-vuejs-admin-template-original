@@ -83,6 +83,10 @@ export default createVuetify({
       density: 'compact',
       color: 'primary',
     },
+    VSwitch: {
+      // set v-switch default color to primary
+      color: 'primary',
+    },
   },
   icons: {
     defaultSet: 'mdi',

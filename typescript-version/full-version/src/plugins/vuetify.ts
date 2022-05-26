@@ -103,6 +103,7 @@ export default createVuetify({
     VSwitch: {
       // set v-switch default color to primary
       color: 'primary',
+      hideDetails: 'auto',
     },
   },
   icons: {

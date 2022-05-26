@@ -23,7 +23,6 @@ watch(totalTabs, newValue => {
     <v-btn
       :disabled="!totalTabs"
       variant="text"
-      color="primary"
       @click="totalTabs--"
     >
       Remove Tab
@@ -35,7 +34,6 @@ watch(totalTabs, newValue => {
     />
 
     <v-btn
-      color="primary"
       variant="text"
       @click="totalTabs++"
     >

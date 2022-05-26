@@ -4,7 +4,7 @@ import avatar4 from '@/assets/images/avatars/avatar-4.png'
 
 <template>
   <div class="demo-space-x">
-    <v-btn color="primary">
+    <v-btn>
       Button
       <v-tooltip
         anchor="top"

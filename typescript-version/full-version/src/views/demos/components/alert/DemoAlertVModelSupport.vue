@@ -14,10 +14,7 @@ const isAlertVisible = ref(true)
   </div>
 
   <!-- button -->
-  <v-btn
-    color="primary"
-    @click="isAlertVisible = !isAlertVisible"
-  >
+  <v-btn @click="isAlertVisible = !isAlertVisible">
     {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
   </v-btn>
 </template>

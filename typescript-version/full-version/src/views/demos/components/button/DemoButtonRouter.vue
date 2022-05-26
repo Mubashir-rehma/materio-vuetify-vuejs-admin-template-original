@@ -1,9 +1,6 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
-      color="primary"
-      to="alert"
-    >
+    <v-btn to="alert">
       String Literal
     </v-btn>
 
@@ -16,7 +13,7 @@
 
     <v-btn
       color="success"
-      :to="{ name: 'components-alert'}"
+      :to="{ name: 'components-alert' }"
     >
       Named Router
     </v-btn>

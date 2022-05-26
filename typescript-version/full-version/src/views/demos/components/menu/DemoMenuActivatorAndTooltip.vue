@@ -9,9 +9,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
     <template #activator="{ props: menuProps }">
       <v-tooltip anchor="top">
         <template #activator="{ props: tooltipProps }">
-          <v-btn
-            v-bind="mergeProps(menuProps, tooltipProps)"
-          >
+          <v-btn v-bind="mergeProps(menuProps, tooltipProps)">
             Dropdown w/ Tooltip
           </v-btn>
         </template>

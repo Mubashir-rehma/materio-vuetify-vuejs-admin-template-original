@@ -3,7 +3,6 @@
     <v-btn
       icon="mdi-briefcase-download-outline"
       variant="text"
-      color="primary"
     />
 
     <v-btn

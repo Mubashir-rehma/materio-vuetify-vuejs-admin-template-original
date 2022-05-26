@@ -7,10 +7,7 @@ const isSnackbarScrollReverseVisible = ref(false)
 <template>
   <div class="demo-space-x">
     <!-- fade -->
-    <v-btn
-      color="primary"
-      @click="isSnackbarFadeVisible = true"
-    >
+    <v-btn @click="isSnackbarFadeVisible = true">
       fade snackbar
     </v-btn>
 
@@ -23,10 +20,7 @@ const isSnackbarScrollReverseVisible = ref(false)
     </v-snackbar>
 
     <!-- scale -->
-    <v-btn
-      color="primary"
-      @click="isSnackbarScaleVisible = true"
-    >
+    <v-btn @click="isSnackbarScaleVisible = true">
       Scale snackbar
     </v-btn>
 
@@ -38,10 +32,7 @@ const isSnackbarScrollReverseVisible = ref(false)
     </v-snackbar>
 
     <!-- scroll y reverse -->
-    <v-btn
-      color="primary"
-      @click="isSnackbarScrollReverseVisible = true"
-    >
+    <v-btn @click="isSnackbarScrollReverseVisible = true">
       scroll y reverse
     </v-btn>
 

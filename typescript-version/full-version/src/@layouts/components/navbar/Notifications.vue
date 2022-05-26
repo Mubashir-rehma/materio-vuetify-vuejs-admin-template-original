@@ -69,7 +69,7 @@ const props = defineProps<Props>()
           <v-divider />
           <!-- 👉 Footer -->
           <v-list-item class="notification-section">
-            <v-btn block="">
+            <v-btn block>
               READ ALL NOTIFICATIONS
             </v-btn>
           </v-list-item>

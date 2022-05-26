@@ -3,10 +3,7 @@ const isSnackbarVisible = ref(false)
 </script>
 
 <template>
-  <v-btn
-    color="primary"
-    @click="isSnackbarVisible = true"
-  >
+  <v-btn @click="isSnackbarVisible = true">
     Open Snackbar
   </v-btn>
 

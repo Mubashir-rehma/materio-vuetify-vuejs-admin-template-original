@@ -1,9 +1,6 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
-      size="x-large"
-      color="primary"
-    >
+    <v-btn size="x-large">
       Extra large Button
     </v-btn>
 

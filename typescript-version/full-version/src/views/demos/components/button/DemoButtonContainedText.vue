@@ -1,9 +1,6 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
-      color="primary"
-      variant="contained-text"
-    >
+    <v-btn variant="contained-text">
       Primary
     </v-btn>
 

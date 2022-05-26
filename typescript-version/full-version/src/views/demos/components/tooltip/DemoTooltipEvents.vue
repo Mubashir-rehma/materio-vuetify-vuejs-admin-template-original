@@ -1,13 +1,8 @@
 <template>
   <div class="demo-space-x">
     <!-- open on hover -->
-    <v-btn
-      variant="outlined"
-      color="primary"
-    >
-      <span>Open On Hover</span>
-
-      <v-tooltip
+    <v-btn variant="outlined">
+      <span>Open On Hover</span> <v-tooltip
         activator="parent"
         anchor="top"
       >
@@ -33,13 +28,8 @@
     </v-btn>
 
     <!-- open on focus -->
-    <v-btn
-      variant="outlined"
-      color="primary"
-    >
-      <span>Open On Hover + Focus</span>
-
-      <v-tooltip
+    <v-btn variant="outlined">
+      <span>Open On Hover + Focus</span> <v-tooltip
         open-on-focus
         anchor="top"
         activator="parent"

@@ -1,6 +1,6 @@
 <template>
   <div class="demo-space-x">
-    <v-btn color="primary">
+    <v-btn>
       Accept
       <v-icon
         end

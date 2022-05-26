@@ -58,10 +58,7 @@ const clickMe = () => {
 
     <!-- Append -->
     <template #append>
-      <v-btn
-        color="primary"
-        @click="clickMe"
-      >
+      <v-btn @click="clickMe">
         <v-icon
           icon="mdi-target"
           start

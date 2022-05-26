@@ -16,7 +16,6 @@ const isAlertVisible = ref(true)
   <div class="text-center">
     <v-btn
       v-if="!isAlertVisible"
-      color="primary"
       @click="isAlertVisible = true"
     >
       Reset

@@ -1,9 +1,6 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
-      variant="outlined"
-      color="primary"
-    >
+    <v-btn variant="outlined">
       Primary
     </v-btn>
     <v-btn

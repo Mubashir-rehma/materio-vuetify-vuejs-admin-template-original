@@ -15,7 +15,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- top  -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarTopVisible = true"
@@ -33,7 +32,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- top right -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarTopRightVisible = true"
@@ -52,7 +50,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- center right -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarRightVisible = true"
@@ -71,7 +68,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- bottom right -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarBottomRightVisible = true"
@@ -89,7 +85,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- bottom -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarBottomVisible = true"
@@ -106,7 +101,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- bottom left -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarBottomLeftVisible = true"
@@ -124,7 +118,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- center left -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarLeftVisible = true"
@@ -143,7 +136,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- top left -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarTopLeftVisible = true"
@@ -162,7 +154,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- center -->
     <v-btn
       icon
-      color="primary"
       size="x-small"
       variant="text"
       @click="isSnackbarCenteredVisible = true"

@@ -4,10 +4,7 @@
       cols="12"
       sm="6"
     >
-      <v-btn
-        color="primary"
-        block
-      >
+      <v-btn block>
         Block Button
       </v-btn>
     </v-col>
@@ -18,7 +15,6 @@
     >
       <v-btn
         variant="outlined"
-        color="primary"
         block
       >
         Block Button

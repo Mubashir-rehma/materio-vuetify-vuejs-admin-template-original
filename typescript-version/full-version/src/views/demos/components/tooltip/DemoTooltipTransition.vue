@@ -1,7 +1,7 @@
 <template>
   <div class="demo-space-x">
     <!-- Scale transition -->
-    <v-btn color="primary">
+    <v-btn>
       scale transition
       <v-tooltip
         anchor="top"
@@ -13,7 +13,7 @@
     </v-btn>
 
     <!-- Scroll x transition -->
-    <v-btn color="primary">
+    <v-btn>
       scroll X transition
       <v-tooltip
         anchor="top"
@@ -25,7 +25,7 @@
     </v-btn>
 
     <!-- Scroll y transition -->
-    <v-btn color="primary">
+    <v-btn>
       scroll y transition
       <v-tooltip
         anchor="top"

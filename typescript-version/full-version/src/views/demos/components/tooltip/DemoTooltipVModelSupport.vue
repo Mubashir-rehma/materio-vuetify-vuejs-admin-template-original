@@ -4,10 +4,7 @@ const isTooltipVisible = ref(false)
 
 <template>
   <div class="demo-space-x">
-    <v-btn
-      color="primary"
-      @click="isTooltipVisible = !isTooltipVisible"
-    >
+    <v-btn @click="isTooltipVisible = !isTooltipVisible">
       toggle tooltip
     </v-btn>
 

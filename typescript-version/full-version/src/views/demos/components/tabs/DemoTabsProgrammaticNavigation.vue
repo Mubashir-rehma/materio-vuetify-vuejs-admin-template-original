@@ -44,7 +44,6 @@ const nextTab = () => {
   <div class="text-center">
     <v-btn
       variant="text"
-      color="primary"
       @click="preTab"
     >
       Previous
@@ -56,7 +55,6 @@ const nextTab = () => {
     />
 
     <v-btn
-      color="primary"
       variant="text"
       @click="nextTab"
     >

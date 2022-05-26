@@ -8,10 +8,7 @@ const isOutlinedSnackbarVisible = ref(false)
 <template>
   <div class="demo-space-x">
     <!-- Default toggle btn -->
-    <v-btn
-      color="primary"
-      @click="isDefaultSnackbarVisible = true"
-    >
+    <v-btn @click="isDefaultSnackbarVisible = true">
       Default
     </v-btn>
 
@@ -25,10 +22,7 @@ const isOutlinedSnackbarVisible = ref(false)
     </v-snackbar>
 
     <!-- Contained-text toggle btn -->
-    <v-btn
-      color="primary"
-      @click="isContainedTextSnackbarVisible = true"
-    >
+    <v-btn @click="isContainedTextSnackbarVisible = true">
       Contained-text
     </v-btn>
 
@@ -43,10 +37,7 @@ const isOutlinedSnackbarVisible = ref(false)
     </v-snackbar>
 
     <!-- Text toggle btn -->
-    <v-btn
-      color="primary"
-      @click="isTextSnackbarVisible = true"
-    >
+    <v-btn @click="isTextSnackbarVisible = true">
       Text
     </v-btn>
 
@@ -56,16 +47,12 @@ const isOutlinedSnackbarVisible = ref(false)
       centered
       right
       variant="text"
-      color="primary"
     >
       Pie icing biscuit soufflé liquorice topping.
     </v-snackbar>
 
     <!-- Outline toggle btn -->
-    <v-btn
-      color="primary"
-      @click="isOutlinedSnackbarVisible = true"
-    >
+    <v-btn @click="isOutlinedSnackbarVisible = true">
       Outlined
     </v-btn>
 

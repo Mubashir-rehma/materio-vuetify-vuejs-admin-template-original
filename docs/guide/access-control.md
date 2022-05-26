@@ -15,6 +15,219 @@ You can find access control related configuration in `src/plugins/casl` director
 - `shims-ability.d.ts`: This is only available in our TypeScript template. This file is shims file for CASL.
 - `useAppAbility.ts`: This is only available in our TypeScript template. This file contains `useAppAbility` composable for ease so you don't have to import `AppAbility` from `AppAbility.ts` file.
 
+## Using ACL
+
+If you want show/hide anything based on user's ability, you can use global `$can` property.
+
+Let's create a new page with below content:
+
+<code-group>
+<code-block title="TS">
+
+```vue
+<script lang="ts" setup>
+const user = {
+  action: 'read' as const,
+
+  // `subject` property type is `Subjects` ("src/plugins/casl/AppAbility.ts")
+  subject: 'Admin' as const,
+}
+</script>
+
+<template>
+  <p v-if="$can(user.action, user.subject)">
+    We have earned 50k more compared to previous week
+  </p>
+  <p v-else>
+    You don't have enough permission to view the finance data
+  </p>
+</template>
+
+<route lang="yaml">
+meta:
+  action: read
+  subject: AclDemo
+</route>
+```
+
+</code-block>
+
+<code-block title="JS">
+
+```vue
+<script lang="ts" setup>
+const user = {
+  action: 'read',
+  subject: 'Admin',
+}
+</script>
+
+<template>
+  <p v-if="$can(user.action, user.subject)">
+    We have earned 50k more compared to previous week
+  </p>
+  <p v-else>
+    You don't have enough permission to view the finance data
+  </p>
+</template>
+
+<route lang="yaml">
+meta:
+  action: read
+  subject: AclDemo
+</route>
+```
+
+</code-block>
+</code-group>
+
+## Updating ability
+
+### Using new ability
+
+You will definitely update ability in your app, most probably after login. To update the ability you have to use `useAbility` composable like below:
+
+<code-group>
+<code-block title="TS">
+
+```ts
+import { useAbility } from '@casl/vue'
+import type { AppAbility } from '@/plugins/casl/AppAbility'
+
+// You will get below object on login's successful API response
+const userAbilities = [{
+  action: 'read',
+  subject: 'Admin',
+}]
+
+// Use composable
+const ability = useAbility<AppAbility>()
+
+// Update the ability using `update` method
+ability.update(userAbilities)
+```
+
+</code-block>
+
+<code-block title="JS">
+
+```js
+import { useAbility } from '@casl/vue'
+
+// You will get below object on login's successful API response
+const userAbilities = [{
+  action: 'read',
+  subject: 'Admin',
+}]
+
+// Use composable
+const ability = useAbility()
+
+// Update the ability using `update` method
+ability.update(userAbilities)
+```
+
+</code-block>
+</code-group>
+
+That's all for updating ability. However, this ability update will get lost on page reload. To persist ability between page reload/close, you have to add ability to localStorage:
+
+<code-group>
+<code-block title="TS">
+
+```ts{16-17}
+import { useAbility } from '@casl/vue'
+import type { AppAbility } from '@/plugins/casl/AppAbility'
+
+// You will get below object on login's successful API response
+const userAbilities = [{
+  action: 'read',
+  subject: 'Admin',
+}]
+
+// Use composable
+const ability = useAbility<AppAbility>()
+
+// Update the ability using `update` method
+ability.update(userAbilities)
+
+// Adding ability to localStorage so template can pick it up on page reload
+localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+```
+
+</code-block>
+
+<code-block title="JS">
+
+```js{15-16}
+import { useAbility } from '@casl/vue'
+
+// You will get below object on login's successful API response
+const userAbilities = [{
+  action: 'read',
+  subject: 'Admin',
+}]
+
+// Use composable
+const ability = useAbility()
+
+// Update the ability using `update` method
+ability.update(userAbilities)
+
+// Adding ability to localStorage so template can pick it up on page reload
+localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+```
+
+</code-block>
+</code-group>
+
+:::warning
+When you store user ability in localStorage, localStorage key name must be `userAbilities`. If you want to use different key name, make sure it is same as you have used in `src/plugins/casl/ability.ts` for retrieving user ability.
+:::
+
+### Resetting to initial ability
+
+On logout we need to reset ability to initial ability. Resetting ability is same as updating to new ability, only difference is that we will pass `initialAbility` we have in `@/plugins/casl/ability` to `ability.update` method.
+
+<code-group>
+<code-block title="TS">
+
+```ts{3,9,12}
+import { useAbility } from '@casl/vue'
+import type { AppAbility } from '@/plugins/casl/AppAbility'
+import { initialAbility } from '@/plugins/casl/ability'
+
+// Use composable
+const ability = useAbility<AppAbility>()
+
+// Update the ability using `update` method
+ability.update(initialAbility)
+
+// Adding ability to localStorage so template can pick it up on page reload
+localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
+```
+
+</code-block>
+
+<code-block title="JS">
+
+```js{2,8,11}
+import { useAbility } from '@casl/vue'
+import { initialAbility } from '@/plugins/casl/ability'
+
+// Use composable
+const ability = useAbility()
+
+// Update the ability using `update` method
+ability.update(initialAbility)
+
+// Adding ability to localStorage so template can pick it up on page reload
+localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
+```
+
+</code-block>
+</code-group>
+
 ## Route Protection
 
 We have configured [`router.beforeEach`](https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards) hook so users can only visit the route they have ability to. You can check its source code in `/src/router/index.ts` file.
@@ -104,7 +317,7 @@ export default [
 </code-block>
 </code-group>
 
-### Omitting defining resource and action for groups
+### Omitting defining resource and action for nav groups
 
 You can optionally define resource & action on navigation groups.
 

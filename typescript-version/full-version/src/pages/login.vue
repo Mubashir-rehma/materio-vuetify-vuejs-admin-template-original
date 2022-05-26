@@ -26,7 +26,8 @@ const login = () => {
       localStorage.setItem('userData', JSON.stringify(userData))
       localStorage.setItem('accessToken', JSON.stringify(accessToken))
 
-      if (route.query.to) router.replace(String(route.query.to))
+      if (route.query.to)
+        router.replace(String(route.query.to))
       else router.replace('/')
 
       return null
@@ -35,8 +36,8 @@ const login = () => {
 }
 
 const logout = () => {
-  localStorage.removeItem('userAbilities')
   ability.update(initialAbility)
+  localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
 
   localStorage.removeItem('userData')
   localStorage.removeItem('accessToken')

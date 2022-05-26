@@ -43,7 +43,7 @@ Yes, That's it. All you need is these two meta for preventing access to your pri
 
 ### Omitting Defining `action` & `subject` for route
 
-If you do not define resource and action then only user with below ability will be able to visit the route:
+You might have noticed that we haven't defined `action` & `subject` meta for pages/routes. This is because in our demo, **admin user** have below ability specified:
 
 ```js
 {
@@ -52,15 +52,11 @@ If you do not define resource and action then only user with below ability will 
 }
 ```
 
-:::tip
 `manage` and `all` are special keywords in CASL. manage represents any action and all represents any subject.
-:::
 
-So, in your project if you don't have any user with above mentioned ability and you don't define action and resource for route then no one will be able to visit that route ever.
+If user have above mentioned ability and you don't define `action` & `subject` meta for route, then user can still access all routes.
 
-:::tip NOTE
-We have user (Admin user) with above mentioned ability in our demo. That's why we don't have to write action and resource on each route.
-:::
+Hence, we omitted defining `action` and `subject` meta for pages/routes in our source code.
 
 ## Show/Hide navigation items
 

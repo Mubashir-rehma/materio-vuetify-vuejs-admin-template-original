@@ -24,11 +24,8 @@ const checkbox = ref(false)
         <v-text-field
           id="firstName"
           v-model="firstName"
-          variant="outlined"
-          density="compact"
           placeholder="First Name"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -47,11 +44,8 @@ const checkbox = ref(false)
         <v-text-field
           id="email"
           v-model="email"
-          variant="outlined"
-          density="compact"
           placeholder="Email"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -71,11 +65,8 @@ const checkbox = ref(false)
           id="mobile"
           v-model="mobile"
           type="number"
-          variant="outlined"
-          density="compact"
           placeholder="Number"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -95,11 +86,8 @@ const checkbox = ref(false)
           id="password"
           v-model="password"
           type="password"
-          variant="outlined"
-          density="compact"
           placeholder="Password"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -111,8 +99,6 @@ const checkbox = ref(false)
         <v-checkbox
           v-model="checkbox"
           label="Remember me"
-          density="compact"
-          hide-details
         />
       </v-col>
 
@@ -121,14 +107,16 @@ const checkbox = ref(false)
         offset-md="3"
         cols="12"
       >
-        <v-btn type="submit">
+        <v-btn
+          type="submit"
+          class="me-2"
+        >
           Submit
         </v-btn>
         <v-btn
           color="secondary"
           variant="outlined"
           type="reset"
-          class="mx-2"
         >
           Reset
         </v-btn>

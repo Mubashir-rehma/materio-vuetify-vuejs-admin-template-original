@@ -9,9 +9,7 @@ const checkboxString = ref('show')
       v-model="checkbox"
       :true-value="1"
       :false-value="0"
-      color="primary"
       :label="`${checkbox.toString()}`"
-      hide-details
     />
 
     <v-checkbox
@@ -20,7 +18,6 @@ const checkboxString = ref('show')
       false-value="hide"
       color="success"
       :label="`${checkboxString.toString()}`"
-      hide-details
     />
   </div>
 </template>

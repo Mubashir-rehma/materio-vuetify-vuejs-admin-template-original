@@ -10,14 +10,12 @@ const slider = ref(40)
     :max="max"
     :min="min"
     :step="1"
-    hide-details
   >
     <template #append>
       <v-text-field
         v-model="slider"
         variant="underlined"
         type="number"
-        hide-details
       />
     </template>
   </v-slider>

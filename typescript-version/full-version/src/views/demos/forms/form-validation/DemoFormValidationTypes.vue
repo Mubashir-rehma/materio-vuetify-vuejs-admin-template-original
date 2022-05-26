@@ -43,9 +43,6 @@ const refForm = ref<VForm>()
           v-model="requiredField"
           persistent-placeholder
           placeholder="This field is required"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
           :rules="[requiredValidator]"
         />
       </v-col>
@@ -58,10 +55,7 @@ const refForm = ref<VForm>()
           v-model="numberBetween10to20"
           persistent-placeholder
           placeholder="Enter Number between 10 & 20"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
-          :rules="[requiredValidator,betweenValidator(numberBetween10to20,10,20)]"
+          :rules="[requiredValidator, betweenValidator(numberBetween10to20, 10, 20)]"
         />
       </v-col>
 
@@ -73,10 +67,7 @@ const refForm = ref<VForm>()
           v-model="onlyConsistNumber"
           persistent-placeholder
           placeholder="Must only consist of numbers"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
-          :rules="[requiredValidator,integerValidator]"
+          :rules="[requiredValidator, integerValidator]"
         />
       </v-col>
 
@@ -88,10 +79,7 @@ const refForm = ref<VForm>()
           v-model="matchRegularEx"
           persistent-placeholder
           placeholder="Must match the specified regular expression : ^([0-9]+)$ - numbers only"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
-          :rules="[requiredValidator,regexValidator(matchRegularEx,'^([0-9]+)$')]"
+          :rules="[requiredValidator, regexValidator(matchRegularEx, '^([0-9]+)$')]"
         />
       </v-col>
 
@@ -103,10 +91,7 @@ const refForm = ref<VForm>()
           v-model="onlyAlphabeticCharacters"
           persistent-placeholder
           placeholder="Only alphabetic characters"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
-          :rules="[requiredValidator,alphaValidator]"
+          :rules="[requiredValidator, alphaValidator]"
         />
       </v-col>
 
@@ -118,10 +103,7 @@ const refForm = ref<VForm>()
           v-model="specifiedLength"
           persistent-placeholder
           placeholder="Length should not be less than the specified length : 3"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
-          :rules="[requiredValidator,lengthValidator(specifiedLength,3)]"
+          :rules="[requiredValidator, lengthValidator(specifiedLength, 3)]"
         />
       </v-col>
 
@@ -133,11 +115,8 @@ const refForm = ref<VForm>()
           v-model="password"
           persistent-placeholder
           placeholder="Password Input Field"
-          variant="outlined"
-          hide-details="auto"
           type="password"
-          :rules="[requiredValidator,passwordValidator]"
-          density="compact"
+          :rules="[requiredValidator, passwordValidator]"
         />
       </v-col>
 
@@ -149,10 +128,7 @@ const refForm = ref<VForm>()
           v-model="digits"
           persistent-placeholder
           placeholder="The digits field must be numeric and exactly contain 3 digits"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
-          :rules="[requiredValidator,lengthValidator(digits,3),integerValidator]"
+          :rules="[requiredValidator, lengthValidator(digits, 3), integerValidator]"
         />
       </v-col>
 
@@ -164,11 +140,8 @@ const refForm = ref<VForm>()
           v-model="repeatPassword"
           persistent-placeholder
           placeholder="Repeat password must match"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
           type="password"
-          :rules="[requiredValidator,confirmedValidator(repeatPassword,password)]"
+          :rules="[requiredValidator, confirmedValidator(repeatPassword, password)]"
         />
       </v-col>
 
@@ -180,10 +153,7 @@ const refForm = ref<VForm>()
           v-model="onlyAlphabeticNumbersDashesUnderscores"
           persistent-placeholder
           placeholder="Only alphabetic characters, numbers, dashes or underscores"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
-          :rules="[requiredValidator,alphaDashValidator]"
+          :rules="[requiredValidator, alphaDashValidator]"
         />
       </v-col>
 
@@ -195,10 +165,7 @@ const refForm = ref<VForm>()
           v-model="email"
           persistent-placeholder
           placeholder="Must be a valid email"
-          variant="outlined"
-          hide-details="auto"
-          :rules="[requiredValidator,emailValidator]"
-          density="compact"
+          :rules="[requiredValidator, emailValidator]"
         />
       </v-col>
 
@@ -210,10 +177,7 @@ const refForm = ref<VForm>()
           v-model="validURL"
           persistent-placeholder
           placeholder="Must be a valid url"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
-          :rules="[requiredValidator,urlValidator]"
+          :rules="[requiredValidator, urlValidator]"
         />
       </v-col>
 

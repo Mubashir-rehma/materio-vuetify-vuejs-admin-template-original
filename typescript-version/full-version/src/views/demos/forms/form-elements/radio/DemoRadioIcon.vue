@@ -7,7 +7,6 @@ const radioGroup = ref(1)
     v-model="radioGroup"
     false-icon="mdi-bell-off-outline"
     true-icon="mdi-bell-outline"
-    hide-details
   >
     <v-radio
       v-for="n in 2"

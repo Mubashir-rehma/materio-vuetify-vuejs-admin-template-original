@@ -25,11 +25,8 @@ const checkbox = ref(false)
           id="firstNameHorizontalIcons"
           v-model="firstName"
           prepend-inner-icon="mdi-account-outline"
-          variant="outlined"
-          density="compact"
           placeholder="First Name"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -49,11 +46,8 @@ const checkbox = ref(false)
           id="emailHorizontalIcons"
           v-model="email"
           prepend-inner-icon="mdi-email-outline"
-          variant="outlined"
-          density="compact"
           placeholder="Email"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -73,12 +67,9 @@ const checkbox = ref(false)
           id="mobileHorizontalIcons"
           v-model="mobile"
           type="number"
-          variant="outlined"
           prepend-inner-icon="mdi-cellphone"
-          density="compact"
           placeholder="Number"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -99,11 +90,8 @@ const checkbox = ref(false)
           v-model="password"
           prepend-inner-icon="mdi-lock-outline"
           type="password"
-          variant="outlined"
-          density="compact"
           placeholder="Password"
           persistent-placeholder
-          hide-details
         />
       </v-col>
 
@@ -115,8 +103,6 @@ const checkbox = ref(false)
         <v-checkbox
           v-model="checkbox"
           label="Remember me"
-          density="compact"
-          hide-details
         />
       </v-col>
 
@@ -125,14 +111,16 @@ const checkbox = ref(false)
         offset-md="3"
         cols="12"
       >
-        <v-btn type="submit">
+        <v-btn
+          type="submit"
+          class="me-2"
+        >
           Submit
         </v-btn>
         <v-btn
           color="secondary"
           type="reset"
           variant="outlined"
-          class="mx-2"
         >
           Reset
         </v-btn>

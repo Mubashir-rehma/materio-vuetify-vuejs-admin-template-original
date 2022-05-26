@@ -3,10 +3,7 @@ const radios = ref('Duckduckgo')
 </script>
 
 <template>
-  <v-radio-group
-    v-model="radios"
-    hide-details
-  >
+  <v-radio-group v-model="radios">
     <template #label>
       <div>Your favorite <strong>search engine</strong></div>
     </template>

@@ -1,8 +1,6 @@
 <template>
   <v-text-field
-    label="Outlined"
-    variant="outlined"
+    label="Compact"
     density="compact"
-    hide-details
   />
 </template>

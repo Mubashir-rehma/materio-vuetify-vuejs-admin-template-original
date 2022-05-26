@@ -47,12 +47,7 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <v-text-field
-                label="Full Name"
-                density="compact"
-                hide-details
-                variant="outlined"
-              />
+              <v-text-field label="Full Name" />
             </v-col>
 
             <!-- 👉 Phone No -->
@@ -60,21 +55,14 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <v-text-field
-                label="Phone No"
-                density="compact"
-                hide-details
-                variant="outlined"
-              />
+              <v-text-field label="Phone No" />
             </v-col>
 
             <!-- 👉 Address -->
             <v-col cols="12">
               <v-textarea
                 label="Address"
-                variant="outlined"
                 rows="3"
-                hide-details
               />
             </v-col>
 
@@ -83,12 +71,7 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <v-text-field
-                label="Pincode"
-                density="compact"
-                hide-details
-                variant="outlined"
-              />
+              <v-text-field label="Pincode" />
             </v-col>
 
             <!-- 👉 Landmark -->
@@ -96,12 +79,7 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <v-text-field
-                label="Landmark"
-                density="compact"
-                hide-details
-                variant="outlined"
-              />
+              <v-text-field label="Landmark" />
             </v-col>
 
             <!-- 👉 City -->
@@ -109,12 +87,7 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <v-text-field
-                label="City"
-                density="compact"
-                hide-details
-                variant="outlined"
-              />
+              <v-text-field label="City" />
             </v-col>
 
             <!-- 👉 State -->
@@ -124,10 +97,7 @@ const paymentMethods = [
             >
               <v-select
                 :items="stateList"
-                variant="outlined"
-                density="compact"
                 label="State"
-                hide-details
               />
             </v-col>
 
@@ -136,7 +106,6 @@ const paymentMethods = [
               <label>Address Type</label>
               <v-radio-group
                 v-model="radios"
-                hide-details
               >
                 <v-radio
                   label="Home (All day delivery)"
@@ -162,7 +131,6 @@ const paymentMethods = [
         <!-- 👉 Radio Group -->
         <v-radio-group
           v-model="deliveryOption"
-          hide-details
         >
           <div
             class="delivery-option"
@@ -227,11 +195,10 @@ const paymentMethods = [
                 <v-col cols="12">
                   <v-radio-group
                     v-model="paymentMethod"
-                    hide-details
                   >
                     <v-radio
                       v-for="payment in paymentMethods"
-                      :key="payment"
+                      :key="payment.radioValue"
                       :value="payment.radioValue"
                     >
                       <template #label>
@@ -247,12 +214,7 @@ const paymentMethods = [
 
                 <!-- 👉 Card Number -->
                 <v-col cols="12">
-                  <v-text-field
-                    label="Card Number"
-                    variant="outlined"
-                    density="compact"
-                    hide-details
-                  />
+                  <v-text-field label="Card Number" />
                 </v-col>
 
                 <!-- 👉 Name -->
@@ -260,12 +222,7 @@ const paymentMethods = [
                   cols="12"
                   md="6"
                 >
-                  <v-text-field
-                    label="Name"
-                    variant="outlined"
-                    density="compact"
-                    hide-details
-                  />
+                  <v-text-field label="Name" />
                 </v-col>
 
                 <!-- 👉 Expire Date -->
@@ -273,12 +230,7 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <v-text-field
-                    label="Expiry Date"
-                    density="compact"
-                    variant="outlined"
-                    hide-details
-                  />
+                  <v-text-field label="Expiry Date" />
                 </v-col>
 
                 <!-- 👉 CVV Code -->
@@ -286,12 +238,7 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <v-text-field
-                    label="CVV Code"
-                    variant="outlined"
-                    density="compact"
-                    hide-details
-                  />
+                  <v-text-field label="CVV Code" />
                 </v-col>
               </v-row>
             </v-form>
@@ -304,10 +251,7 @@ const paymentMethods = [
         <v-btn class="me-5">
           Place Order
         </v-btn>
-        <v-btn
-          variant="outlined"
-          color="secondary"
-        >
+        <v-btn color="secondary">
           Cancel
         </v-btn>
       </v-expansion-panel-text>

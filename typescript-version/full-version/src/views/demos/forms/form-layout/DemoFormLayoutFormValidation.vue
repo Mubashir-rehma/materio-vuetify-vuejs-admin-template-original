@@ -15,70 +15,69 @@ const form = ref<VForm>()
     ref="form"
     lazy-validation
   >
-    <v-text-field
-      v-model="name"
-      :rules="[requiredValidator]"
-      label="Name"
-      required
-      variant="outlined"
-      density="compact"
-      hide-details="auto"
-      class="mb-6"
-    />
+    <v-row>
+      <v-col cols="12">
+        <v-text-field
+          v-model="name"
+          :rules="[requiredValidator]"
+          label="Name"
+          required
+        />
+      </v-col>
 
-    <v-text-field
-      v-model="email"
-      :rules="[emailValidator, requiredValidator]"
-      label="E-mail"
-      required
-      variant="outlined"
-      density="compact"
-      hide-details="auto"
-      class="mb-6"
-    />
+      <v-col cols="12">
+        <v-text-field
+          v-model="email"
+          :rules="[emailValidator, requiredValidator]"
+          label="E-mail"
+          required
+        />
+      </v-col>
 
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[requiredValidator]"
-      label="Item"
-      name="select"
-      required
-      variant="outlined"
-      density="compact"
-      hide-details="auto"
-    />
+      <v-col cols="12">
+        <v-select
+          v-model="select"
+          :items="items"
+          :rules="[requiredValidator]"
+          label="Item"
+          name="select"
+          require
+        />
+      </v-col>
 
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[requiredValidator]"
-      label="Do you agree?"
-      required
-      hide-details="auto"
-      class="my-4"
-    />
+      <v-col cols="12">
+        <v-checkbox
+          v-model="checkbox"
+          :rules="[requiredValidator]"
+          label="Do you agree?"
+          required
+        />
+      </v-col>
 
-    <div class="demo-space-x">
-      <v-btn
-        color="success"
-        @click="form?.validate()"
-      >
-        Validate
-      </v-btn>
+      <v-col cols="12">
+        <v-btn
+          color="success"
+          class="me-3"
+          @click="form?.validate()"
+        >
+          Validate
+        </v-btn>
 
-      <v-btn
-        color="error"
-        @click="form?.reset()"
-      >
-        Reset Form
-      </v-btn>
+        <v-btn
+          color="error"
+          class="me-3"
+          @click="form?.reset()"
+        >
+          Reset Form
+        </v-btn>
 
-      <v-btn
-        color="warning"
-        @click="form?.resetValidation()"
-      >
-        Reset Validation
-      </v-btn>
-    </div>
+        <v-btn
+          color="warning"
+          @click="form?.resetValidation()"
+        >
+          Reset Validation
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-form>
 </template>

@@ -8,65 +8,69 @@ const checkbox = ref(false)
 
 <template>
   <v-form @submit.prevent>
-    <v-text-field
-      v-model="firstName"
-      prepend-inner-icon="mdi-account-outline"
-      label="First Name"
-      variant="outlined"
-      density="compact"
-      placeholder="First Name"
-    />
+    <v-row>
+      <v-col cols="12">
+        <v-text-field
+          v-model="firstName"
+          prepend-inner-icon="mdi-account-outline"
+          label="First Name"
+          placeholder="First Name"
+        />
+      </v-col>
 
-    <v-text-field
-      v-model="email"
-      prepend-inner-icon="mdi-email-outline"
-      label="Email"
-      type="email"
-      variant="outlined"
-      density="compact"
-      placeholder="Email"
-    />
+      <v-col cols="12">
+        <v-text-field
+          v-model="email"
+          prepend-inner-icon="mdi-email-outline"
+          label="Email"
+          type="email"
+          placeholder="Email"
+        />
+      </v-col>
 
-    <v-text-field
-      v-model="mobile"
-      prepend-inner-icon="mdi-cellphone"
-      label="Mobile"
-      variant="outlined"
-      density="compact"
-      type="number"
-      placeholder="Number"
-    />
+      <v-col cols="12">
+        <v-text-field
+          v-model="mobile"
+          prepend-inner-icon="mdi-cellphone"
+          label="Mobile"
+          type="number"
+          placeholder="Number"
+        />
+      </v-col>
 
-    <v-text-field
-      v-model="password"
-      prepend-inner-icon="mdi-lock-outline"
-      label="Password"
-      variant="outlined"
-      density="compact"
-      type="password"
-      placeholder="password"
-      hide-details
-    />
+      <v-col cols="12">
+        <v-text-field
+          v-model="password"
+          prepend-inner-icon="mdi-lock-outline"
+          label="Password"
+          type="password"
+          placeholder="password"
+        />
+      </v-col>
 
-    <v-checkbox
-      v-model="checkbox"
-      label="Remember me"
-      class="my-5"
-      density="compact"
-      hide-details
-    />
+      <v-col cols="12">
+        <v-checkbox
+          v-model="checkbox"
+          label="Remember me"
+        />
+      </v-col>
 
-    <v-btn type="submit">
-      Submit
-    </v-btn>
+      <v-col cols="12">
+        <v-btn
+          type="submit"
+          class="me-2"
+        >
+          Submit
+        </v-btn>
 
-    <v-btn
-      color="secondary"
-      type="reset"
-      variant="outlined"
-      class="mx-2"
-    >
-      Reset
-    </v-btn>
+        <v-btn
+          color="secondary"
+          type="reset"
+          variant="outlined"
+        >
+          Reset
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-form>
 </template>

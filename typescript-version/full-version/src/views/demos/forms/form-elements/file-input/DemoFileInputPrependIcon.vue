@@ -1,7 +1,6 @@
 <template>
   <v-file-input
-    multiple
     label="File input"
-    hide-details
+    prepend-icon="mdi-camera-outline"
   />
 </template>

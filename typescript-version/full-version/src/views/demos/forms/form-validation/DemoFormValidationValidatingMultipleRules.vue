@@ -21,9 +21,6 @@ const confirmPassword = ref('')
       >
         <v-text-field
           v-model="name"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
           placeholder="Your Name"
           persistent-placeholder
           :rules="[requiredValidator]"
@@ -36,9 +33,6 @@ const confirmPassword = ref('')
       >
         <v-text-field
           v-model="email"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
           placeholder="Your Email"
           persistent-placeholder
           :rules="[requiredValidator, emailValidator]"
@@ -51,9 +45,6 @@ const confirmPassword = ref('')
       >
         <v-text-field
           v-model="password"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
           type="password"
           placeholder="Your Password"
           persistent-placeholder
@@ -67,9 +58,6 @@ const confirmPassword = ref('')
       >
         <v-text-field
           v-model="confirmPassword"
-          variant="outlined"
-          hide-details="auto"
-          density="compact"
           type="password"
           placeholder="Confirm Password"
           persistent-placeholder

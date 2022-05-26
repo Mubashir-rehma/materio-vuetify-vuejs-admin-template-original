@@ -9,14 +9,12 @@ const checkboxTwo = ref(false)
       v-model="checkboxOne"
       density="compact"
       :label="`${checkboxOne.toString()}`"
-      hide-details
     />
 
     <v-checkbox
       v-model="checkboxTwo"
       density="compact"
       :label="`${checkboxTwo.toString()}`"
-      hide-details
     />
   </div>
 </template>

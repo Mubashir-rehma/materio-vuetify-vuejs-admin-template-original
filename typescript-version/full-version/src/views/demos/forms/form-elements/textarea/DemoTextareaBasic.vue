@@ -1,6 +1,3 @@
 <template>
-  <v-textarea
-    label="Default"
-    hide-details
-  />
+  <v-textarea label="Default" />
 </template>

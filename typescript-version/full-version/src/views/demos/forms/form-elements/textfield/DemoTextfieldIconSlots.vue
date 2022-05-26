@@ -20,9 +20,7 @@ const clickMe = () => {
     v-model="message"
     clearable
     label="Message"
-    variant="outlined"
     type="text"
-    hide-details
   >
     <!-- Prepend -->
     <template #prepend>

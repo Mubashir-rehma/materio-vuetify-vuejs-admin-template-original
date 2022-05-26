@@ -7,13 +7,11 @@ const checkboxTwo = ref(false)
   <div class="d-flex flex-wrap">
     <v-checkbox
       v-model="checkboxOne"
-      hide-details
       :label="`${checkboxOne.toString()}`"
     />
 
     <v-checkbox
       v-model="checkboxTwo"
-      hide-details
       :label="`${checkboxTwo.toString()}`"
     />
   </div>

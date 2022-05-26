@@ -3,10 +3,15 @@ const sliderValue = ref(30)
 </script>
 
 <template>
-  <v-slider />
+  <v-row>
+    <v-col cols="12">
+      <v-slider />
+    </v-col>
 
-  <v-slider
-    v-model="sliderValue"
-    hide-details
-  />
+    <v-col cols="12">
+      <v-slider
+        v-model="sliderValue"
+      />
+    </v-col>
+  </v-row>
 </template>

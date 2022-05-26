@@ -13,7 +13,6 @@ const items = ref(['Streaming', 'Eating', 'Programming', 'Playing video games', 
     clear-icon="mdi-close-circle-outline"
     :items="items"
     hide-details
-    variant="outlined"
     label="Your favorite hobbies"
     prepend-icon="mdi-filter-variant"
   />

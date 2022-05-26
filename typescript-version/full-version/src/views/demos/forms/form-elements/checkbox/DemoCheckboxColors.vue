@@ -10,7 +10,6 @@ const colorCheckbox = ref(['primary', 'secondary', 'success', 'info', 'warning',
       :label="color"
       :color="color"
       :value="color"
-      hide-details
     />
   </div>
 </template>

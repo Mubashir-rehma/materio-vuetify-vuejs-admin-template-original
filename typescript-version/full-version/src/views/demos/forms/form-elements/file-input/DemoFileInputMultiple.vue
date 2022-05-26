@@ -1,8 +1,6 @@
 <template>
   <v-file-input
-    loading
-    color="primary"
+    multiple
     label="File input"
-    hide-details
   />
 </template>

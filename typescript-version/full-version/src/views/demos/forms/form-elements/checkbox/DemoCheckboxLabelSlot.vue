@@ -3,10 +3,7 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-checkbox
-    v-model="checkbox"
-    hide-details
-  >
+  <v-checkbox v-model="checkbox">
     <template #label>
       <div>
         I agree that

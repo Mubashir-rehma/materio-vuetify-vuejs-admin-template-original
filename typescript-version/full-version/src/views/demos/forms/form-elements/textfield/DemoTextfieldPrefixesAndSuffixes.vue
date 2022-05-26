@@ -1,27 +1,36 @@
 <template>
-  <v-text-field
-    label="Amount"
-    model-value="10.00"
-    prefix="$"
-  />
+  <v-row>
+    <v-col cols="12">
+      <v-text-field
+        label="Amount"
+        model-value="10.00"
+        prefix="$"
+      />
+    </v-col>
 
-  <v-text-field
-    label="Weight"
-    model-value="28.00"
-    suffix="lbs"
-  />
+    <v-col cols="12">
+      <v-text-field
+        label="Weight"
+        model-value="28.00"
+        suffix="lbs"
+      />
+    </v-col>
 
-  <v-text-field
-    label="Email address"
-    model-value="example"
-    suffix="@gmail.com"
-  />
+    <v-col cols="12">
+      <v-text-field
+        label="Email address"
+        model-value="example"
+        suffix="@gmail.com"
+      />
+    </v-col>
 
-  <v-text-field
-    label="Label Text"
-    model-value="12:30:00"
-    type="time"
-    suffix="PST"
-    hide-details
-  />
+    <v-col cols="12">
+      <v-text-field
+        label="Label Text"
+        model-value="12:30:00"
+        type="time"
+        suffix="PST"
+      />
+    </v-col>
+  </v-row>
 </template>

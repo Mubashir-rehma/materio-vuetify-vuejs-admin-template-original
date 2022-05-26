@@ -25,7 +25,6 @@ const rules = {
         label="Normal with hint text"
         hint="At least 8 characters"
         counter
-        hide-details="auto"
         @click:append-inner="show1 = !show1"
       />
     </v-col>
@@ -42,7 +41,6 @@ const rules = {
         name="input-10-2"
         label="Visible"
         hint="At least 8 characters"
-        hide-details="auto"
         @click:append-inner="show2 = !show2"
       />
     </v-col>

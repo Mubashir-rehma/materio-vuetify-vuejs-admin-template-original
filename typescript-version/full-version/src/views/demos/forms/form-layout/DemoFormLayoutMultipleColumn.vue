@@ -19,10 +19,7 @@ const checkbox = ref(false)
         <v-text-field
           v-model="firstName"
           label="First Name"
-          variant="outlined"
-          density="compact"
           placeholder="First Name"
-          hide-details
         />
       </v-col>
 
@@ -34,10 +31,7 @@ const checkbox = ref(false)
         <v-text-field
           v-model="lastName"
           label="Last Name"
-          variant="outlined"
-          density="compact"
           placeholder="Last Name"
-          hide-details
         />
       </v-col>
 
@@ -49,10 +43,7 @@ const checkbox = ref(false)
         <v-text-field
           v-model="email"
           label="Email"
-          variant="outlined"
-          density="compact"
           placeholder="Email"
-          hide-details
         />
       </v-col>
 
@@ -64,10 +55,7 @@ const checkbox = ref(false)
         <v-text-field
           v-model="city"
           label="City"
-          variant="outlined"
-          density="compact"
           placeholder="City"
-          hide-details
         />
       </v-col>
 
@@ -79,10 +67,7 @@ const checkbox = ref(false)
         <v-text-field
           v-model="country"
           label="Country"
-          variant="outlined"
-          density="compact"
           placeholder="Country"
-          hide-details
         />
       </v-col>
 
@@ -94,10 +79,7 @@ const checkbox = ref(false)
         <v-text-field
           v-model="company"
           label="Company"
-          variant="outlined"
-          density="compact"
           placeholder="Company"
-          hide-details
         />
       </v-col>
 
@@ -106,8 +88,6 @@ const checkbox = ref(false)
         <v-checkbox
           v-model="checkbox"
           label="Remember me"
-          density="compact"
-          hide-details
         />
       </v-col>
 

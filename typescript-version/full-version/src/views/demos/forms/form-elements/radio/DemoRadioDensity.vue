@@ -4,10 +4,7 @@ const inlineRadio = ref('radio-1')
 </script>
 
 <template>
-  <v-radio-group
-    v-model="columnRadio"
-    hide-details
-  >
+  <v-radio-group v-model="columnRadio">
     <v-radio
       label="Option 1"
       value="radio-1"
@@ -25,7 +22,6 @@ const inlineRadio = ref('radio-1')
   <v-radio-group
     v-model="inlineRadio"
     inline
-    hide-details
   >
     <v-radio
       label="Option 1"

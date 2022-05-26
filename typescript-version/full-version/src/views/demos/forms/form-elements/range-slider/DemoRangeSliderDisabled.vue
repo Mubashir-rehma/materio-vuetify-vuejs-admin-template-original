@@ -8,6 +8,5 @@ const slidersValues = ref([30, 60])
     disabled
     value="30"
     label="Disabled"
-    hide-details
   />
 </template>

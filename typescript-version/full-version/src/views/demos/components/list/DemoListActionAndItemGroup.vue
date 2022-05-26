@@ -11,7 +11,6 @@
           <v-checkbox
             :model-value="isActive"
             color="primary"
-            hide-details
           />
         </v-list-item-avatar>
 
@@ -28,7 +27,6 @@
           <v-checkbox
             :model-value="isActive"
             color="primary"
-            hide-details
           />
         </v-list-item-avatar>
 
@@ -45,7 +43,6 @@
           <v-checkbox
             :model-value="isActive"
             color="primary"
-            hide-details
           />
         </v-list-item-avatar>
 

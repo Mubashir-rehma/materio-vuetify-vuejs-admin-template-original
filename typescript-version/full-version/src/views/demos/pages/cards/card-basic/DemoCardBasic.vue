@@ -200,7 +200,6 @@ const rating = ref(5)
             <v-card-text class="d-flex align-center flex-wrap body-1">
               <v-rating
                 v-model="rating"
-                density="compact"
                 readonly
                 class="me-3"
               />
@@ -414,7 +413,6 @@ const rating = ref(5)
         <v-card-text class="d-flex align-center flex-wrap">
           <v-rating
             v-model="rating"
-            density="compact"
             readonly
           />
           <span class="ms-3 text-subtitle-2">5 Star | 98 reviews</span>

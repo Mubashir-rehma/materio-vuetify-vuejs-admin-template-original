@@ -9,6 +9,5 @@ const value = ref(0)
     :max="1"
     :step="0.2"
     thumb-label
-    hide-details
   />
 </template>

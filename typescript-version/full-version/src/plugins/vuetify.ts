@@ -31,20 +31,31 @@ export default createVuetify({
     VCheckbox: {
       // set v-checkbox default color to primary
       color: 'primary',
+      density: 'comfortable',
+      hideDetails: 'auto',
     },
     VRadioGroup: {
       // set v-radio-group default inline:true
       inline: true,
+      density: 'comfortable',
+      hideDetails: 'auto',
+    },
+    VRadio: {
+      density: 'comfortable',
+      hideDetails: 'auto',
     },
     VSelect: {
       transition: 'fade-transition',
       variant: 'outlined',
-      density: 'compact',
+      density: 'comfortable',
       color: 'primary',
+      hideDetails: 'auto',
     },
     VRangeSlider: {
       // set v-range-slider default color to primary
       color: 'primary',
+      density: 'comfortable',
+      hideDetails: 'auto',
     },
     VRating: {
       // set v-rating default color to primary
@@ -57,31 +68,37 @@ export default createVuetify({
     VSlider: {
       // set v-slider default color to primary
       color: 'primary',
+      hideDetails: 'auto',
     },
     VTextField: {
       variant: 'outlined',
-      density: 'compact',
+      density: 'comfortable',
       color: 'primary',
+      hideDetails: 'auto',
     },
     VAutocomplete: {
       variant: 'outlined',
-      density: 'compact',
+      density: 'comfortable',
       color: 'primary',
+      hideDetails: 'auto',
     },
     VCombobox: {
       variant: 'outlined',
-      density: 'compact',
+      density: 'comfortable',
       color: 'primary',
+      hideDetails: 'auto',
     },
     VFileInput: {
       variant: 'outlined',
-      density: 'compact',
+      density: 'comfortable',
       color: 'primary',
+      hideDetails: 'auto',
     },
     VTextarea: {
       variant: 'outlined',
-      density: 'compact',
+      density: 'comfortable',
       color: 'primary',
+      hideDetails: 'auto',
     },
     VSwitch: {
       // set v-switch default color to primary

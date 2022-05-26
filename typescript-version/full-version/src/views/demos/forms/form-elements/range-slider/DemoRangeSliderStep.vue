@@ -6,6 +6,5 @@ const sliderValues = ref([20, 40])
   <v-range-slider
     v-model="sliderValues"
     step="10"
-    hide-details
   />
 </template>

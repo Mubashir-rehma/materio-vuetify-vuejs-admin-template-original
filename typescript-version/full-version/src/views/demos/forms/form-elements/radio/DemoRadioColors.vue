@@ -7,7 +7,6 @@ const colorsRadio = ['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Erro
   <v-radio-group
     v-model="selectedRadio"
     inline
-    hide-details
   >
     <v-radio
       v-for="radio in colorsRadio"

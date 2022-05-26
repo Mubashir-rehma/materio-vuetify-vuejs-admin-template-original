@@ -7,6 +7,5 @@ const sliderValues = ref([10, 60])
     v-model="sliderValues"
     color="success"
     track-color="secondary"
-    hide-details
   />
 </template>

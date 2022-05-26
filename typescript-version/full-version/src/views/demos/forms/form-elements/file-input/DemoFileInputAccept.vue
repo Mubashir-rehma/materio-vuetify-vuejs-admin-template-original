@@ -1,7 +1,6 @@
 <template>
   <v-file-input
-    show-size
+    accept="image/*"
     label="File input"
-    hide-details
   />
 </template>

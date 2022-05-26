@@ -66,7 +66,6 @@ const bmpControl = useClamp(bpm, min, max)
     :min="min"
     :max="max"
     track-color="secondary"
-    hide-details
   >
     <template #prepend>
       <v-btn

@@ -8,19 +8,6 @@
         label="Default"
         rows="2"
       />
-
-      <v-textarea
-        label="Filled"
-        rows="2"
-        variant="filled"
-      />
-
-      <v-textarea
-        label="Plain"
-        rows="2"
-        variant="plain"
-        hide-details
-      />
     </v-col>
 
     <v-col
@@ -32,18 +19,49 @@
         rows="2"
         variant="contained"
       />
+    </v-col>
 
+    <v-col
+      cols="12"
+      sm="6"
+    >
+      <v-textarea
+        label="Filled"
+        rows="2"
+        variant="filled"
+      />
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="6"
+    >
       <v-textarea
         label="Outlined"
         rows="2"
         variant="outlined"
       />
+    </v-col>
 
+    <v-col
+      cols="12"
+      sm="6"
+    >
       <v-textarea
         label="Underlined"
         rows="2"
         variant="underlined"
-        hide-details
+      />
+    </v-col>
+
+    <v-col
+      cols="12"
+      sm="6"
+    >
+      <v-textarea
+        label="Plain"
+        rows="2"
+        variant="plain"
       />
     </v-col>
   </v-row>

@@ -21,9 +21,6 @@ const refForm = ref<VForm>()
         <v-text-field
           v-model="firstName"
           label="First Name"
-          variant="outlined"
-          density="compact"
-          hide-details="auto"
           :rules="[requiredValidator]"
         />
       </v-col>
@@ -35,10 +32,7 @@ const refForm = ref<VForm>()
         <v-text-field
           v-model="email"
           label="Email"
-          variant="outlined"
-          hide-details="auto"
-          :rules="[requiredValidator,emailValidator]"
-          density="compact"
+          :rules="[requiredValidator, emailValidator]"
         />
       </v-col>
 

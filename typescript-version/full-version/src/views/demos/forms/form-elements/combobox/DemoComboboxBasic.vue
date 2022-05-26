@@ -7,6 +7,5 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
   <v-combobox
     v-model="selectedItem"
     :items="items"
-    hide-details
   />
 </template>

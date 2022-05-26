@@ -9,10 +9,7 @@ const isInputEnabled = ref(false)
       sm="1"
       cols="2"
     >
-      <v-checkbox
-        v-model="includeFiles"
-        hide-details
-      />
+      <v-checkbox v-model="includeFiles" />
     </v-col>
 
     <v-col
@@ -28,10 +25,7 @@ const isInputEnabled = ref(false)
       cols="2"
       sm="1"
     >
-      <v-checkbox
-        v-model="isInputEnabled"
-        hide-details
-      />
+      <v-checkbox v-model="isInputEnabled" />
     </v-col>
 
     <v-col
@@ -40,7 +34,6 @@ const isInputEnabled = ref(false)
     >
       <v-text-field
         :disabled="!isInputEnabled"
-        hide-details
         label="I only work if you check the box"
       />
     </v-col>

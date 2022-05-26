@@ -10,57 +10,59 @@ const blueColorValue = ref(255)
     height="150px"
   />
 
-  <div class="mt-5">
-    <!-- R -->
-    <v-slider
-      v-model="redColorValue"
-      :max="255"
-      :step="1"
-      prepend-icon="mdi-alpha-r"
-      hide-details
-    >
-      <template #append>
-        <v-text-field
-          v-model="redColorValue"
-          type="number"
-          variant="underlined"
-        />
-      </template>
-    </v-slider>
+  <v-row class="mt-5">
+    <v-col cols="12">
+      <!-- R -->
+      <v-slider
+        v-model="redColorValue"
+        :max="255"
+        :step="1"
+        prepend-icon="mdi-alpha-r"
+      >
+        <template #append>
+          <v-text-field
+            v-model="redColorValue"
+            type="number"
+            variant="underlined"
+          />
+        </template>
+      </v-slider>
+    </v-col>
 
-    <!-- G -->
-    <v-slider
-      v-model="greenColorValue"
-      :max="255"
-      :step="1"
-      prepend-icon="mdi-alpha-g"
-      hide-details
-    >
-      <template #append>
-        <v-text-field
-          v-model="greenColorValue"
-          type="number"
-          variant="underlined"
-        />
-      </template>
-    </v-slider>
+    <v-col cols="12">
+      <!-- G -->
+      <v-slider
+        v-model="greenColorValue"
+        :max="255"
+        :step="1"
+        prepend-icon="mdi-alpha-g"
+      >
+        <template #append>
+          <v-text-field
+            v-model="greenColorValue"
+            type="number"
+            variant="underlined"
+          />
+        </template>
+      </v-slider>
+    </v-col>
 
-    <!-- B -->
-    <v-slider
-      v-model="blueColorValue"
-      :max="255"
-      :step="1"
-      prepend-icon="mdi-alpha-b"
-      hide-details
-    >
-      <template #append>
-        <v-text-field
-          v-model="blueColorValue"
-          type="number"
-          variant="underlined"
-          hide-details
-        />
-      </template>
-    </v-slider>
-  </div>
+    <v-col cols="12">
+      <!-- B -->
+      <v-slider
+        v-model="blueColorValue"
+        :max="255"
+        :step="1"
+        prepend-icon="mdi-alpha-b"
+      >
+        <template #append>
+          <v-text-field
+            v-model="blueColorValue"
+            type="number"
+            variant="underlined"
+          />
+        </template>
+      </v-slider>
+    </v-col>
+  </v-row>
 </template>

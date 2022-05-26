@@ -7,6 +7,5 @@ const textareaValue = ref('The Woodman set to work at once, and so sharp was his
     v-model="textareaValue"
     label="Auto Grow"
     auto-grow
-    hide-details
   />
 </template>

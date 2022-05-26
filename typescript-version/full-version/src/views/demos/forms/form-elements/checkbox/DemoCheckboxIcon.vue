@@ -9,10 +9,8 @@ const toggleCheckboxThree = ref(true)
     <v-checkbox
       v-model="toggleCheckboxOne"
       :label="`${toggleCheckboxOne.toString()}`"
-      color="primary"
       true-icon="mdi-check"
       false-icon="mdi-close"
-      hide-details
     />
 
     <v-checkbox
@@ -21,7 +19,6 @@ const toggleCheckboxThree = ref(true)
       true-icon="mdi-alarm-check"
       false-icon="mdi-alarm"
       color="success"
-      hide-details
     />
 
     <v-checkbox
@@ -30,7 +27,6 @@ const toggleCheckboxThree = ref(true)
       true-icon="mdi-check-circle"
       false-icon="mdi-close-circle"
       color="error"
-      hide-details
     />
   </div>
 </template>

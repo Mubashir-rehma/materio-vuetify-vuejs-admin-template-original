@@ -6,7 +6,6 @@ const files = ref<File[]>([])
   <v-file-input
     v-model="files"
     multiple
-    variant="underlined"
     placeholder="Upload your documents"
     label="File input"
     prepend-icon="mdi-paperclip"

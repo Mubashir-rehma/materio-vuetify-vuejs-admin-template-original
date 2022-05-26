@@ -7,9 +7,7 @@ const selected = ref(['John'])
     <v-checkbox
       v-model="selected"
       label="John"
-      color="primary"
       value="John"
-      hide-details
     />
 
     <v-checkbox
@@ -17,7 +15,6 @@ const selected = ref(['John'])
       label="Jacob"
       color="success"
       value="Jacob"
-      hide-details
     />
 
     <v-checkbox
@@ -25,7 +22,6 @@ const selected = ref(['John'])
       label="Johnson"
       color="info"
       value="Johnson"
-      hide-details
     />
   </div>
 

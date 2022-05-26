@@ -27,7 +27,6 @@ const sendMessage = () => {
     type="text"
     label="Message"
     color="primary"
-    hide-details
     clear-icon="mdi-close-circle-outline"
     :append-icon="message ? 'mdi-send-outline' : 'mdi-microphone'"
     :append-inner-icon="marker ? 'mdi-map-marker-outline' : 'mdi-map-marker-off-outline'"

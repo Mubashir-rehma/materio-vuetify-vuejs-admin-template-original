@@ -1,7 +1,7 @@
 <template>
   <v-file-input
+    loading
+    color="primary"
     label="File input"
-    density="compact"
-    hide-details
   />
 </template>

@@ -10,6 +10,5 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     label="Combobox"
     density="compact"
     multiple
-    hide-details
   />
 </template>

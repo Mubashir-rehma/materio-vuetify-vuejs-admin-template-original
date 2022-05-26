@@ -81,7 +81,8 @@ export default [
           { title: 'Button', to: 'components-button' },
           { title: 'Badge', to: 'components-badge' },
           { title: 'Chip', to: 'components-chip' },
-          { title: 'Dialog', to: 'components-dialog' },
+
+          // { title: 'Dialog', to: 'components-dialog' },
           { title: 'Pagination', to: 'components-pagination' },
           { title: 'Expansion Panel', to: 'components-expansion-panel' },
           { title: 'List', to: 'components-list' },
@@ -106,6 +107,10 @@ export default [
             to: 'forms-checkbox',
           },
           {
+            title: 'Combobox',
+            to: 'forms-combobox',
+          },
+          {
             title: 'Radio',
             to: 'forms-radio',
           },
@@ -128,22 +133,6 @@ export default [
         title: 'Form Layouts',
         icon: 'i-mdi-checkbox-marked-circle-outline',
         to: 'forms-form-layouts',
-      },
-    ],
-  },
-  {
-    title: 'Forms & Tables',
-    icon: 'i-mdi-checkbox-multiple-outline',
-    children: [
-      {
-        title: 'Forms Elements',
-        icon: 'i-mdi-content-copy',
-        children: [
-          {
-            title: 'Combobox',
-            to: 'forms-combobox',
-          },
-        ],
       },
     ],
   },

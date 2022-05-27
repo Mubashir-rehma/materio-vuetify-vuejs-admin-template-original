@@ -3,6 +3,9 @@ import { useLayouts } from '@layouts'
 import { HorizontalNav } from '@layouts/components'
 import type { HorizontalNavItems } from '@layouts/types'
 
+defineProps<{
+  navItems: HorizontalNavItems
+}>()
 const { _layoutClasses: layoutClasses } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 
@@ -14,10 +17,6 @@ router.beforeEach(() => {
 router.afterEach(() => {
   shallShowPageLoading.value = false
 })
-
-defineProps<{
-  navItems: HorizontalNavItems
-}>()
 </script>
 
 <template>
@@ -29,10 +28,12 @@ defineProps<{
       <!-- 👉 Navbar -->
       <div class="layout-navbar">
         <div class="navbar-content-container">
-          <!-- <slot
-              name="navbar"
-              :toggleVerticalOverlayNavActive="toggleVerticalOverlayNavActive"
-            /> -->
+          <!--
+            <slot
+            name="navbar"
+            :toggleVerticalOverlayNavActive="toggleVerticalOverlayNavActive"
+            />
+          -->
           <slot name="navbar" />
         </div>
       </div>
@@ -107,6 +108,7 @@ defineProps<{
 
 .layout-navbar {
   z-index: variables.$layout-horizontal-nav-layout-navbar-z-index;
+  block-size: variables.$layout-horizontal-nav-navbar-height;
 
   // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
   // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles

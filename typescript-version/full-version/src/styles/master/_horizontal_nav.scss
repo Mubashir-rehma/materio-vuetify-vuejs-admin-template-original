@@ -81,6 +81,8 @@
       > .popper-triggerer {
         position: relative;
 
+        // TODO: Decide: Shall we move this bridge style in `@layouts` or `@core`?
+
         /*
           ℹ️ The Bridge
           This after pseudo will work as bridge when we have space between popper triggerer and popper content
@@ -100,6 +102,11 @@
 
       // Enable the pseudo bridge when content is shown by setting pointer events to `auto`
       &.show-content > .popper-triggerer::after {
+        /*
+          ℹ️ We have added `z-index: 2` because where there is horizontal nav item below the popper trigger (group)
+            without this style nav item below popper trigger (group) gets focus hence closes the popper content
+        */
+        z-index: 2;
         pointer-events: auto;
       }
 

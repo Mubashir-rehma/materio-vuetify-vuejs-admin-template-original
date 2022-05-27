@@ -7,7 +7,6 @@ export { default as HorizontalNavPopper } from './components/HorizontalNavPopper
 export { default as NavBarI18n } from './components/navbar/I18n.vue'
 export { default as Notifications } from './components/navbar/Notifications.vue'
 export { default as ThemeSwitcher } from './components/navbar/ThemeSwitcher.vue'
-export { default as UserProfile } from './components/navbar/UserProfile.vue'
 export { default as TransitionExpand } from './components/TransitionExpand.vue'
 export { default as VerticalNav } from './components/VerticalNav.vue'
 export { default as VerticalNavGroup } from './components/VerticalNavGroup.vue'

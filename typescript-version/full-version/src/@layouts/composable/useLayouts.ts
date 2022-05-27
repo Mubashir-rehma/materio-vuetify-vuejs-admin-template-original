@@ -2,6 +2,7 @@ import { injectionKeyIsVerticalNavHovered } from '@layouts'
 import { config } from '@layouts/config'
 import type { MaybeRef } from '@vueuse/shared'
 import type { Ref } from 'vue'
+import { EnumAppContentLayoutNav } from '../enums'
 
 // TODO: Use config from this composition instead of getting it via config object
 // TODO: Check if we need useLayout?
@@ -96,6 +97,46 @@ export const useLayouts = () => {
     { 'window-scrolled': unref(windowScrollY) },
   ])
 
+  const _switchToVerticalNavOnLtOverlayNavBreakpoint = (windowWidth: MaybeRef<number>) => {
+    /*
+      ℹ️ This is flag will hold nav type need to render when switching between lgAndUp from mdAndDown window width
+
+      Requirement: When we nav is set to `horizontal` and we hit the `mdAndDown` breakpoint nav type shall change to `vertical` nav
+      Now if we go back to `lgAndUp` breakpoint from `mdAndDown` how we will know which was previous nav type in large device?
+
+      Let's assign value of `appContentLayoutNav` as default value of lgAndUpNav. Why 🤔?
+        If template is viewed in lgAndUp
+          We will assign `appContentLayoutNav` value to `lgAndUpNav` because at this point both constant is same
+          Hence, for `lgAndUpNav` it will take value from theme config file
+        else
+          It will always show vertical nav and if user increase the window width it will fallback to `appContentLayoutNav` value
+          But `appContentLayoutNav` will be value set in theme config file
+    */
+    const lgAndUpNav = ref(appContentLayoutNav.value)
+
+    /*
+      There might be case where we manually switch from vertical to horizontal nav and vice versa in `lgAndUp` screen
+      So when user comes back from `mdAndDown` to `lgAndUp` we can set updated nav type
+      For this we need to update the `lgAndUpNav` value if screen is `lgAndUp`
+    */
+    watch(appContentLayoutNav, value => {
+      if (!isLessThanOverlayNavBreakpoint.value(windowWidth))
+        lgAndUpNav.value = value
+    })
+
+    /*
+      This is layout switching part
+      If it's `mdAndDown` => We will use vertical nav no matter what previous nav type was
+      Or if it's `lgAndUp` we need to switch back to `lgAndUp` nav type. For this we will tracker property `lgAndUpNav`
+    */
+    watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth), val => {
+      if (!val)
+        appContentLayoutNav.value = lgAndUpNav.value
+      else
+        appContentLayoutNav.value = EnumAppContentLayoutNav.Vertical
+    }, { immediate: true })
+  }
+
   /*
     ℹ️ We are getting `isVerticalNavHovered` as param instead of via `inject` because
         we are using this in `VerticalNav.vue` component which provide it and I guess because
@@ -137,6 +178,7 @@ export const useLayouts = () => {
     horizontalNavType,
     isLessThanOverlayNavBreakpoint,
     _layoutClasses,
+    _switchToVerticalNavOnLtOverlayNavBreakpoint,
     isVerticalNavMini,
     dynamicI18nProps,
     isAppRtl,

@@ -32,7 +32,7 @@ let tempIsOpen = false
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
 watch(isVerticalNavHovered, val => {
   // If menu is not collapsed ignore
-  if (!isVerticalNavCollapsed.value)
+  if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
     return
 
   // If mouse is dragged out of nav menu
@@ -109,8 +109,8 @@ const collapseChildren = (children: NavGroup['children']) => {
 watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
-  // Don't open group if vertical nav is collapsed
-  isGroupOpen.value = isActive && !isVerticalNavCollapsed.value
+  // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
+  isGroupOpen.value = isActive && !(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
   isGroupActive.value = isActive
 
   // Why? => LINK src/@layouts/components/VerticalNavGroup.vue#tempIsOpen
@@ -172,6 +172,21 @@ watch(openGroups, val => {
   isGroupOpen.value = isActive
   isGroupActive.value = isActive
 }, { deep: true })
+
+/*
+  ℹ️ We need this watcher to
+    - Collapse the group when going to `lgAndUp` if vertical nav is collapsed (else block)
+    - Expand the group if it's active and screen is `mdAndDown`. Because in this screen vertical nav will be overlay nav
+*/
+watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth.value), isLessThanOverlayNavBreakpoint_ => {
+  // If window size is more than overlay nav breakpoint => expand group if its active
+  if (isLessThanOverlayNavBreakpoint_) { isGroupOpen.value = isGroupActive.value }
+
+  else {
+    if (isVerticalNavCollapsed.value)
+      isGroupOpen.value = false
+  }
+})
 </script>
 
 <script lang="ts">

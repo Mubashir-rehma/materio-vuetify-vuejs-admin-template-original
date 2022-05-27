@@ -137,6 +137,7 @@ export const useLayouts = () => {
     }, { immediate: true })
   }
 
+  // TODO: Write purpose of this function & refactor the code if necessary after finding its purpose
   /*
     ℹ️ We are getting `isVerticalNavHovered` as param instead of via `inject` because
         we are using this in `VerticalNav.vue` component which provide it and I guess because

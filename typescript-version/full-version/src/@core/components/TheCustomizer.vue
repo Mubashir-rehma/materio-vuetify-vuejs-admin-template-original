@@ -6,7 +6,6 @@ import { EnumSkins } from '@core/enums'
 import { useLayouts } from '@layouts'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 
-// TODO: Rename this to `TheCustomizer.vue`
 // import { useTheme } from 'vuetify'
 
 const isNavDrawerOpen = ref(false)

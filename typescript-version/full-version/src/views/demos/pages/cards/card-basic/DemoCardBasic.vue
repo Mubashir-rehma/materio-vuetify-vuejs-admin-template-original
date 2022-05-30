@@ -167,7 +167,6 @@ const rating = ref(5)
             </v-card-text>
 
             <v-card-actions class="justify-space-between">
-              <!-- TODO: Create issue in vuetify that using `prepend-icon` in `v-btn` with `v-card-actions` don't align with card text -->
               <v-btn>
                 <v-icon icon="mdi-cart-plus" />
                 <span class="ms-2">Add to cart</span>

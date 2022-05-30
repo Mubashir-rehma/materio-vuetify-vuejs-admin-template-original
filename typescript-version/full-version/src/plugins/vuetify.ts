@@ -126,6 +126,8 @@ export default createVuetify({
           'info': '#2f8be6',
           'warning': '#f77e17',
           'error': '#f55252',
+          'on-background': '#0D0C22',
+          'on-surface': '#0D0C22',
         },
       },
       dark: {
@@ -138,6 +140,8 @@ export default createVuetify({
           'info': '#2f8be6',
           'warning': '#f77e17',
           'error': '#f55252',
+          'on-background': '#E8E8F1',
+          'on-surface': '#E8E8F1',
         },
       },
     },

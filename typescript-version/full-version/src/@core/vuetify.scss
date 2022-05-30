@@ -2,6 +2,8 @@
 @use "sass:map";
 @use "vuetify/styles" as * with (
   $color-pack: false,
+  $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
+  $card-elevation: 6,
   // $card-item-padding: 20px,
   // $card-text-padding: 20px,
   // $card-actions-padding: 12px, /* It is $card-item-padding - button_padding */
@@ -15,7 +17,6 @@
 // TODO: In vuetify v-card-title should be high emphasis
 
 // font-color override
-.v-application,
 h1,
 h2,
 h3,
@@ -37,6 +38,7 @@ h6,
 }
 
 // text class color override
+.v-application,
 .text-body-1,
 .text-body-2,
 .text-subtitle-1,

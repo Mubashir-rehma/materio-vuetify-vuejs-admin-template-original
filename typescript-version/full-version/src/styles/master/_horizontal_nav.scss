@@ -39,7 +39,7 @@
     // 👉 Top level nav link
     &:not(.sub-item) {
       a {
-        @extend %horizontal-nav-items-roundness;
+        @extend %horizontal-nav-top-level-item-label;
 
         &.router-link-active {
           @extend %nav-link-active-styles;
@@ -111,7 +111,7 @@
       }
 
       > .popper-triggerer > .nav-group-label {
-        @extend %horizontal-nav-items-roundness;
+        @extend %horizontal-nav-top-level-item-label;
       }
 
       &.active {
@@ -130,6 +130,16 @@
     &.sub-item {
       &.active {
         @include coreMixins.active-states("> .popper-triggerer > .nav-group-label::before");
+      }
+
+      // Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links])
+      .sub-item {
+        .nav-item-icon {
+          @include mixins.icon-size(1rem);
+
+          // ℹ️ ml will be normal icon font-size - small icon font-size / 2
+          margin-inline-start: 0.3rem;
+        }
       }
     }
 

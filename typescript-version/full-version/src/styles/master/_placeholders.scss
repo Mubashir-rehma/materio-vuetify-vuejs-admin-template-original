@@ -3,8 +3,7 @@
 @use "@core/scss/mixins";
 
 // SECTION Vertical nav
-// TODO: This placeholder is too specific. Make it more generic (changing the name will do the trick).
-%vertical-nav-items-roundness {
+%vertical-nav-item-label {
   border-radius: 0.4rem;
 }
 
@@ -40,8 +39,7 @@
   padding: 0.7rem 1rem;
 }
 
-// TODO: This placeholder is too specific. Make it more generic (changing the name will do the trick).
-%horizontal-nav-items-roundness {
+%horizontal-nav-top-level-item-label {
   border-radius: 0.4rem;
 }
 

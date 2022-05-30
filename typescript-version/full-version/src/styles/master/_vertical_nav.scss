@@ -80,7 +80,7 @@
 
       > :first-child {
         @extend %vertical-nav-item;
-        @extend %vertical-nav-items-roundness;
+        @extend %vertical-nav-item-label;
 
         // ❗ This is just for quick styling please do not use this in template style
         transition: background-color 0.15s ease-in-out;

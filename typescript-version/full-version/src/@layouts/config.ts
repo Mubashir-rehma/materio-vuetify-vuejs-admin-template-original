@@ -3,7 +3,6 @@ import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarTy
 import type { Config } from '@layouts/types'
 import { breakpointsVuetify } from '@vueuse/core'
 
-// TODO: Try to optimize this object so whole object is not reactive
 export const config: Config = {
   app: {
     title: 'Title',

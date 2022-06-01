@@ -1,17 +1,15 @@
 @use "vuetify/lib/styles/tools/elevation" as elevation;
 @use "./variables";
+@use "./placeholders";
 
 .layout-wrapper.layout-nav-type-horizontal {
   .layout-navbar-and-nav-container {
-    @include elevation.elevation(3);
+    @extend %default-layout-horizontal-nav-navbar-and-nav-container;
   }
 
   // 👉 Navbar
   .layout-navbar {
-    box-sizing: border-box;
-    background-color: rgb(var(--v-theme-surface));
-    /* stylelint-disable-next-line color-function-notation */
-    border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    @extend %default-layout-horizontal-nav-navbar;
   }
 
   // 👉 Layout content container
@@ -22,14 +20,13 @@
   }
 
   .layout-horizontal-nav {
-    box-sizing: border-box;
-    padding: variables.$horizontal-nav-padding;
-    background-color: rgb(var(--v-theme-surface));
+    @extend %default-layout-horizontal-nav-nav;
   }
 
   // 👉 App footer
+  // TODO: Refactor this once we add style for footer variants
   .layout-footer {
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     background-color: rgb(var(--v-theme-surface));
     box-shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
   }

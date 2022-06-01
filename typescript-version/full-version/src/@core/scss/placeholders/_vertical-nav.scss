@@ -1,0 +1,50 @@
+@use "@core/scss/mixins";
+@use "../variables";
+
+// Nav items styles (including section title)
+%vertical-nav-item {
+  padding: 0 0.75rem;
+  margin: 0 variables.$vertical-nav-horizontal-spacing;
+  white-space: nowrap;
+}
+
+// This is same as `%vertical-nav-item` except section title is excluded
+%vertical-nav-item-interactive {
+  block-size: 2.75rem;
+  border-radius: 0.4rem;
+}
+
+// Common styles for nav item icon styles
+// ℹ️ Nav group's children icon styles are not here (Adjusts height, width & margin)
+%vertical-nav-items-icon {
+  flex-shrink: 0;
+  margin-inline-end: 1rem;
+}
+
+// Open & Active nav group styles
+%vertical-nav-group-open-active {
+  @include mixins.active-states;
+}
+
+// Section title
+%vertical-nav-section-title {
+  /* stylelint-disable-next-line color-function-notation */
+  color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+}
+
+// Vertical nav item badge styles
+%vertical-nav-item-badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+
+  // TODO: This should be assigned via vertical nav config
+  background-color: #9155fd;
+  border-radius: 1.5rem;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}

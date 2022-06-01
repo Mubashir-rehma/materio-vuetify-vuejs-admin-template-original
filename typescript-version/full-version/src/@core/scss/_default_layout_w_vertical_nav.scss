@@ -1,25 +1,15 @@
 @use "@configured-variables" as variables;
-
-%scrolled-sticky-nav-styles {
-  background-color: rgb(var(--v-theme-surface));
-}
-
-%navbar-blur-styles {
-  backdrop-filter: blur(8px);
-  /* stylelint-disable-next-line color-function-notation */
-  background-color: rgb(var(--v-theme-surface), 0.9);
-  box-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
-}
+@use "./placeholders";
 
 .layout-wrapper.layout-nav-type-vertical {
   // Scrolled styles
   &.window-scrolled {
     &.layout-navbar-sticky {
       .layout-navbar {
-        @extend %scrolled-sticky-nav-styles;
+        @extend %default-layout-vertical-nav-scrolled-sticky-nav;
 
         &.navbar-blur {
-          @extend %navbar-blur-styles;
+          @extend %default-layout-vertical-nav-navbar-blur;
         }
       }
 
@@ -27,12 +17,12 @@
         &.layout-content-width-boxed .layout-navbar {
           &.navbar-blur {
             .navbar-content-container {
-              @extend %navbar-blur-styles;
+              @extend %default-layout-vertical-nav-navbar-blur;
             }
           }
 
           .navbar-content-container {
-            @extend %scrolled-sticky-nav-styles;
+            @extend %default-layout-vertical-nav-scrolled-sticky-nav;
           }
         }
       }
@@ -45,6 +35,7 @@
     transition: padding 0.2s ease, background-color 0.18s ease, left 0.3s ease;
   }
 
+  // This will get applied when content width is fluid
   .layout-navbar {
     padding: 1.2rem;
   }
@@ -121,6 +112,7 @@
   // }
 
   // 👉 Layout footer
+  // TODO: Refactor this once we add style for footer variants
   .layout-footer {
     padding: 1.2rem 0;
     background-color: rgb(var(--v-theme-surface));

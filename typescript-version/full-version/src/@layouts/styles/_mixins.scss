@@ -8,14 +8,6 @@
   }
 }
 
-@mixin logical($property, $ltr_value, $rtl_value) {
-  #{$property}: $ltr_value;
-
-  @include rtl {
-    #{$property}: $rtl_value;
-  }
-}
-
 // Mixin that accepts number and apply height width in rem
 @mixin icon-size($size) {
   block-size: $size;

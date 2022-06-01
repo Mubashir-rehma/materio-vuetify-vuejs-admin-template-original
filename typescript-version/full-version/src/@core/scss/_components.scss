@@ -1,0 +1,32 @@
+@use "mixins";
+@use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
+
+// 👉 Avatar
+
+// ℹ️ Avatar light bg
+@include mixins.light-bg-provider(v-avatar);
+
+// 👉 Avatar group
+.v-avatar-group {
+  display: flex;
+  align-items: center;
+
+  > * {
+    &:not(:first-child) {
+      margin-inline-start: -0.8rem;
+    }
+
+    transition: transform 0.25s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      z-index: 2;
+      transform: translateY(-5px) scale(1.05);
+
+      @include mixins_elevation.elevation(3);
+    }
+  }
+
+  > .v-avatar {
+    border: 2px solid rgb(var(--v-theme-surface));
+  }
+}

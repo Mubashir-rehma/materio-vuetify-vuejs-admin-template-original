@@ -1,0 +1,59 @@
+// TODO: Use `layoutsMixins` as alias for layout's mixins
+@use "@layouts/styles/mixins" as layoutsMixins;
+
+// Horizontal nav item styles (including nested)
+%horizontal-nav-item {
+  padding: 0.6rem 1rem;
+}
+
+// Top level horizontal nav item styles (`a` tag & group label)
+%horizontal-nav-top-level-item {
+  border-radius: 0.4rem;
+}
+
+// Active styles for sub nav link
+%horizontal-nav-sub-nav-link-active {
+  /* stylelint-disable-next-line color-function-notation */
+  background: rgba(var(--v-theme-primary), 0.1);
+  color: rgb(var(--v-theme-primary));
+}
+
+// Popper content styles when it's hidden
+%horizontal-nav-popper-content-hidden {
+  display: none;
+}
+
+// Popper content styles when it's shown
+%horizontal-nav-popper-content-visible {
+  display: block;
+}
+
+// Horizontal nav item icon (Including sub nav items)
+%horizontal-nav-item-icon {
+  margin-inline-end: 0.75rem;
+}
+
+// Horizontal nav subitem
+%horizontal-nav-subitem {
+  min-inline-size: 12rem;
+}
+
+// Styles for third level item icon/ (e.g. Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links]))
+%third-level-nav-item-icon {
+  @include layoutsMixins.icon-size(1rem);
+
+  // ℹ️ ml will be normal icon font-size - small icon font-size / 2
+  margin-inline-start: 0.3rem;
+}
+
+// Horizontal nav item title
+%horizontal-nav-item-title {
+  margin-inline-end: 0.3rem;
+}
+
+// Popper content styles
+%horizontal-nav-popper-content {
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 3px rgb(0 0 0 / 10%);
+  padding-block: 0.3rem;
+}

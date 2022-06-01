@@ -1,12 +1,12 @@
 @use "./placeholders";
 @use "./variables";
-@use "@layouts/styles/mixins";
-@use "@core/scss/mixins" as coreMixins;
+@use "@layouts/styles/mixins" as layoutsMixins;
+@use "@core/scss/mixins";
 
 .layout-horizontal-nav {
   // 👉 Icon styles
   .nav-item-icon {
-    margin-inline-end: 0.75rem;
+    @extend %horizontal-nav-item-icon;
   }
 
   // 👉 Common styles for nav group & nav link
@@ -20,7 +20,7 @@
 
     // Set width of inner nav group and link
     &.sub-item {
-      min-inline-size: 12rem;
+      @extend %horizontal-nav-subitem;
     }
   }
 
@@ -30,19 +30,19 @@
       @extend %horizontal-nav-item;
 
       // Adds before psudo element to style hover state
-      @include coreMixins.state-before;
+      @include mixins.before-pseudo;
 
       // Adds vuetify states
-      @include coreMixins.states($active: false);
+      @include mixins.states($active: false);
     }
 
     // 👉 Top level nav link
     &:not(.sub-item) {
       a {
-        @extend %horizontal-nav-top-level-item-label;
+        @extend %horizontal-nav-top-level-item;
 
         &.router-link-active {
-          @extend %nav-link-active-styles;
+          @extend %nav-link-active;
         }
       }
     }
@@ -52,7 +52,7 @@
       a {
         &.router-link-active {
           // ℹ️ We will not use active styles from material here because we want to use primary color for active link
-          @extend %horizontal-nav-sub-nav-link-styles;
+          @extend %horizontal-nav-sub-nav-link-active;
         }
       }
     }
@@ -70,10 +70,10 @@
 
     > .popper-triggerer > .nav-group-label {
       // Adds before psudo element to style hover state
-      @include coreMixins.state-before;
+      @include mixins.before-pseudo;
 
       // Adds vuetify states
-      @include coreMixins.states($active: false);
+      @include mixins.states($active: false);
     }
 
     // 👉 Top level group
@@ -103,7 +103,7 @@
       // Enable the pseudo bridge when content is shown by setting pointer events to `auto`
       &.show-content > .popper-triggerer::after {
         /*
-          ℹ️ We have added `z-index: 2` because where there is horizontal nav item below the popper trigger (group)
+          ℹ️ We have added `z-index: 2` because when there is horizontal nav item below the popper trigger (group)
             without this style nav item below popper trigger (group) gets focus hence closes the popper content
         */
         z-index: 2;
@@ -111,12 +111,12 @@
       }
 
       > .popper-triggerer > .nav-group-label {
-        @extend %horizontal-nav-top-level-item-label;
+        @extend %horizontal-nav-top-level-item;
       }
 
       &.active {
         > .popper-triggerer > .nav-group-label {
-          @extend %nav-link-active-styles;
+          @extend %nav-link-active;
         }
       }
 
@@ -129,22 +129,19 @@
     // 👉 Sub group
     &.sub-item {
       &.active {
-        @include coreMixins.active-states("> .popper-triggerer > .nav-group-label::before");
+        @include mixins.active-states("> .popper-triggerer > .nav-group-label::before");
       }
 
       // Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links])
       .sub-item {
         .nav-item-icon {
-          @include mixins.icon-size(1rem);
-
-          // ℹ️ ml will be normal icon font-size - small icon font-size / 2
-          margin-inline-start: 0.3rem;
+          @extend %third-level-nav-item-icon;
         }
       }
     }
 
     .nav-group-arrow {
-      @include mixins.icon-size(1.25rem);
+      @include layoutsMixins.icon-size(1.25rem);
 
       /*
         ℹ️ ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)
@@ -157,33 +154,30 @@
       .nav-group-arrow {
         transform: rotateZ(270deg);
 
-        @include mixins.rtl {
+        @include layoutsMixins.rtl {
           transform: rotateZ(90deg);
         }
       }
     }
 
     .nav-item-title {
-      margin-inline-end: 0.3rem;
+      @extend %horizontal-nav-item-title;
     }
 
     .popper-content {
-      @extend %horizontal-nav-popper-content-initial-styles;
+      @extend %horizontal-nav-popper-content-hidden;
+      @extend %horizontal-nav-popper-content;
 
       background-color: rgb(var(--v-theme-surface));
-      border-radius: 6px;
-      box-shadow: 0 2px 5px 3px rgb(0 0 0 / 10%);
-      padding-block: 0.3rem;
 
       // Set max-height for the popper content
       > div {
-        // 120px is combined height of navbar & horizontal nav
-        max-block-size: calc((var(--vh, 1vh) * 100) - 120px - 4rem);
+        max-block-size: variables.$horizontal-nav-popper-content-max-height;
       }
     }
 
     &.show-content > .popper-content {
-      @extend %horizontal-nav-popper-content-visible-styles;
+      @extend %horizontal-nav-popper-content-visible;
     }
   }
 

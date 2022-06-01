@@ -1,0 +1,34 @@
+// 👉 Demo spacers
+// TODO: Use vuetify SCSS variable here
+$card-spacer-content: 16px;
+
+.demo-space-x {
+  margin-block-start: -$card-spacer-content;
+
+  & > * {
+    margin-block-start: $card-spacer-content;
+    margin-inline-end: $card-spacer-content;
+  }
+}
+
+.demo-space-y {
+  & > * {
+    margin-block-end: $card-spacer-content;
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+  }
+}
+
+// 👉 Card match height
+.match-height.v-row {
+  .v-card {
+    block-size: 100%;
+  }
+}
+
+// 👉 Whitespace
+.whitespace-no-wrap {
+  white-space: nowrap;
+}

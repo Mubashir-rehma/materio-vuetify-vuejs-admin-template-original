@@ -64,6 +64,7 @@
     "vue-tsc": "^0.34.16",
     "vuetify-loader": "^1.7.3"
   },
+  "packageManager": "yarn@1.22.18",
   "resolutions": {
     "postcss": "8",
     "stylelint-order": "5",

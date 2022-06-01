@@ -1,19 +1,58 @@
 @use "sass:map";
+@use "sass:string";
+@use "@core/scss/variables";
 @use "vuetify/styles" as * with (
   $color-pack: false,
   $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
   $card-elevation: 6,
-  // $card-item-padding: 20px,
-  // $card-text-padding: 20px,
-  // $card-actions-padding: 12px, /* It is $card-item-padding - button_padding */
-  // $card-actions-min-height: unset,
+  $card-title-line-height: 1.6,
+  $card-actions-min-height: unset,
+  $card-text-padding: 20px,
+  $card-item-padding: 20px,
+
+  /* 0 ($card-item-padding - $button-card-actions-padding-x) ($card-item-padding - $button-card-actions-padding-x) */
+  $card-actions-padding: 0 12px 12px,
 );
 
-// ========================================
-// ==== Vuetify overrides
-// ========================================
+/*
+  ℹ️ We created this SCSS var to calculate accurate $card-actions-padding [$card-item-padding - $button-card-actions-padding(only x value)]
 
-// font-color override
+  Docs: https://sass-lang.com/documentation/modules/string
+
+  $button-card-actions-padding => 0 8px;
+  string.index(#{$button-card-actions-padding}, " ") + 1 => 2
+    string.index(#{$button-card-actions-padding}, " ") => 1
+
+  string.slice(0 8px, 2, -1) => 8px => $card-actions-padding-x
+*/
+$card-actions-padding-x: string.slice(
+  #{$button-card-actions-padding},
+  string.index(#{$button-card-actions-padding}, " ") + 1,
+  -1
+);
+
+// @debug $card-actions-padding-x;
+
+// 👉 Card
+// Removes padding-top for immediately placed v-card-text after itself
+.v-card-text {
+  & + & {
+    padding-block-start: 0;
+  }
+}
+
+// 👉 Grid
+// Remove margin-bottom of v-input_details inside grid (validation error message)
+.v-row {
+  .v-col,
+  [class^="v-col-*"] {
+    .v-input__details {
+      margin-block-end: 0;
+    }
+  }
+}
+
+// 👉 Typography
 h1,
 h2,
 h3,
@@ -34,7 +73,6 @@ h6,
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 
-// text class color override
 .v-application,
 .text-body-1,
 .text-body-2,
@@ -45,109 +83,13 @@ h6,
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 }
 
-// We will write styles that are missing in v3 of vuetify comparing to v2
-
-p {
-  margin-block-end: 1rem;
+// 👉 CSS Variables
+.v-theme--light {
+  --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "light")} !important;
+  --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "light")} !important;
 }
 
-.text-white {
-  // We had to provide !important because badge icon don't get color white without !important
-  color: #fff !important;
-}
-
-// Remove once merged: https://github.com/vuetifyjs/vuetify/pull/15048
-.v-card-text {
-  & + & {
-    padding-block-start: 0;
-  }
-}
-
-// Remove it onces fixed
-.v-avatar {
-  flex-shrink: 0;
-}
-
-// ========================================
-// SECTION: Vuetify loader issues
-// ========================================
-
-// SECTION: Can't override $card-item-padding var
-// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
-// After solution: Add `$card-item-padding: 20px` variable override
-
-.v-card-header {
-  padding: 20px;
-}
-
-// !SECTION
-
-// SECTION: Can't override $card-text-padding var
-// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
-// After solution: Add `$card-text-padding: 20px` variable override
-
-.v-card-content,
-.v-card-text {
-  padding: 20px;
-}
-
-// !SECTION
-
-// SECTION: Can't override $card-actions-padding var
-// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
-// After solution: Calculate "$card-item-padding - button_padding" then Add `$card-text-padding: $value` variable override
-
-.v-card-actions {
-  padding: 0 12px 12px;
-}
-
-// !SECTION
-
-// SECTION: Can't override $card-actions-min-height var
-// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
-// After solution: Add `$card-actions-min-height: unset` variable override
-
-// Vuetify overrides
-.v-card-actions {
-  min-block-size: unset;
-}
-
-// !SECTION
-
-// SECTION: Can't override $card-title-line-height var
-// Issue: https://github.com/vuetifyjs/vuetify/issues/14446
-// After solution: Resolve todo LINK: src/@core/vuetify.scss:1
-
-// Vuetify overrides
-.v-card .v-card-title {
-  line-height: 1.6;
-}
-
-// Remove margin-bottom of v-input_details (validation error message)
-.v-row {
-  .v-col,
-  [class^="v-col-*"] {
-    .v-input__details {
-      margin-block-end: 0;
-    }
-  }
-}
-
-// !SECTION
-
-// !SECTION
-
-// TODO Mixin should be moved in mixin file
-@mixin elevation($z, $important: false) {
-  /* stylelint-disable-next-line max-line-length */
-  box-shadow: map.get($shadow-key-umbra, $z), map.get($shadow-key-penumbra, $z), map.get($shadow-key-ambient, $z) if($important, !important, null);
-}
-
-// Avatar Group
-.v-avatar-group {
-  > * {
-    &:hover {
-      @include elevation(2);
-    }
-  }
+.v-theme--dark {
+  --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "dark")} !important;
+  --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "dark")} !important;
 }

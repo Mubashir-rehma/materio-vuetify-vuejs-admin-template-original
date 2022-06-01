@@ -1,0 +1,17 @@
+@use "vuetify/lib/styles/tools/elevation" as elevation;
+@use "../variables";
+
+%default-layout-horizontal-nav-navbar-and-nav-container {
+    @include elevation.elevation(3);
+}
+
+%default-layout-horizontal-nav-navbar {
+    background-color: rgb(var(--v-theme-surface));
+    /* stylelint-disable-next-line color-function-notation */
+    border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+}
+
+%default-layout-horizontal-nav-nav {
+    padding: variables.$horizontal-nav-padding;
+    background-color: rgb(var(--v-theme-surface));
+}

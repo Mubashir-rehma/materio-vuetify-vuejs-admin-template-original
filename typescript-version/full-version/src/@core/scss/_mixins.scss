@@ -13,7 +13,7 @@
 }
 
 // ℹ️ This mixin is inspired from vuetify for adding hover styles via before pseudo element
-@mixin state-before() {
+@mixin before-pseudo() {
   position: relative;
 
   &::before {
@@ -30,6 +30,7 @@
 }
 
 // ℹ️ This is exact copy of vuetify mixin "states" (packages/vuetify/src/styles/tools/_states.sass)
+// TODO: Use vuetify mixin if possible
 @mixin states($selector: "&::before", $active: true) {
   &:hover {
     #{$selector} {
@@ -84,5 +85,15 @@
       opacity: $opacity;
       pointer-events: none;
     }
+  }
+}
+
+@mixin bordered-skin($component, $border-property: "border", $important: false) {
+  #{$component} {
+    background-color: rgb(var(--v-theme-background));
+    box-shadow: none !important;
+
+    /* stylelint-disable-next-line color-function-notation */
+    #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
   }
 }

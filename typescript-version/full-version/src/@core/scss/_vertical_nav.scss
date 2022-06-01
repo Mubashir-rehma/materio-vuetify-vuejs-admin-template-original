@@ -1,18 +1,18 @@
 @use "./placeholders";
-@use "@layouts/styles/mixins";
-@use "@core/scss/mixins" as coreMixins;
+@use "@layouts/styles/mixins" as layoutsMixins;
+@use "./variables";
+@use "@core/scss/mixins" as mixins;
 
 .layout-nav-type-vertical {
   // 👉 Layout Vertical nav
   .layout-vertical-nav {
-    background-color: rgb(var(--v-theme-surface));
+    background-color: variables.$vertical-nav-background-color;
 
     // 👉 Nav header
     .nav-header {
       overflow: hidden;
-
-      // 👉 Vertical nav header
-      padding: 1rem 1.3rem;
+      padding: variables.$vertical-nav-header-padding;
+      block-size: variables.$vertical-nav-header-height;
 
       // TEMPLATE: Check if we need to move this to master
       .app-logo {
@@ -21,18 +21,20 @@
       }
 
       .app-title {
-        margin-inline-start: 0.9rem;
+        margin-inline-start: variables.$vertical-nav-header-logo-title-spacing;
       }
     }
 
     // 👉 Nav section title
+    // TODO: Section title shouldn't behave weirdly with padding.
     .nav-section-title {
       @extend %vertical-nav-item;
+      @extend %vertical-nav-section-title;
 
-      opacity: 0.35;
+      margin-block-end: variables.$vertical-nav-section-title-mb;
 
       &:not(:first-child) {
-        padding-block-start: 2rem;
+        margin-block-start: variables.$vertical-nav-section-title-mt;
       }
 
       .placeholder-icon {
@@ -42,17 +44,7 @@
 
     // Nav item badge
     .nav-item-badge {
-      display: inline-block;
-      padding: 0.35em 0.65em;
-      background-color: #9155fd;
-      border-radius: 1.5rem;
-      color: #fff;
-      font-size: 0.75em;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      vertical-align: baseline;
-      white-space: nowrap;
+      @extend %vertical-nav-item-badge;
     }
 
     // 👉 Nav group & Link
@@ -60,31 +52,9 @@
     .nav-group {
       overflow: hidden;
 
-      // &.active {
-      //   > :first-child {
-      //     background-color: color.adjust(#fff, $lightness: -7%);
-      //   }
-      // }
-
-      // ❗ This is just for quick styling please do not use this in template style
-      // ℹ️ `active` class is added to li tag which is parent of `:first-child` and `router-link-active` class added to first child of li tag
-      // &:not(.active) {
-      //   > :first-child {
-      //     &:not(.router-link-active) {
-      //       &:hover {
-      //         background-color: color.adjust(#fff, $lightness: -3%);
-      //       }
-      //     }
-      //   }
-      // }
-
       > :first-child {
         @extend %vertical-nav-item;
-        @extend %vertical-nav-item-label;
-
-        // ❗ This is just for quick styling please do not use this in template style
-        transition: background-color 0.15s ease-in-out;
-        will-change: background-color;
+        @extend %vertical-nav-item-interactive;
       }
 
       .nav-item-icon {
@@ -92,7 +62,7 @@
       }
 
       &.disabled {
-        opacity: 0.35;
+        opacity: rgb(var(--v-disabled-opacity));
         pointer-events: none;
       }
     }
@@ -100,15 +70,15 @@
     // 👉 Vertical nav link
     .nav-link {
       > .router-link-exact-active {
-        @extend %nav-link-active-styles;
+        @extend %nav-link-active;
       }
 
       > a {
         // Adds before psudo element to style hover state
-        @include coreMixins.state-before;
+        @include mixins.before-pseudo;
 
         // Adds vuetify states
-        @include coreMixins.states($active: false);
+        @include mixins.states($active: false);
       }
     }
 
@@ -118,9 +88,9 @@
       .nav-group,
       .nav-link {
         .nav-item-icon {
-          @include mixins.icon-size(0.9rem);
+          @include layoutsMixins.icon-size(0.9rem);
 
-          // ℹ️ ml will be normal icon font-size - small icon font-size / 2
+          // ℹ️ ml will be (normal icon font-size - small icon font-size) / 2
           margin-inline-start: 0.3rem;
         }
       }
@@ -135,7 +105,7 @@
       .nav-group-arrow {
         flex-shrink: 0;
         transform-origin: center;
-        transition: transform 0.15s ease-in-out;
+        transition: transform variables.$vertical-nav-nav-group-arrow-transition-duration variables.$vertical-nav-nav-group-arrow-transition-timing-function;
         will-change: transform;
       }
 
@@ -146,18 +116,20 @@
         }
       }
 
+      // Nav group label
       > :first-child {
         // Adds before psudo element to style hover state
-        @include coreMixins.state-before;
+        @include mixins.before-pseudo;
 
         // Adds vuetify states
-        @include coreMixins.states($active: false);
+        @include mixins.states($active: false);
       }
 
+      // Active & open states for nav group label
       &.active,
       &.open {
         > :first-child {
-          @extend %nav-group-open-active-styles;
+          @extend %vertical-nav-group-open-active;
         }
       }
     }
@@ -167,10 +139,10 @@
     .layout-vertical-nav {
       &:not(.hovered) {
         .app-logo {
-          transform: translateX(4px);
+          transform: translateX(variables.$vertical-nav-mini-logo-translate-x);
 
-          @include mixins.rtl {
-            transform: translateX(-4px);
+          @include layoutsMixins.rtl {
+            transform: translateX(-(variables.$vertical-nav-mini-logo-translate-x));
           }
         }
       }
@@ -179,6 +151,7 @@
 }
 
 // 👉 Transitions
+// TODO: While we transition from mini to hovered state for vertical nav, items move vertically
 .vertical-nav-section-title-enter-active,
 .vertical-nav-section-title-leave-active {
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
@@ -189,7 +162,7 @@
   opacity: 0;
   transform: translateX(15px);
 
-  @include mixins.rtl {
+  @include layoutsMixins.rtl {
     transform: translateX(-15px);
   }
 }
@@ -204,7 +177,7 @@
   opacity: 0;
   transform: translateX(-15px);
 
-  @include mixins.rtl {
+  @include layoutsMixins.rtl {
     transform: translateX(15px);
   }
 }
@@ -219,7 +192,7 @@
   opacity: 0;
   transform: translateX(-15px);
 
-  @include mixins.rtl {
+  @include layoutsMixins.rtl {
     transform: translateX(15px);
   }
 }

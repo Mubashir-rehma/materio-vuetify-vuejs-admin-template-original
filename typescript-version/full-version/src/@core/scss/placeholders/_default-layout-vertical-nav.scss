@@ -1,0 +1,11 @@
+%default-layout-vertical-nav-scrolled-sticky-nav {
+    background-color: rgb(var(--v-theme-surface));
+}
+
+// Check do we need this in default layout w/ horizontal nav
+%default-layout-vertical-nav-navbar-blur {
+    backdrop-filter: blur(8px);
+    /* stylelint-disable-next-line color-function-notation */
+    background-color: rgb(var(--v-theme-surface), 0.9);
+    box-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
+}

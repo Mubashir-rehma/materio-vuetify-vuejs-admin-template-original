@@ -1,6 +1,9 @@
 @use "sass:map";
 @use "sass:string";
 @use "@core/scss/variables";
+
+// @use "vuetify/lib/styles/settings/elevations" as vuetify_default_elevations;
+// @use "vuetify/lib/styles/tools/functions" as vuetify_functions;
 @use "vuetify/styles" as * with (
   $color-pack: false,
   $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
@@ -12,6 +15,34 @@
 
   /* 0 ($card-item-padding - $button-card-actions-padding-x) ($card-item-padding - $button-card-actions-padding-x) */
   $card-actions-padding: 0 12px 12px,
+
+  $shadow-key-umbra-opacity: rgba(var(--v-theme-on-surface), 0.08),
+  $shadow-key-penumbra-opacity: rgba(var(--v-theme-on-surface), 0.12),
+  $shadow-key-ambient-opacity: rgba(var(--v-theme-on-surface), 0.04),
+
+  // // ℹ️ It uses above $shadow-key-umbra-opacity (Which we can't access while configuring)
+  // $shadow-key-umbra: vuetify_functions.map-deep-merge(
+  //   (
+  //     6: (0 4px 5px -2px rgba(var(--v-theme-on-surface), 0.08)),
+  //   ),
+  //   vuetify_default_elevations.$shadow-key-umbra
+  // ),
+
+  // // ℹ️ It uses above $shadow-key-penumbra-opacity (Which we can't access while configuring)
+  // $shadow-key-penumbra: vuetify_functions.map-deep-merge(
+  //   (
+  //     6: (0 2px 10px 1px rgba(var(--v-theme-on-surface), 0.12)),
+  //   ),
+  //   vuetify_default_elevations.$shadow-key-penumbra
+  // ),
+
+  // // ℹ️ It uses above $shadow-key-ambient-opacity (Which we can't access while configuring)
+  // $shadow-key-ambient: vuetify_functions.map-deep-merge(
+  //   (
+  //     6: (0 2px 16px 1px rgba(var(--v-theme-on-surface), 0.04)),
+  //   ),
+  //   vuetify_default_elevations.$shadow-key-ambient
+  // ),
 );
 
 /*

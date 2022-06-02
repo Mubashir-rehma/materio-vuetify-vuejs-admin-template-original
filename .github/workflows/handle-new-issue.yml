@@ -12,27 +12,30 @@ jobs:
         uses: themeselection/gh-action-comment-on-new-issue@v4.0.1
         with:
           message: |
-            ### Hi there <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
-            Thanks a lot for getting in touch with us. Your support has been raised, our response time could be 1 - 2 business days.
-            In the meantime, feel free to check out related issues in the repository for more help. We really appreciate your patience.
+            ### Hi [@${{ github.actor }}](https://github.com/${{ github.actor }}) <img src="https://user-images.githubusercontent.com/47495003/171637050-b790338b-c8fd-4807-af43-19c6fd6713ed.gif" height="25px" width="25px">
+            Thanks a lot for purchasing our theme and getting in touch with us.
+
+            Your support has been raised, our response time could be 1 - 2 business days.
+            In the meantime, feel free to check out related issues in the repository for more help.
+
+            We really appreciate your patience.
           raise-support-using-form-msg: |
             Thanks for creating an issue ☺️
 
-            It seems our [raise support](https://themeselection.com/tools/github/raise-support) form was skipped while creating this issue.
-
+            It seems our [raise support](https://tools.themeselection.com/github/raise-support) form was skipped while creating this issue.
             Please consider raising support via our support form only which will create issues using essential information we need to resolve your query quickly.
 
-            This will help in growing an excellent community where,
+            This will help in growing an excellent community, where:
 
             - Other people can get it resolved if they have the same query
             - We can easily understand your query
             - Community at a later stage can also provide you solutions/suggestions
 
             Closing this issue.
-
             Regards.
+
       - name: Find duplicates
-        uses: wow-actions/potential-duplicates@v1.0.8
+        uses: wow-actions/potential-duplicates@v1.0.9
         with:
           GITHUB_TOKEN: ${{ github.token }}
           label: duplicate

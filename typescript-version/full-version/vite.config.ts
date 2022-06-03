@@ -75,6 +75,7 @@ export default defineConfig({
       '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/styles/_variables.scss', import.meta.url)),
       '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
+      'apexcharts': path.resolve(__dirname, 'node_modules/apexcharts-clevision'),
     },
   },
 })

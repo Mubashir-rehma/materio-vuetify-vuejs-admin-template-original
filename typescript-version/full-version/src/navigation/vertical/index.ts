@@ -118,6 +118,14 @@ export default [
     icon: 'i-mdi-checkbox-marked-circle-outline',
     to: 'forms-form-validation',
   },
+  { heading: 'Charts & Maps' },
+  {
+    title: 'Charts',
+    icon: 'i-mdi-chart-donut',
+    children: [
+      { title: 'Apex Chart', to: 'charts-and-maps-charts-apex-chart' },
+    ],
+  },
   { heading: 'Other' },
   {
     title: 'Nav Levels',

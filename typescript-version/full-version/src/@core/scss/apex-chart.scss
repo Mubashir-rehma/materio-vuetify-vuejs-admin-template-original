@@ -1,0 +1,151 @@
+.apexcharts-canvas {
+  .apexcharts-text,
+  .apexcharts-tooltip-text,
+  .apexcharts-datalabel-label,
+  .apexcharts-datalabel,
+  .apexcharts-datalabel-value {
+    /* stylelint-disable-next-line color-function-notation */
+    fill: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  }
+
+  // tooltips color
+  .apexcharts-tooltip {
+    /* stylelint-disable-next-line color-function-notation */
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  }
+
+  // hide dotted line in area chart
+  .apexcharts-xcrosshairs {
+    &.apexcharts-active {
+      opacity: 0;
+    }
+  }
+
+  // yaxis line
+  line[stroke="transparent"] {
+    display: none;
+  }
+
+  // tooltip
+  .apexcharts-tooltip {
+    /* stylelint-disable-next-line color-function-notation */
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    background: rgb(var(--v-theme-surface)) !important;
+
+    .apexcharts-tooltip-title {
+      /* stylelint-disable-next-line color-function-notation */
+      border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+      background: rgb(var(--v-theme-surface)) !important;
+      font-weight: 600;
+    }
+  }
+
+  .apexcharts-xaxistooltip,
+  .apexcharts-yaxistooltip {
+    /* stylelint-disable-next-line color-function-notation */
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+    background: rgb(var(--v-theme-surface));
+    /* stylelint-disable-next-line color-function-notation */
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  }
+
+  .apexcharts-xaxistooltip {
+    &::after {
+      border-block-end-color: rgb(var(--v-theme-surface));
+    }
+  }
+
+  .apexcharts-yaxistooltip {
+    &::before {
+      border-inline-start-color: rgb(var(--v-theme-surface));
+    }
+  }
+
+  .apexcharts-text,
+  .apexcharts-tooltip-text,
+  .apexcharts-datalabel-label,
+  .apexcharts-datalabel {
+    filter: none;
+    font-family: inherit !important;
+    font-weight: 400;
+  }
+
+  .apexcharts-pie-label {
+    fill: white;
+    filter: none;
+  }
+
+  .apexcharts-pie {
+    .apexcharts-pie-series .apexcharts-pie-area {
+      stroke-width: 0;
+    }
+
+    .apexcharts-datalabel-label,
+    .apexcharts-datalabel-value {
+      font-size: 1.5rem;
+    }
+  }
+
+  .apexcharts-marker {
+    box-shadow: none;
+  }
+
+  // legend text
+  .apexcharts-legend-series {
+    & + .apexcharts-legend-series {
+      margin-block-start: 0.625rem;
+    }
+
+    .apexcharts-legend-text {
+      /* stylelint-disable-next-line color-function-notation */
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
+      font-family: inherit !important;
+      font-size: 1rem !important;
+      margin-inline-start: 0.5rem;
+    }
+  }
+
+  .apexcharts-inner {
+    &.apexcharts-graphical {
+      .apexcharts-datalabels {
+        .apexcharts-text {
+          fill: rgb(var(--v-theme-on-primary)) !important;
+        }
+      }
+    }
+  }
+
+  .apexcharts-xcrosshairs,
+  .apexcharts-ycrosshairs,
+  .apexcharts-gridline {
+    /* stylelint-disable-next-line color-function-notation */
+    stroke: rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+
+  .apexcharts-xaxis,
+  .apexcharts-yaxis {
+    line {
+      /* stylelint-disable-next-line color-function-notation */
+      stroke: rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+  }
+
+  .apexcharts-grid {
+    > line {
+      /* stylelint-disable-next-line color-function-notation */
+      stroke: rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+  }
+}
+
+.apexcharts-legend.position-bottom {
+  inset-block-end: 3rem;
+}
+
+.apexcharts-heatmap {
+  .apexcharts-heatmap-series {
+    rect {
+      stroke: rgb(var(--v-theme-surface));
+    }
+  }
+}

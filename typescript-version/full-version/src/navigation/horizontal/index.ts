@@ -178,6 +178,13 @@ export default [
     ],
   },
   {
+    title: 'Charts & Maps',
+    icon: 'i-mdi-chart-donut',
+    children: [
+      { title: 'Apex Chart', to: 'charts-and-maps-charts-apex-chart' },
+    ],
+  },
+  {
     title: 'Other',
     icon: 'i-mdi-home',
     children: [

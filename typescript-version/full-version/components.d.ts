@@ -5,6 +5,16 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ApexChartAreaChart: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartAreaChart.vue')['default']
+    ApexChartBalance: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartBalance.vue')['default']
+    ApexChartDailySalesStates: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartDailySalesStates.vue')['default']
+    ApexChartDataScience: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartDataScience.vue')['default']
+    ApexChartExpenseRatio: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartExpenseRatio.vue')['default']
+    ApexChartHorizontalBar: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartHorizontalBar.vue')['default']
+    ApexChartMobileComparison: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartMobileComparison.vue')['default']
+    ApexChartNewTechnologiesData: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartNewTechnologiesData.vue')['default']
+    ApexChartStatistics: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartStatistics.vue')['default']
+    ApexChartStockPrice: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartStockPrice.vue')['default']
     AppCardActions: typeof import('./src/@core/components/AppCardActions.vue')['default']
     AppCardCode: typeof import('./src/@core/components/AppCardCode.vue')['default']
     CustomizerSection: typeof import('./src/@core/components/CustomizerSection.vue')['default']

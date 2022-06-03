@@ -13,6 +13,7 @@
     "@floating-ui/dom": "^0.5.1",
     "@mdi/font": "^6.6.96",
     "@vueuse/core": "^8.2.6",
+    "apexcharts-clevision": "^3.28.5",
     "axios": "^0.27.2",
     "axios-mock-adapter": "^1.20.0",
     "jwt-decode": "^3.1.2",
@@ -26,6 +27,7 @@
     "vue-i18n": "^9.1.9",
     "vue-prism-component": "^2.0.0",
     "vue-router": "^4.0.14",
+    "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0",
     "vuetify": "npm:@vuetify/nightly@next",
     "webfontloader": "^1.6.28"

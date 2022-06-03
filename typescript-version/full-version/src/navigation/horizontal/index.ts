@@ -127,39 +127,10 @@ export default [
             title: 'Switch',
             to: 'forms-switch',
           },
-        ],
-      },
-      {
-        title: 'Form Layouts',
-        icon: 'i-mdi-checkbox-marked-circle-outline',
-        to: 'forms-form-layouts',
-      },
-    ],
-  },
-  {
-    title: 'Forms & Tables',
-    icon: 'i-mdi-checkbox-multiple-outline',
-    children: [
-      {
-        title: 'Forms Elements',
-        icon: 'i-mdi-content-copy',
-        children: [
           {
             title: 'File Input',
             to: 'forms-file-input',
           },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Forms & Tables',
-    icon: 'i-mdi-checkbox-multiple-outline',
-    children: [
-      {
-        title: 'Forms Elements',
-        icon: 'i-mdi-content-copy',
-        children: [
           {
             title: 'Textfield',
             to: 'forms-textfield',
@@ -169,6 +140,11 @@ export default [
             to: 'forms-textarea',
           },
         ],
+      },
+      {
+        title: 'Form Layouts',
+        icon: 'i-mdi-content-copy',
+        to: 'forms-form-layouts',
       },
       {
         title: 'Form Validation',
@@ -188,6 +164,13 @@ export default [
     title: 'Other',
     icon: 'i-mdi-home',
     children: [
+      {
+        title: 'Access Control',
+        icon: 'i-mdi-shield-outline',
+        to: 'access-control',
+        action: 'read',
+        subject: 'Auth',
+      },
       {
         title: 'Nav Levels',
         icon: 'i-mdi-menu',

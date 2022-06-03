@@ -1,14 +1,32 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-  <p>Access control</p>
+  <v-row>
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <v-card>
+        <v-card-title>Common</v-card-title>
+        <v-card-text>No ability is required to view this card</v-card-text>
+        <v-card-text class="primary--text">
+          This card is visible to both 'user' and 'admin'
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col
+      v-if="$can('read', 'Admin')"
+      cols="12"
+      md="6"
+    >
+      <v-card>
+        <v-card-title>Analytics</v-card-title>
+        <v-card-text>User with 'Analytics' subject's 'Read' ability can view this card</v-card-text>
+        <v-card-text class="text-danger">
+          This card is visible to 'admin' only
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
-
-<style lang="scss">
-
-</style>
 
 <route lang="yaml">
 meta:

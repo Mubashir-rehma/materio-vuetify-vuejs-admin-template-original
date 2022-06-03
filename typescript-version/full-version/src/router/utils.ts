@@ -20,8 +20,10 @@ export const getUserData = () => {
  * @param {String} userRole Role of user
  */
 export const getHomeRouteForLoggedInUser = (userRole: string) => {
-  if (userRole === 'admin') return '/'
-  if (userRole === 'client') return { name: 'access-control' }
+  if (userRole === 'admin')
+    return '/'
+  if (userRole === 'client')
+    return { name: 'access-control' }
 
   return { name: 'login' }
 }

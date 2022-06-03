@@ -128,6 +128,13 @@ export default [
   },
   { heading: 'Other' },
   {
+    title: 'Access Control',
+    icon: 'i-mdi-shield-outline',
+    to: 'access-control',
+    action: 'read',
+    subject: 'Auth',
+  },
+  {
     title: 'Nav Levels',
     icon: 'i-mdi-menu',
     children: [

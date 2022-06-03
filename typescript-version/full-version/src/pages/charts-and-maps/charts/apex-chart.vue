@@ -230,3 +230,7 @@
     </v-col>
   </v-row>
 </template>
+
+<style lang="scss">
+@use "@core/scss/libs/apex-chart.scss";
+</style>

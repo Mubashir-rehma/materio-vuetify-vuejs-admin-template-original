@@ -18,14 +18,22 @@
   color: rgb(var(--v-theme-primary));
 }
 
+/*
+  ℹ️ This style is required when you don't provide any transition to horizontal nav items via themeConfig `themeConfig.horizontalNav.transition`
+  Also, you have to disable it if you are using transition
+*/
 // Popper content styles when it's hidden
 %horizontal-nav-popper-content-hidden {
-  display: none;
+  // display: none;
 }
 
+/*
+  ℹ️ This style is required when you don't provide any transition to horizontal nav items via themeConfig `themeConfig.horizontalNav.transition`
+  Also, you have to disable it if you are using transition
+*/
 // Popper content styles when it's shown
 %horizontal-nav-popper-content-visible {
-  display: block;
+  // display: block;
 }
 
 // Horizontal nav item icon (Including sub nav items)

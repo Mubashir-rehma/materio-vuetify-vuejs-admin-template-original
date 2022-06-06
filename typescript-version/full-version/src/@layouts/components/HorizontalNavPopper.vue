@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computePosition, flip, shift } from '@floating-ui/dom'
 import { config } from '@layouts/config'
+import { themeConfig } from '@themeConfig'
 
 interface Props {
   popperInlineEnd?: boolean
@@ -24,11 +25,25 @@ const popperContentStyles = ref({
   top: '0px',
 })
 
-const updatePopper = async() => {
+const updatePopper = async () => {
   const { x, y } = await computePosition(refPopperContainer.value, refPopper.value, {
     placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : (props.isRtl ? 'bottom-end' : 'bottom-start'),
     middleware: [flip(), shift()],
-    strategy: 'fixed',
+
+    /*
+      ℹ️ Why we are not using fixed positioning?
+
+      `position: fixed` doesn't work as expected when some CSS properties like `transform` is applied on its parent element.
+      Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/position#values <= See `fixed` value description
+
+      Hence, when we use transitions where transition apply `transform` on its parent element, fixed positioning will not work.
+      (Popper content moves away from the element when parent element transition)
+
+      To avoid this, we use `position: absolute` instead of `position: fixed`.
+
+      NOTE: This issue starts from third level children (Top Level > Sub item > Sub item).
+    */
+    // strategy: 'fixed',
   })
   popperContentStyles.value.left = `${x}px`
   popperContentStyles.value.top = `${y}px`
@@ -43,6 +58,7 @@ until(config.horizontalNav.type)
   .then(() => { useEventListener('scroll', updatePopper) })
 
 const isContentShown = ref(false)
+
 const showContent = () => {
   isContentShown.value = true
   updatePopper()
@@ -55,7 +71,10 @@ const hideContent = () => {
 <template>
   <div
     class="nav-popper"
-    :class="[{'popper-inline-end': popperInlineEnd}, {'show-content': isContentShown}]"
+    :class="[{
+      'popper-inline-end': popperInlineEnd,
+      'show-content': isContentShown,
+    }]"
   >
     <div
       ref="refPopperContainer"
@@ -66,22 +85,63 @@ const hideContent = () => {
       <slot />
     </div>
 
-    <div
-      ref="refPopper"
-      class="popper-content"
-      :style="popperContentStyles"
-      @mouseenter="showContent"
-      @mouseleave="hideContent"
-    >
-      <div>
-        <slot name="content" />
+    <!-- SECTION Popper Content -->
+    <!-- 👉 Without transition -->
+    <template v-if="!themeConfig.horizontalNav.transition">
+      <div
+        ref="refPopper"
+        class="popper-content"
+        :style="popperContentStyles"
+        @mouseenter="showContent"
+        @mouseleave="hideContent"
+      >
+        <div>
+          <slot name="content" />
+        </div>
       </div>
-    </div>
+    </template>
+
+    <!-- 👉 CSS Transition -->
+    <template v-else-if="typeof themeConfig.horizontalNav.transition === 'string'">
+      <Transition :name="themeConfig.horizontalNav.transition">
+        <div
+          v-show="isContentShown"
+          ref="refPopper"
+          class="popper-content"
+          :style="popperContentStyles"
+          @mouseenter="showContent"
+          @mouseleave="hideContent"
+        >
+          <div>
+            <slot name="content" />
+          </div>
+        </div>
+      </Transition>
+    </template>
+
+    <!-- 👉 Transition Component -->
+    <template v-else>
+      <component :is="themeConfig.horizontalNav.transition">
+        <div
+          v-show="isContentShown"
+          ref="refPopper"
+          class="popper-content"
+          :style="popperContentStyles"
+          @mouseenter="showContent"
+          @mouseleave="hideContent"
+        >
+          <div>
+            <slot name="content" />
+          </div>
+        </div>
+      </component>
+    </template>
+    <!-- !SECTION -->
   </div>
 </template>
 
 <style lang="scss">
 .popper-content {
-  position: fixed;
+  position: absolute;
 }
 </style>

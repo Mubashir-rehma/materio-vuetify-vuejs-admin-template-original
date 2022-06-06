@@ -27,6 +27,7 @@ export interface UserThemeConfig {
   }
   horizontalNav: {
     type: UserConfig['horizontalNav']['type']
+    transition?: UserConfig['horizontalNav']['transition']
   }
   icons: {
     chevronDown: UserConfig['icons']['chevronDown']
@@ -70,6 +71,7 @@ export interface ThemeConfig {
   }
   horizontalNav: {
     type: Ref<UserThemeConfig['horizontalNav']['type']>
+    transition?: UserThemeConfig['horizontalNav']['transition']
   }
   icons: {
     chevronDown: UserThemeConfig['icons']['chevronDown']

@@ -29,7 +29,7 @@ const hideTitleAndBadge = computed(() => isVerticalNavMini().value && !isLessTha
         :class="item.icon || config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <transition-group name="vertical-nav-item">
+      <transition-group name="transition-slide-x">
         <!-- 👉 Title -->
         <component
           :is="config.app.enableI18n ? 'i18n-t' : 'span'"

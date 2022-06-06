@@ -71,7 +71,7 @@ export default defineComponent({
   transition: height 0.25s ease;
 }
 
-.expand-enter,
+.expand-enter-from,
 .expand-leave-to {
   block-size: 0;
 }

@@ -1,5 +1,5 @@
 import type { Breakpoints } from '@vueuse/core'
-import type { Ref } from 'vue'
+import type { Component, Ref } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from './enums'
 
@@ -28,6 +28,7 @@ export interface UserConfig {
   }
   horizontalNav: {
     type: 'sticky' | 'static' | 'hidden'
+    transition?: string | Component
   }
   icons: {
     chevronDown: string
@@ -69,6 +70,7 @@ export interface Config {
   }
   horizontalNav: {
     type: Ref<UserConfig['horizontalNav']['type']>
+    transition?: UserConfig['horizontalNav']['transition']
   }
   icons: {
     chevronDown: UserConfig['icons']['chevronDown']

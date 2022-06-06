@@ -34,6 +34,7 @@ export const defineThemeConfig = (
       },
       horizontalNav: {
         type: ref(userConfig.horizontalNav.type),
+        transition: userConfig.horizontalNav.transition,
       },
       icons: {
         chevronDown: userConfig.icons.chevronDown,
@@ -69,6 +70,7 @@ export const defineThemeConfig = (
       },
       horizontalNav: {
         type: userConfig.horizontalNav.type,
+        transition: userConfig.horizontalNav.transition,
       },
       icons: {
         chevronDown: userConfig.icons.chevronDown,

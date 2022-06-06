@@ -21,6 +21,7 @@ export default [
       },
     ],
     badgeContent: '2',
+    badgeClass: 'bg-primary',
   },
   { heading: 'Apps & Pages' },
   {

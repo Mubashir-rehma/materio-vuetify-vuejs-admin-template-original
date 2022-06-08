@@ -67,13 +67,13 @@
   }
 
   // 👉 Layout footer
-  // TODO: Refactor this once we add style for footer variants
   .layout-footer {
     $ele-layout-footer: &;
 
     .footer-content-container {
       border-radius: core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness 0 0;
 
+      // 👉 Sticky footer
       @at-root {
         // ℹ️ .layout-footer-sticky#{$ele-layout-footer} => .layout-footer-sticky.layout-wrapper.layout-nav-type-vertical .layout-footer
         .layout-footer-sticky#{$ele-layout-footer} {
@@ -81,7 +81,7 @@
             padding: 0 1.2rem;
             background-color: rgb(var(--v-theme-surface));
 
-            @include mixins_elevation.elevation(4);
+            @include mixins_elevation.elevation(3);
           }
         }
       }

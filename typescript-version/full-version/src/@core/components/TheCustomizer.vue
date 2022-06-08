@@ -40,7 +40,7 @@ const { width: windowWidth } = useWindowSize()
   <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
     <v-btn
       icon
-      class="app-customizer-toggler rounded-l-lg rounded-0"
+      class="app-customizer-toggler rounded-s-lg rounded-0"
       @click="isNavDrawerOpen = true"
     >
       <v-icon icon="mdi-cog" />

@@ -5,9 +5,9 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getDonutChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const expenseRationChartConfig = controlledComputed(isDark, () => getDonutChartConfig(getTheme(current.value)))
+const expenseRationChartConfig = controlledComputed(isDark, () => getDonutChartConfig(theme.current.value))
 
 const series = [85, 16, 50, 50]
 </script>

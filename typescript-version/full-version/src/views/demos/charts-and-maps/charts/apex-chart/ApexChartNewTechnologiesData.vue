@@ -5,9 +5,9 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getScatterChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const scatterChartConfig = controlledComputed(isDark, () => getScatterChartConfig(getTheme(current.value)),
+const scatterChartConfig = controlledComputed(isDark, () => getScatterChartConfig(theme.current.value),
 )
 
 const series = [

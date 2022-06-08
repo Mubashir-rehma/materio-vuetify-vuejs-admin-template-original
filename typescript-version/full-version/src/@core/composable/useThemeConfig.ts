@@ -1,4 +1,5 @@
 import { themeConfig } from '@themeConfig'
+import { useTheme } from 'vuetify'
 
 export const useThemeConfig = () => {
   const isDark = computed({
@@ -10,6 +11,32 @@ export const useThemeConfig = () => {
       localStorage.setItem(`${themeConfig.app.title}-isDark`, value.toString())
     },
   })
+
+  const syncVuetifyThemeWithIsDark = () => {
+    const theme = useTheme()
+    watch(isDark, val => {
+      theme.name.value = val ? 'dark' : 'light'
+    })
+  }
+
+  /*
+    ℹ️ Set current theme's surface color in localStorage
+
+    Why? Because when initial loader is shown (before vue is ready) we need to what's the current theme's surface color.
+    We will use color stored in localStorage to set the initial loader's background color.
+
+    With this we will be able to show correct background color for the initial loader even before vue identify the current theme.
+  */
+  const syncInitialLoaderTheme = () => {
+    const theme = useTheme()
+    watch(isDark, val => {
+      // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
+      console.log(theme.themes.value[val ? 'dark' : 'light'].colors.surface)
+      localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, theme.themes.value[val ? 'dark' : 'light'].colors.surface)
+    }, {
+      immediate: true,
+    })
+  }
 
   const skin = computed({
     get() {
@@ -23,6 +50,8 @@ export const useThemeConfig = () => {
 
   return {
     isDark,
+    syncVuetifyThemeWithIsDark,
+    syncInitialLoaderTheme,
     skin,
   }
 }

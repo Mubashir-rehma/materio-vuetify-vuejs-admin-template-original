@@ -1,10 +1,13 @@
 // Styles
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
+import { themeConfig } from '@themeConfig'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
-const { isDark } = useThemeConfig()
+
+// isDark utils
+const localStorageIsDark = localStorage.getItem(`${themeConfig.app.title}-isDark`)
+const getThemeNameFromIsDark = (isDark: boolean) => isDark ? 'dark' : 'light'
 
 export default createVuetify({
   defaults: {
@@ -114,7 +117,7 @@ export default createVuetify({
     },
   },
   theme: {
-    defaultTheme: isDark.value ? 'dark' : 'light',
+    defaultTheme: localStorageIsDark ? getThemeNameFromIsDark(JSON.parse(localStorageIsDark)) : getThemeNameFromIsDark(themeConfig.app.isDark.value),
     themes: {
       light: {
         dark: false,

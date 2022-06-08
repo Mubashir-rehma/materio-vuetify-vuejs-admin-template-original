@@ -5,9 +5,9 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getCandlestickChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const chartConfig = controlledComputed(isDark, () => getCandlestickChartConfig(getTheme(current.value)))
+const chartConfig = controlledComputed(isDark, () => getCandlestickChartConfig(theme.current.value))
 const series = [
   {
     data: [

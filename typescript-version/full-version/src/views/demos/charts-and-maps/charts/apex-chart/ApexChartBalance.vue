@@ -5,9 +5,9 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineChartSimpleConfig } from '@core/libs/apex-chart/apexCharConfig'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const balanceChartConfig = controlledComputed(isDark, () => getLineChartSimpleConfig(getTheme(current.value)))
+const balanceChartConfig = controlledComputed(isDark, () => getLineChartSimpleConfig(theme.current.value))
 
 const series = [
   {

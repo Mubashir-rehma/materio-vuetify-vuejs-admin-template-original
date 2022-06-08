@@ -20,6 +20,10 @@ $css-var--v-theme-surface: (
   "dark": (47, 47, 47)
 ) !default;
 
+// 👉 Default layout with vertical nav
+
+$default-layout-with-vertical-nav-navbar-footer-roundness: 10px !default;
+
 // 👉 Vertical nav
 
 $vertical-nav-background-color: rgb(var(--v-theme-surface)) !default;

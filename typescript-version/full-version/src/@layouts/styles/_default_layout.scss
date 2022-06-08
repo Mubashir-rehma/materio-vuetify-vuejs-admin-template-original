@@ -32,6 +32,10 @@ body {
 }
 
 .layout-footer {
+  .footer-content-container {
+    block-size: variables.$layout-vertical-nav-footer-height;
+  }
+
   .layout-footer-sticky & {
     position: sticky;
     inset-block-end: 0;
@@ -43,8 +47,9 @@ body {
   }
 
   .layout-content-width-boxed & {
-    .footer-content-container {
-      @extend %boxed-content;
-    }
+    @extend %boxed-content;
+
+    padding: 0 2rem;
+    inline-size: 100%;
   }
 }

@@ -1,5 +1,7 @@
 @use "@configured-variables" as variables;
+@use "@core/scss/variables" as core_variables;
 @use "./placeholders";
+@use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
 
 .layout-wrapper.layout-nav-type-vertical {
   // Scrolled styles
@@ -42,19 +44,20 @@
 
   &.layout-content-width-boxed {
     @if variables.$layout-vertical-nav-navbar-is-contained {
+      // ℹ️ Static navbar styles
       .layout-navbar {
         backdrop-filter: unset !important;
         background-color: unset !important;
         box-shadow: unset !important;
 
         .navbar-content-container {
-          padding: 1.2rem 0;
-          border-radius: 0 0 6px 6px;
+          border-radius: 0 0 core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness;
 
+          // ℹ️ Sticky navbar + scrolled styles
           @at-root {
             .layout-wrapper.layout-nav-type-vertical.layout-content-width-boxed.window-scrolled.layout-navbar-sticky {
               .layout-navbar .navbar-content-container {
-                padding: 1.2rem;
+                padding: 0 1.2rem;
               }
             }
           }
@@ -63,59 +66,25 @@
     }
   }
 
-  // &.layout-content-width-boxed {
-  //   // 👉 Layout navbar
-  //   @if variables.$layout-vertical-nav-navbar-is-contained {
-  //     .layout-navbar {
-  //       .navbar-content-container {
-  //         padding: 1.2rem 0;
-  //         transition: padding 0.2s ease, background-color 0.18s ease, left 0.3s ease;
-
-  //         @at-root {
-  //           .layout-wrapper.layout-nav-type-vertical {
-  //             &.layout-content-width-boxed {
-  //               .layout-navbar .navbar-content-container {
-  //                 border-radius: 0 0 6px 6px;
-  //               }
-  //             }
-  //           }
-  //         }
-
-  //         @at-root {
-  //           .layout-wrapper.layout-nav-type-vertical {
-  //             &.window-scrolled.layout-navbar-sticky {
-  //               .layout-navbar {
-  //                 .navbar-content-container {
-  //                   backdrop-filter: blur(8px);
-  //                   background-color: hsl(0deg 0% 100% / 90%) !important;
-  //                   box-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%) !important;
-  //                 }
-  //               }
-
-  //               &.layout-content-width-boxed {
-  //                 .layout-navbar .navbar-content-container {
-  //                   padding: 1.2rem;
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   } @else {
-  //     .layout-navbar {
-  //       padding: 1.2rem;
-  //       background-color: #fff;
-  //       box-shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
-  //     }
-  //   }
-  // }
-
   // 👉 Layout footer
   // TODO: Refactor this once we add style for footer variants
   .layout-footer {
-    padding: 1.2rem 0;
-    background-color: rgb(var(--v-theme-surface));
-    box-shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
+    $ele-layout-footer: &;
+
+    .footer-content-container {
+      border-radius: core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness 0 0;
+
+      @at-root {
+        // ℹ️ .layout-footer-sticky#{$ele-layout-footer} => .layout-footer-sticky.layout-wrapper.layout-nav-type-vertical .layout-footer
+        .layout-footer-sticky#{$ele-layout-footer} {
+          .footer-content-container {
+            padding: 0 1.2rem;
+            background-color: rgb(var(--v-theme-surface));
+
+            @include mixins_elevation.elevation(4);
+          }
+        }
+      }
+    }
   }
 }

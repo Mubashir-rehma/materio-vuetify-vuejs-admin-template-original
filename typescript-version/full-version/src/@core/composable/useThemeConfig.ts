@@ -31,7 +31,6 @@ export const useThemeConfig = () => {
     const theme = useTheme()
     watch(isDark, val => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
-      console.log(theme.themes.value[val ? 'dark' : 'light'].colors.surface)
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, theme.themes.value[val ? 'dark' : 'light'].colors.surface)
     }, {
       immediate: true,

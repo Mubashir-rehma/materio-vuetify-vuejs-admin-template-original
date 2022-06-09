@@ -139,11 +139,20 @@ export default [
             title: 'Textarea',
             to: 'forms-textarea',
           },
+          {
+            title: 'File Input',
+            to: 'forms-file-input',
+          },
+          {
+            title: 'Date Time Picker',
+            to: 'forms-date-time-picker',
+          },
+
         ],
       },
       {
         title: 'Form Layouts',
-        icon: 'i-mdi-content-copy',
+        icon: 'i-mdi-checkbox-marked-circle-outline',
         to: 'forms-form-layouts',
       },
       {

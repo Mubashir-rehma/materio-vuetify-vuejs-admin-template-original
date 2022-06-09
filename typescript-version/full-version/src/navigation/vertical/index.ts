@@ -108,6 +108,7 @@ export default [
       { title: 'Range Slider', to: 'forms-range-slider' },
       { title: 'Rating', to: 'forms-rating' },
       { title: 'Textarea', to: 'forms-textarea' },
+      { title: 'Date Time Picker', to: 'forms-date-time-picker' },
     ],
   },
   {

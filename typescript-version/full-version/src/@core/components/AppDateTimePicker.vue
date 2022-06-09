@@ -1,0 +1,350 @@
+<script setup lang="ts">
+import flatPickr from 'vue-flatpickr-component'
+import { filterFieldProps, makeVFieldProps } from 'vuetify/lib/components/VField/VField'
+import { filterInputProps, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
+import { filterInputAttrs } from 'vuetify/lib/util/helpers'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
+
+const props = defineProps({
+  ...makeVInputProps(),
+  ...makeVFieldProps(),
+})
+
+const emit = defineEmits<Emit>()
+
+interface Emit {
+  (e: 'update:modelValue', val: string): true
+  (e: 'click:clear', el: MouseEvent): void
+}
+
+// inherit Attribute make false
+defineOptions({
+  inheritAttrs: false,
+})
+
+const attrs = useAttrs()
+
+const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
+const [{ modelValue: _, ...inputProps }] = filterInputProps(props)
+const [fieldProps] = filterFieldProps(props)
+
+const refFlatPicker = ref()
+const { focused } = useFocus(refFlatPicker)
+const isCalendarOpen = ref(false)
+const selectedDateTime = ref<string>(props.modelValue || '')
+const isInlinePicker = ref(false)
+
+// flat picker prop manipulation
+if (compAttrs.config && compAttrs.config.inline) {
+  isInlinePicker.value = compAttrs.config.inline
+  Object.assign(compAttrs, { altInputClass: 'inlinePicker' })
+}
+
+// v-field clear prop
+const onClear = (el: MouseEvent) => {
+  el.stopPropagation()
+
+  nextTick(() => {
+    selectedDateTime.value = ''
+
+    // eslint-disable-next-line vue/custom-event-name-casing
+    emit('click:clear', el)
+  })
+}
+
+const { isDark } = useThemeConfig()
+
+// Themes class added to flat-picker component for light and dark support
+const addThemeClasses = () => {
+  const themeClass = isDark.value ? 'v-theme--dark' : 'v-theme--light'
+  const removeClass = isDark.value ? 'v-theme--light' : 'v-theme--dark'
+
+  // added ThemeClass
+  refFlatPicker.value.fp.calendarContainer.classList.add(themeClass)
+
+  // remove themeClaass
+  refFlatPicker.value.fp.calendarContainer.classList.remove(removeClass)
+}
+
+// Watching: if theme change, it change the classes
+watch(isDark, () => {
+  addThemeClasses()
+})
+
+// added themes class on mounted
+onMounted(() => {
+  addThemeClasses()
+})
+</script>
+
+<template>
+  <!-- {{ isCalendarOpen }} -->
+  <!-- v-input -->
+  <v-input
+    v-bind="{ ...inputProps, ...rootAttrs }"
+    :model-value="selectedDateTime"
+    :hide-details="props.hideDetails"
+    class="position-relative"
+    @input="$emit('update:modelValue', selectedDateTime)"
+  >
+    <template #default="{ isDirty, isValid, isReadonly }">
+      <!-- v-field -->
+      <v-field
+        v-bind="fieldProps"
+        :active="focused || isDirty.value || isCalendarOpen"
+        :focused="focused || isCalendarOpen"
+        role="textbox"
+        :dirty="isDirty.value || props.dirty"
+        :error="isValid.value === false"
+        @click:clear="onClear"
+      >
+        <!-- flat-picker  -->
+        <flatPickr
+          v-if="!isInlinePicker"
+          v-bind="compAttrs"
+          ref="refFlatPicker"
+          v-model="selectedDateTime"
+          class="flat-picker-custom-style"
+          :disabled="isReadonly.value"
+          @on-open="isCalendarOpen = true"
+          @on-close="isCalendarOpen = false"
+        />
+
+        <!-- simple input for inline prop -->
+        <input
+          v-if="isInlinePicker"
+          v-model="selectedDateTime"
+          class="flat-picker-custom-style"
+          type="text"
+        >
+      </v-field>
+    </template>
+  </v-input>
+
+  <!-- flat picker for inline props -->
+  <flatPickr
+    v-if="isInlinePicker"
+    v-bind="compAttrs"
+    ref="refFlatPicker"
+    v-model="selectedDateTime"
+    @on-open="isCalendarOpen = true"
+    @on-close="isCalendarOpen = false"
+  />
+</template>
+
+<style lang="scss">
+@use "flatpickr/dist/flatpickr.css";
+
+.flat-picker-custom-style {
+  position: absolute;
+  padding: 0 var(--v-field-padding-start);
+  inset: 0;
+  outline: none;
+}
+
+/* stylelint-disable-next-line color-function-notation */
+$body-color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+
+// hide the input when your picker is inline
+input[altinputclass="inlinePicker"] {
+  display: none;
+}
+
+.flatpickr-calendar {
+  background-color: rgb(var(--v-theme-surface));
+
+  .flatpickr-day,
+  .flatpickr-weekday {
+    color: $body-color;
+
+    &.today {
+      border-color: rgb(var(--v-theme-primary));
+
+      &:hover {
+        background: transparent;
+        color: $body-color;
+      }
+    }
+
+    &.selected,
+    &.selected:hover {
+      border-color: rgb(var(--v-theme-primary));
+      background: rgb(var(--v-theme-primary));
+      color: rgb(var(--v-theme-on-primary));
+    }
+
+    &.inRange,
+    &.inRange:hover {
+      /* stylelint-disable-next-line color-function-notation */
+      border: none;
+
+      /* stylelint-disable-next-line color-function-notation */
+      background: rgba(var(--v-theme-primary), 30%) !important;
+      /* stylelint-disable-next-line color-function-notation */
+      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%), 5px 0 0 rgba(var(--v-theme-primary), 17%) !important;
+    }
+
+    &.startRange {
+      box-shadow: 5px 0 0 rgba(var(--v-theme-primary), 17%);
+    }
+
+    &.endRange {
+      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%);
+    }
+
+    &.startRange,
+    &.endRange,
+    &.startRange:hover,
+    &.endRange:hover {
+      border-color: rgb(var(--v-theme-primary));
+      background: rgb(var(--v-theme-primary));
+      color: rgb(var(--v-theme-on-primary));
+    }
+
+    &.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+    &.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+    &.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+      box-shadow: -10px 0 0 rgb(var(--v-theme-primary));
+    }
+
+    &.flatpickr-disabled,
+    &.prevMonthDay:not(.startRange,.inRange),
+    &.nextMonthDay:not(.endRange,.inRange) {
+      opacity: var(--v-disabled-opacity);
+    }
+
+    &:hover {
+      /* stylelint-disable-next-line color-function-notation */
+      border-color: rgba(var(--v-theme-surface-variant), var(--v-hover-opacity));
+
+      /* stylelint-disable-next-line color-function-notation */
+      background: rgba(var(--v-theme-surface-variant), var(--v-hover-opacity));
+    }
+  }
+
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  .flatpickr-months {
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      fill: $body-color;
+      inset-block-start: -5px;
+
+      &:hover i,
+      &:hover svg {
+        fill: rgb(var(--v-theme-primary));
+      }
+    }
+  }
+
+  .flatpickr-current-month span.cur-month {
+    font-weight: 300;
+  }
+
+  &.open {
+    z-index: 1051;
+  }
+
+  &.hasTime.open {
+    .flatpickr-time {
+      /* stylelint-disable-next-line color-function-notation */
+      border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+      block-size: auto;
+    }
+  }
+}
+
+// Time picker hover & focus bg color
+.flatpickr-time input:hover,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:focus {
+  background: transparent;
+}
+
+// Time picker
+.flatpickr-time {
+  .flatpickr-am-pm,
+  .flatpickr-time-separator,
+  input {
+    color: $body-color;
+  }
+
+  .numInputWrapper {
+    span {
+      &.arrowUp {
+        &::after {
+          border-block-end-color: rgb(var(--v-border-color));
+        }
+      }
+
+      &.arrowDown {
+        &::after {
+          border-block-start-color: rgb(var(--v-border-color));
+        }
+      }
+    }
+  }
+}
+
+//  Added bg color for flatpickr input only as it has default readonly attribute
+.flatpickr-input[readonly],
+.flatpickr-input ~ .form-control[readonly],
+.flatpickr-human-friendly[readonly] {
+  background-color: inherit;
+  opacity: 1 !important;
+}
+
+// week sections
+.flatpickr-weekdays {
+  margin-block-start: 8px;
+}
+
+// Month and year section
+.flatpickr-current-month {
+  .flatpickr-monthDropdown-months {
+    appearance: none;
+  }
+
+  .flatpickr-monthDropdown-months,
+  .numInputWrapper {
+    padding: 2px;
+    border-radius: 4px;
+    color: $body-color;
+    font-size: 1.1rem;
+    transition: all 0.15s ease-out;
+
+    span {
+      display: none;
+    }
+
+    .flatpickr-monthDropdown-month {
+      background-color: rgb(var(--v-theme-surface));
+    }
+  }
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  color: $body-color;
+}
+
+// removing box shadow of calendar in dark and added a border
+.v-theme--dark.flatpickr-calendar {
+  /* stylelint-disable-next-line color-function-notation */
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  box-shadow: none;
+}
+
+.flatpickr-months {
+  padding: 0.3rem 0;
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    inset-block-start: 0.3rem !important;
+  }
+}
+</style>

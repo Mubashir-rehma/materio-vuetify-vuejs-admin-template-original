@@ -48,6 +48,7 @@ const { width: windowWidth } = useWindowSize()
     <v-navigation-drawer
       v-model="isNavDrawerOpen"
       temporary
+      location="right"
       width="400"
       position="right"
       class="app-customizer"

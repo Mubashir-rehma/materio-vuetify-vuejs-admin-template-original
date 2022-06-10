@@ -3,7 +3,7 @@ import { useLayouts } from '@layouts'
 import { config } from '@layouts/config'
 import { can } from '@layouts/plugins/casl'
 import type { NavLink } from '@layouts/types'
-import { getComputedNavLinkToProp } from '@layouts/utils'
+import { getComputedNavLinkToProp, isNavLinkActive } from '@layouts/utils'
 
 defineProps<{
   item: NavLink
@@ -24,6 +24,7 @@ const hideTitleAndBadge = computed(() => isVerticalNavMini().value && !isLessTha
     <component
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"
+      :class="isNavLinkActive(item, $router) ? 'router-link-active router-link-exact-active' : ''"
     >
       <div
         :class="item.icon || config.verticalNav.defaultNavItemIconClass"

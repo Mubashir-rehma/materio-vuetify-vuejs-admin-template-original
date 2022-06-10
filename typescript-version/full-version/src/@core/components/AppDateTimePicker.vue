@@ -6,8 +6,14 @@ import { filterInputAttrs } from 'vuetify/lib/util/helpers'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const props = defineProps({
-  ...makeVInputProps(),
-  ...makeVFieldProps(),
+  ...makeVInputProps({
+    density: 'comfortable',
+    hideDetails: 'auto',
+  }),
+  ...makeVFieldProps({
+    variant: 'outlined',
+    color: 'primary',
+  }),
 })
 
 const emit = defineEmits<Emit>()
@@ -137,9 +143,10 @@ onMounted(() => {
 
 .flat-picker-custom-style {
   position: absolute;
-  padding: 0 var(--v-field-padding-start);
   inset: 0;
   outline: none;
+  padding-block: 0;
+  padding-inline: var(--v-field-padding-start);
 }
 
 /* stylelint-disable-next-line color-function-notation */
@@ -340,7 +347,8 @@ input[altinputclass="inlinePicker"] {
 }
 
 .flatpickr-months {
-  padding: 0.3rem 0;
+  padding-block: 0.3rem;
+  padding-inline: 0;
 
   .flatpickr-prev-month,
   .flatpickr-next-month {

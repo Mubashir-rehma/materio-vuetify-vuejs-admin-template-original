@@ -37,7 +37,10 @@ module.exports = {
         {
           title: 'Plugins',
           collapsable: false,
-          children: ['/guide/plugins/perfect-scrollbar'],
+          children: [
+            '/guide/plugins/axios',
+            '/guide/plugins/perfect-scrollbar',
+          ],
         },
         {
           title: 'Support',

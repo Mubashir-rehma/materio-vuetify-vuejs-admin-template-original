@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-const open = ref(['Users', 'Actions'])
+const open = ref(['Users'])
+
 const admins = [
   ['Management', 'mdi-account-multiple-outline'],
   ['Settings', 'mdi-cog-outline'],

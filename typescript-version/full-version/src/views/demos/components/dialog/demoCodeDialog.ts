@@ -1,6 +1,4 @@
-/* eslint-disable no-useless-escape */
-
-export const fullScreen = { ts: '', js: '' }
+export const fullscreen = { ts: '', js: '' }
 
 export const basic = { ts: '', js: '' }
 

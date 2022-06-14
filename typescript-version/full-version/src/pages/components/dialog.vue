@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/components/dialog/demos/demoCodeDialog'
+import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 </script>
 
 <template>
@@ -101,11 +101,11 @@ import * as demoCode from '@/views/components/dialog/demos/demoCodeDialog'
       <!-- 👉 Fullscreen -->
       <AppCardCode
         title="Fullscreen"
-        :code="demoCode.fullScreen"
+        :code="demoCode.fullscreen"
       >
         <p>Due to limited space, full-screen dialogs may be more appropriate for mobile devices than dialogs used on devices with larger screens.</p>
 
-        <DemoDialogFullScreen />
+        <DemoDialogFullscreen />
       </AppCardCode>
     </v-col>
 

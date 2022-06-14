@@ -5,7 +5,7 @@ const isDialogVisible = ref(false)
 <template>
   <v-dialog
     v-model="isDialogVisible"
-    width="600px"
+    class="v-dialog-sm"
   >
     <!-- Dialog Activator -->
     <template #activator="{ props }">
@@ -18,10 +18,7 @@ const isDialogVisible = ref(false)
     </template>
 
     <!-- Dialog Content -->
-    <v-card>
-      <v-card-title>
-        <span class="headline">Use Google's location service?</span>
-      </v-card-title>
+    <v-card title="Use Google's location service?">
       <v-card-text>
         Bear claw pastry cotton candy jelly toffee. Pudding chocolate cake shortbread bonbon biscuit sweet. Lemon drops cupcake muffin brownie fruitcake. Pastry pastry tootsie roll jujubes chocolate cake gummi bears muffin pudding caramels. Jujubes lollipop gummies croissant shortbread. Cupcake dessert marzipan topping gingerbread apple pie chupa chups powder. Cake croissant halvah candy canes gummies. Candy tootsie roll sweet lemon drops tart cotton candy jujubes topping chupa chups. Biscuit icing pastry chocolate bar lollipop. Lemon drops oat cake chocolate cake dessert chocolate. Carrot cake ice cream bonbon tart tootsie roll cupcake dessert gingerbread. Apple pie dessert sweet candy bonbon. Sugar plum gummies powder brownie dessert candy canes candy canes candy.
 

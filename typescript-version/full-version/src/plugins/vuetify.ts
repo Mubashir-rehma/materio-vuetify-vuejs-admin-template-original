@@ -1,9 +1,9 @@
 // Styles
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
-import { themeConfig } from '@themeConfig'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
+import { themeConfig } from '@themeConfig'
 
 // isDark utils
 const localStorageIsDark = localStorage.getItem(`${themeConfig.app.title}-isDark`)
@@ -107,6 +107,9 @@ export default createVuetify({
       // set v-switch default color to primary
       color: 'primary',
       hideDetails: 'auto',
+    },
+    VDialog: {
+      maxWidth: '600',
     },
   },
   icons: {

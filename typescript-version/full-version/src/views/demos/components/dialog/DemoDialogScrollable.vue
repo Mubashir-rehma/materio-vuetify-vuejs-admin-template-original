@@ -38,19 +38,19 @@ const isDialogVisible = ref(false)
     </template>
 
     <!-- Dialog Content -->
-    <v-card max-height="400px">
-      <v-card-title>Select Country</v-card-title>
+    <v-card
+      title="Select Country"
+      max-height="400px"
+    >
       <v-divider />
       <v-card-text>
-        <v-radio-group
-          v-model="selectedCountry"
-          column
-        >
+        <v-radio-group v-model="selectedCountry">
           <v-radio
             v-for="country in countryList"
             :key="country.label"
             :label="country.label"
             :value="country.value"
+            color="primary"
           />
         </v-radio-group>
       </v-card-text>

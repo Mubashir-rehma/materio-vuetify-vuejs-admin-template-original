@@ -35,6 +35,13 @@ module.exports = {
           ],
         },
         {
+          title: 'Components',
+          collapsable: false,
+          children: [
+            '/guide/components/dialog',
+          ]
+        },
+        {
           title: 'Plugins',
           collapsable: false,
           children: [

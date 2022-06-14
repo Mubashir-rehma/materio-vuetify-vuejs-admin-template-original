@@ -1,45 +1,45 @@
-import type { UserConfig } from '@layouts/types'
+import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 import type { Ref } from 'vue'
 import type { EnumSkins } from './enums'
 
 export interface UserThemeConfig {
   app: {
-    title: UserConfig['app']['title']
-    logo: UserConfig['app']['logo']
-    contentWidth: UserConfig['app']['contentWidth']
-    contentLayoutNav: UserConfig['app']['contentLayoutNav']
-    overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
-    enableI18n: UserConfig['app']['enableI18n']
-    isDark: UserConfig['app']['isDark']
-    isRtl: UserConfig['app']['isRtl']
+    title: UserLayoutConfig['app']['title']
+    logo: UserLayoutConfig['app']['logo']
+    contentWidth: UserLayoutConfig['app']['contentWidth']
+    contentLayoutNav: UserLayoutConfig['app']['contentLayoutNav']
+    overlayNavFromBreakpoint: UserLayoutConfig['app']['overlayNavFromBreakpoint']
+    enableI18n: UserLayoutConfig['app']['enableI18n']
+    theme: string
+    isRtl: UserLayoutConfig['app']['isRtl']
     skin: EnumSkins
   }
   navbar: {
-    type: UserConfig['navbar']['type']
-    navbarBlur: UserConfig['navbar']['navbarBlur']
+    type: UserLayoutConfig['navbar']['type']
+    navbarBlur: UserLayoutConfig['navbar']['navbarBlur']
   }
   footer: {
-    type: UserConfig['footer']['type']
+    type: UserLayoutConfig['footer']['type']
   }
   verticalNav: {
-    isVerticalNavCollapsed: UserConfig['verticalNav']['isVerticalNavCollapsed']
-    defaultNavItemIconClass: UserConfig['verticalNav']['defaultNavItemIconClass']
+    isVerticalNavCollapsed: UserLayoutConfig['verticalNav']['isVerticalNavCollapsed']
+    defaultNavItemIconClass: UserLayoutConfig['verticalNav']['defaultNavItemIconClass']
   }
   horizontalNav: {
-    type: UserConfig['horizontalNav']['type']
-    transition?: UserConfig['horizontalNav']['transition']
+    type: UserLayoutConfig['horizontalNav']['type']
+    transition?: UserLayoutConfig['horizontalNav']['transition']
   }
   icons: {
-    chevronDown: UserConfig['icons']['chevronDown']
-    chevronRight: UserConfig['icons']['chevronRight']
-    close: UserConfig['icons']['close']
-    verticalNavPinned: UserConfig['icons']['verticalNavPinned']
-    verticalNavUnPinned: UserConfig['icons']['verticalNavUnPinned']
-    sectionTitlePlaceholder: UserConfig['icons']['sectionTitlePlaceholder']
+    chevronDown: UserLayoutConfig['icons']['chevronDown']
+    chevronRight: UserLayoutConfig['icons']['chevronRight']
+    close: UserLayoutConfig['icons']['close']
+    verticalNavPinned: UserLayoutConfig['icons']['verticalNavPinned']
+    verticalNavUnPinned: UserLayoutConfig['icons']['verticalNavUnPinned']
+    sectionTitlePlaceholder: UserLayoutConfig['icons']['sectionTitlePlaceholder']
   }
 
   // TODO: Check do we need this breakpoints config
-  breakpoints: UserConfig['breakpoints']
+  breakpoints: UserLayoutConfig['breakpoints']
 }
 
 /*
@@ -54,7 +54,7 @@ export interface ThemeConfig {
     contentLayoutNav: Ref<UserThemeConfig['app']['contentLayoutNav']>
     overlayNavFromBreakpoint: UserThemeConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserThemeConfig['app']['enableI18n']
-    isDark: Ref<UserThemeConfig['app']['isRtl']>
+    theme: Ref<UserThemeConfig['app']['theme']>
     isRtl: Ref<UserThemeConfig['app']['isRtl']>
     skin: Ref<UserThemeConfig['app']['skin']>
   }

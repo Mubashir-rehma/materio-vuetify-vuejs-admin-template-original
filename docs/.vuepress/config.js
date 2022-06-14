@@ -4,6 +4,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },
+      { text: 'Contribution', link: '/contribution/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
       { text: 'Code Examples', link: '/code-examples/fetching-nav-items-from-api' },
@@ -42,6 +43,10 @@ module.exports = {
           collapsable: false,
           children: ['/guide/getting-support', '/guide/github-access'],
         },
+      ],
+      '/contribution/': [
+        ['', 'Welcome'],
+        ['/contribution/themeconfig', 'themeConfig'],
       ],
       '/code-examples/': [
         {

@@ -12,7 +12,6 @@ export interface UserConfig {
     contentLayoutNav: EnumAppContentLayoutNav
     overlayNavFromBreakpoint: number
     enableI18n: boolean
-    isDark: boolean
     isRtl: boolean
   }
   navbar: {

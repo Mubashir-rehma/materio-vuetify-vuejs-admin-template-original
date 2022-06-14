@@ -14,24 +14,24 @@ Causes of npm install or yarn install issue can be due to various things which i
 
 - Missing or inappropriate dependencies like node or some other environmental issues
 - Dependency resolved by package manager (npm/yarn) conflict with other installed dependency
-- The dependency of the package we use have an internal issue or that dependency has some issue with your environment
+- The dependency of the package we use has an internal issue or that dependency has some issue with your environment
 - Package or dependency of the package requires some additional step or configuration to work in your environment
 - Downloaded package is broken or is got tampered
 
-To resolve such installation issue:
+To resolve such installation issues:
 
-- Please try again downloading fresh package/zip from ThemeForest and perform installation again.
-- Please make sure you are using LTS version of node which is recommended and not one with latest features.
+- Please try again downloading the fresh package/zip from ThemeForest and perform the installation again.
+- Please make sure you are using the LTS version of a node that is recommended and not one with the latest features.
 - run `yarn cache clean` or `npm cache clean`
 - Try using yarn if possible (Recommended).
 
 After following about steps still, you are getting the error please [raise support](/guide/getting-support.md) at our support portal with the below details:
 
 - Your OS information, Node version, npm/yarn version, Template/Package version
-- Mention if you are able to run fresh VueJS project using Vue CLI without our template
-- Attache log file of error you are getting in your console (Provide full log)
+- Mention if you can run the fresh VueJS project using Vue CLI without our template
+- Attache log file of the error you are getting in your console (Provide full log)
 - Mention which command you are running
-- Mention If you have any other machine, are you able to run our template in that machine
+- Mention If you have any other machine, are you able to run our template on that machine
 
 ## npm install or yarn install warnings or installation warnings
 
@@ -48,11 +48,11 @@ warning "@vue/eslint-config-airbnb > eslint-import-resolver-webpack@0.13.0" has 
 warning " > sass-loader@10.1.0" has unmet peer dependency "webpack@^4.36.0 || ^5.0.0".
 ```
 
-The warnings you are receiving while installing is from library/packages we used.
+The warnings you are receiving while installing are from library/packages we used.
 
-We always keep our packages up to date when we make major release. However, the writer of that package may use an older dependency that is no longer maintained for backward compatibility or any other code related issue. But, that's not an issue. Those packages will work fine with our template.
+We always keep our packages up to date when we make major releases. However, the writer of that package may use an older dependency that is no longer maintained for backward compatibility or any other code-related issue. But, that's not an issue. Those packages will work fine with our template.
 
-Even if you like to try you can install this packages in fresh VueJS project without our template and you will get the same.
+Even if you like to try you can install these packages in fresh VueJS project without our template and you will get the same.
 
 ## How to disable linting in template
 
@@ -105,3 +105,27 @@ You can update the logo and text from `themeConfig.{ts|js}` file. Please update 
 ## How to update navbar or footer
 
 You can use layout slots to add your custom navbar or footer. Please refer to [layout](/guide/layouts.md) docs for example with code snippet.
+
+## Route transition is not working
+
+Please make sure to wrap a page with a single `div` so there are no multiple root elements.
+
+```vue
+<!-- Multiple root nodes -->
+<template>
+  <span>First paragraph</span>
+  <span>Second paragraph</span>
+</template>
+```
+
+Convert above code to below code:
+
+```vue
+<!-- Single root node by wrapping content with div -->
+<template>
+  <div>
+    <span>First paragraph</span>
+    <span>Second paragraph</span>
+  </div>
+</template>
+```

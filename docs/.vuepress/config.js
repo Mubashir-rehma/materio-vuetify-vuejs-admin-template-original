@@ -28,6 +28,7 @@ module.exports = {
             '/guide/styles',
             '/guide/navigation-menu',
             '/guide/layouts.md',
+            '/guide/getting-started/routing.md',
             '/guide/authentication.md',
             '/guide/access-control.md',
             '/guide/splash-screen.md',

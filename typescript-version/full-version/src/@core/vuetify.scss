@@ -6,19 +6,19 @@
 // @use "vuetify/lib/styles/tools/functions" as vuetify_functions;
 @use "vuetify/styles" as * with (
   $color-pack: false,
-  // $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
-  // $card-elevation: 6,
-  // $card-title-line-height: 1.6,
-  // $card-actions-min-height: unset,
-  // $card-text-padding: 20px,
-  // $card-item-padding: 20px,
+  $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
+  $card-elevation: 6,
+  $card-title-line-height: 1.6,
+  $card-actions-min-height: unset,
+  $card-text-padding: 20px,
+  $card-item-padding: 20px,
 
   /* 0 ($card-item-padding - $button-card-actions-padding-x) ($card-item-padding - $button-card-actions-padding-x) */
-  // $card-actions-padding: 0 12px 12px,
+  $card-actions-padding: 0 12px 12px,
 
-  // $shadow-key-umbra-opacity: rgba(var(--v-theme-on-surface), 0.08),
-  // $shadow-key-penumbra-opacity: rgba(var(--v-theme-on-surface), 0.12),
-  // $shadow-key-ambient-opacity: rgba(var(--v-theme-on-surface), 0.04),
+  $shadow-key-umbra-opacity: rgba(var(--v-theme-on-surface), 0.08),
+  $shadow-key-penumbra-opacity: rgba(var(--v-theme-on-surface), 0.12),
+  $shadow-key-ambient-opacity: rgba(var(--v-theme-on-surface), 0.04),
 
   // // ℹ️ It uses above $shadow-key-umbra-opacity (Which we can't access while configuring)
   // $shadow-key-umbra: vuetify_functions.map-deep-merge(

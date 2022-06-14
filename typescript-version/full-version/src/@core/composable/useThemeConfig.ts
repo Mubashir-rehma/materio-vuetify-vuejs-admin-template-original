@@ -47,10 +47,21 @@ export const useThemeConfig = () => {
     },
   })
 
+  const appRouteTransition = computed({
+    get() {
+      return themeConfig.app.routeTransition.value
+    },
+    set(value: typeof themeConfig.app.routeTransition.value) {
+      themeConfig.app.routeTransition.value = value
+      localStorage.setItem(`${themeConfig.app.title}-transition`, value)
+    },
+  })
+
   return {
     isDark,
     syncVuetifyThemeWithIsDark,
     syncInitialLoaderTheme,
     skin,
+    appRouteTransition,
   }
 }

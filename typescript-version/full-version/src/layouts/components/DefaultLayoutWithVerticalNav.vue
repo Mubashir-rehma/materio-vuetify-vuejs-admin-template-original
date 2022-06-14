@@ -4,10 +4,12 @@ import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 import navItems from '@/navigation/vertical'
 import { useSkins } from '@core/composable/useSkins'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { useLayouts } from '@layouts'
 import { ThemeSwitcher } from '@layouts/components'
 import DefaultLayoutWithVerticalNav from '@layouts/components/DefaultLayoutWithVerticalNav.vue'
 
+const { appRouteTransition } = useThemeConfig()
 const { layoutAttrs } = useSkins()
 const { width: windowWidth } = useWindowSize()
 const { isLessThanOverlayNavBreakpoint } = useLayouts()
@@ -38,7 +40,17 @@ const { isLessThanOverlayNavBreakpoint } = useLayouts()
 
     <!-- Pages -->
     <div style="padding: 2rem;">
-      <router-view />
+      <router-view v-slot="{ Component, route }">
+        <transition
+          :name="appRouteTransition"
+          mode="out-in"
+        >
+          <component
+            :is="Component"
+            :key="route.path"
+          />
+        </transition>
+      </router-view>
     </div>
 
     <!-- Footer -->

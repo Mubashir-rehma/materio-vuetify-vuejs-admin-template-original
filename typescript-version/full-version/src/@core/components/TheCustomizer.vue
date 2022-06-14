@@ -2,14 +2,14 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
-import { EnumSkins } from '@core/enums'
+import { EnumSkins, RouteTransitions } from '@core/enums'
 import { useLayouts } from '@layouts'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 
 // import { useTheme } from 'vuetify'
 
 const isNavDrawerOpen = ref(false)
-const { isDark, skin } = useThemeConfig()
+const { isDark, skin, appRouteTransition } = useThemeConfig()
 
 // 👉 Primary Color
 const theme = useTheme()
@@ -45,6 +45,7 @@ const { width: windowWidth } = useWindowSize()
     >
       <v-icon icon="mdi-cog" />
     </v-btn>
+
     <v-navigation-drawer
       v-model="isNavDrawerOpen"
       temporary
@@ -68,7 +69,9 @@ const { width: windowWidth } = useWindowSize()
           <v-icon icon="mdi-close" />
         </v-btn>
       </div>
+
       <v-divider />
+
       <PerfectScrollbar
         tag="ul"
         :options="perfectScrollbarSettings"
@@ -129,6 +132,7 @@ const { width: windowWidth } = useWindowSize()
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
+
         <!-- SECTION LAYOUT -->
         <CustomizerSection title="LAYOUT">
           <!-- 👉 Content Width -->
@@ -181,6 +185,7 @@ const { width: windowWidth } = useWindowSize()
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
+
         <!-- SECTION Menu -->
         <CustomizerSection title="Menu">
           <!-- 👉 Menu Type -->
@@ -207,6 +212,7 @@ const { width: windowWidth } = useWindowSize()
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
+
         <!-- SECTION MISC -->
         <CustomizerSection title="MISC">
           <!-- 👉 RTL -->
@@ -216,6 +222,18 @@ const { width: windowWidth } = useWindowSize()
             <v-switch
               v-model="isAppRtl"
               class="ms-2 mt-0"
+            />
+          </div>
+
+          <!-- 👉 Route Transition -->
+          <div class="mt-6 d-flex align-center">
+            <span>Router Transition</span>
+            <v-spacer />
+            <v-select
+              v-model="appRouteTransition"
+              :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
+              item-title="key"
+              item-value="value"
             />
           </div>
         </CustomizerSection>

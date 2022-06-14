@@ -13,6 +13,7 @@ export interface UserConfig {
     overlayNavFromBreakpoint: number
     enableI18n: boolean
     isRtl: boolean
+    routeTransition: string
   }
   navbar: {
     type: EnumNavbarType
@@ -55,6 +56,7 @@ export interface Config {
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
     isRtl: Ref<UserConfig['app']['isRtl']>
+    routeTransition: ref<UserConfig['app']['routeTransition']>
   }
   navbar: {
     type: Ref<UserConfig['navbar']['type']>

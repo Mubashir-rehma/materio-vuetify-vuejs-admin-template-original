@@ -1,7 +1,8 @@
 /* @unocss-include */
+import { breakpointsVuetify } from '@vueuse/core'
+import { RouteTransitions } from '@core/enums'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 import type { Config } from '@layouts/types'
-import { breakpointsVuetify } from '@vueuse/core'
 
 export const config: Config = {
   app: {
@@ -14,6 +15,7 @@ export const config: Config = {
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: ref(false),
+    routeTransition: RouteTransitions.Fade,
   },
   navbar: {
     type: ref(EnumNavbarType.Sticky),

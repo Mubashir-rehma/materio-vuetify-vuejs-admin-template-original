@@ -1,19 +1,21 @@
 <template>
-  <p class="text-h5 mb-6 text-medium-emphasis">
-    Basic Cards
-  </p>
+  <div>
+    <p class="text-h5 mb-6 text-medium-emphasis">
+      Basic Cards
+    </p>
 
-  <DemoCardBasic />
+    <DemoCardBasic />
 
-  <p class="text-h5 text-medium-emphasis mb-6 mt-14">
-    Navigation Cards
-  </p>
+    <p class="text-h5 text-medium-emphasis mb-6 mt-14">
+      Navigation Cards
+    </p>
 
-  <DemoCardNavigation />
+    <DemoCardNavigation />
 
-  <p class="text-h5 text-medium-emphasis mt-14 mb-6 ">
-    Solid Cards
-  </p>
+    <p class="text-h5 text-medium-emphasis mt-14 mb-6 ">
+      Solid Cards
+    </p>
 
-  <DemoCardSolid />
+    <DemoCardSolid />
+  </div>
 </template>

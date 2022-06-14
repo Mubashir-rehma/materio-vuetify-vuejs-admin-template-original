@@ -1,6 +1,6 @@
-import { EnumSkins } from '@core/enums';
-import type { UserConfig as LayoutConfig } from '@layouts/types';
-import type { ThemeConfig, UserThemeConfig } from './types';
+import type { ThemeConfig, UserThemeConfig } from './types'
+import { EnumSkins, RouteTransitions } from '@core/enums'
+import type { UserConfig as LayoutConfig } from '@layouts/types'
 
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
@@ -10,6 +10,11 @@ export const defineThemeConfig = (
     const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
 
     return Object.values(EnumSkins).find(v => v === storageValue)
+  })()
+  const localStorageTransition = (() => {
+    const storageValue = localStorage.getItem(`${userConfig.app.title}-transition`)
+
+    return Object.values(RouteTransitions).find(v => v === storageValue)
   })()
 
   // TODO: Improve config assignment
@@ -25,6 +30,7 @@ export const defineThemeConfig = (
         isDark: ref(localStorageIsDark ? JSON.parse(localStorageIsDark) : userConfig.app.isDark),
         isRtl: ref(userConfig.app.isRtl),
         skin: ref(localStorageSkin || userConfig.app.skin),
+        routeTransition: ref(localStorageTransition || userConfig.app.routeTransition),
       },
       navbar: { type: ref(userConfig.navbar.type), navbarBlur: ref(userConfig.navbar.navbarBlur) },
       footer: { type: ref(userConfig.footer.type) },
@@ -56,6 +62,7 @@ export const defineThemeConfig = (
         enableI18n: userConfig.app.enableI18n,
         isRtl: userConfig.app.isRtl,
         isDark: userConfig.app.isDark,
+        routeTransition: userConfig.app.routeTransition,
       },
       navbar: {
         type: userConfig.navbar.type,
@@ -85,5 +92,5 @@ export const defineThemeConfig = (
   }
 }
 
-export { useThemeConfig } from './composable/useThemeConfig';
+export { useThemeConfig } from './composable/useThemeConfig'
 

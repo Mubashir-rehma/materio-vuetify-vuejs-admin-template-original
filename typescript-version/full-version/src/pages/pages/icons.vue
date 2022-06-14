@@ -54,38 +54,40 @@ const iconsList = [
 </script>
 
 <template>
-  <div class="d-flex align-center flex-wrap">
-    <v-card
-      v-for="icon in iconsList"
-      :key="icon"
-      class="mb-6 me-6"
-    >
-      <v-card-text class="py-3 px-4">
-        <v-icon
-          size="30"
-          :icon="icon"
-        />
-      </v-card-text>
-
-      <!-- tooltips -->
-      <v-tooltip
-        anchor="top"
-        activator="parent"
+  <div>
+    <div class="d-flex align-center flex-wrap">
+      <v-card
+        v-for="icon in iconsList"
+        :key="icon"
+        class="mb-6 me-6"
       >
-        {{ icon }}
-      </v-tooltip>
-    </v-card>
-  </div>
+        <v-card-text class="py-3 px-4">
+          <v-icon
+            size="30"
+            :icon="icon"
+          />
+        </v-card-text>
 
-  <!-- more icons -->
-  <div class="text-center">
-    <v-btn
-      href="https://materialdesignicons.com/"
-      rel="noopener noreferrer"
-      color="primary"
-      target="_blank"
-    >
-      View All Material Design Icons
-    </v-btn>
+        <!-- tooltips -->
+        <v-tooltip
+          anchor="top"
+          activator="parent"
+        >
+          {{ icon }}
+        </v-tooltip>
+      </v-card>
+    </div>
+
+    <!-- more icons -->
+    <div class="text-center">
+      <v-btn
+        href="https://materialdesignicons.com/"
+        rel="noopener noreferrer"
+        color="primary"
+        target="_blank"
+      >
+        View All Material Design Icons
+      </v-btn>
+    </div>
   </div>
 </template>

@@ -1,8 +1,8 @@
-import { injectionKeyIsVerticalNavHovered } from '@layouts'
-import { config } from '@layouts/config'
 import type { MaybeRef } from '@vueuse/shared'
 import type { Ref } from 'vue'
 import { EnumAppContentLayoutNav } from '../enums'
+import { config } from '@layouts/config'
+import { injectionKeyIsVerticalNavHovered } from '@layouts'
 
 // TODO: Use config from this composition instead of getting it via config object
 // TODO: Check if we need useLayout?

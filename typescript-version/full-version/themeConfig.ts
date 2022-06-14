@@ -1,8 +1,8 @@
 /* @unocss-include */
-import { defineThemeConfig } from '@core'
-import { EnumSkins } from '@core/enums'
-import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 import { breakpointsVuetify } from '@vueuse/core'
+import { defineThemeConfig } from '@core'
+import { EnumSkins, RouteTransitions } from '@core/enums'
+import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
@@ -17,6 +17,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     isDark: false,
     isRtl: false,
     skin: EnumSkins.Default,
+    routeTransition: RouteTransitions.Fade,
   },
   navbar: {
     type: EnumNavbarType.Sticky,

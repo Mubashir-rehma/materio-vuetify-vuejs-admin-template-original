@@ -3,7 +3,10 @@ import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 import navItemsHorizontal from '@/navigation/horizontal'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWithHorizontalNav.vue'
+
+const { appRouteTransition } = useThemeConfig()
 </script>
 
 <template>
@@ -16,7 +19,17 @@ import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWit
     </template>
 
     <!-- Pages -->
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+      <transition
+        :name="appRouteTransition"
+        mode="out-in"
+      >
+        <component
+          :is="Component"
+          :key="route.path"
+        />
+      </transition>
+    </router-view>
 
     <!-- Footer -->
     <template #footer>

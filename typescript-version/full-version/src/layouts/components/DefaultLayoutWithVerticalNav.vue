@@ -75,7 +75,7 @@ const { isLessThanOverlayNavBreakpoint } = useLayouts()
           >ThemeSelection</a>
         </span>
         <!-- 👉 Footer: right content -->
-        <span class="d-flex gap-x-4 text-primary">
+        <span class="d-md-flex gap-x-4 text-primary d-none">
           <a
             href="https://themeselection.com/license/"
             target="noopener noreferrer"

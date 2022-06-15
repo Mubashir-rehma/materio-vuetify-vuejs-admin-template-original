@@ -5,10 +5,10 @@ import { getScatterChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import ScatterChart from '@core/libs/chartjs/components/ScatterChart'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
-const themeColors = getTheme(current.value)
+const theme = useTheme()
+const themeColors = theme.current.value
 
-const chartConfig = controlledComputed(isDark, () => getScatterChartConfig(getTheme(current.value)))
+const chartConfig = controlledComputed(isDark, () => getScatterChartConfig(theme.current.value))
 const data = {
   datasets: [
     {

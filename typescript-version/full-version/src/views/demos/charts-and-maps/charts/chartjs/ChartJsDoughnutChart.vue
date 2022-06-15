@@ -3,8 +3,8 @@ import { useTheme } from 'vuetify'
 import { getDoughnutChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import DoughnutChart from '@core/libs/chartjs/components/DoughnutChart'
 
-const { getTheme, current } = useTheme()
-const themeColors = getTheme(current.value)
+const theme = useTheme()
+const themeColors = theme.current.value
 
 const themeConfig = getDoughnutChartConfig()
 

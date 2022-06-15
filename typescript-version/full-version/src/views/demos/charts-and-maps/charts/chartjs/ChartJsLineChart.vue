@@ -5,8 +5,8 @@ import { getLineChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
-const themeColors = getTheme(current.value)
+const theme = useTheme()
+const themeColors = theme.current.value
 
 const data = {
   labels: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
@@ -53,7 +53,7 @@ const data = {
   ],
 }
 
-const chartConfig = controlledComputed(isDark, () => getLineChartConfig(getTheme(current.value)))
+const chartConfig = controlledComputed(isDark, () => getLineChartConfig(theme.current.value))
 </script>
 
 <template>

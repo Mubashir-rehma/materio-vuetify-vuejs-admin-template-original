@@ -5,11 +5,11 @@ import { getHorizontalBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BarChart from '@core/libs/chartjs/components/BarChart'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const chartOptions = controlledComputed(isDark, () => getHorizontalBarChartConfig(getTheme(current.value)))
+const chartOptions = controlledComputed(isDark, () => getHorizontalBarChartConfig(theme.current.value))
 
-const themeColors = getTheme(current.value)
+const themeColors = theme.current.value
 
 const data = {
   labels: ['MON', 'TUE', 'WED ', 'THU', 'FRI'],

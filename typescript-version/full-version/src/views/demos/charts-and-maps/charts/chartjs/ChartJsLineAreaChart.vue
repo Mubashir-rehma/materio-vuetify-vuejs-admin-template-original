@@ -5,7 +5,7 @@ import { getLineAreaChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
 const chartColors = {
   blueColor: '#2c9aff',
@@ -81,7 +81,7 @@ const data = {
   ],
 }
 
-const chartConfig = controlledComputed(isDark, () => getLineAreaChartConfig(getTheme(current.value)))
+const chartConfig = controlledComputed(isDark, () => getLineAreaChartConfig(theme.current.value))
 </script>
 
 <template>

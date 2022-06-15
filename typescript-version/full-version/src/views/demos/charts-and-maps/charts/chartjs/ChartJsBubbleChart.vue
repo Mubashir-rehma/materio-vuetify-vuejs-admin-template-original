@@ -5,9 +5,9 @@ import { getBubbleChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BubbleChart from '@core/libs/chartjs/components/BubbleChart'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const chartConfig = controlledComputed(isDark, () => getBubbleChartConfig(getTheme(current.value)))
+const chartConfig = controlledComputed(isDark, () => getBubbleChartConfig(theme.current.value))
 
 const chartColors = {
   primaryColorShade: '#836AF9',

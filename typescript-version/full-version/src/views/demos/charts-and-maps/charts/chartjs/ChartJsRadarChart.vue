@@ -5,9 +5,9 @@ import { getRadarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import RadarChart from '@core/libs/chartjs/components/RadarChart'
 
 const { isDark } = useThemeConfig()
-const { getTheme, current } = useTheme()
+const theme = useTheme()
 
-const chartConfig = controlledComputed(isDark, () => getRadarChartConfig(getTheme(current.value)))
+const chartConfig = controlledComputed(isDark, () => getRadarChartConfig(theme.current.value))
 
 const chartData = {
   labels: ['STA', 'STR', 'AGI', 'VIT', 'CHA', 'INT'],

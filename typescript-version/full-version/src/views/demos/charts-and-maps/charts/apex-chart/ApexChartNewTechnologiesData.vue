@@ -4,10 +4,10 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getScatterChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const scatterChartConfig = controlledComputed(isDark, () => getScatterChartConfig(theme.current.value),
+const scatterChartConfig = controlledComputed(theme, () => getScatterChartConfig(vuetifyTheme.current.value),
 )
 
 const series = [

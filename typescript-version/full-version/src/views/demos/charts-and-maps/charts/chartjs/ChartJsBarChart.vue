@@ -4,10 +4,10 @@ import BarChart from '@/@core/libs/chartjs/components/BarChart'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLatestBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const chartOptions = controlledComputed(isDark, () => getLatestBarChartConfig(theme.current.value))
+const chartOptions = controlledComputed(theme, () => getLatestBarChartConfig(vuetifyTheme.current.value))
 
 const data = {
   labels: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12', '17/12'],

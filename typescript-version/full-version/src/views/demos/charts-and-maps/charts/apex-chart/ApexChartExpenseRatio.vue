@@ -4,10 +4,10 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getDonutChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const expenseRationChartConfig = controlledComputed(isDark, () => getDonutChartConfig(theme.current.value))
+const expenseRationChartConfig = controlledComputed(theme, () => getDonutChartConfig(vuetifyTheme.current.value))
 
 const series = [85, 16, 50, 50]
 </script>

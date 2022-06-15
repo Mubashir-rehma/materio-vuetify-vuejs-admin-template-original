@@ -9,19 +9,19 @@ import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarTy
 // import { useTheme } from 'vuetify'
 
 const isNavDrawerOpen = ref(false)
-const { isDark, skin, appRouteTransition } = useThemeConfig()
+const { theme, skin, appRouteTransition } = useThemeConfig()
 
 // 👉 Primary Color
-const theme = useTheme()
-const initialThemeColors = JSON.parse(JSON.stringify(theme.current.value.colors))
+const vuetifyTheme = useTheme()
+const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
+
+const initialThemeColors = JSON.parse(JSON.stringify(vuetifyTheme.current.value.colors))
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
 
 const setPrimaryColor = (color: string) => {
-  theme.themes.value.light.colors.primary = color
-  theme.themes.value.dark.colors.primary = color
-
-  // setTheme('light', themes.value.light)
-  // setTheme('dark', themes.value.dark)
+  vuetifyThemesName.forEach(t => {
+    vuetifyTheme.themes.value[t].colors.primary = color
+  })
 }
 
 const {
@@ -89,26 +89,24 @@ const { width: windowWidth } = useWindowSize()
           >
             <v-radio
               v-for="key in Object.keys(EnumSkins)"
-              v-show="!(key === 'Semi Dark' && isDark)"
+              v-show="!(key === 'Semi Dark' && theme === 'dark')"
               :key="key"
               :label="key"
               :value="EnumSkins[key]"
             />
           </v-radio-group>
-          <!-- 👉 Mode -->
+
+          <!-- 👉 Theme -->
           <span>
-            Mode
+            Theme
           </span>
-          <div class="d-flex align-center">
-            <span class="text-medium-emphasis">Light</span>
-            <v-switch
-              v-model="isDark"
-              class="ms-2 mt-0"
-              label="Dark"
-            />
-          </div>
+          <v-select
+            v-model="theme"
+            :items="vuetifyThemesName"
+          />
+
           <!-- 👉 Primary color -->
-          <span>
+          <span class="mt-6 d-block">
             Primary Color
           </span>
           <div class="d-flex gap-x-4 mt-2">
@@ -118,12 +116,12 @@ const { width: windowWidth } = useWindowSize()
               style="width: 3rem; height: 3rem; border-radius: 0.5rem; transition: all 0.25s ease;"
               :style="[`background-color: ${initialThemeColors[color]};`]"
               class="cursor-pointer d-flex align-center justify-center"
-              :class="{ 'elevation-4': theme.current.value.colors.primary === initialThemeColors[color] }"
+              :class="{ 'elevation-4': vuetifyTheme.current.value.colors.primary === initialThemeColors[color] }"
               @click="setPrimaryColor(initialThemeColors[color])"
             >
               <VFadeTransition>
                 <v-icon
-                  v-show="theme.current.value.colors.primary === initialThemeColors[color]"
+                  v-show="vuetifyTheme.current.value.colors.primary === initialThemeColors[color]"
                   icon="mdi-check"
                   color="white"
                 />

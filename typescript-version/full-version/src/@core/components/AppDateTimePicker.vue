@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import flatPickr from 'vue-flatpickr-component'
+import { useTheme } from 'vuetify'
 import { filterFieldProps, makeVFieldProps } from 'vuetify/lib/components/VField/VField'
 import { filterInputProps, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
@@ -58,28 +59,21 @@ const onClear = (el: MouseEvent) => {
   })
 }
 
-const { isDark } = useThemeConfig()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
+const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
 
 // Themes class added to flat-picker component for light and dark support
-const addThemeClasses = () => {
-  const themeClass = isDark.value ? 'v-theme--dark' : 'v-theme--light'
-  const removeClass = isDark.value ? 'v-theme--light' : 'v-theme--dark'
-
-  // added ThemeClass
-  refFlatPicker.value.fp.calendarContainer.classList.add(themeClass)
-
-  // remove themeClaass
-  refFlatPicker.value.fp.calendarContainer.classList.remove(removeClass)
+const updateThemeClassInCalendar = (activeTheme: string) => {
+  vuetifyThemesName.forEach(t => {
+    refFlatPicker.value.fp.calendarContainer.classList.remove(`v-theme--${t}`)
+  })
+  refFlatPicker.value.fp.calendarContainer.classList.add(`v-theme--${activeTheme}`)
 }
 
-// Watching: if theme change, it change the classes
-watch(isDark, () => {
-  addThemeClasses()
-})
-
-// added themes class on mounted
+watch(theme, updateThemeClassInCalendar)
 onMounted(() => {
-  addThemeClasses()
+  updateThemeClassInCalendar(vuetifyTheme.name.value)
 })
 </script>
 

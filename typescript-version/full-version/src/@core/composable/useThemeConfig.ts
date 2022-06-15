@@ -2,21 +2,19 @@ import { themeConfig } from '@themeConfig'
 import { useTheme } from 'vuetify'
 
 export const useThemeConfig = () => {
-  const isDark = computed({
+  const theme = computed({
     get() {
-      return themeConfig.app.isDark.value
+      return themeConfig.app.theme.value
     },
-    set(value: typeof themeConfig.app.isDark.value) {
-      themeConfig.app.isDark.value = value
-      localStorage.setItem(`${themeConfig.app.title}-isDark`, value.toString())
+    set(value: typeof themeConfig.app.theme.value) {
+      themeConfig.app.theme.value = value
+      localStorage.setItem(`${themeConfig.app.title}-theme`, value.toString())
     },
   })
 
-  const syncVuetifyThemeWithIsDark = () => {
-    const theme = useTheme()
-    watch(isDark, val => {
-      theme.name.value = val ? 'dark' : 'light'
-    })
+  const syncVuetifyThemeWithTheme = () => {
+    const vuetifyTheme = useTheme()
+    watch(theme, val => { vuetifyTheme.name.value = val })
   }
 
   /*
@@ -28,10 +26,10 @@ export const useThemeConfig = () => {
     With this we will be able to show correct background color for the initial loader even before vue identify the current theme.
   */
   const syncInitialLoaderTheme = () => {
-    const theme = useTheme()
-    watch(isDark, val => {
+    const vuetifyTheme = useTheme()
+    watch(theme, val => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
-      localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, theme.themes.value[val ? 'dark' : 'light'].colors.surface)
+      localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)
     }, {
       immediate: true,
     })
@@ -58,8 +56,8 @@ export const useThemeConfig = () => {
   })
 
   return {
-    isDark,
-    syncVuetifyThemeWithIsDark,
+    theme,
+    syncVuetifyThemeWithTheme,
     syncInitialLoaderTheme,
     skin,
     appRouteTransition,

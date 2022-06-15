@@ -1,8 +1,8 @@
 /* @unocss-include */
-import { breakpointsVuetify } from '@vueuse/core'
 import { defineThemeConfig } from '@core'
 import { EnumSkins, RouteTransitions } from '@core/enums'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
+import { breakpointsVuetify } from '@vueuse/core'
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
@@ -14,7 +14,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     contentLayoutNav: EnumAppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
-    isDark: false,
+    theme: 'light',
     isRtl: false,
     skin: EnumSkins.Default,
     routeTransition: RouteTransitions.Fade,

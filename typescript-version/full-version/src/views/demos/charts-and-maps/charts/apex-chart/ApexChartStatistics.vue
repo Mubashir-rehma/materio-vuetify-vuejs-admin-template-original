@@ -4,10 +4,10 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getRadialBarChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const statisticsChartConfig = controlledComputed(isDark, () => getRadialBarChartConfig(theme.current.value))
+const statisticsChartConfig = controlledComputed(theme, () => getRadialBarChartConfig(vuetifyTheme.current.value))
 
 const series = [80, 50, 35]
 </script>

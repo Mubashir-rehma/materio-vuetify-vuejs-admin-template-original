@@ -4,14 +4,14 @@ import { VThemeProvider } from 'vuetify/lib/components/VThemeProvider/VThemeProv
 import { EnumSkins } from '../enums'
 
 export const useSkins = () => {
-  const { isDark, skin } = useThemeConfig()
+  const { theme, skin } = useThemeConfig()
 
   /*
     💡 This will disallow setting skin to semi-dark and theme to dark at the same time
     In our template using semi-dark skin and dark theme at the same time is invalid configuration
   */
-  const useValidSkin = () => watch([skin, isDark], ([valSkin, valIsDark]) => {
-    if (valIsDark && valSkin === EnumSkins['Semi Dark'])
+  const useValidSkin = () => watch([skin, theme], ([valSkin, valTheme]) => {
+    if (valTheme !== 'light' && valSkin === EnumSkins['Semi Dark'])
       skin.value = EnumSkins.Default
   })
 

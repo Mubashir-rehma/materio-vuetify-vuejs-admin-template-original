@@ -1,13 +1,9 @@
 // Styles
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
+import { themeConfig } from '@themeConfig'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
-import { themeConfig } from '@themeConfig'
-
-// isDark utils
-const localStorageIsDark = localStorage.getItem(`${themeConfig.app.title}-isDark`)
-const getThemeNameFromIsDark = (isDark: boolean) => isDark ? 'dark' : 'light'
 
 export default createVuetify({
   defaults: {
@@ -120,7 +116,7 @@ export default createVuetify({
     },
   },
   theme: {
-    defaultTheme: localStorageIsDark ? getThemeNameFromIsDark(JSON.parse(localStorageIsDark)) : getThemeNameFromIsDark(themeConfig.app.isDark.value),
+    defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
     themes: {
       light: {
         dark: false,
@@ -148,6 +144,21 @@ export default createVuetify({
           'error': '#f55252',
           'on-background': '#E8E8F1',
           'on-surface': '#E8E8F1',
+        },
+      },
+      retro: {
+        dark: false,
+        colors: {
+          'primary': '#D6AF5F',
+          'on-primary': '#fff',
+          'secondary': '#677492',
+          'on-secondary': '#fff',
+          'success': '#40c057',
+          'info': '#2f8be6',
+          'warning': '#f77e17',
+          'error': '#f55252',
+          'on-background': '#0D0C22',
+          'on-surface': '#0D0C22',
         },
       },
     },

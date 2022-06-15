@@ -3,7 +3,7 @@ import type { Component, Ref } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from './enums'
 
-// TODO: isDark and maybe other shouldn't be in this file. They should be in the @core.
+// TODO: Check below listed properties should be here or in core
 export interface UserConfig {
   app: {
     title: string

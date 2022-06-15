@@ -4,12 +4,12 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getPolarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import PolarAreaChart from '@core/libs/chartjs/components/PolarAreaChart'
 
-const theme = useTheme()
-const { isDark } = useThemeConfig()
+const vuetifyTheme = useTheme()
+const { theme } = useThemeConfig()
 
-const themeColors = theme.current.value
+const themeColors = vuetifyTheme.current.value
 
-const chartConfig = controlledComputed(isDark, () => getPolarChartConfig(theme.current.value))
+const chartConfig = controlledComputed(theme, () => getPolarChartConfig(vuetifyTheme.current.value))
 
 // custom colors
 const chartCustomColor = {

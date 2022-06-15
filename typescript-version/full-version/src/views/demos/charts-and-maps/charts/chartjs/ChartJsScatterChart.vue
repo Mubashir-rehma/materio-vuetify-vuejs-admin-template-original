@@ -4,11 +4,11 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getScatterChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import ScatterChart from '@core/libs/chartjs/components/ScatterChart'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
-const themeColors = theme.current.value
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
+const themeColors = vuetifyTheme.current.value
 
-const chartConfig = controlledComputed(isDark, () => getScatterChartConfig(theme.current.value))
+const chartConfig = controlledComputed(theme, () => getScatterChartConfig(vuetifyTheme.current.value))
 const data = {
   datasets: [
     {

@@ -4,10 +4,10 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineChartSimpleConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const balanceChartConfig = controlledComputed(isDark, () => getLineChartSimpleConfig(theme.current.value))
+const balanceChartConfig = controlledComputed(theme, () => getLineChartSimpleConfig(vuetifyTheme.current.value))
 
 const series = [
   {

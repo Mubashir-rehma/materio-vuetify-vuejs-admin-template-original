@@ -4,10 +4,10 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getCandlestickChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(isDark, () => getCandlestickChartConfig(theme.current.value))
+const chartConfig = controlledComputed(theme, () => getCandlestickChartConfig(vuetifyTheme.current.value))
 const series = [
   {
     data: [

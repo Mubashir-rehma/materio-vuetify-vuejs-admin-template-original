@@ -4,9 +4,9 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
-const themeColors = theme.current.value
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
+const themeColors = vuetifyTheme.current.value
 
 const data = {
   labels: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
@@ -53,7 +53,7 @@ const data = {
   ],
 }
 
-const chartConfig = controlledComputed(isDark, () => getLineChartConfig(theme.current.value))
+const chartConfig = controlledComputed(theme, () => getLineChartConfig(vuetifyTheme.current.value))
 </script>
 
 <template>

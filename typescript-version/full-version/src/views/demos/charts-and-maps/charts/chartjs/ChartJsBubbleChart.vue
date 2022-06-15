@@ -4,10 +4,10 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getBubbleChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BubbleChart from '@core/libs/chartjs/components/BubbleChart'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(isDark, () => getBubbleChartConfig(theme.current.value))
+const chartConfig = controlledComputed(theme, () => getBubbleChartConfig(vuetifyTheme.current.value))
 
 const chartColors = {
   primaryColorShade: '#836AF9',

@@ -4,12 +4,12 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getHorizontalBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BarChart from '@core/libs/chartjs/components/BarChart'
 
-const { isDark } = useThemeConfig()
-const theme = useTheme()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
 
-const chartOptions = controlledComputed(isDark, () => getHorizontalBarChartConfig(theme.current.value))
+const chartOptions = controlledComputed(theme, () => getHorizontalBarChartConfig(vuetifyTheme.current.value))
 
-const themeColors = theme.current.value
+const themeColors = vuetifyTheme.current.value
 
 const data = {
   labels: ['MON', 'TUE', 'WED ', 'THU', 'FRI'],

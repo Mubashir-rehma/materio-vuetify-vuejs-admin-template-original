@@ -124,3 +124,8 @@ h6,
   --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "dark")} !important;
   --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "dark")} !important;
 }
+
+.v-theme--retro {
+  --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "retro")} !important;
+  --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "retro")} !important;
+}

@@ -1,11 +1,11 @@
-import type { ThemeConfig, UserThemeConfig } from './types'
-import { EnumSkins, RouteTransitions } from '@core/enums'
-import type { UserConfig as LayoutConfig } from '@layouts/types'
+import { EnumSkins, RouteTransitions } from '@core/enums';
+import type { UserConfig as LayoutConfig } from '@layouts/types';
+import type { ThemeConfig, UserThemeConfig } from './types';
 
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
 ): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
-  const localStorageIsDark = localStorage.getItem(`${userConfig.app.title}-isDark`)
+  const localStorageTheme = localStorage.getItem(`${userConfig.app.title}-theme`)
   const localStorageSkin = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
 
@@ -27,7 +27,7 @@ export const defineThemeConfig = (
         contentLayoutNav: ref(userConfig.app.contentLayoutNav),
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
-        isDark: ref(localStorageIsDark ? JSON.parse(localStorageIsDark) : userConfig.app.isDark),
+        theme: ref(localStorageTheme || userConfig.app.theme),
         isRtl: ref(userConfig.app.isRtl),
         skin: ref(localStorageSkin || userConfig.app.skin),
         routeTransition: ref(localStorageTransition || userConfig.app.routeTransition),
@@ -61,7 +61,6 @@ export const defineThemeConfig = (
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
         isRtl: userConfig.app.isRtl,
-        isDark: userConfig.app.isDark,
         routeTransition: userConfig.app.routeTransition,
       },
       navbar: {
@@ -92,5 +91,5 @@ export const defineThemeConfig = (
   }
 }
 
-export { useThemeConfig } from './composable/useThemeConfig'
+export { useThemeConfig } from './composable/useThemeConfig';
 

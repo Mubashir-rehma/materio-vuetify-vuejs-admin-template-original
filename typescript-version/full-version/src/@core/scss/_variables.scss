@@ -13,11 +13,13 @@
 
 $css-var--v-theme-background: (
   "light": (241, 241, 241),
-  "dark": (18, 18, 18)
+  "dark": (18, 18, 18),
+  "retro": (240, 240, 240),
 ) !default;
 $css-var--v-theme-surface: (
   "light": (255, 255, 255),
-  "dark": (47, 47, 47)
+  "dark": (47, 47, 47),
+  "retro": (255, 254, 252),
 ) !default;
 
 // 👉 Default layout with vertical nav

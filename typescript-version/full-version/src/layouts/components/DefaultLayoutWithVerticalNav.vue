@@ -39,19 +39,17 @@ const { isLessThanOverlayNavBreakpoint } = useLayouts()
     </template>
 
     <!-- Pages -->
-    <div style="padding: 2rem;">
-      <router-view v-slot="{ Component, route }">
-        <transition
-          :name="appRouteTransition"
-          mode="out-in"
-        >
-          <component
-            :is="Component"
-            :key="route.path"
-          />
-        </transition>
-      </router-view>
-    </div>
+    <router-view v-slot="{ Component, route }">
+      <transition
+        :name="appRouteTransition"
+        mode="out-in"
+      >
+        <component
+          :is="Component"
+          :key="route.path"
+        />
+      </transition>
+    </router-view>
 
     <!-- Footer -->
     <template #footer>

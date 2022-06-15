@@ -92,7 +92,7 @@ export default defineComponent({
       const main = h(
         'main',
         { class: 'layout-page-content' },
-        mainChildren,
+        h('div', { class: 'page-content-container' }, mainChildren),
       )
 
       // 👉 Footer
@@ -168,10 +168,12 @@ export default defineComponent({
         @if variables.$layout-vertical-nav-navbar-is-contained {
           @extend %boxed-content;
 
-          padding: 0 2rem;
+          padding-block: 0;
+          padding-inline: 2rem;
         } @else {
           .navbar-content-container {
-            padding: 0 2rem;
+            padding-block: 0;
+            padding-inline: 2rem;
           }
         }
       }

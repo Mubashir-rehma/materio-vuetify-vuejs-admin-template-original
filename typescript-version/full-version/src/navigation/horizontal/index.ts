@@ -25,7 +25,6 @@ export default [
   {
     title: 'Apps & Pages',
     icon: 'i-mdi-package-variant',
-
     children: [
       { title: 'Calendar', to: 'calendar', icon: 'i-mdi-calendar-blank', action: 'read', subject: 'Auth' },
       {
@@ -45,6 +44,13 @@ export default [
           { title: 'List', to: 'invoice-list' },
           { title: 'Detail', to: 'invoice-detail' },
           { title: 'Add', to: 'invoice-add' },
+        ],
+      },
+      {
+        title: 'Pages',
+        icon: 'i-mdi-file-outline',
+        children: [
+          { title: 'Knowledge Base', to: 'pages-knowledge-base' },
         ],
       },
     ],

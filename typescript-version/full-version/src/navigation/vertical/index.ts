@@ -55,6 +55,13 @@ export default [
       { title: 'Add', to: 'invoice-add' },
     ],
   },
+  {
+    title: 'Pages',
+    icon: 'i-mdi-file-outline',
+    children: [
+      { title: 'Knowledge Base', to: 'pages-knowledge-base' },
+    ],
+  },
   { heading: 'UI Elements' },
   {
     title: 'Icons',

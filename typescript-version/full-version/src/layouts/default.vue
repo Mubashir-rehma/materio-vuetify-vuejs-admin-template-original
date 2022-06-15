@@ -30,5 +30,5 @@ _switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
 </template>
 
 <style lang="scss">
-@use "@layouts/styles/default_layout";
+@use "@layouts/styles/default-layout";
 </style>

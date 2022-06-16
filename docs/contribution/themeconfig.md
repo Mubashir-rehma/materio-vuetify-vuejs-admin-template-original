@@ -36,4 +36,4 @@ themeConfig can be defined via `defineConfig` function. This function accepts `u
 
 Please refer to below diagram from clear explanation:
 
-<img :src="$withBase('/images/contributing/master-config-typings.drawio.png')" alt="master-config-typings.drawio" class="medium-zoom"></img>
+![master-config-typings.drawio](/images/contributing/master-config-typings.drawio.png)

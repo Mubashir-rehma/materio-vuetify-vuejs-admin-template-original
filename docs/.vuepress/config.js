@@ -35,6 +35,14 @@ module.exports = {
           ],
         },
         {
+          title: 'Layout',
+          collapsable: false,
+          children: [
+            '/guide/layouts/layouts-plugin',
+            '/guide/layouts/layout-types',
+          ]
+        },
+        {
           title: 'Components',
           collapsable: false,
           children: [
@@ -64,6 +72,8 @@ module.exports = {
           title: 'Layout',
           collapsable: false,
           children: [
+            '/code-examples/layout/customize-navbar',
+            '/code-examples/layout/customize-footer',
             '/code-examples/fetching-nav-items-from-api',
           ]
         }

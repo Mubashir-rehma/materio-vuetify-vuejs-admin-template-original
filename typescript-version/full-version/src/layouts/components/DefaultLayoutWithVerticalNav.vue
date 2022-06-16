@@ -1,28 +1,34 @@
 <script lang="ts" setup>
+import navItems from '@/navigation/vertical'
+
+// Composable
+import { useSkins } from '@core/composable/useSkins'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
+
+// Components
 import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
-import navItems from '@/navigation/vertical'
-import { useSkins } from '@core/composable/useSkins'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
-import { useLayouts } from '@layouts'
-import { ThemeSwitcher } from '@layouts/components'
-import DefaultLayoutWithVerticalNav from '@layouts/components/DefaultLayoutWithVerticalNav.vue'
+
+// @layouts plugin
+import { VerticalNavLayout, useLayouts } from '@layouts'
+
+// `layoutAttrs` provides skin classes and vertical nav props for semi-dark skin styling
+const { layoutAttrs } = useSkins()
 
 const { appRouteTransition } = useThemeConfig()
-const { layoutAttrs } = useSkins()
 const { width: windowWidth } = useWindowSize()
 const { isLessThanOverlayNavBreakpoint } = useLayouts()
 </script>
 
 <template>
-  <DefaultLayoutWithVerticalNav
+  <VerticalNavLayout
     :nav-items="navItems"
     v-bind="layoutAttrs"
   >
-    <!-- navbar -->
+    <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
-      <div style="display: flex; height: 100%; align-items: center;">
+      <div class="d-flex h-100 align-center">
         <div
           v-if="isLessThanOverlayNavBreakpoint(windowWidth)"
           class="i-mdi-menu cursor-pointer"
@@ -38,7 +44,7 @@ const { isLessThanOverlayNavBreakpoint } = useLayouts()
       </div>
     </template>
 
-    <!-- Pages -->
+    <!-- 👉 Pages -->
     <router-view v-slot="{ Component, route }">
       <transition
         :name="appRouteTransition"
@@ -51,7 +57,7 @@ const { isLessThanOverlayNavBreakpoint } = useLayouts()
       </transition>
     </router-view>
 
-    <!-- Footer -->
+    <!-- 👉 Footer -->
     <template #footer>
       <div class="h-100 d-flex align-center justify-space-between">
         <!-- 👉 Footer: left content -->
@@ -90,7 +96,7 @@ const { isLessThanOverlayNavBreakpoint } = useLayouts()
       </div>
     </template>
 
-    <!-- Customizer -->
+    <!-- 👉 Customizer -->
     <TheCustomizer />
-  </DefaultLayoutWithVerticalNav>
+  </VerticalNavLayout>
 </template>

@@ -1,24 +1,33 @@
 <script lang="ts" setup>
+import navItems from '@/navigation/horizontal'
+
+// Composable
+import { useSkins } from '@core/composable/useSkins'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { HorizontalNavLayout } from '@layouts'
+
+// Components
 import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
-import navItemsHorizontal from '@/navigation/horizontal'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
-import DefaultLayoutWithHorizontalNav from '@layouts/components/DefaultLayoutWithHorizontalNav.vue'
 
 const { appRouteTransition } = useThemeConfig()
+const { layoutAttrs } = useSkins()
 </script>
 
 <template>
-  <DefaultLayoutWithHorizontalNav :nav-items="navItemsHorizontal">
-    <!-- navbar -->
+  <HorizontalNavLayout
+    :nav-items="navItems"
+    v-bind="layoutAttrs"
+  >
+    <!-- 👉 navbar -->
     <template #navbar>
       <NavBarI18n />
       <NavBarNotifications />
       <UserProfile />
     </template>
 
-    <!-- Pages -->
+    <!-- 👉 Pages -->
     <router-view v-slot="{ Component, route }">
       <transition
         :name="appRouteTransition"
@@ -31,12 +40,12 @@ const { appRouteTransition } = useThemeConfig()
       </transition>
     </router-view>
 
-    <!-- Footer -->
+    <!-- 👉 Footer -->
     <template #footer>
-      I am footer
+      <span>My custom content</span>
     </template>
 
-    <!-- Customizer -->
+    <!-- 👉 Customizer -->
     <TheCustomizer />
-  </DefaultLayoutWithHorizontalNav>
+  </HorizontalNavLayout>
 </template>

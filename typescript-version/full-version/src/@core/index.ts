@@ -1,6 +1,6 @@
-import { EnumSkins, RouteTransitions } from '@core/enums';
-import type { UserConfig as LayoutConfig } from '@layouts/types';
-import type { ThemeConfig, UserThemeConfig } from './types';
+import type { ThemeConfig, UserThemeConfig } from './types'
+import { EnumSkins, RouteTransitions } from '@core/enums'
+import type { UserConfig as LayoutConfig } from '@layouts/types'
 
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
@@ -91,5 +91,5 @@ export const defineThemeConfig = (
   }
 }
 
-export { useThemeConfig } from './composable/useThemeConfig';
+export { useThemeConfig } from './composable/useThemeConfig'
 

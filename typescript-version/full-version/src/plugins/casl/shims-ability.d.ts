@@ -1,4 +1,4 @@
-import type { AppAbility } from './AppAbility';
+import type { AppAbility } from './AppAbility'
 
 // TODO: Decide where to place this file
 

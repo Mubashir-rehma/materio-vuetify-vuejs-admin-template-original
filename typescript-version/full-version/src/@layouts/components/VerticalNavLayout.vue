@@ -48,6 +48,7 @@ export default defineComponent({
     const shallShowPageLoading = ref(false)
 
     return () => {
+      // 👉 Vertical nav
       const verticalNav = h(
         VerticalNav,
         { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems, ...props.verticalNavAttrs },

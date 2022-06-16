@@ -1,8 +1,8 @@
-import { useLayouts } from '@layouts'
 import type { InjectionKey, Plugin, Ref } from 'vue'
 import { config } from './config'
 import { EnumContentWidth } from './enums'
 import type { UserConfig } from './types'
+import { useLayouts } from '@layouts'
 
 const { _setAppDir } = useLayouts()
 
@@ -63,6 +63,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
 
 export const injectionKeyIsVerticalNavHovered: InjectionKey<Ref<boolean>> = Symbol('isVerticalNavHovered')
 
+export * from './components'
 export { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 export { useLayouts } from './composable/useLayouts'
 

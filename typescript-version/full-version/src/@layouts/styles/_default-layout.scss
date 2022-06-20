@@ -1,6 +1,7 @@
 // These are styles which are both common in layout w/ vertical nav & horizontal nav
 @use "@layouts/styles/rtl";
 @use "@layouts/styles/placeholders";
+@use "@layouts/styles/mixins";
 @use "@configured-variables" as variables;
 
 html,
@@ -8,27 +9,13 @@ body {
   min-block-size: 100%;
 }
 
-.layout-navbar {
-  inline-size: 100%;
-
-  .layout-content-width-boxed & {
-    .navbar-content-container {
-      @extend %boxed-content;
-    }
-  }
-}
-
 .layout-page-content {
+  @include mixins.boxed-content(true);
+
   flex-grow: 1;
-  inline-size: 100%;
 
-  .layout-content-width-boxed & {
-    @extend %boxed-content;
-  }
-
-  > .page-content-container {
-    padding: 2rem;
-  }
+  // TODO: Use grid gutter variable here
+  padding-block: 1.5rem;
 }
 
 .layout-footer {
@@ -44,13 +31,5 @@ body {
 
   .layout-footer-hidden & {
     display: none;
-  }
-
-  .layout-content-width-boxed & {
-    @extend %boxed-content;
-
-    inline-size: 100%;
-    padding-block: 0;
-    padding-inline: 2rem;
   }
 }

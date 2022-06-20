@@ -26,16 +26,9 @@
   // 👉 App footer
   // TODO: Refactor this once we add style for footer variants
   .layout-footer {
-    padding: 1rem 0;
     background-color: rgb(var(--v-theme-surface));
-    box-shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
-  }
 
-  // TODO: Use Vuetify grid sass variable here
-  .horizontal-nav-content-container,
-  .navbar-content-container,
-  .layout-page-content {
-    padding-inline: 1.5rem;
+    @include elevation.elevation(3);
   }
 
   // TODO: Use Vuetify grid sass variable here

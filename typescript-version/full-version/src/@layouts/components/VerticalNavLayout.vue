@@ -143,6 +143,7 @@ export default defineComponent({
 <style lang="scss">
 @use "@configured-variables" as variables;
 @use "@layouts/styles/placeholders";
+@use "@layouts/styles/mixins";
 
 .layout-wrapper.layout-nav-type-vertical {
   // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
@@ -165,16 +166,14 @@ export default defineComponent({
     }
 
     @at-root {
-      .layout-wrapper.layout-nav-type-vertical.layout-content-width-boxed .layout-navbar {
-        @if variables.$layout-vertical-nav-navbar-is-contained {
-          @extend %boxed-content;
-
-          padding-block: 0;
-          padding-inline: 2rem;
-        } @else {
-          .navbar-content-container {
-            padding-block: 0;
-            padding-inline: 2rem;
+      .layout-wrapper.layout-nav-type-vertical {
+        .layout-navbar {
+          @if variables.$layout-vertical-nav-navbar-is-contained {
+            @include mixins.boxed-content;
+          } @else {
+            .navbar-content-container {
+              @include mixins.boxed-content;
+            }
           }
         }
       }
@@ -187,6 +186,11 @@ export default defineComponent({
 
   &.layout-navbar-hidden .layout-navbar {
     @extend %layout-navbar-hidden;
+  }
+
+  // 👉 Footer
+  .layout-footer {
+    @include mixins.boxed-content;
   }
 
   // 👉 Layout overlay

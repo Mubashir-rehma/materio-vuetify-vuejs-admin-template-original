@@ -1,3 +1,4 @@
+@use "placeholders";
 @use "@configured-variables" as variables;
 
 @mixin rtl {
@@ -12,4 +13,22 @@
 @mixin icon-size($size) {
   block-size: $size;
   inline-size: $size;
+}
+
+@mixin boxed-content($nest-selector: false) {
+  & {
+    @extend %boxed-content-spacing;
+
+    @at-root {
+      @if $nest-selector == false {
+        .layout-content-width-boxed#{&} {
+          @extend %boxed-content;
+        }
+      } @else {
+        .layout-content-width-boxed & {
+          @extend %boxed-content;
+        }
+      }
+    }
+  }
 }

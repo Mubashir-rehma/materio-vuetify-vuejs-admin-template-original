@@ -34,12 +34,7 @@
   // Add transition to both navbar and content
   .layout-navbar,
   .layout-navbar .navbar-content-container {
-    transition: padding 0.2s ease, background-color 0.18s ease, left 0.3s ease;
-  }
-
-  // This will get applied when content width is fluid
-  .layout-navbar {
-    padding: 1.2rem;
+    transition: padding 0.2s ease, background-color 0.18s ease, inset-inline-start 0.3s ease;
   }
 
   &.layout-content-width-boxed {
@@ -57,7 +52,8 @@
           @at-root {
             .layout-wrapper.layout-nav-type-vertical.layout-content-width-boxed.window-scrolled.layout-navbar-sticky {
               .layout-navbar .navbar-content-container {
-                padding: 0 1.2rem;
+                padding-block: 0;
+                padding-inline: 1.2rem;
               }
             }
           }
@@ -78,8 +74,9 @@
         // ℹ️ .layout-footer-sticky#{$ele-layout-footer} => .layout-footer-sticky.layout-wrapper.layout-nav-type-vertical .layout-footer
         .layout-footer-sticky#{$ele-layout-footer} {
           .footer-content-container {
-            padding: 0 1.2rem;
             background-color: rgb(var(--v-theme-surface));
+            padding-block: 0;
+            padding-inline: 1.2rem;
 
             @include mixins_elevation.elevation(3);
           }

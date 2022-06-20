@@ -71,6 +71,7 @@ router.afterEach(() => {
 <style lang="scss">
 @use "@configured-variables" as variables;
 @use "@layouts/styles/placeholders";
+@use "@layouts/styles/mixins";
 
 .layout-wrapper {
   &.layout-nav-type-horizontal {
@@ -81,14 +82,27 @@ router.afterEach(() => {
     // min-height: 100%;
     min-block-size: calc(var(--vh, 1vh) * 100);
 
+    .layout-navbar-and-nav-container {
+      z-index: 1;
+    }
+
+    // 👉 Navbar
+    .navbar-content-container {
+      @include mixins.boxed-content;
+    }
+
     .layout-page-content {
       display: flex;
       flex-direction: column;
     }
-  }
 
-  .layout-navbar-and-nav-container {
-    z-index: 1;
+    // 👉 Footer
+    // Boxed content
+    .layout-footer {
+      .footer-content-container {
+        @include mixins.boxed-content;
+      }
+    }
   }
 
   // If both navbar & horizontal nav sticky
@@ -105,23 +119,23 @@ router.afterEach(() => {
       display: none;
     }
   }
-}
 
-.layout-navbar {
-  z-index: variables.$layout-horizontal-nav-layout-navbar-z-index;
-  block-size: variables.$layout-horizontal-nav-navbar-height;
+  .layout-navbar {
+    z-index: variables.$layout-horizontal-nav-layout-navbar-z-index;
+    block-size: variables.$layout-horizontal-nav-navbar-height;
 
-  // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
-  // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
-  // .layout-navbar-sticky & {
-  //   @extend %layout-navbar-sticky;
-  // }
+    // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
+    // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
+    // .layout-navbar-sticky & {
+    //   @extend %layout-navbar-sticky;
+    // }
 
-  // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
-  // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
-  // .layout-navbar-hidden & {
-  //   @extend %layout-navbar-hidden;
-  // }
+    // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
+    // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
+    // .layout-navbar-hidden & {
+    //   @extend %layout-navbar-hidden;
+    // }
+  }
 }
 
 // 👉 Horizontal nav nav
@@ -139,10 +153,8 @@ router.afterEach(() => {
   //   display: none;
   // }
 
-  .layout-content-width-boxed & {
-    .horizontal-nav-content-container {
-      @extend %boxed-content;
-    }
+  .horizontal-nav-content-container {
+    @include mixins.boxed-content(true);
   }
 }
 </style>

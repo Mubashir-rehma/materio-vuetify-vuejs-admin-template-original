@@ -28,7 +28,6 @@ module.exports = {
             '/guide/how-to-create-a-new-page',
             '/guide/styles',
             '/guide/navigation-menu',
-            '/guide/layouts.md',
             '/guide/getting-started/routing.md',
             '/guide/authentication.md',
             '/guide/access-control.md',

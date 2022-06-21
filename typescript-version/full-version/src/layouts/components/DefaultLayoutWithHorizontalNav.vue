@@ -7,6 +7,7 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { HorizontalNavLayout } from '@layouts'
 
 // Components
+import Footer from '@/layouts/components/Footer.vue'
 import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
@@ -42,7 +43,7 @@ const { layoutAttrs } = useSkins()
 
     <!-- 👉 Footer -->
     <template #footer>
-      <span>My custom content</span>
+      <Footer />
     </template>
 
     <!-- 👉 Customizer -->

@@ -8,7 +8,7 @@ Both components provide `footer` slot that you can use to add custom content to 
 
 This layout component is used in `@/layouts/components/DefaultLayoutWithVerticalNav.vue` file. In there, there's already a `footer` slot in use, you can customize it according to your needs.
 
-```vue{7-9}
+```vue{7-11}
 <template>
   <VerticalNavLayout
     :nav-items="navItems"
@@ -16,7 +16,9 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithVertical
   >
     <!-- 👉 footer -->
     <template #footer>
-      <span>My custom content</span>
+      <div class="h-100 d-flex align-center">
+        <span>My custom content</span>
+      </div>
     </template>
 
     <!-- Other content -->
@@ -32,7 +34,7 @@ _Result:_
 
 This layout component is used in `@/layouts/components/DefaultLayoutWithHorizontalNav.vue` file. In there, there's already a `footer` slot in use, you can customize it according to your needs.
 
-```vue{7-9}
+```vue{7-11}
 <template>
   <HorizontalNavLayout
     :nav-items="navItems"
@@ -40,7 +42,9 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithHorizont
   >
     <!-- 👉 footer -->
     <template #footer>
-      <span>My custom content</span>
+      <div class="h-100 d-flex align-center">
+        <span>My custom content</span>
+      </div>
     </template>
 
     <!-- Other content -->

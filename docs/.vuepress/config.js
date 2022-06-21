@@ -4,6 +4,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },
+      { text: '@layouts', link: '/layouts/components/navbar-i18n' },
       { text: 'Contribution', link: '/contribution/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
@@ -62,6 +63,16 @@ module.exports = {
           collapsable: false,
           children: ['/guide/getting-support', '/guide/github-access'],
         },
+      ],
+      '/layouts/': [
+        {
+          title: 'Components',
+          collapsable: false,
+          children: [
+            ['/layouts/components/navbar-i18n', 'Navbar I18n'],
+            ['/layouts/components/navbar-notifications', 'Navbar notifications'],
+          ]
+        }
       ],
       '/contribution/': [
         ['', 'Welcome'],

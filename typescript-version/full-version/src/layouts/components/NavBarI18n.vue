@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { NavBarI18n as NavBarI18nType } from '@layouts/components'
 import { NavBarI18n } from '@layouts/components'
+import type { I18nLanguage } from '@layouts/types'
 
-const i18nCompLanguages: InstanceType<typeof NavBarI18nType>['languages'] = [
+const i18nCompLanguages: I18nLanguage[] = [
   {
     label: 'English',
     flagpackClass: 'i-flagpack-us',

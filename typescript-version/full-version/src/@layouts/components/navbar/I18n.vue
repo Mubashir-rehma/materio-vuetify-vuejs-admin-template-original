@@ -16,7 +16,10 @@ const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i
     variant="text"
     color="default"
   >
-    <div :class="[selectI18nLocale?.flagpackClass, 'me-2']" />
+    <div
+      class="me-2"
+      :class="[selectI18nLocale?.flagpackClass]"
+    />
     <span>{{ selectI18nLocale?.label }}</span>
 
     <!-- Menu -->

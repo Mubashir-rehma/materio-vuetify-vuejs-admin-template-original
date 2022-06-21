@@ -160,3 +160,8 @@ type Notification = {
   | { img?: never; text: str; icon?: never }
   | { img?: never; text?: never; icon: str }
 )
+
+interface ThemeSwitcherTheme {
+  name: string
+  icon: string
+}

@@ -7,6 +7,10 @@ interface Props {
   badgeProps?: any
 }
 const props = defineProps<Props>()
+
+defineEmits<{
+  (e: 'click:readAllNotifications'): void
+}>()
 </script>
 
 <template>
@@ -69,7 +73,10 @@ const props = defineProps<Props>()
           <v-divider />
           <!-- 👉 Footer -->
           <v-list-item class="notification-section">
-            <v-btn block>
+            <v-btn
+              block
+              @click="$emit('click:readAllNotifications')"
+            >
               READ ALL NOTIFICATIONS
             </v-btn>
           </v-list-item>

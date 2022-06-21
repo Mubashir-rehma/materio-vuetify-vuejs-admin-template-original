@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ThemeSwitcherTheme } from '@layouts/types'
-import { ThemeSwitcher } from '@layouts/components'
 
 const themes: ThemeSwitcherTheme[] = [
   {

@@ -262,6 +262,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCustomizer: typeof import('./src/@core/components/TheCustomizer.vue')['default']
+    ThemeSwitcher: typeof import('./src/@core/components/ThemeSwitcher.vue')['default']
     TypographyHeadlines: typeof import('./src/views/demos/pages/typography/TypographyHeadlines.vue')['default']
     TypographyTexts: typeof import('./src/views/demos/pages/typography/TypographyTexts.vue')['default']
   }

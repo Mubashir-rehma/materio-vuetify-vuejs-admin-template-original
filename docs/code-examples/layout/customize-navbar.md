@@ -51,3 +51,11 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithHorizont
 _Result:_
 
 ![Navbar slot usage](/images/code-examples/layout/navbar-slot-usage-horizontal.png)
+
+## Using components
+
+You can find navbar specific components in `layouts` plugin and `@core` dir. Below is list of components that you can use to customize the navbar.
+
+1. [I18n](/layouts/components/navbar-i18n.md) _(layouts plugin)_
+2. [Notifications](/layouts/components/navbar-notifications.md) _(layouts plugin)_
+3. ThemeSwitcher _(@core)_

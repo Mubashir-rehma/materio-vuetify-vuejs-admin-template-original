@@ -50,6 +50,7 @@
     ],
     // Extension: Spell Checker
     "cSpell.words": [
+        "Composables",
         "Customizer",
         "flagpack",
         "psudo",

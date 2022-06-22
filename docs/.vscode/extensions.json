@@ -5,6 +5,7 @@
         "exodiusstudios.comment-anchors",
         "mgmcdermott.vscode-language-babel",
         "editorconfig.editorconfig",
-        "GitHub.vscode-pull-request-github"
+        "github.vscode-pull-request-github",
+        "Vue.volar"
     ]
 }

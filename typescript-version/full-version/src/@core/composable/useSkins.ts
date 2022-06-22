@@ -4,11 +4,9 @@ import { EnumAppContentLayoutNav } from '@layouts/enums'
 
 // TODO: Use `VThemeProvider` from dist instead of lib (Using this component from dist causes navbar to loose sticky positioning)
 import { useThemeConfig } from '@core/composable/useThemeConfig'
-import { useLayouts } from '@layouts'
 
 export const useSkins = () => {
-  const { theme, skin } = useThemeConfig()
-  const { appContentLayoutNav } = useLayouts()
+  const { theme, skin, appContentLayoutNav } = useThemeConfig()
 
   /*
     💡 This will disallow setting skin to semi-dark and theme to dark at the same time

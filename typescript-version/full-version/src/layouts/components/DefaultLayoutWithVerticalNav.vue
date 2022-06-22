@@ -13,14 +13,13 @@ import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 
 // @layouts plugin
-import { VerticalNavLayout, useLayouts } from '@layouts'
+import { VerticalNavLayout } from '@layouts'
 
 // `layoutAttrs` provides skin classes and vertical nav props for semi-dark skin styling
 const { layoutAttrs } = useSkins()
 
-const { appRouteTransition } = useThemeConfig()
+const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
 const { width: windowWidth } = useWindowSize()
-const { isLessThanOverlayNavBreakpoint } = useLayouts()
 </script>
 
 <template>

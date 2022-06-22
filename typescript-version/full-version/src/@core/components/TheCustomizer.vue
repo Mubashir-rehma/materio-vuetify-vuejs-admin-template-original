@@ -3,13 +3,24 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { EnumSkins, RouteTransitions } from '@core/enums'
-import { useLayouts } from '@layouts'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 
 // import { useTheme } from 'vuetify'
 
 const isNavDrawerOpen = ref(false)
-const { theme, skin, appRouteTransition } = useThemeConfig()
+const {
+  theme,
+  skin,
+  appRouteTransition,
+  navbarType,
+  footerType,
+  isVerticalNavCollapsed,
+  appContentWidth,
+  appContentLayoutNav,
+  isAppRtl,
+  isNavbarBlurEnabled,
+  isLessThanOverlayNavBreakpoint,
+} = useThemeConfig()
 
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
@@ -23,10 +34,6 @@ const setPrimaryColor = (color: string) => {
     vuetifyTheme.themes.value[t].colors.primary = color
   })
 }
-
-const {
-  navbarType, footerType, isVerticalNavCollapsed, appContentWidth, appContentLayoutNav, isAppRtl, isNavbarBlurEnabled, isLessThanOverlayNavBreakpoint,
-} = useLayouts()
 
 const perfectScrollbarSettings = {
   maxScrollbarLength: 60,

@@ -98,7 +98,7 @@ export const useLayouts = () => {
     { 'window-scrolled': unref(windowScrollY) },
   ])
 
-  const _switchToVerticalNavOnLtOverlayNavBreakpoint = (windowWidth: MaybeRef<number>) => {
+  const switchToVerticalNavOnLtOverlayNavBreakpoint = (windowWidth: MaybeRef<number>) => {
     /*
       ℹ️ This is flag will hold nav type need to render when switching between lgAndUp from mdAndDown window width
 
@@ -180,7 +180,7 @@ export const useLayouts = () => {
     horizontalNavType,
     isLessThanOverlayNavBreakpoint,
     _layoutClasses,
-    _switchToVerticalNavOnLtOverlayNavBreakpoint,
+    switchToVerticalNavOnLtOverlayNavBreakpoint,
     isVerticalNavMini,
     dynamicI18nProps,
     isAppRtl,

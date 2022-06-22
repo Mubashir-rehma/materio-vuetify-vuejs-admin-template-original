@@ -15,7 +15,7 @@ export const useThemeConfig = () => {
 
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
-    watch(theme, val => { vuetifyTheme.name.value = val })
+    watch(theme, val => { vuetifyTheme.global.name.value = val })
   }
 
   /*
@@ -67,6 +67,7 @@ export const useThemeConfig = () => {
     horizontalNavType,
     isLessThanOverlayNavBreakpoint,
     isAppRtl,
+    switchToVerticalNavOnLtOverlayNavBreakpoint,
   } = useLayouts()
 
   return {
@@ -86,5 +87,6 @@ export const useThemeConfig = () => {
     horizontalNavType,
     isLessThanOverlayNavBreakpoint,
     isAppRtl,
+    switchToVerticalNavOnLtOverlayNavBreakpoint,
   }
 }

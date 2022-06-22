@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useThemeConfig } from '@core/composable/useThemeConfig'
-import { useLayouts } from '@layouts'
-const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme } = useThemeConfig()
-const { isAppRtl } = useLayouts()
+const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme, isAppRtl } = useThemeConfig()
 
 // ℹ️ Sync current theme with initial loader theme
 syncInitialLoaderTheme()

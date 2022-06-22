@@ -4,14 +4,15 @@ import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVertical
 
 // Composable
 import { useSkins } from '@core/composable/useSkins'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
-import { useDynamicVhCssProperty, useLayouts } from '@layouts'
+import { useDynamicVhCssProperty } from '@layouts'
 import { EnumAppContentLayoutNav } from '@layouts/enums'
 
 const { width: windowWidth } = useWindowSize()
 const { useValidSkin } = useSkins()
-const { appContentLayoutNav, _switchToVerticalNavOnLtOverlayNavBreakpoint } = useLayouts()
+const { appContentLayoutNav, switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
 
 // NOTE: You have to use this to prevent invalid theme configuration (skin & theme combination)
 useValidSkin()
@@ -21,7 +22,7 @@ useDynamicVhCssProperty()
 
 // ℹ️ This will switch to vertical nav when define breakpoint is reached when in horizontal nav layout
 // Remove below composable usage if you are not using horizontal nav layout in your app
-_switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
+switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
 </script>
 
 <template>

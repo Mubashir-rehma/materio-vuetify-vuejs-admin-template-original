@@ -54,7 +54,6 @@ const onClear = (el: MouseEvent) => {
   nextTick(() => {
     selectedDateTime.value = ''
 
-    // eslint-disable-next-line vue/custom-event-name-casing
     emit('click:clear', el)
   })
 }

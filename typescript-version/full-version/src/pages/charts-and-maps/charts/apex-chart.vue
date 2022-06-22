@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
+</script>
+
 <template>
   <v-row>
     <!-- 👉  Area chart -->
@@ -8,13 +12,13 @@
             <v-card-title>Area Chart</v-card-title>
             <v-card-subtitle>Commercial networks</v-card-subtitle>
           </v-card-header-text>
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -31,13 +35,13 @@
           <v-card-header-text>
             <v-card-title>Data Science</v-card-title>
           </v-card-header-text>
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -54,6 +58,7 @@
           <v-card-header-text>
             <v-card-title>New Technologies Data</v-card-title>
           </v-card-header-text>
+
           <v-btn-toggle
             density="compact"
             color="primary"
@@ -79,6 +84,7 @@
             <v-card-title>Balance</v-card-title>
             <v-card-subtitle>Commercial networks & enterprises</v-card-subtitle>
           </v-card-header-text>
+
           <h6 class="text-h6 me-3">
             $221,267
           </h6>
@@ -113,13 +119,13 @@
             <v-card-title>Balance</v-card-title>
             <v-card-subtitle>$74,382.72</v-card-subtitle>
           </v-card-header-text>
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -140,13 +146,13 @@
             <v-card-title>Stocks Prices</v-card-title>
             <v-card-subtitle>$50,863.98</v-card-subtitle>
           </v-card-header-text>
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -161,13 +167,7 @@
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Daily Sales States</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Daily Sales States">
         <v-card-text>
           <ApexChartDailySalesStates />
         </v-card-text>
@@ -179,13 +179,7 @@
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Statistics</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Statistics">
         <v-card-text>
           <ApexChartStatistics />
         </v-card-text>
@@ -197,13 +191,7 @@
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Mobile Comparison</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Mobile Comparison">
         <v-card-text>
           <ApexChartMobileComparison />
         </v-card-text>
@@ -215,14 +203,10 @@
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Expense Ratio</v-card-title>
-            <v-card-subtitle>Spending on various categories</v-card-subtitle>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card
+        title="Expense Ratio"
+        subtitle="Spending on various categories"
+      >
         <v-card-text>
           <ApexChartExpenseRatio />
         </v-card-text>
@@ -233,4 +217,8 @@
 
 <style lang="scss">
 @use "@core/scss/libs/apex-chart.scss";
+
+.date-picker-wrapper {
+  inline-size: 12.5rem;
+}
 </style>

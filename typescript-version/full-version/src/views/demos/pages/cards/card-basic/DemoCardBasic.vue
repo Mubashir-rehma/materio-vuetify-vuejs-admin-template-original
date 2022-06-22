@@ -372,13 +372,7 @@ const rating = ref(5)
       lg="4"
       md="6"
     >
-      <v-card>
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Influencing The Influencer</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Influencing The Influencer">
         <v-card-text>
           Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in front of their desktops, while delivery people scan bar codes with handhelds and workers in the field stay in touch.
         </v-card-text>
@@ -403,13 +397,7 @@ const rating = ref(5)
       lg="4"
       md="6"
     >
-      <v-card>
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>The Best Answers</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="The Best Answers">
         <v-card-text class="d-flex align-center flex-wrap">
           <v-rating
             v-model="rating"

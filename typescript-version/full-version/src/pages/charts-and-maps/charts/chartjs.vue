@@ -37,13 +37,13 @@ const stockData = [
           <v-card-header-text>
             <v-card-title>Latest Statistics</v-card-title>
           </v-card-header-text>
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -66,13 +66,13 @@ const stockData = [
             <v-card-title>Balance</v-card-title>
             <v-card-subtitle>$74,123</v-card-subtitle>
           </v-card-header-text>
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -85,17 +85,10 @@ const stockData = [
 
     <!-- 👉 Statistics Line Chart  -->
     <v-col cols="12">
-      <v-card>
-        <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Statistics</v-card-title>
-            <v-card-subtitle>
-              Commercial networks and enterprises
-            </v-card-subtitle>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card
+        title="Statistics"
+        subtitle="Commercial networks and enterprises"
+      >
         <!-- Body -->
         <v-card-text>
           <ChartJsLineChart />
@@ -108,14 +101,7 @@ const stockData = [
       cols="12"
       md="6"
     >
-      <v-card>
-        <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Radar Chart</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Radar Chart">
         <!-- Body -->
         <v-card-text>
           <ChartJsRadarChart />
@@ -128,14 +114,7 @@ const stockData = [
       cols="12"
       md="6"
     >
-      <v-card>
-        <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Average Skills</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Average Skills">
         <!-- Body -->
         <v-card-text>
           <ChartJsPolarAreaChart />
@@ -151,6 +130,7 @@ const stockData = [
           <v-card-header-text>
             <v-card-title>Bubble Chart</v-card-title>
           </v-card-header-text>
+
           <span class="text-subtitle-2">$ 100,000</span>
         </v-card-header>
 
@@ -166,14 +146,7 @@ const stockData = [
       cols="12"
       lg="4"
     >
-      <v-card>
-        <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Sessions By Device</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-
+      <v-card title="Sessions By Device">
         <v-card-text>
           <ChartJsDoughnutChart />
         </v-card-text>
@@ -222,6 +195,7 @@ const stockData = [
           <v-card-header-text>
             <v-card-title>New Product Data</v-card-title>
           </v-card-header-text>
+
           <v-btn-toggle
             color="primary"
             variant="outlined"
@@ -246,18 +220,15 @@ const stockData = [
         <!-- Header -->
         <v-card-header>
           <v-card-header-text>
-            <v-card-title>
-              Data Science
-            </v-card-title>
+            <v-card-title>Data Science</v-card-title>
           </v-card-header-text>
 
-          <div class="text-subtitle-2">
-            <v-icon
-              start
-              icon="mdi-calendar-blank-outline"
-              size="18"
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
             />
-            <span>2019-05-01 to 2019-05-10</span>
           </div>
         </v-card-header>
 
@@ -269,3 +240,9 @@ const stockData = [
     </v-col>
   </v-row>
 </template>
+
+<style lang="scss">
+.date-picker-wrapper {
+  inline-size: 12.5rem;
+}
+</style>

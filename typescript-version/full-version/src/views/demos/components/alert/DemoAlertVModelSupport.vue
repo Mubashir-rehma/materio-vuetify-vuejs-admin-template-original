@@ -7,7 +7,7 @@ const isAlertVisible = ref(true)
     <v-alert
       v-model="isAlertVisible"
       color="warning"
-      variant="contained-text"
+      variant="tonal"
     >
       non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
     </v-alert>

@@ -32,8 +32,8 @@
       sm="6"
     >
       <v-file-input
-        label="Contained"
-        variant="contained"
+        label="Solo"
+        variant="solo"
       />
     </v-col>
 

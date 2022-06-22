@@ -14,7 +14,7 @@ const isSnackbarScrollReverseVisible = ref(false)
     <v-snackbar
       v-model="isSnackbarFadeVisible"
       transition="fade-transition"
-      left
+      location="top start"
     >
       I'm a fade transition snackbar.
     </v-snackbar>
@@ -39,7 +39,7 @@ const isSnackbarScrollReverseVisible = ref(false)
     <v-snackbar
       v-model="isSnackbarScrollReverseVisible"
       transition="scroll-y-reverse-transition"
-      right
+      location="top end"
     >
       I'm a scroll y reverse transition snackbar.
     </v-snackbar>

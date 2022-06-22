@@ -40,7 +40,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
         title="Variant"
         :code="demoCode.variant"
       >
-        <p>Use <code>contained</code>, <code>filled</code>, <code>outlined</code>, <code>plain</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of the textfield. </p>
+        <p>Use <code>solo</code>, <code>filled</code>, <code>outlined</code>, <code>plain</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of the textfield. </p>
 
         <DemoTextfieldVariant />
       </AppCardCode>

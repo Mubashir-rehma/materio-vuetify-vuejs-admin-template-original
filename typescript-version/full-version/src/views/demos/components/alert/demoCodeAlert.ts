@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const border = {
   ts: `
 <template>
@@ -470,7 +468,7 @@ export const density = {
   js: '',
 }
 
-export const text = {
+export const tonal = {
   ts: `
 <template>
   <div>

@@ -71,13 +71,13 @@ import * as demoCode from '@/views/demos/components/button/demoCodeButton'
     </v-col>
 
     <v-col cols="12">
-      <!-- 👉 Contained Text -->
+      <!-- 👉 Tonal -->
       <AppCardCode
-        title="Contained Text"
-        :code="demoCode.containedText"
+        title="Tonal"
+        :code="demoCode.tonal"
       >
-        <p>Use <code>Contained Text</code> variant option to a create a light background button.</p>
-        <DemoButtonContainedText />
+        <p>Use <code>tonal</code> variant option to a create a light background button.</p>
+        <DemoButtonTonal />
       </AppCardCode>
     </v-col>
 
@@ -134,7 +134,7 @@ import * as demoCode from '@/views/demos/components/button/demoCodeButton'
         <p>Use <code>to</code> prop to create button with router support.</p>
         <v-alert
           color="warning"
-          variant="contained-text"
+          variant="tonal"
           class="mb-4"
         >
           Note: On click of the link button, You will get redirected to another page.
@@ -152,7 +152,7 @@ import * as demoCode from '@/views/demos/components/button/demoCodeButton'
         <p>Designates that the component is a link. This is automatic when using the <code>href</code> or <code>to</code> prop.</p>
         <v-alert
           color="warning"
-          variant="contained-text"
+          variant="tonal"
           class="mb-4"
         >
           Note: On click of the link button, You will get redirected to another page.

@@ -36,7 +36,7 @@ const isCPasswordVisible = ref(false)
     </v-tab>
   </v-tabs>
 
-  <v-card>
+  <v-card flat>
     <v-card-text>
       <v-window v-model="tab">
         <v-window-item value="personal-info">

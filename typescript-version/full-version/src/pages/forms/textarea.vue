@@ -42,7 +42,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
         title="Variant"
         :code="demoCode.variant"
       >
-        <p>Use <code>filled</code>, <code>plain</code>, <code>outlined</code>, <code>contained</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of file input.</p>
+        <p>Use <code>filled</code>, <code>plain</code>, <code>outlined</code>, <code>solo</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of file input.</p>
 
         <DemoTextareaVariant />
       </AppCardCode>

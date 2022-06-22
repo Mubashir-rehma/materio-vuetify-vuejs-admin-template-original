@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const group = { ts: '', js: '' }
 
 export const outlined = { ts: '', js: '' }
@@ -26,4 +24,4 @@ export const sizing = { ts: '', js: '' }
 
 export const block = { ts: '', js: '' }
 
-export const containedText = { ts: '', js: '' }
+export const tonal = { ts: '', js: '' }

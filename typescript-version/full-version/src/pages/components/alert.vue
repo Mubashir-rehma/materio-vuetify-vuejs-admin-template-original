@@ -123,14 +123,14 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
     </v-col>
 
     <v-col cols="12">
-      <!-- 👉 Text -->
+      <!-- 👉 Tonal -->
       <AppCardCode
-        title="Text"
-        :code="demoCode.text"
+        title="Tonal"
+        :code="demoCode.tonal"
       >
-        <p>The <code>variant</code> prop provides an easy way to change the overall style of your alerts. The <code>variant="contained-text"</code> prop is a simple alert variant that applies a reduced opacity background of the provided color.</p>
+        <p>The <code>variant</code> prop provides an easy way to change the overall style of your alerts. The <code>variant="tonal"</code> prop is a simple alert variant that applies a reduced opacity background of the provided color.</p>
 
-        <DemoAlertText />
+        <DemoAlertTonal />
       </AppCardCode>
     </v-col>
 

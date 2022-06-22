@@ -3,7 +3,7 @@
     <v-alert
       color="primary"
       border="top"
-      variant="contained-text"
+      variant="tonal"
     >
       Good Morning! Start your day with some alerts.
     </v-alert>
@@ -11,7 +11,7 @@
     <v-alert
       border="end"
       color="secondary"
-      variant="contained-text"
+      variant="tonal"
     >
       Good Morning! Start your day with some alerts.
     </v-alert>
@@ -19,7 +19,7 @@
     <v-alert
       border="bottom"
       color="success"
-      variant="contained-text"
+      variant="tonal"
     >
       Good Morning! Start your day with some alerts.
     </v-alert>
@@ -27,7 +27,7 @@
     <v-alert
       border="start"
       color="info"
-      variant="contained-text"
+      variant="tonal"
     >
       Good Morning! Start your day with some alerts.
     </v-alert>

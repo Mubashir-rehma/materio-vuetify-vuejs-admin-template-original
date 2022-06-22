@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 const isDefaultSnackbarVisible = ref(false)
-const isContainedTextSnackbarVisible = ref(false)
+const isTonalSnackbarVisible = ref(false)
 const isTextSnackbarVisible = ref(false)
 const isOutlinedSnackbarVisible = ref(false)
+const isFlatSnackbarVisible = ref(false)
 </script>
 
 <template>
@@ -15,23 +16,21 @@ const isOutlinedSnackbarVisible = ref(false)
     <!-- Default snackbar -->
     <v-snackbar
       v-model="isDefaultSnackbarVisible"
-      top
-      left
+      location="top start"
     >
       Jelly chocolate bar candy canes apple pie.
     </v-snackbar>
 
-    <!-- Contained-text toggle btn -->
-    <v-btn @click="isContainedTextSnackbarVisible = true">
-      Contained-text
+    <!-- tonal toggle btn -->
+    <v-btn @click="isTonalSnackbarVisible = true">
+      tonal
     </v-btn>
 
-    <!-- Contained-text snackbar -->
+    <!-- tonal snackbar -->
     <v-snackbar
-      v-model="isContainedTextSnackbarVisible"
-      top
-      right
-      variant="contained-text"
+      v-model="isTonalSnackbarVisible"
+      location="top end"
+      variant="tonal"
     >
       Ice cream cake candy canes.
     </v-snackbar>
@@ -44,8 +43,7 @@ const isOutlinedSnackbarVisible = ref(false)
     <!-- Text snackbar -->
     <v-snackbar
       v-model="isTextSnackbarVisible"
-      centered
-      right
+      location="end center"
       variant="text"
     >
       Pie icing biscuit soufflé liquorice topping.
@@ -59,10 +57,23 @@ const isOutlinedSnackbarVisible = ref(false)
     <!-- Outline snackbar -->
     <v-snackbar
       v-model="isOutlinedSnackbarVisible"
-      right
-      bottom
-      outlined
+      location="bottom end"
       variant="outlined"
+      color="error"
+    >
+      Oat cake caramels sesame snaps candy.
+    </v-snackbar>
+
+    <!-- flat toggle btn -->
+    <v-btn @click="isFlatSnackbarVisible = true">
+      Flat
+    </v-btn>
+
+    <!-- flat snackbar -->
+    <v-snackbar
+      v-model="isFlatSnackbarVisible"
+      location="bottom start"
+      variant="flat"
       color="error"
     >
       Oat cake caramels sesame snaps candy.

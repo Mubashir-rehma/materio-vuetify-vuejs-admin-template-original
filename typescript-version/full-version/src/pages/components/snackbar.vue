@@ -88,7 +88,7 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
         title="Position"
         :code="demoCode.position"
       >
-        <p>Use <code>top</code>, <code>right</code>, <code>left</code> and <code>bottom</code> prop to change the position of snackbar.</p>
+        <p>Use <code>location</code> prop to change the position of snackbar.</p>
 
         <DemoSnackbarPosition />
       </AppCardCode>

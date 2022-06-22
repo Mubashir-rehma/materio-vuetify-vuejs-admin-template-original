@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const isSnackbarTopLeftVisible = ref(false)
+const isSnackbarTopStartVisible = ref(false)
 const isSnackbarTopVisible = ref(false)
-const isSnackbarTopRightVisible = ref(false)
-const isSnackbarBottomRightVisible = ref(false)
+const isSnackbarTopEndVisible = ref(false)
+const isSnackbarBottomEndVisible = ref(false)
 const isSnackbarBottomVisible = ref(false)
-const isSnackbarBottomLeftVisible = ref(false)
-const isSnackbarRightVisible = ref(false)
-const isSnackbarLeftVisible = ref(false)
+const isSnackbarBottomStartVisible = ref(false)
+const isSnackbarEndVisible = ref(false)
+const isSnackbarStartVisible = ref(false)
 const isSnackbarCenteredVisible = ref(false)
 </script>
 
@@ -24,62 +24,60 @@ const isSnackbarCenteredVisible = ref(false)
 
     <v-snackbar
       v-model="isSnackbarTopVisible"
-      top
+      location="top"
     >
       I'm a top snackbar.
     </v-snackbar>
 
-    <!-- top right -->
+    <!-- top end -->
     <v-btn
       icon
       size="x-small"
       variant="text"
-      @click="isSnackbarTopRightVisible = true"
+      @click="isSnackbarTopEndVisible = true"
     >
       <v-icon>mdi-arrow-top-right</v-icon>
     </v-btn>
 
     <v-snackbar
-      v-model="isSnackbarTopRightVisible"
-      right
-      top
+      v-model="isSnackbarTopEndVisible"
+      location="top end"
     >
       I'm a top right snackbar.
     </v-snackbar>
 
-    <!-- center right -->
+    <!-- center end -->
     <v-btn
       icon
       size="x-small"
       variant="text"
-      @click="isSnackbarRightVisible = true"
+      @click="isSnackbarEndVisible = true"
     >
       <v-icon>mdi-arrow-right</v-icon>
     </v-btn>
 
     <v-snackbar
-      v-model="isSnackbarRightVisible"
-      right
-      centered
+      v-model="isSnackbarEndVisible"
+      location="end center"
     >
-      I'm a center right snackbar.
+      I'm a center end snackbar.
     </v-snackbar>
 
-    <!-- bottom right -->
+    <!-- bottom end -->
     <v-btn
       icon
       size="x-small"
       variant="text"
-      @click="isSnackbarBottomRightVisible = true"
+      @click="isSnackbarBottomEndVisible = true"
     >
       <v-icon>mdi-arrow-bottom-right</v-icon>
     </v-btn>
 
     <v-snackbar
-      v-model="isSnackbarBottomRightVisible"
-      right
+      v-model="isSnackbarBottomEndVisible"
+      location="bottom end"
     >
-      I'm a bottom right snackbar.
+      I'm a bottom end snackbar.
     </v-snackbar>
 
     <!-- bottom -->
@@ -92,63 +90,59 @@ const isSnackbarCenteredVisible = ref(false)
       <v-icon>mdi-arrow-down</v-icon>
     </v-btn>
 
-    <v-snackbar
-      v-model="isSnackbarBottomVisible"
-    >
+    <v-snackbar v-model="isSnackbarBottomVisible">
       I'm a bottom snackbar.
     </v-snackbar>
 
-    <!-- bottom left -->
+    <!-- bottom start -->
     <v-btn
       icon
       size="x-small"
       variant="text"
-      @click="isSnackbarBottomLeftVisible = true"
+      @click="isSnackbarBottomStartVisible = true"
     >
       <v-icon>mdi-arrow-bottom-left</v-icon>
     </v-btn>
 
     <v-snackbar
-      v-model="isSnackbarBottomLeftVisible"
-      left
+      v-model="isSnackbarBottomStartVisible"
+      location="bottom start"
     >
-      I'm a bottom left snackbar.
+      I'm a bottom start snackbar.
     </v-snackbar>
 
-    <!-- center left -->
+    <!-- center start -->
     <v-btn
       icon
       size="x-small"
       variant="text"
-      @click="isSnackbarLeftVisible = true"
+      @click="isSnackbarStartVisible = true"
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
 
     <v-snackbar
-      v-model="isSnackbarLeftVisible"
-      centered
-      left
+      v-model="isSnackbarStartVisible"
+      location="start center"
     >
-      I'm a center left snackbar.
+      I'm a center start snackbar.
     </v-snackbar>
 
-    <!-- top left -->
+    <!-- top start -->
     <v-btn
       icon
       size="x-small"
       variant="text"
-      @click="isSnackbarTopLeftVisible = true"
+      @click="isSnackbarTopStartVisible = true"
     >
       <v-icon>mdi-arrow-top-left</v-icon>
     </v-btn>
 
     <v-snackbar
-      v-model="isSnackbarTopLeftVisible"
-      top
-      left
+      v-model="isSnackbarTopStartVisible"
+      location="top start"
     >
-      I'm a top left snackbar.
+      I'm a top start snackbar.
     </v-snackbar>
 
     <!-- center -->
@@ -163,7 +157,7 @@ const isSnackbarCenteredVisible = ref(false)
 
     <v-snackbar
       v-model="isSnackbarCenteredVisible"
-      centered
+      location="center"
     >
       I'm a center snackbar.
     </v-snackbar>

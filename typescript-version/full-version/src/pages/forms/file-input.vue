@@ -40,7 +40,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
         title="Variant"
         :code="demoCode.variant"
       >
-        <p>use <code>contained</code>, <code>filled</code>, <code>outlined</code>, <code>plain</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of file input.</p>
+        <p>use <code>solo</code>, <code>filled</code>, <code>outlined</code>, <code>plain</code> and <code>underlined</code> option of <code>variant</code> prop to change the look of file input.</p>
 
         <DemoFileInputVariant />
       </AppCardCode>

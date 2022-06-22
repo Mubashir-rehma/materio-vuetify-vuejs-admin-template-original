@@ -32,8 +32,8 @@
       md="6"
     >
       <v-text-field
-        label="Contained"
-        variant="contained"
+        label="Solo"
+        variant="solo"
       />
     </v-col>
 

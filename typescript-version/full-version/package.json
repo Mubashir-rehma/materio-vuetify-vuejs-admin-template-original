@@ -67,7 +67,8 @@
     "vite-plugin-pages": "^0.24.0",
     "vite-plugin-vue-layouts": "^0.6.0",
     "vue-tsc": "^0.37.3",
-    "vuetify-loader": "^1.7.3"
+    "vuetify-loader": "^1.7.3",
+    "vite-plugin-vuetify": "1.0.0-alpha.12"
   },
   "packageManager": "yarn@1.22.18",
   "resolutions": {

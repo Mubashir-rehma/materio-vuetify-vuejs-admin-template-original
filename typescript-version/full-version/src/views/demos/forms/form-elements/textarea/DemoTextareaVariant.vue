@@ -15,9 +15,9 @@
       sm="6"
     >
       <v-textarea
-        label="Contained"
+        label="Solo"
         rows="2"
-        variant="contained"
+        variant="solo"
       />
     </v-col>
 

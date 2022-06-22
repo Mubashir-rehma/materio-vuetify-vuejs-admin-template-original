@@ -45,7 +45,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
         title="Variant"
         :code="demoCode.variant"
       >
-        <p>Use <code>contained</code>, <code>outlined</code>, <code>underlined</code>, <code>filled</code> and <code>plain</code> options of <code>variant</code> prop to change the look of combobox. </p>
+        <p>Use <code>solo</code>, <code>outlined</code>, <code>underlined</code>, <code>filled</code> and <code>plain</code> options of <code>variant</code> prop to change the look of combobox. </p>
 
         <DemoComboboxVariant />
       </AppCardCode>

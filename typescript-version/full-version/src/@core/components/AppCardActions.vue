@@ -65,8 +65,7 @@ const triggeredRemove = () => {
       <v-card v-bind="$attrs">
         <v-card-header>
           <v-card-header-text class="d-flex">
-            <v-card-title v-if="props.title || $slots['title']">
-            
+            <v-card-title v-if="props.title || $slots.title">
               <!-- 👉 Title slot and prop -->
               <slot name="title">
                 {{ props.title }}

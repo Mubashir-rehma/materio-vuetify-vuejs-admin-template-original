@@ -11,8 +11,8 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         :items="items"
         multiple
         chips
-        variant="contained"
-        label="Contained"
+        variant="solo"
+        label="solo"
       />
     </v-col>
     <v-col cols="12">

@@ -9,6 +9,7 @@ const widgets = ref(false)
   <v-dialog
     v-model="isDialogVisible"
     fullscreen
+    max-width="auto"
     :scrim="false"
     transition="dialog-bottom-transition"
   >

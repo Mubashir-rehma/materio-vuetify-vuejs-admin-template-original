@@ -32,7 +32,10 @@ export const defineThemeConfig = (
         skin: ref(localStorageSkin || userConfig.app.skin),
         routeTransition: ref(localStorageTransition || userConfig.app.routeTransition),
       },
-      navbar: { type: ref(userConfig.navbar.type), navbarBlur: ref(userConfig.navbar.navbarBlur) },
+      navbar: {
+        type: ref(userConfig.navbar.type),
+        navbarBlur: ref(userConfig.navbar.navbarBlur),
+      },
       footer: { type: ref(userConfig.footer.type) },
       verticalNav: {
         isVerticalNavCollapsed: ref(userConfig.verticalNav.isVerticalNavCollapsed),

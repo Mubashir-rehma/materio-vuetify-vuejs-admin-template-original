@@ -15,6 +15,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
 
     return Object.values(EnumContentWidth).find(v => v === storageValue)
   })()
+  const localStorageNavbarBlur = localStorage.getItem(`${userConfig.app.title}-navbarBlur`)
 
   // TODO: Find a better way to assign config
   config.app.title = userConfig.app.title
@@ -26,7 +27,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.app.isRtl.value = localStorageIsRtl ? JSON.parse(localStorageIsRtl) : userConfig.app.isRtl
 
   config.navbar.type.value = userConfig.navbar.type
-  config.navbar.navbarBlur.value = userConfig.navbar.navbarBlur
+  config.navbar.navbarBlur.value = localStorageNavbarBlur ? JSON.parse(localStorageNavbarBlur) : userConfig.navbar.navbarBlur
 
   config.footer.type.value = userConfig.footer.type
 

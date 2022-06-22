@@ -23,6 +23,7 @@ export const useLayouts = () => {
     },
     set(value: typeof config.navbar.navbarBlur.value) {
       config.navbar.navbarBlur.value = value
+      localStorage.setItem(`${config.app.title}-navbarBlur`, value.toString())
     },
   })
 

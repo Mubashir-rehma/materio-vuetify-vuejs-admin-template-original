@@ -1,5 +1,6 @@
-import { themeConfig } from '@themeConfig'
 import { useTheme } from 'vuetify'
+import { useLayouts } from '@layouts'
+import { themeConfig } from '@themeConfig'
 
 export const useThemeConfig = () => {
   const theme = computed({
@@ -55,11 +56,35 @@ export const useThemeConfig = () => {
     },
   })
 
+  // `@layouts` exports
+  const {
+    navbarType,
+    isNavbarBlurEnabled,
+    footerType,
+    isVerticalNavCollapsed,
+    appContentWidth,
+    appContentLayoutNav,
+    horizontalNavType,
+    isLessThanOverlayNavBreakpoint,
+    isAppRtl,
+  } = useLayouts()
+
   return {
     theme,
     syncVuetifyThemeWithTheme,
     syncInitialLoaderTheme,
     skin,
     appRouteTransition,
+
+    // @layouts exports
+    navbarType,
+    isNavbarBlurEnabled,
+    footerType,
+    isVerticalNavCollapsed,
+    appContentWidth,
+    appContentLayoutNav,
+    horizontalNavType,
+    isLessThanOverlayNavBreakpoint,
+    isAppRtl,
   }
 }

@@ -4,11 +4,17 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: '@layouts', link: '/layouts/' },
-      { text: 'Contribution', link: '/contribution/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
       { text: 'Code Examples', link: '/code-examples/fetching-nav-items-from-api' },
+      {
+        text: 'Other',
+        ariaLabel: 'Other Menu',
+        items: [
+          { text: '@layouts', link: '/layouts/' },
+          { text: 'Contribution', link: '/contribution/' },
+        ],
+      },
       {
         text: 'Demo',
         link: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/',

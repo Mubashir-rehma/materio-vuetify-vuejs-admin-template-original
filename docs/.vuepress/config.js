@@ -4,7 +4,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },
-      { text: '@layouts', link: '/layouts/components/navbar-i18n' },
+      { text: '@layouts', link: '/layouts/' },
       { text: 'Contribution', link: '/contribution/' },
       { text: 'FAQ', link: '/faq/' },
       { text: 'Articles', link: '/articles/' },
@@ -64,6 +64,7 @@ module.exports = {
         },
       ],
       '/layouts/': [
+        ['', 'Introduction'],
         {
           title: 'Components',
           collapsable: false,

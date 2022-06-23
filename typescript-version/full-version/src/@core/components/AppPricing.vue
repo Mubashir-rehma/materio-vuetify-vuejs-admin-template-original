@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify'
 import starterLogo from '@/assets/images/icons/unicons/bookmark.png'
 import enterpriseLogo from '@/assets/images/icons/unicons/briefcase-round.png'
 import proLogo from '@/assets/images/icons/unicons/wallet-round.png'
@@ -70,9 +71,9 @@ const exclusiveStyle = {
   border: 'primary',
   class: 'border-opacity-100',
 }
-
-const priceArrowTheme = controlledComputed(isDark, () => {
-  return isDark.value ? priceArrowDark : priceArrowLight
+const vuetifyTheme = useTheme()
+const priceArrowTheme = watch(() => vuetifyTheme.current.value.dark, val => {
+  return val ? priceArrowDark : priceArrowLight
 })
 </script>
 

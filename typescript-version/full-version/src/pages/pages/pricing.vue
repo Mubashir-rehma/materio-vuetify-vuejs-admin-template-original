@@ -1,10 +1,8 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify'
 import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
 import AppPricing from '@core/components/AppPricing.vue'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
-
-const { isDark } = useThemeConfig()
 
 const features = [
   {
@@ -120,8 +118,9 @@ const faqList = [
   },
 ]
 
-const bannerGirlThemeImage = controlledComputed(isDark, () => {
-  return isDark.value ? sittingGirlWithLaptopDark : sittingGirlWithLaptopLight
+const vuetifyTheme = useTheme()
+const bannerGirlThemeImage = watch(() => vuetifyTheme.current.value.dark, val => {
+  return val ? sittingGirlWithLaptopDark : sittingGirlWithLaptopLight
 })
 </script>
 

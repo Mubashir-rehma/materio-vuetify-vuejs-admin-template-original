@@ -46,3 +46,14 @@ $card-spacer-content: 16px;
 .text-white {
   color: #fff !important;
 }
+
+// SECTION: Typography
+.font-weight-semibold {
+  font-weight: 600 !important;
+}
+
+// !SECTION
+.bg-var-theme-background {
+  /* stylelint-disable-next-line color-function-notation */
+  background-color: rgba(var(--v-theme-background), 0.5);
+}

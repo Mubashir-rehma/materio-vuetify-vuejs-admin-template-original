@@ -26,6 +26,8 @@
 
   // SECTION Nav Link
   .nav-link {
+    @extend %nav-link;
+
     a {
       @extend %horizontal-nav-item;
 

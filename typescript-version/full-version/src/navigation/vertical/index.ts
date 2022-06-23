@@ -60,6 +60,7 @@ export default [
     icon: 'i-mdi-file-outline',
     children: [
       { title: 'Knowledge Base', to: 'pages-knowledge-base' },
+      { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
     ],
   },
   { heading: 'UI Elements' },

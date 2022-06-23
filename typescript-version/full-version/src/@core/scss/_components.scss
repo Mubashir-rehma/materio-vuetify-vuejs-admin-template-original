@@ -1,5 +1,6 @@
 @use "mixins";
 @use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
+@use "@layouts/styles/_placeholders";
 
 // 👉 Avatar
 
@@ -28,5 +29,40 @@
 
   > .v-avatar {
     border: 2px solid rgb(var(--v-theme-surface));
+  }
+}
+
+// Dialog responsive width
+.v-dialog {
+  inline-size: auto;
+
+  .v-card {
+    @extend %style-scroll-bar;
+  }
+}
+
+@media (min-width: 576px) {
+  .v-dialog {
+    &.v-dialog-sm,
+    &.v-dialog-lg,
+    &.v-dialog-xl {
+      inline-size: 565px !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .v-dialog {
+    &.v-dialog-lg,
+    &.v-dialog-xl {
+      inline-size: 865px !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .v-dialog.v-dialog-xl,
+  .v-dialog.v-dialog-xl .v-overlay__content > .v-card {
+    inline-size: 1165px !important;
   }
 }

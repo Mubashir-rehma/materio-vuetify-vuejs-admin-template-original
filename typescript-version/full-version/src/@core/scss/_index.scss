@@ -22,7 +22,7 @@
 
 // TODO: Does vuetify needs this style in their core (https://discord.com/channels/340160225338195969/660898563139567625/981505998009270342)
 a {
-  color: inherit;
+  color: rgb(var(--v-theme-primary));
   text-decoration: none;
 }
 

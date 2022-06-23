@@ -69,6 +69,8 @@
 
     // 👉 Vertical nav link
     .nav-link {
+      @extend %nav-link;
+
       > .router-link-exact-active {
         @extend %nav-link-active;
       }

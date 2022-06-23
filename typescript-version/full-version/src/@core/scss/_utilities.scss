@@ -47,13 +47,12 @@ $card-spacer-content: 16px;
   color: #fff !important;
 }
 
-// SECTION: Typography
-.font-weight-semibold {
-  font-weight: 600 !important;
-}
-
-// !SECTION
 .bg-var-theme-background {
   /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-background), 0.5);
+}
+
+// 👉 Typography
+.font-weight-semibold {
+  font-weight: 600 !important;
 }

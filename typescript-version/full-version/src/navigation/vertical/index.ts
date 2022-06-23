@@ -61,6 +61,7 @@ export default [
     children: [
       { title: 'Knowledge Base', to: 'pages-knowledge-base' },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
+      { title: 'Pricing', to: 'pages-pricing' },
     ],
   },
   { heading: 'UI Elements' },

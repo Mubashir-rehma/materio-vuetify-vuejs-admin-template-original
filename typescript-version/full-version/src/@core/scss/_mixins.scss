@@ -98,28 +98,28 @@
   }
 }
 
-// ℹ️ Generate Image variants for light and dark bg
-@mixin gen-img-variants($property,$light, $dark, $light-bordered:false , $dark-bordered:false, $important: false) {
+// ℹ️ Generate Images variants for light and dark bg
+@mixin gen-img-variants($property,$light, $dark, $light-bordered:false , $dark-bordered:false,$important: false) {
   // light bg
-  .v-application.v-theme--light & {
+  .v-theme--light & {
     #{$property}: $light if($important, !important, null);
   }
 
   // dark bg
-  .v-application.v-theme--dark & {
+  .v-theme--dark & {
     #{$property}: $dark if($important, !important, null);
   }
 
   // light bordered bg
   @if $light-bordered {
-    .v-application.v-theme--light .skin--bordered & {
+    .v-theme--light .skin--bordered & {
       #{$property}: $light-bordered if($important, !important, null);
     }
   }
 
   // dark bordered bg
   @if $dark-bordered {
-    .v-application.v-theme--dark .skin--bordered & {
+    .v-theme--dark .skin--bordered & {
       #{$property}: $dark-bordered if($important, !important, null);
     }
   }

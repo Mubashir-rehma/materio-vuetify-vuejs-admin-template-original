@@ -6,28 +6,15 @@ import authIllustrationLightBorder from '@/assets/images/pages/auth-v2-register-
 import authIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
 import authIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
 import authTree from '@/assets/images/pages/tree-2.png'
-import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
-const username = ref('johnDoe')
-const email = ref('john@example.com')
-const password = ref('john@MATERIO#123')
-const privacyPolicies = ref(true)
-
-const register = () => {
-  axios.post('/auth/register', {
-    username: username.value,
-    email: email.value,
-    password: password.value,
-  })
-    .then(r => {
-      console.log('r :>> ', r)
-    })
-    .catch(e => {
-      console.log('e.response :>> ', e.response)
-    })
-}
+const form = ref({
+  username: '',
+  email: '',
+  password: '',
+  privacyPolicies: false,
+})
 
 const imageVariant = useGenerateImageVariant(authIllustrationLight,
   authIllustrationDark, authIllustrationLightBorder, authIllustrationDarkBorder)
@@ -94,12 +81,12 @@ const isPasswordVisible = ref(false)
           </v-card-text>
 
           <v-card-text>
-            <v-form @submit.prevent="register">
+            <v-form @submit.prevent="() => {}">
               <v-row>
                 <!-- Username -->
                 <v-col cols="12">
                   <v-text-field
-                    v-model="username"
+                    v-model="form.username"
                     label="Username"
                   />
                 </v-col>
@@ -107,7 +94,7 @@ const isPasswordVisible = ref(false)
                 <!-- email -->
                 <v-col cols="12">
                   <v-text-field
-                    v-model="email"
+                    v-model="form.email"
                     label="Email"
                     type="email"
                   />
@@ -116,7 +103,7 @@ const isPasswordVisible = ref(false)
                 <!-- password -->
                 <v-col cols="12">
                   <v-text-field
-                    v-model="password"
+                    v-model="form.password"
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
@@ -130,7 +117,7 @@ const isPasswordVisible = ref(false)
                   class="d-flex align-center flex-wrap"
                 >
                   <v-checkbox
-                    v-model="privacyPolicies"
+                    v-model="form.privacyPolicies"
                     inline
                     density="compact"
                   >
@@ -162,7 +149,7 @@ const isPasswordVisible = ref(false)
                   <span>Already have an account?</span>
                   <router-link
                     class="text-primary ms-2"
-                    :to="{ name: 'login' }"
+                    :to="{ name: 'pages-authentication-login-v2' }"
                   >
                     Sign in instead
                   </router-link>
@@ -200,6 +187,4 @@ const isPasswordVisible = ref(false)
 <route lang="yaml">
 meta:
   layout: blank
-  action: read
-  subject: Auth
 </route>

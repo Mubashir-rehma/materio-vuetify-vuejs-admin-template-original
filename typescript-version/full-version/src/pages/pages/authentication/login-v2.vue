@@ -1,40 +1,25 @@
 <script setup lang="ts">
+import authIllustrationDarkBorder from '@/assets/images/pages/auth-v2-login-illustration-bordered-dark.png'
+import authIllustrationLightBorder from '@/assets/images/pages/auth-v2-login-illustration-bordered-light.png'
+import authIllustrationDark from '@/assets/images/pages/auth-v2-login-illustration-dark.png'
+import authIllustrationLight from '@/assets/images/pages/auth-v2-login-illustration-light.png'
 import authMaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
 import authMaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import authIllustrationDarkBorder from '@/assets/images/pages/auth-v2-register-illustration-bordered-dark.png'
-import authIllustrationLightBorder from '@/assets/images/pages/auth-v2-register-illustration-bordered-light.png'
-import authIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
-import authIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
-import authTree from '@/assets/images/pages/tree-2.png'
-import axios from '@axios'
+import authTree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
-const username = ref('johnDoe')
-const email = ref('john@example.com')
-const password = ref('john@MATERIO#123')
-const privacyPolicies = ref(true)
-
-const register = () => {
-  axios.post('/auth/register', {
-    username: username.value,
-    email: email.value,
-    password: password.value,
-  })
-    .then(r => {
-      console.log('r :>> ', r)
-    })
-    .catch(e => {
-      console.log('e.response :>> ', e.response)
-    })
-}
-
-const imageVariant = useGenerateImageVariant(authIllustrationLight,
-  authIllustrationDark, authIllustrationLightBorder, authIllustrationDarkBorder)
-
-const authThemeMask = useGenerateImageVariant(authMaskLight, authMaskDark)
+const form = ref({
+  email: '',
+  password: '',
+  remember: false,
+})
 
 const isPasswordVisible = ref(false)
+
+const authThemeImg = useGenerateImageVariant(authIllustrationLight, authIllustrationDark, authIllustrationLightBorder, authIllustrationDarkBorder)
+
+const authThemeMask = useGenerateImageVariant(authMaskLight, authMaskDark)
 </script>
 
 <template>
@@ -58,16 +43,14 @@ const isPasswordVisible = ref(false)
       >
         <v-img
           max-width="768px"
-          :src="imageVariant"
+          :src="authThemeImg"
           class="auth-illustration mt-12"
         />
-
         <v-img
-          :width="300"
+          :width="276"
           :src="authTree"
           class="auth-footer-start-tree"
         />
-
         <v-img
           class="auth-footer-mask"
           :src="authThemeMask"
@@ -86,28 +69,19 @@ const isPasswordVisible = ref(false)
         >
           <v-card-text>
             <h5 class="text-h5 font-weight-semibold mb-3">
-              Adventure starts here 🚀
+              Welcome to {{ themeConfig.app.title }}! 👋🏻
             </h5>
             <p class="mb-0">
-              Make your app management easy and fun!
+              Please sign-in to your account and start the adventure
             </p>
           </v-card-text>
-
           <v-card-text>
-            <v-form @submit.prevent="register">
+            <v-form @submit.prevent="() => {}">
               <v-row>
-                <!-- Username -->
-                <v-col cols="12">
-                  <v-text-field
-                    v-model="username"
-                    label="Username"
-                  />
-                </v-col>
-
                 <!-- email -->
                 <v-col cols="12">
                   <v-text-field
-                    v-model="email"
+                    v-model="form.email"
                     label="Email"
                     type="email"
                   />
@@ -116,7 +90,7 @@ const isPasswordVisible = ref(false)
                 <!-- password -->
                 <v-col cols="12">
                   <v-text-field
-                    v-model="password"
+                    v-model="form.password"
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
@@ -130,27 +104,26 @@ const isPasswordVisible = ref(false)
                   class="d-flex align-center flex-wrap"
                 >
                   <v-checkbox
-                    v-model="privacyPolicies"
+                    v-model="form.remember"
+                    label="Remember me"
                     inline
                     density="compact"
+                  />
+                  <router-link
+                    class="text-primary ms-2"
+                    :to="{ name: 'pages-authentication-forgot-password-v2' }"
                   >
-                    <template #label>
-                      <span class="me-1">I agree to</span>
-                      <a
-                        href="javascript:void(0)"
-                        class="text-primary"
-                      >privacy policy & terms</a>
-                    </template>
-                  </v-checkbox>
+                    Forgot Password?
+                  </router-link>
                 </v-col>
 
-                <!-- Register -->
+                <!-- login -->
                 <v-col cols="12">
                   <v-btn
                     block
                     type="submit"
                   >
-                    Sign up
+                    Login
                   </v-btn>
                 </v-col>
 
@@ -159,15 +132,14 @@ const isPasswordVisible = ref(false)
                   cols="12"
                   class="text-center"
                 >
-                  <span>Already have an account?</span>
+                  <span>New on our platform?</span>
                   <router-link
                     class="text-primary ms-2"
-                    :to="{ name: 'login' }"
+                    :to="{ name: 'pages-authentication-register-v2' }"
                   >
-                    Sign in instead
+                    Create an account
                   </router-link>
                 </v-col>
-
                 <v-col
                   cols="12"
                   class="d-flex align-center"
@@ -200,6 +172,4 @@ const isPasswordVisible = ref(false)
 <route lang="yaml">
 meta:
   layout: blank
-  action: read
-  subject: Auth
 </route>

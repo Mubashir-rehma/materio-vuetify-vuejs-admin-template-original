@@ -61,6 +61,37 @@ export default [
     icon: 'i-mdi-file-outline',
     children: [
       { title: 'Knowledge Base', to: 'pages-knowledge-base' },
+      {
+        title: 'Authentication',
+        children: [
+          {
+            title: 'Login',
+            children: [
+              { title: 'Login v1', to: 'pages-authentication-login-v1', target: '_blank' },
+              { title: 'Login v2', to: 'pages-authentication-login-v2', target: '_blank' },
+            ],
+          },
+          {
+            title: 'Register',
+            children: [
+              { title: 'Register v1', to: 'pages-authentication-register-v1', target: '_blank' },
+              { title: 'Register v2', to: 'pages-authentication-register-v2', target: '_blank' },
+            ],
+          },
+          {
+            title: 'Forgot Password',
+            children: [
+              { title: 'Forgot Password v1', to: 'pages-authentication-forgot-password-v1', target: '_blank' },
+              { title: 'Forgot Password v2', to: 'pages-authentication-forgot-password-v2', target: '_blank' },
+            ],
+          },
+          {
+            title: 'Reset Password',
+            children: [
+              { title: 'Reset Password v1', to: 'pages-authentication-reset-password-v1', target: '_blank' },
+              { title: 'Reset Password v2', to: 'pages-authentication-reset-password-v2', target: '_blank' },
+            ],
+          },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },
       {

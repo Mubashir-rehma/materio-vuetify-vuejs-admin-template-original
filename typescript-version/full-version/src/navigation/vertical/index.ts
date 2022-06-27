@@ -92,6 +92,8 @@ export default [
               { title: 'Reset Password v2', to: 'pages-authentication-reset-password-v2', target: '_blank' },
             ],
           },
+        ],
+      },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },
       {

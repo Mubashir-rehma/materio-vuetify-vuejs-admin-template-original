@@ -1,0 +1,247 @@
+<script setup lang="ts">
+import illustration1 from '@/assets/images/cards/illustration-1.png'
+import illustration2 from '@/assets/images/cards/illustration-2.png'
+import illustration3 from '@/assets/images/cards/illustration-3.png'
+import illustration4 from '@/assets/images/cards/illustration-4.png'
+import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
+import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
+import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
+
+const statisticsHorizontal = [
+  {
+    title: 'New Customers',
+    color: 'primary',
+    icon: 'mdi-account-outline',
+    stats: 2856,
+    change: 5,
+  },
+  {
+    title: 'Total Revenue',
+    color: 'success',
+    icon: 'mdi-currency-usd',
+    stats: 28600,
+    change: 25.8,
+  },
+  {
+    title: 'New Transactions',
+    color: 'info',
+    icon: 'mdi-trending-up',
+    stats: 13600,
+    change: -12.1,
+  },
+  {
+    title: 'Total Profit',
+    color: 'warning',
+    icon: 'mdi-poll',
+    stats: 2856,
+    change: 54.6,
+  },
+]
+
+const statisticsVertical = [
+  {
+    title: 'New Project',
+    color: 'primary',
+    icon: 'mdi-label-variant-outline',
+    stats: '862',
+    change: -18,
+    subtitle: 'Yearly Project',
+  },
+  {
+    title: 'Total Profit',
+    color: 'secondary',
+    icon: 'mdi-poll',
+    stats: '$25.6k',
+    change: 42,
+    subtitle: 'Weekly Project',
+  },
+  {
+    title: 'Revenue',
+    color: 'success',
+    icon: 'mdi-currency-usd',
+    stats: '$95.2k',
+    change: 12,
+    subtitle: 'Revenue Increase',
+  },
+  {
+    title: 'Logistics',
+    color: 'error',
+    icon: 'mdi-truck-outline',
+    stats: '44.10k',
+    change: 12,
+    subtitle: 'Revenue Increase',
+  },
+  {
+    title: 'Reports',
+    color: 'warning',
+    icon: 'mdi-check',
+    stats: '268',
+    change: -8,
+    subtitle: 'System Bugs',
+  },
+  {
+    title: 'Transactions',
+    color: 'info',
+    icon: 'mdi-trending-up',
+    stats: '12k',
+    change: 32,
+    subtitle: 'Daily Transactions',
+  },
+]
+
+const statisticsWithImages = [
+  {
+    title: 'Ratings',
+    subtitle: 'Year of 2021',
+    stats: '13k',
+    change: 38,
+    image: illustration1,
+    color: 'primary',
+  },
+  {
+    title: 'Sessions',
+    subtitle: 'Last Week',
+    stats: '24.5k',
+    change: -22,
+    image: illustration2,
+    color: 'secondary',
+  },
+  {
+    title: 'Customers',
+    subtitle: 'Daily Customers',
+    stats: '2,856',
+    change: 59,
+    image: illustration3,
+    color: 'info',
+  },
+  {
+    title: 'Total Orders',
+    subtitle: 'Last Month',
+    stats: '42.5k',
+    change: 26,
+    image: illustration4,
+    color: 'warning',
+  },
+]
+</script>
+
+<template>
+  <v-row class="match-height">
+    <!-- 👉 Horizontal Cards -->
+    <v-col
+      v-for="statistics in statisticsHorizontal"
+      :key="statistics.title"
+      cols="12"
+      sm="6"
+      md="3"
+    >
+      <CardStatisticsHorizontal v-bind="statistics" />
+    </v-col>
+
+    <!-- 👉 Statistics Card  -->
+    <v-col
+      cols="12"
+      md="8"
+    >
+      <DemoCardStatistics />
+    </v-col>
+
+    <!-- 👉 Blank Column for make a blank space  -->
+    <v-col
+      md="4"
+      cols="12"
+    />
+
+    <!-- 👉 Vertical Cards -->
+    <v-col
+      v-for="statistics in statisticsVertical"
+      :key="statistics.title"
+      cols="12"
+      sm="4"
+      lg="2"
+    >
+      <CardStatisticsVertical v-bind="statistics" />
+    </v-col>
+
+    <!-- 👉 Blank Column for make space above the Images cards -->
+    <v-col
+      cols="12"
+    />
+
+    <!-- 👉 Images Cards -->
+    <v-col
+      v-for="statistics in statisticsWithImages"
+      :key="statistics.title"
+      cols="12"
+      lg="3"
+      sm="6"
+    >
+      <CardStatisticsWithImages v-bind="statistics" />
+    </v-col>
+
+    <!-- 👉 Total Revenue Line Chart -->
+
+    <v-col
+      cols="12"
+      sm="6"
+      md="4"
+      lg="2"
+    >
+      <DemoCardStatisticsLineCharts />
+    </v-col>
+
+    <!-- 👉 Sessions Bar Chart with Gaps -->
+    <v-col
+      cols="12"
+      sm="6"
+      md="4"
+      lg="2"
+    >
+      <DemoCardStatisticsBarWithGapCharts />
+    </v-col>
+
+    <!-- 👉 Total Growth Area Chart -->
+    <v-col
+      cols="12"
+      sm="6"
+      md="4"
+      lg="2"
+    >
+      <DemoCardStatisticsAreaCharts />
+    </v-col>
+
+    <!-- 👉 Total Revenue Radial Bar Chart -->
+    <v-col
+      cols="12"
+      sm="6"
+      md="4"
+      lg="2"
+    >
+      <DemoCardStatisticsRadialBarCharts />
+    </v-col>
+
+    <!-- 👉 Session Bar Chart -->
+    <v-col
+      cols="12"
+      sm="6"
+      md="4"
+      lg="2"
+    >
+      <DemoCardStatisticsBarCharts />
+    </v-col>
+
+    <!-- 👉 Total Profit Line Chart -->
+    <v-col
+      cols="12"
+      sm="6"
+      md="4"
+      lg="2"
+    >
+      <DemoCardStatisticsTotalProfitLineCharts />
+    </v-col>
+  </v-row>
+</template>
+
+<style lang="scss">
+@use "@core/scss/libs/apex-chart.scss";
+</style>

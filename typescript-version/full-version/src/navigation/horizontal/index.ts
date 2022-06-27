@@ -112,6 +112,7 @@ export default [
         icon: 'i-mdi-credit-card-outline',
         children: [
           { title: 'Basic', to: 'pages-cards-card-basic' },
+          { title: 'Statistics', to: 'pages-cards-card-statistics' },
           { title: 'Action', to: 'pages-cards-card-actions' },
         ],
       },

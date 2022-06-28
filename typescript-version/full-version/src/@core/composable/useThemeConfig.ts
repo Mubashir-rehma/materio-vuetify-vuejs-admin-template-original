@@ -70,6 +70,39 @@ export const useThemeConfig = () => {
     switchToVerticalNavOnLtOverlayNavBreakpoint,
   } = useLayouts()
 
+  // const syncRtlWithRtlLang = (rtlLangs: string[], rtlDefaultLocale: string, ltrDefaultLocale: string) => {
+  // const { locale } = useI18n({ useScope: 'global' })
+
+  // watch(isAppRtl, val => {
+  //   if (val)
+  //     locale.value = rtlDefaultLocale
+  //   else locale.value = ltrDefaultLocale
+  // })
+  // watch(locale, val => {
+  //   if (rtlLangs.includes(val))
+  //     isAppRtl.value = true
+  //   else isAppRtl.value = false
+  // })
+
+  // watch(
+  //   [isAppRtl, locale],
+  //   ([valIsAppRTL, valLocale], [oldValIsAppRtl, oldValLocale]) => {
+  //     const isRtlUpdated = valIsAppRTL !== oldValIsAppRtl
+
+  //     if (isRtlUpdated) {
+  //       if (valIsAppRTL)
+  //         locale.value = rtlDefaultLocale
+  //       else locale.value = ltrDefaultLocale
+  //     }
+  //     else {
+  //       if (rtlLangs.includes(valLocale))
+  //         isAppRtl.value = true
+  //       else isAppRtl.value = false
+  //     }
+  //   },
+  // )
+  // }
+
   return {
     theme,
     syncVuetifyThemeWithTheme,
@@ -88,5 +121,7 @@ export const useThemeConfig = () => {
     isLessThanOverlayNavBreakpoint,
     isAppRtl,
     switchToVerticalNavOnLtOverlayNavBreakpoint,
+
+    // syncRtlWithRtlLang,
   }
 }

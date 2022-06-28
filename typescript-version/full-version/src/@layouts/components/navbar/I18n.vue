@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import type { I18nLanguage } from '@layouts/types'
 
+const props = defineProps<Props>()
+
+defineEmits<{
+  (e: 'change', id: string): void
+}>()
+
 interface Props {
   languages: I18nLanguage[]
 }
-
-const props = defineProps<Props>()
 
 const { locale } = useI18n({ useScope: 'global' })
 const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i18nLang === locale.value))
@@ -31,7 +35,7 @@ const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i
           v-for="lang in props.languages"
           :key="lang.i18nLang"
           :value="lang.i18nLang"
-          @click="locale = lang.i18nLang"
+          @click="locale = lang.i18nLang; $emit('change', lang.i18nLang)"
         >
           <!-- Flag -->
           <v-list-item-avatar start>

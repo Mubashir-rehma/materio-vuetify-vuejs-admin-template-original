@@ -174,6 +174,10 @@ export default [
             title: 'Rating',
             to: 'forms-rating',
           },
+          {
+            title: 'Select',
+            to: 'forms-select',
+          },
           { title: 'Slider', to: 'forms-slider' },
           {
             title: 'Switch',

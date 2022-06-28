@@ -161,6 +161,7 @@ export default [
       { title: 'Radio', to: 'forms-radio' },
       { title: 'Range Slider', to: 'forms-range-slider' },
       { title: 'Rating', to: 'forms-rating' },
+      { title: 'Select', to: 'forms-select' },
       { title: 'Textarea', to: 'forms-textarea' },
       { title: 'Date Time Picker', to: 'forms-date-time-picker' },
     ],

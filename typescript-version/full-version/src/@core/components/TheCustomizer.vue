@@ -231,15 +231,26 @@ const { width: windowWidth } = useWindowSize()
           </div>
 
           <!-- 👉 Route Transition -->
-          <div class="mt-6 d-flex align-center">
-            <span>Router Transition</span>
-            <v-spacer />
-            <v-select
-              v-model="appRouteTransition"
-              :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
-              item-title="key"
-              item-value="value"
-            />
+          <div class="mt-6">
+            <v-row>
+              <v-col
+                cols="5"
+                class="d-flex align-center"
+              >
+                <label for="route-transition">Router Transition</label>
+              </v-col>
+
+              <v-col cols="7">
+                <v-select
+                  id="route-transition"
+                  v-model="appRouteTransition"
+                  :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
+                  item-title="key"
+                  item-value="value"
+                  single-line
+                />
+              </v-col>
+            </v-row>
           </div>
         </CustomizerSection>
         <!-- !SECTION -->

@@ -1,9 +1,9 @@
 // Styles
 import '@core/vuetify.scss'
 import '@mdi/font/css/materialdesignicons.css'
-import { themeConfig } from '@themeConfig'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi'
+import { themeConfig } from '@themeConfig'
 
 export default createVuetify({
   defaults: {
@@ -121,7 +121,7 @@ export default createVuetify({
       light: {
         dark: false,
         colors: {
-          'primary': '#a169ff',
+          'primary': localStorage.getItem(`${themeConfig.app.title}-lightThemePrimaryColor`) || '#a169ff',
           'secondary': '#677492',
           'on-secondary': '#fff',
           'success': '#40c057',
@@ -135,7 +135,7 @@ export default createVuetify({
       dark: {
         dark: true,
         colors: {
-          'primary': '#a169ff',
+          'primary': localStorage.getItem(`${themeConfig.app.title}-darkThemePrimaryColor`) || '#a169ff',
           'secondary': '#677492',
           'on-secondary': '#fff',
           'success': '#40c057',
@@ -149,7 +149,7 @@ export default createVuetify({
       retro: {
         dark: false,
         colors: {
-          'primary': '#D6AF5F',
+          'primary': localStorage.getItem(`${themeConfig.app.title}-retroThemePrimaryColor`) || '#D6AF5F',
           'on-primary': '#fff',
           'secondary': '#677492',
           'on-secondary': '#fff',

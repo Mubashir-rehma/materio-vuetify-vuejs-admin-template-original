@@ -4,6 +4,7 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { EnumSkins, RouteTransitions } from '@core/enums'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
+import { themeConfig } from '@themeConfig'
 
 // import { useTheme } from 'vuetify'
 
@@ -29,10 +30,26 @@ const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
 const initialThemeColors = JSON.parse(JSON.stringify(vuetifyTheme.current.value.colors))
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
 
+// ℹ️ It will set primary color for current theme only
 const setPrimaryColor = (color: string) => {
-  vuetifyThemesName.forEach(t => {
-    vuetifyTheme.themes.value[t].colors.primary = color
-  })
+  const currentThemeName = vuetifyTheme.name.value
+  console.log('currentThemeName :>> ', currentThemeName)
+  console.log('color :>> ', color)
+
+  vuetifyTheme.themes.value[currentThemeName].colors.primary = color
+
+  // ℹ️ We need to store this color value in localStorage so vuetify plugin can pick on next reload
+  localStorage.setItem(`${themeConfig.app.title}-${currentThemeName}ThemePrimaryColor`, color)
+}
+
+/*
+  ℹ️ This will return static color for first indexed color based on theme
+  If we don't make first (primary) color as static then when another color is selected then we will have two theme colors with same hex codes and it will show two check marks
+*/
+const getBoxColor = (color: string, index: number) => {
+  if (index)
+    return color
+  else return vuetifyTheme.name.value === 'retro' ? '#D6AF5F' : '#a169ff'
 }
 
 const perfectScrollbarSettings = {
@@ -118,17 +135,17 @@ const { width: windowWidth } = useWindowSize()
           </span>
           <div class="d-flex gap-x-4 mt-2">
             <div
-              v-for="color in colors"
+              v-for="(color, index) in colors"
               :key="color"
               style="width: 3rem; height: 3rem; border-radius: 0.5rem; transition: all 0.25s ease;"
-              :style="[`background-color: ${initialThemeColors[color]};`]"
+              :style="{ backgroundColor: getBoxColor(initialThemeColors[color], index) }"
               class="cursor-pointer d-flex align-center justify-center"
-              :class="{ 'elevation-4': vuetifyTheme.current.value.colors.primary === initialThemeColors[color] }"
-              @click="setPrimaryColor(initialThemeColors[color])"
+              :class="{ 'elevation-4': vuetifyTheme.current.value.colors.primary === getBoxColor(initialThemeColors[color], index) }"
+              @click="setPrimaryColor(getBoxColor(initialThemeColors[color], index))"
             >
               <VFadeTransition>
                 <v-icon
-                  v-show="vuetifyTheme.current.value.colors.primary === initialThemeColors[color]"
+                  v-show="vuetifyTheme.current.value.colors.primary === (getBoxColor(initialThemeColors[color], index))"
                   icon="mdi-check"
                   color="white"
                 />

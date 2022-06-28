@@ -57,6 +57,7 @@ const values = ref<typeof items[number][]>([])
         <!-- 👉 Checkbox -->
         <v-checkbox
           v-model="checkbox"
+          density="compact"
           label="Remember me"
         />
       </v-col>

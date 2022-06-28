@@ -30,7 +30,7 @@ const onCancel = () => {
       <v-card-text>
         <v-btn
           icon="mdi-help"
-          variant="contained-text"
+          variant="tonal"
           color="warning"
           class="pa-4"
           :size="65"
@@ -49,7 +49,7 @@ const onCancel = () => {
         </v-btn>
         <v-btn
           color="secondary"
-          variant="contained-text"
+          variant="tonal"
           @click="onCancel"
         >
           Cancel

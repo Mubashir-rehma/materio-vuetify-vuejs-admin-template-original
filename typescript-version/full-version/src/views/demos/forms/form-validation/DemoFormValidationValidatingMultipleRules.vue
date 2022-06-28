@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components'
 import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@core/utils/validation'
 
 const name = ref('')
@@ -49,6 +49,7 @@ const confirmPassword = ref('')
           placeholder="Your Password"
           persistent-placeholder
           :rules="[requiredValidator, passwordValidator]"
+          autocomplete="on"
         />
       </v-col>
 
@@ -62,6 +63,7 @@ const confirmPassword = ref('')
           placeholder="Confirm Password"
           persistent-placeholder
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
+          autocomplete="on"
         />
       </v-col>
 

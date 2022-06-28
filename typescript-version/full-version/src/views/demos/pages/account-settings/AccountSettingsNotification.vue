@@ -97,7 +97,7 @@ const selectedNotification = ref('Only when I\'m online')
           </v-btn>
           <v-btn
             color="secondary"
-            variant="contained-text"
+            variant="tonal"
             type="reset"
           >
             Reset

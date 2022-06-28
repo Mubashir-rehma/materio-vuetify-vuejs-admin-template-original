@@ -16,52 +16,54 @@ const tabs = [
 </script>
 
 <template>
-  <v-tabs
-    v-model="activeTab"
-    show-arrows
-  >
-    <v-tab
-      v-for="item in tabs"
-      :key="item.icon"
-      :value="item.tab"
-      :to="{ name: 'pages-account-settings-tab', params: { tab: item.tab } }"
+  <div>
+    <v-tabs
+      v-model="activeTab"
+      show-arrows
     >
-      <v-icon
-        size="20"
-        start
+      <v-tab
+        v-for="item in tabs"
+        :key="item.icon"
+        :value="item.tab"
+        :to="{ name: 'pages-account-settings-tab', params: { tab: item.tab } }"
       >
-        {{ item.icon }}
-      </v-icon>
-      {{ item.title }}
-    </v-tab>
-  </v-tabs>
+        <v-icon
+          size="20"
+          start
+        >
+          {{ item.icon }}
+        </v-icon>
+        {{ item.title }}
+      </v-tab>
+    </v-tabs>
 
-  <v-window v-model="activeTab">
-    <!-- Account -->
-    <v-window-item value="account">
-      <AccountSettingsAccount />
-    </v-window-item>
+    <v-window v-model="activeTab">
+      <!-- Account -->
+      <v-window-item value="account">
+        <AccountSettingsAccount />
+      </v-window-item>
 
-    <!-- Security -->
-    <v-window-item value="security">
-      <AccountSettingsSecurity />
-    </v-window-item>
+      <!-- Security -->
+      <v-window-item value="security">
+        <AccountSettingsSecurity />
+      </v-window-item>
 
-    <!-- Billing -->
-    <v-window-item value="billing-plans">
-      <AccountSettingsBillingAndPlans />
-    </v-window-item>
+      <!-- Billing -->
+      <v-window-item value="billing-plans">
+        <AccountSettingsBillingAndPlans />
+      </v-window-item>
 
-    <!-- Notification -->
-    <v-window-item value="notification">
-      <AccountSettingsNotification />
-    </v-window-item>
+      <!-- Notification -->
+      <v-window-item value="notification">
+        <AccountSettingsNotification />
+      </v-window-item>
 
-    <!-- Connections -->
-    <v-window-item value="connection">
-      <AccountSettingsConnections />
-    </v-window-item>
-  </v-window>
+      <!-- Connections -->
+      <v-window-item value="connection">
+        <AccountSettingsConnections />
+      </v-window-item>
+    </v-window>
+  </div>
 </template>Ō
 
 <route lang="yaml">

@@ -98,6 +98,7 @@ const checkbox = ref(false)
       >
         <v-checkbox
           v-model="checkbox"
+          density="compact"
           label="Remember me"
         />
       </v-col>

@@ -3,7 +3,6 @@
 import type { VerticalNavItems } from '@/@layouts/types'
 
 export default [
-  { heading: 'Dashboards' },
   {
     title: 'Dashboards',
     icon: 'i-mdi-view-dashboard-outline',
@@ -32,15 +31,7 @@ export default [
     action: 'read',
     subject: 'Auth',
   },
-  {
-    title: 'User',
-    icon: 'i-mdi-account-outline',
-    children: [
-      { title: 'List', to: 'user-list' },
-      { title: 'Detail', to: 'user-detail' },
-      { title: 'Add', to: 'user-add' },
-    ],
-  },
+
   {
     title: 'Email',
     icon: 'i-mdi-email-outline',
@@ -48,12 +39,21 @@ export default [
   },
   {
     title: 'Invoice',
-    icon: 'i-mdi-currency-usd',
+    icon: 'i-mdi-file-document-outline',
 
     children: [
       { title: 'List', to: 'invoice-list' },
-      { title: 'Detail', to: 'invoice-detail' },
+      { title: 'Preview', to: 'invoice-preview' },
+      { title: 'Edit', to: 'invoice-edit' },
       { title: 'Add', to: 'invoice-add' },
+    ],
+  },
+  {
+    title: 'User',
+    icon: 'i-mdi-account-outline',
+    children: [
+      { title: 'List', to: 'user-list' },
+      { title: 'View', to: 'user-view' },
     ],
   },
   {
@@ -115,18 +115,18 @@ export default [
     to: 'pages-icons',
   },
   {
+    title: 'Typography',
+    icon: 'i-mdi-alpha-t-box-outline',
+    to: 'pages-typography',
+  },
+  {
     title: 'Cards',
     icon: 'i-mdi-credit-card-outline',
     children: [
       { title: 'Basic', to: 'pages-cards-card-basic' },
+      { title: 'Actions', to: 'pages-cards-card-actions' },
       { title: 'Statistics', to: 'pages-cards-card-statistics' },
-      { title: 'Action', to: 'pages-cards-card-actions' },
     ],
-  },
-  {
-    title: 'Typography',
-    icon: 'i-mdi-alpha-t-box-outline',
-    to: 'pages-typography',
   },
   {
     title: 'Components',
@@ -185,7 +185,7 @@ export default [
       { title: 'Chartjs', to: 'charts-and-maps-charts-chartjs' },
     ],
   },
-  { heading: 'Other' },
+  { heading: 'Others' },
   {
     title: 'Access Control',
     icon: 'i-mdi-shield-outline',
@@ -202,7 +202,7 @@ export default [
         to: null,
       },
       {
-        title: 'Level 3',
+        title: 'Level 2.2',
         children: [
           {
             title: 'Level 3.1',
@@ -215,10 +215,5 @@ export default [
         ],
       },
     ],
-  },
-  {
-    title: 'Typography',
-    icon: 'i-mdi-netflix',
-    to: 'typography',
   },
 ] as VerticalNavItems

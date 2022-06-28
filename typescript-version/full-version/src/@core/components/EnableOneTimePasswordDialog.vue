@@ -46,7 +46,7 @@ const formSubmit = () => {
           <v-btn
             type="reset"
             color="secondary"
-            variant="contained-text"
+            variant="tonal"
             @click="$emit('update:modelValue', false)"
           >
             Cancel

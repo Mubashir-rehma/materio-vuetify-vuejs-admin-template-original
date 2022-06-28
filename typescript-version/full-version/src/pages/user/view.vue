@@ -1,3 +1,3 @@
 <template>
-  <span>list</span>
+  <span>View</span>
 </template>

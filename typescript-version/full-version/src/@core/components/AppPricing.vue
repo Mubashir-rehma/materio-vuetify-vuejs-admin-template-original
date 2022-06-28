@@ -5,7 +5,6 @@ import enterpriseLogo from '@/assets/images/icons/unicons/briefcase-round.png'
 import proLogo from '@/assets/images/icons/unicons/wallet-round.png'
 import priceArrowDark from '@/assets/images/pages/pricing-arrow-dark.png'
 import priceArrowLight from '@/assets/images/pages/pricing-arrow-light.png'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 interface ColumnsResponsiveProps {
   xs?: number | string
@@ -16,8 +15,6 @@ interface ColumnsResponsiveProps {
 }
 
 const props = defineProps<ColumnsResponsiveProps>()
-
-const { isDark } = useThemeConfig()
 
 const annualMonthlyPlanPriceToggler = ref(true)
 
@@ -71,10 +68,8 @@ const exclusiveStyle = {
   border: 'primary',
   class: 'border-opacity-100',
 }
+
 const vuetifyTheme = useTheme()
-const priceArrowTheme = watch(() => vuetifyTheme.current.value.dark, val => {
-  return val ? priceArrowDark : priceArrowLight
-})
 </script>
 
 <template>
@@ -109,7 +104,7 @@ const priceArrowTheme = watch(() => vuetifyTheme.current.value.dark, val => {
       style="top: -1.8rem;"
     >
       <v-img
-        :src="priceArrowTheme"
+        :src="vuetifyTheme.current.value.dark ? priceArrowDark : priceArrowLight"
         width="30"
       />
       <v-chip
@@ -204,7 +199,7 @@ const priceArrowTheme = watch(() => vuetifyTheme.current.value.dark, val => {
         <!-- 👉 Plan actions -->
         <v-card-actions>
           <v-btn
-            :variant="plan.isExclusive ? 'contained' : 'contained-text'"
+            :variant="plan.isExclusive ? 'elevated' : 'tonal'"
             block
           >
             Get Started {{ plan.yearlyPrice === 0 ? 'for free' : '' }}

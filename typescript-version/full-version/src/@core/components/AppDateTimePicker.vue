@@ -60,6 +60,7 @@ const onClear = (el: MouseEvent) => {
 
 const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
+
 const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
 
 // Themes class added to flat-picker component for light and dark support
@@ -71,13 +72,13 @@ const updateThemeClassInCalendar = (activeTheme: string) => {
 }
 
 watch(theme, updateThemeClassInCalendar)
+
 onMounted(() => {
   updateThemeClassInCalendar(vuetifyTheme.name.value)
 })
 </script>
 
 <template>
-  <!-- {{ isCalendarOpen }} -->
   <!-- v-input -->
   <v-input
     v-bind="{ ...inputProps, ...rootAttrs }"

@@ -117,7 +117,7 @@ const formSubmit = () => {
               </v-btn>
               <v-btn
                 color="secondary"
-                variant="contained-text"
+                variant="tonal"
                 @click="$emit('update:modelValue', false)"
               >
                 Cancel

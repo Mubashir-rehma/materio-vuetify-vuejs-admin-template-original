@@ -79,7 +79,7 @@ const openEditCardDialog = (cardDetails: Object) => {
             >
               <v-alert
                 color="warning"
-                variant="contained-text"
+                variant="tonal"
               >
                 <p class="text-body-1 text-warning font-weight-semibold mb-1">
                   We need your attention!
@@ -115,7 +115,7 @@ const openEditCardDialog = (cardDetails: Object) => {
 
                 <v-btn
                   color="secondary"
-                  variant="contained-text"
+                  variant="tonal"
                   @click="isConfirmDialogVisible = true"
                 >
                   Cancel Subscription
@@ -238,7 +238,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                       <v-btn
                         type="reset"
                         color="secondary"
-                        variant="contained-text"
+                        variant="tonal"
                       >
                         Reset
                       </v-btn>
@@ -288,7 +288,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                       <div class="d-flex flex-column text-sm-end">
                         <div class="order-sm-0 order-1">
                           <v-btn
-                            variant="contained-text"
+                            variant="tonal"
                             class="me-2"
                             @click="openEditCardDialog(card)"
                           >
@@ -296,7 +296,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                           </v-btn>
                           <v-btn
                             color="secondary"
-                            variant="contained-text"
+                            variant="tonal"
                           >
                             Delete
                           </v-btn>
@@ -412,7 +412,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                 <v-btn
                   type="reset"
                   color="secondary"
-                  variant="contained-text"
+                  variant="tonal"
                 >
                   Reset
                 </v-btn>

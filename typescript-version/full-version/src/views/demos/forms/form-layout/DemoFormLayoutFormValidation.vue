@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components'
 import { emailValidator, requiredValidator } from '@core/utils/validation'
 
 const name = ref('')
@@ -50,6 +50,7 @@ const form = ref<VForm>()
           v-model="checkbox"
           :rules="[requiredValidator]"
           label="Do you agree?"
+          density="compact"
           required
         />
       </v-col>

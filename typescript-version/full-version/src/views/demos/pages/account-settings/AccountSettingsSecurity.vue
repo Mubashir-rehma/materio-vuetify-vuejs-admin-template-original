@@ -83,9 +83,6 @@ const recentDevices = [
 
 // 👉 Change the image as per theme change
 const vuetifyTheme = useTheme()
-const sittingGirlThemeSrc = watch(() => vuetifyTheme.current.value.dark, val => {
-  return val ? sittingGirlDark : sittingGirlLight
-})
 
 const isOneTimePasswordDialogVisible = ref(false)
 </script>
@@ -176,7 +173,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             <v-btn
               type="reset"
               color="secondary"
-              variant="contained-text"
+              variant="tonal"
               class="mt-3"
             >
               Reset
@@ -257,10 +254,10 @@ const isOneTimePasswordDialogVisible = ref(false)
             md="7"
             order="0"
             order-md="1"
-            class="d-flex flex-column justify-center align-center mb-n4"
+            class="d-flex flex-column justify-center align-center mb-n6"
           >
             <v-img
-              :src="sittingGirlThemeSrc"
+              :src="vuetifyTheme.current.value.dark ? sittingGirlDark : sittingGirlLight"
               :width="310"
             />
           </v-col>
@@ -318,7 +315,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               </template>
 
               <v-list>
-                <v-list-item href="#">
+                <v-list-item href="javascript:void(0)">
                   <v-list-item-icon
                     size="20"
                     class="me-2"

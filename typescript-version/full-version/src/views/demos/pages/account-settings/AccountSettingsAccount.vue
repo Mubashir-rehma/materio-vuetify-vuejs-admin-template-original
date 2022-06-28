@@ -145,7 +145,7 @@ const currencies = [
 
             <v-btn
               color="error"
-              variant="contained-text"
+              variant="tonal"
               class="mt-5"
               @click="resetAvatar"
             >
@@ -309,7 +309,7 @@ const currencies = [
 
                 <v-btn
                   color="secondary"
-                  variant="contained-text"
+                  variant="tonal"
                   type="reset"
                   @click.prevent="resetForm"
                 >
@@ -329,7 +329,7 @@ const currencies = [
           <!-- 👉 Alert Account delete -->
           <v-alert
             color="warning"
-            variant="contained-text"
+            variant="tonal"
           >
             <p class="text-body-1 text-warning font-weight-medium mb-1">
               Are you sure you want to delete your account?

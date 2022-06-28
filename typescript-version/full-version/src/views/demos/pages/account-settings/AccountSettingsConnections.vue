@@ -152,7 +152,7 @@ const socialAccounts = ref([
 
             <v-list-item-action>
               <v-btn
-                variant="contained-text"
+                variant="tonal"
                 rounded="lg"
                 size="small"
                 :color="item.connected ? 'error' : 'secondary'"

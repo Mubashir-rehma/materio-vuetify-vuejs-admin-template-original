@@ -9,7 +9,7 @@ export default [
       {
         title: 'Analytics',
         to: 'dashboards-analytics',
-        icon: 'i-mdi-analytics',
+        icon: 'i-mdi-chart-timeline-variant',
         action: 'read',
         subject: 'Admin',
       },
@@ -27,23 +27,23 @@ export default [
     icon: 'i-mdi-package-variant',
     children: [
       { title: 'Calendar', to: 'calendar', icon: 'i-mdi-calendar-blank', action: 'read', subject: 'Auth' },
+      { title: 'Email', to: 'email', icon: 'i-mdi-email-outline' },
+      {
+        title: 'Invoice',
+        icon: 'i-mdi-file-document-outline',
+        children: [
+          { title: 'List', to: 'invoice-list' },
+          { title: 'Preview', to: 'invoice-preview' },
+          { title: 'Edit', to: 'invoice-edit' },
+          { title: 'Add', to: 'invoice-add' },
+        ],
+      },
       {
         title: 'User',
         icon: 'i-mdi-account-outline',
         children: [
           { title: 'List', to: 'user-list' },
-          { title: 'Detail', to: 'user-detail' },
-          { title: 'Add', to: 'user-add' },
-        ],
-      },
-      { title: 'Email', to: 'email', icon: 'i-mdi-email-outline' },
-      {
-        title: 'Invoice',
-        icon: 'i-mdi-currency-usd',
-        children: [
-          { title: 'List', to: 'invoice-list' },
-          { title: 'Detail', to: 'invoice-detail' },
-          { title: 'Add', to: 'invoice-add' },
+          { title: 'View', to: 'user-view' },
         ],
       },
       {
@@ -102,7 +102,7 @@ export default [
   },
   {
     title: 'User Interface',
-    icon: 'i-mdi-home',
+    icon: 'i-mdi-layers-outline',
     children: [
       {
         title: 'Icons',
@@ -110,22 +110,22 @@ export default [
         to: 'pages-icons',
       },
       {
-        title: 'Cards',
-        icon: 'i-mdi-credit-card-outline',
-        children: [
-          { title: 'Basic', to: 'pages-cards-card-basic' },
-          { title: 'Statistics', to: 'pages-cards-card-statistics' },
-          { title: 'Action', to: 'pages-cards-card-actions' },
-        ],
-      },
-      {
         title: 'Typography',
         icon: 'i-mdi-alpha-t-box-outline',
         to: 'pages-typography',
       },
       {
+        title: 'Cards',
+        icon: 'i-mdi-credit-card-outline',
+        children: [
+          { title: 'Basic', to: 'pages-cards-card-basic' },
+          { title: 'Actions', to: 'pages-cards-card-actions' },
+          { title: 'Statistics', to: 'pages-cards-card-statistics' },
+        ],
+      },
+      {
         title: 'Components',
-        icon: 'i-mdi-home',
+        icon: 'i-mdi-archive-outline',
         children: [
           { title: 'Menu', to: 'components-menu' },
           { title: 'Alert', to: 'components-alert' },
@@ -151,7 +151,7 @@ export default [
     icon: 'i-mdi-checkbox-multiple-outline',
     children: [
       {
-        title: 'Forms Elements',
+        title: 'Form Elements',
         icon: 'i-mdi-content-copy',
         children: [
           {
@@ -227,7 +227,7 @@ export default [
     ],
   },
   {
-    title: 'Other',
+    title: 'Others',
     icon: 'i-mdi-home',
     children: [
       {
@@ -246,7 +246,7 @@ export default [
             to: null,
           },
           {
-            title: 'Level 3',
+            title: 'Level 2.2',
             children: [
               {
                 title: 'Level 3.1',
@@ -259,11 +259,6 @@ export default [
             ],
           },
         ],
-      },
-      {
-        title: 'Typography',
-        icon: 'i-mdi-netflix',
-        to: 'typography',
       },
     ],
   },

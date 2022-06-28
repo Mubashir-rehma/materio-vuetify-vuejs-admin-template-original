@@ -151,12 +151,15 @@ export const useLayouts = () => {
   }
 
   const dynamicI18nProps = computed(() => (key: string, tag = 'span') => {
-    const isI18nEnabled = config.app.enableI18n
-
-    return {
-      keypath: isI18nEnabled ? key : null,
-      tag: isI18nEnabled ? tag : null,
+    if (config.app.enableI18n) {
+      return {
+        keypath: key,
+        tag,
+        scope: 'global',
+      }
     }
+
+    return {}
   })
 
   const isAppRtl = computed({

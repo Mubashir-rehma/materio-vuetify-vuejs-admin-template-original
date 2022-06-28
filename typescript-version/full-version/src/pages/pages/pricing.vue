@@ -119,9 +119,6 @@ const faqList = [
 ]
 
 const vuetifyTheme = useTheme()
-const bannerGirlThemeImage = watch(() => vuetifyTheme.current.value.dark, val => {
-  return val ? sittingGirlWithLaptopDark : sittingGirlWithLaptopLight
-})
 </script>
 
 <template>
@@ -135,7 +132,7 @@ const bannerGirlThemeImage = watch(() => vuetifyTheme.current.value.dark, val =>
     <div class="d-flex align-center flex-md-row flex-column page-pricing-free-banner-bg pb-0 pa-14">
       <div>
         <v-img
-          :src="bannerGirlThemeImage"
+          :src="vuetifyTheme.current.value.dark ? sittingGirlWithLaptopDark : sittingGirlWithLaptopLight"
           :width="350"
         />
       </div>
@@ -296,7 +293,7 @@ const bannerGirlThemeImage = watch(() => vuetifyTheme.current.value.dark, val =>
           <tr>
             <td />
             <td class="text-center">
-              <v-btn variant="contained-text">
+              <v-btn variant="tonal">
                 Choose Plan
               </v-btn>
             </td>
@@ -306,7 +303,7 @@ const bannerGirlThemeImage = watch(() => vuetifyTheme.current.value.dark, val =>
               </v-btn>
             </td>
             <td class="text-center">
-              <v-btn variant="contained-text">
+              <v-btn variant="tonal">
                 Choose Plan
               </v-btn>
             </td>

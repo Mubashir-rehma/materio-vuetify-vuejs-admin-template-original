@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components'
 import {
   alphaDashValidator,
   alphaValidator,
@@ -117,6 +117,7 @@ const refForm = ref<VForm>()
           placeholder="Password Input Field"
           type="password"
           :rules="[requiredValidator, passwordValidator]"
+          autocomplete="on"
         />
       </v-col>
 
@@ -142,6 +143,7 @@ const refForm = ref<VForm>()
           placeholder="Repeat password must match"
           type="password"
           :rules="[requiredValidator, confirmedValidator(repeatPassword, password)]"
+          autocomplete="on"
         />
       </v-col>
 

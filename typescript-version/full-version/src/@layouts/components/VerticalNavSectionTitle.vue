@@ -8,7 +8,7 @@ defineProps<{
   item: NavSectionTitle
 }>()
 
-const { isVerticalNavMini, isLessThanOverlayNavBreakpoint } = useLayouts()
+const { isVerticalNavMini, isLessThanOverlayNavBreakpoint, dynamicI18nProps } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 const shallRenderIcon = computed(() => isVerticalNavMini().value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
 </script>
@@ -24,9 +24,10 @@ const shallRenderIcon = computed(() => isVerticalNavMini().value && !isLessThanO
         mode="out-in"
       >
         <component
-          :is="shallRenderIcon ? 'div' : 'span'"
+          :is="config.app.enableI18n && !shallRenderIcon ? 'i18n-t' : 'span'"
           :key="shallRenderIcon"
           :class="shallRenderIcon ? [config.icons.sectionTitlePlaceholder, 'placeholder-icon'] : 'title-text'"
+          v-bind="dynamicI18nProps(item.heading, 'span')"
         >
           {{ shallRenderIcon ? null : item.heading }}
         </component>

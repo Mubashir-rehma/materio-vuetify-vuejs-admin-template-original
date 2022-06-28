@@ -39,7 +39,7 @@ const notifications: Notification[] = [
 <code-block title="JS">
 
 ```vue
-<script lang="ts" setup>
+<script setup>
 import { Notifications } from '@layouts/components'
 
 const notifications = [

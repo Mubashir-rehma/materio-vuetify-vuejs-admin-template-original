@@ -11,6 +11,7 @@ module.exports = {
         text: 'Other',
         ariaLabel: 'Other Menu',
         items: [
+          { text: '@core', link: '/core/' },
           { text: '@layouts', link: '/layouts/' },
           { text: 'Contribution', link: '/contribution/' },
         ],
@@ -68,6 +69,17 @@ module.exports = {
           collapsable: false,
           children: ['/guide/getting-support', '/guide/github-access'],
         },
+      ],
+      '/core/': [
+        ['', 'Introduction'],
+        {
+          title: 'Components',
+          collapsable: false,
+          children: [
+            ['/core/components/theme-switcher', 'Theme Switcher'],
+            // ['/layouts/components/navbar-notifications', 'Navbar notifications'],
+          ]
+        }
       ],
       '/layouts/': [
         ['', 'Introduction'],

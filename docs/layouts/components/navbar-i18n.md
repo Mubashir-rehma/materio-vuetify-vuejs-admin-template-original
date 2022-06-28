@@ -40,7 +40,7 @@ const i18nCompLanguages: I18nLanguage[] = [
 <code-block title="JS">
 
 ```vue
-<script lang="ts" setup>
+<script setup>
 import { NavBarI18n } from '@layouts/components'
 
 const i18nCompLanguages = [

@@ -2,6 +2,10 @@
 
 Just create new file in `/src/pages` directory and you will have new page with auto generated route.
 
+:::warning
+Pages must have a single root element to allow route transitions between pages.
+:::
+
 ## Creating about page <Badge text="/about" vertical="middle" />
 
 Create a new file named `about.vue` in `/src/pages` directory with the following content:

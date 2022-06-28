@@ -31,6 +31,7 @@ module.exports = {
             '/guide/installation',
             '/guide/vscode-setup',
             '/guide/folder-structure',
+            '/guide/getting-started/colors-and-themes',
             '/guide/how-to-create-a-new-page',
             '/guide/styles',
             '/guide/navigation-menu',

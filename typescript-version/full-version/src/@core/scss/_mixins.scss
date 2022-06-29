@@ -29,42 +29,6 @@
   }
 }
 
-// ℹ️ This is exact copy of vuetify mixin "states" (packages/vuetify/src/styles/tools/_states.sass)
-// TODO: Use vuetify mixin if possible
-@mixin states($selector: "&::before", $active: true) {
-  &:hover {
-    #{$selector} {
-      opacity: calc(0.04 * var(--v-theme-overlay-multiplier));
-    }
-  }
-
-  &:focus-visible {
-    #{$selector} { opacity: calc(0.12 * var(--v-theme-overlay-multiplier)); }
-  }
-
-  @supports not selector(:focus-visible) {
-    &:focus {
-      #{$selector} { opacity: calc(0.12 * var(--v-theme-overlay-multiplier)); }
-    }
-  }
-
-  @if $active {
-    &--active { @include active-states($selector); }
-  }
-}
-
-// ℹ️ This mixin is slightly modified version of vuetify mixin "active-states" (packages/vuetify/src/styles/tools/_states.sass)
-@mixin active-states($selector: "::before") {
-  &:hover#{$selector},
-  &#{$selector} {
-    opacity: calc(0.12 * var(--v-theme-overlay-multiplier));
-  }
-
-  &:focus {
-    #{$selector} { opacity: calc(0.16 * var(--v-theme-overlay-multiplier)); }
-  }
-}
-
 // ——— Light background generator ——————— //
 // ℹ️ With this you have to give text color to the component you want light bg
 // e.g. class="avatar-initial text-primary" for primary light bg

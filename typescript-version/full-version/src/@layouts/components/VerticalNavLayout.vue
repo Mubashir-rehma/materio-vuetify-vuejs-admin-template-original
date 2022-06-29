@@ -202,8 +202,6 @@ export default defineComponent({
     inset: 0;
     opacity: 0;
     pointer-events: none;
-
-    // TODO: Improve animation
     transition: opacity 0.25s ease-in-out;
     will-change: transform;
 

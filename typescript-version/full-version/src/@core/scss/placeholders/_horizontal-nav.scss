@@ -1,9 +1,10 @@
-// TODO: Use `layoutsMixins` as alias for layout's mixins
 @use "@layouts/styles/mixins" as layoutsMixins;
+@use "vuetify/lib/styles/tools/elevation" as elevation;
 
 // Horizontal nav item styles (including nested)
 %horizontal-nav-item {
-  padding: 0.6rem 1rem;
+  padding-block: 0.6rem;
+  padding-inline: 1rem;
 }
 
 // Top level horizontal nav item styles (`a` tag & group label)
@@ -61,7 +62,8 @@
 
 // Popper content styles
 %horizontal-nav-popper-content {
+  @include elevation.elevation(4);
+
   border-radius: 6px;
-  box-shadow: 0 2px 5px 3px rgb(0 0 0 / 10%);
   padding-block: 0.3rem;
 }

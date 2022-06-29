@@ -1,6 +1,5 @@
 import { Ability } from '@casl/ability'
 
-// TODO: Move initialAbility themeConfig
 export const initialAbility = [
   {
     action: 'read',

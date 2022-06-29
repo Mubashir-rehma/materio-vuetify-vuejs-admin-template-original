@@ -1,9 +1,7 @@
-import type { Breakpoints } from '@vueuse/core'
 import type { Component, Ref } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from './enums'
 
-// TODO: Check below listed properties should be here or in core
 export interface UserConfig {
   app: {
     title: string
@@ -13,7 +11,6 @@ export interface UserConfig {
     overlayNavFromBreakpoint: number
     enableI18n: boolean
     isRtl: boolean
-    routeTransition: string
   }
   navbar: {
     type: EnumNavbarType
@@ -38,9 +35,6 @@ export interface UserConfig {
     verticalNavUnPinned: string
     sectionTitlePlaceholder: string
   }
-
-  // TODO: Check do we need this breakpoints config
-  breakpoints: Breakpoints
 }
 
 /*
@@ -56,7 +50,6 @@ export interface Config {
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
     isRtl: Ref<UserConfig['app']['isRtl']>
-    routeTransition: ref<UserConfig['app']['routeTransition']>
   }
   navbar: {
     type: Ref<UserConfig['navbar']['type']>
@@ -81,10 +74,8 @@ export interface Config {
     verticalNavUnPinned: UserConfig['icons']['verticalNavUnPinned']
     sectionTitlePlaceholder: UserConfig['icons']['sectionTitlePlaceholder']
   }
-  breakpoints: UserConfig['breakpoints']
 }
 
-// TODO: Find a way to get action & subject from user types instead of writing string
 interface AclProperties {
   action: string
   subject: string

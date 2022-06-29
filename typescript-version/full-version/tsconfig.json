@@ -42,7 +42,12 @@
       "dom.iterable",
       "scripthost"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": [
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client"
+    ]
   },
   "include": [
     "vite.config.*",
@@ -50,5 +55,9 @@
     "src/**/*",
     "src/**/*.vue",
     "themeConfig.ts",
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
   ]
 }

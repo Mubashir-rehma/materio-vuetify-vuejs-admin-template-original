@@ -4,9 +4,6 @@ import { EnumAppContentLayoutNav } from '../enums'
 import { config } from '@layouts/config'
 import { injectionKeyIsVerticalNavHovered } from '@layouts'
 
-// TODO: Use config from this composition instead of getting it via config object
-// TODO: Check if we need useLayout?
-
 export const useLayouts = () => {
   const navbarType = computed({
     get() {

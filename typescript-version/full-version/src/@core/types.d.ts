@@ -1,7 +1,6 @@
-import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 import type { Ref } from 'vue'
 import type { EnumSkins, RouteTransitions } from './enums'
-import type { UserConfig } from '@layouts/types'
+import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 
 export interface UserThemeConfig {
   app: {
@@ -39,9 +38,6 @@ export interface UserThemeConfig {
     verticalNavUnPinned: UserLayoutConfig['icons']['verticalNavUnPinned']
     sectionTitlePlaceholder: UserLayoutConfig['icons']['sectionTitlePlaceholder']
   }
-
-  // TODO: Check do we need this breakpoints config
-  breakpoints: UserLayoutConfig['breakpoints']
 }
 
 /*
@@ -84,5 +80,4 @@ export interface ThemeConfig {
     verticalNavUnPinned: UserThemeConfig['icons']['verticalNavUnPinned']
     sectionTitlePlaceholder: UserThemeConfig['icons']['sectionTitlePlaceholder']
   }
-  breakpoints: UserThemeConfig['breakpoints']
 }

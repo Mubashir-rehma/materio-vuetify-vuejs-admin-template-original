@@ -115,9 +115,7 @@ const rating = ref(5)
 
           <v-spacer />
 
-          <!-- TODO: Adjust the size of button because Details button don't touch to bottom of card (https://discord.com/channels/340160225338195969/660898563139567625/981537135838507029) -->
           <v-btn
-            color="secondary"
             :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
             @click="isCardDetailsVisible = !isCardDetailsVisible"
           />
@@ -216,8 +214,7 @@ const rating = ref(5)
             </v-card-actions>
           </div>
 
-          <!-- TODO: Refactor below so it doesn't use w-100 and h-100 -->
-          <div class="h-100 w-100 my-auto">
+          <div class="h-100 w-100 my-auto pa-4">
             <v-img
               :class="$vuetify.display.mdAndUp ? 'rounded-lg' : 'rounded-t'"
               height="100%"

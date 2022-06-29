@@ -1,4 +1,3 @@
-// TODO: Find all static box shadows and use vuetify elevation mixin
 @use "sass:map";
 
 // Layout
@@ -16,11 +15,6 @@
 // Utilities
 @use "utilities";
 
-// #app {
-//   block-size: 100%;
-// }
-
-// TODO: Does vuetify needs this style in their core (https://discord.com/channels/340160225338195969/660898563139567625/981505998009270342)
 a {
   color: rgb(var(--v-theme-primary));
   text-decoration: none;

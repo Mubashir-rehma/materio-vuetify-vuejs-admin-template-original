@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import VueApexCharts from 'vue3-apexcharts'
+import { useTheme } from 'vuetify'
 import avatar1 from '@/assets/images/avatars/avatar-1.png'
 import avatar2 from '@/assets/images/avatars/avatar-2.png'
 import avatar3 from '@/assets/images/avatars/avatar-3.png'
 import avatar5 from '@/assets/images/avatars/avatar-5.png'
 import avatar8 from '@/assets/images/avatars/avatar-8.png'
-import VueApexCharts from 'vue3-apexcharts'
-import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
 

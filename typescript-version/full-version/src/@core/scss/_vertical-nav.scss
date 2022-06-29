@@ -2,6 +2,7 @@
 @use "@layouts/styles/mixins" as layoutsMixins;
 @use "./variables";
 @use "@core/scss/mixins" as mixins;
+@use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
 .layout-nav-type-vertical {
   // 👉 Layout Vertical nav
@@ -26,7 +27,6 @@
     }
 
     // 👉 Nav section title
-    // TODO: Section title shouldn't behave weirdly with padding.
     .nav-section-title {
       @extend %vertical-nav-item;
       @extend %vertical-nav-section-title;
@@ -80,7 +80,7 @@
         @include mixins.before-pseudo;
 
         // Adds vuetify states
-        @include mixins.states($active: false);
+        @include vuetifyStates.states($active: false);
       }
     }
 
@@ -124,7 +124,7 @@
         @include mixins.before-pseudo;
 
         // Adds vuetify states
-        @include mixins.states($active: false);
+        @include vuetifyStates.states($active: false);
       }
 
       // Active & open states for nav group label
@@ -153,7 +153,6 @@
 }
 
 // 👉 Transitions
-// TODO: While we transition from mini to hovered state for vertical nav, items move vertically
 .vertical-nav-section-title-enter-active,
 .vertical-nav-section-title-leave-active {
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;

@@ -17,7 +17,6 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   })()
   const localStorageNavbarBlur = localStorage.getItem(`${userConfig.app.title}-navbarBlur`)
 
-  // TODO: Find a better way to assign config
   config.app.title = userConfig.app.title
   config.app.logo = userConfig.app.logo
   config.app.contentWidth.value = localStorageContentWidth || userConfig.app.contentWidth

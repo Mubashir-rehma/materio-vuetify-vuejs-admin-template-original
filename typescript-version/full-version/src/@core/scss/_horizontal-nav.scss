@@ -2,6 +2,7 @@
 @use "./variables";
 @use "@layouts/styles/mixins" as layoutsMixins;
 @use "@core/scss/mixins";
+@use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
 .layout-horizontal-nav {
   // 👉 Icon styles
@@ -35,7 +36,7 @@
       @include mixins.before-pseudo;
 
       // Adds vuetify states
-      @include mixins.states($active: false);
+      @include vuetifyStates.states($active: false);
     }
 
     // 👉 Top level nav link
@@ -75,15 +76,13 @@
       @include mixins.before-pseudo;
 
       // Adds vuetify states
-      @include mixins.states($active: false);
+      @include vuetifyStates.states($active: false);
     }
 
     // 👉 Top level group
     &:not(.sub-item) {
       > .popper-triggerer {
         position: relative;
-
-        // TODO: Decide: Shall we move this bridge style in `@layouts` or `@core`?
 
         /*
           ℹ️ The Bridge
@@ -131,7 +130,7 @@
     // 👉 Sub group
     &.sub-item {
       &.active {
-        @include mixins.active-states("> .popper-triggerer > .nav-group-label::before");
+        @include vuetifyStates.active-states("> .popper-triggerer > .nav-group-label::before");
       }
 
       // Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links])

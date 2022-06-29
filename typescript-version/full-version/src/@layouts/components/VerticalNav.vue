@@ -135,10 +135,8 @@ watch(() => route.name, () => {
   block-size: 100%;
   inline-size: variables.$layout-vertical-nav-width;
   inset-inline-start: 0;
-
-  // TODO: Improve this transition
   transition: all 0.25s ease-in-out;
-  will-change: transform, width;
+  will-change: transform, inline-size;
 
   .nav-header {
     display: flex;
@@ -149,7 +147,6 @@ watch(() => route.name, () => {
     }
   }
 
-  // TODO: Check there is duplicated CSS in future
   .app-title {
     margin-inline-end: auto;
   }

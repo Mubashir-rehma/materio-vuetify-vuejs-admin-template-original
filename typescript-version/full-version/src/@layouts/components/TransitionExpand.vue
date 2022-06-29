@@ -66,9 +66,7 @@ export default defineComponent({
 .expand-enter-active,
 .expand-leave-active {
   overflow: hidden;
-
-  /* TODO: Allow overriding duration & transition-timing-function via SCSS var */
-  transition: height 0.25s ease;
+  transition: block-size var(--expand-transition-duration, 0.25s) ease;
 }
 
 .expand-enter-from,
@@ -82,6 +80,6 @@ export default defineComponent({
   backface-visibility: hidden;
   perspective: 1000px;
   transform: translateZ(0);
-  will-change: height;
+  will-change: block-size;
 }
 </style>

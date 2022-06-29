@@ -1,8 +1,8 @@
 /* @unocss-include */
+import { breakpointsVuetify } from '@vueuse/core'
 import { defineThemeConfig } from '@core'
 import { EnumSkins, RouteTransitions } from '@core/enums'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
-import { breakpointsVuetify } from '@vueuse/core'
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
@@ -40,5 +40,4 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     verticalNavUnPinned: 'i-mdi-radiobox-blank',
     sectionTitlePlaceholder: 'i-mdi-minus',
   },
-  breakpoints: breakpointsVuetify,
 })

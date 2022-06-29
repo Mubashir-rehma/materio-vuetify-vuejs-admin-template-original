@@ -41,6 +41,7 @@
     "@iconify-json/mdi": "^1.1.18",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@types/node": "^18.0.0",
+    "@types/webfontloader": "^1.6.34",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
     "@unocss/preset-icons": "^0.39.0",

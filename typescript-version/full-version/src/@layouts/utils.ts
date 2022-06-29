@@ -1,16 +1,5 @@
-import type { PartialDeep } from 'type-fest'
 import type { Router } from 'vue-router'
 import type { NavGroup, NavLink, NavLinkProps } from '@layouts/types'
-
-export const mergeConfig = <T>(current: T, updates: PartialDeep<T>): T => {
-  for (const key of Object.keys(updates)) {
-    if (!Object.prototype.hasOwnProperty.call(current, key) || typeof updates[key] !== 'object')
-      current[key] = updates[key]
-    else mergeConfig(current[key], updates[key])
-  }
-
-  return current
-}
 
 export const openGroups = ref<string[]>([])
 
@@ -63,7 +52,6 @@ export const isNavLinkActive = (link: NavLink, router: Router) => {
   if (!resolveRoutedName)
     return false
 
-  // eslint-disable-next-line arrow-body-style
   return matchedRoutes.some(route => {
     return route.name === resolveRoutedName || route.meta.navActiveLink === resolveRoutedName
   })

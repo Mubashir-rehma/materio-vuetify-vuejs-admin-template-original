@@ -17,7 +17,6 @@ export const defineThemeConfig = (
     return Object.values(RouteTransitions).find(v => v === storageValue)
   })()
 
-  // TODO: Improve config assignment
   return {
     themeConfig: {
       app: {
@@ -53,7 +52,6 @@ export const defineThemeConfig = (
         verticalNavUnPinned: userConfig.icons.verticalNavUnPinned,
         sectionTitlePlaceholder: userConfig.icons.sectionTitlePlaceholder,
       },
-      breakpoints: userConfig.breakpoints,
     },
     layoutConfig: {
       app: {
@@ -89,7 +87,6 @@ export const defineThemeConfig = (
         verticalNavUnPinned: userConfig.icons.verticalNavUnPinned,
         sectionTitlePlaceholder: userConfig.icons.sectionTitlePlaceholder,
       },
-      breakpoints: userConfig.breakpoints,
     },
   }
 }

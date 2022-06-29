@@ -46,15 +46,12 @@ const { width: windowWidth } = useWindowSize()
     </template>
 
     <!-- 👉 Pages -->
-    <router-view v-slot="{ Component, route }">
+    <router-view v-slot="{ Component }">
       <transition
         :name="appRouteTransition"
         mode="out-in"
       >
-        <component
-          :is="Component"
-          :key="route.path"
-        />
+        <component :is="Component" />
       </transition>
     </router-view>
 

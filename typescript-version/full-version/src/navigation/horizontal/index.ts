@@ -27,7 +27,6 @@ export default [
     icon: 'i-mdi-package-variant',
     children: [
       { title: 'Calendar', to: 'calendar', icon: 'i-mdi-calendar-blank', action: 'read', subject: 'Auth' },
-      { title: 'Email', to: 'email', icon: 'i-mdi-email-outline' },
       {
         title: 'Invoice',
         icon: 'i-mdi-file-document-outline',

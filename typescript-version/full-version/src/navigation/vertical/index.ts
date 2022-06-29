@@ -31,12 +31,6 @@ export default [
     action: 'read',
     subject: 'Auth',
   },
-
-  {
-    title: 'Email',
-    icon: 'i-mdi-email-outline',
-    to: 'email',
-  },
   {
     title: 'Invoice',
     icon: 'i-mdi-file-document-outline',

@@ -51,13 +51,16 @@ export default defineComponent({
       })
     }
 
-    return () => h(h(Transition, {
-      name: 'expand',
-    }), {
-      onEnter,
-      onAfterEnter,
-      onLeave,
-    }, slots.default?.())
+    return () => h(
+      h(Transition),
+      {
+        name: 'expand',
+        onEnter,
+        onAfterEnter,
+        onLeave,
+      },
+      () => slots.default?.(),
+    )
   },
 })
 </script>

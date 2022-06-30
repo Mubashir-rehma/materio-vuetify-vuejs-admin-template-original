@@ -39,7 +39,7 @@ const paymentMethods = [
       <v-expansion-panel-text>
         <v-form
           class="mt-3"
-          @submit.prevent
+          @submit.prevent="() => {}"
         >
           <v-row>
             <!-- 👉 Full Name -->

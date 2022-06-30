@@ -1,6 +1,5 @@
 import mock from '@/@fake-db/mock'
-import type { SetOptional } from 'type-fest'
-import type { DbAuthUser } from '../fake-db'
+import type { User, UserOut } from '@/@fake-db/types.d'
 
 // TODO: Use jsonwebtoken pkg
 // TODO: Enable avatar
@@ -20,48 +19,46 @@ const userTokens = [
 ]
 
 // ❗ These two secrets shall be in .env file and not in any other file
-const jwtSecret = 'dd5f3089-40c3-403d-af14-d0c228b05cb4'
+// const jwtSecret = 'dd5f3089-40c3-403d-af14-d0c228b05cb4'
 
-const data = {
-  users: [
-    {
-      id: 1,
-      fullName: 'John Doe',
-      username: 'johndoe',
-      password: 'admin',
-      // eslint-disable-next-line global-require
-      //   avatar: require('@/assets/images/avatars/13-small.png'),
-      email: 'admin@demo.com',
-      role: 'admin',
-      abilities: [
-        {
-          action: 'manage',
-          subject: 'all',
-        },
-      ],
-    },
-    {
-      id: 2,
-      fullName: 'Jane Doe',
-      username: 'janedoe',
-      password: 'client',
-      // eslint-disable-next-line global-require
-      //   avatar: require('@/assets/images/avatars/1-small.png'),
-      email: 'client@demo.com',
-      role: 'client',
-      abilities: [
-        {
-          action: 'read',
-          subject: 'Auth',
-        },
-        {
-          action: 'read',
-          subject: 'AclDemo',
-        },
-      ],
-    },
-  ],
-}
+const database: User[] = [
+  {
+    id: 1,
+    fullName: 'John Doe',
+    username: 'johndoe',
+    password: 'admin',
+
+    //   avatar: require('@/assets/images/avatars/13-small.png'),
+    email: 'admin@demo.com',
+    role: 'admin',
+    abilities: [
+      {
+        action: 'manage',
+        subject: 'all',
+      },
+    ],
+  },
+  {
+    id: 2,
+    fullName: 'Jane Doe',
+    username: 'janedoe',
+    password: 'client',
+
+    //   avatar: require('@/assets/images/avatars/1-small.png'),
+    email: 'client@demo.com',
+    role: 'client',
+    abilities: [
+      {
+        action: 'read',
+        subject: 'Auth',
+      },
+      {
+        action: 'read',
+        subject: 'AclDemo',
+      },
+    ],
+  },
+]
 
 mock.onPost('/auth/login').reply(request => {
   const { email, password } = JSON.parse(request.data)
@@ -70,24 +67,28 @@ mock.onPost('/auth/login').reply(request => {
     email: ['Something went wrong'],
   }
 
-  const user = data.users.find(u => u.email === email && u.password === password)
+  const user = database.find(u => u.email === email && u.password === password)
 
   if (user) {
     try {
       // TODO: Generate tokens using jwt.sign when we can use jsonwebtoken
       const accessToken = userTokens[user.id]
 
-      const userData: SetOptional<DbAuthUser, 'password' | 'abilities'> = { ...user }
+      // We are duplicating user here
+      const userData = { ...user }
 
-      const response = {
+      const userOutData = Object.fromEntries(
+        Object.entries(userData)
+          .filter(
+            ([key, _]) => !(key === 'password' || key === 'abilities'),
+          ),
+      ) as UserOut['userData']
+
+      const response: UserOut = {
         userAbilities: userData.abilities,
         accessToken,
+        userData: userOutData,
       }
-
-      delete userData.password
-      delete userData.abilities
-
-      response.userData = userData
 
       //   const accessToken = jwt.sign({ id: user.id }, jwtSecret)
 
@@ -110,37 +111,49 @@ mock.onPost('/auth/register').reply(request => {
   const { username, email, password } = JSON.parse(request.data)
 
   // If not any of data is missing return 400
-  if (!(username && email && password)) return [400]
+  if (!(username && email && password))
+    return [400]
 
-  const isEmailAlreadyInUse = data.users.find(user => user.email === email)
-  const isUsernameAlreadyInUse = data.users.find(user => user.username === username)
+  const isEmailAlreadyInUse = database.find(user => user.email === email)
+  const isUsernameAlreadyInUse = database.find(user => user.username === username)
 
   const error = {
     password: !password ? ['Please enter password'] : null,
     email: (() => {
-      if (!email) return ['Please enter your email.']
-      if (isEmailAlreadyInUse) return ['This email is already in use.']
+      if (!email)
+        return ['Please enter your email.']
+      if (isEmailAlreadyInUse)
+        return ['This email is already in use.']
 
       return null
     })(),
     username: (() => {
-      if (!username) return ['Please enter your username.']
-      if (isUsernameAlreadyInUse) return ['This username is already in use.']
+      if (!username)
+        return ['Please enter your username.']
+      if (isUsernameAlreadyInUse)
+        return ['This username is already in use.']
 
       return null
     })(),
   }
 
   if (!error.username && !error.email) {
-    const userData = {
-      email,
-      password,
-      username,
-      fullName: '',
+    // Calculate user id
+    const { length } = database
+    let lastIndex = 0
+    if (length)
+      lastIndex = database[length - 1].id
 
-      // avatar: null,
+    lastIndex += 1
+
+    const userData: User = {
+      id: lastIndex,
+      email: '',
+      password: '',
+      username: '',
+      fullName: '',
       role: 'admin',
-      ability: [
+      abilities: [
         {
           action: 'manage',
           subject: 'all',
@@ -148,20 +161,13 @@ mock.onPost('/auth/register').reply(request => {
       ],
     }
 
-    // Add user id
-    const { length } = data.users
-    let lastIndex = 0
-    if (length)
-      lastIndex = data.users[length - 1].id
-
-    userData.id = lastIndex + 1
-
-    data.users.push(userData)
+    database.push(userData)
 
     const accessToken = userTokens[userData.id]
 
-    const user = { ...userData }
-    delete user.password
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password: _password, ...user } = userData
+
     const response = {
       userData: user,
       accessToken,

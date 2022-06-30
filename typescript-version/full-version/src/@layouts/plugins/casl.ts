@@ -4,12 +4,15 @@ import type { NavGroup } from '@layouts/types'
 
 /**
  * Returns ability result if ACL is configured or else just return true
+ * We should allow passing string | undefined to can because for admin ability we omit defining action & subject
+ *
  * Useful if you don't know if ACL is configured or not
  * Used in @core files to handle absence of ACL without errors
+ *
  * @param {String} action CASL Actions // https://casl.js.org/v4/en/guide/intro#basics
  * @param {String} subject CASL Subject // https://casl.js.org/v4/en/guide/intro#basics
  */
-export const can = (action: string, subject: string) => {
+export const can = (action: string | undefined, subject: string | undefined) => {
   const vm = getCurrentInstance()
 
   if (!vm)
@@ -27,7 +30,6 @@ export const can = (action: string, subject: string) => {
  * @param {Object} item navigation object item
  */
 export const canViewNavMenuGroup = (item: NavGroup) => {
-  // @ts-expect-error We should allow passing string | undefined to can because for admin ability we omit defining action & subject
   const hasAnyVisibleChild = item.children.some(i => can(i.action, i.subject))
 
   // If subject and action is defined in item => Return based on children visibility (Hide group if no child is visible)

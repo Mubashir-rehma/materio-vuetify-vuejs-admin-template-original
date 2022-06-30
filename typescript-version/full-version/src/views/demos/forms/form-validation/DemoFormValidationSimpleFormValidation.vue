@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components'
 import { emailValidator, requiredValidator } from '@core/utils/validation'
 
 const firstName = ref('')
@@ -11,7 +11,7 @@ const refForm = ref<VForm>()
 <template>
   <v-form
     ref="refForm"
-    @submit.prevent
+    @submit.prevent="() => {}"
   >
     <v-row>
       <v-col

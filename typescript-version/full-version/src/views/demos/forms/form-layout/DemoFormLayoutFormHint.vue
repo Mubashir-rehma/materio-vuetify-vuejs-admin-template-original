@@ -8,7 +8,7 @@ const values = ref<typeof items[number][]>([])
 </script>
 
 <template>
-  <v-form @submit.prevent>
+  <v-form @submit.prevent="() => {}">
     <v-row>
       <v-col cols="12">
         <!-- 👉 Username -->

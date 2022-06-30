@@ -3,7 +3,7 @@ const tab = ref('personal-info')
 const firstName = ref('')
 const lastName = ref('')
 const country = ref('')
-const language = ref('')
+const languages = ref([''])
 const birthDate = ref('')
 const phoneNo = ref<number>()
 const countryList = ['USA', 'Canada', 'UK', 'Denmark', 'Germany', 'Iceland', 'Israel', 'Mexico']
@@ -78,7 +78,7 @@ const isCPasswordVisible = ref(false)
                 md="6"
               >
                 <v-select
-                  v-model="language"
+                  v-model="languages"
                   :items="languageList"
                   multiple
                   chips

@@ -6,6 +6,8 @@ import type { HorizontalNavItems } from '@layouts/types'
 defineProps<{
   navItems: HorizontalNavItems
 }>()
+
+const { y: windowScrollY } = useWindowScroll()
 const { _layoutClasses: layoutClasses } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 
@@ -22,7 +24,7 @@ router.afterEach(() => {
 <template>
   <div
     class="layout-wrapper"
-    :class="layoutClasses(windowWidth)"
+    :class="layoutClasses(windowWidth, windowScrollY)"
   >
     <div class="layout-navbar-and-nav-container">
       <!-- 👉 Navbar -->

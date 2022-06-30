@@ -62,7 +62,6 @@ export const defineThemeConfig = (
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
         isRtl: userConfig.app.isRtl,
-        routeTransition: userConfig.app.routeTransition,
       },
       navbar: {
         type: userConfig.navbar.type,

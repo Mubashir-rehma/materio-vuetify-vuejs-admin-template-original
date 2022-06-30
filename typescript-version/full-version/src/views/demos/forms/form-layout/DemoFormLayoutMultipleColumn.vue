@@ -9,7 +9,7 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-form @submit.prevent>
+  <v-form @submit.prevent="() => {}">
     <v-row>
       <!-- 👉 First Name -->
       <v-col

@@ -49,7 +49,7 @@ const isCodeShown = ref(false)
           </v-btn-toggle>
           <v-btn
             icon="mdi-code-tags"
-            :color="isCodeShown ? 'primary' : null"
+            :color="isCodeShown ? 'primary' : undefined"
             size="x-small"
             variant="text"
             @click="isCodeShown = !isCodeShown"

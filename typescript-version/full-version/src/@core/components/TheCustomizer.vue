@@ -112,11 +112,11 @@ const { width: windowWidth } = useWindowSize()
             inline
           >
             <v-radio
-              v-for="key in Object.keys(EnumSkins)"
-              v-show="!(key === 'Semi Dark' && theme === 'dark')"
+              v-for="[key, val] in Object.entries(EnumSkins)"
+              v-show="!(key === EnumSkins['Semi Dark'] && theme === 'dark')"
               :key="key"
               :label="key"
-              :value="EnumSkins[key]"
+              :value="val"
             />
           </v-radio-group>
 
@@ -164,10 +164,10 @@ const { width: windowWidth } = useWindowSize()
             inline
           >
             <v-radio
-              v-for="key in Object.keys(EnumContentWidth)"
+              v-for="[key, val] in Object.entries(EnumContentWidth)"
               :key="key"
               :label="key"
-              :value="EnumContentWidth[key]"
+              :value="val"
             />
           </v-radio-group>
           <!-- 👉 Navbar Type -->
@@ -177,10 +177,10 @@ const { width: windowWidth } = useWindowSize()
             inline
           >
             <v-radio
-              v-for="key in Object.keys(EnumNavbarType)"
+              v-for="[key, val] in Object.entries(EnumNavbarType)"
               :key="key"
               :label="key"
-              :value="EnumNavbarType[key]"
+              :value="val"
             />
           </v-radio-group>
           <!-- 👉 Footer Type -->
@@ -190,10 +190,10 @@ const { width: windowWidth } = useWindowSize()
             inline
           >
             <v-radio
-              v-for="key in Object.keys(EnumFooterType)"
+              v-for="[key, val] in Object.entries(EnumFooterType)"
               :key="key"
               :label="key"
-              :value="EnumFooterType[key]"
+              :value="val"
             />
           </v-radio-group>
           <!-- 👉 Navbar blur -->
@@ -217,10 +217,10 @@ const { width: windowWidth } = useWindowSize()
             inline
           >
             <v-radio
-              v-for="key in Object.keys(EnumAppContentLayoutNav)"
+              v-for="[key, val] in Object.entries(EnumAppContentLayoutNav)"
               :key="key"
               :label="key"
-              :value="EnumAppContentLayoutNav[key]"
+              :value="val"
             />
           </v-radio-group>
           <!-- 👉 Menu Collapsed -->

@@ -15,13 +15,14 @@ export default defineComponent({
 
       const height = getComputedStyle(element).height
 
-      element.style.width = null
-      element.style.position = null
-      element.style.visibility = null
-      element.style.height = 0
+      element.style.width = ''
+      element.style.position = ''
+      element.style.visibility = ''
+      element.style.height = '0px'
 
       // Force repaint to make sure the
       // animation is triggered correctly.
+      // eslint-disable-next-line no-unused-expressions
       getComputedStyle(element).height
 
       // Trigger the animation.
@@ -44,10 +45,11 @@ export default defineComponent({
 
       // Force repaint to make sure the
       // animation is triggered correctly.
+      // eslint-disable-next-line no-unused-expressions
       getComputedStyle(element).height
 
       requestAnimationFrame(() => {
-        element.style.height = 0
+        element.style.height = '0px'
       })
     }
 

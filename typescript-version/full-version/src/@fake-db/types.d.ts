@@ -1,28 +1,4 @@
-export interface UserAbility {
-  action: string
-  subject: string
-}
-
-interface AuthUserBase {
-  id: number
-  fullName: string
-  username: string
-  email: string
-  role: string
-}
-
-export interface AuthUserOut extends AuthUserBase {}
-
-export interface LoginResponse {
-  accessToken: string
-  userData: AuthUserOut
-  userAbilities: UserAbility[]
-}
-
-export interface DbAuthUser extends AuthUserBase {
-  password: string
-  abilities: UserAbility[]
-}
+import type { Actions, Subjects } from '@/plugins/casl/AppAbility'
 
 export interface KnowledgeBaseCategory {
   character: string
@@ -58,3 +34,35 @@ export interface KnowledgeBaseDB {
   KnowledgeBaseQuestionsAndAnswers: KnowledgeBaseQuestionAndAnswer[]
 }
 
+// SECTION
+// 👉 JWT
+
+export interface UserAbility {
+  action: Actions
+  subject: Subjects
+}
+
+export interface User {
+  id: number
+  fullName?: string
+  username: string
+  password: string
+  avatar?: string
+  email: string
+  role: string
+  abilities: UserAbility[]
+}
+
+export interface UserOut {
+  userAbilities: User['abilities']
+  accessToken: string
+  userData: Omit<User, 'abilities' | 'password'>
+}
+
+export interface LoginResponse {
+  accessToken: string
+  userData: AuthUserOut
+  userAbilities: UserAbility[]
+}
+
+// !SECTION

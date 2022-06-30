@@ -10,7 +10,7 @@ defineProps<{
 
 const { isVerticalNavMini, isLessThanOverlayNavBreakpoint, dynamicI18nProps } = useLayouts()
 const { width: windowWidth } = useWindowSize()
-const shallRenderIcon = computed(() => isVerticalNavMini().value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
+const shallRenderIcon = isVerticalNavMini(windowWidth)
 </script>
 
 <template>

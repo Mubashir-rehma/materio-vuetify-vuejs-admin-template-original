@@ -135,16 +135,20 @@ export const useLayouts = () => {
     }, { immediate: true })
   }
 
-  // TODO: Write purpose of this function & refactor the code if necessary after finding its purpose
   /*
+    This function will return true if current state is mini. Mini state means vertical nav is:
+      - Collapsed
+      - Isn't hovered by mouse
+      - nav is not less than overlay breakpoint (hence, isn't overlay menu)
+
     ℹ️ We are getting `isVerticalNavHovered` as param instead of via `inject` because
         we are using this in `VerticalNav.vue` component which provide it and I guess because
         same component is providing & injecting we are getting undefined error
   */
-  const isVerticalNavMini = (isVerticalNavHovered: Ref<boolean> = null) => {
-    const isVerticalNavHoveredLocal = isVerticalNavHovered || inject(injectionKeyIsVerticalNavHovered)
+  const isVerticalNavMini = (windowWidth: MaybeRef<number>, isVerticalNavHovered: Ref<boolean> | null = null) => {
+    const isVerticalNavHoveredLocal = isVerticalNavHovered || inject(injectionKeyIsVerticalNavHovered) || ref(false)
 
-    return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value)
+    return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value && !isLessThanOverlayNavBreakpoint.value(unref(windowWidth)))
   }
 
   const dynamicI18nProps = computed(() => (key: string, tag = 'span') => {

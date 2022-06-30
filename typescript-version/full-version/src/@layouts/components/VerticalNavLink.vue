@@ -12,7 +12,7 @@ defineProps<{
 const { width: windowWidth } = useWindowSize()
 const { isVerticalNavMini, dynamicI18nProps, isLessThanOverlayNavBreakpoint } = useLayouts()
 
-const hideTitleAndBadge = computed(() => isVerticalNavMini().value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
+const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 </script>
 
 <template>

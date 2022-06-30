@@ -14,7 +14,7 @@ const route = useRoute()
 const router = useRouter()
 const { width: windowWidth } = useWindowSize()
 const { isVerticalNavCollapsed, isVerticalNavMini, dynamicI18nProps, isLessThanOverlayNavBreakpoint } = useLayouts()
-const hideTitleAndBadge = computed(() => isVerticalNavMini().value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
+const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 
 /*
   ℹ️[id=tempIsOpen] This will allow us to store temporary group state when menu is collapsed & not hovered

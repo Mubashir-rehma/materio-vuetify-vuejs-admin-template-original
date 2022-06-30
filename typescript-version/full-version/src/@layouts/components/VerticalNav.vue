@@ -26,7 +26,7 @@ provide(injectionKeyIsVerticalNavHovered, isHovered)
 
 const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isVerticalNavMini } = useLayouts()
 
-const hideTitleAndIcon = computed(() => isVerticalNavMini(isHovered).value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
+const hideTitleAndIcon = isVerticalNavMini(windowWidth, isHovered)
 
 const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => {
   if ('heading' in item)

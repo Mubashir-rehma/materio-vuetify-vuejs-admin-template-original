@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSelect'
-import AppCardCode from '@core/components/AppCardCode.vue'
 </script>
 
 <template>

@@ -4,19 +4,19 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 
 <template>
   <div class="demo-space-x">
-    <!-- Top End -->
+    <!-- 👉 Top End -->
     <v-badge
       content="1"
-      location="top-end"
+      location="end top"
     >
       <v-avatar size="48">
         <v-img :src="avatar1" />
       </v-avatar>
     </v-badge>
 
-    <!-- Bottom End -->
+    <!-- 👉 Bottom Start -->
     <v-badge
-      location="bottom-start"
+      location="bottom start"
       content="2"
     >
       <v-avatar size="48">
@@ -24,9 +24,9 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
       </v-avatar>
     </v-badge>
 
-    <!-- Bottom Start -->
+    <!-- 👉 Bottom End -->
     <v-badge
-      location="bottom-end"
+      location="bottom end"
       content="3"
     >
       <v-avatar size="48">
@@ -34,9 +34,9 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
       </v-avatar>
     </v-badge>
 
-    <!-- Bottom Start -->
+    <!-- 👉 top Start -->
     <v-badge
-      location="top-start"
+      location="top start"
       content="4"
     >
       <v-avatar size="48">

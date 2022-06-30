@@ -10,10 +10,10 @@ const icons = ['mdi-snowflake', 'mdi-leaf', 'mdi-fire', 'mdi-water']
     max="3"
     :step="1"
     show-ticks="always"
-    thumb-label="focus"
+    thumb-label
     tick-size="4"
   >
-    <template #thumb-label="{modelValue }">
+    <template #thumb-label="{ modelValue }">
       <v-icon :icon="icons[modelValue]" />
     </template>
   </v-range-slider>

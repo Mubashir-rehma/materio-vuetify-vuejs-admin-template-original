@@ -54,13 +54,13 @@ const rating = ref(5)
         <v-card-text class="position-relative">
           <!-- User Avatar -->
           <v-avatar
-            size="60"
+            size="75"
             class="avatar-center"
             :image="avatar1"
           />
 
           <!-- Title, Subtitle & Action Button -->
-          <div class="d-flex justify-space-between flex-wrap pt-6">
+          <div class="d-flex justify-space-between flex-wrap pt-8">
             <div class="me-2 mb-2">
               <v-card-title class="pa-0">
                 Robert Meyer
@@ -73,7 +73,7 @@ const rating = ref(5)
           </div>
 
           <!--  Mutual Friends -->
-          <div class="d-flex justify-space-between align-center mt-5">
+          <div class="d-flex justify-space-between align-center mt-8">
             <span class="font-weight-medium">18 mutual friends</span>
 
             <div class="v-avatar-group">
@@ -81,7 +81,7 @@ const rating = ref(5)
                 v-for="avatar in avatars"
                 :key="avatar"
                 :image="avatar"
-                size="40"
+                size="45"
               />
             </div>
           </div>
@@ -109,16 +109,19 @@ const rating = ref(5)
         </v-card-text>
 
         <v-card-actions>
-          <v-btn>
+          <v-btn @click="isCardDetailsVisible = !isCardDetailsVisible">
             Details
           </v-btn>
 
           <v-spacer />
 
           <v-btn
-            :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+            icon
+            size="small"
             @click="isCardDetailsVisible = !isCardDetailsVisible"
-          />
+          >
+            <v-icon :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
+          </v-btn>
         </v-card-actions>
 
         <v-expand-transition>
@@ -200,6 +203,7 @@ const rating = ref(5)
                 v-model="rating"
                 readonly
                 class="me-3"
+                density="compact"
               />
               <span>5 Star | 98 reviews</span>
             </v-card-text>
@@ -273,7 +277,7 @@ const rating = ref(5)
             cols="12"
             sm="8"
             md="12"
-            lg="8"
+            lg="7"
             order="2"
             order-lg="1"
           >
@@ -340,23 +344,25 @@ const rating = ref(5)
             cols="12"
             sm="4"
             md="12"
-            lg="4"
+            lg="5"
             order="1"
             order-lg="2"
             class="member-pricing-bg text-center"
           >
-            <div class="membership-pricing d-flex flex-column align-center py-lg-0 pt-10 pb-12 h-100 justify-center">
-              <p>
+            <div class="membership-pricing d-flex flex-column align-center py-14 h-100 justify-center">
+              <p class="mb-5">
                 <sub class="text-h5">$</sub>
                 <sup class="text-h2 font-weight-medium">899</sup>
                 <sub class="text-h5">USD</sub>
               </p>
 
               <p class="text-subtitle-2">
-                5 Tips For Offshore Software Development
+                5 Tips For Offshore <br> Software Development
               </p>
 
-              <v-btn>Contact Now</v-btn>
+              <v-btn class="mt-8">
+                Contact Now
+              </v-btn>
             </div>
           </v-col>
         </v-row>

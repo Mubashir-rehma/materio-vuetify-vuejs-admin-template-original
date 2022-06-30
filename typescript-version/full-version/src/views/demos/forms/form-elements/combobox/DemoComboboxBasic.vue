@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const selectedItem = ref(['Programming'])
+const selectedItem = ref('Programming')
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
 

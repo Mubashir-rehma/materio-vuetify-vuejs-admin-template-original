@@ -24,7 +24,7 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     <!-- dot -->
     <v-badge
       dot
-      location="bottom-right"
+      location="bottom end"
       offset-x="3"
       offset-y="3"
     >

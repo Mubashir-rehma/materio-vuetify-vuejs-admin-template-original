@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-const notifications = ref<number|null>(null)
+const notifications = ref<number>()
 </script>
 
 <template>
   <div class="d-flex align-center">
     <v-badge
       :content="notifications"
-      :model-value="notifications"
+      :model-value="!!notifications"
       color="success"
-      class="me-10"
+      class="me-5"
     >
       <v-icon
         size="40"
@@ -23,7 +23,7 @@ const notifications = ref<number|null>(null)
 
       <v-btn
         color="error"
-        @click="notifications = null"
+        @click="notifications = 0"
       >
         Clear Notifications
       </v-btn>

@@ -17,59 +17,36 @@ const { isVerticalNavCollapsed, isVerticalNavMini, dynamicI18nProps, isLessThanO
 const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 
 /*
-  ℹ️[id=tempIsOpen] This will allow us to store temporary group state when menu is collapsed & not hovered
-  Loosely speaking this is the open state of nav group when menu is not collapsed
-
-  Initial we might have collapsed nav menu and we want to keep active group collapsed.
-  In this scenario `tempIsOpen` should be true because when mouse is hovered we will assign `isOpen` value to `isGroupOpen`.
-*/
-let tempIsOpen = false
-
-/*
   ℹ️ We provided default value `ref(false)` because inject will return `T | undefined`
   Docs: https://vuejs.org/api/composition-api-dependency-injection.html#inject
 */
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
-watch(isVerticalNavHovered, val => {
-  // If menu is not collapsed ignore
-  if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
-    return
 
-  // If mouse is dragged out of nav menu
-  if (!val) {
-    tempIsOpen = isGroupOpen.value
-    isGroupOpen.value = false
-  }
-
-  // If mouse is dragged in nav menu
-  else {
-    isGroupOpen.value = tempIsOpen && isGroupActive.value
-    tempIsOpen = false
-  }
+// ℹ️ Previously instead of below watcher we were using two individual watcher for `isVerticalNavHovered`, `isVerticalNavCollapsed` & `isLessThanOverlayNavBreakpoint`
+watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
+  isGroupOpen.value = val ? false : isGroupActive.value
 })
+
+// watch(isVerticalNavHovered, val => {
+//   // If menu is not collapsed ignore
+//   if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
+//     return
+
+//   isGroupOpen.value = val ? isGroupActive.value : false
+// })
 
 /*
   ℹ️ We have to add watcher for `isVerticalNavCollapsed` to open & close the group when menu collapse state is changed
   We can't rely on watcher for `isVerticalNavHovered` because nav menu can be collapsed via customizer (basically without entering mouse inside nav menu)
   Hence, watcher for `isVerticalNavHovered` won't get triggered and there will no change in open state of nav group when menu is collapsed via customizer.
 */
-watch(isVerticalNavCollapsed, value => {
-  // If mouse in nav menu `isVerticalNavHovered` watcher will take care of open/close group
-  if (isVerticalNavHovered.value)
-    return
+// watch(isVerticalNavCollapsed, value => {
+//   // If mouse in nav menu `isVerticalNavHovered` watcher will take care of open/close group
+//   if (isVerticalNavHovered.value)
+//     return
 
-  // If nav menu is collapsed => collapse group and assign the current state to `tempIsOpen`
-  if (value) {
-    tempIsOpen = isGroupOpen.value
-    isGroupOpen.value = false
-  }
-
-  // If nav menu is expanded => expand group and assign the current state to `tempIsOpen`
-  else {
-    isGroupOpen.value = tempIsOpen && isGroupActive.value
-    tempIsOpen = false
-  }
-})
+//   isGroupOpen.value = value ? false : isGroupActive.value
+// })
 
 const isGroupActive = ref(false)
 const isGroupOpen = ref(false)
@@ -112,9 +89,6 @@ watch(() => route.path, () => {
   // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
   isGroupOpen.value = isActive && !(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
   isGroupActive.value = isActive
-
-  // Why? => LINK src/@layouts/components/VerticalNavGroup.vue#tempIsOpen
-  tempIsOpen = isActive
 }, { immediate: true })
 
 /*
@@ -174,19 +148,20 @@ watch(openGroups, val => {
 }, { deep: true })
 
 /*
+  Update: We don't need this watcher any more because we have new watch isVerticalNavMini that includes this one
   ℹ️ We need this watcher to
     - Collapse the group when going to `lgAndUp` if vertical nav is collapsed (else block)
     - Expand the group if it's active and screen is `mdAndDown`. Because in this screen vertical nav will be overlay nav
 */
-watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth.value), isLessThanOverlayNavBreakpoint_ => {
-  // If window size is more than overlay nav breakpoint => expand group if its active
-  if (isLessThanOverlayNavBreakpoint_) { isGroupOpen.value = isGroupActive.value }
+// watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth.value), isLessThanOverlayNavBreakpoint_ => {
+//   // If window size is more than overlay nav breakpoint => expand group if its active
+//   if (isLessThanOverlayNavBreakpoint_) { isGroupOpen.value = isGroupActive.value }
 
-  else {
-    if (isVerticalNavCollapsed.value)
-      isGroupOpen.value = false
-  }
-})
+//   else {
+//     if (isVerticalNavCollapsed.value)
+//       isGroupOpen.value = false
+//   }
+// })
 </script>
 
 <script lang="ts">

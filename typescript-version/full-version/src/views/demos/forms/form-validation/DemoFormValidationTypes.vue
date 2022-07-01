@@ -12,7 +12,7 @@ import {
   regexValidator,
   requiredValidator,
   urlValidator,
-} from '@core/utils/validation'
+} from '@core/utils/validators'
 
 const requiredField = ref('')
 const numberBetween10to20 = ref('')

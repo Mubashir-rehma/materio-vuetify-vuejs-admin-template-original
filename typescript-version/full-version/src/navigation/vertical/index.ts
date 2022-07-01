@@ -54,7 +54,6 @@ export default [
     title: 'Pages',
     icon: 'i-mdi-file-outline',
     children: [
-      { title: 'Knowledge Base', to: 'pages-knowledge-base' },
       {
         title: 'Authentication',
         children: [
@@ -88,8 +87,6 @@ export default [
           },
         ],
       },
-      { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
-      { title: 'Pricing', to: 'pages-pricing' },
       {
         title: 'Miscellaneous',
         children: [
@@ -100,6 +97,10 @@ export default [
           { title: 'Server Error - 500', to: 'pages-misc-internal-server-error', target: '_blank' },
         ],
       },
+      { title: 'Knowledge Base', to: 'pages-knowledge-base' },
+      { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
+      { title: 'Pricing', to: 'pages-pricing' },
+      { title: 'FAQ', to: 'pages-faq' },
     ],
   },
   { heading: 'UI Elements' },

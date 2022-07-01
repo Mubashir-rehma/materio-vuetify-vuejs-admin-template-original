@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { useAbility } from '@casl/vue'
 import type { LoginResponse } from '@/@fake-db/types'
-import authIllustrationDarkBorder from '@/assets/images/pages/auth-v2-login-illustration-bordered-dark.png'
-import authIllustrationLightBorder from '@/assets/images/pages/auth-v2-login-illustration-bordered-light.png'
-import authIllustrationDark from '@/assets/images/pages/auth-v2-login-illustration-dark.png'
-import authIllustrationLight from '@/assets/images/pages/auth-v2-login-illustration-light.png'
-import authMaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authMaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
 import authTree from '@/assets/images/pages/tree.png'
 import type { AppAbility } from '@/plugins/casl/AppAbility'
 import axios from '@axios'
@@ -15,9 +9,9 @@ import { themeConfig } from '@themeConfig'
 
 const isPasswordVisible = ref(false)
 
-const authThemeImg = useGenerateImageVariant(authIllustrationLight, authIllustrationDark, authIllustrationLightBorder, authIllustrationDarkBorder)
+const authThemeImg = useGenerateImageVariant('@/assets/images/pages/auth-v2-login-illustration.png', true)
 
-const authThemeMask = useGenerateImageVariant(authMaskLight, authMaskDark)
+const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
 
 const route = useRoute()
 const router = useRouter()

@@ -1,10 +1,4 @@
 <script setup lang="ts">
-import authMaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authMaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import authIllustrationDarkBorder from '@/assets/images/pages/auth-v2-register-illustration-bordered-dark.png'
-import authIllustrationLightBorder from '@/assets/images/pages/auth-v2-register-illustration-bordered-light.png'
-import authIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
-import authIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
 import authTree from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
@@ -16,10 +10,9 @@ const form = ref({
   privacyPolicies: false,
 })
 
-const imageVariant = useGenerateImageVariant(authIllustrationLight,
-  authIllustrationDark, authIllustrationLightBorder, authIllustrationDarkBorder)
+const imageVariant = useGenerateImageVariant('@/assets/images/pages/auth-v2-register-illustration.png', true)
 
-const authThemeMask = useGenerateImageVariant(authMaskLight, authMaskDark)
+const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
 
 const isPasswordVisible = ref(false)
 </script>

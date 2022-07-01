@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import misc401 from '@/assets/images/pages/401.png'
-import authMaskDark from '@/assets/images/pages/misc-mask-dark.png'
-import authMaskLight from '@/assets/images/pages/misc-mask-light.png'
 import tree from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
-const authThemeMask = useGenerateImageVariant(authMaskLight, authMaskDark)
+const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.png')
 </script>
 
 <template>

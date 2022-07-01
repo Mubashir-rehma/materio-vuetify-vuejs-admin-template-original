@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
+interface Props {
+  title?: string
+  subtitle?: string
+}
+
+const props = defineProps<Props>()
+
 defineOptions({
   inheritAttrs: false,
 })
@@ -12,43 +19,44 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
   <!-- 👉 Search Banner  -->
   <v-card
     flat
-    class="text-center page-knowledge-base mb-7"
-    :style="`background:url(${themeBackgroundImg})`"
+    class="text-center search-header mb-7"
+    :style="`background: url(${themeBackgroundImg});`"
   >
     <v-card-text>
-      <h5 class="text-h5 font-weight-medium text-primary mb-3">
-        Hello, how can we help?
+      <h5 class="text-h5 font-weight-medium text-primary">
+        {{ props.title }}
       </h5>
-      <p>or choose a category to quickly find the help you need</p>
 
       <!-- 👉 Search Input -->
       <v-text-field
         v-bind="$attrs"
         placeholder="Ask a question.."
-        class="page-kb-search-input mx-auto"
+        class="search-header-input mx-auto my-3"
       >
-        <template #prependInner>
+        <template #prepend-inner>
           <v-icon
             icon="mdi-magnify"
             size="23"
           />
         </template>
       </v-text-field>
+
+      <p>{{ props.subtitle }}</p>
     </v-card-text>
   </v-card>
 </template>
 
 <style lang="scss">
-.page-knowledge-base {
-  padding: 5.5rem;
+.search-header {
+  padding: 4rem;
   background-size: cover;
 }
 
 // search input
-.page-kb-search-input {
+.search-header-input {
   background-color: rgb(var(--v-theme-surface));
   border-radius: 0.25rem;
-  max-inline-size: 28.125rem;
+  max-inline-size: 32.125rem;
 
   .v-field__prepend-inner {
     i {
@@ -58,10 +66,8 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
 }
 
 @media (max-width: 37.5rem) {
-  #page-knowledge-base {
-    .page-knowledge-base {
-      padding: 1.5rem !important;
-    }
+  .search-header {
+    padding: 1.5rem !important;
   }
 }
 </style>

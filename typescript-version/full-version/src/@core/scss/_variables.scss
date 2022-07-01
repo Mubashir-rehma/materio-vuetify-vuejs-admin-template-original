@@ -21,6 +21,14 @@ $css-var--v-theme-surface: (
   "dark": (49, 45, 75),
   "retro": (255, 254, 252),
 ) !default;
+$theme-colors-name: (
+  "primary",
+  "secondary",
+  "error",
+  "info",
+  "success",
+  "warning"
+) !default;
 
 // 👉 Default layout with vertical nav
 

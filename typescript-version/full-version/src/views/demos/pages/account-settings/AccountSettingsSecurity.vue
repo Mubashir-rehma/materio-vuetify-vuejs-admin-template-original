@@ -254,11 +254,12 @@ const isOneTimePasswordDialogVisible = ref(false)
             md="7"
             order="0"
             order-md="1"
-            class="d-flex flex-column justify-center align-center mb-n6"
+            class="d-flex flex-column justify-center align-center"
           >
             <v-img
               :src="vuetifyTheme.current.value.dark ? sittingGirlDark : sittingGirlLight"
               :width="310"
+              :style="$vuetify.display.smAndDown ? '' : 'position: absolute; bottom: 0;'"
             />
           </v-col>
         </v-row>

@@ -9,6 +9,7 @@ export const useGenerateImageVariant = (imageURL: string, bordered = false) => {
 
     /*
     Assume img url is: '@/assets/images/pages/knowledge-base-bg.png'
+
     url.split('@/')[1] <= Will remove leading `@/` from path => assets/images/pages/knowledge-base-bg.png
     url.split('@/')[1].split('.') will give => ['assets/images/pages/knowledge-base-bg', 'png']
   */

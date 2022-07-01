@@ -61,30 +61,3 @@
     #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
   }
 }
-
-// ℹ️ Generate Images variants for light and dark bg
-@mixin gen-img-variants($property,$light, $dark, $light-bordered:false , $dark-bordered:false,$important: false) {
-  // light bg
-  .v-theme--light & {
-    #{$property}: $light if($important, !important, null);
-  }
-
-  // dark bg
-  .v-theme--dark & {
-    #{$property}: $dark if($important, !important, null);
-  }
-
-  // light bordered bg
-  @if $light-bordered {
-    .v-theme--light .skin--bordered & {
-      #{$property}: $light-bordered if($important, !important, null);
-    }
-  }
-
-  // dark bordered bg
-  @if $dark-bordered {
-    .v-theme--dark .skin--bordered & {
-      #{$property}: $dark-bordered if($important, !important, null);
-    }
-  }
-}

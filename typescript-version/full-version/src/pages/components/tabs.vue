@@ -23,6 +23,21 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
       cols="12"
       md="6"
     >
+      <!-- 👉 Basic Pill -->
+      <AppCardCode
+        title="Basic Pill"
+        :code="demoCode.basicPill"
+      >
+        <p>Use our custom class <code>.v-tabs-pill</code> along with <code>v-tabs</code> component to style pill tabs.</p>
+
+        <DemoTabsBasicPill />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
       <!-- 👉 Stacked -->
       <AppCardCode
         title="Stacked"
@@ -46,6 +61,21 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
         <p>The <code>vertical</code> prop allows for <code>v-tab</code> components to stack vertically.</p>
 
         <DemoTabsVertical />
+      </AppCardCode>
+    </v-col>
+
+    <v-col
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Vertical Pill -->
+      <AppCardCode
+        title="Vertical Pill"
+        :code="demoCode.verticalPill"
+      >
+        <p>Use our custom class .v-tabs-pill along with v-tabs component to style pill tabs.</p>
+
+        <DemoTabsVerticalPill />
       </AppCardCode>
     </v-col>
 

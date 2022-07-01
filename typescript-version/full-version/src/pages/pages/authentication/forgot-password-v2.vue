@@ -1,19 +1,13 @@
 <script setup lang="ts">
-import authIllustrationDarkBorder from '@/assets/images/pages/auth-v2-forgot-password-illustration-bordered-dark.png'
-import authIllustrationLightBorder from '@/assets/images/pages/auth-v2-forgot-password-illustration-bordered-light.png'
-import authIllustrationDark from '@/assets/images/pages/auth-v2-forgot-password-illustration-dark.png'
-import authIllustrationLight from '@/assets/images/pages/auth-v2-forgot-password-illustration-light.png'
-import authMaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authMaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
 import authTree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
 const email = ref('')
 
-const authThemeImg = useGenerateImageVariant(authIllustrationLight, authIllustrationDark, authIllustrationLightBorder, authIllustrationDarkBorder)
+const authThemeImg = useGenerateImageVariant('@/assets/images/pages/auth-v2-forgot-password-illustration.png', true)
 
-const authThemeMask = useGenerateImageVariant(authMaskLight, authMaskDark)
+const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
 </script>
 
 <template>

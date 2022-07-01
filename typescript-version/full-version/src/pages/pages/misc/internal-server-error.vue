@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import misc500 from '@/assets/images/pages/500.png'
-import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
-import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
 import tree from '@/assets/images/pages/tree-3.png'
 import ErrorHeader from '@core/components/ErrorHeader.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
-const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
+const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.png')
 </script>
 
 <template>

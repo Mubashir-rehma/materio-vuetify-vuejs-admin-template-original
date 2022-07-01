@@ -3,6 +3,7 @@ import { useTheme } from 'vuetify'
 import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
 import AppPricing from '@core/components/AppPricing.vue'
+import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const features = [
   {
@@ -119,10 +120,15 @@ const faqList = [
 ]
 
 const vuetifyTheme = useTheme()
+
+const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustrations/pricing-illustration.png')
 </script>
 
 <template>
-  <v-card class="page-pricing-bg">
+  <v-card
+    class="page-pricing"
+    :style="`--v-custom-pricing-bg:url(${themeBackgroundImg});`"
+  >
     <v-card-text class="pt-12 mb-16">
       <!-- 👉 App Pricing components -->
       <AppPricing md="4" />
@@ -346,8 +352,6 @@ const vuetifyTheme = useTheme()
 </template>
 
 <style lang="scss">
-@use "@core/scss/mixins" as mixins;
-
 .page-pricing-free-banner-bg {
   /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-primary), var(--v-pressed-opacity));
@@ -355,17 +359,11 @@ const vuetifyTheme = useTheme()
 
 @media (min-width: 960px) {
   /* stylelint-disable-next-line no-duplicate-selectors */
-  .page-pricing-bg {
+  .page-pricing {
     // generate images variants for themes
     &::before {
-      @include mixins.gen-img-variants(
-        $property:"background-image",
-        $light: url("@/assets/images/illustrations/pricing-illustration-light.png"),
-        $dark: url("@/assets/images/illustrations/pricing-illustration-light.png"),
-        $important: false,
-      );
-
       display: block;
+      background: var(--v-custom-pricing-bg);
       background-size: cover;
       block-size: 54rem;
       content: "";

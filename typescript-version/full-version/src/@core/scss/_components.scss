@@ -1,6 +1,7 @@
 @use "mixins";
 @use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
 @use "@layouts/styles/_placeholders";
+@use "./variables";
 
 // 👉 Avatar
 
@@ -64,5 +65,32 @@
   .v-dialog.v-dialog-xl,
   .v-dialog.v-dialog-xl .v-overlay__content > .v-card {
     inline-size: 1165px !important;
+  }
+}
+
+// v-tab with pill support
+
+.v-tabs.v-tabs-pill {
+  .v-tab.v-btn {
+    border-radius: 0.25rem !important;
+    transition: none;
+
+    .v-tab__slider {
+      display: none;
+    }
+  }
+
+  .v-slide-group__content {
+    transition: none;
+  }
+}
+
+// loop for all colors bg
+@each $color-name in variables.$theme-colors-name {
+  .v-tabs.v-tabs-pill {
+    .v-slide-group-item--active.v-tab--selected.text-#{$color-name} {
+      background-color: rgb(var(--v-theme-#{$color-name}));
+      color: rgb(var(--v-theme-on-#{$color-name})) !important;
+    }
   }
 }

@@ -44,7 +44,6 @@ export default createVuetify({
       hideDetails: 'auto',
     },
     VSelect: {
-      transition: 'fade-transition',
       variant: 'outlined',
       density: 'comfortable',
       color: 'primary',

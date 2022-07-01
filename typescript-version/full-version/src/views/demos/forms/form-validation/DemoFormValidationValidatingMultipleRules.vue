@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { VForm } from 'vuetify/components'
-import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@core/utils/validation'
+import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@core/utils/validators'
 
 const name = ref('')
 const email = ref('')

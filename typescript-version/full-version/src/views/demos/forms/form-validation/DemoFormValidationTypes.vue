@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { VForm } from 'vuetify/components'
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { VForm } from 'vuetify/components'
 import {
   alphaDashValidator,
   alphaValidator,

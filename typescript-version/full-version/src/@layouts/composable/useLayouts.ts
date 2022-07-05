@@ -79,21 +79,26 @@ export const useLayouts = () => {
     return (windowWidth: MaybeRef<number>) => unref(windowWidth) < config.app.overlayNavFromBreakpoint
   })
 
-  const _layoutClasses = computed(() => (windowWidth: MaybeRef<number>, windowScrollY: MaybeRef<number>) => [
-    `layout-nav-type-${appContentLayoutNav.value}`,
-    `layout-navbar-${navbarType.value}`,
-    `layout-footer-${footerType.value}`,
-    {
-      'layout-vertical-nav-collapsed':
-        isVerticalNavCollapsed.value
-        && appContentLayoutNav.value === 'vertical'
-        && !isLessThanOverlayNavBreakpoint.value(windowWidth),
-    },
-    { [`horizontal-nav-${horizontalNavType.value}`]: appContentLayoutNav.value === 'horizontal' },
-    `layout-content-width-${appContentWidth.value}`,
-    { 'layout-overlay-nav': isLessThanOverlayNavBreakpoint.value(windowWidth) },
-    { 'window-scrolled': unref(windowScrollY) },
-  ])
+  const _layoutClasses = computed(() => (windowWidth: MaybeRef<number>, windowScrollY: MaybeRef<number>) => {
+    const route = useRoute()
+
+    return [
+      `layout-nav-type-${appContentLayoutNav.value}`,
+      `layout-navbar-${navbarType.value}`,
+      `layout-footer-${footerType.value}`,
+      {
+        'layout-vertical-nav-collapsed':
+          isVerticalNavCollapsed.value
+          && appContentLayoutNav.value === 'vertical'
+          && !isLessThanOverlayNavBreakpoint.value(windowWidth),
+      },
+      { [`horizontal-nav-${horizontalNavType.value}`]: appContentLayoutNav.value === 'horizontal' },
+      `layout-content-width-${appContentWidth.value}`,
+      { 'layout-overlay-nav': isLessThanOverlayNavBreakpoint.value(windowWidth) },
+      { 'window-scrolled': unref(windowScrollY) },
+      route.meta.layoutWrapperClasses ? route.meta.layoutWrapperClasses : null,
+    ]
+  })
 
   const switchToVerticalNavOnLtOverlayNavBreakpoint = (windowWidth: MaybeRef<number>) => {
     /*

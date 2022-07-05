@@ -219,5 +219,26 @@ export default defineComponent({
   &.layout-vertical-nav-collapsed .layout-content-wrapper {
     padding-inline-start: variables.$layout-vertical-nav-collapsed-width;
   }
+
+  // 👉 Content height fixed
+  &.layout-content-height-fixed {
+    .layout-content-wrapper {
+      max-block-size: calc(var(--vh) * 100);
+    }
+
+    .layout-page-content {
+      display: flex;
+      overflow: hidden;
+
+      .page-content-container {
+        inline-size: 100%;
+
+        > :first-child {
+          max-block-size: 100%;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
 }
 </style>

@@ -1,11 +1,10 @@
 <template>
-  <p>analytics</p>
+  <div>
+    <p
+      v-for="i in 100"
+      :key="i"
+    >
+      analytics
+    </p>
+  </div>
 </template>
-
-<script lang="ts" setup>
-
-</script>
-
-<style lang="scss">
-
-</style>

@@ -37,6 +37,10 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.25.2",
+    "@fullcalendar/core": "^5.11.0",
+    "@fullcalendar/daygrid": "^5.11.0",
+    "@fullcalendar/interaction": "^5.11.0",
+    "@fullcalendar/vue3": "^5.11.1",
     "@iconify-json/flagpack": "^1.1.2",
     "@iconify-json/mdi": "^1.1.24",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",

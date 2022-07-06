@@ -1,7 +1,7 @@
 {
   "name": "materio-vuetify-vuejs-admin-template",
   "description": "Production Ready, Carefully Crafted, Extensive Vuetifty Admin Template",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

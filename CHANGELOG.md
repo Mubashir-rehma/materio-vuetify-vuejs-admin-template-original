@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v1.0.4) (2022-07-06)
+
+### Chore
+
+- Added `package-lock.json` and updated the dependencies to mitigate the possible errors
+
 ## [1.0.3](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v1.0.3) (2022-01-05)
 
 ### Fixed

@@ -10,7 +10,7 @@ import poseM14 from '@/assets/images/pages/pose-m-14.png'
 import poseM34 from '@/assets/images/pages/pose-m-34.png'
 import poseM5 from '@/assets/images/pages/pose-m-5.png'
 
-const kbContentData: KnowledgeBaseDB = {
+const database: KnowledgeBaseDB = {
   knowledgeBaseCategories: [
     {
       character: poseF3,
@@ -243,11 +243,11 @@ const kbContentData: KnowledgeBaseDB = {
 mock.onGet('/pages/knowledge-base/categories').reply(config => {
   const { q = '' } = config.params ?? ''
 
-  let filterData = [...kbContentData.knowledgeBaseCategories]
+  let filterData = [...database.knowledgeBaseCategories]
 
   if (q) {
     const knowledgeBaseSearchQueryLower = q.toLowerCase()
-    filterData = kbContentData.knowledgeBaseCategories.filter(kb =>
+    filterData = database.knowledgeBaseCategories.filter(kb =>
       kb.title.toLowerCase().includes(knowledgeBaseSearchQueryLower) || kb.desc.toLowerCase().includes(knowledgeBaseSearchQueryLower))
   }
 
@@ -255,7 +255,7 @@ mock.onGet('/pages/knowledge-base/categories').reply(config => {
 })
 
 mock.onGet(/\/pages\/knowledge-base\/categories\/questions\/[\w-]+/).reply(() => {
-  return [200, kbContentData.KnowledgeBaseQuestionsAndAnswers[0]]
+  return [200, database.KnowledgeBaseQuestionsAndAnswers[0]]
 })
 
 mock.onGet(/\/pages\/knowledge-base\/categories\/[\w-]+/).reply(config => {
@@ -264,7 +264,7 @@ mock.onGet(/\/pages\/knowledge-base\/categories\/[\w-]+/).reply(config => {
 
   const filteredData: KnowledgeBaseSubcategory[] = []
 
-  Object.entries(kbContentData.knowledgeBaseSubcategories).forEach(entry => {
+  Object.entries(database.knowledgeBaseSubcategories).forEach(entry => {
     const categoryObj = entry[1]
 
     const filteredQAndA = categoryObj.questions.filter(obj => {

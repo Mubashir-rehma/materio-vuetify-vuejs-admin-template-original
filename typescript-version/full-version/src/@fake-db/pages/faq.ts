@@ -1,7 +1,7 @@
 import mock from '@/@fake-db/mock'
 import type { FaqCategory } from '@/@fake-db/types'
 
-const faqsData: FaqCategory[] = [
+const database: FaqCategory[] = [
   {
     faqTitle: 'Payment',
     faqIcon: 'mdi-credit-card-outline',
@@ -116,8 +116,7 @@ mock.onGet('/pages/faqs').reply(config => {
 
   const filteredData: FaqCategory[] = []
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  Object.entries(faqsData).forEach(([key, faqObj]) => {
+  Object.entries(database).forEach(([_, faqObj]) => {
     const filteredQAndA = faqObj.faqs.filter(obj => {
       return obj.question.toLowerCase().includes(queryLowered)
     })

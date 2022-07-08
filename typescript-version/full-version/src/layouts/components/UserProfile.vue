@@ -5,7 +5,7 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
 <template>
   <VBadge
     dot
-    location="bottom-right"
+    location="bottom right"
     offset-x="3"
     offset-y="3"
     color="success"
@@ -23,7 +23,7 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
           <VListItem>
             <VBadge
               dot
-              location="bottom-right"
+              location="bottom right"
               offset-x="3"
               offset-y="3"
               color="success"
@@ -42,7 +42,7 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
           <VDivider />
 
           <!-- 👉 Profile -->
-          <VListItem :to="{ name: 'index' }">
+          <VListItem :to="{ name: 'user-view' }">
             <VListItemIcon
               class="me-2"
               icon="mdi-account-outline"
@@ -52,38 +52,8 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
             </VListItemHeader>
           </VListItem>
 
-          <!-- 👉 Inbox -->
-          <VListItem :to="{ name: 'index' }">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-email-outline"
-            />
-            <VListItemHeader>
-              <VListItemTitle>Inbox</VListItemTitle>
-            </VListItemHeader>
-          </VListItem>
-
-          <!-- 👉 Chat -->
-          <VListItem :to="{ name: 'index' }">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-chat-outline"
-            />
-            <VListItemHeader>
-              <VListItemTitle>Chat</VListItemTitle>
-            </VListItemHeader>
-            <VListItemAction>
-              <VBadge
-                inline
-                content="2"
-              />
-            </VListItemAction>
-          </VListItem>
-
-          <VDivider />
-
           <!-- 👉 Settings -->
-          <VListItem :to="{ name: 'index' }">
+          <VListItem :to="{ name: 'pages-account-settings-tab', params: { tab: 'account' } }">
             <VListItemIcon
               class="me-2"
               icon="mdi-cog-outline"
@@ -94,7 +64,7 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
           </VListItem>
 
           <!-- 👉 Pricing -->
-          <VListItem :to="{ name: 'index' }">
+          <VListItem :to="{ name: 'pages-pricing' }">
             <VListItemIcon
               class="me-2"
               icon="mdi-currency-usd"
@@ -105,13 +75,27 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
           </VListItem>
 
           <!-- 👉 FAQ -->
-          <VListItem :to="{ name: 'index' }">
+          <VListItem :to="{ name: 'pages-faq' }">
             <VListItemIcon
               class="me-2"
               icon="mdi-help-circle-outline"
             />
             <VListItemHeader>
               <VListItemTitle>FAQ</VListItemTitle>
+            </VListItemHeader>
+          </VListItem>
+
+          <!-- Divider -->
+          <VDivider />
+
+          <!-- 👉 Logout -->
+          <VListItem>
+            <VListItemIcon
+              class="me-2"
+              icon="mdi-logout"
+            />
+            <VListItemHeader>
+              <VListItemTitle>Logout</VListItemTitle>
             </VListItemHeader>
           </VListItem>
         </VList>

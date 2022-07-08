@@ -18,64 +18,64 @@ const isPasswordVisible = ref(false)
 
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
-    <v-card
+    <VCard
       class="auth-card pa-4"
       max-width="448"
     >
-      <v-card-header>
-        <v-card-header-text>
-          <v-card-title class="justify-center">
+      <VCardHeader>
+        <VCardHeaderText>
+          <VCardTitle class="justify-center">
             <img
               :src="themeConfig.app.logo"
               class="me-3"
             >
             <span class="font-weight-semibold text-h5">{{ themeConfig.app.title }}</span>
-          </v-card-title>
-        </v-card-header-text>
-      </v-card-header>
+          </VCardTitle>
+        </VCardHeaderText>
+      </VCardHeader>
 
-      <v-card-text>
+      <VCardText>
         <h5 class="text-h5 font-weight-semibold mb-3">
           Adventure starts here 🚀
         </h5>
         <p class="mb-0">
           Make your app management easy and fun!
         </p>
-      </v-card-text>
+      </VCardText>
 
-      <v-card-text>
-        <v-form @submit.prevent="() => {}">
-          <v-row>
+      <VCardText>
+        <VForm @submit.prevent="() => {}">
+          <VRow>
             <!-- Username -->
-            <v-col cols="12">
-              <v-text-field
+            <VCol cols="12">
+              <VTextField
                 v-model="form.username"
                 label="Username"
               />
-            </v-col>
+            </VCol>
             <!-- email -->
-            <v-col cols="12">
-              <v-text-field
+            <VCol cols="12">
+              <VTextField
                 v-model="form.email"
                 label="Email"
                 type="email"
               />
-            </v-col>
+            </VCol>
 
             <!-- password -->
-            <v-col cols="12">
-              <v-text-field
+            <VCol cols="12">
+              <VTextField
                 v-model="form.password"
                 label="Password"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
-            </v-col>
+            </VCol>
 
             <!-- agree -->
-            <v-col cols="12">
-              <v-checkbox
+            <VCol cols="12">
+              <VCheckbox
                 v-model="form.privacyPolicies"
                 inline
                 density="compact"
@@ -87,68 +87,68 @@ const isPasswordVisible = ref(false)
                     class="text-primary"
                   >privacy policy & terms</a>
                 </template>
-              </v-checkbox>
-            </v-col>
+              </VCheckbox>
+            </VCol>
 
             <!-- login -->
-            <v-col cols="12">
-              <v-btn
+            <VCol cols="12">
+              <VBtn
                 block
                 type="submit"
               >
                 Sign up
-              </v-btn>
-            </v-col>
+              </VBtn>
+            </VCol>
 
             <!-- login instead -->
-            <v-col
+            <VCol
               cols="12"
               class="text-center"
             >
               <span>Already have an account?</span>
-              <router-link
+              <RouterLink
                 class="text-primary ms-2"
                 :to="{ name: 'pages-authentication-login-v1' }"
               >
                 Sign in instead
-              </router-link>
-            </v-col>
+              </RouterLink>
+            </VCol>
 
-            <v-col
+            <VCol
               cols="12"
               class="d-flex align-center"
             >
-              <v-divider />
+              <VDivider />
               <span class="mx-4">or</span>
-              <v-divider />
-            </v-col>
+              <VDivider />
+            </VCol>
 
             <!-- auth providers -->
-            <v-col
+            <VCol
               cols="12"
               class="text-center"
             >
               <DemoAuthProvider />
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-card-text>
-    </v-card>
+            </VCol>
+          </VRow>
+        </VForm>
+      </VCardText>
+    </VCard>
 
-    <v-img
+    <VImg
       class="auth-footer-start-tree d-none d-md-block"
       :src="authTree"
       :width="250"
     />
 
-    <v-img
+    <VImg
       :src="authTree2"
       class="auth-footer-end-tree d-none d-md-block"
       :width="350"
     />
 
     <!-- bg img -->
-    <v-img
+    <VImg
       class="auth-footer-mask d-none d-md-block"
       :src="authThemeMask"
     />

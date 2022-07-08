@@ -1,14 +1,14 @@
 <template>
-  <v-tabs
+  <VTabs
     next-icon="mdi-arrow-right"
     prev-icon="mdi-arrow-left"
     show-arrows
   >
-    <v-tab
+    <VTab
       v-for="i in 10"
       :key="i"
     >
       Item {{ i }}
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 </template>

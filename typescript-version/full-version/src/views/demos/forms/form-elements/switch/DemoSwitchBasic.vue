@@ -4,13 +4,13 @@ const toggleFalseSwitch = ref(false)
 </script>
 
 <template>
-  <v-switch
+  <VSwitch
     v-model="toggleSwitch"
     :label="`${toggleSwitch.toString()}`"
     hide-details
   />
 
-  <v-switch
+  <VSwitch
     v-model="toggleFalseSwitch"
     :label="`${toggleFalseSwitch.toString()}`"
     hide-details

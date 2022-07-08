@@ -1,15 +1,15 @@
 <template>
   <div class="demo-space-x">
-    <v-btn href="https://themeselection.com/">
+    <VBtn href="https://themeselection.com/">
       String Literal
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       href="https://themeselection.com/"
       target="_blank"
       rel="noopener noreferrer"
     >
       Open New Tab
-    </v-btn>
+    </VBtn>
   </div>
 </template>

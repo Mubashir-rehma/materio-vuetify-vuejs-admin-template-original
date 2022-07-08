@@ -4,29 +4,29 @@ const notifications = ref<number>()
 
 <template>
   <div class="d-flex align-center">
-    <v-badge
+    <VBadge
       :content="notifications"
       :model-value="!!notifications"
       color="success"
       class="me-5"
     >
-      <v-icon
+      <VIcon
         size="40"
         icon="mdi-vuetify"
       />
-    </v-badge>
+    </VBadge>
 
     <div class="demo-space-x">
-      <v-btn @click="notifications = (notifications || 0) + 1">
+      <VBtn @click="notifications = (notifications || 0) + 1">
         Send Message
-      </v-btn>
+      </VBtn>
 
-      <v-btn
+      <VBtn
         color="error"
         @click="notifications = 0"
       >
         Clear Notifications
-      </v-btn>
+      </VBtn>
     </div>
   </div>
 </template>

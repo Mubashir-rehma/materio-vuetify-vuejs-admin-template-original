@@ -10,32 +10,32 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
 
 <template>
   <!-- 👉 Search Banner  -->
-  <v-card
+  <VCard
     flat
     class="text-center page-knowledge-base mb-7"
     :style="`background:url(${themeBackgroundImg})`"
   >
-    <v-card-text>
+    <VCardText>
       <h5 class="text-h5 font-weight-medium text-primary mb-3">
         Hello, how can we help?
       </h5>
       <p>or choose a category to quickly find the help you need</p>
 
       <!-- 👉 Search Input -->
-      <v-text-field
+      <VTextField
         v-bind="$attrs"
         placeholder="Ask a question.."
         class="page-kb-search-input mx-auto"
       >
         <template #prependInner>
-          <v-icon
+          <VIcon
             icon="mdi-magnify"
             size="23"
           />
         </template>
-      </v-text-field>
-    </v-card-text>
-  </v-card>
+      </VTextField>
+    </VCardText>
+  </VCard>
 </template>
 
 <style lang="scss">

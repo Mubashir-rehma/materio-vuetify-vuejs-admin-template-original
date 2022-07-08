@@ -3,21 +3,21 @@ const isSnackbarVisibility = ref(false)
 </script>
 
 <template>
-  <v-btn @click="isSnackbarVisibility = true">
+  <VBtn @click="isSnackbarVisibility = true">
     Open Snackbar
-  </v-btn>
+  </VBtn>
 
   <!-- Snackbar -->
-  <v-snackbar v-model="isSnackbarVisibility">
+  <VSnackbar v-model="isSnackbarVisibility">
     Hello, I'm a snackbar with actions.
 
     <template #actions>
-      <v-btn
+      <VBtn
         color="error"
         @click="isSnackbarVisibility = false"
       >
         Close
-      </v-btn>
+      </VBtn>
     </template>
-  </v-snackbar>
+  </VSnackbar>
 </template>

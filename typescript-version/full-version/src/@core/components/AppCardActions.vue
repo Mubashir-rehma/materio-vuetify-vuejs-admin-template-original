@@ -59,20 +59,20 @@ const triggeredRemove = () => {
 </script>
 
 <template>
-  <v-expand-transition>
+  <VExpandTransition>
     <!-- TODO remove div when transition work with v-card components: https://github.com/vuetifyjs/vuetify/issues/15111 -->
     <div v-if="!isCardRemoved">
-      <v-card v-bind="$attrs">
-        <v-card-header>
-          <v-card-header-text class="d-flex">
-            <v-card-title v-if="props.title || $slots.title">
+      <VCard v-bind="$attrs">
+        <VCardHeader>
+          <VCardHeaderText class="d-flex">
+            <VCardTitle v-if="props.title || $slots.title">
               <!-- 👉 Title slot and prop -->
               <slot name="title">
                 {{ props.title }}
               </slot>
-            </v-card-title>
+            </VCardTitle>
 
-            <v-spacer />
+            <VSpacer />
 
             <!-- 👉 Before actions slot -->
             <slot name="before-actions" />
@@ -80,7 +80,7 @@ const triggeredRemove = () => {
             <!-- SECTION Actions buttons -->
             <div>
               <!-- 👉 Collapse button -->
-              <v-btn
+              <VBtn
                 v-if="(!(actionRemove || actionRefresh) || actionCollapsed) && !noActions"
                 icon
                 color="secondary"
@@ -88,16 +88,16 @@ const triggeredRemove = () => {
                 size="x-small"
                 @click="triggerCollapse"
               >
-                <v-icon
+                <VIcon
                   size="20"
                   icon="mdi-chevron-up"
                   :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : null }"
                   style="transition-duration: 0.28s;"
                 />
-              </v-btn>
+              </VBtn>
 
               <!-- 👉 Overlay button -->
-              <v-btn
+              <VBtn
                 v-if="(!(actionRemove || actionCollapsed) || actionRefresh) && !noActions"
                 size="x-small"
                 variant="plain"
@@ -105,14 +105,14 @@ const triggeredRemove = () => {
                 icon
                 @click="triggerRefresh"
               >
-                <v-icon
+                <VIcon
                   size="20"
                   icon="mdi-refresh"
                 />
-              </v-btn>
+              </VBtn>
 
               <!-- 👉 Close button -->
-              <v-btn
+              <VBtn
                 v-if="(!(actionRefresh || actionCollapsed) || actionRemove) && !noActions"
                 size="x-small"
                 variant="plain"
@@ -120,33 +120,33 @@ const triggeredRemove = () => {
                 icon
                 @click="triggeredRemove"
               >
-                <v-icon
+                <VIcon
                   size="20"
                   icon="mdi-close"
                 />
-              </v-btn>
+              </VBtn>
             </div>
             <!-- !SECTION -->
-          </v-card-header-text>
-        </v-card-header>
+          </VCardHeaderText>
+        </VCardHeader>
 
         <!-- 👉 card content -->
-        <v-expand-transition>
+        <VExpandTransition>
           <div v-show="!isContentCollapsed">
             <slot />
           </div>
-        </v-expand-transition>
+        </VExpandTransition>
 
         <!-- 👉 Overlay -->
-        <v-overlay
+        <VOverlay
           v-model="isOverlayVisible"
           contained
           persistent
           class="align-center justify-center"
         >
-          <v-progress-circular indeterminate />
-        </v-overlay>
-      </v-card>
+          <VProgressCircular indeterminate />
+        </VOverlay>
+      </VCard>
     </div>
-  </v-expand-transition>
+  </VExpandTransition>
 </template>

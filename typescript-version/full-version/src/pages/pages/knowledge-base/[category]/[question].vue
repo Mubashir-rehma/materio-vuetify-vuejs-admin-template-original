@@ -16,59 +16,59 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
 </script>
 
 <template>
-  <v-row id="page-knowledge-base">
-    <v-col
+  <VRow id="page-knowledge-base">
+    <VCol
       cols="12"
       md="8"
       lg="9"
     >
-      <v-card>
-        <v-img
+      <VCard>
+        <VImg
           contain
           :src="knowledgeBaseQuestionAndAnswer?.postImg"
         />
         <!-- Post Title -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title class="flex-nowrap">
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle class="flex-nowrap">
               <span class="text-break text-h5 font-weight-medium">{{ knowledgeBaseQuestionAndAnswer?.postContent?.title }}</span>
-            </v-card-title>
-            <v-card-subtitle>Last updated on {{ knowledgeBaseQuestionAndAnswer?.postContent?.lastUpdated }}</v-card-subtitle>
-          </v-card-header-text>
-        </v-card-header>
+            </VCardTitle>
+            <VCardSubtitle>Last updated on {{ knowledgeBaseQuestionAndAnswer?.postContent?.lastUpdated }}</VCardSubtitle>
+          </VCardHeaderText>
+        </VCardHeader>
 
-        <v-card-text v-html="knowledgeBaseQuestionAndAnswer?.postContent?.postDesc" />
-      </v-card>
-    </v-col>
-    <v-col
+        <VCardText v-html="knowledgeBaseQuestionAndAnswer?.postContent?.postDesc" />
+      </VCard>
+    </VCol>
+    <VCol
       cols="12"
       md="4"
       lg="3"
       class="kb-question-related-col"
     >
-      <v-card variant="text">
-        <v-card-header class="py-0 px-4">
-          <v-card-header-text>
-            <v-card-title>Related</v-card-title>
-          </v-card-header-text>
-        </v-card-header>
-        <v-list style="background: transparent;">
-          <v-list-item
+      <VCard variant="text">
+        <VCardHeader class="py-0 px-4">
+          <VCardHeaderText>
+            <VCardTitle>Related</VCardTitle>
+          </VCardHeaderText>
+        </VCardHeader>
+        <VList style="background: transparent;">
+          <VListItem
             v-for="que in knowledgeBaseQuestionAndAnswer?.relatedQuestions"
             :key="que.question"
           >
-            <v-list-item-title
+            <VListItemTitle
               class="text-body-2"
               href="#"
               tag="a"
             >
               {{ que.question }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-col>
-  </v-row>
+            </VListItemTitle>
+          </VListItem>
+        </VList>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

@@ -3,7 +3,7 @@ const files = ref<File[]>([])
 </script>
 
 <template>
-  <v-file-input
+  <VFileInput
     v-model="files"
     multiple
     placeholder="Upload your documents"
@@ -15,7 +15,7 @@ const files = ref<File[]>([])
         v-for="fileName in fileNames"
         :key="fileName"
       >
-        <v-chip
+        <VChip
           label
           size="small"
           variant="outlined"
@@ -23,8 +23,8 @@ const files = ref<File[]>([])
           class="me-2"
         >
           {{ fileName }}
-        </v-chip>
+        </VChip>
       </template>
     </template>
-  </v-file-input>
+  </VFileInput>
 </template>

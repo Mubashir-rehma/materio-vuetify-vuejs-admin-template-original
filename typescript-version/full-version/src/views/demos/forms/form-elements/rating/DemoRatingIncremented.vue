@@ -3,7 +3,7 @@ const rating = ref(4.5)
 </script>
 
 <template>
-  <v-rating
+  <VRating
     v-model="rating"
     half-increments
     hover

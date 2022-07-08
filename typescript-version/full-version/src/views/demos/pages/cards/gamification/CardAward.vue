@@ -6,31 +6,31 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 </script>
 
 <template>
-  <v-card
+  <VCard
     title="Congratulations John! 🥳"
     subtitle="Best seller of the month"
     class="position-relative"
   >
-    <v-card-text>
+    <VCardText>
       <h5 class="text-h5 font-family-semibold text-primary">
         $42.8k
       </h5>
       <p>78% of target 🚀</p>
-      <v-btn>View Sales</v-btn>
-    </v-card-text>
+      <VBtn>View Sales</VBtn>
+    </VCardText>
 
     <!-- Triangle Background -->
-    <v-img
+    <VImg
       :src="triangleBg"
       class="triangle-bg"
     />
 
     <!-- Trophy -->
-    <v-img
+    <VImg
       :src="trophy"
       class="trophy"
     />
-  </v-card>
+  </VCard>
 </template>
 
 <style lang="scss">

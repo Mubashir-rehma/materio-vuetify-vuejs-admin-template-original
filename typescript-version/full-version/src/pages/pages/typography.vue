@@ -1,11 +1,11 @@
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <TypographyHeadlines />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <TypographyTexts />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

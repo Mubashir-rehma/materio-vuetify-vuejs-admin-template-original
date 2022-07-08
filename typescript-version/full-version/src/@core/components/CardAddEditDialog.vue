@@ -39,9 +39,9 @@ const formSubmit = () => {
 </script>
 
 <template>
-  <v-dialog>
-    <v-card class="pa-5 pa-sm-15">
-      <v-card-text>
+  <VDialog>
+    <VCard class="pa-5 pa-sm-15">
+      <VCardText>
         <!-- 👉 Title -->
         <div class="text-center mb-6">
           <h3 class="text-h5 font-weight-medium mb-4">
@@ -50,82 +50,82 @@ const formSubmit = () => {
           <p>{{ cardDetails.number ? 'Edit your saved card details' : 'Add your saved card details' }}</p>
         </div>
 
-        <v-form @submit.prevent="() => {}">
-          <v-row>
+        <VForm @submit.prevent="() => {}">
+          <VRow>
             <!-- 👉 Card Number -->
-            <v-col cols="12">
-              <v-text-field
+            <VCol cols="12">
+              <VTextField
                 v-model="cardDetails.number"
                 label="Card Number"
                 type="number"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Card Name -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-text-field
+              <VTextField
                 v-model="cardDetails.name"
                 label="Name"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Card Expiry -->
-            <v-col
+            <VCol
               cols="6"
               md="3"
             >
-              <v-text-field
+              <VTextField
                 v-model="cardDetails.expiry"
                 label="Expiry Date"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Card CVV -->
-            <v-col
+            <VCol
               cols="6"
               md="3"
             >
-              <v-text-field
+              <VTextField
                 v-model="cardDetails.cvv"
                 type="password"
                 label="CVV Code"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Card Primary Set -->
-            <v-col cols="12">
-              <v-switch
+            <VCol cols="12">
+              <VSwitch
                 v-model="cardDetails.isPrimary"
                 label="Set as primary card"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Card actions -->
-            <v-col
+            <VCol
               cols="12"
               class="text-center"
             >
-              <v-btn
+              <VBtn
                 class="me-3"
                 type="submit"
                 @click="formSubmit"
               >
                 Submit
-              </v-btn>
-              <v-btn
+              </VBtn>
+              <VBtn
                 color="secondary"
                 variant="tonal"
                 @click="$emit('update:modelValue', false)"
               >
                 Cancel
-              </v-btn>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-card-text>
-    </v-card>
-  </v-dialog>
+              </VBtn>
+            </VCol>
+          </VRow>
+        </VForm>
+      </VCardText>
+    </VCard>
+  </VDialog>
 </template>

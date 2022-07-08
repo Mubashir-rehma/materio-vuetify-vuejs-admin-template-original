@@ -27,105 +27,105 @@ const isConfirmPasswordVisible = ref(false)
       <span class="font-weight-semibold text-h5">{{ themeConfig.app.title }}</span>
     </div>
 
-    <v-row
+    <VRow
       no-gutters
       class="auth-wrapper"
     >
-      <v-col
+      <VCol
         lg="8"
         class="d-none d-lg-flex align-center justify-center position-relative"
       >
-        <v-img
+        <VImg
           max-width="768px"
           :src="authThemeImg"
           class="auth-illustration mt-12"
         />
 
-        <v-img
+        <VImg
           :width="276"
           :src="authTree"
           class="auth-footer-start-tree"
         />
 
-        <v-img
+        <VImg
           class="auth-footer-mask"
           :src="authThemeMask"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         lg="4"
         class="auth-bg d-flex align-center justify-center"
       >
-        <v-card
+        <VCard
           flat
           :max-width="500"
           class="mt-12 pa-4"
         >
-          <v-card-text>
+          <VCardText>
             <h5 class="text-h5 font-weight-semibold mb-3">
               Reset Password 🔒
             </h5>
             <p class="mb-0">
               Enter your email and we'll send you instructions to reset your password
             </p>
-          </v-card-text>
+          </VCardText>
 
-          <v-card-text>
-            <v-form @submit.prevent="() => {}">
-              <v-row>
+          <VCardText>
+            <VForm @submit.prevent="() => {}">
+              <VRow>
                 <!-- password -->
-                <v-col cols="12">
-                  <v-text-field
+                <VCol cols="12">
+                  <VTextField
                     v-model="form.newPassword"
                     label="New Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
-                </v-col>
+                </VCol>
 
                 <!-- Confirm Password -->
-                <v-col cols="12">
-                  <v-text-field
+                <VCol cols="12">
+                  <VTextField
                     v-model="form.confirmPassword"
                     label="Confirm Password"
                     :type="isConfirmPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                   />
-                </v-col>
+                </VCol>
 
                 <!-- Set password -->
-                <v-col cols="12">
-                  <v-btn
+                <VCol cols="12">
+                  <VBtn
                     block
                     type="submit"
                   >
                     Set New Password
-                  </v-btn>
-                </v-col>
+                  </VBtn>
+                </VCol>
 
                 <!-- back to login -->
-                <v-col
+                <VCol
                   cols="12"
                   class="text-center"
                 >
-                  <router-link
+                  <RouterLink
                     class="text-primary ms-2"
                     :to="{ name: 'pages-authentication-login-v2' }"
                   >
-                    <v-icon icon="mdi-chevron-left" />
+                    <VIcon icon="mdi-chevron-left" />
                     <span>Back to login</span>
-                  </router-link>
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+                  </RouterLink>
+                </VCol>
+              </VRow>
+            </VForm>
+          </VCardText>
+        </VCard>
+      </VCol>
+    </VRow>
   </div>
 </template>
 

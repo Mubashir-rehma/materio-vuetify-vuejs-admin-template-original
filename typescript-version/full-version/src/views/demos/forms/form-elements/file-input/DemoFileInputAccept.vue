@@ -1,5 +1,5 @@
 <template>
-  <v-file-input
+  <VFileInput
     accept="image/*"
     label="File input"
   />

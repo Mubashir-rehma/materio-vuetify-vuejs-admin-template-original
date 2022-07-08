@@ -1,36 +1,36 @@
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-text-field
+  <VRow>
+    <VCol cols="12">
+      <VTextField
         label="Amount"
         model-value="10.00"
         prefix="$"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-text-field
+    <VCol cols="12">
+      <VTextField
         label="Weight"
         model-value="28.00"
         suffix="lbs"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-text-field
+    <VCol cols="12">
+      <VTextField
         label="Email address"
         model-value="example"
         suffix="@gmail.com"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-text-field
+    <VCol cols="12">
+      <VTextField
         label="Label Text"
         model-value="12:30:00"
         type="time"
         suffix="PST"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

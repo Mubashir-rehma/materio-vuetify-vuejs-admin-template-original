@@ -4,7 +4,7 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 
 <template>
   <div class="demo-space-x">
-    <v-badge
+    <VBadge
       dot
       bordered
       color="success"
@@ -12,12 +12,12 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
       :offset-x="5"
       :offset-y="1"
     >
-      <v-avatar size="large">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       bordered
       color="warning"
@@ -25,12 +25,12 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
       :offset-x="5"
       :offset-y="1"
     >
-      <v-avatar size="large">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       bordered
       color="error"
@@ -38,9 +38,9 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
       :offset-x="5"
       :offset-y="1"
     >
-      <v-avatar size="large">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
   </div>
 </template>

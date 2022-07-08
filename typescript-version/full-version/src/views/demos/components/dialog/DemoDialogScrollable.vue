@@ -25,53 +25,53 @@ const isDialogVisible = ref(false)
 </script>
 
 <template>
-  <v-dialog
+  <VDialog
     v-model="isDialogVisible"
     scrollable
     max-width="350px"
   >
     <!-- Dialog Activator -->
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         Open Dialog
-      </v-btn>
+      </VBtn>
     </template>
 
     <!-- Dialog Content -->
-    <v-card
+    <VCard
       title="Select Country"
       max-height="400px"
     >
-      <v-divider />
-      <v-card-text>
-        <v-radio-group v-model="selectedCountry">
-          <v-radio
+      <VDivider />
+      <VCardText>
+        <VRadioGroup v-model="selectedCountry">
+          <VRadio
             v-for="country in countryList"
             :key="country.label"
             :label="country.label"
             :value="country.value"
             color="primary"
           />
-        </v-radio-group>
-      </v-card-text>
+        </VRadioGroup>
+      </VCardText>
 
-      <v-divider />
+      <VDivider />
 
-      <v-card-actions>
-        <v-spacer />
-        <v-btn
+      <VCardActions>
+        <VSpacer />
+        <VBtn
           color="error"
           @click="isDialogVisible = false"
         >
           Close
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="success"
           @click="isDialogVisible = false"
         >
           Save
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        </VBtn>
+      </VCardActions>
+    </VCard>
+  </VDialog>
 </template>

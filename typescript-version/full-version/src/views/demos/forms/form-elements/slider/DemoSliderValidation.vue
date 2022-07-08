@@ -4,7 +4,7 @@ const rules = [(v: number) => v <= 40 || 'Only 40 in stock']
 </script>
 
 <template>
-  <v-slider
+  <VSlider
     v-model="value"
     :error="value > 40"
     :rules="rules"

@@ -13,85 +13,85 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
 
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
-    <v-card
+    <VCard
       class="auth-card pa-4"
       max-width="448"
     >
-      <v-card-header>
-        <v-card-header-text>
-          <v-card-title class="justify-center">
+      <VCardHeader>
+        <VCardHeaderText>
+          <VCardTitle class="justify-center">
             <img
               :src="themeConfig.app.logo"
               class="me-3"
             >
             <span class="font-weight-semibold text-h5">{{ themeConfig.app.title }}</span>
-          </v-card-title>
-        </v-card-header-text>
-      </v-card-header>
+          </VCardTitle>
+        </VCardHeaderText>
+      </VCardHeader>
 
-      <v-card-text>
+      <VCardText>
         <h5 class="text-h5 font-weight-semibold mb-3">
           Forgot Password? 🔒
         </h5>
         <p class="mb-0">
           Enter your email and we'll send you instructions to reset your password
         </p>
-      </v-card-text>
+      </VCardText>
 
-      <v-card-text>
-        <v-form @submit.prevent="() => {}">
-          <v-row>
+      <VCardText>
+        <VForm @submit.prevent="() => {}">
+          <VRow>
             <!-- email -->
-            <v-col cols="12">
-              <v-text-field
+            <VCol cols="12">
+              <VTextField
                 v-model="form.email"
                 label="Email"
                 type="email"
               />
-            </v-col>
+            </VCol>
 
             <!-- reset password -->
-            <v-col cols="12">
-              <v-btn
+            <VCol cols="12">
+              <VBtn
                 block
                 type="submit"
               >
                 Send Reset Link
-              </v-btn>
-            </v-col>
+              </VBtn>
+            </VCol>
 
             <!-- back to login -->
-            <v-col
+            <VCol
               cols="12"
               class="text-center"
             >
-              <router-link
+              <RouterLink
                 class="text-primary ms-2"
                 :to="{ name: 'pages-authentication-login-v1' }"
               >
-                <v-icon icon="mdi-chevron-left" />
+                <VIcon icon="mdi-chevron-left" />
                 <span>Back to login</span>
-              </router-link>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-card-text>
-    </v-card>
+              </RouterLink>
+            </VCol>
+          </VRow>
+        </VForm>
+      </VCardText>
+    </VCard>
 
-    <v-img
+    <VImg
       class="auth-footer-start-tree d-none d-md-block"
       :src="authTree"
       :width="250"
     />
 
-    <v-img
+    <VImg
       :src="authTree2"
       class="auth-footer-end-tree d-none d-md-block"
       :width="350"
     />
 
     <!-- bg img -->
-    <v-img
+    <VImg
       class="auth-footer-mask d-none d-md-block"
       :src="authThemeMask"
     />

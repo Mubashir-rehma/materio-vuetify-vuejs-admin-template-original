@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioInline />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioLabelSlot />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioIcon />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,6 +107,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/radio/demoCodeRadio
 
         <DemoRadioValidation />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

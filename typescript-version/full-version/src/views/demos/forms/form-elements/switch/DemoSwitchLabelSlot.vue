@@ -3,17 +3,17 @@ const switchMe = ref(false)
 </script>
 
 <template>
-  <v-switch
+  <VSwitch
     v-model="switchMe"
     hide-details
   >
     <template #label>
-      Turn on the progress: <v-progress-circular
+      Turn on the progress: <VProgressCircular
         :indeterminate="switchMe"
         :value="0"
         size="24"
         class="ms-2"
       />
     </template>
-  </v-switch>
+  </VSwitch>
 </template>

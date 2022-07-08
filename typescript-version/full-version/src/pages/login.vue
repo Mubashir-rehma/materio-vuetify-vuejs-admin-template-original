@@ -56,50 +56,50 @@ const login = () => {
       <span class="font-weight-semibold text-h5">{{ themeConfig.app.title }}</span>
     </div>
 
-    <v-row
+    <VRow
       no-gutters
       class="auth-wrapper"
     >
-      <v-col
+      <VCol
         lg="8"
         class="d-none d-lg-flex align-center justify-center position-relative"
       >
-        <v-img
+        <VImg
           max-width="768px"
           :src="authThemeImg"
           class="auth-illustration mt-12"
         />
-        <v-img
+        <VImg
           :width="276"
           :src="authTree"
           class="auth-footer-start-tree"
         />
-        <v-img
+        <VImg
           class="auth-footer-mask"
           :src="authThemeMask"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         lg="4"
         class="auth-bg d-flex align-center justify-center"
       >
-        <v-card
+        <VCard
           flat
           :max-width="500"
           class="mt-12 pa-4"
         >
-          <v-card-text>
+          <VCardText>
             <h5 class="text-h5 font-weight-semibold mb-3">
               Welcome to {{ themeConfig.app.title }}! 👋🏻
             </h5>
             <p class="mb-0">
               Please sign-in to your account and start the adventure
             </p>
-          </v-card-text>
-          <v-card-text>
-            <v-alert
+          </VCardText>
+          <VCardText>
+            <VAlert
               color="primary"
               variant="tonal"
             >
@@ -109,95 +109,95 @@ const login = () => {
               <p class="text-caption mb-0">
                 Client Email: <strong>client@demo.com</strong> / Pass: <strong>client</strong>
               </p>
-            </v-alert>
-          </v-card-text>
-          <v-card-text>
-            <v-form @submit.prevent="login">
-              <v-row>
+            </VAlert>
+          </VCardText>
+          <VCardText>
+            <VForm @submit.prevent="login">
+              <VRow>
                 <!-- email -->
-                <v-col cols="12">
-                  <v-text-field
+                <VCol cols="12">
+                  <VTextField
                     v-model="email"
                     label="Email"
                     type="email"
                   />
-                </v-col>
+                </VCol>
 
                 <!-- password -->
-                <v-col cols="12">
-                  <v-text-field
+                <VCol cols="12">
+                  <VTextField
                     v-model="password"
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
-                </v-col>
+                </VCol>
 
                 <!-- remember & forgot password -->
-                <v-col
+                <VCol
                   cols="12"
                   class="d-flex align-center flex-wrap"
                 >
-                  <v-checkbox
+                  <VCheckbox
                     v-model="rememberMe"
                     label="Remember me"
                     inline
                     density="compact"
                   />
-                  <router-link
+                  <RouterLink
                     class="text-primary ms-2"
                     :to="{ name: 'forgot-password' }"
                   >
                     Forgot Password?
-                  </router-link>
-                </v-col>
+                  </RouterLink>
+                </VCol>
 
                 <!-- login -->
-                <v-col cols="12">
-                  <v-btn
+                <VCol cols="12">
+                  <VBtn
                     block
                     type="submit"
                   >
                     Login
-                  </v-btn>
-                </v-col>
+                  </VBtn>
+                </VCol>
 
                 <!-- create account -->
-                <v-col
+                <VCol
                   cols="12"
                   class="text-center"
                 >
                   <span>New on our platform?</span>
-                  <router-link
+                  <RouterLink
                     class="text-primary ms-2"
                     :to="{ name: 'register' }"
                   >
                     Create an account
-                  </router-link>
-                </v-col>
-                <v-col
+                  </RouterLink>
+                </VCol>
+                <VCol
                   cols="12"
                   class="d-flex align-center"
                 >
-                  <v-divider />
+                  <VDivider />
                   <span class="mx-4">or</span>
-                  <v-divider />
-                </v-col>
+                  <VDivider />
+                </VCol>
 
                 <!-- auth providers -->
-                <v-col
+                <VCol
                   cols="12"
                   class="text-center"
                 >
                   <DemoAuthProvider />
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+                </VCol>
+              </VRow>
+            </VForm>
+          </VCardText>
+        </VCard>
+      </VCol>
+    </VRow>
   </div>
 </template>
 

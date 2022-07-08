@@ -57,7 +57,7 @@ export default {
         :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <component
+      <Component
         :is="config.app.enableI18n ? 'i18n-t' : 'span'"
         v-bind="dynamicI18nProps(item.title, 'span')"
         class="nav-item-title"
@@ -70,7 +70,7 @@ export default {
     </div>
 
     <template #content>
-      <component
+      <Component
         :is="'children' in child ? 'HorizontalNavGroup' : HorizontalNavLink"
         v-for="child in item.children"
         :key="child.title"

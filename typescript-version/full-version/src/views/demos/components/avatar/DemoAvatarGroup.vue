@@ -9,28 +9,28 @@ import avatar6 from '@/assets/images/avatars/avatar-6.png'
 
 <template>
   <div class="v-avatar-group">
-    <v-avatar :size="45">
-      <v-img :src="avatar1" />
-    </v-avatar>
+    <VAvatar :size="45">
+      <VImg :src="avatar1" />
+    </VAvatar>
 
-    <v-avatar :size="45">
-      <v-img :src="avatar2" />
-    </v-avatar>
+    <VAvatar :size="45">
+      <VImg :src="avatar2" />
+    </VAvatar>
 
-    <v-avatar :size="45">
-      <v-img :src="avatar3" />
-    </v-avatar>
+    <VAvatar :size="45">
+      <VImg :src="avatar3" />
+    </VAvatar>
 
-    <v-avatar :size="45">
-      <v-img :src="avatar4" />
-    </v-avatar>
+    <VAvatar :size="45">
+      <VImg :src="avatar4" />
+    </VAvatar>
 
-    <v-avatar :size="45">
-      <v-img :src="avatar5" />
-    </v-avatar>
+    <VAvatar :size="45">
+      <VImg :src="avatar5" />
+    </VAvatar>
 
-    <v-avatar :size="45">
-      <v-img :src="avatar6" />
-    </v-avatar>
+    <VAvatar :size="45">
+      <VImg :src="avatar6" />
+    </VAvatar>
   </div>
 </template>

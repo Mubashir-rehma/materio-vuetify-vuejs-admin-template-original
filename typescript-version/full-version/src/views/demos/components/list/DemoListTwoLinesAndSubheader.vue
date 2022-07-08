@@ -30,12 +30,12 @@ const folders = [
 </script>
 
 <template>
-  <v-list lines="two">
-    <v-list-subheader inset>
+  <VList lines="two">
+    <VListSubheader inset>
       Folders
-    </v-list-subheader>
+    </VListSubheader>
 
-    <v-list-item
+    <VListItem
       v-for="folder in folders"
       :key="folder.title"
       prepend-icon="mdi-folder-outline"
@@ -43,23 +43,23 @@ const folders = [
       :subtitle="folder.subtitle"
     >
       <template #append>
-        <v-list-item-avatar end>
-          <v-btn
+        <VListItemAvatar end>
+          <VBtn
             variant="text"
             color="grey lighten-1"
             icon="mdi-information-outline"
           />
-        </v-list-item-avatar>
+        </VListItemAvatar>
       </template>
-    </v-list-item>
+    </VListItem>
 
-    <v-divider inset />
+    <VDivider inset />
 
-    <v-list-subheader inset>
+    <VListSubheader inset>
       Files
-    </v-list-subheader>
+    </VListSubheader>
 
-    <v-list-item
+    <VListItem
       v-for="file in files"
       :key="file.title"
       :prepend-icon="file.icon"
@@ -67,14 +67,14 @@ const folders = [
       :subtitle="file.subtitle"
     >
       <template #append>
-        <v-list-item-avatar end>
-          <v-btn
+        <VListItemAvatar end>
+          <VBtn
             variant="text"
             color="grey lighten-1"
             icon="mdi-information-outline"
           />
-        </v-list-item-avatar>
+        </VListItemAvatar>
       </template>
-    </v-list-item>
-  </v-list>
+    </VListItem>
+  </VList>
 </template>

@@ -7,13 +7,13 @@ const rating = ref(2)
   <div class="text-caption">
     Custom length
   </div>
-  <v-slider
+  <VSlider
     v-model="length"
     :min="1"
     :max="7"
   />
 
-  <v-rating
+  <VRating
     v-model="rating"
     :length="length"
   />

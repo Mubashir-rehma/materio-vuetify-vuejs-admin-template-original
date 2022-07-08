@@ -7,121 +7,121 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-form @submit.prevent="() => {}">
-    <v-row>
+  <VForm @submit.prevent="() => {}">
+    <VRow>
       <!-- 👉 First Name -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="firstName">First Name</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="firstName"
           v-model="firstName"
           placeholder="First Name"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Email -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="email">Email</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="email"
           v-model="email"
           placeholder="Email"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Mobile -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="mobile">Mobile</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="mobile"
           v-model="mobile"
           type="number"
           placeholder="Number"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Password -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="password">Password</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="password"
           v-model="password"
           type="password"
           placeholder="Password"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Remember me -->
-      <v-col
+      <VCol
         offset-md="3"
         cols="12"
       >
-        <v-checkbox
+        <VCheckbox
           v-model="checkbox"
           density="compact"
           label="Remember me"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 submit and reset button -->
-      <v-col
+      <VCol
         offset-md="3"
         cols="12"
       >
-        <v-btn
+        <VBtn
           type="submit"
           class="me-2"
         >
           Submit
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="secondary"
           variant="outlined"
           type="reset"
         >
           Reset
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

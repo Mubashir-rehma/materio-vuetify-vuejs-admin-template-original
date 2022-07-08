@@ -10,9 +10,9 @@ syncConfigThemeWithVuetifyTheme()
 
 <template>
   <!-- TODO: Remove this and use vuetify API for Adding RTL initial value -->
-  <v-app :style="{ direction: isAppRtl ? 'rtl' : 'ltr' }">
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
+  <VApp :style="{ direction: isAppRtl ? 'rtl' : 'ltr' }">
+    <VMain>
+      <RouterView />
+    </VMain>
+  </VApp>
 </template>

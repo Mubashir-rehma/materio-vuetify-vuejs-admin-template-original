@@ -16,15 +16,15 @@ const refetchData = (hideOverlay: Function) => {
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <!-- 👉 Main Card  -->
       <AppCardActions
         title="Cards Actions"
         @refresh="refetchData"
       >
-        <v-card-text>
-          <v-table>
+        <VCardText>
+          <VTable>
             <thead>
               <tr>
                 <th>ACTION</th>
@@ -41,7 +41,7 @@ const refetchData = (hideOverlay: Function) => {
                   {{ data.action }}
                 </td>
                 <td>
-                  <v-icon
+                  <VIcon
                     size="20"
                     :icon="data.icon"
                   />
@@ -51,12 +51,12 @@ const refetchData = (hideOverlay: Function) => {
                 </td>
               </tr>
             </tbody>
-          </v-table>
-        </v-card-text>
+          </VTable>
+        </VCardText>
       </AppCardActions>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -65,14 +65,14 @@ const refetchData = (hideOverlay: Function) => {
         action-collapsed
         title="Collapsible"
       >
-        <v-card-text>
+        <VCardText>
           <p>You can specifically add collapsible action using <code>actionCollapse</code> prop</p>
-          <span>Click on <v-icon size="20">mdi-chevron-up</v-icon> icon to see it in action</span>
-        </v-card-text>
+          <span>Click on <VIcon size="20">mdi-chevron-up</VIcon> icon to see it in action</span>
+        </VCardText>
       </AppCardActions>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -82,14 +82,14 @@ const refetchData = (hideOverlay: Function) => {
         action-refresh
         @refresh="refetchData"
       >
-        <v-card-text>
+        <VCardText>
           <p>You can specifically add refresh action using <code>actionRefresh</code> prop</p>
-          <span>Click on <v-icon size="20">mdi-refresh</v-icon> icon to see it in action</span>
-        </v-card-text>
+          <span>Click on <VIcon size="20">mdi-refresh</VIcon> icon to see it in action</span>
+        </VCardText>
       </AppCardActions>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -98,14 +98,14 @@ const refetchData = (hideOverlay: Function) => {
         title="Remove Card"
         action-remove
       >
-        <v-card-text>
+        <VCardText>
           <p>You can specifically add remove action using <code>actionRemove</code> prop</p>
-          <span>Click on <v-icon size="20">mdi-close</v-icon> icon to see it in action</span>
-        </v-card-text>
+          <span>Click on <VIcon size="20">mdi-close</VIcon> icon to see it in action</span>
+        </VCardText>
       </AppCardActions>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -115,20 +115,20 @@ const refetchData = (hideOverlay: Function) => {
         @refresh="refetchData"
       >
         <template #before-actions>
-          <v-chip
+          <VChip
             class="me-3"
             color="primary"
             size="small"
           >
             3 Updates
-          </v-chip>
+          </VChip>
         </template>
 
-        <v-card-text>
+        <VCardText>
           <p><code>app-card-actions</code> also provides <code>before-actions</code> and <code>after-actions</code> slot</p>
           <span>You can find more details in our documentation</span>
-        </v-card-text>
+        </VCardText>
       </AppCardActions>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

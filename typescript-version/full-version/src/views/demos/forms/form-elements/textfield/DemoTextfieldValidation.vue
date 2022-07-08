@@ -13,11 +13,11 @@ const rules = {
 </script>
 
 <template>
-  <v-form>
-    <v-text-field
+  <VForm>
+    <VTextField
       v-model="email"
       :rules="[rules.required, rules.email]"
       label="E-mail"
     />
-  </v-form>
+  </VForm>
 </template>

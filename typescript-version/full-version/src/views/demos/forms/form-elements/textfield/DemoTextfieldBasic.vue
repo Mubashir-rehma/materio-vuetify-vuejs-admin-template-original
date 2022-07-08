@@ -1,3 +1,3 @@
 <template>
-  <v-text-field label="Regular" />
+  <VTextField label="Regular" />
 </template>

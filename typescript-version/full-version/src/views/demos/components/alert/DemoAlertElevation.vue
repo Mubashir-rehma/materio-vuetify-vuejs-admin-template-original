@@ -3,7 +3,7 @@ const alertShadow = ref(5)
 </script>
 
 <template>
-  <v-slider
+  <VSlider
     v-model="alertShadow"
     color="primary"
     :max="24"
@@ -12,10 +12,10 @@ const alertShadow = ref(5)
     thumb-label
   />
 
-  <v-alert
+  <VAlert
     color="primary"
     :elevation="alertShadow"
   >
     I'm an alert with box shadow.
-  </v-alert>
+  </VAlert>
 </template>

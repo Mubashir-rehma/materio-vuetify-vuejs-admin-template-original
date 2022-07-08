@@ -1,42 +1,42 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
       lg="4"
     >
       <DemoCardAdvanceTransactions />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
       lg="4"
     >
       <DemoCardAdvanceUpgradeYourPlan />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
       lg="4"
     >
       <DemoCardAdvanceMeetingSchedule />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
       lg="5"
     >
       <DemoCardAdvanceTeamMembers />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       lg="7"
     >
       <DemoCardAdvanceDepositWithdraw />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

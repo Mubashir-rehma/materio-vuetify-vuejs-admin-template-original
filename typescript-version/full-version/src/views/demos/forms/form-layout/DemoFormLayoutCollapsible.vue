@@ -31,105 +31,105 @@ const paymentMethods = [
 </script>
 
 <template>
-  <v-expansion-panels v-model="panel">
+  <VExpansionPanels v-model="panel">
     <!-- SECTION Delivery Address -->
-    <v-expansion-panel>
-      <v-expansion-panel-title>Delivery Address</v-expansion-panel-title>
+    <VExpansionPanel>
+      <VExpansionPanelTitle>Delivery Address</VExpansionPanelTitle>
 
-      <v-expansion-panel-text>
-        <v-form
+      <VExpansionPanelText>
+        <VForm
           class="mt-3"
           @submit.prevent="() => {}"
         >
-          <v-row>
+          <VRow>
             <!-- 👉 Full Name -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-text-field label="Full Name" />
-            </v-col>
+              <VTextField label="Full Name" />
+            </VCol>
 
             <!-- 👉 Phone No -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-text-field label="Phone No" />
-            </v-col>
+              <VTextField label="Phone No" />
+            </VCol>
 
             <!-- 👉 Address -->
-            <v-col cols="12">
-              <v-textarea
+            <VCol cols="12">
+              <VTextarea
                 label="Address"
                 rows="3"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Pincode -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-text-field label="Pincode" />
-            </v-col>
+              <VTextField label="Pincode" />
+            </VCol>
 
             <!-- 👉 Landmark -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-text-field label="Landmark" />
-            </v-col>
+              <VTextField label="Landmark" />
+            </VCol>
 
             <!-- 👉 City -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-text-field label="City" />
-            </v-col>
+              <VTextField label="City" />
+            </VCol>
 
             <!-- 👉 State -->
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-select
+              <VSelect
                 :items="stateList"
                 label="State"
               />
-            </v-col>
+            </VCol>
 
             <!-- 👉 Address Type  -->
-            <v-col cols="12">
+            <VCol cols="12">
               <label>Address Type</label>
-              <v-radio-group
+              <VRadioGroup
                 v-model="radios"
               >
-                <v-radio
+                <VRadio
                   label="Home (All day delivery)"
                   value="home"
                 />
-                <v-radio
+                <VRadio
                   label="Office (Delivery between 10 AM - 5 PM)"
                   value="office"
                 />
-              </v-radio-group>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-expansion-panel-text>
-    </v-expansion-panel>
+              </VRadioGroup>
+            </VCol>
+          </VRow>
+        </VForm>
+      </VExpansionPanelText>
+    </VExpansionPanel>
     <!-- !SECTION Delivery Address -->
 
     <!-- SECTION Delivery Options -->
-    <v-expansion-panel>
-      <v-expansion-panel-title>Delivery Options</v-expansion-panel-title>
+    <VExpansionPanel>
+      <VExpansionPanelTitle>Delivery Options</VExpansionPanelTitle>
 
-      <v-expansion-panel-text>
+      <VExpansionPanelText>
         <!-- 👉 Radio Group -->
-        <v-radio-group
+        <VRadioGroup
           v-model="deliveryOption"
         >
           <div
@@ -137,11 +137,11 @@ const paymentMethods = [
             :class="deliveryOption === 'standard' ? 'active' : ''"
           >
             <div class="d-flex justify-space-between">
-              <v-radio value="standard">
+              <VRadio value="standard">
                 <template #label>
                   <span class="font-weight-medium">Standard 3-5 Days</span>
                 </template>
-              </v-radio>
+              </VRadio>
               <span class="text-h6 font-weight-bold">Free</span>
             </div>
             <span class="ms-10">Friday, 15 Nov - Monday, 18 Nov</span>
@@ -151,11 +151,11 @@ const paymentMethods = [
             :class="deliveryOption === 'express' ? 'active' : ''"
           >
             <div class="d-flex justify-space-between">
-              <v-radio value="express">
+              <VRadio value="express">
                 <template #label>
                   <span class="font-weight-medium">Express</span>
                 </template>
-              </v-radio>
+              </VRadio>
               <span class="text-h6 font-weight-bold">$5.00</span>
             </div>
             <span class="ms-10">Friday, 15 Nov - Sunday, 17 Nov</span>
@@ -165,99 +165,99 @@ const paymentMethods = [
             :class="deliveryOption === 'overnight' ? 'active' : ''"
           >
             <div class="d-flex justify-space-between">
-              <v-radio value="overnight">
+              <VRadio value="overnight">
                 <template #label>
                   <span class="font-weight-medium">Overnight</span>
                 </template>
-              </v-radio>
+              </VRadio>
               <span class="text-h6 font-weight-bold">$10.00</span>
             </div>
             <span class="ms-10">Friday, 15 Nov - Saturday, 16 Nov</span>
           </div>
-        </v-radio-group>
-      </v-expansion-panel-text>
-    </v-expansion-panel>
+        </VRadioGroup>
+      </VExpansionPanelText>
+    </VExpansionPanel>
     <!-- !SECTION Delivery Options -->
 
     <!-- SECTION Payment Method -->
-    <v-expansion-panel>
-      <v-expansion-panel-title>Payment Method</v-expansion-panel-title>
+    <VExpansionPanel>
+      <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
-      <v-expansion-panel-text>
-        <v-row>
-          <v-col
+      <VExpansionPanelText>
+        <VRow>
+          <VCol
             md="6"
             cols="12"
           >
-            <v-form>
-              <v-row>
+            <VForm>
+              <VRow>
                 <!-- 👉 Payment Method -->
-                <v-col cols="12">
-                  <v-radio-group
+                <VCol cols="12">
+                  <VRadioGroup
                     v-model="paymentMethod"
                   >
-                    <v-radio
+                    <VRadio
                       v-for="payment in paymentMethods"
                       :key="payment.radioValue"
                       :value="payment.radioValue"
                     >
                       <template #label>
                         <span class="me-1">{{ payment.radioLabel }}</span>
-                        <v-icon
+                        <VIcon
                           size="18"
                           :icon="payment.icon"
                         />
                       </template>
-                    </v-radio>
-                  </v-radio-group>
-                </v-col>
+                    </VRadio>
+                  </VRadioGroup>
+                </VCol>
 
                 <!-- 👉 Card Number -->
-                <v-col cols="12">
-                  <v-text-field label="Card Number" />
-                </v-col>
+                <VCol cols="12">
+                  <VTextField label="Card Number" />
+                </VCol>
 
                 <!-- 👉 Name -->
-                <v-col
+                <VCol
                   cols="12"
                   md="6"
                 >
-                  <v-text-field label="Name" />
-                </v-col>
+                  <VTextField label="Name" />
+                </VCol>
 
                 <!-- 👉 Expire Date -->
-                <v-col
+                <VCol
                   cols="6"
                   md="3"
                 >
-                  <v-text-field label="Expiry Date" />
-                </v-col>
+                  <VTextField label="Expiry Date" />
+                </VCol>
 
                 <!-- 👉 CVV Code -->
-                <v-col
+                <VCol
                   cols="6"
                   md="3"
                 >
-                  <v-text-field label="CVV Code" />
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-col>
-        </v-row>
+                  <VTextField label="CVV Code" />
+                </VCol>
+              </VRow>
+            </VForm>
+          </VCol>
+        </VRow>
 
-        <v-divider class="my-5" />
+        <VDivider class="my-5" />
 
         <!-- 👉 Place Order -->
-        <v-btn class="me-5">
+        <VBtn class="me-5">
           Place Order
-        </v-btn>
-        <v-btn color="secondary">
+        </VBtn>
+        <VBtn color="secondary">
           Cancel
-        </v-btn>
-      </v-expansion-panel-text>
-    </v-expansion-panel>
+        </VBtn>
+      </VExpansionPanelText>
+    </VExpansionPanel>
     <!-- !SECTION Payment Method -->
-  </v-expansion-panels>
+  </VExpansionPanels>
 </template>
 
 <style lang="scss" scoped>

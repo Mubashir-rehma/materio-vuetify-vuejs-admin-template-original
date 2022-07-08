@@ -5,7 +5,7 @@ const ratingColors = ['primary', 'secondary', 'success', 'info', 'warning', 'err
 
 <template>
   <div class="d-flex flex-column">
-    <v-rating
+    <VRating
       v-for="color in ratingColors"
       :key="color"
       v-model="rating"

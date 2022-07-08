@@ -16,49 +16,49 @@ const nextTab = () => {
 </script>
 
 <template>
-  <v-tabs
+  <VTabs
     v-model="currentTab"
     grow
   >
-    <v-tab
+    <VTab
       v-for="item in items.length"
       :key="item"
       :value="item"
     >
       {{ items[item - 1] }}
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 
-  <v-window v-model="currentTab">
-    <v-window-item
+  <VWindow v-model="currentTab">
+    <VWindowItem
       v-for="item in items.length"
       :key="item"
       :value="item"
     >
-      <v-card>
-        <v-card-text>{{ tabItemText }}</v-card-text>
-      </v-card>
-    </v-window-item>
-  </v-window>
+      <VCard>
+        <VCardText>{{ tabItemText }}</VCardText>
+      </VCard>
+    </VWindowItem>
+  </VWindow>
 
   <div class="text-center">
-    <v-btn
+    <VBtn
       variant="text"
       @click="preTab"
     >
       Previous
-    </v-btn>
+    </VBtn>
 
-    <v-divider
+    <VDivider
       class="mx-4"
       vertical
     />
 
-    <v-btn
+    <VBtn
       variant="text"
       @click="nextTab"
     >
       Next
-    </v-btn>
+    </VBtn>
   </div>
 </template>

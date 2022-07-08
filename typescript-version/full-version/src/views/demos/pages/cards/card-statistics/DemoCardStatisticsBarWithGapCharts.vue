@@ -74,7 +74,7 @@ const chartOptions = {
 </script>
 
 <template>
-  <v-card title="4,350">
+  <VCard title="4,350">
     <VueApexCharts
       id="sessions-chart"
       :options="chartOptions"
@@ -82,10 +82,10 @@ const chartOptions = {
       height="auto"
     />
 
-    <v-card-text class="text-center font-weight-semibold">
+    <VCardText class="text-center font-weight-semibold">
       Sessions
-    </v-card-text>
-  </v-card>
+    </VCardText>
+  </VCard>
 </template>
 
 <style lang="scss">

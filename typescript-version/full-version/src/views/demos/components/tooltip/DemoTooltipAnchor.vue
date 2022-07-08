@@ -1,42 +1,42 @@
 <template>
   <div class="demo-space-x">
-    <v-btn variant="outlined">
+    <VBtn variant="outlined">
       Tooltip on End
-      <v-tooltip
+      <VTooltip
         activator="parent"
         anchor="end"
       >
         End Tooltip
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
 
-    <v-btn variant="outlined">
+    <VBtn variant="outlined">
       Tooltip on Start
-      <v-tooltip
+      <VTooltip
         activator="parent"
         anchor="start"
       >
         Start Tooltip
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
 
-    <v-btn variant="outlined">
+    <VBtn variant="outlined">
       Tooltip on Top
-      <v-tooltip
+      <VTooltip
         activator="parent"
       >
         Top Tooltip
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
 
-    <v-btn variant="outlined">
+    <VBtn variant="outlined">
       Tooltip on Bottom
-      <v-tooltip
+      <VTooltip
         activator="parent"
         anchor="bottom"
       >
         Bottom Tooltip
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
   </div>
 </template>

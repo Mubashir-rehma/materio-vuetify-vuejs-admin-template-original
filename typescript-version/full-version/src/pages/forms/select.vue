@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
     >
@@ -16,9 +16,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
         <p>Select fields components are used for collecting user provided information from a list of options.</p>
         <DemoSelectBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -30,9 +30,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
         <p>You can use <code>density</code> prop to reduce the field height and lower max height of list items.</p>
         <DemoSelectDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Variant -->
       <AppCardCode
         title="Variant"
@@ -44,9 +44,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectVariant />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -59,9 +59,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectCustomTextAndValue />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -74,9 +74,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -89,9 +89,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectChips />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -104,9 +104,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectMenuProps />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -119,9 +119,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectMultiple />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -134,6 +134,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/select/demoCodeSele
 
         <DemoSelectSelectionSlot />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

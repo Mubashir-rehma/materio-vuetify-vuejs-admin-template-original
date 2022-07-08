@@ -4,34 +4,34 @@ const inlineRadio = ref('radio-1')
 </script>
 
 <template>
-  <v-radio-group v-model="columnRadio">
-    <v-radio
+  <VRadioGroup v-model="columnRadio">
+    <VRadio
       label="Option 1"
       value="radio-1"
       density="compact"
     />
-    <v-radio
+    <VRadio
       label="Option 2"
       value="radio-2"
       density="compact"
     />
-  </v-radio-group>
+  </VRadioGroup>
 
-  <v-divider class="my-3" />
+  <VDivider class="my-3" />
 
-  <v-radio-group
+  <VRadioGroup
     v-model="inlineRadio"
     inline
   >
-    <v-radio
+    <VRadio
       label="Option 1"
       value="radio-1"
       density="compact"
     />
-    <v-radio
+    <VRadio
       label="Option 2"
       value="radio-2"
       density="compact"
     />
-  </v-radio-group>
+  </VRadioGroup>
 </template>

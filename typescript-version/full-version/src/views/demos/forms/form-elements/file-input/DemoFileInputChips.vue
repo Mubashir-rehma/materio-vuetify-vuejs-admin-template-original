@@ -1,5 +1,5 @@
 <template>
-  <v-file-input
+  <VFileInput
     chips
     label="File input w/ chips"
   />

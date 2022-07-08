@@ -31,17 +31,17 @@ const { layoutAttrs } = useSkins()
     </template>
 
     <!-- 👉 Pages -->
-    <router-view v-slot="{ Component, route }">
-      <transition
+    <RouterView v-slot="{ Component, route }">
+      <Transition
         :name="appRouteTransition"
         mode="out-in"
       >
-        <component
+        <Component
           :is="Component"
           :key="route.path"
         />
-      </transition>
-    </router-view>
+      </Transition>
+    </RouterView>
 
     <!-- 👉 Footer -->
     <template #footer>

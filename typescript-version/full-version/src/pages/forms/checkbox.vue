@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxModelAsArray />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxIcon />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxCheckboxValue />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxStates />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,9 +122,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxLabelSlot />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -137,6 +137,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
 
         <DemoCheckboxInlineTextField />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

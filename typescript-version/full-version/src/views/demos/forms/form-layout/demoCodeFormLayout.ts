@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const horizontalFormWithIcons = { ts: '', js: '' }
 
 export const multipleColumn = { ts: '', js: '' }

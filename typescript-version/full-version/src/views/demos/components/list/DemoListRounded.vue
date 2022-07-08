@@ -7,19 +7,19 @@ const items = [
 </script>
 
 <template>
-  <v-list>
-    <v-list-item-group>
-      <v-list-item
+  <VList>
+    <VListItemGroup>
+      <VListItem
         v-for="(item, i) in items"
         :key="i"
         :value="item"
         rounded="xl"
       >
-        <v-list-item-avatar start>
-          <v-icon :icon="item.icon" />
-        </v-list-item-avatar>
-        <v-list-item-title v-text="item.text" />
-      </v-list-item>
-    </v-list-item-group>
-  </v-list>
+        <VListItemAvatar start>
+          <VIcon :icon="item.icon" />
+        </VListItemAvatar>
+        <VListItemTitle v-text="item.text" />
+      </VListItem>
+    </VListItemGroup>
+  </VList>
 </template>

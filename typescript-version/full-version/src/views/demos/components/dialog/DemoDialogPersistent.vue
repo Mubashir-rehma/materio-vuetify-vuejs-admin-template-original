@@ -3,39 +3,39 @@ const isDialogVisible = ref(false)
 </script>
 
 <template>
-  <v-dialog
+  <VDialog
     v-model="isDialogVisible"
     persistent
     class="v-dialog-sm"
   >
     <!-- Dialog Activator -->
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         Open Dialog
-      </v-btn>
+      </VBtn>
     </template>
 
     <!-- Dialog Content -->
-    <v-card title="Use Google's location service?">
-      <v-card-text>
+    <VCard title="Use Google's location service?">
+      <VCardText>
         Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
-      </v-card-text>
+      </VCardText>
 
-      <v-card-actions>
-        <v-spacer />
-        <v-btn
+      <VCardActions>
+        <VSpacer />
+        <VBtn
           color="error"
           @click="isDialogVisible = false"
         >
           Disagree
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="success"
           @click="isDialogVisible = false"
         >
           Agree
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        </VBtn>
+      </VCardActions>
+    </VCard>
+  </VDialog>
 </template>

@@ -3,14 +3,14 @@ const people = ref(['John'])
 </script>
 
 <template>
-  <v-switch
+  <VSwitch
     v-model="people"
     label="John"
     value="John"
     hide-details
   />
 
-  <v-switch
+  <VSwitch
     v-model="people"
     label="Jacob"
     value="Jacob"

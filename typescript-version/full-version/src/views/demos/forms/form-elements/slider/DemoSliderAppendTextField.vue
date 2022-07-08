@@ -5,64 +5,64 @@ const blueColorValue = ref(255)
 </script>
 
 <template>
-  <v-responsive
+  <VResponsive
     :style="{ background: `rgb(${redColorValue}, ${greenColorValue}, ${blueColorValue})` }"
     height="150px"
   />
 
-  <v-row class="mt-5">
-    <v-col cols="12">
+  <VRow class="mt-5">
+    <VCol cols="12">
       <!-- R -->
-      <v-slider
+      <VSlider
         v-model="redColorValue"
         :max="255"
         :step="1"
         prepend-icon="mdi-alpha-r"
       >
         <template #append>
-          <v-text-field
+          <VTextField
             v-model="redColorValue"
             type="number"
             variant="underlined"
           />
         </template>
-      </v-slider>
-    </v-col>
+      </VSlider>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- G -->
-      <v-slider
+      <VSlider
         v-model="greenColorValue"
         :max="255"
         :step="1"
         prepend-icon="mdi-alpha-g"
       >
         <template #append>
-          <v-text-field
+          <VTextField
             v-model="greenColorValue"
             type="number"
             variant="underlined"
           />
         </template>
-      </v-slider>
-    </v-col>
+      </VSlider>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- B -->
-      <v-slider
+      <VSlider
         v-model="blueColorValue"
         :max="255"
         :step="1"
         prepend-icon="mdi-alpha-b"
       >
         <template #append>
-          <v-text-field
+          <VTextField
             v-model="blueColorValue"
             type="number"
             variant="underlined"
           />
         </template>
-      </v-slider>
-    </v-col>
-  </v-row>
+      </VSlider>
+    </VCol>
+  </VRow>
 </template>

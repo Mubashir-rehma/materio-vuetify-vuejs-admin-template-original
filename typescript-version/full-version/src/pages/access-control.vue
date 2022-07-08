@@ -1,31 +1,31 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-title>Common</v-card-title>
-        <v-card-text>No ability is required to view this card</v-card-text>
-        <v-card-text class="primary--text">
+      <VCard>
+        <VCardTitle>Common</VCardTitle>
+        <VCardText>No ability is required to view this card</VCardText>
+        <VCardText class="primary--text">
           This card is visible to both 'user' and 'admin'
-        </v-card-text>
-      </v-card>
-    </v-col>
-    <v-col
+        </VCardText>
+      </VCard>
+    </VCol>
+    <VCol
       v-if="$can('read', 'Admin')"
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-title>Analytics</v-card-title>
-        <v-card-text>User with 'Analytics' subject's 'Read' ability can view this card</v-card-text>
-        <v-card-text class="text-danger">
+      <VCard>
+        <VCardTitle>Analytics</VCardTitle>
+        <VCardText>User with 'Analytics' subject's 'Read' ability can view this card</VCardText>
+        <VCardText class="text-danger">
           This card is visible to 'admin' only
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <route lang="yaml">

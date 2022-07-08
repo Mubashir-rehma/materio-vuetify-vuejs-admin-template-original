@@ -1,31 +1,31 @@
 <template>
   <div class="demo-space-x">
-    <v-chip>
+    <VChip>
       Default
-    </v-chip>
+    </VChip>
 
-    <v-chip color="primary">
+    <VChip color="primary">
       Primary
-    </v-chip>
+    </VChip>
 
-    <v-chip color="secondary">
+    <VChip color="secondary">
       Secondary
-    </v-chip>
+    </VChip>
 
-    <v-chip color="success">
+    <VChip color="success">
       Success
-    </v-chip>
+    </VChip>
 
-    <v-chip color="info">
+    <VChip color="info">
       Info
-    </v-chip>
+    </VChip>
 
-    <v-chip color="warning">
+    <VChip color="warning">
       Warning
-    </v-chip>
+    </VChip>
 
-    <v-chip color="error">
+    <VChip color="error">
       Error
-    </v-chip>
+    </VChip>
   </div>
 </template>

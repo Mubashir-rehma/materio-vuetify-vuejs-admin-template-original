@@ -1,5 +1,5 @@
 <template>
-  <v-pagination
+  <VPagination
     :length="5"
     disabled
   />

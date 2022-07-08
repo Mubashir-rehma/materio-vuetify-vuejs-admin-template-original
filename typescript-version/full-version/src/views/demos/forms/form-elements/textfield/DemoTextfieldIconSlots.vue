@@ -16,7 +16,7 @@ const clickMe = () => {
 </script>
 
 <template>
-  <v-text-field
+  <VTextField
     v-model="message"
     clearable
     label="Message"
@@ -24,20 +24,20 @@ const clickMe = () => {
   >
     <!-- Prepend -->
     <template #prepend>
-      <v-tooltip anchor="bottom">
+      <VTooltip anchor="bottom">
         <template #activator="{ props }">
-          <v-icon v-bind="props">
+          <VIcon v-bind="props">
             mdi-help-circle-outline
-          </v-icon>
+          </VIcon>
         </template>
         I'm a tooltip
-      </v-tooltip>
+      </VTooltip>
     </template>
 
     <!-- AppendInner -->
     <template #appendInner>
-      <v-fade-transition leave-absolute>
-        <v-progress-circular
+      <VFadeTransition leave-absolute>
+        <VProgressCircular
           v-if="loading"
           size="24"
           color="info"
@@ -51,18 +51,18 @@ const clickMe = () => {
           alt="logo"
           contain
         >
-      </v-fade-transition>
+      </VFadeTransition>
     </template>
 
     <!-- Append -->
     <template #append>
-      <v-btn @click="clickMe">
-        <v-icon
+      <VBtn @click="clickMe">
+        <VIcon
           icon="mdi-target"
           start
         />
         Click me
-      </v-btn>
+      </VBtn>
     </template>
-  </v-text-field>
+  </VTextField>
 </template>

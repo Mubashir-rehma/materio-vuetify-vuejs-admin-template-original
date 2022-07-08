@@ -3,7 +3,7 @@ const value = ref(0)
 </script>
 
 <template>
-  <v-slider
+  <VSlider
     v-model="value"
     :min="0"
     :max="1"

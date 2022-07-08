@@ -4,72 +4,72 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
 
 <template>
   <div class="demo-space-x">
-    <v-menu anchor="top">
+    <VMenu anchor="top">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           Top
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, index) in items"
           :key="index"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
 
-    <v-menu anchor="bottom">
+    <VMenu anchor="bottom">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           Bottom
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, index) in items"
           :key="index"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
 
-    <v-menu anchor="start">
+    <VMenu anchor="start">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           Start
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, index) in items"
           :key="index"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
 
-    <v-menu anchor="end">
+    <VMenu anchor="end">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           End
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, index) in items"
           :key="index"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
   </div>
 </template>

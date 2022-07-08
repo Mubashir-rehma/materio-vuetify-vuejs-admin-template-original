@@ -17,7 +17,7 @@ const value = ref(['Sandra Adams'])
 </script>
 
 <template>
-  <v-select
+  <VSelect
     v-model="value"
     :items="items"
     item-title="name"
@@ -26,13 +26,13 @@ const value = ref(['Sandra Adams'])
     multiple
   >
     <template #selection="{ item }">
-      <v-chip label>
-        <v-avatar
+      <VChip label>
+        <VAvatar
           :image="item.raw.avatar"
           class="ms-n1 me-2"
         />
         <span>{{ item.title }}</span>
-      </v-chip>
+      </VChip>
     </template>
-  </v-select>
+  </VSelect>
 </template>

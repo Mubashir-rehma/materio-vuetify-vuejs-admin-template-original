@@ -3,21 +3,21 @@ const radios = ref('Duckduckgo')
 </script>
 
 <template>
-  <v-radio-group v-model="radios">
+  <VRadioGroup v-model="radios">
     <template #label>
       <div>Your favorite <strong>search engine</strong></div>
     </template>
 
-    <v-radio value="Google">
+    <VRadio value="Google">
       <template #label>
         <div>Of course it's <strong class="text-success">Google</strong></div>
       </template>
-    </v-radio>
+    </VRadio>
 
-    <v-radio value="Duckduckgo">
+    <VRadio value="Duckduckgo">
       <template #label>
         <div>Definitely <strong class="text-primary">Duckduckgo</strong></div>
       </template>
-    </v-radio>
-  </v-radio-group>
+    </VRadio>
+  </VRadioGroup>
 </template>

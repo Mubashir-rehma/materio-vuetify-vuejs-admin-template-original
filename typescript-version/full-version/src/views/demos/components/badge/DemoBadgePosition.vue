@@ -5,43 +5,43 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 <template>
   <div class="demo-space-x">
     <!-- 👉 Top End -->
-    <v-badge
+    <VBadge
       content="1"
       location="end top"
     >
-      <v-avatar size="48">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
     <!-- 👉 Bottom Start -->
-    <v-badge
+    <VBadge
       location="bottom start"
       content="2"
     >
-      <v-avatar size="48">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
     <!-- 👉 Bottom End -->
-    <v-badge
+    <VBadge
       location="bottom end"
       content="3"
     >
-      <v-avatar size="48">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
     <!-- 👉 top Start -->
-    <v-badge
+    <VBadge
       location="top start"
       content="4"
     >
-      <v-avatar size="48">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
   </div>
 </template>

@@ -20,27 +20,27 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
       </div>
 
       <!-- 👉 Email input -->
-      <v-form
+      <VForm
         class="d-flex align-center justify-center flex-wrap gap-4"
         @submit.prevent="() => {}"
       >
-        <v-text-field
+        <VTextField
           v-model="email"
           placeholder="Enter your email"
           class="misc-email-input"
         />
-        <v-btn
+        <VBtn
           type="submit"
           size="large"
         >
           Notify
-        </v-btn>
-      </v-form>
+        </VBtn>
+      </VForm>
     </div>
 
     <!-- 👉 Image -->
     <div class="misc-avatar w-100 mt-10">
-      <v-img
+      <VImg
         :src="comingSoonGuy"
         alt="Coming Soon"
         :max-width="700"
@@ -49,12 +49,12 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
     </div>
 
     <!-- 👉 Footer -->
-    <v-img
+    <VImg
       :src="tree"
       class="misc-footer-tree d-none d-md-block"
     />
 
-    <v-img
+    <VImg
       :src="authThemeMask"
       class="misc-footer-img d-none d-md-block"
     />

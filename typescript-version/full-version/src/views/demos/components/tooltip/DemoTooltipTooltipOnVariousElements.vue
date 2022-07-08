@@ -4,36 +4,36 @@ import avatar4 from '@/assets/images/avatars/avatar-4.png'
 
 <template>
   <div class="demo-space-x">
-    <v-btn>
+    <VBtn>
       Button
-      <v-tooltip
+      <VTooltip
         anchor="top"
         activator="parent"
       >
         Tooltip
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
 
-    <v-avatar color="info">
-      <v-img :src="avatar4" />
-      <v-tooltip
+    <VAvatar color="info">
+      <VImg :src="avatar4" />
+      <VTooltip
         anchor="top"
         activator="parent"
       >
         Tooltip on Avatar
-      </v-tooltip>
-    </v-avatar>
+      </VTooltip>
+    </VAvatar>
 
-    <v-tooltip anchor="top">
+    <VTooltip anchor="top">
       <template #activator="{ props }">
-        <v-icon
+        <VIcon
           v-bind="props"
           size="30"
         >
           mdi-account-outline
-        </v-icon>
+        </VIcon>
       </template>
       <span>Tooltip on Icon</span>
-    </v-tooltip>
+    </VTooltip>
   </div>
 </template>

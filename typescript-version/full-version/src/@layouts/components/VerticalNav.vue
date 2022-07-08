@@ -53,7 +53,7 @@ watch(() => route.name, () => {
 </script>
 
 <template>
-  <component
+  <Component
     :is="props.tag"
     ref="refNav"
     class="layout-vertical-nav"
@@ -75,12 +75,12 @@ watch(() => route.name, () => {
           class="app-logo"
         >
         <!-- 👉 App title -->
-        <transition name="vertical-nav-app-title">
+        <Transition name="vertical-nav-app-title">
           <span
             v-show="!hideTitleAndIcon"
             class="app-title"
           >{{ config.app.title }}</span>
-        </transition>
+        </Transition>
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
         <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
@@ -112,14 +112,14 @@ watch(() => route.name, () => {
       class="nav-items"
       :options="perfectScrollbarSettings"
     >
-      <component
+      <Component
         :is="resolveNavItemComponent(item)"
         v-for="(item, index) in navItems"
         :key="index"
         :item="item"
       />
     </PerfectScrollbar>
-  </component>
+  </Component>
 </template>
 
 <style lang="scss">

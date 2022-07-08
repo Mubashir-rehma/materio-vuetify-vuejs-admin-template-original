@@ -1,39 +1,39 @@
 <template>
   <div class="demo-space-x">
     <!-- Scale transition -->
-    <v-btn>
+    <VBtn>
       scale transition
-      <v-tooltip
+      <VTooltip
         anchor="top"
         transition="scale-transition"
         activator="parent"
       >
         <span>Scale Transition</span>
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
 
     <!-- Scroll x transition -->
-    <v-btn>
+    <VBtn>
       scroll X transition
-      <v-tooltip
+      <VTooltip
         anchor="top"
         activator="parent"
         transition="scroll-x-transition"
       >
         <span>Scroll X Transition</span>
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
 
     <!-- Scroll y transition -->
-    <v-btn>
+    <VBtn>
       scroll y transition
-      <v-tooltip
+      <VTooltip
         anchor="top"
         activator="parent"
         transition="scroll-y-transition"
       >
         <span>Scroll Y Transition</span>
-      </v-tooltip>
-    </v-btn>
+      </VTooltip>
+    </VBtn>
   </div>
 </template>

@@ -5,7 +5,7 @@
       &copy;
       {{ new Date().getFullYear() }}
       Made With
-      <v-icon
+      <VIcon
         icon="i-mdi-heart-outline"
         color="error"
         size="1.25rem"

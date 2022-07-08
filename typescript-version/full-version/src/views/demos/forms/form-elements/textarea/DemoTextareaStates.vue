@@ -1,21 +1,21 @@
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-textarea
+  <VRow>
+    <VCol cols="12">
+      <VTextarea
         disabled
         label="Disabled"
         hint="Hint text"
         rows="2"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-textarea
+    <VCol cols="12">
+      <VTextarea
         readonly
         rows="2"
         label="Readonly"
         hint="Hint text"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

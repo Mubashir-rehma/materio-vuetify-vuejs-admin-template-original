@@ -3,9 +3,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
 </script>
 
 <template>
-  <v-row>
+  <VRow>
     <!-- 👉 Basic -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -15,10 +15,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Time Picker -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -28,10 +28,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerTimePicker />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Date & TIme -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -41,10 +41,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerDateAndTime />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Multiple Dates -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -54,10 +54,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerMultipleDates />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Range -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -67,10 +67,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerRange />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Human Friendly -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -80,10 +80,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerHumanFriendly />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Disabled Range -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -93,10 +93,10 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerDisabledRange />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
     <!-- 👉 Inline -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -106,6 +106,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/date-time-picker/de
       >
         <DemoDateTimePickerInline />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

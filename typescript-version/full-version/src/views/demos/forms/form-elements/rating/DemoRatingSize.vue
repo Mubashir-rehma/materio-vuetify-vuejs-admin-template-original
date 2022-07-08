@@ -4,24 +4,24 @@ const rating = ref(4)
 
 <template>
   <div class="d-flex flex-column">
-    <v-rating
+    <VRating
       v-model="rating"
       size="x-small"
     />
-    <v-rating
+    <VRating
       v-model="rating"
       size="small"
     />
-    <v-rating v-model="rating" />
-    <v-rating
+    <VRating v-model="rating" />
+    <VRating
       v-model="rating"
       size="large"
     />
-    <v-rating
+    <VRating
       v-model="rating"
       size="x-large"
     />
-    <v-rating
+    <VRating
       v-model="rating"
       size="54"
     />

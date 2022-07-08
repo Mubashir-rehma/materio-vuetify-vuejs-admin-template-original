@@ -1,21 +1,21 @@
 <template>
   <div class="demo-space-x">
-    <v-chip size="x-small">
+    <VChip size="x-small">
       x-small chip
-    </v-chip>
+    </VChip>
 
-    <v-chip size="small">
+    <VChip size="small">
       small chip
-    </v-chip>
+    </VChip>
 
-    <v-chip>Default</v-chip>
+    <VChip>Default</VChip>
 
-    <v-chip size="large">
+    <VChip size="large">
       large chip
-    </v-chip>
+    </VChip>
 
-    <v-chip size="x-large">
+    <VChip size="x-large">
       x-large chip
-    </v-chip>
+    </VChip>
   </div>
 </template>

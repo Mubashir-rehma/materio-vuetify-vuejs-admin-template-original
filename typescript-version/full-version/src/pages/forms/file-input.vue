@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Variant -->
       <AppCardCode
         title="Variant"
@@ -44,9 +44,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputVariant />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -59,9 +59,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputAccept />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -74,9 +74,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputChips />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -89,9 +89,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputCounter />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -106,9 +106,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputMultiple />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -123,9 +123,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputPrependIcon />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -138,9 +138,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputShowSize />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -153,9 +153,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputValidation />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -168,9 +168,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputSelectionSlot />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -183,6 +183,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/file-input/demoCode
 
         <DemoFileInputLoading />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

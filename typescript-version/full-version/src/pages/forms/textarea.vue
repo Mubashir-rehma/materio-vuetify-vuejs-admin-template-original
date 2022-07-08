@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -19,9 +19,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -34,9 +34,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaAutoGrow />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Variant -->
       <AppCardCode
         title="Variant"
@@ -46,9 +46,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaVariant />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -61,9 +61,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaStates />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -78,9 +78,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaBrowserAutocomplete />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -93,9 +93,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaClearable />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -110,9 +110,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaCounter />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -125,9 +125,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -140,9 +140,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaRows />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -155,9 +155,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaNoResize />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -170,6 +170,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/textarea/demoCodeTe
 
         <DemoTextareaValidation />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

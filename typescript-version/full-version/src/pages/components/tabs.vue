@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsBasicPill />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsStacked />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsVertical />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsVerticalPill />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsAlignment />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsPagination />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,9 +122,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsCustomIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Fixed tabs -->
       <AppCardCode
         title="Fixed"
@@ -134,9 +134,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsFixed />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Grow -->
       <AppCardCode
         title="Grow"
@@ -146,9 +146,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsGrow />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -159,9 +159,9 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
       >
         <DemoTabsProgrammaticNavigation />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -174,6 +174,6 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
 
         <DemoTabsDynamic />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

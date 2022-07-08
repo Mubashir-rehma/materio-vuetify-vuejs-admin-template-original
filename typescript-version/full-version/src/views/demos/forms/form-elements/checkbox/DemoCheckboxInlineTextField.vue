@@ -4,38 +4,38 @@ const isInputEnabled = ref(false)
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       sm="1"
       cols="2"
     >
-      <v-checkbox v-model="includeFiles" />
-    </v-col>
+      <VCheckbox v-model="includeFiles" />
+    </VCol>
 
-    <v-col
+    <VCol
       sm="11"
       cols="10"
     >
-      <v-text-field label="Include files" />
-    </v-col>
-  </v-row>
+      <VTextField label="Include files" />
+    </VCol>
+  </VRow>
 
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="2"
       sm="1"
     >
-      <v-checkbox v-model="isInputEnabled" />
-    </v-col>
+      <VCheckbox v-model="isInputEnabled" />
+    </VCol>
 
-    <v-col
+    <VCol
       cols="10"
       sm="11"
     >
-      <v-text-field
+      <VTextField
         :disabled="!isInputEnabled"
         label="I only work if you check the box"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

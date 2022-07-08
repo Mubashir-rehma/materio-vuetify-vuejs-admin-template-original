@@ -10,41 +10,41 @@ const refForm = ref<VForm>()
 </script>
 
 <template>
-  <v-form
+  <VForm
     ref="refForm"
     @submit.prevent="() => {}"
   >
-    <v-row>
-      <v-col
+    <VRow>
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="firstName"
           label="First Name"
           :rules="[requiredValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="email"
           label="Email"
           :rules="[requiredValidator, emailValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-btn
+      <VCol cols="12">
+        <VBtn
           type="submit"
           @click="refForm?.validate()"
         >
           Submit
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

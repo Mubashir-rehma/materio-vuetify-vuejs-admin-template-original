@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const accept = { ts: '', js: '' }
 
 export const density = { ts: '', js: '' }

@@ -80,7 +80,7 @@ const chartOptions = {
 </script>
 
 <template>
-  <v-card title="$86.4k">
+  <VCard title="$86.4k">
     <VueApexCharts
       type="line"
       :options="chartOptions"
@@ -88,8 +88,8 @@ const chartOptions = {
       height="auto"
     />
 
-    <v-card-text class="text-center font-weight-semibold">
+    <VCardText class="text-center font-weight-semibold">
       Total Profit
-    </v-card-text>
-  </v-card>
+    </VCardText>
+  </VCard>
 </template>

@@ -1,60 +1,60 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-file-input label="Default" />
-    </v-col>
+      <VFileInput label="Default" />
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-file-input
+      <VFileInput
         label="Filled"
         variant="filled"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-file-input
+      <VFileInput
         label="Outlined"
         variant="outlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-file-input
+      <VFileInput
         label="Solo"
         variant="solo"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-file-input
+      <VFileInput
         label="Underlined"
         variant="underlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-file-input
+      <VFileInput
         label="Plain"
         variant="plain"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

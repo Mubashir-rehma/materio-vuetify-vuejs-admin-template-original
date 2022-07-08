@@ -12,31 +12,31 @@ const form = ref<VForm>()
 </script>
 
 <template>
-  <v-form
+  <VForm
     ref="form"
     lazy-validation
   >
-    <v-row>
-      <v-col cols="12">
-        <v-text-field
+    <VRow>
+      <VCol cols="12">
+        <VTextField
           v-model="name"
           :rules="[requiredValidator]"
           label="Name"
           required
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-text-field
+      <VCol cols="12">
+        <VTextField
           v-model="email"
           :rules="[emailValidator, requiredValidator]"
           label="E-mail"
           required
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-select
+      <VCol cols="12">
+        <VSelect
           v-model="select"
           :items="items"
           :rules="[requiredValidator]"
@@ -44,42 +44,42 @@ const form = ref<VForm>()
           name="select"
           require
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-checkbox
+      <VCol cols="12">
+        <VCheckbox
           v-model="checkbox"
           :rules="[requiredValidator]"
           label="Do you agree?"
           density="compact"
           required
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-btn
+      <VCol cols="12">
+        <VBtn
           color="success"
           class="me-3"
           @click="form?.validate()"
         >
           Validate
-        </v-btn>
+        </VBtn>
 
-        <v-btn
+        <VBtn
           color="error"
           class="me-3"
           @click="form?.reset()"
         >
           Reset Form
-        </v-btn>
+        </VBtn>
 
-        <v-btn
+        <VBtn
           color="warning"
           @click="form?.resetValidation()"
         >
           Reset Validation
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

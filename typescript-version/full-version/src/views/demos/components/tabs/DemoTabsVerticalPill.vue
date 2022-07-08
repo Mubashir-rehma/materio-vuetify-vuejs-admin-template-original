@@ -4,40 +4,40 @@ const currentTab = ref(0)
 
 <template>
   <div class="d-flex flex-row">
-    <v-tabs
+    <VTabs
       v-model="currentTab"
       direction="vertical"
       class="v-tabs-pill"
     >
-      <v-tab>
-        <v-icon
+      <VTab>
+        <VIcon
           start
           icon="mdi-account-outline"
         />
         Option 1
-      </v-tab>
+      </VTab>
 
-      <v-tab>
-        <v-icon
+      <VTab>
+        <VIcon
           start
           icon="mdi-lock-outline"
         />
         Option 2
-      </v-tab>
+      </VTab>
 
-      <v-tab>
-        <v-icon
+      <VTab>
+        <VIcon
           start
           icon="mdi-access-point"
         />
         Option 3
-      </v-tab>
-    </v-tabs>
+      </VTab>
+    </VTabs>
 
-    <v-window v-model="currentTab">
-      <v-window-item>
-        <v-card flat>
-          <v-card-text>
+    <VWindow v-model="currentTab">
+      <VWindowItem>
+        <VCard flat>
+          <VCardText>
             <p>
               Sed aliquam ultrices mauris. Donec posuere vulputate arcu. Morbi ac felis. Etiam feugiat lorem non metus. Sed a libero.
             </p>
@@ -45,13 +45,13 @@ const currentTab = ref(0)
             <p class="mb-0">
               Phasellus dolor. Fusce neque. Fusce fermentum odio nec arcu. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Phasellus blandit leo ut odio.
             </p>
-          </v-card-text>
-        </v-card>
-      </v-window-item>
+          </VCardText>
+        </VCard>
+      </VWindowItem>
 
-      <v-window-item>
-        <v-card flat>
-          <v-card-text>
+      <VWindowItem>
+        <VCard flat>
+          <VCardText>
             <p>
               Morbi nec metus. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Nunc sed turpis.
             </p>
@@ -59,13 +59,13 @@ const currentTab = ref(0)
             <p class="mb-0">
               Donec venenatis vulputate lorem. Aenean viverra rhoncus pede. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Fusce commodo aliquam arcu. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi.
             </p>
-          </v-card-text>
-        </v-card>
-      </v-window-item>
+          </VCardText>
+        </VCard>
+      </VWindowItem>
 
-      <v-window-item>
-        <v-card flat>
-          <v-card-text>
+      <VWindowItem>
+        <VCard flat>
+          <VCardText>
             <p>
               Fusce a quam. Phasellus nec sem in justo pellentesque facilisis. Nam eget dui. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
             </p>
@@ -73,9 +73,9 @@ const currentTab = ref(0)
             <p class="mb-0">
               Cras sagittis. Phasellus nec sem in justo pellentesque facilisis. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nam at tortor in tellus interdum sagittis.
             </p>
-          </v-card-text>
-        </v-card>
-      </v-window-item>
-    </v-window>
+          </VCardText>
+        </VCard>
+      </VWindowItem>
+    </VWindow>
   </div>
 </template>

@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const variant = { ts: '', js: '' }
 
 export const clearable = { ts: '', js: '' }

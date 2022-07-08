@@ -3,9 +3,9 @@ const rating = ref(4.5)
 </script>
 
 <template>
-  <v-rating v-model="rating">
+  <VRating v-model="rating">
     <template #item="props">
-      <v-icon
+      <VIcon
         v-bind="props"
         :size="25"
         :color="props.isFilled ? 'success' : 'secondary'"
@@ -13,5 +13,5 @@ const rating = ref(4.5)
         :icon="props.isFilled ? 'mdi-emoticon-excited-outline' : 'mdi-emoticon-sad-outline'"
       />
     </template>
-  </v-rating>
+  </VRating>
 </template>

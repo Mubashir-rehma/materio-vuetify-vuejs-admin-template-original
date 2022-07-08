@@ -5,19 +5,19 @@ const largePagination = ref(3)
 </script>
 
 <template>
-  <v-pagination
+  <VPagination
     v-model="xSmallPagination"
     :length="7"
     size="x-small"
   />
 
-  <v-pagination
+  <VPagination
     v-model="smallPagination"
     :length="7"
     size="small"
   />
 
-  <v-pagination
+  <VPagination
     v-model="largePagination"
     :length="7"
     size="large"

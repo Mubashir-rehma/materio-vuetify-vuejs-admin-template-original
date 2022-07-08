@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarInitials />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       md="6"
       cols="12"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarSizes />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarTile />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarImages />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,6 +107,6 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
 
         <DemoAvatarGroup />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

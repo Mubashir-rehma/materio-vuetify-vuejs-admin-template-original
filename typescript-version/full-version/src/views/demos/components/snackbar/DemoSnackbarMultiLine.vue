@@ -3,24 +3,24 @@ const isSnackbarVisible = ref(false)
 </script>
 
 <template>
-  <v-btn @click="isSnackbarVisible = true">
+  <VBtn @click="isSnackbarVisible = true">
     Open Snackbar
-  </v-btn>
+  </VBtn>
 
   <!-- Snackbar -->
-  <v-snackbar
+  <VSnackbar
     v-model="isSnackbarVisible"
     multi-line
   >
     I am a multi-line snackbar. I can have more than one line. This is another line that is quite long.
 
     <template #actions>
-      <v-btn
+      <VBtn
         color="error"
         @click="isSnackbarVisible = false"
       >
         Close
-      </v-btn>
+      </VBtn>
     </template>
-  </v-snackbar>
+  </VSnackbar>
 </template>

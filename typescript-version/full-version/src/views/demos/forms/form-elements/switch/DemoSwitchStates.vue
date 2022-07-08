@@ -6,34 +6,34 @@ const switchOnLoading = ref('on')
 
 <template>
   <div class="d-flex flex-wrap demo-space-x">
-    <v-switch
+    <VSwitch
       v-model="switchOn"
       value="on"
       label="On"
     />
 
-    <v-switch label="Off" />
+    <VSwitch label="Off" />
 
-    <v-switch
+    <VSwitch
       v-model="switchOnDisabled"
       value="on"
       disabled
       label="On disabled"
     />
 
-    <v-switch
+    <VSwitch
       disabled
       label="Off disabled"
     />
 
-    <v-switch
+    <VSwitch
       v-model="switchOnLoading"
       loading="warning"
       value="on"
       label="On loading"
     />
 
-    <v-switch
+    <VSwitch
       loading="warning"
       label="Off loading"
     />

@@ -28,21 +28,21 @@ watch(knowledgeBaseSearchQuery, fetchKnowledgeBaseData, { immediate: true })
 
     <!-- 👉 Kb Search  content -->
     <div id="knowledge-base-content">
-      <v-row class="match-height">
-        <v-col
+      <VRow class="match-height">
+        <VCol
           v-for="result in knowledgeBaseCategories"
           :key="result.character"
           md="4"
           sm="6"
           cols="12"
         >
-          <v-card
+          <VCard
             class="text-center"
             @click="$router.push({ name: 'pages-knowledge-base-category', params: { category: result.category } })"
           >
             <!-- 👉 image -->
             <div class="page-kb-character-wrapper">
-              <v-img
+              <VImg
                 contain
                 class="mx-auto"
                 :src="result.character"
@@ -50,23 +50,23 @@ watch(knowledgeBaseSearchQuery, fetchKnowledgeBaseData, { immediate: true })
             </div>
 
             <!-- 👉 title -->
-            <v-card-header>
-              <v-card-header-text>
-                <v-card-title class="justify-center">
+            <VCardHeader>
+              <VCardHeaderText>
+                <VCardTitle class="justify-center">
                   {{ result.title }}
-                </v-card-title>
-              </v-card-header-text>
-            </v-card-header>
+                </VCardTitle>
+              </VCardHeaderText>
+            </VCardHeader>
 
             <!-- 👉 description -->
-            <v-card-text>
+            <VCardText>
               {{ result.desc }}
-            </v-card-text>
-          </v-card>
-        </v-col>
+            </VCardText>
+          </VCard>
+        </VCol>
 
         <!-- 👉 No result found -->
-        <v-col
+        <VCol
           v-show="!knowledgeBaseCategories.length"
           cols="12"
           class="text-center"
@@ -74,8 +74,8 @@ watch(knowledgeBaseSearchQuery, fetchKnowledgeBaseData, { immediate: true })
           <h6 class="text-h6">
             Search result not found!!
           </h6>
-        </v-col>
-      </v-row>
+        </VCol>
+      </VRow>
     </div>
   </section>
 </template>

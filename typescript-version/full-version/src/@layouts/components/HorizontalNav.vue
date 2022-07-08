@@ -2,20 +2,26 @@
 import { HorizontalNavGroup, HorizontalNavLink } from '@layouts/components'
 import type { HorizontalNavItems, NavGroup, NavLink } from '@layouts/types'
 
-const resolveNavItemComponent = (item: NavLink|NavGroup) => {
-  if ('children' in item) return HorizontalNavGroup
-
-  return HorizontalNavLink
-}
-
 defineProps<{
   navItems: HorizontalNavItems
 }>()
+
+const resolveNavItemComponent = (item: NavLink | NavGroup) => {
+  if ('children' in item)
+    return HorizontalNavGroup
+
+  return HorizontalNavLink
+}
 </script>
 
 <template>
   <ul class="nav-items">
-    <component :is="resolveNavItemComponent(item)" v-for="(item, index) in navItems" :key="index" :item="item" />
+    <Component
+      :is="resolveNavItemComponent(item)"
+      v-for="(item, index) in navItems"
+      :key="index"
+      :item="item"
+    />
   </ul>
 </template>
 

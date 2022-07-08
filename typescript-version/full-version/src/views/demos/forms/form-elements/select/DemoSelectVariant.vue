@@ -3,70 +3,70 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-select
+      <VSelect
         :items="items"
         label="Default"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-select
+      <VSelect
         :items="items"
         label="Filled"
         variant="filled"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-select
+      <VSelect
         :items="items"
         label="Outlined"
         variant="outlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-select
+      <VSelect
         :items="items"
         label="Solo"
         variant="solo"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-select
+      <VSelect
         :items="items"
         label="Underlined"
         variant="underlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-select
+      <VSelect
         :items="items"
         label="Plain"
         variant="plain"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

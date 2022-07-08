@@ -20,8 +20,12 @@ const { dynamicI18nProps } = useLayouts()
 </script>
 
 <template>
-  <li v-if="can(item.action, item.subject)" class="nav-link" :class="[{'sub-item': isSubItem}, {'disabled': item.disable}]">
-    <component
+  <li
+    v-if="can(item.action, item.subject)"
+    class="nav-link"
+    :class="[{ 'sub-item': isSubItem }, { disabled: item.disable }]"
+  >
+    <Component
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"
     >
@@ -29,13 +33,13 @@ const { dynamicI18nProps } = useLayouts()
         :class="item.icon || config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <component
-        :is="config.app.enableI18n ? 'i18n-t': 'span'"
+      <Component
+        :is="config.app.enableI18n ? 'i18n-t' : 'span'"
         class="nav-item-title"
         v-bind="dynamicI18nProps(item.title, 'span')"
         v-text="item.title"
       />
-    </component>
+    </Component>
   </li>
 </template>
 

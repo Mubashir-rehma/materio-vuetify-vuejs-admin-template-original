@@ -25,18 +25,18 @@ const stockData = [
 </script>
 
 <template>
-  <v-row>
+  <VRow>
     <!-- 👉 Latest Statistics -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card>
+      <VCard>
         <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Latest Statistics</v-card-title>
-          </v-card-header-text>
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle>Latest Statistics</VCardTitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -45,27 +45,27 @@ const stockData = [
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsBarChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Balance Horizontal Bar Chart -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card>
+      <VCard>
         <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Balance</v-card-title>
-            <v-card-subtitle>$74,123</v-card-subtitle>
-          </v-card-header-text>
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle>Balance</VCardTitle>
+            <VCardSubtitle>$74,123</VCardSubtitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -74,85 +74,85 @@ const stockData = [
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartjsHorizontalBarChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Statistics Line Chart  -->
-    <v-col cols="12">
-      <v-card
+    <VCol cols="12">
+      <VCard
         title="Statistics"
         subtitle="Commercial networks and enterprises"
       >
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsLineChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Radar Chart -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card title="Radar Chart">
+      <VCard title="Radar Chart">
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsRadarChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Average Skills Polar Area Chart -->
-    <V-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card title="Average Skills">
+      <VCard title="Average Skills">
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsPolarAreaChart />
-        </v-card-text>
-      </v-card>
-    </V-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉  Bubble Chart -->
-    <v-col cols="12">
-      <v-card>
+    <VCol cols="12">
+      <VCard>
         <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Bubble Chart</v-card-title>
-          </v-card-header-text>
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle>Bubble Chart</VCardTitle>
+          </VCardHeaderText>
 
           <span class="text-subtitle-2">$ 100,000</span>
-        </v-card-header>
+        </VCardHeader>
 
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsBubbleChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Sessions By Device Doughnut Chart -->
-    <v-col
+    <VCol
       cols="12"
       lg="4"
     >
-      <v-card title="Sessions By Device">
-        <v-card-text>
+      <VCard title="Sessions By Device">
+        <VCardText>
           <ChartJsDoughnutChart />
-        </v-card-text>
+        </VCardText>
 
         <!-- stocks -->
-        <v-card-text>
+        <VCardText>
           <div
             v-for="(stock, index) in stockData"
             :key="stock.device"
@@ -160,68 +160,68 @@ const stockData = [
             class="d-flex justify-space-between"
           >
             <div class="d-flex align-center">
-              <v-icon
+              <VIcon
                 size="16"
                 :color="stock.color"
               >
                 {{ stock.icon }}
-              </v-icon>
+              </VIcon>
               <span class="font-weight-bold ms-2 me-2">{{ stock.device }}</span>
               <span>- {{ stock.percentage }}%</span>
             </div>
             <div>
               <span>{{ stock.upDown }}%</span>
-              <v-icon
+              <VIcon
                 size="14"
                 :color="stock.upDown > 0 ? 'success' : 'error'"
               >
                 {{ stock.upDown > 0 ? 'mdi-arrow-up' : 'mdi-arrow-down' }}
-              </v-icon>
+              </VIcon>
             </div>
           </div>
-        </v-card-text>
+        </VCardText>
         <!-- / stocks -->
-      </v-card>
-    </v-col>
+      </VCard>
+    </VCol>
 
     <!-- 👉 New Product Data Scatter Chart -->
-    <v-col
+    <VCol
       cols="12"
       lg="8"
     >
-      <v-card>
+      <VCard>
         <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>New Product Data</v-card-title>
-          </v-card-header-text>
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle>New Product Data</VCardTitle>
+          </VCardHeaderText>
 
-          <v-btn-toggle
+          <VBtnToggle
             color="primary"
             variant="outlined"
             density="compact"
           >
-            <v-btn>Daily</v-btn>
-            <v-btn>Monthly</v-btn>
-            <v-btn>Yearly</v-btn>
-          </v-btn-toggle>
-        </v-card-header>
+            <VBtn>Daily</VBtn>
+            <VBtn>Monthly</VBtn>
+            <VBtn>Yearly</VBtn>
+          </VBtnToggle>
+        </VCardHeader>
 
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsScatterChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Data Science Area Line Chart -->
-    <v-col cols="12">
-      <v-card>
+    <VCol cols="12">
+      <VCard>
         <!-- Header -->
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>Data Science</v-card-title>
-          </v-card-header-text>
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle>Data Science</VCardTitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -230,15 +230,15 @@ const stockData = [
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
         <!-- Body -->
-        <v-card-text>
+        <VCardText>
           <ChartJsLineAreaChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

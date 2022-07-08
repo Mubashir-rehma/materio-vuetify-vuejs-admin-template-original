@@ -24,60 +24,60 @@ const isCPasswordVisible = ref(false)
 </script>
 
 <template>
-  <v-tabs v-model="tab">
-    <v-tab value="personal-info">
+  <VTabs v-model="tab">
+    <VTab value="personal-info">
       Personal Info
-    </v-tab>
-    <v-tab value="account-details">
+    </VTab>
+    <VTab value="account-details">
       Account Details
-    </v-tab>
-    <v-tab value="social-links">
+    </VTab>
+    <VTab value="social-links">
       Social Links
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 
-  <v-card flat>
-    <v-card-text>
-      <v-window v-model="tab">
-        <v-window-item value="personal-info">
-          <v-form class="mt-2">
-            <v-row>
-              <v-col
+  <VCard flat>
+    <VCardText>
+      <VWindow v-model="tab">
+        <VWindowItem value="personal-info">
+          <VForm class="mt-2">
+            <VRow>
+              <VCol
                 md="6"
                 cols="12"
               >
-                <v-text-field
+                <VTextField
                   v-model="firstName"
                   label="First name"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 md="6"
                 cols="12"
               >
-                <v-text-field
+                <VTextField
                   v-model="lastName"
                   label="Last name"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   v-model="country"
                   :items="countryList"
                   label="Country"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   v-model="languages"
                   :items="languageList"
                   multiple
@@ -85,160 +85,160 @@ const isCPasswordVisible = ref(false)
                   clearable
                   label="Language"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="birthDate"
                   type="number"
                   label="Birth Date"
                   placeholder="YYYY-MM-DD"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="phoneNo"
                   type="number"
                   label="Phone No."
                 />
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-window-item>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VWindowItem>
 
-        <v-window-item value="account-details">
-          <v-form class="mt-2">
-            <v-row>
-              <v-col
+        <VWindowItem value="account-details">
+          <VForm class="mt-2">
+            <VRow>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="username"
                   label="Username"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="email"
                   label="Email"
                   suffix="@example.com"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="password"
                   label="Password"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="cPassword"
                   label="Confirm Password"
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
                 />
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-window-item>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VWindowItem>
 
-        <v-window-item value="social-links">
-          <v-form class="mt-2">
-            <v-row>
-              <v-col
+        <VWindowItem value="social-links">
+          <VForm class="mt-2">
+            <VRow>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="twitterLink"
                   label="Twitter"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="facebookLink"
                   label="Facebook"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="googlePlusLink"
                   label="Google+"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="linkedInLink"
                   label="LinkedIn"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="instagramLink"
                   label="Instagram"
                 />
-              </v-col>
-              <v-col
+              </VCol>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="quoraLink"
                   label="Quora"
                 />
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-window-item>
-      </v-window>
-    </v-card-text>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VWindowItem>
+      </VWindow>
+    </VCardText>
 
-    <v-divider />
+    <VDivider />
 
-    <v-card-text>
-      <v-btn class="me-2">
+    <VCardText>
+      <VBtn class="me-2">
         Submit
-      </v-btn>
-      <v-btn
+      </VBtn>
+      <VBtn
         color="secondary"
         variant="outlined"
       >
         Cancel
-      </v-btn>
-    </v-card-text>
-  </v-card>
+      </VBtn>
+    </VCardText>
+  </VCard>
 </template>

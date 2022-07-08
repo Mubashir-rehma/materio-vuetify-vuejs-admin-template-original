@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationCircle />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationDisabled />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationLength />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationTotalVisible />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationColor />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,6 +122,6 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
 
         <DemoPaginationSize />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

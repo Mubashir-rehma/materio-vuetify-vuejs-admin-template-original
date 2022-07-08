@@ -1,51 +1,51 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="One row"
         auto-grow
         rows="1"
         row-height="15"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         auto-grow
         label="Two rows"
         rows="2"
         row-height="20"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Three rows"
         auto-grow
         rows="3"
         row-height="25"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         auto-grow
         label="Four rows"
         rows="4"
         row-height="30"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

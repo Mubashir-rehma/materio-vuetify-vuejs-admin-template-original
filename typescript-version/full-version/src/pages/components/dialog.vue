@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogPersistent />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogScrollable />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogLoader />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       col="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogNesting />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogOverflowed />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogFullscreen />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,6 +122,6 @@ import * as demoCode from '@/views/demos/components/dialog/demoCodeDialog'
 
         <DemoDialogForm />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

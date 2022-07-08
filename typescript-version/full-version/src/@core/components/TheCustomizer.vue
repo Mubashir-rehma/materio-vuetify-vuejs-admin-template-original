@@ -62,15 +62,15 @@ const { width: windowWidth } = useWindowSize()
 
 <template>
   <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
-    <v-btn
+    <VBtn
       icon
       class="app-customizer-toggler rounded-s-lg rounded-0"
       @click="isNavDrawerOpen = true"
     >
-      <v-icon icon="mdi-cog" />
-    </v-btn>
+      <VIcon icon="mdi-cog" />
+    </VBtn>
 
-    <v-navigation-drawer
+    <VNavigationDrawer
       v-model="isNavDrawerOpen"
       temporary
       location="right"
@@ -84,17 +84,17 @@ const { width: windowWidth } = useWindowSize()
           <h2>THEME CUSTOMIZER</h2>
           <span class="text-medium-emphasis">Customize and preview in real time</span>
         </div>
-        <v-btn
+        <VBtn
           icon
           variant="text"
           color="secondary"
           @click="isNavDrawerOpen = false"
         >
-          <v-icon icon="mdi-close" />
-        </v-btn>
+          <VIcon icon="mdi-close" />
+        </VBtn>
       </div>
 
-      <v-divider />
+      <VDivider />
 
       <PerfectScrollbar
         tag="ul"
@@ -107,24 +107,24 @@ const { width: windowWidth } = useWindowSize()
         >
           <!-- 👉 Skin -->
           <span>Skins</span>
-          <v-radio-group
+          <VRadioGroup
             v-model="skin"
             inline
           >
-            <v-radio
+            <VRadio
               v-for="[key, val] in Object.entries(EnumSkins)"
               v-show="!(key === EnumSkins['Semi Dark'] && theme === 'dark')"
               :key="key"
               :label="key"
               :value="val"
             />
-          </v-radio-group>
+          </VRadioGroup>
 
           <!-- 👉 Theme -->
           <span>
             Theme
           </span>
-          <v-select
+          <VSelect
             v-model="theme"
             :items="vuetifyThemesName"
           />
@@ -144,7 +144,7 @@ const { width: windowWidth } = useWindowSize()
               @click="setPrimaryColor(getBoxColor(initialThemeColors[color], index))"
             >
               <VFadeTransition>
-                <v-icon
+                <VIcon
                   v-show="vuetifyTheme.current.value.colors.primary === (getBoxColor(initialThemeColors[color], index))"
                   icon="mdi-check"
                   color="white"
@@ -159,48 +159,48 @@ const { width: windowWidth } = useWindowSize()
         <CustomizerSection title="LAYOUT">
           <!-- 👉 Content Width -->
           <span>Content width</span>
-          <v-radio-group
+          <VRadioGroup
             v-model="appContentWidth"
             inline
           >
-            <v-radio
+            <VRadio
               v-for="[key, val] in Object.entries(EnumContentWidth)"
               :key="key"
               :label="key"
               :value="val"
             />
-          </v-radio-group>
+          </VRadioGroup>
           <!-- 👉 Navbar Type -->
           <span class="mt-6 d-block">Navbar Type</span>
-          <v-radio-group
+          <VRadioGroup
             v-model="navbarType"
             inline
           >
-            <v-radio
+            <VRadio
               v-for="[key, val] in Object.entries(EnumNavbarType)"
               :key="key"
               :label="key"
               :value="val"
             />
-          </v-radio-group>
+          </VRadioGroup>
           <!-- 👉 Footer Type -->
           <span class="mt-6 d-block">Footer Type</span>
-          <v-radio-group
+          <VRadioGroup
             v-model="footerType"
             inline
           >
-            <v-radio
+            <VRadio
               v-for="[key, val] in Object.entries(EnumFooterType)"
               :key="key"
               :label="key"
               :value="val"
             />
-          </v-radio-group>
+          </VRadioGroup>
           <!-- 👉 Navbar blur -->
           <div class="mt-6 d-flex align-center">
             <span class="d-block">Navbar Blur</span>
-            <v-spacer />
-            <v-switch
+            <VSpacer />
+            <VSwitch
               v-model="isNavbarBlurEnabled"
               class="ms-2 mt-0"
             />
@@ -212,22 +212,22 @@ const { width: windowWidth } = useWindowSize()
         <CustomizerSection title="Menu">
           <!-- 👉 Menu Type -->
           <span class="d-block">Menu Type</span>
-          <v-radio-group
+          <VRadioGroup
             v-model="appContentLayoutNav"
             inline
           >
-            <v-radio
+            <VRadio
               v-for="[key, val] in Object.entries(EnumAppContentLayoutNav)"
               :key="key"
               :label="key"
               :value="val"
             />
-          </v-radio-group>
+          </VRadioGroup>
           <!-- 👉 Menu Collapsed -->
           <div class="mt-6 d-flex align-center">
             <span class="d-block">Menu Collapsed</span>
-            <v-spacer />
-            <v-switch
+            <VSpacer />
+            <VSwitch
               v-model="isVerticalNavCollapsed"
               class="ms-2 mt-0"
             />
@@ -240,8 +240,8 @@ const { width: windowWidth } = useWindowSize()
           <!-- 👉 RTL -->
           <div class="mt-6 d-flex align-center">
             <span class="d-block">RTL</span>
-            <v-spacer />
-            <v-switch
+            <VSpacer />
+            <VSwitch
               v-model="isAppRtl"
               class="ms-2 mt-0"
             />
@@ -249,16 +249,16 @@ const { width: windowWidth } = useWindowSize()
 
           <!-- 👉 Route Transition -->
           <div class="mt-6">
-            <v-row>
-              <v-col
+            <VRow>
+              <VCol
                 cols="5"
                 class="d-flex align-center"
               >
                 <label for="route-transition">Router Transition</label>
-              </v-col>
+              </VCol>
 
-              <v-col cols="7">
-                <v-select
+              <VCol cols="7">
+                <VSelect
                   id="route-transition"
                   v-model="appRouteTransition"
                   :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
@@ -266,13 +266,13 @@ const { width: windowWidth } = useWindowSize()
                   item-value="value"
                   single-line
                 />
-              </v-col>
-            </v-row>
+              </VCol>
+            </VRow>
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
       </PerfectScrollbar>
-    </v-navigation-drawer>
+    </VNavigationDrawer>
   </template>
 </template>
 

@@ -1,27 +1,27 @@
 <template>
   <div class="demo-space-x">
-    <v-avatar color="primary">
+    <VAvatar color="primary">
       <span>PI</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="secondary">
+    <VAvatar color="secondary">
       <span class="text-white">SE</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="success">
+    <VAvatar color="success">
       <span>SU</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="info">
+    <VAvatar color="info">
       <span>IN</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="warning">
+    <VAvatar color="warning">
       <span>WA</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="error">
+    <VAvatar color="error">
       <span>ER</span>
-    </v-avatar>
+    </VAvatar>
   </div>
 </template>

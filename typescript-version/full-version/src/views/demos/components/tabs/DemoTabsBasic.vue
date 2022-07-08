@@ -4,23 +4,23 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
 </script>
 
 <template>
-  <v-tabs v-model="currentTab">
-    <v-tab>Tab One</v-tab>
-    <v-tab>Tab Two</v-tab>
-    <v-tab>Tab Three</v-tab>
-  </v-tabs>
+  <VTabs v-model="currentTab">
+    <VTab>Tab One</VTab>
+    <VTab>Tab Two</VTab>
+    <VTab>Tab Three</VTab>
+  </VTabs>
 
-  <v-window v-model="currentTab">
-    <v-window-item
+  <VWindow v-model="currentTab">
+    <VWindowItem
       v-for="item in 3"
       :key="item"
     >
-      <v-card>
-        <v-card-text
+      <VCard>
+        <VCardText
           class="pb-0"
           v-text="tabItemContent"
         />
-      </v-card>
-    </v-window-item>
-  </v-window>
+      </VCard>
+    </VWindowItem>
+  </VWindow>
 </template>

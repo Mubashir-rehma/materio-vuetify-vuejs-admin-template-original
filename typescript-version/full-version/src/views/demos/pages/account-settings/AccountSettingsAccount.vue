@@ -109,12 +109,12 @@ const currencies = [
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-card title="Profile Details">
-        <v-card-text class="d-flex">
+  <VRow>
+    <VCol cols="12">
+      <VCard title="Profile Details">
+        <VCardText class="d-flex">
           <!-- 👉 Avatar -->
-          <v-avatar
+          <VAvatar
             rounded="lg"
             size="100"
             class="me-6"
@@ -123,17 +123,17 @@ const currencies = [
 
           <!-- 👉 Upload Photo -->
           <div>
-            <v-btn
+            <VBtn
               color="primary"
               class="me-3 mt-5"
               @click="refInputEl?.click()"
             >
-              <v-icon
+              <VIcon
                 icon="mdi-cloud-upload-outline"
                 class="d-sm-none"
               />
               <span class="d-none d-sm-block">Upload new photo</span>
-            </v-btn>
+            </VBtn>
 
             <input
               ref="refInputEl"
@@ -143,191 +143,191 @@ const currencies = [
               @change="changeAvatar"
             >
 
-            <v-btn
+            <VBtn
               color="error"
               variant="tonal"
               class="mt-5"
               @click="resetAvatar"
             >
               Reset
-            </v-btn>
+            </VBtn>
 
             <p class="text-sm mt-5">
               Allowed JPG, GIF or PNG. Max size of 800K
             </p>
           </div>
-        </v-card-text>
+        </VCardText>
 
-        <v-divider />
+        <VDivider />
 
-        <v-card-text>
+        <VCardText>
           <!-- 👉 Form -->
-          <v-form class="mt-6">
-            <v-row>
+          <VForm class="mt-6">
+            <VRow>
               <!-- 👉 First Name -->
-              <v-col
+              <VCol
                 md="6"
                 cols="12"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.firstName"
                   label="First Name"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Last Name -->
-              <v-col
+              <VCol
                 md="6"
                 cols="12"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.lastName"
                   label="Last Name"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Email -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.email"
                   label="E-mail"
                   type="email"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Organization -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.org"
                   label="Organization"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Phone -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.phone"
                   label="Phone Number"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Address -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.address"
                   label="Address"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 State -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.state"
                   label="State"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Zip Code -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   v-model="accountDataLocal.zip"
                   label="Zip Code"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Country -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   v-model="accountDataLocal.country"
                   label="Country"
                   :items="['USA', 'Canada', 'UK', 'India', 'Australia']"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Language -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   v-model="accountDataLocal.language"
                   label="Language"
                   :items="['English', 'Spanish', 'Arabic', 'Hindi', 'Urdu']"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Timezone -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   v-model="accountDataLocal.timezone"
                   label="Timezone"
                   :items="timezones"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Currency -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   v-model="accountDataLocal.currency"
                   label="Currency"
                   :items="currencies"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Form Actions -->
-              <v-col cols="12">
-                <v-btn class="me-3">
+              <VCol cols="12">
+                <VBtn class="me-3">
                   Save changes
-                </v-btn>
+                </VBtn>
 
-                <v-btn
+                <VBtn
                   color="secondary"
                   variant="tonal"
                   type="reset"
                   @click.prevent="resetForm"
                 >
                   Reset
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-card-text>
-      </v-card>
-    </v-col>
+                </VBtn>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VCardText>
+      </VCard>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Delete Account -->
-      <v-card title="Delete Account">
-        <v-card-text>
+      <VCard title="Delete Account">
+        <VCardText>
           <!-- 👉 Alert Account delete -->
-          <v-alert
+          <VAlert
             color="warning"
             variant="tonal"
           >
@@ -335,27 +335,27 @@ const currencies = [
               Are you sure you want to delete your account?
             </p>
             <span>Once you delete your account, there is no going back. Please be certain.</span>
-          </v-alert>
+          </VAlert>
 
           <!-- 👉 Checkbox and Button  -->
-          <v-checkbox
+          <VCheckbox
             v-model="isAccountDeactivated"
             :rules="validateAccountDeactivation"
             label="I confirm my account deactivation"
           />
 
-          <v-btn
+          <VBtn
             :disabled="!isAccountDeactivated"
             color="error"
             class="mt-3"
             @click="isConfirmDialogOpen = true"
           >
             Deactivate Account
-          </v-btn>
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+          </VBtn>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 
   <!-- Confirm Dialog -->
   <ConfirmDialog

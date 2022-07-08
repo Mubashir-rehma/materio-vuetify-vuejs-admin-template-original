@@ -4,20 +4,20 @@ const isTooltipVisible = ref(false)
 
 <template>
   <div class="demo-space-x">
-    <v-btn @click="isTooltipVisible = !isTooltipVisible">
+    <VBtn @click="isTooltipVisible = !isTooltipVisible">
       toggle tooltip
-    </v-btn>
+    </VBtn>
 
-    <v-tooltip
+    <VTooltip
       :model-value="isTooltipVisible"
       anchor="top"
     >
       <template #activator="{ props }">
-        <v-icon v-bind="props">
+        <VIcon v-bind="props">
           mdi-instagram
-        </v-icon>
+        </VIcon>
       </template>
       <span>Programmatic tooltip</span>
-    </v-tooltip>
+    </VTooltip>
   </div>
 </template>

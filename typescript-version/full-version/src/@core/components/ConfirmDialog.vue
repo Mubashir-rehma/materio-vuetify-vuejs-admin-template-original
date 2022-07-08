@@ -25,36 +25,36 @@ const onCancel = () => {
 
 <template>
   <!-- 👉 Confirm Dialog -->
-  <v-dialog>
-    <v-card class="text-center px-10 py-4">
-      <v-card-text>
-        <v-btn
+  <VDialog>
+    <VCard class="text-center px-10 py-4">
+      <VCardText>
+        <VBtn
           icon="mdi-help"
           variant="tonal"
           color="warning"
           class="pa-4"
           :size="65"
         />
-      </v-card-text>
-      <v-card-text>
+      </VCardText>
+      <VCardText>
         {{ props.confirmationMsg }}
-      </v-card-text>
+      </VCardText>
 
-      <v-card-text>
-        <v-btn
+      <VCardText>
+        <VBtn
           class="me-3"
           @click="onConfirmation"
         >
           Confirm
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="secondary"
           variant="tonal"
           @click="onCancel"
         >
           Cancel
-        </v-btn>
-      </v-card-text>
-    </v-card>
-  </v-dialog>
+        </VBtn>
+      </VCardText>
+    </VCard>
+  </VDialog>
 </template>

@@ -121,7 +121,7 @@ const hideContent = () => {
 
     <!-- 👉 Transition Component -->
     <template v-else>
-      <component :is="themeConfig.horizontalNav.transition">
+      <Component :is="themeConfig.horizontalNav.transition">
         <div
           v-show="isContentShown"
           ref="refPopper"
@@ -134,7 +134,7 @@ const hideContent = () => {
             <slot name="content" />
           </div>
         </div>
-      </component>
+      </Component>
     </template>
     <!-- !SECTION -->
   </div>

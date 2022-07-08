@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const withIcon = { ts: '', js: '' }
 
 export const color = { ts: '', js: '' }

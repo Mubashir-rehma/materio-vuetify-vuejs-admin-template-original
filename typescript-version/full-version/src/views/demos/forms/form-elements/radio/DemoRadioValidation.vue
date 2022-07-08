@@ -4,17 +4,17 @@ const rules = [(value: number) => (value !== 3 ? true : 'Do not select the third
 </script>
 
 <template>
-  <v-radio-group
+  <VRadioGroup
     v-model="radioGroup"
     inline
     :rules="rules"
   >
-    <v-radio
+    <VRadio
       v-for="n in 3"
       :key="n"
       :error="radioGroup === 3 "
       :label="`Radio ${n}`"
       :value="n"
     />
-  </v-radio-group>
+  </VRadioGroup>
 </template>

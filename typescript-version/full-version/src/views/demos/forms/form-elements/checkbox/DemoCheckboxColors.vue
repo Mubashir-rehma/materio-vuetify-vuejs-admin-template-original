@@ -4,7 +4,7 @@ const colorCheckbox = ref(['primary', 'secondary', 'success', 'info', 'warning',
 
 <template>
   <div class="d-flex flex-wrap">
-    <v-checkbox
+    <VCheckbox
       v-for="color in colorCheckbox"
       :key="color"
       :label="color"

@@ -1,68 +1,68 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Default"
         rows="2"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Solo"
         rows="2"
         variant="solo"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Filled"
         rows="2"
         variant="filled"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Outlined"
         rows="2"
         variant="outlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Underlined"
         rows="2"
         variant="underlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-textarea
+      <VTextarea
         label="Plain"
         rows="2"
         variant="plain"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

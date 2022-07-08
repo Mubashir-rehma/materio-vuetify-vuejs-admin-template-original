@@ -5,19 +5,19 @@ const pageInfo = ref(3)
 </script>
 
 <template>
-  <v-pagination
+  <VPagination
     v-model="pageSuccess"
     :length="7"
     color="success"
   />
 
-  <v-pagination
+  <VPagination
     v-model="pageError"
     :length="7"
     color="error"
   />
 
-  <v-pagination
+  <VPagination
     v-model="pageInfo"
     :length="7"
     color="info"

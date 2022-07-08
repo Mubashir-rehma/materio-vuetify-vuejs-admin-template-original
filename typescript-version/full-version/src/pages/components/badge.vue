@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeStyle />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeColor />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgePosition />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeIcon />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeAvatarStatus />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeDynamicNotifications />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeShowOnHover />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,6 +122,6 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
 
         <DemoBadgeTabs />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <v-textarea
+  <VTextarea
     autocomplete="email"
     label="Email"
   />

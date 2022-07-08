@@ -50,8 +50,8 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
     />
 
     <!-- 👉 Faq sections and questions -->
-    <v-row>
-      <v-col
+    <VRow>
+      <VCol
         v-show="faqs.length"
         sd
         cols="12"
@@ -60,55 +60,55 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
         class="position-relative"
       >
         <!-- 👉 Tabs -->
-        <v-tabs
+        <VTabs
           v-model="activeTab"
           direction="vertical"
           class="v-tabs-pill"
           grow
         >
-          <v-tab
+          <VTab
             v-for="faq in faqs"
             :key="faq.faqTitle"
             :value="faq.faqTitle"
           >
-            <v-icon
+            <VIcon
               :icon="faq.faqIcon"
               :size="20"
               start
             />
             {{ faq.faqTitle }}
-          </v-tab>
-        </v-tabs>
-        <v-img
+          </VTab>
+        </VTabs>
+        <VImg
           :width="200"
           :src="sitingGirlWithLaptop"
           class="d-none d-sm-block mt-10"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         sm="8"
         lg="9"
       >
         <!-- 👉 Windows -->
-        <v-window v-model="activeTab">
-          <v-window-item
+        <VWindow v-model="activeTab">
+          <VWindowItem
             v-for="faq in faqs"
             :key="faq.faqTitle"
             :value="faq.faqTitle"
           >
             <div class="d-flex align-center mb-6">
-              <v-avatar
+              <VAvatar
                 rounded
                 class="v-avatar-light-bg text-primary me-3"
                 size="large"
               >
-                <v-icon
+                <VIcon
                   :size="36"
                   :icon="faq.faqIcon"
                 />
-              </v-avatar>
+              </VAvatar>
 
               <div>
                 <h6 class="text-h6">
@@ -118,27 +118,27 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
               </div>
             </div>
 
-            <v-expansion-panels
+            <VExpansionPanels
               v-model="activeQuestion"
               multiple
             >
-              <v-expansion-panel
+              <VExpansionPanel
                 v-for="(item, index) in faq.faqs"
                 :key="item.question"
                 :title="`Q${index + 1}:  ${item.question}`"
                 :text="item.answer"
               />
-            </v-expansion-panels>
-          </v-window-item>
-        </v-window>
-      </v-col>
+            </VExpansionPanels>
+          </VWindowItem>
+        </VWindow>
+      </VCol>
 
-      <v-col
+      <VCol
         v-show="!faqs.length"
         cols="12"
         :class="!faqs.length ? 'd-flex justify-center align-center' : ''"
       >
-        <v-icon
+        <VIcon
           icon="mdi-help-circle-outline"
           start
           size="20"
@@ -146,18 +146,18 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
         <span class="text-body-1 font-weight-medium">
           No Results Found!!
         </span>
-      </v-col>
-    </v-row>
+      </VCol>
+    </VRow>
 
     <!-- 👉 You still have a question? -->
     <div class="text-center pt-15">
-      <v-chip
+      <VChip
         label
         color="primary"
         size="small"
       >
         QUESTION?
-      </v-chip>
+      </VChip>
 
       <h6 class="text-h6">
         You still have a question?
@@ -167,35 +167,35 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
       </p>
 
       <!-- contacts -->
-      <v-row class="mt-4">
-        <v-col
+      <VRow class="mt-4">
+        <VCol
           v-for="contact in contactUs"
           :key="contact.icon"
           sm="6"
           cols="12"
         >
-          <v-card
+          <VCard
             flat
             color="secondary"
             variant="tonal"
           >
-            <v-card-text>
-              <v-avatar
+            <VCardText>
+              <VAvatar
                 rounded
                 class="v-avatar-light-bg text-primary me-3"
               >
-                <v-icon :icon="contact.icon" />
-              </v-avatar>
-            </v-card-text>
-            <v-card-text>
+                <VIcon :icon="contact.icon" />
+              </VAvatar>
+            </VCardText>
+            <VCardText>
               <h6 class="text-h6 mb-2">
                 {{ contact.via }}
               </h6>
               <span>{{ contact.tagLine }}</span>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
+            </VCardText>
+          </VCard>
+        </VCol>
+      </VRow>
     </div>
   </section>
 </template>

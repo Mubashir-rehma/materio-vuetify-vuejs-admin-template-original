@@ -1,69 +1,69 @@
 <template>
   <div class="demo-space-x">
-    <v-avatar
+    <VAvatar
       rounded="0"
       color="primary"
     >
-      <v-icon
+      <VIcon
         color="white"
         size="25"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       rounded="0"
       color="secondary"
     >
-      <v-icon
+      <VIcon
         color="white"
         size="25"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       rounded="0"
       color="success"
     >
-      <v-icon
+      <VIcon
         color="white"
         size="25"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       rounded="0"
       color="info"
     >
-      <v-icon
+      <VIcon
         color="white"
         size="25"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       rounded="0"
       color="warning"
     >
-      <v-icon
+      <VIcon
         color="white"
         size="25"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       rounded="0"
       color="error"
     >
-      <v-icon
+      <VIcon
         color="white"
         size="25"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
   </div>
 </template>

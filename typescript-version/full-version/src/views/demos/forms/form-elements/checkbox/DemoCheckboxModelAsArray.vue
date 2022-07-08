@@ -4,20 +4,20 @@ const selected = ref(['John'])
 
 <template>
   <div class="d-flex flex-wrap">
-    <v-checkbox
+    <VCheckbox
       v-model="selected"
       label="John"
       value="John"
     />
 
-    <v-checkbox
+    <VCheckbox
       v-model="selected"
       label="Jacob"
       color="success"
       value="Jacob"
     />
 
-    <v-checkbox
+    <VCheckbox
       v-model="selected"
       label="Johnson"
       color="info"

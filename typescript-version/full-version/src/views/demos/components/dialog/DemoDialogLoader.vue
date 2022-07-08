@@ -13,31 +13,31 @@ watch(isDialogVisible, value => {
 
 <template>
   <!-- Dialog Activator -->
-  <v-btn
+  <VBtn
     :disabled="isDialogVisible"
     @click="isDialogVisible = true"
   >
     Start loading
-  </v-btn>
+  </VBtn>
 
   <!-- Dialog -->
-  <v-dialog
+  <VDialog
     v-model="isDialogVisible"
     persistent
     width="300"
   >
-    <v-card
+    <VCard
       color="primary"
       width="300"
     >
-      <v-card-text class="pt-3">
+      <VCardText class="pt-3">
         Please stand by
-        <v-progress-linear
+        <VProgressLinear
           indeterminate
           color="white"
           class="mb-0"
         />
-      </v-card-text>
-    </v-card>
-  </v-dialog>
+      </VCardText>
+    </VCard>
+  </VDialog>
 </template>

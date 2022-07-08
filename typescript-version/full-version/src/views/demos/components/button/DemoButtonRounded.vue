@@ -1,25 +1,25 @@
 <template>
   <div class="demo-space-x">
-    <v-btn>
+    <VBtn>
       Normal Button
-    </v-btn>
-    <v-btn
+    </VBtn>
+    <VBtn
       rounded="lg"
       color="secondary"
     >
       Rounded Button
-    </v-btn>
-    <v-btn
+    </VBtn>
+    <VBtn
       :rounded="0"
       color="success"
     >
       Tile Button
-    </v-btn>
-    <v-btn
+    </VBtn>
+    <VBtn
       rounded="pill"
       color="info"
     >
       Pill Button
-    </v-btn>
+    </VBtn>
   </div>
 </template>

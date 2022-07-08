@@ -8,31 +8,31 @@ const values = ref<typeof items[number][]>([])
 </script>
 
 <template>
-  <v-form @submit.prevent="() => {}">
-    <v-row>
-      <v-col cols="12">
+  <VForm @submit.prevent="() => {}">
+    <VRow>
+      <VCol cols="12">
         <!-- 👉 Username -->
-        <v-text-field
+        <VTextField
           v-model="username"
           label="Username"
           placeholder="Username"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
+      <VCol cols="12">
         <!-- 👉 Email -->
-        <v-text-field
+        <VTextField
           v-model="email"
           label="Email"
           type="email"
           hint="Enter a Valid Email"
           placeholder="Email"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
+      <VCol cols="12">
         <!-- 👉 Password -->
-        <v-text-field
+        <VTextField
           v-model="password"
           label="Password"
           type="password"
@@ -40,45 +40,45 @@ const values = ref<typeof items[number][]>([])
           placeholder="Password"
           hint="Your password must be 8-20 characters long."
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
+      <VCol cols="12">
         <!-- 👉 Autocomplete -->
-        <v-autocomplete
+        <VAutocomplete
           v-model="values"
           :items="items"
           chips
           multiple
           label="Autocomplete"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
+      <VCol cols="12">
         <!-- 👉 Checkbox -->
-        <v-checkbox
+        <VCheckbox
           v-model="checkbox"
           density="compact"
           label="Remember me"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
+      <VCol cols="12">
         <!-- 👉 submit and reset button -->
-        <v-btn
+        <VBtn
           type="submit"
           class="me-2"
         >
           Submit
-        </v-btn>
+        </VBtn>
 
-        <v-btn
+        <VBtn
           color="secondary"
           type="reset"
           variant="outlined"
         >
           Reset
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

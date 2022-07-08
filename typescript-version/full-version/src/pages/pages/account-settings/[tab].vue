@@ -17,52 +17,52 @@ const tabs = [
 
 <template>
   <div>
-    <v-tabs
+    <VTabs
       v-model="activeTab"
       show-arrows
     >
-      <v-tab
+      <VTab
         v-for="item in tabs"
         :key="item.icon"
         :value="item.tab"
         :to="{ name: 'pages-account-settings-tab', params: { tab: item.tab } }"
       >
-        <v-icon
+        <VIcon
           size="20"
           start
         >
           {{ item.icon }}
-        </v-icon>
+        </VIcon>
         {{ item.title }}
-      </v-tab>
-    </v-tabs>
+      </VTab>
+    </VTabs>
 
-    <v-window v-model="activeTab">
+    <VWindow v-model="activeTab">
       <!-- Account -->
-      <v-window-item value="account">
+      <VWindowItem value="account">
         <AccountSettingsAccount />
-      </v-window-item>
+      </VWindowItem>
 
       <!-- Security -->
-      <v-window-item value="security">
+      <VWindowItem value="security">
         <AccountSettingsSecurity />
-      </v-window-item>
+      </VWindowItem>
 
       <!-- Billing -->
-      <v-window-item value="billing-plans">
+      <VWindowItem value="billing-plans">
         <AccountSettingsBillingAndPlans />
-      </v-window-item>
+      </VWindowItem>
 
       <!-- Notification -->
-      <v-window-item value="notification">
+      <VWindowItem value="notification">
         <AccountSettingsNotification />
-      </v-window-item>
+      </VWindowItem>
 
       <!-- Connections -->
-      <v-window-item value="connection">
+      <VWindowItem value="connection">
         <AccountSettingsConnections />
-      </v-window-item>
-    </v-window>
+      </VWindowItem>
+    </VWindow>
   </div>
 </template>Ō
 

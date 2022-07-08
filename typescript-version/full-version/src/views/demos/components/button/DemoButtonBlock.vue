@@ -1,24 +1,24 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-btn block>
+      <VBtn block>
         Block Button
-      </v-btn>
-    </v-col>
+      </VBtn>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-btn
+      <VBtn
         variant="outlined"
         block
       >
         Block Button
-      </v-btn>
-    </v-col>
-  </v-row>
+      </VBtn>
+    </VCol>
+  </VRow>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <v-text-field>
+  <VTextField>
     <template #label>
       What about &nbsp;<strong>icon</strong>&nbsp;here?
-      <v-icon>mdi-file-find-outline</v-icon>
+      <VIcon>mdi-file-find-outline</VIcon>
     </template>
-  </v-text-field>
+  </VTextField>
 </template>

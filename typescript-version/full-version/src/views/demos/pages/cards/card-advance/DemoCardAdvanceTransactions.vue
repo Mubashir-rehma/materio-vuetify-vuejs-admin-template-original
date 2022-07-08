@@ -74,66 +74,66 @@ const formateAmount = (amount: number) => {
 </script>
 
 <template>
-  <v-card>
+  <VCard>
     <!-- SECTION Card Header and Menu -->
-    <v-card-header>
-      <v-card-header-text>
+    <VCardHeader>
+      <VCardHeaderText>
         <!-- 👉 Title -->
-        <v-card-title>Transactions</v-card-title>
-      </v-card-header-text>
+        <VCardTitle>Transactions</VCardTitle>
+      </VCardHeaderText>
 
       <!-- 👉 menu -->
 
-      <v-btn
+      <VBtn
         size="x-small"
         variant="text"
         icon="mdi-dots-vertical"
         color="secondary"
         class="me-n3"
       />
-    </v-card-header>
+    </VCardHeader>
     <!-- !SECTION -->
 
     <!-- SECTION Transactions List -->
-    <v-list
+    <VList
       class="pt-0"
       lines="two"
     >
-      <v-list-item
+      <VListItem
         v-for="transaction in transactions"
         :key="transaction.for"
       >
         <!-- 👉 Avatar -->
-        <v-list-item-avatar
+        <VListItemAvatar
           rounded
           start
           :class="`v-avatar-light-bg px-2 text-${transactionsColors[transaction.gateway]}`"
         >
-          <v-img
+          <VImg
             height="20"
             :src="transaction.img"
           />
-        </v-list-item-avatar>
+        </VListItemAvatar>
 
         <!-- 👉 Title and subtitle  -->
-        <v-list-item-header>
-          <v-list-item-title>{{ transaction.gateway }}</v-list-item-title>
-          <v-list-item-subtitle class="text-caption">
+        <VListItemHeader>
+          <VListItemTitle>{{ transaction.gateway }}</VListItemTitle>
+          <VListItemSubtitle class="text-caption">
             {{ transaction.for }}
-          </v-list-item-subtitle>
-        </v-list-item-header>
+          </VListItemSubtitle>
+        </VListItemHeader>
 
         <!-- 👉 Amounts -->
-        <v-list-item-action class="font-weight-semibold">
+        <VListItemAction class="font-weight-semibold">
           <span>{{ formateAmount(transaction.amount) }}</span>
-          <v-icon
+          <VIcon
             :size="20"
             :color="Math.sign(transaction.amount) === 1 ? 'success' : 'error'"
             :icon="Math.sign(transaction.amount) === 1 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
           />
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
+        </VListItemAction>
+      </VListItem>
+    </VList>
     <!-- !SECTION -->
-  </v-card>
+  </VCard>
 </template>

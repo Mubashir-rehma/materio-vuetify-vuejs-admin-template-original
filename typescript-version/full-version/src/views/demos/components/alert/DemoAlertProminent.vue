@@ -1,29 +1,29 @@
 <template>
   <div class="demo-space-y">
-    <v-alert
+    <VAlert
       prominent
       type="info"
     >
       <template #text>
         Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
       </template>
-    </v-alert>
+    </VAlert>
 
-    <v-alert
+    <VAlert
       color="success"
       density="compact"
       icon="mdi-school"
       prominent
     >
       Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
-    </v-alert>
+    </VAlert>
 
-    <v-alert
+    <VAlert
       icon="mdi-shield-lock-outline"
       prominent
       type="warning"
     >
       Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
-    </v-alert>
+    </VAlert>
   </div>
 </template>

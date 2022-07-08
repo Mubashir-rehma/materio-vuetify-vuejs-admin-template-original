@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 
         <DemoRangeSliderBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 
         <DemoRangeSliderDisabled />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 
         <DemoRangeSliderColor />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 
         <DemoRangeSliderStep />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -79,9 +79,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 
         <DemoRangeSliderThumbLabel />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -94,6 +94,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/range-slider/demoCo
 
         <DemoRangeSliderVertical />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

@@ -3,7 +3,7 @@ const currentPage = ref(1)
 </script>
 
 <template>
-  <v-pagination
+  <VPagination
     v-model="currentPage"
     :length="5"
     prev-icon="mdi-menu-left"

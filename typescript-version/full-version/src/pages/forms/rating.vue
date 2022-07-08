@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingSize />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingLength />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingClearable />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingReadonly />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,9 +122,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingHover />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -137,9 +137,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingIncremented />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -152,6 +152,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/rating/demoCodeRati
 
         <DemoRatingItemSlot />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

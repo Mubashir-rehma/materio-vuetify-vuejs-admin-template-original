@@ -76,92 +76,92 @@ const socialAccounts = ref([
 </script>
 
 <template>
-  <v-row>
+  <VRow>
     <!-- 👉 Connected Accounts -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card
+      <VCard
         title="Connected Accounts"
         subtitle="Display content from your connected accounts on your site"
       >
-        <v-list lines="two">
-          <v-list-item
+        <VList lines="two">
+          <VListItem
             v-for="item in connectedAccounts"
             :key="item.logo"
           >
-            <v-list-item-avatar start>
-              <v-img
+            <VListItemAvatar start>
+              <VImg
                 :src="item.logo"
                 height="30"
               />
-            </v-list-item-avatar>
+            </VListItemAvatar>
 
-            <v-list-item-header>
-              <v-list-item-title>{{ item.name }}</v-list-item-title>
-              <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
-            </v-list-item-header>
+            <VListItemHeader>
+              <VListItemTitle>{{ item.name }}</VListItemTitle>
+              <VListItemSubtitle>{{ item.subtitle }}</VListItemSubtitle>
+            </VListItemHeader>
 
-            <v-list-item-action>
-              <v-switch
+            <VListItemAction>
+              <VSwitch
                 v-model="item.connected"
                 density="compact"
               />
-            </v-list-item-action>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-col>
+            </VListItemAction>
+          </VListItem>
+        </VList>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Social Accounts -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card
+      <VCard
         title="Social Accounts"
         subtitle="Display content from social accounts on your site"
       >
-        <v-list lines="two">
-          <v-list-item
+        <VList lines="two">
+          <VListItem
             v-for="item in socialAccounts"
             :key="item.logo"
           >
-            <v-list-item-avatar start>
-              <v-img
+            <VListItemAvatar start>
+              <VImg
                 :src="item.logo"
                 height="30"
               />
-            </v-list-item-avatar>
+            </VListItemAvatar>
 
-            <v-list-item-header>
-              <v-list-item-title>{{ item.name }}</v-list-item-title>
-              <v-list-item-subtitle
+            <VListItemHeader>
+              <VListItemTitle>{{ item.name }}</VListItemTitle>
+              <VListItemSubtitle
                 v-if="item.links?.link"
                 :href="item.links?.link"
                 tag="a"
               >
                 {{ item.links?.username }}
-              </v-list-item-subtitle>
+              </VListItemSubtitle>
 
-              <v-list-item-subtitle v-else>
+              <VListItemSubtitle v-else>
                 Not Connected
-              </v-list-item-subtitle>
-            </v-list-item-header>
+              </VListItemSubtitle>
+            </VListItemHeader>
 
-            <v-list-item-action>
-              <v-btn
+            <VListItemAction>
+              <VBtn
                 variant="tonal"
                 rounded="lg"
                 size="small"
                 :color="item.connected ? 'error' : 'secondary'"
                 :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
               />
-            </v-list-item-action>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-col>
-  </v-row>
+            </VListItemAction>
+          </VListItem>
+        </VList>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>

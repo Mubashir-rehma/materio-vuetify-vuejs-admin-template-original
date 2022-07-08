@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchInset />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchModelAsArray />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchLabelSlot />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -94,9 +94,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchTrueAndFalseValue />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -109,6 +109,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
 
         <DemoSwitchStates />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

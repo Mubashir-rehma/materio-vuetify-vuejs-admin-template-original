@@ -36,7 +36,7 @@ const { width: windowWidth } = useWindowSize()
           @click="toggleVerticalOverlayNavActive(true)"
         />
 
-        <v-spacer />
+        <VSpacer />
 
         <NavBarI18n />
         <NavbarThemeSwitcher />
@@ -46,14 +46,14 @@ const { width: windowWidth } = useWindowSize()
     </template>
 
     <!-- 👉 Pages -->
-    <router-view v-slot="{ Component }">
-      <transition
+    <RouterView v-slot="{ Component }">
+      <Transition
         :name="appRouteTransition"
         mode="out-in"
       >
-        <component :is="Component" />
-      </transition>
-    </router-view>
+        <Component :is="Component" />
+      </Transition>
+    </RouterView>
 
     <!-- 👉 Footer -->
     <template #footer>

@@ -1,49 +1,49 @@
 <template>
   <div class="demo-space-x">
-    <v-chip variant="outlined">
+    <VChip variant="outlined">
       Default
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       color="primary"
       variant="outlined"
     >
       Primary
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       color="secondary"
       variant="outlined"
     >
       Secondary
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       color="success"
       variant="outlined"
     >
       Success
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       color="info"
       variant="outlined"
     >
       Info
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       color="warning"
       variant="outlined"
     >
       Warning
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       color="error"
       variant="outlined"
     >
       Error
-    </v-chip>
+    </VChip>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import briefcase from '@/assets/images/cards/briefcase.png';
-import creditCard from '@/assets/images/cards/logo-credit-card-2.png';
-import masterCard from '@/assets/images/cards/logo-mastercard-small.png';
+import briefcase from '@/assets/images/cards/briefcase.png'
+import creditCard from '@/assets/images/cards/logo-credit-card-2.png'
+import masterCard from '@/assets/images/cards/logo-mastercard-small.png'
 
 const savedCards = [
   {
@@ -18,38 +18,38 @@ const savedCards = [
 </script>
 
 <template>
-  <v-card>
+  <VCard>
     <!-- SECTION Card Header and Menu -->
-    <v-card-header>
-      <v-card-header-text>
+    <VCardHeader>
+      <VCardHeaderText>
         <!-- 👉 Title -->
-        <v-card-title>Upgrade Your Plan</v-card-title>
-      </v-card-header-text>
+        <VCardTitle>Upgrade Your Plan</VCardTitle>
+      </VCardHeaderText>
 
       <!-- 👉 menu -->
 
-      <v-btn
+      <VBtn
         size="x-small"
         variant="text"
         icon="mdi-dots-vertical"
         color="secondary"
         class="me-n3"
       />
-    </v-card-header>
+    </VCardHeader>
     <!-- !SECTION -->
 
-    <v-card-text>
+    <VCardText>
       <span class="text-caption">Please make the payment to start enjoying all the features of our premium plan as soon as possible.</span>
 
       <!-- SECTION Upgrade plan banner -->
-      <v-list class="plan-upgrade-banner">
-        <v-list-item
+      <VList class="plan-upgrade-banner">
+        <VListItem
           active-color="primary"
           active
           rounded
         >
           <!-- 👉 Avatar -->
-          <v-list-item-avatar
+          <VListItemAvatar
             start
             rounded
             :size="44"
@@ -57,39 +57,39 @@ const savedCards = [
             class="plan-details pa-2"
           />
           <!-- 👉 Title and subtitle -->
-          <v-list-item-header>
-            <v-list-item-title class="text-body-2 font-weight-medium">
+          <VListItemHeader>
+            <VListItemTitle class="text-body-2 font-weight-medium">
               Platinum
-            </v-list-item-title>
-            <v-list-item-subtitle class="text-caption font-weight-medium">
+            </VListItemTitle>
+            <VListItemSubtitle class="text-caption font-weight-medium">
               Upgrade Plan
-            </v-list-item-subtitle>
-          </v-list-item-header>
+            </VListItemSubtitle>
+          </VListItemHeader>
 
           <!-- 👉 Actions -->
-          <v-list-item-action>
+          <VListItemAction>
             <sup class="text-caption text-secondary">$</sup>
             <span class="text-h5 font-weight-semibold">5250</span>
             <sub class="text-secondary">/year</sub>
-          </v-list-item-action>
-        </v-list-item>
-      </v-list>
+          </VListItemAction>
+        </VListItem>
+      </VList>
       <!-- !SECTION -->
 
       <!-- SECTION Payment Details -->
-      <v-list
+      <VList
         class="mx-n4 pt-0"
       >
-        <v-list-subheader>
+        <VListSubheader>
           Payment details
-        </v-list-subheader>
+        </VListSubheader>
 
-        <v-list-item
+        <VListItem
           v-for="card in savedCards"
           :key="card.logo"
         >
           <!-- 👉 Avatar -->
-          <v-list-item-avatar
+          <VListItemAvatar
             rounded
             start
             :size="45"
@@ -97,53 +97,53 @@ const savedCards = [
           />
 
           <!-- 👉 Title and Subtitle -->
-          <v-list-item-header>
-            <v-list-item-title class="text-body-2 font-weight-medium">
+          <VListItemHeader>
+            <VListItemTitle class="text-body-2 font-weight-medium">
               {{ card.type }}
-            </v-list-item-title>
-            <v-list-item-subtitle class="text-caption">
+            </VListItemTitle>
+            <VListItemSubtitle class="text-caption">
               {{ card.number }}
-            </v-list-item-subtitle>
-          </v-list-item-header>
+            </VListItemSubtitle>
+          </VListItemHeader>
 
           <!-- 👉 Action -->
-          <v-list-item-action>
-            <v-text-field
+          <VListItemAction>
+            <VTextField
               density="compact"
               placeholder="CVV"
             />
-          </v-list-item-action>
-        </v-list-item>
+          </VListItemAction>
+        </VListItem>
 
         <!-- 👉 Add Payment  -->
-        <v-list-item>
+        <VListItem>
           <a
             href="javascript:void(0)"
             class="text-primary text-caption"
           >Add Payment Method</a>
-        </v-list-item>
-      </v-list>
+        </VListItem>
+      </VList>
       <!-- !SECTION -->
 
       <!-- 👉 Email -->
-      <v-form>
-        <v-row>
-          <v-col cols="12">
-            <v-text-field placeholder="Email Address" />
-          </v-col>
+      <VForm>
+        <VRow>
+          <VCol cols="12">
+            <VTextField placeholder="Email Address" />
+          </VCol>
 
-          <v-col cols="12">
-            <v-btn
+          <VCol cols="12">
+            <VBtn
               block
               append-icon="mdi-arrow-right"
             >
               Process To Payment
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-form>
-    </v-card-text>
-  </v-card>
+            </VBtn>
+          </VCol>
+        </VRow>
+      </VForm>
+    </VCardText>
+  </VCard>
 </template>
 
 <style lang="scss">

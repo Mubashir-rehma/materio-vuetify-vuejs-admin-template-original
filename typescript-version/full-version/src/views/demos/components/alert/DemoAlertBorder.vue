@@ -1,35 +1,35 @@
 <template>
   <div class="demo-space-y">
-    <v-alert
+    <VAlert
       color="primary"
       border="top"
       variant="tonal"
     >
       Good Morning! Start your day with some alerts.
-    </v-alert>
+    </VAlert>
 
-    <v-alert
+    <VAlert
       border="end"
       color="secondary"
       variant="tonal"
     >
       Good Morning! Start your day with some alerts.
-    </v-alert>
+    </VAlert>
 
-    <v-alert
+    <VAlert
       border="bottom"
       color="success"
       variant="tonal"
     >
       Good Morning! Start your day with some alerts.
-    </v-alert>
+    </VAlert>
 
-    <v-alert
+    <VAlert
       border="start"
       color="info"
       variant="tonal"
     >
       Good Morning! Start your day with some alerts.
-    </v-alert>
+    </VAlert>
   </div>
 </template>

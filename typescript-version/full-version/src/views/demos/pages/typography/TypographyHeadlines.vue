@@ -1,6 +1,6 @@
 <template>
-  <v-card title="Headlines">
-    <v-card-text class="d-flex flex-column gap-y-8">
+  <VCard title="Headlines">
+    <VCardText class="d-flex flex-column gap-y-8">
       <div>
         <h1 class="text-h1">
           Heading 1
@@ -42,6 +42,6 @@
         </h6>
         <span>font-size: 1.25rem / line-height: 2rem / font-weight: 500</span>
       </div>
-    </v-card-text>
-  </v-card>
+    </VCardText>
+  </VCard>
 </template>

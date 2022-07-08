@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const showOnHover = { ts: '', js: '' }
 
 export const dynamicNotifications = { ts: '', js: '' }

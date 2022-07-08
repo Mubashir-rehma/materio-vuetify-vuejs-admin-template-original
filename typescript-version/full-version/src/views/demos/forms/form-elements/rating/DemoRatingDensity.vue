@@ -1,3 +1,3 @@
 <template>
-  <v-rating density="compact" />
+  <VRating density="compact" />
 </template>

@@ -13,153 +13,153 @@ const isSnackbarCenteredVisible = ref(false)
 <template>
   <div class="demo-space-x">
     <!-- top  -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarTopVisible = true"
     >
-      <v-icon>mdi-arrow-up</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-up</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarTopVisible"
       location="top"
     >
       I'm a top snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- top end -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarTopEndVisible = true"
     >
-      <v-icon>mdi-arrow-top-right</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-top-right</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarTopEndVisible"
       location="top end"
     >
       I'm a top right snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- center end -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarEndVisible = true"
     >
-      <v-icon>mdi-arrow-right</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-right</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarEndVisible"
       location="end center"
     >
       I'm a center end snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- bottom end -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarBottomEndVisible = true"
     >
-      <v-icon>mdi-arrow-bottom-right</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-bottom-right</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarBottomEndVisible"
       location="bottom end"
     >
       I'm a bottom end snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- bottom -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarBottomVisible = true"
     >
-      <v-icon>mdi-arrow-down</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-down</VIcon>
+    </VBtn>
 
-    <v-snackbar v-model="isSnackbarBottomVisible">
+    <VSnackbar v-model="isSnackbarBottomVisible">
       I'm a bottom snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- bottom start -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarBottomStartVisible = true"
     >
-      <v-icon>mdi-arrow-bottom-left</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-bottom-left</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarBottomStartVisible"
       location="bottom start"
     >
       I'm a bottom start snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- center start -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarStartVisible = true"
     >
-      <v-icon>mdi-arrow-left</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-left</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarStartVisible"
       location="start center"
     >
       I'm a center start snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- top start -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarTopStartVisible = true"
     >
-      <v-icon>mdi-arrow-top-left</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-top-left</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarTopStartVisible"
       location="top start"
     >
       I'm a top start snackbar.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- center -->
-    <v-btn
+    <VBtn
       icon
       size="x-small"
       variant="text"
       @click="isSnackbarCenteredVisible = true"
     >
-      <v-icon>mdi-arrow-collapse-all</v-icon>
-    </v-btn>
+      <VIcon>mdi-arrow-collapse-all</VIcon>
+    </VBtn>
 
-    <v-snackbar
+    <VSnackbar
       v-model="isSnackbarCenteredVisible"
       location="center"
     >
       I'm a center snackbar.
-    </v-snackbar>
+    </VSnackbar>
   </div>
 </template>

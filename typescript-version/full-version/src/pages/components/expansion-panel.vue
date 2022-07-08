@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -18,9 +18,9 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 
         <DemoExpansionPanelBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -34,9 +34,9 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 
         <DemoExpansionPanelAccordion />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -50,9 +50,9 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 
         <DemoExpansionPanelInset />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -68,9 +68,9 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 
         <DemoExpansionPanelPopout />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -84,9 +84,9 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 
         <DemoExpansionPanelCustomIcon />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -100,6 +100,6 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
 
         <DemoExpansionPanelModel />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

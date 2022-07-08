@@ -21,27 +21,27 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <!-- 👉 Image -->
     <div class="misc-avatar w-100 text-center">
-      <v-img
+      <VImg
         :src="misc401"
         alt="Coming Soon"
         :max-width="800"
         class="mx-auto"
       />
-      <v-btn
+      <VBtn
         to="/"
         class="mt-10"
       >
         Back to Home
-      </v-btn>
+      </VBtn>
     </div>
 
     <!-- 👉 Footer -->
-    <v-img
+    <VImg
       :src="tree"
       class="misc-footer-tree d-none d-md-block"
     />
 
-    <v-img
+    <VImg
       :src="authThemeMask"
       class="misc-footer-img d-none d-md-block"
     />

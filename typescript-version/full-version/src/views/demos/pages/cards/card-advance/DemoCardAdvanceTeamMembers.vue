@@ -101,27 +101,27 @@ const teamMembers = [
 </script>
 
 <template>
-  <v-card>
+  <VCard>
     <!-- SECTION Card Header and Menu -->
-    <v-card-header>
-      <v-card-header-text>
+    <VCardHeader>
+      <VCardHeaderText>
         <!-- 👉 Title -->
-        <v-card-title>Team Members</v-card-title>
-      </v-card-header-text>
+        <VCardTitle>Team Members</VCardTitle>
+      </VCardHeaderText>
 
       <!-- 👉 menu -->
-      <v-btn
+      <VBtn
         size="x-small"
         variant="text"
         icon="mdi-dots-vertical"
         color="secondary"
         class="me-n3"
       />
-    </v-card-header>
+    </VCardHeader>
     <!-- !SECTION -->
 
     <!-- TODO try to remove table border -->
-    <v-table class="text-no-wrap">
+    <VTable class="text-no-wrap">
       <thead>
         <tr>
           <th>Name</th>
@@ -139,7 +139,7 @@ const teamMembers = [
           <td>
             <div class="d-flex">
               <div class="me-3">
-                <v-avatar :image="member.profilePic" />
+                <VAvatar :image="member.profilePic" />
               </div>
               <div>
                 <p class="text-body-2 font-weight-semibold mb-0">
@@ -151,12 +151,12 @@ const teamMembers = [
           </td>
 
           <td>
-            <v-chip
+            <VChip
               :color="member.projectIndication"
               size="small"
             >
               {{ member.project }}
-            </v-chip>
+            </VChip>
           </td>
 
           <td>
@@ -166,7 +166,7 @@ const teamMembers = [
           </td>
 
           <td>
-            <vue-apex-charts
+            <VueApexCharts
               type="radialBar"
               :options="getChartConfig(member.progressIndication)"
               :series="member.progress"
@@ -176,6 +176,6 @@ const teamMembers = [
           </td>
         </tr>
       </tbody>
-    </v-table>
-  </v-card>
+    </VTable>
+  </VCard>
 </template>

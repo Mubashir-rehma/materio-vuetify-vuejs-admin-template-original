@@ -4,7 +4,7 @@ const icons = ['mdi-snowflake', 'mdi-leaf', 'mdi-fire', 'mdi-water']
 </script>
 
 <template>
-  <v-range-slider
+  <VRangeSlider
     :tick="seasons"
     min="0"
     max="3"
@@ -14,7 +14,7 @@ const icons = ['mdi-snowflake', 'mdi-leaf', 'mdi-fire', 'mdi-water']
     tick-size="4"
   >
     <template #thumb-label="{ modelValue }">
-      <v-icon :icon="icons[modelValue]" />
+      <VIcon :icon="icons[modelValue]" />
     </template>
-  </v-range-slider>
+  </VRangeSlider>
 </template>

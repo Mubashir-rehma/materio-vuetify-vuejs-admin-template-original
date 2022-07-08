@@ -4,38 +4,38 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
 </script>
 
 <template>
-  <v-tabs
+  <VTabs
     v-model="currentTab"
     grow
     stacked
   >
-    <v-tab value="tab-1">
-      <v-icon>mdi-phone</v-icon>
+    <VTab value="tab-1">
+      <VIcon>mdi-phone</VIcon>
       Recents
-    </v-tab>
+    </VTab>
 
-    <v-tab value="tab-2">
-      <v-icon>mdi-heart-outline</v-icon>
+    <VTab value="tab-2">
+      <VIcon>mdi-heart-outline</VIcon>
       Favorites
-    </v-tab>
+    </VTab>
 
-    <v-tab value="tab-3">
-      <v-icon>mdi-account-box-outline</v-icon>
+    <VTab value="tab-3">
+      <VIcon>mdi-account-box-outline</VIcon>
       Nearby
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 
-  <v-window v-model="currentTab">
-    <v-window-item
+  <VWindow v-model="currentTab">
+    <VWindowItem
       v-for="i in 3"
       :key="i"
       :value="`tab-${i}`"
     >
-      <v-card>
-        <v-card-text class="pb-0">
+      <VCard>
+        <VCardText class="pb-0">
           {{ tabItemText }}
-        </v-card-text>
-      </v-card>
-    </v-window-item>
-  </v-window>
+        </VCardText>
+      </VCard>
+    </VWindowItem>
+  </VWindow>
 </template>

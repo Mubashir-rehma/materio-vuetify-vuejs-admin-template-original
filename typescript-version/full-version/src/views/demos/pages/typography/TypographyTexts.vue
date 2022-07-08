@@ -1,14 +1,14 @@
 <template>
-  <v-card title="Texts">
-    <v-card-text>
-      <v-row>
-        <v-col
+  <VCard title="Texts">
+    <VCardText>
+      <VRow>
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-subtitle-1 text-no-wrap">text-subtitle-1</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -16,15 +16,15 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 1rem / line-height: 1.75rem / font-weight: 400</small>
-        </v-col>
+        </VCol>
 
-        <v-col
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-subtitle-2 text-no-wrap">text-subtitle-2</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -32,15 +32,15 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 0.875rem / line-height: 1.375rem / font-weight: 500</small>
-        </v-col>
+        </VCol>
 
-        <v-col
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-body-1 text-no-wrap">text-body-1</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -48,15 +48,15 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 1rem / line-height: 1.5rem / font-weight: 400</small>
-        </v-col>
+        </VCol>
 
-        <v-col
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-body-2 text-no-wrap">text-body-2</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -64,15 +64,15 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 0.875rem / line-height: 1.25rem / font-weight: 400</small>
-        </v-col>
+        </VCol>
 
-        <v-col
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-caption">text-caption</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -80,15 +80,15 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 0.75rem / line-height: 1.25rem / font-weight: 400</small>
-        </v-col>
+        </VCol>
 
-        <v-col
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-overline text-no-wrap">text-overline</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -96,15 +96,15 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 0.75rem / line-height: 2rem / font-weight: 500</small>
-        </v-col>
+        </VCol>
 
-        <v-col
+        <VCol
           cols="4"
           md="2"
         >
           <span class="text-button">text-button</span>
-        </v-col>
-        <v-col
+        </VCol>
+        <VCol
           cols="8"
           md="10"
         >
@@ -112,8 +112,8 @@
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
           <small>font-size: 0.875rem / line-height: 2.25rem / font-weight: 500</small>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+        </VCol>
+      </VRow>
+    </VCardText>
+  </VCard>
 </template>

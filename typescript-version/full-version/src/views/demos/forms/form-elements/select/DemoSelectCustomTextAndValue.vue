@@ -11,7 +11,7 @@ const items = [
 </script>
 
 <template>
-  <v-select
+  <VSelect
     v-model="selectedOption"
     :hint="`${selectedOption.state}, ${selectedOption.abbr}`"
     :items="items"

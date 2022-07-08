@@ -1,19 +1,19 @@
 <template>
-  <v-list>
-    <v-list-item>
-      <v-list-item-title>Cras justo odio</v-list-item-title>
-    </v-list-item>
+  <VList>
+    <VListItem>
+      <VListItemTitle>Cras justo odio</VListItemTitle>
+    </VListItem>
 
-    <v-list-item>
-      <v-list-item-title>Dapibus ac facilisis in</v-list-item-title>
-    </v-list-item>
+    <VListItem>
+      <VListItemTitle>Dapibus ac facilisis in</VListItemTitle>
+    </VListItem>
 
-    <v-list-item>
-      <v-list-item-title>Morbi leo risus</v-list-item-title>
-    </v-list-item>
+    <VListItem>
+      <VListItemTitle>Morbi leo risus</VListItemTitle>
+    </VListItem>
 
-    <v-list-item>
-      <v-list-item-title>Porta ac consectetur ac</v-list-item-title>
-    </v-list-item>
-  </v-list>
+    <VListItem>
+      <VListItemTitle>Porta ac consectetur ac</VListItemTitle>
+    </VListItem>
+  </VList>
 </template>

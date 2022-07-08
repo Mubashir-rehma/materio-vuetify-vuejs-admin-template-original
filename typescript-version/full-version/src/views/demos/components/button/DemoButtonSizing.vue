@@ -1,32 +1,32 @@
 <template>
   <div class="demo-space-x">
-    <v-btn size="x-large">
+    <VBtn size="x-large">
       Extra large Button
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="success"
       size="large"
     >
       Large Button
-    </v-btn>
+    </VBtn>
 
-    <v-btn color="info">
+    <VBtn color="info">
       Normal Button
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       size="small"
       color="warning"
     >
       Small Button
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       size="x-small"
       color="error"
     >
       Extra small Button
-    </v-btn>
+    </VBtn>
   </div>
 </template>

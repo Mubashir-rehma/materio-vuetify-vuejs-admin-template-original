@@ -1,56 +1,56 @@
 <template>
-  <v-list
+  <VList
     lines="three"
     select-strategy="independent"
   >
-    <v-list-subheader>General</v-list-subheader>
+    <VListSubheader>General</VListSubheader>
 
-    <v-list-item value="notifications">
+    <VListItem value="notifications">
       <template #default="{ isActive }">
-        <v-list-item-avatar start>
-          <v-checkbox
+        <VListItemAvatar start>
+          <VCheckbox
             :model-value="isActive"
             color="primary"
           />
-        </v-list-item-avatar>
+        </VListItemAvatar>
 
-        <v-list-item-header>
-          <v-list-item-title>Notifications</v-list-item-title>
-          <v-list-item-subtitle>Notify me about updates to apps or games that I downloaded</v-list-item-subtitle>
-        </v-list-item-header>
+        <VListItemHeader>
+          <VListItemTitle>Notifications</VListItemTitle>
+          <VListItemSubtitle>Notify me about updates to apps or games that I downloaded</VListItemSubtitle>
+        </VListItemHeader>
       </template>
-    </v-list-item>
+    </VListItem>
 
-    <v-list-item value="sound">
+    <VListItem value="sound">
       <template #default="{ isActive }">
-        <v-list-item-avatar start>
-          <v-checkbox
+        <VListItemAvatar start>
+          <VCheckbox
             :model-value="isActive"
             color="primary"
           />
-        </v-list-item-avatar>
+        </VListItemAvatar>
 
-        <v-list-item-header>
-          <v-list-item-title>Sound</v-list-item-title>
-          <v-list-item-subtitle>Auto-update apps at any time. Data charges may apply</v-list-item-subtitle>
-        </v-list-item-header>
+        <VListItemHeader>
+          <VListItemTitle>Sound</VListItemTitle>
+          <VListItemSubtitle>Auto-update apps at any time. Data charges may apply</VListItemSubtitle>
+        </VListItemHeader>
       </template>
-    </v-list-item>
+    </VListItem>
 
-    <v-list-item value="widgets">
+    <VListItem value="widgets">
       <template #default="{ isActive }">
-        <v-list-item-avatar start>
-          <v-checkbox
+        <VListItemAvatar start>
+          <VCheckbox
             :model-value="isActive"
             color="primary"
           />
-        </v-list-item-avatar>
+        </VListItemAvatar>
 
-        <v-list-item-header>
-          <v-list-item-title>Auto-add widgets</v-list-item-title>
-          <v-list-item-subtitle>Automatically add home screen widgets when downloads complete</v-list-item-subtitle>
-        </v-list-item-header>
+        <VListItemHeader>
+          <VListItemTitle>Auto-add widgets</VListItemTitle>
+          <VListItemSubtitle>Automatically add home screen widgets when downloads complete</VListItemSubtitle>
+        </VListItemHeader>
       </template>
-    </v-list-item>
-  </v-list>
+    </VListItem>
+  </VList>
 </template>

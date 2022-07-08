@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -14,13 +14,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.basic"
       >
-        <v-card-text><code>v-list</code> component can contain an avatar, content, actions and much more.</v-card-text>
+        <VCardText><code>v-list</code> component can contain an avatar, content, actions and much more.</VCardText>
 
         <DemoListBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -30,13 +30,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.rounded"
       >
-        <v-card-text>You can make <code>v-list-item</code> rounded using <code>rounded</code> prop.</v-card-text>
+        <VCardText>You can make <code>v-list-item</code> rounded using <code>rounded</code> prop.</VCardText>
 
         <DemoListRounded />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -46,13 +46,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         :code="demoCode.density"
         no-padding
       >
-        <v-card-text>Use <code>density</code> prop to adjusts the spacing within the component. Available options are: <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</v-card-text>
+        <VCardText>Use <code>density</code> prop to adjusts the spacing within the component. Available options are: <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</VCardText>
 
         <DemoListDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,13 +62,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.nav"
       >
-        <v-card-text>Lists can receive an alternative <code>nav</code> styling that reduces the width <code>v-list-item</code> takes up as well as adding a border radius.</v-card-text>
+        <VCardText>Lists can receive an alternative <code>nav</code> styling that reduces the width <code>v-list-item</code> takes up as well as adding a border radius.</VCardText>
 
         <DemoListNav />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -78,13 +78,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.actionAndItemGroup"
       >
-        <v-card-text>A <code>three-line</code> list with actions. Utilizing <code>v-list-group</code>, easily connect actions to your tiles.</v-card-text>
+        <VCardText>A <code>three-line</code> list with actions. Utilizing <code>v-list-group</code>, easily connect actions to your tiles.</VCardText>
 
         <DemoListActionAndItemGroup />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -94,15 +94,15 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.subGroup"
       >
-        <v-card-text>
+        <VCardText>
           Using the <code>v-list-group</code> component you can create up to 2 levels in depth using the sub-group prop.
-        </v-card-text>
+        </VCardText>
 
         <DemoListSubGroup />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -112,13 +112,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.twoLinesAndSubheader"
       >
-        <v-card-text>Lists can contain subheaders, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.</v-card-text>
+        <VCardText>Lists can contain subheaders, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.</VCardText>
 
         <DemoListTwoLinesAndSubheader />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -128,13 +128,13 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.threeLine"
       >
-        <v-card-text>For three line lists, the subtitle will clamp vertically at 2 lines and then ellipsis. This feature uses line-clamp and is not supported in all browsers.</v-card-text>
+        <VCardText>For three line lists, the subtitle will clamp vertically at 2 lines and then ellipsis. This feature uses line-clamp and is not supported in all browsers.</VCardText>
 
         <DemoListThreeLine />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -144,12 +144,12 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
         no-padding
         :code="demoCode.shaped"
       >
-        <v-card-text>
+        <VCardText>
           Shaped lists have rounded borders on one side of the <code>v-list-item</code>.
-        </v-card-text>
+        </VCardText>
 
         <DemoListShaped />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

@@ -3,7 +3,7 @@ const textareaValue = ref('Hello!')
 </script>
 
 <template>
-  <v-textarea
+  <VTextarea
     v-model="textareaValue"
     counter
     label="Text"

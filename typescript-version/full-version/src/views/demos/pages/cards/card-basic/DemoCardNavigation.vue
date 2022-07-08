@@ -6,87 +6,87 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       md="6"
       cols="12"
     >
-      <v-card>
-        <v-tabs v-model="navigationTab">
-          <v-tab
+      <VCard>
+        <VTabs v-model="navigationTab">
+          <VTab
             v-for="item in tabItems"
             :key="item"
             :value="item"
           >
             {{ item }}
-          </v-tab>
-        </v-tabs>
+          </VTab>
+        </VTabs>
 
         <!-- tabs content -->
-        <v-window v-model="navigationTab">
-          <v-window-item
+        <VWindow v-model="navigationTab">
+          <VWindowItem
             v-for="item in tabItems"
             :key="item"
             :value="item"
           >
-            <v-card-header>
-              <v-card-header-text>
-                <v-card-title>Navigation Card</v-card-title>
-              </v-card-header-text>
-            </v-card-header>
+            <VCardHeader>
+              <VCardHeaderText>
+                <VCardTitle>Navigation Card</VCardTitle>
+              </VCardHeaderText>
+            </VCardHeader>
 
-            <v-card-text>
+            <VCardText>
               {{ tabContent }}
-            </v-card-text>
+            </VCardText>
 
-            <v-card-text>
-              <v-btn>Learn More</v-btn>
-            </v-card-text>
-          </v-window-item>
-        </v-window>
-      </v-card>
-    </v-col>
+            <VCardText>
+              <VBtn>Learn More</VBtn>
+            </VCardText>
+          </VWindowItem>
+        </VWindow>
+      </VCard>
+    </VCol>
 
-    <v-col
+    <VCol
       md="6"
       cols="12"
     >
-      <v-card>
-        <v-tabs
+      <VCard>
+        <VTabs
           v-model="navigationTab2"
           centered
         >
-          <v-tab
+          <VTab
             v-for="item in tabItems"
             :key="item"
             :value="item"
           >
             {{ item }}
-          </v-tab>
-        </v-tabs>
+          </VTab>
+        </VTabs>
 
         <!-- tabs content -->
-        <v-window v-model="navigationTab2">
-          <v-window-item
+        <VWindow v-model="navigationTab2">
+          <VWindowItem
             v-for="item in tabItems"
             :key="item"
             :value="item"
             class="text-center"
           >
-            <v-card-header>
-              <v-card-header-text class="d-flex justify-center">
-                <v-card-title>Navigation Card</v-card-title>
-              </v-card-header-text>
-            </v-card-header>
+            <VCardHeader>
+              <VCardHeaderText class="d-flex justify-center">
+                <VCardTitle>Navigation Card</VCardTitle>
+              </VCardHeaderText>
+            </VCardHeader>
 
-            <v-card-text>{{ tabContent }}</v-card-text>
+            <VCardText>{{ tabContent }}</VCardText>
 
-            <v-card-text>
-              <v-btn>Learn More</v-btn>
-            </v-card-text>
-          </v-window-item>
-        </v-window>
-      </v-card>
-    </v-col>
-  </v-row>
+            <VCardText>
+              <VBtn>Learn More</VBtn>
+            </VCardText>
+          </VWindowItem>
+        </VWindow>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>

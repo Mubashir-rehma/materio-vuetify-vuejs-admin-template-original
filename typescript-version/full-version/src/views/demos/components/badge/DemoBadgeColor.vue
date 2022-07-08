@@ -1,63 +1,63 @@
 <template>
   <div class="demo-space-x">
-    <v-badge
+    <VBadge
       dot
       color="primary"
     >
-      <v-icon
+      <VIcon
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       color="secondary"
     >
-      <v-icon
+      <VIcon
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       color="success"
     >
-      <v-icon
+      <VIcon
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       color="info"
     >
-      <v-icon
+      <VIcon
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       color="warning"
     >
-      <v-icon
+      <VIcon
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       dot
       color="error"
     >
-      <v-icon
+      <VIcon
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
   </div>
 </template>

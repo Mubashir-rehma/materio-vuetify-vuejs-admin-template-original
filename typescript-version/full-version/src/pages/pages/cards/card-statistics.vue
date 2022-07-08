@@ -126,9 +126,9 @@ const statisticsWithImages = [
 </script>
 
 <template>
-  <v-row class="match-height">
+  <VRow class="match-height">
     <!-- 👉 Horizontal Cards -->
-    <v-col
+    <VCol
       v-for="statistics in statisticsHorizontal"
       :key="statistics.title"
       cols="12"
@@ -136,24 +136,24 @@ const statisticsWithImages = [
       md="3"
     >
       <CardStatisticsHorizontal v-bind="statistics" />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Statistics Card  -->
-    <v-col
+    <VCol
       cols="12"
       md="8"
     >
       <DemoCardStatistics />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Blank Column for make a blank space  -->
-    <v-col
+    <VCol
       md="4"
       cols="12"
     />
 
     <!-- 👉 Vertical Cards -->
-    <v-col
+    <VCol
       v-for="statistics in statisticsVertical"
       :key="statistics.title"
       cols="12"
@@ -161,15 +161,15 @@ const statisticsWithImages = [
       lg="2"
     >
       <CardStatisticsVertical v-bind="statistics" />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Blank Column for make space above the Images cards -->
-    <v-col
+    <VCol
       cols="12"
     />
 
     <!-- 👉 Images Cards -->
-    <v-col
+    <VCol
       v-for="statistics in statisticsWithImages"
       :key="statistics.title"
       cols="12"
@@ -177,69 +177,69 @@ const statisticsWithImages = [
       sm="6"
     >
       <CardStatisticsWithImages v-bind="statistics" />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Total Revenue Line Chart -->
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
       md="4"
       lg="2"
     >
       <DemoCardStatisticsLineCharts />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Sessions Bar Chart with Gaps -->
-    <v-col
+    <VCol
       cols="12"
       sm="6"
       md="4"
       lg="2"
     >
       <DemoCardStatisticsBarWithGapCharts />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Total Growth Area Chart -->
-    <v-col
+    <VCol
       cols="12"
       sm="6"
       md="4"
       lg="2"
     >
       <DemoCardStatisticsAreaCharts />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Total Revenue Radial Bar Chart -->
-    <v-col
+    <VCol
       cols="12"
       sm="6"
       md="4"
       lg="2"
     >
       <DemoCardStatisticsRadialBarCharts />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Session Bar Chart -->
-    <v-col
+    <VCol
       cols="12"
       sm="6"
       md="4"
       lg="2"
     >
       <DemoCardStatisticsBarCharts />
-    </v-col>
+    </VCol>
 
     <!-- 👉 Total Profit Line Chart -->
-    <v-col
+    <VCol
       cols="12"
       sm="6"
       md="4"
       lg="2"
     >
       <DemoCardStatisticsTotalProfitLineCharts />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

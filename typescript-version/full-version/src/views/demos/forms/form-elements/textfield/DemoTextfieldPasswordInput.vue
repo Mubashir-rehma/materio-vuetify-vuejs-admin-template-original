@@ -11,12 +11,12 @@ const rules = {
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-text-field
+      <VTextField
         v-model="password"
         :append-inner-icon="show1 ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
         :rules="[rules.required, rules.min]"
@@ -27,13 +27,13 @@ const rules = {
         counter
         @click:append-inner="show1 = !show1"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       sm="6"
     >
-      <v-text-field
+      <VTextField
         v-model="confirmPassword"
         :append-inner-icon="show2 ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
         :rules="[rules.required, rules.min]"
@@ -43,6 +43,6 @@ const rules = {
         hint="At least 8 characters"
         @click:append-inner="show2 = !show2"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

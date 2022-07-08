@@ -5,7 +5,7 @@ const rules = [
 </script>
 
 <template>
-  <v-file-input
+  <VFileInput
     :rules="rules"
     label="Avatar"
     accept="image/png, image/jpeg, image/bmp"

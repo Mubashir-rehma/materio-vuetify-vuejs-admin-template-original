@@ -4,19 +4,19 @@ const isAlertVisible = ref(true)
 
 <template>
   <div class="alert-demo-v-model-wrapper">
-    <v-alert
+    <VAlert
       v-model="isAlertVisible"
       color="warning"
       variant="tonal"
     >
       non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
-    </v-alert>
+    </VAlert>
   </div>
 
   <!-- button -->
-  <v-btn @click="isAlertVisible = !isAlertVisible">
+  <VBtn @click="isAlertVisible = !isAlertVisible">
     {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
-  </v-btn>
+  </VBtn>
 </template>
 
 <style lang="scss">

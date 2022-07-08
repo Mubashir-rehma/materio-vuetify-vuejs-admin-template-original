@@ -1,5 +1,5 @@
 <template>
-  <v-rating
+  <VRating
     readonly
     :model-value="4"
   />

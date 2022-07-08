@@ -5,28 +5,28 @@ const tabItemText = 'hortbread chocolate bar marshmallow bear claw tiramisu choc
 </script>
 
 <template>
-  <v-tabs
+  <VTabs
     v-model="currentTab"
     grow
   >
-    <v-tab
+    <VTab
       v-for="item in items"
       :key="item"
       :value="item"
     >
       {{ item }}
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 
-  <v-window v-model="currentTab">
-    <v-window-item
+  <VWindow v-model="currentTab">
+    <VWindowItem
       v-for="item in items"
       :key="item"
       :value="item"
     >
-      <v-card>
-        <v-card-text>{{ tabItemText }}</v-card-text>
-      </v-card>
-    </v-window-item>
-  </v-window>
+      <VCard>
+        <VCardText>{{ tabItemText }}</VCardText>
+      </VCard>
+    </VWindowItem>
+  </VWindow>
 </template>

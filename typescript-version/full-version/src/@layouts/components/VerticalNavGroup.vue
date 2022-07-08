@@ -190,9 +190,9 @@ export default {
         :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <transition-group name="transition-slide-x">
+      <TransitionGroup name="transition-slide-x">
         <!-- 👉 Title -->
-        <component
+        <Component
           :is=" config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.title, 'span')"
           v-show="!hideTitleAndBadge"
@@ -200,10 +200,10 @@ export default {
           class="nav-item-title"
         >
           {{ item.title }}
-        </component>
+        </Component>
 
         <!-- 👉 Badge -->
-        <component
+        <Component
           :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-bind="dynamicI18nProps(item.badgeContent, 'span')"
           v-show="!hideTitleAndBadge"
@@ -213,21 +213,21 @@ export default {
           :class="item.badgeClass"
         >
           {{ item.badgeContent }}
-        </component>
+        </Component>
         <div
           v-show="!hideTitleAndBadge"
           key="arrow"
           class="nav-group-arrow"
           :class="config.icons.chevronRight"
         />
-      </transition-group>
+      </TransitionGroup>
     </div>
     <TransitionExpand>
       <ul
         v-show="isGroupOpen"
         class="nav-group-children"
       >
-        <component
+        <Component
           :is="'children' in child ? 'VerticalNavGroup' : VerticalNavLink"
           v-for="child in item.children"
           :key="child.title"

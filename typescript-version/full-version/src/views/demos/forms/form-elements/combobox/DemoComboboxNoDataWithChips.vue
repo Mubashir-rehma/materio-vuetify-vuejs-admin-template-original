@@ -10,7 +10,7 @@ watch(selectedList, value => {
 </script>
 
 <template>
-  <v-combobox
+  <VCombobox
     v-model="selectedList"
     v-model:search-input="search"
     :items="items"
@@ -23,13 +23,13 @@ watch(selectedList, value => {
     small-chips
   >
     <template #no-data>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title>
+      <VListItem>
+        <VListItemContent>
+          <VListItemTitle>
             No results matching "<strong>{{ search }}</strong>". Press <kbd>enter</kbd> to create a new one
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+          </VListItemTitle>
+        </VListItemContent>
+      </VListItem>
     </template>
-  </v-combobox>
+  </VCombobox>
 </template>

@@ -6,7 +6,7 @@ const widgets = ref(false)
 </script>
 
 <template>
-  <v-dialog
+  <VDialog
     v-model="isDialogVisible"
     fullscreen
     max-width="auto"
@@ -15,110 +15,110 @@ const widgets = ref(false)
   >
     <!-- Dialog Activator -->
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         Open Dialog
-      </v-btn>
+      </VBtn>
     </template>
 
     <!-- Dialog Content -->
-    <v-card>
+    <VCard>
       <!-- Toolbar -->
-      <v-toolbar color="primary">
-        <v-btn
+      <VToolbar color="primary">
+        <VBtn
           icon
           variant="plain"
           @click="isDialogVisible = false"
         >
-          <v-icon
+          <VIcon
             color="white"
             icon="mdi-close"
           />
-        </v-btn>
+        </VBtn>
 
-        <v-toolbar-title>Settings</v-toolbar-title>
-        <v-spacer />
-        <v-toolbar-items>
-          <v-btn
+        <VToolbarTitle>Settings</VToolbarTitle>
+        <VSpacer />
+        <VToolbarItems>
+          <VBtn
             variant="text"
             @click="isDialogVisible = false"
           >
             Save
-          </v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
+          </VBtn>
+        </VToolbarItems>
+      </VToolbar>
 
       <!-- List -->
-      <v-list
+      <VList
         lines="two"
         subheader
       >
-        <v-list-subheader inset>
+        <VListSubheader inset>
           User Controls
-        </v-list-subheader>
-        <v-list-item
+        </VListSubheader>
+        <VListItem
           title="Content filtering"
           subtitle="Set the content filtering level to restrict apps that can be downloaded"
         />
-        <v-list-item
+        <VListItem
           title="Password"
           subtitle="Require password for purchase or use password to restrict purchase"
         />
-      </v-list>
+      </VList>
 
-      <v-divider />
+      <VDivider />
 
       <!-- List -->
-      <v-list
+      <VList
         lines="two"
         subheader
       >
-        <v-list-subheader>General</v-list-subheader>
-        <v-list-item
+        <VListSubheader>General</VListSubheader>
+        <VListItem
           title="Notifications"
           subtitle="Notify me about updates to apps or games that I downloaded"
         >
           <template #prepend>
             <div class="me-2">
-              <v-checkbox
+              <VCheckbox
                 v-model="notifications"
                 color="primary"
                 inline
               />
             </div>
           </template>
-        </v-list-item>
-        <v-list-item
+        </VListItem>
+        <VListItem
           title="Sound"
           subtitle="Auto-update apps at any time. Data charges may apply"
         >
           <template #prepend>
             <div class="me-2">
-              <v-checkbox
+              <VCheckbox
                 v-model="sound"
                 color="primary"
                 inline
               />
             </div>
           </template>
-        </v-list-item>
+        </VListItem>
 
-        <v-list-item
+        <VListItem
           title="Auto-add widgets"
           subtitle="Automatically add home screen widgets"
         >
           <template #prepend>
             <div class="me-2">
-              <v-checkbox
+              <VCheckbox
                 v-model="widgets"
                 color="primary"
                 inline
               />
             </div>
           </template>
-        </v-list-item>
-      </v-list>
-    </v-card>
-  </v-dialog>
+        </VListItem>
+      </VList>
+    </VCard>
+  </VDialog>
 </template>
 
 <style lang="scss">

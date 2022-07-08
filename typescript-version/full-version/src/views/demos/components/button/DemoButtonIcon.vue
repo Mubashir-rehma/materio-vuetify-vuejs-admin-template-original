@@ -1,42 +1,42 @@
 <template>
   <div class="demo-space-x">
-    <v-btn>
+    <VBtn>
       Accept
-      <v-icon
+      <VIcon
         end
         icon="mdi-checkbox-marked-circle-outline"
       />
-    </v-btn>
+    </VBtn>
 
-    <v-btn color="secondary">
-      <v-icon
+    <VBtn color="secondary">
+      <VIcon
         start
         icon="mdi-minus-circle-outline"
       />Cancel
-    </v-btn>
+    </VBtn>
 
-    <v-btn color="success">
+    <VBtn color="success">
       Upload
-      <v-icon
+      <VIcon
         end
         icon="mdi-cloud-upload-outline"
       />
-    </v-btn>
+    </VBtn>
 
-    <v-btn color="info">
-      <v-icon
+    <VBtn color="info">
+      <VIcon
         start
         icon="mdi-arrow-left"
       />
       Back
-    </v-btn>
+    </VBtn>
 
-    <v-btn color="warning">
-      <v-icon icon="mdi-wrench-outline" />
-    </v-btn>
+    <VBtn color="warning">
+      <VIcon icon="mdi-wrench-outline" />
+    </VBtn>
 
-    <v-btn color="error">
-      <v-icon icon="mdi-cancel" />
-    </v-btn>
+    <VBtn color="error">
+      <VIcon icon="mdi-cancel" />
+    </VBtn>
   </div>
 </template>

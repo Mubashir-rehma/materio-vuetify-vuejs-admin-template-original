@@ -1,5 +1,5 @@
 <template>
-  <v-file-input
+  <VFileInput
     show-size
     label="File input"
   />

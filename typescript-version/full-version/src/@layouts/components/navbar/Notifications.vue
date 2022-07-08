@@ -14,38 +14,38 @@ defineEmits<{
 </script>
 
 <template>
-  <v-badge
+  <VBadge
     :model-value="!!props.badgeProps"
     v-bind="props.badgeProps"
   >
-    <v-btn
+    <VBtn
       icon
       variant="text"
       color="default"
     >
-      <v-icon icon="mdi-bell-outline" />
-      <v-menu
+      <VIcon icon="mdi-bell-outline" />
+      <VMenu
         activator="parent"
         width="380px"
       >
-        <v-list class="py-0">
+        <VList class="py-0">
           <!-- 👉 Header -->
-          <v-list-item
+          <VListItem
             title="Notifications"
             class="notification-section"
           >
             <template #append>
-              <v-chip
+              <VChip
                 color="primary"
                 size="small"
               >
                 {{ props.notificationsCount }} New
-              </v-chip>
+              </VChip>
             </template>
-          </v-list-item>
-          <v-divider />
+          </VListItem>
+          <VDivider />
           <!-- 👉 Notifications list -->
-          <v-list-item
+          <VListItem
             v-for="notification in props.notifications"
             :key="notification.title"
             :title="notification.title"
@@ -54,35 +54,35 @@ defineEmits<{
             <!-- Slot: Prepend -->
             <!-- Handles Avatar: Image, Icon, Text -->
             <template #prepend>
-              <v-list-item-avatar start>
-                <v-avatar
+              <VListItemAvatar start>
+                <VAvatar
                   :color="notification.color || 'primary'"
                   :image="notification.img || null"
                   :icon="notification.icon || null"
                 >
                   <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
-                </v-avatar>
-              </v-list-item-avatar>
+                </VAvatar>
+              </VListItemAvatar>
             </template>
             <!-- Slot: Append -->
             <template #append>
               <small class="whitespace-no-wrap text-medium-emphasis">{{ notification.time }}</small>
             </template>
-          </v-list-item>
-          <v-divider />
+          </VListItem>
+          <VDivider />
           <!-- 👉 Footer -->
-          <v-list-item class="notification-section">
-            <v-btn
+          <VListItem class="notification-section">
+            <VBtn
               block
               @click="$emit('click:readAllNotifications')"
             >
               READ ALL NOTIFICATIONS
-            </v-btn>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </v-btn>
-  </v-badge>
+            </VBtn>
+          </VListItem>
+        </VList>
+      </VMenu>
+    </VBtn>
+  </VBadge>
 </template>
 
 <style lang="scss">

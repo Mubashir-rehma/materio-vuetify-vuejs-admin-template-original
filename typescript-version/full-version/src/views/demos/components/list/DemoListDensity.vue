@@ -14,15 +14,15 @@ const items = [
 </script>
 
 <template>
-  <v-list density="compact">
-    <v-list-item-group>
-      <v-list-item
+  <VList density="compact">
+    <VListItemGroup>
+      <VListItem
         v-for="(item, i) in items"
         :key="i"
         :value="item"
       >
-        <v-list-item-title v-text="item" />
-      </v-list-item>
-    </v-list-item-group>
-  </v-list>
+        <VListItemTitle v-text="item" />
+      </VListItem>
+    </VListItemGroup>
+  </VList>
 </template>

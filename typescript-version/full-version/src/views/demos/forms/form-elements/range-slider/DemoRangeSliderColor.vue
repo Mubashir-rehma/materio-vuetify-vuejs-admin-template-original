@@ -3,7 +3,7 @@ const sliderValues = ref([10, 60])
 </script>
 
 <template>
-  <v-range-slider
+  <VRangeSlider
     v-model="sliderValues"
     color="success"
     track-color="secondary"

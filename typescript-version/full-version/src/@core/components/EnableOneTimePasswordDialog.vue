@@ -16,9 +16,9 @@ const formSubmit = () => {
 </script>
 
 <template>
-  <v-dialog class="v-dialog-lg">
-    <v-card class="pa-5 pa-sm-15">
-      <v-card-text>
+  <VDialog class="v-dialog-lg">
+    <VCard class="pa-5 pa-sm-15">
+      <VCardText>
         <h3 class="text-h5 font-weight-medium mb-5">
           Enable One Time Password
         </h3>
@@ -27,8 +27,8 @@ const formSubmit = () => {
         </p>
         <p>Enter your mobile phone number with country code and  we will send you a verification code.</p>
 
-        <v-form @submit.prevent="() => {}">
-          <v-text-field
+        <VForm @submit.prevent="() => {}">
+          <VTextField
             v-model="phoneNumber"
             name="mobile"
             label="Phone Number"
@@ -36,23 +36,23 @@ const formSubmit = () => {
             type="number"
           />
 
-          <v-btn
+          <VBtn
             type="submit"
             class="me-3"
             @click="formSubmit"
           >
             Submit
-          </v-btn>
-          <v-btn
+          </VBtn>
+          <VBtn
             type="reset"
             color="secondary"
             variant="tonal"
             @click="$emit('update:modelValue', false)"
           >
             Cancel
-          </v-btn>
-        </v-form>
-      </v-card-text>
-    </v-card>
-  </v-dialog>
+          </VBtn>
+        </VForm>
+      </VCardText>
+    </VCard>
+  </VDialog>
 </template>

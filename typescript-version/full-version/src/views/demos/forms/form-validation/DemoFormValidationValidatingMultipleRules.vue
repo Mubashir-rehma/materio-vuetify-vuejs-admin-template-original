@@ -11,40 +11,40 @@ const confirmPassword = ref('')
 </script>
 
 <template>
-  <v-form
+  <VForm
     ref="refForm"
     @submit.prevent="() => {}"
   >
-    <v-row>
-      <v-col
+    <VRow>
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="name"
           placeholder="Your Name"
           persistent-placeholder
           :rules="[requiredValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="email"
           placeholder="Your Email"
           persistent-placeholder
           :rules="[requiredValidator, emailValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="password"
           type="password"
           placeholder="Your Password"
@@ -52,13 +52,13 @@ const confirmPassword = ref('')
           :rules="[requiredValidator, passwordValidator]"
           autocomplete="on"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="confirmPassword"
           type="password"
           placeholder="Confirm Password"
@@ -66,16 +66,16 @@ const confirmPassword = ref('')
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
           autocomplete="on"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-btn
+      <VCol cols="12">
+        <VBtn
           type="submit"
           @click="refForm?.validate()"
         >
           Submit
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

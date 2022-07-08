@@ -3,15 +3,15 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
 </script>
 
 <template>
-  <v-row>
+  <VRow>
     <!-- 👉  Area chart -->
-    <v-col cols="12">
-      <v-card>
-        <v-card-header class="flex-wrap">
-          <v-card-header-text>
-            <v-card-title>Area Chart</v-card-title>
-            <v-card-subtitle>Commercial networks</v-card-subtitle>
-          </v-card-header-text>
+    <VCol cols="12">
+      <VCard>
+        <VCardHeader class="flex-wrap">
+          <VCardHeaderText>
+            <VCardTitle>Area Chart</VCardTitle>
+            <VCardSubtitle>Commercial networks</VCardSubtitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -20,21 +20,21 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
-        <v-card-text>
+        <VCardText>
           <ApexChartAreaChart />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Data Science -->
-    <v-col cols="12">
-      <v-card>
-        <v-card-header class="flex-wrap">
-          <v-card-header-text>
-            <v-card-title>Data Science</v-card-title>
-          </v-card-header-text>
+    <VCol cols="12">
+      <VCard>
+        <VCardHeader class="flex-wrap">
+          <VCardHeaderText>
+            <VCardTitle>Data Science</VCardTitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -43,82 +43,82 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
-        <v-card-text>
+        <VCardText>
           <ApexChartDataScience />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 New Technologies Data -->
-    <v-col cols="12">
-      <v-card>
-        <v-card-header class="flex-wrap">
-          <v-card-header-text>
-            <v-card-title>New Technologies Data</v-card-title>
-          </v-card-header-text>
+    <VCol cols="12">
+      <VCard>
+        <VCardHeader class="flex-wrap">
+          <VCardHeaderText>
+            <VCardTitle>New Technologies Data</VCardTitle>
+          </VCardHeaderText>
 
-          <v-btn-toggle
+          <VBtnToggle
             density="compact"
             color="primary"
             variant="outlined"
           >
-            <v-btn>Daily</v-btn>
-            <v-btn>Monthly</v-btn>
-            <v-btn>Yearly</v-btn>
-          </v-btn-toggle>
-        </v-card-header>
+            <VBtn>Daily</VBtn>
+            <VBtn>Monthly</VBtn>
+            <VBtn>Yearly</VBtn>
+          </VBtnToggle>
+        </VCardHeader>
 
-        <v-card-text>
+        <VCardText>
           <ApexChartNewTechnologiesData />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Balance Line Chart  -->
-    <v-col cols="12">
-      <v-card>
-        <v-card-header class="flex-wrap">
-          <v-card-header-text>
-            <v-card-title>Balance</v-card-title>
-            <v-card-subtitle>Commercial networks & enterprises</v-card-subtitle>
-          </v-card-header-text>
+    <VCol cols="12">
+      <VCard>
+        <VCardHeader class="flex-wrap">
+          <VCardHeaderText>
+            <VCardTitle>Balance</VCardTitle>
+            <VCardSubtitle>Commercial networks & enterprises</VCardSubtitle>
+          </VCardHeaderText>
 
           <h6 class="text-h6 me-3">
             $221,267
           </h6>
-          <v-chip
+          <VChip
             label
             color="success"
             class="font-weight-bold"
           >
-            <v-icon
+            <VIcon
               start
               icon="mdi-arrow-up"
               size="15"
             />
             <span>22%</span>
-          </v-chip>
-        </v-card-header>
+          </VChip>
+        </VCardHeader>
 
-        <v-card-text>
+        <VCardText>
           <ApexChartBalance />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Balance Horizontal Bar -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-header class="flex-wrap">
-          <v-card-header-text>
-            <v-card-title>Balance</v-card-title>
-            <v-card-subtitle>$74,382.72</v-card-subtitle>
-          </v-card-header-text>
+      <VCard>
+        <VCardHeader class="flex-wrap">
+          <VCardHeaderText>
+            <VCardTitle>Balance</VCardTitle>
+            <VCardSubtitle>$74,382.72</VCardSubtitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -127,25 +127,25 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
-        <v-card-text>
+        <VCardText>
           <ApexChartHorizontalBar />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Stock Price Chart -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card>
-        <v-card-header class="flex-wrap">
-          <v-card-header-text>
-            <v-card-title>Stocks Prices</v-card-title>
-            <v-card-subtitle>$50,863.98</v-card-subtitle>
-          </v-card-header-text>
+      <VCard>
+        <VCardHeader class="flex-wrap">
+          <VCardHeaderText>
+            <VCardTitle>Stocks Prices</VCardTitle>
+            <VCardSubtitle>$50,863.98</VCardSubtitle>
+          </VCardHeaderText>
 
           <div class="date-picker-wrapper">
             <AppDateTimePicker
@@ -154,65 +154,65 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
               density="compact"
             />
           </div>
-        </v-card-header>
+        </VCardHeader>
 
-        <v-card-text>
+        <VCardText>
           <ApexChartStockPrice />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Daily Sales States -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card title="Daily Sales States">
-        <v-card-text>
+      <VCard title="Daily Sales States">
+        <VCardText>
           <ApexChartDailySalesStates />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Statistics -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card title="Statistics">
-        <v-card-text>
+      <VCard title="Statistics">
+        <VCardText>
           <ApexChartStatistics />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Mobile Comparison -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card title="Mobile Comparison">
-        <v-card-text>
+      <VCard title="Mobile Comparison">
+        <VCardText>
           <ApexChartMobileComparison />
-        </v-card-text>
-      </v-card>
-    </v-col>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Expense Ratio Chart -->
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-card
+      <VCard
         title="Expense Ratio"
         subtitle="Spending on various categories"
       >
-        <v-card-text>
+        <VCardText>
           <ApexChartExpenseRatio />
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

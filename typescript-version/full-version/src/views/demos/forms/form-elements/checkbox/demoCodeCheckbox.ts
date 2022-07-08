@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const checkboxValue = { ts: '', js: '' }
 
 export const modelAsArray = { ts: '', js: '' }

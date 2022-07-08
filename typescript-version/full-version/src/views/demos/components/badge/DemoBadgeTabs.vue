@@ -16,19 +16,19 @@ const tabs = [
 </script>
 
 <template>
-  <v-tabs grow>
-    <v-tab
+  <VTabs grow>
+    <VTab
       v-for="tab in tabs"
       :key="tab.content"
       :value="tab.content"
     >
-      <v-badge
+      <VBadge
         :content="tab.badge"
         :offset-x="-12"
         :offset-y="-4"
       >
         {{ tab.content }}
-      </v-badge>
-    </v-tab>
-  </v-tabs>
+      </VBadge>
+    </VTab>
+  </VTabs>
 </template>

@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const customTransitions = { ts: '', js: '' }
 
 export const openOnHover = { ts: '', js: '' }

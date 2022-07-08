@@ -3,97 +3,97 @@ const isDialogVisible = ref(false)
 </script>
 
 <template>
-  <v-dialog
+  <VDialog
     v-model="isDialogVisible"
     persistent
     max-width="600px"
   >
     <!-- Dialog Activator -->
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         Open Dialog
-      </v-btn>
+      </VBtn>
     </template>
 
     <!-- Dialog Content -->
-    <v-card title="User Profile">
-      <v-card-text>
-        <v-row>
-          <v-col
+    <VCard title="User Profile">
+      <VCardText>
+        <VRow>
+          <VCol
             cols="12"
             sm="6"
             md="4"
           >
-            <v-text-field label="First Name" />
-          </v-col>
-          <v-col
+            <VTextField label="First Name" />
+          </VCol>
+          <VCol
             cols="12"
             sm="6"
             md="4"
           >
-            <v-text-field
+            <VTextField
               label="Middle Name"
               hint="example of helper text only on focus"
             />
-          </v-col>
-          <v-col
+          </VCol>
+          <VCol
             cols="12"
             sm="6"
             md="4"
           >
-            <v-text-field
+            <VTextField
               label="Last Name"
               persistent-hint
             />
-          </v-col>
-          <v-col cols="12">
-            <v-text-field
+          </VCol>
+          <VCol cols="12">
+            <VTextField
               label="Email"
             />
-          </v-col>
-          <v-col cols="12">
-            <v-text-field
+          </VCol>
+          <VCol cols="12">
+            <VTextField
               label="Password"
               type="password"
             />
-          </v-col>
-          <v-col
+          </VCol>
+          <VCol
             cols="12"
             sm="6"
           >
-            <v-select
+            <VSelect
               :items="['0-17', '18-29', '30-54', '54+']"
               label="Age"
             />
-          </v-col>
-          <v-col
+          </VCol>
+          <VCol
             cols="12"
             sm="6"
           >
-            <v-autocomplete
+            <VAutocomplete
               :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
               label="Interests"
               multiple
             />
-          </v-col>
-        </v-row>
-      </v-card-text>
+          </VCol>
+        </VRow>
+      </VCardText>
 
-      <v-card-actions>
-        <v-spacer />
-        <v-btn
+      <VCardActions>
+        <VSpacer />
+        <VBtn
           color="error"
           @click="isDialogVisible = false"
         >
           Close
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="success"
           @click="isDialogVisible = false"
         >
           Save
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        </VBtn>
+      </VCardActions>
+    </VCard>
+  </VDialog>
 </template>

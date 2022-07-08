@@ -5,27 +5,27 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 <template>
   <div class="demo-space-x">
     <!-- avatar -->
-    <v-badge>
+    <VBadge>
       <template #badge>
-        <v-avatar size="15">
-          <v-icon
+        <VAvatar size="15">
+          <VIcon
             color="white"
             size="16"
             icon="mdi-information-variant"
           />
-        </v-avatar>
+        </VAvatar>
       </template>
 
-      <v-avatar>
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
     <!-- icon -->
-    <v-badge icon="mdi-lock-open-outline">
-      <v-avatar>
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+    <VBadge icon="mdi-lock-open-outline">
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
   </div>
 </template>

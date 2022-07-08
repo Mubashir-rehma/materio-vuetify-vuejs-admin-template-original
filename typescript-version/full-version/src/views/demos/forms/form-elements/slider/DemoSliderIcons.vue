@@ -5,29 +5,29 @@ const zoomInOut = useClamp(0, 0, 100) // useClamp(value, min, max)
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-slider
+  <VRow>
+    <VCol cols="12">
+      <VSlider
         v-model="mediaSlider"
         prepend-icon="mdi-volume-high"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-slider
+    <VCol cols="12">
+      <VSlider
         v-model="alarmSlider"
         append-icon="mdi-alarm"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-slider
+    <VCol cols="12">
+      <VSlider
         v-model="zoomInOut"
         append-icon="mdi-magnify-plus-outline"
         prepend-icon="mdi-magnify-minus-outline"
         @click:append="zoomInOut += 10"
         @click:prepend="zoomInOut -= 10"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

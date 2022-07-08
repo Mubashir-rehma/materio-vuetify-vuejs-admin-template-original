@@ -32,8 +32,8 @@ const bmpControl = useClamp(bpm, min, max)
         v-text="bpm"
       />
       <span class="subheading font-weight-light me-1">BPM</span>
-      <v-fade-transition>
-        <v-avatar
+      <VFadeTransition>
+        <VAvatar
           v-if="isPlaying"
           :color="color"
           :style="{
@@ -42,24 +42,24 @@ const bmpControl = useClamp(bpm, min, max)
           class="mb-1 v-avatar--metronome"
           size="12"
         />
-      </v-fade-transition>
+      </VFadeTransition>
     </div>
 
     <div>
-      <v-btn
+      <VBtn
         :color="color"
         icon
         elevation="0"
         @click="isPlaying = !isPlaying"
       >
-        <v-icon size="large">
+        <VIcon size="large">
           {{ isPlaying ? 'mdi-pause' : 'mdi-play' }}
-        </v-icon>
-      </v-btn>
+        </VIcon>
+      </VBtn>
     </div>
   </div>
 
-  <v-slider
+  <VSlider
     v-model="bpm"
     :color="color"
     :step="1"
@@ -68,7 +68,7 @@ const bmpControl = useClamp(bpm, min, max)
     track-color="secondary"
   >
     <template #prepend>
-      <v-btn
+      <VBtn
         size="small"
         variant="text"
         icon="mdi-minus"
@@ -78,7 +78,7 @@ const bmpControl = useClamp(bpm, min, max)
     </template>
 
     <template #append>
-      <v-btn
+      <VBtn
         size="small"
         variant="text"
         icon="mdi-plus"
@@ -86,7 +86,7 @@ const bmpControl = useClamp(bpm, min, max)
         @click="bmpControl++"
       />
     </template>
-  </v-slider>
+  </VSlider>
 </template>
 
 <style lang="scss" scoped>

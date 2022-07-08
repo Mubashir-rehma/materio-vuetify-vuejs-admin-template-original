@@ -21,9 +21,9 @@ const states = [
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-select
+  <VRow>
+    <VCol cols="12">
+      <VSelect
         v-model="selectedOption1"
         :items="states"
         label="Select"
@@ -31,10 +31,10 @@ const states = [
         single-line
         variant="filled"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-select
+    <VCol cols="12">
+      <VSelect
         v-model="selectedOption2"
         :items="states"
         append-icon="mdi-map-outline"
@@ -42,6 +42,6 @@ const states = [
         single-line
         variant="filled"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

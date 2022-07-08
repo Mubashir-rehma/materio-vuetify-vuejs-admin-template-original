@@ -1,15 +1,15 @@
 <template>
-  <v-expansion-panels multiple>
-    <v-expansion-panel
+  <VExpansionPanels multiple>
+    <VExpansionPanel
       v-for="i in 4"
       :key="i"
     >
-      <v-expansion-panel-title>
+      <VExpansionPanelTitle>
         Item {{ i }}
-      </v-expansion-panel-title>
-      <v-expansion-panel-text>
+      </VExpansionPanelTitle>
+      <VExpansionPanelText>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </v-expansion-panel-text>
-    </v-expansion-panel>
-  </v-expansion-panels>
+      </VExpansionPanelText>
+    </VExpansionPanel>
+  </VExpansionPanels>
 </template>

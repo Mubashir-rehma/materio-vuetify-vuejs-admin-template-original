@@ -3,120 +3,120 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
 </script>
 
 <template>
-  <v-badge
+  <VBadge
     dot
     location="bottom-right"
     offset-x="3"
     offset-y="3"
     color="success"
   >
-    <v-avatar>
-      <v-img :src="avatar1Src" />
+    <VAvatar>
+      <VImg :src="avatar1Src" />
 
       <!-- SECTION Menu -->
-      <v-menu
+      <VMenu
         activator="parent"
         width="230"
       >
-        <v-list>
+        <VList>
           <!-- 👉 User Avatar & Name -->
-          <v-list-item>
-            <v-badge
+          <VListItem>
+            <VBadge
               dot
               location="bottom-right"
               offset-x="3"
               offset-y="3"
               color="success"
             >
-              <v-list-item-avatar>
-                <v-avatar>
-                  <v-img :src="avatar1Src" />
-                </v-avatar>
-              </v-list-item-avatar>
-            </v-badge>
-            <v-list-item-header class="ms-4">
-              <v-list-item-title>John Doe</v-list-item-title>
-              <v-list-item-subtitle>Admin</v-list-item-subtitle>
-            </v-list-item-header>
-          </v-list-item>
-          <v-divider />
+              <VListItemAvatar>
+                <VAvatar>
+                  <VImg :src="avatar1Src" />
+                </VAvatar>
+              </VListItemAvatar>
+            </VBadge>
+            <VListItemHeader class="ms-4">
+              <VListItemTitle>John Doe</VListItemTitle>
+              <VListItemSubtitle>Admin</VListItemSubtitle>
+            </VListItemHeader>
+          </VListItem>
+          <VDivider />
 
           <!-- 👉 Profile -->
-          <v-list-item :to="{ name: 'index' }">
-            <v-list-item-icon
+          <VListItem :to="{ name: 'index' }">
+            <VListItemIcon
               class="me-2"
               icon="mdi-account-outline"
             />
-            <v-list-item-header>
-              <v-list-item-title>Profile</v-list-item-title>
-            </v-list-item-header>
-          </v-list-item>
+            <VListItemHeader>
+              <VListItemTitle>Profile</VListItemTitle>
+            </VListItemHeader>
+          </VListItem>
 
           <!-- 👉 Inbox -->
-          <v-list-item :to="{ name: 'index' }">
-            <v-list-item-icon
+          <VListItem :to="{ name: 'index' }">
+            <VListItemIcon
               class="me-2"
               icon="mdi-email-outline"
             />
-            <v-list-item-header>
-              <v-list-item-title>Inbox</v-list-item-title>
-            </v-list-item-header>
-          </v-list-item>
+            <VListItemHeader>
+              <VListItemTitle>Inbox</VListItemTitle>
+            </VListItemHeader>
+          </VListItem>
 
           <!-- 👉 Chat -->
-          <v-list-item :to="{ name: 'index' }">
-            <v-list-item-icon
+          <VListItem :to="{ name: 'index' }">
+            <VListItemIcon
               class="me-2"
               icon="mdi-chat-outline"
             />
-            <v-list-item-header>
-              <v-list-item-title>Chat</v-list-item-title>
-            </v-list-item-header>
-            <v-list-item-action>
-              <v-badge
+            <VListItemHeader>
+              <VListItemTitle>Chat</VListItemTitle>
+            </VListItemHeader>
+            <VListItemAction>
+              <VBadge
                 inline
                 content="2"
               />
-            </v-list-item-action>
-          </v-list-item>
+            </VListItemAction>
+          </VListItem>
 
-          <v-divider />
+          <VDivider />
 
           <!-- 👉 Settings -->
-          <v-list-item :to="{ name: 'index' }">
-            <v-list-item-icon
+          <VListItem :to="{ name: 'index' }">
+            <VListItemIcon
               class="me-2"
               icon="mdi-cog-outline"
             />
-            <v-list-item-header>
-              <v-list-item-title>Settings</v-list-item-title>
-            </v-list-item-header>
-          </v-list-item>
+            <VListItemHeader>
+              <VListItemTitle>Settings</VListItemTitle>
+            </VListItemHeader>
+          </VListItem>
 
           <!-- 👉 Pricing -->
-          <v-list-item :to="{ name: 'index' }">
-            <v-list-item-icon
+          <VListItem :to="{ name: 'index' }">
+            <VListItemIcon
               class="me-2"
               icon="mdi-currency-usd"
             />
-            <v-list-item-header>
-              <v-list-item-title>Pricing</v-list-item-title>
-            </v-list-item-header>
-          </v-list-item>
+            <VListItemHeader>
+              <VListItemTitle>Pricing</VListItemTitle>
+            </VListItemHeader>
+          </VListItem>
 
           <!-- 👉 FAQ -->
-          <v-list-item :to="{ name: 'index' }">
-            <v-list-item-icon
+          <VListItem :to="{ name: 'index' }">
+            <VListItemIcon
               class="me-2"
               icon="mdi-help-circle-outline"
             />
-            <v-list-item-header>
-              <v-list-item-title>FAQ</v-list-item-title>
-            </v-list-item-header>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+            <VListItemHeader>
+              <VListItemTitle>FAQ</VListItemTitle>
+            </VListItemHeader>
+          </VListItem>
+        </VList>
+      </VMenu>
       <!-- !SECTION -->
-    </v-avatar>
-  </v-badge>
+    </VAvatar>
+  </VBadge>
 </template>

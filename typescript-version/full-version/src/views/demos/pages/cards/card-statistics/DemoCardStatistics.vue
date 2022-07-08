@@ -28,10 +28,10 @@ const statistics = [
 </script>
 
 <template>
-  <v-card title="Statistics Card">
-    <v-card-text>
-      <v-row>
-        <v-col
+  <VCard title="Statistics Card">
+    <VCardText>
+      <VRow>
+        <VCol
           v-for="item in statistics"
           :key="item.title"
           cols="6"
@@ -39,16 +39,16 @@ const statistics = [
         >
           <div class="d-flex align-center">
             <div class="me-3">
-              <v-avatar
+              <VAvatar
                 :color="item.color"
                 rounded
                 size="44"
               >
-                <v-icon
+                <VIcon
                   size="24"
                   :icon="item.icon"
                 />
-              </v-avatar>
+              </VAvatar>
             </div>
 
             <div class="d-flex flex-column">
@@ -58,8 +58,8 @@ const statistics = [
               <span class="text-h6 font-weight-bold">{{ item.stats }}</span>
             </div>
           </div>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+        </VCol>
+      </VRow>
+    </VCardText>
+  </VCard>
 </template>

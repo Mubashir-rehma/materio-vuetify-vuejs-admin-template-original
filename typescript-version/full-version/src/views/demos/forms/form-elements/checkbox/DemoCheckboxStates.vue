@@ -5,25 +5,25 @@ const toggleIndeterminateCheckbox = ref(true)
 
 <template>
   <div class="d-flex flex-wrap">
-    <v-checkbox
+    <VCheckbox
       v-model="toggleCheckbox"
       label="On"
     />
 
-    <v-checkbox label="Off" />
+    <VCheckbox label="Off" />
 
-    <v-checkbox
+    <VCheckbox
       v-model:indeterminate="toggleIndeterminateCheckbox"
       label="Indeterminate"
     />
 
-    <v-checkbox
+    <VCheckbox
       :model-value="true"
       disabled
       label="On disabled"
     />
 
-    <v-checkbox
+    <VCheckbox
       disabled
       label="Off disabled"
     />

@@ -125,25 +125,25 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
 </script>
 
 <template>
-  <v-card
+  <VCard
     class="page-pricing"
     :style="`--v-custom-pricing-bg:url(${themeBackgroundImg});`"
   >
-    <v-card-text class="pt-12 mb-16">
+    <VCardText class="pt-12 mb-16">
       <!-- 👉 App Pricing components -->
       <AppPricing md="4" />
-    </v-card-text>
+    </VCardText>
 
     <!-- 👉 Free Banner -->
     <div class="d-flex align-center flex-md-row flex-column page-pricing-free-banner-bg pb-0 pa-14">
       <div>
-        <v-img
+        <VImg
           :src="vuetifyTheme.current.value.dark ? sittingGirlWithLaptopDark : sittingGirlWithLaptopLight"
           :width="350"
         />
       </div>
 
-      <v-spacer />
+      <VSpacer />
 
       <div class="text-md-end text-center mt-4">
         <h3 class="text-h5 text-primary">
@@ -152,30 +152,30 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
         <p>
           You will get full access to all the features for 14 days.
         </p>
-        <v-btn class="my-16">
+        <VBtn class="my-16">
           Start-14-day FREE trial
-        </v-btn>
+        </VBtn>
       </div>
     </div>
 
     <!-- 👉 Plans -->
-    <v-card-text class="text-center pt-12">
-      <v-chip
+    <VCardText class="text-center pt-12">
+      <VChip
         label
         color="primary"
         size="small"
       >
         Plans
-      </v-chip>
+      </VChip>
       <h4 class="text-h4 font-weight-medium my-4">
         Pick a plan that works best for you
       </h4>
       <p>Stay cool, we have a 48-hour money back guarantee!</p>
-    </v-card-text>
+    </VCardText>
 
     <!-- 👉 Features & Tables -->
-    <v-card-text class="mb-16">
-      <v-table class="text-no-wrap">
+    <VCardText class="mb-16">
+      <VTable class="text-no-wrap">
         <thead>
           <tr>
             <th>
@@ -193,16 +193,16 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
             <th class="text-center">
               <p class="text-h6 mb-1">
                 PRO
-                <v-avatar
+                <VAvatar
                   size="22"
                   color="primary"
                   class="mt-n2"
                 >
-                  <v-icon
+                  <VIcon
                     size="16"
                     icon="mdi-star"
                   />
-                </v-avatar>
+                </VAvatar>
               </p>
 
               <small class="text-caption">$7.5/MONTH</small>
@@ -223,75 +223,75 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
           >
             <td>{{ feature.feature }}</td>
             <td class="text-center">
-              <v-chip
+              <VChip
                 v-if="!feature.addOnAvailable.starter"
                 pill
                 size="30"
                 class="pa-1"
                 :color="feature.starter ? 'primary' : 'secondary'"
               >
-                <v-icon
+                <VIcon
                   size="15"
                   :icon="feature.starter ? 'mdi-check' : 'mdi-close'"
                 />
-              </v-chip>
+              </VChip>
 
-              <v-chip
+              <VChip
                 v-if="feature.addOnAvailable.starter"
                 color="primary"
                 label
                 size="small"
               >
                 ADD-ON AVAILABLE
-              </v-chip>
+              </VChip>
             </td>
 
             <td class="text-center">
-              <v-chip
+              <VChip
                 v-if="!feature.addOnAvailable.pro"
                 pill
                 size="30"
                 class="pa-1"
                 :color="feature.pro ? 'primary' : 'secondary'"
               >
-                <v-icon
+                <VIcon
                   size="15"
                   :icon="feature.pro ? 'mdi-check' : 'mdi-close'"
                 />
-              </v-chip>
+              </VChip>
 
-              <v-chip
+              <VChip
                 v-if="feature.addOnAvailable.pro"
                 color="primary"
                 label
                 size="small"
               >
                 ADD-ON AVAILABLE
-              </v-chip>
+              </VChip>
             </td>
 
             <td class="text-center">
-              <v-chip
+              <VChip
                 v-if="!feature.addOnAvailable.enterprise"
                 pill
                 size="30"
                 class="pa-1"
                 :color="feature.enterprise ? 'primary' : 'secondary'"
               >
-                <v-icon
+                <VIcon
                   size="15"
                   :icon="feature.enterprise ? 'mdi-check' : 'mdi-close'"
                 />
-              </v-chip>
+              </VChip>
 
-              <v-chip
+              <VChip
                 v-if="feature.addOnAvailable.enterprise"
                 color="primary"
                 label
                 size="small"
               >
                 ADD-ON AVAILABLE
-              </v-chip>
+              </VChip>
             </td>
           </tr>
         </tbody>
@@ -299,35 +299,35 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
           <tr>
             <td />
             <td class="text-center">
-              <v-btn variant="tonal">
+              <VBtn variant="tonal">
                 Choose Plan
-              </v-btn>
+              </VBtn>
             </td>
             <td class="text-center">
-              <v-btn>
+              <VBtn>
                 Choose Plan
-              </v-btn>
+              </VBtn>
             </td>
             <td class="text-center">
-              <v-btn variant="tonal">
+              <VBtn variant="tonal">
                 Choose Plan
-              </v-btn>
+              </VBtn>
             </td>
           </tr>
         </tfoot>
-      </v-table>
-    </v-card-text>
+      </VTable>
+    </VCardText>
 
     <!-- 👉 FAQ -->
-    <v-card-text class="bg-var-theme-background py-16">
+    <VCardText class="bg-var-theme-background py-16">
       <div class="text-center py-8">
-        <v-chip
+        <VChip
           label
           color="primary"
           size="small"
         >
           FAQ
-        </v-chip>
+        </VChip>
         <h2 class="text-h4 font-weight-medium my-4">
           Frequently Asked Questions
         </h2>
@@ -336,19 +336,19 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
         </p>
       </div>
 
-      <v-expansion-panels
+      <VExpansionPanels
         variant="popout"
         class="pb-8"
       >
-        <v-expansion-panel
+        <VExpansionPanel
           v-for="faq in faqList"
           :key="faq.question"
           :title="faq.question"
           :text="faq.answer"
         />
-      </v-expansion-panels>
-    </v-card-text>
-  </v-card>
+      </VExpansionPanels>
+    </VCardText>
+  </VCard>
 </template>
 
 <style lang="scss">

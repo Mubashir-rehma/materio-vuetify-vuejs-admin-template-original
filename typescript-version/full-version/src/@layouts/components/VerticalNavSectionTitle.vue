@@ -19,19 +19,19 @@ const shallRenderIcon = isVerticalNavMini(windowWidth)
     class="nav-section-title"
   >
     <div class="title-wrapper">
-      <transition
+      <Transition
         name="vertical-nav-section-title"
         mode="out-in"
       >
-        <component
+        <Component
           :is="config.app.enableI18n && !shallRenderIcon ? 'i18n-t' : 'span'"
           :key="shallRenderIcon"
           :class="shallRenderIcon ? [config.icons.sectionTitlePlaceholder, 'placeholder-icon'] : 'title-text'"
           v-bind="dynamicI18nProps(item.heading, 'span')"
         >
           {{ shallRenderIcon ? null : item.heading }}
-        </component>
-      </transition>
+        </Component>
+      </Transition>
     </div>
   </li>
 </template>

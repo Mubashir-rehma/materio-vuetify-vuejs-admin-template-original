@@ -16,9 +16,9 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
 </script>
 
 <template>
-  <v-card>
+  <VCard>
     <div class="d-flex position-relative">
-      <v-card-text>
+      <VCardText>
         <h6 class="text-body-1 font-weight-semibold mb-4">
           {{ prop.title }}
         </h6>
@@ -34,26 +34,26 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
           </span>
         </div>
 
-        <v-chip
+        <VChip
           v-if="prop.subtitle"
           size="small"
           :color="prop.color"
         >
           {{ prop.subtitle }}
-        </v-chip>
-      </v-card-text>
+        </VChip>
+      </VCardText>
 
-      <v-spacer />
+      <VSpacer />
 
       <div class="illustrator-img">
-        <v-img
+        <VImg
           v-if="prop.image"
           :src="prop.image"
           :width="110"
         />
       </div>
     </div>
-  </v-card>
+  </VCard>
 </template>
 
 <style lang="scss">

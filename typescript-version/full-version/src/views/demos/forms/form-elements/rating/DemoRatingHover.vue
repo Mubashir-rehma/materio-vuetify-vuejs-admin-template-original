@@ -1,3 +1,3 @@
 <template>
-  <v-rating hover />
+  <VRating hover />
 </template>

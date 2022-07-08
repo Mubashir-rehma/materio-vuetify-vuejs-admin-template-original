@@ -1,11 +1,11 @@
 <template>
-  <v-tabs show-arrows>
-    <v-tab
+  <VTabs show-arrows>
+    <VTab
       v-for="i in 10"
       :key="i"
       :value="i"
     >
       Item {{ i }}
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 </template>

@@ -4,14 +4,14 @@ const toggleSwitches = ref(['primary', 'secondary', 'success', 'info', 'warning'
 
 <template>
   <div class="d-flex flex-wrap demo-space-x">
-    <v-switch
+    <VSwitch
       v-model="toggleSwitches"
       label="primary"
       value="primary"
       hide-details
     />
 
-    <v-switch
+    <VSwitch
       v-model="toggleSwitches"
       label="secondary"
       color="secondary"
@@ -19,7 +19,7 @@ const toggleSwitches = ref(['primary', 'secondary', 'success', 'info', 'warning'
       hide-details
     />
 
-    <v-switch
+    <VSwitch
       v-model="toggleSwitches"
       label="success"
       color="success"
@@ -27,7 +27,7 @@ const toggleSwitches = ref(['primary', 'secondary', 'success', 'info', 'warning'
       hide-details
     />
 
-    <v-switch
+    <VSwitch
       v-model="toggleSwitches"
       label="info"
       color="info"
@@ -35,7 +35,7 @@ const toggleSwitches = ref(['primary', 'secondary', 'success', 'info', 'warning'
       hide-details
     />
 
-    <v-switch
+    <VSwitch
       v-model="toggleSwitches"
       label="warning"
       color="warning"
@@ -43,7 +43,7 @@ const toggleSwitches = ref(['primary', 'secondary', 'success', 'info', 'warning'
       hide-details
     />
 
-    <v-switch
+    <VSwitch
       v-model="toggleSwitches"
       label="error"
       color="error"

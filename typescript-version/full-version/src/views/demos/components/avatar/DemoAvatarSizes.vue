@@ -1,35 +1,35 @@
 <template>
   <div class="demo-space-x">
-    <v-avatar
+    <VAvatar
       color="primary"
       size="x-small"
     >
       <small>PI</small>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       color="secondary"
       size="small"
     >
       <span>PI</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="success">
+    <VAvatar color="success">
       <span>PI</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       color="info"
       size="large"
     >
       <span class="text-h6 text-white">PI</span>
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar
+    <VAvatar
       color="error"
       size="x-large"
     >
       <span class="text-h5 text-white">PI</span>
-    </v-avatar>
+    </VAvatar>
   </div>
 </template>

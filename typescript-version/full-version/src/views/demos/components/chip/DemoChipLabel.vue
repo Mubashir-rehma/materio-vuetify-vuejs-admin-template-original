@@ -1,49 +1,49 @@
 <template>
   <div class="demo-space-x">
-    <v-chip label>
+    <VChip label>
       Default
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       label
       color="primary"
     >
       Primary
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       label
       color="secondary"
     >
       Secondary
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       label
       color="success"
     >
       Success
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       label
       color="info"
     >
       Info
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       label
       color="warning"
     >
       Warning
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       label
       color="error"
     >
       Error
-    </v-chip>
+    </VChip>
   </div>
 </template>

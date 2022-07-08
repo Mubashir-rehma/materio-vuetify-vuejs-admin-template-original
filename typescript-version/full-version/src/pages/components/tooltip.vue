@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <!-- 👉 Anchor -->
       <AppCardCode
         title="Anchor"
@@ -14,9 +14,9 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 
         <DemoTooltipAnchor />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Events -->
       <AppCardCode
         title="Events"
@@ -24,9 +24,9 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
       >
         <DemoTooltipEvents />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Delay On Hover -->
       <AppCardCode
         title="Delay On Hover"
@@ -36,9 +36,9 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 
         <DemoTooltipDelayOnHover />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 V-model Support -->
       <AppCardCode
         title="V-Model Support"
@@ -48,9 +48,9 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 
         <DemoTooltipVModelSupport />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Transition -->
       <AppCardCode
         title="Transition"
@@ -60,9 +60,9 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 
         <DemoTooltipTransition />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Tooltip on Various Elements -->
       <AppCardCode
         title="Tooltip on Various Elements"
@@ -72,6 +72,6 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 
         <DemoTooltipTooltipOnVariousElements />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

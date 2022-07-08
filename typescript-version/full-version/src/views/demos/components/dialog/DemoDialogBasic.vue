@@ -3,28 +3,28 @@ const isDialogVisible = ref(false)
 </script>
 
 <template>
-  <v-dialog
+  <VDialog
     v-model="isDialogVisible"
   >
     <!-- Activator -->
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         Click Me
-      </v-btn>
+      </VBtn>
     </template>
 
     <!-- Dialog Content -->
-    <v-card title="Privacy Policy">
-      <v-card-text>
+    <VCard title="Privacy Policy">
+      <VCardText>
         Bear claw pastry cotton candy jelly toffee. Pudding chocolate cake shortbread bonbon biscuit sweet. Lemon drops cupcake muffin brownie fruitcake. Pastry pastry tootsie roll jujubes chocolate cake gummi bears muffin pudding caramels. Jujubes lollipop gummies croissant shortbread. Cupcake dessert marzipan topping gingerbread apple pie chupa chups powder. Cake croissant halvah candy canes gummies.
-      </v-card-text>
+      </VCardText>
 
-      <v-card-actions>
-        <v-spacer />
-        <v-btn @click="isDialogVisible = false">
+      <VCardActions>
+        <VSpacer />
+        <VBtn @click="isDialogVisible = false">
           I accept
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        </VBtn>
+      </VCardActions>
+    </VCard>
+  </VDialog>
 </template>

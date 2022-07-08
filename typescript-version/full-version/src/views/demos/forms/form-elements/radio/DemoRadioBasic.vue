@@ -3,12 +3,12 @@ const radioGroup = ref(1)
 </script>
 
 <template>
-  <v-radio-group v-model="radioGroup">
-    <v-radio
+  <VRadioGroup v-model="radioGroup">
+    <VRadio
       v-for="n in 2"
       :key="n"
       :label="`Radio ${n}`"
       :value="n"
     />
-  </v-radio-group>
+  </VRadioGroup>
 </template>

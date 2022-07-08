@@ -4,8 +4,8 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
 
 <template>
   <div>
-    <v-row>
-      <v-col
+    <VRow>
+      <VCol
         cols="12"
         md="6"
       >
@@ -16,8 +16,8 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutHorizontalForm />
         </AppCardCode>
-      </v-col>
-      <v-col
+      </VCol>
+      <VCol
         cols="12"
         md="6"
       >
@@ -28,8 +28,8 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutHorizontalFormWithIcons />
         </AppCardCode>
-      </v-col>
-      <v-col
+      </VCol>
+      <VCol
         cols="12"
         md="6"
       >
@@ -40,8 +40,8 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutVerticalForm />
         </AppCardCode>
-      </v-col>
-      <v-col
+      </VCol>
+      <VCol
         cols="12"
         md="6"
       >
@@ -52,8 +52,8 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutVerticalFormWithIcons />
         </AppCardCode>
-      </v-col>
-      <v-col cols="12">
+      </VCol>
+      <VCol cols="12">
         <!-- 👉 Multiple Column -->
         <AppCardCode
           title="Multiple Column"
@@ -61,10 +61,10 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutMultipleColumn />
         </AppCardCode>
-      </v-col>
-    </v-row>
-    <v-row class="match-height my-3">
-      <v-col
+      </VCol>
+    </VRow>
+    <VRow class="match-height my-3">
+      <VCol
         cols="12"
         md="6"
       >
@@ -75,8 +75,8 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutFormHint />
         </AppCardCode>
-      </v-col>
-      <v-col
+      </VCol>
+      <VCol
         cols="12"
         md="6"
       >
@@ -87,10 +87,10 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutFormValidation />
         </AppCardCode>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
+      </VCol>
+    </VRow>
+    <VRow>
+      <VCol cols="12">
         <!-- 👉 Form with Tabs -->
         <AppCardCode
           title="Form with Tabs"
@@ -99,14 +99,14 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         >
           <DemoFormLayoutFormWithTabs />
         </AppCardCode>
-      </v-col>
-      <v-col cols="12">
+      </VCol>
+      <VCol cols="12">
         <!-- 👉 Collapsible Section -->
         <h4 class="text-h6 font-weight-medium mb-5">
           Collapsible Section
         </h4>
         <DemoFormLayoutCollapsible />
-      </v-col>
-    </v-row>
+      </VCol>
+    </VRow>
   </div>
 </template>

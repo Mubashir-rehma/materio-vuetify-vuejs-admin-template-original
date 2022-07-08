@@ -5,13 +5,13 @@ const checkboxTwo = ref(false)
 
 <template>
   <div class="d-flex flex-wrap">
-    <v-checkbox
+    <VCheckbox
       v-model="checkboxOne"
       density="compact"
       :label="`${checkboxOne.toString()}`"
     />
 
-    <v-checkbox
+    <VCheckbox
       v-model="checkboxTwo"
       density="compact"
       :label="`${checkboxTwo.toString()}`"

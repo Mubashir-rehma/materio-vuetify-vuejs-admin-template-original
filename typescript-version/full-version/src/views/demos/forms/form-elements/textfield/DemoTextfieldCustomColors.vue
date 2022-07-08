@@ -1,5 +1,5 @@
 <template>
-  <v-text-field
+  <VTextField
     color="success"
     label="First name"
   />

@@ -3,7 +3,7 @@ const value = ref(10)
 </script>
 
 <template>
-  <v-slider
+  <VSlider
     v-model="value"
     direction="vertical"
   />

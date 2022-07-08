@@ -88,63 +88,63 @@ const isOneTimePasswordDialogVisible = ref(false)
 </script>
 
 <template>
-  <v-row>
+  <VRow>
     <!-- SECTION: Change Password -->
-    <v-col cols="12">
-      <v-card title="Change Password">
-        <v-form>
-          <v-card-text>
+    <VCol cols="12">
+      <VCard title="Change Password">
+        <VForm>
+          <VCardText>
             <!-- 👉 Current Password -->
-            <v-row class="mb-3">
-              <v-col
+            <VRow class="mb-3">
+              <VCol
                 cols="12"
                 md="6"
               >
                 <!-- 👉 current password -->
-                <v-text-field
+                <VTextField
                   v-model="currentPassword"
                   :type="isCurrentPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCurrentPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   label="Current Password"
                   @click:append-inner="isCurrentPasswordVisible = !isCurrentPasswordVisible"
                 />
-              </v-col>
-            </v-row>
+              </VCol>
+            </VRow>
 
             <!-- 👉 New Password -->
-            <v-row>
-              <v-col
+            <VRow>
+              <VCol
                 cols="12"
                 md="6"
               >
                 <!-- 👉 new password -->
-                <v-text-field
+                <VTextField
                   v-model="newPassword"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   label="New Password"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
                 />
-              </v-col>
+              </VCol>
 
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
                 <!-- 👉 confirm password -->
-                <v-text-field
+                <VTextField
                   v-model="confirmPassword"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   label="Confirm New Password"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                 />
-              </v-col>
-            </v-row>
-          </v-card-text>
+              </VCol>
+            </VRow>
+          </VCardText>
 
           <!-- 👉 Password Requirements -->
-          <v-card-text>
+          <VCardText>
             <p class="text-body-1 font-weight-medium mt-4">
               Password Requirements:
             </p>
@@ -154,7 +154,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 v-for="item in passwordRequirements"
                 :key="item"
               >
-                <v-icon
+                <VIcon
                   size="7"
                   icon="mdi-circle"
                   class="me-3"
@@ -162,32 +162,32 @@ const isOneTimePasswordDialogVisible = ref(false)
                 <span class="font-weight-medium">{{ item }}</span>
               </li>
             </ul>
-          </v-card-text>
+          </VCardText>
 
           <!-- 👉 Action Buttons -->
-          <v-card-text>
-            <v-btn class="me-3 mt-3">
+          <VCardText>
+            <VBtn class="me-3 mt-3">
               Save changes
-            </v-btn>
+            </VBtn>
 
-            <v-btn
+            <VBtn
               type="reset"
               color="secondary"
               variant="tonal"
               class="mt-3"
             >
               Reset
-            </v-btn>
-          </v-card-text>
-        </v-form>
-      </v-card>
-    </v-col>
+            </VBtn>
+          </VCardText>
+        </VForm>
+      </VCard>
+    </VCol>
     <!-- !SECTION -->
 
     <!-- SECTION Two-steps verification -->
-    <v-col cols="12">
-      <v-card title="Two-steps verification">
-        <v-card-text>
+    <VCol cols="12">
+      <VCard title="Two-steps verification">
+        <VCardText>
           <p class="font-weight-semibold">
             Two factor authentication is not enabled yet.
           </p>
@@ -199,83 +199,83 @@ const isOneTimePasswordDialogVisible = ref(false)
             >Learn more.</a>
           </p>
 
-          <v-btn @click="isOneTimePasswordDialogVisible = true">
+          <VBtn @click="isOneTimePasswordDialogVisible = true">
             Enable two-factor authentication
-          </v-btn>
-        </v-card-text>
-      </v-card>
-    </v-col>
+          </VBtn>
+        </VCardText>
+      </VCard>
+    </VCol>
     <!-- !SECTION -->
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- SECTION: Create an API key -->
-      <v-card title="Create an API key">
-        <v-row>
+      <VCard title="Create an API key">
+        <VRow>
           <!-- 👉 Choose API Key -->
-          <v-col
+          <VCol
             cols="12"
             md="5"
             order-md="0"
             order="1"
           >
-            <v-card-text>
-              <v-form @submit.prevent="() => {}">
-                <v-row>
+            <VCardText>
+              <VForm @submit.prevent="() => {}">
+                <VRow>
                   <!-- 👉 Choose API Key -->
-                  <v-col cols="12">
-                    <v-select
+                  <VCol cols="12">
+                    <VSelect
                       label="Choose the API key type you want to create"
                       :items="['Full Control', 'Modify', 'Read & Execute', 'List Folder Contents', 'Read Only', 'Read & Write']"
                     />
-                  </v-col>
+                  </VCol>
 
                   <!-- 👉 Name the API Key -->
-                  <v-col cols="12">
-                    <v-text-field label="Name the API key" />
-                  </v-col>
+                  <VCol cols="12">
+                    <VTextField label="Name the API key" />
+                  </VCol>
 
                   <!-- 👉 Create Key Button -->
-                  <v-col cols="12">
-                    <v-btn
+                  <VCol cols="12">
+                    <VBtn
                       type="submit"
                       block
                     >
                       Create Key
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </v-form>
-            </v-card-text>
-          </v-col>
+                    </VBtn>
+                  </VCol>
+                </VRow>
+              </VForm>
+            </VCardText>
+          </VCol>
 
           <!-- 👉 Lady image -->
-          <v-col
+          <VCol
             cols="12"
             md="7"
             order="0"
             order-md="1"
             class="d-flex flex-column justify-center align-center"
           >
-            <v-img
+            <VImg
               :src="vuetifyTheme.current.value.dark ? sittingGirlDark : sittingGirlLight"
               :width="310"
               :style="$vuetify.display.smAndDown ? '' : 'position: absolute; bottom: 0;'"
             />
-          </v-col>
-        </v-row>
-      </v-card>
+          </VCol>
+        </VRow>
+      </VCard>
     <!-- !SECTION -->
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- SECTION: API Keys List -->
-      <v-card title="API Key List &amp; Access">
-        <v-card-text>
+      <VCard title="API Key List &amp; Access">
+        <VCardText>
           An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
-        </v-card-text>
+        </VCardText>
 
         <!-- 👉 Server Status -->
-        <v-card-text class="d-flex flex-column gap-y-4">
+        <VCardText class="d-flex flex-column gap-y-4">
           <div
             v-for="serverKey in serverKeys"
             :key="serverKey.key"
@@ -285,16 +285,16 @@ const isOneTimePasswordDialogVisible = ref(false)
               <h4 class="text-h5 mb-0 me-3">
                 {{ serverKey.name }}
               </h4>
-              <v-chip
+              <VChip
                 label
                 color="primary"
               >
                 {{ serverKey.permission }}
-              </v-chip>
+              </VChip>
             </div>
             <p class="text-body-1 font-weight-semibold">
               <span class="me-3">{{ serverKey.key }}</span>
-              <v-icon
+              <VIcon
                 :size="18"
                 icon="mdi-content-copy"
                 class="cursor-pointer"
@@ -303,9 +303,9 @@ const isOneTimePasswordDialogVisible = ref(false)
             <span>Created on {{ serverKey.createdOn }}</span>
 
             <!-- 👉 Menu for more  -->
-            <v-menu>
+            <VMenu>
               <template #activator="{ props }">
-                <v-btn
+                <VBtn
                   v-bind="props"
                   color="secondary"
                   size="x-small"
@@ -315,40 +315,40 @@ const isOneTimePasswordDialogVisible = ref(false)
                 />
               </template>
 
-              <v-list>
-                <v-list-item href="javascript:void(0)">
-                  <v-list-item-icon
+              <VList>
+                <VListItem href="javascript:void(0)">
+                  <VListItemIcon
                     size="20"
                     class="me-2"
                   >
                     mdi-pencil-outline
-                  </v-list-item-icon>
+                  </VListItemIcon>
 
-                  <v-list-item-title>Edit</v-list-item-title>
-                </v-list-item>
+                  <VListItemTitle>Edit</VListItemTitle>
+                </VListItem>
 
-                <v-list-item href="#">
-                  <v-list-item-icon
+                <VListItem href="#">
+                  <VListItemIcon
                     size="20"
                     class="me-2"
                   >
                     mdi-delete-outline
-                  </v-list-item-icon>
-                  <v-list-item-title>Delete</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
+                  </VListItemIcon>
+                  <VListItemTitle>Delete</VListItemTitle>
+                </VListItem>
+              </VList>
+            </VMenu>
           </div>
-        </v-card-text>
-      </v-card>
+        </VCardText>
+      </VCard>
       <!-- !SECTION -->
-    </v-col>
+    </VCol>
 
     <!-- SECTION Recent Devices -->
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Table -->
-      <v-card title="Recent Devices">
-        <v-table class="text-no-wrap">
+      <VCard title="Recent Devices">
+        <VTable class="text-no-wrap">
           <thead>
             <tr>
               <th>Browser</th>
@@ -363,7 +363,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               :key="device.recentActivity"
             >
               <td>
-                <v-icon
+                <VIcon
                   :icon="device.deviceIcon.icon"
                   :color="device.deviceIcon.color"
                 />
@@ -374,11 +374,11 @@ const isOneTimePasswordDialogVisible = ref(false)
               <td>{{ device.recentActivity }}</td>
             </tr>
           </tbody>
-        </v-table>
-      </v-card>
-    </v-col>
+        </VTable>
+      </VCard>
+    </VCol>
     <!-- !SECTION -->
-  </v-row>
+  </VRow>
 
   <!-- SECTION Enable One time password -->
   <EnableOneTimePasswordDialog v-model="isOneTimePasswordDialogVisible" />

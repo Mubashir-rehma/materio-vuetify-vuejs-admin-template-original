@@ -3,15 +3,15 @@ const isSnackbarVisible = ref(false)
 </script>
 
 <template>
-  <v-btn @click="isSnackbarVisible = true">
+  <VBtn @click="isSnackbarVisible = true">
     Open Snackbar
-  </v-btn>
+  </VBtn>
 
   <!-- Snackbar -->
-  <v-snackbar
+  <VSnackbar
     v-model="isSnackbarVisible"
     :timeout="2000"
   >
     My timeout is set to 2000.
-  </v-snackbar>
+  </VSnackbar>
 </template>

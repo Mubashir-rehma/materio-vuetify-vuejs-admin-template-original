@@ -1,22 +1,22 @@
 <template>
   <div class="demo-space-x">
-    <v-btn color="primary">
+    <VBtn color="primary">
       Primary
-    </v-btn>
-    <v-btn color="secondary">
+    </VBtn>
+    <VBtn color="secondary">
       Secondary
-    </v-btn>
-    <v-btn color="success">
+    </VBtn>
+    <VBtn color="success">
       Success
-    </v-btn>
-    <v-btn color="info">
+    </VBtn>
+    <VBtn color="info">
       Info
-    </v-btn>
-    <v-btn color="warning">
+    </VBtn>
+    <VBtn color="warning">
       Warning
-    </v-btn>
-    <v-btn color="error">
+    </VBtn>
+    <VBtn color="error">
       Error
-    </v-btn>
+    </VBtn>
   </div>
 </template>

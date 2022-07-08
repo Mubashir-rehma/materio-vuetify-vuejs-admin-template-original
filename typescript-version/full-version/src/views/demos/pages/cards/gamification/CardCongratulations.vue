@@ -3,30 +3,30 @@ import illustrationJohn from '@/assets/images/cards/illustration-john-2.png'
 </script>
 
 <template>
-  <v-card class="pa-2">
-    <v-row no-gutters>
-      <v-col
+  <VCard class="pa-2">
+    <VRow no-gutters>
+      <VCol
         cols="12"
         sm="6"
         order="2"
         order-sm="1"
       >
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title class="text-md-h5">
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle class="text-md-h5">
               <span class="me-1">Congratulations</span><strong class="me-1">John!</strong><span>🎉</span>
-            </v-card-title>
-          </v-card-header-text>
-        </v-card-header>
+            </VCardTitle>
+          </VCardHeaderText>
+        </VCardHeader>
 
-        <v-card-text class="mt-3">
+        <VCardText class="mt-3">
           You have done 72% 🤩 more sales today.
           <br>
           Check your new raising badge in your profile.
-        </v-card-text>
-      </v-col>
+        </VCardText>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         sm="6"
         order="1"
@@ -39,9 +39,9 @@ import illustrationJohn from '@/assets/images/cards/illustration-john-2.png'
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
           class="john-illustration"
         >
-      </v-col>
-    </v-row>
-  </v-card>
+      </VCol>
+    </VRow>
+  </VCard>
 </template>
 
 <style lang="scss" scoped>

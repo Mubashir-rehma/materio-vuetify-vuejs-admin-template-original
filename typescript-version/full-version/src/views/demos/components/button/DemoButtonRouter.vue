@@ -1,28 +1,28 @@
 <template>
   <div class="demo-space-x">
-    <v-btn to="alert">
+    <VBtn to="alert">
       String Literal
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="warning"
       :to="{ path: 'alert' }"
     >
       Object Path
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="success"
       :to="{ name: 'components-alert' }"
     >
       Named Router
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="secondary"
       :to="{ path: 'alert', query: { plan: 'private' } }"
     >
       With Query
-    </v-btn>
+    </VBtn>
   </div>
 </template>

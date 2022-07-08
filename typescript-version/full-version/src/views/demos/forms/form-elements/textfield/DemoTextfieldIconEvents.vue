@@ -21,7 +21,7 @@ const sendMessage = () => {
 </script>
 
 <template>
-  <v-text-field
+  <VTextField
     v-model="message"
     clearable
     type="text"

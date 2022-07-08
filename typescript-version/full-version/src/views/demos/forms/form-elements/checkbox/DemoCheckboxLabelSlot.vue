@@ -3,11 +3,11 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-checkbox v-model="checkbox">
+  <VCheckbox v-model="checkbox">
     <template #label>
       <div>
         I agree that
-        <v-tooltip anchor="bottom">
+        <VTooltip anchor="bottom">
           <template #activator="{ props }">
             <a
               href="https://vuetifyjs.com/"
@@ -20,9 +20,9 @@ const checkbox = ref(false)
             </a>
           </template>
           Opens in new window
-        </v-tooltip>
+        </VTooltip>
         is awesome
       </div>
     </template>
-  </v-checkbox>
+  </VCheckbox>
 </template>

@@ -9,105 +9,105 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-form @submit.prevent="() => {}">
-    <v-row>
+  <VForm @submit.prevent="() => {}">
+    <VRow>
       <!-- 👉 First Name -->
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="firstName"
           label="First Name"
           placeholder="First Name"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Last Name -->
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="lastName"
           label="Last Name"
           placeholder="Last Name"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Email -->
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="email"
           label="Email"
           placeholder="Email"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 City -->
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="city"
           label="City"
           placeholder="City"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Country -->
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="country"
           label="Country"
           placeholder="Country"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Company -->
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="company"
           label="Company"
           placeholder="Company"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Remember me -->
-      <v-col cols="12">
-        <v-checkbox
+      <VCol cols="12">
+        <VCheckbox
           v-model="checkbox"
           density="compact"
           label="Remember me"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-btn
+      <VCol cols="12">
+        <VBtn
           type="submit"
           class="me-2"
         >
           Submit
-        </v-btn>
+        </VBtn>
 
-        <v-btn
+        <VBtn
           type="reset"
           color="secondary"
           variant="outlined"
         >
           Reset
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

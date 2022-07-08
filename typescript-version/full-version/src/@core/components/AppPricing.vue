@@ -85,14 +85,14 @@ const vuetifyTheme = useTheme()
 
   <!-- 👉 Annual and monthly price toggler -->
   <div class="d-flex justify-center align-center mt-15 mb-5 pt-10">
-    <v-label
+    <VLabel
       for="pricing-plan-toggle"
       class="me-3 ms-15"
     >
       Monthly
-    </v-label>
+    </VLabel>
     <div>
-      <v-switch
+      <VSwitch
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
         inline
@@ -103,62 +103,62 @@ const vuetifyTheme = useTheme()
       class="d-flex align-center position-relative ms-n10"
       style="top: -1.8rem;"
     >
-      <v-img
+      <VImg
         :src="vuetifyTheme.current.value.dark ? priceArrowDark : priceArrowLight"
         width="30"
       />
-      <v-chip
+      <VChip
         color="primary"
         label
         size="small"
       >
         Save Upto 10%
-      </v-chip>
+      </VChip>
     </div>
   </div>
 
   <!-- SECTION pricing plans -->
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       v-for="plan in pricingPlans"
       :key="plan.logo"
       cols="12"
       v-bind="props"
     >
       <!-- 👉  Card -->
-      <v-card v-bind="plan.isExclusive ? exclusiveStyle : {}">
-        <v-card-text
+      <VCard v-bind="plan.isExclusive ? exclusiveStyle : {}">
+        <VCardText
           style="height: 3.75rem;"
           class="text-end"
         >
           <!-- 👉 Exclusive -->
-          <v-chip
+          <VChip
             v-show="plan.isExclusive"
             color="primary"
             label
             size="small"
           >
             Exclusive
-          </v-chip>
-        </v-card-text>
+          </VChip>
+        </VCardText>
 
         <!-- 👉 Plan name -->
-        <v-card-text class="d-flex justify-center">
+        <VCardText class="d-flex justify-center">
           <h3 class="text-h5 font-weight-bold">
             {{ plan.name }}
           </h3>
-        </v-card-text>
+        </VCardText>
 
         <!-- 👉 Plan logo -->
-        <v-card-text>
-          <v-img
+        <VCardText>
+          <VImg
             :src="plan.logo"
             height="80"
           />
-        </v-card-text>
+        </VCardText>
 
         <!-- 👉 Plan price  -->
-        <v-card-text class="position-relative text-center my-6">
+        <VCardText class="position-relative text-center my-6">
           <div class="d-flex justify-center align-center mb-2">
             <sup class="text-h6 font-weight-medium me-1 mt-4">$</sup>
             <h1 class="text-h3 font-weight-bold">
@@ -173,40 +173,40 @@ const vuetifyTheme = useTheme()
           >
             {{ plan.yearlyPrice === 0 ? 'free' : `$ ${plan.yearlyPrice}/year` }}
           </span>
-        </v-card-text>
+        </VCardText>
 
         <!-- 👉 Plan features -->
-        <v-card-text>
-          <v-list density="compact">
-            <v-list-item
+        <VCardText>
+          <VList density="compact">
+            <VListItem
               v-for="feature in plan.features"
               :key="feature"
             >
-              <v-list-item-avatar
+              <VListItemAvatar
                 size="20"
                 class="v-avatar-light-bg text-primary me-2"
               >
-                <v-icon
+                <VIcon
                   size="13"
                   icon="mdi-check"
                 />
-              </v-list-item-avatar>
-              <v-list-item-title>{{ feature }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-card-text>
+              </VListItemAvatar>
+              <VListItemTitle>{{ feature }}</VListItemTitle>
+            </VListItem>
+          </VList>
+        </VCardText>
 
         <!-- 👉 Plan actions -->
-        <v-card-actions>
-          <v-btn
+        <VCardActions>
+          <VBtn
             :variant="plan.isExclusive ? 'elevated' : 'tonal'"
             block
           >
             Get Started {{ plan.yearlyPrice === 0 ? 'for free' : '' }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+          </VBtn>
+        </VCardActions>
+      </VCard>
+    </VCol>
+  </VRow>
   <!-- !SECTION  -->
 </template>

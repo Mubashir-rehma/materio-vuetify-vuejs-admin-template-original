@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const withAction = { ts: '', js: '' }
 
 export const variants = { ts: '', js: '' }

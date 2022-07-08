@@ -4,7 +4,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
 
 <template>
-  <v-combobox
+  <VCombobox
     v-model="selectedItem"
     :items="items"
   />

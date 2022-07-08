@@ -1,16 +1,16 @@
 <template>
-  <v-tabs fixed-tabs>
-    <v-tab>
+  <VTabs fixed-tabs>
+    <VTab>
       Fixed Tab 1
-    </v-tab>
-    <v-tab>
+    </VTab>
+    <VTab>
       Fixed Tab 2
-    </v-tab>
-    <v-tab>
+    </VTab>
+    <VTab>
       Fixed Tab 3
-    </v-tab>
-    <v-tab>
+    </VTab>
+    <VTab>
       Fixed Tab 4
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 </template>

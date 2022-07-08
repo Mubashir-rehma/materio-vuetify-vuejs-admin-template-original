@@ -4,16 +4,16 @@ const colorsRadio = ['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Erro
 </script>
 
 <template>
-  <v-radio-group
+  <VRadioGroup
     v-model="selectedRadio"
     inline
   >
-    <v-radio
+    <VRadio
       v-for="radio in colorsRadio"
       :key="radio"
       :label="radio"
       :color="radio.toLocaleLowerCase()"
       :value="radio.toLocaleLowerCase()"
     />
-  </v-radio-group>
+  </VRadioGroup>
 </template>

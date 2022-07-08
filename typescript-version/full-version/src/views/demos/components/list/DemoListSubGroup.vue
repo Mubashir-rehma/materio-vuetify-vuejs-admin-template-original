@@ -14,16 +14,16 @@ const cruds = [
 </script>
 
 <template>
-  <v-list v-model:opened="open">
-    <v-list-item
+  <VList v-model:opened="open">
+    <VListItem
       prepend-icon="mdi-home-outline"
       title="Home"
       value="Home"
     />
 
-    <v-list-group value="Users">
+    <VListGroup value="Users">
       <template #activator="{ props }">
-        <v-list-item
+        <VListItem
           v-bind="props"
           prepend-icon="mdi-account-circle-outline"
           title="Users"
@@ -31,41 +31,41 @@ const cruds = [
         />
       </template>
 
-      <v-list-group value="Admin">
+      <VListGroup value="Admin">
         <template #activator="{ props }">
-          <v-list-item
+          <VListItem
             v-bind="props"
             title="Admin"
             value="Admin"
           />
         </template>
 
-        <v-list-item
+        <VListItem
           v-for="([title, icon], i) in admins"
           :key="i"
           :value="title"
           :title="title"
           :prepend-icon="icon"
         />
-      </v-list-group>
+      </VListGroup>
 
-      <v-list-group value="Actions">
+      <VListGroup value="Actions">
         <template #activator="{ props }">
-          <v-list-item
+          <VListItem
             v-bind="props"
             title="Actions"
             value="Actions"
           />
         </template>
 
-        <v-list-item
+        <VListItem
           v-for="([title, icon], i) in cruds"
           :key="i"
           :value="title"
           :title="title"
           :prepend-icon="icon"
         />
-      </v-list-group>
-    </v-list-group>
-  </v-list>
+      </VListGroup>
+    </VListGroup>
+  </VList>
 </template>

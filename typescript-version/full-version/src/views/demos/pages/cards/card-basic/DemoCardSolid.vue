@@ -38,36 +38,36 @@ const solidCardData = [
 </script>
 
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       v-for="data in solidCardData"
       :key="data.icon"
       cols="12"
       md="6"
       lg="4"
     >
-      <v-card :color="data.cardBg">
-        <v-card-header>
-          <v-card-header-text>
-            <v-card-title>
-              <v-icon
+      <VCard :color="data.cardBg">
+        <VCardHeader>
+          <VCardHeaderText>
+            <VCardTitle>
+              <VIcon
                 size="1.5rem"
                 color="white"
                 class="me-2"
                 :icon="data.icon"
               />
               <span class="text-white">{{ data.title }}</span>
-            </v-card-title>
-          </v-card-header-text>
-        </v-card-header>
+            </VCardTitle>
+          </VCardHeaderText>
+        </VCardHeader>
 
-        <v-card-text class="text-white">
+        <VCardText class="text-white">
           {{ data.text }}
-        </v-card-text>
+        </VCardText>
 
-        <v-card-text class="d-flex justify-space-between align-center">
+        <VCardText class="d-flex justify-space-between align-center">
           <div>
-            <v-avatar
+            <VAvatar
               size="34"
               :image="data.avatarImg"
             />
@@ -75,7 +75,7 @@ const solidCardData = [
           </div>
 
           <div>
-            <v-icon
+            <VIcon
               icon="mdi-heart"
               color="white"
               size="1rem"
@@ -83,7 +83,7 @@ const solidCardData = [
             />
             <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
 
-            <v-icon
+            <VIcon
               icon="mdi-share-variant"
               color="white"
               size="1rem"
@@ -91,8 +91,8 @@ const solidCardData = [
             />
             <span class="text-subtitle-2 text-white">{{ data.share }}</span>
           </div>
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>

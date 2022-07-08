@@ -32,14 +32,14 @@ const selectedNotification = ref('Only when I\'m online')
 </script>
 
 <template>
-  <v-card title="Recent Devices">
-    <v-card-text>
+  <VCard title="Recent Devices">
+    <VCardText>
       We need permission from your browser to show notifications.
       <a href="javascript:void(0)">Request Permission</a>
-    </v-card-text>
+    </VCardText>
 
-    <v-card-text>
-      <v-table>
+    <VCardText>
+      <VTable>
         <thead>
           <tr>
             <th>Type</th>
@@ -57,53 +57,53 @@ const selectedNotification = ref('Only when I\'m online')
               {{ device.type }}
             </td>
             <td>
-              <v-checkbox v-model="device.email" />
+              <VCheckbox v-model="device.email" />
             </td>
             <td>
-              <v-checkbox v-model="device.browser" />
+              <VCheckbox v-model="device.browser" />
             </td>
             <td>
-              <v-checkbox v-model="device.app" />
+              <VCheckbox v-model="device.app" />
             </td>
           </tr>
         </tbody>
-      </v-table>
-    </v-card-text>
+      </VTable>
+    </VCardText>
 
-    <v-divider />
+    <VDivider />
 
-    <v-card-text>
-      <v-form @submit.prevent="() => {}">
+    <VCardText>
+      <VForm @submit.prevent="() => {}">
         <p class="text-body-1 font-weight-medium">
           When should we send you notifications?
         </p>
 
-        <v-row>
-          <v-col
+        <VRow>
+          <VCol
             cols="12"
             sm="6"
           >
-            <v-select
+            <VSelect
               v-model="selectedNotification"
               mandatory
               :items="['Only when I\'m online', 'Anytime']"
             />
-          </v-col>
-        </v-row>
+          </VCol>
+        </VRow>
 
         <div class="d-flex flex-wrap gap-4 mt-4">
-          <v-btn type="submit">
+          <VBtn type="submit">
             Save Changes
-          </v-btn>
-          <v-btn
+          </VBtn>
+          <VBtn
             color="secondary"
             variant="tonal"
             type="reset"
           >
             Reset
-          </v-btn>
+          </VBtn>
         </div>
-      </v-form>
-    </v-card-text>
-  </v-card>
+      </VForm>
+    </VCardText>
+  </VCard>
 </template>

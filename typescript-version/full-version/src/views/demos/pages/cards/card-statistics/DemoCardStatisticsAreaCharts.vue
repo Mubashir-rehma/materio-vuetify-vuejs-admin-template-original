@@ -79,18 +79,18 @@ const chartOptions = {
 </script>
 
 <template>
-  <v-card title="42.5k">
-    <v-card-text>
+  <VCard title="42.5k">
+    <VCardText>
       <VueApexCharts
         type="area"
         height="auto"
         :options="chartOptions"
         :series="series"
       />
-    </v-card-text>
+    </VCardText>
 
-    <v-card-text class="text-center font-weight-semibold mt-10">
+    <VCardText class="text-center font-weight-semibold mt-10">
       Total Growth
-    </v-card-text>
-  </v-card>
+    </VCardText>
+  </VCard>
 </template>

@@ -1,35 +1,35 @@
 <template>
   <div class="demo-space-x">
-    <v-btn
+    <VBtn
       icon="mdi-briefcase-download-outline"
       variant="text"
     />
 
-    <v-btn
+    <VBtn
       icon="mdi-account-plus-outline"
       variant="text"
       color="secondary"
     />
 
-    <v-btn
+    <VBtn
       icon="mdi-magnify"
       variant="text"
       color="success"
     />
 
-    <v-btn
+    <VBtn
       icon="mdi-thumb-up-outline"
       variant="text"
       color="info"
     />
 
-    <v-btn
+    <VBtn
       icon="mdi-star-outline"
       variant="text"
       color="warning"
     />
 
-    <v-btn
+    <VBtn
       icon="mdi-heart-outline"
       variant="text"
       color="error"

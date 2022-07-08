@@ -1,66 +1,66 @@
 <template>
   <div class="demo-space-x">
-    <v-chip>
-      <v-icon
+    <VChip>
+      <VIcon
         start
         size="18"
         icon="mdi-account-outline"
       />
       Account
-    </v-chip>
+    </VChip>
 
-    <v-chip color="primary">
-      <v-icon
+    <VChip color="primary">
+      <VIcon
         start
         size="18"
         icon="mdi-star-outline"
       />
       Premium
-    </v-chip>
+    </VChip>
 
-    <v-chip color="secondary">
-      <v-icon
+    <VChip color="secondary">
+      <VIcon
         start
         size="18"
         icon="mdi-cake"
       />
       1 Year
-    </v-chip>
+    </VChip>
 
-    <v-chip color="success">
-      <v-icon
+    <VChip color="success">
+      <VIcon
         start
         size="18"
         icon="mdi-bell-outline"
       />
       Notification
-    </v-chip>
+    </VChip>
 
-    <v-chip color="info">
-      <v-icon
+    <VChip color="info">
+      <VIcon
         start
         size="18"
         icon="mdi-forum-outline"
       />
       Message
-    </v-chip>
+    </VChip>
 
-    <v-chip color="warning">
-      <v-icon
+    <VChip color="warning">
+      <VIcon
         start
         size="18"
         icon="mdi-alert-outline"
       />
       Warning
-    </v-chip>
+    </VChip>
 
-    <v-chip color="error">
-      <v-icon
+    <VChip color="error">
+      <VIcon
         start
         size="18"
         icon="mdi-alert-circle-outline"
       />
       Error
-    </v-chip>
+    </VChip>
   </div>
 </template>

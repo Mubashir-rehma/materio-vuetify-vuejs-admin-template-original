@@ -1,19 +1,19 @@
 <template>
   <div class="demo-space-y">
-    <v-alert type="info">
+    <VAlert type="info">
       I'm a alert with a <strong>type</strong> of info
-    </v-alert>
+    </VAlert>
 
-    <v-alert type="success">
+    <VAlert type="success">
       I'm a alert with a <strong>type</strong> of success
-    </v-alert>
+    </VAlert>
 
-    <v-alert type="warning">
+    <VAlert type="warning">
       I'm a alert with a <strong>type</strong> of warning
-    </v-alert>
+    </VAlert>
 
-    <v-alert type="error">
+    <VAlert type="error">
       I'm a alert with a <strong>type</strong> of error
-    </v-alert>
+    </VAlert>
   </div>
 </template>

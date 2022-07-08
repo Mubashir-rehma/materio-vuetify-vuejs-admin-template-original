@@ -5,39 +5,39 @@ const menu = ref(false)
 </script>
 
 <template>
-  <v-menu
+  <VMenu
     v-model="menu"
     anchor="top"
   >
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         Menu as Popover
-      </v-btn>
+      </VBtn>
     </template>
 
-    <v-card
+    <VCard
       max-width="300"
     >
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           :prepend-avatar="avatar1"
           title="John Leider"
           subtitle="Founder of Vuetify"
         />
-      </v-list>
+      </VList>
 
-      <v-divider />
+      <VDivider />
 
-      <v-card-text>
+      <VCardText>
         Gingerbread bear claw cake. Soufflé candy sesame snaps chocolate ice cream cake.
         Dessert candy canes oat cake pudding cupcake. Bear claw sweet wafer bonbon dragée toffee.
-      </v-card-text>
+      </VCardText>
 
-      <v-card-actions>
-        <v-btn icon="mdi-heart-outline" />
-        <v-btn icon="mdi-bookmark-outline" />
-        <v-btn icon="mdi-share-variant " />
-      </v-card-actions>
-    </v-card>
-  </v-menu>
+      <VCardActions>
+        <VBtn icon="mdi-heart-outline" />
+        <VBtn icon="mdi-bookmark-outline" />
+        <VBtn icon="mdi-share-variant " />
+      </VCardActions>
+    </VCard>
+  </VMenu>
 </template>

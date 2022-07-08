@@ -40,7 +40,7 @@ const items = [
 </script>
 
 <template>
-  <v-list
+  <VList
     lines="three"
     :items="items"
     item-props
@@ -48,5 +48,5 @@ const items = [
     <template #subtitle="{ subtitle }">
       <div v-html="subtitle" />
     </template>
-  </v-list>
+  </VList>
 </template>

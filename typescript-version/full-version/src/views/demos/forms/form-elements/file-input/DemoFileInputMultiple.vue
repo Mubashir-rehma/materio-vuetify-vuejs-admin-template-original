@@ -1,5 +1,5 @@
 <template>
-  <v-file-input
+  <VFileInput
     multiple
     label="File input"
   />

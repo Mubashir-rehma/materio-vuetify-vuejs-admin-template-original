@@ -1,60 +1,60 @@
 <template>
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       cols="12"
       md="6"
     >
-      <v-text-field label="Default" />
-    </v-col>
+      <VTextField label="Default" />
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-text-field
+      <VTextField
         label="Filled"
         variant="filled"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-text-field
+      <VTextField
         label="Outlined"
         variant="outlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-text-field
+      <VTextField
         label="Solo"
         variant="solo"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-text-field
+      <VTextField
         label="Underlined"
         variant="underlined"
       />
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
-      <v-text-field
+      <VTextField
         label="Plain"
         variant="plain"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

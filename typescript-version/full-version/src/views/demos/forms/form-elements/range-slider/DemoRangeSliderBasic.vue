@@ -1,3 +1,3 @@
 <template>
-  <v-range-slider />
+  <VRangeSlider />
 </template>

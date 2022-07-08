@@ -1,46 +1,46 @@
 <template>
   <div class="demo-space-x">
-    <v-avatar color="primary">
-      <v-icon
+    <VAvatar color="primary">
+      <VIcon
         size="18"
         icon="mdi-home-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="secondary">
-      <v-icon
+    <VAvatar color="secondary">
+      <VIcon
         color="white"
         size="18"
         icon="mdi-cloud-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="success">
-      <v-icon
+    <VAvatar color="success">
+      <VIcon
         size="18"
         icon="mdi-bell-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="info">
-      <v-icon
+    <VAvatar color="info">
+      <VIcon
         size="18"
         icon="mdi-account-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="warning">
-      <v-icon
+    <VAvatar color="warning">
+      <VIcon
         size="18"
         icon="mdi-alert-outline"
       />
-    </v-avatar>
+    </VAvatar>
 
-    <v-avatar color="error">
-      <v-icon
+    <VAvatar color="error">
+      <VIcon
         size="18"
         icon="mdi-message-outline"
       />
-    </v-avatar>
+    </VAvatar>
   </div>
 </template>

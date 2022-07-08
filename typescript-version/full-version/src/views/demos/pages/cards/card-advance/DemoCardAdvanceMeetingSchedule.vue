@@ -68,67 +68,67 @@ const meetingTypeUiColors: UiColors = {
 </script>
 
 <template>
-  <v-card>
+  <VCard>
     <!-- SECTION Card Header and Menu -->
-    <v-card-header>
-      <v-card-header-text>
+    <VCardHeader>
+      <VCardHeaderText>
         <!-- 👉 Title -->
-        <v-card-title>Meeting Schedule</v-card-title>
-      </v-card-header-text>
+        <VCardTitle>Meeting Schedule</VCardTitle>
+      </VCardHeaderText>
 
       <!-- 👉 menu -->
 
-      <v-btn
+      <VBtn
         size="x-small"
         variant="text"
         icon="mdi-dots-vertical"
         color="secondary"
         class="me-n3"
       />
-    </v-card-header>
+    </VCardHeader>
     <!-- !SECTION -->
 
     <!-- SECTION Meting Schedule -->
-    <v-list
+    <VList
       class="mx-1 pt-0"
       lines="two"
     >
-      <v-list-item
+      <VListItem
         v-for="meeting in meetingSchedules"
         :key="meeting.type"
       >
         <!-- 👉 Avatar -->
-        <v-list-item-avatar
+        <VListItemAvatar
           start
           :image="meeting.profile"
         />
 
         <!-- 👉 Title and Subtitle -->
-        <v-list-item-header>
-          <v-list-item-title class="text-body-2 font-weight-medium">
+        <VListItemHeader>
+          <VListItemTitle class="text-body-2 font-weight-medium">
             {{ meeting.with }}
-          </v-list-item-title>
-          <v-list-item-subtitle class="text-caption">
-            <v-icon
+          </VListItemTitle>
+          <VListItemSubtitle class="text-caption">
+            <VIcon
               start
               size="13"
               icon="mdi-calendar-blank"
             />
             <span>{{ meeting.dateTime }}</span>
-          </v-list-item-subtitle>
-        </v-list-item-header>
+          </VListItemSubtitle>
+        </VListItemHeader>
 
         <!-- 👉 Business Types -->
-        <v-list-item-action>
-          <v-chip
+        <VListItemAction>
+          <VChip
             size="small"
             :color="meetingTypeUiColors[meeting.type]"
           >
             {{ meeting.type }}
-          </v-chip>
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
+          </VChip>
+        </VListItemAction>
+      </VListItem>
+    </VList>
     <!-- !SECTION -->
-  </v-card>
+  </VCard>
 </template>

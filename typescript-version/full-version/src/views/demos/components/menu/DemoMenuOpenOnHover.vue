@@ -3,21 +3,21 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
 </script>
 
 <template>
-  <v-menu open-on-hover>
+  <VMenu open-on-hover>
     <template #activator="{ props }">
-      <v-btn v-bind="props">
+      <VBtn v-bind="props">
         On hover
-      </v-btn>
+      </VBtn>
     </template>
 
-    <v-list>
-      <v-list-item
+    <VList>
+      <VListItem
         v-for="(item, index) in items"
         :key="index"
         :value="index"
       >
-        <v-list-item-title>{{ item.title }}</v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-menu>
+        <VListItemTitle>{{ item.title }}</VListItemTitle>
+      </VListItem>
+    </VList>
+  </VMenu>
 </template>

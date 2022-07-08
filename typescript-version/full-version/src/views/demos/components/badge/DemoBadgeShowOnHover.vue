@@ -10,40 +10,40 @@ const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
 
 <template>
   <div class="demo-space-x">
-    <v-badge
+    <VBadge
       content="3"
       transition="slide-x-transition"
       :model-value="showTwitterBadgeOnHover"
     >
-      <v-icon
+      <VIcon
         ref="tRefTwitterBadge"
         size="25"
         icon="mdi-twitter"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       content="5"
       transition="scale-transition"
       :model-value="showInstagramBadgeOnHover"
     >
-      <v-icon
+      <VIcon
         ref="tRefInstagramBadge"
         size="25"
         icon="mdi-instagram"
       />
-    </v-badge>
+    </VBadge>
 
-    <v-badge
+    <VBadge
       content="1"
       transition="slide-x-transition"
       :model-value="showWhatsappBadgeOnHover"
     >
-      <v-icon
+      <VIcon
         ref="tRefWhatsappBadge"
         size="25"
         icon="mdi-whatsapp"
       />
-    </v-badge>
+    </VBadge>
   </div>
 </template>

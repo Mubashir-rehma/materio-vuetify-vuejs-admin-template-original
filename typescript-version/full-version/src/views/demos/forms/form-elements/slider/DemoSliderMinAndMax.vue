@@ -5,18 +5,18 @@ const slider = ref(40)
 </script>
 
 <template>
-  <v-slider
+  <VSlider
     v-model="slider"
     :max="max"
     :min="min"
     :step="1"
   >
     <template #append>
-      <v-text-field
+      <VTextField
         v-model="slider"
         variant="underlined"
         type="number"
       />
     </template>
-  </v-slider>
+  </VSlider>
 </template>

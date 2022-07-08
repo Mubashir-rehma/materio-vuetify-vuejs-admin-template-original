@@ -1,42 +1,42 @@
 <template>
   <div class="demo-space-x">
-    <v-btn variant="tonal">
+    <VBtn variant="tonal">
       Primary
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="secondary"
       variant="tonal"
     >
       Secondary
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="success"
       variant="tonal"
     >
       Success
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="info"
       variant="tonal"
     >
       Info
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="warning"
       variant="tonal"
     >
       warning
-    </v-btn>
+    </VBtn>
 
-    <v-btn
+    <VBtn
       color="error"
       variant="tonal"
     >
       error
-    </v-btn>
+    </VBtn>
   </div>
 </template>

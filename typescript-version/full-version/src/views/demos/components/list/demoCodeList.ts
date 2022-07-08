@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const actionAndItemGroup = { ts: '', js: '' }
 
 export const shaped = { ts: '', js: '' }

@@ -42,13 +42,13 @@ const openEditCardDialog = (cardDetails: Object) => {
 </script>
 
 <template>
-  <v-row>
+  <VRow>
     <!-- 👉 Current Plan -->
-    <v-col cols="12">
-      <v-card title="Current Plan">
-        <v-card-text>
-          <v-row>
-            <v-col
+    <VCol cols="12">
+      <VCard title="Current Plan">
+        <VCardText>
+          <VRow>
+            <VCol
               cols="12"
               md="6"
             >
@@ -59,25 +59,25 @@ const openEditCardDialog = (cardDetails: Object) => {
                 <p>We will send you a notification upon Subscription expiration</p>
                 <h3>
                   <span class="me-3">$199 Per Month</span>
-                  <v-chip
+                  <VChip
                     color="primary"
                     size="small"
                     label
                   >
                     popular
-                  </v-chip>
+                  </VChip>
                 </h3>
                 <p>
                   Standard plan for small to medium businesses
                 </p>
               </div>
-            </v-col>
+            </VCol>
 
-            <v-col
+            <VCol
               cols="12"
               md="6"
             >
-              <v-alert
+              <VAlert
                 color="warning"
                 variant="tonal"
               >
@@ -85,15 +85,15 @@ const openEditCardDialog = (cardDetails: Object) => {
                   We need your attention!
                 </p>
                 <span>Your plan requires update</span>
-              </v-alert>
+              </VAlert>
 
               <!-- progress -->
               <div class="d-flex font-weight-bold mt-8 mb-2">
                 <span>Days</span>
-                <v-spacer />
+                <VSpacer />
                 <span>24 of 30 Days</span>
               </div>
-              <v-progress-linear
+              <VProgressLinear
                 color="primary"
                 rounded
                 height="12"
@@ -102,27 +102,27 @@ const openEditCardDialog = (cardDetails: Object) => {
               <p class="font-weight-bold mt-2">
                 6 days remaining until your plan requires update
               </p>
-            </v-col>
+            </VCol>
 
-            <v-col cols="12">
+            <VCol cols="12">
               <div class="d-flex flex-wrap gap-y-4">
-                <v-btn
+                <VBtn
                   class="me-3"
                   @click="isPricingPlanDialogVisible = true"
                 >
                   upgrade plan
-                </v-btn>
+                </VBtn>
 
-                <v-btn
+                <VBtn
                   color="secondary"
                   variant="tonal"
                   @click="isConfirmDialogVisible = true"
                 >
                   Cancel Subscription
-                </v-btn>
+                </VBtn>
               </div>
-            </v-col>
-          </v-row>
+            </VCol>
+          </VRow>
 
           <!-- 👉 Confirm Dialog -->
           <ConfirmDialog
@@ -131,124 +131,124 @@ const openEditCardDialog = (cardDetails: Object) => {
           />
 
           <!-- 👉 plan and pricing dialog -->
-          <v-dialog
+          <VDialog
             v-model="isPricingPlanDialogVisible"
             class="v-dialog-xl"
           >
-            <v-card class="pricing-dialog pa-5 pa-sm-15">
-              <v-card-text>
+            <VCard class="pricing-dialog pa-5 pa-sm-15">
+              <VCardText>
                 <AppPricing lg="4" />
-              </v-card-text>
-            </v-card>
-          </v-dialog>
-        </v-card-text>
-      </v-card>
-    </v-col>
+              </VCardText>
+            </VCard>
+          </VDialog>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Payment Methods -->
-    <v-col cols="12">
-      <v-card title="Payment Methods">
-        <v-card-text>
-          <v-form>
-            <v-row>
-              <v-col
+    <VCol cols="12">
+      <VCard title="Payment Methods">
+        <VCardText>
+          <VForm>
+            <VRow>
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-form @submit.prevent="() => {}">
-                  <v-row>
+                <VForm @submit.prevent="() => {}">
+                  <VRow>
                     <!-- 👉 card type switch -->
-                    <v-col cols="12">
-                      <v-radio-group
+                    <VCol cols="12">
+                      <VRadioGroup
                         v-model="selectedPaymentMethod"
                         inline
                       >
-                        <v-radio
+                        <VRadio
                           value="credit-debit-atm-card"
                           label="Credit/Debit/ATM Card"
                           color="primary"
                         />
-                        <v-radio
+                        <VRadio
                           value="paypal-account"
                           label="Paypal account"
                           color="primary"
                         />
-                      </v-radio-group>
-                    </v-col>
+                      </VRadioGroup>
+                    </VCol>
 
                     <!-- 👉 Card Number -->
-                    <v-col cols="12">
-                      <v-text-field
+                    <VCol cols="12">
+                      <VTextField
                         label="Card Number"
                         :model-value="135632156548789"
                         type="number"
                       />
-                    </v-col>
+                    </VCol>
 
                     <!-- 👉 Name -->
-                    <v-col
+                    <VCol
                       cols="12"
                       md="6"
                     >
-                      <v-text-field
+                      <VTextField
                         label="Name"
                         model-value="john Doe"
                       />
-                    </v-col>
+                    </VCol>
 
                     <!-- 👉 Expiry date -->
-                    <v-col
+                    <VCol
                       cols="6"
                       md="3"
                     >
-                      <v-text-field
+                      <VTextField
                         label="Expiry Date"
                         model-value="0524"
                       />
-                    </v-col>
+                    </VCol>
 
                     <!-- 👉 Cvv code -->
-                    <v-col
+                    <VCol
                       cols="6"
                       md="3"
                     >
-                      <v-text-field
+                      <VTextField
                         type="password"
                         label="CVV Code"
                         model-value="0524"
                       />
-                    </v-col>
+                    </VCol>
 
                     <!-- 👉 Future Billing switch -->
-                    <v-col cols="12">
-                      <v-switch
+                    <VCol cols="12">
+                      <VSwitch
                         density="compact"
                         label="Save card for future billing?"
                       />
-                    </v-col>
+                    </VCol>
 
                     <!-- 👉 Payment method action button -->
-                    <v-col cols="12">
-                      <v-btn
+                    <VCol cols="12">
+                      <VBtn
                         type="submit"
                         class="me-3"
                       >
                         Save changes
-                      </v-btn>
-                      <v-btn
+                      </VBtn>
+                      <VBtn
                         type="reset"
                         color="secondary"
                         variant="tonal"
                       >
                         Reset
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-form>
-              </v-col>
+                      </VBtn>
+                    </VCol>
+                  </VRow>
+                </VForm>
+              </VCol>
 
               <!-- 👉 Saved Cards -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
@@ -257,54 +257,54 @@ const openEditCardDialog = (cardDetails: Object) => {
                 </p>
 
                 <div class="d-flex flex-column gap-y-4">
-                  <v-card
+                  <VCard
                     v-for="card in creditCards"
                     :key="card.name"
                     class="bg-var-theme-background"
                     flat
                   >
-                    <v-card-text class="d-flex flex-sm-row flex-column">
+                    <VCardText class="d-flex flex-sm-row flex-column">
                       <div class="text-no-wrap">
-                        <v-img
+                        <VImg
                           :src="card.image"
                           width="46"
                         />
                         <h4 class="my-3">
                           {{ card.name }}
-                          <v-chip
+                          <VChip
                             v-if="card.isPrimary"
                             label
                             color="primary"
                             size="small"
                           >
                             Primary
-                          </v-chip>
+                          </VChip>
                         </h4>
                         <span class="text-body-1">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
                       </div>
 
-                      <v-spacer />
+                      <VSpacer />
 
                       <div class="d-flex flex-column text-sm-end">
                         <div class="order-sm-0 order-1">
-                          <v-btn
+                          <VBtn
                             variant="tonal"
                             class="me-2"
                             @click="openEditCardDialog(card)"
                           >
                             Edit
-                          </v-btn>
-                          <v-btn
+                          </VBtn>
+                          <VBtn
                             color="secondary"
                             variant="tonal"
                           >
                             Delete
-                          </v-btn>
+                          </VBtn>
                         </div>
                         <span class="mt-sm-auto mb-sm-0 my-5 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
                       </div>
-                    </v-card-text>
-                  </v-card>
+                    </VCardText>
+                  </VCard>
                 </div>
 
                 <!-- 👉 Add Edit Card Dialog -->
@@ -313,116 +313,116 @@ const openEditCardDialog = (cardDetails: Object) => {
                   :card-details="currentCardDetails"
                   class="v-dialog-lg"
                 />
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-card-text>
-      </v-card>
-    </v-col>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VCardText>
+      </VCard>
+    </VCol>
 
     <!-- 👉 Billing Address -->
-    <v-col cols="12">
-      <v-card title="Billing Address">
-        <v-card-text>
-          <v-form @submit.prevent="() => {}">
-            <v-row>
+    <VCol cols="12">
+      <VCard title="Billing Address">
+        <VCardText>
+          <VForm @submit.prevent="() => {}">
+            <VRow>
               <!-- 👉 Company name -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field label="Company Name" />
-              </v-col>
+                <VTextField label="Company Name" />
+              </VCol>
 
               <!-- 👉 Billing Email -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field label="Billing Email" />
-              </v-col>
+                <VTextField label="Billing Email" />
+              </VCol>
 
               <!-- 👉 Tax ID -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field label="Tax ID" />
-              </v-col>
+                <VTextField label="Tax ID" />
+              </VCol>
 
               <!-- 👉 Vat Number -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field label="VAT Number" />
-              </v-col>
+                <VTextField label="VAT Number" />
+              </VCol>
 
               <!-- 👉 Mobile -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field
+                <VTextField
                   label="Mobile"
                   type="number"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Country -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-select
+                <VSelect
                   label="Country"
                   :items="countryList"
                 />
-              </v-col>
+              </VCol>
 
               <!-- 👉 Billing Address -->
-              <v-col cols="12">
-                <v-text-field label="Billing Address" />
-              </v-col>
+              <VCol cols="12">
+                <VTextField label="Billing Address" />
+              </VCol>
 
               <!-- 👉 State -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field label="State" />
-              </v-col>
+                <VTextField label="State" />
+              </VCol>
 
               <!-- 👉 Zip Code -->
-              <v-col
+              <VCol
                 cols="12"
                 md="6"
               >
-                <v-text-field label="Zip Code" />
-              </v-col>
+                <VTextField label="Zip Code" />
+              </VCol>
 
               <!-- 👉 Actions Button -->
-              <v-col cols="12">
-                <v-btn
+              <VCol cols="12">
+                <VBtn
                   type="submit"
                   class="me-3"
                 >
                   Save changes
-                </v-btn>
-                <v-btn
+                </VBtn>
+                <VBtn
                   type="reset"
                   color="secondary"
                   variant="tonal"
                 >
                   Reset
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-card-text>
-      </v-card>
-    </v-col>
-  </v-row>
+                </VBtn>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

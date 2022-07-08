@@ -1,10 +1,10 @@
-<template>
-  <p>crm</p>
-</template>
-
 <script lang="ts" setup>
 
 </script>
+
+<template>
+  <p>crm</p>
+</template>
 
 <style lang="scss">
 

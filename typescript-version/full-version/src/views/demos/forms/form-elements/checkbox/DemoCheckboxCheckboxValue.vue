@@ -5,14 +5,14 @@ const checkboxString = ref('show')
 
 <template>
   <div class="d-flex flex-wrap">
-    <v-checkbox
+    <VCheckbox
       v-model="checkbox"
       :true-value="1"
       :false-value="0"
       :label="`${checkbox.toString()}`"
     />
 
-    <v-checkbox
+    <VCheckbox
       v-model="checkboxString"
       true-value="show"
       false-value="hide"

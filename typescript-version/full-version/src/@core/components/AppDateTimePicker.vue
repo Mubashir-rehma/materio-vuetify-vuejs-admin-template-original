@@ -79,7 +79,7 @@ onMounted(() => {
 
 <template>
   <!-- v-input -->
-  <v-input
+  <VInput
     v-bind="{ ...inputProps, ...rootAttrs }"
     :model-value="modelValue"
     :hide-details="props.hideDetails"
@@ -87,7 +87,7 @@ onMounted(() => {
   >
     <template #default="{ isDirty, isValid, isReadonly }">
       <!-- v-field -->
-      <v-field
+      <VField
         v-bind="fieldProps"
         :active="focused || isDirty.value || isCalendarOpen"
         :focused="focused || isCalendarOpen"
@@ -97,7 +97,7 @@ onMounted(() => {
         @click:clear="onClear"
       >
         <!-- flat-picker  -->
-        <flatPickr
+        <FlatPickr
           v-if="!isInlinePicker"
           v-bind="compAttrs"
           ref="refFlatPicker"
@@ -116,12 +116,12 @@ onMounted(() => {
           class="flat-picker-custom-style"
           type="text"
         >
-      </v-field>
+      </VField>
     </template>
-  </v-input>
+  </VInput>
 
   <!-- flat picker for inline props -->
-  <flatPickr
+  <FlatPickr
     v-if="isInlinePicker"
     v-bind="compAttrs"
     ref="refFlatPicker"

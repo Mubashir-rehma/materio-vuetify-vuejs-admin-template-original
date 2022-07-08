@@ -1,5 +1,3 @@
-/* eslint-disable no-useless-escape */
-
 export const counter = { ts: '', js: '' }
 
 export const singleLine = { ts: '', js: '' }

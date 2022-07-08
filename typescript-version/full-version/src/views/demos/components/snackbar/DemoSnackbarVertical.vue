@@ -3,30 +3,30 @@ const isSnackbarVisible = ref(false)
 </script>
 
 <template>
-  <v-btn @click="isSnackbarVisible = true">
+  <VBtn @click="isSnackbarVisible = true">
     Open Snackbar
-  </v-btn>
+  </VBtn>
 
-  <v-snackbar
+  <VSnackbar
     v-model="isSnackbarVisible"
     vertical
   >
     Sugar plum chocolate bar halvah sesame snaps apple pie donut croissant marshmallow. Sweet roll donut gummies sesame snaps icing bear claw tiramisu cotton candy.
 
     <template #actions>
-      <v-btn
+      <VBtn
         color="success"
         @click="isSnackbarVisible = false"
       >
         Undo
-      </v-btn>
+      </VBtn>
 
-      <v-btn
+      <VBtn
         color="error"
         @click="isSnackbarVisible = false"
       >
         Close
-      </v-btn>
+      </VBtn>
     </template>
-  </v-snackbar>
+  </VSnackbar>
 </template>

@@ -3,41 +3,41 @@ const isMenuVisible = ref(false)
 </script>
 
 <template>
-  <v-menu
+  <VMenu
     v-model="isMenuVisible"
     transition="scale-transition"
   >
     <!-- v-menu activator -->
     <template #activator="{ props }">
-      <v-chip v-bind="props">
+      <VChip v-bind="props">
         VueJS
-      </v-chip>
+      </VChip>
     </template>
 
     <!-- v-menu list -->
-    <v-list>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title>VueJS</v-list-item-title>
-          <v-list-item-subtitle>
+    <VList>
+      <VListItem>
+        <VListItemContent>
+          <VListItemTitle>VueJS</VListItemTitle>
+          <VListItemSubtitle>
             The Progressive JavaScript Framework
-          </v-list-item-subtitle>
-        </v-list-item-content>
+          </VListItemSubtitle>
+        </VListItemContent>
 
-        <v-list-item-action class="ms-1">
-          <v-btn
+        <VListItemAction class="ms-1">
+          <VBtn
             size="x-small"
             icon
             flat
             @click="isMenuVisible = false"
           >
-            <v-icon
+            <VIcon
               size="x-small"
               icon="mdi-close"
             />
-          </v-btn>
-        </v-list-item-action>
-      </v-list-item>
-    </v-list>
-  </v-menu>
+          </VBtn>
+        </VListItemAction>
+      </VListItem>
+    </VList>
+  </VMenu>
 </template>

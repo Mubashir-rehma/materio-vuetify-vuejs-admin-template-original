@@ -11,44 +11,43 @@ const all = () => {
 const none = () => {
   openedPanels.value = []
 }
-
 </script>
 
 <template>
   <div>
     <div class="mb-4">
-      <v-btn
+      <VBtn
         class="me-4"
         @click="all"
       >
         all
-      </v-btn>
+      </VBtn>
 
-      <v-btn
+      <VBtn
         color="error"
         @click="none"
       >
         none
-      </v-btn>
+      </VBtn>
 
       <div class="mt-3">
         <span class="font-weight-bold">Selected: </span>{{ openedPanels }}
       </div>
     </div>
 
-    <v-expansion-panels
+    <VExpansionPanels
       v-model="openedPanels"
       multiple
     >
-      <v-expansion-panel
+      <VExpansionPanel
         v-for="item in items"
         :key="item"
       >
-        <v-expansion-panel-title>Header {{ item }}</v-expansion-panel-title>
-        <v-expansion-panel-text>
+        <VExpansionPanelTitle>Header {{ item }}</VExpansionPanelTitle>
+        <VExpansionPanelText>
           I love I love jujubes halvah cheesecake cookie macaroon sugar plum. Sugar plum I love bear claw marzipan wafer. Wafer sesame snaps danish candy cheesecake carrot cake tootsie roll.
-        </v-expansion-panel-text>
-      </v-expansion-panel>
-    </v-expansion-panels>
+        </VExpansionPanelText>
+      </VExpansionPanel>
+    </VExpansionPanels>
   </div>
 </template>

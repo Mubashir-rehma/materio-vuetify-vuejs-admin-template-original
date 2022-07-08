@@ -5,19 +5,19 @@ const rules = ref([(v: string) => v.length <= 25 || 'Max 25 characters'])
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-text-field
+  <VRow>
+    <VCol cols="12">
+      <VTextField
         v-model="title"
         :rules="rules"
         counter="25"
         hint="This field uses counter prop"
         label="Regular"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-text-field
+    <VCol cols="12">
+      <VTextField
         v-model="description"
         :rules="rules"
         counter
@@ -25,6 +25,6 @@ const rules = ref([(v: string) => v.length <= 25 || 'Max 25 characters'])
         hint="This field uses maxlength attribute"
         label="Limit exceeded"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

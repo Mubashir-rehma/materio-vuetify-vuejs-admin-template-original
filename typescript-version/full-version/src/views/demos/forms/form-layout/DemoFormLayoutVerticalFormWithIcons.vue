@@ -7,71 +7,71 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-form @submit.prevent>
-    <v-row>
-      <v-col cols="12">
-        <v-text-field
+  <VForm @submit.prevent>
+    <VRow>
+      <VCol cols="12">
+        <VTextField
           v-model="firstName"
           prepend-inner-icon="mdi-account-outline"
           label="First Name"
           placeholder="First Name"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-text-field
+      <VCol cols="12">
+        <VTextField
           v-model="email"
           prepend-inner-icon="mdi-email-outline"
           label="Email"
           type="email"
           placeholder="Email"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-text-field
+      <VCol cols="12">
+        <VTextField
           v-model="mobile"
           prepend-inner-icon="mdi-cellphone"
           label="Mobile"
           type="number"
           placeholder="Number"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-text-field
+      <VCol cols="12">
+        <VTextField
           v-model="password"
           prepend-inner-icon="mdi-lock-outline"
           label="Password"
           type="password"
           placeholder="password"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-checkbox
+      <VCol cols="12">
+        <VCheckbox
           v-model="checkbox"
           density="compact"
           label="Remember me"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-btn
+      <VCol cols="12">
+        <VBtn
           type="submit"
           class="me-2"
         >
           Submit
-        </v-btn>
+        </VBtn>
 
-        <v-btn
+        <VBtn
           color="secondary"
           type="reset"
           variant="outlined"
         >
           Reset
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

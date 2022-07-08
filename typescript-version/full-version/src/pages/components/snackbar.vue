@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarWithAction />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarMultiLine />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarTimeout />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarVertical />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarPosition />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,8 +107,8 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarVariants />
       </AppCardCode>
-    </v-col>
-    <v-col
+    </VCol>
+    <VCol
       cols="12"
       md="6"
     >
@@ -121,6 +121,6 @@ import * as demoCode from '@/views/demos/components/snackbar/demoCodeSnackbar'
 
         <DemoSnackbarTransition />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

@@ -7,63 +7,63 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <v-form @submit.prevent>
-    <v-row>
+  <VForm @submit.prevent>
+    <VRow>
       <!-- 👉 First Name -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="firstNameHorizontalIcons">First Name</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="firstNameHorizontalIcons"
           v-model="firstName"
           prepend-inner-icon="mdi-account-outline"
           placeholder="First Name"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Email -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="emailHorizontalIcons">Email</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="emailHorizontalIcons"
           v-model="email"
           prepend-inner-icon="mdi-email-outline"
           placeholder="Email"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Mobile -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="mobileHorizontalIcons">Mobile</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="mobileHorizontalIcons"
           v-model="mobile"
           type="number"
@@ -71,21 +71,21 @@ const checkbox = ref(false)
           placeholder="Number"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Password -->
-      <v-col
+      <VCol
         cols="12"
         md="3"
       >
         <label for="passwordHorizontalIcons">Password</label>
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="9"
       >
-        <v-text-field
+        <VTextField
           id="passwordHorizontalIcons"
           v-model="password"
           prepend-inner-icon="mdi-lock-outline"
@@ -93,39 +93,39 @@ const checkbox = ref(false)
           placeholder="Password"
           persistent-placeholder
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 Checkbox -->
-      <v-col
+      <VCol
         offset-md="3"
         cols="12"
       >
-        <v-checkbox
+        <VCheckbox
           v-model="checkbox"
           label="Remember me"
           density="compact"
         />
-      </v-col>
+      </VCol>
 
       <!-- 👉 submit and reset button -->
-      <v-col
+      <VCol
         offset-md="3"
         cols="12"
       >
-        <v-btn
+        <VBtn
           type="submit"
           class="me-2"
         >
           Submit
-        </v-btn>
-        <v-btn
+        </VBtn>
+        <VBtn
           color="secondary"
           type="reset"
           variant="outlined"
         >
           Reset
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

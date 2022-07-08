@@ -8,36 +8,36 @@ watch(totalTabs, newValue => {
 </script>
 
 <template>
-  <v-tabs v-model="currentTab">
-    <v-tab
+  <VTabs v-model="currentTab">
+    <VTab
       v-for="n in totalTabs"
       :key="n"
       :value="n"
     >
       Tab {{ n }}
-    </v-tab>
-  </v-tabs>
+    </VTab>
+  </VTabs>
 
   <!-- buttons -->
   <div class="text-center mt-9">
-    <v-btn
+    <VBtn
       :disabled="!totalTabs"
       variant="text"
       @click="totalTabs--"
     >
       Remove Tab
-    </v-btn>
+    </VBtn>
 
-    <v-divider
+    <VDivider
       class="mx-4"
       vertical
     />
 
-    <v-btn
+    <VBtn
       variant="text"
       @click="totalTabs++"
     >
       Add Tab
-    </v-btn>
+    </VBtn>
   </div>
 </template>

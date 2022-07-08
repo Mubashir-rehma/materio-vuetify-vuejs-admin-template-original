@@ -3,7 +3,7 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
 <template>
-  <v-select
+  <VSelect
     :items="items"
     label="Density"
     density="compact"

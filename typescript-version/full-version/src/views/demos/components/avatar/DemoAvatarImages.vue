@@ -9,27 +9,27 @@ import avatar6Src from '@/assets/images/avatars/avatar-6.png'
 
 <template>
   <div class="demo-space-x">
-    <v-avatar>
-      <v-img :src="avatar1Src" />
-    </v-avatar>
+    <VAvatar>
+      <VImg :src="avatar1Src" />
+    </VAvatar>
 
-    <v-avatar>
-      <v-img :src="avatar2Src" />
-    </v-avatar>
+    <VAvatar>
+      <VImg :src="avatar2Src" />
+    </VAvatar>
 
-    <v-avatar>
-      <v-img :src="avatar3Src" />
-    </v-avatar>
-    <v-avatar>
-      <v-img :src="avatar4Src" />
-    </v-avatar>
+    <VAvatar>
+      <VImg :src="avatar3Src" />
+    </VAvatar>
+    <VAvatar>
+      <VImg :src="avatar4Src" />
+    </VAvatar>
 
-    <v-avatar>
-      <v-img :src="avatar5Src" />
-    </v-avatar>
+    <VAvatar>
+      <VImg :src="avatar5Src" />
+    </VAvatar>
 
-    <v-avatar>
-      <v-img :src="avatar6Src" />
-    </v-avatar>
+    <VAvatar>
+      <VImg :src="avatar6Src" />
+    </VAvatar>
   </div>
 </template>

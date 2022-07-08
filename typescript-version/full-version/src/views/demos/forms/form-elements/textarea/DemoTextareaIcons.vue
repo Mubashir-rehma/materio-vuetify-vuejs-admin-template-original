@@ -1,35 +1,35 @@
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-textarea
+  <VRow>
+    <VCol cols="12">
+      <VTextarea
         label="prepend-icon"
         rows="1"
         prepend-icon="mdi-comment-outline"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-textarea
+    <VCol cols="12">
+      <VTextarea
         append-icon="mdi-comment-outline"
         label="append-icon"
         rows="1"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-textarea
+    <VCol cols="12">
+      <VTextarea
         prepend-inner-icon="mdi-comment-outline"
         label="prepend-inner-icon"
         rows="1"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-textarea
+    <VCol cols="12">
+      <VTextarea
         append-inner-icon="mdi-comment-outline"
         label="append-inner-icon"
         rows="1"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

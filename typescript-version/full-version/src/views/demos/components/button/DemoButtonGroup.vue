@@ -3,33 +3,33 @@ const toggleExclusive = ref(1)
 </script>
 
 <template>
-  <v-btn-toggle
+  <VBtnToggle
     v-model="toggleExclusive"
     divided
   >
-    <v-btn
+    <VBtn
       flat
       variant="outlined"
     >
-      <v-icon>mdi-format-align-left</v-icon>
-    </v-btn>
-    <v-btn
+      <VIcon>mdi-format-align-left</VIcon>
+    </VBtn>
+    <VBtn
       flat
       variant="outlined"
     >
-      <v-icon>mdi-format-align-center</v-icon>
-    </v-btn>
-    <v-btn
+      <VIcon>mdi-format-align-center</VIcon>
+    </VBtn>
+    <VBtn
       flat
       variant="outlined"
     >
-      <v-icon>mdi-format-align-right</v-icon>
-    </v-btn>
-    <v-btn
+      <VIcon>mdi-format-align-right</VIcon>
+    </VBtn>
+    <VBtn
       flat
       variant="outlined"
     >
-      <v-icon>mdi-format-align-justify</v-icon>
-    </v-btn>
-  </v-btn-toggle>
+      <VIcon>mdi-format-align-justify</VIcon>
+    </VBtn>
+  </VBtnToggle>
 </template>

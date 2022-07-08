@@ -4,9 +4,9 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-combobox
+  <VRow>
+    <VCol cols="12">
+      <VCombobox
         v-model="selectedItem"
         :items="items"
         multiple
@@ -14,9 +14,9 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         variant="solo"
         label="solo"
       />
-    </v-col>
-    <v-col cols="12">
-      <v-combobox
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
         v-model="selectedItem"
         multiple
         chips
@@ -24,9 +24,9 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         variant="outlined"
         label="Outlined"
       />
-    </v-col>
-    <v-col cols="12">
-      <v-combobox
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
         v-model="selectedItem"
         multiple
         chips
@@ -34,9 +34,9 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         variant="underlined"
         label="Underlined"
       />
-    </v-col>
-    <v-col cols="12">
-      <v-combobox
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
         v-model="selectedItem"
         multiple
         chips
@@ -44,9 +44,9 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         variant="filled"
         label="Filled"
       />
-    </v-col>
-    <v-col cols="12">
-      <v-combobox
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
         v-model="selectedItem"
         multiple
         chips
@@ -54,6 +54,6 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         variant="plain"
         label="Plain"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

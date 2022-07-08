@@ -21,7 +21,7 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
     class="nav-link"
     :class="{ disabled: item.disable }"
   >
-    <component
+    <Component
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"
       :class="isNavLinkActive(item, $router) ? 'router-link-active router-link-exact-active' : ''"
@@ -30,9 +30,9 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
         :class="item.icon || config.verticalNav.defaultNavItemIconClass"
         class="nav-item-icon"
       />
-      <transition-group name="transition-slide-x">
+      <TransitionGroup name="transition-slide-x">
         <!-- 👉 Title -->
-        <component
+        <Component
           :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-show="!hideTitleAndBadge"
           key="title"
@@ -40,10 +40,10 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
           v-bind="dynamicI18nProps(item.title, 'span')"
         >
           {{ item.title }}
-        </component>
+        </Component>
 
         <!-- 👉 Badge -->
-        <component
+        <Component
           :is="config.app.enableI18n ? 'i18n-t' : 'span'"
           v-if="item.badgeContent"
           v-show="!hideTitleAndBadge"
@@ -53,9 +53,9 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
           v-bind="dynamicI18nProps(item.badgeContent, 'span')"
         >
           {{ item.badgeContent }}
-        </component>
-      </transition-group>
-    </component>
+        </Component>
+      </TransitionGroup>
+    </Component>
   </li>
 </template>
 

@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Variant -->
       <AppCardCode
         title="Variant"
@@ -44,9 +44,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldVariant />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -59,9 +59,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldState />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -74,9 +74,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldCounter />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -89,9 +89,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldClearable />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -104,9 +104,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldCustomColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -119,9 +119,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -134,9 +134,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldPrefixesAndSuffixes />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -149,9 +149,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldSingleLine />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -164,9 +164,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldValidation />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -179,9 +179,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldIconEvents />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -194,9 +194,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldLabelSlot />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -209,9 +209,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldPasswordInput />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -224,6 +224,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
 
         <DemoTextfieldIconSlots />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

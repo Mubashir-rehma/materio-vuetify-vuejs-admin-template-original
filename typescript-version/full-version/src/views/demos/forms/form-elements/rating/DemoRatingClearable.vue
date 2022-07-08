@@ -1,3 +1,3 @@
 <template>
-  <v-rating clearable/>
+  <VRating clearable />
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <v-file-input
+  <VFileInput
     loading
     color="primary"
     label="File input"

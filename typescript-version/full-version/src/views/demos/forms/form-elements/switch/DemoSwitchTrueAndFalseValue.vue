@@ -5,7 +5,7 @@ const switch2 = ref('show')
 
 <template>
   <div class="d-flex flex-wrap demo-space-x">
-    <v-switch
+    <VSwitch
       v-model="switch1"
       :label="`${switch1.toString()}`"
       :true-value="1"
@@ -13,7 +13,7 @@ const switch2 = ref('show')
       hide-details
     />
 
-    <v-switch
+    <VSwitch
       v-model="switch2"
       :label="`${switch2.toString()}`"
       true-value="show"

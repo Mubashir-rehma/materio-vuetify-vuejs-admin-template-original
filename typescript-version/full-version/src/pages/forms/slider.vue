@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -32,9 +32,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderDisabledAndReadonly />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -47,9 +47,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -62,9 +62,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -77,9 +77,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderStep />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -92,9 +92,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderValidation />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -107,9 +107,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderMinAndMax />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -122,9 +122,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderSize />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -137,9 +137,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderThumb />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -152,9 +152,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderTicks />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -169,9 +169,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderVertical />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -184,9 +184,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderAppendTextField />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -199,6 +199,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/slider/demoCodeSlid
 
         <DemoSliderAppendAndPrepend />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

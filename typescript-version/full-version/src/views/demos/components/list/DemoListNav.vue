@@ -11,22 +11,22 @@ const items = [
 </script>
 
 <template>
-  <v-list
+  <VList
     nav
     density="compact"
   >
-    <v-list-item-group>
-      <v-list-item
+    <VListItemGroup>
+      <VListItem
         v-for="(item, i) in items"
         :key="i"
         :value="item"
       >
-        <v-list-item-avatar>
-          <v-icon :icon="item.icon" />
-        </v-list-item-avatar>
+        <VListItemAvatar>
+          <VIcon :icon="item.icon" />
+        </VListItemAvatar>
 
-        <v-list-item-title v-text="item.text" />
-      </v-list-item>
-    </v-list-item-group>
-  </v-list>
+        <VListItemTitle v-text="item.text" />
+      </VListItem>
+    </VListItemGroup>
+  </VList>
 </template>

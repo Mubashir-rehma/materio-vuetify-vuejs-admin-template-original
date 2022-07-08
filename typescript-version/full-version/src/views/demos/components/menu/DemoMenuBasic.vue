@@ -5,28 +5,28 @@ const items = [{ title: 'Option 1' }, { title: 'Option 2' }, { title: 'Option 3'
 
 <template>
   <div class="demo-space-x">
-    <v-menu
+    <VMenu
       v-for="menu in menusVariant"
       :key="menu"
     >
       <template #activator="{ props }">
-        <v-btn
+        <VBtn
           :color="menu"
           v-bind="props"
         >
           {{ menu }}
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, index) in items"
           :key="index"
           :value="index"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
   </div>
 </template>

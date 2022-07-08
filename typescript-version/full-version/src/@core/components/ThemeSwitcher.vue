@@ -18,12 +18,12 @@ const getThemeIcon = computed(() => {
 </script>
 
 <template>
-  <v-btn
+  <VBtn
     icon
     variant="text"
     color="default"
     @click="changeTheme"
   >
-    <v-icon :icon="getThemeIcon" />
-  </v-btn>
+    <VIcon :icon="getThemeIcon" />
+  </VBtn>
 </template>

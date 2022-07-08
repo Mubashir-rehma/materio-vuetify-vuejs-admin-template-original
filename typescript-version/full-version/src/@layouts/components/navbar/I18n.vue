@@ -16,7 +16,7 @@ const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i
 </script>
 
 <template>
-  <v-btn
+  <VBtn
     variant="text"
     color="default"
   >
@@ -27,24 +27,24 @@ const selectI18nLocale = computed(() => props.languages.find(({ i18nLang }) => i
     <span>{{ selectI18nLocale?.label }}</span>
 
     <!-- Menu -->
-    <v-menu activator="parent">
+    <VMenu activator="parent">
       <!-- List -->
-      <v-list density="compact">
+      <VList density="compact">
         <!-- List item -->
-        <v-list-item
+        <VListItem
           v-for="lang in props.languages"
           :key="lang.i18nLang"
           :value="lang.i18nLang"
           @click="locale = lang.i18nLang; $emit('change', lang.i18nLang)"
         >
           <!-- Flag -->
-          <v-list-item-avatar start>
+          <VListItemAvatar start>
             <div :class="lang.flagpackClass" />
-          </v-list-item-avatar>
+          </VListItemAvatar>
           <!-- Flag label -->
-          <v-list-item-title>{{ lang.label }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-  </v-btn>
+          <VListItemTitle>{{ lang.label }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
+  </VBtn>
 </template>

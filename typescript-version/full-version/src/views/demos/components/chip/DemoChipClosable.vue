@@ -10,66 +10,66 @@ const isErrorChipVisible = ref(true)
 
 <template>
   <div class="demo-space-x">
-    <v-chip
+    <VChip
       v-if="isDefaultChipVisible"
       closable
       @click:close="isDefaultChipVisible = !isDefaultChipVisible"
     >
       Default
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       v-if="isPrimaryChipVisible"
       closable
       color="primary"
       @click:close="isPrimaryChipVisible = !isPrimaryChipVisible"
     >
       Primary
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       v-if="isSecondaryChipVisible"
       closable
       color="secondary"
       @click:close="isSecondaryChipVisible = !isSecondaryChipVisible"
     >
       Secondary
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       v-if="isSuccessChipVisible"
       closable
       color="success"
       @click:close="isSuccessChipVisible = !isSuccessChipVisible"
     >
       Success
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       v-if="isInfoChipVisible"
       closable
       color="info"
       @click:close="isInfoChipVisible = !isInfoChipVisible"
     >
       Info
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       v-if="isWarningChipVisible"
       closable
       color="warning"
       @click:close="isWarningChipVisible = !isWarningChipVisible"
     >
       Warning
-    </v-chip>
+    </VChip>
 
-    <v-chip
+    <VChip
       v-if="isErrorChipVisible"
       closable
       color="error"
       @click:close="isErrorChipVisible = !isErrorChipVisible"
     >
       Error
-    </v-chip>
+    </VChip>
   </div>
 </template>

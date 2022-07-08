@@ -1,22 +1,22 @@
 <template>
   <!-- Default -->
-  <v-tabs>
-    <v-tab>Home</v-tab>
-    <v-tab>Service</v-tab>
-    <v-tab>Account</v-tab>
-  </v-tabs>
+  <VTabs>
+    <VTab>Home</VTab>
+    <VTab>Service</VTab>
+    <VTab>Account</VTab>
+  </VTabs>
 
   <!-- Center -->
-  <v-tabs centered>
-    <v-tab>Home</v-tab>
-    <v-tab>Service</v-tab>
-    <v-tab>Account</v-tab>
-  </v-tabs>
+  <VTabs centered>
+    <VTab>Home</VTab>
+    <VTab>Service</VTab>
+    <VTab>Account</VTab>
+  </VTabs>
 
   <!-- Right -->
-  <v-tabs end>
-    <v-tab>Home</v-tab>
-    <v-tab>Service</v-tab>
-    <v-tab>Account</v-tab>
-  </v-tabs>
+  <VTabs end>
+    <VTab>Home</VTab>
+    <VTab>Service</VTab>
+    <VTab>Account</VTab>
+  </VTabs>
 </template>

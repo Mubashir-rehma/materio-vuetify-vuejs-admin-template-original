@@ -4,55 +4,55 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
 
 <template>
   <div class="demo-space-x">
-    <v-menu transition="scale-transition">
+    <VMenu transition="scale-transition">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           Scale Transition
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, i) in items"
           :key="i"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
 
-    <v-menu transition="slide-x-transition">
+    <VMenu transition="slide-x-transition">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           Slide X Transition
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, i) in items"
           :key="i"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
 
-    <v-menu transition="slide-y-transition">
+    <VMenu transition="slide-y-transition">
       <template #activator="{ props }">
-        <v-btn v-bind="props">
+        <VBtn v-bind="props">
           Slide Y Transition
-        </v-btn>
+        </VBtn>
       </template>
 
-      <v-list>
-        <v-list-item
+      <VList>
+        <VListItem
           v-for="(item, i) in items"
           :key="i"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+          <VListItemTitle>{{ item.title }}</VListItemTitle>
+        </VListItem>
+      </VList>
+    </VMenu>
   </div>
 </template>

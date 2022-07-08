@@ -5,52 +5,52 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 <template>
   <div class="demo-space-x d-flex align-center flex-wrap">
     <!-- default -->
-    <v-badge content="1">
-      <v-btn variant="outlined">
+    <VBadge content="1">
+      <VBtn variant="outlined">
         Default
-      </v-btn>
-    </v-badge>
+      </VBtn>
+    </VBadge>
 
     <!-- bordered -->
-    <v-badge
+    <VBadge
       content="5"
       bordered
     >
-      <v-btn variant="outlined">
+      <VBtn variant="outlined">
         Border
-      </v-btn>
-    </v-badge>
+      </VBtn>
+    </VBadge>
 
     <!-- dot -->
-    <v-badge
+    <VBadge
       dot
       location="bottom end"
       offset-x="3"
       offset-y="3"
     >
-      <v-avatar size="48">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
     <!-- inline -->
-    <v-badge
+    <VBadge
       inline
       content="5"
     >
-      <v-avatar size="48">
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
 
     <!-- Rounded -->
-    <v-badge
+    <VBadge
       rounded="0"
       content="5"
     >
-      <v-avatar>
-        <v-img :src="avatar1" />
-      </v-avatar>
-    </v-badge>
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
   </div>
 </template>

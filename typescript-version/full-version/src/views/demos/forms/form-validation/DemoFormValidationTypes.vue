@@ -31,88 +31,88 @@ const refForm = ref<VForm>()
 </script>
 
 <template>
-  <v-form
+  <VForm
     ref="refForm"
     @submit.prevent
   >
-    <v-row>
-      <v-col
+    <VRow>
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="requiredField"
           persistent-placeholder
           placeholder="This field is required"
           :rules="[requiredValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="numberBetween10to20"
           persistent-placeholder
           placeholder="Enter Number between 10 & 20"
           :rules="[requiredValidator, betweenValidator(numberBetween10to20, 10, 20)]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="onlyConsistNumber"
           persistent-placeholder
           placeholder="Must only consist of numbers"
           :rules="[requiredValidator, integerValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="matchRegularEx"
           persistent-placeholder
           placeholder="Must match the specified regular expression : ^([0-9]+)$ - numbers only"
           :rules="[requiredValidator, regexValidator(matchRegularEx, '^([0-9]+)$')]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="onlyAlphabeticCharacters"
           persistent-placeholder
           placeholder="Only alphabetic characters"
           :rules="[requiredValidator, alphaValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="specifiedLength"
           persistent-placeholder
           placeholder="Length should not be less than the specified length : 3"
           :rules="[requiredValidator, lengthValidator(specifiedLength, 3)]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="password"
           persistent-placeholder
           placeholder="Password Input Field"
@@ -120,25 +120,25 @@ const refForm = ref<VForm>()
           :rules="[requiredValidator, passwordValidator]"
           autocomplete="on"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="digits"
           persistent-placeholder
           placeholder="The digits field must be numeric and exactly contain 3 digits"
           :rules="[requiredValidator, lengthValidator(digits, 3), integerValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="repeatPassword"
           persistent-placeholder
           placeholder="Repeat password must match"
@@ -146,52 +146,52 @@ const refForm = ref<VForm>()
           :rules="[requiredValidator, confirmedValidator(repeatPassword, password)]"
           autocomplete="on"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="onlyAlphabeticNumbersDashesUnderscores"
           persistent-placeholder
           placeholder="Only alphabetic characters, numbers, dashes or underscores"
           :rules="[requiredValidator, alphaDashValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="email"
           persistent-placeholder
           placeholder="Must be a valid email"
           :rules="[requiredValidator, emailValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col
+      <VCol
         cols="12"
         md="6"
       >
-        <v-text-field
+        <VTextField
           v-model="validURL"
           persistent-placeholder
           placeholder="Must be a valid url"
           :rules="[requiredValidator, urlValidator]"
         />
-      </v-col>
+      </VCol>
 
-      <v-col cols="12">
-        <v-btn
+      <VCol cols="12">
+        <VBtn
           type="submit"
           @click="refForm?.validate()"
         >
           Submit
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-form>
+        </VBtn>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

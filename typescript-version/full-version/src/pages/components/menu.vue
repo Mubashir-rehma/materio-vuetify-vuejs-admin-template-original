@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -19,9 +19,9 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 
         <DemoMenuBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -34,9 +34,9 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 
         <DemoMenuCustomTransitions />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -49,9 +49,9 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 
         <DemoMenuAnchor />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -64,9 +64,9 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 
         <DemoMenuOpenOnHover />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -79,9 +79,9 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 
         <DemoMenuPopover />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -94,6 +94,6 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
 
         <DemoMenuActivatorAndTooltip />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

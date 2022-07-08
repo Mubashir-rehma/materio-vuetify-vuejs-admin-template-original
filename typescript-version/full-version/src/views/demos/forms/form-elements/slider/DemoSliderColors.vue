@@ -5,36 +5,36 @@ const sliderThumbColorValue = ref(50)
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <div class="text-caption">
         color
       </div>
-      <v-slider
+      <VSlider
         v-model="sliderColorValue"
         color="error"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <div class="text-caption">
         track-color
       </div>
-      <v-slider
+      <VSlider
         v-model="sliderTrackColorValue"
         track-color="error"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <div class="text-caption">
         thumb-color
       </div>
-      <v-slider
+      <VSlider
         v-model="sliderThumbColorValue"
         thumb-color="error"
         thumb-label="always"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

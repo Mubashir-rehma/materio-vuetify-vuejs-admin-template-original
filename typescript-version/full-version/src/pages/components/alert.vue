@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <!-- 👉 Basic -->
       <AppCardCode
         title="Basic"
@@ -12,9 +12,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
       >
         <DemoAlertBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Colors -->
       <AppCardCode
         title="Colors"
@@ -24,9 +24,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertColors />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Icons -->
       <AppCardCode
         title="Icons"
@@ -36,9 +36,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertIcons />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Border -->
       <AppCardCode
         title="Border"
@@ -48,9 +48,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertBorder />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Colored Border -->
       <AppCardCode
         title="Colored Border"
@@ -60,9 +60,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertColoredBorder />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Density -->
       <AppCardCode
         title="Density"
@@ -72,9 +72,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Type -->
       <AppCardCode
         title="Type"
@@ -84,9 +84,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertType />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Closable  -->
       <AppCardCode
         title="Closable"
@@ -96,9 +96,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertClosable />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 V-model support -->
       <AppCardCode
         title="v-model support"
@@ -108,9 +108,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertVModelSupport />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Outlined -->
       <AppCardCode
         title="Outlined"
@@ -120,9 +120,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertOutlined />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Tonal -->
       <AppCardCode
         title="Tonal"
@@ -132,9 +132,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertTonal />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Elevation -->
       <AppCardCode
         title="Elevation"
@@ -144,9 +144,9 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertElevation />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Prominent -->
       <AppCardCode
         title="Prominent"
@@ -156,6 +156,6 @@ import * as demoCode from '@/views/demos/components/alert/demoCodeAlert'
 
         <DemoAlertProminent />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

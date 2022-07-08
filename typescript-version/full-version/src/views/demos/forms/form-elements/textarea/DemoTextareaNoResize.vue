@@ -3,7 +3,7 @@ const value = ref('Marshmallow tiramisu pie dessert gingerbread tart caramels ma
 </script>
 
 <template>
-  <v-textarea
+  <VTextarea
     v-model="value"
     label="Text"
     no-resize

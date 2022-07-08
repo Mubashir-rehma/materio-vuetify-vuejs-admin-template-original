@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidatio
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <!-- 👉 Simple Form Validation -->
       <AppCardCode
         title="Simple Form Validation"
@@ -14,9 +14,9 @@ import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidatio
 
         <DemoFormValidationSimpleFormValidation />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Validating Multiple Rules -->
       <AppCardCode
         title="Validating Multiple Rules"
@@ -24,9 +24,9 @@ import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidatio
       >
         <DemoFormValidationValidatingMultipleRules />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <!-- 👉 Validation Types -->
       <AppCardCode
         title="Validation Types"
@@ -34,6 +34,6 @@ import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidatio
       >
         <DemoFormValidationTypes />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

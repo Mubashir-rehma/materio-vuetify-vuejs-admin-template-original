@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <v-divider v-if="props.divider" />
+  <VDivider v-if="props.divider" />
 
   <div class="customizer-section">
     <h3 class="mb-3">

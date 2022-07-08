@@ -3,8 +3,8 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 </script>
 
 <template>
-  <v-row class="match-height">
-    <v-col
+  <VRow class="match-height">
+    <VCol
       cols="12"
       md="6"
     >
@@ -17,9 +17,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 
         <DemoComboboxBasic />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -34,9 +34,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 
         <DemoComboboxDensity />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -49,9 +49,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 
         <DemoComboboxVariant />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -64,9 +64,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 
         <DemoComboboxMultiple />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -79,9 +79,9 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 
         <DemoComboboxNoDataWithChips />
       </AppCardCode>
-    </v-col>
+    </VCol>
 
-    <v-col
+    <VCol
       cols="12"
       md="6"
     >
@@ -95,6 +95,6 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
 
         <DemoComboboxClearable />
       </AppCardCode>
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

@@ -5,26 +5,26 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
 </script>
 
 <template>
-  <v-menu top>
+  <VMenu top>
     <template #activator="{ props: menuProps }">
-      <v-tooltip anchor="top">
+      <VTooltip anchor="top">
         <template #activator="{ props: tooltipProps }">
-          <v-btn v-bind="mergeProps(menuProps, tooltipProps)">
+          <VBtn v-bind="mergeProps(menuProps, tooltipProps)">
             Dropdown w/ Tooltip
-          </v-btn>
+          </VBtn>
         </template>
         <span>I am a Tooltip</span>
-      </v-tooltip>
+      </VTooltip>
     </template>
 
-    <v-list>
-      <v-list-item
+    <VList>
+      <VListItem
         v-for="(item, index) in items"
         :key="index"
         :value="index"
       >
-        <v-list-item-title>{{ item.title }}</v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-menu>
+        <VListItemTitle>{{ item.title }}</VListItemTitle>
+      </VListItem>
+    </VList>
+  </VMenu>
 </template>

@@ -1,19 +1,19 @@
 <template>
-  <v-row>
-    <v-col>
-      <v-text-field
+  <VRow>
+    <VCol>
+      <VTextField
         value="John Doe"
         label="Disabled"
         disabled
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
-      <v-text-field
+    <VCol cols="12">
+      <VTextField
         value="John Doe"
         label="Readonly"
         readonly
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

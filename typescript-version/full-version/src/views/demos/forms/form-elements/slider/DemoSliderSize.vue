@@ -1,5 +1,5 @@
 <template>
-  <v-slider
+  <VSlider
     :step="10"
     show-ticks
     :thumb-size="13"

@@ -9,74 +9,74 @@ const isFlatSnackbarVisible = ref(false)
 <template>
   <div class="demo-space-x">
     <!-- Default toggle btn -->
-    <v-btn @click="isDefaultSnackbarVisible = true">
+    <VBtn @click="isDefaultSnackbarVisible = true">
       Default
-    </v-btn>
+    </VBtn>
 
     <!-- Default snackbar -->
-    <v-snackbar
+    <VSnackbar
       v-model="isDefaultSnackbarVisible"
       location="top start"
     >
       Jelly chocolate bar candy canes apple pie.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- tonal toggle btn -->
-    <v-btn @click="isTonalSnackbarVisible = true">
+    <VBtn @click="isTonalSnackbarVisible = true">
       tonal
-    </v-btn>
+    </VBtn>
 
     <!-- tonal snackbar -->
-    <v-snackbar
+    <VSnackbar
       v-model="isTonalSnackbarVisible"
       location="top end"
       variant="tonal"
     >
       Ice cream cake candy canes.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- Text toggle btn -->
-    <v-btn @click="isTextSnackbarVisible = true">
+    <VBtn @click="isTextSnackbarVisible = true">
       Text
-    </v-btn>
+    </VBtn>
 
     <!-- Text snackbar -->
-    <v-snackbar
+    <VSnackbar
       v-model="isTextSnackbarVisible"
       location="end center"
       variant="text"
     >
       Pie icing biscuit soufflé liquorice topping.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- Outline toggle btn -->
-    <v-btn @click="isOutlinedSnackbarVisible = true">
+    <VBtn @click="isOutlinedSnackbarVisible = true">
       Outlined
-    </v-btn>
+    </VBtn>
 
     <!-- Outline snackbar -->
-    <v-snackbar
+    <VSnackbar
       v-model="isOutlinedSnackbarVisible"
       location="bottom end"
       variant="outlined"
       color="error"
     >
       Oat cake caramels sesame snaps candy.
-    </v-snackbar>
+    </VSnackbar>
 
     <!-- flat toggle btn -->
-    <v-btn @click="isFlatSnackbarVisible = true">
+    <VBtn @click="isFlatSnackbarVisible = true">
       Flat
-    </v-btn>
+    </VBtn>
 
     <!-- flat snackbar -->
-    <v-snackbar
+    <VSnackbar
       v-model="isFlatSnackbarVisible"
       location="bottom start"
       variant="flat"
       color="error"
     >
       Oat cake caramels sesame snaps candy.
-    </v-snackbar>
+    </VSnackbar>
   </div>
 </template>

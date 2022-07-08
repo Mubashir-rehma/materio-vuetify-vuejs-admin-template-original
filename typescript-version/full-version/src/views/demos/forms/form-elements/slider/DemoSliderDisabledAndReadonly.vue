@@ -1,25 +1,25 @@
 <template>
-  <v-row>
-    <v-col cols="12">
+  <VRow>
+    <VCol cols="12">
       <div class="text-caption">
         Disabled
       </div>
-      <v-slider
+      <VSlider
         disabled
         label="Disabled"
         :model-value="30"
       />
-    </v-col>
+    </VCol>
 
-    <v-col cols="12">
+    <VCol cols="12">
       <div class="text-caption">
         Readonly
       </div>
-      <v-slider
+      <VSlider
         readonly
         label="Readonly"
         :model-value="30"
       />
-    </v-col>
-  </v-row>
+    </VCol>
+  </VRow>
 </template>

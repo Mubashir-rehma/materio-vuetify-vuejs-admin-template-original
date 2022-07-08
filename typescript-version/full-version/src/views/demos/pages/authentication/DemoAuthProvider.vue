@@ -27,7 +27,7 @@ const authProviders = [
 </script>
 
 <template>
-  <v-btn
+  <VBtn
     v-for="link in authProviders"
     :key="link.icon"
     :icon="link.icon"

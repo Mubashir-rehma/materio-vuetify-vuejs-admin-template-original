@@ -1,5 +1,5 @@
 <template>
-  <v-file-input
+  <VFileInput
     label="File input"
     density="compact"
   />

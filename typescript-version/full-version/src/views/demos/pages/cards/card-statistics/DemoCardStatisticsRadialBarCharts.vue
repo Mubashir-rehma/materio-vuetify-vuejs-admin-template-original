@@ -41,7 +41,7 @@ const chartOptions = {
 </script>
 
 <template>
-  <v-card title="135k">
+  <VCard title="135k">
     <VueApexCharts
       id="stats-radial-bar-chart"
       :options="chartOptions"
@@ -50,10 +50,10 @@ const chartOptions = {
       height="auto"
     />
 
-    <v-card-text class="text-center font-weight-semibold mt-13">
+    <VCardText class="text-center font-weight-semibold mt-13">
       Total Revenue
-    </v-card-text>
-  </v-card>
+    </VCardText>
+  </VCard>
 </template>
 
   <style lang="scss">

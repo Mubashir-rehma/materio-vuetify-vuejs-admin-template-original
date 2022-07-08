@@ -1,5 +1,5 @@
 <template>
-  <v-text-field
+  <VTextField
     label="Regular"
     clearable
   />

@@ -117,7 +117,6 @@ const rating = ref(5)
 
           <VBtn
             icon
-            size="small"
             @click="isCardDetailsVisible = !isCardDetailsVisible"
           >
             <VIcon :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'" />

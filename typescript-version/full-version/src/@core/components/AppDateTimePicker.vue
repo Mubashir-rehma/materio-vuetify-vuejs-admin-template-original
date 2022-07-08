@@ -38,7 +38,6 @@ const [fieldProps] = filterFieldProps(props)
 const refFlatPicker = ref()
 const { focused } = useFocus(refFlatPicker)
 const isCalendarOpen = ref(false)
-const selectedDateTime = ref<string>(props.modelValue || '')
 const isInlinePicker = ref(false)
 
 // flat picker prop manipulation
@@ -52,7 +51,7 @@ const onClear = (el: MouseEvent) => {
   el.stopPropagation()
 
   nextTick(() => {
-    selectedDateTime.value = ''
+    emit('update:modelValue', '')
 
     emit('click:clear', el)
   })
@@ -82,10 +81,9 @@ onMounted(() => {
   <!-- v-input -->
   <v-input
     v-bind="{ ...inputProps, ...rootAttrs }"
-    :model-value="selectedDateTime"
+    :model-value="modelValue"
     :hide-details="props.hideDetails"
     class="position-relative"
-    @input="$emit('update:modelValue', selectedDateTime)"
   >
     <template #default="{ isDirty, isValid, isReadonly }">
       <!-- v-field -->
@@ -103,17 +101,18 @@ onMounted(() => {
           v-if="!isInlinePicker"
           v-bind="compAttrs"
           ref="refFlatPicker"
-          v-model="selectedDateTime"
+          :model-value="modelValue"
           class="flat-picker-custom-style"
           :disabled="isReadonly.value"
           @on-open="isCalendarOpen = true"
           @on-close="isCalendarOpen = false"
+          @update:modelValue="val => $emit('update:modelValue', val)"
         />
 
         <!-- simple input for inline prop -->
         <input
           v-if="isInlinePicker"
-          v-model="selectedDateTime"
+          :model-value="modelValue"
           class="flat-picker-custom-style"
           type="text"
         >
@@ -126,7 +125,8 @@ onMounted(() => {
     v-if="isInlinePicker"
     v-bind="compAttrs"
     ref="refFlatPicker"
-    v-model="selectedDateTime"
+    :model-value="modelValue"
+    @update:modelValue="val => $emit('update:modelValue', val)"
     @on-open="isCalendarOpen = true"
     @on-close="isCalendarOpen = false"
   />

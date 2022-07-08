@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import flatPickr from 'vue-flatpickr-component'
+import FlatPickr from 'vue-flatpickr-component'
 import { useTheme } from 'vuetify'
 import { filterFieldProps, makeVFieldProps } from 'vuetify/lib/components/VField/VField'
 import { filterInputProps, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'

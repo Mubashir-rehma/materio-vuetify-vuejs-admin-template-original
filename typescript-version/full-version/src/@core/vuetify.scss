@@ -43,6 +43,8 @@
   //   ),
   //   vuetify_default_elevations.$shadow-key-ambient
   // ),
+
+  $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)),
 );
 
 /*
@@ -129,3 +131,16 @@ h6,
   --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "retro")} !important;
   --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "retro")} !important;
 }
+
+// SECTION Custom patches
+
+/*
+  👉 input-control-auto-height
+  We need this because form elements likes checkbox and switches are by default set to height of textfield height which is way big than we want
+  Tested with checkbox & switches
+*/
+.input-control-auto-height {
+  --v-input-control-height: auto;
+}
+
+// !SECTION

@@ -34,6 +34,9 @@
       ],
       "@axios": [
         "src/plugins/axios"
+      ],
+      "@validators": [
+        "src/@core/utils/validators"
       ]
     },
     "lib": [

@@ -79,3 +79,9 @@ export interface LoginResponse {
 }
 
 // !SECTION
+
+// SECTION App: Calendar
+// export interface Event {
+
+// }
+// !SECTION

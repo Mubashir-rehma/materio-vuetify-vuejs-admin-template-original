@@ -1,3 +1,5 @@
+@use "./variables";
+
 // 👉 Demo spacers
 // TODO: Use vuetify SCSS variable here
 $card-spacer-content: 16px;
@@ -50,6 +52,13 @@ $card-spacer-content: 16px;
 .bg-var-theme-background {
   /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-background), var(--v-medium-emphasis-opacity));
+}
+
+// [/^bg-light-(\w+)$/, ([, w]) => ({ backgroundColor: `rgba(var(--v-theme-${w}), var(--v-activated-opacity))` })],
+@each $color-name in variables.$theme-colors-name {
+  .bg-light-#{$color-name} {
+    background-color: rgba(var(--v-theme-#{$color-name}), var(--v-activated-opacity)) !important;
+  }
 }
 
 // 👉 Typography

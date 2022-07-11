@@ -90,5 +90,3 @@ export const defineThemeConfig = (
   }
 }
 
-export { useThemeConfig } from './composable/useThemeConfig'
-

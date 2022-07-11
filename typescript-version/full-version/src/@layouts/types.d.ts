@@ -135,7 +135,6 @@ export declare type HorizontalNavItems = (NavLink | NavGroup)[]
 
 interface I18nLanguage {
   label: string
-  flagpackClass: string
   i18nLang: string
 }
 

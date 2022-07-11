@@ -43,7 +43,6 @@
     "@fullcalendar/list": "^5.11.0",
     "@fullcalendar/timegrid": "^5.11.0",
     "@fullcalendar/vue3": "^5.11.1",
-    "@iconify-json/flagpack": "^1.1.2",
     "@iconify-json/mdi": "^1.1.24",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@types/node": "^18.0.0",

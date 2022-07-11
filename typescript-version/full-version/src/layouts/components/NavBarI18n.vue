@@ -7,17 +7,14 @@ const { isAppRtl } = useThemeConfig()
 const i18nCompLanguages: I18nLanguage[] = [
   {
     label: 'English',
-    flagpackClass: 'i-flagpack-us',
     i18nLang: 'en',
   },
   {
     label: 'French',
-    flagpackClass: 'i-flagpack-fr',
     i18nLang: 'fr',
   },
   {
     label: 'Arabic',
-    flagpackClass: 'i-flagpack-ae',
     i18nLang: 'ar',
   },
 ]

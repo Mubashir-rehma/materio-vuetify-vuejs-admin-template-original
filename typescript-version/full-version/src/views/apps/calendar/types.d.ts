@@ -1,6 +1,5 @@
 import { CalendarEvent } from '@/@fake-db/apps/calendar';
-
-export type NewEvent = SetOptional<Event, 'id'>
+import type { Except } from 'type-fest';
 
 export interface Event extends CalendarEvent {
   extendedProps: {
@@ -10,3 +9,5 @@ export interface Event extends CalendarEvent {
     guests: string[]
   }
 }
+
+export type NewEvent = Except<Event, 'id'>

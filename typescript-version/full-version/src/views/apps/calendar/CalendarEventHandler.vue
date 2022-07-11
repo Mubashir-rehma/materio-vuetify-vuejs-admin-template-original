@@ -2,6 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { VForm } from 'vuetify/components'
 
+import type { Options } from 'flatpickr'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import type { Event, NewEvent } from './types'
 import { useCalendarStore } from './useCalendarStore'
@@ -25,7 +26,7 @@ const emit = defineEmits<{
 
 interface Props {
   isDrawerOpen: boolean
-  event: Event | NewEvent
+  event: (Event | NewEvent)
 }
 
 // 👉 store
@@ -90,6 +91,23 @@ const onCancel = () => {
     refForm.value?.resetValidation()
   })
 }
+
+const startDateTimePickerConfig = computed(() => {
+  const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
+
+  if (event.value.end)
+    config.maxDate = event.value.end
+
+  return config
+})
+const endDateTimePickerConfig = computed(() => {
+  const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
+
+  if (event.value.start)
+    config.minDate = event.value.start
+
+  return config
+})
 </script>
 
 <template>
@@ -183,20 +201,22 @@ const onCancel = () => {
               <!-- 👉 Start date -->
               <VCol cols="12">
                 <AppDateTimePicker
+                  :key="JSON.stringify(startDateTimePickerConfig)"
                   v-model="event.start"
                   :rules="[requiredValidator]"
                   label="Start date"
-                  :config="{ enableTime: true, dateFormat: 'Y-m-d H:i' }"
+                  :config="startDateTimePickerConfig"
                 />
               </VCol>
 
               <!-- 👉 End date -->
               <VCol cols="12">
                 <AppDateTimePicker
+                  :key="JSON.stringify(endDateTimePickerConfig)"
                   v-model="event.end"
                   :rules="[requiredValidator]"
                   label="End date"
-                  :config="{ enableTime: true, dateFormat: 'Y-m-d H:i' }"
+                  :config="endDateTimePickerConfig"
                 />
               </VCol>
 

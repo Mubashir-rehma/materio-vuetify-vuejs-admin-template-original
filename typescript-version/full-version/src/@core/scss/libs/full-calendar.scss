@@ -1,3 +1,5 @@
+@use "vuetify/lib/styles/tools/elevation" as elevation;
+
 .fc {
   /* stylelint-disable-next-line color-function-notation */
   --fc-today-bg-color: rgba(var(--v-theme-on-surface), 0.04);
@@ -6,10 +8,16 @@
   --fc-neutral-bg-color: rgb(var(--v-theme-background));
   /* stylelint-disable-next-line color-function-notation */
   --fc-list-event-hover-bg-color: rgba(var(--v-theme-on-surface), 0.02);
-  --fc-page-bg-color: transparent;
+  --fc-page-bg-color: rgb(var(--v-theme-surface));
+  --fc-event-border-color: currentcolor;
 
   a {
     color: inherit;
+  }
+
+  // Removed double border on left in list view
+  .fc-list {
+    border-inline-start-color: transparent;
   }
 
   .fc-header-toolbar {
@@ -72,8 +80,15 @@
     font-weight: 500;
   }
 
+  .fc-scrollgrid-section {
+    th {
+      border-inline-end-color: transparent;
+    }
+  }
+
   .fc-event {
     border-color: transparent;
+    margin-block-end: 0.3rem;
   }
 
   .fc-event-main {
@@ -106,5 +121,22 @@
 
   .fc-list-event {
     background-color: transparent !important;
+  }
+
+  .fc-popover {
+    @include elevation.elevation(3);
+
+    border-radius: 6px;
+
+    .fc-popover-header,
+    .fc-popover-body {
+      padding: 0.5rem;
+    }
+
+    .fc-popover-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
   }
 }

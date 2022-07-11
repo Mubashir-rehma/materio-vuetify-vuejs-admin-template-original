@@ -175,6 +175,9 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     },
     events: fetchEvents,
 
+    // ❗ We need this to be true because when its false and event is allDay event and end date is same as start data then Full calendar will set end to null
+    forceEventDuration: true,
+
     /*
     Enable dragging and resizing event
     Docs: https://fullcalendar.io/docs/editable
@@ -218,6 +221,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
       // * Only grab required field otherwise it goes in infinity loop
       // ! Always grab all fields rendered by form (even if it get `undefined`) otherwise due to Vue3/Composition API you might get: "object is not extensible"
       event.value = extractEventDataFromEventApi(clickedEvent)
+      console.log('clickedEvent :>> ', clickedEvent)
 
       isEventHandlerSidebarActive.value = true
     },

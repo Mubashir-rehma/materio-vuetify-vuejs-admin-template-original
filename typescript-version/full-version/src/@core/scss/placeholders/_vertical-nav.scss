@@ -33,7 +33,6 @@
 %vertical-nav-section-title {
   // ℹ️ Setting height will prevent jerking when text & icon is toggled
   block-size: 1.5rem;
-  /* stylelint-disable-next-line color-function-notation */
   color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
 }
 

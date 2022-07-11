@@ -14,7 +14,6 @@
 
 // Active styles for sub nav link
 %horizontal-nav-sub-nav-link-active {
-  /* stylelint-disable-next-line color-function-notation */
   background: rgba(var(--v-theme-primary), 0.1);
   color: rgb(var(--v-theme-primary));
 }

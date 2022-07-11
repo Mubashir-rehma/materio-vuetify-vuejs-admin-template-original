@@ -1,12 +1,9 @@
 @use "vuetify/lib/styles/tools/elevation" as elevation;
 
 .fc {
-  /* stylelint-disable-next-line color-function-notation */
   --fc-today-bg-color: rgba(var(--v-theme-on-surface), 0.04);
-  /* stylelint-disable-next-line color-function-notation */
   --fc-border-color: rgba(var(--v-border-color), var(--v-border-opacity));
   --fc-neutral-bg-color: rgb(var(--v-theme-background));
-  /* stylelint-disable-next-line color-function-notation */
   --fc-list-event-hover-bg-color: rgba(var(--v-theme-on-surface), 0.02);
   --fc-page-bg-color: rgb(var(--v-theme-surface));
   --fc-event-border-color: currentcolor;
@@ -35,7 +32,6 @@
         &:not(.disabled):active {
           border-color: transparent;
           background-color: transparent;
-          /* stylelint-disable-next-line color-function-notation */
           color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
         }
 
@@ -47,7 +43,6 @@
 
     &:last-child {
       .fc-button-group {
-        /* stylelint-disable-next-line color-function-notation */
         border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
         border-radius: 6px;
 
@@ -58,12 +53,10 @@
           text-transform: uppercase;
 
           &:not(:last-child) {
-            /* stylelint-disable-next-line color-function-notation */
             border-inline-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
           }
 
           &.fc-button-active {
-            /* stylelint-disable-next-line color-function-notation */
             background-color: rgba(var(--v-theme-primary), var(--v-activated-opacity));
             color: rgb(var(--v-theme-primary));
           }
@@ -74,7 +67,6 @@
 
   .fc-toolbar-title {
     display: inline-block;
-    /* stylelint-disable-next-line color-function-notation */
     color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
     font-size: 1.25rem;
     font-weight: 500;

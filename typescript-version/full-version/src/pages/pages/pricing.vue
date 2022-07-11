@@ -353,7 +353,6 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/illustration
 
 <style lang="scss">
 .page-pricing-free-banner-bg {
-  /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-primary), var(--v-pressed-opacity));
 }
 

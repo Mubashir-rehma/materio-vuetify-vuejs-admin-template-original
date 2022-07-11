@@ -263,8 +263,6 @@ const paymentMethods = [
 <style lang="scss" scoped>
 .delivery-option {
   padding: 2rem;
-
-  /* stylelint-disable-next-line color-function-notation */
   border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
 
   &.active {

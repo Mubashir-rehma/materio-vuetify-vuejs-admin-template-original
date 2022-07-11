@@ -470,7 +470,6 @@ const rating = ref(5)
 // membership pricing
 .member-pricing-bg {
   position: relative;
-  /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
 }
 

@@ -143,7 +143,6 @@ onMounted(() => {
   padding-inline: var(--v-field-padding-start);
 }
 
-/* stylelint-disable-next-line color-function-notation */
 $body-color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 
 // hide the input when your picker is inline
@@ -176,12 +175,8 @@ input[altinputclass="inlinePicker"] {
 
     &.inRange,
     &.inRange:hover {
-      /* stylelint-disable-next-line color-function-notation */
       border: none;
-
-      /* stylelint-disable-next-line color-function-notation */
       background: rgba(var(--v-theme-primary), 30%) !important;
-      /* stylelint-disable-next-line color-function-notation */
       box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%), 5px 0 0 rgba(var(--v-theme-primary), 17%) !important;
     }
 
@@ -215,10 +210,7 @@ input[altinputclass="inlinePicker"] {
     }
 
     &:hover {
-      /* stylelint-disable-next-line color-function-notation */
       border-color: rgba(var(--v-theme-surface-variant), var(--v-hover-opacity));
-
-      /* stylelint-disable-next-line color-function-notation */
       background: rgba(var(--v-theme-surface-variant), var(--v-hover-opacity));
     }
   }
@@ -251,7 +243,6 @@ input[altinputclass="inlinePicker"] {
 
   &.hasTime.open {
     .flatpickr-time {
-      /* stylelint-disable-next-line color-function-notation */
       border-color: rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: auto;
     }
@@ -335,7 +326,6 @@ input[altinputclass="inlinePicker"] {
 
 // removing box shadow of calendar in dark and added a border
 .v-theme--dark.flatpickr-calendar {
-  /* stylelint-disable-next-line color-function-notation */
   border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
   box-shadow: none;
 }

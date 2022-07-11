@@ -28,6 +28,7 @@
             }
         ],
         "liberty/use-logical-spec": true,
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "color-function-notation": null
     }
 }

@@ -432,7 +432,6 @@ const openEditCardDialog = (cardDetails: Object) => {
 
 .pricing-dialog {
   .v-card {
-    /* stylelint-disable-next-line color-function-notation */
     border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
     box-shadow: none;
   }

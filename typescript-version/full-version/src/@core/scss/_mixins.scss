@@ -56,8 +56,6 @@
   #{$component} {
     background-color: rgb(var(--v-theme-background));
     box-shadow: none !important;
-
-    /* stylelint-disable-next-line color-function-notation */
     #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
   }
 }

@@ -4,13 +4,11 @@
   .apexcharts-datalabel-label,
   .apexcharts-datalabel,
   .apexcharts-datalabel-value {
-    /* stylelint-disable-next-line color-function-notation */
     fill: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
   }
 
   // tooltips color
   .apexcharts-tooltip {
-    /* stylelint-disable-next-line color-function-notation */
     color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
   }
 
@@ -28,12 +26,10 @@
 
   // tooltip
   .apexcharts-tooltip {
-    /* stylelint-disable-next-line color-function-notation */
     border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
     background: rgb(var(--v-theme-surface)) !important;
 
     .apexcharts-tooltip-title {
-      /* stylelint-disable-next-line color-function-notation */
       border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
       background: rgb(var(--v-theme-surface)) !important;
       font-weight: 600;
@@ -42,10 +38,8 @@
 
   .apexcharts-xaxistooltip,
   .apexcharts-yaxistooltip {
-    /* stylelint-disable-next-line color-function-notation */
     border-color: rgba(var(--v-border-color), var(--v-border-opacity));
     background: rgb(var(--v-theme-surface));
-    /* stylelint-disable-next-line color-function-notation */
     color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
   }
 
@@ -97,7 +91,6 @@
     }
 
     .apexcharts-legend-text {
-      /* stylelint-disable-next-line color-function-notation */
       color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
       font-family: inherit !important;
       font-size: 1rem !important;
@@ -118,21 +111,18 @@
   .apexcharts-xcrosshairs,
   .apexcharts-ycrosshairs,
   .apexcharts-gridline {
-    /* stylelint-disable-next-line color-function-notation */
     stroke: rgba(var(--v-border-color), var(--v-border-opacity));
   }
 
   .apexcharts-xaxis,
   .apexcharts-yaxis {
     line {
-      /* stylelint-disable-next-line color-function-notation */
       stroke: rgba(var(--v-border-color), var(--v-border-opacity));
     }
   }
 
   .apexcharts-grid {
     > line {
-      /* stylelint-disable-next-line color-function-notation */
       stroke: rgba(var(--v-border-color), var(--v-border-opacity));
     }
   }

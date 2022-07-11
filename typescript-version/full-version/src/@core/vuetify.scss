@@ -101,8 +101,6 @@ h6,
 .text-button,
 .text-overline,
 .v-card-title {
-
-  /* stylelint-disable-next-line color-function-notation */
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 
@@ -111,8 +109,6 @@ h6,
 .text-body-2,
 .text-subtitle-1,
 .text-subtitle-2 {
-
-  /* stylelint-disable-next-line color-function-notation */
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 }
 

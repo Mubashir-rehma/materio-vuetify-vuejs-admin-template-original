@@ -2,7 +2,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import type { CalendarApi, CalendarOptions, EventApi } from '@fullcalendar/vue3'
+import type { CalendarApi, CalendarOptions, EventApi, EventSourceFunc } from '@fullcalendar/vue3'
 import type { Ref } from 'vue'
 import type { Event, NewEvent } from './types'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
@@ -71,7 +71,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
   }
 
   // 👉 Fetch events
-  const fetchEvents = (info: unknown, successCallback: Function) => {
+  const fetchEvents: EventSourceFunc = (info, successCallback) => {
   // If there's no info => Don't make useless API call
     if (!info)
       return

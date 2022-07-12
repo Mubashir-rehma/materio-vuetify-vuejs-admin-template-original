@@ -1,4 +1,4 @@
-export const avatarText = (value: String) => {
+export const avatarText = (value: string) => {
   if (!value)
     return ''
   const nameArray = value.split(' ')

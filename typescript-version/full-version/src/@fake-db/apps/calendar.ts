@@ -12,6 +12,7 @@ export interface CalendarEvent {
   start: string
   end: string
   allDay: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   extendedProps: Record<string, any>
 }
 

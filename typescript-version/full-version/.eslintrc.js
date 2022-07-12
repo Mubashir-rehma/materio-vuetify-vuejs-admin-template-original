@@ -10,7 +10,9 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 13,
     parser: '@typescript-eslint/parser',

@@ -10,7 +10,7 @@ interface Props {
 
 interface Emit {
   (e: 'collapsed', isContentCollapsed: boolean): void
-  (e: 'refresh', hideOverlay: Function): void
+  (e: 'refresh', hideOverlay: () => void): void
   (e: 'remove'): void
 }
 

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-// PrismJS
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import Prism from 'vue-prism-component'
+
 interface Props {
   title: string
   code: CodeProp

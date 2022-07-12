@@ -5,7 +5,8 @@
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 5050",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint src --fix --rulesdir eslint-internal-rules/ --ext .ts,.js,.vue,.tsx,.jsx"
   },
   "dependencies": {
     "@casl/ability": "^5.4.3",

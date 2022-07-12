@@ -38,7 +38,7 @@ export const useCalendarStore = defineStore('calendar', {
     async updateEvent(event: NewEvent) {
       return axios.post(`/apps/calendar/events/${event.id}`, { event })
     },
-    async removeEvent(eventId: String) {
+    async removeEvent(eventId: string) {
       return axios.delete(`/apps/calendar/events/${eventId}`)
     },
 

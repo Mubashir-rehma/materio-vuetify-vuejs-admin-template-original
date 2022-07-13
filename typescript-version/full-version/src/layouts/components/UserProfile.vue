@@ -1,5 +1,29 @@
 <script setup lang="ts">
 import avatar1Src from '@/assets/images/avatars/avatar-1.png'
+import { initialAbility } from '@/plugins/casl/ability'
+import { useAppAbility } from '@/plugins/casl/useAppAbility'
+
+const router = useRouter()
+const ability = useAppAbility()
+
+const logout = () => {
+  // Remove "userData" from localStorage
+  localStorage.removeItem('userData')
+
+  // Remove "accessToken" from localStorage
+  localStorage.removeItem('accessToken')
+
+  // Redirect to login page
+  router.push('/login')
+    .then(() => {
+      // ℹ️ We had to remove abilities in then block because if we don't nav menu items mutation is visible while redirecting user to login page
+      // Remove "userAbilities" from localStorage
+      localStorage.removeItem('userAbilities')
+
+      // Reset ability to initial ability
+      ability.update(initialAbility)
+    })
+}
 </script>
 
 <template>
@@ -10,7 +34,7 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
     offset-y="3"
     color="success"
   >
-    <VAvatar>
+    <VAvatar class="cursor-pointer">
       <VImg :src="avatar1Src" />
 
       <!-- SECTION Menu -->
@@ -89,7 +113,7 @@ import avatar1Src from '@/assets/images/avatars/avatar-1.png'
           <VDivider />
 
           <!-- 👉 Logout -->
-          <VListItem>
+          <VListItem @click="logout">
             <VListItemIcon
               class="me-2"
               icon="mdi-logout"

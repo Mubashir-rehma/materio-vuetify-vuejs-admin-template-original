@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useAbility } from '@casl/vue'
 import type { LoginResponse } from '@/@fake-db/types'
 import authTree from '@/assets/images/pages/tree.png'
-import type { AppAbility } from '@/plugins/casl/AppAbility'
+import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
@@ -16,15 +15,16 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
 const route = useRoute()
 const router = useRouter()
 
-const ability = useAbility<AppAbility>()
+const ability = useAppAbility()
 
+const errors = ref<Record<string, string | undefined>>({
+  email: undefined,
+  password: undefined,
+})
 const email = ref('admin@demo.com')
 const password = ref('admin')
 const rememberMe = ref(false)
 const login = () => {
-  console.log('email :>> ', email.value)
-  console.log('password :>> ', password.value)
-
   axios.post<LoginResponse>('/auth/login', { email: email.value, password: password.value })
     .then(r => {
       const { accessToken, userData, userAbilities } = r.data
@@ -41,7 +41,11 @@ const login = () => {
 
       return null
     })
-    .catch(e => { console.error(e.response.data) })
+    .catch(e => {
+      const { errors: formErrors } = e.response.data
+      errors.value = formErrors
+      console.error(e.response.data)
+    })
 }
 </script>
 
@@ -120,6 +124,7 @@ const login = () => {
                     v-model="email"
                     label="Email"
                     type="email"
+                    :error-messages="errors.email"
                   />
                 </VCol>
 
@@ -129,6 +134,7 @@ const login = () => {
                     v-model="password"
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
+                    :error-messages="errors.password"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />

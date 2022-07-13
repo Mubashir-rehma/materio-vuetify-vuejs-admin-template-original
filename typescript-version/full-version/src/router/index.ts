@@ -7,7 +7,22 @@ import { canNavigate } from '@layouts/plugins/casl'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', redirect: { name: 'dashboards-analytics' } },
+    // ℹ️ We are redirecting to different pages based on role.
+    // NOTE: Role is just for UI purposes. ACL is based on abilities.
+    {
+      path: '/',
+      redirect: to => {
+        const userData = JSON.parse(localStorage.getItem('userData') || '{}')
+        const userRole = userData && userData.role ? userData.role : null
+
+        if (userRole === 'admin')
+          return { name: 'dashboards-crm' }
+        if (userRole === 'client')
+          return { name: 'access-control' }
+
+        return { name: 'login', query: to.query }
+      },
+    },
     ...setupLayouts(routes),
   ],
 })

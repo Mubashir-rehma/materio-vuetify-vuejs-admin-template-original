@@ -1,6 +1,7 @@
 import { Ability } from '@casl/ability'
+import type { UserAbility } from '@/@fake-db/types.d'
 
-export const initialAbility = [
+export const initialAbility: UserAbility[] = [
   {
     action: 'read',
     subject: 'Auth',

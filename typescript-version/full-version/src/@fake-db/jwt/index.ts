@@ -63,7 +63,7 @@ const database: User[] = [
 mock.onPost('/auth/login').reply(request => {
   const { email, password } = JSON.parse(request.data)
 
-  let error: any = {
+  let errors: any = {
     email: ['Something went wrong'],
   }
 
@@ -95,16 +95,16 @@ mock.onPost('/auth/login').reply(request => {
       return [200, response]
     }
     catch (e) {
-      error = e
+      errors = e
     }
   }
   else {
-    error = {
+    errors = {
       email: ['Email or Password is Invalid'],
     }
   }
 
-  return [400, { error }]
+  return [400, { errors }]
 })
 
 mock.onPost('/auth/register').reply(request => {
@@ -117,7 +117,7 @@ mock.onPost('/auth/register').reply(request => {
   const isEmailAlreadyInUse = database.find(user => user.email === email)
   const isUsernameAlreadyInUse = database.find(user => user.username === username)
 
-  const error = {
+  const errors = {
     password: !password ? ['Please enter password'] : null,
     email: (() => {
       if (!email)
@@ -137,7 +137,7 @@ mock.onPost('/auth/register').reply(request => {
     })(),
   }
 
-  if (!error.username && !error.email) {
+  if (!errors.username && !errors.email) {
     // Calculate user id
     const { length } = database
     let lastIndex = 0
@@ -176,5 +176,5 @@ mock.onPost('/auth/register').reply(request => {
     return [200, response]
   }
 
-  return [400, { error }]
+  return [400, { error: errors }]
 })

@@ -10,14 +10,10 @@ export default [
       {
         title: 'Analytics',
         to: 'dashboards-analytics',
-        action: 'read',
-        subject: 'Admin',
       },
       {
         title: 'CRM',
         to: 'dashboards-crm',
-        action: 'read',
-        subject: 'Auth',
       },
     ],
     badgeContent: '2',
@@ -28,8 +24,6 @@ export default [
     title: 'Calendar',
     icon: 'i-mdi-calendar-blank-outline',
     to: 'calendar',
-    action: 'read',
-    subject: 'Auth',
   },
   {
     title: 'Invoice',

@@ -44,6 +44,7 @@ $vertical-nav-horizontal-spacing: 1rem !default;
 
 // Vertical nav header height. Mostly we will align it with navbar height;
 $vertical-nav-header-height: variables.$layout-vertical-nav-navbar-height !default;
+$vertical-nav-navbar-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
 
 // Vertical nav header padding
 $vertical-nav-header-padding: 1rem $vertical-nav-horizontal-spacing !default;

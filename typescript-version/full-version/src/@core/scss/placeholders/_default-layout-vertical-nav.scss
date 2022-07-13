@@ -1,3 +1,5 @@
+@use "../variables";
+
 %default-layout-vertical-nav-scrolled-sticky-nav {
   background-color: rgb(var(--v-theme-surface));
 }
@@ -6,5 +8,5 @@
 %default-layout-vertical-nav-navbar-blur {
   backdrop-filter: blur(8px);
   background-color: rgb(var(--v-theme-surface), 0.9);
-  box-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
+  box-shadow: variables.$vertical-nav-navbar-shadow;
 }

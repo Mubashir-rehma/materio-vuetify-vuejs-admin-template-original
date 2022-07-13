@@ -134,6 +134,7 @@ watch(() => route.name, () => {
   flex-direction: column;
   block-size: 100%;
   inline-size: variables.$layout-vertical-nav-width;
+  inset-block-start: 0;
   inset-inline-start: 0;
   transition: all 0.25s ease-in-out;
   will-change: transform, inline-size;

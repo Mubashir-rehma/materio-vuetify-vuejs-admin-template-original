@@ -1,5 +1,7 @@
 import mock from '@/@fake-db/mock'
 import type { User, UserOut } from '@/@fake-db/types.d'
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
 
 // TODO: Use jsonwebtoken pkg
 // TODO: Enable avatar
@@ -28,7 +30,7 @@ const database: User[] = [
     username: 'johndoe',
     password: 'admin',
 
-    //   avatar: require('@/assets/images/avatars/13-small.png'),
+    avatar: avatar1,
     email: 'admin@demo.com',
     role: 'admin',
     abilities: [
@@ -44,7 +46,7 @@ const database: User[] = [
     username: 'janedoe',
     password: 'client',
 
-    //   avatar: require('@/assets/images/avatars/1-small.png'),
+    avatar: avatar2,
     email: 'client@demo.com',
     role: 'client',
     abilities: [
@@ -63,7 +65,7 @@ const database: User[] = [
 mock.onPost('/auth/login').reply(request => {
   const { email, password } = JSON.parse(request.data)
 
-  let errors: any = {
+  let errors: Record<string, string[]> = {
     email: ['Something went wrong'],
   }
 
@@ -94,8 +96,8 @@ mock.onPost('/auth/login').reply(request => {
 
       return [200, response]
     }
-    catch (e) {
-      errors = e
+    catch (e: unknown) {
+      errors = { email: [e as string] }
     }
   }
   else {
@@ -148,9 +150,9 @@ mock.onPost('/auth/register').reply(request => {
 
     const userData: User = {
       id: lastIndex,
-      email: '',
-      password: '',
-      username: '',
+      email,
+      password,
+      username,
       fullName: '',
       role: 'admin',
       abilities: [
@@ -161,16 +163,19 @@ mock.onPost('/auth/register').reply(request => {
       ],
     }
 
+    console.log('userData :>> ', userData)
+
     database.push(userData)
 
     const accessToken = userTokens[userData.id]
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password: _password, ...user } = userData
+    const { password: _, abilities, ...user } = userData
 
     const response = {
       userData: user,
       accessToken,
+      userAbilities: abilities,
     }
 
     return [200, response]

@@ -1,25 +1,59 @@
 <script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { VForm } from 'vuetify/components'
+
+import type { RegisterResponse } from '@/@fake-db/types'
 import authTree from '@/assets/images/pages/tree-2.png'
+import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
+import { alphaDashValidator, emailValidator, requiredValidator } from '@validators'
 
+const refVForm = ref<VForm>()
 const username = ref('johnDoe')
 const email = ref('john@example.com')
 const password = ref('john@MATERIO#123')
 const privacyPolicies = ref(true)
 
+// Router
+const route = useRoute()
+const router = useRouter()
+
+// Ability
+const ability = useAppAbility()
+
+// Form Errors
+const errors = ref<Record<string, string | undefined>>({
+  email: undefined,
+  password: undefined,
+})
+
 const register = () => {
-  axios.post('/auth/register', {
+  axios.post<RegisterResponse>('/auth/register', {
     username: username.value,
     email: email.value,
     password: password.value,
   })
     .then(r => {
-      console.log('r :>> ', r)
+      const { accessToken, userData, userAbilities } = r.data
+
+      localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+      ability.update(userAbilities)
+
+      localStorage.setItem('userData', JSON.stringify(userData))
+      localStorage.setItem('accessToken', JSON.stringify(accessToken))
+
+      if (route.query.to)
+        router.replace(String(route.query.to))
+      else router.replace('/')
+
+      return null
     })
     .catch(e => {
-      console.log('e.response :>> ', e.response)
+      const { errors: formErrors } = e.response.data
+      errors.value = formErrors
+      console.error(e.response.data)
     })
 }
 
@@ -28,6 +62,14 @@ const imageVariant = useGenerateImageVariant('@/assets/images/pages/auth-v2-regi
 const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
 
 const isPasswordVisible = ref(false)
+
+const onSubmit = () => {
+  refVForm.value?.validate()
+    .then(({ valid: isValid }) => {
+      if (isValid)
+        register()
+    })
+}
 </script>
 
 <template>
@@ -87,12 +129,16 @@ const isPasswordVisible = ref(false)
           </VCardText>
 
           <VCardText>
-            <VForm @submit.prevent="register">
+            <VForm
+              ref="refVForm"
+              @submit.prevent="onSubmit"
+            >
               <VRow>
                 <!-- Username -->
                 <VCol cols="12">
                   <VTextField
                     v-model="username"
+                    :rules="[requiredValidator, alphaDashValidator]"
                     label="Username"
                   />
                 </VCol>
@@ -101,6 +147,7 @@ const isPasswordVisible = ref(false)
                 <VCol cols="12">
                   <VTextField
                     v-model="email"
+                    :rules="[requiredValidator, emailValidator]"
                     label="Email"
                     type="email"
                   />
@@ -110,6 +157,7 @@ const isPasswordVisible = ref(false)
                 <VCol cols="12">
                   <VTextField
                     v-model="password"
+                    :rules="[requiredValidator]"
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"

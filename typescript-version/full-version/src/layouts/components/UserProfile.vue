@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import avatar1Src from '@/assets/images/avatars/avatar-1.png'
 import { initialAbility } from '@/plugins/casl/ability'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 
 const router = useRouter()
 const ability = useAppAbility()
+const userData = JSON.parse(localStorage.getItem('userData') || 'null')
 
 const logout = () => {
   // Remove "userData" from localStorage
@@ -34,8 +34,15 @@ const logout = () => {
     offset-y="3"
     color="success"
   >
-    <VAvatar class="cursor-pointer">
-      <VImg :src="avatar1Src" />
+    <VAvatar
+      class="cursor-pointer v-avatar-light-bg text-primary"
+      color="primary"
+    >
+      <VImg
+        v-if="userData.avatar"
+        :src="userData.avatar"
+      />
+      <VIcon icon="mdi-account-outline" />
 
       <!-- SECTION Menu -->
       <VMenu
@@ -53,14 +60,21 @@ const logout = () => {
               color="success"
             >
               <VListItemAvatar>
-                <VAvatar>
-                  <VImg :src="avatar1Src" />
+                <VAvatar
+                  color="primary"
+                  class="v-avatar-light-bg text-primary"
+                >
+                  <VImg
+                    v-if="userData.avatar"
+                    :src="userData.avatar"
+                  />
+                  <VIcon icon="mdi-account-outline" />
                 </VAvatar>
               </VListItemAvatar>
             </VBadge>
             <VListItemHeader class="ms-4">
-              <VListItemTitle>John Doe</VListItemTitle>
-              <VListItemSubtitle>Admin</VListItemSubtitle>
+              <VListItemTitle>{{ userData.fullName }}</VListItemTitle>
+              <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
             </VListItemHeader>
           </VListItem>
           <VDivider />

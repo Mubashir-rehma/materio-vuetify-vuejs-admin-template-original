@@ -78,6 +78,13 @@ export interface LoginResponse {
   userAbilities: UserAbility[]
 }
 
+export interface RegisterResponse {
+  accessToken: string
+  userData: AuthUserOut
+  userAbilities: UserAbility[]
+}
+
+
 // !SECTION
 
 // SECTION App: Calendar

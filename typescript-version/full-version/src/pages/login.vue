@@ -1,10 +1,14 @@
 <script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { VForm } from 'vuetify/components'
+
 import type { LoginResponse } from '@/@fake-db/types'
 import authTree from '@/assets/images/pages/tree.png'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
+import { emailValidator, requiredValidator } from '@validators'
 
 const isPasswordVisible = ref(false)
 
@@ -21,9 +25,11 @@ const errors = ref<Record<string, string | undefined>>({
   email: undefined,
   password: undefined,
 })
+const refVForm = ref<VForm>()
 const email = ref('admin@demo.com')
 const password = ref('admin')
 const rememberMe = ref(false)
+
 const login = () => {
   axios.post<LoginResponse>('/auth/login', { email: email.value, password: password.value })
     .then(r => {
@@ -45,6 +51,14 @@ const login = () => {
       const { errors: formErrors } = e.response.data
       errors.value = formErrors
       console.error(e.response.data)
+    })
+}
+
+const onSubmit = () => {
+  refVForm.value?.validate()
+    .then(({ valid: isValid }) => {
+      if (isValid)
+        login()
     })
 }
 </script>
@@ -116,7 +130,10 @@ const login = () => {
             </VAlert>
           </VCardText>
           <VCardText>
-            <VForm @submit.prevent="login">
+            <VForm
+              ref="refVForm"
+              @submit.prevent="onSubmit"
+            >
               <VRow>
                 <!-- email -->
                 <VCol cols="12">
@@ -124,6 +141,7 @@ const login = () => {
                     v-model="email"
                     label="Email"
                     type="email"
+                    :rules="[requiredValidator, emailValidator]"
                     :error-messages="errors.email"
                   />
                 </VCol>
@@ -133,6 +151,7 @@ const login = () => {
                   <VTextField
                     v-model="password"
                     label="Password"
+                    :rules="[requiredValidator]"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :error-messages="errors.password"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"

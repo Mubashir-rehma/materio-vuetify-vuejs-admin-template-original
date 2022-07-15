@@ -105,5 +105,5 @@ export const alphaDashValidator = (value: unknown) => {
 
   const valueAsString = String(value)
 
-  return /^[0-9A-Z_-]*$/i.test(valueAsString) || 'All Character is not valid'
+  return /^[0-9A-Z_-]*$/i.test(valueAsString) || 'All Character are not valid'
 }

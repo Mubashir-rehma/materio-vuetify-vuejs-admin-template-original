@@ -90,9 +90,9 @@ export default defineConfig({
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-
-      // TODO: use `fileURLToPath`
-      include: [path.resolve(__dirname, './src/locales/**')],
+      include: [
+        fileURLToPath(new URL('./src/locales/**', import.meta.url)),
+      ],
     }),
     DefineOptions(),
   ],

@@ -4,9 +4,8 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 import avatar2 from '@/assets/images/avatars/avatar-2.png'
 
 // TODO: Use jsonwebtoken pkg
-// TODO: Enable avatar
 // ℹ️ Created from https://jwt.io/ using HS256 algorithm
-// ℹ️ We didn't created it programmatically because jsonwebtoken package have issues with esm support. View Issues: https://github.com/auth0/node-jsonwebtoken/issues
+// ℹ️ We didn't created it programmatically because jsonwebtoken package have issues with esm support. View Issues: https://github.com/auth0/node-jsonwebtoken/issues/655
 const userTokens = [
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.fhc3wykrAnRpcKApKhXiahxaOe8PSHatad31NuIZ0Zg',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mn0.cat2xMrZLn0FwicdGtZNzL7ifDTAKWB0k1RurSWjdnw',
@@ -73,7 +72,6 @@ mock.onPost('/auth/login').reply(request => {
 
   if (user) {
     try {
-      // TODO: Generate tokens using jwt.sign when we can use jsonwebtoken
       const accessToken = userTokens[user.id]
 
       // We are duplicating user here

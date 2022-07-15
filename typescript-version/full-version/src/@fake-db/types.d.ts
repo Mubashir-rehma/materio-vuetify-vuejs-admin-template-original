@@ -88,7 +88,14 @@ export interface RegisterResponse {
 // !SECTION
 
 // SECTION App: Calendar
-// export interface Event {
-
-// }
+export interface CalendarEvent {
+  id: string
+  url: string
+  title: string
+  start: string
+  end: string
+  allDay: boolean
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  extendedProps: Record<string, any>
+}
 // !SECTION

@@ -22,7 +22,7 @@ export const blankEvent = {
   },
 }
 
-export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarActive: Ref<boolean>) => {
+export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarActive: Ref<boolean>, isLeftSidebarOpen: Ref<boolean>) => {
   // 👉 themeConfig
   const { isAppRtl } = useThemeConfig()
 
@@ -170,7 +170,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin],
     initialView: 'dayGridMonth',
     headerToolbar: {
-      start: 'prev,next title',
+      start: 'drawerToggler,prev,next title',
       end: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
     },
     events: fetchEvents,
@@ -249,6 +249,15 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     eventResize({ event: resizedEvent }) {
       if (resizedEvent.start && resizedEvent.end)
         updateEvent(extractEventDataFromEventApi(resizedEvent))
+    },
+
+    customButtons: {
+      drawerToggler: {
+        text: 'calendarDrawerToggler',
+        click() {
+          isLeftSidebarOpen.value = true
+        },
+      },
     },
   } as CalendarOptions
 

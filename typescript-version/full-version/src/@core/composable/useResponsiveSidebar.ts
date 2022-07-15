@@ -1,12 +1,12 @@
 import { useDisplay } from 'vuetify'
 
 export const useResponsiveLeftSidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
-  const { smAndDown, mdAndUp, name: currentBreakpoint } = useDisplay()
+  const { mdAndDown, lgAndUp, name: currentBreakpoint } = useDisplay()
 
   const isLeftSidebarOpen = ref(true)
 
   const setInitialValue = () => {
-    isLeftSidebarOpen.value = !smAndDown.value
+    isLeftSidebarOpen.value = !mdAndDown.value
   }
 
   // Set the initial value of sidebar
@@ -16,15 +16,15 @@ export const useResponsiveLeftSidebar = ({ sidebarWidth }: { sidebarWidth: numbe
     currentBreakpoint,
     () => {
       // Reset left sidebar
-      if (smAndDown.value)
+      if (mdAndDown.value)
         isLeftSidebarOpen.value = false
-      if (mdAndUp.value)
+      if (lgAndUp.value)
         isLeftSidebarOpen.value = true
     },
   )
 
   // const contentStyles = computed(() => ({
-  //   'margin-inline-start': isLeftSidebarOpen.value && mdAndUp.value ? `${sidebarWidth}px` : '',
+  //   'margin-inline-start': isLeftSidebarOpen.value && lgAndUp.value ? `${sidebarWidth}px` : '',
   // }))
 
   return {

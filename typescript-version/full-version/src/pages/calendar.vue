@@ -20,11 +20,10 @@ watch(isEventHandlerSidebarActive, val => {
   if (!val)
     event.value = structuredClone(blankEvent)
 })
+const { isLeftSidebarOpen } = useResponsiveLeftSidebar({ sidebarWidth: 250 })
 
 // 👉 useCalendar
-const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent } = useCalendar(event, isEventHandlerSidebarActive)
-
-const { isLeftSidebarOpen } = useResponsiveLeftSidebar({ sidebarWidth: 250 })
+const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent } = useCalendar(event, isEventHandlerSidebarActive, isLeftSidebarOpen)
 
 // SECTION Sidebar
 // 👉 Check all
@@ -58,7 +57,7 @@ const checkAll = computed({
         absolute
         touchless
         :location="$vuetify.rtl.isRtl.value ? 'right' : 'left'"
-        :temporary="$vuetify.display.xs"
+        :temporary="$vuetify.display.mdAndDown"
       >
         <div class="pa-5 d-flex flex-column gap-y-8">
           <VBtn

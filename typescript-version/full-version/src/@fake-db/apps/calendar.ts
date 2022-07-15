@@ -1,20 +1,10 @@
 import mock from '@/@fake-db/mock'
+import type { CalendarEvent } from '@/@fake-db/types'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
 const nextMonth = date.getMonth() === 11 ? new Date(date.getFullYear() + 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() + 1, 1)
 const prevMonth = date.getMonth() === 11 ? new Date(date.getFullYear() - 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() - 1, 1)
-
-export interface CalendarEvent {
-  id: string
-  url: string
-  title: string
-  start: string
-  end: string
-  allDay: boolean
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  extendedProps: Record<string, any>
-}
 
 const data: { events: CalendarEvent[] } = {
   events: [
@@ -151,9 +141,9 @@ mock.onPost('/apps/calendar/events').reply(config => {
   const { length } = data.events
   let lastIndex = 0
   if (length)
-    lastIndex = data.events[length - 1].id
+    lastIndex = Number(data.events[length - 1].id)
 
-  event.id = lastIndex + 1
+  event.id = String(lastIndex + 1)
 
   data.events.push(event)
 

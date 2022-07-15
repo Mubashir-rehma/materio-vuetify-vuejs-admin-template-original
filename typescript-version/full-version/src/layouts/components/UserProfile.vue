@@ -42,7 +42,10 @@ const logout = () => {
         v-if="userData.avatar"
         :src="userData.avatar"
       />
-      <VIcon icon="mdi-account-outline" />
+      <VIcon
+        v-else
+        icon="mdi-account-outline"
+      />
 
       <!-- SECTION Menu -->
       <VMenu
@@ -68,7 +71,10 @@ const logout = () => {
                     v-if="userData.avatar"
                     :src="userData.avatar"
                   />
-                  <VIcon icon="mdi-account-outline" />
+                  <VIcon
+                    v-else
+                    icon="mdi-account-outline"
+                  />
                 </VAvatar>
               </VListItemAvatar>
             </VBadge>

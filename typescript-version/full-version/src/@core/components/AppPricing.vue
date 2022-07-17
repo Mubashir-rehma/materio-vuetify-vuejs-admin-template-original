@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import starterLogo from '@/assets/images/icons/unicons/bookmark.png'
-import enterpriseLogo from '@/assets/images/icons/unicons/briefcase-round.png'
-import proLogo from '@/assets/images/icons/unicons/wallet-round.png'
-import priceArrowDark from '@/assets/images/pages/pricing-arrow-dark.png'
-import priceArrowLight from '@/assets/images/pages/pricing-arrow-light.png'
+import basicLogo from '@/assets/images/misc/pricing-tree-1.png'
+import standardLogo from '@/assets/images/misc/pricing-tree-2.png'
+import enterpriseLogo from '@/assets/images/misc/pricing-tree-3.png'
 
 interface ColumnsResponsiveProps {
   xs?: number | string
@@ -20,193 +17,183 @@ const annualMonthlyPlanPriceToggler = ref(true)
 
 const pricingPlans = [
   {
-    name: 'STARTER',
-    logo: starterLogo,
+    name: 'Basic',
+    tagLine: 'A simple start for everyone',
+    logo: basicLogo,
     monthlyPrice: 0,
     yearlyPrice: 0,
-    isExclusive: false,
+    isPopular: false,
+    current: true,
     features: [
-      'Rich landing pages',
-      '100+ components',
-      'Basic support on Github',
+      '100 responses a month',
+      'Unlimited forms and surveys',
+      'Unlimited fields',
+      'Basic form creation tools',
+      'Up to 2 subdomains',
     ],
   },
   {
-    name: 'PRO',
-    logo: proLogo,
+    name: 'Standard',
+    tagLine: 'For small to medium businesses',
+    logo: standardLogo,
     monthlyPrice: 42,
     yearlyPrice: 499,
-    isExclusive: true,
+    isPopular: true,
+    current: false,
     features: [
-      'Up to 5 users',
-      '120+ components',
-      'Basic support on Github',
-      'Monthly updates',
-      'Integrations',
+      'Unlimited responses',
+      'Unlimited forms and surveys',
+      'Instagram profile page',
+      'Google Docs integration',
+      'Custom “Thank you” page',
     ],
   },
   {
-    name: 'ENTERPRISE',
+    name: 'Enterprise',
+    tagLine: 'Solution for big organizations',
     logo: enterpriseLogo,
     monthlyPrice: 84,
     yearlyPrice: 999,
-    isExclusive: false,
+    isPopular: false,
+    current: false,
     features: [
-      'Up to 10 users',
-      '150+ components',
-      'Basic support on Github',
-      'Monthly updates',
-      'Integrations',
-      'Product Support',
-      'API access',
-      'Speedy build tooling',
+      'PayPal payments',
+      'Logic Jumps',
+      'File upload with 5GB storage',
+      'Custom domain support',
+      'Stripe integration',
     ],
   },
 ]
-
-const exclusiveStyle = {
-  border: 'primary',
-  class: 'border-opacity-100',
-}
-
-const vuetifyTheme = useTheme()
 </script>
 
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
     <h3 class="text-h4 pricing-title font-weight-medium mb-4">
-      Find the right plan for your site
+      Pricing Plans
     </h3>
-    <p>
-      Get started with us - it's perfect for individuals and teams. Choose a subscription plan that meets your needs.
+    <p class="mb-0">
+      All plans include 40+ advanced tools and features to boost your product.
     </p>
+    <p>Choose the best plan to fit your needs.</p>
   </div>
 
   <!-- 👉 Annual and monthly price toggler -->
-  <div class="d-flex justify-center align-center mt-15 mb-5 pt-10">
-    <VLabel
+  <div class="d-flex align-center justify-center mx-auto mb-10">
+    <v-label
       for="pricing-plan-toggle"
-      class="me-3 ms-15"
+      class="me-3"
     >
       Monthly
-    </VLabel>
+    </v-label>
+
     <div>
-      <VSwitch
+      <v-switch
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
-        inline
         label="Annual"
+        color="secondary"
       />
-    </div>
-    <div
-      class="d-flex align-center position-relative ms-n10"
-      style="top: -1.8rem;"
-    >
-      <VImg
-        :src="vuetifyTheme.current.value.dark ? priceArrowDark : priceArrowLight"
-        width="30"
-      />
-      <VChip
-        color="primary"
-        label
-        size="small"
-      >
-        Save Upto 10%
-      </VChip>
     </div>
   </div>
 
   <!-- SECTION pricing plans -->
-  <VRow>
-    <VCol
+  <v-row>
+    <v-col
       v-for="plan in pricingPlans"
       :key="plan.logo"
-      cols="12"
       v-bind="props"
+      cols="12"
     >
       <!-- 👉  Card -->
-      <VCard v-bind="plan.isExclusive ? exclusiveStyle : {}">
-        <VCardText
+      <v-card
+        flat
+        border
+        class="border-opacity-100"
+        :class="plan.isPopular ? 'border-primary' : ''"
+      >
+        <v-card-text
           style="height: 3.75rem;"
           class="text-end"
         >
-          <!-- 👉 Exclusive -->
-          <VChip
-            v-show="plan.isExclusive"
+          <!-- 👉 Popular -->
+          <v-chip
+            v-show="plan.isPopular"
             color="primary"
-            label
             size="small"
           >
-            Exclusive
-          </VChip>
-        </VCardText>
-
-        <!-- 👉 Plan name -->
-        <VCardText class="d-flex justify-center">
-          <h3 class="text-h5 font-weight-bold">
-            {{ plan.name }}
-          </h3>
-        </VCardText>
+            Popular
+          </v-chip>
+        </v-card-text>
 
         <!-- 👉 Plan logo -->
-        <VCardText>
-          <VImg
+        <v-card-text class="text-center">
+          <v-img
+            :height="200"
             :src="plan.logo"
-            height="80"
           />
-        </VCardText>
+
+          <!-- 👉 Plan name -->
+          <h3 class="text-h5 font-weight-medium mb-2">
+            {{ plan.name }}
+          </h3>
+          <p class="mb-0">
+            {{ plan.tagLine }}
+          </p>
+        </v-card-text>
 
         <!-- 👉 Plan price  -->
-        <VCardText class="position-relative text-center my-6">
-          <div class="d-flex justify-center align-center mb-2">
-            <sup class="text-h6 font-weight-medium me-1 mt-4">$</sup>
-            <h1 class="text-h3 font-weight-bold">
+        <v-card-text class="position-relative text-center">
+          <div class="d-flex justify-center align-center">
+            <sup class="text-body-2 font-weight-medium me-1">$</sup>
+            <h1 class="text-h3 font-weight-bold text-primary">
               {{ plan.monthlyPrice }}
             </h1>
-            <sub class="text-body-1 font-weight-medium ms-1 mt-2">/month</sub>
+            <sub class="text-body-2 font-weight-medium ms-2  mt-2"> /month</sub>
           </div>
+
+          <!-- 👉 Annual Price -->
           <span
             v-show="annualMonthlyPlanPriceToggler"
-            class="position-absolute text-body-1 font-weight-medium"
+            class="position-absolute text-caption font-weight-medium"
             style="inset-inline: 0;"
           >
-            {{ plan.yearlyPrice === 0 ? 'free' : `$ ${plan.yearlyPrice}/year` }}
+            {{ plan.yearlyPrice === 0 ? 'free' : `USD ${plan.yearlyPrice}/Year` }}
           </span>
-        </VCardText>
+        </v-card-text>
 
         <!-- 👉 Plan features -->
-        <VCardText>
-          <VList density="compact">
-            <VListItem
+        <v-card-text class="pt-4">
+          <v-list density="compact">
+            <v-list-item
               v-for="feature in plan.features"
               :key="feature"
             >
-              <VListItemAvatar
-                size="20"
-                class="v-avatar-light-bg text-primary me-2"
-              >
-                <VIcon
-                  size="13"
-                  icon="mdi-check"
-                />
-              </VListItemAvatar>
-              <VListItemTitle>{{ feature }}</VListItemTitle>
-            </VListItem>
-          </VList>
-        </VCardText>
+              <v-list-item-icon
+                :size="14"
+                icon="mdi-circle-outline"
+                class="me-3"
+              />
+              <v-list-item-title class="text-body-2">
+                {{ feature }}
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-card-text>
 
         <!-- 👉 Plan actions -->
-        <VCardActions>
-          <VBtn
-            :variant="plan.isExclusive ? 'elevated' : 'tonal'"
+        <v-card-actions>
+          <v-btn
             block
+            :color="plan.current ? 'success' : 'primary'"
+            :variant="plan.isPopular ? 'elevated' : 'tonal'"
           >
-            Get Started {{ plan.yearlyPrice === 0 ? 'for free' : '' }}
-          </VBtn>
-        </VCardActions>
-      </VCard>
-    </VCol>
-  </VRow>
+            {{ plan.yearlyPrice === 0 ? 'Your Current Plan' : 'Upgrade' }}
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
   <!-- !SECTION  -->
 </template>

@@ -74,7 +74,7 @@ const isPasswordVisible = ref(false)
                 v-model="form.remember"
                 label="Remember me"
                 inline
-                density="compact"
+                class="input-control-auto-height"
               />
 
               <RouterLink

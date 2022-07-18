@@ -168,7 +168,7 @@ const onSubmit = () => {
                     v-model="rememberMe"
                     label="Remember me"
                     inline
-                    density="compact"
+                    class="input-control-auto-height"
                   />
                   <RouterLink
                     class="text-primary ms-2"

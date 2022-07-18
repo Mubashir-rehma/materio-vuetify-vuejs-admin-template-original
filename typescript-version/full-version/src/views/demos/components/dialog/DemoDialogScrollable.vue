@@ -51,6 +51,7 @@ const isDialogVisible = ref(false)
             :label="country.label"
             :value="country.value"
             color="primary"
+            class="input-control-auto-height"
           />
         </VRadioGroup>
       </VCardText>

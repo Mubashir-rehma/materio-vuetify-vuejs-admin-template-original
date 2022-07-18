@@ -101,7 +101,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
                     v-model="form.remember"
                     label="Remember me"
                     inline
-                    density="compact"
+                    class="input-control-auto-height"
                   />
                   <RouterLink
                     class="text-primary ms-2"

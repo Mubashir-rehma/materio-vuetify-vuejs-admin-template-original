@@ -23,29 +23,33 @@ const widgets = ref(false)
     <!-- Dialog Content -->
     <VCard>
       <!-- Toolbar -->
-      <VToolbar color="primary">
-        <VBtn
-          icon
-          variant="plain"
-          @click="isDialogVisible = false"
-        >
-          <VIcon
-            color="white"
-            icon="mdi-close"
-          />
-        </VBtn>
-
-        <VToolbarTitle>Settings</VToolbarTitle>
-        <VSpacer />
-        <VToolbarItems>
+      <div>
+        <VToolbar color="primary">
           <VBtn
-            variant="text"
+            icon
+            variant="plain"
             @click="isDialogVisible = false"
           >
-            Save
+            <VIcon
+              color="white"
+              icon="mdi-close"
+            />
           </VBtn>
-        </VToolbarItems>
-      </VToolbar>
+
+          <VToolbarTitle>Settings</VToolbarTitle>
+
+          <VSpacer />
+
+          <VToolbarItems>
+            <VBtn
+              variant="text"
+              @click="isDialogVisible = false"
+            >
+              Save
+            </VBtn>
+          </VToolbarItems>
+        </VToolbar>
+      </div>
 
       <!-- List -->
       <VList
@@ -83,6 +87,7 @@ const widgets = ref(false)
                 v-model="notifications"
                 color="primary"
                 inline
+                class="input-control-auto-height"
               />
             </div>
           </template>
@@ -97,6 +102,7 @@ const widgets = ref(false)
                 v-model="sound"
                 color="primary"
                 inline
+                class="input-control-auto-height"
               />
             </div>
           </template>
@@ -112,6 +118,7 @@ const widgets = ref(false)
                 v-model="widgets"
                 color="primary"
                 inline
+                class="input-control-auto-height"
               />
             </div>
           </template>

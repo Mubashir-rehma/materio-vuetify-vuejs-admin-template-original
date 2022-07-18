@@ -244,6 +244,7 @@ const addNewUser = (userData: UserProperties) => {
                 <VCheckbox
                   :model-value="selectAllUser"
                   :indeterminate="(users.length !== selectedRows.length) && !!selectedRows.length"
+                  class="input-control-auto-height"
                   @click="selectUnselectAll"
                 />
               </div>
@@ -269,6 +270,7 @@ const addNewUser = (userData: UserProperties) => {
                 <VCheckbox
                   :id="`check${user.id}`"
                   :model-value="selectedRows.includes(`check${user.id}`)"
+                  class="input-control-auto-height"
                   @click="addRemoveIndividualCheckbox(`check${user.id}`)"
                 />
               </div>

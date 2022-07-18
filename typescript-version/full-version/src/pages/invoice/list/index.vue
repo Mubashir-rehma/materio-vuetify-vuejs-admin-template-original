@@ -195,6 +195,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
               <VCheckbox
                 :model-value="selectAllInvoice"
                 :indeterminate="(invoices.length !== selectedRows.length) && !!selectedRows.length"
+                class="input-control-auto-height"
                 @click="selectUnselectAll"
               />
             </th>
@@ -234,6 +235,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 <VCheckbox
                   :id="`check${invoice.id}`"
                   :model-value="selectedRows.includes(`check${invoice.id}`)"
+                  class="input-control-auto-height"
                   @click="addRemoveIndividualCheckbox(`check${invoice.id}`)"
                 />
               </div>

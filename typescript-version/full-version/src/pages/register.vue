@@ -173,7 +173,7 @@ const onSubmit = () => {
                   <VCheckbox
                     v-model="privacyPolicies"
                     inline
-                    density="compact"
+                    class="input-control-auto-height"
                   >
                     <template #label>
                       <span class="me-1">I agree to</span>

@@ -5,18 +5,18 @@ interface Props {
   errorDescription: string
 }
 
-const prop = defineProps<Props>()
+const props = defineProps<Props>()
 </script>
 
 <template>
   <div class="text-center mb-4">
     <!-- 👉 Title and subtitle -->
     <h1 class="text-h1 font-weight-medium">
-      {{ prop.errorCode }}
+      {{ props.errorCode }}
     </h1>
     <h5 class="text-h5 font-weight-medium mb-3">
-      {{ prop.errorTitle }}
+      {{ props.errorTitle }}
     </h5>
-    <p>{{ prop.errorDescription }}</p>
+    <p>{{ props.errorDescription }}</p>
   </div>
 </template>

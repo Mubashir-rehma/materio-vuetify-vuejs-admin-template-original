@@ -39,19 +39,24 @@ const formSubmit = () => {
 </script>
 
 <template>
-  <VDialog>
-    <VCard class="pa-5 pa-sm-15">
-      <VCardText>
-        <!-- 👉 Title -->
-        <div class="text-center mb-6">
-          <h3 class="text-h5 font-weight-medium mb-4">
-            {{ cardDetails.number ? 'Edit Card' : 'Add Card' }}
-          </h3>
-          <p>{{ cardDetails.number ? 'Edit your saved card details' : 'Add your saved card details' }}</p>
-        </div>
+  <v-dialog>
+    <v-card
+      :width="$vuetify.display.smAndDown ? 'auto' : 650 "
+      class="pa-5 pa-sm-15"
+    >
+      <!-- 👉 Title -->
+      <v-card-item class="text-center">
+        <v-card-title class="text-h5 font-weight-medium mb-4">
+          {{ props.cardDetails.name ? 'Edit Card' : 'Add Card' }}
+        </v-card-title>
+        <v-card-subtitle>
+          {{ props.cardDetails.name ? 'Edit your saved card details' : 'Add your saved card details' }}
+        </v-card-subtitle>
+      </v-card-item>
 
-        <VForm @submit.prevent="() => {}">
-          <VRow>
+      <v-card-text class="mt-6">
+        <v-form @submit.prevent="() => {}">
+          <v-row>
             <!-- 👉 Card Number -->
             <VCol cols="12">
               <VTextField

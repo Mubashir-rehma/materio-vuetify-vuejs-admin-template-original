@@ -86,6 +86,13 @@ export default defineConfig({
     }),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', 'vue-i18n', 'pinia'],
+      vueTemplate: true,
+      resolvers: [
+        (name: string) => {
+          if (name.includes('dynamicImg'))
+            return { importName: 'dynamicImgImport', from: '@core/utils/imports' }
+        },
+      ],
     }),
     VueI18n({
       runtimeOnly: true,

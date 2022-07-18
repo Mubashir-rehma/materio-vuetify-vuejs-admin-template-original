@@ -85,6 +85,23 @@ export interface RegisterResponse {
 
 // !SECTION
 
+// SECTION
+// App: User
+export interface UserProperties {
+  id: number
+  fullName: string
+  company: string
+  role: string
+  username: string
+  country: string
+  contact: string
+  email: string
+  currentPlan: string
+  status: string
+  avatar: string
+}
+// !SECTION
+
 // SECTION App: Calendar
 export interface CalendarEvent {
   id: string

@@ -1,11 +1,15 @@
 <script setup lang="ts">
 interface Emit {
   (e: 'update:modelValue', value: boolean): void
-  (e: 'submit', value: number): void
+  (e: 'submit', value: string): void
 }
+interface Props {
+  mobileNumber: string
+}
+const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const phoneNumber = ref<number>()
+const phoneNumber = ref(structuredClone(toRaw(props.mobileNumber)))
 
 const formSubmit = () => {
   if (phoneNumber.value) {
@@ -13,18 +17,28 @@ const formSubmit = () => {
     emit('update:modelValue', false)
   }
 }
+
+const resetPhoneNumber = () => {
+  phoneNumber.value = structuredClone(toRaw(props.mobileNumber))
+  emit('update:modelValue', false)
+}
+
+watch(props, resetPhoneNumber, { immediate: true })
 </script>
 
 <template>
-  <VDialog class="v-dialog-lg">
-    <VCard class="pa-5 pa-sm-15">
-      <VCardText>
-        <h3 class="text-h5 font-weight-medium mb-5">
+  <v-dialog class="v-dialog-lg">
+    <v-card class="pa-5 pa-sm-15">
+      <v-card-item>
+        <v-card-title class="text-h5 font-weight-medium">
           Enable One Time Password
-        </h3>
-        <p class="text-body-1 font-weight-medium">
+        </v-card-title>
+        <v-card-subtitle class="font-weight-medium">
           Verify Your Mobile Number for SMS
-        </p>
+        </v-card-subtitle>
+      </v-card-item>
+
+      <v-card-text>
         <p>Enter your mobile phone number with country code and  we will send you a verification code.</p>
 
         <VForm @submit.prevent="() => {}">
@@ -33,7 +47,6 @@ const formSubmit = () => {
             name="mobile"
             label="Phone Number"
             class="mb-6"
-            type="number"
           />
 
           <VBtn
@@ -42,12 +55,11 @@ const formSubmit = () => {
             @click="formSubmit"
           >
             Submit
-          </VBtn>
-          <VBtn
-            type="reset"
+          </v-btn>
+          <v-btn
             color="secondary"
             variant="tonal"
-            @click="$emit('update:modelValue', false)"
+            @click="resetPhoneNumber"
           >
             Cancel
           </VBtn>

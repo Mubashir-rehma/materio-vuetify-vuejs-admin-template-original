@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     AccountSettingsConnections: typeof import('./src/views/demos/pages/account-settings/AccountSettingsConnections.vue')['default']
     AccountSettingsNotification: typeof import('./src/views/demos/pages/account-settings/AccountSettingsNotification.vue')['default']
     AccountSettingsSecurity: typeof import('./src/views/demos/pages/account-settings/AccountSettingsSecurity.vue')['default']
+    AddNewUserDrawer: typeof import('./src/views/demos/apps/user/list/AddNewUserDrawer.vue')['default']
     ApexChartAreaChart: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartAreaChart.vue')['default']
     ApexChartBalance: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartBalance.vue')['default']
     ApexChartDailySalesStates: typeof import('./src/views/demos/charts-and-maps/charts/apex-chart/ApexChartDailySalesStates.vue')['default']
@@ -298,6 +299,7 @@ declare module '@vue/runtime-core' {
     DemoTooltipTooltipOnVariousElements: typeof import('./src/views/demos/components/tooltip/DemoTooltipTooltipOnVariousElements.vue')['default']
     DemoTooltipTransition: typeof import('./src/views/demos/components/tooltip/DemoTooltipTransition.vue')['default']
     DemoTooltipVModelSupport: typeof import('./src/views/demos/components/tooltip/DemoTooltipVModelSupport.vue')['default']
+    EditAddressDialog: typeof import('./src/@core/components/EditAddressDialog.vue')['default']
     EnableOneTimePasswordDialog: typeof import('./src/@core/components/EnableOneTimePasswordDialog.vue')['default']
     ErrorHeader: typeof import('./src/@core/components/ErrorHeader.vue')['default']
     KnowledgeBaseSearchSection: typeof import('./src/@core/components/KnowledgeBaseSearchSection.vue')['default']
@@ -307,6 +309,14 @@ declare module '@vue/runtime-core' {
     ThemeSwitcher: typeof import('./src/@core/components/ThemeSwitcher.vue')['default']
     TypographyHeadlines: typeof import('./src/views/demos/pages/typography/TypographyHeadlines.vue')['default']
     TypographyTexts: typeof import('./src/views/demos/pages/typography/TypographyTexts.vue')['default']
+    UserBioPanel: typeof import('./src/views/demos/apps/user/view/UserBioPanel.vue')['default']
+    UserInfoEditDialog: typeof import('./src/@core/components/UserInfoEditDialog.vue')['default']
+    UserTabBillingsPlans: typeof import('./src/views/demos/apps/user/view/UserTabBillingsPlans.vue')['default']
+    UserTabConnections: typeof import('./src/views/demos/apps/user/view/UserTabConnections.vue')['default']
+    UserTabNotifications: typeof import('./src/views/demos/apps/user/view/UserTabNotifications.vue')['default']
+    UserTabOverview: typeof import('./src/views/demos/apps/user/view/UserTabOverview.vue')['default']
+    UserTabSecurity: typeof import('./src/views/demos/apps/user/view/UserTabSecurity.vue')['default']
+    UserUpgradePlanDialog: typeof import('./src/@core/components/UserUpgradePlanDialog.vue')['default']
   }
 }
 

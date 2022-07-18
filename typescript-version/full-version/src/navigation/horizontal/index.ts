@@ -42,7 +42,7 @@ export default [
         icon: 'i-mdi-account-outline',
         children: [
           { title: 'List', to: 'user-list' },
-          { title: 'View', to: 'user-view' },
+          { title: 'View', to: { name: 'user-view-id', params: { id: 21 } } },
         ],
       },
       {

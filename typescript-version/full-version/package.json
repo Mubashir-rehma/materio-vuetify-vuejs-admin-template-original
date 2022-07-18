@@ -19,7 +19,7 @@
     "axios-mock-adapter": "^1.21.1",
     "chart.js": "^3.8.0",
     "jwt-decode": "^3.1.2",
-    "pinia": "^2.0.13",
+    "pinia": "^2.0.14",
     "prismjs": "^1.28.0",
     "roboto-fontface": "^0.10.0",
     "sass": "^1.52.2",

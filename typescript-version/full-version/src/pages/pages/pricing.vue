@@ -113,11 +113,11 @@ const faqs = [
 </script>
 
 <template>
-  <v-card class="pt-6">
-    <v-card-text class="pt-12 mb-16">
+  <VCard class="pt-6">
+    <VCardText class="pt-12 mb-16">
       <!-- 👉 App Pricing components -->
-      <v-row>
-        <v-col
+      <VRow>
+        <VCol
           cols="12"
           sm="8"
           md="12"
@@ -125,13 +125,13 @@ const faqs = [
           class="mx-auto"
         >
           <AppPricing md="4" />
-        </v-col>
-      </v-row>
-    </v-card-text>
+        </VCol>
+      </VRow>
+    </VCardText>
 
     <!-- 👉 Free trial Banner -->
-    <v-row class="page-pricing-free-trial-banner-bg">
-      <v-col
+    <VRow class="page-pricing-free-trial-banner-bg">
+      <VCol
         cols="12"
         md="10"
         class="d-flex align-center flex-md-row flex-column position-relative mx-auto"
@@ -144,40 +144,40 @@ const faqs = [
             You will get full access to all the features for 14 days.
           </p>
 
-          <v-btn class="mt-4">
+          <VBtn class="mt-4">
             Start-14-day FREE trial
-          </v-btn>
+          </VBtn>
         </div>
 
         <div
           :class="$vuetify.display.mdAndUp ? 'position-absolute' : 'position-relative'"
           :style="$vuetify.display.mdAndUp ? 'right: 10%; bottom: 0;' : 'bottom:-11px;'"
         >
-          <v-img
+          <VImg
             :src="girlWithLaptop"
             :width="250"
           />
         </div>
-      </v-col>
-    </v-row>
+      </VCol>
+    </VRow>
 
     <!-- 👉 Plans -->
-    <v-card-text class="text-center mt-12">
+    <VCardText class="text-center mt-12">
       <h4 class="text-h5 font-weight-medium mb-2">
         Pick a plan that works best for you
       </h4>
       <p>Stay cool, we have a 48-hour money back guarantee!</p>
-    </v-card-text>
+    </VCardText>
 
     <!-- 👉 Features & Tables -->
-    <v-card-text class="mb-16 mt-2">
-      <v-row>
-        <v-col
+    <VCardText class="mb-16 mt-2">
+      <VRow>
+        <VCol
           cols="12"
           md="10"
           class="mx-auto"
         >
-          <v-table class="text-no-wrap border rounded-lg">
+          <VTable class="text-no-wrap border rounded-lg">
             <!-- 👉 Table head -->
             <thead>
               <tr>
@@ -198,16 +198,16 @@ const faqs = [
                 <th class="text-center py-4">
                   <p class="text-base mb-1">
                     STANDARD
-                    <v-avatar
+                    <VAvatar
                       size="22"
                       color="primary"
                       class="mt-n2"
                     >
-                      <v-icon
+                      <VIcon
                         size="16"
                         icon="mdi-star"
                       />
-                    </v-avatar>
+                    </VAvatar>
                   </p>
 
                   <small class="text-caption">$7.5/MONTH</small>
@@ -230,72 +230,72 @@ const faqs = [
               >
                 <td>{{ feature.feature }}</td>
                 <td class="text-center">
-                  <v-chip
+                  <VChip
                     v-if="!feature.addOnAvailable.starter"
                     pill
                     size="30"
                     class="pa-1"
                     :color="feature.basic ? 'primary' : 'secondary'"
                   >
-                    <v-icon
+                    <VIcon
                       size="15"
                       :icon="feature.basic ? 'mdi-check' : 'mdi-close'"
                     />
-                  </v-chip>
+                  </VChip>
 
-                  <v-chip
+                  <VChip
                     v-if="feature.addOnAvailable.starter"
                     color="primary"
                     size="small"
                   >
                     ADD-ON AVAILABLE
-                  </v-chip>
+                  </VChip>
                 </td>
 
                 <td class="text-center">
-                  <v-chip
+                  <VChip
                     v-if="!feature.addOnAvailable.pro"
                     pill
                     size="30"
                     class="pa-1"
                     :color="feature.standard ? 'primary' : 'secondary'"
                   >
-                    <v-icon
+                    <VIcon
                       size="15"
                       :icon="feature.standard ? 'mdi-check' : 'mdi-close'"
                     />
-                  </v-chip>
+                  </VChip>
 
-                  <v-chip
+                  <VChip
                     v-if="feature.addOnAvailable.pro"
                     color="primary"
                     size="small"
                   >
                     ADD-ON AVAILABLE
-                  </v-chip>
+                  </VChip>
                 </td>
 
                 <td class="text-center">
-                  <v-chip
+                  <VChip
                     v-if="!feature.addOnAvailable.enterprise"
                     pill
                     size="30"
                     class="pa-1"
                     :color="feature.enterprise ? 'primary' : 'secondary'"
                   >
-                    <v-icon
+                    <VIcon
                       size="15"
                       :icon="feature.enterprise ? 'mdi-check' : 'mdi-close'"
                     />
-                  </v-chip>
+                  </VChip>
 
-                  <v-chip
+                  <VChip
                     v-if="feature.addOnAvailable.enterprise"
                     color="primary"
                     size="small"
                   >
                     ADD-ON AVAILABLE
-                  </v-chip>
+                  </VChip>
                 </td>
               </tr>
             </tbody>
@@ -308,29 +308,29 @@ const faqs = [
                 </td>
 
                 <td class="text-center py-4">
-                  <v-btn variant="tonal">
+                  <VBtn variant="tonal">
                     Choose Plan
-                  </v-btn>
+                  </VBtn>
                 </td>
                 <td class="text-center py-4">
-                  <v-btn>
+                  <VBtn>
                     Choose Plan
-                  </v-btn>
+                  </VBtn>
                 </td>
                 <td class="text-center py-4">
-                  <v-btn variant="tonal">
+                  <VBtn variant="tonal">
                     Choose Plan
-                  </v-btn>
+                  </VBtn>
                 </td>
               </tr>
             </tfoot>
-          </v-table>
-        </v-col>
-      </v-row>
-    </v-card-text>
+          </VTable>
+        </VCol>
+      </VRow>
+    </VCardText>
 
     <!-- 👉 FAQ -->
-    <v-card-text class="bg-var-theme-background py-16">
+    <VCardText class="bg-var-theme-background py-16">
       <div class="text-center">
         <h2 class="text-h4 font-weight-medium my-3">
           FAQ's
@@ -340,16 +340,16 @@ const faqs = [
         </p>
       </div>
 
-      <v-expansion-panels class="py-6 px-16">
-        <v-expansion-panel
+      <VExpansionPanels class="py-6 px-16">
+        <VExpansionPanel
           v-for="faq in faqs"
           :key="faq.question"
           :title="faq.question"
           :text="faq.answer"
         />
-      </v-expansion-panels>
-    </v-card-text>
-  </v-card>
+      </VExpansionPanels>
+    </VCardText>
+  </VCard>
 </template>
 
 <style lang="scss">

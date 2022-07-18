@@ -81,15 +81,15 @@ const pricingPlans = [
 
   <!-- 👉 Annual and monthly price toggler -->
   <div class="d-flex align-center justify-center mx-auto mb-10">
-    <v-label
+    <VLabel
       for="pricing-plan-toggle"
       class="me-3"
     >
       Monthly
-    </v-label>
+    </VLabel>
 
     <div>
-      <v-switch
+      <VSwitch
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
         label="Annual"
@@ -99,37 +99,36 @@ const pricingPlans = [
   </div>
 
   <!-- SECTION pricing plans -->
-  <v-row>
-    <v-col
+  <VRow>
+    <VCol
       v-for="plan in pricingPlans"
       :key="plan.logo"
       v-bind="props"
       cols="12"
     >
       <!-- 👉  Card -->
-      <v-card
+      <VCard
         flat
         border
-        class="border-opacity-100"
-        :class="plan.isPopular ? 'border-primary' : ''"
+        :class="plan.isPopular ? 'border-primary border-opacity-100' : ''"
       >
-        <v-card-text
+        <VCardText
           style="height: 3.75rem;"
           class="text-end"
         >
           <!-- 👉 Popular -->
-          <v-chip
+          <VChip
             v-show="plan.isPopular"
             color="primary"
             size="small"
           >
             Popular
-          </v-chip>
-        </v-card-text>
+          </VChip>
+        </VCardText>
 
         <!-- 👉 Plan logo -->
-        <v-card-text class="text-center">
-          <v-img
+        <VCardText class="text-center">
+          <VImg
             :height="200"
             :src="plan.logo"
           />
@@ -141,10 +140,10 @@ const pricingPlans = [
           <p class="mb-0">
             {{ plan.tagLine }}
           </p>
-        </v-card-text>
+        </VCardText>
 
         <!-- 👉 Plan price  -->
-        <v-card-text class="position-relative text-center">
+        <VCardText class="position-relative text-center">
           <div class="d-flex justify-center align-center">
             <sup class="text-body-2 font-weight-medium me-1">$</sup>
             <h1 class="text-h3 font-weight-bold text-primary">
@@ -161,39 +160,39 @@ const pricingPlans = [
           >
             {{ plan.yearlyPrice === 0 ? 'free' : `USD ${plan.yearlyPrice}/Year` }}
           </span>
-        </v-card-text>
+        </VCardText>
 
         <!-- 👉 Plan features -->
-        <v-card-text class="pt-4">
-          <v-list density="compact">
-            <v-list-item
+        <VCardText class="pt-4">
+          <VList density="compact">
+            <VListItem
               v-for="feature in plan.features"
               :key="feature"
             >
-              <v-list-item-icon
+              <VListItemIcon
                 :size="14"
                 icon="mdi-circle-outline"
                 class="me-3"
               />
-              <v-list-item-title class="text-body-2">
+              <VListItemTitle class="text-body-2">
                 {{ feature }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-card-text>
+              </VListItemTitle>
+            </VListItem>
+          </VList>
+        </VCardText>
 
         <!-- 👉 Plan actions -->
-        <v-card-actions>
-          <v-btn
+        <VCardActions>
+          <VBtn
             block
             :color="plan.current ? 'success' : 'primary'"
             :variant="plan.isPopular ? 'elevated' : 'tonal'"
           >
             {{ plan.yearlyPrice === 0 ? 'Your Current Plan' : 'Upgrade' }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+          </VBtn>
+        </VCardActions>
+      </VCard>
+    </VCol>
+  </VRow>
   <!-- !SECTION  -->
 </template>

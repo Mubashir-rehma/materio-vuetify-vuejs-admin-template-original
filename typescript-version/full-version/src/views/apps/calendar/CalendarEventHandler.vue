@@ -165,7 +165,7 @@ const endDateTimePickerConfig = computed(() => {
               <VCol cols="12">
                 <VTextField
                   v-model="event.title"
-                  label="title"
+                  label="Title"
                   :rules="[requiredValidator]"
                 />
               </VCol>

@@ -149,4 +149,17 @@ h6,
   --v-input-control-height: auto;
 }
 
+// Input placeholder vertical alignment: https://github.com/vuetifyjs/vuetify/issues/15409
+.v-input {
+  .v-label {
+    line-height: 1.6;
+  }
+
+  .v-field__input {
+    input {
+      margin-block-end: 2px;
+    }
+  }
+}
+
 // !SECTION

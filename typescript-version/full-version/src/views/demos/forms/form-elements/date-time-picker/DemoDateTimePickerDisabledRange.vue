@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
+const now = new Date()
+const currentMonth = now.toLocaleString('default', { month: '2-digit' })
+const currentYear = now.getFullYear()
 </script>
 
 <template>
   <AppDateTimePicker
     label="Disabled Range"
-    :config="{ dateFormat: 'Y-m-d', disable: [{ from: '2022-06-20', to: '2022-06-25' }] }"
+    :config="{ dateFormat: 'Y-m-d', disable: [{ from: `${currentYear}-${currentMonth}-20`, to: `${currentYear}-${currentMonth}-25` }] }"
   />
 </template>

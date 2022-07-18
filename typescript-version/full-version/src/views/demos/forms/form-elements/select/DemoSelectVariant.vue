@@ -10,10 +10,9 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     >
       <VSelect
         :items="items"
-        label="Default"
+        label="Outlined"
       />
     </VCol>
-
     <VCol
       cols="12"
       sm="6"
@@ -22,17 +21,6 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
         :items="items"
         label="Filled"
         variant="filled"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Outlined"
-        variant="outlined"
       />
     </VCol>
 
@@ -53,8 +41,8 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     >
       <VSelect
         :items="items"
-        label="Underlined"
-        variant="underlined"
+        label="Plain"
+        variant="plain"
       />
     </VCol>
 
@@ -64,8 +52,8 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     >
       <VSelect
         :items="items"
-        label="Plain"
-        variant="plain"
+        label="Underlined"
+        variant="underlined"
       />
     </VCol>
   </VRow>

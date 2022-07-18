@@ -4,7 +4,7 @@
       cols="12"
       sm="6"
     >
-      <VFileInput label="Default" />
+      <VFileInput label="Outlined" />
     </VCol>
 
     <VCol
@@ -14,16 +14,6 @@
       <VFileInput
         label="Filled"
         variant="filled"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VFileInput
-        label="Outlined"
-        variant="outlined"
       />
     </VCol>
 
@@ -42,18 +32,17 @@
       sm="6"
     >
       <VFileInput
-        label="Underlined"
-        variant="underlined"
+        label="Plain"
+        variant="plain"
       />
     </VCol>
-
     <VCol
       cols="12"
       sm="6"
     >
       <VFileInput
-        label="Plain"
-        variant="plain"
+        label="Underlined"
+        variant="underlined"
       />
     </VCol>
   </VRow>

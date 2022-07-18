@@ -49,7 +49,7 @@ const database: FaqCategory[] = [
     ],
   },
   {
-    faqTitle: 'Cancellation & Return',
+    faqTitle: 'Cancellation',
     faqIcon: 'mdi-refresh',
     faqSubtitle: 'Get help with cancellation & return',
     faqs: [

@@ -56,10 +56,12 @@ const form = ref<VForm>()
         />
       </VCol>
 
-      <VCol cols="12">
+      <VCol
+        cols="12"
+        class="d-flex flex-wrap gap-3"
+      >
         <VBtn
           color="success"
-          class="me-3"
           @click="form?.validate()"
         >
           Validate
@@ -67,7 +69,6 @@ const form = ref<VForm>()
 
         <VBtn
           color="error"
-          class="me-3"
           @click="form?.reset()"
         >
           Reset Form

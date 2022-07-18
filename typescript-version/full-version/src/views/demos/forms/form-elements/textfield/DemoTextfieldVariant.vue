@@ -4,7 +4,7 @@
       cols="12"
       md="6"
     >
-      <VTextField label="Default" />
+      <VTextField label="Outlined" />
     </VCol>
 
     <VCol
@@ -14,16 +14,6 @@
       <VTextField
         label="Filled"
         variant="filled"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      md="6"
-    >
-      <VTextField
-        label="Outlined"
-        variant="outlined"
       />
     </VCol>
 
@@ -42,8 +32,8 @@
       md="6"
     >
       <VTextField
-        label="Underlined"
-        variant="underlined"
+        label="Plain"
+        variant="plain"
       />
     </VCol>
 
@@ -52,8 +42,8 @@
       md="6"
     >
       <VTextField
-        label="Plain"
-        variant="plain"
+        label="Underlined"
+        variant="underlined"
       />
     </VCol>
   </VRow>

@@ -119,6 +119,10 @@ h6,
 }
 
 // 👉 CSS Variables
+[class*="v-theme--"] {
+  --v-medium-emphasis-opacity: 0.68 !important;
+}
+
 .v-theme--light {
   --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "light")} !important;
   --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "light")} !important;

@@ -140,7 +140,7 @@ const faqs = [
           <h3 class="text-h5 text-primary mb-2">
             Still not convinced? Start with a 14-day FREE trial!
           </h3>
-          <p class="text-body-2">
+          <p class="text-sm">
             You will get full access to all the features for 14 days.
           </p>
 
@@ -332,9 +332,9 @@ const faqs = [
     <!-- 👉 FAQ -->
     <VCardText class="bg-var-theme-background py-16">
       <div class="text-center">
-        <h2 class="text-h4 font-weight-medium my-3">
+        <h4 class="text-h4 font-weight-medium my-3">
           FAQ's
-        </h2>
+        </h4>
         <p>
           Let us help answer the most common questions.
         </p>

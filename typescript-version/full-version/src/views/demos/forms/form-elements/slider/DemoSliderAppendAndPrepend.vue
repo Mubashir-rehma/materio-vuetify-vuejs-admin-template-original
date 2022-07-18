@@ -28,10 +28,11 @@ const bmpControl = useClamp(bpm, min, max)
   <div class="d-flex justify-space-between ma-4">
     <div>
       <span
-        class="text-h2 font-weight-light"
+        class="text-6xl font-weight-light"
         v-text="bpm"
       />
       <span class="subheading font-weight-light me-1">BPM</span>
+
       <VFadeTransition>
         <VAvatar
           v-if="isPlaying"

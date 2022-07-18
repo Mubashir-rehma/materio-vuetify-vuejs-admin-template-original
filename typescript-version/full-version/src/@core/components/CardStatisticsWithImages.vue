@@ -16,10 +16,10 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
 </script>
 
 <template>
-  <VCard>
+  <VCard class="overflow-visible">
     <div class="d-flex position-relative">
       <VCardText>
-        <h6 class="text-body-1 font-weight-semibold mb-4">
+        <h6 class="text-base font-weight-semibold mb-4">
           {{ prop.title }}
         </h6>
         <div class="d-flex align-center flex-wrap mb-4">

@@ -246,7 +246,7 @@ const rating = ref(5)
         </VCardHeader>
 
         <VCardText>
-          <p class="font-weight-medium text-body-1">
+          <p class="font-weight-medium text-base">
             $249.40
           </p>
 

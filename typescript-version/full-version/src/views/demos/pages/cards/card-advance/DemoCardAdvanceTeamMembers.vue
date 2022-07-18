@@ -142,7 +142,7 @@ const teamMembers = [
                 <VAvatar :image="member.profilePic" />
               </div>
               <div>
-                <p class="text-body-2 font-weight-semibold mb-0">
+                <p class="text-sm font-weight-semibold mb-0">
                   {{ member.name }}
                 </p>
                 <span class="text-caption">{{ member.designation }}</span>

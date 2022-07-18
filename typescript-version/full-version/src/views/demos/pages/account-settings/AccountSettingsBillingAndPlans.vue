@@ -81,7 +81,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                 color="warning"
                 variant="tonal"
               >
-                <p class="text-body-1 text-warning font-weight-semibold mb-1">
+                <p class="text-base font-weight-semibold mb-1">
                   We need your attention!
                 </p>
                 <span>Your plan requires update</span>
@@ -252,7 +252,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                 cols="12"
                 md="6"
               >
-                <p class="text-body-1 font-weight-medium">
+                <p class="text-base font-weight-medium">
                   My Cards
                 </p>
 
@@ -280,7 +280,7 @@ const openEditCardDialog = (cardDetails: Object) => {
                             Primary
                           </VChip>
                         </h4>
-                        <span class="text-body-1">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
+                        <span class="text-base">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
                       </div>
 
                       <VSpacer />

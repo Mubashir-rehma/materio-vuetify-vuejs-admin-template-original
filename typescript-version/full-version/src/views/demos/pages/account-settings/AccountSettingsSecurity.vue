@@ -145,7 +145,7 @@ const isOneTimePasswordDialogVisible = ref(false)
 
           <!-- 👉 Password Requirements -->
           <VCardText>
-            <p class="text-body-1 font-weight-medium mt-4">
+            <p class="text-base font-weight-medium mt-4">
               Password Requirements:
             </p>
 
@@ -282,9 +282,9 @@ const isOneTimePasswordDialogVisible = ref(false)
             class="account-setting-server bg-var-theme-background rounded-lg"
           >
             <div class="d-flex align-items-center flex-wrap mb-3">
-              <h4 class="text-h5 mb-0 me-3">
+              <h5 class="text-h5 mb-0 me-3">
                 {{ serverKey.name }}
-              </h4>
+              </h5>
               <VChip
                 label
                 color="primary"
@@ -292,7 +292,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 {{ serverKey.permission }}
               </VChip>
             </div>
-            <p class="text-body-1 font-weight-semibold">
+            <p class="text-base font-weight-semibold">
               <span class="me-3">{{ serverKey.key }}</span>
               <VIcon
                 :size="18"

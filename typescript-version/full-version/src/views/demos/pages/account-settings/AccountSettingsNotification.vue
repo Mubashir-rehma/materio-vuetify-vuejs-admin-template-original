@@ -74,7 +74,7 @@ const selectedNotification = ref('Only when I\'m online')
 
     <VCardText>
       <VForm @submit.prevent="() => {}">
-        <p class="text-body-1 font-weight-medium">
+        <p class="text-base font-weight-medium">
           When should we send you notifications?
         </p>
 

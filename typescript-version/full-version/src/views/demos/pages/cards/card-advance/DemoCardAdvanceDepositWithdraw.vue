@@ -38,7 +38,7 @@ import gumroad from '@/assets/images/logos/gumroad.png'
               <VListItemSubtitle>Sell UI Kit</VListItemSubtitle>
             </VListItemHeader>
 
-            <VListItemAction class="text-body-2 text-success font-weight-semibold">
+            <VListItemAction class="text-sm text-success font-weight-semibold">
               +$4,650
             </VListItemAction>
           </VListItem>

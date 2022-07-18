@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
-import axios from '@axios'
 import type { KnowledgeBaseQuestionAndAnswer } from '@/@fake-db/types'
+import axios from '@axios'
 
 const route = useRoute()
 const knowledgeBaseQuestionAndAnswer = ref<KnowledgeBaseQuestionAndAnswer>()
@@ -31,7 +31,9 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
         <VCardHeader>
           <VCardHeaderText>
             <VCardTitle class="flex-nowrap">
-              <span class="text-break text-h5 font-weight-medium">{{ knowledgeBaseQuestionAndAnswer?.postContent?.title }}</span>
+              <h5 class="text-break text-h5 font-weight-medium">
+                {{ knowledgeBaseQuestionAndAnswer?.postContent?.title }}
+              </h5>
             </VCardTitle>
             <VCardSubtitle>Last updated on {{ knowledgeBaseQuestionAndAnswer?.postContent?.lastUpdated }}</VCardSubtitle>
           </VCardHeaderText>

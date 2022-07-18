@@ -114,7 +114,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
                 <h6 class="text-h6">
                   {{ faq.faqTitle }}
                 </h6>
-                <span class="text-body-2">{{ faq.faqSubtitle }}</span>
+                <span class="text-sm">{{ faq.faqSubtitle }}</span>
               </div>
             </div>
 
@@ -143,7 +143,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
           start
           size="20"
         />
-        <span class="text-body-1 font-weight-medium">
+        <span class="text-base font-weight-medium">
           No Results Found!!
         </span>
       </VCol>

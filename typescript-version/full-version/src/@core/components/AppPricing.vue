@@ -70,9 +70,9 @@ const pricingPlans = [
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
-    <h3 class="text-h4 pricing-title font-weight-medium mb-4">
+    <h4 class="text-h4 pricing-title font-weight-medium mb-4">
       Pricing Plans
-    </h3>
+    </h4>
     <p class="mb-0">
       All plans include 40+ advanced tools and features to boost your product.
     </p>
@@ -133,9 +133,9 @@ const pricingPlans = [
           />
 
           <!-- 👉 Plan name -->
-          <h3 class="text-h5 font-weight-medium mb-2">
+          <h5 class="text-h5 font-weight-medium mb-2">
             {{ plan.name }}
-          </h3>
+          </h5>
           <p class="mb-0">
             {{ plan.tagLine }}
           </p>
@@ -144,11 +144,11 @@ const pricingPlans = [
         <!-- 👉 Plan price  -->
         <VCardText class="position-relative text-center">
           <div class="d-flex justify-center align-center">
-            <sup class="text-body-2 font-weight-medium me-1">$</sup>
-            <h1 class="text-h3 font-weight-bold text-primary">
+            <sup class="text-sm font-weight-medium me-1">$</sup>
+            <h1 class="text-5xl font-weight-bold text-primary">
               {{ plan.monthlyPrice }}
             </h1>
-            <sub class="text-body-2 font-weight-medium ms-2  mt-2"> /month</sub>
+            <sub class="text-sm font-weight-medium ms-2 mt-4"> /month</sub>
           </div>
 
           <!-- 👉 Annual Price -->

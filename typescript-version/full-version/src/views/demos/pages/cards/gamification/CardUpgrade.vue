@@ -12,7 +12,7 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
     class="position-relative"
   >
     <VCardText>
-      <h5 class="text-h5 font-family-semibold text-primary">
+      <h5 class="text-2xl font-family-semibold text-primary">
         $199
       </h5>
       <p>40% OFF 🤩</p>

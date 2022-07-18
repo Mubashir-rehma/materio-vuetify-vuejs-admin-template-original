@@ -93,7 +93,6 @@ const pricingPlans = [
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
         label="Annual"
-        color="secondary"
       />
     </div>
   </div>

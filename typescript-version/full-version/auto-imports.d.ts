@@ -25,8 +25,8 @@ declare global {
   const debouncedWatch: typeof import('@vueuse/core')['debouncedWatch']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
-  const dynamicImgImport: typeof import('@core/utils/imports')['dynamicImgImport']
   const defineStore: typeof import('pinia')['defineStore']
+  const dynamicImgImport: typeof import('@core/utils/imports')['dynamicImgImport']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
@@ -267,6 +267,7 @@ import { UnwrapRef } from 'vue'
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -280,6 +281,7 @@ declare module '@vue/runtime-core' {
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
     readonly createGlobalState: UnwrapRef<typeof import('@vueuse/core')['createGlobalState']>
     readonly createInjectionState: UnwrapRef<typeof import('@vueuse/core')['createInjectionState']>
+    readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly createReactiveFn: UnwrapRef<typeof import('@vueuse/core')['createReactiveFn']>
     readonly createSharedComposable: UnwrapRef<typeof import('@vueuse/core')['createSharedComposable']>
     readonly createUnrefFn: UnwrapRef<typeof import('@vueuse/core')['createUnrefFn']>
@@ -288,10 +290,12 @@ declare module '@vue/runtime-core' {
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly dynamicImgImport: UnwrapRef<typeof import('@core/utils/imports')['dynamicImgImport']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -306,6 +310,11 @@ declare module '@vue/runtime-core' {
     readonly logicNot: UnwrapRef<typeof import('@vueuse/core')['logicNot']>
     readonly logicOr: UnwrapRef<typeof import('@vueuse/core')['logicOr']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
+    readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>
+    readonly mapGetters: UnwrapRef<typeof import('pinia')['mapGetters']>
+    readonly mapState: UnwrapRef<typeof import('pinia')['mapState']>
+    readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
+    readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -343,9 +352,12 @@ declare module '@vue/runtime-core' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
+    readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly syncRef: UnwrapRef<typeof import('@vueuse/core')['syncRef']>
     readonly syncRefs: UnwrapRef<typeof import('@vueuse/core')['syncRefs']>
     readonly templateRef: UnwrapRef<typeof import('@vueuse/core')['templateRef']>

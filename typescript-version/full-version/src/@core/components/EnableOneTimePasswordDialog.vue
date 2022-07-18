@@ -27,18 +27,18 @@ watch(props, resetPhoneNumber, { immediate: true })
 </script>
 
 <template>
-  <v-dialog class="v-dialog-lg">
-    <v-card class="pa-5 pa-sm-15">
-      <v-card-item>
-        <v-card-title class="text-h5 font-weight-medium">
+  <VDialog class="v-dialog-lg">
+    <VCard class="pa-5 pa-sm-15">
+      <VCardItem>
+        <VCardTitle class="text-h5 font-weight-medium">
           Enable One Time Password
-        </v-card-title>
-        <v-card-subtitle class="font-weight-medium">
+        </VCardTitle>
+        <VCardSubtitle class="font-weight-medium">
           Verify Your Mobile Number for SMS
-        </v-card-subtitle>
-      </v-card-item>
+        </VCardSubtitle>
+      </VCardItem>
 
-      <v-card-text>
+      <VCardText>
         <p>Enter your mobile phone number with country code and  we will send you a verification code.</p>
 
         <VForm @submit.prevent="() => {}">
@@ -55,8 +55,8 @@ watch(props, resetPhoneNumber, { immediate: true })
             @click="formSubmit"
           >
             Submit
-          </v-btn>
-          <v-btn
+          </VBtn>
+          <VBtn
             color="secondary"
             variant="tonal"
             @click="resetPhoneNumber"

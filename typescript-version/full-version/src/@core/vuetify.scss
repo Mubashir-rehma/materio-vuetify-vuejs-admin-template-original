@@ -44,7 +44,13 @@
   //   vuetify_default_elevations.$shadow-key-ambient
   // ),
 
+  // 👉 Components
+
+  // Navigation drawer
   $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)),
+
+  // Table
+  $table-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)),
 );
 
 /*

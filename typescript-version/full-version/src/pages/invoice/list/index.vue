@@ -273,9 +273,9 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                   <span v-else>{{ avatarText(invoice.client.name) }}</span>
                 </VAvatar>
                 <div class="d-flex flex-column">
-                  <p class="font-weight-semibold mb-0">
+                  <h6 class="text-sm font-weight-medium mb-0">
                     {{ invoice.client.name }}
-                  </p>
+                  </h6>
                   <span class="text-caption">{{ invoice.client.companyEmail }}</span>
                 </div>
               </div>

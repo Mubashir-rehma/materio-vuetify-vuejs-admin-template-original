@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components'
 import type { UserProperties } from '@/@fake-db/types'
-import { emailValidator, requiredValidator } from '@core/utils/validation'
+import { emailValidator, requiredValidator } from '@validators'
 
 interface Emit {
   (e: 'update:isDrawerOpen', value: boolean): void

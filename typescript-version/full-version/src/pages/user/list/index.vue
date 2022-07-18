@@ -291,7 +291,8 @@ const addNewUser = (userData: UserProperties) => {
                 <div class="d-flex flex-column">
                   <RouterLink
                     :to="{ name: 'user-view-id', params: { id: user.id } }"
-                    class="text-body-2 font-weight-semibold"
+                    class="font-weight-medium"
+                    style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
                   >
                     {{ user.fullName }}
                   </RouterLink>
@@ -342,28 +343,28 @@ const addNewUser = (userData: UserProperties) => {
                 <VMenu activator="parent">
                   <VList>
                     <VListItem :to="{ name: 'user-view-id', params: { id: user.id } }">
-                      <v-list-item-icon
+                      <VListItemIcon
                         icon="mdi-eye-outline"
                         :size="20"
                         class="me-3"
                       />
-                      <v-list-item-title>View</v-list-item-title>
+                      <VListItemTitle>View</VListItemTitle>
                     </VListItem>
                     <VListItem href="javascript:void(0)">
-                      <v-list-item-icon
+                      <VListItemIcon
                         icon="mdi-pencil-outline"
                         :size="20"
                         class="me-3"
                       />
-                      <v-list-item-title>Edit</v-list-item-title>
+                      <VListItemTitle>Edit</VListItemTitle>
                     </VListItem>
                     <VListItem>
-                      <v-list-item-icon
+                      <VListItemIcon
                         icon="mdi-delete-outline"
                         :size="20"
                         class="me-3"
                       />
-                      <v-list-item-title>Delete</v-list-item-title>
+                      <VListItemTitle>Delete</VListItemTitle>
                     </VListItem>
                   </VList>
                 </VMenu>
@@ -385,7 +386,7 @@ const addNewUser = (userData: UserProperties) => {
         </tfoot>
       </VTable>
 
-      <v-divider />
+      <VDivider />
 
       <VCardText class="d-flex align-center flex-wrap justify-end gap-4">
         <div

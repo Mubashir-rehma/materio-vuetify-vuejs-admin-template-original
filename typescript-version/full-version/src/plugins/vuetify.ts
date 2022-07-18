@@ -127,8 +127,8 @@ export default createVuetify({
           'info': '#2f8be6',
           'warning': '#f77e17',
           'error': '#f55252',
-          'on-background': '#0D0C22',
-          'on-surface': '#0D0C22',
+          'on-background': '#5e5669',
+          'on-surface': '#5e5669',
         },
       },
       dark: {

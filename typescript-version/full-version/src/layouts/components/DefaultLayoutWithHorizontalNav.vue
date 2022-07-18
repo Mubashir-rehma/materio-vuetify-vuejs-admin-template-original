@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import navItems from '@/navigation/horizontal'
+import { themeConfig } from '@themeConfig'
 
 // Composable
 import { useSkins } from '@core/composable/useSkins'
@@ -24,6 +25,17 @@ const { layoutAttrs } = useSkins()
   >
     <!-- 👉 navbar -->
     <template #navbar>
+      <div class="d-flex align-items-center">
+        <img
+          :src="themeConfig.app.logo"
+          style="color: #9155fd;"
+          class="app-logo me-3"
+        >
+        <h1 class="app-title text-high-emphasis text-xl text-uppercase font-weight-semibold">
+          {{ themeConfig.app.title }}
+        </h1>
+      </div>
+      <VSpacer />
       <NavBarI18n class="me-2" />
       <NavbarThemeSwitcher class="me-2" />
       <NavBarNotifications class="me-2" />

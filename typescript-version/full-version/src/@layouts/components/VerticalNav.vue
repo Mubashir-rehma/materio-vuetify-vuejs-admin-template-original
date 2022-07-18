@@ -69,11 +69,13 @@ watch(() => route.name, () => {
     <div class="nav-header">
       <slot name="nav-header">
         <!-- 👉 App logo -->
-        <img
-          :src="config.app.logo"
-          style="color: #9155fd;"
-          class="app-logo"
-        >
+        <!-- eslint-disable vue/no-v-html -->
+        <div
+          class="app-logo text-primary"
+          v-html="config.app.logo"
+        />
+        <!-- eslint-disable vue/no-v-html -->
+
         <!-- 👉 App title -->
         <Transition name="vertical-nav-app-title">
           <span

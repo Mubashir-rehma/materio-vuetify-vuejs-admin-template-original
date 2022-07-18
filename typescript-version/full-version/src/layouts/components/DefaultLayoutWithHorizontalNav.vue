@@ -26,11 +26,13 @@ const { layoutAttrs } = useSkins()
     <!-- 👉 navbar -->
     <template #navbar>
       <div class="d-flex align-items-center">
-        <img
-          :src="themeConfig.app.logo"
-          style="color: #9155fd;"
-          class="app-logo me-3"
-        >
+        <!-- 👉 App logo -->
+        <!-- eslint-disable vue/no-v-html -->
+        <div
+          class="app-logo text-primary mr-3"
+          v-html="themeConfig.app.logo"
+        />
+        <!-- eslint-disable vue/no-v-html -->
         <h1 class="app-title text-high-emphasis text-xl text-uppercase font-weight-semibold">
           {{ themeConfig.app.title }}
         </h1>

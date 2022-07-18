@@ -1,5 +1,9 @@
 /* @unocss-include */
 import { breakpointsVuetify } from '@vueuse/core'
+
+// ❗ Logo SVG must be imported with ?raw suffix
+import logo from '@/assets/logo.svg?raw'
+
 import { defineThemeConfig } from '@core'
 import { EnumSkins, RouteTransitions } from '@core/enums'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
@@ -7,9 +11,7 @@ import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarTy
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
     title: 'Sneat',
-    logo: '/src/assets/logo.svg',
-
-    // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
+    logo,
     contentWidth: EnumContentWidth.Boxed,
     contentLayoutNav: EnumAppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md,

@@ -5,6 +5,7 @@ import './pages/knowledge-base'
 
 // Apps
 import './apps/calendar'
+import './apps/invoice'
 
 // forwards the matched request over network
 mock.onAny().passThrough()

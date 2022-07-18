@@ -32,8 +32,8 @@ export default [
         icon: 'i-mdi-file-document-outline',
         children: [
           { title: 'List', to: 'invoice-list' },
-          { title: 'Preview', to: 'invoice-preview' },
-          { title: 'Edit', to: 'invoice-edit' },
+          { title: 'Preview', to: { name: 'invoice-preview-id', params: { id: '5036' } } },
+          { title: 'Edit', to: { name: 'invoice-edit-id', params: { id: '5036' } } },
           { title: 'Add', to: 'invoice-add' },
         ],
       },

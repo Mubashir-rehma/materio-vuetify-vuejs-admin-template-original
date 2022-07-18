@@ -197,13 +197,17 @@ const { width: windowWidth } = useWindowSize()
             />
           </VRadioGroup>
           <!-- 👉 Navbar blur -->
-          <div class="mt-6 d-flex align-center">
-            <span class="d-block">Navbar Blur</span>
-            <VSpacer />
-            <VSwitch
-              v-model="isNavbarBlurEnabled"
-              class="ms-2 mt-0"
-            />
+          <div class="mt-6 d-flex align-center justify-space-between">
+            <VLabel for="customizer-navbar-blur">
+              Navbar Blur
+            </VLabel>
+            <div>
+              <VSwitch
+                id="customizer-navbar-blur"
+                v-model="isNavbarBlurEnabled"
+                class="ms-2 input-control-auto-height"
+              />
+            </div>
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
@@ -224,13 +228,17 @@ const { width: windowWidth } = useWindowSize()
             />
           </VRadioGroup>
           <!-- 👉 Menu Collapsed -->
-          <div class="mt-6 d-flex align-center">
-            <span class="d-block">Menu Collapsed</span>
-            <VSpacer />
-            <VSwitch
-              v-model="isVerticalNavCollapsed"
-              class="ms-2 mt-0"
-            />
+          <div class="mt-6 d-flex align-center justify-space-between">
+            <VLabel for="customizer-menu-collapsed">
+              Menu Collapsed
+            </VLabel>
+            <div>
+              <VSwitch
+                id="customizer-menu-collapsed"
+                v-model="isVerticalNavCollapsed"
+                class="ms-2 input-control-auto-height"
+              />
+            </div>
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
@@ -238,13 +246,17 @@ const { width: windowWidth } = useWindowSize()
         <!-- SECTION MISC -->
         <CustomizerSection title="MISC">
           <!-- 👉 RTL -->
-          <div class="mt-6 d-flex align-center">
-            <span class="d-block">RTL</span>
-            <VSpacer />
-            <VSwitch
-              v-model="isAppRtl"
-              class="ms-2 mt-0"
-            />
+          <div class="mt-6 d-flex align-center justify-space-between">
+            <VLabel for="customizer-rtl">
+              RTL
+            </VLabel>
+            <div>
+              <VSwitch
+                id="customizer-rtl"
+                v-model="isAppRtl"
+                class="ms-2 input-control-auto-height"
+              />
+            </div>
           </div>
 
           <!-- 👉 Route Transition -->

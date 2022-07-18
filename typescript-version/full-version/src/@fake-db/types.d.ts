@@ -46,7 +46,6 @@ export interface FaqCategory {
   faqs: Faq[]
 }
 
-
 // SECTION
 // 👉 JWT
 
@@ -84,7 +83,6 @@ export interface RegisterResponse {
   userAbilities: UserAbility[]
 }
 
-
 // !SECTION
 
 // SECTION App: Calendar
@@ -99,3 +97,37 @@ export interface CalendarEvent {
   extendedProps: Record<string, any>
 }
 // !SECTION
+
+// SECTION App: Invoice
+
+// 👉 Client
+export interface Client {
+  address: string
+  company: string
+  companyEmail: string
+  country: string
+  contact: string
+  name: string
+}
+
+// 👉 Invoice
+export interface Invoice {
+    id: number,
+    issuedDate: string
+    client: Client
+    service: string
+    total: number
+    avatar: string
+    invoiceStatus: string
+    balance: string | number
+    dueDate: string
+}
+
+// 👉 PaymentDetails
+export interface PaymentDetails {
+  totalDue: string
+  bankName: string
+  country: string,
+  iban: string,
+  swiftCode: string,
+}

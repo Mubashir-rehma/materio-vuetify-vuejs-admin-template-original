@@ -38,9 +38,9 @@ const { width: windowWidth } = useWindowSize()
 
         <VSpacer />
 
-        <NavBarI18n />
-        <NavbarThemeSwitcher />
-        <NavBarNotifications />
+        <NavBarI18n class="me-2" />
+        <NavbarThemeSwitcher class="me-2" />
+        <NavBarNotifications class="me-2" />
         <UserProfile />
       </div>
     </template>

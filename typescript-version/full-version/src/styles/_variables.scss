@@ -1,6 +1,6 @@
-@forward "@layouts/styles/variables";
+@forward "@core/scss/variables";
 
-// uncomment below to override styles
-// @forward "@layouts/styles/variables" with (
-//     $<variable-name>: <variable-value>
+// ℹ️ Remove above import and uncomment below to override core styles.
+// @forward "@core/scss/variables" with (
+//   $<variable-name>: <variable-value>
 // )

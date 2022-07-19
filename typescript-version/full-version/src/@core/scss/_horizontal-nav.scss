@@ -1,5 +1,5 @@
 @use "./placeholders";
-@use "./variables";
+@use "@configured-variables" as variables;
 @use "@layouts/styles/mixins" as layoutsMixins;
 @use "@core/scss/mixins";
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;

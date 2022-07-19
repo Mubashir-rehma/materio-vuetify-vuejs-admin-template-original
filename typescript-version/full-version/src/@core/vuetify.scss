@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "sass:string";
-@use "@core/scss/variables";
+@use "@configured-variables" as variables;
 
 // @use "vuetify/lib/styles/settings/elevations" as vuetify_default_elevations;
 // @use "vuetify/lib/styles/tools/functions" as vuetify_functions;

@@ -9,7 +9,12 @@
     - You can also use variable for consistency (e.g. mx 1 rem should be applied to both vertical nav items and vertical nav header)
 */
 
-@use "@layouts/styles/variables";
+@forward "@layouts/styles/variables";
+@use "@layouts/styles/variables" as *;
+
+// @forward "@layouts/styles/variables" with (
+//   $layout-vertical-nav-width: 350px !default,
+// );
 
 $css-var--v-theme-background: (
   "light": (244 ,245, 250),
@@ -43,7 +48,7 @@ $vertical-nav-background-color: rgb(var(--v-theme-surface)) !default;
 $vertical-nav-horizontal-spacing: 1rem !default;
 
 // Vertical nav header height. Mostly we will align it with navbar height;
-$vertical-nav-header-height: variables.$layout-vertical-nav-navbar-height !default;
+$vertical-nav-header-height: $layout-vertical-nav-navbar-height !default;
 $vertical-nav-navbar-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
 
 // Vertical nav header padding

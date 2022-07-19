@@ -1,5 +1,4 @@
 @use "@configured-variables" as variables;
-@use "@core/scss/variables" as core_variables;
 @use "./placeholders";
 @use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
 
@@ -46,7 +45,7 @@
         box-shadow: unset !important;
 
         .navbar-content-container {
-          border-radius: 0 0 core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness;
+          border-radius: 0 0 variables.$default-layout-with-vertical-nav-navbar-footer-roundness variables.$default-layout-with-vertical-nav-navbar-footer-roundness;
 
           // ℹ️ Sticky navbar + scrolled styles
           @at-root {
@@ -67,7 +66,7 @@
     $ele-layout-footer: &;
 
     .footer-content-container {
-      border-radius: core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness core_variables.$default-layout-with-vertical-nav-navbar-footer-roundness 0 0;
+      border-radius: variables.$default-layout-with-vertical-nav-navbar-footer-roundness variables.$default-layout-with-vertical-nav-navbar-footer-roundness 0 0;
 
       // 👉 Sticky footer
       @at-root {

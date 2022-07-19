@@ -251,7 +251,10 @@ const paymentMethods = [
         <VBtn class="me-5">
           Place Order
         </VBtn>
-        <VBtn color="secondary">
+        <VBtn
+          color="secondary"
+          variant="tonal"
+        >
           Cancel
         </VBtn>
       </VExpansionPanelText>

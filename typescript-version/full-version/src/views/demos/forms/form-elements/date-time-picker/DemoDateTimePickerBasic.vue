@@ -5,7 +5,6 @@ const date = ref<string>()
 
 <template>
   <AppDateTimePicker
-    id="1"
     v-model="date"
     label="Default"
   />

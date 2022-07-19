@@ -74,7 +74,7 @@ const values = ref<typeof items[number][]>([])
         <VBtn
           color="secondary"
           type="reset"
-          variant="outlined"
+          variant="tonal"
         >
           Reset
         </VBtn>

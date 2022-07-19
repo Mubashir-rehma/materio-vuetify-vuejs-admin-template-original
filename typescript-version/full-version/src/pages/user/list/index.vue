@@ -208,7 +208,7 @@ const addNewUser = (userData: UserProperties) => {
       <VCardText class="d-flex flex-wrap gap-4">
         <!-- 👉 Export button -->
         <VBtn
-          variant="outlined"
+          variant="tonal"
           color="secondary"
           prepend-icon="mdi-tray-arrow-up"
         >

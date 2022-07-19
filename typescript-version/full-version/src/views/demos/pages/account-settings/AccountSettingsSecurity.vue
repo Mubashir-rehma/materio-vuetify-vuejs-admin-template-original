@@ -379,7 +379,7 @@ const isOneTimePasswordDialogVisible = ref(false)
   </VRow>
 
   <!-- SECTION Enable One time password -->
-  <EnableOneTimePasswordDialog v-model="isOneTimePasswordDialogVisible" />
+  <EnableOneTimePasswordDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
   <!-- !SECTION -->
 </template>
 

@@ -32,6 +32,7 @@ const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
 const userData = ref<UserData>(structuredClone(toRaw(props.userData)))
+const isUseAsBillingAddress = ref(false)
 
 watch(props, () => {
   userData.value = structuredClone(toRaw(props.userData))
@@ -161,6 +162,7 @@ const onFormSubmit = () => {
             <!-- 👉 Switch -->
             <VCol cols="12">
               <VSwitch
+                v-model="isUseAsBillingAddress"
                 density="compact"
                 label="Use as a billing address?"
               />

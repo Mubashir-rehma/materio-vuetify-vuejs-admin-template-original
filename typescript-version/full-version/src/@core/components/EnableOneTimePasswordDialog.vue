@@ -4,7 +4,7 @@ interface Emit {
   (e: 'submit', value: string): void
 }
 interface Props {
-  mobileNumber: string
+  mobileNumber?: string
   isDialogVisible: boolean
 }
 const props = defineProps<Props>()
@@ -23,8 +23,6 @@ const resetPhoneNumber = () => {
   phoneNumber.value = structuredClone(toRaw(props.mobileNumber))
   emit('update:isDialogVisible', false)
 }
-
-// watch(props, resetPhoneNumber, { immediate: true })
 </script>
 
 <template>

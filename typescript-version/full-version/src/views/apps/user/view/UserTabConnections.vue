@@ -146,13 +146,14 @@ const socialAccounts = ref([
               </VListItemSubtitle>
             </VListItemHeader>
 
-            <VSpacer />
-
-            <VBtn
-              color="secondary"
-              variant="tonal"
-              :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
-            />
+            <VListItemAction>
+              <VBtn
+                color="secondary"
+                variant="tonal"
+                size="small"
+                :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
+              />
+            </VListItemAction>
           </VListItem>
         </VList>
       </VCard>

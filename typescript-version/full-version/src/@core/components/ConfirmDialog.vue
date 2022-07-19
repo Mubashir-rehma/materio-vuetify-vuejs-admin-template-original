@@ -1,10 +1,11 @@
 <script setup lang="ts">
 interface Props {
   confirmationMsg: string
+  isDialogVisible: boolean
 }
 
 interface Emit {
-  (e: 'update:modelValue', value: boolean): void
+  (e: 'update:isDialogVisible', value: boolean): void
   (e: 'confirm', value: boolean): void
 }
 
@@ -14,18 +15,21 @@ const emit = defineEmits<Emit>()
 
 const onConfirmation = () => {
   emit('confirm', true)
-  emit('update:modelValue', false)
+  emit('update:isDialogVisible', false)
 }
 
 const onCancel = () => {
   emit('confirm', false)
-  emit('update:modelValue', false)
+  emit('update:isDialogVisible', false)
 }
 </script>
 
 <template>
   <!-- 👉 Confirm Dialog -->
-  <VDialog>
+  <VDialog
+    :model-value="props.isDialogVisible"
+    @update:model-value="(val:boolean) => $emit('update:isDialogVisible', val)"
+  >
     <VCard class="text-center px-10 py-4">
       <VCardText>
         <VBtn

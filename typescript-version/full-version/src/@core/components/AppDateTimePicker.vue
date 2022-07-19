@@ -112,7 +112,7 @@ onMounted(() => {
         <!-- simple input for inline prop -->
         <input
           v-if="isInlinePicker"
-          :model-value="modelValue"
+          :value="modelValue"
           class="flat-picker-custom-style"
           type="text"
         >
@@ -135,6 +135,10 @@ onMounted(() => {
 <style lang="scss">
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
+
+.flat-picker-custom-style.flatpickr-input {
+  color: inherit;
+}
 
 .flat-picker-custom-style {
   position: absolute;

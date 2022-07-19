@@ -13,6 +13,7 @@ const selectedPaymentMethod = ref('credit-debit-atm-card')
 const isPricingPlanDialogVisible = ref(false)
 const isConfirmDialogVisible = ref(false)
 const isCardEditDialogVisible = ref(false)
+const isCardDetailSaveBilling = ref(false)
 
 const creditCards: cardDetails[] = [
   {
@@ -131,7 +132,7 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
 
           <!-- 👉 Confirm Dialog -->
           <ConfirmDialog
-            v-model="isConfirmDialogVisible"
+            v-model:isDialogVisible="isConfirmDialogVisible"
             confirmation-msg="Are you sure to cancel your subscription?"
           />
 
@@ -227,6 +228,7 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                     <!-- 👉 Future Billing switch -->
                     <VCol cols="12">
                       <VSwitch
+                        v-model="isCardDetailSaveBilling"
                         density="compact"
                         label="Save card for future billing?"
                       />
@@ -314,7 +316,7 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
 
                 <!-- 👉 Add Edit Card Dialog -->
                 <CardAddEditDialog
-                  v-model="isCardEditDialogVisible"
+                  v-model:isDialogVisible="isCardEditDialogVisible"
                   :card-details="currentCardDetails"
                   class="v-dialog-lg"
                 />

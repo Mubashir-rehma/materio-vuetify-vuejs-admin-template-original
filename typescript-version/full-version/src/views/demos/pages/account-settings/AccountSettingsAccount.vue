@@ -356,7 +356,7 @@ const currencies = [
 
   <!-- Confirm Dialog -->
   <ConfirmDialog
-    v-model="isConfirmDialogOpen"
+    v-model:isDialogVisible="isConfirmDialogOpen"
     confirmation-msg="Are you sure you want to delete your account?"
   />
 </template>

@@ -2,7 +2,7 @@
   <div class="demo-space-x d-flex align-center flex-wrap">
     <!-- default -->
     <VBadge content="1">
-      <VBtn variant="outlined">
+      <VBtn variant="tonal">
         Default
       </VBtn>
     </VBadge>
@@ -12,7 +12,7 @@
       content="5"
       bordered
     >
-      <VBtn variant="outlined">
+      <VBtn variant="tonal">
         Border
       </VBtn>
     </VBadge>

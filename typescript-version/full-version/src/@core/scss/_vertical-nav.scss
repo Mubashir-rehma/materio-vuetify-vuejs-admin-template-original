@@ -99,8 +99,11 @@
 
       // Hide icons for 3rd level
       & .nav-group {
-        .nav-link .nav-item-icon {
-          visibility: hidden;
+        .nav-link,
+        .nav-group {
+          .nav-item-icon {
+            visibility: hidden;
+          }
         }
       }
 

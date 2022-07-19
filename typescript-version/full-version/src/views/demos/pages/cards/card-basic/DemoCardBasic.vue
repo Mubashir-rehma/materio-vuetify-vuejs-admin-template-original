@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import eCommerce2 from '@/assets/images/eCommerce/2.png'
-import page1 from '@/assets/images/pages/1.png'
-import page2 from '@/assets/images/pages/2.png'
-import page3 from '@/assets/images/pages/3.png'
-import page5 from '@/assets/images/pages/5.jpg'
-import page6 from '@/assets/images/pages/6.jpg'
-
-const avatars = [avatar1, avatar2, avatar3, avatar4]
+const avatars = [
+  dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
+  dynamicImgImport('@/assets/images/avatars/avatar-2.png'),
+  dynamicImgImport('@/assets/images/avatars/avatar-3.png'),
+  dynamicImgImport('@/assets/images/avatars/avatar-4.png'),
+]
 
 const isCardDetailsVisible = ref(false)
 const rating = ref(5)
@@ -26,15 +20,13 @@ const rating = ref(5)
     >
       <VCard>
         <VImg
-          :src="page1"
+          :src="dynamicImgImport('@/assets/images/pages/1.png')"
           cover
         />
 
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Influencing The Influencer</VCardTitle>
-          </VCardHeaderText>
-        </VCardHeader>
+        <VCardItem>
+          <VCardTitle>Influencing The Influencer</VCardTitle>
+        </VCardItem>
 
         <VCardText>
           Cancun is back, better than ever! Over a hundred Mexico resorts have reopened and the state tourism minister predicts Cancun will draw as many visitors in 2006 as it did two years ago.
@@ -49,14 +41,14 @@ const rating = ref(5)
       md="4"
     >
       <VCard>
-        <VImg :src="page2" />
+        <VImg :src="dynamicImgImport('@/assets/images/pages/2.png')" />
 
         <VCardText class="position-relative">
           <!-- User Avatar -->
           <VAvatar
             size="75"
             class="avatar-center"
-            :image="avatar1"
+            :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
           />
 
           <!-- Title, Subtitle & Action Button -->
@@ -96,13 +88,11 @@ const rating = ref(5)
       sm="6"
     >
       <VCard>
-        <VImg :src="page3" />
+        <VImg :src="dynamicImgImport('@/assets/images/pages/3.png')" />
 
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Popular Uses Of The Internet</VCardTitle>
-          </VCardHeaderText>
-        </VCardHeader>
+        <VCardItem>
+          <VCardTitle>Popular Uses Of The Internet</VCardTitle>
+        </VCardItem>
 
         <VCardText>
           Although cards can support multiple actions, UI controls, and an overflow menu.
@@ -146,18 +136,16 @@ const rating = ref(5)
               cover
               width="220"
               height="100%"
-              :src="eCommerce2"
+              :src="dynamicImgImport('@/assets/images/eCommerce/2.png')"
             />
           </div>
 
           <VDivider :vertical="$vuetify.display.mdAndUp" />
 
           <div>
-            <VCardHeader>
-              <VCardHeaderText>
-                <VCardTitle>Apple iPhone 11 Pro</VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem>
+              <VCardTitle>Apple iPhone 11 Pro</VCardTitle>
+            </VCardItem>
 
             <VCardText>
               Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
@@ -191,11 +179,9 @@ const rating = ref(5)
       <VCard>
         <div class="d-flex flex-column-reverse flex-md-row">
           <div>
-            <VCardHeader>
-              <VCardHeaderText>
-                <VCardTitle>Stumptown Roasters</VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem>
+              <VCardTitle>Stumptown Roasters</VCardTitle>
+            </VCardItem>
 
             <VCardText class="d-flex align-center flex-wrap body-1">
               <VRating
@@ -222,7 +208,7 @@ const rating = ref(5)
               :class="$vuetify.display.mdAndUp ? 'rounded-lg' : 'rounded-t'"
               height="100%"
               :max-width="$vuetify.display.mdAndUp ? '200' : '100%'"
-              :src="page5"
+              :src="dynamicImgImport('@/assets/images/pages/5.jpg')"
               class="w-100 mx-auto"
             />
           </div>
@@ -237,13 +223,11 @@ const rating = ref(5)
       cols="12"
     >
       <VCard>
-        <VImg :src="page6" />
+        <VImg :src="dynamicImgImport('@/assets/images/pages/6.jpg')" />
 
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Apple Watch</VCardTitle>
-          </VCardHeaderText>
-        </VCardHeader>
+        <VCardItem>
+          <VCardTitle>Apple Watch</VCardTitle>
+        </VCardItem>
 
         <VCardText>
           <p class="font-weight-medium text-base">
@@ -280,11 +264,9 @@ const rating = ref(5)
             order="2"
             order-lg="1"
           >
-            <VCardHeader>
-              <VCardHeaderText>
-                <VCardTitle>Lifetime Membership</VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem>
+              <VCardTitle>Lifetime Membership</VCardTitle>
+            </VCardItem>
 
             <VCardText>
               Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath. Though, most of these notes are not fundamentally necessary, they are such that you can use them for a good laugh, at a drinks party or for picking up women or men.

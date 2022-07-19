@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar7 from '@/assets/images/avatars/avatar-7.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
-
 interface UiColors {
   Business: string
   Meditation: string
@@ -22,37 +15,37 @@ interface MeetingSchedule {
 
 const meetingSchedules: MeetingSchedule[] = [
   {
-    profile: avatar4,
+    profile: dynamicImgImport('@/assets/images/avatars/avatar-4.png'),
     with: 'Call with Woods',
     dateTime: '21 Jul | 08:20-10:30',
     type: 'Business',
   },
   {
-    profile: avatar8,
+    profile: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
     with: 'Call with hilda',
     dateTime: '24 Jul | 11:30-12:00',
     type: 'Meditation',
   },
   {
-    profile: avatar7,
+    profile: dynamicImgImport('@/assets/images/avatars/avatar-7.png'),
     with: 'Conference call',
     dateTime: '28 Jul | 05:00-6:45',
     type: 'Meditation',
   },
   {
-    profile: avatar3,
+    profile: dynamicImgImport('@/assets/images/avatars/avatar-3.png'),
     with: 'Meeting with Mark',
     dateTime: '03 Aug | 07:00-8:30',
     type: 'Meetup',
   },
   {
-    profile: avatar2,
+    profile: dynamicImgImport('@/assets/images/avatars/avatar-2.png'),
     with: 'Meeting in Oakland',
     dateTime: '14 Aug | 04:15-05:30',
     type: 'Business',
   },
   {
-    profile: avatar1,
+    profile: dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
     with: 'Meeting with Carl',
     dateTime: '05 Oct | 10:00-12:45',
     type: 'Party',
@@ -70,22 +63,21 @@ const meetingTypeUiColors: UiColors = {
 <template>
   <VCard>
     <!-- SECTION Card Header and Menu -->
-    <VCardHeader>
-      <VCardHeaderText>
-        <!-- 👉 Title -->
-        <VCardTitle>Meeting Schedule</VCardTitle>
-      </VCardHeaderText>
+    <VCardItem>
+      <!-- 👉 Title -->
+      <VCardTitle>Meeting Schedule</VCardTitle>
 
       <!-- 👉 menu -->
-
-      <VBtn
-        size="x-small"
-        variant="text"
-        icon="mdi-dots-vertical"
-        color="secondary"
-        class="me-n3"
-      />
-    </VCardHeader>
+      <template #append>
+        <VBtn
+          size="x-small"
+          variant="text"
+          icon="mdi-dots-vertical"
+          color="secondary"
+          class="me-n3"
+        />
+      </template>
+    </VCardItem>
     <!-- !SECTION -->
 
     <!-- SECTION Meting Schedule -->

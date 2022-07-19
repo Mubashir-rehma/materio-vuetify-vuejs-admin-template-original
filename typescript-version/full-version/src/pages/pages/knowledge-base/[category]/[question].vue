@@ -28,16 +28,12 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
           :src="knowledgeBaseQuestionAndAnswer?.postImg"
         />
         <!-- Post Title -->
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle class="flex-nowrap">
-              <h5 class="text-break text-h5 font-weight-medium">
-                {{ knowledgeBaseQuestionAndAnswer?.postContent?.title }}
-              </h5>
-            </VCardTitle>
-            <VCardSubtitle>Last updated on {{ knowledgeBaseQuestionAndAnswer?.postContent?.lastUpdated }}</VCardSubtitle>
-          </VCardHeaderText>
-        </VCardHeader>
+        <VCardItem>
+          <VCardTitle class="flex-nowrap text-break text-h5 font-weight-medium">
+            {{ knowledgeBaseQuestionAndAnswer?.postContent?.title }}
+          </VCardTitle>
+          <VCardSubtitle>Last updated on {{ knowledgeBaseQuestionAndAnswer?.postContent?.lastUpdated }}</VCardSubtitle>
+        </VCardItem>
 
         <VCardText v-html="knowledgeBaseQuestionAndAnswer?.postContent?.postDesc" />
       </VCard>
@@ -49,11 +45,9 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
       class="kb-question-related-col"
     >
       <VCard variant="text">
-        <VCardHeader class="py-0 px-4">
-          <VCardHeaderText>
-            <VCardTitle>Related</VCardTitle>
-          </VCardHeaderText>
-        </VCardHeader>
+        <VCardItem class="py-0 px-4">
+          <VCardTitle>Related</VCardTitle>
+        </VCardItem>
         <VList style="background: transparent;">
           <VListItem
             v-for="que in knowledgeBaseQuestionAndAnswer?.relatedQuestions"

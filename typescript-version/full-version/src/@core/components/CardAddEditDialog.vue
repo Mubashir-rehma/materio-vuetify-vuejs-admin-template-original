@@ -1,4 +1,9 @@
 <script setup lang="ts">
+interface Emit {
+  (e: 'submit', value: typeof props.cardDetails): void
+  (e: 'update:isDialogVisible', value: boolean): void
+}
+
 interface Props {
   cardDetails: {
     number: string
@@ -8,6 +13,7 @@ interface Props {
     isPrimary: boolean
     type: string
   }
+  isDialogVisible: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -23,10 +29,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>()
 
-interface Emit {
-  (e: 'submit', value: typeof props.cardDetails): void
-  (e: 'update:modelValue', value: boolean): void
-}
 const cardDetails = ref<Props['cardDetails']>(structuredClone(toRaw(props.cardDetails)))
 
 watch(props, () => {
@@ -39,7 +41,10 @@ const formSubmit = () => {
 </script>
 
 <template>
-  <VDialog>
+  <VDialog
+    :model-value="props.isDialogVisible"
+    @update:model-value="val => $emit('update:isDialogVisible', val)"
+  >
     <VCard
       :width="$vuetify.display.smAndDown ? 'auto' : 650 "
       class="pa-5 pa-sm-15"
@@ -123,7 +128,7 @@ const formSubmit = () => {
               <VBtn
                 color="secondary"
                 variant="tonal"
-                @click="$emit('update:modelValue', false)"
+                @click="$emit('update:isDialogVisible', false)"
               >
                 Cancel
               </VBtn>

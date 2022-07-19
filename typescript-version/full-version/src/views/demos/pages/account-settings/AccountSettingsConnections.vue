@@ -1,42 +1,31 @@
 <script setup lang="ts">
-import asanaLogo from '@/assets/images/icons/brands/asana.png'
-import behanceLogo from '@/assets/images/icons/brands/behance.png'
-import dribbbleLogo from '@/assets/images/icons/brands/dribbble.png'
-import facebookLogo from '@/assets/images/icons/brands/facebook.png'
-import githubLogo from '@/assets/images/icons/brands/github.png'
-import googleLogo from '@/assets/images/icons/brands/google.png'
-import instagramLogo from '@/assets/images/icons/brands/instagram.png'
-import mailchimpLogo from '@/assets/images/icons/brands/mailchimp.png'
-import slackLogo from '@/assets/images/icons/brands/slack.png'
-import twitterLogo from '@/assets/images/icons/brands/twitter.png'
-
 const connectedAccounts = ref([
   {
-    logo: googleLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/google.png'),
     name: 'Google',
     subtitle: 'Calendar and contacts',
     connected: true,
   },
   {
-    logo: slackLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/slack.png'),
     name: 'Slack',
     subtitle: 'Communication',
     connected: false,
   },
   {
-    logo: githubLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/github.png'),
     name: 'GitHub',
     subtitle: 'Manage your Git repositories',
     connected: true,
   },
   {
-    logo: mailchimpLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/mailchimp.png'),
     name: 'MailChimp',
     subtitle: 'Email marketing service',
     connected: true,
   },
   {
-    logo: asanaLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/asana.png'),
     name: 'Asana',
     subtitle: 'Task management',
     connected: false,
@@ -45,30 +34,30 @@ const connectedAccounts = ref([
 ])
 const socialAccounts = ref([
   {
-    logo: facebookLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/facebook.png'),
     name: 'Facebook',
     connected: false,
   },
   {
-    logo: twitterLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/twitter.png'),
     name: 'Twitter',
     links: { username: '@ThemeSelection', link: 'https://twitter.com/Theme_Selection' },
     connected: true,
   },
   {
-    logo: instagramLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/instagram.png'),
     name: 'Instagram',
     links: { username: '@ThemeSelection', link: 'https://www.instagram.com/themeselection/' },
     connected: true,
   },
   {
-    logo: dribbbleLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/dribbble.png'),
     name: 'Dribbble',
     connected: false,
 
   },
   {
-    logo: behanceLogo,
+    logo: dynamicImgImport('@/assets/images/icons/brands/behance.png'),
     name: 'Behance',
     connected: false,
   },

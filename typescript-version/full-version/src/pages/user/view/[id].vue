@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { useUserListStore } from '@/views/demos/apps/user/useUserListStore'
+import { useUserListStore } from '@/views/apps/user/useUserListStore'
+import UserBioPanel from '@/views/apps/user/view/UserBioPanel.vue'
+import UserTabBillingsPlans from '@/views/apps/user/view/UserTabBillingsPlans.vue'
+import UserTabConnections from '@/views/apps/user/view/UserTabConnections.vue'
+import UserTabNotifications from '@/views/apps/user/view/UserTabNotifications.vue'
+import UserTabOverview from '@/views/apps/user/view/UserTabOverview.vue'
+import UserTabSecurity from '@/views/apps/user/view/UserTabSecurity.vue'
 
 // 👉 Store
 const userListStore = useUserListStore()
@@ -49,7 +55,7 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
           <span>{{ tab.title }}</span>
         </VTab>
       </VTabs>
-      <v-divider />
+      <VDivider />
 
       <VWindow
         v-model="userTab"

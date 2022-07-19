@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import authTree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
@@ -36,7 +35,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
         />
         <VImg
           :width="276"
-          :src="authTree"
+          :src="dynamicImgImport('@/assets/images/pages/tree.png')"
           class="auth-footer-start-tree"
         />
         <VImg

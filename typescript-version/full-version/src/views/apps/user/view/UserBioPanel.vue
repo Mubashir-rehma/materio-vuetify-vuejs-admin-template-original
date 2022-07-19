@@ -151,7 +151,7 @@ const resolveUserRoleVariant = (role: string) => {
             Details
           </h6>
 
-          <v-divider class="mt-2" />
+          <VDivider class="mt-2" />
 
           <!-- 👉 User Details list -->
           <VList density="comfortable">
@@ -317,12 +317,12 @@ const resolveUserRoleVariant = (role: string) => {
 
   <!-- 👉 Edit user info dialog -->
   <UserInfoEditDialog
-    v-model="isUserInfoEditDialogVisible"
+    v-model:isDialogVisible="isUserInfoEditDialogVisible"
     :user-data="props.userData"
   />
 
   <!-- 👉 Upgrade plan dialog -->
-  <UserUpgradePlanDialog v-model="isUpgradePlanDialogVisible" />
+  <UserUpgradePlanDialog v-model:isDialogVisible="isUpgradePlanDialogVisible" />
 </template>
 
 <style lang="scss">

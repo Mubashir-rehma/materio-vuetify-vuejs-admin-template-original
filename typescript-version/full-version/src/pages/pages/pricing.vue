@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import girlWithLaptop from '@/assets/images/pages/pose-fs-9.png'
-
 const features = [
   {
     feature: '14-days free trial',
@@ -154,7 +152,7 @@ const faqs = [
           :style="$vuetify.display.mdAndUp ? 'right: 10%; bottom: 0;' : 'bottom:-11px;'"
         >
           <VImg
-            :src="girlWithLaptop"
+            :src="dynamicImgImport('@/assets/images/pages/pose-fs-9.png')"
             :width="250"
           />
         </div>

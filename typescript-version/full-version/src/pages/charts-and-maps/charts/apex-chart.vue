@@ -1,26 +1,22 @@
-<script setup lang="ts">
-import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
-</script>
-
 <template>
   <VRow>
     <!-- 👉  Area chart -->
     <VCol cols="12">
       <VCard>
-        <VCardHeader class="flex-wrap">
-          <VCardHeaderText>
-            <VCardTitle>Area Chart</VCardTitle>
-            <VCardSubtitle>Commercial networks</VCardSubtitle>
-          </VCardHeaderText>
+        <VCardItem class="flex-wrap">
+          <VCardTitle>Area Chart</VCardTitle>
+          <VCardSubtitle>Commercial networks</VCardSubtitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ApexChartAreaChart />
@@ -31,19 +27,19 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
     <!-- 👉 Data Science -->
     <VCol cols="12">
       <VCard>
-        <VCardHeader class="flex-wrap">
-          <VCardHeaderText>
-            <VCardTitle>Data Science</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem class="flex-wrap">
+          <VCardTitle>Data Science</VCardTitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ApexChartDataScience />
@@ -54,21 +50,21 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
     <!-- 👉 New Technologies Data -->
     <VCol cols="12">
       <VCard>
-        <VCardHeader class="flex-wrap">
-          <VCardHeaderText>
-            <VCardTitle>New Technologies Data</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem class="flex-wrap">
+          <VCardTitle>New Technologies Data</VCardTitle>
 
-          <VBtnToggle
-            density="compact"
-            color="primary"
-            variant="outlined"
-          >
-            <VBtn>Daily</VBtn>
-            <VBtn>Monthly</VBtn>
-            <VBtn>Yearly</VBtn>
-          </VBtnToggle>
-        </VCardHeader>
+          <template #append>
+            <VBtnToggle
+              density="compact"
+              color="primary"
+              variant="outlined"
+            >
+              <VBtn>Daily</VBtn>
+              <VBtn>Monthly</VBtn>
+              <VBtn>Yearly</VBtn>
+            </VBtnToggle>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ApexChartNewTechnologiesData />
@@ -79,28 +75,30 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
     <!-- 👉 Balance Line Chart  -->
     <VCol cols="12">
       <VCard>
-        <VCardHeader class="flex-wrap">
-          <VCardHeaderText>
-            <VCardTitle>Balance</VCardTitle>
-            <VCardSubtitle>Commercial networks & enterprises</VCardSubtitle>
-          </VCardHeaderText>
+        <VCardItem class="flex-wrap">
+          <VCardTitle>Balance</VCardTitle>
+          <VCardSubtitle>Commercial networks & enterprises</VCardSubtitle>
 
-          <h6 class="text-h6 me-3">
-            $221,267
-          </h6>
-          <VChip
-            label
-            color="success"
-            class="font-weight-bold"
-          >
-            <VIcon
-              start
-              icon="mdi-arrow-up"
-              size="15"
-            />
-            <span>22%</span>
-          </VChip>
-        </VCardHeader>
+          <template #append>
+            <div class="d-flex align-center">
+              <h6 class="text-h6 me-3">
+                $221,267
+              </h6>
+              <VChip
+                label
+                color="success"
+                class="font-weight-bold"
+              >
+                <VIcon
+                  start
+                  icon="mdi-arrow-up"
+                  size="15"
+                />
+                <span>22%</span>
+              </VChip>
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ApexChartBalance />
@@ -114,20 +112,20 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
       md="6"
     >
       <VCard>
-        <VCardHeader class="flex-wrap">
-          <VCardHeaderText>
-            <VCardTitle>Balance</VCardTitle>
-            <VCardSubtitle>$74,382.72</VCardSubtitle>
-          </VCardHeaderText>
+        <VCardItem class="flex-wrap">
+          <VCardTitle>Balance</VCardTitle>
+          <VCardSubtitle>$74,382.72</VCardSubtitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ApexChartHorizontalBar />
@@ -141,20 +139,20 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
       md="6"
     >
       <VCard>
-        <VCardHeader class="flex-wrap">
-          <VCardHeaderText>
-            <VCardTitle>Stocks Prices</VCardTitle>
-            <VCardSubtitle>$50,863.98</VCardSubtitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Stocks Prices</VCardTitle>
+          <VCardSubtitle>$50,863.98</VCardSubtitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ApexChartStockPrice />
@@ -219,6 +217,6 @@ import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
 @use "@core/scss/libs/apex-chart.scss";
 
 .date-picker-wrapper {
-  inline-size: 12.5rem;
+  inline-size: 10.5rem;
 }
 </style>

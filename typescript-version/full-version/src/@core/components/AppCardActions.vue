@@ -63,22 +63,21 @@ const triggeredRemove = () => {
     <!-- TODO remove div when transition work with v-card components: https://github.com/vuetifyjs/vuetify/issues/15111 -->
     <div v-if="!isCardRemoved">
       <VCard v-bind="$attrs">
-        <VCardHeader>
-          <VCardHeaderText class="d-flex">
-            <VCardTitle v-if="props.title || $slots.title">
-              <!-- 👉 Title slot and prop -->
-              <slot name="title">
-                {{ props.title }}
-              </slot>
-            </VCardTitle>
+        <VCardItem>
+          <VCardTitle v-if="props.title || $slots.title">
+            <!-- 👉 Title slot and prop -->
+            <slot name="title">
+              {{ props.title }}
+            </slot>
+          </VCardTitle>
 
-            <VSpacer />
-
+          <template #append>
             <!-- 👉 Before actions slot -->
-            <slot name="before-actions" />
-
-            <!-- SECTION Actions buttons -->
             <div>
+              <slot name="before-actions" />
+
+              <!-- SECTION Actions buttons -->
+
               <!-- 👉 Collapse button -->
               <VBtn
                 v-if="(!(actionRemove || actionRefresh) || actionCollapsed) && !noActions"
@@ -126,9 +125,9 @@ const triggeredRemove = () => {
                 />
               </VBtn>
             </div>
-            <!-- !SECTION -->
-          </VCardHeaderText>
-        </VCardHeader>
+          <!-- !SECTION -->
+          </template>
+        </VCardItem>
 
         <!-- 👉 card content -->
         <VExpandTransition>
@@ -150,3 +149,4 @@ const triggeredRemove = () => {
     </div>
   </VExpandTransition>
 </template>
+

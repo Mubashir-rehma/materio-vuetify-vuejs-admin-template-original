@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import EnableOneTimePasswordDialog from '@core/components/EnableOneTimePasswordDialog.vue'
-
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 const smsVerificationNumber = ref('+1(968) 819-2547')
@@ -103,23 +101,20 @@ const recentDevices = [
             <h4 class="font-weight-medium mb-1">
               SMS
             </h4>
-            <v-text-field
+            <VTextField
               variant="underlined"
               :model-value="smsVerificationNumber"
               readonly
             >
               <template #append-inner>
-                <v-icon
+                <VIcon
                   icon="mdi-square-edit-outline"
-                  class="me-3"
-                  @click="isTwoFactorDialogOpen = !isTwoFactorDialogOpen"
+                  @click="isTwoFactorDialogOpen = true"
                 />
-                <v-icon icon="mdi-delete-outline" />
+                <VIcon icon="mdi-delete-outline" />
               </template>
-            </v-text-field>
+            </VTextField>
           </div>
-
-          <VDivider />
 
           <p class="mb-0 mt-4">
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in. <a
@@ -134,7 +129,7 @@ const recentDevices = [
     <VCol cols="12">
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
-        <v-divider />
+        <VDivider />
         <VTable class="text-no-wrap">
           <thead>
             <tr>
@@ -173,7 +168,7 @@ const recentDevices = [
 
   <!-- 👉 Enable One Time Password Dialog -->
   <EnableOneTimePasswordDialog
-    v-model="isTwoFactorDialogOpen"
+    v-model:isDialogVisible="isTwoFactorDialogOpen"
     :mobile-number="smsVerificationNumber"
   />
 </template>

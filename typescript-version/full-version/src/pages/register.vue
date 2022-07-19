@@ -3,7 +3,6 @@
 import type { VForm } from 'vuetify/components'
 
 import type { RegisterResponse } from '@/@fake-db/types'
-import authTree from '@/assets/images/pages/tree-2.png'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
@@ -99,7 +98,7 @@ const onSubmit = () => {
 
         <VImg
           :width="300"
-          :src="authTree"
+          :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
           class="auth-footer-start-tree"
         />
 

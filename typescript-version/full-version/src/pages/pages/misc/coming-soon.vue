@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import comingSoonGuy from '@/assets/images/pages/misc-coming-soon.png'
-import tree from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const email = ref('')
@@ -41,7 +39,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
     <!-- 👉 Image -->
     <div class="misc-avatar w-100 mt-10">
       <VImg
-        :src="comingSoonGuy"
+        :src="dynamicImgImport('@/assets/images/pages/misc-coming-soon.png')"
         alt="Coming Soon"
         :max-width="700"
         class="mx-auto"
@@ -50,7 +48,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <!-- 👉 Footer -->
     <VImg
-      :src="tree"
+      :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
       class="misc-footer-tree d-none d-md-block"
     />
 

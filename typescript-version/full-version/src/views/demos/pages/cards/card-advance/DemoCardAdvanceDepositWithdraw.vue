@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import gumroad from '@/assets/images/logos/gumroad.png'
-</script>
-
 <template>
   <VCard>
     <VRow no-gutters>
@@ -9,16 +5,16 @@ import gumroad from '@/assets/images/logos/gumroad.png'
         cols="12"
         md="6"
       >
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Deposit</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Deposit</VCardTitle>
 
-          <a
-            href="javascript:void(0)"
-            class="text-caption"
-          >View All</a>
-        </VCardHeader>
+          <template #append>
+            <a
+              href="javascript:void(0)"
+              class="text-caption"
+            >View All</a>
+          </template>
+        </VCardItem>
 
         <VList class="px-1">
           <VListItem>
@@ -29,7 +25,7 @@ import gumroad from '@/assets/images/logos/gumroad.png'
               <VImg
                 :height="29"
                 :width="28"
-                :src="gumroad"
+                :src="dynamicImgImport('@/assets/images/logos/gumroad.png')"
               />
             </VListItemAvatar>
 
@@ -49,16 +45,16 @@ import gumroad from '@/assets/images/logos/gumroad.png'
         cols="12"
         md="6"
       >
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Withdraw</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Withdraw</VCardTitle>
 
-          <a
-            href="javascript:void(0)"
-            class="text-caption"
-          >View All</a>
-        </VCardHeader>
+          <template #append>
+            <a
+              href="javascript:void(0)"
+              class="text-caption"
+            >View All</a>
+          </template>
+        </VCardItem>
 
         <VList class="px-1">
           <VListItem>
@@ -69,7 +65,7 @@ import gumroad from '@/assets/images/logos/gumroad.png'
               <VImg
                 :height="29"
                 :width="28"
-                :src="gumroad"
+                :src="dynamicImgImport('@/assets/images/logos/gumroad.png')"
               />
             </VListItemAvatar>
 

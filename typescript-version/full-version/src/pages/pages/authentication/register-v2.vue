@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import authTree from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
@@ -44,7 +43,7 @@ const isPasswordVisible = ref(false)
 
         <VImg
           :width="300"
-          :src="authTree"
+          :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
           class="auth-footer-start-tree"
         />
 

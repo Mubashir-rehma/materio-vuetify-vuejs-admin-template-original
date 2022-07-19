@@ -74,7 +74,7 @@ const resolveUserProgressVariant = (progress: number) => {
 
 <template>
   <VCard title="Project List">
-    <v-divider />
+    <VDivider />
     <VTable class="text-no-wrap">
       <thead>
         <tr>

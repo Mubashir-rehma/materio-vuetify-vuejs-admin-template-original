@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import basicLogo from '@/assets/images/misc/pricing-tree-1.png'
-import standardLogo from '@/assets/images/misc/pricing-tree-2.png'
-import enterpriseLogo from '@/assets/images/misc/pricing-tree-3.png'
-
 interface ColumnsResponsiveProps {
   xs?: number | string
   sm?: number | string
@@ -19,7 +15,7 @@ const pricingPlans = [
   {
     name: 'Basic',
     tagLine: 'A simple start for everyone',
-    logo: basicLogo,
+    logo: dynamicImgImport('@/assets/images/misc/pricing-tree-1.png'),
     monthlyPrice: 0,
     yearlyPrice: 0,
     isPopular: false,
@@ -35,7 +31,7 @@ const pricingPlans = [
   {
     name: 'Standard',
     tagLine: 'For small to medium businesses',
-    logo: standardLogo,
+    logo: dynamicImgImport('@/assets/images/misc/pricing-tree-2.png'),
     monthlyPrice: 42,
     yearlyPrice: 499,
     isPopular: true,
@@ -51,7 +47,7 @@ const pricingPlans = [
   {
     name: 'Enterprise',
     tagLine: 'Solution for big organizations',
-    logo: enterpriseLogo,
+    logo: dynamicImgImport('@/assets/images/misc/pricing-tree-3.png'),
     monthlyPrice: 84,
     yearlyPrice: 999,
     isPopular: false,

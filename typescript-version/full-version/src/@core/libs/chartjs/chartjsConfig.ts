@@ -11,7 +11,7 @@ const colorVariables = (colors: { variables: Record<string, any>; colors: Record
 // SECTION config
 
 // 👉 Latest Bar Chart Config
-export const getLatestBarChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getLatestBarChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const { borderColor, labelColor } = colorVariables(colors)
 
   return {
@@ -50,7 +50,7 @@ export const getLatestBarChartConfig = (colors: { variables: Record<string, any>
 }
 
 // 👉 Horizontal Bar Chart Config
-export const getHorizontalBarChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getHorizontalBarChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const chartColors = colorVariables(colors)
 
   return {
@@ -99,7 +99,7 @@ export const getHorizontalBarChartConfig = (colors: { variables: Record<string, 
 }
 
 // 👉 Line Chart Config
-export const getLineChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getLineChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const chartColors = colorVariables(colors)
 
   return {
@@ -143,7 +143,7 @@ export const getLineChartConfig = (colors: { variables: Record<string, any>; col
 }
 
 // 👉 Radar Chart Config
-export const getRadarChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getRadarChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const chartColors = colorVariables(colors)
 
   return {
@@ -178,7 +178,7 @@ export const getRadarChartConfig = (colors: { variables: Record<string, any>; co
 }
 
 // 👉 Polar Chart Config
-export const getPolarChartConfig = (colors: { colors: Record<string, string>; variables: Record<string, any> }) => {
+export const getPolarChartConfig = (colors: { colors: Record<string, string>; variables: Record<string, unknown> }) => {
   const chartColors = colorVariables(colors)
 
   return {
@@ -212,7 +212,7 @@ export const getPolarChartConfig = (colors: { colors: Record<string, string>; va
 }
 
 // 👉 Bubble Chart Config
-export const getBubbleChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getBubbleChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const chartColors = colorVariables(colors)
 
   return {
@@ -266,7 +266,7 @@ export const getDoughnutChartConfig = () => {
 }
 
 // 👉 Scatter Chart Config
-export const getScatterChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getScatterChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const chartColors = colorVariables(colors)
 
   return {
@@ -321,7 +321,7 @@ export const getScatterChartConfig = (colors: { variables: Record<string, any>; 
 }
 
 // 👉 Line Area Chart Config
-export const getLineAreaChartConfig = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
+export const getLineAreaChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
   const chartColors = colorVariables(colors)
 
   return {

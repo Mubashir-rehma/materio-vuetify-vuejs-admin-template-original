@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import authTree2 from '@/assets/images/pages/auth-v1-tree-2.png'
-import authTree from '@/assets/images/pages/auth-v1-tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
@@ -17,17 +15,17 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
       class="auth-card pa-4"
       max-width="448"
     >
-      <VCardHeader>
-        <VCardHeaderText>
-          <VCardTitle class="justify-center">
-            <img
-              :src="themeConfig.app.logo"
-              class="me-3"
-            >
-            <span class="font-weight-semibold text-h5">{{ themeConfig.app.title }}</span>
-          </VCardTitle>
-        </VCardHeaderText>
-      </VCardHeader>
+      <VCardItem>
+        <template #prepend>
+          <div class="d-flex">
+            <img :src="themeConfig.app.logo">
+          </div>
+        </template>
+
+        <VCardTitle class="font-weight-semibold text-h5">
+          {{ themeConfig.app.title }}
+        </VCardTitle>
+      </VCardItem>
 
       <VCardText>
         <h5 class="text-h5 font-weight-semibold mb-3">
@@ -80,12 +78,12 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
 
     <VImg
       class="auth-footer-start-tree d-none d-md-block"
-      :src="authTree"
+      :src="dynamicImgImport('@/assets/images/pages/auth-v1-tree.png')"
       :width="250"
     />
 
     <VImg
-      :src="authTree2"
+      :src="dynamicImgImport('@/assets/images/pages/auth-v1-tree-2.png')"
       class="auth-footer-end-tree d-none d-md-block"
       :width="350"
     />

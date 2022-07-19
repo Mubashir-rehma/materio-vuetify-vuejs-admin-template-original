@@ -1,4 +1,16 @@
 <script setup lang="ts">
+interface Emit {
+  (e: 'update:isDialogVisible', val: boolean): void
+}
+
+interface Prop {
+  isDialogVisible: boolean
+}
+
+const props = defineProps<Prop>()
+
+defineEmits<Emit>()
+
 const selectedPlan = ref('standard')
 const plansList = [
   { text: 'Basic - $0/month', value: 'basic' },
@@ -10,7 +22,10 @@ const plansList = [
 
 <template>
   <!-- 👉 upgrade plan -->
-  <VDialog>
+  <VDialog
+    :model-value="props.isDialogVisible"
+    @update:model-value="val => $emit('update:isDialogVisible', val)"
+  >
     <VCard
       class="py-8"
       :width="$vuetify.display.smAndDown ? 'auto' : 650"
@@ -20,9 +35,9 @@ const plansList = [
           Upgrade Plan
         </VCardTitle>
 
-        <v-card-subtitle>
+        <VCardSubtitle>
           Choose the best plan for user.
-        </v-card-subtitle>
+        </VCardSubtitle>
       </VCardItem>
 
       <VCardText class="d-flex align-center flex-wrap flex-sm-nowrap px-15">

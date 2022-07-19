@@ -1,15 +1,11 @@
 <script lang="ts" setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
-
 const solidCardData = [
   {
     cardBg: 'info',
     title: 'Twitter Card',
     icon: 'mdi-twitter',
     text: '"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."',
-    avatarImg: avatar4,
+    avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-4.png'),
     avatarName: 'Mary Vaughn',
     likes: '1.2k',
     share: '80',
@@ -19,7 +15,7 @@ const solidCardData = [
     title: 'Facebook Card',
     icon: 'mdi-facebook',
     text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an effective',
-    avatarImg: avatar1,
+    avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
     avatarName: 'Eugene Clarke',
     likes: '3.2k',
     share: '49',
@@ -29,7 +25,7 @@ const solidCardData = [
     title: 'Linkedin Card',
     icon: 'mdi-linkedin',
     text: 'With the Internet spreading like wildfire and reaching every part of our daily life, more and more traffic is directed.',
-    avatarImg: avatar8,
+    avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
     avatarName: 'Anne Burke1',
     likes: '1.2k',
     share: '80',
@@ -47,19 +43,18 @@ const solidCardData = [
       lg="4"
     >
       <VCard :color="data.cardBg">
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>
-              <VIcon
-                size="1.5rem"
-                color="white"
-                class="me-2"
-                :icon="data.icon"
-              />
-              <span class="text-white">{{ data.title }}</span>
-            </VCardTitle>
-          </VCardHeaderText>
-        </VCardHeader>
+        <VCardItem>
+          <template #prepend>
+            <VIcon
+              size="1.5rem"
+              color="white"
+              :icon="data.icon"
+            />
+          </template>
+          <VCardTitle class="text-white">
+            {{ data.title }}
+          </VCardTitle>
+        </VCardItem>
 
         <VCardText class="text-white">
           {{ data.text }}

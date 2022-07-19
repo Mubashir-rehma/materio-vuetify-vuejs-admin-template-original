@@ -1,15 +1,20 @@
 <script lang="ts" setup>
-import masterCard from '@/assets/images/icons/payments/mastercard.png'
-import visa from '@/assets/images/icons/payments/visa.png'
-import AppPricing from '@core/components/AppPricing.vue'
-
+interface cardDetails {
+  name: string
+  number: string
+  expiry: string
+  isPrimary: boolean
+  type: string
+  cvv: string
+  image: string
+}
 const selectedPaymentMethod = ref('credit-debit-atm-card')
 
 const isPricingPlanDialogVisible = ref(false)
 const isConfirmDialogVisible = ref(false)
 const isCardEditDialogVisible = ref(false)
 
-const creditCards = [
+const creditCards: cardDetails[] = [
   {
     name: 'Tom McBride',
     number: '5531234567899856',
@@ -17,7 +22,7 @@ const creditCards = [
     isPrimary: true,
     type: 'visa',
     cvv: '456',
-    image: visa,
+    image: dynamicImgImport('@/assets/images/icons/payments/visa.png'),
   },
   {
     name: 'Mildred Wagner',
@@ -26,7 +31,7 @@ const creditCards = [
     isPrimary: false,
     type: 'mastercard',
     cvv: '123',
-    image: masterCard,
+    image: dynamicImgImport('@/assets/images/icons/payments/mastercard.png'),
   },
 ]
 
@@ -34,7 +39,7 @@ const countryList = ['United States', 'Canada', 'United Kingdom', 'Australia', '
 
 const currentCardDetails = ref()
 
-const openEditCardDialog = (cardDetails: Object) => {
+const openEditCardDialog = (cardDetails: cardDetails) => {
   currentCardDetails.value = cardDetails
 
   isCardEditDialogVisible.value = true

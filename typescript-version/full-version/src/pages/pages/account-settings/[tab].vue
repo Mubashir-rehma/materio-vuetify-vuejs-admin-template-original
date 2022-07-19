@@ -36,8 +36,12 @@ const tabs = [
         {{ item.title }}
       </VTab>
     </VTabs>
+    <VDivider />
 
-    <VWindow v-model="activeTab">
+    <VWindow
+      v-model="activeTab"
+      class="mt-5"
+    >
       <!-- Account -->
       <VWindowItem value="account">
         <AccountSettingsAccount />

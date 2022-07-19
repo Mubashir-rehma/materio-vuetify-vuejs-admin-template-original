@@ -50,13 +50,11 @@ watch(knowledgeBaseSearchQuery, fetchKnowledgeBaseData, { immediate: true })
             </div>
 
             <!-- 👉 title -->
-            <VCardHeader>
-              <VCardHeaderText>
-                <VCardTitle class="justify-center">
-                  {{ result.title }}
-                </VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem>
+              <VCardTitle class="justify-center">
+                {{ result.title }}
+              </VCardTitle>
+            </VCardItem>
 
             <!-- 👉 description -->
             <VCardText>

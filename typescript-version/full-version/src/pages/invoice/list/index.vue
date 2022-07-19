@@ -129,6 +129,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
               v-model="selectedStatus"
               label="Select Status"
               clearable
+              clear-icon="mdi-close"
               :items="['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due']"
             />
           </VCol>
@@ -141,6 +142,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             <AppDateTimePicker
               v-model="dateRange"
               label="Invoice Date"
+              clear-icon="mdi-close"
               clearable
               :config="{ mode: 'range' }"
             />

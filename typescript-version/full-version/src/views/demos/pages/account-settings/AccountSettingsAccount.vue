@@ -1,9 +1,6 @@
 <script lang="ts" setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import ConfirmDialog from '@core/components/ConfirmDialog.vue'
-
 const accountData = {
-  avatarImg: avatar1,
+  avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
   firstName: 'john',
   lastName: 'Doe',
   email: 'johnDoe@example.com',

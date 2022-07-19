@@ -106,7 +106,7 @@ onMounted(() => {
           :disabled="isReadonly.value"
           @on-open="isCalendarOpen = true"
           @on-close="isCalendarOpen = false"
-          @update:modelValue="val => $emit('update:modelValue', val)"
+          @update:model-value="(val:string) => $emit('update:modelValue', val)"
         />
 
         <!-- simple input for inline prop -->
@@ -126,13 +126,14 @@ onMounted(() => {
     v-bind="compAttrs"
     ref="refFlatPicker"
     :model-value="modelValue"
-    @update:modelValue="val => $emit('update:modelValue', val)"
+    @update:model-value="(val:string) => $emit('update:modelValue', val)"
     @on-open="isCalendarOpen = true"
     @on-close="isCalendarOpen = false"
   />
 </template>
 
 <style lang="scss">
+/* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
 
 .flat-picker-custom-style {

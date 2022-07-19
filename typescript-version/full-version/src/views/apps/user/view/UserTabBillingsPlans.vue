@@ -1,4 +1,14 @@
 <script setup lang="ts">
+interface CardDetail {
+  name: string
+  number: string
+  expiry: string
+  isPrimary: boolean
+  type: string
+  cvv: string
+  image: string
+}
+
 const isUpgradePlanDialogVisible = ref(false)
 
 const currentCardDetails = ref()
@@ -6,13 +16,13 @@ const isCardEditDialogVisible = ref(false)
 const isCardAddDialogVisible = ref(false)
 const isEditAddressDialogVisible = ref(false)
 
-const openEditCardDialog = (cardDetails: Object) => {
+const openEditCardDialog = (cardDetails: CardDetail) => {
   currentCardDetails.value = cardDetails
 
   isCardEditDialogVisible.value = true
 }
 
-const creditCards = [
+const creditCards: CardDetail[] = [
   {
     name: 'Tom McBride',
     number: '4851234567899865',
@@ -108,7 +118,7 @@ const currentBillingAddress = {
                 <span>26 of 30 Days</span>
               </div>
 
-              <v-progress-linear
+              <VProgressLinear
                 rounded
                 color="primary"
                 :height="10"
@@ -160,7 +170,8 @@ const currentBillingAddress = {
           <VCard
             v-for="card in creditCards"
             :key="card.name"
-            variant="outlined"
+            border
+            flat
           >
             <VCardText class="d-flex flex-sm-row flex-column">
               <div class="text-no-wrap">
@@ -211,7 +222,7 @@ const currentBillingAddress = {
     <VCol cols="12">
       <!-- 👉 Billing Address -->
       <VCard>
-        <v-card-item>
+        <VCardItem>
           <VCardTitle>Billing Address</VCardTitle>
 
           <template #append>
@@ -219,7 +230,7 @@ const currentBillingAddress = {
               Edit Address
             </VBtn>
           </template>
-        </v-card-item>
+        </VCardItem>
 
         <VCardText>
           <VRow>
@@ -354,25 +365,25 @@ const currentBillingAddress = {
 
   <!-- 👉 Edit Card Dialog -->
   <CardAddEditDialog
-    v-model="isCardEditDialogVisible"
+    v-model:isDialogVisible="isCardEditDialogVisible"
     :card-details="currentCardDetails"
     class="v-dialog-lg"
   />
 
   <!-- 👉 Add Card Dialog -->
   <CardAddEditDialog
-    v-model="isCardAddDialogVisible"
+    v-model:isDialogVisible="isCardAddDialogVisible"
     class="v-dialog-lg"
   />
 
   <!-- 👉 Edit Address dialog -->
   <EditAddressDialog
-    v-model="isEditAddressDialogVisible"
+    v-model:isDialogVisible="isEditAddressDialogVisible"
     :billing-address="currentBillingAddress"
   />
 
   <!-- 👉 Upgrade plan dialog -->
-  <UserUpgradePlanDialog v-model="isUpgradePlanDialogVisible" />
+  <UserUpgradePlanDialog v-model:isDialogVisible="isUpgradePlanDialogVisible" />
 </template>
 
 <style lang="scss">

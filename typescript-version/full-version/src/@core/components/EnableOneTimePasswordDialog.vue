@@ -1,10 +1,11 @@
 <script setup lang="ts">
 interface Emit {
-  (e: 'update:modelValue', value: boolean): void
+  (e: 'update:isDialogVisible', value: boolean): void
   (e: 'submit', value: string): void
 }
 interface Props {
   mobileNumber: string
+  isDialogVisible: boolean
 }
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
@@ -14,20 +15,24 @@ const phoneNumber = ref(structuredClone(toRaw(props.mobileNumber)))
 const formSubmit = () => {
   if (phoneNumber.value) {
     emit('submit', phoneNumber.value)
-    emit('update:modelValue', false)
+    emit('update:isDialogVisible', false)
   }
 }
 
 const resetPhoneNumber = () => {
   phoneNumber.value = structuredClone(toRaw(props.mobileNumber))
-  emit('update:modelValue', false)
+  emit('update:isDialogVisible', false)
 }
 
-watch(props, resetPhoneNumber, { immediate: true })
+// watch(props, resetPhoneNumber, { immediate: true })
 </script>
 
 <template>
-  <VDialog class="v-dialog-lg">
+  <VDialog
+    :model-value="props.isDialogVisible"
+    class="v-dialog-lg"
+    @update:model-value="(val) => $emit('update:isDialogVisible', val)"
+  >
     <VCard class="pa-5 pa-sm-15">
       <VCardItem>
         <VCardTitle class="text-h5 font-weight-medium">

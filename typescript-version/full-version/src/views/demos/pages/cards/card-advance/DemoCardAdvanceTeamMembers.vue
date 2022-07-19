@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
 
 const vuetifyTheme = useTheme()
 
@@ -48,7 +43,7 @@ const getChartConfig = (value: string) => {
 
 const teamMembers = [
   {
-    profilePic: avatar1,
+    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
     name: 'Dean Hogan',
     designation: 'IOS developer',
     project: 'Zipper',
@@ -58,7 +53,7 @@ const teamMembers = [
     progressIndication: vuetifyTheme.current.value.colors.primary,
   },
   {
-    profilePic: avatar8,
+    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
     name: 'Hilda Rice',
     designation: 'Laravel developer',
     project: 'Brandi',
@@ -68,7 +63,7 @@ const teamMembers = [
     progressIndication: vuetifyTheme.current.value.colors.success,
   },
   {
-    profilePic: avatar5,
+    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-5.png'),
     name: 'Andrew O\'Brien',
     designation: 'React developer',
     project: 'Payers',
@@ -78,7 +73,7 @@ const teamMembers = [
     progressIndication: vuetifyTheme.current.value.colors.warning,
   },
   {
-    profilePic: avatar2,
+    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-2.png'),
     name: 'Eleanor Price',
     designation: 'Angular developer',
     project: 'Citibank',
@@ -88,7 +83,7 @@ const teamMembers = [
     progressIndication: vuetifyTheme.current.value.colors.error,
   },
   {
-    profilePic: avatar3,
+    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-3.png'),
     name: 'Carl Oliver',
     designation: 'VueJs developer',
     project: 'Aviator',
@@ -103,21 +98,21 @@ const teamMembers = [
 <template>
   <VCard>
     <!-- SECTION Card Header and Menu -->
-    <VCardHeader>
-      <VCardHeaderText>
-        <!-- 👉 Title -->
-        <VCardTitle>Team Members</VCardTitle>
-      </VCardHeaderText>
+    <VCardItem>
+      <!-- 👉 Title -->
+      <VCardTitle>Team Members</VCardTitle>
 
       <!-- 👉 menu -->
-      <VBtn
-        size="x-small"
-        variant="text"
-        icon="mdi-dots-vertical"
-        color="secondary"
-        class="me-n3"
-      />
-    </VCardHeader>
+      <template #append>
+        <VBtn
+          size="x-small"
+          variant="text"
+          icon="mdi-dots-vertical"
+          color="secondary"
+          class="me-n3"
+        />
+      </template>
+    </VCardItem>
     <!-- !SECTION -->
 
     <!-- TODO try to remove table border -->

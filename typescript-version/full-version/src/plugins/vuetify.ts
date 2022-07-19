@@ -42,6 +42,7 @@ export default createVuetify({
     VRadio: {
       density: 'comfortable',
       hideDetails: 'auto',
+      VSelectionControl: { color: 'primary' },
     },
     VSelect: {
       variant: 'outlined',

@@ -8,13 +8,6 @@ import type { Event, NewEvent } from './types'
 import { useCalendarStore } from './useCalendarStore'
 import { requiredValidator, urlValidator } from '@validators'
 
-import avatar1Src from '@/assets/images/avatars/avatar-1.png'
-import avatar2Src from '@/assets/images/avatars/avatar-2.png'
-import avatar3Src from '@/assets/images/avatars/avatar-3.png'
-import avatar5Src from '@/assets/images/avatars/avatar-5.png'
-import avatar6Src from '@/assets/images/avatars/avatar-6.png'
-import avatar7Src from '@/assets/images/avatars/avatar-7.png'
-
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
@@ -31,6 +24,7 @@ interface Props {
 
 // 👉 store
 const store = useCalendarStore()
+const refForm = ref<VForm>()
 
 // 👉 Event
 const event = ref<Event | NewEvent>(JSON.parse(JSON.stringify(props.event)))
@@ -54,7 +48,7 @@ const handleSubmit = () => {
     .then(({ valid }) => {
       if (valid) {
         // If id exist on id => Update event
-        if (event.value.id)
+        if ('id' in event.value)
           emit('updateEvent', event.value)
 
         // Else => add new event
@@ -67,12 +61,12 @@ const handleSubmit = () => {
 }
 
 const guestsOptions = [
-  { avatar: avatar1Src, name: 'Jane Foster' },
-  { avatar: avatar3Src, name: 'Donna Frank' },
-  { avatar: avatar5Src, name: 'Gabrielle Robertson' },
-  { avatar: avatar7Src, name: 'Lori Spears' },
-  { avatar: avatar6Src, name: 'Sandy Vega' },
-  { avatar: avatar2Src, name: 'Cheryl May' },
+  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-1.png'), name: 'Jane Foster' },
+  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-3.png'), name: 'Donna Frank' },
+  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-5.png'), name: 'Gabrielle Robertson' },
+  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-7.png'), name: 'Lori Spears' },
+  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-6.png'), name: 'Sandy Vega' },
+  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-2.png'), name: 'Cheryl May' },
 ]
 
 const perfectScrollbarSettings = {
@@ -81,7 +75,7 @@ const perfectScrollbarSettings = {
 }
 
 // 👉 Form
-const refForm = ref<VForm>()
+
 const onCancel = () => {
   emit('update:isDrawerOpen', false)
 
@@ -117,7 +111,7 @@ const endDateTimePickerConfig = computed(() => {
     :model-value="props.isDrawerOpen"
     width="420"
     class="scrollable-content"
-    @update:modelValue="(val) => $emit('update:isDrawerOpen', val)"
+    @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
   >
     <!-- 👉 Header -->
     <div class="px-5 py-3 d-flex align-center bg-var-theme-background">

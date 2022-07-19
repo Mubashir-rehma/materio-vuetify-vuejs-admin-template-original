@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import arrowGrowth from '@/assets/images/cards/arrow-growth.png'
-import atmCard from '@/assets/images/cards/atm-card.png'
-import creditCard from '@/assets/images/cards/credit-card.png'
-import paypal from '@/assets/images/cards/paypal.png'
-import wallet from '@/assets/images/cards/wallet.png'
 import { kFormatter } from '@core/utils/formatters'
 
 interface Colors {
@@ -26,37 +21,37 @@ const transactions: Transactions[] = [
     gateway: 'Paypal',
     for: 'Freelance Work',
     amount: 2482,
-    img: paypal,
+    img: dynamicImgImport('@/assets/images/cards/paypal.png'),
   },
   {
     gateway: 'Credit Card',
     for: 'Digital Ocean',
     amount: -1250,
-    img: creditCard,
+    img: dynamicImgImport('@/assets/images/cards/credit-card.png'),
   },
   {
     gateway: 'Mastercard',
     for: 'Netflix',
     amount: -99,
-    img: atmCard,
+    img: dynamicImgImport('@/assets/images/cards/atm-card.png'),
   },
   {
     gateway: 'Wallet',
     for: 'Mac\'D',
     amount: -82,
-    img: wallet,
+    img: dynamicImgImport('@/assets/images/cards/wallet.png'),
   },
   {
     gateway: 'Transfer',
     for: 'Refund',
     amount: 8934,
-    img: arrowGrowth,
+    img: dynamicImgImport('@/assets/images/cards/arrow-growth.png'),
   },
   {
     gateway: 'Wallet',
     for: 'Buy Watch',
     amount: -124,
-    img: wallet,
+    img: dynamicImgImport('@/assets/images/cards/wallet.png'),
   },
 ]
 
@@ -76,22 +71,21 @@ const formateAmount = (amount: number) => {
 <template>
   <VCard>
     <!-- SECTION Card Header and Menu -->
-    <VCardHeader>
-      <VCardHeaderText>
-        <!-- 👉 Title -->
-        <VCardTitle>Transactions</VCardTitle>
-      </VCardHeaderText>
+    <VCardItem>
+      <!-- 👉 Title -->
+      <VCardTitle>Transactions</VCardTitle>
 
       <!-- 👉 menu -->
-
-      <VBtn
-        size="x-small"
-        variant="text"
-        icon="mdi-dots-vertical"
-        color="secondary"
-        class="me-n3"
-      />
-    </VCardHeader>
+      <template #append>
+        <VBtn
+          size="x-small"
+          variant="text"
+          icon="mdi-dots-vertical"
+          color="secondary"
+          class="me-n3"
+        />
+      </template>
+    </VCardItem>
     <!-- !SECTION -->
 
     <!-- SECTION Transactions List -->

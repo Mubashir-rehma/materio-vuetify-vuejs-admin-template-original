@@ -1,33 +1,37 @@
 <script setup lang="ts">
+interface UserData {
+  id: number
+  fullName: string
+  company: string
+  role: string
+  username: string
+  country: string
+  contact: string
+  email: string
+  currentPlan: string
+  status: string
+  avatar: string
+  taskDone: number
+  projectDone: number
+  taxId: string
+  language: string
+}
+
 interface Props {
-  userData: {
-    id: number
-    fullName: string
-    company: string
-    role: string
-    username: string
-    country: string
-    contact: string
-    email: string
-    currentPlan: string
-    status: string
-    avatar: string
-    taskDone: number
-    projectDone: number
-    taxId: string
-    language: string
-  }
+  userData: UserData
+  isDialogVisible: boolean
 }
 
 interface Emit {
   (e: 'update:modelValue', value: boolean): void
-  (e: 'submit', value: Object): void
+  (e: 'submit', value: UserData): void
+  (e: 'update:isDialogVisible', val: boolean): void
 }
 const props = defineProps<Props>()
 
 const emit = defineEmits<Emit>()
 
-const userData = ref(structuredClone(toRaw(props.userData)))
+const userData = ref<UserData>(structuredClone(toRaw(props.userData)))
 
 watch(props, () => {
   userData.value = structuredClone(toRaw(props.userData))
@@ -35,12 +39,15 @@ watch(props, () => {
 
 const onFormSubmit = () => {
   emit('update:modelValue', false)
-  emit('submit', userData)
+  emit('submit', userData.value)
 }
 </script>
 
 <template>
-  <VDialog>
+  <VDialog
+    :model-value="props.isDialogVisible"
+    @update:model-value="val => $emit('update:isDialogVisible', val)"
+  >
     <VCard
       :width="$vuetify.display.smAndDown ? 'auto' : 650 "
       class="pa-sm-9 pa-5"
@@ -174,7 +181,8 @@ const onFormSubmit = () => {
               <VBtn
                 color="secondary"
                 variant="tonal"
-                @click="$emit('update:modelValue', false)"
+                type="reset"
+                @click="$emit('update:isDialogVisible', false)"
               >
                 Cancel
               </VBtn>

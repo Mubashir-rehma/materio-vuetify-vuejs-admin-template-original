@@ -1,49 +1,40 @@
 import mock from '@/@fake-db/mock'
 import type { KnowledgeBaseDB, KnowledgeBaseSubcategory } from '@/@fake-db/types'
-import postImg from '@/assets/images/pages/mac-pc.png'
-
-// images
-import poseF28 from '@/assets/images/pages/pose-f-28.png'
-import poseF3 from '@/assets/images/pages/pose-f-3.png'
-import poseF39 from '@/assets/images/pages/pose-f-39.png'
-import poseM14 from '@/assets/images/pages/pose-m-14.png'
-import poseM34 from '@/assets/images/pages/pose-m-34.png'
-import poseM5 from '@/assets/images/pages/pose-m-5.png'
 
 const database: KnowledgeBaseDB = {
   knowledgeBaseCategories: [
     {
-      character: poseF3,
+      character: dynamicImgImport('@/assets/images/pages/pose-f-3.png'),
       category: 'sales-automation',
       title: 'Sales Automation 👩🏻‍💻',
       desc: 'There is perhaps no better demonstration of the folly of image of our tiny world.',
     },
     {
-      character: poseF28,
+      character: dynamicImgImport('@/assets/images/pages/pose-f-28.png'),
       category: 'marketing-automation',
       title: 'Marketing Automation 🚀',
       desc: 'Look again at that dot. That\'s here. That’s home. That\'s us. On it everyone you love.',
     },
     {
-      character: poseM34,
+      character: dynamicImgImport('@/assets/images/pages/pose-m-34.png'),
       category: 'api-questions',
       title: 'API Questions 📱',
       desc: 'Every hero and coward, every creator and destroyer of civilization.',
     },
     {
-      character: poseF39,
+      character: dynamicImgImport('@/assets/images/pages/pose-f-39.png'),
       category: 'email-marketing',
       title: 'Email Marketing ✉️',
       desc: 'There is perhaps no better demonstration of the folly of human conceits.',
     },
     {
-      character: poseM14,
+      character: dynamicImgImport('@/assets/images/pages/pose-m-14.png'),
       category: 'personalization',
       title: 'Personalization 🤩',
       desc: 'It has been said that astronomy is a humbling and character experience.',
     },
     {
-      character: poseM5,
+      character: dynamicImgImport('@/assets/images/pages/pose-m-5.png'),
       category: 'demand-generation',
       title: 'Demand Generation 🤟🏻',
       desc: 'Competent means we will never take anything for granted.',
@@ -64,7 +55,9 @@ const database: KnowledgeBaseDB = {
           question: 'Can I Change My Username?',
         },
         {
+          // eslint-disable-next-line sonarjs/no-duplicate-string
           slug: 'where-can-i-upload-my-avatar',
+          // eslint-disable-next-line sonarjs/no-duplicate-string
           question: 'Where Can I Upload My Avatar?',
         },
         {
@@ -210,7 +203,7 @@ const database: KnowledgeBaseDB = {
   ],
   KnowledgeBaseQuestionsAndAnswers: [
     {
-      postImg,
+      postImg: dynamicImgImport('@/assets/images/pages/mac-pc.png'),
       postContent: {
         title: 'Why Was My Developer Application Rejected?',
         lastUpdated: '10 Dec 2018',

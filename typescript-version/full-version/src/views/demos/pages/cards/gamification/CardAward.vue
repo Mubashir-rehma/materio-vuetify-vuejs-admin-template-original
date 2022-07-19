@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import trophy from '@/assets/images/misc/trophy.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
@@ -27,7 +26,7 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 
     <!-- Trophy -->
     <VImg
-      :src="trophy"
+      :src="dynamicImgImport('@/assets/images/misc/trophy.png')"
       class="trophy"
     />
   </VCard>

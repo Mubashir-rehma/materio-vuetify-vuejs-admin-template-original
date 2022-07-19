@@ -33,19 +33,19 @@ const stockData = [
     >
       <VCard>
         <!-- Header -->
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Latest Statistics</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Latest Statistics</VCardTitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <!-- Body -->
         <VCardText>
@@ -61,20 +61,20 @@ const stockData = [
     >
       <VCard>
         <!-- Header -->
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Balance</VCardTitle>
-            <VCardSubtitle>$74,123</VCardSubtitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Balance</VCardTitle>
+          <VCardSubtitle>$74,123</VCardSubtitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <!-- Body -->
         <VCardText>
@@ -126,13 +126,13 @@ const stockData = [
     <VCol cols="12">
       <VCard>
         <!-- Header -->
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Bubble Chart</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Bubble Chart</VCardTitle>
 
-          <span class="text-subtitle-2">$ 100,000</span>
-        </VCardHeader>
+          <template #append>
+            <span class="text-subtitle-2">$ 100,000</span>
+          </template>
+        </VCardItem>
 
         <!-- Body -->
         <VCardText>
@@ -191,21 +191,21 @@ const stockData = [
     >
       <VCard>
         <!-- Header -->
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>New Product Data</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>New Product Data</VCardTitle>
 
-          <VBtnToggle
-            color="primary"
-            variant="outlined"
-            density="compact"
-          >
-            <VBtn>Daily</VBtn>
-            <VBtn>Monthly</VBtn>
-            <VBtn>Yearly</VBtn>
-          </VBtnToggle>
-        </VCardHeader>
+          <template #append>
+            <VBtnToggle
+              color="primary"
+              variant="outlined"
+              density="compact"
+            >
+              <VBtn>Daily</VBtn>
+              <VBtn>Monthly</VBtn>
+              <VBtn>Yearly</VBtn>
+            </VBtnToggle>
+          </template>
+        </VCardItem>
 
         <!-- Body -->
         <VCardText>
@@ -218,19 +218,19 @@ const stockData = [
     <VCol cols="12">
       <VCard>
         <!-- Header -->
-        <VCardHeader>
-          <VCardHeaderText>
-            <VCardTitle>Data Science</VCardTitle>
-          </VCardHeaderText>
+        <VCardItem>
+          <VCardTitle>Data Science</VCardTitle>
 
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </VCardHeader>
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <!-- Body -->
         <VCardText>
@@ -243,6 +243,6 @@ const stockData = [
 
 <style lang="scss">
 .date-picker-wrapper {
-  inline-size: 12.5rem;
+  inline-size: 10.5rem;
 }
 </style>

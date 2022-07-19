@@ -29,11 +29,9 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
             :key="item"
             :value="item"
           >
-            <VCardHeader>
-              <VCardHeaderText>
-                <VCardTitle>Navigation Card</VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem>
+              <VCardTitle>Navigation Card</VCardTitle>
+            </VCardItem>
 
             <VCardText>
               {{ tabContent }}
@@ -73,11 +71,9 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
             :value="item"
             class="text-center"
           >
-            <VCardHeader>
-              <VCardHeaderText class="d-flex justify-center">
-                <VCardTitle>Navigation Card</VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem>
+              <VCardTitle>Navigation Card</VCardTitle>
+            </VCardItem>
 
             <VCardText>{{ tabContent }}</VCardText>
 

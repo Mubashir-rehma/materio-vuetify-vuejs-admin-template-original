@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-</script>
-
 <template>
   <div class="demo-space-x">
     <VBtn>
@@ -15,7 +11,7 @@ import avatar4 from '@/assets/images/avatars/avatar-4.png'
     </VBtn>
 
     <VAvatar color="info">
-      <VImg :src="avatar4" />
+      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-4.png')" />
       <VTooltip
         anchor="top"
         activator="parent"

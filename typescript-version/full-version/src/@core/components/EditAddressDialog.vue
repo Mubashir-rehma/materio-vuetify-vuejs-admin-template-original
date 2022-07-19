@@ -1,40 +1,45 @@
 <script setup lang="ts">
+interface BillingAddress {
+  companyName: string
+  billingEmail: string
+  taxID: string
+  vatNumber: string
+  address: string
+  contact: string
+  country: string
+  state: string
+  zipCode: string
+}
 interface Props {
-  billingAddress: {
-    companyName: string
-    billingEmail: string
-    taxID: string
-    vatNumber: string
-    address: string
-    contact: string
-    country: string
-    state: string
-    zipCode: string
-  }
+  billingAddress: BillingAddress
+  isDialogVisible: boolean
 }
 interface Emit {
-  (e: 'update:modelValue', value: boolean): void
-  (e: 'submit', value: Object): void
+  (e: 'update:isDialogVisible', value: boolean): void
+  (e: 'submit', value: BillingAddress): void
 }
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const billingAddress = ref(structuredClone(toRaw(props.billingAddress)))
+const billingAddress = ref<BillingAddress>(structuredClone(toRaw(props.billingAddress)))
 
 const resetForm = () => {
-  emit('update:modelValue', false)
+  emit('update:isDialogVisible', false)
   billingAddress.value = structuredClone(toRaw(props.billingAddress))
 }
 
 const onFormSubmit = () => {
-  emit('update:modelValue', false)
-  emit('submit', billingAddress)
+  emit('update:isDialogVisible', false)
+  emit('submit', billingAddress.value)
 }
 </script>
 
 <template>
-  <VDialog>
+  <VDialog
+    :model-value="props.isDialogVisible"
+    @update:model-value="val => $emit('update:isDialogVisible', val)"
+  >
     <VCard
       v-if="props.billingAddress"
       class="pa-sm-9 pa-5"

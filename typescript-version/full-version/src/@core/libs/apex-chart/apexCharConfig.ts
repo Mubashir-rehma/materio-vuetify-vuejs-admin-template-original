@@ -68,7 +68,7 @@ export const getLineChartSimpleConfig = (themeColors: ThemeInstance['themes']['v
       },
     },
     tooltip: {
-      custom(data: any) {
+      custom(data: { series: { [x: string]: { [x: string]: unknown } }; seriesIndex: string | number; dataPointIndex: string | number }) {
         return `${'<div class="px-1 py-50"><span>'}${
             data.series[data.seriesIndex][data.dataPointIndex]
           }%</span></div>`

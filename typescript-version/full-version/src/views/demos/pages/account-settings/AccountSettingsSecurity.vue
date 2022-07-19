@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { useTheme } from 'vuetify'
-import sittingGirlDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
+import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
@@ -82,7 +80,7 @@ const recentDevices = [
 ]
 
 // 👉 Change the image as per theme change
-const vuetifyTheme = useTheme()
+const sittingGirlImg = useGenerateImageVariant('@/assets/images/illustrations/sitting-girl-with-laptop.png')
 
 const isOneTimePasswordDialogVisible = ref(false)
 </script>
@@ -257,7 +255,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             class="d-flex flex-column justify-center align-center"
           >
             <VImg
-              :src="vuetifyTheme.current.value.dark ? sittingGirlDark : sittingGirlLight"
+              :src="sittingGirlImg"
               :width="310"
               :style="$vuetify.display.smAndDown ? '' : 'position: absolute; bottom: 0;'"
             />

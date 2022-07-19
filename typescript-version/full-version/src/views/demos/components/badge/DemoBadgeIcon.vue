@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-</script>
-
 <template>
   <div class="demo-space-x">
     <!-- avatar -->
@@ -17,14 +13,14 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
       </template>
 
       <VAvatar>
-        <VImg :src="avatar1" />
+        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
       </VAvatar>
     </VBadge>
 
     <!-- icon -->
     <VBadge icon="mdi-lock-open-outline">
       <VAvatar>
-        <VImg :src="avatar1" />
+        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
       </VAvatar>
     </VBadge>
   </div>

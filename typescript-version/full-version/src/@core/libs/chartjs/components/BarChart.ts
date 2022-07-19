@@ -27,19 +27,19 @@ export default defineComponent({
     },
     styles: {
       type: Object as PropType<Partial<CSSStyleDeclaration>>,
-      default: () => {},
+      default: () => ({}),
     },
     plugins: {
       type: Array as PropType<PluginOptionsByType<'bar'>[]>,
-      default: () => [],
+      default: () => ([]),
     },
     chartData: {
       type: Object,
-      default: () => {},
+      default: () => ({}),
     },
     chartOptions: {
       type: Object,
-      default: () => {},
+      default: () => ({}),
     },
   },
   setup(props) {

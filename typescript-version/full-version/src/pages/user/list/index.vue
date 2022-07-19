@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { UserProperties } from '@/@fake-db/types'
-import { useUserListStore } from '@/views/demos/apps/user/useUserListStore'
+import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store

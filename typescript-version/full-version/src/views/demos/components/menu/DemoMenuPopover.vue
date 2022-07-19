@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-
 const menu = ref(false)
 </script>
 
@@ -20,7 +18,7 @@ const menu = ref(false)
     >
       <VList>
         <VListItem
-          :prepend-avatar="avatar1"
+          :prepend-avatar="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
           title="John Leider"
           subtitle="Founder of Vuetify"
         />

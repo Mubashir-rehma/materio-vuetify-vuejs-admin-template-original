@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import briefcase from '@/assets/images/cards/briefcase.png'
-import creditCard from '@/assets/images/cards/logo-credit-card-2.png'
-import masterCard from '@/assets/images/cards/logo-mastercard-small.png'
-
 const savedCards = [
   {
-    logo: masterCard,
+    logo: dynamicImgImport('@/assets/images/cards/logo-mastercard-small.png'),
     type: 'Credit card',
     number: '2566 xxxx xxxx 8908',
   },
   {
-    logo: creditCard,
+    logo: dynamicImgImport('@/assets/images/cards/logo-credit-card-2.png'),
     type: 'Credit card',
     number: '8990 xxxx xxxx 6852',
   },
@@ -20,22 +16,21 @@ const savedCards = [
 <template>
   <VCard>
     <!-- SECTION Card Header and Menu -->
-    <VCardHeader>
-      <VCardHeaderText>
-        <!-- 👉 Title -->
-        <VCardTitle>Upgrade Your Plan</VCardTitle>
-      </VCardHeaderText>
+    <VCardItem>
+      <!-- 👉 Title -->
+      <VCardTitle>Upgrade Your Plan</VCardTitle>
 
       <!-- 👉 menu -->
-
-      <VBtn
-        size="x-small"
-        variant="text"
-        icon="mdi-dots-vertical"
-        color="secondary"
-        class="me-n3"
-      />
-    </VCardHeader>
+      <template #append>
+        <VBtn
+          size="x-small"
+          variant="text"
+          icon="mdi-dots-vertical"
+          color="secondary"
+          class="me-n3"
+        />
+      </template>
+    </VCardItem>
     <!-- !SECTION -->
 
     <VCardText>
@@ -53,7 +48,7 @@ const savedCards = [
             start
             rounded
             :size="44"
-            :image="briefcase"
+            :image="dynamicImgImport('@/assets/images/cards/briefcase.png')"
             class="plan-details pa-2"
           />
           <!-- 👉 Title and subtitle -->

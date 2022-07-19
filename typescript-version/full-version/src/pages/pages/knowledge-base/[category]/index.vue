@@ -42,20 +42,19 @@ watch(kBSearchQuery, fetchKnowledgeBaseSubcategoryData, { immediate: true })
         >
           <VCard>
             <!-- 👉 title -->
-            <VCardHeader class="page-kbc-title">
-              <VCardHeaderText>
-                <VCardTitle>
-                  <VIcon
-                    :color="item.iconColor ? item.iconColor : '' "
-                    :size="24"
-                    class="me-3"
-                    :icon="item.icon"
-                  />
-
-                  <span class="text-truncate">{{ item.title }} ({{ item.questions.length }})</span>
-                </VCardTitle>
-              </VCardHeaderText>
-            </VCardHeader>
+            <VCardItem class="page-kbc-title">
+              <template #prepend>
+                <VIcon
+                  :color="item.iconColor ? item.iconColor : '' "
+                  :size="24"
+                  class="me-3"
+                  :icon="item.icon"
+                />
+              </template>
+              <VCardTitle class="text-truncate">
+                {{ item.title }} ({{ item.questions.length }})
+              </VCardTitle>
+            </VCardItem>
 
             <!-- 👉 Questions -->
             <VList>

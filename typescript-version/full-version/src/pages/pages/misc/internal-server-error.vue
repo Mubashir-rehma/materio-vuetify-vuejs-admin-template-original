@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import misc500 from '@/assets/images/pages/500.png'
-import tree from '@/assets/images/pages/tree-3.png'
 import ErrorHeader from '@core/components/ErrorHeader.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
@@ -18,7 +16,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
     <!-- 👉 Image -->
     <div class="misc-avatar w-100 text-center">
       <VImg
-        :src="misc500"
+        :src="dynamicImgImport('@/assets/images/pages/500.png')"
         alt="Coming Soon"
         :max-width="800"
         class="mx-auto"
@@ -33,7 +31,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <!-- 👉 Footer -->
     <VImg
-      :src="tree"
+      :src="dynamicImgImport('@/assets/images/pages/tree-3.png')"
       class="misc-footer-tree d-none d-md-block"
     />
 

@@ -40,7 +40,7 @@ const tabs = [
 
     <VWindow
       v-model="activeTab"
-      class="mt-5"
+      class="mt-5 disable-tab-transition"
     >
       <!-- Account -->
       <VWindowItem value="account">
@@ -68,7 +68,7 @@ const tabs = [
       </VWindowItem>
     </VWindow>
   </div>
-</template>Ō
+</template>
 
 <route lang="yaml">
 meta:

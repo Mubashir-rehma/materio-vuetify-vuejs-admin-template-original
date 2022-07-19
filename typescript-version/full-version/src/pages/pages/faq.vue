@@ -92,7 +92,10 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
         lg="9"
       >
         <!-- 👉 Windows -->
-        <VWindow v-model="activeTab">
+        <VWindow
+          v-model="activeTab"
+          class="disable-tab-transition"
+        >
           <VWindowItem
             v-for="faq in faqs"
             :key="faq.faqTitle"

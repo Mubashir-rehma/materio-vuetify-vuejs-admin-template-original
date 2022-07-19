@@ -163,3 +163,26 @@ h6,
 }
 
 // !SECTION
+
+/*
+  👉 Disable tab transition
+
+  This is for tabs where we don't have card wrapper to tabs and have multiple cards as tab content.
+
+  This class will disable transition and adds `overflow: unset` on `VWindow` to allow spreading shadow
+*/
+.disable-tab-transition {
+  overflow: unset !important;
+
+  .v-window__container {
+    block-size: auto !important;
+  }
+
+  .v-window-item:not(.v-window-item--active) {
+    display: none !important;
+  }
+
+  .v-window__container .v-window-item {
+    transform: none !important;
+  }
+}

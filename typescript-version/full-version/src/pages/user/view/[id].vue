@@ -59,7 +59,7 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
 
       <VWindow
         v-model="userTab"
-        class="mt-6"
+        class="mt-6 disable-tab-transition"
       >
         <VWindowItem>
           <UserTabOverview />

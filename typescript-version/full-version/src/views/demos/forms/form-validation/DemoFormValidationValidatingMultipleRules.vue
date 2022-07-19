@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { VForm } from 'vuetify/components'
-import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@core/utils/validators'
+import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@validators'
 
 const name = ref('')
 const email = ref('')

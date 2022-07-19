@@ -3,6 +3,8 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AccountSettingsAccount: typeof import('./src/views/demos/pages/account-settings/AccountSettingsAccount.vue')['default']
@@ -312,5 +314,3 @@ declare module '@vue/runtime-core' {
     UserUpgradePlanDialog: typeof import('./src/@core/components/UserUpgradePlanDialog.vue')['default']
   }
 }
-
-export {}

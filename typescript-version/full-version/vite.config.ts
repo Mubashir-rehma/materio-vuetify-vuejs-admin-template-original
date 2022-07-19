@@ -79,6 +79,7 @@ export default defineConfig({
       ],
       include: [
         './src/navigation/**',
+        './**/*.vue',
       ],
     }),
     Pages({}),

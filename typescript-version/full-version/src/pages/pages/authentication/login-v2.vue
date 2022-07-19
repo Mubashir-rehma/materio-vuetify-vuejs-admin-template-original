@@ -18,12 +18,17 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
 <template>
   <div>
     <!-- Title and Logo -->
-    <div class="auth-logo d-flex align-center">
-      <img
-        :src="themeConfig.app.logo"
-        class="me-3"
-      >
-      <span class="font-weight-semibold text-h5">{{ themeConfig.app.title }}</span>
+    <div class="auth-logo d-flex align-start gap-x-3">
+      <!-- eslint-disable vue/no-v-html -->
+      <div
+        class="text-primary d-flex"
+        v-html="themeConfig.app.logo"
+      />
+      <!-- eslint-enable vue/no-v-html -->
+
+      <h1 class="font-weight-semibold leading-normal text-2xl text-uppercase">
+        {{ themeConfig.app.title }}
+      </h1>
     </div>
 
     <VRow

@@ -18,11 +18,14 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
       <VCardItem>
         <template #prepend>
           <div class="d-flex">
-            <img :src="themeConfig.app.logo">
+            <div
+              class="text-primary"
+              v-html="themeConfig.app.logo"
+            />
           </div>
         </template>
 
-        <VCardTitle class="font-weight-semibold text-h5">
+        <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
           {{ themeConfig.app.title }}
         </VCardTitle>
       </VCardItem>

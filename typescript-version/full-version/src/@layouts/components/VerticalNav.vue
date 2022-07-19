@@ -68,21 +68,26 @@ watch(() => route.name, () => {
     <!-- 👉 Header -->
     <div class="nav-header">
       <slot name="nav-header">
-        <!-- 👉 App logo -->
-        <!-- eslint-disable vue/no-v-html -->
-        <div
-          class="app-logo text-primary"
-          v-html="config.app.logo"
-        />
-        <!-- eslint-disable vue/no-v-html -->
+        <RouterLink
+          to="/"
+          class="auth-logo d-flex align-center gap-x-3 app-title-wrapper"
+        >
+          <!-- eslint-disable vue/no-v-html -->
+          <div
+            class="text-primary d-flex"
+            v-html="config.app.logo"
+          />
+          <!-- eslint-enable vue/no-v-html -->
 
-        <!-- 👉 App title -->
-        <Transition name="vertical-nav-app-title">
-          <span
-            v-show="!hideTitleAndIcon"
-            class="app-title"
-          >{{ config.app.title }}</span>
-        </Transition>
+          <Transition name="vertical-nav-app-title">
+            <h1
+              v-show="!hideTitleAndIcon"
+              class="font-weight-semibold leading-normal text-xl text-uppercase"
+            >
+              {{ config.app.title }}
+            </h1>
+          </Transition>
+        </RouterLink>
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
         <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
@@ -150,7 +155,7 @@ watch(() => route.name, () => {
     }
   }
 
-  .app-title {
+  .app-title-wrapper {
     margin-inline-end: auto;
   }
 

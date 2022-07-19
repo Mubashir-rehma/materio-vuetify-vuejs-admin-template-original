@@ -86,7 +86,7 @@ const logout = () => {
           <VDivider />
 
           <!-- 👉 Profile -->
-          <VListItem :to="{ name: 'user-view' }">
+          <VListItem :to="{ name: 'user-view-id', params: { id: 21 } }">
             <VListItemIcon
               class="me-2"
               icon="mdi-account-outline"

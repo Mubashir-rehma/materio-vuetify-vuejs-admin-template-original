@@ -25,18 +25,21 @@ const { layoutAttrs } = useSkins()
   >
     <!-- 👉 navbar -->
     <template #navbar>
-      <div class="d-flex align-items-center">
-        <!-- 👉 App logo -->
+      <RouterLink
+        to="/"
+        class="auth-logo d-flex align-start gap-x-3"
+      >
         <!-- eslint-disable vue/no-v-html -->
         <div
-          class="app-logo text-primary mr-3"
+          class="text-primary d-flex"
           v-html="themeConfig.app.logo"
         />
-        <!-- eslint-disable vue/no-v-html -->
-        <h1 class="app-title text-high-emphasis text-xl text-uppercase font-weight-semibold">
+        <!-- eslint-enable vue/no-v-html -->
+
+        <h1 class="font-weight-semibold leading-normal text-xl text-uppercase">
           {{ themeConfig.app.title }}
         </h1>
-      </div>
+      </RouterLink>
       <VSpacer />
       <NavBarI18n class="me-2" />
       <NavbarThemeSwitcher class="me-2" />

@@ -35,7 +35,7 @@ const clickMe = () => {
     </template>
 
     <!-- AppendInner -->
-    <template #appendInner>
+    <template #append-inner>
       <VFadeTransition leave-absolute>
         <VProgressCircular
           v-if="loading"
@@ -43,14 +43,10 @@ const clickMe = () => {
           color="info"
           indeterminate
         />
-        <img
-          v-else
-          :src="themeConfig.app.logo"
-          max-height="30px"
-          max-width="30px"
-          alt="logo"
-          contain
-        >
+        <div
+          class="text-primary"
+          v-html="themeConfig.app.logo"
+        />
       </VFadeTransition>
     </template>
 

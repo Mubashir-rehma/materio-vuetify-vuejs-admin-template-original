@@ -50,15 +50,13 @@ const removeProduct = (id: number) => {
       <div class="mb-6">
         <div class="d-flex align-center mb-6">
           <!-- 👉 Logo -->
-          <VImg
-            :src="themeConfig.app.logo"
-            max-height="30px"
-            max-width="30px"
-            class="me-3"
+          <div
+            class="text-primary me-3"
+            v-html="themeConfig.app.logo"
           />
 
           <!-- 👉 Title -->
-          <span class="font-weight-bold text-xl">
+          <span class="font-weight-bold text-xl text-uppercase">
             {{ themeConfig.app.title }}
           </span>
         </div>

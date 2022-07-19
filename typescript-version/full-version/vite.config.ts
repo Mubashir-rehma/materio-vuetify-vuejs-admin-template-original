@@ -77,6 +77,9 @@ export default defineConfig({
           // },
         }),
       ],
+      include: [
+        './src/navigation/**',
+      ],
     }),
     Pages({}),
     Layouts(),

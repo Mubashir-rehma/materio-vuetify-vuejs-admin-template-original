@@ -138,6 +138,22 @@ router.afterEach(() => {
     //   @extend %layout-navbar-hidden;
     // }
   }
+
+  &.layout-nav-type-horizontal {
+    // 👉 Content height fixed
+    &.layout-content-height-fixed {
+      max-block-size: calc(var(--vh) * 100);
+
+      .layout-page-content {
+        overflow: hidden;
+
+        > :first-child {
+          max-block-size: 100%;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
 }
 
 // 👉 Horizontal nav nav

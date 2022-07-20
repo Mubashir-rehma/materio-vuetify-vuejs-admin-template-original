@@ -7,7 +7,6 @@ const avatars = [
 ]
 
 const isCardDetailsVisible = ref(false)
-const rating = ref(5)
 </script>
 
 <template>
@@ -107,6 +106,7 @@ const rating = ref(5)
 
           <VBtn
             icon
+            size="small"
             @click="isCardDetailsVisible = !isCardDetailsVisible"
           >
             <VIcon :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
@@ -185,7 +185,7 @@ const rating = ref(5)
 
             <VCardText class="d-flex align-center flex-wrap body-1">
               <VRating
-                v-model="rating"
+                :model-value="5"
                 readonly
                 class="me-3"
                 density="compact"
@@ -337,7 +337,7 @@ const rating = ref(5)
                 <sub class="text-h5">USD</sub>
               </p>
 
-              <p class="text-subtitle-2">
+              <p class="text-sm">
                 5 Tips For Offshore <br> Software Development
               </p>
 
@@ -384,10 +384,12 @@ const rating = ref(5)
       <VCard title="The Best Answers">
         <VCardText class="d-flex align-center flex-wrap">
           <VRating
-            v-model="rating"
+            :model-value="5"
             readonly
+            density="compact"
+            class="me-3"
           />
-          <span class="ms-3 text-subtitle-2">5 Star | 98 reviews</span>
+          <span class="text-subtitle-2">5 Star | 98 reviews</span>
         </VCardText>
 
         <VCardText>

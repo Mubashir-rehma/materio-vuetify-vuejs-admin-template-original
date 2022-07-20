@@ -77,57 +77,58 @@ const formateAmount = (amount: number) => {
 
       <!-- 👉 menu -->
       <template #append>
-        <VBtn
-          size="x-small"
-          variant="text"
-          icon="mdi-dots-vertical"
-          color="secondary"
-          class="me-n3"
-        />
+        <div class="me-n3">
+          <VBtn
+            size="x-small"
+            variant="text"
+            icon="mdi-dots-vertical"
+            color="secondary"
+          />
+        </div>
       </template>
     </VCardItem>
     <!-- !SECTION -->
 
     <!-- SECTION Transactions List -->
-    <VList
-      class="pt-0"
-      lines="two"
-    >
-      <VListItem
-        v-for="transaction in transactions"
-        :key="transaction.for"
+    <VCardText>
+      <VList
+        class="pt-0 card-list"
+        lines="two"
       >
-        <!-- 👉 Avatar -->
-        <VListItemAvatar
-          rounded
-          start
-          :class="`v-avatar-light-bg px-2 text-${transactionsColors[transaction.gateway]}`"
+        <VListItem
+          v-for="transaction in transactions"
+          :key="transaction.for"
         >
-          <VImg
-            height="20"
-            :src="transaction.img"
-          />
-        </VListItemAvatar>
-
-        <!-- 👉 Title and subtitle  -->
-        <VListItemHeader>
-          <VListItemTitle>{{ transaction.gateway }}</VListItemTitle>
-          <VListItemSubtitle class="text-caption">
-            {{ transaction.for }}
-          </VListItemSubtitle>
-        </VListItemHeader>
-
-        <!-- 👉 Amounts -->
-        <VListItemAction class="font-weight-semibold">
-          <span>{{ formateAmount(transaction.amount) }}</span>
-          <VIcon
-            :size="20"
-            :color="Math.sign(transaction.amount) === 1 ? 'success' : 'error'"
-            :icon="Math.sign(transaction.amount) === 1 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-          />
-        </VListItemAction>
-      </VListItem>
-    </VList>
+          <!-- 👉 Avatar -->
+          <VListItemAvatar
+            rounded
+            start
+            :class="`v-avatar-light-bg px-2 text-${transactionsColors[transaction.gateway]}`"
+          >
+            <VImg
+              height="20"
+              :src="transaction.img"
+            />
+          </VListItemAvatar>
+          <!-- 👉 Title and subtitle  -->
+          <VListItemHeader>
+            <VListItemTitle>{{ transaction.gateway }}</VListItemTitle>
+            <VListItemSubtitle class="text-caption">
+              {{ transaction.for }}
+            </VListItemSubtitle>
+          </VListItemHeader>
+          <!-- 👉 Amounts -->
+          <VListItemAction class="font-weight-semibold">
+            <span>{{ formateAmount(transaction.amount) }}</span>
+            <VIcon
+              :size="20"
+              :color="Math.sign(transaction.amount) === 1 ? 'success' : 'error'"
+              :icon="Math.sign(transaction.amount) === 1 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+            />
+          </VListItemAction>
+        </VListItem>
+      </VList>
+    </VCardText>
     <!-- !SECTION -->
   </VCard>
 </template>

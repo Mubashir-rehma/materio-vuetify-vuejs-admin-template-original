@@ -47,7 +47,6 @@ watch(kBSearchQuery, fetchKnowledgeBaseSubcategoryData, { immediate: true })
                 <VIcon
                   :color="item.iconColor ? item.iconColor : '' "
                   :size="24"
-                  class="me-3"
                   :icon="item.icon"
                 />
               </template>

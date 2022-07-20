@@ -22,13 +22,14 @@ const savedCards = [
 
       <!-- 👉 menu -->
       <template #append>
-        <VBtn
-          size="x-small"
-          variant="text"
-          icon="mdi-dots-vertical"
-          color="secondary"
-          class="me-n3"
-        />
+        <div class="me-n3">
+          <VBtn
+            size="x-small"
+            variant="text"
+            icon="mdi-dots-vertical"
+            color="secondary"
+          />
+        </div>
       </template>
     </VCardItem>
     <!-- !SECTION -->
@@ -37,44 +38,34 @@ const savedCards = [
       <span class="text-caption">Please make the payment to start enjoying all the features of our premium plan as soon as possible.</span>
 
       <!-- SECTION Upgrade plan banner -->
-      <VList class="plan-upgrade-banner">
-        <VListItem
-          active-color="primary"
-          active
+      <div class="plan-upgrade-banner pa-3 d-flex bg-light-primary rounded align-center">
+        <VAvatar
           rounded
+          size="40"
+          class="plan-details me-2 border-opacity-100 border-primary"
         >
-          <!-- 👉 Avatar -->
-          <VListItemAvatar
-            start
-            rounded
-            :size="44"
-            :image="dynamicImgImport('@/assets/images/cards/briefcase.png')"
-            class="plan-details pa-2"
+          <VImg
+            :src="dynamicImgImport('@/assets/images/cards/briefcase.png')"
+            alt="briefcase"
+            width="23"
+            height="20"
           />
-          <!-- 👉 Title and subtitle -->
-          <VListItemHeader>
-            <VListItemTitle class="text-body-2 font-weight-medium">
-              Platinum
-            </VListItemTitle>
-            <VListItemSubtitle class="text-caption font-weight-medium">
-              Upgrade Plan
-            </VListItemSubtitle>
-          </VListItemHeader>
-
-          <!-- 👉 Actions -->
-          <VListItemAction>
-            <sup class="text-caption text-secondary">$</sup>
-            <span class="text-h5 font-weight-semibold">5250</span>
-            <sub class="text-secondary">/year</sub>
-          </VListItemAction>
-        </VListItem>
-      </VList>
+        </VAvatar>
+        <div class="d-flex flex-column">
+          <span class="text-sm font-weight-medium">Platinum</span>
+          <span class="text-primary text-xs font-weight-medium">Upgrade Plan</span>
+        </div>
+        <VSpacer />
+        <div class="d-flex align-center">
+          <sup class="text-caption text-secondary">$</sup>
+          <span class="text-h5 font-weight-semibold">5250</span>
+          <sub class="text-secondary">/Year</sub>
+        </div>
+      </div>
       <!-- !SECTION -->
 
       <!-- SECTION Payment Details -->
-      <VList
-        class="mx-n4 pt-0"
-      >
+      <VList class="card-list">
         <VListSubheader>
           Payment details
         </VListSubheader>

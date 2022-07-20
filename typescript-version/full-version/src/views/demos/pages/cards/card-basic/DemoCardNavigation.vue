@@ -22,6 +22,8 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
           </VTab>
         </VTabs>
 
+        <VDivider />
+
         <!-- tabs content -->
         <VWindow v-model="navigationTab">
           <VWindowItem
@@ -62,6 +64,8 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
             {{ item }}
           </VTab>
         </VTabs>
+
+        <VDivider />
 
         <!-- tabs content -->
         <VWindow v-model="navigationTab2">

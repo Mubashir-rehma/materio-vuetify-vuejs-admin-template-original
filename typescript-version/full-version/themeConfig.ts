@@ -10,7 +10,7 @@ import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarTy
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
-    title: 'Sneat',
+    title: 'Materio',
     logo,
     contentWidth: EnumContentWidth.Boxed,
     contentLayoutNav: EnumAppContentLayoutNav.Vertical,

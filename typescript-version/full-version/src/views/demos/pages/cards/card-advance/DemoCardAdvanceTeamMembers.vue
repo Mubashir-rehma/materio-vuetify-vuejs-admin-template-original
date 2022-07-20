@@ -104,13 +104,14 @@ const teamMembers = [
 
       <!-- 👉 menu -->
       <template #append>
-        <VBtn
-          size="x-small"
-          variant="text"
-          icon="mdi-dots-vertical"
-          color="secondary"
-          class="me-n3"
-        />
+        <div class="me-n3">
+          <VBtn
+            size="x-small"
+            variant="text"
+            icon="mdi-dots-vertical"
+            color="secondary"
+          />
+        </div>
       </template>
     </VCardItem>
     <!-- !SECTION -->

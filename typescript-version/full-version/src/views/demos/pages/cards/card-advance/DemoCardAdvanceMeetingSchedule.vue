@@ -69,58 +69,59 @@ const meetingTypeUiColors: UiColors = {
 
       <!-- 👉 menu -->
       <template #append>
-        <VBtn
-          size="x-small"
-          variant="text"
-          icon="mdi-dots-vertical"
-          color="secondary"
-          class="me-n3"
-        />
+        <div class="me-n3">
+          <VBtn
+            size="x-small"
+            variant="text"
+            icon="mdi-dots-vertical"
+            color="secondary"
+          />
+        </div>
       </template>
     </VCardItem>
     <!-- !SECTION -->
 
     <!-- SECTION Meting Schedule -->
-    <VList
-      class="mx-1 pt-0"
-      lines="two"
-    >
-      <VListItem
-        v-for="meeting in meetingSchedules"
-        :key="meeting.type"
+    <VCardText>
+      <VList
+        class="card-list"
+        lines="two"
       >
-        <!-- 👉 Avatar -->
-        <VListItemAvatar
-          start
-          :image="meeting.profile"
-        />
-
-        <!-- 👉 Title and Subtitle -->
-        <VListItemHeader>
-          <VListItemTitle class="text-body-2 font-weight-medium">
-            {{ meeting.with }}
-          </VListItemTitle>
-          <VListItemSubtitle class="text-caption">
-            <VIcon
-              start
-              size="13"
-              icon="mdi-calendar-blank"
-            />
-            <span>{{ meeting.dateTime }}</span>
-          </VListItemSubtitle>
-        </VListItemHeader>
-
-        <!-- 👉 Business Types -->
-        <VListItemAction>
-          <VChip
-            size="small"
-            :color="meetingTypeUiColors[meeting.type]"
-          >
-            {{ meeting.type }}
-          </VChip>
-        </VListItemAction>
-      </VListItem>
-    </VList>
+        <VListItem
+          v-for="meeting in meetingSchedules"
+          :key="meeting.type"
+        >
+          <!-- 👉 Avatar -->
+          <VListItemAvatar
+            start
+            :image="meeting.profile"
+          />
+          <!-- 👉 Title and Subtitle -->
+          <VListItemHeader>
+            <VListItemTitle class="text-body-2 font-weight-medium">
+              {{ meeting.with }}
+            </VListItemTitle>
+            <VListItemSubtitle class="text-caption">
+              <VIcon
+                start
+                size="13"
+                icon="mdi-calendar-blank"
+              />
+              <span>{{ meeting.dateTime }}</span>
+            </VListItemSubtitle>
+          </VListItemHeader>
+          <!-- 👉 Business Types -->
+          <VListItemAction>
+            <VChip
+              size="small"
+              :color="meetingTypeUiColors[meeting.type]"
+            >
+              {{ meeting.type }}
+            </VChip>
+          </VListItemAction>
+        </VListItem>
+      </VList>
+    </VCardText>
     <!-- !SECTION -->
   </VCard>
 </template>

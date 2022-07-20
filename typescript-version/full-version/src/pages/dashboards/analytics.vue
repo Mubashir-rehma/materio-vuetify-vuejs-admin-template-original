@@ -8,3 +8,8 @@
     </p>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  layoutWrapperClasses: layout-content-height-fixed
+</route>

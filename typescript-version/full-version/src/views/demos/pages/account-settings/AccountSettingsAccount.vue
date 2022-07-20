@@ -323,17 +323,6 @@ const currencies = [
       <!-- 👉 Delete Account -->
       <VCard title="Delete Account">
         <VCardText>
-          <!-- 👉 Alert Account delete -->
-          <VAlert
-            color="warning"
-            variant="tonal"
-          >
-            <p class="text-base font-weight-medium mb-1">
-              Are you sure you want to delete your account?
-            </p>
-            <span>Once you delete your account, there is no going back. Please be certain.</span>
-          </VAlert>
-
           <!-- 👉 Checkbox and Button  -->
           <VCheckbox
             v-model="isAccountDeactivated"
@@ -357,6 +346,6 @@ const currencies = [
   <!-- Confirm Dialog -->
   <ConfirmDialog
     v-model:isDialogVisible="isConfirmDialogOpen"
-    confirmation-msg="Are you sure you want to delete your account?"
+    confirmation-msg="Are you sure you want to deactivate your account?"
   />
 </template>

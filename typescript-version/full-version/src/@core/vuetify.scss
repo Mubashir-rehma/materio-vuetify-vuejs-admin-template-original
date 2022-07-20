@@ -186,3 +186,27 @@ h6,
     transform: none !important;
   }
 }
+
+/*
+  👉 Remove list spacing inside card
+
+  This is because card title gets padding of 20px and list item have padding of 16px. Moreover, list container have padding-bottom as well.
+*/
+
+.card-list {
+  &.v-list {
+    padding-block-end: 0;
+  }
+
+  .v-list-item {
+    min-block-size: unset;
+    padding-block-end: 0 !important;
+    padding-block-start: 0 !important;
+    padding-inline-end: 0 !important;
+    padding-inline-start: 0 !important;
+
+    &:not(:last-child) {
+      padding-block-end: 20px !important;
+    }
+  }
+}

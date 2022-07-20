@@ -154,21 +154,6 @@ export default createVuetify({
           'on-surface': '#E8E8F1',
         },
       },
-      retro: {
-        dark: false,
-        colors: {
-          'primary': localStorage.getItem(`${themeConfig.app.title}-retroThemePrimaryColor`) || '#D6AF5F',
-          'on-primary': '#fff',
-          'secondary': '#677492',
-          'on-secondary': '#fff',
-          'success': '#40c057',
-          'info': '#2f8be6',
-          'warning': '#f77e17',
-          'error': '#f55252',
-          'on-background': '#0D0C22',
-          'on-surface': '#0D0C22',
-        },
-      },
     },
   },
 })

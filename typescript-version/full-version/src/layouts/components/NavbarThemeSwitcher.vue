@@ -10,10 +10,6 @@ const themes: ThemeSwitcherTheme[] = [
     name: 'dark',
     icon: 'mdi-weather-night',
   },
-  {
-    name: 'retro',
-    icon: 'mdi-gamepad-variant-outline',
-  },
 ]
 </script>
 

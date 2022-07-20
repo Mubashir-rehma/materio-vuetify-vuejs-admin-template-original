@@ -46,11 +46,7 @@ const setPrimaryColor = (color: string) => {
   ℹ️ This will return static color for first indexed color based on theme
   If we don't make first (primary) color as static then when another color is selected then we will have two theme colors with same hex codes and it will show two check marks
 */
-const getBoxColor = (color: string, index: number) => {
-  if (index)
-    return color
-  else return vuetifyTheme.name.value === 'retro' ? '#D6AF5F' : '#a169ff'
-}
+const getBoxColor = (color: string, index: number) => index ? color : '#a169ff'
 
 const perfectScrollbarSettings = {
   maxScrollbarLength: 60,

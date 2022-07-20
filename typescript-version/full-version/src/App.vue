@@ -6,11 +6,30 @@ const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme: syncConfigThemeWithVu
 syncInitialLoaderTheme()
 
 syncConfigThemeWithVuetifyTheme()
+
+// ℹ️ TODO: Remove once vuetify provides an API to change RTL classes in VApp
+const vApp = ref()
+const changeVuetiyDirClasses = () => {
+  const elVApp: HTMLDivElement = vApp.value.$el
+
+  if (isAppRtl.value) {
+    elVApp.classList.remove('v-locale--is-ltr')
+    elVApp.classList.add('v-locale--is-rtl')
+  }
+  else {
+    elVApp.classList.add('v-locale--is-ltr')
+    elVApp.classList.remove('v-locale--is-rtl')
+  }
+}
+watch(isAppRtl, changeVuetiyDirClasses)
 </script>
 
 <template>
   <!-- TODO: Remove this and use vuetify API for Adding RTL initial value -->
-  <VApp :style="{ direction: isAppRtl ? 'rtl' : 'ltr' }">
+  <VApp
+    ref="vApp"
+    :style="{ direction: isAppRtl ? 'rtl' : 'ltr' }"
+  >
     <VMain>
       <RouterView />
     </VMain>

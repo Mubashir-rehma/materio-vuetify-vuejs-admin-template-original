@@ -134,12 +134,12 @@ const statisticsWithImages = [
       <CardStatisticsHorizontal v-bind="statistics" />
     </VCol>
 
-    <!-- 👉 Statistics Card  -->
+    <!-- 👉 Transition Card  -->
     <VCol
       cols="12"
       md="8"
     >
-      <DemoCardStatistics />
+      <DemoCardTransactions />
     </VCol>
 
     <!-- 👉 Blank Column for make a blank space  -->

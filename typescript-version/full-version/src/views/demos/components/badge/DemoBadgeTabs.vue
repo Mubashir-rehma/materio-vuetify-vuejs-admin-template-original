@@ -16,7 +16,10 @@ const tabs = [
 </script>
 
 <template>
-  <VTabs grow>
+  <VTabs
+    grow
+    show-arrows
+  >
     <VTab
       v-for="tab in tabs"
       :key="tab.content"

@@ -1,4 +1,4 @@
-export const tile = { ts: '', js: '' }
+export const rounded = { ts: '', js: '' }
 
 export const icons = { ts: '', js: '' }
 

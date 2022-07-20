@@ -27,6 +27,7 @@ const isSnackbarScrollReverseVisible = ref(false)
     <VSnackbar
       v-model="isSnackbarScaleVisible"
       transition="scale-transition"
+      location="bottom end"
     >
       I'm a scale transition snackbar.
     </VSnackbar>

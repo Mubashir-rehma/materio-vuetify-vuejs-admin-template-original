@@ -10,32 +10,40 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
     stacked
   >
     <VTab value="tab-1">
-      <VIcon>mdi-phone</VIcon>
-      Recents
+      <VIcon
+        icon="mdi-phone"
+        class="mb-2"
+      />
+      <span>Recent</span>
     </VTab>
 
     <VTab value="tab-2">
-      <VIcon>mdi-heart-outline</VIcon>
-      Favorites
+      <VIcon
+        icon="mdi-heart-outline"
+        class="mb-2"
+      />
+      <span>Favorites</span>
     </VTab>
 
     <VTab value="tab-3">
-      <VIcon>mdi-account-box-outline</VIcon>
-      Nearby
+      <VIcon
+        icon="mdi-account-box-outline"
+        class="mb-2"
+      />
+      <span>Nearby</span>
     </VTab>
   </VTabs>
 
-  <VWindow v-model="currentTab">
+  <VWindow
+    v-model="currentTab"
+    class="mt-5"
+  >
     <VWindowItem
       v-for="i in 3"
       :key="i"
       :value="`tab-${i}`"
     >
-      <VCard>
-        <VCardText class="pb-0">
-          {{ tabItemText }}
-        </VCardText>
-      </VCard>
+      {{ tabItemText }}
     </VWindowItem>
   </VWindow>
 </template>

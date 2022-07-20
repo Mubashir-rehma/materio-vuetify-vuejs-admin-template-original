@@ -40,14 +40,14 @@ import * as demoCode from '@/views/demos/components/menu/demoCodeMenu'
       cols="12"
       md="6"
     >
-      <!-- 👉 Anchor -->
+      <!-- 👉 Location -->
       <AppCardCode
-        title="Anchor"
-        :code="demoCode.anchor"
+        title="Location"
+        :code="demoCode.location"
       >
-        <p>Menu can be offset relative to the activator by using the <code>anchor</code> prop.</p>
+        <p>Menu can be offset relative to the activator by using the <code>location</code> prop.</p>
 
-        <DemoMenuAnchor />
+        <DemoMenuLocation />
       </AppCardCode>
     </VCol>
 

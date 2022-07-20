@@ -19,13 +19,21 @@ export default createVuetify({
       // set v-btn default color to primary
       color: 'primary',
     },
+    VPagination: {
+      color: 'primary',
+    },
     VTabs: {
       // set v-tabs default color to primary
       color: 'primary',
     },
     VTooltip: {
-      // set v-tooltip default anchor to top
-      anchor: 'top',
+      // set v-tooltip default location to top
+      location: 'top',
+    },
+    VList: {
+      VListItem: {
+        activeColor: 'primary',
+      },
     },
     VCheckbox: {
       // set v-checkbox default color to primary

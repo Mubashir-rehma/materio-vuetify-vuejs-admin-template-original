@@ -29,15 +29,16 @@ const nextTab = () => {
     </VTab>
   </VTabs>
 
-  <VWindow v-model="currentTab">
+  <VWindow
+    v-model="currentTab"
+    class="mt-5"
+  >
     <VWindowItem
       v-for="item in items.length"
       :key="item"
       :value="item"
     >
-      <VCard>
-        <VCardText>{{ tabItemText }}</VCardText>
-      </VCard>
+      {{ tabItemText }}
     </VWindowItem>
   </VWindow>
 

@@ -31,8 +31,9 @@ const isCodeShown = ref(false)
       <VCardTitle>{{ props.title }}</VCardTitle>
       <template #append>
         <VBtn
-          :color="isCodeShown ? 'primary' : 'default'"
           icon
+          size="x-small"
+          :color="isCodeShown ? 'primary' : 'default'"
           variant="text"
           :class="isCodeShown ? '' : 'text-disabled'"
           @click="isCodeShown = !isCodeShown"

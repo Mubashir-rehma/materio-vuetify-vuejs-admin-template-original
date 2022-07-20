@@ -18,15 +18,16 @@ const tabItemText = 'hortbread chocolate bar marshmallow bear claw tiramisu choc
     </VTab>
   </VTabs>
 
-  <VWindow v-model="currentTab">
+  <VWindow
+    v-model="currentTab"
+    class="mt-6"
+  >
     <VWindowItem
       v-for="item in items"
       :key="item"
       :value="item"
     >
-      <VCard>
-        <VCardText>{{ tabItemText }}</VCardText>
-      </VCard>
+      {{ tabItemText }}
     </VWindowItem>
   </VWindow>
 </template>

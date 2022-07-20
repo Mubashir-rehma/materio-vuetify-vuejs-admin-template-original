@@ -4,7 +4,7 @@ export const delayOnHover = { ts: '', js: '' }
 
 export const tooltipOnVariousElements = { ts: '', js: '' }
 
-export const anchor = { ts: '', js: '' }
+export const location = { ts: '', js: '' }
 
 export const events = { ts: '', js: '' }
 

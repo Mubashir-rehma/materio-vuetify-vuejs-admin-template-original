@@ -70,7 +70,7 @@ const iconsList = [
 
         <!-- tooltips -->
         <VTooltip
-          anchor="top"
+          location="top"
           activator="parent"
         >
           {{ icon }}

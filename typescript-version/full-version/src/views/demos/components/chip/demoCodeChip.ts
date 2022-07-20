@@ -13,3 +13,5 @@ export const label = { ts: '', js: '' }
 export const outlined = { ts: '', js: '' }
 
 export const expandable = { ts: '', js: '' }
+
+export const withAvatar = { ts: '', js: '' }

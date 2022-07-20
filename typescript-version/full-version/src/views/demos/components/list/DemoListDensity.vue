@@ -8,21 +8,18 @@ const items = [
   'Candy fruitcake bonbon sesame snaps dessert',
   'Candy wafer tiramisu sugar plum sweet.',
   'Toffee gingerbread muffin macaroon cotton candy bonbon lollipop.',
-  'Chocolate powder macaroon soufflé cupcake bear claw tart.',
-  'Danish candy candy danish dessert gummi bears cupcake marshmallow.',
 ]
 </script>
 
 <template>
   <VList density="compact">
-    <VListItemGroup>
-      <VListItem
-        v-for="(item, i) in items"
-        :key="i"
-        :value="item"
-      >
-        <VListItemTitle v-text="item" />
-      </VListItem>
-    </VListItemGroup>
+    <VListItem
+      v-for="(item, i) in items"
+      :key="i"
+      :value="item"
+    >
+      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+      <VListItemTitle v-text="item" />
+    </VListItem>
   </VList>
 </template>

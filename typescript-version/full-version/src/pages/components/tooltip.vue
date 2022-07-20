@@ -5,14 +5,14 @@ import * as demoCode from '@/views/demos/components/tooltip/demoCodeTooltip'
 <template>
   <VRow>
     <VCol cols="12">
-      <!-- 👉 Anchor -->
+      <!-- 👉 Location -->
       <AppCardCode
-        title="Anchor"
-        :code="demoCode.anchor"
+        title="Location"
+        :code="demoCode.location"
       >
-        <p>Use the <code>anchor</code> prop to specify on which side of the element the tooltip should show</p>
+        <p>Use the <code>location</code> prop to specify on which side of the element the tooltip should show</p>
 
-        <DemoTooltipAnchor />
+        <DemoTooltipLocation />
       </AppCardCode>
     </VCol>
 

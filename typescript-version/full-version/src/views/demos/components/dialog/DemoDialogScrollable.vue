@@ -38,27 +38,30 @@ const isDialogVisible = ref(false)
     </template>
 
     <!-- Dialog Content -->
-    <VCard
-      title="Select Country"
-      max-height="400px"
-    >
+    <VCard>
+      <VCardItem class="pb-3">
+        <VCardTitle>Select Country</VCardTitle>
+      </VCardItem>
+
       <VDivider />
-      <VCardText>
-        <VRadioGroup v-model="selectedCountry">
+      <VCardText style="height: 300px;">
+        <VRadioGroup
+          v-model="selectedCountry"
+          :inline="false"
+        >
           <VRadio
             v-for="country in countryList"
             :key="country.label"
             :label="country.label"
             :value="country.value"
             color="primary"
-            class="input-control-auto-height"
           />
         </VRadioGroup>
       </VCardText>
 
       <VDivider />
 
-      <VCardActions>
+      <VCardActions class="pt-3">
         <VSpacer />
         <VBtn
           color="error"

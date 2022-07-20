@@ -21,18 +21,20 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
     <!-- Triangle Background -->
     <VImg
       :src="triangleBg"
-      class="triangle-bg"
+      class="triangle-bg flip-in-rtl"
     />
 
     <!-- Trophy -->
     <VImg
       :src="dynamicImgImport('@/assets/images/cards/pose-m-9.png')"
-      class="illustration"
+      class="illustration flip-in-rtl"
     />
   </VCard>
 </template>
 
 <style lang="scss">
+@use "@layouts/styles/mixins" as layoutsMixins;
+
 .triangle-bg {
   position: absolute;
   inline-size: 10.375rem;
@@ -45,5 +47,12 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
   inline-size: 3rem;
   inset-block-end: 1rem;
   inset-inline-end: 3rem;
+}
+
+// for rtl only
+.flip-in-rtl {
+  @include layoutsMixins.rtl {
+    transform: scaleX(-1);
+  }
 }
 </style>

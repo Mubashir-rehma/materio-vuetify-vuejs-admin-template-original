@@ -24,7 +24,7 @@ const clickMe = () => {
   >
     <!-- Prepend -->
     <template #prepend>
-      <VTooltip anchor="bottom">
+      <VTooltip location="bottom">
         <template #activator="{ props }">
           <VIcon v-bind="props">
             mdi-help-circle-outline

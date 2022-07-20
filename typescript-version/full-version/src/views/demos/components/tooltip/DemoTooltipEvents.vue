@@ -2,9 +2,10 @@
   <div class="demo-space-x">
     <!-- open on hover -->
     <VBtn variant="outlined">
-      <span>Open On Hover</span> <VTooltip
+      <span>Open On Hover</span>
+      <VTooltip
         activator="parent"
-        anchor="top"
+        location="top"
       >
         Open On Hover
       </VTooltip>
@@ -20,7 +21,7 @@
       <VTooltip
         open-on-click
         :open-on-hover="false"
-        anchor="top"
+        location="top"
         activator="parent"
       >
         Open On click
@@ -29,9 +30,10 @@
 
     <!-- open on focus -->
     <VBtn variant="outlined">
-      <span>Open On Hover + Focus</span> <VTooltip
+      <span>Open On Hover + Focus</span>
+      <VTooltip
         open-on-focus
-        anchor="top"
+        location="top"
         activator="parent"
       >
         Open On Hover + Focus

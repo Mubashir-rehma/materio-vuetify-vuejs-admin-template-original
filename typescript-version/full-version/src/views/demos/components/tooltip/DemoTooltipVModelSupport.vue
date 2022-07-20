@@ -10,7 +10,7 @@ const isTooltipVisible = ref(false)
 
     <VTooltip
       :model-value="isTooltipVisible"
-      anchor="top"
+      location="top"
     >
       <template #activator="{ props }">
         <VIcon v-bind="props">

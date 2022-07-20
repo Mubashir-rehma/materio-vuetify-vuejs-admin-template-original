@@ -4,7 +4,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
 
 <template>
   <div class="demo-space-x">
-    <VMenu anchor="top">
+    <VMenu location="top">
       <template #activator="{ props }">
         <VBtn v-bind="props">
           Top
@@ -21,7 +21,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
       </VList>
     </VMenu>
 
-    <VMenu anchor="bottom">
+    <VMenu location="bottom">
       <template #activator="{ props }">
         <VBtn v-bind="props">
           Bottom
@@ -38,7 +38,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
       </VList>
     </VMenu>
 
-    <VMenu anchor="start">
+    <VMenu location="start">
       <template #activator="{ props }">
         <VBtn v-bind="props">
           Start
@@ -55,7 +55,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
       </VList>
     </VMenu>
 
-    <VMenu anchor="end">
+    <VMenu location="end">
       <template #activator="{ props }">
         <VBtn v-bind="props">
           End

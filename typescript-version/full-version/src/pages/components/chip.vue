@@ -83,6 +83,21 @@ import * as demoCode from '@/views/demos/components/chip/demoCodeChip'
       cols="12"
       md="6"
     >
+      <!-- 👉 Avatar -->
+      <AppCardCode
+        title="With Avatar"
+        :code="demoCode.withAvatar"
+      >
+        <p>Use <code>pill</code> prop to remove the <code>v-avatar</code> padding.</p>
+
+        <DemoChipWithAvatar />
+      </AppCardCode>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
       <!-- 👉 Sizes -->
       <AppCardCode
         title="Sizes"

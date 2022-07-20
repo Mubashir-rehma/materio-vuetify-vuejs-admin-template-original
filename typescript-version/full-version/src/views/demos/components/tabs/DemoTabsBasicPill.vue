@@ -13,17 +13,15 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
     <VTab>Tab Three</VTab>
   </VTabs>
 
-  <VWindow v-model="currentTab">
+  <VWindow
+    v-model="currentTab"
+    class="mt-5"
+  >
     <VWindowItem
       v-for="item in 3"
       :key="item"
     >
-      <VCard>
-        <VCardText
-          class="pb-0"
-          v-text="tabItemContent"
-        />
-      </VCard>
+      {{ tabItemContent }}
     </VWindowItem>
   </VWindow>
 </template>

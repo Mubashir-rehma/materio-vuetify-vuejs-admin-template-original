@@ -8,18 +8,17 @@ const items = [
 
 <template>
   <VList>
-    <VListItemGroup>
-      <VListItem
-        v-for="(item, i) in items"
-        :key="i"
-        :value="item"
-        rounded="shaped"
-      >
-        <VListItemAvatar start>
-          <VIcon :icon="item.icon" />
-        </VListItemAvatar>
-        <VListItemTitle v-text="item.text" />
-      </VListItem>
-    </VListItemGroup>
+    <VListItem
+      v-for="(item, i) in items"
+      :key="i"
+      :value="item"
+      rounded="shaped"
+    >
+      <VListItemAvatar start>
+        <VIcon :icon="item.icon" />
+      </VListItemAvatar>
+      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+      <VListItemTitle v-text="item.text" />
+    </VListItem>
   </VList>
 </template>

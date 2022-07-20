@@ -24,11 +24,11 @@ watch(selectedList, value => {
   >
     <template #no-data>
       <VListItem>
-        <VListItemContent>
+        <VListItemHeader>
           <VListItemTitle>
             No results matching "<strong>{{ search }}</strong>". Press <kbd>enter</kbd> to create a new one
           </VListItemTitle>
-        </VListItemContent>
+        </VListItemHeader>
       </VListItem>
     </template>
   </VCombobox>

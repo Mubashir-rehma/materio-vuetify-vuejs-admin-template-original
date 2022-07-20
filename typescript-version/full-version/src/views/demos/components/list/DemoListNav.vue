@@ -15,18 +15,17 @@ const items = [
     nav
     density="compact"
   >
-    <VListItemGroup>
-      <VListItem
-        v-for="(item, i) in items"
-        :key="i"
-        :value="item"
-      >
-        <VListItemAvatar>
-          <VIcon :icon="item.icon" />
-        </VListItemAvatar>
+    <VListItem
+      v-for="(item, i) in items"
+      :key="i"
+      :value="item"
+    >
+      <VListItemAvatar>
+        <VIcon :icon="item.icon" />
+      </VListItemAvatar>
 
-        <VListItemTitle v-text="item.text" />
-      </VListItem>
-    </VListItemGroup>
+      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+      <VListItemTitle v-text="item.text" />
+    </VListItem>
   </VList>
 </template>

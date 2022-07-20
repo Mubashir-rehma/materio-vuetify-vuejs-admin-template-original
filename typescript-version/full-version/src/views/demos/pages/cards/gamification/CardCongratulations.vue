@@ -31,7 +31,7 @@
           :src="dynamicImgImport('@/assets/images/cards/illustration-john-2.png')"
           :height="$vuetify.display.xs ? '165' : '200'"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
-          class="john-illustration"
+          class="john-illustration flip-in-rtl"
         >
       </VCol>
     </VRow>
@@ -39,8 +39,17 @@
 </template>
 
 <style lang="scss" scoped>
+@use "@layouts/styles/mixins" as layoutsMixins;
+
 .john-illustration {
   inset-block-end: -0.0625rem;
   inset-inline-end: 0;
+}
+
+// for rtl only
+.flip-in-rtl {
+  @include layoutsMixins.rtl {
+    transform: scaleX(-1);
+  }
 }
 </style>

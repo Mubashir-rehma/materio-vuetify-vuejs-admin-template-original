@@ -4,7 +4,7 @@
     <VBtn>
       scale transition
       <VTooltip
-        anchor="top"
+        location="top"
         transition="scale-transition"
         activator="parent"
       >
@@ -16,7 +16,7 @@
     <VBtn>
       scroll X transition
       <VTooltip
-        anchor="top"
+        location="top"
         activator="parent"
         transition="scroll-x-transition"
       >
@@ -28,7 +28,7 @@
     <VBtn>
       scroll y transition
       <VTooltip
-        anchor="top"
+        location="top"
         activator="parent"
         transition="scroll-y-transition"
       >

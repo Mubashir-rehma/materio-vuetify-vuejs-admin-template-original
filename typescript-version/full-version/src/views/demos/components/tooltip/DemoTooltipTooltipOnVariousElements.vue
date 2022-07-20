@@ -3,7 +3,7 @@
     <VBtn>
       Button
       <VTooltip
-        anchor="top"
+        location="top"
         activator="parent"
       >
         Tooltip
@@ -13,14 +13,14 @@
     <VAvatar color="info">
       <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-4.png')" />
       <VTooltip
-        anchor="top"
+        location="top"
         activator="parent"
       >
         Tooltip on Avatar
       </VTooltip>
     </VAvatar>
 
-    <VTooltip anchor="top">
+    <VTooltip location="top">
       <template #activator="{ props }">
         <VIcon
           v-bind="props"

@@ -8,4 +8,4 @@ export const activatorAndTooltip = { ts: '', js: '' }
 
 export const popover = { ts: '', js: '' }
 
-export const anchor = { ts: '', js: '' }
+export const location = { ts: '', js: '' }

@@ -28,7 +28,7 @@ const statistics = [
 </script>
 
 <template>
-  <VCard title="Statistics Card">
+  <VCard title="Transactions">
     <VCardText>
       <VRow>
         <VCol

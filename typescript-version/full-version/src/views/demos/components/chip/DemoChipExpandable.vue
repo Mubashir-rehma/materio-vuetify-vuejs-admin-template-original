@@ -17,12 +17,12 @@ const isMenuVisible = ref(false)
     <!-- v-menu list -->
     <VList>
       <VListItem>
-        <VListItemContent>
+        <VListItemHeader>
           <VListItemTitle>VueJS</VListItemTitle>
           <VListItemSubtitle>
             The Progressive JavaScript Framework
           </VListItemSubtitle>
-        </VListItemContent>
+        </VListItemHeader>
 
         <VListItemAction class="ms-1">
           <VBtn

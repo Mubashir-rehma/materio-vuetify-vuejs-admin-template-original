@@ -4,7 +4,7 @@
       Tooltip on End
       <VTooltip
         activator="parent"
-        anchor="end"
+        location="end"
       >
         End Tooltip
       </VTooltip>
@@ -14,7 +14,7 @@
       Tooltip on Start
       <VTooltip
         activator="parent"
-        anchor="start"
+        location="start"
       >
         Start Tooltip
       </VTooltip>
@@ -24,6 +24,7 @@
       Tooltip on Top
       <VTooltip
         activator="parent"
+        location="top"
       >
         Top Tooltip
       </VTooltip>
@@ -33,7 +34,7 @@
       Tooltip on Bottom
       <VTooltip
         activator="parent"
-        anchor="bottom"
+        location="bottom"
       >
         Bottom Tooltip
       </VTooltip>

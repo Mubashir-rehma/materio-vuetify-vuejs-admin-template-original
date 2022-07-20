@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/components/list/demoCodeList'
+import * as demoCode from '@/views/demos/components/list/demoCodeList';
 </script>
 
 <template>
@@ -16,7 +16,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText><code>v-list</code> component can contain an avatar, content, actions and much more.</VCardText>
 
-        <DemoListBasic />
+        <VCardText>
+          <DemoListBasic />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -32,7 +34,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText>You can make <code>v-list-item</code> rounded using <code>rounded</code> prop.</VCardText>
 
-        <DemoListRounded />
+        <VCardText>
+          <DemoListRounded />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -48,7 +52,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText>Use <code>density</code> prop to adjusts the spacing within the component. Available options are: <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</VCardText>
 
-        <DemoListDensity />
+        <VCardText>
+          <DemoListDensity />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -64,7 +70,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText>Lists can receive an alternative <code>nav</code> styling that reduces the width <code>v-list-item</code> takes up as well as adding a border radius.</VCardText>
 
-        <DemoListNav />
+        <VCardText>
+          <DemoListNav />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -80,7 +88,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText>A <code>three-line</code> list with actions. Utilizing <code>v-list-group</code>, easily connect actions to your tiles.</VCardText>
 
-        <DemoListActionAndItemGroup />
+        <VCardText>
+          <DemoListActionAndItemGroup />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -98,7 +108,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
           Using the <code>v-list-group</code> component you can create up to 2 levels in depth using the sub-group prop.
         </VCardText>
 
-        <DemoListSubGroup />
+        <VCardText>
+          <DemoListSubGroup />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -114,7 +126,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText>Lists can contain subheaders, dividers, and can contain 1 or more lines. The subtitle will overflow with ellipsis if it extends past one line.</VCardText>
 
-        <DemoListTwoLinesAndSubheader />
+        <VCardText>
+          <DemoListTwoLinesAndSubheader />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -130,7 +144,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       >
         <VCardText>For three line lists, the subtitle will clamp vertically at 2 lines and then ellipsis. This feature uses line-clamp and is not supported in all browsers.</VCardText>
 
-        <DemoListThreeLine />
+        <VCardText>
+          <DemoListThreeLine />
+        </VCardText>
       </AppCardCode>
     </VCol>
 
@@ -148,7 +164,9 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
           Shaped lists have rounded borders on one side of the <code>v-list-item</code>.
         </VCardText>
 
-        <DemoListShaped />
+        <VCardText>
+          <DemoListShaped />
+        </VCardText>
       </AppCardCode>
     </VCol>
   </VRow>

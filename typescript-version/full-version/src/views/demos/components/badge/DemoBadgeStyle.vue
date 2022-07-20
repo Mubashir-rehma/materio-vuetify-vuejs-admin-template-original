@@ -41,10 +41,10 @@
 
     <!-- Rounded -->
     <VBadge
-      rounded="0"
+      rounded="sm"
       content="5"
     >
-      <VAvatar>
+      <VAvatar size="48">
         <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
       </VAvatar>
     </VBadge>

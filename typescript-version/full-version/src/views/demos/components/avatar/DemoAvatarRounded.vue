@@ -12,7 +12,7 @@
     </VAvatar>
 
     <VAvatar
-      rounded="0"
+      rounded="sm"
       color="secondary"
     >
       <VIcon
@@ -23,7 +23,7 @@
     </VAvatar>
 
     <VAvatar
-      rounded="0"
+      rounded
       color="success"
     >
       <VIcon
@@ -34,7 +34,7 @@
     </VAvatar>
 
     <VAvatar
-      rounded="0"
+      rounded="lg"
       color="info"
     >
       <VIcon
@@ -45,7 +45,7 @@
     </VAvatar>
 
     <VAvatar
-      rounded="0"
+      rounded="xl"
       color="warning"
     >
       <VIcon
@@ -55,10 +55,7 @@
       />
     </VAvatar>
 
-    <VAvatar
-      rounded="0"
-      color="error"
-    >
+    <VAvatar color="error">
       <VIcon
         color="white"
         size="25"

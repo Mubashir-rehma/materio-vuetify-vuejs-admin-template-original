@@ -77,6 +77,7 @@
   "Error": "Erreur",
   "Statistics": "Statistiques",
   "Card Actions": "Actions de la carte",
+  "Actions": "Actions",
   "Access Control": "Contrôle d'accès",
   "User Interface": "Interface utilisateur",
   "CRM": "CRM",
@@ -96,5 +97,7 @@
   "Page Not Found - 404": "Page introuvable - 404",
   "Not Authorized - 401": "Non autorisé - 401",
   "Server Error - 500": "Erreur de serveur - 500",
-  "2": "2"
+  "2": "2",
+  "Gamification": "Gamification",
+  "Forms": "Formes"
 }

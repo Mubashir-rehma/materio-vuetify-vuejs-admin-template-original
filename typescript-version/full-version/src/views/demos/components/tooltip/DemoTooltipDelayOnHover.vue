@@ -3,7 +3,7 @@
   <VBtn variant="outlined">
     <span>Open Delay On Hover</span> <VTooltip
       open-delay="500"
-      anchor="top"
+      location="top"
       activator="parent"
     >
       <span>Open Delay On Hover</span>

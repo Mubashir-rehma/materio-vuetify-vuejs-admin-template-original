@@ -41,6 +41,7 @@ const isDialogTwoShow = ref(false)
     <VCard title="Dialog 2">
       <VCardText>I'm a nested dialog.</VCardText>
       <VCardActions>
+        <VSpacer />
         <VBtn @click="isDialogTwoShow = false">
           Close
         </VBtn>

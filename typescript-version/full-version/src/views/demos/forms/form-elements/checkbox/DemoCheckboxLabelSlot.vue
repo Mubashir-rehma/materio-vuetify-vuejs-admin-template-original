@@ -7,7 +7,7 @@ const checkbox = ref(false)
     <template #label>
       <div>
         I agree that
-        <VTooltip anchor="bottom">
+        <VTooltip location="bottom">
           <template #activator="{ props }">
             <a
               href="https://vuetifyjs.com/"

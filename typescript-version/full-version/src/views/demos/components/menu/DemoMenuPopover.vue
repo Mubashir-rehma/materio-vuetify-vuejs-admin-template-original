@@ -5,7 +5,7 @@ const menu = ref(false)
 <template>
   <VMenu
     v-model="menu"
-    anchor="top"
+    location="top"
   >
     <template #activator="{ props }">
       <VBtn v-bind="props">

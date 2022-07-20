@@ -68,14 +68,14 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
       cols="12"
       md="6"
     >
-      <!-- 👉 Tile -->
+      <!-- 👉 Rounded -->
       <AppCardCode
-        title="Tile"
-        :code="demoCode.tile"
+        title="Rounded"
+        :code="demoCode.rounded"
       >
-        <p>The <code>rounded</code> prop can be used to remove the border radius from <code>v-avatar</code> leaving you with a simple square avatar.</p>
+        <p>The <code>rounded</code> prop can be used to change the border radius of <code>v-avatar</code>.</p>
 
-        <DemoAvatarTile />
+        <DemoAvatarRounded />
       </AppCardCode>
     </VCol>
 

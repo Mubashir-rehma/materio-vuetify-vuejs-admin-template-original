@@ -13,13 +13,11 @@
   $card-text-padding: 20px,
   $card-item-padding: 20px,
 
-  /* 0 ($card-item-padding - $button-card-actions-padding-x) ($card-item-padding - $button-card-actions-padding-x) */
   $card-actions-padding: 0 12px 12px,
 
   $shadow-key-umbra-opacity: rgba(var(--v-theme-on-surface), 0.08),
   $shadow-key-penumbra-opacity: rgba(var(--v-theme-on-surface), 0.12),
   $shadow-key-ambient-opacity: rgba(var(--v-theme-on-surface), 0.04),
-
   // // ℹ️ It uses above $shadow-key-umbra-opacity (Which we can't access while configuring)
   // $shadow-key-umbra: vuetify_functions.map-deep-merge(
   //   (
@@ -46,11 +44,11 @@
 
   // 👉 Components
 
-  // Navigation drawer
   $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)),
-
-  // Table
   $table-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)),
+  $tooltip-background-color: rgba(59, 55, 68, 0.9),
+  $tooltip-text-color: rgb(var(--v-theme-on-primary)),
+  $tooltip-font-size: 0.75rem,
 );
 
 /*
@@ -185,6 +183,13 @@ h6,
   .v-window__container .v-window-item {
     transform: none !important;
   }
+}
+
+// TODO remove the below patches after resolve by vuetify: https://github.com/vuetifyjs/vuetify/issues/15469
+// This is for spacing between multiple chip inside combobox
+/* stylelint-disable-next-line no-descending-specificity */
+.v-field__input {
+  gap: 0.25rem;
 }
 
 /*

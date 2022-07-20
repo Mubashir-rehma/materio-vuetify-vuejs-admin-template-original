@@ -7,7 +7,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
 <template>
   <VMenu top>
     <template #activator="{ props: menuProps }">
-      <VTooltip anchor="top">
+      <VTooltip location="top">
         <template #activator="{ props: tooltipProps }">
           <VBtn v-bind="mergeProps(menuProps, tooltipProps)">
             Dropdown w/ Tooltip

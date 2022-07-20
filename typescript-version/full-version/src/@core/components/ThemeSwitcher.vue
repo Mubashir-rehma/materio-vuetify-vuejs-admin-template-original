@@ -7,13 +7,15 @@ const props = defineProps<{
 }>()
 
 const { theme } = useThemeConfig()
-const { next: getNextThemeName } = useCycleList(props.themes.map(t => t.name))
+const { next: getNextThemeName, index: currentThemeIndex } = useCycleList(props.themes.map(t => t.name), { initialValue: theme.value })
 const changeTheme = () => {
   theme.value = getNextThemeName()
 }
 
 const getThemeIcon = computed(() => {
-  return props.themes.find(t => t.name === theme.value)?.icon || 'mdi-format-paint'
+  const nextThemeIndex = currentThemeIndex.value + 1 === props.themes.length ? 0 : currentThemeIndex.value + 1
+
+  return props.themes[nextThemeIndex].icon
 })
 </script>
 

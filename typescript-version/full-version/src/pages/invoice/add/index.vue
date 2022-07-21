@@ -118,7 +118,6 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <VSwitch
             id="payment-terms"
             v-model="paymentTerms"
-            class="input-control-auto-height"
           />
         </div>
       </div>
@@ -132,7 +131,6 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <VSwitch
             id="client-notes"
             v-model="clientNotes"
-            class="input-control-auto-height"
           />
         </div>
       </div>
@@ -146,7 +144,6 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <VSwitch
             id="payment-stub"
             v-model="paymentStub"
-            class="input-control-auto-height"
           />
         </div>
       </div>

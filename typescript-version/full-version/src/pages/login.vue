@@ -171,11 +171,9 @@ const onSubmit = () => {
                   <VCheckbox
                     v-model="rememberMe"
                     label="Remember me"
-                    inline
-                    class="input-control-auto-height"
                   />
                   <RouterLink
-                    class="text-primary ms-2"
+                    class="text-primary ms-2 mb-1"
                     :to="{ name: 'forgot-password' }"
                   >
                     Forgot Password?

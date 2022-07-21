@@ -11,7 +11,6 @@
           <VCheckbox
             :model-value="isActive"
             color="primary"
-            class="input-control-auto-height"
           />
         </VListItemAvatar>
 
@@ -28,7 +27,6 @@
           <VCheckbox
             :model-value="isActive"
             color="primary"
-            class="input-control-auto-height"
           />
         </VListItemAvatar>
 
@@ -45,7 +43,6 @@
           <VCheckbox
             :model-value="isActive"
             color="primary"
-            class="input-control-auto-height"
           />
         </VListItemAvatar>
 

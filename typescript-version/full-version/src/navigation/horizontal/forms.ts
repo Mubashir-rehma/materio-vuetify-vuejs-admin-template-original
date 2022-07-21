@@ -16,6 +16,14 @@ export default [
             to: 'forms-combobox',
           },
           {
+            title: 'Date Time Picker',
+            to: 'forms-date-time-picker',
+          },
+          {
+            title: 'File Input',
+            to: 'forms-file-input',
+          },
+          {
             title: 'Radio',
             to: 'forms-radio',
           },
@@ -37,26 +45,13 @@ export default [
             to: 'forms-switch',
           },
           {
-            title: 'File Input',
-            to: 'forms-file-input',
+            title: 'Textarea',
+            to: 'forms-textarea',
           },
           {
             title: 'Textfield',
             to: 'forms-textfield',
           },
-          {
-            title: 'Textarea',
-            to: 'forms-textarea',
-          },
-          {
-            title: 'File Input',
-            to: 'forms-file-input',
-          },
-          {
-            title: 'Date Time Picker',
-            to: 'forms-date-time-picker',
-          },
-
         ],
       },
       {

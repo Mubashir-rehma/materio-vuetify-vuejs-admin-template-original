@@ -5,7 +5,7 @@ const switchOnLoading = ref('on')
 </script>
 
 <template>
-  <div class="d-flex flex-wrap demo-space-x">
+  <div class="demo-space-x">
     <VSwitch
       v-model="switchOn"
       value="on"

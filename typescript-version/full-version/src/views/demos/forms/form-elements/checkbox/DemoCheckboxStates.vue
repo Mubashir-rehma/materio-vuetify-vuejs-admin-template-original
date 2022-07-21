@@ -1,10 +1,11 @@
 <script setup lang="ts">
 const toggleCheckbox = ref(true)
 const toggleIndeterminateCheckbox = ref(true)
+const disabledCheckbox = ref(true)
 </script>
 
 <template>
-  <div class="d-flex flex-wrap">
+  <div class="demo-space-x">
     <VCheckbox
       v-model="toggleCheckbox"
       label="On"
@@ -18,7 +19,7 @@ const toggleIndeterminateCheckbox = ref(true)
     />
 
     <VCheckbox
-      :model-value="true"
+      :model-value="disabledCheckbox"
       disabled
       label="On disabled"
     />

@@ -201,7 +201,7 @@ const { width: windowWidth } = useWindowSize()
               <VSwitch
                 id="customizer-navbar-blur"
                 v-model="isNavbarBlurEnabled"
-                class="ms-2 input-control-auto-height"
+                class="ms-2"
               />
             </div>
           </div>
@@ -232,7 +232,7 @@ const { width: windowWidth } = useWindowSize()
               <VSwitch
                 id="customizer-menu-collapsed"
                 v-model="isVerticalNavCollapsed"
-                class="ms-2 input-control-auto-height"
+                class="ms-2"
               />
             </div>
           </div>
@@ -250,7 +250,7 @@ const { width: windowWidth } = useWindowSize()
               <VSwitch
                 id="customizer-rtl"
                 v-model="isAppRtl"
-                class="ms-2 input-control-auto-height"
+                class="ms-2"
               />
             </div>
           </div>

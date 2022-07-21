@@ -136,12 +136,9 @@ onMounted(() => {
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
 
-.flat-picker-custom-style.flatpickr-input {
-  color: inherit;
-}
-
 .flat-picker-custom-style {
   position: absolute;
+  color: inherit;
   inset: 0;
   outline: none;
   padding-block: 0;
@@ -166,6 +163,7 @@ input[altinputclass="inlinePicker"] {
       border-color: rgb(var(--v-theme-primary));
 
       &:hover {
+        border-color: rgb(var(--v-theme-primary));
         background: transparent;
         color: $body-color;
       }

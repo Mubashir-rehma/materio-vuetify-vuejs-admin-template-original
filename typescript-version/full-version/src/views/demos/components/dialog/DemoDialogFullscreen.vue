@@ -86,8 +86,6 @@ const widgets = ref(false)
               <VCheckbox
                 v-model="notifications"
                 color="primary"
-                inline
-                class="input-control-auto-height"
               />
             </div>
           </template>
@@ -101,8 +99,6 @@ const widgets = ref(false)
               <VCheckbox
                 v-model="sound"
                 color="primary"
-                inline
-                class="input-control-auto-height"
               />
             </div>
           </template>
@@ -117,8 +113,6 @@ const widgets = ref(false)
               <VCheckbox
                 v-model="widgets"
                 color="primary"
-                inline
-                class="input-control-auto-height"
               />
             </div>
           </template>

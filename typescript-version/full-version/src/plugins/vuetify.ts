@@ -7,10 +7,6 @@ import { themeConfig } from '@themeConfig'
 
 export default createVuetify({
   defaults: {
-    VMenu: {
-      // set v-menu default transition to fade-transition
-      transition: 'fade-transition',
-    },
     VBadge: {
       // set v-badge default color to primary
       color: 'primary',
@@ -156,4 +152,10 @@ export default createVuetify({
       },
     },
   },
+
+  // locale: {
+  //   rtl: {
+  //     en: true,
+  //   },
+  // },
 })

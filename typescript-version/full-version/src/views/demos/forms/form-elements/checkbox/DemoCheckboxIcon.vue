@@ -2,20 +2,26 @@
 const toggleCheckboxOne = ref(true)
 const toggleCheckboxTwo = ref(true)
 const toggleCheckboxThree = ref(true)
+
+const capitalizedLabel = (label: boolean) => {
+  const convertLabelText = label.toString()
+
+  return convertLabelText.charAt(0).toUpperCase() + convertLabelText.slice(1)
+}
 </script>
 
 <template>
-  <div class="d-flex flex-wrap">
+  <div class="demo-space-x">
     <VCheckbox
       v-model="toggleCheckboxOne"
-      :label="`${toggleCheckboxOne.toString()}`"
+      :label="capitalizedLabel(toggleCheckboxOne)"
       true-icon="mdi-check"
       false-icon="mdi-close"
     />
 
     <VCheckbox
       v-model="toggleCheckboxTwo"
-      :label="`${toggleCheckboxTwo.toString()}`"
+      :label="capitalizedLabel(toggleCheckboxTwo)"
       true-icon="mdi-alarm-check"
       false-icon="mdi-alarm"
       color="success"
@@ -23,7 +29,7 @@ const toggleCheckboxThree = ref(true)
 
     <VCheckbox
       v-model="toggleCheckboxThree"
-      :label="`${toggleCheckboxThree.toString()}`"
+      :label="capitalizedLabel(toggleCheckboxThree)"
       true-icon="mdi-check-circle"
       false-icon="mdi-close-circle"
       color="error"

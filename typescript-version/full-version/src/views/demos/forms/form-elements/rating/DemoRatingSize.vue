@@ -8,22 +8,22 @@ const rating = ref(4)
       v-model="rating"
       size="x-small"
     />
+
     <VRating
       v-model="rating"
       size="small"
     />
+
     <VRating v-model="rating" />
+
     <VRating
       v-model="rating"
       size="large"
     />
+
     <VRating
       v-model="rating"
       size="x-large"
-    />
-    <VRating
-      v-model="rating"
-      size="54"
     />
   </div>
 </template>

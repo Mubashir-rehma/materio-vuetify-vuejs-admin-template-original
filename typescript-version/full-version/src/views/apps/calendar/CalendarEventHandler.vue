@@ -219,7 +219,6 @@ const endDateTimePickerConfig = computed(() => {
                 <VSwitch
                   v-model="event.allDay"
                   label="All day"
-                  class="input-control-auto-height"
                 />
               </VCol>
 

@@ -3,7 +3,7 @@ const selected = ref(['John'])
 </script>
 
 <template>
-  <div class="d-flex flex-wrap">
+  <div class="demo-space-x">
     <VCheckbox
       v-model="selected"
       label="John"

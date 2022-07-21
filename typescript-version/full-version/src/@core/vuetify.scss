@@ -134,12 +134,32 @@ h6,
 // SECTION Custom patches
 
 /*
-  👉 input-control-auto-height
+  // TODO Checkbox and switch component. Remove it when vuetify resolve the extra spacing
   We need this because form elements likes checkbox and switches are by default set to height of textfield height which is way big than we want
   Tested with checkbox & switches
 */
-.input-control-auto-height {
+.v-checkbox.v-input,
+.v-switch.v-input {
   --v-input-control-height: auto;
+
+  display: inline-grid;
+  flex: unset;
+}
+
+.v-radio {
+  --v-selection-control-size: auto;
+
+  .v-label {
+    margin-inline-start: 0.5rem;
+  }
+}
+
+.v-radio-group {
+  .v-selection-control-group {
+    .v-radio:not(:last-child) {
+      margin-inline-end: 0.9rem;
+    }
+  }
 }
 
 // Input placeholder vertical alignment: https://github.com/vuetifyjs/vuetify/issues/15409
@@ -150,7 +170,7 @@ h6,
 
   .v-field__input {
     input {
-      margin-block-end: 2px;
+      margin-block-end: 4px;
     }
   }
 }

@@ -33,5 +33,26 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         readonly
       />
     </VCol>
+
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        :items="items"
+        label="I use selection slot"
+        multiple
+      >
+        <template #selection="{ item }">
+          <VChip>
+            <VAvatar
+              start
+              color="primary"
+            >
+              {{ String(item.title).charAt(0).toUpperCase() }}
+            </VAvatar>
+            {{ item.title }}
+          </VChip>
+        </template>
+      </VCombobox>
+    </VCol>
   </VRow>
 </template>

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 const checkbox = ref(1)
-const checkboxString = ref('show')
+const checkboxString = ref('Show')
 </script>
 
 <template>
-  <div class="d-flex flex-wrap">
+  <div class="demo-space-x">
     <VCheckbox
       v-model="checkbox"
       :true-value="1"
@@ -14,8 +14,8 @@ const checkboxString = ref('show')
 
     <VCheckbox
       v-model="checkboxString"
-      true-value="show"
-      false-value="hide"
+      true-value="Show"
+      false-value="Hide"
       color="success"
       :label="`${checkboxString.toString()}`"
     />

@@ -76,11 +76,7 @@ const isPasswordVisible = ref(false)
 
             <!-- agree -->
             <VCol cols="12">
-              <VCheckbox
-                v-model="form.privacyPolicies"
-                inline
-                class="input-control-auto-height"
-              >
+              <VCheckbox v-model="form.privacyPolicies">
                 <template #label>
                   <span class="me-1">I agree to</span>
                   <a

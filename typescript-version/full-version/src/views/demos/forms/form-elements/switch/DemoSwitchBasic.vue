@@ -1,18 +1,24 @@
 <script lang="ts" setup>
 const toggleSwitch = ref(true)
 const toggleFalseSwitch = ref(false)
+
+const capitalizedLabel = (label: boolean) => {
+  const convertLabelText = label.toString()
+
+  return convertLabelText.charAt(0).toUpperCase() + convertLabelText.slice(1)
+}
 </script>
 
 <template>
-  <VSwitch
-    v-model="toggleSwitch"
-    :label="`${toggleSwitch.toString()}`"
-    hide-details
-  />
+  <div class="demo-space-x">
+    <VSwitch
+      v-model="toggleSwitch"
+      :label="capitalizedLabel(toggleSwitch)"
+    />
 
-  <VSwitch
-    v-model="toggleFalseSwitch"
-    :label="`${toggleFalseSwitch.toString()}`"
-    hide-details
-  />
+    <VSwitch
+      v-model="toggleFalseSwitch"
+      :label="capitalizedLabel(toggleFalseSwitch)"
+    />
+  </div>
 </template>

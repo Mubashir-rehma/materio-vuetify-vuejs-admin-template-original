@@ -20,11 +20,14 @@ const blueColorValue = ref(255)
         prepend-icon="mdi-alpha-r"
       >
         <template #append>
-          <VTextField
-            v-model="redColorValue"
-            type="number"
-            variant="underlined"
-          />
+          <div style="width: 3rem;">
+            <VTextField
+              v-model="redColorValue"
+              type="number"
+              variant="underlined"
+              :max="255"
+            />
+          </div>
         </template>
       </VSlider>
     </VCol>
@@ -38,11 +41,14 @@ const blueColorValue = ref(255)
         prepend-icon="mdi-alpha-g"
       >
         <template #append>
-          <VTextField
-            v-model="greenColorValue"
-            type="number"
-            variant="underlined"
-          />
+          <div style="width: 3rem;">
+            <VTextField
+              v-model="greenColorValue"
+              type="number"
+              variant="underlined"
+              :max="255"
+            />
+          </div>
         </template>
       </VSlider>
     </VCol>
@@ -56,11 +62,14 @@ const blueColorValue = ref(255)
         prepend-icon="mdi-alpha-b"
       >
         <template #append>
-          <VTextField
-            v-model="blueColorValue"
-            type="number"
-            variant="underlined"
-          />
+          <div style="width: 3rem;">
+            <VTextField
+              v-model="blueColorValue"
+              type="number"
+              variant="underlined"
+              :max="255"
+            />
+          </div>
         </template>
       </VSlider>
     </VCol>

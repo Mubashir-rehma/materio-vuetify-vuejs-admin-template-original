@@ -7,6 +7,7 @@ const rating = ref(2)
   <div class="text-caption">
     Custom length
   </div>
+
   <VSlider
     v-model="length"
     :min="1"
@@ -17,4 +18,7 @@ const rating = ref(2)
     v-model="rating"
     :length="length"
   />
+  <p class="font-weight-semibold mb-0">
+    Model: {{ rating }}
+  </p>
 </template>

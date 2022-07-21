@@ -73,7 +73,6 @@ const checkAll = computed({
             <VCheckbox
               v-model="checkAll"
               label="View all"
-              class="input-control-auto-height"
             />
             <VCheckbox
               v-for="calendar in store.availableCalendars"
@@ -82,7 +81,6 @@ const checkAll = computed({
               :value="calendar.label"
               :color="calendar.color"
               :label="calendar.label"
-              class="input-control-auto-height"
             />
           </div>
         </div>
@@ -107,5 +105,5 @@ const checkAll = computed({
 </template>
 
 <style lang="scss">
-@import "@core/scss/libs/full-calendar.scss";
+@import "@core/scss/libs/full-calendar";
 </style>

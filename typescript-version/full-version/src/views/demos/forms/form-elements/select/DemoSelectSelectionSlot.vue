@@ -18,12 +18,14 @@ const value = ref(['Sandra Adams'])
     item-value="name"
     label="Select Item"
     multiple
+    clearable
+    clear-icon="mdi-close"
   >
     <template #selection="{ item }">
       <VChip label>
         <VAvatar
+          start
           :image="item.raw.avatar"
-          class="ms-n1 me-2"
         />
         <span>{{ item.title }}</span>
       </VChip>

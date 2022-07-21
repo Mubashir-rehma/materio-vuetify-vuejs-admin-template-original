@@ -12,7 +12,6 @@ const items = ref(['Streaming', 'Eating', 'Programming', 'Playing video games', 
     closable-chips
     clear-icon="mdi-close-circle-outline"
     :items="items"
-    hide-details
     label="Your favorite hobbies"
     prepend-icon="mdi-filter-variant"
   />

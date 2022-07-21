@@ -1,54 +1,17 @@
 <script lang="ts" setup>
-const toggleSwitches = ref(['primary', 'secondary', 'success', 'info', 'warning', 'error'])
+const selectedSwitch = ref(['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Error'])
+const switches = ref(['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Error'])
 </script>
 
 <template>
-  <div class="d-flex flex-wrap demo-space-x">
+  <div class="demo-space-x">
     <VSwitch
-      v-model="toggleSwitches"
-      label="primary"
-      value="primary"
-      hide-details
-    />
-
-    <VSwitch
-      v-model="toggleSwitches"
-      label="secondary"
-      color="secondary"
-      value="secondary"
-      hide-details
-    />
-
-    <VSwitch
-      v-model="toggleSwitches"
-      label="success"
-      color="success"
-      value="success"
-      hide-details
-    />
-
-    <VSwitch
-      v-model="toggleSwitches"
-      label="info"
-      color="info"
-      value="info"
-      hide-details
-    />
-
-    <VSwitch
-      v-model="toggleSwitches"
-      label="warning"
-      color="warning"
-      value="warning"
-      hide-details
-    />
-
-    <VSwitch
-      v-model="toggleSwitches"
-      label="error"
-      color="error"
-      value="error"
-      hide-details
+      v-for="item in switches"
+      :key="item"
+      v-model="selectedSwitch"
+      :label="item"
+      :value="item"
+      :color="item.toLowerCase()"
     />
   </div>
 </template>

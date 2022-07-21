@@ -1,7 +1,7 @@
 import { isEmpty, isEmptyArray, isNullOrUndefined } from './index'
 
 // 👉 Required Validator
-export const requiredValidator = (value: unknown): string | boolean => {
+export const requiredValidator = (value: unknown) => {
   if (isNullOrUndefined(value) || isEmptyArray(value) || value === false)
     return 'This field is required'
 
@@ -9,20 +9,20 @@ export const requiredValidator = (value: unknown): string | boolean => {
 }
 
 // 👉 Email Validator
-export const emailValidator = (value: unknown): boolean | string => {
+export const emailValidator = (value: unknown) => {
   if (isEmpty(value))
     return true
 
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
   if (Array.isArray(value))
-    return value.every(val => re.test(String(val)))
+    return value.every(val => re.test(String(val))) || 'The Email field must be a valid email'
 
   return re.test(String(value)) || 'The Email field must be a valid email'
 }
 
 // 👉 Password Validator
-export const passwordValidator = (password: string): boolean | string => {
+export const passwordValidator = (password: string) => {
   const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/
 
   const validPassword = regExp.test(password)
@@ -35,7 +35,7 @@ export const passwordValidator = (password: string): boolean | string => {
 }
 
 // 👉 Confirm Password Validator
-export const confirmedValidator = (value: string, target: string): boolean | string =>
+export const confirmedValidator = (value: string, target: string) =>
 
   value === target || 'The Confirm Password field confirmation does not match'
 
@@ -52,13 +52,13 @@ export const integerValidator = (value: unknown) => {
     return true
 
   if (Array.isArray(value))
-    return value.every(val => /^-?[0-9]+$/.test(String(val)))
+    return value.every(val => /^-?[0-9]+$/.test(String(val))) || 'This field must be an integer'
 
   return /^-?[0-9]+$/.test(String(value)) || 'This field must be an integer'
 }
 
 // 👉 Regex Validator
-export const regexValidator = (value: unknown, regex: RegExp | string): boolean | string => {
+export const regexValidator = (value: unknown, regex: RegExp | string): string | boolean => {
   if (isEmpty(value))
     return true
 

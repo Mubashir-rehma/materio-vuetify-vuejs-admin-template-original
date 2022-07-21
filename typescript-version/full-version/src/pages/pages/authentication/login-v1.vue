@@ -74,12 +74,10 @@ const isPasswordVisible = ref(false)
               <VCheckbox
                 v-model="form.remember"
                 label="Remember me"
-                inline
-                class="input-control-auto-height"
               />
 
               <RouterLink
-                class="text-primary ms-2"
+                class="text-primary ms-2 mb-1"
                 :to="{ name: 'pages-authentication-forgot-password-v1' }"
               >
                 Forgot Password?

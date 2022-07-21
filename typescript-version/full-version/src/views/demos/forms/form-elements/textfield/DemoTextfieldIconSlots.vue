@@ -19,6 +19,7 @@ const clickMe = () => {
   <VTextField
     v-model="message"
     clearable
+    clear-icon="mdi-close-circle-outline"
     label="Message"
     type="text"
   >
@@ -43,6 +44,7 @@ const clickMe = () => {
           color="info"
           indeterminate
         />
+
         <div
           class="text-primary"
           v-html="themeConfig.app.logo"
@@ -52,7 +54,11 @@ const clickMe = () => {
 
     <!-- Append -->
     <template #append>
-      <VBtn @click="clickMe">
+      <VBtn
+        size="large"
+        class="mt-n3"
+        @click="clickMe"
+      >
         <VIcon
           icon="mdi-target"
           start

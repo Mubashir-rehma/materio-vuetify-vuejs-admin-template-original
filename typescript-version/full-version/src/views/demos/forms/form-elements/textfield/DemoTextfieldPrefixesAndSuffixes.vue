@@ -1,33 +1,41 @@
+<script setup lang="ts">
+const amount = ref(10.05)
+const weight = ref(28.02)
+const email = ref('example')
+const time = ref('04:56')
+</script>
+
 <template>
   <VRow>
     <VCol cols="12">
       <VTextField
+        v-model="amount"
         label="Amount"
-        model-value="10.00"
         prefix="$"
+        type="number"
       />
     </VCol>
 
     <VCol cols="12">
       <VTextField
+        v-model="weight"
         label="Weight"
-        model-value="28.00"
         suffix="lbs"
       />
     </VCol>
 
     <VCol cols="12">
       <VTextField
+        v-model="email"
         label="Email address"
-        model-value="example"
         suffix="@gmail.com"
       />
     </VCol>
 
     <VCol cols="12">
       <VTextField
+        v-model="time"
         label="Label Text"
-        model-value="12:30:00"
         type="time"
         suffix="PST"
       />

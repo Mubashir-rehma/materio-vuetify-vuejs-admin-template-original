@@ -139,3 +139,23 @@
     }
   }
 }
+
+// radial chart
+.apexcharts-canvas {
+  .apexcharts-radialbar {
+    .apexcharts-radialbar-track .apexcharts-radialbar-area {
+      stroke: rgb(var(--v-theme-background));
+    }
+  }
+
+  // radar chart
+  .apexcharts-radar-series {
+    polygon {
+      stroke: rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+
+    line {
+      stroke: rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+  }
+}

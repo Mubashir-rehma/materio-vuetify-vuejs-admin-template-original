@@ -58,6 +58,7 @@
               density="compact"
               color="primary"
               variant="outlined"
+              divided
             >
               <VBtn>Daily</VBtn>
               <VBtn>Monthly</VBtn>

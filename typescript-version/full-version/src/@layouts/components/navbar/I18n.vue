@@ -23,7 +23,7 @@ const { locale } = useI18n({ useScope: 'global' })
     <!-- Menu -->
     <VMenu activator="parent">
       <!-- List -->
-      <VList>
+      <VList min-width="175px">
         <!-- List item -->
         <VListItem
           v-for="lang in props.languages"

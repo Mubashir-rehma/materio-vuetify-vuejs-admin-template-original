@@ -24,7 +24,7 @@ const { width: windowWidth } = useWindowSize()
 const isHovered = useElementHover(refNav)
 provide(injectionKeyIsVerticalNavHovered, isHovered)
 
-const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isVerticalNavMini } = useLayouts()
+const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isVerticalNavMini, isAppRtl } = useLayouts()
 
 const hideTitleAndIcon = isVerticalNavMini(windowWidth, isHovered)
 
@@ -50,6 +50,8 @@ const route = useRoute()
 watch(() => route.name, () => {
   props.toggleIsOverlayNavActive(false)
 })
+
+const isVerticalNavScrolled = ref(false)
 </script>
 
 <template>
@@ -62,6 +64,7 @@ watch(() => route.name, () => {
         'overlay-nav': isLessThanOverlayNavBreakpoint(windowWidth),
         'hovered': isHovered,
         'visible': isOverlayNavActive,
+        'scrolled': isVerticalNavScrolled,
       },
     ]"
   >
@@ -70,7 +73,7 @@ watch(() => route.name, () => {
       <slot name="nav-header">
         <RouterLink
           to="/"
-          class="auth-logo d-flex align-center gap-x-3 app-title-wrapper"
+          class="app-logo d-flex align-center gap-x-3 app-title-wrapper"
         >
           <!-- eslint-disable vue/no-v-html -->
           <div
@@ -113,11 +116,15 @@ watch(() => route.name, () => {
         </template>
       </slot>
     </div>
-    <slot name="before-nav-items" />
+    <slot name="before-nav-items">
+      <div class="vertical-nav-items-shadow" />
+    </slot>
     <PerfectScrollbar
+      :key="isAppRtl"
       tag="ul"
       class="nav-items"
       :options="perfectScrollbarSettings"
+      @ps-scroll-y="(evt: Event) => { isVerticalNavScrolled = (evt.target as HTMLElement).scrollTop > 0 }"
     >
       <Component
         :is="resolveNavItemComponent(item)"
@@ -143,7 +150,7 @@ watch(() => route.name, () => {
   inline-size: variables.$layout-vertical-nav-width;
   inset-block-start: 0;
   inset-inline-start: 0;
-  transition: all 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, inline-size 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   will-change: transform, inline-size;
 
   .nav-header {

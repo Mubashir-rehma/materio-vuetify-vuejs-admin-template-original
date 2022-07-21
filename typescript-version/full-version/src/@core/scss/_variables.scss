@@ -38,19 +38,21 @@ $theme-colors-name: (
 $default-layout-with-vertical-nav-navbar-footer-roundness: 10px !default;
 
 // 👉 Vertical nav
-
-$vertical-nav-background-color: rgb(var(--v-theme-surface)) !default;
+$vertical-nav-background-color-rgb: var(--v-theme-background) !default;
+$vertical-nav-background-color: rgb(#{$vertical-nav-background-color-rgb}) !default;
 
 // ℹ️ This is used to keep consistency between nav items and nav header left & right margin
 // This is used by nav items & nav header
 $vertical-nav-horizontal-spacing: 1rem !default;
+$vertical-nav-horizontal-padding: 0.75rem !default;
 
 // Vertical nav header height. Mostly we will align it with navbar height;
 $vertical-nav-header-height: $layout-vertical-nav-navbar-height !default;
 $vertical-nav-navbar-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
 
 // Vertical nav header padding
-$vertical-nav-header-padding: 1rem $vertical-nav-horizontal-spacing !default;
+$vertical-nav-header-padding: 1rem $vertical-nav-horizontal-padding !default;
+$vertical-nav-header-inline-spacing: $vertical-nav-horizontal-spacing !default;
 
 // Space between logo and title
 $vertical-nav-header-logo-title-spacing: 0.9rem !default;
@@ -67,15 +69,6 @@ $vertical-nav-nav-group-arrow-transition-duration: 0.15s !default;
 // Timing function for nav group arrow
 $vertical-nav-nav-group-arrow-transition-timing-function: ease-in-out !default;
 
-/*
-  ℹ️ We might want to move a logo a bit to center align it when vertical nav is mini (Collapsed & not hovered)
-
-  You can use this SCSS var to translate the logo horizontally using CSS transform
-
-  ℹ️ Do note this its negative value will be used for translating it in the RTL direction
-*/
-$vertical-nav-mini-logo-translate-x: 10px !default;
-
 // 👉 Horizontal nav
 
 /*
@@ -89,3 +82,7 @@ $horizontal-nav-padding: 1rem !default;
 // ℹ️ We used SCSS variable because we want to allow users to update max height of popper content
 // 120px is combined height of navbar & horizontal nav
 $horizontal-nav-popper-content-max-height: calc((var(--vh, 1vh) * 100) - 120px - 4rem) !default;
+
+// 👉 Plugins
+
+$plugin-ps-thumb-y-dark: rgba(var(--v-theme-surface-variant), 0.35);

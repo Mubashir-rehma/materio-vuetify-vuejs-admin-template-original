@@ -6,7 +6,7 @@ const notifications: Notification[] = [
   {
     img: 'https://cdn.vuetifyjs.com/images/john.jpg',
     title: 'Congratulation John!',
-    subtitle: 'You have been awarded with 1 year free subscription to Premium plan.',
+    subtitle: 'Won the monthly bestseller badge',
     time: '2 minutes ago',
   },
   {
@@ -25,8 +25,5 @@ const notifications: Notification[] = [
 </script>
 
 <template>
-  <Notifications
-    :notifications-count="10"
-    :notifications="notifications"
-  />
+  <Notifications :notifications="notifications" />
 </template>

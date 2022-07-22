@@ -44,6 +44,10 @@
 // Horizontal nav subitem
 %horizontal-nav-subitem {
   min-inline-size: 12rem;
+
+  .nav-item-title {
+    margin-inline-end: 1rem;
+  }
 }
 
 // Styles for third level item icon/ (e.g. Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links]))
@@ -57,6 +61,7 @@
 // Horizontal nav item title
 %horizontal-nav-item-title {
   margin-inline-end: 0.3rem;
+  white-space: nowrap;
 }
 
 // Popper content styles

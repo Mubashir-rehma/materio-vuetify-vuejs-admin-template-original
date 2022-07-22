@@ -25,7 +25,8 @@ const {
 
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
-const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
+
+// const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
 
 const initialThemeColors = JSON.parse(JSON.stringify(vuetifyTheme.current.value.colors))
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
@@ -117,13 +118,27 @@ const { width: windowWidth } = useWindowSize()
           </VRadioGroup>
 
           <!-- 👉 Theme -->
-          <span>
+          <span class="mt-6 d-block">
             Theme
           </span>
-          <VSelect
-            v-model="theme"
-            :items="vuetifyThemesName"
-          />
+          <div class="d-flex align-center">
+            <VLabel
+              for="pricing-plan-toggle"
+              class="me-3"
+            >
+              Light
+            </VLabel>
+
+            <div>
+              <VSwitch
+                id="pricing-plan-toggle"
+                v-model="theme"
+                label="Dark"
+                true-value="dark"
+                false-value="light"
+              />
+            </div>
+          </div>
 
           <!-- 👉 Primary color -->
           <span class="mt-6 d-block">

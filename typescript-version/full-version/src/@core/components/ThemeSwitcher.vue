@@ -7,15 +7,19 @@ const props = defineProps<{
 }>()
 
 const { theme } = useThemeConfig()
-const { next: getNextThemeName, index: currentThemeIndex } = useCycleList(props.themes.map(t => t.name), { initialValue: theme.value })
+const { state: currentTheme, next: getNextThemeName, index: currentThemeIndex } = useCycleList(props.themes.map(t => t.name), { initialValue: theme.value })
 const changeTheme = () => {
   theme.value = getNextThemeName()
 }
 
-const getThemeIcon = computed(() => {
+const getThemeIcon = computedWithControl(theme, () => {
   const nextThemeIndex = currentThemeIndex.value + 1 === props.themes.length ? 0 : currentThemeIndex.value + 1
 
   return props.themes[nextThemeIndex].icon
+})
+
+watch(theme, val => {
+  currentTheme.value = val
 })
 </script>
 

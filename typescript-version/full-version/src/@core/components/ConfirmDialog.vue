@@ -44,13 +44,11 @@ const onCancel = () => {
         {{ props.confirmationMsg }}
       </VCardText>
 
-      <VCardText>
-        <VBtn
-          class="me-3"
-          @click="onConfirmation"
-        >
+      <VCardText class="d-flex align-center justify-center gap-4">
+        <VBtn @click="onConfirmation">
           Confirm
         </VBtn>
+
         <VBtn
           color="secondary"
           variant="tonal"

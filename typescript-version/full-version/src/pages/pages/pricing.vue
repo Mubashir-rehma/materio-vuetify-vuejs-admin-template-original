@@ -147,10 +147,7 @@ const faqs = [
           </VBtn>
         </div>
 
-        <div
-          :class="$vuetify.display.mdAndUp ? 'position-absolute' : 'position-relative'"
-          :style="$vuetify.display.mdAndUp ? 'right: 10%; bottom: 0;' : 'bottom:-11px;'"
-        >
+        <div class="free-trial-illustrator">
           <VImg
             :src="dynamicImgImport('@/assets/images/pages/pose-fs-9.png')"
             :width="250"
@@ -354,5 +351,20 @@ const faqs = [
 .page-pricing-free-trial-banner-bg {
   /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-primary), var(--v-pressed-opacity));
+}
+
+@media screen and (min-width: 960px) {
+  .free-trial-illustrator {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 10%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .free-trial-illustrator {
+    position: relative;
+    inset-block-end: -11px;
+  }
 }
 </style>

@@ -76,15 +76,24 @@ const isPasswordVisible = ref(false)
 
             <!-- agree -->
             <VCol cols="12">
-              <VCheckbox v-model="form.privacyPolicies">
-                <template #label>
+              <div class="d-flex align-center">
+                <VCheckbox
+                  id="privacy-policy"
+                  v-model="form.privacyPolicies"
+                  inline
+                />
+                <VLabel
+                  for="privacy-policy"
+                  class="pb-1"
+                  style="opacity: 1;"
+                >
                   <span class="me-1">I agree to</span>
                   <a
                     href="javascript:void(0)"
                     class="text-primary"
                   >privacy policy & terms</a>
-                </template>
-              </VCheckbox>
+                </VLabel>
+              </div>
             </VCol>
 
             <!-- login -->

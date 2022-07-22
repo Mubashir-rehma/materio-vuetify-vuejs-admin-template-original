@@ -37,14 +37,18 @@ const isPasswordVisible = ref(false)
       class="auth-wrapper"
     >
       <VCol
-        lg="8"
-        class="d-none d-lg-flex align-center justify-center position-relative"
+        md="8"
+        class="d-none d-md-flex align-center justify-center position-relative"
       >
-        <VImg
-          max-width="768px"
-          :src="imageVariant"
-          class="auth-illustration mt-12"
-        />
+        <div
+          class="d-flex align-center justify-center w-100 pa-10 pe-0"
+        >
+          <VImg
+            max-width="768px"
+            :src="imageVariant"
+            class="auth-illustration mt-12"
+          />
+        </div>
 
         <VImg
           :width="300"
@@ -60,7 +64,7 @@ const isPasswordVisible = ref(false)
 
       <VCol
         cols="12"
-        lg="4"
+        md="4"
         class="auth-bg d-flex align-center justify-center"
       >
         <VCard
@@ -113,15 +117,24 @@ const isPasswordVisible = ref(false)
                   cols="12"
                   class="d-flex align-center flex-wrap"
                 >
-                  <VCheckbox v-model="form.privacyPolicies">
-                    <template #label>
+                  <div class="d-flex align-center">
+                    <VCheckbox
+                      id="privacy-policy"
+                      v-model="form.privacyPolicies"
+                      inline
+                    />
+                    <VLabel
+                      for="privacy-policy"
+                      class="pb-1"
+                      style="opacity: 1;"
+                    >
                       <span class="me-1">I agree to</span>
                       <a
                         href="javascript:void(0)"
                         class="text-primary"
                       >privacy policy & terms</a>
-                    </template>
-                  </VCheckbox>
+                    </VLabel>
+                  </div>
                 </VCol>
 
                 <!-- Register -->

@@ -19,10 +19,10 @@ export interface InvoiceData {
 }
 
 export interface InvoiceParams {
-  q: string,
-  status: string,
+  q?: string,
+  status?: string,
   perPage: number,
   currentPage: number,
-  startDate: string,
-  endDate: string,
+  startDate?: string,
+  endDate?: string,
 }

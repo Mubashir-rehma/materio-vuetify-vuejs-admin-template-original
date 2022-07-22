@@ -89,7 +89,7 @@ const database: FaqCategory[] = [
     ],
   },
   {
-    faqTitle: 'Product & Services',
+    faqTitle: 'Services',
     faqIcon: 'mdi-cog-outline',
     faqSubtitle: 'Get help with product & services',
     faqs: [

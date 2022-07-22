@@ -18,7 +18,6 @@ const accountData = {
 const refInputEl = ref<HTMLElement>()
 
 const isConfirmDialogOpen = ref(false)
-
 const accountDataLocal = ref(structuredClone(accountData))
 const isAccountDeactivated = ref(false)
 
@@ -119,7 +118,7 @@ const currencies = [
           />
 
           <!-- 👉 Upload Photo -->
-          <div>
+          <form ref="refForm">
             <VBtn
               color="primary"
               class="me-3 mt-5"
@@ -135,12 +134,14 @@ const currencies = [
             <input
               ref="refInputEl"
               type="file"
+              name="file"
               accept=".jpeg,.png,.jpg,GIF"
-              :hidden="true"
-              @change="changeAvatar"
+              hidden
+              @input="changeAvatar"
             >
 
             <VBtn
+              type="reset"
               color="error"
               variant="tonal"
               class="mt-5"
@@ -152,7 +153,7 @@ const currencies = [
             <p class="text-sm mt-5">
               Allowed JPG, GIF or PNG. Max size of 800K
             </p>
-          </div>
+          </form>
         </VCardText>
 
         <VDivider />
@@ -324,11 +325,13 @@ const currencies = [
       <VCard title="Delete Account">
         <VCardText>
           <!-- 👉 Checkbox and Button  -->
-          <VCheckbox
-            v-model="isAccountDeactivated"
-            :rules="validateAccountDeactivation"
-            label="I confirm my account deactivation"
-          />
+          <div>
+            <VCheckbox
+              v-model="isAccountDeactivated"
+              :rules="validateAccountDeactivation"
+              label="I confirm my account deactivation"
+            />
+          </div>
 
           <VBtn
             :disabled="!isAccountDeactivated"

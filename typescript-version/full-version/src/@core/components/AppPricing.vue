@@ -33,7 +33,7 @@ const pricingPlans = [
     tagLine: 'For small to medium businesses',
     logo: dynamicImgImport('@/assets/images/misc/pricing-tree-2.png'),
     monthlyPrice: 42,
-    yearlyPrice: 499,
+    yearlyPrice: 460,
     isPopular: true,
     current: false,
     features: [
@@ -49,7 +49,7 @@ const pricingPlans = [
     tagLine: 'Solution for big organizations',
     logo: dynamicImgImport('@/assets/images/misc/pricing-tree-3.png'),
     monthlyPrice: 84,
-    yearlyPrice: 999,
+    yearlyPrice: 690,
     isPopular: false,
     current: false,
     features: [
@@ -142,7 +142,7 @@ const pricingPlans = [
           <div class="d-flex justify-center align-center">
             <sup class="text-sm font-weight-medium me-1">$</sup>
             <h1 class="text-5xl font-weight-bold text-primary">
-              {{ plan.monthlyPrice }}
+              {{ annualMonthlyPlanPriceToggler ? Math.floor(Number(plan.yearlyPrice) / 12) : plan.monthlyPrice }}
             </h1>
             <sub class="text-sm font-weight-medium ms-2 mt-4"> /month</sub>
           </div>

@@ -36,14 +36,19 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
       class="auth-wrapper"
     >
       <VCol
-        lg="8"
-        class="d-none d-lg-flex align-center justify-center position-relative"
+        md="8"
+        class="d-none d-md-flex align-center justify-center position-relative"
       >
-        <VImg
-          max-width="768px"
-          :src="authThemeImg"
-          class="auth-illustration mt-12"
-        />
+        <div
+          class="d-flex align-center justify-center w-100 pa-10 pe-0"
+        >
+          <VImg
+            max-width="768px"
+            :src="authThemeImg"
+            class="auth-illustration mt-12"
+          />
+        </div>
+
         <VImg
           :width="276"
           :src="dynamicImgImport('@/assets/images/pages/tree.png')"
@@ -57,7 +62,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
 
       <VCol
         cols="12"
-        lg="4"
+        md="4"
         class="auth-bg d-flex align-center justify-center"
       >
         <VCard

@@ -34,5 +34,6 @@ const authProviders = [
     size="small"
     variant="text"
     :color="theme === 'dark' ? link.colorInDark : link.color"
+    class="me-2"
   />
 </template>

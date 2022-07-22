@@ -70,7 +70,7 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                     size="small"
                     label
                   >
-                    popular
+                    Popular
                   </VChip>
                 </h3>
                 <p>
@@ -428,6 +428,11 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
           </VForm>
         </VCardText>
       </VCard>
+    </VCol>
+
+    <!-- 👉 Billing History -->
+    <VCol cols="12">
+      <BillingHistoryTable />
     </VCol>
   </VRow>
 </template>

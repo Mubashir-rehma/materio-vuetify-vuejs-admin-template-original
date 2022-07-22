@@ -3,7 +3,6 @@ import DefaultLayoutWithHorizontalNav from './components/DefaultLayoutWithHorizo
 import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVerticalNav.vue'
 
 // Composable
-import { useSkins } from '@core/composable/useSkins'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
@@ -11,11 +10,7 @@ import { useDynamicVhCssProperty } from '@layouts'
 import { EnumAppContentLayoutNav } from '@layouts/enums'
 
 const { width: windowWidth } = useWindowSize()
-const { useValidSkin } = useSkins()
 const { appContentLayoutNav, switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
-
-// NOTE: You have to use this to prevent invalid theme configuration (skin & theme combination)
-useValidSkin()
 
 // ℹ️ This is useful for calculating vh based CSS value correctly on mobile devices
 useDynamicVhCssProperty()

@@ -16,12 +16,15 @@ const {
   navbarType,
   footerType,
   isVerticalNavCollapsed,
+  isVerticalNavSemiDark,
   appContentWidth,
   appContentLayoutNav,
   isAppRtl,
   isNavbarBlurEnabled,
   isLessThanOverlayNavBreakpoint,
 } = useThemeConfig()
+
+console.log('isVerticalNavSemiDark.value :>> ', isVerticalNavSemiDark.value)
 
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
@@ -238,15 +241,30 @@ const { width: windowWidth } = useWindowSize()
               :value="val"
             />
           </VRadioGroup>
-          <!-- 👉 Menu Collapsed -->
+
+          <!-- 👉 Collapsed Menu -->
           <div class="mt-6 d-flex align-center justify-space-between">
             <VLabel for="customizer-menu-collapsed">
-              Menu Collapsed
+              Collapsed Menu
             </VLabel>
             <div>
               <VSwitch
                 id="customizer-menu-collapsed"
                 v-model="isVerticalNavCollapsed"
+                class="ms-2"
+              />
+            </div>
+          </div>
+
+          <!-- 👉 Semi Dark Menu -->
+          <div class="mt-2 d-flex align-center justify-space-between">
+            <VLabel for="customizer-menu-semi-dark">
+              Semi Dark Menu
+            </VLabel>
+            <div>
+              <VSwitch
+                id="customizer-menu-semi-dark"
+                v-model="isVerticalNavSemiDark"
                 class="ms-2"
               />
             </div>

@@ -13,6 +13,16 @@ export const useThemeConfig = () => {
     },
   })
 
+  const isVerticalNavSemiDark = computed({
+    get() {
+      return themeConfig.verticalNav.isVerticalNavSemiDark.value
+    },
+    set(value: typeof themeConfig.verticalNav.isVerticalNavSemiDark.value) {
+      themeConfig.verticalNav.isVerticalNavSemiDark.value = value
+      localStorage.setItem(`${themeConfig.app.title}-isVerticalNavSemiDark`, value.toString())
+    },
+  })
+
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
     watch(theme, val => { vuetifyTheme.global.name.value = val })
@@ -105,6 +115,7 @@ export const useThemeConfig = () => {
 
   return {
     theme,
+    isVerticalNavSemiDark,
     syncVuetifyThemeWithTheme,
     syncInitialLoaderTheme,
     skin,

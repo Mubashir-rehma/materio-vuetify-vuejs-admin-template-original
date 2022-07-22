@@ -6,6 +6,7 @@ export const defineThemeConfig = (
   userConfig: UserThemeConfig,
 ): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
   const localStorageTheme = localStorage.getItem(`${userConfig.app.title}-theme`)
+  const localStorageIsVerticalNavSemiDark = localStorage.getItem(`${userConfig.app.title}-isVerticalNavSemiDark`)
   const localStorageSkin = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
 
@@ -39,6 +40,7 @@ export const defineThemeConfig = (
       verticalNav: {
         isVerticalNavCollapsed: ref(userConfig.verticalNav.isVerticalNavCollapsed),
         defaultNavItemIconClass: userConfig.verticalNav.defaultNavItemIconClass,
+        isVerticalNavSemiDark: ref(localStorageIsVerticalNavSemiDark ? JSON.parse(localStorageIsVerticalNavSemiDark) : userConfig.verticalNav.isVerticalNavSemiDark),
       },
       horizontalNav: {
         type: ref(userConfig.horizontalNav.type),

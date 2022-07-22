@@ -15,7 +15,7 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 // @layouts plugin
 import { VerticalNavLayout } from '@layouts'
 
-// `layoutAttrs` provides skin classes and vertical nav props for semi-dark skin styling
+// `layoutAttrs` provides skin classes and vertical nav props for semi-dark styling
 const { layoutAttrs } = useSkins()
 
 const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()

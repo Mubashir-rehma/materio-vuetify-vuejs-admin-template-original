@@ -1,6 +1,6 @@
+import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 import type { Ref } from 'vue'
 import type { EnumSkins, RouteTransitions } from './enums'
-import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 
 export interface UserThemeConfig {
   app: {
@@ -25,6 +25,7 @@ export interface UserThemeConfig {
   verticalNav: {
     isVerticalNavCollapsed: UserLayoutConfig['verticalNav']['isVerticalNavCollapsed']
     defaultNavItemIconClass: UserLayoutConfig['verticalNav']['defaultNavItemIconClass']
+    isVerticalNavSemiDark: boolean
   }
   horizontalNav: {
     type: UserLayoutConfig['horizontalNav']['type']
@@ -67,6 +68,7 @@ export interface ThemeConfig {
   verticalNav: {
     isVerticalNavCollapsed: Ref<UserThemeConfig['verticalNav']['isVerticalNavCollapsed']>
     defaultNavItemIconClass: UserThemeConfig['verticalNav']['defaultNavItemIconClass']
+    isVerticalNavSemiDark: Ref<UserThemeConfig['verticalNav']['isVerticalNavSemiDark']>
   }
   horizontalNav: {
     type: Ref<UserThemeConfig['horizontalNav']['type']>

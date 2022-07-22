@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:string";
 @use "@configured-variables" as variables;
+@use "scss/utils";
 
 // @use "vuetify/lib/styles/settings/elevations" as vuetify_default_elevations;
 // @use "vuetify/lib/styles/tools/functions" as vuetify_functions;
@@ -122,13 +123,29 @@ h6,
 }
 
 .v-theme--light {
-  --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "light")} !important;
-  --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "light")} !important;
+  --v-theme-background:
+    var(
+      --skin-theme-background,
+      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-background", "light")}
+    ) !important;
+  --v-theme-surface:
+    var(
+      --skin-theme-surface,
+      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-surface", "light")}
+    ) !important;
 }
 
 .v-theme--dark {
-  --v-theme-background: #{map.get(variables.$css-var--v-theme-background, "dark")} !important;
-  --v-theme-surface: #{map.get(variables.$css-var--v-theme-surface, "dark")} !important;
+  --v-theme-background:
+    var(
+      --skin-theme-background,
+      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-background", "dark")}
+    ) !important;
+  --v-theme-surface:
+    var(
+      --skin-theme-surface,
+      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-surface", "dark")}
+    ) !important;
 }
 
 // SECTION Custom patches

@@ -8,15 +8,23 @@ export const useSkins = () => {
   const { isVerticalNavSemiDark, skin, appContentLayoutNav } = useThemeConfig()
 
   const layoutAttrs = computed(() => {
-    const returnVal: { class: string; verticalNavAttrs?: Record<string, any> } = { class: `skin--${skin.value}`, verticalNavAttrs: undefined }
-
-    if (isVerticalNavSemiDark.value && appContentLayoutNav.value === EnumAppContentLayoutNav.Vertical)
-      returnVal.verticalNavAttrs = { tag: h(VThemeProvider, { tag: 'aside' }), withBackground: true, theme: 'dark' }
-
-    return returnVal
+    return isVerticalNavSemiDark.value && appContentLayoutNav.value === EnumAppContentLayoutNav.Vertical
+      ? { verticalNavAttrs: { tag: h(VThemeProvider, { tag: 'aside' }), withBackground: true, theme: 'dark' } }
+      : {}
   })
 
+  const injectSkinClasses = () => {
+    const bodyClasses = document.body.classList
+    const genSkinClass = (_skin?: string) => `skin--${_skin}`
+
+    watch(skin, (val, oldVal) => {
+      bodyClasses.remove(genSkinClass(oldVal))
+      bodyClasses.add(genSkinClass(val))
+    }, { immediate: true })
+  }
+
   return {
+    injectSkinClasses,
     layoutAttrs,
   }
 }

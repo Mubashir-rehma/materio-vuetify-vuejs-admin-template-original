@@ -16,13 +16,32 @@
 //   $layout-vertical-nav-width: 350px !default,
 // );
 
-$css-var--v-theme-background: (
-  "light": (244 ,245, 250),
-  "dark": (40 ,36, 61),
-) !default;
-$css-var--v-theme-surface: (
-  "light": (255, 255, 255),
-  "dark": (49, 45, 75),
+$css-vars: (
+  /*
+    - Skins
+      - CSS var
+        - Theme
+  */
+  "default": (
+    "--v-theme-background": (
+      "light": (244 ,245, 250),
+      "dark": (40 ,36, 61),
+    ),
+    "--v-theme-surface": (
+      "light": (255, 255, 255),
+      "dark": (49, 45, 75),
+    ),
+  ),
+  "bordered": (
+    "--v-theme-background": (
+      "light": (255 ,255, 255),
+      "dark": (49, 45, 75),
+    ),
+    "--v-theme-surface": (
+      "light": (255, 255, 255),
+      "dark": (49, 45, 75),
+    ),
+  ),
 ) !default;
 $theme-colors-name: (
   "primary",

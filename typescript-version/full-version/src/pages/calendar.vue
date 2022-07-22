@@ -47,7 +47,7 @@ const checkAll = computed({
 </script>
 
 <template>
-  <div>
+  <VCard>
     <!-- `z-index: 0` Allows overlapping vertical nav on calendar -->
     <VLayout style="z-index: 0;">
       <!-- 👉 Navigation drawer -->
@@ -101,7 +101,7 @@ const checkAll = computed({
       @updateEvent="updateEvent"
       @removeEvent="removeEvent"
     />
-  </div>
+  </VCard>
 </template>
 
 <style lang="scss">

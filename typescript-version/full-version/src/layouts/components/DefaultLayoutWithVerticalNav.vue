@@ -15,11 +15,14 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 // @layouts plugin
 import { VerticalNavLayout } from '@layouts'
 
-// `layoutAttrs` provides skin classes and vertical nav props for semi-dark styling
-const { layoutAttrs } = useSkins()
-
 const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
 const { width: windowWidth } = useWindowSize()
+
+// `layoutAttrs` provides skin classes and vertical nav props for semi-dark styling
+const { layoutAttrs, injectSkinClasses } = useSkins()
+
+// ℹ️ This will inject classes in body tag for accurate styling
+injectSkinClasses()
 </script>
 
 <template>

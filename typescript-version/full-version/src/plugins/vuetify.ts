@@ -17,6 +17,7 @@ export default createVuetify({
     },
     VPagination: {
       color: 'primary',
+      density: 'comfortable',
     },
     VTabs: {
       // set v-tabs default color to primary

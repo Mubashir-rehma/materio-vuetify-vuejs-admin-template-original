@@ -5,21 +5,21 @@ const pageInfo = ref(3)
 </script>
 
 <template>
-  <VPagination
-    v-model="pageSuccess"
-    :length="7"
-    color="success"
-  />
-
-  <VPagination
-    v-model="pageError"
-    :length="7"
-    color="error"
-  />
-
-  <VPagination
-    v-model="pageInfo"
-    :length="7"
-    color="info"
-  />
+  <div class="d-flex flex-column gap-6">
+    <VPagination
+      v-model="pageSuccess"
+      :length="7"
+      color="success"
+    />
+    <VPagination
+      v-model="pageError"
+      :length="7"
+      color="error"
+    />
+    <VPagination
+      v-model="pageInfo"
+      :length="7"
+      color="info"
+    />
+  </div>
 </template>

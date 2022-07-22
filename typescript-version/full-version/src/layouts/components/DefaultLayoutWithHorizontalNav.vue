@@ -15,7 +15,10 @@ import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 
 const { appRouteTransition } = useThemeConfig()
-const { layoutAttrs } = useSkins()
+const { layoutAttrs, injectSkinClasses } = useSkins()
+
+// ℹ️ This will inject classes in body tag for accurate styling
+injectSkinClasses()
 </script>
 
 <template>

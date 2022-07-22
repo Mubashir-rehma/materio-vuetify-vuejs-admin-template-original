@@ -24,8 +24,6 @@ const {
   isLessThanOverlayNavBreakpoint,
 } = useThemeConfig()
 
-console.log('isVerticalNavSemiDark.value :>> ', isVerticalNavSemiDark.value)
-
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
 
@@ -257,7 +255,10 @@ const { width: windowWidth } = useWindowSize()
           </div>
 
           <!-- 👉 Semi Dark Menu -->
-          <div class="mt-2 d-flex align-center justify-space-between">
+          <div
+            class="mt-2 align-center justify-space-between"
+            :class="theme === 'light' ? 'd-flex' : 'd-none'"
+          >
             <VLabel for="customizer-menu-semi-dark">
               Semi Dark Menu
             </VLabel>

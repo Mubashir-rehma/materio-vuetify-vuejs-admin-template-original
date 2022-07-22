@@ -10,6 +10,10 @@ export const useThemeConfig = () => {
     set(value: typeof themeConfig.app.theme.value) {
       themeConfig.app.theme.value = value
       localStorage.setItem(`${themeConfig.app.title}-theme`, value.toString())
+
+      if (value !== 'light')
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        isVerticalNavSemiDark.value = false
     },
   })
 

@@ -97,6 +97,10 @@ const onSubmit = () => {
                   color="primary"
                   size="small"
                 >
+                  <VIcon
+                    start
+                    icon="mdi-link"
+                  />
                   Invoice Attached
                 </VChip>
               </div>

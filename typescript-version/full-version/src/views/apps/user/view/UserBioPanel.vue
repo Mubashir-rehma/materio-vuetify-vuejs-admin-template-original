@@ -257,7 +257,7 @@ const resolveUserRoleVariant = (role: string) => {
 
           <!-- 👉 Current Price  -->
           <div class="d-flex align-center">
-            <sup class="text-primary">$</sup>
+            <sup class="text-primary text-sm font-weight-medium">$</sup>
             <h3 class="text-h3 text-primary font-weight-semibold">
               99
             </h3>

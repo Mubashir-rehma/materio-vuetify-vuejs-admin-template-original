@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { UserProperties } from '@/@fake-db/types'
+import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import { avatarText } from '@core/utils/formatters'
 
@@ -48,7 +49,7 @@ const roles = [
   { title: 'Author', value: 'author' },
   { title: 'Editor', value: 'editor' },
   { title: 'Maintainer', value: 'maintainer' },
-  { title: 'Subscriber', value: 'maintainer' },
+  { title: 'Subscriber', value: 'subscriber' },
 ]
 const plans = [
   { title: 'Basic', value: 'basic' },
@@ -240,7 +241,10 @@ const addNewUser = (userData: UserProperties) => {
         <thead>
           <tr>
             <th>
-              <div style="width: 1.875rem;">
+              <div
+                class="mb-n2"
+                style="width: 1.875rem;"
+              >
                 <VCheckbox
                   :model-value="selectAllUser"
                   :indeterminate="(users.length !== selectedRows.length) && !!selectedRows.length"
@@ -265,7 +269,10 @@ const addNewUser = (userData: UserProperties) => {
           >
             <!-- 👉 Checkbox -->
             <td>
-              <div style="width: 1.875rem;">
+              <div
+                class="mb-n2"
+                style="width: 1.875rem;"
+              >
                 <VCheckbox
                   :id="`check${user.id}`"
                   :model-value="selectedRows.includes(`check${user.id}`)"
@@ -388,10 +395,10 @@ const addNewUser = (userData: UserProperties) => {
 
       <VDivider />
 
-      <VCardText class="d-flex align-center flex-wrap justify-end gap-4">
+      <VCardText class="d-flex align-center flex-wrap justify-end gap-4 pa-2">
         <div
           class="d-flex align-center me-3"
-          style="width: 160px;"
+          style="width: 175px;"
         >
           <span class="text-no-wrap me-3">Rows per page:</span>
 

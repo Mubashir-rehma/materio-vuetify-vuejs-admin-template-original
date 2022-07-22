@@ -28,7 +28,7 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
 </script>
 
 <template>
-  <VRow>
+  <VRow v-if="userData">
     <VCol
       cols="12"
       md="5"

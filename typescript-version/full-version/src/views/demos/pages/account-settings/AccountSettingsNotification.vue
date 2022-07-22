@@ -38,38 +38,44 @@ const selectedNotification = ref('Only when I\'m online')
       <a href="javascript:void(0)">Request Permission</a>
     </VCardText>
 
-    <VCardText>
-      <VTable>
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>EMAIL</th>
-            <th>BROWSER</th>
-            <th>App</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="device in recentDevices"
-            :key="device.type"
-          >
-            <td>
-              {{ device.type }}
-            </td>
-            <td>
-              <VCheckbox v-model="device.email" />
-            </td>
-            <td>
-              <VCheckbox v-model="device.browser" />
-            </td>
-            <td>
-              <VCheckbox v-model="device.app" />
-            </td>
-          </tr>
-        </tbody>
-      </VTable>
-    </VCardText>
-
+    <VTable>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>EMAIL</th>
+          <th>BROWSER</th>
+          <th>App</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="device in recentDevices"
+          :key="device.type"
+        >
+          <td>
+            {{ device.type }}
+          </td>
+          <td>
+            <VCheckbox
+              v-model="device.email"
+              class="mt-2"
+            />
+          </td>
+          <td>
+            <VCheckbox
+              v-model="device.browser"
+              class="mt-2"
+            />
+          </td>
+          <td>
+            <VCheckbox
+              v-model="device.app"
+              class="mt-2"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </VTable>
     <VDivider />
 
     <VCardText>

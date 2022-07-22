@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import UserInvoiceTable from './UserInvoiceTable.vue'
+
 const projects = [
   {
     logo: dynamicImgImport('@/assets/images/icons/project-icons/react.png'),
@@ -73,56 +75,60 @@ const resolveUserProgressVariant = (progress: number) => {
 </script>
 
 <template>
-  <VCard title="Project List">
-    <VDivider />
-    <VTable class="text-no-wrap">
-      <thead>
-        <tr>
-          <th>PROJECT</th>
-          <th>TOTAL TASK</th>
-          <th>PROGRESS</th>
-          <th>HOURS</th>
-        </tr>
-      </thead>
+  <VRow>
+    <VCol cols="12">
+      <VCard title="Project List">
+        <VDivider />
+        <VTable class="text-no-wrap">
+          <thead>
+            <tr>
+              <th>PROJECT</th>
+              <th>TOTAL TASK</th>
+              <th>PROGRESS</th>
+              <th>HOURS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="project in projects"
+              :key="project.name"
+            >
+              <td class="d-flex align-center">
+                <VAvatar
+                  :size="32"
+                  class="me-3"
+                  :image="project.logo"
+                />
+                <div>
+                  <p class="font-weight-medium mb-0">
+                    {{ project.name }}
+                  </p>
+                  <p class="text-caption text-disabled mb-0">
+                    {{ project.project }}
+                  </p>
+                </div>
+              </td>
+              <td>
+                {{ project.totalTask }}
+              </td>
+              <td>
+                <span>{{ project.progress }}%</span>
+                <VProgressLinear
+                  :height="6"
+                  :model-value="project.progress"
+                  rounded
+                  :color="resolveUserProgressVariant(project.progress)"
+                />
+              </td>
+              <td>{{ project.hours }}</td>
+            </tr>
+          </tbody>
+        </VTable>
+      </VCard>
+    </VCol>
 
-      <tbody>
-        <tr
-          v-for="project in projects"
-          :key="project.name"
-        >
-          <td class="d-flex align-center">
-            <VAvatar
-              :size="32"
-              class="me-3"
-              :image="project.logo"
-            />
-            <div>
-              <p class="font-weight-medium mb-0">
-                {{ project.name }}
-              </p>
-              <p class="text-caption text-disabled mb-0">
-                {{ project.project }}
-              </p>
-            </div>
-          </td>
-
-          <td>
-            {{ project.totalTask }}
-          </td>
-
-          <td>
-            <span>{{ project.progress }}%</span>
-            <VProgressLinear
-              :height="6"
-              :model-value="project.progress"
-              rounded
-              :color="resolveUserProgressVariant(project.progress)"
-            />
-          </td>
-
-          <td>{{ project.hours }}</td>
-        </tr>
-      </tbody>
-    </VTable>
-  </VCard>
+    <VCol cols="12">
+      <UserInvoiceTable />
+    </VCol>
+  </VRow>
 </template>

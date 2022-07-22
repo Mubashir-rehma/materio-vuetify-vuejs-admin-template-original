@@ -82,42 +82,31 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
     v-if="invoices"
     id="invoice-list"
   >
-    <VCardText class="d-flex align-center flex-wrap gap-3">
-      <!-- 👉 Create invoice -->
-      <VBtn
-        prepend-icon="mdi-plus"
-        :to="{ name: 'invoice-add' }"
-        class="me-3"
-      >
-        Create invoice
-      </VBtn>
-
-      <VSpacer />
-
-      <div class="d-flex align-center flex-wrap gap-3">
-        <!-- 👉 Search  -->
-        <div class="invoice-list-search">
-          <VTextField
-            v-model="searchQuery"
-            placeholder="Search Invoice"
-            density="compact"
-            class="me-3"
-          />
-        </div>
-        <div class="invoice-list-status">
-          <VSelect
-            v-model="selectedStatus"
-            label="Select Status"
-            clearable
-            clear-icon="mdi-close"
-            density="compact"
-            :items="['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due']"
-          />
-        </div>
-      </div>
-    </VCardText>
+    <VCardItem>
+      <VCardTitle>Invoice List</VCardTitle>
+      <template #append>
+        <VBtn
+          color="primary"
+          append-icon="mdi-chevron-down"
+        >
+          Export
+          <VMenu activator="parent">
+            <VList>
+              <VListItem
+                v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
+                :key="index"
+                :value="index"
+              >
+                <VListItemTitle>{{ item }}</VListItemTitle>
+              </VListItem>
+            </VList>
+          </VMenu>
+        </VBtn>
+      </template>
+    </VCardItem>
 
     <VDivider />
+
     <!-- SECTION Table -->
     <VTable class="text-no-wrap invoice-list-table">
       <!-- 👉 Table head -->
@@ -310,10 +299,10 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
     <VDivider />
 
     <!-- SECTION Pagination -->
-    <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
+    <VCardText class="d-flex flex-wrap justify-end justify-sm-space-between gap-4 pa-2">
       <!-- 👉 Rows per page -->
       <div
-        class="d-flex align-center me-3"
+        class="d-flex align-center mx-3"
         style="width: 175px;"
       >
         <span class="text-no-wrap me-3">Rows per page:</span>

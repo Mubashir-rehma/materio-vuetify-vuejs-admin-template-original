@@ -130,7 +130,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
               label="Select Status"
               clearable
               clear-icon="mdi-close"
-              :items="['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due']"
+              :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
             />
           </VCol>
 
@@ -152,7 +152,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
     </VCard>
 
     <VCard id="invoice-list">
-      <VCardText class="d-flex align-center">
+      <VCardText class="d-flex align-center flex-wrap gap-4">
         <!-- 👉 Actions  -->
         <div class="me-3">
           <VSelect
@@ -166,23 +166,25 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
         <VSpacer />
 
-        <!-- 👉 Search  -->
-        <div class="invoice-list-search">
-          <VTextField
-            v-model="searchQuery"
-            placeholder="Search Invoice"
-            density="compact"
-            class="me-3"
-          />
-        </div>
+        <div class="d-flex align-center flex-wrap gap-4">
+          <!-- 👉 Search  -->
+          <div class="invoice-list-search">
+            <VTextField
+              v-model="searchQuery"
+              placeholder="Search Invoice"
+              density="compact"
+              class="me-3"
+            />
+          </div>
 
-        <!-- 👉 Create invoice -->
-        <VBtn
-          prepend-icon="mdi-plus"
-          :to="{ name: 'invoice-add' }"
-        >
-          Create invoice
-        </VBtn>
+          <!-- 👉 Create invoice -->
+          <VBtn
+            prepend-icon="mdi-plus"
+            :to="{ name: 'invoice-add' }"
+          >
+            Create invoice
+          </VBtn>
+        </div>
       </VCardText>
 
       <VDivider />
@@ -194,11 +196,16 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
           <tr>
             <!-- 👉 Check/Uncheck all checkbox -->
             <th class="text-start">
-              <VCheckbox
-                :model-value="selectAllInvoice"
-                :indeterminate="(invoices.length !== selectedRows.length) && !!selectedRows.length"
-                @click="selectUnselectAll"
-              />
+              <div
+                class="mb-n2"
+                style="width: 1rem;"
+              >
+                <VCheckbox
+                  :model-value="selectAllInvoice"
+                  :indeterminate="(invoices.length !== selectedRows.length) && !!selectedRows.length"
+                  @click="selectUnselectAll"
+                />
+              </div>
             </th>
             <th class="text-start">
               #ID
@@ -232,7 +239,10 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
           >
             <!-- 👉 Individual checkbox -->
             <td>
-              <div style="width: 1.875rem;">
+              <div
+                class="mb-n2"
+                style="width: 1rem;"
+              >
                 <VCheckbox
                   :id="`check${invoice.id}`"
                   :model-value="selectedRows.includes(`check${invoice.id}`)"
@@ -250,15 +260,29 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
             <!-- 👉 Trending -->
             <td>
-              <VAvatar
-                :size="30"
-                :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant}`"
-              >
-                <VIcon
-                  :size="20"
-                  :icon="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).icon"
-                />
-              </VAvatar>
+              <VTooltip>
+                <template #activator="{ props }">
+                  <VAvatar
+                    :size="30"
+                    v-bind="props"
+                    :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant}`"
+                  >
+                    <VIcon
+                      :size="20"
+                      :icon="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).icon"
+                    />
+                  </VAvatar>
+                </template>
+                <p class="mb-0">
+                  {{ invoice.invoiceStatus }}
+                </p>
+                <p class="mb-0">
+                  Balance: {{ invoice.balance }}
+                </p>
+                <p class="mb-0">
+                  Due date: {{ invoice.dueDate }}
+                </p>
+              </VTooltip>
             </td>
 
             <!-- 👉 Client Avatar and Email -->
@@ -284,7 +308,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             </td>
 
             <!-- 👉 total -->
-            <td>{{ invoice.total }}</td>
+            <td>${{ invoice.total }}</td>
 
             <!-- 👉 Date -->
             <td>{{ invoice.issuedDate }}</td>
@@ -384,11 +408,11 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
       <VDivider />
 
       <!-- SECTION Pagination -->
-      <VCardText class="d-flex flex-wrap justify-end gap-4">
+      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
         <!-- 👉 Rows per page -->
         <div
           class="d-flex align-center me-3"
-          style="width: 160px;"
+          style="width: 175px;"
         >
           <span class="text-no-wrap me-3">Rows per page:</span>
           <VSelect

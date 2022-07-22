@@ -151,6 +151,7 @@ const socialAccounts = ref([
                 color="secondary"
                 variant="tonal"
                 size="small"
+                rounded="default"
                 :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
               />
             </VListItemAction>

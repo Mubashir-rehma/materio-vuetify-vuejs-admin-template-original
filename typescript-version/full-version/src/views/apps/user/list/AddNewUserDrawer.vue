@@ -163,6 +163,7 @@ const onSubmit = () => {
               <VSelect
                 v-model="role"
                 label="Select Role"
+                :rules="[requiredValidator]"
                 :items="['Admin', 'Author', 'Editor', 'Maintainer', 'Subscriber']"
               />
             </VCol>
@@ -172,6 +173,7 @@ const onSubmit = () => {
               <VSelect
                 v-model="plan"
                 label="Select Plan"
+                :rules="[requiredValidator]"
                 :items="['Basic', 'Company', 'Enterprise', 'Team']"
               />
             </VCol>
@@ -181,6 +183,7 @@ const onSubmit = () => {
               <VSelect
                 v-model="status"
                 label="Select Status"
+                :rules="[requiredValidator]"
                 :items="[{ title: 'Active', value: 'active' }, { title: 'Inactive', value: 'inactive' }, { title: 'Pending', value: 'pending' }]"
               />
             </VCol>

@@ -33,15 +33,15 @@ const resetPhoneNumber = () => {
   >
     <VCard class="pa-5 pa-sm-15">
       <VCardItem>
-        <VCardTitle class="text-h5 font-weight-medium">
+        <VCardTitle class="text-h5 font-weight-medium text-center">
           Enable One Time Password
         </VCardTitle>
-        <VCardSubtitle class="font-weight-medium">
-          Verify Your Mobile Number for SMS
-        </VCardSubtitle>
       </VCardItem>
 
       <VCardText>
+        <h5 class="text-h6 font-weight-medium mb-3">
+          Verify Your Mobile Number for SMS
+        </h5>
         <p>Enter your mobile phone number with country code and  we will send you a verification code.</p>
 
         <VForm @submit.prevent="() => {}">

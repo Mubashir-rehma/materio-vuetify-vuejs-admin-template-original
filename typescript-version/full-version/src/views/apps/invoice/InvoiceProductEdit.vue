@@ -112,7 +112,7 @@ watch(totalPrice, () => {
   <VCard
     flat
     border
-    class="d-flex"
+    class="d-flex flex-sm-row flex-column-reverse"
   >
     <!-- 👉 Left Form -->
     <div class="pa-5 flex-grow-1">
@@ -152,8 +152,14 @@ watch(totalPrice, () => {
               Discount
             </p>
             <span>0%</span>
-            <span class="mx-2">0%</span>
-            <span>0%</span>
+            <span class="mx-2">
+              0%
+              <VTooltip activator="parent">Tax 1</VTooltip>
+            </span>
+            <span>
+              0%
+              <VTooltip activator="parent">Tax 2</VTooltip>
+            </span>
           </div>
         </VCol>
         <VCol
@@ -172,7 +178,7 @@ watch(totalPrice, () => {
           md="2"
           sm="4"
         >
-          <p class="text-center my-2">
+          <p class="text-sm-center my-2">
             <span class="d-inline d-md-none">Price: </span>
             <span class="text-body-1">${{ totalPrice }}</span>
           </p>
@@ -181,10 +187,13 @@ watch(totalPrice, () => {
     </div>
 
     <!-- 👉 Item Actions -->
-    <div class="d-flex flex-column item-actions border-s pa-1">
+    <div
+      class="d-flex flex-column item-actions pa-1"
+      :class="$vuetify.display.smAndUp ? 'border-s' : 'border-b' "
+    >
       <VBtn
         icon
-        size="small"
+        size="x-small"
         color="secondary"
         variant="text"
         @click="removeProduct"

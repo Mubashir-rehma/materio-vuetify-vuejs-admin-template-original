@@ -49,9 +49,24 @@ const notifications = ref([
           :key="notification.type"
         >
           <td>{{ notification.type }}</td>
-          <td><VCheckbox v-model="notification.email" /></td>
-          <td><VCheckbox v-model="notification.browser" /></td>
-          <td><VCheckbox v-model="notification.app" /></td>
+          <td>
+            <VCheckbox
+              v-model="notification.email"
+              class="mt-2"
+            />
+          </td>
+          <td>
+            <VCheckbox
+              v-model="notification.browser"
+              class="mt-2"
+            />
+          </td>
+          <td>
+            <VCheckbox
+              v-model="notification.app"
+              class="mt-2"
+            />
+          </td>
         </tr>
       </tbody>
     </VTable>

@@ -28,7 +28,7 @@ watch(isAppRtl, changeVuetiyDirClasses)
   <!-- TODO: Remove this and use vuetify API for Adding RTL initial value -->
   <VApp
     ref="vApp"
-    :style="{ direction: isAppRtl ? 'rtl' : 'ltr' }"
+    :style="{ direction: isAppRtl ? 'rtl' : 'ltr', overflow: 'unset' }"
   >
     <VMain>
       <RouterView />

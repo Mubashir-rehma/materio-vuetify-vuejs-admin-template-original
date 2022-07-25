@@ -39,6 +39,13 @@ injectSkinClasses()
           @click="toggleVerticalOverlayNavActive(true)"
         />
 
+        <VBtn
+          icon="mdi-magnify"
+          size="small"
+          variant="plain"
+          color="secondary"
+        />
+
         <VSpacer />
 
         <NavBarI18n class="me-2" />

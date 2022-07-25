@@ -41,7 +41,8 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
 <style lang="scss">
 .page-knowledge-base {
   padding: 5.5rem;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 // search input

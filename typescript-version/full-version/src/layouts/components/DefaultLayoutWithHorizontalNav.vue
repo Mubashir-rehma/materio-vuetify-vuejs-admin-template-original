@@ -44,6 +44,12 @@ injectSkinClasses()
         </h1>
       </RouterLink>
       <VSpacer />
+      <VBtn
+        icon="mdi-magnify"
+        size="small"
+        variant="plain"
+        color="secondary"
+      />
       <NavBarI18n class="me-2" />
       <NavbarThemeSwitcher class="me-2" />
       <NavBarNotifications class="me-2" />

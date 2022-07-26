@@ -74,8 +74,8 @@ defineEmits<{
                 <VListItemAvatar start>
                   <VAvatar
                     :color="notification.color || 'primary'"
-                    :image="notification.img || null"
-                    :icon="notification.icon || null"
+                    :image="notification.img || undefined"
+                    :icon="notification.icon || undefined"
                   >
                     <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
                   </VAvatar>

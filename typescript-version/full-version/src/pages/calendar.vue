@@ -97,9 +97,9 @@ const checkAll = computed({
     <CalendarEventHandler
       v-model:isDrawerOpen="isEventHandlerSidebarActive"
       :event="event"
-      @addEvent="addEvent"
-      @updateEvent="updateEvent"
-      @removeEvent="removeEvent"
+      @add-event="addEvent"
+      @update-event="updateEvent"
+      @remove-event="removeEvent"
     />
   </VCard>
 </template>

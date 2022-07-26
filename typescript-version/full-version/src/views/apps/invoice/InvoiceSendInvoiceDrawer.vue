@@ -1,7 +1,13 @@
 <script setup lang="ts">
+interface SubmitData {
+  emailFrom: string
+  emailTo: string
+  invoiceSubject: string
+  paymentMessage: string
+}
 interface Emit {
   (e: 'update:isDrawerOpen', value: boolean): void
-  (e: 'submit', value: Object): void
+  (e: 'submit', value: SubmitData): void
 }
 
 interface Props {

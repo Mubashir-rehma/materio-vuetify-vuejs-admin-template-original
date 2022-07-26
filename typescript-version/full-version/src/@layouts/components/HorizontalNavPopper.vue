@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computePosition, flip, shift } from '@floating-ui/dom'
+import { useLayouts } from '@layouts/composable/useLayouts'
 import { config } from '@layouts/config'
 import { themeConfig } from '@themeConfig'
 
@@ -71,6 +72,10 @@ const hideContent = () => {
 }
 
 onMounted(updatePopper)
+
+// Recalculate position when direction changes
+const { isAppRtl } = useLayouts()
+watch(isAppRtl, updatePopper)
 </script>
 
 <template>

@@ -33,7 +33,8 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   },
   horizontalNav: {
     type: 'sticky',
-    transition: 'fade-transition',
+
+    // transition: 'scroll-y-reverse-transition',
   },
   icons: {
     chevronDown: 'i-mdi-chevron-down',

@@ -28,7 +28,10 @@ const popperContentStyles = ref({
 const updatePopper = async () => {
   const { x, y } = await computePosition(refPopperContainer.value, refPopper.value, {
     placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : (props.isRtl ? 'bottom-end' : 'bottom-start'),
-    middleware: [flip(), shift()],
+    middleware: [
+      flip({ boundary: document.querySelector('body')! }),
+      shift({ boundary: document.querySelector('body')! }),
+    ],
 
     /*
       ℹ️ Why we are not using fixed positioning?
@@ -66,6 +69,8 @@ const showContent = () => {
 const hideContent = () => {
   isContentShown.value = false
 }
+
+onMounted(updatePopper)
 </script>
 
 <template>

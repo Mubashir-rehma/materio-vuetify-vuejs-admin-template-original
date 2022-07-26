@@ -1,6 +1,6 @@
 import type { MaybeRef } from '@vueuse/shared'
 import type { Ref } from 'vue'
-import { EnumAppContentLayoutNav } from '../enums'
+import { EnumAppContentLayoutNav, EnumNavbarType } from '../enums'
 import { config } from '@layouts/config'
 import { injectionKeyIsVerticalNavHovered } from '@layouts'
 
@@ -63,6 +63,10 @@ export const useLayouts = () => {
     },
     set(val: typeof config.app.contentLayoutNav.value) {
       config.app.contentLayoutNav.value = val
+
+      // If Navbar type is hidden while switching to horizontal nav => Reset it to sticky
+      if (val === EnumAppContentLayoutNav.Horizontal && navbarType.value === EnumNavbarType.Hidden)
+        navbarType.value = EnumNavbarType.Sticky
     },
   })
 

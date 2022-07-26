@@ -56,6 +56,15 @@ const perfectScrollbarSettings = {
 }
 
 const { width: windowWidth } = useWindowSize()
+
+const headerValues = computed(() => {
+  const entries = Object.entries(EnumNavbarType)
+
+  if (appContentLayoutNav.value === EnumAppContentLayoutNav.Horizontal)
+    return entries.filter(([_, val]) => val !== EnumNavbarType.Hidden)
+
+  return entries
+})
 </script>
 
 <template>
@@ -183,13 +192,13 @@ const { width: windowWidth } = useWindowSize()
             />
           </VRadioGroup>
           <!-- 👉 Navbar Type -->
-          <span class="mt-6 d-block">Navbar Type</span>
+          <span class="mt-6 d-block">{{ appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'Navbar' : 'Header' }} Type</span>
           <VRadioGroup
             v-model="navbarType"
             inline
           >
             <VRadio
-              v-for="[key, val] in Object.entries(EnumNavbarType)"
+              v-for="[key, val] in headerValues"
               :key="key"
               :label="key"
               :value="val"

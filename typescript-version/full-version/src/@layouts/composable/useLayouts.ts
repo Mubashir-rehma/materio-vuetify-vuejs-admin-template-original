@@ -65,8 +65,12 @@ export const useLayouts = () => {
       config.app.contentLayoutNav.value = val
 
       // If Navbar type is hidden while switching to horizontal nav => Reset it to sticky
-      if (val === EnumAppContentLayoutNav.Horizontal && navbarType.value === EnumNavbarType.Hidden)
-        navbarType.value = EnumNavbarType.Sticky
+      if (val === EnumAppContentLayoutNav.Horizontal) {
+        if (navbarType.value === EnumNavbarType.Hidden)
+          navbarType.value = EnumNavbarType.Sticky
+
+        isVerticalNavCollapsed.value = false
+      }
     },
   })
 

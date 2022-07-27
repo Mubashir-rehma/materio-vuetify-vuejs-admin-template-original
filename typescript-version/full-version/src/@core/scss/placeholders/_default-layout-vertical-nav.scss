@@ -1,4 +1,5 @@
 @use "@configured-variables" as variables;
+@use "misc";
 
 %default-layout-vertical-nav-scrolled-sticky-nav {
   background-color: rgb(var(--v-theme-surface));
@@ -6,7 +7,7 @@
 
 // Check do we need this in default layout w/ horizontal nav
 %default-layout-vertical-nav-navbar-blur {
-  backdrop-filter: blur(8px);
-  background-color: rgb(var(--v-theme-surface), 0.9);
+  @extend %blurry-bg;
+
   box-shadow: variables.$vertical-nav-navbar-shadow;
 }

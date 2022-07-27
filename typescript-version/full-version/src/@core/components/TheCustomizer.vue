@@ -250,7 +250,10 @@ const headerValues = computed(() => {
           </VRadioGroup>
 
           <!-- 👉 Collapsed Menu -->
-          <div class="mt-6 d-flex align-center justify-space-between">
+          <div
+            v-if="appContentLayoutNav === EnumAppContentLayoutNav.Vertical"
+            class="mt-6 d-flex align-center justify-space-between"
+          >
             <VLabel for="customizer-menu-collapsed">
               Collapsed Menu
             </VLabel>
@@ -266,7 +269,7 @@ const headerValues = computed(() => {
           <!-- 👉 Semi Dark Menu -->
           <div
             class="mt-2 align-center justify-space-between"
-            :class="theme === 'light' ? 'd-flex' : 'd-none'"
+            :class="theme === 'light' && appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
             <VLabel for="customizer-menu-semi-dark">
               Semi Dark Menu

@@ -8,7 +8,7 @@ defineProps<{
 }>()
 
 const { y: windowScrollY } = useWindowScroll()
-const { _layoutClasses: layoutClasses } = useLayouts()
+const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 
 const router = useRouter()
@@ -26,7 +26,10 @@ router.afterEach(() => {
     class="layout-wrapper"
     :class="layoutClasses(windowWidth, windowScrollY)"
   >
-    <div class="layout-navbar-and-nav-container">
+    <div
+      class="layout-navbar-and-nav-container"
+      :class="isNavbarBlurEnabled && 'header-blur'"
+    >
       <!-- 👉 Navbar -->
       <div class="layout-navbar">
         <div class="navbar-content-container">

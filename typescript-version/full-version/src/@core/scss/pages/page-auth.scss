@@ -1,5 +1,5 @@
 .auth-wrapper {
-  min-block-size: 100vh;
+  min-block-size: calc(var(--vh, 1vh) * 100);
 }
 
 .auth-footer-mask {

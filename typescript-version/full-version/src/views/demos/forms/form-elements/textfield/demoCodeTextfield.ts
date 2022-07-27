@@ -27,3 +27,5 @@ export const iconEvents = { ts: '', js: '' }
 export const state = { ts: '', js: '' }
 
 export const iconSlots = { ts: '', js: '' }
+
+export const progress = { ts: '', js: '' }

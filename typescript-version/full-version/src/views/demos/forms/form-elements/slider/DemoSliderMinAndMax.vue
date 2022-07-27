@@ -16,6 +16,7 @@ const slider = ref(40)
         v-model="slider"
         variant="underlined"
         type="number"
+        style="width: 60px ;"
       />
     </template>
   </VSlider>

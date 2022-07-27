@@ -126,6 +126,18 @@ import * as demoCode from '@/views/demos/components/button/demoCodeButton'
     </VCol>
 
     <VCol cols="12">
+      <!-- 👉 Loaders -->
+      <AppCardCode
+        title="Loaders"
+        :code="demoCode.loaders"
+      >
+        <p>Using the <code>loading</code> prop, you can notify a user that there is processing taking place. The default behavior is to use a <code>v-progress-circular</code> component but this can be customized.</p>
+
+        <DemoButtonLoaders />
+      </AppCardCode>
+    </VCol>
+
+    <VCol cols="12">
       <!-- 👉 Router -->
       <AppCardCode
         title="Router"

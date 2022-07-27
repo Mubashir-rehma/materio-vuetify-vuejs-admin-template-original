@@ -25,3 +25,5 @@ export const sizing = { ts: '', js: '' }
 export const block = { ts: '', js: '' }
 
 export const tonal = { ts: '', js: '' }
+
+export const loaders = { ts: '', js: '' }

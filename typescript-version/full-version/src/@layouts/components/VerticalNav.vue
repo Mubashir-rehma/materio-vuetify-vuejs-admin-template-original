@@ -52,6 +52,7 @@ watch(() => route.name, () => {
 })
 
 const isVerticalNavScrolled = ref(false)
+const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.value = val
 </script>
 
 <template>
@@ -119,20 +120,25 @@ const isVerticalNavScrolled = ref(false)
     <slot name="before-nav-items">
       <div class="vertical-nav-items-shadow" />
     </slot>
-    <PerfectScrollbar
-      :key="isAppRtl"
-      tag="ul"
-      class="nav-items"
-      :options="perfectScrollbarSettings"
-      @ps-scroll-y="(evt: Event) => { isVerticalNavScrolled = (evt.target as HTMLElement).scrollTop > 0 }"
+    <slot
+      name="nav-items"
+      :update-is-vertical-nav-scrolled="updateIsVerticalNavScrolled"
     >
-      <Component
-        :is="resolveNavItemComponent(item)"
-        v-for="(item, index) in navItems"
-        :key="index"
-        :item="item"
-      />
-    </PerfectScrollbar>
+      <PerfectScrollbar
+        :key="isAppRtl"
+        tag="ul"
+        class="nav-items"
+        :options="perfectScrollbarSettings"
+        @ps-scroll-y="(evt: Event) => { isVerticalNavScrolled = (evt.target as HTMLElement).scrollTop > 0 }"
+      >
+        <Component
+          :is="resolveNavItemComponent(item)"
+          v-for="(item, index) in navItems"
+          :key="index"
+          :item="item"
+        />
+      </PerfectScrollbar>
+    </slot>
   </Component>
 </template>
 

@@ -1,11 +1,15 @@
 <script lang="ts" setup>
+import type { Anchor } from 'vuetify/lib/components'
 import { avatarText } from '@core/utils/formatters'
 import type { Notification } from '@layouts/types'
 interface Props {
   notifications: Notification[]
   badgeProps?: unknown
+  location?: Anchor
 }
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  location: 'bottom end',
+})
 
 defineEmits<{
   (e: 'click:readAllNotifications'): void
@@ -21,6 +25,7 @@ defineEmits<{
       icon
       variant="text"
       color="default"
+      size="small"
     >
       <VBadge
         :content="props.notifications.length"
@@ -29,9 +34,11 @@ defineEmits<{
       >
         <VIcon icon="mdi-bell-outline" />
       </VBadge>
+
       <VMenu
         activator="parent"
         width="380px"
+        :location="props.location"
       >
         <VList
           class="py-0"

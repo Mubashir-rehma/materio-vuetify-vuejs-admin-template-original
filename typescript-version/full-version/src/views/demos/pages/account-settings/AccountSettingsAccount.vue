@@ -284,6 +284,7 @@ const currencies = [
                   v-model="accountDataLocal.timezone"
                   label="Timezone"
                   :items="timezones"
+                  :menu-props="{ maxHeight: 200 }"
                 />
               </VCol>
 
@@ -296,6 +297,7 @@ const currencies = [
                   v-model="accountDataLocal.currency"
                   label="Currency"
                   :items="currencies"
+                  :menu-props="{ maxHeight: 200 }"
                 />
               </VCol>
 

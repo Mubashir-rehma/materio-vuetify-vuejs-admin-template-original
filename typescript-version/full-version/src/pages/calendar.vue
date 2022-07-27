@@ -74,14 +74,16 @@ const checkAll = computed({
               v-model="checkAll"
               label="View all"
             />
-            <VCheckbox
-              v-for="calendar in store.availableCalendars"
-              :key="calendar.label"
-              v-model="store.selectedCalendars"
-              :value="calendar.label"
-              :color="calendar.color"
-              :label="calendar.label"
-            />
+            <div class="d-flex flex-column">
+              <VCheckbox
+                v-for="calendar in store.availableCalendars"
+                :key="calendar.label"
+                v-model="store.selectedCalendars"
+                :value="calendar.label"
+                :color="calendar.color"
+                :label="calendar.label"
+              />
+            </div>
           </div>
         </div>
       </VNavigationDrawer>

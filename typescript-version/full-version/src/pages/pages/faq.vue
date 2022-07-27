@@ -21,7 +21,7 @@ const fetchFaqs = () => {
 }
 
 const activeTab = ref('Payment')
-const activeQuestion = ref(0)
+const activeQuestion = ref('When is payment taken for my order?')
 watch(faqSearchQuery, fetchFaqs, { immediate: true })
 
 const contactUs = [
@@ -130,6 +130,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
                 :key="item.question"
                 :title="`Q${index + 1}:  ${item.question}`"
                 :text="item.answer"
+                :value="item.question"
               />
             </VExpansionPanels>
           </VWindowItem>

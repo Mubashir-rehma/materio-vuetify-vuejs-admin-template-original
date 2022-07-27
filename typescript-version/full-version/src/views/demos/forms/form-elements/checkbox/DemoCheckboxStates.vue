@@ -2,6 +2,7 @@
 const toggleCheckbox = ref(true)
 const toggleIndeterminateCheckbox = ref(true)
 const disabledCheckbox = ref(true)
+const toggleOffCheckbox = ref(false)
 </script>
 
 <template>
@@ -11,10 +12,14 @@ const disabledCheckbox = ref(true)
       label="On"
     />
 
-    <VCheckbox label="Off" />
+    <VCheckbox
+      v-model="toggleOffCheckbox"
+      label="Off"
+    />
 
     <VCheckbox
       v-model:indeterminate="toggleIndeterminateCheckbox"
+      v-model="toggleIndeterminateCheckbox"
       label="Indeterminate"
     />
 

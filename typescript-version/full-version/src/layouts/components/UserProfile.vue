@@ -51,6 +51,7 @@ const logout = () => {
       <VMenu
         activator="parent"
         width="230"
+        location="bottom end"
       >
         <VList>
           <!-- 👉 User Avatar & Name -->

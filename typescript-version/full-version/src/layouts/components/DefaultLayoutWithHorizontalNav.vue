@@ -47,8 +47,8 @@ injectSkinClasses()
       <VBtn
         icon="mdi-magnify"
         size="small"
-        variant="plain"
-        color="secondary"
+        variant="text"
+        color="default"
       />
       <NavBarI18n class="me-2" />
       <NavbarThemeSwitcher class="me-2" />

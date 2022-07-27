@@ -44,7 +44,6 @@ const interest = ref<string[]>([])
             <VTextField
               v-model="middleName"
               label="Middle Name"
-              hint="example of helper text only on focus"
             />
           </VCol>
           <VCol

@@ -365,10 +365,6 @@ const isCardDetailsVisible = ref(false)
           If you're in the market for new desktops, notebooks, or PDAs, there are a myriad of choices. Here's a rundown of some of the best systems available.
         </VCardText>
 
-        <VCardText>
-          The following non-standard attributes are available on some browsers.
-        </VCardText>
-
         <VCardActions>
           <VBtn>Read More</VBtn>
         </VCardActions>
@@ -393,7 +389,7 @@ const isCardDetailsVisible = ref(false)
         </VCardText>
 
         <VCardText>
-          If you are looking for a new way to promote your business that won't cost you more money, maybe printing is one of the options you won't resist. Printing is a widely use process in making printed materials that are used for advertising.
+          If you are looking for a new way to promote your business that won't cost you more money, maybe printing is one of the options you won't resist.
         </VCardText>
 
         <VCardText>
@@ -417,8 +413,8 @@ const isCardDetailsVisible = ref(false)
         <VCardText class="d-flex flex-column justify-center align-center">
           <VAvatar
             color="primary"
-            class="v-avatar-light-bg text-primary"
             size="50"
+            class="v-avatar-light-bg text-primary mb-4"
           >
             <VIcon
               size="2rem"
@@ -435,9 +431,13 @@ const isCardDetailsVisible = ref(false)
           <p>
             According to us blisters are a very common thing and we come across them very often in our daily lives. It is a very common occurrence like cold or fever depending upon your lifestyle.
           </p>
-
-          <VBtn>Contact Now</VBtn>
         </VCardText>
+
+        <VCardActions class="justify-center">
+          <VBtn variant="elevated">
+            Contact Now
+          </VBtn>
+        </VCardActions>
       </VCard>
     </VCol>
   </VRow>

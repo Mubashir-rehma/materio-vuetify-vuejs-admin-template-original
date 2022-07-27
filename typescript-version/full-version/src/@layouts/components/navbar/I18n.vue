@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import type { Anchor } from 'vuetify/lib/components'
 import type { I18nLanguage } from '@layouts/types'
-
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  location: 'bottom end',
+})
 
 defineEmits<{
   (e: 'change', id: string): void
@@ -9,19 +11,25 @@ defineEmits<{
 
 interface Props {
   languages: I18nLanguage[]
+  location?: Anchor
 }
+
 const { locale } = useI18n({ useScope: 'global' })
 </script>
 
 <template>
   <VBtn
+    icon
     variant="text"
     color="default"
-    icon
+    size="small"
   >
     <VIcon icon="mdi-translate" />
     <!-- Menu -->
-    <VMenu activator="parent">
+    <VMenu
+      activator="parent"
+      :location="props.location"
+    >
       <!-- List -->
       <VList min-width="175px">
         <!-- List item -->

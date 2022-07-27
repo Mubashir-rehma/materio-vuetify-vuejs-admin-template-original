@@ -38,7 +38,7 @@ const paymentMethods = [
 
       <VExpansionPanelText>
         <VForm
-          class="mt-3"
+          class="mt-4"
           @submit.prevent="() => {}"
         >
           <VRow>
@@ -103,10 +103,10 @@ const paymentMethods = [
 
             <!-- 👉 Address Type  -->
             <VCol cols="12">
-              <label>Address Type</label>
-              <VRadioGroup
-                v-model="radios"
-              >
+              <VLabel class="mb-3">
+                Address Type
+              </VLabel>
+              <VRadioGroup v-model="radios">
                 <VRadio
                   label="Home (All day delivery)"
                   value="home"
@@ -131,46 +131,59 @@ const paymentMethods = [
         <!-- 👉 Radio Group -->
         <VRadioGroup
           v-model="deliveryOption"
+          class="mt-4"
         >
           <div
-            class="delivery-option"
+            class="delivery-option rounded-t"
             :class="deliveryOption === 'standard' ? 'active' : ''"
+            @click="deliveryOption = 'standard'"
           >
             <div class="d-flex justify-space-between">
-              <VRadio value="standard">
-                <template #label>
-                  <span class="font-weight-medium">Standard 3-5 Days</span>
-                </template>
-              </VRadio>
-              <span class="text-h6 font-weight-bold">Free</span>
+              <div class="d-flex align-center">
+                <VRadio value="standard" />
+                <h6 class="text-base font-weight-medium">
+                  Standard 3-5 Days
+                </h6>
+              </div>
+              <h6 class="text-base font-weight-bold">
+                Free
+              </h6>
             </div>
-            <span class="ms-10">Friday, 15 Nov - Monday, 18 Nov</span>
+            <span class="text-sm ms-10">Friday, 15 Nov - Monday, 18 Nov</span>
           </div>
           <div
             class="delivery-option"
             :class="deliveryOption === 'express' ? 'active' : ''"
+            @click="deliveryOption = 'express'"
           >
             <div class="d-flex justify-space-between">
-              <VRadio value="express">
-                <template #label>
-                  <span class="font-weight-medium">Express</span>
-                </template>
-              </VRadio>
-              <span class="text-h6 font-weight-bold">$5.00</span>
+              <div class="d-flex align-center">
+                <VRadio value="express" />
+                <h5 class="text-base font-weight-medium">
+                  Express
+                </h5>
+              </div>
+              <h6 class="text-base font-weight-bold">
+                $5.00
+              </h6>
             </div>
-            <span class="ms-10">Friday, 15 Nov - Sunday, 17 Nov</span>
+            <span class="text-sm ms-10">Friday, 15 Nov - Sunday, 17 Nov</span>
           </div>
           <div
-            class="delivery-option"
+            class="delivery-option rounded-b"
             :class="deliveryOption === 'overnight' ? 'active' : ''"
+            @click="deliveryOption = 'overnight'"
           >
             <div class="d-flex justify-space-between">
-              <VRadio value="overnight">
-                <template #label>
-                  <span class="font-weight-medium">Overnight</span>
-                </template>
-              </VRadio>
-              <span class="text-h6 font-weight-bold">$10.00</span>
+              <div class="d-flex align-center">
+                <VRadio value="overnight" />
+                <h6 class="text-base font-weight-medium">
+                  Overnight
+                </h6>
+              </div>
+              <h6 class="text-base font-weight-bold">
+                $10.00
+              </h6>
             </div>
             <span class="ms-10">Friday, 15 Nov - Saturday, 16 Nov</span>
           </div>
@@ -184,7 +197,7 @@ const paymentMethods = [
       <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
       <VExpansionPanelText>
-        <VRow>
+        <VRow class="mt-4">
           <VCol
             md="6"
             cols="12"

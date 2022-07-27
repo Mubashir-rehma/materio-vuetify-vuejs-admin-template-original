@@ -74,7 +74,7 @@ const solidCardData = [
               icon="mdi-heart"
               color="white"
               size="1rem"
-              class="me-1"
+              class="me-1 cursor-pointer"
             />
             <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
 
@@ -82,7 +82,7 @@ const solidCardData = [
               icon="mdi-share-variant"
               color="white"
               size="1rem"
-              class="me-1"
+              class="me-1 cursor-pointer"
             />
             <span class="text-subtitle-2 text-white">{{ data.share }}</span>
           </div>

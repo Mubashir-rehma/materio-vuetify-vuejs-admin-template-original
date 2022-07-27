@@ -69,6 +69,12 @@ $card-actions-padding-x: string.slice(
   -1
 );
 
+// ℹ️ We need accurate vh in mobile devices as well
+.v-application__wrap {
+  /* stylelint-disable-next-line liberty/use-logical-spec */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
 // @debug $card-actions-padding-x;
 
 // 👉 Card

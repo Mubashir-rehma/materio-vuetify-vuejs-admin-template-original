@@ -72,6 +72,7 @@ const headerValues = computed(() => {
     <VBtn
       icon
       class="app-customizer-toggler rounded-s-lg rounded-0"
+      style="z-index: 1001;"
       @click="isNavDrawerOpen = true"
     >
       <VIcon icon="mdi-cog" />

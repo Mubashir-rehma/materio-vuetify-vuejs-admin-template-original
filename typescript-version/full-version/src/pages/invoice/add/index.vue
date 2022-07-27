@@ -94,7 +94,6 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
             block
             color="secondary"
             variant="outlined"
-            class="mb-3"
           >
             Save
           </VBtn>

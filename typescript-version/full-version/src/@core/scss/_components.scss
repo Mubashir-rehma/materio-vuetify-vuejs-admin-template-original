@@ -94,3 +94,20 @@
     }
   }
 }
+
+// TODO Timeline: remove when vuetify resolve it: https://github.com/vuetifyjs/vuetify/issues/15509
+.v-timeline-density-compact {
+  &.v-timeline--vertical {
+    .v-timeline-divider {
+      grid-column: 1 !important;
+    }
+
+    .v-timeline-item .v-timeline-item__body {
+      grid-column: 2 !important;
+    }
+  }
+}
+
+.v-timeline--vertical.v-timeline .v-timeline-item:nth-child(2n) .v-timeline-item__body {
+  text-align: start;
+}

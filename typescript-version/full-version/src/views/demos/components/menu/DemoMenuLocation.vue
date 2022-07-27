@@ -15,6 +15,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
         <VListItem
           v-for="(item, index) in items"
           :key="index"
+          :value="item.title"
         >
           <VListItemTitle>{{ item.title }}</VListItemTitle>
         </VListItem>
@@ -32,6 +33,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
         <VListItem
           v-for="(item, index) in items"
           :key="index"
+          :value="item.title"
         >
           <VListItemTitle>{{ item.title }}</VListItemTitle>
         </VListItem>
@@ -49,6 +51,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
         <VListItem
           v-for="(item, index) in items"
           :key="index"
+          :value="item.title"
         >
           <VListItemTitle>{{ item.title }}</VListItemTitle>
         </VListItem>
@@ -66,6 +69,7 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
         <VListItem
           v-for="(item, index) in items"
           :key="index"
+          :value="item.title"
         >
           <VListItemTitle>{{ item.title }}</VListItemTitle>
         </VListItem>

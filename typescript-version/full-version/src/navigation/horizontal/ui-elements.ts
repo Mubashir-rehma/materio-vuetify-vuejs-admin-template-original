@@ -39,6 +39,7 @@ export default [
           { title: 'Pagination', to: 'components-pagination' },
           { title: 'Snackbar', to: 'components-snackbar' },
           { title: 'Tabs', to: 'components-tabs' },
+          { title: 'Timeline', to: 'components-timeline' },
           { title: 'Tooltip', to: 'components-tooltip' },
         ],
       },

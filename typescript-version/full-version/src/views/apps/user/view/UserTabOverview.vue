@@ -128,6 +128,103 @@ const resolveUserProgressVariant = (progress: number) => {
     </VCol>
 
     <VCol cols="12">
+      <!-- 👉 Activity timeline -->
+      <VCard title="User Activity Timeline">
+        <VCardText>
+          <VTimeline
+            density="compact"
+            align="start"
+            truncate-line="start"
+            class="v-timeline-density-compact"
+          >
+            <VTimelineItem
+              dot-color="error"
+              size="x-small"
+            >
+              <div class="d-flex justify-space-between align-center flex-wrap">
+                <h4 class="font-weight-medium me-1">
+                  User login
+                </h4>
+                <small class="text-xs text-no-wrap">12 min ago</small>
+              </div>
+              <p class="mb-0">
+                User login at 2:12pm
+              </p>
+            </VTimelineItem>
+
+            <VTimelineItem
+              dot-color="primary"
+              size="x-small"
+            >
+              <div class="d-flex justify-space-between align-center flex-wrap">
+                <h4 class="font-weight-medium me-1">
+                  Meeting with john
+                </h4>
+                <small class="text-xs text-no-wrap">45 min ago</small>
+              </div>
+
+              <p class="mb-1">
+                React Project meeting with john @10:15am
+              </p>
+
+              <div class="d-flex align-center mt-3">
+                <VAvatar
+                  size="40"
+                  class="me-2"
+                  :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+                />
+                <div>
+                  <p class="text--primary font-weight-medium mb-0">
+                    Leona Watkins (Client)
+                  </p>
+                  <span>CEO of Kelly Group</span>
+                </div>
+              </div>
+            </VTimelineItem>
+
+            <VTimelineItem
+              dot-color="info"
+              size="x-small"
+            >
+              <div class="d-flex justify-space-between align-center flex-wrap">
+                <h4 class="font-weight-medium me-1">
+                  Create a new react project for client
+                </h4>
+                <small class="text-xs text-no-wrap">2 day ago</small>
+              </div>
+              <p class="mb-0">
+                Add files to new design folder
+              </p>
+            </VTimelineItem>
+
+            <VTimelineItem
+              dot-color="success"
+              size="x-small"
+            >
+              <div class="d-flex justify-space-between align-center flex-wrap">
+                <h4 class="font-weight-semibold me-1">
+                  Create invoices for client
+                </h4>
+                <small class="text-xs text-no-wrap">12 min ago</small>
+              </div>
+              <p class="mb-0">
+                Create new invoices and send to Leona Watkins
+              </p>
+              <span class="d-flex align-center mt-2">
+                <VIcon
+                  color="error"
+                  icon="mdi-file-pdf-box"
+                  class="me-1"
+                />
+                <span class="text--primary font-weight-semibold text-sm">invoice.pdf</span>
+              </span>
+            </VTimelineItem>
+          </VTimeline>
+        </VCardText>
+      </VCard>
+    </VCol>
+
+    <VCol cols="12">
       <UserInvoiceTable />
     </VCol>
   </VRow>

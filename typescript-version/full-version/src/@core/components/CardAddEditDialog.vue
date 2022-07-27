@@ -1,18 +1,19 @@
 <script setup lang="ts">
+interface Details {
+  number: string
+  name: string
+  expiry: string
+  cvv: string
+  isPrimary: boolean
+  type: string
+}
 interface Emit {
-  (e: 'submit', value: typeof props.cardDetails): void
+  (e: 'submit', value: Details): void
   (e: 'update:isDialogVisible', value: boolean): void
 }
 
 interface Props {
-  cardDetails: {
-    number: string
-    name: string
-    expiry: string
-    cvv: string
-    isPrimary: boolean
-    type: string
-  }
+  cardDetails?: Details
   isDialogVisible: boolean
 }
 
@@ -29,7 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>()
 
-const cardDetails = ref<Props['cardDetails']>(structuredClone(toRaw(props.cardDetails)))
+const cardDetails = ref<Details>(structuredClone(toRaw(props.cardDetails)))
 
 watch(props, () => {
   cardDetails.value = structuredClone(toRaw(props.cardDetails))

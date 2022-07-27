@@ -130,7 +130,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           <th class="text-start">
             BALANCE
           </th>
-          <th class="text-start">
+          <th class="text-center">
             ACTIONS
           </th>
         </tr>
@@ -212,7 +212,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           </td>
 
           <!-- 👉 Actions -->
-          <td>
+          <td class="text-center">
             <VBtn
               variant="text"
               color="secondary"

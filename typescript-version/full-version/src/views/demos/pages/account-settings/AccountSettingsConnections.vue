@@ -142,11 +142,15 @@ const socialAccounts = ref([
             <VListItemAction>
               <VBtn
                 variant="tonal"
-                rounded="lg"
                 size="small"
                 :color="item.connected ? 'error' : 'secondary'"
-                :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
-              />
+                icon
+              >
+                <VIcon
+                  size="20"
+                  :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
+                />
+              </VBtn>
             </VListItemAction>
           </VListItem>
         </VList>

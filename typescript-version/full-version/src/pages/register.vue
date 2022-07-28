@@ -98,7 +98,7 @@ const onSubmit = () => {
         <VImg
           max-width="768px"
           :src="imageVariant"
-          class="auth-illustration mt-12"
+          class="auth-illustration"
         />
 
         <VImg
@@ -121,7 +121,7 @@ const onSubmit = () => {
         <VCard
           flat
           :max-width="500"
-          class="mt-12 pa-4"
+          class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
             <h5 class="text-h5 font-weight-semibold mb-3">

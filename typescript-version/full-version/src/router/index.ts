@@ -25,6 +25,9 @@ const router = createRouter({
     },
     ...setupLayouts(routes),
   ],
+  scrollBehavior() {
+    return { top: 0 }
+  },
 })
 
 router.beforeEach((to, _, next) => {

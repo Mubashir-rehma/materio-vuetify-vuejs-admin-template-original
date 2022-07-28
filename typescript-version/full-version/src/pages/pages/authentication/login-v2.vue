@@ -45,7 +45,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
           <VImg
             max-width="768px"
             :src="authThemeImg"
-            class="auth-illustration mt-12"
+            class="auth-illustration"
           />
         </div>
 
@@ -68,7 +68,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
         <VCard
           flat
           :max-width="500"
-          class="mt-12 pa-4"
+          class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
             <h5 class="text-h5 font-weight-semibold mb-3">

@@ -34,8 +34,9 @@
 
 .auth-logo {
   position: absolute;
+  z-index: 1;
   inset-block-start: 2rem;
-  inset-inline-start: 2.5rem;
+  inset-inline-start: 2.3rem;
 }
 
 .auth-bg {

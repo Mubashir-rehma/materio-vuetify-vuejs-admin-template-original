@@ -59,6 +59,7 @@ export default createVuetify({
       // set v-range-slider default color to primary
       color: 'primary',
       density: 'comfortable',
+      thumbLabel: true,
       hideDetails: 'auto',
     },
     VRating: {

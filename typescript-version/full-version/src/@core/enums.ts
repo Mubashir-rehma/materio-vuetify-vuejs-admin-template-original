@@ -13,4 +13,5 @@ export enum RouteTransitions {
   'Slide Y' = 'slide-y-transition',
   'Slide Y Reverse' = 'slide-y-reverse-transition',
   'Fade' = 'fade-transition',
+  'None' = 'none',
 }

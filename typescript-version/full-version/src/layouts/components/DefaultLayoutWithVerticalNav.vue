@@ -44,7 +44,7 @@ injectSkinClasses()
           size="small"
           variant="text"
           color="default"
-          class="ms-n3"
+          class="ms-lg-n3"
         />
 
         <VSpacer />

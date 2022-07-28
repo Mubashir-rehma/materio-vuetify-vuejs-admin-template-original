@@ -101,26 +101,30 @@ onMounted(() => {
         :error="isValid.value === false"
         @click:clear="onClear"
       >
-        <!-- flat-picker  -->
-        <FlatPickr
-          v-if="!isInlinePicker"
-          v-bind="compAttrs"
-          ref="refFlatPicker"
-          :model-value="modelValue"
-          class="flat-picker-custom-style"
-          :disabled="isReadonly.value"
-          @on-open="isCalendarOpen = true"
-          @on-close="isCalendarOpen = false"
-          @update:model-value="(val:string) => $emit('update:modelValue', val)"
-        />
+        <template #default="{ props }">
+          <div v-bind="props">
+            <!-- flat-picker  -->
+            <FlatPickr
+              v-if="!isInlinePicker"
+              v-bind="compAttrs"
+              ref="refFlatPicker"
+              :model-value="modelValue"
+              class="flat-picker-custom-style"
+              :disabled="isReadonly.value"
+              @on-open="isCalendarOpen = true"
+              @on-close="isCalendarOpen = false"
+              @update:model-value="(val:string) => $emit('update:modelValue', val)"
+            />
 
-        <!-- simple input for inline prop -->
-        <input
-          v-if="isInlinePicker"
-          :value="modelValue"
-          class="flat-picker-custom-style"
-          type="text"
-        >
+            <!-- simple input for inline prop -->
+            <input
+              v-if="isInlinePicker"
+              :value="modelValue"
+              class="flat-picker-custom-style"
+              type="text"
+            >
+          </div>
+        </template>
       </VField>
     </template>
   </VInput>
@@ -160,6 +164,7 @@ input[altinputclass="inlinePicker"] {
 
 .flatpickr-calendar {
   background-color: rgb(var(--v-theme-surface));
+  margin-block-start: 0.1875rem;
 
   .flatpickr-day,
   .flatpickr-weekday {

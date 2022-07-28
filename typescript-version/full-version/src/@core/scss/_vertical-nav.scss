@@ -23,8 +23,8 @@
     .nav-header {
       overflow: hidden;
       padding: variables.$vertical-nav-header-padding;
-      block-size: variables.$vertical-nav-header-height;
       margin-inline: variables.$vertical-nav-header-inline-spacing;
+      min-block-size: variables.$vertical-nav-header-height;
 
       // TEMPLATE: Check if we need to move this to master
       .app-logo {
@@ -45,7 +45,8 @@
         linear-gradient(
           rgb(#{variables.$vertical-nav-background-color-rgb}) 5%,
           rgba(#{variables.$vertical-nav-background-color-rgb}, 85%) 30%,
-          rgba(#{variables.$vertical-nav-background-color-rgb}, 50%) 75%,
+          rgba(#{variables.$vertical-nav-background-color-rgb}, 50%) 65%,
+          rgba(#{variables.$vertical-nav-background-color-rgb}, 30%) 75%,
           transparent
         );
       block-size: 64px;

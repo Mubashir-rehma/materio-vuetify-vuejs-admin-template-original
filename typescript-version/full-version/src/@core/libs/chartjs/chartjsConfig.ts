@@ -1,18 +1,20 @@
+import type { ThemeInstance } from 'vuetify'
 import { hexToRgb } from '@layouts/utils'
 
-// 👉 colors variables
-const colorVariables = (colors: { variables: Record<string, any>; colors: Record<string, string> }) => {
-  const borderColor = `rgba(${hexToRgb(colors.variables['border-color'])},${colors.variables['border-opacity']})`
-  const labelColor = `rgba(${hexToRgb(colors.colors['on-surface'])},${colors.variables['medium-emphasis-opacity']})`
+// 👉 Colors variables
+const colorVariables = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const themeSecondaryTextColor = `rgba(${hexToRgb(themeColors.colors['on-surface'])},${themeColors.variables['medium-emphasis-opacity']})`
+  const themeDisabledTextColor = `rgba(${hexToRgb(themeColors.colors['on-surface'])},${themeColors.variables['disabled-opacity']})`
+  const themeBorderColor = `rgba(${hexToRgb(String(themeColors.variables['border-color']))},${themeColors.variables['border-opacity']})`
 
-  return { labelColor, borderColor }
+  return { labelColor: themeDisabledTextColor, borderColor: themeBorderColor, legendColor: themeSecondaryTextColor }
 }
 
 // SECTION config
 
 // 👉 Latest Bar Chart Config
-export const getLatestBarChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const { borderColor, labelColor } = colorVariables(colors)
+export const getLatestBarChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
@@ -22,17 +24,17 @@ export const getLatestBarChartConfig = (colors: { variables: Record<string, unkn
       x: {
         grid: {
           borderColor,
+          drawBorder: false,
           color: borderColor,
         },
-        ticks: {
-          color: labelColor,
-        },
+        ticks: { color: labelColor },
       },
       y: {
         min: 0,
         max: 400,
         grid: {
           borderColor,
+          drawBorder: false,
           color: borderColor,
         },
         ticks: {
@@ -42,16 +44,14 @@ export const getLatestBarChartConfig = (colors: { variables: Record<string, unkn
       },
     },
     plugins: {
-      legend: {
-        display: false,
-      },
+      legend: { display: false },
     },
   }
 }
 
 // 👉 Horizontal Bar Chart Config
-export const getHorizontalBarChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const chartColors = colorVariables(colors)
+export const getHorizontalBarChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor, legendColor } = colorVariables(themeColors)
 
   return {
     indexAxis: 'y',
@@ -73,58 +73,58 @@ export const getHorizontalBarChartConfig = (colors: { variables: Record<string, 
       x: {
         min: 0,
         grid: {
-          borderColor: 'transparent',
-          color: chartColors.borderColor,
           drawTicks: false,
+          drawBorder: false,
+          color: borderColor,
         },
-        ticks: {
-          color: chartColors.labelColor,
-        },
+        ticks: { color: labelColor },
       },
       y: {
         grid: {
+          borderColor,
           display: false,
+          drawBorder: false,
         },
-        ticks: {
-          color: chartColors.labelColor,
-        },
+        ticks: { color: labelColor },
       },
     },
     plugins: {
       legend: {
-        display: false,
+        align: 'end',
+        position: 'top',
+        labels: { color: legendColor },
       },
     },
   }
 }
 
 // 👉 Line Chart Config
-export const getLineChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const chartColors = colorVariables(colors)
+export const getLineChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor, legendColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
-    backgroundColor: false,
     maintainAspectRatio: false,
     scales: {
       x: {
-        ticks: { color: chartColors.labelColor },
+        ticks: { color: labelColor },
         grid: {
-          borderColor: chartColors.borderColor,
-          color: chartColors.borderColor,
+          borderColor,
+          drawBorder: false,
+          color: borderColor,
         },
       },
       y: {
         min: 0,
         max: 400,
-        scaleLabel: { display: true },
         ticks: {
           stepSize: 100,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
         grid: {
-          borderColor: chartColors.borderColor,
-          color: chartColors.borderColor,
+          borderColor,
+          drawBorder: false,
+          color: borderColor,
         },
       },
     },
@@ -133,8 +133,9 @@ export const getLineChartConfig = (colors: { variables: Record<string, unknown>;
         align: 'end',
         position: 'top',
         labels: {
+          padding: 25,
           boxWidth: 10,
-          color: chartColors.labelColor,
+          color: legendColor,
           usePointStyle: true,
         },
       },
@@ -143,8 +144,8 @@ export const getLineChartConfig = (colors: { variables: Record<string, unknown>;
 }
 
 // 👉 Radar Chart Config
-export const getRadarChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const chartColors = colorVariables(colors)
+export const getRadarChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor, legendColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
@@ -158,11 +159,11 @@ export const getRadarChartConfig = (colors: { variables: Record<string, unknown>
         ticks: {
           display: false,
           maxTicksLimit: 1,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
-        grid: { color: chartColors.borderColor },
-        pointLabels: { color: chartColors.labelColor },
-        angleLines: { color: chartColors.borderColor },
+        grid: { color: borderColor },
+        pointLabels: { color: labelColor },
+        angleLines: { color: borderColor },
       },
     },
     plugins: {
@@ -170,7 +171,7 @@ export const getRadarChartConfig = (colors: { variables: Record<string, unknown>
         position: 'top',
         labels: {
           padding: 25,
-          color: chartColors.labelColor,
+          color: legendColor,
         },
       },
     },
@@ -178,8 +179,8 @@ export const getRadarChartConfig = (colors: { variables: Record<string, unknown>
 }
 
 // 👉 Polar Chart Config
-export const getPolarChartConfig = (colors: { colors: Record<string, string>; variables: Record<string, unknown> }) => {
-  const chartColors = colorVariables(colors)
+export const getPolarChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { legendColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
@@ -203,7 +204,7 @@ export const getPolarChartConfig = (colors: { colors: Record<string, string>; va
         labels: {
           padding: 25,
           boxWidth: 9,
-          color: chartColors.labelColor,
+          color: legendColor,
           usePointStyle: true,
         },
       },
@@ -212,8 +213,8 @@ export const getPolarChartConfig = (colors: { colors: Record<string, string>; va
 }
 
 // 👉 Bubble Chart Config
-export const getBubbleChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const chartColors = colorVariables(colors)
+export const getBubbleChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
@@ -223,24 +224,26 @@ export const getBubbleChartConfig = (colors: { variables: Record<string, unknown
         min: 0,
         max: 140,
         grid: {
-          borderColor: chartColors.borderColor,
-          color: chartColors.borderColor,
+          borderColor,
+          drawBorder: false,
+          color: borderColor,
         },
         ticks: {
           stepSize: 10,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
       },
       y: {
         min: 0,
         max: 400,
         grid: {
-          borderColor: chartColors.borderColor,
-          color: chartColors.borderColor,
+          borderColor,
+          drawBorder: false,
+          color: borderColor,
         },
         ticks: {
           stepSize: 100,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
       },
     },
@@ -266,8 +269,8 @@ export const getDoughnutChartConfig = () => {
 }
 
 // 👉 Scatter Chart Config
-export const getScatterChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const chartColors = colorVariables(colors)
+export const getScatterChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor, legendColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
@@ -281,26 +284,28 @@ export const getScatterChartConfig = (colors: { variables: Record<string, unknow
         min: 0,
         max: 140,
         grid: {
-          borderColor: chartColors.borderColor,
+          borderColor,
           drawTicks: false,
-          color: chartColors.borderColor,
+          drawBorder: false,
+          color: borderColor,
         },
         ticks: {
           stepSize: 10,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
       },
       y: {
         min: 0,
         max: 400,
         grid: {
-          borderColor: chartColors.borderColor,
+          borderColor,
           drawTicks: false,
-          color: chartColors.borderColor,
+          drawBorder: false,
+          color: borderColor,
         },
         ticks: {
           stepSize: 100,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
       },
     },
@@ -308,11 +313,10 @@ export const getScatterChartConfig = (colors: { variables: Record<string, unknow
       legend: {
         align: 'start',
         position: 'top',
-        pointStyle: 'circle',
         labels: {
           padding: 25,
           boxWidth: 9,
-          color: chartColors.labelColor,
+          color: legendColor,
           usePointStyle: true,
         },
       },
@@ -321,8 +325,8 @@ export const getScatterChartConfig = (colors: { variables: Record<string, unknow
 }
 
 // 👉 Line Area Chart Config
-export const getLineAreaChartConfig = (colors: { variables: Record<string, unknown>; colors: Record<string, string> }) => {
-  const chartColors = colorVariables(colors)
+export const getLineAreaChartConfig = (themeColors: ThemeInstance['themes']['value']['colors']) => {
+  const { borderColor, labelColor, legendColor } = colorVariables(themeColors)
 
   return {
     responsive: true,
@@ -333,32 +337,32 @@ export const getLineAreaChartConfig = (colors: { variables: Record<string, unkno
     scales: {
       x: {
         grid: {
-          borderColor: chartColors.borderColor,
+          borderColor,
           color: 'transparent',
         },
-        ticks: { color: chartColors.labelColor },
+        ticks: { color: labelColor },
       },
       y: {
         min: 0,
         max: 400,
         grid: {
-          borderColor: chartColors.borderColor,
+          borderColor,
           color: 'transparent',
         },
         ticks: {
           stepSize: 100,
-          color: chartColors.labelColor,
+          color: labelColor,
         },
       },
     },
     plugins: {
       legend: {
-        align: 'end',
+        align: 'start',
         position: 'top',
         labels: {
           padding: 25,
           boxWidth: 9,
-          color: chartColors.labelColor,
+          color: legendColor,
           usePointStyle: true,
         },
       },

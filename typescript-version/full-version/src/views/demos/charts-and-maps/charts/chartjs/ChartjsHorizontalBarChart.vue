@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getHorizontalBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BarChart from '@core/libs/chartjs/components/BarChart'
+
+interface Props {
+  colors: ChartJsCustomColors
+}
+
+const props = defineProps<Props>()
 
 const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
 const chartOptions = controlledComputed(theme, () => getHorizontalBarChartConfig(vuetifyTheme.current.value))
-
-const themeColors = vuetifyTheme.current.value
 
 const data = {
   labels: ['MON', 'TUE', 'WED ', 'THU', 'FRI'],
@@ -17,13 +22,13 @@ const data = {
     {
       maxBarThickness: 15,
       label: 'Market Data',
-      backgroundColor: themeColors.colors.warning,
+      backgroundColor: props.colors.warningShade,
       borderColor: 'transparent',
       data: [710, 350, 580, 460, 120],
     },
     {
       maxBarThickness: 15,
-      backgroundColor: themeColors.colors.info,
+      backgroundColor: props.colors.horizontalBarInfo,
       label: 'Personal Data',
       borderColor: 'transparent',
       data: [430, 590, 510, 240, 360],

@@ -1,10 +1,10 @@
 import type { PluginOptionsByType } from 'chart.js'
-import { Chart as ChartJS, Filler, LineController, LineElement, LinearScale, PointElement, Title } from 'chart.js'
+import { CategoryScale, Chart as ChartJS, Legend, LineElement, LinearScale, PointElement, Title, Tooltip } from 'chart.js'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { Line } from 'vue-chartjs'
 
-ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title, Filler)
+ChartJS.register(Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale)
 
 export default defineComponent({
   name: 'LineChart',
@@ -45,14 +45,14 @@ export default defineComponent({
   setup(props) {
     return () =>
       h(h(Line), {
-        chartData: props.chartData,
-        chartOptions: props.chartOptions,
         chartId: props.chartId,
         width: props.width,
         height: props.height,
         cssClasses: props.cssClasses,
         styles: props.styles,
         plugins: props.plugins,
+        chartOptions: props.chartOptions,
+        chartData: props.chartData,
       })
   },
 })

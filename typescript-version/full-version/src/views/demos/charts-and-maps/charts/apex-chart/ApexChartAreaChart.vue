@@ -1,8 +1,13 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
+import { useTheme } from 'vuetify'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getAreaChartSplineConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const chartConfig = getAreaChartSplineConfig()
+const { theme } = useThemeConfig()
+const vuetifyTheme = useTheme()
+
+const chartConfig = controlledComputed(theme, () => getAreaChartSplineConfig(vuetifyTheme.current.value))
 
 const series = [
   {

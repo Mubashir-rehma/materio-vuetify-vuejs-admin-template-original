@@ -1,26 +1,28 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getBubbleChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BubbleChart from '@core/libs/chartjs/components/BubbleChart'
+
+interface Props {
+  colors: ChartJsCustomColors
+}
+
+const props = defineProps<Props>()
 
 const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
 const chartConfig = controlledComputed(theme, () => getBubbleChartConfig(vuetifyTheme.current.value))
 
-const chartColors = {
-  primaryColorShade: '#836AF9',
-  warningColorShade: '#ffe802',
-}
-
 const data = {
   animation: { duration: 10000 },
   datasets: [
     {
       label: 'Dataset 1',
-      borderColor: chartColors.primaryColorShade,
-      backgroundColor: chartColors.primaryColorShade,
+      borderColor: props.colors.primary,
+      backgroundColor: props.colors.primary,
       data: [
         { x: 20, y: 74, r: 10 },
         { x: 10, y: 110, r: 5 },
@@ -39,8 +41,8 @@ const data = {
     },
     {
       label: 'Dataset 2',
-      borderColor: chartColors.warningColorShade,
-      backgroundColor: chartColors.warningColorShade,
+      borderColor: props.colors.yellow,
+      backgroundColor: props.colors.yellow,
       data: [
         { x: 30, y: 72, r: 5 },
         { x: 40, y: 110, r: 7 },

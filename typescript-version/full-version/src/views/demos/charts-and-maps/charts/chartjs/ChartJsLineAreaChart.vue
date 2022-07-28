@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineAreaChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
+interface Props {
+  colors: ChartJsCustomColors
+}
+
+const props = defineProps<Props>()
 
 const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
-
-const chartColors = {
-  blueColor: '#2c9aff',
-  blueLightColor: '#84D0FF',
-  greyLightColor: '#EDF1F4',
-  white: '#fff',
-}
 
 const data = {
   labels: [
@@ -40,12 +39,12 @@ const data = {
       pointRadius: 0.5,
       pointHoverRadius: 5,
       pointStyle: 'circle',
-      backgroundColor: chartColors.blueColor,
+      backgroundColor: props.colors.areaChartBlue,
       pointHoverBorderWidth: 5,
       borderColor: 'transparent',
-      pointHoverBorderColor: chartColors.white,
+      pointHoverBorderColor: props.colors.white,
       pointBorderColor: 'transparent',
-      pointHoverBackgroundColor: chartColors.blueColor,
+      pointHoverBackgroundColor: props.colors.areaChartBlue,
       data: [40, 55, 45, 75, 65, 55, 70, 60, 100, 98, 90, 120, 125, 140, 155],
     },
     {
@@ -57,10 +56,10 @@ const data = {
       pointStyle: 'circle',
       pointHoverBorderWidth: 5,
       borderColor: 'transparent',
-      backgroundColor: chartColors.blueLightColor,
-      pointHoverBorderColor: chartColors.white,
+      backgroundColor: props.colors.areaChartBlueLight,
+      pointHoverBorderColor: props.colors.white,
       pointBorderColor: 'transparent',
-      pointHoverBackgroundColor: chartColors.blueLightColor,
+      pointHoverBackgroundColor: props.colors.areaChartBlueLight,
       data: [70, 85, 75, 150, 100, 140, 110, 105, 160, 150, 125, 190, 200, 240, 275],
     },
     {
@@ -72,10 +71,10 @@ const data = {
       pointStyle: 'circle',
       pointHoverBorderWidth: 5,
       borderColor: 'transparent',
-      backgroundColor: chartColors.greyLightColor,
-      pointHoverBorderColor: chartColors.white,
+      backgroundColor: props.colors.areaChartGreyLight,
+      pointHoverBorderColor: props.colors.white,
       pointBorderColor: 'transparent',
-      pointHoverBackgroundColor: chartColors.greyLightColor,
+      pointHoverBackgroundColor: props.colors.areaChartGreyLight,
       data: [240, 195, 160, 215, 185, 215, 185, 200, 250, 210, 195, 250, 235, 300, 315],
     },
   ],

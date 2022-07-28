@@ -4,9 +4,15 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 
+import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
+interface Props {
+  colors: ChartJsCustomColors
+}
+
+const props = defineProps<Props>()
+
 const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
-const themeColors = vuetifyTheme.current.value
 
 const data = {
   labels: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
@@ -18,10 +24,12 @@ const data = {
       label: 'Europe',
       pointHoverRadius: 5,
       pointStyle: 'circle',
-      borderColor: themeColors.colors.primary,
-      backgroundColor: themeColors.colors.primary,
+      borderColor: props.colors.primary,
+      backgroundColor: props.colors.primary,
+      pointHoverBorderWidth: 5,
+      pointHoverBorderColor: props.colors.white,
       pointBorderColor: 'transparent',
-      pointHoverBackgroundColor: themeColors.colors.primary,
+      pointHoverBackgroundColor: props.colors.primary,
       data: [80, 150, 180, 270, 210, 160, 160, 202, 265, 210, 270, 255, 290, 360, 375],
     },
     {
@@ -31,10 +39,12 @@ const data = {
       pointRadius: 1,
       pointHoverRadius: 5,
       pointStyle: 'circle',
-      borderColor: themeColors.colors.warning,
-      backgroundColor: themeColors.colors.warning,
+      borderColor: props.colors.warningShade,
+      backgroundColor: props.colors.warningShade,
+      pointHoverBorderWidth: 5,
+      pointHoverBorderColor: props.colors.white,
       pointBorderColor: 'transparent',
-      pointHoverBackgroundColor: themeColors.colors.warning,
+      pointHoverBackgroundColor: props.colors.warningShade,
       data: [80, 125, 105, 130, 215, 195, 140, 160, 230, 300, 220, 170, 210, 200, 280],
     },
     {
@@ -44,15 +54,16 @@ const data = {
       label: 'Africa',
       pointHoverRadius: 5,
       pointStyle: 'circle',
-      borderColor: themeColors.colors.success,
-      backgroundColor: themeColors.colors.success,
+      borderColor: props.colors.yellow,
+      backgroundColor: props.colors.yellow,
+      pointHoverBorderWidth: 5,
+      pointHoverBorderColor: props.colors.white,
       pointBorderColor: 'transparent',
-      pointHoverBackgroundColor: themeColors.colors.success,
+      pointHoverBackgroundColor: props.colors.yellow,
       data: [80, 99, 82, 90, 115, 115, 74, 75, 130, 155, 125, 90, 140, 130, 180],
     },
   ],
 }
-
 const chartConfig = controlledComputed(theme, () => getLineChartConfig(vuetifyTheme.current.value))
 </script>
 

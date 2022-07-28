@@ -12,59 +12,59 @@ const series = [
   {
     data: [
       {
-        x: new Date(1538778600000),
+        x: `7/12/${new Date().getFullYear()}`,
         y: [150, 170, 50, 100],
       },
       {
-        x: new Date(1538780400000),
+        x: `8/12/${new Date().getFullYear()}`,
         y: [200, 400, 170, 330],
       },
       {
-        x: new Date(1538782200000),
+        x: `9/12/${new Date().getFullYear()}`,
         y: [330, 340, 250, 280],
       },
       {
-        x: new Date(1538784000000),
+        x: `10/12/${new Date().getFullYear()}`,
         y: [300, 330, 200, 320],
       },
       {
-        x: new Date(1538785800000),
+        x: `11/12/${new Date().getFullYear()}`,
         y: [320, 450, 280, 350],
       },
       {
-        x: new Date(1538787600000),
+        x: `12/12/${new Date().getFullYear()}`,
         y: [300, 350, 80, 250],
       },
       {
-        x: new Date(1538789400000),
+        x: `13/12/${new Date().getFullYear()}`,
         y: [200, 330, 170, 300],
       },
       {
-        x: new Date(1538791200000),
+        x: `14/12/${new Date().getFullYear()}`,
         y: [200, 220, 70, 130],
       },
       {
-        x: new Date(1538793000000),
+        x: `15/12/${new Date().getFullYear()}`,
         y: [220, 270, 180, 250],
       },
       {
-        x: new Date(1538794800000),
+        x: `16/12/${new Date().getFullYear()}`,
         y: [200, 250, 80, 100],
       },
       {
-        x: new Date(1538796600000),
+        x: `17/12/${new Date().getFullYear()}`,
         y: [150, 170, 50, 120],
       },
       {
-        x: new Date(1538798400000),
+        x: `18/12/${new Date().getFullYear()}`,
         y: [110, 450, 10, 420],
       },
       {
-        x: new Date(1538800200000),
+        x: `19/12/${new Date().getFullYear()}`,
         y: [400, 480, 300, 320],
       },
       {
-        x: new Date(1538802000000),
+        x: `20/12/${new Date().getFullYear()}`,
         y: [380, 480, 350, 450],
       },
     ],

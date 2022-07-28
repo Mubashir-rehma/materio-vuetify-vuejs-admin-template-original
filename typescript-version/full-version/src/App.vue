@@ -22,6 +22,7 @@ const changeVuetiyDirClasses = () => {
   }
 }
 watch(isAppRtl, changeVuetiyDirClasses)
+onMounted(changeVuetiyDirClasses)
 </script>
 
 <template>

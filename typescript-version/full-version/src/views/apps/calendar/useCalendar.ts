@@ -267,7 +267,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
   watch(isAppRtl, val => {
     calendarApi.value?.setOption('direction', val ? 'rtl' : 'ltr')
-  })
+  }, { immediate: true })
 
   return {
     refCalendar,

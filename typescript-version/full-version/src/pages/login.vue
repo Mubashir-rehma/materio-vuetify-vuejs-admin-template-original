@@ -237,4 +237,5 @@ meta:
   layout: blank
   action: read
   subject: Auth
+  redirectIfLoggedIn: true
 </route>

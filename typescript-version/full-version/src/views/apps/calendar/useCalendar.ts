@@ -221,7 +221,6 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
       // * Only grab required field otherwise it goes in infinity loop
       // ! Always grab all fields rendered by form (even if it get `undefined`) otherwise due to Vue3/Composition API you might get: "object is not extensible"
       event.value = extractEventDataFromEventApi(clickedEvent)
-      console.log('clickedEvent :>> ', clickedEvent)
 
       isEventHandlerSidebarActive.value = true
     },

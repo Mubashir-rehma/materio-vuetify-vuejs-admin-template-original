@@ -3,26 +3,29 @@
 @use "@configured-variables" as variables;
 @use "../utils";
 
+$header: ".layout-navbar";
+
+@if variables.$layout-vertical-nav-navbar-is-contained {
+  $header: ".layout-navbar .navbar-content-container";
+}
+
 .skin--bordered {
   @include mixins.bordered-skin(".v-card:not(.v-card .v-card)");
   @include mixins.bordered-skin(".v-menu .v-overlay__content > .v-card, .v-menu .v-overlay__content > .v-sheet, .v-menu .v-overlay__content > .v-list");
   @include mixins.bordered-skin(".popper-content");
 
   // Navbar
-  // -- Common
+  // -- Horizontal
   @include mixins.bordered-skin(".layout-navbar-and-nav-container", "border-bottom");
 
   // -- Vertical
-  @include mixins.bordered-skin(".layout-nav-type-vertical.layout-content-width-fluid.window-scrolled .layout-navbar", "border-bottom");
-
   @if variables.$layout-vertical-nav-navbar-is-contained {
-    @include mixins.bordered-skin(".layout-nav-type-vertical.layout-content-width-boxed.window-scrolled .navbar-content-container");
+    @include mixins.bordered-skin(".layout-nav-type-vertical.window-scrolled #{$header}");
+    .layout-nav-type-vertical.window-scrolled #{$header} {
+      border-block-start: none;
+    }
   } @else {
-    @include mixins.bordered-skin(".layout-nav-type-vertical.layout-content-width-boxed.window-scrolled .layout-navbar", "border-bottom");
-  }
-
-  .layout-content-width-boxed.window-scrolled .navbar-content-container {
-    border-block-start: none;
+    @include mixins.bordered-skin(".layout-nav-type-vertical.window-scrolled #{$header}", "border-bottom");
   }
 
   // Footer

@@ -3,11 +3,10 @@
 
 %default-layout-vertical-nav-scrolled-sticky-nav {
   background-color: rgb(var(--v-theme-surface));
-}
-
-// Check do we need this in default layout w/ horizontal nav
-%default-layout-vertical-nav-navbar-blur {
-  @extend %blurry-bg;
-
   box-shadow: variables.$vertical-nav-navbar-shadow;
+
+  // If navbar is contained => Squeeze navbar content on scroll
+  @if variables.$layout-vertical-nav-navbar-is-contained {
+    padding-inline: 1.2rem;
+  }
 }

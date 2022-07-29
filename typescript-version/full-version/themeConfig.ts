@@ -29,7 +29,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   verticalNav: {
     isVerticalNavCollapsed: false,
     defaultNavItemIconClass: 'i-mdi-circle-outline',
-    isVerticalNavSemiDark: true,
+    isVerticalNavSemiDark: false,
   },
   horizontalNav: {
     type: 'sticky',

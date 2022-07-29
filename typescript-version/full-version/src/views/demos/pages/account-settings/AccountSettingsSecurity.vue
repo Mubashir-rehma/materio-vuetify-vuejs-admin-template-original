@@ -306,7 +306,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 <VBtn
                   v-bind="props"
                   color="secondary"
-                  size="x-small"
+                  size="small"
                   variant="text"
                   icon="mdi-dots-vertical"
                   class="more-btn"
@@ -315,23 +315,28 @@ const isOneTimePasswordDialogVisible = ref(false)
 
               <VList>
                 <VListItem href="javascript:void(0)">
-                  <VListItemIcon
-                    size="20"
-                    class="me-2"
-                  >
-                    mdi-pencil-outline
-                  </VListItemIcon>
+                  <template #prepend>
+                    <VIcon
+                      size="20"
+                      class="me-2"
+                    >
+                      mdi-pencil-outline
+                    </VIcon>
+                  </template>
 
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
 
                 <VListItem href="#">
-                  <VListItemIcon
-                    size="20"
-                    class="me-2"
-                  >
-                    mdi-delete-outline
-                  </VListItemIcon>
+                  <template #prepend>
+                    <VIcon
+                      size="20"
+                      class="me-2"
+                    >
+                      mdi-delete-outline
+                    </VIcon>
+                  </template>
+
                   <VListItemTitle>Delete</VListItemTitle>
                 </VListItem>
               </VList>
@@ -390,8 +395,8 @@ const isOneTimePasswordDialogVisible = ref(false)
 
   .more-btn {
     position: absolute;
-    inset-block-start: 0.75rem;
-    inset-inline-end: 0.5rem;
+    inset-block-start: 0.5rem;
+    inset-inline-end: 0;
   }
 }
 </style>

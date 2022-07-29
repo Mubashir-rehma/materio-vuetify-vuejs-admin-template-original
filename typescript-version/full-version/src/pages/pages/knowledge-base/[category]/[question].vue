@@ -48,6 +48,7 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
         <VCardItem class="py-0 px-4">
           <VCardTitle>Related</VCardTitle>
         </VCardItem>
+
         <VList style="background: transparent;">
           <VListItem
             v-for="que in knowledgeBaseQuestionAndAnswer?.relatedQuestions"

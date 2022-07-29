@@ -17,26 +17,25 @@ const isMenuVisible = ref(false)
     <!-- v-menu list -->
     <VList>
       <VListItem>
-        <VListItemHeader>
-          <VListItemTitle>VueJS</VListItemTitle>
-          <VListItemSubtitle>
-            The Progressive JavaScript Framework
-          </VListItemSubtitle>
-        </VListItemHeader>
+        <VListItemTitle>VueJS</VListItemTitle>
+        <VListItemSubtitle>The Progressive JavaScript Framework</VListItemSubtitle>
 
-        <VListItemAction class="ms-1">
-          <VBtn
-            size="x-small"
-            icon
-            flat
-            @click="isMenuVisible = false"
-          >
-            <VIcon
+        <template #append>
+          <VListItemAction class="ms-1">
+            <VBtn
+              icon
+              variant="text"
               size="x-small"
-              icon="mdi-close"
-            />
-          </VBtn>
-        </VListItemAction>
+              color="default"
+              @click="isMenuVisible = false"
+            >
+              <VIcon
+                size="20"
+                icon="mdi-close"
+              />
+            </VBtn>
+          </VListItemAction>
+        </template>
       </VListItem>
     </VList>
   </VMenu>

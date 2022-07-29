@@ -62,13 +62,14 @@ watch(kBSearchQuery, fetchKnowledgeBaseSubcategoryData, { immediate: true })
                 :key="que.question"
                 :to="{ name: 'pages-knowledge-base-category-question', params: { category: $route.params.category, question: que.slug } }"
               >
-                <VListItemIcon
-                  size="14"
-                  color="secondary"
-                  class="me-2"
-                >
-                  mdi-checkbox-blank-circle-outline
-                </VListItemIcon>
+                <template #prepend>
+                  <VIcon
+                    size="14"
+                    color="secondary"
+                    class="me-2"
+                    icon="mdi-checkbox-blank-circle-outline"
+                  />
+                </template>
 
                 <VListItemSubtitle>{{ que.question }}</VListItemSubtitle>
               </VListItem>

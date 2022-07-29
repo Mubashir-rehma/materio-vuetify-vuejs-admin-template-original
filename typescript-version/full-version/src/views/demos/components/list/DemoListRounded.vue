@@ -1,24 +1,40 @@
 <script lang="ts" setup>
 const items = [
-  { text: 'Cupcake sesame snaps dessert marzipan.', icon: 'mdi-instagram' },
-  { text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.', icon: 'mdi-facebook' },
-  { text: 'Bonbon macaroon gummies pie jelly', icon: 'mdi-twitter' },
+  {
+    title: 'Cupcake sesame snaps dessert marzipan.',
+    value: 1,
+    props: {
+      prependIcon: 'mdi-instagram',
+      rounded: 'xl',
+    },
+  },
+  {
+    title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
+    value: 2,
+    props: {
+      prependIcon: 'mdi-facebook',
+      rounded: 'xl',
+    },
+  },
+  {
+    title: 'Bonbon macaroon gummies pie jelly',
+    value: 3,
+    props: {
+      prependIcon: 'mdi-twitter',
+      rounded: 'xl',
+    },
+  },
+  {
+    title: 'halvah icing marshmallow',
+    value: 4,
+    props: {
+      prependIcon: 'mdi-instagram',
+      rounded: 'xl',
+    },
+  },
 ]
 </script>
 
 <template>
-  <VList>
-    <VListItem
-      v-for="(item, i) in items"
-      :key="i"
-      :value="item"
-      rounded="xl"
-    >
-      <VListItemAvatar start>
-        <VIcon :icon="item.icon" />
-      </VListItemAvatar>
-      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
-      <VListItemTitle v-text="item.text" />
-    </VListItem>
-  </VList>
+  <VList :items="items" />
 </template>

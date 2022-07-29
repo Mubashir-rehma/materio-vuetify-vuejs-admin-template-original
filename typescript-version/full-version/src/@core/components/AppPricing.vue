@@ -164,11 +164,14 @@ const pricingPlans = [
               v-for="feature in plan.features"
               :key="feature"
             >
-              <VListItemIcon
-                :size="14"
-                icon="mdi-circle-outline"
-                class="me-3"
-              />
+              <template #prepend>
+                <VIcon
+                  :size="14"
+                  icon="mdi-circle-outline"
+                  class="me-3"
+                />
+              </template>
+
               <VListItemTitle class="text-body-2">
                 {{ feature }}
               </VListItemTitle>

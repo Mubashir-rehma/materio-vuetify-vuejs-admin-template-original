@@ -48,7 +48,7 @@ const onSubmit = () => {
         <span>Add Payment</span>
         <VBtn
           size="small"
-          color="secondary"
+          color="default"
           variant="text"
           icon="mdi-close"
           @click="$emit('update:isDrawerOpen', false)"

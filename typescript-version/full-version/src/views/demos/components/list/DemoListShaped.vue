@@ -14,9 +14,9 @@ const items = [
       :value="item"
       rounded="shaped"
     >
-      <VListItemAvatar start>
+      <template #prepend>
         <VIcon :icon="item.icon" />
-      </VListItemAvatar>
+      </template>
       <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
       <VListItemTitle v-text="item.text" />
     </VListItem>

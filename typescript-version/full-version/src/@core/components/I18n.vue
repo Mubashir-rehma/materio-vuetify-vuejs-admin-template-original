@@ -22,7 +22,6 @@ const { locale } = useI18n({ useScope: 'global' })
     icon
     variant="text"
     color="default"
-    size="small"
   >
     <VIcon icon="mdi-translate" />
     <!-- Menu -->

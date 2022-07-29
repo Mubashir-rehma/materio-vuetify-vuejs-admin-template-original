@@ -357,31 +357,41 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                   :size="20"
                   icon="mdi-dots-vertical"
                 />
+
                 <VMenu activator="parent">
                   <VList>
-                    <VListItem value="#">
-                      <VListItemIcon
-                        size="20"
-                        class="me-3"
-                        icon="mdi-download-outline"
-                      />
+                    <VListItem value="download">
+                      <template #prepend>
+                        <VIcon
+                          size="20"
+                          class="me-3"
+                          icon="mdi-download-outline"
+                        />
+                      </template>
+
                       <VListItemTitle>Download</VListItemTitle>
                     </VListItem>
 
                     <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
-                      <VListItemIcon
-                        size="20"
-                        class="me-3"
-                        icon="mdi-pencil-outline"
-                      />
+                      <template #prepend>
+                        <VIcon
+                          size="20"
+                          class="me-3"
+                          icon="mdi-pencil-outline"
+                        />
+                      </template>
+
                       <VListItemTitle>Edit</VListItemTitle>
                     </VListItem>
-                    <VListItem value="#">
-                      <VListItemIcon
-                        size="20"
-                        class="me-3"
-                        icon="mdi-layers-outline"
-                      />
+                    <VListItem value="duplicate">
+                      <template #prepend>
+                        <VIcon
+                          size="20"
+                          class="me-3"
+                          icon="mdi-layers-outline"
+                        />
+                      </template>
+
                       <VListItemTitle>Duplicate</VListItemTitle>
                     </VListItem>
                   </VList>
@@ -429,7 +439,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
           <VPagination
             v-model="currentPage"
-            size="x-small"
+            size="small"
             :total-visible="1"
             :length="totalPage"
             @next="selectedRows = []"

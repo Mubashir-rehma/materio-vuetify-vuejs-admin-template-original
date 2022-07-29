@@ -15,7 +15,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- top  -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarTopVisible = true"
     >
@@ -32,7 +31,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- top end -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarTopEndVisible = true"
     >
@@ -49,7 +47,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- center end -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarEndVisible = true"
     >
@@ -66,7 +63,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- bottom end -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarBottomEndVisible = true"
     >
@@ -83,7 +79,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- bottom -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarBottomVisible = true"
     >
@@ -97,7 +92,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- bottom start -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarBottomStartVisible = true"
     >
@@ -114,7 +108,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- center start -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarStartVisible = true"
     >
@@ -131,7 +124,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- top start -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarTopStartVisible = true"
     >
@@ -148,7 +140,6 @@ const isSnackbarCenteredVisible = ref(false)
     <!-- center -->
     <VBtn
       icon
-      size="x-small"
       variant="text"
       @click="isSnackbarCenteredVisible = true"
     >

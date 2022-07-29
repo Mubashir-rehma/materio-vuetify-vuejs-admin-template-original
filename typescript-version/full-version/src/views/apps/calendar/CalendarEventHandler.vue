@@ -125,10 +125,7 @@ const endDateTimePickerConfig = computed(() => {
         color="default"
         @click="removeEvent"
       >
-        <VIcon
-          icon="mdi-trash-can-outline"
-          size="small"
-        />
+        <VIcon icon="mdi-trash-can-outline" />
       </VBtn>
       <VBtn
         variant="text"
@@ -137,10 +134,7 @@ const endDateTimePickerConfig = computed(() => {
         size="small"
         @click="$emit('update:isDrawerOpen', false)"
       >
-        <VIcon
-          icon="mdi-close"
-          size="sm"
-        />
+        <VIcon icon="mdi-close" />
       </VBTn>
     </div>
 

@@ -350,27 +350,37 @@ const addNewUser = (userData: UserProperties) => {
                 <VMenu activator="parent">
                   <VList>
                     <VListItem :to="{ name: 'user-view-id', params: { id: user.id } }">
-                      <VListItemIcon
-                        icon="mdi-eye-outline"
-                        :size="20"
-                        class="me-3"
-                      />
+                      <template #prepend>
+                        <VIcon
+                          icon="mdi-eye-outline"
+                          :size="20"
+                          class="me-3"
+                        />
+                      </template>
+
                       <VListItemTitle>View</VListItemTitle>
                     </VListItem>
+
                     <VListItem href="javascript:void(0)">
-                      <VListItemIcon
-                        icon="mdi-pencil-outline"
-                        :size="20"
-                        class="me-3"
-                      />
+                      <template #prepend>
+                        <VIcon
+                          icon="mdi-pencil-outline"
+                          :size="20"
+                          class="me-3"
+                        />
+                      </template>
                       <VListItemTitle>Edit</VListItemTitle>
                     </VListItem>
-                    <VListItem>
-                      <VListItemIcon
-                        icon="mdi-delete-outline"
-                        :size="20"
-                        class="me-3"
-                      />
+
+                    <VListItem href="javascript:void(0)">
+                      <template #prepend>
+                        <VIcon
+                          icon="mdi-delete-outline"
+                          :size="20"
+                          class="me-3"
+                        />
+                      </template>
+
                       <VListItemTitle>Delete</VListItemTitle>
                     </VListItem>
                   </VList>
@@ -415,7 +425,7 @@ const addNewUser = (userData: UserProperties) => {
 
           <VPagination
             v-model="currentPage"
-            size="x-small"
+            size="small"
             :total-visible="1"
             :length="totalPage"
             @next="selectedRows = []"

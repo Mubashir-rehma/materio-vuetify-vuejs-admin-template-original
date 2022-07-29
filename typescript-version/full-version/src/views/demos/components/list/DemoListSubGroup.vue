@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const open = ref(['Users'])
+const open = ref(['Users', 'Admin'])
 
 const admins = [
   ['Management', 'mdi-account-multiple-outline'],
@@ -27,7 +27,6 @@ const cruds = [
           v-bind="props"
           prepend-icon="mdi-account-circle-outline"
           title="Users"
-          value="Users"
         />
       </template>
 
@@ -36,7 +35,6 @@ const cruds = [
           <VListItem
             v-bind="props"
             title="Admin"
-            value="Admin"
           />
         </template>
 
@@ -54,7 +52,6 @@ const cruds = [
           <VListItem
             v-bind="props"
             title="Actions"
-            value="Actions"
           />
         </template>
 

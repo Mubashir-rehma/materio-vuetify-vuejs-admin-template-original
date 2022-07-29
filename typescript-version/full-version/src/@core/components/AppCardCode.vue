@@ -32,15 +32,15 @@ const isCodeShown = ref(false)
       <template #append>
         <VBtn
           icon
-          size="x-small"
+          size="small"
           :color="isCodeShown ? 'primary' : 'default'"
           variant="text"
           :class="isCodeShown ? '' : 'text-disabled'"
           @click="isCodeShown = !isCodeShown"
         >
           <VIcon
+            size="20"
             icon="mdi-code-tags"
-            size="small"
           />
         </VBtn>
       </template>

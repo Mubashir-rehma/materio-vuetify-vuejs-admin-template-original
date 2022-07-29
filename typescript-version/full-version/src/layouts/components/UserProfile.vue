@@ -56,78 +56,85 @@ const logout = () => {
         <VList>
           <!-- 👉 User Avatar & Name -->
           <VListItem>
-            <VBadge
-              dot
-              location="bottom right"
-              offset-x="3"
-              offset-y="3"
-              color="success"
-            >
-              <VListItemAvatar>
-                <VAvatar
-                  color="primary"
-                  class="v-avatar-light-bg text-primary"
+            <template #prepend>
+              <VListItemAction start>
+                <VBadge
+                  dot
+                  location="bottom right"
+                  offset-x="3"
+                  offset-y="3"
+                  color="success"
                 >
-                  <VImg
-                    v-if="userData.avatar"
-                    :src="userData.avatar"
-                  />
-                  <VIcon
-                    v-else
-                    icon="mdi-account-outline"
-                  />
-                </VAvatar>
-              </VListItemAvatar>
-            </VBadge>
-            <VListItemHeader class="ms-4">
-              <VListItemTitle>{{ userData.fullName }}</VListItemTitle>
-              <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
-            </VListItemHeader>
+                  <VAvatar
+                    color="primary"
+                    class="v-avatar-light-bg text-primary"
+                  >
+                    <VImg
+                      v-if="userData.avatar"
+                      :src="userData.avatar"
+                    />
+                    <VIcon
+                      v-else
+                      icon="mdi-account-outline"
+                    />
+                  </VAvatar>
+                </VBadge>
+              </VListItemAction>
+            </template>
+
+            <VListItemTitle class="font-weight-semibold">
+              {{ userData.fullName }}
+            </VListItemTitle>
+            <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
           </VListItem>
           <VDivider />
 
           <!-- 👉 Profile -->
           <VListItem :to="{ name: 'user-view-id', params: { id: 21 } }">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-account-outline"
-            />
-            <VListItemHeader>
-              <VListItemTitle>Profile</VListItemTitle>
-            </VListItemHeader>
+            <template #prepend>
+              <VIcon
+                class="me-2"
+                icon="mdi-account-outline"
+              />
+            </template>
+
+            <VListItemTitle>Profile</VListItemTitle>
           </VListItem>
 
           <!-- 👉 Settings -->
           <VListItem :to="{ name: 'pages-account-settings-tab', params: { tab: 'account' } }">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-cog-outline"
-            />
-            <VListItemHeader>
-              <VListItemTitle>Settings</VListItemTitle>
-            </VListItemHeader>
+            <template #prepend>
+              <VIcon
+                class="me-2"
+                icon="mdi-cog-outline"
+              />
+            </template>
+
+            <VListItemTitle>Settings</VListItemTitle>
           </VListItem>
 
           <!-- 👉 Pricing -->
           <VListItem :to="{ name: 'pages-pricing' }">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-currency-usd"
-            />
-            <VListItemHeader>
-              <VListItemTitle>Pricing</VListItemTitle>
-            </VListItemHeader>
+            <template #prepend>
+              <VIcon
+                class="me-2"
+                icon="mdi-currency-usd"
+              />
+            </template>
+
+            <VListItemTitle>Pricing</VListItemTitle>
           </VListItem>
 
           <!-- 👉 FAQ -->
           <VListItem :to="{ name: 'pages-faq' }">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-help-circle-outline"
-            />
-            <VListItemHeader>
-              <VListItemTitle>FAQ</VListItemTitle>
-            </VListItemHeader>
+            <template #prepend>
+              <VIcon
+                class="me-2"
+                icon="mdi-help-circle-outline"
+              />
+            </template>
+
+            <VListItemTitle>FAQ</VListItemTitle>
           </VListItem>
 
           <!-- Divider -->
@@ -135,13 +142,14 @@ const logout = () => {
 
           <!-- 👉 Logout -->
           <VListItem @click="logout">
-            <VListItemIcon
-              class="me-2"
-              icon="mdi-logout"
-            />
-            <VListItemHeader>
-              <VListItemTitle>Logout</VListItemTitle>
-            </VListItemHeader>
+            <template #prepend>
+              <VIcon
+                class="me-2"
+                icon="mdi-logout"
+              />
+            </template>
+
+            <VListItemTitle>Logout</VListItemTitle>
           </VListItem>
         </VList>
       </VMenu>

@@ -27,7 +27,6 @@ watch(theme, val => {
   <VBtn
     icon
     variant="text"
-    size="small"
     color="default"
     @click="changeTheme"
   >

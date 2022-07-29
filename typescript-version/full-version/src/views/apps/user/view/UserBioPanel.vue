@@ -154,24 +154,26 @@ const resolveUserRoleVariant = (role: string) => {
           <VDivider class="mt-2" />
 
           <!-- 👉 User Details list -->
-          <VList density="comfortable">
+          <VList
+            density="comfortable"
+            class="pb-0"
+          >
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Username:
+              <VListItemTitle>
+                <span>Username: </span><span class="text-body-2">@{{ props.userData.username }}</span>
               </VListItemTitle>
-              <VListItemSubtitle>@{{ props.userData.username }}</VListItemSubtitle>
             </VListItem>
+
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Billing Email:
+              <VListItemTitle>
+                <span>Billing Email: </span><span class="text-body-2">{{ props.userData.email }}</span>
               </VListItemTitle>
-              <VListItemSubtitle>{{ props.userData.email }}</VListItemSubtitle>
             </VListItem>
+
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Status:
-              </VListItemTitle>
-              <VListItemSubtitle>
+              <VListItemTitle>
+                <span>Status: </span>
+
                 <VChip
                   label
                   size="small"
@@ -180,39 +182,44 @@ const resolveUserRoleVariant = (role: string) => {
                 >
                   {{ props.userData.status }}
                 </VChip>
-              </VListItemSubtitle>
-            </VListItem>
-            <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Role:
               </VListItemTitle>
-              <VListItemSubtitle class="text-capitalize">
-                {{ props.userData.role }}
-              </VListItemSubtitle>
             </VListItem>
+
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Tax ID:
+              <VListItemTitle>
+                <span>Role: </span>
+                <span class="text-capitalize text-sm">{{ props.userData.role }}</span>
               </VListItemTitle>
-              <VListItemSubtitle>{{ props.userData.taxId }}</VListItemSubtitle>
             </VListItem>
+
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Contact:
+              <VListItemTitle>
+                <span>Tax ID:</span>
+                <span class="text-body-2">
+                  {{ props.userData.taxId }}
+                </span>
               </VListItemTitle>
-              <VListItemSubtitle>{{ props.userData.contact }}</VListItemSubtitle>
             </VListItem>
+
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Language:
+              <VListItemTitle>
+                <span>Contact: </span>
+                <span class="text-body-2">{{ props.userData.contact }}</span>
               </VListItemTitle>
-              <VListItemSubtitle>{{ props.userData.language }}</VListItemSubtitle>
             </VListItem>
+
             <VListItem class="px-0">
-              <VListItemTitle class="me-1">
-                Country:
+              <VListItemTitle>
+                <span>Language: </span>
+                <span class="text-body-2">{{ props.userData.language }}</span>
               </VListItemTitle>
-              <VListItemSubtitle>{{ props.userData.country }}</VListItemSubtitle>
+            </VListItem>
+
+            <VListItem class="px-0">
+              <VListItemTitle>
+                <span>Country:</span>
+                <span class="text-body-2">{{ props.userData.country }}</span>
+              </VListItemTitle>
             </VListItem>
           </VList>
         </VCardText>

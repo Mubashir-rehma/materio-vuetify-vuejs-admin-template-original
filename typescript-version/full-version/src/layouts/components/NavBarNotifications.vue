@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Notifications } from '@layouts/components'
+import Notifications from '@core/components/Notifications.vue'
 import type { Notification } from '@layouts/types'
 
 const notifications: Notification[] = [

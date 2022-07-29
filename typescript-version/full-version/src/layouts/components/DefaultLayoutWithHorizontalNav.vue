@@ -46,7 +46,6 @@ injectSkinClasses()
       <VSpacer />
       <VBtn
         icon="mdi-magnify"
-        size="small"
         variant="text"
         color="default"
       />

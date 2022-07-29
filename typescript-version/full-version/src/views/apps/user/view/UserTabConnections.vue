@@ -73,34 +73,32 @@ const socialAccounts = ref([
         title="Connected Accounts"
         subtitle="Display content from your connected accounts on your site"
       >
-        <VList class="px-1 pt-0">
-          <VListItem
-            v-for="account in connectedAccounts"
-            :key="account.title"
-          >
-            <VListItemAvatar
-              :size="35"
-              start
-              :image="account.img"
-            />
+        <VCardText>
+          <VList class="card-list">
+            <VListItem
+              v-for="account in connectedAccounts"
+              :key="account.title"
+              :title="account.title"
+              :subtitle="account.text"
+            >
+              <template #prepend>
+                <VAvatar
+                  start
+                  :size="35"
+                  :image="account.img"
+                />
+              </template>
 
-            <VListItemHeader>
-              <VListItemTitle>
-                {{ account.title }}
-              </VListItemTitle>
-              <VListItemSubtitle class="text-caption">
-                {{ account.text }}
-              </VListItemSubtitle>
-            </VListItemHeader>
-
-            <VListItemAction>
-              <VSwitch
-                v-model="account.connected"
-                density="compact"
-              />
-            </VListItemAction>
-          </VListItem>
-        </VList>
+              <template #append>
+                <VSwitch
+                  v-model="account.connected"
+                  density="compact"
+                  class="me-1"
+                />
+              </template>
+            </VListItem>
+          </VList>
+        </VCardText>
       </VCard>
     </VCol>
 
@@ -110,22 +108,21 @@ const socialAccounts = ref([
         title="Social Accounts"
         subtitle="Display content from social accounts on your site"
       >
-        <VList class="px-1 pt-0">
-          <VListItem
-            v-for="(account) in socialAccounts"
-            :key="account.title"
-          >
-            <VListItemAvatar
-              start
-              size="35"
-              rounded="0"
-              :image="account.img"
-            />
-
-            <VListItemHeader>
-              <VListItemTitle>
-                {{ account.title }}
-              </VListItemTitle>
+        <VCardText>
+          <VList class="card-list">
+            <VListItem
+              v-for="(account) in socialAccounts"
+              :key="account.title"
+              :title="account.title"
+            >
+              <template #prepend>
+                <VAvatar
+                  start
+                  size="35"
+                  rounded="0"
+                  :image="account.img"
+                />
+              </template>
 
               <VListItemSubtitle v-if="account.connected">
                 <a
@@ -144,23 +141,23 @@ const socialAccounts = ref([
               >
                 Not connected
               </VListItemSubtitle>
-            </VListItemHeader>
 
-            <VListItemAction>
-              <VBtn
-                color="secondary"
-                variant="tonal"
-                size="small"
-                icon
-              >
-                <VIcon
-                  size="20"
-                  :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
-                />
-              </VBtn>
-            </VListItemAction>
-          </VListItem>
-        </VList>
+              <template #append>
+                <VBtn
+                  icon
+                  color="secondary"
+                  variant="tonal"
+                  size="small"
+                >
+                  <VIcon
+                    size="20"
+                    :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
+                  />
+                </VBtn>
+              </template>
+            </VListItem>
+          </VList>
+        </VCardText>
       </VCard>
     </VCol>
   </VRow>

@@ -76,32 +76,31 @@ const socialAccounts = ref([
         subtitle="Display content from your connected accounts on your site"
       >
         <VCardText>
-          <VList
-            lines="two"
-            class="card-list"
-          >
+          <VList class="card-list">
             <VListItem
               v-for="item in connectedAccounts"
               :key="item.logo"
+              :title="item.name"
+              :subtitle="item.subtitle"
             >
-              <VListItemAvatar start>
-                <VImg
-                  :src="item.logo"
-                  height="30"
-                />
-              </VListItemAvatar>
+              <template #prepend>
+                <VAvatar start>
+                  <VImg
+                    :src="item.logo"
+                    height="30"
+                  />
+                </VAvatar>
+              </template>
 
-              <VListItemHeader>
-                <VListItemTitle>{{ item.name }}</VListItemTitle>
-                <VListItemSubtitle>{{ item.subtitle }}</VListItemSubtitle>
-              </VListItemHeader>
-
-              <VListItemAction>
-                <VSwitch
-                  v-model="item.connected"
-                  density="compact"
-                />
-              </VListItemAction>
+              <template #append>
+                <VListItemAction>
+                  <VSwitch
+                    v-model="item.connected"
+                    density="compact"
+                    class="me-1"
+                  />
+                </VListItemAction>
+              </template>
             </VListItem>
           </VList>
         </VCardText>
@@ -118,49 +117,48 @@ const socialAccounts = ref([
         subtitle="Display content from social accounts on your site"
       >
         <VCardText>
-          <VList
-            lines="two"
-            class="card-list"
-          >
+          <VList class="card-list">
             <VListItem
               v-for="item in socialAccounts"
               :key="item.logo"
+              :title="item.name"
             >
-              <VListItemAvatar start>
-                <VImg
-                  :src="item.logo"
-                  height="30"
-                />
-              </VListItemAvatar>
-
-              <VListItemHeader>
-                <VListItemTitle>{{ item.name }}</VListItemTitle>
-                <VListItemSubtitle
-                  v-if="item.links?.link"
-                  :href="item.links?.link"
-                  tag="a"
-                >
-                  {{ item.links?.username }}
-                </VListItemSubtitle>
-
-                <VListItemSubtitle v-else>
-                  Not Connected
-                </VListItemSubtitle>
-              </VListItemHeader>
-
-              <VListItemAction>
-                <VBtn
-                  variant="tonal"
-                  size="small"
-                  :color="item.connected ? 'error' : 'secondary'"
-                  icon
-                >
-                  <VIcon
-                    size="20"
-                    :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
+              <template #prepend>
+                <VAvatar start>
+                  <VImg
+                    :src="item.logo"
+                    height="30"
                   />
-                </VBtn>
-              </VListItemAction>
+                </VAvatar>
+              </template>
+
+              <VListItemSubtitle
+                v-if="item.links?.link"
+                :href="item.links?.link"
+                tag="a"
+              >
+                {{ item.links?.username }}
+              </VListItemSubtitle>
+
+              <VListItemSubtitle v-else>
+                Not Connected
+              </VListItemSubtitle>
+
+              <template #append>
+                <VListItemAction>
+                  <VBtn
+                    variant="tonal"
+                    size="small"
+                    :color="item.connected ? 'error' : 'secondary'"
+                    icon
+                  >
+                    <VIcon
+                      size="20"
+                      :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
+                    />
+                  </VBtn>
+                </VListItemAction>
+              </template>
             </VListItem>
           </VList>
         </VCardText>

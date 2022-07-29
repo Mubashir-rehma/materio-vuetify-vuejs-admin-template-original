@@ -52,13 +52,8 @@ const widgets = ref(false)
       </div>
 
       <!-- List -->
-      <VList
-        lines="two"
-        subheader
-      >
-        <VListSubheader inset>
-          User Controls
-        </VListSubheader>
+      <VList lines="two">
+        <VListSubheader>User Controls</VListSubheader>
         <VListItem
           title="Content filtering"
           subtitle="Set the content filtering level to restrict apps that can be downloaded"
@@ -72,35 +67,34 @@ const widgets = ref(false)
       <VDivider />
 
       <!-- List -->
-      <VList
-        lines="two"
-        subheader
-      >
+      <VList lines="two">
         <VListSubheader>General</VListSubheader>
+
         <VListItem
           title="Notifications"
           subtitle="Notify me about updates to apps or games that I downloaded"
         >
           <template #prepend>
-            <div class="me-2">
+            <VListItemAction start>
               <VCheckbox
                 v-model="notifications"
                 color="primary"
               />
-            </div>
+            </VListItemAction>
           </template>
         </VListItem>
+
         <VListItem
           title="Sound"
           subtitle="Auto-update apps at any time. Data charges may apply"
         >
           <template #prepend>
-            <div class="me-2">
+            <VListItemAction start>
               <VCheckbox
                 v-model="sound"
                 color="primary"
               />
-            </div>
+            </VListItemAction>
           </template>
         </VListItem>
 
@@ -109,12 +103,12 @@ const widgets = ref(false)
           subtitle="Automatically add home screen widgets"
         >
           <template #prepend>
-            <div class="me-2">
+            <VListItemAction start>
               <VCheckbox
                 v-model="widgets"
                 color="primary"
               />
-            </div>
+            </VListItemAction>
           </template>
         </VListItem>
       </VList>

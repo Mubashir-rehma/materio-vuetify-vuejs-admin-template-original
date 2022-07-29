@@ -10,12 +10,14 @@ const serverSwitch = ref(false)
         :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
       >
         <!-- SECTION Timeline Item: Flight -->
-        <VTimelineItem
-          fill-dot
-          dot-color="primary"
-          size="small"
-          icon="mdi-airplane"
-        >
+        <VTimelineItem fill-dot>
+          <template #icon>
+            <div class="v-timeline-avatar-wrapper rounded-circle">
+              <VAvatar class="v-avatar-light-bg text-primary">
+                <VIcon icon="mdi-airplane" />
+              </VAvatar>
+            </div>
+          </template>
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between">
             <h6 class="text-sm font-weight-semibold mb-1 me-3">
@@ -53,11 +55,16 @@ const serverSwitch = ref(false)
         <!-- SECTION Timeline Item: Interview -->
         <VTimelineItem
           fill-dot
-          size="small"
-          dot-color="success"
-          icon="mdi-clock-time-four-outline"
           class="text-start"
         >
+          <template #icon>
+            <div class="v-timeline-avatar-wrapper rounded-circle">
+              <VAvatar class="v-avatar-light-bg text-success">
+                <VIcon icon="mdi-clock-time-four-outline" />
+              </VAvatar>
+            </div>
+          </template>
+
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between">
             <h6 class="text-sm font-weight-semibold mb-1">
@@ -109,12 +116,15 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Puma Shoes -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-          dot-color="warning"
-          icon="mdi-cart-outline"
-        >
+        <VTimelineItem fill-dot>
+          <template #icon>
+            <div class="v-timeline-avatar-wrapper rounded-circle">
+              <VAvatar class="v-avatar-light-bg text-warning">
+                <VIcon icon="mdi-cart-outline" />
+              </VAvatar>
+            </div>
+          </template>
+
           <div class="d-flex align-start flex-sm-row flex-column mb-3">
             <VImg
               height="100"
@@ -162,12 +172,15 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Design Review -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-          dot-color="info"
-          icon="mdi-file-edit-outline"
-        >
+        <VTimelineItem fill-dot>
+          <template #icon>
+            <div class="v-timeline-avatar-wrapper rounded-circle">
+              <VAvatar class="v-avatar-light-bg text-info">
+                <VIcon icon="mdi-file-edit-outline" />
+              </VAvatar>
+            </div>
+          </template>
+
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between">
             <h6 class="mb-1 text-sm font-weight-semibold">
@@ -194,12 +207,15 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Ubuntu Server -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-          dot-color="error"
-          icon="mdi-server"
-        >
+        <VTimelineItem fill-dot>
+          <template #icon>
+            <div class="v-timeline-avatar-wrapper rounded-circle">
+              <VAvatar class="v-avatar-light-bg text-error">
+                <VIcon icon="mdi-server" />
+              </VAvatar>
+            </div>
+          </template>
+
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between">
             <h6 class="mb-1 text-sm font-weight-semibold">
@@ -283,12 +299,15 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Location -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-          dot-color="success"
-          icon="mdi-map-marker-outline"
-        >
+        <VTimelineItem fill-dot>
+          <template #icon>
+            <div class="v-timeline-avatar-wrapper rounded-circle">
+              <VAvatar class="v-avatar-light-bg text-success">
+                <VIcon icon="mdi-map-marker-outline" />
+              </VAvatar>
+            </div>
+          </template>
+
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between">
             <div class="d-flex align-end mb-1">
@@ -350,3 +369,9 @@ const serverSwitch = ref(false)
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss">
+.v-timeline-avatar-wrapper {
+  background-color: rgb(var(--v-theme-surface));
+}
+</style>

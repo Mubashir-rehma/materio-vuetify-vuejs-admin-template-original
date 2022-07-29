@@ -31,7 +31,6 @@ const authProviders = [
     v-for="link in authProviders"
     :key="link.icon"
     :icon="link.icon"
-    size="small"
     variant="text"
     :color="theme === 'dark' ? link.colorInDark : link.color"
     class="me-2"

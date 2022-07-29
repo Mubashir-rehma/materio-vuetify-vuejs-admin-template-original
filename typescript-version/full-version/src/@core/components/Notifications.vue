@@ -25,7 +25,6 @@ defineEmits<{
       icon
       variant="text"
       color="default"
-      size="small"
     >
       <VBadge
         :content="props.notifications.length"
@@ -40,9 +39,7 @@ defineEmits<{
         width="380px"
         :location="props.location"
       >
-        <VList
-          class="py-0"
-        >
+        <VList class="py-0">
           <!-- 👉 Header -->
           <VListItem
             title="Notifications"
@@ -68,7 +65,6 @@ defineEmits<{
             :key="notification.title"
           >
             <VListItem
-
               :title="notification.title"
               :subtitle="notification.subtitle"
               link
@@ -78,7 +74,7 @@ defineEmits<{
               <!-- Slot: Prepend -->
               <!-- Handles Avatar: Image, Icon, Text -->
               <template #prepend>
-                <VListItemAvatar start>
+                <VListItemAction start>
                   <VAvatar
                     :color="notification.color || 'primary'"
                     :image="notification.img || undefined"
@@ -86,7 +82,7 @@ defineEmits<{
                   >
                     <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
                   </VAvatar>
-                </VListItemAvatar>
+                </VListItemAction>
               </template>
               <!-- Slot: Append -->
               <template #append>

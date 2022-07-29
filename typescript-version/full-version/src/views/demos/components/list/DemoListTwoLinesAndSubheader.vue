@@ -38,18 +38,22 @@ const folders = [
     <VListItem
       v-for="folder in folders"
       :key="folder.title"
-      prepend-icon="mdi-folder-outline"
       :title="folder.title"
       :subtitle="folder.subtitle"
     >
+      <template #prepend>
+        <VIcon
+          :size="26"
+          icon="mdi-folder-outline"
+        />
+      </template>
+
       <template #append>
-        <VListItemAvatar end>
-          <VBtn
-            variant="text"
-            color="grey lighten-1"
-            icon="mdi-information-outline"
-          />
-        </VListItemAvatar>
+        <VBtn
+          variant="text"
+          color="default"
+          icon="mdi-information-outline"
+        />
       </template>
     </VListItem>
 
@@ -62,18 +66,22 @@ const folders = [
     <VListItem
       v-for="file in files"
       :key="file.title"
-      :prepend-icon="file.icon"
       :title="file.title"
       :subtitle="file.subtitle"
     >
+      <template #prepend>
+        <VIcon
+          :size="26"
+          :icon="file.icon"
+        />
+      </template>
+
       <template #append>
-        <VListItemAvatar end>
-          <VBtn
-            variant="text"
-            color="grey lighten-1"
-            icon="mdi-information-outline"
-          />
-        </VListItemAvatar>
+        <VBtn
+          variant="text"
+          color="default"
+          icon="mdi-information-outline"
+        />
       </template>
     </VListItem>
   </VList>

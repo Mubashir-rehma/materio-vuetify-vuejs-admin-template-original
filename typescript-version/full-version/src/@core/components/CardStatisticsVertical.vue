@@ -32,12 +32,17 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
       <VSpacer />
 
       <VBtn
-        size="x-small"
+        size="small"
         variant="text"
         color="secondary"
         class="me-n3 mt-n4"
-        icon="mdi-dots-vertical"
-      />
+        icon
+      >
+        <VIcon
+          size="24"
+          icon="mdi-dots-vertical"
+        />
+      </VBtn>
     </VCardText>
 
     <VCardText>

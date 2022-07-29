@@ -147,6 +147,9 @@ export default createVuetify({
           'grey-800': '#424242',
           'grey-900': '#212121',
         },
+        variables: {
+          'medium-emphasis-opacity': 0.68,
+        },
       },
       dark: {
         dark: true,
@@ -170,6 +173,9 @@ export default createVuetify({
           'grey-700': '#B6BEE3',
           'grey-800': '#CFD3EC',
           'grey-900': '#E7E9F6',
+        },
+        variables: {
+          'medium-emphasis-opacity': 0.68,
         },
       },
     },

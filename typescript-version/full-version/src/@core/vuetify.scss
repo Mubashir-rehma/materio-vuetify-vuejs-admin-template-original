@@ -123,11 +123,6 @@ h6,
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 }
 
-// 👉 CSS Variables
-[class*="v-theme--"] {
-  --v-medium-emphasis-opacity: 0.68 !important;
-}
-
 .v-theme--light {
   --v-theme-background:
     var(

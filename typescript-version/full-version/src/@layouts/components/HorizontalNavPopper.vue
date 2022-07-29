@@ -76,6 +76,10 @@ onMounted(updatePopper)
 // Recalculate position when direction changes
 const { isAppRtl } = useLayouts()
 watch(isAppRtl, updatePopper)
+
+// Watch for route changes and close popper content if route is changed
+const route = useRoute()
+watch(() => route.fullPath, hideContent)
 </script>
 
 <template>

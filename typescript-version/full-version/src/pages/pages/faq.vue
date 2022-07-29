@@ -43,7 +43,6 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
 
 <template>
   <section>
-    {{ activeQuestion }}
     <!-- 👉 Search -->
     <AppSearchHeader
       v-model="faqSearchQuery"

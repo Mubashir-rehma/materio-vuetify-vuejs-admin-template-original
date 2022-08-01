@@ -87,7 +87,7 @@ watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
   // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
-  isGroupOpen.value = isActive && !(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
+  isGroupOpen.value = isActive && !isVerticalNavMini(windowWidth, isVerticalNavHovered).value
   isGroupActive.value = isActive
 }, { immediate: true })
 

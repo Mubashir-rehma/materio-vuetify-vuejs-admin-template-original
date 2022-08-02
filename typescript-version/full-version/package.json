@@ -21,7 +21,6 @@
     "jwt-decode": "^3.1.2",
     "pinia": "^2.0.14",
     "prismjs": "^1.28.0",
-    "roboto-fontface": "^0.10.0",
     "sass": "^1.52.2",
     "unocss": "^0.44.3",
     "unplugin-vue-define-options": "^0.6.1",

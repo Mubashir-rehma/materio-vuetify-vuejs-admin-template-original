@@ -95,7 +95,7 @@
           <p class="text-overline mb-0">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 0.75rem / line-height: 2rem / font-weight: 500</small>
+          <small>font-size: 0.75rem / line-height: 1.125rem / font-weight: 400</small>
         </VCol>
 
         <VCol

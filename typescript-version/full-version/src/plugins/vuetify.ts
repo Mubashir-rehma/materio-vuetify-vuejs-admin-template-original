@@ -7,6 +7,9 @@ import { themeConfig } from '@themeConfig'
 
 export default createVuetify({
   defaults: {
+    VAlert: {
+      density: 'comfortable',
+    },
     VBadge: {
       // set v-badge default color to primary
       color: 'primary',

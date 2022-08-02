@@ -16,7 +16,7 @@
       <span>Darcy Nooser</span>
     </VChip>
 
-    <VChip pill>
+    <VChip>
       <VAvatar
         start
         :image="dynamicImgImport('@/assets/images/avatars/avatar-3.png')"
@@ -24,7 +24,7 @@
       <span>Felicia Risker</span>
     </VChip>
 
-    <VChip pill>
+    <VChip>
       <VAvatar
         start
         :image="dynamicImgImport('@/assets/images/avatars/avatar-4.png')"

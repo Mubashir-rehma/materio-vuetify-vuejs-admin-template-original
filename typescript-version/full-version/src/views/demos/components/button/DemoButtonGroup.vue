@@ -6,30 +6,12 @@ const toggleExclusive = ref(1)
   <VBtnToggle
     v-model="toggleExclusive"
     divided
+    color="primary"
+    variant="outlined"
   >
-    <VBtn
-      flat
-      variant="outlined"
-    >
-      <VIcon>mdi-format-align-left</VIcon>
-    </VBtn>
-    <VBtn
-      flat
-      variant="outlined"
-    >
-      <VIcon>mdi-format-align-center</VIcon>
-    </VBtn>
-    <VBtn
-      flat
-      variant="outlined"
-    >
-      <VIcon>mdi-format-align-right</VIcon>
-    </VBtn>
-    <VBtn
-      flat
-      variant="outlined"
-    >
-      <VIcon>mdi-format-align-justify</VIcon>
-    </VBtn>
+    <VBtn icon="mdi-format-align-left" />
+    <VBtn icon="mdi-format-align-center" />
+    <VBtn icon="mdi-format-align-right" />
+    <VBtn icon="mdi-format-align-justify" />
   </VBtnToggle>
 </template>

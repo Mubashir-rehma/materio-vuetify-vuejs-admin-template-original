@@ -54,6 +54,7 @@
   $alert-title-font-size: 1rem,
   $alert-title-letter-spacing:0.15px,
   $badge-border-color:rgb(var(--v-theme-surface)),
+  $button-elevation: ("default": 3, "hover": 4, "active": 8),
   $typography: (
     "h1": (
       "weight": 500,

@@ -23,6 +23,21 @@ import * as demoCode from '@/views/demos/components/chip/demoCodeChip'
       cols="12"
       md="6"
     >
+      <!-- 👉 Elevated -->
+      <AppCardCode
+        title="Elevated"
+        :code="demoCode.elevated"
+      >
+        <p>Use <code>elevated</code> variant option to create filled chips.</p>
+
+        <DemoChipElevated />
+      </AppCardCode>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
       <!-- 👉 Outlined -->
       <AppCardCode
         title="Outlined"

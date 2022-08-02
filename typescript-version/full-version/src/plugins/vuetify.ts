@@ -15,6 +15,9 @@ export default createVuetify({
       // set v-btn default color to primary
       color: 'primary',
     },
+    VChip: {
+      elevation: 0,
+    },
     VPagination: {
       color: 'primary',
       density: 'comfortable',

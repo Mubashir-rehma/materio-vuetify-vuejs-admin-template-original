@@ -7,6 +7,7 @@
 // @use "vuetify/lib/styles/tools/functions" as vuetify_functions;
 @use "vuetify/styles" as * with (
   $body-font-family: "Inter",
+  $border-radius-root:6px,
   $color-pack: false,
   $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
   $card-elevation: 6,
@@ -52,9 +53,15 @@
   $tooltip-text-color: rgb(var(--v-theme-on-primary)),
   $tooltip-font-size: 0.75rem,
   $alert-title-font-size: 1rem,
+  $alert-border-radius:5px,
   $alert-title-letter-spacing:0.15px,
   $badge-border-color:rgb(var(--v-theme-surface)),
   $button-elevation: ("default": 3, "hover": 4, "active": 8),
+  $button-border-radius:5px,
+  $dialog-card-header-padding: 20px,
+  $dialog-card-header-text-padding-top: 0,
+  $dialog-card-text-padding: 20px,
+  $chip-label-border-radius:4px,
   $typography: (
     "h1": (
       "weight": 500,

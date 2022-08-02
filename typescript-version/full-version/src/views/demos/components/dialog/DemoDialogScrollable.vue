@@ -39,7 +39,7 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard>
-      <VCardItem class="pb-3">
+      <VCardItem>
         <VCardTitle>Select Country</VCardTitle>
       </VCardItem>
 

@@ -10,7 +10,7 @@ This plugin provides bare minimum styles, components, composables, etc to build 
 Our template already configured the plugin installation. Below is just for completeness of the documentation.
 :::
 
-Create a new plugin file `/src/plugins/layouts.{ts|js}` with below content:
+Create a new plugin file `/src/plugins/layouts.ts` with below content:
 
 ```ts
 import { createLayouts } from '@layouts'
@@ -21,7 +21,7 @@ import { layoutConfig } from '@themeConfig'
 export default createLayouts(layoutConfig)
 ```
 
-Import and use in `main.{ts|js}` file.
+Import and use in `main.ts` file.
 
 ```ts{1,6}
 import layoutsPlugin from '@/plugins/layouts'

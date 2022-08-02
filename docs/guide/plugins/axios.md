@@ -13,7 +13,7 @@ Please make sure to import the axios instance in your code instead of using `axi
 + import axios from '@axios'
 ```
 
-`@axios` is alias we created in `vite.config.{ts|js}` file. It points to `/src/plugins/axios` file.
+`@axios` is alias we created in `vite.config.ts` file. It points to `/src/plugins/axios` file.
 
 ### Why use configured axios instance?
 

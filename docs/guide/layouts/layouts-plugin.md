@@ -6,7 +6,7 @@ We provide framework independent layout system as plugin. You can use it to crea
 
 To use layouts plugin you have to register it like other plugins.
 
-1. Create a new plugin file `@/plugins/layouts.{ts|js}` with below content:
+1. Create a new plugin file `@/plugins/layouts.ts` with below content:
 
     ```ts
     // Layouts plugin
@@ -21,7 +21,7 @@ To use layouts plugin you have to register it like other plugins.
     ```
 
     :::tip
-    `themeConfig.{ts|js}` file uses `defineThemeConfig` function which return two objects and one of them is configuration of layouts plugin. Hence, you can use this config and omit defining the config twice.
+    `themeConfig.ts` file uses `defineThemeConfig` function which return two objects and one of them is configuration of layouts plugin. Hence, you can use this config and omit defining the config twice.
     :::
 
 2. Import and use layouts plugin in `main.ts`

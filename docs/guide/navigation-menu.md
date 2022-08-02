@@ -19,7 +19,7 @@ In this page you will learn how to add navigation items in vertical navigation &
 
 ## Vertical nav
 
-You can add vertical nav items via `/src/navigation/vertical/index.{ts|js}` file.
+You can add vertical nav items via `/src/navigation/vertical/index.ts` file.
 
 This file should export and array of items so without any items file should look like below:
 
@@ -83,7 +83,7 @@ Check below code snippet to add nav section title:
 
 ## Horizontal nav
 
-You can add horizontal nav items via `/src/navigation/horizontal/index.{ts|js}` file.
+You can add horizontal nav items via `/src/navigation/horizontal/index.ts` file.
 
 This file should export and array of items so without any items file should look like below:
 

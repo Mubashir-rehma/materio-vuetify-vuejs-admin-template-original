@@ -1,3 +1,5 @@
+@use "vuetify/lib/styles/settings" as vuetify_settings;
+
 @mixin themed($property, $light-value, $dark-value) {
   @at-root {
     .v-theme {
@@ -57,5 +59,16 @@
     background-color: rgb(var(--v-theme-background));
     box-shadow: none !important;
     #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
+  }
+}
+
+@mixin avatar-font-sizes($map: $avatar-sizes) {
+  @each $sizeName, $multiplier in vuetify_settings.$size-scales {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    $size: map-get($map, $sizeName);
+
+    &.v-avatar--size-#{$sizeName} {
+      font-size: #{$size}px;
+    }
   }
 }

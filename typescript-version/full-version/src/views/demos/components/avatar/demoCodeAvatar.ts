@@ -12,3 +12,5 @@ export const initials = { ts: '', js: '' }
 
 export const group = { ts: '', js: '' }
 
+export const groupCount = { ts: '', js: '' }
+

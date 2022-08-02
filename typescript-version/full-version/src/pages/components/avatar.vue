@@ -108,5 +108,20 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
         <DemoAvatarGroup />
       </AppCardCode>
     </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Group -->
+      <AppCardCode
+        title="Group Count"
+        :code="demoCode.groupCount"
+      >
+        <p>Use <code>v-avatar-group</code> class as a wrapper of avatars.</p>
+
+        <DemoAvatarGroupCount />
+      </AppCardCode>
+    </VCol>
   </VRow>
 </template>

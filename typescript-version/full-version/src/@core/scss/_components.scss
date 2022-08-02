@@ -8,6 +8,11 @@
 // ℹ️ Avatar light bg
 @include mixins.light-bg-provider(v-avatar);
 
+// 👉 Avatar font-size
+.v-avatar {
+  @include mixins.avatar-font-sizes($map: variables.$avatar-font-sizes);
+}
+
 // 👉 Avatar group
 .v-avatar-group {
   display: flex;

@@ -2,7 +2,7 @@
   <div class="demo-space-x">
     <VAvatar
       rounded="0"
-      color="primary"
+      color="secondary"
     >
       <VIcon
         color="white"
@@ -24,7 +24,7 @@
 
     <VAvatar
       rounded
-      color="success"
+      color="secondary"
     >
       <VIcon
         color="white"
@@ -35,7 +35,7 @@
 
     <VAvatar
       rounded="lg"
-      color="info"
+      color="secondary"
     >
       <VIcon
         color="white"
@@ -46,7 +46,7 @@
 
     <VAvatar
       rounded="xl"
-      color="warning"
+      color="secondary"
     >
       <VIcon
         color="white"
@@ -55,7 +55,7 @@
       />
     </VAvatar>
 
-    <VAvatar color="error">
+    <VAvatar color="secondary">
       <VIcon
         color="white"
         size="25"

@@ -1,26 +1,6 @@
 <template>
   <div class="v-avatar-group">
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
-      <VTooltip
-        activator="parent"
-        location="start"
-      >
-        John Doe
-      </VTooltip>
-    </VAvatar>
-
-    <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-2.png')" />
-      <VTooltip
-        activator="parent"
-        location="start"
-      >
-        Jennie Obrien
-      </VTooltip>
-    </VAvatar>
-
-    <VAvatar size="large">
       <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-3.png')" />
       <VTooltip
         activator="parent"
@@ -50,13 +30,16 @@
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-6.png')" />
+    <VAvatar
+      color="grey-200"
+      size="large"
+    >
+      <span class="text-secondary"> +3</span>
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
-        Angel Bishop
+        3 and more
       </VTooltip>
     </VAvatar>
   </div>

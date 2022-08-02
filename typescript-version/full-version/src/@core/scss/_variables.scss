@@ -8,7 +8,7 @@
     - When we want to allow customization from both user and our side
     - You can also use variable for consistency (e.g. mx 1 rem should be applied to both vertical nav items and vertical nav header)
 */
-
+@use "sass:map";
 @forward "@layouts/styles/variables";
 @use "@layouts/styles/variables" as *;
 
@@ -105,3 +105,16 @@ $horizontal-nav-popper-content-max-height: calc((var(--vh, 1vh) * 100) - 120px -
 // 👉 Plugins
 
 $plugin-ps-thumb-y-dark: rgba(var(--v-theme-surface-variant), 0.35);
+
+// 👉 Custom Variables
+$avatar-font-sizes: () !default;
+$avatar-font-sizes: map.deep-merge(
+  (
+    "x-small":12,
+    "small":14,
+    "default":18,
+    "large":20,
+    "x-large":24
+  ),
+  $avatar-font-sizes
+);

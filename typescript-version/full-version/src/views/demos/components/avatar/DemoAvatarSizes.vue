@@ -4,32 +4,32 @@
       color="primary"
       size="x-small"
     >
-      <small>PI</small>
+      PI
     </VAvatar>
 
     <VAvatar
       color="secondary"
       size="small"
     >
-      <span>PI</span>
+      PI
     </VAvatar>
 
     <VAvatar color="success">
-      <span>PI</span>
+      PI
     </VAvatar>
 
     <VAvatar
       color="info"
       size="large"
     >
-      <span class="text-h6 text-white">PI</span>
+      PI
     </VAvatar>
 
     <VAvatar
       color="error"
       size="x-large"
     >
-      <span class="text-h5 text-white">PI</span>
+      PI
     </VAvatar>
   </div>
 </template>

@@ -3,13 +3,7 @@
     <!-- avatar -->
     <VBadge>
       <template #badge>
-        <VAvatar size="15">
-          <VIcon
-            color="white"
-            size="16"
-            icon="mdi-information-variant"
-          />
-        </VAvatar>
+        <VIcon icon="mdi-information-variant" />
       </template>
 
       <VAvatar>

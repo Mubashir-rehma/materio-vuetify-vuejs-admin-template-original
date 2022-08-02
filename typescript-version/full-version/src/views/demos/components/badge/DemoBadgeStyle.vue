@@ -1,13 +1,13 @@
 <template>
   <div class="demo-space-x d-flex align-center flex-wrap">
-    <!-- default -->
+    <!-- 👉 default -->
     <VBadge content="1">
       <VBtn variant="tonal">
         Default
       </VBtn>
     </VBadge>
 
-    <!-- bordered -->
+    <!-- 👉 bordered -->
     <VBadge
       content="5"
       bordered
@@ -17,7 +17,7 @@
       </VBtn>
     </VBadge>
 
-    <!-- dot -->
+    <!-- 👉 dot -->
     <VBadge
       dot
       location="bottom end"
@@ -29,7 +29,7 @@
       </VAvatar>
     </VBadge>
 
-    <!-- inline -->
+    <!-- 👉 inline -->
     <VBadge
       inline
       content="5"
@@ -39,7 +39,7 @@
       </VAvatar>
     </VBadge>
 
-    <!-- Rounded -->
+    <!-- 👉 Rounded -->
     <VBadge
       rounded="sm"
       content="5"

@@ -29,6 +29,7 @@ const logout = () => {
 <template>
   <VBadge
     dot
+    bordered
     location="bottom right"
     offset-x="3"
     offset-y="3"

@@ -1,11 +1,11 @@
-import type { Component, Ref } from 'vue'
+import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from './enums'
 
 export interface UserConfig {
   app: {
     title: string
-    logo: string
+    logo: VNode
     contentWidth: EnumContentWidth
     contentLayoutNav: EnumAppContentLayoutNav
     overlayNavFromBreakpoint: number

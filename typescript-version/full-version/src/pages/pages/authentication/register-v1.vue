@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 const form = ref({
@@ -23,10 +24,7 @@ const isPasswordVisible = ref(false)
       <VCardItem>
         <template #prepend>
           <div class="d-flex">
-            <div
-              class="text-primary"
-              v-html="themeConfig.app.logo"
-            />
+            <VNodeRenderer :nodes="themeConfig.app.logo" />
           </div>
         </template>
 

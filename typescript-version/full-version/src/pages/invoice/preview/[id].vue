@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 // Components
@@ -78,9 +79,9 @@ const printInvoice = () => {
             <div class="mb-4">
               <div class="d-flex align-center mb-6">
                 <!-- 👉 Logo -->
-                <div
-                  class="text-primary me-3"
-                  v-html="themeConfig.app.logo"
+                <VNodeRenderer
+                  :nodes="themeConfig.app.logo"
+                  class="me-3"
                 />
 
                 <!-- 👉 Title -->

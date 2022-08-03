@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 const { isAppRtl } = useThemeConfig()
 
@@ -20,10 +21,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
       <VCardItem>
         <template #prepend>
           <div class="d-flex">
-            <div
-              class="text-primary"
-              v-html="themeConfig.app.logo"
-            />
+            <VNodeRenderer :nodes="themeConfig.app.logo" />
           </div>
         </template>
 

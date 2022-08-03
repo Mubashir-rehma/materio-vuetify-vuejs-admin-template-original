@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 import { useThemeConfig } from '@core/composable/useThemeConfig'
@@ -22,12 +23,7 @@ const isConfirmPasswordVisible = ref(false)
   <div>
     <!-- Title and Logo -->
     <div class="auth-logo d-flex align-start gap-x-3">
-      <!-- eslint-disable vue/no-v-html -->
-      <div
-        class="text-primary d-flex"
-        v-html="themeConfig.app.logo"
-      />
-      <!-- eslint-enable vue/no-v-html -->
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
 
       <h1 class="font-weight-semibold leading-normal text-2xl text-uppercase">
         {{ themeConfig.app.title }}

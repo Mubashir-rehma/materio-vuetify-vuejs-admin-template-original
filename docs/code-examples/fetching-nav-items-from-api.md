@@ -23,7 +23,7 @@ const navData = [
   { heading: 'Dashboards' },
   {
     title: 'Home',
-    icon: 'i-mdi-home',
+    icon: { icon: 'mdi-home'},
     to: 'index',
     action: 'read',
     subject: 'Auth',
@@ -75,7 +75,6 @@ mock.onAny().passThrough()
 ## Using nav items from API
 
 Now let's consume above API endpoint and pass response to our nav menu so it renders nav items from our API. For this we will update the `src/layouts/default.vue`
-
 
 ```diff
   <script lang="ts" setup>

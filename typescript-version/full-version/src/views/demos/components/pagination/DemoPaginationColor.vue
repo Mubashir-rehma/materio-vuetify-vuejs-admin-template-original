@@ -9,17 +9,17 @@ const pageInfo = ref(3)
     <VPagination
       v-model="pageSuccess"
       :length="7"
-      color="success"
+      active-color="success"
     />
     <VPagination
       v-model="pageError"
       :length="7"
-      color="error"
+      active-color="error"
     />
     <VPagination
       v-model="pageInfo"
       :length="7"
-      color="info"
+      active-color="info"
     />
   </div>
 </template>

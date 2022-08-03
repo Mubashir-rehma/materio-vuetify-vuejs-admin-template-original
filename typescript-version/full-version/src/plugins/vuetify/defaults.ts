@@ -11,7 +11,7 @@ export default {
     elevation: 0,
   },
   VPagination: {
-    color: 'primary',
+    activeColor: 'primary',
     density: 'comfortable',
   },
   VTabs: {

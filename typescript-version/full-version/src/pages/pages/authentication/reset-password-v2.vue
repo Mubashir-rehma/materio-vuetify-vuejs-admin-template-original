@@ -2,6 +2,9 @@
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { themeConfig } from '@themeConfig'
 
+import { useThemeConfig } from '@core/composable/useThemeConfig'
+const { isAppRtl } = useThemeConfig()
+
 const form = ref({
   newPassword: '',
   confirmPassword: '',
@@ -124,7 +127,10 @@ const isConfirmPasswordVisible = ref(false)
                     class="text-primary ms-2"
                     :to="{ name: 'pages-authentication-login-v2' }"
                   >
-                    <VIcon icon="mdi-chevron-left" />
+                    <VIcon
+                      icon="mdi-chevron-left"
+                      :rotate="isAppRtl ? '180deg' : null"
+                    />
                     <span>Back to login</span>
                   </RouterLink>
                 </VCol>

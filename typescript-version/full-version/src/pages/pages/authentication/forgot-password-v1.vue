@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { themeConfig } from '@themeConfig'
+const { isAppRtl } = useThemeConfig()
 
 const form = ref({
   email: '',
@@ -70,7 +72,10 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
                 class="text-primary ms-2"
                 :to="{ name: 'pages-authentication-login-v1' }"
               >
-                <VIcon icon="mdi-chevron-left" />
+                <VIcon
+                  icon="mdi-chevron-left"
+                  :rotate="isAppRtl ? '180deg' : null"
+                />
                 <span>Back to login</span>
               </RouterLink>
             </VCol>

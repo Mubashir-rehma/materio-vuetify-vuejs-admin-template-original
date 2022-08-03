@@ -1,0 +1,111 @@
+export default {
+  VBadge: {
+    // set v-badge default color to primary
+    color: 'primary',
+  },
+  VBtn: {
+    // set v-btn default color to primary
+    color: 'primary',
+  },
+  VChip: {
+    elevation: 0,
+  },
+  VPagination: {
+    color: 'primary',
+    density: 'comfortable',
+  },
+  VTabs: {
+    // set v-tabs default color to primary
+    color: 'primary',
+  },
+  VTooltip: {
+    // set v-tooltip default location to top
+    location: 'top',
+  },
+  VList: {
+    VListItem: {
+      activeColor: 'primary',
+    },
+  },
+  VCheckbox: {
+    // set v-checkbox default color to primary
+    color: 'primary',
+    density: 'comfortable',
+    hideDetails: 'auto',
+  },
+  VRadioGroup: {
+    // set v-radio-group default inline:true
+    inline: true,
+    density: 'comfortable',
+    hideDetails: 'auto',
+  },
+  VRadio: {
+    density: 'comfortable',
+    hideDetails: 'auto',
+    VSelectionControl: { color: 'primary' },
+  },
+  VSelect: {
+    variant: 'outlined',
+    density: 'comfortable',
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VRangeSlider: {
+    // set v-range-slider default color to primary
+    color: 'primary',
+    density: 'comfortable',
+    thumbLabel: true,
+    hideDetails: 'auto',
+  },
+  VRating: {
+    // set v-rating default color to primary
+    color: 'warning',
+  },
+  VProgressCircular: {
+    // set v-progress-circular default color to primary
+    color: 'primary',
+  },
+  VSlider: {
+    // set v-slider default color to primary
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VTextField: {
+    variant: 'outlined',
+    density: 'comfortable',
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VAutocomplete: {
+    variant: 'outlined',
+    density: 'comfortable',
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VCombobox: {
+    variant: 'outlined',
+    density: 'comfortable',
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VFileInput: {
+    variant: 'outlined',
+    density: 'comfortable',
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VTextarea: {
+    variant: 'outlined',
+    density: 'comfortable',
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VSwitch: {
+    // set v-switch default color to primary
+    color: 'primary',
+    hideDetails: 'auto',
+  },
+  VDialog: {
+    maxWidth: '600',
+  },
+}

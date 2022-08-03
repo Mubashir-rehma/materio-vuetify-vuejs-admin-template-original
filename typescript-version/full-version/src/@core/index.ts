@@ -31,6 +31,7 @@ export const defineThemeConfig = (
         isRtl: ref(userConfig.app.isRtl),
         skin: ref(localStorageSkin || userConfig.app.skin),
         routeTransition: ref(localStorageTransition || userConfig.app.routeTransition),
+        iconRenderer: userConfig.app.iconRenderer,
       },
       navbar: {
         type: ref(userConfig.navbar.type),
@@ -39,7 +40,7 @@ export const defineThemeConfig = (
       footer: { type: ref(userConfig.footer.type) },
       verticalNav: {
         isVerticalNavCollapsed: ref(userConfig.verticalNav.isVerticalNavCollapsed),
-        defaultNavItemIconClass: userConfig.verticalNav.defaultNavItemIconClass,
+        defaultNavItemIconProps: userConfig.verticalNav.defaultNavItemIconProps,
         isVerticalNavSemiDark: ref(localStorageIsVerticalNavSemiDark ? JSON.parse(localStorageIsVerticalNavSemiDark) : userConfig.verticalNav.isVerticalNavSemiDark),
       },
       horizontalNav: {
@@ -64,6 +65,7 @@ export const defineThemeConfig = (
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
         isRtl: userConfig.app.isRtl,
+        iconRenderer: userConfig.app.iconRenderer,
       },
       navbar: {
         type: userConfig.navbar.type,
@@ -74,7 +76,7 @@ export const defineThemeConfig = (
       },
       verticalNav: {
         isVerticalNavCollapsed: userConfig.verticalNav.isVerticalNavCollapsed,
-        defaultNavItemIconClass: userConfig.verticalNav.defaultNavItemIconClass,
+        defaultNavItemIconProps: userConfig.verticalNav.defaultNavItemIconProps,
       },
       horizontalNav: {
         type: userConfig.horizontalNav.type,

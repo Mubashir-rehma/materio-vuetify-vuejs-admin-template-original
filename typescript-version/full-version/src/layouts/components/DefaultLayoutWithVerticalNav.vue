@@ -33,9 +33,12 @@ injectSkinClasses()
     <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">
-        <div
+        <VBtn
           v-if="isLessThanOverlayNavBreakpoint(windowWidth)"
-          class="i-mdi-menu cursor-pointer"
+          icon="mdi-menu"
+          variant="text"
+          color="default"
+          class="me-2"
           @click="toggleVerticalOverlayNavActive(true)"
         />
 

@@ -1,18 +1,18 @@
 export default [
   {
     title: 'Others',
-    icon: 'i-mdi-dots-horizontal',
+    icon: { icon: 'mdi-dots-horizontal' },
     children: [
       {
         title: 'Access Control',
-        icon: 'i-mdi-shield-outline',
+        icon: { icon: 'mdi-shield-outline' },
         to: 'access-control',
         action: 'read',
         subject: 'Auth',
       },
       {
         title: 'Nav Levels',
-        icon: 'i-mdi-menu',
+        icon: { icon: 'mdi-menu' },
         children: [
           {
             title: 'Level 2.1',

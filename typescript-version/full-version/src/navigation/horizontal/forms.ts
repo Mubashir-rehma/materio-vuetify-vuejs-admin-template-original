@@ -1,11 +1,11 @@
 export default [
   {
     title: 'Forms',
-    icon: 'i-mdi-checkbox-multiple-outline',
+    icon: { icon: 'mdi-checkbox-multiple-outline' },
     children: [
       {
         title: 'Form Elements',
-        icon: 'i-mdi-content-copy',
+        icon: { icon: 'mdi-content-copy' },
         children: [
           {
             title: 'Checkbox',
@@ -56,12 +56,12 @@ export default [
       },
       {
         title: 'Form Layouts',
-        icon: 'i-mdi-checkbox-marked-circle-outline',
+        icon: { icon: 'mdi-checkbox-marked-circle-outline' },
         to: 'forms-form-layouts',
       },
       {
         title: 'Form Validation',
-        icon: 'i-mdi-checkbox-marked-circle-outline',
+        icon: { icon: 'mdi-checkbox-marked-circle-outline' },
         to: 'forms-form-validation',
       },
     ],

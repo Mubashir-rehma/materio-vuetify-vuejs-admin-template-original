@@ -54,7 +54,7 @@ export default {
   >
     <div class="nav-group-label">
       <div
-        :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
+        :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
       <Component

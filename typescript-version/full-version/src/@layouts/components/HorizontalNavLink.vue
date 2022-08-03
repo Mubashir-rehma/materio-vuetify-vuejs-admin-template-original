@@ -30,7 +30,7 @@ const { dynamicI18nProps } = useLayouts()
       v-bind="getComputedNavLinkToProp(item)"
     >
       <div
-        :class="item.icon || config.verticalNav.defaultNavItemIconClass"
+        :class="item.icon || config.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
       <Component

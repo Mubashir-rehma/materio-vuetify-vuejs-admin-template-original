@@ -11,6 +11,7 @@ export interface UserConfig {
     overlayNavFromBreakpoint: number
     enableI18n: boolean
     isRtl: boolean
+    iconRenderer?: Component
   }
   navbar: {
     type: EnumNavbarType
@@ -21,19 +22,19 @@ export interface UserConfig {
   }
   verticalNav: {
     isVerticalNavCollapsed: boolean
-    defaultNavItemIconClass: string
+    defaultNavItemIconProps: unknown
   }
   horizontalNav: {
     type: 'sticky' | 'static' | 'hidden'
     transition?: string | Component
   }
   icons: {
-    chevronDown: string
-    chevronRight: string
-    close: string
-    verticalNavPinned: string
-    verticalNavUnPinned: string
-    sectionTitlePlaceholder: string
+    chevronDown: unknown
+    chevronRight: unknown
+    close: unknown
+    verticalNavPinned: unknown
+    verticalNavUnPinned: unknown
+    sectionTitlePlaceholder: unknown
   }
 }
 
@@ -50,6 +51,7 @@ export interface Config {
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
     isRtl: Ref<UserConfig['app']['isRtl']>
+    iconRenderer?: UserConfig['app']['iconRenderer']
   }
   navbar: {
     type: Ref<UserConfig['navbar']['type']>
@@ -60,7 +62,7 @@ export interface Config {
   }
   verticalNav: {
     isVerticalNavCollapsed: Ref<UserConfig['verticalNav']['isVerticalNavCollapsed']>
-    defaultNavItemIconClass: UserConfig['verticalNav']['defaultNavItemIconClass']
+    defaultNavItemIconProps: UserConfig['verticalNav']['defaultNavItemIconProps']
   }
   horizontalNav: {
     type: Ref<UserConfig['horizontalNav']['type']>
@@ -112,7 +114,7 @@ export interface NavLinkProps {
 
 export interface NavLink extends NavLinkProps, Partial<AclProperties> {
   title: string
-  icon?: string
+  icon?: unknown
   badgeContent?: string
   badgeClass?: string
   disable?: boolean
@@ -121,7 +123,7 @@ export interface NavLink extends NavLinkProps, Partial<AclProperties> {
 // 👉 Vertical nav group
 export interface NavGroup extends Partial<AclProperties> {
   title: string
-  icon?: string
+  icon?: unknown
   badgeContent?: string
   badgeClass?: string
   children: (NavLink | NavGroup)[]

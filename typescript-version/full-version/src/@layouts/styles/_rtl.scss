@@ -1,6 +1,6 @@
 @use "./mixins";
 
-.i-mdi-chevron-right {
+.nav-group-arrow {
   @include mixins.rtl {
     transform: rotate(180deg);
   }

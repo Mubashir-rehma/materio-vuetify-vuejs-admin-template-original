@@ -54,6 +54,7 @@
         "Composables",
         "Customizer",
         "flagpack",
+        "Iconify",
         "psudo",
         "stylelint",
         "vuetify"

@@ -2,7 +2,7 @@ export default [
   { heading: 'Forms' },
   {
     title: 'Form Elements',
-    icon: 'i-mdi-content-copy',
+    icon: { icon: 'mdi-content-copy' },
     children: [
       { title: 'Checkbox', to: 'forms-checkbox' },
       { title: 'Combobox', to: 'forms-combobox' },
@@ -20,12 +20,12 @@ export default [
   },
   {
     title: 'Form Layouts',
-    icon: 'i-mdi-content-copy',
+    icon: { icon: 'mdi-content-copy' },
     to: 'forms-form-layouts',
   },
   {
     title: 'Form Validation',
-    icon: 'i-mdi-checkbox-marked-circle-outline',
+    icon: { icon: 'mdi-checkbox-marked-circle-outline' },
     to: 'forms-form-validation',
   },
 ]

@@ -120,6 +120,7 @@ declare module '@vue/runtime-core' {
     DemoChipAvatar: typeof import('./src/views/demos/components/chip/DemoChipAvatar.vue')['default']
     DemoChipClosable: typeof import('./src/views/demos/components/chip/DemoChipClosable.vue')['default']
     DemoChipColor: typeof import('./src/views/demos/components/chip/DemoChipColor.vue')['default']
+    DemoChipElevated: typeof import('./src/views/demos/components/chip/DemoChipElevated.vue')['default']
     DemoChipExpandable: typeof import('./src/views/demos/components/chip/DemoChipExpandable.vue')['default']
     DemoChipInSelects: typeof import('./src/views/demos/components/chip/DemoChipInSelects.vue')['default']
     DemoChipLabel: typeof import('./src/views/demos/components/chip/DemoChipLabel.vue')['default']

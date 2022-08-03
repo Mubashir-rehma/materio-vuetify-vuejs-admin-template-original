@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const menusVariant = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
-const items = [{ title: 'Option 1' }, { title: 'Option 2' }, { title: 'Option 3' }]
+const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
 </script>
 
 <template>
@@ -18,15 +18,7 @@ const items = [{ title: 'Option 1' }, { title: 'Option 2' }, { title: 'Option 3'
         </VBtn>
       </template>
 
-      <VList>
-        <VListItem
-          v-for="(item, index) in items"
-          :key="index"
-          :value="index"
-        >
-          <VListItemTitle>{{ item.title }}</VListItemTitle>
-        </VListItem>
-      </VList>
+      <VList :items="items" />
     </VMenu>
   </div>
 </template>

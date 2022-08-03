@@ -116,3 +116,26 @@
 .v-timeline--vertical.v-timeline .v-timeline-item:nth-child(2n) .v-timeline-item__body {
   text-align: start;
 }
+
+// 👉 Expansion panels
+.v-expansion-panel-title,
+.v-expansion-panel-title--active,
+.v-expansion-panel-title:hover,
+.v-expansion-panel-title:focus,
+.v-expansion-panel-title:focus-visible,
+.v-expansion-panel-title--active:focus,
+.v-expansion-panel-title--active:hover {
+  .v-expansion-panel-title__overlay {
+    opacity: 0;
+  }
+}
+
+// 👉 Set Elevation when panel open
+
+.v-expansion-panels:not(.v-expansion-panels--variant-accordion) {
+  .v-expansion-panel.v-expansion-panel--active {
+    .v-expansion-panel__shadow {
+      @include mixins_elevation.elevation(3);
+    }
+  }
+}

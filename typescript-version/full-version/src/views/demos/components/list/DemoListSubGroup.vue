@@ -16,18 +16,32 @@ const cruds = [
 <template>
   <VList v-model:opened="open">
     <VListItem
-      prepend-icon="mdi-home-outline"
       title="Home"
       value="Home"
-    />
+    >
+      <template #prepend>
+        <VIcon
+          size="24"
+          icon="mdi-home-outline"
+          class="me-3"
+        />
+      </template>
+    </VListItem>
 
     <VListGroup value="Users">
       <template #activator="{ props }">
         <VListItem
           v-bind="props"
-          prepend-icon="mdi-account-circle-outline"
           title="Users"
-        />
+        >
+          <template #prepend>
+            <VIcon
+              size="24"
+              icon="mdi-account-circle-outline"
+              class="me-3"
+            />
+          </template>
+        </VListItem>
       </template>
 
       <VListGroup value="Admin">
@@ -43,8 +57,15 @@ const cruds = [
           :key="i"
           :value="title"
           :title="title"
-          :prepend-icon="icon"
-        />
+        >
+          <template #prepend>
+            <VIcon
+              size="24"
+              :icon="icon"
+              class="me-3"
+            />
+          </template>
+        </VListItem>
       </VListGroup>
 
       <VListGroup value="Actions">
@@ -60,8 +81,15 @@ const cruds = [
           :key="i"
           :value="title"
           :title="title"
-          :prepend-icon="icon"
-        />
+        >
+          <template #prepend>
+            <VIcon
+              size="24"
+              :icon="icon"
+              class="me-3"
+            />
+          </template>
+        </VListItem>
       </VListGroup>
     </VListGroup>
   </VList>

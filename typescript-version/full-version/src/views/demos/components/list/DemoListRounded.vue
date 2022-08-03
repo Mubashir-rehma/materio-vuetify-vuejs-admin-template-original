@@ -3,38 +3,45 @@ const items = [
   {
     title: 'Cupcake sesame snaps dessert marzipan.',
     value: 1,
-    props: {
-      prependIcon: 'mdi-instagram',
-      rounded: 'xl',
-    },
+    prependIcon: 'mdi-instagram',
+
   },
   {
     title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
     value: 2,
-    props: {
-      prependIcon: 'mdi-facebook',
-      rounded: 'xl',
-    },
+    prependIcon: 'mdi-facebook',
   },
   {
     title: 'Bonbon macaroon gummies pie jelly',
     value: 3,
-    props: {
-      prependIcon: 'mdi-twitter',
-      rounded: 'xl',
-    },
+    prependIcon: 'mdi-twitter',
   },
   {
     title: 'halvah icing marshmallow',
     value: 4,
-    props: {
-      prependIcon: 'mdi-instagram',
-      rounded: 'xl',
-    },
+    prependIcon: 'mdi-instagram',
   },
 ]
 </script>
 
 <template>
-  <VList :items="items" />
+  <VList>
+    <VListItem
+      v-for="item in items"
+      :key="item.title"
+      :value="item.value"
+      rounded="xl"
+    >
+      <template #prepend>
+        <VIcon
+          :icon="item.prependIcon"
+          class="me-3"
+        />
+      </template>
+
+      <VListItemTitle>
+        {{ item.title }}
+      </VListItemTitle>
+    </VListItem>
+  </VList>
 </template>

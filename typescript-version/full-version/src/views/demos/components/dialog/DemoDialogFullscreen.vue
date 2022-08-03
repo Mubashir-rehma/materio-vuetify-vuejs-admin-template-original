@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 const isDialogVisible = ref(false)
-const notifications = ref(false)
-const sound = ref(true)
-const widgets = ref(false)
 </script>
 
 <template>
@@ -73,11 +70,12 @@ const widgets = ref(false)
         <VListItem
           title="Notifications"
           subtitle="Notify me about updates to apps or games that I downloaded"
+          value="Notifications"
         >
-          <template #prepend>
+          <template #prepend="{ isActive }">
             <VListItemAction start>
               <VCheckbox
-                v-model="notifications"
+                :model-value="isActive"
                 color="primary"
               />
             </VListItemAction>
@@ -87,11 +85,12 @@ const widgets = ref(false)
         <VListItem
           title="Sound"
           subtitle="Auto-update apps at any time. Data charges may apply"
+          value="Sound"
         >
-          <template #prepend>
+          <template #prepend="{ isActive }">
             <VListItemAction start>
               <VCheckbox
-                v-model="sound"
+                :model-value="isActive"
                 color="primary"
               />
             </VListItemAction>
@@ -101,11 +100,12 @@ const widgets = ref(false)
         <VListItem
           title="Auto-add widgets"
           subtitle="Automatically add home screen widgets"
+          value="Auto-add widgets"
         >
-          <template #prepend>
+          <template #prepend="{ isActive }">
             <VListItemAction start>
               <VCheckbox
-                v-model="widgets"
+                :model-value="isActive"
                 color="primary"
               />
             </VListItemAction>

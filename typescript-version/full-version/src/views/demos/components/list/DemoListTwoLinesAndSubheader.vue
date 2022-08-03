@@ -45,6 +45,7 @@ const folders = [
         <VIcon
           :size="26"
           icon="mdi-folder-outline"
+          class="me-3"
         />
       </template>
 

@@ -15,7 +15,10 @@ const items = [
       rounded="shaped"
     >
       <template #prepend>
-        <VIcon :icon="item.icon" />
+        <VIcon
+          :icon="item.icon"
+          class="me-3"
+        />
       </template>
       <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
       <VListItemTitle v-text="item.text" />

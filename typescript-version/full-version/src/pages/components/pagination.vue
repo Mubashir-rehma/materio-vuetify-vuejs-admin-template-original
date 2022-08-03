@@ -103,7 +103,7 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
         title="Color"
         :code="demoCode.color"
       >
-        <p>Use color prop for create different color pagination.</p>
+        <p>Use <code>active-color</code> prop for create different color pagination.</p>
 
         <DemoPaginationColor />
       </AppCardCode>

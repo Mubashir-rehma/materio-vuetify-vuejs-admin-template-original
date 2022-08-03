@@ -22,7 +22,7 @@ export default createVuetify({
       elevation: 0,
     },
     VPagination: {
-      color: 'primary',
+      activeColor: 'primary',
       density: 'comfortable',
     },
     VTabs: {

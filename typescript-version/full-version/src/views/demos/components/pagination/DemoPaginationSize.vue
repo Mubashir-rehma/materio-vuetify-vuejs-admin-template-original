@@ -9,12 +9,11 @@ const largePagination = ref(3)
     <VPagination
       v-model="xSmallPagination"
       :length="7"
-      size="x-small"
+      size="small"
     />
     <VPagination
       v-model="smallPagination"
       :length="7"
-      size="small"
     />
     <VPagination
       v-model="largePagination"

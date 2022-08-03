@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons } from 'unocss'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
 
@@ -38,18 +38,4 @@ export default defineConfig({
       }
     }],
   ],
-  presets: [
-    presetIcons({
-      scale: 1.5,
-      extraProperties: {
-        'display': 'inline-block',
-        'vertical-align': 'middle',
-      },
-    }),
-  ],
-  include: [
-    './src/navigation/**',
-    './**/*.vue',
-  ],
-
 })

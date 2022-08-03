@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 const message = ref('Hey!')
@@ -45,10 +46,7 @@ const clickMe = () => {
           indeterminate
         />
 
-        <div
-          class="text-primary"
-          v-html="themeConfig.app.logo"
-        />
+        <VNodeRenderer :nodes="themeConfig.app.logo" />
       </VFadeTransition>
     </template>
 

@@ -14,6 +14,7 @@ export interface UserThemeConfig {
     isRtl: UserLayoutConfig['app']['isRtl']
     skin: EnumSkins
     routeTransition: RouteTransitions
+    iconRenderer: UserLayoutConfig['app']['iconRenderer']
   }
   navbar: {
     type: UserLayoutConfig['navbar']['type']
@@ -24,7 +25,7 @@ export interface UserThemeConfig {
   }
   verticalNav: {
     isVerticalNavCollapsed: UserLayoutConfig['verticalNav']['isVerticalNavCollapsed']
-    defaultNavItemIconClass: UserLayoutConfig['verticalNav']['defaultNavItemIconClass']
+    defaultNavItemIconProps: UserLayoutConfig['verticalNav']['defaultNavItemIconProps']
     isVerticalNavSemiDark: boolean
   }
   horizontalNav: {
@@ -57,6 +58,7 @@ export interface ThemeConfig {
     isRtl: Ref<UserThemeConfig['app']['isRtl']>
     skin: Ref<UserThemeConfig['app']['skin']>
     routeTransition: Ref<UserThemeConfig['app']['routeTransition']>
+    iconRenderer?: UserThemeConfig['app']['iconRenderer']
   }
   navbar: {
     type: Ref<UserThemeConfig['navbar']['type']>
@@ -67,7 +69,7 @@ export interface ThemeConfig {
   }
   verticalNav: {
     isVerticalNavCollapsed: Ref<UserThemeConfig['verticalNav']['isVerticalNavCollapsed']>
-    defaultNavItemIconClass: UserThemeConfig['verticalNav']['defaultNavItemIconClass']
+    defaultNavItemIconProps: UserThemeConfig['verticalNav']['defaultNavItemIconProps']
     isVerticalNavSemiDark: Ref<UserThemeConfig['verticalNav']['isVerticalNavSemiDark']>
   }
   horizontalNav: {

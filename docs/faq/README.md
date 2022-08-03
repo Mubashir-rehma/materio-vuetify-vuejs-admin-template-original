@@ -100,7 +100,9 @@ You can find authentication related fake responses in `src/@fake-db/jwt/index.ts
 
 ## How to update logo and text
 
-You can update the logo and text from `themeConfig.ts` file. Please update `$themeConfig` variable's `app.appName` and `app.appLogoImage` to update the text and logo.
+You can update the logo and text from `themeConfig.ts` file. Please update `$themeConfig` variable's `app.name` and `app.logo` to update the text and logo.
+
+Article: [How to change logo](/articles/how-to-change-logo)
 
 ## How to update navbar or footer
 

@@ -22,17 +22,17 @@ export const config: Config = {
   footer: { type: ref(EnumFooterType.Static) },
   verticalNav: {
     isVerticalNavCollapsed: ref(false),
-    defaultNavItemIconClass: 'i-mdi-circle-outline',
+    defaultNavItemIconProps: { icon: 'mdi-circle-outline' },
   },
   horizontalNav: {
     type: ref('sticky'),
   },
   icons: {
-    chevronDown: 'i-mdi-chevron-down',
-    chevronRight: 'i-mdi-chevron-right',
-    close: 'i-mdi-close',
-    verticalNavPinned: 'i-mdi-record-circle-outline',
-    verticalNavUnPinned: 'i-mdi-radiobox-blank',
-    sectionTitlePlaceholder: 'i-mdi-minus',
+    chevronDown: { icon: 'mdi-chevron-down' },
+    chevronRight: { icon: 'mdi-chevron-right' },
+    close: { icon: 'mdi-close' },
+    verticalNavPinned: { icon: 'mdi-record-circle-outline' },
+    verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
+    sectionTitlePlaceholder: { icon: 'mdi-minus' },
   },
 }

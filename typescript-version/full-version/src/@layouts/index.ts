@@ -24,6 +24,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
   config.app.enableI18n = userConfig.app.enableI18n
   config.app.isRtl.value = localStorageIsRtl ? JSON.parse(localStorageIsRtl) : userConfig.app.isRtl
+  config.app.iconRenderer = userConfig.app.iconRenderer
 
   config.navbar.type.value = userConfig.navbar.type
   config.navbar.navbarBlur.value = localStorageNavbarBlur ? JSON.parse(localStorageNavbarBlur) : userConfig.navbar.navbarBlur
@@ -35,7 +36,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
       ? JSON.parse(localStorageIsVerticalNavCollapsed)
       : userConfig.verticalNav.isVerticalNavCollapsed
 
-  config.verticalNav.defaultNavItemIconClass = userConfig.verticalNav.defaultNavItemIconClass
+  config.verticalNav.defaultNavItemIconProps = userConfig.verticalNav.defaultNavItemIconProps
 
   config.horizontalNav.type.value = userConfig.horizontalNav.type
 

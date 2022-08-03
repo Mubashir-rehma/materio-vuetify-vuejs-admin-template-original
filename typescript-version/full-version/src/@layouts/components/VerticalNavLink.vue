@@ -26,8 +26,9 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
       v-bind="getComputedNavLinkToProp(item)"
       :class="isNavLinkActive(item, $router) ? 'router-link-active router-link-exact-active' : ''"
     >
-      <div
-        :class="item.icon || config.verticalNav.defaultNavItemIconClass"
+      <Component
+        :is="config.app.iconRenderer || 'div'"
+        v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
       <TransitionGroup name="transition-slide-x">

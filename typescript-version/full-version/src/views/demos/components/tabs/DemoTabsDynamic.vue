@@ -28,11 +28,6 @@ watch(totalTabs, newValue => {
       Remove Tab
     </VBtn>
 
-    <VDivider
-      class="mx-4"
-      vertical
-    />
-
     <VBtn
       variant="text"
       @click="totalTabs++"

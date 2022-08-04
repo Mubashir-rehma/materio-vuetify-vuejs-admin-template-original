@@ -12,6 +12,7 @@ const currentTab = ref(0)
         <VIcon
           start
           icon="mdi-account-outline"
+          size="22"
         />
         Option 1
       </VTab>
@@ -20,6 +21,7 @@ const currentTab = ref(0)
         <VIcon
           start
           icon="mdi-lock-outline"
+          :size="22"
         />
         Option 2
       </VTab>
@@ -28,6 +30,7 @@ const currentTab = ref(0)
         <VIcon
           start
           icon="mdi-access-point"
+          :size="22"
         />
         Option 3
       </VTab>

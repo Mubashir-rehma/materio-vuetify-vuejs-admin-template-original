@@ -50,11 +50,6 @@ const nextTab = () => {
       Previous
     </VBtn>
 
-    <VDivider
-      class="mx-4"
-      vertical
-    />
-
     <VBtn
       variant="text"
       @click="nextTab"

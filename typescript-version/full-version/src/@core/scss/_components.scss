@@ -118,6 +118,45 @@
   text-align: start;
 }
 
+// 👉 added box shadow
+.v-timeline-item {
+  .v-timeline-divider__dot {
+    .v-timeline-divider__inner-dot {
+      box-shadow: 0 0 0 0.1875rem rgb(var(--v-theme-on-surface-variant));
+
+      @each $color-name in variables.$theme-colors-name {
+
+        &.bg-#{$color-name} {
+          box-shadow: 0 0 0 0.1875rem rgba(var(--v-theme-#{$color-name}), 0.12);
+        }
+      }
+    }
+  }
+}
+
+// 👉 Timeline Outlined style
+.v-timeline-variant-outlined.v-timeline {
+  .v-timeline-divider__dot {
+    .v-timeline-divider__inner-dot {
+      box-shadow: inset 0 0 0 0.125rem rgb(var(--v-theme-on-surface-variant));
+
+      @each $color-name in variables.$theme-colors-name {
+        background-color: rgb(var(--v-theme-surface)) !important;
+
+        &.bg-#{$color-name} {
+          box-shadow: inset 0 0 0 0.125rem rgb(var(--v-theme-#{$color-name}));
+        }
+      }
+    }
+  }
+
+  &.v-timeline--align-start {
+    .v-timeline-divider__dot {
+      margin-block-start: -0.1875rem;
+    }
+  }
+}
+
 // 👉 Expansion panels
 .v-expansion-panel-title,
 .v-expansion-panel-title--active,

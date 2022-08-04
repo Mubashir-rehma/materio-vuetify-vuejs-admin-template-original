@@ -1,17 +1,17 @@
 <template>
-  <VCard title="Basic Timeline">
+  <VCard title="Timeline Outlined">
     <VCardText>
       <VTimeline
         side="end"
         align="start"
         truncate-line="start"
         density="compact"
-        class="v-timeline-density-compact"
+        class="v-timeline-density-compact v-timeline-variant-outlined"
       >
-        <!-- SECTION Timeline Item: Flight -->
+        <!-- SECTION Flight -->
         <VTimelineItem
-          dot-color="error"
           size="x-small"
+          dot-color="error"
         >
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
@@ -48,7 +48,7 @@
         </VTimelineItem>
         <!-- !SECTION -->
 
-        <!-- SECTION Timeline Item: Interview Schedule -->
+        <!-- SECTION Interview Schedule -->
         <VTimelineItem
           size="x-small"
           dot-color="primary"
@@ -113,7 +113,7 @@
         </VTimelineItem>
         <!-- !SECTION -->
 
-        <!-- SECTION Timeline Item: Puma Shoes -->
+        <!-- SECTION Puma Shoes -->
         <VTimelineItem
           size="x-small"
           dot-color="info"
@@ -162,7 +162,7 @@
         </VTimelineItem>
         <!-- !SECTION -->
 
-        <!-- SECTION Design Review -->
+        <!-- 👉 Design Review -->
         <VTimelineItem
           size="x-small"
           dot-color="success"
@@ -190,7 +190,6 @@
             </h6>
           </div>
         </VTimelineItem>
-        <!-- !SECTION -->
       </VTimeline>
     </VCardText>
   </VCard>

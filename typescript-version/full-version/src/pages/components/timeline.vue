@@ -11,7 +11,7 @@
       cols="12"
       md="6"
     >
-      <TimelineCard />
+      <TimelineOutlined />
     </VCol>
 
     <VCol cols="12">

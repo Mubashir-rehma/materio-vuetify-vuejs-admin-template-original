@@ -68,6 +68,9 @@
   $expansion-panel-title-min-height:51px,
   $expansion-panel-text-padding: 0 20px 20px,
   $menu-content-border-radius: 5px,
+  $snackbar-background:#212121,
+  $snackbar-border-radius: 4px,
+  $snackbar-color: rgb(var(--v-theme-on-primary)),
   $typography: (
     "h1": (
       "weight": 500,

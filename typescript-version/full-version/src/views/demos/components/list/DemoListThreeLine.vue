@@ -35,6 +35,7 @@ const items = [
 
 <template>
   <VList
+    id="three-line-list"
     lines="three"
     :items="items"
     item-props
@@ -45,3 +46,15 @@ const items = [
     </template>
   </VList>
 </template>
+
+<style lang="scss">
+#three-line-list {
+  .v-list-item-title {
+    margin-block-end: 0.25rem;
+  }
+
+  .v-divider {
+    margin-block: 0.25rem;
+  }
+}
+</style>

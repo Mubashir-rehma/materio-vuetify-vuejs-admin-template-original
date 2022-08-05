@@ -8,9 +8,10 @@ const panel = ref(0)
       <VExpansionPanelTitle disable-icon-rotate>
         Server Down
         <template #actions>
-          <VIcon color="error">
-            mdi-alert-circle-outline
-          </VIcon>
+          <VIcon
+            icon="mdi-alert-circle-outline"
+            color="error"
+          />
         </template>
       </VExpansionPanelTitle>
       <VExpansionPanelText>
@@ -24,9 +25,10 @@ const panel = ref(0)
       >
         Sales report generated
         <template #actions>
-          <VIcon color="success">
-            mdi-check
-          </VIcon>
+          <VIcon
+            icon="mdi-check"
+            color="success"
+          />
         </template>
       </VExpansionPanelTitle>
       <VExpansionPanelText>
@@ -38,9 +40,10 @@ const panel = ref(0)
       <VExpansionPanelTitle disable-icon-rotate>
         High Memory usage
         <template #actions>
-          <VIcon color="warning">
-            mdi-alert-outline
-          </VIcon>
+          <VIcon
+            icon="mdi-alert-outline"
+            color="warning"
+          />
         </template>
       </VExpansionPanelTitle>
       <VExpansionPanelText>

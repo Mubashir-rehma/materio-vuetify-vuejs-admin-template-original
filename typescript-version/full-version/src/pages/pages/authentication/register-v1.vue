@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
@@ -132,7 +133,7 @@ const isPasswordVisible = ref(false)
               cols="12"
               class="text-center"
             >
-              <DemoAuthProvider />
+              <AuthProvider />
             </VCol>
           </VRow>
         </VForm>

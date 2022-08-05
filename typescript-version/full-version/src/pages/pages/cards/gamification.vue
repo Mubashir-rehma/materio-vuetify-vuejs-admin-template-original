@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import CardAward from '@/views/pages/cards/gamification/CardAward.vue'
+import CardCongratulations from '@/views/pages/cards/gamification/CardCongratulations.vue'
+import CardUpgrade from '@/views/pages/cards/gamification/CardUpgrade.vue'
+import CardWelcome from '@/views/pages/cards/gamification/CardWelcome.vue'
+</script>
+
 <template>
   <VRow>
     <VCol

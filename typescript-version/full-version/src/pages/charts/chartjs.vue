@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
+import ChartJsBarChart from '@/views/charts/chartjs/ChartJsBarChart.vue'
+import ChartJsBubbleChart from '@/views/charts/chartjs/ChartJsBubbleChart.vue'
+import ChartjsHorizontalBarChart from '@/views/charts/chartjs/ChartjsHorizontalBarChart.vue'
+import ChartJsLineAreaChart from '@/views/charts/chartjs/ChartJsLineAreaChart.vue'
+import ChartJsLineChart from '@/views/charts/chartjs/ChartJsLineChart.vue'
+import ChartJsPolarAreaChart from '@/views/charts/chartjs/ChartJsPolarAreaChart.vue'
+import ChartJsRadarChart from '@/views/charts/chartjs/ChartJsRadarChart.vue'
+import ChartJsScatterChart from '@/views/charts/chartjs/ChartJsScatterChart.vue'
+import type { ChartJsCustomColors } from '@/views/charts/chartjs/types'
 
 const chartJsCustomColors: ChartJsCustomColors = {
   white: '#fff',

@@ -87,7 +87,7 @@ watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
   // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
-  isGroupOpen.value = isActive && !(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value))
+  isGroupOpen.value = isActive && !isVerticalNavMini(windowWidth, isVerticalNavHovered).value
   isGroupActive.value = isActive
 }, { immediate: true })
 
@@ -186,8 +186,9 @@ export default {
       class="nav-group-label"
       @click="isGroupOpen = !isGroupOpen"
     >
-      <div
-        :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
+      <Component
+        :is="config.app.iconRenderer || 'div'"
+        v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
       <TransitionGroup name="transition-slide-x">
@@ -214,11 +215,12 @@ export default {
         >
           {{ item.badgeContent }}
         </Component>
-        <div
+        <Component
+          :is="config.app.iconRenderer || 'div'"
           v-show="!hideTitleAndBadge"
+          v-bind="config.icons.chevronRight"
           key="arrow"
           class="nav-group-arrow"
-          :class="config.icons.chevronRight"
         />
       </TransitionGroup>
     </div>

@@ -25,9 +25,8 @@
         <VIcon
           v-bind="props"
           size="30"
-        >
-          mdi-account-outline
-        </VIcon>
+          icon="mdi-account-outline"
+        />
       </template>
       <span>Tooltip on Icon</span>
     </VTooltip>

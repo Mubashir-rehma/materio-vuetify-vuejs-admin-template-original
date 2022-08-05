@@ -13,6 +13,7 @@ import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const { appRouteTransition } = useThemeConfig()
 const { layoutAttrs, injectSkinClasses } = useSkins()
@@ -32,12 +33,7 @@ injectSkinClasses()
         to="/"
         class="auth-logo d-flex align-start gap-x-3"
       >
-        <!-- eslint-disable vue/no-v-html -->
-        <div
-          class="text-primary d-flex"
-          v-html="themeConfig.app.logo"
-        />
-        <!-- eslint-enable vue/no-v-html -->
+        <VNodeRenderer :nodes="themeConfig.app.logo" />
 
         <h1 class="font-weight-semibold leading-normal text-xl text-uppercase">
           {{ themeConfig.app.title }}

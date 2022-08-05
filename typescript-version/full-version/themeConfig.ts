@@ -1,7 +1,7 @@
-/* @unocss-include */
 import { breakpointsVuetify } from '@vueuse/core'
 
 // ❗ Logo SVG must be imported with ?raw suffix
+import { Icon } from '@iconify/vue'
 import logo from '@/assets/logo.svg?raw'
 
 import { defineThemeConfig } from '@core'
@@ -11,7 +11,7 @@ import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarTy
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
     title: 'Materio',
-    logo,
+    logo: h('div', { innerHTML: logo, class: 'text-primary' }),
     contentWidth: EnumContentWidth.Boxed,
     contentLayoutNav: EnumAppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md,
@@ -20,6 +20,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     isRtl: false,
     skin: EnumSkins.Default,
     routeTransition: RouteTransitions.Fade,
+    iconRenderer: Icon,
   },
   navbar: {
     type: EnumNavbarType.Sticky,
@@ -28,19 +29,19 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   footer: { type: EnumFooterType.Static },
   verticalNav: {
     isVerticalNavCollapsed: false,
-    defaultNavItemIconClass: 'i-mdi-circle-outline',
-    isVerticalNavSemiDark: true,
+    defaultNavItemIconProps: { icon: 'mdi-circle-outline' },
+    isVerticalNavSemiDark: false,
   },
   horizontalNav: {
     type: 'sticky',
     transition: 'slide-y-reverse-transition',
   },
   icons: {
-    chevronDown: 'i-mdi-chevron-down',
-    chevronRight: 'i-mdi-chevron-right',
-    close: 'i-mdi-close',
-    verticalNavPinned: 'i-mdi-record-circle-outline',
-    verticalNavUnPinned: 'i-mdi-radiobox-blank',
-    sectionTitlePlaceholder: 'i-mdi-minus',
+    chevronDown: { icon: 'mdi-chevron-down' },
+    chevronRight: { icon: 'mdi-chevron-right' },
+    close: { icon: 'mdi-close' },
+    verticalNavPinned: { icon: 'mdi-record-circle-outline' },
+    verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
+    sectionTitlePlaceholder: { icon: 'mdi-minus' },
   },
 })

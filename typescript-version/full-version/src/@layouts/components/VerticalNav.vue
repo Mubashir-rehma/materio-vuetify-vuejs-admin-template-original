@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { Component } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { VNodeRenderer } from './VNodeRenderer'
 import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
 import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@layouts/components'
 import { config } from '@layouts/config'
@@ -76,12 +77,7 @@ const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.valu
           to="/"
           class="app-logo d-flex align-center gap-x-3 app-title-wrapper"
         >
-          <!-- eslint-disable vue/no-v-html -->
-          <div
-            class="text-primary d-flex"
-            v-html="config.app.logo"
-          />
-          <!-- eslint-enable vue/no-v-html -->
+          <VNodeRenderer :nodes="config.app.logo" />
 
           <Transition name="vertical-nav-app-title">
             <h1

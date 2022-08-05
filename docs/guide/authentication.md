@@ -20,7 +20,7 @@ We use [axios](https://axios-http.com/) to make API calls. Axios allows intercep
 
 <!-- TODO: Update the below file path -->
 
-You can find self explanatory code for this in `xxx.{ts|js}` file.
+You can find self explanatory code for this in `xxx.ts` file.
 
 ## Logout
 

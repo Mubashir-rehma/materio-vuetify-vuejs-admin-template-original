@@ -45,6 +45,7 @@ export const useThemeConfig = () => {
     watch(theme, val => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)
+      localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, vuetifyTheme.themes.value[val].colors.primary)
     }, {
       immediate: true,
     })

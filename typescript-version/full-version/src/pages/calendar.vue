@@ -47,55 +47,57 @@ const checkAll = computed({
 </script>
 
 <template>
-  <VCard>
-    <!-- `z-index: 0` Allows overlapping vertical nav on calendar -->
-    <VLayout style="z-index: 0;">
-      <!-- 👉 Navigation drawer -->
-      <VNavigationDrawer
-        v-model="isLeftSidebarOpen"
-        width="250"
-        absolute
-        touchless
-        :location="$vuetify.rtl.isRtl.value ? 'right' : 'left'"
-        :temporary="$vuetify.display.mdAndDown"
-      >
-        <div class="pa-5 d-flex flex-column gap-y-8">
-          <VBtn
-            block
-            @click="isEventHandlerSidebarActive = true"
-          >
-            Add event
-          </VBtn>
-          <div>
-            <p class="text-xs text-uppercase text-medium-emphasis">
-              Calendars
-            </p>
-            <VCheckbox
-              v-model="checkAll"
-              label="View all"
-            />
-            <div class="d-flex flex-column">
+  <div>
+    <VCard>
+      <!-- `z-index: 0` Allows overlapping vertical nav on calendar -->
+      <VLayout style="z-index: 0;">
+        <!-- 👉 Navigation drawer -->
+        <VNavigationDrawer
+          v-model="isLeftSidebarOpen"
+          width="250"
+          absolute
+          touchless
+          :location="$vuetify.rtl.isRtl.value ? 'right' : 'left'"
+          :temporary="$vuetify.display.mdAndDown"
+        >
+          <div class="pa-5 d-flex flex-column gap-y-8">
+            <VBtn
+              block
+              @click="isEventHandlerSidebarActive = true"
+            >
+              Add event
+            </VBtn>
+            <div>
+              <p class="text-xs text-uppercase text-medium-emphasis">
+                Calendars
+              </p>
               <VCheckbox
-                v-for="calendar in store.availableCalendars"
-                :key="calendar.label"
-                v-model="store.selectedCalendars"
-                :value="calendar.label"
-                :color="calendar.color"
-                :label="calendar.label"
+                v-model="checkAll"
+                label="View all"
               />
+              <div class="d-flex flex-column">
+                <VCheckbox
+                  v-for="calendar in store.availableCalendars"
+                  :key="calendar.label"
+                  v-model="store.selectedCalendars"
+                  :value="calendar.label"
+                  :color="calendar.color"
+                  :label="calendar.label"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </VNavigationDrawer>
-      <VMain>
-        <VCard elevation="0">
-          <FullCalendar
-            ref="refCalendar"
-            :options="calendarOptions"
-          />
-        </VCard>
-      </VMain>
-    </VLayout>
+        </VNavigationDrawer>
+        <VMain>
+          <VCard elevation="0">
+            <FullCalendar
+              ref="refCalendar"
+              :options="calendarOptions"
+            />
+          </VCard>
+        </VMain>
+      </VLayout>
+    </VCard>
     <CalendarEventHandler
       v-model:isDrawerOpen="isEventHandlerSidebarActive"
       :event="event"
@@ -103,7 +105,7 @@ const checkAll = computed({
       @update-event="updateEvent"
       @remove-event="removeEvent"
     />
-  </VCard>
+  </div>
 </template>
 
 <style lang="scss">

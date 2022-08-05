@@ -10,7 +10,7 @@ You can find access control related configuration in `src/plugins/casl` director
 
 <!-- TODO: Improve this. It looks boring. -->
 
-- `ability.{ts|js}`: It exports the `Ability` instance of CASL. It will read initial ability from themeConfig. It will also try to fetch any ability from localStorage and if found it will use ability fetched from localStorage rather than initial ability. This will help in persisting the ability between browser window reload/close.
+- `ability.ts`: It exports the `Ability` instance of CASL. It will read initial ability from themeConfig. It will also try to fetch any ability from localStorage and if found it will use ability fetched from localStorage rather than initial ability. This will help in persisting the ability between browser window reload/close.
 - `AppAbility.ts`: This is only available in our TypeScript template. It contains available actions & subjects in your app.
 - `shims-ability.d.ts`: This is only available in our TypeScript template. This file is shims file for CASL.
 - `useAppAbility.ts`: This is only available in our TypeScript template. This file contains `useAppAbility` composable for ease so you don't have to import `AppAbility` from `AppAbility.ts` file.
@@ -275,7 +275,7 @@ Hence, we omitted defining `action` and `subject` meta for pages/routes in our s
 
 Our template allows hiding & showing navigation items based on user ability.
 
-When you define navigation items in `/src/navigation/{vertical|horizontal}/index.{ts|js}` along with properties like `title`, you can write `action` & `subject` for hiding item if user don't have enough ability.
+When you define navigation items in `/src/navigation/{vertical|horizontal}/index.ts` along with properties like `title`, you can write `action` & `subject` for hiding item if user don't have enough ability.
 
 <code-group>
 <code-block title="TS">

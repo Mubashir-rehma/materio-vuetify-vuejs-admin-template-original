@@ -53,9 +53,10 @@ const bmpControl = useClamp(bpm, min, max)
         elevation="0"
         @click="isPlaying = !isPlaying"
       >
-        <VIcon size="large">
-          {{ isPlaying ? 'mdi-pause' : 'mdi-play' }}
-        </VIcon>
+        <VIcon
+          size="large"
+          :icon="isPlaying ? 'mdi-pause' : 'mdi-play'"
+        />
       </VBtn>
     </div>
   </div>

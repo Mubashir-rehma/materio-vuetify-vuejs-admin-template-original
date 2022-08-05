@@ -29,9 +29,10 @@ const { dynamicI18nProps } = useLayouts()
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"
     >
-      <div
-        :class="item.icon || config.verticalNav.defaultNavItemIconClass"
+      <Component
+        :is="config.app.iconRenderer || 'div'"
         class="nav-item-icon"
+        v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
       />
       <Component
         :is="config.app.enableI18n ? 'i18n-t' : 'span'"

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+const { isAppRtl } = useThemeConfig()
 
 const form = ref({
   newPassword: '',
@@ -22,10 +25,7 @@ const isConfirmPasswordVisible = ref(false)
       <VCardItem>
         <template #prepend>
           <div class="d-flex">
-            <div
-              class="text-primary"
-              v-html="themeConfig.app.logo"
-            />
+            <VNodeRenderer :nodes="themeConfig.app.logo" />
           </div>
         </template>
 
@@ -87,7 +87,10 @@ const isConfirmPasswordVisible = ref(false)
                 class="text-primary ms-2"
                 :to="{ name: 'pages-authentication-login-v1' }"
               >
-                <VIcon icon="mdi-chevron-left" />
+                <VIcon
+                  icon="mdi-chevron-left"
+                  :rotate="isAppRtl ? '180deg' : null"
+                />
                 <span>Back to login</span>
               </RouterLink>
             </VCol>

@@ -1,12 +1,12 @@
 export default [
   {
     title: 'Apps & Pages',
-    icon: 'i-mdi-package-variant',
+    icon: { icon: 'mdi-package-variant' },
     children: [
-      { title: 'Calendar', to: 'calendar', icon: 'i-mdi-calendar-blank', action: 'read', subject: 'Auth' },
+      { title: 'Calendar', to: 'calendar', icon: { icon: 'mdi-calendar-blank', action: 'read' }, subject: 'Auth' },
       {
         title: 'Invoice',
-        icon: 'i-mdi-file-document-outline',
+        icon: { icon: 'mdi-file-document-outline' },
         children: [
           { title: 'List', to: 'invoice-list' },
           { title: 'Preview', to: { name: 'invoice-preview-id', params: { id: '5036' } } },
@@ -16,7 +16,7 @@ export default [
       },
       {
         title: 'User',
-        icon: 'i-mdi-account-outline',
+        icon: { icon: 'mdi-account-outline' },
         children: [
           { title: 'List', to: 'user-list' },
           { title: 'View', to: { name: 'user-view-id', params: { id: 21 } } },
@@ -24,7 +24,7 @@ export default [
       },
       {
         title: 'Pages',
-        icon: 'i-mdi-file-outline',
+        icon: { icon: 'mdi-file-outline' },
         children: [
           {
             title: 'Authentication',

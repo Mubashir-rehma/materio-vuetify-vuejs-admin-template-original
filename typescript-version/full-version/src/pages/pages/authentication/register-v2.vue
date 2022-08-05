@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 const form = ref({
@@ -20,12 +22,7 @@ const isPasswordVisible = ref(false)
   <div>
     <!-- Title and Logo -->
     <div class="auth-logo d-flex align-start gap-x-3">
-      <!-- eslint-disable vue/no-v-html -->
-      <div
-        class="text-primary d-flex"
-        v-html="themeConfig.app.logo"
-      />
-      <!-- eslint-enable vue/no-v-html -->
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
 
       <h1 class="font-weight-semibold leading-normal text-2xl text-uppercase">
         {{ themeConfig.app.title }}
@@ -175,7 +172,7 @@ const isPasswordVisible = ref(false)
                   cols="12"
                   class="text-center"
                 >
-                  <DemoAuthProvider />
+                  <AuthProvider />
                 </VCol>
               </VRow>
             </VForm>

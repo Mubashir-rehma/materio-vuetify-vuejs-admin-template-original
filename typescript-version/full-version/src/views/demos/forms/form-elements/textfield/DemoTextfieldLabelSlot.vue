@@ -2,7 +2,7 @@
   <VTextField>
     <template #label>
       What about &nbsp;<strong>icon</strong>&nbsp;here?
-      <VIcon>mdi-file-find-outline</VIcon>
+      <VIcon icon="mdi-file-find-outline" />
     </template>
   </VTextField>
 </template>

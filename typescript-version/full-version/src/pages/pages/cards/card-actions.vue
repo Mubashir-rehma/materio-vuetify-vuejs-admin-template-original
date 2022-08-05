@@ -67,7 +67,10 @@ const refetchData = (hideOverlay: () => void) => {
       >
         <VCardText>
           <p>You can specifically add collapsible action using <code>actionCollapse</code> prop</p>
-          <span>Click on <VIcon size="20">mdi-chevron-up</VIcon> icon to see it in action</span>
+          <span>Click on <VIcon
+            size="20"
+            icon="mdi-chevron-up"
+          /> icon to see it in action</span>
         </VCardText>
       </AppCardActions>
     </VCol>
@@ -84,7 +87,10 @@ const refetchData = (hideOverlay: () => void) => {
       >
         <VCardText>
           <p>You can specifically add refresh action using <code>actionRefresh</code> prop</p>
-          <span>Click on <VIcon size="20">mdi-refresh</VIcon> icon to see it in action</span>
+          <span>Click on <VIcon
+            size="20"
+            icon="mdi-refresh"
+          /> icon to see it in action</span>
         </VCardText>
       </AppCardActions>
     </VCol>
@@ -100,7 +106,10 @@ const refetchData = (hideOverlay: () => void) => {
       >
         <VCardText>
           <p>You can specifically add remove action using <code>actionRemove</code> prop</p>
-          <span>Click on <VIcon size="20">mdi-close</VIcon> icon to see it in action</span>
+          <span>Click on <VIcon
+            size="20"
+            icon="mdi-close"
+          /> icon to see it in action</span>
         </VCardText>
       </AppCardActions>
     </VCol>

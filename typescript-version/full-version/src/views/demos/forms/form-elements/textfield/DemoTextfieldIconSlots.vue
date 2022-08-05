@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 const message = ref('Hey!')
@@ -27,9 +28,10 @@ const clickMe = () => {
     <template #prepend>
       <VTooltip location="bottom">
         <template #activator="{ props }">
-          <VIcon v-bind="props">
-            mdi-help-circle-outline
-          </VIcon>
+          <VIcon
+            v-bind="props"
+            icon="mdi-help-circle-outline"
+          />
         </template>
         I'm a tooltip
       </VTooltip>
@@ -45,10 +47,7 @@ const clickMe = () => {
           indeterminate
         />
 
-        <div
-          class="text-primary"
-          v-html="themeConfig.app.logo"
-        />
+        <VNodeRenderer :nodes="themeConfig.app.logo" />
       </VFadeTransition>
     </template>
 

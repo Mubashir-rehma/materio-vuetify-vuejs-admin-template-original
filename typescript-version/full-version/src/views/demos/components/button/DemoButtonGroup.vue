@@ -7,6 +7,8 @@ const toggleExclusive = ref(1)
     v-model="toggleExclusive"
     variant="outlined"
     divided
+    color="primary"
+    variant="outlined"
   >
     <VBtn icon="mdi-format-align-left" />
     <VBtn icon="mdi-format-align-center" />

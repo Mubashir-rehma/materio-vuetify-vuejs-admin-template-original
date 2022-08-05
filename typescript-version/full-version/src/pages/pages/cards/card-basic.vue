@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import DemoCardBasic from '@/views/pages/cards/card-basic/DemoCardBasic.vue'
+import DemoCardNavigation from '@/views/pages/cards/card-basic/DemoCardNavigation.vue'
+import DemoCardSolid from '@/views/pages/cards/card-basic/DemoCardSolid.vue'
+</script>
+
 <template>
   <div>
     <p class="text-2xl mb-6">

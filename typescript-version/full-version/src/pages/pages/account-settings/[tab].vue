@@ -1,5 +1,10 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import AccountSettingsAccount from '@/views/pages/account-settings/AccountSettingsAccount.vue'
+import AccountSettingsBillingAndPlans from '@/views/pages/account-settings/AccountSettingsBillingAndPlans.vue'
+import AccountSettingsConnections from '@/views/pages/account-settings/AccountSettingsConnections.vue'
+import AccountSettingsNotification from '@/views/pages/account-settings/AccountSettingsNotification.vue'
+import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSettingsSecurity.vue'
 
 const route = useRoute()
 
@@ -30,9 +35,8 @@ const tabs = [
         <VIcon
           size="20"
           start
-        >
-          {{ item.icon }}
-        </VIcon>
+          :icon="item.icon"
+        />
         {{ item.title }}
       </VTab>
     </VTabs>

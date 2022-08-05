@@ -2,11 +2,12 @@
   "name": "vue-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "npm run build:icons && vite --host",
+    "build": "npm run build:icons && vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
-    "lint": "eslint src --fix --rulesdir eslint-internal-rules/ --ext .ts,.js,.vue,.tsx,.jsx"
+    "lint": "eslint src --fix --rulesdir eslint-internal-rules/ --ext .ts,.js,.vue,.tsx,.jsx",
+    "build:icons": "tsc -b src/@iconify && node src/@iconify/build-icons.js"
   },
   "dependencies": {
     "@casl/ability": "^6.0.0",
@@ -22,7 +23,6 @@
     "pinia": "^2.0.14",
     "prismjs": "^1.28.0",
     "sass": "^1.52.2",
-    "unocss": "^0.44.3",
     "unplugin-vue-define-options": "^0.6.1",
     "vue": "^3.2.36",
     "vue-chartjs": "^4.1.1",
@@ -44,11 +44,12 @@
     "@fullcalendar/timegrid": "^5.11.0",
     "@fullcalendar/vue3": "^5.11.1",
     "@iconify-json/mdi": "^1.1.24",
+    "@iconify/tools": "^2.0.18",
+    "@iconify/vue": "^3.2.1",
     "@intlify/vite-plugin-vue-i18n": "^5.0.0",
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
-    "@unocss/preset-icons": "^0.44.3",
     "@vitejs/plugin-vue": "^3.0.1",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "@vuetify/vite-plugin": "^1.0.0-alpha.11",

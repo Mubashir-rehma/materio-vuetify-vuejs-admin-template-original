@@ -142,7 +142,7 @@
     }
 
     .nav-group-arrow {
-      @include layoutsMixins.icon-size(1.25rem);
+      font-size: 1.25rem;
 
       /*
         ℹ️ ml-auto won't matter in top level group (because we haven't specified fixed width for top level groups)

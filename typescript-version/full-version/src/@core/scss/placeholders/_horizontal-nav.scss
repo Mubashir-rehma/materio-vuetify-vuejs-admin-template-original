@@ -48,6 +48,7 @@
 
 // Horizontal nav item icon (Including sub nav items)
 %horizontal-nav-item-icon {
+  font-size: 1.5rem;
   margin-inline-end: 0.75rem;
 }
 
@@ -62,8 +63,9 @@
 
 // Styles for third level item icon/ (e.g. Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links]))
 %third-level-nav-item-icon {
-  @include layoutsMixins.icon-size(1rem);
+  font-size: 1rem;
 
+  // TODO: Improve calculation as vertical nav TODO
   // ℹ️ ml will be normal icon font-size - small icon font-size / 2
   margin-inline-start: 0.3rem;
 }

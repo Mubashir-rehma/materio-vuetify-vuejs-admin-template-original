@@ -115,7 +115,9 @@ const endDateTimePickerConfig = computed(() => {
   >
     <!-- 👉 Header -->
     <div class="px-5 py-3 d-flex align-center bg-var-theme-background">
-      <span class="font-weight-medium">{{ event.id ? 'Update' : 'Add' }} Event</span>
+      <h3 class="font-weight-medium text-xl">
+        {{ event.id ? 'Update' : 'Add' }} Event
+      </h3>
       <VSpacer />
       <VBtn
         v-show="event.id"

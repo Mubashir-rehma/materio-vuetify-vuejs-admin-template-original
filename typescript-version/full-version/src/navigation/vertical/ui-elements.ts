@@ -2,17 +2,17 @@ export default [
   { heading: 'UI Elements' },
   {
     title: 'Typography',
-    icon: 'i-mdi-alpha-t-box-outline',
+    icon: { icon: 'mdi-alpha-t-box-outline' },
     to: 'pages-typography',
   },
   {
     title: 'Icons',
-    icon: 'i-mdi-eye-outline',
+    icon: { icon: 'mdi-eye-outline' },
     to: 'pages-icons',
   },
   {
     title: 'Cards',
-    icon: 'i-mdi-credit-card-outline',
+    icon: { icon: 'mdi-credit-card-outline' },
     children: [
       { title: 'Basic', to: 'pages-cards-card-basic' },
       { title: 'Statistics', to: 'pages-cards-card-statistics' },
@@ -22,7 +22,7 @@ export default [
   },
   {
     title: 'Components',
-    icon: 'i-mdi-archive-outline',
+    icon: { icon: 'mdi-archive-outline' },
     children: [
       { title: 'Alert', to: 'components-alert' },
       { title: 'Avatar', to: 'components-avatar' },

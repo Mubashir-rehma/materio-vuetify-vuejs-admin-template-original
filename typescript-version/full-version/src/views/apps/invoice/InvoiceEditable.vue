@@ -2,8 +2,9 @@
 import InvoiceProductEdit from './InvoiceProductEdit.vue'
 import type { InvoiceData } from './types'
 import { useInvoiceStore } from './useInvoiceStore'
-import { themeConfig } from '@themeConfig'
 import type { Client } from '@/@fake-db/types'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
 
 interface Props {
   data: InvoiceData
@@ -50,9 +51,9 @@ const removeProduct = (id: number) => {
       <div class="mb-6">
         <div class="d-flex align-center mb-6">
           <!-- 👉 Logo -->
-          <div
-            class="text-primary me-3"
-            v-html="themeConfig.app.logo"
+          <VNodeRenderer
+            :nodes="themeConfig.app.logo"
+            class="me-3"
           />
 
           <!-- 👉 Title -->

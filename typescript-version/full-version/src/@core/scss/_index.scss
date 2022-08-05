@@ -33,3 +33,9 @@ a {
 p {
   margin-block-end: 1rem;
 }
+
+// Iconify icon size
+svg.iconify {
+  block-size: 1em;
+  inline-size: 1em;
+}

@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Dashboards',
-    icon: 'i-mdi-view-dashboard-outline',
+    icon: { icon: 'mdi-view-dashboard-outline' },
     children: [
       {
         title: 'Analytics',

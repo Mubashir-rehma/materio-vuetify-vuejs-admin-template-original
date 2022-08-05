@@ -53,9 +53,10 @@ export default {
     :popper-inline-end="childrenAtEnd"
   >
     <div class="nav-group-label">
-      <div
-        :class="item.icon ? item.icon : config.verticalNav.defaultNavItemIconClass"
+      <Component
+        :is="config.app.iconRenderer || 'div'"
         class="nav-item-icon"
+        v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
       />
       <Component
         :is="config.app.enableI18n ? 'i18n-t' : 'span'"
@@ -63,9 +64,10 @@ export default {
         class="nav-item-title"
         v-text="item.title"
       />
-      <div
+      <Component
+        v-bind="config.icons.chevronDown"
+        :is="config.app.iconRenderer || 'div'"
         class="nav-group-arrow"
-        :class="config.icons.chevronDown"
       />
     </div>
 

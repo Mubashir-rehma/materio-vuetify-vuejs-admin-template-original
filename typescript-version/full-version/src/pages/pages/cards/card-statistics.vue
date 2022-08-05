@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import DemoCardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsAreaCharts.vue'
+import DemoCardStatisticsBarCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsBarCharts.vue'
+import DemoCardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsBarWithGapCharts.vue'
+import DemoCardStatisticsLineCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsLineCharts.vue'
+import DemoCardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsRadialBarCharts.vue'
+import DemoCardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsTotalProfitLineCharts.vue'
+import DemoCardTransactions from '@/views/pages/cards/card-statistics/DemoCardTransactions.vue'
 import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
 import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
 import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'

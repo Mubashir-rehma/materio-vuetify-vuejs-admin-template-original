@@ -15,12 +15,12 @@ Vuetify uses [webfontloader](https://www.npmjs.com/package/webfontloader) for ad
  }
 ```
 
-Next, just update the the font family.
+Next, just update the the font family via vuetify variables:
 
-```css
-html {
-    font-family: "Montserrat", sans-serif;
-}
+```scss
+@use "vuetify/styles" as * with (
+  $body-font-family: "Montserrat",
+);
 ```
 
 It's done 🥂

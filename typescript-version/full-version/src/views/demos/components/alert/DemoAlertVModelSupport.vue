@@ -22,6 +22,6 @@ const isAlertVisible = ref(true)
 <style lang="scss">
 .alert-demo-v-model-wrapper {
   margin-block-end: 1rem;
-  min-block-size: 80px;
+  min-block-size: 65px;
 }
 </style>

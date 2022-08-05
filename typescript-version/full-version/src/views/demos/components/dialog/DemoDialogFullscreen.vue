@@ -64,7 +64,10 @@ const isDialogVisible = ref(false)
       <VDivider />
 
       <!-- List -->
-      <VList lines="two">
+      <VList
+        lines="two"
+        select-strategy="multiple"
+      >
         <VListSubheader>General</VListSubheader>
 
         <VListItem

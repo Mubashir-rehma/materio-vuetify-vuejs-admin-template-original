@@ -12,7 +12,6 @@ import '@/styles/styles.scss'
 import { abilitiesPlugin } from '@casl/vue'
 import '@core/styles.scss'
 import { createPinia } from 'pinia'
-import 'uno.css'
 import { createApp } from 'vue'
 
 loadFonts()

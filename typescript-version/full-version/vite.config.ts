@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
@@ -11,8 +10,6 @@ import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
-
-// TODO: use the latest version which resolves the dynamic icons issue: https://github.com/unocss/unocss/issues/544#event-6300481520
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,7 +22,6 @@ export default defineConfig({
       autoImport: true,
       styles: 'expose',
     }),
-    Unocss(),
     Pages({}),
     Layouts(),
     Components({

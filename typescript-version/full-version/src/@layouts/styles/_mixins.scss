@@ -9,12 +9,6 @@
   }
 }
 
-// Mixin that accepts number and apply height width in rem
-@mixin icon-size($size) {
-  block-size: $size;
-  inline-size: $size;
-}
-
 @mixin boxed-content($nest-selector: false) {
   & {
     @extend %boxed-content-spacing;

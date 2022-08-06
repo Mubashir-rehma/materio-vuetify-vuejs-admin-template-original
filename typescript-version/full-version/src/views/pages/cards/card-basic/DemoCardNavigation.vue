@@ -2,7 +2,7 @@
 const navigationTab = ref('ITEM ONE')
 const navigationTab2 = ref('ITEM ONE')
 const tabItems = ['ITEM ONE', 'ITEM TWO', 'ITEM THREE']
-const tabContent = 'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards…'
+const tabContent = 'Pudding tiramisu caramels. Gingerbread gummies danish chocolate bar toffee marzipan. Wafer wafer cake powder danish oat cake.'
 </script>
 
 <template>
@@ -21,8 +21,6 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
             {{ item }}
           </VTab>
         </VTabs>
-
-        <VDivider />
 
         <!-- tabs content -->
         <VWindow v-model="navigationTab">
@@ -64,8 +62,6 @@ const tabContent = 'Although cards can support multiple actions, UI controls, an
             {{ item }}
           </VTab>
         </VTabs>
-
-        <VDivider />
 
         <!-- tabs content -->
         <VWindow v-model="navigationTab2">

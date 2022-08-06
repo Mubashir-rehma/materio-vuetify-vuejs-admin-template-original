@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const avatars = [
-  dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
-  dynamicImgImport('@/assets/images/avatars/avatar-2.png'),
-  dynamicImgImport('@/assets/images/avatars/avatar-3.png'),
-  dynamicImgImport('@/assets/images/avatars/avatar-4.png'),
+  { image: dynamicImgImport('@/assets/images/avatars/avatar-1.png') },
+  { image: dynamicImgImport('@/assets/images/avatars/avatar-2.png') },
+  { image: dynamicImgImport('@/assets/images/avatars/avatar-3.png') },
+  { image: dynamicImgImport('@/assets/images/avatars/avatar-4.png') },
 ]
 
 const isCardDetailsVisible = ref(false)
@@ -47,7 +47,7 @@ const isCardDetailsVisible = ref(false)
           <VAvatar
             size="75"
             class="avatar-center"
-            :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+            :image="dynamicImgImport('@/assets/images/avatars/avatar-6.png')"
           />
 
           <!-- Title, Subtitle & Action Button -->
@@ -69,10 +69,10 @@ const isCardDetailsVisible = ref(false)
 
             <div class="v-avatar-group">
               <VAvatar
-                v-for="avatar in avatars"
-                :key="avatar"
-                :image="avatar"
-                size="45"
+                v-for="(avatar, index) in avatars"
+                :key="index"
+                v-bind="avatar"
+                size="40"
               />
             </div>
           </div>
@@ -109,7 +109,10 @@ const isCardDetailsVisible = ref(false)
             size="small"
             @click="isCardDetailsVisible = !isCardDetailsVisible"
           >
-            <VIcon :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
+            <VIcon
+              size="20"
+              :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+            />
           </VBtn>
         </VCardActions>
 
@@ -131,11 +134,9 @@ const isCardDetailsVisible = ref(false)
     >
       <VCard>
         <div class="d-flex justify-space-between flex-wrap flex-md-nowrap flex-column flex-md-row">
-          <div class="mx-auto">
+          <div class="ma-auto pa-5">
             <VImg
-              cover
-              width="220"
-              height="100%"
+              width="137"
               :src="dynamicImgImport('@/assets/images/eCommerce/2.png')"
             />
           </div>
@@ -151,8 +152,11 @@ const isCardDetailsVisible = ref(false)
               Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
             </VCardText>
 
-            <VCardText class="text-subtitle-1">
-              <span>Price :</span> <span class="font-weight-bold">$899</span>
+            <VCardText>
+              <h6 class="text-base">
+                <span class="font-weight-regular">Price :</span>
+                <span class="font-weight-bold">$899</span>
+              </h6>
             </VCardText>
 
             <VCardActions class="justify-space-between">
@@ -163,8 +167,14 @@ const isCardDetailsVisible = ref(false)
 
               <VBtn
                 color="secondary"
-                icon="mdi-share-variant-outline"
-              />
+                size="small"
+                icon
+              >
+                <VIcon
+                  size="20"
+                  icon="mdi-share-variant"
+                />
+              </VBtn>
             </VCardActions>
           </div>
         </div>
@@ -185,16 +195,24 @@ const isCardDetailsVisible = ref(false)
 
             <VCardText class="d-flex align-center flex-wrap body-1">
               <VRating
-                :model-value="5"
+                :model-value="4"
                 readonly
-                class="me-3"
                 density="compact"
+                size="20"
+                active-color="warning"
+                color="grey-400"
+                empty-icon="mdi-star"
+                full-icon="mdi-star"
+                half-icon="mdi-star-half"
+                class="me-3"
               />
-              <span>5 Star | 98 reviews</span>
+              <h6 class="text-base font-weight-regular">
+                4 Star | 98 reviews
+              </h6>
             </VCardText>
 
             <VCardText>
-              Before there was a United States of America, there were coffee houses, because how are you supposed to build.
+              Before there was a United States of America, there were coffee houses.
             </VCardText>
 
             <VCardActions>
@@ -203,13 +221,11 @@ const isCardDetailsVisible = ref(false)
             </VCardActions>
           </div>
 
-          <div class="h-100 w-100 my-auto pa-4">
+          <div class="ma-auto pa-5">
             <VImg
-              :class="$vuetify.display.mdAndUp ? 'rounded-lg' : 'rounded-t'"
-              height="100%"
-              :max-width="$vuetify.display.mdAndUp ? '200' : '100%'"
+              :width="176"
               :src="dynamicImgImport('@/assets/images/pages/5.jpg')"
-              class="w-100 mx-auto"
+              class="rounded"
             />
           </div>
         </div>
@@ -225,14 +241,14 @@ const isCardDetailsVisible = ref(false)
       <VCard>
         <VImg :src="dynamicImgImport('@/assets/images/pages/6.jpg')" />
 
-        <VCardItem>
+        <VCardItem class="pb-2">
           <VCardTitle>Apple Watch</VCardTitle>
         </VCardItem>
 
         <VCardText>
-          <p class="font-weight-medium text-base">
+          <h6 class="font-weight-regular text-base mb-2">
             $249.40
-          </p>
+          </h6>
 
           <p class="mb-0">
             3.1GHz 6-core 10th-generation Intel Core i5 processor, Turbo Boost up to 4.5GHz
@@ -273,7 +289,7 @@ const isCardDetailsVisible = ref(false)
             </VCardText>
 
             <VCardText>
-              <VDivider />
+              <VDivider class="my-1" />
             </VCardText>
 
             <VCardText class="d-flex justify-center">
@@ -298,7 +314,6 @@ const isCardDetailsVisible = ref(false)
               <VDivider
                 v-if="$vuetify.display.smAndUp"
                 vertical
-                inset
               />
 
               <div class="ms-auto ps-4">
@@ -380,12 +395,20 @@ const isCardDetailsVisible = ref(false)
       <VCard title="The Best Answers">
         <VCardText class="d-flex align-center flex-wrap">
           <VRating
-            :model-value="5"
+            :model-value="4"
             readonly
             density="compact"
+            size="20"
+            active-color="warning"
+            color="grey-400"
+            empty-icon="mdi-star"
+            full-icon="mdi-star"
+            half-icon="mdi-star-half"
             class="me-3"
           />
-          <span class="text-subtitle-2">5 Star | 98 reviews</span>
+          <h6 class="text-base font-weight-regular">
+            4 Star | 98 reviews
+          </h6>
         </VCardText>
 
         <VCardText>
@@ -413,7 +436,7 @@ const isCardDetailsVisible = ref(false)
         <VCardText class="d-flex flex-column justify-center align-center">
           <VAvatar
             color="primary"
-            size="50"
+            size="56"
             class="v-avatar-light-bg text-primary mb-4"
           >
             <VIcon
@@ -428,16 +451,14 @@ const isCardDetailsVisible = ref(false)
         </VCardText>
 
         <VCardText>
-          <p>
-            According to us blisters are a very common thing and we come across them very often in our daily lives. It is a very common occurrence like cold or fever depending upon your lifestyle.
-          </p>
+          According to us blisters are a very common thing and we come across them very often in our daily lives. It is a very common occurrence like cold or fever depending upon your lifestyle.
         </VCardText>
 
-        <VCardActions class="justify-center">
+        <VCardText class="justify-center">
           <VBtn variant="elevated">
             Contact Now
           </VBtn>
-        </VCardActions>
+        </VCardText>
       </VCard>
     </VCol>
   </VRow>
@@ -446,7 +467,7 @@ const isCardDetailsVisible = ref(false)
 <style lang="scss" scoped>
 .avatar-center {
   position: absolute;
-  border: 3px solid rgb(var(--v-theme-surface));
+  border: 5px solid rgb(var(--v-theme-surface));
   inset-block-start: -2rem;
   inset-inline-start: 1rem;
 }

@@ -6,21 +6,21 @@ import DemoCardSolid from '@/views/pages/cards/card-basic/DemoCardSolid.vue'
 
 <template>
   <div>
-    <p class="text-2xl mb-6">
+    <h6 class="text-2xl font-weight-medium mb-6">
       Basic Cards
-    </p>
+    </h6>
 
     <DemoCardBasic />
 
-    <p class="text-2xl mb-6 mt-14">
+    <h6 class="text-2xl font-weight-medium mb-6 mt-14">
       Navigation Cards
-    </p>
+    </h6>
 
     <DemoCardNavigation />
 
-    <p class="text-2xl mt-14 mb-6 ">
+    <h6 class="text-2xl font-weight-medium mt-14 mb-6 ">
       Solid Cards
-    </p>
+    </h6>
 
     <DemoCardSolid />
   </div>

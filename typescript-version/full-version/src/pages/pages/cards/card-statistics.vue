@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import DemoCardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsAreaCharts.vue'
-import DemoCardStatisticsBarCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsBarCharts.vue'
-import DemoCardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsBarWithGapCharts.vue'
-import DemoCardStatisticsLineCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsLineCharts.vue'
-import DemoCardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsRadialBarCharts.vue'
-import DemoCardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsTotalProfitLineCharts.vue'
-import DemoCardTransactions from '@/views/pages/cards/card-statistics/DemoCardTransactions.vue'
+import CardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsAreaCharts.vue'
+import CardStatisticsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarCharts.vue'
+import CardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarWithGapCharts.vue'
+import CardStatisticsLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsLineCharts.vue'
+import CardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsRadialBarCharts.vue'
+import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
+import CardTransactions from '@/views/pages/cards/card-statistics/CardTransactions.vue'
 import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
 import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
 import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
@@ -146,7 +146,7 @@ const statisticsWithImages = [
       cols="12"
       md="8"
     >
-      <DemoCardTransactions />
+      <CardTransactions />
     </VCol>
 
     <!-- 👉 Blank Column for make a blank space  -->
@@ -190,7 +190,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsLineCharts />
+      <CardStatisticsLineCharts />
     </VCol>
 
     <!-- 👉 Sessions Bar Chart with Gaps -->
@@ -200,7 +200,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsBarWithGapCharts />
+      <CardStatisticsBarWithGapCharts />
     </VCol>
 
     <!-- 👉 Total Growth Area Chart -->
@@ -210,7 +210,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsAreaCharts />
+      <CardStatisticsAreaCharts />
     </VCol>
 
     <!-- 👉 Total Revenue Radial Bar Chart -->
@@ -220,7 +220,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsRadialBarCharts />
+      <CardStatisticsRadialBarCharts />
     </VCol>
 
     <!-- 👉 Session Bar Chart -->
@@ -230,7 +230,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsBarCharts />
+      <CardStatisticsBarCharts />
     </VCol>
 
     <!-- 👉 Total Profit Line Chart -->
@@ -240,7 +240,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsTotalProfitLineCharts />
+      <CardStatisticsTotalProfitLineCharts />
     </VCol>
   </VRow>
 </template>

@@ -1,4 +1,3 @@
-/* @unocss-include */
 import { breakpointsVuetify } from '@vueuse/core'
 
 // ❗ Logo SVG must be imported with ?raw suffix

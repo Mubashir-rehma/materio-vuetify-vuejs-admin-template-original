@@ -1,4 +1,3 @@
-/* @unocss-include */
 import { breakpointsVuetify } from '@vueuse/core'
 import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
 import type { Config } from '@layouts/types'

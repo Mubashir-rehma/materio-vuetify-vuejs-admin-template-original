@@ -28,9 +28,10 @@ const clickMe = () => {
     <template #prepend>
       <VTooltip location="bottom">
         <template #activator="{ props }">
-          <VIcon v-bind="props">
-            mdi-help-circle-outline
-          </VIcon>
+          <VIcon
+            v-bind="props"
+            icon="mdi-help-circle-outline"
+          />
         </template>
         I'm a tooltip
       </VTooltip>

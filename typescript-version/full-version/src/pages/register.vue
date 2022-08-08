@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components'
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 
 import type { RegisterResponse } from '@/@fake-db/types'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
@@ -219,7 +219,7 @@ const onSubmit = () => {
                   cols="12"
                   class="text-center"
                 >
-                  <DemoAuthProvider />
+                  <AuthProvider />
                 </VCol>
               </VRow>
             </VForm>

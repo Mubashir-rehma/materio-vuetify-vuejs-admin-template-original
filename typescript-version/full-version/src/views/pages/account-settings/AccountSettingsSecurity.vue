@@ -318,10 +318,9 @@ const isOneTimePasswordDialogVisible = ref(false)
                   <template #prepend>
                     <VIcon
                       size="20"
+                      icon="mdi-pencil-outline"
                       class="me-2"
-                    >
-                      mdi-pencil-outline
-                    </VIcon>
+                    />
                   </template>
 
                   <VListItemTitle>Edit</VListItemTitle>
@@ -331,10 +330,9 @@ const isOneTimePasswordDialogVisible = ref(false)
                   <template #prepend>
                     <VIcon
                       size="20"
+                      icon="mdi-delete-outline"
                       class="me-2"
-                    >
-                      mdi-delete-outline
-                    </VIcon>
+                    />
                   </template>
 
                   <VListItemTitle>Delete</VListItemTitle>

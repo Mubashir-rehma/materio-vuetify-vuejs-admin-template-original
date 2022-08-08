@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { mergeProps } from 'vue'
 
-const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options 3' }, { title: 'Options 4' }]
+const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
 </script>
 
 <template>
@@ -17,14 +17,6 @@ const items = [{ title: 'Options 1' }, { title: 'Options 2' }, { title: 'Options
       </VTooltip>
     </template>
 
-    <VList>
-      <VListItem
-        v-for="(item, index) in items"
-        :key="index"
-        :value="index"
-      >
-        <VListItemTitle>{{ item.title }}</VListItemTitle>
-      </VListItem>
-    </VList>
+    <VList :items="items" />
   </VMenu>
 </template>

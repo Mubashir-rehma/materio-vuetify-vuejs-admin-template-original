@@ -131,11 +131,9 @@ const isCardDetailsVisible = ref(false)
     >
       <VCard>
         <div class="d-flex justify-space-between flex-wrap flex-md-nowrap flex-column flex-md-row">
-          <div class="mx-auto">
+          <div class="ma-auto pa-5">
             <VImg
-              cover
-              width="220"
-              height="100%"
+              width="137"
               :src="dynamicImgImport('@/assets/images/eCommerce/2.png')"
             />
           </div>
@@ -203,13 +201,11 @@ const isCardDetailsVisible = ref(false)
             </VCardActions>
           </div>
 
-          <div class="h-100 w-100 my-auto pa-4">
+          <div class="ma-auto pa-5">
             <VImg
-              :class="$vuetify.display.mdAndUp ? 'rounded-lg' : 'rounded-t'"
-              height="100%"
-              :max-width="$vuetify.display.mdAndUp ? '200' : '100%'"
+              :width="176"
               :src="dynamicImgImport('@/assets/images/pages/5.jpg')"
-              class="w-100 mx-auto"
+              class="rounded"
             />
           </div>
         </div>

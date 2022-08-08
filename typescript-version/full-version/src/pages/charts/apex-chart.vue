@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import ApexChartAreaChart from '@/views/charts/apex-chart/ApexChartAreaChart.vue'
+import ApexChartBalance from '@/views/charts/apex-chart/ApexChartBalance.vue'
+import ApexChartDailySalesStates from '@/views/charts/apex-chart/ApexChartDailySalesStates.vue'
+import ApexChartDataScience from '@/views/charts/apex-chart/ApexChartDataScience.vue'
+import ApexChartExpenseRatio from '@/views/charts/apex-chart/ApexChartExpenseRatio.vue'
+import ApexChartHorizontalBar from '@/views/charts/apex-chart/ApexChartHorizontalBar.vue'
+import ApexChartMobileComparison from '@/views/charts/apex-chart/ApexChartMobileComparison.vue'
+import ApexChartNewTechnologiesData from '@/views/charts/apex-chart/ApexChartNewTechnologiesData.vue'
+import ApexChartStatistics from '@/views/charts/apex-chart/ApexChartStatistics.vue'
+import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.vue'
+</script>
+
 <template>
   <VRow>
     <!-- 👉  Area chart -->

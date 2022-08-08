@@ -129,19 +129,16 @@
       .nav-group,
       .nav-link {
         .nav-item-icon {
-          @include layoutsMixins.icon-size(0.9rem);
-
-          // ℹ️ ml will be (normal icon font-size - small icon font-size) / 2
-          margin-inline-start: 0.3rem;
+          @extend %vertical-nav-items-nested-icon;
         }
       }
 
-      // Hide icons for 3rd level
+      // Hide icons after 2nd level
       & .nav-group {
         .nav-link,
         .nav-group {
           .nav-item-icon {
-            visibility: hidden;
+            @extend %vertical-nav-items-icon-after-2nd-level;
           }
         }
       }

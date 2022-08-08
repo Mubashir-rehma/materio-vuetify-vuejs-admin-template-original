@@ -11,7 +11,6 @@
 
     <VAlert
       color="success"
-      density="compact"
       icon="mdi-school"
       prominent
     >

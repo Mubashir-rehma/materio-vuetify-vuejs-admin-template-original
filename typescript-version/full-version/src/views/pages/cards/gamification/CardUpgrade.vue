@@ -6,16 +6,16 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 
 <template>
   <VCard
-    title="Congratulations John! 🥳"
-    subtitle="Best seller of the month"
+    title="Upgrade Account 👩🏻‍💻"
+    subtitle="Add 15 team members"
     class="position-relative"
   >
     <VCardText>
-      <h5 class="text-2xl font-family-semibold text-primary">
-        $42.8k
+      <h5 class="text-2xl font-weight-semibold text-primary">
+        $199
       </h5>
-      <p>78% of target 🚀</p>
-      <VBtn>View Sales</VBtn>
+      <p>40% OFF 🤩</p>
+      <VBtn>Upgrade Plan</VBtn>
     </VCardText>
 
     <!-- Triangle Background -->
@@ -26,8 +26,8 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 
     <!-- Trophy -->
     <VImg
-      :src="dynamicImgImport('@/assets/images/misc/trophy.png')"
-      class="trophy"
+      :src="dynamicImgImport('@/assets/images/cards/pose-m-9.png')"
+      class="illustration flip-in-rtl"
     />
   </VCard>
 </template>
@@ -42,11 +42,11 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
   inset-inline-end: 0;
 }
 
-.trophy {
+.illustration {
   position: absolute;
-  inline-size: 5.188rem;
+  inline-size: 3rem;
   inset-block-end: 1rem;
-  inset-inline-end: 1rem;
+  inset-inline-end: 3rem;
 }
 
 // for rtl only

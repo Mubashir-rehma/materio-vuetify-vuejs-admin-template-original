@@ -28,7 +28,9 @@ const refetchData = (hideOverlay: () => void) => {
             <thead>
               <tr>
                 <th>ACTION</th>
-                <th>ICON</th>
+                <th class="text-center">
+                  ICON
+                </th>
                 <th>DETAILS</th>
               </tr>
             </thead>
@@ -40,9 +42,9 @@ const refetchData = (hideOverlay: () => void) => {
                 <td>
                   {{ data.action }}
                 </td>
-                <td>
+                <td class="text-center">
                   <VIcon
-                    size="20"
+                    size="24"
                     :icon="data.icon"
                   />
                 </td>

@@ -131,7 +131,10 @@ const triggeredRemove = () => {
 
         <!-- 👉 card content -->
         <VExpandTransition>
-          <div v-show="!isContentCollapsed">
+          <div
+            v-show="!isContentCollapsed"
+            class="v-card-content"
+          >
             <slot />
           </div>
         </VExpandTransition>
@@ -150,3 +153,12 @@ const triggeredRemove = () => {
   </VExpandTransition>
 </template>
 
+<style lang="scss">
+.v-card-item {
+  +.v-card-content {
+    .v-card-text:first-child {
+      padding-block-start: 0;
+    }
+  }
+}
+</style>

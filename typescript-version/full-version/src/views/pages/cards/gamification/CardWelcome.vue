@@ -23,12 +23,13 @@
         sm="6"
         class="text-center"
       >
-        <img
+        <VImg
           :src="dynamicImgImport('@/assets/images/cards/illustration-john.png')"
           class="john-illustration"
           :height="$vuetify.display.xs ? '165' : '200'"
+          width="auto"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
-        >
+        />
       </VCol>
     </VRow>
   </VCard>

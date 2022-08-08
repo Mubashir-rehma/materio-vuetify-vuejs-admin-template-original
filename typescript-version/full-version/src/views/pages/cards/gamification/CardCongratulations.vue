@@ -27,12 +27,13 @@
         order-sm="2"
         class="text-center"
       >
-        <img
+        <VImg
           :src="dynamicImgImport('@/assets/images/cards/illustration-john-2.png')"
           :height="$vuetify.display.xs ? '165' : '200'"
+          width="auto"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
           class="john-illustration flip-in-rtl"
-        >
+        />
       </VCol>
     </VRow>
   </VCard>

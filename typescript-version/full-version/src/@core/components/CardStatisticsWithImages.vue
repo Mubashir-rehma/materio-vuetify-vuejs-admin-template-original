@@ -22,8 +22,8 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
         <h6 class="text-base font-weight-semibold mb-4">
           {{ prop.title }}
         </h6>
-        <div class="d-flex align-center flex-wrap mb-4">
-          <h5 class="text-h5 font-weight-semibold me-2">
+        <div class="d-flex align-center flex-wrap mb-3">
+          <h5 class="text-h5 font-weight-medium me-2">
             {{ prop.stats }}
           </h5>
           <span

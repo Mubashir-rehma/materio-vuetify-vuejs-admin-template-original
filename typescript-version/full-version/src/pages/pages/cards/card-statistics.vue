@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import DemoCardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsAreaCharts.vue'
-import DemoCardStatisticsBarCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsBarCharts.vue'
-import DemoCardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsBarWithGapCharts.vue'
-import DemoCardStatisticsLineCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsLineCharts.vue'
-import DemoCardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsRadialBarCharts.vue'
-import DemoCardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/DemoCardStatisticsTotalProfitLineCharts.vue'
-import DemoCardTransactions from '@/views/pages/cards/card-statistics/DemoCardTransactions.vue'
+import CardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsAreaCharts.vue'
+import CardStatisticsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarCharts.vue'
+import CardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarWithGapCharts.vue'
+import CardStatisticsLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsLineCharts.vue'
+import CardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsRadialBarCharts.vue'
+import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
+import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
+import CardTransactions from '@/views/pages/cards/card-statistics/CardTransactions.vue'
 import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
 import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
 import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
@@ -16,7 +17,7 @@ const statisticsHorizontal = [
     color: 'primary',
     icon: 'mdi-account-outline',
     stats: 2856,
-    change: 5,
+    change: -11.9,
   },
   {
     title: 'Total Revenue',
@@ -30,14 +31,14 @@ const statisticsHorizontal = [
     color: 'info',
     icon: 'mdi-trending-up',
     stats: 13600,
-    change: -12.1,
+    change: -42.4,
   },
   {
     title: 'Total Profit',
     color: 'warning',
     icon: 'mdi-poll',
     stats: 2856,
-    change: 54.6,
+    change: 18.2,
   },
 ]
 
@@ -45,7 +46,7 @@ const statisticsVertical = [
   {
     title: 'New Project',
     color: 'primary',
-    icon: 'mdi-label-variant-outline',
+    icon: 'mdi-briefcase-variant-outline',
     stats: '862',
     change: -18,
     subtitle: 'Yearly Project',
@@ -146,14 +147,16 @@ const statisticsWithImages = [
       cols="12"
       md="8"
     >
-      <DemoCardTransactions />
+      <CardTransactions />
     </VCol>
 
-    <!-- 👉 Blank Column for make a blank space  -->
+    <!-- 👉 Total sales -->
     <VCol
-      md="4"
       cols="12"
-    />
+      md="4"
+    >
+      <CardStatisticsTotalSalesCharts />
+    </VCol>
 
     <!-- 👉 Vertical Cards -->
     <VCol
@@ -190,7 +193,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsLineCharts />
+      <CardStatisticsLineCharts />
     </VCol>
 
     <!-- 👉 Sessions Bar Chart with Gaps -->
@@ -200,7 +203,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsBarWithGapCharts />
+      <CardStatisticsBarWithGapCharts />
     </VCol>
 
     <!-- 👉 Total Growth Area Chart -->
@@ -210,7 +213,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsAreaCharts />
+      <CardStatisticsAreaCharts />
     </VCol>
 
     <!-- 👉 Total Revenue Radial Bar Chart -->
@@ -220,7 +223,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsRadialBarCharts />
+      <CardStatisticsRadialBarCharts />
     </VCol>
 
     <!-- 👉 Session Bar Chart -->
@@ -230,7 +233,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsBarCharts />
+      <CardStatisticsBarCharts />
     </VCol>
 
     <!-- 👉 Total Profit Line Chart -->
@@ -240,7 +243,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <DemoCardStatisticsTotalProfitLineCharts />
+      <CardStatisticsTotalProfitLineCharts />
     </VCol>
   </VRow>
 </template>

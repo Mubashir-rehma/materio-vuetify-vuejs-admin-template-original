@@ -17,17 +17,21 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
 </script>
 
 <template>
-  <VCard>
+  <VCard
+    variant="text"
+    border
+  >
     <VCardText class="d-flex align-center">
       <div class="me-4">
         <VAvatar
           size="44"
           rounded
-          :class="`v-avatar-light-bg text-${prop.color}`"
+          :class="`text-${prop.color} elevation-1`"
+          style="background-color: rgb(var(--v-theme-surface));"
         >
           <VIcon
             :icon="prop.icon"
-            size="30"
+            :size="24"
           />
         </VAvatar>
       </div>
@@ -35,13 +39,13 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
       <div>
         <span class="text-caption">{{ prop.title }}</span>
         <div class="d-flex align-center flex-wrap">
-          <span class="text-h6 font-weight-semibold">{{ kFormatter(prop.stats) }}</span>
+          <span class="text-h6 font-weight-medium">{{ kFormatter(prop.stats) }}</span>
           <div
             v-if="prop.change"
             :class="`${isPositive ? 'text-success' : 'text-error'} mt-1`"
           >
             <VIcon :icon="isPositive ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
-            <span class="text-caption font-weight-semibold">{{ Math.abs(prop.change) }}%</span>
+            <span class="text-xs">{{ Math.abs(prop.change) }}%</span>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
     <VCardText class="d-flex align-center">
       <VAvatar
         v-if="prop.icon"
-        size="38"
+        size="40"
         :color="prop.color"
       >
         <VIcon
@@ -35,7 +35,7 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
         size="small"
         variant="text"
         color="secondary"
-        class="me-n3 mt-n4"
+        class="me-n4 mt-n4"
         icon
       >
         <VIcon
@@ -53,7 +53,7 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
         v-if="prop.change"
         class="d-flex align-center mb-2"
       >
-        <span class="font-weight-semibold text-h5 me-2">{{ prop.stats }}</span>
+        <span class="font-weight-semibold text-h6 me-2">{{ prop.stats }}</span>
         <span
           :class="isPositive ? 'text-success' : 'text-error'"
           class="text-caption"

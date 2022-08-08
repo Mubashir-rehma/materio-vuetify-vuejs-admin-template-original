@@ -14,16 +14,17 @@ const series = [
 ]
 
 const chartOptions = {
-  grid: {
-    show: false,
-  },
   chart: {
+    parentHeightOffset: 0,
     toolbar: {
       show: false,
     },
     sparkline: {
       enabled: true,
     },
+  },
+  grid: {
+    show: false,
   },
   dataLabels: {
     enabled: false,
@@ -64,7 +65,7 @@ const chartOptions = {
     },
   ],
   tooltip: {
-    x: { show: false },
+    enabled: false,
   },
   theme: {
     monochrome: {
@@ -79,18 +80,20 @@ const chartOptions = {
 </script>
 
 <template>
-  <VCard title="42.5k">
+  <VCard>
     <VCardText>
+      <h6 class="text-h6">
+        42.5k
+      </h6>
       <VueApexCharts
         type="area"
-        height="auto"
+        :height="116"
         :options="chartOptions"
         :series="series"
       />
-    </VCardText>
-
-    <VCardText class="text-center font-weight-semibold mt-10">
-      Total Growth
+      <p class="text-center font-weight-semibold mb-0">
+        Total Growth
+      </p>
     </VCardText>
   </VCard>
 </template>

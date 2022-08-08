@@ -15,7 +15,7 @@ const statistics = [
   {
     title: 'Product',
     stats: '1.54k',
-    icon: 'mdi-label-variant-outline',
+    icon: 'mdi-cellphone-link',
     color: 'warning',
   },
   {
@@ -42,7 +42,8 @@ const statistics = [
               <VAvatar
                 :color="item.color"
                 rounded
-                size="44"
+                size="42"
+                class="elevation-1"
               >
                 <VIcon
                   size="24"
@@ -55,7 +56,7 @@ const statistics = [
               <span class="text-caption">
                 {{ item.title }}
               </span>
-              <span class="text-h6 font-weight-bold">{{ item.stats }}</span>
+              <span class="text-h6 font-weight-medium">{{ item.stats }}</span>
             </div>
           </div>
         </VCol>

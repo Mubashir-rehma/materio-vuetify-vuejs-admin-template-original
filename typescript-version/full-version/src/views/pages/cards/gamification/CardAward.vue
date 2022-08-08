@@ -6,16 +6,18 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 
 <template>
   <VCard
-    title="Congratulations John! 🥳"
+    title="Congratulations John! 🎉"
     subtitle="Best seller of the month"
     class="position-relative"
   >
     <VCardText>
-      <h5 class="text-2xl font-family-semibold text-primary">
+      <h5 class="text-2xl font-weight-medium text-primary">
         $42.8k
       </h5>
       <p>78% of target 🚀</p>
-      <VBtn>View Sales</VBtn>
+      <VBtn size="small">
+        View Sales
+      </VBtn>
     </VCardText>
 
     <!-- Triangle Background -->
@@ -44,9 +46,9 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 
 .trophy {
   position: absolute;
-  inline-size: 5.188rem;
-  inset-block-end: 1rem;
-  inset-inline-end: 1rem;
+  inline-size: 4.9375rem;
+  inset-block-end: 2rem;
+  inset-inline-end: 1.5rem;
 }
 
 // for rtl only

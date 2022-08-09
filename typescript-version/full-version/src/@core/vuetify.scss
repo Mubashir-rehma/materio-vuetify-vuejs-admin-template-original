@@ -80,6 +80,7 @@
   $tooltip-padding: 4px 8px,
   $card-title-letter-spacing: 0.0094rem,
   $card-subtitle-opacity: 1,
+  $list-subheader-text-opacity: 1,
   $typography: (
     "h1": (
       "weight": 500,
@@ -105,7 +106,7 @@
       "line-height": 2rem
     ),
     "h6": (
-      "letter-spacing": 0.0719rem
+      "letter-spacing": 0.0094rem
     ),
     "subtitle-1": (
       "letter-spacing": 0.0094rem
@@ -314,6 +315,11 @@ h6,
 .card-list {
   &.v-list {
     padding-block-end: 0;
+    padding-block-start: 0;
+  }
+
+  .v-list-subheader {
+    padding-inline-start: 0 !important;
   }
 
   .v-list-item {
@@ -322,9 +328,5 @@ h6,
     padding-block-start: 0 !important;
     padding-inline-end: 0 !important;
     padding-inline-start: 0 !important;
-
-    &:not(:last-child) {
-      padding-block-end: 20px !important;
-    }
   }
 }

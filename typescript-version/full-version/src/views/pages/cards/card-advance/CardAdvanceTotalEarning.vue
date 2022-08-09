@@ -1,0 +1,100 @@
+<script setup lang="ts">
+const earnings = [
+  {
+    avatar: dynamicImgImport('@/assets/images/logos/zipcar.png'),
+    title: 'Zipcar',
+    subtitle: 'Vuejs, React & HTML',
+    amount: '$24,895.65',
+    progress: 'primary',
+  },
+  {
+    avatar: dynamicImgImport('@/assets/images/logos/bitbank.png'),
+    title: 'Bitbank',
+    subtitle: 'Sketch, Figma & XD',
+    amount: '$8,6500.20',
+    progress: 'info',
+  },
+  {
+    avatar: dynamicImgImport('@/assets/images/logos/aviato.png'),
+    title: 'Aviato',
+    subtitle: 'HTML & Anguler',
+    amount: '$1,2450.80',
+    progress: 'secondary',
+  },
+]
+</script>
+
+<template>
+  <VCard>
+    <VCardItem>
+      <VCardTitle>Total Earning</VCardTitle>
+
+      <template #append>
+        <div class="me-n2">
+          <VBtn
+            size="x-small"
+            variant="text"
+            icon
+            color="secondary"
+          >
+            <VIcon
+              size="24"
+              icon="mdi-dots-vertical"
+            />
+          </VBtn>
+        </div>
+      </template>
+    </VCardItem>
+
+    <VCardText>
+      <div class="d-flex align-center">
+        <h4 class="text-h4 me-2">
+          $24,895
+        </h4>
+
+        <span class="text-success">
+          <VIcon
+            size="30"
+            icon="mdi-menu-up"
+          />
+          <span>10%</span>
+        </span>
+      </div>
+      <span class="text-xs">Compared to $84,325 last year</span>
+
+      <VList class="card-list mt-5">
+        <VListItem
+          v-for="(earning, index) in earnings"
+          :key="earning.title"
+          :class="index > 0 ? 'mt-6' : ''"
+        >
+          <template #prepend>
+            <VAvatar
+              rounded
+              :image="earning.avatar"
+            />
+          </template>
+
+          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+            {{ earning.title }}
+          </VListItemTitle>
+          <VListItemSubtitle class="text-xs">
+            {{ earning.subtitle }}
+          </VListItemSubtitle>
+
+          <template #append>
+            <div>
+              <h6 class="text-sm mb-2">
+                {{ earning.amount }}
+              </h6>
+              <VProgressLinear
+                :color="earning.progress"
+                model-value="80"
+              />
+            </div>
+          </template>
+        </VListItem>
+      </VList>
+    </VCardText>
+  </VCard>
+</template>

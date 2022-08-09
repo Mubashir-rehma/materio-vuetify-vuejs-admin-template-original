@@ -18,6 +18,8 @@ export default [
         icon: { icon: 'mdi-credit-card-outline' },
         children: [
           { title: 'Basic', to: 'pages-cards-card-basic' },
+          { title: 'Advance', to: 'pages-cards-card-advance' },
+
           { title: 'Statistics', to: 'pages-cards-card-statistics' },
           { title: 'Gamification', to: 'pages-cards-gamification' },
           { title: 'Actions', to: 'pages-cards-card-actions' },

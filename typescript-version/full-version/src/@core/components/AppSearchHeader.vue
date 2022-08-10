@@ -23,13 +23,14 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
-      <h5 class="text-h5 font-weight-medium text-primary">
+      <h5 class="text-h5 font-weight-medium text-primary mb-6">
         {{ props.title }}
       </h5>
 
       <!-- 👉 Search Input -->
       <VTextField
         v-bind="$attrs"
+        density="default"
         placeholder="Ask a question.."
         class="search-header-input mx-auto my-3"
       >
@@ -49,20 +50,15 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
 <style lang="scss">
 .search-header {
   padding: 4rem;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 // search input
 .search-header-input {
   background-color: rgb(var(--v-theme-surface));
-  border-radius: 0.25rem;
-  max-inline-size: 32.125rem;
-
-  .v-field__prepend-inner {
-    i {
-      inset-block-start: 3px;
-    }
-  }
+  border-radius: 0.3125rem;
+  max-inline-size: 28.125rem;
 }
 
 @media (max-width: 37.5rem) {

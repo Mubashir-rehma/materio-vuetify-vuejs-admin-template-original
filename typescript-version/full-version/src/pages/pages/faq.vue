@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { FaqCategory } from '@/@fake-db/types'
-import axios from '@axios'
-import AppSearchHeader from '@core/components/AppSearchHeader.vue'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import type { FaqCategory } from '@/@fake-db/types';
+import axios from '@axios';
+import AppSearchHeader from '@core/components/AppSearchHeader.vue';
+import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant';
 
 const faqSearchQuery = ref('')
 
@@ -159,11 +159,12 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
         label
         color="primary"
         size="small"
+        class="mb-2"
       >
         QUESTION?
       </VChip>
 
-      <h6 class="text-h6">
+      <h6 class="text-h6 mb-1">
         You still have a question?
       </h6>
       <p>
@@ -180,8 +181,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant('@/assets/images/illustrati
         >
           <VCard
             flat
-            color="secondary"
-            variant="tonal"
+            class="bg-var-theme-background"
           >
             <VCardText>
               <VAvatar

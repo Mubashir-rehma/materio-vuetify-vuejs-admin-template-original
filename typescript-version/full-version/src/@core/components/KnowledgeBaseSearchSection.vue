@@ -51,12 +51,6 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
   background-color: rgb(var(--v-theme-surface));
   border-radius: 0.3125rem;
   max-inline-size: 28.125rem;
-
-  .v-field__prepend-inner {
-    i {
-      inset-block-start: 3px;
-    }
-  }
 }
 
 @media (max-width: 37.5rem) {

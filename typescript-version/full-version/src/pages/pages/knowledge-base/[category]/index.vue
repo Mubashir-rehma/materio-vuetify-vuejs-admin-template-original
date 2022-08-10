@@ -42,7 +42,7 @@ watch(kBSearchQuery, fetchKnowledgeBaseSubcategoryData, { immediate: true })
         >
           <VCard>
             <!-- 👉 title -->
-            <VCardItem class="page-kbc-title">
+            <VCardItem class="bg-var-theme-background">
               <template #prepend>
                 <VIcon
                   :color="item.iconColor ? item.iconColor : '' "

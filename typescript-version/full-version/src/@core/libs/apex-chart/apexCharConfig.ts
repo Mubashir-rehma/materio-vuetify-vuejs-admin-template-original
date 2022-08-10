@@ -97,7 +97,7 @@ export const getLineChartSimpleConfig = (themeColors: ThemeInstance['themes']['v
     tooltip: {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       custom(data: any) {
-        return `<div class='bar-chart'>
+        return `<div class='bar-chart pa-2'>
           <span>${data.series[data.seriesIndex][data.dataPointIndex]}%</span>
         </div>`
       },

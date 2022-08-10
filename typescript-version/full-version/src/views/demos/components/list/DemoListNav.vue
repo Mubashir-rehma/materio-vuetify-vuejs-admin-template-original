@@ -14,7 +14,6 @@ const items = [
   <VList
     nav
     :lines="false"
-    density="compact"
   >
     <VListItem
       v-for="item in items"

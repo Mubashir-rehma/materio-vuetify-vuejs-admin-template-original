@@ -50,13 +50,14 @@ watch(kBSearchQuery, fetchKnowledgeBaseSubcategoryData, { immediate: true })
                   :icon="item.icon"
                 />
               </template>
-              <VCardTitle class="text-truncate">
+
+              <VCardTitle>
                 {{ item.title }} ({{ item.questions.length }})
               </VCardTitle>
             </VCardItem>
 
             <!-- 👉 Questions -->
-            <VList>
+            <VList density="compact">
               <VListItem
                 v-for="que in item.questions"
                 :key="que.question"

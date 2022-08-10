@@ -12,11 +12,11 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
   <!-- 👉 Search Banner  -->
   <VCard
     flat
-    class="text-center page-knowledge-base mb-7"
+    class="text-center page-knowledge-base mb-6"
     :style="`background:url(${themeBackgroundImg})`"
   >
     <VCardText>
-      <h5 class="text-h5 font-weight-medium text-primary mb-3">
+      <h5 class="text-h5 font-weight-semibold text-primary mb-3">
         Hello, how can we help?
       </h5>
       <p>or choose a category to quickly find the help you need</p>
@@ -25,6 +25,7 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
       <VTextField
         v-bind="$attrs"
         placeholder="Ask a question.."
+        density="default"
         class="page-kb-search-input mx-auto"
       >
         <template #prependInner>
@@ -40,7 +41,7 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
 
 <style lang="scss">
 .page-knowledge-base {
-  padding: 5.5rem;
+  padding: 4.5rem;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
@@ -48,7 +49,7 @@ const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowle
 // search input
 .page-kb-search-input {
   background-color: rgb(var(--v-theme-surface));
-  border-radius: 0.25rem;
+  border-radius: 0.3125rem;
   max-inline-size: 28.125rem;
 
   .v-field__prepend-inner {

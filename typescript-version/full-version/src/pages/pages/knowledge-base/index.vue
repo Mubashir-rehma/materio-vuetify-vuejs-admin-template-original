@@ -42,23 +42,17 @@ watch(knowledgeBaseSearchQuery, fetchKnowledgeBaseData, { immediate: true })
           >
             <!-- 👉 image -->
             <div class="page-kb-character-wrapper">
-              <VImg
-                contain
-                class="mx-auto"
-                :src="result.character"
-              />
+              <VImg :src="result.character" />
             </div>
 
-            <!-- 👉 title -->
-            <VCardItem>
-              <VCardTitle class="justify-center">
-                {{ result.title }}
-              </VCardTitle>
-            </VCardItem>
-
-            <!-- 👉 description -->
             <VCardText>
-              {{ result.desc }}
+              <!-- 👉 title -->
+              <h6 class="text-h6 mb-2">
+                {{ result.title }}
+              </h6>
+
+              <!-- 👉 description -->
+              <span>{{ result.desc }}</span>
             </VCardText>
           </VCard>
         </VCol>

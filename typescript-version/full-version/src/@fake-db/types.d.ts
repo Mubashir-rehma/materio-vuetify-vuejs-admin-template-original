@@ -15,7 +15,6 @@ export interface KnowledgeBaseQuestionAndAnswer {
   postImg?: string
   postContent?: {
     title: string
-    lastUpdated: string
     postDesc: string
   }
   relatedQuestions?: KnowledgeBaseQuestion[]

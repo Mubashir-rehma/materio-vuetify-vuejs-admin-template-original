@@ -206,8 +206,7 @@ const database: KnowledgeBaseDB = {
       postImg: dynamicImgImport('@/assets/images/pages/mac-pc.png'),
       postContent: {
         title: 'Why Was My Developer Application Rejected?',
-        lastUpdated: '10 Dec 2018',
-        postDesc: `<p>Pie chupa chups I love I love pastry lemon drops cake pudding I love. Candy I love topping muffin muffin sweet roll caramels marshmallow gummi bears. Jelly cupcake sweet cake powder pudding lemon drops carrot cake. I love chocolate bar chupa chups gummies carrot cake. Lollipop liquorice marzipan liquorice lemon drops tart chocolate bar. Shortbread marzipan tiramisu I love powder.</p>
+        postDesc: `<p>Last updated on 10 Dec 2018</p><p>Pie chupa chups I love I love pastry lemon drops cake pudding I love. Candy I love topping muffin muffin sweet roll caramels marshmallow gummi bears. Jelly cupcake sweet cake powder pudding lemon drops carrot cake. I love chocolate bar chupa chups gummies carrot cake. Lollipop liquorice marzipan liquorice lemon drops tart chocolate bar. Shortbread marzipan tiramisu I love powder.</p>
 <p><strong>Shortbread jelly apple pie pastry</strong></p>
 <p>Sweet pudding pastry I love icing. Gingerbread ice cream gummi bears shortbread I love I love. Cookie I love chocolate cake cake dragée cotton candy jelly-o gummies donut.</p>
 <p>Powder jelly macaroon jelly I love lemon drops. Brownie fruitcake cheesecake tootsie roll I love I love cake brownie candy canes. Bonbon chocolate jelly-o chupa chups I love muffin pie lemon drops pudding.</p>
@@ -219,7 +218,7 @@ const database: KnowledgeBaseDB = {
 <li>3. Apple Pie Cupcakes</li>
 </ol>
 <br />
-<p>Bear claw chocolate bar lollipop chupa chups icing tiramisu. Jujubes cotton candy icing chocolate cotton candy. Danish chocolate carrot cake chocolate cake I love sugar plum. Liquorice dessert topping bear claw sesame snaps.</p>
+<p class="mb-0">Bear claw chocolate bar lollipop chupa chups icing tiramisu. Jujubes cotton candy icing chocolate cotton candy. Danish chocolate carrot cake chocolate cake I love sugar plum. Liquorice dessert topping bear claw sesame snaps.</p>
 `,
       },
       relatedQuestions: [

@@ -106,6 +106,6 @@ export default {
     hideDetails: 'auto',
   },
   VDialog: {
-    maxWidth: '600',
+    maxWidth: '665',
   },
 }

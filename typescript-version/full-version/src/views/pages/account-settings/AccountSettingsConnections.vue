@@ -81,7 +81,6 @@ const socialAccounts = ref([
               v-for="item in connectedAccounts"
               :key="item.logo"
               :title="item.name"
-              :subtitle="item.subtitle"
             >
               <template #prepend>
                 <VAvatar start>
@@ -91,6 +90,10 @@ const socialAccounts = ref([
                   />
                 </VAvatar>
               </template>
+
+              <VListItemSubtitle class="text-xs">
+                {{ item.subtitle }}
+              </VListItemSubtitle>
 
               <template #append>
                 <VListItemAction>
@@ -134,23 +137,28 @@ const socialAccounts = ref([
 
               <VListItemSubtitle
                 v-if="item.links?.link"
-                :href="item.links?.link"
                 tag="a"
+                :href="item.links?.link"
+                style="opacity: 1;"
               >
                 {{ item.links?.username }}
               </VListItemSubtitle>
 
-              <VListItemSubtitle v-else>
+              <VListItemSubtitle
+                v-else
+                class="text-xs"
+              >
                 Not Connected
               </VListItemSubtitle>
 
               <template #append>
                 <VListItemAction>
                   <VBtn
+                    icon
                     variant="tonal"
                     size="small"
                     :color="item.connected ? 'error' : 'secondary'"
-                    icon
+                    class="rounded"
                   >
                     <VIcon
                       size="20"

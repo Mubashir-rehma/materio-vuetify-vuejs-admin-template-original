@@ -107,50 +107,59 @@ const currencies = [
 <template>
   <VRow>
     <VCol cols="12">
-      <VCard title="Profile Details">
+      <VCard title="Account Details">
         <VCardText class="d-flex">
           <!-- 👉 Avatar -->
-          <VAvatar
-            rounded="lg"
-            size="100"
-            class="me-6"
-            :image="accountDataLocal.avatarImg"
-          />
+          <div>
+            <VAvatar
+              rounded="lg"
+              size="100"
+              class="me-6"
+              :image="accountDataLocal.avatarImg"
+            />
+          </div>
 
           <!-- 👉 Upload Photo -->
-          <form ref="refForm">
-            <VBtn
-              color="primary"
-              class="me-3 mt-5"
-              @click="refInputEl?.click()"
-            >
-              <VIcon
-                icon="mdi-cloud-upload-outline"
-                class="d-sm-none"
-              />
-              <span class="d-none d-sm-block">Upload new photo</span>
-            </VBtn>
+          <form
+            ref="refForm"
+            class="d-flex flex-column justify-center gap-5"
+          >
+            <div class="d-flex flex-wrap gap-2">
+              <VBtn
+                color="primary"
+                @click="refInputEl?.click()"
+              >
+                <VIcon
+                  icon="mdi-cloud-upload-outline"
+                  class="d-sm-none"
+                />
+                <span class="d-none d-sm-block">Upload new photo</span>
+              </VBtn>
 
-            <input
-              ref="refInputEl"
-              type="file"
-              name="file"
-              accept=".jpeg,.png,.jpg,GIF"
-              hidden
-              @input="changeAvatar"
-            >
+              <input
+                ref="refInputEl"
+                type="file"
+                name="file"
+                accept=".jpeg,.png,.jpg,GIF"
+                hidden
+                @input="changeAvatar"
+              >
 
-            <VBtn
-              type="reset"
-              color="error"
-              variant="tonal"
-              class="mt-5"
-              @click="resetAvatar"
-            >
-              Reset
-            </VBtn>
+              <VBtn
+                type="reset"
+                color="error"
+                variant="tonal"
+                @click="resetAvatar"
+              >
+                <span class="d-none d-sm-block">Reset</span>
+                <VIcon
+                  icon="mdi-refresh"
+                  class="d-sm-none"
+                />
+              </VBtn>
+            </div>
 
-            <p class="text-sm mt-5">
+            <p class="text-body-1 mb-0">
               Allowed JPG, GIF or PNG. Max size of 800K
             </p>
           </form>
@@ -302,10 +311,11 @@ const currencies = [
               </VCol>
 
               <!-- 👉 Form Actions -->
-              <VCol cols="12">
-                <VBtn class="me-3">
-                  Save changes
-                </VBtn>
+              <VCol
+                cols="12"
+                class="d-flex flex-wrap gap-4"
+              >
+                <VBtn>Save changes</VBtn>
 
                 <VBtn
                   color="secondary"
@@ -327,6 +337,18 @@ const currencies = [
       <VCard title="Delete Account">
         <VCardText>
           <!-- 👉 Checkbox and Button  -->
+          <VAlert
+            color="warning"
+            variant="tonal"
+            class="mb-4"
+          >
+            <VAlertTitle class="mb-1">
+              Are you sure you want to delete your account?
+            </VAlertTitle>
+            <p class="mb-0">
+              Once you delete your account, there is no going back. Please be certain.
+            </p>
+          </VAlert>
           <div>
             <VCheckbox
               v-model="isAccountDeactivated"

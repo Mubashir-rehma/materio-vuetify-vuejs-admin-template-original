@@ -30,22 +30,28 @@ const onCancel = () => {
     :model-value="props.isDialogVisible"
     @update:model-value="(val:boolean) => $emit('update:isDialogVisible', val)"
   >
-    <VCard class="text-center px-10 py-4">
+    <VCard class="text-center px-10 py-6">
       <VCardText>
         <VBtn
-          icon="mdi-help"
-          variant="tonal"
+          icon
+          variant="outlined"
           color="warning"
-          class="pa-4"
-          :size="65"
-        />
-      </VCardText>
-      <VCardText>
-        {{ props.confirmationMsg }}
+          class="mb-4"
+          style="width: 88px; height: 88px; pointer-events: none;"
+        >
+          <span class="text-5xl">!</span>
+        </VBtn>
+
+        <h6 class="text-lg font-weight-medium">
+          {{ props.confirmationMsg }}
+        </h6>
       </VCardText>
 
-      <VCardText class="d-flex align-center justify-center gap-4">
-        <VBtn @click="onConfirmation">
+      <VCardActions class="align-center justify-center gap-2">
+        <VBtn
+          variant="elevated"
+          @click="onConfirmation"
+        >
           Confirm
         </VBtn>
 
@@ -56,7 +62,7 @@ const onCancel = () => {
         >
           Cancel
         </VBtn>
-      </VCardText>
+      </VCardActions>
     </VCard>
   </VDialog>
 </template>

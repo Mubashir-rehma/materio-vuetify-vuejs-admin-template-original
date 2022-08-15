@@ -124,8 +124,9 @@ const pricingPlans = [
         <!-- 👉 Plan logo -->
         <VCardText class="text-center">
           <VImg
-            :height="200"
+            :height="120"
             :src="plan.logo"
+            class="mx-auto mb-3"
           />
 
           <!-- 👉 Plan name -->
@@ -158,8 +159,8 @@ const pricingPlans = [
         </VCardText>
 
         <!-- 👉 Plan features -->
-        <VCardText class="pt-4">
-          <VList density="compact">
+        <VCardText class="pt-2">
+          <VList class="card-list">
             <VListItem
               v-for="feature in plan.features"
               :key="feature"

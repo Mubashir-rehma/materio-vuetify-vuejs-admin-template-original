@@ -313,13 +313,10 @@ h6,
 */
 
 .card-list {
+  --v-card-list-gap: 20px;
+
   &.v-list {
     padding-block-end: 0;
-    padding-block-start: 0;
-  }
-
-  .v-list-subheader {
-    padding-inline-start: 0 !important;
   }
 
   .v-list-item {
@@ -328,5 +325,9 @@ h6,
     padding-block-start: 0 !important;
     padding-inline-end: 0 !important;
     padding-inline-start: 0 !important;
+
+    &:not(:last-child) {
+      padding-block-end: var(--v-card-list-gap) !important;
+    }
   }
 }

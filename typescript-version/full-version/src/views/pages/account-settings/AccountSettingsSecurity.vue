@@ -143,36 +143,36 @@ const isOneTimePasswordDialogVisible = ref(false)
 
           <!-- 👉 Password Requirements -->
           <VCardText>
-            <p class="text-base font-weight-medium mt-4">
+            <p class="text-base font-weight-medium mt-2">
               Password Requirements:
             </p>
 
-            <ul class="d-flex flex-column gap-y-3 ps-3">
+            <ul class="d-flex flex-column gap-y-3">
               <li
                 v-for="item in passwordRequirements"
                 :key="item"
+                class="d-flex"
               >
-                <VIcon
-                  size="7"
-                  icon="mdi-circle"
-                  class="me-3"
-                />
+                <div>
+                  <VIcon
+                    size="7"
+                    icon="mdi-circle"
+                    class="me-3"
+                  />
+                </div>
                 <span class="font-weight-medium">{{ item }}</span>
               </li>
             </ul>
           </VCardText>
 
           <!-- 👉 Action Buttons -->
-          <VCardText>
-            <VBtn class="me-3 mt-3">
-              Save changes
-            </VBtn>
+          <VCardText class="d-flex flex-wrap gap-4">
+            <VBtn>Save changes</VBtn>
 
             <VBtn
               type="reset"
               color="secondary"
               variant="tonal"
-              class="mt-3"
             >
               Reset
             </VBtn>
@@ -277,15 +277,16 @@ const isOneTimePasswordDialogVisible = ref(false)
           <div
             v-for="serverKey in serverKeys"
             :key="serverKey.key"
-            class="account-setting-server bg-var-theme-background rounded-lg"
+            class="bg-var-theme-background pa-4"
           >
-            <div class="d-flex align-items-center flex-wrap mb-3">
-              <h5 class="text-h5 mb-0 me-3">
+            <div class="d-flex align-center flex-wrap mb-3">
+              <h6 class="text-h6 mb-0 me-3">
                 {{ serverKey.name }}
-              </h5>
+              </h6>
               <VChip
                 label
                 color="primary"
+                size="small"
               >
                 {{ serverKey.permission }}
               </VChip>
@@ -299,46 +300,6 @@ const isOneTimePasswordDialogVisible = ref(false)
               />
             </p>
             <span>Created on {{ serverKey.createdOn }}</span>
-
-            <!-- 👉 Menu for more  -->
-            <VMenu>
-              <template #activator="{ props }">
-                <VBtn
-                  v-bind="props"
-                  color="secondary"
-                  size="small"
-                  variant="text"
-                  icon="mdi-dots-vertical"
-                  class="more-btn"
-                />
-              </template>
-
-              <VList>
-                <VListItem href="javascript:void(0)">
-                  <template #prepend>
-                    <VIcon
-                      size="20"
-                      icon="mdi-pencil-outline"
-                      class="me-2"
-                    />
-                  </template>
-
-                  <VListItemTitle>Edit</VListItemTitle>
-                </VListItem>
-
-                <VListItem href="#">
-                  <template #prepend>
-                    <VIcon
-                      size="20"
-                      icon="mdi-delete-outline"
-                      class="me-2"
-                    />
-                  </template>
-
-                  <VListItemTitle>Delete</VListItemTitle>
-                </VListItem>
-              </VList>
-            </VMenu>
           </div>
         </VCardText>
       </VCard>
@@ -352,10 +313,10 @@ const isOneTimePasswordDialogVisible = ref(false)
         <VTable class="text-no-wrap">
           <thead>
             <tr>
-              <th>Browser</th>
-              <th>Device</th>
-              <th>Location</th>
-              <th>Recent Activities</th>
+              <th>BROWSER</th>
+              <th>DEVICE</th>
+              <th>LOCATION</th>
+              <th>RECENT ACTIVITIES</th>
             </tr>
           </thead>
           <tbody>
@@ -365,6 +326,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             >
               <td>
                 <VIcon
+                  start
                   :icon="device.deviceIcon.icon"
                   :color="device.deviceIcon.color"
                 />
@@ -385,16 +347,3 @@ const isOneTimePasswordDialogVisible = ref(false)
   <EnableOneTimePasswordDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
   <!-- !SECTION -->
 </template>
-
-<style lang="scss">
-.account-setting-server {
-  position: relative;
-  padding: 1rem;
-
-  .more-btn {
-    position: absolute;
-    inset-block-start: 0.5rem;
-    inset-inline-end: 0;
-  }
-}
-</style>

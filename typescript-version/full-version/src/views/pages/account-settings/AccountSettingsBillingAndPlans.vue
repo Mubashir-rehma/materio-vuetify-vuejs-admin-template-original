@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import BillingHistoryTable from './BillingHistoryTable.vue'
+
 interface cardDetails {
   name: string
   number: string
@@ -59,23 +61,39 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
               md="6"
             >
               <div>
-                <h3>Your Current Plan is Basic</h3>
-                <p>A simple start for everyone</p>
-                <h3>Active until Dec 09, 2021</h3>
-                <p>We will send you a notification upon Subscription expiration</p>
-                <h3>
-                  <span class="me-3">$199 Per Month</span>
-                  <VChip
-                    color="primary"
-                    size="small"
-                    label
-                  >
-                    Popular
-                  </VChip>
-                </h3>
-                <p>
-                  Standard plan for small to medium businesses
-                </p>
+                <div class="mb-6">
+                  <h3 class="text-base font-weight-medium mb-2">
+                    Your Current Plan is Basic
+                  </h3>
+                  <p class="text-base">
+                    A simple start for everyone
+                  </p>
+                </div>
+
+                <div class="mb-6">
+                  <h3 class="text-base font-weight-medium mb-2">
+                    Active until Dec 09, 2021
+                  </h3>
+                  <p class="text-base">
+                    We will send you a notification upon Subscription expiration
+                  </p>
+                </div>
+
+                <div>
+                  <h3 class="text-base font-weight-medium mb-2">
+                    <span class="me-3">$199 Per Month</span>
+                    <VChip
+                      color="primary"
+                      size="small"
+                      label
+                    >
+                      Popular
+                    </VChip>
+                  </h3>
+                  <p class="text-base mb-0">
+                    Standard plan for small to medium businesses
+                  </p>
+                </div>
               </div>
             </VCol>
 
@@ -87,14 +105,15 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                 color="warning"
                 variant="tonal"
               >
-                <p class="text-base font-weight-semibold mb-1">
+                <VAlertTitle class="mb-1">
                   We need your attention!
-                </p>
+                </VAlertTitle>
+
                 <span>Your plan requires update</span>
               </VAlert>
 
               <!-- progress -->
-              <div class="d-flex font-weight-bold mt-8 mb-2">
+              <div class="d-flex font-weight-bold text-base mt-8 mb-2">
                 <span>Days</span>
                 <VSpacer />
                 <span>24 of 30 Days</span>
@@ -105,7 +124,7 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                 height="12"
                 model-value="75"
               />
-              <p class="font-weight-bold mt-2">
+              <p class="text-base mt-2">
                 6 days remaining until your plan requires update
               </p>
             </VCol>
@@ -235,11 +254,11 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                     </VCol>
 
                     <!-- 👉 Payment method action button -->
-                    <VCol cols="12">
-                      <VBtn
-                        type="submit"
-                        class="me-3"
-                      >
+                    <VCol
+                      cols="12"
+                      class="d-flex flex-wrap gap-4"
+                    >
+                      <VBtn type="submit">
                         Save changes
                       </VBtn>
                       <VBtn
@@ -293,10 +312,9 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                       <VSpacer />
 
                       <div class="d-flex flex-column text-sm-end">
-                        <div class="order-sm-0 order-1">
+                        <div class="d-flex flex-wrap gap-4 order-sm-0 order-1">
                           <VBtn
                             variant="tonal"
-                            class="me-2"
                             @click="openEditCardDialog(card)"
                           >
                             Edit
@@ -371,8 +389,10 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
                 md="6"
               >
                 <VTextField
-                  label="Mobile"
+                  dirty
+                  label="Phone Number"
                   type="number"
+                  prefix="US (+1)"
                 />
               </VCol>
 
@@ -409,11 +429,11 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
               </VCol>
 
               <!-- 👉 Actions Button -->
-              <VCol cols="12">
-                <VBtn
-                  type="submit"
-                  class="me-3"
-                >
+              <VCol
+                cols="12"
+                class="d-flex flex-wrap gap-4"
+              >
+                <VBtn type="submit">
                   Save changes
                 </VBtn>
                 <VBtn

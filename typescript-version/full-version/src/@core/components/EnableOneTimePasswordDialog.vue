@@ -28,7 +28,6 @@ const resetPhoneNumber = () => {
 <template>
   <VDialog
     :model-value="props.isDialogVisible"
-    class="v-dialog-lg"
     @update:model-value="(val) => $emit('update:isDialogVisible', val)"
   >
     <VCard class="pa-5 pa-sm-15">
@@ -38,18 +37,25 @@ const resetPhoneNumber = () => {
         </VCardTitle>
       </VCardItem>
 
-      <VCardText>
-        <h5 class="text-h6 font-weight-medium mb-3">
+      <VCardText class="pt-6">
+        <h6 class="text-disabled text-base font-weight-medium mb-3">
           Verify Your Mobile Number for SMS
-        </h5>
-        <p>Enter your mobile phone number with country code and  we will send you a verification code.</p>
+        </h6>
+
+        <p class="mb-6">
+          Enter your mobile phone number with country code and  we will send you a verification code.
+        </p>
 
         <VForm @submit.prevent="() => {}">
           <VTextField
             v-model="phoneNumber"
+            dirty
             name="mobile"
+            type="number"
+            prefix="+1"
             label="Phone Number"
-            class="mb-6"
+            placeholder="202 555 0111"
+            class="mb-4"
           />
 
           <VBtn

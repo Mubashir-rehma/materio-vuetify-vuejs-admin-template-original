@@ -64,9 +64,8 @@ const earnings = [
 
       <VList class="card-list mt-5">
         <VListItem
-          v-for="(earning, index) in earnings"
+          v-for="earning in earnings"
           :key="earning.title"
-          :class="index > 0 ? 'mt-6' : ''"
         >
           <template #prepend>
             <VAvatar

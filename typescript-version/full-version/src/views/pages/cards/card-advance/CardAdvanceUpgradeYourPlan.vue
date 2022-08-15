@@ -151,10 +151,14 @@ const savedCards = [
   </VCard>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .plan-upgrade-banner {
   .plan-details {
     border: 1px solid rgb(var(--v-theme-primary));
   }
+}
+
+.card-list {
+  --v-card-list-gap: 0;
 }
 </style>

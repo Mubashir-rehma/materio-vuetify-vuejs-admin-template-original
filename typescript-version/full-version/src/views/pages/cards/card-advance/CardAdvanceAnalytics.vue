@@ -52,9 +52,8 @@ const analytics = [
     <VCardText>
       <VList class="card-list">
         <VListItem
-          v-for="(item, index) in analytics"
+          v-for="item in analytics"
           :key="item.title"
-          :class="index > 0 ? 'mt-6' : ''"
         >
           <template #prepend>
             <VAvatar :image="item.img.value" />

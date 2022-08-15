@@ -87,9 +87,8 @@ const withdraws = [
         <VCardText>
           <VList class="card-list">
             <VListItem
-              v-for="(deposit, index) in deposits"
+              v-for="deposit in deposits"
               :key="deposit.logo"
-              :class="index > 0 ? 'mt-8' : ''"
             >
               <template #prepend>
                 <VAvatar
@@ -144,9 +143,8 @@ const withdraws = [
         <VCardText>
           <VList class="card-list">
             <VListItem
-              v-for="(withdraw, index) in withdraws"
+              v-for="withdraw in withdraws"
               :key="withdraw.logo"
-              :class="index > 0 ? 'mt-8' : ''"
             >
               <template #prepend>
                 <VAvatar
@@ -180,3 +178,9 @@ const withdraws = [
     </VRow>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 2.1875rem;
+}
+</style>

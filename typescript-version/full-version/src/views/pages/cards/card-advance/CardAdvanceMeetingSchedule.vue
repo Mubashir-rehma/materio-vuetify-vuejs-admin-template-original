@@ -92,9 +92,8 @@ const meetingTypeUiColors: UiColors = {
         class="card-list"
       >
         <VListItem
-          v-for="(meeting, index) in meetingSchedules"
+          v-for="meeting in meetingSchedules"
           :key="meeting.type"
-          :class="index > 0 ? 'mt-8' : ''"
         >
           <!-- 👉 Avatar -->
           <template #prepend>
@@ -136,3 +135,9 @@ const meetingTypeUiColors: UiColors = {
     <!-- !SECTION -->
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 1.875rem;
+}
+</style>

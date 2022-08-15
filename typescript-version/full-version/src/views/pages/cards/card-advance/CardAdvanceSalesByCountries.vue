@@ -76,9 +76,8 @@ const salesByCountries = [
     <VCardText>
       <VList class="card-list">
         <VListItem
-          v-for="(data, index) in salesByCountries"
+          v-for="data in salesByCountries"
           :key="data.country"
-          :class="`${index > 0 ? 'mt-6' : ''}`"
         >
           <template #prepend>
             <VAvatar
@@ -121,3 +120,10 @@ const salesByCountries = [
     </VCardText>
   </VCard>
 </template>
+
+  <style lang="scss" scoped>
+  .card-list {
+    --v-card-list-gap: 1.3rem;
+  }
+  </style>
+

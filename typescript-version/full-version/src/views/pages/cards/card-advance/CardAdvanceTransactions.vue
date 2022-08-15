@@ -96,9 +96,8 @@ const formateAmount = (amount: number) => {
     <VCardText>
       <VList class="card-list">
         <VListItem
-          v-for="(transaction, index) in transactions"
+          v-for="transaction in transactions"
           :key="transaction.for"
-          :class="index > 0 ? 'mt-8' : ''"
         >
           <!-- 👉 Avatar -->
           <template #prepend>
@@ -138,3 +137,9 @@ const formateAmount = (amount: number) => {
     <!-- !SECTION -->
   </VCard>
 </template>
+
+ <style lang="scss" scoped>
+  .card-list {
+    --v-card-list-gap: 1.875rem;
+  }
+  </style>

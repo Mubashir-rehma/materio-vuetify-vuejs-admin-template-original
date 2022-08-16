@@ -19,10 +19,10 @@ const isPasswordVisible = ref(false)
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
     <VCard
-      class="auth-card pa-4"
+      class="auth-card pa-4 pt-7"
       max-width="448"
     >
-      <VCardItem>
+      <VCardItem class="justify-center">
         <template #prepend>
           <div class="d-flex">
             <VNodeRenderer :nodes="themeConfig.app.logo" />
@@ -34,8 +34,8 @@ const isPasswordVisible = ref(false)
         </VCardTitle>
       </VCardItem>
 
-      <VCardText>
-        <h5 class="text-h5 font-weight-semibold mb-3">
+      <VCardText class="pt-2">
+        <h5 class="text-h5 font-weight-semibold mb-1">
           Adventure starts here 🚀
         </h5>
         <p class="mb-0">
@@ -71,11 +71,7 @@ const isPasswordVisible = ref(false)
                 :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
-            </VCol>
-
-            <!-- agree -->
-            <VCol cols="12">
-              <div class="d-flex align-center">
+              <div class="d-flex align-center mt-1 mb-4">
                 <VCheckbox
                   id="privacy-policy"
                   v-model="form.privacyPolicies"
@@ -93,10 +89,7 @@ const isPasswordVisible = ref(false)
                   >privacy policy & terms</a>
                 </VLabel>
               </div>
-            </VCol>
 
-            <!-- login -->
-            <VCol cols="12">
               <VBtn
                 block
                 type="submit"
@@ -108,7 +101,7 @@ const isPasswordVisible = ref(false)
             <!-- login instead -->
             <VCol
               cols="12"
-              class="text-center"
+              class="text-center text-base"
             >
               <span>Already have an account?</span>
               <RouterLink

@@ -112,7 +112,7 @@ const faqs = [
 
 <template>
   <VCard class="pt-6">
-    <VCardText class="pt-12 mb-16">
+    <VCardText class="pt-12 mb-16 pb-16">
       <!-- 👉 App Pricing components -->
       <VRow>
         <VCol
@@ -157,8 +157,8 @@ const faqs = [
     </VRow>
 
     <!-- 👉 Plans -->
-    <VCardText class="text-center mt-12">
-      <h4 class="text-h5 font-weight-medium mb-2">
+    <VCardText class="text-center mt-16">
+      <h4 class="text-h5 mb-2">
         Pick a plan that works best for you
       </h4>
       <p>Stay cool, we have a 48-hour money back guarantee!</p>
@@ -172,26 +172,30 @@ const faqs = [
           md="10"
           class="mx-auto"
         >
-          <VTable class="text-no-wrap border rounded-lg">
+          <VTable class="text-no-wrap border rounded">
             <!-- 👉 Table head -->
             <thead>
               <tr>
                 <th class="py-4">
-                  <p class="text-base mb-1">
+                  <h6 class="text-xs font-weight-semibold mb-1">
                     FEATURES
-                  </p>
-                  <small class="text-caption">Native Front Features</small>
+                  </h6>
+                  <h6 class="font-weight-regular text-xs">
+                    Native Front Features
+                  </h6>
                 </th>
 
                 <th class="text-center py-4">
-                  <p class="text-base mb-1">
+                  <h6 class="text-xs font-weight-semibold mb-1">
                     BASIC
-                  </p>
-                  <small class="text-caption">FREE</small>
+                  </h6>
+                  <h6 class="font-weight-regular text-xs">
+                    FREE
+                  </h6>
                 </th>
 
                 <th class="text-center py-4">
-                  <p class="text-base mb-1">
+                  <h6 class="text-xs font-weight-semibold mb-1">
                     STANDARD
                     <VAvatar
                       size="22"
@@ -203,16 +207,20 @@ const faqs = [
                         icon="mdi-star"
                       />
                     </VAvatar>
-                  </p>
+                  </h6>
 
-                  <small class="text-caption">$7.5/MONTH</small>
+                  <h6 class="font-weight-regular text-xs">
+                    $7.5/MONTH
+                  </h6>
                 </th>
 
                 <th class="text-center py-4">
-                  <p class="text-base mb-1">
+                  <h6 class="text-xs font-weight-semibold mb-1">
                     ENTERPRISE
-                  </p>
-                  <small class="text-caption">$16/MONTH</small>
+                  </h6>
+                  <h6 class="font-weight-regular text-xs">
+                    $16/MONTH
+                  </h6>
                 </th>
               </tr>
             </thead>
@@ -327,9 +335,9 @@ const faqs = [
     <!-- 👉 FAQ -->
     <VCardText class="bg-var-theme-background py-16">
       <div class="text-center">
-        <h4 class="text-h4 font-weight-medium my-3">
+        <h5 class="text-h5 mb-2">
           FAQ's
-        </h4>
+        </h5>
         <p>
           Let us help answer the most common questions.
         </p>
@@ -350,7 +358,7 @@ const faqs = [
 <style lang="scss">
 .page-pricing-free-trial-banner-bg {
   /* stylelint-disable-next-line color-function-notation */
-  background-color: rgba(var(--v-theme-primary), var(--v-pressed-opacity));
+  background-color: rgba(var(--v-theme-primary), var(--v-idle-opacity));
 }
 
 @media screen and (min-width: 960px) {

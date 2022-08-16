@@ -11,12 +11,14 @@ const props = defineProps<Props>()
 <template>
   <div class="text-center mb-4">
     <!-- 👉 Title and subtitle -->
-    <h1 class="text-h1 font-weight-medium">
+    <h1 class="text-h1">
       {{ props.errorCode }}
     </h1>
-    <h5 class="text-h5 font-weight-medium mb-3">
+    <h5 class="text-h5 mb-1">
       {{ props.errorTitle }}
     </h5>
-    <p>{{ props.errorDescription }}</p>
+    <p class="text-sm">
+      {{ props.errorDescription }}
+    </p>
   </div>
 </template>

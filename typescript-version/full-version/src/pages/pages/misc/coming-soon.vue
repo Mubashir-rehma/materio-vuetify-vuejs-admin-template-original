@@ -11,10 +11,12 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
     <div>
       <!-- 👉 Title and subtitle -->
       <div class="text-center mb-8">
-        <h5 class="text-h5 font-weight-medium mb-3">
+        <h5 class="text-h5 mb-1">
           We are launching soon 🚀
         </h5>
-        <p>Our website is opening soon. Please register to get notified when it's ready!</p>
+        <p class="text-sm">
+          Our website is opening soon. Please register to get notified when it's ready!
+        </p>
       </div>
 
       <!-- 👉 Email input -->
@@ -24,20 +26,18 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
       >
         <VTextField
           v-model="email"
-          placeholder="Enter your email"
+          density="compact"
+          placeholder="Enter your email or username"
           class="misc-email-input"
         />
-        <VBtn
-          type="submit"
-          size="large"
-        >
+        <VBtn type="submit">
           Notify
         </VBtn>
       </VForm>
     </div>
 
     <!-- 👉 Image -->
-    <div class="misc-avatar w-100 mt-10">
+    <div class="misc-avatar w-100 mt-12">
       <VImg
         :src="dynamicImgImport('@/assets/images/pages/misc-coming-soon.png')"
         alt="Coming Soon"
@@ -54,7 +54,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <VImg
       :src="authThemeMask"
-      class="misc-footer-img d-none d-md-block"
+      class="misc-footer-img d-none d-md-block flip-in-rtl"
     />
   </div>
 </template>
@@ -68,9 +68,9 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 }
 
 .misc-footer-tree {
-  inline-size: 21.875rem;
-  inset-block-end: 0;
-  inset-inline-start: 0;
+  inline-size: 8rem;
+  inset-block-end: 6rem;
+  inset-inline-start: 0.375rem;
 }
 </style>
 

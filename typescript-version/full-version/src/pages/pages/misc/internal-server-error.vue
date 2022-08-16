@@ -37,7 +37,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <VImg
       :src="authThemeMask"
-      class="misc-footer-img d-none d-md-block"
+      class="misc-footer-img d-none d-md-block flip-in-rtl"
     />
   </div>
 </template>

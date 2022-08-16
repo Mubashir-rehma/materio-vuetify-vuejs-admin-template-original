@@ -1,3 +1,5 @@
+@use "@layouts/styles/mixins" as layoutsMixins;
+
 .misc-wrapper {
   display: flex;
   flex-direction: column;
@@ -20,4 +22,11 @@
 .misc-footer-tree {
   position: absolute;
   z-index: 1;
+}
+
+// for rtl only
+.flip-in-rtl {
+  @include layoutsMixins.rtl {
+    transform: scaleX(-1);
+  }
 }

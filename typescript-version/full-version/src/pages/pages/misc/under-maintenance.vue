@@ -8,10 +8,12 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
   <div class="misc-wrapper">
     <div class="text-center mb-4">
       <!-- 👉 Title and subtitle -->
-      <h5 class="text-h5 font-weight-medium mb-3">
+      <h5 class="text-h5 mb-1">
         Under Maintenance! 🚧
       </h5>
-      <p>Sorry for the inconvenience but we're performing some maintenance at the moment</p>
+      <p class="text-sm">
+        Sorry for the inconvenience but we're performing some maintenance at the moment
+      </p>
     </div>
 
     <!-- 👉 Image -->
@@ -38,7 +40,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <VImg
       :src="authThemeMask"
-      class="misc-footer-img d-none d-md-block"
+      class="misc-footer-img d-none d-md-block flip-in-rtl"
     />
   </div>
 </template>
@@ -47,8 +49,8 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 @use "@core/scss/pages/misc.scss";
 
 .misc-footer-tree {
-  inline-size: 15.625rem;
-  inset-block-end: 3.5rem;
+  inline-size: 17rem;
+  inset-block-end: 5.5rem;
   inset-inline-start: 0.375rem;
 }
 </style>

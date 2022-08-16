@@ -109,7 +109,7 @@ const onSubmit = () => {
           class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-3">
+            <h5 class="text-h5 font-weight-semibold mb-1">
               Welcome to {{ themeConfig.app.title }}! 👋🏻
             </h5>
             <p class="mb-0">
@@ -157,27 +157,20 @@ const onSubmit = () => {
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
-                </VCol>
 
-                <!-- remember & forgot password -->
-                <VCol
-                  cols="12"
-                  class="d-flex align-center flex-wrap"
-                >
-                  <VCheckbox
-                    v-model="rememberMe"
-                    label="Remember me"
-                  />
-                  <RouterLink
-                    class="text-primary ms-2 mb-1"
-                    :to="{ name: 'forgot-password' }"
-                  >
-                    Forgot Password?
-                  </RouterLink>
-                </VCol>
+                  <div class="d-flex align-center flex-wrap justify-space-between mt-1 mb-4">
+                    <VCheckbox
+                      v-model="rememberMe"
+                      label="Remember me"
+                    />
+                    <RouterLink
+                      class="text-primary ms-2 mb-1"
+                      :to="{ name: 'forgot-password' }"
+                    >
+                      Forgot Password?
+                    </RouterLink>
+                  </div>
 
-                <!-- login -->
-                <VCol cols="12">
                   <VBtn
                     block
                     type="submit"

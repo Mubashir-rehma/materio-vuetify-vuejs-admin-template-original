@@ -68,7 +68,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
           class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-3">
+            <h5 class="text-h5 font-weight-semibold mb-1">
               Welcome to {{ themeConfig.app.title }}! 👋🏻
             </h5>
             <p class="mb-0">
@@ -96,27 +96,20 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
-                </VCol>
 
-                <!-- remember & forgot password -->
-                <VCol
-                  cols="12"
-                  class="d-flex align-center flex-wrap"
-                >
-                  <VCheckbox
-                    v-model="form.remember"
-                    label="Remember me"
-                  />
-                  <RouterLink
-                    class="text-primary ms-2 mb-1"
-                    :to="{ name: 'pages-authentication-forgot-password-v2' }"
-                  >
-                    Forgot Password?
-                  </RouterLink>
-                </VCol>
+                  <div class="d-flex align-center flex-wrap justify-space-between mt-1 mb-4">
+                    <VCheckbox
+                      v-model="form.remember"
+                      label="Remember me"
+                    />
+                    <RouterLink
+                      class="text-primary ms-2 mb-1"
+                      :to="{ name: 'pages-authentication-forgot-password-v2' }"
+                    >
+                      Forgot Password?
+                    </RouterLink>
+                  </div>
 
-                <!-- login -->
-                <VCol cols="12">
                   <VBtn
                     block
                     type="submit"
@@ -128,7 +121,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
                 <!-- create account -->
                 <VCol
                   cols="12"
-                  class="text-center"
+                  class="text-center text-base"
                 >
                   <span>New on our platform?</span>
                   <RouterLink
@@ -138,6 +131,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
                     Create an account
                   </RouterLink>
                 </VCol>
+
                 <VCol
                   cols="12"
                   class="d-flex align-center"

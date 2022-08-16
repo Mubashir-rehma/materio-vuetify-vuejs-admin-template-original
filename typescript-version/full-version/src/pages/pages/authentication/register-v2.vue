@@ -48,7 +48,7 @@ const isPasswordVisible = ref(false)
         </div>
 
         <VImg
-          :width="300"
+          :width="150"
           :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
           class="auth-footer-start-tree"
         />
@@ -70,7 +70,7 @@ const isPasswordVisible = ref(false)
           class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-3">
+            <h5 class="text-h5 font-weight-semibold mb-1">
               Adventure starts here 🚀
             </h5>
             <p class="mb-0">
@@ -107,14 +107,8 @@ const isPasswordVisible = ref(false)
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
-                </VCol>
 
-                <!-- remember & forgot password -->
-                <VCol
-                  cols="12"
-                  class="d-flex align-center flex-wrap"
-                >
-                  <div class="d-flex align-center">
+                  <div class="d-flex align-center mt-1 mb-4">
                     <VCheckbox
                       id="privacy-policy"
                       v-model="form.privacyPolicies"
@@ -132,10 +126,7 @@ const isPasswordVisible = ref(false)
                       >privacy policy & terms</a>
                     </VLabel>
                   </div>
-                </VCol>
 
-                <!-- Register -->
-                <VCol cols="12">
                   <VBtn
                     block
                     type="submit"
@@ -147,7 +138,7 @@ const isPasswordVisible = ref(false)
                 <!-- create account -->
                 <VCol
                   cols="12"
-                  class="text-center"
+                  class="text-center text-base"
                 >
                   <span>Already have an account?</span>
                   <RouterLink

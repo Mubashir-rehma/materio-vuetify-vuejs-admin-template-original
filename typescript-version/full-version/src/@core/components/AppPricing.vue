@@ -66,7 +66,7 @@ const pricingPlans = [
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
-    <h4 class="text-h4 pricing-title font-weight-medium mb-4">
+    <h4 class="text-h4 pricing-title mb-4">
       Pricing Plans
     </h4>
     <p class="mb-0">
@@ -79,7 +79,7 @@ const pricingPlans = [
   <div class="d-flex align-center justify-center mx-auto mb-10">
     <VLabel
       for="pricing-plan-toggle"
-      class="me-3"
+      class="me-2 mb-2"
     >
       Monthly
     </VLabel>
@@ -108,7 +108,7 @@ const pricingPlans = [
         :class="plan.isPopular ? 'border-primary border-opacity-100' : ''"
       >
         <VCardText
-          style="height: 3.75rem;"
+          style="height: 4.125rem;"
           class="text-end"
         >
           <!-- 👉 Popular -->
@@ -126,11 +126,11 @@ const pricingPlans = [
           <VImg
             :height="120"
             :src="plan.logo"
-            class="mx-auto mb-3"
+            class="mx-auto mb-5"
           />
 
           <!-- 👉 Plan name -->
-          <h5 class="text-h5 font-weight-medium mb-2">
+          <h5 class="text-h5 mb-2">
             {{ plan.name }}
           </h5>
           <p class="mb-0">
@@ -142,10 +142,10 @@ const pricingPlans = [
         <VCardText class="position-relative text-center">
           <div class="d-flex justify-center align-center">
             <sup class="text-sm font-weight-medium me-1">$</sup>
-            <h1 class="text-5xl font-weight-bold text-primary">
+            <h1 class="text-5xl font-weight-medium text-primary">
               {{ annualMonthlyPlanPriceToggler ? Math.floor(Number(plan.yearlyPrice) / 12) : plan.monthlyPrice }}
             </h1>
-            <sub class="text-sm font-weight-medium ms-2 mt-4"> /month</sub>
+            <sub class="text-sm font-weight-medium ms-1 mt-4">/month</sub>
           </div>
 
           <!-- 👉 Annual Price -->
@@ -195,3 +195,9 @@ const pricingPlans = [
   </VRow>
   <!-- !SECTION  -->
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 0.75rem;
+}
+</style>

@@ -458,11 +458,11 @@ const openEditCardDialog = (cardDetails: cardDetails) => {
 </template>
 
 <style lang="scss">
-.pricing-title {
-  font-size: 1.625rem !important;
-}
-
 .pricing-dialog {
+  .pricing-title {
+    font-size: 1.625rem !important;
+  }
+
   .v-card {
     border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
     box-shadow: none;

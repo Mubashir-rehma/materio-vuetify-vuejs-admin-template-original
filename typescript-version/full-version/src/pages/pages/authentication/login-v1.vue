@@ -18,10 +18,10 @@ const isPasswordVisible = ref(false)
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
     <VCard
-      class="auth-card pa-4"
+      class="auth-card pa-4 pt-7"
       max-width="448"
     >
-      <VCardItem>
+      <VCardItem class="justify-center">
         <template #prepend>
           <div class="d-flex">
             <VNodeRenderer :nodes="themeConfig.app.logo" />
@@ -33,8 +33,8 @@ const isPasswordVisible = ref(false)
         </VCardTitle>
       </VCardItem>
 
-      <VCardText>
-        <h5 class="text-h5 font-weight-semibold mb-3">
+      <VCardText class="pt-2">
+        <h5 class="text-h5 font-weight-semibold mb-1">
           Welcome to {{ themeConfig.app.title }}! 👋🏻
         </h5>
         <p class="mb-0">
@@ -63,28 +63,23 @@ const isPasswordVisible = ref(false)
                 :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
-            </VCol>
 
-            <!-- remember & forgot password -->
-            <VCol
-              cols="12"
-              class="d-flex align-center flex-wrap"
-            >
-              <VCheckbox
-                v-model="form.remember"
-                label="Remember me"
-              />
+              <!-- remember me checkbox -->
+              <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
+                <VCheckbox
+                  v-model="form.remember"
+                  label="Remember me"
+                />
 
-              <RouterLink
-                class="text-primary ms-2 mb-1"
-                :to="{ name: 'pages-authentication-forgot-password-v1' }"
-              >
-                Forgot Password?
-              </RouterLink>
-            </VCol>
+                <RouterLink
+                  class="text-primary ms-2 mb-1"
+                  :to="{ name: 'pages-authentication-forgot-password-v1' }"
+                >
+                  Forgot Password?
+                </RouterLink>
+              </div>
 
-            <!-- login -->
-            <VCol cols="12">
+              <!-- login button -->
               <VBtn
                 block
                 type="submit"
@@ -96,7 +91,7 @@ const isPasswordVisible = ref(false)
             <!-- create account -->
             <VCol
               cols="12"
-              class="text-center"
+              class="text-center text-base"
             >
               <span>New on our platform?</span>
               <RouterLink

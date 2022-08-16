@@ -63,7 +63,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mas
           class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-3">
+            <h5 class="text-h5 font-weight-semibold mb-1">
               Forgot Password? 🔒
             </h5>
             <p class="mb-0">

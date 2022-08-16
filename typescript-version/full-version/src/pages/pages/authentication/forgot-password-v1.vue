@@ -15,10 +15,10 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
     <VCard
-      class="auth-card pa-4"
+      class="auth-card pa-4 pt-7"
       max-width="448"
     >
-      <VCardItem>
+      <VCardItem class="justify-center">
         <template #prepend>
           <div class="d-flex">
             <VNodeRenderer :nodes="themeConfig.app.logo" />
@@ -30,8 +30,8 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
         </VCardTitle>
       </VCardItem>
 
-      <VCardText>
-        <h5 class="text-h5 font-weight-semibold mb-3">
+      <VCardText class="pt-2">
+        <h5 class="text-h5 font-weight-semibold mb-1">
           Forgot Password? 🔒
         </h5>
         <p class="mb-0">

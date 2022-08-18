@@ -58,7 +58,7 @@ const plansList = [
       <VDivider class="my-3" />
 
       <VCardText class="px-15">
-        <p class="font-weight-medium text--primary mb-2">
+        <p class="font-weight-medium mb-2">
           User current plan is standard plan
         </p>
         <div class="d-flex justify-space-between flex-wrap">

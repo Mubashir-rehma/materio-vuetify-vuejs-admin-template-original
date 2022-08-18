@@ -150,19 +150,19 @@
 
               <div class="d-flex justify-space-between flex-column flex-sm-row gap-3">
                 <div class="text-sm-center">
-                  <p class="mb-1 text-base font-weight-semibold text--primary">
+                  <p class="mb-1 text-base font-weight-semibold">
                     Customer
                   </p>
                   <span>Micheal Scott</span>
                 </div>
                 <div class="text-sm-center">
-                  <p class="mb-1 text-base font-weight-semibold text--primary">
+                  <p class="mb-1 text-base font-weight-semibold">
                     Price
                   </p>
                   <span>$375.00</span>
                 </div>
                 <div class="text-sm-center">
-                  <p class="mb-1 text-base font-weight-semibold text--primary">
+                  <p class="mb-1 text-base font-weight-semibold">
                     Quantity
                   </p>
                   <span>1</span>

@@ -7,7 +7,7 @@
       <VCard>
         <VCardTitle>Common</VCardTitle>
         <VCardText>No ability is required to view this card</VCardText>
-        <VCardText class="primary--text">
+        <VCardText>
           This card is visible to both 'user' and 'admin'
         </VCardText>
       </VCard>

@@ -174,7 +174,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
                 />
                 <div>
-                  <p class="text--primary font-weight-medium mb-0">
+                  <p class="font-weight-medium mb-0">
                     Leona Watkins (Client)
                   </p>
                   <span>CEO of Kelly Group</span>
@@ -216,7 +216,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   icon="mdi-file-pdf-box"
                   class="me-1"
                 />
-                <span class="text--primary font-weight-semibold text-sm">invoice.pdf</span>
+                <span class="font-weight-semibold text-sm">invoice.pdf</span>
               </span>
             </VTimelineItem>
           </VTimeline>

@@ -117,7 +117,10 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 <template>
   <section v-if="invoices">
     <!-- 👉 Invoice Filters  -->
-    <VCard class="mb-6">
+    <VCard
+      title="Filters"
+      class="mb-6"
+    >
       <VCardText>
         <VRow>
           <!-- 👉 Status filter -->

@@ -69,11 +69,11 @@ const resolveUserRoleVariant = (role: string) => {
   if (role === 'author')
     return { color: 'warning', icon: 'mdi-cog-outline' }
   if (role === 'maintainer')
-    return { color: 'success', icon: 'mdi-database-outline' }
+    return { color: 'success', icon: 'mdi-chart-donut' }
   if (role === 'editor')
     return { color: 'info', icon: 'mdi-pencil-outline' }
   if (role === 'admin')
-    return { color: 'error', icon: 'mdi-dns-outline' }
+    return { color: 'error', icon: 'mdi-laptop' }
 
   return { color: 'primary', icon: 'mdi-account-outline' }
 }
@@ -286,7 +286,7 @@ const addNewUser = (userData: UserProperties) => {
               <div class="d-flex align-center">
                 <VAvatar
                   :class="`v-avatar-light-bg text-${resolveUserRoleVariant(user.role).color} me-3`"
-                  size="35"
+                  size="34"
                 >
                   <VImg
                     v-if="user.avatar"
@@ -296,29 +296,34 @@ const addNewUser = (userData: UserProperties) => {
                 </VAvatar>
 
                 <div class="d-flex flex-column">
-                  <RouterLink
-                    :to="{ name: 'user-view-id', params: { id: user.id } }"
-                    class="font-weight-medium"
-                    style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
-                  >
-                    {{ user.fullName }}
-                  </RouterLink>
-                  <span class="text-caption text-disabled">@{{ user.username }}</span>
+                  <h6 class="text-sm">
+                    <RouterLink
+                      :to="{ name: 'user-view-id', params: { id: user.id } }"
+                      class="font-weight-medium"
+                      style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
+                    >
+                      {{ user.fullName }}
+                    </RouterLink>
+                  </h6>
+                  <span class="text-xs text-medium-emphasis">@{{ user.username }}</span>
                 </div>
               </div>
             </td>
 
             <!-- 👉 Email -->
-            <td>{{ user.email }}</td>
+            <td class="text-medium-emphasis">
+              {{ user.email }}
+            </td>
 
             <!-- 👉 Role -->
             <td>
               <VIcon
                 :icon="resolveUserRoleVariant(user.role).icon"
                 :color="resolveUserRoleVariant(user.role).color"
+                :size="22"
                 class="me-3"
               />
-              <span class="text-capitalize">{{ user.role }}</span>
+              <span class="text-capitalize text-medium-emphasis">{{ user.role }}</span>
             </td>
 
             <!-- 👉 Plan -->
@@ -341,11 +346,14 @@ const addNewUser = (userData: UserProperties) => {
             <td>
               <VBtn
                 size="small"
-                color="secondary"
+                color="default"
                 variant="plain"
                 icon
               >
-                <VIcon icon="mdi-dots-vertical" />
+                <VIcon
+                  size="24"
+                  icon="mdi-dots-vertical"
+                />
 
                 <VMenu activator="parent">
                   <VList>
@@ -408,20 +416,22 @@ const addNewUser = (userData: UserProperties) => {
       <VCardText class="d-flex align-center flex-wrap justify-end gap-4 pa-2">
         <div
           class="d-flex align-center me-3"
-          style="width: 175px;"
+          style="width: 171px;"
         >
           <span class="text-no-wrap me-3">Rows per page:</span>
 
           <VSelect
             v-model="rowPerPage"
             density="compact"
-            variant="underlined"
+            variant="plain"
             :items="[10, 20, 30, 50]"
           />
         </div>
 
         <div class="d-flex align-center">
-          <span>{{ paginationData }}</span>
+          <h6 class="text-sm font-weight-regular">
+            {{ paginationData }}
+          </h6>
 
           <VPagination
             v-model="currentPage"

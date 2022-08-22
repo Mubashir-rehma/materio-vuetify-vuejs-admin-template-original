@@ -312,13 +312,13 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
       <!-- 👉 Rows per page -->
       <div
         class="d-flex align-center mx-3"
-        style="width: 175px;"
+        style="width: 171px;"
       >
         <span class="text-no-wrap me-3">Rows per page:</span>
 
         <VSelect
           v-model="rowPerPage"
-          variant="underlined"
+          variant="plain"
           :items="[10, 20, 30, 50]"
         />
       </div>

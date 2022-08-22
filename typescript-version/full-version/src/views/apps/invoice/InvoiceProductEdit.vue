@@ -86,25 +86,33 @@ watch(totalPrice, () => {
         cols="12"
         md="6"
       >
-        Item
+        <h6 class="text-sm">
+          Item
+        </h6>
       </VCol>
       <VCol
         cols="12"
         md="2"
       >
-        Cost
+        <h6 class="text-sm">
+          Cost
+        </h6>
       </VCol>
       <VCol
         cols="12"
         md="2"
       >
-        Hours
+        <h6 class="text-sm">
+          Hours
+        </h6>
       </VCol>
       <VCol
         cols="12"
         md="2"
       >
-        Price
+        <h6 class="text-sm">
+          Price
+        </h6>
       </VCol>
     </VRow>
   </div>

@@ -68,9 +68,9 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   if (status === 'Partial Payment')
     return { variant: 'warning', icon: 'mdi-chart-timeline-variant' }
   if (status === 'Paid')
-    return { variant: 'success', icon: 'mdi-check-circle-outline' }
+    return { variant: 'success', icon: 'mdi-check' }
   if (status === 'Downloaded')
-    return { variant: 'info', icon: 'mdi-download-circle-outline' }
+    return { variant: 'info', icon: 'mdi-arrow-down' }
   if (status === 'Draft')
     return { variant: 'secondary', icon: 'mdi-content-save-outline' }
   if (status === 'Sent')
@@ -198,7 +198,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
         <thead>
           <tr>
             <!-- 👉 Check/Uncheck all checkbox -->
-            <th class="text-start">
+            <th class="text-center">
               <div
                 class="mb-n2"
                 style="width: 1rem;"
@@ -210,25 +210,25 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 />
               </div>
             </th>
-            <th class="text-start">
+            <th>
               #ID
             </th>
-            <th class="text-start">
+            <th class="text-center">
               <VIcon icon="mdi-trending-up" />
             </th>
-            <th class="text-start">
+            <th>
               CLIENT
             </th>
-            <th class="text-start">
+            <th class="text-center">
               TOTAL
             </th>
-            <th class="text-start">
+            <th>
               DATE
             </th>
-            <th class="text-start">
+            <th class="text-center">
               BALANCE
             </th>
-            <th class="text-center">
+            <th>
               ACTIONS
             </th>
           </tr>
@@ -262,11 +262,11 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             </td>
 
             <!-- 👉 Trending -->
-            <td>
+            <td class="text-center">
               <VTooltip>
                 <template #activator="{ props }">
                   <VAvatar
-                    :size="30"
+                    :size="34"
                     v-bind="props"
                     :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant}`"
                   >
@@ -292,7 +292,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             <td>
               <div class="d-flex align-center">
                 <VAvatar
-                  size="33"
+                  size="34"
                   :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant} me-3`"
                 >
                   <VImg
@@ -311,41 +311,48 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             </td>
 
             <!-- 👉 total -->
-            <td>${{ invoice.total }}</td>
+            <td class="text-center">
+              ${{ invoice.total }}
+            </td>
 
             <!-- 👉 Date -->
-            <td>{{ invoice.issuedDate }}</td>
+            <td>
+              {{ invoice.issuedDate }}
+            </td>
 
             <!-- 👉 Balance -->
-            <td>
-              <VChip v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip">
+            <td class="text-center">
+              <VChip
+                v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip"
+                size="small"
+              >
                 {{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}
               </VChip>
             </td>
 
             <!-- 👉 Actions -->
-            <td class="text-center">
+            <td>
               <VBtn
+                icon
                 variant="text"
                 color="secondary"
-                icon
-                size="small"
+                size="x-small"
               >
                 <VIcon
                   icon="mdi-delete-outline"
-                  :size="20"
+                  :size="24"
                 />
               </VBtn>
 
               <VBtn
+                icon
                 variant="text"
                 color="secondary"
-                icon
-                size="small"
+                size="x-small"
                 :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
               >
                 <VIcon
-                  :size="20"
+                  :size="24"
                   icon="mdi-eye-outline"
                 />
               </VBtn>
@@ -354,10 +361,10 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 icon
                 variant="text"
                 color="secondary"
-                size="small"
+                size="x-small"
               >
                 <VIcon
-                  :size="20"
+                  :size="24"
                   icon="mdi-dots-vertical"
                 />
 
@@ -366,7 +373,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                     <VListItem value="download">
                       <template #prepend>
                         <VIcon
-                          size="20"
+                          size="24"
                           class="me-3"
                           icon="mdi-download-outline"
                         />
@@ -378,7 +385,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                     <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
                       <template #prepend>
                         <VIcon
-                          size="20"
+                          size="24"
                           class="me-3"
                           icon="mdi-pencil-outline"
                         />
@@ -389,7 +396,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                     <VListItem value="duplicate">
                       <template #prepend>
                         <VIcon
-                          size="20"
+                          size="24"
                           class="me-3"
                           icon="mdi-layers-outline"
                         />
@@ -425,20 +432,22 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
         <!-- 👉 Rows per page -->
         <div
           class="d-flex align-center me-3"
-          style="width: 175px;"
+          style="width: 171px;"
         >
           <span class="text-no-wrap me-3">Rows per page:</span>
           <VSelect
             v-model="rowPerPage"
             density="compact"
-            variant="underlined"
+            variant="plain"
             :items="[10, 20, 30, 50]"
           />
         </div>
 
         <!-- 👉 Pagination and pagination meta -->
         <div class="d-flex align-center">
-          <span>{{ paginationData }}</span>
+          <h6 class="text-sm font-weight-regular">
+            {{ paginationData }}
+          </h6>
 
           <VPagination
             v-model="currentPage"

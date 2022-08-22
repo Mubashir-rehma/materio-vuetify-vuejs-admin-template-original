@@ -85,9 +85,9 @@ const printInvoice = () => {
                 />
 
                 <!-- 👉 Title -->
-                <span class="font-weight-bold text-xl text-uppercase">
+                <h6 class="font-weight-bold text-xl text-uppercase">
                   {{ themeConfig.app.title }}
-                </span>
+                </h6>
               </div>
 
               <!-- 👉 Address -->
@@ -105,9 +105,9 @@ const printInvoice = () => {
             <!-- 👉 Right Content -->
             <div class="mb-4">
               <!-- 👉 Invoice ID -->
-              <p class="font-weight-medium text-xl mb-6">
+              <h6 class="font-weight-medium text-xl mb-6">
                 Invoice #{{ invoiceData.id }}
-              </p>
+              </h6>
 
               <!-- 👉 Issue Date -->
               <p class="mb-2">
@@ -129,9 +129,9 @@ const printInvoice = () => {
           <!-- 👉 Payment Details -->
           <VCardText class="d-flex justify-space-between flex-wrap flex-column flex-sm-row print-row">
             <div class="my-4">
-              <p class="font-weight-semibold">
+              <h6 class="text-sm font-weight-semibold mb-3">
                 Invoice To:
-              </p>
+              </h6>
               <p class="mb-1">
                 {{ invoiceData.client.name }}
               </p>
@@ -150,9 +150,9 @@ const printInvoice = () => {
             </div>
 
             <div class="my-4">
-              <p class="font-weight-semibold">
+              <h6 class="text-sm font-weight-semibold mb-3">
                 Bill To:
-              </p>
+              </h6>
               <table>
                 <tr>
                   <td class="pe-6">
@@ -199,6 +199,8 @@ const printInvoice = () => {
           </VCardText>
 
           <!-- 👉 Table -->
+          <VDivider />
+
           <VTable>
             <thead>
               <tr>
@@ -240,23 +242,30 @@ const printInvoice = () => {
             </tbody>
           </VTable>
 
+          <VDivider class="my-2" />
+
           <!-- Total -->
           <VCardText class="d-flex justify-space-between flex-column flex-sm-row print-row">
             <div class="mb-2">
-              <p class="mb-1">
-                <span class="font-weight-semibold">Salesperson:</span> <span>Jenny Parker</span>
-              </p>
+              <div class="d-flex align-center mb-1">
+                <h6 class="text-sm font-weight-semibold me-1">
+                  Salesperson:
+                </h6>
+                <span>Jenny Parker</span>
+              </div>
               <p>Thanks for your business</p>
             </div>
 
             <div>
-              <table>
+              <table class="w-100">
                 <tr>
                   <td class="pe-16">
                     Subtotal:
                   </td>
                   <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-                    $1800
+                    <h6 class="text-sm">
+                      $1800
+                    </h6>
                   </th>
                 </tr>
                 <tr>
@@ -264,7 +273,9 @@ const printInvoice = () => {
                     Discount:
                   </td>
                   <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-                    $28
+                    <h6 class="text-sm">
+                      $28
+                    </h6>
                   </th>
                 </tr>
                 <tr>
@@ -272,7 +283,9 @@ const printInvoice = () => {
                     Tax:
                   </td>
                   <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-                    21%
+                    <h6 class="text-sm">
+                      21%
+                    </h6>
                   </th>
                 </tr>
               </table>
@@ -285,26 +298,27 @@ const printInvoice = () => {
                     Total:
                   </td>
                   <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-                    $1690
+                    <h6 class="text-sm">
+                      $1690
+                    </h6>
                   </th>
                 </tr>
               </table>
             </div>
           </VCardText>
 
-          <VDivider />
+          <VDivider class="mt-2" />
 
           <VCardText>
-            <p>
-              <span class="font-weight-semibold">Note: </span>
+            <div class="d-flex">
+              <h6 class="text-sm font-weight-semibold me-1">
+                Note:
+              </h6>
               <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</span>
-            </p>
+            </div>
 
-            <div class="text-end d-print-none mt-10">
-              <VBtn
-                class="me-3"
-                @click="printInvoice"
-              >
+            <div class="d-flex flex-wrap justify-end d-print-none gap-4 mt-10">
+              <VBtn @click="printInvoice">
                 Print
               </VBtn>
               <VBtn color="success">

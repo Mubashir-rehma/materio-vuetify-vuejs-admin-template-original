@@ -57,9 +57,9 @@ const removeProduct = (id: number) => {
           />
 
           <!-- 👉 Title -->
-          <span class="font-weight-bold text-xl text-uppercase">
+          <h6 class="font-weight-bold text-xl text-uppercase">
             {{ themeConfig.app.title }}
-          </span>
+          </h6>
         </div>
 
         <!-- 👉 Address -->
@@ -77,7 +77,7 @@ const removeProduct = (id: number) => {
       <!-- 👉 Right Content -->
       <div class="mb-3">
         <!-- 👉 Invoice Id -->
-        <p class="d-flex align-center font-weight-medium justify-sm-end text-xl mb-3">
+        <h6 class="d-flex align-center font-weight-medium justify-sm-end text-xl mb-3">
           <span class="me-3">Invoice:</span>
           <span>
             <VTextField
@@ -88,7 +88,7 @@ const removeProduct = (id: number) => {
               style="width: 8rem;"
             />
           </span>
-        </p>
+        </h6>
 
         <!-- 👉 Issue Date -->
         <p class="d-flex align-center justify-sm-end mb-3">
@@ -97,7 +97,7 @@ const removeProduct = (id: number) => {
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
-              style="width: 8rem;"
+              style="width: 8.5rem;"
             />
           </span>
         </p>
@@ -109,7 +109,7 @@ const removeProduct = (id: number) => {
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
-              style="width: 8rem;"
+              style="width: 8.5rem;"
             />
           </span>
         </p>
@@ -124,9 +124,9 @@ const removeProduct = (id: number) => {
         class="mb-4 mb-sm-0"
         style="width: 15.5rem;"
       >
-        <p class="font-weight-medium">
+        <h6 class="text-sm font-weight-medium mb-3">
           Invoice To:
-        </p>
+        </h6>
 
         <VSelect
           v-model="props.data.invoice.client"
@@ -159,9 +159,10 @@ const removeProduct = (id: number) => {
       </div>
 
       <div>
-        <p class="font-weight-medium">
+        <h6 class="text-sm font-weight-medium mb-3">
           Bill To:
-        </p>
+        </h6>
+
         <table>
           <tbody>
             <tr>
@@ -224,13 +225,15 @@ const removeProduct = (id: number) => {
       </VBtn>
     </VCardText>
 
-    <VDivider />
+    <VDivider class="my-2" />
 
     <!-- 👉 Total Amount -->
     <VCardText class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
       <div class="mb-6 mb-sm-0">
         <div class="d-flex align-center mb-4">
-          <span class="font-weight-semibold me-2">Salesperson:</span>
+          <h6 class="text-sm font-weight-semibold me-2">
+            Salesperson:
+          </h6>
           <VTextField
             v-model="props.data.salesperson"
             style="width: 8rem;"
@@ -250,7 +253,9 @@ const removeProduct = (id: number) => {
               Subtotal:
             </td>
             <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-              $1800
+              <h6 class="text-sm">
+                $1800
+              </h6>
             </th>
           </tr>
           <tr>
@@ -258,7 +263,9 @@ const removeProduct = (id: number) => {
               Discount:
             </td>
             <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-              $28
+              <h6 class="text-sm">
+                $28
+              </h6>
             </th>
           </tr>
           <tr>
@@ -266,7 +273,9 @@ const removeProduct = (id: number) => {
               Tax:
             </td>
             <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-              21%
+              <h6 class="text-sm">
+                21%
+              </h6>
             </th>
           </tr>
         </table>
@@ -277,14 +286,16 @@ const removeProduct = (id: number) => {
           <tr>
             <td>Total:</td>
             <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-              $1690
+              <h6 class="text-sm">
+                $1690
+              </h6>
             </th>
           </tr>
         </table>
       </div>
     </VCardText>
 
-    <VDivider />
+    <VDivider class="mt-2" />
 
     <VCardText>
       <p class="font-weight-semibold mb-2">
@@ -293,7 +304,6 @@ const removeProduct = (id: number) => {
       <VTextarea
         v-model="props.data.note"
         :rows="2"
-        auto-grow
       />
     </VCardText>
   </VCard>

@@ -171,12 +171,9 @@ const onFormSubmit = () => {
             <!-- 👉 Submit and Cancel -->
             <VCol
               cols="12"
-              class="text-center"
+              class="d-flex flex-wrap justify-center gap-4"
             >
-              <VBtn
-                type="submit"
-                class="me-3"
-              >
+              <VBtn type="submit">
                 Submit
               </VBtn>
 

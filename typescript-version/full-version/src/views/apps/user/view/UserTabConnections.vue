@@ -148,6 +148,7 @@ const socialAccounts = ref([
                   color="secondary"
                   variant="tonal"
                   size="small"
+                  class="rounded"
                 >
                   <VIcon
                     size="20"

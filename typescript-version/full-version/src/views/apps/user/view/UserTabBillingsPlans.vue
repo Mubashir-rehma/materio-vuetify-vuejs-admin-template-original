@@ -184,6 +184,7 @@ const currentBillingAddress = {
                 <VImg
                   :src="card.image"
                   :width="60"
+                  :height="25"
                 />
                 <h4 class="text-base my-3">
                   {{ card.name }}
@@ -217,7 +218,7 @@ const currentBillingAddress = {
                     Delete
                   </VBtn>
                 </div>
-                <span class="mt-sm-auto mb-sm-0 my-5 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
+                <span class="my-5 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
               </div>
             </VCardText>
           </VCard>
@@ -247,9 +248,9 @@ const currentBillingAddress = {
               <VTable class="billing-address-table">
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       Company Name:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -259,9 +260,9 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       Billing Email:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -271,9 +272,9 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       Tax ID:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -283,9 +284,9 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       VAT Number:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -295,9 +296,9 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td class="d-flex align-baseline">
-                    <p class="text-no-wrap font-weight-medium mb-0">
+                    <h6 class="text-sm text-no-wrap">
                       Billing Address:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2 mb-0">
@@ -315,9 +316,9 @@ const currentBillingAddress = {
               <VTable class="billing-address-table">
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       Contact:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -327,9 +328,9 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       Country:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -339,9 +340,9 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap mb-4">
                       State:
-                    </p>
+                    </h6>
                   </td>
                   <td>
                     <p class="text-body-2">
@@ -351,12 +352,12 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <p class="text-no-wrap font-weight-medium">
+                    <h6 class="text-sm text-no-wrap">
                       Zip Code:
-                    </p>
+                    </h6>
                   </td>
                   <td>
-                    <p class="text-body-2">
+                    <p class="text-body-2 mb-0">
                       {{ currentBillingAddress.zipCode }}
                     </p>
                   </td>
@@ -396,7 +397,7 @@ const currentBillingAddress = {
 .billing-address-table {
   tr {
     td:first-child {
-      inline-size: 9.25rem;
+      inline-size: 148px;
     }
   }
 }

@@ -117,10 +117,9 @@ const formSubmit = () => {
             <!-- 👉 Card actions -->
             <VCol
               cols="12"
-              class="text-center"
+              class="d-flex flex-wrap justify-center gap-4"
             >
               <VBtn
-                class="me-3"
                 type="submit"
                 @click="formSubmit"
               >

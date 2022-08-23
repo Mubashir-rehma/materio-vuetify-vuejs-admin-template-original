@@ -58,20 +58,21 @@ const resetPhoneNumber = () => {
             class="mb-4"
           />
 
-          <VBtn
-            type="submit"
-            class="me-3"
-            @click="formSubmit"
-          >
-            Submit
-          </VBtn>
-          <VBtn
-            color="secondary"
-            variant="tonal"
-            @click="resetPhoneNumber"
-          >
-            Cancel
-          </VBtn>
+          <div class="d-flex flex-wrap justify-center gap-4">
+            <VBtn
+              type="submit"
+              @click="formSubmit"
+            >
+              Submit
+            </VBtn>
+            <VBtn
+              color="secondary"
+              variant="tonal"
+              @click="resetPhoneNumber"
+            >
+              Cancel
+            </VBtn>
+          </div>
         </VForm>
       </VCardText>
     </VCard>

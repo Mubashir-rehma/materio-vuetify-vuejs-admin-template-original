@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import BillingHistoryTable from './BillingHistoryTable.vue'
 
-interface cardDetails {
+interface CardDetails {
   name: string
   number: string
   expiry: string
@@ -17,7 +17,7 @@ const isConfirmDialogVisible = ref(false)
 const isCardEditDialogVisible = ref(false)
 const isCardDetailSaveBilling = ref(false)
 
-const creditCards: cardDetails[] = [
+const creditCards: CardDetails[] = [
   {
     name: 'Tom McBride',
     number: '5531234567899856',
@@ -42,7 +42,7 @@ const countryList = ['United States', 'Canada', 'United Kingdom', 'Australia', '
 
 const currentCardDetails = ref()
 
-const openEditCardDialog = (cardDetails: cardDetails) => {
+const openEditCardDialog = (cardDetails: CardDetails) => {
   currentCardDetails.value = cardDetails
 
   isCardEditDialogVisible.value = true

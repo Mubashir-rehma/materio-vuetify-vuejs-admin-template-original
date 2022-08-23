@@ -31,7 +31,7 @@ const plansList = [
       :width="$vuetify.display.smAndDown ? 'auto' : 650"
     >
       <VCardItem class="text-center">
-        <VCardTitle class="text-h5">
+        <VCardTitle class="text-h5 mb-5">
           Upgrade Plan
         </VCardTitle>
 
@@ -64,10 +64,10 @@ const plansList = [
         <div class="d-flex justify-space-between flex-wrap">
           <div class="d-flex align-center me-3">
             <sup class="text-primary">$</sup>
-            <h3 class="text-h3 font-weight-bold text-primary">
+            <h3 class="text-h3 font-weight-semibold text-primary">
               99
             </h3>
-            <sub class="text-body-1 font-weight-light mt-3">/ month</sub>
+            <sub class="text-body-1 mt-3">/ month</sub>
           </div>
           <VBtn
             color="error"

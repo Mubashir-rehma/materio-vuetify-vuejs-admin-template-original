@@ -48,10 +48,8 @@ const recentDevices = [
             color="warning"
             class="mb-6"
           >
-            <p class="font-weight-semibold mb-0">
-              Ensure that these requirements are met
-            </p>
-            <span class="text-body-2 text-warning">Minimum 8 characters long, uppercase & symbol</span>
+            <VAlertTitle>Ensure that these requirements are met</VAlertTitle>
+            <span>Minimum 8 characters long, uppercase & symbol</span>
           </VAlert>
 
           <VForm @submit.prevent="() => {}">
@@ -98,7 +96,7 @@ const recentDevices = [
       >
         <VCardText>
           <div>
-            <h4 class="font-weight-medium mb-1">
+            <h4 class="font-weight-semibold mb-1">
               SMS
             </h4>
             <VTextField
@@ -107,11 +105,29 @@ const recentDevices = [
               readonly
             >
               <template #append-inner>
-                <VIcon
-                  icon="mdi-square-edit-outline"
-                  @click="isTwoFactorDialogOpen = true"
-                />
-                <VIcon icon="mdi-delete-outline" />
+                <VBtn
+                  icon
+                  size="x-small"
+                  color="default"
+                  variant="plain"
+                >
+                  <VIcon
+                    size="24"
+                    icon="mdi-square-edit-outline"
+                    @click="isTwoFactorDialogOpen = true"
+                  />
+                </VBtn>
+                <VBtn
+                  icon
+                  size="x-small"
+                  color="default"
+                  variant="plain"
+                >
+                  <VIcon
+                    size="24"
+                    icon="mdi-delete-outline"
+                  />
+                </VBtn>
               </template>
             </VTextField>
           </div>
@@ -154,11 +170,17 @@ const recentDevices = [
                 <span class="font-weight-medium">{{ device.browser }}</span>
               </td>
 
-              <td>{{ device.device }}</td>
+              <td class="text-medium-emphasis">
+                {{ device.device }}
+              </td>
 
-              <td>{{ device.location }}</td>
+              <td class="text-medium-emphasis">
+                {{ device.location }}
+              </td>
 
-              <td>{{ device.activity }}</td>
+              <td class="text-medium-emphasis">
+                {{ device.activity }}
+              </td>
             </tr>
           </tbody>
         </VTable>

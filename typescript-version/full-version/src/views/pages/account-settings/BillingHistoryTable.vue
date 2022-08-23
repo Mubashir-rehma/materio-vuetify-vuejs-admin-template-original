@@ -63,9 +63,9 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   if (status === 'Partial Payment')
     return { variant: 'warning', icon: 'mdi-chart-timeline-variant' }
   if (status === 'Paid')
-    return { variant: 'success', icon: 'mdi-check-circle-outline' }
+    return { variant: 'success', icon: 'mdi-check' }
   if (status === 'Downloaded')
-    return { variant: 'info', icon: 'mdi-download-circle-outline' }
+    return { variant: 'info', icon: 'mdi-arrow-down' }
   if (status === 'Draft')
     return { variant: 'secondary', icon: 'mdi-content-save-outline' }
   if (status === 'Sent')
@@ -123,26 +123,26 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
       <!-- 👉 Table head -->
       <thead>
         <tr>
-          <th class="text-start">
+          <th>
             #ID
           </th>
-          <th class="text-start">
+          <th>
             <VIcon icon="mdi-trending-up" />
           </th>
-          <th class="text-start">
+          <th>
             CLIENT
           </th>
-          <th class="text-start">
+          <th>
             TOTAL
           </th>
-          <th class="text-start">
+          <th>
             ISSUED DATE
           </th>
-          <th class="text-start">
+          <th>
             BALANCE
           </th>
-          <th class="text-center">
-            ACTIONS
+          <th>
+            <span class="ms-2">ACTIONS</span>
           </th>
         </tr>
       </thead>
@@ -223,48 +223,48 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           </td>
 
           <!-- 👉 Actions -->
-          <td class="text-center">
+          <td style="width: 150px;">
             <VBtn
-              variant="text"
-              color="secondary"
               icon
-              size="small"
+              variant="plain"
+              color="default"
+              size="x-small"
             >
               <VIcon
                 icon="mdi-delete-outline"
-                :size="20"
+                :size="24"
               />
             </VBtn>
 
             <VBtn
-              variant="text"
-              color="secondary"
               icon
-              size="small"
+              variant="plain"
+              color="default"
+              size="x-small"
               :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
             >
               <VIcon
-                :size="20"
+                :size="24"
                 icon="mdi-eye-outline"
               />
             </VBtn>
 
             <VBtn
               icon
-              variant="text"
-              color="secondary"
-              size="small"
+              variant="plain"
+              color="default"
+              size="x-small"
             >
               <VIcon
-                :size="20"
+                :size="24"
                 icon="mdi-dots-vertical"
               />
               <VMenu activator="parent">
-                <VList>
+                <VList density="compact">
                   <VListItem value="#">
                     <template #prepend>
                       <VIcon
-                        size="20"
+                        size="24"
                         class="me-3"
                         icon="mdi-download-outline"
                       />
@@ -276,7 +276,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                   <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
                     <template #prepend>
                       <VIcon
-                        size="20"
+                        size="24"
                         class="me-3"
                         icon="mdi-pencil-outline"
                       />
@@ -287,7 +287,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                   <VListItem value="#">
                     <template #prepend>
                       <VIcon
-                        size="20"
+                        size="24"
                         class="me-3"
                         icon="mdi-layers-outline"
                       />
@@ -323,13 +323,13 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
       <!-- 👉 Rows per page -->
       <div
         class="d-flex align-center me-3"
-        style="width: 175px;"
+        style="width: 171px;"
       >
         <span class="text-no-wrap me-3">Rows per page:</span>
 
         <VSelect
           v-model="rowPerPage"
-          variant="underlined"
+          variant="plain"
           :items="[10, 20, 30, 50]"
         />
       </div>

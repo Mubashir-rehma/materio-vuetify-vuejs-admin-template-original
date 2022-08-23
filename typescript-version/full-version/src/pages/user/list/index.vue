@@ -345,7 +345,7 @@ const addNewUser = (userData: UserProperties) => {
             <!-- 👉 Actions -->
             <td>
               <VBtn
-                size="small"
+                size="x-small"
                 color="default"
                 variant="plain"
                 icon

@@ -68,14 +68,15 @@ const checkAll = computed({
               Add event
             </VBtn>
             <div>
-              <p class="text-xs text-uppercase text-medium-emphasis">
+              <p class="text-sm text-uppercase text-medium-emphasis">
                 Calendars
               </p>
               <VCheckbox
                 v-model="checkAll"
                 label="View all"
+                class="ms-n2"
               />
-              <div class="d-flex flex-column">
+              <div class="d-flex flex-column ms-n2">
                 <VCheckbox
                   v-for="calendar in store.availableCalendars"
                   :key="calendar.label"

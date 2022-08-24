@@ -2,7 +2,7 @@
 const navigationTab = ref('ITEM ONE')
 const navigationTab2 = ref('ITEM ONE')
 const tabItems = ['ITEM ONE', 'ITEM TWO', 'ITEM THREE']
-const tabContent = 'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards…'
+const tabContent = 'Although cards can support multiple actions, UI controls, and an overflow menu, use restraint and remember that cards...'
 </script>
 
 <template>

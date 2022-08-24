@@ -17,6 +17,25 @@ function toPascalCase(str) {
     .join('')
 }
 
+function findDemoElement(node) {
+  let el = null
+  node.children.forEach(child => {
+    if (child.children && child.children.length) {
+      const r = findDemoElement(child)
+      if (r)
+        el = r
+    }
+
+    else {
+      const r = child.type === 'VElement' && child.name.startsWith('demo')
+      if (r)
+        el = child
+    }
+  })
+
+  return el
+}
+
 // ------------------------------------------------------------------------------
 // Rule Definition
 // ------------------------------------------------------------------------------
@@ -43,7 +62,7 @@ module.exports = {
 
         const pascalCaseTitle = toPascalCase(titleValue)
 
-        const demoNode = node.children.find(child => child.type === 'VElement' && child.name.startsWith('demo'))
+        const demoNode = findDemoElement(node)
         const demoNodeSfcName = demoNode.rawName
         const pattern = new RegExp(`Demo[a-zA-z]+${pascalCaseTitle}`)
         const demoSfcMatch = demoNodeSfcName.search(pattern)

@@ -33,7 +33,7 @@ const notifications = ref([
     subtitle="You will receive notification for the below selected items."
     class="user-tab-notification"
   >
-    <VTable>
+    <VTable class="text-no-wrap">
       <thead>
         <tr>
           <th>TYPE</th>
@@ -73,13 +73,8 @@ const notifications = ref([
 
     <VDivider />
 
-    <VCardText>
-      <VBtn
-        color="primary"
-        class="me-3"
-      >
-        save changes
-      </VBtn>
+    <VCardText class="d-flex flex-wrap gap-4">
+      <VBtn>Save changes</VBtn>
       <VBtn
         color="secondary"
         variant="tonal"

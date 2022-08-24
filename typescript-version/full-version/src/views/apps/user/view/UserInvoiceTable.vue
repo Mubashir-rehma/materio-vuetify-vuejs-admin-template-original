@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Invoice } from '@/@fake-db/types'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
-import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
 const invoiceListStore = useInvoiceStore()
@@ -47,25 +46,14 @@ const paginationData = computed(() => {
   return `${firstIndex}-${lastIndex} of ${totalInvoices.value}`
 })
 
-// 👉 Invoice balance variant resolver
-const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {
-  if (balance === total)
-    return { status: 'Unpaid', chip: { color: 'error' } }
-
-  if (balance === 0)
-    return { status: 'Paid', chip: { color: 'success' } }
-
-  return { status: balance, chip: { variant: 'text' } }
-}
-
 // 👉 Invoice status variant resolver
 const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   if (status === 'Partial Payment')
     return { variant: 'warning', icon: 'mdi-chart-timeline-variant' }
   if (status === 'Paid')
-    return { variant: 'success', icon: 'mdi-check-circle-outline' }
+    return { variant: 'success', icon: 'mdi-check' }
   if (status === 'Downloaded')
-    return { variant: 'info', icon: 'mdi-download-circle-outline' }
+    return { variant: 'info', icon: 'mdi-arrow-down' }
   if (status === 'Draft')
     return { variant: 'secondary', icon: 'mdi-content-save-outline' }
   if (status === 'Sent')
@@ -91,7 +79,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         >
           Export
           <VMenu activator="parent">
-            <VList>
+            <VList density="compact">
               <VListItem
                 v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
                 :key="index"
@@ -112,26 +100,18 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
       <!-- 👉 Table head -->
       <thead>
         <tr>
-          <th class="text-start">
-            #ID
-          </th>
-          <th class="text-start">
+          <th>#ID</th>
+          <th>
             <VIcon icon="mdi-trending-up" />
           </th>
-          <th class="text-start">
-            CLIENT
-          </th>
-          <th class="text-start">
+          <th class="text-center">
             TOTAL
           </th>
-          <th class="text-start">
+          <th class="text-center">
             ISSUED DATE
           </th>
-          <th class="text-start">
-            BALANCE
-          </th>
-          <th class="text-center">
-            ACTIONS
+          <th>
+            <span class="ms-2">ACTIONS</span>
           </th>
         </tr>
       </thead>
@@ -176,84 +156,59 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
             </VTooltip>
           </td>
 
-          <!-- 👉 Client Avatar and Email -->
-          <td>
-            <div class="d-flex align-center">
-              <VAvatar
-                size="33"
-                :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant} me-3`"
-              >
-                <VImg
-                  v-if="invoice.avatar.length"
-                  :src="invoice.avatar"
-                />
-                <span v-else>{{ avatarText(invoice.client.name) }}</span>
-              </VAvatar>
-              <div class="d-flex flex-column">
-                <h6 class="text-sm font-weight-medium mb-0">
-                  {{ invoice.client.name }}
-                </h6>
-                <span class="text-caption">{{ invoice.client.companyEmail }}</span>
-              </div>
-            </div>
+          <!-- 👉 total -->
+          <td class="text-center">
+            ${{ invoice.total }}
           </td>
 
-          <!-- 👉 total -->
-          <td>${{ invoice.total }}</td>
-
           <!-- 👉 Date -->
-          <td>{{ invoice.issuedDate }}</td>
-
-          <!-- 👉 Balance -->
-          <td>
-            <VChip v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip">
-              {{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}
-            </VChip>
+          <td class="text-center">
+            {{ invoice.issuedDate }}
           </td>
 
           <!-- 👉 Actions -->
-          <td class="text-center">
+          <td style="width: 150px ;">
             <VBtn
-              variant="text"
-              color="secondary"
               icon
-              size="small"
+              variant="plain"
+              color="default"
+              size="x-small"
             >
               <VIcon
                 icon="mdi-delete-outline"
-                :size="20"
+                :size="24"
               />
             </VBtn>
 
             <VBtn
-              variant="text"
-              color="secondary"
               icon
-              size="small"
+              variant="plain"
+              color="default"
+              size="x-small"
               :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
             >
               <VIcon
-                :size="20"
+                :size="24"
                 icon="mdi-eye-outline"
               />
             </VBtn>
 
             <VBtn
               icon
-              variant="text"
-              color="secondary"
-              size="small"
+              variant="plain"
+              color="default"
+              size="x-small"
             >
               <VIcon
-                :size="20"
+                :size="24"
                 icon="mdi-dots-vertical"
               />
               <VMenu activator="parent">
-                <VList>
+                <VList density="compact">
                   <VListItem value="Download">
                     <template #prepend>
                       <VIcon
-                        size="20"
+                        size="22"
                         class="me-3"
                         icon="mdi-download-outline"
                       />
@@ -265,7 +220,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                   <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
                     <template #prepend>
                       <VIcon
-                        size="20"
+                        size="22"
                         class="me-3"
                         icon="mdi-pencil-outline"
                       />
@@ -276,7 +231,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                   <VListItem value="Duplicate">
                     <template #prepend>
                       <VIcon
-                        size="20"
+                        size="22"
                         class="me-3"
                         icon="mdi-layers-outline"
                       />
@@ -308,10 +263,10 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
     <VDivider />
 
     <!-- SECTION Pagination -->
-    <VCardText class="d-flex flex-wrap justify-end justify-sm-space-between gap-4 pa-2">
+    <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
       <!-- 👉 Rows per page -->
       <div
-        class="d-flex align-center mx-3"
+        class="d-flex align-center ms-3"
         style="width: 171px;"
       >
         <span class="text-no-wrap me-3">Rows per page:</span>

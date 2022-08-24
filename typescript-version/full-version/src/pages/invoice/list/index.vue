@@ -334,8 +334,8 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             <td>
               <VBtn
                 icon
-                variant="text"
-                color="secondary"
+                variant="plain"
+                color="default"
                 size="x-small"
               >
                 <VIcon
@@ -346,8 +346,8 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
               <VBtn
                 icon
-                variant="text"
-                color="secondary"
+                variant="plain"
+                color="default"
                 size="x-small"
                 :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
               >
@@ -359,8 +359,8 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
               <VBtn
                 icon
-                variant="text"
-                color="secondary"
+                variant="plain"
+                color="default"
                 size="x-small"
               >
                 <VIcon

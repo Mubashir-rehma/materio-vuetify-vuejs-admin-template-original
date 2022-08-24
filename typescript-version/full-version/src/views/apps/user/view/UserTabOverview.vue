@@ -95,7 +95,7 @@ const resolveUserProgressVariant = (progress: number) => {
             >
               <td class="d-flex align-center">
                 <VAvatar
-                  :size="32"
+                  :size="34"
                   class="me-3"
                   :image="project.logo"
                 />
@@ -103,7 +103,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   <p class="font-weight-medium mb-0">
                     {{ project.name }}
                   </p>
-                  <p class="text-caption text-disabled mb-0">
+                  <p class="text-xs text-medium-emphasis mb-0">
                     {{ project.project }}
                   </p>
                 </div>
@@ -120,7 +120,9 @@ const resolveUserProgressVariant = (progress: number) => {
                   :color="resolveUserProgressVariant(project.progress)"
                 />
               </td>
-              <td>{{ project.hours }}</td>
+              <td class="text-medium-emphasis">
+                {{ project.hours }}
+              </td>
             </tr>
           </tbody>
         </VTable>
@@ -142,14 +144,25 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="font-weight-medium me-1">
-                  User login
+                <h4 class="text-base font-weight-semibold me-1 mb-3">
+                  12 Invoices have been paid
                 </h4>
-                <small class="text-xs text-no-wrap">12 min ago</small>
+                <span class="text-sm text-disabled text-no-wrap">12 min ago</span>
               </div>
-              <p class="mb-0">
-                User login at 2:12pm
+              <p class="mb-2">
+                Invoices have been paid to the company
               </p>
+              <div class="d-flex align-center mt-2">
+                <VIcon
+                  color="error"
+                  icon="mdi-file-pdf-box"
+                  size="24"
+                  class="me-2"
+                />
+                <h6 class="font-weight-semibold text-sm">
+                  Invoices.pdf
+                </h6>
+              </div>
             </VTimelineItem>
 
             <VTimelineItem
@@ -157,10 +170,10 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="font-weight-medium me-1">
+                <h4 class="text-base font-weight-semibold me-1 mb-3">
                   Meeting with john
                 </h4>
-                <small class="text-xs text-no-wrap">45 min ago</small>
+                <span class="text-sm text-disabled text-no-wrap">45 min ago</span>
               </div>
 
               <p class="mb-1">
@@ -169,14 +182,14 @@ const resolveUserProgressVariant = (progress: number) => {
 
               <div class="d-flex align-center mt-3">
                 <VAvatar
-                  size="40"
+                  size="34"
                   class="me-2"
                   :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
                 />
                 <div>
-                  <p class="font-weight-medium mb-0">
-                    Leona Watkins (Client)
-                  </p>
+                  <h6 class="text-sm font-weight-semibold mb-0">
+                    John Doe (Client)
+                  </h6>
                   <span>CEO of Kelly Group</span>
                 </div>
               </div>
@@ -187,10 +200,10 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="font-weight-medium me-1">
+                <h4 class="text-base font-weight-semibold me-1 mb-3">
                   Create a new react project for client
                 </h4>
-                <small class="text-xs text-no-wrap">2 day ago</small>
+                <span class="text-sm text-disabled text-no-wrap">2 day ago</span>
               </div>
               <p class="mb-0">
                 Add files to new design folder
@@ -202,22 +215,14 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="font-weight-semibold me-1">
-                  Create invoices for client
+                <h4 class="text-base font-weight-semibold me-1 mb-3">
+                  12 Create invoices for client
                 </h4>
-                <small class="text-xs text-no-wrap">12 min ago</small>
+                <span class="text-sm text-disabled text-no-wrap">5 day ago</span>
               </div>
               <p class="mb-0">
-                Create new invoices and send to Leona Watkins
+                Weekly review of freshly prepared design for our new app.
               </p>
-              <span class="d-flex align-center mt-2">
-                <VIcon
-                  color="error"
-                  icon="mdi-file-pdf-box"
-                  class="me-1"
-                />
-                <span class="font-weight-semibold text-sm">invoice.pdf</span>
-              </span>
             </VTimelineItem>
           </VTimeline>
         </VCardText>

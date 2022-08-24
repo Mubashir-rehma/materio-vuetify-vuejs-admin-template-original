@@ -12,9 +12,37 @@
     color: inherit;
   }
 
+  .fc-col-header-cell-cushion {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    font-size: 14px;
+    font-weight: 600;
+  }
+
   // Removed double border on left in list view
   .fc-list {
     border-inline-start-color: transparent;
+    font-size: 14px;
+
+    .fc-list-day-cushion.fc-cell-shaded {
+      color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+      font-weight: 600;
+    }
+
+    .fc-list-event-time,
+    .fc-list-event-title {
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+    }
+  }
+
+  .fc-timegrid-axis {
+    font-size: 14px;
+  }
+
+  .fc-timegrid-slot-label-frame {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   .fc-header-toolbar {
@@ -35,7 +63,7 @@
         &:not(.disabled):active {
           border-color: transparent;
           background-color: transparent;
-          color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+          color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
         }
 
         &:focus {
@@ -70,7 +98,7 @@
 
   .fc-toolbar-title {
     display: inline-block;
-    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
     font-size: 1.25rem;
     font-weight: 500;
   }

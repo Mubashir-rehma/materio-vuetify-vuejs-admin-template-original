@@ -49,6 +49,7 @@
     "@iconify/vue": "^3.2.1",
     "@intlify/vite-plugin-vue-i18n": "^5.0.0",
     "@types/node": "^18.0.0",
+    "@types/webfontloader": "^1.6.34",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "@vitejs/plugin-vue": "^3.0.1",

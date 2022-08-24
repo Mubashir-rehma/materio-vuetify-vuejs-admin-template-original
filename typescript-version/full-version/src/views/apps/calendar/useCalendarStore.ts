@@ -1,4 +1,4 @@
-import type { NewEvent } from './types'
+import type { Event, NewEvent } from './types'
 import axios from '@axios'
 
 export const useCalendarStore = defineStore('calendar', {
@@ -35,7 +35,7 @@ export const useCalendarStore = defineStore('calendar', {
     async addEvent(event: NewEvent) {
       return axios.post('/apps/calendar/events', { event })
     },
-    async updateEvent(event: NewEvent) {
+    async updateEvent(event: Event) {
       return axios.post(`/apps/calendar/events/${event.id}`, { event })
     },
     async removeEvent(eventId: string) {

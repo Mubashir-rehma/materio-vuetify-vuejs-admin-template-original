@@ -25,7 +25,6 @@ const values = ref<typeof items[number][]>([])
           v-model="email"
           label="Email"
           type="email"
-          hint="Enter a Valid Email"
           placeholder="Email"
         />
       </VCol>
@@ -57,7 +56,6 @@ const values = ref<typeof items[number][]>([])
         <!-- 👉 Checkbox -->
         <VCheckbox
           v-model="checkbox"
-          density="compact"
           label="Remember me"
         />
       </VCol>

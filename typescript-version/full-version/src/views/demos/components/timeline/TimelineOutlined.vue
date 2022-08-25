@@ -4,6 +4,7 @@
       <VTimeline
         side="end"
         align="start"
+        line-inset="8"
         truncate-line="start"
         density="compact"
         class="v-timeline-density-compact v-timeline-variant-outlined"

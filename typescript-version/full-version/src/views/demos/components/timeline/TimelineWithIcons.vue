@@ -7,6 +7,7 @@ const serverSwitch = ref(false)
     <VCardText>
       <VTimeline
         align="start"
+        line-inset="20"
         truncate-line="start"
         :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
       >

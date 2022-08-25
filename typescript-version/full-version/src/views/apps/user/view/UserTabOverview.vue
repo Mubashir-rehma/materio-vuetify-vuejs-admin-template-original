@@ -136,6 +136,7 @@ const resolveUserProgressVariant = (progress: number) => {
           <VTimeline
             density="compact"
             align="start"
+            line-inset="8"
             truncate-line="start"
             class="v-timeline-density-compact"
           >

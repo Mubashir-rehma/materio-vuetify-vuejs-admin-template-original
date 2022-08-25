@@ -106,8 +106,8 @@ const endDateTimePickerConfig = computed(() => {
 
 <template>
   <VNavigationDrawer
-    location="right"
     temporary
+    location="end"
     :model-value="props.isDrawerOpen"
     width="420"
     class="scrollable-content"

@@ -14,6 +14,7 @@
       <VTimeline
         side="end"
         align="start"
+        line-inset="8"
         truncate-line="both"
         density="compact"
         class="v-timeline-density-compact"

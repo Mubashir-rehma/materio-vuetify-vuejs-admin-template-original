@@ -7,7 +7,7 @@ const checkbox = ref(false)
 </script>
 
 <template>
-  <VForm @submit.prevent>
+  <VForm @submit.prevent="() => {}">
     <VRow>
       <VCol cols="12">
         <VTextField
@@ -51,7 +51,6 @@ const checkbox = ref(false)
       <VCol cols="12">
         <VCheckbox
           v-model="checkbox"
-          density="compact"
           label="Remember me"
         />
       </VCol>

@@ -106,7 +106,10 @@ const paymentMethods = [
               <VLabel class="mb-3">
                 Address Type
               </VLabel>
-              <VRadioGroup v-model="radios">
+              <VRadioGroup
+                v-model="radios"
+                inline
+              >
                 <VRadio
                   label="Home (All day delivery)"
                   value="home"
@@ -131,7 +134,7 @@ const paymentMethods = [
         <!-- 👉 Radio Group -->
         <VRadioGroup
           v-model="deliveryOption"
-          class="mt-4"
+          class="delivery-options mt-4"
         >
           <div
             class="delivery-option rounded-t"
@@ -197,7 +200,7 @@ const paymentMethods = [
       <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
       <VExpansionPanelText>
-        <VRow class="mt-4">
+        <VRow class="mt-0">
           <VCol
             md="6"
             cols="12"
@@ -208,6 +211,7 @@ const paymentMethods = [
                 <VCol cols="12">
                   <VRadioGroup
                     v-model="paymentMethod"
+                    inline
                   >
                     <VRadio
                       v-for="payment in paymentMethods"
@@ -276,7 +280,13 @@ const paymentMethods = [
   </VExpansionPanels>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.delivery-options {
+  .v-selection-control-group {
+    inline-size: 100%;
+  }
+}
+
 .delivery-option {
   padding: 2rem;
   border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));

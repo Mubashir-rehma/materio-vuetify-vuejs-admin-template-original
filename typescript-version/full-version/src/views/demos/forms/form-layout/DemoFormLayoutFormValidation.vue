@@ -51,7 +51,6 @@ const form = ref<VForm>()
           v-model="checkbox"
           :rules="[requiredValidator]"
           label="Do you agree?"
-          density="compact"
           required
         />
       </VCol>

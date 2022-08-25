@@ -175,3 +175,19 @@
     }
   }
 }
+
+// 👉 Slider
+
+.v-slider.v-input--horizontal .v-slider-track__fill {
+  block-size: var(--v-slider-track-size);
+}
+
+.v-slider.v-input--vertical .v-slider-track__fill {
+  inline-size: var(--v-slider-track-size);
+}
+
+.v-slider-thumb {
+  .v-slider-thumb__label {
+    color: rgb(var(--v-theme-on-primary));
+  }
+}

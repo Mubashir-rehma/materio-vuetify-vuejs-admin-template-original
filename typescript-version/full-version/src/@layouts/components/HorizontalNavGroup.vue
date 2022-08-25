@@ -19,6 +19,10 @@ const props = withDefaults(defineProps<Props>(), {
   isSubItem: false,
 })
 
+defineOptions({
+  name: 'HorizontalNavGroup',
+})
+
 const route = useRoute()
 const router = useRouter()
 const { dynamicI18nProps, isAppRtl } = useLayouts()
@@ -34,12 +38,6 @@ watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
   isGroupActive.value = isActive
 }, { immediate: true })
-</script>
-
-<script lang="ts">
-export default {
-  name: 'HorizontalNavGroup',
-}
 </script>
 
 <template>

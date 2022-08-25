@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 const messages = Object.fromEntries(
   Object.entries(
-    import.meta.globEager('./locales/*.json'))
+    import.meta.glob<{ default: any }>('./locales/*.json', { eager: true }))
     .map(([key, value]) => [key.slice(10, -5), value.default]),
 )
 

@@ -155,6 +155,7 @@ onMounted(() => {
   padding-inline: var(--v-field-padding-start);
 }
 
+$heading-color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 $body-color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 
 // hide the input when your picker is inline
@@ -166,8 +167,28 @@ input[altinputclass="inlinePicker"] {
   background-color: rgb(var(--v-theme-surface));
   margin-block-start: 0.1875rem;
 
-  .flatpickr-day,
-  .flatpickr-weekday {
+  .flatpickr-rContainer {
+    .flatpickr-weekdays {
+      padding-inline: 0.5rem;
+    }
+
+    .flatpickr-days {
+      .dayContainer {
+        justify-content: center !important;
+        padding-block-end: 0.5rem;
+        padding-block-start: 0;
+
+        .flatpickr-day {
+          block-size: 42px;
+          line-height: 42px;
+          margin-block-start: 0 !important;
+          max-inline-size: 42px;
+        }
+      }
+    }
+  }
+
+  .flatpickr-day {
     color: $body-color;
 
     &.today {
@@ -190,16 +211,17 @@ input[altinputclass="inlinePicker"] {
     &.inRange,
     &.inRange:hover {
       border: none;
-      background: rgba(var(--v-theme-primary), 30%) !important;
-      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%), 5px 0 0 rgba(var(--v-theme-primary), 17%) !important;
+      background: rgba(var(--v-theme-primary), 0.1) !important;
+      box-shadow: none !important;
+      color: rgb(var(--v-theme-primary));
     }
 
     &.startRange {
-      box-shadow: 5px 0 0 rgba(var(--v-theme-primary), 17%);
+      box-shadow: none;
     }
 
     &.endRange {
-      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%);
+      box-shadow: none;
     }
 
     &.startRange,
@@ -229,20 +251,27 @@ input[altinputclass="inlinePicker"] {
     }
   }
 
+  .flatpickr-weekday {
+    color: $heading-color;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
   &::after,
   &::before {
     display: none;
   }
 
   .flatpickr-months {
+    padding-block-start: 0.5rem;
+
     .flatpickr-prev-month,
     .flatpickr-next-month {
       fill: $body-color;
-      inset-block-start: -5px;
 
       &:hover i,
       &:hover svg {
-        fill: rgb(var(--v-theme-primary));
+        fill: $body-color;
       }
     }
   }
@@ -319,7 +348,7 @@ input[altinputclass="inlinePicker"] {
   .numInputWrapper {
     padding: 2px;
     border-radius: 4px;
-    color: $body-color;
+    color: $heading-color;
     font-size: 1.1rem;
     transition: all 0.15s ease-out;
 
@@ -350,7 +379,15 @@ input[altinputclass="inlinePicker"] {
 
   .flatpickr-prev-month,
   .flatpickr-next-month {
-    inset-block-start: 0.3rem !important;
+    inset-block-start: 0.5rem !important;
+  }
+
+  .flatpickr-next-month {
+    inset-inline-end: 0.375rem !important;
+  }
+
+  .flatpickr-prev-month {
+    inset-inline-start: 0.25rem !important;
   }
 }
 </style>

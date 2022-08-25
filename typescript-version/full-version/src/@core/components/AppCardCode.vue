@@ -32,7 +32,7 @@ const isCodeShown = ref(false)
       <template #append>
         <VBtn
           icon
-          size="small"
+          size="x-small"
           :color="isCodeShown ? 'primary' : 'default'"
           variant="text"
           :class="isCodeShown ? '' : 'text-disabled'"

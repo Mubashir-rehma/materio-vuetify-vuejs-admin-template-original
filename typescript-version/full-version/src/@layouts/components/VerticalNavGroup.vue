@@ -10,6 +10,10 @@ const props = defineProps<{
   item: NavGroup
 }>()
 
+defineOptions({
+  name: 'VerticalNavGroup',
+})
+
 const route = useRoute()
 const router = useRouter()
 const { width: windowWidth } = useWindowSize()
@@ -162,12 +166,6 @@ watch(openGroups, val => {
 //       isGroupOpen.value = false
 //   }
 // })
-</script>
-
-<script lang="ts">
-export default {
-  name: 'VerticalNavGroup',
-}
 </script>
 
 <template>

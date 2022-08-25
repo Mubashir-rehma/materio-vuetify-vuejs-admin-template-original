@@ -103,7 +103,6 @@ const checkbox = ref(false)
         <VCheckbox
           v-model="checkbox"
           label="Remember me"
-          density="compact"
         />
       </VCol>
 

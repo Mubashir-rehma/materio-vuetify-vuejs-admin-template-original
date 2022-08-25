@@ -424,6 +424,7 @@ const addNewUser = (userData: UserProperties) => {
             v-model="rowPerPage"
             density="compact"
             variant="plain"
+            class="mt-n4"
             :items="[10, 20, 30, 50]"
           />
         </div>

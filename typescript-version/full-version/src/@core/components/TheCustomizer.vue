@@ -82,9 +82,8 @@ const headerValues = computed(() => {
     <VNavigationDrawer
       v-model="isNavDrawerOpen"
       temporary
-      location="right"
+      location="end"
       width="400"
-      position="right"
       class="app-customizer"
     >
       <!-- 👉 Header -->

@@ -57,7 +57,7 @@ const checkAll = computed({
           width="250"
           absolute
           touchless
-          :location="$vuetify.rtl.isRtl.value ? 'right' : 'left'"
+          location="start"
           :temporary="$vuetify.display.mdAndDown"
         >
           <div class="pa-5 d-flex flex-column gap-y-8">
@@ -74,9 +74,8 @@ const checkAll = computed({
               <VCheckbox
                 v-model="checkAll"
                 label="View all"
-                class="ms-n2"
               />
-              <div class="d-flex flex-column ms-n2">
+              <div class="d-flex flex-column">
                 <VCheckbox
                   v-for="calendar in store.availableCalendars"
                   :key="calendar.label"

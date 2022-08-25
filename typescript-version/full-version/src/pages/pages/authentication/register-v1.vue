@@ -79,7 +79,6 @@ const isPasswordVisible = ref(false)
                 />
                 <VLabel
                   for="privacy-policy"
-                  class="pb-1"
                   style="opacity: 1;"
                 >
                   <span class="me-1">I agree to</span>

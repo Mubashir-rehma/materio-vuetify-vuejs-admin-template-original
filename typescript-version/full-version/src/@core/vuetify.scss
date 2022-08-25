@@ -164,11 +164,27 @@ h6,
   flex: unset;
 }
 
-.v-radio {
-  --v-selection-control-size: auto;
+.v-input--density-comfortable,
+.v-selection-control--density-comfortable {
+  &.v-checkbox,
+  &.v-radio {
+    margin-inline-start: -0.5625rem;
+  }
+}
 
-  .v-label {
-    margin-inline-start: 0.5rem;
+.v-input--density-compact,
+.v-selection-control--density-compact {
+  &.v-radio,
+  &.v-checkbox {
+    margin-inline-start: -0.3125rem;
+  }
+}
+
+.v-input--density-default,
+.v-selection-control--density-default {
+  &.v-checkbox,
+  &.v-radio {
+    margin-inline-start: -0.6875rem;
   }
 }
 
@@ -181,17 +197,17 @@ h6,
 }
 
 // Input placeholder vertical alignment: https://github.com/vuetifyjs/vuetify/issues/15409
-.v-input {
-  .v-label {
-    line-height: 1.6;
-  }
+// .v-input {
+//   .v-label {
+//     line-height: 1.6;
+//   }
 
-  .v-field__input {
-    input {
-      margin-block-end: 4px;
-    }
-  }
-}
+//   .v-field__input {
+//     input {
+//       margin-block-start: 0.125rem;
+//     }
+//   }
+// }
 
 // !SECTION
 

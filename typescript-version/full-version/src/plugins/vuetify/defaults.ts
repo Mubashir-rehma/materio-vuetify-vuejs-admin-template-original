@@ -34,8 +34,6 @@ export default {
     hideDetails: 'auto',
   },
   VRadioGroup: {
-    // set v-radio-group default inline:true
-    inline: true,
     density: 'comfortable',
     hideDetails: 'auto',
   },

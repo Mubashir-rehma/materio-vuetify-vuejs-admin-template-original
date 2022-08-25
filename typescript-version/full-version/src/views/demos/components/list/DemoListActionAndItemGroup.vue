@@ -1,7 +1,7 @@
 <template>
   <VList
     lines="three"
-    select-strategy="multiple"
+    select-strategy="classic"
   >
     <VListSubheader>General</VListSubheader>
 

@@ -69,7 +69,7 @@ const onSubmit = () => {
   <VNavigationDrawer
     temporary
     :width="400"
-    location="right"
+    location="end"
     :model-value="props.isDrawerOpen"
     @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
   >

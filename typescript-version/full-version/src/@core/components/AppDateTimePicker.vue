@@ -20,7 +20,7 @@ const props = defineProps({
 const emit = defineEmits<Emit>()
 
 interface Emit {
-  (e: 'update:modelValue', val: string): true
+  (e: 'update:modelValue', val: string): void
   (e: 'click:clear', el: MouseEvent): void
 }
 
@@ -80,6 +80,10 @@ watch(theme, updateThemeClassInCalendar)
 onMounted(() => {
   updateThemeClassInCalendar(vuetifyTheme.name.value)
 })
+
+const emitModelValue = (val: string) => {
+  emit('update:modelValue', val)
+}
 </script>
 
 <template>
@@ -113,7 +117,7 @@ onMounted(() => {
               :disabled="isReadonly.value"
               @on-open="isCalendarOpen = true"
               @on-close="isCalendarOpen = false"
-              @update:model-value="(val:string) => $emit('update:modelValue', val)"
+              @update:model-value="emitModelValue"
             />
 
             <!-- simple input for inline prop -->
@@ -135,7 +139,7 @@ onMounted(() => {
     v-bind="compAttrs"
     ref="refFlatPicker"
     :model-value="modelValue"
-    @update:model-value="(val:string) => $emit('update:modelValue', val)"
+    @update:model-value="emitModelValue"
     @on-open="isCalendarOpen = true"
     @on-close="isCalendarOpen = false"
   />

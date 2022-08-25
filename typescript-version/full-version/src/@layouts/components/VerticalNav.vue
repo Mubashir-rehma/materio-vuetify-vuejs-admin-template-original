@@ -38,11 +38,6 @@ const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => 
   return VerticalNavLink
 }
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 /*
   ℹ️ Close overlay side when route is changed
   Close overlay vertical nav when link is clicked
@@ -54,6 +49,15 @@ watch(() => route.name, () => {
 
 const isVerticalNavScrolled = ref(false)
 const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.value = val
+
+// Perfect scrollbar
+const perfectScrollbarSettings = {
+  maxScrollbarLength: 60,
+  wheelPropagation: false,
+}
+const handleNavScroll = (evt: Event) => {
+  isVerticalNavScrolled.value = (evt.target as HTMLElement).scrollTop > 0
+}
 </script>
 
 <template>
@@ -125,7 +129,7 @@ const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.valu
         tag="ul"
         class="nav-items"
         :options="perfectScrollbarSettings"
-        @ps-scroll-y="(evt: Event) => { isVerticalNavScrolled = (evt.target as HTMLElement).scrollTop > 0 }"
+        @ps-scroll-y="handleNavScroll"
       >
         <Component
           :is="resolveNavItemComponent(item)"

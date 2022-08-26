@@ -6,7 +6,7 @@ import CardStatisticsLineCharts from '@/views/pages/cards/card-statistics/CardSt
 import CardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsRadialBarCharts.vue'
 import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
 import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
-import CardTransactions from '@/views/pages/cards/card-statistics/CardTransactions.vue'
+import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
 import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
 import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
 import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
@@ -147,7 +147,7 @@ const statisticsWithImages = [
       cols="12"
       md="8"
     >
-      <CardTransactions />
+      <CardStatisticsTransactions />
     </VCol>
 
     <!-- 👉 Total sales -->

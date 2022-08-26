@@ -4,12 +4,12 @@ export default [
     icon: { icon: 'mdi-view-dashboard-outline' },
     children: [
       {
-        title: 'Analytics',
-        to: 'dashboards-analytics',
-      },
-      {
         title: 'CRM',
         to: 'dashboards-crm',
+      },
+      {
+        title: 'Analytics',
+        to: 'dashboards-analytics',
       },
     ],
     badgeContent: '2',

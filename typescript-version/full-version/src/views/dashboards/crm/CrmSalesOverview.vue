@@ -113,7 +113,7 @@ const salesOverviews = [
       </template>
     </VCardItem>
 
-    <VCardText class="pt-11">
+    <VCardText class="pt-4">
       <VRow>
         <VCol
           sm="6"

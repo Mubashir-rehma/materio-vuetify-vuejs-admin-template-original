@@ -5,7 +5,7 @@
         density="compact"
         align="start"
         line-inset="8"
-        truncate-line="start"
+        truncate-line="both"
         class="v-timeline-density-compact"
       >
         <VTimelineItem
@@ -73,6 +73,18 @@
           <p class="mb-0">
             Invoices have been paid to the company.
           </p>
+        </VTimelineItem>
+
+        <VTimelineItem
+          dot-color="warning"
+          size="x-small"
+        >
+          <div class="d-flex justify-space-between align-center flex-wrap">
+            <h4 class="text-base font-weight-medium me-1">
+              Public Meeting
+            </h4>
+            <small class="text-xs text-no-wrap">September, 30</small>
+          </div>
         </VTimelineItem>
       </VTimeline>
     </VCardText>

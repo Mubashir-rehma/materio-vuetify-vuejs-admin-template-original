@@ -60,12 +60,12 @@ const values = ref<typeof items[number][]>([])
         />
       </VCol>
 
-      <VCol cols="12">
+      <VCol
+        cols="12"
+        class="d-flex gap-4"
+      >
         <!-- 👉 submit and reset button -->
-        <VBtn
-          type="submit"
-          class="me-2"
-        >
+        <VBtn type="submit">
           Submit
         </VBtn>
 

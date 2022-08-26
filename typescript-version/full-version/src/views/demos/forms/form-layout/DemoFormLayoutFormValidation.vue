@@ -57,7 +57,7 @@ const form = ref<VForm>()
 
       <VCol
         cols="12"
-        class="d-flex flex-wrap gap-3"
+        class="d-flex flex-wrap gap-4"
       >
         <VBtn
           color="success"

@@ -1,4 +1,3 @@
-import path from 'path'
 import { fileURLToPath } from 'url'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import vue from '@vitejs/plugin-vue'
@@ -57,7 +56,7 @@ export default defineConfig({
       '@configured-variables': fileURLToPath(new URL('./src/styles/_variables.scss', import.meta.url)),
       '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),
-      'apexcharts': path.resolve(__dirname, 'node_modules/apexcharts-clevision'),
+      'apexcharts': fileURLToPath(new URL('node_modules/apexcharts-clevision', import.meta.url)),
     },
   },
 })

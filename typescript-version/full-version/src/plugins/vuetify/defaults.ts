@@ -34,13 +34,13 @@ export default {
     hideDetails: 'auto',
   },
   VRadioGroup: {
+    color: 'primary',
     density: 'comfortable',
     hideDetails: 'auto',
   },
   VRadio: {
     density: 'comfortable',
     hideDetails: 'auto',
-    VSelectionControl: { color: 'primary' },
   },
   VSelect: {
     variant: 'outlined',

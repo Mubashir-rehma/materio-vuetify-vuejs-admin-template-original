@@ -37,10 +37,7 @@ const paymentMethods = [
       <VExpansionPanelTitle>Delivery Address</VExpansionPanelTitle>
 
       <VExpansionPanelText>
-        <VForm
-          class="mt-4"
-          @submit.prevent="() => {}"
-        >
+        <VForm @submit.prevent="() => {}">
           <VRow>
             <!-- 👉 Full Name -->
             <VCol
@@ -134,61 +131,73 @@ const paymentMethods = [
         <!-- 👉 Radio Group -->
         <VRadioGroup
           v-model="deliveryOption"
-          class="delivery-options mt-4"
+          class="delivery-options"
         >
           <div
-            class="delivery-option rounded-t"
+            class="delivery-option d-flex rounded-t"
             :class="deliveryOption === 'standard' ? 'active' : ''"
             @click="deliveryOption = 'standard'"
           >
-            <div class="d-flex justify-space-between">
-              <div class="d-flex align-center">
-                <VRadio value="standard" />
+            <VRadio
+              inline
+              value="standard"
+              class="mt-n4"
+            />
+            <div class="w-100">
+              <div class="d-flex justify-space-between">
                 <h6 class="text-base font-weight-medium">
                   Standard 3-5 Days
                 </h6>
+                <h6 class="text-base font-weight-bold">
+                  Free
+                </h6>
               </div>
-              <h6 class="text-base font-weight-bold">
-                Free
-              </h6>
+              <span class="text-sm">Friday, 15 Nov - Monday, 18 Nov</span>
             </div>
-            <span class="text-sm ms-10">Friday, 15 Nov - Monday, 18 Nov</span>
           </div>
           <div
-            class="delivery-option"
+            class="delivery-option d-flex"
             :class="deliveryOption === 'express' ? 'active' : ''"
             @click="deliveryOption = 'express'"
           >
-            <div class="d-flex justify-space-between">
-              <div class="d-flex align-center">
-                <VRadio value="express" />
+            <VRadio
+              inline
+              class="mt-n4"
+              value="express"
+            />
+            <div class="w-100">
+              <div class="d-flex justify-space-between">
                 <h5 class="text-base font-weight-medium">
                   Express
                 </h5>
+                <h6 class="text-base font-weight-bold">
+                  $5.00
+                </h6>
               </div>
-              <h6 class="text-base font-weight-bold">
-                $5.00
-              </h6>
+              <span class="text-sm">Friday, 15 Nov - Sunday, 17 Nov</span>
             </div>
-            <span class="text-sm ms-10">Friday, 15 Nov - Sunday, 17 Nov</span>
           </div>
           <div
-            class="delivery-option rounded-b"
+            class="delivery-option d-flex rounded-b"
             :class="deliveryOption === 'overnight' ? 'active' : ''"
             @click="deliveryOption = 'overnight'"
           >
-            <div class="d-flex justify-space-between">
-              <div class="d-flex align-center">
-                <VRadio value="overnight" />
+            <VRadio
+              inline
+              class="mt-n4"
+              value="overnight"
+            />
+            <div class="w-100">
+              <div class="d-flex justify-space-between">
                 <h6 class="text-base font-weight-medium">
                   Overnight
                 </h6>
+                <h6 class="text-base font-weight-bold">
+                  $10.00
+                </h6>
               </div>
-              <h6 class="text-base font-weight-bold">
-                $10.00
-              </h6>
+              <span class="text-sm">Friday, 15 Nov - Saturday, 16 Nov</span>
             </div>
-            <span class="ms-10">Friday, 15 Nov - Saturday, 16 Nov</span>
           </div>
         </VRadioGroup>
       </VExpansionPanelText>
@@ -200,7 +209,7 @@ const paymentMethods = [
       <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
       <VExpansionPanelText>
-        <VRow class="mt-0">
+        <VRow>
           <VCol
             md="6"
             cols="12"
@@ -265,15 +274,15 @@ const paymentMethods = [
         <VDivider class="my-5" />
 
         <!-- 👉 Place Order -->
-        <VBtn class="me-5">
-          Place Order
-        </VBtn>
-        <VBtn
-          color="secondary"
-          variant="tonal"
-        >
-          Cancel
-        </VBtn>
+        <div class="d-flex gap-4">
+          <VBtn>Place Order</VBtn>
+          <VBtn
+            color="secondary"
+            variant="tonal"
+          >
+            Cancel
+          </VBtn>
+        </div>
       </VExpansionPanelText>
     </VExpansionPanel>
     <!-- !SECTION Payment Method -->
@@ -288,7 +297,7 @@ const paymentMethods = [
 }
 
 .delivery-option {
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
 
   &.active {

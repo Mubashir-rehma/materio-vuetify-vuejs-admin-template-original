@@ -55,11 +55,11 @@ const checkbox = ref(false)
         />
       </VCol>
 
-      <VCol cols="12">
-        <VBtn
-          type="submit"
-          class="me-2"
-        >
+      <VCol
+        cols="12"
+        class="d-flex gap-4"
+      >
+        <VBtn type="submit">
           Submit
         </VBtn>
 

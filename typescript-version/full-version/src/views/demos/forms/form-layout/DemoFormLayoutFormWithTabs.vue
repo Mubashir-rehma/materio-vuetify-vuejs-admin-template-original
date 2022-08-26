@@ -228,10 +228,8 @@ const isCPasswordVisible = ref(false)
 
     <VDivider />
 
-    <VCardText>
-      <VBtn class="me-2">
-        Submit
-      </VBtn>
+    <VCardText class="d-flex gap-4">
+      <VBtn>Submit</VBtn>
       <VBtn
         color="secondary"
         variant="tonal"

@@ -95,23 +95,26 @@ const handleNavScroll = (evt: Event) => {
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
         <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
-          <div
+          <Component
+            :is="config.app.iconRenderer || 'div'"
             v-show="isCollapsed && !hideTitleAndIcon"
             class="header-action"
-            :class="config.icons.verticalNavUnPinned"
+            v-bind="config.icons.verticalNavUnPinned"
             @click="isCollapsed = !isCollapsed"
           />
-          <div
+          <Component
+            :is="config.app.iconRenderer || 'div'"
             v-show="!isCollapsed && !hideTitleAndIcon"
             class="header-action"
-            :class="config.icons.verticalNavPinned"
+            v-bind="config.icons.verticalNavPinned"
             @click="isCollapsed = !isCollapsed"
           />
         </template>
         <template v-else>
-          <div
+          <Component
+            :is="config.app.iconRenderer || 'div'"
             class="header-action"
-            :class="config.icons.close"
+            v-bind="config.icons.close"
             @click="toggleIsOverlayNavActive(false)"
           />
         </template>

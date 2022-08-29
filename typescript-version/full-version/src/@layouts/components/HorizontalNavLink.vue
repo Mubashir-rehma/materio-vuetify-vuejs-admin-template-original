@@ -23,7 +23,7 @@ const { dynamicI18nProps } = useLayouts()
   <li
     v-if="can(item.action, item.subject)"
     class="nav-link"
-    :class="[{ 'sub-item': isSubItem }, { disabled: item.disable }]"
+    :class="[{ 'sub-item': props.isSubItem, 'disabled': item.disable }]"
   >
     <Component
       :is="item.to ? 'RouterLink' : 'a'"
@@ -38,8 +38,9 @@ const { dynamicI18nProps } = useLayouts()
         :is="config.app.enableI18n ? 'i18n-t' : 'span'"
         class="nav-item-title"
         v-bind="dynamicI18nProps(item.title, 'span')"
-        v-text="item.title"
-      />
+      >
+        {{ item.title }}
+      </Component>
     </Component>
   </li>
 </template>

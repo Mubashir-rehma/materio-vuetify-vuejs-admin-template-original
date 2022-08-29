@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 import mock from '@/@fake-db/mock'
 import type { Invoice } from '@/@fake-db/types'
 import { paginateArray } from '@/@fake-db/utlis'

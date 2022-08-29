@@ -17,7 +17,7 @@ defineOptions({
 const route = useRoute()
 const router = useRouter()
 const { width: windowWidth } = useWindowSize()
-const { isVerticalNavCollapsed, isVerticalNavMini, dynamicI18nProps, isLessThanOverlayNavBreakpoint } = useLayouts()
+const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
 const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 
 /*
@@ -25,19 +25,6 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
   Docs: https://vuejs.org/api/composition-api-dependency-injection.html#inject
 */
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
-
-// ℹ️ Previously instead of below watcher we were using two individual watcher for `isVerticalNavHovered`, `isVerticalNavCollapsed` & `isLessThanOverlayNavBreakpoint`
-watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
-  isGroupOpen.value = val ? false : isGroupActive.value
-})
-
-// watch(isVerticalNavHovered, val => {
-//   // If menu is not collapsed ignore
-//   if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
-//     return
-
-//   isGroupOpen.value = val ? isGroupActive.value : false
-// })
 
 /*
   ℹ️ We have to add watcher for `isVerticalNavCollapsed` to open & close the group when menu collapse state is changed
@@ -150,6 +137,19 @@ watch(openGroups, val => {
   isGroupOpen.value = isActive
   isGroupActive.value = isActive
 }, { deep: true })
+
+// ℹ️ Previously instead of below watcher we were using two individual watcher for `isVerticalNavHovered`, `isVerticalNavCollapsed` & `isLessThanOverlayNavBreakpoint`
+watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
+  isGroupOpen.value = val ? false : isGroupActive.value
+})
+
+// watch(isVerticalNavHovered, val => {
+//   // If menu is not collapsed ignore
+//   if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
+//     return
+
+//   isGroupOpen.value = val ? isGroupActive.value : false
+// })
 
 /*
   Update: We don't need this watcher any more because we have new watch isVerticalNavMini that includes this one

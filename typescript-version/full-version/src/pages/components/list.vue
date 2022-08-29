@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/components/list/demoCodeList';
+import * as demoCode from '@/views/demos/components/list/demoCodeList'
 </script>
 
 <template>

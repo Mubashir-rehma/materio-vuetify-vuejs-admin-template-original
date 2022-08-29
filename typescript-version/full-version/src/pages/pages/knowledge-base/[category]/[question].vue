@@ -35,6 +35,7 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
           <VCardSubtitle>Last updated on {{ knowledgeBaseQuestionAndAnswer?.postContent?.lastUpdated }}</VCardSubtitle>
         </VCardItem>
 
+        <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component vue/no-v-html -->
         <VCardText v-html="knowledgeBaseQuestionAndAnswer?.postContent?.postDesc" />
       </VCard>
     </VCol>

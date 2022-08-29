@@ -1,6 +1,6 @@
 import { useDisplay } from 'vuetify'
 
-export const useResponsiveLeftSidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
+export const useResponsiveLeftSidebar = () => {
   const { mdAndDown, lgAndUp, name: currentBreakpoint } = useDisplay()
 
   const isLeftSidebarOpen = ref(true)
@@ -23,13 +23,7 @@ export const useResponsiveLeftSidebar = ({ sidebarWidth }: { sidebarWidth: numbe
     },
   )
 
-  // const contentStyles = computed(() => ({
-  //   'margin-inline-start': isLeftSidebarOpen.value && lgAndUp.value ? `${sidebarWidth}px` : '',
-  // }))
-
   return {
     isLeftSidebarOpen,
-
-    // contentStyles,
   }
 }

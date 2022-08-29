@@ -47,7 +47,12 @@ watch(() => route.path, () => {
     class="nav-group"
     tag="li"
     content-container-tag="ul"
-    :class="[{ active: isGroupActive }, { 'children-at-end': childrenAtEnd }, { 'sub-item': isSubItem }, { disabled: item.disable }]"
+    :class="[{
+      'active': isGroupActive,
+      'children-at-end': childrenAtEnd,
+      'sub-item': isSubItem,
+      'disabled': item.disable,
+    }]"
     :popper-inline-end="childrenAtEnd"
   >
     <div class="nav-group-label">
@@ -60,8 +65,9 @@ watch(() => route.path, () => {
         :is="config.app.enableI18n ? 'i18n-t' : 'span'"
         v-bind="dynamicI18nProps(item.title, 'span')"
         class="nav-item-title"
-        v-text="item.title"
-      />
+      >
+        {{ item.title }}
+      </Component>
       <Component
         v-bind="config.icons.chevronDown"
         :is="config.app.iconRenderer || 'div'"

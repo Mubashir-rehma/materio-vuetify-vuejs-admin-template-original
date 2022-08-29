@@ -94,7 +94,7 @@ const chartOptions = {
       <VueApexCharts
         :options="chartOptions"
         :series="series"
-        :height="116"
+        :height="90"
       />
 
       <h6 class="text-sm text-center font-weight-semibold">

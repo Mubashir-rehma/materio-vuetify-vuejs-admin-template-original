@@ -91,9 +91,9 @@ const chartOptions = controlledComputed(theme, () => {
         :height="110"
       />
 
-      <p class="text-center font-weight-semibold mb-0">
+      <h6 class="text-sm text-center font-weight-semibold">
         Sessions
-      </p>
+      </h6>
     </VCardText>
   </VCard>
 </template>

@@ -11,6 +11,10 @@ export default [
         title: 'Analytics',
         to: 'dashboards-analytics',
       },
+      {
+        title: 'eCommerce',
+        to: 'dashboards-ecommerce',
+      },
     ],
     badgeContent: '2',
     badgeClass: 'bg-primary',

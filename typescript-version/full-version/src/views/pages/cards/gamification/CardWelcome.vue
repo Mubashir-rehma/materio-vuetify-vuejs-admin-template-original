@@ -23,13 +23,12 @@
         sm="6"
         class="text-center"
       >
-        <VImg
+        <img
           :src="dynamicImgImport('@/assets/images/cards/illustration-john.png')"
           class="john-illustration"
-          :height="$vuetify.display.xs ? '165' : '200'"
-          width="auto"
+          width="328"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
-        />
+        >
       </VCol>
     </VRow>
   </VCard>
@@ -39,5 +38,11 @@
 .john-illustration {
   inset-block-end: -0.0625rem;
   inset-inline-end: 0;
+}
+
+@media screen and (max-width: 440px) {
+  .john-illustration {
+    inline-size: 100%;
+  }
 }
 </style>

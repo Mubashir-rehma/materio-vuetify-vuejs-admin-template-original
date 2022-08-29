@@ -22,6 +22,7 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
         v-if="prop.icon"
         size="40"
         :color="prop.color"
+        class="elevation-2"
       >
         <VIcon
           :icon="prop.icon"

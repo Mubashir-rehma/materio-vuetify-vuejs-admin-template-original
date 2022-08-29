@@ -61,11 +61,11 @@ const chartOptions = controlledComputed(theme, () => {
         :options="chartOptions"
         :series="series"
         type="radialBar"
-        :height="150"
+        :height="110"
       />
 
       <h6 class="text-sm text-center font-weight-semibold mt-9">
-        Total Revenue
+        Total Sales
       </h6>
     </VCardText>
   </VCard>

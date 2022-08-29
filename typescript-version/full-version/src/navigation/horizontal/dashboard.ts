@@ -13,7 +13,11 @@ export default [
         to: 'dashboards-analytics',
         icon: { icon: 'mdi-chart-timeline-variant' },
       },
-
+      {
+        title: 'eCommerce',
+        to: 'dashboards-ecommerce',
+        icon: { icon: 'mdi-cart-outline' },
+      },
     ],
   },
 ]

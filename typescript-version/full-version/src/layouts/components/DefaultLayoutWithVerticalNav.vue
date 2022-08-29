@@ -35,19 +35,31 @@ injectSkinClasses()
       <div class="d-flex h-100 align-center">
         <VBtn
           v-if="isLessThanOverlayNavBreakpoint(windowWidth)"
-          icon="mdi-menu"
+          icon
           variant="text"
           color="default"
           class="me-2"
+          size="small"
           @click="toggleVerticalOverlayNavActive(true)"
-        />
+        >
+          <VIcon
+            icon="mdi-menu"
+            size="24"
+          />
+        </VBtn>
 
         <VBtn
-          icon="mdi-magnify"
+          icon
           variant="text"
           color="default"
-          class="ms-lg-n4"
-        />
+          class="ms-lg-n3"
+          size="small"
+        >
+          <VIcon
+            icon="mdi-magnify"
+            size="24"
+          />
+        </VBtn>
 
         <VSpacer />
 

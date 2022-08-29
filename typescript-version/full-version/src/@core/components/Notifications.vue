@@ -26,13 +26,17 @@ defineEmits<{
       icon
       variant="text"
       color="default"
+      size="small"
     >
       <VBadge
         :content="props.notifications.length"
         :model-value="!!props.notifications.length"
         color="error"
       >
-        <VIcon icon="mdi-bell-outline" />
+        <VIcon
+          icon="mdi-bell-outline"
+          size="24"
+        />
       </VBadge>
 
       <VMenu

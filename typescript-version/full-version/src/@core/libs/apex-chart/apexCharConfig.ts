@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 import type { ThemeInstance } from 'vuetify'
 import { hexToRgb } from '@layouts/utils'
 

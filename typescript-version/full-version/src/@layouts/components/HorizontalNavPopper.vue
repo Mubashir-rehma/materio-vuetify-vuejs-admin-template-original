@@ -30,7 +30,9 @@ const updatePopper = async () => {
   const { x, y } = await computePosition(refPopperContainer.value, refPopper.value, {
     placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : (props.isRtl ? 'bottom-end' : 'bottom-start'),
     middleware: [
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       flip({ boundary: document.querySelector('body')! }),
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       shift({ boundary: document.querySelector('body')! }),
     ],
 

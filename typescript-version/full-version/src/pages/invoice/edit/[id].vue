@@ -34,7 +34,6 @@ invoiceListStore.fetchInvoice(Number(route.params.id)).then(response => {
       },
     ],
     note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
-    // eslint-disable-next-line sonarjs/no-duplicate-string
     paymentMethod: 'Bank Account',
     salesperson: 'Tom Cook',
     thanksNote: 'Thanks for your business',

@@ -1,4 +1,5 @@
-import { VThemeProvider } from 'vuetify/lib/components/VThemeProvider/VThemeProvider.mjs'
+// @ts-expect-error There won't be declaration file for it
+import { VThemeProvider } from 'vuetify/lib/components/VThemeProvider/VThemeProvider'
 import { EnumAppContentLayoutNav } from '@layouts/enums'
 
 // TODO: Use `VThemeProvider` from dist instead of lib (Using this component from dist causes navbar to loose sticky positioning)

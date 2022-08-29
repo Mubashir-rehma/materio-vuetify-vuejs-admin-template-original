@@ -13,9 +13,10 @@
 
 // This is same as `%vertical-nav-item` except section title is excluded
 %vertical-nav-item-interactive {
-  block-size: 2.75rem;
-  border-radius: 0.4rem;
-  margin-block: 0.1rem;
+  block-size: 2.625rem;
+  border-end-end-radius: 50px;
+  border-start-end-radius: 50px;
+  margin-block: 3px;
 }
 
 // Common styles for nav item icon styles
@@ -23,7 +24,7 @@
 %vertical-nav-items-icon {
   flex-shrink: 0;
   font-size: 1.5rem;
-  margin-inline-end: 1rem;
+  margin-inline-end: 0.5rem;
 }
 
 // ℹ️ Icon styling for icon nested inside another nav item (2nd level)
@@ -46,9 +47,41 @@
 
 // Section title
 %vertical-nav-section-title {
+  overflow: hidden;
+
   // ℹ️ Setting height will prevent jerking when text & icon is toggled
   block-size: 1.5rem;
   color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+
+  // ℹ️ This is because SVG element isn't aligned with the section title
+  padding-inline: calc(#{variables.$vertical-nav-horizontal-padding} + 2px);
+
+  .title-text {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      background-color: rgba(var(--v-border-color), var(--v-border-opacity));
+      block-size: 1px;
+      content: "";
+      inline-size: calc(#{variables.$vertical-nav-horizontal-padding} - 0.5rem);
+      inset-block-start: 50%;
+      inset-inline: -#{variables.$vertical-nav-horizontal-padding} 0;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      position: absolute;
+      background-color: rgba(var(--v-border-color), var(--v-border-opacity));
+      block-size: 1px;
+      content: "";
+      inline-size: 200px;
+      inset-block-start: 50%;
+      inset-inline-end: 0;
+      inset-inline-start: calc(100% + 0.625rem);
+      transform: translateY(-50%);
+    }
+  }
 }
 
 // Vertical nav item badge styles

@@ -62,8 +62,8 @@ $vertical-nav-background-color: rgb(#{$vertical-nav-background-color-rgb}) !defa
 
 // ℹ️ This is used to keep consistency between nav items and nav header left & right margin
 // This is used by nav items & nav header
-$vertical-nav-horizontal-spacing: 1rem !default;
-$vertical-nav-horizontal-padding: 0.75rem !default;
+$vertical-nav-horizontal-spacing: 0 1.125rem !default;
+$vertical-nav-horizontal-padding: 1.25rem !default;
 
 // Vertical nav header height. Mostly we will align it with navbar height;
 $vertical-nav-header-height: $layout-vertical-nav-navbar-height !default;

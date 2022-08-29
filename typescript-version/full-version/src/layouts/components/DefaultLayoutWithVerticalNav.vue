@@ -38,7 +38,7 @@ injectSkinClasses()
           icon
           variant="text"
           color="default"
-          class="me-2"
+          class="me-2 ms-n3"
           size="small"
           @click="toggleVerticalOverlayNavActive(true)"
         >

@@ -10,6 +10,8 @@
   .layout-vertical-nav {
     $sl-layout-nav-type-vertical: &;
 
+    @extend %nav;
+
     @at-root {
       // ℹ️ Add styles for collapsed vertical nav
       .layout-vertical-nav-collapsed#{$sl-layout-nav-type-vertical}.hovered {

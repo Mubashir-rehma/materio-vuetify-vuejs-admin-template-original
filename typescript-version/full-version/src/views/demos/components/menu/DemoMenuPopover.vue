@@ -34,7 +34,7 @@ const menu = ref(false)
       <VCardActions>
         <VBtn icon="mdi-heart-outline" />
         <VBtn icon="mdi-bookmark-outline" />
-        <VBtn icon="mdi-thumb-down-outline " />
+        <VBtn icon="mdi-thumb-down-outline" />
       </VCardActions>
     </VCard>
   </VMenu>

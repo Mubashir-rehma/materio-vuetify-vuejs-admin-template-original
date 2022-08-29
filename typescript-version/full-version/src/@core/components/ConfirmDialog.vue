@@ -13,9 +13,13 @@ const props = defineProps<Props>()
 
 const emit = defineEmits<Emit>()
 
+const updateModelValue = (val: boolean) => {
+  emit('update:isDialogVisible', val)
+}
+
 const onConfirmation = () => {
   emit('confirm', true)
-  emit('update:isDialogVisible', false)
+  updateModelValue(false)
 }
 
 const onCancel = () => {
@@ -28,7 +32,7 @@ const onCancel = () => {
   <!-- 👉 Confirm Dialog -->
   <VDialog
     :model-value="props.isDialogVisible"
-    @update:model-value="(val:boolean) => $emit('update:isDialogVisible', val)"
+    @update:model-value="updateModelValue"
   >
     <VCard class="text-center px-10 py-6">
       <VCardText>

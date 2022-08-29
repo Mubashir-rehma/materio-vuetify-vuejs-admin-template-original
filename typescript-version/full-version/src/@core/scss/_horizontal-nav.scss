@@ -5,6 +5,8 @@
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
 .layout-horizontal-nav {
+  @extend %nav;
+
   // 👉 Icon styles
   .nav-item-icon {
     @extend %horizontal-nav-item-icon;

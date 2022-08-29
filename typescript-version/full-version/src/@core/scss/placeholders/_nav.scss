@@ -1,3 +1,8 @@
+// ℹ️ This is common style that needs to be applied to both navs
+%nav {
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+}
+
 /*
     Active nav link styles for horizontal & vertical nav
 
@@ -5,7 +10,7 @@
     For vertical nav it will be only applied to nav links (not nav groups)
 */
 %nav-link-active {
-  background-color: rgb(var(--v-theme-primary));
+  background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, white 300%);
   color: rgb(var(--v-theme-on-primary));
 }
 

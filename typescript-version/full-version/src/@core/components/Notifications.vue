@@ -9,6 +9,7 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   location: 'bottom end',
+  badgeProps: undefined,
 })
 
 defineEmits<{

@@ -7,7 +7,6 @@ const isTwoFactorDialogOpen = ref(false)
 const recentDevices = [
   {
     browser: 'Chrome on Windows',
-    // eslint-disable-next-line sonarjs/no-duplicate-string
     logo: dynamicImgImport('@/assets/images/logos/chrome.png'),
     device: 'Dell XPS 15',
     location: 'United States',

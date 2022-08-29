@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import FlatPickr from 'vue-flatpickr-component'
 import { useTheme } from 'vuetify'
+
+// @ts-expect-error There won't be declaration file for it
 import { filterFieldProps, makeVFieldProps } from 'vuetify/lib/components/VField/VField'
+
+// @ts-expect-error There won't be declaration file for it
 import { filterInputProps, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
+
+// @ts-expect-error There won't be declaration file for it
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
+
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const props = defineProps({
@@ -20,7 +27,7 @@ const props = defineProps({
 const emit = defineEmits<Emit>()
 
 interface Emit {
-  (e: 'update:modelValue', val: string): true
+  (e: 'update:modelValue', val: string): void
   (e: 'click:clear', el: MouseEvent): void
 }
 
@@ -80,6 +87,10 @@ watch(theme, updateThemeClassInCalendar)
 onMounted(() => {
   updateThemeClassInCalendar(vuetifyTheme.name.value)
 })
+
+const emitModelValue = (val: string) => {
+  emit('update:modelValue', val)
+}
 </script>
 
 <template>
@@ -101,8 +112,8 @@ onMounted(() => {
         :error="isValid.value === false"
         @click:clear="onClear"
       >
-        <template #default="{ props }">
-          <div v-bind="props">
+        <template #default="{ props: vFieldProps }">
+          <div v-bind="vFieldProps">
             <!-- flat-picker  -->
             <FlatPickr
               v-if="!isInlinePicker"
@@ -113,7 +124,7 @@ onMounted(() => {
               :disabled="isReadonly.value"
               @on-open="isCalendarOpen = true"
               @on-close="isCalendarOpen = false"
-              @update:model-value="(val:string) => $emit('update:modelValue', val)"
+              @update:model-value="emitModelValue"
             />
 
             <!-- simple input for inline prop -->
@@ -135,7 +146,7 @@ onMounted(() => {
     v-bind="compAttrs"
     ref="refFlatPicker"
     :model-value="modelValue"
-    @update:model-value="(val:string) => $emit('update:modelValue', val)"
+    @update:model-value="emitModelValue"
     @on-open="isCalendarOpen = true"
     @on-close="isCalendarOpen = false"
   />

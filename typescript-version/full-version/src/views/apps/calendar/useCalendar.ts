@@ -227,7 +227,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
     // customButtons
     dateClick(info) {
-      event.value = { ...event.value, start: new Date(info.date) }
+      event.value = { ...event.value, start: String(new Date(info.date)) }
 
       isEventHandlerSidebarActive.value = true
     },

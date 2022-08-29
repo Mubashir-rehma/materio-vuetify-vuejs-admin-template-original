@@ -5,7 +5,7 @@ import type { Config } from '@layouts/types'
 export const config: Config = {
   app: {
     title: 'Title',
-    logo: '/src/assets/logo.svg',
+    logo: h('img', { src: '/src/assets/logo.svg' }),
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
     contentWidth: ref(EnumContentWidth.Boxed),

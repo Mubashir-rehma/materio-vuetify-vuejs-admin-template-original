@@ -38,11 +38,6 @@ const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => 
   return VerticalNavLink
 }
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 /*
   ℹ️ Close overlay side when route is changed
   Close overlay vertical nav when link is clicked
@@ -54,6 +49,15 @@ watch(() => route.name, () => {
 
 const isVerticalNavScrolled = ref(false)
 const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.value = val
+
+// Perfect scrollbar
+const perfectScrollbarSettings = {
+  maxScrollbarLength: 60,
+  wheelPropagation: false,
+}
+const handleNavScroll = (evt: Event) => {
+  isVerticalNavScrolled.value = (evt.target as HTMLElement).scrollTop > 0
+}
 </script>
 
 <template>
@@ -82,7 +86,7 @@ const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.valu
           <Transition name="vertical-nav-app-title">
             <h1
               v-show="!hideTitleAndIcon"
-              class="font-weight-semibold leading-normal text-xl text-uppercase"
+              class="font-weight-bold leading-normal text-xl text-uppercase"
             >
               {{ config.app.title }}
             </h1>
@@ -91,23 +95,26 @@ const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.valu
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
         <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
-          <div
+          <Component
+            :is="config.app.iconRenderer || 'div'"
             v-show="isCollapsed && !hideTitleAndIcon"
             class="header-action"
-            :class="config.icons.verticalNavUnPinned"
+            v-bind="config.icons.verticalNavUnPinned"
             @click="isCollapsed = !isCollapsed"
           />
-          <div
+          <Component
+            :is="config.app.iconRenderer || 'div'"
             v-show="!isCollapsed && !hideTitleAndIcon"
             class="header-action"
-            :class="config.icons.verticalNavPinned"
+            v-bind="config.icons.verticalNavPinned"
             @click="isCollapsed = !isCollapsed"
           />
         </template>
         <template v-else>
-          <div
+          <Component
+            :is="config.app.iconRenderer || 'div'"
             class="header-action"
-            :class="config.icons.close"
+            v-bind="config.icons.close"
             @click="toggleIsOverlayNavActive(false)"
           />
         </template>
@@ -125,7 +132,7 @@ const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.valu
         tag="ul"
         class="nav-items"
         :options="perfectScrollbarSettings"
-        @ps-scroll-y="(evt: Event) => { isVerticalNavScrolled = (evt.target as HTMLElement).scrollTop > 0 }"
+        @ps-scroll-y="handleNavScroll"
       >
         <Component
           :is="resolveNavItemComponent(item)"

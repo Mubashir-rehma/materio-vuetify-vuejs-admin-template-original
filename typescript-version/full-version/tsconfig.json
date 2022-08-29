@@ -57,7 +57,7 @@
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue",
-    "themeConfig.ts",
+    "themeConfig.ts"
   ],
   "exclude": [
     "dist",

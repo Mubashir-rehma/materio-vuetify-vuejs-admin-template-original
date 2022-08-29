@@ -11,5 +11,8 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "importsNotUsedAsValues": "error"
-    }
+    },
+    "exclude": [
+        "./*.js"
+    ]
 }

@@ -1,7 +1,9 @@
 import { breakpointsVuetify } from '@vueuse/core'
 
+// @ts-expect-error There won't be declaration file for it
+import { VIcon } from 'vuetify/lib/components/VIcon/VIcon'
+
 // ❗ Logo SVG must be imported with ?raw suffix
-import { Icon } from '@iconify/vue'
 import logo from '@/assets/logo.svg?raw'
 
 import { defineThemeConfig } from '@core'
@@ -20,7 +22,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     isRtl: false,
     skin: EnumSkins.Default,
     routeTransition: RouteTransitions.Fade,
-    iconRenderer: Icon,
+    iconRenderer: VIcon,
   },
   navbar: {
     type: EnumNavbarType.Sticky,

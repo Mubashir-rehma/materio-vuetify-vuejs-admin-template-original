@@ -55,9 +55,7 @@ const database: KnowledgeBaseDB = {
           question: 'Can I Change My Username?',
         },
         {
-          // eslint-disable-next-line sonarjs/no-duplicate-string
           slug: 'where-can-i-upload-my-avatar',
-          // eslint-disable-next-line sonarjs/no-duplicate-string
           question: 'Where Can I Upload My Avatar?',
         },
         {

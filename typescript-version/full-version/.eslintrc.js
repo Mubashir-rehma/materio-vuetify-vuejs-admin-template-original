@@ -18,7 +18,11 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: [
+    'vue',
+    '@typescript-eslint',
+  ],
+  ignorePatterns: ['src/@iconify/*.js'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -112,19 +116,19 @@ module.exports = {
     'vue/no-irregular-whitespace': 'error',
     'vue/template-curly-spacing': 'error',
 
+    // -- Sonarlint
+    'sonarjs/no-duplicate-string': 'off',
+
     // Internal Rules
     'valid-appcardcode-code-prop': 'error',
     'valid-appcardcode-demo-sfc': 'error',
   },
   settings: {
-    // 'import/parsers': {
-    //   '@typescript-eslint/parser': ['.ts', '.tsx'],
-    // },
     'import/resolver': {
-      typescript: {
-        // alwaysTryTypes: true,
-        // project: './tsconfig.json',
+      node: {
+        extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs'],
       },
+      typescript: {},
     },
   },
 }

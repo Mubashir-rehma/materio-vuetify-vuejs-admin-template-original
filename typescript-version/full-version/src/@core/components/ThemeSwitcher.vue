@@ -28,8 +28,12 @@ watch(theme, val => {
     icon
     variant="text"
     color="default"
+    size="small"
     @click="changeTheme"
   >
-    <VIcon :icon="getThemeIcon" />
+    <VIcon
+      :icon="getThemeIcon"
+      size="24"
+    />
   </VBtn>
 </template>

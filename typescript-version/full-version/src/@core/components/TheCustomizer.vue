@@ -84,6 +84,7 @@ const headerValues = computed(() => {
       temporary
       location="end"
       width="400"
+      :scrim="false"
       class="app-customizer"
     >
       <!-- 👉 Header -->

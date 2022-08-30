@@ -12,9 +12,9 @@ const props = withDefaults(defineProps<Props>(), {
   <VDivider v-if="props.divider" />
 
   <div class="customizer-section">
-    <h3 class="mb-3">
+    <p class="text-caption">
       {{ props.title }}
-    </h3>
+    </p>
 
     <slot />
   </div>

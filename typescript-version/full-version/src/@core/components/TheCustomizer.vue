@@ -88,18 +88,24 @@ const headerValues = computed(() => {
       class="app-customizer"
     >
       <!-- 👉 Header -->
-      <div class="customizer-section d-flex align-center justify-space-between">
+      <div class="customizer-heading d-flex align-center justify-space-between">
         <div>
-          <h2>THEME CUSTOMIZER</h2>
-          <span class="text-medium-emphasis">Customize and preview in real time</span>
+          <h6 class="text-h6">
+            THEME CUSTOMIZER
+          </h6>
+          <span class="text-body-1">Customize & Preview in Real Time</span>
         </div>
         <VBtn
           icon
           variant="text"
           color="secondary"
+          size="x-small"
           @click="isNavDrawerOpen = false"
         >
-          <VIcon icon="mdi-close" />
+          <VIcon
+            icon="mdi-close"
+            size="20"
+          />
         </VBtn>
       </div>
 
@@ -115,7 +121,9 @@ const headerValues = computed(() => {
           :divider="false"
         >
           <!-- 👉 Skin -->
-          <span>Skins</span>
+          <h6 class="text-base font-weight-regular">
+            Skins
+          </h6>
           <VRadioGroup
             v-model="skin"
             inline
@@ -130,9 +138,9 @@ const headerValues = computed(() => {
           </VRadioGroup>
 
           <!-- 👉 Theme -->
-          <span class="mt-6 d-block">
-            Theme
-          </span>
+          <h6 class="mt-3 text-base font-weight-regular">
+            Mode
+          </h6>
           <div class="d-flex align-center">
             <VLabel
               for="pricing-plan-toggle"
@@ -153,14 +161,14 @@ const headerValues = computed(() => {
           </div>
 
           <!-- 👉 Primary color -->
-          <span class="mt-6 d-block">
+          <h6 class="mt-3 text-base font-weight-regular">
             Primary Color
-          </span>
+          </h6>
           <div class="d-flex gap-x-4 mt-2">
             <div
               v-for="(color, index) in colors"
               :key="color"
-              style="width: 3rem; height: 3rem; border-radius: 0.5rem; transition: all 0.25s ease;"
+              style="width: 2.5rem; height: 2.5rem; border-radius: 0.5rem; transition: all 0.25s ease;"
               :style="{ backgroundColor: getBoxColor(initialThemeColors[color], index) }"
               class="cursor-pointer d-flex align-center justify-center"
               :class="{ 'elevation-4': vuetifyTheme.current.value.colors.primary === getBoxColor(initialThemeColors[color], index) }"
@@ -181,7 +189,9 @@ const headerValues = computed(() => {
         <!-- SECTION LAYOUT -->
         <CustomizerSection title="LAYOUT">
           <!-- 👉 Content Width -->
-          <span>Content width</span>
+          <h6 class="text-base font-weight-regular">
+            Content width
+          </h6>
           <VRadioGroup
             v-model="appContentWidth"
             inline
@@ -194,7 +204,9 @@ const headerValues = computed(() => {
             />
           </VRadioGroup>
           <!-- 👉 Navbar Type -->
-          <span class="mt-6 d-block">{{ appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'Navbar' : 'Header' }} Type</span>
+          <h6 class="mt-3 text-base font-weight-regular">
+            {{ appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'Navbar' : 'Header' }} Type
+          </h6>
           <VRadioGroup
             v-model="navbarType"
             inline
@@ -207,7 +219,9 @@ const headerValues = computed(() => {
             />
           </VRadioGroup>
           <!-- 👉 Footer Type -->
-          <span class="mt-6 d-block">Footer Type</span>
+          <h6 class="mt-3 text-base font-weight-regular">
+            Footer Type
+          </h6>
           <VRadioGroup
             v-model="footerType"
             inline
@@ -220,8 +234,11 @@ const headerValues = computed(() => {
             />
           </VRadioGroup>
           <!-- 👉 Navbar blur -->
-          <div class="mt-6 d-flex align-center justify-space-between">
-            <VLabel for="customizer-navbar-blur">
+          <div class="d-flex align-center justify-space-between">
+            <VLabel
+              for="customizer-navbar-blur"
+              class="text-high-emphasis"
+            >
               Navbar Blur
             </VLabel>
             <div>
@@ -236,9 +253,11 @@ const headerValues = computed(() => {
         <!-- !SECTION -->
 
         <!-- SECTION Menu -->
-        <CustomizerSection title="Menu">
+        <CustomizerSection title="MENU">
           <!-- 👉 Menu Type -->
-          <span class="d-block">Menu Type</span>
+          <h6 class="text-base font-weight-regular">
+            Menu Type
+          </h6>
           <VRadioGroup
             v-model="appContentLayoutNav"
             inline
@@ -254,9 +273,12 @@ const headerValues = computed(() => {
           <!-- 👉 Collapsed Menu -->
           <div
             v-if="appContentLayoutNav === EnumAppContentLayoutNav.Vertical"
-            class="mt-6 d-flex align-center justify-space-between"
+            class="d-flex align-center justify-space-between"
           >
-            <VLabel for="customizer-menu-collapsed">
+            <VLabel
+              for="customizer-menu-collapsed"
+              class="text-high-emphasis"
+            >
               Collapsed Menu
             </VLabel>
             <div>
@@ -270,10 +292,13 @@ const headerValues = computed(() => {
 
           <!-- 👉 Semi Dark Menu -->
           <div
-            class="mt-2 align-center justify-space-between"
+            class="align-center justify-space-between"
             :class="theme === 'light' && appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
-            <VLabel for="customizer-menu-semi-dark">
+            <VLabel
+              for="customizer-menu-semi-dark"
+              class="text-high-emphasis"
+            >
               Semi Dark Menu
             </VLabel>
             <div>
@@ -290,8 +315,11 @@ const headerValues = computed(() => {
         <!-- SECTION MISC -->
         <CustomizerSection title="MISC">
           <!-- 👉 RTL -->
-          <div class="mt-6 d-flex align-center justify-space-between">
-            <VLabel for="customizer-rtl">
+          <div class="d-flex align-center justify-space-between">
+            <VLabel
+              for="customizer-rtl"
+              class="text-high-emphasis"
+            >
               RTL
             </VLabel>
             <div>
@@ -310,7 +338,12 @@ const headerValues = computed(() => {
                 cols="5"
                 class="d-flex align-center"
               >
-                <label for="route-transition">Router Transition</label>
+                <VLabel
+                  for="route-transition"
+                  class="text-high-emphasis"
+                >
+                  Router Transition
+                </VLabel>
               </VCol>
 
               <VCol cols="7">
@@ -335,7 +368,12 @@ const headerValues = computed(() => {
 <style lang="scss">
 .app-customizer {
   .customizer-section {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .customizer-heading {
+    padding-block: 0.875rem;
+    padding-inline: 1.25rem;
   }
 
   .v-navigation-drawer__content {

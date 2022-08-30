@@ -42,6 +42,12 @@ const onFormSubmit = () => {
   emit('update:modelValue', false)
   emit('submit', userData.value)
 }
+
+const onFormReset = () => {
+  userData.value = structuredClone(toRaw(props.userData))
+
+  emit('update:isDialogVisible', false)
+}
 </script>
 
 <template>
@@ -171,20 +177,16 @@ const onFormSubmit = () => {
             <!-- 👉 Submit and Cancel -->
             <VCol
               cols="12"
-              class="text-center"
+              class="d-flex flex-wrap justify-center gap-4"
             >
-              <VBtn
-                type="submit"
-                class="me-3"
-              >
+              <VBtn type="submit">
                 Submit
               </VBtn>
 
               <VBtn
                 color="secondary"
                 variant="tonal"
-                type="reset"
-                @click="$emit('update:isDialogVisible', false)"
+                @click="onFormReset"
               >
                 Cancel
               </VBtn>

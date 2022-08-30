@@ -11,6 +11,7 @@
 @use "sass:map";
 @forward "@layouts/styles/variables";
 @use "@layouts/styles/variables" as *;
+@use "utils";
 
 // @forward "@layouts/styles/variables" with (
 //   $layout-vertical-nav-width: 350px !default,
@@ -63,14 +64,24 @@ $vertical-nav-background-color: rgb(#{$vertical-nav-background-color-rgb}) !defa
 // ℹ️ This is used to keep consistency between nav items and nav header left & right margin
 // This is used by nav items & nav header
 $vertical-nav-horizontal-spacing: 0 1.125rem !default;
-$vertical-nav-horizontal-padding: 1.25rem !default;
+$vertical-nav-horizontal-padding: 1.25rem 1rem !default;
+
+/*
+  ℹ️ We created this SCSS var to extract the start padding
+  Docs: https://sass-lang.com/documentation/modules/string
+  $vertical-nav-horizontal-padding => 0 8px;
+  string.index(#{$vertical-nav-horizontal-padding}, " ") + 1 => 2
+    string.index(#{$vertical-nav-horizontal-padding}, " ") => 1
+  string.slice(0 8px, 2, -1) => 8px => $card-actions-padding-x
+*/
+$vertical-nav-horizontal-padding-start: utils.get-first-value($vertical-nav-horizontal-padding);
 
 // Vertical nav header height. Mostly we will align it with navbar height;
 $vertical-nav-header-height: $layout-vertical-nav-navbar-height !default;
 $vertical-nav-navbar-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
 
 // Vertical nav header padding
-$vertical-nav-header-padding: 1rem $vertical-nav-horizontal-padding !default;
+$vertical-nav-header-padding: 1rem $vertical-nav-horizontal-padding-start !default;
 $vertical-nav-header-inline-spacing: $vertical-nav-horizontal-spacing !default;
 
 // Space between logo and title

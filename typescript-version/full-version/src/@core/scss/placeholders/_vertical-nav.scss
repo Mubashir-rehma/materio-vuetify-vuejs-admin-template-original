@@ -1,6 +1,7 @@
 @use "@core/scss/mixins";
 @use "@configured-variables" as variables;
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
+@use "@core/scss/utils";
 
 // Nav items styles (including section title)
 %vertical-nav-item {
@@ -52,9 +53,7 @@
   // ℹ️ Setting height will prevent jerking when text & icon is toggled
   block-size: 1.5rem;
   color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
-
-  // ℹ️ This is because SVG element isn't aligned with the section title
-  padding-inline: calc(#{variables.$vertical-nav-horizontal-padding} + 2px);
+  padding-inline: variables.$vertical-nav-horizontal-padding;
 
   .title-text {
     position: relative;
@@ -64,9 +63,9 @@
       background-color: rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: 1px;
       content: "";
-      inline-size: calc(#{variables.$vertical-nav-horizontal-padding} - 0.5rem);
+      inline-size: calc(variables.$vertical-nav-horizontal-padding-start - 0.5rem);
       inset-block-start: 50%;
-      inset-inline: -#{variables.$vertical-nav-horizontal-padding} 0;
+      inset-inline: -#{variables.$vertical-nav-horizontal-padding-start} 0;
       transform: translateY(-50%);
     }
 

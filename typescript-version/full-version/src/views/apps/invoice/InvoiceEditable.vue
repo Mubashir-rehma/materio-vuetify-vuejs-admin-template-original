@@ -57,7 +57,7 @@ const removeProduct = (id: number) => {
           />
 
           <!-- 👉 Title -->
-          <h6 class="font-weight-bold text-xl text-uppercase">
+          <h6 class="font-weight-semibold text-xl text-uppercase">
             {{ themeConfig.app.title }}
           </h6>
         </div>

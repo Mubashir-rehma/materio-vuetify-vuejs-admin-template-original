@@ -15,8 +15,13 @@ const series = [
 const chartOptions = {
   grid: {
     show: false,
+    padding: {
+      left: -2,
+      top: -10,
+    },
   },
   chart: {
+    parentHeightOffset: 0,
     type: 'line',
     offsetX: -8,
     dropShadow: {
@@ -81,15 +86,20 @@ const chartOptions = {
 </script>
 
 <template>
-  <VCard title="$35.4k">
-    <VueApexCharts
-      :options="chartOptions"
-      :series="series"
-      height="auto"
-    />
+  <VCard>
+    <VCardText>
+      <h6 class="text-h6">
+        $35.4k
+      </h6>
+      <VueApexCharts
+        :options="chartOptions"
+        :series="series"
+        :height="116"
+      />
 
-    <VCardText class="text-center font-weight-semibold">
-      Total Revenue
+      <h6 class="text-sm text-center font-weight-semibold">
+        Total Revenue
+      </h6>
     </VCardText>
   </VCard>
 </template>

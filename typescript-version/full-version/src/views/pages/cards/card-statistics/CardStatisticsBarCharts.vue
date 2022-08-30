@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
+const { theme } = useThemeConfig()
 
-const currentTheme = vuetifyTheme.current.value.colors
+const currentTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.colors })
 
 const series = [
   {
@@ -13,77 +15,85 @@ const series = [
   },
 ]
 
-const chartOptions = {
-  chart: {
-    type: 'bar',
-    stacked: false,
-    toolbar: {
-      show: false,
-    },
-  },
-  grid: {
-    show: false,
-    padding: {
-      left: 20,
-      right: 20,
-      top: -15,
-      bottom: -15,
-    },
-  },
+const chartOptions = controlledComputed(theme, () => {
+  const backgroundColor = currentTheme.value.background
 
-  colors: [currentTheme.error, currentTheme.primary, currentTheme.error, currentTheme.primary, currentTheme.primary],
-  plotOptions: {
-    bar: {
-      horizontal: false,
-      columnWidth: '20%',
-      borderRadius: 4,
-      startingShape: 'rounded',
-      endingShape: 'rounded',
-      distributed: true,
-      colors: {
-        backgroundBarColors: ['#5e566914', '#5e566914', '#5e566914', '#5e566914', '#5e566914'],
-        backgroundBarRadius: 5,
+  return {
+    chart: {
+      type: 'bar',
+      stacked: false,
+      parentHeightOffset: 0,
+      toolbar: {
+        show: false,
       },
     },
-  },
-  legend: {
-    show: false,
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  xaxis: {
-    labels: {
+    grid: {
+      show: false,
+      padding: {
+        top: -10,
+        left: -7,
+        right: 0,
+        bottom: 5,
+      },
+    },
+    colors: [currentTheme.value.error, currentTheme.value.primary, currentTheme.value.error, currentTheme.value.primary, currentTheme.value.primary],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '20%',
+        borderRadius: 4,
+        startingShape: 'rounded',
+        endingShape: 'rounded',
+        distributed: true,
+        colors: {
+          backgroundBarColors: [backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor],
+          backgroundBarRadius: 5,
+        },
+      },
+    },
+    legend: {
       show: false,
     },
-    axisBorder: {
+    dataLabels: {
+      enabled: false,
+    },
+    xaxis: {
+      labels: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
       show: false,
     },
-    axisTicks: {
-      show: false,
+    tooltip: {
+      enabled: false,
     },
-  },
-  yaxis: {
-    show: false,
-  },
-  tooltip: {
-    x: {
-      show: false,
-    },
-  },
-}
+  }
+})
 </script>
 
 <template>
-  <VCard title="2,856">
-    <VueApexCharts
-      :options="chartOptions"
-      :series="series"
-      height="auto"
-    />
+  <VCard>
+    <VCardText>
+      <h6 class="text-h6">
+        2,856
+      </h6>
 
-    <VCardText class="text-center font-weight-semibold">
-      Sessions
+      <VueApexCharts
+        :options="chartOptions"
+        :series="series"
+        :height="110"
+      />
+
+      <h6 class="text-sm text-center font-weight-semibold">
+        Sessions
+      </h6>
     </VCardText>
   </VCard>
 </template>

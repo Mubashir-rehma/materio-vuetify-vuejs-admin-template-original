@@ -42,6 +42,12 @@ const onFormSubmit = () => {
   emit('update:modelValue', false)
   emit('submit', userData.value)
 }
+
+const onFormReset = () => {
+  userData.value = structuredClone(toRaw(props.userData))
+
+  emit('update:isDialogVisible', false)
+}
 </script>
 
 <template>
@@ -180,8 +186,7 @@ const onFormSubmit = () => {
               <VBtn
                 color="secondary"
                 variant="tonal"
-                type="reset"
-                @click="$emit('update:isDialogVisible', false)"
+                @click="onFormReset"
               >
                 Cancel
               </VBtn>

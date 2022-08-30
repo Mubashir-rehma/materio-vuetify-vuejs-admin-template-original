@@ -331,6 +331,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           v-model="rowPerPage"
           variant="plain"
           :items="[10, 20, 30, 50]"
+          class="mt-n4"
         />
       </div>
 

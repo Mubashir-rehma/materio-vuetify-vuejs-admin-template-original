@@ -13,7 +13,7 @@ import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarTy
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
     title: 'Materio',
-    logo: h('div', { innerHTML: logo, class: 'text-primary' }),
+    logo: h('div', { innerHTML: logo, class: 'text-primary', style: 'line-height:0' }),
     contentWidth: EnumContentWidth.Boxed,
     contentLayoutNav: EnumAppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md,

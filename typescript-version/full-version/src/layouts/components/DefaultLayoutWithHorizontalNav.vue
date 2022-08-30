@@ -31,11 +31,11 @@ injectSkinClasses()
     <template #navbar>
       <RouterLink
         to="/"
-        class="auth-logo d-flex align-start gap-x-3"
+        class="auth-logo d-flex align-center gap-x-3"
       >
         <VNodeRenderer :nodes="themeConfig.app.logo" />
 
-        <h1 class="font-weight-semibold leading-normal text-xl text-uppercase">
+        <h1 class="font-weight-bold leading-normal text-xl text-uppercase">
           {{ themeConfig.app.title }}
         </h1>
       </RouterLink>

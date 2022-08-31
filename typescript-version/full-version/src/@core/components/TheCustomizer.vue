@@ -139,7 +139,7 @@ const headerValues = computed(() => {
 
           <!-- 👉 Theme -->
           <h6 class="mt-3 text-base font-weight-regular">
-            Mode
+            Theme
           </h6>
           <div class="d-flex align-center">
             <VLabel

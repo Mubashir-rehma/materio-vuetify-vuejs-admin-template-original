@@ -82,8 +82,8 @@ const triggeredRemove = () => {
               <VBtn
                 v-if="(!(actionRemove || actionRefresh) || actionCollapsed) && !noActions"
                 icon
-                color="secondary"
-                variant="plain"
+                color="default"
+                variant="text"
                 size="x-small"
                 @click="triggerCollapse"
               >
@@ -98,10 +98,10 @@ const triggeredRemove = () => {
               <!-- 👉 Overlay button -->
               <VBtn
                 v-if="(!(actionRemove || actionCollapsed) || actionRefresh) && !noActions"
-                size="x-small"
-                variant="plain"
-                color="secondary"
                 icon
+                size="x-small"
+                variant="text"
+                color="default"
                 @click="triggerRefresh"
               >
                 <VIcon
@@ -113,10 +113,10 @@ const triggeredRemove = () => {
               <!-- 👉 Close button -->
               <VBtn
                 v-if="(!(actionRefresh || actionCollapsed) || actionRemove) && !noActions"
-                size="x-small"
-                variant="plain"
-                color="secondary"
                 icon
+                size="x-small"
+                variant="text"
+                color="default"
                 @click="triggeredRemove"
               >
                 <VIcon
@@ -131,7 +131,10 @@ const triggeredRemove = () => {
 
         <!-- 👉 card content -->
         <VExpandTransition>
-          <div v-show="!isContentCollapsed">
+          <div
+            v-show="!isContentCollapsed"
+            class="v-card-content"
+          >
             <slot />
           </div>
         </VExpandTransition>
@@ -150,3 +153,12 @@ const triggeredRemove = () => {
   </VExpandTransition>
 </template>
 
+<style lang="scss">
+.v-card-item {
+  +.v-card-content {
+    .v-card-text:first-child {
+      padding-block-start: 0;
+    }
+  }
+}
+</style>

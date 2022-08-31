@@ -38,7 +38,7 @@ const selectedNotification = ref('Only when I\'m online')
       <a href="javascript:void(0)">Request Permission</a>
     </VCardText>
 
-    <VTable>
+    <VTable class="text-no-wrap">
       <thead>
         <tr>
           <th>Type</th>

@@ -100,7 +100,7 @@ $vertical-nav-section-title-mb: 0.5rem !default;
 // Vertical nav icons
 $vertical-nav-items-icon-size: 1.5rem;
 $vertical-nav-items-nested-icon-size: 0.9rem;
-$vertical-nav-items-icon-margin-inline-end: 0.5rem;
+$vertical-nav-items-icon-margin-inline-end: 0.625rem;
 
 // Transition duration for nav group arrow
 $vertical-nav-nav-group-arrow-transition-duration: 0.15s !default;
@@ -117,6 +117,11 @@ $vertical-nav-nav-group-arrow-transition-timing-function: ease-in-out !default;
     This is because this have been used as value of top property by `.popper-content`
 */
 $horizontal-nav-padding: 0.6875rem !default;
+
+// Vertical nav icons
+$horizontal-nav-items-icon-size: 1.5rem;
+$horizontal-nav-third-level-icon-size: 0.9rem;
+$horizontal-nav-items-icon-margin-inline-end: 0.625rem;
 
 // ℹ️ We used SCSS variable because we want to allow users to update max height of popper content
 // 120px is combined height of navbar & horizontal nav

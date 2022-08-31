@@ -37,6 +37,10 @@
       .app-title {
         margin-inline-start: variables.$vertical-nav-header-logo-title-spacing;
       }
+
+      .header-action {
+        @extend %nav-header-action;
+      }
     }
 
     // 👉 Nav items shadow

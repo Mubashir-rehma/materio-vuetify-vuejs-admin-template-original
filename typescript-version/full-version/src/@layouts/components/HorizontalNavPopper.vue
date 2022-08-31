@@ -76,8 +76,10 @@ const hideContent = () => {
 onMounted(updatePopper)
 
 // Recalculate position when direction changes
-const { isAppRtl } = useLayouts()
-watch(isAppRtl, updatePopper)
+const { isAppRtl, appContentWidth } = useLayouts()
+
+// ℹ️ Recalculate popper position when it's triggerer changes its position
+watch([isAppRtl, appContentWidth], updatePopper)
 
 // Watch for route changes and close popper content if route is changed
 const route = useRoute()

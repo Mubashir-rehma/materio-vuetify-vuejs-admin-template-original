@@ -24,9 +24,13 @@
 
   // 👉 App footer
   .layout-footer {
-    background-color: rgb(var(--v-theme-surface));
+    @at-root {
+      .layout-footer-sticky#{&} {
+        background-color: rgb(var(--v-theme-surface));
 
-    @include elevation.elevation(3);
+        @include elevation.elevation(3);
+      }
+    }
   }
 
   // TODO: Use Vuetify grid sass variable here

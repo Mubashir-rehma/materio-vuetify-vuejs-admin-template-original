@@ -3,6 +3,10 @@
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 @use "@core/scss/utils";
 
+%nav-header-action {
+  font-size: 1.25rem;
+}
+
 // Nav items styles (including section title)
 %vertical-nav-item {
   margin-block: 0;
@@ -61,7 +65,9 @@
   // ℹ️ Setting height will prevent jerking when text & icon is toggled
   block-size: 1.5rem;
   color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+  font-size: 0.75rem;
   padding-inline: variables.$vertical-nav-horizontal-padding;
+  text-transform: uppercase;
 
   .title-text {
     position: relative;

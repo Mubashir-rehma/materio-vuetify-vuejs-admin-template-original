@@ -57,6 +57,7 @@
         "Iconify",
         "psudo",
         "stylelint",
+        "triggerer",
         "vuetify"
     ],
     // Extension: Comment Anchors

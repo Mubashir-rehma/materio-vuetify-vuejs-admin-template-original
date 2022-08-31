@@ -16,7 +16,7 @@ export default [
         to: 'dashboards-ecommerce',
       },
     ],
-    badgeContent: '2',
-    badgeClass: 'bg-primary',
+    badgeContent: 'New',
+    badgeClass: 'bg-error',
   },
 ]

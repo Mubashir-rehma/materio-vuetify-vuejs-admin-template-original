@@ -38,7 +38,7 @@ injectSkinClasses()
           icon
           variant="text"
           color="default"
-          class="me-2 ms-n3"
+          class="ms-n3"
           size="small"
           @click="toggleVerticalOverlayNavActive(true)"
         >
@@ -63,8 +63,8 @@ injectSkinClasses()
 
         <VSpacer />
 
-        <NavBarI18n class="me-2" />
-        <NavbarThemeSwitcher class="me-2" />
+        <NavBarI18n />
+        <NavbarThemeSwitcher />
         <NavBarNotifications class="me-2" />
         <UserProfile />
       </div>

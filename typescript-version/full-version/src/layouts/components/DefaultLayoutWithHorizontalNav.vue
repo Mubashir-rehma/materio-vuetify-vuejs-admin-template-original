@@ -45,15 +45,14 @@ injectSkinClasses()
         variant="text"
         color="default"
         size="small"
-        class="me-2"
       >
         <VIcon
           icon="mdi-magnify"
           size="24"
         />
       </VBtn>
-      <NavBarI18n class="me-2" />
-      <NavbarThemeSwitcher class="me-2" />
+      <NavBarI18n />
+      <NavbarThemeSwitcher />
       <NavBarNotifications class="me-2" />
       <UserProfile />
     </template>

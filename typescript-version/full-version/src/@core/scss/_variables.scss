@@ -107,6 +107,11 @@ $vertical-nav-nav-group-arrow-transition-timing-function: ease-in-out !default;
 */
 $horizontal-nav-padding: 0.6875rem !default;
 
+// Horizontal nav icons
+$horizontal-nav-items-icon-size: 1.5rem;
+$horizontal-nav-third-level-icon-size: 0.9rem;
+$horizontal-nav-items-icon-margin-inline-end: 0.625rem;
+
 // ℹ️ We used SCSS variable because we want to allow users to update max height of popper content
 // 120px is combined height of navbar & horizontal nav
 $horizontal-nav-popper-content-max-height: calc((var(--vh, 1vh) * 100) - 120px - 4rem) !default;

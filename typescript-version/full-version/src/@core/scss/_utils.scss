@@ -184,8 +184,8 @@ $gap: (
   @if $start-at {
     @return string.slice(
       #{$var},
-      string.index(#{$var}, " ") + 1,
-      -1
+      0,
+      $start-at
     );
   } @else {
     @return $var;

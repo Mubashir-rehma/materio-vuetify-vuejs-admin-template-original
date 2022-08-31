@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Dashboards',
-    icon: { icon: 'mdi-view-dashboard-outline' },
+    icon: { icon: 'mdi-home-outline' },
     children: [
       {
         title: 'CRM',

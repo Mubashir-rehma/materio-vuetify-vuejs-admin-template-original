@@ -76,7 +76,7 @@ const series = [{ name: 'Total Sales', data: [0, 258, 30, 240, 150, 400] }]
       </VCardTitle>
 
       <template #append>
-        <div class="mt-n7 me-n1">
+        <div class="mt-n7 me-n3">
           <VBtn
             icon
             size="x-small"

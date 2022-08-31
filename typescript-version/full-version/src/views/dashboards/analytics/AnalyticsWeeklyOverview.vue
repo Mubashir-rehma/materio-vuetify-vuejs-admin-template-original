@@ -89,7 +89,7 @@ const series = [{ data: [37, 57, 45, 75, 57, 40, 65] }]
       <VCardTitle>Weekly Overview</VCardTitle>
 
       <template #append>
-        <div class="me-n1">
+        <div class="me-n3">
           <VBtn
             icon
             size="x-small"

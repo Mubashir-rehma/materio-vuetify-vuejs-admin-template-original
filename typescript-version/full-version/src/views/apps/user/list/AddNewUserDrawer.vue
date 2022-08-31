@@ -84,7 +84,7 @@ const onSubmit = () => {
         <VBtn
           variant="text"
           size="x-small"
-          color="secondary"
+          color="default"
           icon
           @click="closeNavigationDrawer"
         >

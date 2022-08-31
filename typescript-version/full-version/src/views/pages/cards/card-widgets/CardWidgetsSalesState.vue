@@ -97,7 +97,7 @@ const series = [{ name: 'Traffic Rate', data: [300, 450, 350, 600, 500, 700] }]
       <VCardSubtitle>Total $42,580 Sales</VCardSubtitle>
 
       <template #append>
-        <div class="me-n1">
+        <div class="me-n3">
           <VBtn
             icon
             size="x-small"

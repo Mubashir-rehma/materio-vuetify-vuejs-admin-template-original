@@ -103,7 +103,7 @@ const weeklySalesData = [
       <VCardSubtitle>Total 85.4k Sales</VCardSubtitle>
 
       <template #append>
-        <div class="mt-n7 me-n1">
+        <div class="mt-n7 me-n3">
           <VBtn
             icon
             color="default"

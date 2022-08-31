@@ -33,7 +33,7 @@ const statistics = [
       <VCardTitle>Transactions</VCardTitle>
 
       <template #append>
-        <div class="me-n1">
+        <div class="me-n3">
           <VBtn
             icon
             color="default"

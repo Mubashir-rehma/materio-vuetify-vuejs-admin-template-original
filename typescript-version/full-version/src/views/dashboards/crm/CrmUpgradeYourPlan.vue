@@ -22,12 +22,12 @@ const savedCards = [
 
       <!-- 👉 menu -->
       <template #append>
-        <div class="me-n2">
+        <div class="me-n3">
           <VBtn
             icon
             size="x-small"
             variant="text"
-            color="secondary"
+            color="default"
           >
             <VIcon
               size="24"

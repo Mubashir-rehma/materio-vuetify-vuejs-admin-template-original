@@ -33,10 +33,10 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
       <VSpacer />
 
       <VBtn
-        size="small"
+        size="x-small"
         variant="text"
-        color="secondary"
-        class="me-n4 mt-n4"
+        color="default"
+        class="me-n3 mt-n1"
         icon
       >
         <VIcon

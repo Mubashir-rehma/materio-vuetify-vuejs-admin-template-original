@@ -202,7 +202,7 @@ watch(totalPrice, () => {
       <VBtn
         icon
         size="x-small"
-        color="secondary"
+        color="default"
         variant="text"
         @click="removeProduct"
       >

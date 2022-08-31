@@ -58,12 +58,12 @@ const teamMembers = [
 
       <!-- 👉 menu -->
       <template #append>
-        <div class="me-n2">
+        <div class="me-n3">
           <VBtn
+            icon
             size="x-small"
             variant="text"
-            icon
-            color="secondary"
+            color="default"
           >
             <VIcon
               size="24"

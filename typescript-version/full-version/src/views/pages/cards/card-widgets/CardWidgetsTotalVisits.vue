@@ -85,7 +85,7 @@ const series = [78]
     <VCardItem>
       <VCardTitle>Total Visits</VCardTitle>
       <template #append>
-        <div class="me-n1">
+        <div class="me-n3">
           <VBtn
             icon
             size="x-small"

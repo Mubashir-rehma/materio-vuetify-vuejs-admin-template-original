@@ -91,7 +91,7 @@ const series = [
       </VCardTitle>
 
       <template #append>
-        <div class="me-n1">
+        <div class="me-n3">
           <VBtn
             icon
             size="x-small"

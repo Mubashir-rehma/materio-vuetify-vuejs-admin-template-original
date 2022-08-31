@@ -13,6 +13,10 @@
 @use "@layouts/styles/variables" as *;
 @use "utils";
 
+// 👉 Default layout
+
+$navbar-high-emphasis-text: true !default;
+
 // @forward "@layouts/styles/variables" with (
 //   $layout-vertical-nav-width: 350px !default,
 // );

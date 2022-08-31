@@ -33,17 +33,21 @@
 // ℹ️ Nav group's children icon styles are not here (Adjusts height, width & margin)
 %vertical-nav-items-icon {
   flex-shrink: 0;
-  font-size: 1.5rem;
-  margin-inline-end: 0.5rem;
+  font-size: variables.$vertical-nav-items-icon-size;
+  margin-inline-end: variables.$vertical-nav-items-icon-margin-inline-end;
 }
 
 // ℹ️ Icon styling for icon nested inside another nav item (2nd level)
 %vertical-nav-items-nested-icon {
-  font-size: 0.9rem;
+  /*
+    ℹ️ `margin-inline` will be (normal icon font-size - small icon font-size) / 2
+    (1.5rem - 0.9rem) / 2 => 0.6rem / 2 => 0.3rem
+  */
+  $vertical-nav-items-nested-icon-margin-inline: calc((variables.$vertical-nav-items-icon-size - variables.$vertical-nav-items-nested-icon-size) / 2);
 
-  // TODO: Please add some example of below formula
-  // ℹ️ ml will be (normal icon font-size - small icon font-size) / 2
-  margin-inline-start: 0.3rem;
+  font-size: variables.$vertical-nav-items-nested-icon-size;
+  margin-inline-end: $vertical-nav-items-nested-icon-margin-inline + variables.$vertical-nav-items-icon-margin-inline-end;
+  margin-inline-start: $vertical-nav-items-nested-icon-margin-inline;
 }
 
 %vertical-nav-items-icon-after-2nd-level {

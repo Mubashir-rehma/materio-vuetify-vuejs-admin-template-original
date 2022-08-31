@@ -8,6 +8,7 @@
     "fabiospampinato.vscode-highlight",
     "github.vscode-pull-request-github",
     "vue.volar",
-    "antfu.iconify"
+    "antfu.iconify",
+    "cipchk.cssrem"
   ]
 }

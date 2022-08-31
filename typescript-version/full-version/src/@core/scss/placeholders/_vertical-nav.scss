@@ -58,6 +58,8 @@
   // ℹ️ Setting height will prevent jerking when text & icon is toggled
   block-size: 1.5rem;
   color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 // Vertical nav item badge styles

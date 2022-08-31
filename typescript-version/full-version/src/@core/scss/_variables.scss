@@ -12,6 +12,10 @@
 @forward "@layouts/styles/variables";
 @use "@layouts/styles/variables" as *;
 
+// 👉 Default layout
+
+$navbar-high-emphasis-text: true !default;
+
 // @forward "@layouts/styles/variables" with (
 //   $layout-vertical-nav-width: 350px !default,
 // );

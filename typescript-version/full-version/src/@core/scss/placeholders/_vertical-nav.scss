@@ -2,6 +2,10 @@
 @use "@configured-variables" as variables;
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
+%nav-header-action {
+  font-size: 1.25rem;
+}
+
 // Nav items styles (including section title)
 %vertical-nav-item {
   margin-block: 0;

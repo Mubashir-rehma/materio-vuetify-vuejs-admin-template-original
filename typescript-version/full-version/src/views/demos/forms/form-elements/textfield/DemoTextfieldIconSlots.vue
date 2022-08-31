@@ -54,15 +54,16 @@ const clickMe = () => {
     <!-- Append -->
     <template #append>
       <VBtn
-        size="large"
+        :size="$vuetify.display.smAndDown ? 'small' : 'large'"
         class="mt-n3"
+        :icon="$vuetify.display.smAndDown"
         @click="clickMe"
       >
-        <VIcon
-          icon="mdi-target"
-          start
-        />
-        Click me
+        <VIcon icon="mdi-target" />
+        <span
+          v-if="$vuetify.display.smAndUp"
+          class="ms-3"
+        >Click me</span>
       </VBtn>
     </template>
   </VTextField>

@@ -138,6 +138,7 @@ $shadow-key-ambient-opacity-custom: rgba(var(--v-theme-on-surface), 0.04);
   $button-elevation: ("default": 3, "hover": 4, "active": 8),
   $button-border-radius: 5px,
   $button-padding-ratio: 1.7,
+  $button-text-letter-spacing:0.025rem,
   $dialog-card-header-padding: 20px,
   $dialog-card-header-text-padding-top: 0,
   $dialog-card-text-padding: 20px,
@@ -213,7 +214,7 @@ $shadow-key-ambient-opacity-custom: rgba(var(--v-theme-on-surface), 0.04);
   $states: ("activated": 0.08)
 );
 
-/*
+  /*
   ℹ️ We created this SCSS var to calculate accurate $card-actions-padding [$card-item-padding - $button-card-actions-padding(only x value)]
 
   Docs: https://sass-lang.com/documentation/modules/string
@@ -411,12 +412,6 @@ h6,
   }
 }
 
-/*
-  👉 Card list
-  Remove list spacing inside card
-
-  This is because card title gets padding of 20px and list item have padding of 16px. Moreover, list container have padding-bottom as well.
-*/
 .card-list {
   --v-card-list-gap: 20px;
 

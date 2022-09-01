@@ -42,7 +42,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     chevronDown: { icon: 'mdi-chevron-down' },
     chevronRight: { icon: 'mdi-chevron-right' },
     close: { icon: 'mdi-close' },
-    verticalNavPinned: { icon: 'mdi-record-circle-outline' },
+    verticalNavPinned: { icon: 'mdi-radiobox-marked' },
     verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
     sectionTitlePlaceholder: { icon: 'mdi-minus' },
   },

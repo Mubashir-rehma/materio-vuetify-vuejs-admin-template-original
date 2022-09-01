@@ -152,7 +152,7 @@ const avatarBadgeProps = {
             <template #prepend>
               <VIcon
                 class="me-2"
-                icon="mdi-logout"
+                icon="mdi-logout-variant"
                 size="22"
               />
             </template>

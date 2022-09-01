@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { kFormatter } from '@core/utils/formatters'
 
+import arrowGrowth from '@/assets/images/cards/arrow-growth.png'
+import atmCard from '@/assets/images/cards/atm-card.png'
+import creditCard from '@/assets/images/cards/credit-card.png'
+import paypal from '@/assets/images/cards/paypal.png'
+import wallet from '@/assets/images/cards/wallet.png'
+
 interface Colors {
   'Paypal': string
   'Credit Card': string
@@ -21,37 +27,37 @@ const transactions: Transactions[] = [
     gateway: 'Paypal',
     for: 'Freelance Work',
     amount: 2482,
-    img: dynamicImgImport('@/assets/images/cards/paypal.png'),
+    img: paypal,
   },
   {
     gateway: 'Credit Card',
     for: 'Digital Ocean',
     amount: -1250,
-    img: dynamicImgImport('@/assets/images/cards/credit-card.png'),
+    img: creditCard,
   },
   {
     gateway: 'Mastercard',
     for: 'Netflix',
     amount: -99,
-    img: dynamicImgImport('@/assets/images/cards/atm-card.png'),
+    img: atmCard,
   },
   {
     gateway: 'Wallet',
     for: 'Mac\'D',
     amount: -82,
-    img: dynamicImgImport('@/assets/images/cards/wallet.png'),
+    img: wallet,
   },
   {
     gateway: 'Transfer',
     for: 'Refund',
     amount: 8934,
-    img: dynamicImgImport('@/assets/images/cards/arrow-growth.png'),
+    img: arrowGrowth,
   },
   {
     gateway: 'Wallet',
     for: 'Buy Apple Watch',
     amount: -399,
-    img: dynamicImgImport('@/assets/images/cards/wallet.png'),
+    img: wallet,
   },
 ]
 const transactionsColors: Colors = {

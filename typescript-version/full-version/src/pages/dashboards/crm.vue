@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import illustration1 from '@/assets/images/cards/illustration-1.png'
 import CrmActivityTimeline from '@/views/dashboards/crm/CrmActivityTimeline.vue'
 import CrmAreaCharts from '@/views/dashboards/crm/CrmAreaCharts.vue'
 import CrmDeveloperMeetup from '@/views/dashboards/crm/CrmDeveloperMeetup.vue'
@@ -10,14 +11,13 @@ import CrmTransactions from '@/views/dashboards/crm/CrmTransactions.vue'
 import CrmUpgradeYourPlan from '@/views/dashboards/crm/CrmUpgradeYourPlan.vue'
 import CrmWeeklySales from '@/views/dashboards/crm/CrmWeeklySales.vue'
 import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
-
 const statisticsWithImages = [
   {
     title: 'Ratings',
     subtitle: 'Year of 2021',
     stats: '13k',
     change: 38,
-    image: dynamicImgImport('@/assets/images/cards/illustration-1.png'),
+    image: illustration1,
     color: 'primary',
   },
   {
@@ -25,7 +25,7 @@ const statisticsWithImages = [
     subtitle: 'Last Week',
     stats: '24.5k',
     change: -22,
-    image: dynamicImgImport('@/assets/images/cards/illustration-2.png'),
+    image: illustration1,
     color: 'secondary',
   },
 ]

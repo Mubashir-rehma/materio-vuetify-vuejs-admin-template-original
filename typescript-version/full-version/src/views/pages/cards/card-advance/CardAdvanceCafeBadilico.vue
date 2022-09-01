@@ -1,9 +1,13 @@
+<script setup lang="ts">
+import cafeBadilico from '@/assets/images/cards/cafe-badilico.png'
+</script>
+
 <template>
   <VCard>
     <VImg
       cover
       height="230"
-      :src="dynamicImgImport('@/assets/images/cards/cafe-badilico.png')"
+      :src="cafeBadilico"
     />
 
     <VCardItem>

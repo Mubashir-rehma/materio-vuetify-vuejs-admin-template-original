@@ -23,7 +23,6 @@ watch(isDialogVisible, value => {
   <!-- Dialog -->
   <VDialog
     v-model="isDialogVisible"
-    persistent
     width="300"
   >
     <VCard

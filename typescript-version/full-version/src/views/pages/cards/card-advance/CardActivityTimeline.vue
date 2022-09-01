@@ -1,9 +1,15 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import timelineCardHeader from '@/assets/images/cards/timeline-card-header.png'
+import pdf from '@/assets/images/icons/project-icons/pdf.png'
+</script>
+
 <template>
   <VCard>
     <VImg
       cover
       height="210"
-      :src="dynamicImgImport('@/assets/images/cards/timeline-card-header.png')"
+      :src="timelineCardHeader"
     />
 
     <VCardItem>
@@ -34,7 +40,7 @@
 
           <div class="d-flex align-center">
             <img
-              :src="dynamicImgImport('@/assets/images/icons/project-icons/pdf.png')"
+              :src="pdf"
               width="20"
               class="me-2"
             >
@@ -61,7 +67,7 @@
           <div class="d-flex align-center">
             <VAvatar
               size="24"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+              :image="avatar1"
               class="me-3"
             />
 

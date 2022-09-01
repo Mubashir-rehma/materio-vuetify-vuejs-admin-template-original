@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+</script>
+
 <template>
   <VCard title="Activity Timeline">
     <VCardText>
@@ -50,7 +54,7 @@
             <VAvatar
               size="24"
               class="me-2"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+              :image="avatar2"
             />
             <div>
               <p class="font-weight-medium mb-0">

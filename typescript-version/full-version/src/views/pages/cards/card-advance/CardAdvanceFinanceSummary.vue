@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+</script>
+
 <template>
   <VCard>
     <VCardItem>
@@ -78,15 +84,15 @@
           <div class="v-avatar-group">
             <VAvatar
               :size="44"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+              :image="avatar1"
             />
             <VAvatar
               :size="44"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+              :image="avatar2"
             />
             <VAvatar
               :size="44"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-3.png')"
+              :image="avatar3"
             />
             <VAvatar
               color="grey-200"

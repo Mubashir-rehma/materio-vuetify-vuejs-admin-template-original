@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar5 from '@/assets/images/avatars/avatar-5.png'
+import avatar8 from '@/assets/images/avatars/avatar-8.png'
 const teamMembers = [
   {
-    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
+    profilePic: avatar1,
     name: 'Dean Hogan',
     designation: 'IOS developer',
     project: 'Zipper',
@@ -11,7 +16,7 @@ const teamMembers = [
 
   },
   {
-    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
+    profilePic: avatar8,
     name: 'Hilda Rice',
     designation: 'Laravel developer',
     project: 'Brandi',
@@ -20,7 +25,7 @@ const teamMembers = [
     progress: 75,
   },
   {
-    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-5.png'),
+    profilePic: avatar5,
     name: 'Andrew O\'Brien',
     designation: 'React developer',
     project: 'Payers',
@@ -29,7 +34,7 @@ const teamMembers = [
     progress: 55,
   },
   {
-    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-2.png'),
+    profilePic: avatar2,
     name: 'Eleanor Price',
     designation: 'Angular developer',
     project: 'Citibank',
@@ -38,7 +43,7 @@ const teamMembers = [
     progress: 60,
   },
   {
-    profilePic: dynamicImgImport('@/assets/images/avatars/avatar-3.png'),
+    profilePic: avatar3,
     name: 'Carl Oliver',
     designation: 'VueJs developer',
     project: 'Aviator',

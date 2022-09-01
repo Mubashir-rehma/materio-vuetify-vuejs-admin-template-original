@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import briefcase from '@/assets/images/cards/briefcase.png'
+import logoCreditCard2 from '@/assets/images/cards/logo-credit-card-2.png'
+import logoMastercardSmall from '@/assets/images/cards/logo-mastercard-small.png'
 const savedCards = [
   {
-    logo: dynamicImgImport('@/assets/images/cards/logo-mastercard-small.png'),
+    logo: logoMastercardSmall,
     type: 'Credit card',
     number: '2566 xxxx xxxx 8908',
   },
   {
-    logo: dynamicImgImport('@/assets/images/cards/logo-credit-card-2.png'),
+    logo: logoCreditCard2,
     type: 'Credit card',
     number: '8990 xxxx xxxx 6852',
   },
@@ -52,7 +55,7 @@ const savedCards = [
           class="plan-details me-2 border-opacity-100 border-primary"
         >
           <VImg
-            :src="dynamicImgImport('@/assets/images/cards/briefcase.png')"
+            :src="briefcase"
             alt="briefcase"
             width="23"
             height="20"

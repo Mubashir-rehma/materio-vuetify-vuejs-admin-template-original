@@ -12,7 +12,6 @@ const interest = ref<string[]>([])
 <template>
   <VDialog
     v-model="isDialogVisible"
-    persistent
     max-width="600px"
   >
     <!-- Dialog Activator -->

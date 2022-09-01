@@ -1,26 +1,33 @@
 <script setup lang="ts">
+import chartDark from '@/assets/images/cards/chart-dark.png'
+import chartLight from '@/assets/images/cards/chart-light.png'
+import heartDark from '@/assets/images/cards/heart-dark.png'
+import heartLight from '@/assets/images/cards/heart-light.png'
+import messageDark from '@/assets/images/cards/message-dark.png'
+import messageLight from '@/assets/images/cards/message-light.png'
+import userDark from '@/assets/images/cards/user-dark.png'
+import userLight from '@/assets/images/cards/user-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-
 const analytics = [
   {
     title: '42.8k',
     subtitle: 'Number of like',
-    img: useGenerateImageVariant('@/assets/images/cards/heart.png'),
+    img: useGenerateImageVariant(heartLight, heartDark),
   },
   {
     title: '21.2k',
     subtitle: 'Number of Followers',
-    img: useGenerateImageVariant('@/assets/images/cards/chart.png'),
+    img: useGenerateImageVariant(chartLight, chartDark),
   },
   {
     title: '2.4k',
     subtitle: 'Number of Comments',
-    img: useGenerateImageVariant('@/assets/images/cards/message.png'),
+    img: useGenerateImageVariant(messageLight, messageDark),
   },
   {
     title: '389.50k',
     subtitle: 'Number of Visits',
-    img: useGenerateImageVariant('@/assets/images/cards/user.png'),
+    img: useGenerateImageVariant(userLight, userDark),
   },
 ]
 </script>

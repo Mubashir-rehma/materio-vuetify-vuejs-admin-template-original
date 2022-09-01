@@ -88,6 +88,9 @@ defineEmits<{
                     :color="notification.color || 'primary'"
                     :image="notification.img || undefined"
                     :icon="notification.icon || undefined"
+                    size="40"
+                    class="v-avatar-light-bg"
+                    :class="`text-${notification.color || 'primary'}`"
                   >
                     <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
                   </VAvatar>

@@ -29,9 +29,12 @@ defineEmits<{
       size="small"
     >
       <VBadge
-        :content="props.notifications.length"
+        dot
         :model-value="!!props.notifications.length"
         color="error"
+        bordered
+        offset-x="1"
+        offset-y="1"
       >
         <VIcon
           icon="mdi-bell-outline"
@@ -43,6 +46,7 @@ defineEmits<{
         activator="parent"
         width="380px"
         :location="props.location"
+        offset="14px"
       >
         <VList class="py-0">
           <!-- 👉 Header -->

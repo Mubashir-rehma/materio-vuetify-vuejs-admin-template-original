@@ -13,6 +13,11 @@ export default {
   VChip: {
     elevation: 0,
   },
+  VMenu: {
+    VList: {
+      density: 'compact',
+    },
+  },
   VPagination: {
     activeColor: 'primary',
     density: 'comfortable',

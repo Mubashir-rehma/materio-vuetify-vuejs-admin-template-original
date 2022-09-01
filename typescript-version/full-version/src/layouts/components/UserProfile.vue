@@ -53,6 +53,7 @@ const logout = () => {
         activator="parent"
         width="230"
         location="bottom end"
+        offset="14px"
       >
         <VList>
           <!-- 👉 User Avatar & Name -->
@@ -96,6 +97,7 @@ const logout = () => {
               <VIcon
                 class="me-2"
                 icon="mdi-account-outline"
+                size="22"
               />
             </template>
 
@@ -108,6 +110,7 @@ const logout = () => {
               <VIcon
                 class="me-2"
                 icon="mdi-cog-outline"
+                size="22"
               />
             </template>
 
@@ -120,6 +123,7 @@ const logout = () => {
               <VIcon
                 class="me-2"
                 icon="mdi-currency-usd"
+                size="22"
               />
             </template>
 
@@ -132,6 +136,7 @@ const logout = () => {
               <VIcon
                 class="me-2"
                 icon="mdi-help-circle-outline"
+                size="22"
               />
             </template>
 
@@ -147,6 +152,7 @@ const logout = () => {
               <VIcon
                 class="me-2"
                 icon="mdi-logout"
+                size="22"
               />
             </template>
 

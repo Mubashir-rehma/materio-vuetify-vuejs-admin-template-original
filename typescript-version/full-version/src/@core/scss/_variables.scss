@@ -77,6 +77,9 @@ $vertical-nav-navbar-shadow: 0 4px 8px -4px rgb(94 86 105 / 42%);
 $vertical-nav-header-padding: 1rem $vertical-nav-horizontal-padding !default;
 $vertical-nav-header-inline-spacing: $vertical-nav-horizontal-spacing !default;
 
+// Move logo when vertical nav is mini (collapsed but not hovered)
+$vertical-nav-header-logo-translate-x-when-vertical-nav-mini: -4px;
+
 // Space between logo and title
 $vertical-nav-header-logo-title-spacing: 0.9rem !default;
 

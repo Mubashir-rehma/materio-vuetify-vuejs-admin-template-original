@@ -10,6 +10,7 @@
     "vue.volar",
     "antfu.iconify",
     "cipchk.cssrem",
-    "SonarSource.sonarlint-vscode"
+    "sonarsource.sonarlint-vscode",
+    "antfu.goto-alias"
   ]
 }

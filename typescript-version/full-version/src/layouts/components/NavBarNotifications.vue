@@ -2,24 +2,43 @@
 import Notifications from '@core/components/Notifications.vue'
 import type { Notification } from '@layouts/types'
 
+// Images
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar4 from '@/assets/images/avatars/avatar-4.png'
+import avatar5 from '@/assets/images/avatars/avatar-5.png'
+import paypal from '@/assets/images/svg/paypal.svg'
+
 const notifications: Notification[] = [
   {
-    img: 'https://cdn.vuetifyjs.com/images/john.jpg',
-    title: 'Congratulation John!',
-    subtitle: 'Won the monthly bestseller badge',
-    time: '2 minutes ago',
+    img: avatar4,
+    title: 'Congratulation Flora! 🎉',
+    subtitle: 'Won the monthly best seller badge',
+    time: 'Today',
   },
   {
     text: 'Tom Holland',
     title: 'New user registered.',
-    subtitle: 'Registered via SSO',
+    subtitle: '5 hours ago',
     time: 'Yesterday',
   },
   {
-    icon: 'mdi-home',
-    title: 'New user registered.',
-    subtitle: 'Registered via SSO',
-    time: 'Yesterday',
+    img: avatar5,
+    title: 'New message received 👋🏻',
+    subtitle: 'You have 10 unread messages',
+    time: '11 Aug',
+  },
+  {
+    img: paypal,
+    title: 'Paypal',
+    subtitle: 'Received Payment',
+    time: '25 May',
+    color: 'error',
+  },
+  {
+    img: avatar3,
+    title: 'Received Order 📦',
+    subtitle: 'New order received from john',
+    time: '19 Mar',
   },
 ]
 </script>

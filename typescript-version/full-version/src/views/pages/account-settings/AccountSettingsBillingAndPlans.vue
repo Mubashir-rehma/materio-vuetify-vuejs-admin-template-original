@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import BillingHistoryTable from './BillingHistoryTable.vue'
 
+import mastercard from '@/assets/images/icons/payments/mastercard.png'
+import visa from '@/assets/images/icons/payments/visa.png'
+
 interface CardDetails {
   name: string
   number: string
@@ -25,7 +28,7 @@ const creditCards: CardDetails[] = [
     isPrimary: true,
     type: 'visa',
     cvv: '456',
-    image: dynamicImgImport('@/assets/images/icons/payments/visa.png'),
+    image: visa,
   },
   {
     name: 'Mildred Wagner',
@@ -34,7 +37,7 @@ const creditCards: CardDetails[] = [
     isPrimary: false,
     type: 'mastercard',
     cvv: '123',
-    image: dynamicImgImport('@/assets/images/icons/payments/mastercard.png'),
+    image: mastercard,
   },
 ]
 

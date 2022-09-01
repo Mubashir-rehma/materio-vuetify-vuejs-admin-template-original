@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import poseM9 from '@/assets/images/cards/pose-m-9.png'
+import triangleDark from '@/assets/images/misc/triangle-dark.png'
+import triangleLight from '@/assets/images/misc/triangle-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
-const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
+const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 </script>
 
 <template>
@@ -26,7 +29,7 @@ const triangleBg = useGenerateImageVariant('@/assets/images/misc/triangle.png')
 
     <!-- Trophy -->
     <VImg
-      :src="dynamicImgImport('@/assets/images/cards/pose-m-9.png')"
+      :src="poseM9"
       class="illustration flip-in-rtl"
     />
   </VCard>

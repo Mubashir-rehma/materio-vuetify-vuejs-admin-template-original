@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import tree3 from '@/assets/images/pages/tree-3.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
+import authV2ResetPasswordIllustrationBorderedDark from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-dark.png'
+import authV2ResetPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-light.png'
+import authV2ResetPasswordIllustrationDark from '@/assets/images/pages/auth-v2-reset-password-illustration-dark.png'
+import authV2ResetPasswordIllustrationLight from '@/assets/images/pages/auth-v2-reset-password-illustration-light.png'
+
 const { isAppRtl } = useThemeConfig()
 
 const form = ref({
@@ -11,9 +19,13 @@ const form = ref({
   confirmPassword: '',
 })
 
-const authThemeImg = useGenerateImageVariant('@/assets/images/pages/auth-v2-reset-password-illustration.png', true)
+const authThemeImg = useGenerateImageVariant(authV2ResetPasswordIllustrationLight,
+  authV2ResetPasswordIllustrationDark,
+  authV2ResetPasswordIllustrationBorderedLight,
+  authV2ResetPasswordIllustrationBorderedDark,
+  true)
 
-const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
@@ -50,7 +62,7 @@ const isConfirmPasswordVisible = ref(false)
 
         <VImg
           :width="276"
-          :src="dynamicImgImport('@/assets/images/pages/tree-3.png')"
+          :src="tree3"
           class="auth-footer-start-tree"
         />
 

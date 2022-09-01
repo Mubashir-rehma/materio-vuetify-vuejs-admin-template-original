@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
+</script>
+
 <template>
   <VCard title="Basic Timeline">
     <VCardText>
@@ -74,7 +80,7 @@
               <VAvatar
                 size="40"
                 class="me-2"
-                :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+                :image="avatar2"
               />
               <div>
                 <h6 class="text-sm font-weight-semibold">Rebecca Godman</h6>
@@ -111,7 +117,7 @@
             <VImg
               height="100"
               width="100"
-              :src="dynamicImgImport('@/assets/images/pages/puma-shoes.jpeg')"
+              :src="pumaShoes"
               class="rounded me-4"
             />
 
@@ -171,7 +177,7 @@
           <div class="d-flex align-center">
             <VAvatar
               size="40"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+              :image="avatar1"
               class="me-2"
             />
             <h6 class="text-sm font-weight-semibold">

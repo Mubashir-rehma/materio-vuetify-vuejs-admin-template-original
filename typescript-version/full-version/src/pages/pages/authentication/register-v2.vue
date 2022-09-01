@@ -4,6 +4,14 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
+import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
+import authV2RegisterIllustrationBorderedDark from '@/assets/images/pages/auth-v2-register-illustration-bordered-dark.png'
+import authV2RegisterIllustrationBorderedLight from '@/assets/images/pages/auth-v2-register-illustration-bordered-light.png'
+import authV2RegisterIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
+import authV2RegisterIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
+import tree2 from '@/assets/images/pages/tree-2.png'
+
 const form = ref({
   username: '',
   email: '',
@@ -11,9 +19,12 @@ const form = ref({
   privacyPolicies: false,
 })
 
-const imageVariant = useGenerateImageVariant('@/assets/images/pages/auth-v2-register-illustration.png', true)
+const imageVariant = useGenerateImageVariant(authV2RegisterIllustrationLight,
+  authV2RegisterIllustrationDark,
+  authV2RegisterIllustrationBorderedLight,
+  authV2RegisterIllustrationBorderedDark, true)
 
-const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
 const isPasswordVisible = ref(false)
 </script>
@@ -49,7 +60,7 @@ const isPasswordVisible = ref(false)
 
         <VImg
           :width="150"
-          :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
+          :src="tree2"
           class="auth-footer-start-tree"
         />
 

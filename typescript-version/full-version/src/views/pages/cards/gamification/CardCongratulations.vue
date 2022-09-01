@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import illustrationJohn2 from '@/assets/images/cards/illustration-john-2.png'
+</script>
+
 <template>
   <VCard class="pa-2 overflow-visible">
     <VRow no-gutters>
@@ -28,7 +32,7 @@
         class="text-center"
       >
         <img
-          :src="dynamicImgImport('@/assets/images/cards/illustration-john-2.png')"
+          :src="illustrationJohn2"
           :height="$vuetify.display.xs ? '165' : '200'"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
           class="john-illustration flip-in-rtl"

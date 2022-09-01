@@ -1,20 +1,27 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-
 import type { LoginResponse } from '@/@fake-db/types'
+import tree from '@/assets/images/pages/tree.png'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import { emailValidator, requiredValidator } from '@validators'
 
+import authV2LoginIllustrationBorderedDark from '@/assets/images/pages/auth-v2-login-illustration-bordered-dark.png'
+import authV2LoginIllustrationBorderedLight from '@/assets/images/pages/auth-v2-login-illustration-bordered-light.png'
+import authV2LoginIllustrationDark from '@/assets/images/pages/auth-v2-login-illustration-dark.png'
+import authV2LoginIllustrationLight from '@/assets/images/pages/auth-v2-login-illustration-light.png'
+import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
+
 const isPasswordVisible = ref(false)
 
-const authThemeImg = useGenerateImageVariant('@/assets/images/pages/auth-v2-login-illustration.png', true)
+const authThemeImg = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
 
-const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
 const route = useRoute()
 const router = useRouter()
@@ -89,7 +96,7 @@ const onSubmit = () => {
         />
         <VImg
           :width="276"
-          :src="dynamicImgImport('@/assets/images/pages/tree.png')"
+          :src="tree"
           class="auth-footer-start-tree"
         />
         <VImg

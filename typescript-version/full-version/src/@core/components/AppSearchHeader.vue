@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import knowledgeBaseBgDark from '@/assets/images/pages/knowledge-base-bg-dark.png'
+import knowledgeBaseBgLight from '@/assets/images/pages/knowledge-base-bg-light.png'
+
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 interface Props {
@@ -12,7 +15,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const themeBackgroundImg = useGenerateImageVariant('@/assets/images/pages/knowledge-base-bg.png')
+const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowledgeBaseBgDark)
 </script>
 
 <template>

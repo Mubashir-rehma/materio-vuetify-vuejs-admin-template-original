@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
+</script>
+
 <template>
   <VCard title="Timeline Card">
     <VCardText>
@@ -84,7 +90,7 @@
                   <div>
                     <VAvatar
                       size="40"
-                      :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+                      :image="avatar2"
                       class="me-2"
                     />
                   </div>
@@ -138,7 +144,7 @@
                 <VImg
                   height="80"
                   width="80"
-                  :src="dynamicImgImport('@/assets/images/pages/puma-shoes.jpeg')"
+                  :src="pumaShoes"
                   class="rounded me-4"
                 />
                 <div>
@@ -197,7 +203,7 @@
                   size="40"
                   class="me-2"
                 >
-                  <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+                  <VImg :src="avatar1" />
                 </VAvatar>
                 <h6 class="text-sm font-weight-semibold">
                   John Doe (Client)

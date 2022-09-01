@@ -1,9 +1,17 @@
 <script lang="ts" setup>
 import UserInvoiceTable from './UserInvoiceTable.vue'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import figma from '@/assets/images/icons/project-icons/figma.png'
+import html5 from '@/assets/images/icons/project-icons/html5.png'
+import python from '@/assets/images/icons/project-icons/python.png'
+import react from '@/assets/images/icons/project-icons/react.png'
+import sketch from '@/assets/images/icons/project-icons/sketch.png'
+import vue from '@/assets/images/icons/project-icons/vue.png'
+import xamarin from '@/assets/images/icons/project-icons/xamarin.png'
 
 const projects = [
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/react.png'),
+    logo: react,
     name: 'BGC eCommerce App',
     project: 'React Project',
     totalTask: '122/240',
@@ -11,7 +19,7 @@ const projects = [
     hours: '18:42',
   },
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/figma.png'),
+    logo: figma,
     name: 'Falcon Logo Design',
     project: 'Figma Project',
     totalTask: '09/56',
@@ -19,7 +27,7 @@ const projects = [
     hours: '20:42',
   },
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/vue.png'),
+    logo: vue,
     name: 'Dashboard Design',
     project: 'Vuejs Project',
     totalTask: '290/320',
@@ -27,7 +35,7 @@ const projects = [
     hours: '120:87',
   },
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/xamarin.png'),
+    logo: xamarin,
     name: 'Foodista mobile app',
     project: 'Xamarin Project',
     totalTask: '290/320',
@@ -35,7 +43,7 @@ const projects = [
     hours: '120:87',
   },
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/python.png'),
+    logo: python,
     name: 'Dojo Email App',
     project: 'Python Project',
     totalTask: '120/186',
@@ -43,7 +51,7 @@ const projects = [
     hours: '230:10',
   },
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/sketch.png'),
+    logo: sketch,
     name: 'Blockchain Website',
     project: 'Sketch Project',
     totalTask: '99/109',
@@ -51,7 +59,7 @@ const projects = [
     hours: '342:41',
   },
   {
-    logo: dynamicImgImport('@/assets/images/icons/project-icons/html5.png'),
+    logo: html5,
     name: 'Hoffman Website',
     project: 'HTML Project',
     totalTask: '98/110',
@@ -184,7 +192,7 @@ const resolveUserProgressVariant = (progress: number) => {
                 <VAvatar
                   size="34"
                   class="me-2"
-                  :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+                  :image="avatar2"
                 />
                 <div>
                   <h6 class="text-sm font-weight-semibold mb-0">

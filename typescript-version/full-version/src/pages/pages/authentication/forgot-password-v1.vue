@@ -1,15 +1,20 @@
 <script setup lang="ts">
+import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
+import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
+import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png'
+import authV1Tree from '@/assets/images/pages/auth-v1-tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+
 const { isAppRtl } = useThemeConfig()
 
 const form = ref({
   email: '',
 })
 
-const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mask.png')
+const authThemeMask = useGenerateImageVariant(authV1MaskLight, authV1MaskDark)
 </script>
 
 <template>
@@ -84,12 +89,12 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v1-mas
 
     <VImg
       class="auth-footer-start-tree d-none d-md-block"
-      :src="dynamicImgImport('@/assets/images/pages/auth-v1-tree.png')"
+      :src="authV1Tree"
       :width="250"
     />
 
     <VImg
-      :src="dynamicImgImport('@/assets/images/pages/auth-v1-tree-2.png')"
+      :src="authV1Tree2"
       class="auth-footer-end-tree d-none d-md-block"
       :width="350"
     />

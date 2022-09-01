@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import miscComingSoon from '@/assets/images/pages/misc-coming-soon.png'
+import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
+import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
+import tree2 from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-
 const email = ref('')
 
-const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.png')
+const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </script>
 
 <template>
@@ -39,7 +42,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
     <!-- 👉 Image -->
     <div class="misc-avatar w-100 mt-10">
       <VImg
-        :src="dynamicImgImport('@/assets/images/pages/misc-coming-soon.png')"
+        :src="miscComingSoon"
         alt="Coming Soon"
         :max-width="700"
         class="mx-auto"
@@ -48,7 +51,7 @@ const authThemeMask = useGenerateImageVariant('@/assets/images/pages/misc-mask.p
 
     <!-- 👉 Footer -->
     <VImg
-      :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
+      :src="tree2"
       class="misc-footer-tree d-none d-md-block"
     />
 

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+</script>
+
 <template>
   <div class="demo-space-x d-flex align-center flex-wrap">
     <!-- default -->
@@ -25,7 +29,7 @@
       offset-y="3"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
 
@@ -35,7 +39,7 @@
       content="5"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
 
@@ -45,7 +49,7 @@
       content="5"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
   </div>

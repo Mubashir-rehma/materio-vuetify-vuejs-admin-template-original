@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
+import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const isCurrentPasswordVisible = ref(false)
@@ -80,7 +82,7 @@ const recentDevices = [
 ]
 
 // 👉 Change the image as per theme change
-const sittingGirlImg = useGenerateImageVariant('@/assets/images/illustrations/sitting-girl-with-laptop.png')
+const sittingGirlImg = useGenerateImageVariant(sittingGirlWithLaptopLight, sittingGirlWithLaptopDark)
 
 const isOneTimePasswordDialogVisible = ref(false)
 </script>

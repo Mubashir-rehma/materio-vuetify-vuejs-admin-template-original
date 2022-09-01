@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
 const serverSwitch = ref(false)
 </script>
 
@@ -86,7 +89,7 @@ const serverSwitch = ref(false)
             <span class="d-flex align-bottom mt-2">
               <VAvatar
                 size="40"
-                :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
+                :image="avatar2"
                 class="me-2"
               />
               <div class="d-flex flex-column">
@@ -129,7 +132,7 @@ const serverSwitch = ref(false)
             <VImg
               height="100"
               width="100"
-              :src="dynamicImgImport('@/assets/images/pages/puma-shoes.jpeg')"
+              :src="pumaShoes"
               class="rounded me-4"
             />
 
@@ -196,7 +199,7 @@ const serverSwitch = ref(false)
           <div class="d-flex align-center">
             <VAvatar
               size="40"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+              :image="avatar1"
               class="me-2"
             />
             <h6 class="text-sm font-weight-semibold">

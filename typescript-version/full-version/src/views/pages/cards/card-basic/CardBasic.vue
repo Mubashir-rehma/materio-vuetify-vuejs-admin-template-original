@@ -1,9 +1,20 @@
 <script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar4 from '@/assets/images/avatars/avatar-4.png'
+import eCommerce2 from '@/assets/images/eCommerce/2.png'
+import pages1 from '@/assets/images/pages/1.png'
+import pages2 from '@/assets/images/pages/2.png'
+import pages3 from '@/assets/images/pages/3.png'
+import pages5 from '@/assets/images/pages/5.jpg'
+import pages6 from '@/assets/images/pages/6.jpg'
+
 const avatars = [
-  dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
-  dynamicImgImport('@/assets/images/avatars/avatar-2.png'),
-  dynamicImgImport('@/assets/images/avatars/avatar-3.png'),
-  dynamicImgImport('@/assets/images/avatars/avatar-4.png'),
+  avatar1,
+  avatar2,
+  avatar3,
+  avatar4,
 ]
 
 const isCardDetailsVisible = ref(false)
@@ -19,7 +30,7 @@ const isCardDetailsVisible = ref(false)
     >
       <VCard>
         <VImg
-          :src="dynamicImgImport('@/assets/images/pages/1.png')"
+          :src="pages1"
           cover
         />
 
@@ -40,14 +51,14 @@ const isCardDetailsVisible = ref(false)
       md="4"
     >
       <VCard>
-        <VImg :src="dynamicImgImport('@/assets/images/pages/2.png')" />
+        <VImg :src="pages2" />
 
         <VCardText class="position-relative">
           <!-- User Avatar -->
           <VAvatar
             size="75"
             class="avatar-center"
-            :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+            :image="avatar1"
           />
 
           <!-- Title, Subtitle & Action Button -->
@@ -87,7 +98,7 @@ const isCardDetailsVisible = ref(false)
       sm="6"
     >
       <VCard>
-        <VImg :src="dynamicImgImport('@/assets/images/pages/3.png')" />
+        <VImg :src="pages3" />
 
         <VCardItem>
           <VCardTitle>Popular Uses Of The Internet</VCardTitle>
@@ -134,7 +145,7 @@ const isCardDetailsVisible = ref(false)
           <div class="ma-auto pa-5">
             <VImg
               width="137"
-              :src="dynamicImgImport('@/assets/images/eCommerce/2.png')"
+              :src="eCommerce2"
             />
           </div>
 
@@ -204,7 +215,7 @@ const isCardDetailsVisible = ref(false)
           <div class="ma-auto pa-5">
             <VImg
               :width="176"
-              :src="dynamicImgImport('@/assets/images/pages/5.jpg')"
+              :src="pages5"
               class="rounded"
             />
           </div>
@@ -219,7 +230,7 @@ const isCardDetailsVisible = ref(false)
       cols="12"
     >
       <VCard>
-        <VImg :src="dynamicImgImport('@/assets/images/pages/6.jpg')" />
+        <VImg :src="pages6" />
 
         <VCardItem>
           <VCardTitle>Apple Watch</VCardTitle>

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import illustration1 from '@/assets/images/cards/illustration-1.png'
+import illustration2 from '@/assets/images/cards/illustration-2.png'
+import illustration3 from '@/assets/images/cards/illustration-3.png'
+import illustration4 from '@/assets/images/cards/illustration-4.png'
 import CardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsAreaCharts.vue'
 import CardStatisticsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarCharts.vue'
 import CardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarWithGapCharts.vue'
@@ -98,7 +102,7 @@ const statisticsWithImages = [
     subtitle: 'Year of 2021',
     stats: '13k',
     change: 38,
-    image: dynamicImgImport('@/assets/images/cards/illustration-1.png'),
+    image: illustration1,
     color: 'primary',
   },
   {
@@ -106,7 +110,7 @@ const statisticsWithImages = [
     subtitle: 'Last Week',
     stats: '24.5k',
     change: -22,
-    image: dynamicImgImport('@/assets/images/cards/illustration-2.png'),
+    image: illustration2,
     color: 'secondary',
   },
   {
@@ -114,7 +118,7 @@ const statisticsWithImages = [
     subtitle: 'Daily Customers',
     stats: '2,856',
     change: 59,
-    image: dynamicImgImport('@/assets/images/cards/illustration-3.png'),
+    image: illustration3,
     color: 'info',
   },
   {
@@ -122,7 +126,7 @@ const statisticsWithImages = [
     subtitle: 'Last Month',
     stats: '42.5k',
     change: 26,
-    image: dynamicImgImport('@/assets/images/cards/illustration-4.png'),
+    image: illustration4,
     color: 'warning',
   },
 ]

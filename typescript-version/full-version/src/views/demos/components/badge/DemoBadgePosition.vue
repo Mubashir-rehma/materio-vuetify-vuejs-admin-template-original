@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+</script>
+
 <template>
   <div class="demo-space-x">
     <!-- 👉 Top End -->
@@ -6,7 +10,7 @@
       location="end top"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
 
@@ -16,7 +20,7 @@
       content="2"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
 
@@ -26,7 +30,7 @@
       content="3"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
 
@@ -36,7 +40,7 @@
       content="4"
     >
       <VAvatar size="48">
-        <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+        <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>
   </div>

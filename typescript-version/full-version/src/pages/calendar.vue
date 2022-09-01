@@ -58,6 +58,7 @@ const checkAll = computed({
           absolute
           touchless
           location="start"
+          class="calendar-add-event-drawer"
           :temporary="$vuetify.display.mdAndDown"
         >
           <div class="pa-5 d-flex flex-column gap-y-8">
@@ -68,14 +69,16 @@ const checkAll = computed({
               Add event
             </VBtn>
             <div>
-              <p class="text-sm text-uppercase text-medium-emphasis">
+              <p class="text-sm text-uppercase text-medium-emphasis mb-3">
                 Calendars
               </p>
-              <VCheckbox
-                v-model="checkAll"
-                label="View all"
-              />
-              <div class="d-flex flex-column">
+
+              <div class="d-flex flex-column calendars-checkbox">
+                <VCheckbox
+                  v-model="checkAll"
+                  label="View all"
+                  density="default"
+                />
                 <VCheckbox
                   v-for="calendar in store.availableCalendars"
                   :key="calendar.label"
@@ -83,6 +86,7 @@ const checkAll = computed({
                   :value="calendar.label"
                   :color="calendar.color"
                   :label="calendar.label"
+                  density="default"
                 />
               </div>
             </div>
@@ -110,4 +114,28 @@ const checkAll = computed({
 
 <style lang="scss">
 @import "@core/scss/libs/full-calendar";
+
+.calendars-checkbox {
+  .v-label {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    opacity: var(--v-high-emphasis-opacity);
+  }
+}
+
+.calendar-add-event-drawer {
+  &.v-navigation-drawer {
+    border-end-start-radius: 0.375rem;
+    border-start-start-radius: 0.375rem;
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+.v-layout {
+  overflow: visible !important;
+
+  .v-card {
+    overflow: visible;
+  }
+}
 </style>

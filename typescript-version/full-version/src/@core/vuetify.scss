@@ -241,12 +241,22 @@ h6,
   gap: 0.25rem;
 }
 
+// 👉 List
+.v-list {
+  // Set icons opacity to .87
+  .v-list-item__prepend > .v-icon,
+  .v-list-item__append > .v-icon {
+    opacity: var(--v-high-emphasis-opacity);
+  }
+}
+
+// 👉 Card list
+
 /*
   👉 Remove list spacing inside card
 
   This is because card title gets padding of 20px and list item have padding of 16px. Moreover, list container have padding-bottom as well.
 */
-
 .card-list {
   --v-card-list-gap: 20px;
 
@@ -268,7 +278,6 @@ h6,
 }
 
 // 👉 v-table
-
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }

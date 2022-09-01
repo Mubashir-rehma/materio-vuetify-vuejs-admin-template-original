@@ -32,6 +32,7 @@ const { locale } = useI18n({ useScope: 'global' })
     <VMenu
       activator="parent"
       :location="props.location"
+      offset="14px"
     >
       <!-- List -->
       <VList min-width="175px">

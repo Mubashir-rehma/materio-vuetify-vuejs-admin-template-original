@@ -82,7 +82,7 @@ const isCardDetailsVisible = ref(false)
               <VAvatar
                 v-for="(avatar, index) in avatars"
                 :key="index"
-                v-bind="avatar"
+                :image="avatar"
                 size="40"
               />
             </div>

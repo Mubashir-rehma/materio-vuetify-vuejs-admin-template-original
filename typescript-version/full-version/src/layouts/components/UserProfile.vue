@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Anchor } from 'vuetify/lib/components'
 import { initialAbility } from '@/plugins/casl/ability'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 
@@ -24,17 +25,19 @@ const logout = () => {
       ability.update(initialAbility)
     })
 }
+
+const avatarBadgeProps = {
+  dot: true,
+  location: 'bottom right' as Anchor,
+  offsetX: 3,
+  offsetY: 3,
+  color: 'success',
+  bordered: true,
+}
 </script>
 
 <template>
-  <VBadge
-    dot
-    bordered
-    location="bottom right"
-    offset-x="3"
-    offset-y="3"
-    color="success"
-  >
+  <VBadge v-bind="avatarBadgeProps">
     <VAvatar
       class="cursor-pointer v-avatar-light-bg text-primary"
       color="primary"
@@ -60,16 +63,11 @@ const logout = () => {
           <VListItem>
             <template #prepend>
               <VListItemAction start>
-                <VBadge
-                  dot
-                  location="bottom right"
-                  offset-x="3"
-                  offset-y="3"
-                  color="success"
-                >
+                <VBadge v-bind="avatarBadgeProps">
                   <VAvatar
                     color="primary"
                     class="v-avatar-light-bg text-primary"
+                    size="40"
                   >
                     <VImg
                       v-if="userData.avatar"
@@ -87,9 +85,12 @@ const logout = () => {
             <VListItemTitle class="font-weight-semibold">
               {{ userData.fullName }}
             </VListItemTitle>
-            <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
+            <VListItemSubtitle class="text-disabled">
+              {{ userData.role }}
+            </VListItemSubtitle>
           </VListItem>
-          <VDivider />
+
+          <VDivider class="my-2" />
 
           <!-- 👉 Profile -->
           <VListItem :to="{ name: 'user-view-id', params: { id: 21 } }">
@@ -144,14 +145,14 @@ const logout = () => {
           </VListItem>
 
           <!-- Divider -->
-          <VDivider />
+          <VDivider class="my-2" />
 
           <!-- 👉 Logout -->
           <VListItem @click="logout">
             <template #prepend>
               <VIcon
                 class="me-2"
-                icon="mdi-logout"
+                icon="mdi-logout-variant"
                 size="22"
               />
             </template>

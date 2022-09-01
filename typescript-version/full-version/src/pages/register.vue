@@ -1,15 +1,21 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-
 import type { RegisterResponse } from '@/@fake-db/types'
+import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
+import authV2RegisterIllustrationBorderedDark from '@/assets/images/pages/auth-v2-register-illustration-bordered-dark.png'
+import authV2RegisterIllustrationBorderedLight from '@/assets/images/pages/auth-v2-register-illustration-bordered-light.png'
+import authV2RegisterIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
+import authV2RegisterIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
+import tree2 from '@/assets/images/pages/tree-2.png'
+
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import { alphaDashValidator, emailValidator, requiredValidator } from '@validators'
-
 const refVForm = ref<VForm>()
 const username = ref('johnDoe')
 const email = ref('john@example.com')
@@ -57,9 +63,14 @@ const register = () => {
     })
 }
 
-const imageVariant = useGenerateImageVariant('@/assets/images/pages/auth-v2-register-illustration.png', true)
+const imageVariant = useGenerateImageVariant(
+  authV2RegisterIllustrationLight,
+  authV2RegisterIllustrationDark, authV2RegisterIllustrationBorderedLight,
+  authV2RegisterIllustrationBorderedDark,
+  true,
+)
 
-const authThemeMask = useGenerateImageVariant('@/assets/images/pages/auth-v2-mask.png')
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
 const isPasswordVisible = ref(false)
 
@@ -103,7 +114,7 @@ const onSubmit = () => {
 
         <VImg
           :width="150"
-          :src="dynamicImgImport('@/assets/images/pages/tree-2.png')"
+          :src="tree2"
           class="auth-footer-start-tree"
         />
 

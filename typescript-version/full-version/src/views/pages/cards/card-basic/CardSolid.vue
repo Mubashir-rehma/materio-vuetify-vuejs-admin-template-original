@@ -1,11 +1,15 @@
 <script lang="ts" setup>
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar4 from '@/assets/images/avatars/avatar-4.png'
+import avatar8 from '@/assets/images/avatars/avatar-8.png'
+
 const solidCardData = [
   {
     cardBg: '#16B1FF',
     title: 'Twitter Card',
     icon: 'mdi-twitter',
     text: '"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."',
-    avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-4.png'),
+    avatarImg: avatar4,
     avatarName: 'Mary Vaughn',
     likes: '1.2k',
     share: '80',
@@ -15,7 +19,7 @@ const solidCardData = [
     title: 'Facebook Card',
     icon: 'mdi-facebook',
     text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an effective',
-    avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-1.png'),
+    avatarImg: avatar1,
     avatarName: 'Eugene Clarke',
     likes: '3.2k',
     share: '49',
@@ -25,8 +29,8 @@ const solidCardData = [
     title: 'Linkedin Card',
     icon: 'mdi-linkedin',
     text: 'With the Internet spreading like wildfire and reaching every part of our daily life, more and more traffic is directed.',
-    avatarImg: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
-    avatarName: 'Anne Burke',
+    avatarImg: avatar8,
+    avatarName: 'Anne Burke1',
     likes: '1.2k',
     share: '80',
   },

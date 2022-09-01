@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import chrome from '@/assets/images/logos/chrome.png'
+
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 const smsVerificationNumber = ref('+1(968) 819-2547')
@@ -7,28 +9,28 @@ const isTwoFactorDialogOpen = ref(false)
 const recentDevices = [
   {
     browser: 'Chrome on Windows',
-    logo: dynamicImgImport('@/assets/images/logos/chrome.png'),
+    logo: chrome,
     device: 'Dell XPS 15',
     location: 'United States',
     activity: '10, Jan 2020 20:07',
   },
   {
     browser: 'Chrome on Android',
-    logo: dynamicImgImport('@/assets/images/logos/chrome.png'),
+    logo: chrome,
     device: 'Google Pixel 3a',
     location: 'Ghana',
     activity: '11, Jan 2020 10:16',
   },
   {
     browser: 'Chrome on MacOS',
-    logo: dynamicImgImport('@/assets/images/logos/chrome.png'),
+    logo: chrome,
     device: 'Apple iMac',
     location: 'Mayotte',
     activity: '11, Jan 2020 12:10',
   },
   {
     browser: 'Chrome on iPhone',
-    logo: dynamicImgImport('@/assets/images/logos/chrome.png'),
+    logo: chrome,
     device: 'Apple iPhone XR',
     location: 'Mauritania',
     activity: '12, Jan 2020 8:29',

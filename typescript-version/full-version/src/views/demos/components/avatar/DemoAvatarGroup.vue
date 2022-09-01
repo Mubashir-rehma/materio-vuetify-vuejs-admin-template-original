@@ -1,7 +1,16 @@
+<script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar4 from '@/assets/images/avatars/avatar-4.png'
+import avatar5 from '@/assets/images/avatars/avatar-5.png'
+import avatar6 from '@/assets/images/avatars/avatar-6.png'
+</script>
+
 <template>
   <div class="v-avatar-group">
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-1.png')" />
+      <VImg :src="avatar1" />
       <VTooltip
         activator="parent"
         location="start"
@@ -11,7 +20,7 @@
     </VAvatar>
 
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-2.png')" />
+      <VImg :src="avatar2" />
       <VTooltip
         activator="parent"
         location="start"
@@ -21,7 +30,7 @@
     </VAvatar>
 
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-3.png')" />
+      <VImg :src="avatar3" />
       <VTooltip
         activator="parent"
         location="start"
@@ -31,7 +40,7 @@
     </VAvatar>
 
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-4.png')" />
+      <VImg :src="avatar4" />
       <VTooltip
         activator="parent"
         location="start"
@@ -41,7 +50,7 @@
     </VAvatar>
 
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-5.png')" />
+      <VImg :src="avatar5" />
       <VTooltip
         activator="parent"
         location="start"
@@ -51,7 +60,7 @@
     </VAvatar>
 
     <VAvatar size="large">
-      <VImg :src="dynamicImgImport('@/assets/images/avatars/avatar-6.png')" />
+      <VImg :src="avatar6" />
       <VTooltip
         activator="parent"
         location="start"

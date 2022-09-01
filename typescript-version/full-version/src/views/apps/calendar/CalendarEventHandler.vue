@@ -1,11 +1,17 @@
 <script setup lang="ts">
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
-
 import type { Options } from 'flatpickr'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { VForm } from 'vuetify/components'
 import type { Event, NewEvent } from './types'
 import { useCalendarStore } from './useCalendarStore'
+
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar5 from '@/assets/images/avatars/avatar-5.png'
+import avatar6 from '@/assets/images/avatars/avatar-6.png'
+import avatar7 from '@/assets/images/avatars/avatar-7.png'
+
 import { requiredValidator, urlValidator } from '@validators'
 
 const props = defineProps<Props>()
@@ -61,12 +67,12 @@ const handleSubmit = () => {
 }
 
 const guestsOptions = [
-  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-1.png'), name: 'Jane Foster' },
-  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-3.png'), name: 'Donna Frank' },
-  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-5.png'), name: 'Gabrielle Robertson' },
-  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-7.png'), name: 'Lori Spears' },
-  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-6.png'), name: 'Sandy Vega' },
-  { avatar: dynamicImgImport('@/assets/images/avatars/avatar-2.png'), name: 'Cheryl May' },
+  { avatar: avatar1, name: 'Jane Foster' },
+  { avatar: avatar3, name: 'Donna Frank' },
+  { avatar: avatar5, name: 'Gabrielle Robertson' },
+  { avatar: avatar7, name: 'Lori Spears' },
+  { avatar: avatar6, name: 'Sandy Vega' },
+  { avatar: avatar2, name: 'Cheryl May' },
 ]
 
 const perfectScrollbarSettings = {

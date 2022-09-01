@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import pdf from '@/assets/images/icons/project-icons/pdf.png'
+import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
 const serverSwitch = ref(false)
 </script>
 
@@ -53,7 +57,7 @@ const serverSwitch = ref(false)
 
           <div class="d-flex align-center">
             <img
-              :src="dynamicImgImport('@/assets/images/icons/project-icons/pdf.png')"
+              :src="pdf"
               width="28"
               class="me-2"
             >
@@ -106,8 +110,8 @@ const serverSwitch = ref(false)
             <span class="d-flex align-bottom mt-2">
               <VAvatar
                 size="32"
+                :image="avatar2"
                 class="me-2"
-                :image="dynamicImgImport('@/assets/images/avatars/avatar-2.png')"
               />
               <div>
                 <h6 class="text-sm font-weight-semibold">Rebecca Godman</h6>
@@ -168,7 +172,7 @@ const serverSwitch = ref(false)
             <VImg
               height="100"
               width="100"
-              :src="dynamicImgImport('@/assets/images/pages/puma-shoes.jpeg')"
+              :src="pumaShoes"
               class="rounded me-4"
             />
 
@@ -242,7 +246,7 @@ const serverSwitch = ref(false)
           <div class="d-flex align-center">
             <VAvatar
               size="32"
-              :image="dynamicImgImport('@/assets/images/avatars/avatar-1.png')"
+              :image="avatar1"
               class="me-2"
             />
             <h6 class="text-sm font-weight-semibold">

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import americanExpress from '@/assets/images/icons/payments/american-express.png'
+import mastercard from '@/assets/images/icons/payments/mastercard.png'
+import visa from '@/assets/images/icons/payments/visa.png'
+
 interface CardDetail {
   name: string
   number: string
@@ -30,7 +34,7 @@ const creditCards: CardDetail[] = [
     isPrimary: true,
     type: 'mastercard',
     cvv: '123',
-    image: dynamicImgImport('@/assets/images/icons/payments/mastercard.png'),
+    image: mastercard,
   },
   {
     name: 'Mildred Wagner',
@@ -39,7 +43,7 @@ const creditCards: CardDetail[] = [
     isPrimary: false,
     type: 'visa',
     cvv: '456',
-    image: dynamicImgImport('@/assets/images/icons/payments/visa.png'),
+    image: visa,
   },
   {
     name: 'Lester Jennings',
@@ -48,7 +52,7 @@ const creditCards: CardDetail[] = [
     isPrimary: false,
     type: 'visa',
     cvv: '456',
-    image: dynamicImgImport('@/assets/images/icons/payments/american-express.png'),
+    image: americanExpress,
   },
 ]
 

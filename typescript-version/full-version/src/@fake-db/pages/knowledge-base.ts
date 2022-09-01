@@ -1,40 +1,47 @@
 import mock from '@/@fake-db/mock'
 import type { KnowledgeBaseDB, KnowledgeBaseSubcategory } from '@/@fake-db/types'
+import macPc from '@/assets/images/pages/mac-pc.png'
+import poseF28 from '@/assets/images/pages/pose-f-28.png'
+import poseF3 from '@/assets/images/pages/pose-f-3.png'
+import poseM39 from '@/assets/images/pages/pose-f-39.png'
+import poseM14 from '@/assets/images/pages/pose-m-14.png'
+import poseM34 from '@/assets/images/pages/pose-m-34.png'
+import poseM5 from '@/assets/images/pages/pose-m-5.png'
 
 const database: KnowledgeBaseDB = {
   knowledgeBaseCategories: [
     {
-      character: dynamicImgImport('@/assets/images/pages/pose-f-3.png'),
+      character: poseF3,
       category: 'sales-automation',
       title: 'Sales Automation 👩🏻‍💻',
       desc: 'There is perhaps no better demonstration of the folly of image of our tiny world.',
     },
     {
-      character: dynamicImgImport('@/assets/images/pages/pose-f-28.png'),
+      character: poseF28,
       category: 'marketing-automation',
       title: 'Marketing Automation 🚀',
       desc: 'Look again at that dot. That\'s here. That’s home. That\'s us. On it everyone you love.',
     },
     {
-      character: dynamicImgImport('@/assets/images/pages/pose-m-34.png'),
+      character: poseM34,
       category: 'api-questions',
       title: 'API Questions 📱',
       desc: 'Every hero and coward, every creator and destroyer of civilization.',
     },
     {
-      character: dynamicImgImport('@/assets/images/pages/pose-f-39.png'),
+      character: poseM39,
       category: 'email-marketing',
       title: 'Email Marketing ✉️',
       desc: 'There is perhaps no better demonstration of the folly of human conceits.',
     },
     {
-      character: dynamicImgImport('@/assets/images/pages/pose-m-14.png'),
+      character: poseM14,
       category: 'personalization',
       title: 'Personalization 🤩',
       desc: 'It has been said that astronomy is a humbling and character experience.',
     },
     {
-      character: dynamicImgImport('@/assets/images/pages/pose-m-5.png'),
+      character: poseM5,
       category: 'demand-generation',
       title: 'Demand Generation 🤟🏻',
       desc: 'Competent means we will never take anything for granted.',
@@ -201,7 +208,7 @@ const database: KnowledgeBaseDB = {
   ],
   KnowledgeBaseQuestionsAndAnswers: [
     {
-      postImg: dynamicImgImport('@/assets/images/pages/mac-pc.png'),
+      postImg: macPc,
       postContent: {
         title: 'Why Was My Developer Application Rejected?',
         postDesc: `<p>Last updated on 10 Dec 2018</p><p>Pie chupa chups I love I love pastry lemon drops cake pudding I love. Candy I love topping muffin muffin sweet roll caramels marshmallow gummi bears. Jelly cupcake sweet cake powder pudding lemon drops carrot cake. I love chocolate bar chupa chups gummies carrot cake. Lollipop liquorice marzipan liquorice lemon drops tart chocolate bar. Shortbread marzipan tiramisu I love powder.</p>

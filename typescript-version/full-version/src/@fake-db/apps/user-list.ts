@@ -1,13 +1,14 @@
 import mock from '@/@fake-db/mock'
 import type { UserProperties } from '@/@fake-db/types'
 
-const avatar1 = '@/assets/images/avatars/avatar-1.png'
-const avatar2 = '@/assets/images/avatars/avatar-2.png'
-const avatar3 = '@/assets/images/avatars/avatar-3.png'
-const avatar4 = '@/assets/images/avatars/avatar-4.png'
-const avatar5 = '@/assets/images/avatars/avatar-5.png'
-const avatar6 = '@/assets/images/avatars/avatar-6.png'
-const avatar7 = '@/assets/images/avatars/avatar-5.png'
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar4 from '@/assets/images/avatars/avatar-4.png'
+import avatar5 from '@/assets/images/avatars/avatar-5.png'
+import avatar6 from '@/assets/images/avatars/avatar-6.png'
+import avatar7 from '@/assets/images/avatars/avatar-7.png'
+import avatar8 from '@/assets/images/avatars/avatar-8.png'
 
 const users: UserProperties[] = [
   {
@@ -34,7 +35,7 @@ const users: UserProperties[] = [
     email: 'hredmore1@imgur.com',
     currentPlan: 'team',
     status: 'pending',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 3,
@@ -47,7 +48,7 @@ const users: UserProperties[] = [
     email: 'msicely2@who.int',
     currentPlan: 'enterprise',
     status: 'active',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 4,
@@ -60,7 +61,7 @@ const users: UserProperties[] = [
     email: 'crisby3@wordpress.com',
     currentPlan: 'team',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar3),
+    avatar: avatar3,
   },
   {
     id: 5,
@@ -73,7 +74,7 @@ const users: UserProperties[] = [
     email: 'mhurran4@yahoo.co.jp',
     currentPlan: 'enterprise',
     status: 'pending',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 6,
@@ -112,7 +113,7 @@ const users: UserProperties[] = [
     email: 'kliger7@vinaora.com',
     currentPlan: 'enterprise',
     status: 'pending',
-    avatar: dynamicImgImport(avatar4),
+    avatar: avatar4,
   },
   {
     id: 9,
@@ -125,7 +126,7 @@ const users: UserProperties[] = [
     email: 'fscotfurth8@dailymotion.com',
     currentPlan: 'team',
     status: 'pending',
-    avatar: dynamicImgImport(avatar2),
+    avatar: avatar2,
   },
   {
     id: 10,
@@ -138,7 +139,7 @@ const users: UserProperties[] = [
     email: 'jbellany9@kickstarter.com',
     currentPlan: 'company',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar5),
+    avatar: avatar5,
   },
   {
     id: 11,
@@ -151,7 +152,7 @@ const users: UserProperties[] = [
     email: 'jwharltona@oakley.com',
     currentPlan: 'team',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar4),
+    avatar: avatar4,
   },
   {
     id: 12,
@@ -164,7 +165,7 @@ const users: UserProperties[] = [
     email: 'shallamb@hugedomains.com',
     currentPlan: 'team',
     status: 'pending',
-    avatar: dynamicImgImport(avatar5),
+    avatar: avatar5,
   },
   {
     id: 13,
@@ -177,7 +178,7 @@ const users: UserProperties[] = [
     email: 'ypottiec@privacy.gov.au',
     currentPlan: 'basic',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar7),
+    avatar: avatar7,
   },
   {
     id: 14,
@@ -190,7 +191,7 @@ const users: UserProperties[] = [
     email: 'mkraused@stanford.edu',
     currentPlan: 'team',
     status: 'active',
-    avatar: dynamicImgImport(avatar6),
+    avatar: avatar6,
   },
   {
     id: 15,
@@ -203,7 +204,7 @@ const users: UserProperties[] = [
     email: 'zmcclevertye@soundcloud.com',
     currentPlan: 'enterprise',
     status: 'active',
-    avatar: dynamicImgImport(avatar2),
+    avatar: avatar2,
   },
   {
     id: 16,
@@ -216,7 +217,7 @@ const users: UserProperties[] = [
     email: 'bemblinf@wired.com',
     currentPlan: 'company',
     status: 'active',
-    avatar: dynamicImgImport(avatar6),
+    avatar: avatar6,
   },
   {
     id: 17,
@@ -242,7 +243,7 @@ const users: UserProperties[] = [
     email: 'bbinerh@mozilla.com',
     currentPlan: 'team',
     status: 'active',
-    avatar: dynamicImgImport(avatar7),
+    avatar: avatar7,
   },
   {
     id: 19,
@@ -268,7 +269,7 @@ const users: UserProperties[] = [
     email: 'wburlandj@uiuc.edu',
     currentPlan: 'team',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar6),
+    avatar: avatar6,
   },
   {
     id: 21,
@@ -281,7 +282,7 @@ const users: UserProperties[] = [
     email: 'irena.dubrovna@wayne.com',
     currentPlan: 'team',
     status: 'active',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 22,
@@ -294,7 +295,7 @@ const users: UserProperties[] = [
     email: 'jlysterl@guardian.co.uk',
     currentPlan: 'company',
     status: 'inactive',
-    avatar: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
+    avatar: avatar8,
   },
   {
     id: 23,
@@ -307,7 +308,7 @@ const users: UserProperties[] = [
     email: 'kskitterelm@ainyx.com',
     currentPlan: 'basic',
     status: 'pending',
-    avatar: dynamicImgImport(avatar3),
+    avatar: avatar3,
   },
   {
     id: 24,
@@ -320,7 +321,7 @@ const users: UserProperties[] = [
     email: 'chatherleighn@washington.edu',
     currentPlan: 'team',
     status: 'pending',
-    avatar: dynamicImgImport(avatar2),
+    avatar: avatar2,
   },
   {
     id: 25,
@@ -346,7 +347,7 @@ const users: UserProperties[] = [
     email: 'hhassonp@bizjournals.com',
     currentPlan: 'basic',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar4),
+    avatar: avatar4,
   },
   {
     id: 27,
@@ -359,7 +360,7 @@ const users: UserProperties[] = [
     email: 'gjacombsq@jigsy.com',
     currentPlan: 'enterprise',
     status: 'active',
-    avatar: dynamicImgImport(avatar5),
+    avatar: avatar5,
   },
   {
     id: 28,
@@ -385,7 +386,7 @@ const users: UserProperties[] = [
     email: 'cpinyons@behance.net',
     currentPlan: 'team',
     status: 'active',
-    avatar: dynamicImgImport(avatar7),
+    avatar: avatar7,
   },
   {
     id: 30,
@@ -411,7 +412,7 @@ const users: UserProperties[] = [
     email: 'gmeinekenu@hc360.com',
     currentPlan: 'basic',
     status: 'pending',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 32,
@@ -424,7 +425,7 @@ const users: UserProperties[] = [
     email: 'rsnowballv@indiegogo.com',
     currentPlan: 'basic',
     status: 'pending',
-    avatar: dynamicImgImport(avatar5),
+    avatar: avatar5,
   },
   {
     id: 33,
@@ -437,7 +438,7 @@ const users: UserProperties[] = [
     email: 'remerw@blogtalkradio.com',
     currentPlan: 'basic',
     status: 'active',
-    avatar: dynamicImgImport('@/assets/images/avatars/avatar-8.png'),
+    avatar: avatar8,
   },
   {
     id: 34,
@@ -450,7 +451,7 @@ const users: UserProperties[] = [
     email: 'ofibbensx@booking.com',
     currentPlan: 'company',
     status: 'active',
-    avatar: dynamicImgImport(avatar4),
+    avatar: avatar4,
   },
   {
     id: 35,
@@ -489,7 +490,7 @@ const users: UserProperties[] = [
     email: 'shebblethwaite10@arizona.edu',
     currentPlan: 'company',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 38,
@@ -502,7 +503,7 @@ const users: UserProperties[] = [
     email: 'mpiccard11@vimeo.com',
     currentPlan: 'enterprise',
     status: 'inactive',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 39,
@@ -528,7 +529,7 @@ const users: UserProperties[] = [
     email: 'fdesporte13@omniture.com',
     currentPlan: 'company',
     status: 'active',
-    avatar: dynamicImgImport(avatar6),
+    avatar: avatar6,
   },
   {
     id: 41,
@@ -593,7 +594,7 @@ const users: UserProperties[] = [
     email: 'cperot18@goo.ne.jp',
     currentPlan: 'team',
     status: 'pending',
-    avatar: dynamicImgImport(avatar3),
+    avatar: avatar3,
   },
   {
     id: 46,
@@ -619,7 +620,7 @@ const users: UserProperties[] = [
     email: 'kcourtliff1a@bbc.co.uk',
     currentPlan: 'basic',
     status: 'active',
-    avatar: dynamicImgImport(avatar1),
+    avatar: avatar1,
   },
   {
     id: 48,
@@ -658,7 +659,7 @@ const users: UserProperties[] = [
     email: 'bkrabbe1d@home.pl',
     currentPlan: 'company',
     status: 'active',
-    avatar: dynamicImgImport(avatar2),
+    avatar: avatar2,
   },
 ]
 

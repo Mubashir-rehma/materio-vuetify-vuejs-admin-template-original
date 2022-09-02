@@ -4,9 +4,9 @@
   $color-pack: false !default,
 
   // 👉 Shadow
-  $shadow-key-umbra-opacity: rgba(var(--v-theme-on-surface), 0.08) !default,
-  $shadow-key-penumbra-opacity: rgba(var(--v-theme-on-surface), 0.12) !default,
-  $shadow-key-ambient-opacity: rgba(var(--v-theme-on-surface), 0.04) !default,
+  $shadow-key-umbra-opacity: var(--v-shadow-key-umbra-opacity) !default,
+  $shadow-key-penumbra-opacity: var(--v-shadow-key-penumbra-opacity) !default,
+  $shadow-key-ambient-opacity: var(--v-shadow-key-ambient-opacity) !default,
 );
 
 // !SECTION

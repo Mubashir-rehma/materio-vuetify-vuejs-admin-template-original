@@ -22,19 +22,17 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
     border
   >
     <VCardText class="d-flex align-center">
-      <div class="me-4">
-        <VAvatar
-          size="44"
-          rounded
-          :class="`text-${prop.color} elevation-1`"
-          style="background-color: rgb(var(--v-theme-surface));"
-        >
-          <VIcon
-            :icon="prop.icon"
-            :size="24"
-          />
-        </VAvatar>
-      </div>
+      <VAvatar
+        size="44"
+        rounded
+        :class="`text-${prop.color} elevation-1 me-4`"
+        style="background-color: rgb(var(--v-theme-surface));"
+      >
+        <VIcon
+          :icon="prop.icon"
+          :size="24"
+        />
+      </VAvatar>
 
       <div>
         <span class="text-caption">{{ prop.title }}</span>

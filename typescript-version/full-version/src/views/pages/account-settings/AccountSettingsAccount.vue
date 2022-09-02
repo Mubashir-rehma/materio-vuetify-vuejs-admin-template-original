@@ -111,14 +111,12 @@ const currencies = [
       <VCard title="Account Details">
         <VCardText class="d-flex">
           <!-- 👉 Avatar -->
-          <div>
-            <VAvatar
-              rounded="lg"
-              size="100"
-              class="me-6"
-              :image="accountDataLocal.avatarImg"
-            />
-          </div>
+          <VAvatar
+            rounded="lg"
+            size="100"
+            class="me-6"
+            :image="accountDataLocal.avatarImg"
+          />
 
           <!-- 👉 Upload Photo -->
           <form

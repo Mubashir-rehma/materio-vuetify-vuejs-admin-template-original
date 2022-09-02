@@ -100,5 +100,30 @@
   "2": "2",
   "Gamification": "Gamification",
   "Forms": "Formes",
-  "Timeline": "Chronologie"
+  "Timeline": "Chronologie",
+  "$vuetify": {
+    "badge": "Badge",
+    "pagination": {
+      "ariaLabel": {
+        "root": "racine",
+        "previous": "précédente",
+        "next": "suivante",
+        "currentPage": "page actuelle",
+        "page": "page"
+      }
+    },
+    "input": {
+      "clear": "dégager",
+      "appendAction": "ajouter une action",
+      "prependAction": "préfixer l'action",
+    },
+    "fileInput": {
+      "counterSize": "Taille du compteur"
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Objet"
+      }
+    }
+  }
 }

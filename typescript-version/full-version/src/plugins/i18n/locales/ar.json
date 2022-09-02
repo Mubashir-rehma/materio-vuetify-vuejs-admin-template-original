@@ -98,5 +98,30 @@
   "2": "2",
   "Gamification": "التلعيب",
   "Forms": "نماذج",
-  "Timeline": "الجدول الزمني"
+  "Timeline": "الجدول الزمني",
+  "$vuetify": {
+    "badge": "شارة",
+    "pagination": {
+      "ariaLabel": {
+        "root": "جذر",
+        "previous": "السابق",
+        "next": "التالي",
+        "currentPage": "الصفحه الحاليه",
+        "page": "صفحة"
+      }
+    },
+    "input": {
+      "clear": "صافي",
+      "appendAction": "إلحاق الإجراء",
+      "prependAction": "قبل العمل",
+    },
+    "fileInput": {
+      "counterSize": "حجم العداد"
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "العنصر"
+      }
+    }
+  }
 }

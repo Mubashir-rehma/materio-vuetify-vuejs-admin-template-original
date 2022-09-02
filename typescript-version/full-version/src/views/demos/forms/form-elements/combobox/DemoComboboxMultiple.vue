@@ -42,7 +42,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
         multiple
       >
         <template #selection="{ item }">
-          <VChip>
+          <VChip class="mt-1">
             <VAvatar
               start
               color="primary"

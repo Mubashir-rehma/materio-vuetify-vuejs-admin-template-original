@@ -7,7 +7,7 @@ import theme from './theme'
 import i18n from '@/plugins/i18n'
 
 // Styles
-import '@core/vuetify.scss'
+import '@core/scss/vuetify/index.scss'
 import '@mdi/font/css/materialdesignicons.css'
 
 export default createVuetify({

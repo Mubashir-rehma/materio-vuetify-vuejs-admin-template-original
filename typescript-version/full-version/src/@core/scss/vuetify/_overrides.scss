@@ -1,3 +1,6 @@
+@use "@core/scss/utils";
+@use "@configured-variables" as variables;
+
 // 👉 Application
 // ℹ️ We need accurate vh in mobile devices as well
 .v-application__wrap {
@@ -190,4 +193,23 @@ h6,
 // 👉 Table
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+}
+
+// TODO file input fix: remove the below fix after vuetify fix it: https://github.com/vuetifyjs/vuetify/issues/15729
+.v-input--density-comfortable.v-file-input {
+  .v-field {
+    min-block-size: 3rem;
+  }
+}
+
+.v-input--density-default.v-file-input {
+  .v-field {
+    min-block-size: 3.5rem;
+  }
+}
+
+.v-input--density-compact.v-file-input {
+  .v-field {
+    min-block-size: 2.5rem;
+  }
 }

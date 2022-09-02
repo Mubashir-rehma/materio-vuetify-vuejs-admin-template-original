@@ -38,19 +38,17 @@ const statistics = [
           md="3"
         >
           <div class="d-flex align-center">
-            <div class="me-3">
-              <VAvatar
-                :color="item.color"
-                rounded
-                size="42"
-                class="elevation-1"
-              >
-                <VIcon
-                  size="24"
-                  :icon="item.icon"
-                />
-              </VAvatar>
-            </div>
+            <VAvatar
+              :color="item.color"
+              rounded
+              size="42"
+              class="elevation-1 me-3"
+            >
+              <VIcon
+                size="24"
+                :icon="item.icon"
+              />
+            </VAvatar>
 
             <div class="d-flex flex-column">
               <span class="text-caption">

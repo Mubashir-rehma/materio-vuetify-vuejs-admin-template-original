@@ -87,13 +87,12 @@ import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
               <div class="d-flex justify-space-between align-center">
                 <!-- 👉 Avatar & Personal Info -->
                 <span class="d-flex align-start mt-2">
-                  <div>
-                    <VAvatar
-                      size="40"
-                      :image="avatar2"
-                      class="me-2"
-                    />
-                  </div>
+                  <VAvatar
+                    size="40"
+                    :image="avatar2"
+                    class="me-2"
+                  />
+
                   <div>
                     <h6 class="text-sm font-weight-semibold">Rebecca Godman</h6>
                     <span>Javascript Developer</span>

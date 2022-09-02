@@ -19,18 +19,16 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
 <template>
   <VCard>
     <VCardText class="d-flex align-center">
-      <div class="me-4">
-        <VAvatar
-          size="44"
-          rounded
-          :class="`v-avatar-light-bg text-${prop.color}`"
-        >
-          <VIcon
-            :icon="prop.icon"
-            size="30"
-          />
-        </VAvatar>
-      </div>
+      <VAvatar
+        size="44"
+        rounded
+        :class="`v-avatar-light-bg text-${prop.color} me-4`"
+      >
+        <VIcon
+          :icon="prop.icon"
+          size="30"
+        />
+      </VAvatar>
 
       <div>
         <span class="text-caption">{{ prop.title }}</span>

@@ -113,7 +113,7 @@ const checkAll = computed({
 </template>
 
 <style lang="scss">
-@import "@core/scss/libs/full-calendar";
+@use "@core/scss/libs/full-calendar";
 
 .calendars-checkbox {
   .v-label {

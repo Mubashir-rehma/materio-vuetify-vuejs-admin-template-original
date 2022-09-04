@@ -3,7 +3,7 @@ import { useLayouts } from '@layouts'
 import { config } from '@layouts/config'
 import { can } from '@layouts/plugins/casl'
 import type { NavLink } from '@layouts/types'
-import { getComputedNavLinkToProp } from '@layouts/utils'
+import { getComputedNavLinkToProp, isNavLinkActive } from '@layouts/utils'
 
 interface Props {
   item: NavLink
@@ -23,11 +23,15 @@ const { dynamicI18nProps } = useLayouts()
   <li
     v-if="can(item.action, item.subject)"
     class="nav-link"
-    :class="[{ 'sub-item': props.isSubItem, 'disabled': item.disable }]"
+    :class="[{
+      'sub-item': props.isSubItem,
+      'disabled': item.disable,
+    }]"
   >
     <Component
       :is="item.to ? 'RouterLink' : 'a'"
       v-bind="getComputedNavLinkToProp(item)"
+      :class="{ 'router-link-active router-link-exact-active': isNavLinkActive(item, $router) }"
     >
       <Component
         :is="config.app.iconRenderer || 'div'"

@@ -7,9 +7,9 @@ import { avatarText } from '@core/utils/formatters'
 // 👉 Store
 const userListStore = useUserListStore()
 const searchQuery = ref('')
-const selectedRole = ref('')
-const selectedPlan = ref('')
-const selectedStatus = ref('')
+const selectedRole = ref()
+const selectedPlan = ref()
+const selectedStatus = ref()
 const rowPerPage = ref(10)
 const currentPage = ref(1)
 const totalPage = ref(1)

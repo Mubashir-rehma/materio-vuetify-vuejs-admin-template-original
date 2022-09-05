@@ -11,6 +11,9 @@
 
 // !SECTION
 
+// 👉 Card transition properties
+$card-transition-property-custom: box-shadow, opacity;
+
 // SECTION Components
 @forward "vuetify/dist/component-variables" with (
 
@@ -22,6 +25,7 @@
   $card-text-padding: 20px !default,
   $card-item-padding: 20px !default,
   $card-actions-padding: 0 12px 12px !default,
+  $card-transition-property: $card-transition-property-custom !default,
 
   // 👉 Navigation Drawer
   $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)) !default,

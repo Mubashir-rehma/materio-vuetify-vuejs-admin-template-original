@@ -12,7 +12,7 @@
           <VCheckbox
             :model-value="isActive"
             color="primary"
-            class="mt-n1"
+            class="mt-2"
           />
         </VListItemAction>
       </template>
@@ -27,7 +27,7 @@
           <VCheckbox
             :model-value="isActive"
             color="primary"
-            class="mt-n1"
+            class="mt-2"
           />
         </VListItemAction>
       </template>
@@ -42,7 +42,7 @@
           <VCheckbox
             :model-value="isActive"
             color="primary"
-            class="mt-n1"
+            class="mt-2"
           />
         </VListItemAction>
       </template>

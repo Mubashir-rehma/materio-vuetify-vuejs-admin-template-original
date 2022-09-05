@@ -8,7 +8,7 @@ const invoiceListStore = useInvoiceStore()
 
 const searchQuery = ref('')
 const dateRange = ref('')
-const selectedStatus = ref('')
+const selectedStatus = ref()
 const rowPerPage = ref(10)
 const currentPage = ref(1)
 const totalPage = ref(1)

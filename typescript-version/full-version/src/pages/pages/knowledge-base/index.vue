@@ -73,5 +73,5 @@ watch(knowledgeBaseSearchQuery, fetchKnowledgeBaseData, { immediate: true })
 </template>
 
 <style lang="scss">
-@import "@core/scss/pages/knowledge-base";
+@use "@core/scss/pages/knowledge-base";
 </style>

@@ -1,6 +1,7 @@
+import type { VuetifyOptions } from 'vuetify'
 import { themeConfig } from '@themeConfig'
 
-export default {
+const theme: VuetifyOptions['theme'] = {
   defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
   themes: {
     light: {
@@ -30,9 +31,15 @@ export default {
         'grey-800': '#424242',
         'grey-900': '#212121',
       },
+
       variables: {
-        'medium-emphasis-opacity': '0.68',
         'border-color': '#3A3541',
+        'medium-emphasis-opacity': 0.68,
+
+        // Shadows
+        'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
+        'shadow-key-penumbra-opacity': 'rgba(var(--v-theme-on-surface), 0.12)',
+        'shadow-key-ambient-opacity': 'rgba(var(--v-theme-on-surface), 0.04)',
       },
     },
     dark: {
@@ -64,9 +71,16 @@ export default {
         'grey-900': '#E7E9F6',
       },
       variables: {
-        'medium-emphasis-opacity': '0.68',
         'border-color': '#E7E3FC',
+        'medium-emphasis-opacity': 0.68,
+
+        // Shadows
+        'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',
+        'shadow-key-penumbra-opacity': 'rgba(20, 18, 33, 0.12)',
+        'shadow-key-ambient-opacity': 'rgba(20, 18, 33, 0.04)',
       },
     },
   },
 }
+
+export default theme

@@ -1,0 +1,38 @@
+// SECTION Settings
+@forward "vuetify/lib/styles/settings" with (
+  // 👉 General settings
+  $color-pack: false !default,
+
+  // 👉 Shadow
+  $shadow-key-umbra-opacity: var(--v-shadow-key-umbra-opacity) !default,
+  $shadow-key-penumbra-opacity: var(--v-shadow-key-penumbra-opacity) !default,
+  $shadow-key-ambient-opacity: var(--v-shadow-key-ambient-opacity) !default,
+);
+
+// !SECTION
+
+// SECTION Components
+@forward "vuetify/dist/component-variables" with (
+
+  // 👉 Card
+  $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !default,
+  $card-elevation: 6 !default,
+  $card-title-line-height: 1.6 !default,
+  $card-actions-min-height: unset !default,
+  $card-text-padding: 20px !default,
+  $card-item-padding: 20px !default,
+  $card-actions-padding: 0 12px 12px !default,
+
+  // 👉 Navigation Drawer
+  $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)) !default,
+
+  // 👉 Table
+  $table-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)) !default,
+
+  // 👉 Tooltip
+  $tooltip-background-color: rgba(59, 55, 68, 0.9) !default,
+  $tooltip-text-color: rgb(var(--v-theme-on-primary)) !default,
+  $tooltip-font-size: 0.75rem !default,
+);
+
+// !SECTION

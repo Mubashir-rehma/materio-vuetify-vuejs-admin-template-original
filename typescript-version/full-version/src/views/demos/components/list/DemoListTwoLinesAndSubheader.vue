@@ -42,11 +42,12 @@ const folders = [
       :subtitle="folder.subtitle"
     >
       <template #prepend>
-        <VIcon
-          :size="26"
-          icon="mdi-folder-outline"
-          class="me-3"
-        />
+        <VAvatar class="v-avatar-light-bg text-secondary">
+          <VIcon
+            :size="26"
+            icon="mdi-folder-outline"
+          />
+        </VAvatar>
       </template>
 
       <template #append>
@@ -71,10 +72,12 @@ const folders = [
       :subtitle="file.subtitle"
     >
       <template #prepend>
-        <VIcon
-          :size="26"
-          :icon="file.icon"
-        />
+        <VAvatar class="v-avatar-light-bg text-secondary">
+          <VIcon
+            :size="26"
+            :icon="file.icon"
+          />
+        </VAvatar>
       </template>
 
       <template #append>

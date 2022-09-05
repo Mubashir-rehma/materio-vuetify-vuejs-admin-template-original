@@ -101,5 +101,30 @@
   "Timeline": "الجدول الزمني",
   "Widgets": "الحاجيات",
   "eCommerce": "التجارة الإلكترونية",
-  "New": "جديد"
+  "New": "جديد",
+  "$vuetify": {
+    "badge": "شارة",
+    "pagination": {
+      "ariaLabel": {
+        "root": "جذر",
+        "previous": "السابق",
+        "next": "التالي",
+        "currentPage": "الصفحه الحاليه",
+        "page": "صفحة"
+      }
+    },
+    "input": {
+      "clear": "صافي",
+      "appendAction": "إلحاق الإجراء",
+      "prependAction": "قبل العمل"
+    },
+    "fileInput": {
+      "counterSize": "حجم العداد"
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "العنصر"
+      }
+    }
+  }
 }

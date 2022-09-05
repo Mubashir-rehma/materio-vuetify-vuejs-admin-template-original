@@ -101,5 +101,31 @@
   "Timeline": "Timeline",
   "Widgets": "Widgets",
   "eCommerce": "eCommerce",
-  "New": "New"
+  "New": "New",
+  "$vuetify": {
+    "badge": "Badge",
+    "pagination": {
+      "ariaLabel": {
+        "root": "root",
+        "previous": "previous",
+        "next": "next",
+        "currentPage": "currentPage",
+        "page": "page"
+      }
+    },
+    "input": {
+      "clear": "clear",
+      "appendAction": "appendAction",
+      "prependAction": "prependAction",
+      "counterSize": "counterSize"
+    },
+    "fileInput": {
+      "counterSize": "counterSize"
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "item"
+      }
+    }
+  }
 }

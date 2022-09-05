@@ -45,6 +45,7 @@ const items = [
     lines="three"
     :items="items"
     item-props
+    density="compact"
   >
     <template #subtitle="{ subtitle }">
       <!-- eslint-disable-next-line vue/no-v-html -->

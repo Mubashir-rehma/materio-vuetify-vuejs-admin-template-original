@@ -103,5 +103,30 @@
   "Timeline": "Chronologie",
   "Widgets": "Widget",
   "eCommerce": "commerce électronique",
-  "New": "Nouvelle"
+  "New": "Nouvelle",
+  "$vuetify": {
+    "badge": "Badge",
+    "pagination": {
+      "ariaLabel": {
+        "root": "racine",
+        "previous": "précédente",
+        "next": "suivante",
+        "currentPage": "page actuelle",
+        "page": "page"
+      }
+    },
+    "input": {
+      "clear": "dégager",
+      "appendAction": "ajouter une action",
+      "prependAction": "préfixer l'action"
+    },
+    "fileInput": {
+      "counterSize": "Taille du compteur"
+    },
+    "rating": {
+      "ariaLabel": {
+        "item": "Objet"
+      }
+    }
+  }
 }

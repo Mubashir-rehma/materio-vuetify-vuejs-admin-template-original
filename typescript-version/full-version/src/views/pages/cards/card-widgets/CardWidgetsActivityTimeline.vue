@@ -9,7 +9,7 @@ import avatar2 from '@/assets/images/avatars/avatar-2.png'
         density="compact"
         align="start"
         line-inset="8"
-        truncate-line="start"
+        truncate-line="both"
         class="v-timeline-density-compact"
       >
         <VTimelineItem

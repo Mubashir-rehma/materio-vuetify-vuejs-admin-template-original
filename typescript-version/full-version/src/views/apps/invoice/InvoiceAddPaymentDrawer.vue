@@ -20,7 +20,7 @@ const emit = defineEmits<Emit>()
 const invoiceBalance = ref('')
 const paymentAmount = ref('')
 const paymentDate = ref('')
-const paymentMethod = ref('')
+const paymentMethod = ref()
 const paymentNote = ref('')
 
 const onSubmit = () => {

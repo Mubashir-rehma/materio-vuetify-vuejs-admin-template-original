@@ -69,7 +69,7 @@ const resolveUserRoleVariant = (role: string) => {
         <VCardText class="text-center pt-15">
           <!-- 👉 Avatar -->
           <VAvatar
-            rounded
+            rounded="sm"
             :size="120"
             class="v-avatar-light-bg text-primary"
           >

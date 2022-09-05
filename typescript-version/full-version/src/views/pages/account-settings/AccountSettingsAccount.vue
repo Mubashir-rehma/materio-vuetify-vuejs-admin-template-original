@@ -112,7 +112,7 @@ const currencies = [
         <VCardText class="d-flex">
           <!-- 👉 Avatar -->
           <VAvatar
-            rounded="lg"
+            rounded="sm"
             size="100"
             class="me-6"
             :image="accountDataLocal.avatarImg"

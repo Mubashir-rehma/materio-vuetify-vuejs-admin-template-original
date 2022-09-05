@@ -2,7 +2,7 @@
 const tab = ref('personal-info')
 const firstName = ref('')
 const lastName = ref('')
-const country = ref('')
+const country = ref()
 const birthDate = ref('')
 const phoneNo = ref<number>()
 const countryList = ['USA', 'Canada', 'UK', 'Denmark', 'Germany', 'Iceland', 'Israel', 'Mexico']

@@ -25,9 +25,9 @@ const email = ref('')
 const company = ref('')
 const country = ref('')
 const contact = ref('')
-const role = ref('')
-const plan = ref('')
-const status = ref('')
+const role = ref()
+const plan = ref()
+const status = ref()
 
 // 👉 drawer close
 const closeNavigationDrawer = () => {

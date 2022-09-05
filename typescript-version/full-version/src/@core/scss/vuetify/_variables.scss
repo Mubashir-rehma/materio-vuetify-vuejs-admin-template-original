@@ -1,12 +1,16 @@
+$shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
+$shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
+$shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
+
 // SECTION Settings
 @forward "vuetify/lib/styles/settings" with (
   // 👉 General settings
   $color-pack: false !default,
 
-  // 👉 Shadow
-  $shadow-key-umbra-opacity: var(--v-shadow-key-umbra-opacity) !default,
-  $shadow-key-penumbra-opacity: var(--v-shadow-key-penumbra-opacity) !default,
-  $shadow-key-ambient-opacity: var(--v-shadow-key-ambient-opacity) !default,
+  // 👉 Shadow opacity
+  $shadow-key-umbra-opacity: $shadow-key-umbra-opacity-custom !default,
+  $shadow-key-penumbra-opacity: $shadow-key-penumbra-opacity-custom !default,
+  $shadow-key-ambient-opacity: $shadow-key-ambient-opacity-custom !default,
 );
 
 // !SECTION

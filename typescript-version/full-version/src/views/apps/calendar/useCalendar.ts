@@ -15,7 +15,11 @@ export const blankEvent = {
   allDay: false,
   url: '',
   extendedProps: {
-    calendar: '',
+    /*
+      ℹ️ We have to use undefined here because if we have blank string as value then select placeholder will be active (moved to top).
+      Hence, we need to set it to undefined or null
+    */
+    calendar: undefined,
     guests: [],
     location: '',
     description: '',

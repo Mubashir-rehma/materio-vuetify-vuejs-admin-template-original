@@ -3,7 +3,7 @@ import type { Except } from 'type-fest';
 
 export interface Event extends CalendarEvent {
   extendedProps: {
-    calendar: string
+    calendar?: string
     location: string
     description: string
     guests: string[]

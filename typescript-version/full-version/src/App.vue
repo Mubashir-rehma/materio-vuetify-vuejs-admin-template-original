@@ -7,15 +7,10 @@ syncInitialLoaderTheme()
 
 syncRtlWithLocale()
 syncConfigThemeWithVuetifyTheme()
-
-const vApp = ref()
 </script>
 
 <template>
-  <VApp
-    ref="vApp"
-    :style="{ overflow: 'unset' }"
-  >
+  <VApp>
     <VMain>
       <RouterView />
     </VMain>

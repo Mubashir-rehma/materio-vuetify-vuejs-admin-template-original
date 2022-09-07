@@ -74,7 +74,7 @@
     "vite": "^3.0.3",
     "vite-plugin-pages": "^0.25.0",
     "vite-plugin-vue-layouts": "^0.7.0",
-    "vite-plugin-vuetify": "1.0.0-alpha.14",
+    "vite-plugin-vuetify": "1.0.0-alpha.16",
     "vue-tsc": "^0.39.0",
     "vuetify-loader": "^1.7.3"
   },

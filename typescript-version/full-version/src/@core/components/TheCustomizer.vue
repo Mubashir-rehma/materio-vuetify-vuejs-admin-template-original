@@ -384,7 +384,7 @@ const headerValues = computed(() => {
 }
 
 .app-customizer-toggler {
-  position: fixed;
+  position: fixed !important;
   inset-block-start: 50%;
   inset-inline-end: 0;
   transform: translateY(-50%);

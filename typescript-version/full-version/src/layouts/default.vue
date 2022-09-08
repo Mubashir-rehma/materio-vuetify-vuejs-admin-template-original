@@ -1,23 +1,31 @@
 <script lang="ts" setup>
-import DefaultLayoutWithHorizontalNav from './components/DefaultLayoutWithHorizontalNav.vue'
-import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVerticalNav.vue'
-
-// Composable
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
 import { useDynamicVhCssProperty } from '@layouts'
 import { EnumAppContentLayoutNav } from '@layouts/enums'
 
+// ℹ️ Performance: Lazy load navigation
+const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))
+const DefaultLayoutWithVerticalNav = defineAsyncComponent(() => import ('./components/DefaultLayoutWithVerticalNav.vue'))
+
 const { width: windowWidth } = useWindowSize()
-const { appContentLayoutNav, switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
+const { appContentLayoutNav } = useThemeConfig()
 
 // ℹ️ This is useful for calculating vh based CSS value correctly on mobile devices
 useDynamicVhCssProperty()
 
-// ℹ️ This will switch to vertical nav when define breakpoint is reached when in horizontal nav layout
-// Remove below composable usage if you are not using horizontal nav layout in your app
-switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
+// ℹ️ Performance: Only add `switchToVerticalNavOnLtOverlayNavBreakpoint` if `appContentLayoutNav` is horizontal
+watchOnce(
+  () => appContentLayoutNav.value === EnumAppContentLayoutNav.Horizontal,
+  () => {
+    const { switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
+
+    // ℹ️ This will switch to vertical nav when define breakpoint is reached when in horizontal nav layout
+    // Remove below composable usage if you are not using horizontal nav layout in your app
+    switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
+  },
+)
 </script>
 
 <template>

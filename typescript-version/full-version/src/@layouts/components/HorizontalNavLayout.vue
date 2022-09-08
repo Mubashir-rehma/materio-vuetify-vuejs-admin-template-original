@@ -96,10 +96,15 @@ router.afterEach(() => {
       @include mixins.boxed-content;
     }
 
-    .layout-page-content {
-      display: flex;
-      flex-direction: column;
-    }
+    /*
+      ℹ️ This style will allow creating scrollable content within available space.
+      However, this style is producing bugs when `display: flex` element is direct child of it.
+      e.g. Gamification page
+    */
+    // .layout-page-content {
+    //   display: flex;
+    //   flex-direction: column;
+    // }
 
     // 👉 Footer
     // Boxed content

@@ -1,3 +1,7 @@
+$shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
+$shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
+$shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
+
 // SECTION Settings
 $shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
 $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
@@ -169,6 +173,7 @@ $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
 
   // 👉 States
   $states: ("activated": 0.08) !default,
+  
 );
 
 // !SECTION

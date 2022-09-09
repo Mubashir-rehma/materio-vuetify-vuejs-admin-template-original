@@ -150,10 +150,18 @@ const recentDevices = [
         <VTable class="text-no-wrap">
           <thead>
             <tr>
-              <th>BROWSER</th>
-              <th>DEVICE</th>
-              <th>LOCATION</th>
-              <th>RECENT ACTIVITY</th>
+              <th scope="col">
+                BROWSER
+              </th>
+              <th scope="col">
+                DEVICE
+              </th>
+              <th scope="col">
+                LOCATION
+              </th>
+              <th scope="col">
+                RECENT ACTIVITY
+              </th>
             </tr>
           </thead>
 

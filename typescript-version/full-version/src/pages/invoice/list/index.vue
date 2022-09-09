@@ -198,7 +198,10 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
         <thead>
           <tr>
             <!-- 👉 Check/Uncheck all checkbox -->
-            <th class="text-center">
+            <th
+              scope="col"
+              class="text-center"
+            >
               <div
                 class="mb-n2"
                 style="width: 1rem;"
@@ -210,25 +213,34 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 />
               </div>
             </th>
-            <th>
+            <th scope="col">
               #ID
             </th>
-            <th class="text-center">
+            <th
+              scope="col"
+              class="text-center"
+            >
               <VIcon icon="mdi-trending-up" />
             </th>
-            <th>
+            <th scope="col">
               CLIENT
             </th>
-            <th class="text-center">
+            <th
+              scope="col"
+              class="text-center"
+            >
               TOTAL
             </th>
-            <th>
+            <th scope="col">
               DATE
             </th>
-            <th class="text-center">
+            <th
+              scope="col"
+              class="text-center"
+            >
               BALANCE
             </th>
-            <th>
+            <th scope="col">
               ACTIONS
             </th>
           </tr>

@@ -177,7 +177,10 @@ const faqs = [
             <!-- 👉 Table head -->
             <thead>
               <tr>
-                <th class="py-4">
+                <th
+                  scope="col"
+                  class="py-4"
+                >
                   <h6 class="text-xs font-weight-semibold mb-1">
                     FEATURES
                   </h6>
@@ -186,7 +189,10 @@ const faqs = [
                   </h6>
                 </th>
 
-                <th class="text-center py-4">
+                <th
+                  scope="col"
+                  class="text-center py-4"
+                >
                   <h6 class="text-xs font-weight-semibold mb-1">
                     BASIC
                   </h6>
@@ -195,7 +201,10 @@ const faqs = [
                   </h6>
                 </th>
 
-                <th class="text-center py-4">
+                <th
+                  scope="col"
+                  class="text-center py-4"
+                >
                   <h6 class="text-xs font-weight-semibold mb-1">
                     STANDARD
                     <VAvatar
@@ -215,7 +224,10 @@ const faqs = [
                   </h6>
                 </th>
 
-                <th class="text-center py-4">
+                <th
+                  scope="col"
+                  class="text-center py-4"
+                >
                   <h6 class="text-xs font-weight-semibold mb-1">
                     ENTERPRISE
                   </h6>

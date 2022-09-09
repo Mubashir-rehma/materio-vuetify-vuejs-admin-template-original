@@ -5,7 +5,7 @@ import avatar8 from '@/assets/images/avatars/avatar-8.png'
 
 const solidCardData = [
   {
-    cardBg: 'info',
+    cardBg: '#16B1FF',
     title: 'Twitter Card',
     icon: 'mdi-twitter',
     text: '"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."',
@@ -15,17 +15,17 @@ const solidCardData = [
     share: '80',
   },
   {
-    cardBg: 'primary',
+    cardBg: '#3B5998',
     title: 'Facebook Card',
     icon: 'mdi-facebook',
-    text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an effective',
+    text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an.',
     avatarImg: avatar1,
     avatarName: 'Eugene Clarke',
     likes: '3.2k',
     share: '49',
   },
   {
-    cardBg: 'success',
+    cardBg: '#007BB6',
     title: 'Linkedin Card',
     icon: 'mdi-linkedin',
     text: 'With the Internet spreading like wildfire and reaching every part of our daily life, more and more traffic is directed.',
@@ -50,7 +50,7 @@ const solidCardData = [
         <VCardItem>
           <template #prepend>
             <VIcon
-              size="1.5rem"
+              size="1.9rem"
               color="white"
               :icon="data.icon"
             />
@@ -64,8 +64,8 @@ const solidCardData = [
           {{ data.text }}
         </VCardText>
 
-        <VCardText class="d-flex justify-space-between align-center">
-          <div>
+        <VCardText class="d-flex justify-space-between align-center flex-wrap">
+          <div class="text-no-wrap">
             <VAvatar
               size="34"
               :image="data.avatarImg"
@@ -77,16 +77,16 @@ const solidCardData = [
             <VIcon
               icon="mdi-heart"
               color="white"
-              size="1rem"
-              class="me-1 cursor-pointer"
+              size="1.2rem"
+              class="me-2 cursor-pointer"
             />
             <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
 
             <VIcon
               icon="mdi-share-variant"
               color="white"
-              size="1rem"
-              class="me-1 cursor-pointer"
+              size="1.2rem"
+              class="me-2 cursor-pointer"
             />
             <span class="text-subtitle-2 text-white">{{ data.share }}</span>
           </div>

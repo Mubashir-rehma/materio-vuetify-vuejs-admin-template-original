@@ -41,10 +41,18 @@ const selectedNotification = ref('Only when I\'m online')
     <VTable class="text-no-wrap">
       <thead>
         <tr>
-          <th>Type</th>
-          <th>EMAIL</th>
-          <th>BROWSER</th>
-          <th>App</th>
+          <th scope="col">
+            Type
+          </th>
+          <th scope="col">
+            EMAIL
+          </th>
+          <th scope="col">
+            BROWSER
+          </th>
+          <th scope="col">
+            App
+          </th>
         </tr>
       </thead>
       <tbody>

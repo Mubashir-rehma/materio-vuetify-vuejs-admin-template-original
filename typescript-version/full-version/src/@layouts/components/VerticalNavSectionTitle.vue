@@ -23,14 +23,15 @@ const shallRenderIcon = isVerticalNavMini(windowWidth)
         name="vertical-nav-section-title"
         mode="out-in"
       >
+        <!-- eslint-disable vue/no-v-text-v-html-on-component -->
         <Component
-          :is="config.app.enableI18n && !shallRenderIcon ? 'i18n-t' : 'span'"
+          :is="shallRenderIcon ? config.app.iconRenderer : config.app.enableI18n ? 'i18n-t' : 'span'"
           :key="shallRenderIcon"
-          :class="shallRenderIcon ? [config.icons.sectionTitlePlaceholder, 'placeholder-icon'] : 'title-text'"
-          v-bind="dynamicI18nProps(item.heading, 'span')"
-        >
-          {{ shallRenderIcon ? null : item.heading }}
-        </Component>
+          :class="shallRenderIcon ? 'placeholder-icon' : 'title-text'"
+          v-bind="{ ...config.icons.sectionTitlePlaceholder as {}, ...dynamicI18nProps(item.heading, 'span') }"
+          v-text="!shallRenderIcon ? item.heading : null"
+        />
+        <!-- eslint-enable vue/no-v-text-v-html-on-component -->
       </Transition>
     </div>
   </li>

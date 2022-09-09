@@ -123,25 +123,25 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
       <!-- 👉 Table head -->
       <thead>
         <tr>
-          <th>
+          <th scope="col">
             #ID
           </th>
-          <th>
+          <th scope="col">
             <VIcon icon="mdi-trending-up" />
           </th>
-          <th>
+          <th scope="col">
             CLIENT
           </th>
-          <th>
+          <th scope="col">
             TOTAL
           </th>
-          <th>
+          <th scope="col">
             ISSUED DATE
           </th>
-          <th>
+          <th scope="col">
             BALANCE
           </th>
-          <th>
+          <th scope="col">
             <span class="ms-2">ACTIONS</span>
           </th>
         </tr>

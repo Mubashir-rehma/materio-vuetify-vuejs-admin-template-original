@@ -18,7 +18,7 @@ const solidCardData = [
     cardBg: '#3B5998',
     title: 'Facebook Card',
     icon: 'mdi-facebook',
-    text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an effective',
+    text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an.',
     avatarImg: avatar1,
     avatarName: 'Eugene Clarke',
     likes: '3.2k',
@@ -64,8 +64,8 @@ const solidCardData = [
           {{ data.text }}
         </VCardText>
 
-        <VCardText class="d-flex justify-space-between align-center">
-          <div>
+        <VCardText class="d-flex justify-space-between align-center flex-wrap">
+          <div class="text-no-wrap">
             <VAvatar
               size="34"
               :image="data.avatarImg"

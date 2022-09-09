@@ -240,7 +240,7 @@ const addNewUser = (userData: UserProperties) => {
         <!-- 👉 table head -->
         <thead>
           <tr>
-            <th>
+            <th scope="col">
               <div
                 class="mb-n2"
                 style="width: 1.875rem;"
@@ -252,12 +252,24 @@ const addNewUser = (userData: UserProperties) => {
                 />
               </div>
             </th>
-            <th>USER</th>
-            <th>EMAIL</th>
-            <th>ROLE</th>
-            <th>PLAN</th>
-            <th>STATUS</th>
-            <th>ACTIONS</th>
+            <th scope="col">
+              USER
+            </th>
+            <th scope="col">
+              EMAIL
+            </th>
+            <th scope="col">
+              ROLE
+            </th>
+            <th scope="col">
+              PLAN
+            </th>
+            <th scope="col">
+              STATUS
+            </th>
+            <th scope="col">
+              ACTIONS
+            </th>
           </tr>
         </thead>
 

@@ -1,13 +1,11 @@
 <script lang="ts" setup>
+import DefaultLayoutWithHorizontalNav from './components/DefaultLayoutWithHorizontalNav.vue'
+import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVerticalNav.vue'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
 import { useDynamicVhCssProperty } from '@layouts'
 import { EnumAppContentLayoutNav } from '@layouts/enums'
-
-// ℹ️ Performance: Lazy load navigation
-const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))
-const DefaultLayoutWithVerticalNav = defineAsyncComponent(() => import ('./components/DefaultLayoutWithVerticalNav.vue'))
 
 const { width: windowWidth } = useWindowSize()
 const { appContentLayoutNav } = useThemeConfig()

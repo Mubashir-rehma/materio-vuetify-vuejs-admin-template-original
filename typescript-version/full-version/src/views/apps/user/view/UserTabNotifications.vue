@@ -36,10 +36,18 @@ const notifications = ref([
     <VTable class="text-no-wrap">
       <thead>
         <tr>
-          <th>TYPE</th>
-          <th>EMAIL</th>
-          <th>BROWSER</th>
-          <th>APP</th>
+          <th scope="col">
+            TYPE
+          </th>
+          <th scope="col">
+            EMAIL
+          </th>
+          <th scope="col">
+            BROWSER
+          </th>
+          <th scope="col">
+            APP
+          </th>
         </tr>
       </thead>
 

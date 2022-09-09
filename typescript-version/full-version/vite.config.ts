@@ -53,4 +53,7 @@ export default defineConfig({
       'apexcharts': fileURLToPath(new URL('node_modules/apexcharts-clevision', import.meta.url)),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 5000,
+  },
 })

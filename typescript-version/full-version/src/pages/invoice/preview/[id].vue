@@ -204,15 +204,28 @@ const printInvoice = () => {
           <VTable>
             <thead>
               <tr>
-                <th>ITEM</th>
-                <th>DESCRIPTION</th>
-                <th class="text-center">
+                <th scope="col">
+                  ITEM
+                </th>
+                <th scope="col">
+                  DESCRIPTION
+                </th>
+                <th
+                  scope="col"
+                  class="text-center"
+                >
                   HOURS
                 </th>
-                <th class="text-center">
+                <th
+                  scope="col"
+                  class="text-center"
+                >
                   QTY
                 </th>
-                <th class="text-center">
+                <th
+                  scope="col"
+                  class="text-center"
+                >
                   TOTAL
                 </th>
               </tr>
@@ -262,47 +275,49 @@ const printInvoice = () => {
                   <td class="pe-16">
                     Subtotal:
                   </td>
-                  <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+                  <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
                     <h6 class="text-sm">
                       $1800
                     </h6>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
                   <td class="pe-16">
                     Discount:
                   </td>
-                  <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+                  <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
                     <h6 class="text-sm">
                       $28
                     </h6>
-                  </th>
+                  </td>
                 </tr>
                 <tr>
                   <td class="pe-16">
                     Tax:
                   </td>
-                  <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+                  <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
                     <h6 class="text-sm">
                       21%
                     </h6>
-                  </th>
+                  </td>
                 </tr>
               </table>
 
               <VDivider class="mt-4 mb-3" />
 
               <table class="w-100">
-                <tr>
-                  <td class="pe-16">
-                    Total:
-                  </td>
-                  <th :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
-                      $1690
-                    </h6>
-                  </th>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td class="pe-16">
+                      Total:
+                    </td>
+                    <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+                      <h6 class="text-sm">
+                        $1690
+                      </h6>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </VCardText>

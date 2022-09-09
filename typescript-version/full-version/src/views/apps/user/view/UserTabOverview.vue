@@ -90,10 +90,18 @@ const resolveUserProgressVariant = (progress: number) => {
         <VTable class="text-no-wrap">
           <thead>
             <tr>
-              <th>PROJECT</th>
-              <th>TOTAL TASK</th>
-              <th>PROGRESS</th>
-              <th>HOURS</th>
+              <th scope="col">
+                PROJECT
+              </th>
+              <th scope="col">
+                TOTAL TASK
+              </th>
+              <th scope="col">
+                PROGRESS
+              </th>
+              <th scope="col">
+                HOURS
+              </th>
             </tr>
           </thead>
           <tbody>

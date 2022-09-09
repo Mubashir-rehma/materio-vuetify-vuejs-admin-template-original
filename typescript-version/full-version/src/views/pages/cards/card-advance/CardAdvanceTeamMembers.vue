@@ -84,16 +84,28 @@ const teamMembers = [
     <VTable class="text-no-wrap">
       <thead>
         <tr>
-          <th class="text-uppercase border-0">
+          <th
+            scope="col"
+            class="text-uppercase border-0"
+          >
             Name
           </th>
-          <th class="text-uppercase border-0">
+          <th
+            scope="col"
+            class="text-uppercase border-0"
+          >
             Project
           </th>
-          <th class="text-uppercase border-0">
+          <th
+            scope="col"
+            class="text-uppercase border-0"
+          >
             Tasks
           </th>
-          <th class="text-uppercase text-center border-0">
+          <th
+            scope="col"
+            class="text-uppercase text-center border-0"
+          >
             Progress
           </th>
         </tr>

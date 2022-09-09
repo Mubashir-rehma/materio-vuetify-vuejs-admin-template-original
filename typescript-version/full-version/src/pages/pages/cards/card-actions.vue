@@ -27,11 +27,18 @@ const refetchData = (hideOverlay: () => void) => {
           <VTable>
             <thead>
               <tr>
-                <th>ACTION</th>
-                <th class="text-center">
+                <th scope="col">
+                  ACTION
+                </th>
+                <th
+                  scope="col"
+                  class="text-center"
+                >
                   ICON
                 </th>
-                <th>DETAILS</th>
+                <th scope="col">
+                  DETAILS
+                </th>
               </tr>
             </thead>
             <tbody>

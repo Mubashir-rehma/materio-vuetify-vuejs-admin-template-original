@@ -91,10 +91,18 @@ watch(selectedRows, () => {
       <!-- 👉 table head -->
       <thead>
         <tr>
-          <th>USER</th>
-          <th>EMAIL</th>
-          <th>ROLE</th>
-          <th>STATUS</th>
+          <th scope="col">
+            USER
+          </th>
+          <th scope="col">
+            EMAIL
+          </th>
+          <th scope="col">
+            ROLE
+          </th>
+          <th scope="col">
+            STATUS
+          </th>
         </tr>
       </thead>
 

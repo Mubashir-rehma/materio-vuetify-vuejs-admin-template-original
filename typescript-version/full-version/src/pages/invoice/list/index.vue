@@ -451,7 +451,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             v-model="rowPerPage"
             density="compact"
             variant="plain"
-            class="mt-n4"
+            class="invoice-pagination-select"
             :items="[10, 20, 30, 50]"
           />
         </div>
@@ -485,6 +485,15 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
   .invoice-list-search {
     inline-size: 12rem;
+  }
+}
+</style>
+
+<style lang="scss" scope>
+.invoice-pagination-select {
+  .v-field__input,
+  .v-field__append-inner {
+    padding-block-start: 0.3rem;
   }
 }
 </style>

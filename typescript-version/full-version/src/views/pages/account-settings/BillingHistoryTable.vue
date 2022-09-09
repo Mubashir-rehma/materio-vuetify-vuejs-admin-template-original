@@ -331,7 +331,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           v-model="rowPerPage"
           variant="plain"
           :items="[10, 20, 30, 50]"
-          class="mt-n4"
+          class="invoice-pagination-select"
         />
       </div>
 
@@ -361,6 +361,15 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
 
   .invoice-list-search {
     inline-size: 12rem;
+  }
+}
+</style>
+
+<style lang="scss" scope>
+.invoice-pagination-select {
+  .v-field__input,
+  .v-field__append-inner {
+    padding-block-start: 0.5rem;
   }
 }
 </style>

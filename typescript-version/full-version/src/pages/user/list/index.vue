@@ -436,7 +436,7 @@ const addNewUser = (userData: UserProperties) => {
             v-model="rowPerPage"
             density="compact"
             variant="plain"
-            class="mt-n4"
+            class="user-pagination-select"
             :items="[10, 20, 30, 50]"
           />
         </div>
@@ -473,5 +473,14 @@ const addNewUser = (userData: UserProperties) => {
 
 .text-capitalize {
   text-transform: capitalize;
+}
+</style>
+
+<style lang="scss" scope>
+.user-pagination-select {
+  .v-field__input,
+  .v-field__append-inner {
+    padding-block-start: 0.3rem;
+  }
 }
 </style>

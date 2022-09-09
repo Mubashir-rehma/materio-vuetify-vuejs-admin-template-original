@@ -2,11 +2,12 @@
 $shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
 $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
 $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
+$font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 @forward "vuetify/lib/styles/settings" with (
   // 👉 General settings
   $color-pack: false !default,
-  $body-font-family: "Inter" !default,
+  $body-font-family: $font-family-custom !default,
   $border-radius-root: 6px !default,
 
     // 👉 Shadow opacity

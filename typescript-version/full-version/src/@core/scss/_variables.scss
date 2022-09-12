@@ -9,17 +9,17 @@
     - You can also use variable for consistency (e.g. mx 1 rem should be applied to both vertical nav items and vertical nav header)
 */
 @use "sass:map";
-@forward "@layouts/styles/variables";
-@use "@layouts/styles/variables" as *;
+// @forward "@layouts/styles/variables";
 @use "utils";
 
 // 👉 Default layout
 
 $navbar-high-emphasis-text: true !default;
 
-// @forward "@layouts/styles/variables" with (
-//   $layout-vertical-nav-width: 350px !default,
-// );
+@forward "@layouts/styles/variables" with (
+  $layout-vertical-nav-collapsed-width: 60px !default,
+);
+@use "@layouts/styles/variables" as *;
 
 $css-vars: (
   /*

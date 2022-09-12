@@ -306,18 +306,16 @@ const printInvoice = () => {
               <VDivider class="mt-4 mb-3" />
 
               <table class="w-100">
-                <tbody>
-                  <tr>
-                    <td class="pe-16">
-                      Total:
-                    </td>
-                    <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
-                      <h6 class="text-sm">
-                        $1690
-                      </h6>
-                    </td>
-                  </tr>
-                </tbody>
+                <tr>
+                  <td class="pe-16">
+                    Total:
+                  </td>
+                  <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+                    <h6 class="text-sm">
+                      $1690
+                    </h6>
+                  </td>
+                </tr>
               </table>
             </div>
           </VCardText>

@@ -1,4 +1,4 @@
-import { useLocale, useTheme } from 'vuetify'
+import { useTheme } from 'vuetify'
 import { useLayouts } from '@layouts'
 import { themeConfig } from '@themeConfig'
 export const useThemeConfig = () => {
@@ -84,15 +84,6 @@ export const useThemeConfig = () => {
     switchToVerticalNavOnLtOverlayNavBreakpoint,
   } = useLayouts()
 
-  // ℹ️ Sync RTL with locale
-  const syncRtlWithLocale = (rtlDefaultLocale = 'ar', ltrDefaultLocale = 'en') => {
-    const { current } = useLocale()
-
-    watch(isAppRtl, () => {
-      current.value = isAppRtl.value ? rtlDefaultLocale : ltrDefaultLocale
-    }, { immediate: true })
-  }
-
   // const syncRtlWithRtlLang = (rtlLangs: string[], rtlDefaultLocale: string, ltrDefaultLocale: string) => {
   // const { locale } = useI18n({ useScope: 'global' })
 
@@ -145,7 +136,6 @@ export const useThemeConfig = () => {
     isLessThanOverlayNavBreakpoint,
     isAppRtl,
     switchToVerticalNavOnLtOverlayNavBreakpoint,
-    syncRtlWithLocale,
 
     // syncRtlWithRtlLang,
   }

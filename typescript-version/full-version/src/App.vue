@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import BuyNow from '@core/components/BuyNow.vue'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
-import { useLayouts } from '@layouts'
-const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme: syncConfigThemeWithVuetifyTheme } = useThemeConfig()
+const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme: syncConfigThemeWithVuetifyTheme, isAppRtl } = useThemeConfig()
 
 // ℹ️ Sync current theme with initial loader theme
 syncInitialLoaderTheme()
 syncConfigThemeWithVuetifyTheme()
-const { isAppRtl } = useLayouts()
 </script>
 
 <template>

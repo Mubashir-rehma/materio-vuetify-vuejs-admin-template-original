@@ -1,4 +1,5 @@
 import type { InjectionKey, Plugin, Ref } from 'vue'
+import { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 import { config } from './config'
 import { EnumContentWidth } from './enums'
 import type { UserConfig } from './types'
@@ -48,15 +49,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.icons.sectionTitlePlaceholder = userConfig.icons.sectionTitlePlaceholder
 
   return (): void => {
-    console.info('installing layouts...')
-
-    // watch(config.verticalNav.isVerticalNavCollapsed, val => {
-    //   localStorage.setItem('isVerticalNavCollapsed', String(val))
-    // })
-
-    // watch(config.app.isRtl, val => {
-    //   localStorage.setItem('isAppRtl', String(val))
-    // })
+    useDynamicVhCssProperty()
 
     _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }
@@ -65,6 +58,5 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
 export const injectionKeyIsVerticalNavHovered: InjectionKey<Ref<boolean>> = Symbol('isVerticalNavHovered')
 
 export * from './components'
-export { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 export { useLayouts } from './composable/useLayouts'
 

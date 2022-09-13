@@ -4,14 +4,10 @@ import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVertical
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
-import { useDynamicVhCssProperty } from '@layouts'
 import { EnumAppContentLayoutNav } from '@layouts/enums'
 
 const { width: windowWidth } = useWindowSize()
 const { appContentLayoutNav } = useThemeConfig()
-
-// ℹ️ This is useful for calculating vh based CSS value correctly on mobile devices
-useDynamicVhCssProperty()
 
 // ℹ️ Performance: Only add `switchToVerticalNavOnLtOverlayNavBreakpoint` if `appContentLayoutNav` is horizontal
 watchOnce(

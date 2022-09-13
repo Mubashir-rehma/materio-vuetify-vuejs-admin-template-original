@@ -119,7 +119,7 @@ const database: Invoice[] = [
     total: 2771,
     avatar: '',
     invoiceStatus: 'Paid',
-    balance: 2771,
+    balance: '$2771',
     dueDate: `${now.getFullYear()}-${currentMonth}-24`,
   },
   {

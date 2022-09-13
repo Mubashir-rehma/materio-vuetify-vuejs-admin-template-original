@@ -32,7 +32,7 @@ onMounted(() => {
   inset-inline-end: 79px;
 
   .v-application &.v-btn.v-btn--elevated {
-    box-shadow: 0 1px 20px 1px #ff4c51 !important;
+    box-shadow: 0 1px 20px 1px rgb(var(--v-theme-error)) !important;
 
     &:hover {
       box-shadow: none !important;

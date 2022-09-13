@@ -88,7 +88,8 @@ const logout = () => {
             </VListItemTitle>
             <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
           </VListItem>
-          <VDivider />
+
+          <VDivider class="my-2" />
 
           <!-- 👉 Profile -->
           <VListItem :to="{ name: 'user-view-id', params: { id: 21 } }">
@@ -143,7 +144,7 @@ const logout = () => {
           </VListItem>
 
           <!-- Divider -->
-          <VDivider />
+          <VDivider class="my-2" />
 
           <!-- 👉 Logout -->
           <VListItem @click="logout">

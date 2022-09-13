@@ -7,7 +7,7 @@ export const useDynamicVhCssProperty = () => {
     document.documentElement.style.setProperty('--vh', `${vh.value}px`)
   }
 
-  onBeforeMount(() => {
+  tryOnBeforeMount(() => {
     updateVh()
     useEventListener('resize', updateVh)
   })

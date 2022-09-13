@@ -397,6 +397,10 @@ const printInvoice = () => {
     background: none !important;
   }
 
+  .product-buy-now {
+    display: none;
+  }
+
   .v-navigation-drawer,
   .layout-vertical-nav,
   .app-customizer-toggler,

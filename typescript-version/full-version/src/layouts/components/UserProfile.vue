@@ -39,7 +39,7 @@ const logout = () => {
       color="primary"
     >
       <VImg
-        v-if="userData.avatar"
+        v-if="userData && userData.avatar"
         :src="userData.avatar"
       />
       <VIcon
@@ -71,7 +71,7 @@ const logout = () => {
                     class="v-avatar-light-bg text-primary"
                   >
                     <VImg
-                      v-if="userData.avatar"
+                      v-if="userData && userData.avatar"
                       :src="userData.avatar"
                     />
                     <VIcon

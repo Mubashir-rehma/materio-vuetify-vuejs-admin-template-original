@@ -18,10 +18,10 @@ export const can = (action: string | undefined, subject: string | undefined) => 
   if (!vm)
     return false
 
-  const localCan = vm.proxy?.$can
+  const localCan = vm.proxy && '$can' in vm.proxy
 
   // @ts-expect-error We will get TS error in below line because we aren't using $can in component instance
-  return localCan ? localCan(action, subject) : true
+  return localCan ? vm.proxy?.$can(action, subject) : true
 }
 
 /**

@@ -7,28 +7,28 @@ import { VIcon } from 'vuetify/lib/components/VIcon/VIcon'
 import logo from '@/assets/logo.svg?raw'
 
 import { defineThemeConfig } from '@core'
-import { EnumSkins, RouteTransitions } from '@core/enums'
-import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
+import { RouteTransitions, Skins } from '@core/enums'
+import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
     title: 'Materio',
     logo: h('div', { innerHTML: logo, class: 'text-primary', style: 'line-height:0' }),
-    contentWidth: EnumContentWidth.Boxed,
-    contentLayoutNav: EnumAppContentLayoutNav.Vertical,
+    contentWidth: ContentWidth.Boxed,
+    contentLayoutNav: AppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     theme: 'light',
     isRtl: false,
-    skin: EnumSkins.Default,
+    skin: Skins.Bordered,
     routeTransition: RouteTransitions.Fade,
     iconRenderer: VIcon,
   },
   navbar: {
-    type: EnumNavbarType.Sticky,
+    type: NavbarType.Sticky,
     navbarBlur: true,
   },
-  footer: { type: EnumFooterType.Static },
+  footer: { type: FooterType.Static },
   verticalNav: {
     isVerticalNavCollapsed: false,
     defaultNavItemIconProps: { icon: 'mdi-circle-outline' },

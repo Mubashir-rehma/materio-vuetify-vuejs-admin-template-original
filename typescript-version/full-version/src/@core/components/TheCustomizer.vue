@@ -2,8 +2,8 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
-import { EnumSkins, RouteTransitions } from '@core/enums'
-import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
+import { RouteTransitions, Skins } from '@core/enums'
+import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 import { themeConfig } from '@themeConfig'
 
 // import { useTheme } from 'vuetify'
@@ -59,10 +59,10 @@ const perfectScrollbarSettings = {
 const { width: windowWidth } = useWindowSize()
 
 const headerValues = computed(() => {
-  const entries = Object.entries(EnumNavbarType)
+  const entries = Object.entries(NavbarType)
 
-  if (appContentLayoutNav.value === EnumAppContentLayoutNav.Horizontal)
-    return entries.filter(([_, val]) => val !== EnumNavbarType.Hidden)
+  if (appContentLayoutNav.value === AppContentLayoutNav.Horizontal)
+    return entries.filter(([_, val]) => val !== NavbarType.Hidden)
 
   return entries
 })
@@ -130,8 +130,7 @@ const headerValues = computed(() => {
             inline
           >
             <VRadio
-              v-for="[key, val] in Object.entries(EnumSkins)"
-              v-show="!(key === EnumSkins['Semi Dark'] && theme === 'dark')"
+              v-for="[key, val] in Object.entries(Skins)"
               :key="key"
               :label="key"
               :value="val"
@@ -198,7 +197,7 @@ const headerValues = computed(() => {
             inline
           >
             <VRadio
-              v-for="[key, val] in Object.entries(EnumContentWidth)"
+              v-for="[key, val] in Object.entries(ContentWidth)"
               :key="key"
               :label="key"
               :value="val"
@@ -206,7 +205,7 @@ const headerValues = computed(() => {
           </VRadioGroup>
           <!-- 👉 Navbar Type -->
           <h6 class="mt-3 text-base font-weight-regular">
-            {{ appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'Navbar' : 'Header' }} Type
+            {{ appContentLayoutNav === AppContentLayoutNav.Vertical ? 'Navbar' : 'Header' }} Type
           </h6>
           <VRadioGroup
             v-model="navbarType"
@@ -228,7 +227,7 @@ const headerValues = computed(() => {
             inline
           >
             <VRadio
-              v-for="[key, val] in Object.entries(EnumFooterType)"
+              v-for="[key, val] in Object.entries(FooterType)"
               :key="key"
               :label="key"
               :value="val"
@@ -264,7 +263,7 @@ const headerValues = computed(() => {
             inline
           >
             <VRadio
-              v-for="[key, val] in Object.entries(EnumAppContentLayoutNav)"
+              v-for="[key, val] in Object.entries(AppContentLayoutNav)"
               :key="key"
               :label="key"
               :value="val"
@@ -273,7 +272,7 @@ const headerValues = computed(() => {
 
           <!-- 👉 Collapsed Menu -->
           <div
-            v-if="appContentLayoutNav === EnumAppContentLayoutNav.Vertical"
+            v-if="appContentLayoutNav === AppContentLayoutNav.Vertical"
             class="d-flex align-center justify-space-between"
           >
             <VLabel
@@ -294,7 +293,7 @@ const headerValues = computed(() => {
           <!-- 👉 Semi Dark Menu -->
           <div
             class="align-center justify-space-between"
-            :class="theme === 'light' && appContentLayoutNav === EnumAppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
+            :class="theme === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
             <VLabel
               for="customizer-menu-semi-dark"

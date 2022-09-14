@@ -1,6 +1,6 @@
 import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 import type { Ref } from 'vue'
-import type { EnumSkins, RouteTransitions } from './enums'
+import { RouteTransitions, Skins } from './enums'
 
 export interface UserThemeConfig {
   app: {
@@ -12,8 +12,8 @@ export interface UserThemeConfig {
     enableI18n: UserLayoutConfig['app']['enableI18n']
     theme: string
     isRtl: UserLayoutConfig['app']['isRtl']
-    skin: EnumSkins
-    routeTransition: RouteTransitions
+    skin: typeof Skins[keyof typeof Skins]
+    routeTransition:typeof RouteTransitions[keyof typeof RouteTransitions]
     iconRenderer: UserLayoutConfig['app']['iconRenderer']
   }
   navbar: {

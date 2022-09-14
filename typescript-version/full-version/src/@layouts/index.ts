@@ -1,6 +1,7 @@
 import type { InjectionKey, Plugin, Ref } from 'vue'
+import { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 import { config } from './config'
-import { EnumContentWidth } from './enums'
+import { ContentWidth } from './enums'
 import type { UserConfig } from './types'
 import { useLayouts } from '@layouts'
 
@@ -13,7 +14,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   const localStorageContentWidth = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-contentWidth`)
 
-    return Object.values(EnumContentWidth).find(v => v === storageValue)
+    return Object.values(ContentWidth).find(v => v === storageValue)
   })()
   const localStorageNavbarBlur = localStorage.getItem(`${userConfig.app.title}-navbarBlur`)
 
@@ -48,15 +49,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.icons.sectionTitlePlaceholder = userConfig.icons.sectionTitlePlaceholder
 
   return (): void => {
-    console.info('installing layouts...')
-
-    // watch(config.verticalNav.isVerticalNavCollapsed, val => {
-    //   localStorage.setItem('isVerticalNavCollapsed', String(val))
-    // })
-
-    // watch(config.app.isRtl, val => {
-    //   localStorage.setItem('isAppRtl', String(val))
-    // })
+    useDynamicVhCssProperty()
 
     _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }
@@ -65,6 +58,5 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
 export const injectionKeyIsVerticalNavHovered: InjectionKey<Ref<boolean>> = Symbol('isVerticalNavHovered')
 
 export * from './components'
-export { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 export { useLayouts } from './composable/useLayouts'
 

@@ -1,21 +1,21 @@
-export enum EnumContentWidth {
-  Fluid = 'fluid',
-  Boxed = 'boxed',
-}
+export const ContentWidth = {
+  Fluid: 'fluid',
+  Boxed: 'boxed',
+} as const
 
-export enum EnumNavbarType {
-  Sticky = 'sticky',
-  Static = 'static',
-  Hidden = 'hidden',
-}
+export const NavbarType = {
+  Sticky: 'sticky',
+  Static: 'static',
+  Hidden: 'hidden',
+} as const
 
-export enum EnumFooterType {
-  Sticky = 'sticky',
-  Static = 'static',
-  Hidden = 'hidden',
-}
+export const FooterType = {
+  Sticky: 'sticky',
+  Static: 'static',
+  Hidden: 'hidden',
+} as const
 
-export enum EnumAppContentLayoutNav {
-  Vertical = 'vertical',
-  Horizontal = 'horizontal',
-}
+export const AppContentLayoutNav = {
+  Vertical: 'vertical',
+  Horizontal: 'horizontal',
+} as const

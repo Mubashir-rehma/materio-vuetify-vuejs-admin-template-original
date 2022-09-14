@@ -1,5 +1,5 @@
 import { breakpointsVuetify } from '@vueuse/core'
-import { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from '@layouts/enums'
+import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 import type { Config } from '@layouts/types'
 
 export const config: Config = {
@@ -8,17 +8,17 @@ export const config: Config = {
     logo: h('img', { src: '/src/assets/logo.svg' }),
 
     // logo: () => h('img', { src: 'assets/colored-logo.png' }, null),
-    contentWidth: ref(EnumContentWidth.Boxed),
-    contentLayoutNav: ref(EnumAppContentLayoutNav.Vertical),
+    contentWidth: ref(ContentWidth.Boxed),
+    contentLayoutNav: ref(AppContentLayoutNav.Vertical),
     overlayNavFromBreakpoint: breakpointsVuetify.md,
     enableI18n: true,
     isRtl: ref(false),
   },
   navbar: {
-    type: ref(EnumNavbarType.Sticky),
+    type: ref(NavbarType.Sticky),
     navbarBlur: ref(true),
   },
-  footer: { type: ref(EnumFooterType.Static) },
+  footer: { type: ref(FooterType.Static) },
   verticalNav: {
     isVerticalNavCollapsed: ref(false),
     defaultNavItemIconProps: { icon: 'mdi-circle-outline' },

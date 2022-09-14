@@ -1,24 +1,24 @@
 import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-import type { EnumAppContentLayoutNav, EnumContentWidth, EnumFooterType, EnumNavbarType } from './enums'
+import { ContentWidth, FooterType, NavbarType } from './enums'
 
 export interface UserConfig {
   app: {
     title: string
     logo: VNode
-    contentWidth: EnumContentWidth
-    contentLayoutNav: EnumAppContentLayoutNav
+    contentWidth: typeof ContentWidth[keyof typeof ContentWidth]
+    contentLayoutNav: typeof AppContentLayoutNav[keyof typeof AppContentLayoutNav]
     overlayNavFromBreakpoint: number
     enableI18n: boolean
     isRtl: boolean
     iconRenderer?: Component
   }
   navbar: {
-    type: EnumNavbarType
+    type: typeof NavbarType[keyof typeof NavbarType]
     navbarBlur: boolean
   }
   footer: {
-    type: EnumFooterType
+    type:typeof FooterType[keyof typeof FooterType]
   }
   verticalNav: {
     isVerticalNavCollapsed: boolean

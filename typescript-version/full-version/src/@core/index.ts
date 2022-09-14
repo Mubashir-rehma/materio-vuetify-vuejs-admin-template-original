@@ -1,5 +1,5 @@
 import type { ThemeConfig, UserThemeConfig } from './types'
-import { EnumSkins, RouteTransitions } from '@core/enums'
+import { RouteTransitions, Skins } from '@core/enums'
 import type { UserConfig as LayoutConfig } from '@layouts/types'
 
 export const defineThemeConfig = (
@@ -10,7 +10,7 @@ export const defineThemeConfig = (
   const localStorageSkin = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
 
-    return Object.values(EnumSkins).find(v => v === storageValue)
+    return Object.values(Skins).find(v => v === storageValue)
   })()
   const localStorageTransition = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-transition`)

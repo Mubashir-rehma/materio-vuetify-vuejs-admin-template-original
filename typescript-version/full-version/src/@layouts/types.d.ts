@@ -29,12 +29,12 @@ export interface UserConfig {
     transition?: string | Component
   }
   icons: {
-    chevronDown: unknown
-    chevronRight: unknown
-    close: unknown
-    verticalNavPinned: unknown
-    verticalNavUnPinned: unknown
-    sectionTitlePlaceholder: unknown
+    chevronDown: any
+    chevronRight: any
+    close: any
+    verticalNavPinned: any
+    verticalNavUnPinned: any
+    sectionTitlePlaceholder: any
   }
 }
 

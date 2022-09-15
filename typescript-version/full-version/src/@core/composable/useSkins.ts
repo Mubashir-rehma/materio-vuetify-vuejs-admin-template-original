@@ -10,7 +10,7 @@ export const useSkins = () => {
 
   const layoutAttrs = computed(() => {
     return isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical
-      ? { verticalNavAttrs: { tag: h(VThemeProvider, { tag: 'aside' }), withBackground: true, theme: 'dark' } }
+      ? { verticalNavAttrs: { wrapper: h(VThemeProvider, { tag: 'aside' }), wrapperProps: { withBackground: true, theme: 'dark' } } }
       : {}
   })
 

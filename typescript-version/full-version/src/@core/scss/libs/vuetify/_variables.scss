@@ -1,11 +1,13 @@
-// SECTION Settings
 $shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
 $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
 $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
 $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-@forward "vuetify/lib/styles/settings" with (
-  // 👉 General settings
+// 👉 Card transition properties
+$card-transition-property-custom: box-shadow, opacity;
+
+@forward "vuetify/settings" with (
+   // 👉 General settings
   $color-pack: false !default,
   $body-font-family: $font-family-custom !default,
   $border-radius-root: 6px !default,
@@ -170,16 +172,6 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
 
   // 👉 States
   $states: ("activated": 0.08) !default,
-  
-);
-
-// !SECTION
-
-// 👉 Card transition properties
-$card-transition-property-custom: box-shadow, opacity;
-
-// SECTION Components
-@forward "vuetify/dist/component-variables" with (
 
   // 👉 Card
   $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !default,
@@ -260,5 +252,3 @@ $card-transition-property-custom: box-shadow, opacity;
   // 👉 Navigation Drawer
   $navigation-drawer-scrim-opacity:0.5 !default,
 );
-
-// !SECTION

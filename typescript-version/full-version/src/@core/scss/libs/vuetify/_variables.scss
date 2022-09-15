@@ -1,9 +1,12 @@
+// 👉 Shadow opacities
 $shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
 $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
 $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
 
-// SECTION Settings
-@forward "vuetify/lib/styles/settings" with (
+// 👉 Card transition properties
+$card-transition-property-custom: box-shadow, opacity;
+
+@forward "vuetify/settings" with (
   // 👉 General settings
   $color-pack: false !default,
 
@@ -11,17 +14,8 @@ $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
   $shadow-key-umbra-opacity: $shadow-key-umbra-opacity-custom !default,
   $shadow-key-penumbra-opacity: $shadow-key-penumbra-opacity-custom !default,
   $shadow-key-ambient-opacity: $shadow-key-ambient-opacity-custom !default,
-);
 
-// !SECTION
-
-// 👉 Card transition properties
-$card-transition-property-custom: box-shadow, opacity;
-
-// SECTION Components
-@forward "vuetify/dist/component-variables" with (
-
-  // 👉 Card
+    // 👉 Card
   $card-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !default,
   $card-elevation: 6 !default,
   $card-title-line-height: 1.6 !default,
@@ -42,5 +36,3 @@ $card-transition-property-custom: box-shadow, opacity;
   $tooltip-text-color: rgb(var(--v-theme-on-primary)) !default,
   $tooltip-font-size: 0.75rem !default,
 );
-
-// !SECTION

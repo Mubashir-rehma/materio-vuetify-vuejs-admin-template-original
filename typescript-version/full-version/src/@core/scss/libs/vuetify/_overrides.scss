@@ -174,15 +174,14 @@ h6,
   --v-card-list-gap: 20px;
 
   &.v-list {
-    padding-block-end: 0;
+    padding-block: 0;
   }
 
   .v-list-item {
     min-block-size: unset;
-    padding-block-end: 0 !important;
-    padding-block-start: 0 !important;
-    padding-inline-end: 0 !important;
-    padding-inline-start: 0 !important;
+    min-block-size: auto !important;
+    padding-block: 0 !important;
+    padding-inline: 0 !important;
 
     &:not(:last-child) {
       padding-block-end: var(--v-card-list-gap) !important;

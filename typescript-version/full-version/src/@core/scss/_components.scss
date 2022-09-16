@@ -112,7 +112,7 @@
 .v-timeline--vertical.v-timeline.v-timeline--side-end {
   .v-timeline-item {
     .v-timeline-item__body {
-      justify-self: stretch;
+      justify-self: stretch !important;
     }
   }
 }

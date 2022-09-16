@@ -20,7 +20,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     enableI18n: true,
     theme: 'light',
     isRtl: false,
-    skin: Skins.Bordered,
+    skin: Skins.Default,
     routeTransition: RouteTransitions.Fade,
     iconRenderer: VIcon,
   },

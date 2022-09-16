@@ -36,7 +36,7 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Delivery Address</VExpansionPanelTitle>
 
-      <VExpansionPanelText>
+      <VExpansionPanelText class="mt-4">
         <VForm @submit.prevent="() => {}">
           <VRow>
             <!-- 👉 Full Name -->
@@ -127,7 +127,7 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Delivery Options</VExpansionPanelTitle>
 
-      <VExpansionPanelText>
+      <VExpansionPanelText class="mt-4">
         <!-- 👉 Radio Group -->
         <VRadioGroup
           v-model="deliveryOption"
@@ -208,7 +208,7 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
-      <VExpansionPanelText>
+      <VExpansionPanelText class="mt-4">
         <VRow>
           <VCol
             md="6"

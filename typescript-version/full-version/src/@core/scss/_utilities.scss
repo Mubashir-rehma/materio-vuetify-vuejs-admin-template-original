@@ -50,7 +50,7 @@ $card-spacer-content: 16px;
 }
 
 .bg-var-theme-background {
-  background-color: rgba(var(--v-theme-background), var(--v-medium-emphasis-opacity));
+  background-color: rgba(var(--v-theme-background), var(--v-medium-emphasis-opacity)) !important;
 }
 
 // [/^bg-light-(\w+)$/, ([, w]) => ({ backgroundColor: `rgba(var(--v-theme-${w}), var(--v-activated-opacity))` })],

@@ -53,7 +53,6 @@
     "@typescript-eslint/parser": "^5.30.0",
     "@vitejs/plugin-vue": "^3.0.1",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
-    "@vuetify/vite-plugin": "^1.0.0-alpha.11",
     "eslint": "^8.17.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^3.1.1",
@@ -74,8 +73,7 @@
     "vite-plugin-pages": "^0.25.0",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vite-plugin-vuetify": "1.0.0-alpha.17",
-    "vue-tsc": "^0.39.0",
-    "vuetify-loader": "^1.7.3"
+    "vue-tsc": "^0.39.0"
   },
   "packageManager": "yarn@1.22.18",
   "resolutions": {

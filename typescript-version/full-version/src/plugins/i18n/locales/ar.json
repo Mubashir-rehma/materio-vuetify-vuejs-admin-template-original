@@ -102,6 +102,7 @@
   "Widgets": "الحاجيات",
   "eCommerce": "التجارة الإلكترونية",
   "New": "جديد",
+  "Disabled Menu": "قائمة المعوقين",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

@@ -34,7 +34,7 @@ export default [
     title: 'Disabled Menu',
     to: null,
     icon: { icon: 'mdi-eye-off-outline' },
-    disabled: true,
+    disable: true,
   },
   {
     title: 'Raise Support',

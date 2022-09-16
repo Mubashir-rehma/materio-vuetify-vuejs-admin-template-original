@@ -102,6 +102,7 @@
   "Widgets": "Widgets",
   "eCommerce": "eCommerce",
   "New": "New",
+  "Disabled Menu": "Disabled Menu",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

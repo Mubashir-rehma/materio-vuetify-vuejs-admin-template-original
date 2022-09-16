@@ -104,6 +104,7 @@
   "Widgets": "Widget",
   "eCommerce": "commerce électronique",
   "New": "Nouvelle",
+  "Disabled Menu": "Menu désactivé",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

@@ -44,7 +44,7 @@ export default [
   },
   {
     title: 'Documentation',
-    href: 'https://themeselection.com/',
+    href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/',
     icon: { icon: 'mdi-file-document-outline' },
     target: '_blank',
   },

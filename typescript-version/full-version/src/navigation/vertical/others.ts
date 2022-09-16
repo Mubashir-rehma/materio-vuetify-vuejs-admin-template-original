@@ -30,4 +30,22 @@ export default [
       },
     ],
   },
+  {
+    title: 'Disabled Menu',
+    to: null,
+    icon: { icon: 'mdi-eye-off-outline' },
+    disabled: true,
+  },
+  {
+    title: 'Raise Support',
+    href: 'https://themeselection.com/support/',
+    icon: { icon: 'mdi-lifebuoy' },
+    target: '_blank',
+  },
+  {
+    title: 'Documentation',
+    href: 'https://themeselection.com/',
+    icon: { icon: 'mdi-file-document-outline' },
+    target: '_blank',
+  },
 ]

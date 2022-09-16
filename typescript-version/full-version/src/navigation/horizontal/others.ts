@@ -33,6 +33,25 @@ export default [
           },
         ],
       },
+      {
+        title: 'Disabled Menu',
+        to: null,
+        icon: { icon: 'mdi-eye-off-outline' },
+        disabled: true,
+      },
+      {
+        title: 'Raise Support',
+        href:
+      'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/guide/getting-started/support.html',
+        icon: { icon: 'mdi-lifebuoy' },
+        target: '_blank',
+      },
+      {
+        title: 'Documentation',
+        href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation',
+        icon: { icon: 'mdi-file-document-outline' },
+        target: '_blank',
+      },
     ],
   },
 ]

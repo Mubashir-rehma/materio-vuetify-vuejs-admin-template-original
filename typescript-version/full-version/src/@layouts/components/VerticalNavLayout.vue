@@ -48,10 +48,14 @@ export default defineComponent({
     const shallShowPageLoading = ref(false)
 
     return () => {
+      const verticalNavAttrs = toRef(props, 'verticalNavAttrs')
+
+      const { wrapper: verticalNavWrapper, wrapperProps: verticalNavWrapperProps, ...additionalVerticalNavAttrs } = verticalNavAttrs.value
+
       // 👉 Vertical nav
       const verticalNav = h(
         VerticalNav,
-        { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems, ...props.verticalNavAttrs },
+        { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems, ...additionalVerticalNavAttrs },
         {
           'nav-header': slots['vertical-nav-header']?.(),
           'before-nav-items': slots['before-vertical-nav-items']?.(),
@@ -122,7 +126,7 @@ export default defineComponent({
         'div',
         { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value, windowScrollY.value)] },
         [
-          verticalNav,
+          verticalNavWrapper ? h(verticalNavWrapper, verticalNavWrapperProps, { default: () => verticalNav }) : verticalNav,
           h(
             'div',
             { class: 'layout-content-wrapper' },

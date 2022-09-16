@@ -17,7 +17,7 @@
   .nav-group {
     // 👉 Disabled nav items
     &.disabled {
-      opacity: 0.35;
+      opacity: var(--v-disabled-opacity);
       pointer-events: none;
     }
 

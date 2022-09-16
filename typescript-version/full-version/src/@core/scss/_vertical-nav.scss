@@ -114,7 +114,7 @@
       }
 
       &.disabled {
-        opacity: rgb(var(--v-disabled-opacity));
+        opacity: var(--v-disabled-opacity);
         pointer-events: none;
       }
     }

@@ -9,11 +9,11 @@ interface Props {
   change: number
 }
 
-const prop = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   color: 'primary',
 })
 
-const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.change) === 1)
+const isPositive = controlledComputed(() => props.change, () => Math.sign(props.change) === 1)
 </script>
 
 <template>
@@ -22,24 +22,24 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
       <VAvatar
         size="44"
         rounded
-        :class="`v-avatar-light-bg text-${prop.color} me-4`"
+        :class="`v-avatar-light-bg text-${props.color} me-4`"
       >
         <VIcon
-          :icon="prop.icon"
+          :icon="props.icon"
           size="30"
         />
       </VAvatar>
 
       <div>
-        <span class="text-caption">{{ prop.title }}</span>
+        <span class="text-caption">{{ props.title }}</span>
         <div class="d-flex align-center flex-wrap">
-          <span class="text-h6 font-weight-semibold">{{ kFormatter(prop.stats) }}</span>
+          <span class="text-h6 font-weight-semibold">{{ kFormatter(props.stats) }}</span>
           <div
-            v-if="prop.change"
+            v-if="props.change"
             :class="`${isPositive ? 'text-success' : 'text-error'} mt-1`"
           >
             <VIcon :icon="isPositive ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
-            <span class="text-caption font-weight-semibold">{{ Math.abs(prop.change) }}%</span>
+            <span class="text-caption font-weight-semibold">{{ Math.abs(props.change) }}%</span>
           </div>
         </div>
       </div>

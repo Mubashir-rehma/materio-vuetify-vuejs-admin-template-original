@@ -101,6 +101,7 @@
   "Gamification": "Gamification",
   "Forms": "Formes",
   "Timeline": "Chronologie",
+  "Disabled Menu": "Menu désactivé",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

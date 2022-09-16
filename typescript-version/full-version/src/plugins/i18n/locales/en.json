@@ -99,6 +99,7 @@
   "Gamification": "Gamification",
   "Forms": "Forms",
   "Timeline": "Timeline",
+  "Disabled Menu": "Disabled Menu",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

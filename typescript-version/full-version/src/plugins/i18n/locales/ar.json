@@ -99,6 +99,7 @@
   "Gamification": "التلعيب",
   "Forms": "نماذج",
   "Timeline": "الجدول الزمني",
+  "Disabled Menu": "قائمة المعوقين",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

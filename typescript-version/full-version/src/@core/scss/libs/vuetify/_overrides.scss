@@ -193,30 +193,3 @@ h6,
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
-
-// 👉 File Input
-// TODO file input fix: remove the below fix after vuetify fix it: https://github.com/vuetifyjs/vuetify/issues/15729
-.v-input--density-comfortable.v-file-input {
-  .v-field {
-    min-block-size: 3rem;
-  }
-}
-
-.v-input--density-default.v-file-input {
-  .v-field {
-    min-block-size: 3.5rem;
-  }
-}
-
-.v-input--density-compact.v-file-input {
-  .v-field {
-    min-block-size: 2.5rem;
-  }
-}
-
-// 👉 Input
-// TODO: Remove this after [this](https://github.com/vuetifyjs/vuetify/pull/15739) PR merges
-input.v-field__input::placeholder {
-  color: currentcolor;
-  opacity: var(--v-disabled-opacity);
-}

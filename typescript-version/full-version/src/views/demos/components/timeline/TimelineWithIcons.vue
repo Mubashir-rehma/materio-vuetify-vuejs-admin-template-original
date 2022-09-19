@@ -10,6 +10,7 @@ const serverSwitch = ref(false)
     <VCardText>
       <VTimeline
         align="start"
+        justify="center"
         :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
       >
         <!-- SECTION Timeline Item: Flight -->
@@ -56,10 +57,7 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Interview -->
-        <VTimelineItem
-          fill-dot
-          class="text-start"
-        >
+        <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar class="v-avatar-light-bg text-success">
@@ -101,18 +99,28 @@ const serverSwitch = ref(false)
             <!-- 👉 Person Actions -->
             <div>
               <VBtn
-                size="x-small"
+                size="small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-message-text-outline"
+                icon
                 class="me-2"
-              />
+              >
+                <VIcon
+                  icon="mdi-message-text-outline"
+                  size="20"
+                />
+              </VBtn>
               <VBtn
-                size="x-small"
+                size="small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-phone"
-              />
+                icon
+              >
+                <VIcon
+                  icon="mdi-phone"
+                  size="20"
+                />
+              </VBtn>
             </div>
           </div>
         </VTimelineItem>
@@ -285,15 +293,25 @@ const serverSwitch = ref(false)
                 size="x-small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-share-variant-outline"
+                icon
                 class="me-2"
-              />
+              >
+                <VIcon
+                  icon="mdi-share-variant-outline"
+                  size="20"
+                />
+              </VBtn>
               <VBtn
                 size="x-small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-reload"
-              />
+                icon
+              >
+                <VIcon
+                  icon="mdi-reload"
+                  size="20"
+                />
+              </VBtn>
             </div>
 
             <VSwitch v-model="serverSwitch" />
@@ -345,23 +363,38 @@ const serverSwitch = ref(false)
                 size="x-small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-link-variant"
+                icon
                 class="me-2"
-              />
+              >
+                <VIcon
+                  size="20"
+                  icon="mdi-link-variant"
+                />
+              </VBtn>
 
               <VBtn
                 size="x-small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-message-text-outline"
+                icon
                 class="me-2"
-              />
+              >
+                <VIcon
+                  size="20"
+                  icon="mdi-message-text-outline"
+                />
+              </VBtn>
               <VBtn
                 size="x-small"
                 variant="plain"
                 color="secondary"
-                icon="mdi-account-outline"
-              />
+                icon
+              >
+                <VIcon
+                  size="20"
+                  icon="mdi-account-outline"
+                />
+              </VBtn>
             </div>
 
             <span class="text-xs">Due date: 15th Jan</span>

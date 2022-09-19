@@ -1,6 +1,15 @@
 module.exports = {
-  title: 'Master',
+  title: 'Materio',
   description: 'This is desc',
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["meta", { name: "theme-color", content: "#9155FD" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
+  ],
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },

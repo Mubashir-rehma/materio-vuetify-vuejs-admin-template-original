@@ -151,7 +151,7 @@
 .v-expansion-panel-title--active:focus,
 .v-expansion-panel-title--active:hover {
   .v-expansion-panel-title__overlay {
-    opacity: 0;
+    opacity: 0 !important;
   }
 }
 

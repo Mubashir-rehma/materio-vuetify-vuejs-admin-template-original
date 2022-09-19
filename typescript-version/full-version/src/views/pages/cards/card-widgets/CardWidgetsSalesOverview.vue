@@ -135,7 +135,8 @@ const salesOverviews = [
             <div class="me-3">
               <VAvatar
                 rounded
-                class="v-avatar-light-bg text-primary"
+                color="primary"
+                variant="tonal"
               >
                 <VIcon icon="mdi-currency-usd" />
               </VAvatar>

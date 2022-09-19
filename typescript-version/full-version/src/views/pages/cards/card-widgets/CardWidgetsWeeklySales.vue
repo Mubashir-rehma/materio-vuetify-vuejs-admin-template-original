@@ -137,7 +137,9 @@ const weeklySalesData = [
         <div>
           <VAvatar
             rounded
-            :class="`v-avatar-light-bg text-${data.avatar.color} me-3`"
+            :color="data.avatar.color"
+            variant="tonal"
+            class="me-3"
           >
             <VIcon :icon="data.avatar.icon" />
           </VAvatar>

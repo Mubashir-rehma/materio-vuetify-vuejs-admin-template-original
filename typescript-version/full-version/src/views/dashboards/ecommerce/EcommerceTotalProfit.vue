@@ -182,7 +182,8 @@ const lastThreeTransactions = [
             >
               <template #prepend>
                 <VAvatar
-                  :class="`v-avatar-light-bg text-${transaction.avatar.color}`"
+                  variant="tonal"
+                  :color="transaction.avatar.color"
                   rounded
                 >
                   <VIcon :icon="transaction.avatar.icon" />

@@ -109,7 +109,9 @@ const formateAmount = (amount: number) => {
           <template #prepend>
             <VAvatar
               rounded
-              :class="`v-avatar-light-bg text-${transactionsColors[transaction.gateway]} me-3`"
+              variant="tonal"
+              :color="transactionsColors[transaction.gateway]"
+              class="me-3"
             >
               <VImg
                 height="20"

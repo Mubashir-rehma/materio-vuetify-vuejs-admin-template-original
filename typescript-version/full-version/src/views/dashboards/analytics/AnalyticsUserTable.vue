@@ -116,7 +116,9 @@ watch(selectedRows, () => {
           <td>
             <div class="d-flex align-center">
               <VAvatar
-                :class="`v-avatar-light-bg text-${resolveUserRoleVariant(user.role).color} me-3`"
+                :color="resolveUserRoleVariant(user.role).color"
+                variant="tonal"
+                class="me-3"
                 size="30"
               >
                 <VImg

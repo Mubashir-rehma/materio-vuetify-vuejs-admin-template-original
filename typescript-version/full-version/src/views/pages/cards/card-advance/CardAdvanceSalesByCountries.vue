@@ -82,8 +82,9 @@ const salesByCountries = [
           <template #prepend>
             <VAvatar
               :color="data.color"
+              variant="tonal"
               size="40"
-              :class="`v-avatar-light-bg text-lg text-${data.color} me-3`"
+              class="me-3"
             >
               {{ data.abbr }}
             </VAvatar>

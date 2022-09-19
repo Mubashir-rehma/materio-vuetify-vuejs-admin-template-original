@@ -116,7 +116,8 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                 <VAvatar
                   :size="34"
                   v-bind="props"
-                  :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant}`"
+                  variant="tonal"
+                  :color="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant"
                 >
                   <VIcon
                     :size="20"
@@ -124,6 +125,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                   />
                 </VAvatar>
               </template>
+
               <p class="mb-0">
                 {{ invoice.invoiceStatus }}
               </p>
@@ -141,7 +143,9 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
             <div class="d-flex align-center">
               <VAvatar
                 size="34"
-                :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant} me-3`"
+                :color="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant"
+                variant="tonal"
+                class="me-3"
               >
                 <VImg
                   v-if="invoice.avatar.length"

@@ -20,7 +20,8 @@ const developerMeetup = [
           <VAvatar
             rounded
             size="56"
-            class="v-avatar-light-bg text-primary"
+            color="primary"
+            variant="tonal"
           >
             <div class="py-2">
               <p class="text-sm mb-1">

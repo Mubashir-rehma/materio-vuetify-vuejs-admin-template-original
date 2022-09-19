@@ -13,7 +13,8 @@ import avatar3 from '@/assets/images/avatars/avatar-3.png'
       <template #append>
         <VAvatar
           size="48"
-          class="v-avatar-light-bg text-primary"
+          class="primary"
+          variant="tonal"
         >
           <VIcon
             size="28"

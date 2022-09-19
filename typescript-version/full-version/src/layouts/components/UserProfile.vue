@@ -35,8 +35,9 @@ const logout = () => {
     color="success"
   >
     <VAvatar
-      class="cursor-pointer v-avatar-light-bg text-primary"
+      class="cursor-pointer"
       color="primary"
+      variant="tonal"
     >
       <VImg
         v-if="userData && userData.avatar"
@@ -68,7 +69,7 @@ const logout = () => {
                 >
                   <VAvatar
                     color="primary"
-                    class="v-avatar-light-bg text-primary"
+                    variant="tonal"
                   >
                     <VImg
                       v-if="userData && userData.avatar"

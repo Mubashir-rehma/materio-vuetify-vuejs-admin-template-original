@@ -17,7 +17,10 @@ const serverSwitch = ref(false)
         <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar class="v-avatar-light-bg text-primary">
+              <VAvatar
+                color="primary"
+                variant="tonal"
+              >
                 <VIcon icon="mdi-airplane" />
               </VAvatar>
             </div>
@@ -60,7 +63,10 @@ const serverSwitch = ref(false)
         <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar class="v-avatar-light-bg text-success">
+              <VAvatar
+                color="success"
+                variant="tonal"
+              >
                 <VIcon icon="mdi-clock-time-four-outline" />
               </VAvatar>
             </div>
@@ -130,7 +136,10 @@ const serverSwitch = ref(false)
         <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar class="v-avatar-light-bg text-warning">
+              <VAvatar
+                color="warning"
+                variant="tonal"
+              >
                 <VIcon icon="mdi-cart-outline" />
               </VAvatar>
             </div>
@@ -186,7 +195,10 @@ const serverSwitch = ref(false)
         <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar class="v-avatar-light-bg text-info">
+              <VAvatar
+                color="info"
+                variant="tonal"
+              >
                 <VIcon icon="mdi-file-edit-outline" />
               </VAvatar>
             </div>
@@ -221,7 +233,10 @@ const serverSwitch = ref(false)
         <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar class="v-avatar-light-bg text-error">
+              <VAvatar
+                color="error"
+                variant="tonal"
+              >
                 <VIcon icon="mdi-server" />
               </VAvatar>
             </div>
@@ -323,8 +338,13 @@ const serverSwitch = ref(false)
         <VTimelineItem fill-dot>
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar class="v-avatar-light-bg text-success">
-                <VIcon icon="mdi-map-marker-outline" />
+              <VAvatar
+                color="success"
+                variant="tonal"
+              >
+                <VIcon
+                  icon="mdi-map-marker-outline"
+                />
               </VAvatar>
             </div>
           </template>

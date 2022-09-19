@@ -25,12 +25,12 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
     >
       <!-- 👉 Initials -->
       <AppCardCode
-        title="Initials"
-        :code="demoCode.initials"
+        title="Tonal"
+        :code="demoCode.tonal"
       >
-        <p>Use <code>v-avatar-light-bg</code> with text color class for avatar initials.</p>
+        <p>Use <code>variant="tonal"</code> to create light background avatars.</p>
 
-        <DemoAvatarInitials />
+        <DemoAvatarTonal />
       </AppCardCode>
     </VCol>
 

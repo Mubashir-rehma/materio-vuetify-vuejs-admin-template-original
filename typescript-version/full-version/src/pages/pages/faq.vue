@@ -107,7 +107,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
             <div class="d-flex align-center mb-6">
               <VAvatar
                 rounded
-                class="v-avatar-light-bg text-primary me-3"
+                color="primary"
+                variant="tonal"
+                class="me-3"
                 size="large"
               >
                 <VIcon
@@ -188,7 +190,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
             <VCardText>
               <VAvatar
                 rounded
-                class="v-avatar-light-bg text-primary me-3"
+                color="primary"
+                variant="tonal"
+                class="me-3"
               >
                 <VIcon :icon="contact.icon" />
               </VAvatar>

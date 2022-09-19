@@ -3,11 +3,6 @@
 @use "@layouts/styles/_placeholders";
 @use "@configured-variables" as variables;
 
-// 👉 Avatar
-
-// ℹ️ Avatar light bg
-@include mixins.light-bg-provider(v-avatar);
-
 // 👉 Avatar group
 .v-avatar-group {
   display: flex;

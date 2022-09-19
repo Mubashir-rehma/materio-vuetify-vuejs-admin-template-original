@@ -1,4 +1,8 @@
 export default {
+  VAvatar: {
+    // ℹ️ Remove after next release
+    variant: 'flat',
+  },
   VBadge: {
     // set v-badge default color to primary
     color: 'primary',

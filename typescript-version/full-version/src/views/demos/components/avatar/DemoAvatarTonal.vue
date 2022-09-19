@@ -2,37 +2,37 @@
   <div class="demo-space-x">
     <VAvatar
       color="primary"
-      class="v-avatar-light-bg text-primary"
+      variant="tonal"
     >
       <span>PI</span>
     </VAvatar>
     <VAvatar
       color="secondary"
-      class="v-avatar-light-bg text-secondary"
+      variant="tonal"
     >
       <span>SE</span>
     </VAvatar>
     <VAvatar
       color="success"
-      class="v-avatar-light-bg text-success"
+      variant="tonal"
     >
       <span>SU</span>
     </VAvatar>
     <VAvatar
       color="info"
-      class="v-avatar-light-bg text-info"
+      variant="tonal"
     >
       <span>IN</span>
     </VAvatar>
     <VAvatar
       color="warning"
-      class="v-avatar-light-bg text-warning"
+      variant="tonal"
     >
       <span>WA</span>
     </VAvatar>
     <VAvatar
       color="error"
-      class="v-avatar-light-bg text-error"
+      variant="tonal"
     >
       <span>ER</span>
     </VAvatar>

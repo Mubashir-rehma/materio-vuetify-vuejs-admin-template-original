@@ -37,7 +37,6 @@ declare module '@vue/runtime-core' {
     DemoAvatarGroupCount: typeof import('./src/views/demos/components/avatar/DemoAvatarGroupCount.vue')['default']
     DemoAvatarIcons: typeof import('./src/views/demos/components/avatar/DemoAvatarIcons.vue')['default']
     DemoAvatarImages: typeof import('./src/views/demos/components/avatar/DemoAvatarImages.vue')['default']
-    DemoAvatarInitials: typeof import('./src/views/demos/components/avatar/DemoAvatarInitials.vue')['default']
     DemoAvatarRounded: typeof import('./src/views/demos/components/avatar/DemoAvatarRounded.vue')['default']
     DemoAvatarSizes: typeof import('./src/views/demos/components/avatar/DemoAvatarSizes.vue')['default']
     DemoAvatarTonal: typeof import('./src/views/demos/components/avatar/DemoAvatarTonal.vue')['default']

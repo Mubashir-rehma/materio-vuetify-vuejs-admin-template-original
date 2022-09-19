@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { InvoiceData } from '@/views/apps/invoice/types'
-
-// Components
 import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue'
+
+// Type: Invoice data
+import type { InvoiceData } from '@/views/apps/invoice/types'
 
 // 👉 Default Blank Data
 const invoiceData = ref<InvoiceData>({

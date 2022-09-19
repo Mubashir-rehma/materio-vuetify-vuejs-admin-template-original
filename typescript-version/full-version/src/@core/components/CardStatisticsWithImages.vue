@@ -8,11 +8,11 @@ interface Props {
   color?: string
 }
 
-const prop = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   color: 'primary',
 })
 
-const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.change) === 1)
+const isPositive = controlledComputed(() => props.change, () => Math.sign(props.change) === 1)
 </script>
 
 <template>
@@ -20,26 +20,26 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
     <div class="d-flex position-relative">
       <VCardText>
         <h6 class="text-base font-weight-semibold mb-4">
-          {{ prop.title }}
+          {{ props.title }}
         </h6>
         <div class="d-flex align-center flex-wrap mb-4">
           <h5 class="text-h5 font-weight-semibold me-2">
-            {{ prop.stats }}
+            {{ props.stats }}
           </h5>
           <span
             class="text-caption"
             :class="isPositive ? 'text-success' : 'text-error'"
           >
-            {{ isPositive ? `+${prop.change}` : prop.change }}%
+            {{ isPositive ? `+${props.change}` : props.change }}%
           </span>
         </div>
 
         <VChip
-          v-if="prop.subtitle"
+          v-if="props.subtitle"
           size="small"
-          :color="prop.color"
+          :color="props.color"
         >
-          {{ prop.subtitle }}
+          {{ props.subtitle }}
         </VChip>
       </VCardText>
 
@@ -47,8 +47,8 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
 
       <div class="illustrator-img">
         <VImg
-          v-if="prop.image"
-          :src="prop.image"
+          v-if="props.image"
+          :src="props.image"
           :width="110"
         />
       </div>

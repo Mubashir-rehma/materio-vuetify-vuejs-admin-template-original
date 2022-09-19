@@ -8,23 +8,23 @@ interface Props {
   subtitle: string
 }
 
-const prop = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   color: 'primary',
 })
 
-const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.change) === 1)
+const isPositive = controlledComputed(() => props.change, () => Math.sign(props.change) === 1)
 </script>
 
 <template>
   <VCard>
     <VCardText class="d-flex align-center">
       <VAvatar
-        v-if="prop.icon"
+        v-if="props.icon"
         size="38"
-        :color="prop.color"
+        :color="props.color"
       >
         <VIcon
-          :icon="prop.icon"
+          :icon="props.icon"
           size="24"
         />
       </VAvatar>
@@ -47,21 +47,21 @@ const isPositive = controlledComputed(() => prop.change, () => Math.sign(prop.ch
 
     <VCardText>
       <h6 class="text-sm font-weight-semibold mb-2">
-        {{ prop.title }}
+        {{ props.title }}
       </h6>
       <div
-        v-if="prop.change"
+        v-if="props.change"
         class="d-flex align-center mb-2"
       >
-        <span class="font-weight-semibold text-h5 me-2">{{ prop.stats }}</span>
+        <span class="font-weight-semibold text-h5 me-2">{{ props.stats }}</span>
         <span
           :class="isPositive ? 'text-success' : 'text-error'"
           class="text-caption"
         >
-          {{ isPositive ? `+${prop.change}` : prop.change }}%
+          {{ isPositive ? `+${props.change}` : props.change }}%
         </span>
       </div>
-      <span class="text-caption">{{ prop.subtitle }}</span>
+      <span class="text-caption">{{ props.subtitle }}</span>
     </VCardText>
   </VCard>
 </template>

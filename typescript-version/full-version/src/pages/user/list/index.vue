@@ -297,7 +297,9 @@ const addNewUser = (userData: UserProperties) => {
             <td>
               <div class="d-flex align-center">
                 <VAvatar
-                  :class="`v-avatar-light-bg text-${resolveUserRoleVariant(user.role).color} me-3`"
+                  variant="tonal"
+                  :color="resolveUserRoleVariant(user.role).color"
+                  class="me-3"
                   size="34"
                 >
                   <VImg

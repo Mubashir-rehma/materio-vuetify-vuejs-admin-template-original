@@ -6,7 +6,6 @@ const isDialogVisible = ref(false)
   <VDialog
     v-model="isDialogVisible"
     fullscreen
-    max-width="auto"
     :scrim="false"
     transition="dialog-bottom-transition"
   >
@@ -66,7 +65,7 @@ const isDialogVisible = ref(false)
       <!-- List -->
       <VList
         lines="two"
-        select-strategy="multiple"
+        select-strategy="classic"
       >
         <VListSubheader>General</VListSubheader>
 

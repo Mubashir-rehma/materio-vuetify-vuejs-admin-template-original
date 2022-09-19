@@ -144,7 +144,8 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                 <VAvatar
                   :size="30"
                   v-bind="props"
-                  :class="`v-avatar-light-bg text-${resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant}`"
+                  :color="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant"
+                  variant="tonal"
                 >
                   <VIcon
                     :size="20"

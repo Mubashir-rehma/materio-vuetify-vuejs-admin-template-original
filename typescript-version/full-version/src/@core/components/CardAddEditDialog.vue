@@ -43,13 +43,11 @@ const formSubmit = () => {
 
 <template>
   <VDialog
+    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
-    <VCard
-      :width="$vuetify.display.smAndDown ? 'auto' : 650 "
-      class="pa-5 pa-sm-15"
-    >
+    <VCard class="pa-5 pa-sm-15">
       <!-- 👉 Title -->
       <VCardItem class="text-center">
         <VCardTitle class="text-h5 font-weight-medium mb-4">

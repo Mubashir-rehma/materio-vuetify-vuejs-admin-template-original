@@ -2,6 +2,10 @@ export default {
   VAlert: {
     density: 'comfortable',
   },
+  VAvatar: {
+    // ℹ️ Remove after next release
+    variant: 'flat',
+  },
   VBadge: {
     // set v-badge default color to primary
     color: 'primary',
@@ -111,8 +115,5 @@ export default {
     // set v-switch default color to primary
     color: 'primary',
     hideDetails: 'auto',
-  },
-  VDialog: {
-    maxWidth: '665',
   },
 }

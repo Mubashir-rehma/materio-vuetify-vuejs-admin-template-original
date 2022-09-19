@@ -40,6 +40,7 @@ declare module '@vue/runtime-core' {
     DemoAvatarInitials: typeof import('./src/views/demos/components/avatar/DemoAvatarInitials.vue')['default']
     DemoAvatarRounded: typeof import('./src/views/demos/components/avatar/DemoAvatarRounded.vue')['default']
     DemoAvatarSizes: typeof import('./src/views/demos/components/avatar/DemoAvatarSizes.vue')['default']
+    DemoAvatarTonal: typeof import('./src/views/demos/components/avatar/DemoAvatarTonal.vue')['default']
     DemoBadgeAvatarStatus: typeof import('./src/views/demos/components/badge/DemoBadgeAvatarStatus.vue')['default']
     DemoBadgeColor: typeof import('./src/views/demos/components/badge/DemoBadgeColor.vue')['default']
     DemoBadgeDynamicNotifications: typeof import('./src/views/demos/components/badge/DemoBadgeDynamicNotifications.vue')['default']

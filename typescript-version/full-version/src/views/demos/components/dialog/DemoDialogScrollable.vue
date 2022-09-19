@@ -28,7 +28,7 @@ const isDialogVisible = ref(false)
   <VDialog
     v-model="isDialogVisible"
     scrollable
-    max-width="350px"
+    max-width="350"
   >
     <!-- Dialog Activator -->
     <template #activator="{ props }">

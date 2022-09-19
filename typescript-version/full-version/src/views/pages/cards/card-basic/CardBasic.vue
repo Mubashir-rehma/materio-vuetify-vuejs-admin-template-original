@@ -447,8 +447,9 @@ const isCardDetailsVisible = ref(false)
         <VCardText class="d-flex flex-column justify-center align-center">
           <VAvatar
             color="primary"
+            variant="tonal"
             size="56"
-            class="v-avatar-light-bg text-primary mb-4"
+            class="mb-4"
           >
             <VIcon
               size="2rem"

@@ -3,11 +3,6 @@
 @use "@layouts/styles/_placeholders";
 @use "@configured-variables" as variables;
 
-// 👉 Avatar
-
-// ℹ️ Avatar light bg
-@include mixins.light-bg-provider(v-avatar);
-
 // 👉 Avatar font-size
 .v-avatar {
   @include mixins.avatar-font-sizes($map: variables.$avatar-font-sizes);
@@ -40,8 +35,6 @@
 
 // Dialog responsive width
 .v-dialog {
-  inline-size: auto;
-
   .v-card {
     @extend %style-scroll-bar;
   }
@@ -101,19 +94,6 @@
   }
 }
 
-// TODO Timeline: remove when vuetify resolve it: https://github.com/vuetifyjs/vuetify/issues/15509
-.v-timeline-density-compact {
-  &.v-timeline--vertical {
-    .v-timeline-divider {
-      grid-column: 1 !important;
-    }
-
-    .v-timeline-item .v-timeline-item__body {
-      grid-column: 2 !important;
-    }
-  }
-}
-
 // 👉 added box shadow
 .v-timeline-item {
   .v-timeline-divider__dot {
@@ -153,8 +133,8 @@
   }
 }
 
-// TODO: Check and remove if vuetify handle it
-.v-timeline--vertical.v-timeline.v-timeline--side-end {
+// ℹ️ We are make even width of all v-timeline body
+.v-timeline--vertical.v-timeline {
   .v-timeline-item {
     .v-timeline-item__body {
       justify-self: stretch !important;

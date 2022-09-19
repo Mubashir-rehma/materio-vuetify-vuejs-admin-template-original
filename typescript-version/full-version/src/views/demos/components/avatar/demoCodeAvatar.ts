@@ -8,7 +8,7 @@ export const sizes = { ts: '', js: '' }
 
 export const images = { ts: '', js: '' }
 
-export const initials = { ts: '', js: '' }
+export const tonal = { ts: '', js: '' }
 
 export const group = { ts: '', js: '' }
 

@@ -27,6 +27,7 @@ const resetPhoneNumber = () => {
 
 <template>
   <VDialog
+    max-width="650"
     :model-value="props.isDialogVisible"
     @update:model-value="(val) => $emit('update:isDialogVisible', val)"
   >

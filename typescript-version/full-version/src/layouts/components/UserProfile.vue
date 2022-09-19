@@ -39,8 +39,9 @@ const avatarBadgeProps = {
 <template>
   <VBadge v-bind="avatarBadgeProps">
     <VAvatar
-      class="cursor-pointer v-avatar-light-bg text-primary"
+      class="cursor-pointer"
       color="primary"
+      variant="tonal"
     >
       <VImg
         v-if="userData && userData.avatar"
@@ -66,8 +67,8 @@ const avatarBadgeProps = {
                 <VBadge v-bind="avatarBadgeProps">
                   <VAvatar
                     color="primary"
-                    class="v-avatar-light-bg text-primary"
                     size="40"
+                    variant="tonal"
                   >
                     <VImg
                       v-if="userData && userData.avatar"

@@ -71,7 +71,8 @@ const resolveUserRoleVariant = (role: string) => {
           <VAvatar
             rounded="sm"
             :size="120"
-            class="v-avatar-light-bg text-primary"
+            color="primary"
+            variant="tonal"
           >
             <VImg
               v-if="props.userData.avatar"
@@ -107,7 +108,9 @@ const resolveUserRoleVariant = (role: string) => {
             <VAvatar
               :size="44"
               rounded
-              class="v-avatar-light-bg text-primary me-3"
+              color="primary"
+              variant="tonal"
+              class="me-3"
             >
               <VIcon
                 size="22"
@@ -128,7 +131,9 @@ const resolveUserRoleVariant = (role: string) => {
             <VAvatar
               :size="44"
               rounded
-              class="v-avatar-light-bg text-primary me-3"
+              color="primary"
+              variant="tonal"
+              class="me-3"
             >
               <VIcon
                 size="22"

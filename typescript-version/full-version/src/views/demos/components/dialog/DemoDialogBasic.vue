@@ -5,6 +5,7 @@ const isDialogVisible = ref(false)
 <template>
   <VDialog
     v-model="isDialogVisible"
+    width="500"
   >
     <!-- Activator -->
     <template #activator="{ props }">

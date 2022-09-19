@@ -30,8 +30,6 @@
 
 // Dialog responsive width
 .v-dialog {
-  inline-size: auto;
-
   .v-card {
     @extend %style-scroll-bar;
   }

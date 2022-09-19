@@ -31,6 +31,7 @@ const onCancel = () => {
 <template>
   <!-- 👉 Confirm Dialog -->
   <VDialog
+    max-width="500"
     :model-value="props.isDialogVisible"
     @update:model-value="updateModelValue"
   >

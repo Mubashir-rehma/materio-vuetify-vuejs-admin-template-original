@@ -52,13 +52,11 @@ const onFormReset = () => {
 
 <template>
   <VDialog
+    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
-    <VCard
-      :width="$vuetify.display.smAndDown ? 'auto' : 650 "
-      class="pa-sm-9 pa-5"
-    >
+    <VCard class="pa-sm-9 pa-5">
       <VCardItem class="text-center">
         <VCardTitle class="text-h5">
           Edit User Information

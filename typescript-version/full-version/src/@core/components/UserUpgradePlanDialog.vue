@@ -23,13 +23,11 @@ const plansList = [
 <template>
   <!-- 👉 upgrade plan -->
   <VDialog
+    :width="$vuetify.display.smAndDown ? 'auto' : 650"
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
-    <VCard
-      class="py-8"
-      :width="$vuetify.display.smAndDown ? 'auto' : 650"
-    >
+    <VCard class="py-8">
       <VCardItem class="text-center">
         <VCardTitle class="text-h5 mb-5">
           Upgrade Plan

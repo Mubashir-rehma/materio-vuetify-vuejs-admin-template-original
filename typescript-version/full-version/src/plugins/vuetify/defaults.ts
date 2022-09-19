@@ -112,7 +112,4 @@ export default {
     color: 'primary',
     hideDetails: 'auto',
   },
-  VDialog: {
-    maxWidth: '665',
-  },
 }

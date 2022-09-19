@@ -37,13 +37,13 @@ const onFormSubmit = () => {
 
 <template>
   <VDialog
+    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
     <VCard
       v-if="props.billingAddress"
       class="pa-sm-9 pa-5"
-      :width="$vuetify.display.smAndDown ? 'auto' : 650 "
     >
       <!-- 👉 Title -->
       <VCardItem>

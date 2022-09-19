@@ -27,7 +27,7 @@ const value = ref(['Sandra Adams'])
     clear-icon="mdi-close"
   >
     <template #selection="{ item }">
-      <VChip label>
+      <VChip>
         <VAvatar
           start
           :image="item.raw.avatar"

@@ -154,7 +154,6 @@ const resolveUserProgressVariant = (progress: number) => {
             align="start"
             line-inset="8"
             truncate-line="both"
-            class="v-timeline-density-compact"
           >
             <VTimelineItem
               dot-color="error"

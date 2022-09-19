@@ -10,7 +10,6 @@ import avatar2 from '@/assets/images/avatars/avatar-2.png'
         align="start"
         line-inset="8"
         truncate-line="both"
-        class="v-timeline-density-compact"
       >
         <VTimelineItem
           dot-color="error"

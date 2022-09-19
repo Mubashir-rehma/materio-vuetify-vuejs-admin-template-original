@@ -23,7 +23,6 @@ import pdf from '@/assets/images/icons/project-icons/pdf.png'
         line-inset="8"
         truncate-line="both"
         density="compact"
-        class="v-timeline-density-compact"
       >
         <VTimelineItem
           dot-color="error"
@@ -43,6 +42,7 @@ import pdf from '@/assets/images/icons/project-icons/pdf.png'
               :src="pdf"
               width="20"
               class="me-2"
+              alt="img"
             >
 
             <h6 class="font-weight-semibold text-sm">

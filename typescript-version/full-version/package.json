@@ -78,7 +78,7 @@
   },
   "packageManager": "yarn@1.22.18",
   "resolutions": {
-    "postcss": "8.4.16",
+    "postcss": "8",
     "stylelint-order": "5",
     "postcss-sorting": "^7.0.1"
   }

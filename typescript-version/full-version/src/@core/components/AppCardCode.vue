@@ -86,7 +86,10 @@ const isCodeShown = ref(false)
             </VBtnToggle>
           </div>
 
-          <Prism :language="props.codeLanguage">
+          <Prism
+            :key="props.code[preferredCodeLanguage]"
+            :language="props.codeLanguage"
+          >
             {{ props.code[preferredCodeLanguage] }}
           </Prism>
         </VCardText>

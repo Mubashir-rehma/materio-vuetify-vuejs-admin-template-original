@@ -27,6 +27,9 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
+    // indentation
+    'indent': ['error', 2],
+
     // Disable max-len
     'max-len': 'off',
 
@@ -72,6 +75,14 @@ module.exports = {
         tsx: 'never',
       },
     ],
+
+    // ignore virtual files
+    'import/no-unresolved': [2, {
+      ignore: [
+        '~pages$',
+        'virtual:generated-layouts',
+      ],
+    }],
 
     // Thanks: https://stackoverflow.com/a/63961972/10796681
     'no-shadow': 'off',

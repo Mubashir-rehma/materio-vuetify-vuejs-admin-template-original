@@ -2,6 +2,10 @@
 
 Thanks for purchasing our template 🙂
 
+:::warning 📣 Heads up
+You are viewing Vue 3 docs of Materio admin. For Vue 2 documentation & it's demos please visit [this](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/) page.
+:::
+
 ## How to use docs
 
 ### Guide

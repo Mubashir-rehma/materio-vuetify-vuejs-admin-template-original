@@ -14,3 +14,8 @@ features:
     details: Materio provides extendable JWT auth which can be configured easily and provides ready to use ACL
 footer: COPYRIGHT © 2021 ThemeSelection, All rights Reserved
 ---
+
+
+:::warning 📣 Heads up
+You are viewing Vue 3 docs of Materio admin. For Vue 2 documentation & it's demos please visit [this](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/) page.
+:::

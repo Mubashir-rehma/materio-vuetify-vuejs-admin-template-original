@@ -2,7 +2,7 @@ const path = require('path')
 const { mergeSassVariables } = require('@vuetify/cli-plugin-utils')
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/materio-vuetify-vuejs-admin-template/demo-1' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/materio-vuetify-vuejs-admin-template-vue2/demo-1' : '/',
   outputDir: 'dist/demo-1',
   transpileDependencies: ['vuetify'],
   configureWebpack: {

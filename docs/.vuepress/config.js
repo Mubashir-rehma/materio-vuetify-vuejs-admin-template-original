@@ -11,6 +11,7 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    logo: '/logo.svg',
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },
@@ -26,10 +27,14 @@ module.exports = {
         ],
       },
       {
-        text: 'Demo',
-        link: 'https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/',
+        text: 'Vue 2 Docs',
+        link: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/',
       },
-      { text: 'Purchase', link: 'https://1.envato.market/vuexy_admin' },
+      {
+        text: 'Demo',
+        link: 'https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/landing',
+      },
+      { text: 'Purchase', link: 'https://themeselection.com/products/materio-vuetify-vuejs-admin-template' },
     ],
     sidebar: {
       '/guide/': [

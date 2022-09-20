@@ -1,6 +1,10 @@
 module.exports = {
   title: 'Materio',
   description: 'This is desc',
+  base:
+    process.env.NODE_ENV === "production"
+      ? "/materio-vuetify-vuejs-admin-template/documentation/"
+      : "/",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "theme-color", content: "#9155FD" }],

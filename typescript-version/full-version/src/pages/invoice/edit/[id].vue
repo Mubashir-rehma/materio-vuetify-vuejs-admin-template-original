@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { InvoiceData } from '@/views/apps/invoice/types'
-
-// Components
 import InvoiceAddPaymentDrawer from '@/views/apps/invoice/InvoiceAddPaymentDrawer.vue'
 import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue'
 import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
+
+// Type: Invoice data
+import type { InvoiceData } from '@/views/apps/invoice/types'
 
 // Store
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'

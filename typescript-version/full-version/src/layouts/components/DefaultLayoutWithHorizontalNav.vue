@@ -13,6 +13,7 @@ import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const { appRouteTransition } = useThemeConfig()
 const { layoutAttrs, injectSkinClasses } = useSkins()

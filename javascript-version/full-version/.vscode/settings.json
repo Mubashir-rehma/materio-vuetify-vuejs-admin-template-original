@@ -1,0 +1,92 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[typescript]": {
+    "editor.autoClosingBrackets": "always",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "cSpell.words": [
+    "Composables",
+    "Customizer",
+    "flagpack",
+    "Iconify",
+    "psudo",
+    "stylelint",
+    "triggerer",
+    "vuetify"
+  ],
+  "commentAnchors.tags.list": [
+    {
+      "highlightColor": "#3498DB",
+      "isItalic": false,
+      "scope": "hidden",
+      "styleComment": true,
+      "tag": "\u2139\ufe0f"
+    },
+    {
+      "highlightColor": "#98C379",
+      "isItalic": false,
+      "scope": "file",
+      "styleComment": true,
+      "tag": "\ud83d\udc49"
+    },
+    {
+      "highlightColor": "#FF2D00",
+      "isItalic": false,
+      "scope": "hidden",
+      "styleComment": true,
+      "tag": "\u2757"
+    }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.organizeImports": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.options": {},
+  "eslint.packageManager": "yarn",
+  "highlight.regexFlags": "gi",
+  "highlight.regexes": {
+    "(100vh|translate|margin:|padding:|margin-left|margin-right|rotate|text-align|border-top|border-right|border-bottom|border-left|float|background-position|transform|width|height|top|left|bottom|right|float|clear|(p|m)(l|r)-|border-(start|end)-(start|end)-radius)": [
+      {
+        "borderColor": "tomato",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    ],
+    "(overflow-x:|overflow-y:)": [
+      {
+        "borderColor": "green",
+        "borderStyle": "solid",
+        "borderWidth": "1px"
+      }
+    ]
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "stylelint.packageManager": "yarn",
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "volar.completion.preferredTagNameCase": "pascal",
+  "volar.preview.port": 3000
+}

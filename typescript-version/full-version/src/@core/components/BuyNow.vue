@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-const buyNowUrl = ref('https://themeselection.com/products/materio-vuetify-vuejs-admin-template')
+import { useRoute } from 'vue-router';
+const buyNowUrl = ref('https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
 
 const route = useRoute()
 

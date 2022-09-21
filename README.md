@@ -1,34 +1,34 @@
 <p align="center"></p>
 
 <p align="center">
-   <a href="$product_page_url" target="_blank">
-      <img src="$product_logo_image_url" alt="$slugified_product_name-logo" width="40px" height="auto">
+   <a href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/" target="_blank">
+      <img src="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free/blob/main/src/assets/images/logos/logo.svg" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
    </a>
 </p>
 
 <h1 align="center">
-   <a href="$product_page_url" target="_blank" align="center">
-      $product_name
+   <a href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/" target="_blank" align="center">
+      Materio – Vuetify Vuejs Admin Template
    </a>
 </h1>
 
-<p align="center">$product_punchline</p>
+<p align="center">Production Ready, Carefully Crafted, Extensive Vuetifty Admin Template</p>
 
-[![$product_name Demo Screenshot]($product_banner_img_url)]($product_page_url)
+[![Materio – Vuetify Vuejs Admin Template Demo Screenshot](https://user-images.githubusercontent.com/47495003/171649225-a942e763-8d9a-4907-bd07-45123c0d1b66.png)](https://themeselection.com/item/materio-vuetify-vuejs-admin-template/)
 
 ## Introduction
 
-$introduction_text
+If you’re a developer looking for an admin dashboard that is developer-friendly, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you one of the very best [VueJS Admin Templates](https://themeselection.com/products/category/vuejs-admin-templates/) that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
 
-[View Demo]($product_landing_page_url)
+[View Demo](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/landing/)
 
 ## Installation ⚒️
 
-$installation_steps
+Please [visit](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/guide/development/installation.html) our docs for installation guide.
 
 ## Documentation 📜
 
-Check out our live [Documentation]($documentation_url)
+Check out our live [Documentation](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/)
 
 ## Support 👨‍💻
 
@@ -57,11 +57,11 @@ However, you can still keep your repo even after your support expires by setting
 
 Now, whenever you want to pull the latest changes from our repo just pull the changes by running command: `git pull upstream main`
 
-Cheers 🥂 
+Cheers 🥂
 
 ## Contributing 🦸
 
-Contribution are always welcome and recommended! Here is how:
+Contributions are always welcome and recommended! Here is how:
 
 - Fork the repository ([here is the guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo)).
 - Clone to your machine `git clone https://github.com/YOUR_USERNAME/REPO_URL` Make your changes
@@ -80,9 +80,9 @@ Contribution are always welcome and recommended! Here is how:
 
 ## Useful Links 🎁
 
-* [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
-* [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
-* [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
+- [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
+- [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
+- [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
 
 ## Social Media 🌍
 

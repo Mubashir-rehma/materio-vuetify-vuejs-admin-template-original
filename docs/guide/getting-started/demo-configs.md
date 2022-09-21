@@ -10,4 +10,4 @@ All you have to do is replace desired demo config file with `/themeConfig.ts` fi
 Some of the configurations are **stored in localStorage** hence, you'll have to **clear the application data** in your browser like shown in the below image and refresh the page.
 :::
 
-![chrome-application-clear](/images/guide/chrome-application-clear.png)
+<img :src="$withBase('/images/guide/chrome-application-clear.png')" alt="chrome-application-clear">

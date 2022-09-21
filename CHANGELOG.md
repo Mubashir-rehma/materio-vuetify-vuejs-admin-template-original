@@ -2,7 +2,7 @@
 
 ## [2.0.0](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v2.0.0) (2022-09-21)
 
-## Added
+### Added
 
 - Vue 3 version added
 - Vuetify 3 support added

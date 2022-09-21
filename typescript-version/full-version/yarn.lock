@@ -3764,9 +3764,9 @@ mkdirp@~0.5.1:
     minimist "^1.2.6"
 
 mlly@^0.5.14, mlly@^0.5.7:
-  version "0.5.15"
-  resolved "https://registry.yarnpkg.com/mlly/-/mlly-0.5.15.tgz#88dbd386dd320798a06a1aa7586f840b5b4ffdfc"
-  integrity sha512-cA1DS4Va2t0h/1c044haUDubeWwlKrvToLbOT3Oprpr2tW5dJTObEIXDdONRN/ahKm0GWEPVeptbg0dlzl8gBQ==
+  version "0.5.16"
+  resolved "https://registry.yarnpkg.com/mlly/-/mlly-0.5.16.tgz#adb7d39fed81396a50b43173c88589de314015c7"
+  integrity sha512-LaJ8yuh4v0zEmge/g3c7jjFlhoCPfQn6RCjXgm9A0Qiuochq4BcuOxVfWmdnCoLTlg2MV+hqhOek+W2OhG0Lwg==
   dependencies:
     acorn "^8.8.0"
     pathe "^0.3.8"

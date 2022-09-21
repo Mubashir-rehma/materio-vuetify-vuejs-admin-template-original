@@ -13,7 +13,6 @@ import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const { appRouteTransition } = useThemeConfig()
 const { layoutAttrs, injectSkinClasses } = useSkins()
@@ -31,7 +30,7 @@ injectSkinClasses()
     <template #navbar>
       <RouterLink
         to="/"
-        class="auth-logo d-flex align-center gap-x-3"
+        class="d-flex align-center gap-x-3"
       >
         <VNodeRenderer :nodes="themeConfig.app.logo" />
 

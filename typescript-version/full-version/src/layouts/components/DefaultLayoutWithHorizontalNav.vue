@@ -31,7 +31,7 @@ injectSkinClasses()
     <template #navbar>
       <RouterLink
         to="/"
-        class="auth-logo d-flex align-start gap-x-3"
+        class="d-flex align-start gap-x-3"
       >
         <VNodeRenderer :nodes="themeConfig.app.logo" />
 

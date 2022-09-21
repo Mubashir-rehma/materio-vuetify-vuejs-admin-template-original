@@ -28,7 +28,7 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithVertical
 
 _Result:_
 
-![footer slot usage](/images/code-examples/layout/footer-slot-usage-vertical.png)
+<img :src="$withBase('/images/code-examples/layout/footer-slot-usage-vertical.png')" alt="footer slot usage">
 
 ## Horizontal nav layout
 
@@ -54,4 +54,4 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithHorizont
 
 _Result:_
 
-![footer slot usage](/images/code-examples/layout/footer-slot-usage-horizontal.png)
+<img :src="$withBase('/images/code-examples/layout/footer-slot-usage-horizontal.png')" alt="footer slot usage">

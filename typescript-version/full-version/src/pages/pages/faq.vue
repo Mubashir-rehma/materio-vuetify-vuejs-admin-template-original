@@ -97,7 +97,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
         <!-- 👉 Windows -->
         <VWindow
           v-model="activeTab"
-          class="disable-tab-transition"
+          class="faq-v-window disable-tab-transition"
         >
           <VWindowItem
             v-for="faq in faqs"
@@ -209,3 +209,11 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
     </div>
   </section>
 </template>
+
+<style lang="scss">
+.faq-v-window {
+  .v-window__container {
+    z-index: 0;
+  }
+}
+</style>

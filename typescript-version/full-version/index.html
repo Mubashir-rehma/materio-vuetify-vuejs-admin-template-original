@@ -32,21 +32,6 @@
     if (primaryColor)
       document.documentElement.style.setProperty('--initial-loader-color', primaryColor)
 
-    // Fix 401 in new demos
-    const userData = localStorage.getItem('userData')
-    const accessToken = localStorage.getItem('accessToken')
-    const userAbilities = localStorage.getItem('userAbilities')
-
-    // If userData & accessToken is exist but userAbilities doesn't => Bingo! => Remove the userData & accessToken
-    if (userData && accessToken && !userAbilities) {
-      localStorage.removeItem('userData')
-      localStorage.removeItem('accessToken')
-    }
-
-    console.log({ userData })
-    console.log({ accessToken })
-    console.log({ userAbilities })
-
   </script>
 </body>
 

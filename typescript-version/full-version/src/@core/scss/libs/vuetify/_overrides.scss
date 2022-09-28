@@ -99,7 +99,9 @@ h6,
 .v-input--density-comfortable,
 .v-selection-control--density-comfortable {
   &.v-checkbox,
-  &.v-radio {
+  &.v-checkbox-btn,
+  &.v-radio,
+  &.v-radio-btn {
     margin-inline-start: -0.5625rem;
   }
 }
@@ -107,7 +109,9 @@ h6,
 .v-input--density-compact,
 .v-selection-control--density-compact {
   &.v-radio,
-  &.v-checkbox {
+  &.v-radio-btn,
+  &.v-checkbox,
+  &.v-checkbox-btn {
     margin-inline-start: -0.3125rem;
   }
 }
@@ -115,7 +119,9 @@ h6,
 .v-input--density-default,
 .v-selection-control--density-default {
   &.v-checkbox,
-  &.v-radio {
+  &.v-checkbox-btn,
+  &.v-radio,
+  &.v-radio-btn {
     margin-inline-start: -0.6875rem;
   }
 }

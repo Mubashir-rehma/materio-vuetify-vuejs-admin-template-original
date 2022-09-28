@@ -82,7 +82,7 @@ export default {
       const formattedChatLog = []
       let chatMessageSenderId = chatLog[0] ? chatLog[0].senderId : undefined
       let msgGroup = {
-        sender: chatMessageSenderId,
+        senderId: chatMessageSenderId,
         messages: [],
       }
 

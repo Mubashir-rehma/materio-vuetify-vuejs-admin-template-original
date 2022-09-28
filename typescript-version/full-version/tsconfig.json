@@ -55,6 +55,7 @@
   "include": [
     "vite.config.*",
     "env.d.ts",
+    "shims.d.ts",
     "src/**/*",
     "src/**/*.vue",
     "themeConfig.ts"

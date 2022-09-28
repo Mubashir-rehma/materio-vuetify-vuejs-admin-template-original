@@ -1,8 +1,15 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
-const buyNowUrl = ref('https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
 
 const route = useRoute()
+const vm = getCurrentInstance()
+
+const buyNowUrl = ref(vm?.appContext.config.globalProperties.buyNowUrl || 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
+
+watch(buyNowUrl, val => {
+  if (vm)
+    vm.appContext.config.globalProperties.buyNowUrl = val
+})
 
 onMounted(() => {
   const { marketplace } = route.query

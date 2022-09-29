@@ -85,6 +85,7 @@ watch(route, fetchKnowledgeBaseQuestionsAndAnswers, { immediate: true })
         </VCardItem>
 
         <!-- 👉 Post Content -->
+        <!-- eslint-disable-next-line vue/no-v-html vue/no-v-text-v-html-on-component -->
         <VCardText v-html="knowledgeBaseQuestionAndAnswer?.postContent?.postDesc" />
       </VCard>
     </VCol>

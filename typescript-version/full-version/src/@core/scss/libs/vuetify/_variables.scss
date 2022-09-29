@@ -185,9 +185,6 @@ $card-transition-property-custom: box-shadow, opacity;
   $card-subtitle-opacity: 1 !default,
   $card-transition-property: $card-transition-property-custom !default,
 
-  // 👉 Expansion Panel
-  $expansion-panel-active-title-min-height: 48px !default,
-
   // 👉 Navigation Drawer
   $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)) !default,
 

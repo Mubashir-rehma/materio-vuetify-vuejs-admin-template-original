@@ -22,13 +22,16 @@ module.exports = {
     'vue',
     '@typescript-eslint',
   ],
-  ignorePatterns: ['src/@iconify/*.js'],
+  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
-    // indentation
+    // indentation (Already present in TypeScript)
     'indent': ['error', 2],
+
+    // Enforce trailing command (Already present in TypeScript)
+    'comma-dangle': ['error', 'always-multiline'],
 
     // Disable max-len
     'max-len': 'off',
@@ -81,6 +84,9 @@ module.exports = {
       ignore: [
         '~pages$',
         'virtual:generated-layouts',
+
+        // Ignore vite's ?raw imports
+        '.*\?raw',
       ],
     }],
 

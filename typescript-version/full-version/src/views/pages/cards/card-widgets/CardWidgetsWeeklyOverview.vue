@@ -65,7 +65,7 @@ const options = controlledComputed(theme, () => {
           colors: disabledColor,
           fontSize: '12px',
         },
-        // eslint-disable-next-line sonarjs/no-nested-template-literals
+
         formatter: (value: number) => `${value > 999 ? `${(value / 1000).toFixed(0)}` : value}k`,
       },
     },

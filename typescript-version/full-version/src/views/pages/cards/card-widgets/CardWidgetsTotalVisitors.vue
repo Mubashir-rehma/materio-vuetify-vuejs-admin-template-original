@@ -17,9 +17,9 @@ const options = controlledComputed(theme, () => {
   return {
     colors: [
       currentTheme.value.primary,
-    `rgba(${hexToRgb(currentTheme.value.primary)}, 0.7)`,
-    `rgba(${hexToRgb(currentTheme.value.primary)}, 0.5)`,
-    currentTheme.value.background,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.7)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.5)`,
+      currentTheme.value.background,
     ],
     stroke: { width: 0 },
     dataLabels: { enabled: false },

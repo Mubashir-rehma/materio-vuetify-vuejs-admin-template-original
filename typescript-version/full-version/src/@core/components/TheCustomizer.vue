@@ -1,10 +1,10 @@
 <script setup lang="tsx">
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { RouteTransitions, Skins } from '@core/enums'
 import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 import { themeConfig } from '@themeConfig'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useTheme } from 'vuetify'
 
 // import { useTheme } from 'vuetify'
 

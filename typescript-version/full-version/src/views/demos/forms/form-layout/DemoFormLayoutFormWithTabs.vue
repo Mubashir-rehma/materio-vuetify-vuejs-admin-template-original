@@ -91,7 +91,6 @@ const isCPasswordVisible = ref(false)
               >
                 <VTextField
                   v-model="birthDate"
-                  type="number"
                   label="Birth Date"
                   placeholder="YYYY-MM-DD"
                 />

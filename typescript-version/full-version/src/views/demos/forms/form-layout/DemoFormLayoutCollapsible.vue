@@ -107,14 +107,16 @@ const paymentMethods = [
                 v-model="radios"
                 inline
               >
-                <VRadio
-                  label="Home (All day delivery)"
-                  value="home"
-                />
-                <VRadio
-                  label="Office (Delivery between 10 AM - 5 PM)"
-                  value="office"
-                />
+                <div>
+                  <VRadio
+                    label="Home (All day delivery)"
+                    value="home"
+                  />
+                  <VRadio
+                    label="Office (Delivery between 10 AM - 5 PM)"
+                    value="office"
+                  />
+                </div>
               </VRadioGroup>
             </VCol>
           </VRow>

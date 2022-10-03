@@ -224,19 +224,21 @@ const paymentMethods = [
                     v-model="paymentMethod"
                     inline
                   >
-                    <VRadio
-                      v-for="payment in paymentMethods"
-                      :key="payment.radioValue"
-                      :value="payment.radioValue"
-                    >
-                      <template #label>
-                        <span class="me-1">{{ payment.radioLabel }}</span>
-                        <VIcon
-                          size="18"
-                          :icon="payment.icon"
-                        />
-                      </template>
-                    </VRadio>
+                    <div>
+                      <VRadio
+                        v-for="payment in paymentMethods"
+                        :key="payment.radioValue"
+                        :value="payment.radioValue"
+                      >
+                        <template #label>
+                          <span class="me-1">{{ payment.radioLabel }}</span>
+                          <VIcon
+                            size="18"
+                            :icon="payment.icon"
+                          />
+                        </template>
+                      </VRadio>
+                    </div>
                   </VRadioGroup>
                 </VCol>
 

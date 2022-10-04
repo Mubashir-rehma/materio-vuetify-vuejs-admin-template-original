@@ -99,6 +99,7 @@ const checkbox = ref(false)
       <VCol
         offset-md="3"
         cols="12"
+        md="9"
       >
         <VCheckbox
           v-model="checkbox"
@@ -110,6 +111,7 @@ const checkbox = ref(false)
       <VCol
         offset-md="3"
         cols="12"
+        md="9"
         class="d-flex gap-4"
       >
         <VBtn type="submit">

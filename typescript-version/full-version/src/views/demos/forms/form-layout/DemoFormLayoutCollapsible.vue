@@ -107,14 +107,16 @@ const paymentMethods = [
                 v-model="radios"
                 inline
               >
-                <VRadio
-                  label="Home (All day delivery)"
-                  value="home"
-                />
-                <VRadio
-                  label="Office (Delivery between 10 AM - 5 PM)"
-                  value="office"
-                />
+                <div>
+                  <VRadio
+                    label="Home (All day delivery)"
+                    value="home"
+                  />
+                  <VRadio
+                    label="Office (Delivery between 10 AM - 5 PM)"
+                    value="office"
+                  />
+                </div>
               </VRadioGroup>
             </VCol>
           </VRow>
@@ -222,19 +224,21 @@ const paymentMethods = [
                     v-model="paymentMethod"
                     inline
                   >
-                    <VRadio
-                      v-for="payment in paymentMethods"
-                      :key="payment.radioValue"
-                      :value="payment.radioValue"
-                    >
-                      <template #label>
-                        <span class="me-1">{{ payment.radioLabel }}</span>
-                        <VIcon
-                          size="18"
-                          :icon="payment.icon"
-                        />
-                      </template>
-                    </VRadio>
+                    <div>
+                      <VRadio
+                        v-for="payment in paymentMethods"
+                        :key="payment.radioValue"
+                        :value="payment.radioValue"
+                      >
+                        <template #label>
+                          <span class="me-1">{{ payment.radioLabel }}</span>
+                          <VIcon
+                            size="18"
+                            :icon="payment.icon"
+                          />
+                        </template>
+                      </VRadio>
+                    </div>
                   </VRadioGroup>
                 </VCol>
 

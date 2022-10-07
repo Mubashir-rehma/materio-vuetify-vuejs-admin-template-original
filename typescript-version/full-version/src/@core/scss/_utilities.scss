@@ -5,6 +5,9 @@
 $card-spacer-content: 16px;
 
 .demo-space-x {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-block-start: -$card-spacer-content;
 
   & > * {

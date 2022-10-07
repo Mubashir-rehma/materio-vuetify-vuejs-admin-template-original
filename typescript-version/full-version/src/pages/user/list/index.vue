@@ -241,10 +241,7 @@ const addNewUser = (userData: UserProperties) => {
         <thead>
           <tr>
             <th scope="col">
-              <div
-                class="mb-n2"
-                style="width: 1.875rem;"
-              >
+              <div style="width: 1.875rem;">
                 <VCheckbox
                   :model-value="selectAllUser"
                   :indeterminate="(users.length !== selectedRows.length) && !!selectedRows.length"
@@ -281,10 +278,7 @@ const addNewUser = (userData: UserProperties) => {
           >
             <!-- 👉 Checkbox -->
             <td>
-              <div
-                class="mb-n2"
-                style="width: 1.875rem;"
-              >
+              <div style="width: 1.875rem;">
                 <VCheckbox
                   :id="`check${user.id}`"
                   :model-value="selectedRows.includes(`check${user.id}`)"
@@ -357,7 +351,10 @@ const addNewUser = (userData: UserProperties) => {
             </td>
 
             <!-- 👉 Actions -->
-            <td>
+            <td
+              class="text-center"
+              style="width: 5rem;"
+            >
               <VBtn
                 size="x-small"
                 color="default"

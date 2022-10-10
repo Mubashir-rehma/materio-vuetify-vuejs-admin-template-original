@@ -83,7 +83,7 @@ const pricingPlans = [
   <div class="d-flex align-center justify-center mx-auto mb-10">
     <VLabel
       for="pricing-plan-toggle"
-      class="me-2 mb-2"
+      class="me-2"
     >
       Monthly
     </VLabel>

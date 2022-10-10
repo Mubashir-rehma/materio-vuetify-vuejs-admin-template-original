@@ -176,7 +176,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           </td>
 
           <!-- 👉 Actions -->
-          <td style="width: 150px ;">
+          <td style="width: 7.5rem;">
             <VBtn
               icon
               variant="plain"

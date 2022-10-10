@@ -202,10 +202,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
               scope="col"
               class="text-center"
             >
-              <div
-                class="mb-n2"
-                style="width: 1rem;"
-              >
+              <div style="width: 1rem;">
                 <VCheckbox
                   :model-value="selectAllInvoice"
                   :indeterminate="(invoices.length !== selectedRows.length) && !!selectedRows.length"
@@ -254,10 +251,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
           >
             <!-- 👉 Individual checkbox -->
             <td>
-              <div
-                class="mb-n2"
-                style="width: 1rem;"
-              >
+              <div style="width: 1rem;">
                 <VCheckbox
                   :id="`check${invoice.id}`"
                   :model-value="selectedRows.includes(`check${invoice.id}`)"
@@ -346,7 +340,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
             </td>
 
             <!-- 👉 Actions -->
-            <td>
+            <td style="width: 8rem;">
               <VBtn
                 icon
                 variant="plain"

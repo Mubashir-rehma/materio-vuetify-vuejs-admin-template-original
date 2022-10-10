@@ -1,5 +1,5 @@
 import { Ability } from '@casl/ability'
-import type { UserAbility } from '@/@fake-db/types.d'
+import type { UserAbility } from '@/@fake-db/types'
 
 export const initialAbility: UserAbility[] = [
   {

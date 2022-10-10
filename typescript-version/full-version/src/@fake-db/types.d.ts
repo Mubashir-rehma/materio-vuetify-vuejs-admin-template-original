@@ -1,4 +1,4 @@
-import type { Actions, Subjects } from '@/plugins/casl/AppAbility'
+import type { UserAbility } from '@/plugins/casl/AppAbility'
 
 export interface KnowledgeBaseCategory {
   character: string
@@ -48,11 +48,6 @@ export interface FaqCategory {
 
 // SECTION
 // 👉 JWT
-
-export interface UserAbility {
-  action: Actions
-  subject: Subjects
-}
 
 export interface User {
   id: number

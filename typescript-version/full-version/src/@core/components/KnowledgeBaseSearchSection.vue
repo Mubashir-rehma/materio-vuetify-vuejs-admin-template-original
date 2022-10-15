@@ -30,7 +30,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
         placeholder="Ask a question.."
         class="page-kb-search-input mx-auto"
       >
-        <template #prependInner>
+        <template #prepend-inner>
           <VIcon
             icon="mdi-magnify"
             size="23"
@@ -43,7 +43,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 
 <style lang="scss">
 .page-knowledge-base {
-  padding: 5.5rem;
+  padding: 5.5rem !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
@@ -56,7 +56,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 
   .v-field__prepend-inner {
     i {
-      inset-block-start: 3px;
+      inset-block-start: 3px !important;
     }
   }
 }

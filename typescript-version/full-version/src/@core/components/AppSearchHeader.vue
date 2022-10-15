@@ -51,7 +51,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 
 <style lang="scss">
 .search-header {
-  padding: 4rem;
+  padding: 4rem !important;
   background-size: cover;
 }
 
@@ -63,7 +63,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 
   .v-field__prepend-inner {
     i {
-      inset-block-start: 3px;
+      inset-block-start: 3px !important;
     }
   }
 }

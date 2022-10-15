@@ -7,6 +7,7 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 interface Props {
   title?: string
   subtitle?: string
+  customClass?: string
 }
 
 const props = defineProps<Props>()
@@ -22,7 +23,8 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
   <!-- 👉 Search Banner  -->
   <VCard
     flat
-    class="text-center search-header mb-7"
+    class="text-center search-header"
+    :class="props.customClass"
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
@@ -58,7 +60,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 // search input
 .search-header-input {
   background-color: rgb(var(--v-theme-surface));
-  border-radius: 0.25rem;
+  border-radius: 0.25rem !important;
   max-inline-size: 32.125rem;
 
   .v-field__prepend-inner {

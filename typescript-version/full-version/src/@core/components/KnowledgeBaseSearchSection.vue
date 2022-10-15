@@ -4,6 +4,14 @@ import knowledgeBaseBgLight from '@/assets/images/pages/knowledge-base-bg-light.
 
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
+interface Props {
+  title?: string
+  subtitle?: string
+  customClass?: string
+}
+
+const props = defineProps<Props>()
+
 defineOptions({
   inheritAttrs: false,
 })
@@ -15,14 +23,15 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
   <!-- 👉 Search Banner  -->
   <VCard
     flat
-    class="text-center page-knowledge-base mb-7"
+    class="text-center page-knowledge-base"
+    :class="props.customClass"
     :style="`background:url(${themeBackgroundImg})`"
   >
     <VCardText>
       <h5 class="text-h5 font-weight-medium text-primary mb-3">
-        Hello, how can we help?
+        {{ props.title }}
       </h5>
-      <p>or choose a category to quickly find the help you need</p>
+      <p>{{ props.subtitle }}</p>
 
       <!-- 👉 Search Input -->
       <VTextField
@@ -51,7 +60,7 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 // search input
 .page-kb-search-input {
   background-color: rgb(var(--v-theme-surface));
-  border-radius: 0.25rem;
+  border-radius: 0.25rem !important;
   max-inline-size: 28.125rem;
 
   .v-field__prepend-inner {

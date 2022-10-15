@@ -50,6 +50,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
       v-model="faqSearchQuery"
       title="Hello, how can we help?"
       subtitle="or choose a category to quickly find the help you need"
+      custom-class="mb-7"
     />
 
     <!-- 👉 Faq sections and questions -->

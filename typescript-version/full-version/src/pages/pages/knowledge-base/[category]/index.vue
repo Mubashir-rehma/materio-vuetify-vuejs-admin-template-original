@@ -28,7 +28,12 @@ watch(kBSearchQuery, fetchKnowledgeBaseSubcategoryData, { immediate: true })
 <template>
   <section id="page-knowledge-base">
     <!-- 👉 Search Section -->
-    <KnowledgeBaseSearchSectionVue v-model="kBSearchQuery" />
+    <KnowledgeBaseSearchSectionVue
+      v-model="kBSearchQuery"
+      title="Hello, how can we help?"
+      subtitle="or choose a category to quickly find the help you need"
+      custom-class="mb-7"
+    />
 
     <!-- 👉 Kb Search  content -->
     <div id="knowledge-base-content">

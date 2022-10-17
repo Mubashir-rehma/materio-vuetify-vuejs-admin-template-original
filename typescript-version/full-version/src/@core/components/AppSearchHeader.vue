@@ -54,7 +54,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
 <style lang="scss">
 .search-header {
   padding: 4rem !important;
-  background-size: cover;
+  background-size: cover !important;
 }
 
 // search input

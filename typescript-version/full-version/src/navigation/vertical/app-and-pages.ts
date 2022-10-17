@@ -61,7 +61,6 @@ export default [
           },
         ],
       },
-      { title: 'Knowledge Base', to: 'pages-knowledge-base' },
       { title: 'Help Center', to: 'pages-help-center' },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },

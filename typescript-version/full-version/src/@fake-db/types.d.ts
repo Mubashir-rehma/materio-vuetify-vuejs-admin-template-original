@@ -25,39 +25,6 @@ export type HelpCenterArticlesOverviewType = {
   title: string
   subtitle: string
 }
-export interface KnowledgeBaseCategory {
-  character: string
-  category: string
-  title: string
-  desc: string
-}
-export interface KnowledgeBaseQuestion {
-  slug: string
-  question: string
-}
-
-export interface KnowledgeBaseQuestionAndAnswer {
-  postImg?: string
-  postContent?: {
-    title: string
-    lastUpdated: string
-    postDesc: string
-  }
-  relatedQuestions?: KnowledgeBaseQuestion[]
-}
-
-export interface KnowledgeBaseSubcategory {
-  icon: string
-  iconColor?: string
-  title: string
-  questions: KnowledgeBaseQuestion[]
-}
-
-export interface KnowledgeBaseDB {
-  knowledgeBaseCategories: KnowledgeBaseCategory[]
-  knowledgeBaseSubcategories: KnowledgeBaseSubcategory[]
-  KnowledgeBaseQuestionsAndAnswers: KnowledgeBaseQuestionAndAnswer[]
-}
 
 export interface Faq {
   question: string

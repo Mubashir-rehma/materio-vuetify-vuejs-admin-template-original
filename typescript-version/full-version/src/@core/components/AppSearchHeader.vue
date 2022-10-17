@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import knowledgeBaseBgDark from '@/assets/images/pages/knowledge-base-bg-dark.png'
-import knowledgeBaseBgLight from '@/assets/images/pages/knowledge-base-bg-light.png'
+import AppSearchHeaderBgDark from '@/assets/images/pages/app-search-header-bg-dark.png'
+import AppSearchHeaderBgLight from '@/assets/images/pages/app-search-header-bg-light.png'
 
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
@@ -16,7 +16,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowledgeBaseBgDark)
+const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSearchHeaderBgDark)
 </script>
 
 <template>

@@ -2,7 +2,7 @@
 
 <p align="center">
    <a href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/" target="_blank">
-      <img src="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free/blob/main/src/assets/images/logos/logo.svg" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
+      <img src="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free/blob/vue-2/src/assets/images/logos/logo.svg" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
    </a>
 </p>
 
@@ -19,6 +19,16 @@
 ## Introduction
 
 If you’re a developer looking for an admin dashboard that is developer-friendly, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you one of the very best [VueJS Admin Templates](https://themeselection.com/products/category/vuejs-admin-templates/) that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+
+- ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite) & [Vuetify 3](https://next.vuetifyjs.com/en/) - Uses the latest Vuetify 3
+- 🗂 [File based routing](https://github.com/hannoeru/vite-plugin-pages)
+- 📦 [Components auto importing](https://github.com/antfu/unplugin-vue-components)
+- 📑 [Layout system](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
+- 😃 Use icons from any icon sets with classes by [Iconify](https://iconify.design/)
+- 🌍 I18n ready
+- 🔥 Use the [`<script setup>`](https://vuejs.org/api/sfc-script-setup.html) syntax
+- 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
+- 🦾 TypeScript & JavaScript versions
 
 [View Demo](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/landing/)
 

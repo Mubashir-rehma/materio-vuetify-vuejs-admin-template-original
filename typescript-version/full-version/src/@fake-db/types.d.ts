@@ -1,5 +1,30 @@
 import type { UserAbility } from '@/plugins/casl/AppAbility'
 
+// 👉 Help center
+export type HelpCenterSubcategoryArticlesType = {
+  slug: string
+  title: string
+  content: string
+}
+export type HelpCenterSubcategoriesType = {
+  icon: string
+  slug: string
+  title: string
+  articles: HelpCenterSubcategoryArticlesType[]
+}
+export type HelpCenterCategoriesType = {
+  icon: string
+  slug: string
+  title: string
+  avatarColor: string
+  subCategories: HelpCenterSubcategoriesType[]
+}
+export type HelpCenterArticlesOverviewType = {
+  img: string
+  slug: string
+  title: string
+  subtitle: string
+}
 export interface KnowledgeBaseCategory {
   character: string
   category: string

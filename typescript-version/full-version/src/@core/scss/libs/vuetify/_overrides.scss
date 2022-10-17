@@ -186,6 +186,19 @@ h6,
       padding-block-end: var(--v-card-list-gap) !important;
     }
   }
+
+  .v-list-item:hover,
+  .v-list-item:focus,
+  .v-list-item:active,
+  .v-list-item.active {
+    > .v-list-item__overlay {
+      opacity: 0 !important;
+    }
+  }
+
+  .v-ripple__container {
+    opacity: 0;
+  }
 }
 
 // 👉 Table

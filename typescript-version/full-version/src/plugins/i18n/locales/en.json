@@ -100,6 +100,7 @@
   "Forms": "Forms",
   "Timeline": "Timeline",
   "Disabled Menu": "Disabled Menu",
+  "Help Center": "Help Center",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

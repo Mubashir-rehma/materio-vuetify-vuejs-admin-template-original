@@ -102,6 +102,7 @@
   "Forms": "Formes",
   "Timeline": "Chronologie",
   "Disabled Menu": "Menu désactivé",
+  "Help Center": "Centre d'aide",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

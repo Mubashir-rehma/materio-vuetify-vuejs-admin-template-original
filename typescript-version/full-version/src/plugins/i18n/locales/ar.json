@@ -100,6 +100,7 @@
   "Forms": "نماذج",
   "Timeline": "الجدول الزمني",
   "Disabled Menu": "قائمة المعوقين",
+  "Help Center": "مركز المساعدة",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

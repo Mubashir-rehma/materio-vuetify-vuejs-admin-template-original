@@ -1,4 +1,5 @@
 @use "@configured-variables" as variables;
+@use "@layouts/styles/mixins" as layoutsMixins;
 
 // 👉 Demo spacers
 // TODO: Use vuetify SCSS variable here
@@ -70,4 +71,11 @@ $card-spacer-content: 16px;
 
 .leading-normal {
   line-height: normal !important;
+}
+
+// 👉 for rtl only
+.flip-in-rtl {
+  @include layoutsMixins.rtl {
+    transform: scaleX(-1);
+  }
 }

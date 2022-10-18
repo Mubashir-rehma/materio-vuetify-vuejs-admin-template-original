@@ -1,6 +1,7 @@
 module.exports = {
   title: 'Master',
   description: 'This is desc',
+  base: process.env.BASE || '/',
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },

@@ -107,12 +107,9 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                 </VCol>
 
                 <!-- back to login -->
-                <VCol
-                  cols="12"
-                  class="text-center"
-                >
+                <VCol cols="12">
                   <RouterLink
-                    class="text-primary ms-2"
+                    class="d-flex align-center justify-center"
                     :to="{ name: 'pages-authentication-login-v2' }"
                   >
                     <VIcon

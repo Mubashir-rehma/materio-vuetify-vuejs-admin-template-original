@@ -1,0 +1,64 @@
+name: 'Deploy - Demos'
+
+on:
+  workflow_dispatch:
+    inputs:
+      is_production:
+        type: boolean
+        description: Is production deployment
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
+      TEMPLATE_NAME: master
+    steps:
+      - name: Checkout template
+        uses: actions/checkout@v3
+        with:
+          path: ${{ env.TEMPLATE_NAME }}/vue
+
+      - name: Checkout scripts
+        uses: actions/checkout@v3
+        with:
+          repository: themeselection/automation-scripts
+          token: ${{ secrets.GH_PAT }}
+          path: automation-scripts
+      
+      - name: Install packages in automation-scripts dir
+        working-directory: automation-scripts/vue
+        run: yarn
+
+      - name: Install packages in template dir
+        working-directory: ${{ env.TEMPLATE_NAME }}/vue
+        run: yarn
+
+      - name: Generate demos
+        working-directory: automation-scripts/vue
+        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
+
+      - name: Cleanup demos
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script: |
+            cd ${{ secrets.PROD_DIR }}
+            rm -rf demos-backup-*.zip
+            DEMO_ZIP_NAME="demos-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"
+            [[ "${{ inputs.is_production }}" == "true" ]] zip -r $DEMO_ZIP_NAME demo-* && && rm -rf ${{ secrets.STAG_DIR }}/demo-*
+            rm -rf demo-*
+
+      - name: Upload demos zip
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          source: ${{ env.TEMPLATE_NAME }}/vue/demo-1,automation-scripts/vue/demo-2,automation-scripts/vue/demo-3,automation-scripts/vue/demo-4,automation-scripts/vue/demo-5,automation-scripts/vue/demo-6
+          strip_components: 2
+          target: ${{ env.DEPLOY_DIR }}

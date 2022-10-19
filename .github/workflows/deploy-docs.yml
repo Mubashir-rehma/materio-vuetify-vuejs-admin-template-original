@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
-      BASE: ${{ inputs.is_production && secrets.DOCUMENTATION_BASE_PROD || secrets.DOCUMENTATION_BASE_STAG }} # ❗ (For VuePress only) Don't forget the ending slash in base
+      BASE: ${{ inputs.is_production && secrets.DOCS_BASE_PROD || secrets.DOCS_BASE_STAG }} # ❗ (For VuePress only) Don't forget the ending slash in base
     steps:
       - uses: actions/checkout@v3
       

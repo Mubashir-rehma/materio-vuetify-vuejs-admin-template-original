@@ -42,6 +42,7 @@ module.exports = {
             '/guide/access-control',
             '/guide/splash-screen',
             '/guide/getting-started/demo-configs',
+            '/guide/getting-started/rtl',
           ],
         },
         {

@@ -11,7 +11,7 @@ Install and enable all the recommended extensions. Read more about workspace rec
 ## Enable Volar Take Over Mode
 
 1. Disable built-in TypeScript extension:
-   1. Run Extensions: Show Built-in Extensions command
+   1. Search `@builtin typescript and` in extensions panel
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload VSCode
 

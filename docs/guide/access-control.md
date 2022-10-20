@@ -15,6 +15,14 @@ You can find access control related configuration in `src/plugins/casl` director
 - `shims-ability.d.ts`: This is only available in our TypeScript template. This file is shims file for CASL.
 - `useAppAbility.ts`: This is only available in our TypeScript template. This file contains `useAppAbility` composable for ease so you don't have to import `AppAbility` from `AppAbility.ts` file.
 
+:::tip `useAbility` vs `useAppAbility`
+CASL provides `useAbility` composable but it requires providing `AppAbility` type as generic so when you use it you need two imports like `useAppAbility.ts` file.
+
+Whereas, with `useAppAbility` you need single import statement. Hence, it is **recommended** to use `useAppAbility` instead of `useAbility`.
+
+This is straight from official CASL docs [here](https://casl.js.org/v6/en/package/casl-vue#composition-api).
+:::
+
 ## Using ACL
 
 If you want show/hide anything based on user's ability, you can use global `$can` property.

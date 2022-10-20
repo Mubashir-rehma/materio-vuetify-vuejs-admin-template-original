@@ -57,18 +57,23 @@ const handleKeyDown = (event: KeyboardEvent, index: number) => {
 </script>
 
 <template>
-  <div
-    ref="refOtpComp"
-    class="d-flex align-center gap-4"
-  >
-    <VTextField
-      v-for="i in props.totalInput"
-      :key="i"
-      :model-value="digits[i - 1]"
-      v-bind="defaultStyle"
-      maxlength="1"
-      @keydown="(event: KeyboardEvent) => handleKeyDown(event, i)"
-    />
+  <div>
+    <h6 class="text-base font-weight-bold mb-3">
+      Type your 6 digit security code
+    </h6>
+    <div
+      ref="refOtpComp"
+      class="d-flex align-center gap-4"
+    >
+      <VTextField
+        v-for="i in props.totalInput"
+        :key="i"
+        :model-value="digits[i - 1]"
+        v-bind="defaultStyle"
+        maxlength="1"
+        @keydown="(event: KeyboardEvent) => handleKeyDown(event, i)"
+      />
+    </div>
   </div>
 </template>
 

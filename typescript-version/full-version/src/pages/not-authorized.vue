@@ -52,7 +52,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/misc.scss";
+@use "@core/scss/base/pages/misc.scss";
 
 .misc-footer-tree {
   inline-size: 18.75rem;

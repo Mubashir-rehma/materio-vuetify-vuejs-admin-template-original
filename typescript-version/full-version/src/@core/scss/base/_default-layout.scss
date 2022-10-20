@@ -1,5 +1,5 @@
-@use "@core/scss/placeholders";
-@use "@core/scss/variables";
+@use "@core/scss/base/placeholders";
+@use "@core/scss/base/variables";
 
 .layout-navbar {
   @if variables.$navbar-high-emphasis-text {

@@ -63,7 +63,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/misc.scss";
+@use "@core/scss/base/pages/misc.scss";
 
 .misc-email-input {
   max-inline-size: 21.875rem;

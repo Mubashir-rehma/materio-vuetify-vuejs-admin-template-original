@@ -1,7 +1,7 @@
 @use "./placeholders";
 @use "@configured-variables" as variables;
 @use "@layouts/styles/mixins" as layoutsMixins;
-@use "@core/scss/mixins";
+@use "@core/scss/base/mixins";
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
 .layout-horizontal-nav {

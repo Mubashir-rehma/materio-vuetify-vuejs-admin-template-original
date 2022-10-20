@@ -1,6 +1,6 @@
 @use "@layouts/styles/mixins" as layoutsMixins;
 @use "vuetify/lib/styles/tools/elevation" as elevation;
-@use "@core/scss/variables";
+@use "@core/scss/base/variables";
 
 // Horizontal nav item styles (including nested)
 %horizontal-nav-item {

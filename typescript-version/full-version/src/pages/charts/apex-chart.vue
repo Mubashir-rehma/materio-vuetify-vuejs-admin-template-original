@@ -228,7 +228,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
 </template>
 
 <style lang="scss">
-@use "@core/scss/libs/apex-chart.scss";
+@use "@core/scss/base/libs/apex-chart.scss";
 
 .date-picker-wrapper {
   inline-size: 10.5rem;

@@ -7,10 +7,6 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
-const form = ref({
-  email: '',
-})
-
 const authThemeMask = useGenerateImageVariant(authV1MaskLight, authV1MaskDark)
 </script>
 
@@ -34,50 +30,23 @@ const authThemeMask = useGenerateImageVariant(authV1MaskLight, authV1MaskDark)
 
       <VCardText class="pt-2">
         <h5 class="text-h5 font-weight-semibold mb-1">
-          Forgot Password? 🔒
+          Verify your email ✉️
         </h5>
-        <p class="mb-0">
-          Enter your email and we'll send you instructions to reset your password
+        <p>
+          Account activation link sent to your email address: hello@example.com Please follow the link inside to continue.
         </p>
-      </VCardText>
 
-      <VCardText>
-        <VForm @submit.prevent="() => {}">
-          <VRow>
-            <!-- email -->
-            <VCol cols="12">
-              <VTextField
-                v-model="form.email"
-                label="Email"
-                type="email"
-              />
-            </VCol>
+        <VBtn
+          block
+          to="/"
+          class="mb-6"
+        >
+          Skip for now
+        </VBtn>
 
-            <!-- reset password -->
-            <VCol cols="12">
-              <VBtn
-                block
-                type="submit"
-              >
-                Send Reset Link
-              </VBtn>
-            </VCol>
-
-            <!-- back to login -->
-            <VCol cols="12">
-              <RouterLink
-                class="d-flex align-center justify-center"
-                :to="{ name: 'pages-authentication-login-v1' }"
-              >
-                <VIcon
-                  icon="mdi-chevron-left"
-                  class="flip-in-rtl"
-                />
-                <span>Back to login</span>
-              </RouterLink>
-            </VCol>
-          </VRow>
-        </VForm>
+        <div class="d-flex align-center justify-center">
+          <span class="me-1">Didn't get the mail? </span><a href="#">Resend</a>
+        </div>
       </VCardText>
     </VCard>
 

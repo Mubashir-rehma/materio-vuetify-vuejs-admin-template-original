@@ -72,13 +72,16 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
           :max-width="500"
           class="mt-12 mt-sm-0 pa-4"
         >
-          <VCardText>
+          <VCardText class="pt-2">
             <h5 class="text-h5 font-weight-semibold mb-1">
-              Forgot Password? 🔒
+              Two Step Verification 💬
             </h5>
-            <p class="mb-0">
-              Enter your email and we'll send you instructions to reset your password
+            <p class="mb-2">
+              We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </p>
+            <h6 class="text-base font-weight-semibold">
+              ******1234
+            </h6>
           </VCardText>
 
           <VCardText>
@@ -86,35 +89,25 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
               <VRow>
                 <!-- email -->
                 <VCol cols="12">
-                  <VTextField
-                    v-model="email"
-                    label="Email"
-                    type="email"
-                  />
+                  <AppOtpInput />
                 </VCol>
 
-                <!-- Reset link -->
+                <!-- reset password -->
                 <VCol cols="12">
                   <VBtn
                     block
                     type="submit"
                   >
-                    Send Reset Link
+                    Verify my account
                   </VBtn>
                 </VCol>
 
                 <!-- back to login -->
                 <VCol cols="12">
-                  <RouterLink
-                    class="d-flex align-center justify-center"
-                    :to="{ name: 'pages-authentication-login-v2' }"
-                  >
-                    <VIcon
-                      icon="mdi-chevron-left"
-                      class="flip-in-rtl"
-                    />
-                    <span>Back to login</span>
-                  </RouterLink>
+                  <div class="d-flex justify-center align-center flex-wrap">
+                    <span class="me-1">Didn't get the code?</span>
+                    <a href="#">Resend</a>
+                  </div>
                 </VCol>
               </VRow>
             </VForm>

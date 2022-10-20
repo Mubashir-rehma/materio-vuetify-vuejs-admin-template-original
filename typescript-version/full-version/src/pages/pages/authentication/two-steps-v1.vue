@@ -1,22 +1,13 @@
 <script setup lang="ts">
+import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
+import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
 import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png'
 import authV1Tree from '@/assets/images/pages/auth-v1-tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
-import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
-
-const form = ref({
-  newPassword: '',
-  confirmPassword: '',
-})
-
 const authThemeMask = useGenerateImageVariant(authV1MaskLight, authV1MaskDark)
-
-const isPasswordVisible = ref(false)
-const isConfirmPasswordVisible = ref(false)
 </script>
 
 <template>
@@ -39,36 +30,22 @@ const isConfirmPasswordVisible = ref(false)
 
       <VCardText class="pt-2">
         <h5 class="text-h5 font-weight-semibold mb-1">
-          Reset Password 🔒
+          Two Step Verification 💬
         </h5>
-        <p class="mb-0">
-          Enter your email and we'll send you instructions to reset your password
+        <p class="mb-2">
+          We sent a verification code to your mobile. Enter the code from the mobile in the field below.
         </p>
+        <h6 class="text-base font-weight-semibold">
+          ******1234
+        </h6>
       </VCardText>
 
       <VCardText>
         <VForm @submit.prevent="() => {}">
           <VRow>
-            <!-- password -->
+            <!-- email -->
             <VCol cols="12">
-              <VTextField
-                v-model="form.newPassword"
-                label="New Password"
-                :type="isPasswordVisible ? 'text' : 'password'"
-                :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                @click:append-inner="isPasswordVisible = !isPasswordVisible"
-              />
-            </VCol>
-
-            <!-- Confirm Password -->
-            <VCol cols="12">
-              <VTextField
-                v-model="form.confirmPassword"
-                label="Confirm Password"
-                :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
-              />
+              <AppOtpInput />
             </VCol>
 
             <!-- reset password -->
@@ -77,22 +54,16 @@ const isConfirmPasswordVisible = ref(false)
                 block
                 type="submit"
               >
-                Set New Password
+                Verify my account
               </VBtn>
             </VCol>
 
             <!-- back to login -->
             <VCol cols="12">
-              <RouterLink
-                class="d-flex align-center justify-center"
-                :to="{ name: 'pages-authentication-login-v1' }"
-              >
-                <VIcon
-                  icon="mdi-chevron-left"
-                  class="flip-in-rtl"
-                />
-                <span>Back to login</span>
-              </RouterLink>
+              <div class="d-flex justify-center align-center flex-wrap">
+                <span class="me-1">Didn't get the code?</span>
+                <a href="#">Resend</a>
+              </div>
             </VCol>
           </VRow>
         </VForm>

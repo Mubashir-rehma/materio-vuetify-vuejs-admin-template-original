@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import tree3 from '@/assets/images/pages/tree-3.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
@@ -11,8 +10,6 @@ import authV2ResetPasswordIllustrationBorderedDark from '@/assets/images/pages/a
 import authV2ResetPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-light.png'
 import authV2ResetPasswordIllustrationDark from '@/assets/images/pages/auth-v2-reset-password-illustration-dark.png'
 import authV2ResetPasswordIllustrationLight from '@/assets/images/pages/auth-v2-reset-password-illustration-light.png'
-
-const { isAppRtl } = useThemeConfig()
 
 const form = ref({
   newPassword: '',
@@ -134,7 +131,7 @@ const isConfirmPasswordVisible = ref(false)
                   >
                     <VIcon
                       icon="mdi-chevron-left"
-                      :rotate="isAppRtl ? '180deg' : null"
+                      class="flip-in-rtl"
                     />
                     <span>Back to login</span>
                   </RouterLink>

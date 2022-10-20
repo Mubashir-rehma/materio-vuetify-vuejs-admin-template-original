@@ -252,7 +252,7 @@ const removeProduct = (id: number) => {
             <td class="pe-16">
               Subtotal:
             </td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $1800
               </h6>
@@ -262,7 +262,7 @@ const removeProduct = (id: number) => {
             <td class="pe-16">
               Discount:
             </td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $28
               </h6>
@@ -272,7 +272,7 @@ const removeProduct = (id: number) => {
             <td class="pe-16">
               Tax:
             </td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 21%
               </h6>
@@ -285,7 +285,7 @@ const removeProduct = (id: number) => {
         <table class="w-100">
           <tr>
             <td>Total:</td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $1690
               </h6>

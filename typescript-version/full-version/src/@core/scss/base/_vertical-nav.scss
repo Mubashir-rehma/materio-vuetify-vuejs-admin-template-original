@@ -83,13 +83,6 @@
       @extend %vertical-nav-item;
       @extend %vertical-nav-section-title;
 
-      // ℹ️ Update the margin-inline-end when vertical nav is in mini state. We done same for link & group.
-      @at-root {
-          .layout-nav-type-vertical.layout-vertical-nav-collapsed .layout-vertical-nav:not(.hovered) .nav-section-title {
-            margin-inline: 4px 0;
-          }
-        }
-
       margin-block-end: variables.$vertical-nav-section-title-mb;
 
       &:not(:first-child) {
@@ -114,17 +107,6 @@
       > :first-child {
         @extend %vertical-nav-item;
         @extend %vertical-nav-item-interactive;
-
-        // ℹ️ Wobble effect
-        // transition: margin-inline 0.4s ease-in-out;
-        // will-change: margin-inline;
-        
-        // ℹ️ Update the margin-inline-end when vertical nav is in mini state. We done same for section title.
-        @at-root {
-          .layout-nav-type-vertical.layout-vertical-nav-collapsed .layout-vertical-nav:not(.hovered) .nav-link > :first-child, .layout-nav-type-vertical .layout-vertical-nav .nav-group > :first-child {
-            margin-inline: 0 5px;
-          }
-        }
       }
 
       .nav-item-icon {

@@ -1,0 +1,23 @@
+// 👉 Card list
+
+/*
+  ℹ️ Custom class
+
+  Remove list spacing inside card
+
+  This is because card title gets padding of 20px and list item have padding of 16px. Moreover, list container have padding-bottom as well.
+*/
+.card-list {
+  .v-list-item:hover,
+  .v-list-item:focus,
+  .v-list-item:active,
+  .v-list-item.active {
+    > .v-list-item__overlay {
+      opacity: 0 !important;
+    }
+  }
+
+  .v-ripple__container {
+    opacity: 0;
+  }
+}

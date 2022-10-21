@@ -3,11 +3,6 @@
 @use "@layouts/styles/_placeholders";
 @use "@configured-variables" as variables;
 
-// 👉 Avatar font-size
-.v-avatar {
-  @include mixins.avatar-font-sizes($map: variables.$avatar-font-sizes);
-}
-
 // 👉 Avatar group
 .v-avatar-group {
   display: flex;
@@ -70,8 +65,7 @@
 
 .v-tabs.v-tabs-pill {
   .v-tab.v-btn {
-    border-radius: 0.375rem !important;
-    min-inline-size: 8.125rem;
+    border-radius: 0.25rem !important;
     transition: none;
 
     .v-tab__slider {
@@ -94,39 +88,6 @@
   }
 }
 
-// 👉 added box shadow
-.v-timeline-item {
-  .v-timeline-divider__dot {
-    .v-timeline-divider__inner-dot {
-      box-shadow: 0 0 0 0.1875rem rgb(var(--v-theme-on-surface-variant));
-
-      @each $color-name in variables.$theme-colors-name {
-
-        &.bg-#{$color-name} {
-          box-shadow: 0 0 0 0.1875rem rgba(var(--v-theme-#{$color-name}), 0.12);
-        }
-      }
-    }
-  }
-}
-
-// 👉 Timeline Outlined style
-.v-timeline-variant-outlined.v-timeline {
-  .v-timeline-divider__dot {
-    .v-timeline-divider__inner-dot {
-      box-shadow: inset 0 0 0 0.125rem rgb(var(--v-theme-on-surface-variant));
-
-      @each $color-name in variables.$theme-colors-name {
-        background-color: rgb(var(--v-theme-surface)) !important;
-
-        &.bg-#{$color-name} {
-          box-shadow: inset 0 0 0 0.125rem rgb(var(--v-theme-#{$color-name}));
-        }
-      }
-    }
-  }
-}
-
 // ℹ️ We are make even width of all v-timeline body
 .v-timeline--vertical.v-timeline {
   .v-timeline-item {
@@ -134,50 +95,4 @@
       justify-self: stretch !important;
     }
   }
-}
-
-// 👉 Expansion panels
-.v-expansion-panel-title,
-.v-expansion-panel-title--active,
-.v-expansion-panel-title:hover,
-.v-expansion-panel-title:focus,
-.v-expansion-panel-title:focus-visible,
-.v-expansion-panel-title--active:focus,
-.v-expansion-panel-title--active:hover {
-  .v-expansion-panel-title__overlay {
-    opacity: 0 !important;
-  }
-}
-
-// 👉 Set Elevation when panel open
-
-.v-expansion-panels:not(.v-expansion-panels--variant-accordion) {
-  .v-expansion-panel.v-expansion-panel--active {
-    .v-expansion-panel__shadow {
-      @include mixins_elevation.elevation(3);
-    }
-  }
-}
-
-// 👉 Slider
-
-.v-slider.v-input--horizontal .v-slider-track__fill {
-  block-size: var(--v-slider-track-size);
-}
-
-.v-slider.v-input--vertical .v-slider-track__fill {
-  inline-size: var(--v-slider-track-size);
-}
-
-.v-slider-thumb {
-  .v-slider-thumb__label {
-    color: rgb(var(--v-theme-on-primary));
-  }
-}
-
-// 👉 Table
-.v-table--density-default > .v-table__wrapper > table > tbody > tr > td,
-.v-table--density-default > .v-table__wrapper > table > thead > tr > td,
-.v-table--density-default > .v-table__wrapper > table > tfoot > tr > td {
-  block-size: 50px;
 }

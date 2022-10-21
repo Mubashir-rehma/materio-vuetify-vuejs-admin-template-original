@@ -17,9 +17,8 @@
 
 // This is same as `%vertical-nav-item` except section title is excluded
 %vertical-nav-item-interactive {
-  block-size: 2.625rem;
-  border-end-end-radius: 3.125rem;
-  border-start-end-radius: 3.125rem;
+  block-size: 2.75rem;
+  border-radius: 0.4rem;
 
   /*
     ℹ️ We will use `margin-block-end` instead of `margin-block` to give more space for shadow to appear.
@@ -56,9 +55,6 @@
 // Open & Active nav group styles
 %vertical-nav-group-open-active {
   @include vuetifyStates.active-states("&::before");
-
-  // ℹ️ We have to make active state bg like hover state according to design
-  --v-theme-overlay-multiplier: 0.3333;
 }
 
 // Section title
@@ -67,38 +63,7 @@
   block-size: 1.5rem;
   color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
   font-size: 0.75rem;
-  padding-inline: variables.$vertical-nav-horizontal-padding;
   text-transform: uppercase;
-
-  /*
-    ℹ️ We will use this to add gap between divider and text.
-    Moreover, we will use this to adjust the `flex-basis` property of left divider
-  */
-  $divider-gap: 0.625rem;
-
-  // Thanks: https://stackoverflow.com/a/62359101/10796681
-  .title-text {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    column-gap: $divider-gap;
-
-    &::before,
-    &::after {
-      border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-      content: "";
-    }
-
-    &::after {
-      flex: 1 1 auto;
-    }
-
-    &::before {
-      flex: 0 1 calc(variables.$vertical-nav-horizontal-padding-start - $divider-gap);
-      margin-inline-start: -#{variables.$vertical-nav-horizontal-padding-start};
-    }
-  }
 }
 
 // Vertical nav item badge styles

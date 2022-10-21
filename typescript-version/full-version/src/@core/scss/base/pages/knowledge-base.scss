@@ -2,7 +2,7 @@
   // page kb-character-wrapper bg
   .page-kb-character-wrapper {
     position: relative;
-    background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+    background: rgba(var(--v-theme-background), 0.5);
     block-size: 12.5rem;
     padding-block-start: 1.438rem;
 
@@ -15,6 +15,6 @@
 
   // category
   .page-kbc-title {
-    background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+    background-color: rgba(var(--v-theme-background), 0.5);
   }
 }

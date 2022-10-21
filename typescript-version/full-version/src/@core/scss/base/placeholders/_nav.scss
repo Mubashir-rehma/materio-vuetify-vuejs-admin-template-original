@@ -20,7 +20,7 @@
     For vertical nav it will be only applied to nav links (not nav groups)
 */
 %nav-link-active {
-  background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, white 300%);
+  background-color: rgb(var(--v-theme-primary));
   color: rgb(var(--v-theme-on-primary));
 
   @include mixins_elevation.elevation(3);

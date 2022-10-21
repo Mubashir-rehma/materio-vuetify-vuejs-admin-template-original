@@ -52,11 +52,4 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
   inset-block-end: 2rem;
   inset-inline-end: 2rem;
 }
-
-// for rtl only
-.flip-in-rtl {
-  @include layoutsMixins.rtl {
-    transform: scaleX(-1);
-  }
-}
 </style>

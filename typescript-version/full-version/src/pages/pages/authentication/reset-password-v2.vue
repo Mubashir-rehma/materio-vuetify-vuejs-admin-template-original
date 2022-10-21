@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import tree3 from '@/assets/images/pages/tree-3.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
@@ -11,8 +10,6 @@ import authV2ResetPasswordIllustrationBorderedDark from '@/assets/images/pages/a
 import authV2ResetPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-light.png'
 import authV2ResetPasswordIllustrationDark from '@/assets/images/pages/auth-v2-reset-password-illustration-dark.png'
 import authV2ResetPasswordIllustrationLight from '@/assets/images/pages/auth-v2-reset-password-illustration-light.png'
-
-const { isAppRtl } = useThemeConfig()
 
 const form = ref({
   newPassword: '',
@@ -127,17 +124,14 @@ const isConfirmPasswordVisible = ref(false)
                 </VCol>
 
                 <!-- back to login -->
-                <VCol
-                  cols="12"
-                  class="text-center"
-                >
+                <VCol cols="12">
                   <RouterLink
-                    class="text-primary ms-2"
+                    class="d-flex align-center justify-center"
                     :to="{ name: 'pages-authentication-login-v2' }"
                   >
                     <VIcon
                       icon="mdi-chevron-left"
-                      :rotate="isAppRtl ? '180deg' : null"
+                      class="flip-in-rtl"
                     />
                     <span>Back to login</span>
                   </RouterLink>
@@ -152,7 +146,7 @@ const isConfirmPasswordVisible = ref(false)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/base/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

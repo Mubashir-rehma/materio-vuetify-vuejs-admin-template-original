@@ -170,7 +170,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/base/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

@@ -35,7 +35,6 @@
   "Chartjs": "Chartjs",
   "Account Settings": "Paramètres du compte",
   "FAQ": "FAQ",
-  "Knowledge Base": "Base de connaissances",
   "Pricing": "Tarification",
   "List": "liste",
   "Edit": "Éditer",
@@ -105,6 +104,13 @@
   "eCommerce": "commerce électronique",
   "New": "Nouvelle",
   "Disabled Menu": "Menu désactivé",
+  "Help Center": "Centre d'aide",
+  "Verify Email": "Vérifier les courriels",
+  "Verify Email v1": "Vérifier l'e-mail v1",
+  "Verify Email v2": "Vérifier l'e-mail v2",
+  "Two Steps": "Deux étapes",
+  "Two Steps v1": "Deux étapes v1",
+  "Two Steps v2": "Deux étapes v2",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

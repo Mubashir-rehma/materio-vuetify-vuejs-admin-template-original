@@ -1,36 +1,29 @@
 import type { UserAbility } from '@/plugins/casl/AppAbility'
 
-export interface KnowledgeBaseCategory {
-  character: string
-  category: string
-  title: string
-  desc: string
-}
-export interface KnowledgeBaseQuestion {
+// 👉 Help center
+export type HelpCenterSubcategoryArticlesType = {
   slug: string
-  question: string
-}
-
-export interface KnowledgeBaseQuestionAndAnswer {
-  postImg?: string
-  postContent?: {
-    title: string
-    postDesc: string
-  }
-  relatedQuestions?: KnowledgeBaseQuestion[]
-}
-
-export interface KnowledgeBaseSubcategory {
-  icon: string
-  iconColor?: string
   title: string
-  questions: KnowledgeBaseQuestion[]
+  content: string
 }
-
-export interface KnowledgeBaseDB {
-  knowledgeBaseCategories: KnowledgeBaseCategory[]
-  knowledgeBaseSubcategories: KnowledgeBaseSubcategory[]
-  KnowledgeBaseQuestionsAndAnswers: KnowledgeBaseQuestionAndAnswer[]
+export type HelpCenterSubcategoriesType = {
+  icon: string
+  slug: string
+  title: string
+  articles: HelpCenterSubcategoryArticlesType[]
+}
+export type HelpCenterCategoriesType = {
+  icon: string
+  slug: string
+  title: string
+  avatarColor: string
+  subCategories: HelpCenterSubcategoriesType[]
+}
+export type HelpCenterArticlesOverviewType = {
+  img: string
+  slug: string
+  title: string
+  subtitle: string
 }
 
 export interface Faq {

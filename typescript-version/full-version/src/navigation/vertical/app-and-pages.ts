@@ -46,6 +46,13 @@ export default [
             ],
           },
           {
+            title: 'Verify Email',
+            children: [
+              { title: 'Verify Email v1', to: 'pages-authentication-verify-email-v1', target: '_blank' },
+              { title: 'Verify Email v2', to: 'pages-authentication-verify-email-v2', target: '_blank' },
+            ],
+          },
+          {
             title: 'Forgot Password',
             children: [
               { title: 'Forgot Password v1', to: 'pages-authentication-forgot-password-v1', target: '_blank' },
@@ -59,9 +66,16 @@ export default [
               { title: 'Reset Password v2', to: 'pages-authentication-reset-password-v2', target: '_blank' },
             ],
           },
+          {
+            title: 'Two Steps',
+            children: [
+              { title: 'Two Steps v1', to: 'pages-authentication-two-steps-v1', target: '_blank' },
+              { title: 'Two Steps v2', to: 'pages-authentication-two-steps-v2', target: '_blank' },
+            ],
+          },
         ],
       },
-      { title: 'Knowledge Base', to: 'pages-knowledge-base' },
+      { title: 'Help Center', to: 'pages-help-center' },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },
       { title: 'FAQ', to: 'pages-faq' },

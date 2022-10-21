@@ -52,13 +52,6 @@ import illustrationJohn2 from '@/assets/images/cards/illustration-john-2.png'
   inset-inline-end: 0;
 }
 
-// for rtl only
-.flip-in-rtl {
-  @include layoutsMixins.rtl {
-    transform: scaleX(-1);
-  }
-}
-
 @media screen and (max-width: 440px) {
   .john-illustration {
     inline-size: 100%;

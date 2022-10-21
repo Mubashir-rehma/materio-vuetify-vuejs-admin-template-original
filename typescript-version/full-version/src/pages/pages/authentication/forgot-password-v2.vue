@@ -7,11 +7,8 @@ import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
 import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
 import tree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-
-const { isAppRtl } = useThemeConfig()
 
 const email = ref('')
 
@@ -107,17 +104,14 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                 </VCol>
 
                 <!-- back to login -->
-                <VCol
-                  cols="12"
-                  class="text-center"
-                >
+                <VCol cols="12">
                   <RouterLink
-                    class="text-primary ms-2"
+                    class="d-flex align-center justify-center"
                     :to="{ name: 'pages-authentication-login-v2' }"
                   >
                     <VIcon
                       icon="mdi-chevron-left"
-                      :rotate="isAppRtl ? '180deg' : null"
+                      class="flip-in-rtl"
                     />
                     <span>Back to login</span>
                   </RouterLink>
@@ -132,7 +126,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/base/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

@@ -27,10 +27,7 @@ const notifications: Notification[] = [
 </script>
 
 <template>
-  <Notifications
-    :notifications-count="1"
-    :notifications="notifications"
-  />
+  <Notifications :notifications="notifications" />
 </template>
 ```
 
@@ -53,10 +50,7 @@ const notifications = [
 </script>
 
 <template>
-  <Notifications
-    :notifications-count="1"
-    :notifications="notifications"
-  />
+  <Notifications :notifications="notifications" />
 </template>
 ```
 

@@ -2,7 +2,7 @@ import './apps/user-list'
 import './jwt'
 import mock from './mock'
 import './pages/faq'
-import './pages/knowledge-base'
+import './pages/help-center'
 
 // Apps
 import './apps/calendar'

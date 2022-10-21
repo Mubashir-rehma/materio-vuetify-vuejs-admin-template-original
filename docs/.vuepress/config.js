@@ -1,11 +1,8 @@
 module.exports = {
   title: 'Materio',
   description: 'This is desc',
-  base:
-    process.env.NODE_ENV === "production"
-      ? "/materio-vuetify-vuejs-admin-template/documentation/"
-      : "/",
-  head: [
+  base: process.env.BASE || '/',
+    head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "theme-color", content: "#9155FD" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
@@ -59,6 +56,7 @@ module.exports = {
             '/guide/access-control',
             '/guide/splash-screen',
             '/guide/getting-started/demo-configs',
+            '/guide/getting-started/rtl',
           ],
         },
         {

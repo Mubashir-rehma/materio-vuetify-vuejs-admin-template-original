@@ -34,7 +34,6 @@
   "Chartjs": "Chartjs",
   "Account Settings": "Account Settings",
   "FAQ": "FAQ",
-  "Knowledge Base": "Knowledge Base",
   "Pricing": "Pricing",
   "List": "List",
   "Edit": "Edit",
@@ -103,6 +102,13 @@
   "eCommerce": "eCommerce",
   "New": "New",
   "Disabled Menu": "Disabled Menu",
+  "Help Center": "Help Center",
+  "Verify Email": "Verify Email",
+  "Verify Email v1": "Verify Email v1",
+  "Verify Email v2": "Verify Email v2",
+  "Two Steps": "Two Steps",
+  "Two Steps v1": "Two Steps v1",
+  "Two Steps v2": "Two Steps v2",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

@@ -2,13 +2,11 @@
 import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png'
 import authV1Tree from '@/assets/images/pages/auth-v1-tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
-const { isAppRtl } = useThemeConfig()
 
 const form = ref({
   newPassword: '',
@@ -84,17 +82,14 @@ const isConfirmPasswordVisible = ref(false)
             </VCol>
 
             <!-- back to login -->
-            <VCol
-              cols="12"
-              class="text-center"
-            >
+            <VCol cols="12">
               <RouterLink
-                class="text-primary ms-2"
+                class="d-flex align-center justify-center"
                 :to="{ name: 'pages-authentication-login-v1' }"
               >
                 <VIcon
                   icon="mdi-chevron-left"
-                  :rotate="isAppRtl ? '180deg' : null"
+                  class="flip-in-rtl"
                 />
                 <span>Back to login</span>
               </RouterLink>
@@ -125,7 +120,7 @@ const isConfirmPasswordVisible = ref(false)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/base/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import tree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
@@ -11,8 +10,6 @@ import authV2ForgotPasswordIllustrationDark from '@/assets/images/pages/auth-v2-
 import authV2ForgotPasswordIllustrationLight from '@/assets/images/pages/auth-v2-forgot-password-illustration-light.png'
 import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
 import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-
-const { isAppRtl } = useThemeConfig()
 
 const email = ref('')
 
@@ -107,7 +104,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                     :to="{ name: 'login' }"
                   >
                     <VIcon
-                      :rotate="isAppRtl ? '180deg' : null"
+                      class="flip-in-rtl"
                       icon="mdi-chevron-left"
                     />
                     <span>Back to login</span>
@@ -123,7 +120,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/base/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

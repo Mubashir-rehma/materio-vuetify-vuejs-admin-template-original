@@ -76,7 +76,7 @@
   .apexcharts-xaxistooltip-text,
   .apexcharts-yaxistooltip-text,
   .apexcharts-legend-text {
-    font-family: inherit;
+    font-family: inherit !important;
   }
 
   .apexcharts-pie-label {
@@ -89,6 +89,6 @@
   }
 
   .apexcharts-legend-marker {
-    margin-inline-end: 0.3875rem;
+    margin-inline-end: 0.3875rem !important;
   }
 }

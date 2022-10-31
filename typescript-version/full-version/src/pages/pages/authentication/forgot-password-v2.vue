@@ -17,7 +17,7 @@ const email = ref('')
     <VCol
       cols="12"
       md="4"
-      class="d-flex align-center justify-center"
+      class="auth-card-v2 d-flex align-center justify-center"
       style="background-color: rgb(var(--v-theme-surface));"
     >
       <VCard

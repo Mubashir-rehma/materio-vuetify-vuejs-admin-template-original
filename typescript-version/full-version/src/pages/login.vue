@@ -188,7 +188,7 @@ const onSubmit = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

@@ -31,7 +31,7 @@ import miscUnderMaintenance from '@/assets/images/pages/misc-under-maintenance.p
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/misc.scss";
+@use "@core/scss/template/pages/misc.scss";
 </style>
 
 <route lang="yaml">

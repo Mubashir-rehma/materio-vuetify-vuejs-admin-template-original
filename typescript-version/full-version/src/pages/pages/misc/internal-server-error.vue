@@ -30,7 +30,7 @@ import ErrorHeader from '@core/components/ErrorHeader.vue'
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/misc.scss";
+@use "@core/scss/template/pages/misc.scss";
 </style>
 
 <route lang="yaml">

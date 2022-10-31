@@ -29,7 +29,7 @@ import pages404 from '@/assets/images/pages/404.png'
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/misc.scss";
+@use "@core/scss/template/pages/misc.scss";
 </style>
 
 <route lang="yaml">

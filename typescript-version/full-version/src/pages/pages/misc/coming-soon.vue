@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import miscComingSoon from '@/assets/images/pages/misc-coming-soon.png'
-import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
-import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
-import tree2 from '@/assets/images/pages/tree-2.png'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 const email = ref('')
-
-const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </script>
 
 <template>
@@ -48,17 +42,6 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
         class="mx-auto"
       />
     </div>
-
-    <!-- 👉 Footer -->
-    <VImg
-      :src="tree2"
-      class="misc-footer-tree d-none d-md-block"
-    />
-
-    <VImg
-      :src="authThemeMask"
-      class="misc-footer-img d-none d-md-block"
-    />
   </div>
 </template>
 
@@ -68,12 +51,6 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 .misc-email-input {
   max-inline-size: 21.875rem;
   min-inline-size: 12.5rem;
-}
-
-.misc-footer-tree {
-  inline-size: 21.875rem;
-  inset-block-end: 0;
-  inset-inline-start: 0;
 }
 </style>
 

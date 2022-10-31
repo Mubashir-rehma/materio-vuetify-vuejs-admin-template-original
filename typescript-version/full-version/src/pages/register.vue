@@ -1,20 +1,10 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components'
 import type { RegisterResponse } from '@/@fake-db/types'
-import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import authV2RegisterIllustrationBorderedDark from '@/assets/images/pages/auth-v2-register-illustration-bordered-dark.png'
-import authV2RegisterIllustrationBorderedLight from '@/assets/images/pages/auth-v2-register-illustration-bordered-light.png'
-import authV2RegisterIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
-import authV2RegisterIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
-import tree2 from '@/assets/images/pages/tree-2.png'
 
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
 import { alphaDashValidator, emailValidator, requiredValidator } from '@validators'
 const refVForm = ref<VForm>()
 const username = ref('johnDoe')
@@ -63,15 +53,6 @@ const register = () => {
     })
 }
 
-const imageVariant = useGenerateImageVariant(
-  authV2RegisterIllustrationLight,
-  authV2RegisterIllustrationDark, authV2RegisterIllustrationBorderedLight,
-  authV2RegisterIllustrationBorderedDark,
-  true,
-)
-
-const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
-
 const isPasswordVisible = ref(false)
 
 const onSubmit = () => {
@@ -84,165 +65,136 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <div>
-    <!-- Title and Logo -->
-    <div class="auth-logo d-flex align-start gap-x-3">
-      <VNodeRenderer :nodes="themeConfig.app.logo" />
-
-      <h1 class="font-weight-semibold leading-normal text-2xl text-uppercase">
-        {{ themeConfig.app.title }}
-      </h1>
-    </div>
-
-    <VRow
-      no-gutters
-      class="auth-wrapper"
+  <VRow
+    no-gutters
+    class="auth-wrapper"
+  >
+    <VCol
+      lg="8"
+      class="d-none d-lg-flex"
     >
-      <VCol
-        lg="8"
-        class="d-none d-lg-flex align-center justify-center position-relative"
+      <!-- here your illustrator -->
+    </VCol>
+
+    <VCol
+      cols="12"
+      lg="4"
+      class="d-flex align-center justify-center"
+      style="background-color: rgb(var(--v-theme-surface));"
+    >
+      <VCard
+        flat
+        :max-width="500"
+        class="mt-12 mt-sm-0 pa-4"
       >
-        <div
-          class="d-flex align-center justify-center w-100 pa-10 pe-0"
-        >
-          <VImg
-            max-width="768px"
-            :src="imageVariant"
-            class="auth-illustration"
-          />
-        </div>
+        <VCardText>
+          <h5 class="text-h5 font-weight-semibold mb-1">
+            Adventure starts here 🚀
+          </h5>
+          <p class="mb-0">
+            Make your app management easy and fun!
+          </p>
+        </VCardText>
 
-        <VImg
-          :width="150"
-          :src="tree2"
-          class="auth-footer-start-tree"
-        />
+        <VCardText>
+          <VForm
+            ref="refVForm"
+            @submit.prevent="onSubmit"
+          >
+            <VRow>
+              <!-- Username -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="username"
+                  :rules="[requiredValidator, alphaDashValidator]"
+                  label="Username"
+                />
+              </VCol>
 
-        <VImg
-          class="auth-footer-mask"
-          :src="authThemeMask"
-        />
-      </VCol>
+              <!-- email -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="email"
+                  :rules="[requiredValidator, emailValidator]"
+                  label="Email"
+                  type="email"
+                />
+              </VCol>
 
-      <VCol
-        cols="12"
-        lg="4"
-        class="auth-bg d-flex align-center justify-center"
-      >
-        <VCard
-          flat
-          :max-width="500"
-          class="mt-12 mt-sm-0 pa-4"
-        >
-          <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-1">
-              Adventure starts here 🚀
-            </h5>
-            <p class="mb-0">
-              Make your app management easy and fun!
-            </p>
-          </VCardText>
+              <!-- password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="password"
+                  :rules="[requiredValidator]"
+                  label="Password"
+                  :type="isPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                />
 
-          <VCardText>
-            <VForm
-              ref="refVForm"
-              @submit.prevent="onSubmit"
-            >
-              <VRow>
-                <!-- Username -->
-                <VCol cols="12">
-                  <VTextField
-                    v-model="username"
-                    :rules="[requiredValidator, alphaDashValidator]"
-                    label="Username"
+                <div class="d-flex align-center mt-1 mb-4">
+                  <VCheckbox
+                    id="privacy-policy"
+                    v-model="privacyPolicies"
+                    inline
                   />
-                </VCol>
-
-                <!-- email -->
-                <VCol cols="12">
-                  <VTextField
-                    v-model="email"
-                    :rules="[requiredValidator, emailValidator]"
-                    label="Email"
-                    type="email"
-                  />
-                </VCol>
-
-                <!-- password -->
-                <VCol cols="12">
-                  <VTextField
-                    v-model="password"
-                    :rules="[requiredValidator]"
-                    label="Password"
-                    :type="isPasswordVisible ? 'text' : 'password'"
-                    :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                    @click:append-inner="isPasswordVisible = !isPasswordVisible"
-                  />
-
-                  <div class="d-flex align-center mt-1 mb-4">
-                    <VCheckbox
-                      id="privacy-policy"
-                      v-model="privacyPolicies"
-                      inline
-                    />
-                    <VLabel
-                      for="privacy-policy"
-                      class="pb-1"
-                      style="opacity: 1;"
-                    >
-                      <span class="me-1">I agree to</span>
-                      <a
-                        href="javascript:void(0)"
-                        class="text-primary"
-                      >privacy policy & terms</a>
-                    </VLabel>
-                  </div>
-
-                  <VBtn
-                    block
-                    type="submit"
+                  <VLabel
+                    for="privacy-policy"
+                    class="pb-1"
+                    style="opacity: 1;"
                   >
-                    Sign up
-                  </VBtn>
-                </VCol>
+                    <span class="me-1">I agree to</span>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-primary"
+                    >privacy policy & terms</a>
+                  </VLabel>
+                </div>
 
-                <!-- create account -->
-                <VCol
-                  cols="12"
-                  class="text-center text-base"
+                <VBtn
+                  block
+                  type="submit"
                 >
-                  <span>Already have an account?</span>
-                  <RouterLink
-                    class="text-primary ms-2"
-                    :to="{ name: 'login' }"
-                  >
-                    Sign in instead
-                  </RouterLink>
-                </VCol>
+                  Sign up
+                </VBtn>
+              </VCol>
 
-                <VCol
-                  cols="12"
-                  class="d-flex align-center"
+              <!-- create account -->
+              <VCol
+                cols="12"
+                class="text-center text-base"
+              >
+                <span>Already have an account?</span>
+                <RouterLink
+                  class="text-primary ms-2"
+                  :to="{ name: 'login' }"
                 >
-                  <VDivider />
-                  <span class="mx-4">or</span>
-                  <VDivider />
-                </VCol>
+                  Sign in instead
+                </RouterLink>
+              </VCol>
 
-                <!-- auth providers -->
-                <VCol
-                  cols="12"
-                  class="text-center"
-                >
-                  <AuthProvider />
-                </VCol>
-              </VRow>
-            </VForm>
-          </VCardText>
-        </VCard>
-      </VCol>
-    </VRow>
-  </div>
+              <VCol
+                cols="12"
+                class="d-flex align-center"
+              >
+                <VDivider />
+                <span class="mx-4">or</span>
+                <VDivider />
+              </VCol>
+
+              <!-- auth providers -->
+              <VCol
+                cols="12"
+                class="text-center"
+              >
+                <AuthProvider />
+              </VCol>
+            </VRow>
+          </VForm>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

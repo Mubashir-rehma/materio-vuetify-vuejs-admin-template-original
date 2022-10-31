@@ -1,148 +1,99 @@
 <script setup lang="ts">
-import tree3 from '@/assets/images/pages/tree-3.png'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
-
-import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import authV2ResetPasswordIllustrationBorderedDark from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-dark.png'
-import authV2ResetPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-light.png'
-import authV2ResetPasswordIllustrationDark from '@/assets/images/pages/auth-v2-reset-password-illustration-dark.png'
-import authV2ResetPasswordIllustrationLight from '@/assets/images/pages/auth-v2-reset-password-illustration-light.png'
-
 const form = ref({
   newPassword: '',
   confirmPassword: '',
 })
-
-const authThemeImg = useGenerateImageVariant(authV2ResetPasswordIllustrationLight,
-  authV2ResetPasswordIllustrationDark,
-  authV2ResetPasswordIllustrationBorderedLight,
-  authV2ResetPasswordIllustrationBorderedDark,
-  true)
-
-const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div>
-    <!-- Title and Logo -->
-    <div class="auth-logo d-flex align-start gap-x-3">
-      <VNodeRenderer :nodes="themeConfig.app.logo" />
-
-      <h1 class="font-weight-semibold leading-normal text-2xl text-uppercase">
-        {{ themeConfig.app.title }}
-      </h1>
-    </div>
-
-    <VRow
-      no-gutters
-      class="auth-wrapper"
+  <VRow
+    no-gutters
+    class="auth-wrapper"
+  >
+    <VCol
+      md="8"
+      class="d-none d-md-flex"
     >
-      <VCol
-        md="8"
-        class="d-none d-md-flex align-center justify-center position-relative"
+      <!-- here your illustrator -->
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="4"
+      class="d-flex align-center justify-center"
+      style="background-color: rgb(var(--v-theme-surface));"
+    >
+      <VCard
+        flat
+        :max-width="500"
+        class="mt-12 mt-sm-0 pa-4"
       >
-        <div
-          class="d-flex align-center justify-center w-100 pa-10 pe-0"
-        >
-          <VImg
-            max-width="768px"
-            :src="authThemeImg"
-            class="auth-illustration"
-          />
-        </div>
+        <VCardText>
+          <h5 class="text-h5 font-weight-semibold mb-1">
+            Reset Password 🔒
+          </h5>
+          <p class="mb-0">
+            Enter your email and we'll send you instructions to reset your password
+          </p>
+        </VCardText>
 
-        <VImg
-          :width="276"
-          :src="tree3"
-          class="auth-footer-start-tree"
-        />
+        <VCardText>
+          <VForm @submit.prevent="() => {}">
+            <VRow>
+              <!-- password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="form.newPassword"
+                  label="New Password"
+                  :type="isPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                />
+              </VCol>
 
-        <VImg
-          class="auth-footer-mask"
-          :src="authThemeMask"
-        />
-      </VCol>
+              <!-- Confirm Password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="form.confirmPassword"
+                  label="Confirm Password"
+                  :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
+                />
+              </VCol>
 
-      <VCol
-        cols="12"
-        md="4"
-        class="auth-bg d-flex align-center justify-center"
-      >
-        <VCard
-          flat
-          :max-width="500"
-          class="mt-12 mt-sm-0 pa-4"
-        >
-          <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-1">
-              Reset Password 🔒
-            </h5>
-            <p class="mb-0">
-              Enter your email and we'll send you instructions to reset your password
-            </p>
-          </VCardText>
+              <!-- Set password -->
+              <VCol cols="12">
+                <VBtn
+                  block
+                  type="submit"
+                >
+                  Set New Password
+                </VBtn>
+              </VCol>
 
-          <VCardText>
-            <VForm @submit.prevent="() => {}">
-              <VRow>
-                <!-- password -->
-                <VCol cols="12">
-                  <VTextField
-                    v-model="form.newPassword"
-                    label="New Password"
-                    :type="isPasswordVisible ? 'text' : 'password'"
-                    :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                    @click:append-inner="isPasswordVisible = !isPasswordVisible"
+              <!-- back to login -->
+              <VCol cols="12">
+                <RouterLink
+                  class="d-flex align-center justify-center"
+                  :to="{ name: 'pages-authentication-login-v2' }"
+                >
+                  <VIcon
+                    icon="mdi-chevron-left"
+                    class="flip-in-rtl"
                   />
-                </VCol>
-
-                <!-- Confirm Password -->
-                <VCol cols="12">
-                  <VTextField
-                    v-model="form.confirmPassword"
-                    label="Confirm Password"
-                    :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                    :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                    @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
-                  />
-                </VCol>
-
-                <!-- Set password -->
-                <VCol cols="12">
-                  <VBtn
-                    block
-                    type="submit"
-                  >
-                    Set New Password
-                  </VBtn>
-                </VCol>
-
-                <!-- back to login -->
-                <VCol cols="12">
-                  <RouterLink
-                    class="d-flex align-center justify-center"
-                    :to="{ name: 'pages-authentication-login-v2' }"
-                  >
-                    <VIcon
-                      icon="mdi-chevron-left"
-                      class="flip-in-rtl"
-                    />
-                    <span>Back to login</span>
-                  </RouterLink>
-                </VCol>
-              </VRow>
-            </VForm>
-          </VCardText>
-        </VCard>
-      </VCol>
-    </VRow>
-  </div>
+                  <span>Back to login</span>
+                </RouterLink>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
 </template>
 
 <style lang="scss">

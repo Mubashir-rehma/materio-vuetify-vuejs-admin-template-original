@@ -1,21 +1,13 @@
 <script setup lang="ts">
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-
-import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
-import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png'
-import authV1Tree from '@/assets/images/pages/auth-v1-tree.png'
 
 const form = ref({
   email: '',
   password: '',
   remember: false,
 })
-
-const authThemeMask = useGenerateImageVariant(authV1MaskLight, authV1MaskDark)
 
 const isPasswordVisible = ref(false)
 </script>
@@ -127,24 +119,6 @@ const isPasswordVisible = ref(false)
         </VForm>
       </VCardText>
     </VCard>
-
-    <VImg
-      class="auth-footer-start-tree d-none d-md-block"
-      :src="authV1Tree"
-      :width="250"
-    />
-
-    <VImg
-      :src="authV1Tree2"
-      class="auth-footer-end-tree d-none d-md-block"
-      :width="350"
-    />
-
-    <!-- bg img -->
-    <VImg
-      class="auth-footer-mask d-none d-md-block"
-      :src="authThemeMask"
-    />
   </div>
 </template>
 

@@ -108,7 +108,7 @@ const onSubmit = () => {
       <VCol
         cols="12"
         lg="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -225,7 +225,7 @@ const onSubmit = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

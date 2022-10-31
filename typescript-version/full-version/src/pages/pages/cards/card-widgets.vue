@@ -129,5 +129,5 @@ import CardWidgetsWeeklySales from '@/views/pages/cards/card-widgets/CardWidgets
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart.scss";
 </style>

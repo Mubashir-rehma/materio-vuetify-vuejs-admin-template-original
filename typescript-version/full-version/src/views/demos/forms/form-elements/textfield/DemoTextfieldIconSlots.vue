@@ -47,7 +47,10 @@ const clickMe = () => {
           indeterminate
         />
 
-        <VNodeRenderer :nodes="themeConfig.app.logo" />
+        <VNodeRenderer
+          v-else
+          :nodes="themeConfig.app.logo"
+        />
       </VFadeTransition>
     </template>
 
@@ -61,7 +64,7 @@ const clickMe = () => {
       >
         <VIcon icon="mdi-target" />
         <span
-          v-if="$vuetify.display.smAndUp"
+          v-if="$vuetify.display.mdAndUp"
           class="ms-3"
         >Click me</span>
       </VBtn>

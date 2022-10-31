@@ -47,13 +47,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/misc.scss";
-
-.misc-footer-tree {
-  inline-size: 15.625rem;
-  inset-block-end: 3.5rem;
-  inset-inline-start: 0.375rem;
-}
+@use "@core/scss/template/pages/misc.scss";
 </style>
 
 <route lang="yaml">

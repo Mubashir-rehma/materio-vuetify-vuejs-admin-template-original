@@ -63,7 +63,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
       <VCol
         cols="12"
         md="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -97,7 +97,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

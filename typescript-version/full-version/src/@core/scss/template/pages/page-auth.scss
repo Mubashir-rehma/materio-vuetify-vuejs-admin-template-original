@@ -2,14 +2,22 @@
   min-block-size: calc(var(--vh, 1vh) * 100);
 }
 
+.auth-card {
+  z-index: 1 !important;
+}
+
+@media (min-width: 960px) {
+  .skin--bordered {
+    .auth-card-v2 {
+      border-inline-start: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    }
+  }
+}
+
 .auth-footer-mask {
   position: absolute;
   inset-block-end: 0;
   min-inline-size: 100%;
-}
-
-.auth-card {
-  z-index: 1 !important;
 }
 
 .auth-footer-start-tree,
@@ -39,6 +47,6 @@
   inset-inline-start: 2.3rem;
 }
 
-.auth-bg {
+.auth-card-v2 {
   background-color: rgb(var(--v-theme-surface));
 }

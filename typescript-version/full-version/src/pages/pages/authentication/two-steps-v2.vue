@@ -10,8 +10,6 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
-const email = ref('')
-
 const authThemeImg = useGenerateImageVariant(
   authV2ForgotPasswordIllustrationLight,
   authV2ForgotPasswordIllustrationDark,
@@ -65,7 +63,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
       <VCol
         cols="12"
         md="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -87,7 +85,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
           <VCardText>
             <VForm @submit.prevent="() => {}">
               <VRow>
-                <!-- email -->
+                <!-- otp -->
                 <VCol cols="12">
                   <AppOtpInput />
                 </VCol>
@@ -119,7 +117,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

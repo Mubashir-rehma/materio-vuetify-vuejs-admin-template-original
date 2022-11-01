@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineChartSimpleConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const balanceChartConfig = controlledComputed(theme, () => getLineChartSimpleConfig(vuetifyTheme.current.value))
+const balanceChartConfig = computed(() => getLineChartSimpleConfig(vuetifyTheme.current.value))
 
 const series = [
   {

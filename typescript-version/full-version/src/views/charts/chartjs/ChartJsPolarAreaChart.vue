@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getPolarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import PolarAreaChart from '@core/libs/chartjs/components/PolarAreaChart'
 interface Props {
@@ -11,9 +10,8 @@ interface Props {
 const props = defineProps<Props>()
 
 const vuetifyTheme = useTheme()
-const { theme } = useThemeConfig()
 
-const chartConfig = controlledComputed(theme, () => getPolarChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getPolarChartConfig(vuetifyTheme.current.value))
 
 const data = {
   labels: ['Africa', 'Asia', 'Europe', 'America', 'Antarctica', 'Australia'],

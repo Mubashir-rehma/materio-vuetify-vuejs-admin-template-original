@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getScatterChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import ScatterChart from '@core/libs/chartjs/components/ScatterChart'
 interface Props {
@@ -10,10 +9,9 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(theme, () => getScatterChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getScatterChartConfig(vuetifyTheme.current.value))
 
 const data = {
   datasets: [

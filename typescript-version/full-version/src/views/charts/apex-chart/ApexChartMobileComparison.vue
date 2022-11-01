@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getRadarChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
 const series = [
@@ -18,7 +16,7 @@ const series = [
   },
 ]
 
-const chartConfig = controlledComputed(theme, () => getRadarChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getRadarChartConfig(vuetifyTheme.current.value))
 </script>
 
 <template>

@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getRadarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import RadarChart from '@core/libs/chartjs/components/RadarChart'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(theme, () => getRadarChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getRadarChartConfig(vuetifyTheme.current.value))
 
 const chartData = {
   labels: ['STA', 'STR', 'AGI', 'VIT', 'CHA', 'INT'],

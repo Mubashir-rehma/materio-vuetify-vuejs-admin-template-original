@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getScatterChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const scatterChartConfig = controlledComputed(theme, () => getScatterChartConfig(vuetifyTheme.current.value),
+const scatterChartConfig = computed(() => getScatterChartConfig(vuetifyTheme.current.value),
 )
 
 const series = [

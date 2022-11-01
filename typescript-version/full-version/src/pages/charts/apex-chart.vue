@@ -8,28 +8,26 @@ import ApexChartHorizontalBar from '@/views/charts/apex-chart/ApexChartHorizonta
 import ApexChartMobileComparison from '@/views/charts/apex-chart/ApexChartMobileComparison.vue'
 import ApexChartNewTechnologiesData from '@/views/charts/apex-chart/ApexChartNewTechnologiesData.vue'
 import ApexChartStatistics from '@/views/charts/apex-chart/ApexChartStatistics.vue'
-import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.vue'
+import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPrices.vue'
 </script>
 
 <template>
   <VRow>
     <!-- 👉  Area chart -->
     <VCol cols="12">
-      <VCard>
-        <VCardItem class="flex-wrap">
-          <VCardTitle>Area Chart</VCardTitle>
-          <VCardSubtitle>Commercial networks</VCardSubtitle>
-
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
+      <VCard
+        title="Area Chart"
+        subtitle="Commercial networks"
+      >
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
         <VCardText>
           <ApexChartAreaChart />
@@ -39,20 +37,16 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
 
     <!-- 👉 Data Science -->
     <VCol cols="12">
-      <VCard>
-        <VCardItem class="flex-wrap">
-          <VCardTitle>Data Science</VCardTitle>
-
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
+      <VCard title="Data Science">
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
         <VCardText>
           <ApexChartDataScience />
@@ -62,23 +56,19 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
 
     <!-- 👉 New Technologies Data -->
     <VCol cols="12">
-      <VCard>
-        <VCardItem class="flex-wrap">
-          <VCardTitle>New Technologies Data</VCardTitle>
-
-          <template #append>
-            <VBtnToggle
-              density="compact"
-              color="primary"
-              variant="outlined"
-              divided
-            >
-              <VBtn>Daily</VBtn>
-              <VBtn>Monthly</VBtn>
-              <VBtn>Yearly</VBtn>
-            </VBtnToggle>
-          </template>
-        </VCardItem>
+      <VCard title="New Technologies Data">
+        <template #append>
+          <VBtnToggle
+            density="compact"
+            color="primary"
+            variant="outlined"
+            divided
+          >
+            <VBtn>Daily</VBtn>
+            <VBtn>Monthly</VBtn>
+            <VBtn>Yearly</VBtn>
+          </VBtnToggle>
+        </template>
 
         <VCardText>
           <ApexChartNewTechnologiesData />
@@ -88,31 +78,29 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
 
     <!-- 👉 Balance Line Chart  -->
     <VCol cols="12">
-      <VCard>
-        <VCardItem class="flex-wrap">
-          <VCardTitle>Balance</VCardTitle>
-          <VCardSubtitle>Commercial networks & enterprises</VCardSubtitle>
-
-          <template #append>
-            <div class="d-flex align-center">
-              <h6 class="text-h6 me-3">
-                $221,267
-              </h6>
-              <VChip
-                label
-                color="success"
-                class="font-weight-bold"
-              >
-                <VIcon
-                  start
-                  icon="mdi-arrow-up"
-                  size="15"
-                />
-                <span>22%</span>
-              </VChip>
-            </div>
-          </template>
-        </VCardItem>
+      <VCard
+        title="Balance"
+        subtitle="Commercial networks &amp; enterprises"
+      >
+        <template #append>
+          <div class="d-flex align-center">
+            <h6 class="text-h6 me-3">
+              $221,267
+            </h6>
+            <VChip
+              label
+              color="success"
+              class="font-weight-bold"
+            >
+              <VIcon
+                start
+                icon="mdi-arrow-up"
+                size="15"
+              />
+              <span>22%</span>
+            </VChip>
+          </div>
+        </template>
 
         <VCardText>
           <ApexChartBalance />
@@ -125,21 +113,19 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
       cols="12"
       md="6"
     >
-      <VCard>
-        <VCardItem class="flex-wrap">
-          <VCardTitle>Balance</VCardTitle>
-          <VCardSubtitle>$74,382.72</VCardSubtitle>
-
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
+      <VCard
+        title="Balance"
+        subtitle="$74,382.72"
+      >
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
         <VCardText>
           <ApexChartHorizontalBar />
@@ -147,29 +133,27 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
       </VCard>
     </VCol>
 
-    <!-- 👉 Stock Price Chart -->
+    <!-- 👉 Stocks Prices -->
     <VCol
       cols="12"
       md="6"
     >
-      <VCard>
-        <VCardItem>
-          <VCardTitle>Stocks Prices</VCardTitle>
-          <VCardSubtitle>$50,863.98</VCardSubtitle>
-
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
+      <VCard
+        title="Stocks Prices"
+        subtitle="$50,863.98"
+      >
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
         <VCardText>
-          <ApexChartStockPrice />
+          <ApexChartStocksPrices />
         </VCardText>
       </VCard>
     </VCol>

@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const { theme } = useThemeConfig()
-
-const currentTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.colors })
-const variableTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.variables })
 
 const series = [
   {
@@ -16,7 +11,10 @@ const series = [
   },
 ]
 
-const chartOptions = controlledComputed(theme, () => {
+const chartOptions = computed(() => {
+  const currentTheme = vuetifyTheme.current.value.colors
+  const variableTheme = vuetifyTheme.current.value.variables
+
   return {
     chart: {
       parentHeightOffset: 0,
@@ -24,7 +22,7 @@ const chartOptions = controlledComputed(theme, () => {
     },
     tooltip: { enabled: false },
     grid: {
-      borderColor: `rgba(${hexToRgb(String(variableTheme.value['border-color']))},${variableTheme.value['border-opacity']})`,
+      borderColor: `rgba(${hexToRgb(String(variableTheme['border-color']))},${variableTheme['border-opacity']})`,
       strokeDashArray: 6,
       xaxis: {
         lines: { show: true },
@@ -44,7 +42,7 @@ const chartOptions = controlledComputed(theme, () => {
       lineCap: 'butt',
       curve: 'straight',
     },
-    colors: [currentTheme.value.primary],
+    colors: [currentTheme.primary],
     markers: {
       size: 6,
       offsetY: 4,
@@ -56,8 +54,8 @@ const chartOptions = controlledComputed(theme, () => {
         {
           size: 5.5,
           seriesIndex: 0,
-          strokeColor: currentTheme.value.primary,
-          fillColor: currentTheme.value.surface,
+          strokeColor: currentTheme.primary,
+          fillColor: currentTheme.surface,
           dataPointIndex: series[0].data.length - 1,
         },
       ],

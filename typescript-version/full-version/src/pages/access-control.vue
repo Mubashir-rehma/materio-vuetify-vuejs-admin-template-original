@@ -4,8 +4,7 @@
       cols="12"
       md="6"
     >
-      <VCard>
-        <VCardTitle>Common</VCardTitle>
+      <VCard title="Common">
         <VCardText>No ability is required to view this card</VCardText>
         <VCardText>
           This card is visible to both 'user' and 'admin'
@@ -17,8 +16,7 @@
       cols="12"
       md="6"
     >
-      <VCard>
-        <VCardTitle>Analytics</VCardTitle>
+      <VCard title="Analytics">
         <VCardText>User with 'Analytics' subject's 'Read' ability can view this card</VCardText>
         <VCardText class="text-danger">
           This card is visible to 'admin' only

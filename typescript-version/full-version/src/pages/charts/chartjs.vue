@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ChartJsBarChart from '@/views/charts/chartjs/ChartJsBarChart.vue'
 import ChartJsBubbleChart from '@/views/charts/chartjs/ChartJsBubbleChart.vue'
-import ChartjsHorizontalBarChart from '@/views/charts/chartjs/ChartjsHorizontalBarChart.vue'
+import ChartJsHorizontalBarChart from '@/views/charts/chartjs/ChartJsHorizontalBarChart.vue'
 import ChartJsLineAreaChart from '@/views/charts/chartjs/ChartJsLineAreaChart.vue'
 import ChartJsLineChart from '@/views/charts/chartjs/ChartJsLineChart.vue'
 import ChartJsPolarAreaChart from '@/views/charts/chartjs/ChartJsPolarAreaChart.vue'
@@ -39,7 +39,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
         title="Statistics"
         subtitle="Commercial networks and enterprises"
       >
-        <!-- Body -->
         <VCardText>
           <ChartJsLineChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -52,7 +51,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
       md="6"
     >
       <VCard title="Radar Chart">
-        <!-- Body -->
         <VCardText>
           <ChartJsRadarChart />
         </VCardText>
@@ -65,7 +63,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
       md="6"
     >
       <VCard title="Average Skills">
-        <!-- Body -->
         <VCardText>
           <ChartJsPolarAreaChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -74,17 +71,11 @@ const chartJsCustomColors: ChartJsCustomColors = {
 
     <!-- 👉  Bubble Chart -->
     <VCol cols="12">
-      <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>Bubble Chart</VCardTitle>
+      <VCard title="Bubble Chart">
+        <template #append>
+          <span class="text-subtitle-2">$ 100,000</span>
+        </template>
 
-          <template #append>
-            <span class="text-subtitle-2">$ 100,000</span>
-          </template>
-        </VCardItem>
-
-        <!-- Body -->
         <VCardText>
           <ChartJsBubbleChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -93,25 +84,19 @@ const chartJsCustomColors: ChartJsCustomColors = {
 
     <!-- 👉 New Product Data Scatter Chart -->
     <VCol cols="12">
-      <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>New Product Data</VCardTitle>
+      <VCard title="New Product Data">
+        <template #append>
+          <VBtnToggle
+            color="primary"
+            variant="outlined"
+            density="compact"
+          >
+            <VBtn>Daily</VBtn>
+            <VBtn>Monthly</VBtn>
+            <VBtn>Yearly</VBtn>
+          </VBtnToggle>
+        </template>
 
-          <template #append>
-            <VBtnToggle
-              color="primary"
-              variant="outlined"
-              density="compact"
-            >
-              <VBtn>Daily</VBtn>
-              <VBtn>Monthly</VBtn>
-              <VBtn>Yearly</VBtn>
-            </VBtnToggle>
-          </template>
-        </VCardItem>
-
-        <!-- Body -->
         <VCardText>
           <ChartJsScatterChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -120,23 +105,17 @@ const chartJsCustomColors: ChartJsCustomColors = {
 
     <!-- 👉 Data Science Area Line Chart -->
     <VCol cols="12">
-      <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>Data Science</VCardTitle>
+      <VCard title="Data Science">
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
-
-        <!-- Body -->
         <VCardText>
           <ChartJsLineAreaChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -148,23 +127,17 @@ const chartJsCustomColors: ChartJsCustomColors = {
       cols="12"
       md="6"
     >
-      <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>Latest Statistics</VCardTitle>
+      <VCard title="Latest Statistics">
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
-
-        <!-- Body -->
         <VCardText>
           <ChartJsBarChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -176,26 +149,22 @@ const chartJsCustomColors: ChartJsCustomColors = {
       cols="12"
       md="6"
     >
-      <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>Balance</VCardTitle>
-          <VCardSubtitle>$74,123</VCardSubtitle>
+      <VCard
+        title="Balance"
+        subtitle="$74,123"
+      >
+        <template #append>
+          <div class="date-picker-wrapper">
+            <AppDateTimePicker
+              model-value="2022-06-09"
+              prepend-inner-icon="mdi-calendar-blank-outline"
+              density="compact"
+            />
+          </div>
+        </template>
 
-          <template #append>
-            <div class="date-picker-wrapper">
-              <AppDateTimePicker
-                model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
-              />
-            </div>
-          </template>
-        </VCardItem>
-
-        <!-- Body -->
         <VCardText>
-          <ChartjsHorizontalBarChart :colors="chartJsCustomColors" />
+          <ChartJsHorizontalBarChart :colors="chartJsCustomColors" />
         </VCardText>
       </VCard>
     </VCol>

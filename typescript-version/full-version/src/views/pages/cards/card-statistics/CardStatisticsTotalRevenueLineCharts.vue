@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
-const { theme } = useThemeConfig()
-
-const currentTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.colors })
 
 const series = [
   {
@@ -14,7 +10,9 @@ const series = [
   },
 ]
 
-const chartOptions = controlledComputed(theme, () => {
+const chartOptions = computed(() => {
+  const currentTheme = vuetifyTheme.current.value.colors
+
   return {
     grid: {
       show: false,
@@ -32,7 +30,7 @@ const chartOptions = controlledComputed(theme, () => {
         top: 10,
         blur: 4,
 
-        color: currentTheme.value.primary,
+        color: currentTheme.primary,
         opacity: 0.09,
       },
       toolbar: {
@@ -49,8 +47,8 @@ const chartOptions = controlledComputed(theme, () => {
           seriesIndex: 0,
 
           dataPointIndex: series[0].data.length - 1,
-          fillColor: currentTheme.value.surface,
-          strokeColor: currentTheme.value.primary,
+          fillColor: currentTheme.surface,
+          strokeColor: currentTheme.primary,
           size: 6,
         },
       ],
@@ -83,7 +81,7 @@ const chartOptions = controlledComputed(theme, () => {
       enabled: false,
     },
 
-    colors: [currentTheme.value.primary],
+    colors: [currentTheme.primary],
   }
 })
 </script>

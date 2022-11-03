@@ -69,29 +69,27 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   <VCard
     v-if="invoices"
     id="invoice-list"
+    title="Invoice List"
   >
-    <VCardItem>
-      <VCardTitle>Invoice List</VCardTitle>
-      <template #append>
-        <VBtn
-          color="primary"
-          append-icon="mdi-chevron-down"
-        >
-          Export
-          <VMenu activator="parent">
-            <VList density="compact">
-              <VListItem
-                v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
-                :key="index"
-                :value="index"
-              >
-                <VListItemTitle>{{ item }}</VListItemTitle>
-              </VListItem>
-            </VList>
-          </VMenu>
-        </VBtn>
-      </template>
-    </VCardItem>
+    <template #append>
+      <VBtn
+        color="primary"
+        append-icon="mdi-chevron-down"
+      >
+        Export
+        <VMenu activator="parent">
+          <VList density="compact">
+            <VListItem
+              v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
+              :key="index"
+              :value="index"
+            >
+              <VListItemTitle>{{ item }}</VListItemTitle>
+            </VListItem>
+          </VList>
+        </VMenu>
+      </VBtn>
+    </template>
 
     <VDivider />
 

@@ -7,17 +7,6 @@
   min-block-size: calc(var(--vh, 1vh) * 100);
 }
 
-.misc-footer-img {
-  position: absolute;
-  inline-size: 100%;
-  inset-block-end: 0;
-}
-
 .misc-avatar {
-  z-index: 1;
-}
-
-.misc-footer-tree {
-  position: absolute;
   z-index: 1;
 }

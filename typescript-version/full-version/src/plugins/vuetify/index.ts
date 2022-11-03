@@ -4,7 +4,7 @@ import { icons } from './icons'
 import theme from './theme'
 
 // Styles
-import '@core/scss/base/libs/vuetify/index.scss'
+import '@core/scss/template/libs/vuetify/index.scss'
 import 'vuetify/styles'
 
 export default createVuetify({

@@ -1,25 +1,23 @@
 <script setup lang="ts">
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const { theme } = useThemeConfig()
-
-const currentTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.colors })
-const variableTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.variables })
 
 const series = [78]
 
-const chartOptions = controlledComputed(theme, () => {
+const chartOptions = computed(() => {
+  const currentTheme = vuetifyTheme.current.value.colors
+  const variableTheme = vuetifyTheme.current.value.variables
+
   return {
     chart: {
       sparkline: {
         enabled: true,
       },
     },
-    colors: [currentTheme.value.info],
+    colors: [currentTheme.info],
     plotOptions: {
       radialBar: {
         startAngle: -90,
@@ -35,11 +33,11 @@ const chartOptions = controlledComputed(theme, () => {
             fontSize: '1.25rem',
             fontWeight: '600',
             offsetY: 0,
-            color: `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['high-emphasis-opacity']})`,
+            color: `rgba(${hexToRgb(currentTheme['on-surface'])},${variableTheme['high-emphasis-opacity']})`,
           },
         },
         track: {
-          background: currentTheme.value.background,
+          background: currentTheme.background,
         },
       },
     },

@@ -65,26 +65,20 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
           :key="subCategory.slug"
           :value="subCategory.slug"
         >
-          <VCard>
-            <VCardItem>
-              <template #prepend>
-                <VAvatar
-                  color="primary"
-                  variant="tonal"
-                  rounded
-                  size="42"
-                >
-                  <VIcon
-                    :icon="subCategory.icon"
-                    size="26"
-                  />
-                </VAvatar>
-              </template>
-
-              <VCardTitle>
-                {{ subCategory.title }}
-              </VCardTitle>
-            </VCardItem>
+          <VCard :title="subCategory.title">
+            <template #prepend>
+              <VAvatar
+                color="primary"
+                variant="tonal"
+                rounded
+                size="42"
+              >
+                <VIcon
+                  :icon="subCategory.icon"
+                  size="26"
+                />
+              </VAvatar>
+            </template>
 
             <VCardText>
               <VList class="card-list mb-6">

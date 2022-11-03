@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import misc404 from '@/assets/images/pages/404.png'
-import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
-import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
-import tree from '@/assets/images/pages/tree.png'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-
-const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </script>
 
 <template>
@@ -31,28 +25,11 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
         Back to Home
       </VBtn>
     </div>
-
-    <!-- 👉 Footer -->
-    <VImg
-      :src="tree"
-      class="misc-footer-tree d-none d-md-block"
-    />
-
-    <VImg
-      :src="authThemeMask"
-      class="misc-footer-img d-none d-md-block"
-    />
   </div>
 </template>
 
 <style lang="scss">
-@use "@core/scss/base/pages/misc.scss";
-
-.misc-footer-tree {
-  inline-size: 15.625rem;
-  inset-block-end: 3.5rem;
-  inset-inline-start: 0.375rem;
-}
+@use "@core/scss/template/pages/misc.scss";
 </style>
 
 <route lang="yaml">

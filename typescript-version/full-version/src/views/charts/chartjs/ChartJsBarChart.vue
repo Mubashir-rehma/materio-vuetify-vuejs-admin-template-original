@@ -2,7 +2,6 @@
 import { useTheme } from 'vuetify'
 import BarChart from '@/@core/libs/chartjs/components/BarChart'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLatestBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 
 interface Props {
@@ -11,10 +10,9 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartOptions = controlledComputed(theme, () => getLatestBarChartConfig(vuetifyTheme.current.value))
+const chartOptions = computed(() => getLatestBarChartConfig(vuetifyTheme.current.value))
 
 const data = {
   labels: [

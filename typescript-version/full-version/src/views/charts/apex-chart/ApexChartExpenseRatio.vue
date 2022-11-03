@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getDonutChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const expenseRationChartConfig = controlledComputed(theme, () => getDonutChartConfig(vuetifyTheme.current.value))
+const expenseRationChartConfig = computed(() => getDonutChartConfig(vuetifyTheme.current.value))
 
 const series = [85, 16, 50, 50]
 </script>

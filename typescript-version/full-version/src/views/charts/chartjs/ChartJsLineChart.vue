@@ -64,7 +64,7 @@ const data = {
     },
   ],
 }
-const chartConfig = controlledComputed(theme, () => getLineChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getLineChartConfig(vuetifyTheme.current.value))
 </script>
 
 <template>

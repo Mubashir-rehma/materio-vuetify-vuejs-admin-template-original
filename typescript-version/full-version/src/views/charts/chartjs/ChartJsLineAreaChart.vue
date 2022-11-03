@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineAreaChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 interface Props {
@@ -10,7 +9,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
 const data = {
@@ -80,7 +78,7 @@ const data = {
   ],
 }
 
-const chartConfig = controlledComputed(theme, () => getLineAreaChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getLineAreaChartConfig(vuetifyTheme.current.value))
 </script>
 
 <template>

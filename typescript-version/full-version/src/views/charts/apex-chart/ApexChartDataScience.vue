@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getColumnChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(theme, () => getColumnChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getColumnChartConfig(vuetifyTheme.current.value))
 
 const series = [
   {

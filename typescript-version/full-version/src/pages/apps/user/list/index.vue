@@ -306,7 +306,7 @@ const addNewUser = (userData: UserProperties) => {
                 <div class="d-flex flex-column">
                   <h6 class="text-sm">
                     <RouterLink
-                      :to="{ name: 'user-view-id', params: { id: user.id } }"
+                      :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
                       class="font-weight-medium"
                       style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
                     >
@@ -368,7 +368,7 @@ const addNewUser = (userData: UserProperties) => {
 
                 <VMenu activator="parent">
                   <VList>
-                    <VListItem :to="{ name: 'user-view-id', params: { id: user.id } }">
+                    <VListItem :to="{ name: 'apps-user-view-id', params: { id: user.id } }">
                       <template #prepend>
                         <VIcon
                           icon="mdi-eye-outline"

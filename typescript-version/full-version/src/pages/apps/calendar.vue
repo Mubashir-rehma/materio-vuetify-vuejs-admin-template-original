@@ -20,7 +20,7 @@ watch(isEventHandlerSidebarActive, val => {
   if (!val)
     event.value = structuredClone(blankEvent)
 })
-const { isLeftSidebarOpen } = useResponsiveLeftSidebar({ sidebarWidth: 250 })
+const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // 👉 useCalendar
 const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent } = useCalendar(event, isEventHandlerSidebarActive, isLeftSidebarOpen)
@@ -93,7 +93,7 @@ const checkAll = computed({
           </div>
         </VNavigationDrawer>
         <VMain>
-          <VCard elevation="0">
+          <VCard flat>
             <FullCalendar
               ref="refCalendar"
               :options="calendarOptions"

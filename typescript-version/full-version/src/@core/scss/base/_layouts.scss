@@ -32,3 +32,12 @@
     }
   }
 }
+
+// ℹ️ Let div/v-layout take full height. E.g. Email App
+.layout-wrapper.layout-nav-type-horizontal {
+  &.layout-content-height-fixed {
+    > .layout-page-content {
+      display: flex;
+    }
+  }
+}

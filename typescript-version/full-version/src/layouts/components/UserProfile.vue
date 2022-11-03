@@ -93,7 +93,7 @@ const logout = () => {
           <VDivider class="my-2" />
 
           <!-- 👉 Profile -->
-          <VListItem :to="{ name: 'user-view-id', params: { id: 21 } }">
+          <VListItem :to="{ name: 'apps-user-view-id', params: { id: 21 } }">
             <template #prepend>
               <VIcon
                 class="me-2"

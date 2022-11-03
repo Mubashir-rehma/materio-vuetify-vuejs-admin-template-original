@@ -22,7 +22,54 @@ export default defineConfig({
         configFile: 'src/styles/variables/_vuetify.scss',
       },
     }),
-    Pages({}),
+    Pages({
+      // exclude: [
+
+      //   // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
+      //   'src/pages/apps/email/index.vue',
+      // ],
+      onRoutesGenerated: (routes: any[]) => [
+        // Email filter
+        {
+          path: '/apps/email/:filter',
+          name: 'apps-email-filter',
+          component: '/src/pages/apps/email/index.vue',
+          meta: {
+            // contentRenderer: 'sidebar-left',
+            // contentClass: 'email-application',
+            // navActiveLink: 'apps-email',
+            layoutWrapperClasses: 'layout-content-height-fixed',
+          },
+
+          // beforeEnter(to, _, next) {
+          //   if (['sent', 'draft', 'starred', 'spam', 'trash'].includes(to.params.filter))
+          //     next()
+          //   else next({ name: 'all' })
+          // },
+        },
+
+        // Email label
+        {
+          path: '/apps/email/label/:label',
+          name: 'apps-email-label',
+          component: '/src/pages/apps/email/index.vue',
+          meta: {
+            // contentRenderer: 'sidebar-left',
+            // contentClass: 'email-application',
+            // navActiveLink: 'apps-email',
+            layoutWrapperClasses: 'layout-content-height-fixed',
+          },
+
+          // beforeEnter(to, _, next) {
+          //   if (['personal', 'company', 'important', 'private'].includes(to.params.label))
+          //     next()
+          //   else next({ name: 'all' })
+          // },
+        },
+        ...routes,
+      ]
+      ,
+    }),
     Layouts(),
     Components({
       dirs: ['src/@core/components', 'src/views/demos'],

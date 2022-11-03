@@ -11,7 +11,7 @@ interface Props {
 interface Emit {
   (e: 'collapsed', isContentCollapsed: boolean): void
   (e: 'refresh', hideOverlay: () => void): void
-  (e: 'remove'): void
+  (e: 'trash'): void
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -54,7 +54,7 @@ const triggerRefresh = () => {
 // trigger removal
 const triggeredRemove = () => {
   isCardRemoved.value = true
-  emit('remove')
+  emit('trash')
 }
 </script>
 

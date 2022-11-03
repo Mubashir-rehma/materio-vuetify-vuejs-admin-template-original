@@ -28,12 +28,6 @@ $card-transition-property-custom: box-shadow, opacity;
   // 👉 Expansion Panel
   $expansion-panel-active-title-min-height: 48px !default,
 
-  // 👉 Navigation Drawer
-  $navigation-drawer-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)) !default,
-
-  // 👉 Table
-  $table-color: rgba(var(--v-theme-on-surface), var(--v-high-medium-opacity)) !default,
-
   // 👉 Tooltip
   $tooltip-background-color: rgba(59, 55, 68, 0.9) !default,
   $tooltip-text-color: rgb(var(--v-theme-on-primary)) !default,

@@ -49,7 +49,7 @@ const perfectScrollbarSettings = {
     :width="400"
     :model-value="props.isDrawerOpen"
     class="scrollable-content"
-    @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
+    @update:model-value="(val: unknown) => $emit('update:isDrawerOpen', val)"
   >
     <!-- 👉 Header -->
     <div class="d-flex align-center bg-var-theme-background px-5 py-2">

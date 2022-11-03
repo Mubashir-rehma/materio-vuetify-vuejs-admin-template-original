@@ -10,9 +10,10 @@ export const useThemeConfig = () => {
       themeConfig.app.theme.value = value
       localStorage.setItem(`${themeConfig.app.title}-theme`, value.toString())
 
-      if (value !== 'light')
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        isVerticalNavSemiDark.value = false
+      // ℹ️ We will not reset semi dark value when turning off dark mode because some user think it as bug
+      // if (value !== 'light')
+      //   // eslint-disable-next-line @typescript-eslint/no-use-before-define
+      //   isVerticalNavSemiDark.value = false
     },
   })
 

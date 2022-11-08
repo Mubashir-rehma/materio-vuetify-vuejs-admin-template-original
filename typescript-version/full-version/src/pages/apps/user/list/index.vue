@@ -307,8 +307,7 @@ const addNewUser = (userData: UserProperties) => {
                   <h6 class="text-sm">
                     <RouterLink
                       :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
-                      class="font-weight-medium"
-                      style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
+                      class="font-weight-medium user-list-name"
                     >
                       {{ user.fullName }}
                     </RouterLink>
@@ -472,5 +471,9 @@ const addNewUser = (userData: UserProperties) => {
 
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.user-list-name:not(:hover) {
+  color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 </style>

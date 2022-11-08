@@ -6,6 +6,11 @@ export default [
     to: 'apps-email',
   },
   {
+    title: 'Chat',
+    icon: { icon: 'mdi-message-outline' },
+    to: 'apps-chat',
+  },
+  {
     title: 'Calendar',
     icon: { icon: 'mdi-calendar-blank-outline' },
     to: 'apps-calendar',

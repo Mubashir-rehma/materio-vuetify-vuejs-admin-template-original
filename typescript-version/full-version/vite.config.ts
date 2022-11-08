@@ -35,17 +35,9 @@ export default defineConfig({
           name: 'apps-email-filter',
           component: '/src/pages/apps/email/index.vue',
           meta: {
-            // contentRenderer: 'sidebar-left',
-            // contentClass: 'email-application',
-            // navActiveLink: 'apps-email',
+            navActiveLink: 'apps-email',
             layoutWrapperClasses: 'layout-content-height-fixed',
           },
-
-          // beforeEnter(to, _, next) {
-          //   if (['sent', 'draft', 'starred', 'spam', 'trash'].includes(to.params.filter))
-          //     next()
-          //   else next({ name: 'all' })
-          // },
         },
 
         // Email label
@@ -54,17 +46,10 @@ export default defineConfig({
           name: 'apps-email-label',
           component: '/src/pages/apps/email/index.vue',
           meta: {
-            // contentRenderer: 'sidebar-left',
             // contentClass: 'email-application',
-            // navActiveLink: 'apps-email',
+            navActiveLink: 'apps-email',
             layoutWrapperClasses: 'layout-content-height-fixed',
           },
-
-          // beforeEnter(to, _, next) {
-          //   if (['personal', 'company', 'important', 'private'].includes(to.params.label))
-          //     next()
-          //   else next({ name: 'all' })
-          // },
         },
         ...routes,
       ]

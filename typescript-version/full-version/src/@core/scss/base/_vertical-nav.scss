@@ -37,6 +37,10 @@
           // Move logo a bit to align center with the icons in vertical nav mini variant
           .layout-vertical-nav-collapsed#{$sl-layout-nav-type-vertical}:not(.hovered) .nav-header .app-logo {
             transform: translateX(variables.$vertical-nav-header-logo-translate-x-when-vertical-nav-mini);
+
+            @include layoutsMixins.rtl {
+              transform: translateX(-(variables.$vertical-nav-header-logo-translate-x-when-vertical-nav-mini));
+            }
           }
         }
       }

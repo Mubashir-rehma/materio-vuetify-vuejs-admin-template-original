@@ -74,7 +74,6 @@ const emailViewMeta = computed(() => {
 
 // Fetch emails
 const fetchEmails = async () => {
-  console.log('fetching emails...')
   selectedEmails.value = []
   await store.fetchEmails({
     q: q.value,

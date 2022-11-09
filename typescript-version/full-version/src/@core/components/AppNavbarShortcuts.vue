@@ -43,24 +43,27 @@ const router = useRouter()
       offset="14px"
     >
       <VCard
-        title="Shortcuts"
-        width="360"
+        width="340"
         max-height="560"
         class="d-flex flex-column"
       >
-        <template #append>
-          <VBtn
-            size="x-small"
-            variant="text"
-            color="default"
-            icon
-          >
-            <VIcon
-              size="22"
-              icon="mdi-plus-circle-outline"
-            />
-          </VBtn>
-        </template>
+        <VCardItem class="py-4">
+          <VCardTitle>Shortcuts</VCardTitle>
+
+          <template #append>
+            <VBtn
+              size="x-small"
+              variant="text"
+              color="default"
+              icon
+            >
+              <VIcon
+                size="22"
+                icon="mdi-view-grid-plus-outline"
+              />
+            </VBtn>
+          </template>
+        </VCardItem>
 
         <VDivider />
 
@@ -70,20 +73,20 @@ const router = useRouter()
               v-for="(shortcut, index) in props.shortcuts"
               :key="shortcut.title"
               cols="6"
-              class="text-center border-b cursor-pointer pa-6 "
+              class="text-center border-b cursor-pointer pa-4"
               :class="(index + 1) % 2 ? 'border-e' : ''"
               @click="router.push(shortcut.to)"
             >
               <VAvatar
                 variant="tonal"
-                size="50"
+                size="48"
               >
                 <VIcon :icon="shortcut.icon" />
               </VAvatar>
 
-              <p class="font-weight-semibold mt-2 mb-0">
+              <h6 class="text-base font-weight-semibold mt-2 mb-0">
                 {{ shortcut.title }}
-              </p>
+              </h6>
               <span class="text-sm">{{ shortcut.subtitle }}</span>
             </VCol>
           </VRow>

@@ -68,12 +68,12 @@ const router = useRouter()
         <VDivider />
 
         <PerfectScrollbar :options="perfectScrollbarSettings">
-          <VRow class="ma-0">
+          <VRow class="ma-0 mt-n1">
             <VCol
               v-for="(shortcut, index) in props.shortcuts"
               :key="shortcut.title"
               cols="6"
-              class="text-center border-b cursor-pointer pa-4"
+              class="text-center border-t cursor-pointer pa-4"
               :class="(index + 1) % 2 ? 'border-e' : ''"
               @click="router.push(shortcut.to)"
             >

@@ -132,9 +132,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
               multiple
             >
               <VExpansionPanel
-                v-for="(item, index) in faq.faqs"
+                v-for="item in faq.faqs"
                 :key="item.question"
-                :title="`Q${index + 1}:  ${item.question}`"
+                :title="item.question"
                 :text="item.answer"
               />
             </VExpansionPanels>

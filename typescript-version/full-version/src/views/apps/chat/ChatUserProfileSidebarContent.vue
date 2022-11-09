@@ -29,7 +29,7 @@ const perfectScrollbarOptions = {
 <template>
   <template v-if="store.profileUser">
     <!-- Close Button -->
-    <div class="pt-2 me-2 text-right">
+    <div class="pt-2 me-2 text-end">
       <VBtn
         variant="text"
         color="default"

@@ -43,8 +43,8 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: rgb(var(--v-code-background-color));
     border-radius: 0.5rem;
+    background: rgb(var(--v-code-background-color));
   }
 
   &::-webkit-scrollbar-corner {

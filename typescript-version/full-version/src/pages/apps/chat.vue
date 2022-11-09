@@ -99,7 +99,7 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
       touchless
       absolute
       class="user-profile-sidebar"
-      :location="$vuetify.rtl.isRtl ? 'end' : 'start'"
+      :location="$vuetify.locale.isRtl ? 'end' : 'start'"
       width="370"
     >
       <ChatUserProfileSidebarContent @close="isUserProfileSidebarOpen = false" />
@@ -111,7 +111,7 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
       width="374"
       absolute
       temporary
-      :location="$vuetify.rtl.isRtl ? 'start' : 'end'"
+      :location="$vuetify.locale.isRtl ? 'start' : 'end'"
       touchless
       class="active-chat-user-profile-sidebar"
     >

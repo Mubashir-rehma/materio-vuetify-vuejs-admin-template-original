@@ -24,7 +24,7 @@ const perfectScrollbarOptions = {
     <!-- Close Button -->
     <div
       class="pt-2 me-2"
-      :class="$vuetify.rtl.isRtl ? 'text-left' : 'text-right'"
+      :class="$vuetify.locale.isRtl ? 'text-left' : 'text-right'"
     >
       <VBtn
         variant="text"

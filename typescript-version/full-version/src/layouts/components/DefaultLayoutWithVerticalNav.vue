@@ -26,37 +26,37 @@ injectSkinClasses()
 
 const shortcuts = [
   {
-    icon: 'tabler-calendar',
+    icon: 'mdi-calendar',
     title: 'Calendar',
     subtitle: 'Appointments',
     to: { name: 'apps-calendar' },
   },
   {
-    icon: 'tabler-file-invoice',
+    icon: 'mdi-file-document-outline',
     title: 'Invoice App',
     subtitle: 'Manage Accounts',
     to: { name: 'apps-invoice-list' },
   },
   {
-    icon: 'tabler-user',
+    icon: 'mdi-account-outline',
     title: 'Users',
     subtitle: 'Manage Users',
     to: { name: 'apps-user-list' },
   },
   {
-    icon: 'tabler-layout-collage',
+    icon: 'mdi-view-dashboard-outline',
     title: 'Dashboard',
     subtitle: 'Dashboard Analytics',
     to: { name: 'dashboards-analytics' },
   },
   {
-    icon: 'tabler-settings',
+    icon: 'mdi-cog-outline',
     title: 'Settings',
     subtitle: 'Account Settings',
     to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
   },
   {
-    icon: 'tabler-help',
+    icon: 'mdi-help-circle-outline',
     title: 'Help Center',
     subtitle: 'FAQs & Articles',
     to: { name: 'pages-help-center' },

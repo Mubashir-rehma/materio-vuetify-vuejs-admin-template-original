@@ -15,7 +15,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  togglerIcon: 'tabler-layout-grid-add',
+  togglerIcon: 'mdi-view-grid-plus-outline',
 })
 
 const perfectScrollbarSettings = {
@@ -54,7 +54,7 @@ const router = useRouter()
           >
             <VIcon
               size="22"
-              icon="tabler-circle-plus"
+              icon="mdi-plus-circle-outline"
             />
           </VBtn>
         </template>

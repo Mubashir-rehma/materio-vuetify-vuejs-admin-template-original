@@ -96,7 +96,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 >
                   <template #prepend>
                     <VIcon
-                      icon="tabler-chevron-right"
+                      icon="mdi-chevron-right"
                       size="18"
                       class="me-2"
                     />
@@ -112,7 +112,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 :to="{ name: 'pages-help-center' }"
               >
                 <VIcon
-                  icon="tabler-chevron-left"
+                  icon="mdi-chevron-left"
                   class="flip-in-rtl"
                 />
                 <span>Back to help center</span>

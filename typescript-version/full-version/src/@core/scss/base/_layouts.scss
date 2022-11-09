@@ -1,3 +1,5 @@
+@use "@configured-variables" as variables;
+
 /* ℹ️ This styles extends the existing layout package's styles for handling cases that aren't related to layouts package */
 
 /*
@@ -38,6 +40,24 @@
   &.layout-content-height-fixed {
     > .layout-page-content {
       display: flex;
+    }
+  }
+}
+
+// 👉 Floating navbar styles
+@if variables.$vertical-nav-navbar-style == "floating" {
+  // ℹ️ Add spacing above navbar if navbar is floating (was in %layout-navbar-sticky placeholder)
+  .layout-nav-type-vertical.layout-navbar-sticky {
+    .layout-navbar {
+      inset-block-start: variables.$vertical-nav-floating-navbar-top;
+    }
+
+    /*
+      ℹ️ If it's floating navbar
+      Add `vertical-nav-floating-navbar-top` as margin top to .layout-page-content
+    */
+    .layout-page-content {
+      margin-block-start: variables.$vertical-nav-floating-navbar-top;
     }
   }
 }

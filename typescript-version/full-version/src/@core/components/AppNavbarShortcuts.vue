@@ -38,7 +38,10 @@ const router = useRouter()
       :icon="props.togglerIcon"
     />
 
-    <VMenu activator="parent">
+    <VMenu
+      activator="parent"
+      offset="14px"
+    >
       <VCard
         title="Shortcuts"
         width="360"

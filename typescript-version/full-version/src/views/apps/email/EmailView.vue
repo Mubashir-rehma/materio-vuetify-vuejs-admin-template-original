@@ -143,7 +143,7 @@ const perfectScrollbarSettings = {
           variant="text"
           color="default"
           size="small"
-          @click="$emit('unread'); $emit('close')"
+          @click.stop="$emit('unread'); $emit('close')"
         >
           <VIcon
             size="24"
@@ -207,7 +207,7 @@ const perfectScrollbarSettings = {
                 v-for="label in labels"
                 :key="label.title"
                 href="#"
-                @click="updateMailLabel(label.title)"
+                @click.stop="updateMailLabel(label.title)"
               >
                 <template #prepend>
                   <VBadge

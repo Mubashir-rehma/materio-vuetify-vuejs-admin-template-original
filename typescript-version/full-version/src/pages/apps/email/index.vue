@@ -163,9 +163,11 @@ const openEmail = (email: Email) => {
 const refreshOpenedEmail = async () => {
   await fetchEmails()
 
-  openedEmail.value = store.emails.find(
-    e => e.id === (openedEmail.value as Email).id,
-  ) as Email
+  if (openedEmail.value) {
+    openedEmail.value = store.emails.find(
+      e => e.id === (openedEmail.value as Email).id,
+    ) as Email
+  }
 }
 </script>
 

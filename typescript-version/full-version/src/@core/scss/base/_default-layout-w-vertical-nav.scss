@@ -49,7 +49,9 @@ $header: ".layout-navbar";
   @else if  variables.$vertical-nav-navbar-style == "floating" {
     // ℹ️ Regardless of navbar is contained or not => Apply overlay to .layout-navbar
     .layout-navbar {
-      @extend %default-layout-vertical-nav-floating-navbar-overlay;
+      &.navbar-blur {
+        @extend %default-layout-vertical-nav-floating-navbar-overlay;
+      }
     }
 
     &:not(.layout-navbar-sticky) {

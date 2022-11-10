@@ -16,8 +16,11 @@
 }
 
 %default-layout-vertical-nav-floating-navbar-overlay {
-  &::before {
+  isolation: isolate;
+
+  &::after {
     position: absolute;
+    z-index: -1;
     background:
       linear-gradient(
         180deg,

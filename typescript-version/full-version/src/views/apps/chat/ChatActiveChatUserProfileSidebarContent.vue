@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useChat } from './useChat'
-import { avatarText } from '@core/utils/formatters'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
+import { avatarText } from '@core/utils/formatters'
 
 const emit = defineEmits<{
   (e: 'close'): void
@@ -86,14 +86,14 @@ const perfectScrollbarOptions = {
           for="textarea-user-about"
           class="text-sm text-disabled"
         >ABOUT</span>
-        <p class="mt-1">
+        <p class="mt-2">
           {{ store.activeChat.contact.about }}
         </p>
       </div>
 
       <!-- Personal Information -->
       <div class="mb-8">
-        <span class="d-block text-sm text-disabled mb-2">PERSONAL INFORMATION</span>
+        <span class="d-block text-sm text-disabled mb-3">PERSONAL INFORMATION</span>
         <div class="d-flex align-center">
           <VIcon
             class="me-2"
@@ -119,7 +119,7 @@ const perfectScrollbarOptions = {
 
       <!-- Options -->
       <div>
-        <span class="d-block text-sm text-disabled mb-2">OPTIONS</span>
+        <span class="d-block text-sm text-disabled mb-3">OPTIONS</span>
         <div class="d-flex align-center">
           <VIcon
             class="me-2"
@@ -151,7 +151,7 @@ const perfectScrollbarOptions = {
         <div class="d-flex align-center">
           <VIcon
             class="me-3 ms-1"
-            size="18"
+            size="16"
             icon="mdi-block-helper"
           />
           <span>Block Contact</span>

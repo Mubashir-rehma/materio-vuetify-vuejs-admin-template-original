@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import ChatLeftSidebarContent from '@/views/apps/chat/ChatLeftSidebarContent.vue'
-import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSidebarContent.vue'
+import type { ChatContact as TypeChatContact } from '@/@fake-db/types'
 import ChatActiveChatUserProfileSidebarContent from '@/views/apps/chat/ChatActiveChatUserProfileSidebarContent.vue'
+import ChatLeftSidebarContent from '@/views/apps/chat/ChatLeftSidebarContent.vue'
 import ChatLog from '@/views/apps/chat/ChatLog.vue'
+import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSidebarContent.vue'
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
 import { avatarText } from '@core/utils/formatters'
-import type { ChatContact as TypeChatContact } from '@/@fake-db/types'
 
 // composables
 const vuetifyDisplays = useDisplay()
@@ -147,7 +147,7 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
         class="d-flex flex-column h-100"
       >
         <!-- 👉 Active chat header -->
-        <div class="active-chat-header d-flex align-center">
+        <div class="active-chat-header d-flex align-center text-medium-emphasis">
           <!-- Sidebar toggler -->
           <VBtn
             variant="text"
@@ -189,7 +189,9 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
           </VBadge>
 
           <div class="flex-grow-1 ms-4 overflow-hidden">
-            <span>{{ store.activeChat.contact.fullName }}</span>
+            <h6 class="text-base font-weight-regular">
+              {{ store.activeChat.contact.fullName }}
+            </h6>
             <span class="d-block text-sm text-truncate text-disabled">{{ store.activeChat.contact.role }}</span>
           </div>
 

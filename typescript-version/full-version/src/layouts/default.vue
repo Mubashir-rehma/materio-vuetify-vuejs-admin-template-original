@@ -7,19 +7,11 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { AppContentLayoutNav } from '@layouts/enums'
 
 const { width: windowWidth } = useWindowSize()
-const { appContentLayoutNav } = useThemeConfig()
+const { appContentLayoutNav, switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
 
-// ℹ️ Performance: Only add `switchToVerticalNavOnLtOverlayNavBreakpoint` if `appContentLayoutNav` is horizontal
-watchOnce(
-  () => appContentLayoutNav.value === AppContentLayoutNav.Horizontal,
-  () => {
-    const { switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
-
-    // ℹ️ This will switch to vertical nav when define breakpoint is reached when in horizontal nav layout
-    // Remove below composable usage if you are not using horizontal nav layout in your app
-    switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
-  },
-)
+// ℹ️ This will switch to vertical nav when define breakpoint is reached when in horizontal nav layout
+// Remove below composable usage if you are not using horizontal nav layout in your app
+switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
 </script>
 
 <template>

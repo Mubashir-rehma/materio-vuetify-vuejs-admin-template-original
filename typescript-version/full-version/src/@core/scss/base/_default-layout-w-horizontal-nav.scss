@@ -20,6 +20,10 @@
 
   .layout-horizontal-nav {
     @extend %default-layout-horizontal-nav-nav;
+
+    .nav-items {
+      @extend %default-layout-horizontal-nav-nav-items-list;
+    }
   }
 
   // 👉 App footer

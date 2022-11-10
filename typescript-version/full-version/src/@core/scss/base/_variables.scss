@@ -116,6 +116,9 @@ $vertical-nav-nav-group-arrow-transition-timing-function: ease-in-out !default;
 */
 $horizontal-nav-padding: 0.6875rem !default;
 
+// Gap between top level horizontal nav items
+$horizontal-nav-top-level-items-gap: 4px !default;
+
 // Horizontal nav icons
 $horizontal-nav-items-icon-size: 1.5rem;
 $horizontal-nav-third-level-icon-size: 0.9rem;

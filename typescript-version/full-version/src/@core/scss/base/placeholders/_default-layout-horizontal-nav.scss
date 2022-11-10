@@ -21,3 +21,7 @@
 %default-layout-horizontal-nav-nav {
   padding-block: variables.$horizontal-nav-padding;
 }
+
+%default-layout-horizontal-nav-nav-items-list {
+  gap: variables.$horizontal-nav-top-level-items-gap;
+}

@@ -94,6 +94,7 @@ const perfectScrollbarSettings = {
           color="default"
           size="small"
           :disabled="!props.emailMeta.hasPreviousEmail"
+          class="text-medium-emphasis"
           @click="$emit('navigated', 'previous')"
         >
           <VIcon
@@ -106,6 +107,7 @@ const perfectScrollbarSettings = {
           variant="text"
           color="default"
           size="small"
+          class="text-medium-emphasis"
           :disabled="!props.emailMeta.hasNextEmail"
           @click="$emit('navigated', 'next')"
         >
@@ -119,7 +121,7 @@ const perfectScrollbarSettings = {
       <VDivider />
 
       <!-- 👉 Action bar -->
-      <div class="email-view-action-bar d-flex align-center px-5">
+      <div class="email-view-action-bar d-flex align-center text-medium-emphasis px-5">
         <!-- Trash -->
         <VBtn
           v-show="!props.email.isDeleted"
@@ -169,6 +171,7 @@ const perfectScrollbarSettings = {
                 <VListItem
                   :class="shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
                   class="items-center"
+                  href="#"
                   @click="handleMoveMailsTo(moveTo.action)"
                 >
                   <template #prepend>
@@ -203,6 +206,7 @@ const perfectScrollbarSettings = {
               <VListItem
                 v-for="label in labels"
                 :key="label.title"
+                href="#"
                 @click="updateMailLabel(label.title)"
               >
                 <template #prepend>

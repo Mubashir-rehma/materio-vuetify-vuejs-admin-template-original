@@ -291,6 +291,7 @@ const refreshOpenedEmail = async () => {
                         shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'
                       "
                       class="items-center"
+                      href="#"
                       @click="handleMoveMailsTo(moveTo.action)"
                     >
                       <template #prepend>
@@ -325,6 +326,7 @@ const refreshOpenedEmail = async () => {
                   <VListItem
                     v-for="label in labels"
                     :key="label.title"
+                    href="#"
                     @click="updateLabel(label.title)"
                   >
                     <template #prepend>
@@ -546,6 +548,10 @@ meta:
 
     .email-meta {
       display: none;
+    }
+
+    + .email-item {
+      border-color: transparent;
     }
   }
 }

@@ -37,7 +37,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
         "source.fixAll.stylelint": true,
-        "source.organizeImports": false,
+        "source.organizeImports": true,
     },
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,

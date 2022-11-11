@@ -44,7 +44,7 @@
   /* Handle */
   &::-webkit-scrollbar-thumb {
     border-radius: 0.5rem;
-    background: rgb(var(--v-code-background-color));
+    background: rgb(var(--v-theme-perfect-scrollbar-thumb));
   }
 
   &::-webkit-scrollbar-corner {

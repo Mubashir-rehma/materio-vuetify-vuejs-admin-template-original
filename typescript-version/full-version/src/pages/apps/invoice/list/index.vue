@@ -183,7 +183,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
           <!-- 👉 Create invoice -->
           <VBtn
             prepend-icon="mdi-plus"
-            :to="{ name: 'apps-invoice-add' }"
+            :to="{ name: '/apps/invoice/add/' }"
           >
             Create invoice
           </VBtn>
@@ -262,7 +262,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
             <!-- 👉 Id -->
             <td>
-              <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
+              <RouterLink :to="{ name: '/apps/invoice/preview/[id]', params: { id: invoice.id } }">
                 #{{ invoice.id }}
               </RouterLink>
             </td>
@@ -358,7 +358,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 variant="plain"
                 color="default"
                 size="x-small"
-                :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }"
+                :to="{ name: '/apps/invoice/preview/[id]', params: { id: invoice.id } }"
               >
                 <VIcon
                   :size="24"
@@ -391,7 +391,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                       <VListItemTitle>Download</VListItemTitle>
                     </VListItem>
 
-                    <VListItem :to="{ name: 'apps-invoice-edit-id', params: { id: invoice.id } }">
+                    <VListItem :to="{ name: '/apps/invoice/edit/[id]', params: { id: invoice.id } }">
                       <template #prepend>
                         <VIcon
                           size="24"

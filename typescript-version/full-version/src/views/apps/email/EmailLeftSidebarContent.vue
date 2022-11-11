@@ -7,13 +7,13 @@ const folders = [
   {
     title: 'Inbox',
     prependIcon: 'mdi-email-outline',
-    to: { name: 'apps-email' },
+    to: { name: '/apps/email/' },
   },
   {
     title: 'Sent',
     prependIcon: 'mdi-send-outline',
     to: {
-      name: 'apps-email-filter',
+      name: '/apps/email/-filter',
       params: { filter: 'sent' },
     },
   },
@@ -21,7 +21,7 @@ const folders = [
     title: 'Draft',
     prependIcon: 'mdi-pencil-outline',
     to: {
-      name: 'apps-email-filter',
+      name: '/apps/email/-filter',
       params: { filter: 'draft' },
     },
   },
@@ -29,7 +29,7 @@ const folders = [
     title: 'Starred',
     prependIcon: 'mdi-star-outline',
     to: {
-      name: 'apps-email-filter',
+      name: '/apps/email/-filter',
       params: { filter: 'starred' },
     },
   },
@@ -37,7 +37,7 @@ const folders = [
     title: 'Spam',
     prependIcon: 'mdi-information-outline',
     to: {
-      name: 'apps-email-filter',
+      name: '/apps/email/-filter',
       params: { filter: 'spam' },
     },
   },
@@ -45,7 +45,7 @@ const folders = [
     title: 'Trash',
     prependIcon: 'mdi-delete-outline',
     to: {
-      name: 'apps-email-filter',
+      name: '/apps/email/-filter',
       params: { filter: 'trashed' },
     },
   },
@@ -56,7 +56,7 @@ const labels = [
     title: 'Personal',
     color: 'success',
     to: {
-      name: 'apps-email-label',
+      name: '/apps/email/-label',
       params: { label: 'personal' },
     },
   },
@@ -64,7 +64,7 @@ const labels = [
     title: 'Company',
     color: 'primary',
     to: {
-      name: 'apps-email-label',
+      name: '/apps/email/-label',
       params: { label: 'company' },
     },
   },
@@ -72,7 +72,7 @@ const labels = [
     title: 'Important',
     color: 'warning',
     to: {
-      name: 'apps-email-label',
+      name: '/apps/email/-label',
       params: { label: 'important' },
     },
   },
@@ -80,7 +80,7 @@ const labels = [
     title: 'Private',
     color: 'error',
     to: {
-      name: 'apps-email-label',
+      name: '/apps/email/-label',
       params: { label: 'private' },
     },
   },

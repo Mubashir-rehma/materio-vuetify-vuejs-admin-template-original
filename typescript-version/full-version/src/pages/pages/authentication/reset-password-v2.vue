@@ -79,7 +79,7 @@ const isConfirmPasswordVisible = ref(false)
               <VCol cols="12">
                 <RouterLink
                   class="d-flex align-center justify-center"
-                  :to="{ name: 'pages-authentication-login-v2' }"
+                  :to="{ name: '/pages/authentication/login-v2' }"
                 >
                   <VIcon
                     icon="mdi-chevron-left"

@@ -79,11 +79,12 @@ module.exports = {
       },
     ],
 
-    // ignore virtual files
     'import/no-unresolved': [2, {
       ignore: [
+        // ignore virtual files
         '~pages$',
         'virtual:generated-layouts',
+        'vue-router/auto',
 
         // Ignore vite's ?raw imports
         '.*\?raw',

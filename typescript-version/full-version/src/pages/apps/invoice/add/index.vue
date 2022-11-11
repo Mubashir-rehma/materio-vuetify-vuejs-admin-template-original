@@ -84,7 +84,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
             color="secondary"
             variant="outlined"
             class="mb-3"
-            :to="{ name: 'apps-invoice-preview-id', params: { id: '5036' } }"
+            :to="{ name: '/apps/invoice/preview/[id]', params: { id: '5036' } }"
           >
             Preview
           </VBtn>

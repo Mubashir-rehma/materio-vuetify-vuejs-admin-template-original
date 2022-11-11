@@ -130,7 +130,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         >
           <!-- 👉 Id -->
           <td>
-            <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
+            <RouterLink :to="{ name: '/apps/invoice/preview/[id]', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>
@@ -192,7 +192,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
               variant="plain"
               color="default"
               size="x-small"
-              :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }"
+              :to="{ name: '/apps/invoice/preview/[id]', params: { id: invoice.id } }"
             >
               <VIcon
                 :size="24"
@@ -224,7 +224,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                     <VListItemTitle>Download</VListItemTitle>
                   </VListItem>
 
-                  <VListItem :to="{ name: 'apps-invoice-edit-id', params: { id: invoice.id } }">
+                  <VListItem :to="{ name: '/apps/invoice/edit/[id]', params: { id: invoice.id } }">
                     <template #prepend>
                       <VIcon
                         size="22"

@@ -132,7 +132,7 @@
     // 👉 Sub group
     &.sub-item {
       &.active {
-        @include vuetifyStates.active-states("> .popper-triggerer > .nav-group-label::before");
+        @include mixins.selected-states("> .popper-triggerer > .nav-group-label::before");
       }
 
       // Reduce the icon's size of nested group's nav links (Top level group > Sub group > [Nav links])

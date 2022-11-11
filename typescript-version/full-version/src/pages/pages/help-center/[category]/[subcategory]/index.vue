@@ -43,7 +43,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
           :key="item.slug"
           :value="item.slug"
           :to="{
-            name: '/pages/help-center/-category-subcategory',
+            name: '/pages/help-center/category-subcategory',
             params: { category: apiData.slug, subcategory: item.slug },
           }"
         >
@@ -86,7 +86,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                   v-for="item in subCategory.articles"
                   :key="item.slug"
                   :to="{
-                    name: '/pages/help-center/-category-subcategory-article',
+                    name: '/pages/help-center/category-subcategory-article',
                     params: {
                       category: apiData.slug,
                       subcategory: subCategory.slug,

@@ -44,7 +44,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
           :key="data.slug"
           :value="data.slug"
           :to="{
-            name: '/pages/help-center/-category-subcategory-article',
+            name: '/pages/help-center/category-subcategory-article',
             params: {
               category: route.params.category,
               subcategory: route.params.subcategory,
@@ -68,7 +68,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
               <VBtn
                 variant="tonal"
                 :to="{
-                  name: '/pages/help-center/-category-subcategory',
+                  name: '/pages/help-center/category-subcategory',
                   params: { category: route.params.category, subcategory: route.params.subcategory },
                 }"
               >

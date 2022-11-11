@@ -63,7 +63,7 @@ const email = ref('')
               >
                 <RouterLink
                   class="text-primary ms-2"
-                  :to="{ name: 'login' }"
+                  :to="{ name: '/login' }"
                 >
                   <VIcon
                     class="flip-in-rtl"

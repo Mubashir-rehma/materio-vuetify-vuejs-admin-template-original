@@ -1,8 +1,8 @@
-import { canNavigate } from '@layouts/plugins/casl'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { getHomeRouteForLoggedInUser, getUserData, isUserLoggedIn } from './utils'
+import { canNavigate } from '@layouts/plugins/casl'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,7 +21,7 @@ const router = createRouter({
           if (userRole === 'client')
             return { name: '/access-control' }
 
-          return { name: 'login', query: to.query }
+          return { name: '/login', query: to.query }
         },
       },
       {
@@ -48,6 +48,9 @@ const router = createRouter({
       ...routes,
     ]
 
+    console.log('_routes :>> ', _routes)
+    console.log('setupLayouts(_routes) :>> ', setupLayouts(_routes))
+
     return setupLayouts(_routes)
   },
   scrollBehavior() {
@@ -62,10 +65,10 @@ router.beforeEach((to, _, next) => {
     // Redirect to login if not logged in
     // ℹ️ Only add `to` query param if `to` route is not index route
     if (!isLoggedIn)
-      return next({ name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } })
+      return next({ name: '/login', query: { to: to.name !== 'index' ? to.fullPath : undefined } })
 
     // If logged in => not authorized
-    return next({ name: 'not-authorized' })
+    return next({ name: '/not-authorized' })
   }
 
   // Redirect if logged in

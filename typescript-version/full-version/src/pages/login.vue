@@ -136,7 +136,7 @@ const onSubmit = () => {
                   />
                   <RouterLink
                     class="text-primary ms-2 mb-1"
-                    :to="{ name: 'forgot-password' }"
+                    :to="{ name: '/forgot-password' }"
                   >
                     Forgot Password?
                   </RouterLink>
@@ -158,7 +158,7 @@ const onSubmit = () => {
                 <span>New on our platform?</span>
                 <RouterLink
                   class="text-primary ms-2"
-                  :to="{ name: 'register' }"
+                  :to="{ name: '/register' }"
                 >
                   Create an account
                 </RouterLink>

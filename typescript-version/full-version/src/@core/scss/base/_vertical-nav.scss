@@ -74,6 +74,10 @@
       transform: translateX(-8px);
       transition: opacity 0.15s ease-in-out;
       will-change: opacity;
+
+      @include layoutsMixins.rtl {
+        transform: translateX(8px);
+      }
     }
 
     &.scrolled {

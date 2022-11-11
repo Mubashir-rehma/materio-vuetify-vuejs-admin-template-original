@@ -1,8 +1,8 @@
+import { canNavigate } from '@layouts/plugins/casl'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { getHomeRouteForLoggedInUser, getUserData, isUserLoggedIn } from './utils'
-import { canNavigate } from '@layouts/plugins/casl'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +26,7 @@ const router = createRouter({
       },
       {
         path: '/apps/email/:filter',
-        name: '/apps/email/-filter',
+        name: '/apps/email/[filter]',
         component: () => import('@/pages/apps/email/index.vue'),
         meta: {
           navActiveLink: '/apps/email/',
@@ -37,7 +37,7 @@ const router = createRouter({
       // Email label
       {
         path: '/apps/email/label/:label',
-        name: '/apps/email/-label',
+        name: '/apps/email/[label]',
         component: () => import('@/pages/apps/email/index.vue'),
         meta: {
           // contentClass: 'email-application',

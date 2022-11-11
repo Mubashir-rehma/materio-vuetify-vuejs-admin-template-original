@@ -23,7 +23,7 @@ export const getHomeRouteForLoggedInUser = (userRole: string) => {
   if (userRole === 'admin')
     return '/'
   if (userRole === 'client')
-    return { name: '/access-control' }
+    return { name: 'access-control' }
 
-  return { name: '/login' }
+  return { name: 'login' }
 }

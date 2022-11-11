@@ -4,8 +4,8 @@ export default [
     title: 'Charts',
     icon: { icon: 'mdi-chart-donut' },
     children: [
-      { title: 'Apex Chart', to: '/charts/apex-chart' },
-      { title: 'Chartjs', to: '/charts/chartjs' },
+      { title: 'Apex Chart', to: 'charts-apex-chart' },
+      { title: 'Chartjs', to: 'charts-chartjs' },
     ],
   },
 ]

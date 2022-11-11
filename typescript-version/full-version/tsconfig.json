@@ -58,8 +58,7 @@
     "shims.d.ts",
     "src/**/*",
     "src/**/*.vue",
-    "themeConfig.ts",
-    "typed-router.d.ts"
+    "themeConfig.ts"
   ],
   "exclude": [
     "dist",

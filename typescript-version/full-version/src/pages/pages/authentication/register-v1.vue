@@ -102,7 +102,7 @@ const isPasswordVisible = ref(false)
               <span>Already have an account?</span>
               <RouterLink
                 class="text-primary ms-2"
-                :to="{ name: '/pages/authentication/login-v1' }"
+                :to="{ name: 'pages-authentication-login-v1' }"
               >
                 Sign in instead
               </RouterLink>

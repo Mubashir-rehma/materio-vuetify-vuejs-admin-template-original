@@ -364,7 +364,7 @@ const printInvoice = () => {
               color="secondary"
               variant="outlined"
               class="mb-4"
-              :to="{ name: '/apps/invoice/edit/[id]', params: { id: route.params.id } }"
+              :to="{ name: 'apps-invoice-edit-id', params: { id: route.params.id } }"
             >
               Edit Invoice
             </VBtn>

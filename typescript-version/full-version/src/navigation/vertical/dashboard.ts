@@ -5,11 +5,11 @@ export default [
     children: [
       {
         title: 'Analytics',
-        to: '/dashboards/analytics',
+        to: 'dashboards-analytics',
       },
       {
         title: 'CRM',
-        to: '/dashboards/crm',
+        to: 'dashboards-crm',
       },
     ],
     badgeContent: '2',

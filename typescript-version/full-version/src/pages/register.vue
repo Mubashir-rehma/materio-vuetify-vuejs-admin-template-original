@@ -167,7 +167,7 @@ const onSubmit = () => {
                 <span>Already have an account?</span>
                 <RouterLink
                   class="text-primary ms-2"
-                  :to="{ name: '/login' }"
+                  :to="{ name: 'login' }"
                 >
                   Sign in instead
                 </RouterLink>

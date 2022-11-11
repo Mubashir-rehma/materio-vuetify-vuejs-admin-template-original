@@ -30,7 +30,7 @@ const tabs = [
         v-for="item in tabs"
         :key="item.icon"
         :value="item.tab"
-        :to="{ name: '/pages/account-settings/[tab]', params: { tab: item.tab } }"
+        :to="{ name: 'pages-account-settings-tab', params: { tab: item.tab } }"
       >
         <VIcon
           size="20"
@@ -77,5 +77,5 @@ const tabs = [
 
 <route lang="yaml">
 meta:
-  navActiveLink: /pages/account-settings/[tab]
+  navActiveLink: pages-account-settings-tab
 </route>

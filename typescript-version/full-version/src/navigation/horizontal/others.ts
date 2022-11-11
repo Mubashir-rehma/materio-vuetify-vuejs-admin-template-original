@@ -6,7 +6,7 @@ export default [
       {
         title: 'Access Control',
         icon: { icon: 'mdi-shield-outline' },
-        to: '/access-control',
+        to: 'access-control',
         action: 'read',
         subject: 'Auth',
       },

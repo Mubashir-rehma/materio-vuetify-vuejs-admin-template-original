@@ -51,7 +51,7 @@ const totalArticles = (category: HelpCenterCategoriesType) => {
                 >
                   <RouterLink
                     :to="{
-                      name: '/pages/help-center/category-subcategory',
+                      name: 'pages-help-center-category-subcategory',
                       params: { category: article.slug, subcategory: item.slug },
                     }"
                   >
@@ -63,7 +63,7 @@ const totalArticles = (category: HelpCenterCategoriesType) => {
               <div class="mt-4">
                 <RouterLink
                   :to="{
-                    name: '/pages/help-center/category-subcategory',
+                    name: 'pages-help-center-category-subcategory',
                     params: { category: article.slug, subcategory: article.subCategories[0].slug },
                   }"
                   class="text-base font-weight-semibold"

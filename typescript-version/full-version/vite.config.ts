@@ -6,16 +6,13 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import { defineConfig } from 'vite'
-
-// import Pages from 'vite-plugin-pages'
-import VueRouter from 'unplugin-vue-router/vite'
+import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    VueRouter(),
     vue(),
     vueJsx(),
 
@@ -24,6 +21,39 @@ export default defineConfig({
       styles: {
         configFile: 'src/styles/variables/_vuetify.scss',
       },
+    }),
+    Pages({
+      // exclude: [
+
+      //   // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
+      //   'src/pages/apps/email/index.vue',
+      // ],
+      onRoutesGenerated: (routes: any[]) => [
+        // Email filter
+        {
+          path: '/apps/email/:filter',
+          name: 'apps-email-filter',
+          component: '/src/pages/apps/email/index.vue',
+          meta: {
+            navActiveLink: 'apps-email',
+            layoutWrapperClasses: 'layout-content-height-fixed',
+          },
+        },
+
+        // Email label
+        {
+          path: '/apps/email/label/:label',
+          name: 'apps-email-label',
+          component: '/src/pages/apps/email/index.vue',
+          meta: {
+            // contentClass: 'email-application',
+            navActiveLink: 'apps-email',
+            layoutWrapperClasses: 'layout-content-height-fixed',
+          },
+        },
+        ...routes,
+      ]
+      ,
     }),
     Layouts(),
     Components({

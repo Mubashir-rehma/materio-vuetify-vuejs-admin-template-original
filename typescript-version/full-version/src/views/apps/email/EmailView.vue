@@ -311,10 +311,12 @@ const perfectScrollbarSettings = {
           <VDivider />
 
           <VCardText>
+            <!-- eslint-disable vue/no-v-html -->
             <div
               class="text-base"
               v-html="props.email.message"
             />
+            <!-- eslint-enable -->
           </VCardText>
 
           <template v-if="props.email.attachments.length">

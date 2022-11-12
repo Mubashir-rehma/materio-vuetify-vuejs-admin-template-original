@@ -93,7 +93,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
               <VCardTitle>{{ activeArticle.title }}</VCardTitle>
             </VCardItem>
 
-            <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+            <!-- eslint-disable-next-line vue/no-v-html vue/no-v-text-v-html-on-component -->
             <VCardText v-html="activeArticle.content" />
 
             <VDivider />

@@ -98,6 +98,9 @@ const handleActionClick = async (
   action: 'trash' | 'unread' | 'read' | 'spam' | 'star' | 'unstar',
   emailIds: Email['id'][] = selectedEmails.value,
 ) => {
+  if (!emailIds.length)
+    return
+
   if (action === 'trash')
     store.updateEmails(emailIds, { isDeleted: true })
   else if (action === 'spam')
@@ -188,10 +191,10 @@ const refreshOpenedEmail = async () => {
       @refresh="refreshOpenedEmail"
       @navigated="changeOpenedEmail"
       @close="openedEmail = null"
-      @remove="handleActionClick('trash', [openedEmail!.id])"
-      @unread="handleActionClick('unread', [openedEmail!.id])"
-      @star="handleActionClick('star', [openedEmail!.id])"
-      @unstar="handleActionClick('unstar', [openedEmail!.id])"
+      @remove="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
+      @unread="handleActionClick('unread', openedEmail ? [openedEmail.id] : [])"
+      @star="handleActionClick('star', openedEmail ? [openedEmail.id] : [])"
+      @unstar="handleActionClick('unstar', openedEmail ? [openedEmail.id] : [])"
     />
     <VMain>
       <VCard

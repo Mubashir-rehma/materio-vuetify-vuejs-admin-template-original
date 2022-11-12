@@ -71,7 +71,7 @@ const handleKeyDown = (event: KeyboardEvent, index: number) => {
         :model-value="digits[i - 1]"
         v-bind="defaultStyle"
         maxlength="1"
-        @keydown="(event: KeyboardEvent) => handleKeyDown(event, i)"
+        @keydown="handleKeyDown($event, i)"
       />
     </div>
   </div>

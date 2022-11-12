@@ -40,6 +40,10 @@ const perfectScrollbarSettings = {
   maxScrollbarLength: 60,
   wheelPropagation: false,
 }
+
+const handleDrawerModelValueUpdate = (val: boolean) => {
+  emit('update:isDrawerOpen', val)
+}
 </script>
 
 <template>
@@ -49,7 +53,7 @@ const perfectScrollbarSettings = {
     :width="400"
     :model-value="props.isDrawerOpen"
     class="scrollable-content"
-    @update:model-value="(val: unknown) => $emit('update:isDrawerOpen', val)"
+    @update:model-value="handleDrawerModelValueUpdate"
   >
     <!-- 👉 Header -->
     <div class="d-flex align-center bg-var-theme-background px-5 py-2">

@@ -28,7 +28,7 @@ export default defineConfig({
       //   // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
       //   'src/pages/apps/email/index.vue',
       // ],
-      onRoutesGenerated: (routes: any[]) => [
+      onRoutesGenerated: routes => [
         // Email filter
         {
           path: '/apps/email/:filter',

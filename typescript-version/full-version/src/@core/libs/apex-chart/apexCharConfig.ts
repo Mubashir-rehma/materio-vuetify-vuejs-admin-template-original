@@ -281,6 +281,7 @@ export const getRadialBarChartConfig = (themeColors: ThemeInstance['themes']['va
             fontSize: '1.125rem',
 
             color: themePrimaryTextColor,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             formatter(w: { globals: { seriesTotals: any[]; series: string | any[] } }) {
               const totalValue
                 = w.globals.seriesTotals.reduce((a: number, b: number) => {

@@ -11,12 +11,6 @@ const emit = defineEmits<{
 const store = useChatStore()
 
 const { resolveAvatarBadgeVariant } = useChat()
-
-// Perfect scrollbar options
-const perfectScrollbarOptions = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 </script>
 
 <template>
@@ -78,7 +72,7 @@ const perfectScrollbarOptions = {
     <!-- User Data -->
     <PerfectScrollbar
       class="ps-chat-user-profile-sidebar-content text-medium-emphasis pb-5 px-5"
-      :options="perfectScrollbarOptions"
+      :options="{ wheelPropagation: false }"
     >
       <!-- About -->
       <div class="my-8">

@@ -127,12 +127,6 @@ watch([() => route.params.filter, () => route.params.label], () => {
   openedEmail.value = null
 })
 
-// Perfect scrollbar settings
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 // Email actions
 const handleMoveMailsTo = (action: MoveEmailToAction) => {
   moveSelectedEmailTo(action, selectedEmails.value)
@@ -379,7 +373,7 @@ const refreshOpenedEmail = async () => {
         <!-- 👉 Emails list -->
         <PerfectScrollbar
           tag="ul"
-          :options="perfectScrollbarSettings"
+          :options="{ wheelPropagation: false }"
           class="email-list"
         >
           <li

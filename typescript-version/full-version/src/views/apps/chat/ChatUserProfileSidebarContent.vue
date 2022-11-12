@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useChat } from './useChat'
-import { avatarText } from '@core/utils/formatters'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
+import { avatarText } from '@core/utils/formatters'
 
 const emit = defineEmits<{
   (e: 'close'): void
@@ -18,12 +18,6 @@ const userStatusRadioOptions = [
   { title: 'Do not disturb', value: 'busy', color: 'error' },
   { title: 'Offline', value: 'offline', color: 'secondary' },
 ]
-
-// Perfect scrollbar options
-const perfectScrollbarOptions = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 </script>
 
 <template>
@@ -81,7 +75,7 @@ const perfectScrollbarOptions = {
     <!-- User Data -->
     <PerfectScrollbar
       class="ps-chat-user-profile-sidebar-content pb-5 px-5"
-      :options="perfectScrollbarOptions"
+      :options="{ wheelPropagation: false }"
     >
       <!-- About -->
       <div class="my-5 text-medium-emphasis">

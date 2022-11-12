@@ -75,11 +75,6 @@ const guestsOptions = [
   { avatar: avatar2, name: 'Cheryl May' },
 ]
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 // 👉 Form
 
 const onCancel = () => {
@@ -146,9 +141,7 @@ const endDateTimePickerConfig = computed(() => {
       </VBTn>
     </div>
 
-    <PerfectScrollbar
-      :options="perfectScrollbarSettings"
-    >
+    <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
           <!-- SECTION Form -->

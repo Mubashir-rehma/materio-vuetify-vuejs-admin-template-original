@@ -65,11 +65,6 @@ const onSubmit = () => {
   })
 }
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 const handleDrawerModelValueUpdate = (val: boolean) => {
   emit('update:isDrawerOpen', val)
 }
@@ -101,7 +96,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
       />
     </div>
 
-    <PerfectScrollbar :options="perfectScrollbarSettings">
+    <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
           <!-- 👉 Form -->

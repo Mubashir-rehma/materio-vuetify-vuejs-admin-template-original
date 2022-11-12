@@ -51,11 +51,6 @@ const setPrimaryColor = (color: string) => {
 */
 const getBoxColor = (color: string, index: number) => index ? color : '#a169ff'
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 const { width: windowWidth } = useWindowSize()
 
 const headerValues = computed(() => {
@@ -114,7 +109,7 @@ const headerValues = computed(() => {
 
       <PerfectScrollbar
         tag="ul"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
       >
         <!-- SECTION Theming -->
         <CustomizerSection

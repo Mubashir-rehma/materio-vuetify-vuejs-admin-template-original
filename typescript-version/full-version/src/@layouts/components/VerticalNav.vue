@@ -50,11 +50,6 @@ watch(() => route.name, () => {
 const isVerticalNavScrolled = ref(false)
 const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.value = val
 
-// Perfect scrollbar
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 const handleNavScroll = (evt: Event) => {
   isVerticalNavScrolled.value = (evt.target as HTMLElement).scrollTop > 0
 }
@@ -131,7 +126,7 @@ const handleNavScroll = (evt: Event) => {
         :key="isAppRtl"
         tag="ul"
         class="nav-items"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
         @ps-scroll-y="handleNavScroll"
       >
         <Component

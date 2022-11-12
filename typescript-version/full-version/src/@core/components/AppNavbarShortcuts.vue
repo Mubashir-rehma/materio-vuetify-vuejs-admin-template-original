@@ -18,11 +18,6 @@ const props = withDefaults(defineProps<Props>(), {
   togglerIcon: 'mdi-view-grid-plus-outline',
 })
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 const router = useRouter()
 </script>
 
@@ -67,7 +62,7 @@ const router = useRouter()
 
         <VDivider />
 
-        <PerfectScrollbar :options="perfectScrollbarSettings">
+        <PerfectScrollbar :options="{ wheelPropagation: false }">
           <VRow class="ma-0 mt-n1">
             <VCol
               v-for="(shortcut, index) in props.shortcuts"

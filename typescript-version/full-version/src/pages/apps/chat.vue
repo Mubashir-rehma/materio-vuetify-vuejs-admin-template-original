@@ -40,11 +40,6 @@ const startConversation = () => {
   isLeftSidebarOpen.value = true
 }
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 // Chat message
 const msg = ref('')
 const sendMessage = async () => {
@@ -250,7 +245,7 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
         <PerfectScrollbar
           ref="chatLogPS"
           tag="ul"
-          :options="perfectScrollbarSettings"
+          :options="{ wheelPropagation: false }"
           class="flex-grow-1"
         >
           <ChatLog />

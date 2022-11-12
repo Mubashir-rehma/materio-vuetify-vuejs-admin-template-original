@@ -19,11 +19,6 @@ const { resolveAvatarBadgeVariant } = useChat()
 const search = useVModel(props, 'search')
 
 const store = useChatStore()
-
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 </script>
 
 <template>
@@ -64,7 +59,7 @@ const perfectScrollbarSettings = {
   <PerfectScrollbar
     tag="ul"
     class="chat-contacts-list px-3"
-    :options="perfectScrollbarSettings"
+    :options="{ wheelPropagation: false }"
   >
     <li>
       <span class="chat-contact-header d-block text-primary text-xl font-weight-medium">Chats</span>

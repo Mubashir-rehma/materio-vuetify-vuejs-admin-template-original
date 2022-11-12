@@ -41,11 +41,6 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 
   emit('refresh')
 }
-
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 </script>
 
 <template>
@@ -260,7 +255,7 @@ const perfectScrollbarSettings = {
       <PerfectScrollbar
         tag="div"
         class="mail-content-container flex-grow-1"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
       >
         <VCard class="ma-5">
           <VCardText class="mail-header">

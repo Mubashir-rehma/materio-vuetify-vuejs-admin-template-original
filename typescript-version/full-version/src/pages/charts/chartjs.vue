@@ -32,7 +32,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
 </script>
 
 <template>
-  <VRow>
+  <VRow id="chartjs-wrapper">
     <!-- 👉 Statistics Line Chart  -->
     <VCol cols="12">
       <VCard
@@ -84,18 +84,22 @@ const chartJsCustomColors: ChartJsCustomColors = {
 
     <!-- 👉 New Product Data Scatter Chart -->
     <VCol cols="12">
-      <VCard title="New Product Data">
-        <template #append>
-          <VBtnToggle
-            color="primary"
-            variant="outlined"
-            density="compact"
-          >
-            <VBtn>Daily</VBtn>
-            <VBtn>Monthly</VBtn>
-            <VBtn>Yearly</VBtn>
-          </VBtnToggle>
-        </template>
+      <VCard>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
+          <VCardTitle>New Product Data</VCardTitle>
+
+          <template #append>
+            <VBtnToggle
+              color="primary"
+              variant="outlined"
+              density="compact"
+            >
+              <VBtn>Daily</VBtn>
+              <VBtn>Monthly</VBtn>
+              <VBtn>Yearly</VBtn>
+            </VBtnToggle>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ChartJsScatterChart :colors="chartJsCustomColors" />
@@ -105,16 +109,22 @@ const chartJsCustomColors: ChartJsCustomColors = {
 
     <!-- 👉 Data Science Area Line Chart -->
     <VCol cols="12">
-      <VCard title="Data Science">
-        <template #append>
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </template>
+      <VCard>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
+          <VCardTitle>
+            Data Science
+          </VCardTitle>
+
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ChartJsLineAreaChart :colors="chartJsCustomColors" />
@@ -127,16 +137,20 @@ const chartJsCustomColors: ChartJsCustomColors = {
       cols="12"
       md="6"
     >
-      <VCard title="Latest Statistics">
-        <template #append>
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </template>
+      <VCard>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
+          <VCardTitle>Latest Statistics</VCardTitle>
+
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ChartJsBarChart :colors="chartJsCustomColors" />
@@ -149,19 +163,21 @@ const chartJsCustomColors: ChartJsCustomColors = {
       cols="12"
       md="6"
     >
-      <VCard
-        title="Balance"
-        subtitle="$74,123"
-      >
-        <template #append>
-          <div class="date-picker-wrapper">
-            <AppDateTimePicker
-              model-value="2022-06-09"
-              prepend-inner-icon="mdi-calendar-blank-outline"
-              density="compact"
-            />
-          </div>
-        </template>
+      <VCard>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
+          <VCardTitle>Balance</VCardTitle>
+          <VCardSubtitle>$74,123</VCardSubtitle>
+
+          <template #append>
+            <div class="date-picker-wrapper">
+              <AppDateTimePicker
+                model-value="2022-06-09"
+                prepend-inner-icon="mdi-calendar-blank-outline"
+                density="compact"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
           <ChartJsHorizontalBarChart :colors="chartJsCustomColors" />
@@ -174,5 +190,11 @@ const chartJsCustomColors: ChartJsCustomColors = {
 <style lang="scss">
 .date-picker-wrapper {
   inline-size: 10.5rem;
+}
+
+#chartjs-wrapper {
+  .v-card-item__append {
+    padding-inline-start: 0;
+  }
 }
 </style>

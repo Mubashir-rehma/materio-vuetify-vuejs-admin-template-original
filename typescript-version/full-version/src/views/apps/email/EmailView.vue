@@ -55,12 +55,14 @@ const updateMailLabel = (label: Email['labels'][number]) => {
   >
     <template v-if="props.email">
       <!-- 👉 header -->
-      <div class="email-view-header d-flex align-center px-5">
+
+      <div class="email-view-header d-flex align-center px-5 py-3">
         <VBtn
           icon
           variant="text"
           color="default"
           size="small"
+          class="me-4 flip-in-rtl"
           @click="$emit('close')"
         >
           <VIcon
@@ -68,49 +70,55 @@ const updateMailLabel = (label: Email['labels'][number]) => {
             icon="mdi-chevron-left"
           />
         </VBtn>
-        <h2 class="mx-3 text-body-1 font-weight-medium text-high-emphasis text-truncate">
-          {{ props.email.subject }}
-        </h2>
-        <VChip
-          v-for="label in props.email.labels"
-          :key="label"
-          :color="resolveLabelColor(label)"
-          density="comfortable"
-          class="px-2 text-capitalize me-2 flex-shrink-0"
-        >
-          {{ label }}
-        </VChip>
 
-        <VSpacer />
+        <div class="d-flex align-center flex-wrap flex-grow-1 overflow-hidden gap-2">
+          <h2 class="text-body-1 font-weight-medium text-high-emphasis text-truncate">
+            {{ props.email.subject }}
+          </h2>
 
-        <VBtn
-          icon
-          variant="text"
-          color="default"
-          size="small"
-          :disabled="!props.emailMeta.hasPreviousEmail"
-          class="text-medium-emphasis"
-          @click="$emit('navigated', 'previous')"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-chevron-left"
-          />
-        </VBtn>
-        <VBtn
-          icon
-          variant="text"
-          color="default"
-          size="small"
-          class="text-medium-emphasis"
-          :disabled="!props.emailMeta.hasNextEmail"
-          @click="$emit('navigated', 'next')"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-chevron-right"
-          />
-        </VBtn>
+          <div class="d-flex flex-wrap gap-1">
+            <VChip
+              v-for="label in props.email.labels"
+              :key="label"
+              :color="resolveLabelColor(label)"
+              density="comfortable"
+              class="px-2 text-capitalize me-2 flex-shrink-0"
+            >
+              {{ label }}
+            </VChip>
+          </div>
+        </div>
+
+        <div class="d-flex align-center">
+          <VBtn
+            icon
+            variant="text"
+            color="default"
+            size="small"
+            :disabled="!props.emailMeta.hasPreviousEmail"
+            class="text-medium-emphasis flip-in-rtl"
+            @click="$emit('navigated', 'previous')"
+          >
+            <VIcon
+              size="24"
+              icon="mdi-chevron-left"
+            />
+          </VBtn>
+          <VBtn
+            icon
+            variant="text"
+            color="default"
+            size="small"
+            class="text-medium-emphasis flip-in-rtl"
+            :disabled="!props.emailMeta.hasNextEmail"
+            @click="$emit('navigated', 'next')"
+          >
+            <VIcon
+              size="24"
+              icon="mdi-chevron-right"
+            />
+          </VBtn>
+        </div>
       </div>
 
       <VDivider />
@@ -259,47 +267,49 @@ const updateMailLabel = (label: Email['labels'][number]) => {
       >
         <VCard class="ma-5">
           <VCardText class="mail-header">
-            <div class="d-flex align-center">
-              <VAvatar>
+            <div class="d-flex align-start">
+              <VAvatar class="me-3">
                 <VImg
                   :src="props.email.from.avatar"
                   :alt="props.email.from.name"
                 />
               </VAvatar>
-              <div class="ms-3">
-                <span class="d-block text-high-emphasis font-weight-medium">{{ props.email.from.name }}</span>
-                <span class="text-sm text-disabled">{{ props.email.from.email }}</span>
+
+              <div class="d-flex flex-wrap flex-grow-1 overflow-hidden">
+                <div class="text-truncate">
+                  <span class="d-block text-high-emphasis font-weight-medium text-truncate">{{ props.email.from.name }}</span>
+                  <span class="text-sm text-disabled">{{ props.email.from.email }}</span>
+                </div>
+
+                <VSpacer />
+
+                <div class="d-flex align-center">
+                  <span class="me-2">{{ formatDate(props.email.time) }}</span>
+                  <VBtn
+                    v-show="props.email.attachments.length"
+                    variant="text"
+                    color="default"
+                    icon
+                    size="small"
+                  >
+                    <VIcon
+                      size="24"
+                      icon="mdi-attachment"
+                    />
+                  </VBtn>
+                </div>
               </div>
-
-              <VSpacer />
-
-              <div class="d-flex align-center">
-                <span class="me-2">{{ formatDate(props.email.time) }}</span>
-                <VBtn
-                  v-show="props.email.attachments.length"
-                  variant="text"
-                  color="default"
-                  icon
-                  size="small"
-                >
-                  <VIcon
-                    size="24"
-                    icon="mdi-attachment"
-                  />
-                </VBtn>
-
-                <VBtn
-                  variant="text"
-                  color="default"
-                  icon
-                  size="small"
-                >
-                  <VIcon
-                    size="24"
-                    icon="mdi-dots-vertical"
-                  />
-                </VBtn>
-              </div>
+              <VBtn
+                variant="text"
+                color="default"
+                icon
+                size="small"
+              >
+                <VIcon
+                  size="24"
+                  icon="mdi-dots-vertical"
+                />
+              </VBtn>
             </div>
           </VCardText>
 
@@ -368,7 +378,6 @@ const updateMailLabel = (label: Email['labels'][number]) => {
   }
 }
 
-.email-view-header,
 .email-view-action-bar {
   min-block-size: 56px;
 }

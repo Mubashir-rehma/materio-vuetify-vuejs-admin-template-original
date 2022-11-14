@@ -13,6 +13,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'openChatOfContact', id: TypeChatContact['id']): void
   (e: 'showUserProfile'): void
+  (e: 'close'): void
 }>()
 
 const { resolveAvatarBadgeVariant } = useChat()
@@ -46,13 +47,29 @@ const store = useChatStore()
         />
       </VAvatar>
     </VBadge>
+
     <VTextField
       v-model="search"
       density="compact"
       placeholder="Search..."
       prepend-inner-icon="mdi-magnify"
-      class="ms-4 chat-list-search"
+      class="ms-4 me-1 chat-list-search"
     />
+
+    <VBtn
+      v-if="$vuetify.display.smAndDown"
+      variant="text"
+      color="default"
+      icon
+      size="small"
+      @click="$emit('close')"
+    >
+      <VIcon
+        size="24"
+        icon="mdi-close"
+        class="text-medium-emphasis"
+      />
+    </VBtn>
   </div>
   <VDivider />
 

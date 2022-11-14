@@ -85,7 +85,7 @@ const removeProduct = (id: number) => {
               disabled
               prefix="#"
               density="compact"
-              style="width: 8rem;"
+              style="width: 8.9rem;"
             />
           </span>
         </h6>
@@ -97,7 +97,8 @@ const removeProduct = (id: number) => {
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
-              style="width: 8.5rem;"
+              placeholder="YYYY-MM-DD"
+              style="width: 8.9rem;"
             />
           </span>
         </p>
@@ -109,7 +110,8 @@ const removeProduct = (id: number) => {
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
-              style="width: 8.5rem;"
+              placeholder="YYYY-MM-DD"
+              style="width: 8.9rem;"
             />
           </span>
         </p>

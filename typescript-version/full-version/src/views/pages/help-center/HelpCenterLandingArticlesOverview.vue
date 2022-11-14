@@ -47,8 +47,8 @@ const props = defineProps<Props>()
                 size="small"
                 variant="tonal"
                 :to="{
-                  name: 'pages-help-center-category-subcategory',
-                  params: { category: 'getting-started', subcategory: 'account' },
+                  name: 'pages-help-center-category-subcategory-article',
+                  params: { category: 'getting-started', subcategory: 'account', article: 'changing-your-username' },
                 }"
               >
                 Read More

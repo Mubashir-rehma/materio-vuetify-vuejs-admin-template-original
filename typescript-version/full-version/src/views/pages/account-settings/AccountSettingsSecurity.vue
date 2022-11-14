@@ -6,9 +6,9 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
-const currentPassword = ref('12345678')
-const newPassword = ref('87654321')
-const confirmPassword = ref('87654321')
+const currentPassword = ref('')
+const newPassword = ref('')
+const confirmPassword = ref('')
 
 const passwordRequirements = [
   'Minimum 8 characters long - the more, the better',
@@ -200,7 +200,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           </p>
 
           <VBtn @click="isOneTimePasswordDialogVisible = true">
-            Enable two-factor authentication
+            Enable two-FA
           </VBtn>
         </VCardText>
       </VCard>

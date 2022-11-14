@@ -83,6 +83,9 @@ const isUserProfileSidebarOpen = ref(false)
 
 // Active chat user profile sidebar
 const isActiveChatUserProfileSidebarOpen = ref(false)
+
+// file input
+const refInputEl = ref<HTMLElement>()
 </script>
 
 <template>
@@ -110,9 +113,7 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
       touchless
       class="active-chat-user-profile-sidebar"
     >
-      <ChatActiveChatUserProfileSidebarContent
-        @close="isActiveChatUserProfileSidebarOpen = false"
-      />
+      <ChatActiveChatUserProfileSidebarContent @close="isActiveChatUserProfileSidebarOpen = false" />
     </VNavigationDrawer>
 
     <!-- 👉 Left sidebar   -->
@@ -131,6 +132,7 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
         v-model:search="q"
         @open-chat-of-contact="openChatOfContact"
         @show-user-profile="isUserProfileSidebarOpen = true"
+        @close="isLeftSidebarOpen = false"
       />
     </VNavigationDrawer>
 
@@ -159,73 +161,80 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
           </VBtn>
 
           <!-- avatar -->
-          <VBadge
-            dot
-            location="bottom right"
-            offset-x="3"
-            offset-y="3"
-            :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
-            bordered
+          <div
+            class="d-flex align-center cursor-pointer"
+            @click="isActiveChatUserProfileSidebarOpen = true"
           >
-            <VAvatar
-              size="40"
-              variant="tonal"
+            <VBadge
+              dot
+              location="bottom right"
+              offset-x="3"
+              offset-y="3"
               :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
-              class="cursor-pointer"
-              @click="isActiveChatUserProfileSidebarOpen = true"
+              bordered
             >
-              <VImg
-                v-if="store.activeChat.contact.avatar"
-                :src="store.activeChat.contact.avatar"
-                :alt="store.activeChat.contact.fullName"
-              />
-              <span v-else>{{ avatarText(store.activeChat.contact.fullName) }}</span>
-            </VAvatar>
-          </VBadge>
+              <VAvatar
+                size="40"
+                variant="tonal"
+                :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
+                class="cursor-pointer"
+              >
+                <VImg
+                  v-if="store.activeChat.contact.avatar"
+                  :src="store.activeChat.contact.avatar"
+                  :alt="store.activeChat.contact.fullName"
+                />
+                <span v-else>{{ avatarText(store.activeChat.contact.fullName) }}</span>
+              </VAvatar>
+            </VBadge>
 
-          <div class="flex-grow-1 ms-4 overflow-hidden">
-            <h6 class="text-base font-weight-regular">
-              {{ store.activeChat.contact.fullName }}
-            </h6>
-            <span class="d-block text-sm text-truncate text-disabled">{{ store.activeChat.contact.role }}</span>
+            <div class="flex-grow-1 ms-4 overflow-hidden">
+              <h6 class="text-base font-weight-regular">
+                {{ store.activeChat.contact.fullName }}
+              </h6>
+              <span class="d-block text-sm text-truncate text-disabled">{{ store.activeChat.contact.role }}</span>
+            </div>
           </div>
 
           <VSpacer />
 
           <!-- Header right content -->
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-phone"
-            />
-          </VBtn>
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-video-outline"
-            />
-          </VBtn>
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-magnify"
-            />
-          </VBtn>
+          <div class="d-sm-flex align-center d-none">
+            <VBtn
+              variant="text"
+              color="default"
+              icon
+              size="small"
+            >
+              <VIcon
+                size="24"
+                icon="mdi-phone"
+              />
+            </VBtn>
+            <VBtn
+              variant="text"
+              color="default"
+              icon
+              size="small"
+            >
+              <VIcon
+                size="24"
+                icon="mdi-video-outline"
+              />
+            </VBtn>
+            <VBtn
+              variant="text"
+              color="default"
+              icon
+              size="small"
+            >
+              <VIcon
+                size="24"
+                icon="mdi-magnify"
+              />
+            </VBtn>
+          </div>
+
           <VBtn
             variant="text"
             color="default"
@@ -236,6 +245,18 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
               size="24"
               icon="mdi-dots-vertical"
             />
+
+            <VMenu activator="parent">
+              <VList>
+                <VListItem
+                  v-for="(item, index) in ['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']"
+                  :key="index"
+                  :value="index"
+                >
+                  <VListItemTitle>{{ item }}</VListItemTitle>
+                </VListItem>
+              </VList>
+            </VMenu>
           </VBtn>
         </div>
 
@@ -265,21 +286,45 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
             autofocus
           >
             <template #append-inner>
-              <VIcon
-                size="24"
-                icon="mdi-microphone-outline"
-                class="cursor-pointer"
-              />
-              <VIcon
-                size="24"
-                icon="mdi-attachment"
-                class="ms-3 me-4 cursor-pointer"
-              />
+              <VBtn
+                icon
+                size="small"
+                variant="text"
+                color="default"
+              >
+                <VIcon
+                  size="24"
+                  icon="mdi-microphone-outline"
+                />
+              </VBtn>
+
+              <VBtn
+                icon
+                size="small"
+                variant="text"
+                color="default"
+                class="me-4"
+                @click="refInputEl?.click()"
+              >
+                <VIcon
+                  size="24"
+                  icon="mdi-attachment"
+                />
+              </VBtn>
+
               <VBtn @click="sendMessage">
                 Send
               </VBtn>
             </template>
           </VTextField>
+
+          <input
+            ref="refInputEl"
+            type="file"
+            name="file"
+            accept=".jpeg,.png,.jpg,GIF"
+            hidden
+          >
         </VForm>
       </div>
 
@@ -329,7 +374,7 @@ $chat-app-header-height: 68px;
   display: flex;
   align-items: center;
   min-block-size: $chat-app-header-height;
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 }
 
 .chat-app-layout {

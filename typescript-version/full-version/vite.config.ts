@@ -23,11 +23,7 @@ export default defineConfig({
       },
     }),
     Pages({
-      // exclude: [
-
-      //   // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
-      //   'src/pages/apps/email/index.vue',
-      // ],
+      // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
       onRoutesGenerated: routes => [
         // Email filter
         {
@@ -52,8 +48,7 @@ export default defineConfig({
           },
         },
         ...routes,
-      ]
-      ,
+      ],
     }),
     Layouts(),
     Components({

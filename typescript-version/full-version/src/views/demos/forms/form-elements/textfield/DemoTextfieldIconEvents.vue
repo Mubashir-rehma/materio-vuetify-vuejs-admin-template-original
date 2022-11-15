@@ -10,6 +10,7 @@ const toggleMarker = () => {
 const clearMessage = () => {
   message.value = ''
 }
+
 const resetIcon = () => {
   iconIndex.value = 0
 }

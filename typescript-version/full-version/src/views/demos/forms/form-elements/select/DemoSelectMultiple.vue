@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const selectedOptions = ref(['Alabama'])
+
 const states = [
   'Alabama',
   'Alaska',

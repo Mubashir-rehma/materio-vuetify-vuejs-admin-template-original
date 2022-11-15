@@ -19,8 +19,10 @@ const { resolveAvatarBadgeVariant } = useChat()
 
 // Perfect scrollbar
 const chatLogPS = ref()
+
 const scrollToBottomInChatLog = () => {
   const scrollEl = chatLogPS.value.$el || chatLogPS.value
+
   scrollEl.scrollTop = scrollEl.scrollHeight
 }
 
@@ -42,6 +44,7 @@ const startConversation = () => {
 
 // Chat message
 const msg = ref('')
+
 const sendMessage = async () => {
   if (!msg.value)
     return

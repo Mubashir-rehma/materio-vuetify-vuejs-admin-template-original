@@ -3,6 +3,7 @@ import { useTheme } from 'vuetify'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
 import { getPolarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import PolarAreaChart from '@core/libs/chartjs/components/PolarAreaChart'
+
 interface Props {
   colors: ChartJsCustomColors
 }

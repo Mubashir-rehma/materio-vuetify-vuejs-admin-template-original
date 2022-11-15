@@ -249,6 +249,7 @@ const target = 'src/@iconify/icons-bundle.js';
 
       // Export to JSON
       const content = iconSet.export()
+
       bundle += `addCollection(${JSON.stringify(content)});\n`
     }
   }
@@ -273,6 +274,7 @@ function removeMetaData(iconSet: IconifyJSON) {
     'prefixes',
     'suffixes',
   ]
+
   props.forEach(prop => {
     delete iconSet[prop]
   })
@@ -283,12 +285,14 @@ function removeMetaData(iconSet: IconifyJSON) {
  */
 function organizeIconsList(icons: string[]): Record<string, string[]> {
   const sorted: Record<string, string[]> = Object.create(null)
+
   icons.forEach(icon => {
     const item = stringToIcon(icon)
     if (!item)
       return
 
     const prefix = item.prefix
+
     const prefixList = sorted[prefix]
       ? sorted[prefix]
       : (sorted[prefix] = [])

@@ -113,6 +113,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     // dateRelatedProps => ['start', 'end', 'allDay']
     for (let index = 0; index < propsToUpdate.length; index++) {
       const propName = propsToUpdate[index]
+
       existingEvent.setProp(propName, updatedEventData[propName])
     }
 
@@ -124,6 +125,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     // ? Docs: https://fullcalendar.io/docs/Event-setExtendedProp
     for (let index = 0; index < extendedPropsToUpdate.length; index++) {
       const propName = extendedPropsToUpdate[index]
+
       existingEvent.setExtendedProp(propName, updatedEventData.extendedProps[propName])
     }
   }

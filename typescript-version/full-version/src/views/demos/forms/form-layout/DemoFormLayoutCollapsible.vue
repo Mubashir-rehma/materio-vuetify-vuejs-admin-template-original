@@ -12,10 +12,12 @@ const stateList = [
   'Georgia',
   'Hawaii',
 ]
+
 const radios = ref('home')
 const deliveryOption = ref('standard')
 const paymentMethod = ref('credit-debit-card')
 const panel = ref(0)
+
 const paymentMethods = [
   {
     radioValue: 'credit-debit-card',

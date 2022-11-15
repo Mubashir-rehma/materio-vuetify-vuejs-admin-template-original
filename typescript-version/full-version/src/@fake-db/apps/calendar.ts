@@ -174,6 +174,7 @@ mock.onDelete(/\/apps\/calendar\/events\/\d+/).reply(config => {
   const eventId = config.url?.substring(config.url.lastIndexOf('/') + 1)
 
   const eventIndex = data.events.findIndex(e => e.id === eventId)
+
   data.events.splice(eventIndex, 1)
 
   return [200]

@@ -13,6 +13,7 @@ const { width: windowWidth } = useWindowSize()
 
 const router = useRouter()
 const shallShowPageLoading = ref(false)
+
 router.beforeEach(() => {
   shallShowPageLoading.value = true
 })

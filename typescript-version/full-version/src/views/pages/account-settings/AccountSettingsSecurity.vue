@@ -36,6 +36,7 @@ const serverKeys = [
     permission: 'Full Access',
   },
 ]
+
 const recentDevices = [
   {
     browser: 'Chrome on Windows',

@@ -6,6 +6,7 @@ import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'
 import { alphaDashValidator, emailValidator, requiredValidator } from '@validators'
+
 const refVForm = ref<VForm>()
 const username = ref('johnDoe')
 const email = ref('john@example.com')
@@ -48,6 +49,7 @@ const register = () => {
     })
     .catch(e => {
       const { errors: formErrors } = e.response.data
+
       errors.value = formErrors
       console.error(e.response.data)
     })

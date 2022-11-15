@@ -315,6 +315,7 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(config => {
   const chatsContacts: ChatContactWithChat[] = database.chats
     .map(chat => {
       const contact = JSON.parse(JSON.stringify((database.contacts.find(c => c.id === chat.userId) as ChatContact)))
+
       contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages[chat.messages.length - 1] }
 
       return contact

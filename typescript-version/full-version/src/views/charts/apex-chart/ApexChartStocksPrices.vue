@@ -6,6 +6,7 @@ import { getCandlestickChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 const vuetifyTheme = useTheme()
 
 const chartConfig = computed(() => getCandlestickChartConfig(vuetifyTheme.current.value))
+
 const series = [
   {
     data: [

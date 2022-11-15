@@ -646,8 +646,10 @@ mock.onGet('/pages/help-center/article').reply(config => {
   const { article, category, subcategory } = config.params
 
   const activeCategory = data.categories.filter(item => item.slug === category)[0]
+
   const activeSubcategory
     = activeCategory.subCategories.filter(item => item.slug === subcategory)[0] || activeCategory.subCategories[0]
+
   const activeArticle = activeSubcategory.articles.filter(item => item.slug === article)[0]
 
   return [200, { activeArticle, activeSubcategory, categories: data.categories, articles: activeSubcategory.articles }]

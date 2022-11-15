@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import avatar1 from '@/assets/images/avatars/avatar-1.png'
+
 const menu = ref(false)
 </script>
 

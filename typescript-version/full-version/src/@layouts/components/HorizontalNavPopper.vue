@@ -51,6 +51,7 @@ const updatePopper = async () => {
     */
     // strategy: 'fixed',
   })
+
   popperContentStyles.value.left = `${x}px`
   popperContentStyles.value.top = `${y}px`
 }
@@ -69,6 +70,7 @@ const showContent = () => {
   isContentShown.value = true
   updatePopper()
 }
+
 const hideContent = () => {
   isContentShown.value = false
 }
@@ -83,6 +85,7 @@ watch([isAppRtl, appContentWidth], updatePopper)
 
 // Watch for route changes and close popper content if route is changed
 const route = useRoute()
+
 watch(() => route.fullPath, hideContent)
 </script>
 

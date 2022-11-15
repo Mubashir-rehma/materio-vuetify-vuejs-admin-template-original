@@ -23,6 +23,7 @@ const refNav = ref()
 const { width: windowWidth } = useWindowSize()
 
 const isHovered = useElementHover(refNav)
+
 provide(injectionKeyIsVerticalNavHovered, isHovered)
 
 const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isVerticalNavMini, isAppRtl } = useLayouts()
@@ -43,6 +44,7 @@ const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => 
   Close overlay vertical nav when link is clicked
 */
 const route = useRoute()
+
 watch(() => route.name, () => {
   props.toggleIsOverlayNavActive(false)
 })

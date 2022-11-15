@@ -8,6 +8,7 @@ interface Props {
   isChatContact?: boolean
   user: ChatContact | ChatContactWithChat
 }
+
 const props = withDefaults(defineProps<Props>(), {
   isChatContact: false,
 })

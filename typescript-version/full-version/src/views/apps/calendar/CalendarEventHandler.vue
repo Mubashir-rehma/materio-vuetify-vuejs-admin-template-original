@@ -34,12 +34,14 @@ const refForm = ref<VForm>()
 
 // 👉 Event
 const event = ref<Event | NewEvent>(JSON.parse(JSON.stringify(props.event)))
+
 const resetEvent = () => {
   event.value = JSON.parse(JSON.stringify(props.event))
   nextTick(() => {
     refForm.value?.resetValidation()
   })
 }
+
 watch(() => props.isDrawerOpen, resetEvent)
 
 const removeEvent = () => {
@@ -95,6 +97,7 @@ const startDateTimePickerConfig = computed(() => {
 
   return config
 })
+
 const endDateTimePickerConfig = computed(() => {
   const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
 

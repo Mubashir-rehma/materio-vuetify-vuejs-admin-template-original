@@ -20,6 +20,7 @@ const selectAllInvoice = ref(false)
 // 👉 Fetch Invoices
 watchEffect(() => {
   const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
+
   invoiceListStore.fetchInvoices(
     {
       q: searchQuery.value,
@@ -105,6 +106,7 @@ watch(selectedRows, () => {
 const addRemoveIndividualCheckbox = (checkID: string) => {
   if (selectedRows.value.includes(checkID)) {
     const index = selectedRows.value.indexOf(checkID)
+
     selectedRows.value.splice(index, 1)
   }
   else {

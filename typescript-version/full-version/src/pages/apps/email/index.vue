@@ -9,11 +9,13 @@ import { useEmail } from '@/views/apps/email/useEmail'
 import { useEmailStore } from '@/views/apps/email/useEmailStore'
 import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
 import { formatDateToMonthShort } from '@core/utils/formatters'
+
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // Composables
 const route = useRoute()
 const store = useEmailStore()
+
 const {
   labels,
   resolveLabelColor,
@@ -32,20 +34,24 @@ const q = ref('')
 // Email Selection
 // ------------------------------------------------
 const selectedEmails = ref<Email['id'][]>([])
+
 const toggleSelectedEmail = (emailId: Email['id']) => {
   const emailIndex = selectedEmails.value.indexOf(emailId)
   if (emailIndex === -1)
     selectedEmails.value.push(emailId)
   else selectedEmails.value.splice(emailIndex, 1)
 }
+
 const selectAllEmailCheckbox = computed(
   () => store.emails.length && store.emails.length === selectedEmails.value.length,
 )
+
 const isSelectAllEmailCheckboxIndeterminate = computed(
   () =>
     Boolean(selectedEmails.value.length)
     && store.emails.length !== selectedEmails.value.length,
 )
+
 const selectAllCheckboxUpdate = () => {
   selectedEmails.value = !selectAllEmailCheckbox.value
     ? store.emails.map(email => email.id)
@@ -54,6 +60,7 @@ const selectAllCheckboxUpdate = () => {
 
 // Email View
 const openedEmail = ref<Email | null>(null)
+
 const emailViewMeta = computed(() => {
   const returnValue = {
     hasNextEmail: false,
@@ -147,7 +154,9 @@ const changeOpenedEmail = (dir: 'previous' | 'next') => {
   const openedEmailIndex = store.emails.findIndex(
     e => e.id === (openedEmail.value as Email).id,
   )
+
   const newEmailIndex = dir === 'previous' ? openedEmailIndex - 1 : openedEmailIndex + 1
+
   openedEmail.value = store.emails[newEmailIndex]
 }
 

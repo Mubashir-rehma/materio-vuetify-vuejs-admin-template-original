@@ -185,6 +185,7 @@ export const getCandlestickChartConfig = (themeColors: ThemeInstance['themes']['
     series1: '#28c76f',
     series2: '#ea5455',
   }
+
   const { themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
 
   return {
@@ -406,6 +407,7 @@ export const getAreaChartSplineConfig = (themeColors: ThemeInstance['themes']['v
     series2: '#b992fe',
     series1: '#ab7efd',
   }
+
   const { themeSecondaryTextColor, themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
 
   return {
@@ -630,6 +632,7 @@ export const getRadarChartConfig = (themeColors: ThemeInstance['themes']['value'
     series1: '#9b88fa',
     series2: '#ffa1a1',
   }
+
   const { themeSecondaryTextColor, themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
 
   return {

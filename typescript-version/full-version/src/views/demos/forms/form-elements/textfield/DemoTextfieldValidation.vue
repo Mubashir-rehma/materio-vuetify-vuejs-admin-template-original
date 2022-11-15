@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { emailValidator, requiredValidator } from '@validators'
+
 const email = ref('')
 </script>
 

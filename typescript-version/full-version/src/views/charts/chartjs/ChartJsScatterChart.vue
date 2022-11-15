@@ -3,6 +3,7 @@ import { useTheme } from 'vuetify'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
 import { getScatterChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import ScatterChart from '@core/libs/chartjs/components/ScatterChart'
+
 interface Props {
   colors: ChartJsCustomColors
 }

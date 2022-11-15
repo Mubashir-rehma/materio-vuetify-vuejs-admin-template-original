@@ -43,6 +43,7 @@ const connectedAccounts = ref([
   },
 
 ])
+
 const socialAccounts = ref([
   {
     logo: facebook,

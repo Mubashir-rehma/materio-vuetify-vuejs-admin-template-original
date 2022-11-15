@@ -1,6 +1,7 @@
 import { useTheme } from 'vuetify'
 import { useLayouts } from '@layouts'
 import { themeConfig } from '@themeConfig'
+
 export const useThemeConfig = () => {
   const theme = computed({
     get() {
@@ -29,6 +30,7 @@ export const useThemeConfig = () => {
 
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
+
     watch(theme, val => { vuetifyTheme.global.name.value = val })
   }
 
@@ -42,6 +44,7 @@ export const useThemeConfig = () => {
   */
   const syncInitialLoaderTheme = () => {
     const vuetifyTheme = useTheme()
+
     watch(theme, val => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)

@@ -16,10 +16,12 @@ const store = useCalendarStore()
 // 👉 Event
 const event = ref(structuredClone(blankEvent))
 const isEventHandlerSidebarActive = ref(false)
+
 watch(isEventHandlerSidebarActive, val => {
   if (!val)
     event.value = structuredClone(blankEvent)
 })
+
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // 👉 useCalendar

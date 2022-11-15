@@ -18,6 +18,7 @@ const generateDataHeat = (count: number, yrange: YRange) => {
   while (i < count) {
     const x = `w${(i + 1).toString()}`
     const y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+
     series.push({
       x,
       y,

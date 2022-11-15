@@ -24,6 +24,7 @@ const fetchFaqs = () => {
 
 const activeTab = ref('Payment')
 const activeQuestion = ref(0)
+
 watch(activeTab, () => activeQuestion.value = 0)
 watch(faqSearchQuery, fetchFaqs, { immediate: true })
 

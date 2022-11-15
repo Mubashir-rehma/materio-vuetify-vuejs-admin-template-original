@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BuyNow from '@core/components/BuyNow.vue'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
+
 const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme: syncConfigThemeWithVuetifyTheme, isAppRtl } = useThemeConfig()
 
 // ℹ️ Sync current theme with initial loader theme

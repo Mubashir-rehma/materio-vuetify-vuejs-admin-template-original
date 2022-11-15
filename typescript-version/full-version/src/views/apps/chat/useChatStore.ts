@@ -46,6 +46,7 @@ export const useChatStore = defineStore('chat', {
       if (chat !== undefined) {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const activeChat = this.activeChat!
+
         this.chatsContacts.push({
           ...activeChat.contact,
           chat: {

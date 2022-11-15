@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import miscComingSoon from '@/assets/images/pages/misc-coming-soon.png'
+
 const email = ref('')
 </script>
 

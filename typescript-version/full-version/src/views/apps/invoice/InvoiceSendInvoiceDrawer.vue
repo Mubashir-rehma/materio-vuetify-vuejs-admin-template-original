@@ -23,6 +23,7 @@ const emit = defineEmits<Emit>()
 const emailFrom = ref('shelbyComapny@email.com')
 const emailTo = ref('qConsolidated@email.com')
 const invoiceSubject = ref('Invoice of purchased Admin Templates')
+
 const paymentMessage = ref(`Dear Queen Consolidated,
 
 Thank you for your business, always a pleasure to work with you!

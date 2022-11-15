@@ -51,12 +51,14 @@ const roles = [
   { title: 'Maintainer', value: 'maintainer' },
   { title: 'Subscriber', value: 'subscriber' },
 ]
+
 const plans = [
   { title: 'Basic', value: 'basic' },
   { title: 'Company', value: 'company' },
   { title: 'Enterprise', value: 'enterprise' },
   { title: 'Team', value: 'team' },
 ]
+
 const status = [
   { title: 'Pending', value: 'pending' },
   { title: 'Active', value: 'active' },
@@ -133,6 +135,7 @@ watch(selectedRows, () => {
 const addRemoveIndividualCheckbox = (checkID: string) => {
   if (selectedRows.value.includes(checkID)) {
     const index = selectedRows.value.indexOf(checkID)
+
     selectedRows.value.splice(index, 1)
   }
   else {

@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import type { HelpCenterSubcategoriesType, HelpCenterSubcategoryArticlesType } from '@/@fake-db/types'
 import axios from '@axios'
+
 const route = useRoute()
 
 const apiData = ref<HelpCenterSubcategoriesType>()

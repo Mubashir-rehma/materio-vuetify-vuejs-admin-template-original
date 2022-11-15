@@ -18,6 +18,7 @@ const errors = ref<Record<string, string | undefined>>({
   email: undefined,
   password: undefined,
 })
+
 const refVForm = ref<VForm>()
 const email = ref('admin@demo.com')
 const password = ref('admin')
@@ -42,6 +43,7 @@ const login = () => {
     })
     .catch(e => {
       const { errors: formErrors } = e.response.data
+
       errors.value = formErrors
       console.error(e.response.data)
     })

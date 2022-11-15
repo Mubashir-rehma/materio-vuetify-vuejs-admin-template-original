@@ -63,8 +63,17 @@ module.exports = {
 
     'vue/multi-word-component-names': 'off',
 
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'expression', next: 'const' },
+      { blankLine: 'always', prev: 'const', next: 'expression' },
+      { blankLine: 'always', prev: 'multiline-const', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'multiline-const' },
+    ],
+
     // Plugin: eslint-plugin-import
     'import/prefer-default-export': 'off',
+    'import/newline-after-import': ['error', { count: 1 }],
 
     // Plugin: eslint-plugin-import
     // For omitting extension for ts files

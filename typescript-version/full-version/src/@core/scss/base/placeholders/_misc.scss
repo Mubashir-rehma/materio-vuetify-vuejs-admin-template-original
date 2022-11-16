@@ -1,4 +1,7 @@
 %blurry-bg {
-  backdrop-filter: blur(8px);
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  /* stylelint-enable */
   background-color: rgb(var(--v-theme-surface), 0.9);
 }

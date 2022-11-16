@@ -30,8 +30,11 @@ module.exports = {
     // indentation (Already present in TypeScript)
     'indent': ['error', 2],
 
-    // Enforce trailing command (Already present in TypeScript)
+    // Enforce trailing comma (Already present in TypeScript)
     'comma-dangle': ['error', 'always-multiline'],
+
+    // Enforce consistent spacing inside braces of object (Already present in TypeScript)
+    'object-curly-spacing': ['error', 'always'],
 
     // Disable max-len
     'max-len': 'off',

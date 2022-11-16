@@ -21,10 +21,14 @@
   &::after {
     position: absolute;
     z-index: -1;
+    /* stylelint-disable property-no-vendor-prefix */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* stylelint-enable */
     background:
       linear-gradient(
         180deg,
-        rgba(var(--v-theme-background), 90%) 44%,
+        rgba(var(--v-theme-background), 70%) 44%,
         rgba(var(--v-theme-background), 43%) 73%,
         rgba(var(--v-theme-background), 0%)
       );
@@ -34,5 +38,9 @@
     inset-block-start: -(variables.$vertical-nav-floating-navbar-top);
     inset-inline-end: 0;
     inset-inline-start: 0;
+    /* stylelint-disable property-no-vendor-prefix */
+    -webkit-mask: linear-gradient(black, black 18%, transparent 100%);
+    mask: linear-gradient(black, black 18%, transparent 100%);
+    /* stylelint-enable */
   }
 }

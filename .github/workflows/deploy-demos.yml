@@ -46,7 +46,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script: |
-            cd ${{ secrets.DEPLOY_DIR }}
+            cd ${{ env.DEPLOY_DIR }}
             rm -rf demos-backup-*.zip
             DEMO_ZIP_NAME="demos-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"
             [[ "${{ inputs.is_production }}" == "true" ]] && rm -rf ${{ secrets.STAG_DIR }}/demo-* && zip -r $DEMO_ZIP_NAME demo-*

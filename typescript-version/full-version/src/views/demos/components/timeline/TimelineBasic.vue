@@ -115,7 +115,7 @@ import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
         >
           <div class="d-flex align-start flex-sm-row flex-column mb-3">
             <VImg
-              height="100"
+              aspect-ratio="1"
               width="100"
               :src="pumaShoes"
               class="rounded me-4"

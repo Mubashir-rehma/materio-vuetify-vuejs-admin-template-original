@@ -192,7 +192,7 @@ const isCardDetailsVisible = ref(false)
               <VCardTitle>Stumptown Roasters</VCardTitle>
             </VCardItem>
 
-            <VCardText class="d-flex align-center flex-wrap body-1">
+            <VCardText class="d-flex align-center flex-wrap text-body-1">
               <VRating
                 :model-value="5"
                 readonly

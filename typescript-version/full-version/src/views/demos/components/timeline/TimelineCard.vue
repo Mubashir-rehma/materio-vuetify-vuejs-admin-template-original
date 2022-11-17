@@ -141,7 +141,7 @@ import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
             <VCardText class="pt-4">
               <div class="d-flex align-sm-center flex-sm-row flex-column mb-3">
                 <VImg
-                  height="80"
+                  aspect-ratio="1"
                   width="80"
                   :src="pumaShoes"
                   class="rounded me-4"

@@ -6,7 +6,6 @@ const slidersValues = ref([30, 60])
   <VRangeSlider
     v-model="slidersValues"
     disabled
-    value="30"
     label="Disabled"
   />
 </template>

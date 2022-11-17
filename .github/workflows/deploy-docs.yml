@@ -13,12 +13,31 @@ jobs:
     env:
       DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
       BASE: ${{ inputs.is_production && secrets.DOCS_BASE_PROD || secrets.DOCS_BASE_STAG }} # ❗ (For VuePress only) Don't forget the ending slash in base
+      TEMPLATE_NAME: master
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout template
+        uses: actions/checkout@v3
+        with:
+          path: ${{ env.TEMPLATE_NAME }}/vue
+
+      - name: Checkout scripts
+        uses: actions/checkout@v3
+        with:
+          repository: themeselection/automation-scripts
+          token: ${{ secrets.GH_PAT }}
+          path: automation-scripts
+
+      - name: Install packages in automation-scripts dir
+        working-directory: automation-scripts/vue
+        run: yarn
+
+      - name: Inject GTM code in SSR template
+        working-directory: automation-scripts/vue
+        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/injectGtmInDocs.ts
       
       - name: Build documentation
         run: |
-          cd docs
+          cd ${{ env.TEMPLATE_NAME }}/vue/docs
           yarn
           yarn build
           mv .vuepress/dist $GITHUB_WORKSPACE/documentation

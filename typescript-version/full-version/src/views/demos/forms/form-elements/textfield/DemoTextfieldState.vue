@@ -2,7 +2,6 @@
   <VRow>
     <VCol>
       <VTextField
-        value="John Doe"
         label="Disabled"
         disabled
       />
@@ -10,7 +9,6 @@
 
     <VCol cols="12">
       <VTextField
-        value="John Doe"
         label="Readonly"
         readonly
       />

@@ -20,7 +20,6 @@ watch(selectedList, value => {
     label="Add some tags"
     multiple
     persistent-hint
-    small-chips
   >
     <template #no-data>
       <VListItem>

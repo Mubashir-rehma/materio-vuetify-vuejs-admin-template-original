@@ -16,7 +16,7 @@ const zoomInOut = ref(10)
     <VCol cols="12">
       <VSlider
         v-model="alarmSlider"
-        append-icon="mdi-alarm"
+        append-icon="tabler-alarm"
       />
     </VCol>
 

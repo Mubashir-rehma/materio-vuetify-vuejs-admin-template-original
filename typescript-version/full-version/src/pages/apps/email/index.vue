@@ -236,7 +236,7 @@ const refreshOpenedEmail = async () => {
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
             :indeterminate="isSelectAllEmailCheckboxIndeterminate"
-            @change="selectAllCheckboxUpdate"
+            @update:model-value="selectAllCheckboxUpdate"
           />
 
           <div
@@ -396,7 +396,7 @@ const refreshOpenedEmail = async () => {
             <VCheckbox
               :model-value="selectedEmails.includes(email.id)"
               class="flex-shrink-0"
-              @change="toggleSelectedEmail(email.id)"
+              @update:model-value="toggleSelectedEmail(email.id)"
               @click.stop
             />
             <VBtn

@@ -1,4 +1,4 @@
-import type { Chat, ChatContact, ChatOut, ChatStatus } from '@/@fake-db/types'
+import type { Chat, ChatContact, ChatStatus } from '@/@fake-db/types'
 
 export type ActiveChat = {
   chat?: Chat

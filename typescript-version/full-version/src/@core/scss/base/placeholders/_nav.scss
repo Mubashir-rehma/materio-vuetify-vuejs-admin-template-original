@@ -20,7 +20,7 @@
     For vertical nav it will be only applied to nav links (not nav groups)
 */
 %nav-link-active {
-  background-color: rgb(var(--v-theme-primary));
+  background-color: var(--v-global-theme-primary);
   color: rgb(var(--v-theme-on-primary));
 
   @include mixins_elevation.elevation(3);

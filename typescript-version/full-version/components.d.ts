@@ -274,6 +274,7 @@ declare module '@vue/runtime-core' {
     TheCustomizer: typeof import('./src/@core/components/TheCustomizer.vue')['default']
     ThemeSwitcher: typeof import('./src/@core/components/ThemeSwitcher.vue')['default']
     TimelineBasic: typeof import('./src/views/demos/components/timeline/TimelineBasic.vue')['default']
+    TimelineCard: typeof import('./src/views/demos/components/timeline/TimelineCard.vue')['default']
     TimelineOutlined: typeof import('./src/views/demos/components/timeline/TimelineOutlined.vue')['default']
     TimelineWithIcons: typeof import('./src/views/demos/components/timeline/TimelineWithIcons.vue')['default']
     UserInfoEditDialog: typeof import('./src/@core/components/UserInfoEditDialog.vue')['default']

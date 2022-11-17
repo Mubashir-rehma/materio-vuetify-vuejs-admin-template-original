@@ -104,7 +104,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         >
           <!-- 👉 Id -->
           <td>
-            <RouterLink :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }">
+            <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>

@@ -131,7 +131,7 @@ watch(selectedRows, () => {
               <div class="d-flex flex-column">
                 <h6 class="text-sm">
                   <RouterLink
-                    :to="{ name: 'user-view-id', params: { id: user.id } }"
+                    :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
                     class="font-weight-medium"
                     style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
                   >

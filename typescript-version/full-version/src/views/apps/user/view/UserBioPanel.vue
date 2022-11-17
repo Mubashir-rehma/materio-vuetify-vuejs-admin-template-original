@@ -161,27 +161,27 @@ const resolveUserRoleVariant = (role: string) => {
           <!-- 👉 User Details list -->
           <VList class="card-list mt-2">
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Username:
                   <span class="text-body-2">
                     @{{ props.userData.username }}
                   </span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Billing Email:
                   <span class="text-body-2">{{ props.userData.email }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Status:
 
@@ -194,54 +194,54 @@ const resolveUserRoleVariant = (role: string) => {
                     {{ props.userData.status }}
                   </VChip>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Role:
                   <span class="text-capitalize text-body-2">{{ props.userData.role }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Tax ID:
                   <span class="text-body-2">
                     {{ props.userData.taxId }}
                   </span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Contact:
                   <span class="text-body-2">{{ props.userData.contact }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Language:
                   <span class="text-body-2">{{ props.userData.language }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Country:
                   <span class="text-body-2">{{ props.userData.country }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
           </VList>
         </VCardText>

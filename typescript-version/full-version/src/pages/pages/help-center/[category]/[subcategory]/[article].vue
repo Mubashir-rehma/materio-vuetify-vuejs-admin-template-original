@@ -31,7 +31,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
       cols="12"
       md="4"
     >
-      <h6 class="text-base mb-3">
+      <h6 class="text-xl font-weight-medium mb-3">
         {{ apiData.title }}
       </h6>
 
@@ -74,7 +74,8 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                 }"
               >
                 <VIcon
-                  icon="mdi-chevron-left"
+                  start
+                  icon="mdi-arrow-left"
                   class="flip-in-rtl"
                 />
                 <span>Back to help center</span>

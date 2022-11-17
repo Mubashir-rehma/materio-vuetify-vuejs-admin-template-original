@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import cardMeetup from '@/assets/images/cards/card-meetup.png'
+
 const developerMeetup = [
   { icon: 'mdi-clock-outline', title: 'Tuesday, 24 january, 10:20 - 12:30', subtitle: 'After 1 week' },
   { icon: 'mdi-map-marker-outline', title: 'The Richard NYC', subtitle: '1305 Lexington Ave, New York' },
@@ -75,7 +76,7 @@ const developerMeetup = [
         </VCol>
         <VCol
           cols="3"
-          class="text-center"
+          class="text-center text-primary"
         >
           <div class="mb-1">
             <VIcon

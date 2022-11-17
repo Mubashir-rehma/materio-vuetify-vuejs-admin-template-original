@@ -25,11 +25,11 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
       <VAvatar
         size="44"
         rounded
-        :color="props.color"
-        variant="tonal"
-        class="me-4"
+        class="elevation-2 me-4"
+        style="background-color: #fff;"
       >
         <VIcon
+          :color="props.color"
           :icon="props.icon"
           :size="24"
         />

@@ -250,7 +250,8 @@ const faqs = [
                   <VChip
                     v-if="!feature.addOnAvailable.starter"
                     pill
-                    size="30"
+                    variant="elevated"
+                    size="20"
                     class="pa-1"
                     :color="feature.basic ? 'primary' : 'secondary'"
                   >
@@ -273,7 +274,8 @@ const faqs = [
                   <VChip
                     v-if="!feature.addOnAvailable.pro"
                     pill
-                    size="30"
+                    variant="elevated"
+                    size="20"
                     class="pa-1"
                     :color="feature.standard ? 'primary' : 'secondary'"
                   >
@@ -296,7 +298,8 @@ const faqs = [
                   <VChip
                     v-if="!feature.addOnAvailable.enterprise"
                     pill
-                    size="30"
+                    variant="elevated"
+                    size="20"
                     class="pa-1"
                     :color="feature.enterprise ? 'primary' : 'secondary'"
                   >
@@ -347,25 +350,27 @@ const faqs = [
     </VCardText>
 
     <!-- 👉 FAQ -->
-    <VCardText class="bg-var-theme-background py-16">
-      <div class="text-center">
-        <h5 class="text-h5 mb-2">
-          FAQ's
-        </h5>
-        <p>
-          Let us help answer the most common questions.
-        </p>
-      </div>
+    <div>
+      <VCardText class="bg-var-theme-background py-16">
+        <div class="text-center">
+          <h5 class="text-h5 mb-2">
+            FAQ's
+          </h5>
+          <p>
+            Let us help answer the most common questions.
+          </p>
+        </div>
 
-      <VExpansionPanels class="py-6 px-16">
-        <VExpansionPanel
-          v-for="faq in faqs"
-          :key="faq.question"
-          :title="faq.question"
-          :text="faq.answer"
-        />
-      </VExpansionPanels>
-    </VCardText>
+        <VExpansionPanels class="py-6 px-16">
+          <VExpansionPanel
+            v-for="faq in faqs"
+            :key="faq.question"
+            :title="faq.question"
+            :text="faq.answer"
+          />
+        </VExpansionPanels>
+      </VCardText>
+    </div>
   </VCard>
 </template>
 

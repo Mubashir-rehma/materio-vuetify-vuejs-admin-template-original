@@ -51,7 +51,9 @@
       > :first-child {
         block-size: 2.625rem !important;
         border-end-end-radius: 3.125rem !important;
+        border-end-start-radius: 0 !important;
         border-start-end-radius: 3.125rem !important;
+        border-start-start-radius: 0 !important;
       }
 
       // ℹ️ Wobble effect
@@ -70,7 +72,7 @@
     // 👉 Vertical nav link
     .nav-link {
       > .router-link-exact-active {
-        background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, white 300%) !important;
+        background: linear-gradient(-72.47deg, rgb(var(--v-theme-primary)) 22.16%, rgba(var(--v-theme-primary), 0.7) 76.47%) !important;
       }
     }
 

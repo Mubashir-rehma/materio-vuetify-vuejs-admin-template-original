@@ -154,7 +154,7 @@ const websiteStatistics = [
 
 .statistics-table {
   border-block-start: solid 1px rgba(var(--v-border-color), var(--v-border-opacity));
-  padding-block: 0.6rem;
+  padding-block: 0.64rem;
 
   .badge-size {
     block-size: 0.4375rem;

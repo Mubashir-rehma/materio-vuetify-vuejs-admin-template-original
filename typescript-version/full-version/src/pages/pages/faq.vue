@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { FaqCategory } from '@/@fake-db/types'
-import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
+import illustrationJohn from '@/assets/images/cards/illustration-john.png'
 import axios from '@axios'
 import AppSearchHeader from '@core/components/AppSearchHeader.vue'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const faqSearchQuery = ref('')
 
@@ -40,8 +38,6 @@ const contactUs = [
     tagLine: 'Best way to get answer faster!',
   },
 ]
-
-const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight, sittingGirlWithLaptopDark)
 </script>
 
 <template>
@@ -85,9 +81,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
           </VTab>
         </VTabs>
         <VImg
-          :width="200"
-          :src="sitingGirlWithLaptop"
-          class="d-none d-sm-block mt-10"
+          :width="300"
+          :src="illustrationJohn"
+          class="flip-in-rtl d-none d-sm-block mt-10"
         />
       </VCol>
 
@@ -162,7 +158,6 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
     <!-- 👉 You still have a question? -->
     <div class="text-center pt-15">
       <VChip
-        label
         color="primary"
         size="small"
         class="mb-2"

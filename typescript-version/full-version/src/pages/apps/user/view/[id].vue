@@ -42,7 +42,10 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
       md="7"
       lg="8"
     >
-      <VTabs v-model="userTab">
+      <VTabs
+        v-model="userTab"
+        class="v-tabs-pill"
+      >
         <VTab
           v-for="tab in tabs"
           :key="tab.icon"
@@ -55,7 +58,6 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
           <span>{{ tab.title }}</span>
         </VTab>
       </VTabs>
-      <VDivider />
 
       <VWindow
         v-model="userTab"

@@ -349,7 +349,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
         </VCard>
 
         <VCard class="mx-5 mb-5">
-          <VCardText class="font-weight-medium text-high-emphasis">
+          <VCardText>
             <div class="text-base">
               Click here to <span class="text-primary cursor-pointer">
                 Reply

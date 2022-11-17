@@ -84,7 +84,7 @@ const savedCards = [
 
       <!-- SECTION Payment Details -->
       <VList class="card-list mt-1">
-        <VListSubheader class="font-weight-semibold">
+        <VListSubheader class="text-high-emphasis font-weight-semibold">
           Payment details
         </VListSubheader>
 
@@ -105,7 +105,7 @@ const savedCards = [
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+          <VListItemTitle class="text-sm font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">

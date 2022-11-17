@@ -24,7 +24,7 @@ const options = controlledComputed(theme, () => {
     plotOptions: {
       bar: {
         borderRadius: 10,
-        columnWidth: '35%',
+        columnWidth: '30%',
         endingShape: 'rounded',
         startingShape: 'rounded',
       },

@@ -79,7 +79,7 @@ const resetPaymentForm = () => {
             >
               <div>
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-semibold mb-2">
                     Your Current Plan is Basic
                   </h3>
                   <p class="text-base">
@@ -88,7 +88,7 @@ const resetPaymentForm = () => {
                 </div>
 
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-semibold mb-2">
                     Active until Dec 09, 2021
                   </h3>
                   <p class="text-base">
@@ -97,12 +97,11 @@ const resetPaymentForm = () => {
                 </div>
 
                 <div>
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-semibold mb-2">
                     <span class="me-3">$199 Per Month</span>
                     <VChip
                       color="primary"
                       size="small"
-                      label
                     >
                       Popular
                     </VChip>
@@ -119,8 +118,8 @@ const resetPaymentForm = () => {
               md="6"
             >
               <VAlert
-                color="warning"
                 variant="tonal"
+                type="warning"
               >
                 <VAlertTitle class="mb-1">
                   We need your attention!
@@ -293,9 +292,9 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <p class="text-base font-weight-medium">
+                <h6 class="text-base font-weight-semibold mb-6">
                   My Cards
-                </p>
+                </h6>
 
                 <div class="d-flex flex-column gap-y-4">
                   <VCard

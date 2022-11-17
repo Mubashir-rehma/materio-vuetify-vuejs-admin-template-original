@@ -7,6 +7,8 @@ import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics
 import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
 import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
 import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
+import CardStatisticsTotalRevenueLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueLineCharts.vue'
+import CardStatisticsTotalRevenueRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueRadialBarCharts.vue'
 import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
 import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
 import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'

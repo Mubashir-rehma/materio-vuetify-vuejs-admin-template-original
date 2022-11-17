@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import authV2ForgotPasswordIllustrationBorderedDark from '@/assets/images/pages/auth-v2-forgot-password-illustration-bordered-dark.png'
-import authV2ForgotPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-forgot-password-illustration-bordered-light.png'
-import authV2ForgotPasswordIllustrationDark from '@/assets/images/pages/auth-v2-forgot-password-illustration-dark.png'
-import authV2ForgotPasswordIllustrationLight from '@/assets/images/pages/auth-v2-forgot-password-illustration-light.png'
 import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
 import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import tree from '@/assets/images/pages/tree.png'
+import authV2ForgotPasswordIllustrationBorderedDark from '@/assets/images/pages/auth-v2-verify-email-illustration-bordered-dark.png'
+import authV2ForgotPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-verify-email-illustration-bordered-light.png'
+import authV2ForgotPasswordIllustrationDark from '@/assets/images/pages/auth-v2-verify-email-illustration-dark.png'
+import authV2ForgotPasswordIllustrationLight from '@/assets/images/pages/auth-v2-verify-email-illustration-light.png'
+import tree from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
@@ -50,7 +50,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
         </div>
 
         <VImg
-          :width="276"
+          :width="160"
           :src="tree"
           class="auth-footer-start-tree"
         />

@@ -8,6 +8,7 @@ import messageLight from '@/assets/images/cards/message-light.png'
 import userDark from '@/assets/images/cards/user-dark.png'
 import userLight from '@/assets/images/cards/user-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+
 const analytics = [
   {
     title: '42.8k',
@@ -78,3 +79,8 @@ const analytics = [
   </VCard>
 </template>
 
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 24px;
+}
+</style>

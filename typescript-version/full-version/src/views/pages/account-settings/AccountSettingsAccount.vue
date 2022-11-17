@@ -109,7 +109,7 @@ const currencies = [
 <template>
   <VRow>
     <VCol cols="12">
-      <VCard title="Account Details">
+      <VCard>
         <VCardText class="d-flex">
           <!-- 👉 Avatar -->
           <VAvatar
@@ -122,7 +122,7 @@ const currencies = [
           <!-- 👉 Upload Photo -->
           <form
             ref="refForm"
-            class="d-flex flex-column justify-center gap-5"
+            class="d-flex flex-column justify-center gap-3"
           >
             <div class="d-flex flex-wrap gap-2">
               <VBtn
@@ -159,13 +159,11 @@ const currencies = [
               </VBtn>
             </div>
 
-            <p class="text-body-1 mb-0">
+            <p class="text-xs mb-0">
               Allowed JPG, GIF or PNG. Max size of 800K
             </p>
           </form>
         </VCardText>
-
-        <VDivider />
 
         <VCardText>
           <!-- 👉 Form -->
@@ -337,25 +335,11 @@ const currencies = [
       <VCard title="Delete Account">
         <VCardText>
           <!-- 👉 Checkbox and Button  -->
-          <VAlert
-            color="warning"
-            variant="tonal"
-            class="mb-4"
-          >
-            <VAlertTitle class="mb-1">
-              Are you sure you want to delete your account?
-            </VAlertTitle>
-            <p class="mb-0">
-              Once you delete your account, there is no going back. Please be certain.
-            </p>
-          </VAlert>
-          <div>
-            <VCheckbox
-              v-model="isAccountDeactivated"
-              :rules="validateAccountDeactivation"
-              label="I confirm my account deactivation"
-            />
-          </div>
+          <VCheckbox
+            v-model="isAccountDeactivated"
+            :rules="validateAccountDeactivation"
+            label="I confirm my account deactivation"
+          />
 
           <VBtn
             :disabled="!isAccountDeactivated"

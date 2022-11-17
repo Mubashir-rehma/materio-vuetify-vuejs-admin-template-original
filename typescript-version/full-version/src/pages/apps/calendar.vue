@@ -79,6 +79,7 @@ const checkAll = computed({
                 <VCheckbox
                   v-model="checkAll"
                   label="View all"
+                  color="secondary"
                   density="default"
                 />
                 <VCheckbox

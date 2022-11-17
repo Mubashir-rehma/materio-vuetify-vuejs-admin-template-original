@@ -30,7 +30,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
       cols="12"
       md="4"
     >
-      <h6 class="text-base mb-3">
+      <h6 class="text-xl font-weight-medium mb-3">
         {{ apiData.title }}
       </h6>
 
@@ -97,9 +97,9 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 >
                   <template #prepend>
                     <VIcon
-                      icon="mdi-chevron-right"
+                      icon="mdi-arrow-right"
                       size="18"
-                      class="me-2"
+                      class="text-disabled flip-in-rtl me-2"
                     />
                   </template>
                   <VListItemTitle class="text-primary">

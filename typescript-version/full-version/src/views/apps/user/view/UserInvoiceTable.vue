@@ -164,12 +164,12 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
           </td>
 
           <!-- 👉 total -->
-          <td class="text-center">
+          <td class="text-center text-medium-emphasis">
             ${{ invoice.total }}
           </td>
 
           <!-- 👉 Date -->
-          <td class="text-center">
+          <td class="text-center text-medium-emphasis">
             {{ invoice.issuedDate }}
           </td>
 

@@ -207,16 +207,20 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                 <h6 class="text-sm font-weight-medium mb-0">
                   {{ invoice.client.name }}
                 </h6>
-                <span class="text-caption">{{ invoice.client.companyEmail }}</span>
+                <span class="text-xs text-medium-emphasis">{{ invoice.client.companyEmail }}</span>
               </div>
             </div>
           </td>
 
           <!-- 👉 total -->
-          <td>${{ invoice.total }}</td>
+          <td class="text-medium-emphasis">
+            ${{ invoice.total }}
+          </td>
 
           <!-- 👉 Date -->
-          <td>{{ invoice.issuedDate }}</td>
+          <td class="text-medium-emphasis">
+            {{ invoice.issuedDate }}
+          </td>
 
           <!-- 👉 Balance -->
           <td>

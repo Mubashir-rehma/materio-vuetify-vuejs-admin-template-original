@@ -80,17 +80,17 @@ const currentBillingAddress = {
               cols="12"
               md="6"
             >
-              <h6 class="text-sm font-weight-medium mb-1">
-                Your Current Plan is <strong>Basic</strong>
-              </h6>
+              <p class="text-sm mb-1">
+                Your Current Plan is <span class="font-weight-semibold text-high-emphasis">Basic</span>
+              </p>
               <p>A simple start for everyone</p>
 
-              <h6 class="text-sm font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-semibold mb-1">
                 Active until Dec 09, 2021
               </h6>
               <p>We will send you a notification upon Subscription expiration</p>
 
-              <h6 class="text-sm font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-semibold mb-1">
                 <span class="me-3">$199 Per Month</span>
                 <VChip
                   color="primary"
@@ -242,7 +242,7 @@ const currentBillingAddress = {
               <VTable class="billing-address-table">
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Company Name:
                     </h6>
                   </td>
@@ -254,7 +254,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Billing Email:
                     </h6>
                   </td>
@@ -266,7 +266,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Tax ID:
                     </h6>
                   </td>
@@ -278,7 +278,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       VAT Number:
                     </h6>
                   </td>
@@ -290,7 +290,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td class="d-flex align-baseline">
-                    <h6 class="text-sm text-no-wrap">
+                    <h6 class="text-sm text-no-wrap font-weight-medium">
                       Billing Address:
                     </h6>
                   </td>
@@ -310,7 +310,7 @@ const currentBillingAddress = {
               <VTable class="billing-address-table">
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Contact:
                     </h6>
                   </td>
@@ -322,7 +322,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Country:
                     </h6>
                   </td>
@@ -334,7 +334,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       State:
                     </h6>
                   </td>
@@ -346,7 +346,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap">
+                    <h6 class="text-sm text-no-wrap font-weight-medium">
                       Zip Code:
                     </h6>
                   </td>

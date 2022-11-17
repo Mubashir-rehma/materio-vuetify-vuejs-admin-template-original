@@ -316,18 +316,18 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                   <h6 class="text-sm font-weight-medium mb-0">
                     {{ invoice.client.name }}
                   </h6>
-                  <span class="text-caption">{{ invoice.client.companyEmail }}</span>
+                  <span class="text-xs text-medium-emphasis">{{ invoice.client.companyEmail }}</span>
                 </div>
               </div>
             </td>
 
             <!-- 👉 total -->
-            <td class="text-center">
+            <td class="text-center text-medium-emphasis">
               ${{ invoice.total }}
             </td>
 
             <!-- 👉 Date -->
-            <td>
+            <td class="text-medium-emphasis">
               {{ invoice.issuedDate }}
             </td>
 
@@ -337,7 +337,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip"
                 size="small"
               >
-                {{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}
+                <span class="text-sm">{{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}</span>
               </VChip>
             </td>
 

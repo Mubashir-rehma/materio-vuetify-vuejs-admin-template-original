@@ -4,6 +4,7 @@ import avatar2 from '@/assets/images/avatars/avatar-2.png'
 import avatar3 from '@/assets/images/avatars/avatar-3.png'
 import avatar5 from '@/assets/images/avatars/avatar-5.png'
 import avatar8 from '@/assets/images/avatars/avatar-8.png'
+
 const teamMembers = [
   {
     profilePic: avatar1,
@@ -86,25 +87,25 @@ const teamMembers = [
         <tr>
           <th
             scope="col"
-            class="text-uppercase border-0"
+            class="text-uppercase"
           >
             Name
           </th>
           <th
             scope="col"
-            class="text-uppercase border-0"
+            class="text-uppercase"
           >
             Project
           </th>
           <th
             scope="col"
-            class="text-uppercase border-0"
+            class="text-uppercase"
           >
             Tasks
           </th>
           <th
             scope="col"
-            class="text-uppercase text-center border-0"
+            class="text-uppercase text-center"
           >
             Progress
           </th>
@@ -128,7 +129,7 @@ const teamMembers = [
                 <p class="text-sm font-weight-semibold mb-0">
                   {{ member.name }}
                 </p>
-                <span class="text-caption">{{ member.designation }}</span>
+                <span class="text-xs text-medium-emphasis">{{ member.designation }}</span>
               </div>
             </div>
           </td>

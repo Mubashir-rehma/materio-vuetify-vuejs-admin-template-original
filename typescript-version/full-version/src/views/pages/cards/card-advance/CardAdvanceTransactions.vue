@@ -60,6 +60,7 @@ const transactions: Transactions[] = [
     img: wallet,
   },
 ]
+
 const transactionsColors: Colors = {
   'Paypal': 'error',
   'Credit Card': 'success',
@@ -67,6 +68,7 @@ const transactionsColors: Colors = {
   'Wallet': 'primary',
   'Transfer': 'info',
 }
+
 const formateAmount = (amount: number) => {
   return Math.sign(amount) === 1 ? `+$${kFormatter(amount)}` : `-$${Math.abs(amount)}`
 }
@@ -131,7 +133,7 @@ const formateAmount = (amount: number) => {
           <!-- 👉 Amounts -->
           <template #append>
             <VListItemAction class="font-weight-semibold">
-              <span class="me-3">{{ formateAmount(transaction.amount) }}</span>
+              <span class="text-base me-3">{{ formateAmount(transaction.amount) }}</span>
               <VIcon
                 :size="24"
                 :color="Math.sign(transaction.amount) === 1 ? 'success' : 'error'"

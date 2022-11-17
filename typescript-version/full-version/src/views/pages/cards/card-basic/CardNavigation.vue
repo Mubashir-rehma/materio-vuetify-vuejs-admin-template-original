@@ -52,7 +52,7 @@ const tabContent = 'Pudding tiramisu caramels. Gingerbread gummies danish chocol
       <VCard>
         <VTabs
           v-model="navigationTab2"
-          centered
+          align-tabs="center"
         >
           <VTab
             v-for="item in tabItems"

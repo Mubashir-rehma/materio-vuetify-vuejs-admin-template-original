@@ -51,8 +51,8 @@ const earnings = [
     </VCardItem>
 
     <VCardText>
-      <div class="d-flex align-center">
-        <h4 class="text-h4 me-2">
+      <div class="d-flex align-center mt-3">
+        <h4 class="text-h4 font-weight-semibold me-2">
           $24,895
         </h4>
 

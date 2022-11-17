@@ -80,7 +80,7 @@ const pricingPlans = [
   </div>
 
   <!-- 👉 Annual and monthly price toggler -->
-  <div class="d-flex align-center justify-center mx-auto mb-10">
+  <div class="d-flex align-center justify-center mx-auto py-10">
     <VLabel
       for="pricing-plan-toggle"
       class="me-2"
@@ -88,7 +88,22 @@ const pricingPlans = [
       Monthly
     </VLabel>
 
-    <div>
+    <div class="position-relative">
+      <div class="pricing-save-chip position-absolute">
+        <VIcon
+          start
+          icon="mdi-arrow-down-left"
+          size="24"
+          class="text-disabled flip-in-rtl mt-1"
+        />
+        <VChip
+          size="small"
+          color="primary"
+        >
+          Save up to 10%
+        </VChip>
+      </div>
+
       <VSwitch
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
@@ -203,5 +218,11 @@ const pricingPlans = [
 <style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 0.75rem;
+}
+
+.pricing-save-chip {
+  display: flex;
+  inset-block-start: -1.5rem;
+  inset-inline-end: -6.5rem;
 }
 </style>

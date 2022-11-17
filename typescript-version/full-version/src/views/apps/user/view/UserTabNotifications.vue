@@ -30,9 +30,16 @@ const notifications = ref([
 <template>
   <VCard
     title="Notifications"
-    subtitle="You will receive notification for the below selected items."
     class="user-tab-notification"
   >
+    <VDivider />
+
+    <VCardText class="text-high-emphasis font-weight-semibold">
+      You will receive notification for the below selected items.
+    </VCardText>
+
+    <VDivider />
+
     <VTable class="text-no-wrap">
       <thead>
         <tr>

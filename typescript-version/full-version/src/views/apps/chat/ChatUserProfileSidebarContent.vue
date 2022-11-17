@@ -86,7 +86,6 @@ const userStatusRadioOptions = [
         <VTextarea
           id="textarea-user-about"
           v-model="store.profileUser.about"
-          outlined
           auto-grow
           class="mt-1"
           rows="4"

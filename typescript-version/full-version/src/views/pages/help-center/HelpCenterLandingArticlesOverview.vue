@@ -31,7 +31,7 @@ const props = defineProps<Props>()
             <VCardText class="text-center">
               <VImg
                 :src="article.img"
-                height="58"
+                aspect-ratio="1"
                 width="58"
                 class="mx-auto"
               />

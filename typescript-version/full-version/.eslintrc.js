@@ -11,6 +11,8 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
     'plugin:@typescript-eslint/recommended',
+
+    // 'plugin:unicorn/recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -140,6 +142,7 @@ module.exports = {
     'vue/prefer-separate-static-class': 'error',
     'vue/prefer-true-attribute-shorthand': 'error',
     'vue/v-on-function-call': 'error',
+    'vue/no-restricted-class': ['error', '/^(p|m)(l|r)-/'],
 
     // -- Extension Rules
     'vue/no-irregular-whitespace': 'error',
@@ -148,6 +151,14 @@ module.exports = {
     // -- Sonarlint
     'sonarjs/no-duplicate-string': 'off',
     'sonarjs/no-nested-template-literals': 'off',
+
+    // -- Unicorn
+    // 'unicorn/filename-case': 'off',
+    // 'unicorn/prevent-abbreviations': ['error', {
+    //   replacements: {
+    //     props: false,
+    //   },
+    // }],
 
     // Internal Rules
     'valid-appcardcode-code-prop': 'error',

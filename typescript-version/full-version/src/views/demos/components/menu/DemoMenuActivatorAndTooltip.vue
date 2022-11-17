@@ -5,7 +5,7 @@ const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', va
 </script>
 
 <template>
-  <VMenu top>
+  <VMenu location="top">
     <template #activator="{ props: menuProps }">
       <VTooltip location="top">
         <template #activator="{ props: tooltipProps }">

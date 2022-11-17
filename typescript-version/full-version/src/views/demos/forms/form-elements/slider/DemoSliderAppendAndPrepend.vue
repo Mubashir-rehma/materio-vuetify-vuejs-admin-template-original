@@ -21,7 +21,15 @@ const animationDuration = computed(() => {
   return `${60 / bpm.value}s`
 })
 
-const bmpControl = useClamp(bpm, min, max)
+const decrement = () => {
+  if (bpm.value > min)
+    bpm.value -= 1
+}
+
+const increment = () => {
+  if (bpm.value < max)
+    bpm.value += 1
+}
 </script>
 
 <template>
@@ -55,7 +63,7 @@ const bmpControl = useClamp(bpm, min, max)
       >
         <VIcon
           size="large"
-          :icon="isPlaying ? 'mdi-pause' : 'mdi-play'"
+          :icon="isPlaying ? 'tabler-pause' : 'tabler-play'"
         />
       </VBtn>
     </div>
@@ -73,9 +81,9 @@ const bmpControl = useClamp(bpm, min, max)
       <VBtn
         size="small"
         variant="text"
-        icon="mdi-minus"
+        icon="tabler-minus"
         :color="color"
-        @click="bmpControl--"
+        @click="decrement"
       />
     </template>
 
@@ -83,9 +91,9 @@ const bmpControl = useClamp(bpm, min, max)
       <VBtn
         size="small"
         variant="text"
-        icon="mdi-plus"
+        icon="tabler-plus"
         :color="color"
-        @click="bmpControl++"
+        @click="increment"
       />
     </template>
   </VSlider>

@@ -71,7 +71,12 @@ export const useChatStore = defineStore('chat', {
       }
 
       // Set Last Message for active contact
-      const contact = this.chatsContacts.find(c => c.id === this.activeChat!.contact.id) as ChatContactWithChat
+      const contact = this.chatsContacts.find(c => {
+        if (this.activeChat)
+          return c.id === this.activeChat.contact.id
+
+        return false
+      }) as ChatContactWithChat
 
       contact.chat.lastMessage = msg
     },

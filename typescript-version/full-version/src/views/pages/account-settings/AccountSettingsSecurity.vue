@@ -94,7 +94,7 @@ const isOneTimePasswordDialogVisible = ref(false)
     <VCol cols="12">
       <VCard title="Change Password">
         <VForm>
-          <VCardText>
+          <VCardText class="pt-0">
             <!-- 👉 Current Password -->
             <VRow class="mb-3">
               <VCol

@@ -34,7 +34,9 @@ onMounted(() => {
 <style lang="scss" scoped>
 .product-buy-now {
   position: fixed;
-  z-index: 4;
+
+  // To keep buy now button on top of v-layout. E.g. Email app
+  z-index: 999;
   inset-block-end: 5%;
   inset-inline-end: 79px;
 

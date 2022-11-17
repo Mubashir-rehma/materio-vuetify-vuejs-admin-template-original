@@ -1,6 +1,7 @@
 @use "@layouts/styles/mixins" as layoutsMixins;
 @use "vuetify/lib/styles/tools/elevation" as elevation;
 @use "@core/scss/base/variables";
+@use "@layouts/styles/placeholders";
 
 // Horizontal nav item styles (including nested)
 %horizontal-nav-item {
@@ -86,4 +87,8 @@
 
   border-radius: 6px;
   padding-block: 0.3rem;
+
+  > div {
+    @extend %style-scroll-bar;
+  }
 }

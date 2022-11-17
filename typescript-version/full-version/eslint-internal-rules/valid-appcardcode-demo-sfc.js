@@ -6,6 +6,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const utils = require('eslint-plugin-vue/lib/utils')
+
 function toPascalCase(str) {
   const words = str.match(/[a-z]+/gi)
   if (!words)

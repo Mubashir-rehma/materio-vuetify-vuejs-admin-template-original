@@ -30,8 +30,11 @@ module.exports = {
     // indentation (Already present in TypeScript)
     'indent': ['error', 2],
 
-    // Enforce trailing command (Already present in TypeScript)
+    // Enforce trailing comma (Already present in TypeScript)
     'comma-dangle': ['error', 'always-multiline'],
+
+    // Enforce consistent spacing inside braces of object (Already present in TypeScript)
+    'object-curly-spacing': ['error', 'always'],
 
     // Disable max-len
     'max-len': 'off',
@@ -63,8 +66,17 @@ module.exports = {
 
     'vue/multi-word-component-names': 'off',
 
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'expression', next: 'const' },
+      { blankLine: 'always', prev: 'const', next: 'expression' },
+      { blankLine: 'always', prev: 'multiline-const', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'multiline-const' },
+    ],
+
     // Plugin: eslint-plugin-import
     'import/prefer-default-export': 'off',
+    'import/newline-after-import': ['error', { count: 1 }],
 
     // Plugin: eslint-plugin-import
     // For omitting extension for ts files

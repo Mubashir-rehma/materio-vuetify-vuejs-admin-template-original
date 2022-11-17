@@ -20,6 +20,7 @@ const selectAllInvoice = ref(false)
 // 👉 Fetch Invoices
 watchEffect(() => {
   const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
+
   invoiceListStore.fetchInvoices(
     {
       q: searchQuery.value,
@@ -105,6 +106,7 @@ watch(selectedRows, () => {
 const addRemoveIndividualCheckbox = (checkID: string) => {
   if (selectedRows.value.includes(checkID)) {
     const index = selectedRows.value.indexOf(checkID)
+
     selectedRows.value.splice(index, 1)
   }
   else {
@@ -183,7 +185,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
           <!-- 👉 Create invoice -->
           <VBtn
             prepend-icon="mdi-plus"
-            :to="{ name: 'invoice-add' }"
+            :to="{ name: 'apps-invoice-add' }"
           >
             Create invoice
           </VBtn>
@@ -262,7 +264,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
             <!-- 👉 Id -->
             <td>
-              <RouterLink :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }">
+              <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
                 #{{ invoice.id }}
               </RouterLink>
             </td>
@@ -358,7 +360,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                 variant="plain"
                 color="default"
                 size="x-small"
-                :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
+                :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }"
               >
                 <VIcon
                   :size="24"
@@ -391,7 +393,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
                       <VListItemTitle>Download</VListItemTitle>
                     </VListItem>
 
-                    <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
+                    <VListItem :to="{ name: 'apps-invoice-edit-id', params: { id: invoice.id } }">
                       <template #prepend>
                         <VIcon
                           size="24"

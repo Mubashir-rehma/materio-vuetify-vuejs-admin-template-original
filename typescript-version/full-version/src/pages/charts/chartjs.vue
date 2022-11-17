@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ChartJsBarChart from '@/views/charts/chartjs/ChartJsBarChart.vue'
 import ChartJsBubbleChart from '@/views/charts/chartjs/ChartJsBubbleChart.vue'
-import ChartjsHorizontalBarChart from '@/views/charts/chartjs/ChartjsHorizontalBarChart.vue'
+import ChartJsHorizontalBarChart from '@/views/charts/chartjs/ChartJsHorizontalBarChart.vue'
 import ChartJsLineAreaChart from '@/views/charts/chartjs/ChartJsLineAreaChart.vue'
 import ChartJsLineChart from '@/views/charts/chartjs/ChartJsLineChart.vue'
 import ChartJsPolarAreaChart from '@/views/charts/chartjs/ChartJsPolarAreaChart.vue'
@@ -32,14 +32,13 @@ const chartJsCustomColors: ChartJsCustomColors = {
 </script>
 
 <template>
-  <VRow>
+  <VRow id="chartjs-wrapper">
     <!-- 👉 Statistics Line Chart  -->
     <VCol cols="12">
       <VCard
         title="Statistics"
         subtitle="Commercial networks and enterprises"
       >
-        <!-- Body -->
         <VCardText>
           <ChartJsLineChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -52,7 +51,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
       md="6"
     >
       <VCard title="Radar Chart">
-        <!-- Body -->
         <VCardText>
           <ChartJsRadarChart />
         </VCardText>
@@ -65,7 +63,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
       md="6"
     >
       <VCard title="Average Skills">
-        <!-- Body -->
         <VCardText>
           <ChartJsPolarAreaChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -74,17 +71,11 @@ const chartJsCustomColors: ChartJsCustomColors = {
 
     <!-- 👉  Bubble Chart -->
     <VCol cols="12">
-      <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>Bubble Chart</VCardTitle>
+      <VCard title="Bubble Chart">
+        <template #append>
+          <span class="text-subtitle-2">$ 100,000</span>
+        </template>
 
-          <template #append>
-            <span class="text-subtitle-2">$ 100,000</span>
-          </template>
-        </VCardItem>
-
-        <!-- Body -->
         <VCardText>
           <ChartJsBubbleChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -94,8 +85,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
     <!-- 👉 New Product Data Scatter Chart -->
     <VCol cols="12">
       <VCard>
-        <!-- Header -->
-        <VCardItem>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>New Product Data</VCardTitle>
 
           <template #append>
@@ -111,7 +101,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
           </template>
         </VCardItem>
 
-        <!-- Body -->
         <VCardText>
           <ChartJsScatterChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -121,9 +110,10 @@ const chartJsCustomColors: ChartJsCustomColors = {
     <!-- 👉 Data Science Area Line Chart -->
     <VCol cols="12">
       <VCard>
-        <!-- Header -->
-        <VCardItem>
-          <VCardTitle>Data Science</VCardTitle>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
+          <VCardTitle>
+            Data Science
+          </VCardTitle>
 
           <template #append>
             <div class="date-picker-wrapper">
@@ -136,7 +126,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
           </template>
         </VCardItem>
 
-        <!-- Body -->
         <VCardText>
           <ChartJsLineAreaChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -149,8 +138,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
       md="6"
     >
       <VCard>
-        <!-- Header -->
-        <VCardItem>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Latest Statistics</VCardTitle>
 
           <template #append>
@@ -164,7 +152,6 @@ const chartJsCustomColors: ChartJsCustomColors = {
           </template>
         </VCardItem>
 
-        <!-- Body -->
         <VCardText>
           <ChartJsBarChart :colors="chartJsCustomColors" />
         </VCardText>
@@ -177,8 +164,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
       md="6"
     >
       <VCard>
-        <!-- Header -->
-        <VCardItem>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Balance</VCardTitle>
           <VCardSubtitle>$74,123</VCardSubtitle>
 
@@ -193,9 +179,8 @@ const chartJsCustomColors: ChartJsCustomColors = {
           </template>
         </VCardItem>
 
-        <!-- Body -->
         <VCardText>
-          <ChartjsHorizontalBarChart :colors="chartJsCustomColors" />
+          <ChartJsHorizontalBarChart :colors="chartJsCustomColors" />
         </VCardText>
       </VCard>
     </VCol>
@@ -205,5 +190,11 @@ const chartJsCustomColors: ChartJsCustomColors = {
 <style lang="scss">
 .date-picker-wrapper {
   inline-size: 10.5rem;
+}
+
+#chartjs-wrapper {
+  .v-card-item__append {
+    padding-inline-start: 0;
+  }
 }
 </style>

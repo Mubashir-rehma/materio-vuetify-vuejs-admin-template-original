@@ -1,13 +1,12 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getCandlestickChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(theme, () => getCandlestickChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getCandlestickChartConfig(vuetifyTheme.current.value))
+
 const series = [
   {
     data: [

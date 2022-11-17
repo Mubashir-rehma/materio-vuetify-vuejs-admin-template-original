@@ -147,4 +147,3 @@ const statistic = {
     </VRow>
   </section>
 </template>
-

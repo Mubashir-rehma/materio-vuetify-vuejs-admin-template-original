@@ -73,6 +73,17 @@ h6,
     ) !important;
 }
 
+// 👉 Button
+@if variables.$vuetify-reduce-default-compact-button-icon-size {
+  .v-btn--density-compact.v-btn--size-default {
+    .v-btn__content > svg {
+      width: 22px;
+      height: 22px;
+      font-size: 22px;
+    }
+  }
+}
+
 // 👉 Card
 // Removes padding-top for immediately placed v-card-text after itself
 .v-card-text {

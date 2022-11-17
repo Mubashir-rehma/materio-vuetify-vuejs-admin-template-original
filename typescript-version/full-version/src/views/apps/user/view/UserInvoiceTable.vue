@@ -69,29 +69,27 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   <VCard
     v-if="invoices"
     id="invoice-list"
+    title="Invoice List"
   >
-    <VCardItem>
-      <VCardTitle>Invoice List</VCardTitle>
-      <template #append>
-        <VBtn
-          color="primary"
-          append-icon="mdi-chevron-down"
-        >
-          Export
-          <VMenu activator="parent">
-            <VList density="compact">
-              <VListItem
-                v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
-                :key="index"
-                :value="index"
-              >
-                <VListItemTitle>{{ item }}</VListItemTitle>
-              </VListItem>
-            </VList>
-          </VMenu>
-        </VBtn>
-      </template>
-    </VCardItem>
+    <template #append>
+      <VBtn
+        color="primary"
+        append-icon="mdi-chevron-down"
+      >
+        Export
+        <VMenu activator="parent">
+          <VList density="compact">
+            <VListItem
+              v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
+              :key="index"
+              :value="index"
+            >
+              <VListItemTitle>{{ item }}</VListItemTitle>
+            </VListItem>
+          </VList>
+        </VMenu>
+      </VBtn>
+    </template>
 
     <VDivider />
 
@@ -132,7 +130,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
         >
           <!-- 👉 Id -->
           <td>
-            <RouterLink :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }">
+            <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>
@@ -194,7 +192,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
               variant="plain"
               color="default"
               size="x-small"
-              :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
+              :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }"
             >
               <VIcon
                 :size="24"
@@ -226,7 +224,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
                     <VListItemTitle>Download</VListItemTitle>
                   </VListItem>
 
-                  <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
+                  <VListItem :to="{ name: 'apps-invoice-edit-id', params: { id: invoice.id } }">
                     <template #prepend>
                       <VIcon
                         size="22"

@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router'
 import axios from '@axios'
 
 import type { HelpCenterCategoriesType } from '@/@fake-db/types'
+
 const route = useRoute()
 
 const apiData = ref<HelpCenterCategoriesType>()
@@ -65,26 +66,20 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
           :key="subCategory.slug"
           :value="subCategory.slug"
         >
-          <VCard>
-            <VCardItem>
-              <template #prepend>
-                <VAvatar
-                  color="primary"
-                  variant="tonal"
-                  rounded
-                  size="42"
-                >
-                  <VIcon
-                    :icon="subCategory.icon"
-                    size="26"
-                  />
-                </VAvatar>
-              </template>
-
-              <VCardTitle>
-                {{ subCategory.title }}
-              </VCardTitle>
-            </VCardItem>
+          <VCard :title="subCategory.title">
+            <template #prepend>
+              <VAvatar
+                color="primary"
+                variant="tonal"
+                rounded
+                size="42"
+              >
+                <VIcon
+                  :icon="subCategory.icon"
+                  size="26"
+                />
+              </VAvatar>
+            </template>
 
             <VCardText>
               <VList class="card-list mb-6">
@@ -102,7 +97,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 >
                   <template #prepend>
                     <VIcon
-                      icon="tabler-chevron-right"
+                      icon="mdi-chevron-right"
                       size="18"
                       class="me-2"
                     />
@@ -118,7 +113,7 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 :to="{ name: 'pages-help-center' }"
               >
                 <VIcon
-                  icon="tabler-chevron-left"
+                  icon="mdi-chevron-left"
                   class="flip-in-rtl"
                 />
                 <span>Back to help center</span>

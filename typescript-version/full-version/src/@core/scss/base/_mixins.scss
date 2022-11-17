@@ -1,16 +1,4 @@
-@mixin themed($property, $light-value, $dark-value) {
-  @at-root {
-    .v-theme {
-      &--light {
-        #{$property}: $light-value;
-      }
-
-      &--dark {
-        #{$property}: $dark-value;
-      }
-    }
-  }
-}
+// @use "@/styles/variables/_vuetify.scss";
 
 // ℹ️ This mixin is inspired from vuetify for adding hover styles via before pseudo element
 @mixin before-pseudo() {
@@ -18,9 +6,9 @@
 
   &::before {
     position: absolute;
+    border-radius: inherit;
     background: currentcolor;
     block-size: 100%;
-    border-radius: inherit;
     content: "";
     inline-size: 100%;
     inset: 0;
@@ -29,33 +17,57 @@
   }
 }
 
-// ——— Light background generator ——————— //
-// ℹ️ With this you have to give text color to the component you want light bg
-// e.g. class="avatar-initial text-primary" for primary light bg
-@mixin light-bg-provider($component, $inner-selector: "", $opacity: 0.12) {
-  .#{$component}.#{$component}-light-bg #{$inner-selector} {
-    background-color: transparent !important;
-
-    &.bg-static-white {
-      background-color: white !important;
-    }
-
-    &::before {
-      position: absolute;
-      background-color: currentcolor;
-      border-radius: inherit;
-      content: "";
-      inset: 0;
-      opacity: $opacity;
-      pointer-events: none;
-    }
-  }
-}
-
 @mixin bordered-skin($component, $border-property: "border", $important: false) {
   #{$component} {
     background-color: rgb(var(--v-theme-background));
     box-shadow: none !important;
     #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
+  }
+}
+
+// ℹ️ Inspired from vuetify's active-states mixin
+// focus => 0.12 & selected => 0.08
+@mixin selected-states($selector) {
+  // #{$selector} {
+  //   opacity: calc(#{map.get(vuetify.$states, "selected")} * var(--v-theme-overlay-multiplier));
+  // }
+
+  // &:hover
+  // #{$selector} {
+  //   opacity: calc(#{map.get(vuetify.$states, "selected") + map.get(vuetify.$states, "hover")} * var(--v-theme-overlay-multiplier));
+  // }
+
+  // &:focus-visible
+  // #{$selector} {
+  //   opacity: calc(#{map.get(vuetify.$states, "selected") + map.get(vuetify.$states, "focus")} * var(--v-theme-overlay-multiplier));
+  // }
+
+  // @supports not selector(:focus-visible) {
+  //   &:focus {
+  //     #{$selector} {
+  //       opacity: calc(#{map.get(vuetify.$states, "selected") + map.get(vuetify.$states, "focus")} * var(--v-theme-overlay-multiplier));
+  //     }
+  //   }
+  // }
+  #{$selector} {
+    opacity: calc(var(--v-selected-opacity) * var(--v-theme-overlay-multiplier));
+  }
+
+  &:hover
+  #{$selector} {
+    opacity: calc(var(--v-selected-opacity) + var(--v-hover-opacity) * var(--v-theme-overlay-multiplier));
+  }
+
+  &:focus-visible
+  #{$selector} {
+    opacity: calc(var(--v-selected-opacity) + var(--v-focus-opacity) * var(--v-theme-overlay-multiplier));
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      #{$selector} {
+        opacity: calc(var(--v-selected-opacity) + var(--v-focus-opacity) * var(--v-theme-overlay-multiplier));
+      }
+    }
   }
 }

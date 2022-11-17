@@ -1,27 +1,37 @@
 export default [
   { heading: 'Apps & Pages' },
   {
+    title: 'Email',
+    icon: { icon: 'mdi-email-outline' },
+    to: 'apps-email',
+  },
+  {
+    title: 'Chat',
+    icon: { icon: 'mdi-message-outline' },
+    to: 'apps-chat',
+  },
+  {
     title: 'Calendar',
     icon: { icon: 'mdi-calendar-blank-outline' },
-    to: 'calendar',
+    to: 'apps-calendar',
   },
   {
     title: 'Invoice',
     icon: { icon: 'mdi-file-document-outline' },
 
     children: [
-      { title: 'List', to: 'invoice-list' },
-      { title: 'Preview', to: { name: 'invoice-preview-id', params: { id: '5036' } } },
-      { title: 'Edit', to: { name: 'invoice-edit-id', params: { id: '5036' } } },
-      { title: 'Add', to: 'invoice-add' },
+      { title: 'List', to: 'apps-invoice-list' },
+      { title: 'Preview', to: { name: 'apps-invoice-preview-id', params: { id: '5036' } } },
+      { title: 'Edit', to: { name: 'apps-invoice-edit-id', params: { id: '5036' } } },
+      { title: 'Add', to: 'apps-invoice-add' },
     ],
   },
   {
     title: 'User',
     icon: { icon: 'mdi-account-outline' },
     children: [
-      { title: 'List', to: 'user-list' },
-      { title: 'View', to: { name: 'user-view-id', params: { id: 21 } } },
+      { title: 'List', to: 'apps-user-list' },
+      { title: 'View', to: { name: 'apps-user-view-id', params: { id: 21 } } },
     ],
   },
   {

@@ -23,6 +23,7 @@ const refNav = ref()
 const { width: windowWidth } = useWindowSize()
 
 const isHovered = useElementHover(refNav)
+
 provide(injectionKeyIsVerticalNavHovered, isHovered)
 
 const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isVerticalNavMini, isAppRtl } = useLayouts()
@@ -43,6 +44,7 @@ const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => 
   Close overlay vertical nav when link is clicked
 */
 const route = useRoute()
+
 watch(() => route.name, () => {
   props.toggleIsOverlayNavActive(false)
 })
@@ -50,11 +52,6 @@ watch(() => route.name, () => {
 const isVerticalNavScrolled = ref(false)
 const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.value = val
 
-// Perfect scrollbar
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 const handleNavScroll = (evt: Event) => {
   isVerticalNavScrolled.value = (evt.target as HTMLElement).scrollTop > 0
 }
@@ -131,7 +128,7 @@ const handleNavScroll = (evt: Event) => {
         :key="isAppRtl"
         tag="ul"
         class="nav-items"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
         @ps-scroll-y="handleNavScroll"
       >
         <Component

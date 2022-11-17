@@ -17,8 +17,8 @@
 
 // This is same as `%vertical-nav-item` except section title is excluded
 %vertical-nav-item-interactive {
-  block-size: 2.75rem;
   border-radius: 0.4rem;
+  block-size: 2.75rem;
 
   /*
     ℹ️ We will use `margin-block-end` instead of `margin-block` to give more space for shadow to appear.
@@ -54,7 +54,7 @@
 
 // Open & Active nav group styles
 %vertical-nav-group-open-active {
-  @include vuetifyStates.active-states("&::before");
+  @include mixins.selected-states("&::before");
 }
 
 // Section title

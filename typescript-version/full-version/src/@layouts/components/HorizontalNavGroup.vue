@@ -36,6 +36,7 @@ const isGroupActive = ref(false)
 */
 watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
+
   isGroupActive.value = isActive
 }, { immediate: true })
 </script>

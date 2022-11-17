@@ -5,6 +5,7 @@ import { getLineChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
+
 interface Props {
   colors: ChartJsCustomColors
 }
@@ -64,7 +65,8 @@ const data = {
     },
   ],
 }
-const chartConfig = controlledComputed(theme, () => getLineChartConfig(vuetifyTheme.current.value))
+
+const chartConfig = computed(() => getLineChartConfig(vuetifyTheme.current.value))
 </script>
 
 <template>

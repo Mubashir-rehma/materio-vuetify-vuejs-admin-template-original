@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import type { HelpCenterSubcategoriesType, HelpCenterSubcategoryArticlesType } from '@/@fake-db/types'
 import axios from '@axios'
+
 const route = useRoute()
 
 const apiData = ref<HelpCenterSubcategoriesType>()
@@ -73,7 +74,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                 }"
               >
                 <VIcon
-                  icon="tabler-chevron-left"
+                  icon="mdi-chevron-left"
                   class="flip-in-rtl"
                 />
                 <span>Back to help center</span>
@@ -87,13 +88,13 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                   variant="tonal"
                   rounded
                 >
-                  <VIcon icon="tabler-currency-dollar" />
+                  <VIcon icon="mdi-currency-usd" />
                 </VAvatar>
               </template>
               <VCardTitle>{{ activeArticle.title }}</VCardTitle>
             </VCardItem>
 
-            <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+            <!-- eslint-disable-next-line vue/no-v-html vue/no-v-text-v-html-on-component -->
             <VCardText v-html="activeArticle.content" />
 
             <VDivider />
@@ -121,7 +122,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                   rounded
                   size="30"
                 >
-                  <VIcon icon="tabler-thumb-up" />
+                  <VIcon icon="mdi-thumb-up-outline" />
                 </VAvatar>
                 <VAvatar
                   color="primary"
@@ -129,7 +130,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                   rounded
                   size="30"
                 >
-                  <VIcon icon="tabler-thumb-down" />
+                  <VIcon icon="mdi-thumb-down-outline" />
                 </VAvatar>
               </div>
             </VCardText>

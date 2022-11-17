@@ -33,7 +33,7 @@
     block-size: 8px;
     border-end-end-radius: 14px;
     border-start-end-radius: 14px;
-    inline-size: 8px;
+    inline-size: 4px;
   }
 
   /* Track */
@@ -43,8 +43,8 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: rgb(var(--v-code-background-color));
     border-radius: 0.5rem;
+    background: rgb(var(--v-theme-perfect-scrollbar-thumb));
   }
 
   &::-webkit-scrollbar-corner {

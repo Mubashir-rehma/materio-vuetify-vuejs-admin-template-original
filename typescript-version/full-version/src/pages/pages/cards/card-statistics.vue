@@ -3,11 +3,9 @@ import illustration1 from '@/assets/images/cards/illustration-1.png'
 import illustration2 from '@/assets/images/cards/illustration-2.png'
 import illustration3 from '@/assets/images/cards/illustration-3.png'
 import illustration4 from '@/assets/images/cards/illustration-4.png'
-import CardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsAreaCharts.vue'
-import CardStatisticsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarCharts.vue'
-import CardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarWithGapCharts.vue'
-import CardStatisticsLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsLineCharts.vue'
-import CardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsRadialBarCharts.vue'
+import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
+import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
+import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
 import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
 import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
 import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
@@ -197,7 +195,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsLineCharts />
+      <CardStatisticsTotalRevenueLineCharts />
     </VCol>
 
     <!-- 👉 Sessions Bar Chart with Gaps -->
@@ -207,7 +205,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsBarWithGapCharts />
+      <CardStatisticsSessionsBarWithGapCharts />
     </VCol>
 
     <!-- 👉 Total Growth Area Chart -->
@@ -217,7 +215,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsAreaCharts />
+      <CardStatisticsTotalGrowthAreaCharts />
     </VCol>
 
     <!-- 👉 Total Revenue Radial Bar Chart -->
@@ -227,7 +225,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsRadialBarCharts />
+      <CardStatisticsTotalRevenueRadialBarCharts />
     </VCol>
 
     <!-- 👉 Session Bar Chart -->
@@ -237,7 +235,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsBarCharts />
+      <CardStatisticsSessionsBarCharts />
     </VCol>
 
     <!-- 👉 Total Profit Line Chart -->

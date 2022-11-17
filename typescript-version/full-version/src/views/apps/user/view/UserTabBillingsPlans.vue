@@ -160,21 +160,15 @@ const currentBillingAddress = {
 
     <!-- 👉 Payment Methods -->
     <VCol cols="12">
-      <VCard>
-        <VCardItem>
-          <VCardTitle class="d-flex flex-wrap gap-4">
-            <span>Payment Methods</span>
-
-            <VSpacer />
-
-            <VBtn
-              prepend-icon="mdi-plus"
-              @click="isCardAddDialogVisible = !isCardAddDialogVisible"
-            >
-              Add Card
-            </VBtn>
-          </VCardTitle>
-        </VCardItem>
+      <VCard title="Payment Methods">
+        <template #append>
+          <VBtn
+            prepend-icon="mdi-plus"
+            @click="isCardAddDialogVisible = !isCardAddDialogVisible"
+          >
+            Add Card
+          </VBtn>
+        </template>
 
         <VCardText class="d-flex flex-column gap-y-4">
           <VCard
@@ -232,16 +226,12 @@ const currentBillingAddress = {
 
     <VCol cols="12">
       <!-- 👉 Billing Address -->
-      <VCard>
-        <VCardItem>
-          <VCardTitle>Billing Address</VCardTitle>
-
-          <template #append>
-            <VBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
-              Edit Address
-            </VBtn>
-          </template>
-        </VCardItem>
+      <VCard title="Billing Address">
+        <template #append>
+          <VBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
+            Edit Address
+          </VBtn>
+        </template>
 
         <VCardText>
           <VRow>

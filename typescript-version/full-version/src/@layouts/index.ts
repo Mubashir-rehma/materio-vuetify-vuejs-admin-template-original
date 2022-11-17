@@ -11,11 +11,13 @@ const { _setAppDir } = useLayouts()
 export const createLayouts = (userConfig: UserConfig): Plugin => {
   const localStorageIsRtl = localStorage.getItem(`${userConfig.app.title}-isRtl`)
   const localStorageIsVerticalNavCollapsed = localStorage.getItem(`${userConfig.app.title}-isVerticalNavCollapsed`)
+
   const localStorageContentWidth = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-contentWidth`)
 
     return Object.values(ContentWidth).find(v => v === storageValue)
   })()
+
   const localStorageNavbarBlur = localStorage.getItem(`${userConfig.app.title}-navbarBlur`)
 
   config.app.title = userConfig.app.title

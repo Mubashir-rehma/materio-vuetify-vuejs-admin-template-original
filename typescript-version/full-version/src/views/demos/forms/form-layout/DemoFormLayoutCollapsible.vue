@@ -12,10 +12,12 @@ const stateList = [
   'Georgia',
   'Hawaii',
 ]
+
 const radios = ref('home')
 const deliveryOption = ref('standard')
 const paymentMethod = ref('credit-debit-card')
 const panel = ref(0)
+
 const paymentMethods = [
   {
     radioValue: 'credit-debit-card',
@@ -217,31 +219,31 @@ const paymentMethods = [
             cols="12"
           >
             <VForm>
-              <VRow>
-                <!-- 👉 Payment Method -->
-                <VCol cols="12">
-                  <VRadioGroup
-                    v-model="paymentMethod"
-                    inline
-                  >
-                    <div>
-                      <VRadio
-                        v-for="payment in paymentMethods"
-                        :key="payment.radioValue"
-                        :value="payment.radioValue"
-                      >
-                        <template #label>
-                          <span class="me-1">{{ payment.radioLabel }}</span>
-                          <VIcon
-                            size="18"
-                            :icon="payment.icon"
-                          />
-                        </template>
-                      </VRadio>
-                    </div>
-                  </VRadioGroup>
-                </VCol>
+              <!-- 👉 Payment Method -->
+              <div>
+                <VRadioGroup
+                  v-model="paymentMethod"
+                  inline
+                >
+                  <div>
+                    <VRadio
+                      v-for="payment in paymentMethods"
+                      :key="payment.radioValue"
+                      :value="payment.radioValue"
+                    >
+                      <template #label>
+                        <span class="me-1">{{ payment.radioLabel }}</span>
+                        <VIcon
+                          size="18"
+                          :icon="payment.icon"
+                        />
+                      </template>
+                    </VRadio>
+                  </div>
+                </VRadioGroup>
+              </div>
 
+              <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
                 <VCol cols="12">
                   <VTextField label="Card Number" />

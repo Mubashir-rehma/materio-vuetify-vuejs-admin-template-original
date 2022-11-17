@@ -6,6 +6,8 @@ import './pages/help-center'
 
 // Apps
 import './apps/calendar'
+import './apps/chat'
+import './apps/email'
 import './apps/invoice'
 
 // forwards the matched request over network

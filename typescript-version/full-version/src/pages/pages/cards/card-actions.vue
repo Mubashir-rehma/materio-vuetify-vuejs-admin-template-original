@@ -10,6 +10,7 @@ const tableData = [
     action: 'Remove Card', icon: 'mdi-close', details: 'Remove card from page using remove card action',
   },
 ]
+
 const refetchData = (hideOverlay: () => void) => {
   setTimeout(hideOverlay, 3000)
 }

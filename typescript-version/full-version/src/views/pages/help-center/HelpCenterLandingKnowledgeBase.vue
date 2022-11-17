@@ -29,20 +29,15 @@ const totalArticles = (category: HelpCenterCategoriesType) => {
           sm="6"
           md="4"
         >
-          <VCard>
-            <VCardItem>
-              <template #prepend>
-                <VAvatar
-                  :icon="article.icon"
-                  rounded
-                  :color="article.avatarColor"
-                  variant="tonal"
-                />
-              </template>
-              <VCardTitle>
-                {{ article.title }}
-              </VCardTitle>
-            </VCardItem>
+          <VCard :title="article.title">
+            <template #prepend>
+              <VAvatar
+                :icon="article.icon"
+                rounded
+                :color="article.avatarColor"
+                variant="tonal"
+              />
+            </template>
 
             <VCardText>
               <ul

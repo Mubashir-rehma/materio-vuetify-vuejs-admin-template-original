@@ -34,12 +34,14 @@ const refForm = ref<VForm>()
 
 // 👉 Event
 const event = ref<Event | NewEvent>(JSON.parse(JSON.stringify(props.event)))
+
 const resetEvent = () => {
   event.value = JSON.parse(JSON.stringify(props.event))
   nextTick(() => {
     refForm.value?.resetValidation()
   })
 }
+
 watch(() => props.isDrawerOpen, resetEvent)
 
 const removeEvent = () => {
@@ -75,11 +77,6 @@ const guestsOptions = [
   { avatar: avatar2, name: 'Cheryl May' },
 ]
 
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
-
 // 👉 Form
 
 const onCancel = () => {
@@ -100,6 +97,7 @@ const startDateTimePickerConfig = computed(() => {
 
   return config
 })
+
 const endDateTimePickerConfig = computed(() => {
   const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
 
@@ -146,9 +144,7 @@ const endDateTimePickerConfig = computed(() => {
       </VBTn>
     </div>
 
-    <PerfectScrollbar
-      :options="perfectScrollbarSettings"
-    >
+    <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
           <!-- SECTION Form -->

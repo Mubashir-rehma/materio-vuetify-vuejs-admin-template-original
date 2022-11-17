@@ -45,6 +45,7 @@ const nextTab = () => {
   <div class="text-center">
     <VBtn
       variant="text"
+      :disabled="currentTab === 1"
       @click="preTab"
     >
       Previous
@@ -52,6 +53,7 @@ const nextTab = () => {
 
     <VBtn
       variant="text"
+      :disabled="currentTab === totalTabs"
       @click="nextTab"
     >
       Next

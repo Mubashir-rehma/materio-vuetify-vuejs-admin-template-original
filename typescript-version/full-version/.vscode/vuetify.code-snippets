@@ -29,10 +29,17 @@
     "Icon only button": {
         "prefix": "v-btn-icon",
         "body": [
-            "<v-btn",
-            "  icon=\"mdi-${1:icon}\"",
+            "<VBtn",
             "  variant=\"text\"",
-            "/>"
+            "  color=\"default\"",
+            "  icon",
+            "  size=\"small\"",
+            ">",
+            "  <VIcon",
+            "    size=\"24\"",
+            "    icon=\"mdi-${1}\"",
+            "  />",
+            "</VBtn>"
         ],
         "description": "Icon only button"
     },

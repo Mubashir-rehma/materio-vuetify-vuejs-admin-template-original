@@ -24,6 +24,7 @@ const fetchFaqs = () => {
 
 const activeTab = ref('Payment')
 const activeQuestion = ref(0)
+
 watch(activeTab, () => activeQuestion.value = 0)
 watch(faqSearchQuery, fetchFaqs, { immediate: true })
 
@@ -132,9 +133,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
               multiple
             >
               <VExpansionPanel
-                v-for="(item, index) in faq.faqs"
+                v-for="item in faq.faqs"
                 :key="item.question"
-                :title="`Q${index + 1}:  ${item.question}`"
+                :title="item.question"
                 :text="item.answer"
               />
             </VExpansionPanels>

@@ -43,14 +43,14 @@ const data: Data = {
   ],
   categories: [
     {
-      icon: 'tabler-rocket',
+      icon: 'mdi-rocket',
       avatarColor: 'success',
       slug: 'getting-started',
       title: 'Getting Started',
       subCategories: [
         {
           slug: 'account',
-          icon: 'tabler-box',
+          icon: 'mdi-account',
           title: 'Account',
           articles: [
             {
@@ -88,7 +88,7 @@ const data: Data = {
         {
           slug: 'authentication',
           title: 'Authentication',
-          icon: 'tabler-lock',
+          icon: 'mdi-lock-outline',
           articles: [
             {
               slug: 'how-to-create-a-strong-password',
@@ -119,7 +119,7 @@ const data: Data = {
         {
           slug: 'billing',
           title: 'Billing',
-          icon: 'tabler-currency-dollar',
+          icon: 'mdi-currency-usd',
           articles: [
             {
               slug: 'how-to-update-payment-method',
@@ -159,12 +159,12 @@ const data: Data = {
       slug: 'orders',
       title: 'Orders',
       avatarColor: 'info',
-      icon: 'tabler-box',
+      icon: 'mdi-cube-outline',
       subCategories: [
         {
           slug: 'processing-orders',
           title: 'Processing orders',
-          icon: 'tabler-box',
+          icon: 'mdi-cube-outline',
           articles: [
             {
               slug: 'what-happens-when-you-receive-an-online-order',
@@ -201,7 +201,7 @@ const data: Data = {
         {
           slug: 'payments',
           title: 'Payments',
-          icon: 'tabler-currency-dollar',
+          icon: 'mdi-currency-usd',
           articles: [
             {
               slug: 'how-do-i-get-paid',
@@ -236,7 +236,7 @@ const data: Data = {
           ],
         },
         {
-          icon: 'tabler-refresh',
+          icon: 'mdi-refresh',
           slug: 'returns-refunds-replacements',
           title: 'Returns, Refunds and Replacements',
           articles: [
@@ -263,14 +263,14 @@ const data: Data = {
       ],
     },
     {
-      icon: 'tabler-users',
+      icon: 'mdi-account-group-outline',
       slug: 'safety-security',
       avatarColor: 'primary',
       title: 'Safety and Security',
       subCategories: [
         {
           slug: 'hacked-accounts',
-          icon: 'tabler-shield',
+          icon: 'mdi-shield-outline',
           title: 'Security and hacked accounts',
           articles: [
             {
@@ -296,7 +296,7 @@ const data: Data = {
         {
           slug: 'privacy',
           title: 'Privacy',
-          icon: 'tabler-lock',
+          icon: 'mdi-lock-outline',
           articles: [
             {
               slug: 'what-is-visible-on-my-profile',
@@ -321,7 +321,7 @@ const data: Data = {
         {
           slug: 'spam-fake-accounts',
           title: 'Spam and fake accounts',
-          icon: 'tabler-mail',
+          icon: 'mdi-email-outline',
           articles: [
             {
               slug: 'how-to-detect-fake-email',
@@ -346,14 +346,14 @@ const data: Data = {
     },
     {
       avatarColor: 'error',
-      icon: 'tabler-clipboard',
+      icon: 'mdi-clipboard-outline',
       slug: 'rules-policies',
       title: 'Rules and Policies',
       subCategories: [
         {
           slug: 'general',
           title: 'General',
-          icon: 'tabler-globe',
+          icon: 'mdi-earth',
           articles: [
             {
               slug: 'our-rules',
@@ -376,7 +376,7 @@ const data: Data = {
           ],
         },
         {
-          icon: 'tabler-registered',
+          icon: 'mdi-registered-trademark',
           slug: 'intellectual-property',
           title: 'Intellectual property',
           articles: [
@@ -401,7 +401,7 @@ const data: Data = {
           ],
         },
         {
-          icon: 'tabler-clipboard',
+          icon: 'mdi-clipboard-outline',
           slug: 'guidelines-for-law-enforcement',
           title: 'Guidelines for law enforcement',
           articles: [
@@ -430,12 +430,12 @@ const data: Data = {
       slug: 'chats',
       title: 'Chats',
       avatarColor: 'warning',
-      icon: 'tabler-message',
+      icon: 'mdi-message-outline',
       subCategories: [
         {
           slug: 'general',
           title: 'General',
-          icon: 'tabler-globe',
+          icon: 'mdi-earth',
           articles: [
             {
               slug: 'what-is-forwarding-limits',
@@ -485,7 +485,7 @@ const data: Data = {
         {
           slug: 'encryption',
           title: 'Encryption',
-          icon: 'tabler-lock',
+          icon: 'mdi-lock-outline',
           articles: [
             {
               slug: 'what-is-end-to-end-encrypted-backup',
@@ -513,12 +513,12 @@ const data: Data = {
       slug: 'connections',
       title: 'Connections',
       avatarColor: 'secondary',
-      icon: 'tabler-link',
+      icon: 'mdi-link',
       subCategories: [
         {
           slug: 'conversations',
           title: 'Conversations',
-          icon: 'tabler-message',
+          icon: 'mdi-message-outline',
           articles: [
             {
               slug: 'how-to-send-messages-to-connections',
@@ -543,7 +543,7 @@ const data: Data = {
         {
           slug: 'jobs',
           title: 'Jobs',
-          icon: 'tabler-briefcase',
+          icon: 'mdi-briefcase-outline',
           articles: [
             {
               slug: 'find-relevant-jobs-through-social-hiring-and-meeting-the-team',
@@ -568,7 +568,7 @@ const data: Data = {
         {
           slug: 'people',
           title: 'People',
-          icon: 'tabler-users',
+          icon: 'mdi-account-group-outline',
           articles: [
             {
               slug: 'how-to-import-and-invite-your-email-contacts',
@@ -646,8 +646,10 @@ mock.onGet('/pages/help-center/article').reply(config => {
   const { article, category, subcategory } = config.params
 
   const activeCategory = data.categories.filter(item => item.slug === category)[0]
+
   const activeSubcategory
     = activeCategory.subCategories.filter(item => item.slug === subcategory)[0] || activeCategory.subCategories[0]
+
   const activeArticle = activeSubcategory.articles.filter(item => item.slug === article)[0]
 
   return [200, { activeArticle, activeSubcategory, categories: data.categories, articles: activeSubcategory.articles }]

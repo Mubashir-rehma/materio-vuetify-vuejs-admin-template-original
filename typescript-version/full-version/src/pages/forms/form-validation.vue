@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidation'
+import * as demoCode from '@/views/demos/forms/form-validation/demoCodeFormValidation'
 </script>
 
 <template>

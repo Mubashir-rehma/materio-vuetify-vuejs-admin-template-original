@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getHeatMapChartConfig } from '@core/libs/apex-chart/apexCharConfig'
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(theme, () => getHeatMapChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getHeatMapChartConfig(vuetifyTheme.current.value))
 
 interface YRange {
   min: number
@@ -20,6 +18,7 @@ const generateDataHeat = (count: number, yrange: YRange) => {
   while (i < count) {
     const x = `w${(i + 1).toString()}`
     const y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
+
     series.push({
       x,
       y,

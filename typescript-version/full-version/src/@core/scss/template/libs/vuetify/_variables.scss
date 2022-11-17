@@ -3,7 +3,7 @@ $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
 $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
 $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-@forward "@core/scss/base/libs/vuetify/variables" with (
+@forward "../../../base/libs/vuetify/variables" with (
   $body-font-family: $font-family-custom !default,
   $border-radius-root: 6px !default,
 

@@ -9,6 +9,7 @@ import { themeConfig } from '@themeConfig'
 // import { useTheme } from 'vuetify'
 
 const isNavDrawerOpen = ref(false)
+
 const {
   theme,
   skin,
@@ -50,11 +51,6 @@ const setPrimaryColor = (color: string) => {
   If we don't make first (primary) color as static then when another color is selected then we will have two theme colors with same hex codes and it will show two check marks
 */
 const getBoxColor = (color: string, index: number) => index ? color : '#9155FD'
-
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false,
-}
 
 const { width: windowWidth } = useWindowSize()
 
@@ -114,7 +110,7 @@ const headerValues = computed(() => {
 
       <PerfectScrollbar
         tag="ul"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
       >
         <!-- SECTION Theming -->
         <CustomizerSection

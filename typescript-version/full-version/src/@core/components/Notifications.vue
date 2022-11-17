@@ -2,11 +2,13 @@
 import type { Anchor } from 'vuetify/lib/components'
 import { avatarText } from '@core/utils/formatters'
 import type { Notification } from '@layouts/types'
+
 interface Props {
   notifications: Notification[]
   badgeProps?: unknown
   location?: Anchor
 }
+
 const props = withDefaults(defineProps<Props>(), {
   location: 'bottom end',
   badgeProps: undefined,

@@ -120,6 +120,7 @@ mock.onGet('/pages/faqs').reply(config => {
     const filteredQAndA = faqObj.faqs.filter(obj => {
       return obj.question.toLowerCase().includes(queryLowered)
     })
+
     if (filteredQAndA.length)
       filteredData.push({ ...faqObj, faqs: filteredQAndA })
   })

@@ -2,6 +2,7 @@
 
 <script lang="ts">
 import { Transition } from 'vue'
+
 export default defineComponent({
   name: 'TransitionExpand',
   setup(_, { slots }) {
@@ -38,6 +39,7 @@ export default defineComponent({
     const onAfterEnter = (element: HTMLElement) => {
       element.style.height = 'auto'
     }
+
     const onLeave = (element: HTMLElement) => {
       const height = getComputedStyle(element).height
 

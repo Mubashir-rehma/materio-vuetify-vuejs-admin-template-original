@@ -11,6 +11,7 @@ import { HorizontalNavLayout } from '@layouts'
 import Footer from '@/layouts/components/Footer.vue'
 import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
+import NavbarShortcuts from '@/layouts/components/NavbarShortcuts.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
@@ -53,6 +54,7 @@ injectSkinClasses()
       </VBtn>
       <NavBarI18n />
       <NavbarThemeSwitcher />
+      <NavbarShortcuts />
       <NavBarNotifications class="me-2" />
       <UserProfile />
     </template>

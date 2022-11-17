@@ -16,6 +16,7 @@ import { useGenerateImageVariant } from '@core/composable/useGenerateImageVarian
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import { alphaDashValidator, emailValidator, requiredValidator } from '@validators'
+
 const refVForm = ref<VForm>()
 const username = ref('johnDoe')
 const email = ref('john@example.com')
@@ -58,6 +59,7 @@ const register = () => {
     })
     .catch(e => {
       const { errors: formErrors } = e.response.data
+
       errors.value = formErrors
       console.error(e.response.data)
     })

@@ -51,12 +51,14 @@ const roles = [
   { title: 'Maintainer', value: 'maintainer' },
   { title: 'Subscriber', value: 'subscriber' },
 ]
+
 const plans = [
   { title: 'Basic', value: 'basic' },
   { title: 'Company', value: 'company' },
   { title: 'Enterprise', value: 'enterprise' },
   { title: 'Team', value: 'team' },
 ]
+
 const status = [
   { title: 'Pending', value: 'pending' },
   { title: 'Active', value: 'active' },
@@ -133,6 +135,7 @@ watch(selectedRows, () => {
 const addRemoveIndividualCheckbox = (checkID: string) => {
   if (selectedRows.value.includes(checkID)) {
     const index = selectedRows.value.indexOf(checkID)
+
     selectedRows.value.splice(index, 1)
   }
   else {
@@ -306,9 +309,8 @@ const addNewUser = (userData: UserProperties) => {
                 <div class="d-flex flex-column">
                   <h6 class="text-sm">
                     <RouterLink
-                      :to="{ name: 'user-view-id', params: { id: user.id } }"
-                      class="font-weight-medium"
-                      style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
+                      :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
+                      class="font-weight-medium user-list-name"
                     >
                       {{ user.fullName }}
                     </RouterLink>
@@ -368,7 +370,7 @@ const addNewUser = (userData: UserProperties) => {
 
                 <VMenu activator="parent">
                   <VList>
-                    <VListItem :to="{ name: 'user-view-id', params: { id: user.id } }">
+                    <VListItem :to="{ name: 'apps-user-view-id', params: { id: user.id } }">
                       <template #prepend>
                         <VIcon
                           icon="mdi-eye-outline"
@@ -472,6 +474,10 @@ const addNewUser = (userData: UserProperties) => {
 
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.user-list-name:not(:hover) {
+  color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 </style>
 

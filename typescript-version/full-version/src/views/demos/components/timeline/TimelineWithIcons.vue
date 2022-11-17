@@ -3,6 +3,7 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
 import avatar2 from '@/assets/images/avatars/avatar-2.png'
 import pdf from '@/assets/images/icons/project-icons/pdf.png'
 import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
+
 const serverSwitch = ref(false)
 </script>
 

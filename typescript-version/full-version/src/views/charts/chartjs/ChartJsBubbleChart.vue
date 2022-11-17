@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getBubbleChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BubbleChart from '@core/libs/chartjs/components/BubbleChart'
 
@@ -11,10 +10,9 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartConfig = controlledComputed(theme, () => getBubbleChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getBubbleChartConfig(vuetifyTheme.current.value))
 
 const data = {
   animation: { duration: 10000 },

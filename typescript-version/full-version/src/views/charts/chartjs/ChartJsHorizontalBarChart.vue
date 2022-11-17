@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import type { ChartJsCustomColors } from '@/views/charts/chartjs/types'
 import { getHorizontalBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BarChart from '@core/libs/chartjs/components/BarChart'
 
@@ -11,10 +10,9 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
-const chartOptions = controlledComputed(theme, () => getHorizontalBarChartConfig(vuetifyTheme.current.value))
+const chartOptions = computed(() => getHorizontalBarChartConfig(vuetifyTheme.current.value))
 
 const data = {
   labels: ['MON', 'TUE', 'WED ', 'THU', 'FRI'],

@@ -35,7 +35,6 @@ const theme: VuetifyOptions['theme'] = {
 
       variables: {
         'border-color': '#3A3541',
-        'medium-emphasis-opacity': 0.68,
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
@@ -74,7 +73,6 @@ const theme: VuetifyOptions['theme'] = {
       },
       variables: {
         'border-color': '#E7E3FC',
-        'medium-emphasis-opacity': 0.68,
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',

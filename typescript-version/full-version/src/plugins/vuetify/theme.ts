@@ -31,8 +31,6 @@ const theme: VuetifyOptions['theme'] = {
       },
 
       variables: {
-        'medium-emphasis-opacity': 0.68,
-
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
         'shadow-key-penumbra-opacity': 'rgba(var(--v-theme-on-surface), 0.12)',
@@ -66,8 +64,6 @@ const theme: VuetifyOptions['theme'] = {
         'perfect-scrollbar-thumb': '#4A5072',
       },
       variables: {
-        'medium-emphasis-opacity': 0.68,
-
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',
         'shadow-key-penumbra-opacity': 'rgba(20, 18, 33, 0.12)',

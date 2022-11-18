@@ -1,6 +1,6 @@
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
-import { getHomeRouteForLoggedInUser, getUserData, isUserLoggedIn } from './utils'
+import { isUserLoggedIn } from './utils'
 import routes from '~pages'
 import { canNavigate } from '@layouts/plugins/casl'
 
@@ -48,11 +48,8 @@ router.beforeEach((to, _, next) => {
   }
 
   // Redirect if logged in
-  if (to.meta.redirectIfLoggedIn && isLoggedIn) {
-    const userData = getUserData()
-
-    next(getHomeRouteForLoggedInUser(userData ? userData.role : null))
-  }
+  if (to.meta.redirectIfLoggedIn && isLoggedIn)
+    next('/')
 
   return next()
 })

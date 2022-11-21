@@ -50,7 +50,17 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
     </div>
 
     <main class="layout-page-content">
-      <slot />
+      <template v-if="$slots['content-loading']">
+        <template v-if="shallShowPageLoading">
+          <slot name="content-loading" />
+        </template>
+        <template v-else>
+          <slot />
+        </template>
+      </template>
+      <template v-else>
+        <slot />
+      </template>
     </main>
 
     <!-- 👉 Footer -->

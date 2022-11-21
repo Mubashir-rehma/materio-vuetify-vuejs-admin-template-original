@@ -17,10 +17,8 @@ syncConfigThemeWithVuetifyTheme()
   <VLocaleProvider :rtl="isAppRtl">
     <!-- ℹ️ This is required to set the background color of active nav link based on currently active global theme's primary -->
     <VApp :style="`--v-global-theme-primary: ${hexToRgb(global.current.value.colors.primary)}`">
-      <VMain>
-        <RouterView />
-        <BuyNow />
-      </VMain>
+      <RouterView />
+      <BuyNow />
     </VApp>
   </VLocaleProvider>
 </template>

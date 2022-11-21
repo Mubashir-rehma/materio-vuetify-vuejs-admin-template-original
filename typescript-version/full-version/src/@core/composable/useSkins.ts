@@ -8,11 +8,17 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 export const useSkins = () => {
   const { isVerticalNavSemiDark, skin, appContentLayoutNav } = useThemeConfig()
 
-  const layoutAttrs = computed(() => {
-    return isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical
-      ? { verticalNavAttrs: { wrapper: h(VThemeProvider, { tag: 'aside' }), wrapperProps: { withBackground: true, theme: 'dark' } } }
-      : {}
-  })
+  const layoutAttrs = computed(() => ({
+    verticalNavAttrs: {
+      wrapper: h(VThemeProvider, { tag: 'aside' }),
+      wrapperProps: {
+        withBackground: true,
+        theme: isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical
+          ? 'dark'
+          : undefined,
+      },
+    },
+  }))
 
   const injectSkinClasses = () => {
     const bodyClasses = document.body.classList

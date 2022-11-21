@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 import navItems from '@/navigation/vertical'
-
-// Composable
-import { useSkins } from '@core/composable/useSkins'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // Components
@@ -18,18 +15,11 @@ import { VerticalNavLayout } from '@layouts'
 
 const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
 const { width: windowWidth } = useWindowSize()
-
-// `layoutAttrs` provides skin classes and vertical nav props for semi-dark styling
-const { layoutAttrs, injectSkinClasses } = useSkins()
-
-// ℹ️ This will inject classes in body tag for accurate styling
-injectSkinClasses()
 </script>
 
 <template>
   <VerticalNavLayout
     :nav-items="navItems"
-    v-bind="layoutAttrs"
   >
     <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">

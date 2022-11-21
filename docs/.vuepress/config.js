@@ -3,7 +3,6 @@ module.exports = {
   description: 'This is desc',
   base: process.env.BASE || '/',
   themeConfig: {
-    templateName: process.env.TEMPLATE_NAME,
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'FAQ', link: '/faq/' },

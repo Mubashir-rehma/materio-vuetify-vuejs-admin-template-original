@@ -20,14 +20,6 @@ As you already know, Vue 2 was using options API and vue 3 introduced compositio
 
 Vue core team achieved this by rewriting **vue's codebase from the scratch** 😱. As UI framework is built on top of Vue 3, **UI framework** also needs **complete rewrite** to adopt vue 3. Hence, we also have to rebuild the admin template from the scratch. Due to these factors, we got breaking changes that are hard to handle 🙁
 
-Moreover, vuexy was based on Bootstrap Vue and due to its halted development and vue 3 update we have to move to Vuetify which is a completely new framework. Hence, It is advisable to gradually move your existing codebase to new update.
-
-I hope you will understand 🙏🏻
-
-**Why Vuetify?**
-
-If you are long time user of Vuexy, you know we first started with VueSax framework which has really nice UI but due to its halted development we have to move to Bootstrap based framework BootstrapVue. BootstrapVue was popular, stable and flexible enough for Vuexy however due to unfortunate circumstances author of BootstrapVue stopped developing and we left with no other choice than switching framework. This time we decided to use Vuetify, which is most loved and used framework by vuetify. Apart from these, it looks promising and can provide value in future.
-
 ## npm install or yarn install errors
 
 Causes of npm install or yarn install issue can be due to various things which include:

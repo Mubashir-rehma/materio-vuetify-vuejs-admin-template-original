@@ -43,5 +43,5 @@ _(As this is our fist visit we will get landed to login page)_
       4. Finally, we will redirect user to home page. Here, first we will check if there's `to` query param present to navigate user to specific page after login. If `to` query param is present we will redirect user to that page or else redirect to home page.
 
           ```ts
-          router.replace(String(route.query.to) || '/')
+          router.replace(route.query.to ? String(route.query.to) : '/')
           ```

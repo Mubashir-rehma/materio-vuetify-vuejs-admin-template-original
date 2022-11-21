@@ -41,9 +41,8 @@ const register = () => {
       localStorage.setItem('userData', JSON.stringify(userData))
       localStorage.setItem('accessToken', JSON.stringify(accessToken))
 
-      if (route.query.to)
-        router.replace(String(route.query.to))
-      else router.replace('/')
+      // Redirect to `to` query if exist or redirect to index route
+      router.replace(String(route.query.to) || '/')
 
       return null
     })

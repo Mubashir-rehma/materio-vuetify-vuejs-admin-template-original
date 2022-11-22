@@ -15,6 +15,8 @@ jobs:
       BASE: ${{ inputs.is_production && secrets.DOCS_BASE_PROD || secrets.DOCS_BASE_STAG }} # ❗ (For VuePress only) Don't forget the ending slash in base
       TEMPLATE_NAME: master
     steps:
+      - run: echo $(${{ inputs.is_production }} && echo "Deploying production" || echo "Deploying staging")
+      
       - name: Checkout template
         uses: actions/checkout@v3
         with:

@@ -14,6 +14,8 @@ jobs:
       DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
       TEMPLATE_NAME: master
     steps:
+      - run: echo $(${{ inputs.is_production }} && echo "Deploying production" || echo "Deploying staging")
+
       - name: Checkout template
         uses: actions/checkout@v3
         with:

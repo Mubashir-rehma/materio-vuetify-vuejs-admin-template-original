@@ -1,4 +1,5 @@
-@use "./placeholders";
+@use "@core/scss/base/placeholders" as *;
+@use "@core/scss/template/placeholders" as *;
 @use "@configured-variables" as variables;
 @use "@layouts/styles/mixins" as layoutsMixins;
 @use "@core/scss/base/mixins";

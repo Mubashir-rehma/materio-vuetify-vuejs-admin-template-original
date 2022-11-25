@@ -256,3 +256,19 @@ export interface ChatContactWithChat extends ChatContact {
   chat: ChatOut
 }
 // !SECTION App: Chat
+
+
+// 👉 Template Search
+//----------------
+export type SearchItem = {
+  id: number
+  url: { name:string, params?: object}
+  icon: string
+  title: string
+  category: string
+}
+
+export type SearchHeader = {
+  header: string
+  title:string
+}

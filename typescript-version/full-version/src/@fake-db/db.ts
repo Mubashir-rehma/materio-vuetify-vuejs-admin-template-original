@@ -1,3 +1,4 @@
+import './app-bar-search'
 import './apps/user-list'
 import './jwt'
 import mock from './mock'

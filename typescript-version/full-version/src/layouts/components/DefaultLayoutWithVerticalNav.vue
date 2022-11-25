@@ -8,6 +8,7 @@ import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
 import NavBarNotifications from '@/layouts/components/NavBarNotifications.vue'
 import NavbarShortcuts from '@/layouts/components/NavbarShortcuts.vue'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
+import NavSearchBar from '@/layouts/components/NavSearchBar.vue'
 import UserProfile from '@/layouts/components/UserProfile.vue'
 
 // @layouts plugin
@@ -39,18 +40,7 @@ const { width: windowWidth } = useWindowSize()
           />
         </VBtn>
 
-        <VBtn
-          icon
-          variant="text"
-          color="default"
-          class="ms-lg-n3"
-          size="small"
-        >
-          <VIcon
-            icon="mdi-magnify"
-            size="24"
-          />
-        </VBtn>
+        <NavSearchBar class="ms-lg-n3" />
 
         <VSpacer />
 

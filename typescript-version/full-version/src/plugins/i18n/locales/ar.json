@@ -120,7 +120,7 @@
     "input": {
       "clear": "صافي",
       "appendAction": "إلحاق الإجراء",
-      "prependAction": "قبل العمل",
+      "prependAction": "قبل العمل"
     },
     "fileInput": {
       "counterSize": "حجم العداد"

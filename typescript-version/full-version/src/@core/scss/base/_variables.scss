@@ -84,7 +84,7 @@ $vertical-nav-header-padding: 1rem $vertical-nav-horizontal-padding !default;
 $vertical-nav-header-inline-spacing: $vertical-nav-horizontal-spacing !default;
 
 // Move logo when vertical nav is mini (collapsed but not hovered)
-$vertical-nav-header-logo-translate-x-when-vertical-nav-mini: -4px;
+$vertical-nav-header-logo-translate-x-when-vertical-nav-mini: -4px !default;
 
 // Space between logo and title
 $vertical-nav-header-logo-title-spacing: 0.9rem !default;
@@ -96,9 +96,9 @@ $vertical-nav-section-title-mt: 1.5rem !default;
 $vertical-nav-section-title-mb: 0.5rem !default;
 
 // Vertical nav icons
-$vertical-nav-items-icon-size: 1.5rem;
-$vertical-nav-items-nested-icon-size: 0.9rem;
-$vertical-nav-items-icon-margin-inline-end: 0.5rem;
+$vertical-nav-items-icon-size: 1.5rem !default;
+$vertical-nav-items-nested-icon-size: 0.9rem !default;
+$vertical-nav-items-icon-margin-inline-end: 0.5rem !default;
 
 // Transition duration for nav group arrow
 $vertical-nav-nav-group-arrow-transition-duration: 0.15s !default;
@@ -120,20 +120,20 @@ $horizontal-nav-padding: 0.6875rem !default;
 $horizontal-nav-top-level-items-gap: 4px !default;
 
 // Horizontal nav icons
-$horizontal-nav-items-icon-size: 1.5rem;
-$horizontal-nav-third-level-icon-size: 0.9rem;
-$horizontal-nav-items-icon-margin-inline-end: 0.625rem;
+$horizontal-nav-items-icon-size: 1.5rem !default;
+$horizontal-nav-third-level-icon-size: 0.9rem !default;
+$horizontal-nav-items-icon-margin-inline-end: 0.625rem !default;
 
 // ℹ️ We used SCSS variable because we want to allow users to update max height of popper content
 // 120px is combined height of navbar & horizontal nav
 $horizontal-nav-popper-content-max-height: calc((var(--vh, 1vh) * 100) - 120px - 4rem) !default;
 
 // ℹ️ This variable is used for horizontal nav popper content's `margin-top` and "The bridge"'s height. We need to sync both values.
-$horizontal-nav-popper-content-top: calc($horizontal-nav-padding + 0.375rem);
+$horizontal-nav-popper-content-top: calc($horizontal-nav-padding + 0.375rem) !default;
 
 // 👉 Plugins
 
-$plugin-ps-thumb-y-dark: rgba(var(--v-theme-surface-variant), 0.35);
+$plugin-ps-thumb-y-dark: rgba(var(--v-theme-surface-variant), 0.35) !default;
 
 // 👉 Vuetify
 

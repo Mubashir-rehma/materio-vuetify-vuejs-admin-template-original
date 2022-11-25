@@ -48,13 +48,17 @@ const onFormReset = () => {
 
   emit('update:isDialogVisible', false)
 }
+
+const dialogVisibleUpdate = (val: boolean) => {
+  emit('update:isDialogVisible', val)
+}
 </script>
 
 <template>
   <VDialog
     :width="$vuetify.display.smAndDown ? 'auto' : 650 "
     :model-value="props.isDialogVisible"
-    @update:model-value="val => $emit('update:isDialogVisible', val)"
+    @update:model-value="dialogVisibleUpdate"
   >
     <VCard class="pa-sm-9 pa-5">
       <VCardItem class="text-center">

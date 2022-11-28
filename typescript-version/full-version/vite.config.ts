@@ -76,6 +76,7 @@ export default defineConfig({
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
       '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/styles/variables/_template.scss', import.meta.url)),
       '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),

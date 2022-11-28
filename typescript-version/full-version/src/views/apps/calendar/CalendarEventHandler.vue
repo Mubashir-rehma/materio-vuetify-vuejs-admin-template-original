@@ -2,15 +2,15 @@
 import type { Options } from 'flatpickr'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VForm } from 'vuetify/components'
+
 import type { Event, NewEvent } from './types'
 import { useCalendarStore } from './useCalendarStore'
-
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-import avatar6 from '@/assets/images/avatars/avatar-6.png'
-import avatar7 from '@/assets/images/avatars/avatar-7.png'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
 
 import { requiredValidator, urlValidator } from '@validators'
 

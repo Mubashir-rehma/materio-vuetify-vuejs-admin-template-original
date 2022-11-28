@@ -114,7 +114,7 @@ const component = '@iconify/vue'
 const commonJS = false
 
 // File to save bundle to
-const target = 'src/@iconify/icons-bundle.js';
+const target = '@/@iconify/icons-bundle.js';
 
 /**
  * Do stuff!

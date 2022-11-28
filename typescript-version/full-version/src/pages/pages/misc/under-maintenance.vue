@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import miscUnderMaintenance from '@/assets/images/pages/misc-under-maintenance.png'
+import miscUnderMaintenance from '@images/pages/misc-under-maintenance.png'
 </script>
 
 <template>

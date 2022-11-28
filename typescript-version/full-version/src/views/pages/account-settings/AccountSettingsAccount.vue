@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar1 from '@images/avatars/avatar-1.png'
 
 const accountData = {
   avatarImg: avatar1,

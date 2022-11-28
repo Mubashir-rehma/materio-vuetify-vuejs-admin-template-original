@@ -32,6 +32,9 @@
       "@core": [
         "src/@core"
       ],
+      "@images/*": [
+        "src/assets/images/*"
+      ],
       "@axios": [
         "src/plugins/axios"
       ],

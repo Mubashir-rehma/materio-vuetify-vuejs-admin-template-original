@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import chrome from '@/assets/images/logos/chrome.png'
+import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)

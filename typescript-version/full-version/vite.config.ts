@@ -23,6 +23,8 @@ export default defineConfig({
       },
     }),
     Pages({
+      dirs: ['./src/pages'],
+
       // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
       onRoutesGenerated: routes => [
         // Email filter
@@ -50,7 +52,9 @@ export default defineConfig({
         ...routes,
       ],
     }),
-    Layouts(),
+    Layouts({
+      layoutsDirs: './src/layouts/',
+    }),
     Components({
       dirs: ['src/@core/components', 'src/views/demos'],
       dts: true,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import pages401 from '@/assets/images/pages/401.png'
+import pages401 from '@images/pages/401.png'
 </script>
 
 <template>

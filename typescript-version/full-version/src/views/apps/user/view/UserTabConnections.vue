@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import asana from '@/assets/images/icons/brands/asana.png'
-import behance from '@/assets/images/icons/brands/behance.png'
-import dribbble from '@/assets/images/icons/brands/dribbble.png'
-import facebook from '@/assets/images/icons/brands/facebook.png'
-import github from '@/assets/images/icons/brands/github.png'
-import google from '@/assets/images/icons/brands/google.png'
-import linkedin from '@/assets/images/icons/brands/linkedin.png'
-import mailchimp from '@/assets/images/icons/brands/mailchimp.png'
-import slack from '@/assets/images/icons/brands/slack.png'
-import twitter from '@/assets/images/icons/brands/twitter.png'
+import asana from '@images/icons/brands/asana.png'
+import behance from '@images/icons/brands/behance.png'
+import dribbble from '@images/icons/brands/dribbble.png'
+import facebook from '@images/icons/brands/facebook.png'
+import github from '@images/icons/brands/github.png'
+import google from '@images/icons/brands/google.png'
+import linkedin from '@images/icons/brands/linkedin.png'
+import mailchimp from '@images/icons/brands/mailchimp.png'
+import slack from '@images/icons/brands/slack.png'
+import twitter from '@images/icons/brands/twitter.png'
 
 const connectedAccounts = ref([
   {

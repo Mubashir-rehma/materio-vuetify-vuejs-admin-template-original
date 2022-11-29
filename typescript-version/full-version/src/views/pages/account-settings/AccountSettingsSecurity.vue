@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
+import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
+import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const isCurrentPasswordVisible = ref(false)

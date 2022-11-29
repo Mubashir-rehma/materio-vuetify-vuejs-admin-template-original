@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import triangleDark from '@/assets/images/misc/triangle-dark.png'
-import triangleLight from '@/assets/images/misc/triangle-light.png'
-import trophy from '@/assets/images/misc/trophy.png'
+import triangleDark from '@images/misc/triangle-dark.png'
+import triangleLight from '@images/misc/triangle-light.png'
+import trophy from '@images/misc/trophy.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)

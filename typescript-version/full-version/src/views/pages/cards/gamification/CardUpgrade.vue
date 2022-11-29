@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import poseM9 from '@/assets/images/cards/pose-m-9.png'
-import triangleDark from '@/assets/images/misc/triangle-dark.png'
-import triangleLight from '@/assets/images/misc/triangle-light.png'
+import poseM9 from '@images/cards/pose-m-9.png'
+import triangleDark from '@images/misc/triangle-dark.png'
+import triangleLight from '@images/misc/triangle-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)

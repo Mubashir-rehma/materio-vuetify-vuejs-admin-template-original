@@ -99,7 +99,7 @@ const isCodeShown = ref(false)
 </template>
 
 <style lang="scss">
-@use "@/styles/variables/_vuetify.scss";
+@use "@styles/variables/_vuetify.scss";
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {

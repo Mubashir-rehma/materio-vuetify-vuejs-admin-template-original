@@ -33,5 +33,8 @@ $card-transition-property-custom: box-shadow, opacity;
   $tooltip-text-color: rgb(var(--v-theme-on-primary)) !default,
   $tooltip-font-size: 0.75rem !default,
 
-  $button-icon-density: ("default": 2, "comfortable": 0, "compact": -1) !default,
+  $button-icon-density: ("default": 2, "comfortable": 0, "compact": -1 ) !default,
+
+   // 👉 VTimeline
+  $timeline-dot-size: 34px !default,
 );

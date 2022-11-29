@@ -25,9 +25,6 @@ const router = createRouter({
     },
     ...setupLayouts(routes),
   ],
-  scrollBehavior() {
-    return { top: 0 }
-  },
 })
 
 // Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards

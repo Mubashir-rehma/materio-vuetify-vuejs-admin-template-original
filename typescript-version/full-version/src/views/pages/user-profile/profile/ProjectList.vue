@@ -21,7 +21,7 @@ const projects = [
     name: 'Falcon Logo Design',
     project: 'Figma Project',
     leader: 'Owen',
-    progress: 18,
+    progress: 25,
     hours: '20:42',
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     name: 'Dojo Email App',
     project: 'Python Project',
     leader: 'Harmonia',
-    progress: 49,
+    progress: 51,
     hours: '230:10',
   },
   {
@@ -61,7 +61,7 @@ const projects = [
     name: 'Hoffman Website',
     project: 'HTML Project',
     leader: 'Georgie',
-    progress: 88,
+    progress: 80,
     hours: '12:45',
   },
 ]

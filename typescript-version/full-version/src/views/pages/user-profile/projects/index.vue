@@ -37,10 +37,10 @@ watch(router, fetchProjectData, { immediate: true })
           </template>
 
           <VCardTitle>Social Banners</VCardTitle>
-          <VCardSubtitle>
+          <p class="mb-0">
             <span class="font-weight-medium me-1">Client:</span>
             <span>Christian Jimenez</span>
-          </VCardSubtitle>
+          </p>
 
           <template #append>
             <div class="mt-n8 me-n3">
@@ -78,7 +78,7 @@ watch(router, fetchProjectData, { immediate: true })
         </VCardItem>
 
         <VCardText>
-          <div class="d-flex align-center justify-space-between flex-wrap gap-2">
+          <div class="d-flex align-center justify-space-between flex-wrap gap-x-2 gap-y-4">
             <div class="pa-2 bg-light-secondary rounded">
               <h6 class="text-base font-weight-medium">
                 {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>

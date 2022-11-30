@@ -72,7 +72,7 @@ const props = defineProps<Props>()
         </VListItem>
 
         <VListItem link>
-          <VListItemTitle class="text-base text-primary text-center">
+          <VListItemTitle class="text-base text-primary text-center pt-1">
             View all connections
           </VListItemTitle>
         </VListItem>

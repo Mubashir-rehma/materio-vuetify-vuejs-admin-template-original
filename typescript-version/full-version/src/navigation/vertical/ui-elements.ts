@@ -34,6 +34,7 @@ export default [
       { title: 'List', to: 'components-list' },
       { title: 'Menu', to: 'components-menu' },
       { title: 'Pagination', to: 'components-pagination' },
+      { title: 'Progress', to: 'components-progress' },
       { title: 'Snackbar', to: 'components-snackbar' },
       { title: 'Tabs', to: 'components-tabs' },
       { title: 'Timeline', to: 'components-timeline' },

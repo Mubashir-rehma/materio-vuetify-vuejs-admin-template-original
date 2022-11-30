@@ -5,7 +5,7 @@ import { VList, VListItem, VListSubheader } from 'vuetify/components'
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
   (e: 'update:searchQuery', value: string): void
-  (e: 'selectedItem', value: object): void
+  (e: 'selectedItem', value: any): void
 }
 
 interface Suggestion {

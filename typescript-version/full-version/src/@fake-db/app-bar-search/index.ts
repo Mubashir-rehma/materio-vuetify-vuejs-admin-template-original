@@ -83,10 +83,17 @@ const database: SearchItem[] = [
     category: 'appsPages',
   },
   {
-    id: 29,
+    id: 13,
     url: { name: 'pages-help-center' },
     icon: 'mdi-help-circle-outline',
     title: 'Help Center',
+    category: 'appsPages',
+  },
+  {
+    id: 23,
+    url: { name: 'pages-user-profile-tab', params: { tab: 'profile' } },
+    icon: 'mdi-account-cog-outline',
+    title: 'User Profile - Profile',
     category: 'appsPages',
   },
   {
@@ -360,6 +367,13 @@ const database: SearchItem[] = [
     url: { name: 'components-pagination' },
     icon: 'mdi-page-last',
     title: 'Pagination',
+    category: 'userInterface',
+  },
+  {
+    id: 99,
+    url: { name: 'components-progress' },
+    icon: 'mdi-progress-helper',
+    title: 'Progress',
     category: 'userInterface',
   },
   {

@@ -123,7 +123,7 @@ const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
       />
     </VBtn>
 
-    <span class="d-none d-md-block text-disabled">Search (Ctrl+/)</span>
+    <span class="d-none d-md-block text-disabled">Search (Ctrl+k)</span>
   </div>
 
   <!-- 👉 App Bar Search -->

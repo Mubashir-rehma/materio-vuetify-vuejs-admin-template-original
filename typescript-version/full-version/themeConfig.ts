@@ -1,7 +1,6 @@
 import { breakpointsVuetify } from '@vueuse/core'
 
-// @ts-expect-error There won't be declaration file for it
-import { VIcon } from 'vuetify/lib/components/VIcon/VIcon'
+import { VIcon } from 'vuetify/components'
 
 // ❗ Logo SVG must be imported with ?raw suffix
 import logo from '@images/logo.svg?raw'

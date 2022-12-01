@@ -676,7 +676,7 @@ const projectTable: ProjectTableRow[] = [
 mock.onGet('/pages/profile').reply(config => {
   const { tab = '' } = config.params ?? ''
 
-  return [200, data[tab]]
+  return [200, data[tab as keyof typeof data]]
 })
 
 mock.onGet('/pages/profile-header').reply(() => {

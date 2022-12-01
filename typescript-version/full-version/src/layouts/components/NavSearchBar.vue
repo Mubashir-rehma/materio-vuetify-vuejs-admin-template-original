@@ -2,12 +2,14 @@
 import { useRouter } from 'vue-router'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
 import axios from '@axios'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 interface Suggestion {
   icon: string
   title: string
   url: object
 }
+const { appContentLayoutNav } = useThemeConfig()
 
 interface SuggestionGroup {
   title: string
@@ -102,6 +104,8 @@ const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
   isAppSearchBarVisible.value = false
   searchQuery.value = ''
 }
+
+const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/AppBarSearch.vue'))
 </script>
 
 <template>
@@ -123,11 +127,15 @@ const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
       />
     </VBtn>
 
-    <span class="d-none d-md-block text-disabled">Search (Ctrl+k)</span>
+    <span
+      v-if="appContentLayoutNav === 'vertical'"
+      class="d-none d-md-block text-disabled"
+    >Search (Ctrl+k)</span>
   </div>
 
   <!-- 👉 App Bar Search -->
-  <AppBarSearch
+  <LazyAppBarSearch
+    v-if="isAppSearchBarVisible"
     v-model:isDialogVisible="isAppSearchBarVisible"
     v-model:search-query="searchQuery"
     :search-result="searchResult"
@@ -152,5 +160,5 @@ const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
       use this slot to change the search item
       </template>
     -->
-  </AppBarSearch>
+  </LazyAppBarSearch>
 </template>

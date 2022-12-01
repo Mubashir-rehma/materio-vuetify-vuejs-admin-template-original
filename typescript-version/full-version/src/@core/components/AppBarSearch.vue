@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends any">
+<script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VList, VListItem, VListSubheader } from 'vuetify/components'
 

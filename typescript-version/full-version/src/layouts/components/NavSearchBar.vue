@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
 import axios from '@axios'
 import { useThemeConfig } from '@core/composable/useThemeConfig'

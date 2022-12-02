@@ -460,7 +460,7 @@ const data: Data = {
         {
           slug: 'features',
           title: 'Features',
-          icon: 'mdi:star-circle-outline',
+          icon: 'mdi-star-circle-outline',
           articles: [
             {
               slug: 'how-to-send-disappearing-messages',

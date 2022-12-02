@@ -54,6 +54,21 @@ module.exports = {
           ]
         },
         {
+          title: 'Laravel Integration',
+          collapsable: false,
+          children: [
+            '/guide/laravel-integration/folder-structure',
+            '/guide/laravel-integration/installation',
+            '/guide/laravel-integration/database-connection',
+            '/guide/laravel-integration/laravel-passport-integration',
+            '/guide/laravel-integration/laravel-passport-authentication',
+            '/guide/laravel-integration/laravel-sanctum-integration',
+            '/guide/laravel-integration/laravel-sanctum-authentication',
+            '/guide/laravel-integration/frontend-api-call',
+            '/guide/laravel-integration/laravel-deployment',
+          ]
+        },
+        {
           title: 'Components',
           collapsable: false,
           children: [

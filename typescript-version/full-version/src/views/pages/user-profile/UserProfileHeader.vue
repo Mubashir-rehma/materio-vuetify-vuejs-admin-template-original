@@ -10,28 +10,26 @@ const fetchHeaderData = () => {
   })
 }
 
-onMounted(() => {
-  fetchHeaderData()
-})
+fetchHeaderData()
 </script>
 
 <template>
   <VCard v-if="profileHeaderData">
-    <VImg :src="profileHeaderData?.coverImg" />
+    <VImg :src="profileHeaderData.coverImg" />
 
     <VCardText class="d-flex align-bottom flex-sm-row flex-column justify-center gap-x-6">
       <div class="d-flex h-0">
         <VAvatar
           rounded
           size="120"
-          :image="profileHeaderData?.profileImg"
+          :image="profileHeaderData.profileImg"
           class="user-profile-avatar mx-auto"
         />
       </div>
 
       <div class="user-profile-info w-100 mt-16 pt-6 pt-sm-0 mt-sm-0">
         <h5 class="text-h5 text-center text-sm-start font-weight-medium mb-3">
-          {{ profileHeaderData?.fullName }}
+          {{ profileHeaderData.fullName }}
         </h5>
 
         <div class="d-flex align-center justify-center justify-sm-space-between flex-wrap gap-4">
@@ -43,7 +41,7 @@ onMounted(() => {
                 class="me-2"
               />
               <span class="text-body-1 font-weight-semibold">
-                {{ profileHeaderData?.designation }}
+                {{ profileHeaderData.designation }}
               </span>
             </span>
 
@@ -54,7 +52,7 @@ onMounted(() => {
                 class="me-2"
               />
               <span class="text-body-1 font-weight-semibold">
-                {{ profileHeaderData?.location }}
+                {{ profileHeaderData.location }}
               </span>
             </span>
 
@@ -65,7 +63,7 @@ onMounted(() => {
                 class="me-2"
               />
               <span class="text-body-1 font-weight-semibold">
-                {{ profileHeaderData?.joiningDate }}
+                {{ profileHeaderData.joiningDate }}
               </span>
             </span>
           </div>

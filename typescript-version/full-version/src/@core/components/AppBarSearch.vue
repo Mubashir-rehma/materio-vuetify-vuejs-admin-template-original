@@ -5,7 +5,7 @@ import { VList, VListItem, VListSubheader } from 'vuetify/components'
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
   (e: 'update:searchQuery', value: string): void
-  (e: 'selectedItem', value: any): void
+  (e: 'itemSelected', value: any): void
 }
 
 interface Suggestion {
@@ -22,7 +22,7 @@ interface Suggestions {
 interface Props {
   isDialogVisible: boolean
   searchQuery: string
-  searchResult: any[]
+  searchResults: any[]
   suggestions?: Suggestions[]
   noDataSuggestion?: Suggestion[]
 }
@@ -37,12 +37,12 @@ const refSearchList = ref<VList>()
 const searchQuery = ref(structuredClone(toRaw(props.searchQuery)))
 const refSearchInput = ref<HTMLInputElement>()
 const isLocalDialogVisible = ref(structuredClone(toRaw(props.isDialogVisible)))
-const searchResult = ref<any[]>(structuredClone(toRaw(props.searchResult)))
+const searchResults = ref(structuredClone(toRaw(props.searchResults)))
 
 // 👉 Watching props change
 watch(props, () => {
   isLocalDialogVisible.value = structuredClone(toRaw(props.isDialogVisible))
-  searchResult.value = structuredClone(toRaw(props.searchResult))
+  searchResults.value = structuredClone(toRaw(props.searchResults))
   searchQuery.value = structuredClone(toRaw(props.searchQuery))
 })
 
@@ -60,7 +60,7 @@ const clearSearchAndCloseDialog = () => {
 
 watchEffect(() => {
   if (!searchQuery.value.length)
-    searchResult.value = []
+    searchResults.value = []
 })
 
 // 👉 get fucus on search list
@@ -184,14 +184,14 @@ const resolveCategories = (val: string) => {
       >
         <!-- 👉 Search List -->
         <VList
-          v-show="searchQuery.length && !!searchResult.length"
+          v-show="searchQuery.length && !!searchResults.length"
           ref="refSearchList"
           density="compact"
           class="app-bar-search-list"
         >
           <!-- 👉 list Item /List Sub header -->
           <template
-            v-for="item in searchResult"
+            v-for="item in searchResults"
             :key="item.title"
           >
             <VListSubheader
@@ -208,7 +208,7 @@ const resolveCategories = (val: string) => {
               >
                 <VListItem
                   link
-                  @click="$emit('selectedItem', item)"
+                  @click="$emit('itemSelected', item)"
                 >
                   <template #prepend>
                     <VIcon
@@ -237,7 +237,7 @@ const resolveCategories = (val: string) => {
 
         <!-- 👉 Suggestions -->
         <div
-          v-show="!!searchResult && !searchQuery"
+          v-show="!!searchResults && !searchQuery"
           class="h-100"
         >
           <slot name="suggestions">
@@ -264,7 +264,7 @@ const resolveCategories = (val: string) => {
                       link
                       :title="item.title"
                       class="app-bar-search-suggestion"
-                      @click="$emit('selectedItem', item)"
+                      @click="$emit('itemSelected', item)"
                     >
                       <template #prepend>
                         <VIcon
@@ -283,7 +283,7 @@ const resolveCategories = (val: string) => {
 
         <!-- 👉 No Data found -->
         <div
-          v-show="!searchResult.length && searchQuery.length"
+          v-show="!searchResults.length && searchQuery.length"
           class="h-100"
         >
           <slot name="noData">
@@ -305,7 +305,7 @@ const resolveCategories = (val: string) => {
                     v-for="suggestion in props.noDataSuggestion"
                     :key="suggestion.title"
                     class="app-bar-search-suggestion text-sm font-weight-regular cursor-pointer mt-3"
-                    @click="$emit('selectedItem', suggestion)"
+                    @click="$emit('itemSelected', suggestion)"
                   >
                     <VIcon
                       size="20"

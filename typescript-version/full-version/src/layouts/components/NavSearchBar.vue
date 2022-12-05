@@ -139,10 +139,10 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   <LazyAppBarSearch
     v-model:isDialogVisible="isAppSearchBarVisible"
     v-model:search-query="searchQuery"
-    :search-result="searchResult"
+    :search-results="searchResult"
     :suggestions="suggestionGroups"
     :no-data-suggestion="noDataSuggestions"
-    @selected-item="redirectToSuggestedOrSearchedPage"
+    @item-selected="redirectToSuggestedOrSearchedPage"
   >
     <!--
       <template #suggestions>

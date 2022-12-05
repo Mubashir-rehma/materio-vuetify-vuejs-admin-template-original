@@ -72,7 +72,7 @@ watch(router, fetchTeamData, { immediate: true })
                   >
                     <VListItemTitle>{{ item }}</VListItemTitle>
                   </VListItem>
-                  <VDivider />
+                  <VDivider class="my-2" />
                   <VListItem
                     title="Delete Team"
                     value="Delete Team"

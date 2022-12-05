@@ -64,7 +64,7 @@ watch(router, fetchProjectData, { immediate: true })
                     >
                       <VListItemTitle>{{ item }}</VListItemTitle>
                     </VListItem>
-                    <VDivider />
+                    <VDivider class="my-2" />
                     <VListItem
                       title="Leave Project"
                       value="Leave Project"

@@ -128,7 +128,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 
     <span
       v-if="appContentLayoutNav === 'vertical'"
-      class="d-none d-md-block text-disabled"
+      class="d-none d-md-flex align-center text-disabled"
     >
       <span class="me-3">Search</span>
       <span class="meta-key">&#8984;K</span>
@@ -170,7 +170,9 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 .meta-key {
   border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
   border-radius: vuetify.$card-border-radius;
-  padding-block: 2px;
-  padding-inline: 4px;
+  block-size: 1.5625rem;
+  line-height: 1.3125rem;
+  padding-block: 0.125rem;
+  padding-inline: 0.25rem;
 }
 </style>

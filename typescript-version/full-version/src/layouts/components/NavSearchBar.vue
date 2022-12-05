@@ -134,7 +134,6 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 
   <!-- 👉 App Bar Search -->
   <LazyAppBarSearch
-    v-if="isAppSearchBarVisible"
     v-model:isDialogVisible="isAppSearchBarVisible"
     v-model:search-query="searchQuery"
     :search-result="searchResult"

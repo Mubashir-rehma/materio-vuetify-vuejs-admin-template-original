@@ -193,6 +193,10 @@ h6,
     padding-block: 0 !important;
     padding-inline: 0 !important;
 
+    > .v-ripple__container {
+      opacity: 0;
+    }
+
     &:not(:last-child) {
       padding-block-end: var(--v-card-list-gap) !important;
     }
@@ -205,10 +209,6 @@ h6,
     > .v-list-item__overlay {
       opacity: 0 !important;
     }
-  }
-
-  .v-ripple__container {
-    opacity: 0;
   }
 }
 

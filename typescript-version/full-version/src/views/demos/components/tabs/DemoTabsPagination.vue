@@ -1,5 +1,5 @@
 <template>
-  <VTabs show-arrows>
+  <VTabs>
     <VTab
       v-for="i in 10"
       :key="i"

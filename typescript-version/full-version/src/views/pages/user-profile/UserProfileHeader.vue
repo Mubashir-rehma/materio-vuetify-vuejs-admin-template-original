@@ -36,7 +36,7 @@ onMounted(() => {
 
         <div class="d-flex align-center justify-center justify-sm-space-between flex-wrap gap-4">
           <div class="d-flex flex-wrap justify-center justify-sm-start flex-grow-1 gap-3">
-            <span class="d-flex">
+            <span class="d-flex align-center">
               <VIcon
                 size="24"
                 icon="mdi-invert-colors"
@@ -47,7 +47,7 @@ onMounted(() => {
               </span>
             </span>
 
-            <span class="d-flex">
+            <span class="d-flex align-center">
               <VIcon
                 size="24"
                 icon="mdi-map-marker-outline"
@@ -58,7 +58,7 @@ onMounted(() => {
               </span>
             </span>
 
-            <span class="d-flex">
+            <span class="d-flex align-center">
               <VIcon
                 size="24"
                 icon="mdi-calendar-blank"

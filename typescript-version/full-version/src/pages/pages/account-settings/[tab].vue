@@ -22,10 +22,7 @@ const tabs = [
 
 <template>
   <div>
-    <VTabs
-      v-model="activeTab"
-      show-arrows
-    >
+    <VTabs v-model="activeTab">
       <VTab
         v-for="item in tabs"
         :key="item.icon"

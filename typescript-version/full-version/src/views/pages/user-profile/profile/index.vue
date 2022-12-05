@@ -31,7 +31,7 @@ watch(router, fetchAboutData, { immediate: true })
       md="4"
       cols="12"
     >
-      <About :about-data="profileTabData" />
+      <About :data="profileTabData" />
     </VCol>
 
     <VCol

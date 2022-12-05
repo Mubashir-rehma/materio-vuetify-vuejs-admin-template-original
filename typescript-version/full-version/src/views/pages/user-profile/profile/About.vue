@@ -2,7 +2,7 @@
 import type { ProfileTab } from '@/@fake-db/types'
 
 interface Props {
-  aboutData: ProfileTab
+  data: ProfileTab
 }
 const props = defineProps<Props>()
 </script>
@@ -16,19 +16,19 @@ const props = defineProps<Props>()
 
       <VList class="card-list text-medium-emphasis">
         <VListItem
-          v-for="data in props.aboutData.about"
-          :key="data.property"
+          v-for="item in props.data.about"
+          :key="item.property"
         >
           <template #prepend>
             <VIcon
-              :icon="data.icon"
+              :icon="item.icon"
               size="24"
               class="me-2"
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ data.property }}:</span>
-            <span>{{ data.value }}</span>
+            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
       </VList>
@@ -39,19 +39,19 @@ const props = defineProps<Props>()
 
       <VList class="card-list text-medium-emphasis">
         <VListItem
-          v-for="data in props.aboutData.contacts"
-          :key="data.property"
+          v-for="item in props.data.contacts"
+          :key="item.property"
         >
           <template #prepend>
             <VIcon
-              :icon="data.icon"
+              :icon="item.icon"
               size="24"
               class="me-2"
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ data.property }}:</span>
-            <span>{{ data.value }}</span>
+            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
       </VList>
@@ -62,20 +62,20 @@ const props = defineProps<Props>()
 
       <VList class="card-list text-medium-emphasis">
         <VListItem
-          v-for="data in props.aboutData.teams"
-          :key="data.property"
+          v-for="item in props.data.teams"
+          :key="item.property"
         >
           <template #prepend>
             <VIcon
-              :icon="data.icon"
+              :icon="item.icon"
               size="24"
-              :color="data.color"
+              :color="item.color"
               class="me-2"
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ data.property }}:</span>
-            <span>{{ data.value }}</span>
+            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
       </VList>
@@ -90,19 +90,19 @@ const props = defineProps<Props>()
 
       <VList class="card-list text-medium-emphasis">
         <VListItem
-          v-for="data in props.aboutData.overview"
-          :key="data.property"
+          v-for="item in props.data.overview"
+          :key="item.property"
         >
           <template #prepend>
             <VIcon
-              :icon="data.icon"
+              :icon="item.icon"
               size="24"
               class="me-2"
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ data.property }}:</span>
-            <span>{{ data.value }}</span>
+            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
       </VList>

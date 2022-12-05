@@ -65,6 +65,7 @@ module.exports = {
             '/guide/laravel-integration/laravel-sanctum-integration',
             '/guide/laravel-integration/laravel-sanctum-authentication',
             '/guide/laravel-integration/frontend-api-call',
+            '/guide/laravel-integration/laravel-sail-docker',
             '/guide/laravel-integration/laravel-deployment',
           ]
         },

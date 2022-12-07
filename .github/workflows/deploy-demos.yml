@@ -41,7 +41,7 @@ jobs:
         run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
 
       - name: Cleanup demos
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}

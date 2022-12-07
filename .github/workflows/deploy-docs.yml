@@ -45,7 +45,7 @@ jobs:
           mv .vuepress/dist $GITHUB_WORKSPACE/documentation
         
       - name: Cleanup documentation
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}

@@ -178,7 +178,6 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
               v-model="searchQuery"
               placeholder="Search Invoice"
               density="compact"
-              class="me-3"
             />
           </div>
 

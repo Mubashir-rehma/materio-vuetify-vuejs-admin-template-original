@@ -8,6 +8,18 @@ sidebar: 'auto'
 If you can't find your problem. Try searching related term as well.
 :::
 
+## Migrating from Vue 2 to Vue 3 version
+
+As our template is now built on Vuetify 3 and written from scratch with new and improved folder structure, there's no easy way to migrate the existing project to the latest update.
+
+The best way to move your existing codebase to new update is gradually adopting the new update. You can start with either full verison of our template or starter-kit version of our template then few pages from your project to new project and add its requirements. Make sure to carefully update/modify your existing codebase with the new project so you don't miss anything.
+
+**Why breaking change was introduced?**
+
+As you already know, Vue 2 was using options API and vue 3 introduced composition API and people are loving the new composition API more. Moreover, Vue 3 introduced some nice features and added some breaking changes.
+
+Vue core team achieved this by rewriting **vue's codebase from the scratch** 😱. As UI framework is built on top of Vue 3, **UI framework** also needs **complete rewrite** to adopt vue 3. Hence, we also have to rebuild the admin template from the scratch. Due to these factors, we got breaking changes that are hard to handle 🙁
+
 ## npm install or yarn install errors
 
 Causes of npm install or yarn install issue can be due to various things which include:
@@ -131,3 +143,23 @@ Convert above code to below code:
   </div>
 </template>
 ```
+
+## Nuxt 3 Support & its integration
+
+As Admin templates are meant for internal purposes and it doesn't require SEO we didn't provide support for NuxtJS At the moment. However, on lots of feature requirements, we added this in our pipeline.
+
+First of all, we will check if is it possible for us to provide nuxt version of our template along with JavaScript & TypeScript versions of the template. If we will be able to manage Vue (TS + JS) along with Nuxt (TS + JS) then surely we will provide nuxt support in future updates.
+
+Till then if you need nuxt support then you can always implement nuxt yourself.
+
+## How to integrate your theme in our existing project
+
+1. First of all, you have to copy our `@core` into your project's `src` folder.
+2. If you want to use our layouts including the vertical nav menu & appbar please extend our layouts from `@core` folder just like we did in our code (you can find them in `src/layouts`) and use them accordingly in your router. Please refer `src/layouts` and `src/router` folders for usage. As you are going to use our vertical nav or horizontal nav menu you also have to add navigation items placed in `src/navigation`. The last thing you have to do is update the `App.vue`.
+3. The next thing is the `src/plugins` directory. In this, you have to grab vuetify plugin as our template is built upon this framework. Later, Add other plugins according to your requirement.
+
+You can always reference our codebase for information & HowTo.
+
+::: tip
+This FAQ will improve over time so please let us know your feedback if we missed anything.
+:::

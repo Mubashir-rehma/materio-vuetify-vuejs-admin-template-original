@@ -99,6 +99,7 @@ const removeProduct = (id: number) => {
               density="compact"
               placeholder="YYYY-MM-DD"
               style="width: 8.9rem;"
+              :config="{ position: 'auto right' }"
             />
           </span>
         </p>
@@ -112,6 +113,7 @@ const removeProduct = (id: number) => {
               density="compact"
               placeholder="YYYY-MM-DD"
               style="width: 8.9rem;"
+              :config="{ position: 'auto right' }"
             />
           </span>
         </p>

@@ -14,6 +14,8 @@ jobs:
       DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
       TEMPLATE_NAME: master
     steps:
+      - run: echo $(${{ inputs.is_production }} && echo "Deploying production" || echo "Deploying staging")
+
       - name: Checkout template
         uses: actions/checkout@v3
         with:
@@ -39,7 +41,7 @@ jobs:
         run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
 
       - name: Cleanup demos
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}

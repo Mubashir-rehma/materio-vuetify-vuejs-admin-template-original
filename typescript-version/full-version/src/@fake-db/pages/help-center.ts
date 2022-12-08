@@ -4,15 +4,15 @@ import type {
   HelpCenterSubcategoryArticlesType,
 } from '../types.d'
 import mock from '@/@fake-db/mock'
-
 import { themeConfig } from '@themeConfig'
 
-import discord from '@/assets/images/svg/discord.svg'
-import gift from '@/assets/images/svg/gift.svg'
-import keyboard from '@/assets/images/svg/keyboard.svg'
-import laptop from '@/assets/images/svg/laptop.svg'
-import lightbulb from '@/assets/images/svg/lightbulb.svg'
-import rocket from '@/assets/images/svg/rocket.svg'
+// Images
+import discord from '@images/svg/discord.svg'
+import gift from '@images/svg/gift.svg'
+import keyboard from '@images/svg/keyboard.svg'
+import laptop from '@images/svg/laptop.svg'
+import lightbulb from '@images/svg/lightbulb.svg'
+import rocket from '@images/svg/rocket.svg'
 
 interface Data {
   categories: HelpCenterCategoriesType[]
@@ -460,7 +460,7 @@ const data: Data = {
         {
           slug: 'features',
           title: 'Features',
-          icon: 'mdi:star-circle-outline',
+          icon: 'mdi-star-circle-outline',
           articles: [
             {
               slug: 'how-to-send-disappearing-messages',

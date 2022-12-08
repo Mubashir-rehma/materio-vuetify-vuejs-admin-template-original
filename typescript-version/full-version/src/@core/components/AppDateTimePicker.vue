@@ -159,7 +159,7 @@ const emitModelValue = (val: string) => {
 .flat-picker-custom-style {
   position: absolute;
   color: inherit;
-  inline-size: 95%;
+  inline-size: 100%;
   inset: 0;
   outline: none;
   padding-block: 0;

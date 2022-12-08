@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import poseFs9 from '@/assets/images/pages/pose-fs-9.png'
+import poseFs9 from '@images/pages/pose-fs-9.png'
 
 const features = [
   {

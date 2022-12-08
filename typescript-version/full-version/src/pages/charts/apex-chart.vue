@@ -26,6 +26,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
@@ -49,6 +50,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
@@ -136,6 +138,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
@@ -163,6 +166,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>

@@ -1,7 +1,7 @@
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
 import mock from '@/@fake-db/mock'
 import type { User, UserOut } from '@/@fake-db/types.d'
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
 
 // TODO: Use jsonwebtoken pkg
 // ℹ️ Created from https://jwt.io/ using HS256 algorithm

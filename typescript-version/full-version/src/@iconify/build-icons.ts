@@ -11,7 +11,7 @@
  * For Iconify Tools documentation visit https://docs.iconify.design/tools/tools2/
  */
 import { promises as fs } from 'fs'
-import { dirname } from 'path'
+import { dirname, join } from 'path'
 
 // Installation: npm install --save-dev @iconify/tools @iconify/utils @iconify/json @iconify/iconify
 import {
@@ -114,7 +114,7 @@ const component = '@iconify/vue'
 const commonJS = false
 
 // File to save bundle to
-const target = 'src/@iconify/icons-bundle.js';
+const target = join(__dirname, 'icons-bundle.js');
 
 /**
  * Do stuff!

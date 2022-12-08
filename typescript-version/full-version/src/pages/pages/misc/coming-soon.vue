@@ -4,6 +4,7 @@ import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
 import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
 import tree2 from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+
 const email = ref('')
 
 const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)

@@ -32,7 +32,7 @@ import * as demoCode from '@/views/demos/forms/form-validation/demoCodeFormValid
         title="Validation Types"
         :code="demoCode.validationTypes"
       >
-        <DemoFormValidationTypes />
+        <DemoFormValidationValidationTypes />
       </AppCardCode>
     </VCol>
   </VRow>

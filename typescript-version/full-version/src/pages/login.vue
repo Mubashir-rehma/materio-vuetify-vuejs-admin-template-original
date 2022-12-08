@@ -49,11 +49,8 @@ const login = () => {
       localStorage.setItem('userData', JSON.stringify(userData))
       localStorage.setItem('accessToken', JSON.stringify(accessToken))
 
-      if (route.query.to)
-        router.replace(String(route.query.to))
-      else router.replace('/')
-
-      return null
+      // Redirect to `to` query if exist or redirect to index route
+      router.replace(route.query.to ? String(route.query.to) : '/')
     })
     .catch(e => {
       const { errors: formErrors } = e.response.data

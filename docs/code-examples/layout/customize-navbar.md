@@ -26,7 +26,7 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithVertical
 
 _Result:_
 
-<img :src="$withBase('/images/code-examples/layout/navbar-slot-usage-vertical.png')" alt="Navbar slot usage">
+<img :src="$withBase('/images/code-examples/layout/navbar-slot-usage-vertical.png')" alt="navbar-slot-usage-vertical.png">
 
 ## Horizontal nav layout
 
@@ -50,7 +50,7 @@ This layout component is used in `@/layouts/components/DefaultLayoutWithHorizont
 
 _Result:_
 
-<img :src="$withBase('/images/code-examples/layout/navbar-slot-usage-horizontal.png')" alt="Navbar slot usage">
+<img :src="$withBase('/images/code-examples/layout/navbar-slot-usage-horizontal.png')" alt="navbar-slot-usage-horizontal.png">
 
 ## Using components
 

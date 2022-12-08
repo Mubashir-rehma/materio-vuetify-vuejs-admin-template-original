@@ -97,7 +97,9 @@ watch(isGroupOpen, (val: boolean) => {
   // update openGroups array for addition/removal of current group
 
   // If group is opened => Add it to `openGroups` array
-  if (val && grpIndex === -1) { openGroups.value.push(props.item.title) }
+  if (val && grpIndex === -1) {
+    openGroups.value.push(props.item.title)
+  }
 
   // If group is closed remove itself and its children from the `openGroups`
   else if (!val && grpIndex !== -1) {

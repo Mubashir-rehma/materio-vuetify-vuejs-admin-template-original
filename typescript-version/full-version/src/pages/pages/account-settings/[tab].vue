@@ -24,7 +24,6 @@ const tabs = [
   <div>
     <VTabs
       v-model="activeTab"
-      show-arrows
       class="v-tabs-pill"
     >
       <VTab

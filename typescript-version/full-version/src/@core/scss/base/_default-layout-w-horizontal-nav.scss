@@ -1,5 +1,6 @@
 @use "vuetify/lib/styles/tools/elevation" as elevation;
-@use "./placeholders";
+@use "@core/scss/base/placeholders" as *;
+@use "@core/scss/template/placeholders" as *;
 
 .layout-wrapper.layout-nav-type-horizontal {
   .layout-navbar-and-nav-container {

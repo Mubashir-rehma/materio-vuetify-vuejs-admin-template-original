@@ -1,9 +1,11 @@
-.auth-wrapper {
-  min-block-size: calc(var(--vh, 1vh) * 100);
-}
+.layout-blank {
+  .auth-wrapper {
+    min-block-size: calc(var(--vh, 1vh) * 100);
+  }
 
-.auth-card {
-  z-index: 1 !important;
+  .auth-card {
+    z-index: 1 !important;
+  }
 }
 
 @media (min-width: 960px) {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AppSearchHeaderBgDark from '@/assets/images/pages/app-search-header-bg-dark.png'
-import AppSearchHeaderBgLight from '@/assets/images/pages/app-search-header-bg-light.png'
+import AppSearchHeaderBgDark from '@images/pages/app-search-header-bg-dark.png'
+import AppSearchHeaderBgLight from '@images/pages/app-search-header-bg-light.png'
 
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
@@ -61,8 +61,9 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
 
 // search input
 .search-header-input {
-  background-color: rgb(var(--v-theme-surface));
+  border-radius: 0.25rem !important;
   border-radius: 0.3125rem;
+  background-color: rgb(var(--v-theme-surface));
   max-inline-size: 28.125rem;
 
   .v-field__prepend-inner {

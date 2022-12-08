@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 interface Shortcut {
@@ -36,6 +35,7 @@ const router = useRouter()
     <VMenu
       activator="parent"
       offset="14px"
+      location="bottom end"
     >
       <VCard
         width="340"

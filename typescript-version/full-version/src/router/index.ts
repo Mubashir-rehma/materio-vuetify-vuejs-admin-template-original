@@ -1,6 +1,6 @@
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
-import { getHomeRouteForLoggedInUser, getUserData, isUserLoggedIn } from './utils'
+import { isUserLoggedIn } from './utils'
 import routes from '~pages'
 import { canNavigate } from '@layouts/plugins/casl'
 
@@ -23,19 +23,25 @@ const router = createRouter({
         return { name: 'login', query: to.query }
       },
     },
+    {
+      path: '/pages/user-profile',
+      redirect: () => ({ name: 'pages-user-profile-tab', params: { tab: 'profile' } }),
+    },
+    {
+      path: '/pages/account-settings',
+      redirect: () => ({ name: 'pages-account-settings-tab', params: { tab: 'account' } }),
+    },
     ...setupLayouts(routes),
   ],
-  scrollBehavior() {
-    return { top: 0 }
-  },
 })
 
-router.beforeEach((to, _, next) => {
+// Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
+router.beforeEach(to => {
   const isLoggedIn = isUserLoggedIn()
 
-  // console.log('isLoggedIn :>> ', isLoggedIn)
+  /*
 
-  // console.log('canNavigate(to) :>> ', canNavigate(to))
+  ℹ️ Commented code is legacy code
 
   if (!canNavigate(to)) {
     // Redirect to login if not logged in
@@ -48,13 +54,23 @@ router.beforeEach((to, _, next) => {
   }
 
   // Redirect if logged in
-  if (to.meta.redirectIfLoggedIn && isLoggedIn) {
-    const userData = getUserData()
-
-    next(getHomeRouteForLoggedInUser(userData ? userData.role : null))
-  }
+  if (to.meta.redirectIfLoggedIn && isLoggedIn)
+    next('/')
 
   return next()
+
+  */
+
+  if (canNavigate(to)) {
+    if (to.meta.redirectIfLoggedIn && isLoggedIn)
+      return '/'
+  }
+  else {
+    if (isLoggedIn)
+      return { name: 'not-authorized' }
+    else
+      return { name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } }
+  }
 })
 
 export default router

@@ -1,25 +1,24 @@
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
+
+import txt from '@images/icons/file/txt.png'
+import xls from '@images/icons/file/xls.png'
 import mock from '@/@fake-db/mock'
 import type { Email, FetchEmailsPayload } from '@/@fake-db/types'
 
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-import avatar6 from '@/assets/images/avatars/avatar-6.png'
-import avatar7 from '@/assets/images/avatars/avatar-7.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
-
-import txt from '@/assets/images/icons/file/txt.png'
-import xls from '@/assets/images/icons/file/xls.png'
-
-// import avatar9 from '@/assets/images/avatars/avatar-9.png'
-// import avatar10 from '@/assets/images/avatars/avatar-10.png'
-// import avatar11 from '@/assets/images/avatars/avatar-11.png'
-// import avatar12 from '@/assets/images/avatars/avatar-12.png'
-// import avatar13 from '@/assets/images/avatars/avatar-13.png'
-// import avatar14 from '@/assets/images/avatars/avatar-14.png'
-// import avatar15 from '@/assets/images/avatars/avatar-15.png'
+// import avatar9 from '@images/avatars/avatar-9.png'
+// import avatar10 from '@images/avatars/avatar-10.png'
+// import avatar11 from '@images/avatars/avatar-11.png'
+// import avatar12 from '@images/avatars/avatar-12.png'
+// import avatar13 from '@images/avatars/avatar-13.png'
+// import avatar14 from '@images/avatars/avatar-14.png'
+// import avatar15 from '@images/avatars/avatar-15.png'
 
 interface Database {
   emails: Email[]

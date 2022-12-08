@@ -31,7 +31,9 @@ export const useThemeConfig = () => {
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
 
-    watch(theme, val => { vuetifyTheme.global.name.value = val })
+    watch(theme, val => {
+      vuetifyTheme.global.name.value = val
+    })
   }
 
   /*

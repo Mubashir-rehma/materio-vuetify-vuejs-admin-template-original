@@ -4,7 +4,7 @@ import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
 
-const currentTheme = computed(() => { return vuetifyTheme.current.value.colors })
+const currentTheme = computed(() => vuetifyTheme.current.value.colors)
 
 const series = [
   {

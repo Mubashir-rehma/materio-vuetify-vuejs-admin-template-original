@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import illustration1 from '@/assets/images/cards/illustration-1.png'
-import illustration2 from '@/assets/images/cards/illustration-2.png'
-import illustration3 from '@/assets/images/cards/illustration-3.png'
-import illustration4 from '@/assets/images/cards/illustration-4.png'
+import illustration1 from '@images/cards/illustration-1.png'
+import illustration2 from '@images/cards/illustration-2.png'
+import illustration3 from '@images/cards/illustration-3.png'
+import illustration4 from '@images/cards/illustration-4.png'
 import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
 import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
 import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'

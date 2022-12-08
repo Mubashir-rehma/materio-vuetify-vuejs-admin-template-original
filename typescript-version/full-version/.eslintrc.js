@@ -167,7 +167,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs'],
+        extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs', '.png', '.jpg'],
       },
       typescript: {},
     },

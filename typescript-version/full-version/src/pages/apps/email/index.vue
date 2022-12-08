@@ -504,7 +504,7 @@ meta:
 </route>
 
 <style lang="scss">
-@use "@/styles/variables/_vuetify.scss";
+@use "@styles/variables/_vuetify.scss";
 @use "@core/scss/base/_mixins.scss";
 @use "vuetify/lib/styles/tools/elevation" as elevation;
 

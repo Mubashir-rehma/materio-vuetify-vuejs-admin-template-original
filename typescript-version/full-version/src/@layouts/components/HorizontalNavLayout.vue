@@ -1,14 +1,16 @@
 <script lang="ts" setup>
-import { useLayouts } from '@layouts'
 import { HorizontalNav } from '@layouts/components'
 import type { HorizontalNavItems } from '@layouts/types'
+
+// ℹ️ Using import from `@layouts` causing build to hangup
+// import { useLayouts } from '@layouts'
+import { useLayouts } from '@layouts/composable/useLayouts'
 
 defineProps<{
   navItems: HorizontalNavItems
 }>()
 
 const { y: windowScrollY } = useWindowScroll()
-const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 
 const router = useRouter()
@@ -20,6 +22,8 @@ router.beforeEach(() => {
 router.afterEach(() => {
   shallShowPageLoading.value = false
 })
+
+const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 </script>
 
 <template>
@@ -34,12 +38,6 @@ router.afterEach(() => {
       <!-- 👉 Navbar -->
       <div class="layout-navbar">
         <div class="navbar-content-container">
-          <!--
-            <slot
-            name="navbar"
-            :toggleVerticalOverlayNavActive="toggleVerticalOverlayNavActive"
-            />
-          -->
           <slot name="navbar" />
         </div>
       </div>

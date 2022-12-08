@@ -1,5 +1,4 @@
-// @ts-expect-error There won't be declaration file for it
-import { VThemeProvider } from 'vuetify/lib/components/VThemeProvider/VThemeProvider'
+import { VThemeProvider } from 'vuetify/components'
 import { AppContentLayoutNav } from '@layouts/enums'
 
 // TODO: Use `VThemeProvider` from dist instead of lib (Using this component from dist causes navbar to loose sticky positioning)
@@ -8,11 +7,17 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 export const useSkins = () => {
   const { isVerticalNavSemiDark, skin, appContentLayoutNav } = useThemeConfig()
 
-  const layoutAttrs = computed(() => {
-    return isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical
-      ? { verticalNavAttrs: { wrapper: h(VThemeProvider, { tag: 'aside' }), wrapperProps: { withBackground: true, theme: 'dark' } } }
-      : {}
-  })
+  const layoutAttrs = computed(() => ({
+    verticalNavAttrs: {
+      wrapper: h(VThemeProvider, { tag: 'aside' }),
+      wrapperProps: {
+        withBackground: true,
+        theme: isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical
+          ? 'dark'
+          : undefined,
+      },
+    },
+  }))
 
   const injectSkinClasses = () => {
     const bodyClasses = document.body.classList

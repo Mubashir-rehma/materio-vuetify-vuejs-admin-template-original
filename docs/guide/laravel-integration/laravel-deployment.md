@@ -1,9 +1,12 @@
 # Laravel Deployment
 
 - Please refer this official vite laravel [documentation](https://laravel-vite.dev/guide/essentials/building-for-production.html) to create production build.
-- After creating production build, we have to made some changes in `index.php` file.
+- Please follow the Laravel official Deployment [documentation](https://laravel.com/docs/9.x/deployment)
 
 **Let's understand by an example:**
+
+- In this example, we are going to separate the Laravel and public folder for security reasons. Now We have to change the path of laravel resources in `public/index.php` file.
+- It may differ from server to server.
 
 - We have two folder in our server.
 

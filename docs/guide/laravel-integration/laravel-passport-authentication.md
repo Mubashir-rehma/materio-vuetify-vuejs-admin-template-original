@@ -3,7 +3,7 @@
 Below are some authentications sample code to authenticate users via Laravel Passport
 
 ::: danger NOTE 🙋‍♂️
-This is guide showcases how to create API using Laravel Passport. For integration with our template, you need to modify response sent by endpoint. You can check expected response of various endpoints using below resource:
+This guide showcases how to create API using Laravel Passport. For integration with our template, you need to modify response sent by endpoint. You can check expected response of various endpoints using below resource:
 
 [FAQ: How to check what frontend expects in API response](/faq/#how-to-check-what-frontend-expects-in-api-response)
 :::

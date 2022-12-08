@@ -3,7 +3,7 @@
 Below are some authentications sample code to authenticate users via Laravel Sanctum
 
 ::: danger NOTE 🙋‍♂️
-This is guide showcases how to create API using Laravel Sanctum. For integration with our template, you need to modify response sent by endpoint. You can check expected response of various endpoints using below resources:
+This guide showcases how to create API using Laravel Sanctum. For integration with our template, you need to modify response sent by endpoint. You can check expected response of various endpoints using below resources:
 
 [FAQ: How to check what frontend expects in API response](/faq/#how-to-check-what-frontend-expects-in-api-response)
 

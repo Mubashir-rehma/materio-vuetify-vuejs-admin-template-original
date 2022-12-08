@@ -108,7 +108,7 @@ class AuthController extends Controller
 ```
 
 **TEST register user API using postman**
-![register](/images/code-examples/sanctum-apis-response/register.jpg)
+<img :src="$withBase('/images/code-examples/sanctum-apis-response/register.jpg')" alt="register-api">
 
 ```php
 method: POST
@@ -158,7 +158,7 @@ public function login(Request $request)
 ```
 
 **TEST Login user API using postman**
-![login](/images/code-examples/sanctum-apis-response/login.png)
+<img :src="$withBase('/images/code-examples/sanctum-apis-response/login.png')" alt="login-api">
 
 ```php
 method: POST
@@ -184,7 +184,7 @@ public function user(Request $request)
 ```
 
 **TEST get user API using postman**
-![user](/images/code-examples/sanctum-apis-response/get-user.png)
+<img :src="$withBase('/images/code-examples/sanctum-apis-response/get-user.png')" alt="get-user-api">
 
 ```php
 method: GET
@@ -215,7 +215,7 @@ public function logout(Request $request)
 ```
 
 **TEST get user API using postman**
-![logout](/images/code-examples/sanctum-apis-response/logout.png)
+<img :src="$withBase('/images/code-examples/sanctum-apis-response/logout.png')" alt="logout-api">
 
 ```php
 method: GET

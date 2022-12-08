@@ -22,7 +22,7 @@ And this is it. Enjoy searching in the template. 🎉🥳
 
 We have made our search component easy to customize as per your requirement without touching core components.
 
-![Search](../.vuepress/public/images/code-examples/article/search.gif)
+<img :src="$withBase('/images/code-examples/article/search.gif')" alt="search-gif">
 
 ### Default Search suggestion
 
@@ -53,7 +53,7 @@ We have made our search component easy to customize as per your requirement with
   </AppBarSearch>
   ```
 
-  ![default-search-suggestions](../.vuepress/public/images/code-examples/article/default-suggestions.png)
+  <img :src="$withBase('/images/code-examples/article/default-suggestions.png')" alt="default-suggestion">
 
 ### Search List
 
@@ -84,7 +84,7 @@ We have made our search component easy to customize as per your requirement with
   </AppBarSearch>
   ```
 
-  ![search-list](../.vuepress/public/images/code-examples/article/search-list.png)
+  <img :src="$withBase('/images/code-examples/article/search-list.png')" alt="search-list">
 
 ### No search data
 
@@ -112,4 +112,4 @@ We have made our search component easy to customize as per your requirement with
   </AppBarSearch>
   ```
 
-  ![no-data](../.vuepress/public/images/code-examples/article/no-search-data.png)
+  <img :src="$withBase('/images/code-examples/article/no-search-data.png')" alt="no-search-data">

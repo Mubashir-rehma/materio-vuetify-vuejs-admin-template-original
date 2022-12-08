@@ -106,7 +106,7 @@ class AuthController extends Controller
 ```
 
 **TEST register user API using postman**
-![register-api](/images/code-examples/passsport-apis-response/register.jpg)
+<img :src="$withBase('/images/code-examples/passport-apis-response/register.jpg')" alt="register-api">
 
 ```php
 method: POST
@@ -159,7 +159,7 @@ In the same file `Http/Controllers/AuthController.php`, add below code after reg
 ```
 
 **TEST Login user API using postman**
-![login](/images/code-examples/passsport-apis-response/login.jpg)
+<img :src="$withBase('/images/code-examples/passport-apis-response/login.jpg')" alt="login-api">
 
 ```php
 method: POST
@@ -185,7 +185,7 @@ In the same file `Http/Controllers/AuthController.php`, add below code after Log
 ```
 
 **TEST get user API using postman**
-![user](/images/code-examples/passsport-apis-response/get-user.jpg)
+<img :src="$withBase('/images/code-examples/passport-apis-response/get-user.jpg')" alt="get-user-api">
 
 ```php
 method: GET
@@ -214,7 +214,7 @@ In the same file `Http/Controllers/AuthController.php`, add below code after Use
 ```
 
 **TEST get user API using postman**
-![logout](/images/code-examples/passsport-apis-response/logout.jpg)
+<img :src="$withBase('/images/code-examples/passport-apis-response/logout.jpg')" alt="logout-api">
 
 ```php
 method: GET

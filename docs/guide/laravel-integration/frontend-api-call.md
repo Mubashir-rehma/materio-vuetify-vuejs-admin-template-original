@@ -78,7 +78,7 @@ const register = () => {
 
 Open your console and you should see following API response
 
-![response](/images/code-examples/frontend-api-response/api-response.png)
+<img :src="$withBase('/images/code-examples/frontend-api-response/api-response.png')" alt="api">
 
 ::: tip Note
 Repeat the same process for Login, get user and logout APIs to authenticate user, get user details and logout the user.

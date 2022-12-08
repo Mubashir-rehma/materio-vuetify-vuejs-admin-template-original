@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import illustration1 from '@/assets/images/cards/illustration-1.png'
-import illustration2 from '@/assets/images/cards/illustration-2.png'
 import CrmActivityTimeline from '@/views/dashboards/crm/CrmActivityTimeline.vue'
 import CrmAreaCharts from '@/views/dashboards/crm/CrmAreaCharts.vue'
 import CrmDeveloperMeetup from '@/views/dashboards/crm/CrmDeveloperMeetup.vue'
@@ -12,6 +10,8 @@ import CrmTransactions from '@/views/dashboards/crm/CrmTransactions.vue'
 import CrmUpgradeYourPlan from '@/views/dashboards/crm/CrmUpgradeYourPlan.vue'
 import CrmWeeklySales from '@/views/dashboards/crm/CrmWeeklySales.vue'
 import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
+import illustration1 from '@images/cards/illustration-1.png'
+import illustration2 from '@images/cards/illustration-2.png'
 
 const statisticsWithImages = [
   {
@@ -31,6 +31,7 @@ const statisticsWithImages = [
     color: 'secondary',
   },
 ]
+
 const statistic = {
   title: 'New Project',
   color: 'primary',

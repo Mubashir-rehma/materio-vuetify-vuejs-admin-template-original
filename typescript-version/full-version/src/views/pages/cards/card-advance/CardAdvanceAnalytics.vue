@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import chartDark from '@/assets/images/cards/chart-dark.png'
-import chartLight from '@/assets/images/cards/chart-light.png'
-import heartDark from '@/assets/images/cards/heart-dark.png'
-import heartLight from '@/assets/images/cards/heart-light.png'
-import messageDark from '@/assets/images/cards/message-dark.png'
-import messageLight from '@/assets/images/cards/message-light.png'
-import userDark from '@/assets/images/cards/user-dark.png'
-import userLight from '@/assets/images/cards/user-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import chartDark from '@images/cards/chart-dark.png'
+import chartLight from '@images/cards/chart-light.png'
+import heartDark from '@images/cards/heart-dark.png'
+import heartLight from '@images/cards/heart-light.png'
+import messageDark from '@images/cards/message-dark.png'
+import messageLight from '@images/cards/message-light.png'
+import userDark from '@images/cards/user-dark.png'
+import userLight from '@images/cards/user-light.png'
 
 const analytics = [
   {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import arrowGrowth from '@/assets/images/cards/arrow-growth.png'
-import atmCard from '@/assets/images/cards/atm-card.png'
-import creditCard from '@/assets/images/cards/credit-card.png'
-import paypal from '@/assets/images/cards/paypal.png'
-import wallet from '@/assets/images/cards/wallet.png'
+import arrowGrowth from '@images/cards/arrow-growth.png'
+import atmCard from '@images/cards/atm-card.png'
+import creditCard from '@images/cards/credit-card.png'
+import paypal from '@images/cards/paypal.png'
+import wallet from '@images/cards/wallet.png'
 
 import { kFormatter } from '@core/utils/formatters'
 
@@ -54,6 +54,7 @@ const transactions: Transactions[] = [
     img: arrowGrowth,
   },
 ]
+
 const transactionsColors: Colors = {
   'Paypal': 'error',
   'Credit Card': 'success',
@@ -61,6 +62,7 @@ const transactionsColors: Colors = {
   'Wallet': 'primary',
   'Transfer': 'info',
 }
+
 const formateAmount = (amount: number) => {
   return Math.sign(amount) === 1 ? `+$${kFormatter(amount)}` : `-$${Math.abs(amount)}`
 }

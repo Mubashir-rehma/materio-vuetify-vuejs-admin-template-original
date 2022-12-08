@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { kFormatter } from '@core/utils/formatters'
 
-import arrowGrowth from '@/assets/images/cards/arrow-growth.png'
-import atmCard from '@/assets/images/cards/atm-card.png'
-import creditCard from '@/assets/images/cards/credit-card.png'
-import paypal from '@/assets/images/cards/paypal.png'
-import wallet from '@/assets/images/cards/wallet.png'
+import arrowGrowth from '@images/cards/arrow-growth.png'
+import atmCard from '@images/cards/atm-card.png'
+import creditCard from '@images/cards/credit-card.png'
+import paypal from '@images/cards/paypal.png'
+import wallet from '@images/cards/wallet.png'
 
 interface Colors {
   'Paypal': string

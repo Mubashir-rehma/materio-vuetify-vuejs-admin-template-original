@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import aviato from '@/assets/images/logos/aviato.png'
-import bitbank from '@/assets/images/logos/bitbank.png'
-import zipcar from '@/assets/images/logos/zipcar.png'
+import aviato from '@images/logos/aviato.png'
+import bitbank from '@images/logos/bitbank.png'
+import zipcar from '@images/logos/zipcar.png'
+
 const earnings = [
   {
     avatar: zipcar,

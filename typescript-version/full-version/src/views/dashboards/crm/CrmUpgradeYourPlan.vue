@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import briefcase from '@/assets/images/cards/briefcase.png'
-import logoCreditCard2 from '@/assets/images/cards/logo-credit-card-2.png'
-import logoMastercardSmall from '@/assets/images/cards/logo-mastercard-small.png'
+import briefcase from '@images/cards/briefcase.png'
+import logoCreditCard2 from '@images/cards/logo-credit-card-2.png'
+import logoMastercardSmall from '@images/cards/logo-mastercard-small.png'
+
 const savedCards = [
   {
     logo: logoMastercardSmall,

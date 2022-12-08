@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import timelineCardHeader from '@/assets/images/cards/timeline-card-header.png'
-import pdf from '@/assets/images/icons/project-icons/pdf.png'
+import avatar1 from '@images/avatars/avatar-1.png'
+import timelineCardHeader from '@images/cards/timeline-card-header.png'
+import pdf from '@images/icons/project-icons/pdf.png'
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
-import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png'
-import authV1Tree from '@/assets/images/pages/auth-v1-tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
+import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
+import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
+import authV1Tree from '@images/pages/auth-v1-tree.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 

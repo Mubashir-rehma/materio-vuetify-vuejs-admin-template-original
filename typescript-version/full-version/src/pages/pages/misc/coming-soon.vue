@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import miscComingSoon from '@/assets/images/pages/misc-coming-soon.png'
-import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
-import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
-import tree2 from '@/assets/images/pages/tree-2.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import miscComingSoon from '@images/pages/misc-coming-soon.png'
+import miscMaskDark from '@images/pages/misc-mask-dark.png'
+import miscMaskLight from '@images/pages/misc-mask-light.png'
+import tree2 from '@images/pages/tree-2.png'
 
 const email = ref('')
 

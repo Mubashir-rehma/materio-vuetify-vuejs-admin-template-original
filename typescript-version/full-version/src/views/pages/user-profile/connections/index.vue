@@ -70,14 +70,15 @@ watch(router, fetchProjectData, { immediate: true })
             <VAvatar
               size="100"
               :image="data.avatar"
+              class="mt-3"
             />
 
-            <p class="mt-4 mb-0">
+            <p class="mt-5 mb-0">
               {{ data.name }}
             </p>
             <span class="text-body-1">{{ data.designation }}</span>
 
-            <div class="d-flex align-center flex-wrap gap-2 mt-2">
+            <div class="d-flex align-center flex-wrap gap-2 mt-6">
               <VChip
                 v-for="chip in data.chips"
                 :key="chip.title"
@@ -112,7 +113,7 @@ watch(router, fetchProjectData, { immediate: true })
             </div>
           </div>
 
-          <div class="d-flex justify-center gap-4 mt-4">
+          <div class="d-flex justify-center gap-4 mt-6">
             <VBtn
               prepend-icon="mdi-account-check-outline"
               :variant="data.isConnected ? 'elevated' : 'tonal'"

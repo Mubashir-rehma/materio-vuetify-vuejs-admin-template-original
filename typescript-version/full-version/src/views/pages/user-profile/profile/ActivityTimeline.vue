@@ -25,10 +25,10 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-1">
+            <h4 class="text-base font-weight-semibold me-1 mb-2">
               8 Invoices have been paid
             </h4>
-            <span class="text-sm text-disabled text-no-wrap">Wednesday</span>
+            <span class="text-xs text-disabled text-no-wrap">Wednesday</span>
           </div>
           <p class="mb-2">
             Invoices have been paid to the company.
@@ -51,10 +51,10 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-1">
+            <h4 class="text-base font-weight-semibold me-1 mb-2">
               Create a new project for client 😎
             </h4>
-            <span class="text-sm text-disabled text-no-wrap">April, 18</span>
+            <span class="text-xs text-disabled text-no-wrap">April, 18</span>
           </div>
 
           <p class="mb-1">
@@ -80,10 +80,10 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-1">
+            <h4 class="text-base font-weight-semibold me-1 mb-2">
               Order #37745 from September
             </h4>
-            <span class="text-sm text-disabled text-no-wrap">January, 10</span>
+            <span class="text-xs text-disabled text-no-wrap">January, 10</span>
           </div>
           <p class="mb-0">
             Invoices have been paid to the company.
@@ -98,7 +98,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
             <h4 class="text-base font-weight-semibold me-1 mb-3">
               Public Meeting
             </h4>
-            <span class="text-sm text-disabled text-no-wrap">September, 30</span>
+            <span class="text-xs text-disabled text-no-wrap">September, 30</span>
           </div>
         </VTimelineItem>
       </VTimeline>

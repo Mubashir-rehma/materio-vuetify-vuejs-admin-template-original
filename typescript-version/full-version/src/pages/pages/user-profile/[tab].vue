@@ -21,12 +21,11 @@ const tabs = [
 
 <template>
   <div>
-    <UserProfileHeader class="mb-5" />
+    <UserProfileHeader class="mb-6" />
 
     <VTabs
       v-model="activeTab"
       class="v-tabs-pill"
-      density="compact"
     >
       <VTab
         v-for="item in tabs"
@@ -45,7 +44,7 @@ const tabs = [
 
     <VWindow
       v-model="activeTab"
-      class="mt-5 disable-tab-transition"
+      class="mt-6 disable-tab-transition"
       :touch="false"
     >
       <!-- Profile -->

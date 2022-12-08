@@ -17,7 +17,7 @@ fetchHeaderData()
   <VCard v-if="profileHeaderData">
     <VImg :src="profileHeaderData.coverImg" />
 
-    <VCardText class="d-flex align-bottom flex-sm-row flex-column justify-center gap-x-6">
+    <VCardText class="d-flex align-bottom flex-sm-row flex-column justify-center gap-x-4">
       <div class="d-flex h-0">
         <VAvatar
           rounded
@@ -28,7 +28,7 @@ fetchHeaderData()
       </div>
 
       <div class="user-profile-info w-100 mt-16 pt-6 pt-sm-0 mt-sm-0">
-        <h5 class="text-h5 text-center text-sm-start font-weight-medium mb-3">
+        <h5 class="text-h5 text-center text-sm-start font-weight-medium mb-2">
           {{ profileHeaderData.fullName }}
         </h5>
 

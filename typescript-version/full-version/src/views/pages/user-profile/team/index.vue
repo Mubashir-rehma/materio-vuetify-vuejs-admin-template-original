@@ -49,6 +49,7 @@ watch(router, fetchTeamData, { immediate: true })
               <VIcon
                 size="24"
                 icon="mdi-star-outline"
+                class="text-disabled"
               />
             </VBtn>
 
@@ -61,6 +62,7 @@ watch(router, fetchTeamData, { immediate: true })
               <VIcon
                 size="24"
                 icon="mdi-dots-vertical"
+                class="text-disabled"
               />
 
               <VMenu activator="parent">

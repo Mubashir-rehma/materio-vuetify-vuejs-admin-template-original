@@ -61,8 +61,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
 
 // search input
 .search-header-input {
-  border-radius: 0.25rem !important;
-  border-radius: 0.3125rem;
+  border-radius: 0.375rem;
   background-color: rgb(var(--v-theme-surface));
   max-inline-size: 28.125rem;
 

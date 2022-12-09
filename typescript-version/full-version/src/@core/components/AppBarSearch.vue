@@ -117,7 +117,7 @@ const resolveCategories = (val: string) => {
       class="position-relative"
     >
       <VCardText
-        class="pt-1"
+        class="pt-1 px-6"
         style="max-height: 65px;"
       >
         <!-- 👉 Search Input -->

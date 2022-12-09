@@ -3,7 +3,7 @@
 const props = defineProps({
   id: {
     type: Number,
-    required: true
+    required: true,
   },
   data: {
     type: Object,
@@ -12,14 +12,14 @@ const props = defineProps({
       title: 'App Design',
       cost: 24,
       hours: 1,
-      description: 'Designed UI kit & app pages.'
-    })
-  }
+      description: 'Designed UI kit & app pages.',
+    }),
+  },
 })
 
 const emit = defineEmits([
   'removeProduct',
-  'totalAmount'
+  'totalAmount',
 ])
 
 const itemsOptions = [
@@ -27,43 +27,48 @@ const itemsOptions = [
     title: 'App Design',
     cost: 24,
     hours: 1,
-    description: 'Designed UI kit & app pages.'
+    description: 'Designed UI kit & app pages.',
   },
   {
     title: 'App Customization',
     cost: 26,
     hours: 1,
-    description: 'Customization & Bug Fixes.'
+    description: 'Customization & Bug Fixes.',
   },
   {
     title: 'ABC Template',
     cost: 28,
     hours: 1,
-    description: 'Vuetify admin template.'
+    description: 'Vuetify admin template.',
   },
   {
     title: 'App Development',
     cost: 32,
     hours: 1,
-    description: 'Native App Development.'
-  }
+    description: 'Native App Development.',
+  },
 ]
+
 const selectedItem = ref({
   title: 'App Customization',
   cost: 26,
   hours: 1,
-  description: 'Customization & Bug Fixes.'
+  description: 'Customization & Bug Fixes.',
 })
+
 watch(selectedItem, () => {
   props.data.cost = structuredClone(toRaw(selectedItem.value.cost))
   props.data.hours = structuredClone(toRaw(selectedItem.value.hours))
   props.data.description = structuredClone(toRaw(selectedItem.value.description))
   props.data.title = structuredClone(toRaw(selectedItem.value.title))
 })
+
 const removeProduct = () => {
   emit('removeProduct', props.id)
 }
+
 const totalPrice = computed(() => Number(props.data.cost) * Number(props.data.hours))
+
 watch(totalPrice, () => {
   emit('totalAmount', totalPrice.value)
 }, { immediate: true })

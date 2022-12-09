@@ -1,5 +1,5 @@
 <script setup>
-import cafeBadilico from '@/assets/images/cards/cafe-badilico.png'
+import cafeBadilico from '@images/cards/cafe-badilico.png'
 </script>
 
 <template>

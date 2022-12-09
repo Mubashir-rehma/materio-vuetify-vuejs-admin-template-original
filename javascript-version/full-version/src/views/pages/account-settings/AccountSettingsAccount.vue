@@ -1,5 +1,5 @@
 <script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar1 from '@images/avatars/avatar-1.png'
 
 const accountData = {
   avatarImg: avatar1,
@@ -14,19 +14,22 @@ const accountData = {
   country: 'USA',
   language: 'English',
   timezone: '(GMT-11:00) International Date Line West',
-  currency: 'USD'
+  currency: 'USD',
 }
+
 const refInputEl = ref()
 const isConfirmDialogOpen = ref(false)
 const accountDataLocal = ref(structuredClone(accountData))
 const isAccountDeactivated = ref(false)
 const validateAccountDeactivation = [v => !!v || 'Please confirm account deactivation']
+
 const resetForm = () => {
   accountDataLocal.value = structuredClone(accountData)
 }
+
 const changeAvatar = file => {
   const fileReader = new FileReader()
-  const {files} = file.target
+  const { files } = file.target
   if (files && files.length) {
     fileReader.readAsDataURL(files[0])
     fileReader.onload = () => {
@@ -40,6 +43,7 @@ const changeAvatar = file => {
 const resetAvatar = () => {
   accountDataLocal.value.avatarImg = accountData.avatarImg
 }
+
 const timezones = [
   '(GMT-11:00) International Date Line West',
   '(GMT-11:00) Midway Island',
@@ -79,8 +83,9 @@ const timezones = [
   '(GMT+00:00) Dublin',
   '(GMT+00:00) Edinburgh',
   '(GMT+00:00) Lisbon',
-  '(GMT+00:00) London'
+  '(GMT+00:00) London',
 ]
+
 const currencies = [
   'USD',
   'EUR',
@@ -93,14 +98,14 @@ const currencies = [
   'DKK',
   'HKD',
   'HUF',
-  'INR'
+  'INR',
 ]
 </script>
 
 <template>
   <VRow>
     <VCol cols="12">
-      <VCard title="Account Details">
+      <VCard>
         <VCardText class="d-flex">
           <!-- 👉 Avatar -->
           <VAvatar
@@ -113,7 +118,7 @@ const currencies = [
           <!-- 👉 Upload Photo -->
           <form
             ref="refForm"
-            class="d-flex flex-column justify-center gap-5"
+            class="d-flex flex-column justify-center gap-3"
           >
             <div class="d-flex flex-wrap gap-2">
               <VBtn
@@ -150,13 +155,11 @@ const currencies = [
               </VBtn>
             </div>
 
-            <p class="text-body-1 mb-0">
+            <p class="text-xs mb-0">
               Allowed JPG, GIF or PNG. Max size of 800K
             </p>
           </form>
         </VCardText>
-
-        <VDivider />
 
         <VCardText>
           <!-- 👉 Form -->
@@ -328,25 +331,11 @@ const currencies = [
       <VCard title="Delete Account">
         <VCardText>
           <!-- 👉 Checkbox and Button  -->
-          <VAlert
-            color="warning"
-            variant="tonal"
-            class="mb-4"
-          >
-            <VAlertTitle class="mb-1">
-              Are you sure you want to delete your account?
-            </VAlertTitle>
-            <p class="mb-0">
-              Once you delete your account, there is no going back. Please be certain.
-            </p>
-          </VAlert>
-          <div>
-            <VCheckbox
-              v-model="isAccountDeactivated"
-              :rules="validateAccountDeactivation"
-              label="I confirm my account deactivation"
-            />
-          </div>
+          <VCheckbox
+            v-model="isAccountDeactivated"
+            :rules="validateAccountDeactivation"
+            label="I confirm my account deactivation"
+          />
 
           <VBtn
             :disabled="!isAccountDeactivated"

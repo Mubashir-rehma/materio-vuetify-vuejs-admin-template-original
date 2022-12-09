@@ -1,19 +1,18 @@
 <script setup>
 import { useTheme } from 'vuetify'
 import BarChart from '@/@core/libs/chartjs/components/BarChart'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLatestBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 
 const props = defineProps({
   colors: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
-const {theme} = useThemeConfig()
 const vuetifyTheme = useTheme()
-const chartOptions = controlledComputed(theme, () => getLatestBarChartConfig(vuetifyTheme.current.value))
+const chartOptions = computed(() => getLatestBarChartConfig(vuetifyTheme.current.value))
+
 const data = {
   labels: [
     '7/12',
@@ -28,7 +27,7 @@ const data = {
     '16/12',
     '17/12',
     '18/12',
-    '19/12'
+    '19/12',
   ],
   datasets: [{
     maxBarThickness: 15,
@@ -36,7 +35,7 @@ const data = {
     borderColor: 'transparent',
     borderRadius: {
       topRight: 15,
-      topLeft: 15
+      topLeft: 15,
     },
     data: [
       275,
@@ -51,9 +50,9 @@ const data = {
       150,
       230,
       280,
-      190
-    ]
-  }]
+      190,
+    ],
+  }],
 }
 </script>
 

@@ -17,7 +17,7 @@ watchEffect(() => {
     q: searchQuery.value,
     status: selectedStatus.value,
     perPage: rowPerPage.value,
-    currentPage: currentPage.value
+    currentPage: currentPage.value,
   }).then(response => {
     invoices.value = response.data.invoices
     totalPage.value = response.data.totalPage
@@ -38,54 +38,55 @@ const resolveInvoiceBalanceVariant = (balance, total) => {
   if (balance === total)
     return {
       status: 'Unpaid',
-      chip: { color: 'error' }
+      chip: { color: 'error' },
     }
   if (balance === 0)
     return {
       status: 'Paid',
-      chip: { color: 'success' }
+      chip: { color: 'success' },
     }
   
   return {
     status: balance,
-    chip: { variant: 'text' }
+    chip: { variant: 'text' },
   }
 }
+
 const resolveInvoiceStatusVariantAndIcon = status => {
   if (status === 'Partial Payment')
     return {
       variant: 'warning',
-      icon: 'mdi-chart-timeline-variant'
+      icon: 'mdi-chart-timeline-variant',
     }
   if (status === 'Paid')
     return {
       variant: 'success',
-      icon: 'mdi-check'
+      icon: 'mdi-check',
     }
   if (status === 'Downloaded')
     return {
       variant: 'info',
-      icon: 'mdi-arrow-down'
+      icon: 'mdi-arrow-down',
     }
   if (status === 'Draft')
     return {
       variant: 'secondary',
-      icon: 'mdi-content-save-outline'
+      icon: 'mdi-content-save-outline',
     }
   if (status === 'Sent')
     return {
       variant: 'primary',
-      icon: 'mdi-email-outline'
+      icon: 'mdi-email-outline',
     }
   if (status === 'Past Due')
     return {
       variant: 'error',
-      icon: 'mdi-alert-circle-outline'
+      icon: 'mdi-alert-circle-outline',
     }
   
   return {
     variant: 'secondary',
-    icon: 'mdi-close'
+    icon: 'mdi-close',
   }
 }
 </script>
@@ -126,7 +127,7 @@ const resolveInvoiceStatusVariantAndIcon = status => {
         >
           <!-- 👉 Id -->
           <td>
-            <RouterLink :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }">
+            <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>

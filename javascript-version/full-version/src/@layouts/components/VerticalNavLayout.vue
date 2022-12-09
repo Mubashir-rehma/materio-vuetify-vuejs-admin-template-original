@@ -1,6 +1,7 @@
 <script>
 import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
+
 export default defineComponent({
   props: {
     navItems: {
@@ -20,6 +21,7 @@ export default defineComponent({
     const isLayoutOverlayVisible = ref(false)
     const toggleIsOverlayNavActive = useToggle(isOverlayNavActive)
 
+
     // ℹ️ This is alternative to below two commented watcher
     // We want to show overlay if overlay nav is visible and want to hide overlay if overlay is hidden and vice versa.
     syncRef(isOverlayNavActive, isLayoutOverlayVisible)
@@ -37,6 +39,7 @@ export default defineComponent({
       if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value)
         isLayoutOverlayVisible.value = false
     })
+
     const router = useRouter()
     const shallShowPageLoading = ref(false)
     
@@ -44,11 +47,13 @@ export default defineComponent({
       const verticalNavAttrs = toRef(props, 'verticalNavAttrs')
       const { wrapper: verticalNavWrapper, wrapperProps: verticalNavWrapperProps, ...additionalVerticalNavAttrs } = verticalNavAttrs.value
 
+
       // 👉 Vertical nav
       const verticalNav = h(VerticalNav, { isOverlayNavActive: isOverlayNavActive.value, toggleIsOverlayNavActive, navItems: props.navItems, ...additionalVerticalNavAttrs }, {
         'nav-header': slots['vertical-nav-header']?.(),
         'before-nav-items': slots['before-vertical-nav-items']?.(),
       })
+
 
       // 👉 Navbar
       const navbar = h('header', { class: ['layout-navbar', { 'navbar-blur': isNavbarBlurEnabled.value }] }, [
@@ -56,6 +61,7 @@ export default defineComponent({
           toggleVerticalOverlayNavActive: toggleIsOverlayNavActive,
         })),
       ])
+
 
       // 👉 Content area
       let mainChildren = slots.default?.()
@@ -74,17 +80,19 @@ export default defineComponent({
       }
       const main = h('main', { class: 'layout-page-content' }, h('div', { class: 'page-content-container' }, mainChildren))
 
+
       // 👉 Footer
       const footer = h('footer', { class: 'layout-footer' }, [
         h('div', { class: 'footer-content-container' }, slots.footer?.()),
       ])
+
 
       // 👉 Overlay
       const layoutOverlay = h('div', {
         class: ['layout-overlay', { visible: isLayoutOverlayVisible.value }],
         onClick: () => { isLayoutOverlayVisible.value = !isLayoutOverlayVisible.value },
       })
-      
+
       return h('div', { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value, windowScrollY.value)] }, [
         verticalNavWrapper ? h(verticalNavWrapper, verticalNavWrapperProps, { default: () => verticalNav }) : verticalNav,
         h('div', { class: 'layout-content-wrapper' }, [

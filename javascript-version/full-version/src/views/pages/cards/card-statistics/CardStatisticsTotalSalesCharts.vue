@@ -5,22 +5,25 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const currentTheme = controlledComputed(theme, () => {
   return vuetifyTheme.current.value.colors
 })
+
 const variableTheme = controlledComputed(theme, () => {
   return vuetifyTheme.current.value.variables
 })
+
 const chartOptions = controlledComputed(theme, () => {
   return {
     chart: {
       sparkline: { enabled: true },
-      animations: { enabled: false }
+      animations: { enabled: false },
     },
     stroke: {
       width: 6,
-      colors: [currentTheme.value.surface]
+      colors: [currentTheme.value.surface],
     },
     legend: { show: false },
     tooltip: { enabled: false },
@@ -29,17 +32,17 @@ const chartOptions = controlledComputed(theme, () => {
       currentTheme.value.primary,
       currentTheme.value.info,
       currentTheme.value.warning,
-      currentTheme.value.error
+      currentTheme.value.error,
     ],
     grid: {
       padding: {
         top: -7,
-        bottom: 5
-      }
+        bottom: 5,
+      },
     },
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     plotOptions: {
       pie: {
@@ -50,13 +53,13 @@ const chartOptions = controlledComputed(theme, () => {
             show: true,
             name: {
               offsetY: -2,
-              formatter: () => '28%'
+              formatter: () => '28%',
             },
             value: {
               offsetY: 2,
               fontSize: '12px',
               color: `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['medium-emphasis-opacity'] })`,
-              formatter: () => '1 Quarter'
+              formatter: () => '1 Quarter',
             },
             total: {
               show: true,
@@ -64,12 +67,12 @@ const chartOptions = controlledComputed(theme, () => {
               fontSize: '20px',
               fontWeight: 500,
               color: `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['high-emphasis-opacity'] })`,
-              formatter: () => '1 Quarter'
-            }
-          }
-        }
-      }
-    }
+              formatter: () => '1 Quarter',
+            },
+          },
+        },
+      },
+    },
   }
 })
 </script>

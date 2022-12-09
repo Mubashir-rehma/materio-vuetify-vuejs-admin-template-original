@@ -1,7 +1,7 @@
 <script setup>
 const sliderValues = ref([
   20,
-  40
+  40,
 ])
 </script>
 

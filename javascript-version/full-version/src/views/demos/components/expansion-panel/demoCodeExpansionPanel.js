@@ -1,39 +1,4 @@
-export const basic = {
-  ts: `<template>
-  <VExpansionPanels multiple>
-    <VExpansionPanel
-      v-for="i in 4"
-      :key="i"
-    >
-      <VExpansionPanelTitle>
-        Item {{ i }}
-      </VExpansionPanelTitle>
-      <VExpansionPanelText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </VExpansionPanelText>
-    </VExpansionPanel>
-  </VExpansionPanels>
-</template>
-`,
-  js: `<template>
-  <VExpansionPanels multiple>
-    <VExpansionPanel
-      v-for="i in 4"
-      :key="i"
-    >
-      <VExpansionPanelTitle>
-        Item {{ i }}
-      </VExpansionPanelTitle>
-      <VExpansionPanelText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </VExpansionPanelText>
-    </VExpansionPanel>
-  </VExpansionPanels>
-</template>
-`,
-}
-export const accordion = {
-  ts: `<template>
+export const accordion = { ts: `<template>
   <VExpansionPanels variant="accordion">
     <VExpansionPanel
       v-for="item in 4"
@@ -48,8 +13,7 @@ export const accordion = {
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VExpansionPanels variant="accordion">
     <VExpansionPanel
       v-for="item in 4"
@@ -64,70 +28,41 @@ export const accordion = {
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-`,
-}
-export const inset = {
-  ts: `<template>
-  <VExpansionPanels variant="inset">
+` }
+
+export const basic = { ts: `<template>
+  <VExpansionPanels multiple>
     <VExpansionPanel
-      v-for="item in 4"
-      :key="item"
+      v-for="i in 4"
+      :key="i"
     >
-      <VExpansionPanelTitle>Inset {{ item }}</VExpansionPanelTitle>
+      <VExpansionPanelTitle>
+        Item {{ i }}
+      </VExpansionPanelTitle>
       <VExpansionPanelText>
-        Chocolate bar sweet roll chocolate cake pastry I love gummi bears pudding chocolate cake. I love brownie powder apple pie sugar plum I love cake candy canes wafer. Tiramisu I love oat cake oat cake danish icing. Dessert sugar plum sugar plum cookie donut chocolate cake oat cake I love gummi bears.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </VExpansionPanelText>
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-`,
-  js: `<template>
-  <VExpansionPanels variant="inset">
+`, js: `<template>
+  <VExpansionPanels multiple>
     <VExpansionPanel
-      v-for="item in 4"
-      :key="item"
+      v-for="i in 4"
+      :key="i"
     >
-      <VExpansionPanelTitle>Inset {{ item }}</VExpansionPanelTitle>
+      <VExpansionPanelTitle>
+        Item {{ i }}
+      </VExpansionPanelTitle>
       <VExpansionPanelText>
-        Chocolate bar sweet roll chocolate cake pastry I love gummi bears pudding chocolate cake. I love brownie powder apple pie sugar plum I love cake candy canes wafer. Tiramisu I love oat cake oat cake danish icing. Dessert sugar plum sugar plum cookie donut chocolate cake oat cake I love gummi bears.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </VExpansionPanelText>
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-`,
-}
-export const popout = {
-  ts: `<template>
-  <VExpansionPanels variant="popout">
-    <VExpansionPanel
-      v-for="item in 4"
-      :key="item"
-    >
-      <VExpansionPanelTitle>Popout {{ item }}</VExpansionPanelTitle>
-      <VExpansionPanelText>
-        Cupcake ipsum dolor sit amet. Candy canes cheesecake chocolate bar I love I love jujubes gummi bears ice cream. Cheesecake tiramisu toffee cheesecake sugar plum candy canes bonbon candy.
-      </VExpansionPanelText>
-    </VExpansionPanel>
-  </VExpansionPanels>
-</template>
-`,
-  js: `<template>
-  <VExpansionPanels variant="popout">
-    <VExpansionPanel
-      v-for="item in 4"
-      :key="item"
-    >
-      <VExpansionPanelTitle>Popout {{ item }}</VExpansionPanelTitle>
-      <VExpansionPanelText>
-        Cupcake ipsum dolor sit amet. Candy canes cheesecake chocolate bar I love I love jujubes gummi bears ice cream. Cheesecake tiramisu toffee cheesecake sugar plum candy canes bonbon candy.
-      </VExpansionPanelText>
-    </VExpansionPanel>
-  </VExpansionPanels>
-</template>
-`,
-}
-export const customIcon = {
-  ts: `<script setup lang="ts">
+` }
+
+export const customIcon = { ts: `<script setup lang="ts">
 const panel = ref(0)
 </script>
 
@@ -181,9 +116,7 @@ const panel = ref(0)
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const panel = ref(0)
 </script>
 
@@ -237,10 +170,37 @@ const panel = ref(0)
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-`,
-}
-export const model = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const inset = { ts: `<template>
+  <VExpansionPanels variant="inset">
+    <VExpansionPanel
+      v-for="item in 4"
+      :key="item"
+    >
+      <VExpansionPanelTitle>Inset {{ item }}</VExpansionPanelTitle>
+      <VExpansionPanelText>
+        Chocolate bar sweet roll chocolate cake pastry I love gummi bears pudding chocolate cake. I love brownie powder apple pie sugar plum I love cake candy canes wafer. Tiramisu I love oat cake oat cake danish icing. Dessert sugar plum sugar plum cookie donut chocolate cake oat cake I love gummi bears.
+      </VExpansionPanelText>
+    </VExpansionPanel>
+  </VExpansionPanels>
+</template>
+`, js: `<template>
+  <VExpansionPanels variant="inset">
+    <VExpansionPanel
+      v-for="item in 4"
+      :key="item"
+    >
+      <VExpansionPanelTitle>Inset {{ item }}</VExpansionPanelTitle>
+      <VExpansionPanelText>
+        Chocolate bar sweet roll chocolate cake pastry I love gummi bears pudding chocolate cake. I love brownie powder apple pie sugar plum I love cake candy canes wafer. Tiramisu I love oat cake oat cake danish icing. Dessert sugar plum sugar plum cookie donut chocolate cake oat cake I love gummi bears.
+      </VExpansionPanelText>
+    </VExpansionPanel>
+  </VExpansionPanels>
+</template>
+` }
+
+export const model = { ts: `<script lang="ts" setup>
 const openedPanels = ref<number[]>([])
 
 const items = ref(5)
@@ -293,15 +253,16 @@ const none = () => {
     </VExpansionPanels>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const openedPanels = ref([])
 const items = ref(5)
+
 const all = () => {
 
   // [...Array(5).keys()] => [0, 1, 2, 3, 4]
   openedPanels.value = [...Array(items.value).keys()]
 }
+
 const none = () => {
   openedPanels.value = []
 }
@@ -345,5 +306,33 @@ const none = () => {
     </VExpansionPanels>
   </div>
 </template>
-`,
-}
+` }
+
+export const popout = { ts: `<template>
+  <VExpansionPanels variant="popout">
+    <VExpansionPanel
+      v-for="item in 4"
+      :key="item"
+    >
+      <VExpansionPanelTitle>Popout {{ item }}</VExpansionPanelTitle>
+      <VExpansionPanelText>
+        Cupcake ipsum dolor sit amet. Candy canes cheesecake chocolate bar I love I love jujubes gummi bears ice cream. Cheesecake tiramisu toffee cheesecake sugar plum candy canes bonbon candy.
+      </VExpansionPanelText>
+    </VExpansionPanel>
+  </VExpansionPanels>
+</template>
+`, js: `<template>
+  <VExpansionPanels variant="popout">
+    <VExpansionPanel
+      v-for="item in 4"
+      :key="item"
+    >
+      <VExpansionPanelTitle>Popout {{ item }}</VExpansionPanelTitle>
+      <VExpansionPanelText>
+        Cupcake ipsum dolor sit amet. Candy canes cheesecake chocolate bar I love I love jujubes gummi bears ice cream. Cheesecake tiramisu toffee cheesecake sugar plum candy canes bonbon candy.
+      </VExpansionPanelText>
+    </VExpansionPanel>
+  </VExpansionPanels>
+</template>
+` }
+

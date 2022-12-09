@@ -15,8 +15,7 @@ export const can = (action, subject) => {
   if (!vm)
     return false
   const localCan = vm.proxy && '$can' in vm.proxy
-
-  // @ts-expect-error We will get TS error in below line because we aren't using $can in component instance
+  
   return localCan ? vm.proxy?.$can(action, subject) : true
 }
 
@@ -36,6 +35,5 @@ export const canViewNavMenuGroup = item => {
   return can(item.action, item.subject) && hasAnyVisibleChild
 }
 export const canNavigate = to => {
-  // @ts-expect-error We should allow passing string | undefined to can because for admin ability we omit defining action & subject
   return to.matched.some(route => ability.can(route.meta.action, route.meta.subject))
 }

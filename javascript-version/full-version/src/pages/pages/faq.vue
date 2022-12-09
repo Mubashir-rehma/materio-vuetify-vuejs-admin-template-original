@@ -1,12 +1,11 @@
 <script setup>
-import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
 import axios from '@axios'
 import AppSearchHeader from '@core/components/AppSearchHeader.vue'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import illustrationJohn from '@images/cards/illustration-john.png'
 
 const faqSearchQuery = ref('')
 const faqs = ref([])
+
 const fetchFaqs = () => {
   return axios.get('/pages/faqs', { params: { q: faqSearchQuery.value } }).then(response => {
     faqs.value = response.data
@@ -14,23 +13,25 @@ const fetchFaqs = () => {
     console.error(error)
   })
 }
+
 const activeTab = ref('Payment')
 const activeQuestion = ref(0)
+
 watch(activeTab, () => activeQuestion.value = 0)
 watch(faqSearchQuery, fetchFaqs, { immediate: true })
+
 const contactUs = [
   {
     icon: 'mdi-phone',
     via: '+ (810) 2548 2568',
-    tagLine: 'We are always happy to help!'
+    tagLine: 'We are always happy to help!',
   },
   {
     icon: 'mdi-email-outline',
     via: 'hello@help.com',
-    tagLine: 'Best way to get answer faster!'
-  }
+    tagLine: 'Best way to get answer faster!',
+  },
 ]
-const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight, sittingGirlWithLaptopDark)
 </script>
 
 <template>
@@ -40,6 +41,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
       v-model="faqSearchQuery"
       title="Hello, how can we help?"
       subtitle="or choose a category to quickly find the help you need"
+      custom-class="mb-7"
     />
 
     <!-- 👉 Faq sections and questions -->
@@ -73,9 +75,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
           </VTab>
         </VTabs>
         <VImg
-          :width="200"
-          :src="sitingGirlWithLaptop"
-          class="d-none d-sm-block mt-10"
+          :width="300"
+          :src="illustrationJohn"
+          class="flip-in-rtl d-none d-sm-block mt-10"
         />
       </VCol>
 
@@ -121,9 +123,9 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
               multiple
             >
               <VExpansionPanel
-                v-for="(item, index) in faq.faqs"
+                v-for="item in faq.faqs"
                 :key="item.question"
-                :title="`Q${index + 1}:  ${item.question}`"
+                :title="item.question"
                 :text="item.answer"
               />
             </VExpansionPanels>
@@ -150,7 +152,6 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
     <!-- 👉 You still have a question? -->
     <div class="text-center pt-15">
       <VChip
-        label
         color="primary"
         size="small"
         class="mb-2"

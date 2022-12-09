@@ -3,19 +3,20 @@ const tableData = [
   {
     action: 'Collapse',
     icon: 'mdi-chevron-up',
-    details: 'Collapse card content using collapse action.'
+    details: 'Collapse card content using collapse action.',
   },
   {
     action: 'Refresh Content',
     icon: 'mdi-refresh',
-    details: 'Refresh your card content using refresh action.'
+    details: 'Refresh your card content using refresh action.',
   },
   {
     action: 'Remove Card',
     icon: 'mdi-close',
-    details: 'Remove card from page using remove card action'
-  }
+    details: 'Remove card from page using remove card action',
+  },
 ]
+
 const refetchData = hideOverlay => {
   setTimeout(hideOverlay, 3000)
 }

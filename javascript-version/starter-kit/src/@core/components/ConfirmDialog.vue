@@ -2,26 +2,28 @@
 const props = defineProps({
   confirmationMsg: {
     type: String,
-    required: true
+    required: true,
   },
   isDialogVisible: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits([
   'update:isDialogVisible',
-  'confirm'
+  'confirm',
 ])
 
 const updateModelValue = val => {
   emit('update:isDialogVisible', val)
 }
+
 const onConfirmation = () => {
   emit('confirm', true)
   updateModelValue(false)
 }
+
 const onCancel = () => {
   emit('confirm', false)
   emit('update:isDialogVisible', false)

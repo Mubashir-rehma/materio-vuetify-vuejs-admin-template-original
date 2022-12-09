@@ -12,6 +12,7 @@ const props = defineProps<Prop>()
 defineEmits<Emit>()
 
 const selectedPlan = ref('standard')
+
 const plansList = [
   { text: 'Basic - $0/month', value: 'basic' },
   { text: 'Standard - $99/month', value: 'standard' },

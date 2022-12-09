@@ -1,8 +1,15 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router';
-const buyNowUrl = ref('https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
+const vm = getCurrentInstance()
+
+const buyNowUrl = ref(vm?.appContext.config.globalProperties.buyNowUrl || 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
+
+watch(buyNowUrl, val => {
+  if (vm)
+    vm.appContext.config.globalProperties.buyNowUrl = val
+})
 
 onMounted(() => {
   const { marketplace } = route.query
@@ -27,7 +34,9 @@ onMounted(() => {
 <style lang="scss" scoped>
 .product-buy-now {
   position: fixed;
-  z-index: 4;
+
+  // To keep buy now button on top of v-layout. E.g. Email app
+  z-index: 999;
   inset-block-end: 5%;
   inset-inline-end: 79px;
 

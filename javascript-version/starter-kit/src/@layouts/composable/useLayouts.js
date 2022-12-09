@@ -1,6 +1,7 @@
 import { AppContentLayoutNav, NavbarType } from '../enums'
 import { config } from '@layouts/config'
 import { injectionKeyIsVerticalNavHovered } from '@layouts'
+
 export const useLayouts = () => {
   const navbarType = computed({
     get() {
@@ -10,6 +11,7 @@ export const useLayouts = () => {
       config.navbar.type.value = value
     },
   })
+
   const isNavbarBlurEnabled = computed({
     get() {
       return config.navbar.navbarBlur.value
@@ -19,9 +21,11 @@ export const useLayouts = () => {
       localStorage.setItem(`${config.app.title}-navbarBlur`, value.toString())
     },
   })
+
   const _setAppDir = dir => {
     document.documentElement.setAttribute('dir', dir)
   }
+
   const footerType = computed({
     get() {
       return config.footer.type.value
@@ -30,6 +34,7 @@ export const useLayouts = () => {
       config.footer.type.value = value
     },
   })
+
   const isVerticalNavCollapsed = computed({
     get() {
       return config.verticalNav.isVerticalNavCollapsed.value
@@ -39,6 +44,7 @@ export const useLayouts = () => {
       localStorage.setItem(`${config.app.title}-isVerticalNavCollapsed`, val.toString())
     },
   })
+
   const appContentWidth = computed({
     get() {
       return config.app.contentWidth.value
@@ -48,6 +54,7 @@ export const useLayouts = () => {
       localStorage.setItem(`${config.app.title}-contentWidth`, val.toString())
     },
   })
+
   const appContentLayoutNav = computed({
     get() {
       return config.app.contentLayoutNav.value
@@ -63,6 +70,7 @@ export const useLayouts = () => {
       }
     },
   })
+
   const horizontalNavType = computed({
     get() {
       return config.horizontalNav.type.value
@@ -71,9 +79,11 @@ export const useLayouts = () => {
       config.horizontalNav.type.value = value
     },
   })
+
   const isLessThanOverlayNavBreakpoint = computed(() => {
     return windowWidth => unref(windowWidth) < config.app.overlayNavFromBreakpoint
   })
+
   const _layoutClasses = computed(() => (windowWidth, windowScrollY) => {
     const route = useRoute()
     
@@ -93,6 +103,7 @@ export const useLayouts = () => {
       route.meta.layoutWrapperClasses ? route.meta.layoutWrapperClasses : null,
     ]
   })
+
   const switchToVerticalNavOnLtOverlayNavBreakpoint = windowWidth => {
     /*
           ℹ️ This is flag will hold nav type need to render when switching between lgAndUp from mdAndDown window width
@@ -109,6 +120,7 @@ export const useLayouts = () => {
               But `appContentLayoutNav` will be value set in theme config file
         */
     const lgAndUpNav = ref(appContentLayoutNav.value)
+
 
     /*
           There might be case where we manually switch from vertical to horizontal nav and vice versa in `lgAndUp` screen
@@ -133,6 +145,7 @@ export const useLayouts = () => {
     }, { immediate: true })
   }
 
+
   /*
       This function will return true if current state is mini. Mini state means vertical nav is:
         - Collapsed
@@ -148,6 +161,7 @@ export const useLayouts = () => {
     
     return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value && !isLessThanOverlayNavBreakpoint.value(unref(windowWidth)))
   }
+
   const dynamicI18nProps = computed(() => (key, tag = 'span') => {
     if (config.app.enableI18n) {
       return {
@@ -159,6 +173,7 @@ export const useLayouts = () => {
     
     return {}
   })
+
   const isAppRtl = computed({
     get() {
       return config.app.isRtl.value
@@ -169,7 +184,7 @@ export const useLayouts = () => {
       _setAppDir(value ? 'rtl' : 'ltr')
     },
   })
-  
+
   return {
     navbarType,
     isNavbarBlurEnabled,

@@ -2,18 +2,22 @@ import { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 import { config } from './config'
 import { ContentWidth } from './enums'
 import { useLayouts } from '@layouts'
+
 const { _setAppDir } = useLayouts()
 
 // 🔌 Plugin
 export const createLayouts = userConfig => {
   const localStorageIsRtl = localStorage.getItem(`${userConfig.app.title}-isRtl`)
   const localStorageIsVerticalNavCollapsed = localStorage.getItem(`${userConfig.app.title}-isVerticalNavCollapsed`)
+
   const localStorageContentWidth = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-contentWidth`)
     
     return Object.values(ContentWidth).find(v => v === storageValue)
   })()
+
   const localStorageNavbarBlur = localStorage.getItem(`${userConfig.app.title}-navbarBlur`)
+
   config.app.title = userConfig.app.title
   config.app.logo = userConfig.app.logo
   config.app.contentWidth.value = localStorageContentWidth || userConfig.app.contentWidth

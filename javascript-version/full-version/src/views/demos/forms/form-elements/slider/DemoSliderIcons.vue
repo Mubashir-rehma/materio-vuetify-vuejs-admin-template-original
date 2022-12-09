@@ -1,7 +1,7 @@
 <script setup>
 const mediaSlider = ref(0)
 const alarmSlider = ref(0)
-const zoomInOut = useClamp(0, 0, 100)
+const zoomInOut = ref(10)
 </script>
 
 <template>
@@ -9,7 +9,7 @@ const zoomInOut = useClamp(0, 0, 100)
     <VCol cols="12">
       <VSlider
         v-model="mediaSlider"
-        prepend-icon="mdi-volume-high"
+        prepend-icon="mdi-volume"
       />
     </VCol>
 
@@ -25,8 +25,6 @@ const zoomInOut = useClamp(0, 0, 100)
         v-model="zoomInOut"
         append-icon="mdi-magnify-plus-outline"
         prepend-icon="mdi-magnify-minus-outline"
-        @click:append="zoomInOut += 10"
-        @click:prepend="zoomInOut -= 10"
       />
     </VCol>
   </VRow>

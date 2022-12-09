@@ -49,7 +49,7 @@ const iconsList = [
   'mdi-email-open-outline',
   'mdi-emoticon-happy-outline',
   'mdi-file-multiple-outline',
-  'mdi-flask-empty-outline'
+  'mdi-flask-empty-outline',
 ]
 </script>
 

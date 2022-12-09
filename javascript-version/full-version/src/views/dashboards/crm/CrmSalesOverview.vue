@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -18,7 +19,7 @@ const options = controlledComputed(theme, () => {
       currentTheme.value.primary,
       `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.7)`,
       `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.5)`,
-      currentTheme.value.background
+      currentTheme.value.background,
     ],
     stroke: { width: 0 },
     legend: { show: false },
@@ -27,11 +28,11 @@ const options = controlledComputed(theme, () => {
       'Apparel',
       'Electronics',
       'FMCG',
-      'Other Sales'
+      'Other Sales',
     ],
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     plotOptions: {
       pie: {
@@ -42,51 +43,53 @@ const options = controlledComputed(theme, () => {
             show: true,
             name: {
               offsetY: 25,
-              color: secondaryTextColor
+              color: secondaryTextColor,
             },
             value: {
               offsetY: -15,
               fontWeight: 600,
               fontSize: '24px',
               color: primaryTextColor,
-              formatter: value => `${ value }k`
+              formatter: value => `${ value }k`,
             },
             total: {
               show: true,
               label: 'Weekly Sales',
               fontSize: '12px',
               color: secondaryTextColor,
-              formatter: value => `${ value.globals.seriesTotals.reduce((total, num) => total + num) }k`
-            }
-          }
-        }
-      }
-    }
+              formatter: value => `${ value.globals.seriesTotals.reduce((total, num) => total + num) }k`,
+            },
+          },
+        },
+      },
+    },
   }
 })
+
 const series = [
   12,
   25,
   13,
-  50
+  50,
 ]
+
 const salesOverviews = [
   {
     product: 'Apparel',
-    sales: '$1,840'
+    sales: '$1,840',
   },
   {
     product: 'Electronic',
-    sales: '$11,420'
+    sales: '$11,420',
   },
   {
     product: 'FMCG',
-    sales: '$1,840'
+    sales: '$1,840',
   },
   {
     product: 'Other Sales',
-    sales: '$11,420'
-  }
+    sales: '$11,420',
+  },
 ]
 </script>
 

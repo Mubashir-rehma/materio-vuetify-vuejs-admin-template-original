@@ -1,26 +1,25 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getHorizontalBarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BarChart from '@core/libs/chartjs/components/BarChart'
 
 const props = defineProps({
   colors: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
-const {theme} = useThemeConfig()
 const vuetifyTheme = useTheme()
-const chartOptions = controlledComputed(theme, () => getHorizontalBarChartConfig(vuetifyTheme.current.value))
+const chartOptions = computed(() => getHorizontalBarChartConfig(vuetifyTheme.current.value))
+
 const data = {
   labels: [
     'MON',
     'TUE',
     'WED ',
     'THU',
-    'FRI'
+    'FRI',
   ],
   datasets: [
     {
@@ -33,8 +32,8 @@ const data = {
         350,
         580,
         460,
-        120
-      ]
+        120,
+      ],
     },
     {
       maxBarThickness: 15,
@@ -46,10 +45,10 @@ const data = {
         590,
         510,
         240,
-        360
-      ]
-    }
-  ]
+        360,
+      ],
+    },
+  ],
 }
 </script>
 

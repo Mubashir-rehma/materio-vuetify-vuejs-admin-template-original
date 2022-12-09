@@ -3,43 +3,45 @@ import FlatPickr from 'vue-flatpickr-component'
 import { useTheme } from 'vuetify'
 import {
   filterFieldProps,
-  makeVFieldProps
+  makeVFieldProps,
 } from 'vuetify/lib/components/VField/VField'
 import {
   filterInputProps,
-  makeVInputProps
+  makeVInputProps,
 } from 'vuetify/lib/components/VInput/VInput'
 
-// @ts-expect-error There won't be declaration file for it
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const props = defineProps({
   ...makeVInputProps({
     density: 'comfortable',
-    hideDetails: 'auto'
+    hideDetails: 'auto',
   }),
   ...makeVFieldProps({
     variant: 'outlined',
-    color: 'primary'
-  })
+    color: 'primary',
+  }),
 })
 
 const emit = defineEmits([
   'update:modelValue',
-  'click:clear'
+  'click:clear',
 ])
 
 defineOptions({ inheritAttrs: false })
+
 const attrs = useAttrs()
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
+
 const [{
   modelValue: _,
   ...inputProps
 }] = filterInputProps(props)
+
 const [fieldProps] = filterFieldProps(props)
 const refFlatPicker = ref()
-const {focused} = useFocus(refFlatPicker)
+const { focused } = useFocus(refFlatPicker)
 const isCalendarOpen = ref(false)
 const isInlinePicker = ref(false)
 
@@ -48,6 +50,7 @@ if (compAttrs.config && compAttrs.config.inline) {
   isInlinePicker.value = compAttrs.config.inline
   Object.assign(compAttrs, { altInputClass: 'inlinePicker' })
 }
+
 const onClear = el => {
   el.stopPropagation()
   nextTick(() => {
@@ -55,9 +58,11 @@ const onClear = el => {
     emit('click:clear', el)
   })
 }
-const {theme} = useThemeConfig()
+
+const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
+
 const updateThemeClassInCalendar = activeTheme => {
 
   // ℹ️ Flatpickr don't render it's instance in mobile and device simulator
@@ -68,10 +73,12 @@ const updateThemeClassInCalendar = activeTheme => {
   })
   refFlatPicker.value.fp.calendarContainer.classList.add(`v-theme--${ activeTheme }`)
 }
+
 watch(theme, updateThemeClassInCalendar)
 onMounted(() => {
   updateThemeClassInCalendar(vuetifyTheme.name.value)
 })
+
 const emitModelValue = val => {
   emit('update:modelValue', val)
 }
@@ -143,7 +150,7 @@ const emitModelValue = val => {
 .flat-picker-custom-style {
   position: absolute;
   color: inherit;
-  inline-size: 95%;
+  inline-size: 100%;
   inset: 0;
   outline: none;
   padding-block: 0;

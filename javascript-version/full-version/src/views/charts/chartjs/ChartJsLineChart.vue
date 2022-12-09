@@ -1,18 +1,17 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getLineChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import LineChart from '@core/libs/chartjs/components/LineChart'
 
 const props = defineProps({
   colors: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
-const {theme} = useThemeConfig()
 const vuetifyTheme = useTheme()
+
 const data = {
   labels: [
     0,
@@ -29,7 +28,7 @@ const data = {
     110,
     120,
     130,
-    140
+    140,
   ],
   datasets: [
     {
@@ -60,8 +59,8 @@ const data = {
         255,
         290,
         360,
-        375
-      ]
+        375,
+      ],
     },
     {
       fill: false,
@@ -91,8 +90,8 @@ const data = {
         170,
         210,
         200,
-        280
-      ]
+        280,
+      ],
     },
     {
       fill: false,
@@ -122,12 +121,13 @@ const data = {
         90,
         140,
         130,
-        180
-      ]
-    }
-  ]
+        180,
+      ],
+    },
+  ],
 }
-const chartConfig = controlledComputed(theme, () => getLineChartConfig(vuetifyTheme.current.value))
+
+const chartConfig = computed(() => getLineChartConfig(vuetifyTheme.current.value))
 </script>
 
 <template>

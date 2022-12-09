@@ -1,18 +1,21 @@
 import { RouteTransitions, Skins } from '@core/enums'
+
 export const defineThemeConfig = userConfig => {
   const localStorageTheme = localStorage.getItem(`${userConfig.app.title}-theme`)
   const localStorageIsVerticalNavSemiDark = localStorage.getItem(`${userConfig.app.title}-isVerticalNavSemiDark`)
+
   const localStorageSkin = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
     
     return Object.values(Skins).find(v => v === storageValue)
   })()
+
   const localStorageTransition = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-transition`)
     
     return Object.values(RouteTransitions).find(v => v === storageValue)
   })()
-  
+
   return {
     themeConfig: {
       app: {

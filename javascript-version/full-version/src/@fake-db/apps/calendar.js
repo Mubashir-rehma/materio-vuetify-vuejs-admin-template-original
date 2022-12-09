@@ -1,8 +1,10 @@
 import mock from '@/@fake-db/mock'
+
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
 const nextMonth = date.getMonth() === 11 ? new Date(date.getFullYear() + 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() + 1, 1)
 const prevMonth = date.getMonth() === 11 ? new Date(date.getFullYear() - 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() - 1, 1)
+
 const data = {
   events: [
     {
@@ -118,6 +120,7 @@ const data = {
   ],
 }
 
+
 // ------------------------------------------------
 // GET: Return calendar events
 // ------------------------------------------------
@@ -166,6 +169,7 @@ mock.onDelete(/\/apps\/calendar\/events\/\d+/).reply(config => {
   // Get event id from URL
   const eventId = config.url?.substring(config.url.lastIndexOf('/') + 1)
   const eventIndex = data.events.findIndex(e => e.id === eventId)
+
   data.events.splice(eventIndex, 1)
   
   return [200]

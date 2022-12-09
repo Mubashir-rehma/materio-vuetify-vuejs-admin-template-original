@@ -1,17 +1,19 @@
 <script setup>
-import americanExpress from '@/assets/images/icons/payments/american-express.png'
-import mastercard from '@/assets/images/icons/payments/mastercard.png'
-import visa from '@/assets/images/icons/payments/visa.png'
+import americanExpress from '@images/icons/payments/american-express.png'
+import mastercard from '@images/icons/payments/mastercard.png'
+import visa from '@images/icons/payments/visa.png'
 
 const isUpgradePlanDialogVisible = ref(false)
 const currentCardDetails = ref()
 const isCardEditDialogVisible = ref(false)
 const isCardAddDialogVisible = ref(false)
 const isEditAddressDialogVisible = ref(false)
+
 const openEditCardDialog = cardDetails => {
   currentCardDetails.value = cardDetails
   isCardEditDialogVisible.value = true
 }
+
 const creditCards = [
   {
     name: 'Tom McBride',
@@ -20,7 +22,7 @@ const creditCards = [
     isPrimary: true,
     type: 'mastercard',
     cvv: '123',
-    image: mastercard
+    image: mastercard,
   },
   {
     name: 'Mildred Wagner',
@@ -29,7 +31,7 @@ const creditCards = [
     isPrimary: false,
     type: 'visa',
     cvv: '456',
-    image: visa
+    image: visa,
   },
   {
     name: 'Lester Jennings',
@@ -38,9 +40,10 @@ const creditCards = [
     isPrimary: false,
     type: 'visa',
     cvv: '456',
-    image: americanExpress
-  }
+    image: americanExpress,
+  },
 ]
+
 const currentBillingAddress = {
   companyName: 'ThemeSelection',
   billingEmail: 'gertrude@gmail.com',
@@ -50,7 +53,7 @@ const currentBillingAddress = {
   contact: '+1(609) 933-44-22',
   country: 'USA',
   state: 'Queensland',
-  zipCode: '403114'
+  zipCode: '403114',
 }
 </script>
 
@@ -65,17 +68,17 @@ const currentBillingAddress = {
               cols="12"
               md="6"
             >
-              <h6 class="text-sm font-weight-medium mb-1">
-                Your Current Plan is <strong>Basic</strong>
-              </h6>
+              <p class="text-sm mb-1">
+                Your Current Plan is <span class="font-weight-semibold text-high-emphasis">Basic</span>
+              </p>
               <p>A simple start for everyone</p>
 
-              <h6 class="text-sm font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-semibold mb-1">
                 Active until Dec 09, 2021
               </h6>
               <p>We will send you a notification upon Subscription expiration</p>
 
-              <h6 class="text-sm font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-semibold mb-1">
                 <span class="me-3">$199 Per Month</span>
                 <VChip
                   color="primary"
@@ -145,21 +148,15 @@ const currentBillingAddress = {
 
     <!-- 👉 Payment Methods -->
     <VCol cols="12">
-      <VCard>
-        <VCardItem>
-          <VCardTitle class="d-flex flex-wrap gap-4">
-            <span>Payment Methods</span>
-
-            <VSpacer />
-
-            <VBtn
-              prepend-icon="mdi-plus"
-              @click="isCardAddDialogVisible = !isCardAddDialogVisible"
-            >
-              Add Card
-            </VBtn>
-          </VCardTitle>
-        </VCardItem>
+      <VCard title="Payment Methods">
+        <template #append>
+          <VBtn
+            prepend-icon="mdi-plus"
+            @click="isCardAddDialogVisible = !isCardAddDialogVisible"
+          >
+            Add Card
+          </VBtn>
+        </template>
 
         <VCardText class="d-flex flex-column gap-y-4">
           <VCard
@@ -217,16 +214,12 @@ const currentBillingAddress = {
 
     <VCol cols="12">
       <!-- 👉 Billing Address -->
-      <VCard>
-        <VCardItem>
-          <VCardTitle>Billing Address</VCardTitle>
-
-          <template #append>
-            <VBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
-              Edit Address
-            </VBtn>
-          </template>
-        </VCardItem>
+      <VCard title="Billing Address">
+        <template #append>
+          <VBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
+            Edit Address
+          </VBtn>
+        </template>
 
         <VCardText>
           <VRow>
@@ -237,7 +230,7 @@ const currentBillingAddress = {
               <VTable class="billing-address-table">
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Company Name:
                     </h6>
                   </td>
@@ -249,7 +242,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Billing Email:
                     </h6>
                   </td>
@@ -261,7 +254,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Tax ID:
                     </h6>
                   </td>
@@ -273,7 +266,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       VAT Number:
                     </h6>
                   </td>
@@ -285,7 +278,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td class="d-flex align-baseline">
-                    <h6 class="text-sm text-no-wrap">
+                    <h6 class="text-sm text-no-wrap font-weight-medium">
                       Billing Address:
                     </h6>
                   </td>
@@ -305,7 +298,7 @@ const currentBillingAddress = {
               <VTable class="billing-address-table">
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Contact:
                     </h6>
                   </td>
@@ -317,7 +310,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       Country:
                     </h6>
                   </td>
@@ -329,7 +322,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap mb-4">
+                    <h6 class="text-sm text-no-wrap font-weight-medium mb-4">
                       State:
                     </h6>
                   </td>
@@ -341,7 +334,7 @@ const currentBillingAddress = {
                 </tr>
                 <tr>
                   <td>
-                    <h6 class="text-sm text-no-wrap">
+                    <h6 class="text-sm text-no-wrap font-weight-medium">
                       Zip Code:
                     </h6>
                   </td>

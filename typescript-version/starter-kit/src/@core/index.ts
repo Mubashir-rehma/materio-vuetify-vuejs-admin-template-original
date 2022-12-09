@@ -7,11 +7,13 @@ export const defineThemeConfig = (
 ): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
   const localStorageTheme = localStorage.getItem(`${userConfig.app.title}-theme`)
   const localStorageIsVerticalNavSemiDark = localStorage.getItem(`${userConfig.app.title}-isVerticalNavSemiDark`)
+
   const localStorageSkin = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
 
     return Object.values(Skins).find(v => v === storageValue)
   })()
+
   const localStorageTransition = (() => {
     const storageValue = localStorage.getItem(`${userConfig.app.title}-transition`)
 

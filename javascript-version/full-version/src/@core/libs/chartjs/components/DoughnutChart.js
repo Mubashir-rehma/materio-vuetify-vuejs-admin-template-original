@@ -1,6 +1,7 @@
 import { ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip } from 'chart.js'
 import { defineComponent } from 'vue'
 import { Doughnut } from 'vue-chartjs'
+
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 export default defineComponent({
   name: 'DoughnutChart',

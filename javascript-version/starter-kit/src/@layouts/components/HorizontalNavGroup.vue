@@ -2,7 +2,7 @@
 import { useLayouts } from '@layouts'
 import {
   HorizontalNavLink,
-  HorizontalNavPopper
+  HorizontalNavPopper,
 } from '@layouts/components'
 import { config } from '@layouts/config'
 import { canViewNavMenuGroup } from '@layouts/plugins/casl'
@@ -11,27 +11,30 @@ import { isNavGroupActive } from '@layouts/utils'
 const props = defineProps({
   item: {
     type: null,
-    required: true
+    required: true,
   },
   childrenAtEnd: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   isSubItem: {
     type: Boolean,
     required: false,
-    default: false
-  }
+    default: false,
+  },
 })
 
 defineOptions({ name: 'HorizontalNavGroup' })
+
 const route = useRoute()
 const router = useRouter()
-const {dynamicI18nProps, isAppRtl} = useLayouts()
+const { dynamicI18nProps, isAppRtl } = useLayouts()
 const isGroupActive = ref(false)
+
 watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
+
   isGroupActive.value = isActive
 }, { immediate: true })
 </script>

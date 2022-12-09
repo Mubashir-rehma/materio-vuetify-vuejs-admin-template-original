@@ -3,12 +3,14 @@ const username = ref('')
 const email = ref('')
 const password = ref()
 const checkbox = ref(false)
+
 const items = [
   'foo',
   'bar',
   'fizz',
-  'buzz'
+  'buzz',
 ]
+
 const values = ref([])
 </script>
 

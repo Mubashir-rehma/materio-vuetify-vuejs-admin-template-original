@@ -7,9 +7,8 @@ const router = createRouter({
   routes: [
     ...setupLayouts(routes),
   ],
-  scrollBehavior() {
-    return { top: 0 }
-  },
 })
 
+
+// Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
 export default router

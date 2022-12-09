@@ -2,13 +2,13 @@
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   divider: {
     type: Boolean,
     required: false,
-    default: true
-  }
+    default: true,
+  },
 })
 </script>
 

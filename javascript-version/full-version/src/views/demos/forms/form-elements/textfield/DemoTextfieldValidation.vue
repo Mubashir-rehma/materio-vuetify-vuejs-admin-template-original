@@ -1,7 +1,7 @@
 <script setup>
 import {
   emailValidator,
-  requiredValidator
+  requiredValidator,
 } from '@validators'
 
 const email = ref('')

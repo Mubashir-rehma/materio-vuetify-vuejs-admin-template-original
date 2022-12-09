@@ -4,22 +4,22 @@ import { config } from '@layouts/config'
 import { can } from '@layouts/plugins/casl'
 import {
   getComputedNavLinkToProp,
-  isNavLinkActive
+  isNavLinkActive,
 } from '@layouts/utils'
 
 const props = defineProps({
   item: {
     type: null,
-    required: true
+    required: true,
   },
   isSubItem: {
     type: Boolean,
     required: false,
-    default: false
-  }
+    default: false,
+  },
 })
 
-const {dynamicI18nProps} = useLayouts()
+const { dynamicI18nProps } = useLayouts()
 </script>
 
 <template>

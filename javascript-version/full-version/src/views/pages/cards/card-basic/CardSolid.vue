@@ -1,7 +1,7 @@
 <script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 
 const solidCardData = [
   {
@@ -12,7 +12,7 @@ const solidCardData = [
     avatarImg: avatar4,
     avatarName: 'Mary Vaughn',
     likes: '1.2k',
-    share: '80'
+    share: '80',
   },
   {
     cardBg: '#3B5998',
@@ -22,7 +22,7 @@ const solidCardData = [
     avatarImg: avatar1,
     avatarName: 'Eugene Clarke',
     likes: '3.2k',
-    share: '49'
+    share: '49',
   },
   {
     cardBg: '#007BB6',
@@ -32,8 +32,8 @@ const solidCardData = [
     avatarImg: avatar8,
     avatarName: 'Anne Burke1',
     likes: '1.2k',
-    share: '80'
-  }
+    share: '80',
+  },
 ]
 </script>
 

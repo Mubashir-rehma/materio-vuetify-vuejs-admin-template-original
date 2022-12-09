@@ -2,30 +2,31 @@
 const props = defineProps({
   isDialogVisible: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits(['update:isDialogVisible'])
 
 const selectedPlan = ref('standard')
+
 const plansList = [
   {
     text: 'Basic - $0/month',
-    value: 'basic'
+    value: 'basic',
   },
   {
     text: 'Standard - $99/month',
-    value: 'standard'
+    value: 'standard',
   },
   {
     text: 'Enterprise - $499/month',
-    value: 'enterprise'
+    value: 'enterprise',
   },
   {
     text: 'Company - $999/month',
-    value: 'company'
-  }
+    value: 'company',
+  },
 ]
 </script>
 

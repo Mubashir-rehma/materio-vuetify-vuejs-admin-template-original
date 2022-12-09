@@ -1,17 +1,19 @@
 <script setup>
 import {
   emailValidator,
-  requiredValidator
+  requiredValidator,
 } from '@validators'
 
 const name = ref('')
 const email = ref('')
+
 const items = [
   'Item 1',
   'Item 2',
   'Item 3',
-  'Item 4'
+  'Item 4',
 ]
+
 const select = ref()
 const checkbox = ref(false)
 const form = ref()

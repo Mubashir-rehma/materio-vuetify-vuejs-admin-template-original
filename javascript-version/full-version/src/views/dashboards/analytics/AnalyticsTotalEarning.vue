@@ -1,7 +1,7 @@
 <script setup>
-import aviato from '@/assets/images/logos/aviato.png'
-import bitbank from '@/assets/images/logos/bitbank.png'
-import zipcar from '@/assets/images/logos/zipcar.png'
+import aviato from '@images/logos/aviato.png'
+import bitbank from '@images/logos/bitbank.png'
+import zipcar from '@images/logos/zipcar.png'
 
 const earnings = [
   {
@@ -9,22 +9,22 @@ const earnings = [
     title: 'Zipcar',
     subtitle: 'Vuejs, React & HTML',
     amount: '$24,895.65',
-    progress: 'primary'
+    progress: 'primary',
   },
   {
     avatar: bitbank,
     title: 'Bitbank',
     subtitle: 'Sketch, Figma & XD',
     amount: '$8,6500.20',
-    progress: 'info'
+    progress: 'info',
   },
   {
     avatar: aviato,
     title: 'Aviato',
     subtitle: 'HTML & Anguler',
     amount: '$1,2450.80',
-    progress: 'secondary'
-  }
+    progress: 'secondary',
+  },
 ]
 </script>
 

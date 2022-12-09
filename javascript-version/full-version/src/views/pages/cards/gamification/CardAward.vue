@@ -1,7 +1,7 @@
 <script setup>
-import triangleDark from '@/assets/images/misc/triangle-dark.png'
-import triangleLight from '@/assets/images/misc/triangle-light.png'
-import trophy from '@/assets/images/misc/trophy.png'
+import triangleDark from '@images/misc/triangle-dark.png'
+import triangleLight from '@images/misc/triangle-light.png'
+import trophy from '@images/misc/trophy.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
@@ -52,12 +52,5 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
   inline-size: 4.9375rem;
   inset-block-end: 2rem;
   inset-inline-end: 2rem;
-}
-
-// for rtl only
-.flip-in-rtl {
-  @include layoutsMixins.rtl {
-    transform: scaleX(-1);
-  }
 }
 </style>

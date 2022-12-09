@@ -1,5 +1,6 @@
 <script setup>
 const loadings = ref([])
+
 const load = i => {
   loadings.value[i] = true
   setTimeout(() => {

@@ -1,8 +1,8 @@
 <script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import pdf from '@/assets/images/icons/project-icons/pdf.png'
-import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import pdf from '@images/icons/project-icons/pdf.png'
+import pumaShoes from '@images/pages/puma-shoes.jpeg'
 </script>
 
 <template>
@@ -128,7 +128,7 @@ import pumaShoes from '@/assets/images/pages/puma-shoes.jpeg'
         >
           <div class="d-flex align-start flex-sm-row flex-column mb-3">
             <VImg
-              height="100"
+              aspect-ratio="1"
               width="100"
               :src="pumaShoes"
               class="rounded me-4"

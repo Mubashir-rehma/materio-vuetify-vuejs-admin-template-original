@@ -6,7 +6,7 @@ const salesByCountries = [
     country: 'United states of america',
     change: '+25.8%',
     sales: '894k',
-    color: 'success'
+    color: 'success',
   },
   {
     abbr: 'UK',
@@ -14,7 +14,7 @@ const salesByCountries = [
     country: 'United kingdom',
     change: '-6.2%',
     sales: '645k',
-    color: 'error'
+    color: 'error',
   },
   {
     abbr: 'IN',
@@ -22,7 +22,7 @@ const salesByCountries = [
     country: 'India',
     change: '+12.4%',
     sales: '148k',
-    color: 'warning'
+    color: 'warning',
   },
   {
     abbr: 'JA',
@@ -30,7 +30,7 @@ const salesByCountries = [
     country: 'Japan',
     change: '-11.9%',
     sales: '86k',
-    color: 'secondary'
+    color: 'secondary',
   },
   {
     abbr: 'KO',
@@ -38,8 +38,8 @@ const salesByCountries = [
     country: 'Korea',
     change: '+16.2%',
     sales: '42k',
-    color: 'error'
-  }
+    color: 'error',
+  },
 ]
 </script>
 

@@ -4,20 +4,20 @@ const statistics = [
     title: 'Sales',
     stats: '245k',
     icon: 'mdi-trending-up',
-    color: 'primary'
+    color: 'primary',
   },
   {
     title: 'Customers',
     stats: '12.5k',
     icon: 'mdi-account-outline',
-    color: 'success'
+    color: 'success',
   },
   {
     title: 'Product',
     stats: '1.54k',
     icon: 'mdi-cellphone-link',
-    color: 'warning'
-  }
+    color: 'warning',
+  },
 ]
 </script>
 

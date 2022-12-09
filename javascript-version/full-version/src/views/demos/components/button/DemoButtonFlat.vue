@@ -1,39 +1,39 @@
 <template>
   <div class="demo-space-x">
-    <VBtn flat>
+    <VBtn variant="flat">
       primary
     </VBtn>
 
     <VBtn
-      flat
+      variant="flat"
       color="secondary"
     >
       Secondary
     </VBtn>
 
     <VBtn
-      flat
+      variant="flat"
       color="success"
     >
       Success
     </VBtn>
 
     <VBtn
-      flat
+      variant="flat"
       color="info"
     >
       Info
     </VBtn>
 
     <VBtn
-      flat
+      variant="flat"
       color="warning"
     >
       Warning
     </VBtn>
 
     <VBtn
-      flat
+      variant="flat"
       color="error"
     >
       Error

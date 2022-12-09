@@ -1,4 +1,5 @@
 import { useThemeConfig } from '@core/composable/useThemeConfig'
+
 const { theme, skin } = useThemeConfig()
 
 // composable function to return the image variant as per the current theme and skin

@@ -32,6 +32,12 @@
       "@core": [
         "src/@core"
       ],
+      "@images/*": [
+        "src/assets/images/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
       "@axios": [
         "src/plugins/axios"
       ],
@@ -55,12 +61,14 @@
   "include": [
     "vite.config.*",
     "env.d.ts",
+    "shims.d.ts",
     "src/**/*",
     "src/**/*.vue",
     "themeConfig.ts"
   ],
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "src/@iconify/*"
   ]
 }

@@ -1,8 +1,5 @@
 <script setup>
 import navItems from '@/navigation/vertical'
-
-// Composable
-import { useSkins } from '@core/composable/useSkins'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // Components
@@ -13,18 +10,13 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
 // @layouts plugin
 import { VerticalNavLayout } from '@layouts'
 
-const {appRouteTransition, isLessThanOverlayNavBreakpoint} = useThemeConfig()
-const {width: windowWidth} = useWindowSize()
-const {layoutAttrs, injectSkinClasses} = useSkins()
-
-// ℹ️ This will inject classes in body tag for accurate styling
-injectSkinClasses()
+const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
+const { width: windowWidth } = useWindowSize()
 </script>
 
 <template>
   <VerticalNavLayout
     :nav-items="navItems"
-    v-bind="layoutAttrs"
   >
     <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
@@ -43,6 +35,7 @@ injectSkinClasses()
             size="24"
           />
         </VBtn>
+
         <NavbarThemeSwitcher />
 
         <VSpacer />

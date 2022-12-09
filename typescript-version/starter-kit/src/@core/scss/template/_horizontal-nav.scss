@@ -1,0 +1,33 @@
+.layout-horizontal-nav {
+  // SECTION Nav Link
+  .nav-link {
+    // 👉 Top level nav link
+    &:not(.sub-item) {
+      a {
+        border-radius: 3.125rem !important;
+
+        &.router-link-active {
+          background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, white 300%) !important;
+        }
+      }
+    }
+  }
+
+  // !SECTION
+
+  // SECTION Nav Group
+  .nav-group {
+    // 👉 Top level group
+    &:not(.sub-item) {
+      > .popper-triggerer > .nav-group-label {
+        border-radius: 3.125rem !important;
+      }
+
+      &.active {
+        > .popper-triggerer > .nav-group-label {
+          background: linear-gradient(-72.47deg, rgb(var(--v-global-theme-primary)) 22.16%, rgba(var(--v-global-theme-primary), 0.7) 76.47%) !important;
+        }
+      }
+    }
+  }
+}

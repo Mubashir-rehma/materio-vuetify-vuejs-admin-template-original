@@ -1,13 +1,15 @@
 <script setup>
 import UserInvoiceTable from './UserInvoiceTable.vue'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import figma from '@/assets/images/icons/project-icons/figma.png'
-import html5 from '@/assets/images/icons/project-icons/html5.png'
-import python from '@/assets/images/icons/project-icons/python.png'
-import react from '@/assets/images/icons/project-icons/react.png'
-import sketch from '@/assets/images/icons/project-icons/sketch.png'
-import vue from '@/assets/images/icons/project-icons/vue.png'
-import xamarin from '@/assets/images/icons/project-icons/xamarin.png'
+
+// Images
+import avatar2 from '@images/avatars/avatar-2.png'
+import figma from '@images/icons/project-icons/figma.png'
+import html5 from '@images/icons/project-icons/html5.png'
+import python from '@images/icons/project-icons/python.png'
+import react from '@images/icons/project-icons/react.png'
+import sketch from '@images/icons/project-icons/sketch.png'
+import vue from '@images/icons/project-icons/vue.png'
+import xamarin from '@images/icons/project-icons/xamarin.png'
 
 const projects = [
   {
@@ -16,7 +18,7 @@ const projects = [
     project: 'React Project',
     totalTask: '122/240',
     progress: 78,
-    hours: '18:42'
+    hours: '18:42',
   },
   {
     logo: figma,
@@ -24,7 +26,7 @@ const projects = [
     project: 'Figma Project',
     totalTask: '09/56',
     progress: 18,
-    hours: '20:42'
+    hours: '20:42',
   },
   {
     logo: vue,
@@ -32,7 +34,7 @@ const projects = [
     project: 'Vuejs Project',
     totalTask: '290/320',
     progress: 62,
-    hours: '120:87'
+    hours: '120:87',
   },
   {
     logo: xamarin,
@@ -40,7 +42,7 @@ const projects = [
     project: 'Xamarin Project',
     totalTask: '290/320',
     progress: 8,
-    hours: '120:87'
+    hours: '120:87',
   },
   {
     logo: python,
@@ -48,7 +50,7 @@ const projects = [
     project: 'Python Project',
     totalTask: '120/186',
     progress: 49,
-    hours: '230:10'
+    hours: '230:10',
   },
   {
     logo: sketch,
@@ -56,7 +58,7 @@ const projects = [
     project: 'Sketch Project',
     totalTask: '99/109',
     progress: 92,
-    hours: '342:41'
+    hours: '342:41',
   },
   {
     logo: html5,
@@ -64,9 +66,10 @@ const projects = [
     project: 'HTML Project',
     totalTask: '98/110',
     progress: 88,
-    hours: '12:45'
-  }
+    hours: '12:45',
+  },
 ]
+
 const resolveUserProgressVariant = progress => {
   if (progress <= 25)
     return 'error'

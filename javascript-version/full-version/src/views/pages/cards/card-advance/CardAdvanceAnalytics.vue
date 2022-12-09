@@ -1,35 +1,35 @@
 <script setup>
-import chartDark from '@/assets/images/cards/chart-dark.png'
-import chartLight from '@/assets/images/cards/chart-light.png'
-import heartDark from '@/assets/images/cards/heart-dark.png'
-import heartLight from '@/assets/images/cards/heart-light.png'
-import messageDark from '@/assets/images/cards/message-dark.png'
-import messageLight from '@/assets/images/cards/message-light.png'
-import userDark from '@/assets/images/cards/user-dark.png'
-import userLight from '@/assets/images/cards/user-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import chartDark from '@images/cards/chart-dark.png'
+import chartLight from '@images/cards/chart-light.png'
+import heartDark from '@images/cards/heart-dark.png'
+import heartLight from '@images/cards/heart-light.png'
+import messageDark from '@images/cards/message-dark.png'
+import messageLight from '@images/cards/message-light.png'
+import userDark from '@images/cards/user-dark.png'
+import userLight from '@images/cards/user-light.png'
 
 const analytics = [
   {
     title: '42.8k',
     subtitle: 'Number of like',
-    img: useGenerateImageVariant(heartLight, heartDark)
+    img: useGenerateImageVariant(heartLight, heartDark),
   },
   {
     title: '21.2k',
     subtitle: 'Number of Followers',
-    img: useGenerateImageVariant(chartLight, chartDark)
+    img: useGenerateImageVariant(chartLight, chartDark),
   },
   {
     title: '2.4k',
     subtitle: 'Number of Comments',
-    img: useGenerateImageVariant(messageLight, messageDark)
+    img: useGenerateImageVariant(messageLight, messageDark),
   },
   {
     title: '389.50k',
     subtitle: 'Number of Visits',
-    img: useGenerateImageVariant(userLight, userDark)
-  }
+    img: useGenerateImageVariant(userLight, userDark),
+  },
 ]
 </script>
 
@@ -79,3 +79,8 @@ const analytics = [
   </VCard>
 </template>
 
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 24px;
+}
+</style>

@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -17,7 +18,7 @@ const options = controlledComputed(theme, () => {
     colors: [currentTheme.value.primary],
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     plotOptions: {
       radialBar: {
@@ -36,13 +37,14 @@ const options = controlledComputed(theme, () => {
               const num = val * 35250 / 100
               
               return num > 999 ? `${ (num / 1000).toFixed(1) }k` : `${ num }`
-            }
-          }
-        }
-      }
-    }
+            },
+          },
+        },
+      },
+    },
   }
 })
+
 const series = [80]
 </script>
 

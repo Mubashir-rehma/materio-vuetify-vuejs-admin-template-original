@@ -1,5 +1,4 @@
-export const basic = {
-  ts: `<script lang="ts" setup>
+export const basic = { ts: `<script lang="ts" setup>
 const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
@@ -9,13 +8,12 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     label="Standard"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Foo',
   'Bar',
   'Fizz',
-  'Buzz'
+  'Buzz',
 ]
 </script>
 
@@ -25,172 +23,50 @@ const items = [
     label="Standard"
   />
 </template>
-`,
-}
-export const density = {
-  ts: `<script lang="ts" setup>
-const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
+` }
+
+export const chips = { ts: `<script lang="ts" setup>
+const items = ['foo', 'bar', 'fizz', 'buzz']
+const selected = ref(['foo', 'bar', 'fizz', 'buzz'])
 </script>
 
 <template>
   <VSelect
+    v-model="selected"
     :items="items"
-    label="Density"
-    density="compact"
+    label="Chips"
+    chips
+    multiple
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
-  'Foo',
-  'Bar',
-  'Fizz',
-  'Buzz'
+  'foo',
+  'bar',
+  'fizz',
+  'buzz',
 ]
+
+const selected = ref([
+  'foo',
+  'bar',
+  'fizz',
+  'buzz',
+])
 </script>
 
 <template>
   <VSelect
+    v-model="selected"
     :items="items"
-    label="Density"
-    density="compact"
+    label="Chips"
+    chips
+    multiple
   />
 </template>
-`,
-}
-export const variant = {
-  ts: `<script lang="ts" setup>
-const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
-</script>
+` }
 
-<template>
-  <VRow>
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Outlined"
-      />
-    </VCol>
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Filled"
-        variant="filled"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Solo"
-        variant="solo"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Plain"
-        variant="plain"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Underlined"
-        variant="underlined"
-        density="default"
-      />
-    </VCol>
-  </VRow>
-</template>
-`,
-  js: `<script setup>
-const items = [
-  'Foo',
-  'Bar',
-  'Fizz',
-  'Buzz'
-]
-</script>
-
-<template>
-  <VRow>
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Outlined"
-      />
-    </VCol>
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Filled"
-        variant="filled"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Solo"
-        variant="solo"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Plain"
-        variant="plain"
-      />
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VSelect
-        :items="items"
-        label="Underlined"
-        variant="underlined"
-        density="default"
-      />
-    </VCol>
-  </VRow>
-</template>
-`,
-}
-export const customTextAndValue = {
-  ts: `<script lang="ts" setup>
+export const customTextAndValue = { ts: `<script lang="ts" setup>
 const selectedOption = ref({ state: 'Florida', abbr: 'FL' })
 
 const items = [
@@ -205,7 +81,7 @@ const items = [
 <template>
   <VSelect
     v-model="selectedOption"
-    :hint="\`\$\{selectedOption.state}, \$\{selectedOption.abbr}\`"
+    :hint="\`\${selectedOption.state}, \${selectedOption.abbr}\`"
     :items="items"
     item-title="state"
     item-value="abbr"
@@ -215,40 +91,40 @@ const items = [
     single-line
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedOption = ref({
   state: 'Florida',
-  abbr: 'FL'
+  abbr: 'FL',
 })
+
 const items = [
   {
     state: 'Florida',
-    abbr: 'FL'
+    abbr: 'FL',
   },
   {
     state: 'Georgia',
-    abbr: 'GA'
+    abbr: 'GA',
   },
   {
     state: 'Nebraska',
-    abbr: 'NE'
+    abbr: 'NE',
   },
   {
     state: 'California',
-    abbr: 'CA'
+    abbr: 'CA',
   },
   {
     state: 'New York',
-    abbr: 'NY'
-  }
+    abbr: 'NY',
+  },
 ]
 </script>
 
 <template>
   <VSelect
     v-model="selectedOption"
-    :hint="\`\$\{selectedOption.state}, \$\{selectedOption.abbr}\`"
+    :hint="\`\${selectedOption.state}, \${selectedOption.abbr}\`"
     :items="items"
     item-title="state"
     item-value="abbr"
@@ -258,10 +134,38 @@ const items = [
     single-line
   />
 </template>
-`,
-}
-export const icons = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const density = { ts: `<script lang="ts" setup>
+const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
+</script>
+
+<template>
+  <VSelect
+    :items="items"
+    label="Density"
+    density="compact"
+  />
+</template>
+`, js: `<script setup>
+const items = [
+  'Foo',
+  'Bar',
+  'Fizz',
+  'Buzz',
+]
+</script>
+
+<template>
+  <VSelect
+    :items="items"
+    label="Density"
+    density="compact"
+  />
+</template>
+` }
+
+export const icons = { ts: `<script lang="ts" setup>
 const selectedOption1 = ref('Florida')
 const selectedOption2 = ref('Texas')
 
@@ -308,10 +212,10 @@ const states = [
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedOption1 = ref('Florida')
 const selectedOption2 = ref('Texas')
+
 const states = [
   'Alabama',
   'Alaska',
@@ -326,7 +230,7 @@ const states = [
   'Federated States of Micronesia',
   'Florida',
   'Georgia',
-  'Guam'
+  'Guam',
 ]
 </script>
 
@@ -355,52 +259,9 @@ const states = [
     </VCol>
   </VRow>
 </template>
-`,
-}
-export const chips = {
-  ts: `<script lang="ts" setup>
-const items = ['foo', 'bar', 'fizz', 'buzz']
-const selected = ref(['foo', 'bar', 'fizz', 'buzz'])
-</script>
+` }
 
-<template>
-  <VSelect
-    v-model="selected"
-    :items="items"
-    label="Chips"
-    chips
-    multiple
-  />
-</template>
-`,
-  js: `<script setup>
-const items = [
-  'foo',
-  'bar',
-  'fizz',
-  'buzz'
-]
-const selected = ref([
-  'foo',
-  'bar',
-  'fizz',
-  'buzz'
-])
-</script>
-
-<template>
-  <VSelect
-    v-model="selected"
-    :items="items"
-    label="Chips"
-    chips
-    multiple
-  />
-</template>
-`,
-}
-export const menuProps = {
-  ts: `<script lang="ts" setup>
+export const menuProps = { ts: `<script lang="ts" setup>
 const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
@@ -411,13 +272,12 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     label="Label"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Foo',
   'Bar',
   'Fizz',
-  'Buzz'
+  'Buzz',
 ]
 </script>
 
@@ -428,11 +288,11 @@ const items = [
     label="Label"
   />
 </template>
-`,
-}
-export const multiple = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const multiple = { ts: `<script lang="ts" setup>
 const selectedOptions = ref(['Alabama'])
+
 const states = [
   'Alabama',
   'Alaska',
@@ -461,9 +321,9 @@ const states = [
     persistent-hint
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedOptions = ref(['Alabama'])
+
 const states = [
   'Alabama',
   'Alaska',
@@ -478,7 +338,7 @@ const states = [
   'Federated States of Micronesia',
   'Florida',
   'Georgia',
-  'Guam'
+  'Guam',
 ]
 </script>
 
@@ -492,15 +352,15 @@ const states = [
     persistent-hint
   />
 </template>
-`,
-}
-export const selectionSlot = {
-  ts: `<script lang="ts" setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
+` }
+
+export const selectionSlot = { ts: `<script lang="ts" setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+
 const items: { name: string; avatar: string }[] = [
   { name: 'Sandra Adams', avatar: avatar1 },
   { name: 'Ali Connors', avatar: avatar2 },
@@ -534,36 +394,36 @@ const value = ref(['Sandra Adams'])
     </template>
   </VSelect>
 </template>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
 
 const items = [
   {
     name: 'Sandra Adams',
-    avatar: avatar1
+    avatar: avatar1,
   },
   {
     name: 'Ali Connors',
-    avatar: avatar2
+    avatar: avatar2,
   },
   {
     name: 'Trevor Hansen',
-    avatar: avatar3
+    avatar: avatar3,
   },
   {
     name: 'Tucker Smith',
-    avatar: avatar4
+    avatar: avatar4,
   },
   {
     name: 'Britta Holt',
-    avatar: avatar5
-  }
+    avatar: avatar5,
+  },
 ]
+
 const value = ref(['Sandra Adams'])
 </script>
 
@@ -589,5 +449,134 @@ const value = ref(['Sandra Adams'])
     </template>
   </VSelect>
 </template>
-`,
-}
+` }
+
+export const variant = { ts: `<script lang="ts" setup>
+const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
+</script>
+
+<template>
+  <VRow>
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Outlined"
+      />
+    </VCol>
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Filled"
+        variant="filled"
+      />
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Solo"
+        variant="solo"
+      />
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Plain"
+        variant="plain"
+      />
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Underlined"
+        variant="underlined"
+        density="default"
+      />
+    </VCol>
+  </VRow>
+</template>
+`, js: `<script setup>
+const items = [
+  'Foo',
+  'Bar',
+  'Fizz',
+  'Buzz',
+]
+</script>
+
+<template>
+  <VRow>
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Outlined"
+      />
+    </VCol>
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Filled"
+        variant="filled"
+      />
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Solo"
+        variant="solo"
+      />
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Plain"
+        variant="plain"
+      />
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VSelect
+        :items="items"
+        label="Underlined"
+        variant="underlined"
+        density="default"
+      />
+    </VCol>
+  </VRow>
+</template>
+` }
+

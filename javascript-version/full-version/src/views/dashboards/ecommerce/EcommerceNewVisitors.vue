@@ -5,6 +5,7 @@ import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
 const currentTheme = vuetifyTheme.current.value.colors
+
 const series = [{
   data: [
     40,
@@ -13,13 +14,14 @@ const series = [{
     60,
     90,
     40,
-    50
-  ]
+    50,
+  ],
 }]
+
 const options = {
   chart: {
     parentHeightOffset: 0,
-    toolbar: { show: false }
+    toolbar: { show: false },
   },
   grid: {
     show: false,
@@ -27,8 +29,8 @@ const options = {
       top: -5,
       left: -10,
       right: -7,
-      bottom: -12
-    }
+      bottom: -12,
+    },
   },
   plotOptions: {
     bar: {
@@ -36,8 +38,8 @@ const options = {
       distributed: true,
       columnWidth: '60%',
       endingShape: 'rounded',
-      startingShape: 'rounded'
-    }
+      startingShape: 'rounded',
+    },
   },
   legend: { show: false },
   dataLabels: { enabled: false },
@@ -49,11 +51,11 @@ const options = {
     `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
     currentTheme.primary,
     `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`
+    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
   ],
   states: {
     hover: { filter: { type: 'none' } },
-    active: { filter: { type: 'none' } }
+    active: { filter: { type: 'none' } },
   },
   xaxis: {
     tickPlacement: 'on',
@@ -67,11 +69,11 @@ const options = {
       'W',
       'T',
       'F',
-      'S'
-    ]
+      'S',
+    ],
   },
   yaxis: { show: false },
-  tooltip: { enabled: false }
+  tooltip: { enabled: false },
 }
 </script>
 

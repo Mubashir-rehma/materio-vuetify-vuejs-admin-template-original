@@ -5,14 +5,18 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const currentTheme = controlledComputed(theme, () => {
   return vuetifyTheme.current.value.colors
 })
+
 const variableTheme = controlledComputed(theme, () => {
   return vuetifyTheme.current.value.variables
 })
+
 const series = [78]
+
 const chartOptions = controlledComputed(theme, () => {
   return {
     chart: { sparkline: { enabled: true } },
@@ -28,13 +32,13 @@ const chartOptions = controlledComputed(theme, () => {
             fontSize: '1.25rem',
             fontWeight: '600',
             offsetY: 0,
-            color: `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['high-emphasis-opacity'] })`
-          }
+            color: `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['high-emphasis-opacity'] })`,
+          },
         },
-        track: { background: currentTheme.value.background }
-      }
+        track: { background: currentTheme.value.background },
+      },
     },
-    stroke: { lineCap: 'round' }
+    stroke: { lineCap: 'round' },
   }
 })
 </script>

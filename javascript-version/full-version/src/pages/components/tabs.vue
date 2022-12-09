@@ -142,7 +142,7 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
         title="Grow"
         :code="demoCode.grow"
       >
-        <p>The <code>grow</code> prop will make the tab items take up all available space up to a maximum width of 300px.</p>
+        <p>The <code>grow</code> prop will make the tab items take up all available space with no limit.</p>
 
         <DemoTabsGrow />
       </AppCardCode>

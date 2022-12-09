@@ -3,13 +3,14 @@ const items = [
   'foo',
   'bar',
   'fizz',
-  'buzz'
+  'buzz',
 ]
+
 const selected = ref([
   'foo',
   'bar',
   'fizz',
-  'buzz'
+  'buzz',
 ])
 </script>
 

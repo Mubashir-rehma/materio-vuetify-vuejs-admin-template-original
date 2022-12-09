@@ -1,5 +1,5 @@
 <script setup>
-import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidation'
+import * as demoCode from '@/views/demos/forms/form-validation/demoCodeFormValidation'
 </script>
 
 <template>
@@ -32,7 +32,7 @@ import * as demoCode from '@/views/demos/forms/form-validation/demoCodeValidatio
         title="Validation Types"
         :code="demoCode.validationTypes"
       >
-        <DemoFormValidationTypes />
+        <DemoFormValidationValidationTypes />
       </AppCardCode>
     </VCol>
   </VRow>

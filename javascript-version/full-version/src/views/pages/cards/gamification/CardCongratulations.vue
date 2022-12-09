@@ -1,5 +1,5 @@
 <script setup>
-import illustrationJohn2 from '@/assets/images/cards/illustration-john-2.png'
+import illustrationJohn2 from '@images/cards/illustration-john-2.png'
 </script>
 
 <template>
@@ -50,13 +50,6 @@ import illustrationJohn2 from '@/assets/images/cards/illustration-john-2.png'
 .john-illustration {
   inset-block-end: -0.0625rem;
   inset-inline-end: 0;
-}
-
-// for rtl only
-.flip-in-rtl {
-  @include layoutsMixins.rtl {
-    transform: scaleX(-1);
-  }
 }
 
 @media screen and (max-width: 440px) {

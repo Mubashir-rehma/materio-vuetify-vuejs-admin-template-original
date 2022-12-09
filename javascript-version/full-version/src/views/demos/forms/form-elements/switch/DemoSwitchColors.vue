@@ -5,15 +5,16 @@ const selectedSwitch = ref([
   'Success',
   'Info',
   'Warning',
-  'Error'
+  'Error',
 ])
+
 const switches = ref([
   'Primary',
   'Secondary',
   'Success',
   'Info',
   'Warning',
-  'Error'
+  'Error',
 ])
 </script>
 

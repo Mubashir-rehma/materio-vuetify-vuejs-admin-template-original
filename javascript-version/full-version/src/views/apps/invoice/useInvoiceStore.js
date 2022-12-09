@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from '@axios'
+
 export const useInvoiceStore = defineStore('InvoiceStore', {
   actions: {
     // 👉 Fetch all Invoices

@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 const axiosIns = axios.create({
 // You can add your headers here
 // ================================
@@ -6,4 +7,5 @@ const axiosIns = axios.create({
 // timeout: 1000,
 // headers: {'X-Custom-Header': 'foobar'}
 })
+
 export default axiosIns

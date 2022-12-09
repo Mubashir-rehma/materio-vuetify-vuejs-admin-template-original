@@ -21,7 +21,7 @@ const fetchUsers = () => {
     plan: selectedPlan.value,
     role: selectedRole.value,
     perPage: rowPerPage.value,
-    currentPage: currentPage.value
+    currentPage: currentPage.value,
   }).then(response => {
     users.value = response.data.users
     totalPage.value = response.data.totalPage
@@ -30,6 +30,7 @@ const fetchUsers = () => {
     console.error(error)
   })
 }
+
 watchEffect(fetchUsers)
 
 // 👉 watching current page
@@ -37,38 +38,40 @@ watchEffect(() => {
   if (currentPage.value > totalPage.value)
     currentPage.value = totalPage.value
 })
+
 const resolveUserRoleVariant = role => {
   if (role === 'subscriber')
     return {
       color: 'primary',
-      icon: 'mdi-account-outline'
+      icon: 'mdi-account-outline',
     }
   if (role === 'author')
     return {
       color: 'warning',
-      icon: 'mdi-cog-outline'
+      icon: 'mdi-cog-outline',
     }
   if (role === 'maintainer')
     return {
       color: 'success',
-      icon: 'mdi-chart-donut'
+      icon: 'mdi-chart-donut',
     }
   if (role === 'editor')
     return {
       color: 'info',
-      icon: 'mdi-pencil-outline'
+      icon: 'mdi-pencil-outline',
     }
   if (role === 'admin')
     return {
       color: 'error',
-      icon: 'mdi-laptop'
+      icon: 'mdi-laptop',
     }
   
   return {
     color: 'primary',
-    icon: 'mdi-account-outline'
+    icon: 'mdi-account-outline',
   }
 }
+
 const resolveUserStatusVariant = stat => {
   if (stat === 'pending')
     return 'warning'
@@ -143,7 +146,7 @@ watch(selectedRows, () => {
               <div class="d-flex flex-column">
                 <h6 class="text-sm">
                   <RouterLink
-                    :to="{ name: 'user-view-id', params: { id: user.id } }"
+                    :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
                     class="font-weight-medium"
                     style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
                   >

@@ -1,17 +1,15 @@
 <script setup>
-import tree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import tree from '@images/pages/tree.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import authV2ForgotPasswordIllustrationBorderedDark from '@/assets/images/pages/auth-v2-forgot-password-illustration-bordered-dark.png'
-import authV2ForgotPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-forgot-password-illustration-bordered-light.png'
-import authV2ForgotPasswordIllustrationDark from '@/assets/images/pages/auth-v2-forgot-password-illustration-dark.png'
-import authV2ForgotPasswordIllustrationLight from '@/assets/images/pages/auth-v2-forgot-password-illustration-light.png'
-import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
+import authV2ForgotPasswordIllustrationBorderedDark from '@images/pages/auth-v2-forgot-password-illustration-bordered-dark.png'
+import authV2ForgotPasswordIllustrationBorderedLight from '@images/pages/auth-v2-forgot-password-illustration-bordered-light.png'
+import authV2ForgotPasswordIllustrationDark from '@images/pages/auth-v2-forgot-password-illustration-dark.png'
+import authV2ForgotPasswordIllustrationLight from '@images/pages/auth-v2-forgot-password-illustration-light.png'
+import authV2MaskDark from '@images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@images/pages/auth-v2-mask-light.png'
 
-const {isAppRtl} = useThemeConfig()
 const email = ref('')
 const authThemeImg = useGenerateImageVariant(authV2ForgotPasswordIllustrationLight, authV2ForgotPasswordIllustrationDark, authV2ForgotPasswordIllustrationBorderedLight, authV2ForgotPasswordIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
@@ -55,7 +53,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
       <VCol
         cols="12"
         lg="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -103,7 +101,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                     :to="{ name: 'login' }"
                   >
                     <VIcon
-                      :rotate="isAppRtl ? '180deg' : null"
+                      class="flip-in-rtl"
                       icon="mdi-chevron-left"
                     />
                     <span>Back to login</span>
@@ -119,7 +117,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

@@ -3,42 +3,43 @@ const props = defineProps({
   collapsed: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   noActions: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   actionCollapsed: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   actionRefresh: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   actionRemove: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   title: {
     type: String,
     required: false,
-    default: undefined
-  }
+    default: undefined,
+  },
 })
 
 const emit = defineEmits([
   'collapsed',
   'refresh',
-  'remove'
+  'trash',
 ])
 
 defineOptions({ inheritAttrs: false })
+
 const isContentCollapsed = ref(props.collapsed)
 const isCardRemoved = ref(false)
 const isOverlayVisible = ref(false)
@@ -63,7 +64,7 @@ const triggerRefresh = () => {
 // trigger removal
 const triggeredRemove = () => {
   isCardRemoved.value = true
-  emit('remove')
+  emit('trash')
 }
 </script>
 

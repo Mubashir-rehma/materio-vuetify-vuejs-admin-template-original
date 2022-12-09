@@ -4,10 +4,12 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const currentTheme = controlledComputed(theme, () => {
   return vuetifyTheme.current.value.colors
 })
+
 const series = [{
   name: '2020',
   data: [
@@ -15,9 +17,10 @@ const series = [{
     85,
     65,
     50,
-    70
-  ]
+    70,
+  ],
 }]
+
 const chartOptions = controlledComputed(theme, () => {
   const backgroundColor = currentTheme.value.background
   
@@ -26,7 +29,7 @@ const chartOptions = controlledComputed(theme, () => {
       type: 'bar',
       stacked: false,
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     grid: {
       show: false,
@@ -34,15 +37,15 @@ const chartOptions = controlledComputed(theme, () => {
         top: -10,
         left: -7,
         right: 0,
-        bottom: 5
-      }
+        bottom: 5,
+      },
     },
     colors: [
       currentTheme.value.error,
       currentTheme.value.primary,
       currentTheme.value.error,
       currentTheme.value.primary,
-      currentTheme.value.primary
+      currentTheme.value.primary,
     ],
     plotOptions: {
       bar: {
@@ -58,21 +61,21 @@ const chartOptions = controlledComputed(theme, () => {
             backgroundColor,
             backgroundColor,
             backgroundColor,
-            backgroundColor
+            backgroundColor,
           ],
-          backgroundBarRadius: 5
-        }
-      }
+          backgroundBarRadius: 5,
+        },
+      },
     },
     legend: { show: false },
     dataLabels: { enabled: false },
     xaxis: {
       labels: { show: false },
       axisBorder: { show: false },
-      axisTicks: { show: false }
+      axisTicks: { show: false },
     },
     yaxis: { show: false },
-    tooltip: { enabled: false }
+    tooltip: { enabled: false },
   }
 })
 </script>

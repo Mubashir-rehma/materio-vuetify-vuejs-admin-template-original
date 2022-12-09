@@ -1,9 +1,9 @@
 <script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 
 const teamMembers = [
   {
@@ -13,7 +13,7 @@ const teamMembers = [
     project: 'Zipper',
     projectIndication: 'primary',
     task: '87/135',
-    progress: 65
+    progress: 65,
   },
   {
     profilePic: avatar8,
@@ -22,7 +22,7 @@ const teamMembers = [
     project: 'Brandi',
     projectIndication: 'success',
     task: '340/420',
-    progress: 75
+    progress: 75,
   },
   {
     profilePic: avatar5,
@@ -31,7 +31,7 @@ const teamMembers = [
     project: 'Payers',
     projectIndication: 'warning',
     task: '50/82',
-    progress: 55
+    progress: 55,
   },
   {
     profilePic: avatar2,
@@ -40,7 +40,7 @@ const teamMembers = [
     project: 'Citibank',
     projectIndication: 'error',
     task: '98/260',
-    progress: 60
+    progress: 60,
   },
   {
     profilePic: avatar3,
@@ -49,8 +49,8 @@ const teamMembers = [
     project: 'Aviator',
     projectIndication: 'secondary',
     task: '12/25',
-    progress: 60
-  }
+    progress: 60,
+  },
 ]
 </script>
 
@@ -86,25 +86,25 @@ const teamMembers = [
         <tr>
           <th
             scope="col"
-            class="text-uppercase border-0"
+            class="text-uppercase"
           >
             Name
           </th>
           <th
             scope="col"
-            class="text-uppercase border-0"
+            class="text-uppercase"
           >
             Project
           </th>
           <th
             scope="col"
-            class="text-uppercase border-0"
+            class="text-uppercase"
           >
             Tasks
           </th>
           <th
             scope="col"
-            class="text-uppercase text-center border-0"
+            class="text-uppercase text-center"
           >
             Progress
           </th>
@@ -128,7 +128,7 @@ const teamMembers = [
                 <p class="text-sm font-weight-semibold mb-0">
                   {{ member.name }}
                 </p>
-                <span class="text-caption">{{ member.designation }}</span>
+                <span class="text-xs text-medium-emphasis">{{ member.designation }}</span>
               </div>
             </div>
           </td>

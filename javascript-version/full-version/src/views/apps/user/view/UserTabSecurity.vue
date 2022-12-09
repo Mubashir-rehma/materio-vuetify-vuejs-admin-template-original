@@ -1,39 +1,40 @@
 <script setup>
-import chrome from '@/assets/images/logos/chrome.png'
+import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 const smsVerificationNumber = ref('+1(968) 819-2547')
 const isTwoFactorDialogOpen = ref(false)
+
 const recentDevices = [
   {
     browser: 'Chrome on Windows',
     logo: chrome,
     device: 'Dell XPS 15',
     location: 'United States',
-    activity: '10, Jan 2020 20:07'
+    activity: '10, Jan 2020 20:07',
   },
   {
     browser: 'Chrome on Android',
     logo: chrome,
     device: 'Google Pixel 3a',
     location: 'Ghana',
-    activity: '11, Jan 2020 10:16'
+    activity: '11, Jan 2020 10:16',
   },
   {
     browser: 'Chrome on MacOS',
     logo: chrome,
     device: 'Apple iMac',
     location: 'Mayotte',
-    activity: '11, Jan 2020 12:10'
+    activity: '11, Jan 2020 12:10',
   },
   {
     browser: 'Chrome on iPhone',
     logo: chrome,
     device: 'Apple iPhone XR',
     location: 'Mauritania',
-    activity: '12, Jan 2020 8:29'
-  }
+    activity: '12, Jan 2020 8:29',
+  },
 ]
 </script>
 

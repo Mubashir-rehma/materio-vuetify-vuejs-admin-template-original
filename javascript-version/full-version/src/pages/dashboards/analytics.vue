@@ -17,15 +17,16 @@ const totalProfit = {
   icon: 'mdi-poll',
   stats: '$25.6k',
   change: 42,
-  subtitle: 'Weekly Project'
+  subtitle: 'Weekly Project',
 }
+
 const newProject = {
   title: 'New Project',
   color: 'primary',
   icon: 'mdi-briefcase-variant-outline',
   stats: '862',
   change: -18,
-  subtitle: 'Yearly Project'
+  subtitle: 'Yearly Project',
 }
 </script>
 

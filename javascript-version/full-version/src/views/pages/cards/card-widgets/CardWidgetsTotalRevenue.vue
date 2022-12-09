@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -17,30 +18,30 @@ const options = controlledComputed(theme, () => {
     labels: [
       'Returning',
       'New Users',
-      'Referrals'
+      'Referrals',
     ],
     legend: { show: false },
     stroke: { lineCap: 'round' },
     colors: [
       currentTheme.value.primary,
       currentTheme.value.success,
-      currentTheme.value.warning
+      currentTheme.value.warning,
     ],
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     plotOptions: {
       radialBar: {
         hollow: { size: '40%' },
         track: {
           background: 'transparent',
-          margin: 10
+          margin: 10,
         },
         dataLabels: {
           name: {
             offsetY: 28,
-            color: secondaryTextColor
+            color: secondaryTextColor,
           },
           value: {
             fontSize: '2.125rem',
@@ -48,7 +49,7 @@ const options = controlledComputed(theme, () => {
             color: primaryTextColor,
             formatter(value) {
               return `${ value }k`
-            }
+            },
           },
           total: {
             show: true,
@@ -57,17 +58,18 @@ const options = controlledComputed(theme, () => {
             fontSize: '12px',
             formatter(value) {
               return `${ value.globals.seriesTotals.reduce((total, num) => total + num) }k`
-            }
-          }
-        }
-      }
-    }
+            },
+          },
+        },
+      },
+    },
   }
 })
+
 const series = [
   71,
   78,
-  86
+  86,
 ]
 </script>
 

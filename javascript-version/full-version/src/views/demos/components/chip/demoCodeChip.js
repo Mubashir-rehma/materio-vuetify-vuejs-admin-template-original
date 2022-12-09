@@ -1,141 +1,156 @@
-export const withIcon = {
-  ts: `<template>
+export const closable = { ts: `<script lang="ts" setup>
+const isDefaultChipVisible = ref(true)
+const isPrimaryChipVisible = ref(true)
+const isSecondaryChipVisible = ref(true)
+const isSuccessChipVisible = ref(true)
+const isInfoChipVisible = ref(true)
+const isWarningChipVisible = ref(true)
+const isErrorChipVisible = ref(true)
+</script>
+
+<template>
   <div class="demo-space-x">
-    <VChip>
-      <VIcon
-        start
-        size="18"
-        icon="mdi-account-outline"
-      />
-      Account
+    <VChip
+      v-if="isDefaultChipVisible"
+      closable
+      @click:close="isDefaultChipVisible = !isDefaultChipVisible"
+    >
+      Default
     </VChip>
 
-    <VChip color="primary">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-star-outline"
-      />
-      Premium
+    <VChip
+      v-if="isPrimaryChipVisible"
+      closable
+      color="primary"
+      @click:close="isPrimaryChipVisible = !isPrimaryChipVisible"
+    >
+      Primary
     </VChip>
 
-    <VChip color="secondary">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-cake"
-      />
-      1 Year
+    <VChip
+      v-if="isSecondaryChipVisible"
+      closable
+      color="secondary"
+      @click:close="isSecondaryChipVisible = !isSecondaryChipVisible"
+    >
+      Secondary
     </VChip>
 
-    <VChip color="success">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-bell-outline"
-      />
-      Notification
+    <VChip
+      v-if="isSuccessChipVisible"
+      closable
+      color="success"
+      @click:close="isSuccessChipVisible = !isSuccessChipVisible"
+    >
+      Success
     </VChip>
 
-    <VChip color="info">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-forum-outline"
-      />
-      Message
+    <VChip
+      v-if="isInfoChipVisible"
+      closable
+      color="info"
+      @click:close="isInfoChipVisible = !isInfoChipVisible"
+    >
+      Info
     </VChip>
 
-    <VChip color="warning">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-alert-outline"
-      />
+    <VChip
+      v-if="isWarningChipVisible"
+      closable
+      color="warning"
+      @click:close="isWarningChipVisible = !isWarningChipVisible"
+    >
       Warning
     </VChip>
 
-    <VChip color="error">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-alert-circle-outline"
-      />
+    <VChip
+      v-if="isErrorChipVisible"
+      closable
+      color="error"
+      @click:close="isErrorChipVisible = !isErrorChipVisible"
+    >
       Error
     </VChip>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<script setup>
+const isDefaultChipVisible = ref(true)
+const isPrimaryChipVisible = ref(true)
+const isSecondaryChipVisible = ref(true)
+const isSuccessChipVisible = ref(true)
+const isInfoChipVisible = ref(true)
+const isWarningChipVisible = ref(true)
+const isErrorChipVisible = ref(true)
+</script>
+
+<template>
   <div class="demo-space-x">
-    <VChip>
-      <VIcon
-        start
-        size="18"
-        icon="mdi-account-outline"
-      />
-      Account
+    <VChip
+      v-if="isDefaultChipVisible"
+      closable
+      @click:close="isDefaultChipVisible = !isDefaultChipVisible"
+    >
+      Default
     </VChip>
 
-    <VChip color="primary">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-star-outline"
-      />
-      Premium
+    <VChip
+      v-if="isPrimaryChipVisible"
+      closable
+      color="primary"
+      @click:close="isPrimaryChipVisible = !isPrimaryChipVisible"
+    >
+      Primary
     </VChip>
 
-    <VChip color="secondary">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-cake"
-      />
-      1 Year
+    <VChip
+      v-if="isSecondaryChipVisible"
+      closable
+      color="secondary"
+      @click:close="isSecondaryChipVisible = !isSecondaryChipVisible"
+    >
+      Secondary
     </VChip>
 
-    <VChip color="success">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-bell-outline"
-      />
-      Notification
+    <VChip
+      v-if="isSuccessChipVisible"
+      closable
+      color="success"
+      @click:close="isSuccessChipVisible = !isSuccessChipVisible"
+    >
+      Success
     </VChip>
 
-    <VChip color="info">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-forum-outline"
-      />
-      Message
+    <VChip
+      v-if="isInfoChipVisible"
+      closable
+      color="info"
+      @click:close="isInfoChipVisible = !isInfoChipVisible"
+    >
+      Info
     </VChip>
 
-    <VChip color="warning">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-alert-outline"
-      />
+    <VChip
+      v-if="isWarningChipVisible"
+      closable
+      color="warning"
+      @click:close="isWarningChipVisible = !isWarningChipVisible"
+    >
       Warning
     </VChip>
 
-    <VChip color="error">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-alert-circle-outline"
-      />
+    <VChip
+      v-if="isErrorChipVisible"
+      closable
+      color="error"
+      @click:close="isErrorChipVisible = !isErrorChipVisible"
+    >
       Error
     </VChip>
   </div>
 </template>
-`,
-}
-export const color = {
-  ts: `<template>
+` }
+
+export const color = { ts: `<template>
   <div class="demo-space-x">
     <VChip>
       Default
@@ -166,8 +181,7 @@ export const color = {
     </VChip>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VChip>
       Default
@@ -198,10 +212,195 @@ export const color = {
     </VChip>
   </div>
 </template>
-`,
-}
-export const inSelects = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const elevated = { ts: `<template>
+  <div class="demo-space-x">
+    <VChip variant="elevated">
+      Default
+    </VChip>
+
+    <VChip
+      color="primary"
+      variant="elevated"
+    >
+      Primary
+    </VChip>
+
+    <VChip
+      color="secondary"
+      variant="elevated"
+    >
+      Secondary
+    </VChip>
+
+    <VChip
+      color="success"
+      variant="elevated"
+    >
+      Success
+    </VChip>
+
+    <VChip
+      color="info"
+      variant="elevated"
+    >
+      Info
+    </VChip>
+
+    <VChip
+      color="warning"
+      variant="elevated"
+    >
+      Warning
+    </VChip>
+
+    <VChip
+      color="error"
+      variant="elevated"
+    >
+      Error
+    </VChip>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VChip variant="elevated">
+      Default
+    </VChip>
+
+    <VChip
+      color="primary"
+      variant="elevated"
+    >
+      Primary
+    </VChip>
+
+    <VChip
+      color="secondary"
+      variant="elevated"
+    >
+      Secondary
+    </VChip>
+
+    <VChip
+      color="success"
+      variant="elevated"
+    >
+      Success
+    </VChip>
+
+    <VChip
+      color="info"
+      variant="elevated"
+    >
+      Info
+    </VChip>
+
+    <VChip
+      color="warning"
+      variant="elevated"
+    >
+      Warning
+    </VChip>
+
+    <VChip
+      color="error"
+      variant="elevated"
+    >
+      Error
+    </VChip>
+  </div>
+</template>
+` }
+
+export const expandable = { ts: `<script lang="ts" setup>
+const isMenuVisible = ref(false)
+</script>
+
+<template>
+  <VMenu
+    v-model="isMenuVisible"
+    transition="scale-transition"
+  >
+    <!-- v-menu activator -->
+    <template #activator="{ props }">
+      <VChip v-bind="props">
+        VueJS
+      </VChip>
+    </template>
+
+    <!-- v-menu list -->
+    <VList>
+      <VListItem>
+        <VListItemTitle>VueJS</VListItemTitle>
+        <VListItemSubtitle>The Progressive JavaScript Framework</VListItemSubtitle>
+
+        <template #append>
+          <VListItemAction class="ms-1">
+            <VBtn
+              icon
+              variant="text"
+              size="x-small"
+              color="default"
+              @click="isMenuVisible = false"
+            >
+              <VIcon
+                size="20"
+                icon="mdi-close"
+              />
+            </VBtn>
+          </VListItemAction>
+        </template>
+      </VListItem>
+    </VList>
+  </VMenu>
+</template>
+`, js: `<script setup>
+const isMenuVisible = ref(false)
+</script>
+
+<template>
+  <VMenu
+    v-model="isMenuVisible"
+    transition="scale-transition"
+  >
+    <!-- v-menu activator -->
+    <template #activator="{ props }">
+      <VChip v-bind="props">
+        VueJS
+      </VChip>
+    </template>
+
+    <!-- v-menu list -->
+    <VList>
+      <VListItem>
+        <VListItemTitle>VueJS</VListItemTitle>
+        <VListItemSubtitle>The Progressive JavaScript Framework</VListItemSubtitle>
+
+        <template #append>
+          <VListItemAction class="ms-1">
+            <VBtn
+              icon
+              variant="text"
+              size="x-small"
+              color="default"
+              @click="isMenuVisible = false"
+            >
+              <VIcon
+                size="20"
+                icon="mdi-close"
+              />
+            </VBtn>
+          </VListItemAction>
+        </template>
+      </VListItem>
+    </VList>
+  </VMenu>
+</template>
+` }
+
+export const inSelects = { ts: `<script lang="ts" setup>
 const chips = ref(['Programming', 'Playing video games', 'Sleeping'])
 const items = ref(['Streaming', 'Eating', 'Programming', 'Playing video games', 'Sleeping'])
 </script>
@@ -219,19 +418,19 @@ const items = ref(['Streaming', 'Eating', 'Programming', 'Playing video games', 
     prepend-icon="mdi-filter-variant"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const chips = ref([
   'Programming',
   'Playing video games',
-  'Sleeping'
+  'Sleeping',
 ])
+
 const items = ref([
   'Streaming',
   'Eating',
   'Programming',
   'Playing video games',
-  'Sleeping'
+  'Sleeping',
 ])
 </script>
 
@@ -248,210 +447,9 @@ const items = ref([
     prepend-icon="mdi-filter-variant"
   />
 </template>
-`,
-}
-export const closable = {
-  ts: `<script lang="ts" setup>
-const isDefaultChipVisible = ref(true)
-const isPrimaryChipVisible = ref(true)
-const isSecondaryChipVisible = ref(true)
-const isSuccessChipVisible = ref(true)
-const isInfoChipVisible = ref(true)
-const isWarningChipVisible = ref(true)
-const isErrorChipVisible = ref(true)
-</script>
+` }
 
-<template>
-  <div class="demo-space-x">
-    <VChip
-      v-if="isDefaultChipVisible"
-      closable
-      @click:close="isDefaultChipVisible = !isDefaultChipVisible"
-    >
-      Default
-    </VChip>
-
-    <VChip
-      v-if="isPrimaryChipVisible"
-      closable
-      color="primary"
-      @click:close="isPrimaryChipVisible = !isPrimaryChipVisible"
-    >
-      Primary
-    </VChip>
-
-    <VChip
-      v-if="isSecondaryChipVisible"
-      closable
-      color="secondary"
-      @click:close="isSecondaryChipVisible = !isSecondaryChipVisible"
-    >
-      Secondary
-    </VChip>
-
-    <VChip
-      v-if="isSuccessChipVisible"
-      closable
-      color="success"
-      @click:close="isSuccessChipVisible = !isSuccessChipVisible"
-    >
-      Success
-    </VChip>
-
-    <VChip
-      v-if="isInfoChipVisible"
-      closable
-      color="info"
-      @click:close="isInfoChipVisible = !isInfoChipVisible"
-    >
-      Info
-    </VChip>
-
-    <VChip
-      v-if="isWarningChipVisible"
-      closable
-      color="warning"
-      @click:close="isWarningChipVisible = !isWarningChipVisible"
-    >
-      Warning
-    </VChip>
-
-    <VChip
-      v-if="isErrorChipVisible"
-      closable
-      color="error"
-      @click:close="isErrorChipVisible = !isErrorChipVisible"
-    >
-      Error
-    </VChip>
-  </div>
-</template>
-`,
-  js: `<script setup>
-const isDefaultChipVisible = ref(true)
-const isPrimaryChipVisible = ref(true)
-const isSecondaryChipVisible = ref(true)
-const isSuccessChipVisible = ref(true)
-const isInfoChipVisible = ref(true)
-const isWarningChipVisible = ref(true)
-const isErrorChipVisible = ref(true)
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VChip
-      v-if="isDefaultChipVisible"
-      closable
-      @click:close="isDefaultChipVisible = !isDefaultChipVisible"
-    >
-      Default
-    </VChip>
-
-    <VChip
-      v-if="isPrimaryChipVisible"
-      closable
-      color="primary"
-      @click:close="isPrimaryChipVisible = !isPrimaryChipVisible"
-    >
-      Primary
-    </VChip>
-
-    <VChip
-      v-if="isSecondaryChipVisible"
-      closable
-      color="secondary"
-      @click:close="isSecondaryChipVisible = !isSecondaryChipVisible"
-    >
-      Secondary
-    </VChip>
-
-    <VChip
-      v-if="isSuccessChipVisible"
-      closable
-      color="success"
-      @click:close="isSuccessChipVisible = !isSuccessChipVisible"
-    >
-      Success
-    </VChip>
-
-    <VChip
-      v-if="isInfoChipVisible"
-      closable
-      color="info"
-      @click:close="isInfoChipVisible = !isInfoChipVisible"
-    >
-      Info
-    </VChip>
-
-    <VChip
-      v-if="isWarningChipVisible"
-      closable
-      color="warning"
-      @click:close="isWarningChipVisible = !isWarningChipVisible"
-    >
-      Warning
-    </VChip>
-
-    <VChip
-      v-if="isErrorChipVisible"
-      closable
-      color="error"
-      @click:close="isErrorChipVisible = !isErrorChipVisible"
-    >
-      Error
-    </VChip>
-  </div>
-</template>
-`,
-}
-export const sizes = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VChip size="x-small">
-      x-small chip
-    </VChip>
-
-    <VChip size="small">
-      small chip
-    </VChip>
-
-    <VChip>Default</VChip>
-
-    <VChip size="large">
-      large chip
-    </VChip>
-
-    <VChip size="x-large">
-      x-large chip
-    </VChip>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VChip size="x-small">
-      x-small chip
-    </VChip>
-
-    <VChip size="small">
-      small chip
-    </VChip>
-
-    <VChip>Default</VChip>
-
-    <VChip size="large">
-      large chip
-    </VChip>
-
-    <VChip size="x-large">
-      x-large chip
-    </VChip>
-  </div>
-</template>
-`,
-}
-export const label = {
-  ts: `<template>
+export const label = { ts: `<template>
   <div class="demo-space-x">
     <VChip label>
       Default
@@ -500,8 +498,7 @@ export const label = {
     </VChip>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VChip label>
       Default
@@ -550,10 +547,9 @@ export const label = {
     </VChip>
   </div>
 </template>
-`,
-}
-export const outlined = {
-  ts: `<template>
+` }
+
+export const outlined = { ts: `<template>
   <div class="demo-space-x">
     <VChip variant="outlined">
       Default
@@ -602,8 +598,7 @@ export const outlined = {
     </VChip>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VChip variant="outlined">
       Default
@@ -652,103 +647,57 @@ export const outlined = {
     </VChip>
   </div>
 </template>
-`,
-}
-export const expandable = {
-  ts: `<script lang="ts" setup>
-const isMenuVisible = ref(false)
-</script>
+` }
 
-<template>
-  <VMenu
-    v-model="isMenuVisible"
-    transition="scale-transition"
-  >
-    <!-- v-menu activator -->
-    <template #activator="{ props }">
-      <VChip v-bind="props">
-        VueJS
-      </VChip>
-    </template>
+export const sizes = { ts: `<template>
+  <div class="demo-space-x">
+    <VChip size="x-small">
+      x-small chip
+    </VChip>
 
-    <!-- v-menu list -->
-    <VList>
-      <VListItem>
-        <VListItemTitle>VueJS</VListItemTitle>
-        <VListItemSubtitle>The Progressive JavaScript Framework</VListItemSubtitle>
+    <VChip size="small">
+      small chip
+    </VChip>
 
-        <template #append>
-          <VListItemAction class="ms-1">
-            <VBtn
-              icon
-              variant="text"
-              size="x-small"
-              color="default"
-              @click="isMenuVisible = false"
-            >
-              <VIcon
-                size="20"
-                icon="mdi-close"
-              />
-            </VBtn>
-          </VListItemAction>
-        </template>
-      </VListItem>
-    </VList>
-  </VMenu>
+    <VChip>Default</VChip>
+
+    <VChip size="large">
+      large chip
+    </VChip>
+
+    <VChip size="x-large">
+      x-large chip
+    </VChip>
+  </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VChip size="x-small">
+      x-small chip
+    </VChip>
 
-const isMenuVisible = ref(false)
-</script>
+    <VChip size="small">
+      small chip
+    </VChip>
 
-<template>
-  <VMenu
-    v-model="isMenuVisible"
-    transition="scale-transition"
-  >
-    <!-- v-menu activator -->
-    <template #activator="{ props }">
-      <VChip v-bind="props">
-        VueJS
-      </VChip>
-    </template>
+    <VChip>Default</VChip>
 
-    <!-- v-menu list -->
-    <VList>
-      <VListItem>
-        <VListItemTitle>VueJS</VListItemTitle>
-        <VListItemSubtitle>The Progressive JavaScript Framework</VListItemSubtitle>
+    <VChip size="large">
+      large chip
+    </VChip>
 
-        <template #append>
-          <VListItemAction class="ms-1">
-            <VBtn
-              icon
-              variant="text"
-              size="x-small"
-              color="default"
-              @click="isMenuVisible = false"
-            >
-              <VIcon
-                size="20"
-                icon="mdi-close"
-              />
-            </VBtn>
-          </VListItemAction>
-        </template>
-      </VListItem>
-    </VList>
-  </VMenu>
+    <VChip size="x-large">
+      x-large chip
+    </VChip>
+  </div>
 </template>
-`,
-}
-export const withAvatar = {
-  ts: `<script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
+` }
+
+export const withAvatar = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
 </script>
 
 <template>
@@ -786,12 +735,11 @@ import avatar4 from '@/assets/images/avatars/avatar-4.png'
     </VChip>
   </div>
 </template>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
 </script>
 
 <template>
@@ -829,107 +777,139 @@ import avatar4 from '@/assets/images/avatars/avatar-4.png'
     </VChip>
   </div>
 </template>
-`,
-}
-export const elevated = {
-  ts: `<template>
+` }
+
+export const withIcon = { ts: `<template>
   <div class="demo-space-x">
-    <VChip variant="elevated">
-      Default
+    <VChip>
+      <VIcon
+        start
+        size="18"
+        icon="mdi-account-outline"
+      />
+      Account
     </VChip>
 
-    <VChip
-      color="primary"
-      variant="elevated"
-    >
-      Primary
+    <VChip color="primary">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-star-outline"
+      />
+      Premium
     </VChip>
 
-    <VChip
-      color="secondary"
-      variant="elevated"
-    >
-      Secondary
+    <VChip color="secondary">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-cake"
+      />
+      1 Year
     </VChip>
 
-    <VChip
-      color="success"
-      variant="elevated"
-    >
-      Success
+    <VChip color="success">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-bell-outline"
+      />
+      Notification
     </VChip>
 
-    <VChip
-      color="info"
-      variant="elevated"
-    >
-      Info
+    <VChip color="info">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-forum-outline"
+      />
+      Message
     </VChip>
 
-    <VChip
-      color="warning"
-      variant="elevated"
-    >
+    <VChip color="warning">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-alert-outline"
+      />
       Warning
     </VChip>
 
-    <VChip
-      color="error"
-      variant="elevated"
-    >
+    <VChip color="error">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-alert-circle-outline"
+      />
       Error
     </VChip>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
-    <VChip variant="elevated">
-      Default
+    <VChip>
+      <VIcon
+        start
+        size="18"
+        icon="mdi-account-outline"
+      />
+      Account
     </VChip>
 
-    <VChip
-      color="primary"
-      variant="elevated"
-    >
-      Primary
+    <VChip color="primary">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-star-outline"
+      />
+      Premium
     </VChip>
 
-    <VChip
-      color="secondary"
-      variant="elevated"
-    >
-      Secondary
+    <VChip color="secondary">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-cake"
+      />
+      1 Year
     </VChip>
 
-    <VChip
-      color="success"
-      variant="elevated"
-    >
-      Success
+    <VChip color="success">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-bell-outline"
+      />
+      Notification
     </VChip>
 
-    <VChip
-      color="info"
-      variant="elevated"
-    >
-      Info
+    <VChip color="info">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-forum-outline"
+      />
+      Message
     </VChip>
 
-    <VChip
-      color="warning"
-      variant="elevated"
-    >
+    <VChip color="warning">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-alert-outline"
+      />
       Warning
     </VChip>
 
-    <VChip
-      color="error"
-      variant="elevated"
-    >
+    <VChip color="error">
+      <VIcon
+        start
+        size="18"
+        icon="mdi-alert-circle-outline"
+      />
       Error
     </VChip>
   </div>
 </template>
-`,
-}
+` }
+

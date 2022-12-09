@@ -9,24 +9,26 @@ const props = defineProps({
       expiry: '',
       cvv: '',
       isPrimary: false,
-      type: ''
-    })
+      type: '',
+    }),
   },
   isDialogVisible: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits([
   'submit',
-  'update:isDialogVisible'
+  'update:isDialogVisible',
 ])
 
 const cardDetails = ref(structuredClone(toRaw(props.cardDetails)))
+
 watch(props, () => {
   cardDetails.value = structuredClone(toRaw(props.cardDetails))
 })
+
 const formSubmit = () => {
   emit('submit', cardDetails.value)
 }

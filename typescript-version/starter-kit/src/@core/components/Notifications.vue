@@ -1,12 +1,15 @@
 <script lang="ts" setup>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import type { Anchor } from 'vuetify/lib/components'
 import { avatarText } from '@core/utils/formatters'
 import type { Notification } from '@layouts/types'
+
 interface Props {
   notifications: Notification[]
   badgeProps?: unknown
   location?: Anchor
 }
+
 const props = withDefaults(defineProps<Props>(), {
   location: 'bottom end',
   badgeProps: undefined,
@@ -48,13 +51,13 @@ defineEmits<{
         :location="props.location"
         offset="14px"
       >
-        <VList class="py-0">
+        <VCard class="d-flex flex-column">
           <!-- 👉 Header -->
-          <VListItem
-            title="Notifications"
-            class="notification-section"
-            height="48px"
-          >
+          <VCardItem class="notification-section">
+            <VCardTitle class="text-base">
+              Notifications
+            </VCardTitle>
+
             <template #append>
               <VChip
                 v-if="props.notifications.length"
@@ -64,55 +67,59 @@ defineEmits<{
                 {{ props.notifications.length }} New
               </VChip>
             </template>
-          </VListItem>
+          </VCardItem>
 
           <VDivider />
 
           <!-- 👉 Notifications list -->
-          <template
-            v-for="notification in props.notifications"
-            :key="notification.title"
-          >
-            <VListItem
-              :title="notification.title"
-              :subtitle="notification.subtitle"
-              link
-              lines="one"
-              min-height="66px"
-            >
-              <!-- Slot: Prepend -->
-              <!-- Handles Avatar: Image, Icon, Text -->
-              <template #prepend>
-                <VListItemAction start>
-                  <VAvatar
-                    :color="notification.color || 'primary'"
-                    :image="notification.img || undefined"
-                    :icon="notification.icon || undefined"
-                    size="40"
-                    variant="tonal"
-                  >
-                    <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
-                  </VAvatar>
-                </VListItemAction>
+          <PerfectScrollbar :options="{ wheelPropagation: false }">
+            <VList class="py-0">
+              <template
+                v-for="notification in props.notifications"
+                :key="notification.title"
+              >
+                <VListItem
+                  :title="notification.title"
+                  :subtitle="notification.subtitle"
+                  link
+                  lines="one"
+                  min-height="66px"
+                >
+                  <!-- Slot: Prepend -->
+                  <!-- Handles Avatar: Image, Icon, Text -->
+                  <template #prepend>
+                    <VListItemAction start>
+                      <VAvatar
+                        :color="notification.color || 'primary'"
+                        :image="notification.img || undefined"
+                        :icon="notification.icon || undefined"
+                        size="40"
+                        variant="tonal"
+                      >
+                        <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
+                      </VAvatar>
+                    </VListItemAction>
+                  </template>
+                  <!-- Slot: Append -->
+                  <template #append>
+                    <small class="whitespace-no-wrap text-medium-emphasis">{{ notification.time }}</small>
+                  </template>
+                </VListItem>
+                <VDivider />
               </template>
-              <!-- Slot: Append -->
-              <template #append>
-                <small class="whitespace-no-wrap text-medium-emphasis">{{ notification.time }}</small>
-              </template>
-            </VListItem>
-            <VDivider />
-          </template>
+            </VList>
+          </PerfectScrollbar>
 
           <!-- 👉 Footer -->
-          <VListItem class="notification-section">
+          <VCardText class="notification-section">
             <VBtn
               block
               @click="$emit('click:readAllNotifications')"
             >
               READ ALL NOTIFICATIONS
             </VBtn>
-          </VListItem>
-        </VList>
+          </VCardText>
+        </VCard>
       </VMenu>
     </VBtn>
   </VBadge>

@@ -1,12 +1,13 @@
 <script setup>
 const rating = ref(4)
+
 const ratingColors = [
   'primary',
   'secondary',
   'success',
   'info',
   'warning',
-  'error'
+  'error',
 ]
 </script>
 

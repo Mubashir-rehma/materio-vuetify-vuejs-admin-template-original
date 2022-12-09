@@ -17,7 +17,7 @@ const statisticsVertical = [
     icon: 'mdi-trending-up',
     stats: '1.2k',
     change: 38,
-    subtitle: 'Daily Transactions'
+    subtitle: 'Daily Transactions',
   },
   {
     title: 'Revenue',
@@ -25,9 +25,10 @@ const statisticsVertical = [
     icon: 'mdi-currency-usd',
     stats: '$95.2k',
     change: 12,
-    subtitle: 'Revenue Increase'
-  }
+    subtitle: 'Revenue Increase',
+  },
 ]
+
 const statisticsVerticalTwo = [
   {
     title: 'Logistics',
@@ -35,7 +36,7 @@ const statisticsVerticalTwo = [
     icon: 'mdi-truck-outline',
     stats: '44.10k',
     change: 12,
-    subtitle: 'Revenue Increase'
+    subtitle: 'Revenue Increase',
   },
   {
     title: 'Reports',
@@ -43,8 +44,8 @@ const statisticsVerticalTwo = [
     icon: 'mdi-check',
     stats: '268',
     change: -8,
-    subtitle: 'System Bugs'
-  }
+    subtitle: 'System Bugs',
+  },
 ]
 </script>
 
@@ -144,5 +145,5 @@ const statisticsVerticalTwo = [
 </template>
 
 <style lang="scss">
-@use "@core/scss/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart.scss";
 </style>

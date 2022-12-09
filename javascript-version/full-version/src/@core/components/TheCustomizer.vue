@@ -4,44 +4,45 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import {
   RouteTransitions,
-  Skins
+  Skins,
 } from '@core/enums'
 import {
   AppContentLayoutNav,
   ContentWidth,
   FooterType,
-  NavbarType
+  NavbarType,
 } from '@layouts/enums'
 import { themeConfig } from '@themeConfig'
 
 const isNavDrawerOpen = ref(false)
-const {theme, skin, appRouteTransition, navbarType, footerType, isVerticalNavCollapsed, isVerticalNavSemiDark, appContentWidth, appContentLayoutNav, isAppRtl, isNavbarBlurEnabled, isLessThanOverlayNavBreakpoint} = useThemeConfig()
+const { theme, skin, appRouteTransition, navbarType, footerType, isVerticalNavCollapsed, isVerticalNavSemiDark, appContentWidth, appContentLayoutNav, isAppRtl, isNavbarBlurEnabled, isLessThanOverlayNavBreakpoint } = useThemeConfig()
 
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
 
 // const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
 const initialThemeColors = JSON.parse(JSON.stringify(vuetifyTheme.current.value.colors))
+
 const colors = [
   'primary',
   'secondary',
   'success',
   'info',
   'warning',
-  'error'
+  'error',
 ]
+
 const setPrimaryColor = color => {
   const currentThemeName = vuetifyTheme.name.value
+
   vuetifyTheme.themes.value[currentThemeName].colors.primary = color
   localStorage.setItem(`${ themeConfig.app.title }-${ currentThemeName }ThemePrimaryColor`, color)
   localStorage.setItem(`${ themeConfig.app.title }-initial-loader-color`, color)
 }
+
 const getBoxColor = (color, index) => index ? color : '#9155FD'
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false
-}
-const {width: windowWidth} = useWindowSize()
+const { width: windowWidth } = useWindowSize()
+
 const headerValues = computed(() => {
   const entries = Object.entries(NavbarType)
   if (appContentLayoutNav.value === AppContentLayoutNav.Horizontal)
@@ -97,7 +98,7 @@ const headerValues = computed(() => {
 
       <PerfectScrollbar
         tag="ul"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
       >
         <!-- SECTION Theming -->
         <CustomizerSection

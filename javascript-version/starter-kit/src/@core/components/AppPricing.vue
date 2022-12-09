@@ -1,47 +1,48 @@
 <script setup>
-import tree1 from '@/assets/images/misc/pricing-tree-1.png'
-import tree2 from '@/assets/images/misc/pricing-tree-2.png'
-import tree3 from '@/assets/images/misc/pricing-tree-3.png'
+import tree1 from '@images/misc/pricing-tree-1.png'
+import tree2 from '@images/misc/pricing-tree-2.png'
+import tree3 from '@images/misc/pricing-tree-3.png'
 
 const props = defineProps({
   xs: {
     type: [
       Number,
-      String
+      String,
     ],
-    required: false
+    required: false,
   },
   sm: {
     type: [
       Number,
-      String
+      String,
     ],
-    required: false
+    required: false,
   },
   md: {
     type: [
       String,
-      Number
+      Number,
     ],
-    required: false
+    required: false,
   },
   lg: {
     type: [
       String,
-      Number
+      Number,
     ],
-    required: false
+    required: false,
   },
   xl: {
     type: [
       String,
-      Number
+      Number,
     ],
-    required: false
-  }
+    required: false,
+  },
 })
 
 const annualMonthlyPlanPriceToggler = ref(true)
+
 const pricingPlans = [
   {
     name: 'Basic',
@@ -56,8 +57,8 @@ const pricingPlans = [
       'Unlimited forms and surveys',
       'Unlimited fields',
       'Basic form creation tools',
-      'Up to 2 subdomains'
-    ]
+      'Up to 2 subdomains',
+    ],
   },
   {
     name: 'Standard',
@@ -72,8 +73,8 @@ const pricingPlans = [
       'Unlimited forms and surveys',
       'Instagram profile page',
       'Google Docs integration',
-      'Custom “Thank you” page'
-    ]
+      'Custom “Thank you” page',
+    ],
   },
   {
     name: 'Enterprise',
@@ -88,9 +89,9 @@ const pricingPlans = [
       'Logic Jumps',
       'File upload with 5GB storage',
       'Custom domain support',
-      'Stripe integration'
-    ]
-  }
+      'Stripe integration',
+    ],
+  },
 ]
 </script>
 
@@ -107,15 +108,30 @@ const pricingPlans = [
   </div>
 
   <!-- 👉 Annual and monthly price toggler -->
-  <div class="d-flex align-center justify-center mx-auto mb-10">
+  <div class="d-flex align-center justify-center mx-auto py-10">
     <VLabel
       for="pricing-plan-toggle"
-      class="me-2 mb-2"
+      class="me-2"
     >
       Monthly
     </VLabel>
 
-    <div>
+    <div class="position-relative">
+      <div class="pricing-save-chip position-absolute">
+        <VIcon
+          start
+          icon="mdi-arrow-down-left"
+          size="24"
+          class="text-disabled flip-in-rtl mt-1"
+        />
+        <VChip
+          size="small"
+          color="primary"
+        >
+          Save up to 10%
+        </VChip>
+      </div>
+
       <VSwitch
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
@@ -230,5 +246,11 @@ const pricingPlans = [
 <style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 0.75rem;
+}
+
+.pricing-save-chip {
+  display: flex;
+  inset-block-start: -1.5rem;
+  inset-inline-end: -6.5rem;
 }
 </style>

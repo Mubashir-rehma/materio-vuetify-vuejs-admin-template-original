@@ -1,17 +1,10 @@
 <script setup>
 import VueApexCharts from 'vue3-apexcharts'
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
-const currentTheme = controlledComputed(theme, () => {
-  return vuetifyTheme.current.value.colors
-})
-const variableTheme = controlledComputed(theme, () => {
-  return vuetifyTheme.current.value.variables
-})
+
 const series = [{
   data: [
     0,
@@ -19,18 +12,22 @@ const series = [{
     5,
     30,
     15,
-    45
-  ]
+    45,
+  ],
 }]
-const chartOptions = controlledComputed(theme, () => {
+
+const chartOptions = computed(() => {
+  const currentTheme = vuetifyTheme.current.value.colors
+  const variableTheme = vuetifyTheme.current.value.variables
+  
   return {
     chart: {
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     tooltip: { enabled: false },
     grid: {
-      borderColor: `rgba(${ hexToRgb(String(variableTheme.value['border-color'])) },${ variableTheme.value['border-opacity'] })`,
+      borderColor: `rgba(${ hexToRgb(String(variableTheme['border-color'])) },${ variableTheme['border-opacity'] })`,
       strokeDashArray: 6,
       xaxis: { lines: { show: true } },
       yaxis: { lines: { show: false } },
@@ -38,15 +35,15 @@ const chartOptions = controlledComputed(theme, () => {
         top: -10,
         left: -7,
         right: 5,
-        bottom: 5
-      }
+        bottom: 5,
+      },
     },
     stroke: {
       width: 3,
       lineCap: 'butt',
-      curve: 'straight'
+      curve: 'straight',
     },
-    colors: [currentTheme.value.primary],
+    colors: [currentTheme.primary],
     markers: {
       size: 6,
       offsetY: 4,
@@ -57,18 +54,18 @@ const chartOptions = controlledComputed(theme, () => {
       discrete: [{
         size: 5.5,
         seriesIndex: 0,
-        strokeColor: currentTheme.value.primary,
-        fillColor: currentTheme.value.surface,
-        dataPointIndex: series[0].data.length - 1
+        strokeColor: currentTheme.primary,
+        fillColor: currentTheme.surface,
+        dataPointIndex: series[0].data.length - 1,
       }],
-      hover: { size: 7 }
+      hover: { size: 7 },
     },
     xaxis: {
       labels: { show: false },
       axisTicks: { show: false },
-      axisBorder: { show: false }
+      axisBorder: { show: false },
     },
-    yaxis: { labels: { show: false } }
+    yaxis: { labels: { show: false } },
   }
 })
 </script>

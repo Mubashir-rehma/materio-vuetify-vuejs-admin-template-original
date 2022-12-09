@@ -1,5 +1,6 @@
 import { hexToRgb } from '@layouts/utils'
 
+
 // 👉 Colors variables
 const colorVariables = themeColors => {
   const themeSecondaryTextColor = `rgba(${hexToRgb(themeColors.colors['on-surface'])},${themeColors.variables['medium-emphasis-opacity']})`
@@ -8,6 +9,7 @@ const colorVariables = themeColors => {
   
   return { labelColor: themeDisabledTextColor, borderColor: themeBorderColor, legendColor: themeSecondaryTextColor }
 }
+
 
 // SECTION config
 // 👉 Latest Bar Chart Config

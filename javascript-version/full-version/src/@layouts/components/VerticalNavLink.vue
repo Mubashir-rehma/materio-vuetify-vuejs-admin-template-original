@@ -4,18 +4,18 @@ import { config } from '@layouts/config'
 import { can } from '@layouts/plugins/casl'
 import {
   getComputedNavLinkToProp,
-  isNavLinkActive
+  isNavLinkActive,
 } from '@layouts/utils'
 
 const props = defineProps({
   item: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
-const {width: windowWidth} = useWindowSize()
-const {isVerticalNavMini, dynamicI18nProps} = useLayouts()
+const { width: windowWidth } = useWindowSize()
+const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
 const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 </script>
 

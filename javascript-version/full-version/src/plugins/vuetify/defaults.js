@@ -29,6 +29,9 @@ export default {
   VTabs: {
     // set v-tabs default color to primary
     color: 'primary',
+    VSlideGroup: {
+      showArrows: true,
+    },
   },
   VTooltip: {
     // set v-tooltip default location to top

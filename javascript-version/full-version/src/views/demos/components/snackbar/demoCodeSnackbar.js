@@ -1,224 +1,4 @@
-export const withAction = {
-  ts: `<script lang="ts" setup>
-const isSnackbarVisibility = ref(false)
-</script>
-
-<template>
-  <VBtn @click="isSnackbarVisibility = true">
-    Open Snackbar
-  </VBtn>
-
-  <!-- Snackbar -->
-  <VSnackbar v-model="isSnackbarVisibility">
-    Hello, I'm a snackbar with actions.
-
-    <template #actions>
-      <VBtn
-        color="error"
-        @click="isSnackbarVisibility = false"
-      >
-        Close
-      </VBtn>
-    </template>
-  </VSnackbar>
-</template>
-`,
-  js: `<script setup>
-
-const isSnackbarVisibility = ref(false)
-</script>
-
-<template>
-  <VBtn @click="isSnackbarVisibility = true">
-    Open Snackbar
-  </VBtn>
-
-  <!-- Snackbar -->
-  <VSnackbar v-model="isSnackbarVisibility">
-    Hello, I'm a snackbar with actions.
-
-    <template #actions>
-      <VBtn
-        color="error"
-        @click="isSnackbarVisibility = false"
-      >
-        Close
-      </VBtn>
-    </template>
-  </VSnackbar>
-</template>
-`,
-}
-export const variants = {
-  ts: `<script lang="ts" setup>
-const isDefaultSnackbarVisible = ref(false)
-const isTonalSnackbarVisible = ref(false)
-const isTextSnackbarVisible = ref(false)
-const isOutlinedSnackbarVisible = ref(false)
-const isFlatSnackbarVisible = ref(false)
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <!-- Default toggle btn -->
-    <VBtn @click="isDefaultSnackbarVisible = true">
-      Default
-    </VBtn>
-
-    <!-- Default snackbar -->
-    <VSnackbar
-      v-model="isDefaultSnackbarVisible"
-      location="top start"
-    >
-      Jelly chocolate bar candy canes apple pie.
-    </VSnackbar>
-
-    <!-- tonal toggle btn -->
-    <VBtn @click="isTonalSnackbarVisible = true">
-      tonal
-    </VBtn>
-
-    <!-- tonal snackbar -->
-    <VSnackbar
-      v-model="isTonalSnackbarVisible"
-      location="top end"
-      variant="tonal"
-    >
-      Ice cream cake candy canes.
-    </VSnackbar>
-
-    <!-- Text toggle btn -->
-    <VBtn @click="isTextSnackbarVisible = true">
-      Text
-    </VBtn>
-
-    <!-- Text snackbar -->
-    <VSnackbar
-      v-model="isTextSnackbarVisible"
-      location="end center"
-      variant="text"
-    >
-      Pie icing biscuit soufflé liquorice topping.
-    </VSnackbar>
-
-    <!-- Outline toggle btn -->
-    <VBtn @click="isOutlinedSnackbarVisible = true">
-      Outlined
-    </VBtn>
-
-    <!-- Outline snackbar -->
-    <VSnackbar
-      v-model="isOutlinedSnackbarVisible"
-      location="bottom end"
-      variant="outlined"
-      color="error"
-    >
-      Oat cake caramels sesame snaps candy.
-    </VSnackbar>
-
-    <!-- flat toggle btn -->
-    <VBtn @click="isFlatSnackbarVisible = true">
-      Flat
-    </VBtn>
-
-    <!-- flat snackbar -->
-    <VSnackbar
-      v-model="isFlatSnackbarVisible"
-      location="bottom start"
-      variant="flat"
-      color="error"
-    >
-      Oat cake caramels sesame snaps candy.
-    </VSnackbar>
-  </div>
-</template>
-`,
-  js: `<script setup>
-const isDefaultSnackbarVisible = ref(false)
-const isTonalSnackbarVisible = ref(false)
-const isTextSnackbarVisible = ref(false)
-const isOutlinedSnackbarVisible = ref(false)
-const isFlatSnackbarVisible = ref(false)
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <!-- Default toggle btn -->
-    <VBtn @click="isDefaultSnackbarVisible = true">
-      Default
-    </VBtn>
-
-    <!-- Default snackbar -->
-    <VSnackbar
-      v-model="isDefaultSnackbarVisible"
-      location="top start"
-    >
-      Jelly chocolate bar candy canes apple pie.
-    </VSnackbar>
-
-    <!-- tonal toggle btn -->
-    <VBtn @click="isTonalSnackbarVisible = true">
-      tonal
-    </VBtn>
-
-    <!-- tonal snackbar -->
-    <VSnackbar
-      v-model="isTonalSnackbarVisible"
-      location="top end"
-      variant="tonal"
-    >
-      Ice cream cake candy canes.
-    </VSnackbar>
-
-    <!-- Text toggle btn -->
-    <VBtn @click="isTextSnackbarVisible = true">
-      Text
-    </VBtn>
-
-    <!-- Text snackbar -->
-    <VSnackbar
-      v-model="isTextSnackbarVisible"
-      location="end center"
-      variant="text"
-    >
-      Pie icing biscuit soufflé liquorice topping.
-    </VSnackbar>
-
-    <!-- Outline toggle btn -->
-    <VBtn @click="isOutlinedSnackbarVisible = true">
-      Outlined
-    </VBtn>
-
-    <!-- Outline snackbar -->
-    <VSnackbar
-      v-model="isOutlinedSnackbarVisible"
-      location="bottom end"
-      variant="outlined"
-      color="error"
-    >
-      Oat cake caramels sesame snaps candy.
-    </VSnackbar>
-
-    <!-- flat toggle btn -->
-    <VBtn @click="isFlatSnackbarVisible = true">
-      Flat
-    </VBtn>
-
-    <!-- flat snackbar -->
-    <VSnackbar
-      v-model="isFlatSnackbarVisible"
-      location="bottom start"
-      variant="flat"
-      color="error"
-    >
-      Oat cake caramels sesame snaps candy.
-    </VSnackbar>
-  </div>
-</template>
-`,
-}
-export const basic = {
-  ts: `<script lang="ts" setup>
+export const basic = { ts: `<script lang="ts" setup>
 const isSnackbarVisible = ref(false)
 </script>
 
@@ -232,9 +12,7 @@ const isSnackbarVisible = ref(false)
     Hello, I'm a snackbar
   </VSnackbar>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const isSnackbarVisible = ref(false)
 </script>
 
@@ -248,10 +26,63 @@ const isSnackbarVisible = ref(false)
     Hello, I'm a snackbar
   </VSnackbar>
 </template>
-`,
-}
-export const position = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const multiLine = { ts: `<script lang="ts" setup>
+const isSnackbarVisible = ref(false)
+</script>
+
+<template>
+  <VBtn @click="isSnackbarVisible = true">
+    Open Snackbar
+  </VBtn>
+
+  <!-- Snackbar -->
+  <VSnackbar
+    v-model="isSnackbarVisible"
+    multi-line
+  >
+    I am a multi-line snackbar. I can have more than one line. This is another line that is quite long.
+
+    <template #actions>
+      <VBtn
+        color="error"
+        @click="isSnackbarVisible = false"
+      >
+        Close
+      </VBtn>
+    </template>
+  </VSnackbar>
+</template>
+`, js: `<script setup>
+const isSnackbarVisible = ref(false)
+</script>
+
+<template>
+  <VBtn @click="isSnackbarVisible = true">
+    Open Snackbar
+  </VBtn>
+
+  <!-- Snackbar -->
+  <VSnackbar
+    v-model="isSnackbarVisible"
+    multi-line
+  >
+    I am a multi-line snackbar. I can have more than one line. This is another line that is quite long.
+
+    <template #actions>
+      <VBtn
+        color="error"
+        @click="isSnackbarVisible = false"
+      >
+        Close
+      </VBtn>
+    </template>
+  </VSnackbar>
+</template>
+` }
+
+export const position = { ts: `<script lang="ts" setup>
 const isSnackbarTopStartVisible = ref(false)
 const isSnackbarTopVisible = ref(false)
 const isSnackbarTopEndVisible = ref(false)
@@ -407,8 +238,7 @@ const isSnackbarCenteredVisible = ref(false)
     </VSnackbar>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isSnackbarTopStartVisible = ref(false)
 const isSnackbarTopVisible = ref(false)
 const isSnackbarTopEndVisible = ref(false)
@@ -564,10 +394,9 @@ const isSnackbarCenteredVisible = ref(false)
     </VSnackbar>
   </div>
 </template>
-`,
-}
-export const timeout = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const timeout = { ts: `<script lang="ts" setup>
 const isSnackbarVisible = ref(false)
 </script>
 
@@ -584,9 +413,7 @@ const isSnackbarVisible = ref(false)
     My timeout is set to 2000.
   </VSnackbar>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const isSnackbarVisible = ref(false)
 </script>
 
@@ -603,10 +430,9 @@ const isSnackbarVisible = ref(false)
     My timeout is set to 2000.
   </VSnackbar>
 </template>
-`,
-}
-export const transition = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const transition = { ts: `<script lang="ts" setup>
 const isSnackbarFadeVisible = ref(false)
 const isSnackbarScaleVisible = ref(false)
 const isSnackbarScrollReverseVisible = ref(false)
@@ -654,8 +480,7 @@ const isSnackbarScrollReverseVisible = ref(false)
     </VSnackbar>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isSnackbarFadeVisible = ref(false)
 const isSnackbarScaleVisible = ref(false)
 const isSnackbarScrollReverseVisible = ref(false)
@@ -703,10 +528,175 @@ const isSnackbarScrollReverseVisible = ref(false)
     </VSnackbar>
   </div>
 </template>
-`,
-}
-export const vertical = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const variants = { ts: `<script lang="ts" setup>
+const isDefaultSnackbarVisible = ref(false)
+const isTonalSnackbarVisible = ref(false)
+const isTextSnackbarVisible = ref(false)
+const isOutlinedSnackbarVisible = ref(false)
+const isFlatSnackbarVisible = ref(false)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <!-- Default toggle btn -->
+    <VBtn @click="isDefaultSnackbarVisible = true">
+      Default
+    </VBtn>
+
+    <!-- Default snackbar -->
+    <VSnackbar
+      v-model="isDefaultSnackbarVisible"
+      location="top start"
+    >
+      Jelly chocolate bar candy canes apple pie.
+    </VSnackbar>
+
+    <!-- tonal toggle btn -->
+    <VBtn @click="isTonalSnackbarVisible = true">
+      tonal
+    </VBtn>
+
+    <!-- tonal snackbar -->
+    <VSnackbar
+      v-model="isTonalSnackbarVisible"
+      location="top end"
+      variant="tonal"
+    >
+      Ice cream cake candy canes.
+    </VSnackbar>
+
+    <!-- Text toggle btn -->
+    <VBtn @click="isTextSnackbarVisible = true">
+      Text
+    </VBtn>
+
+    <!-- Text snackbar -->
+    <VSnackbar
+      v-model="isTextSnackbarVisible"
+      location="end center"
+      variant="text"
+    >
+      Pie icing biscuit soufflé liquorice topping.
+    </VSnackbar>
+
+    <!-- Outline toggle btn -->
+    <VBtn @click="isOutlinedSnackbarVisible = true">
+      Outlined
+    </VBtn>
+
+    <!-- Outline snackbar -->
+    <VSnackbar
+      v-model="isOutlinedSnackbarVisible"
+      location="bottom end"
+      variant="outlined"
+      color="error"
+    >
+      Oat cake caramels sesame snaps candy.
+    </VSnackbar>
+
+    <!-- flat toggle btn -->
+    <VBtn @click="isFlatSnackbarVisible = true">
+      Flat
+    </VBtn>
+
+    <!-- flat snackbar -->
+    <VSnackbar
+      v-model="isFlatSnackbarVisible"
+      location="bottom start"
+      variant="flat"
+      color="error"
+    >
+      Oat cake caramels sesame snaps candy.
+    </VSnackbar>
+  </div>
+</template>
+`, js: `<script setup>
+const isDefaultSnackbarVisible = ref(false)
+const isTonalSnackbarVisible = ref(false)
+const isTextSnackbarVisible = ref(false)
+const isOutlinedSnackbarVisible = ref(false)
+const isFlatSnackbarVisible = ref(false)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <!-- Default toggle btn -->
+    <VBtn @click="isDefaultSnackbarVisible = true">
+      Default
+    </VBtn>
+
+    <!-- Default snackbar -->
+    <VSnackbar
+      v-model="isDefaultSnackbarVisible"
+      location="top start"
+    >
+      Jelly chocolate bar candy canes apple pie.
+    </VSnackbar>
+
+    <!-- tonal toggle btn -->
+    <VBtn @click="isTonalSnackbarVisible = true">
+      tonal
+    </VBtn>
+
+    <!-- tonal snackbar -->
+    <VSnackbar
+      v-model="isTonalSnackbarVisible"
+      location="top end"
+      variant="tonal"
+    >
+      Ice cream cake candy canes.
+    </VSnackbar>
+
+    <!-- Text toggle btn -->
+    <VBtn @click="isTextSnackbarVisible = true">
+      Text
+    </VBtn>
+
+    <!-- Text snackbar -->
+    <VSnackbar
+      v-model="isTextSnackbarVisible"
+      location="end center"
+      variant="text"
+    >
+      Pie icing biscuit soufflé liquorice topping.
+    </VSnackbar>
+
+    <!-- Outline toggle btn -->
+    <VBtn @click="isOutlinedSnackbarVisible = true">
+      Outlined
+    </VBtn>
+
+    <!-- Outline snackbar -->
+    <VSnackbar
+      v-model="isOutlinedSnackbarVisible"
+      location="bottom end"
+      variant="outlined"
+      color="error"
+    >
+      Oat cake caramels sesame snaps candy.
+    </VSnackbar>
+
+    <!-- flat toggle btn -->
+    <VBtn @click="isFlatSnackbarVisible = true">
+      Flat
+    </VBtn>
+
+    <!-- flat snackbar -->
+    <VSnackbar
+      v-model="isFlatSnackbarVisible"
+      location="bottom start"
+      variant="flat"
+      color="error"
+    >
+      Oat cake caramels sesame snaps candy.
+    </VSnackbar>
+  </div>
+</template>
+` }
+
+export const vertical = { ts: `<script lang="ts" setup>
 const isSnackbarVisible = ref(false)
 </script>
 
@@ -738,9 +728,7 @@ const isSnackbarVisible = ref(false)
     </template>
   </VSnackbar>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const isSnackbarVisible = ref(false)
 </script>
 
@@ -772,62 +760,53 @@ const isSnackbarVisible = ref(false)
     </template>
   </VSnackbar>
 </template>
-`,
-}
-export const multiLine = {
-  ts: `<script lang="ts" setup>
-const isSnackbarVisible = ref(false)
+` }
+
+export const withAction = { ts: `<script lang="ts" setup>
+const isSnackbarVisibility = ref(false)
 </script>
 
 <template>
-  <VBtn @click="isSnackbarVisible = true">
+  <VBtn @click="isSnackbarVisibility = true">
     Open Snackbar
   </VBtn>
 
   <!-- Snackbar -->
-  <VSnackbar
-    v-model="isSnackbarVisible"
-    multi-line
-  >
-    I am a multi-line snackbar. I can have more than one line. This is another line that is quite long.
+  <VSnackbar v-model="isSnackbarVisibility">
+    Hello, I'm a snackbar with actions.
 
     <template #actions>
       <VBtn
         color="error"
-        @click="isSnackbarVisible = false"
+        @click="isSnackbarVisibility = false"
       >
         Close
       </VBtn>
     </template>
   </VSnackbar>
 </template>
-`,
-  js: `<script setup>
-
-const isSnackbarVisible = ref(false)
+`, js: `<script setup>
+const isSnackbarVisibility = ref(false)
 </script>
 
 <template>
-  <VBtn @click="isSnackbarVisible = true">
+  <VBtn @click="isSnackbarVisibility = true">
     Open Snackbar
   </VBtn>
 
   <!-- Snackbar -->
-  <VSnackbar
-    v-model="isSnackbarVisible"
-    multi-line
-  >
-    I am a multi-line snackbar. I can have more than one line. This is another line that is quite long.
+  <VSnackbar v-model="isSnackbarVisibility">
+    Hello, I'm a snackbar with actions.
 
     <template #actions>
       <VBtn
         color="error"
-        @click="isSnackbarVisible = false"
+        @click="isSnackbarVisibility = false"
       >
         Close
       </VBtn>
     </template>
   </VSnackbar>
 </template>
-`,
-}
+` }
+

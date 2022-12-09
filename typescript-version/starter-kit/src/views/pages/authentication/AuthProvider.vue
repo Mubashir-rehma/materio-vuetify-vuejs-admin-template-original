@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useThemeConfig } from '@core/composable/useThemeConfig'
+
 const { theme } = useThemeConfig()
 
 const authProviders = [

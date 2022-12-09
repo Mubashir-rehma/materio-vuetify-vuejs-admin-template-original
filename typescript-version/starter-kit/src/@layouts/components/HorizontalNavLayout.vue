@@ -1,24 +1,29 @@
 <script lang="ts" setup>
-import { useLayouts } from '@layouts'
 import { HorizontalNav } from '@layouts/components'
 import type { HorizontalNavItems } from '@layouts/types'
+
+// ℹ️ Using import from `@layouts` causing build to hangup
+// import { useLayouts } from '@layouts'
+import { useLayouts } from '@layouts/composable/useLayouts'
 
 defineProps<{
   navItems: HorizontalNavItems
 }>()
 
 const { y: windowScrollY } = useWindowScroll()
-const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 const { width: windowWidth } = useWindowSize()
 
 const router = useRouter()
 const shallShowPageLoading = ref(false)
+
 router.beforeEach(() => {
   shallShowPageLoading.value = true
 })
 router.afterEach(() => {
   shallShowPageLoading.value = false
 })
+
+const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 </script>
 
 <template>
@@ -33,12 +38,6 @@ router.afterEach(() => {
       <!-- 👉 Navbar -->
       <div class="layout-navbar">
         <div class="navbar-content-container">
-          <!--
-            <slot
-            name="navbar"
-            :toggleVerticalOverlayNavActive="toggleVerticalOverlayNavActive"
-            />
-          -->
           <slot name="navbar" />
         </div>
       </div>
@@ -91,20 +90,41 @@ router.afterEach(() => {
       z-index: 1;
     }
 
+    .layout-navbar {
+      z-index: variables.$layout-horizontal-nav-layout-navbar-z-index;
+      block-size: variables.$layout-horizontal-nav-navbar-height;
+
+      // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
+      // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
+      // .layout-navbar-sticky & {
+      //   @extend %layout-navbar-sticky;
+      // }
+
+      // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
+      // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
+      // .layout-navbar-hidden & {
+      //   @extend %layout-navbar-hidden;
+      // }
+    }
+
     // 👉 Navbar
     .navbar-content-container {
       @include mixins.boxed-content;
     }
 
-    /*
-      ℹ️ This style will allow creating scrollable content within available space.
-      However, this style is producing bugs when `display: flex` element is direct child of it.
-      e.g. Gamification page
-    */
-    // .layout-page-content {
-    //   display: flex;
-    //   flex-direction: column;
-    // }
+    // 👉   Content height fixed
+    &.layout-content-height-fixed {
+      max-block-size: calc(var(--vh) * 100);
+
+      .layout-page-content {
+        overflow: hidden;
+
+        > :first-child {
+          max-block-size: 100%;
+          overflow-y: auto;
+        }
+      }
+    }
 
     // 👉 Footer
     // Boxed content
@@ -127,39 +147,6 @@ router.afterEach(() => {
   &.layout-navbar-hidden.horizontal-nav-hidden {
     .layout-navbar-and-nav-container {
       display: none;
-    }
-  }
-
-  .layout-navbar {
-    z-index: variables.$layout-horizontal-nav-layout-navbar-z-index;
-    block-size: variables.$layout-horizontal-nav-navbar-height;
-
-    // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
-    // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
-    // .layout-navbar-sticky & {
-    //   @extend %layout-navbar-sticky;
-    // }
-
-    // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav
-    // If we add independent style of navbar & horizontal nav then we have to add :not for avoiding conflict with combo styles
-    // .layout-navbar-hidden & {
-    //   @extend %layout-navbar-hidden;
-    // }
-  }
-
-  &.layout-nav-type-horizontal {
-    // 👉 Content height fixed
-    &.layout-content-height-fixed {
-      max-block-size: calc(var(--vh) * 100);
-
-      .layout-page-content {
-        overflow: hidden;
-
-        > :first-child {
-          max-block-size: 100%;
-          overflow-y: auto;
-        }
-      }
     }
   }
 }

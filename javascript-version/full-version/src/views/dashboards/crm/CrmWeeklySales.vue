@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -14,7 +15,7 @@ const options = controlledComputed(theme, () => {
   return {
     chart: {
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     plotOptions: {
       bar: {
@@ -22,8 +23,8 @@ const options = controlledComputed(theme, () => {
         distributed: true,
         columnWidth: '60%',
         endingShape: 'rounded',
-        startingShape: 'rounded'
-      }
+        startingShape: 'rounded',
+      },
     },
     legend: { show: false },
     dataLabels: { enabled: false },
@@ -34,11 +35,11 @@ const options = controlledComputed(theme, () => {
       `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.1)`,
       currentTheme.value.primary,
       `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.1)`,
-      `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.1)`
+      `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.1)`,
     ],
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     xaxis: {
       categories: [
@@ -48,7 +49,7 @@ const options = controlledComputed(theme, () => {
         'W',
         'T',
         'F',
-        'S'
+        'S',
       ],
       axisTicks: { show: false },
       crosshairs: { opacity: 0 },
@@ -57,9 +58,9 @@ const options = controlledComputed(theme, () => {
       labels: {
         style: {
           fontSize: '12px',
-          colors: disabledColor
-        }
-      }
+          colors: disabledColor,
+        },
+      },
     },
     yaxis: { show: false },
     grid: {
@@ -67,12 +68,13 @@ const options = controlledComputed(theme, () => {
       padding: {
         top: -15,
         left: -10,
-        right: -10
-      }
+        right: -10,
+      },
     },
-    tooltip: { enabled: false }
+    tooltip: { enabled: false },
   }
 })
+
 const series = [{
   data: [
     40,
@@ -81,26 +83,27 @@ const series = [{
     60,
     90,
     40,
-    50
-  ]
+    50,
+  ],
 }]
+
 const weeklySalesData = [
   {
     avatar: {
       icon: 'mdi-trending-up',
-      color: 'primary'
+      color: 'primary',
     },
     title: '34.6k',
-    subtitle: 'Sales'
+    subtitle: 'Sales',
   },
   {
     avatar: {
       icon: 'mdi-currency-usd',
-      color: 'success'
+      color: 'success',
     },
     title: '$482k',
-    subtitle: 'Total Profit'
-  }
+    subtitle: 'Total Profit',
+  },
 ]
 </script>
 

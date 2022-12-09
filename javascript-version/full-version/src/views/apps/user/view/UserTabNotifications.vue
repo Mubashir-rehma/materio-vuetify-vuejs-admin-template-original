@@ -4,35 +4,42 @@ const notifications = ref([
     type: 'New for you',
     email: true,
     browser: false,
-    app: false
+    app: false,
   },
   {
     type: 'Account activity',
     email: false,
     browser: true,
-    app: true
+    app: true,
   },
   {
     type: 'A new browser used to sign in',
     email: true,
     browser: true,
-    app: true
+    app: true,
   },
   {
     type: 'A new device is linked',
     email: false,
     browser: true,
-    app: false
-  }
+    app: false,
+  },
 ])
 </script>
 
 <template>
   <VCard
     title="Notifications"
-    subtitle="You will receive notification for the below selected items."
     class="user-tab-notification"
   >
+    <VDivider />
+
+    <VCardText class="text-high-emphasis font-weight-semibold">
+      You will receive notification for the below selected items.
+    </VCardText>
+
+    <VDivider />
+
     <VTable class="text-no-wrap">
       <thead>
         <tr>
@@ -58,22 +65,15 @@ const notifications = ref([
         >
           <td>{{ notification.type }}</td>
           <td>
-            <VCheckbox
-              v-model="notification.email"
-              class="mt-2"
-            />
+            <VCheckbox v-model="notification.email" />
           </td>
           <td>
             <VCheckbox
               v-model="notification.browser"
-              class="mt-2"
             />
           </td>
           <td>
-            <VCheckbox
-              v-model="notification.app"
-              class="mt-2"
-            />
+            <VCheckbox v-model="notification.app" />
           </td>
         </tr>
       </tbody>

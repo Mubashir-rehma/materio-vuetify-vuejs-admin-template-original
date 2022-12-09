@@ -1,9 +1,9 @@
 <script setup>
-import pages404 from '@/assets/images/pages/404.png'
-import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
-import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
-import tree from '@/assets/images/pages/tree.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import pages404 from '@images/pages/404.png'
+import miscMaskDark from '@images/pages/misc-mask-dark.png'
+import miscMaskLight from '@images/pages/misc-mask-light.png'
+import tree from '@images/pages/tree.png'
 
 const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </script>
@@ -46,7 +46,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/misc.scss";
+@use "@core/scss/template/pages/misc.scss";
 
 .misc-footer-tree {
   inline-size: 21rem;

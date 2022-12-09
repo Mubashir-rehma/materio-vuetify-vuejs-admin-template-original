@@ -6,7 +6,7 @@ const chartOptions = {
     type: 'bar',
     parentHeightOffset: 0,
     toolbar: { show: false },
-    sparkline: { enabled: true }
+    sparkline: { enabled: true },
   },
   grid: { show: false },
   colors: ['rgba(var(--v-theme-primary))'],
@@ -16,19 +16,20 @@ const chartOptions = {
       columnWidth: '30%',
       startingShape: 'rounded',
       endingShape: 'rounded',
-      borderRadius: 4
-    }
+      borderRadius: 4,
+    },
   },
   legend: { show: false },
   dataLabels: { enabled: false },
   xaxis: {
     labels: { show: false },
     axisBorder: { show: false },
-    axisTicks: { show: false }
+    axisTicks: { show: false },
   },
   yaxis: { show: false },
-  tooltip: { enabled: false }
+  tooltip: { enabled: false },
 }
+
 const series = [{
   name: '2020',
   data: [
@@ -38,34 +39,35 @@ const series = [{
     80,
     40,
     60,
-    40
-  ]
+    40,
+  ],
 }]
+
 const websiteStatistics = [
   {
     title: 'Direct',
     color: 'success',
     traffic: '86,471',
-    percentage: '-15'
+    percentage: '-15',
   },
   {
     title: 'Organic Search',
     color: 'primary',
     traffic: '57,484',
-    percentage: '+85'
+    percentage: '+85',
   },
   {
     title: 'Referral',
     color: 'warning',
     traffic: '2,534',
-    percentage: '+48'
+    percentage: '+48',
   },
   {
     title: 'Mail',
     color: 'error',
     traffic: '977',
-    percentage: '-36'
-  }
+    percentage: '-36',
+  },
 ]
 </script>
 

@@ -1,5 +1,186 @@
-export const group = {
-  ts: `<script lang="ts" setup>
+export const block = { ts: `<template>
+  <VRow>
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VBtn block>
+        Block Button
+      </VBtn>
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VBtn
+        variant="outlined"
+        block
+      >
+        Block Button
+      </VBtn>
+    </VCol>
+  </VRow>
+</template>
+`, js: `<template>
+  <VRow>
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VBtn block>
+        Block Button
+      </VBtn>
+    </VCol>
+
+    <VCol
+      cols="12"
+      sm="6"
+    >
+      <VBtn
+        variant="outlined"
+        block
+      >
+        Block Button
+      </VBtn>
+    </VCol>
+  </VRow>
+</template>
+` }
+
+export const colors = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn color="primary">
+      Primary
+    </VBtn>
+    <VBtn color="secondary">
+      Secondary
+    </VBtn>
+    <VBtn color="success">
+      Success
+    </VBtn>
+    <VBtn color="info">
+      Info
+    </VBtn>
+    <VBtn color="warning">
+      Warning
+    </VBtn>
+    <VBtn color="error">
+      Error
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn color="primary">
+      Primary
+    </VBtn>
+    <VBtn color="secondary">
+      Secondary
+    </VBtn>
+    <VBtn color="success">
+      Success
+    </VBtn>
+    <VBtn color="info">
+      Info
+    </VBtn>
+    <VBtn color="warning">
+      Warning
+    </VBtn>
+    <VBtn color="error">
+      Error
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const flat = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="flat">
+      primary
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="secondary"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="success"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="info"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="warning"
+    >
+      Warning
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="error"
+    >
+      Error
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="flat">
+      primary
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="secondary"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="success"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="info"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="warning"
+    >
+      Warning
+    </VBtn>
+
+    <VBtn
+      variant="flat"
+      color="error"
+    >
+      Error
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const group = { ts: `<script lang="ts" setup>
 const toggleExclusive = ref(1)
 </script>
 
@@ -16,9 +197,7 @@ const toggleExclusive = ref(1)
     <VBtn icon="mdi-format-align-justify" />
   </VBtnToggle>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const toggleExclusive = ref(1)
 </script>
 
@@ -35,486 +214,9 @@ const toggleExclusive = ref(1)
     <VBtn icon="mdi-format-align-justify" />
   </VBtnToggle>
 </template>
-`,
-}
-export const outlined = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="outlined">
-      Primary
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="secondary"
-    >
-      Secondary
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="success"
-    >
-      Success
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="info"
-    >
-      Info
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="warning"
-    >
-      Warning
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="error"
-    >
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="outlined">
-      Primary
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="secondary"
-    >
-      Secondary
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="success"
-    >
-      Success
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="info"
-    >
-      Info
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="warning"
-    >
-      Warning
-    </VBtn>
-    <VBtn
-      variant="outlined"
-      color="error"
-    >
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const iconOnly = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn
-      icon="mdi-briefcase-download-outline"
-      variant="text"
-    />
+` }
 
-    <VBtn
-      icon="mdi-account-plus-outline"
-      variant="text"
-      color="secondary"
-    />
-
-    <VBtn
-      icon="mdi-magnify"
-      variant="text"
-      color="success"
-    />
-
-    <VBtn
-      icon="mdi-thumb-up-outline"
-      variant="text"
-      color="info"
-    />
-
-    <VBtn
-      icon="mdi-star-outline"
-      variant="text"
-      color="warning"
-    />
-
-    <VBtn
-      icon="mdi-heart-outline"
-      variant="text"
-      color="error"
-    />
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn
-      icon="mdi-briefcase-download-outline"
-      variant="text"
-    />
-
-    <VBtn
-      icon="mdi-account-plus-outline"
-      variant="text"
-      color="secondary"
-    />
-
-    <VBtn
-      icon="mdi-magnify"
-      variant="text"
-      color="success"
-    />
-
-    <VBtn
-      icon="mdi-thumb-up-outline"
-      variant="text"
-      color="info"
-    />
-
-    <VBtn
-      icon="mdi-star-outline"
-      variant="text"
-      color="warning"
-    />
-
-    <VBtn
-      icon="mdi-heart-outline"
-      variant="text"
-      color="error"
-    />
-  </div>
-</template>
-`,
-}
-export const text = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="text">
-      Primary
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="secondary"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="success"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="info"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="warning"
-    >
-      Warning
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="error"
-    >
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="text">
-      Primary
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="secondary"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="success"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="info"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="warning"
-    >
-      Warning
-    </VBtn>
-
-    <VBtn
-      variant="text"
-      color="error"
-    >
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const flat = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn flat>
-      primary
-    </VBtn>
-
-    <VBtn
-      flat
-      color="secondary"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      flat
-      color="success"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      flat
-      color="info"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      flat
-      color="warning"
-    >
-      Warning
-    </VBtn>
-
-    <VBtn
-      flat
-      color="error"
-    >
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn flat>
-      primary
-    </VBtn>
-
-    <VBtn
-      flat
-      color="secondary"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      flat
-      color="success"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      flat
-      color="info"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      flat
-      color="warning"
-    >
-      Warning
-    </VBtn>
-
-    <VBtn
-      flat
-      color="error"
-    >
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const rounded = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn>
-      Normal Button
-    </VBtn>
-    <VBtn
-      rounded="lg"
-      color="secondary"
-    >
-      Rounded Button
-    </VBtn>
-    <VBtn
-      :rounded="0"
-      color="success"
-    >
-      Tile Button
-    </VBtn>
-    <VBtn
-      rounded="pill"
-      color="info"
-    >
-      Pill Button
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn>
-      Normal Button
-    </VBtn>
-    <VBtn
-      rounded="lg"
-      color="secondary"
-    >
-      Rounded Button
-    </VBtn>
-    <VBtn
-      :rounded="0"
-      color="success"
-    >
-      Tile Button
-    </VBtn>
-    <VBtn
-      rounded="pill"
-      color="info"
-    >
-      Pill Button
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const plain = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="plain">
-      Primary
-    </VBtn>
-
-    <VBtn
-      color="secondary"
-      variant="plain"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      color="success"
-      variant="plain"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      color="info"
-      variant="plain"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      color="warning"
-      variant="plain"
-    >
-      warning
-    </VBtn>
-
-    <VBtn
-      color="error"
-      variant="plain"
-    >
-      error
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="plain">
-      Primary
-    </VBtn>
-
-    <VBtn
-      color="secondary"
-      variant="plain"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      color="success"
-      variant="plain"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      color="info"
-      variant="plain"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      color="warning"
-      variant="plain"
-    >
-      warning
-    </VBtn>
-
-    <VBtn
-      color="error"
-      variant="plain"
-    >
-      error
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const icon = {
-  ts: `<template>
+export const icon = { ts: `<template>
   <div class="demo-space-x">
     <VBtn>
       Accept
@@ -556,8 +258,7 @@ export const icon = {
     </VBtn>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VBtn>
       Accept
@@ -599,70 +300,87 @@ export const icon = {
     </VBtn>
   </div>
 </template>
-`,
-}
-export const router = {
-  ts: `<template>
+` }
+
+export const iconOnly = { ts: `<template>
   <div class="demo-space-x">
-    <VBtn to="alert">
-      String Literal
-    </VBtn>
+    <VBtn
+      icon="mdi-briefcase-download-outline"
+      variant="text"
+    />
 
     <VBtn
-      color="warning"
-      :to="{ path: 'alert' }"
-    >
-      Object Path
-    </VBtn>
-
-    <VBtn
-      color="success"
-      :to="{ name: 'components-alert' }"
-    >
-      Named Router
-    </VBtn>
-
-    <VBtn
+      icon="mdi-account-plus-outline"
+      variant="text"
       color="secondary"
-      :to="{ path: 'alert', query: { plan: 'private' } }"
-    >
-      With Query
-    </VBtn>
+    />
+
+    <VBtn
+      icon="mdi-magnify"
+      variant="text"
+      color="success"
+    />
+
+    <VBtn
+      icon="mdi-thumb-up-outline"
+      variant="text"
+      color="info"
+    />
+
+    <VBtn
+      icon="mdi-star-outline"
+      variant="text"
+      color="warning"
+    />
+
+    <VBtn
+      icon="mdi-heart-outline"
+      variant="text"
+      color="error"
+    />
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
-    <VBtn to="alert">
-      String Literal
-    </VBtn>
+    <VBtn
+      icon="mdi-briefcase-download-outline"
+      variant="text"
+    />
 
     <VBtn
-      color="warning"
-      :to="{ path: 'alert' }"
-    >
-      Object Path
-    </VBtn>
-
-    <VBtn
-      color="success"
-      :to="{ name: 'components-alert' }"
-    >
-      Named Router
-    </VBtn>
-
-    <VBtn
+      icon="mdi-account-plus-outline"
+      variant="text"
       color="secondary"
-      :to="{ path: 'alert', query: { plan: 'private' } }"
-    >
-      With Query
-    </VBtn>
+    />
+
+    <VBtn
+      icon="mdi-magnify"
+      variant="text"
+      color="success"
+    />
+
+    <VBtn
+      icon="mdi-thumb-up-outline"
+      variant="text"
+      color="info"
+    />
+
+    <VBtn
+      icon="mdi-star-outline"
+      variant="text"
+      color="warning"
+    />
+
+    <VBtn
+      icon="mdi-heart-outline"
+      variant="text"
+      color="error"
+    />
   </div>
 </template>
-`,
-}
-export const link = {
-  ts: `<template>
+` }
+
+export const link = { ts: `<template>
   <div class="demo-space-x">
     <VBtn href="https://themeselection.com/">
       String Literal
@@ -677,8 +395,7 @@ export const link = {
     </VBtn>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VBtn href="https://themeselection.com/">
       String Literal
@@ -693,266 +410,9 @@ export const link = {
     </VBtn>
   </div>
 </template>
-`,
-}
-export const colors = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn color="primary">
-      Primary
-    </VBtn>
-    <VBtn color="secondary">
-      Secondary
-    </VBtn>
-    <VBtn color="success">
-      Success
-    </VBtn>
-    <VBtn color="info">
-      Info
-    </VBtn>
-    <VBtn color="warning">
-      Warning
-    </VBtn>
-    <VBtn color="error">
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn color="primary">
-      Primary
-    </VBtn>
-    <VBtn color="secondary">
-      Secondary
-    </VBtn>
-    <VBtn color="success">
-      Success
-    </VBtn>
-    <VBtn color="info">
-      Info
-    </VBtn>
-    <VBtn color="warning">
-      Warning
-    </VBtn>
-    <VBtn color="error">
-      Error
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const sizing = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn size="x-large">
-      Extra large Button
-    </VBtn>
+` }
 
-    <VBtn
-      color="success"
-      size="large"
-    >
-      Large Button
-    </VBtn>
-
-    <VBtn color="info">
-      Normal Button
-    </VBtn>
-
-    <VBtn
-      size="small"
-      color="warning"
-    >
-      Small Button
-    </VBtn>
-
-    <VBtn
-      size="x-small"
-      color="error"
-    >
-      Extra small Button
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn size="x-large">
-      Extra large Button
-    </VBtn>
-
-    <VBtn
-      color="success"
-      size="large"
-    >
-      Large Button
-    </VBtn>
-
-    <VBtn color="info">
-      Normal Button
-    </VBtn>
-
-    <VBtn
-      size="small"
-      color="warning"
-    >
-      Small Button
-    </VBtn>
-
-    <VBtn
-      size="x-small"
-      color="error"
-    >
-      Extra small Button
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const block = {
-  ts: `<template>
-  <VRow>
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VBtn block>
-        Block Button
-      </VBtn>
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VBtn
-        variant="outlined"
-        block
-      >
-        Block Button
-      </VBtn>
-    </VCol>
-  </VRow>
-</template>
-`,
-  js: `<template>
-  <VRow>
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VBtn block>
-        Block Button
-      </VBtn>
-    </VCol>
-
-    <VCol
-      cols="12"
-      sm="6"
-    >
-      <VBtn
-        variant="outlined"
-        block
-      >
-        Block Button
-      </VBtn>
-    </VCol>
-  </VRow>
-</template>
-`,
-}
-export const tonal = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="tonal">
-      Primary
-    </VBtn>
-
-    <VBtn
-      color="secondary"
-      variant="tonal"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      color="success"
-      variant="tonal"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      color="info"
-      variant="tonal"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      color="warning"
-      variant="tonal"
-    >
-      warning
-    </VBtn>
-
-    <VBtn
-      color="error"
-      variant="tonal"
-    >
-      error
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="tonal">
-      Primary
-    </VBtn>
-
-    <VBtn
-      color="secondary"
-      variant="tonal"
-    >
-      Secondary
-    </VBtn>
-
-    <VBtn
-      color="success"
-      variant="tonal"
-    >
-      Success
-    </VBtn>
-
-    <VBtn
-      color="info"
-      variant="tonal"
-    >
-      Info
-    </VBtn>
-
-    <VBtn
-      color="warning"
-      variant="tonal"
-    >
-      warning
-    </VBtn>
-
-    <VBtn
-      color="error"
-      variant="tonal"
-    >
-      error
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const loaders = {
-  ts: `<script lang="ts" setup>
+export const loaders = { ts: `<script lang="ts" setup>
 const loadings = ref<boolean[]>([])
 
 const load = (i: number) => {
@@ -1040,9 +500,9 @@ const load = (i: number) => {
   }
   </style>
 
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const loadings = ref([])
+
 const load = i => {
   loadings.value[i] = true
   setTimeout(() => {
@@ -1128,5 +588,515 @@ const load = i => {
   }
   </style>
 
-`,
-}
+` }
+
+export const outlined = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="outlined">
+      Primary
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="secondary"
+    >
+      Secondary
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="success"
+    >
+      Success
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="info"
+    >
+      Info
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="warning"
+    >
+      Warning
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="error"
+    >
+      Error
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="outlined">
+      Primary
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="secondary"
+    >
+      Secondary
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="success"
+    >
+      Success
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="info"
+    >
+      Info
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="warning"
+    >
+      Warning
+    </VBtn>
+    <VBtn
+      variant="outlined"
+      color="error"
+    >
+      Error
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const plain = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="plain">
+      Primary
+    </VBtn>
+
+    <VBtn
+      color="secondary"
+      variant="plain"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      color="success"
+      variant="plain"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      color="info"
+      variant="plain"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      color="warning"
+      variant="plain"
+    >
+      warning
+    </VBtn>
+
+    <VBtn
+      color="error"
+      variant="plain"
+    >
+      error
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="plain">
+      Primary
+    </VBtn>
+
+    <VBtn
+      color="secondary"
+      variant="plain"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      color="success"
+      variant="plain"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      color="info"
+      variant="plain"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      color="warning"
+      variant="plain"
+    >
+      warning
+    </VBtn>
+
+    <VBtn
+      color="error"
+      variant="plain"
+    >
+      error
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const rounded = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn>
+      Normal Button
+    </VBtn>
+    <VBtn
+      rounded="lg"
+      color="secondary"
+    >
+      Rounded Button
+    </VBtn>
+    <VBtn
+      :rounded="0"
+      color="success"
+    >
+      Tile Button
+    </VBtn>
+    <VBtn
+      rounded="pill"
+      color="info"
+    >
+      Pill Button
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn>
+      Normal Button
+    </VBtn>
+    <VBtn
+      rounded="lg"
+      color="secondary"
+    >
+      Rounded Button
+    </VBtn>
+    <VBtn
+      :rounded="0"
+      color="success"
+    >
+      Tile Button
+    </VBtn>
+    <VBtn
+      rounded="pill"
+      color="info"
+    >
+      Pill Button
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const router = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn to="alert">
+      String Literal
+    </VBtn>
+
+    <VBtn
+      color="warning"
+      :to="{ path: 'alert' }"
+    >
+      Object Path
+    </VBtn>
+
+    <VBtn
+      color="success"
+      :to="{ name: 'components-alert' }"
+    >
+      Named Router
+    </VBtn>
+
+    <VBtn
+      color="secondary"
+      :to="{ path: 'alert', query: { plan: 'private' } }"
+    >
+      With Query
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn to="alert">
+      String Literal
+    </VBtn>
+
+    <VBtn
+      color="warning"
+      :to="{ path: 'alert' }"
+    >
+      Object Path
+    </VBtn>
+
+    <VBtn
+      color="success"
+      :to="{ name: 'components-alert' }"
+    >
+      Named Router
+    </VBtn>
+
+    <VBtn
+      color="secondary"
+      :to="{ path: 'alert', query: { plan: 'private' } }"
+    >
+      With Query
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const sizing = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn size="x-large">
+      Extra large Button
+    </VBtn>
+
+    <VBtn
+      color="success"
+      size="large"
+    >
+      Large Button
+    </VBtn>
+
+    <VBtn color="info">
+      Normal Button
+    </VBtn>
+
+    <VBtn
+      size="small"
+      color="warning"
+    >
+      Small Button
+    </VBtn>
+
+    <VBtn
+      size="x-small"
+      color="error"
+    >
+      Extra small Button
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn size="x-large">
+      Extra large Button
+    </VBtn>
+
+    <VBtn
+      color="success"
+      size="large"
+    >
+      Large Button
+    </VBtn>
+
+    <VBtn color="info">
+      Normal Button
+    </VBtn>
+
+    <VBtn
+      size="small"
+      color="warning"
+    >
+      Small Button
+    </VBtn>
+
+    <VBtn
+      size="x-small"
+      color="error"
+    >
+      Extra small Button
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const text = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="text">
+      Primary
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="secondary"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="success"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="info"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="warning"
+    >
+      Warning
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="error"
+    >
+      Error
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="text">
+      Primary
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="secondary"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="success"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="info"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="warning"
+    >
+      Warning
+    </VBtn>
+
+    <VBtn
+      variant="text"
+      color="error"
+    >
+      Error
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const tonal = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="tonal">
+      Primary
+    </VBtn>
+
+    <VBtn
+      color="secondary"
+      variant="tonal"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      color="success"
+      variant="tonal"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      color="info"
+      variant="tonal"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      color="warning"
+      variant="tonal"
+    >
+      warning
+    </VBtn>
+
+    <VBtn
+      color="error"
+      variant="tonal"
+    >
+      error
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="tonal">
+      Primary
+    </VBtn>
+
+    <VBtn
+      color="secondary"
+      variant="tonal"
+    >
+      Secondary
+    </VBtn>
+
+    <VBtn
+      color="success"
+      variant="tonal"
+    >
+      Success
+    </VBtn>
+
+    <VBtn
+      color="info"
+      variant="tonal"
+    >
+      Info
+    </VBtn>
+
+    <VBtn
+      color="warning"
+      variant="tonal"
+    >
+      warning
+    </VBtn>
+
+    <VBtn
+      color="error"
+      variant="tonal"
+    >
+      error
+    </VBtn>
+  </div>
+</template>
+` }
+

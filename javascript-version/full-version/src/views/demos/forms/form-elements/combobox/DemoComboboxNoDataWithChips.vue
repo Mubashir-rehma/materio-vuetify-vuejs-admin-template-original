@@ -3,10 +3,12 @@ const items = [
   'Gaming',
   'Programming',
   'Vue',
-  'Vuetify'
+  'Vuetify',
 ]
+
 const selectedList = ref(['Vuetify'])
 const search = ref(null)
+
 watch(selectedList, value => {
   if (value.length > 5)
     nextTick(() => selectedList.value.pop())
@@ -24,7 +26,6 @@ watch(selectedList, value => {
     label="Add some tags"
     multiple
     persistent-hint
-    small-chips
   >
     <template #no-data>
       <VListItem>

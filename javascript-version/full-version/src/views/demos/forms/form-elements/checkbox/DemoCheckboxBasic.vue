@@ -1,6 +1,7 @@
 <script setup>
 const checkboxOne = ref(true)
 const checkboxTwo = ref(false)
+
 const capitalizedLabel = label => {
   const convertLabelText = label.toString()
   

@@ -1,22 +1,22 @@
 <script setup>
 import { VForm } from 'vuetify/components'
-import tree from '@/assets/images/pages/tree.png'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import tree from '@images/pages/tree.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import {
   emailValidator,
-  requiredValidator
+  requiredValidator,
 } from '@validators'
-import authV2LoginIllustrationBorderedDark from '@/assets/images/pages/auth-v2-login-illustration-bordered-dark.png'
-import authV2LoginIllustrationBorderedLight from '@/assets/images/pages/auth-v2-login-illustration-bordered-light.png'
-import authV2LoginIllustrationDark from '@/assets/images/pages/auth-v2-login-illustration-dark.png'
-import authV2LoginIllustrationLight from '@/assets/images/pages/auth-v2-login-illustration-light.png'
-import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
+import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png'
+import authV2LoginIllustrationBorderedLight from '@images/pages/auth-v2-login-illustration-bordered-light.png'
+import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustration-dark.png'
+import authV2LoginIllustrationLight from '@images/pages/auth-v2-login-illustration-light.png'
+import authV2MaskDark from '@images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@images/pages/auth-v2-mask-light.png'
 
 const isPasswordVisible = ref(false)
 const authThemeImg = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
@@ -24,38 +24,41 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const route = useRoute()
 const router = useRouter()
 const ability = useAppAbility()
+
 const errors = ref({
   email: undefined,
-  password: undefined
+  password: undefined,
 })
+
 const refVForm = ref()
 const email = ref('admin@demo.com')
 const password = ref('admin')
 const rememberMe = ref(false)
+
 const login = () => {
   axios.post('/auth/login', {
     email: email.value,
-    password: password.value
+    password: password.value,
   }).then(r => {
-    const {accessToken, userData, userAbilities} = r.data
+    const { accessToken, userData, userAbilities } = r.data
+
     localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
     ability.update(userAbilities)
     localStorage.setItem('userData', JSON.stringify(userData))
     localStorage.setItem('accessToken', JSON.stringify(accessToken))
-    if (route.query.to)
-      router.replace(String(route.query.to))
-    else
-      router.replace('/')
-    
-    return null
+
+    // Redirect to `to` query if exist or redirect to index route
+    router.replace(route.query.to ? String(route.query.to) : '/')
   }).catch(e => {
-    const {errors: formErrors} = e.response.data
+    const { errors: formErrors } = e.response.data
+
     errors.value = formErrors
     console.error(e.response.data)
   })
 }
+
 const onSubmit = () => {
-  refVForm.value?.validate().then(({valid: isValid}) => {
+  refVForm.value?.validate().then(({ valid: isValid }) => {
     if (isValid)
       login()
   })
@@ -100,7 +103,7 @@ const onSubmit = () => {
       <VCol
         cols="12"
         lg="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -217,7 +220,7 @@ const onSubmit = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

@@ -1,5 +1,4 @@
-export const basic = {
-  ts: `<script lang="ts" setup>
+export const basic = { ts: `<script lang="ts" setup>
 const selectedItem = ref('Programming')
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -10,14 +9,14 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     :items="items"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedItem = ref('Programming')
+
 const items = [
   'Programming',
   'Design',
   'Vue',
-  'Vuetify'
+  'Vuetify',
 ]
 </script>
 
@@ -27,10 +26,9 @@ const items = [
     :items="items"
   />
 </template>
-`,
-}
-export const clearable = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const clearable = { ts: `<script lang="ts" setup>
 const select = ref(['Vuetify', 'Programming'])
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -44,17 +42,17 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     clearable
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const select = ref([
   'Vuetify',
-  'Programming'
+  'Programming',
 ])
+
 const items = [
   'Programming',
   'Design',
   'Vue',
-  'Vuetify'
+  'Vuetify',
 ]
 </script>
 
@@ -67,10 +65,48 @@ const items = [
     clearable
   />
 </template>
-`,
-}
-export const multiple = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const density = { ts: `<script lang="ts" setup>
+const select = ref(['Vuetify', 'Programming'])
+const items = ['Programming', 'Design', 'Vue', 'Vuetify']
+</script>
+
+<template>
+  <VCombobox
+    v-model="select"
+    :items="items"
+    label="Combobox"
+    density="compact"
+    multiple
+  />
+</template>
+`, js: `<script setup>
+const select = ref([
+  'Vuetify',
+  'Programming',
+])
+
+const items = [
+  'Programming',
+  'Design',
+  'Vue',
+  'Vuetify',
+]
+</script>
+
+<template>
+  <VCombobox
+    v-model="select"
+    :items="items"
+    label="Combobox"
+    density="compact"
+    multiple
+  />
+</template>
+` }
+
+export const multiple = { ts: `<script lang="ts" setup>
 const selectedItem = ref(['Vuetify', 'Programming'])
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -128,17 +164,17 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedItem = ref([
   'Vuetify',
-  'Programming'
+  'Programming',
 ])
+
 const items = [
   'Programming',
   'Design',
   'Vue',
-  'Vuetify'
+  'Vuetify',
 ]
 </script>
 
@@ -195,177 +231,9 @@ const items = [
     </VCol>
   </VRow>
 </template>
-`,
-}
-export const density = {
-  ts: `<script lang="ts" setup>
-const select = ref(['Vuetify', 'Programming'])
-const items = ['Programming', 'Design', 'Vue', 'Vuetify']
-</script>
+` }
 
-<template>
-  <VCombobox
-    v-model="select"
-    :items="items"
-    label="Combobox"
-    density="compact"
-    multiple
-  />
-</template>
-`,
-  js: `<script setup>
-const select = ref([
-  'Vuetify',
-  'Programming'
-])
-const items = [
-  'Programming',
-  'Design',
-  'Vue',
-  'Vuetify'
-]
-</script>
-
-<template>
-  <VCombobox
-    v-model="select"
-    :items="items"
-    label="Combobox"
-    density="compact"
-    multiple
-  />
-</template>
-`,
-}
-export const variant = {
-  ts: `<script lang="ts" setup>
-const selectedItem = ref(['Programming'])
-const items = ['Programming', 'Design', 'Vue', 'Vuetify']
-</script>
-
-<template>
-  <VRow>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        :items="items"
-        multiple
-        chips
-        variant="solo"
-        label="solo"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="outlined"
-        label="Outlined"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="underlined"
-        label="Underlined"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="filled"
-        label="Filled"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="plain"
-        label="Plain"
-      />
-    </VCol>
-  </VRow>
-</template>
-`,
-  js: `<script setup>
-const selectedItem = ref(['Programming'])
-const items = [
-  'Programming',
-  'Design',
-  'Vue',
-  'Vuetify'
-]
-</script>
-
-<template>
-  <VRow>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        :items="items"
-        multiple
-        chips
-        variant="solo"
-        label="solo"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="outlined"
-        label="Outlined"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="underlined"
-        label="Underlined"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="filled"
-        label="Filled"
-      />
-    </VCol>
-    <VCol cols="12">
-      <VCombobox
-        v-model="selectedItem"
-        multiple
-        chips
-        :items="items"
-        variant="plain"
-        label="Plain"
-      />
-    </VCol>
-  </VRow>
-</template>
-`,
-}
-export const noDataWithChips = {
-  ts: `<script lang="ts" setup>
+export const noDataWithChips = { ts: `<script lang="ts" setup>
 const items = ['Gaming', 'Programming', 'Vue', 'Vuetify']
 const selectedList = ref(['Vuetify'])
 const search = ref(null)
@@ -387,7 +255,6 @@ watch(selectedList, value => {
     label="Add some tags"
     multiple
     persistent-hint
-    small-chips
   >
     <template #no-data>
       <VListItem>
@@ -398,16 +265,17 @@ watch(selectedList, value => {
     </template>
   </VCombobox>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Gaming',
   'Programming',
   'Vue',
-  'Vuetify'
+  'Vuetify',
 ]
+
 const selectedList = ref(['Vuetify'])
 const search = ref(null)
+
 watch(selectedList, value => {
   if (value.length > 5)
     nextTick(() => selectedList.value.pop())
@@ -425,7 +293,6 @@ watch(selectedList, value => {
     label="Add some tags"
     multiple
     persistent-hint
-    small-chips
   >
     <template #no-data>
       <VListItem>
@@ -436,5 +303,131 @@ watch(selectedList, value => {
     </template>
   </VCombobox>
 </template>
-`,
-}
+` }
+
+export const variant = { ts: `<script lang="ts" setup>
+const selectedItem = ref(['Programming'])
+const items = ['Programming', 'Design', 'Vue', 'Vuetify']
+</script>
+
+<template>
+  <VRow>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        :items="items"
+        multiple
+        chips
+        variant="solo"
+        label="solo"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="outlined"
+        label="Outlined"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="underlined"
+        label="Underlined"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="filled"
+        label="Filled"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="plain"
+        label="Plain"
+      />
+    </VCol>
+  </VRow>
+</template>
+`, js: `<script setup>
+const selectedItem = ref(['Programming'])
+
+const items = [
+  'Programming',
+  'Design',
+  'Vue',
+  'Vuetify',
+]
+</script>
+
+<template>
+  <VRow>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        :items="items"
+        multiple
+        chips
+        variant="solo"
+        label="solo"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="outlined"
+        label="Outlined"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="underlined"
+        label="Underlined"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="filled"
+        label="Filled"
+      />
+    </VCol>
+    <VCol cols="12">
+      <VCombobox
+        v-model="selectedItem"
+        multiple
+        chips
+        :items="items"
+        variant="plain"
+        label="Plain"
+      />
+    </VCol>
+  </VRow>
+</template>
+` }
+

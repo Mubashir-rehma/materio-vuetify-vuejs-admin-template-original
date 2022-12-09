@@ -6,22 +6,22 @@ import Prism from 'vue-prism-component'
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   code: {
     type: Object,
-    required: true
+    required: true,
   },
   codeLanguage: {
     type: String,
     required: false,
-    default: 'markup'
+    default: 'markup',
   },
   noPadding: {
     type: Boolean,
     required: false,
-    default: false
-  }
+    default: false,
+  },
 })
 
 const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts')
@@ -102,7 +102,7 @@ const isCodeShown = ref(false)
 </template>
 
 <style lang="scss">
-@use "@/styles/variables/_vuetify.scss";
+@use "@styles/variables/_vuetify.scss";
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {

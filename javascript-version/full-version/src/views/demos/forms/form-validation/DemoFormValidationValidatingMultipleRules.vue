@@ -3,7 +3,7 @@ import {
   confirmedValidator,
   emailValidator,
   passwordValidator,
-  requiredValidator
+  requiredValidator,
 } from '@validators'
 
 const name = ref('')

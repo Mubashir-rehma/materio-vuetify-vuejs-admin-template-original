@@ -1,58 +1,4 @@
-export const vModelSupport = {
-  ts: `<script lang="ts" setup>
-const isTooltipVisible = ref(false)
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VBtn @click="isTooltipVisible = !isTooltipVisible">
-      toggle tooltip
-    </VBtn>
-
-    <VTooltip
-      :model-value="isTooltipVisible"
-      location="top"
-    >
-      <template #activator="{ props }">
-        <VIcon
-          v-bind="props"
-          icon="mdi-instagram"
-        />
-      </template>
-      <span>Programmatic tooltip</span>
-    </VTooltip>
-  </div>
-</template>
-`,
-  js: `<script setup>
-
-const isTooltipVisible = ref(false)
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VBtn @click="isTooltipVisible = !isTooltipVisible">
-      toggle tooltip
-    </VBtn>
-
-    <VTooltip
-      :model-value="isTooltipVisible"
-      location="top"
-    >
-      <template #activator="{ props }">
-        <VIcon
-          v-bind="props"
-          icon="mdi-instagram"
-        />
-      </template>
-      <span>Programmatic tooltip</span>
-    </VTooltip>
-  </div>
-</template>
-`,
-}
-export const delayOnHover = {
-  ts: `<template>
+export const delayOnHover = { ts: `<template>
   <!-- Delay on open -->
   <VBtn variant="outlined">
     <span>Open Delay On Hover</span> <VTooltip
@@ -64,8 +10,7 @@ export const delayOnHover = {
     </VTooltip>
   </VBtn>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <!-- Delay on open -->
   <VBtn variant="outlined">
     <span>Open Delay On Hover</span> <VTooltip
@@ -77,181 +22,9 @@ export const delayOnHover = {
     </VTooltip>
   </VBtn>
 </template>
-`,
-}
-export const tooltipOnVariousElements = {
-  ts: `<script setup lang="ts">
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-</script>
+` }
 
-<template>
-  <div class="demo-space-x">
-    <VBtn>
-      Button
-      <VTooltip
-        location="top"
-        activator="parent"
-      >
-        Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VAvatar color="info">
-      <VImg :src="avatar4" />
-      <VTooltip
-        location="top"
-        activator="parent"
-      >
-        Tooltip on Avatar
-      </VTooltip>
-    </VAvatar>
-
-    <VTooltip location="top">
-      <template #activator="{ props }">
-        <VIcon
-          v-bind="props"
-          size="30"
-          icon="mdi-account-outline"
-        />
-      </template>
-      <span>Tooltip on Icon</span>
-    </VTooltip>
-  </div>
-</template>
-`,
-  js: `<script setup>
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VBtn>
-      Button
-      <VTooltip
-        location="top"
-        activator="parent"
-      >
-        Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VAvatar color="info">
-      <VImg :src="avatar4" />
-      <VTooltip
-        location="top"
-        activator="parent"
-      >
-        Tooltip on Avatar
-      </VTooltip>
-    </VAvatar>
-
-    <VTooltip location="top">
-      <template #activator="{ props }">
-        <VIcon
-          v-bind="props"
-          size="30"
-          icon="mdi-account-outline"
-        />
-      </template>
-      <span>Tooltip on Icon</span>
-    </VTooltip>
-  </div>
-</template>
-`,
-}
-export const location = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="outlined">
-      Tooltip on End
-      <VTooltip
-        activator="parent"
-        location="end"
-      >
-        End Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VBtn variant="outlined">
-      Tooltip on Start
-      <VTooltip
-        activator="parent"
-        location="start"
-      >
-        Start Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VBtn variant="outlined">
-      Tooltip on Top
-      <VTooltip
-        activator="parent"
-        location="top"
-      >
-        Top Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VBtn variant="outlined">
-      Tooltip on Bottom
-      <VTooltip
-        activator="parent"
-        location="bottom"
-      >
-        Bottom Tooltip
-      </VTooltip>
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBtn variant="outlined">
-      Tooltip on End
-      <VTooltip
-        activator="parent"
-        location="end"
-      >
-        End Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VBtn variant="outlined">
-      Tooltip on Start
-      <VTooltip
-        activator="parent"
-        location="start"
-      >
-        Start Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VBtn variant="outlined">
-      Tooltip on Top
-      <VTooltip
-        activator="parent"
-        location="top"
-      >
-        Top Tooltip
-      </VTooltip>
-    </VBtn>
-
-    <VBtn variant="outlined">
-      Tooltip on Bottom
-      <VTooltip
-        activator="parent"
-        location="bottom"
-      >
-        Bottom Tooltip
-      </VTooltip>
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const events = {
-  ts: `<template>
+export const events = { ts: `<template>
   <div class="demo-space-x">
     <!-- open on hover -->
     <VBtn variant="outlined">
@@ -294,8 +67,7 @@ export const events = {
     </VBtn>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <!-- open on hover -->
     <VBtn variant="outlined">
@@ -338,10 +110,175 @@ export const events = {
     </VBtn>
   </div>
 </template>
-`,
-}
-export const transition = {
-  ts: `<template>
+` }
+
+export const location = { ts: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="outlined">
+      Tooltip on End
+      <VTooltip
+        activator="parent"
+        location="end"
+      >
+        End Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VBtn variant="outlined">
+      Tooltip on Start
+      <VTooltip
+        activator="parent"
+        location="start"
+      >
+        Start Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VBtn variant="outlined">
+      Tooltip on Top
+      <VTooltip
+        activator="parent"
+        location="top"
+      >
+        Top Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VBtn variant="outlined">
+      Tooltip on Bottom
+      <VTooltip
+        activator="parent"
+        location="bottom"
+      >
+        Bottom Tooltip
+      </VTooltip>
+    </VBtn>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBtn variant="outlined">
+      Tooltip on End
+      <VTooltip
+        activator="parent"
+        location="end"
+      >
+        End Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VBtn variant="outlined">
+      Tooltip on Start
+      <VTooltip
+        activator="parent"
+        location="start"
+      >
+        Start Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VBtn variant="outlined">
+      Tooltip on Top
+      <VTooltip
+        activator="parent"
+        location="top"
+      >
+        Top Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VBtn variant="outlined">
+      Tooltip on Bottom
+      <VTooltip
+        activator="parent"
+        location="bottom"
+      >
+        Bottom Tooltip
+      </VTooltip>
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const tooltipOnVariousElements = { ts: `<script setup lang="ts">
+import avatar4 from '@images/avatars/avatar-4.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBtn>
+      Button
+      <VTooltip
+        location="top"
+        activator="parent"
+      >
+        Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VAvatar color="info">
+      <VImg :src="avatar4" />
+      <VTooltip
+        location="top"
+        activator="parent"
+      >
+        Tooltip on Avatar
+      </VTooltip>
+    </VAvatar>
+
+    <VTooltip location="top">
+      <template #activator="{ props }">
+        <VIcon
+          v-bind="props"
+          size="30"
+          icon="mdi-account-outline"
+        />
+      </template>
+      <span>Tooltip on Icon</span>
+    </VTooltip>
+  </div>
+</template>
+`, js: `<script setup>
+import avatar4 from '@images/avatars/avatar-4.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBtn>
+      Button
+      <VTooltip
+        location="top"
+        activator="parent"
+      >
+        Tooltip
+      </VTooltip>
+    </VBtn>
+
+    <VAvatar color="info">
+      <VImg :src="avatar4" />
+      <VTooltip
+        location="top"
+        activator="parent"
+      >
+        Tooltip on Avatar
+      </VTooltip>
+    </VAvatar>
+
+    <VTooltip location="top">
+      <template #activator="{ props }">
+        <VIcon
+          v-bind="props"
+          size="30"
+          icon="mdi-account-outline"
+        />
+      </template>
+      <span>Tooltip on Icon</span>
+    </VTooltip>
+  </div>
+</template>
+` }
+
+export const transition = { ts: `<template>
   <div class="demo-space-x">
     <!-- Scale transition -->
     <VBtn>
@@ -380,8 +317,7 @@ export const transition = {
     </VBtn>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <!-- Scale transition -->
     <VBtn>
@@ -420,5 +356,55 @@ export const transition = {
     </VBtn>
   </div>
 </template>
-`,
-}
+` }
+
+export const vModelSupport = { ts: `<script lang="ts" setup>
+const isTooltipVisible = ref(false)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBtn @click="isTooltipVisible = !isTooltipVisible">
+      toggle tooltip
+    </VBtn>
+
+    <VTooltip
+      :model-value="isTooltipVisible"
+      location="top"
+    >
+      <template #activator="{ props }">
+        <VIcon
+          v-bind="props"
+          icon="mdi-instagram"
+        />
+      </template>
+      <span>Programmatic tooltip</span>
+    </VTooltip>
+  </div>
+</template>
+`, js: `<script setup>
+const isTooltipVisible = ref(false)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBtn @click="isTooltipVisible = !isTooltipVisible">
+      toggle tooltip
+    </VBtn>
+
+    <VTooltip
+      :model-value="isTooltipVisible"
+      location="top"
+    >
+      <template #activator="{ props }">
+        <VIcon
+          v-bind="props"
+          icon="mdi-instagram"
+        />
+      </template>
+      <span>Programmatic tooltip</span>
+    </VTooltip>
+  </div>
+</template>
+` }
+

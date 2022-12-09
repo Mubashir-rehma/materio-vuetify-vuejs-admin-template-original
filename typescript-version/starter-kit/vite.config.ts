@@ -21,16 +21,21 @@ export default defineConfig({
         configFile: 'src/styles/variables/_vuetify.scss',
       },
     }),
-    Pages({}),
-    Layouts(),
+    Pages({
+      dirs: ['./src/pages'],
+    }),
+    Layouts({
+      layoutsDirs: './src/layouts/',
+    }),
     Components({
       dirs: ['src/@core/components', 'src/views/demos'],
       dts: true,
     }),
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/core', 'pinia'],
+      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'pinia'],
       vueTemplate: true,
     }),
+
     DefineOptions(),
   ],
   define: { 'process.env': {} },
@@ -40,6 +45,8 @@ export default defineConfig({
       '@themeConfig': fileURLToPath(new URL('./themeConfig.ts', import.meta.url)),
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
+      '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/styles/variables/_template.scss', import.meta.url)),
       '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
       '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),

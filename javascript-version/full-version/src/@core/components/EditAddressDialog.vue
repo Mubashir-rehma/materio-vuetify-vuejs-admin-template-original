@@ -2,24 +2,26 @@
 const props = defineProps({
   billingAddress: {
     type: Object,
-    required: true
+    required: true,
   },
   isDialogVisible: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits([
   'update:isDialogVisible',
-  'submit'
+  'submit',
 ])
 
 const billingAddress = ref(structuredClone(toRaw(props.billingAddress)))
+
 const resetForm = () => {
   emit('update:isDialogVisible', false)
   billingAddress.value = structuredClone(toRaw(props.billingAddress))
 }
+
 const onFormSubmit = () => {
   emit('update:isDialogVisible', false)
   emit('submit', billingAddress.value)

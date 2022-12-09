@@ -1,106 +1,226 @@
-export const showOnHover = {
-  ts: `<script lang="ts" setup>
-const tRefInstagramBadge = ref()
-const tRefTwitterBadge = ref()
-const tRefWhatsappBadge = ref()
-
-const showTwitterBadgeOnHover = useElementHover(tRefTwitterBadge)
-const showInstagramBadgeOnHover = useElementHover(tRefInstagramBadge)
-const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
+export const avatarStatus = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
 </script>
 
 <template>
   <div class="demo-space-x">
     <VBadge
-      content="3"
-      transition="slide-x-transition"
-      :model-value="showTwitterBadgeOnHover"
+      dot
+      bordered
+      color="success"
+      location="bottom end"
+      :offset-x="5"
+      :offset-y="1"
     >
-      <VIcon
-        ref="tRefTwitterBadge"
-        size="25"
-        icon="mdi-twitter"
-      />
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
     </VBadge>
 
     <VBadge
-      content="5"
-      transition="scale-transition"
-      :model-value="showInstagramBadgeOnHover"
+      dot
+      bordered
+      color="warning"
+      location="bottom end"
+      :offset-x="5"
+      :offset-y="1"
+    >
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      dot
+      bordered
+      color="error"
+      location="bottom end"
+      :offset-x="5"
+      :offset-y="1"
+    >
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBadge
+      dot
+      bordered
+      color="success"
+      location="bottom end"
+      :offset-x="5"
+      :offset-y="1"
+    >
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      dot
+      bordered
+      color="warning"
+      location="bottom end"
+      :offset-x="5"
+      :offset-y="1"
+    >
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      dot
+      bordered
+      color="error"
+      location="bottom end"
+      :offset-x="5"
+      :offset-y="1"
+    >
+      <VAvatar size="large">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+` }
+
+export const color = { ts: `<template>
+  <div class="demo-space-x">
+    <VBadge
+      dot
+      color="primary"
     >
       <VIcon
-        ref="tRefInstagramBadge"
         size="25"
         icon="mdi-instagram"
       />
     </VBadge>
 
     <VBadge
-      content="1"
-      transition="slide-x-transition"
-      :model-value="showWhatsappBadgeOnHover"
+      dot
+      color="secondary"
     >
       <VIcon
-        ref="tRefWhatsappBadge"
-        size="25"
-        icon="mdi-whatsapp"
-      />
-    </VBadge>
-  </div>
-</template>
-`,
-  js: `<script setup>
-const tRefInstagramBadge = ref()
-const tRefTwitterBadge = ref()
-const tRefWhatsappBadge = ref()
-const showTwitterBadgeOnHover = useElementHover(tRefTwitterBadge)
-const showInstagramBadgeOnHover = useElementHover(tRefInstagramBadge)
-const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VBadge
-      content="3"
-      transition="slide-x-transition"
-      :model-value="showTwitterBadgeOnHover"
-    >
-      <VIcon
-        ref="tRefTwitterBadge"
-        size="25"
-        icon="mdi-twitter"
-      />
-    </VBadge>
-
-    <VBadge
-      content="5"
-      transition="scale-transition"
-      :model-value="showInstagramBadgeOnHover"
-    >
-      <VIcon
-        ref="tRefInstagramBadge"
         size="25"
         icon="mdi-instagram"
       />
     </VBadge>
 
     <VBadge
-      content="1"
-      transition="slide-x-transition"
-      :model-value="showWhatsappBadgeOnHover"
+      dot
+      color="success"
     >
       <VIcon
-        ref="tRefWhatsappBadge"
         size="25"
-        icon="mdi-whatsapp"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="info"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="warning"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="error"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
       />
     </VBadge>
   </div>
 </template>
-`,
-}
-export const dynamicNotifications = {
-  ts: `<script lang="ts" setup>
+`, js: `<template>
+  <div class="demo-space-x">
+    <VBadge
+      dot
+      color="primary"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="secondary"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="success"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="info"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="warning"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      dot
+      color="error"
+    >
+      <VIcon
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+  </div>
+</template>
+` }
+
+export const dynamicNotifications = { ts: `<script lang="ts" setup>
 const notifications = ref<number>()
 </script>
 
@@ -132,9 +252,7 @@ const notifications = ref<number>()
     </div>
   </div>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const notifications = ref()
 </script>
 
@@ -166,11 +284,257 @@ const notifications = ref()
     </div>
   </div>
 </template>
-`,
-}
-export const style = {
-  ts: `<script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
+` }
+
+export const icon = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <!-- avatar -->
+    <VBadge>
+      <template #badge>
+        <VIcon icon="mdi-information-variant" />
+      </template>
+
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- icon -->
+    <VBadge icon="mdi-lock-open-outline">
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <!-- avatar -->
+    <VBadge>
+      <template #badge>
+        <VIcon icon="mdi-information-variant" />
+      </template>
+
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- icon -->
+    <VBadge icon="mdi-lock-open-outline">
+      <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+` }
+
+export const position = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <!-- 👉 Top End -->
+    <VBadge
+      content="1"
+      location="end top"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- 👉 Bottom Start -->
+    <VBadge
+      location="bottom start"
+      content="2"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- 👉 Bottom End -->
+    <VBadge
+      location="bottom end"
+      content="3"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- 👉 top Start -->
+    <VBadge
+      location="top start"
+      content="4"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <!-- 👉 Top End -->
+    <VBadge
+      content="1"
+      location="end top"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- 👉 Bottom Start -->
+    <VBadge
+      location="bottom start"
+      content="2"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- 👉 Bottom End -->
+    <VBadge
+      location="bottom end"
+      content="3"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <!-- 👉 top Start -->
+    <VBadge
+      location="top start"
+      content="4"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+` }
+
+export const showOnHover = { ts: `<script lang="ts" setup>
+const tRefInstagramBadge = ref()
+const tRefTwitterBadge = ref()
+const tRefWhatsappBadge = ref()
+
+const showTwitterBadgeOnHover = useElementHover(tRefTwitterBadge)
+const showInstagramBadgeOnHover = useElementHover(tRefInstagramBadge)
+const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBadge
+      content="3"
+      transition="slide-x-transition"
+      :model-value="showTwitterBadgeOnHover"
+    >
+      <VIcon
+        ref="tRefTwitterBadge"
+        size="25"
+        icon="mdi-twitter"
+      />
+    </VBadge>
+
+    <VBadge
+      content="5"
+      transition="scale-transition"
+      :model-value="showInstagramBadgeOnHover"
+    >
+      <VIcon
+        ref="tRefInstagramBadge"
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      content="1"
+      transition="slide-x-transition"
+      :model-value="showWhatsappBadgeOnHover"
+    >
+      <VIcon
+        ref="tRefWhatsappBadge"
+        size="25"
+        icon="mdi-whatsapp"
+      />
+    </VBadge>
+  </div>
+</template>
+`, js: `<script setup>
+const tRefInstagramBadge = ref()
+const tRefTwitterBadge = ref()
+const tRefWhatsappBadge = ref()
+const showTwitterBadgeOnHover = useElementHover(tRefTwitterBadge)
+const showInstagramBadgeOnHover = useElementHover(tRefInstagramBadge)
+const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBadge
+      content="3"
+      transition="slide-x-transition"
+      :model-value="showTwitterBadgeOnHover"
+    >
+      <VIcon
+        ref="tRefTwitterBadge"
+        size="25"
+        icon="mdi-twitter"
+      />
+    </VBadge>
+
+    <VBadge
+      content="5"
+      transition="scale-transition"
+      :model-value="showInstagramBadgeOnHover"
+    >
+      <VIcon
+        ref="tRefInstagramBadge"
+        size="25"
+        icon="mdi-instagram"
+      />
+    </VBadge>
+
+    <VBadge
+      content="1"
+      transition="slide-x-transition"
+      :model-value="showWhatsappBadgeOnHover"
+    >
+      <VIcon
+        ref="tRefWhatsappBadge"
+        size="25"
+        icon="mdi-whatsapp"
+      />
+    </VBadge>
+  </div>
+</template>
+` }
+
+export const style = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
 </script>
 
 <template>
@@ -225,10 +589,8 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     </VBadge>
   </div>
 </template>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
 </script>
 
 <template>
@@ -283,292 +645,9 @@ import avatar1 from '@/assets/images/avatars/avatar-1.png'
     </VBadge>
   </div>
 </template>
-`,
-}
-export const icon = {
-  ts: `<script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-</script>
+` }
 
-<template>
-  <div class="demo-space-x">
-    <!-- avatar -->
-    <VBadge>
-      <template #badge>
-        <VIcon icon="mdi-information-variant" />
-      </template>
-
-      <VAvatar>
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- icon -->
-    <VBadge icon="mdi-lock-open-outline">
-      <VAvatar>
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-  </div>
-</template>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <!-- avatar -->
-    <VBadge>
-      <template #badge>
-        <VIcon icon="mdi-information-variant" />
-      </template>
-
-      <VAvatar>
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- icon -->
-    <VBadge icon="mdi-lock-open-outline">
-      <VAvatar>
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-  </div>
-</template>
-`,
-}
-export const avatarStatus = {
-  ts: `<script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VBadge
-      dot
-      bordered
-      color="success"
-      location="bottom end"
-      :offset-x="5"
-      :offset-y="1"
-    >
-      <VAvatar size="large">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <VBadge
-      dot
-      bordered
-      color="warning"
-      location="bottom end"
-      :offset-x="5"
-      :offset-y="1"
-    >
-      <VAvatar size="large">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <VBadge
-      dot
-      bordered
-      color="error"
-      location="bottom end"
-      :offset-x="5"
-      :offset-y="1"
-    >
-      <VAvatar size="large">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-  </div>
-</template>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <VBadge
-      dot
-      bordered
-      color="success"
-      location="bottom end"
-      :offset-x="5"
-      :offset-y="1"
-    >
-      <VAvatar size="large">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <VBadge
-      dot
-      bordered
-      color="warning"
-      location="bottom end"
-      :offset-x="5"
-      :offset-y="1"
-    >
-      <VAvatar size="large">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <VBadge
-      dot
-      bordered
-      color="error"
-      location="bottom end"
-      :offset-x="5"
-      :offset-y="1"
-    >
-      <VAvatar size="large">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-  </div>
-</template>
-`,
-}
-export const color = {
-  ts: `<template>
-  <div class="demo-space-x">
-    <VBadge
-      dot
-      color="primary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="success"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="info"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="warning"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="error"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-x">
-    <VBadge
-      dot
-      color="primary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="success"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="info"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="warning"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-
-    <VBadge
-      dot
-      color="error"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-instagram"
-      />
-    </VBadge>
-  </div>
-</template>
-`,
-}
-export const tabs = {
-  ts: `<script setup lang="ts">
+export const tabs = { ts: `<script setup lang="ts">
 const tabs = [
   {
     badge: '3',
@@ -586,10 +665,7 @@ const tabs = [
 </script>
 
 <template>
-  <VTabs
-    grow
-    show-arrows
-  >
+  <VTabs grow>
     <VTab
       v-for="tab in tabs"
       :key="tab.content"
@@ -605,29 +681,25 @@ const tabs = [
     </VTab>
   </VTabs>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const tabs = [
   {
     badge: '3',
-    content: 'Item One'
+    content: 'Item One',
   },
   {
     badge: '1',
-    content: 'Item Two'
+    content: 'Item Two',
   },
   {
     badge: '2',
-    content: 'Item Three'
-  }
+    content: 'Item Three',
+  },
 ]
 </script>
 
 <template>
-  <VTabs
-    grow
-    show-arrows
-  >
+  <VTabs grow>
     <VTab
       v-for="tab in tabs"
       :key="tab.content"
@@ -643,104 +715,5 @@ const tabs = [
     </VTab>
   </VTabs>
 </template>
-`,
-}
-export const position = {
-  ts: `<script setup lang="ts">
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-</script>
+` }
 
-<template>
-  <div class="demo-space-x">
-    <!-- 👉 Top End -->
-    <VBadge
-      content="1"
-      location="end top"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- 👉 Bottom Start -->
-    <VBadge
-      location="bottom start"
-      content="2"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- 👉 Bottom End -->
-    <VBadge
-      location="bottom end"
-      content="3"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- 👉 top Start -->
-    <VBadge
-      location="top start"
-      content="4"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-  </div>
-</template>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-
-</script>
-
-<template>
-  <div class="demo-space-x">
-    <!-- 👉 Top End -->
-    <VBadge
-      content="1"
-      location="end top"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- 👉 Bottom Start -->
-    <VBadge
-      location="bottom start"
-      content="2"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- 👉 Bottom End -->
-    <VBadge
-      location="bottom end"
-      content="3"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-
-    <!-- 👉 top Start -->
-    <VBadge
-      location="top start"
-      content="4"
-    >
-      <VAvatar size="48">
-        <VImg :src="avatar1" />
-      </VAvatar>
-    </VBadge>
-  </div>
-</template>
-`,
-}

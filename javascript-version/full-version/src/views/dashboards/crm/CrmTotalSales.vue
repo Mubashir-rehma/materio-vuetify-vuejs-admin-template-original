@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -14,7 +15,7 @@ const options = controlledComputed(theme, () => {
   return {
     chart: {
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     fill: {
       type: 'gradient',
@@ -26,14 +27,14 @@ const options = controlledComputed(theme, () => {
         stops: [
           0,
           100,
-          100
-        ]
-      }
+          100,
+        ],
+      },
     },
     stroke: {
       width: 5,
       curve: 'smooth',
-      lineCap: 'round'
+      lineCap: 'round',
     },
     legend: { show: false },
     colors: [currentTheme.value.success],
@@ -42,8 +43,8 @@ const options = controlledComputed(theme, () => {
       padding: {
         left: 0,
         right: 0,
-        bottom: -10
-      }
+        bottom: -10,
+      },
     },
     xaxis: {
       axisTicks: { show: false },
@@ -54,14 +55,15 @@ const options = controlledComputed(theme, () => {
         'Mar',
         'Apr',
         'May',
-        'Jun'
+        'Jun',
       ],
-      labels: { style: { colors: disabledColor } }
+      labels: { style: { colors: disabledColor } },
     },
     yaxis: { labels: { show: false } },
-    tooltip: { enabled: false }
+    tooltip: { enabled: false },
   }
 })
+
 const series = [{
   name: 'Total Sales',
   data: [
@@ -70,8 +72,8 @@ const series = [{
     30,
     240,
     150,
-    400
-  ]
+    400,
+  ],
 }]
 </script>
 
@@ -82,7 +84,7 @@ const series = [{
         <p class="text-base font-weight-semibold mb-0">
           Total Sales
         </p>
-        <p class="text-body-1 mb-0">
+        <p class="text-xl mb-0">
           $21,845
         </p>
       </VCardTitle>

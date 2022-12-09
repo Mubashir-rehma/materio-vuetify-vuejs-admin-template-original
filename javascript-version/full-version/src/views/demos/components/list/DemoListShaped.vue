@@ -2,16 +2,16 @@
 const items = [
   {
     text: 'Cupcake sesame snaps dessert marzipan.',
-    icon: 'mdi-instagram'
+    icon: 'mdi-instagram',
   },
   {
     text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
-    icon: 'mdi-facebook'
+    icon: 'mdi-facebook',
   },
   {
     text: 'Bonbon macaroon gummies pie jelly',
-    icon: 'mdi-twitter'
-  }
+    icon: 'mdi-twitter',
+  },
 ]
 </script>
 

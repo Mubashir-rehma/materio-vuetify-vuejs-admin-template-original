@@ -1,5 +1,16 @@
-export const border = {
-  ts: `<template>
+export const basic = { ts: `<template>
+  <VAlert color="primary">
+    Good Morning! Start your day with some alerts.
+  </VAlert>
+</template>
+`, js: `<template>
+  <VAlert color="primary">
+    Good Morning! Start your day with some alerts.
+  </VAlert>
+</template>
+` }
+
+export const border = { ts: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -34,8 +45,7 @@ export const border = {
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -70,10 +80,59 @@ export const border = {
     </VAlert>
   </div>
 </template>
-`,
-}
-export const coloredBorder = {
-  ts: `<template>
+` }
+
+export const closable = { ts: `<script lang="ts" setup>
+const isAlertVisible = ref(true)
+</script>
+
+<template>
+  <VAlert
+    v-model="isAlertVisible"
+    closable
+    close-label="Close Alert"
+    color="primary"
+  >
+    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
+  </VAlert>
+
+  <!-- Button -->
+  <div class="text-center">
+    <VBtn
+      v-if="!isAlertVisible"
+      @click="isAlertVisible = true"
+    >
+      Reset
+    </VBtn>
+  </div>
+</template>
+`, js: `<script setup>
+const isAlertVisible = ref(true)
+</script>
+
+<template>
+  <VAlert
+    v-model="isAlertVisible"
+    closable
+    close-label="Close Alert"
+    color="primary"
+  >
+    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
+  </VAlert>
+
+  <!-- Button -->
+  <div class="text-center">
+    <VBtn
+      v-if="!isAlertVisible"
+      @click="isAlertVisible = true"
+    >
+      Reset
+    </VBtn>
+  </div>
+</template>
+` }
+
+export const coloredBorder = { ts: `<template>
   <div class="demo-space-y">
     <VAlert
       border="start"
@@ -115,8 +174,7 @@ export const coloredBorder = {
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
     <VAlert
       border="start"
@@ -158,10 +216,165 @@ export const coloredBorder = {
     </VAlert>
   </div>
 </template>
-`,
-}
-export const icons = {
-  ts: `<template>
+` }
+
+export const colors = { ts: `<template>
+  <div class="demo-space-y">
+    <VAlert color="primary">
+      I'm an alert with primary background color.
+    </VAlert>
+
+    <VAlert color="secondary">
+      I'm an alert with secondary background color.
+    </VAlert>
+
+    <VAlert color="success">
+      I'm an alert with success background color.
+    </VAlert>
+
+    <VAlert color="info">
+      I'm an alert with info background color.
+    </VAlert>
+
+    <VAlert color="warning">
+      I'm an alert with warning background color.
+    </VAlert>
+
+    <VAlert color="error">
+      I'm an alert with error background color.
+    </VAlert>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-y">
+    <VAlert color="primary">
+      I'm an alert with primary background color.
+    </VAlert>
+
+    <VAlert color="secondary">
+      I'm an alert with secondary background color.
+    </VAlert>
+
+    <VAlert color="success">
+      I'm an alert with success background color.
+    </VAlert>
+
+    <VAlert color="info">
+      I'm an alert with info background color.
+    </VAlert>
+
+    <VAlert color="warning">
+      I'm an alert with warning background color.
+    </VAlert>
+
+    <VAlert color="error">
+      I'm an alert with error background color.
+    </VAlert>
+  </div>
+</template>
+` }
+
+export const density = { ts: `<template>
+  <div class="demo-space-y">
+    <VAlert
+      density="compact"
+      color="primary"
+      variant="tonal"
+    >
+      I'm a compact alert with a <strong>color</strong> of primary.
+    </VAlert>
+
+    <VAlert
+      density="comfortable"
+      color="secondary"
+      variant="tonal"
+    >
+      I'm a comfortable alert with the <strong>variant</strong> prop and a <strong>color</strong> of secondary.
+    </VAlert>
+
+    <VAlert
+      density="default"
+      color="success"
+      variant="tonal"
+    >
+      I'm a default alert with the <strong>color</strong> of success.
+    </VAlert>
+  </div>
+</template>
+`, js: `<template>
+  <div class="demo-space-y">
+    <VAlert
+      density="compact"
+      color="primary"
+      variant="tonal"
+    >
+      I'm a compact alert with a <strong>color</strong> of primary.
+    </VAlert>
+
+    <VAlert
+      density="comfortable"
+      color="secondary"
+      variant="tonal"
+    >
+      I'm a comfortable alert with the <strong>variant</strong> prop and a <strong>color</strong> of secondary.
+    </VAlert>
+
+    <VAlert
+      density="default"
+      color="success"
+      variant="tonal"
+    >
+      I'm a default alert with the <strong>color</strong> of success.
+    </VAlert>
+  </div>
+</template>
+` }
+
+export const elevation = { ts: `<script lang="ts" setup>
+const alertShadow = ref(5)
+</script>
+
+<template>
+  <VSlider
+    v-model="alertShadow"
+    color="primary"
+    :max="24"
+    :min="0"
+    :step="1"
+    thumb-label
+  />
+
+  <VAlert
+    color="primary"
+    :elevation="alertShadow"
+  >
+    I'm an alert with box shadow.
+  </VAlert>
+</template>
+`, js: `<script setup>
+const alertShadow = ref(5)
+</script>
+
+<template>
+  <VSlider
+    v-model="alertShadow"
+    color="primary"
+    :max="24"
+    :min="0"
+    :step="1"
+    thumb-label
+  />
+
+  <VAlert
+    color="primary"
+    :elevation="alertShadow"
+  >
+    I'm an alert with box shadow.
+  </VAlert>
+</template>
+` }
+
+export const icons = { ts: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -185,8 +398,7 @@ export const icons = {
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -210,10 +422,9 @@ export const icons = {
     </VAlert>
   </div>
 </template>
-`,
-}
-export const outlined = {
-  ts: `<template>
+` }
+
+export const outlined = { ts: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="outlined"
@@ -258,8 +469,7 @@ export const outlined = {
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="outlined"
@@ -304,327 +514,67 @@ export const outlined = {
     </VAlert>
   </div>
 </template>
-`,
-}
-export const elevation = {
-  ts: `<script lang="ts" setup>
-const alertShadow = ref(5)
-</script>
+` }
 
-<template>
-  <VSlider
-    v-model="alertShadow"
-    color="primary"
-    :max="24"
-    :min="0"
-    :step="1"
-    thumb-label
-  />
-
-  <VAlert
-    color="primary"
-    :elevation="alertShadow"
-  >
-    I'm an alert with box shadow.
-  </VAlert>
-</template>
-`,
-  js: `<script setup>
-
-const alertShadow = ref(5)
-</script>
-
-<template>
-  <VSlider
-    v-model="alertShadow"
-    color="primary"
-    :max="24"
-    :min="0"
-    :step="1"
-    thumb-label
-  />
-
-  <VAlert
-    color="primary"
-    :elevation="alertShadow"
-  >
-    I'm an alert with box shadow.
-  </VAlert>
-</template>
-`,
-}
-export const type = {
-  ts: `<template>
-  <div class="demo-space-y">
-    <VAlert type="info">
-      I'm a alert with a <strong>type</strong> of info
-    </VAlert>
-
-    <VAlert type="success">
-      I'm a alert with a <strong>type</strong> of success
-    </VAlert>
-
-    <VAlert type="warning">
-      I'm a alert with a <strong>type</strong> of warning
-    </VAlert>
-
-    <VAlert type="error">
-      I'm a alert with a <strong>type</strong> of error
-    </VAlert>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-y">
-    <VAlert type="info">
-      I'm a alert with a <strong>type</strong> of info
-    </VAlert>
-
-    <VAlert type="success">
-      I'm a alert with a <strong>type</strong> of success
-    </VAlert>
-
-    <VAlert type="warning">
-      I'm a alert with a <strong>type</strong> of warning
-    </VAlert>
-
-    <VAlert type="error">
-      I'm a alert with a <strong>type</strong> of error
-    </VAlert>
-  </div>
-</template>
-`,
-}
-export const closable = {
-  ts: `<script lang="ts" setup>
-const isAlertVisible = ref(true)
-</script>
-
-<template>
-  <VAlert
-    v-model="isAlertVisible"
-    closable
-    close-label="Close Alert"
-    color="primary"
-  >
-    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
-  </VAlert>
-
-  <!-- Button -->
-  <div class="text-center">
-    <VBtn
-      v-if="!isAlertVisible"
-      @click="isAlertVisible = true"
-    >
-      Reset
-    </VBtn>
-  </div>
-</template>
-`,
-  js: `<script setup>
-
-const isAlertVisible = ref(true)
-</script>
-
-<template>
-  <VAlert
-    v-model="isAlertVisible"
-    closable
-    close-label="Close Alert"
-    color="primary"
-  >
-    Pudding wafer I love chocolate bar wafer chupa chups wafer. Cake gummies pudding gummies cake.
-  </VAlert>
-
-  <!-- Button -->
-  <div class="text-center">
-    <VBtn
-      v-if="!isAlertVisible"
-      @click="isAlertVisible = true"
-    >
-      Reset
-    </VBtn>
-  </div>
-</template>
-`,
-}
-export const vModelSupport = {
-  ts: `<script lang="ts" setup>
-const isAlertVisible = ref(true)
-</script>
-
-<template>
-  <div class="alert-demo-v-model-wrapper">
-    <VAlert
-      v-model="isAlertVisible"
-      color="warning"
-      variant="tonal"
-    >
-      non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
-    </VAlert>
-  </div>
-
-  <!-- button -->
-  <VBtn @click="isAlertVisible = !isAlertVisible">
-    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
-  </VBtn>
-</template>
-
-<style lang="scss">
-.alert-demo-v-model-wrapper {
-  margin-block-end: 1rem;
-  min-block-size: 65px;
-}
-</style>
-`,
-  js: `<script setup>
-
-const isAlertVisible = ref(true)
-</script>
-
-<template>
-  <div class="alert-demo-v-model-wrapper">
-    <VAlert
-      v-model="isAlertVisible"
-      color="warning"
-      variant="tonal"
-    >
-      non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
-    </VAlert>
-  </div>
-
-  <!-- button -->
-  <VBtn @click="isAlertVisible = !isAlertVisible">
-    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
-  </VBtn>
-</template>
-
-<style lang="scss">
-.alert-demo-v-model-wrapper {
-  margin-block-end: 1rem;
-  min-block-size: 65px;
-}
-</style>
-`,
-}
-export const colors = {
-  ts: `<template>
-  <div class="demo-space-y">
-    <VAlert color="primary">
-      I'm an alert with primary background color.
-    </VAlert>
-
-    <VAlert color="secondary">
-      I'm an alert with secondary background color.
-    </VAlert>
-
-    <VAlert color="success">
-      I'm an alert with success background color.
-    </VAlert>
-
-    <VAlert color="info">
-      I'm an alert with info background color.
-    </VAlert>
-
-    <VAlert color="warning">
-      I'm an alert with warning background color.
-    </VAlert>
-
-    <VAlert color="error">
-      I'm an alert with error background color.
-    </VAlert>
-  </div>
-</template>
-`,
-  js: `<template>
-  <div class="demo-space-y">
-    <VAlert color="primary">
-      I'm an alert with primary background color.
-    </VAlert>
-
-    <VAlert color="secondary">
-      I'm an alert with secondary background color.
-    </VAlert>
-
-    <VAlert color="success">
-      I'm an alert with success background color.
-    </VAlert>
-
-    <VAlert color="info">
-      I'm an alert with info background color.
-    </VAlert>
-
-    <VAlert color="warning">
-      I'm an alert with warning background color.
-    </VAlert>
-
-    <VAlert color="error">
-      I'm an alert with error background color.
-    </VAlert>
-  </div>
-</template>
-`,
-}
-export const density = {
-  ts: `<template>
+export const prominent = { ts: `<template>
   <div class="demo-space-y">
     <VAlert
-      density="compact"
-      color="primary"
-      variant="tonal"
+      prominent
+      type="info"
     >
-      I'm a compact alert with a <strong>color</strong> of primary.
+      <template #text>
+        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
+      </template>
     </VAlert>
 
     <VAlert
-      density="comfortable"
-      color="secondary"
-      variant="tonal"
-    >
-      I'm a comfortable alert with the <strong>variant</strong> prop and a <strong>color</strong> of secondary.
-    </VAlert>
-
-    <VAlert
-      density="default"
       color="success"
-      variant="tonal"
+      icon="mdi-school"
+      prominent
     >
-      I'm a default alert with the <strong>color</strong> of success.
+      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+    </VAlert>
+
+    <VAlert
+      icon="mdi-shield-lock-outline"
+      prominent
+      type="warning"
+    >
+      Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
     <VAlert
-      density="compact"
-      color="primary"
-      variant="tonal"
+      prominent
+      type="info"
     >
-      I'm a compact alert with a <strong>color</strong> of primary.
+      <template #text>
+        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
+      </template>
     </VAlert>
 
     <VAlert
-      density="comfortable"
-      color="secondary"
-      variant="tonal"
-    >
-      I'm a comfortable alert with the <strong>variant</strong> prop and a <strong>color</strong> of secondary.
-    </VAlert>
-
-    <VAlert
-      density="default"
       color="success"
-      variant="tonal"
+      icon="mdi-school"
+      prominent
     >
-      I'm a default alert with the <strong>color</strong> of success.
+      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+    </VAlert>
+
+    <VAlert
+      icon="mdi-shield-lock-outline"
+      prominent
+      type="warning"
+    >
+      Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
     </VAlert>
   </div>
 </template>
-`,
-}
-export const tonal = {
-  ts: `<template>
+` }
+
+export const tonal = { ts: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="tonal"
@@ -669,8 +619,7 @@ export const tonal = {
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="tonal"
@@ -715,79 +664,101 @@ export const tonal = {
     </VAlert>
   </div>
 </template>
-`,
-}
-export const basic = {
-  ts: `<template>
-  <VAlert color="primary">
-    Good Morning! Start your day with some alerts.
-  </VAlert>
-</template>
-`,
-  js: `<template>
-  <VAlert color="primary">
-    Good Morning! Start your day with some alerts.
-  </VAlert>
-</template>
-`,
-}
-export const prominent = {
-  ts: `<template>
+` }
+
+export const type = { ts: `<template>
   <div class="demo-space-y">
-    <VAlert
-      prominent
-      type="info"
-    >
-      <template #text>
-        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
-      </template>
+    <VAlert type="info">
+      I'm a alert with a <strong>type</strong> of info
     </VAlert>
 
-    <VAlert
-      color="success"
-      icon="mdi-school"
-      prominent
-    >
-      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+    <VAlert type="success">
+      I'm a alert with a <strong>type</strong> of success
     </VAlert>
 
-    <VAlert
-      icon="mdi-shield-lock-outline"
-      prominent
-      type="warning"
-    >
-      Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
+    <VAlert type="warning">
+      I'm a alert with a <strong>type</strong> of warning
+    </VAlert>
+
+    <VAlert type="error">
+      I'm a alert with a <strong>type</strong> of error
     </VAlert>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-y">
-    <VAlert
-      prominent
-      type="info"
-    >
-      <template #text>
-        Macaroon I love tiramisu I love wafer apple pie jelly beans shortbread.
-      </template>
+    <VAlert type="info">
+      I'm a alert with a <strong>type</strong> of info
     </VAlert>
 
-    <VAlert
-      color="success"
-      icon="mdi-school"
-      prominent
-    >
-      Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
+    <VAlert type="success">
+      I'm a alert with a <strong>type</strong> of success
     </VAlert>
 
-    <VAlert
-      icon="mdi-shield-lock-outline"
-      prominent
-      type="warning"
-    >
-      Ice cream candy I love wafer bonbon gingerbread candy canes tiramisu.
+    <VAlert type="warning">
+      I'm a alert with a <strong>type</strong> of warning
+    </VAlert>
+
+    <VAlert type="error">
+      I'm a alert with a <strong>type</strong> of error
     </VAlert>
   </div>
 </template>
-`,
+` }
+
+export const vModelSupport = { ts: `<script lang="ts" setup>
+const isAlertVisible = ref(true)
+</script>
+
+<template>
+  <div class="alert-demo-v-model-wrapper">
+    <VAlert
+      v-model="isAlertVisible"
+      color="warning"
+      variant="tonal"
+    >
+      non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+    </VAlert>
+  </div>
+
+  <!-- button -->
+  <VBtn @click="isAlertVisible = !isAlertVisible">
+    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
+  </VBtn>
+</template>
+
+<style lang="scss">
+.alert-demo-v-model-wrapper {
+  margin-block-end: 1rem;
+  min-block-size: 65px;
 }
+</style>
+`, js: `<script setup>
+const isAlertVisible = ref(true)
+</script>
+
+<template>
+  <div class="alert-demo-v-model-wrapper">
+    <VAlert
+      v-model="isAlertVisible"
+      color="warning"
+      variant="tonal"
+    >
+      non adipiscing dolor urna a orci. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur blandit mollis lacus. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+    </VAlert>
+  </div>
+
+  <!-- button -->
+  <VBtn @click="isAlertVisible = !isAlertVisible">
+    {{ isAlertVisible ? "Hide Alert" : "Show Alert" }}
+  </VBtn>
+</template>
+
+<style lang="scss">
+.alert-demo-v-model-wrapper {
+  margin-block-end: 1rem;
+  min-block-size: 65px;
+}
+</style>
+` }
+

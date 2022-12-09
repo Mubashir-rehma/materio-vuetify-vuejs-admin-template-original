@@ -2,33 +2,33 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VForm } from 'vuetify/components'
 import { useCalendarStore } from './useCalendarStore'
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-import avatar6 from '@/assets/images/avatars/avatar-6.png'
-import avatar7 from '@/assets/images/avatars/avatar-7.png'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
 import {
   requiredValidator,
-  urlValidator
+  urlValidator,
 } from '@validators'
 
 const props = defineProps({
   isDrawerOpen: {
     type: Boolean,
-    required: true
+    required: true,
   },
   event: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits([
   'update:isDrawerOpen',
   'addEvent',
   'updateEvent',
-  'removeEvent'
+  'removeEvent',
 ])
 
 const store = useCalendarStore()
@@ -36,21 +36,25 @@ const refForm = ref()
 
 // 👉 Event
 const event = ref(JSON.parse(JSON.stringify(props.event)))
+
 const resetEvent = () => {
   event.value = JSON.parse(JSON.stringify(props.event))
   nextTick(() => {
     refForm.value?.resetValidation()
   })
 }
+
 watch(() => props.isDrawerOpen, resetEvent)
+
 const removeEvent = () => {
   emit('removeEvent', event.value.id)
 
   // Close drawer
   emit('update:isDrawerOpen', false)
 }
+
 const handleSubmit = () => {
-  refForm.value?.validate().then(({valid}) => {
+  refForm.value?.validate().then(({ valid }) => {
     if (valid) {
 
       // If id exist on id => Update event
@@ -66,36 +70,33 @@ const handleSubmit = () => {
     }
   })
 }
+
 const guestsOptions = [
   {
     avatar: avatar1,
-    name: 'Jane Foster'
+    name: 'Jane Foster',
   },
   {
     avatar: avatar3,
-    name: 'Donna Frank'
+    name: 'Donna Frank',
   },
   {
     avatar: avatar5,
-    name: 'Gabrielle Robertson'
+    name: 'Gabrielle Robertson',
   },
   {
     avatar: avatar7,
-    name: 'Lori Spears'
+    name: 'Lori Spears',
   },
   {
     avatar: avatar6,
-    name: 'Sandy Vega'
+    name: 'Sandy Vega',
   },
   {
     avatar: avatar2,
-    name: 'Cheryl May'
-  }
+    name: 'Cheryl May',
+  },
 ]
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false
-}
 
 // 👉 Form
 const onCancel = () => {
@@ -108,21 +109,25 @@ const onCancel = () => {
     refForm.value?.resetValidation()
   })
 }
+
 const startDateTimePickerConfig = computed(() => {
   const config = {
     enableTime: true,
-    dateFormat: 'Y-m-d H:i'
+    dateFormat: 'Y-m-d H:i',
   }
+
   if (event.value.end)
     config.maxDate = event.value.end
   
   return config
 })
+
 const endDateTimePickerConfig = computed(() => {
   const config = {
     enableTime: true,
-    dateFormat: 'Y-m-d H:i'
+    dateFormat: 'Y-m-d H:i',
   }
+
   if (event.value.start)
     config.minDate = event.value.start
   
@@ -166,9 +171,7 @@ const endDateTimePickerConfig = computed(() => {
       </VBTn>
     </div>
 
-    <PerfectScrollbar
-      :options="perfectScrollbarSettings"
-    >
+    <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
           <!-- SECTION Form -->

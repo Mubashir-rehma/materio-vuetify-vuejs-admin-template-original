@@ -4,28 +4,29 @@ const files = [
     color: 'blue',
     icon: 'mdi-clipboard-text',
     subtitle: 'Jan 20, 2014',
-    title: 'Vacation itinerary'
+    title: 'Vacation itinerary',
   },
   {
     color: 'amber',
     icon: 'mdi-gesture-tap-button',
     subtitle: 'Jan 10, 2014',
-    title: 'Kitchen remodel'
-  }
+    title: 'Kitchen remodel',
+  },
 ]
+
 const folders = [
   {
     subtitle: 'Jan 9, 2014',
-    title: 'Photos'
+    title: 'Photos',
   },
   {
     subtitle: 'Jan 17, 2014',
-    title: 'Recipes'
+    title: 'Recipes',
   },
   {
     subtitle: 'Jan 28, 2014',
-    title: 'Work'
-  }
+    title: 'Work',
+  },
 ]
 </script>
 

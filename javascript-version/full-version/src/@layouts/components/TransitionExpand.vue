@@ -2,16 +2,20 @@
 
 <script>
 import { Transition } from 'vue'
+
 export default defineComponent({
   name: 'TransitionExpand',
   setup(_, { slots }) {
     const onEnter = element => {
       const width = getComputedStyle(element).width
+
       element.style.width = width
       element.style.position = 'absolute'
       element.style.visibility = 'hidden'
       element.style.height = 'auto'
+
       const height = getComputedStyle(element).height
+
       element.style.width = ''
       element.style.position = ''
       element.style.visibility = ''
@@ -31,11 +35,14 @@ export default defineComponent({
         element.style.height = height
       })
     }
+
     const onAfterEnter = element => {
       element.style.height = 'auto'
     }
+
     const onLeave = element => {
       const height = getComputedStyle(element).height
+
       element.style.height = height
 
       // Force repaint to make sure the
@@ -46,7 +53,7 @@ export default defineComponent({
         element.style.height = '0px'
       })
     }
-    
+
     return () => h(h(Transition), {
       name: 'expand',
       onEnter,

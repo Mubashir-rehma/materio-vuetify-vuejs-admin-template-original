@@ -1,19 +1,20 @@
 <script setup>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import {
   emailValidator,
-  requiredValidator
+  requiredValidator,
 } from '@validators'
 
 const props = defineProps({
   isDrawerOpen: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits([
   'update:isDrawerOpen',
-  'userData'
+  'userData',
 ])
 
 const isFormValid = ref(false)
@@ -36,8 +37,9 @@ const closeNavigationDrawer = () => {
     refForm.value?.resetValidation()
   })
 }
+
 const onSubmit = () => {
-  refForm.value?.validate().then(({valid}) => {
+  refForm.value?.validate().then(({ valid }) => {
     if (valid) {
       emit('userData', {
         id: 0,
@@ -50,7 +52,7 @@ const onSubmit = () => {
         email: email.value,
         currentPlan: plan.value,
         status: status.value,
-        avatar: ''
+        avatar: '',
       })
       emit('update:isDrawerOpen', false)
       nextTick(() => {
@@ -60,6 +62,10 @@ const onSubmit = () => {
     }
   })
 }
+
+const handleDrawerModelValueUpdate = val => {
+  emit('update:isDrawerOpen', val)
+}
 </script>
 
 <template>
@@ -67,144 +73,143 @@ const onSubmit = () => {
     temporary
     :width="400"
     location="end"
+    class="scrollable-content"
     :model-value="props.isDrawerOpen"
-    @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
+    @update:model-value="handleDrawerModelValueUpdate"
   >
-    <VCard flat>
-      <!-- 👉 Title -->
-      <VCardTitle class="d-flex align-center bg-var-theme-background py-3">
-        <span>Add User</span>
+    <!-- 👉 Title -->
+    <div class="d-flex align-center bg-var-theme-background px-5 py-2">
+      <h6 class="text-h6">
+        Add User
+      </h6>
 
-        <VSpacer />
+      <VSpacer />
 
-        <!-- 👉 Close btn -->
-        <VBtn
-          variant="text"
-          size="x-small"
-          color="default"
-          icon
-          @click="closeNavigationDrawer"
-        >
-          <VIcon
-            size="20"
-            icon="mdi-close"
-          />
-        </VBtn>
-      </VCardTitle>
+      <VBtn
+        size="small"
+        color="secondary"
+        variant="text"
+        icon="mdi-close"
+        @click="closeNavigationDrawer"
+      />
+    </div>
 
-      <VCardText class="pt-5">
-        <!-- 👉 Form -->
-        <VForm
-          ref="refForm"
-          v-model="isFormValid"
-          @submit.prevent="onSubmit"
-        >
-          <VRow>
-            <!-- 👉 Full name -->
-            <VCol cols="12">
-              <VTextField
-                v-model="fullName"
-                :rules="[requiredValidator]"
-                label="Full Name"
-              />
-            </VCol>
+    <PerfectScrollbar :options="{ wheelPropagation: false }">
+      <VCard flat>
+        <VCardText>
+          <!-- 👉 Form -->
+          <VForm
+            ref="refForm"
+            v-model="isFormValid"
+            @submit.prevent="onSubmit"
+          >
+            <VRow>
+              <!-- 👉 Full name -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="fullName"
+                  :rules="[requiredValidator]"
+                  label="Full Name"
+                />
+              </VCol>
 
-            <!-- 👉 Username -->
-            <VCol cols="12">
-              <VTextField
-                v-model="userName"
-                :rules="[requiredValidator]"
-                label="Username"
-              />
-            </VCol>
+              <!-- 👉 Username -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="userName"
+                  :rules="[requiredValidator]"
+                  label="Username"
+                />
+              </VCol>
 
-            <!-- 👉 Email -->
-            <VCol cols="12">
-              <VTextField
-                v-model="email"
-                :rules="[requiredValidator, emailValidator]"
-                label="Email"
-              />
-            </VCol>
+              <!-- 👉 Email -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="email"
+                  :rules="[requiredValidator, emailValidator]"
+                  label="Email"
+                />
+              </VCol>
 
-            <!-- 👉 company -->
-            <VCol cols="12">
-              <VTextField
-                v-model="company"
-                :rules="[requiredValidator]"
-                label="Company"
-              />
-            </VCol>
+              <!-- 👉 company -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="company"
+                  :rules="[requiredValidator]"
+                  label="Company"
+                />
+              </VCol>
 
-            <!-- 👉 Country -->
-            <VCol cols="12">
-              <VTextField
-                v-model="country"
-                :rules="[requiredValidator]"
-                label="Country"
-              />
-            </VCol>
+              <!-- 👉 Country -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="country"
+                  :rules="[requiredValidator]"
+                  label="Country"
+                />
+              </VCol>
 
-            <!-- 👉 Contact -->
-            <VCol cols="12">
-              <VTextField
-                v-model="contact"
-                type="number"
-                :rules="[requiredValidator]"
-                label="Contact"
-              />
-            </VCol>
+              <!-- 👉 Contact -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="contact"
+                  type="number"
+                  :rules="[requiredValidator]"
+                  label="Contact"
+                />
+              </VCol>
 
-            <!-- 👉 Role -->
-            <VCol cols="12">
-              <VSelect
-                v-model="role"
-                label="Select Role"
-                :rules="[requiredValidator]"
-                :items="['Admin', 'Author', 'Editor', 'Maintainer', 'Subscriber']"
-              />
-            </VCol>
+              <!-- 👉 Role -->
+              <VCol cols="12">
+                <VSelect
+                  v-model="role"
+                  label="Select Role"
+                  :rules="[requiredValidator]"
+                  :items="['Admin', 'Author', 'Editor', 'Maintainer', 'Subscriber']"
+                />
+              </VCol>
 
-            <!-- 👉 Plan -->
-            <VCol cols="12">
-              <VSelect
-                v-model="plan"
-                label="Select Plan"
-                :rules="[requiredValidator]"
-                :items="['Basic', 'Company', 'Enterprise', 'Team']"
-              />
-            </VCol>
+              <!-- 👉 Plan -->
+              <VCol cols="12">
+                <VSelect
+                  v-model="plan"
+                  label="Select Plan"
+                  :rules="[requiredValidator]"
+                  :items="['Basic', 'Company', 'Enterprise', 'Team']"
+                />
+              </VCol>
 
-            <!-- 👉 Status -->
-            <VCol cols="12">
-              <VSelect
-                v-model="status"
-                label="Select Status"
-                :rules="[requiredValidator]"
-                :items="[{ title: 'Active', value: 'active' }, { title: 'Inactive', value: 'inactive' }, { title: 'Pending', value: 'pending' }]"
-              />
-            </VCol>
+              <!-- 👉 Status -->
+              <VCol cols="12">
+                <VSelect
+                  v-model="status"
+                  label="Select Status"
+                  :rules="[requiredValidator]"
+                  :items="[{ title: 'Active', value: 'active' }, { title: 'Inactive', value: 'inactive' }, { title: 'Pending', value: 'pending' }]"
+                />
+              </VCol>
 
-            <!-- 👉 Submit and Cancel -->
-            <VCol cols="12">
-              <VBtn
-                type="submit"
-                class="me-3"
-              >
-                Submit
-              </VBtn>
-              <VBtn
-                type="reset"
-                variant="tonal"
-                color="secondary"
-                @click="closeNavigationDrawer"
-              >
-                Cancel
-              </VBtn>
-            </VCol>
-          </VRow>
-        </VForm>
-      </VCardText>
-    </VCard>
+              <!-- 👉 Submit and Cancel -->
+              <VCol cols="12">
+                <VBtn
+                  type="submit"
+                  class="me-3"
+                >
+                  Submit
+                </VBtn>
+                <VBtn
+                  type="reset"
+                  variant="tonal"
+                  color="secondary"
+                  @click="closeNavigationDrawer"
+                >
+                  Cancel
+                </VBtn>
+              </VCol>
+            </VRow>
+          </VForm>
+        </VCardText>
+      </VCard>
+    </PerfectScrollbar>
   </VNavigationDrawer>
 </template>

@@ -1,39 +1,40 @@
 <script setup>
-import sittingGirlWithLaptopDark from '@/assets/images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlWithLaptopLight from '@/assets/images/illustrations/sitting-girl-with-laptop-light.png'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
+import poseFs9 from '@images/pages/pose-fs-9.png'
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
-const currentPassword = ref('12345678')
-const newPassword = ref('87654321')
-const confirmPassword = ref('87654321')
+const currentPassword = ref('')
+const newPassword = ref('')
+const confirmPassword = ref('')
+
 const passwordRequirements = [
   'Minimum 8 characters long - the more, the better',
   'At least one lowercase character',
-  'At least one number, symbol, or whitespace character'
+  'At least one number, symbol, or whitespace character',
 ]
+
 const serverKeys = [
   {
     name: 'Server Key 1',
     key: '23eaf7f0-f4f7-495e-8b86-fad3261282ac',
     createdOn: '28 Apr 2021, 18:20 GTM+4:10',
-    permission: 'Full Access'
+    permission: 'Full Access',
   },
   {
     name: 'Server Key 2',
     key: 'bb98e571-a2e2-4de8-90a9-2e231b5e99',
     createdOn: '12 Feb 2021, 10:30 GTM+2:30',
-    permission: 'Read Only'
+    permission: 'Read Only',
   },
   {
     name: 'Server Key 3',
     key: '2e915e59-3105-47f2-8838-6e46bf83b711',
     createdOn: '28 Dec 2020, 12:21 GTM+4:10',
-    permission: 'Full Access'
-  }
+    permission: 'Full Access',
+  },
 ]
+
 const recentDevices = [
   {
     browser: 'Chrome on Windows',
@@ -42,8 +43,8 @@ const recentDevices = [
     recentActivity: '28 Apr 2022, 18:20',
     deviceIcon: {
       icon: 'mdi-microsoft-windows',
-      color: 'primary'
-    }
+      color: 'info',
+    },
   },
   {
     browser: 'Chrome on iPhone',
@@ -52,8 +53,8 @@ const recentDevices = [
     recentActivity: '20 Apr 2022, 10:20',
     deviceIcon: {
       icon: 'mdi-cellphone',
-      color: 'error'
-    }
+      color: 'error',
+    },
   },
   {
     browser: 'Chrome on Android',
@@ -62,8 +63,8 @@ const recentDevices = [
     recentActivity: '16 Apr 2022, 04:20',
     deviceIcon: {
       icon: 'mdi-android',
-      color: 'success'
-    }
+      color: 'success',
+    },
   },
   {
     browser: 'Chrome on MacOS',
@@ -72,8 +73,8 @@ const recentDevices = [
     recentActivity: '28 Apr 2022, 18:20',
     deviceIcon: {
       icon: 'mdi-apple',
-      color: 'secondary'
-    }
+      color: 'secondary',
+    },
   },
   {
     browser: 'Chrome on Windows',
@@ -82,8 +83,8 @@ const recentDevices = [
     recentActivity: '20 Apr 2022, 10:20',
     deviceIcon: {
       icon: 'mdi-microsoft-windows',
-      color: 'primary'
-    }
+      color: 'info',
+    },
   },
   {
     browser: 'Chrome on Android',
@@ -92,13 +93,11 @@ const recentDevices = [
     recentActivity: '16 Apr 2022, 04:20',
     deviceIcon: {
       icon: 'mdi-android',
-      color: 'success'
-    }
-  }
+      color: 'success',
+    },
+  },
 ]
 
-// 👉 Change the image as per theme change
-const sittingGirlImg = useGenerateImageVariant(sittingGirlWithLaptopLight, sittingGirlWithLaptopDark)
 const isOneTimePasswordDialogVisible = ref(false)
 </script>
 
@@ -108,7 +107,7 @@ const isOneTimePasswordDialogVisible = ref(false)
     <VCol cols="12">
       <VCard title="Change Password">
         <VForm>
-          <VCardText>
+          <VCardText class="pt-0">
             <!-- 👉 Current Password -->
             <VRow class="mb-3">
               <VCol
@@ -160,7 +159,7 @@ const isOneTimePasswordDialogVisible = ref(false)
 
           <!-- 👉 Password Requirements -->
           <VCardText>
-            <p class="text-base font-weight-medium mt-2">
+            <p class="text-base mt-2">
               Password Requirements:
             </p>
 
@@ -177,7 +176,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                     class="me-3"
                   />
                 </div>
-                <span class="font-weight-medium">{{ item }}</span>
+                <span class="text-base">{{ item }}</span>
               </li>
             </ul>
           </VCardText>
@@ -202,8 +201,8 @@ const isOneTimePasswordDialogVisible = ref(false)
     <!-- SECTION Two-steps verification -->
     <VCol cols="12">
       <VCard title="Two-steps verification">
-        <VCardText>
-          <p class="font-weight-semibold">
+        <VCardText class="text-base">
+          <p>
             Two factor authentication is not enabled yet.
           </p>
           <p>
@@ -215,7 +214,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           </p>
 
           <VBtn @click="isOneTimePasswordDialogVisible = true">
-            Enable two-factor authentication
+            Enable two-FA
           </VBtn>
         </VCardText>
       </VCard>
@@ -272,8 +271,8 @@ const isOneTimePasswordDialogVisible = ref(false)
             class="d-flex flex-column justify-center align-center"
           >
             <VImg
-              :src="sittingGirlImg"
-              :width="310"
+              :src="poseFs9"
+              :width="180"
               :style="$vuetify.display.smAndDown ? '' : 'position: absolute; bottom: 0;'"
             />
           </VCol>
@@ -301,7 +300,6 @@ const isOneTimePasswordDialogVisible = ref(false)
                 {{ serverKey.name }}
               </h6>
               <VChip
-                label
                 color="primary"
                 size="small"
               >
@@ -316,7 +314,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 class="cursor-pointer"
               />
             </p>
-            <span>Created on {{ serverKey.createdOn }}</span>
+            <span class="text-disabled">Created on {{ serverKey.createdOn }}</span>
           </div>
         </VCardText>
       </VCard>
@@ -357,9 +355,15 @@ const isOneTimePasswordDialogVisible = ref(false)
                 />
                 {{ device.browser }}
               </td>
-              <td>{{ device.device }}</td>
-              <td>{{ device.location }}</td>
-              <td>{{ device.recentActivity }}</td>
+              <td class="text-medium-emphasis">
+                {{ device.device }}
+              </td>
+              <td class="text-medium-emphasis">
+                {{ device.location }}
+              </td>
+              <td class="text-medium-emphasis">
+                {{ device.recentActivity }}
+              </td>
             </tr>
           </tbody>
         </VTable>

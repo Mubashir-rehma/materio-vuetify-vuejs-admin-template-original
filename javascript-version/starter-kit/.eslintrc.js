@@ -9,6 +9,8 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
+
+    // 'plugin:unicorn/recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -18,13 +20,19 @@ module.exports = {
   plugins: [
     'vue',
   ],
-  ignorePatterns: ['src/@iconify/*.js'],
+  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
-    // indentation
+    // indentation (Already present in TypeScript)
     'indent': ['error', 2],
+
+    // Enforce trailing comma (Already present in TypeScript)
+    'comma-dangle': ['error', 'always-multiline'],
+
+    // Enforce consistent spacing inside braces of object (Already present in TypeScript)
+    'object-curly-spacing': ['error', 'always'],
 
     // Disable max-len
     'max-len': 'off',
@@ -56,8 +64,17 @@ module.exports = {
 
     'vue/multi-word-component-names': 'off',
 
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'expression', next: 'const' },
+      { blankLine: 'always', prev: 'const', next: 'expression' },
+      { blankLine: 'always', prev: 'multiline-const', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'multiline-const' },
+    ],
+
     // Plugin: eslint-plugin-import
     'import/prefer-default-export': 'off',
+    'import/newline-after-import': ['error', { count: 1 }],
 
     // Plugin: eslint-plugin-import
     // For omitting extension for ts files
@@ -77,6 +94,9 @@ module.exports = {
       ignore: [
         '~pages$',
         'virtual:generated-layouts',
+
+        // Ignore vite's ?raw imports
+        '.*\?raw',
       ],
     }],
 
@@ -116,6 +136,7 @@ module.exports = {
     'vue/prefer-separate-static-class': 'error',
     'vue/prefer-true-attribute-shorthand': 'error',
     'vue/v-on-function-call': 'error',
+    'vue/no-restricted-class': ['error', '/^(p|m)(l|r)-/'],
 
     // -- Extension Rules
     'vue/no-irregular-whitespace': 'error',
@@ -123,12 +144,21 @@ module.exports = {
 
     // -- Sonarlint
     'sonarjs/no-duplicate-string': 'off',
+    'sonarjs/no-nested-template-literals': 'off',
+
+    // -- Unicorn
+    // 'unicorn/filename-case': 'off',
+    // 'unicorn/prevent-abbreviations': ['error', {
+    //   replacements: {
+    //     props: false,
+    //   },
+    // }],
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs'],
-      },alias: {'extensions': ['.ts', '.js', '.tsx', '.jsx', '.mjs'], 'map': [['@', './src'], ['@themeConfig', './themeConfig.js'], ['@core', './src/@core'], ['@layouts', './src/@layouts'], ['@configured-variables', './src/styles/variables/_template.scss'], ['@axios', './src/plugins/axios'], ['@validators', './src/@core/utils/validators'], ['apexcharts', 'node_modules/apexcharts-clevision']]}
+        extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs', '.png', '.jpg'],
+      },alias: { 'extensions': ['.ts', '.js', '.tsx', '.jsx', '.mjs'], 'map': [["@","./src"],["@themeConfig","./themeConfig.js"],["@core","./src/@core"],["@layouts","./src/@layouts"],["@images","./src/assets/images/"],["@styles","./src/styles/"],["@configured-variables","./src/styles/variables/_template.scss"],["@axios","./src/plugins/axios"],["@validators","./src/@core/utils/validators"],["apexcharts","node_modules/apexcharts-clevision"]] },
     },
   },
 }

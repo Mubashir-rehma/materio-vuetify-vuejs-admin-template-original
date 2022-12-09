@@ -3,20 +3,21 @@ import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import authV2RegisterIllustrationBorderedDark from '@/assets/images/pages/auth-v2-register-illustration-bordered-dark.png'
-import authV2RegisterIllustrationBorderedLight from '@/assets/images/pages/auth-v2-register-illustration-bordered-light.png'
-import authV2RegisterIllustrationDark from '@/assets/images/pages/auth-v2-register-illustration-dark.png'
-import authV2RegisterIllustrationLight from '@/assets/images/pages/auth-v2-register-illustration-light.png'
-import tree2 from '@/assets/images/pages/tree-2.png'
+import authV2MaskDark from '@images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@images/pages/auth-v2-mask-light.png'
+import authV2RegisterIllustrationBorderedDark from '@images/pages/auth-v2-register-illustration-bordered-dark.png'
+import authV2RegisterIllustrationBorderedLight from '@images/pages/auth-v2-register-illustration-bordered-light.png'
+import authV2RegisterIllustrationDark from '@images/pages/auth-v2-register-illustration-dark.png'
+import authV2RegisterIllustrationLight from '@images/pages/auth-v2-register-illustration-light.png'
+import tree2 from '@images/pages/tree-2.png'
 
 const form = ref({
   username: '',
   email: '',
   password: '',
-  privacyPolicies: false
+  privacyPolicies: false,
 })
+
 const imageVariant = useGenerateImageVariant(authV2RegisterIllustrationLight, authV2RegisterIllustrationDark, authV2RegisterIllustrationBorderedLight, authV2RegisterIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const isPasswordVisible = ref(false)
@@ -66,7 +67,7 @@ const isPasswordVisible = ref(false)
       <VCol
         cols="12"
         md="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -178,7 +179,7 @@ const isPasswordVisible = ref(false)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

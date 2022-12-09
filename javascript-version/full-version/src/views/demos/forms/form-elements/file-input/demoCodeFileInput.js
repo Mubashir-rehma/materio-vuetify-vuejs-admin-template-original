@@ -1,118 +1,72 @@
-export const accept = {
-  ts: `<template>
+export const accept = { ts: `<template>
   <VFileInput
     accept="image/*"
     label="File input"
   />
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VFileInput
     accept="image/*"
     label="File input"
   />
 </template>
-`,
-}
-export const density = {
-  ts: `<template>
+` }
+
+export const basic = { ts: `<template>
+  <VFileInput label="File input" />
+</template>
+`, js: `<template>
+  <VFileInput label="File input" />
+</template>
+` }
+
+export const chips = { ts: `<template>
+  <VFileInput
+    chips
+    label="File input w/ chips"
+  />
+</template>
+`, js: `<template>
+  <VFileInput
+    chips
+    label="File input w/ chips"
+  />
+</template>
+` }
+
+export const counter = { ts: `<template>
+  <VFileInput
+    show-size
+    counter
+    multiple
+    label="File input"
+  />
+</template>
+`, js: `<template>
+  <VFileInput
+    show-size
+    counter
+    multiple
+    label="File input"
+  />
+</template>
+` }
+
+export const density = { ts: `<template>
   <VFileInput
     label="File input"
     density="compact"
   />
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VFileInput
     label="File input"
     density="compact"
   />
 </template>
-`,
-}
-export const validation = {
-  ts: `<script lang="ts" setup>
-const rules = [
-  (fileList: FileList) => !fileList || !fileList.length || fileList[0].size < 1000000 || 'Avatar size should be less than 1 MB!',
-]
-</script>
+` }
 
-<template>
-  <VFileInput
-    :rules="rules"
-    label="Avatar"
-    accept="image/png, image/jpeg, image/bmp"
-    placeholder="Pick an avatar"
-    prepend-icon="mdi-camera-outline"
-  />
-</template>
-`,
-  js: `<script setup>
-
-const rules = [fileList => !fileList || !fileList.length || fileList[0].size < 1000000 || 'Avatar size should be less than 1 MB!']
-</script>
-
-<template>
-  <VFileInput
-    :rules="rules"
-    label="Avatar"
-    accept="image/png, image/jpeg, image/bmp"
-    placeholder="Pick an avatar"
-    prepend-icon="mdi-camera-outline"
-  />
-</template>
-`,
-}
-export const prependIcon = {
-  ts: `<template>
-  <VFileInput
-    label="File input"
-    prepend-icon="mdi-camera-outline"
-  />
-</template>
-`,
-  js: `<template>
-  <VFileInput
-    label="File input"
-    prepend-icon="mdi-camera-outline"
-  />
-</template>
-`,
-}
-export const multiple = {
-  ts: `<template>
-  <VFileInput
-    multiple
-    label="File input"
-  />
-</template>
-`,
-  js: `<template>
-  <VFileInput
-    multiple
-    label="File input"
-  />
-</template>
-`,
-}
-export const showSize = {
-  ts: `<template>
-  <VFileInput
-    show-size
-    label="File input"
-  />
-</template>
-`,
-  js: `<template>
-  <VFileInput
-    show-size
-    label="File input"
-  />
-</template>
-`,
-}
-export const loading = {
-  ts: `<script setup lang="ts">
+export const loading = { ts: `<script setup lang="ts">
 const file = ref()
 const loading = ref(true)
 
@@ -129,10 +83,10 @@ watch(file, () => {
     label="File input"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const file = ref()
 const loading = ref(true)
+
 watch(file, () => {
   loading.value = !file.value[0]
 })
@@ -146,20 +100,37 @@ watch(file, () => {
     label="File input"
   />
 </template>
-`,
-}
-export const basic = {
-  ts: `<template>
-  <VFileInput label="File input" />
+` }
+
+export const multiple = { ts: `<template>
+  <VFileInput
+    multiple
+    label="File input"
+  />
 </template>
-`,
-  js: `<template>
-  <VFileInput label="File input" />
+`, js: `<template>
+  <VFileInput
+    multiple
+    label="File input"
+  />
 </template>
-`,
-}
-export const selectionSlot = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const prependIcon = { ts: `<template>
+  <VFileInput
+    label="File input"
+    prepend-icon="mdi-camera-outline"
+  />
+</template>
+`, js: `<template>
+  <VFileInput
+    label="File input"
+    prepend-icon="mdi-camera-outline"
+  />
+</template>
+` }
+
+export const selectionSlot = { ts: `<script lang="ts" setup>
 const files = ref<File[]>([])
 </script>
 
@@ -189,9 +160,7 @@ const files = ref<File[]>([])
     </template>
   </VFileInput>
 </template>
-`,
-  js: `<script setup>
-
+`, js: `<script setup>
 const files = ref([])
 </script>
 
@@ -221,46 +190,53 @@ const files = ref([])
     </template>
   </VFileInput>
 </template>
-`,
-}
-export const counter = {
-  ts: `<template>
+` }
+
+export const showSize = { ts: `<template>
   <VFileInput
     show-size
-    counter
-    multiple
     label="File input"
   />
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VFileInput
     show-size
-    counter
-    multiple
     label="File input"
   />
 </template>
-`,
-}
-export const chips = {
-  ts: `<template>
+` }
+
+export const validation = { ts: `<script lang="ts" setup>
+const rules = [
+  (fileList: FileList) => !fileList || !fileList.length || fileList[0].size < 1000000 || 'Avatar size should be less than 1 MB!',
+]
+</script>
+
+<template>
   <VFileInput
-    chips
-    label="File input w/ chips"
+    :rules="rules"
+    label="Avatar"
+    accept="image/png, image/jpeg, image/bmp"
+    placeholder="Pick an avatar"
+    prepend-icon="mdi-camera-outline"
   />
 </template>
-`,
-  js: `<template>
+`, js: `<script setup>
+const rules = [fileList => !fileList || !fileList.length || fileList[0].size < 1000000 || 'Avatar size should be less than 1 MB!']
+</script>
+
+<template>
   <VFileInput
-    chips
-    label="File input w/ chips"
+    :rules="rules"
+    label="Avatar"
+    accept="image/png, image/jpeg, image/bmp"
+    placeholder="Pick an avatar"
+    prepend-icon="mdi-camera-outline"
   />
 </template>
-`,
-}
-export const variant = {
-  ts: `<template>
+` }
+
+export const variant = { ts: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -310,8 +286,7 @@ export const variant = {
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -361,5 +336,5 @@ export const variant = {
     </VCol>
   </VRow>
 </template>
-`,
-}
+` }
+

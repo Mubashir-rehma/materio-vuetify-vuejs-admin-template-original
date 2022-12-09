@@ -6,12 +6,12 @@ import { can } from '@layouts/plugins/casl'
 const props = defineProps({
   item: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
-const {isVerticalNavMini, dynamicI18nProps} = useLayouts()
-const {width: windowWidth} = useWindowSize()
+const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
+const { width: windowWidth } = useWindowSize()
 const shallRenderIcon = isVerticalNavMini(windowWidth)
 </script>
 

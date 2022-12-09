@@ -7,8 +7,8 @@ import { themeConfig } from '@themeConfig'
 const props = defineProps({
   data: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const invoiceListStore = useInvoiceStore()
@@ -31,9 +31,10 @@ const addItem = () => {
     title: 'App Design',
     cost: 24,
     hours: 1,
-    description: 'Designed UI kit & app pages.'
+    description: 'Designed UI kit & app pages.',
   })
 }
+
 const removeProduct = id => {
 
   // eslint-disable-next-line vue/no-mutating-props
@@ -84,7 +85,7 @@ const removeProduct = id => {
               disabled
               prefix="#"
               density="compact"
-              style="width: 8rem;"
+              style="width: 8.9rem;"
             />
           </span>
         </h6>
@@ -96,7 +97,9 @@ const removeProduct = id => {
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
-              style="width: 8.5rem;"
+              placeholder="YYYY-MM-DD"
+              style="width: 8.9rem;"
+              :config="{ position: 'auto right' }"
             />
           </span>
         </p>
@@ -108,7 +111,9 @@ const removeProduct = id => {
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
-              style="width: 8.5rem;"
+              placeholder="YYYY-MM-DD"
+              style="width: 8.9rem;"
+              :config="{ position: 'auto right' }"
             />
           </span>
         </p>
@@ -251,7 +256,7 @@ const removeProduct = id => {
             <td class="pe-16">
               Subtotal:
             </td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $1800
               </h6>
@@ -261,7 +266,7 @@ const removeProduct = id => {
             <td class="pe-16">
               Discount:
             </td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $28
               </h6>
@@ -271,7 +276,7 @@ const removeProduct = id => {
             <td class="pe-16">
               Tax:
             </td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 21%
               </h6>
@@ -284,7 +289,7 @@ const removeProduct = id => {
         <table class="w-100">
           <tr>
             <td>Total:</td>
-            <td :class="$vuetify.rtl.isRtl ? 'text-start' : 'text-end'">
+            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $1690
               </h6>

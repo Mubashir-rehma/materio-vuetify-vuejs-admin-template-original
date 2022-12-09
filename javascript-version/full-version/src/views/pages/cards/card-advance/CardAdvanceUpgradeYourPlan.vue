@@ -1,19 +1,19 @@
 <script setup>
-import briefcase from '@/assets/images/cards/briefcase.png'
-import logoCreditCard2 from '@/assets/images/cards/logo-credit-card-2.png'
-import logoMastercardSmall from '@/assets/images/cards/logo-mastercard-small.png'
+import briefcase from '@images/cards/briefcase.png'
+import logoCreditCard2 from '@images/cards/logo-credit-card-2.png'
+import logoMastercardSmall from '@images/cards/logo-mastercard-small.png'
 
 const savedCards = [
   {
     logo: logoMastercardSmall,
     type: 'Credit card',
-    number: '2566 xxxx xxxx 8908'
+    number: '2566 xxxx xxxx 8908',
   },
   {
     logo: logoCreditCard2,
     type: 'Credit card',
-    number: '8990 xxxx xxxx 6852'
-  }
+    number: '8990 xxxx xxxx 6852',
+  },
 ]
 </script>
 
@@ -84,7 +84,7 @@ const savedCards = [
 
       <!-- SECTION Payment Details -->
       <VList class="card-list mt-1">
-        <VListSubheader class="font-weight-semibold">
+        <VListSubheader class="text-high-emphasis font-weight-semibold">
           Payment details
         </VListSubheader>
 
@@ -105,7 +105,7 @@ const savedCards = [
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+          <VListItemTitle class="text-sm font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">

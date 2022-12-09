@@ -1,15 +1,17 @@
-import mock from '@/@fake-db/mock'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 import { paginateArray } from '@/@fake-db/utlis'
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-import avatar6 from '@/assets/images/avatars/avatar-6.png'
-import avatar7 from '@/assets/images/avatars/avatar-7.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
+import mock from '@/@fake-db/mock'
+
 const now = new Date()
 const currentMonth = now.toLocaleString('default', { month: '2-digit' })
+
 const database = [
   {
     id: 4987,
@@ -912,6 +914,7 @@ const database = [
     dueDate: `${now.getFullYear()}-${currentMonth}-25`,
   },
 ]
+
 mock.onGet('/apps/invoices').reply(config => {
   const { q = '', status = null, perPage = 0, currentPage = 1, startDate = '', endDate = '' } = config.params ?? {}
   const queryLowered = q.toLowerCase()
@@ -943,6 +946,7 @@ mock.onGet(/\/apps\/invoices\/\d+/).reply(config => {
   const invoice = database.find(e => e.id === id)
   if (!invoice)
     return [404, { message: 'Unable to find the requested invoice' }]
+
   const responseData = {
     invoice,
     paymentDetails: {
@@ -953,7 +957,7 @@ mock.onGet(/\/apps\/invoices\/\d+/).reply(config => {
       swiftCode: 'BR91905',
     },
   }
-  
+
   return [200, responseData]
 })
 

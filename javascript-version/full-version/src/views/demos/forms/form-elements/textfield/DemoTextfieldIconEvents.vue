@@ -2,15 +2,19 @@
 const message = ref('Hey!')
 const marker = ref(true)
 const iconIndex = ref(0)
+
 const toggleMarker = () => {
   marker.value = !marker.value
 }
+
 const clearMessage = () => {
   message.value = ''
 }
+
 const resetIcon = () => {
   iconIndex.value = 0
 }
+
 const sendMessage = () => {
   resetIcon()
   clearMessage()

@@ -3,17 +3,19 @@ const seasons = [
   'Winter',
   'Spring',
   'Summer',
-  'Fall'
+  'Fall',
 ]
+
 const icons = [
   'mdi-snowflake',
   'mdi-leaf',
   'mdi-fire',
-  'mdi-water'
+  'mdi-water',
 ]
+
 const sliderValues = ref([
   1,
-  2
+  2,
 ])
 </script>
 

@@ -9,6 +9,7 @@
         Please make sure to read our <a
           href="https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/documentation"
           target="_blank"
+          rel="noopener noreferrer"
           class="text-decoration-none"
         >
           Template Documentation

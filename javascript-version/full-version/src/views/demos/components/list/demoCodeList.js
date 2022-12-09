@@ -1,5 +1,4 @@
-export const actionAndItemGroup = {
-  ts: `<template>
+export const actionAndItemGroup = { ts: `<template>
   <VList
     lines="three"
     density="compact"
@@ -53,8 +52,7 @@ export const actionAndItemGroup = {
     </VListItem>
   </VList>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VList
     lines="three"
     density="compact"
@@ -108,77 +106,30 @@ export const actionAndItemGroup = {
     </VListItem>
   </VList>
 </template>
-`,
-}
-export const shaped = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const basic = { ts: `<script setup lang="ts">
+const items = ['Cras justo odio', 'Dapibus ac facilisis in', 'Morbi leo risus', 'Porta ac consectetur ac']
+</script>
+
+<template>
+  <VList :items="items" />
+</template>
+`, js: `<script setup>
 const items = [
-  { text: 'Cupcake sesame snaps dessert marzipan.', icon: 'mdi-instagram' },
-  { text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.', icon: 'mdi-facebook' },
-  { text: 'Bonbon macaroon gummies pie jelly', icon: 'mdi-twitter' },
+  'Cras justo odio',
+  'Dapibus ac facilisis in',
+  'Morbi leo risus',
+  'Porta ac consectetur ac',
 ]
 </script>
 
 <template>
-  <VList>
-    <VListItem
-      v-for="(item, i) in items"
-      :key="i"
-      :value="item"
-      rounded="shaped"
-    >
-      <template #prepend>
-        <VIcon
-          :icon="item.icon"
-          class="me-3"
-        />
-      </template>
-      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
-      <VListItemTitle v-text="item.text" />
-    </VListItem>
-  </VList>
+  <VList :items="items" />
 </template>
-`,
-  js: `<script setup>
-const items = [
-  {
-    text: 'Cupcake sesame snaps dessert marzipan.',
-    icon: 'mdi-instagram'
-  },
-  {
-    text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
-    icon: 'mdi-facebook'
-  },
-  {
-    text: 'Bonbon macaroon gummies pie jelly',
-    icon: 'mdi-twitter'
-  }
-]
-</script>
+` }
 
-<template>
-  <VList>
-    <VListItem
-      v-for="(item, i) in items"
-      :key="i"
-      :value="item"
-      rounded="shaped"
-    >
-      <template #prepend>
-        <VIcon
-          :icon="item.icon"
-          class="me-3"
-        />
-      </template>
-      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
-      <VListItemTitle v-text="item.text" />
-    </VListItem>
-  </VList>
-</template>
-`,
-}
-export const density = {
-  ts: `<script lang="ts" setup>
+export const density = { ts: `<script lang="ts" setup>
 const items = [
   { title: 'halvah icing marshmallow', value: 1 },
   { title: 'Cake caramels donut danish muffin biscuit', value: 2 },
@@ -197,41 +148,40 @@ const items = [
     :items="items"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   {
     title: 'halvah icing marshmallow',
-    value: 1
+    value: 1,
   },
   {
     title: 'Cake caramels donut danish muffin biscuit',
-    value: 2
+    value: 2,
   },
   {
     title: 'Chocolate cake pie lollipop',
-    value: 3
+    value: 3,
   },
   {
     title: 'Apple pie toffee pudding gummi bears',
-    value: 4
+    value: 4,
   },
   {
     title: 'Jujubes chupa chups cheesecake tart',
-    value: 5
+    value: 5,
   },
   {
     title: 'Candy fruitcake bonbon sesame snaps dessert',
-    value: 6
+    value: 6,
   },
   {
     title: 'Candy wafer tiramisu sugar plum sweet.',
-    value: 7
+    value: 7,
   },
   {
     title: 'Toffee gingerbread muffin macaroon cotton candy bonbon lollipop.',
-    value: 8
-  }
+    value: 8,
+  },
 ]
 </script>
 
@@ -241,10 +191,9 @@ const items = [
     :items="items"
   />
 </template>
-`,
-}
-export const nav = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const nav = { ts: `<script lang="ts" setup>
 const items = [
   { title: 'My Files', value: 1, prependIcon: 'mdi-folder-outline' },
   { title: 'Shared with me', value: 2, prependIcon: 'mdi-account-multiple-outline' },
@@ -279,44 +228,43 @@ const items = [
     </VListItem>
   </VList>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   {
     title: 'My Files',
     value: 1,
-    prependIcon: 'mdi-folder-outline'
+    prependIcon: 'mdi-folder-outline',
   },
   {
     title: 'Shared with me',
     value: 2,
-    prependIcon: 'mdi-account-multiple-outline'
+    prependIcon: 'mdi-account-multiple-outline',
   },
   {
     title: 'Starred',
     value: 3,
-    prependIcon: 'mdi-star-outline'
+    prependIcon: 'mdi-star-outline',
   },
   {
     title: 'Recent',
     value: 4,
-    prependIcon: 'mdi-history'
+    prependIcon: 'mdi-history',
   },
   {
     title: 'Offline',
     value: 5,
-    prependIcon: 'mdi-check-circle-outline'
+    prependIcon: 'mdi-check-circle-outline',
   },
   {
     title: 'Uploads',
     value: 6,
-    prependIcon: 'mdi-upload-outline'
+    prependIcon: 'mdi-upload-outline',
   },
   {
     title: 'Backups',
     value: 7,
-    prependIcon: 'mdi-cloud-upload-outline'
-  }
+    prependIcon: 'mdi-cloud-upload-outline',
+  },
 ]
 </script>
 
@@ -343,392 +291,176 @@ const items = [
     </VListItem>
   </VList>
 </template>
-`,
-}
-export const threeLine = {
-  ts: `<script lang="ts" setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
+` }
 
-const items = [
-  { type: 'subheader', title: 'Today' },
-  {
-    prependAvatar: avatar1,
-    title: 'Brunch this weekend?',
-    subtitle: '<span class="text-primary">Ali Connors</span> &mdash; I\'ll be in your neighborhood doing errands this weekend. Do you want to hang out?',
-  },
-  { type: 'divider', inset: true },
-  {
-    prependAvatar: avatar2,
-    title: 'Summer BBQ',
-    subtitle: '<span class="text-primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I\'m out of town this weekend.',
-  },
-  { type: 'divider', inset: true },
-  {
-    prependAvatar: avatar3,
-    title: 'Oui oui',
-    subtitle: '<span class="text-primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-  },
-  { type: 'divider', inset: true },
-  {
-    prependAvatar: avatar4,
-    title: 'Birthday gift',
-    subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-  },
-  { type: 'divider', inset: true },
-  {
-    prependAvatar: avatar5,
-    title: 'Recipe to try',
-    subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-  },
-]
-</script>
-
-<template>
-  <VList
-    id="three-line-list"
-    lines="three"
-    :items="items"
-    item-props
-    density="compact"
-  >
-    <template #subtitle="{ subtitle }">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="subtitle" />
-    </template>
-  </VList>
-</template>
-
-<style lang="scss">
-#three-line-list {
-  .v-list-item-title {
-    margin-block-end: 0.25rem;
-  }
-
-  .v-divider {
-    margin-block: 0.25rem;
-  }
-}
-</style>
-`,
-  js: `<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar5 from '@/assets/images/avatars/avatar-5.png'
-
+export const rounded = { ts: `<script lang="ts" setup>
 const items = [
   {
-    type: 'subheader',
-    title: 'Today'
+    title: 'Cupcake sesame snaps dessert marzipan.',
+    value: 1,
+    prependIcon: 'mdi-instagram',
+
   },
   {
-    prependAvatar: avatar1,
-    title: 'Brunch this weekend?',
-    subtitle: '<span class="text-primary">Ali Connors</span> &mdash; I\'ll be in your neighborhood doing errands this weekend. Do you want to hang out?'
+    title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
+    value: 2,
+    prependIcon: 'mdi-facebook',
   },
   {
-    type: 'divider',
-    inset: true
+    title: 'Bonbon macaroon gummies pie jelly',
+    value: 3,
+    prependIcon: 'mdi-twitter',
   },
   {
-    prependAvatar: avatar2,
-    title: 'Summer BBQ',
-    subtitle: '<span class="text-primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I\'m out of town this weekend.'
+    title: 'halvah icing marshmallow',
+    value: 4,
+    prependIcon: 'mdi-instagram',
   },
-  {
-    type: 'divider',
-    inset: true
-  },
-  {
-    prependAvatar: avatar3,
-    title: 'Oui oui',
-    subtitle: '<span class="text-primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?'
-  },
-  {
-    type: 'divider',
-    inset: true
-  },
-  {
-    prependAvatar: avatar4,
-    title: 'Birthday gift',
-    subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?'
-  },
-  {
-    type: 'divider',
-    inset: true
-  },
-  {
-    prependAvatar: avatar5,
-    title: 'Recipe to try',
-    subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.'
-  }
 ]
 </script>
 
 <template>
-  <VList
-    id="three-line-list"
-    lines="three"
-    :items="items"
-    item-props
-    density="compact"
-  >
-    <template #subtitle="{ subtitle }">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="subtitle" />
-    </template>
+  <VList>
+    <VListItem
+      v-for="item in items"
+      :key="item.title"
+      :value="item.value"
+      rounded="xl"
+    >
+      <template #prepend>
+        <VIcon
+          :icon="item.prependIcon"
+          class="me-3"
+        />
+      </template>
+
+      <VListItemTitle>
+        {{ item.title }}
+      </VListItemTitle>
+    </VListItem>
   </VList>
 </template>
-
-<style lang="scss">
-#three-line-list {
-  .v-list-item-title {
-    margin-block-end: 0.25rem;
-  }
-
-  .v-divider {
-    margin-block: 0.25rem;
-  }
-}
-</style>
-`,
-}
-export const basic = {
-  ts: `<script setup lang="ts">
-const items = ['Cras justo odio', 'Dapibus ac facilisis in', 'Morbi leo risus', 'Porta ac consectetur ac']
-</script>
-
-<template>
-  <VList :items="items" />
-</template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
-  'Cras justo odio',
-  'Dapibus ac facilisis in',
-  'Morbi leo risus',
-  'Porta ac consectetur ac'
-]
-</script>
-
-<template>
-  <VList :items="items" />
-</template>
-`,
-}
-export const twoLinesAndSubheader = {
-  ts: `<script lang="ts" setup>
-const files = [
   {
-    color: 'blue',
-    icon: 'mdi-clipboard-text',
-    subtitle: 'Jan 20, 2014',
-    title: 'Vacation itinerary',
+    title: 'Cupcake sesame snaps dessert marzipan.',
+    value: 1,
+    prependIcon: 'mdi-instagram',
   },
   {
-    color: 'amber',
-    icon: 'mdi-gesture-tap-button',
-    subtitle: 'Jan 10, 2014',
-    title: 'Kitchen remodel',
-  },
-]
-const folders = [
-  {
-    subtitle: 'Jan 9, 2014',
-    title: 'Photos',
+    title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
+    value: 2,
+    prependIcon: 'mdi-facebook',
   },
   {
-    subtitle: 'Jan 17, 2014',
-    title: 'Recipes',
+    title: 'Bonbon macaroon gummies pie jelly',
+    value: 3,
+    prependIcon: 'mdi-twitter',
   },
   {
-    subtitle: 'Jan 28, 2014',
-    title: 'Work',
+    title: 'halvah icing marshmallow',
+    value: 4,
+    prependIcon: 'mdi-instagram',
   },
 ]
 </script>
 
 <template>
-  <VList lines="two">
-    <VListSubheader inset>
-      Folders
-    </VListSubheader>
-
+  <VList>
     <VListItem
-      v-for="folder in folders"
-      :key="folder.title"
-      :title="folder.title"
-      :subtitle="folder.subtitle"
+      v-for="item in items"
+      :key="item.title"
+      :value="item.value"
+      rounded="xl"
     >
       <template #prepend>
-        <VAvatar
-          color="secondary"
-          variant="tonal"
-        >
-          <VIcon
-            :size="26"
-            icon="mdi-folder-outline"
-          />
-        </VAvatar>
-      </template>
-
-      <template #append>
-        <VBtn
-          variant="text"
-          color="default"
-          icon="mdi-information-outline"
+        <VIcon
+          :icon="item.prependIcon"
+          class="me-3"
         />
       </template>
-    </VListItem>
 
-    <VDivider inset />
-
-    <VListSubheader inset>
-      Files
-    </VListSubheader>
-
-    <VListItem
-      v-for="file in files"
-      :key="file.title"
-      :title="file.title"
-      :subtitle="file.subtitle"
-    >
-      <template #prepend>
-        <VAvatar
-          color="secondary"
-          variant="tonal"
-        >
-          <VIcon
-            :size="26"
-            :icon="file.icon"
-          />
-        </VAvatar>
-      </template>
-
-      <template #append>
-        <VBtn
-          variant="text"
-          color="default"
-          icon="mdi-information-outline"
-        />
-      </template>
+      <VListItemTitle>
+        {{ item.title }}
+      </VListItemTitle>
     </VListItem>
   </VList>
 </template>
-`,
-  js: `<script setup>
-const files = [
-  {
-    color: 'blue',
-    icon: 'mdi-clipboard-text',
-    subtitle: 'Jan 20, 2014',
-    title: 'Vacation itinerary'
-  },
-  {
-    color: 'amber',
-    icon: 'mdi-gesture-tap-button',
-    subtitle: 'Jan 10, 2014',
-    title: 'Kitchen remodel'
-  }
-]
-const folders = [
-  {
-    subtitle: 'Jan 9, 2014',
-    title: 'Photos'
-  },
-  {
-    subtitle: 'Jan 17, 2014',
-    title: 'Recipes'
-  },
-  {
-    subtitle: 'Jan 28, 2014',
-    title: 'Work'
-  }
+` }
+
+export const shaped = { ts: `<script lang="ts" setup>
+const items = [
+  { text: 'Cupcake sesame snaps dessert marzipan.', icon: 'mdi-instagram' },
+  { text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.', icon: 'mdi-facebook' },
+  { text: 'Bonbon macaroon gummies pie jelly', icon: 'mdi-twitter' },
 ]
 </script>
 
 <template>
-  <VList lines="two">
-    <VListSubheader inset>
-      Folders
-    </VListSubheader>
-
+  <VList>
     <VListItem
-      v-for="folder in folders"
-      :key="folder.title"
-      :title="folder.title"
-      :subtitle="folder.subtitle"
+      v-for="(item, i) in items"
+      :key="i"
+      :value="item"
+      rounded="shaped"
     >
       <template #prepend>
-        <VAvatar
-          color="secondary"
-          variant="tonal"
-        >
-          <VIcon
-            :size="26"
-            icon="mdi-folder-outline"
-          />
-        </VAvatar>
-      </template>
-
-      <template #append>
-        <VBtn
-          variant="text"
-          color="default"
-          icon="mdi-information-outline"
+        <VIcon
+          :icon="item.icon"
+          class="me-3"
         />
       </template>
-    </VListItem>
-
-    <VDivider inset />
-
-    <VListSubheader inset>
-      Files
-    </VListSubheader>
-
-    <VListItem
-      v-for="file in files"
-      :key="file.title"
-      :title="file.title"
-      :subtitle="file.subtitle"
-    >
-      <template #prepend>
-        <VAvatar
-          color="secondary"
-          variant="tonal"
-        >
-          <VIcon
-            :size="26"
-            :icon="file.icon"
-          />
-        </VAvatar>
-      </template>
-
-      <template #append>
-        <VBtn
-          variant="text"
-          color="default"
-          icon="mdi-information-outline"
-        />
-      </template>
+      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+      <VListItemTitle v-text="item.text" />
     </VListItem>
   </VList>
 </template>
-`,
-}
-export const subGroup = {
-  ts: `<script lang="ts" setup>
+`, js: `<script setup>
+const items = [
+  {
+    text: 'Cupcake sesame snaps dessert marzipan.',
+    icon: 'mdi-instagram',
+  },
+  {
+    text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
+    icon: 'mdi-facebook',
+  },
+  {
+    text: 'Bonbon macaroon gummies pie jelly',
+    icon: 'mdi-twitter',
+  },
+]
+</script>
+
+<template>
+  <VList>
+    <VListItem
+      v-for="(item, i) in items"
+      :key="i"
+      :value="item"
+      rounded="shaped"
+    >
+      <template #prepend>
+        <VIcon
+          :icon="item.icon"
+          class="me-3"
+        />
+      </template>
+      <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
+      <VListItemTitle v-text="item.text" />
+    </VListItem>
+  </VList>
+</template>
+` }
+
+export const subGroup = { ts: `<script lang="ts" setup>
 const open = ref(['Users', 'Admin'])
 
 const admins = [
   ['Management', 'mdi-account-multiple-outline'],
   ['Settings', 'mdi-cog-outline'],
 ]
+
 const cruds = [
   ['Create', 'mdi-plus-outline'],
   ['Read', 'mdi-file-outline'],
@@ -818,39 +550,40 @@ const cruds = [
     </VListGroup>
   </VList>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const open = ref([
   'Users',
-  'Admin'
+  'Admin',
 ])
+
 const admins = [
   [
     'Management',
-    'mdi-account-multiple-outline'
+    'mdi-account-multiple-outline',
   ],
   [
     'Settings',
-    'mdi-cog-outline'
-  ]
+    'mdi-cog-outline',
+  ],
 ]
+
 const cruds = [
   [
     'Create',
-    'mdi-plus-outline'
+    'mdi-plus-outline',
   ],
   [
     'Read',
-    'mdi-file-outline'
+    'mdi-file-outline',
   ],
   [
     'Update',
-    'mdi-update'
+    'mdi-update',
   ],
   [
     'Delete',
-    'mdi-delete-outline'
-  ]
+    'mdi-delete-outline',
+  ],
 ]
 </script>
 
@@ -935,102 +668,356 @@ const cruds = [
     </VListGroup>
   </VList>
 </template>
-`,
-}
-export const rounded = {
-  ts: `<script lang="ts" setup>
-const items = [
-  {
-    title: 'Cupcake sesame snaps dessert marzipan.',
-    value: 1,
-    prependIcon: 'mdi-instagram',
+` }
 
-  },
+export const threeLine = { ts: `<script lang="ts" setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+
+const items = [
+  { type: 'subheader', title: 'Today' },
   {
-    title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
-    value: 2,
-    prependIcon: 'mdi-facebook',
+    prependAvatar: avatar1,
+    title: 'Brunch this weekend?',
+    subtitle: '<span class="text-primary">Ali Connors</span> &mdash; I\'ll be in your neighborhood doing errands this weekend. Do you want to hang out?',
   },
+  { type: 'divider', inset: true },
   {
-    title: 'Bonbon macaroon gummies pie jelly',
-    value: 3,
-    prependIcon: 'mdi-twitter',
+    prependAvatar: avatar2,
+    title: 'Summer BBQ',
+    subtitle: '<span class="text-primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I\'m out of town this weekend.',
   },
+  { type: 'divider', inset: true },
   {
-    title: 'halvah icing marshmallow',
-    value: 4,
-    prependIcon: 'mdi-instagram',
+    prependAvatar: avatar3,
+    title: 'Oui oui',
+    subtitle: '<span class="text-primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+  },
+  { type: 'divider', inset: true },
+  {
+    prependAvatar: avatar4,
+    title: 'Birthday gift',
+    subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+  },
+  { type: 'divider', inset: true },
+  {
+    prependAvatar: avatar5,
+    title: 'Recipe to try',
+    subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
   },
 ]
 </script>
 
 <template>
-  <VList>
-    <VListItem
-      v-for="item in items"
-      :key="item.title"
-      :value="item.value"
-      rounded="xl"
-    >
-      <template #prepend>
-        <VIcon
-          :icon="item.prependIcon"
-          class="me-3"
-        />
-      </template>
-
-      <VListItemTitle>
-        {{ item.title }}
-      </VListItemTitle>
-    </VListItem>
+  <VList
+    id="three-line-list"
+    lines="three"
+    :items="items"
+    item-props
+    density="compact"
+  >
+    <template #subtitle="{ subtitle }">
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-html="subtitle" />
+    </template>
   </VList>
 </template>
-`,
-  js: `<script setup>
-const items = [
-  {
-    title: 'Cupcake sesame snaps dessert marzipan.',
-    value: 1,
-    prependIcon: 'mdi-instagram'
-  },
-  {
-    title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
-    value: 2,
-    prependIcon: 'mdi-facebook'
-  },
-  {
-    title: 'Bonbon macaroon gummies pie jelly',
-    value: 3,
-    prependIcon: 'mdi-twitter'
-  },
-  {
-    title: 'halvah icing marshmallow',
-    value: 4,
-    prependIcon: 'mdi-instagram'
+
+<style lang="scss">
+#three-line-list {
+  .v-list-item-title {
+    margin-block-end: 0.25rem;
   }
+
+  .v-divider {
+    margin-block: 0.25rem;
+  }
+}
+</style>
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+
+const items = [
+  {
+    type: 'subheader',
+    title: 'Today',
+  },
+  {
+    prependAvatar: avatar1,
+    title: 'Brunch this weekend?',
+    subtitle: '<span class="text-primary">Ali Connors</span> &mdash; I\'ll be in your neighborhood doing errands this weekend. Do you want to hang out?',
+  },
+  {
+    type: 'divider',
+    inset: true,
+  },
+  {
+    prependAvatar: avatar2,
+    title: 'Summer BBQ',
+    subtitle: '<span class="text-primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I\'m out of town this weekend.',
+  },
+  {
+    type: 'divider',
+    inset: true,
+  },
+  {
+    prependAvatar: avatar3,
+    title: 'Oui oui',
+    subtitle: '<span class="text-primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+  },
+  {
+    type: 'divider',
+    inset: true,
+  },
+  {
+    prependAvatar: avatar4,
+    title: 'Birthday gift',
+    subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+  },
+  {
+    type: 'divider',
+    inset: true,
+  },
+  {
+    prependAvatar: avatar5,
+    title: 'Recipe to try',
+    subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+  },
 ]
 </script>
 
 <template>
-  <VList>
+  <VList
+    id="three-line-list"
+    lines="three"
+    :items="items"
+    item-props
+    density="compact"
+  >
+    <template #subtitle="{ subtitle }">
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-html="subtitle" />
+    </template>
+  </VList>
+</template>
+
+<style lang="scss">
+#three-line-list {
+  .v-list-item-title {
+    margin-block-end: 0.25rem;
+  }
+
+  .v-divider {
+    margin-block: 0.25rem;
+  }
+}
+</style>
+` }
+
+export const twoLinesAndSubheader = { ts: `<script lang="ts" setup>
+const files = [
+  {
+    color: 'blue',
+    icon: 'mdi-clipboard-text',
+    subtitle: 'Jan 20, 2014',
+    title: 'Vacation itinerary',
+  },
+  {
+    color: 'amber',
+    icon: 'mdi-gesture-tap-button',
+    subtitle: 'Jan 10, 2014',
+    title: 'Kitchen remodel',
+  },
+]
+
+const folders = [
+  {
+    subtitle: 'Jan 9, 2014',
+    title: 'Photos',
+  },
+  {
+    subtitle: 'Jan 17, 2014',
+    title: 'Recipes',
+  },
+  {
+    subtitle: 'Jan 28, 2014',
+    title: 'Work',
+  },
+]
+</script>
+
+<template>
+  <VList lines="two">
+    <VListSubheader inset>
+      Folders
+    </VListSubheader>
+
     <VListItem
-      v-for="item in items"
-      :key="item.title"
-      :value="item.value"
-      rounded="xl"
+      v-for="folder in folders"
+      :key="folder.title"
+      :title="folder.title"
+      :subtitle="folder.subtitle"
     >
       <template #prepend>
-        <VIcon
-          :icon="item.prependIcon"
-          class="me-3"
-        />
+        <VAvatar
+          color="secondary"
+          variant="tonal"
+        >
+          <VIcon
+            :size="26"
+            icon="mdi-folder-outline"
+          />
+        </VAvatar>
       </template>
 
-      <VListItemTitle>
-        {{ item.title }}
-      </VListItemTitle>
+      <template #append>
+        <VBtn
+          variant="text"
+          color="default"
+          icon="mdi-information-outline"
+        />
+      </template>
+    </VListItem>
+
+    <VDivider inset />
+
+    <VListSubheader inset>
+      Files
+    </VListSubheader>
+
+    <VListItem
+      v-for="file in files"
+      :key="file.title"
+      :title="file.title"
+      :subtitle="file.subtitle"
+    >
+      <template #prepend>
+        <VAvatar
+          color="secondary"
+          variant="tonal"
+        >
+          <VIcon
+            :size="26"
+            :icon="file.icon"
+          />
+        </VAvatar>
+      </template>
+
+      <template #append>
+        <VBtn
+          variant="text"
+          color="default"
+          icon="mdi-information-outline"
+        />
+      </template>
     </VListItem>
   </VList>
 </template>
-`,
-}
+`, js: `<script setup>
+const files = [
+  {
+    color: 'blue',
+    icon: 'mdi-clipboard-text',
+    subtitle: 'Jan 20, 2014',
+    title: 'Vacation itinerary',
+  },
+  {
+    color: 'amber',
+    icon: 'mdi-gesture-tap-button',
+    subtitle: 'Jan 10, 2014',
+    title: 'Kitchen remodel',
+  },
+]
+
+const folders = [
+  {
+    subtitle: 'Jan 9, 2014',
+    title: 'Photos',
+  },
+  {
+    subtitle: 'Jan 17, 2014',
+    title: 'Recipes',
+  },
+  {
+    subtitle: 'Jan 28, 2014',
+    title: 'Work',
+  },
+]
+</script>
+
+<template>
+  <VList lines="two">
+    <VListSubheader inset>
+      Folders
+    </VListSubheader>
+
+    <VListItem
+      v-for="folder in folders"
+      :key="folder.title"
+      :title="folder.title"
+      :subtitle="folder.subtitle"
+    >
+      <template #prepend>
+        <VAvatar
+          color="secondary"
+          variant="tonal"
+        >
+          <VIcon
+            :size="26"
+            icon="mdi-folder-outline"
+          />
+        </VAvatar>
+      </template>
+
+      <template #append>
+        <VBtn
+          variant="text"
+          color="default"
+          icon="mdi-information-outline"
+        />
+      </template>
+    </VListItem>
+
+    <VDivider inset />
+
+    <VListSubheader inset>
+      Files
+    </VListSubheader>
+
+    <VListItem
+      v-for="file in files"
+      :key="file.title"
+      :title="file.title"
+      :subtitle="file.subtitle"
+    >
+      <template #prepend>
+        <VAvatar
+          color="secondary"
+          variant="tonal"
+        >
+          <VIcon
+            :size="26"
+            :icon="file.icon"
+          />
+        </VAvatar>
+      </template>
+
+      <template #append>
+        <VBtn
+          variant="text"
+          color="default"
+          icon="mdi-information-outline"
+        />
+      </template>
+    </VListItem>
+  </VList>
+</template>
+` }
+

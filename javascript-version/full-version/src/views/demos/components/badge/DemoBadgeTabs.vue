@@ -2,24 +2,21 @@
 const tabs = [
   {
     badge: '3',
-    content: 'Item One'
+    content: 'Item One',
   },
   {
     badge: '1',
-    content: 'Item Two'
+    content: 'Item Two',
   },
   {
     badge: '2',
-    content: 'Item Three'
-  }
+    content: 'Item Three',
+  },
 ]
 </script>
 
 <template>
-  <VTabs
-    grow
-    show-arrows
-  >
+  <VTabs grow>
     <VTab
       v-for="tab in tabs"
       :key="tab.content"

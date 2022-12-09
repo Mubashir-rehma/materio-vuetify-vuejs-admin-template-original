@@ -2,6 +2,7 @@
 const toggleCheckboxOne = ref(true)
 const toggleCheckboxTwo = ref(true)
 const toggleCheckboxThree = ref(true)
+
 const capitalizedLabel = label => {
   const convertLabelText = label.toString()
   

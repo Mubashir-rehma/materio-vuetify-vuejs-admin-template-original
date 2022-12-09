@@ -3,7 +3,7 @@ const items = [
   'Cras justo odio',
   'Dapibus ac facilisis in',
   'Morbi leo risus',
-  'Porta ac consectetur ac'
+  'Porta ac consectetur ac',
 ]
 </script>
 

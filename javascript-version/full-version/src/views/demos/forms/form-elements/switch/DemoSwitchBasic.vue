@@ -1,6 +1,7 @@
 <script setup>
 const toggleSwitch = ref(true)
 const toggleFalseSwitch = ref(false)
+
 const capitalizedLabel = label => {
   const convertLabelText = label.toString()
   

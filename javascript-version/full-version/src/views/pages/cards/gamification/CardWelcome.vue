@@ -1,5 +1,5 @@
 <script setup>
-import illustrationJohn from '@/assets/images/cards/illustration-john.png'
+import illustrationJohn from '@images/cards/illustration-john.png'
 </script>
 
 <template>

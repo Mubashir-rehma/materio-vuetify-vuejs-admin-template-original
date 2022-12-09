@@ -2,32 +2,39 @@
 const props = defineProps({
   userData: {
     type: Object,
-    required: true
+    required: true,
   },
   isDialogVisible: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emit = defineEmits([
   'update:modelValue',
   'submit',
-  'update:isDialogVisible'
+  'update:isDialogVisible',
 ])
 
 const userData = ref(structuredClone(toRaw(props.userData)))
 const isUseAsBillingAddress = ref(false)
+
 watch(props, () => {
   userData.value = structuredClone(toRaw(props.userData))
 })
+
 const onFormSubmit = () => {
   emit('update:modelValue', false)
   emit('submit', userData.value)
 }
+
 const onFormReset = () => {
   userData.value = structuredClone(toRaw(props.userData))
   emit('update:isDialogVisible', false)
+}
+
+const dialogVisibleUpdate = val => {
+  emit('update:isDialogVisible', val)
 }
 </script>
 
@@ -35,7 +42,7 @@ const onFormReset = () => {
   <VDialog
     :width="$vuetify.display.smAndDown ? 'auto' : 650 "
     :model-value="props.isDialogVisible"
-    @update:model-value="val => $emit('update:isDialogVisible', val)"
+    @update:model-value="dialogVisibleUpdate"
   >
     <VCard class="pa-sm-9 pa-5">
       <VCardItem class="text-center">

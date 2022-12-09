@@ -1,5 +1,5 @@
 <script setup>
-import poseFs9 from '@/assets/images/pages/pose-fs-9.png'
+import poseFs9 from '@images/pages/pose-fs-9.png'
 
 const features = [
   {
@@ -10,8 +10,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: false,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'No user limit',
@@ -21,8 +21,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: false,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'Product Support',
@@ -32,8 +32,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: false,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'Email Support',
@@ -43,8 +43,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: true,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'Integrations',
@@ -54,8 +54,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: false,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'Removal of Front branding',
@@ -65,8 +65,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: true,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'Active maintenance & support',
@@ -76,8 +76,8 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: false,
-      enterprise: false
-    }
+      enterprise: false,
+    },
   },
   {
     feature: 'Data storage for 365 days',
@@ -87,27 +87,28 @@ const features = [
     addOnAvailable: {
       starter: false,
       pro: false,
-      enterprise: false
-    }
-  }
+      enterprise: false,
+    },
+  },
 ]
+
 const faqs = [
   {
     question: 'General settings',
-    answer: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.'
+    answer: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
   },
   {
     question: 'Users',
-    answer: 'We accept Visa®, MasterCard®, American Express®, and PayPal®. So you can be confident that your credit card information will be kept safe and secure.'
+    answer: 'We accept Visa®, MasterCard®, American Express®, and PayPal®. So you can be confident that your credit card information will be kept safe and secure.',
   },
   {
     question: 'Personal data',
-    answer: '2Checkout accepts all types of credit and debit cards.'
+    answer: '2Checkout accepts all types of credit and debit cards.',
   },
   {
     question: 'Advanced settings',
-    answer: 'Yes. You may request a refund within 30 days of your purchase without any additional explanations.'
-  }
+    answer: 'Yes. You may request a refund within 30 days of your purchase without any additional explanations.',
+  },
 ]
 </script>
 
@@ -249,7 +250,8 @@ const faqs = [
                   <VChip
                     v-if="!feature.addOnAvailable.starter"
                     pill
-                    size="30"
+                    variant="elevated"
+                    size="20"
                     class="pa-1"
                     :color="feature.basic ? 'primary' : 'secondary'"
                   >
@@ -272,7 +274,8 @@ const faqs = [
                   <VChip
                     v-if="!feature.addOnAvailable.pro"
                     pill
-                    size="30"
+                    variant="elevated"
+                    size="20"
                     class="pa-1"
                     :color="feature.standard ? 'primary' : 'secondary'"
                   >
@@ -295,7 +298,8 @@ const faqs = [
                   <VChip
                     v-if="!feature.addOnAvailable.enterprise"
                     pill
-                    size="30"
+                    variant="elevated"
+                    size="20"
                     class="pa-1"
                     :color="feature.enterprise ? 'primary' : 'secondary'"
                   >
@@ -346,25 +350,27 @@ const faqs = [
     </VCardText>
 
     <!-- 👉 FAQ -->
-    <VCardText class="bg-var-theme-background py-16">
-      <div class="text-center">
-        <h5 class="text-h5 mb-2">
-          FAQ's
-        </h5>
-        <p>
-          Let us help answer the most common questions.
-        </p>
-      </div>
+    <div>
+      <VCardText class="bg-var-theme-background py-16">
+        <div class="text-center">
+          <h5 class="text-h5 mb-2">
+            FAQ's
+          </h5>
+          <p>
+            Let us help answer the most common questions.
+          </p>
+        </div>
 
-      <VExpansionPanels class="py-6 px-16">
-        <VExpansionPanel
-          v-for="faq in faqs"
-          :key="faq.question"
-          :title="faq.question"
-          :text="faq.answer"
-        />
-      </VExpansionPanels>
-    </VCardText>
+        <VExpansionPanels class="py-6 px-16">
+          <VExpansionPanel
+            v-for="faq in faqs"
+            :key="faq.question"
+            :title="faq.question"
+            :text="faq.answer"
+          />
+        </VExpansionPanels>
+      </VCardText>
+    </div>
   </VCard>
 </template>
 

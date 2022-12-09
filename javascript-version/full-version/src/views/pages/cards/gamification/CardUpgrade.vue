@@ -1,7 +1,7 @@
 <script setup>
-import poseM9 from '@/assets/images/cards/pose-m-9.png'
-import triangleDark from '@/assets/images/misc/triangle-dark.png'
-import triangleLight from '@/assets/images/misc/triangle-light.png'
+import poseM9 from '@images/cards/pose-m-9.png'
+import triangleDark from '@images/misc/triangle-dark.png'
+import triangleLight from '@images/misc/triangle-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
@@ -52,12 +52,5 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
   inline-size: 3rem;
   inset-block-end: 1rem;
   inset-inline-end: 3rem;
-}
-
-// for rtl only
-.flip-in-rtl {
-  @include layoutsMixins.rtl {
-    transform: scaleX(-1);
-  }
 }
 </style>

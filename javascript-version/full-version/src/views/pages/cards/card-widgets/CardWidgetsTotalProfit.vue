@@ -2,14 +2,15 @@
 import VueApexCharts from 'vue3-apexcharts'
 import {
   useDisplay,
-  useTheme
+  useTheme,
 } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
-const {thresholds} = useDisplay()
+const { theme } = useThemeConfig()
+const { thresholds } = useDisplay()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -20,15 +21,15 @@ const options = controlledComputed(theme, () => {
     chart: {
       stacked: true,
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     plotOptions: {
       bar: {
         borderRadius: 10,
-        columnWidth: '35%',
+        columnWidth: '30%',
         endingShape: 'rounded',
-        startingShape: 'rounded'
-      }
+        startingShape: 'rounded',
+      },
     },
     xaxis: {
       axisTicks: { show: false },
@@ -41,35 +42,35 @@ const options = controlledComputed(theme, () => {
         2019,
         2020,
         2021,
-        2022
+        2022,
       ],
       labels: {
         style: {
           fontSize: '12px',
           colors: disabledColor,
-          fontFamily: 'inter'
-        }
-      }
+          fontFamily: 'inter',
+        },
+      },
     },
     yaxis: {
       labels: {
         style: {
           fontSize: '12px',
           colors: disabledColor,
-          fontFamily: 'inter'
+          fontFamily: 'inter',
         },
-        formatter: value => value > 999 ? `${ (value / 1000).toFixed(0) }k` : `${ value }`
-      }
+        formatter: value => value > 999 ? `${ (value / 1000).toFixed(0) }k` : `${ value }`,
+      },
     },
     colors: [
       currentTheme.value.primary,
       currentTheme.value.success,
-      currentTheme.value.secondary
+      currentTheme.value.secondary,
     ],
     grid: {
       borderColor,
       strokeDashArray: 7,
-      padding: { bottom: -10 }
+      padding: { bottom: -10 },
     },
     legend: { show: false },
     dataLabels: { enabled: false },
@@ -77,32 +78,33 @@ const options = controlledComputed(theme, () => {
       width: 6,
       curve: 'smooth',
       lineCap: 'round',
-      colors: [currentTheme.value.surface]
+      colors: [currentTheme.value.surface],
     },
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     responsive: [
       {
         breakpoint: thresholds.value.xl,
-        options: { plotOptions: { bar: { columnWidth: '45%' } } }
+        options: { plotOptions: { bar: { columnWidth: '45%' } } },
       },
       {
         breakpoint: thresholds.value.lg,
-        options: { plotOptions: { bar: { columnWidth: '50%' } } }
+        options: { plotOptions: { bar: { columnWidth: '50%' } } },
       },
       {
         breakpoint: thresholds.value.sm,
-        options: { plotOptions: { bar: { columnWidth: '45%' } } }
+        options: { plotOptions: { bar: { columnWidth: '45%' } } },
       },
       {
         breakpoint: 430,
-        options: { plotOptions: { bar: { columnWidth: '55%' } } }
-      }
-    ]
+        options: { plotOptions: { bar: { columnWidth: '55%' } } },
+      },
+    ],
   }
 })
+
 const series = [
   {
     name: 'Product A',
@@ -113,8 +115,8 @@ const series = [
       18500,
       29000,
       20000,
-      34500
-    ]
+      34500,
+    ],
   },
   {
     name: 'Product B',
@@ -125,8 +127,8 @@ const series = [
       15500,
       0,
       12500,
-      9500
-    ]
+      9500,
+    ],
   },
   {
     name: 'Product C',
@@ -137,35 +139,36 @@ const series = [
       14000,
       0,
       11500,
-      12000
-    ]
-  }
+      12000,
+    ],
+  },
 ]
+
 const lastThreeTransactions = [
   {
     avatar: {
       icon: 'mdi-trending-up',
-      color: 'success'
+      color: 'success',
     },
     title: '$48,568.20',
-    subtitle: 'Total Profit'
+    subtitle: 'Total Profit',
   },
   {
     avatar: {
       icon: 'mdi-account-outline',
-      color: 'primary'
+      color: 'primary',
     },
     title: '$38,453.25',
-    subtitle: 'Total Income'
+    subtitle: 'Total Income',
   },
   {
     avatar: {
       icon: 'mdi-cellphone-link',
-      color: 'secondary'
+      color: 'secondary',
     },
     title: '$2,453.45',
-    subtitle: 'Total Expense'
-  }
+    subtitle: 'Total Expense',
+  },
 ]
 </script>
 

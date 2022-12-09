@@ -3,23 +3,23 @@ const items = [
   {
     title: 'Cupcake sesame snaps dessert marzipan.',
     value: 1,
-    prependIcon: 'mdi-instagram'
+    prependIcon: 'mdi-instagram',
   },
   {
     title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
     value: 2,
-    prependIcon: 'mdi-facebook'
+    prependIcon: 'mdi-facebook',
   },
   {
     title: 'Bonbon macaroon gummies pie jelly',
     value: 3,
-    prependIcon: 'mdi-twitter'
+    prependIcon: 'mdi-twitter',
   },
   {
     title: 'halvah icing marshmallow',
     value: 4,
-    prependIcon: 'mdi-instagram'
-  }
+    prependIcon: 'mdi-instagram',
+  },
 ]
 </script>
 

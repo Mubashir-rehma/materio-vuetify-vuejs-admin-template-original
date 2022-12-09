@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -16,20 +17,20 @@ const options = controlledComputed(theme, () => {
   return {
     chart: {
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     colors: [
       currentTheme.value.primary,
-      currentTheme.value.info
+      currentTheme.value.info,
     ],
     plotOptions: {
       radar: {
         size: 110,
         polygons: {
           strokeColors: borderColor,
-          connectorColors: borderColor
-        }
-      }
+          connectorColors: borderColor,
+        },
+      },
     },
     legend: { labels: { colors: secondaryTextColor } },
     fill: {
@@ -38,7 +39,7 @@ const options = controlledComputed(theme, () => {
         shade: 'dark',
         gradientToColors: [
           currentTheme.value.primary,
-          currentTheme.value.info
+          currentTheme.value.info,
         ],
         shadeIntensity: 1,
         type: 'vertical',
@@ -46,9 +47,9 @@ const options = controlledComputed(theme, () => {
         opacityTo: 0.9,
         stops: [
           0,
-          100
-        ]
-      }
+          100,
+        ],
+      },
     },
     labels: [
       'Jan',
@@ -56,7 +57,7 @@ const options = controlledComputed(theme, () => {
       'Mar',
       'Apr',
       'May',
-      'Jun'
+      'Jun',
     ],
     markers: { size: 0 },
     xaxis: {
@@ -70,15 +71,16 @@ const options = controlledComputed(theme, () => {
             disabledColor,
             disabledColor,
             disabledColor,
-            disabledColor
-          ]
-        }
-      }
+            disabledColor,
+          ],
+        },
+      },
     },
     yaxis: { show: false },
-    grid: { show: false }
+    grid: { show: false },
   }
 })
+
 const series = [
   {
     name: 'Income',
@@ -88,8 +90,8 @@ const series = [
       90,
       90,
       80,
-      90
-    ]
+      90,
+    ],
   },
   {
     name: 'Net Worth',
@@ -99,9 +101,9 @@ const series = [
       100,
       80,
       100,
-      80
-    ]
-  }
+      80,
+    ],
+  },
 ]
 </script>
 

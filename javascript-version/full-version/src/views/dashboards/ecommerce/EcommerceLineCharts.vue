@@ -4,26 +4,29 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const currentTheme = controlledComputed(theme, () => {
   return vuetifyTheme.current.value.colors
 })
+
 const series = [{
   data: [
     28,
     58,
     40,
-    68
-  ]
+    68,
+  ],
 }]
+
 const chartOptions = controlledComputed(theme, () => {
   return {
     grid: {
       show: false,
       padding: {
         left: -2,
-        top: -10
-      }
+        top: -10,
+      },
     },
     chart: {
       parentHeightOffset: 0,
@@ -34,9 +37,9 @@ const chartOptions = controlledComputed(theme, () => {
         top: 10,
         blur: 4,
         color: currentTheme.value.primary,
-        opacity: 0.09
+        opacity: 0.09,
       },
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     markers: {
       size: 6,
@@ -48,23 +51,23 @@ const chartOptions = controlledComputed(theme, () => {
         dataPointIndex: series[0].data.length - 1,
         fillColor: currentTheme.value.surface,
         strokeColor: currentTheme.value.primary,
-        size: 6
+        size: 6,
       }],
-      hover: { size: 7 }
+      hover: { size: 7 },
     },
     stroke: {
       width: 5,
       curve: 'smooth',
-      lineCap: 'round'
+      lineCap: 'round',
     },
     xaxis: {
       axisBorder: { show: false },
       axisTicks: { show: false },
-      labels: { show: false }
+      labels: { show: false },
     },
     yaxis: { labels: { show: false } },
     tooltip: { enabled: false },
-    colors: [currentTheme.value.primary]
+    colors: [currentTheme.value.primary],
   }
 })
 </script>

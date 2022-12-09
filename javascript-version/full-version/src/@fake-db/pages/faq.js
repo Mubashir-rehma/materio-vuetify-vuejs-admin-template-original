@@ -1,4 +1,5 @@
 import mock from '@/@fake-db/mock'
+
 const database = [
   {
     faqTitle: 'Payment',
@@ -106,14 +107,17 @@ const database = [
     ],
   },
 ]
+
 mock.onGet('/pages/faqs').reply(config => {
   const { q = '' } = config.params ?? {}
   const queryLowered = q.toLowerCase()
   const filteredData = []
+
   Object.entries(database).forEach(([_, faqObj]) => {
     const filteredQAndA = faqObj.faqs.filter(obj => {
       return obj.question.toLowerCase().includes(queryLowered)
     })
+
     if (filteredQAndA.length)
       filteredData.push({ ...faqObj, faqs: filteredQAndA })
   })

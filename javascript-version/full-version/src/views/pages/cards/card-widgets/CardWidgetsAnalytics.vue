@@ -2,14 +2,15 @@
 import VueApexCharts from 'vue3-apexcharts'
 import {
   useDisplay,
-  useTheme
+  useTheme,
 } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
-const {thresholds} = useDisplay()
+const { theme } = useThemeConfig()
+const { thresholds } = useDisplay()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -20,15 +21,15 @@ const options = controlledComputed(theme, () => {
       offsetY: -25,
       stacked: true,
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     plotOptions: {
       bar: {
         borderRadius: 10,
         columnWidth: '35%',
         endingShape: 'rounded',
-        startingShape: 'rounded'
-      }
+        startingShape: 'rounded',
+      },
     },
     legend: { show: false },
     grid: {
@@ -36,52 +37,53 @@ const options = controlledComputed(theme, () => {
       strokeDashArray: 10,
       padding: {
         left: -15,
-        right: -5
-      }
+        right: -5,
+      },
     },
     dataLabels: { enabled: false },
     stroke: {
       width: 6,
       curve: 'smooth',
       lineCap: 'round',
-      colors: [currentTheme.value.surface]
+      colors: [currentTheme.value.surface],
     },
     colors: [
       currentTheme.value.success,
       currentTheme.value.secondary,
-      currentTheme.value.warning
+      currentTheme.value.warning,
     ],
     xaxis: {
       labels: { show: false },
       axisTicks: { show: false },
       crosshairs: { opacity: 0 },
-      axisBorder: { show: false }
+      axisBorder: { show: false },
     },
     yaxis: { labels: { show: false } },
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     responsive: [
       {
         breakpoint: thresholds.value.xl,
-        options: { plotOptions: { bar: { columnWidth: '40%' } } }
+        options: { plotOptions: { bar: { columnWidth: '40%' } } },
       },
       {
         breakpoint: thresholds.value.lg,
-        options: { plotOptions: { bar: { columnWidth: '50%' } } }
+        options: { plotOptions: { bar: { columnWidth: '50%' } } },
       },
       {
         breakpoint: thresholds.value.sm,
-        options: { plotOptions: { bar: { columnWidth: '35%' } } }
+        options: { plotOptions: { bar: { columnWidth: '35%' } } },
       },
       {
         breakpoint: 430,
-        options: { plotOptions: { bar: { columnWidth: '45%' } } }
-      }
-    ]
+        options: { plotOptions: { bar: { columnWidth: '45%' } } },
+      },
+    ],
   }
 })
+
 const series = [
   {
     name: 'Product A',
@@ -92,8 +94,8 @@ const series = [
       18000,
       15000,
       35000,
-      16000
-    ]
+      16000,
+    ],
   },
   {
     name: 'Product B',
@@ -104,8 +106,8 @@ const series = [
       0,
       10000,
       10000,
-      10000
-    ]
+      10000,
+    ],
   },
   {
     name: 'Product C',
@@ -116,29 +118,30 @@ const series = [
       0,
       12000,
       0,
-      10000
-    ]
-  }
+      10000,
+    ],
+  },
 ]
+
 const analytics = [
   {
     title: 'Revenue',
     amount: '$845k',
     percentage: '82%',
-    profit: true
+    profit: true,
   },
   {
     title: 'Transactions',
     amount: '$12.5k',
     percentage: '52%',
-    profit: false
+    profit: false,
   },
   {
     title: 'Total Profit',
     amount: '$27.6k',
     percentage: '42%',
-    profit: true
-  }
+    profit: true,
+  },
 ]
 </script>
 

@@ -1,6 +1,7 @@
 import { ArcElement, Chart as ChartJS, Legend, RadialLinearScale, Title, Tooltip } from 'chart.js'
 import { defineComponent } from 'vue'
 import { PolarArea } from 'vue-chartjs'
+
 ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale)
 export default defineComponent({
   name: 'PolarAreaChart',

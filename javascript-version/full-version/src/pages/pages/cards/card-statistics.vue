@@ -1,14 +1,14 @@
 <script setup>
-import illustration1 from '@/assets/images/cards/illustration-1.png'
-import illustration2 from '@/assets/images/cards/illustration-2.png'
-import illustration3 from '@/assets/images/cards/illustration-3.png'
-import illustration4 from '@/assets/images/cards/illustration-4.png'
-import CardStatisticsAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsAreaCharts.vue'
-import CardStatisticsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarCharts.vue'
-import CardStatisticsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsBarWithGapCharts.vue'
-import CardStatisticsLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsLineCharts.vue'
-import CardStatisticsRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsRadialBarCharts.vue'
+import illustration1 from '@images/cards/illustration-1.png'
+import illustration2 from '@images/cards/illustration-2.png'
+import illustration3 from '@images/cards/illustration-3.png'
+import illustration4 from '@images/cards/illustration-4.png'
+import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
+import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
+import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
 import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
+import CardStatisticsTotalRevenueLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueLineCharts.vue'
+import CardStatisticsTotalRevenueRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueRadialBarCharts.vue'
 import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
 import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
 import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
@@ -21,30 +21,31 @@ const statisticsHorizontal = [
     color: 'primary',
     icon: 'mdi-account-outline',
     stats: 2856,
-    change: -11.9
+    change: -11.9,
   },
   {
     title: 'Total Revenue',
     color: 'success',
     icon: 'mdi-currency-usd',
     stats: 28600,
-    change: 25.8
+    change: 25.8,
   },
   {
     title: 'New Transactions',
     color: 'info',
     icon: 'mdi-trending-up',
     stats: 13600,
-    change: -42.4
+    change: -42.4,
   },
   {
     title: 'Total Profit',
     color: 'warning',
     icon: 'mdi-poll',
     stats: 2856,
-    change: 18.2
-  }
+    change: 18.2,
+  },
 ]
+
 const statisticsVertical = [
   {
     title: 'New Project',
@@ -52,7 +53,7 @@ const statisticsVertical = [
     icon: 'mdi-briefcase-variant-outline',
     stats: '862',
     change: -18,
-    subtitle: 'Yearly Project'
+    subtitle: 'Yearly Project',
   },
   {
     title: 'Total Profit',
@@ -60,7 +61,7 @@ const statisticsVertical = [
     icon: 'mdi-poll',
     stats: '$25.6k',
     change: 42,
-    subtitle: 'Weekly Project'
+    subtitle: 'Weekly Project',
   },
   {
     title: 'Revenue',
@@ -68,7 +69,7 @@ const statisticsVertical = [
     icon: 'mdi-currency-usd',
     stats: '$95.2k',
     change: 12,
-    subtitle: 'Revenue Increase'
+    subtitle: 'Revenue Increase',
   },
   {
     title: 'Logistics',
@@ -76,7 +77,7 @@ const statisticsVertical = [
     icon: 'mdi-truck-outline',
     stats: '44.10k',
     change: 12,
-    subtitle: 'Revenue Increase'
+    subtitle: 'Revenue Increase',
   },
   {
     title: 'Reports',
@@ -84,7 +85,7 @@ const statisticsVertical = [
     icon: 'mdi-check',
     stats: '268',
     change: -8,
-    subtitle: 'System Bugs'
+    subtitle: 'System Bugs',
   },
   {
     title: 'Transactions',
@@ -92,9 +93,10 @@ const statisticsVertical = [
     icon: 'mdi-trending-up',
     stats: '12k',
     change: 32,
-    subtitle: 'Daily Transactions'
-  }
+    subtitle: 'Daily Transactions',
+  },
 ]
+
 const statisticsWithImages = [
   {
     title: 'Ratings',
@@ -102,7 +104,7 @@ const statisticsWithImages = [
     stats: '13k',
     change: 38,
     image: illustration1,
-    color: 'primary'
+    color: 'primary',
   },
   {
     title: 'Sessions',
@@ -110,7 +112,7 @@ const statisticsWithImages = [
     stats: '24.5k',
     change: -22,
     image: illustration2,
-    color: 'secondary'
+    color: 'secondary',
   },
   {
     title: 'Customers',
@@ -118,7 +120,7 @@ const statisticsWithImages = [
     stats: '2,856',
     change: 59,
     image: illustration3,
-    color: 'info'
+    color: 'info',
   },
   {
     title: 'Total Orders',
@@ -126,8 +128,8 @@ const statisticsWithImages = [
     stats: '42.5k',
     change: 26,
     image: illustration4,
-    color: 'warning'
-  }
+    color: 'warning',
+  },
 ]
 </script>
 
@@ -195,7 +197,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsLineCharts />
+      <CardStatisticsTotalRevenueLineCharts />
     </VCol>
 
     <!-- 👉 Sessions Bar Chart with Gaps -->
@@ -205,7 +207,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsBarWithGapCharts />
+      <CardStatisticsSessionsBarWithGapCharts />
     </VCol>
 
     <!-- 👉 Total Growth Area Chart -->
@@ -215,7 +217,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsAreaCharts />
+      <CardStatisticsTotalGrowthAreaCharts />
     </VCol>
 
     <!-- 👉 Total Revenue Radial Bar Chart -->
@@ -225,7 +227,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsRadialBarCharts />
+      <CardStatisticsTotalRevenueRadialBarCharts />
     </VCol>
 
     <!-- 👉 Session Bar Chart -->
@@ -235,7 +237,7 @@ const statisticsWithImages = [
       md="4"
       lg="2"
     >
-      <CardStatisticsBarCharts />
+      <CardStatisticsSessionsBarCharts />
     </VCol>
 
     <!-- 👉 Total Profit Line Chart -->
@@ -251,5 +253,5 @@ const statisticsWithImages = [
 </template>
 
 <style lang="scss">
-@use "@core/scss/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart.scss";
 </style>

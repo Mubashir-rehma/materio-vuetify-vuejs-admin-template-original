@@ -17,7 +17,7 @@ watchEffect(() => {
     q: searchQuery.value,
     status: selectedStatus.value,
     perPage: rowPerPage.value,
-    currentPage: currentPage.value
+    currentPage: currentPage.value,
   }).then(response => {
     invoices.value = response.data.invoices
     totalPage.value = response.data.totalPage
@@ -40,41 +40,42 @@ const paginationData = computed(() => {
   
   return `${ firstIndex }-${ lastIndex } of ${ totalInvoices.value }`
 })
+
 const resolveInvoiceStatusVariantAndIcon = status => {
   if (status === 'Partial Payment')
     return {
       variant: 'warning',
-      icon: 'mdi-chart-timeline-variant'
+      icon: 'mdi-chart-timeline-variant',
     }
   if (status === 'Paid')
     return {
       variant: 'success',
-      icon: 'mdi-check'
+      icon: 'mdi-check',
     }
   if (status === 'Downloaded')
     return {
       variant: 'info',
-      icon: 'mdi-arrow-down'
+      icon: 'mdi-arrow-down',
     }
   if (status === 'Draft')
     return {
       variant: 'secondary',
-      icon: 'mdi-content-save-outline'
+      icon: 'mdi-content-save-outline',
     }
   if (status === 'Sent')
     return {
       variant: 'primary',
-      icon: 'mdi-email-outline'
+      icon: 'mdi-email-outline',
     }
   if (status === 'Past Due')
     return {
       variant: 'error',
-      icon: 'mdi-alert-circle-outline'
+      icon: 'mdi-alert-circle-outline',
     }
   
   return {
     variant: 'secondary',
-    icon: 'mdi-close'
+    icon: 'mdi-close',
   }
 }
 </script>
@@ -83,29 +84,27 @@ const resolveInvoiceStatusVariantAndIcon = status => {
   <VCard
     v-if="invoices"
     id="invoice-list"
+    title="Invoice List"
   >
-    <VCardItem>
-      <VCardTitle>Invoice List</VCardTitle>
-      <template #append>
-        <VBtn
-          color="primary"
-          append-icon="mdi-chevron-down"
-        >
-          Export
-          <VMenu activator="parent">
-            <VList density="compact">
-              <VListItem
-                v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
-                :key="index"
-                :value="index"
-              >
-                <VListItemTitle>{{ item }}</VListItemTitle>
-              </VListItem>
-            </VList>
-          </VMenu>
-        </VBtn>
-      </template>
-    </VCardItem>
+    <template #append>
+      <VBtn
+        color="primary"
+        append-icon="mdi-chevron-down"
+      >
+        Export
+        <VMenu activator="parent">
+          <VList density="compact">
+            <VListItem
+              v-for="(item, index) in ['PDF', 'XLSX', 'CSV']"
+              :key="index"
+              :value="index"
+            >
+              <VListItemTitle>{{ item }}</VListItemTitle>
+            </VListItem>
+          </VList>
+        </VMenu>
+      </VBtn>
+    </template>
 
     <VDivider />
 
@@ -146,7 +145,7 @@ const resolveInvoiceStatusVariantAndIcon = status => {
         >
           <!-- 👉 Id -->
           <td>
-            <RouterLink :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }">
+            <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>
@@ -180,17 +179,17 @@ const resolveInvoiceStatusVariantAndIcon = status => {
           </td>
 
           <!-- 👉 total -->
-          <td class="text-center">
+          <td class="text-center text-medium-emphasis">
             ${{ invoice.total }}
           </td>
 
           <!-- 👉 Date -->
-          <td class="text-center">
+          <td class="text-center text-medium-emphasis">
             {{ invoice.issuedDate }}
           </td>
 
           <!-- 👉 Actions -->
-          <td style="width: 150px ;">
+          <td style="width: 7.5rem;">
             <VBtn
               icon
               variant="plain"
@@ -208,7 +207,7 @@ const resolveInvoiceStatusVariantAndIcon = status => {
               variant="plain"
               color="default"
               size="x-small"
-              :to="{ name: 'invoice-preview-id', params: { id: invoice.id } }"
+              :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }"
             >
               <VIcon
                 :size="24"
@@ -240,7 +239,7 @@ const resolveInvoiceStatusVariantAndIcon = status => {
                     <VListItemTitle>Download</VListItemTitle>
                   </VListItem>
 
-                  <VListItem :to="{ name: 'invoice-edit-id', params: { id: invoice.id } }">
+                  <VListItem :to="{ name: 'apps-invoice-edit-id', params: { id: invoice.id } }">
                     <template #prepend>
                       <VIcon
                         size="22"

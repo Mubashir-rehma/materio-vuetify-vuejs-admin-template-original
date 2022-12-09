@@ -1,11 +1,13 @@
 <script setup>
 const currentTab = ref('Appetizers')
+
 const items = [
   'Appetizers',
   'Entrees',
   'Deserts',
-  'Cocktails'
+  'Cocktails',
 ]
+
 const tabItemText = 'hortbread chocolate bar marshmallow bear claw tiramisu chocolate cookie wafer. Gummies sweet brownie brownie marshmallow chocolate cake pastry. Topping macaroon shortbread liquorice dragée macaroon.'
 </script>
 

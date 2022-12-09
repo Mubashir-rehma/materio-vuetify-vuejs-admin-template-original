@@ -1,54 +1,55 @@
 <script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
-import avatar7 from '@/assets/images/avatars/avatar-7.png'
-import avatar8 from '@/assets/images/avatars/avatar-8.png'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 
 const meetingSchedules = [
   {
     profile: avatar4,
     with: 'Call with Woods',
     dateTime: '21 Jul | 08:20-10:30',
-    type: 'Business'
+    type: 'Business',
   },
   {
     profile: avatar8,
     with: 'Call with hilda',
     dateTime: '24 Jul | 11:30-12:00',
-    type: 'Meditation'
+    type: 'Meditation',
   },
   {
     profile: avatar7,
     with: 'Conference call',
     dateTime: '28 Jul | 05:00-6:45',
-    type: 'Meditation'
+    type: 'Meditation',
   },
   {
     profile: avatar3,
     with: 'Meeting with Mark',
     dateTime: '03 Aug | 07:00-8:30',
-    type: 'Meetup'
+    type: 'Meetup',
   },
   {
     profile: avatar2,
     with: 'Meeting in Oakland',
     dateTime: '14 Aug | 04:15-05:30',
-    type: 'Business'
+    type: 'Business',
   },
   {
     profile: avatar1,
     with: 'Meeting with Carl',
     dateTime: '05 Oct | 10:00-12:45',
-    type: 'Party'
-  }
+    type: 'Party',
+  },
 ]
+
 const meetingTypeUiColors = {
   Business: 'primary',
   Meditation: 'success',
   Meetup: 'secondary',
-  Party: 'warning'
+  Party: 'warning',
 }
 </script>
 

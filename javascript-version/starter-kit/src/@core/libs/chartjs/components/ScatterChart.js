@@ -1,6 +1,7 @@
 import { CategoryScale, Chart as ChartJS, Legend, LineElement, LinearScale, PointElement, Title, Tooltip } from 'chart.js'
 import { defineComponent } from 'vue'
 import { Scatter } from 'vue-chartjs'
+
 ChartJS.register(Title, Tooltip, Legend, PointElement, LineElement, CategoryScale, LinearScale)
 export default defineComponent({
   name: 'ScatterChart',

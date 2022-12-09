@@ -1,37 +1,39 @@
 <script setup>
 import {
   injectionKeyIsVerticalNavHovered,
-  useLayouts
+  useLayouts,
 } from '@layouts'
 import {
   TransitionExpand,
-  VerticalNavLink
+  VerticalNavLink,
 } from '@layouts/components'
 import { config } from '@layouts/config'
 import { canViewNavMenuGroup } from '@layouts/plugins/casl'
 import {
   isNavGroupActive,
-  openGroups
+  openGroups,
 } from '@layouts/utils'
 
 const props = defineProps({
   item: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
 defineOptions({ name: 'VerticalNavGroup' })
+
 const route = useRoute()
 const router = useRouter()
-const {width: windowWidth} = useWindowSize()
-const {isVerticalNavMini, dynamicI18nProps} = useLayouts()
+const { width: windowWidth } = useWindowSize()
+const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
 const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
 
 // })
 const isGroupActive = ref(false)
 const isGroupOpen = ref(false)
+
 const isAnyChildOpen = children => {
   return children.some(child => {
     let result = openGroups.value.includes(child.title)
@@ -41,6 +43,7 @@ const isAnyChildOpen = children => {
     return result
   })
 }
+
 const collapseChildren = children => {
   children.forEach(child => {
     if ('children' in child)
@@ -48,6 +51,7 @@ const collapseChildren = children => {
     openGroups.value = openGroups.value.filter(group => group !== child.title)
   })
 }
+
 watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 

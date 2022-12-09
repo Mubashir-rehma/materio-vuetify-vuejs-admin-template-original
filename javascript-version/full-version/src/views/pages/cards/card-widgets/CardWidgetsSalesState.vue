@@ -4,7 +4,8 @@ import { useTheme } from 'vuetify'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   
@@ -12,21 +13,21 @@ const options = controlledComputed(theme, () => {
     chart: {
       offsetY: -30,
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     tooltip: { enabled: false },
     dataLabels: { enabled: false },
     stroke: {
       width: 5,
-      curve: 'smooth'
+      curve: 'smooth',
     },
     grid: {
       show: false,
       padding: {
         left: 0,
         top: -40,
-        right: 0
-      }
+        right: 0,
+      },
     },
     fill: {
       type: 'gradient',
@@ -37,35 +38,35 @@ const options = controlledComputed(theme, () => {
         stops: [
           0,
           90,
-          100
+          100,
         ],
         colorStops: [[
           {
             offset: 0,
             opacity: 0.6,
-            color: currentTheme.value.primary
+            color: currentTheme.value.primary,
           },
           {
             offset: 100,
             opacity: 0.1,
-            color: currentTheme.value.surface
-          }
-        ]]
-      }
+            color: currentTheme.value.surface,
+          },
+        ]],
+      },
     },
     theme: {
       monochrome: {
         enabled: true,
         shadeTo: 'light',
         shadeIntensity: 1,
-        color: currentTheme.value.primary
-      }
+        color: currentTheme.value.primary,
+      },
     },
     xaxis: {
       type: 'numeric',
       labels: { show: false },
       axisTicks: { show: false },
-      axisBorder: { show: false }
+      axisBorder: { show: false },
     },
     yaxis: { show: false },
     markers: {
@@ -80,11 +81,12 @@ const options = controlledComputed(theme, () => {
         seriesIndex: 0,
         dataPointIndex: 5,
         strokeColor: currentTheme.value.primary,
-        fillColor: currentTheme.value.surface
-      }]
-    }
+        fillColor: currentTheme.value.surface,
+      }],
+    },
   }
 })
+
 const series = [{
   name: 'Traffic Rate',
   data: [
@@ -93,8 +95,8 @@ const series = [{
     350,
     600,
     500,
-    700
-  ]
+    700,
+  ],
 }]
 </script>
 

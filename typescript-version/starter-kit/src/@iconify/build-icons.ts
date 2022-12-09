@@ -11,7 +11,7 @@
  * For Iconify Tools documentation visit https://docs.iconify.design/tools/tools2/
  */
 import { promises as fs } from 'fs'
-import { dirname } from 'path'
+import { dirname, join } from 'path'
 
 // Installation: npm install --save-dev @iconify/tools @iconify/utils @iconify/json @iconify/iconify
 import {
@@ -114,7 +114,7 @@ const component = '@iconify/vue'
 const commonJS = false
 
 // File to save bundle to
-const target = 'src/@iconify/icons-bundle.js';
+const target = join(__dirname, 'icons-bundle.js');
 
 /**
  * Do stuff!
@@ -249,6 +249,7 @@ const target = 'src/@iconify/icons-bundle.js';
 
       // Export to JSON
       const content = iconSet.export()
+
       bundle += `addCollection(${JSON.stringify(content)});\n`
     }
   }
@@ -273,6 +274,7 @@ function removeMetaData(iconSet: IconifyJSON) {
     'prefixes',
     'suffixes',
   ]
+
   props.forEach(prop => {
     delete iconSet[prop]
   })
@@ -283,12 +285,14 @@ function removeMetaData(iconSet: IconifyJSON) {
  */
 function organizeIconsList(icons: string[]): Record<string, string[]> {
   const sorted: Record<string, string[]> = Object.create(null)
+
   icons.forEach(icon => {
     const item = stringToIcon(icon)
     if (!item)
       return
 
     const prefix = item.prefix
+
     const prefixList = sorted[prefix]
       ? sorted[prefix]
       : (sorted[prefix] = [])

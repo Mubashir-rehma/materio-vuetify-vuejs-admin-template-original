@@ -1,6 +1,7 @@
 import { useTheme } from 'vuetify'
 import { useLayouts } from '@layouts'
 import { themeConfig } from '@themeConfig'
+
 export const useThemeConfig = () => {
   const theme = computed({
     get() {
@@ -10,9 +11,10 @@ export const useThemeConfig = () => {
       themeConfig.app.theme.value = value
       localStorage.setItem(`${themeConfig.app.title}-theme`, value.toString())
 
-      if (value !== 'light')
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        isVerticalNavSemiDark.value = false
+      // ℹ️ We will not reset semi dark value when turning off dark mode because some user think it as bug
+      // if (value !== 'light')
+      //   // eslint-disable-next-line @typescript-eslint/no-use-before-define
+      //   isVerticalNavSemiDark.value = false
     },
   })
 
@@ -28,7 +30,10 @@ export const useThemeConfig = () => {
 
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
-    watch(theme, val => { vuetifyTheme.global.name.value = val })
+
+    watch(theme, val => {
+      vuetifyTheme.global.name.value = val
+    })
   }
 
   /*
@@ -41,6 +46,7 @@ export const useThemeConfig = () => {
   */
   const syncInitialLoaderTheme = () => {
     const vuetifyTheme = useTheme()
+
     watch(theme, val => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)

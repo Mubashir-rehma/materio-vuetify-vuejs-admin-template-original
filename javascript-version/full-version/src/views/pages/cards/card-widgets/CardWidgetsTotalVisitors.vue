@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -17,24 +18,24 @@ const options = controlledComputed(theme, () => {
       currentTheme.value.primary,
       `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.7)`,
       `rgba(${ hexToRgb(currentTheme.value.primary) }, 0.5)`,
-      currentTheme.value.background
+      currentTheme.value.background,
     ],
     stroke: { width: 0 },
     dataLabels: { enabled: false },
     legend: {
       show: true,
       position: 'bottom',
-      labels: { colors: secondaryTextColor }
+      labels: { colors: secondaryTextColor },
     },
     labels: [
       'FR',
       'UK',
       'ESP',
-      'USA'
+      'USA',
     ],
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     plotOptions: {
       pie: {
@@ -45,32 +46,33 @@ const options = controlledComputed(theme, () => {
             show: true,
             name: {
               offsetY: 25,
-              color: secondaryTextColor
+              color: secondaryTextColor,
             },
             value: {
               offsetY: -15,
               fontWeight: 600,
               color: primaryTextColor,
-              formatter: value => `${ value }%`
+              formatter: value => `${ value }%`,
             },
             total: {
               show: true,
               label: 'Weekly Visits',
               fontSize: '12px',
               color: secondaryTextColor,
-              formatter: value => `${ value.globals.seriesTotals.reduce((total, num) => total + num) }%`
-            }
-          }
-        }
-      }
-    }
+              formatter: value => `${ value.globals.seriesTotals.reduce((total, num) => total + num) }%`,
+            },
+          },
+        },
+      },
+    },
   }
 })
+
 const series = [
   12,
   25,
   13,
-  50
+  50,
 ]
 </script>
 

@@ -1,14 +1,14 @@
 <script setup>
 import {
   HorizontalNavGroup,
-  HorizontalNavLink
+  HorizontalNavLink,
 } from '@layouts/components'
 
 const props = defineProps({
   navItems: {
     type: null,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const resolveNavItemComponent = item => {

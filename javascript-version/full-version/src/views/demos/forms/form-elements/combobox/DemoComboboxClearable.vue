@@ -1,13 +1,14 @@
 <script setup>
 const select = ref([
   'Vuetify',
-  'Programming'
+  'Programming',
 ])
+
 const items = [
   'Programming',
   'Design',
   'Vue',
-  'Vuetify'
+  'Vuetify',
 ]
 </script>
 

@@ -4,27 +4,28 @@ const recentDevices = ref([
     type: 'New for you',
     email: true,
     browser: true,
-    app: true
+    app: true,
   },
   {
     type: 'Account activity',
     email: true,
     browser: true,
-    app: true
+    app: true,
   },
   {
     type: 'A new browser used to sign in',
     email: true,
     browser: true,
-    app: false
+    app: false,
   },
   {
     type: 'A new device is linked',
     email: true,
     browser: false,
-    app: false
-  }
+    app: false,
+  },
 ])
+
 const selectedNotification = ref('Only when I\'m online')
 </script>
 
@@ -61,22 +62,13 @@ const selectedNotification = ref('Only when I\'m online')
             {{ device.type }}
           </td>
           <td>
-            <VCheckbox
-              v-model="device.email"
-              class="mt-2"
-            />
+            <VCheckbox v-model="device.email" />
           </td>
           <td>
-            <VCheckbox
-              v-model="device.browser"
-              class="mt-2"
-            />
+            <VCheckbox v-model="device.browser" />
           </td>
           <td>
-            <VCheckbox
-              v-model="device.app"
-              class="mt-2"
-            />
+            <VCheckbox v-model="device.app" />
           </td>
         </tr>
       </tbody>

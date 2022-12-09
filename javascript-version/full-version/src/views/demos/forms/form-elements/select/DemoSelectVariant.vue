@@ -3,7 +3,7 @@ const items = [
   'Foo',
   'Bar',
   'Fizz',
-  'Buzz'
+  'Buzz',
 ]
 </script>
 

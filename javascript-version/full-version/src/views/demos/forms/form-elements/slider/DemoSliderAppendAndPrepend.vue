@@ -3,6 +3,7 @@ const bpm = ref(40)
 const min = 40
 const max = 218
 const isPlaying = ref(false)
+
 const color = computed(() => {
   if (bpm.value < 100)
     return 'primary'
@@ -15,10 +16,20 @@ const color = computed(() => {
   
   return 'error'
 })
+
 const animationDuration = computed(() => {
   return `${ 60 / bpm.value }s`
 })
-const bmpControl = useClamp(bpm, min, max)
+
+const decrement = () => {
+  if (bpm.value > min)
+    bpm.value -= 1
+}
+
+const increment = () => {
+  if (bpm.value < max)
+    bpm.value += 1
+}
 </script>
 
 <template>
@@ -72,7 +83,7 @@ const bmpControl = useClamp(bpm, min, max)
         variant="text"
         icon="mdi-minus"
         :color="color"
-        @click="bmpControl--"
+        @click="decrement"
       />
     </template>
 
@@ -82,7 +93,7 @@ const bmpControl = useClamp(bpm, min, max)
         variant="text"
         icon="mdi-plus"
         :color="color"
-        @click="bmpControl++"
+        @click="increment"
       />
     </template>
   </VSlider>

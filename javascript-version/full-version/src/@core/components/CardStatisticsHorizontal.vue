@@ -4,25 +4,25 @@ import { kFormatter } from '@core/utils/formatters'
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   color: {
     type: String,
     required: false,
-    default: 'primary'
+    default: 'primary',
   },
   icon: {
     type: String,
-    required: true
+    required: true,
   },
   stats: {
     type: Number,
-    required: true
+    required: true,
   },
   change: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const isPositive = controlledComputed(() => props.change, () => Math.sign(props.change) === 1)
@@ -37,11 +37,11 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
       <VAvatar
         size="44"
         rounded
-        :color="props.color"
-        variant="tonal"
-        class="me-4"
+        class="elevation-2 me-4"
+        style="background-color: #fff;"
       >
         <VIcon
+          :color="props.color"
           :icon="props.icon"
           :size="24"
         />

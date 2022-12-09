@@ -14,28 +14,28 @@ const tabs = [
   {
     title: 'Account',
     icon: 'mdi-account-outline',
-    tab: 'account'
+    tab: 'account',
   },
   {
     title: 'Security',
     icon: 'mdi-lock-open-outline',
-    tab: 'security'
+    tab: 'security',
   },
   {
     title: 'Billing & Plans',
     icon: 'mdi-bookmark-outline',
-    tab: 'billing-plans'
+    tab: 'billing-plans',
   },
   {
     title: 'Notifications',
     icon: 'mdi-bell-outline',
-    tab: 'notification'
+    tab: 'notification',
   },
   {
     title: 'Connections',
     icon: 'mdi-link-variant',
-    tab: 'connection'
-  }
+    tab: 'connection',
+  },
 ]
 </script>
 
@@ -43,7 +43,6 @@ const tabs = [
   <div>
     <VTabs
       v-model="activeTab"
-      show-arrows
       class="v-tabs-pill"
     >
       <VTab

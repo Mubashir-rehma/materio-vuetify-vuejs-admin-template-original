@@ -1,35 +1,37 @@
 <script setup>
 const open = ref([
   'Users',
-  'Admin'
+  'Admin',
 ])
+
 const admins = [
   [
     'Management',
-    'mdi-account-multiple-outline'
+    'mdi-account-multiple-outline',
   ],
   [
     'Settings',
-    'mdi-cog-outline'
-  ]
+    'mdi-cog-outline',
+  ],
 ]
+
 const cruds = [
   [
     'Create',
-    'mdi-plus-outline'
+    'mdi-plus-outline',
   ],
   [
     'Read',
-    'mdi-file-outline'
+    'mdi-file-outline',
   ],
   [
     'Update',
-    'mdi-update'
+    'mdi-update',
   ],
   [
     'Delete',
-    'mdi-delete-outline'
-  ]
+    'mdi-delete-outline',
+  ],
 ]
 </script>
 

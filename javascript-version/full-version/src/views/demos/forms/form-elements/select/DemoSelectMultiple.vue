@@ -1,5 +1,6 @@
 <script setup>
 const selectedOptions = ref(['Alabama'])
+
 const states = [
   'Alabama',
   'Alaska',
@@ -14,7 +15,7 @@ const states = [
   'Federated States of Micronesia',
   'Florida',
   'Georgia',
-  'Guam'
+  'Guam',
 ]
 </script>
 

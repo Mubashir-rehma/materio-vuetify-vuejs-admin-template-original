@@ -1,0 +1,91 @@
+@use "@configured-variables" as variables;
+
+.layout-nav-type-vertical {
+  // 👉 Layout Vertical nav
+  .layout-vertical-nav {
+    // 👉 Nav section title
+    .nav-section-title {
+      padding-inline: variables.$vertical-nav-horizontal-padding;
+
+      /*
+    ℹ️ We will use this to add gap between divider and text.
+    Moreover, we will use this to adjust the `flex-basis` property of left divider
+  */
+      $divider-gap: 0.625rem;
+
+      // Thanks: https://stackoverflow.com/a/62359101/10796681
+      .title-text {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: $divider-gap;
+
+        &::before,
+        &::after {
+          border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+          content: "";
+        }
+
+        &::after {
+          flex: 1 1 auto;
+        }
+
+        &::before {
+          flex: 0 1 calc(variables.$vertical-nav-horizontal-padding-start - $divider-gap);
+          margin-inline-start: -#{variables.$vertical-nav-horizontal-padding-start};
+        }
+      }
+
+      // ℹ️ Update the margin-inline-end when vertical nav is in mini state. We done same for link & group.
+      @at-root {
+        .layout-nav-type-vertical.layout-vertical-nav-collapsed .layout-vertical-nav:not(.hovered) .nav-section-title {
+          margin-inline: 4px 0;
+        }
+      }
+    }
+
+    // 👉 Nav group & Link
+    .nav-link,
+    .nav-group {
+      > :first-child {
+        block-size: 2.625rem !important;
+        border-end-end-radius: 3.125rem !important;
+        border-end-start-radius: 0 !important;
+        border-start-end-radius: 3.125rem !important;
+        border-start-start-radius: 0 !important;
+      }
+
+      // ℹ️ Wobble effect
+      // transition: margin-inline 0.4s ease-in-out;
+      // will-change: margin-inline;
+
+      // ℹ️ Update the margin-inline-end when vertical nav is in mini state. We done same for section title.
+      @at-root {
+        .layout-nav-type-vertical.layout-vertical-nav-collapsed .layout-vertical-nav:not(.hovered) .nav-link > :first-child,
+        .layout-nav-type-vertical .layout-vertical-nav .nav-group > :first-child {
+          margin-inline: 0 5px;
+        }
+      }
+    }
+
+    // 👉 Vertical nav link
+    .nav-link {
+      > .router-link-exact-active {
+        background: linear-gradient(-72.47deg, rgb(var(--v-global-theme-primary)) 22.16%, rgba(var(--v-global-theme-primary), 0.7) 76.47%) !important;
+      }
+    }
+
+    // 👉 Vertical nav group
+    .nav-group {
+      // Active & open states for nav group label
+      &.active,
+      &.open {
+        > :first-child {
+          // ℹ️ We have to make active state bg like hover state according to design
+          --v-theme-overlay-multiplier: 0.3333;
+        }
+      }
+    }
+  }
+}

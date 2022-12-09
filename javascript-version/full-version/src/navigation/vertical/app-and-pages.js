@@ -1,26 +1,36 @@
 export default [
   { heading: 'Apps & Pages' },
   {
+    title: 'Email',
+    icon: { icon: 'mdi-email-outline' },
+    to: 'apps-email',
+  },
+  {
+    title: 'Chat',
+    icon: { icon: 'mdi-message-outline' },
+    to: 'apps-chat',
+  },
+  {
     title: 'Calendar',
     icon: { icon: 'mdi-calendar-blank-outline' },
-    to: 'calendar',
+    to: 'apps-calendar',
   },
   {
     title: 'Invoice',
     icon: { icon: 'mdi-file-document-outline' },
     children: [
-      { title: 'List', to: 'invoice-list' },
-      { title: 'Preview', to: { name: 'invoice-preview-id', params: { id: '5036' } } },
-      { title: 'Edit', to: { name: 'invoice-edit-id', params: { id: '5036' } } },
-      { title: 'Add', to: 'invoice-add' },
+      { title: 'List', to: 'apps-invoice-list' },
+      { title: 'Preview', to: { name: 'apps-invoice-preview-id', params: { id: '5036' } } },
+      { title: 'Edit', to: { name: 'apps-invoice-edit-id', params: { id: '5036' } } },
+      { title: 'Add', to: 'apps-invoice-add' },
     ],
   },
   {
     title: 'User',
     icon: { icon: 'mdi-account-outline' },
     children: [
-      { title: 'List', to: 'user-list' },
-      { title: 'View', to: { name: 'user-view-id', params: { id: 21 } } },
+      { title: 'List', to: 'apps-user-list' },
+      { title: 'View', to: { name: 'apps-user-view-id', params: { id: 21 } } },
     ],
   },
   {
@@ -45,6 +55,13 @@ export default [
             ],
           },
           {
+            title: 'Verify Email',
+            children: [
+              { title: 'Verify Email v1', to: 'pages-authentication-verify-email-v1', target: '_blank' },
+              { title: 'Verify Email v2', to: 'pages-authentication-verify-email-v2', target: '_blank' },
+            ],
+          },
+          {
             title: 'Forgot Password',
             children: [
               { title: 'Forgot Password v1', to: 'pages-authentication-forgot-password-v1', target: '_blank' },
@@ -58,9 +75,17 @@ export default [
               { title: 'Reset Password v2', to: 'pages-authentication-reset-password-v2', target: '_blank' },
             ],
           },
+          {
+            title: 'Two Steps',
+            children: [
+              { title: 'Two Steps v1', to: 'pages-authentication-two-steps-v1', target: '_blank' },
+              { title: 'Two Steps v2', to: 'pages-authentication-two-steps-v2', target: '_blank' },
+            ],
+          },
         ],
       },
-      { title: 'Knowledge Base', to: 'pages-knowledge-base' },
+      { title: 'Help Center', to: 'pages-help-center' },
+      { title: 'User Profile', to: { name: 'pages-user-profile-tab', params: { tab: 'profile' } } },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },
       { title: 'FAQ', to: 'pages-faq' },

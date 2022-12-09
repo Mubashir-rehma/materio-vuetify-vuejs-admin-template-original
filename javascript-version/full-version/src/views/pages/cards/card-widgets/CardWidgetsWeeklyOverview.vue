@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -17,7 +18,7 @@ const options = controlledComputed(theme, () => {
       offsetY: -10,
       offsetX: -15,
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     plotOptions: {
       bar: {
@@ -25,17 +26,17 @@ const options = controlledComputed(theme, () => {
         distributed: true,
         columnWidth: '40%',
         endingShape: 'rounded',
-        startingShape: 'rounded'
-      }
+        startingShape: 'rounded',
+      },
     },
     stroke: {
       width: 2,
-      colors: [currentTheme.value.surface]
+      colors: [currentTheme.value.surface],
     },
     legend: { show: false },
     grid: {
       borderColor,
-      strokeDashArray: 7
+      strokeDashArray: 7,
     },
     dataLabels: { enabled: false },
     colors: [
@@ -44,11 +45,11 @@ const options = controlledComputed(theme, () => {
       currentTheme.value.background,
       currentTheme.value.primary,
       currentTheme.value.background,
-      currentTheme.value.background
+      currentTheme.value.background,
     ],
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     xaxis: {
       categories: [
@@ -58,13 +59,13 @@ const options = controlledComputed(theme, () => {
         'Wed',
         'Thu',
         'Fri',
-        'Sat'
+        'Sat',
       ],
       tickPlacement: 'on',
       labels: { show: false },
       crosshairs: { opacity: 0 },
       axisTicks: { show: false },
-      axisBorder: { show: false }
+      axisBorder: { show: false },
     },
     yaxis: {
       show: true,
@@ -72,13 +73,14 @@ const options = controlledComputed(theme, () => {
       labels: {
         style: {
           colors: disabledColor,
-          fontSize: '12px'
+          fontSize: '12px',
         },
-        formatter: value => `${ value > 999 ? `${ (value / 1000).toFixed(0) }` : value }k`
-      }
-    }
+        formatter: value => `${ value > 999 ? `${ (value / 1000).toFixed(0) }` : value }k`,
+      },
+    },
   }
 })
+
 const series = [{
   data: [
     37,
@@ -87,8 +89,8 @@ const series = [{
     75,
     57,
     40,
-    65
-  ]
+    65,
+  ],
 }]
 </script>
 

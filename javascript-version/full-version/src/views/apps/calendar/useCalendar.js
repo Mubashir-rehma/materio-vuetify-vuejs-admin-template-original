@@ -4,6 +4,7 @@ import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
+
 export const blankEvent = {
   title: '',
   start: '',
@@ -31,6 +32,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
   // 👉 Calendar template ref
   const refCalendar = ref()
 
+
   // 👉 Calendar colors
   const calendarsColor = {
     Business: 'primary',
@@ -40,10 +42,10 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
     ETC: 'info',
   }
 
+
   // ℹ️ Extract event data from event API
   const extractEventDataFromEventApi = eventApi => {
-    // @ts-expect-error EventApi has extendProps type Dictionary (Record<string, any>) and we have fully typed extended props => Type conflict
-    const { id, title, start, end, url, extendedProps: { calendar, guests, location, description }, allDay, } = eventApi
+    const { id, title, start, end, url, extendedProps: { calendar, guests, location, description }, allDay } = eventApi
     
     return {
       id,
@@ -60,6 +62,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       allDay,
     }
   }
+
 
   // 👉 Fetch events
   const fetchEvents = (info, successCallback) => {
@@ -81,8 +84,10 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       })
   }
 
+
   // 👉 Calendar API
   const calendarApi = ref(null)
+
 
   // 👉 Update event in calendar [UI]
   const updateEventInCalendar = (updatedEventData, propsToUpdate, extendedPropsToUpdate) => {
@@ -98,6 +103,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
     // dateRelatedProps => ['start', 'end', 'allDay']
     for (let index = 0; index < propsToUpdate.length; index++) {
       const propName = propsToUpdate[index]
+
       existingEvent.setProp(propName, updatedEventData[propName])
     }
 
@@ -109,9 +115,11 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
     // ? Docs: https://fullcalendar.io/docs/Event-setExtendedProp
     for (let index = 0; index < extendedPropsToUpdate.length; index++) {
       const propName = extendedPropsToUpdate[index]
+
       existingEvent.setExtendedProp(propName, updatedEventData.extendedProps[propName])
     }
   }
+
 
   // 👉 Remove event in calendar [UI]
   const removeEventInCalendar = eventId => {
@@ -120,11 +128,14 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       _event.remove()
   }
 
+
   // 👉 refetch events
   const refetchEvents = () => {
     calendarApi.value?.refetchEvents()
   }
+
   watch(() => store.selectedCalendars, refetchEvents)
+
 
   // 👉 Add event
   const addEvent = _event => {
@@ -134,15 +145,18 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       })
   }
 
+
   // 👉 Update event
   const updateEvent = _event => {
     store.updateEvent(_event)
       .then(r => {
         const propsToUpdate = ['id', 'title', 'url']
         const extendedPropsToUpdate = ['calendar', 'guests', 'location', 'description']
+
         updateEventInCalendar(r.data.event, propsToUpdate, extendedPropsToUpdate)
       })
   }
+
 
   // 👉 Remove event
   const removeEvent = eventId => {
@@ -150,6 +164,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       removeEventInCalendar(eventId)
     })
   }
+
 
   // 👉 Calendar options
   const calendarOptions = {
@@ -240,6 +255,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       },
     },
   }
+
 
   // 👉 onMounted
   onMounted(() => {

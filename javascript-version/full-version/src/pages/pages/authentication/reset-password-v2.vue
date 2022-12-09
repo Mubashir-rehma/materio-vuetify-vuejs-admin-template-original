@@ -1,21 +1,20 @@
 <script setup>
-import tree3 from '@/assets/images/pages/tree-3.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import tree3 from '@images/pages/tree-3.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import authV2MaskDark from '@/assets/images/pages/auth-v2-mask-dark.png'
-import authV2MaskLight from '@/assets/images/pages/auth-v2-mask-light.png'
-import authV2ResetPasswordIllustrationBorderedDark from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-dark.png'
-import authV2ResetPasswordIllustrationBorderedLight from '@/assets/images/pages/auth-v2-reset-password-illustration-bordered-light.png'
-import authV2ResetPasswordIllustrationDark from '@/assets/images/pages/auth-v2-reset-password-illustration-dark.png'
-import authV2ResetPasswordIllustrationLight from '@/assets/images/pages/auth-v2-reset-password-illustration-light.png'
+import authV2MaskDark from '@images/pages/auth-v2-mask-dark.png'
+import authV2MaskLight from '@images/pages/auth-v2-mask-light.png'
+import authV2ResetPasswordIllustrationBorderedDark from '@images/pages/auth-v2-reset-password-illustration-bordered-dark.png'
+import authV2ResetPasswordIllustrationBorderedLight from '@images/pages/auth-v2-reset-password-illustration-bordered-light.png'
+import authV2ResetPasswordIllustrationDark from '@images/pages/auth-v2-reset-password-illustration-dark.png'
+import authV2ResetPasswordIllustrationLight from '@images/pages/auth-v2-reset-password-illustration-light.png'
 
-const {isAppRtl} = useThemeConfig()
 const form = ref({
   newPassword: '',
-  confirmPassword: ''
+  confirmPassword: '',
 })
+
 const authThemeImg = useGenerateImageVariant(authV2ResetPasswordIllustrationLight, authV2ResetPasswordIllustrationDark, authV2ResetPasswordIllustrationBorderedLight, authV2ResetPasswordIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const isPasswordVisible = ref(false)
@@ -66,7 +65,7 @@ const isConfirmPasswordVisible = ref(false)
       <VCol
         cols="12"
         md="4"
-        class="auth-bg d-flex align-center justify-center"
+        class="auth-card-v2 d-flex align-center justify-center"
       >
         <VCard
           flat
@@ -118,17 +117,14 @@ const isConfirmPasswordVisible = ref(false)
                 </VCol>
 
                 <!-- back to login -->
-                <VCol
-                  cols="12"
-                  class="text-center"
-                >
+                <VCol cols="12">
                   <RouterLink
-                    class="text-primary ms-2"
+                    class="d-flex align-center justify-center"
                     :to="{ name: 'pages-authentication-login-v2' }"
                   >
                     <VIcon
                       icon="mdi-chevron-left"
-                      :rotate="isAppRtl ? '180deg' : null"
+                      class="flip-in-rtl"
                     />
                     <span>Back to login</span>
                   </RouterLink>
@@ -143,7 +139,7 @@ const isConfirmPasswordVisible = ref(false)
 </template>
 
 <style lang="scss">
-@use "@core/scss/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth.scss";
 </style>
 
 <route lang="yaml">

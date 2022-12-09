@@ -1,13 +1,16 @@
 <script setup>
 import BillingHistoryTable from './BillingHistoryTable.vue'
-import mastercard from '@/assets/images/icons/payments/mastercard.png'
-import visa from '@/assets/images/icons/payments/visa.png'
+
+// Images
+import mastercard from '@images/icons/payments/mastercard.png'
+import visa from '@images/icons/payments/visa.png'
 
 const selectedPaymentMethod = ref('credit-debit-atm-card')
 const isPricingPlanDialogVisible = ref(false)
 const isConfirmDialogVisible = ref(false)
 const isCardEditDialogVisible = ref(false)
 const isCardDetailSaveBilling = ref(false)
+
 const creditCards = [
   {
     name: 'Tom McBride',
@@ -16,7 +19,7 @@ const creditCards = [
     isPrimary: true,
     type: 'visa',
     cvv: '456',
-    image: visa
+    image: visa,
   },
   {
     name: 'Mildred Wagner',
@@ -25,9 +28,10 @@ const creditCards = [
     isPrimary: false,
     type: 'mastercard',
     cvv: '123',
-    image: mastercard
-  }
+    image: mastercard,
+  },
 ]
+
 const countryList = [
   'United States',
   'Canada',
@@ -37,12 +41,27 @@ const countryList = [
   'India',
   'Russia',
   'China',
-  'Japan'
+  'Japan',
 ]
+
 const currentCardDetails = ref()
+
 const openEditCardDialog = cardDetails => {
   currentCardDetails.value = cardDetails
   isCardEditDialogVisible.value = true
+}
+
+const cardNumber = ref(135632156548789)
+const cardName = ref('john Doe')
+const cardExpiryDate = ref('05/24')
+const cardCvv = ref(420)
+
+const resetPaymentForm = () => {
+  cardNumber.value = 135632156548789
+  cardName.value = 'john Doe'
+  cardExpiryDate.value = '05/24'
+  cardCvv.value = 420
+  selectedPaymentMethod.value = 'credit-debit-atm-card'
 }
 </script>
 
@@ -59,7 +78,7 @@ const openEditCardDialog = cardDetails => {
             >
               <div>
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-semibold mb-2">
                     Your Current Plan is Basic
                   </h3>
                   <p class="text-base">
@@ -68,7 +87,7 @@ const openEditCardDialog = cardDetails => {
                 </div>
 
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-semibold mb-2">
                     Active until Dec 09, 2021
                   </h3>
                   <p class="text-base">
@@ -77,12 +96,11 @@ const openEditCardDialog = cardDetails => {
                 </div>
 
                 <div>
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-semibold mb-2">
                     <span class="me-3">$199 Per Month</span>
                     <VChip
                       color="primary"
                       size="small"
-                      label
                     >
                       Popular
                     </VChip>
@@ -99,8 +117,8 @@ const openEditCardDialog = cardDetails => {
               md="6"
             >
               <VAlert
-                color="warning"
                 variant="tonal"
+                type="warning"
               >
                 <VAlertTitle class="mb-1">
                   We need your attention!
@@ -171,103 +189,101 @@ const openEditCardDialog = cardDetails => {
     <VCol cols="12">
       <VCard title="Payment Methods">
         <VCardText>
-          <VForm>
+          <VForm @submit.prevent="() => {}">
             <VRow>
               <VCol
                 cols="12"
                 md="6"
               >
-                <VForm @submit.prevent="() => {}">
-                  <VRow>
-                    <!-- 👉 card type switch -->
-                    <VCol cols="12">
-                      <VRadioGroup
-                        v-model="selectedPaymentMethod"
-                        inline
-                      >
-                        <VRadio
-                          value="credit-debit-atm-card"
-                          label="Credit/Debit/ATM Card"
-                          color="primary"
+                <VRow>
+                  <!-- 👉 card type switch -->
+                  <VCol cols="12">
+                    <VRadioGroup
+                      v-model="selectedPaymentMethod"
+                      inline
+                    >
+                      <VRadio
+                        value="credit-debit-atm-card"
+                        label="Credit/Debit/ATM Card"
+                        color="primary"
+                      />
+                      <VRadio
+                        value="cod-cheque"
+                        label="COD/Cheque"
+                        color="primary"
+                      />
+                    </VRadioGroup>
+                  </VCol>
+
+                  <VCol cols="12">
+                    <VRow v-show="selectedPaymentMethod === 'credit-debit-atm-card'">
+                      <!-- 👉 Card Number -->
+                      <VCol cols="12">
+                        <VTextField
+                          v-model="cardNumber"
+                          label="Card Number"
+                          type="number"
                         />
-                        <VRadio
-                          value="paypal-account"
-                          label="Paypal account"
-                          color="primary"
-                        />
-                      </VRadioGroup>
-                    </VCol>
+                      </VCol>
 
-                    <!-- 👉 Card Number -->
-                    <VCol cols="12">
-                      <VTextField
-                        label="Card Number"
-                        :model-value="135632156548789"
-                        type="number"
-                      />
-                    </VCol>
-
-                    <!-- 👉 Name -->
-                    <VCol
-                      cols="12"
-                      md="6"
-                    >
-                      <VTextField
-                        label="Name"
-                        model-value="john Doe"
-                      />
-                    </VCol>
-
-                    <!-- 👉 Expiry date -->
-                    <VCol
-                      cols="6"
-                      md="3"
-                    >
-                      <VTextField
-                        label="Expiry Date"
-                        model-value="0524"
-                      />
-                    </VCol>
-
-                    <!-- 👉 Cvv code -->
-                    <VCol
-                      cols="6"
-                      md="3"
-                    >
-                      <VTextField
-                        type="password"
-                        label="CVV Code"
-                        model-value="0524"
-                      />
-                    </VCol>
-
-                    <!-- 👉 Future Billing switch -->
-                    <VCol cols="12">
-                      <VSwitch
-                        v-model="isCardDetailSaveBilling"
-                        density="compact"
-                        label="Save card for future billing?"
-                      />
-                    </VCol>
-
-                    <!-- 👉 Payment method action button -->
-                    <VCol
-                      cols="12"
-                      class="d-flex flex-wrap gap-4"
-                    >
-                      <VBtn type="submit">
-                        Save changes
-                      </VBtn>
-                      <VBtn
-                        type="reset"
-                        color="secondary"
-                        variant="tonal"
+                      <!-- 👉 Name -->
+                      <VCol
+                        cols="12"
+                        md="6"
                       >
-                        Reset
-                      </VBtn>
-                    </VCol>
-                  </VRow>
-                </VForm>
+                        <VTextField
+                          v-model="cardName"
+                          label="Name"
+                        />
+                      </VCol>
+
+                      <!-- 👉 Expiry date -->
+                      <VCol
+                        cols="6"
+                        md="3"
+                      >
+                        <VTextField
+                          v-model="cardExpiryDate"
+                          label="Expiry Date"
+                        />
+                      </VCol>
+
+                      <!-- 👉 Cvv code -->
+                      <VCol
+                        cols="6"
+                        md="3"
+                      >
+                        <VTextField
+                          v-model="cardCvv"
+                          type="password"
+                          label="CVV Code"
+                        />
+                      </VCol>
+
+                      <!-- 👉 Future Billing switch -->
+                      <VCol cols="12">
+                        <VSwitch
+                          v-model="isCardDetailSaveBilling"
+                          density="compact"
+                          label="Save card for future billing?"
+                        />
+                      </VCol>
+                    </VRow>
+
+                    <p
+                      v-show="selectedPaymentMethod === 'cod-cheque'"
+                      class="text-base"
+                    >
+                      Cash on delivery is a mode of payment where you make the payment after the goods/services are received.
+                    </p>
+                    <p
+                      v-show="selectedPaymentMethod === 'cod-cheque'"
+                      class="text-base"
+                    >
+                      You can pay cash or make the payment via debit/credit card directly to the delivery person.
+                    </p>
+                  </VCol>
+                </VRow>
               </VCol>
 
               <!-- 👉 Saved Cards -->
@@ -275,9 +291,9 @@ const openEditCardDialog = cardDetails => {
                 cols="12"
                 md="6"
               >
-                <p class="text-base font-weight-medium">
+                <h6 class="text-base font-weight-semibold mb-6">
                   My Cards
-                </p>
+                </h6>
 
                 <div class="d-flex flex-column gap-y-4">
                   <VCard
@@ -335,6 +351,23 @@ const openEditCardDialog = cardDetails => {
                   :card-details="currentCardDetails"
                   class="v-dialog-lg"
                 />
+              </VCol>
+
+              <!-- 👉 Payment method action button -->
+              <VCol
+                cols="12"
+                class="d-flex flex-wrap gap-4"
+              >
+                <VBtn type="submit">
+                  Save changes
+                </VBtn>
+                <VBtn
+                  color="secondary"
+                  variant="tonal"
+                  @click="resetPaymentForm"
+                >
+                  Reset
+                </VBtn>
               </VCol>
             </VRow>
           </VForm>

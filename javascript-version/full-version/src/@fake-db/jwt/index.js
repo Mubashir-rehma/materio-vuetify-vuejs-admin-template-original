@@ -1,6 +1,7 @@
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
 import mock from '@/@fake-db/mock'
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
+
 
 // TODO: Use jsonwebtoken pkg
 // ℹ️ Created from https://jwt.io/ using HS256 algorithm
@@ -17,6 +18,7 @@ const userTokens = [
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OX0.9JD1MR3ZkwHzhl4mOHH6lGG8hOVNZqDNH6UkFzjCqSE',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTB9.txWLuN4QT5PqTtgHmlOiNerIu5Do51PpYOiZutkyXYg',
 ]
+
 
 // ❗ These two secrets shall be in .env file and not in any other file
 // const jwtSecret = 'dd5f3089-40c3-403d-af14-d0c228b05cb4'
@@ -56,6 +58,7 @@ const database = [
     ],
   },
 ]
+
 mock.onPost('/auth/login').reply(request => {
   const { email, password } = JSON.parse(request.data)
   let errors = {
@@ -68,13 +71,16 @@ mock.onPost('/auth/login').reply(request => {
 
       // We are duplicating user here
       const userData = { ...user }
+
       const userOutData = Object.fromEntries(Object.entries(userData)
         .filter(([key, _]) => !(key === 'password' || key === 'abilities')))
+
       const response = {
         userAbilities: userData.abilities,
         accessToken,
         userData: userOutData,
       }
+
 
       //   const accessToken = jwt.sign({ id: user.id }, jwtSecret)
       return [200, response]
@@ -99,6 +105,7 @@ mock.onPost('/auth/register').reply(request => {
     return [400]
   const isEmailAlreadyInUse = database.find(user => user.email === email)
   const isUsernameAlreadyInUse = database.find(user => user.username === username)
+
   const errors = {
     password: !password ? ['Please enter password'] : null,
     email: (() => {
@@ -118,6 +125,7 @@ mock.onPost('/auth/register').reply(request => {
       return null
     })(),
   }
+
   if (!errors.username && !errors.email) {
     // Calculate user id
     const { length } = database
@@ -125,6 +133,7 @@ mock.onPost('/auth/register').reply(request => {
     if (length)
       lastIndex = database[length - 1].id
     lastIndex += 1
+
     const userData = {
       id: lastIndex,
       email,
@@ -139,16 +148,19 @@ mock.onPost('/auth/register').reply(request => {
         },
       ],
     }
+
     console.log('userData :>> ', userData)
     database.push(userData)
+
     const accessToken = userTokens[userData.id]
     const { password: _, abilities, ...user } = userData
+
     const response = {
       userData: user,
       accessToken,
       userAbilities: abilities,
     }
-    
+
     return [200, response]
   }
   

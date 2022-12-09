@@ -1,28 +1,34 @@
 <script setup>
-import knowledgeBaseBgDark from '@/assets/images/pages/knowledge-base-bg-dark.png'
-import knowledgeBaseBgLight from '@/assets/images/pages/knowledge-base-bg-light.png'
+import AppSearchHeaderBgDark from '@images/pages/app-search-header-bg-dark.png'
+import AppSearchHeaderBgLight from '@images/pages/app-search-header-bg-light.png'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const props = defineProps({
   title: {
     type: String,
-    required: false
+    required: false,
   },
   subtitle: {
     type: String,
-    required: false
-  }
+    required: false,
+  },
+  customClass: {
+    type: String,
+    required: false,
+  },
 })
 
 defineOptions({ inheritAttrs: false })
-const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowledgeBaseBgDark)
+
+const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSearchHeaderBgDark)
 </script>
 
 <template>
   <!-- 👉 Search Banner  -->
   <VCard
     flat
-    class="text-center search-header mb-7"
+    class="text-center search-header"
+    :class="props.customClass"
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
@@ -52,16 +58,22 @@ const themeBackgroundImg = useGenerateImageVariant(knowledgeBaseBgLight, knowled
 
 <style lang="scss">
 .search-header {
-  padding: 4rem;
+  padding: 4rem !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
 
 // search input
 .search-header-input {
+  border-radius: 0.375rem;
   background-color: rgb(var(--v-theme-surface));
-  border-radius: 0.3125rem;
   max-inline-size: 28.125rem;
+
+  .v-field__prepend-inner {
+    i {
+      inset-block-start: 3px !important;
+    }
+  }
 }
 
 @media (max-width: 37.5rem) {

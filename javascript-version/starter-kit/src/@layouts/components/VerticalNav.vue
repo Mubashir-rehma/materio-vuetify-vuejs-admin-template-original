@@ -3,12 +3,12 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VNodeRenderer } from './VNodeRenderer'
 import {
   injectionKeyIsVerticalNavHovered,
-  useLayouts
+  useLayouts,
 } from '@layouts'
 import {
   VerticalNavGroup,
   VerticalNavLink,
-  VerticalNavSectionTitle
+  VerticalNavSectionTitle,
 } from '@layouts/components'
 import { config } from '@layouts/config'
 
@@ -16,36 +16,40 @@ const props = defineProps({
   tag: {
     type: [
       String,
-      null
+      null,
     ],
     required: false,
-    default: 'aside'
+    default: 'aside',
   },
   navItems: {
     type: null,
-    required: true
+    required: true,
   },
   isOverlayNavActive: {
     type: Boolean,
-    required: true
+    required: true,
   },
   toggleIsOverlayNavActive: {
     type: Function,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const refNav = ref()
-const {width: windowWidth} = useWindowSize()
+const { width: windowWidth } = useWindowSize()
 const isHovered = useElementHover(refNav)
+
 provide(injectionKeyIsVerticalNavHovered, isHovered)
+
 const {
   isVerticalNavCollapsed: isCollapsed,
   isLessThanOverlayNavBreakpoint,
   isVerticalNavMini,
-  isAppRtl
+  isAppRtl,
 } = useLayouts()
+
 const hideTitleAndIcon = isVerticalNavMini(windowWidth, isHovered)
+
 const resolveNavItemComponent = item => {
   if ('heading' in item)
     return VerticalNavSectionTitle
@@ -54,18 +58,16 @@ const resolveNavItemComponent = item => {
   
   return VerticalNavLink
 }
+
 const route = useRoute()
+
 watch(() => route.name, () => {
   props.toggleIsOverlayNavActive(false)
 })
+
 const isVerticalNavScrolled = ref(false)
 const updateIsVerticalNavScrolled = val => isVerticalNavScrolled.value = val
 
-// Perfect scrollbar
-const perfectScrollbarSettings = {
-  maxScrollbarLength: 60,
-  wheelPropagation: false
-}
 const handleNavScroll = evt => {
   isVerticalNavScrolled.value = evt.target.scrollTop > 0
 }
@@ -142,7 +144,7 @@ const handleNavScroll = evt => {
         :key="isAppRtl"
         tag="ul"
         class="nav-items"
-        :options="perfectScrollbarSettings"
+        :options="{ wheelPropagation: false }"
         @ps-scroll-y="handleNavScroll"
       >
         <Component

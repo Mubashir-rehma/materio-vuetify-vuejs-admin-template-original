@@ -2,7 +2,7 @@
 import {
   computePosition,
   flip,
-  shift
+  shift,
 } from '@floating-ui/dom'
 import { useLayouts } from '@layouts/composable/useLayouts'
 import { config } from '@layouts/config'
@@ -12,67 +12,78 @@ const props = defineProps({
   popperInlineEnd: {
     type: Boolean,
     required: false,
-    default: false
+    default: false,
   },
   tag: {
     type: String,
     required: false,
-    default: 'div'
+    default: 'div',
   },
   contentContainerTag: {
     type: String,
     required: false,
-    default: 'div'
+    default: 'div',
   },
   isRtl: {
     type: Boolean,
-    required: false
-  }
+    required: false,
+  },
 })
 
 const refPopperContainer = ref()
 const refPopper = ref()
+
 const popperContentStyles = ref({
   left: '0px',
-  top: '0px'
+  top: '0px',
 
   // strategy: 'fixed',
 })
+
 const updatePopper = async () => {
-  const {x, y} = await computePosition(refPopperContainer.value, refPopper.value, {
+  const { x, y } = await computePosition(refPopperContainer.value, refPopper.value, {
     placement: props.popperInlineEnd ? props.isRtl ? 'left-start' : 'right-start' : props.isRtl ? 'bottom-end' : 'bottom-start',
     middleware: [
       flip({ boundary: document.querySelector('body') }),
-      shift({ boundary: document.querySelector('body') })
-    ]
+      shift({ boundary: document.querySelector('body') }),
+    ],
 
     // strategy: 'fixed',
   })
+
   popperContentStyles.value.left = `${ x }px`
   popperContentStyles.value.top = `${ y }px`
 }
+
 until(config.horizontalNav.type).toMatch(type => type === 'static').then(() => {
   useEventListener('scroll', updatePopper)
 
   // strategy: 'fixed',
 })
+
 const isContentShown = ref(false)
+
 const showContent = () => {
   isContentShown.value = true
   updatePopper()
 }
+
 const hideContent = () => {
   isContentShown.value = false
 }
+
 onMounted(updatePopper)
-const {isAppRtl, appContentWidth} = useLayouts()
+
+const { isAppRtl, appContentWidth } = useLayouts()
+
 watch([
   isAppRtl,
-  appContentWidth
+  appContentWidth,
 ], updatePopper)
 
 // Watch for route changes and close popper content if route is changed
 const route = useRoute()
+
 watch(() => route.fullPath, hideContent)
 </script>
 

@@ -1,14 +1,14 @@
 <script setup>
 import {
   avatarText,
-  kFormatter
+  kFormatter,
 } from '@core/utils/formatters'
 
 const props = defineProps({
   userData: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const standardPlan = {
@@ -17,11 +17,13 @@ const standardPlan = {
   benefits: [
     '10 Users',
     'Up to 10GB storage',
-    'Basic Support'
-  ]
+    'Basic Support',
+  ],
 }
+
 const isUserInfoEditDialogVisible = ref(false)
 const isUpgradePlanDialogVisible = ref(false)
+
 const resolveUserStatusVariant = stat => {
   if (stat === 'pending')
     return 'warning'
@@ -32,36 +34,37 @@ const resolveUserStatusVariant = stat => {
   
   return 'primary'
 }
+
 const resolveUserRoleVariant = role => {
   if (role === 'subscriber')
     return {
       color: 'primary',
-      icon: 'mdi-account-outline'
+      icon: 'mdi-account-outline',
     }
   if (role === 'author')
     return {
       color: 'warning',
-      icon: 'mdi-cog-outline'
+      icon: 'mdi-cog-outline',
     }
   if (role === 'maintainer')
     return {
       color: 'success',
-      icon: 'mdi-database-outline'
+      icon: 'mdi-database-outline',
     }
   if (role === 'editor')
     return {
       color: 'info',
-      icon: 'mdi-pencil-outline'
+      icon: 'mdi-pencil-outline',
     }
   if (role === 'admin')
     return {
       color: 'error',
-      icon: 'mdi-dns-outline'
+      icon: 'mdi-dns-outline',
     }
   
   return {
     color: 'primary',
-    icon: 'mdi-account-outline'
+    icon: 'mdi-account-outline',
   }
 }
 </script>
@@ -166,27 +169,27 @@ const resolveUserRoleVariant = role => {
           <!-- 👉 User Details list -->
           <VList class="card-list mt-2">
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Username:
                   <span class="text-body-2">
                     @{{ props.userData.username }}
                   </span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Billing Email:
                   <span class="text-body-2">{{ props.userData.email }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Status:
 
@@ -199,54 +202,54 @@ const resolveUserRoleVariant = role => {
                     {{ props.userData.status }}
                   </VChip>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Role:
                   <span class="text-capitalize text-body-2">{{ props.userData.role }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Tax ID:
                   <span class="text-body-2">
                     {{ props.userData.taxId }}
                   </span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Contact:
                   <span class="text-body-2">{{ props.userData.contact }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Language:
                   <span class="text-body-2">{{ props.userData.language }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemSubtitle>
+              <VListItemTitle>
                 <h6 class="text-sm">
                   Country:
                   <span class="text-body-2">{{ props.userData.country }}</span>
                 </h6>
-              </VListItemSubtitle>
+              </VListItemTitle>
             </VListItem>
           </VList>
         </VCardText>

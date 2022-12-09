@@ -1,12 +1,11 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { getRadarChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import RadarChart from '@core/libs/chartjs/components/RadarChart'
 
-const {theme} = useThemeConfig()
 const vuetifyTheme = useTheme()
-const chartConfig = controlledComputed(theme, () => getRadarChartConfig(vuetifyTheme.current.value))
+const chartConfig = computed(() => getRadarChartConfig(vuetifyTheme.current.value))
+
 const chartData = {
   labels: [
     'STA',
@@ -14,7 +13,7 @@ const chartData = {
     'AGI',
     'VIT',
     'CHA',
-    'INT'
+    'INT',
   ],
   datasets: [
     {
@@ -28,10 +27,10 @@ const chartData = {
         90,
         81,
         60,
-        82
+        82,
       ],
       pointBorderColor: 'transparent',
-      pointBackgroundColor: 'transparent'
+      pointBackgroundColor: 'transparent',
     },
     {
       fill: true,
@@ -44,12 +43,12 @@ const chartData = {
         40,
         90,
         40,
-        90
+        90,
       ],
       pointBorderColor: 'transparent',
-      pointBackgroundColor: 'transparent'
-    }
-  ]
+      pointBackgroundColor: 'transparent',
+    },
+  ],
 }
 </script>
 

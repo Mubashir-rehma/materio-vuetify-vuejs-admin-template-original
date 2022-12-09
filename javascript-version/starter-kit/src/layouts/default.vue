@@ -1,29 +1,29 @@
 <script setup>
-import DefaultLayoutWithHorizontalNav from './components/DefaultLayoutWithHorizontalNav.vue'
-import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVerticalNav.vue'
+import { useSkins } from '@core/composable/useSkins'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
 import { AppContentLayoutNav } from '@layouts/enums'
 
-const {width: windowWidth} = useWindowSize()
-const {appContentLayoutNav} = useThemeConfig()
+const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))
+const DefaultLayoutWithVerticalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithVerticalNav.vue'))
+const { width: windowWidth } = useWindowSize()
+const { appContentLayoutNav, switchToVerticalNavOnLtOverlayNavBreakpoint } = useThemeConfig()
 
-// ℹ️ Performance: Only add `switchToVerticalNavOnLtOverlayNavBreakpoint` if `appContentLayoutNav` is horizontal
-watchOnce(() => appContentLayoutNav.value === AppContentLayoutNav.Horizontal, () => {
-  const {switchToVerticalNavOnLtOverlayNavBreakpoint} = useThemeConfig()
+// Remove below composable usage if you are not using horizontal nav layout in your app
+switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
 
-  // Remove below composable usage if you are not using horizontal nav layout in your app
-  switchToVerticalNavOnLtOverlayNavBreakpoint(windowWidth)
-})
+const { layoutAttrs, injectSkinClasses } = useSkins()
+
+injectSkinClasses()
 </script>
 
 <template>
-  <template v-if="appContentLayoutNav === AppContentLayoutNav.Horizontal">
-    <DefaultLayoutWithHorizontalNav />
+  <template v-if="appContentLayoutNav === AppContentLayoutNav.Vertical">
+    <DefaultLayoutWithVerticalNav v-bind="layoutAttrs" />
   </template>
   <template v-else>
-    <DefaultLayoutWithVerticalNav />
+    <DefaultLayoutWithHorizontalNav v-bind="layoutAttrs" />
   </template>
 </template>
 

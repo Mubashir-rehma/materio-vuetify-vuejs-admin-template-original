@@ -3,38 +3,38 @@ const items = [
   {
     title: 'My Files',
     value: 1,
-    prependIcon: 'mdi-folder-outline'
+    prependIcon: 'mdi-folder-outline',
   },
   {
     title: 'Shared with me',
     value: 2,
-    prependIcon: 'mdi-account-multiple-outline'
+    prependIcon: 'mdi-account-multiple-outline',
   },
   {
     title: 'Starred',
     value: 3,
-    prependIcon: 'mdi-star-outline'
+    prependIcon: 'mdi-star-outline',
   },
   {
     title: 'Recent',
     value: 4,
-    prependIcon: 'mdi-history'
+    prependIcon: 'mdi-history',
   },
   {
     title: 'Offline',
     value: 5,
-    prependIcon: 'mdi-check-circle-outline'
+    prependIcon: 'mdi-check-circle-outline',
   },
   {
     title: 'Uploads',
     value: 6,
-    prependIcon: 'mdi-upload-outline'
+    prependIcon: 'mdi-upload-outline',
   },
   {
     title: 'Backups',
     value: 7,
-    prependIcon: 'mdi-cloud-upload-outline'
-  }
+    prependIcon: 'mdi-cloud-upload-outline',
+  },
 ]
 </script>
 

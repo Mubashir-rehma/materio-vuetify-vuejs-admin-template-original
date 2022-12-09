@@ -5,7 +5,8 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const {theme} = useThemeConfig()
+const { theme } = useThemeConfig()
+
 const options = controlledComputed(theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
@@ -15,40 +16,40 @@ const options = controlledComputed(theme, () => {
     chart: {
       stacked: true,
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
     },
     grid: {
       yaxis: { lines: { show: false } },
       padding: {
         left: 0,
-        right: 0
-      }
+        right: 0,
+      },
     },
     legend: {
       offsetY: 8,
       markers: { radius: 15 },
-      labels: { colors: disabledColor }
+      labels: { colors: disabledColor },
     },
     stroke: {
       width: 2,
-      colors: [currentTheme.value.surface]
+      colors: [currentTheme.value.surface],
     },
     dataLabels: { enabled: false },
     colors: [
       currentTheme.value.success,
-      currentTheme.value.secondary
+      currentTheme.value.secondary,
     ],
     plotOptions: {
       bar: {
         borderRadius: 8,
         columnWidth: '50%',
         endingShape: 'rounded',
-        startingShape: 'rounded'
-      }
+        startingShape: 'rounded',
+      },
     },
     states: {
       hover: { filter: { type: 'none' } },
-      active: { filter: { type: 'none' } }
+      active: { filter: { type: 'none' } },
     },
     xaxis: {
       categories: [
@@ -60,17 +61,18 @@ const options = controlledComputed(theme, () => {
         'Jun',
         'Jul',
         'Aug',
-        'Sep'
+        'Sep',
       ],
       crosshairs: { opacity: 0 },
       labels: { show: false },
       axisTicks: { show: false },
-      axisBorder: { show: false }
+      axisBorder: { show: false },
     },
     yaxis: { labels: { show: false } },
-    tooltip: { enabled: false }
+    tooltip: { enabled: false },
   }
 })
+
 const series = [
   {
     name: 'Earning',
@@ -83,8 +85,8 @@ const series = [
       63,
       168,
       218,
-      72
-    ]
+      72,
+    ],
   },
   {
     name: 'Expense',
@@ -97,9 +99,9 @@ const series = [
       -60,
       -85,
       -75,
-      -100
-    ]
-  }
+      -100,
+    ],
+  },
 ]
 </script>
 

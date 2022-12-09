@@ -8,15 +8,15 @@ import ApexChartHorizontalBar from '@/views/charts/apex-chart/ApexChartHorizonta
 import ApexChartMobileComparison from '@/views/charts/apex-chart/ApexChartMobileComparison.vue'
 import ApexChartNewTechnologiesData from '@/views/charts/apex-chart/ApexChartNewTechnologiesData.vue'
 import ApexChartStatistics from '@/views/charts/apex-chart/ApexChartStatistics.vue'
-import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.vue'
+import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPrices.vue'
 </script>
 
 <template>
-  <VRow>
+  <VRow id="apex-chart-wrapper">
     <!-- 👉  Area chart -->
     <VCol cols="12">
       <VCard>
-        <VCardItem class="flex-wrap">
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Area Chart</VCardTitle>
           <VCardSubtitle>Commercial networks</VCardSubtitle>
 
@@ -26,6 +26,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
@@ -40,7 +41,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
     <!-- 👉 Data Science -->
     <VCol cols="12">
       <VCard>
-        <VCardItem class="flex-wrap">
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Data Science</VCardTitle>
 
           <template #append>
@@ -49,6 +50,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
@@ -63,7 +65,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
     <!-- 👉 New Technologies Data -->
     <VCol cols="12">
       <VCard>
-        <VCardItem class="flex-wrap">
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>New Technologies Data</VCardTitle>
 
           <template #append>
@@ -89,9 +91,9 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
     <!-- 👉 Balance Line Chart  -->
     <VCol cols="12">
       <VCard>
-        <VCardItem class="flex-wrap">
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Balance</VCardTitle>
-          <VCardSubtitle>Commercial networks & enterprises</VCardSubtitle>
+          <VCardSubtitle>Commercial networks &amp; enterprises</VCardSubtitle>
 
           <template #append>
             <div class="d-flex align-center">
@@ -126,7 +128,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
       md="6"
     >
       <VCard>
-        <VCardItem class="flex-wrap">
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Balance</VCardTitle>
           <VCardSubtitle>$74,382.72</VCardSubtitle>
 
@@ -136,6 +138,7 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
@@ -147,13 +150,13 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
       </VCard>
     </VCol>
 
-    <!-- 👉 Stock Price Chart -->
+    <!-- 👉 Stocks Prices -->
     <VCol
       cols="12"
       md="6"
     >
       <VCard>
-        <VCardItem>
+        <VCardItem class="d-flex flex-wrap justify-space-between gap-4">
           <VCardTitle>Stocks Prices</VCardTitle>
           <VCardSubtitle>$50,863.98</VCardSubtitle>
 
@@ -163,13 +166,14 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                :config="{ position: 'auto right' }"
               />
             </div>
           </template>
         </VCardItem>
 
         <VCardText>
-          <ApexChartStockPrice />
+          <ApexChartStocksPrices />
         </VCardText>
       </VCard>
     </VCol>
@@ -228,9 +232,15 @@ import ApexChartStockPrice from '@/views/charts/apex-chart/ApexChartStockPrice.v
 </template>
 
 <style lang="scss">
-@use "@core/scss/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart.scss";
 
 .date-picker-wrapper {
   inline-size: 10.5rem;
+}
+
+#apex-chart-wrapper {
+  .v-card-item__append {
+    padding-inline-start: 0;
+  }
 }
 </style>

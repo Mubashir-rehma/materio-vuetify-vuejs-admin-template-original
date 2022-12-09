@@ -2,69 +2,70 @@
 const countryList = [
   {
     label: 'Bahamas, The',
-    value: 'bahamas'
+    value: 'bahamas',
   },
   {
     label: 'Bahrain',
-    value: 'bahrain'
+    value: 'bahrain',
   },
   {
     label: 'Bangladesh',
-    value: 'bangladesh'
+    value: 'bangladesh',
   },
   {
     label: 'Barbados',
-    value: 'barbados'
+    value: 'barbados',
   },
   {
     label: 'Belarus',
-    value: 'belarus'
+    value: 'belarus',
   },
   {
     label: 'Belgium',
-    value: 'belgium'
+    value: 'belgium',
   },
   {
     label: 'Belize',
-    value: 'belize'
+    value: 'belize',
   },
   {
     label: 'Benin',
-    value: 'benin'
+    value: 'benin',
   },
   {
     label: 'Bhutan',
-    value: 'bhutan'
+    value: 'bhutan',
   },
   {
     label: 'Bolivia',
-    value: 'bolivia'
+    value: 'bolivia',
   },
   {
     label: 'Bosnia and Herzegovina',
-    value: 'bosnia'
+    value: 'bosnia',
   },
   {
     label: 'Botswana',
-    value: 'botswana'
+    value: 'botswana',
   },
   {
     label: 'Brazil',
-    value: 'brazil'
+    value: 'brazil',
   },
   {
     label: 'Brunei',
-    value: 'brunei'
+    value: 'brunei',
   },
   {
     label: 'Bulgaria',
-    value: 'bulgaria'
+    value: 'bulgaria',
   },
   {
     label: 'Burkina Faso',
-    value: 'burkina'
-  }
+    value: 'burkina',
+  },
 ]
+
 const selectedCountry = ref('')
 const isDialogVisible = ref(false)
 </script>

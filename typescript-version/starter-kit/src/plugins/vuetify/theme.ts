@@ -30,11 +30,11 @@ const theme: VuetifyOptions['theme'] = {
         'grey-700': '#616161',
         'grey-800': '#424242',
         'grey-900': '#212121',
+        'perfect-scrollbar-thumb': '#DBDADE',
       },
 
       variables: {
         'border-color': '#3A3541',
-        'medium-emphasis-opacity': 0.68,
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
@@ -69,10 +69,10 @@ const theme: VuetifyOptions['theme'] = {
         'grey-700': '#B6BEE3',
         'grey-800': '#CFD3EC',
         'grey-900': '#E7E9F6',
+        'perfect-scrollbar-thumb': '#4A5072',
       },
       variables: {
         'border-color': '#E7E3FC',
-        'medium-emphasis-opacity': 0.68,
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',

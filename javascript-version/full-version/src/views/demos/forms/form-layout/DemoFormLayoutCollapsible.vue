@@ -10,23 +10,25 @@ const stateList = [
   'Delaware',
   'Florida',
   'Georgia',
-  'Hawaii'
+  'Hawaii',
 ]
+
 const radios = ref('home')
 const deliveryOption = ref('standard')
 const paymentMethod = ref('credit-debit-card')
 const panel = ref(0)
+
 const paymentMethods = [
   {
     radioValue: 'credit-debit-card',
     radioLabel: 'Credit/Debit/ATM Card',
-    icon: 'mdi-credit-card-outline'
+    icon: 'mdi-credit-card-outline',
   },
   {
     radioValue: 'cash-on-delivery',
     radioLabel: 'Cash On Delivery',
-    icon: 'mdi-help-circle-outline'
-  }
+    icon: 'mdi-help-circle-outline',
+  },
 ]
 </script>
 
@@ -107,14 +109,16 @@ const paymentMethods = [
                 v-model="radios"
                 inline
               >
-                <VRadio
-                  label="Home (All day delivery)"
-                  value="home"
-                />
-                <VRadio
-                  label="Office (Delivery between 10 AM - 5 PM)"
-                  value="office"
-                />
+                <div>
+                  <VRadio
+                    label="Home (All day delivery)"
+                    value="home"
+                  />
+                  <VRadio
+                    label="Office (Delivery between 10 AM - 5 PM)"
+                    value="office"
+                  />
+                </div>
               </VRadioGroup>
             </VCol>
           </VRow>
@@ -215,13 +219,13 @@ const paymentMethods = [
             cols="12"
           >
             <VForm>
-              <VRow>
-                <!-- 👉 Payment Method -->
-                <VCol cols="12">
-                  <VRadioGroup
-                    v-model="paymentMethod"
-                    inline
-                  >
+              <!-- 👉 Payment Method -->
+              <div>
+                <VRadioGroup
+                  v-model="paymentMethod"
+                  inline
+                >
+                  <div>
                     <VRadio
                       v-for="payment in paymentMethods"
                       :key="payment.radioValue"
@@ -235,9 +239,11 @@ const paymentMethods = [
                         />
                       </template>
                     </VRadio>
-                  </VRadioGroup>
-                </VCol>
+                  </div>
+                </VRadioGroup>
+              </div>
 
+              <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
                 <VCol cols="12">
                   <VTextField label="Card Number" />

@@ -1,5 +1,6 @@
 import { hexToRgb } from '@layouts/utils'
 
+
 // 👉 Colors variables
 const colorVariables = themeColors => {
   const themeSecondaryTextColor = `rgba(${hexToRgb(themeColors.colors['on-surface'])},${themeColors.variables['medium-emphasis-opacity']})`
@@ -9,12 +10,14 @@ const colorVariables = themeColors => {
   
   return { themeSecondaryTextColor, themeDisabledTextColor, themeBorderColor, themePrimaryTextColor }
 }
+
 export const getScatterChartConfig = themeColors => {
   const scatterColors = {
     series1: '#ff9f43',
     series2: '#7367f0',
     series3: '#28c76f',
   }
+
   const { themeSecondaryTextColor, themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
   
   return {
@@ -175,6 +178,7 @@ export const getCandlestickChartConfig = themeColors => {
     series1: '#28c76f',
     series2: '#ea5455',
   }
+
   const { themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
   
   return {
@@ -228,6 +232,7 @@ export const getRadialBarChartConfig = themeColors => {
     series4: '#7367f0',
     series5: '#FFA1A1',
   }
+
   const { themeSecondaryTextColor, themePrimaryTextColor } = colorVariables(themeColors)
   
   return {
@@ -273,6 +278,7 @@ export const getRadialBarChartConfig = themeColors => {
               const totalValue = w.globals.seriesTotals.reduce((a, b) => {
                 return a + b
               }, 0) / w.globals.series.length
+
               if (totalValue % 1 === 0)
                 return `${totalValue}%`
               else
@@ -298,6 +304,7 @@ export const getDonutChartConfig = themeColors => {
     series4: '#32baff',
     series5: '#ffa1a1',
   }
+
   const { themeSecondaryTextColor, themePrimaryTextColor } = colorVariables(themeColors)
   
   return {
@@ -388,6 +395,7 @@ export const getAreaChartSplineConfig = themeColors => {
     series2: '#b992fe',
     series1: '#ab7efd',
   }
+
   const { themeSecondaryTextColor, themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
   
   return {
@@ -464,6 +472,7 @@ export const getColumnChartConfig = themeColors => {
     series2: '#d2b0ff',
     bg: '#f8d3ff',
   }
+
   const { themeSecondaryTextColor, themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
   
   return {
@@ -601,6 +610,7 @@ export const getRadarChartConfig = themeColors => {
     series1: '#9b88fa',
     series2: '#ffa1a1',
   }
+
   const { themeSecondaryTextColor, themeBorderColor, themeDisabledTextColor } = colorVariables(themeColors)
   
   return {

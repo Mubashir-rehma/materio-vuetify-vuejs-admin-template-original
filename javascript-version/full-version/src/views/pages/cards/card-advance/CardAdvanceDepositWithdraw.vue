@@ -1,78 +1,79 @@
 <script setup>
-import americanBank from '@/assets/images/logos/american-bank.png'
-import aws from '@/assets/images/logos/aws.png'
-import citiBank from '@/assets/images/logos/citi-bank.png'
-import digitalOcean from '@/assets/images/logos/digital-ocean.png'
-import github from '@/assets/images/logos/github.png'
-import google from '@/assets/images/logos/google.png'
-import gumroad from '@/assets/images/logos/gumroad.png'
-import mastercardLabel from '@/assets/images/logos/mastercard-label.png'
-import slack from '@/assets/images/logos/slack.png'
-import stripe from '@/assets/images/logos/stripe.png'
+import americanBank from '@images/logos/american-bank.png'
+import aws from '@images/logos/aws.png'
+import citiBank from '@images/logos/citi-bank.png'
+import digitalOcean from '@images/logos/digital-ocean.png'
+import github from '@images/logos/github.png'
+import google from '@images/logos/google.png'
+import gumroad from '@images/logos/gumroad.png'
+import mastercardLabel from '@images/logos/mastercard-label.png'
+import slack from '@images/logos/slack.png'
+import stripe from '@images/logos/stripe.png'
 
 const deposits = [
   {
     title: 'Gumroad Account',
     subtitle: 'Sell UI Kit',
     amount: '+$4,650',
-    logo: gumroad
+    logo: gumroad,
   },
   {
     title: 'Mastercard',
     subtitle: 'Wallet deposit',
     amount: '+$92,705',
-    logo: mastercardLabel
+    logo: mastercardLabel,
   },
   {
     title: 'Stripe Account',
     subtitle: 'iOS Application',
     amount: '+$957',
-    logo: stripe
+    logo: stripe,
   },
   {
     title: 'American Bank',
     subtitle: 'American Bank',
     amount: '+$6,837',
-    logo: americanBank
+    logo: americanBank,
   },
   {
     title: 'Bank Account',
     subtitle: 'Wallet deposit',
     amount: '+$8,934',
-    logo: citiBank
-  }
+    logo: citiBank,
+  },
 ]
+
 const withdraws = [
   {
     title: 'Google Adsense',
     subtitle: 'Paypal deposit',
     amount: '-$145',
-    logo: google
+    logo: google,
   },
   {
     title: 'Github Enterprise',
     subtitle: 'Security & compliance',
     amount: '-$1870',
-    logo: github
+    logo: github,
   },
   {
     title: 'Upgrade Slack Plan',
     subtitle: 'Debit card deposit',
     amount: '-$450',
-    logo: slack
+    logo: slack,
   },
   {
     title: 'Digital Ocean',
     subtitle: 'Cloud Hosting',
     amount: '-$540',
-    logo: digitalOcean
+    logo: digitalOcean,
   },
   {
     title: 'AWS Account',
     subtitle: 'Choosing a Cloud Platform',
     amount: '-$21',
-    logo: aws
-  }
+    logo: aws,
+  },
 ]
 </script>
 

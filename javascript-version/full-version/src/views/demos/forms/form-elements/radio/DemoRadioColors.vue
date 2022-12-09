@@ -1,12 +1,13 @@
 <script setup>
 const selectedRadio = ref('primary')
+
 const colorsRadio = [
   'Primary',
   'Secondary',
   'Success',
   'Info',
   'Warning',
-  'Error'
+  'Error',
 ]
 </script>
 

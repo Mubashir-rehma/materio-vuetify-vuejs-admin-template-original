@@ -1,4 +1,5 @@
 import { Ability } from '@casl/ability'
+
 export const initialAbility = [
   {
     action: 'read',

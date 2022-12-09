@@ -5,6 +5,7 @@ const lastName = ref('')
 const country = ref()
 const birthDate = ref('')
 const phoneNo = ref()
+
 const countryList = [
   'USA',
   'Canada',
@@ -13,8 +14,9 @@ const countryList = [
   'Germany',
   'Iceland',
   'Israel',
-  'Mexico'
+  'Mexico',
 ]
+
 const languageList = [
   'English',
   'German',
@@ -22,8 +24,9 @@ const languageList = [
   'Spanish',
   'Portuguese',
   'Russian',
-  'Korean'
+  'Korean',
 ]
+
 const username = ref('')
 const email = ref('')
 const password = ref('')
@@ -108,7 +111,6 @@ const isCPasswordVisible = ref(false)
               >
                 <VTextField
                   v-model="birthDate"
-                  type="number"
                   label="Birth Date"
                   placeholder="YYYY-MM-DD"
                 />

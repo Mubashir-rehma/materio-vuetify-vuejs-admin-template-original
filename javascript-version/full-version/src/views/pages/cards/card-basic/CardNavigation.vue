@@ -1,11 +1,13 @@
 <script setup>
 const navigationTab = ref('ITEM ONE')
 const navigationTab2 = ref('ITEM ONE')
+
 const tabItems = [
   'ITEM ONE',
   'ITEM TWO',
-  'ITEM THREE'
+  'ITEM THREE',
 ]
+
 const tabContent = 'Pudding tiramisu caramels. Gingerbread gummies danish chocolate bar toffee marzipan. Wafer wafer cake powder danish oat cake.'
 </script>
 
@@ -56,7 +58,7 @@ const tabContent = 'Pudding tiramisu caramels. Gingerbread gummies danish chocol
       <VCard>
         <VTabs
           v-model="navigationTab2"
-          centered
+          align-tabs="center"
         >
           <VTab
             v-for="item in tabItems"

@@ -1,6 +1,7 @@
 import { useTheme } from 'vuetify'
 import { useLayouts } from '@layouts'
 import { themeConfig } from '@themeConfig'
+
 export const useThemeConfig = () => {
   const theme = computed({
     get() {
@@ -9,10 +10,13 @@ export const useThemeConfig = () => {
     set(value) {
       themeConfig.app.theme.value = value
       localStorage.setItem(`${themeConfig.app.title}-theme`, value.toString())
-      if (value !== 'light')
-        isVerticalNavSemiDark.value = false
+
+      // ℹ️ We will not reset semi dark value when turning off dark mode because some user think it as bug
+      // if (value !== 'light')
+      //   isVerticalNavSemiDark.value = false
     },
   })
+
   const isVerticalNavSemiDark = computed({
     get() {
       return themeConfig.verticalNav.isVerticalNavSemiDark.value
@@ -22,10 +26,15 @@ export const useThemeConfig = () => {
       localStorage.setItem(`${themeConfig.app.title}-isVerticalNavSemiDark`, value.toString())
     },
   })
+
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
-    watch(theme, val => { vuetifyTheme.global.name.value = val })
+
+    watch(theme, val => {
+      vuetifyTheme.global.name.value = val
+    })
   }
+
 
   /*
       ℹ️ Set current theme's surface color in localStorage
@@ -37,6 +46,7 @@ export const useThemeConfig = () => {
     */
   const syncInitialLoaderTheme = () => {
     const vuetifyTheme = useTheme()
+
     watch(theme, val => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
       localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)
@@ -45,6 +55,7 @@ export const useThemeConfig = () => {
       immediate: true,
     })
   }
+
   const skin = computed({
     get() {
       return themeConfig.app.skin.value
@@ -54,6 +65,7 @@ export const useThemeConfig = () => {
       localStorage.setItem(`${themeConfig.app.title}-skin`, value)
     },
   })
+
   const appRouteTransition = computed({
     get() {
       return themeConfig.app.routeTransition.value
@@ -64,8 +76,9 @@ export const useThemeConfig = () => {
     },
   })
 
+
   // `@layouts` exports
-  const { navbarType, isNavbarBlurEnabled, footerType, isVerticalNavCollapsed, appContentWidth, appContentLayoutNav, horizontalNavType, isLessThanOverlayNavBreakpoint, isAppRtl, switchToVerticalNavOnLtOverlayNavBreakpoint, } = useLayouts()
+  const { navbarType, isNavbarBlurEnabled, footerType, isVerticalNavCollapsed, appContentWidth, appContentLayoutNav, horizontalNavType, isLessThanOverlayNavBreakpoint, isAppRtl, switchToVerticalNavOnLtOverlayNavBreakpoint } = useLayouts()
 
   // const syncRtlWithRtlLang = (rtlLangs: string[], rtlDefaultLocale: string, ltrDefaultLocale: string) => {
   // const { locale } = useI18n({ useScope: 'global' })

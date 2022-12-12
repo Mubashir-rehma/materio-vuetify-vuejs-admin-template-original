@@ -41,7 +41,9 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
         md="8"
         class="d-none d-md-flex align-center justify-center position-relative"
       >
-        <div class="d-flex align-center justify-center w-100 pa-10 pe-0">
+        <div
+          class="d-flex align-center justify-center w-100 pa-10 pe-0"
+        >
           <VImg
             max-width="768px"
             :src="authThemeImg"
@@ -79,7 +81,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
             </p>
           </VCardText>
           <VCardText>
-            <VForm @submit.prevent="() => { }">
+            <VForm @submit.prevent="() => {}">
               <VRow>
                 <!-- email -->
                 <VCol cols="12">
@@ -105,12 +107,12 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                       v-model="form.remember"
                       label="Remember me"
                     />
-                    <RouterLink
+                    <a
                       class="text-primary ms-2 mb-1"
-                      :to="{ name: 'pages-authentication-forgot-password-v2' }"
+                      href="#"
                     >
                       Forgot Password?
-                    </RouterLink>
+                    </a>
                   </div>
 
                   <VBtn
@@ -127,12 +129,12 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                   class="text-center text-base"
                 >
                   <span>New on our platform?</span>
-                  <RouterLink
+                  <a
                     class="text-primary ms-2"
-                    :to="{ name: 'pages-authentication-register-v2' }"
+                    href="#"
                   >
                     Create an account
-                  </RouterLink>
+                  </a>
                 </VCol>
 
                 <VCol

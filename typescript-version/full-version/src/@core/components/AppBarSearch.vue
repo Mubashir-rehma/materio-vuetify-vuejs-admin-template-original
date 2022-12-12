@@ -338,6 +338,10 @@ const resolveCategories = (val: string) => {
     padding-block-end: 0.425rem;
     padding-block-start: 0.9375rem;
   }
+
+  .v-field__field input {
+    text-align: start !important;
+  }
 }
 
 .app-bar-search-dialog {

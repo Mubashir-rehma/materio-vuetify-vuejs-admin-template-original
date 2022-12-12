@@ -42,7 +42,7 @@ const data = {
       { property: 'Email', value: 'john.doe@example.com', icon: 'mdi-email-outline' },
     ],
     teams: [
-      { property: 'Backend Developer', value: '(126 Members)', icon: 'mdi-github', color: 'secondary' },
+      { property: 'Backend Developer', value: '(126 Members)', icon: 'mdi-github', color: 'primary' },
       { property: 'VueJS Developer', value: '(98 Members)', icon: 'mdi-vuejs', color: 'success' },
     ],
     overview: [

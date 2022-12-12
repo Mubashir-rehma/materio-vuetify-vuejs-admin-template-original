@@ -1,19 +1,286 @@
-export const basic = { ts: '', js: '' }
+export const basic = {
+  ts: `<template>
+  <VRating />
+</template>
+`,
+  js: `<template>
+  <VRating />
+</template>
+`,
+}
 
-export const hover = { ts: '', js: '' }
+export const clearable = {
+  ts: `<template>
+  <VRating clearable />
+</template>
+`,
+  js: `<template>
+  <VRating clearable />
+</template>
+`,
+}
 
-export const density = { ts: '', js: '' }
+export const colors = {
+  ts: `<script lang="ts" setup>
+const rating = ref(4)
+const ratingColors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
+</script>
 
-export const incremented = { ts: '', js: '' }
+<template>
+  <div class="d-flex flex-column">
+    <VRating
+      v-for="color in ratingColors"
+      :key="color"
+      v-model="rating"
+      :color="color"
+    />
+  </div>
+</template>
+`,
+  js: `<script setup>
+const rating = ref(4)
 
-export const itemSlot = { ts: '', js: '' }
+const ratingColors = [
+  'primary',
+  'secondary',
+  'success',
+  'info',
+  'warning',
+  'error',
+]
+</script>
 
-export const size = { ts: '', js: '' }
+<template>
+  <div class="d-flex flex-column">
+    <VRating
+      v-for="color in ratingColors"
+      :key="color"
+      v-model="rating"
+      :color="color"
+    />
+  </div>
+</template>
+`,
+}
 
-export const clearable = { ts: '', js: '' }
+export const density = {
+  ts: `<template>
+  <VRating density="compact" />
+</template>
+`,
+  js: `<template>
+  <VRating density="compact" />
+</template>
+`,
+}
 
-export const length = { ts: '', js: '' }
+export const hover = {
+  ts: `<template>
+  <VRating hover />
+</template>
+`,
+  js: `<template>
+  <VRating hover />
+</template>
+`,
+}
 
-export const readonly = { ts: '', js: '' }
+export const incremented = {
+  ts: `<script lang="ts" setup>
+const rating = ref(4.5)
+</script>
 
-export const colors = { ts: '', js: '' }
+<template>
+  <VRating
+    v-model="rating"
+    half-increments
+    hover
+  />
+</template>
+`,
+  js: `<script setup>
+const rating = ref(4.5)
+</script>
+
+<template>
+  <VRating
+    v-model="rating"
+    half-increments
+    hover
+  />
+</template>
+`,
+}
+
+export const itemSlot = {
+  ts: `<script lang="ts" setup>
+const rating = ref(4.5)
+</script>
+
+<template>
+  <VRating v-model="rating">
+    <template #item="props">
+      <VIcon
+        v-bind="props"
+        :size="25"
+        :color="props.isFilled ? 'success' : 'secondary'"
+        class="me-3"
+        :icon="props.isFilled ? 'mdi-emoticon-excited-outline' : 'mdi-emoticon-sad-outline'"
+      />
+    </template>
+  </VRating>
+</template>
+`,
+  js: `<script setup>
+const rating = ref(4.5)
+</script>
+
+<template>
+  <VRating v-model="rating">
+    <template #item="props">
+      <VIcon
+        v-bind="props"
+        :size="25"
+        :color="props.isFilled ? 'success' : 'secondary'"
+        class="me-3"
+        :icon="props.isFilled ? 'mdi-emoticon-excited-outline' : 'mdi-emoticon-sad-outline'"
+      />
+    </template>
+  </VRating>
+</template>
+`,
+}
+
+export const length = {
+  ts: `<script lang="ts" setup>
+const length = ref(5)
+const rating = ref(2)
+</script>
+
+<template>
+  <div class="text-caption">
+    Custom length
+  </div>
+
+  <VSlider
+    v-model="length"
+    :min="1"
+    :max="7"
+  />
+
+  <VRating
+    v-model="rating"
+    :length="length"
+  />
+  <p class="font-weight-semibold mb-0">
+    Model: {{ rating }}
+  </p>
+</template>
+`,
+  js: `<script setup>
+const length = ref(5)
+const rating = ref(2)
+</script>
+
+<template>
+  <div class="text-caption">
+    Custom length
+  </div>
+
+  <VSlider
+    v-model="length"
+    :min="1"
+    :max="7"
+  />
+
+  <VRating
+    v-model="rating"
+    :length="length"
+  />
+  <p class="font-weight-semibold mb-0">
+    Model: {{ rating }}
+  </p>
+</template>
+`,
+}
+
+export const readonly = {
+  ts: `<template>
+  <VRating
+    readonly
+    :model-value="4"
+  />
+</template>
+`,
+  js: `<template>
+  <VRating
+    readonly
+    :model-value="4"
+  />
+</template>
+`,
+}
+
+export const size = {
+  ts: `<script lang="ts" setup>
+const rating = ref(4)
+</script>
+
+<template>
+  <div class="d-flex flex-column">
+    <VRating
+      v-model="rating"
+      size="x-small"
+    />
+
+    <VRating
+      v-model="rating"
+      size="small"
+    />
+
+    <VRating v-model="rating" />
+
+    <VRating
+      v-model="rating"
+      size="large"
+    />
+
+    <VRating
+      v-model="rating"
+      size="x-large"
+    />
+  </div>
+</template>
+`,
+  js: `<script setup>
+const rating = ref(4)
+</script>
+
+<template>
+  <div class="d-flex flex-column">
+    <VRating
+      v-model="rating"
+      size="x-small"
+    />
+
+    <VRating
+      v-model="rating"
+      size="small"
+    />
+
+    <VRating v-model="rating" />
+
+    <VRating
+      v-model="rating"
+      size="large"
+    />
+
+    <VRating
+      v-model="rating"
+      size="x-large"
+    />
+  </div>
+</template>
+`,
+}
+

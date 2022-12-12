@@ -1,4 +1,5 @@
-export const actionAndItemGroup = { ts: `<template>
+export const actionAndItemGroup = {
+  ts: `<template>
   <VList
     lines="three"
     density="compact"
@@ -52,7 +53,8 @@ export const actionAndItemGroup = { ts: `<template>
     </VListItem>
   </VList>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VList
     lines="three"
     density="compact"
@@ -106,16 +108,18 @@ export const actionAndItemGroup = { ts: `<template>
     </VListItem>
   </VList>
 </template>
-` }
-
-export const basic = { ts: `<script setup lang="ts">
+`,
+}
+export const basic = {
+  ts: `<script setup lang="ts">
 const items = ['Cras justo odio', 'Dapibus ac facilisis in', 'Morbi leo risus', 'Porta ac consectetur ac']
 </script>
 
 <template>
   <VList :items="items" />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const items = [
   'Cras justo odio',
   'Dapibus ac facilisis in',
@@ -127,9 +131,10 @@ const items = [
 <template>
   <VList :items="items" />
 </template>
-` }
-
-export const density = { ts: `<script lang="ts" setup>
+`,
+}
+export const density = {
+  ts: `<script lang="ts" setup>
 const items = [
   { title: 'halvah icing marshmallow', value: 1 },
   { title: 'Cake caramels donut danish muffin biscuit', value: 2 },
@@ -148,7 +153,8 @@ const items = [
     :items="items"
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const items = [
   {
     title: 'halvah icing marshmallow',
@@ -191,9 +197,10 @@ const items = [
     :items="items"
   />
 </template>
-` }
-
-export const nav = { ts: `<script lang="ts" setup>
+`,
+}
+export const nav = {
+  ts: `<script lang="ts" setup>
 const items = [
   { title: 'My Files', value: 1, prependIcon: 'mdi-folder-outline' },
   { title: 'Shared with me', value: 2, prependIcon: 'mdi-account-multiple-outline' },
@@ -228,7 +235,8 @@ const items = [
     </VListItem>
   </VList>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const items = [
   {
     title: 'My Files',
@@ -291,9 +299,10 @@ const items = [
     </VListItem>
   </VList>
 </template>
-` }
-
-export const rounded = { ts: `<script lang="ts" setup>
+`,
+}
+export const rounded = {
+  ts: `<script lang="ts" setup>
 const items = [
   {
     title: 'Cupcake sesame snaps dessert marzipan.',
@@ -340,7 +349,8 @@ const items = [
     </VListItem>
   </VList>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const items = [
   {
     title: 'Cupcake sesame snaps dessert marzipan.',
@@ -386,9 +396,10 @@ const items = [
     </VListItem>
   </VList>
 </template>
-` }
-
-export const shaped = { ts: `<script lang="ts" setup>
+`,
+}
+export const shaped = {
+  ts: `<script lang="ts" setup>
 const items = [
   { text: 'Cupcake sesame snaps dessert marzipan.', icon: 'mdi-instagram' },
   { text: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.', icon: 'mdi-facebook' },
@@ -415,7 +426,8 @@ const items = [
     </VListItem>
   </VList>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const items = [
   {
     text: 'Cupcake sesame snaps dessert marzipan.',
@@ -451,9 +463,10 @@ const items = [
     </VListItem>
   </VList>
 </template>
-` }
-
-export const subGroup = { ts: `<script lang="ts" setup>
+`,
+}
+export const subGroup = {
+  ts: `<script lang="ts" setup>
 const open = ref(['Users', 'Admin'])
 
 const admins = [
@@ -550,7 +563,8 @@ const cruds = [
     </VListGroup>
   </VList>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const open = ref([
   'Users',
   'Admin',
@@ -668,9 +682,10 @@ const cruds = [
     </VListGroup>
   </VList>
 </template>
-` }
-
-export const threeLine = { ts: `<script lang="ts" setup>
+`,
+}
+export const threeLine = {
+  ts: `<script lang="ts" setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -737,7 +752,8 @@ const items = [
   }
 }
 </style>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -819,9 +835,10 @@ const items = [
   }
 }
 </style>
-` }
-
-export const twoLinesAndSubheader = { ts: `<script lang="ts" setup>
+`,
+}
+export const twoLinesAndSubheader = {
+  ts: `<script lang="ts" setup>
 const files = [
   {
     color: 'blue',
@@ -920,7 +937,8 @@ const folders = [
     </VListItem>
   </VList>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const files = [
   {
     color: 'blue',
@@ -1019,5 +1037,5 @@ const folders = [
     </VListItem>
   </VList>
 </template>
-` }
-
+`,
+}

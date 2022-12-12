@@ -1,4 +1,5 @@
-export const block = { ts: `<template>
+export const block = {
+  ts: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -22,7 +23,8 @@ export const block = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -46,9 +48,10 @@ export const block = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-` }
-
-export const colors = { ts: `<template>
+`,
+}
+export const colors = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn color="primary">
       Primary
@@ -70,7 +73,8 @@ export const colors = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn color="primary">
       Primary
@@ -92,9 +96,10 @@ export const colors = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const flat = { ts: `<template>
+`,
+}
+export const flat = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="flat">
       primary
@@ -136,7 +141,8 @@ export const flat = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn variant="flat">
       primary
@@ -178,9 +184,10 @@ export const flat = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const group = { ts: `<script lang="ts" setup>
+`,
+}
+export const group = {
+  ts: `<script lang="ts" setup>
 const toggleExclusive = ref(1)
 </script>
 
@@ -197,7 +204,8 @@ const toggleExclusive = ref(1)
     <VBtn icon="mdi-format-align-justify" />
   </VBtnToggle>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const toggleExclusive = ref(1)
 </script>
 
@@ -214,9 +222,10 @@ const toggleExclusive = ref(1)
     <VBtn icon="mdi-format-align-justify" />
   </VBtnToggle>
 </template>
-` }
-
-export const icon = { ts: `<template>
+`,
+}
+export const icon = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn>
       Accept
@@ -258,7 +267,8 @@ export const icon = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn>
       Accept
@@ -300,9 +310,10 @@ export const icon = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const iconOnly = { ts: `<template>
+`,
+}
+export const iconOnly = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn
       icon="mdi-briefcase-download-outline"
@@ -340,7 +351,8 @@ export const iconOnly = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn
       icon="mdi-briefcase-download-outline"
@@ -378,9 +390,10 @@ export const iconOnly = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const link = { ts: `<template>
+`,
+}
+export const link = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn href="https://themeselection.com/">
       String Literal
@@ -395,7 +408,8 @@ export const link = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn href="https://themeselection.com/">
       String Literal
@@ -410,9 +424,10 @@ export const link = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const loaders = { ts: `<script lang="ts" setup>
+`,
+}
+export const loaders = {
+  ts: `<script lang="ts" setup>
 const loadings = ref<boolean[]>([])
 
 const load = (i: number) => {
@@ -500,7 +515,8 @@ const load = (i: number) => {
   }
   </style>
 
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const loadings = ref([])
 
 const load = i => {
@@ -588,9 +604,10 @@ const load = i => {
   }
   </style>
 
-` }
-
-export const outlined = { ts: `<template>
+`,
+}
+export const outlined = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="outlined">
       Primary
@@ -627,7 +644,8 @@ export const outlined = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn variant="outlined">
       Primary
@@ -664,9 +682,10 @@ export const outlined = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const plain = { ts: `<template>
+`,
+}
+export const plain = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="plain">
       Primary
@@ -708,7 +727,8 @@ export const plain = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn variant="plain">
       Primary
@@ -750,9 +770,10 @@ export const plain = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const rounded = { ts: `<template>
+`,
+}
+export const rounded = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn>
       Normal Button
@@ -777,7 +798,8 @@ export const rounded = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn>
       Normal Button
@@ -802,9 +824,10 @@ export const rounded = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const router = { ts: `<template>
+`,
+}
+export const router = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn to="alert">
       String Literal
@@ -832,7 +855,8 @@ export const router = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn to="alert">
       String Literal
@@ -860,9 +884,10 @@ export const router = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const sizing = { ts: `<template>
+`,
+}
+export const sizing = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn size="x-large">
       Extra large Button
@@ -894,7 +919,8 @@ export const sizing = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn size="x-large">
       Extra large Button
@@ -926,9 +952,10 @@ export const sizing = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const text = { ts: `<template>
+`,
+}
+export const text = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="text">
       Primary
@@ -970,7 +997,8 @@ export const text = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn variant="text">
       Primary
@@ -1012,9 +1040,10 @@ export const text = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
-export const tonal = { ts: `<template>
+`,
+}
+export const tonal = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="tonal">
       Primary
@@ -1056,7 +1085,8 @@ export const tonal = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn variant="tonal">
       Primary
@@ -1098,5 +1128,5 @@ export const tonal = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
-
+`,
+}

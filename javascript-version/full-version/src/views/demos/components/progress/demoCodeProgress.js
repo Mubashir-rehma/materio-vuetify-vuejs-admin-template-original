@@ -1,4 +1,5 @@
-export const circularColor = { ts: `<template>
+export const circularColor = {
+  ts: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       model-value="100"
@@ -31,7 +32,8 @@ export const circularColor = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       model-value="100"
@@ -64,9 +66,10 @@ export const circularColor = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const circularIndeterminate = { ts: `<template>
+`,
+}
+export const circularIndeterminate = {
+  ts: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       indeterminate
@@ -99,7 +102,8 @@ export const circularIndeterminate = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       indeterminate
@@ -132,9 +136,10 @@ export const circularIndeterminate = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const circularRotate = { ts: `<script setup lang="ts">
+`,
+}
+export const circularRotate = {
+  ts: `<script setup lang="ts">
 const interval = ref()
 const progressValue = ref(0)
 
@@ -194,7 +199,8 @@ onBeforeUnmount(() => {
     </VProgressCircular>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const interval = ref()
 const progressValue = ref(0)
 
@@ -253,9 +259,10 @@ onBeforeUnmount(() => {
     </VProgressCircular>
   </div>
 </template>
-` }
-
-export const circularSize = { ts: `<template>
+`,
+}
+export const circularSize = {
+  ts: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       :width="3"
@@ -283,7 +290,8 @@ export const circularSize = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       :width="3"
@@ -311,9 +319,10 @@ export const circularSize = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const linearBuffering = { ts: `<script setup lang="ts">
+`,
+}
+export const linearBuffering = {
+  ts: `<script setup lang="ts">
 const modelValue = ref(10)
 const bufferValue = ref(20)
 const interval = ref()
@@ -374,7 +383,8 @@ watch(modelValue, () => {
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const modelValue = ref(10)
 const bufferValue = ref(20)
 const interval = ref()
@@ -431,9 +441,10 @@ watch(modelValue, () => {
     />
   </div>
 </template>
-` }
-
-export const linearColor = { ts: `<template>
+`,
+}
+export const linearColor = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="15"
@@ -454,7 +465,8 @@ export const linearColor = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="15"
@@ -475,9 +487,10 @@ export const linearColor = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const linearIndeterminate = { ts: `<template>
+`,
+}
+export const linearIndeterminate = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       indeterminate
@@ -495,7 +508,8 @@ export const linearIndeterminate = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       indeterminate
@@ -513,9 +527,10 @@ export const linearIndeterminate = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const linearReversed = { ts: `<template>
+`,
+}
+export const linearReversed = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="15"
@@ -538,7 +553,8 @@ export const linearReversed = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="15"
@@ -561,9 +577,10 @@ export const linearReversed = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const linearRounded = { ts: `<template>
+`,
+}
+export const linearRounded = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="100"
@@ -590,7 +607,8 @@ export const linearRounded = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="100"
@@ -617,9 +635,10 @@ export const linearRounded = { ts: `<template>
     />
   </div>
 </template>
-` }
-
-export const linearSlots = { ts: `<script setup lang="ts">
+`,
+}
+export const linearSlots = {
+  ts: `<script setup lang="ts">
 const skill = ref(20)
 const knowledge = ref(33)
 const power = ref(78)
@@ -656,7 +675,8 @@ const power = ref(78)
     </VProgressLinear>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const skill = ref(20)
 const knowledge = ref(33)
 const power = ref(78)
@@ -693,5 +713,5 @@ const power = ref(78)
     </VProgressLinear>
   </div>
 </template>
-` }
-
+`,
+}

@@ -1,4 +1,5 @@
-export const basic = { ts: `<script lang="ts" setup>
+export const basic = {
+  ts: `<script lang="ts" setup>
 const checkboxOne = ref(true)
 const checkboxTwo = ref(false)
 
@@ -22,7 +23,8 @@ const capitalizedLabel = (label: boolean) => {
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const checkboxOne = ref(true)
 const checkboxTwo = ref(false)
 
@@ -46,9 +48,10 @@ const capitalizedLabel = label => {
     />
   </div>
 </template>
-` }
-
-export const checkboxValue = { ts: `<script lang="ts" setup>
+`,
+}
+export const checkboxValue = {
+  ts: `<script lang="ts" setup>
 const checkbox = ref(1)
 const checkboxString = ref('Show')
 </script>
@@ -71,7 +74,8 @@ const checkboxString = ref('Show')
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const checkbox = ref(1)
 const checkboxString = ref('Show')
 </script>
@@ -94,9 +98,10 @@ const checkboxString = ref('Show')
     />
   </div>
 </template>
-` }
-
-export const colors = { ts: `<script lang="ts" setup>
+`,
+}
+export const colors = {
+  ts: `<script lang="ts" setup>
 const colorCheckbox = ref(['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Error'])
 const selectedCheckbox = ref([])
 </script>
@@ -113,7 +118,8 @@ const selectedCheckbox = ref([])
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const colorCheckbox = ref([
   'Primary',
   'Secondary',
@@ -138,9 +144,10 @@ const selectedCheckbox = ref([])
     />
   </div>
 </template>
-` }
-
-export const density = { ts: `<script lang="ts" setup>
+`,
+}
+export const density = {
+  ts: `<script lang="ts" setup>
 const checkboxOne = ref(true)
 const checkboxTwo = ref(false)
 
@@ -166,7 +173,8 @@ const capitalizedLabel = (label: boolean) => {
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const checkboxOne = ref(true)
 const checkboxTwo = ref(false)
 
@@ -192,9 +200,10 @@ const capitalizedLabel = label => {
     />
   </div>
 </template>
-` }
-
-export const icon = { ts: `<script lang="ts" setup>
+`,
+}
+export const icon = {
+  ts: `<script lang="ts" setup>
 const toggleCheckboxOne = ref(true)
 const toggleCheckboxTwo = ref(true)
 const toggleCheckboxThree = ref(true)
@@ -232,7 +241,8 @@ const capitalizedLabel = (label: boolean) => {
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const toggleCheckboxOne = ref(true)
 const toggleCheckboxTwo = ref(true)
 const toggleCheckboxThree = ref(true)
@@ -270,9 +280,10 @@ const capitalizedLabel = label => {
     />
   </div>
 </template>
-` }
-
-export const inlineTextField = { ts: `<script lang="ts" setup>
+`,
+}
+export const inlineTextField = {
+  ts: `<script lang="ts" setup>
 const includeFiles = ref(true)
 const isInputEnabled = ref(false)
 </script>
@@ -313,7 +324,8 @@ const isInputEnabled = ref(false)
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const includeFiles = ref(true)
 const isInputEnabled = ref(false)
 </script>
@@ -354,9 +366,10 @@ const isInputEnabled = ref(false)
     </VCol>
   </VRow>
 </template>
-` }
-
-export const labelSlot = { ts: `<script lang="ts" setup>
+`,
+}
+export const labelSlot = {
+  ts: `<script lang="ts" setup>
 const checkbox = ref(false)
 </script>
 
@@ -384,7 +397,8 @@ const checkbox = ref(false)
     </template>
   </VCheckbox>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const checkbox = ref(false)
 </script>
 
@@ -412,9 +426,10 @@ const checkbox = ref(false)
     </template>
   </VCheckbox>
 </template>
-` }
-
-export const modelAsArray = { ts: `<script lang="ts" setup>
+`,
+}
+export const modelAsArray = {
+  ts: `<script lang="ts" setup>
 const selected = ref(['John'])
 </script>
 
@@ -445,7 +460,8 @@ const selected = ref(['John'])
     {{ selected }}
   </p>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const selected = ref(['John'])
 </script>
 
@@ -476,9 +492,10 @@ const selected = ref(['John'])
     {{ selected }}
   </p>
 </template>
-` }
-
-export const states = { ts: `<script setup lang="ts">
+`,
+}
+export const states = {
+  ts: `<script setup lang="ts">
 const toggleCheckbox = ref(true)
 const toggleIndeterminateCheckbox = ref(true)
 const disabledCheckbox = ref(true)
@@ -515,7 +532,8 @@ const toggleOffCheckbox = ref(false)
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const toggleCheckbox = ref(true)
 const toggleIndeterminateCheckbox = ref(true)
 const disabledCheckbox = ref(true)
@@ -552,5 +570,5 @@ const toggleOffCheckbox = ref(false)
     />
   </div>
 </template>
-` }
-
+`,
+}

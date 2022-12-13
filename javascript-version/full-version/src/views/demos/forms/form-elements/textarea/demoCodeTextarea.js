@@ -1,5 +1,4 @@
-export const autoGrow = {
-  ts: `<script setup lang="ts">
+export const autoGrow = { ts: `<script setup lang="ts">
 const textareaValue = ref('The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.')
 </script>
 
@@ -10,8 +9,7 @@ const textareaValue = ref('The Woodman set to work at once, and so sharp was his
     auto-grow
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const textareaValue = ref('The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.')
 </script>
 
@@ -22,36 +20,31 @@ const textareaValue = ref('The Woodman set to work at once, and so sharp was his
     auto-grow
   />
 </template>
-`,
-}
-export const basic = {
-  ts: `<template>
+` }
+
+export const basic = { ts: `<template>
   <VTextarea label="Default" />
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VTextarea label="Default" />
 </template>
-`,
-}
-export const browserAutocomplete = {
-  ts: `<template>
+` }
+
+export const browserAutocomplete = { ts: `<template>
   <VTextarea
     autocomplete="email"
     label="Email"
   />
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VTextarea
     autocomplete="email"
     label="Email"
   />
 </template>
-`,
-}
-export const clearable = {
-  ts: `<script setup lang="ts">
+` }
+
+export const clearable = { ts: `<script setup lang="ts">
 const textareaValue = ref('This is clearable text.')
 </script>
 
@@ -63,8 +56,7 @@ const textareaValue = ref('This is clearable text.')
     label="Text"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const textareaValue = ref('This is clearable text.')
 </script>
 
@@ -76,10 +68,9 @@ const textareaValue = ref('This is clearable text.')
     label="Text"
   />
 </template>
-`,
-}
-export const counter = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const counter = { ts: `<script lang="ts" setup>
 const textareaValue = ref('Hello!')
 </script>
 
@@ -90,8 +81,7 @@ const textareaValue = ref('Hello!')
     label="Text"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const textareaValue = ref('Hello!')
 </script>
 
@@ -102,10 +92,9 @@ const textareaValue = ref('Hello!')
     label="Text"
   />
 </template>
-`,
-}
-export const icons = {
-  ts: `<template>
+` }
+
+export const icons = { ts: `<template>
   <VRow>
     <VCol cols="12">
       <VTextarea
@@ -140,8 +129,7 @@ export const icons = {
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VRow>
     <VCol cols="12">
       <VTextarea
@@ -176,10 +164,9 @@ export const icons = {
     </VCol>
   </VRow>
 </template>
-`,
-}
-export const noResize = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const noResize = { ts: `<script lang="ts" setup>
 const value = ref('Marshmallow tiramisu pie dessert gingerbread tart caramels marzipan oat cake. Muffin sesame snaps cupcake bonbon cookie tiramisu. Pudding biscuit gingerbread halvah lollipop jelly-o cookie.')
 </script>
 
@@ -191,8 +178,7 @@ const value = ref('Marshmallow tiramisu pie dessert gingerbread tart caramels ma
     rows="2"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const value = ref('Marshmallow tiramisu pie dessert gingerbread tart caramels marzipan oat cake. Muffin sesame snaps cupcake bonbon cookie tiramisu. Pudding biscuit gingerbread halvah lollipop jelly-o cookie.')
 </script>
 
@@ -204,10 +190,9 @@ const value = ref('Marshmallow tiramisu pie dessert gingerbread tart caramels ma
     rows="2"
   />
 </template>
-`,
-}
-export const rows = {
-  ts: `<template>
+` }
+
+export const rows = { ts: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -258,8 +243,7 @@ export const rows = {
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -310,10 +294,9 @@ export const rows = {
     </VCol>
   </VRow>
 </template>
-`,
-}
-export const states = {
-  ts: `<template>
+` }
+
+export const states = { ts: `<template>
   <VRow>
     <VCol cols="12">
       <VTextarea
@@ -334,8 +317,7 @@ export const states = {
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VRow>
     <VCol cols="12">
       <VTextarea
@@ -356,10 +338,9 @@ export const states = {
     </VCol>
   </VRow>
 </template>
-`,
-}
-export const validation = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const validation = { ts: `<script lang="ts" setup>
 const textareaValue = ref('Hello!')
 const rules = [(v: string) => v.length <= 25 || 'Max 25 characters']
 </script>
@@ -372,8 +353,7 @@ const rules = [(v: string) => v.length <= 25 || 'Max 25 characters']
     rows="2"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const textareaValue = ref('Hello!')
 const rules = [v => v.length <= 25 || 'Max 25 characters']
 </script>
@@ -386,10 +366,9 @@ const rules = [v => v.length <= 25 || 'Max 25 characters']
     rows="2"
   />
 </template>
-`,
-}
-export const variant = {
-  ts: `<template>
+` }
+
+export const variant = { ts: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -457,8 +436,7 @@ export const variant = {
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -526,5 +504,5 @@ export const variant = {
     </VCol>
   </VRow>
 </template>
-`,
-}
+` }
+

@@ -1,5 +1,4 @@
-export const basic = {
-  ts: `<script lang="ts" setup>
+export const basic = { ts: `<script lang="ts" setup>
 const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
@@ -9,8 +8,7 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     label="Standard"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Foo',
   'Bar',
@@ -25,10 +23,9 @@ const items = [
     label="Standard"
   />
 </template>
-`,
-}
-export const chips = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const chips = { ts: `<script lang="ts" setup>
 const items = ['foo', 'bar', 'fizz', 'buzz']
 const selected = ref(['foo', 'bar', 'fizz', 'buzz'])
 </script>
@@ -42,8 +39,7 @@ const selected = ref(['foo', 'bar', 'fizz', 'buzz'])
     multiple
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'foo',
   'bar',
@@ -68,10 +64,9 @@ const selected = ref([
     multiple
   />
 </template>
-`,
-}
-export const customTextAndValue = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const customTextAndValue = { ts: `<script lang="ts" setup>
 const selectedOption = ref({ state: 'Florida', abbr: 'FL' })
 
 const items = [
@@ -96,8 +91,7 @@ const items = [
     single-line
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedOption = ref({
   state: 'Florida',
   abbr: 'FL',
@@ -140,10 +134,9 @@ const items = [
     single-line
   />
 </template>
-`,
-}
-export const density = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const density = { ts: `<script lang="ts" setup>
 const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
@@ -154,8 +147,7 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     density="compact"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Foo',
   'Bar',
@@ -171,10 +163,9 @@ const items = [
     density="compact"
   />
 </template>
-`,
-}
-export const icons = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const icons = { ts: `<script lang="ts" setup>
 const selectedOption1 = ref('Florida')
 const selectedOption2 = ref('Texas')
 
@@ -221,8 +212,7 @@ const states = [
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedOption1 = ref('Florida')
 const selectedOption2 = ref('Texas')
 
@@ -269,10 +259,9 @@ const states = [
     </VCol>
   </VRow>
 </template>
-`,
-}
-export const menuProps = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const menuProps = { ts: `<script lang="ts" setup>
 const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
@@ -283,8 +272,7 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     label="Label"
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Foo',
   'Bar',
@@ -300,10 +288,9 @@ const items = [
     label="Label"
   />
 </template>
-`,
-}
-export const multiple = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const multiple = { ts: `<script lang="ts" setup>
 const selectedOptions = ref(['Alabama'])
 
 const states = [
@@ -334,8 +321,7 @@ const states = [
     persistent-hint
   />
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const selectedOptions = ref(['Alabama'])
 
 const states = [
@@ -366,10 +352,9 @@ const states = [
     persistent-hint
   />
 </template>
-`,
-}
-export const selectionSlot = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const selectionSlot = { ts: `<script lang="ts" setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -409,8 +394,7 @@ const value = ref(['Sandra Adams'])
     </template>
   </VSelect>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -465,10 +449,9 @@ const value = ref(['Sandra Adams'])
     </template>
   </VSelect>
 </template>
-`,
-}
-export const variant = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const variant = { ts: `<script lang="ts" setup>
 const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
 </script>
 
@@ -529,8 +512,7 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     </VCol>
   </VRow>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   'Foo',
   'Bar',
@@ -596,5 +578,5 @@ const items = [
     </VCol>
   </VRow>
 </template>
-`,
-}
+` }
+

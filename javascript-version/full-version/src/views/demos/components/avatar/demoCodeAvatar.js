@@ -1,5 +1,4 @@
-export const colors = {
-  ts: `<template>
+export const colors = { ts: `<template>
   <div class="demo-space-x">
     <VAvatar color="primary">
       <span>PI</span>
@@ -26,8 +25,7 @@ export const colors = {
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VAvatar color="primary">
       <span>PI</span>
@@ -54,10 +52,9 @@ export const colors = {
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const group = {
-  ts: `<script setup lang="ts">
+` }
+
+export const group = { ts: `<script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -129,8 +126,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -202,10 +198,9 @@ import avatar6 from '@images/avatars/avatar-6.png'
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const groupCount = {
-  ts: `<script setup lang="ts">
+` }
+
+export const groupCount = { ts: `<script setup lang="ts">
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
 import avatar5 from '@images/avatars/avatar-5.png'
@@ -257,8 +252,7 @@ import avatar5 from '@images/avatars/avatar-5.png'
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
 import avatar5 from '@images/avatars/avatar-5.png'
@@ -310,10 +304,9 @@ import avatar5 from '@images/avatars/avatar-5.png'
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const icons = {
-  ts: `<template>
+` }
+
+export const icons = { ts: `<template>
   <div class="demo-space-x">
     <VAvatar color="primary">
       <VIcon
@@ -359,8 +352,7 @@ export const icons = {
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VAvatar color="primary">
       <VIcon
@@ -406,10 +398,9 @@ export const icons = {
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const images = {
-  ts: `<script setup lang="ts">
+` }
+
+export const images = { ts: `<script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -444,8 +435,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -480,10 +470,9 @@ import avatar6 from '@images/avatars/avatar-6.png'
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const rounded = {
-  ts: `<template>
+` }
+
+export const rounded = { ts: `<template>
   <div class="demo-space-x">
     <VAvatar
       rounded="0"
@@ -549,8 +538,7 @@ export const rounded = {
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VAvatar
       rounded="0"
@@ -616,10 +604,9 @@ export const rounded = {
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const sizes = {
-  ts: `<template>
+` }
+
+export const sizes = { ts: `<template>
   <div class="demo-space-x">
     <VAvatar
       color="primary"
@@ -654,8 +641,7 @@ export const sizes = {
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VAvatar
       color="primary"
@@ -690,10 +676,9 @@ export const sizes = {
     </VAvatar>
   </div>
 </template>
-`,
-}
-export const tonal = {
-  ts: `<template>
+` }
+
+export const tonal = { ts: `<template>
   <div class="demo-space-x">
     <VAvatar
       color="primary"
@@ -733,8 +718,7 @@ export const tonal = {
     </VAvatar>
   </div>
 </template>
-`,
-  js: `<template>
+`, js: `<template>
   <div class="demo-space-x">
     <VAvatar
       color="primary"
@@ -774,5 +758,5 @@ export const tonal = {
     </VAvatar>
   </div>
 </template>
-`,
-}
+` }
+

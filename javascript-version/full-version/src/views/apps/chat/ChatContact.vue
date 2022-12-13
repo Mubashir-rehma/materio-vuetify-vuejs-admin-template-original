@@ -61,7 +61,7 @@ const isChatContactActive = computed(() => {
     </VBadge>
     <div class="flex-grow-1 ms-4 overflow-hidden">
       <span>{{ props.user.fullName }}</span>
-      <span class="d-block text-sm text-truncate text-disabled">{{ props.isChatContact && 'chat' in props.user ? props.user.chat.lastMessage.message : props.user.about }}</span>
+      <span class="d-block text-sm text-truncate text-medium-emphasis">{{ props.isChatContact && 'chat' in props.user ? props.user.chat.lastMessage.message : props.user.about }}</span>
     </div>
     <div
       v-if="props.isChatContact && 'chat' in props.user"

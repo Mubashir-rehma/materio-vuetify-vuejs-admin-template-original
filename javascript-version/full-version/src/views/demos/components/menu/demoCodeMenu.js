@@ -1,5 +1,4 @@
-export const activatorAndTooltip = {
-  ts: `<script lang="ts" setup>
+export const activatorAndTooltip = { ts: `<script lang="ts" setup>
 import { mergeProps } from 'vue'
 
 const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
@@ -21,8 +20,7 @@ const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', va
     <VList :items="items" />
   </VMenu>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import { mergeProps } from 'vue'
 
 const items = [
@@ -57,10 +55,9 @@ const items = [
     <VList :items="items" />
   </VMenu>
 </template>
-`,
-}
-export const basic = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const basic = { ts: `<script lang="ts" setup>
 const menusVariant = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
 const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
 </script>
@@ -84,8 +81,7 @@ const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', va
     </VMenu>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const menusVariant = [
   'primary',
   'secondary',
@@ -130,10 +126,9 @@ const items = [
     </VMenu>
   </div>
 </template>
-`,
-}
-export const customTransitions = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const customTransitions = { ts: `<script lang="ts" setup>
 const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
 </script>
 
@@ -170,8 +165,7 @@ const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', va
     </VMenu>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   {
     title: 'Option 1',
@@ -221,10 +215,9 @@ const items = [
     </VMenu>
   </div>
 </template>
-`,
-}
-export const location = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const location = { ts: `<script lang="ts" setup>
 const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
 </script>
 
@@ -271,8 +264,7 @@ const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', va
     </VMenu>
   </div>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   {
     title: 'Option 1',
@@ -332,10 +324,9 @@ const items = [
     </VMenu>
   </div>
 </template>
-`,
-}
-export const openOnHover = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const openOnHover = { ts: `<script lang="ts" setup>
 const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', value: 'Option 2' }, { title: 'Option 3', value: 'Option 3' }]
 </script>
 
@@ -350,8 +341,7 @@ const items = [{ title: 'Option 1', value: 'Option 1' }, { title: 'Option 2', va
     <VList :items="items" />
   </VMenu>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const items = [
   {
     title: 'Option 1',
@@ -379,10 +369,9 @@ const items = [
     <VList :items="items" />
   </VMenu>
 </template>
-`,
-}
-export const popover = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const popover = { ts: `<script lang="ts" setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 
 const menu = ref(false)
@@ -425,8 +414,7 @@ const menu = ref(false)
     </VCard>
   </VMenu>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 
 const menu = ref(false)
@@ -469,5 +457,5 @@ const menu = ref(false)
     </VCard>
   </VMenu>
 </template>
-`,
-}
+` }
+

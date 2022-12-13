@@ -1,5 +1,4 @@
-export const collapsible = {
-  ts: `<script lang="ts" setup>
+export const collapsible = { ts: `<script lang="ts" setup>
 const stateList = [
   'Alabama',
   'Alaska',
@@ -312,8 +311,7 @@ const paymentMethods = [
   }
 }
 </style>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const stateList = [
   'Alabama',
   'Alaska',
@@ -626,10 +624,9 @@ const paymentMethods = [
   }
 }
 </style>
-`,
-}
-export const formHint = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const formHint = { ts: `<script lang="ts" setup>
 const username = ref('')
 const email = ref('')
 const password = ref<string>()
@@ -711,8 +708,7 @@ const values = ref<typeof items[number][]>([])
     </VRow>
   </VForm>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const username = ref('')
 const email = ref('')
 const password = ref()
@@ -801,10 +797,10 @@ const values = ref([])
     </VRow>
   </VForm>
 </template>
-`,
-}
-export const formValidation = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const formValidation = { ts: `<script lang="ts" setup>
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { VForm } from 'vuetify/components'
 import { emailValidator, requiredValidator } from '@validators'
 
@@ -888,8 +884,7 @@ const form = ref<VForm>()
     </VRow>
   </VForm>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 import {
   emailValidator,
   requiredValidator,
@@ -982,10 +977,9 @@ const form = ref()
     </VRow>
   </VForm>
 </template>
-`,
-}
-export const formWithTabs = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const formWithTabs = { ts: `<script lang="ts" setup>
 const tab = ref('personal-info')
 const firstName = ref('')
 const lastName = ref('')
@@ -1225,8 +1219,7 @@ const isCPasswordVisible = ref(false)
     </VCardText>
   </VCard>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const tab = ref('personal-info')
 const firstName = ref('')
 const lastName = ref('')
@@ -1486,10 +1479,9 @@ const isCPasswordVisible = ref(false)
     </VCardText>
   </VCard>
 </template>
-`,
-}
-export const horizontalForm = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const horizontalForm = { ts: `<script lang="ts" setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref<number>()
@@ -1632,8 +1624,7 @@ const checkbox = ref(false)
   </VForm>
 </template>
 
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref()
@@ -1776,10 +1767,9 @@ const checkbox = ref(false)
   </VForm>
 </template>
 
-`,
-}
-export const horizontalFormWithIcons = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const horizontalFormWithIcons = { ts: `<script lang="ts" setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref<number>()
@@ -1925,8 +1915,7 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref()
@@ -2072,10 +2061,9 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-}
-export const multipleColumn = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const multipleColumn = { ts: `<script lang="ts" setup>
 const firstName = ref('')
 const lastName = ref('')
 const city = ref('')
@@ -2187,8 +2175,7 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const firstName = ref('')
 const lastName = ref('')
 const city = ref('')
@@ -2300,10 +2287,9 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-}
-export const verticalForm = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const verticalForm = { ts: `<script lang="ts" setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref<number>()
@@ -2375,8 +2361,7 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref()
@@ -2448,10 +2433,9 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-}
-export const verticalFormWithIcons = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const verticalFormWithIcons = { ts: `<script lang="ts" setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref<number>()
@@ -2527,8 +2511,7 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const firstName = ref('')
 const email = ref('')
 const mobile = ref()
@@ -2604,5 +2587,5 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-`,
-}
+` }
+

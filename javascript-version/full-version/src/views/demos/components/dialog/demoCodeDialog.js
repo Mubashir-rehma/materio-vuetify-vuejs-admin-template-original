@@ -1,5 +1,4 @@
-export const basic = {
-  ts: `<script lang="ts" setup>
+export const basic = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -30,8 +29,7 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -62,10 +60,9 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-}
-export const form = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const form = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 const firstName = ref('')
 const middleName = ref('')
@@ -178,8 +175,7 @@ const interest = ref<string[]>([])
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 const firstName = ref('')
 const middleName = ref('')
@@ -292,10 +288,9 @@ const interest = ref([])
     </VCard>
   </VDialog>
 </template>
-`,
-}
-export const fullscreen = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const fullscreen = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -421,8 +416,7 @@ const isDialogVisible = ref(false)
   transition: transform 0.2s ease-in-out;
 }
 </style>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -548,10 +542,9 @@ const isDialogVisible = ref(false)
   transition: transform 0.2s ease-in-out;
 }
 </style>
-`,
-}
-export const loader = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const loader = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 
 watch(isDialogVisible, value => {
@@ -595,8 +588,7 @@ watch(isDialogVisible, value => {
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 
 watch(isDialogVisible, value => {
@@ -639,10 +631,9 @@ watch(isDialogVisible, value => {
     </VCard>
   </VDialog>
 </template>
-`,
-}
-export const nesting = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const nesting = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 const isDialogTwoShow = ref(false)
 </script>
@@ -693,8 +684,7 @@ const isDialogTwoShow = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 const isDialogTwoShow = ref(false)
 </script>
@@ -745,10 +735,9 @@ const isDialogTwoShow = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-}
-export const overflowed = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const overflowed = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -799,8 +788,7 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -851,10 +839,9 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-}
-export const persistent = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const persistent = { ts: `<script lang="ts" setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -895,8 +882,7 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const isDialogVisible = ref(false)
 </script>
 
@@ -937,10 +923,9 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-}
-export const scrollable = {
-  ts: `<script lang="ts" setup>
+` }
+
+export const scrollable = { ts: `<script lang="ts" setup>
 const countryList = [
   { label: 'Bahamas, The', value: 'bahamas' },
   { label: 'Bahrain', value: 'bahrain' },
@@ -1021,8 +1006,7 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-  js: `<script setup>
+`, js: `<script setup>
 const countryList = [
   {
     label: 'Bahamas, The',
@@ -1149,5 +1133,5 @@ const isDialogVisible = ref(false)
     </VCard>
   </VDialog>
 </template>
-`,
-}
+` }
+

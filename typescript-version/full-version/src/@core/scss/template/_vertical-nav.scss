@@ -75,17 +75,5 @@
         background: linear-gradient(-72.47deg, rgb(var(--v-global-theme-primary)) 22.16%, rgba(var(--v-global-theme-primary), 0.7) 76.47%) !important;
       }
     }
-
-    // 👉 Vertical nav group
-    .nav-group {
-      // Active & open states for nav group label
-      &.active,
-      &.open {
-        > :first-child {
-          // ℹ️ We have to make active state bg like hover state according to design
-          --v-theme-overlay-multiplier: 0.3333;
-        }
-      }
-    }
   }
 }

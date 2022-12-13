@@ -82,7 +82,7 @@ To stop all of the containers, you may simply press Control + C to stop the cont
 sail down
 ```
 
-## How to run the Master template with docker?
+## How to run the Materio template with docker?
 
 You can run our template in docker environment using sail. After, successfully installed [docker](https://www.docker.com/products/docker-desktop) in your system run the below command to install sail and composer in the template.
 

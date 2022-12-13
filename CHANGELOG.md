@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.1.0](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v2.1.0) (2022-12-13)
+
+### Added
+
+- Added Global search
+- Added User profile page
+- Added Progress component
+- Added Help center page (replacement of knowledge base page)
+- Added Verify email authentication pages
+- Added Two steps authentication pages
+- Added E-mail app
+- Added Chat app
+
+### Removed
+
+- Removed Knowledge base page
+
+### Refactored
+
+- Used New alias `@images`  for images import
+- Used New alias `@styles`  for style import
+- Renamed `card-analytics` to `card-widgets`
+
+### Updated
+
+- Updated Vuetify to `v3.0.3`
+
+### Breaking
+
+- Core styles separated into base and template folders.
+
 ## [2.0.0](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v2.0.0) (2022-09-21)
 
 ### Added

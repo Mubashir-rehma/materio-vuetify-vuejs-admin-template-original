@@ -16,6 +16,8 @@ interface Props {
 }
 
 const { locale } = useI18n({ useScope: 'global' })
+
+const currentLang = ref(['en'])
 </script>
 
 <template>
@@ -36,7 +38,11 @@ const { locale } = useI18n({ useScope: 'global' })
       offset="14px"
     >
       <!-- List -->
-      <VList min-width="175px">
+      <VList
+        v-model:selected="currentLang"
+        active-color="primary"
+        min-width="175px"
+      >
         <!-- List item -->
         <VListItem
           v-for="lang in props.languages"

@@ -12,7 +12,7 @@ jobs:
         uses: themeselection/gh-action-comment-on-new-issue@v4.0.1
         with:
           message: |
-            ### Hi [@${{ github.actor }}](https://github.com/${{ github.actor }}) <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="25px">
+            ### Hi [@${{ github.actor }}](https://github.com/${{ github.actor }}) <img src="https://user-images.githubusercontent.com/47495003/171637050-b790338b-c8fd-4807-af43-19c6fd6713ed.gif" height="25px" width="25px">
             Thanks a lot for purchasing our theme and getting in touch with us.
 
             Your support has been raised, our response time could be 1 - 2 business days.
@@ -22,7 +22,7 @@ jobs:
           raise-support-using-form-msg: |
             Thanks for creating an issue ☺️
 
-            It seems our [raise support](https://themeselection.com/tools/github/raise-support) form was skipped while creating this issue.
+            It seems our [raise support](https://tools.themeselection.com/github/raise-support) form was skipped while creating this issue.
             Please consider raising support via our support form only which will create issues using essential information we need to resolve your query quickly.
 
             This will help in growing an excellent community, where:

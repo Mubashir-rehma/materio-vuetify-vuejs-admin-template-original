@@ -1,3 +1,5 @@
+<!-- Available h3 headings: Added, Fixed, Updated, Removed, Deprecated -->
+
 # Changelog
 
 ## [2.1.0](https://github.com/themeselection/materio-vuetify-vuejs-admin-template/releases/tag/v2.1.0) (2022-12-13)

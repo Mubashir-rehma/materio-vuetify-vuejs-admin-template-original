@@ -123,7 +123,7 @@ const formateAmount = (amount: number) => {
           </template>
 
           <!-- 👉 Title and Subtitle  -->
-          <VListItemTitle class="font-weight-semibold text-sm mb-1">
+          <VListItemTitle class="font-weight-medium text-sm mb-1">
             {{ transaction.gateway }}
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">
@@ -132,7 +132,7 @@ const formateAmount = (amount: number) => {
 
           <!-- 👉 Amounts -->
           <template #append>
-            <VListItemAction class="font-weight-semibold">
+            <VListItemAction class="font-weight-medium">
               <span class="text-base me-3">{{ formateAmount(transaction.amount) }}</span>
               <VIcon
                 :size="24"

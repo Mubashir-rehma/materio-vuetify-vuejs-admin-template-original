@@ -91,7 +91,7 @@ const chartOptions = {
         :options="chartOptions"
         :series="series"
       />
-      <h6 class="text-sm text-center font-weight-semibold">
+      <h6 class="text-sm text-center font-weight-medium">
         Total Growth
       </h6>
     </VCardText>

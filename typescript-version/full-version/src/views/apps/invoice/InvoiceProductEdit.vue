@@ -86,7 +86,7 @@ watch(totalPrice, () => {
         cols="12"
         md="6"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Item
         </h6>
       </VCol>
@@ -94,7 +94,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Cost
         </h6>
       </VCol>
@@ -102,7 +102,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Hours
         </h6>
       </VCol>
@@ -110,7 +110,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Price
         </h6>
       </VCol>

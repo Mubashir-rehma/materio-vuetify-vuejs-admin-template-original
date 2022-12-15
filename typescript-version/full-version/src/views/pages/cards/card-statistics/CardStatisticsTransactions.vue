@@ -54,7 +54,7 @@ const statistics = [
               <span class="text-caption">
                 {{ item.title }}
               </span>
-              <span class="text-h6 font-weight-medium">{{ item.stats }}</span>
+              <span class="text-h6">{{ item.stats }}</span>
             </div>
           </div>
         </VCol>

@@ -24,7 +24,7 @@ const statistics = [
 <template>
   <VCard title="Transactions">
     <VCardText>
-      <h6 class="text-sm mb-6">
+      <h6 class="text-sm font-weight-medium mb-6">
         <span>Total 48.5% growth 😎</span>
         <span class="font-weight-regular"> this month</span>
       </h6>
@@ -54,7 +54,7 @@ const statistics = [
               <span class="text-caption">
                 {{ item.title }}
               </span>
-              <span class="text-h6 font-weight-medium">{{ item.stats }}</span>
+              <span class="text-h6">{{ item.stats }}</span>
             </div>
           </div>
         </VCol>

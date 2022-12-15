@@ -164,9 +164,9 @@ const isCardDetailsVisible = ref(false)
             </VCardText>
 
             <VCardText>
-              <h6 class="text-base">
+              <h6 class="text-base font-weight-medium">
                 <span class="font-weight-regular">Price :</span>
-                <span class="font-weight-bold">$899</span>
+                <span class="font-weight-medium">$899</span>
               </h6>
             </VCardText>
 
@@ -359,7 +359,7 @@ const isCardDetailsVisible = ref(false)
             <div class="membership-pricing d-flex flex-column align-center py-14 h-100 justify-center">
               <p class="mb-5">
                 <sub class="text-h5">$</sub>
-                <sup class="text-h2 font-weight-medium">899</sup>
+                <sup class="text-h2">899</sup>
                 <sub class="text-h5">USD</sub>
               </p>
 

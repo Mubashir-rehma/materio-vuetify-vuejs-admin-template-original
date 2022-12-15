@@ -184,7 +184,7 @@ const lastThreeTransactions = [
                 </VAvatar>
               </template>
 
-              <VListItemTitle class="font-weight-semibold">
+              <VListItemTitle class="font-weight-medium">
                 {{ transaction.title }}
               </VListItemTitle>
               <VListItemSubtitle>

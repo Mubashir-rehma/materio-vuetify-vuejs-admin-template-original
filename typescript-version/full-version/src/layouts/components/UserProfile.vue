@@ -83,7 +83,7 @@ const avatarBadgeProps = {
               </VListItemAction>
             </template>
 
-            <VListItemTitle class="font-weight-semibold">
+            <VListItemTitle class="font-weight-medium">
               {{ userData.fullName }}
             </VListItemTitle>
             <VListItemSubtitle>

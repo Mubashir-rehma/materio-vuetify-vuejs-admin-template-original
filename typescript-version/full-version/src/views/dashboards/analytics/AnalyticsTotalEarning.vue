@@ -78,7 +78,7 @@ const earnings = [
             />
           </template>
 
-          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+          <VListItemTitle class="text-sm font-weight-medium mb-1">
             {{ earning.title }}
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">
@@ -87,7 +87,7 @@ const earnings = [
 
           <template #append>
             <div>
-              <h6 class="text-sm mb-2">
+              <h6 class="text-sm font-weight-medium mb-2">
                 {{ earning.amount }}
               </h6>
               <VProgressLinear

@@ -67,7 +67,7 @@ const analytics = [
             <VAvatar :image="item.img.value" />
           </template>
 
-          <VListItemTitle class="text-h6 font-weight-medium mb-1">
+          <VListItemTitle class="text-h6 mb-1">
             {{ item.title }}
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">

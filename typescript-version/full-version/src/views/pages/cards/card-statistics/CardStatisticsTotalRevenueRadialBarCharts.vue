@@ -62,7 +62,7 @@ const chartOptions = computed(() => {
         :height="150"
       />
 
-      <h6 class="text-sm text-center font-weight-semibold mt-9">
+      <h6 class="text-sm text-center font-weight-medium mt-9">
         Total Revenue
       </h6>
     </VCardText>
@@ -74,7 +74,7 @@ const chartOptions = computed(() => {
     .apexcharts-canvas {
       .apexcharts-text {
         &.apexcharts-datalabel-value {
-          font-weight: 600;
+          font-weight: 500;
         }
       }
     }

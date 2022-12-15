@@ -168,7 +168,7 @@ const salesOverviews = [
                 />
                 <span>{{ sale.product }}</span>
               </p>
-              <p class="text-base font-weight-semibold mb-0">
+              <p class="text-base font-weight-medium mb-0">
                 {{ sale.sales }}
               </p>
             </VCol>

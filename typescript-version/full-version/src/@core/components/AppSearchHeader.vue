@@ -28,7 +28,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
-      <h5 class="text-h5 font-weight-medium text-primary mb-6">
+      <h5 class="text-h5 text-primary mb-6">
         {{ props.title }}
       </h5>
 

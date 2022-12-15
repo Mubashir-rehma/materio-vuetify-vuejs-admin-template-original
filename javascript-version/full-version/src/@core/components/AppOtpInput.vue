@@ -48,7 +48,7 @@ const handleKeyDown = (event, index) => {
 
 <template>
   <div>
-    <h6 class="text-base font-weight-bold mb-3">
+    <h6 class="text-base font-weight-medium mb-3">
       Type your 6 digit security code
     </h6>
     <div

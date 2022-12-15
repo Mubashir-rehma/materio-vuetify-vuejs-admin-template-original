@@ -34,13 +34,13 @@ const isPasswordVisible = ref(false)
           </div>
         </template>
 
-        <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
+        <VCardTitle class="font-weight-medium text-2xl text-uppercase">
           {{ themeConfig.app.title }}
         </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h5 class="text-h5 font-weight-semibold mb-1">
+        <h5 class="text-h5 mb-1">
           Adventure starts here 🚀
         </h5>
         <p class="mb-0">

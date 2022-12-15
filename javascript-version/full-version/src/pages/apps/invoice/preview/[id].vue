@@ -82,7 +82,7 @@ const printInvoice = () => {
                 />
 
                 <!-- 👉 Title -->
-                <h6 class="font-weight-semibold text-xl text-uppercase">
+                <h6 class="font-weight-medium text-xl text-uppercase">
                   {{ themeConfig.app.title }}
                 </h6>
               </div>
@@ -126,7 +126,7 @@ const printInvoice = () => {
           <!-- 👉 Payment Details -->
           <VCardText class="d-flex justify-space-between flex-wrap flex-column flex-sm-row print-row">
             <div class="my-4">
-              <h6 class="text-sm font-weight-semibold mb-3">
+              <h6 class="text-sm font-weight-medium mb-3">
                 Invoice To:
               </h6>
               <p class="mb-1">
@@ -147,7 +147,7 @@ const printInvoice = () => {
             </div>
 
             <div class="my-4">
-              <h6 class="text-sm font-weight-semibold mb-3">
+              <h6 class="text-sm font-weight-medium mb-3">
                 Bill To:
               </h6>
               <table>
@@ -258,7 +258,7 @@ const printInvoice = () => {
           <VCardText class="d-flex justify-space-between flex-column flex-sm-row print-row">
             <div class="mb-2">
               <div class="d-flex align-center mb-1">
-                <h6 class="text-sm font-weight-semibold me-1">
+                <h6 class="text-sm font-weight-medium me-1">
                   Salesperson:
                 </h6>
                 <span>Jenny Parker</span>
@@ -273,7 +273,7 @@ const printInvoice = () => {
                     Subtotal:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-sm font-weight-medium">
                       $1800
                     </h6>
                   </td>
@@ -283,7 +283,7 @@ const printInvoice = () => {
                     Discount:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-sm font-weight-medium">
                       $28
                     </h6>
                   </td>
@@ -293,7 +293,7 @@ const printInvoice = () => {
                     Tax:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-sm font-weight-medium">
                       21%
                     </h6>
                   </td>
@@ -308,7 +308,7 @@ const printInvoice = () => {
                     Total:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-sm font-weight-medium">
                       $1690
                     </h6>
                   </td>
@@ -321,7 +321,7 @@ const printInvoice = () => {
 
           <VCardText>
             <div class="d-flex">
-              <h6 class="text-sm font-weight-semibold me-1">
+              <h6 class="text-sm font-weight-medium me-1">
                 Note:
               </h6>
               <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</span>

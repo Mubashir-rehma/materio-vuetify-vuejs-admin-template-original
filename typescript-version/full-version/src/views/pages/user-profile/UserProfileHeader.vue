@@ -40,7 +40,7 @@ fetchHeaderData()
                 icon="mdi-invert-colors"
                 class="me-2"
               />
-              <span class="text-body-1 font-weight-semibold">
+              <span class="text-body-1 font-weight-medium">
                 {{ profileHeaderData.designation }}
               </span>
             </span>
@@ -51,7 +51,7 @@ fetchHeaderData()
                 icon="mdi-map-marker-outline"
                 class="me-2"
               />
-              <span class="text-body-1 font-weight-semibold">
+              <span class="text-body-1 font-weight-medium">
                 {{ profileHeaderData.location }}
               </span>
             </span>
@@ -62,7 +62,7 @@ fetchHeaderData()
                 icon="mdi-calendar-blank"
                 class="me-2"
               />
-              <span class="text-body-1 font-weight-semibold">
+              <span class="text-body-1 font-weight-medium">
                 {{ profileHeaderData.joiningDate }}
               </span>
             </span>

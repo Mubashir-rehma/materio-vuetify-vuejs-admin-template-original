@@ -23,13 +23,13 @@ const authThemeMask = useGenerateImageVariant(authV1MaskLight, authV1MaskDark)
           </div>
         </template>
 
-        <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
+        <VCardTitle class="font-weight-medium text-2xl text-uppercase">
           {{ themeConfig.app.title }}
         </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h5 class="text-h5 font-weight-semibold mb-1">
+        <h5 class="text-h5 mb-1">
           Verify your email ✉️
         </h5>
         <p>

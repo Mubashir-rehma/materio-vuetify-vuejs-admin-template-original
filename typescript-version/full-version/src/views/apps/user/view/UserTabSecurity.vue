@@ -97,7 +97,7 @@ const recentDevices = [
       >
         <VCardText>
           <div>
-            <h4 class="font-weight-semibold mb-1">
+            <h4 class="font-weight-medium mb-1">
               SMS
             </h4>
             <VTextField

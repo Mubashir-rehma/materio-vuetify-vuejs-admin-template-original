@@ -88,7 +88,7 @@ const resolveUserRoleVariant = role => {
             />
             <span
               v-else
-              class="text-5xl font-weight-semibold"
+              class="text-5xl font-weight-medium"
             >
               {{ avatarText(props.userData.fullName) }}
             </span>
@@ -170,7 +170,7 @@ const resolveUserRoleVariant = role => {
           <VList class="card-list mt-2">
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Username:
                   <span class="text-body-2">
                     @{{ props.userData.username }}
@@ -181,7 +181,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Billing Email:
                   <span class="text-body-2">{{ props.userData.email }}</span>
                 </h6>
@@ -190,7 +190,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Status:
 
                   <VChip
@@ -207,7 +207,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Role:
                   <span class="text-capitalize text-body-2">{{ props.userData.role }}</span>
                 </h6>
@@ -216,7 +216,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Tax ID:
                   <span class="text-body-2">
                     {{ props.userData.taxId }}
@@ -227,7 +227,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Contact:
                   <span class="text-body-2">{{ props.userData.contact }}</span>
                 </h6>
@@ -236,7 +236,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Language:
                   <span class="text-body-2">{{ props.userData.language }}</span>
                 </h6>
@@ -245,7 +245,7 @@ const resolveUserRoleVariant = role => {
 
             <VListItem>
               <VListItemTitle>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   Country:
                   <span class="text-body-2">{{ props.userData.country }}</span>
                 </h6>
@@ -295,7 +295,7 @@ const resolveUserRoleVariant = role => {
           <!-- 👉 Current Price  -->
           <div class="d-flex align-center">
             <sup class="text-primary text-sm font-weight-regular">$</sup>
-            <h3 class="text-h3 text-primary font-weight-semibold">
+            <h3 class="text-h3 text-primary font-weight-medium">
               99
             </h3>
             <sub class="mt-3"><h6 class="text-sm font-weight-regular">/ month</h6></sub>
@@ -321,12 +321,12 @@ const resolveUserRoleVariant = role => {
 
           <!-- 👉 Days -->
           <div class="my-6">
-            <div class="d-flex font-weight-semibold mt-3 mb-2">
-              <h6 class="text-sm">
+            <div class="d-flex mt-3 mb-2">
+              <h6 class="text-sm font-weight-medium">
                 Days
               </h6>
               <VSpacer />
-              <h6 class="text-sm">
+              <h6 class="text-sm font-weight-medium">
                 26 of 30 Days
               </h6>
             </div>

@@ -1,6 +1,7 @@
 {
   "name": "materio-vuejs-admin-template",
   "version": "2.1.0",
+  "private": true,
   "scripts": {
     "dev": "npm run build:icons && vite --host",
     "build": "npm run build:icons && vite build",

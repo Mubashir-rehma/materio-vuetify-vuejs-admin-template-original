@@ -36,7 +36,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
     <div class="auth-logo d-flex align-start gap-x-3">
       <VNodeRenderer :nodes="themeConfig.app.logo" />
 
-      <h1 class="font-weight-semibold leading-normal text-2xl text-uppercase">
+      <h1 class="font-weight-medium leading-normal text-2xl text-uppercase">
         {{ themeConfig.app.title }}
       </h1>
     </div>
@@ -81,7 +81,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
           class="mt-12 mt-sm-0 pa-4"
         >
           <VCardText>
-            <h5 class="text-h5 font-weight-semibold mb-1">
+            <h5 class="text-h5 font-weight-medium mb-1">
               Welcome to {{ themeConfig.app.title }}! 👋🏻
             </h5>
             <p class="mb-0">

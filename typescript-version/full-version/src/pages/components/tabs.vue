@@ -88,7 +88,7 @@ import * as demoCode from '@/views/demos/components/tabs/demoCodeTabs'
         title="Alignment"
         :code="demoCode.alignment"
       >
-        <p>Use <code>centered</code>, <code>right</code> prop to change the tabs alignment.</p>
+        <p>Use <code>align-tabs</code> prop to change the tabs alignment.</p>
 
         <DemoTabsAlignment />
       </AppCardCode>

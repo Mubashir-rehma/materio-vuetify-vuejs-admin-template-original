@@ -81,16 +81,16 @@ const currentBillingAddress = {
               md="6"
             >
               <p class="text-sm mb-1">
-                Your Current Plan is <span class="font-weight-semibold text-high-emphasis">Basic</span>
+                Your Current Plan is <span class="font-weight-medium text-high-emphasis">Basic</span>
               </p>
               <p>A simple start for everyone</p>
 
-              <h6 class="text-sm font-weight-semibold mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Active until Dec 09, 2021
               </h6>
               <p>We will send you a notification upon Subscription expiration</p>
 
-              <h6 class="text-sm font-weight-semibold mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 <span class="me-3">$199 Per Month</span>
                 <VChip
                   color="primary"
@@ -119,11 +119,11 @@ const currentBillingAddress = {
               </VAlert>
 
               <!-- 👉 Progress -->
-              <div class="d-flex justify-space-between font-weight-bold mt-8 mb-2">
-                <h6 class="text-sm">
+              <div class="d-flex justify-space-between mt-8 mb-2">
+                <h6 class="text-sm font-weight-medium">
                   Days
                 </h6>
-                <h6 class="text-sm">
+                <h6 class="text-sm font-weight-medium">
                   26 of 30 Days
                 </h6>
               </div>
@@ -184,7 +184,7 @@ const currentBillingAddress = {
                   :width="60"
                   :height="25"
                 />
-                <h4 class="text-base my-3">
+                <h4 class="text-base font-weight-medium my-3">
                   {{ card.name }}
                   <VChip
                     v-if="card.isPrimary"

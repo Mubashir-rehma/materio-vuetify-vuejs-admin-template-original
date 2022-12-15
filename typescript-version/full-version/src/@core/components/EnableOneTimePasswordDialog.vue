@@ -33,7 +33,7 @@ const resetPhoneNumber = () => {
   >
     <VCard class="pa-5 pa-sm-15">
       <VCardItem>
-        <VCardTitle class="text-h5 font-weight-medium text-center">
+        <VCardTitle class="text-h5 text-center">
           Enable One Time Password
         </VCardTitle>
       </VCardItem>

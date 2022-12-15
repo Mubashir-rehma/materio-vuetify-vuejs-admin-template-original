@@ -306,7 +306,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 {{ serverKey.permission }}
               </VChip>
             </div>
-            <p class="text-base font-weight-semibold">
+            <p class="text-base font-weight-medium">
               <span class="me-3">{{ serverKey.key }}</span>
               <VIcon
                 :size="18"

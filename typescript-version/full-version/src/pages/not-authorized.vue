@@ -13,10 +13,10 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
   <div class="misc-wrapper">
     <div class="misc-center-content text-center mb-4">
       <!-- 👉 Title and subtitle -->
-      <h1 class="text-h1 font-weight-medium">
+      <h1 class="text-h1">
         401
       </h1>
-      <h5 class="text-h5 font-weight-medium mb-3">
+      <h5 class="text-h5 mb-3">
         You are not authorized! 🔐
       </h5>
       <p>You don't have permission to access this page. Go Home!</p>

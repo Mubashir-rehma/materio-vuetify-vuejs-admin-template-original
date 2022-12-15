@@ -146,7 +146,7 @@ const weeklySalesData = [
         </div>
 
         <div>
-          <h6 class="text-base">
+          <h6 class="text-base font-weight-medium">
             {{ data.title }}
           </h6>
           <span class="text-sm text-no-wrap">{{ data.subtitle }}</span>

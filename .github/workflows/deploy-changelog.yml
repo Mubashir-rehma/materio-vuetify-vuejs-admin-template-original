@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Convert changelog.md to changelog.html
-        uses: jd-0001/gh-action-md-to-html@v1.1.0
+        uses: jd-solanki/gh-action-md-to-html@v1.2.0
         with:
           files: '[["CHANGELOG.md", "changelog.html"]]'
           theme: 'light'

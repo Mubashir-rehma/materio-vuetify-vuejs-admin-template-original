@@ -27,7 +27,7 @@ const props = defineProps<Props>()
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span class="font-weight-medium me-1">{{ item.property }}:</span>
             <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
@@ -50,7 +50,7 @@ const props = defineProps<Props>()
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span class="font-weight-medium me-1">{{ item.property }}:</span>
             <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
@@ -74,7 +74,7 @@ const props = defineProps<Props>()
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span class="font-weight-medium me-1">{{ item.property }}:</span>
             <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
@@ -101,7 +101,7 @@ const props = defineProps<Props>()
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-semibold me-1">{{ item.property }}:</span>
+            <span class="font-weight-medium me-1">{{ item.property }}:</span>
             <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>

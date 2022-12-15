@@ -8,14 +8,14 @@ export const alignment = {
   </VTabs>
 
   <!-- Center -->
-  <VTabs centered>
+  <VTabs align-tabs="center">
     <VTab>Home</VTab>
     <VTab>Service</VTab>
     <VTab>Account</VTab>
   </VTabs>
 
-  <!-- Right -->
-  <VTabs end>
+  <!-- End -->
+  <VTabs align-tabs="end">
     <VTab>Home</VTab>
     <VTab>Service</VTab>
     <VTab>Account</VTab>
@@ -31,14 +31,14 @@ export const alignment = {
   </VTabs>
 
   <!-- Center -->
-  <VTabs centered>
+  <VTabs align-tabs="center">
     <VTab>Home</VTab>
     <VTab>Service</VTab>
     <VTab>Account</VTab>
   </VTabs>
 
-  <!-- Right -->
-  <VTabs end>
+  <!-- End -->
+  <VTabs align-tabs="end">
     <VTab>Home</VTab>
     <VTab>Service</VTab>
     <VTab>Account</VTab>

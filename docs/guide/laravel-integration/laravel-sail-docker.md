@@ -82,16 +82,17 @@ To stop all of the containers, you may simply press Control + C to stop the cont
 sail down
 ```
 
-## How to run the Vuexy template with docker?
+## How to run the Materio template with docker?
 
 You can run our template in docker environment using sail. After, successfully installed [docker](https://www.docker.com/products/docker-desktop) in your system run the below command to install sail and composer in the template.
 
 ```sh
 docker run --rm \
--v $(pwd):/opt \
--w /opt \
-laravelsail/php80-composer:latest \
-composer install
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
 ```
 
 In the root directory, you will find a file named `.env.example`, rename the given file name to `.env` and run the following command to generate the key (and you can also edit your database credentials here).

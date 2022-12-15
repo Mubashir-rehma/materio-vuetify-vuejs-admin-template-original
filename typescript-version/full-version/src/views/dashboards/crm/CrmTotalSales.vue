@@ -67,7 +67,7 @@ const series = [{ name: 'Total Sales', data: [0, 258, 30, 240, 150, 400] }]
   <VCard>
     <VCardItem>
       <VCardTitle>
-        <p class="text-base font-weight-semibold mb-0">
+        <p class="text-base font-weight-medium mb-0">
           Total Sales
         </p>
         <p class="text-xl mb-0">

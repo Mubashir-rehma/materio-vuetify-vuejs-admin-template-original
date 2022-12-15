@@ -108,7 +108,7 @@ const series = [
 <template>
   <VCard>
     <VCardItem>
-      <VCardTitle class="text-base font-weight-semibold">
+      <VCardTitle class="text-base font-weight-medium">
         Revenue Report
       </VCardTitle>
 

@@ -64,7 +64,7 @@ const savedCards = [
         </VAvatar>
 
         <div class="d-flex flex-column">
-          <h6 class="text-sm font-weight-semibold mb-1">
+          <h6 class="text-sm font-weight-medium mb-1">
             Platinum
           </h6>
           <span class="text-primary text-xs">Upgrade Plan</span>
@@ -74,7 +74,7 @@ const savedCards = [
           <sup>
             <h6 class="text-xs font-weight-regular">$</h6>
           </sup>
-          <span class="text-h5 font-weight-medium">5250</span>
+          <span class="text-h5">5250</span>
           <sub>
             <h6 class="text-sm font-weight-regular">/Year</h6>
           </sub>
@@ -84,7 +84,7 @@ const savedCards = [
 
       <!-- SECTION Payment Details -->
       <VList class="card-list mt-1">
-        <VListSubheader class="font-weight-semibold">
+        <VListSubheader class="font-weight-medium">
           Payment details
         </VListSubheader>
 
@@ -105,7 +105,7 @@ const savedCards = [
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+          <VListItemTitle class="text-sm font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">

@@ -34,7 +34,7 @@ const notifications = ref([
   >
     <VDivider />
 
-    <VCardText class="text-high-emphasis font-weight-semibold">
+    <VCardText class="text-high-emphasis font-weight-medium">
       You will receive notification for the below selected items.
     </VCardText>
 

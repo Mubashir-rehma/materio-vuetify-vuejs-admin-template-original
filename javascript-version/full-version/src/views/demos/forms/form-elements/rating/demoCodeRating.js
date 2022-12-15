@@ -150,7 +150,7 @@ const rating = ref(2)
     v-model="rating"
     :length="length"
   />
-  <p class="font-weight-semibold mb-0">
+  <p class="font-weight-medium mb-0">
     Model: {{ rating }}
   </p>
 </template>
@@ -174,7 +174,7 @@ const rating = ref(2)
     v-model="rating"
     :length="length"
   />
-  <p class="font-weight-semibold mb-0">
+  <p class="font-weight-medium mb-0">
     Model: {{ rating }}
   </p>
 </template>

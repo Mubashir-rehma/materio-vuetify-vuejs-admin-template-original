@@ -89,7 +89,7 @@ const chartOptions = computed(() => {
         :height="110"
       />
 
-      <h6 class="text-sm text-center font-weight-semibold">
+      <h6 class="text-sm text-center font-weight-medium">
         Sessions
       </h6>
     </VCardText>

@@ -352,7 +352,7 @@ const addNewUser = userData => {
                 </VAvatar>
 
                 <div class="d-flex flex-column">
-                  <h6 class="text-sm">
+                  <h6 class="text-sm font-weight-medium">
                     <RouterLink
                       :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
                       class="font-weight-medium user-list-name"

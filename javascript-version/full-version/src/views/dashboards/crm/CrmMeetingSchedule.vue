@@ -101,7 +101,7 @@ const meetingTypeUiColors = {
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-semibold mb-1">
+          <VListItemTitle class="text-sm font-weight-medium mb-1">
             {{ meeting.with }}
           </VListItemTitle>
           <VListItemSubtitle class="text-no-wrap text-xs">

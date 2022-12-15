@@ -21,7 +21,7 @@ const resetValues = () => {
       class="py-3 px-5"
     >
       <div class="d-flex align-center">
-        <span class="font-weight-semibold">Compose Mail</span>
+        <span class="font-weight-medium">Compose Mail</span>
         <VSpacer />
         <VIcon
           size="20"

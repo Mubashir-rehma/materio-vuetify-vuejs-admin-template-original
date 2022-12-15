@@ -29,7 +29,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-base font-weight-semibold me-3">
+            <h6 class="text-base font-weight-medium me-3">
               8 Invoices have been paid
             </h6>
             <small class="text-xs text-disabled my-1">Wednesday</small>
@@ -45,7 +45,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
               alt="img"
             >
 
-            <h6 class="font-weight-semibold text-sm">
+            <h6 class="font-weight-medium text-sm">
               invoice.pdf
             </h6>
           </div>
@@ -56,7 +56,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-base font-weight-semibold me-3">
+            <h6 class="text-base font-weight-medium me-3">
               Create a new project for client 😎
             </h6>
             <small class="text-xs text-disabled my-1">April, 18</small>
@@ -71,7 +71,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
               class="me-3"
             />
 
-            <span class="font-weight-semibold text-sm">
+            <span class="font-weight-medium text-sm">
               John Doe (Client)
             </span>
           </div>
@@ -82,7 +82,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-base font-weight-semibold me-3">
+            <h6 class="text-base font-weight-medium me-3">
               Order #37745 from September
             </h6>
             <small class="text-xs text-disabled my-1">January, 10</small>

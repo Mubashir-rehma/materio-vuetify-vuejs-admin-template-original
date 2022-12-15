@@ -57,7 +57,7 @@ const chartOptions = controlledComputed(theme, () => {
         :height="110"
       />
 
-      <h6 class="text-sm text-center font-weight-semibold mt-9">
+      <h6 class="text-sm text-center font-weight-medium mt-9">
         Total Sales
       </h6>
     </VCardText>
@@ -69,7 +69,7 @@ const chartOptions = controlledComputed(theme, () => {
     .apexcharts-canvas {
       .apexcharts-text {
         &.apexcharts-datalabel-value {
-          font-weight: 600;
+          font-weight: 500;
         }
       }
     }

@@ -114,7 +114,7 @@ const withdraws = [
                 </VAvatar>
               </template>
 
-              <VListItemTitle class="text-sm font-weight-semibold mb-1">
+              <VListItemTitle class="text-sm font-weight-medium mb-1">
                 {{ deposit.title }}
               </VListItemTitle>
               <VListItemSubtitle class="text-xs">
@@ -122,7 +122,7 @@ const withdraws = [
               </VListItemSubtitle>
 
               <template #append>
-                <VListItemAction class="text-success font-weight-semibold">
+                <VListItemAction class="text-success font-weight-medium">
                   {{ deposit.amount }}
                 </VListItemAction>
               </template>
@@ -170,7 +170,7 @@ const withdraws = [
                 </VAvatar>
               </template>
 
-              <VListItemTitle class="text-sm font-weight-semibold mb-1">
+              <VListItemTitle class="text-sm font-weight-medium mb-1">
                 {{ withdraw.title }}
               </VListItemTitle>
               <VListItemSubtitle class="text-xs">
@@ -178,7 +178,7 @@ const withdraws = [
               </VListItemSubtitle>
 
               <template #append>
-                <VListItemAction class="text-error font-weight-semibold">
+                <VListItemAction class="text-error font-weight-medium">
                   {{ withdraw.amount }}
                 </VListItemAction>
               </template>

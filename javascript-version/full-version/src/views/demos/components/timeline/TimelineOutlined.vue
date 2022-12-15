@@ -23,7 +23,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         >
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold me-3">
+            <h6 class="text-sm font-weight-medium me-3">
               Get on the flight
             </h6>
             <small class="text-xs my-1">Wednesday</small>
@@ -50,7 +50,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               alt="img"
             >
 
-            <h6 class="font-weight-semibold text-sm">
+            <h6 class="font-weight-medium text-sm">
               booking-card.pdf
             </h6>
           </div>
@@ -64,7 +64,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         >
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold me-3">
+            <h6 class="text-sm font-weight-medium me-3">
               Interview Schedule
             </h6>
             <small class="text-xs text-no-wrap my-1">April, 18</small>
@@ -87,7 +87,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
                 :image="avatar2"
               />
               <div>
-                <h6 class="text-sm font-weight-semibold">Rebecca Godman</h6>
+                <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
                 <span>Javascript Developer</span>
               </div>
             </span>
@@ -138,7 +138,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
             <div>
               <!-- Header -->
               <div class="d-flex justify-space-between flex-wrap">
-                <h6 class="font-weight-semibold text-sm me-3">
+                <h6 class="font-weight-medium text-sm me-3">
                   Sold Puma POPX Blue Color
                 </h6>
                 <small class="text-xs text-no-wrap my-1">January, 10</small>
@@ -150,19 +150,19 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           <!-- 👉 Timeline Item: Meta Content -->
           <div class="d-flex justify-space-between flex-column flex-sm-row gap-3">
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Customer
               </h6>
               <span class="text-xs">Micheal Scott</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Price
               </h6>
               <span class="text-xs">$375.00</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Quantity
               </h6>
               <span class="text-xs">1</span>
@@ -178,7 +178,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         >
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold me-3">
+            <h6 class="text-sm font-weight-medium me-3">
               Design Review
             </h6>
             <small class="text-xs text-no-wrap my-1">September, 20</small>
@@ -194,7 +194,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               :image="avatar1"
               class="me-2"
             />
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               John Doe (Client)
             </h6>
           </div>

@@ -90,7 +90,7 @@ const chartOptions = controlledComputed(theme, () => {
         :height="100"
       />
 
-      <p class="text-center font-weight-semibold mb-0">
+      <p class="text-center font-weight-medium mb-0">
         Total Profit
       </p>
     </VCardText>

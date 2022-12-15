@@ -99,7 +99,7 @@ const options = {
               icon="mdi-chevron-up"
               color="success"
             />
-            <span class="text-success font-weight-semibold">28</span>
+            <span class="text-success font-weight-medium">28</span>
           </div>
         </VCardText>
       </VCol>

@@ -16,7 +16,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1">
+            <h4 class="text-base font-weight-medium me-1">
               8 Invoices have been paid
             </h4>
             <small class="text-xs text-disabled text-no-wrap">Wednesday</small>
@@ -30,7 +30,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
               icon="mdi-file-pdf-box"
               class="me-1"
             />
-            <span class="font-weight-semibold text-sm">invoice.pdf</span>
+            <span class="font-weight-medium text-sm">invoice.pdf</span>
           </span>
         </VTimelineItem>
 

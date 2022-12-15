@@ -125,7 +125,7 @@ const teamMembers = [
                 />
               </div>
               <div>
-                <p class="text-sm font-weight-semibold mb-0">
+                <p class="text-sm font-weight-medium mb-0">
                   {{ member.name }}
                 </p>
                 <span class="text-xs text-medium-emphasis">{{ member.designation }}</span>
@@ -142,7 +142,7 @@ const teamMembers = [
             </VChip>
           </td>
 
-          <td class="table-spacing border-0 font-weight-semibold">
+          <td class="table-spacing border-0 font-weight-medium">
             <span class="text-primary">{{ member.task.split('/')[0] }}</span>
             <span>/</span>
             <span>{{ member.task.split('/')[1] }}</span>

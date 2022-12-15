@@ -136,10 +136,10 @@ const websiteStatistics = [
           {{ data.title }}
         </h6>
         <VSpacer />
-        <h6 class="text-sm font-weight-semibold me-6">
+        <h6 class="text-sm font-weight-medium me-6">
           {{ data.traffic }}
         </h6>
-        <h6 class="text-sm font-weight-semibold me-1">
+        <h6 class="text-sm font-weight-medium me-1">
           {{ data.percentage.slice(1) }}%
         </h6>
         <VIcon

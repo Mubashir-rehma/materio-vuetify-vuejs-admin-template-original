@@ -29,7 +29,7 @@ const { appRouteTransition } = useThemeConfig()
       >
         <VNodeRenderer :nodes="themeConfig.app.logo" />
 
-        <h1 class="font-weight-bold leading-normal text-xl text-uppercase">
+        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
           {{ themeConfig.app.title }}
         </h1>
       </RouterLink>

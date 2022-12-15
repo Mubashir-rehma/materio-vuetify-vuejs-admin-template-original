@@ -46,7 +46,7 @@ import avatar1 from '@images/avatars/avatar-1.png'
               </VListItemAction>
             </template>
 
-            <VListItemTitle class="font-weight-semibold">
+            <VListItemTitle class="font-weight-medium">
               John Doe
             </VListItemTitle>
             <VListItemSubtitle>Admin</VListItemSubtitle>

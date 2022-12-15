@@ -181,14 +181,14 @@ const analytics = [
         class="d-flex align-center"
         :class="index > 0 ? 'mt-3' : ''"
       >
-        <h6 class="text-sm font-weight-semibold">
+        <h6 class="text-sm font-weight-medium">
           {{ item.title }}
         </h6>
         <VSpacer />
         <p class="me-6 mb-0">
           {{ item.amount }}
         </p>
-        <h6 class="text-sm font-weight-semibold me-6">
+        <h6 class="text-sm font-weight-medium me-6">
           {{ item.percentage }}
         </h6>
         <VIcon

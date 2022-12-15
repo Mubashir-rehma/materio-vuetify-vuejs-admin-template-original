@@ -75,17 +75,17 @@ watch(router, fetchProjectData, { immediate: true })
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-x-2 gap-y-4">
             <div class="pa-2 bg-light-secondary rounded">
-              <h6 class="text-base font-weight-semibold">
+              <h6 class="text-base font-weight-medium">
                 {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>
               </h6>
               <span>Total Budget</span>
             </div>
 
             <div>
-              <h6 class="text-base font-weight-semibold">
+              <h6 class="text-base font-weight-medium">
                 Start Date: <span class="text-body-1">{{ data.startDate }}</span>
               </h6>
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Deadline: <span class="text-body-1">{{ data.deadline }}</span>
               </h6>
             </div>
@@ -100,7 +100,7 @@ watch(router, fetchProjectData, { immediate: true })
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-2">
-            <h6 class="text-base font-weight-semibold">
+            <h6 class="text-base font-weight-medium">
               All Hours: <span class="text-body-1">{{ data.hours }}</span>
             </h6>
 

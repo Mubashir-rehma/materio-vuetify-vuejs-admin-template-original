@@ -112,7 +112,7 @@ const series = [
               icon="mdi-checkbox-blank-circle"
               class="me-1"
             />
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               856
             </h6>
           </div>
@@ -128,7 +128,7 @@ const series = [
               icon="mdi-checkbox-blank-circle"
               class="me-1"
             />
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               345
             </h6>
           </div>
@@ -144,7 +144,7 @@ const series = [
               icon="mdi-checkbox-blank-circle"
               class="me-1"
             />
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               258
             </h6>
           </div>

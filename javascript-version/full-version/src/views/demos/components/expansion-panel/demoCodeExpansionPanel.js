@@ -233,7 +233,7 @@ const none = () => {
       </VBtn>
 
       <div class="mt-3">
-        <span class="font-weight-bold">Selected: </span>{{ openedPanels }}
+        <span class="font-weight-medium">Selected: </span>{{ openedPanels }}
       </div>
     </div>
 
@@ -286,7 +286,7 @@ const none = () => {
       </VBtn>
 
       <div class="mt-3">
-        <span class="font-weight-bold">Selected: </span>{{ openedPanels }}
+        <span class="font-weight-medium">Selected: </span>{{ openedPanels }}
       </div>
     </div>
 

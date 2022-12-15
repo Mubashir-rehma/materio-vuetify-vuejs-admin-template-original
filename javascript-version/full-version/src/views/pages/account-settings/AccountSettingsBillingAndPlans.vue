@@ -78,7 +78,7 @@ const resetPaymentForm = () => {
             >
               <div>
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-semibold mb-2">
+                  <h3 class="text-base font-weight-medium mb-2">
                     Your Current Plan is Basic
                   </h3>
                   <p class="text-base">
@@ -87,7 +87,7 @@ const resetPaymentForm = () => {
                 </div>
 
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-semibold mb-2">
+                  <h3 class="text-base font-weight-medium mb-2">
                     Active until Dec 09, 2021
                   </h3>
                   <p class="text-base">
@@ -96,7 +96,7 @@ const resetPaymentForm = () => {
                 </div>
 
                 <div>
-                  <h3 class="text-base font-weight-semibold mb-2">
+                  <h3 class="text-base font-weight-medium mb-2">
                     <span class="me-3">$199 Per Month</span>
                     <VChip
                       color="primary"
@@ -128,7 +128,7 @@ const resetPaymentForm = () => {
               </VAlert>
 
               <!-- progress -->
-              <div class="d-flex font-weight-bold text-base mt-8 mb-2">
+              <div class="d-flex font-weight-medium text-base mt-8 mb-2">
                 <span>Days</span>
                 <VSpacer />
                 <span>24 of 30 Days</span>
@@ -291,7 +291,7 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <h6 class="text-base font-weight-semibold mb-6">
+                <h6 class="text-base font-weight-medium mb-6">
                   My Cards
                 </h6>
 
@@ -308,7 +308,7 @@ const resetPaymentForm = () => {
                           :src="card.image"
                           width="46"
                         />
-                        <h4 class="my-3">
+                        <h4 class="font-weight-medium my-3">
                           {{ card.name }}
                           <VChip
                             v-if="card.isPrimary"

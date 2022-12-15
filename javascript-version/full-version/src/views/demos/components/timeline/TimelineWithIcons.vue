@@ -39,7 +39,7 @@ const serverSwitch = ref(false)
 
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold me-3">
+            <h6 class="text-sm font-weight-medium me-3">
               Get on the flight
             </h6>
             <small class="text-xs my-1">Wednesday</small>
@@ -66,7 +66,7 @@ const serverSwitch = ref(false)
               alt="img"
             >
 
-            <h6 class="font-weight-semibold text-sm">
+            <h6 class="font-weight-medium text-sm">
               booking-card.pdf
             </h6>
           </div>
@@ -96,7 +96,7 @@ const serverSwitch = ref(false)
 
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold me-3">
+            <h6 class="text-sm font-weight-medium me-3">
               Interview Schedule
             </h6>
             <small class="text-xs text-no-wrap my-1">April, 18</small>
@@ -119,7 +119,7 @@ const serverSwitch = ref(false)
                 class="me-2"
               />
               <div>
-                <h6 class="text-sm font-weight-semibold">Rebecca Godman</h6>
+                <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
                 <span>Javascript Developer</span>
               </div>
             </span>
@@ -185,7 +185,7 @@ const serverSwitch = ref(false)
             <div>
               <!-- Header -->
               <div class="d-flex justify-space-between flex-wrap">
-                <h6 class="font-weight-semibold text-sm me-3">
+                <h6 class="font-weight-medium text-sm me-3">
                   Sold Puma POPX Blue Color
                 </h6>
                 <small class="text-xs text-no-wrap my-1">January, 10</small>
@@ -197,19 +197,19 @@ const serverSwitch = ref(false)
           <!-- 👉 Timeline Item: Meta Content -->
           <div class="d-flex justify-space-between flex-column flex-sm-row gap-3">
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Customer
               </h6>
               <span class="text-xs">Micheal Scott</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Price
               </h6>
               <span class="text-xs">$375.00</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-semibold mb-1">
+              <h6 class="text-base font-weight-medium mb-1">
                 Quantity
               </h6>
               <span class="text-xs">1</span>
@@ -240,7 +240,7 @@ const serverSwitch = ref(false)
 
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold me-3">
+            <h6 class="text-sm font-weight-medium me-3">
               Design Review
             </h6>
             <small class="text-xs text-no-wrap my-1">September, 20</small>
@@ -256,7 +256,7 @@ const serverSwitch = ref(false)
               :image="avatar1"
               class="me-2"
             />
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               John Doe (Client)
             </h6>
           </div>
@@ -285,7 +285,7 @@ const serverSwitch = ref(false)
 
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               Ubuntu Server
             </h6>
 
@@ -405,7 +405,7 @@ const serverSwitch = ref(false)
                 icon="mdi-map-marker-outline"
                 class="me-1"
               />
-              <h6 class="text-sm font-weight-semibold">
+              <h6 class="text-sm font-weight-medium">
                 <span>Location</span>
               </h6>
             </div>
@@ -419,7 +419,7 @@ const serverSwitch = ref(false)
           </div>
 
           <!-- 👉 Content -->
-          <h6 class="text-sm font-weight-semibold mb-1">
+          <h6 class="text-sm font-weight-medium mb-1">
             Find location for the company celebration.
           </h6>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>

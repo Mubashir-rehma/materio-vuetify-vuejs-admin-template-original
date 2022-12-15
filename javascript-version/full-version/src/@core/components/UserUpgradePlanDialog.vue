@@ -72,7 +72,7 @@ const plansList = [
         <div class="d-flex justify-space-between flex-wrap">
           <div class="d-flex align-center me-3">
             <sup class="text-primary">$</sup>
-            <h3 class="text-h3 font-weight-semibold text-primary">
+            <h3 class="text-h3 text-primary">
               99
             </h3>
             <sub class="text-body-1 mt-3">/ month</sub>

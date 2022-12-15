@@ -44,7 +44,7 @@ const developerMeetup = [
         </div>
 
         <div>
-          <h6 class="text-base mb-1">
+          <h6 class="text-base font-weight-medium mb-1">
             Developer Meetup
           </h6>
           <span class="text-xs text-two-line-ellipsis">The WordPress open source,free software project is the community behind the…</span>

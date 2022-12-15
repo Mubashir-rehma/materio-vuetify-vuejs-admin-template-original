@@ -102,7 +102,7 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
       </VCol>
       <VCol cols="12">
         <!-- 👉 Collapsible Section -->
-        <h4 class="text-h6 font-weight-medium mb-5">
+        <h4 class="text-h6 mb-5">
           Collapsible Section
         </h4>
         <DemoFormLayoutCollapsible />

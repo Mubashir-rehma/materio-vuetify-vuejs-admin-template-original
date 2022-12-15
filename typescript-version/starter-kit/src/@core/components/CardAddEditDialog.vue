@@ -50,7 +50,7 @@ const formSubmit = () => {
     <VCard class="pa-5 pa-sm-15">
       <!-- 👉 Title -->
       <VCardItem class="text-center">
-        <VCardTitle class="text-h5 font-weight-medium mb-4">
+        <VCardTitle class="text-h5 mb-4">
           {{ props.cardDetails.name ? 'Edit Card' : 'Add Card' }}
         </VCardTitle>
         <VCardSubtitle>

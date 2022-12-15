@@ -337,18 +337,6 @@ const currencies = [
       <VCard title="Delete Account">
         <VCardText>
           <!-- 👉 Checkbox and Button  -->
-          <VAlert
-            color="warning"
-            variant="tonal"
-            class="mb-4"
-          >
-            <VAlertTitle class="mb-1">
-              Are you sure you want to delete your account?
-            </VAlertTitle>
-            <p class="mb-0">
-              Once you delete your account, there is no going back. Please be certain.
-            </p>
-          </VAlert>
           <div>
             <VCheckbox
               v-model="isAccountDeactivated"

@@ -26,7 +26,7 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
         size="44"
         rounded
         class="elevation-2 me-4"
-        style="background-color: #fff;"
+        style="background-color: rgb(var(--v-theme-surface));"
       >
         <VIcon
           :color="props.color"

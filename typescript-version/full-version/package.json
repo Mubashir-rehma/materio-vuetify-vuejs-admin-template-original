@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run build:icons && vite --host",
+    "dev": "npm run build:icons && vite",
     "build": "npm run build:icons && vite build",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",

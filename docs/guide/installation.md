@@ -40,4 +40,4 @@ yarn
 yarn dev
 ```
 
-6. Open the dev server URL in browser. Probably it will be [http://localhost:3000](http://localhost:3000)
+6. Open the dev server URL in browser. Probably it will be [http://localhost:5173](http://localhost:5173)

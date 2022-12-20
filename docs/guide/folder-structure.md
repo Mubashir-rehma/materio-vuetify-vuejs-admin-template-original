@@ -3,6 +3,11 @@
 ## @core
 
 This directory contains our core files and you are not intended to change these files.
+Read more [here](/core/)
+
+## @layouts
+
+Our template comes with layouts plugin which is standalone package you can use in any vue project. You can find it in /src/@layouts directory. Read more [here](/layouts/)
 
 ## @fake-db
 
@@ -89,12 +94,12 @@ Contains your app pages. Just create a new file and new route will be auto gener
    </template>
    ```
 
-2. Visit [http://localhost:3000/about](http://localhost:3000/about)
+2. Visit [http://localhost:3000/about](http://localhost:5173/about)
 
 ✨ Route is auto generated based on your file name
 :::
 
-Related: [How to create a new page](#)
+Related: [How to create a new page](/guide/how-to-create-a-new-page.html#creating-about-page)
 
 ## plugins
 

@@ -5,7 +5,6 @@
       color="primary"
     >
       <VIcon
-        color="white"
         size="25"
         icon="mdi-account-outline"
       />
@@ -16,7 +15,6 @@
       color="secondary"
     >
       <VIcon
-        color="white"
         size="25"
         icon="mdi-account-outline"
       />
@@ -27,7 +25,6 @@
       color="success"
     >
       <VIcon
-        color="white"
         size="25"
         icon="mdi-account-outline"
       />
@@ -38,7 +35,6 @@
       color="info"
     >
       <VIcon
-        color="white"
         size="25"
         icon="mdi-account-outline"
       />
@@ -49,7 +45,6 @@
       color="warning"
     >
       <VIcon
-        color="white"
         size="25"
         icon="mdi-account-outline"
       />
@@ -57,7 +52,6 @@
 
     <VAvatar color="error">
       <VIcon
-        color="white"
         size="25"
         icon="mdi-account-outline"
       />

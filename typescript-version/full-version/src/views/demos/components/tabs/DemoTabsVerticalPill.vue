@@ -5,7 +5,7 @@ const currentTab = ref(0)
 <template>
   <VRow>
     <VCol
-      cols="5"
+      cols="12"
       sm="4"
     >
       <VTabs
@@ -40,7 +40,7 @@ const currentTab = ref(0)
     </VCol>
 
     <VCol
-      cols="7"
+      cols="12"
       sm="8"
     >
       <VWindow v-model="currentTab">

@@ -11,7 +11,7 @@
 
     <VAlert
       color="success"
-      icon="mdi-school"
+      icon="mdi-school-outline"
       prominent
     >
       Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.

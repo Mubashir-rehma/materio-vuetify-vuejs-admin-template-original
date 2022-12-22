@@ -1,4 +1,9 @@
 export default {
+  VAlert: {
+    VBtn: {
+      color: undefined,
+    },
+  },
   VAvatar: {
     // ℹ️ Remove after next release
     variant: 'flat',

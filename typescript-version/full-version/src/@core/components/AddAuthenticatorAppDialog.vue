@@ -6,13 +6,13 @@ interface Emit {
   (e: 'submit', value: string): void
 }
 interface Props {
-  mobileNumber?: string
+  authCode?: string
   isDialogVisible: boolean
 }
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const authCode = ref(structuredClone(toRaw(props.mobileNumber)))
+const authCode = ref(structuredClone(toRaw(props.authCode)))
 
 const formSubmit = () => {
   if (authCode.value) {
@@ -22,7 +22,7 @@ const formSubmit = () => {
 }
 
 const resetAuthCode = () => {
-  authCode.value = structuredClone(toRaw(props.mobileNumber))
+  authCode.value = structuredClone(toRaw(props.authCode))
   emit('update:isDialogVisible', false)
 }
 </script>

@@ -29,6 +29,13 @@ const plansList = [
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
     <VCard class="py-8">
+      <!-- 👉 dialog close btn -->
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="$emit('update:isDialogVisible', false)"
+      />
+
       <VCardItem class="text-center">
         <VCardTitle class="text-h5 mb-5">
           Upgrade Plan

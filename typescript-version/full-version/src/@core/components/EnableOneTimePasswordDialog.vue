@@ -48,7 +48,6 @@ const resetPhoneNumber = () => {
           <VTextField
             v-model="phoneNumber"
             name="mobile"
-            type="number"
             label="Phone Number"
             class="mb-4"
           />

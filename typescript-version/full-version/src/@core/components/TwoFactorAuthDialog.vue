@@ -7,8 +7,15 @@ interface Emit {
 }
 interface Props {
   isDialogVisible: boolean
+  smsCode?: string
+  authAppCode?: string
 }
-const props = defineProps<Props>()
+
+const props = withDefaults(defineProps<Props>(), {
+  isDialogVisible: false,
+  smsCode: '',
+  authAppCode: '',
+})
 
 const emit = defineEmits<Emit>()
 
@@ -114,8 +121,14 @@ const openSelectedMethodDialog = () => {
     </VCard>
   </VDialog>
 
-  <AddAuthenticatorAppDialog v-model:isDialogVisible="isAuthAppDialogVisible" />
-  <EnableOneTimePasswordDialog v-model:isDialogVisible="isSmsDialogVisible" />
+  <AddAuthenticatorAppDialog
+    v-model:isDialogVisible="isAuthAppDialogVisible"
+    :auth-code="props.authAppCode"
+  />
+  <EnableOneTimePasswordDialog
+    v-model:isDialogVisible="isSmsDialogVisible"
+    :mobile-number="props.smsCode"
+  />
 </template>
 
 <style lang="scss">

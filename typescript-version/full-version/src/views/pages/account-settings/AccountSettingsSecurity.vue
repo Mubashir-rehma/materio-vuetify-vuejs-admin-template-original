@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
@@ -355,6 +355,6 @@ const isOneTimePasswordDialogVisible = ref(false)
   </VRow>
 
   <!-- SECTION Enable One time password -->
-  <EnableOneTimePasswordDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
+  <TwoFactorAuthDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
   <!-- !SECTION -->
 </template>

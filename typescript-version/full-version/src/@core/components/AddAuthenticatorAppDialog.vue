@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import themeselectionQr from '@/assets/images/pages/themeselection-qr.png'
+
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
   (e: 'submit', value: string): void
@@ -10,17 +12,17 @@ interface Props {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const phoneNumber = ref(structuredClone(toRaw(props.mobileNumber)))
+const authCode = ref(structuredClone(toRaw(props.mobileNumber)))
 
 const formSubmit = () => {
-  if (phoneNumber.value) {
-    emit('submit', phoneNumber.value)
+  if (authCode.value) {
+    emit('submit', authCode.value)
     emit('update:isDialogVisible', false)
   }
 }
 
-const resetPhoneNumber = () => {
-  phoneNumber.value = structuredClone(toRaw(props.mobileNumber))
+const resetAuthCode = () => {
+  authCode.value = structuredClone(toRaw(props.mobileNumber))
   emit('update:isDialogVisible', false)
 }
 </script>
@@ -31,41 +33,59 @@ const resetPhoneNumber = () => {
     :model-value="props.isDialogVisible"
     @update:model-value="(val) => $emit('update:isDialogVisible', val)"
   >
-    <VCard
-      title="Verify Your Mobile Number for SMS"
-      subtitle="Enter your mobile phone number with country code and  we will send you a verification code."
-      class="pa-5 pa-sm-8"
-    >
+    <VCard class="pa-5 pa-sm-8">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
         size="small"
-        @click="resetPhoneNumber"
+        @click="resetAuthCode"
       />
 
-      <VCardText>
+      <VCardItem>
+        <VCardTitle class="text-h5 font-weight-medium text-center">
+          Add Authenticator App
+        </VCardTitle>
+      </VCardItem>
+
+      <VCardText class="pt-6">
+        <h6 class="text-h6 font-weight-medium mb-3">
+          Authenticator Apps
+        </h6>
+
+        <p class="mb-6">
+          Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the QR code. It will generate a 6 digit code for you to enter below.
+        </p>
+
+        <div class="my-6">
+          <VImg
+            width="122"
+            :src="themeselectionQr"
+            class="mx-auto"
+          />
+        </div>
+
         <VForm @submit.prevent="() => {}">
           <VTextField
-            v-model="phoneNumber"
-            name="mobile"
-            type="number"
-            label="Phone Number"
+            v-model="authCode"
+            name="auth-code"
+            label="Enter Authentication Code"
             class="mb-4"
           />
 
-          <div class="d-flex flex-wrap justify-end gap-3">
+          <div class="d-flex justify-end flex-wrap gap-3">
             <VBtn
               color="secondary"
               variant="tonal"
-              @click="resetPhoneNumber"
+              @click="resetAuthCode"
             >
               Cancel
             </VBtn>
+
             <VBtn
               type="submit"
               @click="formSubmit"
             >
-              continue
+              Continue
               <VIcon
                 end
                 icon="mdi-chevron-right"

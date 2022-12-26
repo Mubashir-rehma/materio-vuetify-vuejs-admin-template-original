@@ -11,7 +11,7 @@ interface BillingAddress {
   zipCode: string
 }
 interface Props {
-  billingAddress: BillingAddress
+  billingAddress?: BillingAddress
   isDialogVisible: boolean
 }
 interface Emit {
@@ -19,7 +19,20 @@ interface Emit {
   (e: 'submit', value: BillingAddress): void
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  billingAddress: () => ({
+    companyName: '',
+    billingEmail: '',
+    taxID: '',
+    vatNumber: '',
+    address: '',
+    contact: '',
+    country: '',
+    state: '',
+    zipCode: '',
+  }),
+})
+
 const emit = defineEmits<Emit>()
 
 const billingAddress = ref<BillingAddress>(structuredClone(toRaw(props.billingAddress)))
@@ -33,6 +46,21 @@ const onFormSubmit = () => {
   emit('update:isDialogVisible', false)
   emit('submit', billingAddress.value)
 }
+
+const selectedAddress = ref('Home')
+
+const addressTypes = [
+  {
+    icon: 'mdi-home-outline',
+    title: 'Home',
+    time: 'Delivery Time (7am - 9pm)',
+  },
+  {
+    icon: 'mdi-briefcase-outline',
+    title: 'Office',
+    time: 'Delivery Time (10am - 6pm)',
+  },
+]
 </script>
 
 <template>
@@ -43,12 +71,19 @@ const onFormSubmit = () => {
   >
     <VCard
       v-if="props.billingAddress"
-      class="pa-sm-9 pa-5"
+      class="pa-sm-8 pa-5"
     >
+      <!-- 👉 dialog close btn -->
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="resetForm"
+      />
+
       <!-- 👉 Title -->
       <VCardItem>
         <VCardTitle class="text-h5 text-center">
-          Edit Address
+          {{ props.billingAddress.address ? 'Edit' : 'Add' }} Address
         </VCardTitle>
       </VCardItem>
 
@@ -57,6 +92,30 @@ const onFormSubmit = () => {
         <VCardSubtitle class="text-center mb-6">
           Edit Address for future billing
         </VCardSubtitle>
+
+        <VRow>
+          <VCol
+            v-for="type in addressTypes"
+            :key="type.title"
+            cols="12"
+            sm="6"
+          >
+            <div
+              class="rounded border cursor-pointer pa-4"
+              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary' : 'bg-light-secondary'"
+              @click="selectedAddress = type.title"
+            >
+              <div class="d-flex align-center font-weight-medium gap-2 text-xl mb-1">
+                <VIcon
+                  size="24"
+                  :icon="type.icon"
+                />
+                <span>{{ type.title }}</span>
+              </div>
+              <span>{{ type.time }}</span>
+            </div>
+          </VCol>
+        </VRow>
 
         <!-- 👉 Form -->
         <VForm @submit.prevent="onFormSubmit">

@@ -537,6 +537,13 @@ const database: SearchItem[] = [
     title: 'Access Control (ACL)',
     category: 'chartsMisc',
   },
+  {
+    id: 80,
+    url: { name: 'pages-dialog-examples' },
+    icon: 'mdi-card-outline',
+    title: 'Dialog Examples',
+    category: 'appsPages',
+  },
 ]
 
 // ** GET Search Data

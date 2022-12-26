@@ -378,7 +378,7 @@ const currentBillingAddress = {
   />
 
   <!-- 👉 Edit Address dialog -->
-  <EditAddressDialog
+  <AddEditAddressDialog
     v-model:isDialogVisible="isEditAddressDialogVisible"
     :billing-address="currentBillingAddress"
   />

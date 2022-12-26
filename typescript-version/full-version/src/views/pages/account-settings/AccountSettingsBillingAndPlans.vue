@@ -174,16 +174,7 @@ const resetPaymentForm = () => {
           />
 
           <!-- 👉 plan and pricing dialog -->
-          <VDialog
-            v-model="isPricingPlanDialogVisible"
-            class="v-dialog-xl"
-          >
-            <VCard class="pricing-dialog pa-5 pa-sm-15">
-              <VCardText>
-                <AppPricing lg="4" />
-              </VCardText>
-            </VCard>
-          </VDialog>
+          <PricingPlanDialog v-model:is-dialog-visible="isPricingPlanDialogVisible" />
         </VCardText>
       </VCard>
     </VCol>

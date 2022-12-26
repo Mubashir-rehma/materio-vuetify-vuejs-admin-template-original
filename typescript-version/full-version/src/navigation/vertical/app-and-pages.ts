@@ -90,6 +90,7 @@ export default [
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },
       { title: 'FAQ', to: 'pages-faq' },
+      { title: 'Dialog Examples', to: 'pages-dialog-examples' },
       {
         title: 'Miscellaneous',
         children: [

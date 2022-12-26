@@ -28,6 +28,21 @@
   }
 }
 
+// 👉 Button outline with default color border color
+.v-alert--variant-outlined,
+.v-avatar--variant-outlined,
+.v-btn.v-btn--variant-outlined,
+.v-card--variant-outlined,
+.v-chip--variant-outlined {
+  &:not([class*="text-"]) {
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+
+  &.text-default {
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+}
+
 // Dialog responsive width
 .v-dialog {
   // dialog custom close btn

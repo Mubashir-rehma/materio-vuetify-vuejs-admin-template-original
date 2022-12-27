@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>()
 
-const itemsOptions = [
+const itemsOptions: Props['data'][] = [
   {
     title: 'App Design',
     cost: 24,
@@ -53,25 +53,22 @@ const itemsOptions = [
   },
 ]
 
-const selectedItem = ref({
-  title: 'App Customization',
-  cost: 26,
-  hours: 1,
-  description: 'Customization & Bug Fixes.',
-})
+const selectedItem = ref('App Customization')
+const localProductData = ref(structuredClone(toRaw(props.data)))
 
 watch(selectedItem, () => {
-  props.data.cost = structuredClone(toRaw(selectedItem.value.cost))
-  props.data.hours = structuredClone(toRaw(selectedItem.value.hours))
-  props.data.description = structuredClone(toRaw(selectedItem.value.description))
-  props.data.title = structuredClone(toRaw(selectedItem.value.title))
+  const item = itemsOptions.filter(obj => {
+    return obj.title === selectedItem.value
+  })
+
+  localProductData.value = item[0]
 })
 
 const removeProduct = () => {
   emit('removeProduct', props.id)
 }
 
-const totalPrice = computed(() => Number(props.data.cost) * Number(props.data.hours))
+const totalPrice = computed(() => Number(localProductData.value.cost) * Number(localProductData.value.hours))
 
 watch(totalPrice, () => {
   emit('totalAmount', totalPrice.value)
@@ -132,13 +129,14 @@ watch(totalPrice, () => {
           <VSelect
             v-model="selectedItem"
             :items="itemsOptions"
+            item-title="title"
+            item-value="title"
             label="Select Item"
-            return-object
             class="mb-3"
           />
 
           <VTextarea
-            v-model="props.data.description"
+            v-model="localProductData.description"
             rows="3"
             label="Description"
             placeholder="Description"
@@ -150,7 +148,7 @@ watch(totalPrice, () => {
           sm="4"
         >
           <VTextField
-            v-model="props.data.cost"
+            v-model="localProductData.cost"
             type="number"
             label="Cost"
           />
@@ -176,7 +174,7 @@ watch(totalPrice, () => {
           sm="4"
         >
           <VTextField
-            v-model="props.data.hours"
+            v-model="localProductData.hours"
             type="number"
             label="Hours"
           />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeTextfield'
+import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeTextfield';
 </script>
 
 <template>
@@ -100,7 +100,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
         title="Custom Colors"
         :code="demoCode.customColors"
       >
-        <p>Use <code>color</code> prop to change the input text color.</p>
+        <p>Use <code>color</code> prop to change the input border color.</p>
 
         <DemoTextfieldCustomColors />
       </AppCardCode>

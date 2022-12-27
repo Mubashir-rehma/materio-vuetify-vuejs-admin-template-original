@@ -23,6 +23,7 @@ module.exports = {
   plugins: [
     'vue',
     '@typescript-eslint',
+    'regex',
   ],
   ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts'],
   rules: {
@@ -163,6 +164,47 @@ module.exports = {
     // Internal Rules
     'valid-appcardcode-code-prop': 'error',
     'valid-appcardcode-demo-sfc': 'error',
+
+    // https://github.com/gmullerb/eslint-plugin-regex
+    'regex/invalid': [
+      'error',
+      [
+        {
+          regex: '@/assets/images',
+          replacement: '@images',
+          message: 'Use \'@import\' path alias for image imports',
+        },
+        {
+          regex: '@/styles',
+          replacement: '@styles',
+          message: 'Use \'@styles\' path alias for importing styles from \'src/styles\'',
+        },
+
+        // {
+        //   id: 'Disallow icon of icon library',
+        //   regex: 'tabler-\\w',
+        //   message: 'Only \'mdi\' icons are allowed',
+        // },
+
+        {
+          regex: '@core/\\w',
+          message: 'You can\'t use @core when you are in @layouts module',
+          files: {
+            inspect: '@layouts/.*',
+          },
+        },
+        {
+          regex: 'useLayouts\\(',
+          message: '`useLayouts` composable is only allowed in @layouts & @core directory',
+          files: {
+            inspect: '^(?!.*(@core|@layouts)).*',
+          },
+        },
+      ],
+
+      // Ignore files
+      '\.eslintrc\.js',
+    ],
   },
   settings: {
     'import/resolver': {

@@ -99,6 +99,7 @@ const addressTypes = [
             :key="type.title"
             cols="12"
             sm="6"
+            class="mb-6"
           >
             <div
               class="rounded border cursor-pointer pa-4"

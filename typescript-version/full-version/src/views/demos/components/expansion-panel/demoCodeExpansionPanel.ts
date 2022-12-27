@@ -9,3 +9,5 @@ export const popout = { ts: '', js: '' }
 export const customIcon = { ts: '', js: '' }
 
 export const model = { ts: '', js: '' }
+
+export const customizedAccordion = { ts: '', js: '' }

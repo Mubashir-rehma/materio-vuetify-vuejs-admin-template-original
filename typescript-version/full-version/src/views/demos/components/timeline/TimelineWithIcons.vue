@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
+import pdf from '@images/icons/project-icons/pdf.png'
 import pumaShoes from '@images/pages/puma-shoes.jpeg'
 
 const serverSwitch = ref(false)
@@ -11,27 +12,37 @@ const serverSwitch = ref(false)
     <VCardText>
       <VTimeline
         align="start"
+        line-inset="20"
+        truncate-line="start"
         justify="center"
         :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
       >
         <!-- SECTION Timeline Item: Flight -->
-        <VTimelineItem fill-dot>
+        <VTimelineItem
+          fill-dot
+          size="small"
+        >
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar
-                color="primary"
+                size="32"
+                color="error"
                 variant="tonal"
               >
-                <VIcon icon="mdi-airplane" />
+                <VIcon
+                  icon="mdi-airplane"
+                  size="20"
+                />
               </VAvatar>
             </div>
           </template>
+
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between">
-            <h6 class="text-sm font-weight-semibold mb-1 me-3">
+          <div class="d-flex justify-space-between flex-wrap">
+            <h6 class="text-sm font-weight-medium me-3">
               Get on the flight
             </h6>
-            <small class="text-xs">Wednesday</small>
+            <small class="text-xs my-1">Wednesday</small>
           </div>
 
           <!-- 👉 Content -->
@@ -48,12 +59,14 @@ const serverSwitch = ref(false)
           <p>6:30 AM</p>
 
           <div class="d-flex align-center">
-            <VIcon
-              color="error"
-              icon="mdi-file-pdf-box"
-              class="me-1"
-            />
-            <h6 class="text-sm font-weight-semibold text-sm">
+            <img
+              :src="pdf"
+              width="28"
+              class="me-2"
+              alt="img"
+            >
+
+            <h6 class="font-weight-medium text-sm">
               booking-card.pdf
             </h6>
           </div>
@@ -61,44 +74,52 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Interview -->
-        <VTimelineItem fill-dot>
+        <VTimelineItem
+          fill-dot
+          size="small"
+          class="text-start"
+        >
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar
+                size="32"
                 color="success"
                 variant="tonal"
               >
-                <VIcon icon="mdi-clock-time-four-outline" />
+                <VIcon
+                  size="20"
+                  icon="mdi-clock-time-four-outline"
+                />
               </VAvatar>
             </div>
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between">
-            <h6 class="text-sm font-weight-semibold mb-1">
+          <div class="d-flex justify-space-between flex-wrap">
+            <h6 class="text-sm font-weight-medium me-3">
               Interview Schedule
             </h6>
-            <small class="text-xs text-no-wrap">April, 18</small>
+            <small class="text-xs text-no-wrap my-1">April, 18</small>
           </div>
 
           <p class="mb-0">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus quos, voluptates voluptas rem veniam expedita.
+            Bonbon gummies caramels brownie topping fruitcake gingerbread jelly-o marzipan.
           </p>
 
           <!-- 👉 Divider -->
-          <VDivider class="my-4" />
+          <VDivider class="my-2" />
 
           <!-- 👉 Person -->
-          <div class="d-flex justify-space-between align-center flex-wrap gap-4">
+          <div class="d-flex justify-space-between align-center flex-wrap">
             <!-- 👉 Avatar & Personal Info -->
             <span class="d-flex align-bottom mt-2">
               <VAvatar
-                size="40"
+                size="32"
                 :image="avatar2"
                 class="me-2"
               />
-              <div class="d-flex flex-column">
-                <h6 class="text-sm font-weight-semibold">Rebecca Godman</h6>
+              <div>
+                <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
                 <span>Javascript Developer</span>
               </div>
             </span>
@@ -106,26 +127,26 @@ const serverSwitch = ref(false)
             <!-- 👉 Person Actions -->
             <div>
               <VBtn
-                size="small"
-                variant="plain"
+                size="x-small"
+                variant="text"
                 color="secondary"
                 icon
                 class="me-2"
               >
                 <VIcon
-                  icon="mdi-message-text-outline"
                   size="20"
+                  icon="mdi-message-outline"
                 />
               </VBtn>
               <VBtn
-                size="small"
-                variant="plain"
+                size="x-small"
+                variant="text"
                 color="secondary"
                 icon
               >
                 <VIcon
-                  icon="mdi-phone"
                   size="20"
+                  icon="mdi-phone"
                 />
               </VBtn>
             </div>
@@ -134,14 +155,21 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Puma Shoes -->
-        <VTimelineItem fill-dot>
+        <VTimelineItem
+          fill-dot
+          size="small"
+        >
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar
+                size="32"
                 color="warning"
                 variant="tonal"
               >
-                <VIcon icon="mdi-cart-outline" />
+                <VIcon
+                  size="20"
+                  icon="mdi-cart-outline"
+                />
               </VAvatar>
             </div>
           </template>
@@ -155,62 +183,67 @@ const serverSwitch = ref(false)
             />
 
             <div>
-              <!-- 👉 Header -->
-              <div class="d-flex justify-space-between">
-                <h6 class="mb-1 font-weight-semibold text-base me-3">
+              <!-- Header -->
+              <div class="d-flex justify-space-between flex-wrap">
+                <h6 class="font-weight-medium text-sm me-3">
                   Sold Puma POPX Blue Color
                 </h6>
-                <small class="text-xs text-no-wrap">January, 10</small>
+                <small class="text-xs text-no-wrap my-1">January, 10</small>
               </div>
               <span>PUMA presents the latest shoes from its collection. Light &amp; comfortable made with highly durable material.</span>
             </div>
           </div>
 
           <!-- 👉 Timeline Item: Meta Content -->
-          <div class="d-flex justify-space-between flex-sm-row flex-column gap-3">
+          <div class="d-flex justify-space-between flex-column flex-sm-row gap-3">
             <div class="text-sm-center">
-              <h6 class="mb-1 text-base font-weight-semibold">
+              <h6 class="text-base font-weight-medium mb-1">
                 Customer
               </h6>
-              <span>Micheal Scott</span>
+              <span class="text-xs">Micheal Scott</span>
             </div>
-
             <div class="text-sm-center">
-              <h6 class="mb-1 text-base font-weight-semibold">
+              <h6 class="text-base font-weight-medium mb-1">
                 Price
               </h6>
-              <span>$375.00</span>
+              <span class="text-xs">$375.00</span>
             </div>
-
             <div class="text-sm-center">
-              <h6 class="mb-1 text-base font-weight-semibold">
+              <h6 class="text-base font-weight-medium mb-1">
                 Quantity
               </h6>
-              <span>1</span>
+              <span class="text-xs">1</span>
             </div>
           </div>
         </VTimelineItem>
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Design Review -->
-        <VTimelineItem fill-dot>
+        <VTimelineItem
+          fill-dot
+          size="small"
+        >
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar
+                size="32"
                 color="info"
                 variant="tonal"
               >
-                <VIcon icon="mdi-file-edit-outline" />
+                <VIcon
+                  size="20"
+                  icon="mdi-file-edit-outline"
+                />
               </VAvatar>
             </div>
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between">
-            <h6 class="mb-1 text-sm font-weight-semibold">
+          <div class="d-flex justify-space-between flex-wrap">
+            <h6 class="text-sm font-weight-medium me-3">
               Design Review
             </h6>
-            <small class="text-xs text-no-wrap">September, 20</small>
+            <small class="text-xs text-no-wrap my-1">September, 20</small>
           </div>
 
           <!-- 👉 Content -->
@@ -219,11 +252,11 @@ const serverSwitch = ref(false)
           </p>
           <div class="d-flex align-center">
             <VAvatar
-              size="40"
+              size="32"
               :image="avatar1"
               class="me-2"
             />
-            <h6 class="text-sm font-weight-semibold">
+            <h6 class="text-sm font-weight-medium">
               John Doe (Client)
             </h6>
           </div>
@@ -231,21 +264,28 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Ubuntu Server -->
-        <VTimelineItem fill-dot>
+        <VTimelineItem
+          fill-dot
+          size="small"
+        >
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar
+                size="32"
                 color="error"
                 variant="tonal"
               >
-                <VIcon icon="mdi-server" />
+                <VIcon
+                  size="18"
+                  icon="mdi-server"
+                />
               </VAvatar>
             </div>
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between">
-            <h6 class="mb-1 text-sm font-weight-semibold">
+          <div class="d-flex justify-space-between flex-wrap">
+            <h6 class="text-sm font-weight-medium">
               Ubuntu Server
             </h6>
 
@@ -263,6 +303,7 @@ const serverSwitch = ref(false)
               <td class="d-flex align-center pb-2">
                 <VIcon
                   icon="mdi-web"
+                  size="24"
                   class="me-1"
                 />
                 <span>IP Address</span>
@@ -277,6 +318,7 @@ const serverSwitch = ref(false)
               <td class="d-flex align-center pb-2">
                 <VIcon
                   icon="mdi-cpu-32-bit"
+                  size="24"
                   class="me-1"
                 />
                 <span>CPU</span>
@@ -291,6 +333,7 @@ const serverSwitch = ref(false)
               <td class="d-flex align-center pb-2">
                 <VIcon
                   icon="mdi-memory"
+                  size="24"
                   class="me-1"
                 />
                 <span>Memory</span>
@@ -307,25 +350,25 @@ const serverSwitch = ref(false)
             <div>
               <VBtn
                 size="x-small"
-                variant="plain"
+                variant="text"
                 color="secondary"
                 icon
                 class="me-2"
               >
                 <VIcon
-                  icon="mdi-share-variant-outline"
                   size="20"
+                  icon="mdi-share-variant-outline"
                 />
               </VBtn>
               <VBtn
                 size="x-small"
-                variant="plain"
+                variant="text"
                 color="secondary"
                 icon
               >
                 <VIcon
-                  icon="mdi-reload"
                   size="20"
+                  icon="mdi-reload"
                 />
               </VBtn>
             </div>
@@ -336,14 +379,19 @@ const serverSwitch = ref(false)
         <!-- !SECTION -->
 
         <!-- SECTION Timeline Item: Location -->
-        <VTimelineItem fill-dot>
+        <VTimelineItem
+          fill-dot
+          size="small"
+        >
           <template #icon>
             <div class="v-timeline-avatar-wrapper rounded-circle">
               <VAvatar
+                size="32"
                 color="success"
                 variant="tonal"
               >
                 <VIcon
+                  size="20"
                   icon="mdi-map-marker-outline"
                 />
               </VAvatar>
@@ -351,13 +399,13 @@ const serverSwitch = ref(false)
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between">
-            <div class="d-flex align-end mb-1">
+          <div class="d-flex justify-space-between flex-wrap mb-1">
+            <div class="d-flex align-end">
               <VIcon
                 icon="mdi-map-marker-outline"
                 class="me-1"
               />
-              <h6 class="mb-0 text-sm font-weight-semibold">
+              <h6 class="text-sm font-weight-medium">
                 <span>Location</span>
               </h6>
             </div>
@@ -371,7 +419,7 @@ const serverSwitch = ref(false)
           </div>
 
           <!-- 👉 Content -->
-          <h6 class="mb-0 text-sm font-weight-semibold">
+          <h6 class="text-sm font-weight-medium mb-1">
             Find location for the company celebration.
           </h6>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -382,7 +430,7 @@ const serverSwitch = ref(false)
             <div>
               <VBtn
                 size="x-small"
-                variant="plain"
+                variant="text"
                 color="secondary"
                 icon
                 class="me-2"
@@ -395,19 +443,19 @@ const serverSwitch = ref(false)
 
               <VBtn
                 size="x-small"
-                variant="plain"
+                variant="text"
                 color="secondary"
                 icon
                 class="me-2"
               >
                 <VIcon
                   size="20"
-                  icon="mdi-message-text-outline"
+                  icon="mdi-message-outline"
                 />
               </VBtn>
               <VBtn
                 size="x-small"
-                variant="plain"
+                variant="text"
                 color="secondary"
                 icon
               >
@@ -418,7 +466,7 @@ const serverSwitch = ref(false)
               </VBtn>
             </div>
 
-            <span class="text-xs">Due date: 15th Jan</span>
+            <span>Due date: 15th Jan</span>
           </div>
         </VTimelineItem>
         <!-- !SECTION -->

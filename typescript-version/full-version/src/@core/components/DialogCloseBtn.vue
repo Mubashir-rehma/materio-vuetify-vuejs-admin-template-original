@@ -5,7 +5,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  icon: 'tabler-x',
+  icon: 'mdi-close',
   iconSize: '22',
 })
 </script>

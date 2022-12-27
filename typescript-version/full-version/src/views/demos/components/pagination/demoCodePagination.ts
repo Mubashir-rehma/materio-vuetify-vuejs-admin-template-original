@@ -13,3 +13,7 @@ export const basic = { ts: '', js: '' }
 export const disabled = { ts: '', js: '' }
 
 export const size = { ts: '', js: '' }
+
+export const outline = { ts: '', js: '' }
+
+export const outlineCircle = { ts: '', js: '' }

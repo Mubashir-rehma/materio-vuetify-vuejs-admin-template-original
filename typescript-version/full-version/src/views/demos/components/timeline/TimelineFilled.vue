@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import pdf from '@images/icons/project-icons/pdf.png'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
+import pdf from '@images/icons/project-icons/pdf.png'
 import pumaShoes from '@images/pages/puma-shoes.jpeg'
 </script>
 
 <template>
-  <VCard title="Basic Timeline">
+  <VCard title="Filled Timeline">
     <VCardText>
       <VTimeline
         side="end"
@@ -14,11 +14,13 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         line-inset="8"
         truncate-line="start"
         density="compact"
+        class="v-timeline-variant-outlined"
       >
-        <!-- SECTION Timeline Item: Flight -->
+        <!-- SECTION Flight -->
         <VTimelineItem
-          dot-color="error"
+          fill-dot
           size="x-small"
+          dot-color="error"
         >
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
@@ -56,9 +58,10 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         </VTimelineItem>
         <!-- !SECTION -->
 
-        <!-- SECTION Timeline Item: Interview Schedule -->
+        <!-- SECTION Interview Schedule -->
         <VTimelineItem
           size="x-small"
+          fill-dot
           dot-color="primary"
         >
           <!-- 👉 Header -->
@@ -121,14 +124,15 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         </VTimelineItem>
         <!-- !SECTION -->
 
-        <!-- SECTION Timeline Item: Puma Shoes -->
+        <!-- SECTION Puma Shoes -->
         <VTimelineItem
+          fill-dot
           size="x-small"
           dot-color="info"
         >
           <div class="d-flex align-start flex-sm-row flex-column mb-3">
             <VImg
-              aspect-ratio="1"
+              height="100"
               width="100"
               :src="pumaShoes"
               class="rounded me-4"
@@ -170,8 +174,9 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         </VTimelineItem>
         <!-- !SECTION -->
 
-        <!-- SECTION Design Review -->
+        <!-- 👉 Design Review -->
         <VTimelineItem
+          fill-dot
           size="x-small"
           dot-color="success"
         >
@@ -198,7 +203,6 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
             </h6>
           </div>
         </VTimelineItem>
-        <!-- !SECTION -->
       </VTimeline>
     </VCardText>
   </VCard>

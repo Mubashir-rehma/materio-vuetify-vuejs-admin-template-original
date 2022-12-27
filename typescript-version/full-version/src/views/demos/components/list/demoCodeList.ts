@@ -15,3 +15,7 @@ export const twoLinesAndSubheader = { ts: '', js: '' }
 export const subGroup = { ts: '', js: '' }
 
 export const rounded = { ts: '', js: '' }
+
+export const progressList = { ts: '', js: '' }
+
+export const userList = { ts: '', js: '' }

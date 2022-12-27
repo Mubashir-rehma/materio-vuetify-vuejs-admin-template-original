@@ -13,3 +13,5 @@ export const color = { ts: '', js: '' }
 export const tabs = { ts: '', js: '' }
 
 export const position = { ts: '', js: '' }
+
+export const maximumValue = { ts: '', js: '' }

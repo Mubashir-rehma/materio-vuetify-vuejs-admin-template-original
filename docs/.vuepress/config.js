@@ -43,6 +43,7 @@ module.exports = {
             '/guide/splash-screen',
             '/guide/getting-started/demo-configs',
             '/guide/getting-started/rtl',
+            '/guide/icons',
           ],
         },
         {

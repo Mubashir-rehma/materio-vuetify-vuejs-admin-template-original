@@ -172,7 +172,7 @@ module.exports = {
         {
           regex: '@/assets/images',
           replacement: '@images',
-          message: 'Use \'@import\' path alias for image imports',
+          message: 'Use \'@images\' path alias for image imports',
         },
         {
           regex: '@/styles',
@@ -195,7 +195,7 @@ module.exports = {
         },
         {
           regex: 'useLayouts\\(',
-          message: '`useLayouts` composable is only allowed in @layouts & @core directory',
+          message: '`useLayouts` composable is only allowed in @layouts & @core directory. Please use `useThemeConfig` composable instead.',
           files: {
             inspect: '^(?!.*(@core|@layouts)).*',
           },

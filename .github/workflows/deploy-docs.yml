@@ -13,7 +13,7 @@ jobs:
     env:
       DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
       BASE: ${{ inputs.is_production && secrets.DOCS_BASE_PROD || secrets.DOCS_BASE_STAG }} # ❗ (For VuePress only) Don't forget the ending slash in base
-      TEMPLATE_NAME: master
+      TEMPLATE_NAME: materio
     steps:
       - run: echo $(${{ inputs.is_production }} && echo "Deploying production" || echo "Deploying staging")
       

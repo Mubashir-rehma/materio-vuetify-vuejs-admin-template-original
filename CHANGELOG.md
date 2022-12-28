@@ -4,6 +4,21 @@
 
 All notable changes to this template will be documented in this file
 
+## v2.1.1 (2022-12-15)
+
+### Added
+
+- Added Locale dropdown active language status
+
+### Updated
+
+- Updated Core style
+- Updated font-weight 600 to 500
+
+### Fixed
+
+- Fixed VerticalNav group active background color
+
 ## v2.1.0 (2022-12-13)
 
 ### Added

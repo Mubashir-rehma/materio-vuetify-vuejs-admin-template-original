@@ -461,13 +461,6 @@ const database: SearchItem[] = [
     category: 'formsTables',
   },
   {
-    id: 69,
-    url: { name: 'forms-date-time-picker' },
-    icon: 'mdi-calendar-month',
-    title: 'Date Pickers',
-    category: 'formsTables',
-  },
-  {
     id: 70,
     url: { name: 'forms-switch' },
     icon: 'mdi-toggle-switch-outline',

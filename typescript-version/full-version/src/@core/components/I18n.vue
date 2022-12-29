@@ -17,6 +17,10 @@ interface Props {
 
 const { locale } = useI18n({ useScope: 'global' })
 
+watch(locale, val => {
+  document.documentElement.setAttribute('lang', val as string)
+})
+
 const currentLang = ref(['en'])
 </script>
 

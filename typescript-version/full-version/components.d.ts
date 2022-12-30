@@ -3,7 +3,7 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export { }
+export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
@@ -308,6 +308,7 @@ declare module '@vue/runtime-core' {
     ThemeSwitcher: typeof import('./src/@core/components/ThemeSwitcher.vue')['default']
     TimelineBasic: typeof import('./src/views/demos/components/timeline/TimelineBasic.vue')['default']
     TimelineFilled: typeof import('./src/views/demos/components/timeline/TimelineFilled.vue')['default']
+    TimelineOutlined: typeof import('./src/views/demos/components/timeline/TimelineOutlined.vue')['default']
     TimelineWithIcons: typeof import('./src/views/demos/components/timeline/TimelineWithIcons.vue')['default']
     TwoFactorAuthDialog: typeof import('./src/@core/components/TwoFactorAuthDialog.vue')['default']
     UserInfoEditDialog: typeof import('./src/@core/components/UserInfoEditDialog.vue')['default']

@@ -133,18 +133,11 @@ const resolveCategories = (val: string) => {
         >
           <!-- 👉 Prepend Inner -->
           <template #prepend-inner>
-            <VBtn
-              icon
-              variant="text"
-              color="default"
-              size="x-small"
-              class="text-high-emphasis ms-n1"
-            >
-              <VIcon
-                size="22"
-                icon="mdi-magnify"
-              />
-            </VBtn>
+            <VIcon
+              size="22"
+              icon="mdi-magnify"
+              class="text-high-emphasis mt-1"
+            />
           </template>
 
           <!-- 👉 Append Inner -->

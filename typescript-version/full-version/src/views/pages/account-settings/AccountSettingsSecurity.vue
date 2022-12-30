@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import poseFs9 from '@images/pages/pose-fs-9.png'
+import poseFs9 from '@images/pages/pose-fs-9.png';
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
@@ -355,6 +355,6 @@ const isOneTimePasswordDialogVisible = ref(false)
   </VRow>
 
   <!-- SECTION Enable One time password -->
-  <EnableOneTimePasswordDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
+  <TwoFactorAuthDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
   <!-- !SECTION -->
 </template>

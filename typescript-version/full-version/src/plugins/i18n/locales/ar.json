@@ -37,6 +37,7 @@
   "Account Settings": "إعدادت الحساب",
   "User Profile": "ملف تعريفي للمستخدم",
   "FAQ": "التعليمات",
+  "Dialog Examples": "أمثلة على الحوار",
   "Pricing": "التسعير",
   "List": "قائمة",
   "Edit": "يحرر",
@@ -111,6 +112,7 @@
   "Two Steps": "خطوتين",
   "Two Steps v1": "خطوتين v1.0",
   "Two Steps v2": "خطوتين v2.0",
+  "Custom Input": "إدخال مخصص",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCheckbox'
+import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCheckbox';
 </script>
 
 <template>
@@ -73,7 +73,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/checkbox/demoCodeCh
         title="Icon"
         :code="demoCode.icon"
       >
-        <p>Use <code>off-icon</code> and <code>on-icon</code> prop to change the icon on the checkbox.</p>
+        <p>Use <code>false-icon</code> and <code>true-icon</code> prop to change the icon on the checkbox.</p>
 
         <DemoCheckboxIcon />
       </AppCardCode>

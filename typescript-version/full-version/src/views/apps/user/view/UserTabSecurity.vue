@@ -198,8 +198,8 @@ const recentDevices = [
   </VRow>
 
   <!-- 👉 Enable One Time Password Dialog -->
-  <EnableOneTimePasswordDialog
+  <TwoFactorAuthDialog
     v-model:isDialogVisible="isTwoFactorDialogOpen"
-    :mobile-number="smsVerificationNumber"
+    :sms-code="smsVerificationNumber"
   />
 </template>

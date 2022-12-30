@@ -28,8 +28,49 @@
   }
 }
 
+// 👉 Button outline with default color border color
+.v-alert--variant-outlined,
+.v-avatar--variant-outlined,
+.v-btn.v-btn--variant-outlined,
+.v-card--variant-outlined,
+.v-chip--variant-outlined {
+  &:not([class*="text-"]) {
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+
+  &.text-default {
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+}
+
+// 👉 Custom Input
+.custom-input {
+  padding: 1rem;
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  opacity: 1;
+  transition: border-color 0.5s;
+  white-space: normal;
+
+  &:hover {
+    border-color: rgba(var(--v-border-color), 0.25);
+  }
+
+  &.active {
+    border-color: rgb(var(--v-theme-primary));
+  }
+}
+
 // Dialog responsive width
 .v-dialog {
+  // dialog custom close btn
+  .v-dialog-close-btn {
+    position: absolute;
+    z-index: 1;
+    color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity)) !important;
+    inset-block-start: 0.9375rem;
+    inset-inline-end: 0.9375rem;
+  }
+
   .v-card {
     @extend %style-scroll-bar;
   }

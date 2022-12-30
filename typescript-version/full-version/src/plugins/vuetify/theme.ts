@@ -1,5 +1,5 @@
-import type { VuetifyOptions } from 'vuetify'
 import { themeConfig } from '@themeConfig'
+import type { VuetifyOptions } from 'vuetify'
 
 const theme: VuetifyOptions['theme'] = {
   defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
@@ -34,6 +34,7 @@ const theme: VuetifyOptions['theme'] = {
       },
 
       variables: {
+        'code-color': '#d400ff',
         'border-color': '#3A3541',
 
         // Shadows
@@ -72,6 +73,7 @@ const theme: VuetifyOptions['theme'] = {
         'perfect-scrollbar-thumb': '#4A5072',
       },
       variables: {
+        'code-color': '#d400ff',
         'border-color': '#E7E3FC',
 
         // Shadows

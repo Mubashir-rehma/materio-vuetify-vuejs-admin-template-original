@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TEMPLATE_NAME: master
+      GitHubPersonalToken: ${{ secrets.GH_PAT }}
+    steps:
+      - name: Checkout template
+        uses: actions/checkout@v3
+        with:
+          path: ${{ env.TEMPLATE_NAME }}/vue
+
+      - name: Checkout scripts
+        uses: actions/checkout@v3
+        with:
+          repository: themeselection/automation-scripts
+          token: ${{ secrets.GH_PAT }}
+          path: automation-scripts
+      
+      - name: Install packages in automation-scripts dir
+        working-directory: automation-scripts/vue
+        run: yarn
+
+      - name: Install packages in typescript full version
+        working-directory: ${{ env.TEMPLATE_NAME }}/vue/typescript-version/full-version
+        run: yarn
+
+      - name: Install packages in javascript full version. We need to install in both full version for linting the snippet files using `yarn lint`.
+        working-directory: ${{ env.TEMPLATE_NAME }}/vue/javascript-version/full-version
+        run: yarn
+        
+      - name: Generate package
+        working-directory: automation-scripts/vue
+        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/genPkg.ts --version ${{ github.ref_name }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.TEMPLATE_NAME }}/vue/*.zip
+          body: Please refer to [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.

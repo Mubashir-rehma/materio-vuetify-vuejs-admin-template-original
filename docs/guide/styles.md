@@ -6,13 +6,19 @@ You can write your own SCSS in `/src/styles/styles.scss` file.
 
 ## Overriding variables
 
-If you want to override any of vuetify or our custom variable then you can override it in `/src/styles/_variables.scss` file.
+If you want to override any of vuetify or our custom variable then you can override it in `/src/styles/variables/{_vuetify|_template}.scss` folder.
+
+In this folder you can find two variable files.
+
+### _vuetify.scss
+
+You can override Vuetify variable in this file.
 
 You can override variables like below:
 
 ```scss{2}
-@forward "@layouts/styles/variables" with (
-  $enable-rtl-styles: false
+@forward "../../@core/scss/template/libs/vuetify/variables" with (
+  $color-pack: false
 );
 ```
 
@@ -20,9 +26,25 @@ You can override variables like below:
 
 You can get list of variables you can override in below locations:
 
-- Check `/src/@core/layouts/styles/_variables.scss` file for our custom variables
-<!-- TODO: Update below URL -->
-- Check Vuetify SASS variables [page](https://vuetifyjs.com/en/features/sass-variables/)
+- Check Vuetify SASS variables [page](https://next.vuetifyjs.com/en/features/sass-variables/)
+
+### _template.scss
+
+You can override template/custom variable in this file.
+
+You can override variables like below:
+
+```scss{2}
+@forward "@core/scss/template/variables" with (
+  $navbar-high-emphasis-text: true
+);
+```
+
+<br>
+
+You can get list of variables you can override in below locations:
+
+- Check `/src/@core/scss/base/_variables.scss` and `/src/@core/scss/template/_variables.scss` files for our custom variables
 
 ## Mixins
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface UserData {
-  id: number
+  id: number | null
   fullName: string
   company: string
   role: string
@@ -11,23 +11,41 @@ interface UserData {
   currentPlan: string
   status: string
   avatar: string
-  taskDone: number
-  projectDone: number
+  taskDone: number | null
+  projectDone: number | null
   taxId: string
   language: string
 }
 
 interface Props {
-  userData: UserData
+  userData?: UserData
   isDialogVisible: boolean
 }
 
 interface Emit {
-  (e: 'update:modelValue', value: boolean): void
   (e: 'submit', value: UserData): void
   (e: 'update:isDialogVisible', val: boolean): void
 }
-const props = defineProps<Props>()
+
+const props = withDefaults(defineProps<Props>(), {
+  userData: () => ({
+    id: 0,
+    fullName: '',
+    company: '',
+    role: '',
+    username: '',
+    country: '',
+    contact: '',
+    email: '',
+    currentPlan: '',
+    status: '',
+    avatar: '',
+    taskDone: null,
+    projectDone: null,
+    taxId: '',
+    language: '',
+  }),
+})
 
 const emit = defineEmits<Emit>()
 
@@ -39,7 +57,7 @@ watch(props, () => {
 })
 
 const onFormSubmit = () => {
-  emit('update:modelValue', false)
+  emit('update:isDialogVisible', false)
   emit('submit', userData.value)
 }
 
@@ -61,6 +79,13 @@ const dialogVisibleUpdate = (val: boolean) => {
     @update:model-value="dialogVisibleUpdate"
   >
     <VCard class="pa-sm-9 pa-5">
+      <!-- 👉 dialog close btn -->
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="onFormReset"
+      />
+
       <VCardItem class="text-center">
         <VCardTitle class="text-h5">
           Edit User Information

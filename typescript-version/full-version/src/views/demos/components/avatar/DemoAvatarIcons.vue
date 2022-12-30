@@ -9,7 +9,6 @@
 
     <VAvatar color="secondary">
       <VIcon
-        color="white"
         size="22"
         icon="mdi-cloud-outline"
       />

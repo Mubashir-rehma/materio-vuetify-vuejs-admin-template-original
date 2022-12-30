@@ -110,7 +110,9 @@ h6,
   &.v-checkbox-btn,
   &.v-radio,
   &.v-radio-btn {
-    margin-inline-start: -0.5625rem;
+    .v-selection-control__wrapper {
+      margin-inline-start: -0.5625rem;
+    }
   }
 }
 
@@ -118,7 +120,9 @@ h6,
   &.v-radio,
   &.v-radio-btn,
   &.v-checkbox-btn {
-    margin-inline-start: -0.3125rem;
+    .v-selection-control__wrapper {
+      margin-inline-start: -0.3125rem;
+    }
   }
 }
 
@@ -126,7 +130,9 @@ h6,
   &.v-checkbox-btn,
   &.v-radio,
   &.v-radio-btn {
-    margin-inline-start: -0.6875rem;
+    .v-selection-control__wrapper {
+      margin-inline-start: -0.6875rem;
+    }
   }
 }
 

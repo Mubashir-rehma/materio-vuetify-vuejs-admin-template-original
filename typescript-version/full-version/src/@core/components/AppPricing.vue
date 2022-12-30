@@ -3,7 +3,8 @@ import tree1 from '@images/misc/pricing-tree-1.png'
 import tree2 from '@images/misc/pricing-tree-2.png'
 import tree3 from '@images/misc/pricing-tree-3.png'
 
-interface ColumnsResponsiveProps {
+interface Pricing {
+  title?: string
   xs?: number | string
   sm?: number | string
   md?: string | number
@@ -11,7 +12,7 @@ interface ColumnsResponsiveProps {
   xl?: string | number
 }
 
-const props = defineProps<ColumnsResponsiveProps>()
+const props = defineProps<Pricing>()
 
 const annualMonthlyPlanPriceToggler = ref(true)
 
@@ -71,7 +72,7 @@ const pricingPlans = [
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
     <h4 class="text-h4 pricing-title mb-4">
-      Pricing Plans
+      {{ props.title ? props.title : 'Pricing Plans' }}
     </h4>
     <p class="mb-0">
       All plans include 40+ advanced tools and features to boost your product.

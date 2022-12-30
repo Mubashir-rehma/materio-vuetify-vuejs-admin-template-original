@@ -741,3 +741,4 @@ const tabs = [
 `,
 }
 
+export const maximumValue = { ts: '', js: '' }

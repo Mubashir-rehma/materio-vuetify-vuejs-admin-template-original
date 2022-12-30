@@ -354,3 +354,4 @@ export const popout = {
 `,
 }
 
+export const customizedAccordion = { ts: '', js: '' }

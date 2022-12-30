@@ -482,14 +482,7 @@ const database: SearchItem[] = [
     category: 'formsTables',
   },
   {
-    id: 72,
-    url: { name: 'forms-date-time-picker' },
-    icon: 'mdi-calendar-month',
-    title: 'Date Pickers',
-    category: 'formsTables',
-  },
-  {
-    id: 73,
+    id: 70,
     url: { name: 'forms-switch' },
     icon: 'mdi-toggle-switch-outline',
     title: 'Switch',
@@ -557,6 +550,20 @@ const database: SearchItem[] = [
     icon: 'mdi-shield-outline',
     title: 'Access Control (ACL)',
     category: 'chartsMisc',
+  },
+  {
+    id: 80,
+    url: { name: 'pages-dialog-examples' },
+    icon: 'mdi-card-outline',
+    title: 'Dialog Examples',
+    category: 'appsPages',
+  },
+  {
+    id: 81,
+    url: { name: 'forms-custom-input' },
+    icon: 'mdi-format-list-checks',
+    title: 'Custom Input',
+    category: 'formsTables',
   },
 ]
 

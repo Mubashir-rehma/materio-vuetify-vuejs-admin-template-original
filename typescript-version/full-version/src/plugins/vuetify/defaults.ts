@@ -1,6 +1,18 @@
 export default {
+  IconBtn: {
+    icon: true,
+    size: 'small',
+    color: 'default',
+    variant: 'text',
+    VIcon: {
+      size: 24,
+    },
+  },
   VAlert: {
     density: 'comfortable',
+     VBtn: {
+      color: undefined,
+    },
   },
   VAvatar: {
     // ℹ️ Remove after next release
@@ -16,11 +28,6 @@ export default {
   },
   VChip: {
     elevation: 0,
-  },
-  VMenu: {
-    VList: {
-      density: 'compact',
-    },
   },
   VPagination: {
     activeColor: 'primary',

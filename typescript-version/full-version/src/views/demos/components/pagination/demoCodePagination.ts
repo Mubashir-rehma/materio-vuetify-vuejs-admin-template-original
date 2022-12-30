@@ -256,3 +256,6 @@ const currentPage = ref(1)
 `,
 }
 
+export const outline = { ts: '', js: '' }
+
+export const outlineCircle = { ts: '', js: '' }

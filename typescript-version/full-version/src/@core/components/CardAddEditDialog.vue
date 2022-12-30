@@ -47,7 +47,14 @@ const formSubmit = () => {
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
-    <VCard class="pa-5 pa-sm-15">
+    <VCard class="pa-5 pa-sm-8">
+      <!-- 👉 dialog close btn -->
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="$emit('update:isDialogVisible', false)"
+      />
+
       <!-- 👉 Title -->
       <VCardItem class="text-center">
         <VCardTitle class="text-h5 mb-4">

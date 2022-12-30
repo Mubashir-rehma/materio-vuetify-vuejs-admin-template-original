@@ -36,6 +36,7 @@
   "Account Settings": "Account Settings",
   "User Profile": "User Profile",
   "FAQ": "FAQ",
+  "Dialog Examples": "Dialog Examples",
   "Pricing": "Pricing",
   "List": "List",
   "Edit": "Edit",
@@ -111,6 +112,7 @@
   "Two Steps": "Two Steps",
   "Two Steps v1": "Two Steps v1",
   "Two Steps v2": "Two Steps v2",
+  "Custom Input": "Custom Input",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

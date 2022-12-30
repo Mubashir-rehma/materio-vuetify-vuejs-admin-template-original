@@ -27,51 +27,49 @@ const resetPhoneNumber = () => {
 
 <template>
   <VDialog
-    max-width="650"
+    max-width="600"
     :model-value="props.isDialogVisible"
     @update:model-value="(val) => $emit('update:isDialogVisible', val)"
   >
-    <VCard class="pa-5 pa-sm-15">
-      <VCardItem>
-        <VCardTitle class="text-h5 text-center">
-          Enable One Time Password
-        </VCardTitle>
-      </VCardItem>
+    <VCard
+      title="Verify Your Mobile Number for SMS"
+      subtitle="Enter your mobile phone number with country code and  we will send you a verification code."
+      class="pa-5 pa-sm-8"
+    >
+      <!-- 👉 dialog close btn -->
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="resetPhoneNumber"
+      />
 
-      <VCardText class="pt-6">
-        <h6 class="text-disabled text-base font-weight-medium mb-3">
-          Verify Your Mobile Number for SMS
-        </h6>
-
-        <p class="mb-6">
-          Enter your mobile phone number with country code and  we will send you a verification code.
-        </p>
-
+      <VCardText>
         <VForm @submit.prevent="() => {}">
           <VTextField
             v-model="phoneNumber"
-            dirty
             name="mobile"
-            type="number"
-            prefix="+1"
             label="Phone Number"
-            placeholder="202 555 0111"
             class="mb-4"
           />
 
-          <div class="d-flex flex-wrap justify-center gap-4">
-            <VBtn
-              type="submit"
-              @click="formSubmit"
-            >
-              Submit
-            </VBtn>
+          <div class="d-flex flex-wrap justify-end gap-3">
             <VBtn
               color="secondary"
               variant="tonal"
               @click="resetPhoneNumber"
             >
               Cancel
+            </VBtn>
+            <VBtn
+              type="submit"
+              @click="formSubmit"
+            >
+              continue
+              <VIcon
+                end
+                icon="mdi-chevron-right"
+                class="flip-in-rtl"
+              />
             </VBtn>
           </div>
         </VForm>

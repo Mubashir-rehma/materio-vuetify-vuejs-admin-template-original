@@ -107,5 +107,20 @@ import * as demoCode from '@/views/demos/components/expansion-panel/demoCodeExpa
         <DemoExpansionPanelModel />
       </AppCardCode>
     </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Customized Accordion -->
+      <AppCardCode
+        title="Customized Accordion"
+        variant="text"
+        border
+        :code="demoCode.customizedAccordion"
+      >
+        <DemoExpansionPanelCustomizedAccordion />
+      </AppCardCode>
+    </VCol>
   </VRow>
 </template>

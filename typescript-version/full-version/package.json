@@ -3,7 +3,7 @@
   "version": "2.1.1",
   "private": true,
   "scripts": {
-    "dev": "npm run build:icons && vite --host",
+    "dev": "npm run build:icons && vite",
     "build": "npm run build:icons && vite build",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
@@ -34,7 +34,7 @@
     "vue-router": "^4.1.5",
     "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0",
-    "vuetify": "3.0.3",
+    "vuetify": "3.0.6",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
@@ -60,6 +60,7 @@
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-regex": "^1.10.0",
     "eslint-plugin-sonarjs": "^0.16.0",
     "eslint-plugin-unicorn": "^45.0.0",
     "eslint-plugin-vue": "^9.5.1",

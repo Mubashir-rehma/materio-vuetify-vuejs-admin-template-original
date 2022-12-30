@@ -1048,3 +1048,6 @@ const folders = [
 `,
 }
 
+export const progressList = { ts: '', js: '' }
+
+export const userList = { ts: '', js: '' }

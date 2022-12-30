@@ -1,6 +1,6 @@
-import type { UserConfig as UserLayoutConfig } from '@layouts/types'
-import type { Ref } from 'vue'
-import { RouteTransitions, Skins } from './enums'
+import type { UserConfig as UserLayoutConfig } from '@layouts/types';
+import type { Ref } from 'vue';
+import { RouteTransitions, Skins } from './enums';
 
 export interface UserThemeConfig {
   app: {
@@ -84,4 +84,24 @@ export interface ThemeConfig {
     verticalNavUnPinned: UserThemeConfig['icons']['verticalNavUnPinned']
     sectionTitlePlaceholder: UserThemeConfig['icons']['sectionTitlePlaceholder']
   }
+}
+
+// SECTION Custom Input
+export interface CustomInputContent {
+  title: string
+  desc: string
+  value: string
+  subtitle?: string
+  icon?: string
+  images?:string
+}
+
+
+export interface GridColumn {
+  cols?: string
+  sm?: string
+  md?: string
+  lg?: string
+  xl?: string
+  xxl?:string
 }

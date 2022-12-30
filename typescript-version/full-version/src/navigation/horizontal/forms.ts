@@ -28,6 +28,10 @@ export default [
             to: 'forms-radio',
           },
           {
+            title: 'Custom Input',
+            to: 'forms-custom-input',
+          },
+          {
             title: 'Range Slider',
             to: 'forms-range-slider',
           },

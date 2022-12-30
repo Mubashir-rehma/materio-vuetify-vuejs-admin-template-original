@@ -537,6 +537,13 @@ const database: SearchItem[] = [
     title: 'Dialog Examples',
     category: 'appsPages',
   },
+  {
+    id: 81,
+    url: { name: 'forms-custom-input' },
+    icon: 'mdi-format-list-checks',
+    title: 'Custom Input',
+    category: 'formsTables',
+  },
 ]
 
 // ** GET Search Data

@@ -19,7 +19,7 @@ const props = defineProps<Props>()
     >
       <VList
         :items="props.menuList"
-        :item-props="itemProps"
+        :item-props="props.itemProps"
       />
     </VMenu>
   </IconBtn>

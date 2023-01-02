@@ -51,7 +51,10 @@ const moreList = [
             <IconBtn>
               <VIcon icon="mdi-star-outline" />
             </IconBtn>
-            <MoreBtn :menu-list="moreList" />
+            <MoreBtn
+              item-props
+              :menu-list="moreList"
+            />
           </div>
         </template>
 

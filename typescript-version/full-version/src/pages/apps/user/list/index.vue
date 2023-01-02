@@ -370,7 +370,10 @@ const computedMoreList = computed(() => {
               class="text-center"
               style="width: 5rem;"
             >
-              <MoreBtn :menu-list="computedMoreList(user.id)" />
+              <MoreBtn
+                :menu-list="computedMoreList(user.id)"
+                item-props
+              />
             </td>
           </tr>
         </tbody>

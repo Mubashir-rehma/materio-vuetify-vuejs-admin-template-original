@@ -196,7 +196,10 @@ const computedMoreList = computed(() => {
               <VIcon icon="mdi-eye-outline" />
             </IconBtn>
 
-            <MoreBtn :menu-list="computedMoreList(invoice.id)" />
+            <MoreBtn
+              :menu-list="computedMoreList(invoice.id)"
+              item-props
+            />
           </td>
         </tr>
       </tbody>

@@ -1,6 +1,9 @@
 <script lang="ts" setup>
+import type { ItemProps } from 'vuetify/composables/item'
+
 interface Props {
-  menuList?: unknown[]
+  menuList?: ItemProps[]
+  itemProps?: boolean
 }
 
 const props = defineProps<Props>()
@@ -16,7 +19,7 @@ const props = defineProps<Props>()
     >
       <VList
         :items="props.menuList"
-        item-props
+        :item-props="itemProps"
       />
     </VMenu>
   </IconBtn>

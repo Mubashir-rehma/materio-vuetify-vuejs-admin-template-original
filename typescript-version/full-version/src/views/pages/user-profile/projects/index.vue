@@ -52,7 +52,10 @@ const moreList = [
 
           <template #append>
             <div class="mt-n8 me-n3">
-              <MoreBtn :menu-list="moreList" />
+              <MoreBtn
+                item-props
+                :menu-list="moreList"
+              />
             </div>
           </template>
         </VCardItem>

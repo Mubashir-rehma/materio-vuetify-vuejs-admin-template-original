@@ -39,7 +39,10 @@ const moreBtnList = [
     >
       <VCard>
         <div class="vertical-more">
-          <MoreBtn :menu-list="moreBtnList" />
+          <MoreBtn
+            item-props
+            :menu-list="moreBtnList"
+          />
         </div>
 
         <VCardItem>

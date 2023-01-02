@@ -39,6 +39,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard>
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardItem class="pb-3">
         <VCardTitle>Select Country</VCardTitle>
       </VCardItem>

@@ -30,11 +30,8 @@ const isCodeShown = ref(false)
     <VCardItem>
       <VCardTitle>{{ props.title }}</VCardTitle>
       <template #append>
-        <VBtn
-          icon
-          size="small"
+        <IconBtn
           :color="isCodeShown ? 'primary' : 'default'"
-          variant="text"
           :class="isCodeShown ? '' : 'text-disabled'"
           @click="isCodeShown = !isCodeShown"
         >
@@ -42,7 +39,7 @@ const isCodeShown = ref(false)
             size="20"
             icon="mdi-code-tags"
           />
-        </VBtn>
+        </IconBtn>
       </template>
     </VCardItem>
     <slot v-if="noPadding" />

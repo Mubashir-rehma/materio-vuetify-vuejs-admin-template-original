@@ -6,35 +6,19 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const moreList = [
+  { title: 'Share connections', value: 'Share connections' },
+  { title: 'Suggest edits', value: 'Suggest edits' },
+  { title: 'Report Bug', value: 'Report Bug' },
+]
 </script>
 
 <template>
   <VCard title="Connection">
     <template #append>
       <div class="me-n2">
-        <VBtn
-          icon
-          variant="text"
-          color="default"
-          size="x-small"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-dots-vertical"
-          />
-
-          <VMenu activator="parent">
-            <VList density="compact">
-              <VListItem
-                v-for="(item, index) in ['Share connections', 'Suggest edits', 'Report Bug']"
-                :key="index"
-                :value="index"
-              >
-                <VListItemTitle>{{ item }}</VListItemTitle>
-              </VListItem>
-            </VList>
-          </VMenu>
-        </VBtn>
+        <MoreBtn :menu-list="moreList" />
       </div>
     </template>
 

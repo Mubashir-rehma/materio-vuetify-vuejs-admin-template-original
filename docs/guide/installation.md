@@ -41,3 +41,7 @@ yarn dev
 ```
 
 6. Open the dev server URL in browser. Probably it will be [http://localhost:5173](http://localhost:5173)
+
+---
+
+**Related FAQ: [Template is slow](/faq/#template-is-slow)**

@@ -114,17 +114,9 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
     @click="isAppSearchBarVisible = !isAppSearchBarVisible"
   >
     <!-- 👉 Search Trigger button -->
-    <VBtn
-      icon
-      variant="text"
-      color="default"
-      size="small"
-    >
-      <VIcon
-        icon="mdi-magnify"
-        size="24"
-      />
-    </VBtn>
+    <IconBtn>
+      <VIcon icon="mdi-magnify" />
+    </IconBtn>
 
     <span
       v-if="appContentLayoutNav === 'vertical'"

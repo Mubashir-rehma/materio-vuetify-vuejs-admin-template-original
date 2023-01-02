@@ -126,29 +126,18 @@ const serverSwitch = ref(false)
 
             <!-- 👉 Person Actions -->
             <div>
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-                class="me-2"
-              >
+              <IconBtn class="me-2">
                 <VIcon
                   size="20"
                   icon="mdi-message-outline"
                 />
-              </VBtn>
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-              >
+              </IconBtn>
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-phone"
                 />
-              </VBtn>
+              </IconBtn>
             </div>
           </div>
         </VTimelineItem>
@@ -303,7 +292,6 @@ const serverSwitch = ref(false)
               <td class="d-flex align-center pb-2">
                 <VIcon
                   icon="mdi-web"
-                  size="24"
                   class="me-1"
                 />
                 <span>IP Address</span>
@@ -348,29 +336,18 @@ const serverSwitch = ref(false)
           <VDivider class="mt-3" />
           <div class="d-flex justify-space-between align-end">
             <div>
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-                class="me-2"
-              >
+              <IconBtn class="me-2">
                 <VIcon
                   size="20"
                   icon="mdi-share-variant-outline"
                 />
-              </VBtn>
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-              >
+              </IconBtn>
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-reload"
                 />
-              </VBtn>
+              </IconBtn>
             </div>
 
             <VSwitch v-model="serverSwitch" />
@@ -428,42 +405,25 @@ const serverSwitch = ref(false)
 
           <div class="d-flex justify-space-between mt-4 flex-wrap">
             <div>
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-                class="me-2"
-              >
+              <IconBtn class="me-2">
                 <VIcon
                   size="20"
                   icon="mdi-link-variant"
                 />
-              </VBtn>
+              </IconBtn>
 
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-                class="me-2"
-              >
+              <IconBtn class="me-2">
                 <VIcon
                   size="20"
                   icon="mdi-message-outline"
                 />
-              </VBtn>
-              <VBtn
-                size="x-small"
-                variant="text"
-                color="secondary"
-                icon
-              >
+              </IconBtn>
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-account-outline"
                 />
-              </VBtn>
+              </IconBtn>
             </div>
 
             <span>Due date: 15th Jan</span>

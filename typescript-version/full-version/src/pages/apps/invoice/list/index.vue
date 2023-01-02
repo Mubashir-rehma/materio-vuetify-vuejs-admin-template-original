@@ -114,6 +114,19 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
     selectAllInvoice.value = true
   }
 }
+
+const computedMoreList = computed(() => {
+  return (paramId: number) => ([
+    { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+    {
+      title: 'Edit',
+      value: 'edit',
+      prependIcon: 'mdi-pencil-outline',
+      to: { name: 'apps-invoice-edit-id', params: { id: paramId } },
+    },
+    { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+  ])
+})
 </script>
 
 <template>
@@ -194,7 +207,7 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
       <VDivider />
 
       <!-- SECTION Table -->
-      <VTable class="text-no-wrap invoice-list-table">
+      <VTable class="text-no-wrap">
         <!-- 👉 Table head -->
         <thead>
           <tr>
@@ -342,81 +355,18 @@ const addRemoveIndividualCheckbox = (checkID: string) => {
 
             <!-- 👉 Actions -->
             <td style="width: 8rem;">
-              <VBtn
-                icon
-                variant="plain"
-                color="default"
-                size="x-small"
-              >
-                <VIcon
-                  icon="mdi-delete-outline"
-                  :size="24"
-                />
-              </VBtn>
+              <IconBtn>
+                <VIcon icon="mdi-delete-outline" />
+              </IconBtn>
 
-              <VBtn
-                icon
-                variant="plain"
-                color="default"
-                size="x-small"
-                :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }"
-              >
-                <VIcon
-                  :size="24"
-                  icon="mdi-eye-outline"
-                />
-              </VBtn>
+              <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
+                <VIcon icon="mdi-eye-outline" />
+              </IconBtn>
 
-              <VBtn
-                icon
-                variant="plain"
-                color="default"
-                size="x-small"
-              >
-                <VIcon
-                  :size="24"
-                  icon="mdi-dots-vertical"
-                />
-
-                <VMenu activator="parent">
-                  <VList>
-                    <VListItem value="download">
-                      <template #prepend>
-                        <VIcon
-                          size="24"
-                          class="me-3"
-                          icon="mdi-download-outline"
-                        />
-                      </template>
-
-                      <VListItemTitle>Download</VListItemTitle>
-                    </VListItem>
-
-                    <VListItem :to="{ name: 'apps-invoice-edit-id', params: { id: invoice.id } }">
-                      <template #prepend>
-                        <VIcon
-                          size="24"
-                          class="me-3"
-                          icon="mdi-pencil-outline"
-                        />
-                      </template>
-
-                      <VListItemTitle>Edit</VListItemTitle>
-                    </VListItem>
-                    <VListItem value="duplicate">
-                      <template #prepend>
-                        <VIcon
-                          size="24"
-                          class="me-3"
-                          icon="mdi-layers-outline"
-                        />
-                      </template>
-
-                      <VListItemTitle>Duplicate</VListItemTitle>
-                    </VListItem>
-                  </VList>
-                </VMenu>
-              </VBtn>
+              <MoreBtn
+                :menu-list="computedMoreList(invoice.id)"
+                item-props
+              />
             </td>
           </tr>
         </tbody>

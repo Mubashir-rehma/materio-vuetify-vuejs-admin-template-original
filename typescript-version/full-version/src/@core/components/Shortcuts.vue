@@ -21,16 +21,8 @@ const router = useRouter()
 </script>
 
 <template>
-  <VBtn
-    variant="text"
-    color="default"
-    size="small"
-    icon
-  >
-    <VIcon
-      size="24"
-      :icon="props.togglerIcon"
-    />
+  <IconBtn>
+    <VIcon :icon="props.togglerIcon" />
 
     <VMenu
       activator="parent"
@@ -46,17 +38,9 @@ const router = useRouter()
           <VCardTitle>Shortcuts</VCardTitle>
 
           <template #append>
-            <VBtn
-              size="x-small"
-              variant="text"
-              color="default"
-              icon
-            >
-              <VIcon
-                size="22"
-                icon="mdi-view-grid-plus-outline"
-              />
-            </VBtn>
+            <IconBtn>
+              <VIcon icon="mdi-view-grid-plus-outline" />
+            </IconBtn>
           </template>
         </VCardItem>
 
@@ -88,5 +72,5 @@ const router = useRouter()
         </PerfectScrollbar>
       </VCard>
     </VMenu>
-  </VBtn>
+  </IconBtn>
 </template>

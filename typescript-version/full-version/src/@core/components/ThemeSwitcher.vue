@@ -25,16 +25,7 @@ watch(theme, val => {
 </script>
 
 <template>
-  <VBtn
-    icon
-    variant="text"
-    color="default"
-    size="small"
-    @click="changeTheme"
-  >
-    <VIcon
-      :icon="getThemeIcon"
-      size="24"
-    />
-  </VBtn>
+  <IconBtn @click="changeTheme">
+    <VIcon :icon="getThemeIcon" />
+  </IconBtn>
 </template>

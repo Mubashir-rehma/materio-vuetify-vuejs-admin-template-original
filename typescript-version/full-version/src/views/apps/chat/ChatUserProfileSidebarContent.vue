@@ -24,19 +24,12 @@ const userStatusRadioOptions = [
   <template v-if="store.profileUser">
     <!-- Close Button -->
     <div class="pt-2 me-2 text-end">
-      <VBtn
-        variant="text"
-        color="default"
-        icon
-        size="small"
-        @click="$emit('close')"
-      >
+      <IconBtn @click="$emit('close')">
         <VIcon
-          size="24"
           class="text-medium-emphasis"
           icon="mdi-close"
         />
-      </VBtn>
+      </IconBtn>
     </div>
 
     <!-- User Avatar + Name + Role -->

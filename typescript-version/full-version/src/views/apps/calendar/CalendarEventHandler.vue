@@ -123,25 +123,23 @@ const endDateTimePickerConfig = computed(() => {
         {{ event.id ? 'Update' : 'Add' }} Event
       </h3>
       <VSpacer />
-      <VBtn
+      <IconBtn
         v-show="event.id"
-        icon
-        variant="text"
-        size="small"
-        color="default"
         @click="removeEvent"
       >
-        <VIcon icon="mdi-trash-can-outline" />
-      </VBtn>
-      <VBtn
-        variant="text"
-        color="default"
-        icon
-        size="small"
+        <VIcon
+          size="18"
+          icon="mdi-trash-can-outline"
+        />
+      </IconBtn>
+      <IconBtn
         @click="$emit('update:isDrawerOpen', false)"
       >
-        <VIcon icon="mdi-close" />
-      </VBTn>
+        <VIcon
+          size="18"
+          icon="mdi-close"
+        />
+      </IconBtn>
     </div>
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">

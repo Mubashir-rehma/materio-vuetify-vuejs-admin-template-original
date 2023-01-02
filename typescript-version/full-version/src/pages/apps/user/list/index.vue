@@ -153,6 +153,19 @@ const addNewUser = (userData: UserProperties) => {
   // refetch User
   fetchUsers()
 }
+
+const computedMoreList = computed(() => {
+  return (paramId: number) => ([
+    {
+      title: 'View',
+      value: 'view',
+      prependIcon: 'mdi-eye-outline',
+      to: { name: 'apps-user-view-id', params: { id: paramId } },
+    },
+    { title: 'Edit', value: 'edit', prependIcon: 'mdi-pencil-outline' },
+    { title: 'Delete', value: 'delete', prependIcon: 'mdi-delete-outline' },
+  ])
+})
 </script>
 
 <template>
@@ -357,56 +370,7 @@ const addNewUser = (userData: UserProperties) => {
               class="text-center"
               style="width: 5rem;"
             >
-              <VBtn
-                size="x-small"
-                color="default"
-                variant="plain"
-                icon
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-dots-vertical"
-                />
-
-                <VMenu activator="parent">
-                  <VList>
-                    <VListItem :to="{ name: 'apps-user-view-id', params: { id: user.id } }">
-                      <template #prepend>
-                        <VIcon
-                          icon="mdi-eye-outline"
-                          :size="20"
-                          class="me-3"
-                        />
-                      </template>
-
-                      <VListItemTitle>View</VListItemTitle>
-                    </VListItem>
-
-                    <VListItem href="javascript:void(0)">
-                      <template #prepend>
-                        <VIcon
-                          icon="mdi-pencil-outline"
-                          :size="20"
-                          class="me-3"
-                        />
-                      </template>
-                      <VListItemTitle>Edit</VListItemTitle>
-                    </VListItem>
-
-                    <VListItem href="javascript:void(0)">
-                      <template #prepend>
-                        <VIcon
-                          icon="mdi-delete-outline"
-                          :size="20"
-                          class="me-3"
-                        />
-                      </template>
-
-                      <VListItemTitle>Delete</VListItemTitle>
-                    </VListItem>
-                  </VList>
-                </VMenu>
-              </VBtn>
+              <MoreBtn :menu-list="computedMoreList(user.id)" />
             </td>
           </tr>
         </tbody>

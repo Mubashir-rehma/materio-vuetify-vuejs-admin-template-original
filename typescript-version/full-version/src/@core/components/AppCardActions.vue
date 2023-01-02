@@ -79,12 +79,8 @@ const triggeredRemove = () => {
               <!-- SECTION Actions buttons -->
 
               <!-- 👉 Collapse button -->
-              <VBtn
+              <IconBtn
                 v-if="(!(actionRemove || actionRefresh) || actionCollapsed) && !noActions"
-                icon
-                color="default"
-                variant="text"
-                size="x-small"
                 @click="triggerCollapse"
               >
                 <VIcon
@@ -93,37 +89,29 @@ const triggeredRemove = () => {
                   :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : null }"
                   style="transition-duration: 0.28s;"
                 />
-              </VBtn>
+              </IconBtn>
 
               <!-- 👉 Overlay button -->
-              <VBtn
+              <IconBtn
                 v-if="(!(actionRemove || actionCollapsed) || actionRefresh) && !noActions"
-                icon
-                size="x-small"
-                variant="text"
-                color="default"
                 @click="triggerRefresh"
               >
                 <VIcon
                   size="20"
                   icon="mdi-refresh"
                 />
-              </VBtn>
+              </IconBtn>
 
               <!-- 👉 Close button -->
-              <VBtn
+              <IconBtn
                 v-if="(!(actionRefresh || actionCollapsed) || actionRemove) && !noActions"
-                icon
-                size="x-small"
-                variant="text"
-                color="default"
                 @click="triggeredRemove"
               >
                 <VIcon
                   size="20"
                   icon="mdi-close"
                 />
-              </VBtn>
+              </IconBtn>
             </div>
           <!-- !SECTION -->
           </template>

@@ -205,19 +205,12 @@ const refreshOpenedEmail = async () => {
         class="h-100 d-flex flex-column"
       >
         <div class="d-flex align-center">
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
+          <IconBtn
             class="d-lg-none ms-3"
             @click="isLeftSidebarOpen = true"
           >
-            <VIcon
-              size="24"
-              icon="mdi-menu"
-            />
-          </VBtn>
+            <VIcon icon="mdi-menu" />
+          </IconBtn>
           <!-- 👉 Search -->
           <VTextField
             v-model="q"
@@ -249,45 +242,22 @@ const refreshOpenedEmail = async () => {
             }"
           >
             <!-- Trash -->
-            <VBtn
+            <IconBtn
               v-show="$route.params.filter !== 'trashed'"
-              variant="text"
-              color="default"
-              icon
-              size="small"
               @click="handleActionClick('trash')"
             >
-              <VIcon
-                size="24"
-                icon="mdi-delete-outline"
-              />
-            </VBtn>
+              <VIcon icon="mdi-delete-outline" />
+            </IconBtn>
 
             <!-- Mark unread -->
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-              @click="handleActionClick('unread')"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-email-outline"
-              />
-            </VBtn>
+            <IconBtn @click="handleActionClick('unread')">
+              <VIcon icon="mdi-email-outline" />
+            </IconBtn>
 
             <!-- Move to folder -->
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-folder-outline"
-              />
+            <IconBtn>
+              <VIcon icon="mdi-folder-outline" />
+
               <VMenu activator="parent">
                 <VList density="compact">
                   <template
@@ -316,19 +286,12 @@ const refreshOpenedEmail = async () => {
                   </template>
                 </VList>
               </VMenu>
-            </VBtn>
+            </IconBtn>
 
             <!-- Update labels -->
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-label-outline"
-              />
+            <IconBtn>
+              <VIcon icon="mdi-label-outline" />
+
               <VMenu activator="parent">
                 <VList density="compact">
                   <VListItem
@@ -350,32 +313,13 @@ const refreshOpenedEmail = async () => {
                   </VListItem>
                 </VList>
               </VMenu>
-            </VBtn>
+            </IconBtn>
           </div>
           <VSpacer />
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-            @click="fetchEmails"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-reload"
-            />
-          </VBtn>
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <IconBtn @click="fetchEmails">
+            <VIcon icon="mdi-reload" />
+          </IconBtn>
+          <MoreBtn />
         </div>
         <VDivider />
 
@@ -399,20 +343,12 @@ const refreshOpenedEmail = async () => {
               @update:model-value="toggleSelectedEmail(email.id)"
               @click.stop
             />
-            <VBtn
-              variant="text"
-              icon
-              size="small"
+            <IconBtn
               :color="email.isStarred ? 'warning' : 'default'"
-              @click.stop="
-                handleActionClick(email.isStarred ? 'unstar' : 'star', [email.id])
-              "
+              @click.stop=" handleActionClick(email.isStarred ? 'unstar' : 'star', [email.id])"
             >
-              <VIcon
-                size="24"
-                icon="mdi-star-outline"
-              />
-            </VBtn>
+              <VIcon icon="mdi-star-outline" />
+            </IconBtn>
             <VAvatar
               class="mx-2"
               size="32"
@@ -442,44 +378,15 @@ const refreshOpenedEmail = async () => {
 
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
-                @click.stop="handleActionClick('trash', [email.id])"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-delete-outline"
-                />
-              </VBtn>
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
-                @click.stop="
-                  handleActionClick(email.isRead ? 'unread' : 'read', [email.id])
-                "
-              >
-                <VIcon
-                  size="24"
-                  :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'"
-                />
-              </VBtn>
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
-                @click.stop="handleActionClick('spam', [email.id])"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-alert-octagon-outline"
-                />
-              </VBtn>
+              <IconBtn @click.stop="handleActionClick('trash', [email.id])">
+                <VIcon icon="mdi-delete-outline" />
+              </IconBtn>
+              <IconBtn @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])">
+                <VIcon :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+              </IconBtn>
+              <IconBtn @click.stop="handleActionClick('spam', [email.id])">
+                <VIcon icon="mdi-alert-octagon-outline" />
+              </IconBtn>
             </div>
           </li>
           <li

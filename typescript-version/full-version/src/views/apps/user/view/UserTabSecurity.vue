@@ -106,29 +106,15 @@ const recentDevices = [
               readonly
             >
               <template #append-inner>
-                <VBtn
-                  icon
-                  size="x-small"
-                  color="default"
-                  variant="plain"
-                >
+                <IconBtn variant="plain">
                   <VIcon
-                    size="24"
                     icon="mdi-square-edit-outline"
                     @click="isTwoFactorDialogOpen = true"
                   />
-                </VBtn>
-                <VBtn
-                  icon
-                  size="x-small"
-                  color="default"
-                  variant="plain"
-                >
-                  <VIcon
-                    size="24"
-                    icon="mdi-delete-outline"
-                  />
-                </VBtn>
+                </IconBtn>
+                <IconBtn variant="plain">
+                  <VIcon icon="mdi-delete-outline" />
+                </IconBtn>
               </template>
             </VTextField>
           </div>

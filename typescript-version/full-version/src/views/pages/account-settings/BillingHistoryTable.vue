@@ -132,7 +132,7 @@ const computedMoreList = computed(() => {
 
     <VDivider />
     <!-- SECTION Table -->
-    <VTable class="text-no-wrap invoice-list-table">
+    <VTable class="text-no-wrap">
       <!-- 👉 Table head -->
       <thead>
         <tr>

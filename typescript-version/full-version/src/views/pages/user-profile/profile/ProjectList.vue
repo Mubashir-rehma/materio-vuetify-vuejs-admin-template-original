@@ -121,7 +121,7 @@ const moreList = [
               <h6 class="text-sm font-weight-medium">
                 {{ project.name }}
               </h6>
-              <p class="text-xs text-medium-emphasis mb-0">
+              <p class="text-xs mb-0">
                 {{ project.project }}
               </p>
             </div>

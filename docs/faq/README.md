@@ -66,17 +66,23 @@ We always keep our packages up to date when we make major releases. However, the
 
 Even if you like to try you can install these packages in fresh VueJS project without our template and you will get the same.
 
-## How to disable linting in template
+## Template is slow
 
-To disable linting in your project you can add new property in `vue.config.js` file as below:
+You may feel slowness in our template due to [vue dev tool](https://devtools.vuejs.org/). There are several open issues complaining about the slowness of app while using the vue dev tool:
 
-```js{3}
-module.exports = {
-  ...
-  lintOnSave: false,
-  ...
-}
-```
+<https://github.com/vuejs/devtools/issues/1875>
+
+<https://github.com/vuejs/devtools/issues/1939>
+
+If you open your app or our template in the guest window (where vue dev tool isn't available) then you will notice it is pretty fast and working as expected.
+
+Hence, if you don't use dev tool much we suggest you to disable or remove the vue dev tool from your browser extensions.
+
+Still, if you feel there's something missing try disabling the router transition and you will experience a much faster app.
+
+Apart from this, On first load you might feel template is taking the time to load. This is because vite tries to optimize the dependencies and load the necessary modules required to run the app smoothly. Once it's loaded, vite will cache the dependencies and you will experience faster app.
+
+In summary, this is due to vue dev tool and dev mode. Try checking our the live demo and you will find it's smooth and slick 😍
 
 ## Why reproduce issue/bug in starter-kit?
 

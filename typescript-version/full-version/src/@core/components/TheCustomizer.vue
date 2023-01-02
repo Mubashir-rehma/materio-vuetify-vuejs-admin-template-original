@@ -1,6 +1,7 @@
 <script setup lang="tsx">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
+import { staticPrimaryColor } from '@/plugins/vuetify/theme'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { RouteTransitions, Skins } from '@core/enums'
 import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
@@ -47,10 +48,10 @@ const setPrimaryColor = (color: string) => {
 }
 
 /*
-  ℹ️ This will return static color for first indexed color based on theme
+  ℹ️ This will return static color for first indexed color
   If we don't make first (primary) color as static then when another color is selected then we will have two theme colors with same hex codes and it will show two check marks
 */
-const getBoxColor = (color: string, index: number) => index ? color : '#a169ff'
+const getBoxColor = (color: string, index: number) => index ? color : staticPrimaryColor
 
 const { width: windowWidth } = useWindowSize()
 

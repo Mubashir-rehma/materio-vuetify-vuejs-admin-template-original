@@ -1,13 +1,15 @@
 import type { VuetifyOptions } from 'vuetify'
 import { themeConfig } from '@themeConfig'
 
+export const staticPrimaryColor = '#a169ff'
+
 const theme: VuetifyOptions['theme'] = {
   defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
   themes: {
     light: {
       dark: false,
       colors: {
-        'primary': localStorage.getItem(`${themeConfig.app.title}-lightThemePrimaryColor`) || '#a169ff',
+        'primary': localStorage.getItem(`${themeConfig.app.title}-lightThemePrimaryColor`) || staticPrimaryColor,
         'secondary': '#677492',
         'on-secondary': '#fff',
         'success': '#40c057',
@@ -42,7 +44,7 @@ const theme: VuetifyOptions['theme'] = {
     dark: {
       dark: true,
       colors: {
-        'primary': localStorage.getItem(`${themeConfig.app.title}-darkThemePrimaryColor`) || '#a169ff',
+        'primary': localStorage.getItem(`${themeConfig.app.title}-darkThemePrimaryColor`) || staticPrimaryColor,
         'secondary': '#677492',
         'on-secondary': '#fff',
         'success': '#40c057',

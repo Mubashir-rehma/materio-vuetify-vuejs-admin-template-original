@@ -334,7 +334,7 @@ const computedMoreList = computed(() => {
             </td>
 
             <!-- 👉 Email -->
-            <td class="text-medium-emphasis">
+            <td>
               {{ user.email }}
             </td>
 
@@ -346,7 +346,7 @@ const computedMoreList = computed(() => {
                 :size="22"
                 class="me-3"
               />
-              <span class="text-capitalize text-medium-emphasis">{{ user.role }}</span>
+              <span class="text-capitalize">{{ user.role }}</span>
             </td>
 
             <!-- 👉 Plan -->

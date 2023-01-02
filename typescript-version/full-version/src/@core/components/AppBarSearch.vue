@@ -134,7 +134,6 @@ const resolveCategories = (val: string) => {
           <!-- 👉 Prepend Inner -->
           <template #prepend-inner>
             <VIcon
-              size="22"
               icon="mdi-magnify"
               class="text-high-emphasis mt-1"
             />
@@ -150,18 +149,9 @@ const resolveCategories = (val: string) => {
                 [esc]
               </div>
 
-              <VBtn
-                icon
-                variant="text"
-                color="default"
-                size="x-small"
-                @click="clearSearchAndCloseDialog"
-              >
-                <VIcon
-                  size="22"
-                  icon="mdi-close"
-                />
-              </VBtn>
+              <IconBtn @click="clearSearchAndCloseDialog">
+                <VIcon icon="mdi-close" />
+              </IconBtn>
             </div>
           </template>
         </VTextField>

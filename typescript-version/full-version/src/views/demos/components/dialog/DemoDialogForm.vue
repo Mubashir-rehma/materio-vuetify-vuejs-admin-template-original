@@ -23,6 +23,12 @@ const interest = ref<string[]>([])
 
     <!-- Dialog Content -->
     <VCard title="User Profile">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         <VRow>
           <VCol

@@ -10,7 +10,7 @@ export default {
   },
   VAlert: {
     density: 'comfortable',
-     VBtn: {
+    VBtn: {
       color: undefined,
     },
   },

@@ -56,20 +56,15 @@ const store = useChatStore()
       class="ms-4 me-1 chat-list-search"
     />
 
-    <VBtn
+    <IconBtn
       v-if="$vuetify.display.smAndDown"
-      variant="text"
-      color="default"
-      icon
-      size="small"
       @click="$emit('close')"
     >
       <VIcon
-        size="24"
         icon="mdi-close"
         class="text-medium-emphasis"
       />
-    </VBtn>
+    </IconBtn>
   </div>
   <VDivider />
 

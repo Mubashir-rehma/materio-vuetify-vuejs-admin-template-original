@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import pdf from '@images/icons/project-icons/pdf.png'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import pdf from '@images/icons/project-icons/pdf.png'
@@ -94,29 +93,18 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
 
             <!-- 👉 Person Actions -->
             <div>
-              <VBtn
-                size="x-small"
-                variant="plain"
-                color="secondary"
-                icon
-                class="me-2"
-              >
+              <IconBtn class="me-2">
                 <VIcon
                   size="20"
                   icon="mdi-message-outline"
                 />
-              </VBtn>
-              <VBtn
-                size="x-small"
-                variant="plain"
-                color="secondary"
-                icon
-              >
+              </IconBtn>
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-phone"
                 />
-              </VBtn>
+              </IconBtn>
             </div>
           </div>
         </VTimelineItem>

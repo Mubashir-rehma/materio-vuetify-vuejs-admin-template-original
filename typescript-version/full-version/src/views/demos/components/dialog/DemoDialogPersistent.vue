@@ -17,6 +17,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Use Google's location service?">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
       </VCardText>

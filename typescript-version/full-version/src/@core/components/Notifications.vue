@@ -25,12 +25,7 @@ defineEmits<{
     :model-value="!!props.badgeProps"
     v-bind="props.badgeProps"
   >
-    <VBtn
-      icon
-      variant="text"
-      color="default"
-      size="small"
-    >
+    <IconBtn>
       <VBadge
         dot
         :model-value="!!props.notifications.length"
@@ -39,10 +34,7 @@ defineEmits<{
         offset-x="1"
         offset-y="1"
       >
-        <VIcon
-          icon="mdi-bell-outline"
-          size="24"
-        />
+        <VIcon icon="mdi-bell-outline" />
       </VBadge>
 
       <VMenu
@@ -121,7 +113,7 @@ defineEmits<{
           </VCardText>
         </VCard>
       </VMenu>
-    </VBtn>
+    </IconBtn>
   </VBadge>
 </template>
 

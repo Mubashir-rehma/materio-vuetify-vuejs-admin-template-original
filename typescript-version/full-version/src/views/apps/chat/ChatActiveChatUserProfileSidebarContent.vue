@@ -20,19 +20,12 @@ const { resolveAvatarBadgeVariant } = useChat()
       class="pt-2 me-2"
       :class="$vuetify.locale.isRtl ? 'text-left' : 'text-right'"
     >
-      <VBtn
-        variant="text"
-        color="default"
-        icon
-        size="small"
-        @click="$emit('close')"
-      >
+      <IconBtn @click="$emit('close')">
         <VIcon
-          size="24"
           icon="mdi-close"
           class="text-medium-emphasis"
         />
-      </VBtn>
+      </IconBtn>
     </div>
 
     <!-- User Avatar + Name + Role -->

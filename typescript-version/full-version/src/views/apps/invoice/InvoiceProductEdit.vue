@@ -197,18 +197,14 @@ watch(totalPrice, () => {
       class="d-flex flex-column item-actions pa-1"
       :class="$vuetify.display.smAndUp ? 'border-s' : 'border-b' "
     >
-      <VBtn
-        icon
-        size="x-small"
-        color="default"
-        variant="text"
+      <IconBtn
         @click="removeProduct"
       >
         <VIcon
           :size="20"
           icon="mdi-close"
         />
-      </VBtn>
+      </IconBtn>
     </div>
   </VCard>
 </template>

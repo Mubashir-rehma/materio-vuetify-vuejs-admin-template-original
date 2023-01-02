@@ -33,7 +33,7 @@ watch(selectedOption, () => {
         v-bind="gridColumn"
       >
         <VLabel
-          class="custom-input custom-radio rounded"
+          class="custom-input custom-radio rounded cursor-pointer"
           :class="selectedOption === item.value ? 'active' : ''"
         >
           <div>

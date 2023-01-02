@@ -89,6 +89,14 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
 
 // file input
 const refInputEl = ref<HTMLElement>()
+
+const moreList = [
+  { title: 'View Contact', value: 'View Contact' },
+  { title: 'Mute Notifications', value: 'Mute Notifications' },
+  { title: 'Block Contact', value: 'Block Contact' },
+  { title: 'Clear Chat', value: 'Clear Chat' },
+  { title: 'Report', value: 'Report' },
+]
 </script>
 
 <template>
@@ -149,19 +157,12 @@ const refInputEl = ref<HTMLElement>()
         <!-- 👉 Active chat header -->
         <div class="active-chat-header d-flex align-center text-medium-emphasis">
           <!-- Sidebar toggler -->
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
+          <IconBtn
             class="d-md-none me-3"
             @click="isLeftSidebarOpen = true"
           >
-            <VIcon
-              size="24"
-              icon="mdi-menu"
-            />
-          </VBtn>
+            <VIcon icon="mdi-menu" />
+          </IconBtn>
 
           <!-- avatar -->
           <div
@@ -203,64 +204,18 @@ const refInputEl = ref<HTMLElement>()
 
           <!-- Header right content -->
           <div class="d-sm-flex align-center d-none">
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-phone"
-              />
-            </VBtn>
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-video-outline"
-              />
-            </VBtn>
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-magnify"
-              />
-            </VBtn>
+            <IconBtn>
+              <VIcon icon="mdi-phone" />
+            </IconBtn>
+            <IconBtn>
+              <VIcon icon="mdi-video-outline" />
+            </IconBtn>
+            <IconBtn>
+              <VIcon icon="mdi-magnify" />
+            </IconBtn>
           </div>
 
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-
-            <VMenu activator="parent">
-              <VList>
-                <VListItem
-                  v-for="(item, index) in ['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']"
-                  :key="index"
-                  :value="index"
-                >
-                  <VListItemTitle>{{ item }}</VListItemTitle>
-                </VListItem>
-              </VList>
-            </VMenu>
-          </VBtn>
+          <MoreBtn :menu-list="moreList" />
         </div>
 
         <VDivider />
@@ -289,31 +244,16 @@ const refInputEl = ref<HTMLElement>()
             autofocus
           >
             <template #append-inner>
-              <VBtn
-                icon
-                size="small"
-                variant="text"
-                color="default"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-microphone-outline"
-                />
-              </VBtn>
+              <IconBtn>
+                <VIcon icon="mdi-microphone-outline" />
+              </IconBtn>
 
-              <VBtn
-                icon
-                size="small"
-                variant="text"
-                color="default"
+              <IconBtn
                 class="me-4"
                 @click="refInputEl?.click()"
               >
-                <VIcon
-                  size="24"
-                  icon="mdi-attachment"
-                />
-              </VBtn>
+                <VIcon icon="mdi-attachment" />
+              </IconBtn>
 
               <VBtn @click="sendMessage">
                 Send

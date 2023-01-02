@@ -154,18 +154,16 @@ const socialAccounts = ref([
               </VListItemSubtitle>
 
               <template #append>
-                <VBtn
-                  icon
-                  color="secondary"
+                <IconBtn
+                  :color="account.connected ? 'error' : 'secondary'"
                   variant="tonal"
-                  size="small"
                   class="rounded"
                 >
                   <VIcon
                     size="20"
                     :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
                   />
-                </VBtn>
+                </IconBtn>
               </template>
             </VListItem>
           </VList>

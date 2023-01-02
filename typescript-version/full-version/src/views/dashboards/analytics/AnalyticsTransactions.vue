@@ -34,17 +34,7 @@ const statistics = [
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            color="default"
-            size="x-small"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>

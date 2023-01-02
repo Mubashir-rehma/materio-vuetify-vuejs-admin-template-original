@@ -14,6 +14,12 @@ const isDialogTwoShow = ref(false)
     class="v-dialog-sm"
   >
     <VCard title="Dialog">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Biscuit fruitcake marshmallow jelly beans jujubes halvah cupcake topping. Chocolate cookie jelly-o toffee tart oat cake. Tart sugar plum gingerbread halvah muffin sweet. Cake halvah tart soufflé pudding.
       </VCardText>
@@ -39,6 +45,12 @@ const isDialogTwoShow = ref(false)
     class="v-dialog-sm"
   >
     <VCard title="Dialog 2">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogTwoShow = false"
+      />
+
       <VCardText>I'm a nested dialog.</VCardText>
       <VCardActions>
         <VSpacer />

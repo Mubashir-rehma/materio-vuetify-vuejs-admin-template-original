@@ -19,6 +19,13 @@ const fetchProjectData = () => {
 }
 
 watch(router, fetchProjectData, { immediate: true })
+
+const moreBtnList = [
+  { title: 'Share connection', value: 'Share connection' },
+  { title: 'Block connection', value: 'Block connection' },
+  { type: 'divider', class: 'my-2' },
+  { title: 'Delete', value: 'Delete', class: 'text-error' },
+]
 </script>
 
 <template>
@@ -32,37 +39,10 @@ watch(router, fetchProjectData, { immediate: true })
     >
       <VCard>
         <div class="vertical-more">
-          <VBtn
-            icon
-            variant="text"
-            color="default"
-            size="x-small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-
-            <VMenu activator="parent">
-              <VList density="compact">
-                <VListItem
-                  v-for="(item, index) in ['Share connection', 'Block connection']"
-                  :key="index"
-                  :value="index"
-                >
-                  <VListItemTitle>{{ item }}</VListItemTitle>
-                </VListItem>
-
-                <VDivider class="my-2" />
-
-                <VListItem
-                  title="Delete"
-                  value="Delete"
-                  class="text-error"
-                />
-              </VList>
-            </VMenu>
-          </VBtn>
+          <MoreBtn
+            item-props
+            :menu-list="moreBtnList"
+          />
         </div>
 
         <VCardItem>
@@ -121,18 +101,12 @@ watch(router, fetchProjectData, { immediate: true })
               Connected
             </VBtn>
 
-            <VBtn
-              icon
+            <IconBtn
               variant="tonal"
-              color="default"
-              size="small"
               class="rounded"
             >
-              <VIcon
-                size="24"
-                icon="mdi-email-outline"
-              />
-            </VBtn>
+              <VIcon icon="mdi-email-outline" />
+            </IconBtn>
           </div>
         </VCardText>
       </VCard>

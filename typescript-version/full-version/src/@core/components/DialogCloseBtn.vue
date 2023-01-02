@@ -11,13 +11,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <VBtn
-    icon
-    class="v-dialog-close-btn"
-  >
+  <IconBtn class="v-dialog-close-btn">
     <VIcon
       :icon="props.icon"
       :size="props.iconSize"
     />
-  </VBtn>
+  </IconBtn>
 </template>

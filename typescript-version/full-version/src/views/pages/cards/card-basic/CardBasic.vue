@@ -115,16 +115,12 @@ const isCardDetailsVisible = ref(false)
 
           <VSpacer />
 
-          <VBtn
-            icon
-            size="small"
-            @click="isCardDetailsVisible = !isCardDetailsVisible"
-          >
+          <IconBtn @click="isCardDetailsVisible = !isCardDetailsVisible">
             <VIcon
               size="20"
               :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
             />
-          </VBtn>
+          </IconBtn>
         </VCardActions>
 
         <VExpandTransition>
@@ -176,16 +172,12 @@ const isCardDetailsVisible = ref(false)
                 <span class="ms-2">Add to cart</span>
               </VBtn>
 
-              <VBtn
-                color="secondary"
-                size="small"
-                icon
-              >
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-share-variant"
                 />
-              </VBtn>
+              </IconBtn>
             </VCardActions>
           </div>
         </div>

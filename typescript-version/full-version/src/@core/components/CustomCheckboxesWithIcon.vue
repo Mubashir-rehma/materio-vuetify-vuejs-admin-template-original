@@ -32,7 +32,7 @@ watch(selectedOption, () => {
       v-bind="gridColumn"
     >
       <VLabel
-        class="custom-input custom-checkbox rounded"
+        class="custom-input custom-checkbox rounded cursor-pointer"
         :class="selectedOption.includes(item.value) ? 'active' : ''"
       >
         <div class="d-flex flex-column align-center text-center gap-2">

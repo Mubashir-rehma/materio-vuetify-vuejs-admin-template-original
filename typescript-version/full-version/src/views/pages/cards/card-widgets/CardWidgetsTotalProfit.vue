@@ -153,17 +153,7 @@ const lastThreeTransactions = [
 
           <template #append>
             <div class="mt-n7 me-n3">
-              <VBtn
-                icon
-                size="x-small"
-                color="default"
-                variant="text"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-dots-vertical"
-                />
-              </VBtn>
+              <MoreBtn />
             </div>
           </template>
         </VCardItem>

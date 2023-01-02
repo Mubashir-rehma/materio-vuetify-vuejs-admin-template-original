@@ -78,6 +78,12 @@ const resolveUserProgressVariant = (progress: number) => {
 
   return 'secondary'
 }
+
+const moreList = [
+  { title: 'Download', value: 'Download' },
+  { title: 'Delete', value: 'Delete' },
+  { title: 'View', value: 'View' },
+]
 </script>
 
 <template>
@@ -137,30 +143,8 @@ const resolveUserProgressVariant = (progress: number) => {
             </div>
           </td>
 
-          <td class="text-medium-emphasis">
-            <VBtn
-              icon
-              size="small"
-              variant="text"
-              color="default"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-dots-vertical"
-              />
-
-              <VMenu activator="parent">
-                <VList density="compact">
-                  <VListItem
-                    v-for="(item, index) in ['Download', 'Delete', 'View']"
-                    :key="index"
-                    :value="index"
-                  >
-                    <VListItemTitle>{{ item }}</VListItemTitle>
-                  </VListItem>
-                </VList>
-              </VMenu>
-            </VBtn>
+          <td>
+            <MoreBtn :menu-list="moreList" />
           </td>
         </tr>
       </tbody>

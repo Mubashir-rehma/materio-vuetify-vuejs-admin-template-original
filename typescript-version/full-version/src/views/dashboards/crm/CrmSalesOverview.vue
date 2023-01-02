@@ -98,17 +98,7 @@ const salesOverviews = [
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            color="default"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -138,7 +128,7 @@ const salesOverviews = [
                 color="primary"
                 variant="tonal"
               >
-                <VIcon icon="mdi-currency-usd" />
+                < icon="mdi-currency-usd" />
               </VAvatar>
             </div>
 
@@ -160,11 +150,11 @@ const salesOverviews = [
               cols="6"
             >
               <p class="mb-1">
-                <VIcon
-                  icon="mdi-checkbox-blank-circle"
-                  color="primary"
-                  size="12"
-                  class="me-2"
+                <
+                icon="mdi-checkbox-blank-circle"
+                color="primary"
+                size="12"
+                class="me-2"
                 />
                 <span>{{ sale.product }}</span>
               </p>

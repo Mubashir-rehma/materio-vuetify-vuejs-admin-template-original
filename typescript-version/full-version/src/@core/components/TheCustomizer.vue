@@ -92,18 +92,12 @@ const headerValues = computed(() => {
           </h6>
           <span class="text-body-1">Customize & Preview in Real Time</span>
         </div>
-        <VBtn
-          icon
-          variant="text"
-          color="secondary"
-          size="x-small"
-          @click="isNavDrawerOpen = false"
-        >
+        <IconBtn @click="isNavDrawerOpen = false">
           <VIcon
             icon="mdi-close"
             size="20"
           />
-        </VBtn>
+        </IconBtn>
       </div>
 
       <VDivider />

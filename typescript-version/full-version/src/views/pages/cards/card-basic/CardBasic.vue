@@ -237,7 +237,7 @@ const isCardDetailsVisible = ref(false)
 
     <!-- 👉 Apple Watch card -->
     <VCol
-      lg="4"
+      md="4"
       sm="6"
       cols="12"
     >
@@ -269,8 +269,7 @@ const isCardDetailsVisible = ref(false)
 
     <!-- 👉 Lifetime Membership -->
     <VCol
-      md="6"
-      lg="8"
+      md="8"
       cols="12"
     >
       <VCard>
@@ -278,7 +277,6 @@ const isCardDetailsVisible = ref(false)
           <VCol
             cols="12"
             sm="8"
-            md="12"
             lg="7"
             order="2"
             order-lg="1"
@@ -342,7 +340,6 @@ const isCardDetailsVisible = ref(false)
           <VCol
             cols="12"
             sm="4"
-            md="12"
             lg="5"
             order="1"
             order-lg="2"

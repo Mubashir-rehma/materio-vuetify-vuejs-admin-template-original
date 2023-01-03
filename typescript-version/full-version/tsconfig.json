@@ -3,7 +3,6 @@
     "baseUrl": "./",
     "target": "esnext",
     "useDefineForClassFields": true,
-    "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "moduleResolution": "node",
     "isolatedModules": true,

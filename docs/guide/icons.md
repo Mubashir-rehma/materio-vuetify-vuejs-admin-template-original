@@ -8,7 +8,7 @@ We have used Material Design Icons from the **Iconify** library in the whole tem
 We are using the offline icons with the help of Iconify bundle and we suggest you do the same. If you want to use very few icons from other libraries, then you may use online icons directly from the public API of Iconify.
 :::
 
-::: danger Heads Up!
+::: danger Heads Up! (TypeScript version only)
 The `src/@iconify/tsconfig.json` file is different from the `tsconfig.json` file and thus do not delete the `src/@iconify/tsconfig.json` file from your project; otherwise, you will not be able to generate icon bundle from the `yarn build:icons` command.
 :::
 
@@ -23,7 +23,7 @@ This also allows rendering icons when internet access is not available and you a
 The following files are necessary to generate Iconify bundle:
 
 - `src/@iconify/build-icons.js`
-- `src/@iconify/build-icons.ts`
+- `src/@iconify/build-icons.ts (typescript version only)`
 - `src/@iconify/icons-bundle.js`
 - `src/@iconify/tsconfig.json`
 - `package.json`
@@ -31,6 +31,22 @@ The following files are necessary to generate Iconify bundle:
 ## How to Generate Bundle?
 
 You can generate the bundle with a wide variety of emojis, flags, brand logos, SVGs & icons and use them even when internet access is not available. To generate such icons, you just need to add your desired icon library, any specific icon(s), a custom JSON file created by you, custom SVG(s) created by you or any emoji(s).
+
+### Install the icon libraries
+
+To install an icon library from the Iconify collection, you will need to install the specific icon library that you want to use. Here's how you can do that:
+
+```sh
+yarn add @iconify-json/library-name
+
+# For Example
+
+yarn add @iconify-json/mdi
+```
+
+:::tip
+Each icon set is available as a separate NPM package. Package name is `@iconify-json/{prefix},` where `"{prefix}"` is icon set prefix.
+:::
 
 ### Generate all icons from an icon library
 
@@ -280,11 +296,11 @@ const sources = {
 </code-block>
 </code-group>
 
-### Target & Import
+<!-- ### Target & Import -->
 
-Once you have added all the icons that are necessary for your project, you need to set the file path in which the whole icon bundle gets generated.
+<!-- Once you have added all the icons that are necessary for your project, you need to set the file path in which the whole icon bundle gets generated.
 
-Search for the term `const target =` in the `src/@iconify/build-icons.ts` or `src/@iconify/build-icons.js` file and set a file path which is suitable for your project. Once the file path is set, you need to update that file path in the `src/pages/_app.tsx` or `src/pages/_app.js` file as well. Once the import statement is updated in the `src/pages/_app.tsx` or `src/pages/_app.js` file, you can use Iconify Vue Component anywhere in the template.
+Search for the term `const target =` in the `src/@iconify/build-icons.ts` or `src/@iconify/build-icons.js` file and set a file path which is suitable for your project. Once the file path is set, you need to update that file path in the `src/main.ts` or `src/main.js` file as well. Once the import statement is updated in the `src/main.ts` or `src/main.js` file, you can use Iconify Vue Component anywhere in the template.
 
 We have set the value of `target` as:
 
@@ -295,8 +311,8 @@ const target = 'src/@iconify/icons-bundle.js'
 and the import statement as:
 
 ```tsx
-import 'src/@iconify/icons-bundle-vue'
-```
+import '@/@iconify/icons-bundle'
+``` -->
 
 ### Run the command
 
@@ -324,7 +340,7 @@ The bundle is generated once you have added the icons, set the target, updated t
 
 When you run the command, the `src/@iconify/build-icons.ts` file is compiled to the `src/@iconify/build-icons.js` file. Once the compilation is completed, the compiled file gets all the icon data from Iconify. After retrieving the icon data, the icon data is wrapped in a callback to create a JavaScript file. The callback function used is `addCollection()` which is provided by the `@iconify/vue` package.
 
-In our case, the final JavaScript file is created as the `src/@iconify/icons-bundle.js` file. In this file, the icon data is collected and wrapped with the `addCollection()` callback function. So you don't have to handle anything from your side. You just have to import this file into the `src/pages/_app.tsx` file.
+In our case, the final JavaScript file is created as the `src/@iconify/icons-bundle.js` file. In this file, the icon data is collected and wrapped with the `addCollection()` callback function. So you don't have to handle anything from your side. You just have to import this file into the `src/main.ts` file.
 
 ### JavaScript
 
@@ -332,78 +348,45 @@ The bundle is generated once you have added the icons, set the target, updated t
 
 When you run the command, the `src/@iconify/build-icons.js` file gets all the icon data from Iconify. After retrieving the icon data, the icon data is wrapped in a callback to create a JavaScript file. The callback function used is `addCollection()` which is provided by the `@iconify/vue` package.
 
-In our case, the final JavaScript file is created as the `src/@iconify/icons-bundle.js` file. In this file, the icon data is collected and wrapped with the `addCollection()` callback function. So you don't have to handle anything from your side. You just have to import this file into the `src/pages/_app.js` file.
+In our case, the final JavaScript file is created as the `src/@iconify/icons-bundle.js` file. In this file, the icon data is collected and wrapped with the `addCollection()` callback function. So you don't have to handle anything from your side. You just have to import this file into the `src/main.js` file.
 
 ## Usage
 
+We have already integrated the Iconify icon library into our Vuetify project, so we can use the `VIcon` component to render the icons directly.
+
 ### Props
 
-You may visit this [docs](https://docs.iconify.design/icon-components/vue/#properties) provided by Iconify to refer to all the props of the Iconify Vue Component.
+You may visit this [docs](https://next.vuetifyjs.com/en/api/v-icon/) provided by Vuetify to refer to all the props of the `VIcon` Vuetify Component.
 
-### How to use Iconify Vue Component?
+### How to use VIcon Vuetify Component?
 
-Import the Iconify Vue Component as given below:
+We can use Vuetify's VIcon component:
 
-```tsx
-import Icon from 'src/@core/components/icon'
+```vue
+<VIcon icon="mdi-home"></VIcon>
 ```
 
-If you want the default `font-size` of the Iconify Vue Component as `16px`, you need to import the following component:
-
-```tsx
-import { Icon } from '@iconify/vue'
-```
-
-Here is an example:
-
-```tsx
-import Icon from 'src/@core/components/icon'
-
-const Component = () => {
-  return <Icon icon='mdi:material-ui' />
-}
-
-export default Component
-```
-
-In the example given above, `mdi` is Material Design Icons (icon library provided by Iconify) and `material-ui` is an icon which is in the `mdi` icon library.
+In the example given above, `mdi` is Material Design Icons (icon library provided by Iconify) and `home` is an icon which is in the `mdi` icon library.
 
 #### Use some different icon library
 
 Suppose you want to use the Font Awesome Solid icon library. Please follow [these](/guide/layout/icons.html#how-to-generate-bundle) instructions to add the icons from the Font Awesome Solid icon library. Here is an example to use an icon from the Font Awesome Solid icon library:
 
-```tsx
-import Icon from 'src/@core/components/icon'
-
-const Component = () => {
-  return <Icon icon='fa6-solid:bicycle' />
-}
-
-export default Component
+```vue
+<VIcon icon='fa6-solid-bicycle' />
 ```
 
 In the example given above, `fa6-solid` is Font Awesome Solid icon library and `bicycle` is an icon which is in the `fa6-solid` icon library.
 
-### Style an icon using MUI component
+### Style an icon using Vuetify component
 
-Here is an example to change the color of an icon using an MUI component:
+Here is an example to change the color of an icon using an Vuetify component:
 
-```tsx
-import Box from '@mui/material/Box'
-import Icon from 'src/@core/components/icon'
-
-const Component = () => {
-  return (
-    <Box sx={{ display: 'flex', color: theme => theme.palette.primary.main }}>
-      <Icon icon='mdi:material-ui' />
-    </Box>
-  )
-}
-
-export default Component
+```vue
+<VIcon color="primary" icon="mdi-vuetify"></VIcon>
 ```
 
-## Use icon from Iconify public API
+## Use icon from Iconify public API <Badge type="tip" text="Advance" vertical="middle" />
 
 By default, Iconify icon components use Iconify public API. Iconify icon components also cache loaded icons in the browser cache and/or browser storage, so icon data needs to be loaded only once.
 

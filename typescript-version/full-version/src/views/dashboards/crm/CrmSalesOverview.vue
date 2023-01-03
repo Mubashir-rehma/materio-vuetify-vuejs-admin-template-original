@@ -128,7 +128,7 @@ const salesOverviews = [
                 color="primary"
                 variant="tonal"
               >
-                < icon="mdi-currency-usd" />
+                <VIcon icon="mdi-currency-usd" />
               </VAvatar>
             </div>
 
@@ -150,11 +150,11 @@ const salesOverviews = [
               cols="6"
             >
               <p class="mb-1">
-                <
-                icon="mdi-checkbox-blank-circle"
-                color="primary"
-                size="12"
-                class="me-2"
+                <VIcon
+                  icon="mdi-checkbox-blank-circle"
+                  color="primary"
+                  size="12"
+                  class="me-2"
                 />
                 <span>{{ sale.product }}</span>
               </p>

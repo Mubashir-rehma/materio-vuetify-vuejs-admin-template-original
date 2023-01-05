@@ -34,6 +34,7 @@ $card-transition-property-custom: box-shadow, opacity;
   $card-item-padding: 1.25rem !default,
   $card-actions-padding: 0 12px 12px !default,
   $card-transition-property: $card-transition-property-custom !default,
+  $card-subtitle-opacity: 1 !default,
 
   // 👉 Expansion Panel
   $expansion-panel-active-title-min-height: 48px !default,

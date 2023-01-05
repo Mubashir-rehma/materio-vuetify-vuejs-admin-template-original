@@ -202,7 +202,7 @@ const refreshOpenedEmail = async () => {
     <VMain>
       <VCard
         flat
-        class="h-100 d-flex flex-column"
+        class="email-content-list h-100 d-flex flex-column"
       >
         <div class="d-flex align-center">
           <IconBtn
@@ -434,6 +434,11 @@ meta:
       @include mixins.bordered-skin($sel-email-app-layout);
     }
   }
+}
+
+.email-content-list {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
 }
 
 .email-list {

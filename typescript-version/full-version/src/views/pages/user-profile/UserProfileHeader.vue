@@ -15,7 +15,12 @@ fetchHeaderData()
 
 <template>
   <VCard v-if="profileHeaderData">
-    <VImg :src="profileHeaderData.coverImg" />
+    <VImg
+      :src="profileHeaderData.coverImg"
+      min-height="125"
+      max-height="250"
+      cover
+    />
 
     <VCardText class="d-flex align-bottom flex-sm-row flex-column justify-center gap-x-6">
       <div class="d-flex h-0">

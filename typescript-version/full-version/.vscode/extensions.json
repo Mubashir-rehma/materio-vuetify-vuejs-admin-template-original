@@ -10,6 +10,7 @@
     "vue.volar",
     "antfu.iconify",
     "cipchk.cssrem",
-    "lukas-tr.materialdesignicons-intellisense"
+    "lukas-tr.materialdesignicons-intellisense",
+    "vsls-contrib.codetour"
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "1. First Visit",
+  "steps": [
+    {
+      "file": "index.html",
+      "description": "## Vue intializes\n\nFirst of all vue app gets loaded",
+      "line": 25
+    },
+    {
+      "file": "src/main.ts",
+      "description": "## CASL intializes\n\nAlong with other plugins, [CASL](https://casl.js.org/v6/en/package/casl-vue) (Access Control library) gets initialized.\n\nNotice we are assigning ability to user of the app by passing `ability` imported from `@/plugins/casl/ability`.",
+      "line": 30,
+      "selection": {
+        "start": {
+          "line": 28,
+          "character": 1
+        },
+        "end": {
+          "line": 30,
+          "character": 3
+        }
+      }
+    },
+    {
+      "file": "src/plugins/casl/ability.ts",
+      "description": "## Read existing ability from localStorage\n\nTo determine the abilities of the user, we can check for the presence of the `userAbilities` key and its value in localStorage.\n\nThis is necessary because when a user logs in and then reloads the page, the assigned abilities are lost and need to be retrieved from storage. By storing the user's abilities in localStorage, we can ensure that they are persisted even after the page is reloaded.",
+      "line": 15
+    },
+    {
+      "file": "src/plugins/casl/ability.ts",
+      "description": "## Parse ability retrieved from localStorage\n\nIf the `userAbilities` key is present in localStorage, we will retrieve it as a string in the `stringifiedUserAbilities` variable. This is because we stored the ability object using `JSON.stringify`. In order to obtain the JavaScript object from the stringified object, we need to use `JSON.parse`.\n\nThe `existingAbility` constant will hold either the existing ability object or `null` if no ability is found.",
+      "line": 16,
+      "selection": {
+        "start": {
+          "line": 15,
+          "character": 1
+        },
+        "end": {
+          "line": 18,
+          "character": 62
+        }
+      }
+    },
+    {
+      "file": "src/plugins/casl/ability.ts",
+      "description": "## Create `Ability` instance\n\nTo create an `Ability` instance, we use the code `existingAbility || initialAbility`. This means that if the user already has an existing ability, that ability will be used. Otherwise, the initial ability will be assigned. The initial ability is defined in `initialAbility`.\n\nWhen a user visits our Vue app for the first time, they will not have any existing ability, so they will always be assigned the `initialAbility` when they visit for the first time.\n\nIt is important to make sure that there are enough abilities included in `initialAbility` so that first-time users can visit public pages such as the login page, the 404 page, the not authorized page, the register page, and the forgot password page.",
+      "line": 21,
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 28
+        },
+        "end": {
+          "line": 18,
+          "character": 61
+        }
+      }
+    },
+    {
+      "file": "src/main.ts",
+      "description": "## App starts navigation\n\nNow, all plugins are loaded and Vue Router starts navigation.",
+      "line": 33
+    },
+    {
+      "file": "src/router/index.ts",
+      "description": "## Router's `beforeEach` guard (Routing ACL)\n\nWhen a user navigates to a new page in a Vue app, Vue Router will trigger [navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html) to check if the user is allowed to access the page. The [beforeEach](https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards) guard is one of these navigation guards.\n\nUsing this we are checking if the user has the necessary abilities to access the requested page. If the user does not have the enough abilities, the `beforeEach` guard will redirect them to an appropriate location (such as a \"not authorized\" page).\n\nIf the user has the enough abilities, the `beforeEach` guard will allow them to proceed to the requested page. This helps to ensure that users can only access pages that they are allowed to based on their abilities.",
+      "line": 39
+    },
+    {
+      "file": "src/router/index.ts",
+      "description": "## Check user is logged in?\n\nTo check if the user is logged in, we can check for the presence of `accessToken` and `userData` in localStorage. If either of these values is missing, we can conclude that the user is not logged in and set `isLoggedIn` to `false`.\n\nWe will later use this variable in our navigation guard.",
+      "line": 40
+    },
+    {
+      "file": "src/router/index.ts",
+      "description": "## Can user navigate to requested route?\n\nTo determine if the user can navigate to the route, the `canNavigate` function uses the [`can`](https://casl.js.org/v6/en/guide/intro#basics) method from the CASL library. `canNavigate` read requested route's (_in this, it's `to`_) meta `action` & `subject` and pass it to `can` method.",
+      "line": 64
+    },
+    {
+      "file": "src/router/index.ts",
+      "description": "## Redirect if accessing page that is forbidden for logged in users\n\nWe are in this block, that means user can navigate to requested route. However, there are certain pages in your app you want to restrict visiting after login. This pages includes Login, Register, Forgot password, etc.\n\nTo achieve this, we will use route meta `redirectIfLoggedIn`. At the moment, user is logged in and if `redirectIfLoggedIn` route meta is present in requested route then we will redirect user to home page.\n\nThis is useful for ensuring that logged in users cannot access pages such as the login or registration page, which they should not need to visit again once they are already logged in.\n\n---\n\nIf a route's meta doesn't have `redirectIfLoggedIn` set to `true`, then the user will be allowed to visit the page without any redirection occurring. This is common behavior when a user is logged in and trying to access pages that they are permitted to visit.",
+      "line": 66,
+      "selection": {
+        "start": {
+          "line": 65,
+          "character": 1
+        },
+        "end": {
+          "line": 66,
+          "character": 17
+        }
+      }
+    },
+    {
+      "file": "src/router/index.ts",
+      "description": "## Redirect user on appropriate location\n\nWe are in `else` block that means user don't have enough abilities to visit the requested route.\n\nNext, we will check if user is logged in.\n- If user is logged in that means, user is trying to access restricted page  after login and we will simply redirect user to not authorized page (_indicates user don't have enough abilities to visit the page_).\n- If user is not logged in that means, user is trying to access page that is only for logged in users. Here, we will simply redirect user to login page so user can login. Moreover, we will take URL of request route and pass it as `to` query while redirect user to login page so we can redirect user to requested page after successful login.\n\nPassing requested route's URL in `to` query param is useful in cases where someone sent link to some specific page (_e.g. invoice page_) and user directly tries to access it. In this case, user will get redirected to login page and after login we will redirect user to requested page (_in this example, invoide page_) instead of redirecting user to home page.",
+      "line": 69
+    }
+  ]
+}

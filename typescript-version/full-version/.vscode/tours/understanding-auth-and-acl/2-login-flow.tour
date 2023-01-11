@@ -1,0 +1,56 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "2. Login Flow",
+  "steps": [
+    {
+      "file": "src/pages/login.vue",
+      "description": "## Landed/Redirected on login page\n\nAccording to \"First visit\" tour, we should get redirected to login page when we visit the vue app for first time.",
+      "line": 1
+    },
+    {
+      "file": "src/pages/login.vue",
+      "description": "## Submitting the login form\n\nNow, user will fill up the form and submit the form. Form submission will trigger this `login` method.",
+      "pattern": "const login = \\(\\) => {"
+    },
+    {
+      "file": "src/pages/login.vue",
+      "description": "## Login API call\n\nNow, Vue app will make POST request using axios with `email` and `password`.\n\nDo note that, in our demo we are mocking/facking API call. In you case, you will have real API endpoint so make sure to update URL `/auth/login` to your auth URL.\n\nMoreover, make sure to disable mocking API calls by following our documentation.",
+      "pattern": "^[^\\S\\n]*axios\\.post<LoginResponse>\\('/auth/login', \\{ email: email\\.value, password: password\\.value \\}\\)"
+    },
+    {
+      "file": "src/pages/login.vue",
+      "description": "## Successful API call\n\nWhen our API request is successful, it means that we have successfully logged in. In order to ensure that our login status is updated in Vue app & preserved even if we reload the browser, we need to make some changes to our Vue app.\n\nSpecifically, we need to update our Vue app so that it recognizes that we are logged in and displays the appropriate information or features.\n\nBy following upcoming steps, we can ensure that our login status is maintained even if the user refreshes the page or closes and reopens the app.",
+      "pattern": "}\\)(?=\\s+\\.catch\\(e => {)",
+      "selection": {
+        "start": {
+          "line": 29,
+          "character": 5
+        },
+        "end": {
+          "line": 40,
+          "character": 7
+        }
+      }
+    },
+    {
+      "file": "src/pages/login.vue",
+      "description": "## Extract response data\n\nAfter successful API request, we will extarct Access token, user data and user abilities from response (_`r.data`_) via [ES6 destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).\n\nAccording to marked code, your API response must contain mentioned data:\n- `accessToken` - User access token, This will be used in subsequent API call. (_e.g. eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mn0.cat2xMrZLn0FwicdGtZNzL7ifDTAKWB0k1RurSWjdnw_)\n- `userData` - User's data, it can include name, full name, image URL etc. It completely depends on what you need from user after login. (_e.g. { id: 1, fullName: 'John Doe', username: 'johndoe', avatar: 'https://xyz.jpeg' }_)\n- `userAbilities` - User's abilities, This is one of most important data for implmenting ACL. We will use these abilities later to update CASL's ability instance. (_e.g. [{ action: \"manage\", subject: \"users\" }, { ... }]_)\n\nIf your API response sends different data then we used please make sure to carefully understand the Auth & ACL and later update the code.",
+      "pattern": "^[^\\S\\n]*const \\{ accessToken, userData, userAbilities \\} = r\\.data",
+      "selection": {
+        "start": {
+          "line": 30,
+          "character": 7
+        },
+        "end": {
+          "line": 30,
+          "character": 62
+        }
+      }
+    },
+    {
+      "file": "src/pages/login.vue",
+      "description": "## Updating user abilities\n\nIn previous step, we retrieved user abilities from response data. Now, let's store this retrieved user ability in localStorage so we can get it back even if users reload the page or come back after closing our app.\n\nHere, we are storing user's abilities in localStorage under `userAbilities` key.\n\nAt the moment, user have initial abilities that allows user to visit public pages like login, registration, etc. However, now user is logged in and we know logged in user's abilities (_we retrieved it via API and stored in `userAbilities`_).\n\nSo let's update the user abilities in CASL instance so `can` method can use our new abilities to check if user can access particular entity. For this, we will use `ability.update` method and pass abilities we get from API response.",
+      "pattern": "^[^\\S\\n]*localStorage\\.setItem\\('userAbilities', JSON\\.stringify\\(userAbilities\\)\\)"
+    }
+  ]
+}

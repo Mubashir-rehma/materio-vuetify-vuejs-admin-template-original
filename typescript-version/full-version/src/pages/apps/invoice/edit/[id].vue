@@ -167,4 +167,3 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
     <InvoiceAddPaymentDrawer v-model:isDrawerOpen="isAddPaymentSidebarActive" />
   </VRow>
 </template>
-

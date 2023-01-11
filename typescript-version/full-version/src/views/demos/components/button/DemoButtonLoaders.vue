@@ -85,4 +85,3 @@ const load = (i: number) => {
     }
   }
   </style>
-

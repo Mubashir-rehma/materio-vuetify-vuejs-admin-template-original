@@ -117,8 +117,8 @@ const membersList: Member[] = [
           placeholder="Add project members..."
           density="compact"
         >
-          <template #item="{ props, item }">
-            <VListItem v-bind="props">
+          <template #item="{ props: listItemProp, item }">
+            <VListItem v-bind="listItemProp">
               <template #prepend>
                 <VAvatar
                   :image="item.raw.avatar"

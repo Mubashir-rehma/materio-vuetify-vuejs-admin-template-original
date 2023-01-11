@@ -15,4 +15,3 @@ export const menuProps = { ts: '', js: '' }
 export const multiple = { ts: '', js: '' }
 
 export const selectionSlot = { ts: '', js: '' }
-

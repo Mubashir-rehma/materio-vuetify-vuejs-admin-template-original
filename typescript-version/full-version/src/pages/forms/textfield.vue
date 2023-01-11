@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeTextfield';
+import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeTextfield'
 </script>
 
 <template>

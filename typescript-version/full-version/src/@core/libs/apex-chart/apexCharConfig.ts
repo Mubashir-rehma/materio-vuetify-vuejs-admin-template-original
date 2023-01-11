@@ -701,4 +701,3 @@ export const getRadarChartConfig = (themeColors: ThemeInstance['themes']['value'
     },
   }
 }
-

@@ -80,4 +80,3 @@ const chartOptions = computed(() => {
     }
   }
   </style>
-

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import '@fullcalendar/core/vdom' // solves problem with Vite
-
-// Local imports
 import FullCalendar from '@fullcalendar/vue3'
 import { blankEvent, useCalendar } from '@/views/apps/calendar/useCalendar'
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
@@ -125,7 +122,7 @@ const checkAll = computed({
 }
 
 .calendar-add-event-drawer {
-  &.v-navigation-drawer {
+  &.v-navigation-drawer:not(.v-navigation-drawer--temporary) {
     border-end-start-radius: 0.375rem;
     border-start-start-radius: 0.375rem;
   }

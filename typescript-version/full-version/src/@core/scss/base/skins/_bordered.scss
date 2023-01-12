@@ -19,13 +19,14 @@ $header: ".layout-navbar";
   @include mixins.bordered-skin(".layout-navbar-and-nav-container", "border-bottom");
 
   // -- Vertical
+  // ℹ️ We have added `.layout-navbar-sticky` as well in selector because we don't want to add borders if navbar is static
   @if variables.$layout-vertical-nav-navbar-is-contained {
-    @include mixins.bordered-skin(".layout-nav-type-vertical.window-scrolled #{$header}");
+    @include mixins.bordered-skin(".layout-nav-type-vertical.window-scrolled.layout-navbar-sticky #{$header}");
     .layout-nav-type-vertical.window-scrolled #{$header} {
-      border-block-start: none;
+      border-block-start: none !important;
     }
   } @else {
-    @include mixins.bordered-skin(".layout-nav-type-vertical.window-scrolled #{$header}", "border-bottom");
+    @include mixins.bordered-skin(".layout-nav-type-vertical.window-scrolled.layout-navbar-sticky #{$header}", "border-bottom");
   }
 
   // Footer

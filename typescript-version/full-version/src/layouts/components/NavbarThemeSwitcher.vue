@@ -3,6 +3,10 @@ import type { ThemeSwitcherTheme } from '@layouts/types'
 
 const themes: ThemeSwitcherTheme[] = [
   {
+    name: 'system',
+    icon: 'mdi-laptop',
+  },
+  {
     name: 'light',
     icon: 'mdi-weather-sunny',
   },

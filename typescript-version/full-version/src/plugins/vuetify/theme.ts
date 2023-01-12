@@ -1,10 +1,11 @@
 import type { VuetifyOptions } from 'vuetify'
+import { resolveVuetifyTheme } from '@core/utils/vuetify'
 import { themeConfig } from '@themeConfig'
 
 export const staticPrimaryColor = '#a169ff'
 
 const theme: VuetifyOptions['theme'] = {
-  defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
+  defaultTheme: resolveVuetifyTheme(),
   themes: {
     light: {
       dark: false,

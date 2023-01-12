@@ -32,7 +32,7 @@ Causes of npm install or yarn install issue can be due to various things which i
 
 To resolve such installation issues:
 
-- Please try again downloading the fresh package/zip from ThemeForest and perform the installation again.
+- Please try again downloading the fresh package/zip from the purchased site and perform the installation again.
 - Please make sure you are using the LTS version of a node that is recommended and not one with the latest features.
 - run `yarn cache clean` or `npm cache clean`
 - Try using yarn if possible (Recommended).

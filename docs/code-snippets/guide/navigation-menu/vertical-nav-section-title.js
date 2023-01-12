@@ -1,5 +1,3 @@
-/* @unocss-include */
-
 export default [
   {
     heading: 'Section',

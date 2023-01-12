@@ -27,10 +27,6 @@ This file should export and array of items so without any items file should look
 export default []
 ```
 
-:::warning Writing icon names in ts or js file
-Adding `/* @unocss-include */` comment on top is required to allow [UnoCSS](https://github.com/antfu/unocss) scan this file for icons.
-:::
-
 ### Vertical nav link
 
 Check below code snippet to add nav link:
@@ -90,10 +86,6 @@ This file should export and array of items so without any items file should look
 ```js
 export default []
 ```
-
-:::warning Writing icon names in ts or js file
-Adding `/* @unocss-include */` comment on top is required to allow [UnoCSS](https://github.com/antfu/unocss) scan this file for icons.
-:::
 
 ### Horizontal nav link
 

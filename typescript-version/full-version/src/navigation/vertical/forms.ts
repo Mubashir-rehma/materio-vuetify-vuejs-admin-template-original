@@ -4,6 +4,7 @@ export default [
     title: 'Form Elements',
     icon: { icon: 'mdi-content-copy' },
     children: [
+      { title: 'Autocomplete', to: 'forms-autocomplete' },
       { title: 'Checkbox', to: 'forms-checkbox' },
       { title: 'Combobox', to: 'forms-combobox' },
       { title: 'Date Time Picker', to: 'forms-date-time-picker' },

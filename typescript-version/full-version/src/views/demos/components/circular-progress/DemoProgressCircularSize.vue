@@ -1,7 +1,14 @@
 <template>
   <div class="demo-space-x">
     <VProgressCircular
-      :width="3"
+      :size="30"
+      width="3"
+      color="primary"
+      indeterminate
+    />
+
+    <VProgressCircular
+      :size="40"
       color="primary"
       indeterminate
     />
@@ -13,14 +20,7 @@
     />
 
     <VProgressCircular
-      :size="50"
-      color="primary"
-      indeterminate
-    />
-
-    <VProgressCircular
-      :size="70"
-      :width="7"
+      :size="60"
       color="primary"
       indeterminate
     />

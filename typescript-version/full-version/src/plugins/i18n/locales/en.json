@@ -17,6 +17,7 @@
   "Calendar": "Calendar",
   "Image": "Image",
   "Pagination": "Pagination",
+  "Autocomplete": "Autocomplete",
   "Progress": "Progress",
   "Tooltip": "Tooltip",
   "Slider": "Slider",

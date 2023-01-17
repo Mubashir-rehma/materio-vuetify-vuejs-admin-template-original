@@ -544,6 +544,13 @@ const database: SearchItem[] = [
     title: 'Custom Input',
     category: 'formsTables',
   },
+  {
+    id: 82,
+    url: { name: 'forms-autocomplete' },
+    icon: 'mdi-format-align-left',
+    title: 'Autocomplete',
+    category: 'formsTables',
+  },
 ]
 
 // ** GET Search Data

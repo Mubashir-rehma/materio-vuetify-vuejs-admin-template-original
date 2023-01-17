@@ -1,3 +1,4 @@
+@use "@styles/variables/_vuetify.scss" as vuetify;
 @use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
 @use "@layouts/styles/mixins" as layoutsMixins;
 
@@ -76,7 +77,7 @@
   .apexcharts-xaxistooltip-text,
   .apexcharts-yaxistooltip-text,
   .apexcharts-legend-text {
-    font-family: inherit !important;
+    font-family: vuetify.$body-font-family !important;
   }
 
   .apexcharts-pie-label {

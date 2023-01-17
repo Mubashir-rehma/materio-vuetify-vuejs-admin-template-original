@@ -110,7 +110,7 @@ const referAndEarnSteps = [
 
         <p>You can also copy and send it or share it on your social media. 🚀</p>
         <VForm
-          class="d-flex align-center gap-3"
+          class="d-flex align-center flex-wrap gap-3"
           @submit.prevent="() => {}"
         >
           <VTextField
@@ -125,38 +125,40 @@ const referAndEarnSteps = [
             </template>
           </VTextField>
 
-          <VBtn
-            icon
-            class="rounded"
-            color="#3B5998"
-          >
-            <VIcon
-              color="white"
-              icon="mdi-facebook"
-            />
-          </VBtn>
+          <div class="d-flex gap-3">
+            <VBtn
+              icon
+              class="rounded"
+              color="#3B5998"
+            >
+              <VIcon
+                color="white"
+                icon="mdi-facebook"
+              />
+            </VBtn>
 
-          <VBtn
-            icon
-            class="rounded"
-            color="#55ACEE"
-          >
-            <VIcon
-              color="white"
-              icon="mdi-twitter"
-            />
-          </VBtn>
+            <VBtn
+              icon
+              class="rounded"
+              color="#55ACEE"
+            >
+              <VIcon
+                color="white"
+                icon="mdi-twitter"
+              />
+            </VBtn>
 
-          <VBtn
-            icon
-            class="rounded"
-            color="#007BB6"
-          >
-            <VIcon
-              color="white"
-              icon="mdi-linkedin"
-            />
-          </VBtn>
+            <VBtn
+              icon
+              class="rounded"
+              color="#007BB6"
+            >
+              <VIcon
+                color="white"
+                icon="mdi-linkedin"
+              />
+            </VBtn>
+          </div>
         </VForm>
       </VCardText>
     </VCard>

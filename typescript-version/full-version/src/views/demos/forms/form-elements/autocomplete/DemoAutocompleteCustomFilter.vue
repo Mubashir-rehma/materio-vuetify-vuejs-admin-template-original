@@ -8,12 +8,11 @@ const states = [
 ]
 
 function customFilter(item: string, queryText: string, itemText: any) {
-  const textOne = itemText.raw.name.toLowerCase()
-  const textTwo = itemText.raw.abbr.toLowerCase()
+  const textOne = itemText.title.toLowerCase()
+  const textTwo = itemText.value.toLowerCase()
   const searchText = queryText.toLocaleLowerCase()
 
-  return textOne.includes(searchText)
-        || textTwo.includes(searchText)
+  return textOne.includes(searchText) || textTwo.includes(searchText)
 }
 </script>
 

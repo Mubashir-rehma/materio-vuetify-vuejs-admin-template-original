@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const isEditing = ref(false)
-const model = ref(null)
+const selectedState = ref(null)
 
 const states = [
   'Alabama',
@@ -67,7 +67,7 @@ const states = [
 
 <template>
   <VAutocomplete
-    v-model="model"
+    v-model="selectedState"
     :hint="!isEditing ? 'Click the icon to edit' : 'Click the icon to save'"
     :items="states"
     :readonly="!isEditing"

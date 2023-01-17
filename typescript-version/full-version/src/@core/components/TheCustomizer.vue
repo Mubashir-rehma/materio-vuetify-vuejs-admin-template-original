@@ -140,7 +140,7 @@ const headerValues = computed(() => {
           </h6>
           <div class="d-flex align-center">
             <VLabel
-              for="pricing-plan-toggle"
+              for="theme-toggler"
               class="me-3"
             >
               Light
@@ -148,7 +148,7 @@ const headerValues = computed(() => {
 
             <div>
               <VSwitch
-                id="pricing-plan-toggle"
+                id="theme-toggler"
                 v-model="theme"
                 label="Dark"
                 true-value="dark"

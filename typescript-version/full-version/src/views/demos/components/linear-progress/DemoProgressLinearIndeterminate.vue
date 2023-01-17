@@ -1,8 +1,6 @@
 <template>
-  <div class="demo-space-y">
-    <VProgressLinear
-      indeterminate
-      color="primary"
-    />
-  </div>
+  <VProgressLinear
+    indeterminate
+    color="primary"
+  />
 </template>

@@ -8,6 +8,10 @@ export default [
         icon: { icon: 'mdi-content-copy' },
         children: [
           {
+            title: 'Autocomplete',
+            to: 'forms-autocomplete',
+          },
+          {
             title: 'Checkbox',
             to: 'forms-checkbox',
           },

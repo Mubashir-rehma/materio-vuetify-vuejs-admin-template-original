@@ -83,7 +83,7 @@ const addressTypes = [
       <!-- 👉 Title -->
       <VCardItem>
         <VCardTitle class="text-h5 text-center">
-          {{ props.billingAddress.address ? 'Edit' : 'Add' }} Address
+          {{ props.billingAddress.address ? 'Edit' : 'Add New' }} Address
         </VCardTitle>
       </VCardItem>
 

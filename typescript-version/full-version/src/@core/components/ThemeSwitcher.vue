@@ -12,6 +12,11 @@ const { state: currentThemeName, next: getNextThemeName, index: currentThemeInde
 const changeTheme = () => {
   theme.value = getNextThemeName()
 }
+
+// Update icon if theme is changed from other sources
+watch(theme, val => {
+  currentThemeName.value = val
+})
 </script>
 
 <template>

@@ -232,3 +232,8 @@ h6,
 .v-label {
   opacity: 1;
 }
+
+// 👉 Overlay
+.v-overlay__scrim {
+  background: rgba(var(--v-overlay-scrim-background), var(--v-overlay-scrim-opacity));
+}

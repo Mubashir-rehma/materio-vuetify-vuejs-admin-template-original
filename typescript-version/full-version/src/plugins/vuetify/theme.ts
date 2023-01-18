@@ -35,6 +35,8 @@ const theme: VuetifyOptions['theme'] = {
 
       variables: {
         'code-color': '#d400ff',
+        'overlay-scrim-background': '#4C4E64',
+        'overlay-scrim-opacity': 0.5,
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
@@ -70,6 +72,8 @@ const theme: VuetifyOptions['theme'] = {
       },
       variables: {
         'code-color': '#d400ff',
+        'overlay-scrim-background': '#101121',
+        'overlay-scrim-opacity': 0.6,
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',

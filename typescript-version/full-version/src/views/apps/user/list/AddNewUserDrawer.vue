@@ -80,21 +80,10 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
     @update:model-value="handleDrawerModelValueUpdate"
   >
     <!-- 👉 Title -->
-    <div class="d-flex align-center bg-var-theme-background px-5 py-2">
-      <h6 class="text-h6">
-        Add User
-      </h6>
-
-      <VSpacer />
-
-      <VBtn
-        size="small"
-        color="secondary"
-        variant="text"
-        icon="mdi-close"
-        @click="closeNavigationDrawer"
-      />
-    </div>
+    <AppDrawerHeaderSection
+      title="Add User"
+      @cancel="closeNavigationDrawer"
+    />
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>

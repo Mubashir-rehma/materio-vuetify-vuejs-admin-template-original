@@ -1,5 +1,6 @@
 import mock from '@/@fake-db/mock'
 import type { CalendarEvent } from '@/@fake-db/types'
+import { genId } from '@/@fake-db/utlis'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
@@ -138,12 +139,7 @@ mock.onPost('/apps/calendar/events').reply(config => {
   // Get event from post data
   const { event } = JSON.parse(config.data)
 
-  const { length } = data.events
-  let lastIndex = 0
-  if (length)
-    lastIndex = Number(data.events[length - 1].id)
-
-  event.id = String(lastIndex + 1)
+  event.id = String(genId(data.events))
 
   data.events.push(event)
 

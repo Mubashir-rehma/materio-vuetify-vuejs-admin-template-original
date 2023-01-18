@@ -18,6 +18,29 @@ const props = withDefaults(defineProps<Props>(), {
 defineEmits<{
   (e: 'click:readAllNotifications'): void
 }>()
+
+const isAllMarkRead = ref(false)
+const readNotifications = ref<number[]>([])
+const notificationsLocal = ref(structuredClone(toRaw(props.notifications)))
+
+watch(props, () => {
+  notificationsLocal.value = structuredClone(toRaw(props.notifications))
+})
+
+const removeNotification = (notificationID: number) => {
+  notificationsLocal.value.splice(notificationID, 1)
+}
+
+const addRemoveImportant = (index: number) => {
+  console.log(readNotifications.value)
+
+  if (readNotifications.value.includes(index)) {
+    const i = readNotifications.value.indexOf(index)
+
+    readNotifications.value.splice(i, 1)
+  }
+  else { readNotifications.value.push(index) }
+}
 </script>
 
 <template>
@@ -28,7 +51,7 @@ defineEmits<{
     <IconBtn>
       <VBadge
         dot
-        :model-value="!!props.notifications.length"
+        :model-value="!!notificationsLocal.length"
         color="error"
         bordered
         offset-x="1"
@@ -42,22 +65,26 @@ defineEmits<{
         width="380px"
         :location="props.location"
         offset="14px"
+        :close-on-content-click="false"
       >
         <VCard class="d-flex flex-column">
           <!-- 👉 Header -->
           <VCardItem class="notification-section">
-            <VCardTitle class="text-base">
+            <VCardTitle class="text-lg">
               Notifications
             </VCardTitle>
 
             <template #append>
-              <VChip
-                v-if="props.notifications.length"
-                color="primary"
-                size="small"
-              >
-                {{ props.notifications.length }} New
-              </VChip>
+              <IconBtn @click="isAllMarkRead = !isAllMarkRead">
+                <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+
+                <VTooltip
+                  activator="parent"
+                  location="start"
+                >
+                  Mark all as read
+                </VTooltip>
+              </IconBtn>
             </template>
           </VCardItem>
 
@@ -67,15 +94,14 @@ defineEmits<{
           <PerfectScrollbar :options="{ wheelPropagation: false }">
             <VList class="py-0">
               <template
-                v-for="notification in props.notifications"
+                v-for="(notification, index) in notificationsLocal"
                 :key="notification.title"
               >
                 <VListItem
-                  :title="notification.title"
-                  :subtitle="notification.subtitle"
                   link
                   lines="one"
                   min-height="66px"
+                  class="list-item-hover-class"
                 >
                   <!-- Slot: Prepend -->
                   <!-- Handles Avatar: Image, Icon, Text -->
@@ -92,9 +118,30 @@ defineEmits<{
                       </VAvatar>
                     </VListItemAction>
                   </template>
+
+                  <VListItemTitle>{{ notification.title }}</VListItemTitle>
+                  <VListItemSubtitle>{{ notification.subtitle }}</VListItemSubtitle>
+                  <span class="text-xs text-disabled">{{ notification.time }}</span>
+
                   <!-- Slot: Append -->
                   <template #append>
-                    <small class="whitespace-no-wrap text-medium-emphasis">{{ notification.time }}</small>
+                    <div class="d-flex flex-column align-center gap-4">
+                      <VBadge
+                        dot
+                        :color="readNotifications.includes(index) ? 'primary' : '#a8aaae'"
+                        class="ms-1"
+                        @click="addRemoveImportant(index)"
+                      />
+                      <IconBtn
+                        size="x-small"
+                        @click="removeNotification(index)"
+                      >
+                        <VIcon
+                          size="20"
+                          icon="mdi-close"
+                        />
+                      </IconBtn>
+                    </div>
                   </template>
                 </VListItem>
                 <VDivider />
@@ -103,14 +150,14 @@ defineEmits<{
           </PerfectScrollbar>
 
           <!-- 👉 Footer -->
-          <VCardText class="notification-section">
+          <VCardActions class="notification-footer">
             <VBtn
               block
               @click="$emit('click:readAllNotifications')"
             >
               READ ALL NOTIFICATIONS
             </VBtn>
-          </VCardText>
+          </VCardActions>
         </VCard>
       </VMenu>
     </IconBtn>
@@ -120,5 +167,21 @@ defineEmits<{
 <style lang="scss">
 .notification-section {
   padding: 14px !important;
+}
+
+.notification-footer {
+  padding: 6px !important;
+}
+
+.list-item-hover-class {
+  .v-list-item__append {
+    display: none;
+  }
+
+  &:hover {
+    .v-list-item__append {
+      display: block;
+    }
+  }
 }
 </style>

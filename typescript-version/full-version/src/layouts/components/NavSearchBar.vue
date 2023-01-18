@@ -161,7 +161,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 
 .meta-key {
   border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
-  border-radius: vuetify.$card-border-radius;
+  border-radius: 6px;
   block-size: 1.5625rem;
   line-height: 1.3125rem;
   padding-block: 0.125rem;

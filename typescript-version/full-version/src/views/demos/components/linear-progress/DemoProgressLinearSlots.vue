@@ -5,14 +5,12 @@ const power = ref(78)
 </script>
 
 <template>
-  <div>
+  <div class="demo-space-y">
     <VProgressLinear
       v-model="power"
       color="primary"
       height="8"
     />
-
-    <br>
 
     <VProgressLinear
       v-model="skill"
@@ -23,8 +21,6 @@ const power = ref(78)
         <strong>{{ Math.ceil(value) }}%</strong>
       </template>
     </VProgressLinear>
-
-    <br>
 
     <VProgressLinear
       v-model="knowledge"

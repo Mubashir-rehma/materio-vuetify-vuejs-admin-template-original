@@ -58,7 +58,7 @@ const formSubmit = () => {
       <!-- 👉 Title -->
       <VCardItem class="text-center">
         <VCardTitle class="text-2xl">
-          {{ props.cardDetails.name ? 'Edit Card' : 'Add Card' }}
+          {{ props.cardDetails.name ? 'Edit Card' : 'Add New Card' }}
         </VCardTitle>
         <VCardSubtitle>
           {{ props.cardDetails.name ? 'Edit your saved card details' : 'Add your saved card details' }}

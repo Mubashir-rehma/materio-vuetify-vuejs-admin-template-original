@@ -276,9 +276,10 @@ const resolveCategories = (val: string) => {
                   size="75"
                   icon="mdi-file-remove-outline"
                 />
-                <h6 class="text-h6 my-3">
-                  No Result For "{{ searchQuery }}"
-                </h6>
+                <div class="d-flex align-center flex-wrap justify-center gap-2 text-h6 my-3">
+                  <span>No Result For </span>
+                  <span>"{{ searchQuery }}"</span>
+                </div>
                 <div
                   v-if="props.noDataSuggestion"
                   class="mt-8"

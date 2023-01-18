@@ -138,24 +138,18 @@ const headerValues = computed(() => {
           <h6 class="mt-3 text-base font-weight-regular">
             Theme
           </h6>
-          <div class="d-flex align-center">
-            <VLabel
-              for="theme-toggler"
-              class="me-3"
-            >
-              Light
-            </VLabel>
-
-            <div>
-              <VSwitch
-                id="theme-toggler"
-                v-model="theme"
-                label="Dark"
-                true-value="dark"
-                false-value="light"
-              />
-            </div>
-          </div>
+          <VRadioGroup
+            v-model="theme"
+            inline
+          >
+            <VRadio
+              v-for="themeOption in ['system', 'light', 'dark']"
+              :key="themeOption"
+              :label="themeOption"
+              :value="themeOption"
+              class="text-capitalize"
+            />
+          </VRadioGroup>
 
           <!-- 👉 Primary color -->
           <h6 class="mt-3 text-base font-weight-regular">
@@ -290,7 +284,7 @@ const headerValues = computed(() => {
           <!-- 👉 Semi Dark Menu -->
           <div
             class="align-center justify-space-between"
-            :class="theme === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
+            :class="vuetifyTheme.global.name.value === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
             <VLabel
               for="customizer-menu-semi-dark"

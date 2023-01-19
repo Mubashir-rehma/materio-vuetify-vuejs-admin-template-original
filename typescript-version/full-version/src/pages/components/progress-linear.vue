@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLinearProgress'
+import * as demoCode from '@/views/demos/components/progress-linear/demoCodeProgressLinear'
 </script>
 
 <template>
@@ -10,8 +10,8 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
       md="6"
     >
       <AppCardCode
-        title="Linear Color"
-        :code="demoCode.linearColor"
+        title="Color"
+        :code="demoCode.color"
       >
         <p>Use the props <code>color</code> and <code>background-color</code> to set colors.</p>
 
@@ -25,8 +25,8 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
       md="6"
     >
       <AppCardCode
-        title="Linear Buffering"
-        :code="demoCode.linearBuffering"
+        title="Buffering"
+        :code="demoCode.buffering"
       >
         <p>The primary value is controlled by <code>v-model</code>, whereas the buffer is controlled by the <code>buffer-value</code> prop.</p>
 
@@ -40,8 +40,8 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
       md="6"
     >
       <AppCardCode
-        title="Linear Indeterminate"
-        :code="demoCode.linearIndeterminate"
+        title="Indeterminate"
+        :code="demoCode.indeterminate"
       >
         <p>for continuously animating progress bar,use prop <code>indeterminate</code>. This indicates continuous process. </p>
 
@@ -55,8 +55,8 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
       md="6"
     >
       <AppCardCode
-        title="Linear Reversed"
-        :code="demoCode.linearReversed"
+        title="Reversed"
+        :code="demoCode.reversed"
       >
         <p>Use prop <code>reverse</code> to animate continuously in reverse direction. The component also has RTL support.</p>
 
@@ -70,8 +70,8 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
       md="6"
     >
       <AppCardCode
-        title="Linear Rounded"
-        :code="demoCode.linearRounded"
+        title="Rounded"
+        :code="demoCode.rounded"
       >
         <p>The <code> rounded </code> prop is used to apply a border radius to the v-progress-linear component.</p>
         <DemoProgressLinearRounded />
@@ -84,8 +84,8 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
       md="6"
     >
       <AppCardCode
-        title="Linear Slots"
-        :code="demoCode.linearSlots"
+        title="Slots"
+        :code="demoCode.slots"
       >
         <p>we can bind user input using <code>v-model</code>.You can also use the default slot for the same.</p>
 

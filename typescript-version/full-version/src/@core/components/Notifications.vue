@@ -9,37 +9,31 @@ interface Props {
   badgeProps?: unknown
   location?: Anchor
 }
+interface Emit {
+  (e: 'read', value: number[]): void
+  (e: 'unread', value: number[]): void
+  (e: 'remove', value: number): void
+  (e: 'click:notification', value: Notification): void
+}
 
 const props = withDefaults(defineProps<Props>(), {
   location: 'bottom end',
   badgeProps: undefined,
 })
 
-defineEmits<{
-  (e: 'click:readAllNotifications'): void
-}>()
+const emit = defineEmits<Emit>()
 
-const isAllMarkRead = ref(false)
-const readNotifications = ref<number[]>([])
-const notificationsLocal = ref(structuredClone(toRaw(props.notifications)))
-
-watch(props, () => {
-  notificationsLocal.value = structuredClone(toRaw(props.notifications))
+const isAllMarkRead = computed(() => {
+  return props.notifications.some(item => item.isRead === true)
 })
 
-const removeNotification = (notificationID: number) => {
-  notificationsLocal.value.splice(notificationID, 1)
-}
+const markAllReadOrUnread = () => {
+  const allNotificationsIds = props.notifications.map(item => item.id)
 
-const addRemoveImportant = (index: number) => {
-  console.log(readNotifications.value)
-
-  if (readNotifications.value.includes(index)) {
-    const i = readNotifications.value.indexOf(index)
-
-    readNotifications.value.splice(i, 1)
-  }
-  else { readNotifications.value.push(index) }
+  if (isAllMarkRead.value)
+    emit('unread', allNotificationsIds)
+  else
+    emit('read', allNotificationsIds)
 }
 </script>
 
@@ -51,7 +45,7 @@ const addRemoveImportant = (index: number) => {
     <IconBtn>
       <VBadge
         dot
-        :model-value="!!notificationsLocal.length"
+        :model-value="!!props.notifications.length"
         color="error"
         bordered
         offset-x="1"
@@ -75,14 +69,17 @@ const addRemoveImportant = (index: number) => {
             </VCardTitle>
 
             <template #append>
-              <IconBtn @click="isAllMarkRead = !isAllMarkRead">
-                <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+              <IconBtn
+                v-show="props.notifications.length"
+                @click="markAllReadOrUnread"
+              >
+                <VIcon :icon="isAllMarkRead ? 'mdi-email-open-outline' : 'mdi-email-outline' " />
 
                 <VTooltip
                   activator="parent"
                   location="start"
                 >
-                  Mark all as read
+                  {{ isAllMarkRead ? 'Mark all as read' : 'Mark all as unread' }}
                 </VTooltip>
               </IconBtn>
             </template>
@@ -94,7 +91,7 @@ const addRemoveImportant = (index: number) => {
           <PerfectScrollbar :options="{ wheelPropagation: false }">
             <VList class="py-0">
               <template
-                v-for="(notification, index) in notificationsLocal"
+                v-for="notification in props.notifications"
                 :key="notification.title"
               >
                 <VListItem
@@ -102,6 +99,7 @@ const addRemoveImportant = (index: number) => {
                   lines="one"
                   min-height="66px"
                   class="list-item-hover-class"
+                  @click="$emit('click:notification', notification)"
                 >
                   <!-- Slot: Prepend -->
                   <!-- Handles Avatar: Image, Icon, Text -->
@@ -128,34 +126,45 @@ const addRemoveImportant = (index: number) => {
                     <div class="d-flex flex-column align-center gap-4">
                       <VBadge
                         dot
-                        :color="readNotifications.includes(index) ? 'primary' : '#a8aaae'"
-                        class="ms-1"
-                        @click="addRemoveImportant(index)"
+                        :color="notification.isRead ? 'primary' : '#a8aaae'"
+                        :class="`${!notification.isRead ? 'visible-in-hover' : ''} ms-1`"
+                        @click.stop="$emit(notification.isRead ? 'unread' : 'read', [notification.id])"
                       />
-                      <IconBtn
-                        size="x-small"
-                        @click="removeNotification(index)"
-                      >
-                        <VIcon
-                          size="20"
-                          icon="mdi-close"
-                        />
-                      </IconBtn>
+
+                      <div style=" width: 28px;height: 28px;">
+                        <IconBtn
+                          size="x-small"
+                          class="visible-in-hover"
+                          @click="$emit('remove', notification.id)"
+                        >
+                          <VIcon
+                            size="20"
+                            icon="mdi-close"
+                          />
+                        </IconBtn>
+                      </div>
                     </div>
                   </template>
                 </VListItem>
                 <VDivider />
               </template>
+
+              <VListItem
+                v-show="!props.notifications.length"
+                class="text-center text-medium-emphasis"
+              >
+                <VListItemTitle>No Notification Found!</VListItemTitle>
+              </VListItem>
             </VList>
           </PerfectScrollbar>
 
           <!-- 👉 Footer -->
-          <VCardActions class="notification-footer">
-            <VBtn
-              block
-              @click="$emit('click:readAllNotifications')"
-            >
-              READ ALL NOTIFICATIONS
+          <VCardActions
+            v-show="props.notifications.length"
+            class="notification-footer"
+          >
+            <VBtn block>
+              VIEW ALL NOTIFICATIONS
             </VBtn>
           </VCardActions>
         </VCard>
@@ -174,12 +183,12 @@ const addRemoveImportant = (index: number) => {
 }
 
 .list-item-hover-class {
-  .v-list-item__append {
+  .visible-in-hover {
     display: none;
   }
 
   &:hover {
-    .v-list-item__append {
+    .visible-in-hover {
       display: block;
     }
   }

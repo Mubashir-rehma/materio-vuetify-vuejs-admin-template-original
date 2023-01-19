@@ -143,10 +143,12 @@ interface I18nLanguage {
 // avatar | text | icon
 // Thanks: https://stackoverflow.com/a/60617060/10796681
 type Notification = {
+  id:number
   title: string
   subtitle: string
   time: string
   color?: string
+  isRead: boolean
 } & (
   | { img: string; text?: never; icon?: never }
   | { img?: never; text: string; icon?: never }

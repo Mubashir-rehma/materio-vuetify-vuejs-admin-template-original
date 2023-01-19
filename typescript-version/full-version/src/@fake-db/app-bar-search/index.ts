@@ -371,16 +371,16 @@ const database: SearchItem[] = [
   },
   {
     id: 56,
-    url: { name: 'components-circular-progress' },
+    url: { name: 'components-progress-circular' },
     icon: 'mdi-progress-helper',
-    title: 'Circular Progress',
+    title: 'Progress Circular',
     category: 'userInterface',
   },
   {
     id: 83,
-    url: { name: 'components-linear-progress' },
+    url: { name: 'components-progress-linear' },
     icon: 'mdi-progress-helper',
-    title: 'Linear Progress',
+    title: 'Progress Linear',
     category: 'userInterface',
   },
   {

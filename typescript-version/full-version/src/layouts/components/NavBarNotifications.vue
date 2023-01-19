@@ -15,7 +15,7 @@ const notifications = ref<Notification[]>([
     title: 'Congratulation Flora! 🎉',
     subtitle: 'Won the monthly best seller badge',
     time: 'Today',
-    isRead: true,
+    isRead: false,
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const notifications = ref<Notification[]>([
     title: 'New message received 👋🏻',
     subtitle: 'You have 10 unread messages',
     time: '11 Aug',
-    isRead: true,
+    isRead: false,
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const notifications = ref<Notification[]>([
     title: 'Received Order 📦',
     subtitle: 'New order received from john',
     time: '19 Mar',
-    isRead: true,
+    isRead: false,
   },
 ])
 

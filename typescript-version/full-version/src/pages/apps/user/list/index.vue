@@ -66,26 +66,29 @@ const status = [
 ]
 
 const resolveUserRoleVariant = (role: string) => {
-  if (role === 'subscriber')
+  const roleLowerCase = role.toLowerCase()
+
+  if (roleLowerCase === 'subscriber')
     return { color: 'primary', icon: 'mdi-account-outline' }
-  if (role === 'author')
+  if (roleLowerCase === 'author')
     return { color: 'warning', icon: 'mdi-cog-outline' }
-  if (role === 'maintainer')
+  if (roleLowerCase === 'maintainer')
     return { color: 'success', icon: 'mdi-chart-donut' }
-  if (role === 'editor')
+  if (roleLowerCase === 'editor')
     return { color: 'info', icon: 'mdi-pencil-outline' }
-  if (role === 'admin')
+  if (roleLowerCase === 'admin')
     return { color: 'error', icon: 'mdi-laptop' }
 
   return { color: 'primary', icon: 'mdi-account-outline' }
 }
 
 const resolveUserStatusVariant = (stat: string) => {
-  if (stat === 'pending')
+  const statLowerCase = stat.toLowerCase()
+  if (statLowerCase === 'pending')
     return 'warning'
-  if (stat === 'active')
+  if (statLowerCase === 'active')
     return 'success'
-  if (stat === 'inactive')
+  if (statLowerCase === 'inactive')
     return 'secondary'
 
   return 'primary'

@@ -137,19 +137,19 @@ const onSubmit = () => {
                   <VCheckbox
                     id="privacy-policy"
                     v-model="privacyPolicies"
+                    :rules="[requiredValidator]"
                     inline
-                  />
-                  <VLabel
-                    for="privacy-policy"
-                    class="pb-1"
-                    style="opacity: 1;"
                   >
-                    <span class="me-1">I agree to</span>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-primary"
-                    >privacy policy & terms</a>
-                  </VLabel>
+                    <template #label>
+                      <span class="me-1">
+                        I agree to
+                        <a
+                          href="javascript:void(0)"
+                          class="text-primary"
+                        >privacy policy & terms</a>
+                      </span>
+                    </template>
+                  </VCheckbox>
                 </div>
 
                 <VBtn

@@ -13,7 +13,7 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
         title="Linear Color"
         :code="demoCode.linearColor"
       >
-        <p>You can set the colors of the progress bar using the props <code>color</code> and <code>background-color</code>.</p>
+        <p>Use the props <code>color</code> and <code>background-color</code> to set colors.</p>
 
         <DemoProgressLinearColor />
       </AppCardCode>
@@ -43,7 +43,7 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
         title="Linear Indeterminate"
         :code="demoCode.linearIndeterminate"
       >
-        <p>Using the <code>indeterminate</code> prop, <code>v-progress-linear</code> continuously animates.The second line below has set indeterminate</p>
+        <p>for continuously animating progress bar,use prop <code>indeterminate</code>. This indicates continuous process. </p>
 
         <DemoProgressLinearIndeterminate />
       </AppCardCode>
@@ -58,7 +58,7 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
         title="Linear Reversed"
         :code="demoCode.linearReversed"
       >
-        <p>Displays reversed progress. The component also has RTL support, such that a progress bar in right-to-left mode with prop <code>reverse</code> enabled will display left-to-right.</p>
+        <p>Use prop <code>reverse</code> to animate continuously in reverse direction. The component also has RTL support.</p>
 
         <DemoProgressLinearReversed />
       </AppCardCode>
@@ -87,7 +87,7 @@ import * as demoCode from '@/views/demos/components/linear-progress/demoCodeLine
         title="Linear Slots"
         :code="demoCode.linearSlots"
       >
-        <p>The <code>v-progress-linear</code> component will be responsive to user input when using <code>v-model</code>. You can use the default slot or bind a local model to display inside of the progress.</p>
+        <p>we can bind user input using <code>v-model</code>.You can also use the default slot for the same.</p>
 
         <DemoProgressLinearSlots />
       </AppCardCode>

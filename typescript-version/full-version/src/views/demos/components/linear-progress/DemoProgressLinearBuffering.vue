@@ -36,12 +36,5 @@ watch(modelValue, () => {
       height="8"
       :buffer-value="bufferValue"
     />
-
-    <VProgressLinear
-      v-model="modelValue"
-      color="primary"
-      height="8"
-      :buffer-value="bufferValue"
-    />
   </div>
 </template>

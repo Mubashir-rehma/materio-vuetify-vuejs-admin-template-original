@@ -1,32 +1,32 @@
 <template>
   <div class="demo-space-x">
     <VProgressCircular
-      model-value="100"
+      model-value="50"
       color="primary"
     />
 
     <VProgressCircular
-      model-value="80"
+      model-value="50"
       color="secondary"
     />
 
     <VProgressCircular
-      model-value="60"
+      model-value="50"
       color="success"
     />
 
     <VProgressCircular
-      model-value="40"
+      model-value="50"
       color="info"
     />
 
     <VProgressCircular
-      model-value="20"
+      model-value="50"
       color="warning"
     />
 
     <VProgressCircular
-      model-value="20"
+      model-value="50"
       color="error"
     />
   </div>

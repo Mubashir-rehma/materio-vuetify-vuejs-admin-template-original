@@ -1,5 +1,3 @@
-/* @unocss-include */
-
 import type { HorizontalNavItems } from '@layouts/types'
 
 export default [

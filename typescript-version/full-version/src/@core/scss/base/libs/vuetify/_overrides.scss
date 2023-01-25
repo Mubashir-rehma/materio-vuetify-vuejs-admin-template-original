@@ -222,3 +222,22 @@ h6,
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 }
+
+// 👉 v-field
+.v-field:hover .v-field__outline {
+  --v-field-border-opacity: var(--v-medium-emphasis-opacity);
+}
+
+// 👉 VLabel
+.v-label {
+  opacity: 1;
+
+  &:not(.v-field-label--floating) {
+    color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+  }
+}
+
+// 👉 Overlay
+.v-overlay__scrim {
+  background: rgba(var(--v-overlay-scrim-background), var(--v-overlay-scrim-opacity));
+}

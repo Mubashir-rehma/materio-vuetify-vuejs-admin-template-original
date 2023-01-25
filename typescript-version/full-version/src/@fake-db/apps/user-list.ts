@@ -1,3 +1,6 @@
+import mock from '@/@fake-db/mock'
+import type { UserProperties } from '@/@fake-db/types'
+import { genId } from '@/@fake-db/utlis'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -6,8 +9,6 @@ import avatar5 from '@images/avatars/avatar-5.png'
 import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 import avatar8 from '@images/avatars/avatar-8.png'
-import type { UserProperties } from '@/@fake-db/types'
-import mock from '@/@fake-db/mock'
 
 const users: UserProperties[] = [
   {
@@ -687,13 +688,7 @@ mock.onGet('/apps/users/list').reply(config => {
 mock.onPost('/apps/users/user').reply(config => {
   const { user } = JSON.parse(config.data)
 
-  const { length } = users
-  let lastIndex = 0
-
-  if (length)
-    lastIndex = users[length - 1].id
-
-  user.id = lastIndex + 1
+  user.id = genId(users)
 
   users.push(user)
 

@@ -72,7 +72,7 @@ const vuetifyTheme = useTheme()
 const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
 
 // Themes class added to flat-picker component for light and dark support
-const updateThemeClassInCalendar = (activeTheme: string) => {
+const updateThemeClassInCalendar = () => {
   // ℹ️ Flatpickr don't render it's instance in mobile and device simulator
   if (!refFlatPicker.value.fp.calendarContainer)
     return
@@ -80,13 +80,13 @@ const updateThemeClassInCalendar = (activeTheme: string) => {
   vuetifyThemesName.forEach(t => {
     refFlatPicker.value.fp.calendarContainer.classList.remove(`v-theme--${t}`)
   })
-  refFlatPicker.value.fp.calendarContainer.classList.add(`v-theme--${activeTheme}`)
+  refFlatPicker.value.fp.calendarContainer.classList.add(`v-theme--${vuetifyTheme.global.name.value}`)
 }
 
 watch(theme, updateThemeClassInCalendar)
 
 onMounted(() => {
-  updateThemeClassInCalendar(vuetifyTheme.name.value)
+  updateThemeClassInCalendar()
 })
 
 const emitModelValue = (val: string) => {

@@ -149,4 +149,3 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
     </VCol>
   </VRow>
 </template>
-

@@ -118,29 +118,22 @@ const endDateTimePickerConfig = computed(() => {
     @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
   >
     <!-- 👉 Header -->
-    <div class="px-5 py-3 d-flex align-center bg-var-theme-background">
-      <h3 class="font-weight-medium text-xl">
-        {{ event.id ? 'Update' : 'Add' }} Event
-      </h3>
-      <VSpacer />
-      <IconBtn
-        v-show="event.id"
-        @click="removeEvent"
-      >
-        <VIcon
-          size="18"
-          icon="mdi-trash-can-outline"
-        />
-      </IconBtn>
-      <IconBtn
-        @click="$emit('update:isDrawerOpen', false)"
-      >
-        <VIcon
-          size="18"
-          icon="mdi-close"
-        />
-      </IconBtn>
-    </div>
+    <AppDrawerHeaderSection
+      :title="event.id ? 'Update Event' : 'Add Event'"
+      @cancel="$emit('update:isDrawerOpen', false)"
+    >
+      <template #beforeClose>
+        <IconBtn
+          v-show="event.id"
+          @click="removeEvent"
+        >
+          <VIcon
+            size="18"
+            icon="mdi-trash-can-outline"
+          />
+        </IconBtn>
+      </template>
+    </AppDrawerHeaderSection>
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>

@@ -385,6 +385,10 @@ $chat-app-header-height: 68px;
       align-items: center;
       padding-block-start: 0;
     }
+
+    .v-field--appended {
+      padding-inline-end: 6px;
+    }
   }
 }
 

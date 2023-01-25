@@ -95,10 +95,10 @@ const moreBtnList = [
 
           <div class="d-flex justify-center gap-4 mt-6">
             <VBtn
-              prepend-icon="mdi-account-check-outline"
+              :prepend-icon="data.isConnected ? 'mdi-account-check-outline' : 'mdi-account-plus-outline'"
               :variant="data.isConnected ? 'elevated' : 'tonal'"
             >
-              Connected
+              {{ data.isConnected ? 'connected' : 'connect' }}
             </VBtn>
 
             <IconBtn

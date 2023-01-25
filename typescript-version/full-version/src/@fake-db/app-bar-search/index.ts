@@ -391,10 +391,17 @@ const database: SearchItem[] = [
     category: 'userInterface',
   },
   {
-    id: 59,
-    url: { name: 'components-progress' },
+    id: 56,
+    url: { name: 'components-progress-circular' },
     icon: 'mdi-progress-helper',
-    title: 'Progress',
+    title: 'Progress Circular',
+    category: 'userInterface',
+  },
+  {
+    id: 83,
+    url: { name: 'components-progress-linear' },
+    icon: 'mdi-progress-helper',
+    title: 'Progress Linear',
     category: 'userInterface',
   },
   {
@@ -563,6 +570,13 @@ const database: SearchItem[] = [
     url: { name: 'forms-custom-input' },
     icon: 'mdi-format-list-checks',
     title: 'Custom Input',
+    category: 'formsTables',
+  },
+  {
+    id: 82,
+    url: { name: 'forms-autocomplete' },
+    icon: 'mdi-format-align-left',
+    title: 'Autocomplete',
     category: 'formsTables',
   },
 ]

@@ -62,7 +62,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
       cols="12"
       md="8"
     >
-      <VWindow>
+      <VWindow class="disable-tab-transition">
         <VWindowItem>
           <VCard>
             <VCardText class="pb-0">

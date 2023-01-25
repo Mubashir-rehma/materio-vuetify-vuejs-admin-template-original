@@ -44,12 +44,13 @@ export default {
     // set v-tooltip default location to top
     location: 'top',
   },
-
-  // VList: {
-  //   VListItem: {
-  //     activeColor: 'primary',
-  //   },
-  // },
+  VList: {
+    VListItem: {
+      VCheckboxBtn: {
+        color: 'primary',
+      },
+    },
+  },
   VCheckbox: {
     // set v-checkbox default color to primary
     color: 'primary',

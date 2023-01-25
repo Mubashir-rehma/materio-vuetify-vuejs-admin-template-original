@@ -124,7 +124,7 @@ const computedMoreList = computed(() => {
             clearable
             clear-icon="mdi-close"
             density="compact"
-            :items="['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due']"
+            :items="['Downloaded', 'Draft', 'Paid', 'Partial Payment', 'Past Due', 'Sent']"
           />
         </div>
       </div>

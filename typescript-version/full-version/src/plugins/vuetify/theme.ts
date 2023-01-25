@@ -1,10 +1,11 @@
 import type { VuetifyOptions } from 'vuetify'
+import { resolveVuetifyTheme } from '@core/utils/vuetify'
 import { themeConfig } from '@themeConfig'
 
 export const staticPrimaryColor = '#9155FD'
 
 const theme: VuetifyOptions['theme'] = {
-  defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
+  defaultTheme: resolveVuetifyTheme(),
   themes: {
     light: {
       dark: false,
@@ -37,6 +38,8 @@ const theme: VuetifyOptions['theme'] = {
 
       variables: {
         'code-color': '#d400ff',
+        'overlay-scrim-background': '#4C4E64',
+        'overlay-scrim-opacity': 0.5,
         'border-color': '#3A3541',
 
         // Shadows
@@ -76,6 +79,8 @@ const theme: VuetifyOptions['theme'] = {
       },
       variables: {
         'code-color': '#d400ff',
+        'overlay-scrim-background': '#101121',
+        'overlay-scrim-opacity': 0.6,
         'border-color': '#E7E3FC',
 
         // Shadows

@@ -1,10 +1,10 @@
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import { fileURLToPath } from 'url'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
-import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -63,7 +63,7 @@ export default defineConfig({
       imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'vue-i18n', 'pinia'],
       vueTemplate: true,
     }),
-    VueI18n({
+    VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
       include: [

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { useTheme } from 'vuetify'
 
-const { theme } = useThemeConfig()
+const { global } = useTheme()
 
 const authProviders = [
   {
@@ -33,6 +33,6 @@ const authProviders = [
     :key="link.icon"
     :icon="link.icon"
     variant="text"
-    :color="theme === 'dark' ? link.colorInDark : link.color"
+    :color="global.name.value === 'dark' ? link.colorInDark : link.color"
   />
 </template>

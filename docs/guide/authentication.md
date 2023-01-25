@@ -18,17 +18,13 @@ You can find login related self explanatory code in `/src/pages/login.vue` file'
 
 We use [axios](https://axios-http.com/) to make API calls. Axios allows intercepting requests & responses. We intercept all requests and attach the access token in [Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header so API service can identify logged in user.
 
-<!-- TODO: Update the below file path -->
-
-You can find self explanatory code for this in `xxx.ts` file.
+You can find self explanatory code for this in `/src/plugins/axios.ts` file.
 
 ## Logout
 
 In logout we remove the stored data and reset the user abilities to initial abilities.
 
-<!-- TODO: Update the below file path -->
-
-You can find login related self explanatory code in `/src/xxx/xxx.vue` file's `logout` method.
+You can find login related self explanatory code in `/src/layouts/components/UserProfile.vue` file's `logout` method.
 
 ## Registration
 

@@ -1,5 +1,6 @@
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from './../types.d'
 import mock from '@/@fake-db/mock'
+import { genId } from '@/@fake-db/utlis'
 
 // Images
 import avatar1 from '@images/avatars/avatar-1.png'
@@ -387,11 +388,8 @@ mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
   if (activeChat === undefined) {
     isNewChat = true
 
-    const { length } = database.chats
-    const lastId = database.chats[length - 1].id
-
     database.chats.push({
-      id: lastId + 1,
+      id: genId(database.chats),
       userId: contactId,
       unseenMsgs: 0,
       messages: [],

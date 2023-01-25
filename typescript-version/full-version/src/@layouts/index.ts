@@ -61,4 +61,3 @@ export const injectionKeyIsVerticalNavHovered: InjectionKey<Ref<boolean>> = Symb
 
 export * from './components'
 export { useLayouts } from './composable/useLayouts'
-

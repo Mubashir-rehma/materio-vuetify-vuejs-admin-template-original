@@ -79,3 +79,38 @@ $card-spacer-content: 16px;
     transform: scaleX(-1);
   }
 }
+
+// 👉 Carousel
+.carousel-delimiter-top-end {
+  .v-carousel__controls {
+    justify-content: end;
+    block-size: 40px;
+    inset-block-start: 0;
+    padding-inline: 1rem;
+
+    .v-btn--icon.v-btn--density-default {
+      block-size: calc(var(--v-btn-height) + -10px);
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      inline-size: calc(var(--v-btn-height) + -10px);
+
+      &.v-btn--active {
+        color: #fff;
+      }
+
+      .v-btn__overlay {
+        opacity: 0;
+      }
+    }
+  }
+
+  @each $color-name in variables.$theme-colors-name {
+
+    &.dots-active-#{$color-name} {
+      .v-carousel__controls {
+        .v-btn--active {
+          color: rgb(var(--v-theme-#{$color-name})) !important;
+        }
+      }
+    }
+  }
+}

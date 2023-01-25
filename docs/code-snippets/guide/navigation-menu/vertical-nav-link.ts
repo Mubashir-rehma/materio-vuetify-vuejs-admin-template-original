@@ -1,5 +1,3 @@
-/* @unocss-include */
-
 import type { VerticalNavItems } from '@layouts/types'
 
 export default [

@@ -20,9 +20,11 @@ const props = withDefaults(defineProps<Props>(), {
   noPadding: false,
 })
 
-const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts')
+const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts') as unknown as keyof CodeProp
 
 const isCodeShown = ref(false)
+
+const { copy, copied } = useClipboard({ source: computed(() => props.code[preferredCodeLanguage]) })
 </script>
 
 <template>
@@ -83,12 +85,24 @@ const isCodeShown = ref(false)
             </VBtnToggle>
           </div>
 
-          <Prism
-            :key="props.code[preferredCodeLanguage]"
-            :language="props.codeLanguage"
-          >
-            {{ props.code[preferredCodeLanguage] }}
-          </Prism>
+          <div class="position-relative">
+            <Prism
+              :key="props.code[preferredCodeLanguage]"
+              :language="props.codeLanguage"
+            >
+              {{ props.code[preferredCodeLanguage] }}
+            </Prism>
+            <IconBtn
+              class="position-absolute app-card-code-copy-icon"
+              color="white"
+              @click="copy"
+            >
+              <VIcon
+                :icon="copied ? 'mdi-check' : 'mdi-content-copy'"
+                size="20"
+              />
+            </IconBtn>
+          </div>
         </VCardText>
       </div>
     </VExpandTransition>
@@ -101,5 +115,10 @@ const isCodeShown = ref(false)
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   border-radius: vuetify.$card-border-radius;
+}
+
+.app-card-code-copy-icon {
+  inset-block-start: 1.2em;
+  inset-inline-end: 0.8em;
 }
 </style>

@@ -10,15 +10,21 @@ const axiosIns = axios.create({
 
 // ℹ️ Add request interceptor to send the authorization header on each subsequent request after login
 axiosIns.interceptors.request.use(config => {
+  // Retrieve token from localStorage
   const token = localStorage.getItem('accessToken')
 
+  // If token is found
   if (token) {
+    // Get request headers and if headers is undefined assign blank object
     config.headers = config.headers || {}
 
+    // Set authorization header
     // ℹ️ JSON.parse will convert token to string
+    // @ts-expect-error https://github.com/axios/axios/issues/5416
     config.headers.Authorization = token ? `Bearer ${JSON.parse(token)}` : ''
   }
 
+  // Return modified config
   return config
 })
 

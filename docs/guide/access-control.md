@@ -289,8 +289,6 @@ When you define navigation items in `/src/navigation/{vertical|horizontal}/index
 <code-block title="TS">
 
 ```ts{10-11}
-/* @unocss-include */
-
 import type { VerticalNavItems } from '@layouts/types'
 
 export default [
@@ -309,8 +307,6 @@ export default [
 <code-block title="JS">
 
 ```js{8-9}
-/* @unocss-include */
-
 export default [
   {
     title: 'Home',

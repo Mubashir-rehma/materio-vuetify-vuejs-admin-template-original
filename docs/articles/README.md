@@ -13,3 +13,4 @@
 - [How to handle refresh token](/articles/how-to-handle-refresh-token.md)
 - [How to remove fake-db and use real api](/articles/how-to-remove-fake-db-and-use-real-api.md)
 - [How to clear browser local storage](/articles/how-to-clear-browser-local-storage.md)
+- [How to update template to latest](/articles/how-to-update-templat-to-latest.md)

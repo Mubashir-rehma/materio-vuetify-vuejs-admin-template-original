@@ -11,4 +11,5 @@
 - [Understanding Authentication and ACL - First Visit (Part 1)](/articles/understanding-authentication-and-acl-first-visit-part-1.md)
 - [Understanding Authentication and ACL - Login flow (Part 2)](/articles/understanding-authentication-and-acl-login-flow-part-2.md)
 - [How to handle refresh token](/articles/how-to-handle-refresh-token.md)
-- [How To Remove Fake Db And Use Real Api](/articles/how-to-remove-fake-db-and-use-real-api.md)
+- [How to remove fake-db and use real api](/articles/how-to-remove-fake-db-and-use-real-api.md)
+- [How to clear browser local storage](/articles/how-to-clear-browser-local-storage.md)

@@ -1,7 +1,7 @@
 # How to add ACL in starter-kit
 
 ::: tip
-We suggest you first check out ["Understanding Authentication and ACL"](/articles/understanding-authentication-and-acl) article.
+We suggest you first check out ["Understanding Authentication and ACL"](/articles/understanding-authentication-and-acl-first-visit-part-1) article.
 :::
 
 ## Add CASL

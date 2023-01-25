@@ -44,12 +44,10 @@ export default {
     // set v-tooltip default location to top
     location: 'top',
   },
-  VList: {
-    VListItem: {
-      VCheckboxBtn: {
-        color: 'primary',
-      },
-    },
+  VCheckboxBtn: {
+    color: 'primary',
+    density: 'comfortable',
+    hideDetails: 'auto',
   },
   VCheckbox: {
     // set v-checkbox default color to primary
@@ -58,7 +56,6 @@ export default {
     hideDetails: 'auto',
   },
   VRadioGroup: {
-    color: 'primary',
     density: 'comfortable',
     hideDetails: 'auto',
   },

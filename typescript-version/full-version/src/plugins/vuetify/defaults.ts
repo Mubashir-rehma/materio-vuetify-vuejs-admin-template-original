@@ -45,7 +45,9 @@ export default {
   },
   VList: {
     VListItem: {
-      activeColor: 'primary',
+      VCheckboxBtn: {
+        color: 'primary',
+      },
     },
   },
   VCheckbox: {

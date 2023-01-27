@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<Emit>()
 
 const isAllMarkRead = computed(() => {
-  return props.notifications.some(item => item.isRead === true)
+  return props.notifications.some(item => item.isSeen === true)
 })
 
 const markAllReadOrUnread = () => {
@@ -126,9 +126,9 @@ const markAllReadOrUnread = () => {
                     <div class="d-flex flex-column align-center gap-4">
                       <VBadge
                         dot
-                        :color="notification.isRead ? 'primary' : '#a8aaae'"
-                        :class="`${!notification.isRead ? 'visible-in-hover' : ''} ms-1`"
-                        @click.stop="$emit(notification.isRead ? 'unread' : 'read', [notification.id])"
+                        :color="!notification.isSeen ? 'primary' : '#a8aaae'"
+                        :class="`${notification.isSeen ? 'visible-in-hover' : ''} ms-1`"
+                        @click.stop="$emit(notification.isSeen ? 'unread' : 'read', [notification.id])"
                       />
 
                       <div style=" width: 28px;height: 28px;">

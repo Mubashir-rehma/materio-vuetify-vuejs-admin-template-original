@@ -15,7 +15,7 @@ const notifications = ref<Notification[]>([
     title: 'Congratulation Flora! 🎉',
     subtitle: 'Won the monthly best seller badge',
     time: 'Today',
-    isRead: false,
+    isSeen: true,
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const notifications = ref<Notification[]>([
     title: 'New user registered.',
     subtitle: '5 hours ago',
     time: 'Yesterday',
-    isRead: true,
+    isSeen: false,
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const notifications = ref<Notification[]>([
     title: 'New message received 👋🏻',
     subtitle: 'You have 10 unread messages',
     time: '11 Aug',
-    isRead: false,
+    isSeen: true,
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const notifications = ref<Notification[]>([
     title: 'Paypal',
     subtitle: 'Received Payment',
     time: '25 May',
-    isRead: true,
+    isSeen: false,
     color: 'error',
   },
   {
@@ -48,7 +48,7 @@ const notifications = ref<Notification[]>([
     title: 'Received Order 📦',
     subtitle: 'New order received from john',
     time: '19 Mar',
-    isRead: false,
+    isSeen: true,
   },
 ])
 
@@ -63,7 +63,7 @@ const markRead = (notificationId: number[]) => {
   notifications.value.forEach(item => {
     notificationId.forEach(id => {
       if (id === item.id)
-        item.isRead = true
+        item.isSeen = true
     })
   })
 }
@@ -72,9 +72,14 @@ const markUnRead = (notificationId: number[]) => {
   notifications.value.forEach(item => {
     notificationId.forEach(id => {
       if (id === item.id)
-        item.isRead = false
+        item.isSeen = false
     })
   })
+}
+
+const handleNotificationClick = (notification: Notification) => {
+  if (!notification.isSeen)
+    markRead([notification.id])
 }
 </script>
 
@@ -84,5 +89,6 @@ const markUnRead = (notificationId: number[]) => {
     @remove="removeNotification"
     @read="markRead"
     @unread="markUnRead"
+    @click:notification="handleNotificationClick"
   />
 </template>

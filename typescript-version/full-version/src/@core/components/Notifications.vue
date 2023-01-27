@@ -45,7 +45,7 @@ const markAllReadOrUnread = () => {
     <IconBtn>
       <VBadge
         dot
-        :model-value="!!props.notifications.length"
+        :model-value="props.notifications.some(n => !n.isSeen)"
         color="error"
         bordered
         offset-x="1"

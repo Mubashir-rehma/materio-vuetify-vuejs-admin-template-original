@@ -90,7 +90,7 @@ const onCancel = () => {
 }
 
 const startDateTimePickerConfig = computed(() => {
-  const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
+  const config: Options = { enableTime: !event.value.allDay, dateFormat: 'Y-m-d H:i' }
 
   if (event.value.end)
     config.maxDate = event.value.end
@@ -99,7 +99,7 @@ const startDateTimePickerConfig = computed(() => {
 })
 
 const endDateTimePickerConfig = computed(() => {
-  const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
+  const config: Options = { enableTime: !event.value.allDay, dateFormat: 'Y-m-d H:i' }
 
   if (event.value.start)
     config.minDate = event.value.start

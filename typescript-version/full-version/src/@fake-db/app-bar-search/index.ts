@@ -405,6 +405,13 @@ const database: SearchItem[] = [
     category: 'userInterface',
   },
   {
+    id: 83,
+    url: { name: 'components-progress-linear' },
+    icon: 'mdi-progress-helper',
+    title: 'Progress Linear',
+    category: 'userInterface',
+  },
+  {
     id: 60,
     url: { name: 'components-expansion-panel' },
     icon: 'mdi-format-vertical-align-center',

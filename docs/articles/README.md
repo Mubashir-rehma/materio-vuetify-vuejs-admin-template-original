@@ -2,6 +2,7 @@
 
 - [How to change logo](/articles/how-to-change-logo.md)
 - [How to change typography](/articles/how-to-change-typography.md)
+- [What is the system theme?](/articles/what-is-the-system-theme.md)
 
 - [How to add ACL in starter-kit](/articles/how-to-add-acl-in-starter-kit.md)
 - [How to add search in starter-kit](/articles/how-to-add-search-in-starter-kit.md)

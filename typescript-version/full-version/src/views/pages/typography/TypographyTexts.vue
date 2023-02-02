@@ -13,10 +13,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-subtitle-1 text-truncate mb-0">
+          <p class="text-subtitle-1 text-truncate mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 1rem / line-height: 1.75rem / font-weight: 400</small>
+          <span>font-size: 1rem / line-height: 1.75rem / font-weight: 400</span>
         </VCol>
 
         <VCol
@@ -30,10 +30,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-subtitle-2 mb-0">
+          <p class="text-subtitle-2 mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 0.875rem / line-height: 1.375rem / font-weight: 500</small>
+          <span>font-size: 0.875rem / line-height: 1.375rem / font-weight: 500</span>
         </VCol>
 
         <VCol
@@ -47,10 +47,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-body-1 mb-0">
+          <p class="text-body-1 mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 1rem / line-height: 1.5rem / font-weight: 400</small>
+          <span>font-size: 1rem / line-height: 1.5rem / font-weight: 400</span>
         </VCol>
 
         <VCol
@@ -64,10 +64,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-body-2 mb-0">
+          <p class="text-body-2 mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 0.875rem / line-height: 1.25rem / font-weight: 400</small>
+          <span>font-size: 0.875rem / line-height: 1.25rem / font-weight: 400</span>
         </VCol>
 
         <VCol
@@ -81,10 +81,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-caption mb-0">
+          <p class="text-caption mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 0.75rem / line-height: 1.25rem / font-weight: 400</small>
+          <span>font-size: 0.75rem / line-height: 1.25rem / font-weight: 400</span>
         </VCol>
 
         <VCol
@@ -98,10 +98,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-overline mb-0">
+          <p class="text-overline mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 0.75rem / line-height: 2rem / font-weight: 500</small>
+          <span>font-size: 0.75rem / line-height: 2rem / font-weight: 500</span>
         </VCol>
 
         <VCol
@@ -115,10 +115,10 @@
           md="10"
           class="mb-6"
         >
-          <p class="text-button mb-0">
+          <p class="text-button mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.
           </p>
-          <small>font-size: 0.875rem / line-height: 2.25rem / font-weight: 500</small>
+          <span>font-size: 0.875rem / line-height: 2.25rem / font-weight: 500</span>
         </VCol>
       </VRow>
     </VCardText>

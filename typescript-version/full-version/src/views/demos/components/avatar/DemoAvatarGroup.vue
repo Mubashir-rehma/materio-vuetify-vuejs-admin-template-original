@@ -13,7 +13,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       <VImg :src="avatar1" />
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
         John Doe
       </VTooltip>
@@ -23,7 +23,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       <VImg :src="avatar2" />
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
         Jennie Obrien
       </VTooltip>
@@ -33,7 +33,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       <VImg :src="avatar3" />
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
         Peter Harper
       </VTooltip>
@@ -43,7 +43,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       <VImg :src="avatar4" />
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
         Vivian Padilla
       </VTooltip>
@@ -53,7 +53,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       <VImg :src="avatar5" />
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
         Scott Wells
       </VTooltip>
@@ -63,7 +63,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       <VImg :src="avatar6" />
       <VTooltip
         activator="parent"
-        location="start"
+        location="top"
       >
         Angel Bishop
       </VTooltip>

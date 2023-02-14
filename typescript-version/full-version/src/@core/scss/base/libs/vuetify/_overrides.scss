@@ -254,3 +254,9 @@ h6,
     --v-icon-size-multiplier: 1.5;
   }
 }
+
+// 👉 Badge icon alignment
+.v-badge__badge {
+  display: flex;
+  align-items: center;
+}

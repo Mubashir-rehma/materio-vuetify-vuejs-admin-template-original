@@ -260,3 +260,8 @@ h6,
   display: flex;
   align-items: center;
 }
+
+// 👉 Btn focus outline style removed
+.v-btn:focus-visible::after {
+  opacity: 0 !important;
+}

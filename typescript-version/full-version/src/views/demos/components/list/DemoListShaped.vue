@@ -11,7 +11,7 @@ const items = [
     <VListItem
       v-for="(item, i) in items"
       :key="i"
-      :value="item"
+      :value="item.text"
       rounded="shaped"
     >
       <template #prepend>

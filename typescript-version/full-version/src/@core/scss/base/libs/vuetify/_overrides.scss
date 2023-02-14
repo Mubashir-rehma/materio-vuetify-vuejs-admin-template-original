@@ -247,3 +247,10 @@ h6,
   color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
   opacity: 1;
 }
+
+// 👉 Alert close btn
+.v-alert__close {
+  .v-btn--icon .v-icon {
+    --v-icon-size-multiplier: 1.5;
+  }
+}

@@ -3,7 +3,7 @@ import * as demoCode from '@/views/demos/components/progress-linear/demoCodeProg
 </script>
 
 <template>
-  <VRow>
+  <VRow class="match-height">
     <!-- 👉 Progress linear color -->
     <VCol
       cols="12"

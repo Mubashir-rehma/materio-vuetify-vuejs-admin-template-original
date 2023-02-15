@@ -45,15 +45,12 @@ const { appRouteTransition } = useThemeConfig()
     </template>
 
     <!-- 👉 Pages -->
-    <RouterView v-slot="{ Component, route }">
+    <RouterView v-slot="{ Component }">
       <Transition
         :name="appRouteTransition"
         mode="out-in"
       >
-        <Component
-          :is="Component"
-          :key="route.path"
-        />
+        <Component :is="Component" />
       </Transition>
     </RouterView>
 

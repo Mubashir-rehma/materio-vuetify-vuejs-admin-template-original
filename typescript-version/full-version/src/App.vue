@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import BuyNow from '@core/components/BuyNow.vue'
+import ScrollToTop from '@core/components/ScrollToTop.vue'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
 
@@ -19,6 +20,7 @@ syncConfigThemeWithVuetifyTheme()
     <VApp :style="`--v-global-theme-primary: ${hexToRgb(global.current.value.colors.primary)}`">
       <RouterView />
       <BuyNow />
+      <ScrollToTop />
     </VApp>
   </VLocaleProvider>
 </template>

@@ -88,7 +88,10 @@ const markAllReadOrUnread = () => {
           <VDivider />
 
           <!-- 👉 Notifications list -->
-          <PerfectScrollbar :options="{ wheelPropagation: false }">
+          <PerfectScrollbar
+            :options="{ wheelPropagation: false }"
+            style="max-height: 23.75rem;"
+          >
             <VList class="py-0">
               <template
                 v-for="notification in props.notifications"
@@ -152,6 +155,7 @@ const markAllReadOrUnread = () => {
               <VListItem
                 v-show="!props.notifications.length"
                 class="text-center text-medium-emphasis"
+                style="height: 56px;"
               >
                 <VListItemTitle>No Notification Found!</VListItemTitle>
               </VListItem>

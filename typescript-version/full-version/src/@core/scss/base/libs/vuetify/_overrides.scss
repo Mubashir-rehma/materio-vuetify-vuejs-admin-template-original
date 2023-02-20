@@ -265,3 +265,10 @@ h6,
 .v-btn:focus-visible::after {
   opacity: 0 !important;
 }
+
+// .v-select chip spacing for slot
+.v-input:not(.v-select--chips) .v-select__selection {
+  .v-chip {
+    margin-block: 2px var(--select-chips-margin-bottom);
+  }
+}

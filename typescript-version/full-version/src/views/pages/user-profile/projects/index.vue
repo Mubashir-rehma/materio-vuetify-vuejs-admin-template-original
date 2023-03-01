@@ -44,10 +44,10 @@ const moreList = [
             <VAvatar :image="data.avatar" />
           </template>
 
-          <VCardTitle>Social Banners</VCardTitle>
+          <VCardTitle>{{ data.title }}</VCardTitle>
           <p class="mb-0">
             <span class="font-weight-medium me-1">Client:</span>
-            <span>Christian Jimenez</span>
+            <span>{{ data.client }}</span>
           </p>
 
           <template #append>
@@ -102,7 +102,7 @@ const moreList = [
 
           <div class="d-flex align-center justify-space-between flex-wrap text-xs mt-4 mb-2">
             <span>Task: {{ data.tasks }}</span>
-            <span>95% Completed</span>
+            <span>{{ Math.round((data.completedTask / data.totalTask) * 100) }}% Completed</span>
           </div>
           <VProgressLinear
             rounded
@@ -124,7 +124,7 @@ const moreList = [
                 />
               </div>
               <span class="text-xs">
-                280 members
+                {{ data.members }}
               </span>
             </div>
 

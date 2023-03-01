@@ -118,13 +118,14 @@ const resolveCategories = (val: string) => {
     >
       <VCardText
         class="pt-1"
-        style="max-height: 65px;"
+        style="min-height: 65px;"
       >
         <!-- 👉 Search Input -->
         <VTextField
           ref="refSearchInput"
           v-model="searchQuery"
           autofocus
+          density="comfortable"
           variant="plain"
           class="app-bar-autocomplete-box"
           @keyup.esc="clearSearchAndCloseDialog"
@@ -133,24 +134,28 @@ const resolveCategories = (val: string) => {
         >
           <!-- 👉 Prepend Inner -->
           <template #prepend-inner>
-            <VIcon
-              icon="mdi-magnify"
-              class="text-high-emphasis mt-1"
-            />
+            <div class="d-flex align-center text-high-emphasis me-1">
+              <VIcon
+                size="22"
+                icon="mdi-magnify"
+                class="mt-1"
+                style="opacity: 1;"
+              />
+            </div>
           </template>
 
           <!-- 👉 Append Inner -->
           <template #append-inner>
             <div class="d-flex align-center">
               <div
-                class="text-base text-disabled cursor-pointer me-2"
+                class="text-base text-disabled cursor-pointer me-1"
                 @click="clearSearchAndCloseDialog"
               >
                 [esc]
               </div>
 
               <IconBtn @click="clearSearchAndCloseDialog">
-                <VIcon icon="mdi-close" />
+                <VIcon icon="bx-x" />
               </IconBtn>
             </div>
           </template>

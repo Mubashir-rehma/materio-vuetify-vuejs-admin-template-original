@@ -224,7 +224,7 @@ const refreshOpenedEmail = async () => {
         <VDivider />
 
         <!-- 👉 Action bar -->
-        <div class="py-2 px-5 d-flex items-center">
+        <div class="py-2 px-5 d-flex align-center">
           <!-- TODO: Make checkbox primary on indeterminate state -->
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
@@ -233,7 +233,7 @@ const refreshOpenedEmail = async () => {
           />
 
           <div
-            class="w-100 d-flex items-center action-bar-actions"
+            class="w-100 d-flex align-center action-bar-actions"
             :style="{
               visibility:
                 isSelectAllEmailCheckboxIndeterminate || selectAllEmailCheckbox
@@ -268,7 +268,7 @@ const refreshOpenedEmail = async () => {
                       :class="
                         shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'
                       "
-                      class="items-center"
+                      class="align-center"
                       href="#"
                       @click="handleMoveMailsTo(moveTo.action)"
                     >

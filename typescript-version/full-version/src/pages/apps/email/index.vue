@@ -380,12 +380,30 @@ const refreshOpenedEmail = async () => {
             <div class="email-actions d-none">
               <IconBtn @click.stop="handleActionClick('trash', [email.id])">
                 <VIcon icon="mdi-delete-outline" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  Delete Mail
+                </VTooltip>
               </IconBtn>
               <IconBtn @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])">
                 <VIcon :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  {{ email.isRead ? 'Read Mail' : 'Unread Mail' }}
+                </VTooltip>
               </IconBtn>
               <IconBtn @click.stop="handleActionClick('spam', [email.id])">
                 <VIcon icon="mdi-alert-octagon-outline" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  Move to Spam
+                </VTooltip>
               </IconBtn>
             </div>
           </li>

@@ -272,3 +272,9 @@ h6,
     margin-block: 2px var(--select-chips-margin-bottom);
   }
 }
+
+// 👉 VCard and VList subtitle color
+.v-card-subtitle,
+.v-list-item-subtitle {
+  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+}

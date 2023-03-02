@@ -46,33 +46,6 @@ h6,
   }
 }
 
-// 👉 Theme
-.v-theme--light {
-  --v-theme-background:
-    var(
-      --skin-theme-background,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-background", "light")}
-    ) !important;
-  --v-theme-surface:
-    var(
-      --skin-theme-surface,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-surface", "light")}
-    ) !important;
-}
-
-.v-theme--dark {
-  --v-theme-background:
-    var(
-      --skin-theme-background,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-background", "dark")}
-    ) !important;
-  --v-theme-surface:
-    var(
-      --skin-theme-surface,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-surface", "dark")}
-    ) !important;
-}
-
 // 👉 Button
 @if variables.$vuetify-reduce-default-compact-button-icon-size {
   .v-btn--density-compact.v-btn--size-default {

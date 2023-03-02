@@ -71,7 +71,6 @@
       inset-block-start: calc(#{variables.$vertical-nav-header-height} - 2px);
       opacity: 0;
       pointer-events: none;
-      transform: translateX(-8px);
       transition: opacity 0.15s ease-in-out;
       will-change: opacity;
 
@@ -84,6 +83,11 @@
       .vertical-nav-items-shadow {
         opacity: 1;
       }
+    }
+
+    .ps__rail-y {
+      // ℹ️ Setting z-index: 1 will make perfect scrollbar thumb appear on top of vertical nav items shadow
+      z-index: 1;
     }
 
     // 👉 Nav section title

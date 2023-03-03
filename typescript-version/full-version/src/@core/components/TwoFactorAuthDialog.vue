@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import AddAuthenticatorAppDialog from '@core/components/AddAuthenticatorAppDialog.vue'
-import EnableOneTimePasswordDialog from '@core/components/EnableOneTimePasswordDialog.vue'
-
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
 }

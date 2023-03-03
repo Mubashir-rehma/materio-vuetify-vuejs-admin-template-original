@@ -35,7 +35,7 @@ const rules = {
     >
       <VTextField
         v-model="confirmPassword"
-        :append-inner-icon="show2 ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
+        :append-inner-icon="show2 ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
         :rules="[rules.required, rules.min]"
         :type="show2 ? 'text' : 'password'"
         name="input-10-2"

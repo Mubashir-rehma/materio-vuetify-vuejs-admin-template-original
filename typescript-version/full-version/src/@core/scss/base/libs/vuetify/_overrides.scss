@@ -46,33 +46,6 @@ h6,
   }
 }
 
-// 👉 Theme
-.v-theme--light {
-  --v-theme-background:
-    var(
-      --skin-theme-background,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-background", "light")}
-    ) !important;
-  --v-theme-surface:
-    var(
-      --skin-theme-surface,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-surface", "light")}
-    ) !important;
-}
-
-.v-theme--dark {
-  --v-theme-background:
-    var(
-      --skin-theme-background,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-background", "dark")}
-    ) !important;
-  --v-theme-surface:
-    var(
-      --skin-theme-surface,
-      #{utils.map-deep-get(variables.$css-vars, "default", "--v-theme-surface", "dark")}
-    ) !important;
-}
-
 // 👉 Button
 @if variables.$vuetify-reduce-default-compact-button-icon-size {
   .v-btn--density-compact.v-btn--size-default {
@@ -240,4 +213,41 @@ h6,
 // 👉 Overlay
 .v-overlay__scrim {
   background: rgba(var(--v-overlay-scrim-background), var(--v-overlay-scrim-opacity));
+}
+
+// 👉 VMessages
+.v-messages {
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  opacity: 1;
+}
+
+// 👉 Alert close btn
+.v-alert__close {
+  .v-btn--icon .v-icon {
+    --v-icon-size-multiplier: 1.5;
+  }
+}
+
+// 👉 Badge icon alignment
+.v-badge__badge {
+  display: flex;
+  align-items: center;
+}
+
+// 👉 Btn focus outline style removed
+.v-btn:focus-visible::after {
+  opacity: 0 !important;
+}
+
+// .v-select chip spacing for slot
+.v-input:not(.v-select--chips) .v-select__selection {
+  .v-chip {
+    margin-block: 2px var(--select-chips-margin-bottom);
+  }
+}
+
+// 👉 VCard and VList subtitle color
+.v-card-subtitle,
+.v-list-item-subtitle {
+  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 }

@@ -31,7 +31,13 @@ const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
 // 👉 Hotkey
-const { ctrl_k, meta_k } = useMagicKeys()
+const { ctrl_k, meta_k } = useMagicKeys({
+  passive: false,
+  onEventFired(e) {
+    if (e.ctrlKey && e.key === 'k' && e.type === 'keydown')
+      e.preventDefault()
+  },
+})
 
 const refSearchList = ref<VList>()
 const searchQuery = ref(structuredClone(toRaw(props.searchQuery)))

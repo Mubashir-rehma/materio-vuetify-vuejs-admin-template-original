@@ -62,7 +62,7 @@ const moreList = [
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-x-2 gap-y-4">
-            <div class="pa-2 bg-light-secondary rounded">
+            <div class="pa-2 bg-var-theme-background rounded">
               <h6 class="text-base font-weight-medium">
                 {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>
               </h6>

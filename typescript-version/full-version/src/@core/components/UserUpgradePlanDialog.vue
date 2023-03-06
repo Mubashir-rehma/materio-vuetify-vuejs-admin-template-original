@@ -19,6 +19,8 @@ const plansList = [
   { text: 'Enterprise - $499/month', value: 'enterprise' },
   { text: 'Company - $999/month', value: 'company' },
 ]
+
+const isConfirmDialogVisible = ref(false)
 </script>
 
 <template>
@@ -79,11 +81,18 @@ const plansList = [
             color="error"
             variant="tonal"
             class="mt-3"
+            @click="isConfirmDialogVisible = true"
           >
             Cancel Subscription
           </VBtn>
         </div>
       </VCardText>
+
+      <!-- 👉 Confirm Dialog -->
+      <ConfirmDialog
+        v-model:isDialogVisible="isConfirmDialogVisible"
+        confirmation-msg="Are you sure to cancel your subscription?"
+      />
     </VCard>
   </VDialog>
 </template>

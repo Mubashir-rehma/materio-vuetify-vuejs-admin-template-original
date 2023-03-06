@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<Emit>()
 
 const isAllMarkRead = computed(() => {
-  return props.notifications.some(item => item.isRead === true)
+  return props.notifications.some(item => item.isSeen === true)
 })
 
 const markAllReadOrUnread = () => {
@@ -45,7 +45,7 @@ const markAllReadOrUnread = () => {
     <IconBtn>
       <VBadge
         dot
-        :model-value="!!props.notifications.length"
+        :model-value="props.notifications.some(n => !n.isSeen)"
         color="error"
         bordered
         offset-x="1"
@@ -88,7 +88,10 @@ const markAllReadOrUnread = () => {
           <VDivider />
 
           <!-- 👉 Notifications list -->
-          <PerfectScrollbar :options="{ wheelPropagation: false }">
+          <PerfectScrollbar
+            :options="{ wheelPropagation: false }"
+            style="max-height: 23.75rem;"
+          >
             <VList class="py-0">
               <template
                 v-for="notification in props.notifications"
@@ -126,9 +129,9 @@ const markAllReadOrUnread = () => {
                     <div class="d-flex flex-column align-center gap-4">
                       <VBadge
                         dot
-                        :color="notification.isRead ? 'primary' : '#a8aaae'"
-                        :class="`${!notification.isRead ? 'visible-in-hover' : ''} ms-1`"
-                        @click.stop="$emit(notification.isRead ? 'unread' : 'read', [notification.id])"
+                        :color="!notification.isSeen ? 'primary' : '#a8aaae'"
+                        :class="`${notification.isSeen ? 'visible-in-hover' : ''} ms-1`"
+                        @click.stop="$emit(notification.isSeen ? 'unread' : 'read', [notification.id])"
                       />
 
                       <div style=" width: 28px;height: 28px;">
@@ -152,6 +155,7 @@ const markAllReadOrUnread = () => {
               <VListItem
                 v-show="!props.notifications.length"
                 class="text-center text-medium-emphasis"
+                style="height: 56px;"
               >
                 <VListItemTitle>No Notification Found!</VListItemTitle>
               </VListItem>

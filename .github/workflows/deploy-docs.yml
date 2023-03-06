@@ -22,6 +22,11 @@ jobs:
         with:
           path: ${{ env.TEMPLATE_NAME }}/vue
 
+      - name: Use Node 16.17.1 version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+
       - name: Checkout scripts
         uses: actions/checkout@v3
         with:
@@ -52,6 +57,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script: |
+            mkdir -p ${{ env.DEPLOY_DIR }}
             cd ${{ env.DEPLOY_DIR }}
             rm -rf documentation-backup-*.zip
             DOC_ZIP_NAME="documentation-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"

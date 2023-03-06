@@ -16,7 +16,7 @@ export default [
     children: [
       { title: 'Basic', to: 'pages-cards-card-basic' },
       { title: 'Statistics', to: 'pages-cards-card-statistics' },
-      { title: 'Gamification', to: 'pages-cards-gamification' },
+      { title: 'Gamification', to: 'pages-cards-card-gamification' },
       { title: 'Actions', to: 'pages-cards-card-actions' },
     ],
   },

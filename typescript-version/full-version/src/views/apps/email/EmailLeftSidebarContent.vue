@@ -114,7 +114,7 @@ const labels = [
           v-for="folder in folders"
           :key="folder.title"
           v-slot="{ isActive, href, navigate }"
-          class="d-flex items-center cursor-pointer"
+          class="d-flex align-center cursor-pointer"
           :to="folder.to"
           custom
         >
@@ -152,7 +152,7 @@ const labels = [
           v-for="label in labels"
           :key="label.title"
           v-slot="{ isActive, href, navigate }"
-          class="d-flex items-center"
+          class="d-flex align-center"
           :to="label.to"
           custom
         >

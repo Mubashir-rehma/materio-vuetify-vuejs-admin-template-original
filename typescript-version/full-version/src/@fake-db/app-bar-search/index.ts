@@ -294,7 +294,7 @@ const database: SearchItem[] = [
   },
   {
     id: 45,
-    url: { name: 'pages-cards-gamification' },
+    url: { name: 'pages-cards-card-gamification' },
     icon: 'mdi-card-account-details-outline',
     title: 'Card Gamification',
     category: 'userInterface',

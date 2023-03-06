@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import AddAuthenticatorAppDialog from '@core/components/AddAuthenticatorAppDialog.vue'
-import EnableOneTimePasswordDialog from '@core/components/EnableOneTimePasswordDialog.vue'
-
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
 }
@@ -89,7 +86,7 @@ const openSelectedMethodDialog = () => {
             border
             :value="item.method"
             class="py-5 px-6 my-6"
-            :class="selectedMethod[0] === item.method ? 'bg-light-primary border-primary' : 'bg-var-theme-background'"
+            :class="selectedMethod[0] === item.method ? 'bg-light-primary border-primary border-opacity-100' : 'bg-var-theme-background'"
           >
             <template #prepend>
               <VIcon

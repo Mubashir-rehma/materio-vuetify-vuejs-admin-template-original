@@ -11,3 +11,5 @@ Some of the configurations are **stored in localStorage** hence, you'll have to 
 :::
 
 <img :src="$withBase('/images/guide/chrome-application-clear.png')" alt="chrome-application-clear">
+
+Follow this [article](/articles/how-to-clear-browser-local-storage.md) to know how to clear local storage data.

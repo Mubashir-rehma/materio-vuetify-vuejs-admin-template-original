@@ -86,7 +86,7 @@ const openSelectedMethodDialog = () => {
             border
             :value="item.method"
             class="py-5 px-6 my-6"
-            :class="selectedMethod[0] === item.method ? 'bg-light-primary border-primary border-opacity-100' : 'bg-light-secondary'"
+            :class="selectedMethod[0] === item.method ? 'bg-light-primary border-primary border-opacity-100' : 'bg-var-theme-background'"
           >
             <template #prepend>
               <VIcon

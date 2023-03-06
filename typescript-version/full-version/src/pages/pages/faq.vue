@@ -185,8 +185,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
         >
           <VCard
             flat
-            color="secondary"
-            variant="tonal"
+            class="bg-var-theme-background"
           >
             <VCardText>
               <VAvatar

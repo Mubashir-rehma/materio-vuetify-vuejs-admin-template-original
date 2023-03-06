@@ -5,5 +5,6 @@ declare module 'vue-router' {
     action?: string
     subject?: string
     layoutWrapperClasses?: string
+    navActiveLink?: RouteLocationRaw
   }
 }

@@ -148,7 +148,7 @@ type Notification = {
   subtitle: string
   time: string
   color?: string
-  isRead: boolean
+  isSeen: boolean
 } & (
   | { img: string; text?: never; icon?: never }
   | { img?: never; text: string; icon?: never }

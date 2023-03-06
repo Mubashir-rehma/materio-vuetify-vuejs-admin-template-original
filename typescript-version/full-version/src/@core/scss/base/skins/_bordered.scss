@@ -44,45 +44,6 @@ $header: ".layout-navbar";
     border-block-end: none;
   }
 
-  /*
-    Missing components:
-     - Stepper
-  */
-
-  .v-theme--light {
-    --skin-theme-background:
-      #{utils.map-deep-get(
-        variables.$css-vars,
-        "bordered",
-        "--v-theme-background",
-        "light"
-      )};
-    --skin-theme-surface:
-      #{utils.map-deep-get(
-        variables.$css-vars,
-        "bordered",
-        "--v-theme-surface",
-        "light"
-      )};
-  }
-
-  .v-theme--dark {
-    --skin-theme-background:
-      #{utils.map-deep-get(
-        variables.$css-vars,
-        "bordered",
-        "--v-theme-background",
-        "dark"
-      )};
-    --skin-theme-surface:
-      #{utils.map-deep-get(
-        variables.$css-vars,
-        "bordered",
-        "--v-theme-surface",
-        "dark"
-      )};
-  }
-
   // Vertical Nav
   .layout-vertical-nav {
     border-inline-end: thin solid rgba(var(--v-border-color), var(--v-border-opacity));

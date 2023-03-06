@@ -102,7 +102,7 @@ const addressTypes = [
           >
             <div
               class="rounded border cursor-pointer pa-4"
-              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary border-opacity-100' : 'bg-light-secondary'"
+              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary border-opacity-100' : 'bg-var-theme-background'"
               @click="selectedAddress = type.title"
             >
               <div class="d-flex align-center font-weight-medium gap-2 text-xl mb-1">

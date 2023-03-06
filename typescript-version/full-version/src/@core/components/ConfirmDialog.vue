@@ -13,6 +13,9 @@ const props = defineProps<Props>()
 
 const emit = defineEmits<Emit>()
 
+const unsubscribed = ref(false)
+const cancelled = ref(false)
+
 const updateModelValue = (val: boolean) => {
   emit('update:isDialogVisible', val)
 }
@@ -20,11 +23,13 @@ const updateModelValue = (val: boolean) => {
 const onConfirmation = () => {
   emit('confirm', true)
   updateModelValue(false)
+  unsubscribed.value = true
 }
 
 const onCancel = () => {
   emit('confirm', false)
   emit('update:isDialogVisible', false)
+  cancelled.value = true
 }
 </script>
 
@@ -41,7 +46,7 @@ const onCancel = () => {
           icon
           variant="outlined"
           color="warning"
-          class="mb-4"
+          class="mb-16 mt-4"
           style="width: 88px; height: 88px; pointer-events: none;"
         >
           <span class="text-5xl">!</span>
@@ -68,6 +73,74 @@ const onCancel = () => {
           Cancel
         </VBtn>
       </VCardActions>
+    </VCard>
+  </VDialog>
+
+  <!-- Unsubscribed -->
+  <VDialog
+    v-model="unsubscribed"
+    max-width="500"
+  >
+    <VCard>
+      <VCardText class="text-center px-10 py-6">
+        <VBtn
+          icon
+          variant="outlined"
+          color="success"
+          class="mb-16 mt-4"
+          style="width: 88px; height: 88px; pointer-events: none;"
+        >
+          <span class="text-3xl">
+            <VIcon icon="mdi-check" />
+          </span>
+        </VBtn>
+
+        <h1 class="text-h4 mb-4">
+          Unsubscribed!
+        </h1>
+
+        <p>Your subscription cancelled successfully.</p>
+
+        <VBtn
+          color="success"
+          @click="unsubscribed = false"
+        >
+          Ok
+        </VBtn>
+      </VCardText>
+    </VCard>
+  </VDialog>
+
+  <!-- Cancelled -->
+  <VDialog
+    v-model="cancelled"
+    max-width="500"
+  >
+    <VCard>
+      <VCardText class="text-center px-10 py-6">
+        <VBtn
+          icon
+          variant="outlined"
+          color="error"
+          class="mb-16 mt-4"
+          style="width: 88px; height: 88px; pointer-events: none;"
+        >
+          <span class="text-5xl">X</span>
+        </VBtn>
+
+        <h1 class="text-h4 mb-4">
+          Cancelled
+        </h1>
+
+        <p>Unsubscription Cancelled!!</p>
+
+        <VBtn
+          color="success"
+          @click="cancelled = false"
+        >
+          Ok
+        </VBtn>
+      </VCardText>
     </VCard>
   </VDialog>
 </template>

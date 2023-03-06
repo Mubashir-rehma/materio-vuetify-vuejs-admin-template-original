@@ -3,7 +3,7 @@ import * as demoCode from '@/views/demos/components/progress-circular/demoCodePr
 </script>
 
 <template>
-  <VRow>
+  <VRow class="match-height">
     <!-- 👉 Progress circular color -->
     <VCol
       cols="12"

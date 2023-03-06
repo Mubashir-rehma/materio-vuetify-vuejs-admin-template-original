@@ -80,7 +80,7 @@ const isChatContactActive = computed(() => {
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
 .chat-contact {
-  border-radius: vuetify.$card-border-radius;
+  border-radius: vuetify.$border-radius-root;
   padding-block: 10px;
   padding-inline: var(--chat-content-spacing-x);
 
@@ -88,6 +88,11 @@ const isChatContactActive = computed(() => {
   @include vuetifyStates.states($active: false);
 
   &.chat-contact-active {
+    background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, #fff 300%);
+    color: #fff;
+
+    --v-theme-on-background: #fff;
+
     .v-avatar {
       background: #fff;
       outline: 2px solid #fff;
@@ -96,13 +101,6 @@ const isChatContactActive = computed(() => {
 
   .v-badge--bordered .v-badge__badge::after {
     color: #fff;
-  }
-
-  &.chat-contact-active {
-    background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, #fff 300%);
-    color: #fff;
-
-    --v-theme-on-background: #fff;
   }
 }
 </style>

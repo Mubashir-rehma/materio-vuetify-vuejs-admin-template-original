@@ -318,7 +318,7 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(config => {
     .map(chat => {
       const contact = JSON.parse(JSON.stringify((database.contacts.find(c => c.id === chat.userId) as ChatContact)))
 
-      contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages[chat.messages.length - 1] }
+      contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages.at(-1) }
 
       return contact
     })
@@ -394,7 +394,7 @@ mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
       unseenMsgs: 0,
       messages: [],
     })
-    activeChat = database.chats[database.chats.length - 1]
+    activeChat = database.chats.at(-1)
   }
   activeChat.messages.push(newMessageData)
 

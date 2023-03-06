@@ -99,11 +99,10 @@ const addressTypes = [
             :key="type.title"
             cols="12"
             sm="6"
-            class="mb-6"
           >
             <div
               class="rounded border cursor-pointer pa-4"
-              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary' : 'bg-var-theme-background'"
+              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary border-opacity-100' : 'bg-var-theme-background'"
               @click="selectedAddress = type.title"
             >
               <div class="d-flex align-center font-weight-medium gap-2 text-xl mb-1">
@@ -119,7 +118,10 @@ const addressTypes = [
         </VRow>
 
         <!-- 👉 Form -->
-        <VForm @submit.prevent="onFormSubmit">
+        <VForm
+          class="mt-4"
+          @submit.prevent="onFormSubmit"
+        >
           <VRow>
             <!-- 👉 Company Name -->
             <VCol

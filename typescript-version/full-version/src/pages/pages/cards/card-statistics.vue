@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import illustration1 from '@images/cards/illustration-1.png'
-import illustration2 from '@images/cards/illustration-2.png'
-import illustration3 from '@images/cards/illustration-3.png'
-import illustration4 from '@images/cards/illustration-4.png'
 import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
 import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
 import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
@@ -10,9 +6,10 @@ import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statis
 import CardStatisticsTotalRevenueLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueLineCharts.vue'
 import CardStatisticsTotalRevenueRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueRadialBarCharts.vue'
 import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
-import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
-import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
-import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
+import illustration1 from '@images/cards/illustration-1.png'
+import illustration2 from '@images/cards/illustration-2.png'
+import illustration3 from '@images/cards/illustration-3.png'
+import illustration4 from '@images/cards/illustration-4.png'
 
 const statisticsHorizontal = [
   {

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import pages500 from '@images/pages/500.png'
-import ErrorHeader from '@core/components/ErrorHeader.vue'
 </script>
 
 <template>

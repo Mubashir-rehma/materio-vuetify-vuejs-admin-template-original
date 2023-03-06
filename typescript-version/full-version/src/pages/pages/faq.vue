@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { FaqCategory } from '@/@fake-db/types'
 import axios from '@axios'
-import AppSearchHeader from '@core/components/AppSearchHeader.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'

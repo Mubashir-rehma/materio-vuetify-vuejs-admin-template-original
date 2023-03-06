@@ -112,7 +112,7 @@ const database: SearchItem[] = [
   },
   {
     id: 19,
-    url: { name: 'pages-account-settings-tab', params: { tab: 'billing' } },
+    url: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } },
     icon: 'mdi-currency-usd',
     title: 'Account Settings - Billing',
     category: 'appsPages',
@@ -294,7 +294,7 @@ const database: SearchItem[] = [
   },
   {
     id: 45,
-    url: { name: 'pages-cards-gamification' },
+    url: { name: 'pages-cards-card-gamification' },
     icon: 'mdi-card-account-details-outline',
     title: 'Card Gamification',
     category: 'userInterface',

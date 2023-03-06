@@ -134,7 +134,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               >
                 <VListItem
                   :class="shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
-                  class="items-center"
+                  class="align-center"
                   href="#"
                   @click="handleMoveMailsTo(moveTo.action)"
                 >

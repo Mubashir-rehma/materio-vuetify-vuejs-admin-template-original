@@ -112,7 +112,7 @@ const database: SearchItem[] = [
   },
   {
     id: 19,
-    url: { name: 'pages-account-settings-tab', params: { tab: 'billing' } },
+    url: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } },
     icon: 'mdi-currency-usd',
     title: 'Account Settings - Billing',
     category: 'appsPages',

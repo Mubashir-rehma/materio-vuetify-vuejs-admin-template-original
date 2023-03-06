@@ -12,14 +12,6 @@ import type { Email, FetchEmailsPayload } from '@/@fake-db/types'
 import txt from '@images/icons/file/txt.png'
 import xls from '@images/icons/file/xls.png'
 
-// import avatar9 from '@images/avatars/avatar-9.png'
-// import avatar10 from '@images/avatars/avatar-10.png'
-// import avatar11 from '@images/avatars/avatar-11.png'
-// import avatar12 from '@images/avatars/avatar-12.png'
-// import avatar13 from '@images/avatars/avatar-13.png'
-// import avatar14 from '@images/avatars/avatar-14.png'
-// import avatar15 from '@images/avatars/avatar-15.png'
-
 interface Database {
   emails: Email[]
 }

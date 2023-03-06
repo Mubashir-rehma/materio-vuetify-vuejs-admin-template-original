@@ -342,7 +342,6 @@ const resolveCategories = (val: string) => {
 .app-bar-search-dialog {
   .v-overlay__scrim {
     backdrop-filter: blur(4px);
-    opacity: 1;
   }
 
   .v-list-item-title {

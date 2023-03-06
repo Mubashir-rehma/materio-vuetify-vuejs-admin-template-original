@@ -4,11 +4,12 @@ export const Skins = {
 } as const
 
 export const RouteTransitions = {
-  // 'Zoom Fade': 'app-transition-zoom-fade',
   Fade: 'app-transition-fade',
+  None: 'none',
 
+  // 'Zoom Fade': 'app-transition-zoom-fade',
   // 'Fade Bottom': 'app-transition-fade-bottom',
   // 'Slide Fade': 'app-transition-slide-fade',
   // 'Zoom out': 'app-transition-zoom-out',
-  None: 'none',
+
 } as const

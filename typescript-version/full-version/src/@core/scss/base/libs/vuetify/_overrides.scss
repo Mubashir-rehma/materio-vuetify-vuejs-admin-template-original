@@ -242,8 +242,6 @@ h6,
   background: rgba(var(--v-overlay-scrim-background), var(--v-overlay-scrim-opacity));
 }
 
-$overlay-opacity: 1 !default;
-
 // 👉 placeholders
 .v-field__input {
   @at-root {
@@ -251,7 +249,6 @@ $overlay-opacity: 1 !default;
     input#{&}::placeholder,
     textarea#{&}::placeholder {
       color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
-      opacity: 1;
     }
   }
 }

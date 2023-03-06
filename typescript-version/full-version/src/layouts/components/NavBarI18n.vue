@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import NavBarI18n from '@core/components/I18n.vue'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import type { I18nLanguage } from '@layouts/types'
 

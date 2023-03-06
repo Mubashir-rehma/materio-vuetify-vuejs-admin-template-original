@@ -128,7 +128,7 @@ const resetValues = () => {
     background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
   }
 
-  .v-field {
+  .v-textarea .v-field {
     --v-field-padding-start: 20px;
   }
 

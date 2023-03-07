@@ -46,7 +46,7 @@ const removeProduct = (id: number) => {
   <VCard>
     <!-- SECTION Header -->
     <!--  eslint-disable vue/no-mutating-props -->
-    <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row">
+    <VCardText class="d-flex flex-wrap justify-space-between gap-y-5 flex-column flex-sm-row">
       <!-- 👉 Left Content -->
       <div class="mb-6">
         <div class="d-flex align-center mb-6">
@@ -78,27 +78,33 @@ const removeProduct = (id: number) => {
       <div class="mb-3">
         <!-- 👉 Invoice Id -->
         <h6 class="d-flex align-center font-weight-medium justify-sm-end text-xl mb-3">
-          <span class="me-3">Invoice:</span>
+          <span
+            class="me-3"
+            style="width: 6rem;"
+          >Invoice:</span>
           <span>
             <VTextField
               v-model="props.data.invoice.id"
               disabled
               prefix="#"
               density="compact"
-              style="width: 8.9rem;"
+              style="width: 9.5rem;"
             />
           </span>
         </h6>
 
         <!-- 👉 Issue Date -->
         <p class="d-flex align-center justify-sm-end mb-3">
-          <span class="me-3">Date Issued:</span>
+          <span
+            class="me-3"
+            style="width: 6rem;"
+          >Date Issued:</span>
           <span>
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="width: 8.9rem;"
+              style="width: 9.5rem;"
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -106,13 +112,16 @@ const removeProduct = (id: number) => {
 
         <!-- 👉 Due Date -->
         <p class="d-flex align-center justify-sm-end mb-0">
-          <span class="me-3">Due Date:</span>
+          <span
+            class="me-3"
+            style="width: 6rem;"
+          >Due Date:</span>
           <span>
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="width: 8.9rem;"
+              style="width: 9.5rem;"
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -123,7 +132,7 @@ const removeProduct = (id: number) => {
 
     <VDivider class="mb-2" />
 
-    <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row">
+    <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row gap-y-5">
       <div
         class="mb-4 mb-sm-0"
         style="width: 15.5rem;"

@@ -108,6 +108,7 @@ const formSubmit = () => {
                 v-model="cardDetails.cvv"
                 type="password"
                 label="CVV Code"
+                :maxlength="3"
               />
             </VCol>
 

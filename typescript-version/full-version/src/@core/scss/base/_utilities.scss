@@ -69,6 +69,15 @@ $card-spacer-content: 16px;
   font-weight: 600 !important;
 }
 
+// 👉 clamp text
+.clamp-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
 .leading-normal {
   line-height: normal !important;
 }

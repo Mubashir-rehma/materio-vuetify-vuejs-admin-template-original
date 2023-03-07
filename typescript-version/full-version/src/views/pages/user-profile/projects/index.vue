@@ -79,7 +79,7 @@ const moreList = [
             </div>
           </div>
 
-          <p class="mt-4 mb-0">
+          <p class="mt-4 mb-0 clamp-text">
             {{ data.description }}
           </p>
         </VCardText>

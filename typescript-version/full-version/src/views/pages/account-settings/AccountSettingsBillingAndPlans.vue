@@ -170,7 +170,11 @@ const resetPaymentForm = () => {
           <!-- 👉 Confirm Dialog -->
           <ConfirmDialog
             v-model:isDialogVisible="isConfirmDialogVisible"
-            confirmation-msg="Are you sure to cancel your subscription?"
+            confirmation-question="Are you sure to cancel your subscription?"
+            cancel-msg="Subscription Cancelled!!"
+            cancel-title="Cancelled"
+            confirm-msg="Your subscription cancelled successfully."
+            confirm-title="Unsubscribed!"
           />
 
           <!-- 👉 plan and pricing dialog -->

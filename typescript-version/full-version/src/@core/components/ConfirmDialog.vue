@@ -1,7 +1,11 @@
 <script setup lang="ts">
 interface Props {
-  confirmationMsg: string
+  confirmationQuestion: string
   isDialogVisible: boolean
+  confirmTitle: string
+  confirmMsg: string
+  cancelTitle: string
+  cancelMsg: string
 }
 
 interface Emit {
@@ -53,7 +57,7 @@ const onCancel = () => {
         </VBtn>
 
         <h6 class="text-lg font-weight-medium">
-          {{ props.confirmationMsg }}
+          {{ props.confirmationQuestion }}
         </h6>
       </VCardText>
 
@@ -96,10 +100,10 @@ const onCancel = () => {
         </VBtn>
 
         <h1 class="text-h4 mb-4">
-          Unsubscribed!
+          {{ props.confirmTitle }}
         </h1>
 
-        <p>Your subscription cancelled successfully.</p>
+        <p>{{ props.confirmMsg }}</p>
 
         <VBtn
           color="success"
@@ -129,10 +133,10 @@ const onCancel = () => {
         </VBtn>
 
         <h1 class="text-h4 mb-4">
-          Cancelled
+          {{ props.cancelTitle }}
         </h1>
 
-        <p>Unsubscription Cancelled!!</p>
+        <p>{{ props.cancelMsg }}</p>
 
         <VBtn
           color="success"

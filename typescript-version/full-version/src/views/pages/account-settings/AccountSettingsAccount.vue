@@ -361,6 +361,10 @@ const currencies = [
   <!-- Confirm Dialog -->
   <ConfirmDialog
     v-model:isDialogVisible="isConfirmDialogOpen"
-    confirmation-msg="Are you sure you want to deactivate your account?"
+    confirmation-question="Are you sure you want to deactivate your account?"
+    confirm-title="Deactivated!"
+    confirm-msg="Your account has been deactivated successfully."
+    cancel-title="Cancelled"
+    cancel-msg="Account Deactivation Cancelled!"
   />
 </template>

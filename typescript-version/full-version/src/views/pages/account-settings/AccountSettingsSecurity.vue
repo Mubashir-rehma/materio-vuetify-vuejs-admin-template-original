@@ -201,7 +201,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           </p>
 
           <VBtn @click="isOneTimePasswordDialogVisible = true">
-            Enable two-FA
+            Enable 2FA
           </VBtn>
         </VCardText>
       </VCard>

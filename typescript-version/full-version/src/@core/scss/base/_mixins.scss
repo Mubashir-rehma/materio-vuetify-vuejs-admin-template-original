@@ -19,7 +19,7 @@
 
 @mixin bordered-skin($component, $border-property: "border", $important: false) {
   #{$component} {
-    background-color: rgb(var(--v-theme-background));
+    // background-color: rgb(var(--v-theme-background));
     box-shadow: none !important;
     #{$border-property}: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) if($important, !important, null);
   }

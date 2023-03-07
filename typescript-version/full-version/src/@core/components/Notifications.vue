@@ -73,13 +73,13 @@ const markAllReadOrUnread = () => {
                 v-show="props.notifications.length"
                 @click="markAllReadOrUnread"
               >
-                <VIcon :icon="isAllMarkRead ? 'mdi-email-open-outline' : 'mdi-email-outline' " />
+                <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline' " />
 
                 <VTooltip
                   activator="parent"
                   location="start"
                 >
-                  {{ isAllMarkRead ? 'Mark all as read' : 'Mark all as unread' }}
+                  {{ isAllMarkRead ? 'Mark all as unread' : 'Mark all as read' }}
                 </VTooltip>
               </IconBtn>
             </template>

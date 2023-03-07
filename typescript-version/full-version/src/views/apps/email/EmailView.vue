@@ -307,5 +307,9 @@ const updateMailLabel = (label: Email['labels'][number]) => {
   .mail-header {
     min-block-size: 84px;
   }
+
+  .v-card {
+    border: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
+  }
 }
 </style>

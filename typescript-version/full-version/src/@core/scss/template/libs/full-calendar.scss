@@ -56,10 +56,11 @@
 
   // Removed double border on left in list view
   .fc-list {
-    border-inline-start-color: transparent;
+    border-inline-start: none;
     font-size: 0.875rem;
 
     .fc-list-day-cushion.fc-cell-shaded {
+      background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
       color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
       font-weight: 600;
     }

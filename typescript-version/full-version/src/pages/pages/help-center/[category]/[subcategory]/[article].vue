@@ -53,7 +53,9 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
             },
           }"
         >
-          {{ data.title }}
+          <span class="text-wrap">
+            {{ data.title }}
+          </span>
         </VTab>
       </VTabs>
     </VCol>

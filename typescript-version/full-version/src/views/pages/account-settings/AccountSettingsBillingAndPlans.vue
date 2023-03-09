@@ -253,7 +253,7 @@ const resetPaymentForm = () => {
                       >
                         <VTextField
                           v-model="cardCvv"
-                          type="password"
+                          type="number"
                           label="CVV Code"
                         />
                       </VCol>
@@ -453,7 +453,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="Zip Code" />
+                <VTextField
+                  label="Zip Code"
+                  type="number"
+                />
               </VCol>
 
               <!-- 👉 Actions Button -->

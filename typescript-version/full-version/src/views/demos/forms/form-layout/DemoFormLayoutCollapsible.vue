@@ -252,7 +252,10 @@ const paymentMethods = [
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
                 <VCol cols="12">
-                  <VTextField label="Card Number" />
+                  <VTextField
+                    label="Card Number"
+                    type="number"
+                  />
                 </VCol>
 
                 <!-- 👉 Name -->
@@ -276,7 +279,10 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <VTextField label="CVV Code" />
+                  <VTextField
+                    label="CVV Code"
+                    type="number"
+                  />
                 </VCol>
               </VRow>
             </VForm>

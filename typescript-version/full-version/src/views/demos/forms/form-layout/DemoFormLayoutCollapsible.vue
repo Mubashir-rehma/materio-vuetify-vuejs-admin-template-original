@@ -54,7 +54,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Phone No" />
+              <VTextField
+                label="Phone No"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Address -->
@@ -70,7 +73,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Pincode" />
+              <VTextField
+                label="Pincode"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Landmark -->

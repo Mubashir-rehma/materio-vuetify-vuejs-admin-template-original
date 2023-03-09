@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VForm } from 'vuetify/components'
 import type { RegisterResponse } from '@/@fake-db/types'
+import { VForm } from 'vuetify/components/VForm'
 
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'

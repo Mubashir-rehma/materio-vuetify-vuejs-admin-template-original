@@ -307,7 +307,7 @@ const paymentMethods = [
   border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
 
   &.active {
-    border-color: rgb(var(--v-global-theme-primary));
+    border-color: rgb(var(--v-theme-primary));
   }
 }
 </style>

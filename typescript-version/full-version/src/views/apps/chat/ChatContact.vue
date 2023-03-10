@@ -88,7 +88,7 @@ const isChatContactActive = computed(() => {
   @include vuetifyStates.states($active: false);
 
   &.chat-contact-active {
-    background: linear-gradient(270deg, rgb(var(--v-global-theme-primary)) 0%, #fff 300%);
+    background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, #fff 300%);
     color: #fff;
 
     --v-theme-on-background: #fff;

@@ -323,7 +323,7 @@ const resolveCategories = (val: string) => {
 .app-bar-search-suggestions {
   .app-bar-search-suggestion {
     &:hover {
-      color: rgb(var(--v-global-theme-primary));
+      color: rgb(var(--v-theme-primary));
     }
   }
 }

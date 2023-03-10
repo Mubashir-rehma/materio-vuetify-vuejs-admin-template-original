@@ -12,13 +12,12 @@ const scrollToTop = () => {
 <template>
   <VScaleTransition
     style="transform-origin: center;"
-    class="scroll-to-top"
+    class="scroll-to-top d-print-none"
   >
     <VBtn
       v-show="y > 200"
       icon
       density="comfortable"
-
       @click="scrollToTop"
     >
       <VIcon

@@ -91,7 +91,11 @@ const isConfirmDialogVisible = ref(false)
       <!-- 👉 Confirm Dialog -->
       <ConfirmDialog
         v-model:isDialogVisible="isConfirmDialogVisible"
-        confirmation-msg="Are you sure to cancel your subscription?"
+        cancel-title="Cancelled"
+        confirm-title="Unsubscribed!"
+        confirm-msg="Your subscription cancelled successfully."
+        confirmation-question="Are you sure to cancel your subscription?"
+        cancel-msg="Unsubscription Cancelled!!"
       />
     </VCard>
   </VDialog>

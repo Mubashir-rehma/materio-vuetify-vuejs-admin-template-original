@@ -50,7 +50,7 @@ const onCancel = () => {
           icon
           variant="outlined"
           color="warning"
-          class="mb-16 mt-4"
+          class="my-4"
           style="width: 88px; height: 88px; pointer-events: none;"
         >
           <span class="text-5xl">!</span>
@@ -91,7 +91,7 @@ const onCancel = () => {
           icon
           variant="outlined"
           color="success"
-          class="mb-16 mt-4"
+          class="my-4"
           style="width: 88px; height: 88px; pointer-events: none;"
         >
           <span class="text-3xl">
@@ -126,10 +126,10 @@ const onCancel = () => {
           icon
           variant="outlined"
           color="error"
-          class="mb-16 mt-4"
+          class="my-4"
           style="width: 88px; height: 88px; pointer-events: none;"
         >
-          <span class="text-5xl">X</span>
+          <span class="text-5xl font-weight-light">X</span>
         </VBtn>
 
         <h1 class="text-h4 mb-4">

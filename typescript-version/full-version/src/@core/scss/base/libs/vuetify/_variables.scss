@@ -6,7 +6,7 @@ $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
 // 👉 Card transition properties
 $card-transition-property-custom: box-shadow, opacity;
 
-@forward "vuetify/settings" with (
+@forward "vuetify/_settings" with (
   // 👉 General settings
   $color-pack: false !default,
 

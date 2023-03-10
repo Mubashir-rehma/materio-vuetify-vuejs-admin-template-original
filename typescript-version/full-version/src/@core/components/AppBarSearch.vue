@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VList, VListItem, VListSubheader } from 'vuetify/components'
+import { VList, VListItem, VListSubheader } from 'vuetify/components/VList'
 
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void

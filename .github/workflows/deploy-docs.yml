@@ -19,7 +19,7 @@ jobs:
         run: echo TEMPLATE_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
     
       - name: ⚙️ Set DOCS_BASE environment variables from PROD_DIR secret
-        run: echo -e DOCS_BASE=/$(basename ${{ secrets.PROD_DIR }})/documentation >> $GITHUB_ENV
+        run: echo -e DOCS_BASE=/$(basename ${{ secrets.PROD_DIR }})/documentation/ >> $GITHUB_ENV
       
       - name: ⚙️ Set BASE environment variable for building docs
         run: (${{inputs.is_production}} && echo -e "BASE=${{ env.DOCS_BASE }}" || echo -e "BASE=${{ env.DOCS_BASE }}" | sed 's|/|/staging/|2') >> $GITHUB_ENV

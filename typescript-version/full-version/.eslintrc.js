@@ -80,8 +80,8 @@ module.exports = {
     // Plugin: eslint-plugin-import
     'import/prefer-default-export': 'off',
     'import/newline-after-import': ['error', { count: 1 }],
+    'no-restricted-imports': ['error', 'vuetify/components'],
 
-    // Plugin: eslint-plugin-import
     // For omitting extension for ts files
     'import/extensions': [
       'error',

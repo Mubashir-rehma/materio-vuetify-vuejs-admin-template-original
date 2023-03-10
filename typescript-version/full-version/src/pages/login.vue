@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components/VForm'
 import type { LoginResponse } from '@/@fake-db/types'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'

@@ -12,7 +12,7 @@ export const useSkins = () => {
       wrapper: h(VThemeProvider, { tag: 'aside' }),
       wrapperProps: {
         withBackground: true,
-        theme: isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical
+        theme: (isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical)
           ? 'dark'
           : undefined,
       },

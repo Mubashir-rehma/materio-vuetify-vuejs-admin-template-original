@@ -221,7 +221,7 @@ const target = join(__dirname, 'icons-bundle.js');
             await parseColors(svg, {
               defaultColor: 'currentColor',
               callback: (attr, colorStr, color) => {
-                return !color || isEmptyColor(color)
+                return (!color || isEmptyColor(color))
                   ? colorStr
                   : 'currentColor'
               },

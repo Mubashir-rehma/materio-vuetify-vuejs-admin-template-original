@@ -259,6 +259,7 @@ h6,
     input#{&}::placeholder,
     textarea#{&}::placeholder {
       color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+      opacity: 1;
     }
   }
 }

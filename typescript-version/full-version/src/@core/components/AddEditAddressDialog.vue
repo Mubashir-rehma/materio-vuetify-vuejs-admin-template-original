@@ -8,7 +8,7 @@ interface BillingAddress {
   contact: string
   country: string
   state: string
-  zipCode: string
+  zipCode: number | null
 }
 interface Props {
   billingAddress?: BillingAddress
@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
     contact: '',
     country: '',
     state: '',
-    zipCode: '',
+    zipCode: null,
   }),
 })
 
@@ -218,6 +218,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.zipCode"
                 label="Zip Code"
+                type="number"
               />
             </VCol>
 

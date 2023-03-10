@@ -1,6 +1,6 @@
 export const paginateArray = (array: unknown[], perPage: number, page: number) => array.slice((page - 1) * perPage, page * perPage)
 
-export const genId = (array: any[]) => {
+export const genId = <T extends { id: number | string }>(array: T[]) => {
   const { length } = array
 
   let lastIndex = 0

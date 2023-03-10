@@ -95,7 +95,7 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
             <IconBtn
               class="position-absolute app-card-code-copy-icon"
               color="white"
-              @click="copy"
+              @click="() => { copy() }"
             >
               <VIcon
                 :icon="copied ? 'mdi-check' : 'mdi-content-copy'"

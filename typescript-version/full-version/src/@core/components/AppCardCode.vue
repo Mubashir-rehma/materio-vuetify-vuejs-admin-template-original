@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
+import type { Ref } from 'vue'
 import Prism from 'vue-prism-component'
 
 interface Props {
@@ -20,11 +21,11 @@ const props = withDefaults(defineProps<Props>(), {
   noPadding: false,
 })
 
-const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts') as unknown as keyof CodeProp
+const preferredCodeLanguage = useStorage('preferredCodeLanguage', 'ts') as unknown as Ref<keyof CodeProp>
 
 const isCodeShown = ref(false)
 
-const { copy, copied } = useClipboard({ source: computed(() => props.code[preferredCodeLanguage]) })
+const { copy, copied } = useClipboard({ source: computed(() => props.code[preferredCodeLanguage.value]) })
 </script>
 
 <template>

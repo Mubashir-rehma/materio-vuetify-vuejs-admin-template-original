@@ -193,7 +193,11 @@ h6,
 
 // 👉 Table
 .v-table {
-  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity)) !important;
+
+  th{
+     font-size: 12px;
+  }
 }
 
 // 👉 v-field

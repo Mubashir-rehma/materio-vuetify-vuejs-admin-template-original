@@ -195,8 +195,8 @@ h6,
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity)) !important;
 
-  th{
-     font-size: 12px;
+  th {
+    font-size: 12px;
   }
 }
 
@@ -262,8 +262,8 @@ h6,
     & input::placeholder,
     input#{&}::placeholder,
     textarea#{&}::placeholder {
-      color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
-      opacity: 1;
+      color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity)) !important;
+      opacity: 1 !important;
     }
   }
 }

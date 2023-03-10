@@ -360,7 +360,7 @@ const resolveUserRoleVariant = (role: string) => {
 }
 
 .current-plan {
-  border: 2px solid rgb(var(--v-theme-primary));
+  border: 2px solid rgb(var(--v-global-theme-primary));
 }
 
 .text-capitalize {

@@ -132,8 +132,8 @@
           }
 
           &.fc-button-active {
-            background-color: rgba(var(--v-theme-primary), var(--v-activated-opacity));
-            color: rgb(var(--v-theme-primary));
+            background-color: rgba(var(--v-global-theme-primary), var(--v-activated-opacity));
+            color: rgb(var(--v-global-theme-primary));
           }
         }
       }

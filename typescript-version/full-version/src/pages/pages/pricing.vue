@@ -376,7 +376,7 @@ const faqs = [
 <style lang="scss">
 .page-pricing-free-trial-banner-bg {
   /* stylelint-disable-next-line color-function-notation */
-  background-color: rgba(var(--v-theme-primary), var(--v-idle-opacity));
+  background-color: rgba(var(--v-global-theme-primary), var(--v-idle-opacity));
 }
 
 @media screen and (min-width: 960px) {

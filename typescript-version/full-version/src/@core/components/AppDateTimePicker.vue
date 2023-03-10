@@ -183,10 +183,10 @@ input[altinputclass="inlinePicker"] {
     color: $body-color;
 
     &.today {
-      border-color: rgb(var(--v-theme-primary));
+      border-color: rgb(var(--v-global-theme-primary));
 
       &:hover {
-        border-color: rgb(var(--v-theme-primary));
+        border-color: rgb(var(--v-global-theme-primary));
         background: transparent;
         color: $body-color;
       }
@@ -194,39 +194,39 @@ input[altinputclass="inlinePicker"] {
 
     &.selected,
     &.selected:hover {
-      border-color: rgb(var(--v-theme-primary));
-      background: rgb(var(--v-theme-primary));
+      border-color: rgb(var(--v-global-theme-primary));
+      background: rgb(var(--v-global-theme-primary));
       color: rgb(var(--v-theme-on-primary));
     }
 
     &.inRange,
     &.inRange:hover {
       border: none;
-      background: rgba(var(--v-theme-primary), 30%) !important;
-      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%), 5px 0 0 rgba(var(--v-theme-primary), 17%) !important;
+      background: rgba(var(--v-global-theme-primary), 30%) !important;
+      box-shadow: -5px 0 0 rgba(var(--v-global-theme-primary), 17%), 5px 0 0 rgba(var(--v-global-theme-primary), 17%) !important;
     }
 
     &.startRange {
-      box-shadow: 5px 0 0 rgba(var(--v-theme-primary), 17%);
+      box-shadow: 5px 0 0 rgba(var(--v-global-theme-primary), 17%);
     }
 
     &.endRange {
-      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%);
+      box-shadow: -5px 0 0 rgba(var(--v-global-theme-primary), 17%);
     }
 
     &.startRange,
     &.endRange,
     &.startRange:hover,
     &.endRange:hover {
-      border-color: rgb(var(--v-theme-primary));
-      background: rgb(var(--v-theme-primary));
+      border-color: rgb(var(--v-global-theme-primary));
+      background: rgb(var(--v-global-theme-primary));
       color: rgb(var(--v-theme-on-primary));
     }
 
     &.selected.startRange + .endRange:not(:nth-child(7n + 1)),
     &.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
     &.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
-      box-shadow: -10px 0 0 rgb(var(--v-theme-primary));
+      box-shadow: -10px 0 0 rgb(var(--v-global-theme-primary));
     }
 
     &.flatpickr-disabled,
@@ -254,7 +254,7 @@ input[altinputclass="inlinePicker"] {
 
       &:hover i,
       &:hover svg {
-        fill: rgb(var(--v-theme-primary));
+        fill: rgb(var(--v-global-theme-primary));
       }
     }
   }

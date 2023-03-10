@@ -8,7 +8,7 @@ interface BillingAddress {
   contact: string
   country: string
   state: string
-  zipCode: number
+  zipCode: number | null
 }
 interface Props {
   billingAddress?: BillingAddress
@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
     contact: '',
     country: '',
     state: '',
-    zipCode: 0,
+    zipCode: null,
   }),
 })
 

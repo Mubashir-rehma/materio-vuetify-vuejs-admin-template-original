@@ -1,6 +1,6 @@
 import { breakpointsVuetify } from '@vueuse/core'
 
-import { VIcon } from 'vuetify/components'
+import { VIcon } from 'vuetify/components/VIcon'
 
 // ❗ Logo SVG must be imported with ?raw suffix
 import logo from '@images/logo.svg?raw'

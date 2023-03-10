@@ -167,11 +167,6 @@ const emitModelValue = (val: string) => {
   padding-inline: var(--v-field-padding-start);
 }
 
-/* mobile browser specific style */
-input::-webkit-datetime-edit {
-  opacity: 0;
-}
-
 $body-color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 
 // hide the input when your picker is inline

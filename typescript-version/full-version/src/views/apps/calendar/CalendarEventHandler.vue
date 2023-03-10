@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Options } from 'flatpickr'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components/VForm'
 
 import type { Event, NewEvent } from './types'
 import { useCalendarStore } from './useCalendarStore'

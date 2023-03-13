@@ -4,7 +4,7 @@ import { ContentWidth, FooterType, NavbarType } from './enums'
 
 export interface UserConfig {
   app: {
-    title: string
+    title: Lowercase<string>
     logo: VNode
     contentWidth: typeof ContentWidth[keyof typeof ContentWidth]
     contentLayoutNav: typeof AppContentLayoutNav[keyof typeof AppContentLayoutNav]

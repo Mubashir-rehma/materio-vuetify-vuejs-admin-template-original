@@ -107,6 +107,7 @@ const onSubmit = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="username"
+                  autofocus
                   :rules="[requiredValidator, alphaDashValidator]"
                   label="Username"
                 />

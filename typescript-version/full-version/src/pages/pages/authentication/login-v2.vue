@@ -49,6 +49,7 @@ const isPasswordVisible = ref(false)
               <VCol cols="12">
                 <VTextField
                   v-model="form.email"
+                  autofocus
                   label="Email"
                   type="email"
                 />

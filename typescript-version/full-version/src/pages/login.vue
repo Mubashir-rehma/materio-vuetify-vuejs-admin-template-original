@@ -111,6 +111,7 @@ const onSubmit = () => {
                   v-model="email"
                   label="Email"
                   type="email"
+                  autofocus
                   :rules="[requiredValidator, emailValidator]"
                   :error-messages="errors.email"
                 />

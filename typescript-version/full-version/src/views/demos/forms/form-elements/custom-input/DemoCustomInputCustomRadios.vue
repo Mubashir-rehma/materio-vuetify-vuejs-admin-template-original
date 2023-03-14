@@ -4,13 +4,13 @@ import type { CustomInputContent } from '@core/types'
 const radioContent: CustomInputContent[] = [
   {
     title: 'Basic',
-    desc: 'Get 1 project with 1 team member.',
+    desc: 'Get 2 projects with 2 team members.',
     value: 'basic',
   },
   {
     title: 'Premium',
     subtitle: '$5.00',
-    desc: 'Get 5 projects with 5 team members.',
+    desc: 'Get 8 projects with 8 team members.',
     value: 'premium',
   },
 ]

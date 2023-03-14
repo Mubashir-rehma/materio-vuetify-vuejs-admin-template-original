@@ -207,7 +207,7 @@ h6,
 
 // 👉 VLabel
 .v-label {
-  opacity: 1;
+  opacity: 1 !important;
 
   &:not(.v-field-label--floating) {
     color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));

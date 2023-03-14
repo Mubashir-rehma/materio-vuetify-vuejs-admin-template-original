@@ -1,7 +1,29 @@
 # Laravel Deployment
 
-- Please refer this official vite laravel [documentation](https://laravel-vite.dev/guide/essentials/building-for-production.html) to create production build.
-- Please follow the Laravel official Deployment [documentation](https://laravel.com/docs/9.x/deployment)
+- Please follow the Laravel official Deployment [documentation](https://laravel.com/docs/10.x/deployment)
+
+**Let's create a production build:**
+
+- First, we have to change the base path of vue-router in below file.
+
+```js
+// full-version/src/router/index.{ts/js}
+
+history: createWebHistory(import.meta.env.BASE_URL) => history: createWebHistory('/'), 
+// if you deploy in subfolder then path should be according to your sub folder.
+```
+
+- Generate production build following below command:
+
+```bash
+npm run build
+
+OR 
+
+yarn build
+```
+
+- *We have successfully created build files.*
 
 **Let's understand by an example:**
 
@@ -103,9 +125,7 @@
 
   $app = require_once __DIR__.'/../laravel/bootstrap/app.php';
 
-  $app->bind('path.public', function() {
-      return base_path('/../public_html');
-  });
+  app()->usePublicPath(__DIR__);
 
   $kernel = $app->make(Kernel::class);
 
@@ -114,6 +134,7 @@
   ))->send();
 
   $kernel->terminate($request, $response);
+
   ```
 
 - **Required Permissions**

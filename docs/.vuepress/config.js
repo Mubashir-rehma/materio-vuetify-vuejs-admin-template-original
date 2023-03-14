@@ -75,6 +75,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/guide/components/dialog',
+            '/guide/components/tour.md',
           ]
         },
         {

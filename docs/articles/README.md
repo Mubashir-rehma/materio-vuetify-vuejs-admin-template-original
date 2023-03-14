@@ -17,3 +17,4 @@
 - [How to update template to latest](/articles/how-to-update-template-to-latest-version.md)
 - [How to use useThemeConfig file.](/articles/how-to-use-theme-config.md)
 - [How to change background and surface colors.](/articles/how-to-change-background-and-surface-colors.md)
+- [How to use cookies instead of local storage.](/articles/how-to-use-cookies-instead-localstorage.md)

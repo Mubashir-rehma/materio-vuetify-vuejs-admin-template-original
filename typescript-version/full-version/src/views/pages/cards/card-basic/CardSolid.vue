@@ -60,8 +60,10 @@ const solidCardData = [
           </VCardTitle>
         </VCardItem>
 
-        <VCardText class="text-white">
-          {{ data.text }}
+        <VCardText>
+          <p class="clamp-text text-white mb-0">
+            {{ data.text }}
+          </p>
         </VCardText>
 
         <VCardText class="d-flex justify-space-between align-center flex-wrap">

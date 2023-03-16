@@ -8,14 +8,11 @@ Both components provide `navbar` scoped slot that you can use to add custom cont
 
 This layout component is used in `@/layouts/components/DefaultLayoutWithVerticalNav.vue` file. In there, there's already a `navbar` scoped slot in use, you can customize it according to your needs.
 
-```vue{7-9}
+```vue{4-6}
 <template>
-  <VerticalNavLayout
-    :nav-items="navItems"
-    v-bind="layoutAttrs"
-  >
+<VerticalNavLayout :nav-items="navItems">
     <!-- 👉 navbar -->
-    <template #navbar>
+   <template #navbar="{ toggleVerticalOverlayNavActive }">
       <span>My custom content</span>
     </template>
 
@@ -32,12 +29,9 @@ _Result:_
 
 This layout component is used in `@/layouts/components/DefaultLayoutWithHorizontalNav.vue` file. In there, there's already a `navbar` scoped slot in use, you can customize it according to your needs.
 
-```vue{7-9}
+```vue{4-6}
 <template>
-  <HorizontalNavLayout
-    :nav-items="navItems"
-    v-bind="layoutAttrs"
-  >
+  <HorizontalNavLayout :nav-items="navItems">
     <!-- 👉 navbar -->
     <template #navbar>
       <span>My custom content</span>

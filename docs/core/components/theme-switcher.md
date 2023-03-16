@@ -16,6 +16,10 @@ import type { ThemeSwitcherTheme } from '@layouts/types'
 
 const themes: ThemeSwitcherTheme[] = [
   {
+    name: 'system',
+    icon: 'mdi-laptop',
+  },
+  {
     name: 'light',
     icon: 'mdi-weather-sunny',
   },
@@ -38,6 +42,10 @@ const themes: ThemeSwitcherTheme[] = [
 ```vue
 <script setup>
 const themes = [
+  {
+    name: 'system',
+    icon: 'mdi-laptop',
+  },
   {
     name: 'light',
     icon: 'mdi-weather-sunny',

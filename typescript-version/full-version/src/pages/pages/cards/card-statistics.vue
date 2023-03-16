@@ -168,9 +168,7 @@ const statisticsWithImages = [
     </VCol>
 
     <!-- 👉 Blank Column for make space above the Images cards -->
-    <VCol
-      cols="12"
-    />
+    <VCol cols="12" />
 
     <!-- 👉 Images Cards -->
     <VCol

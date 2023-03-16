@@ -20,9 +20,7 @@ const panel = ref(0)
     </VExpansionPanel>
 
     <VExpansionPanel>
-      <VExpansionPanelTitle
-        disable-icon-rotate
-      >
+      <VExpansionPanelTitle disable-icon-rotate>
         Sales report generated
         <template #actions>
           <VIcon

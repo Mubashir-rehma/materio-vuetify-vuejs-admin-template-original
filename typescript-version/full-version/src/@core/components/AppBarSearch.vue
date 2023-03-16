@@ -124,7 +124,7 @@ const resolveCategories = (val: string) => {
     >
       <VCardText
         class="pt-1"
-        style="min-height: 65px;"
+        style="min-block-size: 65px;"
       >
         <!-- 👉 Search Input -->
         <VTextField

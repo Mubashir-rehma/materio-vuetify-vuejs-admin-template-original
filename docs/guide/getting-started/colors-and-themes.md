@@ -2,11 +2,11 @@
 
 You can customize colors via theme in Vuetify. You can customize them as mentioned in theird [docs](https://next.vuetifyjs.com/en/features/theme/).
 
-Here, we will go over how you can customize the theme/colors in our template. Themes are defined in `src/plugins/vuetify.ts`.
+Here, we will go over how you can customize the theme/colors in our template. Themes are defined in `src/plugins/vuetify/theme.ts`.
 
 ## Updating colors
 
-To update primary colors to something else navigate to above mentioned vuetify plugin file and update primary to desired colors in themes you like.
+To update primary colors to something else navigate to above mentioned vuetify plugin theme file and update primary to desired colors in themes you like.
 
 ```diff
  theme: {
@@ -27,7 +27,7 @@ To update primary colors to something else navigate to above mentioned vuetify p
 +           'primary': '#000',
 ```
 
-In above cde snippet we just updated the primary color in light & dark theme. Now when you run the project `#000` color will be your primary color.
+In above code snippet we just updated the primary color in light & dark theme. Now when you run the project `#000` color will be your primary color.
 
 ## Themes
 

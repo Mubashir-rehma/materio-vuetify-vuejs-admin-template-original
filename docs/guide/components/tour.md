@@ -1,7 +1,7 @@
 # Tour
 
 Tour is helpful way to onboard and guide users through the features of your app.
-For this, We have used [vue-shepherd](https://github.com/shipshapecode/vue-shepherd) library.
+For this, We have used [vue-shepherd](https://github.com/shipshapecode/vue-shepherd) library in our template.
 
 For more information about vue-shepherd library, please refer to [shepherdjs](https://shepherdjs.dev/docs/) official documentation.
 

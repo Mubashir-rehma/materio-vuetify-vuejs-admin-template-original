@@ -160,3 +160,5 @@ You can disable any item by simply setting `disable` property to `true`
 ## Fetching nav items from API
 
 Some times we might have to fetch the nav items from API rather than hard coding them in file.
+
+For more detailed info, please refer to [this article](/code-examples/fetching-nav-items-from-api.html#fake-api-endpoint)

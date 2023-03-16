@@ -34,6 +34,11 @@ module.exports = {
     'comma-spacing': ['error', { before: false, after: true }],
     'key-spacing': ['error', { afterColon: true }],
 
+    'vue/first-attribute-linebreak': ['error', {
+      singleline: 'beside',
+      multiline: 'below',
+    }],
+
     // indentation (Already present in TypeScript)
     'indent': ['error', 2],
 

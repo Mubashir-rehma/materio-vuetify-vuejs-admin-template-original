@@ -91,9 +91,10 @@ const markAllReadOrUnread = () => {
         >
           <VList class="py-0">
             <template
-              v-for="notification in props.notifications"
+              v-for="(notification, index) in props.notifications"
               :key="notification.title"
             >
+              <VDivider v-if="index > 0" />
               <VListItem
                 link
                 lines="one"
@@ -146,7 +147,6 @@ const markAllReadOrUnread = () => {
                   </div>
                 </template>
               </VListItem>
-              <VDivider />
             </template>
 
             <VListItem
@@ -158,6 +158,8 @@ const markAllReadOrUnread = () => {
             </VListItem>
           </VList>
         </PerfectScrollbar>
+
+        <VDivider />
 
         <!-- 👉 Footer -->
         <VCardActions

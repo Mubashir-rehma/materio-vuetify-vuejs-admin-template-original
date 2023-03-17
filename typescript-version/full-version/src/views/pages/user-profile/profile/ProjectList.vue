@@ -129,14 +129,17 @@ const moreList = [
 
           <td> {{ project.leader }} </td>
 
-          <td style="min-width: 8rem;">
+          <td style="min-inline-size: 8rem;">
             <div class="d-flex align-center gap-3">
-              <VProgressLinear
-                :height="6"
-                :model-value="project.progress"
-                rounded
-                :color="resolveUserProgressVariant(project.progress)"
-              />
+              <div class="flex-grow-1">
+                <VProgressLinear
+                  :height="6"
+                  :model-value="project.progress"
+                  rounded
+                  :color="resolveUserProgressVariant(project.progress)"
+                />
+              </div>
+
               <span>
                 {{ project.progress }}%
               </span>

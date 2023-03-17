@@ -18,9 +18,7 @@ const resetValues = () => {
     class="email-compose-dialog"
     elevation="24"
   >
-    <VCardItem
-      class="py-3 px-5"
-    >
+    <VCardItem class="py-3 px-5">
       <div class="d-flex align-center">
         <span class="font-weight-semibold">Compose Mail</span>
         <VSpacer />

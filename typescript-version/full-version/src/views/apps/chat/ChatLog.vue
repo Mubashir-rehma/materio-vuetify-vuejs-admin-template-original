@@ -75,9 +75,7 @@ const msgGroups = computed(() => {
 </script>
 
 <template>
-  <div
-    class="chat-log pa-5"
-  >
+  <div class="chat-log pa-5">
     <div
       v-for="(msgGrp, index) in msgGroups"
       :key="msgGrp.senderId + String(index)"

@@ -80,7 +80,7 @@ const removeProduct = (id: number) => {
         <h6 class="d-flex align-center font-weight-medium justify-sm-end text-xl mb-3">
           <span
             class="me-3"
-            style="width: 6rem;"
+            style="inline-size: 6rem;"
           >Invoice:</span>
           <span>
             <VTextField
@@ -88,7 +88,7 @@ const removeProduct = (id: number) => {
               disabled
               prefix="#"
               density="compact"
-              style="width: 9.5rem;"
+              style="inline-size: 9.5rem;"
             />
           </span>
         </h6>
@@ -97,14 +97,14 @@ const removeProduct = (id: number) => {
         <p class="d-flex align-center justify-sm-end mb-3">
           <span
             class="me-3"
-            style="width: 6rem;"
+            style="inline-size: 6rem;"
           >Date Issued:</span>
           <span>
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="width: 9.5rem;"
+              style="inline-size: 9.5rem;"
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -114,14 +114,14 @@ const removeProduct = (id: number) => {
         <p class="d-flex align-center justify-sm-end mb-0">
           <span
             class="me-3"
-            style="width: 6rem;"
+            style="inline-size: 6rem;"
           >Due Date:</span>
           <span>
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="width: 9.5rem;"
+              style="inline-size: 9.5rem;"
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -135,7 +135,7 @@ const removeProduct = (id: number) => {
     <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row gap-y-5">
       <div
         class="mb-4 mb-sm-0"
-        style="width: 15.5rem;"
+        style="inline-size: 15.5rem;"
       >
         <h6 class="text-sm font-weight-medium mb-3">
           Invoice To:
@@ -249,7 +249,7 @@ const removeProduct = (id: number) => {
           </h6>
           <VTextField
             v-model="props.data.salesperson"
-            style="width: 8rem;"
+            style="inline-size: 8rem;"
           />
         </div>
 

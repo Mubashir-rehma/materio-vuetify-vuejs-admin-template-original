@@ -2,6 +2,15 @@ module.exports = {
   title: 'Master',
   description: 'This is desc',
   base: process.env.BASE || '/',
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["meta", { name: "theme-color", content: "#696cff" }],
+    ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
+    ],
+  ],
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },
@@ -75,6 +84,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/guide/components/dialog',
+            '/guide/components/tour.md',
           ]
         },
         {

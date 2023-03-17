@@ -2,11 +2,6 @@
 import miscComingSoon from '@images/pages/misc-coming-soon.png'
 
 const email = ref('')
-const emailInput = ref()
-
-onMounted(() => {
-  emailInput.value.focus()
-})
 </script>
 
 <template>
@@ -26,8 +21,8 @@ onMounted(() => {
         @submit.prevent="() => {}"
       >
         <VTextField
-          ref="emailInput"
           v-model="email"
+          autofocus
           placeholder="Enter your email"
           class="misc-email-input"
         />

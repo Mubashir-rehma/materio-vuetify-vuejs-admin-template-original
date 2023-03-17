@@ -13,18 +13,23 @@ Assume you want to change languages shown in the navbar i18n menu then you can u
 
 ```vue
 <script lang="ts" setup>
-import { NavBarI18n } from '@layouts/components'
+import NavBarI18n from '@core/components/I18n.vue'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
 import type { I18nLanguage } from '@layouts/types'
+
+const { isAppRtl } = useThemeConfig()
 
 const i18nCompLanguages: I18nLanguage[] = [
   {
     label: 'English',
-    flagpackClass: 'i-flagpack-us',
     i18nLang: 'en',
   },
   {
+    label: 'French',
+    i18nLang: 'fr',
+  },
+  {
     label: 'Arabic',
-    flagpackClass: 'i-flagpack-ae',
     i18nLang: 'ar',
   },
 ]
@@ -48,28 +53,33 @@ const handleLangChange = (lang: string) => {
 
 ```vue
 <script setup>
-import { NavBarI18n } from '@layouts/components'
+import NavBarI18n from '@core/components/I18n.vue'
+import { useThemeConfig } from '@core/composable/useThemeConfig'
+
+const { isAppRtl } = useThemeConfig()
 
 const i18nCompLanguages = [
   {
     label: 'English',
-    flagpackClass: 'i-flagpack-us',
     i18nLang: 'en',
   },
   {
+    label: 'French',
+    i18nLang: 'fr',
+  },
+  {
     label: 'Arabic',
-    flagpackClass: 'i-flagpack-ae',
     i18nLang: 'ar',
   },
 ]
 
-const handleLangChange = (lang: string) => {
+const handleLangChange = (lang) => {
   isAppRtl.value = lang === 'ar'
 }
 </script>
 
 <template>
-  <NavBarI18n
+ <NavBarI18n
     :languages="i18nCompLanguages"
     @change="handleLangChange"
   />

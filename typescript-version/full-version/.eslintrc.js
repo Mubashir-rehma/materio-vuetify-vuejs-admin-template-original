@@ -31,6 +31,15 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
     // indentation (Already present in TypeScript)
+    'comma-spacing': ['error', { before: false, after: true }],
+    'key-spacing': ['error', { afterColon: true }],
+
+    'vue/first-attribute-linebreak': ['error', {
+      singleline: 'beside',
+      multiline: 'below',
+    }],
+
+    // indentation (Already present in TypeScript)
     'indent': ['error', 2],
 
     // Enforce trailing comma (Already present in TypeScript)

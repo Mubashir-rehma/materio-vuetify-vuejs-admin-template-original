@@ -13,21 +13,58 @@ Below is code snippet of component usage:
 
 ```vue
 <script lang="ts" setup>
-import { Notifications } from '@layouts/components'
 import type { Notification } from '@layouts/types'
 
-const notifications: Notification[] = [
+const notifications = ref<Notification[]>([
   {
-    img: 'https://cdn.vuetifyjs.com/images/john.jpg',
-    title: 'Congratulation John!',
-    subtitle: 'You have been awarded with 1 year free subscription to Premium plan.',
-    time: '2 minutes ago',
-  },
-]
+    id: 1,
+    img: avatar4,
+    title: 'Congratulation Flora! 🎉',
+    subtitle: 'Won the monthly best seller badge',
+    time: 'Today',
+    isSeen: true,
+  }
+])
+
+const removeNotification = (notificationId: number) => {
+  notifications.value.forEach((item, index) => {
+    if (notificationId === item.id)
+      notifications.value.splice(index, 1)
+  })
+}
+
+const markRead = (notificationId: number[]) => {
+  notifications.value.forEach(item => {
+    notificationId.forEach(id => {
+      if (id === item.id)
+        item.isSeen = true
+    })
+  })
+}
+
+const markUnRead = (notificationId: number[]) => {
+  notifications.value.forEach(item => {
+    notificationId.forEach(id => {
+      if (id === item.id)
+        item.isSeen = false
+    })
+  })
+}
+
+const handleNotificationClick = (notification: Notification) => {
+  if (!notification.isSeen)
+    markRead([notification.id])
+}
 </script>
 
 <template>
-  <Notifications :notifications="notifications" />
+  <Notifications
+    :notifications="notifications"
+    @remove="removeNotification"
+    @read="markRead"
+    @unread="markUnRead"
+    @click:notification="handleNotificationClick"
+  />
 </template>
 ```
 
@@ -37,20 +74,56 @@ const notifications: Notification[] = [
 
 ```vue
 <script setup>
-import { Notifications } from '@layouts/components'
-
-const notifications = [
+const notifications = ref([
   {
-    img: 'https://cdn.vuetifyjs.com/images/john.jpg',
-    title: 'Congratulation John!',
-    subtitle: 'You have been awarded with 1 year free subscription to Premium plan.',
-    time: '2 minutes ago',
-  },
-]
+    id: 1,
+    img: avatar4,
+    title: 'Congratulation Flora! 🎉',
+    subtitle: 'Won the monthly best seller badge',
+    time: 'Today',
+    isSeen: true,
+  }
+])
+
+const removeNotification = (notificationId) => {
+  notifications.value.forEach((item, index) => {
+    if (notificationId === item.id)
+      notifications.value.splice(index, 1)
+  })
+}
+
+const markRead = (notificationId) => {
+  notifications.value.forEach(item => {
+    notificationId.forEach(id => {
+      if (id === item.id)
+        item.isSeen = true
+    })
+  })
+}
+
+const markUnRead = (notificationId) => {
+  notifications.value.forEach(item => {
+    notificationId.forEach(id => {
+      if (id === item.id)
+        item.isSeen = false
+    })
+  })
+}
+
+const handleNotificationClick = (notification) => {
+  if (!notification.isSeen)
+    markRead([notification.id])
+}
 </script>
 
 <template>
-  <Notifications :notifications="notifications" />
+  <Notifications
+    :notifications="notifications"
+    @remove="removeNotification"
+    @read="markRead"
+    @unread="markUnRead"
+    @click:notification="handleNotificationClick"
+  />
 </template>
 ```
 

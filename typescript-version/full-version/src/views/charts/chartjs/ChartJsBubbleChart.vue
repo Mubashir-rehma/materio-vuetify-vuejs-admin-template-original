@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import type { ChartJsCustomColors } from '@/views/demos/charts-and-maps/charts/chartjs/types'
+import type { ChartJsCustomColors } from '@/views/charts/chartjs/types'
 import { getBubbleChartConfig } from '@core/libs/chartjs/chartjsConfig'
 import BubbleChart from '@core/libs/chartjs/components/BubbleChart'
 

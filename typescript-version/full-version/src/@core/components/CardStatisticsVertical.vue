@@ -35,14 +35,14 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
     </VCardText>
 
     <VCardText>
-      <h6 class="text-sm font-weight-semibold mb-2">
+      <h6 class="text-sm font-weight-medium mb-2">
         {{ props.title }}
       </h6>
       <div
         v-if="props.change"
         class="d-flex align-center mb-2"
       >
-        <span class="font-weight-semibold text-h5 me-2">{{ props.stats }}</span>
+        <span class="text-h5 me-2">{{ props.stats }}</span>
         <span
           :class="isPositive ? 'text-success' : 'text-error'"
           class="text-caption"

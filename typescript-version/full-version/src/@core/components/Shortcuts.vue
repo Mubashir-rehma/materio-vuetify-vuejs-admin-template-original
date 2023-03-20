@@ -63,7 +63,7 @@ const router = useRouter()
                 <VIcon :icon="shortcut.icon" />
               </VAvatar>
 
-              <h6 class="text-base font-weight-semibold mt-2 mb-0">
+              <h6 class="text-base font-weight-medium mt-2 mb-0">
                 {{ shortcut.title }}
               </h6>
               <span class="text-sm">{{ shortcut.subtitle }}</span>

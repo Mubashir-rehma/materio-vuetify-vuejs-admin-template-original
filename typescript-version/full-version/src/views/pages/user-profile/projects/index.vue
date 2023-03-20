@@ -88,7 +88,7 @@ const moreList = [
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-2">
-            <h6 class="text-base font-weight-semibold">
+            <h6 class="text-base font-weight-medium">
               All Hours: <span class="text-body-1">{{ data.hours }}</span>
             </h6>
 

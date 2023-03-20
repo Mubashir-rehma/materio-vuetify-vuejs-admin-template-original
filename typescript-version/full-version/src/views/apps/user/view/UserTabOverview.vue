@@ -162,7 +162,7 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-semibold me-1 mb-3">
+                <h4 class="text-base font-weight-medium me-1 mb-3">
                   12 Invoices have been paid
                 </h4>
                 <span class="text-sm text-disabled text-no-wrap">12 min ago</span>
@@ -177,7 +177,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   size="24"
                   class="me-2"
                 />
-                <h6 class="font-weight-semibold text-sm">
+                <h6 class="font-weight-medium text-sm">
                   Invoices.pdf
                 </h6>
               </div>
@@ -188,7 +188,7 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-semibold me-1 mb-3">
+                <h4 class="text-base font-weight-medium me-1 mb-3">
                   Meeting with john
                 </h4>
                 <span class="text-sm text-disabled text-no-wrap">45 min ago</span>
@@ -205,7 +205,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   :image="avatar2"
                 />
                 <div>
-                  <h6 class="text-sm font-weight-semibold mb-0">
+                  <h6 class="text-sm font-weight-medium mb-0">
                     John Doe (Client)
                   </h6>
                   <span>CEO of Kelly Group</span>
@@ -218,7 +218,7 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-semibold me-1 mb-3">
+                <h4 class="text-base font-weight-medium me-1 mb-3">
                   Create a new react project for client
                 </h4>
                 <span class="text-sm text-disabled text-no-wrap">2 day ago</span>
@@ -233,7 +233,7 @@ const resolveUserProgressVariant = (progress: number) => {
               size="x-small"
             >
               <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-semibold me-1 mb-3">
+                <h4 class="text-base font-weight-medium me-1 mb-3">
                   12 Create invoices for client
                 </h4>
                 <span class="text-sm text-disabled text-no-wrap">5 day ago</span>

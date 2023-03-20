@@ -32,7 +32,7 @@ const isConfirmPasswordVisible = ref(false)
         class="mt-12 mt-sm-0 pa-4"
       >
         <VCardText>
-          <h5 class="text-h5 font-weight-semibold mb-1">
+          <h5 class="text-h5 mb-1">
             Reset Password 🔒
           </h5>
           <p class="mb-0">

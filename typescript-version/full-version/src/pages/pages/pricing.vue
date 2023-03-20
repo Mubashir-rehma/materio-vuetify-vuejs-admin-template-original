@@ -182,7 +182,7 @@ const faqs = [
                   scope="col"
                   class="py-4"
                 >
-                  <h6 class="text-xs font-weight-semibold mb-1">
+                  <h6 class="text-xs font-weight-medium mb-1">
                     FEATURES
                   </h6>
                   <h6 class="font-weight-regular text-xs">
@@ -194,7 +194,7 @@ const faqs = [
                   scope="col"
                   class="text-center py-4"
                 >
-                  <h6 class="text-xs font-weight-semibold mb-1">
+                  <h6 class="text-xs font-weight-medium mb-1">
                     BASIC
                   </h6>
                   <h6 class="font-weight-regular text-xs">
@@ -206,7 +206,7 @@ const faqs = [
                   scope="col"
                   class="text-center py-4"
                 >
-                  <h6 class="text-xs font-weight-semibold mb-1">
+                  <h6 class="text-xs font-weight-medium mb-1">
                     STANDARD
                     <VAvatar
                       size="22"
@@ -229,7 +229,7 @@ const faqs = [
                   scope="col"
                   class="text-center py-4"
                 >
-                  <h6 class="text-xs font-weight-semibold mb-1">
+                  <h6 class="text-xs font-weight-medium mb-1">
                     ENTERPRISE
                   </h6>
                   <h6 class="font-weight-regular text-xs">

@@ -189,7 +189,7 @@ const isOneTimePasswordDialogVisible = ref(false)
     <VCol cols="12">
       <VCard title="Two-steps verification">
         <VCardText>
-          <p class="font-weight-semibold">
+          <p class="font-weight-medium">
             Two factor authentication is not enabled yet.
           </p>
           <p>
@@ -294,7 +294,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 {{ serverKey.permission }}
               </VChip>
             </div>
-            <p class="text-base font-weight-semibold">
+            <p class="text-base font-weight-medium">
               <span class="me-3">{{ serverKey.key }}</span>
               <VIcon
                 :size="18"

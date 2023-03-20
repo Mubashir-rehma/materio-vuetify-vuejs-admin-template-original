@@ -57,7 +57,7 @@ const removeProduct = (id: number) => {
           />
 
           <!-- 👉 Title -->
-          <h6 class="font-weight-semibold text-xl text-uppercase">
+          <h6 class="font-weight-medium text-xl text-uppercase">
             {{ themeConfig.app.title }}
           </h6>
         </div>
@@ -244,7 +244,7 @@ const removeProduct = (id: number) => {
     <VCardText class="d-flex justify-space-between flex-wrap flex-column flex-sm-row">
       <div class="mb-6 mb-sm-0">
         <div class="d-flex align-center mb-4">
-          <h6 class="text-sm font-weight-semibold me-2">
+          <h6 class="text-sm font-weight-medium me-2">
             Salesperson:
           </h6>
           <VTextField
@@ -311,7 +311,7 @@ const removeProduct = (id: number) => {
     <VDivider class="mt-2" />
 
     <VCardText>
-      <p class="font-weight-semibold mb-2">
+      <p class="font-weight-medium mb-2">
         Note:
       </p>
       <VTextarea

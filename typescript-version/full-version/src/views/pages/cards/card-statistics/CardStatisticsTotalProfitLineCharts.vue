@@ -86,7 +86,7 @@ const chartOptions = computed(() => {
         :height="110"
       />
 
-      <h6 class="text-sm text-center font-weight-semibold">
+      <h6 class="text-sm text-center font-weight-medium">
         Total Profit
       </h6>
     </VCardText>

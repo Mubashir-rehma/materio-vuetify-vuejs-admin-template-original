@@ -35,13 +35,13 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
       <div>
         <span class="text-caption">{{ props.title }}</span>
         <div class="d-flex align-center flex-wrap">
-          <span class="text-h6 font-weight-semibold">{{ kFormatter(props.stats) }}</span>
+          <span class="text-h6">{{ kFormatter(props.stats) }}</span>
           <div
             v-if="props.change"
             :class="`${isPositive ? 'text-success' : 'text-error'} mt-1`"
           >
             <VIcon :icon="isPositive ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
-            <span class="text-caption font-weight-semibold">{{ Math.abs(props.change) }}%</span>
+            <span class="text-caption">{{ Math.abs(props.change) }}%</span>
           </div>
         </div>
       </div>

@@ -85,7 +85,7 @@ const logout = () => {
               </VListItemAction>
             </template>
 
-            <VListItemTitle class="font-weight-semibold">
+            <VListItemTitle class="font-weight-medium">
               {{ userData.fullName || userData.username }}
             </VListItemTitle>
             <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>

@@ -14,7 +14,7 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
     class="position-relative"
   >
     <VCardText>
-      <h5 class="text-2xl font-weight-semibold text-primary">
+      <h5 class="text-2xl font-weight-medium text-primary">
         $42.8k
       </h5>
       <p>78% of target 🚀</p>

@@ -25,7 +25,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-1">
+            <h4 class="text-base font-weight-medium me-1 mb-1">
               8 Invoices have been paid
             </h4>
             <span class="text-sm text-disabled text-no-wrap">Wednesday</span>
@@ -40,7 +40,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
               size="26"
               class="me-2"
             />
-            <h6 class="font-weight-semibold text-sm">
+            <h6 class="font-weight-medium text-sm">
               Invoices.pdf
             </h6>
           </div>
@@ -51,7 +51,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-1">
+            <h4 class="text-base font-weight-medium me-1 mb-1">
               Create a new project for client 😎
             </h4>
             <span class="text-sm text-disabled text-no-wrap">April, 18</span>
@@ -68,7 +68,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
               :image="avatar2"
             />
             <div>
-              <span class="text-sm font-weight-semibold mb-0">
+              <span class="text-sm font-weight-medium mb-0">
                 John Doe (Client)
               </span>
             </div>
@@ -80,7 +80,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-1">
+            <h4 class="text-base font-weight-medium me-1 mb-1">
               Order #37745 from September
             </h4>
             <span class="text-sm text-disabled text-no-wrap">January, 10</span>
@@ -95,7 +95,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-semibold me-1 mb-3">
+            <h4 class="text-base font-weight-medium me-1 mb-3">
               Public Meeting
             </h4>
             <span class="text-sm text-disabled text-no-wrap">September, 30</span>

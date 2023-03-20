@@ -16,19 +16,19 @@ import { themeConfig } from '@themeConfig'
           </div>
         </template>
 
-        <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
+        <VCardTitle class="text-2xl text-uppercase">
           {{ themeConfig.app.title }}
         </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h5 class="text-h5 font-weight-semibold mb-1">
+        <h5 class="text-h5 mb-1">
           Two Step Verification 💬
         </h5>
         <p class="mb-2">
           We sent a verification code to your mobile. Enter the code from the mobile in the field below.
         </p>
-        <h6 class="text-base font-weight-semibold">
+        <h6 class="text-base font-weight-medium">
           ******1234
         </h6>
       </VCardText>

@@ -66,7 +66,7 @@ const totalArticles = (category: HelpCenterCategoriesType) => {
                     name: 'pages-help-center-category-subcategory',
                     params: { category: article.slug, subcategory: article.subCategories[0].slug },
                   }"
-                  class="text-base font-weight-semibold"
+                  class="text-base font-weight-medium"
                 >
                   {{ totalArticles(article) }} articles
                 </RouterLink>

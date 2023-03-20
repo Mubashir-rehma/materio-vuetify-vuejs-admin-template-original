@@ -25,6 +25,7 @@ watch(theme, val => {
     <VTooltip
       activator="parent"
       open-delay="1000"
+      scroll-strategy="close"
     >
       <span class="text-capitalize">{{ currentThemeName }}</span>
     </VTooltip>

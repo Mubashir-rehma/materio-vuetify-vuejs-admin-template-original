@@ -79,7 +79,7 @@ const database: SearchItem[] = [
     id: 13,
     url: { name: 'apps-user-view-id', params: { id: 21 } },
     icon: 'mdi-eye-outline',
-    title: 'User View - Overview',
+    title: 'User View',
     category: 'appsPages',
   },
   {

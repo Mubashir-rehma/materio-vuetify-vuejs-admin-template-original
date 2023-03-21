@@ -391,15 +391,15 @@ const computedMoreList = computed(() => {
       <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
         <!-- 👉 Rows per page -->
         <div
-          class="d-flex align-center me-3"
+          class="d-flex align-center"
           style="inline-size: 171px;"
         >
-          <span class="text-no-wrap me-3">Rows per page:</span>
+          <span class="text-no-wrap text-sm me-3">Rows per page:</span>
           <VSelect
             v-model="rowPerPage"
             density="compact"
+            class="small-select"
             variant="plain"
-            class="mt-n4"
             :items="[10, 20, 30, 50]"
           />
         </div>
@@ -409,16 +409,15 @@ const computedMoreList = computed(() => {
           <h6 class="text-sm font-weight-regular">
             {{ paginationData }}
           </h6>
-
-          <VPagination
-            v-model="currentPage"
-            size="small"
-            :total-visible="1"
-            :length="totalPage"
-            @next="selectedRows = []"
-            @prev="selectedRows = []"
-          />
         </div>
+        <VPagination
+          v-model="currentPage"
+          size="small"
+          :total-visible="1"
+          :length="totalPage"
+          @next="selectedRows = []"
+          @prev="selectedRows = []"
+        />
       </VCardText>
       <!-- !SECTION -->
     </VCard>
@@ -433,6 +432,26 @@ const computedMoreList = computed(() => {
 
   .invoice-list-search {
     inline-size: 12rem;
+  }
+}
+
+.small-select {
+  margin-block: auto;
+
+  .v-field__input {
+    align-items: center;
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  .v-field__append-inner {
+    align-items: center;
+    padding: 0;
+    margin-inline-start: -2.5rem;
+
+    .v-icon {
+      margin-inline-start: 0 !important;
+    }
   }
 }
 </style>

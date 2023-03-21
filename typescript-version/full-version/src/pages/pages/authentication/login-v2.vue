@@ -93,6 +93,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                 <VCol cols="12">
                   <VTextField
                     v-model="form.email"
+                    autofocus
                     label="Email"
                     type="email"
                   />

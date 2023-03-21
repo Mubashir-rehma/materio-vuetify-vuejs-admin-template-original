@@ -260,7 +260,7 @@ const computedMoreList = computed(() => {
         <thead>
           <tr>
             <th scope="col">
-              <div style="width: 1.875rem;">
+              <div style="inline-size: 1.875rem;">
                 <VCheckbox
                   :model-value="selectAllUser"
                   :indeterminate="(users.length !== selectedRows.length) && !!selectedRows.length"
@@ -297,7 +297,7 @@ const computedMoreList = computed(() => {
           >
             <!-- 👉 Checkbox -->
             <td>
-              <div style="width: 1.875rem;">
+              <div style="inline-size: 1.875rem;">
                 <VCheckbox
                   :id="`check${user.id}`"
                   :model-value="selectedRows.includes(`check${user.id}`)"
@@ -371,7 +371,7 @@ const computedMoreList = computed(() => {
             <!-- 👉 Actions -->
             <td
               class="text-center"
-              style="width: 5rem;"
+              style="inline-size: 5rem;"
             >
               <MoreBtn
                 :menu-list="computedMoreList(user.id)"
@@ -399,7 +399,7 @@ const computedMoreList = computed(() => {
       <VCardText class="d-flex align-center flex-wrap justify-end gap-4 pa-2">
         <div
           class="d-flex align-center me-3"
-          style="width: 171px;"
+          style="inline-size: 171px;"
         >
           <span class="text-no-wrap me-3">Rows per page:</span>
 

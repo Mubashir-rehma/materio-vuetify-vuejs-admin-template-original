@@ -19,8 +19,8 @@ interface Props {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const invoiceBalance = ref('')
-const paymentAmount = ref('')
+const invoiceBalance = ref()
+const paymentAmount = ref()
 const paymentDate = ref('')
 const paymentMethod = ref()
 const paymentNote = ref('')
@@ -65,6 +65,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VTextField
                   v-model="invoiceBalance"
                   label="Invoice Balance"
+                  type="number"
                 />
               </VCol>
 
@@ -72,6 +73,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VTextField
                   v-model="paymentAmount"
                   label="Payment Amount"
+                  type="number"
                 />
               </VCol>
 

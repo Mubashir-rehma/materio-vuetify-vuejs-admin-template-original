@@ -77,8 +77,8 @@ watch(totalPrice, () => {
 
 <template>
   <!-- eslint-disable vue/no-mutating-props -->
-  <div class="add-products-header mb-2 d-none d-md-flex">
-    <VRow class="font-weight-medium px-5">
+  <div class="add-products-header mb-2 d-none d-md-flex ps-5 pe-16">
+    <VRow class="font-weight-medium">
       <VCol
         cols="12"
         md="6"
@@ -184,7 +184,7 @@ watch(totalPrice, () => {
           md="2"
           sm="4"
         >
-          <p class="text-sm-center my-2">
+          <p class="my-2">
             <span class="d-inline d-md-none">Price: </span>
             <span class="text-body-1">${{ totalPrice }}</span>
           </p>
@@ -197,9 +197,7 @@ watch(totalPrice, () => {
       class="d-flex flex-column item-actions pa-1"
       :class="$vuetify.display.smAndUp ? 'border-s' : 'border-b' "
     >
-      <IconBtn
-        @click="removeProduct"
-      >
+      <IconBtn @click="removeProduct">
         <VIcon
           :size="20"
           icon="mdi-close"

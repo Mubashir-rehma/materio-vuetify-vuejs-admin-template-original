@@ -8,7 +8,7 @@ interface BillingAddress {
   contact: string
   country: string
   state: string
-  zipCode: string
+  zipCode: number | null
 }
 interface Props {
   billingAddress?: BillingAddress
@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
     contact: '',
     country: '',
     state: '',
-    zipCode: '',
+    zipCode: null,
   }),
 })
 
@@ -99,11 +99,10 @@ const addressTypes = [
             :key="type.title"
             cols="12"
             sm="6"
-            class="mb-6"
           >
             <div
               class="rounded border cursor-pointer pa-4"
-              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary' : 'bg-light-secondary'"
+              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary border-opacity-100' : 'bg-var-theme-background'"
               @click="selectedAddress = type.title"
             >
               <div class="d-flex align-center font-weight-medium gap-2 text-xl mb-1">
@@ -119,7 +118,10 @@ const addressTypes = [
         </VRow>
 
         <!-- 👉 Form -->
-        <VForm @submit.prevent="onFormSubmit">
+        <VForm
+          class="mt-4"
+          @submit.prevent="onFormSubmit"
+        >
           <VRow>
             <!-- 👉 Company Name -->
             <VCol
@@ -216,6 +218,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.zipCode"
                 label="Zip Code"
+                type="number"
               />
             </VCol>
 

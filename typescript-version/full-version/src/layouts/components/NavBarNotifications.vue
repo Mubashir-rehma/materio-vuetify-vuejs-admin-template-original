@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import Notifications from '@core/components/Notifications.vue'
 import type { Notification } from '@layouts/types'
 
-// Images
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
 import avatar5 from '@images/avatars/avatar-5.png'

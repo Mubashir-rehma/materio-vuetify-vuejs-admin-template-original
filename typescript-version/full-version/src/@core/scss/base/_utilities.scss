@@ -54,7 +54,7 @@ $card-spacer-content: 16px;
 }
 
 .bg-var-theme-background {
-  background-color: rgba(var(--v-theme-background), var(--v-medium-emphasis-opacity)) !important;
+  background-color: rgba(var(--v-theme-on-background), var(--v-hover-opacity)) !important;
 }
 
 // [/^bg-light-(\w+)$/, ([, w]) => ({ backgroundColor: `rgba(var(--v-theme-${w}), var(--v-activated-opacity))` })],
@@ -64,9 +64,13 @@ $card-spacer-content: 16px;
   }
 }
 
-// 👉 Typography
-.font-weight-semibold {
-  font-weight: 600 !important;
+// 👉 clamp text
+.clamp-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
 }
 
 .leading-normal {

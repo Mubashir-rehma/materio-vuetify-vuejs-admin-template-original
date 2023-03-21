@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import poseFs9 from '@images/pages/pose-fs-9.png';
+import poseFs9 from '@images/pages/pose-fs-9.png'
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
@@ -196,7 +196,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           </p>
 
           <VBtn @click="isOneTimePasswordDialogVisible = true">
-            Enable two-FA
+            Enable 2FA
           </VBtn>
         </VCardText>
       </VCard>

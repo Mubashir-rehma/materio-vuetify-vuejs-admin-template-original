@@ -86,7 +86,7 @@ const database: SearchItem[] = [
     id: 14,
     url: { name: 'apps-user-view-id', params: { id: 21 } },
     icon: 'mdi-eye-outline',
-    title: 'User View - Overview',
+    title: 'User View',
     category: 'appsPages',
   },
   {
@@ -119,7 +119,7 @@ const database: SearchItem[] = [
   },
   {
     id: 20,
-    url: { name: 'pages-account-settings-tab', params: { tab: 'billing' } },
+    url: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } },
     icon: 'mdi-currency-usd',
     title: 'Account Settings - Billing',
     category: 'appsPages',
@@ -315,7 +315,7 @@ const database: SearchItem[] = [
   },
   {
     id: 48,
-    url: { name: 'pages-cards-gamification' },
+    url: { name: 'pages-cards-card-gamification' },
     icon: 'mdi-card-account-details-outline',
     title: 'Card Gamification',
     category: 'userInterface',

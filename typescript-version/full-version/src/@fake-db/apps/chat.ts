@@ -396,7 +396,9 @@ mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
     })
     activeChat = database.chats.at(-1)
   }
-  activeChat.messages.push(newMessageData)
+  else {
+    activeChat.messages.push(newMessageData)
+  }
 
   const response: { msg: ChatMessage; chat?: Chat } = { msg: newMessageData }
 

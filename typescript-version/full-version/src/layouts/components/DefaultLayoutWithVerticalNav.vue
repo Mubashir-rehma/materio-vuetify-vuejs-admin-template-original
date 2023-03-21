@@ -19,9 +19,7 @@ const { width: windowWidth } = useWindowSize()
 </script>
 
 <template>
-  <VerticalNavLayout
-    :nav-items="navItems"
-  >
+  <VerticalNavLayout :nav-items="navItems">
     <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">

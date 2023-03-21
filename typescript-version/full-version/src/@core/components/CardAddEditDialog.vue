@@ -106,7 +106,7 @@ const formSubmit = () => {
             >
               <VTextField
                 v-model="cardDetails.cvv"
-                type="password"
+                type="number"
                 label="CVV Code"
               />
             </VCol>

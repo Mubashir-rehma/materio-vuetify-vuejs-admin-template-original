@@ -53,7 +53,9 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
             },
           }"
         >
-          {{ data.title }}
+          <span class="text-wrap">
+            {{ data.title }}
+          </span>
         </VTab>
       </VTabs>
     </VCol>
@@ -78,7 +80,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                   icon="mdi-arrow-left"
                   class="flip-in-rtl"
                 />
-                <span>Back to help center</span>
+                <span>Back to categories</span>
               </VBtn>
             </VCardText>
 

@@ -39,7 +39,7 @@ const props = defineProps<Props>()
               <h6 class="text-h6 my-3">
                 {{ article.title }}
               </h6>
-              <p>
+              <p class="clamp-text">
                 {{ article.subtitle }}
               </p>
 

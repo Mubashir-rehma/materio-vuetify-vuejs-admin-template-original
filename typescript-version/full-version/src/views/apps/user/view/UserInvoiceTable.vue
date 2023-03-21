@@ -187,7 +187,7 @@ const computedMoreList = computed(() => {
           </td>
 
           <!-- 👉 Actions -->
-          <td style="width: 7.5rem;">
+          <td style="inline-size: 7.5rem;">
             <IconBtn>
               <VIcon icon="mdi-delete-outline" />
             </IconBtn>
@@ -225,7 +225,7 @@ const computedMoreList = computed(() => {
       <!-- 👉 Rows per page -->
       <div
         class="d-flex align-center ms-3"
-        style="width: 171px;"
+        style="inline-size: 171px;"
       >
         <span class="text-no-wrap me-3">Rows per page:</span>
 

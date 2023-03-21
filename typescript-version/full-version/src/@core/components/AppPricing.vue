@@ -128,7 +128,7 @@ const pricingPlans = [
         :class="plan.isPopular ? 'border-primary border-opacity-100' : ''"
       >
         <VCardText
-          style="height: 4.125rem;"
+          style="block-size: 4.125rem;"
           class="text-end"
         >
           <!-- 👉 Popular -->

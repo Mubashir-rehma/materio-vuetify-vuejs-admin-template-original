@@ -169,7 +169,11 @@ const resetPaymentForm = () => {
           <!-- 👉 Confirm Dialog -->
           <ConfirmDialog
             v-model:isDialogVisible="isConfirmDialogVisible"
-            confirmation-msg="Are you sure to cancel your subscription?"
+            confirmation-question="Are you sure to cancel your subscription?"
+            cancel-msg="Unsubscription Cancelled!!"
+            cancel-title="Cancelled"
+            confirm-msg="Your subscription cancelled successfully."
+            confirm-title="Unsubscribed!"
           />
 
           <!-- 👉 plan and pricing dialog -->
@@ -248,7 +252,7 @@ const resetPaymentForm = () => {
                       >
                         <VTextField
                           v-model="cardCvv"
-                          type="password"
+                          type="number"
                           label="CVV Code"
                         />
                       </VCol>
@@ -448,7 +452,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="Zip Code" />
+                <VTextField
+                  label="Zip Code"
+                  type="number"
+                />
               </VCol>
 
               <!-- 👉 Actions Button -->

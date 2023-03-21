@@ -1,5 +1,5 @@
 import { createVuetify } from 'vuetify'
-import { VBtn } from 'vuetify/components'
+import { VBtn } from 'vuetify/components/VBtn'
 import defaults from './defaults'
 import { icons } from './icons'
 import theme from './theme'

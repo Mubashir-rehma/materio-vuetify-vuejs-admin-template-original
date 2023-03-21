@@ -44,10 +44,10 @@ const moreList = [
             <VAvatar :image="data.avatar" />
           </template>
 
-          <VCardTitle>Social Banners</VCardTitle>
+          <VCardTitle>{{ data.title }}</VCardTitle>
           <p class="mb-0">
             <span class="font-weight-medium me-1">Client:</span>
-            <span>Christian Jimenez</span>
+            <span>{{ data.client }}</span>
           </p>
 
           <template #append>
@@ -62,7 +62,7 @@ const moreList = [
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-x-2 gap-y-4">
-            <div class="pa-2 bg-light-secondary rounded">
+            <div class="pa-2 bg-var-theme-background rounded">
               <h6 class="text-base font-weight-medium">
                 {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>
               </h6>
@@ -79,7 +79,7 @@ const moreList = [
             </div>
           </div>
 
-          <p class="mt-4 mb-0">
+          <p class="mt-4 mb-0 clamp-text">
             {{ data.description }}
           </p>
         </VCardText>
@@ -102,7 +102,7 @@ const moreList = [
 
           <div class="d-flex align-center justify-space-between flex-wrap text-xs mt-4 mb-2">
             <span>Task: {{ data.tasks }}</span>
-            <span>95% Completed</span>
+            <span>{{ Math.round((data.completedTask / data.totalTask) * 100) }}% Completed</span>
           </div>
           <VProgressLinear
             rounded
@@ -124,7 +124,7 @@ const moreList = [
                 />
               </div>
               <span class="text-xs">
-                280 members
+                {{ data.members }}
               </span>
             </div>
 

@@ -10,21 +10,13 @@ Loader is created using HTML & CSS. There's no Vue code. You can find loader mar
 
 Loader styles are imported from `/public/loader.css` file.
 
-You can change loader color by updating hex value of `.effect-[1,2,3]`
-
-```css{6}
-.loading .effect-1,
-.loading .effect-2,
-.loading .effect-3 {
-  /* other styles */
-  /* We are updating loader color's hex value to `#c084fc` */
-  border-inline-start: 3px solid #c084fc;
-}
-```
+Loader color is automatically set as a primary color of template's theme.
 
 ## Loader logo
 
-We are also displaying logo above the loader. You can just change the logo by updating the `/public/logo.png` file. If your logo file has different name please update `/index.html` file accordingly.
+We are also displaying logo above the loader.We have used SVG code for loader logo in `loading-logo` class of `/index.html` file.
+
+To change the loader logo, you just need to replace your loader's SVG code with ours. If you are using an image file,replace the image import with SVG code.
 
 ## Theme
 

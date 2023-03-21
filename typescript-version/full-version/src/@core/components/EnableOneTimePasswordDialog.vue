@@ -49,6 +49,7 @@ const resetPhoneNumber = () => {
             v-model="phoneNumber"
             name="mobile"
             label="Phone Number"
+            type="number"
             class="mb-4"
           />
 

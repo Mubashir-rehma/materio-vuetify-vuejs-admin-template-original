@@ -10,7 +10,7 @@ const props = defineProps<{
   isDrawerOpen: boolean
 }>()
 
-const emit = defineEmits<{
+defineEmits<{
   (e: 'openChatOfContact', id: TypeChatContact['id']): void
   (e: 'showUserProfile'): void
   (e: 'close'): void

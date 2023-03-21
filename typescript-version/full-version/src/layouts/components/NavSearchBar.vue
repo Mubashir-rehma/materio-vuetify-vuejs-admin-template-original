@@ -111,10 +111,11 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   <div
     class="d-flex align-center cursor-pointer"
     v-bind="$attrs"
+    style="user-select: none;"
     @click="isAppSearchBarVisible = !isAppSearchBarVisible"
   >
     <!-- 👉 Search Trigger button -->
-    <IconBtn>
+    <IconBtn class="me-1">
       <VIcon icon="mdi-magnify" />
     </IconBtn>
 

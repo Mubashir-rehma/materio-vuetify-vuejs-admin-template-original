@@ -9,9 +9,7 @@ const sliderValue = ref(30)
     </VCol>
 
     <VCol cols="12">
-      <VSlider
-        v-model="sliderValue"
-      />
+      <VSlider v-model="sliderValue" />
     </VCol>
   </VRow>
 </template>

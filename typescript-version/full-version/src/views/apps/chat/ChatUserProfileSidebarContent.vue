@@ -4,7 +4,7 @@ import { useChat } from './useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 import { avatarText } from '@core/utils/formatters'
 
-const emit = defineEmits<{
+defineEmits<{
   (e: 'close'): void
 }>()
 

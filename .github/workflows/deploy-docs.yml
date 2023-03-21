@@ -1,4 +1,5 @@
-name: 'Deploy - Documentation'
+name: Deploy - Documentation
+run-name: ${{ inputs.is_production && '🚀' || '🧪' }} Deploy - Documentation
 
 on:
   workflow_dispatch:
@@ -15,36 +16,48 @@ jobs:
       BASE: ${{ inputs.is_production && secrets.DOCS_BASE_PROD || secrets.DOCS_BASE_STAG }} # ❗ (For VuePress only) Don't forget the ending slash in base
       TEMPLATE_NAME: materio
     steps:
-      - run: echo $(${{ inputs.is_production }} && echo "Deploying production" || echo "Deploying staging")
+      - name: ⚙️ Set BRAND_NAME environment variable from repo name
+        run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
+    
+      - name: ⚙️ Set DOCS_BASE environment variables from PROD_DIR secret
+        run: echo -e DOCS_BASE=/$(basename ${{ secrets.PROD_DIR }})/documentation/ >> $GITHUB_ENV
       
-      - name: Checkout template
+      - name: ⚙️ Set BASE environment variable for building docs
+        run: (${{inputs.is_production}} && echo -e "BASE=${{ env.DOCS_BASE }}" || echo -e "BASE=${{ env.DOCS_BASE }}" | sed 's|/|/staging/|2') >> $GITHUB_ENV
+      
+      - name: ⬇️ Checkout template
         uses: actions/checkout@v3
         with:
-          path: ${{ env.TEMPLATE_NAME }}/vue
+          path: ${{ env.BRAND_NAME }}/vue
 
-      - name: Checkout scripts
+      - name: 😒 Use Node 16.17.1 version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.1
+
+      - name: ⬇️ Checkout scripts
         uses: actions/checkout@v3
         with:
           repository: themeselection/automation-scripts
           token: ${{ secrets.GH_PAT }}
           path: automation-scripts
 
-      - name: Install packages in automation-scripts dir
+      - name: ⬇️ Install packages in automation-scripts dir
         working-directory: automation-scripts/vue
         run: yarn
 
-      - name: Inject GTM code in SSR template
+      - name: 🛠️ Inject GTM code in SSR template
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/injectGtmInDocs.ts
+        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/injectGtmInDocs.ts
       
-      - name: Build documentation
+      - name: 📦 Build documentation
         run: |
-          cd ${{ env.TEMPLATE_NAME }}/vue/docs
+          cd ${{ env.BRAND_NAME }}/vue/docs
           yarn
           yarn build
           mv .vuepress/dist $GITHUB_WORKSPACE/documentation
         
-      - name: Cleanup documentation
+      - name: 🗄️ Cleanup & Backup
         uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
@@ -56,10 +69,10 @@ jobs:
             cd ${{ env.DEPLOY_DIR }}
             rm -rf documentation-backup-*.zip
             DOC_ZIP_NAME="documentation-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"
-            [[ "${{ inputs.is_production }}" == "true" ]] && rm -rf ${{ secrets.STAG_DIR }}/documentation && zip -r $DOC_ZIP_NAME documentation
+            [[ "${{ inputs.is_production }}" == "true" ]] && rm -rf ${{ env.STAG_DIR }}/documentation && zip -r $DOC_ZIP_NAME documentation
             rm -rf documentation
           
-      - name: Upload documentation
+      - name: 🚀 Upload documentation
         uses: appleboy/scp-action@master
         with:
           HOST: ${{ secrets.HOST }}

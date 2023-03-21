@@ -224,7 +224,7 @@ const refreshOpenedEmail = async () => {
         <VDivider />
 
         <!-- 👉 Action bar -->
-        <div class="py-2 px-5 d-flex items-center">
+        <div class="py-2 px-5 d-flex align-center">
           <!-- TODO: Make checkbox primary on indeterminate state -->
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
@@ -233,7 +233,7 @@ const refreshOpenedEmail = async () => {
           />
 
           <div
-            class="w-100 d-flex items-center action-bar-actions"
+            class="w-100 d-flex align-center action-bar-actions"
             :style="{
               visibility:
                 isSelectAllEmailCheckboxIndeterminate || selectAllEmailCheckbox
@@ -265,8 +265,8 @@ const refreshOpenedEmail = async () => {
                     :key="moveTo.title"
                   >
                     <VListItem
-                      :class=" shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
-                      class="items-center"
+                      :class="shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
+                      class="align-center"
                       href="#"
                       @click="handleMoveMailsTo(moveTo.action)"
                     >
@@ -378,12 +378,30 @@ const refreshOpenedEmail = async () => {
             <div class="email-actions d-none">
               <IconBtn @click.stop="handleActionClick('trash', [email.id])">
                 <VIcon icon="mdi-delete-outline" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  Delete Mail
+                </VTooltip>
               </IconBtn>
               <IconBtn @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])">
                 <VIcon :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  {{ email.isRead ? 'Read Mail' : 'Unread Mail' }}
+                </VTooltip>
               </IconBtn>
               <IconBtn @click.stop="handleActionClick('spam', [email.id])">
                 <VIcon icon="mdi-alert-octagon-outline" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  Move to Spam
+                </VTooltip>
               </IconBtn>
             </div>
           </li>

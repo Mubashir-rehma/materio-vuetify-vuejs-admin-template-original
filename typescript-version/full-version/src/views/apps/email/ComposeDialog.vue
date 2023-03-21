@@ -6,6 +6,7 @@ defineEmits<{
 const to = ref('')
 const subject = ref('')
 const message = ref('')
+const isMenuOpen = ref(false)
 
 const resetValues = () => {
   to.value = subject.value = message.value = ''
@@ -17,9 +18,7 @@ const resetValues = () => {
     class="email-compose-dialog"
     elevation="24"
   >
-    <VCardItem
-      class="py-3 px-5"
-    >
+    <VCardItem class="py-3 px-5">
       <div class="d-flex align-center">
         <span class="font-weight-medium">Compose Mail</span>
         <VSpacer />
@@ -76,7 +75,23 @@ const resetValues = () => {
     <VDivider />
 
     <div class="d-flex align-center px-5 py-4">
-      <VBtn>Send</VBtn>
+      <VBtnGroup
+        color="primary"
+        divided
+        density="comfortable"
+      >
+        <VBtn>Send</VBtn>
+        <VBtn>
+          <VIcon
+            :icon="isMenuOpen ? 'bx-chevron-up' : 'bx-chevron-down'"
+            size="24"
+            @click="() => isMenuOpen = !isMenuOpen"
+          />
+          <VMenu activator="parent">
+            <VList :items="['Schedule Mail', 'Save Draft']" />
+          </VMenu>
+        </VBtn>
+      </VBtnGroup>
       <VIcon
         icon="mdi-attachment"
         class="ms-4 cursor-pointer"
@@ -103,11 +118,17 @@ const resetValues = () => {
 .email-compose-dialog {
   z-index: 910 !important;
 
+  .v-field--prepended {
+    padding-inline-start: 20px;
+  }
+
   .v-card-item {
     background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
   }
 
-  --v-field-padding-start: 20px;
+  .v-textarea .v-field {
+    --v-field-padding-start: 20px;
+  }
 
   .v-field__outline {
     display: none;

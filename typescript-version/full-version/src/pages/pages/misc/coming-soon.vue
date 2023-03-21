@@ -31,6 +31,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
         <VTextField
           v-model="email"
           density="compact"
+          autofocus
           placeholder="Enter your email or username"
           class="misc-email-input"
         />

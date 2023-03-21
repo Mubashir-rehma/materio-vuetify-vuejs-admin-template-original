@@ -39,6 +39,7 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
         <span class="text-caption">{{ props.title }}</span>
         <div class="d-flex align-center flex-wrap">
           <span class="text-h6">{{ kFormatter(props.stats) }}</span>
+          <span class="text-h6">{{ kFormatter(props.stats) }}</span>
           <div
             v-if="props.change"
             :class="`${isPositive ? 'text-success' : 'text-error'} mt-1`"

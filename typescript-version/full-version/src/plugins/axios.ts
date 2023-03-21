@@ -20,7 +20,6 @@ axiosIns.interceptors.request.use(config => {
 
     // Set authorization header
     // ℹ️ JSON.parse will convert token to string
-    // @ts-expect-error https://github.com/axios/axios/issues/5416
     config.headers.Authorization = token ? `Bearer ${JSON.parse(token)}` : ''
   }
 

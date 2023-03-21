@@ -134,7 +134,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               >
                 <VListItem
                   :class="shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
-                  class="items-center"
+                  class="align-center"
                   href="#"
                   @click="handleMoveMailsTo(moveTo.action)"
                 >
@@ -306,6 +306,10 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 
   .mail-header {
     min-block-size: 84px;
+  }
+
+  .v-card {
+    border: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
   }
 }
 </style>

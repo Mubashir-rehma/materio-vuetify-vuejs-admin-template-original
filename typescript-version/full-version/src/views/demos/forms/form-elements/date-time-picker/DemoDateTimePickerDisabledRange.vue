@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import AppDateTimePicker from '@core/components/AppDateTimePicker.vue'
-
 const now = new Date()
 const currentMonth = now.toLocaleString('default', { month: '2-digit' })
 const currentYear = now.getFullYear()

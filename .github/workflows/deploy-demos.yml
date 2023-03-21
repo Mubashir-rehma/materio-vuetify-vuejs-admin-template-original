@@ -1,4 +1,5 @@
-name: 'Deploy - Demos'
+name: Deploy - Demos
+run-name: ${{ inputs.is_production && '🚀' || '🧪' }} Deploy - Demos
 
 on:
   workflow_dispatch:
@@ -14,33 +15,34 @@ jobs:
       DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
       TEMPLATE_NAME: materio
     steps:
-      - run: echo $(${{ inputs.is_production }} && echo "Deploying production" || echo "Deploying staging")
+      - name: ⚙️ Set BRAND_NAME environment variable from repo name
+        run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
 
-      - name: Checkout template
+      - name: ⬇️ Checkout template
         uses: actions/checkout@v3
         with:
-          path: ${{ env.TEMPLATE_NAME }}/vue
+          path: ${{ env.BRAND_NAME }}/vue
 
-      - name: Checkout scripts
+      - name: ⬇️ Checkout scripts
         uses: actions/checkout@v3
         with:
           repository: themeselection/automation-scripts
           token: ${{ secrets.GH_PAT }}
           path: automation-scripts
       
-      - name: Install packages in automation-scripts dir
+      - name: ⬇️ Install packages in automation-scripts dir
         working-directory: automation-scripts/vue
         run: yarn
 
-      - name: Install packages in typescript full version
-        working-directory: ${{ env.TEMPLATE_NAME }}/vue/typescript-version/full-version
+      - name: ⬇️ Install packages in typescript full version
+        working-directory: ${{ env.BRAND_NAME }}/vue/typescript-version/full-version
         run: yarn
 
-      - name: Generate demos
+      - name: 📦 Generate demos
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
+        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
 
-      - name: Cleanup demos
+      - name: 🗄️ Cleanup & Backup
         uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
@@ -52,13 +54,13 @@ jobs:
             cd ${{ env.DEPLOY_DIR }}
             rm -rf demos-backup-*.zip
             DEMO_ZIP_NAME="demos-backup-$(date +"%Y-%m-%d-%H-%M-%S").zip"
-            [[ "${{ inputs.is_production }}" == "true" ]] && rm -rf ${{ secrets.STAG_DIR }}/demo-* && zip -r $DEMO_ZIP_NAME demo-*
+            [[ "${{ inputs.is_production }}" == "true" ]] && rm -rf ${{ env.STAG_DIR }}/demo-* && zip -r $DEMO_ZIP_NAME demo-*
             rm -rf demo-*
 
-      - name: Move all demos to github workspace dir
-        run: mv ${{ env.TEMPLATE_NAME }}/vue/typescript-version/full-version/demo-* $GITHUB_WORKSPACE
+      - name: 🏋️ Move all demos to github workspace dir
+        run: mv ${{ env.BRAND_NAME }}/vue/typescript-version/full-version/demo-* $GITHUB_WORKSPACE
 
-      - name: Upload demos zip
+      - name: 🚀 Upload demos zip
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}

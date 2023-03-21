@@ -3,7 +3,7 @@
 We are making template update as easy as possible from our side. We create our folder structure which makes updating process easier than ever. 😍
 
 :::tip
-If you are using Vue only then mostly replacing `@core` folder in your project is enough. Still, verifying if something outside of `@core` is changed or not is always helpful and keeps you error free. 😇
+If you are using Vue only then mostly replacing `@core`  and `@layouts` folder in your project is enough. Still, verifying if something outside of `@core`  and `@layouts` is changed or not is always helpful and keeps you error free. 😇
 :::
 
 Let's check how you can view each and every change in our template's latest release with ease.

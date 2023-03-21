@@ -21,7 +21,7 @@ export default [
           { title: 'Advance', to: 'pages-cards-card-advance' },
           { title: 'Statistics', to: 'pages-cards-card-statistics' },
           { title: 'Widgets', to: 'pages-cards-card-widgets' },
-          { title: 'Gamification', to: 'pages-cards-gamification' },
+          { title: 'Gamification', to: 'pages-cards-card-gamification' },
           { title: 'Actions', to: 'pages-cards-card-actions' },
         ],
       },

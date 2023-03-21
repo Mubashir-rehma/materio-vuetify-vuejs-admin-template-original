@@ -70,42 +70,41 @@ const userProfileList = [
         location="bottom end"
         offset="14px"
       >
-        <PerfectScrollbar :options="{ wheelPropagation: false }">
-          <VList>
-            <!-- 👉 User Avatar & Name -->
-            <VListItem>
-              <template #prepend>
-                <VListItemAction start>
-                  <VBadge
-                    dot
-                    location="bottom right"
-                    offset-x="3"
-                    offset-y="3"
-                    color="success"
+        <VList>
+          <VListItem>
+            <template #prepend>
+              <VListItemAction start>
+                <VBadge
+                  dot
+                  location="bottom right"
+                  offset-x="3"
+                  offset-y="3"
+                  color="success"
+                >
+                  <VAvatar
+                    color="primary"
+                    variant="tonal"
                   >
-                    <VAvatar
-                      color="primary"
-                      variant="tonal"
-                    >
-                      <VImg
-                        v-if="userData && userData.avatar"
-                        :src="userData.avatar"
-                      />
-                      <VIcon
-                        v-else
-                        icon="mdi-account-outline"
-                      />
-                    </VAvatar>
-                  </VBadge>
-                </VListItemAction>
-              </template>
+                    <VImg
+                      v-if="userData && userData.avatar"
+                      :src="userData.avatar"
+                    />
+                    <VIcon
+                      v-else
+                      icon="mdi-account-outline"
+                    />
+                  </VAvatar>
+                </VBadge>
+              </VListItemAction>
+            </template>
 
-              <VListItemTitle class="font-weight-medium">
-                {{ userData.fullName || userData.username }}
-              </VListItemTitle>
-              <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
-            </VListItem>
+            <VListItemTitle class="font-weight-medium">
+              {{ userData.fullName || userData.username }}
+            </VListItemTitle>
+            <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
+          </VListItem>
 
+          <PerfectScrollbar :options="{ wheelPropagation: false }">
             <template
               v-for="item in userProfileList"
               :key="item.title"
@@ -138,8 +137,8 @@ const userProfileList = [
                 class="my-2"
               />
             </template>
-          </VList>
-        </PerfectScrollbar>
+          </PerfectScrollbar>
+        </VList>
       </VMenu>
       <!-- !SECTION -->
     </VAvatar>

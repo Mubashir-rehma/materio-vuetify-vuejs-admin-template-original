@@ -36,14 +36,14 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 </template>
 
 <style lang="scss">
-.triangle-bg {
+.v-card .triangle-bg {
   position: absolute;
   inline-size: 10.375rem;
   inset-block-end: 0;
   inset-inline-end: 0;
 }
 
-.illustration {
+.v-card .illustration {
   position: absolute;
   inline-size: 3rem;
   inset-block-end: 1rem;

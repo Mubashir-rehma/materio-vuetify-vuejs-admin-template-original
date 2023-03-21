@@ -15,8 +15,8 @@ jobs:
       STAG_DIR: ${{ secrets.PROD_DIR }}staging/
       DEPLOY_DIR: ${{ secrets.PROD_DIR }}${{ !inputs.is_production && 'staging/' || '' }}
     steps:
-      - name: ⚙️ Set TEMPLATE_NAME environment variable from repo name
-        run: echo TEMPLATE_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
+      - name: ⚙️ Set BRAND_NAME environment variable from repo name
+        run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
     
       - name: ⚙️ Set DOCS_BASE environment variables from PROD_DIR secret
         run: echo -e DOCS_BASE=/$(basename ${{ secrets.PROD_DIR }})/documentation/ >> $GITHUB_ENV
@@ -27,7 +27,7 @@ jobs:
       - name: ⬇️ Checkout template
         uses: actions/checkout@v3
         with:
-          path: ${{ env.TEMPLATE_NAME }}/vue
+          path: ${{ env.BRAND_NAME }}/vue
 
       - name: 😒 Use Node 16.17.1 version
         uses: actions/setup-node@v3
@@ -47,11 +47,11 @@ jobs:
 
       - name: 🛠️ Inject GTM code in SSR template
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/injectGtmInDocs.ts
+        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/injectGtmInDocs.ts
       
       - name: 📦 Build documentation
         run: |
-          cd ${{ env.TEMPLATE_NAME }}/vue/docs
+          cd ${{ env.BRAND_NAME }}/vue/docs
           yarn
           yarn build
           mv .vuepress/dist $GITHUB_WORKSPACE/documentation

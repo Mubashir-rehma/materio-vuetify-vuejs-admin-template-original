@@ -12,13 +12,13 @@ jobs:
     env:
       GitHubPersonalToken: ${{ secrets.GH_PAT }}
     steps:
-      - name: ⚙️ Set TEMPLATE_NAME environment variable from repo name
-        run: echo TEMPLATE_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
+      - name: ⚙️ Set BRAND_NAME environment variable from repo name
+        run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
 
       - name: ⬇️ Checkout template
         uses: actions/checkout@v3
         with:
-          path: ${{ env.TEMPLATE_NAME }}/vue
+          path: ${{ env.BRAND_NAME }}/vue
 
       - name: ⬇️ Checkout scripts
         uses: actions/checkout@v3
@@ -32,19 +32,19 @@ jobs:
         run: yarn
 
       - name: ⬇️ Install packages in typescript full version
-        working-directory: ${{ env.TEMPLATE_NAME }}/vue/typescript-version/full-version
+        working-directory: ${{ env.BRAND_NAME }}/vue/typescript-version/full-version
         run: yarn
 
       - name: ⬇️ Install packages in javascript full version. We need to install in both full version for linting the snippet files using `yarn lint`.
-        working-directory: ${{ env.TEMPLATE_NAME }}/vue/javascript-version/full-version
+        working-directory: ${{ env.BRAND_NAME }}/vue/javascript-version/full-version
         run: yarn
         
       - name: 📦 Generate package
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.TEMPLATE_NAME }}/scripts/genPkg.ts --version ${{ github.ref_name }}
+        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/genPkg.ts --version ${{ github.ref_name }}
 
       - name: 🚀 Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ env.TEMPLATE_NAME }}/vue/*.zip
+          files: ${{ env.BRAND_NAME }}/vue/*.zip
           body: Please refer to [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.

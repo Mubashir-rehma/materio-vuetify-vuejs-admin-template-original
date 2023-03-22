@@ -4,9 +4,9 @@ In this page you will find how to get support and how to create perfect GitHub i
 
 ## Creating GitHub Issue
 
-First of all please make sure you have access to our GitHub repo. Please visit [this](#) page to get details on getting access.
+First of all please make sure you have access to our GitHub repo. Please visit [this](/guide/github-access.md) page to get details on getting access.
 
-Please create GitHub issue using our [form](https://themeselection.com/support/) or else issue will be automatically closed by bot. 🤖
+Please create GitHub issue using our [form](https://tools.themeselection.com/github/raise-support) or else issue will be automatically closed by bot. 🤖
 
 ## Vuetify Framework Queries
 

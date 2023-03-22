@@ -4,4 +4,4 @@ GitHub access will give you a direct access to the repository on GitHub. You hav
 
 Please fill form in the below link to get GitHub Access:
 
-[Form Link](https://themeselection.com/tools/github)
+[Form Link](https://tools.themeselection.com/github/github-access)

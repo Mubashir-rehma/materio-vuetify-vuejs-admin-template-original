@@ -81,11 +81,13 @@ const resetValues = () => {
         density="comfortable"
       >
         <VBtn>Send</VBtn>
-        <VBtn>
+        <VBtn
+          icon
+          @click="() => isMenuOpen = !isMenuOpen"
+        >
           <VIcon
-            :icon="isMenuOpen ? 'bx-chevron-up' : 'bx-chevron-down'"
+            :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down' "
             size="24"
-            @click="() => isMenuOpen = !isMenuOpen"
           />
           <VMenu activator="parent">
             <VList :items="['Schedule Mail', 'Save Draft']" />

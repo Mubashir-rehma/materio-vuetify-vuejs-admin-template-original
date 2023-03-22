@@ -398,7 +398,7 @@ const computedMoreList = computed(() => {
           <VSelect
             v-model="rowPerPage"
             density="compact"
-            class="small-select"
+            class="per-page-select"
             variant="plain"
             :items="[10, 20, 30, 50]"
           />
@@ -432,26 +432,6 @@ const computedMoreList = computed(() => {
 
   .invoice-list-search {
     inline-size: 12rem;
-  }
-}
-
-.small-select {
-  margin-block: auto;
-
-  .v-field__input {
-    align-items: center;
-    padding: 2px;
-    font-size: 14px;
-  }
-
-  .v-field__append-inner {
-    align-items: center;
-    padding: 0;
-    margin-inline-start: -2.5rem;
-
-    .v-icon {
-      margin-inline-start: 0 !important;
-    }
   }
 }
 </style>

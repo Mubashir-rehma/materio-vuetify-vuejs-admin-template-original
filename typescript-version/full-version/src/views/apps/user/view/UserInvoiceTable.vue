@@ -233,7 +233,7 @@ const computedMoreList = computed(() => {
           v-model="rowPerPage"
           variant="plain"
           :items="[10, 20, 30, 50]"
-          class="mt-n4"
+          class="per-page-select"
         />
       </div>
 

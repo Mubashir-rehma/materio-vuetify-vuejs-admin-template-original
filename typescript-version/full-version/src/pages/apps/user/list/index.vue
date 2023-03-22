@@ -396,7 +396,7 @@ const computedMoreList = computed(() => {
 
       <VDivider />
 
-      <VCardText class="d-flex align-center flex-wrap justify-end gap-4 pa-2">
+      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
         <div
           class="d-flex align-center me-3"
           style="inline-size: 171px;"
@@ -407,7 +407,7 @@ const computedMoreList = computed(() => {
             v-model="rowPerPage"
             density="compact"
             variant="plain"
-            class="mt-n4"
+            class="per-page-select"
             :items="[10, 20, 30, 50]"
           />
         </div>

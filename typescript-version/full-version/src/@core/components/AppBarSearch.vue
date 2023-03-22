@@ -161,7 +161,7 @@ const resolveCategories = (val: string) => {
               </div>
 
               <IconBtn @click="clearSearchAndCloseDialog">
-                <VIcon icon="bx-x" />
+                <VIcon icon="mdi-close" />
               </IconBtn>
             </div>
           </template>

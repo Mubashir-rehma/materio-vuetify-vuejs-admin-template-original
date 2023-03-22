@@ -63,7 +63,9 @@ const notifications = ref([
           v-for="notification in notifications"
           :key="notification.type"
         >
-          <td>{{ notification.type }}</td>
+          <td class="text-high-emphasis">
+            {{ notification.type }}
+          </td>
           <td>
             <VCheckbox v-model="notification.email" />
           </td>

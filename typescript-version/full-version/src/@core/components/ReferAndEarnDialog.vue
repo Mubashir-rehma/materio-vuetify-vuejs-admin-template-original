@@ -130,6 +130,7 @@ const referAndEarnSteps = [
               icon
               class="rounded"
               color="#3B5998"
+              size="40"
             >
               <VIcon
                 color="white"
@@ -141,6 +142,7 @@ const referAndEarnSteps = [
               icon
               class="rounded"
               color="#55ACEE"
+              size="40"
             >
               <VIcon
                 color="white"
@@ -152,6 +154,7 @@ const referAndEarnSteps = [
               icon
               class="rounded"
               color="#007BB6"
+              size="40"
             >
               <VIcon
                 color="white"

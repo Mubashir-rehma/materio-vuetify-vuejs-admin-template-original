@@ -92,3 +92,9 @@
 .v-table--density-default > .v-table__wrapper > table > tfoot > tr > td {
   block-size: 50px;
 }
+
+.v-table {
+  th {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  }
+}

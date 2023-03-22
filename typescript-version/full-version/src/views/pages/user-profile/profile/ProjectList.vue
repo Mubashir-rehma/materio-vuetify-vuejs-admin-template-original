@@ -127,7 +127,9 @@ const moreList = [
             </div>
           </td>
 
-          <td> {{ project.leader }} </td>
+          <td class="text-high-emphasis">
+            {{ project.leader }}
+          </td>
 
           <td style="min-inline-size: 8rem;">
             <div class="d-flex align-center gap-3">
@@ -140,7 +142,7 @@ const moreList = [
                 />
               </div>
 
-              <span>
+              <span class="text-high-emphasis">
                 {{ project.progress }}%
               </span>
             </div>

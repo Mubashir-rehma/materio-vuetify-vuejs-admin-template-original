@@ -247,19 +247,12 @@ const faqs = [
               >
                 <td>{{ feature.feature }}</td>
                 <td class="text-center">
-                  <VChip
+                  <VIcon
                     v-if="!feature.addOnAvailable.starter"
-                    pill
-                    variant="elevated"
-                    size="20"
-                    class="pa-1"
-                    :color="feature.basic ? 'primary' : 'secondary'"
-                  >
-                    <VIcon
-                      size="15"
-                      :icon="feature.basic ? 'mdi-check' : 'mdi-close'"
-                    />
-                  </VChip>
+                    size="18"
+                    :color="feature.basic ? 'primary' : 'disabled'"
+                    :icon="feature.basic ? 'mdi-check-circle' : 'mdi-close-circle'"
+                  />
 
                   <VChip
                     v-if="feature.addOnAvailable.starter"
@@ -271,19 +264,12 @@ const faqs = [
                 </td>
 
                 <td class="text-center">
-                  <VChip
+                  <VIcon
                     v-if="!feature.addOnAvailable.pro"
-                    pill
-                    variant="elevated"
-                    size="20"
-                    class="pa-1"
-                    :color="feature.standard ? 'primary' : 'secondary'"
-                  >
-                    <VIcon
-                      size="15"
-                      :icon="feature.standard ? 'mdi-check' : 'mdi-close'"
-                    />
-                  </VChip>
+                    :color="feature.standard ? 'primary' : 'disabled'"
+                    size="18"
+                    :icon="feature.standard ? 'mdi-check-circle' : 'mdi-close-circle'"
+                  />
 
                   <VChip
                     v-if="feature.addOnAvailable.pro"
@@ -295,19 +281,12 @@ const faqs = [
                 </td>
 
                 <td class="text-center">
-                  <VChip
+                  <VIcon
                     v-if="!feature.addOnAvailable.enterprise"
-                    pill
-                    variant="elevated"
-                    size="20"
-                    class="pa-1"
-                    :color="feature.enterprise ? 'primary' : 'secondary'"
-                  >
-                    <VIcon
-                      size="15"
-                      :icon="feature.enterprise ? 'mdi-check' : 'mdi-close'"
-                    />
-                  </VChip>
+                    :color="feature.enterprise ? 'primary' : 'disabled'"
+                    size="18"
+                    :icon="feature.enterprise ? 'mdi-check-circle' : 'mdi-close-circle'"
+                  />
 
                   <VChip
                     v-if="feature.addOnAvailable.enterprise"
@@ -351,7 +330,7 @@ const faqs = [
 
     <!-- 👉 FAQ -->
     <div>
-      <VCardText class="bg-var-theme-background py-16">
+      <VCardText class="bg-var-theme-background py-sm-16">
         <div class="text-center">
           <h5 class="text-h5 mb-2">
             FAQ's
@@ -361,7 +340,7 @@ const faqs = [
           </p>
         </div>
 
-        <VExpansionPanels class="py-6 px-16">
+        <VExpansionPanels class="py-sm-6 px-md-16">
           <VExpansionPanel
             v-for="faq in faqs"
             :key="faq.question"

@@ -335,15 +335,15 @@ const isOneTimePasswordDialogVisible = ref(false)
                   :icon="device.deviceIcon.icon"
                   :color="device.deviceIcon.color"
                 />
-                {{ device.browser }}
+                <span class="text-high-emphasis">{{ device.browser }}</span>
               </td>
-              <td class="text-medium-emphasis">
+              <td>
                 {{ device.device }}
               </td>
-              <td class="text-medium-emphasis">
+              <td>
                 {{ device.location }}
               </td>
-              <td class="text-medium-emphasis">
+              <td>
                 {{ device.recentActivity }}
               </td>
             </tr>

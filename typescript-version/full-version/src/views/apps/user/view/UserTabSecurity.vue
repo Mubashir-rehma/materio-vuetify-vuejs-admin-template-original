@@ -162,18 +162,18 @@ const recentDevices = [
                   :image="device.logo"
                   class="me-3"
                 />
-                <span class="font-weight-medium">{{ device.browser }}</span>
+                <span class="font-weight-medium text-high-emphasis">{{ device.browser }}</span>
               </td>
 
-              <td class="text-medium-emphasis">
+              <td>
                 {{ device.device }}
               </td>
 
-              <td class="text-medium-emphasis">
+              <td>
                 {{ device.location }}
               </td>
 
-              <td class="text-medium-emphasis">
+              <td>
                 {{ device.activity }}
               </td>
             </tr>

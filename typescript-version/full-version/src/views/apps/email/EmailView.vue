@@ -228,7 +228,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
                   </IconBtn>
                 </div>
               </div>
-              <MoreBtn />
+              <MoreBtn class="align-self-sm-center" />
             </div>
           </VCardText>
 

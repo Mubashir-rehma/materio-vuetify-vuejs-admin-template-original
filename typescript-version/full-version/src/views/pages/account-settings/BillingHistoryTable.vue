@@ -243,7 +243,7 @@ const computedMoreList = computed(() => {
           </td>
 
           <!-- 👉 Actions -->
-          <td style="width: 7.5rem;">
+          <td style="inline-size: 7.5rem;">
             <IconBtn>
               <VIcon icon="mdi-delete-outline" />
             </IconBtn>
@@ -281,15 +281,15 @@ const computedMoreList = computed(() => {
       <!-- 👉 Rows per page -->
       <div
         class="d-flex align-center me-3"
-        style="width: 171px;"
+        style="inline-size: 171px;"
       >
         <span class="text-no-wrap me-3">Rows per page:</span>
 
         <VSelect
           v-model="rowPerPage"
           variant="plain"
+          class="per-page-select"
           :items="[10, 20, 30, 50]"
-          class="invoice-pagination-select"
         />
       </div>
 
@@ -319,15 +319,6 @@ const computedMoreList = computed(() => {
 
   .invoice-list-search {
     inline-size: 12rem;
-  }
-}
-</style>
-
-<style lang="scss" scope>
-.invoice-pagination-select {
-  .v-field__input,
-  .v-field__append-inner {
-    padding-block-start: 0.5rem;
   }
 }
 </style>

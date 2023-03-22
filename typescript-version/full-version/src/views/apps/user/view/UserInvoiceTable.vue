@@ -233,7 +233,7 @@ const computedMoreList = computed(() => {
           v-model="rowPerPage"
           variant="plain"
           :items="[10, 20, 30, 50]"
-          class="invoice-pagination-select"
+          class="per-page-select"
         />
       </div>
 
@@ -266,13 +266,3 @@ const computedMoreList = computed(() => {
   }
 }
 </style>
-
-<style lang="scss" scope>
-.invoice-pagination-select {
-  .v-field__input,
-  .v-field__append-inner {
-    padding-block-start: 0.4rem;
-  }
-}
-</style>
-

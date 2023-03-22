@@ -197,3 +197,7 @@ You can always reference our codebase for information & HowTo.
 ::: tip
 This FAQ will improve over time so please let us know your feedback if we missed anything.
 :::
+
+## Laravel and InertiaJs support?
+
+Our template is primarily focused on utilizing Laravel as an API backend, and while we have not included explicit support for InertiaJs, it can be integrated with the template using the official documentation or tutorial guides provided by InertiaJs. Please keep in mind that we have not extensively tested the compatibility of our template with InertiaJs and we do not provide customer support for inertiaJs.

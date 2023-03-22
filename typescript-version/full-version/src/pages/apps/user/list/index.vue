@@ -396,7 +396,7 @@ const computedMoreList = computed(() => {
 
       <VDivider />
 
-      <VCardText class="d-flex align-center flex-wrap justify-end gap-4 pa-2">
+      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
         <div
           class="d-flex align-center me-3"
           style="inline-size: 171px;"
@@ -407,7 +407,7 @@ const computedMoreList = computed(() => {
             v-model="rowPerPage"
             density="compact"
             variant="plain"
-            class="user-pagination-select"
+            class="per-page-select"
             :items="[10, 20, 30, 50]"
           />
         </div>
@@ -448,14 +448,5 @@ const computedMoreList = computed(() => {
 
 .user-list-name:not(:hover) {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
-}
-</style>
-
-<style lang="scss" scope>
-.user-pagination-select {
-  .v-field__input,
-  .v-field__append-inner {
-    padding-block-start: 0.3rem;
-  }
 }
 </style>

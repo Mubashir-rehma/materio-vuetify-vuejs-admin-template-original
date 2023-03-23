@@ -1,17 +1,10 @@
 name: 'Deploy - Changelog'
 
-on:
-  workflow_dispatch:
-    inputs:
-      is_production:
-        type: boolean
-        description: Is production deployment
+on: workflow_dispatch
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    env:
-      DEPLOY_DIR: ${{ inputs.is_production && secrets.PROD_DIR || secrets.STAG_DIR }}
     steps:
       - uses: actions/checkout@v3
 
@@ -29,4 +22,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           source: changelog.html
-          target: ${{ env.DEPLOY_DIR }}
+          target: ${{ secrets.PROD_DIR }}

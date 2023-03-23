@@ -2,7 +2,7 @@
 
 <p align="center">
    <a href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/" target="_blank">
-      <img src="https://github.com/themeselection/materio-vuetify-vuejs-admin-template-free/blob/vue-2/src/assets/images/logos/logo.svg" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
+      <img src="https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.png" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
    </a>
 </p>
 
@@ -14,7 +14,7 @@
 
 <p align="center">Production Ready, Carefully Crafted, Extensive Vuetifty Admin Template</p>
 
-[![Materio – Vuetify Vuejs Admin Template Demo Screenshot](https://user-images.githubusercontent.com/47495003/171649225-a942e763-8d9a-4907-bd07-45123c0d1b66.png)](https://themeselection.com/item/materio-vuetify-vuejs-admin-template/)
+[![Materio – Vuetify Vuejs Admin Template Demo Screenshot](https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template--vuetify/banner/banner.png)](https://themeselection.com/item/materio-vuetify-vuejs-admin-template/)
 
 ## Introduction
 
@@ -45,7 +45,7 @@ Check out our live [Documentation](https://demos.themeselection.com/materio-vuet
 We use GitHub issues as support tickets to manage Item support.
 
 1. In order to raise the GitHub issue, you must have our Premium Item repository access. [Get repo access](https://tools.themeselection.com/github/github-access).
-2. Make sure you use our [Raise Support](https://themeselection.com/tools/github/raise-support) form to create an issue.
+2. Make sure you use our [Raise Support](https://tools.themeselection.com/github/raise-support) form to create an issue.
 
 ## Why forking is disabled? 🔒
 
@@ -62,8 +62,8 @@ However, you can still keep your repo even after your support expires by setting
 3. Navigate to cloned directory
 4. Remove our repo as origin by running command: `git remote remove origin`
 5. Add your newly created repo as origin by running command: `git remote add origin YOUR_NEWLY_CREATE_REPO_GIT_URL`
-5. Add our repo as upstream by running command: `git remote add upstream $product_repo_url`
-6. Push the code to GitHub by running command: `git push -u origin main`
+6. Add our repo as upstream by running command: `git remote add upstream $product_repo_url`
+7. Push the code to GitHub by running command: `git push -u origin main`
 
 Now, whenever you want to pull the latest changes from our repo just pull the changes by running command: `git pull upstream main`
 
@@ -73,13 +73,14 @@ Cheers 🥂
 
 Contributions are always welcome and recommended! Here is how:
 
-- Fork the repository ([here is the guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo)).
-- Clone to your machine `git clone https://github.com/YOUR_USERNAME/REPO_URL` Make your changes
-- Create a pull request
+- Clone our repo `git clone $product_repo_url`
+- create a new branch based on branch you want to make Pull request to. For example if you want to make pull request to main branch, create new branch based on main branch.
+- Push your changes to new branch
+- Create pull request
 
 ### Contribution Requirements 🧰
 
-- When you contribute, you agree to give a non-exclusive license to Pixinvent to use that contribution in any context as we (Pixinvent) see appropriate.
+- When you contribute, you agree to give a non-exclusive license to ThemeSelection to use that contribution in any context as we (ThemeSelection) see appropriate.
 - If you use content provided by another party, it must be appropriately licensed using an open source license.
 - Contributions are only accepted through Github pull requests.
 - Finally, contributed code must work in all supported browsers.

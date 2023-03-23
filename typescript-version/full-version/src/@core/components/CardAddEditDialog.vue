@@ -43,7 +43,7 @@ const formSubmit = () => {
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
+    :width="$vuetify.display.smAndDown ? 'auto' : 650"
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >

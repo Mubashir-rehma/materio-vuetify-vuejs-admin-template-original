@@ -75,29 +75,34 @@
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 600px) {
   .v-dialog {
     &.v-dialog-sm,
     &.v-dialog-lg,
     &.v-dialog-xl {
-      inline-size: 565px !important;
+      .v-overlay__content {
+        inline-size: 565px !important;
+      }
     }
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 960px) {
   .v-dialog {
     &.v-dialog-lg,
     &.v-dialog-xl {
-      inline-size: 865px !important;
+      .v-overlay__content{
+        inline-size: 865px !important;
+      }
     }
   }
 }
 
-@media (min-width: 1200px) {
-  .v-dialog.v-dialog-xl,
-  .v-dialog.v-dialog-xl .v-overlay__content > .v-card {
-    inline-size: 1165px !important;
+@media (min-width: 1264px) {
+  .v-dialog.v-dialog-xl{
+    .v-overlay__content {
+      inline-size: 1165px !important;
+    }
   }
 }
 

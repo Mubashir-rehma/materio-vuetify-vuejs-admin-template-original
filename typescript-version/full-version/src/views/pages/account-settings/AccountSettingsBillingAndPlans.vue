@@ -347,7 +347,6 @@ const resetPaymentForm = () => {
                 <CardAddEditDialog
                   v-model:isDialogVisible="isCardEditDialogVisible"
                   :card-details="currentCardDetails"
-                  class="v-dialog-lg"
                 />
               </VCol>
 

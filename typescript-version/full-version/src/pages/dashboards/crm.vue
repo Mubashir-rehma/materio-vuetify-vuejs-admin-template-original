@@ -44,7 +44,7 @@ const statistic = {
 
 <template>
   <section>
-    <VRow class="mb-2">
+    <VRow>
       <VCol
         v-for="statistics in statisticsWithImages"
         :key="statistics.title"

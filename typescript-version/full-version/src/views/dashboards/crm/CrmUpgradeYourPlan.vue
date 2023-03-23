@@ -89,8 +89,9 @@ const savedCards = [
               rounded
               start
               :size="45"
-              :image="card.logo"
-            />
+            >
+              <VImg :src="card.logo" />
+            </VAvatar>
           </template>
 
           <!-- 👉 Title and Subtitle -->

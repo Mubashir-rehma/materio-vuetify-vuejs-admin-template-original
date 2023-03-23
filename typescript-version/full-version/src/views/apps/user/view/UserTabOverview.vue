@@ -117,7 +117,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   class="me-3"
                   :image="project.logo"
                 />
-                <div>
+                <div class="text-high-emphasis">
                   <p class="font-weight-medium mb-0">
                     {{ project.name }}
                   </p>

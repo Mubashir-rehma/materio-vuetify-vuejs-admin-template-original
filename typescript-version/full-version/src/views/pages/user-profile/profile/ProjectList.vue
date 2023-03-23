@@ -117,7 +117,7 @@ const moreList = [
               class="me-3"
               :image="project.logo"
             />
-            <div>
+            <div class="text-high-emphasis">
               <h6 class="text-sm font-weight-medium">
                 {{ project.name }}
               </h6>

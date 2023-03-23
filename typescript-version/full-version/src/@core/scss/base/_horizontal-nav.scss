@@ -178,14 +178,14 @@
 
     .nav-item-title {
       @extend %horizontal-nav-item-title;
-    }  
+    }
 
     &.show-content {
       > .popper-content {
         @extend %horizontal-nav-popper-content-visible;
       }
 
-      &:not(.active){
+      &:not(.active) {
         @include mixins.selected-states("> .popper-triggerer > .nav-group-label::before");
       }
     }

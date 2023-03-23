@@ -65,7 +65,7 @@ const currentBillingAddress = {
   contact: '+1(609) 933-44-22',
   country: 'USA',
   state: 'Queensland',
-  zipCode: '403114',
+  zipCode: 403114,
 }
 </script>
 
@@ -368,14 +368,10 @@ const currentBillingAddress = {
   <CardAddEditDialog
     v-model:isDialogVisible="isCardEditDialogVisible"
     :card-details="currentCardDetails"
-    class="v-dialog-lg"
   />
 
   <!-- 👉 Add Card Dialog -->
-  <CardAddEditDialog
-    v-model:isDialogVisible="isCardAddDialogVisible"
-    class="v-dialog-lg"
-  />
+  <CardAddEditDialog v-model:isDialogVisible="isCardAddDialogVisible" />
 
   <!-- 👉 Edit Address dialog -->
   <AddEditAddressDialog

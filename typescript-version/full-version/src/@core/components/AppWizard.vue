@@ -164,17 +164,16 @@ watchEffect(() => {
         color: rgb(var(--v-theme-primary)) !important;
       }
 
-       .wizard-step-indicator {
+      .wizard-step-indicator {
         opacity: 1;
       }
     }
 
-    .wizard-steps-completed{
-      .wizard-step-line{
+    .wizard-steps-completed {
+      .wizard-step-line {
         opacity: 1;
       }
     }
-
   }
 }
 </style>

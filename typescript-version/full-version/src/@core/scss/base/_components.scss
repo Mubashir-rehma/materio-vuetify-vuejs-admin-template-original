@@ -91,7 +91,7 @@
   .v-dialog {
     &.v-dialog-lg,
     &.v-dialog-xl {
-      .v-overlay__content{
+      .v-overlay__content {
         inline-size: 865px !important;
       }
     }
@@ -99,7 +99,7 @@
 }
 
 @media (min-width: 1264px) {
-  .v-dialog.v-dialog-xl{
+  .v-dialog.v-dialog-xl {
     .v-overlay__content {
       inline-size: 1165px !important;
     }

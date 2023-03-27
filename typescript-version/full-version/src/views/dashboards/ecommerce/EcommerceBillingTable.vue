@@ -171,6 +171,7 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
             <VChip
               v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip"
               size="small"
+              class="text-high-emphasis"
             >
               {{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}
             </VChip>

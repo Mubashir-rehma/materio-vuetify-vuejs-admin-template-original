@@ -89,7 +89,7 @@ const moreList = [
 <template>
   <VCard title="Project List">
     <VDivider />
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-high-emphasis text-sm">
       <thead>
         <tr>
           <th scope="col">
@@ -117,17 +117,17 @@ const moreList = [
               class="me-3"
               :image="project.logo"
             />
-            <div class="text-high-emphasis">
+            <div>
               <h6 class="text-sm font-weight-medium">
                 {{ project.name }}
               </h6>
-              <p class="text-xs mb-0">
+              <p class="text-xs mb-0 text-medium-emphasis">
                 {{ project.project }}
               </p>
             </div>
           </td>
 
-          <td class="text-high-emphasis">
+          <td>
             {{ project.leader }}
           </td>
 
@@ -142,14 +142,17 @@ const moreList = [
                 />
               </div>
 
-              <span class="text-high-emphasis">
+              <span>
                 {{ project.progress }}%
               </span>
             </div>
           </td>
 
           <td>
-            <MoreBtn :menu-list="moreList" />
+            <MoreBtn
+              :menu-list="moreList"
+              class="text-medium-emphasis"
+            />
           </td>
         </tr>
       </tbody>

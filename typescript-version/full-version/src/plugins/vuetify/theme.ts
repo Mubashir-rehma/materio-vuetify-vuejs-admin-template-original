@@ -24,7 +24,7 @@ const theme: VuetifyOptions['theme'] = {
         'on-background': '#3A3541',
         'on-surface': '#3A3541',
         'grey-50': '#FAFAFA',
-        'grey-100': '#F5F5F5',
+        'grey-100': '#F0F2F8',
         'grey-200': '#EEEEEE',
         'grey-300': '#E0E0E0',
         'grey-400': '#BDBDBD',
@@ -40,7 +40,8 @@ const theme: VuetifyOptions['theme'] = {
 
       variables: {
         'code-color': '#d400ff',
-        'overlay-scrim-background': '#4C4E64',
+
+        'overlay-scrim-background': '#3A3541',
         'overlay-scrim-opacity': 0.5,
         'border-color': '#3A3541',
 
@@ -68,7 +69,7 @@ const theme: VuetifyOptions['theme'] = {
         'surface': '#312D4B',
         'on-surface': '#E7E3FC',
         'grey-50': '#2A2E42',
-        'grey-100': '#2F3349',
+        'grey-100': '#474360',
         'grey-200': '#4A5072',
         'grey-300': '#5E6692',
         'grey-400': '#7983BB',
@@ -83,8 +84,8 @@ const theme: VuetifyOptions['theme'] = {
       },
       variables: {
         'code-color': '#d400ff',
-        'overlay-scrim-background': '#101121',
-        'overlay-scrim-opacity': 0.6,
+        'overlay-scrim-background': '#2C2942',
+        'overlay-scrim-opacity': 0.87,
         'border-color': '#E7E3FC',
 
         // Shadows

@@ -90,11 +90,14 @@
 .v-table--density-default > .v-table__wrapper > table > tbody > tr > td,
 .v-table--density-default > .v-table__wrapper > table > thead > tr > td,
 .v-table--density-default > .v-table__wrapper > table > tfoot > tr > td {
-  block-size: 50px;
+  block-size: 50px !important;
 }
 
 .v-table {
+  --v-table-header-height: 54px !important;
+
   th {
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+    font-weight: bold !important;
   }
 }

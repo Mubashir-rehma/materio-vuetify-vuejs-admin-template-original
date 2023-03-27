@@ -113,7 +113,6 @@
         <VCol
           cols="12"
           md="10"
-          class="mb-6"
         >
           <p class="text-button mb-1">
             Cupcake ipsum dolor sit amet fruitcake donut chocolate.

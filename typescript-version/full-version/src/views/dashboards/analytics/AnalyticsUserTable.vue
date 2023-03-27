@@ -144,7 +144,7 @@ watch(selectedRows, () => {
           </td>
 
           <!-- 👉 Email -->
-          <td class="text-medium-emphasis">
+          <td class="text-medium-emphasis text-sm">
             {{ user.email }}
           </td>
 
@@ -153,7 +153,7 @@ watch(selectedRows, () => {
             <VIcon
               :icon="resolveUserRoleVariant(user.role).icon"
               :color="resolveUserRoleVariant(user.role).color"
-              :size="22"
+              :size="24"
               class="me-3"
             />
             <span class="text-capitalize text-medium-emphasis">{{ user.role }}</span>

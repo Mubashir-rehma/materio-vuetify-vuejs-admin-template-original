@@ -132,7 +132,7 @@ const computedMoreList = computed(() => {
 
     <VDivider />
     <!-- SECTION Table -->
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-sm">
       <!-- 👉 Table head -->
       <thead>
         <tr>
@@ -236,7 +236,7 @@ const computedMoreList = computed(() => {
           </td>
 
           <!-- 👉 Balance -->
-          <td>
+          <td class="text-high-emphasis">
             <VChip v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip">
               {{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}
             </VChip>
@@ -288,6 +288,7 @@ const computedMoreList = computed(() => {
         <VSelect
           v-model="rowPerPage"
           variant="plain"
+          density="compact"
           class="per-page-select"
           :items="[10, 20, 30, 50]"
         />
@@ -300,6 +301,7 @@ const computedMoreList = computed(() => {
         <VPagination
           v-model="currentPage"
           size="small"
+          density="compact"
           :total-visible="1"
           :length="totalPage"
           @next="selectedRows = []"

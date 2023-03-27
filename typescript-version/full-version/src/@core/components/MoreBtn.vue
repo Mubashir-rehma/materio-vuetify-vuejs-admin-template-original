@@ -10,7 +10,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <IconBtn size="x-small">
+  <IconBtn size="small">
     <VIcon icon="mdi-dots-vertical" />
 
     <VMenu

@@ -249,7 +249,7 @@ const faqs = [
                 <td class="text-center">
                   <VIcon
                     v-if="!feature.addOnAvailable.starter"
-                    size="18"
+                    size="20"
                     :color="feature.basic ? 'primary' : 'disabled'"
                     :icon="feature.basic ? 'mdi-check-circle' : 'mdi-close-circle'"
                   />
@@ -267,7 +267,7 @@ const faqs = [
                   <VIcon
                     v-if="!feature.addOnAvailable.pro"
                     :color="feature.standard ? 'primary' : 'disabled'"
-                    size="18"
+                    size="20"
                     :icon="feature.standard ? 'mdi-check-circle' : 'mdi-close-circle'"
                   />
 
@@ -284,7 +284,7 @@ const faqs = [
                   <VIcon
                     v-if="!feature.addOnAvailable.enterprise"
                     :color="feature.enterprise ? 'primary' : 'disabled'"
-                    size="18"
+                    size="20"
                     :icon="feature.enterprise ? 'mdi-check-circle' : 'mdi-close-circle'"
                   />
 

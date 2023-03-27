@@ -89,7 +89,7 @@ const resolveUserProgressVariant = (progress: number) => {
     <VCol cols="12">
       <VCard title="Project List">
         <VDivider />
-        <VTable class="text-no-wrap">
+        <VTable class="text-no-wrap text-sm text-high-emphasis">
           <thead>
             <tr>
               <th scope="col">
@@ -117,7 +117,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   class="me-3"
                   :image="project.logo"
                 />
-                <div class="text-high-emphasis">
+                <div>
                   <p class="font-weight-medium mb-0">
                     {{ project.name }}
                   </p>

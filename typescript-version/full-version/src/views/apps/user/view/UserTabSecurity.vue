@@ -133,7 +133,7 @@ const recentDevices = [
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
         <VDivider />
-        <VTable class="text-no-wrap">
+        <VTable class="text-no-wrap text-sm">
           <thead>
             <tr>
               <th scope="col">
@@ -156,11 +156,11 @@ const recentDevices = [
               v-for="device in recentDevices"
               :key="device.browser"
             >
-              <td>
+              <td class="d-flex align-center">
                 <VAvatar
                   :size="22"
                   :image="device.logo"
-                  class="me-3"
+                  class="me-2"
                 />
                 <span class="font-weight-medium text-high-emphasis">{{ device.browser }}</span>
               </td>

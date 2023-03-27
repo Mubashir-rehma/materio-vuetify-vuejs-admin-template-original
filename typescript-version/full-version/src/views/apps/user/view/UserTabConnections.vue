@@ -89,9 +89,12 @@ const socialAccounts = ref([
             <VListItem
               v-for="account in connectedAccounts"
               :key="account.title"
-              :title="account.title"
-              :subtitle="account.text"
             >
+              <VListItemTitle class="font-weight-medium">
+                {{ account.title }}
+              </VListItemTitle>
+
+              <VListItemSubtitle>{{ account.text }}</VListItemSubtitle>
               <template #prepend>
                 <VAvatar
                   start
@@ -124,8 +127,11 @@ const socialAccounts = ref([
             <VListItem
               v-for="(account) in socialAccounts"
               :key="account.title"
-              :title="account.title"
             >
+              <VListItemTitle class="font-weight-medium">
+                {{ account.title }}
+              </VListItemTitle>
+
               <template #prepend>
                 <VAvatar
                   start

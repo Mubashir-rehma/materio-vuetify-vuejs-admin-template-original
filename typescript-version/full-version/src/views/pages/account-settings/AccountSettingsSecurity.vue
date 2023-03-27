@@ -307,7 +307,7 @@ const isOneTimePasswordDialogVisible = ref(false)
     <VCol cols="12">
       <!-- 👉 Table -->
       <VCard title="Recent Devices">
-        <VTable class="text-no-wrap">
+        <VTable class="text-no-wrap text-sm">
           <thead>
             <tr>
               <th scope="col">
@@ -335,7 +335,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                   :icon="device.deviceIcon.icon"
                   :color="device.deviceIcon.color"
                 />
-                <span class="text-high-emphasis">{{ device.browser }}</span>
+                <span class="text-high-emphasis text-base">{{ device.browser }}</span>
               </td>
               <td>
                 {{ device.device }}

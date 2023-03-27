@@ -107,7 +107,7 @@ const computedMoreList = computed(() => {
     <VDivider />
 
     <!-- SECTION Table -->
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-sm">
       <!-- 👉 Table head -->
       <thead>
         <tr>

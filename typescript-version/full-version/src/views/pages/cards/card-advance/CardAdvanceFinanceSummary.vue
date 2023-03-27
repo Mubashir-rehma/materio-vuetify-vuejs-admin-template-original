@@ -65,15 +65,16 @@ import avatar3 from '@images/avatars/avatar-3.png'
         <VCol>
           <p>Satisfaction Rate</p>
           <div
-            class="d-flex align-center"
+            class="d-flex align-center gap-5"
             style="width: 130px;"
           >
-            <VProgressLinear
-              color="primary"
-              :model-value="75"
-              :height="6"
-              class="me-4"
-            />
+            <div class="flex-grow-1">
+              <VProgressLinear
+                color="primary"
+                :model-value="75"
+                :height="6"
+              />
+            </div>
             <span>75%</span>
           </div>
         </VCol>

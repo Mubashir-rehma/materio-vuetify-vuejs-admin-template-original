@@ -214,7 +214,7 @@ const computedMoreList = computed(() => {
             <!-- 👉 Check/Uncheck all checkbox -->
             <th
               scope="col"
-              class="text-center"
+              class="d-flex justify-center align-center"
             >
               <div style="inline-size: 1rem;">
                 <VCheckbox
@@ -231,7 +231,7 @@ const computedMoreList = computed(() => {
               scope="col"
               class="text-center"
             >
-              <VIcon icon="mdi-trending-up" />
+              <VIcon icon="mdi-arrow-up" />
             </th>
             <th scope="col">
               CLIENT
@@ -264,7 +264,7 @@ const computedMoreList = computed(() => {
             :key="invoice.id"
           >
             <!-- 👉 Individual checkbox -->
-            <td>
+            <td class="d-flex justify-center align-center">
               <div style="inline-size: 1rem;">
                 <VCheckbox
                   :id="`check${invoice.id}`"
@@ -334,17 +334,17 @@ const computedMoreList = computed(() => {
             </td>
 
             <!-- 👉 total -->
-            <td class="text-center text-medium-emphasis">
+            <td class="text-center text-medium-emphasis text-sm">
               ${{ invoice.total }}
             </td>
 
             <!-- 👉 Date -->
-            <td class="text-medium-emphasis">
+            <td class="text-medium-emphasis text-sm">
               {{ invoice.issuedDate }}
             </td>
 
             <!-- 👉 Balance -->
-            <td class="text-center">
+            <td class="text-center text-high-emphasis">
               <VChip
                 v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip"
                 size="small"
@@ -354,7 +354,7 @@ const computedMoreList = computed(() => {
             </td>
 
             <!-- 👉 Actions -->
-            <td style="inline-size: 8rem;">
+            <td style="inline-size: 6rem;">
               <IconBtn>
                 <VIcon icon="mdi-delete-outline" />
               </IconBtn>
@@ -388,7 +388,7 @@ const computedMoreList = computed(() => {
       <VDivider />
 
       <!-- SECTION Pagination -->
-      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
+      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-1">
         <!-- 👉 Rows per page -->
         <div
           class="d-flex align-center"

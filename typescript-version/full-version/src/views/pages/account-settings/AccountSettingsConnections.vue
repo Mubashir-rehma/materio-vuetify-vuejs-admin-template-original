@@ -155,6 +155,7 @@ const socialAccounts = ref([
                   tag="a"
                   :href="item.links?.link"
                   style="opacity: 1;"
+                  class="text-primary"
                 >
                   {{ item.links?.username }}
                 </VListItemSubtitle>

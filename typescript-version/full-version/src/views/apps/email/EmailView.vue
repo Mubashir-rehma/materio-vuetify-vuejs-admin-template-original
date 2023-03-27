@@ -202,6 +202,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
         tag="div"
         class="mail-content-container flex-grow-1"
         :options="{ wheelPropagation: false }"
+        :style="$vuetify.theme.current.dark ? '--v-mail-content-bg: #373452' : '--v-mail-content-bg: #F9F8F9'"
       >
         <VCard class="ma-5">
           <VCardText class="mail-header">
@@ -302,7 +303,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 }
 
 .mail-content-container {
-  background-color: rgb(var(--v-theme-grey-100));
+  background-color: var(--v-mail-content-bg);
 
   .mail-header {
     min-block-size: 84px;

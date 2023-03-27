@@ -259,7 +259,10 @@ const computedMoreList = computed(() => {
         <!-- 👉 table head -->
         <thead>
           <tr>
-            <th scope="col">
+            <th
+              scope="col"
+              class="d-flex justify-center align-center"
+            >
               <div style="inline-size: 1.875rem;">
                 <VCheckbox
                   :model-value="selectAllUser"
@@ -296,7 +299,7 @@ const computedMoreList = computed(() => {
             :key="user.id"
           >
             <!-- 👉 Checkbox -->
-            <td>
+            <td class="d-flex justify-center align-center">
               <div style="inline-size: 1.875rem;">
                 <VCheckbox
                   :id="`check${user.id}`"
@@ -338,7 +341,7 @@ const computedMoreList = computed(() => {
 
             <!-- 👉 Email -->
             <td>
-              {{ user.email }}
+              <span class="text-sm">{{ user.email }}</span>
             </td>
 
             <!-- 👉 Role -->
@@ -353,7 +356,7 @@ const computedMoreList = computed(() => {
             </td>
 
             <!-- 👉 Plan -->
-            <td class="text-capitalize">
+            <td class="text-capitalize text-high-emphasis">
               {{ user.currentPlan }}
             </td>
 
@@ -421,6 +424,7 @@ const computedMoreList = computed(() => {
             v-model="currentPage"
             size="small"
             :total-visible="1"
+            density="compact"
             :length="totalPage"
             @next="selectedRows = []"
             @prev="selectedRows = []"

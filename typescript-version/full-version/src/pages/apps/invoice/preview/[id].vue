@@ -201,7 +201,7 @@ const printInvoice = () => {
           <!-- 👉 Table -->
           <VDivider />
 
-          <VTable>
+          <VTable class="text-sm text-high-emphasis">
             <thead>
               <tr>
                 <th scope="col">
@@ -421,5 +421,15 @@ const printInvoice = () => {
   .layout-content-wrapper {
     padding-inline-start: 0 !important;
   }
+}
+</style>
+
+<style lang="scss" scoped>
+.v-table {
+  --v-table-header-height: 48px !important;
+}
+
+.v-table--density-default > .v-table__wrapper > table > tbody > tr > td {
+  block-size: 48px !important;
 }
 </style>

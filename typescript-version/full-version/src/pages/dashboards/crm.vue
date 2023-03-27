@@ -148,3 +148,7 @@ const statistic = {
     </VRow>
   </section>
 </template>
+
+<style lang="scss">
+@use "@core/scss/template/libs/apex-chart.scss";
+</style>

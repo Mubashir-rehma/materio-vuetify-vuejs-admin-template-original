@@ -49,7 +49,10 @@ const moreList = [
         <template #append>
           <div class="me-n3">
             <IconBtn>
-              <VIcon icon="mdi-star-outline" />
+              <VIcon
+                icon="mdi-star-outline"
+                class="text-disabled"
+              />
             </IconBtn>
             <MoreBtn
               item-props

@@ -40,7 +40,7 @@ const notifications = ref([
 
     <VDivider />
 
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-sm">
       <thead>
         <tr>
           <th scope="col">
@@ -92,3 +92,13 @@ const notifications = ref([
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.v-table {
+  --v-table-header-height: 48px !important;
+}
+
+.v-table--density-default > .v-table__wrapper > table > tbody > tr > td {
+  block-size: 48px !important;
+}
+</style>

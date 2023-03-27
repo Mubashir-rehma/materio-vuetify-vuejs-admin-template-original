@@ -38,7 +38,7 @@ const selectedNotification = ref('Only when I\'m online')
       <a href="javascript:void(0)">Request Permission</a>
     </VCardText>
 
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-high-emphasis">
       <thead>
         <tr>
           <th scope="col">
@@ -112,3 +112,13 @@ const selectedNotification = ref('Only when I\'m online')
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.v-table {
+  --v-table-header-height: 48px !important;
+}
+
+.v-table--density-default > .v-table__wrapper > table > tbody > tr > td {
+  block-size: 48px !important;
+}
+</style>

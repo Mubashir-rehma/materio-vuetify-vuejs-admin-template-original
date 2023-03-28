@@ -50,9 +50,9 @@ h6,
 @if variables.$vuetify-reduce-default-compact-button-icon-size {
   .v-btn--density-compact.v-btn--size-default {
     .v-btn__content > svg {
-      width: 22px;
-      height: 22px;
+      block-size: 22px;
       font-size: 22px;
+      inline-size: 22px;
     }
   }
 }

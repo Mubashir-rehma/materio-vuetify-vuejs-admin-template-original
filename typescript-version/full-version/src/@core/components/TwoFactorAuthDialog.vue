@@ -85,8 +85,8 @@ const openSelectedMethodDialog = () => {
             rounded
             border
             :value="item.method"
-            class="py-5 px-6 my-6"
-            :class="selectedMethod[0] === item.method ? 'bg-light-primary border-primary border-opacity-100' : 'bg-var-theme-background'"
+            class="py-5 px-6 my-6 border-opacity-100"
+            :class="selectedMethod[0] === item.method ? 'bg-light-primary text-primary border-primary' : 'bg-var-theme-background border-secondary'"
           >
             <template #prepend>
               <VIcon

@@ -4,7 +4,7 @@
   <!-- 👉 combo box variants -->
   <VRow>
     <VCol cols="12">
-      <VCard title="combobox variants">
+      <VCard title="variants">
         <VCardText>
           <VRow>
             <VCol
@@ -12,7 +12,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
               />
             </VCol>
@@ -21,7 +21,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
               />
@@ -31,7 +31,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
               />
@@ -41,7 +41,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
               />
@@ -51,7 +51,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
               />
@@ -63,7 +63,7 @@
 
     <!-- 👉 combobox density -->
     <VCol cols="12">
-      <VCard title="combobox density">
+      <VCard title="density">
         <VCardText>
           <VRow>
             <VCol
@@ -71,21 +71,21 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 class="my-5"
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 class="my-5"
@@ -97,21 +97,21 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -124,21 +124,21 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -150,21 +150,21 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 density="compact"
@@ -177,21 +177,21 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -205,7 +205,7 @@
 
     <!-- 👉 combobox placeholder  -->
     <VCol cols="12">
-      <VCard title="combobox placeholder">
+      <VCard title="placeholder">
         <VCardText>
           <VRow>
             <VCol
@@ -214,7 +214,7 @@
             >
               <p>last example has persistent placeholder</p>
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 placeholder="select city"
@@ -222,7 +222,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 density="comfortable"
@@ -230,7 +230,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 density="compact"
@@ -243,7 +243,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="solo"
@@ -251,7 +251,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="solo"
@@ -259,7 +259,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="solo"
@@ -273,7 +273,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 placeholder="select city"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
@@ -281,7 +281,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="plain"
@@ -289,7 +289,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="plain"
@@ -302,7 +302,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="filled"
@@ -310,7 +310,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="filled"
@@ -318,7 +318,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="filled"
@@ -332,7 +332,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="underlined"
@@ -341,7 +341,7 @@
                 persistent-placeholder
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="underlined"
@@ -350,7 +350,7 @@
                 persistent-placeholder
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="underlined"
@@ -366,7 +366,7 @@
 
     <!-- 👉 combobox multiple  -->
     <VCol cols="12">
-      <VCard title="combobox Multiple">
+      <VCard title="Multiple">
         <VCardText>
           <VRow>
             <VCol
@@ -374,7 +374,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
@@ -382,7 +382,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 multiple
@@ -390,7 +390,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 multiple
@@ -403,7 +403,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -411,7 +411,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -419,7 +419,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -433,7 +433,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -441,7 +441,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -449,7 +449,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -462,7 +462,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -470,7 +470,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -478,7 +478,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 density="compact"
@@ -492,7 +492,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -500,7 +500,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -508,7 +508,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -523,7 +523,7 @@
 
     <!-- 👉 combobox input chips  -->
     <VCol cols="12">
-      <VCard title="combobox chips">
+      <VCard title="chips">
         <VCardText>
           <VRow>
             <VCol
@@ -531,7 +531,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
@@ -540,7 +540,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 multiple
@@ -549,7 +549,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 multiple
@@ -563,7 +563,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -572,7 +572,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -581,7 +581,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -596,7 +596,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -605,7 +605,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -614,7 +614,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -628,7 +628,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -637,7 +637,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -646,7 +646,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 density="compact"
@@ -661,7 +661,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -670,7 +670,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -679,7 +679,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -695,7 +695,7 @@
 
     <!-- 👉 combobox closable chips  -->
     <VCol cols="12">
-      <VCard title="combobox closable chips">
+      <VCard title="closable chips">
         <VCardText>
           <VRow>
             <VCol
@@ -703,7 +703,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
@@ -713,7 +713,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 multiple
@@ -723,7 +723,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 multiple
@@ -738,7 +738,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -748,7 +748,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -758,7 +758,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -774,7 +774,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -784,7 +784,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -794,7 +794,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -809,7 +809,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -819,7 +819,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -829,7 +829,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 density="compact"
@@ -845,7 +845,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -855,7 +855,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -865,7 +865,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -882,7 +882,7 @@
 
     <!-- 👉 combobox closable chips with clearable  -->
     <VCol cols="12">
-      <VCard title="combobox closable chips with clearable">
+      <VCard title="closable chips with clearable">
         <VCardText>
           <VRow>
             <VCol
@@ -890,7 +890,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
@@ -901,7 +901,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 multiple
@@ -912,7 +912,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 multiple
@@ -928,7 +928,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -939,7 +939,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -950,7 +950,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -967,7 +967,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -978,7 +978,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -989,7 +989,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1005,7 +1005,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1016,7 +1016,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1027,7 +1027,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 density="compact"
@@ -1044,7 +1044,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1055,7 +1055,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1066,7 +1066,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1084,7 +1084,7 @@
 
     <!-- 👉 combobox selection slot chips  -->
     <VCol cols="12">
-      <VCard title="combobox selection with slot chips">
+      <VCard title="selection with slot chips">
         <VCardText>
           <VRow>
             <VCol
@@ -1093,7 +1093,7 @@
             >
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1122,7 +1122,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1151,7 +1151,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="comfortable"
                 class="my-5"
@@ -1185,7 +1185,7 @@
             >
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1215,7 +1215,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1245,7 +1245,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="comfortable"
                 class="my-5"
@@ -1280,7 +1280,7 @@
             >
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1310,7 +1310,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1340,7 +1340,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="comfortable"
                 class="my-5"
@@ -1375,7 +1375,7 @@
             >
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1405,7 +1405,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1435,7 +1435,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="comfortable"
                 class="my-5"
@@ -1470,7 +1470,7 @@
             >
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1500,7 +1500,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="default"
                 class="my-5"
@@ -1530,7 +1530,7 @@
 
               <VCombobox
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                label="city"
+                label="City"
                 multiple
                 density="comfortable"
                 class="my-5"
@@ -1565,7 +1565,7 @@
 
     <!-- 👉 combobox with prepend inner icons  -->
     <VCol cols="12">
-      <VCard title="combobox prepend innner icons">
+      <VCard title="prepend innner icons">
         <VCardText>
           <VRow>
             <VCol
@@ -1573,7 +1573,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
@@ -1581,7 +1581,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 prepend-inner-icon="mdi-city"
@@ -1589,7 +1589,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 prepend-inner-icon="mdi-city"
@@ -1602,7 +1602,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1610,7 +1610,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1618,7 +1618,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1632,7 +1632,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1640,7 +1640,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 prepend-inner-icon="mdi-city"
@@ -1648,7 +1648,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 prepend-inner-icon="mdi-city"
@@ -1661,7 +1661,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1669,7 +1669,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1677,7 +1677,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 prepend-inner-icon="mdi-city"
@@ -1691,7 +1691,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 prepend-inner-icon="mdi-city"
@@ -1699,7 +1699,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1707,7 +1707,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1722,7 +1722,7 @@
 
     <!-- 👉 combobox with prepend icons  -->
     <VCol cols="12">
-      <VCard title="combobox prepend icons">
+      <VCard title="prepend icons">
         <VCardText>
           <VRow>
             <VCol
@@ -1730,7 +1730,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
@@ -1738,7 +1738,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
                 prepend-icon="mdi-city"
@@ -1746,7 +1746,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
                 prepend-icon="mdi-city"
@@ -1759,7 +1759,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1767,7 +1767,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1775,7 +1775,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1789,7 +1789,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1797,7 +1797,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 prepend-icon="mdi-city"
@@ -1805,7 +1805,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 prepend-icon="mdi-city"
@@ -1818,7 +1818,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1826,7 +1826,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1834,7 +1834,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 prepend-icon="mdi-city"
@@ -1848,7 +1848,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 prepend-icon="mdi-city"
@@ -1856,7 +1856,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1864,7 +1864,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1879,7 +1879,7 @@
 
     <!-- 👉 combobox loading  -->
     <VCol cols="12">
-      <VCard title="combobox loading">
+      <VCard title="loading">
         <VCardText>
           <VRow>
             <VCol
@@ -1887,7 +1887,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 placeholder="select city"
@@ -1896,7 +1896,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 density="comfortable"
@@ -1905,7 +1905,7 @@
               />
 
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 loading
@@ -1919,7 +1919,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="solo"
@@ -1928,7 +1928,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 loading
@@ -1937,7 +1937,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 loading
@@ -1952,7 +1952,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 placeholder="select city"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
@@ -1961,7 +1961,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="plain"
@@ -1970,7 +1970,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="plain"
@@ -1984,7 +1984,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="filled"
@@ -1993,7 +1993,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="filled"
@@ -2002,7 +2002,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="filled"
@@ -2017,7 +2017,7 @@
               md="6"
             >
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="underlined"
@@ -2026,7 +2026,7 @@
                 density="default"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="underlined"
@@ -2035,7 +2035,7 @@
                 density="comfortable"
               />
               <VCombobox
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="select city"
                 variant="underlined"

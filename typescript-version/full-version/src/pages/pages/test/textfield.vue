@@ -4,21 +4,21 @@
 
     <!-- 👉 textfield variants  -->
     <VCol cols="12">
-      <VCard title="textfield variants">
+      <VCard title="variants">
         <VCardText>
           <VRow>
             <VCol
               cols="12"
               md="6"
             >
-              <VTextField label="city" />
+              <VTextField label="City" />
             </VCol>
             <VCol
               cols="12"
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
               />
             </VCol>
@@ -27,7 +27,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="plain"
               />
             </VCol>
@@ -36,7 +36,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
               />
@@ -46,7 +46,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
               />
@@ -58,7 +58,7 @@
 
     <!-- 👉 textfield density  -->
     <VCol cols="12">
-      <VCard title="textfield density">
+      <VCard title="density">
         <VCardText>
           <VRow>
             <VCol
@@ -66,17 +66,17 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 density="default"
                 class="my-5"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 density="compact"
                 class="my-5"
               />
@@ -86,19 +86,19 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 density="compact"
@@ -109,19 +109,19 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="compact"
                 variant="plain"
@@ -132,19 +132,19 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 density="compact"
@@ -155,19 +155,19 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="underlined"
                 class="my-5"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="underlined"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="underlined"
                 density="compact"
@@ -180,7 +180,7 @@
 
     <!-- 👉 textfield placeholder  -->
     <VCol cols="12">
-      <VCard title="textfield placeholder">
+      <VCard title="placeholder">
         <VCardText>
           <VRow>
             <VCol
@@ -189,19 +189,19 @@
             >
               <p>last example has persistent-placeholder prop</p>
               <VTextField
-                label="city"
+                label="City"
                 density="default"
                 class="my-5"
                 placeholder="Enter city"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 density="compact"
                 placeholder="Enter city"
                 class="my-5"
@@ -212,21 +212,21 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
@@ -238,21 +238,21 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 placeholder="Enter city"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 placeholder="Enter city"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="compact"
                 variant="plain"
@@ -264,21 +264,21 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 placeholder="Enter city"
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 placeholder="Enter city"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 placeholder="Enter city"
@@ -290,7 +290,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 placeholder="Enter city"
                 variant="underlined"
                 class="my-5"
@@ -298,7 +298,7 @@
                 persistent-placeholder
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 persistent-placeholder
@@ -306,7 +306,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 persistent-placeholder
@@ -321,7 +321,7 @@
 
     <!-- 👉 textfield clearable  -->
     <VCol cols="12">
-      <VCard title="textfield clearable">
+      <VCard title="clearable">
         <VCardText>
           <VRow>
             <VCol
@@ -330,21 +330,21 @@
             >
               <p>last example has persistent-placeholder and persistent-clear prop</p>
               <VTextField
-                label="city"
+                label="City"
                 density="default"
                 class="my-5"
                 placeholder="Enter city"
                 clearable
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 clearable
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 density="compact"
                 clearable
                 placeholder="Enter city"
@@ -356,7 +356,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
@@ -364,7 +364,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
@@ -372,7 +372,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
@@ -385,7 +385,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 clearable
@@ -393,7 +393,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 clearable
@@ -401,7 +401,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="compact"
                 clearable
@@ -414,7 +414,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -422,7 +422,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -430,7 +430,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -443,7 +443,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 placeholder="Enter city"
                 variant="underlined"
                 class="my-5"
@@ -453,7 +453,7 @@
                 persistent-clear
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 persistent-placeholder
@@ -463,7 +463,7 @@
                 persistent-clear
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 persistent-placeholder
@@ -480,7 +480,7 @@
 
     <!-- 👉 textfield prepend inner icon -->
     <VCol cols="12">
-      <VCard title="textfield prepend inner">
+      <VCard title="prepend inner">
         <VCardText>
           <VRow>
             <VCol
@@ -488,7 +488,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 density="default"
                 class="my-5"
                 placeholder="Enter city"
@@ -496,7 +496,7 @@
                 clearable
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 prepend-inner-icon="mdi-city"
@@ -504,7 +504,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 density="compact"
                 clearable
                 prepend-inner-icon="mdi-city"
@@ -517,7 +517,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
@@ -526,7 +526,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
@@ -535,7 +535,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
@@ -549,7 +549,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 clearable
@@ -558,7 +558,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 clearable
@@ -567,7 +567,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="compact"
                 clearable
@@ -581,7 +581,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -590,7 +590,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -599,7 +599,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -613,7 +613,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 prepend-inner-icon="mdi-city"
                 placeholder="Enter city"
                 variant="underlined"
@@ -624,7 +624,7 @@
                 persistent-clear
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
                 placeholder="Enter city"
@@ -635,7 +635,7 @@
                 persistent-clear
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
                 placeholder="Enter city"
@@ -653,7 +653,7 @@
 
     <!-- 👉 textfield appned inner icon -->
     <VCol cols="12">
-      <VCard title="textfield append inner">
+      <VCard title="append inner">
         <VCardText>
           <VRow>
             <VCol
@@ -661,7 +661,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 density="default"
                 class="my-5"
                 placeholder="Enter city"
@@ -669,7 +669,7 @@
                 clearable
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 append-inner-icon="mdi-city"
@@ -677,7 +677,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 density="compact"
                 clearable
                 append-inner-icon="mdi-city"
@@ -690,7 +690,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 append-inner-icon="mdi-city"
@@ -699,7 +699,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 append-inner-icon="mdi-city"
@@ -708,7 +708,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 append-inner-icon="mdi-city"
@@ -722,7 +722,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 clearable
@@ -731,7 +731,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 clearable
@@ -740,7 +740,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="compact"
                 clearable
@@ -754,7 +754,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -763,7 +763,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -772,7 +772,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 clearable
@@ -786,7 +786,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 append-inner-icon="mdi-city"
                 placeholder="Enter city"
                 variant="underlined"
@@ -797,7 +797,7 @@
                 persistent-clear
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 append-inner-icon="mdi-city"
                 placeholder="Enter city"
@@ -808,7 +808,7 @@
                 persistent-clear
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 append-inner-icon="mdi-city"
                 placeholder="Enter city"
@@ -827,7 +827,7 @@
 
     <!-- 👉 textfield loading  -->
     <VCol cols="12">
-      <VCard title="textfield loading">
+      <VCard title="loading">
         <VCardText>
           <VRow>
             <VCol
@@ -835,21 +835,21 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 density="default"
                 class="my-5"
                 loading
                 placeholder="Enter city"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 loading
                 placeholder="Enter city"
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 density="compact"
                 loading
                 placeholder="Enter city"
@@ -861,7 +861,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 loading
@@ -869,7 +869,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
@@ -877,7 +877,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="solo"
                 class="my-5"
                 placeholder="Enter city"
@@ -890,7 +890,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 placeholder="Enter city"
@@ -898,7 +898,7 @@
                 density="default"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 variant="plain"
                 placeholder="Enter city"
@@ -906,7 +906,7 @@
                 loading
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 density="compact"
                 variant="plain"
@@ -919,7 +919,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 placeholder="Enter city"
@@ -927,7 +927,7 @@
                 loading
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 placeholder="Enter city"
@@ -935,7 +935,7 @@
                 loading
               />
               <VTextField
-                label="city"
+                label="City"
                 variant="filled"
                 class="my-5"
                 placeholder="Enter city"
@@ -948,7 +948,7 @@
               md="6"
             >
               <VTextField
-                label="city"
+                label="City"
                 placeholder="Enter city"
                 variant="underlined"
                 class="my-5"
@@ -957,7 +957,7 @@
                 loading
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 persistent-placeholder
@@ -966,7 +966,7 @@
                 density="comfortable"
               />
               <VTextField
-                label="city"
+                label="City"
                 class="my-5"
                 placeholder="Enter city"
                 persistent-placeholder
@@ -982,7 +982,7 @@
 
     <!-- 👉 textfield density  -->
     <VCol cols="12">
-      <VCard title="textfield prefix">
+      <VCard title="prefix">
         <VCardText>
           <VRow>
             <VCol

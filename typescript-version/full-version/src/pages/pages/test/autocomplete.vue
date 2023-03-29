@@ -1,10 +1,8 @@
 <template>
-  <!-- 👉 autocomplete  -->
-
-  <!-- 👉 autocomplete varaints  -->
+  <!-- 👉 varaints  -->
   <VRow>
     <VCol cols="12">
-      <VCard title="autocomplete ">
+      <VCard title="Variants">
         <VCardText>
           <VRow>
             <VCol
@@ -12,7 +10,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
               />
@@ -22,7 +20,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
               />
@@ -32,7 +30,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
               />
@@ -42,7 +40,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
               />
@@ -52,7 +50,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
               />
@@ -64,7 +62,7 @@
 
     <!-- 👉 autocomplete density -->
     <VCol cols="12">
-      <VCard title="autocomplete density">
+      <VCard title="density">
         <VCardText>
           <VRow>
             <VCol
@@ -72,21 +70,21 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -98,21 +96,21 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -124,21 +122,21 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -150,21 +148,21 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="outlined"
@@ -176,21 +174,21 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 density="compact"
@@ -204,7 +202,7 @@
 
     <!-- 👉 autocomplete placeholder  -->
     <VCol cols="12">
-      <VCard title="autocomplete placeholder">
+      <VCard title="placeholder">
         <VCardText>
           <VRow>
             <VCol
@@ -212,7 +210,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 placeholder="Enter city"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
@@ -221,7 +219,7 @@
               />
               <VAutocomplete
                 placeholder="Enter city"
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -229,7 +227,7 @@
               />
               <VAutocomplete
                 placeholder="Enter city"
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -242,7 +240,7 @@
             >
               <VAutocomplete
                 placeholder="Enter city"
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -250,14 +248,14 @@
               />
               <VAutocomplete
                 placeholder="Enter city"
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="plain"
@@ -270,7 +268,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="filled"
@@ -278,7 +276,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="filled"
@@ -286,7 +284,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="filled"
@@ -299,7 +297,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="outlined"
@@ -307,7 +305,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="outlined"
@@ -315,7 +313,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 class="my-5"
@@ -328,7 +326,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="underlined"
@@ -336,7 +334,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="underlined"
@@ -344,7 +342,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 placeholder="Enter city"
                 variant="underlined"
@@ -359,7 +357,7 @@
 
     <!-- 👉 autocomplete Multiple -->
     <VCol cols="12">
-      <VCard title="autocomplete Multiple">
+      <VCard title="Multiple">
         <VCardText>
           <VRow>
             <VCol
@@ -367,7 +365,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -375,7 +373,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -383,7 +381,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 multiple
@@ -396,7 +394,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -404,7 +402,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -412,7 +410,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -425,7 +423,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -433,7 +431,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -441,7 +439,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -454,7 +452,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -462,7 +460,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -470,7 +468,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="outlined"
@@ -483,7 +481,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -491,7 +489,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -499,7 +497,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 density="compact"
@@ -514,7 +512,7 @@
 
     <!-- 👉 autocomplete with clearable -->
     <VCol cols="12">
-      <VCard title="autocomplete clearable">
+      <VCard title="clearable">
         <VCardText>
           <VRow>
             <VCol
@@ -522,7 +520,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -531,7 +529,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -540,7 +538,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -554,7 +552,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -563,7 +561,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -572,7 +570,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -586,7 +584,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -595,7 +593,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -604,7 +602,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -618,7 +616,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -627,7 +625,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -636,7 +634,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="outlined"
@@ -649,7 +647,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -658,7 +656,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 multiple
@@ -668,7 +666,7 @@
                 no-data-text="can't fetch city names"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 density="compact"
@@ -685,7 +683,7 @@
 
     <!-- 👉 autocomplete with closable chips -->
     <VCol cols="12">
-      <VCard title="autocomplete with closable chips">
+      <VCard title="with closable chips">
         <VCardText>
           <VRow>
             <VCol
@@ -693,7 +691,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -703,7 +701,7 @@
                 closable-chips
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -713,7 +711,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 chips
@@ -728,7 +726,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -738,7 +736,7 @@
                 closable-chips
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -748,7 +746,7 @@
                 closable-chips
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -763,7 +761,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -773,7 +771,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -783,7 +781,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -798,7 +796,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -808,7 +806,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -818,7 +816,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="outlined"
@@ -833,7 +831,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -843,7 +841,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -853,7 +851,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 closable-chips
@@ -870,7 +868,7 @@
 
     <!-- 👉 Autocomplete closable chips with clearable -->
     <VCol cols="12">
-      <VCard title="autocomplete closable chip with  clearble">
+      <VCard title="closable chip with  clearble">
         <VCardText>
           <VRow>
             <VCol
@@ -878,7 +876,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -889,7 +887,7 @@
                 clearable
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -900,7 +898,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 chips
@@ -916,7 +914,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -927,7 +925,7 @@
                 closable-chips
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -938,7 +936,7 @@
                 closable-chips
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -954,7 +952,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -965,7 +963,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -976,7 +974,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -992,7 +990,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -1003,7 +1001,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -1014,7 +1012,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="outlined"
@@ -1030,7 +1028,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1041,7 +1039,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1052,7 +1050,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 clearable
@@ -1070,7 +1068,7 @@
 
     <!-- 👉 autocomplete with chips -->
     <VCol cols="12">
-      <VCard title="autocomplete with chips">
+      <VCard title="with chips">
         <VCardText>
           <VRow>
             <VCol
@@ -1078,7 +1076,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1087,7 +1085,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -1096,7 +1094,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 chips
@@ -1110,7 +1108,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -1119,7 +1117,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1128,7 +1126,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1142,7 +1140,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1151,7 +1149,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1160,7 +1158,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1174,7 +1172,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -1183,7 +1181,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
@@ -1192,7 +1190,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="outlined"
@@ -1206,7 +1204,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1215,7 +1213,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 class="my-5"
@@ -1224,7 +1222,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 density="compact"
@@ -1240,7 +1238,7 @@
 
     <!-- 👉 autocomplete prepend inner icons -->
     <VCol cols="12">
-      <VCard title="autocomplete prepend inner icons">
+      <VCard title="prepend inner icons">
         <VCardText>
           <VRow>
             <VCol
@@ -1248,7 +1246,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1257,7 +1255,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -1266,7 +1264,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 multiple
@@ -1280,7 +1278,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -1289,7 +1287,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1298,7 +1296,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1312,7 +1310,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1321,7 +1319,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 prepend-inner-icon="mdi-city"
@@ -1330,7 +1328,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 prepend-inner-icon="mdi-city"
@@ -1344,7 +1342,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 prepend-inner-icon="mdi-city"
@@ -1353,7 +1351,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 prepend-inner-icon="mdi-city"
@@ -1362,7 +1360,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
@@ -1376,7 +1374,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 prepend-inner-icon="mdi-city"
                 variant="underlined"
@@ -1385,7 +1383,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 prepend-inner-icon="mdi-city"
@@ -1394,7 +1392,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 prepend-inner-icon="mdi-city"
                 variant="underlined"
@@ -1410,7 +1408,7 @@
 
     <!-- 👉 autocomplete prepend icons -->
     <VCol cols="12">
-      <VCard title="autocomplete prepend icons">
+      <VCard title="prepend icons">
         <VCardText>
           <VRow>
             <VCol
@@ -1418,7 +1416,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1427,7 +1425,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -1436,7 +1434,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 multiple
@@ -1450,7 +1448,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -1459,7 +1457,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1468,7 +1466,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1482,7 +1480,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1491,7 +1489,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 prepend-icon="mdi-city"
@@ -1500,7 +1498,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 prepend-icon="mdi-city"
@@ -1514,7 +1512,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 prepend-icon="mdi-city"
@@ -1523,7 +1521,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 prepend-icon="mdi-city"
@@ -1532,7 +1530,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 prepend-icon="mdi-city"
@@ -1546,7 +1544,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 prepend-icon="mdi-city"
                 variant="underlined"
@@ -1555,7 +1553,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 prepend-icon="mdi-city"
@@ -1564,7 +1562,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 prepend-icon="mdi-city"
                 variant="underlined"
@@ -1580,7 +1578,7 @@
 
     <!-- 👉 autocomplete append icons -->
     <VCol cols="12">
-      <VCard title="autocomplete append icons">
+      <VCard title="append icons">
         <VCardText>
           <VRow>
             <VCol
@@ -1588,7 +1586,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1597,7 +1595,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -1606,7 +1604,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 multiple
@@ -1620,7 +1618,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -1629,7 +1627,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1638,7 +1636,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1652,7 +1650,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1661,7 +1659,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 append-icon="mdi-city"
@@ -1670,7 +1668,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 append-icon="mdi-city"
@@ -1684,7 +1682,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 append-icon="mdi-city"
@@ -1693,7 +1691,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 append-icon="mdi-city"
@@ -1702,7 +1700,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 append-icon="mdi-city"
@@ -1716,7 +1714,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 append-icon="mdi-city"
                 variant="underlined"
@@ -1725,7 +1723,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 append-icon="mdi-city"
@@ -1734,7 +1732,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 append-icon="mdi-city"
                 variant="underlined"
@@ -1750,7 +1748,7 @@
 
     <!-- 👉 autocomplete loading  -->
     <VCol cols="12">
-      <VCard title="Autocomplete loading">
+      <VCard title="loading">
         <VCardText>
           <VRow>
             <VCol
@@ -1758,7 +1756,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 class="my-5"
@@ -1768,7 +1766,7 @@
                 multiple
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="solo"
@@ -1778,7 +1776,7 @@
                 loading
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="solo"
                 multiple
@@ -1793,7 +1791,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 variant="plain"
@@ -1803,7 +1801,7 @@
                 loading
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1813,7 +1811,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="plain"
                 class="my-5"
@@ -1828,7 +1826,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 class="my-5"
@@ -1838,7 +1836,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 append-icon="mdi-city"
@@ -1848,7 +1846,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="filled"
                 append-icon="mdi-city"
@@ -1863,7 +1861,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 append-icon="mdi-city"
@@ -1873,7 +1871,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 append-icon="mdi-city"
@@ -1883,7 +1881,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
                 append-icon="mdi-city"
@@ -1898,7 +1896,7 @@
               md="6"
             >
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 append-icon="mdi-city"
                 variant="underlined"
@@ -1908,7 +1906,7 @@
                 density="default"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="underlined"
                 append-icon="mdi-city"
@@ -1918,7 +1916,7 @@
                 density="comfortable"
               />
               <VAutocomplete
-                label="city"
+                label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 append-icon="mdi-city"
                 variant="underlined"

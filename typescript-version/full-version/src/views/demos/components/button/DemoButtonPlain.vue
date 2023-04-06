@@ -29,14 +29,14 @@
       color="warning"
       variant="plain"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="plain"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>

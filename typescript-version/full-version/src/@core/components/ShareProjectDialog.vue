@@ -174,8 +174,8 @@ const membersList: Member[] = [
           </VListItem>
         </VList>
 
-        <div class="d-flex justify-space-between flex-wrap gap-3 mt-4">
-          <h6 class="text-sm font-weight-medium d-flex align-start">
+        <div class="d-flex justify-space-between align-center flex-wrap gap-3 mt-4">
+          <h6 class="text-sm font-weight-medium d-flex align-center">
             <VIcon
               icon="mdi-account-group-outline"
               class="me-2"

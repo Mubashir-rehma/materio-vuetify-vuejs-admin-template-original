@@ -55,6 +55,7 @@ export default [
                 children: [
                   { title: 'Register v1', to: 'pages-authentication-register-v1', target: '_blank' },
                   { title: 'Register v2', to: 'pages-authentication-register-v2', target: '_blank' },
+                  { title: 'Register Multi-Steps', to: 'pages-authentication-register-multi-steps', target: '_blank' },
                 ],
               },
               {

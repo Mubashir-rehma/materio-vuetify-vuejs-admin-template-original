@@ -192,10 +192,9 @@ const addressTypes = [
               cols="12"
               md="6"
             >
-              <VSelect
+              <VTextField
                 v-model="billingAddress.country"
                 label="Country"
-                :items="['USA', 'Uk', 'France', 'Germany', 'Japan']"
               />
             </VCol>
 

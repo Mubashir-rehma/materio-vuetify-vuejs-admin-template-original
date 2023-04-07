@@ -114,6 +114,11 @@
   "Two Steps v1": "Deux étapes v1",
   "Two Steps v2": "Deux étapes v2",
   "Custom Input": "Entrée personnalisée",
+  "Register Multi-Steps": "Enregistrer plusieurs étapes",
+  "Wizard Examples": "Exemples de guide",
+  "Checkout": "Check-out",
+  "Create Deal": "Créer une offre",
+  "Property Listing": "Liste des propriétés",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

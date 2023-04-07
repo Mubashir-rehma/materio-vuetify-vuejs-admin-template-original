@@ -6,6 +6,7 @@ const isTwoFactorDialogOpen = ref(false)
 const isUserInfoEditDialogVisible = ref(false)
 const isShareProjectDialogVisible = ref(false)
 const isReferAndEarnDialogVisible = ref(false)
+const isCreateAppVisible = ref(false)
 
 const userData = {
   id: 110,
@@ -46,7 +47,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Quickly collect the credit card details, built in input mask and form validation support.
           </p>
 
@@ -77,7 +78,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Quickly collect the credit card details, built in input mask and form validation support.
           </p>
 
@@ -108,7 +109,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Elegant pricing options dialog popup example, easy to use in any page.
           </p>
 
@@ -140,7 +141,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Use Refer & Earn modal to encourage your exiting customers refer their friends & colleague.
           </p>
 
@@ -172,7 +173,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Ready to use form to collect user address data with validation and custom input support.
           </p>
 
@@ -184,6 +185,36 @@ const userData = {
         <!-- 👉 Edit Address dialog -->
         <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
       </VCard>
+    </VCol>
+
+    <!-- 👉 Create app dialog -->
+    <VCol
+      cols="12"
+      sm="6"
+      md="4"
+    >
+      <VCard class="text-high-emphasis text-center">
+        <VCardItem class="d-flex flex-column gap-2">
+          <template #prepend>
+            <VIcon
+              size="34"
+              icon="mdi-cube-outline"
+            />
+          </template>
+          <VCardTitle>Create App</VCardTitle>
+        </VCardItem>
+
+        <VCardText>
+          <p class="text-base clamp-text">
+            Provide application data with this form to create the app dialog popup example, easy to use in any page.
+          </p>
+
+          <VBtn @click="isCreateAppVisible = !isCreateAppVisible">
+            Show
+          </VBtn>
+        </VCardText>
+      </VCard>
+      <CreateAppDialog v-model:is-dialog-visible="isCreateAppVisible" />
     </VCol>
 
     <!-- 👉 Two Factor Auth Dialog -->
@@ -204,7 +235,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Enhance your application security by enabling two factor authentication.
           </p>
 
@@ -237,7 +268,7 @@ const userData = {
         </VCardItem>
 
         <VCardText>
-          <p class="text-base">
+          <p class="text-base clamp-text">
             Enhance your application security by enabling two factor authentication.
           </p>
 

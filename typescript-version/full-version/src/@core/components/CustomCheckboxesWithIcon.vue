@@ -35,20 +35,22 @@ watch(selectedOption, () => {
         class="custom-input custom-checkbox rounded cursor-pointer"
         :class="selectedOption.includes(item.value) ? 'active' : ''"
       >
-        <div class="d-flex flex-column align-center text-center gap-2">
-          <VIcon
-            size="32"
-            :icon="item.icon"
-            class="text-high-emphasis"
-          />
+        <slot :item="item">
+          <div class="d-flex flex-column align-center text-center gap-2">
+            <VIcon
+              size="32"
+              :icon="item.icon"
+              class="text-high-emphasis"
+            />
 
-          <h6 class="cr-title text-base">
-            {{ item.title }}
-          </h6>
-          <p class="text-sm mb-0">
-            {{ item.desc }}
-          </p>
-        </div>
+            <h6 class="cr-title text-base">
+              {{ item.title }}
+            </h6>
+            <p class="text-sm mb-0">
+              {{ item.desc }}
+            </p>
+          </div>
+        </slot>
         <div>
           <VCheckbox
             v-model="selectedOption"

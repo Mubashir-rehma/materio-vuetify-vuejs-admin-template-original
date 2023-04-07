@@ -48,6 +48,7 @@ const resolveDeliveryBadgeData: any = {
 }
 
 const totalPriceWithDeliveryCharges = computed(() => {
+  checkoutAddressDataLocal.value.deliveryCharges = 0
   if (checkoutAddressDataLocal.value.deliverySpeed !== 'free')
     checkoutAddressDataLocal.value.deliveryCharges = resolveDeliveryBadgeData[checkoutAddressDataLocal.value.deliverySpeed].price
 

@@ -4,37 +4,38 @@
       color="primary"
       variant="tonal"
     >
-      <span>PI</span>
+      PI
     </VAvatar>
+
     <VAvatar
       color="secondary"
       variant="tonal"
     >
-      <span>SE</span>
+      SE
     </VAvatar>
     <VAvatar
       color="success"
       variant="tonal"
     >
-      <span>SU</span>
+      SU
     </VAvatar>
     <VAvatar
       color="info"
       variant="tonal"
     >
-      <span>IN</span>
+      IN
     </VAvatar>
     <VAvatar
       color="warning"
       variant="tonal"
     >
-      <span>WA</span>
+      WA
     </VAvatar>
     <VAvatar
       color="error"
       variant="tonal"
     >
-      <span>ER</span>
+      ER
     </VAvatar>
   </div>
 </template>

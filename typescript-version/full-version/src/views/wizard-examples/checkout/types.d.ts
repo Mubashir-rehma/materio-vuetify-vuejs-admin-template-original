@@ -23,5 +23,6 @@ export interface CheckoutData {
   orderAmount: number
   deliveryAddress: string
   deliverySpeed: string
+  deliveryCharges: number
   addresses: Addresses[]
 }

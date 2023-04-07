@@ -57,6 +57,7 @@ const checkoutData = ref<CheckoutData>({
   orderAmount: 1198,
   deliveryAddress: 'home',
   deliverySpeed: 'free',
+  deliveryCharges: 0,
   addresses: [
     {
       title: 'John Doe (Default)',

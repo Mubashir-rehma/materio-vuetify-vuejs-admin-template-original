@@ -234,8 +234,8 @@ watch(() => prop.currentStep, updateCartData)
           </div>
 
           <div class="d-flex justify-space-between text-base">
-            <span class="text-high-emphasis">Deliver Charges</span>
-            <div>
+            <span class="text-high-emphasis">Delivery Charges</span>
+            <div v-if="checkoutPaymentDataLocal.deliverySpeed === 'free'">
               <span class="text-decoration-line-through me-2">$5.00</span>
               <VChip
                 color="success"
@@ -243,6 +243,9 @@ watch(() => prop.currentStep, updateCartData)
               >
                 Free
               </VChip>
+            </div>
+            <div v-else>
+              <span>${{ checkoutPaymentDataLocal.deliveryCharges }}</span>
             </div>
           </div>
         </VCardText>
@@ -252,7 +255,7 @@ watch(() => prop.currentStep, updateCartData)
         <VCardText>
           <div class="d-flex justify-space-between text-base mb-2">
             <span class="text-high-emphasis font-weight-medium">Total</span>
-            <span>${{ checkoutPaymentDataLocal.orderAmount }}.00</span>
+            <span>${{ checkoutPaymentDataLocal.orderAmount + checkoutPaymentDataLocal.deliveryCharges }}.00</span>
           </div>
 
           <div class="d-flex justify-space-between text-base mb-4">

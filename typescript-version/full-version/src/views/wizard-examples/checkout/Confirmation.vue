@@ -16,6 +16,15 @@ const selectedDeliveryAddress = computed(() => {
     return address.value === props.checkoutData.deliveryAddress
   })
 })
+
+const resolveDeliveryMethod = computed(() => {
+  if (props.checkoutData.deliverySpeed === 'overnight')
+    return { method: 'Overnight Delivery', desc: 'In 1 business day.' }
+  else if (props.checkoutData.deliverySpeed === 'express')
+    return { method: 'Express Delivery', desc: 'Normally in 3-4 business days' }
+  else
+    return { method: 'Standard Delivery', desc: 'Normally in 1 Week' }
+})
 </script>
 
 <template>
@@ -113,9 +122,9 @@ const selectedDeliveryAddress = computed(() => {
           Preferred Method:
         </p>
         <p class="mb-0">
-          Standard Delivery
+          {{ resolveDeliveryMethod.method }}
         </p>
-        <span>(Normally 3-4 business days)</span>
+        <span>( {{ resolveDeliveryMethod.desc }} )</span>
       </VCol>
     </VRow>
 
@@ -198,20 +207,23 @@ const selectedDeliveryAddress = computed(() => {
 
             <div class="d-flex align-center justify-space-between text-sm">
               <span class="text-high-emphasis">Delivery Charges</span>
-              <div>
+              <div v-if="props.checkoutData.deliverySpeed === 'free'">
                 <span class="text-decoration-line-through me-2">$5.00</span>
                 <VChip
-                  size="small"
                   color="success"
+                  size="small"
                 >
                   Free
                 </VChip>
+              </div>
+              <div v-else>
+                <span>${{ props.checkoutData.deliveryCharges }}</span>
               </div>
             </div>
           </div>
           <div class="d-flex align-center justify-space-between text-high-emphasis font-weight-medium px-5 py-3">
             <span>Total</span>
-            <span>${{ props.checkoutData.orderAmount }}.00</span>
+            <span>${{ props.checkoutData.orderAmount + props.checkoutData.deliveryCharges }}.00</span>
           </div>
         </div>
       </VCol>

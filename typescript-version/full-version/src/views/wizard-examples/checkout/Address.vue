@@ -48,11 +48,10 @@ const resolveDeliveryBadgeData: any = {
 }
 
 const totalPriceWithDeliveryCharges = computed(() => {
-  let deliveryCharges = 0
   if (checkoutAddressDataLocal.value.deliverySpeed !== 'free')
-    deliveryCharges = resolveDeliveryBadgeData[checkoutAddressDataLocal.value.deliverySpeed].price
+    checkoutAddressDataLocal.value.deliveryCharges = resolveDeliveryBadgeData[checkoutAddressDataLocal.value.deliverySpeed].price
 
-  return checkoutAddressDataLocal.value.orderAmount += deliveryCharges
+  return checkoutAddressDataLocal.value.orderAmount + checkoutAddressDataLocal.value.deliveryCharges
 })
 
 const updateAddressData = () => {
@@ -133,7 +132,7 @@ watch(() => props.currentStep, updateAddressData)
 
       <!-- 👉 Delivery options custom input -->
       <CustomRadiosWithIcon
-        v-model:selected-radio="checkoutAddressDataLocal.deliverySpeed "
+        v-model:selected-radio="checkoutAddressDataLocal.deliverySpeed"
         :radio-content="deliveryOptions"
         :grid-column="{ cols: '12', sm: '4' }"
       >

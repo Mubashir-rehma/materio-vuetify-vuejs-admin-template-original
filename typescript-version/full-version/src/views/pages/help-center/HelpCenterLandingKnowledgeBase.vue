@@ -42,7 +42,7 @@ const totalArticles = (category: HelpCenterCategoriesType) => {
             <VCardText>
               <ul
                 class="ps-6"
-                style="list-style: disc ;"
+                style="list-style: disc;"
               >
                 <li
                   v-for="item in article.subCategories"

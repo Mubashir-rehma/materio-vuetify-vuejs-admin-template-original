@@ -431,7 +431,6 @@ meta:
 <style lang="scss">
 @use "@styles/variables/_vuetify.scss";
 @use "@core/scss/base/_mixins.scss";
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {
@@ -443,7 +442,7 @@ meta:
 .email-app-layout {
   border-radius: vuetify.$card-border-radius;
 
-  @include elevation.elevation(vuetify.$card-elevation);
+  @include mixins.elevation(vuetify.$card-elevation);
 
   $sel-email-app-layout: &;
 
@@ -478,7 +477,7 @@ meta:
   .email-item:hover {
     transform: translateY(-2px);
 
-    @include elevation.elevation(3);
+    @include mixins.elevation(3);
 
     .email-actions {
       display: block !important;

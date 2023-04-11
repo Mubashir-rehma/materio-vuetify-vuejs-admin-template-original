@@ -3,58 +3,36 @@
     <VAvatar
       rounded="0"
       color="primary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded="sm"
       color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded
       color="success"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded="lg"
       color="info"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded="xl"
       color="warning"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      icon="mdi-account-outline"
+    />
 
-    <VAvatar color="error">
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="error"
+      icon="mdi-account-outline"
+    />
   </div>
 </template>

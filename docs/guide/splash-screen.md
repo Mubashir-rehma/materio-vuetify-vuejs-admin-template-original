@@ -4,7 +4,7 @@ We provide splash screen to show initial loader until Vue app is ready.
 
 ## Loader
 
-Loader is created using HTML & CSS. There's no Vue code. You can find loader markup in `/public/index.html` file.
+Loader is created using HTML & CSS. There's no Vue code. You can find loader markup in `index.html` file.
 
 ## Loader color
 

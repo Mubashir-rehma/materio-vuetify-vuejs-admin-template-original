@@ -58,7 +58,7 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
         title="Icons"
         :code="demoCode.icons"
       >
-        <p>You can use <code>v-icon</code> in default slot of <code>v-avatar</code> component for rendering image.</p>
+        <p>You can use <code>icon</code> prop of <code>v-avatar</code> component for rendering icons.</p>
 
         <DemoAvatarIcons />
       </AppCardCode>
@@ -88,7 +88,7 @@ import * as demoCode from '@/views/demos/components/avatar/demoCodeAvatar'
         title="Images"
         :code="demoCode.images"
       >
-        <p>You can use <code>v-img</code> in default slot of <code>v-avatar</code> component for rendering image.</p>
+        <p>You can use <code>image</code> prop of <code>v-avatar</code> component for rendering image.</p>
 
         <DemoAvatarImages />
       </AppCardCode>

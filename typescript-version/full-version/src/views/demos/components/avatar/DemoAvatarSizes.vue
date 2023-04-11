@@ -11,25 +11,25 @@
       color="secondary"
       size="small"
     >
-      <span>PI</span>
+      PI
     </VAvatar>
 
     <VAvatar color="success">
-      <span>PI</span>
+      PI
     </VAvatar>
 
     <VAvatar
       color="info"
       size="large"
     >
-      <span class="text-h6 text-white">PI</span>
+      <span class="text-lg">PI</span>
     </VAvatar>
 
     <VAvatar
       color="error"
       size="x-large"
     >
-      <span class="text-h5 text-white">PI</span>
+      <span class="text-lg">PI</span>
     </VAvatar>
   </div>
 </template>

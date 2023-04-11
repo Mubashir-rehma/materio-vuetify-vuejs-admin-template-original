@@ -34,11 +34,11 @@ If you’re a developer looking for an admin dashboard that is developer-friendl
 
 ## Installation ⚒️
 
-Please [visit](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/guide/development/installation.html) our docs for installation guide.
+Please [visit](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/guide/installation.html#prerequisite) our docs for installation guide.
 
 ## Documentation 📜
 
-Check out our live [Documentation](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template-vue2/documentation/)
+Check out our live [Documentation](https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/)
 
 ## Support 👨‍💻
 

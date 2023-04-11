@@ -19,7 +19,7 @@
       z-index: 2;
       transform: translateY(-5px) scale(1.05);
 
-      @include mixins_elevation.elevation(3);
+      @include mixins.elevation(3);
     }
   }
 

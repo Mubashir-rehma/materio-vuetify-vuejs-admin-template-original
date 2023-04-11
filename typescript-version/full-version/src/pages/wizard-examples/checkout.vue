@@ -83,7 +83,9 @@ const currentStep = ref(0)
       <!-- 👉 Stepper -->
       <AppStepper
         v-model:current-step="currentStep"
+        class="checkout-stepper"
         :items="checkoutSteps"
+        :direction="$vuetify.display.smAndUp ? 'horizontal' : 'vertical'"
       />
     </VCardText>
 
@@ -123,3 +125,13 @@ const currentStep = ref(0)
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss">
+.checkout-stepper {
+  .stepper-icon-step {
+    .step-wrapper + svg {
+      margin-inline: 3.5rem !important;
+    }
+  }
+}
+</style>

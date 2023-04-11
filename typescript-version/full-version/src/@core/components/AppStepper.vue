@@ -66,6 +66,7 @@ watchEffect(() => {
   <VSlideGroup
     v-model="currentStep"
     class="app-stepper"
+    show-arrows
     :direction="props.direction"
   >
     <VSlideGroupItem
@@ -86,8 +87,8 @@ watchEffect(() => {
           <div class="stepper-icon-step text-high-emphasis d-flex align-center gap-2">
             <!-- 👉 icon and title -->
             <div
-              class="d-flex align-center gap-2"
-              :class="[props.direction === 'horizontal' && 'flex-column mx-4 mx-md-10 mx-lg-13']"
+              class="d-flex align-center gap-2 step-wrapper"
+              :class="[props.direction === 'horizontal' && 'flex-column']"
             >
               <div class="stepper-icon">
                 <VIcon
@@ -110,7 +111,7 @@ watchEffect(() => {
             <!-- 👉 append chevron -->
             <VIcon
               v-if="isHorizontalAndNotLastStep(index)"
-              class="flip-in-rtl stepper-chevron-indicator"
+              class="flip-in-rtl stepper-chevron-indicator mx-6"
               size="24"
               icon="mdi-chevron-right"
             />
@@ -145,7 +146,7 @@ watchEffect(() => {
 
                 <VIcon
                   v-else
-                  icon="mdi-check-circle"
+                  icon="custom-check-circle"
                   class="stepper-step-icon"
                   size="24"
                 />
@@ -189,6 +190,10 @@ watchEffect(() => {
   // 👉 stepper step with bg color
   &.stepper-icon-step-bg {
     .stepper-icon-step {
+      .step-wrapper {
+        flex-direction: row !important;
+      }
+
       .stepper-icon {
         display: flex;
         align-items: center;

@@ -205,6 +205,7 @@ declare module '@vue/runtime-core' {
     DemoProgressLinearReversed: typeof import('./src/views/demos/components/progress-linear/DemoProgressLinearReversed.vue')['default']
     DemoProgressLinearRounded: typeof import('./src/views/demos/components/progress-linear/DemoProgressLinearRounded.vue')['default']
     DemoProgressLinearSlots: typeof import('./src/views/demos/components/progress-linear/DemoProgressLinearSlots.vue')['default']
+    DemoProgressLinearStriped: typeof import('./src/views/demos/components/progress-linear/DemoProgressLinearStriped.vue')['default']
     DemoRadioBasic: typeof import('./src/views/demos/forms/form-elements/radio/DemoRadioBasic.vue')['default']
     DemoRadioColors: typeof import('./src/views/demos/forms/form-elements/radio/DemoRadioColors.vue')['default']
     DemoRadioDensity: typeof import('./src/views/demos/forms/form-elements/radio/DemoRadioDensity.vue')['default']

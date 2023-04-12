@@ -127,11 +127,11 @@ const color = ref('#ff00ff')
       </VCard>
     </VCol>
 
-    <!-- 👉 BreadCrumbs  -->
+    <!-- 👉 Breadcrumbs  -->
     <VCol cols="12">
       <VCard title="BradCrumbs">
         <VCardText>
-          <h3>BreadCrumbs density</h3>
+          <h3>Breadcrumbs density</h3>
           <VBreadcrumbs :items="['Foo', 'Bar', 'Fizz']" />
 
           <VBreadcrumbs

@@ -78,7 +78,7 @@ import * as demoCode from '@/views/demos/components/progress-linear/demoCodeProg
       </AppCardCode>
     </VCol>
 
-    <!-- 👉 Progress linear Striped -->
+    <!-- 👉 Progress linear Slot -->
     <VCol
       cols="12"
       md="6"
@@ -90,6 +90,20 @@ import * as demoCode from '@/views/demos/components/progress-linear/demoCodeProg
         <p>we can bind user input using <code>v-model</code>.You can also use the default slot for the same.</p>
 
         <DemoProgressLinearSlots />
+      </AppCardCode>
+    </VCol>
+
+    <!-- 👉 Progress Linear Striped -->
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <AppCardCode
+        title="Striped"
+        :code="demoCode.striped"
+      >
+        <p> The <code>striped</code> prop is used to apply striped background.</p>
+        <DemoProgressLinearStriped />
       </AppCardCode>
     </VCol>
   </VRow>

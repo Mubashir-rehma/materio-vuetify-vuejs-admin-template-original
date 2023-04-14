@@ -52,7 +52,7 @@ const router = useRouter()
               v-for="(shortcut, index) in props.shortcuts"
               :key="shortcut.title"
               cols="6"
-              class="text-center border-t cursor-pointer pa-4"
+              class="text-center border-t cursor-pointer pa-4 shortcut-icon"
               :class="(index + 1) % 2 ? 'border-e' : ''"
               @click="router.push(shortcut.to)"
             >
@@ -74,3 +74,9 @@ const router = useRouter()
     </VMenu>
   </IconBtn>
 </template>
+
+<style lang="scss">
+.shortcut-icon:hover {
+  background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+}
+</style>

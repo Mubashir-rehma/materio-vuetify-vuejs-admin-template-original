@@ -25,6 +25,7 @@
 
   > .v-avatar {
     border: 2px solid rgb(var(--v-theme-surface));
+    transition: transform 0.15s ease;
   }
 }
 

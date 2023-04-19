@@ -76,6 +76,7 @@ const openSelectedMethodDialog = () => {
         <VList
           v-model:selected="selectedMethod"
           mandatory
+          variant="outlined"
           class="card-list auth-method-card"
           :class="$vuetify.display.xs ? 'responsive-card' : ''"
         >
@@ -83,10 +84,9 @@ const openSelectedMethodDialog = () => {
             v-for="item of authMethods"
             :key="item.title"
             rounded
-            border
             :value="item.method"
-            class="py-5 px-6 my-6 border-opacity-100"
-            :class="selectedMethod[0] === item.method ? 'bg-light-primary text-primary border-primary' : 'bg-var-theme-background border-secondary'"
+            class="py-5 px-6 my-6"
+            :class="selectedMethod[0] === item.method ? 'bg-light-primary text-primary' : 'bg-var-theme-background'"
           >
             <template #prepend>
               <VIcon

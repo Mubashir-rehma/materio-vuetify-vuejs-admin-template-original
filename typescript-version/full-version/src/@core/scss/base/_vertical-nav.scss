@@ -4,7 +4,6 @@
 @use "@configured-variables" as variables;
 @use "@core/scss/base/mixins" as mixins;
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 
 .layout-nav-type-vertical {
   // 👉 Layout Vertical nav
@@ -16,7 +15,7 @@
     @at-root {
       // ℹ️ Add styles for collapsed vertical nav
       .layout-vertical-nav-collapsed#{$sl-layout-nav-type-vertical}.hovered {
-        @include elevation.elevation(6);
+        @include mixins.elevation(6);
       }
     }
 

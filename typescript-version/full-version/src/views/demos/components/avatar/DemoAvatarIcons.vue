@@ -1,45 +1,33 @@
 <template>
   <div class="demo-space-x">
-    <VAvatar color="primary">
-      <VIcon
-        size="22"
-        icon="mdi-home-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="primary"
+      icon="mdi-home-outline"
+    />
 
-    <VAvatar color="secondary">
-      <VIcon
-        size="22"
-        icon="mdi-cloud-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="secondary"
+      icon="mdi-cloud-outline"
+    />
 
-    <VAvatar color="success">
-      <VIcon
-        size="22"
-        icon="mdi-bell-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="success"
+      icon="mdi-bell-outline"
+    />
 
-    <VAvatar color="info">
-      <VIcon
-        size="22"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="info"
+      icon="mdi-account-outline"
+    />
 
-    <VAvatar color="warning">
-      <VIcon
-        size="22"
-        icon="mdi-alert-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="warning"
+      icon="mdi-alert-outline"
+    />
 
-    <VAvatar color="error">
-      <VIcon
-        size="22"
-        icon="mdi-message-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="error"
+      icon="mdi-message-outline"
+    />
   </div>
 </template>

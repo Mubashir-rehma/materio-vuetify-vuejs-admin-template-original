@@ -115,6 +115,11 @@
   "Two Steps v1": "Two Steps v1",
   "Two Steps v2": "Two Steps v2",
   "Custom Input": "Custom Input",
+  "Register Multi-Steps": "Register Multi-Steps",
+  "Wizard Examples": "Wizard Examples",
+  "Checkout": "Checkout",
+  "Create Deal": "Create Deal",
+  "Property Listing": "Property Listing",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

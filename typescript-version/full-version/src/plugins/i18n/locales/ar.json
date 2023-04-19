@@ -115,6 +115,11 @@
   "Two Steps v1": "خطوتين v1.0",
   "Two Steps v2": "خطوتين v2.0",
   "Custom Input": "إدخال مخصص",
+  "Register Multi-Steps": "تسجيل خطوات متعددة",
+  "Wizard Examples": "أمثلة المعالج",
+  "Checkout": "الدفع",
+  "Create Deal": "إنشاء صفقة",
+  "Property Listing": "قائمة الممتلكات ",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

@@ -173,10 +173,9 @@ const dialogVisibleUpdate = (val: boolean) => {
               cols="12"
               md="6"
             >
-              <VSelect
+              <VTextField
                 v-model="userData.language"
                 label="Language"
-                :items="['English', 'Spanish', 'Portuguese', 'Russian', 'French', 'German']"
               />
             </VCol>
 
@@ -185,10 +184,9 @@ const dialogVisibleUpdate = (val: boolean) => {
               cols="12"
               md="6"
             >
-              <VSelect
+              <VTextField
                 v-model="userData.country"
                 label="Country"
-                :items="['USA', 'UK', 'Spain', 'Russia', 'France', 'Germany']"
               />
             </VCol>
 

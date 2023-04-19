@@ -1,6 +1,6 @@
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 @use "@core/scss/base/placeholders" as *;
 @use "@core/scss/template/placeholders" as *;
+@use "@core/scss/base/mixins";
 
 .layout-wrapper.layout-nav-type-horizontal {
   .layout-navbar-and-nav-container {
@@ -33,7 +33,7 @@
       .layout-footer-sticky#{&} {
         background-color: rgb(var(--v-theme-surface));
 
-        @include elevation.elevation(3);
+        @include mixins.elevation(3);
       }
     }
   }

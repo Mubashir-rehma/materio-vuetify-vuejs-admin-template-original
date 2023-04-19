@@ -6,7 +6,7 @@ interface BillingAddress {
   vatNumber: string
   address: string
   contact: string
-  country: string
+  country: string | null
   state: string
   zipCode: number | null
 }
@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
     vatNumber: '',
     address: '',
     contact: '',
-    country: '',
+    country: null,
     state: '',
     zipCode: null,
   }),
@@ -192,10 +192,9 @@ const addressTypes = [
               cols="12"
               md="6"
             >
-              <VSelect
+              <VTextField
                 v-model="billingAddress.country"
                 label="Country"
-                :items="['USA', 'Uk', 'France', 'Germany', 'Japan']"
               />
             </VCol>
 

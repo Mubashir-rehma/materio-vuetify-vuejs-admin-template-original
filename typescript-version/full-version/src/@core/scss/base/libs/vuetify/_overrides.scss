@@ -191,6 +191,11 @@ h6,
   }
 }
 
+// 👉 Divider
+.v-divider {
+  color: rgb(var(--v-border-color));
+}
+
 // 👉 Table
 .v-table {
   color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity)) !important;

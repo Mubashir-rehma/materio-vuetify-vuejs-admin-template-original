@@ -306,7 +306,6 @@ meta:
 <style lang="scss">
 @use "@styles/variables/_vuetify.scss";
 @use "@core/scss/base/_mixins.scss";
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // Variables
@@ -323,7 +322,7 @@ $chat-app-header-height: 68px;
 .chat-app-layout {
   border-radius: vuetify.$card-border-radius;
 
-  @include elevation.elevation(vuetify.$card-elevation);
+  @include mixins.elevation(vuetify.$card-elevation);
 
   $sel-chat-app-layout: &;
 

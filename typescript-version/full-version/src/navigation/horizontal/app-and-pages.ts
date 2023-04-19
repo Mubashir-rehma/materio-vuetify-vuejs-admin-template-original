@@ -55,6 +55,7 @@ export default [
                 children: [
                   { title: 'Register v1', to: 'pages-authentication-register-v1', target: '_blank' },
                   { title: 'Register v2', to: 'pages-authentication-register-v2', target: '_blank' },
+                  { title: 'Register Multi-Steps', to: 'pages-authentication-register-multi-steps', target: '_blank' },
                 ],
               },
               {
@@ -103,6 +104,15 @@ export default [
               { title: 'Server Error - 500', to: 'pages-misc-internal-server-error', target: '_blank' },
             ],
           },
+        ],
+      },
+      {
+        title: 'Wizard Pages',
+        icon: { icon: 'mdi-ray-start-vertex-end' },
+        children: [
+          { title: 'Checkout', to: { name: 'wizard-examples-checkout' } },
+          { title: 'Property Listing', to: { name: 'wizard-examples-property-listing' } },
+          { title: 'Create Deal', to: { name: 'wizard-examples-create-deal' } },
         ],
       },
     ],

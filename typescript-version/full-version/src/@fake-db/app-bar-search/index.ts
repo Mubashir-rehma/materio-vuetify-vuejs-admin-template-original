@@ -586,6 +586,34 @@ const database: SearchItem[] = [
     title: 'Autocomplete',
     category: 'formsTables',
   },
+  {
+    id: 83,
+    url: { name: 'pages-authentication-register-multi-steps' },
+    icon: 'mdi-account-plus-outline',
+    title: 'Register Multi-Steps',
+    category: 'appsPages',
+  },
+  {
+    id: 83,
+    url: { name: 'wizard-examples-checkout' },
+    icon: 'mdi-cart-outline',
+    title: 'Wizard - Checkout',
+    category: 'appsPages',
+  },
+  {
+    id: 84,
+    url: { name: 'wizard-examples-create-deal' },
+    icon: 'mdi-gift-outline',
+    title: 'Wizard - create deal',
+    category: 'appsPages',
+  },
+  {
+    id: 85,
+    url: { name: 'wizard-examples-property-listing' },
+    icon: 'mdi-home-outline',
+    title: 'Wizard - Property Listing',
+    category: 'appsPages',
+  },
 ]
 
 // ** GET Search Data

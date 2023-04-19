@@ -14,10 +14,10 @@ defineEmits<Emit>()
 const selectedPlan = ref('standard')
 
 const plansList = [
-  { text: 'Basic - $0/month', value: 'basic' },
-  { text: 'Standard - $99/month', value: 'standard' },
-  { text: 'Enterprise - $499/month', value: 'enterprise' },
-  { text: 'Company - $999/month', value: 'company' },
+  { desc: 'Standard - $99/month', title: 'Standard', value: 'standard' },
+  { desc: 'Basic - $0/month', title: 'Basic', value: 'basic' },
+  { desc: 'Enterprise - $499/month', title: 'Enterprise', value: 'enterprice' },
+  { desc: 'Company - $999/month', title: 'Company', value: 'company' },
 ]
 
 const isConfirmDialogVisible = ref(false)
@@ -48,17 +48,13 @@ const isConfirmDialogVisible = ref(false)
         </VCardSubtitle>
       </VCardItem>
 
-      <VCardText class="d-flex align-center flex-wrap flex-sm-nowrap px-15">
-        <VSelect
-          v-model="selectedPlan"
-          label="Choose Plan"
-          :items="plansList"
-          item-title="text"
-          item-value="value"
-          density="compact"
-          class="me-3"
+      <VCardText class="d-flex align-center flex-column flex-sm-nowrap px-15">
+        <CustomRadios
+          :radio-content="plansList"
+          :selected-radio="selectedPlan"
+          :grid-column="{ cols: '12', sm: '6' }"
         />
-        <VBtn class="mt-3 mt-sm-0">
+        <VBtn class="mt-5">
           Upgrade
         </VBtn>
       </VCardText>

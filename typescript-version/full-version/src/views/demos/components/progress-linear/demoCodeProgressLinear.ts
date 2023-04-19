@@ -9,3 +9,5 @@ export const rounded = { ts: '', js: '' }
 export const slots = { ts: '', js: '' }
 
 export const buffering = { ts: '', js: '' }
+
+export const striped = { ts: '', js: '' }

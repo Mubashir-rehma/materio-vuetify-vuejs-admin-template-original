@@ -41,18 +41,20 @@ watch(selectedOption, () => {
             :value="item.value"
           />
         </div>
-        <div class="flex-grow-1">
-          <div class="d-flex align-center mb-1">
-            <h6 class="cr-title text-base">
-              {{ item.title }}
-            </h6>
-            <VSpacer />
-            <span v-if="item.subtitle">{{ item.subtitle }}</span>
+        <slot :item="item">
+          <div class="flex-grow-1">
+            <div class="d-flex align-center mb-1">
+              <h6 class="cr-title text-base">
+                {{ item.title }}
+              </h6>
+              <VSpacer />
+              <span v-if="item.subtitle">{{ item.subtitle }}</span>
+            </div>
+            <p class="text-sm mb-0">
+              {{ item.desc }}
+            </p>
           </div>
-          <p class="text-sm mb-0">
-            {{ item.desc }}
-          </p>
-        </div>
+        </slot>
       </VLabel>
     </VCol>
   </VRow>

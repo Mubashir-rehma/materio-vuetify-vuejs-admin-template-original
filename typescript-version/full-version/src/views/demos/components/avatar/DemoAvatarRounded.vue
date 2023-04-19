@@ -2,59 +2,37 @@
   <div class="demo-space-x">
     <VAvatar
       rounded="0"
-      color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      color="primary"
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded="sm"
       color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded
-      color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      color="success"
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded="lg"
-      color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      color="info"
+      icon="mdi-account-outline"
+    />
 
     <VAvatar
       rounded="xl"
-      color="secondary"
-    >
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+      color="warning"
+      icon="mdi-account-outline"
+    />
 
-    <VAvatar color="secondary">
-      <VIcon
-        size="25"
-        icon="mdi-account-outline"
-      />
-    </VAvatar>
+    <VAvatar
+      color="error"
+      icon="mdi-account-outline"
+    />
   </div>
 </template>

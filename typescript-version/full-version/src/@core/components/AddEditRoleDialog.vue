@@ -170,7 +170,7 @@ const onReset = () => {
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 900 "
+    :width="$vuetify.display.smAndDown ? 'auto' : 900"
     :model-value="props.isDialogVisible"
     @update:model-value="onReset"
   >

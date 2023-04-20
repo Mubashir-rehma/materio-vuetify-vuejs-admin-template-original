@@ -121,6 +121,7 @@
   "Property Listing": "Liste des propriétés",
   "Roles & Permissions": "Rôles et autorisations",
   "Roles": "Rôles",
+  "Permissions": "Autorisations",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

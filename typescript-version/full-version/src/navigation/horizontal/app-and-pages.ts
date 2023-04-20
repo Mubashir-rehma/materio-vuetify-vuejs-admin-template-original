@@ -41,6 +41,7 @@ export default [
         icon: { icon: 'mdi-shield-account-outline' },
         children: [
           { title: 'Roles', to: 'apps-roles' },
+          { title: 'Permissions', to: 'apps-permissions' },
         ],
       },
       {

@@ -384,3 +384,11 @@ export type SearchHeader = {
   header: string
   title:string
 }
+
+
+export type Permission = {
+  id: number
+  name: string
+  createdDate: string
+  assignedTo: string[]
+}

@@ -11,6 +11,7 @@ import './apps/calendar'
 import './apps/chat'
 import './apps/email'
 import './apps/invoice'
+import './apps/permissions'
 
 // forwards the matched request over network
 mock.onAny().passThrough()

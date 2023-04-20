@@ -593,6 +593,13 @@ const database: SearchItem[] = [
     title: 'Roles',
     category: 'appsPages',
   },
+  {
+    id: 86,
+    url: { name: 'apps-permissions' },
+    icon: 'mdi-shield-account-outline',
+    title: 'Permissions',
+    category: 'appsPages',
+  },
 ]
 
 // ** GET Search Data

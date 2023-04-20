@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AddAuthenticatorAppDialog: typeof import('./src/@core/components/AddAuthenticatorAppDialog.vue')['default']
     AddEditAddressDialog: typeof import('./src/@core/components/AddEditAddressDialog.vue')['default']
+    AddEditRoleDialog: typeof import('./src/@core/components/AddEditRoleDialog.vue')['default']
     AppBarSearch: typeof import('./src/@core/components/AppBarSearch.vue')['default']
     AppCardActions: typeof import('./src/@core/components/AppCardActions.vue')['default']
     AppCardCode: typeof import('./src/@core/components/AppCardCode.vue')['default']

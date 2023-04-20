@@ -586,6 +586,13 @@ const database: SearchItem[] = [
     title: 'Wizard - Property Listing',
     category: 'appsPages',
   },
+  {
+    id: 86,
+    url: { name: 'apps-roles' },
+    icon: 'mdi-shield-account-outline',
+    title: 'Roles',
+    category: 'appsPages',
+  },
 ]
 
 // ** GET Search Data

@@ -235,7 +235,7 @@ export interface Invoice {
     total: number
     avatar: string
     invoiceStatus: string
-    balance: string | number
+    balance: number
     dueDate: string
 }
 

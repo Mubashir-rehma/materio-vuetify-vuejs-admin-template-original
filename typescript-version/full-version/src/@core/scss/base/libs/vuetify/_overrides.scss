@@ -196,12 +196,17 @@ h6,
   color: rgb(var(--v-border-color));
 }
 
-// 👉 Table
-.v-table {
-  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity)) !important;
-
-  th {
-    font-size: 12px;
+// 👉 DataTable
+.v-data-table {
+  .v-table__wrapper {
+    .v-data-table__tbody,
+    .v-data-table__thead {
+      .v-data-table__td {
+        .v-selection-control__wrapper {
+          margin-inline-start: 0;
+        }
+      }
+    }
   }
 }
 

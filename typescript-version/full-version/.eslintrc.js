@@ -153,6 +153,9 @@ module.exports = {
     'vue/prefer-true-attribute-shorthand': 'error',
     'vue/v-on-function-call': 'error',
     'vue/no-restricted-class': ['error', '/^(p|m)(l|r)-/'],
+    'vue/valid-v-slot': ['error', {
+      allowModifiers: true,
+    }],
 
     // -- Extension Rules
     'vue/no-irregular-whitespace': 'error',

@@ -38,15 +38,15 @@ const serverSwitch = ref(false)
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium me-3">
+          <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+            <span class="app-timeline-title">
               Get on the flight
-            </h6>
-            <small class="text-xs my-1">Wednesday</small>
+            </span>
+            <span class="app-timeline-meta">Wednesday</span>
           </div>
 
           <!-- 👉 Content -->
-          <p class="mb-1">
+          <p class="app-timeline-text mb-1">
             <span>Charles de Gaulle Airport, Paris</span>
             <VIcon
               size="20"
@@ -56,19 +56,21 @@ const serverSwitch = ref(false)
             <span>Heathrow Airport, London</span>
           </p>
 
-          <p>6:30 AM</p>
+          <p class="app-timeline-meta">
+            6:30 AM
+          </p>
 
           <div class="d-flex align-center">
             <img
               :src="pdf"
-              width="28"
+              width="22"
               class="me-2"
               alt="img"
             >
 
-            <h6 class="font-weight-medium text-sm">
+            <span class="app-timeline-text">
               booking-card.pdf
-            </h6>
+            </span>
           </div>
         </VTimelineItem>
         <!-- !SECTION -->
@@ -95,14 +97,14 @@ const serverSwitch = ref(false)
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium me-3">
+          <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+            <span class="app-timeline-title">
               Interview Schedule
-            </h6>
-            <small class="text-xs text-no-wrap my-1">April, 18</small>
+            </span>
+            <span class="app-timeline-meta">April, 18</span>
           </div>
 
-          <p class="mb-0">
+          <p class="app-timeline-text mb-0">
             Bonbon gummies caramels brownie topping fruitcake gingerbread jelly-o marzipan.
           </p>
 
@@ -120,7 +122,7 @@ const serverSwitch = ref(false)
               />
               <div>
                 <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
-                <span>Javascript Developer</span>
+                <span class="text-xs">Javascript Developer</span>
               </div>
             </span>
 
@@ -173,32 +175,32 @@ const serverSwitch = ref(false)
 
             <div>
               <!-- Header -->
-              <div class="d-flex justify-space-between flex-wrap">
-                <h6 class="font-weight-medium text-sm me-3">
+              <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+                <span class="app-timeline-title">
                   Sold Puma POPX Blue Color
-                </h6>
-                <small class="text-xs text-no-wrap my-1">January, 10</small>
+                </span>
+                <span class="app-timeline-meta">January, 10</span>
               </div>
-              <span>PUMA presents the latest shoes from its collection. Light &amp; comfortable made with highly durable material.</span>
+              <span class="app-timeline-text">PUMA presents the latest shoes from its collection. Light &amp; comfortable made with highly durable material.</span>
             </div>
           </div>
 
           <!-- 👉 Timeline Item: Meta Content -->
           <div class="d-flex justify-space-between flex-column flex-sm-row gap-3">
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Customer
               </h6>
               <span class="text-xs">Micheal Scott</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Price
               </h6>
               <span class="text-xs">$375.00</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Quantity
               </h6>
               <span class="text-xs">1</span>
@@ -228,15 +230,15 @@ const serverSwitch = ref(false)
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium me-3">
+          <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+            <span class="app-timeline-title">
               Design Review
-            </h6>
-            <small class="text-xs text-no-wrap my-1">September, 20</small>
+            </span>
+            <span class="app-timeline-meta">September, 20</span>
           </div>
 
           <!-- 👉 Content -->
-          <p>
+          <p class="app-timeline-text">
             Weekly review of freshly prepared design for our new application.
           </p>
           <div class="d-flex align-center">
@@ -274,9 +276,9 @@ const serverSwitch = ref(false)
 
           <!-- 👉 Header -->
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium">
+            <span class="app-timeline-title">
               Ubuntu Server
-            </h6>
+            </span>
 
             <VChip
               color="error"
@@ -382,9 +384,8 @@ const serverSwitch = ref(false)
                 icon="mdi-map-marker-outline"
                 class="me-1"
               />
-              <h6 class="text-sm font-weight-medium">
-                <span>Location</span>
-              </h6>
+
+              <span class="app-timeline-title">Location</span>
             </div>
 
             <VChip
@@ -396,14 +397,16 @@ const serverSwitch = ref(false)
           </div>
 
           <!-- 👉 Content -->
-          <h6 class="text-sm font-weight-medium mb-1">
+          <p class="app-timeline-text mb-1">
             Find location for the company celebration.
-          </h6>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          </p>
+          <p class="app-timeline-text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          </p>
 
           <VDivider />
 
-          <div class="d-flex justify-space-between mt-4 flex-wrap">
+          <div class="d-flex justify-space-between align-center flex-wrap mt-1">
             <div>
               <IconBtn class="me-2">
                 <VIcon
@@ -426,7 +429,7 @@ const serverSwitch = ref(false)
               </IconBtn>
             </div>
 
-            <span>Due date: 15th Jan</span>
+            <span class="app-timeline-meta">Due date: 15th Jan</span>
           </div>
         </VTimelineItem>
         <!-- !SECTION -->

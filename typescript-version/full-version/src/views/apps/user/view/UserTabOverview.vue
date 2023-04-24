@@ -151,20 +151,21 @@ const resolveUserProgressVariant = (progress: number) => {
           <VTimeline
             density="compact"
             align="start"
-            truncate-line="start"
+            truncate-line="both"
             class="v-timeline-density-compact"
           >
             <VTimelineItem
               dot-color="error"
               size="x-small"
             >
-              <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-medium me-1 mb-3">
+              <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
+                <span class="app-timeline-title">
                   12 Invoices have been paid
-                </h4>
-                <span class="text-sm text-disabled text-no-wrap">12 min ago</span>
+                </span>
+                <span class="app-timeline-meta">12 min ago</span>
               </div>
-              <p class="mb-2">
+
+              <p class="app-timeline-text mb-2">
                 Invoices have been paid to the company
               </p>
               <div class="d-flex align-center mt-2">
@@ -184,14 +185,14 @@ const resolveUserProgressVariant = (progress: number) => {
               dot-color="primary"
               size="x-small"
             >
-              <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-medium me-1 mb-3">
+              <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
+                <span class="app-timeline-title">
                   Meeting with john
-                </h4>
-                <span class="text-sm text-disabled text-no-wrap">45 min ago</span>
+                </span>
+                <span class="app-timeline-meta">45 min ago</span>
               </div>
 
-              <p class="mb-1">
+              <p class="app-timeline-text mb-1">
                 React Project meeting with john @10:15am
               </p>
 
@@ -205,7 +206,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   <h6 class="text-sm font-weight-medium mb-0">
                     John Doe (Client)
                   </h6>
-                  <span>CEO of Kelly Group</span>
+                  <span class="text-xs">CEO of Kelly Group</span>
                 </div>
               </div>
             </VTimelineItem>
@@ -214,13 +215,14 @@ const resolveUserProgressVariant = (progress: number) => {
               dot-color="info"
               size="x-small"
             >
-              <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-medium me-1 mb-3">
+              <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
+                <span class="app-timeline-title">
                   Create a new react project for client
-                </h4>
-                <span class="text-sm text-disabled text-no-wrap">2 day ago</span>
+                </span>
+                <span class="app-timeline-meta">2 day ago</span>
               </div>
-              <p class="mb-0">
+
+              <p class="app-timeline-text mb-0">
                 Add files to new design folder
               </p>
             </VTimelineItem>
@@ -229,13 +231,13 @@ const resolveUserProgressVariant = (progress: number) => {
               dot-color="success"
               size="x-small"
             >
-              <div class="d-flex justify-space-between align-center flex-wrap">
-                <h4 class="text-base font-weight-medium me-1 mb-3">
+              <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
+                <span class="app-timeline-title">
                   12 Create invoices for client
-                </h4>
-                <span class="text-sm text-disabled text-no-wrap">5 day ago</span>
+                </span>
+                <span class="app-timeline-meta">5 day ago</span>
               </div>
-              <p class="mb-0">
+              <p class="app-timeline-text mb-0">
                 Weekly review of freshly prepared design for our new app.
               </p>
             </VTimelineItem>

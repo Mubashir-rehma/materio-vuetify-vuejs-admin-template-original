@@ -117,6 +117,9 @@
   "Checkout": "Checkout",
   "Create Deal": "Create Deal",
   "Property Listing": "Property Listing",
+  "Roles & Permissions": "Roles & Permissions",
+  "Roles": "Roles",
+  "Permissions": "Permissions",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

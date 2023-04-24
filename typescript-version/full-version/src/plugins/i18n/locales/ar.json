@@ -117,6 +117,9 @@
   "Checkout": "الدفع",
   "Create Deal": "إنشاء صفقة",
   "Property Listing": "قائمة الممتلكات ",
+  "Roles & Permissions": "الأدوار والأذونات",
+  "Roles": "الأدوار",
+  "Permissions": "الأذونات",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

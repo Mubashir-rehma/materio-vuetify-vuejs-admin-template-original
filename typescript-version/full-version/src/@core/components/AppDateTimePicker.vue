@@ -6,7 +6,7 @@ import { useTheme } from 'vuetify'
 import { filterFieldProps, makeVFieldProps } from 'vuetify/lib/components/VField/VField'
 
 // @ts-expect-error There won't be declaration file for it
-import { filterInputProps, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
+import { VInput, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
 
 // @ts-expect-error There won't be declaration file for it
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
@@ -41,7 +41,7 @@ const attrs = useAttrs()
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const [{ modelValue: _, ...inputProps }] = filterInputProps(props)
+const [{ modelValue: _, ...inputProps }] = VInput.filterProps(props)
 const [fieldProps] = filterFieldProps(props)
 
 const refFlatPicker = ref()

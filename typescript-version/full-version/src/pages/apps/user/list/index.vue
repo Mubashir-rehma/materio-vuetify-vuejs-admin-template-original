@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/@fake-db/types'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
@@ -10,22 +11,30 @@ const searchQuery = ref('')
 const selectedRole = ref()
 const selectedPlan = ref()
 const selectedStatus = ref()
-const rowPerPage = ref(10)
-const currentPage = ref(1)
 const totalPage = ref(1)
 const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
+const options = ref<any>({})
+
+const headers = [
+  { title: 'User', key: 'user' },
+  { title: 'Email', key: 'email' },
+  { title: 'Role', key: 'role' },
+  { title: 'Plan', key: 'plan' },
+  { title: 'Status', key: 'status' },
+  { title: 'Actions', key: 'actions', sortable: false },
+]
 
 // 👉 Fetching users
 
 const fetchUsers = () => {
+  console.log('called')
   userListStore.fetchUsers({
     q: searchQuery.value,
     status: selectedStatus.value,
     plan: selectedPlan.value,
     role: selectedRole.value,
-    perPage: rowPerPage.value,
-    currentPage: currentPage.value,
+    options: options.value,
   }).then(response => {
     users.value = response.data.users
     totalPage.value = response.data.totalPage
@@ -36,12 +45,6 @@ const fetchUsers = () => {
 }
 
 watchEffect(fetchUsers)
-
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
 
 // 👉 search filters
 const roles = [
@@ -96,59 +99,6 @@ const resolveUserStatusVariant = (stat: string) => {
 
 const isAddNewUserDrawerVisible = ref(false)
 
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
-
-// 👉 Computing pagination data
-const paginationData = computed(() => {
-  const firstIndex = users.value.length ? ((currentPage.value - 1) * rowPerPage.value) + 1 : 0
-  const lastIndex = users.value.length + ((currentPage.value - 1) * rowPerPage.value)
-
-  return `${firstIndex}-${lastIndex} of ${totalUsers.value}`
-})
-
-// SECTION Checkbox toggle
-const selectedRows = ref<string[]>([])
-const selectAllUser = ref(false)
-
-// 👉 add/remove all checkbox ids in array
-const selectUnselectAll = () => {
-  selectAllUser.value = !selectAllUser.value
-  if (selectAllUser.value) {
-    users.value.forEach(user => {
-      if (!selectedRows.value.includes(`check${user.id}`))
-        selectedRows.value.push(`check${user.id}`)
-    })
-  }
-  else {
-    selectedRows.value = []
-  }
-}
-
-// 👉 watch if checkbox array is empty all select should be uncheck
-watch(selectedRows, () => {
-  if (!selectedRows.value.length)
-    selectAllUser.value = false
-}, { deep: true })
-
-// 👉 add/remove individual checkbox from array
-const addRemoveIndividualCheckbox = (checkID: string) => {
-  if (selectedRows.value.includes(checkID)) {
-    const index = selectedRows.value.indexOf(checkID)
-
-    selectedRows.value.splice(index, 1)
-  }
-  else {
-    selectedRows.value.push(checkID)
-    selectAllUser.value = true
-  }
-}
-
-// !SECTION checkbox toggle
-
 // 👉 Add new user
 const addNewUser = (userData: UserProperties) => {
   userListStore.addUser(userData)
@@ -157,18 +107,13 @@ const addNewUser = (userData: UserProperties) => {
   fetchUsers()
 }
 
-const computedMoreList = computed(() => {
-  return (paramId: number) => ([
-    {
-      title: 'View',
-      value: 'view',
-      prependIcon: 'mdi-eye-outline',
-      to: { name: 'apps-user-view-id', params: { id: paramId } },
-    },
-    { title: 'Edit', value: 'edit', prependIcon: 'mdi-pencil-outline' },
-    { title: 'Delete', value: 'delete', prependIcon: 'mdi-delete-outline' },
-  ])
-})
+// 👉 Delete user
+const deleteUser = (id: number) => {
+  userListStore.deleteUser(id)
+
+  // refetch User
+  fetchUsers()
+}
 </script>
 
 <template>
@@ -255,178 +200,145 @@ const computedMoreList = computed(() => {
 
       <VDivider />
 
-      <VTable class="text-no-wrap">
-        <!-- 👉 table head -->
-        <thead>
-          <tr>
-            <th scope="col">
-              <div style="inline-size: 1.875rem;">
-                <VCheckbox
-                  :model-value="selectAllUser"
-                  :indeterminate="(users.length !== selectedRows.length) && !!selectedRows.length"
-                  @click="selectUnselectAll"
-                />
-              </div>
-            </th>
-            <th scope="col">
-              USER
-            </th>
-            <th scope="col">
-              EMAIL
-            </th>
-            <th scope="col">
-              ROLE
-            </th>
-            <th scope="col">
-              PLAN
-            </th>
-            <th scope="col">
-              STATUS
-            </th>
-            <th scope="col">
-              ACTIONS
-            </th>
-          </tr>
-        </thead>
-
-        <!-- 👉 table body -->
-        <tbody>
-          <tr
-            v-for="user in users"
-            :key="user.id"
-          >
-            <!-- 👉 Checkbox -->
-            <td>
-              <div style="inline-size: 1.875rem;">
-                <VCheckbox
-                  :id="`check${user.id}`"
-                  :model-value="selectedRows.includes(`check${user.id}`)"
-                  @click="addRemoveIndividualCheckbox(`check${user.id}`)"
-                />
-              </div>
-            </td>
-
-            <!-- 👉 User -->
-            <td>
-              <div class="d-flex align-center">
-                <VAvatar
-                  variant="tonal"
-                  :color="resolveUserRoleVariant(user.role).color"
-                  class="me-3"
-                  size="34"
+      <!-- SECTION datatable -->
+      <VDataTableServer
+        v-model:items-per-page="options.itemsPerPage"
+        v-model:page="options.page"
+        :items="users"
+        :items-length="totalUsers"
+        :headers="headers"
+        show-select
+        @update:options="options = $event"
+      >
+        <!-- User -->
+        <template #item.user="{ item }">
+          <div class="d-flex">
+            <VAvatar
+              size="34"
+              variant="tonal"
+              :color="resolveUserRoleVariant(item.raw.role).color"
+              class="me-3"
+            >
+              <VImg
+                v-if="item.raw.avatar"
+                :src="item.raw.avatar"
+              />
+              <span v-else>{{ avatarText(item.raw.fullName) }}</span>
+            </VAvatar>
+            <div class="d-flex flex-column">
+              <h6 class="text-sm">
+                <RouterLink
+                  :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }"
+                  class="font-weight-medium user-list-name"
                 >
-                  <VImg
-                    v-if="user.avatar"
-                    :src="user.avatar"
-                  />
-                  <span v-else>{{ avatarText(user.fullName) }}</span>
-                </VAvatar>
+                  {{ item.raw.fullName }}
+                </RouterLink>
+              </h6>
+              <span class="text-xs text-medium-emphasis">@{{ item.raw.username }}</span>
+            </div>
+          </div>
+        </template>
 
-                <div class="d-flex flex-column">
-                  <h6 class="text-sm">
-                    <RouterLink
-                      :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
-                      class="font-weight-medium user-list-name"
-                    >
-                      {{ user.fullName }}
-                    </RouterLink>
-                  </h6>
-                  <span class="text-xs text-medium-emphasis">@{{ user.username }}</span>
-                </div>
-              </div>
-            </td>
+        <!-- Role -->
+        <template #item.role="{ item }">
+          <div class="d-flex gap-4">
+            <VIcon
+              :icon="resolveUserRoleVariant(item.raw.role).icon"
+              :color="resolveUserRoleVariant(item.raw.role).color"
+            />
+            <span class="text-capitalize">{{ item.raw.role }}</span>
+          </div>
+        </template>
 
-            <!-- 👉 Email -->
-            <td>
-              {{ user.email }}
-            </td>
+        <!-- Plan -->
+        <template #item.plan="{ item }">
+          <span class="text-capitalize">{{ item.raw.currentPlan }}</span>
+        </template>
 
-            <!-- 👉 Role -->
-            <td>
-              <VIcon
-                :icon="resolveUserRoleVariant(user.role).icon"
-                :color="resolveUserRoleVariant(user.role).color"
-                :size="22"
-                class="me-3"
-              />
-              <span class="text-capitalize">{{ user.role }}</span>
-            </td>
+        <!-- Status -->
+        <template #item.status="{ item }">
+          <VChip
+            :color="resolveUserStatusVariant(item.raw.status)"
+            size="small"
+            class="text-capitalize"
+          >
+            {{ item.raw.status }}
+          </VChip>
+        </template>
 
-            <!-- 👉 Plan -->
-            <td class="text-capitalize">
-              {{ user.currentPlan }}
-            </td>
+        <!-- Actions -->
+        <template #item.actions="{ item }">
+          <VBtn
+            icon
+            variant="text"
+            size="small"
+            color="medium-emphasis"
+          >
+            <VIcon
+              size="24"
+              icon="mdi-dots-vertical"
+            />
 
-            <!-- 👉 Status -->
-            <td>
-              <VChip
-                :color="resolveUserStatusVariant(user.status)"
-                size="small"
-                class="text-capitalize"
-              >
-                {{ user.status }}
-              </VChip>
-            </td>
+            <VMenu activator="parent">
+              <VList>
+                <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }">
+                  <template #prepend>
+                    <VIcon icon="mdi-eye-outline" />
+                  </template>
+                  <VListItemTitle>View</VListItemTitle>
+                </VListItem>
+                <VListItem link>
+                  <template #prepend>
+                    <VIcon icon="mdi-pencil-outline" />
+                  </template>
+                  <VListItemTitle>Edit</VListItemTitle>
+                </VListItem>
+                <VListItem @click="deleteUser(item.raw.id)">
+                  <template #prepend>
+                    <VIcon icon="mdi-delete-outline" />
+                  </template>
+                  <VListItemTitle>Delete</VListItemTitle>
+                </VListItem>
+              </VList>
+            </VMenu>
+          </VBtn>
+        </template>
+      </VDataTableServer>
+      <!-- SECTION -->
 
-            <!-- 👉 Actions -->
-            <td
-              class="text-center"
-              style="inline-size: 5rem;"
-            >
-              <MoreBtn
-                :menu-list="computedMoreList(user.id)"
-                item-props
-              />
-            </td>
-          </tr>
-        </tbody>
-
-        <!-- 👉 table footer  -->
-        <tfoot v-show="!users.length">
-          <tr>
-            <td
-              colspan="7"
-              class="text-center"
-            >
-              No data available
-            </td>
-          </tr>
-        </tfoot>
-      </VTable>
-
-      <VDivider />
-
-      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
+      <!--
+        <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
         <div
-          class="d-flex align-center me-3"
-          style="inline-size: 171px;"
+        class="d-flex align-center me-3"
+        style="inline-size: 171px;"
         >
-          <span class="text-no-wrap me-3">Rows per page:</span>
+        <span class="text-no-wrap me-3">Rows per page:</span>
 
-          <VSelect
-            v-model="rowPerPage"
-            density="compact"
-            variant="plain"
-            class="per-page-select"
-            :items="[10, 20, 30, 50]"
-          />
+        <VSelect
+        v-model="rowPerPage"
+        density="compact"
+        variant="plain"
+        class="per-page-select"
+        :items="[10, 20, 30, 50]"
+        />
         </div>
 
         <div class="d-flex align-center">
-          <h6 class="text-sm font-weight-regular">
-            {{ paginationData }}
-          </h6>
+        <h6 class="text-sm font-weight-regular">
+        {{ paginationData }}
+        </h6>
 
-          <VPagination
-            v-model="currentPage"
-            size="small"
-            :total-visible="1"
-            :length="totalPage"
-            @next="selectedRows = []"
-            @prev="selectedRows = []"
-          />
+        <VPagination
+        v-model="currentPage"
+        size="small"
+        :total-visible="1"
+        :length="totalPage"
+        @next="selectedRows = []"
+        @prev="selectedRows = []"
+        />
         </div>
-      </VCardText>
+        </VCardText>
+      -->
     </VCard>
 
     <!-- 👉 Add New User -->

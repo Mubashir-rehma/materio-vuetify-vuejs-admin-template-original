@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
@@ -35,6 +36,13 @@ const serverKeys = [
     createdOn: '28 Dec 2020, 12:21 GTM+4:10',
     permission: 'Full Access',
   },
+]
+
+const recentDevicesHeaders = [
+  { title: 'BROWSER', key: 'browser' },
+  { title: 'DEVICE', key: 'device' },
+  { title: 'LOCATION', key: 'location' },
+  { title: 'RECENT ACTIVITY', key: 'recentActivity' },
 ]
 
 const recentDevices = [
@@ -313,42 +321,25 @@ const isOneTimePasswordDialogVisible = ref(false)
     <VCol cols="12">
       <!-- 👉 Table -->
       <VCard title="Recent Devices">
-        <VTable class="text-no-wrap">
-          <thead>
-            <tr>
-              <th scope="col">
-                BROWSER
-              </th>
-              <th scope="col">
-                DEVICE
-              </th>
-              <th scope="col">
-                LOCATION
-              </th>
-              <th scope="col">
-                RECENT ACTIVITIES
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="device in recentDevices"
-              :key="device.recentActivity"
-            >
-              <td>
-                <VIcon
-                  start
-                  :icon="device.deviceIcon.icon"
-                  :color="device.deviceIcon.color"
-                />
-                {{ device.browser }}
-              </td>
-              <td>{{ device.device }}</td>
-              <td>{{ device.location }}</td>
-              <td>{{ device.recentActivity }}</td>
-            </tr>
-          </tbody>
-        </VTable>
+        <VDataTable
+          :headers="recentDevicesHeaders"
+          :items="recentDevices"
+          hide-default-footer
+        >
+          <template #item.browser="{ item }">
+            <div class="d-flex">
+              <VIcon
+                start
+                :icon="item.raw.deviceIcon.icon"
+                :color="item.raw.deviceIcon.color"
+              />
+              <span>
+                {{ item.raw.browser }}
+              </span>
+            </div>
+          </template>
+          <template #bottom />
+        </VDataTable>
       </VCard>
     </VCol>
     <!-- !SECTION -->

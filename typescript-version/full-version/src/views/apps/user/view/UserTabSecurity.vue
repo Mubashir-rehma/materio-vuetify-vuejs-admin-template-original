@@ -1,10 +1,19 @@
 <script setup lang="ts">
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 const smsVerificationNumber = ref('+1(968) 819-2547')
 const isTwoFactorDialogOpen = ref(false)
+
+// Recent devices Headers
+const recenteDeviceHeader = [
+  { title: 'BROWSER', key: 'browser' },
+  { title: 'DEVICE', key: 'device' },
+  { title: 'LOCATION', key: 'location' },
+  { title: 'RECENT ACTIVITY', key: 'activity' },
+]
 
 const recentDevices = [
   {
@@ -133,52 +142,23 @@ const recentDevices = [
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
         <VDivider />
-        <VTable class="text-no-wrap">
-          <thead>
-            <tr>
-              <th scope="col">
-                BROWSER
-              </th>
-              <th scope="col">
-                DEVICE
-              </th>
-              <th scope="col">
-                LOCATION
-              </th>
-              <th scope="col">
-                RECENT ACTIVITY
-              </th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr
-              v-for="device in recentDevices"
-              :key="device.browser"
-            >
-              <td>
-                <VAvatar
-                  :size="22"
-                  :image="device.logo"
-                  class="me-3"
-                />
-                <span class="font-weight-medium text-high-emphasis">{{ device.browser }}</span>
-              </td>
-
-              <td>
-                {{ device.device }}
-              </td>
-
-              <td>
-                {{ device.location }}
-              </td>
-
-              <td>
-                {{ device.activity }}
-              </td>
-            </tr>
-          </tbody>
-        </VTable>
+        <VDataTable
+          :items="recentDevices"
+          :headers="recenteDeviceHeader"
+          hide-default-footer
+        >
+          <template #item.browser="{ item }">
+            <div class="d-flex">
+              <VAvatar
+                :image="item.raw.logo"
+                :size="22"
+                class="me-3"
+              />
+              {{ item.raw.browser }}
+            </div>
+          </template>
+          <template #bottom />
+        </VDataTable>
       </VCard>
     </VCol>
   </VRow>

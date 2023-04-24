@@ -10,8 +10,6 @@ const invoiceListStore = useInvoiceStore()
 const searchQuery = ref('')
 const dateRange = ref('')
 const selectedStatus = ref()
-const rowPerPage = ref(10)
-const currentPage = ref(3)
 const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
@@ -31,9 +29,9 @@ const headers = [
 ]
 
 // 👉 Fetch Invoices
-const fetchInvoices = async (query: string, currentStatus: string, firstDate: string, lastDate: string, option: object) => {
+const fetchInvoices = (query: string, currentStatus: string, firstDate: string, lastDate: string, option: object) => {
   isLoading.value = true
-  await invoiceListStore.fetchInvoices(
+  invoiceListStore.fetchInvoices(
     {
       q: query,
       status: currentStatus,
@@ -123,12 +121,6 @@ watchEffect(() => {
     options.value,
   )
 })
-
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
 </script>
 
 <template>
@@ -210,7 +202,8 @@ watchEffect(() => {
 
       <!-- SECTION Datatable -->
       <VDataTableServer
-        v-model:items-per-page="rowPerPage"
+        v-model="selectedRows"
+        v-model:items-per-page="options.itemsPerPage"
         v-model:page="options.page"
         :loading="isLoading"
         show-select

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import RoleCards from '@/views/apps/roles/RoleCards.vue'
+import UserList from '@/views/apps/roles/UserList.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import RoleCards from '@/views/apps/roles/RoleCards.vue'
       </p>
     </VCol>
 
+    <!-- 👉 Roles Cards -->
     <VCol cols="12">
       <RoleCards />
     </VCol>
@@ -21,9 +23,12 @@ import RoleCards from '@/views/apps/roles/RoleCards.vue'
       <h5 class="text-h5 mt-5">
         Total users with their roles
       </h5>
-      <p class="text-sm mb-0">
+      <p class="text-sm mb-6">
         Find all of your company's administrator accounts and their associate roles.
       </p>
+
+      <!-- 👉 User List  -->
+      <UserList />
     </VCol>
   </VRow>
 </template>

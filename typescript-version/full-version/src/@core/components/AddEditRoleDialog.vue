@@ -208,7 +208,7 @@ const onReset = () => {
 
           <!-- 👉 Role Permissions -->
 
-          <VTable class="permission-table">
+          <VTable class="permission-table text-no-wrap">
             <!-- 👉 Admin  -->
             <tr>
               <td>
@@ -277,7 +277,18 @@ const onReset = () => {
   td {
     border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
     padding-block: 0.5rem;
-    padding-inline: 0;
+
+    .v-checkbox {
+      min-inline-size: 4.75rem;
+    }
+
+    &:not(:first-child) {
+      padding-inline: 0.5rem;
+    }
+
+    .v-label {
+      white-space: nowrap;
+    }
   }
 }
 </style>

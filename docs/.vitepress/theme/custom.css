@@ -1,0 +1,48 @@
+:root {
+    --vp-font-family-base: 'Inter', sans-serif;
+    --vp-font-family-mono: 'JetBrains Mono', monospace;
+
+    /* Branding */
+    --a-primary-hue: 204;
+    --vp-c-brand-lighter: hsl(var(--a-primary-hue), 97%, 75%);
+    --vp-c-brand-light: hsl(var(--a-primary-hue), 97%, 70%);
+    --vp-c-brand: hsl(var(--a-primary-hue), 97%, 66%);
+    --vp-c-brand-dark: hsl(var(--a-primary-hue), 97%, 60%);
+    --vp-c-brand-darker: hsl(var(--a-primary-hue), 97%, 55%);
+}
+
+.language-vue span[style="color: rgb(255, 85, 85); font-style: italic; text-decoration: underline;"],
+.language-vue span[style="color:#FF5555;font-style:italic;text-decoration:underline;"] {
+    color: #8BE9FD !important;
+    text-decoration: none !important;
+}
+
+/* Highlight purchase link */
+.VPNavBarMenu.menu>a:last-child {
+    position: relative;
+    color: var(--vp-button-brand-text);
+    isolation: isolate;
+}
+
+.VPNavBarMenu.menu>a:last-child svg {
+    fill: var(--vp-button-brand-text);
+}
+
+.VPNavBarMenu.menu>a:last-child::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    width: 100%;
+    height: 50%;
+    transform: translateY(50%);
+    background: var(--vp-button-brand-bg);
+    z-index: -1;
+    border-radius: 8px;
+}
+
+/* Style home logo */
+.VPContent.is-home .VPHomeHero .VPImage {
+    width: 250px;
+    height: auto;
+    margin-top: 30px;
+}

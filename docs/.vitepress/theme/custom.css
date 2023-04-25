@@ -1,6 +1,14 @@
 :root {
     --vp-font-family-base: 'Inter', sans-serif;
     --vp-font-family-mono: 'JetBrains Mono', monospace;
+
+    /* Branding */
+    --a-primary-hue: 204;
+    --vp-c-brand-lighter: hsl(var(--a-primary-hue), 97%, 75%);
+    --vp-c-brand-light: hsl(var(--a-primary-hue), 97%, 70%);
+    --vp-c-brand: hsl(var(--a-primary-hue), 97%, 66%);
+    --vp-c-brand-dark: hsl(var(--a-primary-hue), 97%, 60%);
+    --vp-c-brand-darker: hsl(var(--a-primary-hue), 97%, 55%);
 }
 
 .language-vue span[style="color: rgb(255, 85, 85); font-style: italic; text-decoration: underline;"],

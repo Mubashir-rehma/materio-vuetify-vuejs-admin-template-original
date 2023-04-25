@@ -68,7 +68,7 @@ const editPermission = (name: string) => {
         <VCardText class="d-flex align-center justify-space-between">
           <VTextField
             v-model="search"
-            placeholder="Search Placeholder"
+            placeholder="Search"
             density="compact"
             style="max-width: 14.375rem;"
           />

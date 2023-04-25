@@ -8,7 +8,7 @@ const smsVerificationNumber = ref('+1(968) 819-2547')
 const isTwoFactorDialogOpen = ref(false)
 
 // Recent devices Headers
-const recenteDeviceHeader = [
+const recentDeviceHeader = [
   { title: 'BROWSER', key: 'browser' },
   { title: 'DEVICE', key: 'device' },
   { title: 'LOCATION', key: 'location' },
@@ -144,7 +144,7 @@ const recentDevices = [
         <VDivider />
         <VDataTable
           :items="recentDevices"
-          :headers="recenteDeviceHeader"
+          :headers="recentDeviceHeader"
           hide-default-footer
         >
           <template #item.browser="{ item }">

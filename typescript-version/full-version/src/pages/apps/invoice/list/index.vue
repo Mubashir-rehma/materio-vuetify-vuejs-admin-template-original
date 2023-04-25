@@ -43,6 +43,7 @@ const fetchInvoices = (query: string, currentStatus: string, firstDate: string, 
     invoices.value = response.data.invoices
     totalPage.value = response.data.totalPage
     totalInvoices.value = response.data.totalInvoices
+    console.log(response.data)
   }).catch(error => {
     console.log(error)
   })

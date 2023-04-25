@@ -16,6 +16,7 @@ const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
 const options = ref<any>({})
 
+// Headers
 const headers = [
   { title: 'User', key: 'user' },
   { title: 'Email', key: 'email' },
@@ -26,9 +27,7 @@ const headers = [
 ]
 
 // 👉 Fetching users
-
 const fetchUsers = () => {
-  console.log('called')
   userListStore.fetchUsers({
     q: searchQuery.value,
     status: selectedStatus.value,
@@ -225,6 +224,7 @@ const deleteUser = (id: number) => {
               />
               <span v-else>{{ avatarText(item.raw.fullName) }}</span>
             </VAvatar>
+
             <div class="d-flex flex-column">
               <h6 class="text-sm">
                 <RouterLink
@@ -234,6 +234,7 @@ const deleteUser = (id: number) => {
                   {{ item.raw.fullName }}
                 </RouterLink>
               </h6>
+
               <span class="text-xs text-medium-emphasis">@{{ item.raw.username }}</span>
             </div>
           </div>
@@ -305,40 +306,6 @@ const deleteUser = (id: number) => {
         </template>
       </VDataTableServer>
       <!-- SECTION -->
-
-      <!--
-        <VCardText class="d-flex flex-wrap justify-end gap-4 pa-2">
-        <div
-        class="d-flex align-center me-3"
-        style="inline-size: 171px;"
-        >
-        <span class="text-no-wrap me-3">Rows per page:</span>
-
-        <VSelect
-        v-model="rowPerPage"
-        density="compact"
-        variant="plain"
-        class="per-page-select"
-        :items="[10, 20, 30, 50]"
-        />
-        </div>
-
-        <div class="d-flex align-center">
-        <h6 class="text-sm font-weight-regular">
-        {{ paginationData }}
-        </h6>
-
-        <VPagination
-        v-model="currentPage"
-        size="small"
-        :total-visible="1"
-        :length="totalPage"
-        @next="selectedRows = []"
-        @prev="selectedRows = []"
-        />
-        </div>
-        </VCardText>
-      -->
     </VCard>
 
     <!-- 👉 Add New User -->

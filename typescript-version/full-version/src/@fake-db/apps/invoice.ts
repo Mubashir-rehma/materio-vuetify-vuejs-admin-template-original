@@ -994,7 +994,7 @@ mock.onGet('/apps/invoices').reply(config => {
 
   const totalInvoices = filteredInvoices.length
 
-  return [200, { invoices: paginateArray(filteredInvoices, itemsPerPage, page), totalInvoices }]
+  return [200, { invoices: paginateArray(filteredInvoices, itemsPerPage, page), totalInvoices, page }]
 })
 
 // 👉 Get a single invoice

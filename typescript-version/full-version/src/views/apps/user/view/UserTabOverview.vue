@@ -104,7 +104,6 @@ const resolveUserProgressVariant = (progress: number) => {
         <VDataTable
           :headers="projectTableHeaders"
           :items="projects"
-          hide-default-footer
         >
           <!-- projects -->
           <template #item.project="{ item }">

@@ -47,6 +47,10 @@ After following about steps still, you are getting the error please [raise suppo
 - Mention which command you are running
 - Mention If you have any other machine, are you able to run our template on that machine
 
+## Error: `[plugin:vite:css] [sass] Can't find stylesheet to import`
+
+Please refer to the danger note at [installation](/guide/installation.html#getting-started) section of the documentation.
+
 ## npm install or yarn install warnings or installation warnings
 
 You might get some warnings while running `npm install` or `yarn install` like below:

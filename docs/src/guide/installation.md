@@ -19,6 +19,16 @@ Make sure output version is LTS version.
 
 1. Download our template from marketplace
 2. Unzip it in your desired location
+
+    :::danger Getting Error: [plugin:vite:css] [sass] Can't find stylesheet to import.
+
+    You might get this error on Windows OS if you unzip the template in a directory which has **space in its path**. For example, `C:\Users\My User\Documents\my-project`. Notice, there is a space in `My User` directory name.
+
+    To avoid this error, please make sure you unzip the template in a directory which doesn't have space in its path. For example, `C:\Users\MyUser\Documents\my-project`. Additionally, also make sure your project it self doesn't have space in its name. For example, `my-project` is fine but `my project` is not.
+
+    We already reported the issue to vuetify team. You can track the issue here: [#300](https://github.com/vuetifyjs/vuetify-loader/issues/300)
+    :::
+
 3. Navigate to the project you want to run (`full-version` or `starter-kit`). To make sure you are in right directory check if that directory contains files like `package.json`, `.gitignore` etc.
 
 :::details Copying from unzipped directory

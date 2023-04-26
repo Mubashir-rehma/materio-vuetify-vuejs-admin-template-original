@@ -1,6 +1,6 @@
 import mock from '@/@fake-db/mock'
 import type { Permission } from '@/@fake-db/types'
-import { paginateArray } from '@/@fake-db/utlis'
+import { paginateArray } from '@/@fake-db/utils'
 
 const data: { permissions: Permission[] } = {
   permissions: [

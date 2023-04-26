@@ -1,6 +1,6 @@
 import mock from '@/@fake-db/mock'
 import type { Invoice } from '@/@fake-db/types'
-import { paginateArray } from '@/@fake-db/utlis'
+import { paginateArray } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'

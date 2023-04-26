@@ -18,9 +18,9 @@ import * as demoCode from '@/views/demos/forms/Tables/SimpleTable/DemoCodeSimple
         title="Theme"
         :code="demoCode.theme"
       >
-        <VCardText>
+        <p>
           use <code>theme</code> prop to switch table to the dark theme.
-        </VCardText>
+        </p>
         <DemoSimpleTableTheme />
       </AppCardCode>
     </VCol>
@@ -30,9 +30,9 @@ import * as demoCode from '@/views/demos/forms/Tables/SimpleTable/DemoCodeSimple
         title="Density"
         :code="demoCode.density"
       >
-        <VCardText>
+        <p>
           You can show a dense version of the table by using the <code>density</code> prop.
-        </VCardText>
+        </p>
         <DemoSimpleTableDensity />
       </AppCardCode>
     </VCol>
@@ -42,9 +42,9 @@ import * as demoCode from '@/views/demos/forms/Tables/SimpleTable/DemoCodeSimple
         title="Height"
         :code="demoCode.height"
       >
-        <VCardText>
+        <p>
           You can set the height of the table by using the <code>height</code> prop.
-        </VCardText>
+        </p>
         <DemoSimpleTableHeight />
       </AppCardCode>
     </VCol>
@@ -54,9 +54,9 @@ import * as demoCode from '@/views/demos/forms/Tables/SimpleTable/DemoCodeSimple
         title="Fixed Header"
         :code="demoCode.fixedHeader"
       >
-        <VCardText>
+        <p>
           You can fix the header of table by using the <code>fixed-header</code> prop.
-        </VCardText>
+        </p>
         <DemoSimpleTableFixedHeader />
       </AppCardCode>
     </VCol>

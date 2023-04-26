@@ -119,6 +119,9 @@
   "Property Listing": "Property Listing",
   "Roles & Permissions": "Roles & Permissions",
   "Roles": "Roles",
+  "Simple Table": "Simple Table",
+  "Tables": "Tables",
+  "Data Table": "Data Table",
   "Permissions": "Permissions",
   "$vuetify": {
     "badge": "Badge",

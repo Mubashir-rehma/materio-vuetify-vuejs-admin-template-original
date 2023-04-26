@@ -122,6 +122,9 @@
   "Roles & Permissions": "Rôles et autorisations",
   "Roles": "Rôles",
   "Permissions": "Autorisations",
+  "Simple Table": "Table simple",
+  "Tables": "Tables",
+  "Data Table": "Table de données",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

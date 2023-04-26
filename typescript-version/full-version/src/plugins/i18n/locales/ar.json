@@ -120,6 +120,9 @@
   "Roles & Permissions": "الأدوار والأذونات",
   "Roles": "الأدوار",
   "Permissions": "الأذونات",
+  "Simple Table": "جدول بسيط",
+  "Tables": "الجداول",
+  "DataTable": "جدول البيانات",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

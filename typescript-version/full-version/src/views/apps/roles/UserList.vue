@@ -28,7 +28,6 @@ const headers = [
 // 👉 Fetching users
 
 const fetchUsers = () => {
-  console.log('called')
   userListStore.fetchUsers({
     q: searchQuery.value,
     status: selectedStatus.value,

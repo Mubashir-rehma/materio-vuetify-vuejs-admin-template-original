@@ -145,8 +145,7 @@ const moreList = [
         <MoreBtn :menu-list="moreList" />
       </template>
 
-      <!-- remove footer -->
-      <!-- refactor this after vuetify community gives answer -->
+      <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->
       <template #bottom />
     </VDataTable>
     <!-- !SECTION -->

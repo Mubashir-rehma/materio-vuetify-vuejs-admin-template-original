@@ -136,7 +136,7 @@ const resolveUserProgressVariant = (progress: number) => {
           </template>
 
           <!-- remove footer -->
-          <!-- refactor this after vuetify community gives answer -->
+          <!-- TODO refactor this after vuetify community gives answer -->
           <template #bottom />
         </VDataTable>
         <!-- !SECTION -->

@@ -242,7 +242,7 @@ const database: Database = {
           },
         },
         {
-          message: 'Out admin is the responsive admin template.!',
+          message: 'Our admin is the responsive admin template.!',
           time: 'Mon Dec 10 2018 07:46:05 GMT+0000 (GMT)',
           senderId: 11,
           feedback: {

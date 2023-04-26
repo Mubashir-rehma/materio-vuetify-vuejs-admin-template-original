@@ -1,6 +1,6 @@
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from './../types.d'
 import mock from '@/@fake-db/mock'
-import { genId } from '@/@fake-db/utlis'
+import { genId } from '@/@fake-db/utils'
 
 // Images
 import avatar1 from '@images/avatars/avatar-1.png'

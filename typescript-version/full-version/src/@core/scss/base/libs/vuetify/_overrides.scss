@@ -197,16 +197,11 @@ h6,
 }
 
 // 👉 DataTable
+// 👉 DataTable
 .v-data-table {
-  .v-table__wrapper {
-    .v-data-table__tbody,
-    .v-data-table__thead {
-      .v-data-table__td {
-        .v-selection-control__wrapper {
-          margin-inline-start: 0;
-        }
-      }
-    }
+  /* stylelint-disable-next-line no-descending-specificity */
+  .v-checkbox-btn .v-selection-control__wrapper {
+    margin-inline-start: 0 !important;
   }
 }
 

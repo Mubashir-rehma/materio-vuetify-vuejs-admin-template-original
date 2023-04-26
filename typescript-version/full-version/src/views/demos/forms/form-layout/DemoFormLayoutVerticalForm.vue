@@ -40,7 +40,7 @@ const checkbox = ref(false)
           v-model="password"
           label="Password"
           type="password"
-          placeholder="password"
+          placeholder="Password"
         />
       </VCol>
 

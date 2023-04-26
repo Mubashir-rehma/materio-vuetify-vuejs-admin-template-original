@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
 import { avatarText } from '@/@core/utils/formatters'
-import data from '@/views/demos/forms/Tables/datatable.js'
+import data from '@/views/demos/forms/Tables/DataTable/datatable.js'
 
 const headers = [
   { title: 'NAME', key: 'full_name' },
@@ -30,8 +30,9 @@ const resolveStatusVariant = (status: number) => {
   <VDataTable
     :headers="headers"
     :items="data"
-    :items-per-page="5"
-    show-select
+    :items-per-page="10"
+    height="300"
+    fixed-header
   >
     <!-- full name -->
     <template #item.full_name="{ item }">

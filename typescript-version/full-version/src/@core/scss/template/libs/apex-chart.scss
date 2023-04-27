@@ -92,5 +92,9 @@
 
   .apexcharts-legend-marker {
     margin-inline-end: 0.3875rem !important;
+
+    @include layoutsMixins.rtl {
+      margin-inline-end: 0.75rem !important;
+    }
   }
 }

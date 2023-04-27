@@ -158,7 +158,7 @@ const paymentMethods = [
                 <h6 class="text-base font-weight-medium">
                   Standard 3-5 Days
                 </h6>
-                <h6 class="text-base font-weight-bold">
+                <h6 class="text-base font-weight-medium">
                   Free
                 </h6>
               </div>
@@ -180,7 +180,7 @@ const paymentMethods = [
                 <h5 class="text-base font-weight-medium">
                   Express
                 </h5>
-                <h6 class="text-base font-weight-bold">
+                <h6 class="text-base font-weight-medium">
                   $5.00
                 </h6>
               </div>
@@ -202,7 +202,7 @@ const paymentMethods = [
                 <h6 class="text-base font-weight-medium">
                   Overnight
                 </h6>
-                <h6 class="text-base font-weight-bold">
+                <h6 class="text-base font-weight-medium">
                   $10.00
                 </h6>
               </div>
@@ -282,6 +282,7 @@ const paymentMethods = [
                   <VTextField
                     label="CVV Code"
                     type="number"
+                    max="3"
                   />
                 </VCol>
               </VRow>

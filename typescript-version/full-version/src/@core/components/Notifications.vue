@@ -23,14 +23,15 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>()
 
-const isAllMarkRead = computed(() => {
-  return props.notifications.some(item => item.isSeen === true)
-})
+const isAllMarkRead = computed(() => props.notifications.some(item => item.isSeen === false),
+)
+
+console.log(!isAllMarkRead.value)
 
 const markAllReadOrUnread = () => {
   const allNotificationsIds = props.notifications.map(item => item.id)
 
-  if (isAllMarkRead.value)
+  if (!isAllMarkRead.value)
     emit('unread', allNotificationsIds)
   else
     emit('read', allNotificationsIds)
@@ -70,13 +71,13 @@ const markAllReadOrUnread = () => {
               v-show="props.notifications.length"
               @click="markAllReadOrUnread"
             >
-              <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline' " />
+              <VIcon :icon="!isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline' " />
 
               <VTooltip
                 activator="parent"
                 location="start"
               >
-                {{ isAllMarkRead ? 'Mark all as unread' : 'Mark all as read' }}
+                {{ !isAllMarkRead ? 'Mark all as unread' : 'Mark all as read' }}
               </VTooltip>
             </IconBtn>
           </template>

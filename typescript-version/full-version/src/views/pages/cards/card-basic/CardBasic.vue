@@ -161,7 +161,7 @@ const isCardDetailsVisible = ref(false)
             </VCardText>
 
             <VCardText class="text-subtitle-1">
-              <span>Price :</span> <span class="font-weight-bold">$899</span>
+              <span>Price :</span> <span class="font-weight-medium">$899</span>
             </VCardText>
 
             <VCardActions class="justify-space-between">

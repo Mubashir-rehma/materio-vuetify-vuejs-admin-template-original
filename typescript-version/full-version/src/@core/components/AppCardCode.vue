@@ -90,6 +90,7 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
             <Prism
               :key="props.code[preferredCodeLanguage]"
               :language="props.codeLanguage"
+              :style="$vuetify.locale.isRtl ? 'text-align: right' : 'text-align: left'"
             >
               {{ props.code[preferredCodeLanguage] }}
             </Prism>

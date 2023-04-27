@@ -33,7 +33,7 @@ watch(selectedOption, () => {
         v-bind="gridColumn"
       >
         <VLabel
-          class="custom-input custom-radio rounded cursor-pointer"
+          class="custom-input custom-radio rounded cursor-pointer w-100"
           :class="selectedOption === item.value ? 'active' : ''"
         >
           <img
@@ -56,6 +56,7 @@ watch(selectedOption, () => {
   .custom-radio-image {
     block-size: 100%;
     inline-size: 100%;
+    min-inline-size: 100%;
   }
 
   .v-radio {

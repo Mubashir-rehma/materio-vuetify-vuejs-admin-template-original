@@ -62,6 +62,7 @@ const resolveStatusVariant = (status: number) => {
         :color="resolveStatusVariant(item.raw.status).color"
         density="comfortable"
         size="small"
+        class="font-weight-medium"
       >
         {{ resolveStatusVariant(item.raw.status).text }}
       </VChip>

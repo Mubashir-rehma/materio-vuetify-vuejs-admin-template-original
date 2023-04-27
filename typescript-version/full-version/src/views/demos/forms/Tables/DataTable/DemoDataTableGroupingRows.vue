@@ -15,7 +15,7 @@ const userList = [
     salary: 23896.35,
     age: '61',
     experience: '1 Year',
-    status: 2,
+    status: 'Professional',
   },
   {
     responsive_id: '',
@@ -29,7 +29,7 @@ const userList = [
     salary: 13633.69,
     age: '63',
     experience: '3 Years',
-    status: 2,
+    status: 'Professional',
   },
   {
     responsive_id: '',
@@ -43,7 +43,7 @@ const userList = [
     salary: 13076.28,
     age: '66',
     experience: '6 Years',
-    status: 5,
+    status: 'Applied',
   },
   {
     responsive_id: '',
@@ -57,7 +57,7 @@ const userList = [
     salary: 12336.17,
     age: '22',
     experience: '2 Years',
-    status: 2,
+    status: 'Professional',
   },
   {
     responsive_id: '',
@@ -71,7 +71,7 @@ const userList = [
     salary: 17803.8,
     age: '61',
     experience: '1 Year',
-    status: 1,
+    status: 'Current',
   },
   {
     responsive_id: '',
@@ -85,7 +85,7 @@ const userList = [
     salary: 18991.67,
     age: '59',
     experience: '9 Years',
-    status: 3,
+    status: 'Rejected',
   },
   {
     responsive_id: '',
@@ -99,7 +99,7 @@ const userList = [
     salary: 19230.13,
     age: '55',
     experience: '5 Years',
-    status: 3,
+    status: 'Rejected',
   },
   {
     responsive_id: '',
@@ -113,7 +113,7 @@ const userList = [
     salary: 11677.32,
     age: '39',
     experience: '9 Years',
-    status: 5,
+    status: 'Applied',
   },
   {
     responsive_id: '',
@@ -127,7 +127,7 @@ const userList = [
     salary: 19252.12,
     age: '30',
     experience: '0 Year',
-    status: 4,
+    status: 'Resigned',
   },
   {
     responsive_id: '',
@@ -141,7 +141,7 @@ const userList = [
     salary: 16745.47,
     age: '22',
     experience: '2 Years',
-    status: 4,
+    status: 'Resigned',
   },
   {
     responsive_id: '',
@@ -155,7 +155,7 @@ const userList = [
     salary: 15488.53,
     age: '36',
     experience: '6 Years',
-    status: 4,
+    status: 'Resigned',
   },
   {
     responsive_id: '',
@@ -169,7 +169,7 @@ const userList = [
     salary: 13304.45,
     age: '19',
     experience: '9 Years',
-    status: 5,
+    status: 'Applied',
   },
   {
     responsive_id: '',
@@ -183,7 +183,7 @@ const userList = [
     salary: 11953.08,
     age: '66',
     experience: '6 Years',
-    status: 5,
+    status: 'Applied',
   },
   {
     responsive_id: '',
@@ -197,7 +197,7 @@ const userList = [
     salary: 20484.44,
     age: '64',
     experience: '4 Years',
-    status: 1,
+    status: 'Current',
   },
   {
     responsive_id: '',
@@ -211,7 +211,7 @@ const userList = [
     salary: 16871.48,
     age: '59',
     experience: '9 Years',
-    status: 1,
+    status: 'Current',
   },
   {
     responsive_id: '',
@@ -225,7 +225,7 @@ const userList = [
     salary: 19653.56,
     age: '41',
     experience: '1 Year',
-    status: 4,
+    status: 'Resigned',
   },
   {
     responsive_id: '',
@@ -239,7 +239,7 @@ const userList = [
     salary: 13778.34,
     age: '21',
     experience: '1 Year',
-    status: 5,
+    status: 'Applied',
   },
   {
     responsive_id: '',
@@ -253,7 +253,7 @@ const userList = [
     salary: 16969.63,
     age: '42',
     experience: '2 Years',
-    status: 4,
+    status: 'Resigned',
   },
   {
     responsive_id: '',
@@ -267,7 +267,7 @@ const userList = [
     salary: 24027.81,
     age: '28',
     experience: '8 Years',
-    status: 4,
+    status: 'Resigned',
   },
   {
     responsive_id: '',
@@ -281,7 +281,7 @@ const userList = [
     salary: 24875.41,
     age: '37',
     experience: '7 Years',
-    status: 5,
+    status: 'Applied',
   },
 ]
 
@@ -296,17 +296,17 @@ const headers = [
 
 const groupBy = [{ key: 'status' }]
 
-const resolveStatusVariant = (status: number) => {
-  if (status === 1)
-    return { color: 'primary', text: 'Current' }
-  else if (status === 2)
-    return { color: 'success', text: 'Professional' }
-  else if (status === 3)
-    return { color: 'error', text: 'Rejected' }
-  else if (status === 4)
-    return { color: 'warning', text: 'Resigned' }
+const resolveStatusVariant = (status: string) => {
+  if (status === 'Current')
+    return { color: 'primary' }
+  else if (status === 'Professional')
+    return { color: 'success' }
+  else if (status === 'Rejected')
+    return { color: 'error' }
+  else if (status === 'Resigned')
+    return { color: 'warning' }
   else
-    return { color: 'info', text: 'Applied' }
+    return { color: 'info' }
 }
 </script>
 
@@ -344,8 +344,9 @@ const resolveStatusVariant = (status: number) => {
         :color="resolveStatusVariant(item.raw.status).color"
         density="comfortable"
         size="small"
+        class="font-weight-medium"
       >
-        {{ resolveStatusVariant(item.raw.status).text }}
+        {{ item.raw.status }}
       </VChip>
     </template>
   </VDataTable>

@@ -123,6 +123,9 @@
   "Simple Table": "جدول بسيط",
   "Tables": "الجداول",
   "DataTable": "جدول البيانات",
+  "Apps": "التطبيقات",
+  "Misc": "متفرقات",
+  "Wizard Pages": "صفحات المعالج",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

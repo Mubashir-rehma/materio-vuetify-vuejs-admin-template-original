@@ -123,6 +123,9 @@
   "Tables": "Tables",
   "Data Table": "Data Table",
   "Permissions": "Permissions",
+  "Apps": "Apps",
+  "Misc": "Misc",
+  "Wizard Pages": "Wizard Pages",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

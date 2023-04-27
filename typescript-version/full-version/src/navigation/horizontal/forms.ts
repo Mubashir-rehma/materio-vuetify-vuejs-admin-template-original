@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Forms and Tables',
+    title: 'Forms',
     icon: { icon: 'mdi-checkbox-multiple-outline' },
     children: [
       {
@@ -71,14 +71,6 @@ export default [
         title: 'Form Validation',
         icon: { icon: 'mdi-checkbox-marked-circle-outline' },
         to: 'forms-form-validation',
-      },
-      {
-        title: 'Tables',
-        icon: { icon: 'tabler-table' },
-        children: [
-          { title: 'Simple Table', to: 'tables-simple-table' },
-          { title: 'Data Table', to: 'tables-datatable' },
-        ],
       },
     ],
   },

@@ -125,6 +125,9 @@
   "Simple Table": "Table simple",
   "Tables": "Tables",
   "Data Table": "Table de données",
+  "Apps": "Applications",
+  "Misc": "Divers",
+  "Wizard Pages": "Pages de l'assistant",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

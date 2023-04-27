@@ -32,7 +32,7 @@ watch(selectedOption, () => {
       v-bind="gridColumn"
     >
       <VLabel
-        class="custom-input custom-checkbox rounded cursor-pointer"
+        class="custom-input custom-checkbox rounded cursor-pointer w-100"
         :class="selectedOption.includes(item.value) ? 'active' : ''"
       >
         <div>
@@ -61,6 +61,7 @@ watch(selectedOption, () => {
   .custom-checkbox-image {
     block-size: 100%;
     inline-size: 100%;
+    min-inline-size: 100%;
   }
 
   .v-checkbox {

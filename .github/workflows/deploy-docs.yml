@@ -54,7 +54,7 @@ jobs:
           cd ${{ env.BRAND_NAME }}/vue/docs
           yarn
           yarn build
-          mv .vuepress/dist $GITHUB_WORKSPACE/documentation
+          mv .vitepress/dist $GITHUB_WORKSPACE/documentation
         
       - name: 🗄️ Cleanup & Backup
         uses: appleboy/ssh-action@v0.1.5

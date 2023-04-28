@@ -260,8 +260,8 @@ watchEffect(() => {
           <div class="d-flex align-center">
             <VAvatar
               size="34"
-              :color="resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).variant"
-              variant="tonal"
+              :color="!item.raw.avatar.length ? resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).variant : undefined"
+              :variant="!item.raw.avatar.length ? 'tonal' : undefined"
               class="me-3"
             >
               <VImg

@@ -106,11 +106,11 @@ const markAllReadOrUnread = () => {
                 <template #prepend>
                   <VListItemAction start>
                     <VAvatar
-                      :color="notification.color || 'primary'"
+                      size="40"
+                      :color="notification.color && notification.icon ? notification.color : undefined"
                       :image="notification.img || undefined"
                       :icon="notification.icon || undefined"
-                      size="40"
-                      variant="tonal"
+                      :variant="notification.img ? undefined : 'tonal' "
                     >
                       <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
                     </VAvatar>

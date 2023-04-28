@@ -137,11 +137,11 @@ const editPermission = (name: string) => {
         </VDataTableServer>
       </VCard>
 
-      <AddEditPermission
+      <AddEditPermissionDialog
         v-model:isDialogVisible="isPermissionDialogVisible"
         v-model:permission-name="permissionName"
       />
-      <AddEditPermission v-model:isDialogVisible="isAddPermissionDialogVisible" />
+      <AddEditPermissionDialog v-model:isDialogVisible="isAddPermissionDialogVisible" />
     </VCol>
   </VRow>
 </template>

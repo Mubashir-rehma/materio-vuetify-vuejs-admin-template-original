@@ -155,8 +155,6 @@ mock.onPost('/auth/register').reply(request => {
       ],
     }
 
-    console.log('userData :>> ', userData)
-
     database.push(userData)
 
     const accessToken = userTokens[userData.id]

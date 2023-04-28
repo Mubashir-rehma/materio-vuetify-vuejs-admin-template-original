@@ -56,7 +56,7 @@ export default defineConfig({
       layoutsDirs: './src/layouts/',
     }),
     Components({
-      dirs: ['src/@core/components', 'src/views/demos'],
+      dirs: ['src/@core/components', 'src/views/demos', 'src/components'],
       dts: true,
     }),
     AutoImport({

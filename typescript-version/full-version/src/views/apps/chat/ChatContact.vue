@@ -43,8 +43,8 @@ const isChatContactActive = computed(() => {
     >
       <VAvatar
         size="40"
-        variant="tonal"
-        :color="resolveAvatarBadgeVariant(props.user.status)"
+        :variant="!props.user.avatar ? 'tonal' : undefined"
+        :color="!props.user.avatar ? resolveAvatarBadgeVariant(props.user.status) : undefined"
       >
         <VImg
           v-if="props.user.avatar"

@@ -147,8 +147,8 @@ onMounted(() => {
         <div class="d-flex align-center">
           <VAvatar
             size="1.875rem"
-            color="primary"
-            variant="tonal"
+            :color="!item.raw.avatar ? 'primary' : undefined"
+            :variant="!item.raw.avatar ? 'tonal' : undefined"
           >
             <VImg
               v-if="item.raw.buyer.avatar"

@@ -51,8 +51,8 @@ const userProfileList = [
   >
     <VAvatar
       class="cursor-pointer"
-      color="primary"
-      variant="tonal"
+      :color="!(userData && userData.avatar) ? 'primary' : undefined"
+      :variant="!(userData && userData.avatar) ? 'tonal' : undefined"
     >
       <VImg
         v-if="userData && userData.avatar"
@@ -82,8 +82,8 @@ const userProfileList = [
                   color="success"
                 >
                   <VAvatar
-                    color="primary"
-                    variant="tonal"
+                    :color="!(userData && userData.avatar) ? 'primary' : undefined"
+                    :variant="!(userData && userData.avatar) ? 'tonal' : undefined"
                   >
                     <VImg
                       v-if="userData && userData.avatar"

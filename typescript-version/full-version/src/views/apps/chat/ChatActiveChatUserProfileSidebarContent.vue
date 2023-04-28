@@ -40,9 +40,8 @@ const { resolveAvatarBadgeVariant } = useChat()
       >
         <VAvatar
           size="80"
-          class="bg-surface"
-          variant="tonal"
-          :class="`text-${resolveAvatarBadgeVariant(store.activeChat.contact.status)}`"
+          :variant="!store.activeChat.contact.avatar ? 'tonal' : undefined"
+          :color="!store.activeChat.contact.avatar ? resolveAvatarBadgeVariant(store.activeChat.contact.status) : undefined"
         >
           <VImg
             v-if="store.activeChat.contact.avatar"

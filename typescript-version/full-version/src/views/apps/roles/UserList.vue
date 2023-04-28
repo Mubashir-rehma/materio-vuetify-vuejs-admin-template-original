@@ -156,8 +156,8 @@ const deleteUser = (id: number) => {
           <div class="d-flex">
             <VAvatar
               size="34"
-              variant="tonal"
-              :color="resolveUserRoleVariant(item.raw.role).color"
+              :variant="!item.raw.avatar ? 'tonal' : undefined"
+              :color="!item.raw.avatar ? resolveUserRoleVariant(item.raw.role).color : undefined"
               class="me-3"
             >
               <VImg

@@ -276,6 +276,7 @@ const editPermission = (value: RoleDetails) => {
     >
       <VCard
         class="h-100"
+        :ripple="false"
         @click="isAddRoleDialogVisible = true"
       >
         <VRow

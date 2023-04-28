@@ -71,8 +71,8 @@ const resolveUserRoleVariant = (role: string) => {
           <VAvatar
             rounded
             :size="120"
-            color="primary"
-            variant="tonal"
+            :color="!props.userData.avatar ? 'primary' : undefined"
+            :variant="!props.userData.avatar ? 'tonal' : undefined"
           >
             <VImg
               v-if="props.userData.avatar"

@@ -73,6 +73,9 @@ module.exports = {
       },
     ],
 
+    // Ignore _ as unused variable
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_+$' }],
+
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', 'consistent'],
 
@@ -139,6 +142,7 @@ module.exports = {
     'vue/html-comment-indent': 'error',
     'vue/match-component-file-name': 'error',
     'vue/no-child-content': 'error',
+    'vue/require-default-prop': 'off',
 
     // NOTE this rule only supported in SFC,  Users of the unplugin-vue-define-options should disable that rule: https://github.com/vuejs/eslint-plugin-vue/issues/1886
     // 'vue/no-duplicate-attr-inheritance': 'error',

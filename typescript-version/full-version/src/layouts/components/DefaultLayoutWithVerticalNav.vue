@@ -25,6 +25,7 @@ const { width: windowWidth } = useWindowSize()
       <div class="d-flex h-100 align-center">
         <IconBtn
           v-if="isLessThanOverlayNavBreakpoint(windowWidth)"
+          id="vertical-nav-toggle-btn"
           class="ms-n3"
           @click="toggleVerticalOverlayNavActive(true)"
         >

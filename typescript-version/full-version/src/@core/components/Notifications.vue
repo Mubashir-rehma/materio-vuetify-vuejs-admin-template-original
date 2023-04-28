@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Anchor } from 'vuetify/lib/components'
 import { avatarText } from '@core/utils/formatters'
 import type { Notification } from '@layouts/types'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import type { Anchor } from 'vuetify/lib/components'
 
 interface Props {
   notifications: Notification[]
@@ -37,7 +37,7 @@ const markAllReadOrUnread = () => {
 </script>
 
 <template>
-  <IconBtn>
+  <IconBtn id="notification-btn">
     <VBadge
       dot
       v-bind="props.badgeProps"

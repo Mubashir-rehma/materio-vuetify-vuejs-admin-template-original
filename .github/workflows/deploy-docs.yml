@@ -29,11 +29,6 @@ jobs:
         with:
           path: ${{ env.BRAND_NAME }}/vue
 
-      - name: 😒 Use Node 16.17.1 version
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.17.1
-
       - name: ⬇️ Checkout scripts
         uses: actions/checkout@v3
         with:

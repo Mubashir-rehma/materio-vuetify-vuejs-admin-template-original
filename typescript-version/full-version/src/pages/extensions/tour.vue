@@ -79,11 +79,11 @@ onMounted(() => {
       ],
     },
     {
-      id: 'upgrade',
-      title: 'Upgrade',
+      id: 'footer',
+      title: 'Footer',
       arrow: true,
-      attachTo: { element: document.querySelector('#license-btn'), on: 'bottom' },
-      text: 'Click here to upgrade plan',
+      attachTo: { element: document.querySelector('.layout-footer'), on: 'bottom' },
+      text: 'Footer section of the page.',
       buttons: [
         {
           label: 'Back',

@@ -21,7 +21,6 @@
     <!-- 👉 Footer: right content -->
     <span class="d-md-flex gap-x-4 text-primary d-none">
       <a
-        id="license-btn"
         href="https://themeselection.com/license/"
         target="noopener noreferrer"
       >License</a>

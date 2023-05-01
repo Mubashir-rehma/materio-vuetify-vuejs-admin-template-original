@@ -28,6 +28,8 @@ onMounted(() => {
       cancelIcon: {
         enabled: true,
       },
+      modalOverlayOpeningPadding: 2,
+      modalOverlayOpeningRadius: 5,
     },
   })
 

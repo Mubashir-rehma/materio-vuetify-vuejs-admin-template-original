@@ -57,7 +57,7 @@ watch(props, () => {
 
       <VCardText class="mt-1">
         <!-- 👉 Form -->
-        <VForm ref="refPermissionForm">
+        <VForm>
           <VAlert
             type="warning"
             title="Warning!"

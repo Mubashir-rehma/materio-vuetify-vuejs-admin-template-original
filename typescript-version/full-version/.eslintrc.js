@@ -39,6 +39,8 @@ module.exports = {
       multiline: 'below',
     }],
 
+    'antfu/top-level-function': 'off',
+
     // indentation (Already present in TypeScript)
     'indent': ['error', 2],
 

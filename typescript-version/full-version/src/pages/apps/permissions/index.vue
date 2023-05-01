@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Permission } from '@/@fake-db/types'
 import axios from '@axios'
 import type { Options } from '@core/types'

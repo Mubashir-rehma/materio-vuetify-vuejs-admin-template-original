@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import { avatarText } from '@/@core/utils/formatters'
 import type { Data } from '@/@fake-db/types'
 import data from '@/views/demos/forms/Tables/DataTable/datatable.js'

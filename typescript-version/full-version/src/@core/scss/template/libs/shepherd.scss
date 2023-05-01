@@ -76,3 +76,9 @@
 .backBtnClass:not(:disabled):hover {
   background: rgba(var(--v-theme-secondary), var(--v-medium-emphasis-opacity));
 }
+
+@media screen and (max-width: 600px) {
+  .shepherd-element {
+    max-inline-size: 75vw;
+  }
+}

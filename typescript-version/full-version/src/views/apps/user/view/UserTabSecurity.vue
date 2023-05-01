@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)

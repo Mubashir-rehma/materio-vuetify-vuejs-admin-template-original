@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import data from '@/views/demos/forms/Tables/DataTable/datatable.js'
 
 const headers = [

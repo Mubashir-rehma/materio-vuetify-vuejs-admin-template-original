@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { useShepherd } from 'vue-shepherd'
-import { useDisplay } from 'vuetify'
-import { useThemeConfig } from '@/@core/composable/useThemeConfig'
 
 const route = useRoute()
-const display = useDisplay()
-const { appContentLayoutNav } = useThemeConfig()
 
 // 👉 Hotkey
 const { ctrl_k, meta_k } = useMagicKeys()
 
-// 👉 Tour initailization
-let tour = null
+// 👉 Tour initialization
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let tour: any = null
 
 // 👉 watch command palette and route change
 watch([ctrl_k, meta_k, () => route.path], () => {
@@ -21,8 +18,6 @@ watch([ctrl_k, meta_k, () => route.path], () => {
 })
 
 onMounted(() => {
-  const verticalNavToggleBtn = document.querySelector('#vertical-nav-toggle-btn')
-  const navMenu = document.querySelector('.layout-vertical-nav') || document.querySelector('.layout-horizontal-nav')
   const navbar = document.querySelector('.layout-navbar')
 
   tour = useShepherd({

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import Shepherd from 'shepherd.js'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
 import axios from '@axios'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
-import Shepherd from 'shepherd.js'
 
 interface Suggestion {
   icon: string

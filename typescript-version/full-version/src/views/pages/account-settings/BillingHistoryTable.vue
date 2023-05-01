@@ -2,6 +2,7 @@
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Invoice } from '@/@fake-db/types'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
+import type { Options } from '@core/types'
 import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
@@ -14,7 +15,7 @@ const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
-const options = ref<any>({})
+const options = ref<Options>({})
 const isLoading = ref(false)
 
 // 👉 headers
@@ -260,7 +261,7 @@ watchEffect(() => {
         <!-- Balance -->
         <template #item.balance="{ item }">
           <VChip
-            v-bind="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip"
+            :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color"
             size="small"
           >
             <template v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'">

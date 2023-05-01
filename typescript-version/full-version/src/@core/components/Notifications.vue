@@ -1,13 +1,13 @@
 <script lang="ts" setup>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { avatarText } from '@core/utils/formatters'
 import type { Notification } from '@layouts/types'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Anchor } from 'vuetify/lib/components'
 
 interface Props {
   notifications: Notification[]
   badgeProps?: unknown
-  location?: Anchor
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  location?: any
 }
 interface Emit {
   (e: 'read', value: number[]): void

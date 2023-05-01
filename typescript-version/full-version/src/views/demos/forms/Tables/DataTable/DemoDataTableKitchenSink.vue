@@ -57,13 +57,15 @@ const resolveStatusColor = (status: string) => {
     return 'error'
 }
 
-const categoryIconFilter = (categoryName: string) => {
+const categoryIconFilter = (categoryName: string): {
+  icon: string
+  color: string }[] => {
   const index = categoryIcons.findIndex(category => category.name === categoryName)
 
   if (index !== -1)
     return [{ icon: categoryIcons[index].icon, color: categoryIcons[index].color }]
 
-  return false
+  return [{ icon: 'mdi-help-circle-outline', color: 'primary' }]
 }
 
 onMounted(() => {

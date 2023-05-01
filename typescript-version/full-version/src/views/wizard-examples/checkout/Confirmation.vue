@@ -6,7 +6,7 @@ const props = defineProps<{
   checkoutData: CheckoutData
 }>()
 
-const emit = defineEmits<{
+defineEmits<{
   (e: 'update:currentStep', value: number): void
   (e: 'update:checkout-data', value: CheckoutData): void
 }>()

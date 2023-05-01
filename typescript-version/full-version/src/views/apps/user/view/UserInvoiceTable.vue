@@ -2,6 +2,7 @@
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Invoice } from '@/@fake-db/types'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
+import type { Options } from '@core/types'
 
 // 👉 Store
 const invoiceListStore = useInvoiceStore()
@@ -12,7 +13,7 @@ const selectedStatus = ref()
 const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
-const options = ref<any>({})
+const options = ref<Options>({})
 const isLoading = ref(false)
 
 // 👉 headers

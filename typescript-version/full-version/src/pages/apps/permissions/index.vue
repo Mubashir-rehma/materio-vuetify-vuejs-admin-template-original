@@ -2,6 +2,7 @@
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Permission } from '@/@fake-db/types'
 import axios from '@axios'
+import type { Options } from '@core/types'
 
 // 👉 headers
 const headers = [
@@ -15,11 +16,12 @@ const permissions = ref<Permission[]>([])
 const search = ref('')
 const rowPerPage = ref(10)
 const totalPermissions = ref(0)
-const options = ref<any>({})
+const options = ref<Options>({})
 const isPermissionDialogVisible = ref(false)
 const isAddPermissionDialogVisible = ref(false)
 const permissionName = ref('')
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const colors: any = {
   'support': { color: 'info', text: 'Support' },
   'users': { color: 'success', text: 'Users' },

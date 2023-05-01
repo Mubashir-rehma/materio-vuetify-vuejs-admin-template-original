@@ -15,7 +15,14 @@ const selectedStatus = ref()
 const totalPage = ref(1)
 const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
-const options = ref<Options>({})
+
+const options = ref<Options>({
+  page: 1,
+  itemsPerPage: 10,
+  sortBy: [],
+  groupBy: [],
+  search: undefined,
+})
 
 const headers = [
   { title: 'User', key: 'user' },

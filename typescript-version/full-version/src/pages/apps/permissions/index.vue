@@ -16,7 +16,15 @@ const permissions = ref<Permission[]>([])
 const search = ref('')
 const rowPerPage = ref(10)
 const totalPermissions = ref(0)
-const options = ref<Options>({})
+
+const options = ref<Options>({
+  page: 1,
+  itemsPerPage: 10,
+  sortBy: [],
+  groupBy: [],
+  search: undefined,
+})
+
 const isPermissionDialogVisible = ref(false)
 const isAddPermissionDialogVisible = ref(false)
 const permissionName = ref('')

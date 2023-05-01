@@ -15,7 +15,15 @@ const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
-const options = ref<Options>({})
+
+const options = ref<Options>({
+  page: 1,
+  itemsPerPage: 10,
+  sortBy: [],
+  groupBy: [],
+  search: undefined,
+})
+
 const isLoading = ref(false)
 
 // 👉 headers

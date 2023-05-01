@@ -99,12 +99,13 @@ const removeProduct = (id: number) => {
             class="me-3"
             style="inline-size: 6rem;"
           >Date Issued:</span>
-          <span>
+
+          <span style="inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="inline-size: 9.5rem;"
+
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -116,12 +117,11 @@ const removeProduct = (id: number) => {
             class="me-3"
             style="inline-size: 6rem;"
           >Due Date:</span>
-          <span>
+          <span style="min-inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="inline-size: 9.5rem;"
               :config="{ position: 'auto right' }"
             />
           </span>

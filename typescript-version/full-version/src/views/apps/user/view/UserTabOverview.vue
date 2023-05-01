@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import UserInvoiceTable from './UserInvoiceTable.vue'
 
 // Images

@@ -17,6 +17,15 @@
     text-decoration: none !important;
 }
 
+.VPNavBar .VPNavBarTitle .logo {
+    height: 36px;
+}
+
+.VPNavBar .VPNavBarTitle .title {
+  opacity: 1;
+}
+ 
+
 /* Highlight purchase link */
 .VPNavBarMenu.menu>a:last-child {
     position: relative;
@@ -42,7 +51,7 @@
 
 /* Style home logo */
 .VPContent.is-home .VPHomeHero .VPImage {
-    width: 250px;
+    width: 360px;
     height: auto;
     margin-top: 30px;
 }

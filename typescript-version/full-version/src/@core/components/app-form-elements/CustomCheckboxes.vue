@@ -64,7 +64,7 @@ watch(selectedOption, () => {
 .custom-checkbox {
   display: flex;
   align-items: flex-start;
-  gap: 0.375rem;
+  gap: 0.5rem;
 
   .v-checkbox {
     margin-block-start: -0.375rem;

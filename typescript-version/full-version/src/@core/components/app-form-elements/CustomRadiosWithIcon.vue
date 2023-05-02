@@ -33,7 +33,7 @@ watch(selectedOption, () => {
         v-bind="gridColumn"
       >
         <VLabel
-          class="custom-input custom-radio rounded cursor-pointer"
+          class="custom-input custom-radio-icon rounded cursor-pointer"
           :class="selectedOption === item.value ? 'active' : ''"
         >
           <slot :item="item">
@@ -63,7 +63,7 @@ watch(selectedOption, () => {
 </template>
 
 <style lang="scss" scoped>
-.custom-radio {
+.custom-radio-icon {
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
@@ -74,6 +74,18 @@ watch(selectedOption, () => {
 
   .cr-title {
     font-weight: 500;
+  }
+}
+</style>
+
+<style lang="scss">
+.custom-radio-icon {
+  .v-radio {
+    margin-block-end: -0.25rem;
+
+    .v-selection-control__wrapper {
+      margin-inline-start: 0;
+    }
   }
 }
 </style>

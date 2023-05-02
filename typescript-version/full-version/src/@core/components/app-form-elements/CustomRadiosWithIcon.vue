@@ -47,7 +47,7 @@ watch(selectedOption, () => {
                 {{ item.title }}
               </h6>
 
-              <p class="text-sm mb-0">
+              <p class="text-sm mb-0 clamp-text">
                 {{ item.desc }}
               </p>
             </div>

@@ -128,7 +128,7 @@ const emitModelValue = (val: string) => {
       <template #default="{ id, isDirty, isValid, isDisabled }">
         <!-- v-field -->
         <VField
-          v-bind="{ ...fieldProps, label: undefined }"
+          v-bind="{ ...fieldProps }"
           :id="id.value"
           role="textbox"
           :active="focused || isDirty.value || isCalendarOpen"

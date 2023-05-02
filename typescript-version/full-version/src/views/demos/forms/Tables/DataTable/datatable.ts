@@ -1,10 +1,18 @@
 import type { Data } from '@/@fake-db/types'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 
 const data: Data[] = [
   {
     responsive_id: '',
     id: 95,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Edwina Ebsworth',
     post: 'Human Resources Assistant',
     email: 'eebsworth2m@sbwire.com',
@@ -18,7 +26,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 1,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Korrie O\'Crevy',
     post: 'Nuclear Power Engineer',
     email: 'kocrevy0@thetimes.co.uk',
@@ -60,7 +68,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 3,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Stella Ganderton',
     post: 'Operator',
     email: 'sganderton2@tuttocitta.it',
@@ -102,7 +110,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 4,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Dorolice Crossman',
     post: 'Cost Accountant',
     email: 'dcrossman3@google.co.jp',
@@ -116,7 +124,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 8,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Richardo Aldren',
     post: 'Senior Sales Associate',
     email: 'raldren7@mtv.com',
@@ -130,7 +138,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 9,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Allyson Moakler',
     post: 'Safety Technician',
     email: 'amoakler8@shareasale.com',
@@ -144,7 +152,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 10,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Merline Penhalewick',
     post: 'Junior Executive',
     email: 'mpenhalewick9@php.net',
@@ -215,7 +223,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 16,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Robinson Brazenor',
     post: 'General Manager',
     email: 'rbrazenorf@symantec.com',
@@ -257,7 +265,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 19,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Roxie Huck',
     post: 'Administrative Assistant',
     email: 'rhucki@ed.gov',
@@ -271,7 +279,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 20,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Latashia Lewtey',
     post: 'Actuary',
     email: 'llewteyj@sun.com',
@@ -313,7 +321,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 23,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Rosmunda Steed',
     post: 'Assistant Media Planner',
     email: 'rsteedm@xing.com',
@@ -355,7 +363,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 26,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Morgen Benes',
     post: 'Senior Sales Associate',
     email: 'mbenesp@ted.com',
@@ -411,7 +419,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 30,
-    avatar: '6.png',
+    avatar: avatar6,
     full_name: 'Gilbert McFade',
     post: 'Biostatistician',
     email: 'gmcfadet@irs.gov',
@@ -453,7 +461,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 33,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Aili De Coursey',
     post: 'Environmental Specialist',
     email: 'adew@etsy.com',
@@ -467,7 +475,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 34,
-    avatar: '6.png',
+    avatar: avatar6,
     full_name: 'Charlton Chatres',
     post: 'Analyst Programmer',
     email: 'cchatresx@goo.gl',
@@ -481,7 +489,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 35,
-    avatar: '1.png',
+    avatar: avatar1,
     full_name: 'Nat Hugonnet',
     post: 'Financial Advisor',
     email: 'nhugonnety@wufoo.com',
@@ -509,7 +517,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 37,
-    avatar: '5.png',
+    avatar: avatar5,
     full_name: 'Sheila-kathryn Haborn',
     post: 'Environmental Specialist',
     email: 'shaborn10@about.com',
@@ -523,7 +531,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 38,
-    avatar: '3.png',
+    avatar: avatar3,
     full_name: 'Alma Harvatt',
     post: 'Administrative Assistant',
     email: 'aharvatt11@addtoany.com',
@@ -537,7 +545,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 39,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Beatrix Longland',
     post: 'VP Quality Control',
     email: 'blongland12@gizmodo.com',
@@ -551,7 +559,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 40,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Hammad Condell',
     post: 'Project Manager',
     email: 'hcondell13@tiny.cc',
@@ -593,7 +601,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 43,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Ddene Chaplyn',
     post: 'Environmental Tech',
     email: 'dchaplyn16@nymag.com',
@@ -621,7 +629,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 45,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Meghann Bodechon',
     post: 'Operator',
     email: 'mbodechon18@1und1.de',
@@ -635,7 +643,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 46,
-    avatar: '1.png',
+    avatar: avatar1,
     full_name: 'Moshe De Ambrosis',
     post: 'Recruiting Manager',
     email: 'mde19@purevolume.com',
@@ -649,7 +657,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 47,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Had Chatelot',
     post: 'Cost Accountant',
     email: 'hchatelot1a@usatoday.com',
@@ -677,7 +685,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 49,
-    avatar: '5.png',
+    avatar: avatar5,
     full_name: 'Krishnah Stilldale',
     post: 'VP Accounting',
     email: 'kstilldale1c@chronoengine.com',
@@ -691,7 +699,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 50,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Mario Umbert',
     post: 'Research Assistant',
     email: 'mumbert1d@digg.com',
@@ -719,7 +727,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 52,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Tammie Davydoch',
     post: 'VP Quality Control',
     email: 'tdavydoch1f@examiner.com',
@@ -775,7 +783,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 56,
-    avatar: '1.png',
+    avatar: avatar1,
     full_name: 'Cybill Poyle',
     post: 'Cost Accountant',
     email: 'cpoyle1j@amazon.com',
@@ -789,7 +797,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 57,
-    avatar: '6.png',
+    avatar: avatar6,
     full_name: 'Norry Stoller',
     post: 'Human Resources Manager',
     email: 'nstoller1k@noaa.gov',
@@ -845,7 +853,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 61,
-    avatar: '3.png',
+    avatar: avatar3,
     full_name: 'Nichole Dacres',
     post: 'Mechanical Systems Engineer',
     email: 'ndacres1o@apache.org',
@@ -859,7 +867,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 62,
-    avatar: '1.png',
+    avatar: avatar1,
     full_name: 'Holly Edgworth',
     post: 'Junior Executive',
     email: 'hedgworth1p@craigslist.org',
@@ -873,7 +881,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 63,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Henriette Croft',
     post: 'Food Chemist',
     email: 'hcroft1q@desdev.cn',
@@ -915,7 +923,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 66,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Christos Kiley',
     post: 'Geologist',
     email: 'ckiley1t@buzzfeed.com',
@@ -929,7 +937,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 67,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Silvain Siebert',
     post: 'VP Sales',
     email: 'ssiebert1u@domainmarket.com',
@@ -957,7 +965,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 69,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Ripley Rentcome',
     post: 'Physical Therapy Assistant',
     email: 'rrentcome1w@youtu.be',
@@ -1013,7 +1021,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 73,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Aliza MacElholm',
     post: 'VP Sales',
     email: 'amacelholm20@printfriendly.com',
@@ -1027,7 +1035,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 74,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Lucas Witherdon',
     post: 'Senior Quality Engineer',
     email: 'lwitherdon21@storify.com',
@@ -1069,7 +1077,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 77,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Babb Skirving',
     post: 'Analyst Programmer',
     email: 'bskirving24@cbsnews.com',
@@ -1097,7 +1105,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 79,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Stanislaw Melloy',
     post: 'Sales Associate',
     email: 'smelloy26@fastcompany.com',
@@ -1125,7 +1133,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 81,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Tammie Wattins',
     post: 'Web Designer',
     email: 'twattins28@statcounter.com',
@@ -1139,7 +1147,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 82,
-    avatar: '5.png',
+    avatar: avatar5,
     full_name: 'Aila Quailadis',
     post: 'Technical Writer',
     email: 'aquail29@prlog.org',
@@ -1167,7 +1175,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 84,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Hanna Langthorne',
     post: 'Analyst Programmer',
     email: 'hlangthorne2b@stumbleupon.com',
@@ -1195,7 +1203,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 86,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Louis Paszak',
     post: 'Programmer',
     email: 'lpaszak2d@behance.net',
@@ -1237,7 +1245,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 89,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Talya Brandon',
     post: 'Food Chemist',
     email: 'tbrandon2g@ucoz.com',
@@ -1251,7 +1259,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 90,
-    avatar: '6.png',
+    avatar: avatar6,
     full_name: 'Renate Shay',
     post: 'Recruiter',
     email: 'rshay2h@tumblr.com',
@@ -1279,7 +1287,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 92,
-    avatar: '3.png',
+    avatar: avatar3,
     full_name: 'Yvonne Emberton',
     post: 'Recruiter',
     email: 'yemberton2j@blog.com',
@@ -1293,7 +1301,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 93,
-    avatar: '5.png',
+    avatar: avatar5,
     full_name: 'Danya Faichnie',
     post: 'Social Worker',
     email: 'dfaichnie2k@weather.com',
@@ -1335,7 +1343,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 2,
-    avatar: '1.png',
+    avatar: avatar1,
     full_name: 'Bailie Coulman',
     post: 'VP Quality Control',
     email: 'bcoulman1@yolasite.com',
@@ -1363,7 +1371,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 98,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Olivette Gudgin',
     post: 'Paralegal',
     email: 'ogudgin2p@gizmodo.com',
@@ -1377,7 +1385,7 @@ const data: Data[] = [
   {
     responsive_id: '',
     id: 99,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Evangelina Carnock',
     post: 'Cost Accountant',
     email: 'ecarnock2q@washington.edu',

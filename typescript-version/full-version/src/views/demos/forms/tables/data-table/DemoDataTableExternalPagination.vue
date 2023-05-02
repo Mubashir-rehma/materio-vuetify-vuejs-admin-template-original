@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
 import { avatarText } from '@/@core/utils/formatters'
-import data from '@/views/demos/forms/Tables/DataTable/datatable.js'
+import type { Data } from '@/@fake-db/types'
+import data from '@/views/demos/forms/tables/data-table/datatable'
 
+const userList = ref<Data[]>([])
+const options = ref({ page: 1, itemsPerPage: 5, sortBy: [''], sortDesc: [false] })
+
+// headers
 const headers = [
   { title: 'NAME', key: 'full_name' },
   { title: 'EMAIL', key: 'email' },
@@ -24,14 +29,19 @@ const resolveStatusVariant = (status: number) => {
   else
     return { color: 'info', text: 'Applied' }
 }
+
+onMounted(() => {
+  userList.value = JSON.parse(JSON.stringify(data))
+})
 </script>
 
 <template>
   <VDataTable
     :headers="headers"
-    :items="data"
-    :items-per-page="5"
-    show-select
+    :items="userList"
+    :items-per-page="options.itemsPerPage"
+    :page="options.page"
+    @update:options="options = $event"
   >
     <!-- full name -->
     <template #item.full_name="{ item }">
@@ -55,16 +65,48 @@ const resolveStatusVariant = (status: number) => {
       </div>
     </template>
 
-    <!-- status -->
     <template #item.status="{ item }">
       <VChip
         :color="resolveStatusVariant(item.raw.status).color"
-        density="comfortable"
         class="font-weight-medium"
+        density="comfortable"
         size="small"
       >
         {{ resolveStatusVariant(item.raw.status).text }}
       </VChip>
+    </template>
+
+    <template #bottom>
+      <VCardText class="pt-2">
+        <VRow>
+          <VCol
+            lg="2"
+            cols="3"
+          >
+            <VTextField
+              v-model="options.itemsPerPage"
+              label="Rows per page:"
+              type="number"
+              min="-1"
+              max="15"
+              hide-details
+              variant="underlined"
+            />
+          </VCol>
+
+          <VCol
+            lg="10"
+            cols="9"
+            class="d-flex justify-end"
+          >
+            <VPagination
+              v-model="options.page"
+              total-visible="5"
+              :length="Math.ceil(userList.length / options.itemsPerPage)"
+            />
+          </VCol>
+        </VRow>
+      </VCardText>
     </template>
   </VDataTable>
 </template>

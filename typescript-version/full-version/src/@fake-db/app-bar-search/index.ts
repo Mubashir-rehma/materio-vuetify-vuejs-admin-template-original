@@ -607,6 +607,20 @@ const database: SearchItem[] = [
     title: 'Permissions',
     category: 'appsPages',
   },
+  {
+    id: 90,
+    url: { name: 'tables-data-table' },
+    icon: 'mdi-table',
+    title: 'Data Table',
+    category: 'formsTables',
+  },
+  {
+    id: 91,
+    url: { name: 'tables-simple-table' },
+    icon: 'mdi-table',
+    title: 'Simple Table',
+    category: 'formsTables',
+  },
 ]
 
 // ** GET Search Data

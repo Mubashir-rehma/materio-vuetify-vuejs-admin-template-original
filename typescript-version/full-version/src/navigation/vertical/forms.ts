@@ -35,7 +35,7 @@ export default [
     icon: { icon: 'tabler-table' },
     children: [
       { title: 'Simple Table', to: 'tables-simple-table' },
-      { title: 'Data Table', to: 'tables-datatable' },
+      { title: 'Data Table', to: 'tables-data-table' },
     ],
   },
 ]

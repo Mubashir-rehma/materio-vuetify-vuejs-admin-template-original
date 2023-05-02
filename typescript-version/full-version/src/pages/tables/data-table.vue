@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/Tables/DataTable/DemoCodeDataTable.js'
+import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTable'
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as demoCode from '@/views/demos/forms/Tables/SimpleTable/DemoCodeSimpleTable'
+import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpleTable'
 </script>
 
 <template>

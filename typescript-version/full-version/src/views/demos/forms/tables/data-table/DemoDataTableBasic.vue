@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import data from '@/views/demos/forms/Tables/DataTable/datatable.js'
+import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
   { title: 'ID', sortable: false, key: 'id' },
@@ -16,7 +16,6 @@ const headers = [
   <VDataTable
     :headers="headers"
     :items="data"
-    density="compact"
     :items-per-page="5"
   />
 </template>

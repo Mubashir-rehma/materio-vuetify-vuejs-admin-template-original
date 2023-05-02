@@ -2,11 +2,17 @@
 import { VDataTable } from 'vuetify/labs/VDataTable'
 import { avatarText } from '@/@core/utils/formatters'
 
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
+
 const userList = [
   {
     responsive_id: '',
     id: 1,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Korrie O\'Crevy',
     post: 'Nuclear Power Engineer',
     email: 'kocrevy0@thetimes.co.uk',
@@ -20,7 +26,7 @@ const userList = [
   {
     responsive_id: '',
     id: 2,
-    avatar: '1.png',
+    avatar: avatar1,
     full_name: 'Bailie Coulman',
     post: 'VP Quality Control',
     email: 'bcoulman1@yolasite.com',
@@ -34,7 +40,7 @@ const userList = [
   {
     responsive_id: '',
     id: 3,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Stella Ganderton',
     post: 'Operator',
     email: 'sganderton2@tuttocitta.it',
@@ -48,7 +54,7 @@ const userList = [
   {
     responsive_id: '',
     id: 4,
-    avatar: '8.png',
+    avatar: avatar8,
     full_name: 'Dorolice Crossman',
     post: 'Cost Accountant',
     email: 'dcrossman3@google.co.jp',
@@ -90,7 +96,7 @@ const userList = [
   {
     responsive_id: '',
     id: 8,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Richardo Aldren',
     post: 'Senior Sales Associate',
     email: 'raldren7@mtv.com',
@@ -104,7 +110,7 @@ const userList = [
   {
     responsive_id: '',
     id: 9,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Allyson Moakler',
     post: 'Safety Technician',
     email: 'amoakler8@shareasale.com',
@@ -174,7 +180,7 @@ const userList = [
   {
     responsive_id: '',
     id: 16,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Robinson Brazenor',
     post: 'General Manager',
     email: 'rbrazenorf@symantec.com',
@@ -216,7 +222,7 @@ const userList = [
   {
     responsive_id: '',
     id: 19,
-    avatar: '4.png',
+    avatar: avatar4,
     full_name: 'Roxie Huck',
     post: 'Administrative Assistant',
     email: 'rhucki@ed.gov',
@@ -230,7 +236,7 @@ const userList = [
   {
     responsive_id: '',
     id: 23,
-    avatar: '7.png',
+    avatar: avatar7,
     full_name: 'Rosmunda Steed',
     post: 'Assistant Media Planner',
     email: 'rsteedm@xing.com',
@@ -244,7 +250,7 @@ const userList = [
   {
     responsive_id: '',
     id: 26,
-    avatar: '2.png',
+    avatar: avatar2,
     full_name: 'Morgen Benes',
     post: 'Senior Sales Associate',
     email: 'mbenesp@ted.com',
@@ -328,7 +334,7 @@ const resolveStatusVariant = (status: string) => {
         >
           <VImg
             v-if="item.raw.avatar"
-            :src="`/src/assets/images/avatars/avatar-${item.raw.avatar}`"
+            :src="item.raw.avatar"
           />
           <span v-else>{{ avatarText(item.raw.full_name) }}</span>
         </VAvatar>

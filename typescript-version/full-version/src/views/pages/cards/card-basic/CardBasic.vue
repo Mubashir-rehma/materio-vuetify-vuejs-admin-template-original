@@ -145,6 +145,7 @@ const isCardDetailsVisible = ref(false)
           <div class="ma-auto pa-5">
             <VImg
               width="137"
+              height="176"
               :src="eCommerce2"
             />
           </div>

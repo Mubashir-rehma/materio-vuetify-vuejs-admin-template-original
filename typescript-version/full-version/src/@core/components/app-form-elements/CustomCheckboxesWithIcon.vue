@@ -32,7 +32,7 @@ watch(selectedOption, () => {
       v-bind="gridColumn"
     >
       <VLabel
-        class="custom-input custom-checkbox rounded cursor-pointer"
+        class="custom-input custom-checkbox-icon rounded cursor-pointer"
         :class="selectedOption.includes(item.value) ? 'active' : ''"
       >
         <slot :item="item">
@@ -63,17 +63,33 @@ watch(selectedOption, () => {
 </template>
 
 <style lang="scss" scoped>
-.custom-checkbox {
+.custom-checkbox-icon {
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
 
   .v-checkbox {
     margin-block-end: -0.375rem;
+
+    .v-selection-control__wrapper {
+      margin-inline-start: 0;
+    }
   }
 
   .cr-title {
     font-weight: 500;
+  }
+}
+</style>
+
+<style lang="scss">
+.custom-checkbox-icon {
+  .v-checkbox {
+    margin-block-end: -0.375rem;
+
+    .v-selection-control__wrapper {
+      margin-inline-start: 0;
+    }
   }
 }
 </style>

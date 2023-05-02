@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import figma from '@images/icons/project-icons/figma.png'
 import html5 from '@images/icons/project-icons/html5.png'
 import python from '@images/icons/project-icons/python.png'

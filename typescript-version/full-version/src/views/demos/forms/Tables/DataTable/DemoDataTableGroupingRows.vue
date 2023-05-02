@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import { avatarText } from '@/@core/utils/formatters'
 
 const userList = [

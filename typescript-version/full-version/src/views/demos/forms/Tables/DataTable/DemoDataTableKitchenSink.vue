@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import type { SalesDetails } from '@/@fake-db/types'
 import axios from '@axios'
 

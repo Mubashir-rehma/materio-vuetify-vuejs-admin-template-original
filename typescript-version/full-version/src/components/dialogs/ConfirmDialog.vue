@@ -61,7 +61,7 @@ const onCancel = () => {
         </h6>
       </VCardText>
 
-      <VCardActions class="align-center justify-center gap-2">
+      <VCardText class="d-flex align-center justify-center gap-2">
         <VBtn
           variant="elevated"
           @click="onConfirmation"
@@ -76,7 +76,7 @@ const onCancel = () => {
         >
           Cancel
         </VBtn>
-      </VCardActions>
+      </VCardText>
     </VCard>
   </VDialog>
 

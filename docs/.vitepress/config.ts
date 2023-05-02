@@ -96,6 +96,7 @@ export default defineConfig({
           text: 'Components',
           collapsed: false,
           items: [
+            { text: 'Form Components', link: '/guide/components/form-components' },
             { text: 'Dialog', link: '/guide/components/dialog' },
             { text: 'Tour', link: '/guide/components/tour' },
             { text: 'Stepper', link: '/guide/components/stepper' },

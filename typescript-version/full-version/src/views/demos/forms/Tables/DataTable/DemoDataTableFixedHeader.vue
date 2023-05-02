@@ -45,7 +45,7 @@ const resolveStatusVariant = (status: number) => {
         >
           <VImg
             v-if="item.raw.avatar"
-            :src="`/src/assets/images/avatars/avatar-${item.raw.avatar}`"
+            :src="item.raw.avatar"
           />
           <span v-else>{{ avatarText(item.raw.full_name) }}</span>
         </VAvatar>

@@ -27,8 +27,8 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
     <!-- 👉 Table Cell Slot  -->
     <VCol cols="12">
       <AppCardCode
-        title="Table Cell Slot"
-        :code="demoCode.tableCellSlot"
+        title="cell Slot"
+        :code="demoCode.cellSlot"
       >
         <DemoDataTableCellSlot />
       </AppCardCode>
@@ -54,6 +54,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       </AppCardCode>
     </VCol>
 
+    <!-- 👉 Expandable rows -->
     <VCol cols="12">
       <AppCardCode
         title="Expandable Rows"

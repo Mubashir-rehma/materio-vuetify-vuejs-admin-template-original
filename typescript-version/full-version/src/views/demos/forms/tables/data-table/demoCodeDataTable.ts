@@ -2,7 +2,7 @@ export const basic = { ts: '', js: '' }
 
 export const dense = { ts: '', js: '' }
 
-export const tableCellSlot = { ts: '', js: '' }
+export const cellSlot = { ts: '', js: '' }
 
 export const rowSelection = { ts: '', js: '' }
 

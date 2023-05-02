@@ -9,7 +9,7 @@ import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpl
         title="Basic"
         :code="demoCode.basic"
       >
-        <DemoSimpleTableBasics />
+        <DemoSimpleTableBasic />
       </AppCardCode>
     </VCol>
 

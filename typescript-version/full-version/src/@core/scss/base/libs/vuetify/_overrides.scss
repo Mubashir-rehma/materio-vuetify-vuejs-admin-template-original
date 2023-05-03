@@ -204,6 +204,10 @@ h6,
     margin-inline-start: 0 !important;
   }
 
+  .v-selection-control {
+    display: flex !important;
+  }
+
   .v-pagination {
     color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
   }

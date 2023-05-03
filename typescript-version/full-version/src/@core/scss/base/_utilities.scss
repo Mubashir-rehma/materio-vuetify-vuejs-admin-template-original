@@ -119,29 +119,6 @@ $card-spacer-content: 16px;
   }
 }
 
-// 👉 Pagination small-select dropdown for table
-// TODO: remove this class after vuetify datatable implememtation
-
-.per-page-select {
-  margin-block: auto;
-
-  .v-field__input {
-    align-items: center;
-    padding: 2px;
-    font-size: 14px;
-  }
-
-  .v-field__append-inner {
-    align-items: center;
-    padding: 0;
-    margin-inline-start: -2.5rem;
-
-    .v-icon {
-      margin-inline-start: 0 !important;
-    }
-  }
-}
-
 .v-timeline-item {
   .app-timeline-title {
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));

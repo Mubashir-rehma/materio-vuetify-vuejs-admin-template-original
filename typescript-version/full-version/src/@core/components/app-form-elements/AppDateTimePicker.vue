@@ -144,7 +144,6 @@ const emitModelValue = (val: string) => {
               <FlatPickr
                 v-if="!isInlinePicker"
                 v-bind="compAttrs"
-                :id="elementId"
                 ref="refFlatPicker"
                 :model-value="modelValue"
                 :placeholder="props.placeholder"

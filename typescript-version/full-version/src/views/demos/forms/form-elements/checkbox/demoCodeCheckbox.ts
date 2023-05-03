@@ -580,4 +580,3 @@ const toggleOffCheckbox = ref(false)
 </template>
 `,
 }
-

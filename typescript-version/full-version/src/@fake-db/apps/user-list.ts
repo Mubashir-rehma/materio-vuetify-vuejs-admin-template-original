@@ -1,6 +1,6 @@
 import mock from '@/@fake-db/mock'
 import type { UserProperties } from '@/@fake-db/types'
-import { genId } from '@/@fake-db/utlis'
+import { genId, paginateArray } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -664,24 +664,65 @@ const users: UserProperties[] = [
 ]
 
 // 👉  return users
+// eslint-disable-next-line sonarjs/cognitive-complexity
 mock.onGet('/apps/users/list').reply(config => {
-  const { q = '', role = null, plan = null, status = null, perPage = 10, currentPage = 1 } = config.params ?? {}
+  const { q = '', role = null, plan = null, status = null, options = {} } = config.params ?? {}
+
+  const { sortBy = '', itemsPerPage = 10, page = 1 } = options
 
   const queryLower = q.toLowerCase()
 
+  // filter users
   let filteredUsers = users.filter(user => ((user.fullName.toLowerCase().includes(queryLower) || user.email.toLowerCase().includes(queryLower)) && user.role === (role || user.role) && user.currentPlan === (plan || user.currentPlan) && user.status === (status || user.status))).reverse()
 
-  const totalPage = Math.round(filteredUsers.length / perPage) ? Math.round(filteredUsers.length / perPage) : 1
-  const totalUsers = filteredUsers.length
-
-  if (perPage) {
-    const firstIndex = (currentPage - 1) * perPage
-    const lastIndex = perPage * currentPage
-
-    filteredUsers = filteredUsers.slice(firstIndex, lastIndex)
+  // sort users
+  const sort = JSON.parse(JSON.stringify(sortBy))
+  if (sort.length) {
+    if (sort[0]?.key === 'user') {
+      filteredUsers = filteredUsers.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.fullName.localeCompare(b.fullName)
+        else
+          return b.fullName.localeCompare(a.fullName)
+      })
+    }
+    if (sort[0]?.key === 'email') {
+      filteredUsers = filteredUsers.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.email.localeCompare(b.email)
+        else
+          return b.email.localeCompare(a.email)
+      })
+    }
+    if (sort[0]?.key === 'role') {
+      filteredUsers = filteredUsers.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.role.localeCompare(b.role)
+        else
+          return b.role.localeCompare(a.role)
+      })
+    }
+    if (sort[0]?.key === 'plan') {
+      filteredUsers = filteredUsers.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.currentPlan.localeCompare(b.currentPlan)
+        else
+          return b.currentPlan.localeCompare(a.currentPlan)
+      })
+    }
+    if (sort[0]?.key === 'status') {
+      filteredUsers = filteredUsers.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.status.localeCompare(b.status)
+        else
+          return b.status.localeCompare(a.status)
+      })
+    }
   }
 
-  return [200, { users: filteredUsers, totalPage, totalUsers }]
+  const totalUsers = filteredUsers.length
+
+  return [200, { users: paginateArray(filteredUsers, itemsPerPage, page), totalUsers }]
 })
 
 // 👉 Add user
@@ -695,6 +736,7 @@ mock.onPost('/apps/users/user').reply(config => {
   return [201, { user }]
 })
 
+// 👉 Get Single user
 mock.onGet(/\/apps\/users\/\d+/).reply(config => {
   // Get event id from URL
   const userId = config.url?.substring(config.url.lastIndexOf('/') + 1)
@@ -717,4 +759,22 @@ mock.onGet(/\/apps\/users\/\d+/).reply(config => {
     return [200, user]
 
   return [404]
+})
+
+mock.onDelete(/\/apps\/users\/\d+/).reply(config => {
+  // Get user id from URL
+  const userId = config.url?.substring(config.url.lastIndexOf('/') + 1)
+
+  // Convert Id to number
+  const Id = Number(userId)
+
+  const userIndex = users.findIndex(e => e.id === Id)
+
+  if (userIndex >= 0) {
+    users.splice(userIndex, 1)
+
+    return [200]
+  }
+
+  return [400]
 })

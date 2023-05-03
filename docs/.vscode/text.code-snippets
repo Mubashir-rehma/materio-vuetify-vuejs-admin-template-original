@@ -1,9 +1,0 @@
-{
-    "http:localhost:8080/": {
-        "prefix": "localhost",
-        "body": [
-            "http:localhost:8080/"
-        ],
-        "description": "http:localhost:8080/"
-    }
-}

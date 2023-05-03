@@ -1056,4 +1056,3 @@ const value = ref(10)
 </template>
 `,
 }
-

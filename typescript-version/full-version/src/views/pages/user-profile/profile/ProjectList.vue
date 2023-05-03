@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import figma from '@images/icons/project-icons/figma.png'
 import html5 from '@images/icons/project-icons/html5.png'
 import python from '@images/icons/project-icons/python.png'
@@ -6,6 +7,14 @@ import react from '@images/icons/project-icons/react.png'
 import sketch from '@images/icons/project-icons/sketch.png'
 import vue from '@images/icons/project-icons/vue.png'
 import xamarin from '@images/icons/project-icons/xamarin.png'
+
+// Project Table Header
+const projectTableHeaders = [
+  { title: 'PROJECT', key: 'project' },
+  { title: 'LEADER', key: 'leader' },
+  { title: 'PROGRESS', key: 'progress' },
+  { title: 'Action', key: 'Action', sortable: false },
+]
 
 const projects = [
   {
@@ -89,73 +98,41 @@ const moreList = [
 <template>
   <VCard title="Project List">
     <VDivider />
-    <VTable class="text-no-wrap text-high-emphasis text-sm">
-      <thead>
-        <tr>
-          <th scope="col">
-            PROJECT
-          </th>
-          <th scope="col">
-            LEADER
-          </th>
-          <th scope="col">
-            PROGRESS
-          </th>
-          <th scope="col">
-            ACTION
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="project in projects"
-          :key="project.name"
-        >
-          <td class="d-flex align-center">
-            <VAvatar
-              :size="34"
-              class="me-3"
-              :image="project.logo"
-            />
-            <div>
-              <h6 class="text-sm font-weight-medium">
-                {{ project.name }}
-              </h6>
-              <p class="text-xs mb-0 text-medium-emphasis">
-                {{ project.project }}
-              </p>
-            </div>
-          </td>
+    <!-- 👉 User Project List Table -->
 
-          <td>
-            {{ project.leader }}
-          </td>
+    <!-- SECTION Datatable -->
+    <VDataTable
+      :headers="projectTableHeaders"
+      :items="projects"
+      hide-default-footer
+    >
+      <!-- projects -->
+      <template #item.project="{ item }">
+        <div class="d-flex">
+          <VAvatar
+            :size="34"
+            class="me-3"
+            :image="item.raw.logo"
+          />
+          <div>
+            <p class="font-weight-medium mb-0">
+              {{ item.raw.name }}
+            </p>
+            <p class="text-xs text-medium-emphasis mb-0">
+              {{ item.raw.project }}
+            </p>
+          </div>
+        </div>
+      </template>
 
-          <td style="min-inline-size: 8rem;">
-            <div class="d-flex align-center gap-3">
-              <div class="flex-grow-1">
-                <VProgressLinear
-                  :height="6"
-                  :model-value="project.progress"
-                  rounded
-                  :color="resolveUserProgressVariant(project.progress)"
-                />
-              </div>
+      <!-- Action -->
+      <template #item.Action>
+        <MoreBtn :menu-list="moreList" />
+      </template>
 
-              <span>
-                {{ project.progress }}%
-              </span>
-            </div>
-          </td>
-
-          <td>
-            <MoreBtn
-              :menu-list="moreList"
-              class="text-medium-emphasis"
-            />
-          </td>
-        </tr>
-      </tbody>
-    </VTable>
+      <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->
+      <template #bottom />
+    </VDataTable>
+    <!-- !SECTION -->
   </VCard>
 </template>

@@ -145,4 +145,3 @@ const weeklySalesData = [
     </VCardText>
   </VCard>
 </template>
-

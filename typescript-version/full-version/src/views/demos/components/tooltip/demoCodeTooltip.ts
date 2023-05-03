@@ -425,4 +425,3 @@ const isTooltipVisible = ref(false)
 </template>
 `,
 }
-

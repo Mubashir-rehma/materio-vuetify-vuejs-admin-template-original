@@ -179,8 +179,8 @@ const moreList = [
             >
               <VAvatar
                 size="40"
-                variant="tonal"
-                :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
+                :variant="!store.activeChat.contact.avatar ? 'tonal' : undefined"
+                :color="!store.activeChat.contact.avatar ? resolveAvatarBadgeVariant(store.activeChat.contact.status) : undefined"
                 class="cursor-pointer"
               >
                 <VImg

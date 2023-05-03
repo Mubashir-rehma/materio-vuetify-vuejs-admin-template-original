@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Invoice } from '@/@fake-db/types'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
+
+import type { Options } from '@core/types'
 import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
@@ -9,26 +12,42 @@ const invoiceListStore = useInvoiceStore()
 const searchQuery = ref('')
 const dateRange = ref('')
 const selectedStatus = ref()
-const rowPerPage = ref(10)
-const currentPage = ref(1)
 const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
-const selectAllInvoice = ref(false)
+
+const options = ref<Options>({
+  page: 1,
+  itemsPerPage: 10,
+  sortBy: [],
+  groupBy: [],
+  search: undefined,
+})
+
+const isLoading = ref(false)
+
+// 👉 headers
+const headers = [
+  { title: '#ID', key: 'id' },
+  { title: 'Trending', key: 'trending', sortable: false },
+  { title: 'Client', key: 'client' },
+  { title: 'Total', key: 'total' },
+  { title: 'Date', key: 'date' },
+  { title: 'Balance', key: 'balance' },
+  { title: 'Actions', key: 'actions', sortable: false },
+]
 
 // 👉 Fetch Invoices
-watchEffect(() => {
-  const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
-
+const fetchInvoices = (query: string, currentStatus: string, firstDate: string, lastDate: string, option: object) => {
+  isLoading.value = true
   invoiceListStore.fetchInvoices(
     {
-      q: searchQuery.value,
-      status: selectedStatus.value,
-      perPage: rowPerPage.value,
-      currentPage: currentPage.value,
-      startDate: start,
-      endDate: end,
+      q: query,
+      status: currentStatus,
+      startDate: firstDate,
+      endDate: lastDate,
+      options: option,
     },
   ).then(response => {
     invoices.value = response.data.invoices
@@ -37,21 +56,9 @@ watchEffect(() => {
   }).catch(error => {
     console.log(error)
   })
-})
 
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
-
-// 👉 Computing pagination data
-const paginationData = computed(() => {
-  const firstIndex = invoices.value.length ? ((currentPage.value - 1) * rowPerPage.value) + 1 : 0
-  const lastIndex = invoices.value.length + ((currentPage.value - 1) * rowPerPage.value)
-
-  return `${firstIndex}-${lastIndex} of ${totalInvoices.value}`
-})
+  isLoading.value = false
+}
 
 // 👉 Invoice balance variant resolver
 const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {
@@ -82,39 +89,6 @@ const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   return { variant: 'secondary', icon: 'mdi-close' }
 }
 
-// 👉 Add/Remove all checkbox ids in/from array
-const selectUnselectAll = () => {
-  selectAllInvoice.value = !selectAllInvoice.value
-  if (selectAllInvoice.value) {
-    invoices.value.forEach(invoice => {
-      if (!selectedRows.value.includes(`check${invoice.id}`))
-        selectedRows.value.push(`check${invoice.id}`)
-    })
-  }
-  else {
-    selectedRows.value = []
-  }
-}
-
-// 👉 watch if checkbox array is empty all checkbox should be uncheck
-watch(selectedRows, () => {
-  if (!selectedRows.value.length)
-    selectAllInvoice.value = false
-}, { deep: true })
-
-// 👉 Add/Remove individual checkbox in/from array
-const addRemoveIndividualCheckbox = (checkID: string) => {
-  if (selectedRows.value.includes(checkID)) {
-    const index = selectedRows.value.indexOf(checkID)
-
-    selectedRows.value.splice(index, 1)
-  }
-  else {
-    selectedRows.value.push(checkID)
-    selectAllInvoice.value = true
-  }
-}
-
 const computedMoreList = computed(() => {
   return (paramId: number) => ([
     { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
@@ -126,6 +100,36 @@ const computedMoreList = computed(() => {
     },
     { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
   ])
+})
+
+// 👉 Delete Invoice
+const deleteInvoice = (id: number) => {
+  invoiceListStore.deleteInvoice(id)
+    .then(() => {
+      fetchInvoices(
+        searchQuery.value,
+        selectedStatus.value,
+        dateRange.value?.split('to')[0],
+        dateRange.value?.split('to')[1],
+        options.value,
+      )
+    })
+    .catch(error => {
+      console.log(error)
+    })
+}
+
+// 👉 watch for data table options like itemsPerPage,page,searchQuery,sortBy etc...
+watchEffect(() => {
+  const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
+
+  fetchInvoices(
+    searchQuery.value,
+    selectedStatus.value,
+    start,
+    end,
+    options.value,
+  )
 })
 </script>
 
@@ -206,220 +210,126 @@ const computedMoreList = computed(() => {
 
       <VDivider />
 
-      <!-- SECTION Table -->
-      <VTable class="text-no-wrap">
-        <!-- 👉 Table head -->
-        <thead>
-          <tr>
-            <!-- 👉 Check/Uncheck all checkbox -->
-            <th
-              scope="col"
-              class="d-flex justify-center align-center"
-            >
-              <div style="inline-size: 1rem;">
-                <VCheckbox
-                  :model-value="selectAllInvoice"
-                  :indeterminate="(invoices.length !== selectedRows.length) && !!selectedRows.length"
-                  @click="selectUnselectAll"
-                />
-              </div>
-            </th>
-            <th scope="col">
-              #ID
-            </th>
-            <th
-              scope="col"
-              class="text-center"
-            >
-              <VIcon icon="mdi-arrow-up" />
-            </th>
-            <th scope="col">
-              CLIENT
-            </th>
-            <th
-              scope="col"
-              class="text-center"
-            >
-              TOTAL
-            </th>
-            <th scope="col">
-              DATE
-            </th>
-            <th
-              scope="col"
-              class="text-center"
-            >
-              BALANCE
-            </th>
-            <th scope="col">
-              ACTIONS
-            </th>
-          </tr>
-        </thead>
-
-        <!-- 👉 Table Body -->
-        <tbody>
-          <tr
-            v-for="invoice in invoices"
-            :key="invoice.id"
-          >
-            <!-- 👉 Individual checkbox -->
-            <td class="d-flex justify-center align-center">
-              <div style="inline-size: 1rem;">
-                <VCheckbox
-                  :id="`check${invoice.id}`"
-                  :model-value="selectedRows.includes(`check${invoice.id}`)"
-                  @click="addRemoveIndividualCheckbox(`check${invoice.id}`)"
-                />
-              </div>
-            </td>
-
-            <!-- 👉 Id -->
-            <td>
-              <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
-                #{{ invoice.id }}
-              </RouterLink>
-            </td>
-
-            <!-- 👉 Trending -->
-            <td class="text-center">
-              <VTooltip>
-                <template #activator="{ props }">
-                  <VAvatar
-                    :size="34"
-                    v-bind="props"
-                    :color="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant"
-                    variant="tonal"
-                  >
-                    <VIcon
-                      :size="20"
-                      :icon="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).icon"
-                    />
-                  </VAvatar>
-                </template>
-                <p class="mb-0">
-                  {{ invoice.invoiceStatus }}
-                </p>
-                <p class="mb-0">
-                  Balance: {{ invoice.balance }}
-                </p>
-                <p class="mb-0">
-                  Due date: {{ invoice.dueDate }}
-                </p>
-              </VTooltip>
-            </td>
-
-            <!-- 👉 Client Avatar and Email -->
-            <td>
-              <div class="d-flex align-center">
-                <VAvatar
-                  size="34"
-                  :color="resolveInvoiceStatusVariantAndIcon(invoice.invoiceStatus).variant"
-                  variant="tonal"
-                  class="me-3"
-                >
-                  <VImg
-                    v-if="invoice.avatar.length"
-                    :src="invoice.avatar"
-                  />
-                  <span v-else>{{ avatarText(invoice.client.name) }}</span>
-                </VAvatar>
-                <div class="d-flex flex-column">
-                  <h6 class="text-sm font-weight-medium mb-0">
-                    {{ invoice.client.name }}
-                  </h6>
-                  <span class="text-xs text-medium-emphasis">{{ invoice.client.companyEmail }}</span>
-                </div>
-              </div>
-            </td>
-
-            <!-- 👉 total -->
-            <td class="text-center text-medium-emphasis text-sm">
-              ${{ invoice.total }}
-            </td>
-
-            <!-- 👉 Date -->
-            <td class="text-medium-emphasis text-sm">
-              {{ invoice.issuedDate }}
-            </td>
-
-            <!-- 👉 Balance -->
-            <td class="text-center text-high-emphasis">
-              <VChip
-                v-bind="resolveInvoiceBalanceVariant(invoice.balance, invoice.total).chip"
-                size="small"
-              >
-                <span class="text-sm">{{ resolveInvoiceBalanceVariant(invoice.balance, invoice.total).status }}</span>
-              </VChip>
-            </td>
-
-            <!-- 👉 Actions -->
-            <td style="inline-size: 6rem;">
-              <IconBtn>
-                <VIcon icon="mdi-delete-outline" />
-              </IconBtn>
-
-              <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
-                <VIcon icon="mdi-eye-outline" />
-              </IconBtn>
-
-              <MoreBtn
-                :menu-list="computedMoreList(invoice.id)"
-                item-props
-              />
-            </td>
-          </tr>
-        </tbody>
-
-        <!-- 👉 table footer  -->
-        <tfoot v-show="!invoices.length">
-          <tr>
-            <td
-              colspan="8"
-              class="text-center text-body-1"
-            >
-              No data available
-            </td>
-          </tr>
-        </tfoot>
-      </VTable>
-      <!-- !SECTION -->
-
-      <VDivider />
-
-      <!-- SECTION Pagination -->
-      <VCardText class="d-flex flex-wrap justify-end gap-4 pa-1">
-        <!-- 👉 Rows per page -->
-        <div
-          class="d-flex align-center"
-          style="inline-size: 171px;"
-        >
-          <span class="text-no-wrap text-sm me-3">Rows per page:</span>
-          <VSelect
-            v-model="rowPerPage"
-            density="compact"
-            class="per-page-select"
-            variant="plain"
-            :items="[10, 20, 30, 50]"
+      <!-- SECTION Datatable -->
+      <VDataTableServer
+        v-model="selectedRows"
+        v-model:items-per-page="options.itemsPerPage"
+        v-model:page="options.page"
+        :loading="isLoading"
+        show-select
+        :items-length="totalInvoices"
+        :headers="headers"
+        :items="invoices"
+        @update:options="options = $event"
+      >
+        <!-- Trending Header -->
+        <template #column.trending>
+          <VIcon
+            size="22"
+            icon="mdi-trending-up"
           />
-        </div>
+        </template>
 
-        <!-- 👉 Pagination and pagination meta -->
-        <div class="d-flex align-center">
-          <h6 class="text-sm font-weight-regular">
-            {{ paginationData }}
-          </h6>
-        </div>
-        <VPagination
-          v-model="currentPage"
-          size="small"
-          :total-visible="1"
-          :length="totalPage"
-          @next="selectedRows = []"
-          @prev="selectedRows = []"
-        />
-      </VCardText>
+        <!-- id -->
+        <template #item.id="{ item }">
+          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }">
+            #{{ item.raw.id }}
+          </RouterLink>
+        </template>
+
+        <!-- trending -->
+        <template #item.trending="{ item }">
+          <VTooltip>
+            <template #activator="{ props }">
+              <VAvatar
+                :size="34"
+                v-bind="props"
+                :color="resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).variant"
+                variant="tonal"
+              >
+                <VIcon
+                  :size="20"
+                  :icon="resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).icon"
+                />
+              </VAvatar>
+            </template>
+            <p class="mb-0">
+              {{ item.raw.invoiceStatus }}
+            </p>
+            <p class="mb-0">
+              Balance: {{ item.raw.balance }}
+            </p>
+            <p class="mb-0">
+              Due date: {{ item.raw.dueDate }}
+            </p>
+          </VTooltip>
+        </template>
+
+        <!-- client -->
+        <template #item.client="{ item }">
+          <div class="d-flex align-center">
+            <VAvatar
+              size="34"
+              :color="!item.raw.avatar.length ? resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).variant : undefined"
+              :variant="!item.raw.avatar.length ? 'tonal' : undefined"
+              class="me-3"
+            >
+              <VImg
+                v-if="item.raw.avatar.length"
+                :src="item.raw.avatar"
+              />
+              <span v-else>{{ avatarText(item.raw.client.name) }}</span>
+            </VAvatar>
+            <div class="d-flex flex-column">
+              <h6 class="text-sm font-weight-medium mb-0">
+                {{ item.raw.client.name }}
+              </h6>
+              <span class="text-caption">{{ item.raw.client.companyEmail }}</span>
+            </div>
+          </div>
+        </template>
+
+        <!-- Total -->
+        <template #item.total="{ item }">
+          ${{ item.raw.total }}
+        </template>
+
+        <!-- Date -->
+        <template #item.date="{ item }">
+          {{ item.raw.issuedDate }}
+        </template>
+
+        <!-- Balance -->
+        <template #item.balance="{ item }">
+          <VChip :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color">
+            <template v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'">
+              {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
+            </template>
+
+            <template v-else>
+              {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
+            </template>
+          </VChip>
+        </template>
+
+        <!-- Actions -->
+        <template #item.actions="{ item }">
+          <IconBtn @click="deleteInvoice(item.raw.id)">
+            <VIcon icon="mdi-delete-outline" />
+          </IconBtn>
+
+          <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.raw.id } }">
+            <VIcon icon="mdi-eye-outline" />
+          </IconBtn>
+
+          <MoreBtn
+            :menu-list="computedMoreList(item.raw.id)"
+            item-props
+          />
+        </template>
+      </VDataTableServer>
       <!-- !SECTION -->
+      <VDivider />
     </VCard>
   </section>
 </template>

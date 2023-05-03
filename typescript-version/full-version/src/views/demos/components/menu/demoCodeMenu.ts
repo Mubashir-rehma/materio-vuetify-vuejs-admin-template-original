@@ -476,4 +476,3 @@ const menu = ref(false)
 </template>
 `,
 }
-

@@ -30,11 +30,6 @@ jobs:
         with:
           path: ${{ env.BRAND_NAME }}/vue
 
-      - name: 😒 Use Node 16.17.1 version
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.17.1
-
       - name: ⬇️ Checkout scripts
         uses: actions/checkout@v3
         with:
@@ -55,7 +50,7 @@ jobs:
           cd ${{ env.BRAND_NAME }}/vue/docs
           yarn
           yarn build
-          mv .vuepress/dist $GITHUB_WORKSPACE/documentation
+          mv .vitepress/dist $GITHUB_WORKSPACE/documentation
         
       - name: 🗄️ Cleanup & Backup
         uses: appleboy/ssh-action@v0.1.5

@@ -13,8 +13,8 @@ const invoiceData = ref<InvoiceData>({
     total: 0,
     avatar: '',
     invoiceStatus: '',
-    balance: '',
     dueDate: '',
+    balance: 0,
     client: {
       address: '',
       company: '',

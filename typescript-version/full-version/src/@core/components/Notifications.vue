@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Anchor } from 'vuetify/lib/components'
 import { avatarText } from '@core/utils/formatters'
 import type { Notification } from '@layouts/types'
 
 interface Props {
   notifications: Notification[]
   badgeProps?: unknown
-  location?: Anchor
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  location?: any
 }
 interface Emit {
   (e: 'read', value: number[]): void
@@ -23,14 +23,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>()
 
-const isAllMarkRead = computed(() => {
-  return props.notifications.some(item => item.isSeen === true)
-})
+const isAllMarkRead = computed(() => props.notifications.some(item => item.isSeen === false),
+)
 
 const markAllReadOrUnread = () => {
   const allNotificationsIds = props.notifications.map(item => item.id)
 
-  if (isAllMarkRead.value)
+  if (!isAllMarkRead.value)
     emit('unread', allNotificationsIds)
   else
     emit('read', allNotificationsIds)
@@ -38,7 +37,7 @@ const markAllReadOrUnread = () => {
 </script>
 
 <template>
-  <IconBtn>
+  <IconBtn id="notification-btn">
     <VBadge
       dot
       v-bind="props.badgeProps"
@@ -70,13 +69,13 @@ const markAllReadOrUnread = () => {
               v-show="props.notifications.length"
               @click="markAllReadOrUnread"
             >
-              <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline' " />
+              <VIcon :icon="!isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline' " />
 
               <VTooltip
                 activator="parent"
                 location="start"
               >
-                {{ isAllMarkRead ? 'Mark all as unread' : 'Mark all as read' }}
+                {{ !isAllMarkRead ? 'Mark all as unread' : 'Mark all as read' }}
               </VTooltip>
             </IconBtn>
           </template>
@@ -107,11 +106,11 @@ const markAllReadOrUnread = () => {
                 <template #prepend>
                   <VListItemAction start>
                     <VAvatar
-                      :color="notification.color || 'primary'"
+                      size="40"
+                      :color="notification.color && notification.icon ? notification.color : undefined"
                       :image="notification.img || undefined"
                       :icon="notification.icon || undefined"
-                      size="40"
-                      variant="tonal"
+                      :variant="notification.img ? undefined : 'tonal' "
                     >
                       <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
                     </VAvatar>

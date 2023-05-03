@@ -282,6 +282,7 @@ const paymentMethods = [
                   <VTextField
                     label="CVV Code"
                     type="number"
+                    max="3"
                   />
                 </VCol>
               </VRow>

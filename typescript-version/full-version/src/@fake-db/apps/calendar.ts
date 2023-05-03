@@ -1,6 +1,6 @@
 import mock from '@/@fake-db/mock'
 import type { CalendarEvent } from '@/@fake-db/types'
-import { genId } from '@/@fake-db/utlis'
+import { genId } from '@/@fake-db/utils'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)

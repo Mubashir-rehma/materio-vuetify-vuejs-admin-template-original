@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ErrorHeader from '@core/components/ErrorHeader.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import pages500 from '@images/pages/500.png'
 import miscMaskDark from '@images/pages/misc-mask-dark.png'

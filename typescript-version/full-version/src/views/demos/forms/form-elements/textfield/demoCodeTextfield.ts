@@ -836,4 +836,3 @@ export const variant = {
 </template>
 `,
 }
-

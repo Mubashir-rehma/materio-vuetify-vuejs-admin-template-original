@@ -800,4 +800,3 @@ const isAlertVisible = ref(true)
 </style>
 `,
 }
-

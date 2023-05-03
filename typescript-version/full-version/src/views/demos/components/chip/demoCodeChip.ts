@@ -942,4 +942,3 @@ export const withIcon = {
 </template>
 `,
 }
-

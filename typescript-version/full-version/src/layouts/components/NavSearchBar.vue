@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Shepherd from 'shepherd.js'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
 import axios from '@axios'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
@@ -115,13 +116,18 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
     @click="isAppSearchBarVisible = !isAppSearchBarVisible"
   >
     <!-- 👉 Search Trigger button -->
-    <IconBtn class="me-1">
+    <!-- close active tour while opening search bar using icon -->
+    <IconBtn
+      class="me-1"
+      @click="Shepherd.activeTour?.cancel()"
+    >
       <VIcon icon="mdi-magnify" />
     </IconBtn>
 
     <span
       v-if="appContentLayoutNav === 'vertical'"
       class="d-none d-md-flex align-center text-disabled"
+      @click="Shepherd.activeTour?.cancel()"
     >
       <span class="me-3">Search</span>
       <span class="meta-key">&#8984;K</span>

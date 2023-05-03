@@ -983,4 +983,3 @@ const currentTab = ref(0)
 </template>
 `,
 }
-

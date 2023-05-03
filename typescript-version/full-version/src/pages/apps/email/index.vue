@@ -52,6 +52,10 @@ const isSelectAllEmailCheckboxIndeterminate = computed(
     && store.emails.length !== selectedEmails.value.length,
 )
 
+const isAllMarkRead = computed (() => {
+  return selectedEmails.value.every(emailId => store.emails.find(email => email.id === emailId)?.isRead)
+})
+
 const selectAllCheckboxUpdate = () => {
   selectedEmails.value = !selectAllEmailCheckbox.value
     ? store.emails.map(email => email.id)
@@ -249,9 +253,9 @@ const refreshOpenedEmail = async () => {
               <VIcon icon="mdi-delete-outline" />
             </IconBtn>
 
-            <!-- Mark unread -->
-            <IconBtn @click="handleActionClick('unread')">
-              <VIcon icon="mdi-email-outline" />
+            <!-- Mark unread/read -->
+            <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
+              <VIcon :icon="isAllMarkRead ? 'tabler-mail' : 'tabler-mail-opened'" />
             </IconBtn>
 
             <!-- Move to folder -->

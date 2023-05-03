@@ -9,7 +9,6 @@ import AnalyticsTotalProfitLineCharts from '@/views/dashboards/analytics/Analyti
 import AnalyticsTransactions from '@/views/dashboards/analytics/AnalyticsTransactions.vue'
 import AnalyticsUserTable from '@/views/dashboards/analytics/AnalyticsUserTable.vue'
 import AnalyticsWeeklyOverview from '@/views/dashboards/analytics/AnalyticsWeeklyOverview.vue'
-import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
 
 const totalProfit = {
   title: 'Total Profit',

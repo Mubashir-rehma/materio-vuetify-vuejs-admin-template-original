@@ -538,4 +538,3 @@ export const variant = {
 </template>
 `,
 }
-

@@ -376,4 +376,3 @@ const rules = [value => value !== 3 ? true : 'Do not select the third one!']
 </template>
 `,
 }
-

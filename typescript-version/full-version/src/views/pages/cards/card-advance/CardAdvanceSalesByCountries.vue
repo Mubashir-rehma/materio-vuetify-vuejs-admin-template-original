@@ -117,4 +117,3 @@ const salesByCountries = [
     --v-card-list-gap: 1.3rem;
   }
   </style>
-

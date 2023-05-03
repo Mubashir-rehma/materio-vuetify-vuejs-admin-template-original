@@ -44,8 +44,8 @@ const userStatusRadioOptions = [
       >
         <VAvatar
           size="84"
-          variant="tonal"
-          :class="`text-${resolveAvatarBadgeVariant(store.profileUser.status)}`"
+          :variant="!store.profileUser.avatar ? 'tonal' : undefined"
+          :color="!store.profileUser.avatar ? resolveAvatarBadgeVariant(store.profileUser.status) : undefined"
         >
           <VImg
             v-if="store.profileUser.avatar"

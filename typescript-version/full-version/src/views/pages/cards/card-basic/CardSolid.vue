@@ -75,20 +75,18 @@ const solidCardData = [
             <span class="text-white ms-2">{{ data.avatarName }}</span>
           </div>
 
-          <div>
-            <VIcon
+          <div class="d-flex align-center">
+            <IconBtn
               icon="mdi-heart"
               color="white"
-              size="1.2rem"
-              class="me-2 cursor-pointer"
+              class="me-1"
             />
             <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
 
-            <VIcon
+            <IconBtn
               icon="mdi-share-variant"
               color="white"
-              size="1.2rem"
-              class="me-2 cursor-pointer"
+              class="me-1"
             />
             <span class="text-subtitle-2 text-white">{{ data.share }}</span>
           </div>

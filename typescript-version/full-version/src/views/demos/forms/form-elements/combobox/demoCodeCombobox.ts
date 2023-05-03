@@ -448,4 +448,3 @@ const items = [
 </template>
 `,
 }
-

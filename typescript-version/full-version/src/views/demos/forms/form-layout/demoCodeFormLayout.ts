@@ -2615,4 +2615,3 @@ const checkbox = ref(false)
 </template>
 `,
 }
-

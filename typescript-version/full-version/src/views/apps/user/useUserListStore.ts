@@ -26,5 +26,12 @@ export const useUserListStore = defineStore('UserListStore', {
         axios.get(`/apps/users/${id}`).then(response => resolve(response)).catch(error => reject(error))
       })
     },
+
+    // 👉 Delete User
+    deleteUser(id: number) {
+      return new Promise((resolve, reject) => {
+        axios.delete(`/apps/users/${id}`).then(response => resolve(response)).catch(error => reject(error))
+      })
+    },
   },
 })

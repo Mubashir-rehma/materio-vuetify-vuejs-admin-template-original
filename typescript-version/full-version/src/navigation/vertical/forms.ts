@@ -1,5 +1,5 @@
 export default [
-  { heading: 'Forms' },
+  { heading: 'Forms & Tables' },
   {
     title: 'Form Elements',
     icon: { icon: 'mdi-content-copy' },
@@ -29,5 +29,13 @@ export default [
     title: 'Form Validation',
     icon: { icon: 'mdi-checkbox-marked-circle-outline' },
     to: 'forms-form-validation',
+  },
+  {
+    title: 'Tables',
+    icon: { icon: 'tabler-table' },
+    children: [
+      { title: 'Simple Table', to: 'tables-simple-table' },
+      { title: 'Data Table', to: 'tables-data-table' },
+    ],
   },
 ]

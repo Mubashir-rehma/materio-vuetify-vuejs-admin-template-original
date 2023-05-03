@@ -833,4 +833,3 @@ const isSnackbarVisibility = ref(false)
 </template>
 `,
 }
-

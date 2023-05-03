@@ -1144,4 +1144,3 @@ export const tonal = {
 </template>
 `,
 }
-

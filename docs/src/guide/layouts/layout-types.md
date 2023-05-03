@@ -29,6 +29,7 @@ This component uses `layouts` plugin's `VerticalNavLayout` component.
 
 - [Customize navbar](/code-examples/layout/customize-navbar.md)
 - [Customize footer](/code-examples/layout/customize-footer.md)
+- [Content-loading](/articles/how-to-use-content-loading-slot.md)
 
 ### 2. Horizontal nav layout
 
@@ -47,6 +48,7 @@ This component uses `layouts` plugin's `HorizontalNavLayout` component.
 
 - [Customize navbar](/code-examples/layout/customize-navbar.md)
 - [Customize footer](/code-examples/layout/customize-footer.md)
+- [Content-loading](/articles/how-to-use-content-loading-slot.md)
 
 ## 2. Blank layout
 

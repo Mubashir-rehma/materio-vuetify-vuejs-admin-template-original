@@ -256,6 +256,7 @@ declare module '@vue/runtime-core' {
     DemoSelectMultiple: typeof import('./src/views/demos/forms/form-elements/select/DemoSelectMultiple.vue')['default']
     DemoSelectSelectionSlot: typeof import('./src/views/demos/forms/form-elements/select/DemoSelectSelectionSlot.vue')['default']
     DemoSelectVariant: typeof import('./src/views/demos/forms/form-elements/select/DemoSelectVariant.vue')['default']
+    DemoSimpleTableBasic: typeof import('./src/views/demos/forms/tables/simple-table/DemoSimpleTableBasic.vue')['default']
     DemoSimpleTableBasics: typeof import('./src/views/demos/forms/tables/simple-table/DemoSimpleTableBasics.vue')['default']
     DemoSimpleTableDensity: typeof import('./src/views/demos/forms/tables/simple-table/DemoSimpleTableDensity.vue')['default']
     DemoSimpleTableFixedHeader: typeof import('./src/views/demos/forms/tables/simple-table/DemoSimpleTableFixedHeader.vue')['default']

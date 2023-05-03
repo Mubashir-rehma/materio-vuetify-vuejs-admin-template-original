@@ -98,6 +98,20 @@
 
   th {
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
-    font-weight: bold !important;
+    font-size: 0.75rem;
+
+    .v-data-table-header__content {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+// 👉 datatable
+.v-data-table {
+  .v-data-table__thead {
+    .v-data-table__td {
+      background: rgb(var(--v-table-header-background));
+    }
   }
 }

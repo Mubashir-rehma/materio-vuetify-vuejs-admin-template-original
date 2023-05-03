@@ -932,7 +932,10 @@ mock.onGet('/apps/invoices').reply(config => {
     invoice => (
       (
         invoice.client.name.toLowerCase().includes(queryLowered)
-        || invoice.client.companyEmail.toLowerCase().includes(queryLowered))
+        || invoice.client.companyEmail.toLowerCase().includes(queryLowered)
+        || invoice.total.toString().includes(queryLowered)
+        || invoice.issuedDate.toString().includes(queryLowered)
+        || invoice.id.toString().includes(queryLowered))
         && invoice.invoiceStatus === (status || invoice.invoiceStatus)
     ),
   ).reverse()

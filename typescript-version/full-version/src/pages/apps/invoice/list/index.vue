@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Invoice } from '@/@fake-db/types'
+import { paginationMeta } from '@/@fake-db/utils'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
-
 import type { Options } from '@core/types'
 import { avatarText } from '@core/utils/formatters'
 
@@ -12,7 +12,6 @@ const invoiceListStore = useInvoiceStore()
 const searchQuery = ref('')
 const dateRange = ref('')
 const selectedStatus = ref()
-const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
@@ -29,13 +28,13 @@ const isLoading = ref(false)
 
 // 👉 headers
 const headers = [
-  { title: '#ID', key: 'id' },
+  { title: '#', key: 'id' },
   { title: 'Trending', key: 'trending', sortable: false },
-  { title: 'Client', key: 'client' },
-  { title: 'Total', key: 'total' },
-  { title: 'Date', key: 'date' },
-  { title: 'Balance', key: 'balance' },
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'CLIENT', key: 'client' },
+  { title: 'TOTAL', key: 'total' },
+  { title: 'DATE', key: 'date' },
+  { title: 'BALANCE', key: 'balance' },
+  { title: 'ACTION', key: 'action', sortable: false },
 ]
 
 // 👉 Fetch Invoices
@@ -51,7 +50,6 @@ const fetchInvoices = (query: string, currentStatus: string, firstDate: string, 
     },
   ).then(response => {
     invoices.value = response.data.invoices
-    totalPage.value = response.data.totalPage
     totalInvoices.value = response.data.totalInvoices
   }).catch(error => {
     console.log(error)
@@ -150,6 +148,7 @@ watchEffect(() => {
             <VSelect
               v-model="selectedStatus"
               label="Select Status"
+              density="default"
               clearable
               clear-icon="mdi-close"
               :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
@@ -165,6 +164,7 @@ watchEffect(() => {
               v-model="dateRange"
               label="Invoice Date"
               clear-icon="mdi-close"
+              density="default"
               clearable
               :config="{ mode: 'range' }"
             />
@@ -175,11 +175,11 @@ watchEffect(() => {
 
     <VCard id="invoice-list">
       <VCardText class="d-flex align-center flex-wrap gap-4">
-        <!-- 👉 Actions  -->
+        <!-- 👉 Action  -->
         <div class="me-3">
           <VSelect
             density="compact"
-            label="Actions"
+            label="Action"
             :items="['Delete', 'Edit', 'Send']"
             class="invoice-list-actions"
             :disabled="!selectedRows.length"
@@ -199,10 +199,7 @@ watchEffect(() => {
           </div>
 
           <!-- 👉 Create invoice -->
-          <VBtn
-            prepend-icon="mdi-plus"
-            :to="{ name: 'apps-invoice-add' }"
-          >
+          <VBtn :to="{ name: 'apps-invoice-add' }">
             Create invoice
           </VBtn>
         </div>
@@ -215,18 +212,20 @@ watchEffect(() => {
         v-model="selectedRows"
         v-model:items-per-page="options.itemsPerPage"
         v-model:page="options.page"
+        :search="searchQuery"
         :loading="isLoading"
         show-select
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        class="text-no-wrap"
         @update:options="options = $event"
       >
         <!-- Trending Header -->
         <template #column.trending>
           <VIcon
             size="22"
-            icon="mdi-trending-up"
+            icon="mdi-arrow-up"
           />
         </template>
 
@@ -291,29 +290,37 @@ watchEffect(() => {
 
         <!-- Total -->
         <template #item.total="{ item }">
-          ${{ item.raw.total }}
+          <span class="text-sm">
+            ${{ item.raw.total }}
+          </span>
         </template>
 
         <!-- Date -->
         <template #item.date="{ item }">
-          {{ item.raw.issuedDate }}
+          <span class="text-sm">
+            {{ item.raw.issuedDate }}
+          </span>
         </template>
 
         <!-- Balance -->
         <template #item.balance="{ item }">
-          <VChip :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color">
-            <template v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'">
-              {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
-            </template>
-
-            <template v-else>
-              {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
-            </template>
+          <VChip
+            v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'"
+            :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color"
+            density="comfortable"
+          >
+            {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
           </VChip>
+          <span
+            v-else
+            class="text-high-emphasis text-sm"
+          >
+            {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
+          </span>
         </template>
 
         <!-- Actions -->
-        <template #item.actions="{ item }">
+        <template #item.action="{ item }">
           <IconBtn @click="deleteInvoice(item.raw.id)">
             <VIcon icon="mdi-delete-outline" />
           </IconBtn>
@@ -326,6 +333,43 @@ watchEffect(() => {
             :menu-list="computedMoreList(item.raw.id)"
             item-props
           />
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end gap-x-6 py-1">
+            <div class="d-flex align-center gap-x-2 text-sm">
+              Rows Per Page:
+              <VSelect
+                v-model="options.itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                density="compact"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+            <span class="d-flex align-center text-sm">{{ paginationMeta(options, totalInvoices) }}</span>
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                icon="mdi-chevron-left"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="options.page <= 1"
+                @click="options.page <= 1 ? options.page = 1 : options.page--"
+              />
+              <VBtn
+                icon="mdi-chevron-right"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="options.page >= Math.ceil(totalInvoices / options.itemsPerPage)"
+                @click="options.page >= Math.ceil(totalInvoices / options.itemsPerPage) ? options.page = Math.ceil(totalInvoices / options.itemsPerPage) : options.page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
       <!-- !SECTION -->

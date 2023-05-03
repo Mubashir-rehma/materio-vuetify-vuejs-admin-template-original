@@ -255,7 +255,7 @@ const refreshOpenedEmail = async () => {
 
             <!-- Mark unread/read -->
             <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
-              <VIcon :icon="isAllMarkRead ? 'tabler-mail' : 'tabler-mail-opened'" />
+              <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
             </IconBtn>
 
             <!-- Move to folder -->

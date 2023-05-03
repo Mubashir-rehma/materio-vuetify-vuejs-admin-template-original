@@ -1,6 +1,7 @@
 $shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
 $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
 $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
+/* stylelint-disable-next-line max-line-length */
 $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 @forward "../../../base/libs/vuetify/variables" with (
@@ -215,7 +216,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   // 👉 Tabs
   $tabs-height: 40px !default,
 
-  // 👉 Timeline 
+  // 👉 Timeline
   $timeline-dot-size: 34px !default,
   $timeline-dot-divider-background: transparent !default,
 
@@ -224,4 +225,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
 
   // 👉 Navigation Drawer
   $navigation-drawer-scrim-opacity:0.5 !default,
+
+  // 👉 Table
+  $table-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
 );

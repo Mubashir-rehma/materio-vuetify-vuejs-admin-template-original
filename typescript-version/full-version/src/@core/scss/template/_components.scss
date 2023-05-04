@@ -105,13 +105,15 @@
       justify-content: space-between;
     }
   }
+
+  .v-selection-control {
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
+    font-size: 1rem;
+  }
 }
 
-// 👉 data-table
 .v-data-table {
-  .v-data-table__thead {
-    .v-data-table__td {
-      background: rgb(var(--v-table-header-background));
-    }
+  th {
+    background: rgb(var(--v-table-header-background)) !important;
   }
 }

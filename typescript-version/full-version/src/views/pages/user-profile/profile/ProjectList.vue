@@ -13,7 +13,7 @@ const projectTableHeaders = [
   { title: 'PROJECT', key: 'project' },
   { title: 'LEADER', key: 'leader' },
   { title: 'PROGRESS', key: 'progress' },
-  { title: 'Action', key: 'Action', sortable: false },
+  { title: 'ACTION', key: 'Action', sortable: false },
 ]
 
 const projects = [
@@ -104,7 +104,9 @@ const moreList = [
     <VDataTable
       :headers="projectTableHeaders"
       :items="projects"
+      show-select
       hide-default-footer
+      class="text-high-emphasis text-sm"
     >
       <!-- projects -->
       <template #item.project="{ item }">
@@ -123,6 +125,17 @@ const moreList = [
             </p>
           </div>
         </div>
+      </template>
+
+      <!-- Progress -->
+      <template #item.progress="{ item }">
+        <span class="text-sm text-high-emphasis">{{ item.raw.progress }}%</span>
+        <VProgressLinear
+          :height="6"
+          :model-value="item.raw.progress"
+          rounded
+          :color="resolveUserProgressVariant(item.raw.progress)"
+        />
       </template>
 
       <!-- Action -->

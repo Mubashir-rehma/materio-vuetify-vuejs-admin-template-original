@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/@fake-db/types'
+import { paginationMeta } from '@/@fake-db/utils'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import type { Options } from '@core/types'
@@ -26,12 +27,12 @@ const options = ref<Options>({
 
 // Headers
 const headers = [
-  { title: 'User', key: 'user' },
-  { title: 'Email', key: 'email' },
-  { title: 'Role', key: 'role' },
-  { title: 'Plan', key: 'plan' },
-  { title: 'Status', key: 'status' },
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'USER', key: 'user' },
+  { title: 'EMAIL', key: 'email' },
+  { title: 'ROLE', key: 'role' },
+  { title: 'PLAN', key: 'plan' },
+  { title: 'STATUS', key: 'status' },
+  { title: 'ACTION', key: 'actions', sortable: false },
 ]
 
 // 👉 Fetching users
@@ -140,6 +141,7 @@ const deleteUser = (id: number) => {
               v-model="selectedRole"
               label="Select Role"
               :items="roles"
+              density="default"
               clearable
               clear-icon="mdi-close"
             />
@@ -153,6 +155,7 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedPlan"
               label="Select Plan"
+              density="default"
               :items="plans"
               clearable
               clear-icon="mdi-close"
@@ -167,6 +170,7 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedStatus"
               label="Select Status"
+              density="default"
               :items="status"
               clearable
               clear-icon="mdi-close"
@@ -180,7 +184,7 @@ const deleteUser = (id: number) => {
       <VCardText class="d-flex flex-wrap gap-4">
         <!-- 👉 Export button -->
         <VBtn
-          variant="tonal"
+          variant="outlined"
           color="secondary"
           prepend-icon="mdi-tray-arrow-up"
         >
@@ -207,7 +211,7 @@ const deleteUser = (id: number) => {
 
       <VDivider />
 
-      <!-- SECTION datatable -->
+      <!-- SECTION data table -->
       <VDataTableServer
         v-model:items-per-page="options.itemsPerPage"
         v-model:page="options.page"
@@ -248,9 +252,16 @@ const deleteUser = (id: number) => {
           </div>
         </template>
 
+        <!-- Email -->
+        <template #item.email="{ item }">
+          <span class="text-sm">
+            {{ item.raw.email }}
+          </span>
+        </template>
+
         <!-- Role -->
         <template #item.role="{ item }">
-          <div class="d-flex gap-4">
+          <div class="d-flex gap-2">
             <VIcon
               :icon="resolveUserRoleVariant(item.raw.role).icon"
               :color="resolveUserRoleVariant(item.raw.role).color"
@@ -261,14 +272,14 @@ const deleteUser = (id: number) => {
 
         <!-- Plan -->
         <template #item.plan="{ item }">
-          <span class="text-capitalize">{{ item.raw.currentPlan }}</span>
+          <span class="text-capitalize text-high-emphasis">{{ item.raw.currentPlan }}</span>
         </template>
 
         <!-- Status -->
         <template #item.status="{ item }">
           <VChip
             :color="resolveUserStatusVariant(item.raw.status)"
-            size="small"
+            density="comfortable"
             class="text-capitalize"
           >
             {{ item.raw.status }}
@@ -296,12 +307,14 @@ const deleteUser = (id: number) => {
                   </template>
                   <VListItemTitle>View</VListItemTitle>
                 </VListItem>
+
                 <VListItem link>
                   <template #prepend>
                     <VIcon icon="mdi-pencil-outline" />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
+
                 <VListItem @click="deleteUser(item.raw.id)">
                   <template #prepend>
                     <VIcon icon="mdi-delete-outline" />
@@ -311,6 +324,46 @@ const deleteUser = (id: number) => {
               </VList>
             </VMenu>
           </VBtn>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
+            <div class="d-flex align-center gap-x-2 text-sm">
+              Rows Per Page:
+              <VSelect
+                v-model="options.itemsPerPage"
+                class="per-page-select text-high-emphasis"
+                variant="plain"
+                density="compact"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <span class="d-flex align-center text-sm me-2 text-high-emphasis">{{ paginationMeta(options, totalUsers) }}</span>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                icon="mdi-chevron-left"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="options.page <= 1"
+                @click="options.page <= 1 ? options.page = 1 : options.page--"
+              />
+
+              <VBtn
+                icon="mdi-chevron-right"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="options.page >= Math.ceil(totalUsers / options.itemsPerPage)"
+                @click="options.page >= Math.ceil(totalUsers / options.itemsPerPage) ? options.page = Math.ceil(totalUsers / options.itemsPerPage) : options.page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
       <!-- SECTION -->

@@ -279,10 +279,12 @@ watchEffect(() => {
               />
               <span v-else>{{ avatarText(item.raw.client.name) }}</span>
             </VAvatar>
+
             <div class="d-flex flex-column">
               <h6 class="text-sm font-weight-medium mb-0">
                 {{ item.raw.client.name }}
               </h6>
+
               <span class="text-caption">{{ item.raw.client.companyEmail }}</span>
             </div>
           </div>
@@ -311,6 +313,7 @@ watchEffect(() => {
           >
             {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
           </VChip>
+
           <span
             v-else
             class="text-high-emphasis text-sm"
@@ -344,13 +347,15 @@ watchEffect(() => {
               Rows Per Page:
               <VSelect
                 v-model="options.itemsPerPage"
-                class="per-page-select"
+                class="per-page-select text-high-emphasis"
                 variant="plain"
                 density="compact"
                 :items="[10, 20, 25, 50, 100]"
               />
             </div>
-            <span class="d-flex align-center text-sm">{{ paginationMeta(options, totalInvoices) }}</span>
+
+            <span class="d-flex align-center text-sm text-high-emphasis">{{ paginationMeta(options, totalInvoices) }}</span>
+
             <div class="d-flex gap-x-2 align-center me-2">
               <VBtn
                 icon="mdi-chevron-left"
@@ -360,6 +365,7 @@ watchEffect(() => {
                 :disabled="options.page <= 1"
                 @click="options.page <= 1 ? options.page = 1 : options.page--"
               />
+
               <VBtn
                 icon="mdi-chevron-right"
                 density="comfortable"

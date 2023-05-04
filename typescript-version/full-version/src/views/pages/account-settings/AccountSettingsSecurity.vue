@@ -319,6 +319,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           :headers="recentDevicesHeaders"
           :items="recentDevices"
           hide-default-footer
+          class="text-sm"
         >
           <template #item.browser="{ item }">
             <div class="d-flex">
@@ -327,7 +328,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 :icon="item.raw.deviceIcon.icon"
                 :color="item.raw.deviceIcon.color"
               />
-              <span>
+              <span class="text-high-emphasis text-base">
                 {{ item.raw.browser }}
               </span>
             </div>

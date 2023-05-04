@@ -112,7 +112,7 @@ watchEffect(() => {
             <VIcon
               v-if="isHorizontalAndNotLastStep(index)"
               class="flip-in-rtl stepper-chevron-indicator mx-6"
-              size="24"
+              size="18"
               icon="mdi-chevron-right"
             />
           </div>

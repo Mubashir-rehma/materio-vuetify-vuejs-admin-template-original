@@ -240,10 +240,10 @@ const editPermission = (value: RoleDetails) => {
         </VCardText>
 
         <VCardText>
-          <p class="font-weight-medium text-xl mb-0">
+          <p class="text-h6 text-medium-emphasis mb-0">
             {{ item.role }}
           </p>
-          <div class="d-flex align-center">
+          <div class="d-flex align-start">
             <a
               href="javascript:void(0)"
               @click="editPermission(item.details)"
@@ -252,17 +252,12 @@ const editPermission = (value: RoleDetails) => {
             </a>
 
             <VSpacer />
-            <VBtn
-              color="default"
-              variant="text"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-content-copy"
-              />
-            </VBtn>
+
+            <VIcon
+              size="24"
+              icon="mdi-content-copy"
+              class="cursor-pointer"
+            />
           </div>
         </VCardText>
       </VCard>
@@ -294,9 +289,9 @@ const editPermission = (value: RoleDetails) => {
           </VCol>
 
           <VCol cols="7">
-            <VCardText class="d-flex flex-column align-end justify-end gap-2 h-100">
+            <VCardText class="d-flex flex-column align-end justify-start gap-2 h-100">
               <VBtn>Add Role</VBtn>
-              <span>Add role, if it doesn't exist.</span>
+              <span class="text-end">Add new role, if it doesn't exist.</span>
             </VCardText>
           </VCol>
         </VRow>

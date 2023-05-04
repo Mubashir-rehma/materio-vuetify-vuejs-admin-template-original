@@ -6,7 +6,7 @@ import UserList from '@/views/apps/roles/UserList.vue'
 <template>
   <VRow>
     <VCol cols="12">
-      <h5 class="text-h5">
+      <h5 class="text-h5 mb-1">
         Roles List
       </h5>
       <p class="text-sm mb-0">
@@ -20,7 +20,7 @@ import UserList from '@/views/apps/roles/UserList.vue'
     </VCol>
 
     <VCol cols="12">
-      <h5 class="text-h5 mt-5">
+      <h5 class="text-h5 mt-5 mb-1">
         Total users with their roles
       </h5>
       <p class="text-sm mb-6">

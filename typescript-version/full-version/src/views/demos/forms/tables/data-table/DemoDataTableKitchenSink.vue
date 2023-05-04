@@ -116,7 +116,7 @@ onMounted(() => {
             />
           </div>
           <div class="d-flex flex-column ms-3">
-            <span class="d-block font-weight-medium text-truncate text--primary">{{ item.raw.product.name }}</span>
+            <span class="d-block font-weight-medium text-truncate text-high-emphasis">{{ item.raw.product.name }}</span>
             <span class="text-xs">{{ item.raw.product.brand }}</span>
           </div>
         </div>

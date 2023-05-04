@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/@fake-db/types'
+import { paginationMeta } from '@/@fake-db/utils'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import type { Options } from '@core/types'
@@ -25,12 +26,12 @@ const options = ref<Options>({
 })
 
 const headers = [
-  { title: 'User', key: 'user' },
-  { title: 'Email', key: 'email' },
-  { title: 'Role', key: 'role' },
-  { title: 'Plan', key: 'plan' },
-  { title: 'Status', key: 'status' },
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'USER', key: 'user' },
+  { title: 'EMAIL', key: 'email' },
+  { title: 'ROLE', key: 'role' },
+  { title: 'PLAN', key: 'plan' },
+  { title: 'STATUS', key: 'status' },
+  { title: 'ACTION', key: 'actions', sortable: false },
 ]
 
 // 👉 Fetching users
@@ -100,14 +101,6 @@ const addNewUser = (userData: UserProperties) => {
   // refetch User
   fetchUsers()
 }
-
-// 👉 Delete user
-const deleteUser = (id: number) => {
-  userListStore.deleteUser(id)
-
-  // refetch User
-  fetchUsers()
-}
 </script>
 
 <template>
@@ -116,7 +109,7 @@ const deleteUser = (id: number) => {
       <VCardText class="d-flex flex-wrap gap-4">
         <!-- 👉 Export button -->
         <VBtn
-          variant="tonal"
+          variant="outlined"
           color="secondary"
           prepend-icon="mdi-tray-arrow-up"
         >
@@ -157,6 +150,7 @@ const deleteUser = (id: number) => {
         :items-length="totalUsers"
         :headers="headers"
         show-select
+        class="text-no-wrap"
         @update:options="options = $event"
       >
         <!-- User -->
@@ -174,8 +168,9 @@ const deleteUser = (id: number) => {
               />
               <span v-else>{{ avatarText(item.raw.fullName) }}</span>
             </VAvatar>
+
             <div class="d-flex flex-column">
-              <h6 class="text-sm">
+              <h6 class="text-sm font-weight-medium">
                 <RouterLink
                   :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }"
                   class="font-weight-medium user-list-name"
@@ -183,6 +178,7 @@ const deleteUser = (id: number) => {
                   {{ item.raw.fullName }}
                 </RouterLink>
               </h6>
+
               <span class="text-xs text-medium-emphasis">@{{ item.raw.username }}</span>
             </div>
           </div>
@@ -190,25 +186,31 @@ const deleteUser = (id: number) => {
 
         <!-- Role -->
         <template #item.role="{ item }">
-          <div class="d-flex gap-4">
+          <div class="d-flex gap-2">
             <VIcon
               :icon="resolveUserRoleVariant(item.raw.role).icon"
               :color="resolveUserRoleVariant(item.raw.role).color"
             />
+
             <span class="text-capitalize">{{ item.raw.role }}</span>
           </div>
         </template>
 
+        <!-- email -->
+        <template #item.email="{ item }">
+          <span class="text-sm">{{ item.raw.email }}</span>
+        </template>
+
         <!-- Plan -->
         <template #item.plan="{ item }">
-          <span class="text-capitalize">{{ item.raw.currentPlan }}</span>
+          <span class="text-capitalize text-high-emphasis">{{ item.raw.currentPlan }}</span>
         </template>
 
         <!-- Status -->
         <template #item.status="{ item }">
           <VChip
             :color="resolveUserStatusVariant(item.raw.status)"
-            size="small"
+            density="comfortable"
             class="text-capitalize"
           >
             {{ item.raw.status }}
@@ -222,35 +224,53 @@ const deleteUser = (id: number) => {
             variant="text"
             size="small"
             color="medium-emphasis"
+            :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }"
           >
             <VIcon
               size="24"
-              icon="mdi-dots-vertical"
+              icon="mdi-eye-outline"
             />
-
-            <VMenu activator="parent">
-              <VList>
-                <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }">
-                  <template #prepend>
-                    <VIcon icon="mdi-eye-outline" />
-                  </template>
-                  <VListItemTitle>View</VListItemTitle>
-                </VListItem>
-                <VListItem link>
-                  <template #prepend>
-                    <VIcon icon="mdi-pencil-outline" />
-                  </template>
-                  <VListItemTitle>Edit</VListItemTitle>
-                </VListItem>
-                <VListItem @click="deleteUser(item.raw.id)">
-                  <template #prepend>
-                    <VIcon icon="mdi-delete-outline" />
-                  </template>
-                  <VListItemTitle>Delete</VListItemTitle>
-                </VListItem>
-              </VList>
-            </VMenu>
           </VBtn>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
+            <div class="d-flex align-center gap-x-2 text-sm">
+              Rows Per Page:
+              <VSelect
+                v-model="options.itemsPerPage"
+                class="per-page-select text-high-emphasis"
+                variant="plain"
+                density="compact"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <span class="d-flex align-center text-sm me-2 text-high-emphasis">{{ paginationMeta(options, totalUsers) }}</span>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                icon="mdi-chevron-left"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="options.page <= 1"
+                @click="options.page <= 1 ? options.page = 1 : options.page--"
+              />
+
+              <VBtn
+                icon="mdi-chevron-right"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="options.page >= Math.ceil(totalUsers / options.itemsPerPage)"
+                @click="options.page >= Math.ceil(totalUsers / options.itemsPerPage) ? options.page = Math.ceil(totalUsers / options.itemsPerPage) : options.page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
       <!-- SECTION -->

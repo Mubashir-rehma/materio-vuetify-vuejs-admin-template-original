@@ -146,6 +146,7 @@ const recentDevices = [
           :items="recentDevices"
           :headers="recentDeviceHeader"
           hide-default-footer
+          class="text-sm text-no-wrap"
         >
           <template #item.browser="{ item }">
             <div class="d-flex">
@@ -154,7 +155,9 @@ const recentDevices = [
                 :size="22"
                 class="me-3"
               />
-              {{ item.raw.browser }}
+              <span class="text-high-emphasis text-base">
+                {{ item.raw.browser }}
+              </span>
             </div>
           </template>
           <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->

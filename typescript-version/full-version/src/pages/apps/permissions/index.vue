@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Permission } from '@/@fake-db/types'
+import { paginationMeta } from '@/@fake-db/utils'
 import axios from '@axios'
 import type { Options } from '@core/types'
 
 // 👉 headers
 const headers = [
-  { title: 'Name', key: 'name' },
-  { title: 'Assigned To', key: 'assignedTo', sortable: false },
-  { title: 'Created Date', key: 'createdDate', sortable: false },
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'NAME', key: 'name' },
+  { title: 'ASSIGNED TO', key: 'assignedTo', sortable: false },
+  { title: 'CREATED DATE', key: 'createdDate', sortable: false },
+  { title: 'ACTION', key: 'actions', sortable: false },
 ]
 
 const permissions = ref<Permission[]>([])
@@ -97,8 +98,16 @@ const editPermission = (name: string) => {
           :items-length="totalPermissions"
           :headers="headers"
           :items="permissions"
+          class="text-no-wrap"
           @update:options="options = $event"
         >
+          <!-- name -->
+          <template #item.name="{ item }">
+            <span class="text-high-emphasis">
+              {{ item.raw.name }}
+            </span>
+          </template>
+
           <!-- Assigned To -->
           <template #item.assignedTo="{ item }">
             <!-- {{ item.raw.assignedTo }} -->
@@ -114,6 +123,7 @@ const editPermission = (name: string) => {
             </div>
           </template>
 
+          <!-- Created Date -->
           <template #item.createdDate="{ item }">
             <span class="text-sm text-medium-emphasis">{{ item.raw.createdDate }}</span>
           </template>
@@ -143,6 +153,43 @@ const editPermission = (name: string) => {
                 icon="mdi-delete-outline"
               />
             </VBtn>
+          </template>
+
+          <!-- Pagination -->
+          <template #bottom>
+            <VDivider />
+
+            <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
+              <div class="d-flex align-center gap-x-2 text-sm">
+                Rows Per Page:
+                <VSelect
+                  v-model="options.itemsPerPage"
+                  class="per-page-select text-high-emphasis"
+                  variant="plain"
+                  density="compact"
+                  :items="[10, 20, 25, 50, 100]"
+                />
+              </div>
+              <span class="d-flex align-center text-sm me-2 text-high-emphasis">{{ paginationMeta(options, totalPermissions) }}</span>
+              <div class="d-flex gap-x-2 align-center me-2">
+                <VBtn
+                  icon="mdi-chevron-left"
+                  variant="text"
+                  density="comfortable"
+                  color="default"
+                  :disabled="options.page <= 1"
+                  @click="options.page <= 1 ? options.page = 1 : options.page--"
+                />
+                <VBtn
+                  icon="mdi-chevron-right"
+                  density="comfortable"
+                  variant="text"
+                  color="default"
+                  :disabled="options.page >= Math.ceil(totalPermissions / options.itemsPerPage)"
+                  @click="options.page >= Math.ceil(totalPermissions / options.itemsPerPage) ? options.page = Math.ceil(totalPermissions / options.itemsPerPage) : options.page++ "
+                />
+              </div>
+            </div>
           </template>
         </VDataTableServer>
       </VCard>

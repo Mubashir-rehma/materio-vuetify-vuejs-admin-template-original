@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Invoice } from '@/@fake-db/types'
+import { paginationMeta } from '@/@fake-db/utils'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
 import type { Options } from '@core/types'
 
@@ -27,12 +28,12 @@ const isLoading = ref(false)
 // 👉 headers
 const headers = [
   { title: '#ID', key: 'id' },
-  { title: 'Trending', key: 'trending', sortable: false },
+  { title: 'TRENDING', key: 'trending', sortable: false },
 
-  { title: 'Total', key: 'total' },
-  { title: 'Date', key: 'date' },
+  { title: 'TOTAL', key: 'total' },
+  { title: 'ISSUED DATE', key: 'date' },
 
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'ACTIONS', key: 'actions', sortable: false },
 ]
 
 // 👉 Fetch Invoices
@@ -132,10 +133,10 @@ watchEffect(() => {
 
         <div class="d-flex align-center flex-wrap gap-4">
           <!-- 👉 Export invoice -->
-          <VBtn
-            prepend-icon="mdi-plus"
-            :to="{ name: 'apps-invoice-add' }"
-          >
+          <VBtn append-icon="mdi-chevron-down">
+            <VMenu activator="parent">
+              <VList :items="['PDF', 'XLSX', 'CSV']" />
+            </VMenu>
             Export
           </VBtn>
         </div>
@@ -151,6 +152,7 @@ watchEffect(() => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        class="text-sm"
         @update:options="options = $event"
       >
         <!-- Trending Header -->
@@ -184,12 +186,15 @@ watchEffect(() => {
                 />
               </VAvatar>
             </template>
+
             <p class="mb-0">
               {{ item.raw.invoiceStatus }}
             </p>
+
             <p class="mb-0">
               Balance: {{ item.raw.balance }}
             </p>
+
             <p class="mb-0">
               Due date: {{ item.raw.dueDate }}
             </p>
@@ -221,7 +226,48 @@ watchEffect(() => {
             item-props
           />
         </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end gap-x-6 py-1">
+            <div class="d-flex align-center gap-x-2 text-sm">
+              Rows Per Page:
+              <VSelect
+                v-model="options.itemsPerPage"
+                class="per-page-select text-high-emphasis"
+                variant="plain"
+                density="compact"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <span class="d-flex align-center text-sm text-high-emphasis">{{ paginationMeta(options, totalInvoices) }}</span>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                icon="mdi-chevron-left"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="options.page <= 1"
+                @click="options.page <= 1 ? options.page = 1 : options.page--"
+              />
+
+              <VBtn
+                icon="mdi-chevron-right"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="options.page >= Math.ceil(totalInvoices / options.itemsPerPage)"
+                @click="options.page >= Math.ceil(totalInvoices / options.itemsPerPage) ? options.page = Math.ceil(totalInvoices / options.itemsPerPage) : options.page++ "
+              />
+            </div>
+          </div>
+        </template>
       </VDataTableServer>
+
       <!-- !SECTION -->
       <VDivider />
     </VCard>

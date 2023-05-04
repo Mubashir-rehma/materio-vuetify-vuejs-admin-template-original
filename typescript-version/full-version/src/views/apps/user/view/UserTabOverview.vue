@@ -98,8 +98,8 @@ const resolveUserProgressVariant = (progress: number) => {
     <VCol cols="12">
       <VCard title="Project List">
         <VDivider />
-        <!-- 👉 User Project List Table -->
 
+        <!-- 👉 User Project List Table -->
         <!-- SECTION Datatable -->
         <VDataTable
           :headers="projectTableHeaders"
@@ -114,9 +114,10 @@ const resolveUserProgressVariant = (progress: number) => {
                 :image="item.raw.logo"
               />
               <div>
-                <p class="font-weight-medium mb-0">
+                <p class="font-weight-medium mb-0 text-high-emphasis text-sm">
                   {{ item.raw.name }}
                 </p>
+
                 <p class="text-xs text-medium-emphasis mb-0">
                   {{ item.raw.project }}
                 </p>
@@ -124,9 +125,23 @@ const resolveUserProgressVariant = (progress: number) => {
             </div>
           </template>
 
+          <!-- total tasks -->
+          <template #item.totalTask="{ item }">
+            <span class="text-sm text-high-emphasis">
+              {{ item.raw.totalTask }}
+            </span>
+          </template>
+
+          <!-- total hours -->
+          <template #item.hours="{ item }">
+            <span class="text-sm">
+              {{ item.raw.hours }}
+            </span>
+          </template>
+
           <!-- Progress -->
           <template #item.progress="{ item }">
-            <span>{{ item.raw.progress }}%</span>
+            <span class="text-sm text-high-emphasis">{{ item.raw.progress }}%</span>
             <VProgressLinear
               :height="6"
               :model-value="item.raw.progress"
@@ -161,12 +176,14 @@ const resolveUserProgressVariant = (progress: number) => {
                 <span class="app-timeline-title">
                   12 Invoices have been paid
                 </span>
+
                 <span class="app-timeline-meta">12 min ago</span>
               </div>
 
               <p class="app-timeline-text mb-2">
                 Invoices have been paid to the company
               </p>
+
               <div class="d-flex align-center mt-2">
                 <VIcon
                   color="error"
@@ -174,6 +191,7 @@ const resolveUserProgressVariant = (progress: number) => {
                   size="24"
                   class="me-2"
                 />
+
                 <h6 class="font-weight-medium text-sm">
                   Invoices.pdf
                 </h6>
@@ -188,6 +206,7 @@ const resolveUserProgressVariant = (progress: number) => {
                 <span class="app-timeline-title">
                   Meeting with john
                 </span>
+
                 <span class="app-timeline-meta">45 min ago</span>
               </div>
 
@@ -201,10 +220,12 @@ const resolveUserProgressVariant = (progress: number) => {
                   class="me-2"
                   :image="avatar2"
                 />
+
                 <div>
                   <h6 class="text-sm font-weight-medium mb-0">
                     John Doe (Client)
                   </h6>
+
                   <span class="text-xs">CEO of Kelly Group</span>
                 </div>
               </div>
@@ -218,6 +239,7 @@ const resolveUserProgressVariant = (progress: number) => {
                 <span class="app-timeline-title">
                   Create a new react project for client
                 </span>
+
                 <span class="app-timeline-meta">2 day ago</span>
               </div>
 
@@ -234,8 +256,10 @@ const resolveUserProgressVariant = (progress: number) => {
                 <span class="app-timeline-title">
                   12 Create invoices for client
                 </span>
+
                 <span class="app-timeline-meta">5 day ago</span>
               </div>
+
               <p class="app-timeline-text mb-0">
                 Weekly review of freshly prepared design for our new app.
               </p>

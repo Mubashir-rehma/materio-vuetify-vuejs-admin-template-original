@@ -26,6 +26,14 @@ export default [
     to: 'forms-form-layouts',
   },
   {
+    title: 'Form Wizard',
+    icon: { icon: 'mdi-align-vertical-distribute' },
+    children: [
+      { title: 'Numbered', to: 'forms-form-wizard-numbered' },
+      { title: 'Icons', to: 'forms-form-wizard-icons' },
+    ],
+  },
+  {
     title: 'Form Validation',
     icon: { icon: 'mdi-checkbox-marked-circle-outline' },
     to: 'forms-form-validation',

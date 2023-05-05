@@ -127,10 +127,12 @@
   "Permissions": "الأذونات",
   "Simple Table": "جدول بسيط",
   "Tables": "الجداول",
-  "DataTable": "جدول البيانات",
+  "Data Table": "جدول البيانات",
   "Apps": "التطبيقات",
   "Misc": "متفرقات",
   "Wizard Pages": "صفحات المعالج",
+  "Form Wizard": "معالج النموذج",
+  "Numbered": "مرقم",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

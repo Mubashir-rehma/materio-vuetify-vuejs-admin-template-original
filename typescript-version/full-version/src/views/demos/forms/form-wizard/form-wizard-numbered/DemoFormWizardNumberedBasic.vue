@@ -237,7 +237,7 @@ const onSubmit = () => {
           </VWindowItem>
         </VWindow>
 
-        <div class="d-flex justify-space-between mt-8">
+        <div class="d-flex justify-sm-space-between justify-center flex-wrap gap-4 mt-8">
           <VBtn
             color="secondary"
             variant="tonal"

@@ -172,10 +172,10 @@ const validateSocialLinkForm = () => {
               </VCol>
 
               <VCol cols="12">
-                <div class="d-flex justify-space-between">
+                <div class="d-flex justify-sm-space-between justify-center flex-wrap gap-4">
                   <VBtn
                     color="secondary"
-                    variant="tonal"
+                    variant="outlined"
                     disabled
                   >
                     <VIcon

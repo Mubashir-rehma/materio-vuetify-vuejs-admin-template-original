@@ -377,10 +377,10 @@ const onSubmit = () => {
           </VWindowItem>
         </VWindow>
 
-        <div class="d-flex justify-space-between mt-8">
+        <div class="d-flex justify-sm-space-between gap-4 flex-wrap justify-center mt-8">
           <VBtn
             color="secondary"
-            variant="tonal"
+            variant="outlined"
             :disabled="currentStep === 0"
             @click="currentStep--"
           >

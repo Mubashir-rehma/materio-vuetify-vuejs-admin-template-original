@@ -235,6 +235,15 @@ watchEffect(() => {
         }
       }
     }
+
+    .stepper-steps-completed {
+      .stepper-icon-step {
+        .stepper-icon {
+          background: rgba(var(--v-theme-primary), 0.08);
+          color: rgba(var(--v-theme-primary));
+        }
+      }
+    }
   }
 
   // 👉 stepper step with icon and  default

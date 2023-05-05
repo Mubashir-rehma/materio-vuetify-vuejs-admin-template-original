@@ -3,7 +3,7 @@ export interface DealDetails {
   code: string
   description: string
   offeredUItems: string[]
-  cartCondition: string | null
+  cartCondition: string | undefined
   dealDuration: string
   notification: {
     email: boolean
@@ -16,16 +16,16 @@ export interface DealDetails {
 export interface DealType {
   Offer: string
   discount: number | null
-  region: string | null
+  region: string | undefined
 }
 
 export interface DealUsage {
-  userType: string | null
+  userType: string | undefined
   maxUsers: number | null
   cartAmount: number | null
   promotionFree: number | null
-  paymentMethod: string | null
-  dealStatus: string | null
+  paymentMethod: string | undefined
+  dealStatus: string | undefined
   isSingleUserCustomer: boolean
 }
 

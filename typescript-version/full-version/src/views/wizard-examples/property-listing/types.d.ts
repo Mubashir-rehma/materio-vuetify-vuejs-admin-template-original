@@ -12,7 +12,7 @@ export interface PriceDetails {
   expectedPrice: number | null
   pricePerSqft: number | null
   maintenanceCharge: number | null
-  maintenancePeriod: string | null
+  maintenancePeriod: string | undefined
   bookingAmount: number | null
   otherAmount: number | null
   priceDisplayType: string
@@ -32,9 +32,9 @@ export interface PropertyArea {
 
 export interface PropertyDetails {
   propertyDealType: 'sell' | 'rent'
-  propertyType: string | null
+  propertyType: string | undefined
   zipCode: number | null
-  country: string | null
+  country: string | undefined
   state: string
   city: string
   landmark: string
@@ -46,7 +46,7 @@ export interface PropertyFeatures {
   floorNo: string
   bathroomCount: string
   isCommonArea: boolean
-  furnishedStatus: string | null
+  furnishedStatus: string | undefined
   furnishingDetails: string[]
   isCommonArea1: string
   isCommonArea2: string

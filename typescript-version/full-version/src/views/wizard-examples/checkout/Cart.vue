@@ -53,8 +53,13 @@ watch(() => props.currentStep, updateCartData)
       <VAlert
         color="success"
         variant="tonal"
-        icon="mdi-check-circle-outline"
       >
+        <template #prepend>
+          <VIcon
+            icon="mdi-check-circle-outline"
+            size="22"
+          />
+        </template>
         <VAlertTitle class="text-body-1 text-success mb-1">
           Available Offers
         </VAlertTitle>
@@ -87,7 +92,7 @@ watch(() => props.currentStep, updateCartData)
               @click="removeItem(item)"
             >
               <VIcon
-                size="20"
+                size="18"
                 icon="mdi-close"
               />
             </IconBtn>
@@ -107,14 +112,16 @@ watch(() => props.currentStep, updateCartData)
                 <h6 class="text-base font-weight-regular mb-4">
                   {{ item.name }}
                 </h6>
-                <div class="d-flex align-center text-no-wrap gap-2 text-base">
-                  <span class="text-disabled">Sold by:</span>
-                  <span class="text-primary">{{ item.seller }}</span>
+                <div class="d-flex align-center text-no-wrap gap-4 text-base">
+                  <div>
+                    <span class="text-disabled me-1">Sold by:</span>
+                    <span class="text-primary">{{ item.seller }}</span>
+                  </div>
                   <VChip
                     :color="item.inStock ? 'success' : 'error'"
                     density="compact"
                   >
-                    <span class="text-xs">
+                    <span class="text-xs font-weight-medium">
                       {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
                     </span>
                   </VChip>
@@ -144,12 +151,11 @@ watch(() => props.currentStep, updateCartData)
               >
                 <p class="text-base">
                   <span class="text-primary">${{ item.price }}</span>
-                  <span>/</span>
-                  <span class="text-decoration-line-through">${{ item.discountPrice }}</span>
+                  <span>/${{ item.discountPrice }}</span>
                 </p>
 
                 <div>
-                  <VBtn variant="tonal">
+                  <VBtn variant="outlined">
                     move to wishlist
                   </VBtn>
                 </div>
@@ -179,7 +185,7 @@ watch(() => props.currentStep, updateCartData)
       >
         <!-- 👉 payment offer -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-3">
+          <h6 class="text-base font-weight-medium mb-4">
             Offer
           </h6>
 
@@ -191,7 +197,7 @@ watch(() => props.currentStep, updateCartData)
             />
 
             <VBtn
-              variant="tonal"
+              variant="outlined"
               @click="updateCartData"
             >
               Apply
@@ -200,10 +206,10 @@ watch(() => props.currentStep, updateCartData)
 
           <!-- 👉 Gift wrap banner -->
           <div class="bg-var-theme-background rounded pa-5 mt-4">
-            <h6 class="text-base font-weight-medium mb-1">
+            <h6 class="text-base font-weight-medium mb-2">
               Buying gift for a loved one?
             </h6>
-            <p>
+            <p class="mb-2">
               Gift wrap and personalized message on card, Only for $2.
             </p>
 
@@ -218,7 +224,7 @@ watch(() => props.currentStep, updateCartData)
 
         <!-- 👉 Price details -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-3">
+          <h6 class="text-base font-weight-medium mb-4">
             Price Details
           </h6>
 
@@ -245,9 +251,9 @@ watch(() => props.currentStep, updateCartData)
               <span>Delivery Charges</span>
 
               <div>
-                <span class="text-decoration-line-through me-2">$5.00</span>
+                <span class="text-decoration-line-through text-disabled me-2">$5.00</span>
                 <VChip
-                  density="comfortable"
+                  density="compact"
                   color="success"
                 >
                   Free

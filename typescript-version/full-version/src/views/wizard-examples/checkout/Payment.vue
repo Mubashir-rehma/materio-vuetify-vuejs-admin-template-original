@@ -56,9 +56,14 @@ watch(() => prop.currentStep, updateCartData)
       <VAlert
         color="success"
         variant="tonal"
-        icon="mdi-check-circle-outline"
-        class="mb-4"
+        class="mb-6"
       >
+        <template #prepend>
+          <VIcon
+            icon="mdi-check-circle-outline"
+            size="22"
+          />
+        </template>
         <VAlertTitle class="text-body-1 text-success mb-1">
           Available Offers
         </VAlertTitle>
@@ -89,7 +94,7 @@ watch(() => prop.currentStep, updateCartData)
 
       <VWindow
         v-model="selectedPaymentMethod"
-        class="mt-5"
+        class="mt-3"
         style="max-width: 600px;"
       >
         <VWindowItem value="card">
@@ -99,6 +104,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardNumber"
                   type="number"
+                  density="default"
                   label="Card Number"
                 />
               </VCol>
@@ -109,6 +115,7 @@ watch(() => prop.currentStep, updateCartData)
               >
                 <VTextField
                   v-model="cardFormData.cardName"
+                  density="default"
                   label="Name"
                 />
               </VCol>
@@ -119,6 +126,7 @@ watch(() => prop.currentStep, updateCartData)
               >
                 <VTextField
                   v-model="cardFormData.cardExpiry"
+                  density="default"
                   label="Expiry"
                 />
               </VCol>
@@ -130,6 +138,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardCvv"
                   label="CVV"
+                  density="default"
                   type="number"
                 >
                   <template #append-inner>
@@ -150,10 +159,11 @@ watch(() => prop.currentStep, updateCartData)
               </VCol>
 
               <VCol cols="12">
-                <VSwitch
-                  v-model="cardFormData.isCardSave"
-                  label="Save Card for future billing?"
-                />
+                <VSwitch v-model="cardFormData.isCardSave">
+                  <template #label>
+                    <span class="text-high-emphasis">Save Card for future billing?</span>
+                  </template>
+                </VSwitch>
 
                 <div class="mt-4">
                   <VBtn
@@ -174,7 +184,10 @@ watch(() => prop.currentStep, updateCartData)
           </VForm>
         </VWindowItem>
 
-        <VWindowItem value="cash-on-delivery">
+        <VWindowItem
+          value="cash-on-delivery"
+          class="mt-3"
+        >
           <p class="text-base text-high-emphasis">
             Cash on Delivery is a type of payment method where the recipient make payment for the order at the time of delivery rather than in advance.
           </p>
@@ -184,7 +197,10 @@ watch(() => prop.currentStep, updateCartData)
           </VBtn>
         </VWindowItem>
 
-        <VWindowItem value="gift-card">
+        <VWindowItem
+          value="gift-card"
+          class="mt-3"
+        >
           <h6 class="text-base font-weight-medium mb-4">
             Enter Gift Card Details
           </h6>
@@ -236,10 +252,10 @@ watch(() => prop.currentStep, updateCartData)
           <div class="d-flex justify-space-between text-base">
             <span class="text-high-emphasis">Delivery Charges</span>
             <div v-if="checkoutPaymentDataLocal.deliverySpeed === 'free'">
-              <span class="text-decoration-line-through me-2">$5.00</span>
+              <span class="text-decoration-line-through text-disabled me-2">$5.00</span>
               <VChip
                 color="success"
-                size="small"
+                density="compact"
               >
                 Free
               </VChip>
@@ -262,7 +278,7 @@ watch(() => prop.currentStep, updateCartData)
             <span class="text-high-emphasis font-weight-medium">Deliver to:</span>
             <VChip
               color="primary"
-              size="small"
+              density="compact"
               class="text-capitalize"
             >
               {{ checkoutPaymentDataLocal.deliveryAddress }}
@@ -276,10 +292,10 @@ watch(() => prop.currentStep, updateCartData)
             <h6 class="text-base font-weight-medium">
               {{ item.title }}
             </h6>
-            <p class="text-base mb-1">
+            <p class="text-sm mb-1">
               {{ item.desc }}
             </p>
-            <p class="text-base mb-3">
+            <p class="text-sm mb-4">
               Mobile : {{ item.subtitle }}
             </p>
           </template>

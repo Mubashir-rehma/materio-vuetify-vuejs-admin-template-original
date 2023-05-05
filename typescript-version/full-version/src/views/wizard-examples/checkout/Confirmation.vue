@@ -30,17 +30,17 @@ const resolveDeliveryMethod = computed(() => {
 <template>
   <section class="text-base">
     <div class="text-center">
-      <h5 class="text-h5 mb-3">
+      <h5 class="text-h5 mb-4">
         Thank You! 😇
       </h5>
       <p>
-        Your order <span class="text-primary">#1536548131</span> has been placed!
+        Your order <span class="font-weight-medium text-high-emphasis">#1536548131</span> has been placed!
       </p>
       <p class="mb-0">
-        We sent an email to <span class="text-primary">john.doe@example.com</span> with your order confirmation and receipt.
+        We sent an email to <span class="font-weight-medium text-high-emphasis">john.doe@example.com</span> with your order confirmation and receipt.
       </p>
       <p>If the email hasn't arrived within two minutes, please check your spam folder to see if the email was routed there.</p>
-      <div class="d-flex align-center gap-2 justify-center">
+      <div class="d-flex align-center gap-1 justify-center">
         <VIcon
           size="20"
           icon="mdi-clock-outline"
@@ -56,8 +56,11 @@ const resolveDeliveryMethod = computed(() => {
         class="pa-5"
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
-        <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-map-marker-outline" />
+        <div class="d-flex align-center gap-2 text-high-emphasis mb-4">
+          <VIcon
+            icon="mdi-map-marker-outline"
+            size="20"
+          />
           <span class="text-base font-weight-medium">
             Shipping
           </span>
@@ -70,7 +73,7 @@ const resolveDeliveryMethod = computed(() => {
           <p class="mb-1">
             {{ item.title }}
           </p>
-          <p class="mb-3">
+          <p>
             {{ item.desc }}
           </p>
 
@@ -84,8 +87,11 @@ const resolveDeliveryMethod = computed(() => {
         class="pa-5"
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
-        <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-credit-card-outline" />
+        <div class="d-flex align-center gap-2 text-high-emphasis mb-4">
+          <VIcon
+            icon="mdi-credit-card-outline"
+            size="20"
+          />
           <span class="text-base font-weight-medium">
             Billing Address
           </span>
@@ -98,7 +104,7 @@ const resolveDeliveryMethod = computed(() => {
           <p class="mb-1">
             {{ item.title }}
           </p>
-          <p class="mb-3">
+          <p>
             {{ item.desc }}
           </p>
 
@@ -111,8 +117,11 @@ const resolveDeliveryMethod = computed(() => {
         md="4"
         class="pa-5"
       >
-        <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-archive-outline" />
+        <div class="d-flex align-center gap-2 text-high-emphasis mb-4">
+          <VIcon
+            icon="mdi-archive-outline"
+            size="20"
+          />
           <span class="text-base font-weight-medium">
             Shipping Method
           </span>
@@ -155,17 +164,19 @@ const resolveDeliveryMethod = computed(() => {
                 :class="$vuetify.display.width <= 700 ? 'flex-column' : 'flex-row'"
               >
                 <div>
-                  <h6 class="text-base font-weight-regular mb-4">
+                  <h6 class="text-base font-weight-medium mb-4">
                     {{ item.name }}
                   </h6>
-                  <div class="d-flex align-center text-no-wrap gap-2 text-base">
-                    <span class="text-disabled">Sold by:</span>
-                    <span class="text-primary">{{ item.seller }}</span>
+                  <div class="d-flex align-center text-no-wrap gap-4 text-base">
+                    <div>
+                      <span class="text-disabled me-1">Sold by:</span>
+                      <span class="text-primary">{{ item.seller }}</span>
+                    </div>
                     <VChip
                       :color="item.inStock ? 'success' : 'error'"
-                      density="compact"
+                      density="comfortable"
                     >
-                      <span class="text-xs">
+                      <span class="text-xs font-weight-medium">
                         {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
                       </span>
                     </VChip>
@@ -181,7 +192,7 @@ const resolveDeliveryMethod = computed(() => {
                   <p class="text-base mb-0">
                     <span class="text-primary">${{ item.price }}</span>
                     <span>/</span>
-                    <span class="text-decoration-line-through">${{ item.discountPrice }}</span>
+                    <span class="text-disabled">${{ item.discountPrice }}</span>
                   </p>
                 </div>
               </div>
@@ -196,22 +207,23 @@ const resolveDeliveryMethod = computed(() => {
       >
         <div class="border rounded">
           <div class="border-b pa-5">
-            <h6 class="text-base font-weight-medium mb-3">
+            <h6 class="text-base font-weight-medium mb-4">
               Price Details
             </h6>
 
-            <div class="d-flex align-center justify-space-between text-sm mb-3">
-              <span class="text-high-emphasis">Order Total</span>
+            <div class="d-flex align-center justify-space-between text-base mb-3">
+              <span>Order Total</span>
               <span>${{ props.checkoutData.orderAmount }}.00</span>
             </div>
 
-            <div class="d-flex align-center justify-space-between text-sm">
-              <span class="text-high-emphasis">Delivery Charges</span>
+            <div class="d-flex align-center justify-space-between text-base">
+              <span>Charges</span>
               <div v-if="props.checkoutData.deliverySpeed === 'free'">
-                <span class="text-decoration-line-through me-2">$5.00</span>
+                <span class="text-decoration-line-through text-disabled me-2">$5.00</span>
                 <VChip
                   color="success"
-                  size="small"
+                  density="comfortable"
+                  label
                 >
                   Free
                 </VChip>

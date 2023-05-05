@@ -26,6 +26,7 @@ watch(formData, () => {
         <!-- 👉 Expected Price  -->
         <VTextField
           v-model="formData.expectedPrice"
+          density="default"
           label="Expected Price"
           type="number"
           append-inner-icon="mdi-currency-usd"
@@ -40,6 +41,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.pricePerSqft"
           label="Price Per SQFT"
+          density="default"
           append-inner-icon="mdi-currency-usd"
           type="number"
           placeholder="500"
@@ -53,6 +55,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.maintenanceCharge"
           label="Maintenance Charge"
+          density="default"
           append-inner-icon="mdi-currency-usd"
           type="number"
           placeholder="50"
@@ -65,6 +68,7 @@ watch(formData, () => {
         <!-- 👉 Maintenance Period  -->
         <VSelect
           v-model="formData.maintenancePeriod"
+          density="default"
           label="Maintenance Period"
           :items="['Monthly', 'Quarterly', 'Half Yearly', 'Yearly']"
         />
@@ -76,6 +80,7 @@ watch(formData, () => {
         <!-- 👉 Booking/Token Amount  -->
         <VTextField
           v-model="formData.bookingAmount"
+          density="default"
           label="Booking/Token Amount"
           append-inner-icon="mdi-currency-usd"
           type="number"
@@ -90,6 +95,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.otherAmount"
           label="Other Amount"
+          density="default"
           append-inner-icon="mdi-currency-usd"
           type="number"
           placeholder="500"
@@ -102,7 +108,7 @@ watch(formData, () => {
         <!-- 👉 Show Price As  -->
         <VRadioGroup v-model="formData.priceDisplayType">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis text-sm">
               Show Price As
             </div>
           </template>
@@ -123,7 +129,7 @@ watch(formData, () => {
         sm="6"
       >
         <!-- 👉 Price Includes  -->
-        <div class="text-high-emphasis mb-2 text-base">
+        <div class="text-high-emphasis mb-2 text-sm">
           Price Includes
         </div>
         <VCheckbox

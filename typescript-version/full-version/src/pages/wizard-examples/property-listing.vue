@@ -44,7 +44,7 @@ const propertyListingData = ref<PropertyListingData>({
     expectedPrice: null,
     pricePerSqft: null,
     maintenanceCharge: null,
-    maintenancePeriod: null,
+    maintenancePeriod: undefined,
     bookingAmount: null,
     otherAmount: null,
     priceDisplayType: 'Negotiable',
@@ -55,7 +55,7 @@ const propertyListingData = ref<PropertyListingData>({
     floorNo: '',
     bathroomCount: '',
     isCommonArea: true,
-    furnishedStatus: null,
+    furnishedStatus: undefined,
     furnishingDetails: ['AC', 'TV', 'Fridge'],
     isCommonArea1: 'true',
     isCommonArea2: 'false',
@@ -72,9 +72,9 @@ const propertyListingData = ref<PropertyListingData>({
   },
   propertyDetails: {
     propertyDealType: 'sell',
-    propertyType: null,
+    propertyType: undefined,
     zipCode: null,
-    country: null,
+    country: undefined,
     state: '',
     city: '',
     landmark: '',
@@ -136,10 +136,10 @@ const onSubmit = () => {
             </VWindowItem>
           </VWindow>
 
-          <div class="d-flex justify-space-between mt-8">
+          <div class="d-flex justify-space-between mt-6">
             <VBtn
               color="secondary"
-              variant="tonal"
+              variant="outlined"
               :disabled="currentStep === 0"
               @click="currentStep--"
             >

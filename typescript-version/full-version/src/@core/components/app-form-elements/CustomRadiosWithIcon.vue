@@ -39,7 +39,7 @@ watch(selectedOption, () => {
           <slot :item="item">
             <div class="d-flex flex-column align-center text-center gap-2">
               <VIcon
-                size="32"
+                size="28"
                 :icon="item.icon"
                 class="text-high-emphasis"
               />

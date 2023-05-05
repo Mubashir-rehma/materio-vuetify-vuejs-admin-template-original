@@ -23,11 +23,13 @@ watch(formData, () => {
       cols="12"
       md="7"
     >
-      <h5 class="text-h5 mb-5">
+      <h5 class="text-h5 mb-4">
         Almost done! 🚀
       </h5>
 
-      <p>Confirm your deal details information and submit to create it.</p>
+      <p class="text-base">
+        Confirm your deal details information and submit to create it.
+      </p>
 
       <table class="text-base">
         <tr>
@@ -65,7 +67,7 @@ watch(formData, () => {
           <td>
             <p class="mb-2">
               <VChip
-                size="small"
+                density="compact"
                 color="warning"
               >
                 25PEROFF

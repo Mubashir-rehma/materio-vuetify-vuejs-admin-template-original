@@ -26,6 +26,7 @@ watch(formData, () => {
         <!-- 👉 Total Area -->
         <VTextField
           v-model="formData.totalArea"
+          density="default"
           label="Total Area"
           suffix="sq-ft"
           type="number"
@@ -39,6 +40,7 @@ watch(formData, () => {
         <!-- 👉 Carpet Area -->
         <VTextField
           v-model="formData.carpetArea"
+          density="default"
           label="Carpet Area"
           suffix="sq-ft"
           type="number"
@@ -52,6 +54,7 @@ watch(formData, () => {
         <!-- 👉 Plot Area -->
         <VTextField
           v-model="formData.plotArea"
+          density="default"
           label="Plot Area"
           suffix="sq-ft"
           type="number"
@@ -67,6 +70,7 @@ watch(formData, () => {
           v-model="formData.availableFrom"
           label="Available From"
           type="date"
+          density="default"
           format="YYYY-MM-DD"
         />
       </VCol>
@@ -77,7 +81,7 @@ watch(formData, () => {
         <!-- 👉 Possession Status -->
         <VRadioGroup v-model="formData.possessionStatus">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis font-weight-medium text-sm">
               Possession Status
             </div>
           </template>
@@ -100,7 +104,7 @@ watch(formData, () => {
         <!-- 👉 Transaction Type -->
         <VRadioGroup v-model="formData.transactionType">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis font-weight-medium text-sm">
               Transaction Type
             </div>
           </template>
@@ -123,7 +127,7 @@ watch(formData, () => {
         <!-- 👉 property Location -->
         <VRadioGroup v-model="formData.isOnMainRoad">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis font-weight-medium text-sm">
               Is Property Facing Main Road?
             </div>
           </template>
@@ -146,7 +150,7 @@ watch(formData, () => {
         <!-- 👉 Gated Colony -->
         <VRadioGroup v-model="formData.isGatedColony">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis font-weight-medium text-sm">
               Gated Colony
             </div>
           </template>

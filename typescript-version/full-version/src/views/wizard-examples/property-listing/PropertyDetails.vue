@@ -51,6 +51,7 @@ watch(formData, () => {
         <!-- 👉 Property Type -->
         <VSelect
           v-model="formData.propertyType"
+          density="default"
           label="Property type"
           :items="['Residential', 'Commercial']"
         />
@@ -63,6 +64,7 @@ watch(formData, () => {
         <!-- 👉 Zip Code -->
         <VTextField
           v-model="formData.zipCode"
+          density="default"
           label="Zip Code"
           type="number"
           placeholder="123456"
@@ -76,6 +78,7 @@ watch(formData, () => {
         <!-- 👉 Country -->
         <VSelect
           v-model="formData.country"
+          density="default"
           label="Country"
           :items="['India', 'UK', 'USA', 'AUS', 'Germany']"
         />
@@ -88,6 +91,7 @@ watch(formData, () => {
         <!-- 👉 State -->
         <VTextField
           v-model="formData.state"
+          density="default"
           label="State"
           placeholder="California"
         />
@@ -100,6 +104,7 @@ watch(formData, () => {
         <!-- 👉 City -->
         <VTextField
           v-model="formData.city"
+          density="default"
           label="City"
           placeholder="Los Angeles"
         />
@@ -112,6 +117,7 @@ watch(formData, () => {
         <!-- 👉 Landmark -->
         <VTextField
           v-model="formData.landmark"
+          density="default"
           label="Landmark"
           placeholder="Near to bus stop"
         />

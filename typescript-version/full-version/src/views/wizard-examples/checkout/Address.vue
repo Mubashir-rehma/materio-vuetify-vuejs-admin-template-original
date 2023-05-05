@@ -87,32 +87,36 @@ watch(() => props.currentStep, updateAddressData)
       >
         <template #default="{ item }">
           <div class="w-100">
-            <div class="d-flex justify-space-between mb-3">
+            <div class="d-flex justify-space-between align-center mb-4">
               <h6 class="text-base font-weight-medium">
                 {{ item.title }}
               </h6>
 
               <VChip
                 :color="resolveAddressBadgeColor[item.value]"
-                density="comfortable"
+                density="compact"
                 class="text-capitalize"
               >
                 {{ item.value }}
               </VChip>
             </div>
 
-            <p class="mb-0">
+            <p class="mb-0 text-sm">
               {{ item.desc }}
             </p>
-            <p>
+
+            <p class="text-sm mb-3">
               Mobile: {{ item.subtitle }}
             </p>
+
             <VDivider />
+
             <div class="pt-4">
               <a
                 href="#"
                 class="me-3"
               >Edit</a>
+
               <a href="#">Remove</a>
             </div>
           </div>
@@ -122,7 +126,7 @@ watch(() => props.currentStep, updateAddressData)
       <!-- 👉 Add New Address -->
       <VBtn
         variant="tonal"
-        class="mt-5 mb-8"
+        class="mt-4 mb-9"
       >
         Add New Address
       </VBtn>
@@ -143,7 +147,7 @@ watch(() => props.currentStep, updateAddressData)
             <div class="d-flex justify-end w-100 mb-n3">
               <VChip
                 :color="resolveDeliveryBadgeData[item.value].color"
-                size="small"
+                density="compact"
               >
                 {{
                   resolveDeliveryBadgeData[item.value].price === 'Free'
@@ -178,7 +182,7 @@ watch(() => props.currentStep, updateAddressData)
       >
         <!-- 👉 Delivery estimate date -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-5">
+          <h6 class="text-base font-weight-medium mb-4">
             Estimated Delivery Date
           </h6>
 
@@ -196,7 +200,7 @@ watch(() => props.currentStep, updateAddressData)
               </template>
 
               <VListItemSubtitle>{{ product.name }}</VListItemSubtitle>
-              <span class="font-weight-medium text-sm">
+              <span class="font-weight-medium text-sm text-medium-emphasis">
                 {{ product.estimatedDelivery }}
               </span>
             </VListItem>
@@ -207,7 +211,7 @@ watch(() => props.currentStep, updateAddressData)
 
         <!-- 👉 Price details -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-5">
+          <h6 class="text-base font-weight-medium mb-4">
             Price Details
           </h6>
 
@@ -219,13 +223,15 @@ watch(() => props.currentStep, updateAddressData)
           <div class="d-flex align-center justify-space-between">
             <span class="text-high-emphasis">Delivery Charges</span>
             <div>
-              <VChip
-                v-if="checkoutAddressDataLocal.deliverySpeed === 'free'"
-                density="comfortable"
-                color="success"
-              >
-                Free
-              </VChip>
+              <span v-if="checkoutAddressDataLocal.deliverySpeed === 'free'">
+                <span class="text-disabled text-decoration-line-through me-2">$5.00</span>
+                <VChip
+                  density="compact"
+                  color="success"
+                >
+                  Free
+                </VChip>
+              </span>
               <span v-else>${{ resolveDeliveryBadgeData[checkoutAddressDataLocal.deliverySpeed ].price }}.00</span>
             </div>
           </div>

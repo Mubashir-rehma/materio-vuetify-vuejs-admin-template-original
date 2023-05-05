@@ -25,6 +25,7 @@ watch(formData, () => {
       >
         <VSelect
           v-model="formData.userType"
+          density="default"
           label="User Type"
           :items="['All', 'Registered', 'Unregistered', 'Prime Member']"
         />
@@ -36,6 +37,7 @@ watch(formData, () => {
       >
         <VTextField
           v-model="formData.maxUsers"
+          density="default"
           label="Max Users"
           type="number"
         />
@@ -47,6 +49,7 @@ watch(formData, () => {
       >
         <VTextField
           v-model="formData.cartAmount"
+          density="default"
           label="Minimum Cart Amount"
           type="number"
         />
@@ -58,6 +61,7 @@ watch(formData, () => {
       >
         <VTextField
           v-model="formData.promotionFree"
+          density="default"
           label="Promotion Fee"
           type="number"
         />
@@ -69,6 +73,7 @@ watch(formData, () => {
       >
         <VSelect
           v-model="formData.paymentMethod"
+          density="default"
           label="Payment Method"
           :items="['Any', 'Credit Card', 'Net Banking', 'Wallet']"
         />
@@ -80,6 +85,7 @@ watch(formData, () => {
       >
         <VSelect
           v-model="formData.dealStatus"
+          density="default"
           label="Deal Status"
           :items="['Active', 'Inactive', 'Suspended', 'Abandoned']"
         />

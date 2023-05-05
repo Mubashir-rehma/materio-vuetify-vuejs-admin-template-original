@@ -31,14 +31,14 @@ const createDealData = ref<CreateDealData>({
   dealType: {
     Offer: 'percentage',
     discount: null,
-    region: null,
+    region: undefined,
   },
   dealDetails: {
     title: '',
     code: '',
     description: '',
     offeredUItems: [],
-    cartCondition: null,
+    cartCondition: undefined,
     dealDuration: '',
     notification: {
       email: false,
@@ -47,12 +47,12 @@ const createDealData = ref<CreateDealData>({
     },
   },
   dealUsage: {
-    userType: null,
+    userType: undefined,
     maxUsers: null,
     cartAmount: null,
     promotionFree: null,
-    paymentMethod: null,
-    dealStatus: null,
+    paymentMethod: undefined,
+    dealStatus: undefined,
     isSingleUserCustomer: false,
   },
   dealReviewComplete: {
@@ -110,10 +110,10 @@ const onSubmit = () => {
             </VWindowItem>
           </VWindow>
 
-          <div class="d-flex justify-space-between mt-8">
+          <div class="d-flex justify-space-between mt-5">
             <VBtn
               color="secondary"
-              variant="tonal"
+              variant="outlined"
               :disabled="currentStep === 0"
               @click="currentStep--"
             >

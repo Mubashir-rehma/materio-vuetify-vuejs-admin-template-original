@@ -26,6 +26,7 @@ watch(formData, () => {
         <!-- 👉 Bedrooms -->
         <VTextField
           v-model="formData.bedroomCount"
+          density="default"
           label="Bedrooms"
           placeholder="3"
         />
@@ -37,6 +38,7 @@ watch(formData, () => {
         <!-- 👉 Floor No -->
         <VTextField
           v-model="formData.floorNo"
+          density="default"
           label="Floor No"
           placeholder="12"
         />
@@ -48,6 +50,7 @@ watch(formData, () => {
         <!-- 👉 Bathrooms -->
         <VTextField
           v-model="formData.bathroomCount"
+          density="default"
           label="Bathroom"
           placeholder="4"
         />
@@ -59,6 +62,7 @@ watch(formData, () => {
         <!-- 👉 Furnished Status -->
         <VSelect
           v-model="formData.furnishedStatus"
+          density="default"
           label="Furnished Status"
           :items="['Fully Furnished', 'Furnished', 'Semi-Furnished', 'Unfurnished']"
         />
@@ -67,7 +71,9 @@ watch(formData, () => {
         <!-- 👉 Furnishing Details -->
         <VSelect
           v-model="formData.furnishingDetails"
+          density="default"
           label="Furnishing Details"
+          class="text-high-emphasis"
           multiple
           :items="['TV', 'AC', 'RO', 'Bed', 'Fridge', 'Wifi', 'Sofa', 'Cupboard', 'Microwave', 'Dining Table', 'Washing Machine']"
         />
@@ -79,7 +85,7 @@ watch(formData, () => {
         <!-- 👉 xCommon Area? -->
         <VRadioGroup v-model="formData.isCommonArea1">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis font-weight-medium text-sm">
               Is There Any Common Area?
             </div>
           </template>
@@ -102,7 +108,7 @@ watch(formData, () => {
         <!-- 👉 Common Area? -->
         <VRadioGroup v-model="formData.isCommonArea2">
           <template #label>
-            <div class="text-high-emphasis">
+            <div class="text-high-emphasis font-weight-medium text-sm">
               Is There Any Common Area?
             </div>
           </template>

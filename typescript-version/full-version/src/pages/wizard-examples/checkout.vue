@@ -84,6 +84,7 @@ const currentStep = ref(0)
       <AppStepper
         v-model:current-step="currentStep"
         class="checkout-stepper"
+        icon-size="60"
         :items="checkoutSteps"
         :direction="$vuetify.display.smAndUp ? 'horizontal' : 'vertical'"
       />

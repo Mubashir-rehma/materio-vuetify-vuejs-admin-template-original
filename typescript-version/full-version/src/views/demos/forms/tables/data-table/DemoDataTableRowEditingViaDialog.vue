@@ -140,7 +140,6 @@ onMounted(() => {
       <VChip
         :color="resolveStatusVariant(item.raw.status).color"
         density="comfortable"
-        size="small"
       >
         {{ resolveStatusVariant(item.raw.status).text }}
       </VChip>

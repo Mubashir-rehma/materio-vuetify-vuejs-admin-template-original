@@ -65,11 +65,11 @@ onMounted(() => {
       </div>
     </template>
 
+    <!-- status -->
     <template #item.status="{ item }">
       <VChip
         :color="resolveStatusVariant(item.raw.status).color"
         class="font-weight-medium"
-        density="comfortable"
         size="small"
       >
         {{ resolveStatusVariant(item.raw.status).text }}
@@ -78,34 +78,24 @@ onMounted(() => {
 
     <template #bottom>
       <VCardText class="pt-2">
-        <VRow>
-          <VCol
-            lg="2"
-            cols="3"
-          >
-            <VTextField
-              v-model="options.itemsPerPage"
-              label="Rows per page:"
-              type="number"
-              min="-1"
-              max="15"
-              hide-details
-              variant="underlined"
-            />
-          </VCol>
+        <div class="d-flex flex-wrap justify-center justify-sm-space-between gap-y-2 mt-2">
+          <VTextField
+            v-model="options.itemsPerPage"
+            label="Rows per page:"
+            type="number"
+            min="-1"
+            max="15"
+            hide-details
+            variant="underlined"
+            style="min-width: 5rem;max-width: 8rem;"
+          />
 
-          <VCol
-            lg="10"
-            cols="9"
-            class="d-flex justify-end"
-          >
-            <VPagination
-              v-model="options.page"
-              total-visible="5"
-              :length="Math.ceil(userList.length / options.itemsPerPage)"
-            />
-          </VCol>
-        </VRow>
+          <VPagination
+            v-model="options.page"
+            :total-visible="$vuetify.display.smAndDown ? 3 : 5"
+            :length="Math.ceil(userList.length / options.itemsPerPage)"
+          />
+        </div>
       </VCardText>
     </template>
   </VDataTable>

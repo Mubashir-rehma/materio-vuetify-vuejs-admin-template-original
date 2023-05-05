@@ -348,7 +348,6 @@ const resolveStatusVariant = (status: string) => {
     <template #item.status="{ item }">
       <VChip
         :color="resolveStatusVariant(item.raw.status).color"
-        density="comfortable"
         size="small"
         class="font-weight-medium"
       >

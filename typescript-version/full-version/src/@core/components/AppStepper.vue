@@ -14,6 +14,7 @@ interface Props {
   direction?: Direction
   iconSize?: string | number
   isActiveStepValid?: boolean
+  align?: 'start' | 'center' | 'end'
 }
 
 interface Emit {
@@ -25,6 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
   direction: 'horizontal',
   iconSize: 52,
   isActiveStepValid: undefined,
+  align: 'center',
 })
 
 const emit = defineEmits<Emit>()
@@ -68,6 +70,7 @@ watchEffect(() => {
     class="app-stepper"
     show-arrows
     :direction="props.direction"
+    :class="`app-stepper-${props.align}`"
   >
     <VSlideGroupItem
       v-for="(item, index) in props.items"
@@ -98,7 +101,7 @@ watchEffect(() => {
               </div>
 
               <div>
-                <p class="stepper-title text-base font-weight-medium mb-0">
+                <p class="stepper-title text-base mb-0">
                   {{ item.title }}
                 </p>
                 <span
@@ -236,7 +239,6 @@ watchEffect(() => {
 
   // 👉 stepper step with icon and  default
   .v-slide-group__content {
-    justify-content: center;
     row-gap: 1.5rem;
 
     .stepper-step-indicator {
@@ -289,6 +291,25 @@ watchEffect(() => {
       .step-subtitle {
         color: rgb(var(--v-theme-error)) !important;
       }
+    }
+  }
+
+  // 👉 stepper alignment
+  &.app-stepper-center {
+    .v-slide-group__content {
+      justify-content: center;
+    }
+  }
+
+  &.app-stepper-start {
+    .v-slide-group__content {
+      justify-content: start;
+    }
+  }
+
+  &.app-stepper-end {
+    .v-slide-group__content {
+      justify-content: end;
     }
   }
 }

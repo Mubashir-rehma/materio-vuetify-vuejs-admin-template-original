@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { CustomInputContent } from '@core/types'
 
+import registrationIllustration from '@images/pages/registration-multistep-illustration.png'
+
 const currentStep = ref(0)
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
@@ -51,7 +53,7 @@ const form = ref({
   address: '',
   landmark: '',
   city: '',
-  state: null,
+  state: undefined,
   selectedPlan: '0',
   cardNumber: '',
   cardName: '',
@@ -72,9 +74,14 @@ const onSubmit = () => {
   >
     <VCol
       md="4"
-      class="d-none d-md-flex"
+      class="d-none d-md-flex align-center justify-end pa-5"
     >
-      <!-- here your illustration -->
+      <VImg
+        :src="registrationIllustration"
+        class="auth-illustration"
+        max-width="360px"
+        height="630px"
+      />
     </VCol>
 
     <VCol
@@ -91,20 +98,20 @@ const onSubmit = () => {
           v-model:current-step="currentStep"
           :items="items"
           :direction="$vuetify.display.smAndUp ? 'horizontal' : 'vertical'"
-          class="mb-8"
+          class="mb-10"
         />
 
         <VWindow
           v-model="currentStep"
           class="disable-tab-transition"
-          style="max-width: 650px;"
+          style="max-width: 700px;"
         >
           <VForm>
             <VWindowItem>
               <h5 class="text-h5 mb-1">
-                Account Information
+                Personal Information
               </h5>
-              <p class="text-sm">
+              <p class="text-sm mb-5">
                 Enter Your Account Details
               </p>
 
@@ -116,6 +123,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.username"
                     label="Username"
+                    density="default"
                   />
                 </VCol>
 
@@ -125,6 +133,7 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.email"
+                    density="default"
                     label="Email"
                   />
                 </VCol>
@@ -138,6 +147,7 @@ const onSubmit = () => {
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                    density="default"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
                 </VCol>
@@ -151,6 +161,7 @@ const onSubmit = () => {
                     label="Confirm Password"
                     :type="isConfirmPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                    density="default"
                     @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                   />
                 </VCol>
@@ -158,6 +169,7 @@ const onSubmit = () => {
                 <VCol cols="12">
                   <VTextField
                     v-model="form.link"
+                    density="default"
                     label="Profile Link"
                     type="url"
                   />
@@ -180,6 +192,7 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.firstName"
+                    density="default"
                     label="First Name"
                   />
                 </VCol>
@@ -190,6 +203,7 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.lastName"
+                    density="default"
                     label="Last Name"
                   />
                 </VCol>
@@ -201,6 +215,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.mobile"
                     type="number"
+                    density="default"
                     label="Mobile"
                   />
                 </VCol>
@@ -211,6 +226,7 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.pincode"
+                    density="default"
                     type="number"
                     label="Pincode"
                   />
@@ -219,6 +235,7 @@ const onSubmit = () => {
                 <VCol cols="12">
                   <VTextField
                     v-model="form.address"
+                    density="default"
                     label="Address"
                   />
                 </VCol>
@@ -226,6 +243,7 @@ const onSubmit = () => {
                 <VCol cols="12">
                   <VTextField
                     v-model="form.landmark"
+                    density="default"
                     label="Landmark"
                   />
                 </VCol>
@@ -236,6 +254,7 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.city"
+                    density="default"
                     label="City"
                   />
                 </VCol>
@@ -246,6 +265,7 @@ const onSubmit = () => {
                 >
                   <VSelect
                     v-model="form.state"
+                    density="default"
                     label="State"
                     :items="['New York', 'California', 'Florida', 'Washington', 'Texas']"
                   />
@@ -337,7 +357,7 @@ const onSubmit = () => {
           </VForm>
         </VWindow>
 
-        <div class="d-flex justify-space-between mt-8">
+        <div class="d-flex justify-space-between mt-5">
           <VBtn
             color="secondary"
             :disabled="currentStep === 0"

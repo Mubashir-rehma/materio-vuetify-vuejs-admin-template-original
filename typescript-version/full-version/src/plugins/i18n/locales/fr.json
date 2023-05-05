@@ -130,6 +130,8 @@
   "Apps": "Applications",
   "Misc": "Divers",
   "Wizard Pages": "Pages de l'assistant",
+  "Form Wizard": "Assistant de formulaire",
+  "Numbered": "Numéroté",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

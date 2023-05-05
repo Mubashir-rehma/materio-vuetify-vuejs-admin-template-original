@@ -243,7 +243,7 @@ const editPermission = (value: RoleDetails) => {
           <p class="text-h6 text-medium-emphasis mb-0">
             {{ item.role }}
           </p>
-          <div class="d-flex align-start">
+          <div class="d-flex align-center">
             <a
               href="javascript:void(0)"
               @click="editPermission(item.details)"
@@ -253,11 +253,15 @@ const editPermission = (value: RoleDetails) => {
 
             <VSpacer />
 
-            <VIcon
-              size="24"
-              icon="mdi-content-copy"
-              class="cursor-pointer"
-            />
+            <IconBtn
+              size="small"
+              color="default"
+            >
+              <VIcon
+                size="24"
+                icon="mdi-content-copy"
+              />
+            </IconBtn>
           </div>
         </VCardText>
       </VCard>

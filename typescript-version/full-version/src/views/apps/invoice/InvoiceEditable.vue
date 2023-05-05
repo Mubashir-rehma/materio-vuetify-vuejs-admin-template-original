@@ -57,7 +57,7 @@ const removeProduct = (id: number) => {
           />
 
           <!-- 👉 Title -->
-          <h6 class="font-weight-medium text-xl text-uppercase">
+          <h6 class="text-xl text-uppercase">
             {{ themeConfig.app.title }}
           </h6>
         </div>
@@ -77,7 +77,7 @@ const removeProduct = (id: number) => {
       <!-- 👉 Right Content -->
       <div class="mb-3">
         <!-- 👉 Invoice Id -->
-        <h6 class="d-flex align-center font-weight-medium justify-sm-end text-xl mb-3">
+        <h6 class="d-flex align-center text-h6 justify-sm-end mb-4">
           <span
             class="me-3"
             style="inline-size: 6rem;"
@@ -94,7 +94,7 @@ const removeProduct = (id: number) => {
         </h6>
 
         <!-- 👉 Issue Date -->
-        <p class="d-flex align-center justify-sm-end mb-3">
+        <p class="d-flex align-center justify-sm-end mb-4">
           <span
             class="me-3"
             style="inline-size: 6rem;"
@@ -148,7 +148,7 @@ const removeProduct = (id: number) => {
           item-value="name"
           placeholder="Select Customer"
           return-object
-          class="mb-6"
+          class="mb-5"
           density="compact"
         />
         <p class="mb-1">
@@ -250,12 +250,14 @@ const removeProduct = (id: number) => {
           <VTextField
             v-model="props.data.salesperson"
             style="inline-size: 8rem;"
+            density="compact"
           />
         </div>
 
         <VTextField
           v-model="props.data.thanksNote"
           placeholder="Thanks for your business"
+          density="compact"
         />
       </div>
 
@@ -311,7 +313,7 @@ const removeProduct = (id: number) => {
     <VDivider class="mt-2" />
 
     <VCardText>
-      <p class="font-weight-medium mb-2">
+      <p class="text-base font-weight-medium mb-1">
         Note:
       </p>
       <VTextarea

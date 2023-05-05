@@ -132,7 +132,8 @@ watch(totalPrice, () => {
             item-title="title"
             item-value="title"
             label="Select Item"
-            class="mb-3"
+            class="mb-5"
+            density="compact"
           />
 
           <VTextarea
@@ -140,8 +141,10 @@ watch(totalPrice, () => {
             rows="3"
             label="Description"
             placeholder="Description"
+            density="compact"
           />
         </VCol>
+
         <VCol
           cols="12"
           md="2"
@@ -151,23 +154,28 @@ watch(totalPrice, () => {
             v-model="localProductData.cost"
             type="number"
             label="Cost"
+            density="compact"
           />
 
-          <div class="text-body-2 mt-4">
+          <div class="text-body-2 mt-5">
             <p class="mb-1">
               Discount
             </p>
+
             <span>0%</span>
+
             <span class="mx-2">
               0%
               <VTooltip activator="parent">Tax 1</VTooltip>
             </span>
+
             <span>
               0%
               <VTooltip activator="parent">Tax 2</VTooltip>
             </span>
           </div>
         </VCol>
+
         <VCol
           cols="12"
           md="2"
@@ -177,8 +185,10 @@ watch(totalPrice, () => {
             v-model="localProductData.hours"
             type="number"
             label="Hours"
+            density="compact"
           />
         </VCol>
+
         <VCol
           cols="12"
           md="2"
@@ -186,6 +196,7 @@ watch(totalPrice, () => {
         >
           <p class="my-2">
             <span class="d-inline d-md-none">Price: </span>
+
             <span class="text-body-1">${{ totalPrice }}</span>
           </p>
         </VCol>

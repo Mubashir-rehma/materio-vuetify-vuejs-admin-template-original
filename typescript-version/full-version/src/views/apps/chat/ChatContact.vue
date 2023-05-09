@@ -95,7 +95,6 @@ const isChatContactActive = computed(() => {
 
     .v-avatar {
       background: #fff;
-      outline: 2px solid #fff;
     }
   }
 

@@ -71,22 +71,22 @@ const userStatusRadioOptions = [
       :options="{ wheelPropagation: false }"
     >
       <!-- About -->
-      <div class="my-5 text-medium-emphasis">
+      <div class="my-6 text-medium-emphasis">
         <span
           for="textarea-user-about"
-          class="text-sm text-disabled"
+          class="text-sm text-disabled mb-1"
         >ABOUT</span>
         <VTextarea
           id="textarea-user-about"
           v-model="store.profileUser.about"
           auto-grow
           class="mt-1"
-          rows="4"
+          rows="3"
         />
       </div>
 
       <!-- Status -->
-      <div class="mb-5">
+      <div class="mb-6">
         <span class="text-sm text-disabled">STATUS</span>
         <VRadioGroup
           v-model="store.profileUser.status"
@@ -107,38 +107,38 @@ const userStatusRadioOptions = [
         <span class="text-sm text-disabled">SETTINGS</span>
         <div class="d-flex align-center my-3">
           <VIcon
-            class="me-2"
+            class="me-3"
             icon="mdi-check-circle-outline"
           />
-          <span>Two-step Verification</span>
+          <span class="text-sm">Two-step Verification</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
-            class="me-2"
+            class="me-3"
             icon="mdi-bell-outline"
           />
-          <span>Notification</span>
+          <span class="text-sm">Notification</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
-            class="me-2"
+            class="me-3"
             icon="mdi-account-outline"
           />
-          <span>Invite Friends</span>
+          <span class="text-sm">Invite Friends</span>
         </div>
         <div class="d-flex align-center">
           <VIcon
-            class="me-2"
+            class="me-3"
             icon="mdi-trash-can-outline"
           />
-          <span>Delete Account</span>
+          <span class="text-sm">Delete Account</span>
         </div>
       </div>
 
       <!-- Logout Button -->
       <VBtn
         color="primary"
-        class="mt-11"
+        class="mt-6"
       >
         Logout
       </VBtn>

@@ -193,7 +193,7 @@ const moreList = [
             </VBadge>
 
             <div class="flex-grow-1 ms-4 overflow-hidden">
-              <h6 class="text-base font-weight-regular">
+              <h6 class="text-base font-weight-regular text-medium-emphasis">
                 {{ store.activeChat.contact.fullName }}
               </h6>
               <span class="d-block text-sm text-truncate text-disabled">{{ store.activeChat.contact.role }}</span>
@@ -245,14 +245,20 @@ const moreList = [
           >
             <template #append-inner>
               <IconBtn>
-                <VIcon icon="mdi-microphone-outline" />
+                <VIcon
+                  icon="mdi-microphone-outline"
+                  size="22"
+                />
               </IconBtn>
 
               <IconBtn
                 class="me-4"
                 @click="refInputEl?.click()"
               >
-                <VIcon icon="mdi-attachment" />
+                <VIcon
+                  icon="mdi-attachment"
+                  size="22"
+                />
               </IconBtn>
 
               <VBtn @click="sendMessage">

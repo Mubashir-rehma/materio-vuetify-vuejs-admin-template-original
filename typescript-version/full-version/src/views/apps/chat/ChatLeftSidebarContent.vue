@@ -33,11 +33,12 @@ const store = useChatStore()
       location="bottom right"
       offset-x="3"
       offset-y="3"
+      size="8"
       :color="resolveAvatarBadgeVariant(store.profileUser.status)"
       bordered
     >
       <VAvatar
-        size="38"
+        size="40"
         class="cursor-pointer"
         @click="$emit('showUserProfile')"
       >

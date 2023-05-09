@@ -71,13 +71,13 @@ const pricingPlans = [
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
-    <h4 class="text-h4 pricing-title mb-4">
+    <h4 class="text-h5 pricing-title mb-4">
       {{ props.title ? props.title : 'Pricing Plans' }}
     </h4>
-    <p class="mb-0">
+    <p class="text-sm">
       All plans include 40+ advanced tools and features to boost your product.
+      Choose the best plan to fit your needs.
     </p>
-    <p>Choose the best plan to fit your needs.</p>
   </div>
 
   <!-- 👉 Annual and monthly price toggler -->

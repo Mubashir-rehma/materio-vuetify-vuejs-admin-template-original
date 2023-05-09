@@ -100,10 +100,10 @@ const membersList: Member[] = [
       />
 
       <VCardText>
-        <h5 class="text-h5 text-center mb-2">
+        <h5 class="text-h5 text-center mb-3">
           Share Project
         </h5>
-        <p class="text-sm-body-1 text-center">
+        <p class="text-sm text-center">
           Share project with a team members
         </p>
 
@@ -129,7 +129,7 @@ const membersList: Member[] = [
           </template>
         </VAutocomplete>
 
-        <h6 class="text-h6 mb-3 mt-8">
+        <h6 class="text-h6 mb-4 mt-8">
           8 Members
         </h6>
 
@@ -145,6 +145,7 @@ const membersList: Member[] = [
             <VListItemTitle class="text-sm">
               {{ member.name }}
             </VListItemTitle>
+
             <VListItemSubtitle>
               {{ member.email }}
             </VListItemSubtitle>
@@ -174,7 +175,7 @@ const membersList: Member[] = [
           </VListItem>
         </VList>
 
-        <div class="d-flex justify-space-between align-center flex-wrap gap-3 mt-4">
+        <div class="d-flex justify-space-between align-center flex-wrap gap-2 mt-4">
           <h6 class="text-sm font-weight-medium d-flex align-center">
             <VIcon
               icon="mdi-account-group-outline"

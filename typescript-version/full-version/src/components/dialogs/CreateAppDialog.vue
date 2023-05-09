@@ -162,10 +162,10 @@ const onSubmit = () => {
       />
 
       <VCardText class="pa-5 pa-sm-10">
-        <h5 class="text-h5 text-center mb-2">
+        <h5 class="text-h5 text-center mb-3">
           Create App
         </h5>
-        <p class="text-sm text-center mb-8">
+        <p class="text-sm text-center mb-6">
           Provide data with this form to create your app.
         </p>
 
@@ -197,7 +197,10 @@ const onSubmit = () => {
             >
               <!-- 👉 category -->
               <VWindowItem>
-                <VTextField label="Application Name" />
+                <VTextField
+                  label="Application Name"
+                  density="default"
+                />
 
                 <h6 class="text-h6 my-4">
                   Category
@@ -219,11 +222,14 @@ const onSubmit = () => {
                         />
                       </template>
 
-                      <VListItemTitle class="mb-1">
+                      <VListItemTitle>
                         {{ category.title }}
                       </VListItemTitle>
+
                       <VListItemSubtitle>
-                        {{ category.subtitle }}
+                        <span class="text-xs">
+                          {{ category.subtitle }}
+                        </span>
                       </VListItemSubtitle>
 
                       <template #append>
@@ -297,9 +303,11 @@ const onSubmit = () => {
                       <VListItemTitle class="mb-1">
                         {{ database.title }}
                       </VListItemTitle>
+
                       <VListItemSubtitle>
                         {{ database.subtitle }}
                       </VListItemSubtitle>
+
                       <template #append>
                         <VRadio :value="database.slug" />
                       </template>
@@ -382,7 +390,7 @@ const onSubmit = () => {
 
             <div class="d-flex justify-space-between mt-8">
               <VBtn
-                variant="tonal"
+                variant="outlined"
                 color="secondary"
                 :disabled="currentStep === 0"
                 @click="currentStep--"

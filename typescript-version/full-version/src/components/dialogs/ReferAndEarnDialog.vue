@@ -49,10 +49,10 @@ const referAndEarnSteps = [
       />
 
       <VCardText class="pa-5 pa-sm-10">
-        <h5 class="text-h5 text-center mb-2">
+        <h5 class="text-h5 text-center mb-3">
           Refer & Earn
         </h5>
-        <p class="text-sm-body-1 text-center">
+        <p class="text-sm text-center">
           Invite your friend to vuexy, if they sign up, you and your friend will get 30 days free trial
         </p>
 
@@ -74,10 +74,10 @@ const referAndEarnSteps = [
               />
             </VAvatar>
 
-            <h6 class="text-base mt-3 mb-1">
+            <h6 class="text-base font-weight-medium my-3">
               {{ step.title }}
             </h6>
-            <span class="text-sm">{{ step.subtitle }}</span>
+            <span class="text-sm text-wrap">{{ step.subtitle }}</span>
           </VCol>
         </VRow>
       </VCardText>
@@ -85,11 +85,13 @@ const referAndEarnSteps = [
       <VDivider />
 
       <VCardText class="pa-5 pa-sm-10">
-        <h6 class="text-h6 mb-3">
+        <h6 class="text-h6 mb-4">
           Invite your friends
         </h6>
 
-        <p>Enter your friend's email address and invite them to join Materio 😍</p>
+        <p class="text-sm mb-2">
+          Enter your friend's email address and invite them to join Materio 😍
+        </p>
         <VForm
           class="d-flex align-center gap-4"
           @submit.prevent="() => {}"
@@ -104,11 +106,13 @@ const referAndEarnSteps = [
           </VBtn>
         </VForm>
 
-        <h6 class="text-h6 mb-3 mt-8">
+        <h6 class="text-h6 mb-4 mt-8">
           Share the referral link
         </h6>
 
-        <p>You can also copy and send it or share it on your social media. 🚀</p>
+        <p class="mb-2 text-sm">
+          You can also copy and send it or share it on your social media. 🚀
+        </p>
         <VForm
           class="d-flex align-center flex-wrap gap-3"
           @submit.prevent="() => {}"

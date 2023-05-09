@@ -65,7 +65,7 @@ const addressTypes = [
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
+    :width="$vuetify.display.smAndDown ? 'auto' : 900 "
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
@@ -89,7 +89,7 @@ const addressTypes = [
 
       <VCardText>
         <!-- 👉 Subtitle -->
-        <VCardSubtitle class="text-center mb-6">
+        <VCardSubtitle class="text-center mb-9 ">
           Edit Address for future billing
         </VCardSubtitle>
 
@@ -102,7 +102,7 @@ const addressTypes = [
           >
             <div
               class="rounded border cursor-pointer border-opacity-100 pa-4"
-              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary' : 'bg-var-theme-background border-secondary'"
+              :class="selectedAddress === type.title ? 'bg-light-primary text-primary border-primary' : 'bg-var-theme-background text-high-emphasis border-secondary'"
               @click="selectedAddress = type.title"
             >
               <div class="d-flex align-center font-weight-medium gap-2 text-xl mb-1">
@@ -130,6 +130,7 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.companyName"
+                density="default"
                 label="Company Name"
               />
             </VCol>
@@ -141,6 +142,8 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.billingEmail"
+                density="default"
+
                 label="Email"
               />
             </VCol>
@@ -152,6 +155,7 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.taxID"
+                density="default"
                 label="Tax ID"
               />
             </VCol>
@@ -163,6 +167,7 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.vatNumber"
+                density="default"
                 label="VAT Number"
               />
             </VCol>
@@ -172,6 +177,7 @@ const addressTypes = [
               <VTextarea
                 v-model="billingAddress.address"
                 rows="2"
+                density="default"
                 label="Billing Address"
               />
             </VCol>
@@ -183,6 +189,7 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.contact"
+                density="default"
                 label="Contact"
               />
             </VCol>
@@ -194,6 +201,7 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.country"
+                density="default"
                 label="Country"
               />
             </VCol>
@@ -205,6 +213,7 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.state"
+                density="default"
                 label="State"
               />
             </VCol>
@@ -217,6 +226,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.zipCode"
                 label="Zip Code"
+                density="default"
                 type="number"
               />
             </VCol>
@@ -224,19 +234,25 @@ const addressTypes = [
             <!-- 👉 Submit and Cancel button -->
             <VCol
               cols="12"
-              class="d-flex flex-wrap justify-center gap-4"
+              class="d-flex flex-wrap gap-4 gap-y-6 flex-column"
             >
-              <VBtn type="submit">
-                submit
-              </VBtn>
+              <div>
+                <VSwitch label="Make this default shipping address" />
+              </div>
 
-              <VBtn
-                variant="tonal"
-                color="secondary"
-                @click="resetForm"
-              >
-                Cancel
-              </VBtn>
+              <div class="d-flex justify-center gap-4">
+                <VBtn type="submit">
+                  submit
+                </VBtn>
+
+                <VBtn
+                  variant="tonal"
+                  color="secondary"
+                  @click="resetForm"
+                >
+                  Cancel
+                </VBtn>
+              </div>
             </VCol>
           </VRow>
         </VForm>

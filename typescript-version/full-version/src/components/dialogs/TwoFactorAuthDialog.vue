@@ -67,6 +67,7 @@ const openSelectedMethodDialog = () => {
         <VCardTitle class="text-h5 mb-1">
           Select Authentication Method
         </VCardTitle>
+
         <VCardSubtitle>
           You also need to select a method by which the proxy authenticates to the directory serve.
         </VCardSubtitle>
@@ -95,8 +96,10 @@ const openSelectedMethodDialog = () => {
               />
             </template>
 
-            <VListItemTitle class="text-lg font-weight-medium">
-              {{ item.title }}
+            <VListItemTitle class="mb-1">
+              <span class="font-weight-medium text-xl">
+                {{ item.title }}
+              </span>
             </VListItemTitle>
             <p class="text-base mb-0">
               {{ item.subtitle }}

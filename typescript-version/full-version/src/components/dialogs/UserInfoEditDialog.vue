@@ -74,7 +74,7 @@ const dialogVisibleUpdate = (val: boolean) => {
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
+    :width="$vuetify.display.smAndDown ? 'auto' : 900 "
     :model-value="props.isDialogVisible"
     @update:model-value="dialogVisibleUpdate"
   >
@@ -87,7 +87,7 @@ const dialogVisibleUpdate = (val: boolean) => {
       />
 
       <VCardItem class="text-center">
-        <VCardTitle class="text-h5">
+        <VCardTitle class="text-h5 mb-6">
           Edit User Information
         </VCardTitle>
         <VCardSubtitle>
@@ -110,6 +110,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.fullName"
                 label="Full Name"
+                density="default"
               />
             </VCol>
 
@@ -120,6 +121,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.username"
+                density="default"
                 label="Username"
               />
             </VCol>
@@ -131,6 +133,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.email"
+                density="default"
                 label="Billing Email"
               />
             </VCol>
@@ -142,6 +145,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.status"
+                density="default"
                 label="Status"
               />
             </VCol>
@@ -153,6 +157,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.taxId"
+                density="default"
                 label="Tax Id"
               />
             </VCol>
@@ -164,6 +169,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.contact"
+                density="default"
                 label="Contact"
               />
             </VCol>
@@ -175,6 +181,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.language"
+                density="default"
                 label="Language"
               />
             </VCol>
@@ -186,6 +193,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VTextField
                 v-model="userData.country"
+                density="default"
                 label="Country"
               />
             </VCol>

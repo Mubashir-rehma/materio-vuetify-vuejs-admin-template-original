@@ -43,7 +43,7 @@ const formSubmit = () => {
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 650"
+    :width="$vuetify.display.smAndDown ? 'auto' : 600"
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
@@ -57,7 +57,7 @@ const formSubmit = () => {
 
       <!-- 👉 Title -->
       <VCardItem class="text-center">
-        <VCardTitle class="text-h5 mb-4">
+        <VCardTitle class="text-h5 mb-3">
           {{ props.cardDetails.name ? 'Edit Card' : 'Add New Card' }}
         </VCardTitle>
         <VCardSubtitle>
@@ -72,6 +72,7 @@ const formSubmit = () => {
             <VCol cols="12">
               <VTextField
                 v-model="cardDetails.number"
+                density="default"
                 label="Card Number"
                 type="number"
               />
@@ -84,6 +85,7 @@ const formSubmit = () => {
             >
               <VTextField
                 v-model="cardDetails.name"
+                density="default"
                 label="Name"
               />
             </VCol>
@@ -95,7 +97,8 @@ const formSubmit = () => {
             >
               <VTextField
                 v-model="cardDetails.expiry"
-                label="Expiry Date"
+                label="Expiry"
+                density="default"
               />
             </VCol>
 
@@ -107,7 +110,8 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.cvv"
                 type="number"
-                label="CVV Code"
+                label="CVV"
+                density="default"
               />
             </VCol>
 
@@ -115,7 +119,7 @@ const formSubmit = () => {
             <VCol cols="12">
               <VSwitch
                 v-model="cardDetails.isPrimary"
-                label="Set as primary card"
+                label="Save Card for future billing?"
               />
             </VCol>
 

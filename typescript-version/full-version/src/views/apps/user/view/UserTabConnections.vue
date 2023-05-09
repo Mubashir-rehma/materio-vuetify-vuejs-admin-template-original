@@ -179,7 +179,7 @@ const socialAccounts = ref([
   </VRow>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 1rem;
 }

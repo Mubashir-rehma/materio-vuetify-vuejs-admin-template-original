@@ -133,7 +133,7 @@ meta:
   navActiveLink: pages-help-center
 </route>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 0.75rem;
 }

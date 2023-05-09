@@ -139,13 +139,15 @@ const labels = [
               size="x-small"
               :color="folder.badge.color"
             >
-              {{ folder.badge.content }}
+              <span class="text-xs">
+                {{ folder.badge.content }}
+              </span>
             </VChip>
           </li>
         </RouterLink>
 
         <!-- 👉 Labels -->
-        <li class="text-xs d-block text-uppercase text-disabled mt-6">
+        <li class="text-xs d-block text-uppercase text-disabled mt-8">
           LABELS
         </li>
         <RouterLink

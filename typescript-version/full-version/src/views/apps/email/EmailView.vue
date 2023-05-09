@@ -68,7 +68,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
         </IconBtn>
 
         <div class="d-flex align-center flex-wrap flex-grow-1 overflow-hidden gap-2">
-          <h2 class="text-body-1 font-weight-medium text-high-emphasis text-truncate">
+          <h2 class="text-body-1 text-high-emphasis text-truncate">
             {{ props.email.subject }}
           </h2>
 
@@ -77,10 +77,12 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               v-for="label in props.email.labels"
               :key="label"
               :color="resolveLabelColor(label)"
-              density="comfortable"
+              size="x-small"
               class="px-2 text-capitalize me-2 flex-shrink-0"
             >
-              {{ label }}
+              <span class="text-xs font-weight-medium">
+                {{ label }}
+              </span>
             </VChip>
           </div>
         </div>
@@ -216,7 +218,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 
               <div class="d-flex flex-wrap flex-grow-1 overflow-hidden">
                 <div class="text-truncate">
-                  <span class="d-block text-high-emphasis font-weight-medium text-truncate">{{ props.email.from.name }}</span>
+                  <span class="d-block text-body-1 text-truncate">{{ props.email.from.name }}</span>
                   <span class="text-sm text-disabled">{{ props.email.from.email }}</span>
                 </div>
 
@@ -225,7 +227,10 @@ const updateMailLabel = (label: Email['labels'][number]) => {
                 <div class="d-flex align-center">
                   <span class="me-2">{{ formatDate(props.email.time) }}</span>
                   <IconBtn v-show="props.email.attachments.length">
-                    <VIcon icon="mdi-attachment" />
+                    <VIcon
+                      icon="mdi-attachment"
+                      size="20"
+                    />
                   </IconBtn>
                 </div>
               </div>

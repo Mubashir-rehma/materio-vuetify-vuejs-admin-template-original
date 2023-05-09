@@ -363,7 +363,7 @@ const refreshOpenedEmail = async () => {
             <h6 class="mx-2 text-body-1 font-weight-medium text-high-emphasis">
               {{ email.from.name }}
             </h6>
-            <span class="truncate">{{ email.subject }}</span>
+            <span class="truncate text-sm">{{ email.subject }}</span>
             <VSpacer />
             <div class="email-meta">
               <VBadge
@@ -464,6 +464,7 @@ meta:
   white-space: nowrap;
 
   .email-item {
+    block-size: 64px;
     transition: all 0.2s ease-in-out;
     will-change: transform, box-shadow;
 

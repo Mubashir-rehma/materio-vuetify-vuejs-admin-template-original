@@ -47,7 +47,7 @@ const resetValues = () => {
           </div>
         </template>
         <template #append>
-          <span class="cursor-pointer">Cc | Bcc</span>
+          <span class="cursor-pointer text-sm">Cc | Bcc</span>
         </template>
       </VTextField>
     </div>
@@ -96,6 +96,7 @@ const resetValues = () => {
       </VBtnGroup>
       <VIcon
         icon="mdi-attachment"
+        size="20"
         class="ms-4 cursor-pointer"
       />
 

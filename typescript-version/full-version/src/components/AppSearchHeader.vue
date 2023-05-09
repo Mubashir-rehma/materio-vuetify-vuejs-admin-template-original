@@ -42,7 +42,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
         <template #prepend-inner>
           <VIcon
             icon="mdi-magnify"
-            size="23"
+            size="24"
           />
         </template>
       </VTextField>

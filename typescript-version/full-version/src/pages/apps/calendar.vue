@@ -117,7 +117,7 @@ const checkAll = computed({
 
 .calendars-checkbox {
   .v-label {
-    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
     opacity: var(--v-high-emphasis-opacity);
   }
 }

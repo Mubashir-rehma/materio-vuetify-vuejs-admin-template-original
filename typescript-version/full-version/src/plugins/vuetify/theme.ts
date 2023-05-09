@@ -50,6 +50,7 @@ const theme: VuetifyOptions['theme'] = {
         'dragged-opacity': 0.1,
         'border-color': '#3A3541',
         'table-header-background': '#F9FAFC',
+        'custom-background': '#F9F8F9',
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
@@ -100,6 +101,7 @@ const theme: VuetifyOptions['theme'] = {
         'dragged-opacity': 0.1,
         'border-color': '#E7E3FC',
         'table-header-background': '#28243D',
+        'custom-background': '#373452',
 
         // Shadows
         'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',

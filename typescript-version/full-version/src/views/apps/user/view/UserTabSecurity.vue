@@ -56,7 +56,7 @@ const recentDevices = [
           <VAlert
             variant="tonal"
             color="warning"
-            class="mb-6"
+            class="mb-4"
           >
             <VAlertTitle>Ensure that these requirements are met</VAlertTitle>
             <span>Minimum 8 characters long, uppercase & symbol</span>
@@ -70,6 +70,7 @@ const recentDevices = [
               >
                 <VTextField
                   label="New Password"
+                  density="compact"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
@@ -81,6 +82,7 @@ const recentDevices = [
               >
                 <VTextField
                   label="Confirm Password"
+                  density="compact"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
@@ -111,6 +113,7 @@ const recentDevices = [
             </h4>
             <VTextField
               variant="underlined"
+              density="compact"
               :model-value="smsVerificationNumber"
               readonly
             >

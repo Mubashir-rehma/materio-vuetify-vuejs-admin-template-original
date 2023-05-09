@@ -214,7 +214,7 @@ const resolveUserProgressVariant = (progress: number) => {
                 React Project meeting with john @10:15am
               </p>
 
-              <div class="d-flex align-center mt-3">
+              <div class="d-flex align-center mt-2">
                 <VAvatar
                   size="34"
                   class="me-2"
@@ -226,7 +226,7 @@ const resolveUserProgressVariant = (progress: number) => {
                     John Doe (Client)
                   </h6>
 
-                  <span class="text-xs">CEO of Kelly Group</span>
+                  <span class="text-sm">CEO of Kelly Group</span>
                 </div>
               </div>
             </VTimelineItem>

@@ -72,17 +72,17 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 color="primary"
                 variant="tonal"
                 rounded
-                size="42"
+                size="34"
               >
                 <VIcon
                   :icon="subCategory.icon"
-                  size="26"
+                  size="24"
                 />
               </VAvatar>
             </template>
 
             <VCardText>
-              <VList class="card-list mb-6">
+              <VList class="card-list mb-4">
                 <VListItem
                   v-for="item in subCategory.articles"
                   :key="item.slug"
@@ -98,18 +98,20 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                   <template #prepend>
                     <VIcon
                       icon="mdi-arrow-right"
-                      size="18"
+                      size="14"
                       class="text-disabled flip-in-rtl me-2"
                     />
                   </template>
                   <VListItemTitle class="text-primary">
-                    {{ item.title }}
+                    <span class="text-sm">
+                      {{ item.title }}
+                    </span>
                   </VListItemTitle>
                 </VListItem>
               </VList>
 
               <VBtn
-                variant="tonal"
+                variant="outlined"
                 :to="{ name: 'pages-help-center' }"
               >
                 <VIcon
@@ -130,3 +132,9 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
 meta:
   navActiveLink: pages-help-center
 </route>
+
+<style lang="scss">
+.card-list {
+  --v-card-list-gap: 0.75rem;
+}
+</style>

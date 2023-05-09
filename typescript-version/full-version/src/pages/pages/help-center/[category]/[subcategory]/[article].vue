@@ -69,7 +69,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
           <VCard>
             <VCardText class="pb-0">
               <VBtn
-                variant="tonal"
+                variant="outlined"
                 :to="{
                   name: 'pages-help-center-category-subcategory',
                   params: { category: route.params.category, subcategory: route.params.subcategory },
@@ -78,6 +78,7 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                 <VIcon
                   start
                   icon="mdi-arrow-left"
+                  size="20"
                   class="flip-in-rtl"
                 />
                 <span>Back to categories</span>
@@ -89,9 +90,13 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                 <VAvatar
                   color="primary"
                   variant="tonal"
+                  size="34"
                   rounded
                 >
-                  <VIcon icon="mdi-currency-usd" />
+                  <VIcon
+                    icon="mdi-currency-usd"
+                    size="24"
+                  />
                 </VAvatar>
               </template>
               <VCardTitle>{{ activeArticle.title }}</VCardTitle>
@@ -107,16 +112,16 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
             <VDivider />
 
             <VCardText>
-              <div class="d-flex justify-space-between flex-wrap mb-2">
+              <div class="d-flex justify-space-between flex-wrap mb-4">
                 <div class="article-info">
-                  <h6 class="text-h6 mb-1">
+                  <h6 class="text-base font-weight-medium mb-1">
                     {{ activeArticle.title }}
                   </h6>
                   <p class="mb-1">
                     55 People found this helpful
                   </p>
                 </div>
-                <h6 class="text-h6">
+                <h6 class="text-base font-weight-medium">
                   Still need help?
                   <a href="javascript:void(0);">Contact us?</a>
                 </h6>
@@ -125,19 +130,19 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
               <div class="article-votes d-flex align-center gap-3">
                 <VAvatar
                   color="primary"
-                  variant="tonal"
+                  variant="outlined"
                   rounded
                   size="30"
                 >
-                  <VIcon icon="mdi-thumb-up-outline" />
+                  <VIcon icon="mdi-thumb-up" />
                 </VAvatar>
                 <VAvatar
                   color="primary"
-                  variant="tonal"
+                  variant="outlined"
                   rounded
                   size="30"
                 >
-                  <VIcon icon="mdi-thumb-down-outline" />
+                  <VIcon icon="mdi-thumb-down" />
                 </VAvatar>
               </div>
             </VCardText>

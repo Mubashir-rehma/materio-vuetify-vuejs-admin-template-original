@@ -41,7 +41,10 @@ const moreList = [
       <VCard>
         <VCardItem>
           <template #prepend>
-            <VAvatar :image="data.avatar" />
+            <VAvatar
+              :image="data.avatar"
+              size="38"
+            />
           </template>
 
           <VCardTitle>{{ data.title }}</VCardTitle>
@@ -66,7 +69,7 @@ const moreList = [
               <h6 class="text-base font-weight-medium">
                 {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>
               </h6>
-              <span>Total Budget</span>
+              <span class="text-base">Total Budget</span>
             </div>
 
             <div>
@@ -94,9 +97,11 @@ const moreList = [
 
             <VChip
               :color="data.chipColor"
-              size="small"
+              density="compact"
             >
-              {{ data.daysLeft }} Days left
+              <span class="text-xs">
+                {{ data.daysLeft }} Days left
+              </span>
             </VChip>
           </div>
 
@@ -120,7 +125,7 @@ const moreList = [
                   v-for="avatar in data.avatarGroup"
                   :key="avatar.name"
                   :image="avatar.avatar"
-                  :size="32"
+                  :size="36"
                 />
               </div>
               <span class="text-xs">
@@ -131,7 +136,8 @@ const moreList = [
             <span>
               <VIcon
                 icon="mdi-message-outline"
-                class="me-1"
+                class="me-2"
+                size="24"
               />
               <span>{{ data.comments }}</span>
             </span>

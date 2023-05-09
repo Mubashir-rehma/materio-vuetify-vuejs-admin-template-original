@@ -36,9 +36,15 @@ const moreList = [
           </template>
 
           <VListItemTitle class="font-weight-medium">
-            {{ data.name }}
+            <span class="text-sm">
+              {{ data.name }}
+            </span>
           </VListItemTitle>
-          <VListItemSubtitle>{{ data.connections }} Connections</VListItemSubtitle>
+          <VListItemSubtitle>
+            <span class="text-xs">
+              {{ data.connections }} Connections
+            </span>
+          </VListItemSubtitle>
 
           <template #append>
             <VBtn

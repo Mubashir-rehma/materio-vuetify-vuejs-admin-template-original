@@ -40,9 +40,9 @@ import avatar2 from '@images/avatars/avatar-2.png'
               size="24"
               class="me-2"
             />
-            <h6 class="font-weight-medium text-sm">
+            <span class="font-weight-medium text-sm">
               Invoices.pdf
-            </h6>
+            </span>
           </div>
         </VTimelineItem>
 

@@ -70,7 +70,7 @@ const moreList = [
             <VAvatar
               v-for="data in team.avatarGroup"
               :key="data.name"
-              size="32"
+              size="36"
             >
               <VImg :src="data.avatar" />
 
@@ -90,10 +90,12 @@ const moreList = [
               v-for="data in team.chips"
               :key="data.title"
               :color="data.color"
-              size="small"
+              density="compact"
               class="font-weight-medium"
             >
-              {{ data.title }}
+              <span class="text-xs">
+                {{ data.title }}
+              </span>
             </VChip>
           </div>
         </VCardText>

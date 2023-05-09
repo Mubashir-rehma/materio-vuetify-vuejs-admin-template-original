@@ -36,17 +36,25 @@ const moreList = [
           </template>
 
           <VListItemTitle class="font-weight-medium">
-            {{ data.title }}
+            <span class="text-sm">
+              {{ data.title }}
+            </span>
           </VListItemTitle>
-          <VListItemSubtitle>{{ data.members }} Members</VListItemSubtitle>
+          <VListItemSubtitle>
+            <span class="text-xs">
+              {{ data.members }} Members
+            </span>
+          </VListItemSubtitle>
 
           <template #append>
             <VChip
               :color="data.ChipColor"
-              size="small"
+              density="compact"
               class="font-weight-medium"
             >
-              {{ data.chipText }}
+              <span class="text-xs">
+                {{ data.chipText }}
+              </span>
             </VChip>
           </template>
         </VListItem>

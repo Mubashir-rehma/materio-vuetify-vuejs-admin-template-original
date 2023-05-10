@@ -9,7 +9,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
 
 <template>
   <div class="v-avatar-group">
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar1" />
       <VTooltip
         activator="parent"
@@ -19,7 +19,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar2" />
       <VTooltip
         activator="parent"
@@ -29,7 +29,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar3" />
       <VTooltip
         activator="parent"
@@ -39,7 +39,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar4" />
       <VTooltip
         activator="parent"
@@ -49,7 +49,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar5" />
       <VTooltip
         activator="parent"
@@ -59,7 +59,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar6" />
       <VTooltip
         activator="parent"

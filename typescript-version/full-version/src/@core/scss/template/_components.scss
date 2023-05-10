@@ -31,6 +31,13 @@
   @include mixins.avatar-font-sizes($map: variables.$avatar-font-sizes);
 }
 
+// 👉 Button
+.v-btn {
+  &:not(.v-btn--icon) .v-icon {
+    --v-icon-size-multiplier: 0.9525 !important;
+  }
+}
+
 //  👉 v-tab with pill support
 .v-tabs.v-tabs-pill {
   .v-tab.v-btn {

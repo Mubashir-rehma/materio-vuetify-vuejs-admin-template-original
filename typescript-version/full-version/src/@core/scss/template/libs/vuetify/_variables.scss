@@ -187,6 +187,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   $button-border-radius: 5px !default,
   $button-padding-ratio: 1.7 !default,
   $button-text-letter-spacing: 0.025rem !default,
+  $button-icon-density: ("default": 0.5, "comfortable": -2, "compact": -3) !default,
 
   // 👉 Dialog
   $dialog-card-header-padding: 20px !default,

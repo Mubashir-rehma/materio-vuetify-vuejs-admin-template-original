@@ -160,7 +160,7 @@ const faqs = [
 
     <!-- 👉 Plans -->
     <VCardText class="text-center mt-16">
-      <h4 class="text-h5 mb-2">
+      <h4 class="text-h5 mb-6">
         Pick a plan that works best for you
       </h4>
       <p>Stay cool, we have a 48-hour money back guarantee!</p>
@@ -331,7 +331,7 @@ const faqs = [
     <!-- 👉 FAQ -->
     <div>
       <VCardText class="bg-var-theme-background py-sm-16">
-        <div class="text-center">
+        <div class="text-center mt-4">
           <h5 class="text-h5 mb-2">
             FAQ's
           </h5>

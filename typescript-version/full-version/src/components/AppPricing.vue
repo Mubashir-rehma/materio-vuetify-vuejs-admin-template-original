@@ -71,11 +71,13 @@ const pricingPlans = [
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
-    <h4 class="text-h5 pricing-title mb-4">
+    <h4 class="text-h4 font-weight-regular mb-2">
       {{ props.title ? props.title : 'Pricing Plans' }}
     </h4>
-    <p class="text-sm">
+    <p class="text-sm mb-1">
       All plans include 40+ advanced tools and features to boost your product.
+    </p>
+    <p>
       Choose the best plan to fit your needs.
     </p>
   </div>
@@ -84,7 +86,7 @@ const pricingPlans = [
   <div class="d-flex align-center justify-center mx-auto py-10">
     <VLabel
       for="pricing-plan-toggle"
-      class="me-2"
+      class="me-2 text-sm"
     >
       Monthly
     </VLabel>
@@ -167,15 +169,6 @@ const pricingPlans = [
             </h1>
             <sub class="text-sm font-weight-medium ms-1 mt-4">/month</sub>
           </div>
-
-          <!-- 👉 Annual Price -->
-          <span
-            v-show="annualMonthlyPlanPriceToggler"
-            class="position-absolute text-xs text-disabled"
-            style="inset-inline: 0;"
-          >
-            {{ plan.yearlyPrice === 0 ? 'free' : `USD ${plan.yearlyPrice}/Year` }}
-          </span>
         </VCardText>
 
         <!-- 👉 Plan features -->
@@ -218,7 +211,7 @@ const pricingPlans = [
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 0.75rem;
+  --v-card-list-gap: 1rem;
 }
 
 .pricing-save-chip {

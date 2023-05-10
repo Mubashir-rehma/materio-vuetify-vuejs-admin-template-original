@@ -58,6 +58,10 @@
 
   &.active {
     border-color: rgb(var(--v-theme-primary));
+
+    .v-icon {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
   }
 }
 

@@ -9,7 +9,6 @@ export default {
     },
   },
   VAlert: {
-    density: 'comfortable',
     VBtn: {
       color: undefined,
     },
@@ -17,6 +16,9 @@ export default {
   VAvatar: {
     // ℹ️ Remove after next release
     variant: 'flat',
+    VIcon: {
+      size: 24,
+    },
   },
   VBadge: {
     // set v-badge default color to primary

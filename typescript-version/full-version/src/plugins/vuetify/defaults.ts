@@ -59,12 +59,10 @@ export default {
   },
   VRadioGroup: {
     color: 'primary',
-    density: 'comfortable',
     hideDetails: 'auto',
   },
   VRadio: {
     color: 'primary',
-    density: 'comfortable',
     hideDetails: 'auto',
   },
   VSelect: {

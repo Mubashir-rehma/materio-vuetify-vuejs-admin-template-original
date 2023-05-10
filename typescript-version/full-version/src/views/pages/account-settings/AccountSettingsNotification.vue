@@ -34,8 +34,10 @@ const selectedNotification = ref('Only when I\'m online')
 <template>
   <VCard title="Recent Devices">
     <VCardText>
-      We need permission from your browser to show notifications.
-      <a href="javascript:void(0)">Request Permission</a>
+      <p class="text-base">
+        We need permission from your browser to show notifications.
+        <a href="javascript:void(0)">Request Permission</a>
+      </p>
     </VCardText>
 
     <VTable class="text-no-wrap text-high-emphasis">
@@ -96,7 +98,7 @@ const selectedNotification = ref('Only when I\'m online')
           </VCol>
         </VRow>
 
-        <div class="d-flex flex-wrap gap-4 mt-4">
+        <div class="d-flex flex-wrap gap-4 mt-6">
           <VBtn type="submit">
             Save Changes
           </VBtn>

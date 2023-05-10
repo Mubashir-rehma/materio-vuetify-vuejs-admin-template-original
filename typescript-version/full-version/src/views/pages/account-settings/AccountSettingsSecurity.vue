@@ -153,7 +153,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               Password Requirements:
             </p>
 
-            <ul class="d-flex flex-column gap-y-3">
+            <ul class="d-flex flex-column gap-y-4">
               <li
                 v-for="item in passwordRequirements"
                 :key="item"
@@ -178,7 +178,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             <VBtn
               type="reset"
               color="secondary"
-              variant="tonal"
+              variant="outlined"
             >
               Reset
             </VBtn>
@@ -195,7 +195,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           <p>
             Two factor authentication is not enabled yet.
           </p>
-          <p>
+          <p class="mb-6">
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.
             <a
               href="javascript:void(0)"
@@ -275,11 +275,13 @@ const isOneTimePasswordDialogVisible = ref(false)
       <!-- SECTION: API Keys List -->
       <VCard title="API Key List &amp; Access">
         <VCardText>
-          An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
+          <span class="text-base">
+            An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
+          </span>
         </VCardText>
 
         <!-- 👉 Server Status -->
-        <VCardText class="d-flex flex-column gap-y-4">
+        <VCardText class="d-flex flex-column gap-y-6">
           <div
             v-for="serverKey in serverKeys"
             :key="serverKey.key"
@@ -291,7 +293,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               </h6>
               <VChip
                 color="primary"
-                size="small"
+                density="comfortable"
               >
                 {{ serverKey.permission }}
               </VChip>
@@ -299,7 +301,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             <p class="text-base font-weight-medium">
               <span class="me-3">{{ serverKey.key }}</span>
               <VIcon
-                :size="18"
+                :size="20"
                 icon="mdi-content-copy"
                 class="cursor-pointer"
               />

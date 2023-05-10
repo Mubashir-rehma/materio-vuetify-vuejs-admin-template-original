@@ -220,6 +220,11 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   // 👉 Tabs
   $tabs-height: 48px !default,
 
+  // 👉 Slider 
+  $slider-track-active-size: 4px !default,
+  $slider-thumb-label-padding: 4px 12px !default,
+  $slider-thumb-label-font-size: 0.875rem !default,
+
   // 👉 Timeline
   $timeline-dot-size: 34px !default,
   $timeline-dot-divider-background: transparent !default,

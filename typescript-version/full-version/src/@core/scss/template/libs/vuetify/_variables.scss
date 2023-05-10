@@ -178,6 +178,8 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
 
   // 👉 Badge
   $badge-border-color:rgb(var(--v-theme-surface)) !default,
+  $badge-dot-height: 0.5rem !default,
+  $badge-dot-width: 0.5rem !default,
 
   // 👉 Button
   $button-height: 38px !default,

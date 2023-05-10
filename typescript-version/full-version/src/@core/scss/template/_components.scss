@@ -1,6 +1,7 @@
 @use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
 @use "@configured-variables" as variables;
 @use "mixins";
+@use "@core/scss/base/mixins" as mixins_base;
 
 // 👉 Alert
 .v-alert {
@@ -51,6 +52,11 @@
   }
 }
 
+// 👉 Tooltip
+.v-tooltip > .v-overlay__content {
+  font-weight: 500;
+}
+
 // 👉 List
 .v-list {
   .v-list-item {
@@ -68,7 +74,7 @@
 //  👉 v-tab with pill support
 .v-tabs.v-tabs-pill {
   .v-tab.v-btn {
-    border-radius: 5px !important;
+    border-radius: 6px !important;
   }
 }
 
@@ -184,4 +190,9 @@
     font-size: 14px;
     font-weight: 400;
   }
+}
+
+// 👉 SnackBar
+.v-snackbar--variant-elevated {
+  @include mixins_base.elevation(6);
 }

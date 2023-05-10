@@ -51,9 +51,9 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               alt="img"
             >
 
-            <span class="app-timeline-text">
+            <h6 class="text-sm font-weight-medium">
               booking-card.pdf
-            </span>
+            </h6>
           </div>
         </VTimelineItem>
         <!-- !SECTION -->

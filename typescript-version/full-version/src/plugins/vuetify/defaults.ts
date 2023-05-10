@@ -50,13 +50,11 @@ export default {
   },
   VCheckboxBtn: {
     color: 'primary',
-    density: 'comfortable',
     hideDetails: 'auto',
   },
   VCheckbox: {
     // set v-checkbox default color to primary
     color: 'primary',
-    density: 'comfortable',
     hideDetails: 'auto',
   },
   VRadioGroup: {

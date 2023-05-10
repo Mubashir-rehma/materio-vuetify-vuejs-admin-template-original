@@ -36,7 +36,6 @@ export default {
   },
   VPagination: {
     activeColor: 'primary',
-    density: 'comfortable',
   },
   VTabs: {
     // set v-tabs default color to primary

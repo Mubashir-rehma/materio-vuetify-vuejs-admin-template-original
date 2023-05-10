@@ -175,3 +175,13 @@
     background: rgb(var(--v-table-header-background)) !important;
   }
 }
+
+// 👉 Pagination
+.v-pagination {
+  .v-btn {
+    border-radius: 4px;
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

@@ -315,7 +315,7 @@ const currencies = [
 
                 <VBtn
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   type="reset"
                   @click.prevent="resetForm"
                 >

@@ -87,8 +87,10 @@ const socialAccounts = ref([
         <VCard
           flat
           title="Connected Accounts"
-          subtitle="Display content from your connected accounts on your site"
         >
+          <template #subtitle>
+            <span class="text-base">Display content from your connected accounts on your site</span>
+          </template>
           <VCardText>
             <VList class="card-list">
               <VListItem
@@ -103,7 +105,7 @@ const socialAccounts = ref([
                   />
                 </template>
                 <VListItemTitle>
-                  <span class="text-sm font-weight-medium">{{ item.name }}</span>
+                  <span class="font-weight-medium">{{ item.name }}</span>
                 </VListItemTitle>
 
                 <VListItemSubtitle>
@@ -133,8 +135,11 @@ const socialAccounts = ref([
         <VCard
           flat
           title="Social Accounts"
-          subtitle="Display content from social accounts on your site"
         >
+          <template #subtitle>
+            <span class="text-base">Display content from social accounts on your site</span>
+          </template>
+
           <VCardText>
             <VList class="card-list">
               <VListItem
@@ -174,7 +179,7 @@ const socialAccounts = ref([
                   <VListItemAction>
                     <VBtn
                       icon
-                      variant="tonal"
+                      variant="outlined"
                       size="small"
                       :color="item.connected ? 'error' : 'secondary'"
                       class="rounded"

@@ -164,7 +164,7 @@ const resetPaymentForm = () => {
 
                 <VBtn
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   @click="isConfirmDialogVisible = true"
                 >
                   Cancel Subscription

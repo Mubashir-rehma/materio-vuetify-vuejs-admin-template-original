@@ -31,6 +31,9 @@ export default {
   VChip: {
     elevation: 0,
   },
+  VList: {
+    activeColor: 'primary',
+  },
   VPagination: {
     activeColor: 'primary',
     density: 'comfortable',

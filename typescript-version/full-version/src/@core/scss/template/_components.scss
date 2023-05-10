@@ -33,8 +33,35 @@
 
 // 👉 Button
 .v-btn {
+  /* stylelint-disable-next-line no-descending-specificity */
   &:not(.v-btn--icon) .v-icon {
     --v-icon-size-multiplier: 0.9525 !important;
+  }
+}
+
+// 👉 Chip
+.v-chip.v-chip--size-default .v-avatar {
+  --v-avatar-height: 24px;
+}
+
+// 👉 Expansion Panel
+.v-expansion-panel {
+  .v-expansion-panel-text {
+    font-size: 1rem;
+  }
+}
+
+// 👉 List
+.v-list {
+  .v-list-item {
+    &.v-list-item--density-comfortable .v-icon {
+      font-size: 1.5rem;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &.v-list-item--density-compact .v-icon {
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -45,7 +72,7 @@
   }
 }
 
-// 👉 added box shadow
+// 👉 Timeline added box shadow
 .v-timeline-item {
   .v-timeline-divider__dot {
     .v-timeline-divider__inner-dot {

@@ -48,7 +48,10 @@ watch(selectedOption, () => {
                 {{ item.title }}
               </h6>
               <VSpacer />
-              <span v-if="item.subtitle">{{ item.subtitle }}</span>
+              <span
+                v-if="item.subtitle"
+                class="text-sm text-disabled"
+              >{{ item.subtitle }}</span>
             </div>
             <p class="text-sm mb-0">
               {{ item.desc }}

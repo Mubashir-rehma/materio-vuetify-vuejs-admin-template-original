@@ -39,7 +39,7 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
           density="compact"
           :color="props.color"
         >
-          <span class="text-xs">
+          <span class="text-xs font-weight-medium">
             {{ props.subtitle }}
           </span>
         </VChip>

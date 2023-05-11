@@ -17,7 +17,7 @@ const statisticsWithImages = [
     title: 'Ratings',
     subtitle: 'Year of 2021',
     stats: '13k',
-    change: 38,
+    change: 15.6,
     image: illustration1,
     color: 'primary',
   },

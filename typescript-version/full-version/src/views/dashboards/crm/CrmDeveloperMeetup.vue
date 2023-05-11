@@ -50,7 +50,7 @@ const developerMeetup = [
         >
           <div class="mb-1">
             <VIcon
-              size="28"
+              size="24"
               icon="mdi-star-outline"
             />
           </div>
@@ -65,7 +65,7 @@ const developerMeetup = [
         >
           <div class="mb-1">
             <VIcon
-              size="28"
+              size="24"
               icon="mdi-check-circle-outline"
             />
           </div>
@@ -80,7 +80,7 @@ const developerMeetup = [
         >
           <div class="mb-1">
             <VIcon
-              size="28"
+              size="24"
               icon="mdi-account-outline"
             />
           </div>
@@ -95,7 +95,7 @@ const developerMeetup = [
         >
           <div class="mb-1">
             <VIcon
-              size="28"
+              size="24"
               icon="mdi-dots-horizontal"
             />
           </div>
@@ -114,12 +114,13 @@ const developerMeetup = [
         <VIcon
           :icon="meetup.icon"
           class="me-2"
+          size="20"
         />
         <div>
-          <p class="mb-1">
+          <p class="mb-1 text-xs">
             {{ meetup.title }}
           </p>
-          <span>{{ meetup.subtitle }}</span>
+          <span class="text-xs">{{ meetup.subtitle }}</span>
         </div>
       </div>
     </VCardText>

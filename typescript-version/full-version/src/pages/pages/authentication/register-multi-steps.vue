@@ -346,8 +346,8 @@ const onSubmit = () => {
 
         <div class="d-flex justify-sm-space-between gap-4 flex-wrap justify-center mt-5">
           <VBtn
-            :color="currentStep === 0 ? 'secondary' : 'default'"
-            variant="outlined"
+            :color="currentStep === 0 ? 'default' : 'secondary'"
+            variant="elevated"
             :disabled="currentStep === 0"
             @click="currentStep--"
           >

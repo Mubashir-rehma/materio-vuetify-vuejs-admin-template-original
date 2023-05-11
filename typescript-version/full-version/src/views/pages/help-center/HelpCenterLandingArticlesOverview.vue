@@ -44,7 +44,6 @@ const props = defineProps<Props>()
               </p>
 
               <VBtn
-
                 variant="outlined"
                 :to="{
                   name: 'pages-help-center-category-subcategory-article',

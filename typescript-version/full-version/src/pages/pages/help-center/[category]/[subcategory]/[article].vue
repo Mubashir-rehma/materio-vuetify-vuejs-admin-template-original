@@ -132,17 +132,23 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
                   color="primary"
                   variant="outlined"
                   rounded
-                  size="30"
+                  size="28"
                 >
-                  <VIcon icon="mdi-thumb-up" />
+                  <VIcon
+                    size="20"
+                    icon="mdi-thumb-up"
+                  />
                 </VAvatar>
                 <VAvatar
                   color="primary"
                   variant="outlined"
                   rounded
-                  size="30"
+                  size="28"
                 >
-                  <VIcon icon="mdi-thumb-down" />
+                  <VIcon
+                    size="20"
+                    icon="mdi-thumb-down"
+                  />
                 </VAvatar>
               </div>
             </VCardText>

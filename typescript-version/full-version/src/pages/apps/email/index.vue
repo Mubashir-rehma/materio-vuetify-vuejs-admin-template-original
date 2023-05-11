@@ -383,7 +383,10 @@ const refreshOpenedEmail = async () => {
 
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
-              <IconBtn @click.stop="handleActionClick('trash', [email.id])">
+              <IconBtn
+                size="default"
+                @click.stop="handleActionClick('trash', [email.id])"
+              >
                 <VIcon icon="mdi-delete-outline" />
                 <VTooltip
                   activator="parent"
@@ -392,7 +395,10 @@ const refreshOpenedEmail = async () => {
                   Delete Mail
                 </VTooltip>
               </IconBtn>
-              <IconBtn @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])">
+              <IconBtn
+                size="default"
+                @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])"
+              >
                 <VIcon :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
                 <VTooltip
                   activator="parent"
@@ -401,7 +407,10 @@ const refreshOpenedEmail = async () => {
                   {{ email.isRead ? 'Read Mail' : 'Unread Mail' }}
                 </VTooltip>
               </IconBtn>
-              <IconBtn @click.stop="handleActionClick('spam', [email.id])">
+              <IconBtn
+                size="default"
+                @click.stop="handleActionClick('spam', [email.id])"
+              >
                 <VIcon icon="mdi-alert-octagon-outline" />
                 <VTooltip
                   activator="parent"

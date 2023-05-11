@@ -75,7 +75,7 @@ const checkAll = computed({
               <div class="d-flex flex-column calendars-checkbox">
                 <VCheckbox
                   v-model="checkAll"
-                  label="View all"
+                  label="View All"
                   color="secondary"
                   density="default"
                 />
@@ -87,6 +87,7 @@ const checkAll = computed({
                   :color="calendar.color"
                   :label="calendar.label"
                   density="default"
+                  class="pt-1"
                 />
               </div>
             </div>

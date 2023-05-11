@@ -19,7 +19,7 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
   <VCard class="overflow-visible">
     <div class="d-flex position-relative">
       <VCardText>
-        <h6 class="text-base font-weight-medium mb-4">
+        <h6 class="text-base font-weight-medium mb-6">
           {{ props.title }}
         </h6>
         <div class="d-flex align-center flex-wrap mb-3">
@@ -36,10 +36,12 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
 
         <VChip
           v-if="props.subtitle"
-          size="small"
+          density="compact"
           :color="props.color"
         >
-          {{ props.subtitle }}
+          <span class="text-xs">
+            {{ props.subtitle }}
+          </span>
         </VChip>
       </VCardText>
 

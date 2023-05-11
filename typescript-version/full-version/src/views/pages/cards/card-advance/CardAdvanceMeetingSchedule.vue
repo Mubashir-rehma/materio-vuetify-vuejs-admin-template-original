@@ -104,10 +104,10 @@ const meetingTypeUiColors: UiColors = {
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-medium mb-1">
+          <VListItemTitle class="font-weight-medium mb-1">
             {{ meeting.with }}
           </VListItemTitle>
-          <VListItemSubtitle class="text-no-wrap text-xs">
+          <VListItemSubtitle class="text-no-wrap">
             <VIcon
               start
               size="16"
@@ -120,10 +120,12 @@ const meetingTypeUiColors: UiColors = {
           <template #append>
             <VListItemAction>
               <VChip
-                size="small"
+                density="compact"
                 :color="meetingTypeUiColors[meeting.type]"
               >
-                {{ meeting.type }}
+                <span class="text-xs">
+                  {{ meeting.type }}
+                </span>
               </VChip>
             </VListItemAction>
           </template>

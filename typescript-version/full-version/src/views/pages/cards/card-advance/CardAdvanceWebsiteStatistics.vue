@@ -95,7 +95,7 @@ const websiteStatistics = [
           <h3 class="text-h3">
             4,590
           </h3>
-          <span>Total Traffic</span>
+          <span class="text-xs">Total Traffic</span>
         </div>
         <div style="max-width: 7.5rem; height: 5rem;">
           <VueApexCharts

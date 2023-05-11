@@ -96,10 +96,10 @@ const savedCards = [
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-medium mb-1">
+          <VListItemTitle class="font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
-          <VListItemSubtitle class="text-xs">
+          <VListItemSubtitle>
             {{ card.number }}
           </VListItemSubtitle>
 
@@ -131,6 +131,7 @@ const savedCards = [
           <VCol cols="12">
             <VTextField
               placeholder="Email Address"
+              density="compact"
               class="mb-3"
             />
             <VBtn

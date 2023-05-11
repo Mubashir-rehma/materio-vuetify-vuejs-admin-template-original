@@ -35,7 +35,6 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
       <!-- 👉 Search Input -->
       <VTextField
         v-bind="$attrs"
-        density="default"
         placeholder="Ask a question.."
         class="search-header-input mx-auto my-3"
       >

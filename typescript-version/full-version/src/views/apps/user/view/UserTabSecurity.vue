@@ -144,12 +144,11 @@ const recentDevices = [
     <VCol cols="12">
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
-        <VDivider />
         <VDataTable
           :items="recentDevices"
           :headers="recentDeviceHeader"
           hide-default-footer
-          class="text-sm text-no-wrap"
+          class="text-sm rounded-0 text-no-wrap"
         >
           <template #item.browser="{ item }">
             <div class="d-flex">

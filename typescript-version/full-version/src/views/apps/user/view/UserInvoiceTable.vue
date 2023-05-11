@@ -17,7 +17,7 @@ const invoices = ref<Invoice[]>([])
 
 const options = ref<Options>({
   page: 1,
-  itemsPerPage: 10,
+  itemsPerPage: 7,
   sortBy: [],
   groupBy: [],
   search: undefined,
@@ -142,8 +142,6 @@ watchEffect(() => {
         </div>
       </VCardText>
 
-      <VDivider />
-
       <!-- SECTION Datatable -->
       <VDataTableServer
         v-model:items-per-page="options.itemsPerPage"
@@ -152,7 +150,7 @@ watchEffect(() => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
-        class="text-sm"
+        class="text-sm rounded-0"
         @update:options="options = $event"
       >
         <!-- Trending Header -->

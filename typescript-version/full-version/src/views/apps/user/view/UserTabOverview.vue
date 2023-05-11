@@ -97,13 +97,12 @@ const resolveUserProgressVariant = (progress: number) => {
   <VRow>
     <VCol cols="12">
       <VCard title="Project List">
-        <VDivider />
-
         <!-- 👉 User Project List Table -->
         <!-- SECTION Datatable -->
         <VDataTable
           :headers="projectTableHeaders"
           :items="projects"
+          class="rounded-0"
         >
           <!-- projects -->
           <template #item.project="{ item }">

@@ -216,7 +216,7 @@ watchEffect(() => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
-        class="text-no-wrap"
+        class="text-no-wrap rounded-0"
         @update:options="options = $event"
       >
         <!-- Trending Header -->

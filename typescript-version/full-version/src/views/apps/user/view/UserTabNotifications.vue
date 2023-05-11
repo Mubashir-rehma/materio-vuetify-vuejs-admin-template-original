@@ -85,7 +85,7 @@ const notifications = ref([
       <VBtn>Save changes</VBtn>
       <VBtn
         color="secondary"
-        variant="tonal"
+        variant="outlined"
       >
         Discard
       </VBtn>

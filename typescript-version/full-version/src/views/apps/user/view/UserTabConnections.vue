@@ -162,7 +162,7 @@ const socialAccounts = ref([
               <template #append>
                 <IconBtn
                   :color="account.connected ? 'error' : 'secondary'"
-                  variant="tonal"
+                  variant="outlined"
                   class="rounded"
                 >
                   <VIcon

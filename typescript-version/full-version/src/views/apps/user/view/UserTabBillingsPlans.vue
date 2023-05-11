@@ -209,7 +209,7 @@ const currentBillingAddress = {
                 <div class="order-sm-0 order-1">
                   <VBtn
                     variant="outlined"
-                    class="me-2"
+                    class="me-4"
                     @click="openEditCardDialog(card)"
                   >
                     Edit

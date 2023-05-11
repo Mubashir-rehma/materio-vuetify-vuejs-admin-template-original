@@ -193,13 +193,12 @@ const deleteUser = (id: number) => {
 
         <VSpacer />
 
-        <div class="app-user-search-filter d-flex align-center">
+        <div class="app-user-search-filter d-flex align-center gap-6">
           <!-- 👉 Search  -->
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
             density="compact"
-            class="me-3"
           />
 
           <!-- 👉 Add user button -->
@@ -209,8 +208,6 @@ const deleteUser = (id: number) => {
         </div>
       </VCardText>
 
-      <VDivider />
-
       <!-- SECTION data table -->
       <VDataTableServer
         v-model:items-per-page="options.itemsPerPage"
@@ -219,6 +216,7 @@ const deleteUser = (id: number) => {
         :items-length="totalUsers"
         :headers="headers"
         show-select
+        class="rounded-0"
         @update:options="options = $event"
       >
         <!-- User -->

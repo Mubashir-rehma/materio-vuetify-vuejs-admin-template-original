@@ -81,7 +81,8 @@ const isChatContactActive = computed(() => {
 
 .chat-contact {
   border-radius: vuetify.$border-radius-root;
-  padding-block: 10px;
+  margin-block-end: 6px;
+  padding-block: 12px;
   padding-inline: var(--chat-content-spacing-x);
 
   @include mixins.before-pseudo;

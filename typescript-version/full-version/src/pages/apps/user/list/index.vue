@@ -141,7 +141,6 @@ const deleteUser = (id: number) => {
               v-model="selectedRole"
               label="Select Role"
               :items="roles"
-              density="default"
               clearable
               clear-icon="mdi-close"
             />
@@ -155,7 +154,6 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedPlan"
               label="Select Plan"
-              density="default"
               :items="plans"
               clearable
               clear-icon="mdi-close"
@@ -170,7 +168,6 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedStatus"
               label="Select Status"
-              density="default"
               :items="status"
               clearable
               clear-icon="mdi-close"

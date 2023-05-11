@@ -218,7 +218,6 @@ const refreshOpenedEmail = async () => {
           <!-- 👉 Search -->
           <VTextField
             v-model="q"
-            density="default"
             class="email-search px-1 flex-grow-1"
             prepend-inner-icon="mdi-magnify"
             placeholder="Search email"

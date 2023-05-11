@@ -197,10 +197,7 @@ const onSubmit = () => {
             >
               <!-- 👉 category -->
               <VWindowItem>
-                <VTextField
-                  label="Application Name"
-                  density="default"
-                />
+                <VTextField label="Application Name" />
 
                 <h6 class="text-h6 my-4">
                   Category

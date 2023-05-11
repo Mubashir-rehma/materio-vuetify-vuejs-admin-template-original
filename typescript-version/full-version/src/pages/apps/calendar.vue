@@ -77,7 +77,6 @@ const checkAll = computed({
                   v-model="checkAll"
                   label="View All"
                   color="secondary"
-                  density="default"
                 />
                 <VCheckbox
                   v-for="calendar in store.availableCalendars"
@@ -86,7 +85,6 @@ const checkAll = computed({
                   :value="calendar.label"
                   :color="calendar.color"
                   :label="calendar.label"
-                  density="default"
                   class="pt-1"
                 />
               </div>

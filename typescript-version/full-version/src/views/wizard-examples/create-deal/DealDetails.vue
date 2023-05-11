@@ -34,7 +34,6 @@ watch(formData, () => {
       >
         <VTextField
           v-model="formData.title"
-          density="default"
           label="Deal Title"
         />
       </VCol>
@@ -45,7 +44,6 @@ watch(formData, () => {
       >
         <VTextField
           v-model="formData.code"
-          density="default"
           label="Deal Code"
         />
       </VCol>
@@ -56,7 +54,6 @@ watch(formData, () => {
       >
         <VTextarea
           v-model="formData.description"
-          density="default"
           label="Deal Description"
           rows="4"
           auto-grow
@@ -73,7 +70,6 @@ watch(formData, () => {
               v-model="formData.offeredUItems"
               multiple
               chips
-              density="default"
               label="Offered Items"
               :items="offeredItems"
             />
@@ -82,7 +78,6 @@ watch(formData, () => {
           <VCol cols="12">
             <VSelect
               v-model="formData.cartCondition"
-              density="default"
               label="Cart Condition"
               :items="['Cart must contain all selected Downloads', 'Cart needs one or more of the selected Downloads']"
             />
@@ -96,7 +91,6 @@ watch(formData, () => {
       >
         <AppDateTimePicker
           v-model="formData.dealDuration"
-          density="default"
           label="Deal Duration"
           :config="{ mode: 'range' }"
         />

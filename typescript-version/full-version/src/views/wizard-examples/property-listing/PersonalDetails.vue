@@ -57,7 +57,6 @@ watch(formData, () => {
         <!-- 👉 First Name -->
         <VTextField
           v-model="formData.firstName"
-          density="default"
           class="text-center"
           label="First Name"
           placeholder="John"
@@ -71,7 +70,6 @@ watch(formData, () => {
         <!-- 👉 Last Name -->
         <VTextField
           v-model="formData.lastName"
-          density="default"
           label="Last Name"
           placeholder="Doe"
         />
@@ -84,7 +82,6 @@ watch(formData, () => {
         <!-- 👉 Username -->
         <VTextField
           v-model="formData.username"
-          density="default"
           label="Username"
           placeholder="John.Doe"
         />
@@ -97,7 +94,6 @@ watch(formData, () => {
         <!-- 👉 Password -->
         <VTextField
           v-model="formData.password"
-          density="default"
           type="password"
           label="Password"
         />
@@ -110,7 +106,6 @@ watch(formData, () => {
         <!-- 👉 Email -->
         <VTextField
           v-model="formData.email"
-          density="default"
           type="email"
           label="Email"
           placeholder="john.doe@email.com"
@@ -124,7 +119,6 @@ watch(formData, () => {
         <!-- 👉 Contact -->
         <VTextField
           v-model="formData.contact"
-          density="default"
           type="number"
           label="Contact"
           placeholder="7897897899"

@@ -72,7 +72,6 @@ const formSubmit = () => {
             <VCol cols="12">
               <VTextField
                 v-model="cardDetails.number"
-                density="default"
                 label="Card Number"
                 type="number"
               />
@@ -85,7 +84,6 @@ const formSubmit = () => {
             >
               <VTextField
                 v-model="cardDetails.name"
-                density="default"
                 label="Name"
               />
             </VCol>
@@ -98,7 +96,6 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.expiry"
                 label="Expiry"
-                density="default"
               />
             </VCol>
 
@@ -111,7 +108,6 @@ const formSubmit = () => {
                 v-model="cardDetails.cvv"
                 type="number"
                 label="CVV"
-                density="default"
               />
             </VCol>
 

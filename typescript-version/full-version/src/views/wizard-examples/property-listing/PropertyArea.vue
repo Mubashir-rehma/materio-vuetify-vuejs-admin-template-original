@@ -26,7 +26,6 @@ watch(formData, () => {
         <!-- 👉 Total Area -->
         <VTextField
           v-model="formData.totalArea"
-          density="default"
           label="Total Area"
           suffix="sq-ft"
           type="number"
@@ -40,7 +39,6 @@ watch(formData, () => {
         <!-- 👉 Carpet Area -->
         <VTextField
           v-model="formData.carpetArea"
-          density="default"
           label="Carpet Area"
           suffix="sq-ft"
           type="number"
@@ -54,7 +52,6 @@ watch(formData, () => {
         <!-- 👉 Plot Area -->
         <VTextField
           v-model="formData.plotArea"
-          density="default"
           label="Plot Area"
           suffix="sq-ft"
           type="number"
@@ -70,7 +67,6 @@ watch(formData, () => {
           v-model="formData.availableFrom"
           label="Available From"
           type="date"
-          density="default"
           format="YYYY-MM-DD"
         />
       </VCol>

@@ -109,7 +109,7 @@ const labels = [
       :options="{ wheelPropagation: false }"
       class="h-100"
     >
-      <ul class="email-filters-labels">
+      <ul class="email-filters-labels pt-3">
         <RouterLink
           v-for="folder in folders"
           :key="folder.title"

@@ -27,7 +27,6 @@
               <h2>Outlined</h2>
 
               <VSelect
-                density="default"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
                 placeholder="select city"
@@ -62,7 +61,6 @@
               <h2>Outlined</h2>
 
               <VSelect
-                density="default"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
                 placeholder="select city"
@@ -119,7 +117,6 @@
               <h2>Outlined</h2>
 
               <VSelect
-                density="default"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
                 placeholder="select city"
@@ -160,7 +157,6 @@
               <h2>Outlined</h2>
 
               <VSelect
-                density="default"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
                 placeholder="select city"
@@ -204,7 +200,6 @@
               <h2>Outlined</h2>
 
               <VSelect
-                density="default"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
                 placeholder="select city"

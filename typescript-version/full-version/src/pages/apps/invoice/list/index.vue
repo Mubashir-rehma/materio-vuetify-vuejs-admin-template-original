@@ -148,7 +148,6 @@ watchEffect(() => {
             <VSelect
               v-model="selectedStatus"
               label="Select Status"
-              density="default"
               clearable
               clear-icon="mdi-close"
               :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
@@ -164,7 +163,6 @@ watchEffect(() => {
               v-model="dateRange"
               label="Invoice Date"
               clear-icon="mdi-close"
-              density="default"
               clearable
               :config="{ mode: 'range' }"
             />

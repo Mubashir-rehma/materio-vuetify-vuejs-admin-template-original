@@ -40,11 +40,6 @@ const statistics = [
     </VCardItem>
 
     <VCardText>
-      <h6 class="text-sm font-weight-medium mb-12">
-        <span>Total 48.5% Growth 😎</span>
-        <span class="font-weight-regular"> this month</span>
-      </h6>
-
       <VRow>
         <VCol
           v-for="item in statistics"
@@ -57,7 +52,7 @@ const statistics = [
               <VAvatar
                 :color="item.color"
                 rounded
-                size="42"
+                size="40"
                 class="elevation-1"
               >
                 <VIcon

@@ -1,19 +1,36 @@
 <script setup lang="ts">
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/@fake-db/types'
+import { paginationMeta } from '@/@fake-db/utils'
+import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
+import type { Options } from '@core/types'
 import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
 const userListStore = useUserListStore()
 const searchQuery = ref('')
-const selectedRole = ref('')
-const selectedPlan = ref('')
-const selectedStatus = ref('')
-const rowPerPage = ref(7)
-const currentPage = ref(1)
+const selectedRole = ref()
+const selectedPlan = ref()
+const selectedStatus = ref()
 const totalPage = ref(1)
 const totalUsers = ref(0)
 const users = ref<UserProperties[]>([])
+
+const options = ref<Options>({
+  page: 1,
+  itemsPerPage: 10,
+  sortBy: [],
+  groupBy: [],
+  search: undefined,
+})
+
+const headers = [
+  { title: 'USER', key: 'user' },
+  { title: 'EMAIL', key: 'email' },
+  { title: 'ROLE', key: 'role' },
+  { title: 'STATUS', key: 'status' },
+]
 
 // 👉 Fetching users
 
@@ -23,8 +40,7 @@ const fetchUsers = () => {
     status: selectedStatus.value,
     plan: selectedPlan.value,
     role: selectedRole.value,
-    perPage: rowPerPage.value,
-    currentPage: currentPage.value,
+    options: options.value,
   }).then(response => {
     users.value = response.data.users
     totalPage.value = response.data.totalPage
@@ -36,159 +52,179 @@ const fetchUsers = () => {
 
 watchEffect(fetchUsers)
 
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
-
 const resolveUserRoleVariant = (role: string) => {
-  if (role === 'subscriber')
+  const roleLowerCase = role.toLowerCase()
+
+  if (roleLowerCase === 'subscriber')
     return { color: 'primary', icon: 'mdi-account-outline' }
-  if (role === 'author')
+  if (roleLowerCase === 'author')
     return { color: 'warning', icon: 'mdi-cog-outline' }
-  if (role === 'maintainer')
+  if (roleLowerCase === 'maintainer')
     return { color: 'success', icon: 'mdi-chart-donut' }
-  if (role === 'editor')
+  if (roleLowerCase === 'editor')
     return { color: 'info', icon: 'mdi-pencil-outline' }
-  if (role === 'admin')
+  if (roleLowerCase === 'admin')
     return { color: 'error', icon: 'mdi-laptop' }
 
   return { color: 'primary', icon: 'mdi-account-outline' }
 }
 
 const resolveUserStatusVariant = (stat: string) => {
-  if (stat === 'pending')
+  const statLowerCase = stat.toLowerCase()
+  if (statLowerCase === 'pending')
     return 'warning'
-  if (stat === 'active')
+  if (statLowerCase === 'active')
     return 'success'
-  if (stat === 'inactive')
+  if (statLowerCase === 'inactive')
     return 'secondary'
 
   return 'primary'
 }
 
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
+const isAddNewUserDrawerVisible = ref(false)
 
-// SECTION Checkbox toggle
-const selectedRows = ref<string[]>([])
-const selectAllUser = ref(false)
+// 👉 Add new user
+const addNewUser = (userData: UserProperties) => {
+  userListStore.addUser(userData)
 
-// 👉 watch if checkbox array is empty all select should be uncheck
-watch(selectedRows, () => {
-  if (!selectedRows.value.length)
-    selectAllUser.value = false
-}, { deep: true })
+  // refetch User
+  fetchUsers()
+}
 </script>
 
 <template>
-  <VCard>
-    <VTable class="text-no-wrap">
-      <!-- 👉 table head -->
-      <thead>
-        <tr>
-          <th scope="col">
-            USER
-          </th>
-          <th scope="col">
-            EMAIL
-          </th>
-          <th scope="col">
-            ROLE
-          </th>
-          <th scope="col">
-            STATUS
-          </th>
-        </tr>
-      </thead>
-
-      <!-- 👉 table body -->
-      <tbody>
-        <tr
-          v-for="user in users"
-          :key="user.id"
-        >
-          <!-- 👉 User -->
-          <td>
-            <div class="d-flex align-center">
-              <VAvatar
-                :color="resolveUserRoleVariant(user.role).color"
-                variant="tonal"
-                class="me-3"
-                size="30"
-              >
-                <VImg
-                  v-if="user.avatar"
-                  :src="user.avatar"
-                />
-                <span v-else>{{ avatarText(user.fullName) }}</span>
-              </VAvatar>
-
-              <div class="d-flex flex-column">
-                <h6 class="text-sm font-weight-medium">
-                  <RouterLink
-                    :to="{ name: 'apps-user-view-id', params: { id: user.id } }"
-                    class="font-weight-medium"
-                    style="color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));"
-                  >
-                    {{ user.fullName }}
-                  </RouterLink>
-                </h6>
-                <span class="text-xs text-medium-emphasis">@{{ user.username }}</span>
-              </div>
-            </div>
-          </td>
-
-          <!-- 👉 Email -->
-          <td class="text-medium-emphasis text-sm">
-            {{ user.email }}
-          </td>
-
-          <!-- 👉 Role -->
-          <td>
-            <VIcon
-              :icon="resolveUserRoleVariant(user.role).icon"
-              :color="resolveUserRoleVariant(user.role).color"
-              :size="24"
+  <section>
+    <VCard>
+      <!-- SECTION datatable -->
+      <VDataTableServer
+        v-model:items-per-page="options.itemsPerPage"
+        v-model:page="options.page"
+        :items="users"
+        :items-length="totalUsers"
+        :headers="headers"
+        class="text-no-wrap"
+        @update:options="options = $event"
+      >
+        <!-- User -->
+        <template #item.user="{ item }">
+          <div class="d-flex">
+            <VAvatar
+              size="34"
+              :variant="!item.raw.avatar ? 'tonal' : undefined"
+              :color="!item.raw.avatar ? resolveUserRoleVariant(item.raw.role).color : undefined"
               class="me-3"
-            />
-            <span class="text-capitalize text-medium-emphasis">{{ user.role }}</span>
-          </td>
-
-          <!-- 👉 Status -->
-          <td>
-            <VChip
-              :color="resolveUserStatusVariant(user.status)"
-              size="small"
-              class="text-capitalize"
             >
-              {{ user.status }}
-            </VChip>
-          </td>
-        </tr>
-      </tbody>
+              <VImg
+                v-if="item.raw.avatar"
+                :src="item.raw.avatar"
+              />
+              <span v-else>{{ avatarText(item.raw.fullName) }}</span>
+            </VAvatar>
 
-      <!-- 👉 table footer  -->
-      <tfoot v-show="!users.length">
-        <tr>
-          <td
-            colspan="7"
-            class="text-center"
+            <div class="d-flex flex-column">
+              <h6 class="text-sm font-weight-medium">
+                <RouterLink
+                  :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }"
+                  class="font-weight-medium user-list-name"
+                >
+                  {{ item.raw.fullName }}
+                </RouterLink>
+              </h6>
+
+              <span class="text-xs text-medium-emphasis">@{{ item.raw.username }}</span>
+            </div>
+          </div>
+        </template>
+
+        <!-- Role -->
+        <template #item.role="{ item }">
+          <div class="d-flex gap-2">
+            <VIcon
+              :icon="resolveUserRoleVariant(item.raw.role).icon"
+              :color="resolveUserRoleVariant(item.raw.role).color"
+            />
+
+            <span class="text-capitalize">{{ item.raw.role }}</span>
+          </div>
+        </template>
+
+        <!-- email -->
+        <template #item.email="{ item }">
+          <span class="text-sm">{{ item.raw.email }}</span>
+        </template>
+
+        <!-- Status -->
+        <template #item.status="{ item }">
+          <VChip
+            :color="resolveUserStatusVariant(item.raw.status)"
+            density="comfortable"
+            class="text-capitalize"
           >
-            No data available
-          </td>
-        </tr>
-      </tfoot>
-    </VTable>
-  </VCard>
+            {{ item.raw.status }}
+          </VChip>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
+            <div class="d-flex align-center gap-x-2 text-sm">
+              Rows Per Page:
+              <VSelect
+                v-model="options.itemsPerPage"
+                class="per-page-select text-high-emphasis"
+                variant="plain"
+                density="compact"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <span class="d-flex align-center text-sm me-2 text-high-emphasis">{{ paginationMeta(options, totalUsers) }}</span>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                icon="mdi-chevron-left"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="options.page <= 1"
+                @click="options.page <= 1 ? options.page = 1 : options.page--"
+              />
+
+              <VBtn
+                icon="mdi-chevron-right"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="options.page >= Math.ceil(totalUsers / options.itemsPerPage)"
+                @click="options.page >= Math.ceil(totalUsers / options.itemsPerPage) ? options.page = Math.ceil(totalUsers / options.itemsPerPage) : options.page++ "
+              />
+            </div>
+          </div>
+        </template>
+      </VDataTableServer>
+      <!-- SECTION -->
+    </VCard>
+
+    <!-- 👉 Add New User -->
+    <AddNewUserDrawer
+      v-model:isDrawerOpen="isAddNewUserDrawerVisible"
+      @user-data="addNewUser"
+    />
+  </section>
 </template>
 
 <style lang="scss">
+.app-user-search-filter {
+  inline-size: 24.0625rem;
+}
+
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.user-list-name:not(:hover) {
+  color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 </style>

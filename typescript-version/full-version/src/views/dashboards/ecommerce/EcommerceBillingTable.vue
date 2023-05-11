@@ -112,7 +112,6 @@ watchEffect(() => {
         v-model:items-per-page="options.itemsPerPage"
         v-model:page="options.page"
         :loading="isLoading"
-        show-select
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"

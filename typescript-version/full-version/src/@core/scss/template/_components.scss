@@ -45,25 +45,6 @@
   --v-avatar-height: 24px;
 }
 
-// 👉 Card
-.v-card {
-  .v-card-item {
-    + .v-card-text {
-      padding-block-start: 8px !important;
-    }
-
-    // Added padding top when v-card-item's sibling is not .v-card-text
-    + :not(.v-card-text) {
-      padding-block-start: 20px !important;
-    }
-
-    // Fix: Added display block when v-card-item's only sibling is .v-card__underlay that is achieve to add padding top
-    + .v-card__underlay:last-child {
-      display: block;
-    }
-  }
-}
-
 // 👉 Expansion Panel
 .v-expansion-panel {
   .v-expansion-panel-text {

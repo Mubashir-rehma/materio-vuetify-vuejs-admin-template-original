@@ -15,7 +15,6 @@ import cafeBadilico from '@images/cards/cafe-badilico.png'
       <VCardSubtitle class="d-flex align-center flex-wrap mt-2">
         <VRating
           density="compact"
-          color="warning"
           :model-value="4"
           :size="24"
           background-color="warning"

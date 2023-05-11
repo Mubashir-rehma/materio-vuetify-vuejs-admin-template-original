@@ -178,8 +178,10 @@ const withdraws = [
               </VListItemSubtitle>
 
               <template #append>
-                <VListItemAction class="text-error font-weight-medium">
-                  {{ withdraw.amount }}
+                <VListItemAction class="text-error">
+                  <span class="font-weight-medium">
+                    {{ withdraw.amount }}
+                  </span>
                 </VListItemAction>
               </template>
             </VListItem>

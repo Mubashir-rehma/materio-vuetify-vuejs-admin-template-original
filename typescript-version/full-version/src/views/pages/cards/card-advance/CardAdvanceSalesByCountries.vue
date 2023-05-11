@@ -83,7 +83,7 @@ const salesByCountries = [
           <VListItemTitle class="mb-1">
             <span class="text-sm font-weight-medium">{{ data.amount }}</span>
             <VIcon
-              size="22"
+              size="24"
               :color="data.change.charAt(0) === '+' ? 'success' : 'error'"
               class="mx-1"
             >
@@ -94,8 +94,10 @@ const salesByCountries = [
             </span>
           </VListItemTitle>
 
-          <VListItemSubtitle class="text-xs">
-            {{ data.country }}
+          <VListItemSubtitle>
+            <span class="text-xs">
+              {{ data.country }}
+            </span>
           </VListItemSubtitle>
 
           <template #append>
@@ -114,6 +116,6 @@ const salesByCountries = [
 
   <style lang="scss" scoped>
   .card-list {
-    --v-card-list-gap: 1.3rem;
+    --v-card-list-gap: 1.5rem;
   }
   </style>

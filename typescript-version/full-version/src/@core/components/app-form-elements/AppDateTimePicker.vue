@@ -219,10 +219,10 @@ input[altinputclass="inlinePicker"] {
         padding-block-start: 0;
 
         .flatpickr-day {
-          block-size: 42px;
-          line-height: 42px;
+          block-size: 40px;
+          line-height: 40px;
           margin-block-start: 0 !important;
-          max-inline-size: 42px;
+          max-inline-size: 40px;
         }
       }
     }
@@ -307,7 +307,12 @@ input[altinputclass="inlinePicker"] {
 
     .flatpickr-prev-month,
     .flatpickr-next-month {
-      fill: $body-color;
+      fill: rgba(var(--v-theme-on-surface), 0.54);
+
+      svg {
+        stroke: rgba(var(--v-theme-on-surface), 0.54);
+        stroke-width: 2px;
+      }
 
       &:hover i,
       &:hover svg {
@@ -317,7 +322,7 @@ input[altinputclass="inlinePicker"] {
   }
 
   .flatpickr-current-month span.cur-month {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   &.open {
@@ -376,13 +381,14 @@ input[altinputclass="inlinePicker"] {
 
 // week sections
 .flatpickr-weekdays {
-  margin-block-start: 8px;
+  margin-block: 8px;
 }
 
 // Month and year section
 .flatpickr-current-month {
   .flatpickr-monthDropdown-months {
     appearance: none;
+    block-size: 22px;
   }
 
   .flatpickr-monthDropdown-months,
@@ -390,11 +396,16 @@ input[altinputclass="inlinePicker"] {
     padding: 2px;
     border-radius: 4px;
     color: $heading-color;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 400;
     transition: all 0.15s ease-out;
 
     span {
       display: none;
+    }
+
+    input.cur-year {
+      font-weight: 400 !important;
     }
 
     .flatpickr-monthDropdown-month {

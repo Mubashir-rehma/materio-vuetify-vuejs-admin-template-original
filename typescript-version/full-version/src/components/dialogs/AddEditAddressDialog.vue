@@ -89,7 +89,7 @@ const addressTypes = [
 
       <VCardText>
         <!-- 👉 Subtitle -->
-        <VCardSubtitle class="text-center mb-9 ">
+        <VCardSubtitle class="text-center mb-9">
           Edit Address for future billing
         </VCardSubtitle>
 

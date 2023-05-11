@@ -85,7 +85,10 @@ const chartOptions = controlledComputed(theme, () => {
             $25,980
           </h6>
           <span class="text-success text-xs text-no-wrap">
-            <VIcon icon="mdi-chevron-up" />
+            <VIcon
+              icon="mdi-chevron-up"
+              size="24"
+            />
             <span>15.6%</span>
           </span>
         </div>

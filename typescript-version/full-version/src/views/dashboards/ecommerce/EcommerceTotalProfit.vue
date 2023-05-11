@@ -155,7 +155,9 @@ const lastThreeTransactions = [
           <VCardTitle class="text-h5">
             $482.85k
           </VCardTitle>
-          <VCardSubtitle>Last month balance $234.40k</VCardSubtitle>
+          <VCardSubtitle class="mb-2">
+            Last month balance $234.40k
+          </VCardSubtitle>
 
           <template #append>
             <div class="mt-n7 me-n3">

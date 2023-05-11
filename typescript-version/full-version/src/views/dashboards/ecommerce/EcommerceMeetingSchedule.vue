@@ -120,10 +120,12 @@ const meetingTypeUiColors: UiColors = {
           <template #append>
             <VListItemAction>
               <VChip
-                size="small"
+                density="compact"
                 :color="meetingTypeUiColors[meeting.type]"
               >
-                {{ meeting.type }}
+                <span class="text-xs">
+                  {{ meeting.type }}
+                </span>
               </VChip>
             </VListItemAction>
           </template>

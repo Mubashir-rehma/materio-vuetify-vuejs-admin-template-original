@@ -73,9 +73,9 @@ const options = {
 
         <VCardText class="pt-3">
           <p class="text-xs mb-1">
-            48% new visitors
+            48% new visitors <br>
+            this week.
           </p>
-          <p>this week.</p>
 
           <div class="d-flex align-center">
             <h6 class="text-h6">
@@ -83,6 +83,7 @@ const options = {
             </h6>
             <VIcon
               icon="mdi-chevron-up"
+              size="24"
               color="success"
             />
             <span class="text-success font-weight-medium">28</span>

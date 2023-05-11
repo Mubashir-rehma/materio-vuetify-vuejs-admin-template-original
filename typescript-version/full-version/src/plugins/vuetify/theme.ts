@@ -100,7 +100,7 @@ const theme: VuetifyOptions['theme'] = {
         'pressed-opacity': 0.14,
         'dragged-opacity': 0.1,
         'border-color': '#E7E3FC',
-        'table-header-background': '#28243D',
+        'table-header-background': '#3D3759',
         'custom-background': '#373452',
 
         // Shadows

@@ -188,7 +188,7 @@ watchEffect(() => {
 
         <VSpacer />
 
-        <div class="d-flex align-center flex-wrap gap-4">
+        <div class="d-flex align-center flex-wrap gap-6">
           <!-- 👉 Search  -->
           <div class="invoice-list-search">
             <VTextField
@@ -204,8 +204,6 @@ watchEffect(() => {
           </VBtn>
         </div>
       </VCardText>
-
-      <VDivider />
 
       <!-- SECTION Datatable -->
       <VDataTableServer
@@ -231,7 +229,10 @@ watchEffect(() => {
 
         <!-- id -->
         <template #item.id="{ item }">
-          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }">
+          <RouterLink
+            :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }"
+            class="text-sm"
+          >
             #{{ item.raw.id }}
           </RouterLink>
         </template>

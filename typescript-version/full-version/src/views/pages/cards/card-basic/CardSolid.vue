@@ -80,14 +80,23 @@ const solidCardData = [
               icon="mdi-heart"
               color="white"
               class="me-1"
-            />
+            >
+              <VIcon
+                icon="mdi-heart"
+                size="20"
+              />
+            </IconBtn>
             <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
 
             <IconBtn
-              icon="mdi-share-variant"
               color="white"
               class="me-1"
-            />
+            >
+              <VIcon
+                icon="mdi-share-variant"
+                size="20"
+              />
+            </IconBtn>
             <span class="text-subtitle-2 text-white">{{ data.share }}</span>
           </div>
         </VCardText>

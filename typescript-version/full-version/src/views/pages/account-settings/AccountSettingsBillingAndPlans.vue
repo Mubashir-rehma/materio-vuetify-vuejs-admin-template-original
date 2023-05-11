@@ -226,7 +226,6 @@ const resetPaymentForm = () => {
                         <VTextField
                           v-model="cardNumber"
                           label="Card Number"
-                          density="default"
                           type="number"
                         />
                       </VCol>
@@ -238,7 +237,6 @@ const resetPaymentForm = () => {
                       >
                         <VTextField
                           v-model="cardName"
-                          density="default"
                           label="Name"
                         />
                       </VCol>
@@ -250,7 +248,6 @@ const resetPaymentForm = () => {
                       >
                         <VTextField
                           v-model="cardExpiryDate"
-                          density="default"
                           label="Expiry Date"
                         />
                       </VCol>
@@ -262,7 +259,6 @@ const resetPaymentForm = () => {
                       >
                         <VTextField
                           v-model="cardCvv"
-                          density="default"
                           type="number"
                           label="CVV Code"
                         />

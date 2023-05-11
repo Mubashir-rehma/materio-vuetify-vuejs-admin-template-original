@@ -123,7 +123,6 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.username"
                     label="Username"
-                    density="default"
                   />
                 </VCol>
 
@@ -133,7 +132,6 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.email"
-                    density="default"
                     label="Email"
                   />
                 </VCol>
@@ -147,7 +145,6 @@ const onSubmit = () => {
                     label="Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                    density="default"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
                   />
                 </VCol>
@@ -161,7 +158,6 @@ const onSubmit = () => {
                     label="Confirm Password"
                     :type="isConfirmPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-                    density="default"
                     @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                   />
                 </VCol>
@@ -169,7 +165,6 @@ const onSubmit = () => {
                 <VCol cols="12">
                   <VTextField
                     v-model="form.link"
-                    density="default"
                     label="Profile Link"
                     type="url"
                   />
@@ -192,7 +187,6 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.firstName"
-                    density="default"
                     label="First Name"
                   />
                 </VCol>
@@ -203,7 +197,6 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.lastName"
-                    density="default"
                     label="Last Name"
                   />
                 </VCol>
@@ -215,7 +208,6 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.mobile"
                     type="number"
-                    density="default"
                     label="Mobile"
                   />
                 </VCol>
@@ -226,7 +218,6 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.pincode"
-                    density="default"
                     type="number"
                     label="Pincode"
                   />
@@ -235,7 +226,6 @@ const onSubmit = () => {
                 <VCol cols="12">
                   <VTextField
                     v-model="form.address"
-                    density="default"
                     label="Address"
                   />
                 </VCol>
@@ -243,7 +233,6 @@ const onSubmit = () => {
                 <VCol cols="12">
                   <VTextField
                     v-model="form.landmark"
-                    density="default"
                     label="Landmark"
                   />
                 </VCol>
@@ -254,7 +243,6 @@ const onSubmit = () => {
                 >
                   <VTextField
                     v-model="form.city"
-                    density="default"
                     label="City"
                   />
                 </VCol>
@@ -265,7 +253,6 @@ const onSubmit = () => {
                 >
                   <VSelect
                     v-model="form.state"
-                    density="default"
                     label="State"
                     :items="['New York', 'California', 'Florida', 'Washington', 'Texas']"
                   />
@@ -359,12 +346,13 @@ const onSubmit = () => {
 
         <div class="d-flex justify-space-between mt-5">
           <VBtn
-            color="secondary"
+            :color="currentStep === 0 ? 'secondary' : 'default'"
+            variant="outlined"
             :disabled="currentStep === 0"
             @click="currentStep--"
           >
             <VIcon
-              icon="mdi-chevron-left"
+              icon="mdi-arrow-left"
               start
               class="flip-in-rtl"
             />
@@ -387,7 +375,7 @@ const onSubmit = () => {
             Next
 
             <VIcon
-              icon="mdi-chevron-right"
+              icon="mdi-arrow-right"
               end
               class="flip-in-rtl"
             />

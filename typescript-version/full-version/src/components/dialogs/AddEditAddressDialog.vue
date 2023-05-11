@@ -130,7 +130,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.companyName"
-                density="default"
                 label="Company Name"
               />
             </VCol>
@@ -142,8 +141,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.billingEmail"
-                density="default"
-
                 label="Email"
               />
             </VCol>
@@ -155,7 +152,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.taxID"
-                density="default"
                 label="Tax ID"
               />
             </VCol>
@@ -167,7 +163,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.vatNumber"
-                density="default"
                 label="VAT Number"
               />
             </VCol>
@@ -177,7 +172,6 @@ const addressTypes = [
               <VTextarea
                 v-model="billingAddress.address"
                 rows="2"
-                density="default"
                 label="Billing Address"
               />
             </VCol>
@@ -189,7 +183,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.contact"
-                density="default"
                 label="Contact"
               />
             </VCol>
@@ -201,7 +194,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.country"
-                density="default"
                 label="Country"
               />
             </VCol>
@@ -213,7 +205,6 @@ const addressTypes = [
             >
               <VTextField
                 v-model="billingAddress.state"
-                density="default"
                 label="State"
               />
             </VCol>
@@ -226,7 +217,6 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.zipCode"
                 label="Zip Code"
-                density="default"
                 type="number"
               />
             </VCol>

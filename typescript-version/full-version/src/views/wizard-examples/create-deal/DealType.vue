@@ -66,7 +66,6 @@ watch(formData, () => {
           type="number"
           label="Discount"
           hint="Enter the discount percentage. 10 = 10%"
-          density="default"
           persistent-hint
         />
       </VCol>
@@ -78,7 +77,6 @@ watch(formData, () => {
         <VSelect
           v-model="formData.region"
           label="Region"
-          density="default"
           :items="['Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']"
           hint="Select applicable regions for the deal."
           persistent-hint

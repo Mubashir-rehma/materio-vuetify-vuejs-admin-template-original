@@ -104,7 +104,6 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardNumber"
                   type="number"
-                  density="default"
                   label="Card Number"
                 />
               </VCol>
@@ -115,7 +114,6 @@ watch(() => prop.currentStep, updateCartData)
               >
                 <VTextField
                   v-model="cardFormData.cardName"
-                  density="default"
                   label="Name"
                 />
               </VCol>
@@ -126,7 +124,6 @@ watch(() => prop.currentStep, updateCartData)
               >
                 <VTextField
                   v-model="cardFormData.cardExpiry"
-                  density="default"
                   label="Expiry"
                 />
               </VCol>
@@ -138,7 +135,6 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardCvv"
                   label="CVV"
-                  density="default"
                   type="number"
                 >
                   <template #append-inner>

@@ -28,7 +28,6 @@
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
                 class="my-5"
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -62,7 +61,6 @@
                 placeholder="Enter city"
                 variant="outlined"
                 class="my-5"
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -98,7 +96,6 @@
                 variant="outlined"
                 class="my-5"
                 multiple
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -135,7 +132,6 @@
                 class="my-5"
                 multiple
                 clearable
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -174,7 +170,6 @@
                 multiple
                 chips
                 closable-chips
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -217,7 +212,6 @@
                 chips
                 clearable
                 closable-chips
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -260,7 +254,6 @@
                 class="my-5"
                 multiple
                 chips
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -299,7 +292,6 @@
                 prepend-inner-icon="mdi-city"
                 class="my-5"
                 multiple
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -338,7 +330,6 @@
                 prepend-icon="mdi-city"
                 class="my-5"
                 multiple
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -377,7 +368,6 @@
                 append-icon="mdi-city"
                 class="my-5"
                 multiple
-                density="default"
               />
               <VAutocomplete
                 label="City"
@@ -417,7 +407,6 @@
                 class="my-5"
                 loading
                 multiple
-                density="default"
               />
               <VAutocomplete
                 label="City"

@@ -27,7 +27,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
               />
 
@@ -60,7 +59,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 placeholder="select city"
                 class="my-5"
               />
@@ -95,7 +93,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
                 multiple
               />
@@ -130,7 +127,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
                 chips
                 multiple
@@ -168,7 +164,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
                 chips
                 closable-chips
@@ -209,7 +204,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
                 chips
                 closable-chips
@@ -254,7 +248,6 @@
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 label="City"
                 multiple
-                density="default"
                 class="my-5"
               >
                 <template #selection="data">
@@ -283,7 +276,6 @@
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 label="City"
                 multiple
-                density="default"
                 class="my-5"
               >
                 <template #selection="data">
@@ -351,7 +343,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
                 prepend-inner-icon="mdi-city"
               />
@@ -386,7 +377,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 class="my-5"
                 prepend-icon="mdi-city"
               />
@@ -421,7 +411,6 @@
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
-                density="default"
                 placeholder="select city"
                 loading
                 class="my-5"

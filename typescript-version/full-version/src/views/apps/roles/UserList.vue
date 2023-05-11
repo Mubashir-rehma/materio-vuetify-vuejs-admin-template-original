@@ -110,7 +110,7 @@ const addNewUser = (userData: UserProperties) => {
         <!-- 👉 Export button -->
         <VBtn
           variant="outlined"
-          color="secondary"
+          color="disabled"
           prepend-icon="mdi-tray-arrow-up"
         >
           Export
@@ -118,13 +118,13 @@ const addNewUser = (userData: UserProperties) => {
 
         <VSpacer />
 
-        <div class="app-user-search-filter d-flex align-center">
+        <div class="app-user-search-filter d-flex align-center gap-6">
           <!-- 👉 Search  -->
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
             density="compact"
-            class="me-3"
+            style="width: 8rem;"
           />
 
           <!-- 👉 Add user button -->
@@ -135,12 +135,10 @@ const addNewUser = (userData: UserProperties) => {
             density="compact"
             clearable
             clear-icon="mdi-close"
-            style="width: 5rem;"
+            style="width: 6rem;"
           />
         </div>
       </VCardText>
-
-      <VDivider />
 
       <!-- SECTION datatable -->
       <VDataTableServer
@@ -150,7 +148,7 @@ const addNewUser = (userData: UserProperties) => {
         :items-length="totalUsers"
         :headers="headers"
         show-select
-        class="text-no-wrap"
+        class="text-no-wrap rounded-0"
         @update:options="options = $event"
       >
         <!-- User -->

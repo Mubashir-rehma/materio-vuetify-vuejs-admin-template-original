@@ -45,6 +45,10 @@
   --v-avatar-height: 24px;
 }
 
+.v-chip.v-chip--density-comfortable {
+  line-height: 1;
+}
+
 // 👉 Expansion Panel
 .v-expansion-panel {
   .v-expansion-panel-text {

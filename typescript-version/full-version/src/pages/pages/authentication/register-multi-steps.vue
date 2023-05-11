@@ -344,7 +344,7 @@ const onSubmit = () => {
           </VForm>
         </VWindow>
 
-        <div class="d-flex justify-space-between mt-5">
+        <div class="d-flex justify-sm-space-between gap-4 flex-wrap justify-center mt-5">
           <VBtn
             :color="currentStep === 0 ? 'secondary' : 'default'"
             variant="outlined"

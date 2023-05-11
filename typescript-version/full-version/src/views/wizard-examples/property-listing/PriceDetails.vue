@@ -101,20 +101,17 @@ watch(formData, () => {
       >
         <!-- 👉 Show Price As  -->
         <VRadioGroup v-model="formData.priceDisplayType">
-          <template #label>
-            <div class="text-high-emphasis text-sm">
-              Show Price As
-            </div>
-          </template>
+          <div class="text-high-emphasis text-sm">
+            Show Price As
+          </div>
+
           <VRadio
             label="Negotiable"
             value="Negotiable"
-            class="ms-2"
           />
           <VRadio
             label="Call For Price"
             value="Call For Price"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>

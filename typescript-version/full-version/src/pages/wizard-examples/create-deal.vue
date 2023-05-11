@@ -110,15 +110,15 @@ const onSubmit = () => {
             </VWindowItem>
           </VWindow>
 
-          <div class="d-flex justify-space-between mt-5">
+          <div class="d-flex justify-sm-space-between gap-4 flex-wrap justify-center mt-5">
             <VBtn
-              color="secondary"
+              :color="currentStep === 0 ? 'secondary' : 'default'"
               variant="outlined"
               :disabled="currentStep === 0"
               @click="currentStep--"
             >
               <VIcon
-                icon="mdi-chevron-left"
+                icon="mdi-arrow-left"
                 start
                 class="flip-in-rtl"
               />
@@ -141,7 +141,7 @@ const onSubmit = () => {
               Next
 
               <VIcon
-                icon="mdi-chevron-right"
+                icon="mdi-arrow-right"
                 end
                 class="flip-in-rtl"
               />

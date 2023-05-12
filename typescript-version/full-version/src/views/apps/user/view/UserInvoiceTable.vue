@@ -230,7 +230,7 @@ watchEffect(() => {
         <template #bottom>
           <VDivider />
 
-          <div class="d-flex justify-end gap-x-6 py-2">
+          <div class="d-flex justify-end gap-x-6 pa-2 flex-wrap">
             <div class="d-flex align-center gap-x-2 text-sm">
               Rows Per Page:
               <VSelect
@@ -246,6 +246,7 @@ watchEffect(() => {
 
             <div class="d-flex gap-x-2 align-center me-2">
               <VBtn
+                class="flip-in-rtl"
                 icon="mdi-chevron-left"
                 variant="text"
                 density="comfortable"
@@ -256,6 +257,7 @@ watchEffect(() => {
 
               <VBtn
                 icon="mdi-chevron-right"
+                class="flip-in-rtl"
                 density="comfortable"
                 variant="text"
                 color="default"

@@ -159,7 +159,7 @@ const editPermission = (name: string) => {
           <template #bottom>
             <VDivider />
 
-            <div class="d-flex justify-end gap-x-6 py-2 flex-wrap">
+            <div class="d-flex justify-end gap-x-6 pa-2 flex-wrap">
               <div class="d-flex align-center gap-x-2 text-sm">
                 Rows Per Page:
                 <VSelect
@@ -174,6 +174,7 @@ const editPermission = (name: string) => {
               <div class="d-flex gap-x-2 align-center me-2">
                 <VBtn
                   icon="mdi-chevron-left"
+                  class="flip-in-rtl"
                   variant="text"
                   density="comfortable"
                   color="default"
@@ -181,6 +182,7 @@ const editPermission = (name: string) => {
                   @click="options.page <= 1 ? options.page = 1 : options.page--"
                 />
                 <VBtn
+                  class="flip-in-rtl"
                   icon="mdi-chevron-right"
                   density="comfortable"
                   variant="text"

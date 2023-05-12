@@ -342,7 +342,7 @@ watchEffect(() => {
         <template #bottom>
           <VDivider />
 
-          <div class="d-flex justify-end gap-x-6 py-2">
+          <div class="d-flex justify-end flex-wrap gap-x-6 pa-2">
             <div class="d-flex align-center gap-x-2 text-sm">
               Rows Per Page:
               <VSelect
@@ -354,10 +354,11 @@ watchEffect(() => {
               />
             </div>
 
-            <span class="d-flex align-center text-sm text-high-emphasis">{{ paginationMeta(options, totalInvoices) }}</span>
+            <span class="d-flex align-center text-sm text-high-emphasis me-2">{{ paginationMeta(options, totalInvoices) }}</span>
 
             <div class="d-flex gap-x-2 align-center me-2">
               <VBtn
+                class="flip-in-rtl"
                 icon="mdi-chevron-left"
                 variant="text"
                 density="comfortable"
@@ -367,6 +368,7 @@ watchEffect(() => {
               />
 
               <VBtn
+                class="flip-in-rtl"
                 icon="mdi-chevron-right"
                 density="comfortable"
                 variant="text"

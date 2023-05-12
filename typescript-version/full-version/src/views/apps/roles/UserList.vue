@@ -235,7 +235,7 @@ const addNewUser = (userData: UserProperties) => {
         <template #bottom>
           <VDivider />
 
-          <div class="d-flex justify-end gap-x-6 py-2 flex-wrap">
+          <div class="d-flex justify-end gap-x-6 pa-2 flex-wrap">
             <div class="d-flex align-center gap-x-2 text-sm">
               Rows Per Page:
               <VSelect
@@ -252,6 +252,7 @@ const addNewUser = (userData: UserProperties) => {
             <div class="d-flex gap-x-2 align-center me-2">
               <VBtn
                 icon="mdi-chevron-left"
+                class="flip-in-rtl"
                 variant="text"
                 density="comfortable"
                 color="default"
@@ -260,6 +261,7 @@ const addNewUser = (userData: UserProperties) => {
               />
 
               <VBtn
+                class="flip-in-rtl"
                 icon="mdi-chevron-right"
                 density="comfortable"
                 variant="text"

@@ -50,7 +50,7 @@ const solidCardData = [
         <VCardItem>
           <template #prepend>
             <VIcon
-              size="1.9rem"
+              size="30"
               color="white"
               :icon="data.icon"
             />
@@ -77,20 +77,21 @@ const solidCardData = [
 
           <div class="d-flex align-center">
             <IconBtn
-              icon="mdi-heart"
               color="white"
               class="me-1"
+              density="comfortable"
             >
               <VIcon
-                icon="mdi-heart"
+                icon="mdi-thumb-up"
                 size="20"
               />
             </IconBtn>
-            <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
+            <span class="text-subtitle-2 text-white me-2">{{ data.likes }}</span>
 
             <IconBtn
               color="white"
               class="me-1"
+              density="comfortable"
             >
               <VIcon
                 icon="mdi-share-variant"

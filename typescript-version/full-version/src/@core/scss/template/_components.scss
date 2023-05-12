@@ -59,21 +59,10 @@
 // 👉 Tooltip
 .v-tooltip > .v-overlay__content {
   font-weight: 500;
+  line-height: 0.875rem;
 }
 
 // 👉 List
-.v-list {
-  .v-list-item {
-    &.v-list-item--density-comfortable .v-icon {
-      font-size: 1.5rem;
-    }
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    &.v-list-item--density-compact .v-icon {
-      font-size: 1.25rem;
-    }
-  }
-}
 
 //  👉 Tab with pill support
 .v-tabs.v-tabs-pill {
@@ -142,8 +131,12 @@
 
 .v-slider-thumb {
   .v-slider-thumb__label {
-    background: rgb(var(--v-theme-grey-600));
+    background: rgb(117, 117, 117);
     color: rgb(var(--v-theme-on-primary));
+
+    &::before {
+      color: rgb(117, 117, 117);
+    }
   }
 }
 

@@ -1,10 +1,15 @@
-name: 'Handle new issue'
+name: 'Handle issue'
 on:
   issues:
-    types: [opened]
+    types: [opened,reopened]
+
+# ℹ️ Required by gh cli
+env:
+    GH_TOKEN: ${{ github.token }}
 
 jobs:
   handle_new_issue:
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
     name: Handle new issue
     steps:
@@ -43,3 +48,10 @@ jobs:
             Potential duplicates: {{#issues}}
               - #{{ number }} _({{ accuracy }}% Match)_
             {{/issues}}
+
+  remove_awaiting_reply_label:
+    if: github.event.action == 'reopened'
+    runs-on: ubuntu-latest
+    name: Remove Awaiting Reply Label
+    steps:
+      - run: gh label delete awaiting-reply --yes --repo ${{ github.repository }}

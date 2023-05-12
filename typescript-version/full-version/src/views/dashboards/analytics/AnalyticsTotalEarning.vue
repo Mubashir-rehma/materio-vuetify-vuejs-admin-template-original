@@ -94,6 +94,6 @@ const earnings = [
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 2.625rem;
+  --v-card-list-gap: 2.5rem;
 }
 </style>

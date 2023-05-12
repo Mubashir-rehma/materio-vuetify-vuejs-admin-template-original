@@ -155,7 +155,10 @@ watch(() => props.currentStep, updateCartData)
                 </p>
 
                 <div>
-                  <VBtn variant="outlined">
+                  <VBtn
+                    size="small"
+                    variant="outlined"
+                  >
                     move to wishlist
                   </VBtn>
                 </div>

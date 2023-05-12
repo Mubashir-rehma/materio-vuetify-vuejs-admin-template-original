@@ -93,7 +93,7 @@ const resetAuthCode = () => {
               Continue
               <VIcon
                 end
-                icon="mdi-chevron-right"
+                icon="mdi-arrow-right"
                 class="flip-in-rtl"
               />
             </VBtn>

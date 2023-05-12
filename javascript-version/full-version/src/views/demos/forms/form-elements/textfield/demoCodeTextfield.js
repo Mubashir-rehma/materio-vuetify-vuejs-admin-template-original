@@ -248,8 +248,8 @@ const clickMe = () => {
     <template #append>
       <VBtn
         :size="$vuetify.display.smAndDown ? 'small' : 'large'"
-        class="mt-n3"
         :icon="$vuetify.display.smAndDown"
+        :class="$vuetify.display.smAndDown ? 'mt-n1' : 'mt-n3'"
         @click="clickMe"
       >
         <VIcon icon="mdi-target" />
@@ -320,8 +320,8 @@ const clickMe = () => {
     <template #append>
       <VBtn
         :size="$vuetify.display.smAndDown ? 'small' : 'large'"
-        class="mt-n3"
         :icon="$vuetify.display.smAndDown"
+        :class="$vuetify.display.smAndDown ? 'mt-n1' : 'mt-n3'"
         @click="clickMe"
       >
         <VIcon icon="mdi-target" />

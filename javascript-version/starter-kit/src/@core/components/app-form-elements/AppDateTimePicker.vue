@@ -176,6 +176,7 @@ const emitModelValue = val => {
 <style lang="scss">
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
+@use "@core/scss/base/mixins";
 
 .flat-picker-custom-style {
   position: absolute;
@@ -198,6 +199,8 @@ input[altinputclass="inlinePicker"] {
 .flatpickr-calendar {
   background-color: rgb(var(--v-theme-surface));
   margin-block-start: 0.1875rem;
+
+  @include mixins.elevation(6);
 
   .flatpickr-rContainer {
     .flatpickr-weekdays {
@@ -340,10 +343,14 @@ input[altinputclass="inlinePicker"] {
 
 // Time picker
 .flatpickr-time {
+  input.flatpickr-hour {
+    font-weight: 400;
+  }
+
   .flatpickr-am-pm,
   .flatpickr-time-separator,
   input {
-    color: $body-color;
+    color: $heading-color;
   }
 
   .numInputWrapper {
@@ -380,7 +387,7 @@ input[altinputclass="inlinePicker"] {
 .flatpickr-current-month {
   .flatpickr-monthDropdown-months {
     appearance: none;
-    block-size: 22px;
+    block-size: 24px;
   }
 
   .flatpickr-monthDropdown-months,

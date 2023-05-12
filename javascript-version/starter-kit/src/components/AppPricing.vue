@@ -102,7 +102,7 @@ const pricingPlans = [
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center">
-    <h4 class="text-h4 font-weight-regular mb-2">
+    <h4 class="text-h4 mb-2">
       {{ props.title ? props.title : 'Pricing Plans' }}
     </h4>
     <p class="text-sm mb-1">

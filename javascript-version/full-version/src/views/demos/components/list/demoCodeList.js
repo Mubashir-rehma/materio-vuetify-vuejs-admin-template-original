@@ -1231,7 +1231,7 @@ const resolveStatusColor: Status = {
         <VListItemTitle>
           {{ user.name }}
         </VListItemTitle>
-        <VListItemSubtitle class="mt-1">
+        <VListItemSubtitle class="mt-1 me-2">
           <VBadge
             dot
             location="start center"
@@ -1242,7 +1242,7 @@ const resolveStatusColor: Status = {
             <span class="ms-4">{{ user.status }}</span>
           </VBadge>
 
-          <span class="text-xs text-disabled">{{ user.lastVisited }}</span>
+          <span class="text-xs text-wrap text-disabled">{{ user.lastVisited }}</span>
         </VListItemSubtitle>
 
         <template #append>
@@ -1313,7 +1313,7 @@ const resolveStatusColor = {
         <VListItemTitle>
           {{ user.name }}
         </VListItemTitle>
-        <VListItemSubtitle class="mt-1">
+        <VListItemSubtitle class="mt-1 me-2">
           <VBadge
             dot
             location="start center"
@@ -1324,7 +1324,7 @@ const resolveStatusColor = {
             <span class="ms-4">{{ user.status }}</span>
           </VBadge>
 
-          <span class="text-xs text-disabled">{{ user.lastVisited }}</span>
+          <span class="text-xs text-wrap text-disabled">{{ user.lastVisited }}</span>
         </VListItemSubtitle>
 
         <template #append>

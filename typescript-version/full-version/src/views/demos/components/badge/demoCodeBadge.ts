@@ -100,7 +100,9 @@ export const color = {
   <div class="demo-space-x">
     <VBadge
       dot
-      color="primary"
+      color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -111,6 +113,8 @@ export const color = {
     <VBadge
       dot
       color="secondary"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -121,6 +125,8 @@ export const color = {
     <VBadge
       dot
       color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -131,6 +137,8 @@ export const color = {
     <VBadge
       dot
       color="info"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -141,6 +149,8 @@ export const color = {
     <VBadge
       dot
       color="warning"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -151,6 +161,8 @@ export const color = {
     <VBadge
       dot
       color="error"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -164,7 +176,9 @@ export const color = {
   <div class="demo-space-x">
     <VBadge
       dot
-      color="primary"
+      color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -175,6 +189,8 @@ export const color = {
     <VBadge
       dot
       color="secondary"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -185,6 +201,8 @@ export const color = {
     <VBadge
       dot
       color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -195,6 +213,8 @@ export const color = {
     <VBadge
       dot
       color="info"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -205,6 +225,8 @@ export const color = {
     <VBadge
       dot
       color="warning"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -215,6 +237,8 @@ export const color = {
     <VBadge
       dot
       color="error"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"

@@ -32,8 +32,8 @@ const isDark = ref(theme.name)
 
 <style lang="scss">
 .v-expansion-panels.customized-panels {
-  --v-title-bg-light: #fafafa;
-  --v-title-bg-dark: #3a3e5b;
+  --v-title-bg-light: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+  --v-title-bg-dark: #3d3759;
 
   .v-expansion-panel-title {
     border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));

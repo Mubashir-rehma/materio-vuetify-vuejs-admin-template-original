@@ -96,7 +96,9 @@ export const color = { ts: `<template>
   <div class="demo-space-x">
     <VBadge
       dot
-      color="primary"
+      color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -107,6 +109,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="secondary"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -117,6 +121,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -127,6 +133,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="info"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -137,6 +145,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="warning"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -147,6 +157,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="error"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -159,7 +171,9 @@ export const color = { ts: `<template>
   <div class="demo-space-x">
     <VBadge
       dot
-      color="primary"
+      color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -170,6 +184,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="secondary"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -180,6 +196,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -190,6 +208,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="info"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -200,6 +220,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="warning"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -210,6 +232,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="error"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"

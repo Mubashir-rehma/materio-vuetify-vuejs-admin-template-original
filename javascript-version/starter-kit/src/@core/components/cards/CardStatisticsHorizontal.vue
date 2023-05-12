@@ -66,3 +66,12 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss">
+.skin--bordered {
+  .v-avatar {
+    border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    box-shadow: none !important;
+  }
+}
+</style>

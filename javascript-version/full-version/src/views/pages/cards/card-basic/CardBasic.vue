@@ -29,10 +29,7 @@ const isCardDetailsVisible = ref(false)
       md="4"
     >
       <VCard>
-        <VImg
-          :src="pages1"
-          cover
-        />
+        <VImg :src="pages1" />
 
         <VCardItem>
           <VCardTitle>Influencing The Influencer</VCardTitle>
@@ -115,13 +112,6 @@ const isCardDetailsVisible = ref(false)
           >
             Details
           </VBtn>
-
-          <IconBtn @click="isCardDetailsVisible = !isCardDetailsVisible">
-            <VIcon
-              size="20"
-              :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-            />
-          </IconBtn>
         </VCardText>
 
         <VExpandTransition>
@@ -301,6 +291,7 @@ const isCardDetailsVisible = ref(false)
                   <VIcon
                     color="primary"
                     icon="mdi-lock-open-outline"
+                    size="20"
                   />
                   <span class="ms-3">Full Access</span>
                 </p>
@@ -308,6 +299,7 @@ const isCardDetailsVisible = ref(false)
                 <p class="d-flex align-center mb-0">
                   <VIcon
                     color="primary"
+                    size="20"
                     icon="mdi-account-outline"
                   />
                   <span class="ms-3">15 Members</span>
@@ -323,7 +315,8 @@ const isCardDetailsVisible = ref(false)
                 <p class="d-flex align-center mb-6">
                   <VIcon
                     color="primary"
-                    icon="mdi-star-outline"
+                    size="20"
+                    icon="mdi-lock-open-outline"
                   />
                   <span class="ms-3">Access all Features</span>
                 </p>
@@ -331,7 +324,8 @@ const isCardDetailsVisible = ref(false)
                 <p class="d-flex align-center mb-0">
                   <VIcon
                     color="primary"
-                    icon="mdi-trending-up"
+                    size="20"
+                    icon="mdi-account-outline"
                   />
                   <span class="ms-3">Lifetime Free Update</span>
                 </p>

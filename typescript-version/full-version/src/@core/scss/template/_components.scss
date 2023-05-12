@@ -139,12 +139,16 @@
 }
 
 // 👉 Slider
-
 .v-slider-thumb {
   .v-slider-thumb__label {
     background: rgb(var(--v-theme-grey-600));
     color: rgb(var(--v-theme-on-primary));
   }
+}
+
+// 👉 Switch
+.v-switch__thumb {
+  color: #fff !important;
 }
 
 // 👉 Table

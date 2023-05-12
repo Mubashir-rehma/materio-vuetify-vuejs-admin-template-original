@@ -3,11 +3,11 @@
 layout: home
 
 hero:
-  name: "Master"
-  text: "Code once and ..."
-  tagline: It's by lazy people for lazy people
+  name: "Materio"
+  text: "Admin Template"
+  tagline: Production Ready, Carefully Crafted, Extensive Vuetify Admin Template
   image:
-    src: https://api.iconify.design/logos:visual-studio-code.svg
+    src: https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.svg
     alt: Master Logo
   actions:
     - theme: brand

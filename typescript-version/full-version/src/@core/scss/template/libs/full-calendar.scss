@@ -255,7 +255,9 @@
   // ℹ️ Workaround of https://github.com/fullcalendar/fullcalendar/issues/6407
   .fc-col-header,
   .fc-daygrid-body,
-  .fc-scrollgrid-sync-table {
+  .fc-scrollgrid-sync-table,
+  .fc-timegrid-body,
+  .fc-timegrid-body table {
     inline-size: 100% !important;
   }
 }

@@ -169,6 +169,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="accountForm.password"
                   label="Password"
+                  placeholder="Enter Password"
                   :rules="[requiredValidator, passwordValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
@@ -183,6 +184,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="accountForm.c_password"
                   label="Confirm Password"
+                  placeholder="Confirm Password"
                   :rules="[requiredValidator, confirmedValidator(accountForm.c_password, accountForm.password)]"
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
@@ -193,12 +195,12 @@ const validateSocialLinkForm = () => {
               <VCol cols="12">
                 <div class="d-flex justify-sm-space-between justify-center flex-wrap gap-4">
                   <VBtn
-                    color="secondary"
+                    :color="currentStep === 0 ? 'secondary' : 'default'"
                     variant="outlined"
                     disabled
                   >
                     <VIcon
-                      icon="mdi-chevron-left"
+                      icon="mdi-arrow-left"
                       start
                       class="flip-in-rtl"
                     />
@@ -208,7 +210,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-chevron-right"
+                      icon="mdi-arrow-right"
                       end
                       class="flip-in-rtl"
                     />

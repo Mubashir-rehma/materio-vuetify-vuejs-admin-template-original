@@ -54,7 +54,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Phone No" />
+              <VTextField
+                label="Phone No"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Address -->
@@ -70,7 +73,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Pincode" />
+              <VTextField
+                label="Pincode"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Landmark -->
@@ -246,7 +252,10 @@ const paymentMethods = [
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
                 <VCol cols="12">
-                  <VTextField label="Card Number" />
+                  <VTextField
+                    label="Card Number"
+                    type="number"
+                  />
                 </VCol>
 
                 <!-- 👉 Name -->
@@ -270,7 +279,11 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <VTextField label="CVV Code" />
+                  <VTextField
+                    label="CVV Code"
+                    type="number"
+                    max="3"
+                  />
                 </VCol>
               </VRow>
             </VForm>
@@ -367,7 +380,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Phone No" />
+              <VTextField
+                label="Phone No"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Address -->
@@ -383,7 +399,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Pincode" />
+              <VTextField
+                label="Pincode"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Landmark -->
@@ -559,7 +578,10 @@ const paymentMethods = [
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
                 <VCol cols="12">
-                  <VTextField label="Card Number" />
+                  <VTextField
+                    label="Card Number"
+                    type="number"
+                  />
                 </VCol>
 
                 <!-- 👉 Name -->
@@ -583,7 +605,11 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <VTextField label="CVV Code" />
+                  <VTextField
+                    label="CVV Code"
+                    type="number"
+                    max="3"
+                  />
                 </VCol>
               </VRow>
             </VForm>
@@ -801,7 +827,7 @@ const values = ref([])
 
 export const formValidation = { ts: `<script lang="ts" setup>
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
+import type { VForm } from 'vuetify/components/VForm'
 import { emailValidator, requiredValidator } from '@validators'
 
 const name = ref('')
@@ -1018,7 +1044,10 @@ const isCPasswordVisible = ref(false)
 
   <VCard flat>
     <VCardText>
-      <VWindow v-model="tab">
+      <VWindow
+        v-model="tab"
+        class="disable-tab-transition"
+      >
         <VWindowItem value="personal-info">
           <VForm class="mt-2">
             <VRow>
@@ -1278,7 +1307,10 @@ const isCPasswordVisible = ref(false)
 
   <VCard flat>
     <VCardText>
-      <VWindow v-model="tab">
+      <VWindow
+        v-model="tab"
+        class="disable-tab-transition"
+      >
         <VWindowItem value="personal-info">
           <VForm class="mt-2">
             <VRow>
@@ -1623,7 +1655,6 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-
 `, js: `<script setup>
 const firstName = ref('')
 const email = ref('')
@@ -1766,7 +1797,6 @@ const checkbox = ref(false)
     </VRow>
   </VForm>
 </template>
-
 ` }
 
 export const horizontalFormWithIcons = { ts: `<script lang="ts" setup>
@@ -2331,7 +2361,7 @@ const checkbox = ref(false)
           v-model="password"
           label="Password"
           type="password"
-          placeholder="password"
+          placeholder="Password"
         />
       </VCol>
 
@@ -2403,7 +2433,7 @@ const checkbox = ref(false)
           v-model="password"
           label="Password"
           type="password"
-          placeholder="password"
+          placeholder="Password"
         />
       </VCol>
 
@@ -2481,7 +2511,7 @@ const checkbox = ref(false)
           prepend-inner-icon="mdi-lock-outline"
           label="Password"
           type="password"
-          placeholder="password"
+          placeholder="Password"
         />
       </VCol>
 
@@ -2557,7 +2587,7 @@ const checkbox = ref(false)
           prepend-inner-icon="mdi-lock-outline"
           label="Password"
           type="password"
-          placeholder="password"
+          placeholder="Password"
         />
       </VCol>
 

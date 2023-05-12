@@ -1,5 +1,4 @@
 <script setup>
-import ErrorHeader from '@core/components/ErrorHeader.vue'
 import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import pages500 from '@images/pages/500.png'
 import miscMaskDark from '@images/pages/misc-mask-dark.png'
@@ -48,6 +47,12 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 
 <style lang="scss">
 @use "@core/scss/template/pages/misc.scss";
+
+.misc-footer-tree {
+  inline-size: 16rem;
+  inset-block-end: 3.15rem;
+  inset-inline-start: 2rem;
+}
 </style>
 
 <route lang="yaml">

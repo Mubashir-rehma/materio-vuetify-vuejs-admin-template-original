@@ -67,4 +67,3 @@ const chartOptions = computed(() => {
     }
   }
   </style>
-

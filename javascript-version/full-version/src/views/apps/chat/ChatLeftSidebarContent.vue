@@ -19,10 +19,11 @@ const emit = defineEmits([
   'openChatOfContact',
   'showUserProfile',
   'close',
+  'update:search',
 ])
 
 const { resolveAvatarBadgeVariant } = useChat()
-const search = useVModel(props, 'search')
+const search = useVModel(props, 'search', emit)
 const store = useChatStore()
 </script>
 
@@ -37,11 +38,12 @@ const store = useChatStore()
       location="bottom right"
       offset-x="3"
       offset-y="3"
+      size="8"
       :color="resolveAvatarBadgeVariant(store.profileUser.status)"
       bordered
     >
       <VAvatar
-        size="38"
+        size="40"
         class="cursor-pointer"
         @click="$emit('showUserProfile')"
       >
@@ -60,20 +62,15 @@ const store = useChatStore()
       class="ms-4 me-1 chat-list-search"
     />
 
-    <VBtn
+    <IconBtn
       v-if="$vuetify.display.smAndDown"
-      variant="text"
-      color="default"
-      icon
-      size="small"
       @click="$emit('close')"
     >
       <VIcon
-        size="24"
         icon="mdi-close"
         class="text-medium-emphasis"
       />
-    </VBtn>
+    </IconBtn>
   </div>
   <VDivider />
 

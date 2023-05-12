@@ -5,10 +5,7 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
 const { theme } = useThemeConfig()
-
-const currentTheme = controlledComputed(theme, () => {
-  return vuetifyTheme.current.value.colors
-})
+const currentTheme = controlledComputed(theme, () => vuetifyTheme.current.value.colors)
 
 const series = [{
   data: [

@@ -26,7 +26,7 @@ fetchHelpCenterData()
 
     <!-- 👉 Popular Articles -->
     <VCardText class="py-12">
-      <h5 class="text-h5 text-center my-6">
+      <h5 class="text-h5 text-center mt-8 mb-6">
         Popular Articles
       </h5>
 
@@ -36,7 +36,7 @@ fetchHelpCenterData()
     <!-- 👉 Knowledge Base -->
     <div>
       <VCardText class="bg-var-theme-background py-12">
-        <h5 class="text-h5 text-center my-6">
+        <h5 class="text-h5 text-center mt-8 mb-6">
           Knowledge Base
         </h5>
 
@@ -46,7 +46,7 @@ fetchHelpCenterData()
 
     <!-- 👉 Keep Learning -->
     <VCardText class="py-12">
-      <h5 class="text-h5 text-center my-6">
+      <h5 class="text-h5 text-center mt-8 mb-6">
         Keep Learning
       </h5>
 

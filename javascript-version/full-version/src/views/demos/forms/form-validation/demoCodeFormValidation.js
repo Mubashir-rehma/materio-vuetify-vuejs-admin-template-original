@@ -1,6 +1,6 @@
 export const simpleFormValidation = { ts: `<script lang="ts" setup>
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
+import type { VForm } from 'vuetify/components/VForm'
 import { emailValidator, requiredValidator } from '@validators'
 
 const firstName = ref('')
@@ -102,7 +102,7 @@ const refForm = ref()
 
 export const validatingMultipleRules = { ts: `<script lang="ts" setup>
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
+import type { VForm } from 'vuetify/components/VForm'
 import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@validators'
 
 const name = ref('')
@@ -269,7 +269,7 @@ const confirmPassword = ref('')
 
 export const validationTypes = { ts: `<script lang="ts" setup>
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components'
+import type { VForm } from 'vuetify/components/VForm'
 import {
   alphaDashValidator,
   alphaValidator,

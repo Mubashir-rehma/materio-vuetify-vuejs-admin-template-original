@@ -29,17 +29,22 @@ const totalArticles = category => {
           <VCard :title="article.title">
             <template #prepend>
               <VAvatar
-                :icon="article.icon"
+                size="36"
                 rounded
                 :color="article.avatarColor"
                 variant="tonal"
-              />
+              >
+                <VIcon
+                  :icon="article.icon"
+                  size="24"
+                />
+              </VAvatar>
             </template>
 
             <VCardText>
               <ul
                 class="ps-6"
-                style="list-style: disc ;"
+                style="list-style: disc;"
               >
                 <li
                   v-for="item in article.subCategories"
@@ -63,7 +68,7 @@ const totalArticles = category => {
                     name: 'pages-help-center-category-subcategory',
                     params: { category: article.slug, subcategory: article.subCategories[0].slug },
                   }"
-                  class="text-base font-weight-medium"
+                  class="text-sm font-weight-medium"
                 >
                   {{ totalArticles(article) }} articles
                 </RouterLink>

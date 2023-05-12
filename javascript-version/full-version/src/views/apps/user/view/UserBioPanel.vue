@@ -79,8 +79,8 @@ const resolveUserRoleVariant = role => {
           <VAvatar
             rounded="sm"
             :size="120"
-            color="primary"
-            variant="tonal"
+            :color="!props.userData.avatar ? 'primary' : undefined"
+            :variant="!props.userData.avatar ? 'tonal' : undefined"
           >
             <VImg
               v-if="props.userData.avatar"
@@ -103,25 +103,25 @@ const resolveUserRoleVariant = role => {
           <VChip
             label
             :color="resolveUserRoleVariant(props.userData.role).color"
-            size="small"
+            density="comfortable"
             class="text-capitalize mt-4"
           >
             {{ props.userData.role }}
           </VChip>
         </VCardText>
 
-        <VCardText class="d-flex justify-center flex-wrap mt-3">
+        <VCardText class="d-flex justify-space-between flex-wrap mt-1">
           <!-- 👉 Done task -->
-          <div class="d-flex align-center me-8 mb-2">
+          <div class="d-flex align-center">
             <VAvatar
               :size="44"
               rounded
               color="primary"
               variant="tonal"
-              class="me-3"
+              class="me-4"
             >
               <VIcon
-                size="22"
+                size="24"
                 icon="mdi-check"
               />
             </VAvatar>
@@ -135,17 +135,17 @@ const resolveUserRoleVariant = role => {
           </div>
 
           <!-- 👉 Done Project -->
-          <div class="d-flex align-center me-4 mb-2">
+          <div class="d-flex align-center">
             <VAvatar
               :size="44"
               rounded
               color="primary"
               variant="tonal"
-              class="me-3"
+              class="me-4"
             >
               <VIcon
-                size="22"
-                icon="mdi-briefcase-variant-outline"
+                size="24"
+                icon="mdi-star-outline"
               />
             </VAvatar>
 
@@ -164,10 +164,10 @@ const resolveUserRoleVariant = role => {
             Details
           </h6>
 
-          <VDivider class="mt-4" />
+          <VDivider class="my-4" />
 
           <!-- 👉 User Details list -->
-          <VList class="card-list mt-2">
+          <VList class="card-list">
             <VListItem>
               <VListItemTitle>
                 <h6 class="text-sm font-weight-medium">
@@ -195,7 +195,7 @@ const resolveUserRoleVariant = role => {
 
                   <VChip
                     label
-                    size="small"
+                    density="comfortable"
                     :color="resolveUserStatusVariant(props.userData.status)"
                     class="text-capitalize"
                   >
@@ -255,16 +255,15 @@ const resolveUserRoleVariant = role => {
         </VCardText>
 
         <!-- 👉 Edit and Suspend button -->
-        <VCardText class="d-flex justify-center">
+        <VCardText class="d-flex justify-center gap-4">
           <VBtn
             variant="elevated"
-            class="me-3"
             @click="isUserInfoEditDialogVisible = true"
           >
             Edit
           </VBtn>
           <VBtn
-            variant="tonal"
+            variant="outlined"
             color="error"
           >
             Suspend
@@ -285,7 +284,7 @@ const resolveUserRoleVariant = role => {
           <VChip
             label
             color="primary"
-            size="small"
+            density="comfortable"
           >
             Standard
           </VChip>
@@ -295,7 +294,7 @@ const resolveUserRoleVariant = role => {
           <!-- 👉 Current Price  -->
           <div class="d-flex align-center">
             <sup class="text-primary text-sm font-weight-regular">$</sup>
-            <h3 class="text-h3 text-primary font-weight-medium">
+            <h3 class="text-h3 text-primary font-weight-regular">
               99
             </h3>
             <sub class="mt-3"><h6 class="text-sm font-weight-regular">/ month</h6></sub>
@@ -369,7 +368,7 @@ const resolveUserRoleVariant = role => {
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 0.8rem;
+  --v-card-list-gap: 0.75rem;
 }
 
 .current-plan {

@@ -17,5 +17,10 @@ export const useInvoiceStore = defineStore('InvoiceStore', {
     fetchClients() {
       return axios.get('/apps/invoice/clients')
     },
+
+    // 👉 Delete Invoice
+    deleteInvoice(id) {
+      return axios.delete(`/apps/invoices/${id}`)
+    },
   },
 })

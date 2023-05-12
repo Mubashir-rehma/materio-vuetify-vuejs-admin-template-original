@@ -1,4 +1,5 @@
 <script setup>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { initialAbility } from '@/plugins/casl/ability'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 
@@ -23,6 +24,67 @@ const logout = () => {
   })
 }
 
+const userProfileList = [
+  {
+    type: 'navItem',
+    icon: 'mdi-account-outline',
+    title: 'Profile',
+    to: {
+      name: 'apps-user-view-id',
+      params: { id: 21 },
+    },
+  },
+  {
+    type: 'navItem',
+    icon: 'mdi-cog-outline',
+    title: 'settings',
+    to: {
+      name: 'pages-account-settings-tab',
+      params: { tab: 'account' },
+    },
+  },
+  {
+    type: 'navItem',
+    icon: 'mdi-credit-card-outline',
+    title: 'Billing',
+    to: {
+      name: 'pages-account-settings-tab',
+      params: { tab: 'billing-plans' },
+    },
+    badgeProps: {
+      color: 'light-error',
+      content: '3',
+      textColor: 'error',
+    },
+  },
+  { type: 'divider' },
+  {
+    type: 'navItem',
+    icon: 'mdi-lifebuoy',
+    title: 'Help',
+    to: { name: 'pages-help-center' },
+  },
+  {
+    type: 'navItem',
+    icon: 'mdi-currency-usd',
+    title: 'Pricing',
+    to: { name: 'pages-pricing' },
+  },
+  {
+    type: 'navItem',
+    icon: 'mdi-help-circle-outline',
+    title: 'FAQ',
+    to: { name: 'pages-faq' },
+  },
+  { type: 'divider' },
+  {
+    type: 'navItem',
+    icon: 'mdi-logout',
+    title: 'Logout',
+    onClick: logout,
+  },
+]
+
 const avatarBadgeProps = {
   dot: true,
   location: 'bottom right',
@@ -37,8 +99,8 @@ const avatarBadgeProps = {
   <VBadge v-bind="avatarBadgeProps">
     <VAvatar
       class="cursor-pointer"
-      color="primary"
-      variant="tonal"
+      :color="!(userData && userData.avatar) ? 'primary' : undefined"
+      :variant="!(userData && userData.avatar) ? 'tonal' : undefined"
     >
       <VImg
         v-if="userData && userData.avatar"
@@ -56,16 +118,15 @@ const avatarBadgeProps = {
         location="bottom end"
         offset="14px"
       >
-        <VList>
+        <VList density="comfortable">
           <!-- 👉 User Avatar & Name -->
-          <VListItem>
+          <VListItem height="60px">
             <template #prepend>
               <VListItemAction start>
                 <VBadge v-bind="avatarBadgeProps">
                   <VAvatar
-                    color="primary"
-                    size="40"
-                    variant="tonal"
+                    :color="!(userData && userData.avatar) ? 'primary' : undefined"
+                    :variant="!(userData && userData.avatar) ? 'tonal' : undefined"
                   >
                     <VImg
                       v-if="userData && userData.avatar"
@@ -81,85 +142,46 @@ const avatarBadgeProps = {
             </template>
 
             <VListItemTitle class="font-weight-medium">
-              {{ userData.fullName }}
+              {{ userData.fullName || userData.username }}
             </VListItemTitle>
-            <VListItemSubtitle>
-              {{ userData.role }}
-            </VListItemSubtitle>
+            <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
           </VListItem>
 
-          <VDivider class="my-2" />
+          <VDivider />
+          <PerfectScrollbar :options="{ wheelPropagation: false }">
+            <template
+              v-for="item in userProfileList"
+              :key="item.title"
+            >
+              <VListItem
+                v-if="item.type === 'navItem'"
+                :to="item.to"
+                @click="item.onClick && item.onClick()"
+              >
+                <template #prepend>
+                  <VIcon
+                    class="me-2"
+                    :icon="item.icon"
+                    size="22"
+                  />
+                </template>
 
-          <!-- 👉 Profile -->
-          <VListItem :to="{ name: 'apps-user-view-id', params: { id: 21 } }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-account-outline"
-                size="22"
-              />
+                <VListItemTitle>{{ item.title }}</VListItemTitle>
+
+                <template
+                  v-if="item.badgeProps"
+                  #append
+                >
+                  <VBadge
+                    v-bind="item.badgeProps"
+                    class="me-3"
+                  />
+                </template>
+              </VListItem>
+
+              <VDivider v-else />
             </template>
-
-            <VListItemTitle>Profile</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 Settings -->
-          <VListItem :to="{ name: 'pages-account-settings-tab', params: { tab: 'account' } }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-cog-outline"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Settings</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 Pricing -->
-          <VListItem :to="{ name: 'pages-pricing' }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-currency-usd"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Pricing</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 FAQ -->
-          <VListItem :to="{ name: 'pages-faq' }">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-help-circle-outline"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>FAQ</VListItemTitle>
-          </VListItem>
-
-          <!-- Divider -->
-          <VDivider class="my-2" />
-
-          <!-- 👉 Logout -->
-          <VListItem
-            link
-            @click="logout"
-          >
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="mdi-logout-variant"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Logout</VListItemTitle>
-          </VListItem>
+          </PerfectScrollbar>
         </VList>
       </VMenu>
       <!-- !SECTION -->

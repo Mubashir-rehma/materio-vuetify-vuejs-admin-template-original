@@ -1,4 +1,5 @@
 <script setup>
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import poseFs9 from '@images/pages/pose-fs-9.png'
 
 const isCurrentPasswordVisible = ref(false)
@@ -32,6 +33,25 @@ const serverKeys = [
     key: '2e915e59-3105-47f2-8838-6e46bf83b711',
     createdOn: '28 Dec 2020, 12:21 GTM+4:10',
     permission: 'Full Access',
+  },
+]
+
+const recentDevicesHeaders = [
+  {
+    title: 'BROWSER',
+    key: 'browser',
+  },
+  {
+    title: 'DEVICE',
+    key: 'device',
+  },
+  {
+    title: 'LOCATION',
+    key: 'location',
+  },
+  {
+    title: 'RECENT ACTIVITY',
+    key: 'recentActivity',
   },
 ]
 
@@ -109,7 +129,7 @@ const isOneTimePasswordDialogVisible = ref(false)
         <VForm>
           <VCardText class="pt-0">
             <!-- 👉 Current Password -->
-            <VRow class="mb-3">
+            <VRow>
               <VCol
                 cols="12"
                 md="6"
@@ -163,7 +183,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               Password Requirements:
             </p>
 
-            <ul class="d-flex flex-column gap-y-3">
+            <ul class="d-flex flex-column gap-y-4">
               <li
                 v-for="item in passwordRequirements"
                 :key="item"
@@ -188,7 +208,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             <VBtn
               type="reset"
               color="secondary"
-              variant="tonal"
+              variant="outlined"
             >
               Reset
             </VBtn>
@@ -205,7 +225,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           <p>
             Two factor authentication is not enabled yet.
           </p>
-          <p>
+          <p class="mb-6">
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.
             <a
               href="javascript:void(0)"
@@ -214,7 +234,7 @@ const isOneTimePasswordDialogVisible = ref(false)
           </p>
 
           <VBtn @click="isOneTimePasswordDialogVisible = true">
-            Enable two-FA
+            Enable 2FA
           </VBtn>
         </VCardText>
       </VCard>
@@ -285,11 +305,13 @@ const isOneTimePasswordDialogVisible = ref(false)
       <!-- SECTION: API Keys List -->
       <VCard title="API Key List &amp; Access">
         <VCardText>
-          An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
+          <span class="text-base">
+            An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
+          </span>
         </VCardText>
 
         <!-- 👉 Server Status -->
-        <VCardText class="d-flex flex-column gap-y-4">
+        <VCardText class="d-flex flex-column gap-y-6">
           <div
             v-for="serverKey in serverKeys"
             :key="serverKey.key"
@@ -301,7 +323,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               </h6>
               <VChip
                 color="primary"
-                size="small"
+                density="comfortable"
               >
                 {{ serverKey.permission }}
               </VChip>
@@ -309,7 +331,7 @@ const isOneTimePasswordDialogVisible = ref(false)
             <p class="text-base font-weight-medium">
               <span class="me-3">{{ serverKey.key }}</span>
               <VIcon
-                :size="18"
+                :size="20"
                 icon="mdi-content-copy"
                 class="cursor-pointer"
               />
@@ -325,54 +347,33 @@ const isOneTimePasswordDialogVisible = ref(false)
     <VCol cols="12">
       <!-- 👉 Table -->
       <VCard title="Recent Devices">
-        <VTable class="text-no-wrap">
-          <thead>
-            <tr>
-              <th scope="col">
-                BROWSER
-              </th>
-              <th scope="col">
-                DEVICE
-              </th>
-              <th scope="col">
-                LOCATION
-              </th>
-              <th scope="col">
-                RECENT ACTIVITIES
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="device in recentDevices"
-              :key="device.recentActivity"
-            >
-              <td>
-                <VIcon
-                  start
-                  :icon="device.deviceIcon.icon"
-                  :color="device.deviceIcon.color"
-                />
-                {{ device.browser }}
-              </td>
-              <td class="text-medium-emphasis">
-                {{ device.device }}
-              </td>
-              <td class="text-medium-emphasis">
-                {{ device.location }}
-              </td>
-              <td class="text-medium-emphasis">
-                {{ device.recentActivity }}
-              </td>
-            </tr>
-          </tbody>
-        </VTable>
+        <VDataTable
+          :headers="recentDevicesHeaders"
+          :items="recentDevices"
+          hide-default-footer
+          class="text-sm"
+        >
+          <template #item.browser="{ item }">
+            <div class="d-flex">
+              <VIcon
+                start
+                :icon="item.raw.deviceIcon.icon"
+                :color="item.raw.deviceIcon.color"
+              />
+              <span class="text-high-emphasis text-base">
+                {{ item.raw.browser }}
+              </span>
+            </div>
+          </template>
+          <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->
+          <template #bottom />
+        </VDataTable>
       </VCard>
     </VCol>
     <!-- !SECTION -->
   </VRow>
 
   <!-- SECTION Enable One time password -->
-  <EnableOneTimePasswordDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
+  <TwoFactorAuthDialog v-model:isDialogVisible="isOneTimePasswordDialogVisible" />
   <!-- !SECTION -->
 </template>

@@ -15,26 +15,18 @@ const { width: windowWidth } = useWindowSize()
 </script>
 
 <template>
-  <VerticalNavLayout
-    :nav-items="navItems"
-  >
+  <VerticalNavLayout :nav-items="navItems">
     <!-- 👉 navbar -->
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">
-        <VBtn
+        <IconBtn
           v-if="isLessThanOverlayNavBreakpoint(windowWidth)"
-          icon
-          variant="text"
-          color="default"
+          id="vertical-nav-toggle-btn"
           class="ms-n3"
-          size="small"
           @click="toggleVerticalOverlayNavActive(true)"
         >
-          <VIcon
-            icon="mdi-menu"
-            size="24"
-          />
-        </VBtn>
+          <VIcon icon="mdi-menu" />
+        </IconBtn>
 
         <NavbarThemeSwitcher />
 

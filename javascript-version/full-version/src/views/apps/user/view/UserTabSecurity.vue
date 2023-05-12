@@ -1,10 +1,31 @@
 <script setup>
+import { VDataTable } from 'vuetify/labs/VDataTable'
 import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 const smsVerificationNumber = ref('+1(968) 819-2547')
 const isTwoFactorDialogOpen = ref(false)
+
+// Recent devices Headers
+const recentDeviceHeader = [
+  {
+    title: 'BROWSER',
+    key: 'browser',
+  },
+  {
+    title: 'DEVICE',
+    key: 'device',
+  },
+  {
+    title: 'LOCATION',
+    key: 'location',
+  },
+  {
+    title: 'RECENT ACTIVITY',
+    key: 'activity',
+  },
+]
 
 const recentDevices = [
   {
@@ -47,7 +68,7 @@ const recentDevices = [
           <VAlert
             variant="tonal"
             color="warning"
-            class="mb-6"
+            class="mb-4"
           >
             <VAlertTitle>Ensure that these requirements are met</VAlertTitle>
             <span>Minimum 8 characters long, uppercase & symbol</span>
@@ -61,6 +82,7 @@ const recentDevices = [
               >
                 <VTextField
                   label="New Password"
+                  density="compact"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
@@ -72,6 +94,7 @@ const recentDevices = [
               >
                 <VTextField
                   label="Confirm Password"
+                  density="compact"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
@@ -102,33 +125,20 @@ const recentDevices = [
             </h4>
             <VTextField
               variant="underlined"
+              density="compact"
               :model-value="smsVerificationNumber"
               readonly
             >
               <template #append-inner>
-                <VBtn
-                  icon
-                  size="x-small"
-                  color="default"
-                  variant="plain"
-                >
+                <IconBtn variant="plain">
                   <VIcon
-                    size="24"
                     icon="mdi-square-edit-outline"
                     @click="isTwoFactorDialogOpen = true"
                   />
-                </VBtn>
-                <VBtn
-                  icon
-                  size="x-small"
-                  color="default"
-                  variant="plain"
-                >
-                  <VIcon
-                    size="24"
-                    icon="mdi-delete-outline"
-                  />
-                </VBtn>
+                </IconBtn>
+                <IconBtn variant="plain">
+                  <VIcon icon="mdi-delete-outline" />
+                </IconBtn>
               </template>
             </VTextField>
           </div>
@@ -146,60 +156,34 @@ const recentDevices = [
     <VCol cols="12">
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
-        <VDivider />
-        <VTable class="text-no-wrap">
-          <thead>
-            <tr>
-              <th scope="col">
-                BROWSER
-              </th>
-              <th scope="col">
-                DEVICE
-              </th>
-              <th scope="col">
-                LOCATION
-              </th>
-              <th scope="col">
-                RECENT ACTIVITY
-              </th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr
-              v-for="device in recentDevices"
-              :key="device.browser"
-            >
-              <td>
-                <VAvatar
-                  :size="22"
-                  :image="device.logo"
-                  class="me-3"
-                />
-                <span class="font-weight-medium">{{ device.browser }}</span>
-              </td>
-
-              <td class="text-medium-emphasis">
-                {{ device.device }}
-              </td>
-
-              <td class="text-medium-emphasis">
-                {{ device.location }}
-              </td>
-
-              <td class="text-medium-emphasis">
-                {{ device.activity }}
-              </td>
-            </tr>
-          </tbody>
-        </VTable>
+        <VDataTable
+          :items="recentDevices"
+          :headers="recentDeviceHeader"
+          hide-default-footer
+          class="text-sm rounded-0 text-no-wrap"
+        >
+          <template #item.browser="{ item }">
+            <div class="d-flex">
+              <VAvatar
+                :image="item.raw.logo"
+                :size="22"
+                class="me-3"
+              />
+              <span class="text-high-emphasis text-base">
+                {{ item.raw.browser }}
+              </span>
+            </div>
+          </template>
+          <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->
+          <template #bottom />
+        </VDataTable>
       </VCard>
     </VCol>
   </VRow>
 
   <!-- 👉 Enable One Time Password Dialog -->
-  <EnableOneTimePasswordDialog
+  <TwoFactorAuthDialog
     v-model:isDialogVisible="isTwoFactorDialogOpen"
-    :mobile-number="smsVerificationNumber"
+    :sms-code="smsVerificationNumber"
   />
 </template>

@@ -1,6 +1,10 @@
 <script setup>
 const themes = [
   {
+    name: 'system',
+    icon: 'mdi-laptop',
+  },
+  {
     name: 'light',
     icon: 'mdi-weather-sunny',
   },

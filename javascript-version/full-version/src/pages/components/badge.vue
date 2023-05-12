@@ -123,5 +123,20 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
         <DemoBadgeTabs />
       </AppCardCode>
     </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Maximum value content -->
+      <AppCardCode
+        title="Maximum Value"
+        :code="demoCode.maximumValue"
+      >
+        <p>Use <code>max</code> prop to cap the value of the badge content</p>
+
+        <DemoBadgeMaximumValue />
+      </AppCardCode>
+    </VCol>
   </VRow>
 </template>

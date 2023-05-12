@@ -108,24 +108,21 @@ const isCardDetailsVisible = ref(false)
           Although cards can support multiple actions, UI controls, and an overflow menu.
         </VCardText>
 
-        <VCardActions>
-          <VBtn @click="isCardDetailsVisible = !isCardDetailsVisible">
+        <VCardText class="d-flex justify-space-between">
+          <VBtn
+            variant="text"
+            @click="isCardDetailsVisible = !isCardDetailsVisible"
+          >
             Details
           </VBtn>
 
-          <VSpacer />
-
-          <VBtn
-            icon
-            size="small"
-            @click="isCardDetailsVisible = !isCardDetailsVisible"
-          >
+          <IconBtn @click="isCardDetailsVisible = !isCardDetailsVisible">
             <VIcon
               size="20"
               :icon="isCardDetailsVisible ? 'mdi-chevron-up' : 'mdi-chevron-down'"
             />
-          </VBtn>
-        </VCardActions>
+          </IconBtn>
+        </VCardText>
 
         <VExpandTransition>
           <div v-show="isCardDetailsVisible">
@@ -148,6 +145,7 @@ const isCardDetailsVisible = ref(false)
           <div class="ma-auto pa-5">
             <VImg
               width="137"
+              height="176"
               :src="eCommerce2"
             />
           </div>
@@ -160,10 +158,10 @@ const isCardDetailsVisible = ref(false)
             </VCardItem>
 
             <VCardText>
-              Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
-            </VCardText>
+              <p class="mb-2">
+                Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
+              </p>
 
-            <VCardText>
               <h6 class="text-base font-weight-medium">
                 <span class="font-weight-regular">Price :</span>
                 <span class="font-weight-medium">$899</span>
@@ -176,16 +174,12 @@ const isCardDetailsVisible = ref(false)
                 <span class="ms-2">Add to cart</span>
               </VBtn>
 
-              <VBtn
-                color="secondary"
-                size="small"
-                icon
-              >
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-share-variant"
                 />
-              </VBtn>
+              </IconBtn>
             </VCardActions>
           </div>
         </div>
@@ -245,7 +239,7 @@ const isCardDetailsVisible = ref(false)
 
     <!-- 👉 Apple Watch card -->
     <VCol
-      lg="4"
+      md="4"
       sm="6"
       cols="12"
     >
@@ -277,8 +271,7 @@ const isCardDetailsVisible = ref(false)
 
     <!-- 👉 Lifetime Membership -->
     <VCol
-      md="6"
-      lg="8"
+      md="8"
       cols="12"
     >
       <VCard>
@@ -286,7 +279,6 @@ const isCardDetailsVisible = ref(false)
           <VCol
             cols="12"
             sm="8"
-            md="12"
             lg="7"
             order="2"
             order-lg="1"
@@ -350,7 +342,6 @@ const isCardDetailsVisible = ref(false)
           <VCol
             cols="12"
             sm="4"
-            md="12"
             lg="5"
             order="1"
             order-lg="2"
@@ -359,7 +350,7 @@ const isCardDetailsVisible = ref(false)
             <div class="membership-pricing d-flex flex-column align-center py-14 h-100 justify-center">
               <p class="mb-5">
                 <sub class="text-h5">$</sub>
-                <sup class="text-h2">899</sup>
+                <sup class="text-h3">899</sup>
                 <sub class="text-h5">USD</sub>
               </p>
 
@@ -367,7 +358,7 @@ const isCardDetailsVisible = ref(false)
                 5 Tips For Offshore <br> Software Development
               </p>
 
-              <VBtn class="mt-8">
+              <VBtn class="mt-4">
                 Contact Now
               </VBtn>
             </div>
@@ -444,12 +435,12 @@ const isCardDetailsVisible = ref(false)
       lg="4"
     >
       <VCard class="text-center">
-        <VCardText class="d-flex flex-column justify-center align-center">
+        <VCardItem class="d-flex flex-column justify-center align-center">
           <VAvatar
             color="primary"
             variant="tonal"
             size="56"
-            class="mb-4"
+            class="mb-2"
           >
             <VIcon
               size="2rem"
@@ -460,7 +451,7 @@ const isCardDetailsVisible = ref(false)
           <h6 class="text-h6">
             Support
           </h6>
-        </VCardText>
+        </VCardItem>
 
         <VCardText>
           According to us blisters are a very common thing and we come across them very often in our daily lives. It is a very common occurrence like cold or fever depending upon your lifestyle.

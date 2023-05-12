@@ -6,15 +6,8 @@ import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
 const { theme } = useThemeConfig()
-
-const currentTheme = controlledComputed(theme, () => {
-  return vuetifyTheme.current.value.colors
-})
-
-const variableTheme = controlledComputed(theme, () => {
-  return vuetifyTheme.current.value.variables
-})
-
+const currentTheme = controlledComputed(theme, () => vuetifyTheme.current.value.colors)
+const variableTheme = controlledComputed(theme, () => vuetifyTheme.current.value.variables)
 const series = [78]
 
 const chartOptions = controlledComputed(theme, () => {
@@ -75,4 +68,3 @@ const chartOptions = controlledComputed(theme, () => {
     }
   }
   </style>
-

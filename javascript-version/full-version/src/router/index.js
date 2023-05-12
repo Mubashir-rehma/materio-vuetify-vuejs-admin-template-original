@@ -13,7 +13,7 @@ const router = createRouter({
       path: '/',
       redirect: to => {
         const userData = JSON.parse(localStorage.getItem('userData') || '{}')
-        const userRole = userData && userData.role ? userData.role : null
+        const userRole = (userData && userData.role) ? userData.role : null
         if (userRole === 'admin')
           return { name: 'dashboards-crm' }
         if (userRole === 'client')

@@ -169,7 +169,7 @@ watch(() => prop.currentStep, updateCartData)
                     Checkout
                   </VBtn>
                   <VBtn
-                    variant="tonal"
+                    variant="outlined"
                     color="secondary"
                   >
                     Reset

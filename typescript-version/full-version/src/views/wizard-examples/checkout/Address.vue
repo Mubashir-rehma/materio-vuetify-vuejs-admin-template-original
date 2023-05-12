@@ -125,7 +125,7 @@ watch(() => props.currentStep, updateAddressData)
 
       <!-- 👉 Add New Address -->
       <VBtn
-        variant="tonal"
+        variant="outlined"
         class="mt-4 mb-9"
       >
         Add New Address

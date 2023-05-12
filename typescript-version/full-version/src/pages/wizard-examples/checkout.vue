@@ -97,6 +97,7 @@ const currentStep = ref(0)
       <VWindow
         v-model="currentStep"
         class="disable-tab-transition"
+        :touch="false"
       >
         <VWindowItem>
           <CartContent

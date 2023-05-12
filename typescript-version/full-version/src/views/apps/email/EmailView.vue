@@ -22,6 +22,7 @@ const emit = defineEmits<{
   (e: 'close'): void
   (e: 'trash'): void
   (e: 'unread'): void
+  (e: 'read'): void
   (e: 'star'): void
   (e: 'unstar'): void
 }>()
@@ -115,16 +116,34 @@ const updateMailLabel = (label: Email['labels'][number]) => {
           @click="$emit('trash'); $emit('close')"
         >
           <VIcon icon="mdi-delete-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Delete Mail
+          </VTooltip>
         </IconBtn>
 
         <!-- Read/Unread -->
         <IconBtn @click.stop="$emit('unread'); $emit('close')">
           <VIcon icon="mdi-email-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Mark as Unread
+          </VTooltip>
         </IconBtn>
 
         <!-- Move to folder -->
         <IconBtn>
           <VIcon icon="mdi-folder-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Move to
+          </VTooltip>
 
           <VMenu activator="parent">
             <VList density="compact">
@@ -157,6 +176,12 @@ const updateMailLabel = (label: Email['labels'][number]) => {
         <!-- Update labels -->
         <IconBtn>
           <VIcon icon="mdi-label-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Label
+          </VTooltip>
 
           <VMenu activator="parent">
             <VList density="compact">

@@ -251,16 +251,34 @@ const refreshOpenedEmail = async () => {
               @click="handleActionClick('trash')"
             >
               <VIcon icon="mdi-delete-outline" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                Delete Mail
+              </VTooltip>
             </IconBtn>
 
             <!-- Mark unread/read -->
             <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
               <VIcon :icon="isAllMarkRead ? 'tabler-mail' : 'tabler-mail-opened'" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                {{ isAllMarkRead ? 'Mark as Unread' : 'Mark as Read' }}
+              </VTooltip>
             </IconBtn>
 
             <!-- Move to folder -->
             <IconBtn>
               <VIcon icon="mdi-folder-outline" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                Folder
+              </VTooltip>
 
               <VMenu activator="parent">
                 <VList density="compact">
@@ -295,7 +313,12 @@ const refreshOpenedEmail = async () => {
             <!-- Update labels -->
             <IconBtn>
               <VIcon icon="mdi-label-outline" />
-
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                Label
+              </VTooltip>
               <VMenu activator="parent">
                 <VList density="compact">
                   <VListItem
@@ -400,7 +423,7 @@ const refreshOpenedEmail = async () => {
                   activator="parent"
                   location="top"
                 >
-                  {{ email.isRead ? 'Read Mail' : 'Unread Mail' }}
+                  {{ email.isRead ? 'Mark as Unread' : 'Mark as Read' }}
                 </VTooltip>
               </IconBtn>
               <IconBtn @click.stop="handleActionClick('spam', [email.id])">

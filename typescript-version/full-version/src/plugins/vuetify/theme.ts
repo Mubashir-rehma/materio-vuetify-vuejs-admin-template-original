@@ -91,7 +91,7 @@ const theme: VuetifyOptions['theme'] = {
       },
       variables: {
         'code-color': '#d400ff',
-        'overlay-scrim-background': '#101121',
+        'overlay-scrim-background': '#2C2942',
         'overlay-scrim-opacity': 0.6,
         'hover-opacity': 0.04,
         'focus-opacity': 0.1,

@@ -1,4 +1,3 @@
-import type { IconProps } from '@iconify/vue'
 import { Icon } from '@iconify/vue'
 import { aliases } from 'vuetify/lib/iconsets/mdi'
 
@@ -12,7 +11,8 @@ const alertTypeIcon = {
 const modifiedAliases = Object.assign(aliases, alertTypeIcon)
 
 export const iconify = {
-  component: (props: IconProps) => h(Icon, props),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  component: (props: any) => h(Icon, props),
 }
 
 export const icons = {

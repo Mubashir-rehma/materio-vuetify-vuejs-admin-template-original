@@ -158,6 +158,56 @@ const currentPage = ref(1)
 </template>
 ` }
 
+export const outline = { ts: `<script setup lang="ts">
+const currentPage = ref(1)
+</script>
+
+<template>
+  <VPagination
+    v-model="currentPage"
+    variant="outlined"
+    :length="5"
+  />
+</template>
+`, js: `<script setup>
+const currentPage = ref(1)
+</script>
+
+<template>
+  <VPagination
+    v-model="currentPage"
+    variant="outlined"
+    :length="5"
+  />
+</template>
+` }
+
+export const outlineCircle = { ts: `<script setup lang="ts">
+const currentPage = ref(1)
+</script>
+
+<template>
+  <VPagination
+    v-model="currentPage"
+    variant="outlined"
+    :length="5"
+    rounded="circle"
+  />
+</template>
+`, js: `<script setup>
+const currentPage = ref(1)
+</script>
+
+<template>
+  <VPagination
+    v-model="currentPage"
+    variant="outlined"
+    :length="5"
+    rounded="circle"
+  />
+</template>
+` }
+
 export const size = { ts: `<script setup lang="ts">
 const xSmallPagination = ref(1)
 const smallPagination = ref(2)
@@ -216,7 +266,7 @@ const currentPage = ref(1)
   <VPagination
     v-model="currentPage"
     :length="15"
-    :total-visible="7"
+    :total-visible="$vuetify.display.mdAndUp ? 7 : 3"
   />
 </template>
 `, js: `<script setup>
@@ -227,7 +277,7 @@ const currentPage = ref(1)
   <VPagination
     v-model="currentPage"
     :length="15"
-    :total-visible="7"
+    :total-visible="$vuetify.display.mdAndUp ? 7 : 3"
   />
 </template>
 ` }

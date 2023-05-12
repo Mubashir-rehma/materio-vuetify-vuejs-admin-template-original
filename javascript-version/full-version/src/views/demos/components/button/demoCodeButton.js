@@ -97,7 +97,7 @@ export const colors = { ts: `<template>
 export const flat = { ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="flat">
-      primary
+      Primary
     </VBtn>
 
     <VBtn
@@ -139,7 +139,7 @@ export const flat = { ts: `<template>
 `, js: `<template>
   <div class="demo-space-x">
     <VBtn variant="flat">
-      primary
+      Primary
     </VBtn>
 
     <VBtn
@@ -499,7 +499,6 @@ const load = (i: number) => {
     }
   }
   </style>
-
 `, js: `<script setup>
 const loadings = ref([])
 
@@ -587,7 +586,6 @@ const load = i => {
     }
   }
   </style>
-
 ` }
 
 export const outlined = { ts: `<template>
@@ -697,14 +695,14 @@ export const plain = { ts: `<template>
       color="warning"
       variant="plain"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="plain"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>
@@ -739,14 +737,14 @@ export const plain = { ts: `<template>
       color="warning"
       variant="plain"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="plain"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>
@@ -1045,14 +1043,14 @@ export const tonal = { ts: `<template>
       color="warning"
       variant="tonal"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="tonal"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>
@@ -1087,14 +1085,14 @@ export const tonal = { ts: `<template>
       color="warning"
       variant="tonal"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="tonal"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>

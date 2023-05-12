@@ -1,6 +1,7 @@
 $shadow-key-umbra-opacity-custom: var(--v-shadow-key-umbra-opacity);
 $shadow-key-penumbra-opacity-custom: var(--v-shadow-key-penumbra-opacity);
 $shadow-key-ambient-opacity-custom: var(--v-shadow-key-ambient-opacity);
+/* stylelint-disable-next-line max-line-length */
 $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 @forward "../../../base/libs/vuetify/variables" with (
@@ -161,8 +162,8 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   ) !default,
 
   // 👉 Card
-  $card-item-padding: 15px 20px !default,
   $card-title-letter-spacing: 0.0094rem !default,
+  $card-title-line-height: 2rem !default,
   $card-subtitle-opacity: 1 !default,
 
   // 👉 Tooltip
@@ -177,6 +178,8 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
 
   // 👉 Badge
   $badge-border-color:rgb(var(--v-theme-surface)) !default,
+  $badge-dot-height: 0.5rem !default,
+  $badge-dot-width: 0.5rem !default,
 
   // 👉 Button
   $button-height: 38px !default,
@@ -184,6 +187,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   $button-border-radius: 5px !default,
   $button-padding-ratio: 1.7 !default,
   $button-text-letter-spacing: 0.025rem !default,
+  $button-icon-density: ("default": 0.5, "comfortable": -2, "compact": -3) !default,
 
   // 👉 Dialog
   $dialog-card-header-padding: 20px !default,
@@ -192,6 +196,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
 
   // 👉 Chip
   $chip-label-border-radius: 4px !default,
+  $chip-close-size: 20px !default,
 
   // 👉 Expansion panel
   $expansion-panel-title-padding: 16px 20px !default,
@@ -215,7 +220,12 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
   // 👉 Tabs
   $tabs-height: 40px !default,
 
-  // 👉 Timeline 
+  // 👉 Slider
+  $slider-track-active-size: 4px !default,
+  $slider-thumb-label-padding: 4px 12px !default,
+  $slider-thumb-label-font-size: 0.875rem !default,
+
+  // 👉 Timeline
   $timeline-dot-size: 34px !default,
   $timeline-dot-divider-background: transparent !default,
 
@@ -224,4 +234,7 @@ $font-family-custom: inter, sans-serif, -apple-system, blinkmacsystemfont, "Sego
 
   // 👉 Navigation Drawer
   $navigation-drawer-scrim-opacity:0.5 !default,
+
+  // 👉 Table
+  $table-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)),
 );

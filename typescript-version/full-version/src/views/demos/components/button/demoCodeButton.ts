@@ -104,7 +104,7 @@ export const flat = {
   ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="flat">
-      primary
+      Primary
     </VBtn>
 
     <VBtn
@@ -147,7 +147,7 @@ export const flat = {
   js: `<template>
   <div class="demo-space-x">
     <VBtn variant="flat">
-      primary
+      Primary
     </VBtn>
 
     <VBtn
@@ -521,7 +521,6 @@ const load = (i: number) => {
     }
   }
   </style>
-
 `,
   js: `<script setup>
 const loadings = ref([])
@@ -610,7 +609,6 @@ const load = i => {
     }
   }
   </style>
-
 `,
 }
 
@@ -725,14 +723,14 @@ export const plain = {
       color="warning"
       variant="plain"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="plain"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>
@@ -768,14 +766,14 @@ export const plain = {
       color="warning"
       variant="plain"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="plain"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>
@@ -1088,14 +1086,14 @@ export const tonal = {
       color="warning"
       variant="tonal"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="tonal"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>
@@ -1131,14 +1129,14 @@ export const tonal = {
       color="warning"
       variant="tonal"
     >
-      warning
+      Warning
     </VBtn>
 
     <VBtn
       color="error"
       variant="tonal"
     >
-      error
+      Error
     </VBtn>
   </div>
 </template>

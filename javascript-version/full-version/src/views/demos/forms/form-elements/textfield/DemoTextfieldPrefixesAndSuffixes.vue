@@ -21,6 +21,7 @@ const time = ref('04:56')
         v-model="weight"
         label="Weight"
         suffix="lbs"
+        type="number"
       />
     </VCol>
 

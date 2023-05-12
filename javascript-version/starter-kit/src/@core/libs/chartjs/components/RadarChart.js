@@ -41,8 +41,8 @@ export default defineComponent({
   },
   setup(props) {
     return () => h(h(Radar), {
-      chartData: props.chartData,
-      chartOptions: props.chartOptions,
+      data: props.chartData,
+      options: props.chartOptions,
       chartId: props.chartId,
       width: props.width,
       height: props.height,

@@ -9,8 +9,8 @@ const invoiceData = ref({
     total: 0,
     avatar: '',
     invoiceStatus: '',
-    balance: '',
     dueDate: '',
+    balance: 0,
     client: {
       address: '',
       company: '',
@@ -148,4 +148,3 @@ const paymentMethods = [
     </VCol>
   </VRow>
 </template>
-

@@ -101,12 +101,12 @@ const inlineRadio = ref('radio-1')
     <VRadio
       label="Option 1"
       value="radio-1"
-      density="compact"
+      density="comfortable"
     />
     <VRadio
       label="Option 2"
       value="radio-2"
-      density="compact"
+      density="comfortable"
     />
   </VRadioGroup>
 
@@ -139,12 +139,12 @@ const inlineRadio = ref('radio-1')
     <VRadio
       label="Option 1"
       value="radio-1"
-      density="compact"
+      density="comfortable"
     />
     <VRadio
       label="Option 2"
       value="radio-2"
-      density="compact"
+      density="comfortable"
     />
   </VRadioGroup>
 
@@ -294,13 +294,21 @@ const radios = ref('Duckduckgo')
 
     <VRadio value="Google">
       <template #label>
-        <div>Of course it's <strong class="text-success">Google</strong></div>
+        <div>
+          Of course it's <span class="text-success">
+            Google
+          </span>
+        </div>
       </template>
     </VRadio>
 
     <VRadio value="Duckduckgo">
       <template #label>
-        <div>Definitely <strong class="text-primary">Duckduckgo</strong></div>
+        <div>
+          Definitely <span class="text-primary">
+            Duckduckgo
+          </span>
+        </div>
       </template>
     </VRadio>
   </VRadioGroup>
@@ -318,13 +326,21 @@ const radios = ref('Duckduckgo')
 
     <VRadio value="Google">
       <template #label>
-        <div>Of course it's <strong class="text-success">Google</strong></div>
+        <div>
+          Of course it's <span class="text-success">
+            Google
+          </span>
+        </div>
       </template>
     </VRadio>
 
     <VRadio value="Duckduckgo">
       <template #label>
-        <div>Definitely <strong class="text-primary">Duckduckgo</strong></div>
+        <div>
+          Definitely <span class="text-primary">
+            Duckduckgo
+          </span>
+        </div>
       </template>
     </VRadio>
   </VRadioGroup>

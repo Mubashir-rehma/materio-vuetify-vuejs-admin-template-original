@@ -64,17 +64,7 @@ const meetingTypeUiColors = {
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -117,10 +107,12 @@ const meetingTypeUiColors = {
           <template #append>
             <VListItemAction>
               <VChip
-                size="small"
+                density="compact"
                 :color="meetingTypeUiColors[meeting.type]"
               >
-                {{ meeting.type }}
+                <span class="text-xs">
+                  {{ meeting.type }}
+                </span>
               </VChip>
             </VListItemAction>
           </template>
@@ -133,6 +125,6 @@ const meetingTypeUiColors = {
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 1.5625rem;
+  --v-card-list-gap: 1.1rem;
 }
 </style>

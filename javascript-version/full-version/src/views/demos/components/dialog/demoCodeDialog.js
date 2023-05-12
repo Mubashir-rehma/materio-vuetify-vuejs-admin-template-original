@@ -16,6 +16,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Privacy Policy">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Bear claw pastry cotton candy jelly toffee. Pudding chocolate cake shortbread bonbon biscuit sweet. Lemon drops cupcake muffin brownie fruitcake. Pastry pastry tootsie roll jujubes chocolate cake gummi bears muffin pudding caramels. Jujubes lollipop gummies croissant shortbread. Cupcake dessert marzipan topping gingerbread apple pie chupa chups powder. Cake croissant halvah candy canes gummies.
       </VCardText>
@@ -47,6 +53,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Privacy Policy">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Bear claw pastry cotton candy jelly toffee. Pudding chocolate cake shortbread bonbon biscuit sweet. Lemon drops cupcake muffin brownie fruitcake. Pastry pastry tootsie roll jujubes chocolate cake gummi bears muffin pudding caramels. Jujubes lollipop gummies croissant shortbread. Cupcake dessert marzipan topping gingerbread apple pie chupa chups powder. Cake croissant halvah candy canes gummies.
       </VCardText>
@@ -87,6 +99,12 @@ const interest = ref<string[]>([])
 
     <!-- Dialog Content -->
     <VCard title="User Profile">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         <VRow>
           <VCol
@@ -137,20 +155,18 @@ const interest = ref<string[]>([])
             cols="12"
             sm="6"
           >
-            <VSelect
+            <VTextField
               v-model="age"
-              :items="['0-17', '18-29', '30-54', '54+']"
               label="Age"
+              type="number"
             />
           </VCol>
           <VCol
             cols="12"
             sm="6"
           >
-            <VAutocomplete
+            <VTextField
               v-model="interest"
-              multiple
-              :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
               label="Interests"
             />
           </VCol>
@@ -200,6 +216,12 @@ const interest = ref([])
 
     <!-- Dialog Content -->
     <VCard title="User Profile">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         <VRow>
           <VCol
@@ -250,20 +272,18 @@ const interest = ref([])
             cols="12"
             sm="6"
           >
-            <VSelect
+            <VTextField
               v-model="age"
-              :items="['0-17', '18-29', '30-54', '54+']"
               label="Age"
+              type="number"
             />
           </VCol>
           <VCol
             cols="12"
             sm="6"
           >
-            <VAutocomplete
+            <VTextField
               v-model="interest"
-              multiple
-              :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
               label="Interests"
             />
           </VCol>
@@ -581,7 +601,6 @@ watch(isDialogVisible, value => {
         </p>
         <VProgressLinear
           indeterminate
-          color="white"
           class="mb-0"
         />
       </VCardText>
@@ -624,7 +643,6 @@ watch(isDialogVisible, value => {
         </p>
         <VProgressLinear
           indeterminate
-          color="white"
           class="mb-0"
         />
       </VCardText>
@@ -649,6 +667,12 @@ const isDialogTwoShow = ref(false)
     class="v-dialog-sm"
   >
     <VCard title="Dialog">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Biscuit fruitcake marshmallow jelly beans jujubes halvah cupcake topping. Chocolate cookie jelly-o toffee tart oat cake. Tart sugar plum gingerbread halvah muffin sweet. Cake halvah tart soufflé pudding.
       </VCardText>
@@ -674,6 +698,12 @@ const isDialogTwoShow = ref(false)
     class="v-dialog-sm"
   >
     <VCard title="Dialog 2">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogTwoShow = false"
+      />
+
       <VCardText>I'm a nested dialog.</VCardText>
       <VCardActions>
         <VSpacer />
@@ -700,6 +730,12 @@ const isDialogTwoShow = ref(false)
     class="v-dialog-sm"
   >
     <VCard title="Dialog">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Biscuit fruitcake marshmallow jelly beans jujubes halvah cupcake topping. Chocolate cookie jelly-o toffee tart oat cake. Tart sugar plum gingerbread halvah muffin sweet. Cake halvah tart soufflé pudding.
       </VCardText>
@@ -725,6 +761,12 @@ const isDialogTwoShow = ref(false)
     class="v-dialog-sm"
   >
     <VCard title="Dialog 2">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogTwoShow = false"
+      />
+
       <VCardText>I'm a nested dialog.</VCardText>
       <VCardActions>
         <VSpacer />
@@ -758,6 +800,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Use Google's location service?">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Bear claw pastry cotton candy jelly toffee. Pudding chocolate cake shortbread bonbon biscuit sweet. Lemon drops cupcake muffin brownie fruitcake. Pastry pastry tootsie roll jujubes chocolate cake gummi bears muffin pudding caramels. Jujubes lollipop gummies croissant shortbread. Cupcake dessert marzipan topping gingerbread apple pie chupa chups powder. Cake croissant halvah candy canes gummies. Candy tootsie roll sweet lemon drops tart cotton candy jujubes topping chupa chups. Biscuit icing pastry chocolate bar lollipop. Lemon drops oat cake chocolate cake dessert chocolate. Carrot cake ice cream bonbon tart tootsie roll cupcake dessert gingerbread. Apple pie dessert sweet candy bonbon. Sugar plum gummies powder brownie dessert candy canes candy canes candy.
 
@@ -809,6 +857,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Use Google's location service?">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Bear claw pastry cotton candy jelly toffee. Pudding chocolate cake shortbread bonbon biscuit sweet. Lemon drops cupcake muffin brownie fruitcake. Pastry pastry tootsie roll jujubes chocolate cake gummi bears muffin pudding caramels. Jujubes lollipop gummies croissant shortbread. Cupcake dessert marzipan topping gingerbread apple pie chupa chups powder. Cake croissant halvah candy canes gummies. Candy tootsie roll sweet lemon drops tart cotton candy jujubes topping chupa chups. Biscuit icing pastry chocolate bar lollipop. Lemon drops oat cake chocolate cake dessert chocolate. Carrot cake ice cream bonbon tart tootsie roll cupcake dessert gingerbread. Apple pie dessert sweet candy bonbon. Sugar plum gummies powder brownie dessert candy canes candy canes candy.
 
@@ -860,6 +914,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Use Google's location service?">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
       </VCardText>
@@ -901,6 +961,12 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard title="Use Google's location service?">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
       </VCardText>
@@ -966,12 +1032,18 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard>
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardItem>
         <VCardTitle>Select Country</VCardTitle>
       </VCardItem>
 
       <VDivider />
-      <VCardText style="height: 300px;">
+      <VCardText style="block-size: 300px;">
         <VRadioGroup
           v-model="selectedCountry"
           :inline="false"
@@ -1093,12 +1165,18 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard>
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardItem>
         <VCardTitle>Select Country</VCardTitle>
       </VCardItem>
 
       <VDivider />
-      <VCardText style="height: 300px;">
+      <VCardText style="block-size: 300px;">
         <VRadioGroup
           v-model="selectedCountry"
           :inline="false"

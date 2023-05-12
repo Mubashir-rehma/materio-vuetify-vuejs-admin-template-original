@@ -51,8 +51,8 @@ export default defineComponent({
         cssClasses: props.cssClasses,
         styles: props.styles,
         plugins: props.plugins,
-        chartOptions: props.chartOptions,
-        chartData: props.chartData,
+        options: props.chartOptions,
+        data: props.chartData,
       })
   },
 })

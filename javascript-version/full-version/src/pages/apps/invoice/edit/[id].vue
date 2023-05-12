@@ -160,4 +160,3 @@ const paymentMethods = [
     <InvoiceAddPaymentDrawer v-model:isDrawerOpen="isAddPaymentSidebarActive" />
   </VRow>
 </template>
-

@@ -128,7 +128,6 @@
 }
 
 // 👉 Slider
-
 .v-slider-thumb {
   .v-slider-thumb__label {
     background: rgb(117, 117, 117);
@@ -138,6 +137,11 @@
       color: rgb(117, 117, 117);
     }
   }
+}
+
+// 👉 Switch
+.v-switch__thumb {
+  color: #fff !important;
 }
 
 // 👉 Table

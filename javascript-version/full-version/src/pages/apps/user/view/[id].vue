@@ -65,7 +65,6 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
         >
           <VIcon
             start
-            :size="24"
             :icon="tab.icon"
           />
           <span>{{ tab.title }}</span>

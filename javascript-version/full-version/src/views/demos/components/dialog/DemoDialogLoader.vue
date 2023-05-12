@@ -34,7 +34,6 @@ watch(isDialogVisible, value => {
         </p>
         <VProgressLinear
           indeterminate
-          color="white"
           class="mb-0"
         />
       </VCardText>

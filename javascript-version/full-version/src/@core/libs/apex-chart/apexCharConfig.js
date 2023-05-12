@@ -290,8 +290,8 @@ export const getRadialBarChartConfig = themeColors => {
     },
     grid: {
       padding: {
-        top: -35,
-        bottom: -30,
+        top: -30,
+        bottom: -25,
       },
     },
   }

@@ -16,12 +16,12 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1">
+            <h4 class="app-timeline-title me-1 mb-2">
               8 Invoices have been paid
             </h4>
-            <small class="text-xs text-disabled text-no-wrap">Wednesday</small>
+            <small class="app-timeline-meta text-no-wrap">Wednesday</small>
           </div>
-          <p class="mb-0">
+          <p class="mb-0 app-timeline-text">
             Invoices have been paid to the company.
           </p>
           <span class="d-flex align-center mt-2">
@@ -39,13 +39,13 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1">
+            <h4 class="app-timeline-title me-1 mb-2">
               Create a new project for client 😎
             </h4>
-            <small class="text-xs text-disabled text-no-wrap">April, 18</small>
+            <small class="app-timeline-meta text-no-wrap">April, 18</small>
           </div>
 
-          <p class="mb-1">
+          <p class="mb-1 app-timeline-text">
             Invoices have been paid to the company.
           </p>
 
@@ -68,12 +68,12 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1">
+            <h4 class="app-timeline-title me-1 mb-2">
               Order #37745 from September
             </h4>
-            <small class="text-xs text-disabled text-no-wrap">January, 10</small>
+            <small class="app-timeline-meta text-no-wrap">January, 10</small>
           </div>
-          <p class="mb-0">
+          <p class="mb-0 app-timeline-text">
             Invoices have been paid to the company.
           </p>
         </VTimelineItem>
@@ -83,10 +83,10 @@ import avatar2 from '@images/avatars/avatar-2.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1">
+            <h4 class="app-timeline-title me-1">
               Public Meeting
             </h4>
-            <small class="text-xs text-disabled text-no-wrap">September, 30</small>
+            <small class="app-timeline-meta text-no-wrap">September, 30</small>
           </div>
         </VTimelineItem>
       </VTimeline>

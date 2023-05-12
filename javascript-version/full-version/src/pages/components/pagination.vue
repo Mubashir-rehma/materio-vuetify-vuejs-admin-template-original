@@ -23,6 +23,21 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
       cols="12"
       md="6"
     >
+      <!-- 👉 outline basic variant -->
+      <AppCardCode
+        title="Outline"
+        :code="demoCode.outline"
+      >
+        <p>The <code>variant='outline'</code> prop is used to give outline to pagination item.</p>
+
+        <DemoPaginationOutline />
+      </AppCardCode>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
       <!-- 👉 Circle -->
       <AppCardCode
         title="Circle"
@@ -31,6 +46,21 @@ import * as demoCode from '@/views/demos/components/pagination/demoCodePaginatio
         <p>The <code>rounded</code> prop allows you to render pagination buttons with alternative styles.</p>
 
         <DemoPaginationCircle />
+      </AppCardCode>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 outline circle variant -->
+      <AppCardCode
+        title="Outline Circle"
+        :code="demoCode.outlineCircle"
+      >
+        <p>The <code>variant='outline'</code> and <code>rounded</code> prop is used to give rounded outline to pagination item.</p>
+
+        <DemoPaginationOutlineCircle />
       </AppCardCode>
     </VCol>
 

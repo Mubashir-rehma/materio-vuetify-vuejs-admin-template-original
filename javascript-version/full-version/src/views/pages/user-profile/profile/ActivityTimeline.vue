@@ -24,25 +24,25 @@ import avatar2 from '@images/avatars/avatar-2.png'
           dot-color="error"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1 mb-2">
+          <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-1">
+            <span class="app-timeline-title">
               8 Invoices have been paid
-            </h4>
-            <span class="text-xs text-disabled text-no-wrap">Wednesday</span>
+            </span>
+            <span class="app-timeline-meta">Wednesday</span>
           </div>
-          <p class="mb-2">
+          <p class="app-timeline-text mb-2">
             Invoices have been paid to the company.
           </p>
           <div class="d-flex align-center mt-2">
             <VIcon
               color="error"
               icon="mdi-file-pdf-box"
-              size="26"
+              size="24"
               class="me-2"
             />
-            <h6 class="font-weight-medium text-sm">
+            <span class="font-weight-medium text-sm">
               Invoices.pdf
-            </h6>
+            </span>
           </div>
         </VTimelineItem>
 
@@ -50,14 +50,14 @@ import avatar2 from '@images/avatars/avatar-2.png'
           dot-color="primary"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1 mb-2">
+          <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-1">
+            <span class="app-timeline-title">
               Create a new project for client 😎
-            </h4>
-            <span class="text-xs text-disabled text-no-wrap">April, 18</span>
+            </span>
+            <span class="app-timeline-meta">April, 18</span>
           </div>
 
-          <p class="mb-1">
+          <p class="app-timeline-text mb-1">
             Invoices have been paid to the company.
           </p>
 
@@ -79,13 +79,13 @@ import avatar2 from '@images/avatars/avatar-2.png'
           dot-color="info"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1 mb-2">
+          <div class="d-flex justify-space-between align-center flex-wrap mb-1 gap-2">
+            <span class="app-timeline-title">
               Order #37745 from September
-            </h4>
-            <span class="text-xs text-disabled text-no-wrap">January, 10</span>
+            </span>
+            <span class="app-timeline-meta">January, 10</span>
           </div>
-          <p class="mb-0">
+          <p class="app-timeline-text mb-0">
             Invoices have been paid to the company.
           </p>
         </VTimelineItem>
@@ -94,11 +94,11 @@ import avatar2 from '@images/avatars/avatar-2.png'
           dot-color="success"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap">
-            <h4 class="text-base font-weight-medium me-1 mb-3">
+          <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-1">
+            <span class="app-timeline-title">
               Public Meeting
-            </h4>
-            <span class="text-xs text-disabled text-no-wrap">September, 30</span>
+            </span>
+            <span class="app-timeline-meta">September, 30</span>
           </div>
         </VTimelineItem>
       </VTimeline>

@@ -15,9 +15,7 @@ const menu = ref(false)
       </VBtn>
     </template>
 
-    <VCard
-      max-width="300"
-    >
+    <VCard max-width="300">
       <VList>
         <VListItem
           :prepend-avatar="avatar1"

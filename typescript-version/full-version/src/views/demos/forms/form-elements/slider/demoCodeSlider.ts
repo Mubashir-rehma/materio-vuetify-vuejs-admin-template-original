@@ -410,9 +410,7 @@ const sliderValue = ref(30)
     </VCol>
 
     <VCol cols="12">
-      <VSlider
-        v-model="sliderValue"
-      />
+      <VSlider v-model="sliderValue" />
     </VCol>
   </VRow>
 </template>
@@ -428,9 +426,7 @@ const sliderValue = ref(30)
     </VCol>
 
     <VCol cols="12">
-      <VSlider
-        v-model="sliderValue"
-      />
+      <VSlider v-model="sliderValue" />
     </VCol>
   </VRow>
 </template>
@@ -663,7 +659,7 @@ const slider = ref(40)
         v-model="slider"
         variant="underlined"
         type="number"
-        style="width: 60px ;"
+        style="inline-size: 60px;"
       />
     </template>
   </VSlider>
@@ -687,7 +683,7 @@ const slider = ref(40)
         v-model="slider"
         variant="underlined"
         type="number"
-        style="width: 60px ;"
+        style="inline-size: 60px;"
       />
     </template>
   </VSlider>

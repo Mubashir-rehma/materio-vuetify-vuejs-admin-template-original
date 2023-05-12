@@ -114,7 +114,7 @@ export const events = { ts: `<template>
 
 export const location = { ts: `<template>
   <div class="demo-space-x">
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on End
       <VTooltip
         activator="parent"
@@ -124,7 +124,7 @@ export const location = { ts: `<template>
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Start
       <VTooltip
         activator="parent"
@@ -134,7 +134,7 @@ export const location = { ts: `<template>
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Top
       <VTooltip
         activator="parent"
@@ -144,7 +144,7 @@ export const location = { ts: `<template>
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Bottom
       <VTooltip
         activator="parent"
@@ -157,7 +157,7 @@ export const location = { ts: `<template>
 </template>
 `, js: `<template>
   <div class="demo-space-x">
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on End
       <VTooltip
         activator="parent"
@@ -167,7 +167,7 @@ export const location = { ts: `<template>
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Start
       <VTooltip
         activator="parent"
@@ -177,7 +177,7 @@ export const location = { ts: `<template>
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Top
       <VTooltip
         activator="parent"
@@ -187,7 +187,7 @@ export const location = { ts: `<template>
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Bottom
       <VTooltip
         activator="parent"

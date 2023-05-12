@@ -649,6 +649,20 @@ const database: SearchItem[] = [
     title: 'Simple Table',
     category: 'formsTables',
   },
+  {
+    id: 92,
+    url: { name: 'forms-form-wizard-numbered' },
+    icon: 'mdi-align-vertical-distribute',
+    title: 'Form Wizard Numbered',
+    category: 'formsTables',
+  },
+  {
+    id: 93,
+    url: { name: 'forms-form-wizard-icons' },
+    icon: 'mdi-align-vertical-distribute',
+    title: 'Form Wizard Icons',
+    category: 'formsTables',
+  },
 ]
 
 // ** GET Search Data

@@ -92,7 +92,7 @@ const pricingPlans = [
     </VLabel>
 
     <div class="position-relative">
-      <div class="pricing-save-chip position-absolute">
+      <div class="pricing-save-chip position-absolute d-sm-block d-none">
         <VIcon
           start
           icon="mdi-arrow-down-left"

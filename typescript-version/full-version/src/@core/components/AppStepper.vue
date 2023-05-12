@@ -218,7 +218,6 @@ watchEffect(() => {
       .stepper-title {
         color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
         font-size: 0.875rem;
-        text-transform: uppercase;
       }
 
       .stepper-subtitle {

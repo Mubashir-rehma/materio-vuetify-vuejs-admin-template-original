@@ -138,6 +138,6 @@ const meetingTypeUiColors: UiColors = {
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 1.5625rem;
+  --v-card-list-gap: 1.1rem;
 }
 </style>

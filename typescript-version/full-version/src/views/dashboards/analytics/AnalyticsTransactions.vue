@@ -40,6 +40,10 @@ const statistics = [
     </VCardItem>
 
     <VCardText>
+      <p class="mb-md-10">
+        <span class="text-high-emphasis font-weight-medium me-1">Total 48.5% Growth</span>
+        <span>😎 this month</span>
+      </p>
       <VRow>
         <VCol
           v-for="item in statistics"

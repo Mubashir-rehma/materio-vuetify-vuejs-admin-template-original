@@ -17,7 +17,6 @@ const scrollToTop = () => {
     <VBtn
       v-show="y > 200"
       icon
-      density="comfortable"
       @click="scrollToTop"
     >
       <VIcon

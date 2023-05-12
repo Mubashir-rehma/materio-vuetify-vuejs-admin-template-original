@@ -69,7 +69,6 @@ const headerValues = computed(() => {
   <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
     <VBtn
       icon
-      size="small"
       class="app-customizer-toggler rounded-s-lg rounded-0"
       style="z-index: 1001;"
       @click="isNavDrawerOpen = true"

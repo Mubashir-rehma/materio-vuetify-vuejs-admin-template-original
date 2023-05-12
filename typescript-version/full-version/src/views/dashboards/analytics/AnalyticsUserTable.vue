@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/@fake-db/types'
-import { paginationMeta } from '@/@fake-db/utils'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import type { Options } from '@core/types'
@@ -19,7 +18,7 @@ const users = ref<UserProperties[]>([])
 
 const options = ref<Options>({
   page: 1,
-  itemsPerPage: 10,
+  itemsPerPage: 8,
   sortBy: [],
   groupBy: [],
   search: undefined,
@@ -165,44 +164,7 @@ const addNewUser = (userData: UserProperties) => {
         </template>
 
         <!-- Pagination -->
-        <template #bottom>
-          <VDivider />
-
-          <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
-            <div class="d-flex align-center gap-x-2 text-sm">
-              Rows Per Page:
-              <VSelect
-                v-model="options.itemsPerPage"
-                class="per-page-select text-high-emphasis"
-                variant="plain"
-                density="compact"
-                :items="[10, 20, 25, 50, 100]"
-              />
-            </div>
-
-            <span class="d-flex align-center text-sm me-2 text-high-emphasis">{{ paginationMeta(options, totalUsers) }}</span>
-
-            <div class="d-flex gap-x-2 align-center me-2">
-              <VBtn
-                icon="mdi-chevron-left"
-                variant="text"
-                density="comfortable"
-                color="default"
-                :disabled="options.page <= 1"
-                @click="options.page <= 1 ? options.page = 1 : options.page--"
-              />
-
-              <VBtn
-                icon="mdi-chevron-right"
-                density="comfortable"
-                variant="text"
-                color="default"
-                :disabled="options.page >= Math.ceil(totalUsers / options.itemsPerPage)"
-                @click="options.page >= Math.ceil(totalUsers / options.itemsPerPage) ? options.page = Math.ceil(totalUsers / options.itemsPerPage) : options.page++ "
-              />
-            </div>
-          </div>
-        </template>
+        <template #bottom />
       </VDataTableServer>
       <!-- SECTION -->
     </VCard>

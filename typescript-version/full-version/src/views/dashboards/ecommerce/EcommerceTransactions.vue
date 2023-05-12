@@ -135,6 +135,6 @@ const formateAmount = (amount: number) => {
 
  <style lang="scss" scoped>
   .card-list {
-    --v-card-list-gap: 1.625rem;
+    --v-card-list-gap: 1.3rem;
   }
   </style>

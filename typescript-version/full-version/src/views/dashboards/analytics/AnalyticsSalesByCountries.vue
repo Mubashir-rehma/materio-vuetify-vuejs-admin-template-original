@@ -40,7 +40,14 @@ const salesByCountries = [
     sales: '42k',
     color: 'error',
   },
-
+  {
+    abbr: 'Ch',
+    amount: '$12k',
+    country: 'China',
+    change: '+14.8%',
+    sales: '8k',
+    color: 'error',
+  },
 ]
 </script>
 
@@ -109,6 +116,6 @@ const salesByCountries = [
 
   <style lang="scss" scoped>
   .card-list {
-    --v-card-list-gap: 1.5rem;
+    --v-card-list-gap: 1.05rem;
   }
   </style>

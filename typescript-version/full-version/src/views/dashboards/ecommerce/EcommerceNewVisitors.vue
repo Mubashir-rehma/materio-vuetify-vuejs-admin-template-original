@@ -38,8 +38,8 @@ const options = {
     `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
     `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
     `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
-    `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
     currentTheme.primary,
+    `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
     `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
     `rgba(${hexToRgb(currentTheme.primary)},0.1)`,
   ],
@@ -97,7 +97,7 @@ const options = {
             type="bar"
             :options="options"
             :series="series"
-            :height="144"
+            :height="148"
           />
         </VCardText>
       </VCol>

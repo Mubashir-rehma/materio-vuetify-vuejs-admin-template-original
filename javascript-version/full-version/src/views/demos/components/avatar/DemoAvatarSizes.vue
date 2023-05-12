@@ -22,14 +22,14 @@
       color="info"
       size="large"
     >
-      PI
+      <span class="text-lg">PI</span>
     </VAvatar>
 
     <VAvatar
       color="error"
       size="x-large"
     >
-      PI
+      <span class="text-lg">PI</span>
     </VAvatar>
   </div>
 </template>

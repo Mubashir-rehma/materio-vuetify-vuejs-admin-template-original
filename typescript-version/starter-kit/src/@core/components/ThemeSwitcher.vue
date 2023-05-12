@@ -7,34 +7,27 @@ const props = defineProps<{
 }>()
 
 const { theme } = useThemeConfig()
-const { state: currentTheme, next: getNextThemeName, index: currentThemeIndex } = useCycleList(props.themes.map(t => t.name), { initialValue: theme.value })
+const { state: currentThemeName, next: getNextThemeName, index: currentThemeIndex } = useCycleList(props.themes.map(t => t.name), { initialValue: theme.value })
 
 const changeTheme = () => {
   theme.value = getNextThemeName()
 }
 
-const getThemeIcon = computedWithControl(theme, () => {
-  const nextThemeIndex = currentThemeIndex.value + 1 === props.themes.length ? 0 : currentThemeIndex.value + 1
-
-  return props.themes[nextThemeIndex].icon
-})
-
+// Update icon if theme is changed from other sources
 watch(theme, val => {
-  currentTheme.value = val
+  currentThemeName.value = val
 })
 </script>
 
 <template>
-  <VBtn
-    icon
-    variant="text"
-    color="default"
-    size="small"
-    @click="changeTheme"
-  >
-    <VIcon
-      :icon="getThemeIcon"
-      size="24"
-    />
-  </VBtn>
+  <IconBtn @click="changeTheme">
+    <VIcon :icon="props.themes[currentThemeIndex].icon" />
+    <VTooltip
+      activator="parent"
+      open-delay="1000"
+      scroll-strategy="close"
+    >
+      <span class="text-capitalize">{{ currentThemeName }}</span>
+    </VTooltip>
+  </IconBtn>
 </template>

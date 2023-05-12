@@ -89,9 +89,12 @@ const socialAccounts = ref([
             <VListItem
               v-for="account in connectedAccounts"
               :key="account.title"
-              :title="account.title"
-              :subtitle="account.text"
             >
+              <VListItemTitle class="font-weight-medium">
+                {{ account.title }}
+              </VListItemTitle>
+
+              <VListItemSubtitle>{{ account.text }}</VListItemSubtitle>
               <template #prepend>
                 <VAvatar
                   start
@@ -124,12 +127,15 @@ const socialAccounts = ref([
             <VListItem
               v-for="(account) in socialAccounts"
               :key="account.title"
-              :title="account.title"
             >
+              <VListItemTitle class="font-weight-medium">
+                {{ account.title }}
+              </VListItemTitle>
+
               <template #prepend>
                 <VAvatar
                   start
-                  size="35"
+                  size="36"
                   rounded="0"
                   :image="account.img"
                 />
@@ -154,18 +160,16 @@ const socialAccounts = ref([
               </VListItemSubtitle>
 
               <template #append>
-                <VBtn
-                  icon
-                  color="secondary"
-                  variant="tonal"
-                  size="small"
+                <IconBtn
+                  :color="account.connected ? 'error' : 'secondary'"
+                  variant="outlined"
                   class="rounded"
                 >
                   <VIcon
                     size="20"
-                    :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
+                    :icon="account.connected ? 'mdi-delete-outline' : 'mdi-link'"
                   />
-                </VBtn>
+                </IconBtn>
               </template>
             </VListItem>
           </VList>
@@ -174,3 +178,9 @@ const socialAccounts = ref([
     </VCol>
   </VRow>
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 1rem;
+}
+</style>

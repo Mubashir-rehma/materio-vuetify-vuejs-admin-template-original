@@ -1,6 +1,7 @@
+import mock from '@/@fake-db/mock'
+import { genId } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
-import mock from '@/@fake-db/mock'
 
 
 // TODO: Use jsonwebtoken pkg
@@ -128,14 +129,8 @@ mock.onPost('/auth/register').reply(request => {
 
   if (!errors.username && !errors.email) {
     // Calculate user id
-    const { length } = database
-    let lastIndex = 0
-    if (length)
-      lastIndex = database[length - 1].id
-    lastIndex += 1
-
     const userData = {
-      id: lastIndex,
+      id: genId(database),
       email,
       password,
       username,
@@ -149,7 +144,6 @@ mock.onPost('/auth/register').reply(request => {
       ],
     }
 
-    console.log('userData :>> ', userData)
     database.push(userData)
 
     const accessToken = userTokens[userData.id]

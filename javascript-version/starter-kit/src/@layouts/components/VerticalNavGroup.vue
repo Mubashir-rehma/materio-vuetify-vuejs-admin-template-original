@@ -75,7 +75,7 @@ watch(isGroupOpen, val => {
 watch(openGroups, val => {
 
   // Prevent closing recently opened inactive group.
-  const lastOpenedGroup = val[val.length - 1]
+  const lastOpenedGroup = val.at(-1)
   if (lastOpenedGroup === props.item.title)
     return
   const isActive = isNavGroupActive(props.item.children, router)

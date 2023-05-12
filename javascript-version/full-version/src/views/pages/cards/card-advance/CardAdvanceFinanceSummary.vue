@@ -65,15 +65,16 @@ import avatar3 from '@images/avatars/avatar-3.png'
         <VCol>
           <p>Satisfaction Rate</p>
           <div
-            class="d-flex align-center"
+            class="d-flex align-center gap-5"
             style="width: 130px;"
           >
-            <VProgressLinear
-              color="primary"
-              :model-value="75"
-              :height="6"
-              class="me-4"
-            />
+            <div class="flex-grow-1">
+              <VProgressLinear
+                color="primary"
+                :model-value="75"
+                :height="6"
+              />
+            </div>
             <span>75%</span>
           </div>
         </VCol>
@@ -84,20 +85,20 @@ import avatar3 from '@images/avatars/avatar-3.png'
         >
           <div class="v-avatar-group">
             <VAvatar
-              :size="44"
+              :size="40"
               :image="avatar1"
             />
             <VAvatar
-              :size="44"
+              :size="40"
               :image="avatar2"
             />
             <VAvatar
-              :size="44"
+              :size="40"
               :image="avatar3"
             />
             <VAvatar
               color="grey-200"
-              size="large"
+              :size="40"
             >
               <span class="text-secondary"> +3</span>
             </VAvatar>
@@ -107,10 +108,12 @@ import avatar3 from '@images/avatars/avatar-3.png'
         <VCol>
           <VChip
             color="primary"
-            size="small"
+            density="compact"
             class="mt-2"
           >
-            5 days Ago
+            <span class="text-xs">
+              5 days Ago
+            </span>
           </VChip>
         </VCol>
       </VRow>

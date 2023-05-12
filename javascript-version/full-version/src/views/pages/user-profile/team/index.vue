@@ -14,6 +14,30 @@ const fetchTeamData = () => {
 }
 
 watch(router, fetchTeamData, { immediate: true })
+
+const moreList = [
+  {
+    title: 'Rename Project',
+    value: 'Rename Project',
+  },
+  {
+    title: 'View Details',
+    value: 'View Details',
+  },
+  {
+    title: 'Add to favorites',
+    value: 'Add to favorites',
+  },
+  {
+    type: 'divider',
+    class: 'my-2',
+  },
+  {
+    title: 'Leave Project',
+    value: 'Leave Project',
+    class: 'text-error',
+  },
+]
 </script>
 
 <template>
@@ -35,49 +59,16 @@ watch(router, fetchTeamData, { immediate: true })
 
         <template #append>
           <div class="me-n3">
-            <VBtn
-              icon
-              variant="text"
-              color="default"
-              size="x-small"
-            >
+            <IconBtn>
               <VIcon
-                size="24"
                 icon="mdi-star-outline"
                 class="text-disabled"
               />
-            </VBtn>
-
-            <VBtn
-              icon
-              variant="text"
-              color="default"
-              size="x-small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-dots-vertical"
-                class="text-disabled"
-              />
-
-              <VMenu activator="parent">
-                <VList density="compact">
-                  <VListItem
-                    v-for="(item, index) in ['Rename Team', 'View Details', 'Add to favorites']"
-                    :key="index"
-                    :value="index"
-                  >
-                    <VListItemTitle>{{ item }}</VListItemTitle>
-                  </VListItem>
-                  <VDivider class="my-2" />
-                  <VListItem
-                    title="Delete Team"
-                    value="Delete Team"
-                    class="text-error"
-                  />
-                </VList>
-              </VMenu>
-            </VBtn>
+            </IconBtn>
+            <MoreBtn
+              item-props
+              :menu-list="moreList"
+            />
           </div>
         </template>
 
@@ -90,7 +81,7 @@ watch(router, fetchTeamData, { immediate: true })
             <VAvatar
               v-for="data in team.avatarGroup"
               :key="data.name"
-              size="32"
+              size="36"
             >
               <VImg :src="data.avatar" />
 
@@ -110,10 +101,12 @@ watch(router, fetchTeamData, { immediate: true })
               v-for="data in team.chips"
               :key="data.title"
               :color="data.color"
-              size="small"
+              density="compact"
               class="font-weight-medium"
             >
-              {{ data.title }}
+              <span class="text-xs">
+                {{ data.title }}
+              </span>
             </VChip>
           </div>
         </VCardText>

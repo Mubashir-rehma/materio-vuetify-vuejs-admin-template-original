@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Shepherd from 'shepherd.js'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
 import axios from '@axios'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
@@ -111,24 +112,22 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   <div
     class="d-flex align-center cursor-pointer"
     v-bind="$attrs"
+    style="user-select: none;"
     @click="isAppSearchBarVisible = !isAppSearchBarVisible"
   >
     <!-- 👉 Search Trigger button -->
-    <VBtn
-      icon
-      variant="text"
-      color="default"
-      size="small"
+    <!-- close active tour while opening search bar using icon -->
+    <IconBtn
+      class="me-1"
+      @click="Shepherd.activeTour?.cancel()"
     >
-      <VIcon
-        icon="mdi-magnify"
-        size="24"
-      />
-    </VBtn>
+      <VIcon icon="mdi-magnify" />
+    </IconBtn>
 
     <span
       v-if="appContentLayoutNav === 'vertical'"
       class="d-none d-md-flex align-center text-disabled"
+      @click="Shepherd.activeTour?.cancel()"
     >
       <span class="me-3">Search</span>
       <span class="meta-key">&#8984;K</span>
@@ -169,7 +168,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 
 .meta-key {
   border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
-  border-radius: vuetify.$card-border-radius;
+  border-radius: 6px;
   block-size: 1.5625rem;
   line-height: 1.3125rem;
   padding-block: 0.125rem;

@@ -8,12 +8,12 @@ const inlineRadio = ref('radio-1')
     <VRadio
       label="Option 1"
       value="radio-1"
-      density="compact"
+      density="comfortable"
     />
     <VRadio
       label="Option 2"
       value="radio-2"
-      density="compact"
+      density="comfortable"
     />
   </VRadioGroup>
 

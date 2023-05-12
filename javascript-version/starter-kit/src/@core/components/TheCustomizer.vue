@@ -1,6 +1,7 @@
 <script setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
+import { staticPrimaryColor } from '@/plugins/vuetify/theme'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import {
   RouteTransitions,
@@ -40,7 +41,7 @@ const setPrimaryColor = color => {
   localStorage.setItem(`${ themeConfig.app.title }-initial-loader-color`, color)
 }
 
-const getBoxColor = (color, index) => index ? color : '#9155FD'
+const getBoxColor = (color, index) => index ? color : staticPrimaryColor
 const { width: windowWidth } = useWindowSize()
 
 const headerValues = computed(() => {
@@ -56,7 +57,6 @@ const headerValues = computed(() => {
   <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
     <VBtn
       icon
-      size="small"
       class="app-customizer-toggler rounded-s-lg rounded-0"
       style="z-index: 1001;"
       @click="isNavDrawerOpen = true"
@@ -80,18 +80,12 @@ const headerValues = computed(() => {
           </h6>
           <span class="text-body-1">Customize & Preview in Real Time</span>
         </div>
-        <VBtn
-          icon
-          variant="text"
-          color="secondary"
-          size="x-small"
-          @click="isNavDrawerOpen = false"
-        >
+        <IconBtn @click="isNavDrawerOpen = false">
           <VIcon
             icon="mdi-close"
             size="20"
           />
-        </VBtn>
+        </IconBtn>
       </div>
 
       <VDivider />
@@ -125,24 +119,18 @@ const headerValues = computed(() => {
           <h6 class="mt-3 text-base font-weight-regular">
             Theme
           </h6>
-          <div class="d-flex align-center">
-            <VLabel
-              for="pricing-plan-toggle"
-              class="me-3"
-            >
-              Light
-            </VLabel>
-
-            <div>
-              <VSwitch
-                id="pricing-plan-toggle"
-                v-model="theme"
-                label="Dark"
-                true-value="dark"
-                false-value="light"
-              />
-            </div>
-          </div>
+          <VRadioGroup
+            v-model="theme"
+            inline
+          >
+            <VRadio
+              v-for="themeOption in ['system', 'light', 'dark']"
+              :key="themeOption"
+              :label="themeOption"
+              :value="themeOption"
+              class="text-capitalize"
+            />
+          </VRadioGroup>
 
           <!-- 👉 Primary color -->
           <h6 class="mt-3 text-base font-weight-regular">
@@ -152,7 +140,7 @@ const headerValues = computed(() => {
             <div
               v-for="(color, index) in colors"
               :key="color"
-              style="width: 2.5rem; height: 2.5rem; border-radius: 0.5rem; transition: all 0.25s ease;"
+              style=" border-radius: 0.5rem; block-size: 2.5rem;inline-size: 2.5rem; transition: all 0.25s ease;"
               :style="{ backgroundColor: getBoxColor(initialThemeColors[color], index) }"
               class="cursor-pointer d-flex align-center justify-center"
               :class="{ 'elevation-4': vuetifyTheme.current.value.colors.primary === getBoxColor(initialThemeColors[color], index) }"
@@ -277,7 +265,7 @@ const headerValues = computed(() => {
           <!-- 👉 Semi Dark Menu -->
           <div
             class="align-center justify-space-between"
-            :class="theme === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
+            :class="vuetifyTheme.global.name.value === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
             <VLabel
               for="customizer-menu-semi-dark"

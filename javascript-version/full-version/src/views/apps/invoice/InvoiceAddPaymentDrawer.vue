@@ -13,8 +13,8 @@ const emit = defineEmits([
   'submit',
 ])
 
-const invoiceBalance = ref('')
-const paymentAmount = ref('')
+const invoiceBalance = ref()
+const paymentAmount = ref()
 const paymentDate = ref('')
 const paymentMethod = ref()
 const paymentNote = ref('')
@@ -45,21 +45,10 @@ const handleDrawerModelValueUpdate = val => {
     @update:model-value="handleDrawerModelValueUpdate"
   >
     <!-- 👉 Header -->
-    <div class="d-flex align-center bg-var-theme-background px-5 py-2">
-      <h6 class="text-h6">
-        Add Payment
-      </h6>
-
-      <VSpacer />
-
-      <VBtn
-        size="small"
-        color="secondary"
-        variant="text"
-        icon="mdi-close"
-        @click="$emit('update:isDrawerOpen', false)"
-      />
-    </div>
+    <AppDrawerHeaderSection
+      title="Add Payment"
+      @cancel="$emit('update:isDrawerOpen', false)"
+    />
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
@@ -70,6 +59,7 @@ const handleDrawerModelValueUpdate = val => {
                 <VTextField
                   v-model="invoiceBalance"
                   label="Invoice Balance"
+                  type="number"
                 />
               </VCol>
 
@@ -77,6 +67,7 @@ const handleDrawerModelValueUpdate = val => {
                 <VTextField
                   v-model="paymentAmount"
                   label="Payment Amount"
+                  type="number"
                 />
               </VCol>
 

@@ -45,8 +45,6 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
 </template>
 
 <style lang="scss" scoped>
-@use "@layouts/styles/mixins" as layoutsMixins;
-
 .john-illustration {
   inset-block-end: -0.0625rem;
   inset-inline-end: 0;

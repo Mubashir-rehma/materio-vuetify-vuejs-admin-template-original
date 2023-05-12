@@ -154,6 +154,38 @@ import * as demoCode from '@/views/demos/components/list/demoCodeList'
       cols="12"
       md="6"
     >
+      <!-- 👉 Users List -->
+      <AppCardCode
+        title="User List"
+        no-padding
+        :code="demoCode.userList"
+      >
+        <VCardText>
+          <DemoListUserList />
+        </VCardText>
+      </AppCardCode>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <!-- 👉 Progress List -->
+      <AppCardCode
+        title="Progress List"
+        no-padding
+        :code="demoCode.progressList"
+      >
+        <VCardText>
+          <DemoListProgressList />
+        </VCardText>
+      </AppCardCode>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
       <!-- 👉 Shaped -->
       <AppCardCode
         title="Shaped"

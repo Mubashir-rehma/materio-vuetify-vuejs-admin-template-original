@@ -115,17 +115,7 @@ const weeklySalesData = [
 
       <template #append>
         <div class="mt-n7 me-n3">
-          <VBtn
-            icon
-            color="default"
-            size="x-small"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -150,7 +140,7 @@ const weeklySalesData = [
             rounded
             :color="data.avatar.color"
             variant="tonal"
-            class="me-3"
+            class="me-4"
           >
             <VIcon :icon="data.avatar.icon" />
           </VAvatar>
@@ -160,10 +150,9 @@ const weeklySalesData = [
           <h6 class="text-base font-weight-medium">
             {{ data.title }}
           </h6>
-          <span class="text-sm text-no-wrap">{{ data.subtitle }}</span>
+          <span class="text-xs text-no-wrap">{{ data.subtitle }}</span>
         </div>
       </div>
     </VCardText>
   </VCard>
 </template>
-

@@ -23,6 +23,12 @@ const interest = ref([])
 
     <!-- Dialog Content -->
     <VCard title="User Profile">
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardText>
         <VRow>
           <VCol
@@ -73,20 +79,18 @@ const interest = ref([])
             cols="12"
             sm="6"
           >
-            <VSelect
+            <VTextField
               v-model="age"
-              :items="['0-17', '18-29', '30-54', '54+']"
               label="Age"
+              type="number"
             />
           </VCol>
           <VCol
             cols="12"
             sm="6"
           >
-            <VAutocomplete
+            <VTextField
               v-model="interest"
-              multiple
-              :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
               label="Interests"
             />
           </VCol>

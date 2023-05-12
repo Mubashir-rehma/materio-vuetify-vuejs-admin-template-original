@@ -64,17 +64,7 @@ const meetingTypeUiColors = {
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -101,10 +91,10 @@ const meetingTypeUiColors = {
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-medium mb-1">
+          <VListItemTitle class="font-weight-medium mb-1">
             {{ meeting.with }}
           </VListItemTitle>
-          <VListItemSubtitle class="text-no-wrap text-xs">
+          <VListItemSubtitle class="text-no-wrap">
             <VIcon
               start
               size="16"
@@ -117,10 +107,12 @@ const meetingTypeUiColors = {
           <template #append>
             <VListItemAction>
               <VChip
-                size="small"
+                density="compact"
                 :color="meetingTypeUiColors[meeting.type]"
               >
-                {{ meeting.type }}
+                <span class="text-xs">
+                  {{ meeting.type }}
+                </span>
               </VChip>
             </VListItemAction>
           </template>

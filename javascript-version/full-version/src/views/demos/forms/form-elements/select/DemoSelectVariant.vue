@@ -59,7 +59,6 @@ const items = [
         :items="items"
         label="Underlined"
         variant="underlined"
-        density="default"
       />
     </VCol>
   </VRow>

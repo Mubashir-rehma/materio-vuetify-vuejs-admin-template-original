@@ -225,7 +225,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
 
     // customButtons
     dateClick(info) {
-      event.value = { ...event.value, start: String(new Date(info.date)) }
+      event.value = { ...event.value, start: info.date }
       isEventHandlerSidebarActive.value = true
     },
 

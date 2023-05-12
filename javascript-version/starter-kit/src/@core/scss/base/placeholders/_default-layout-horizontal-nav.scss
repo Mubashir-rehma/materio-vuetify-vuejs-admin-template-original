@@ -1,9 +1,9 @@
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 @use "@configured-variables" as variables;
 @use "misc";
+@use "@core/scss/base/mixins";
 
 %default-layout-horizontal-nav-navbar-and-nav-container {
-  @include elevation.elevation(3);
+  @include mixins.elevation(3);
 
   // ℹ️ 1000 is v-window z-index
   z-index: 1001;

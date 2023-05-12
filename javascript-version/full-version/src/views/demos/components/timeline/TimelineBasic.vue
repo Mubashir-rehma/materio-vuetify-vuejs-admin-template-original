@@ -12,7 +12,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         side="end"
         align="start"
         line-inset="8"
-        truncate-line="start"
+        truncate-line="both"
         density="compact"
       >
         <!-- SECTION Timeline Item: Flight -->
@@ -21,15 +21,15 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           size="x-small"
         >
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium me-3">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+            <span class="app-timeline-title">
               Get on the flight
-            </h6>
-            <small class="text-xs my-1">Wednesday</small>
+            </span>
+            <span class="app-timeline-meta">Wednesday</span>
           </div>
 
           <!-- 👉 Content -->
-          <p class="mb-1">
+          <p class="app-timeline-text mb-1">
             <span>Charles de Gaulle Airport, Paris</span>
             <VIcon
               size="20"
@@ -39,17 +39,19 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
             <span>Heathrow Airport, London</span>
           </p>
 
-          <p>6:30 AM</p>
+          <p class="app-timeline-meta">
+            6:30 AM
+          </p>
 
           <div class="d-flex align-center">
             <img
               :src="pdf"
-              width="28"
+              width="22"
               class="me-2"
               alt="img"
             >
 
-            <h6 class="font-weight-medium text-sm">
+            <h6 class="text-sm font-weight-medium">
               booking-card.pdf
             </h6>
           </div>
@@ -62,14 +64,14 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           dot-color="primary"
         >
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium me-3">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+            <span class="app-timeline-title">
               Interview Schedule
-            </h6>
-            <small class="text-xs text-no-wrap my-1">April, 18</small>
+            </span>
+            <span class="app-timeline-meta">April, 18</span>
           </div>
 
-          <p class="mb-0">
+          <p class="app-timeline-text mb-0">
             Bonbon gummies caramels brownie topping fruitcake gingerbread jelly-o marzipan.
           </p>
 
@@ -87,35 +89,24 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               />
               <div>
                 <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
-                <span>Javascript Developer</span>
+                <span class="text-xs">Javascript Developer</span>
               </div>
             </span>
 
             <!-- 👉 Person Actions -->
             <div>
-              <VBtn
-                size="x-small"
-                variant="plain"
-                color="secondary"
-                icon
-                class="me-2"
-              >
+              <IconBtn class="me-2">
                 <VIcon
                   size="20"
                   icon="mdi-message-outline"
                 />
-              </VBtn>
-              <VBtn
-                size="x-small"
-                variant="plain"
-                color="secondary"
-                icon
-              >
+              </IconBtn>
+              <IconBtn>
                 <VIcon
                   size="20"
                   icon="mdi-phone"
                 />
-              </VBtn>
+              </IconBtn>
             </div>
           </div>
         </VTimelineItem>
@@ -136,32 +127,32 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
 
             <div>
               <!-- Header -->
-              <div class="d-flex justify-space-between flex-wrap">
-                <h6 class="font-weight-medium text-sm me-3">
+              <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+                <span class="app-timeline-title">
                   Sold Puma POPX Blue Color
-                </h6>
-                <small class="text-xs text-no-wrap my-1">January, 10</small>
+                </span>
+                <span class="app-timeline-meta">January, 10</span>
               </div>
-              <span>PUMA presents the latest shoes from its collection. Light &amp; comfortable made with highly durable material.</span>
+              <span class="app-timeline-text">PUMA presents the latest shoes from its collection. Light &amp; comfortable made with highly durable material.</span>
             </div>
           </div>
 
           <!-- 👉 Timeline Item: Meta Content -->
           <div class="d-flex justify-space-between flex-column flex-sm-row gap-3">
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Customer
               </h6>
               <span class="text-xs">Micheal Scott</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Price
               </h6>
               <span class="text-xs">$375.00</span>
             </div>
             <div class="text-sm-center">
-              <h6 class="text-base font-weight-medium mb-1">
+              <h6 class="text-sm font-weight-medium mb-1">
                 Quantity
               </h6>
               <span class="text-xs">1</span>
@@ -176,11 +167,11 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           dot-color="success"
         >
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-sm font-weight-medium me-3">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+            <span class="app-timeline-title">
               Design Review
-            </h6>
-            <small class="text-xs text-no-wrap my-1">September, 20</small>
+            </span>
+            <span class="app-timeline-meta">September, 20</span>
           </div>
 
           <!-- 👉 Content -->

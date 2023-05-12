@@ -1,5 +1,5 @@
 <script setup>
-import { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components/VForm'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'

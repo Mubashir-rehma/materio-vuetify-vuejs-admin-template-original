@@ -15,7 +15,6 @@ import cafeBadilico from '@images/cards/cafe-badilico.png'
       <VCardSubtitle class="d-flex align-center flex-wrap mt-2">
         <VRating
           density="compact"
-          color="warning"
           :model-value="4"
           :size="24"
           background-color="warning"
@@ -25,17 +24,7 @@ import cafeBadilico from '@images/cards/cafe-badilico.png'
 
       <template #append>
         <div class="me-n3 mt-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>

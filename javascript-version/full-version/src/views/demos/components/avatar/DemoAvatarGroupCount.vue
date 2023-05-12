@@ -6,7 +6,7 @@ import avatar5 from '@images/avatars/avatar-5.png'
 
 <template>
   <div class="v-avatar-group">
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar3" />
       <VTooltip
         activator="parent"
@@ -16,7 +16,7 @@ import avatar5 from '@images/avatars/avatar-5.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar4" />
       <VTooltip
         activator="parent"
@@ -26,7 +26,7 @@ import avatar5 from '@images/avatars/avatar-5.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar size="large">
+    <VAvatar>
       <VImg :src="avatar5" />
       <VTooltip
         activator="parent"
@@ -36,10 +36,7 @@ import avatar5 from '@images/avatars/avatar-5.png'
       </VTooltip>
     </VAvatar>
 
-    <VAvatar
-      color="grey-200"
-      size="large"
-    >
+    <VAvatar color="grey-200">
       <span class="text-secondary"> +3</span>
       <VTooltip
         activator="parent"

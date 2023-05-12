@@ -12,7 +12,6 @@ const invoiceListStore = useInvoiceStore()
 const searchQuery = ref('')
 const dateRange = ref('')
 const selectedStatus = ref()
-const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
@@ -51,8 +50,8 @@ const fetchInvoices = (query: string, currentStatus: string, firstDate: string, 
     },
   ).then(response => {
     invoices.value = response.data.invoices
-    totalPage.value = response.data.totalPage
     totalInvoices.value = response.data.totalInvoices
+    options.value.page = response.data.page
   }).catch(error => {
     console.log(error)
   })

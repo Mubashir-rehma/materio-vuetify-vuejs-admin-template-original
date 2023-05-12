@@ -722,7 +722,10 @@ mock.onGet('/apps/users/list').reply(config => {
 
   const totalUsers = filteredUsers.length
 
-  return [200, { users: paginateArray(filteredUsers, itemsPerPage, page), totalUsers }]
+  // total pages
+  const totalPages = Math.ceil(totalUsers / itemsPerPage)
+
+  return [200, { users: paginateArray(filteredUsers, itemsPerPage, page), totalPages, totalUsers, page: page > Math.ceil(totalUsers / itemsPerPage) ? 1 : page }]
 })
 
 // 👉 Add user

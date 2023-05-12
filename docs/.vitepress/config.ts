@@ -7,13 +7,13 @@ const gtmConfig = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Master",
+  title: "Materio",
   description: "Production Ready, Carefully Crafted, Extensive Vuetify Admin Template",
   srcDir: 'src',
   base: process.env.BASE || '/',
   head: [
-    ["link", { rel: "icon", href: "https://api.iconify.design/logos:visual-studio-code.svg" }],
-    ["meta", { name: "theme-color", content: "#696cff" }],
+    ["link", { rel: "icon", href: "https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.svg" }],
+    ["meta", { name: "theme-color", content: "#9155FD" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
       "meta",
@@ -22,7 +22,7 @@ export default defineConfig({
   ],
   ignoreDeadLinks: 'localhostLinks',
   themeConfig: {
-    logo: 'https://api.iconify.design/logos:visual-studio-code.svg',
+    logo: 'https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.svg',
     search: {
       provider: 'local',
     },

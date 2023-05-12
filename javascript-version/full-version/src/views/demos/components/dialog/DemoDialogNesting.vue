@@ -42,7 +42,7 @@ const isDialogTwoShow = ref(false)
   <!-- Dialog 2 -->
   <VDialog
     v-model="isDialogTwoShow"
-    class="v-dialog-sm"
+    class="v-dialog-sm text-center"
   >
     <VCard title="Dialog 2">
       <DialogCloseBtn

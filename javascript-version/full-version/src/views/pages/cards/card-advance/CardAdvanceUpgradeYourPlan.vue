@@ -99,7 +99,7 @@ const savedCards = [
           <VListItemTitle class="font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
-          <VListItemSubtitle>
+          <VListItemSubtitle class="me-1">
             {{ card.number }}
           </VListItemSubtitle>
 

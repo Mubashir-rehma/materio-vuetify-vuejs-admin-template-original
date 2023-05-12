@@ -84,7 +84,7 @@ const resetValues = () => {
           @click="() => isMenuOpen = !isMenuOpen"
         >
           <VIcon
-            :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down' "
+            :icon="isMenuOpen ? 'mdi-menu-up' : 'mdi-menu-down' "
             size="24"
           />
           <VMenu activator="parent">

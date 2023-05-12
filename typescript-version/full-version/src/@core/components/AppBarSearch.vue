@@ -133,7 +133,7 @@ const resolveCategories = (val: string) => {
           ref="refSearchInput"
           v-model="searchQuery"
           autofocus
-          density="comfortable"
+          density="compact"
           variant="plain"
           class="app-bar-autocomplete-box"
           @keyup.esc="clearSearchAndCloseDialog"
@@ -146,7 +146,7 @@ const resolveCategories = (val: string) => {
               <VIcon
                 size="22"
                 icon="mdi-magnify"
-                class="mt-1"
+                class="mt-2"
                 style="opacity: 1;"
               />
             </div>
@@ -343,7 +343,7 @@ const resolveCategories = (val: string) => {
 
 .app-bar-search-dialog {
   .v-overlay__scrim {
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5px);
   }
 
   .v-list-item-title {

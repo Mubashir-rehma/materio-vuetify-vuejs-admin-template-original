@@ -51,6 +51,7 @@ const fetchInvoices = (query: string, currentStatus: string, firstDate: string, 
     invoices.value = response.data.invoices
     totalPage.value = response.data.totalPage
     totalInvoices.value = response.data.totalInvoices
+    options.value.page = response.data.page
   }).catch(error => {
     console.log(error)
   })
@@ -229,7 +230,7 @@ watchEffect(() => {
         <template #bottom>
           <VDivider />
 
-          <div class="d-flex justify-end gap-x-6 py-1">
+          <div class="d-flex justify-end gap-x-6 py-2">
             <div class="d-flex align-center gap-x-2 text-sm">
               Rows Per Page:
               <VSelect

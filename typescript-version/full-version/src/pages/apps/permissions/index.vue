@@ -76,12 +76,12 @@ const editPermission = (name: string) => {
 
     <VCol cols="12">
       <VCard>
-        <VCardText class="d-flex align-center justify-space-between">
+        <VCardText class="d-flex align-center flex-wrap gap-4 justify-space-between">
           <VTextField
             v-model="search"
             placeholder="Search"
+            style="min-width: 12rem;max-width: 15rem;"
             density="compact"
-            style="max-width: 14.375rem;"
           />
 
           <VBtn
@@ -159,7 +159,7 @@ const editPermission = (name: string) => {
           <template #bottom>
             <VDivider />
 
-            <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
+            <div class="d-flex justify-end gap-x-6 py-2 flex-wrap">
               <div class="d-flex align-center gap-x-2 text-sm">
                 Rows Per Page:
                 <VSelect

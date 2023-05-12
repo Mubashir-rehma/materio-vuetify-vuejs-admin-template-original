@@ -235,7 +235,7 @@ const addNewUser = (userData: UserProperties) => {
         <template #bottom>
           <VDivider />
 
-          <div class="d-flex justify-end gap-x-6 py-1 flex-wrap">
+          <div class="d-flex justify-end gap-x-6 py-2 flex-wrap">
             <div class="d-flex align-center gap-x-2 text-sm">
               Rows Per Page:
               <VSelect

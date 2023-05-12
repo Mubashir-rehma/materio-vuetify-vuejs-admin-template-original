@@ -29,7 +29,6 @@ const props = defineProps({
   },
   modelModifiers: Object as PropType<Record<string, boolean>>,
   ...makeVInputProps({
-    density: 'comfortable',
     hideDetails: 'auto',
   }),
   ...makeVFieldProps({

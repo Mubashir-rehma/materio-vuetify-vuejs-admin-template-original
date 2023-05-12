@@ -115,8 +115,8 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
                 :to="{ name: 'pages-help-center' }"
               >
                 <VIcon
-                  icon="mdi-chevron-left"
-                  class="flip-in-rtl"
+                  icon="mdi-arrow-left"
+                  class="flip-in-rtl me-2"
                 />
                 <span>Back to help center</span>
               </VBtn>

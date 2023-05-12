@@ -10,14 +10,15 @@ const props = defineProps<{
   isDrawerOpen: boolean
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   (e: 'openChatOfContact', id: TypeChatContact['id']): void
   (e: 'showUserProfile'): void
   (e: 'close'): void
+  (e: 'update:search', value: string): void
 }>()
 
 const { resolveAvatarBadgeVariant } = useChat()
-const search = useVModel(props, 'search')
+const search = useVModel(props, 'search', emit)
 
 const store = useChatStore()
 </script>

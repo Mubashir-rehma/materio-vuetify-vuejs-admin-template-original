@@ -147,3 +147,11 @@
     }
   }
 }
+
+// 👉 Textarea
+
+.v-textarea .v-field__input {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}

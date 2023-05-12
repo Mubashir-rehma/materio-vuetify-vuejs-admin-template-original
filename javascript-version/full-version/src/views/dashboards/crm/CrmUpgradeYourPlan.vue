@@ -73,14 +73,14 @@ const savedCards = [
       <!-- !SECTION -->
 
       <!-- SECTION Payment Details -->
-      <div class="font-weight-medium mt-3 mb-2 text-high-emphasis">
+      <div class="font-weight-medium mt-3 text-high-emphasis">
         Payment Details
       </div>
       <VList class="card-list mt-1">
         <VListItem
           v-for="card in savedCards"
           :key="card.logo"
-          class="mb-3"
+          class="my-3"
         >
           <!-- 👉 Avatar -->
           <template #prepend>

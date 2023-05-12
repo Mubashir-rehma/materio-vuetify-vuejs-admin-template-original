@@ -35,6 +35,13 @@ const dialogVisibleUpdate = (val: boolean) => {
           title="Subscription Plan"
           md="4"
         />
+
+        <div class="text-center mt-4">
+          <p class="text-sm mb-3">
+            Still Not Convinced? Start with a 14-day FREE trial!
+          </p>
+          <VBtn>Start your trial</VBtn>
+        </div>
       </VCardText>
     </VCard>
   </VDialog>

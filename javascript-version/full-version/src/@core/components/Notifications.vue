@@ -162,14 +162,14 @@ const markAllReadOrUnread = () => {
         <VDivider />
 
         <!-- 👉 Footer -->
-        <VCardActions
+        <VCardText
           v-show="props.notifications.length"
           class="notification-footer"
         >
           <VBtn block>
             VIEW ALL NOTIFICATIONS
           </VBtn>
-        </VCardActions>
+        </VCardText>
       </VCard>
     </VMenu>
   </IconBtn>
@@ -181,7 +181,7 @@ const markAllReadOrUnread = () => {
 }
 
 .notification-footer {
-  padding: 6px !important;
+  padding-block: 0.9375rem !important;
 }
 
 .list-item-hover-class {

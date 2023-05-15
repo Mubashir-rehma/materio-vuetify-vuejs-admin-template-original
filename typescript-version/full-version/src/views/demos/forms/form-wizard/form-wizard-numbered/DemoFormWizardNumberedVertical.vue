@@ -106,6 +106,7 @@ const onSubmit = () => {
                   >
                     <VTextField
                       v-model="formData.password"
+                      placeholder="Enter Password"
                       label="Password"
                       placeholder="Enter Password"
                       :type="isPasswordVisible ? 'text' : 'password'"
@@ -120,6 +121,7 @@ const onSubmit = () => {
                   >
                     <VTextField
                       v-model="formData.c_password"
+                      placeholder="Confirm Password"
                       label="Confirm Password"
                       placeholder="Confirm Password"
                       :type="isCPasswordVisible ? 'text' : 'password'"
@@ -206,7 +208,7 @@ const onSubmit = () => {
                   >
                     <VTextField
                       v-model="formData.twitter"
-                      placeholder="Twitter"
+                      placeholder="https://twitter.com/abc"
                       label="Twitter"
                     />
                   </VCol>
@@ -217,7 +219,7 @@ const onSubmit = () => {
                   >
                     <VTextField
                       v-model="formData.facebook"
-                      placeholder="Facebook"
+                      placeholder="https://facebook.com/abc"
                       label="Facebook"
                     />
                   </VCol>
@@ -228,7 +230,7 @@ const onSubmit = () => {
                   >
                     <VTextField
                       v-model="formData.googlePlus"
-                      placeholder="Google+"
+                      placeholder="https://plus.google.com/abc"
                       label="Google+"
                     />
                   </VCol>
@@ -239,7 +241,7 @@ const onSubmit = () => {
                   >
                     <VTextField
                       v-model="formData.linkedIn"
-                      placeholder="LinkedIn"
+                      placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />
                   </VCol>

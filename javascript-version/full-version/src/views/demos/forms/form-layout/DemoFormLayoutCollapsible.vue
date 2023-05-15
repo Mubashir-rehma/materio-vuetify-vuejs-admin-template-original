@@ -273,7 +273,7 @@ const paymentMethods = [
                 >
                   <VTextField
                     label="Expiry Date"
-                    type="date"
+                    type="string"
                   />
                 </VCol>
 
@@ -285,7 +285,6 @@ const paymentMethods = [
                   <VTextField
                     label="CVV Code"
                     type="number"
-                    max="3"
                   />
                 </VCol>
               </VRow>

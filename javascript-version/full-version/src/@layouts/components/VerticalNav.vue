@@ -1,16 +1,14 @@
 <script setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VNodeRenderer } from './VNodeRenderer'
-import {
-  injectionKeyIsVerticalNavHovered,
-  useLayouts,
-} from '@layouts'
+import { useLayouts } from '@layouts'
 import {
   VerticalNavGroup,
   VerticalNavLink,
   VerticalNavSectionTitle,
 } from '@layouts/components'
 import { config } from '@layouts/config'
+import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 
 const props = defineProps({
   tag: {

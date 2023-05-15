@@ -223,16 +223,16 @@ const desserts = [
         <th class="text-uppercase">
           Desserts(100g Servings)
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           calories
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           Fat(g)
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           Carbs(g)
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           protein(g)
         </th>
       </tr>
@@ -310,16 +310,16 @@ const desserts = [
         <th class="text-uppercase">
           Desserts(100g Servings)
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           calories
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           Fat(g)
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           Carbs(g)
         </th>
-        <th class="text-uppercase text-center">
+        <th class="text-uppercase">
           protein(g)
         </th>
       </tr>

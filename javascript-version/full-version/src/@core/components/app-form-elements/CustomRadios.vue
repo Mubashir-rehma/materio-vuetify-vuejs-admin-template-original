@@ -71,7 +71,7 @@ watch(selectedOption, () => {
   gap: 0.375rem;
 
   .v-radio {
-    margin-block-start: -0.32rem;
+    margin-block-start: -0.45rem;
   }
 
   .cr-title {

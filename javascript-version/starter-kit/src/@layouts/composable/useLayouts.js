@@ -1,6 +1,6 @@
 import { AppContentLayoutNav, NavbarType } from '../enums'
+import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 import { config } from '@layouts/config'
-import { injectionKeyIsVerticalNavHovered } from '@layouts'
 
 export const useLayouts = () => {
   const navbarType = computed({

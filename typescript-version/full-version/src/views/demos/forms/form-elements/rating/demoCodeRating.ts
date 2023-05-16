@@ -283,4 +283,3 @@ const rating = ref(4)
 </template>
 `,
 }
-

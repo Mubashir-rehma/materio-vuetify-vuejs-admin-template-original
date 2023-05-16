@@ -34,11 +34,13 @@ const selectedNotification = ref('Only when I\'m online')
 <template>
   <VCard title="Recent Devices">
     <VCardText>
-      We need permission from your browser to show notifications.
-      <a href="javascript:void(0)">Request Permission</a>
+      <p class="text-base">
+        We need permission from your browser to show notifications.
+        <a href="javascript:void(0)">Request Permission</a>
+      </p>
     </VCardText>
 
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-high-emphasis">
       <thead>
         <tr>
           <th scope="col">
@@ -96,13 +98,13 @@ const selectedNotification = ref('Only when I\'m online')
           </VCol>
         </VRow>
 
-        <div class="d-flex flex-wrap gap-4 mt-4">
+        <div class="d-flex flex-wrap gap-4 mt-6">
           <VBtn type="submit">
             Save Changes
           </VBtn>
           <VBtn
             color="secondary"
-            variant="tonal"
+            variant="outlined"
             type="reset"
           >
             Reset
@@ -112,3 +114,13 @@ const selectedNotification = ref('Only when I\'m online')
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.v-table {
+  --v-table-header-height: 48px !important;
+}
+
+.v-table--density-default > .v-table__wrapper > table > tbody > tr > td {
+  block-size: 48px !important;
+}
+</style>

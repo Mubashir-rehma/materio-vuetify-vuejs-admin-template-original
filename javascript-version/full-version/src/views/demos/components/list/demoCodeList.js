@@ -293,6 +293,189 @@ const items = [
 </template>
 ` }
 
+export const progressList = { ts: `<script setup lang="ts">
+interface Language {
+  'react': string
+  'bootstrap': string
+  'vue': string
+  'angular': string
+  'javascript': string
+}
+
+interface Progress {
+  avatar: string
+  title: string
+  language: keyof Language
+  amount: number
+}
+
+const languageProgress: Progress[] = [
+  {
+    avatar: 'mdi-react',
+    title: 'React is a JavaScript library for building user interfaces',
+    language: 'react',
+    amount: 90,
+  },
+  {
+    avatar: 'mdi-bootstrap',
+    title: 'Bootstrap is an open source toolkit',
+    language: 'bootstrap',
+    amount: 80,
+  },
+  {
+    avatar: 'mdi-vuejs',
+    title: 'Vue.js is the Progressive JavaScript Framework',
+    language: 'vue',
+    amount: 65,
+  },
+  {
+    avatar: 'mdi-angularjs',
+    title: 'Angular implements Functional Programming concepts',
+    language: 'angular',
+    amount: 75,
+  },
+  {
+    avatar: 'mdi-language-javascript',
+    title: 'JavaScript is the programming language of the Web',
+    language: 'javascript',
+    amount: 70,
+  },
+]
+
+const resolveStatusColor: Language = {
+  react: 'info',
+  bootstrap: 'primary',
+  vue: 'success',
+  angular: 'error',
+  javascript: 'warning',
+}
+</script>
+
+<template>
+  <VList
+    lines="two"
+    border
+    rounded
+  >
+    <template
+      v-for="(progress, index) of languageProgress"
+      :key="progress.language"
+    >
+      <VListItem>
+        <template #prepend>
+          <VAvatar
+            size="36"
+            rounded
+            variant="tonal"
+            :icon="progress.avatar"
+            :color="resolveStatusColor[progress.language]"
+          />
+        </template>
+
+        <VListItemTitle>
+          {{ progress.title }}
+        </VListItemTitle>
+
+        <VListItemSubtitle class="mt-2">
+          <VProgressLinear
+            height="6"
+            rounded
+            :model-value="progress.amount"
+            bg-color="secondary"
+            :color="resolveStatusColor[progress.language]"
+          />
+        </VListItemSubtitle>
+      </VListItem>
+
+      <VDivider v-if="index !== languageProgress.length - 1" />
+    </template>
+  </VList>
+</template>
+`, js: `<script setup>
+const languageProgress = [
+  {
+    avatar: 'mdi-react',
+    title: 'React is a JavaScript library for building user interfaces',
+    language: 'react',
+    amount: 90,
+  },
+  {
+    avatar: 'mdi-bootstrap',
+    title: 'Bootstrap is an open source toolkit',
+    language: 'bootstrap',
+    amount: 80,
+  },
+  {
+    avatar: 'mdi-vuejs',
+    title: 'Vue.js is the Progressive JavaScript Framework',
+    language: 'vue',
+    amount: 65,
+  },
+  {
+    avatar: 'mdi-angularjs',
+    title: 'Angular implements Functional Programming concepts',
+    language: 'angular',
+    amount: 75,
+  },
+  {
+    avatar: 'mdi-language-javascript',
+    title: 'JavaScript is the programming language of the Web',
+    language: 'javascript',
+    amount: 70,
+  },
+]
+
+const resolveStatusColor = {
+  react: 'info',
+  bootstrap: 'primary',
+  vue: 'success',
+  angular: 'error',
+  javascript: 'warning',
+}
+</script>
+
+<template>
+  <VList
+    lines="two"
+    border
+    rounded
+  >
+    <template
+      v-for="(progress, index) of languageProgress"
+      :key="progress.language"
+    >
+      <VListItem>
+        <template #prepend>
+          <VAvatar
+            size="36"
+            rounded
+            variant="tonal"
+            :icon="progress.avatar"
+            :color="resolveStatusColor[progress.language]"
+          />
+        </template>
+
+        <VListItemTitle>
+          {{ progress.title }}
+        </VListItemTitle>
+
+        <VListItemSubtitle class="mt-2">
+          <VProgressLinear
+            height="6"
+            rounded
+            :model-value="progress.amount"
+            bg-color="secondary"
+            :color="resolveStatusColor[progress.language]"
+          />
+        </VListItemSubtitle>
+      </VListItem>
+
+      <VDivider v-if="index !== languageProgress.length - 1" />
+    </template>
+  </VList>
+</template>
+` }
+
 export const rounded = { ts: `<script lang="ts" setup>
 const items = [
   {
@@ -401,7 +584,7 @@ const items = [
     <VListItem
       v-for="(item, i) in items"
       :key="i"
-      :value="item"
+      :value="item.text"
       rounded="shaped"
     >
       <template #prepend>
@@ -437,7 +620,7 @@ const items = [
     <VListItem
       v-for="(item, i) in items"
       :key="i"
-      :value="item"
+      :value="item.text"
       rounded="shaped"
     >
       <template #prepend>
@@ -675,7 +858,6 @@ import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
-import avatar5 from '@images/avatars/avatar-5.png'
 
 const items = [
   { type: 'subheader', title: 'Today' },
@@ -702,22 +884,14 @@ const items = [
     title: 'Birthday gift',
     subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
   },
-  { type: 'divider', inset: true },
-  {
-    prependAvatar: avatar5,
-    title: 'Recipe to try',
-    subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-  },
 ]
 </script>
 
 <template>
   <VList
-    id="three-line-list"
     lines="three"
     :items="items"
     item-props
-    density="compact"
   >
     <template #subtitle="{ subtitle }">
       <!-- eslint-disable-next-line vue/no-v-html -->
@@ -725,24 +899,11 @@ const items = [
     </template>
   </VList>
 </template>
-
-<style lang="scss">
-#three-line-list {
-  .v-list-item-title {
-    margin-block-end: 0.25rem;
-  }
-
-  .v-divider {
-    margin-block: 0.25rem;
-  }
-}
-</style>
 `, js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
-import avatar5 from '@images/avatars/avatar-5.png'
 
 const items = [
   {
@@ -781,25 +942,14 @@ const items = [
     title: 'Birthday gift',
     subtitle: '<span class="text-primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
   },
-  {
-    type: 'divider',
-    inset: true,
-  },
-  {
-    prependAvatar: avatar5,
-    title: 'Recipe to try',
-    subtitle: '<span class="text-primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-  },
 ]
 </script>
 
 <template>
   <VList
-    id="three-line-list"
     lines="three"
     :items="items"
     item-props
-    density="compact"
   >
     <template #subtitle="{ subtitle }">
       <!-- eslint-disable-next-line vue/no-v-html -->
@@ -807,18 +957,6 @@ const items = [
     </template>
   </VList>
 </template>
-
-<style lang="scss">
-#three-line-list {
-  .v-list-item-title {
-    margin-block-end: 0.25rem;
-  }
-
-  .v-divider {
-    margin-block: 0.25rem;
-  }
-}
-</style>
 ` }
 
 export const twoLinesAndSubheader = { ts: `<script lang="ts" setup>
@@ -1017,6 +1155,186 @@ const folders = [
         />
       </template>
     </VListItem>
+  </VList>
+</template>
+` }
+
+export const userList = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+
+interface Status {
+  'Online': string
+  'Away': string
+  'Offline': string
+  'In Meeting': string
+}
+
+interface Users {
+  avatar: string
+  name: string
+  status: keyof Status
+  lastVisited: string
+}
+
+const users: Users[] = [
+  {
+    avatar: avatar1,
+    name: 'Caroline Black',
+    status: 'Online',
+    lastVisited: '13 minutes ago',
+  },
+  {
+    avatar: avatar2,
+    name: 'Alfred Copeland',
+    status: 'Away',
+    lastVisited: '11 minutes ago',
+  },
+  {
+    avatar: avatar3,
+    name: 'Celia Schneider',
+    status: 'Offline',
+    lastVisited: '9 minutes ago',
+  },
+  {
+    avatar: avatar4,
+    name: 'Max Rogan',
+    status: 'In Meeting',
+    lastVisited: '28 minutes ago',
+  },
+]
+
+const resolveStatusColor: Status = {
+  'Online': 'success',
+  'Away': 'warning',
+  'Offline': 'secondary',
+  'In Meeting': 'error',
+}
+</script>
+
+<template>
+  <VList
+    lines="two"
+    border
+    rounded
+  >
+    <template
+      v-for="(user, index) of users"
+      :key="user.name"
+    >
+      <VListItem>
+        <template #prepend>
+          <VAvatar :image="user.avatar" />
+        </template>
+        <VListItemTitle>
+          {{ user.name }}
+        </VListItemTitle>
+        <VListItemSubtitle class="mt-1 me-2">
+          <VBadge
+            dot
+            location="start center"
+            offset-x="2"
+            :color="resolveStatusColor[user.status]"
+            class="me-3"
+          >
+            <span class="ms-4">{{ user.status }}</span>
+          </VBadge>
+
+          <span class="text-xs text-wrap text-disabled">{{ user.lastVisited }}</span>
+        </VListItemSubtitle>
+
+        <template #append>
+          <VBtn size="small">
+            Add
+          </VBtn>
+        </template>
+      </VListItem>
+      <VDivider v-if="index !== users.length - 1" />
+    </template>
+  </VList>
+</template>
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+
+const users = [
+  {
+    avatar: avatar1,
+    name: 'Caroline Black',
+    status: 'Online',
+    lastVisited: '13 minutes ago',
+  },
+  {
+    avatar: avatar2,
+    name: 'Alfred Copeland',
+    status: 'Away',
+    lastVisited: '11 minutes ago',
+  },
+  {
+    avatar: avatar3,
+    name: 'Celia Schneider',
+    status: 'Offline',
+    lastVisited: '9 minutes ago',
+  },
+  {
+    avatar: avatar4,
+    name: 'Max Rogan',
+    status: 'In Meeting',
+    lastVisited: '28 minutes ago',
+  },
+]
+
+const resolveStatusColor = {
+  'Online': 'success',
+  'Away': 'warning',
+  'Offline': 'secondary',
+  'In Meeting': 'error',
+}
+</script>
+
+<template>
+  <VList
+    lines="two"
+    border
+    rounded
+  >
+    <template
+      v-for="(user, index) of users"
+      :key="user.name"
+    >
+      <VListItem>
+        <template #prepend>
+          <VAvatar :image="user.avatar" />
+        </template>
+        <VListItemTitle>
+          {{ user.name }}
+        </VListItemTitle>
+        <VListItemSubtitle class="mt-1 me-2">
+          <VBadge
+            dot
+            location="start center"
+            offset-x="2"
+            :color="resolveStatusColor[user.status]"
+            class="me-3"
+          >
+            <span class="ms-4">{{ user.status }}</span>
+          </VBadge>
+
+          <span class="text-xs text-wrap text-disabled">{{ user.lastVisited }}</span>
+        </VListItemSubtitle>
+
+        <template #append>
+          <VBtn size="small">
+            Add
+          </VBtn>
+        </template>
+      </VListItem>
+      <VDivider v-if="index !== users.length - 1" />
+    </template>
   </VList>
 </template>
 ` }

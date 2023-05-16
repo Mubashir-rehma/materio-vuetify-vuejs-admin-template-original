@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Options } from 'flatpickr'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components/VForm'
 
 import type { Event, NewEvent } from './types'
 import { useCalendarStore } from './useCalendarStore'
@@ -90,7 +90,7 @@ const onCancel = () => {
 }
 
 const startDateTimePickerConfig = computed(() => {
-  const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
+  const config: Options = { enableTime: !event.value.allDay, dateFormat: `Y-m-d${event.value.allDay ? '' : ' H:i'}` }
 
   if (event.value.end)
     config.maxDate = event.value.end
@@ -99,7 +99,7 @@ const startDateTimePickerConfig = computed(() => {
 })
 
 const endDateTimePickerConfig = computed(() => {
-  const config: Options = { enableTime: true, dateFormat: 'Y-m-d H:i' }
+  const config: Options = { enableTime: !event.value.allDay, dateFormat: `Y-m-d${event.value.allDay ? '' : ' H:i'}` }
 
   if (event.value.start)
     config.minDate = event.value.start
@@ -118,31 +118,22 @@ const endDateTimePickerConfig = computed(() => {
     @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
   >
     <!-- 👉 Header -->
-    <div class="px-5 py-3 d-flex align-center bg-var-theme-background">
-      <h3 class="font-weight-medium text-xl">
-        {{ event.id ? 'Update' : 'Add' }} Event
-      </h3>
-      <VSpacer />
-      <VBtn
-        v-show="event.id"
-        icon
-        variant="text"
-        size="small"
-        color="default"
-        @click="removeEvent"
-      >
-        <VIcon icon="mdi-trash-can-outline" />
-      </VBtn>
-      <VBtn
-        variant="text"
-        color="default"
-        icon
-        size="small"
-        @click="$emit('update:isDrawerOpen', false)"
-      >
-        <VIcon icon="mdi-close" />
-      </VBTn>
-    </div>
+    <AppDrawerHeaderSection
+      :title="event.id ? 'Update Event' : 'Add Event'"
+      @cancel="$emit('update:isDrawerOpen', false)"
+    >
+      <template #beforeClose>
+        <IconBtn
+          v-show="event.id"
+          @click="removeEvent"
+        >
+          <VIcon
+            size="18"
+            icon="mdi-trash-can-outline"
+          />
+        </IconBtn>
+      </template>
+    </AppDrawerHeaderSection>
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>

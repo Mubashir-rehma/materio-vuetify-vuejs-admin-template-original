@@ -1,5 +1,6 @@
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from './../types.d'
 import mock from '@/@fake-db/mock'
+import { genId } from '@/@fake-db/utils'
 
 // Images
 import avatar1 from '@images/avatars/avatar-1.png'
@@ -241,7 +242,7 @@ const database: Database = {
           },
         },
         {
-          message: 'Out admin is the responsive admin template.!',
+          message: 'Our admin is the responsive admin template.!',
           time: 'Mon Dec 10 2018 07:46:05 GMT+0000 (GMT)',
           senderId: 11,
           feedback: {
@@ -317,7 +318,7 @@ mock.onGet('/apps/chat/chats-and-contacts').reply(config => {
     .map(chat => {
       const contact = JSON.parse(JSON.stringify((database.contacts.find(c => c.id === chat.userId) as ChatContact)))
 
-      contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages[chat.messages.length - 1] }
+      contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages.at(-1) }
 
       return contact
     })
@@ -387,18 +388,17 @@ mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
   if (activeChat === undefined) {
     isNewChat = true
 
-    const { length } = database.chats
-    const lastId = database.chats[length - 1].id
-
     database.chats.push({
-      id: lastId + 1,
+      id: genId(database.chats),
       userId: contactId,
       unseenMsgs: 0,
       messages: [],
     })
-    activeChat = database.chats[database.chats.length - 1]
+    activeChat = database.chats.at(-1)
   }
-  activeChat.messages.push(newMessageData)
+  else {
+    activeChat.messages.push(newMessageData)
+  }
 
   const response: { msg: ChatMessage; chat?: Chat } = { msg: newMessageData }
 

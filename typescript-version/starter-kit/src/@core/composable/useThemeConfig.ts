@@ -2,6 +2,8 @@ import { useTheme } from 'vuetify'
 import { useLayouts } from '@layouts'
 import { themeConfig } from '@themeConfig'
 
+export const isDarkPreferred = usePreferredDark()
+
 export const useThemeConfig = () => {
   const theme = computed({
     get() {
@@ -31,8 +33,12 @@ export const useThemeConfig = () => {
   const syncVuetifyThemeWithTheme = () => {
     const vuetifyTheme = useTheme()
 
-    watch(theme, val => {
-      vuetifyTheme.global.name.value = val
+    watch([theme, isDarkPreferred], ([val, _]) => {
+      vuetifyTheme.global.name.value = val === 'system'
+        ? isDarkPreferred.value
+          ? 'dark'
+          : 'light'
+        : val
     })
   }
 
@@ -47,10 +53,10 @@ export const useThemeConfig = () => {
   const syncInitialLoaderTheme = () => {
     const vuetifyTheme = useTheme()
 
-    watch(theme, val => {
+    watch(theme, () => {
       // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
-      localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.themes.value[val].colors.surface)
-      localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, vuetifyTheme.themes.value[val].colors.primary)
+      localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.current.value.colors.surface)
+      localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, vuetifyTheme.current.value.colors.primary)
     }, {
       immediate: true,
     })
@@ -65,6 +71,27 @@ export const useThemeConfig = () => {
       localStorage.setItem(`${themeConfig.app.title}-skin`, value)
     },
   })
+
+  const handleSkinChanges = () => {
+    const { themes } = useTheme()
+
+    // Create skin default color so that we can revert back to original (default skin) color when switch to default skin from bordered skin
+    Object.values(themes.value).forEach(t => {
+      t.colors['skin-default-background'] = t.colors.background
+      t.colors['skin-default-surface'] = t.colors.surface
+    })
+
+    watch(
+      skin,
+      val => {
+        Object.values(themes.value).forEach(t => {
+          t.colors.background = t.colors[`skin-${val}-background`]
+          t.colors.surface = t.colors[`skin-${val}-surface`]
+        })
+      },
+      { immediate: true },
+    )
+  }
 
   const appRouteTransition = computed({
     get() {
@@ -129,6 +156,7 @@ export const useThemeConfig = () => {
     syncVuetifyThemeWithTheme,
     syncInitialLoaderTheme,
     skin,
+    handleSkinChanges,
     appRouteTransition,
 
     // @layouts exports

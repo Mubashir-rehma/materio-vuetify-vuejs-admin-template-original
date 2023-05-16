@@ -46,7 +46,7 @@ const removeProduct = (id: number) => {
   <VCard>
     <!-- SECTION Header -->
     <!--  eslint-disable vue/no-mutating-props -->
-    <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row">
+    <VCardText class="d-flex flex-wrap justify-space-between gap-y-5 flex-column flex-sm-row">
       <!-- 👉 Left Content -->
       <div class="mb-6">
         <div class="d-flex align-center mb-6">
@@ -57,7 +57,7 @@ const removeProduct = (id: number) => {
           />
 
           <!-- 👉 Title -->
-          <h6 class="font-weight-medium text-xl text-uppercase">
+          <h6 class="text-xl text-uppercase">
             {{ themeConfig.app.title }}
           </h6>
         </div>
@@ -77,28 +77,35 @@ const removeProduct = (id: number) => {
       <!-- 👉 Right Content -->
       <div class="mb-3">
         <!-- 👉 Invoice Id -->
-        <h6 class="d-flex align-center font-weight-medium justify-sm-end text-xl mb-3">
-          <span class="me-3">Invoice:</span>
+        <h6 class="d-flex align-center text-h6 justify-sm-end mb-4">
+          <span
+            class="me-3"
+            style="inline-size: 6rem;"
+          >Invoice:</span>
           <span>
             <VTextField
               v-model="props.data.invoice.id"
               disabled
               prefix="#"
               density="compact"
-              style="width: 8.9rem;"
+              style="inline-size: 9.5rem;"
             />
           </span>
         </h6>
 
         <!-- 👉 Issue Date -->
-        <p class="d-flex align-center justify-sm-end mb-3">
-          <span class="me-3">Date Issued:</span>
-          <span>
+        <p class="d-flex align-center justify-sm-end mb-4">
+          <span
+            class="me-3"
+            style="inline-size: 6rem;"
+          >Date Issued:</span>
+
+          <span style="inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="props.data.invoice.issuedDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="width: 8.9rem;"
+
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -106,13 +113,15 @@ const removeProduct = (id: number) => {
 
         <!-- 👉 Due Date -->
         <p class="d-flex align-center justify-sm-end mb-0">
-          <span class="me-3">Due Date:</span>
-          <span>
+          <span
+            class="me-3"
+            style="inline-size: 6rem;"
+          >Due Date:</span>
+          <span style="min-inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="props.data.invoice.dueDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-              style="width: 8.9rem;"
               :config="{ position: 'auto right' }"
             />
           </span>
@@ -123,10 +132,10 @@ const removeProduct = (id: number) => {
 
     <VDivider class="mb-2" />
 
-    <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row">
+    <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row gap-y-5">
       <div
         class="mb-4 mb-sm-0"
-        style="width: 15.5rem;"
+        style="inline-size: 15.5rem;"
       >
         <h6 class="text-sm font-weight-medium mb-3">
           Invoice To:
@@ -139,7 +148,7 @@ const removeProduct = (id: number) => {
           item-value="name"
           placeholder="Select Customer"
           return-object
-          class="mb-6"
+          class="mb-5"
           density="compact"
         />
         <p class="mb-1">
@@ -240,13 +249,15 @@ const removeProduct = (id: number) => {
           </h6>
           <VTextField
             v-model="props.data.salesperson"
-            style="width: 8rem;"
+            style="inline-size: 8rem;"
+            density="compact"
           />
         </div>
 
         <VTextField
           v-model="props.data.thanksNote"
           placeholder="Thanks for your business"
+          density="compact"
         />
       </div>
 
@@ -302,7 +313,7 @@ const removeProduct = (id: number) => {
     <VDivider class="mt-2" />
 
     <VCardText>
-      <p class="font-weight-medium mb-2">
+      <p class="text-base font-weight-medium mb-1">
         Note:
       </p>
       <VTextarea

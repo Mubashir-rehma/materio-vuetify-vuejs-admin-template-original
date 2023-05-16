@@ -19,7 +19,7 @@ const options = controlledComputed(theme, () => {
       currentTheme.value.primary,
       `rgba(${hexToRgb(currentTheme.value.primary)}, 0.7)`,
       `rgba(${hexToRgb(currentTheme.value.primary)}, 0.5)`,
-      currentTheme.value.background,
+      currentTheme.value['grey-100'],
     ],
     stroke: { width: 0 },
     dataLabels: { enabled: false },
@@ -74,17 +74,7 @@ const series = [12, 25, 13, 50]
       <VCardTitle>Total Visitors</VCardTitle>
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            color="default"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -99,4 +89,3 @@ const series = [12, 25, 13, 50]
     </VCardText>
   </VCard>
 </template>
-

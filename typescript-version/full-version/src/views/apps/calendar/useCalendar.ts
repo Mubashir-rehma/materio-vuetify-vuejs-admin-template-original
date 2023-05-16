@@ -1,8 +1,8 @@
+import type { CalendarApi, CalendarOptions, EventApi, EventSourceFunc } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import type { CalendarApi, CalendarOptions, EventApi, EventSourceFunc } from '@fullcalendar/vue3'
 import type { Ref } from 'vue'
 import type { Event, NewEvent } from './types'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
@@ -233,7 +233,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
     // customButtons
     dateClick(info) {
-      event.value = { ...event.value, start: String(new Date(info.date)) }
+      event.value = { ...event.value, start: info.date }
 
       isEventHandlerSidebarActive.value = true
     },

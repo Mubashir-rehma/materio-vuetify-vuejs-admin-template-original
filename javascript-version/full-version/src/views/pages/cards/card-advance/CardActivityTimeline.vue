@@ -29,13 +29,15 @@ import pdf from '@images/icons/project-icons/pdf.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-base font-weight-medium me-3">
+            <p class="app-timeline-title me-3 mb-2">
               8 Invoices have been paid
-            </h6>
-            <small class="text-xs text-disabled my-1">Wednesday</small>
+            </p>
+            <small class="app-timeline-meta my-1">Wednesday</small>
           </div>
 
-          <p>Invoices have been paid to the company.</p>
+          <p class="app-timeline-text">
+            Invoices have been paid to the company.
+          </p>
 
           <div class="d-flex align-center">
             <img
@@ -45,9 +47,9 @@ import pdf from '@images/icons/project-icons/pdf.png'
               alt="img"
             >
 
-            <h6 class="font-weight-medium text-sm">
+            <span class="font-weight-medium text-sm">
               invoice.pdf
-            </h6>
+            </span>
           </div>
         </VTimelineItem>
 
@@ -56,13 +58,15 @@ import pdf from '@images/icons/project-icons/pdf.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-base font-weight-medium me-3">
+            <p class="app-timeline-title me-3 mb-2">
               Create a new project for client 😎
-            </h6>
-            <small class="text-xs text-disabled my-1">April, 18</small>
+            </p>
+            <small class="app-timeline-meta my-1">April, 18</small>
           </div>
 
-          <p>Invoices have been paid to the company.</p>
+          <p class="app-timeline-text">
+            Invoices have been paid to the company.
+          </p>
 
           <div class="d-flex align-center">
             <VAvatar
@@ -82,13 +86,13 @@ import pdf from '@images/icons/project-icons/pdf.png'
           size="x-small"
         >
           <div class="d-flex justify-space-between flex-wrap">
-            <h6 class="text-base font-weight-medium me-3">
+            <p class="app-timeline-title me-3 mb-2">
               Order #37745 from September
-            </h6>
-            <small class="text-xs text-disabled my-1">January, 10</small>
+            </p>
+            <small class="app-timeline-meta my-1">January, 10</small>
           </div>
 
-          <p class="mb-0">
+          <p class="mb-0 app-timeline-text mb-2">
             Invoices have been paid to the company.
           </p>
         </VTimelineItem>

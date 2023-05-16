@@ -1,8 +1,8 @@
 <script setup>
+import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import triangleDark from '@images/misc/triangle-dark.png'
 import triangleLight from '@images/misc/triangle-light.png'
 import trophy from '@images/misc/trophy.png'
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 
 const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 </script>
@@ -38,16 +38,14 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 </template>
 
 <style lang="scss">
-@use "@layouts/styles/mixins" as layoutsMixins;
-
-.triangle-bg {
+.v-card .triangle-bg {
   position: absolute;
   inline-size: 10.375rem;
   inset-block-end: 0;
   inset-inline-end: 0;
 }
 
-.trophy {
+.v-card .trophy {
   position: absolute;
   inline-size: 4.9375rem;
   inset-block-end: 2rem;

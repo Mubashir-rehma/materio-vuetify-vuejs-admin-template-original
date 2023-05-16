@@ -34,13 +34,13 @@ const notifications = ref([
   >
     <VDivider />
 
-    <VCardText class="text-high-emphasis font-weight-medium">
+    <div class="text-sm my-4 mx-5 text-high-emphasis font-weight-medium">
       You will receive notification for the below selected items.
-    </VCardText>
+    </div>
 
     <VDivider />
 
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap text-sm">
       <thead>
         <tr>
           <th scope="col">
@@ -63,14 +63,14 @@ const notifications = ref([
           v-for="notification in notifications"
           :key="notification.type"
         >
-          <td>{{ notification.type }}</td>
+          <td class="text-high-emphasis">
+            {{ notification.type }}
+          </td>
           <td>
             <VCheckbox v-model="notification.email" />
           </td>
           <td>
-            <VCheckbox
-              v-model="notification.browser"
-            />
+            <VCheckbox v-model="notification.browser" />
           </td>
           <td>
             <VCheckbox v-model="notification.app" />
@@ -85,10 +85,20 @@ const notifications = ref([
       <VBtn>Save changes</VBtn>
       <VBtn
         color="secondary"
-        variant="tonal"
+        variant="outlined"
       >
         Discard
       </VBtn>
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.v-table {
+  --v-table-header-height: 48px !important;
+}
+
+.v-table--density-default > .v-table__wrapper > table > tbody > tr > td {
+  block-size: 48px !important;
+}
+</style>

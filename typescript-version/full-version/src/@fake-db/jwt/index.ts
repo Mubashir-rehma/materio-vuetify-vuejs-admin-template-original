@@ -1,7 +1,8 @@
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar2 from '@images/avatars/avatar-2.png'
 import mock from '@/@fake-db/mock'
 import type { User, UserOut } from '@/@fake-db/types.d'
+import { genId } from '@/@fake-db/utils'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
 
 // TODO: Use jsonwebtoken pkg
 // ℹ️ Created from https://jwt.io/ using HS256 algorithm
@@ -139,15 +140,8 @@ mock.onPost('/auth/register').reply(request => {
 
   if (!errors.username && !errors.email) {
     // Calculate user id
-    const { length } = database
-    let lastIndex = 0
-    if (length)
-      lastIndex = database[length - 1].id
-
-    lastIndex += 1
-
     const userData: User = {
-      id: lastIndex,
+      id: genId(database),
       email,
       password,
       username,
@@ -160,8 +154,6 @@ mock.onPost('/auth/register').reply(request => {
         },
       ],
     }
-
-    console.log('userData :>> ', userData)
 
     database.push(userData)
 

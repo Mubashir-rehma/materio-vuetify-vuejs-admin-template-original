@@ -9,27 +9,16 @@ import avatar6 from '@images/avatars/avatar-6.png'
 
 <template>
   <div class="demo-space-x">
-    <VAvatar>
-      <VImg :src="avatar1" />
-    </VAvatar>
+    <VAvatar :image="avatar1" />
 
-    <VAvatar>
-      <VImg :src="avatar2" />
-    </VAvatar>
+    <VAvatar :image="avatar2" />
 
-    <VAvatar>
-      <VImg :src="avatar3" />
-    </VAvatar>
-    <VAvatar>
-      <VImg :src="avatar4" />
-    </VAvatar>
+    <VAvatar :image="avatar3" />
 
-    <VAvatar>
-      <VImg :src="avatar5" />
-    </VAvatar>
+    <VAvatar :image="avatar4" />
 
-    <VAvatar>
-      <VImg :src="avatar6" />
-    </VAvatar>
+    <VAvatar :image="avatar5" />
+
+    <VAvatar :image="avatar6" />
   </div>
 </template>

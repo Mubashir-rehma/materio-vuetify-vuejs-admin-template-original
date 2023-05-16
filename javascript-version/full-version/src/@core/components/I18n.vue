@@ -14,20 +14,18 @@ const props = defineProps({
 const emit = defineEmits(['change'])
 
 const { locale } = useI18n({ useScope: 'global' })
+
+watch(locale, val => {
+  document.documentElement.setAttribute('lang', val)
+})
+
 const currentLang = ref(['en'])
 </script>
 
 <template>
-  <VBtn
-    icon
-    variant="text"
-    color="default"
-    size="small"
-  >
-    <VIcon
-      icon="mdi-translate"
-      size="24"
-    />
+  <IconBtn>
+    <VIcon icon="mdi-translate" />
+
     <!-- Menu -->
     <VMenu
       activator="parent"
@@ -52,5 +50,5 @@ const currentLang = ref(['en'])
         </VListItem>
       </VList>
     </VMenu>
-  </VBtn>
+  </IconBtn>
 </template>

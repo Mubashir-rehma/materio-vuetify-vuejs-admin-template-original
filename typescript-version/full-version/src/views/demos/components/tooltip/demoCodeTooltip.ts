@@ -121,7 +121,7 @@ export const events = {
 export const location = {
   ts: `<template>
   <div class="demo-space-x">
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on End
       <VTooltip
         activator="parent"
@@ -131,7 +131,7 @@ export const location = {
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Start
       <VTooltip
         activator="parent"
@@ -141,7 +141,7 @@ export const location = {
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Top
       <VTooltip
         activator="parent"
@@ -151,7 +151,7 @@ export const location = {
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Bottom
       <VTooltip
         activator="parent"
@@ -165,7 +165,7 @@ export const location = {
 `,
   js: `<template>
   <div class="demo-space-x">
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on End
       <VTooltip
         activator="parent"
@@ -175,7 +175,7 @@ export const location = {
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Start
       <VTooltip
         activator="parent"
@@ -185,7 +185,7 @@ export const location = {
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Top
       <VTooltip
         activator="parent"
@@ -195,7 +195,7 @@ export const location = {
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Bottom
       <VTooltip
         activator="parent"
@@ -425,4 +425,3 @@ const isTooltipVisible = ref(false)
 </template>
 `,
 }
-

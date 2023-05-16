@@ -39,13 +39,12 @@ const props = defineProps<Props>()
               <h6 class="text-h6 my-3">
                 {{ article.title }}
               </h6>
-              <p>
+              <p class="clamp-text mb-3">
                 {{ article.subtitle }}
               </p>
 
               <VBtn
-                size="small"
-                variant="tonal"
+                variant="outlined"
                 :to="{
                   name: 'pages-help-center-category-subcategory-article',
                   params: { category: 'getting-started', subcategory: 'account', article: 'changing-your-username' },

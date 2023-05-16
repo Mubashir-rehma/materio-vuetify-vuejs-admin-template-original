@@ -52,6 +52,10 @@ const isSelectAllEmailCheckboxIndeterminate = computed(
     && store.emails.length !== selectedEmails.value.length,
 )
 
+const isAllMarkRead = computed (() => {
+  return selectedEmails.value.every(emailId => store.emails.find(email => email.id === emailId)?.isRead)
+})
+
 const selectAllCheckboxUpdate = () => {
   selectedEmails.value = !selectAllEmailCheckbox.value
     ? store.emails.map(email => email.id)
@@ -202,26 +206,18 @@ const refreshOpenedEmail = async () => {
     <VMain>
       <VCard
         flat
-        class="h-100 d-flex flex-column"
+        class="email-content-list h-100 d-flex flex-column"
       >
         <div class="d-flex align-center">
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
+          <IconBtn
             class="d-lg-none ms-3"
             @click="isLeftSidebarOpen = true"
           >
-            <VIcon
-              size="24"
-              icon="mdi-menu"
-            />
-          </VBtn>
+            <VIcon icon="mdi-menu" />
+          </IconBtn>
           <!-- 👉 Search -->
           <VTextField
             v-model="q"
-            density="default"
             class="email-search px-1 flex-grow-1"
             prepend-inner-icon="mdi-magnify"
             placeholder="Search email"
@@ -231,7 +227,7 @@ const refreshOpenedEmail = async () => {
         <VDivider />
 
         <!-- 👉 Action bar -->
-        <div class="py-2 px-5 d-flex items-center">
+        <div class="py-2 px-5 d-flex align-center">
           <!-- TODO: Make checkbox primary on indeterminate state -->
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
@@ -240,7 +236,7 @@ const refreshOpenedEmail = async () => {
           />
 
           <div
-            class="w-100 d-flex items-center action-bar-actions"
+            class="w-100 d-flex align-center action-bar-actions"
             :style="{
               visibility:
                 isSelectAllEmailCheckboxIndeterminate || selectAllEmailCheckbox
@@ -249,45 +245,40 @@ const refreshOpenedEmail = async () => {
             }"
           >
             <!-- Trash -->
-            <VBtn
+            <IconBtn
               v-show="$route.params.filter !== 'trashed'"
-              variant="text"
-              color="default"
-              icon
-              size="small"
               @click="handleActionClick('trash')"
             >
-              <VIcon
-                size="24"
-                icon="mdi-delete-outline"
-              />
-            </VBtn>
+              <VIcon icon="mdi-delete-outline" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                Delete Mail
+              </VTooltip>
+            </IconBtn>
 
-            <!-- Mark unread -->
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-              @click="handleActionClick('unread')"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-email-outline"
-              />
-            </VBtn>
+            <!-- Mark unread/read -->
+            <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
+              <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                {{ isAllMarkRead ? 'Mark as Unread' : 'Mark as Read' }}
+              </VTooltip>
+            </IconBtn>
 
             <!-- Move to folder -->
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-folder-outline"
-              />
+            <IconBtn>
+              <VIcon icon="mdi-folder-outline" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                Folder
+              </VTooltip>
+
               <VMenu activator="parent">
                 <VList density="compact">
                   <template
@@ -295,10 +286,8 @@ const refreshOpenedEmail = async () => {
                     :key="moveTo.title"
                   >
                     <VListItem
-                      :class="
-                        shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'
-                      "
-                      class="items-center"
+                      :class="shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
+                      class="align-center"
                       href="#"
                       @click="handleMoveMailsTo(moveTo.action)"
                     >
@@ -316,19 +305,17 @@ const refreshOpenedEmail = async () => {
                   </template>
                 </VList>
               </VMenu>
-            </VBtn>
+            </IconBtn>
 
             <!-- Update labels -->
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-label-outline"
-              />
+            <IconBtn>
+              <VIcon icon="mdi-label-outline" />
+              <VTooltip
+                activator="parent"
+                location="top"
+              >
+                Label
+              </VTooltip>
               <VMenu activator="parent">
                 <VList density="compact">
                   <VListItem
@@ -350,32 +337,13 @@ const refreshOpenedEmail = async () => {
                   </VListItem>
                 </VList>
               </VMenu>
-            </VBtn>
+            </IconBtn>
           </div>
           <VSpacer />
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-            @click="fetchEmails"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-reload"
-            />
-          </VBtn>
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <IconBtn @click="fetchEmails">
+            <VIcon icon="mdi-reload" />
+          </IconBtn>
+          <MoreBtn />
         </div>
         <VDivider />
 
@@ -399,20 +367,12 @@ const refreshOpenedEmail = async () => {
               @update:model-value="toggleSelectedEmail(email.id)"
               @click.stop
             />
-            <VBtn
-              variant="text"
-              icon
-              size="small"
+            <IconBtn
               :color="email.isStarred ? 'warning' : 'default'"
-              @click.stop="
-                handleActionClick(email.isStarred ? 'unstar' : 'star', [email.id])
-              "
+              @click.stop=" handleActionClick(email.isStarred ? 'unstar' : 'star', [email.id])"
             >
-              <VIcon
-                size="24"
-                icon="mdi-star-outline"
-              />
-            </VBtn>
+              <VIcon icon="mdi-star-outline" />
+            </IconBtn>
             <VAvatar
               class="mx-2"
               size="32"
@@ -425,9 +385,12 @@ const refreshOpenedEmail = async () => {
             <h6 class="mx-2 text-body-1 font-weight-medium text-high-emphasis">
               {{ email.from.name }}
             </h6>
-            <span class="truncate">{{ email.subject }}</span>
+            <span class="truncate text-sm">{{ email.subject }}</span>
             <VSpacer />
-            <div class="email-meta">
+            <div
+              class="email-meta"
+              :class="$vuetify.display.xs ? 'd-none' : 'd-block'"
+            >
               <VBadge
                 v-for="label in email.labels"
                 :key="label"
@@ -442,44 +405,42 @@ const refreshOpenedEmail = async () => {
 
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
+              <IconBtn
+                size="default"
                 @click.stop="handleActionClick('trash', [email.id])"
               >
-                <VIcon
-                  size="24"
-                  icon="mdi-delete-outline"
-                />
-              </VBtn>
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
-                @click.stop="
-                  handleActionClick(email.isRead ? 'unread' : 'read', [email.id])
-                "
+                <VIcon icon="mdi-delete-outline" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  Delete Mail
+                </VTooltip>
+              </IconBtn>
+              <IconBtn
+                size="default"
+                @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])"
               >
-                <VIcon
-                  size="24"
-                  :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'"
-                />
-              </VBtn>
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
+                <VIcon :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  {{ email.isRead ? 'Mark as Unread' : 'Mark as Read' }}
+                </VTooltip>
+              </IconBtn>
+              <IconBtn
+                size="default"
                 @click.stop="handleActionClick('spam', [email.id])"
               >
-                <VIcon
-                  size="24"
-                  icon="mdi-alert-octagon-outline"
-                />
-              </VBtn>
+                <VIcon icon="mdi-alert-octagon-outline" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  Move to Spam
+                </VTooltip>
+              </IconBtn>
             </div>
           </li>
           <li
@@ -506,7 +467,6 @@ meta:
 <style lang="scss">
 @use "@styles/variables/_vuetify.scss";
 @use "@core/scss/base/_mixins.scss";
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {
@@ -518,7 +478,7 @@ meta:
 .email-app-layout {
   border-radius: vuetify.$card-border-radius;
 
-  @include elevation.elevation(vuetify.$card-elevation);
+  @include mixins.elevation(vuetify.$card-elevation);
 
   $sel-email-app-layout: &;
 
@@ -529,10 +489,16 @@ meta:
   }
 }
 
+.email-content-list {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
+}
+
 .email-list {
   white-space: nowrap;
 
   .email-item {
+    block-size: 64px;
     transition: all 0.2s ease-in-out;
     will-change: transform, box-shadow;
 
@@ -548,7 +514,7 @@ meta:
   .email-item:hover {
     transform: translateY(-2px);
 
-    @include elevation.elevation(3);
+    @include mixins.elevation(3);
 
     .email-actions {
       display: block !important;
@@ -575,4 +541,3 @@ meta:
   }
 }
 </style>
-

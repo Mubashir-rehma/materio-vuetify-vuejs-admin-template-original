@@ -14,6 +14,30 @@ const fetchProjectData = () => {
 }
 
 watch(router, fetchProjectData, { immediate: true })
+
+const moreList = [
+  {
+    title: 'Rename Project',
+    value: 'Rename Project',
+  },
+  {
+    title: 'View Details',
+    value: 'View Details',
+  },
+  {
+    title: 'Add to favorites',
+    value: 'Add to favorites',
+  },
+  {
+    type: 'divider',
+    class: 'my-2',
+  },
+  {
+    title: 'Leave Project',
+    value: 'Leave Project',
+    class: 'text-error',
+  },
+]
 </script>
 
 <template>
@@ -28,57 +52,35 @@ watch(router, fetchProjectData, { immediate: true })
       <VCard>
         <VCardItem>
           <template #prepend>
-            <VAvatar :image="data.avatar" />
+            <VAvatar
+              :image="data.avatar"
+              size="38"
+            />
           </template>
 
-          <VCardTitle>Social Banners</VCardTitle>
+          <VCardTitle>{{ data.title }}</VCardTitle>
           <p class="mb-0">
             <span class="font-weight-medium me-1">Client:</span>
-            <span>Christian Jimenez</span>
+            <span>{{ data.client }}</span>
           </p>
 
           <template #append>
             <div class="mt-n8 me-n3">
-              <VBtn
-                icon
-                variant="text"
-                color="default"
-                size="x-small"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-dots-vertical"
-                />
-
-                <VMenu activator="parent">
-                  <VList density="compact">
-                    <VListItem
-                      v-for="(item, index) in ['Rename Project', 'View Details', 'Add to favorites']"
-                      :key="index"
-                      :value="index"
-                    >
-                      <VListItemTitle>{{ item }}</VListItemTitle>
-                    </VListItem>
-                    <VDivider class="my-2" />
-                    <VListItem
-                      title="Leave Project"
-                      value="Leave Project"
-                      class="text-error"
-                    />
-                  </VList>
-                </VMenu>
-              </VBtn>
+              <MoreBtn
+                item-props
+                :menu-list="moreList"
+              />
             </div>
           </template>
         </VCardItem>
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-x-2 gap-y-4">
-            <div class="pa-2 bg-light-secondary rounded">
+            <div class="pa-2 bg-var-theme-background rounded">
               <h6 class="text-base font-weight-medium">
                 {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>
               </h6>
-              <span>Total Budget</span>
+              <span class="text-base">Total Budget</span>
             </div>
 
             <div>
@@ -91,7 +93,7 @@ watch(router, fetchProjectData, { immediate: true })
             </div>
           </div>
 
-          <p class="mt-4 mb-0">
+          <p class="mt-4 mb-0 clamp-text">
             {{ data.description }}
           </p>
         </VCardText>
@@ -106,15 +108,17 @@ watch(router, fetchProjectData, { immediate: true })
 
             <VChip
               :color="data.chipColor"
-              size="small"
+              density="compact"
             >
-              {{ data.daysLeft }} Days left
+              <span class="text-xs">
+                {{ data.daysLeft }} Days left
+              </span>
             </VChip>
           </div>
 
           <div class="d-flex align-center justify-space-between flex-wrap text-xs mt-4 mb-2">
             <span>Task: {{ data.tasks }}</span>
-            <span>95% Completed</span>
+            <span>{{ Math.round((data.completedTask / data.totalTask) * 100) }}% Completed</span>
           </div>
           <VProgressLinear
             rounded
@@ -132,18 +136,19 @@ watch(router, fetchProjectData, { immediate: true })
                   v-for="avatar in data.avatarGroup"
                   :key="avatar.name"
                   :image="avatar.avatar"
-                  :size="32"
+                  :size="36"
                 />
               </div>
               <span class="text-xs">
-                280 members
+                {{ data.members }}
               </span>
             </div>
 
             <span>
               <VIcon
                 icon="mdi-message-outline"
-                class="me-1"
+                class="me-2"
+                size="24"
               />
               <span>{{ data.comments }}</span>
             </span>

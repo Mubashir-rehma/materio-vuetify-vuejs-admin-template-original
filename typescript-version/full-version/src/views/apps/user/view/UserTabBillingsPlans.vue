@@ -65,7 +65,7 @@ const currentBillingAddress = {
   contact: '+1(609) 933-44-22',
   country: 'USA',
   state: 'Queensland',
-  zipCode: '403114',
+  zipCode: 403114,
 }
 </script>
 
@@ -91,10 +91,10 @@ const currentBillingAddress = {
               <p>We will send you a notification upon Subscription expiration</p>
 
               <h6 class="text-sm font-weight-medium mb-1">
-                <span class="me-3">$199 Per Month</span>
+                <span class="me-4">$199 Per Month</span>
                 <VChip
                   color="primary"
-                  size="small"
+                  density="comfortable"
                   label
                 >
                   popular
@@ -115,11 +115,13 @@ const currentBillingAddress = {
                 variant="tonal"
               >
                 <VAlertTitle>We need your attention!</VAlertTitle>
-                <span>Your plan requires update</span>
+                <div class="mt-1">
+                  Your plan requires update
+                </div>
               </VAlert>
 
               <!-- 👉 Progress -->
-              <div class="d-flex justify-space-between mt-8 mb-2">
+              <div class="d-flex justify-space-between mt-4 mb-2">
                 <h6 class="text-sm font-weight-medium">
                   Days
                 </h6>
@@ -185,17 +187,20 @@ const currentBillingAddress = {
                   :height="25"
                 />
                 <h4 class="text-base font-weight-medium my-3">
-                  {{ card.name }}
+                  <span class="me-4">
+                    {{ card.name }}
+                  </span>
+
                   <VChip
                     v-if="card.isPrimary"
                     label
                     color="primary"
-                    size="small"
+                    density="comfortable"
                   >
                     Primary
                   </VChip>
                 </h4>
-                <span class="text-body-1">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
+                <span class="text-sm">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
               </div>
 
               <VSpacer />
@@ -203,20 +208,20 @@ const currentBillingAddress = {
               <div class="d-flex flex-column text-sm-end">
                 <div class="order-sm-0 order-1">
                   <VBtn
-                    variant="tonal"
-                    class="me-2"
+                    variant="outlined"
+                    class="me-4"
                     @click="openEditCardDialog(card)"
                   >
                     Edit
                   </VBtn>
                   <VBtn
                     color="secondary"
-                    variant="tonal"
+                    variant="outlined"
                   >
                     Delete
                   </VBtn>
                 </div>
-                <span class="my-5 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
+                <span class="my-4 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
               </div>
             </VCardText>
           </VCard>
@@ -368,17 +373,13 @@ const currentBillingAddress = {
   <CardAddEditDialog
     v-model:isDialogVisible="isCardEditDialogVisible"
     :card-details="currentCardDetails"
-    class="v-dialog-lg"
   />
 
   <!-- 👉 Add Card Dialog -->
-  <CardAddEditDialog
-    v-model:isDialogVisible="isCardAddDialogVisible"
-    class="v-dialog-lg"
-  />
+  <CardAddEditDialog v-model:isDialogVisible="isCardAddDialogVisible" />
 
   <!-- 👉 Edit Address dialog -->
-  <EditAddressDialog
+  <AddEditAddressDialog
     v-model:isDialogVisible="isEditAddressDialogVisible"
     :billing-address="currentBillingAddress"
   />

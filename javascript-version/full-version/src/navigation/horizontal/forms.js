@@ -8,6 +8,10 @@ export default [
         icon: { icon: 'mdi-content-copy' },
         children: [
           {
+            title: 'Autocomplete',
+            to: 'forms-autocomplete',
+          },
+          {
             title: 'Checkbox',
             to: 'forms-checkbox',
           },
@@ -26,6 +30,10 @@ export default [
           {
             title: 'Radio',
             to: 'forms-radio',
+          },
+          {
+            title: 'Custom Input',
+            to: 'forms-custom-input',
           },
           {
             title: 'Range Slider',
@@ -58,6 +66,14 @@ export default [
         title: 'Form Layouts',
         icon: { icon: 'mdi-checkbox-marked-circle-outline' },
         to: 'forms-form-layouts',
+      },
+      {
+        title: 'Form Wizard',
+        icon: { icon: 'mdi-align-vertical-distribute' },
+        children: [
+          { title: 'Numbered', to: 'forms-form-wizard-numbered' },
+          { title: 'Icons', to: 'forms-form-wizard-icons' },
+        ],
       },
       {
         title: 'Form Validation',

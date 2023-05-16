@@ -1,6 +1,6 @@
 <template>
   <div class="demo-space-x">
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on End
       <VTooltip
         activator="parent"
@@ -10,7 +10,7 @@
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Start
       <VTooltip
         activator="parent"
@@ -20,7 +20,7 @@
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Top
       <VTooltip
         activator="parent"
@@ -30,7 +30,7 @@
       </VTooltip>
     </VBtn>
 
-    <VBtn variant="outlined">
+    <VBtn variant="tonal">
       Tooltip on Bottom
       <VTooltip
         activator="parent"

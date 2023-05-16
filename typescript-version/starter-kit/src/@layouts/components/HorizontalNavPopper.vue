@@ -28,7 +28,7 @@ const popperContentStyles = ref({
 
 const updatePopper = async () => {
   const { x, y } = await computePosition(refPopperContainer.value, refPopper.value, {
-    placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : (props.isRtl ? 'bottom-end' : 'bottom-start'),
+    placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : 'bottom-start',
     middleware: [
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       flip({ boundary: document.querySelector('body')! }),

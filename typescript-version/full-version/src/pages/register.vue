@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components/VForm'
 import type { RegisterResponse } from '@/@fake-db/types'
 import authV2MaskDark from '@images/pages/auth-v2-mask-dark.png'
 import authV2MaskLight from '@images/pages/auth-v2-mask-light.png'
@@ -103,9 +103,7 @@ const onSubmit = () => {
         lg="8"
         class="d-none d-lg-flex align-center justify-center position-relative"
       >
-        <div
-          class="d-flex align-center justify-center w-100 pa-10 pe-0"
-        >
+        <div class="d-flex align-center justify-center w-100 pa-10 pe-0">
           <VImg
             max-width="768px"
             :src="imageVariant"

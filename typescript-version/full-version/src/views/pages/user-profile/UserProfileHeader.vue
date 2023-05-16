@@ -15,7 +15,12 @@ fetchHeaderData()
 
 <template>
   <VCard v-if="profileHeaderData">
-    <VImg :src="profileHeaderData.coverImg" />
+    <VImg
+      :src="profileHeaderData.coverImg"
+      min-height="125"
+      max-height="250"
+      cover
+    />
 
     <VCardText class="d-flex align-bottom flex-sm-row flex-column justify-center gap-x-4">
       <div class="d-flex h-0">
@@ -28,12 +33,12 @@ fetchHeaderData()
       </div>
 
       <div class="user-profile-info w-100 mt-16 pt-6 pt-sm-0 mt-sm-0">
-        <h5 class="text-h5 text-center text-sm-start font-weight-medium mb-2">
+        <h5 class="text-h5 text-center text-sm-start mb-2">
           {{ profileHeaderData.fullName }}
         </h5>
 
         <div class="d-flex align-center justify-center justify-sm-space-between flex-wrap gap-4">
-          <div class="d-flex flex-wrap justify-center justify-sm-start flex-grow-1 gap-3">
+          <div class="d-flex flex-wrap justify-center justify-sm-start flex-grow-1 gap-5">
             <span class="d-flex align-center">
               <VIcon
                 size="24"

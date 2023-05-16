@@ -34,27 +34,16 @@ const statistics = [
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            color="default"
-            size="x-small"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
 
     <VCardText>
-      <h6 class="text-sm font-weight-medium mb-12">
-        <span>Total 48.5% Growth 😎</span>
-        <span class="font-weight-regular"> this month</span>
-      </h6>
-
+      <p class="mb-md-10">
+        <span class="text-high-emphasis font-weight-medium me-1">Total 48.5% Growth</span>
+        <span>😎 this month</span>
+      </p>
       <VRow>
         <VCol
           v-for="item in statistics"
@@ -67,7 +56,7 @@ const statistics = [
               <VAvatar
                 :color="item.color"
                 rounded
-                size="42"
+                size="40"
                 class="elevation-1"
               >
                 <VIcon

@@ -65,17 +65,7 @@ const teamMembers = [
       <!-- 👉 menu -->
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -126,7 +116,7 @@ const teamMembers = [
                 />
               </div>
               <div>
-                <p class="text-sm font-weight-medium mb-0">
+                <p class="text-sm font-weight-medium mb-0 text-high-emphasis">
                   {{ member.name }}
                 </p>
                 <span class="text-xs text-medium-emphasis">{{ member.designation }}</span>
@@ -137,9 +127,11 @@ const teamMembers = [
           <td class="table-spacing border-0">
             <VChip
               :color="member.projectIndication"
-              size="small"
+              density="compact"
             >
-              {{ member.project }}
+              <span class="text-xs">
+                {{ member.project }}
+              </span>
             </VChip>
           </td>
 

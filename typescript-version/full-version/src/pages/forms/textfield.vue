@@ -28,7 +28,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
         title="Density"
         :code="demoCode.density"
       >
-        <p>The <code>density</code> prop decreases the height of the text field based upon 1 of 3 levels of density; <strong>default</strong>, <strong>comfortable</strong>, and <strong>compact</strong>.</p>
+        <p>The <code>density</code> prop decreases the height of the text field based upon 1 of 3 levels of density; <code>default</code>, <code>comfortable</code>, and <code>compact</code>.</p>
 
         <DemoTextfieldDensity />
       </AppCardCode>
@@ -100,7 +100,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/textfield/demoCodeT
         title="Custom Colors"
         :code="demoCode.customColors"
       >
-        <p>Use <code>color</code> prop to change the input text color.</p>
+        <p>Use <code>color</code> prop to change the input border color.</p>
 
         <DemoTextfieldCustomColors />
       </AppCardCode>

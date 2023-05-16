@@ -1,4 +1,4 @@
-import type { InjectionKey, Plugin, Ref } from 'vue'
+import type { Plugin } from 'vue'
 import { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 import { config } from './config'
 import { ContentWidth } from './enums'
@@ -57,8 +57,5 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   }
 }
 
-export const injectionKeyIsVerticalNavHovered: InjectionKey<Ref<boolean>> = Symbol('isVerticalNavHovered')
-
 export * from './components'
 export { useLayouts } from './composable/useLayouts'
-

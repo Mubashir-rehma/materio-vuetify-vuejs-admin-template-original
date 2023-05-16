@@ -4,7 +4,7 @@ import { ContentWidth, FooterType, NavbarType } from './enums'
 
 export interface UserConfig {
   app: {
-    title: string
+    title: Lowercase<string>
     logo: VNode
     contentWidth: typeof ContentWidth[keyof typeof ContentWidth]
     contentLayoutNav: typeof AppContentLayoutNav[keyof typeof AppContentLayoutNav]
@@ -143,10 +143,12 @@ interface I18nLanguage {
 // avatar | text | icon
 // Thanks: https://stackoverflow.com/a/60617060/10796681
 type Notification = {
+  id:number
   title: string
   subtitle: string
   time: string
   color?: string
+  isSeen: boolean
 } & (
   | { img: string; text?: never; icon?: never }
   | { img?: never; text: string; icon?: never }

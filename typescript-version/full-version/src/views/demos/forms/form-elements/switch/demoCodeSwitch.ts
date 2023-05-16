@@ -369,4 +369,3 @@ const switch2 = ref('Show')
 </template>
 `,
 }
-

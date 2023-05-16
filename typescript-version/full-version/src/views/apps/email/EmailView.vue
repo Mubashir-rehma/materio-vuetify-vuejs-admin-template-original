@@ -22,6 +22,7 @@ const emit = defineEmits<{
   (e: 'close'): void
   (e: 'trash'): void
   (e: 'unread'): void
+  (e: 'read'): void
   (e: 'star'): void
   (e: 'unstar'): void
 }>()
@@ -57,11 +58,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
       <!-- 👉 header -->
 
       <div class="email-view-header d-flex align-center px-5 py-3">
-        <VBtn
-          icon
-          variant="text"
-          color="default"
-          size="small"
+        <IconBtn
           class="me-4 flip-in-rtl"
           @click="$emit('close')"
         >
@@ -69,10 +66,10 @@ const updateMailLabel = (label: Email['labels'][number]) => {
             size="32"
             icon="mdi-chevron-left"
           />
-        </VBtn>
+        </IconBtn>
 
         <div class="d-flex align-center flex-wrap flex-grow-1 overflow-hidden gap-2">
-          <h2 class="text-body-1 font-weight-medium text-high-emphasis text-truncate">
+          <h2 class="text-body-1 text-high-emphasis text-truncate">
             {{ props.email.subject }}
           </h2>
 
@@ -81,43 +78,33 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               v-for="label in props.email.labels"
               :key="label"
               :color="resolveLabelColor(label)"
-              density="comfortable"
+              size="x-small"
               class="px-2 text-capitalize me-2 flex-shrink-0"
             >
-              {{ label }}
+              <span class="text-xs font-weight-medium">
+                {{ label }}
+              </span>
             </VChip>
           </div>
         </div>
 
         <div class="d-flex align-center">
-          <VBtn
-            icon
-            variant="text"
-            color="default"
-            size="small"
+          <IconBtn
+            variant="plain"
             :disabled="!props.emailMeta.hasPreviousEmail"
-            class="text-medium-emphasis flip-in-rtl"
+            class="flip-in-rtl"
             @click="$emit('navigated', 'previous')"
           >
-            <VIcon
-              size="24"
-              icon="mdi-chevron-left"
-            />
-          </VBtn>
-          <VBtn
-            icon
-            variant="text"
-            color="default"
-            size="small"
-            class="text-medium-emphasis flip-in-rtl"
+            <VIcon icon="mdi-chevron-left" />
+          </IconBtn>
+          <IconBtn
+            variant="plain"
+            class="flip-in-rtl"
             :disabled="!props.emailMeta.hasNextEmail"
             @click="$emit('navigated', 'next')"
           >
-            <VIcon
-              size="24"
-              icon="mdi-chevron-right"
-            />
-          </VBtn>
+            <VIcon icon="mdi-chevron-right" />
+          </IconBtn>
         </div>
       </div>
 
@@ -126,45 +113,40 @@ const updateMailLabel = (label: Email['labels'][number]) => {
       <!-- 👉 Action bar -->
       <div class="email-view-action-bar d-flex align-center text-medium-emphasis px-5">
         <!-- Trash -->
-        <VBtn
+        <IconBtn
           v-show="!props.email.isDeleted"
-          icon
-          variant="text"
-          color="default"
-          size="small"
           @click="$emit('trash'); $emit('close')"
         >
-          <VIcon
-            size="24"
-            icon="mdi-delete-outline"
-          />
-        </VBtn>
+          <VIcon icon="mdi-delete-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Delete Mail
+          </VTooltip>
+        </IconBtn>
 
         <!-- Read/Unread -->
-        <VBtn
-          icon
-          variant="text"
-          color="default"
-          size="small"
-          @click.stop="$emit('unread'); $emit('close')"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-email-outline"
-          />
-        </VBtn>
+        <IconBtn @click.stop="$emit('unread'); $emit('close')">
+          <VIcon icon="mdi-email-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Mark as Unread
+          </VTooltip>
+        </IconBtn>
 
         <!-- Move to folder -->
-        <VBtn
-          variant="text"
-          color="default"
-          icon
-          size="small"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-folder-outline"
-          />
+        <IconBtn>
+          <VIcon icon="mdi-folder-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Move to
+          </VTooltip>
+
           <VMenu activator="parent">
             <VList density="compact">
               <template
@@ -173,7 +155,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               >
                 <VListItem
                   :class="shallShowMoveToActionFor(moveTo.action) ? 'd-flex' : 'd-none'"
-                  class="items-center"
+                  class="align-center"
                   href="#"
                   @click="handleMoveMailsTo(moveTo.action)"
                 >
@@ -191,19 +173,18 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               </template>
             </VList>
           </VMenu>
-        </VBtn>
+        </IconBtn>
 
         <!-- Update labels -->
-        <VBtn
-          variant="text"
-          color="default"
-          icon
-          size="small"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-label-outline"
-          />
+        <IconBtn>
+          <VIcon icon="mdi-label-outline" />
+          <VTooltip
+            activator="parent"
+            location="top"
+          >
+            Label
+          </VTooltip>
+
           <VMenu activator="parent">
             <VList density="compact">
               <VListItem
@@ -225,36 +206,20 @@ const updateMailLabel = (label: Email['labels'][number]) => {
               </VListItem>
             </VList>
           </VMenu>
-        </VBtn>
+        </IconBtn>
 
         <VSpacer />
 
         <!-- Star/Unstar -->
-        <VBtn
-          icon
-          variant="text"
-          size="small"
+        <IconBtn
           :color="props.email.isStarred ? 'warning' : 'default'"
           @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
         >
-          <VIcon
-            size="24"
-            icon="mdi-star-outline"
-          />
-        </VBtn>
+          <VIcon icon="mdi-star-outline" />
+        </IconBtn>
 
         <!-- Dots vertical -->
-        <VBtn
-          variant="text"
-          color="default"
-          icon
-          size="small"
-        >
-          <VIcon
-            size="24"
-            icon="mdi-dots-vertical"
-          />
-        </VBtn>
+        <MoreBtn />
       </div>
 
       <VDivider />
@@ -264,6 +229,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
         tag="div"
         class="mail-content-container flex-grow-1"
         :options="{ wheelPropagation: false }"
+        :style="$vuetify.theme.current.dark ? '--v-mail-content-bg: #373452' : '--v-mail-content-bg: #F9F8F9'"
       >
         <VCard class="ma-5">
           <VCardText class="mail-header">
@@ -277,7 +243,7 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 
               <div class="d-flex flex-wrap flex-grow-1 overflow-hidden">
                 <div class="text-truncate">
-                  <span class="d-block text-high-emphasis font-weight-medium text-truncate">{{ props.email.from.name }}</span>
+                  <span class="d-block text-body-1 text-truncate">{{ props.email.from.name }}</span>
                   <span class="text-sm text-disabled">{{ props.email.from.email }}</span>
                 </div>
 
@@ -285,31 +251,15 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 
                 <div class="d-flex align-center">
                   <span class="me-2">{{ formatDate(props.email.time) }}</span>
-                  <VBtn
-                    v-show="props.email.attachments.length"
-                    variant="text"
-                    color="default"
-                    icon
-                    size="small"
-                  >
+                  <IconBtn v-show="props.email.attachments.length">
                     <VIcon
-                      size="24"
                       icon="mdi-attachment"
+                      size="20"
                     />
-                  </VBtn>
+                  </IconBtn>
                 </div>
               </div>
-              <VBtn
-                variant="text"
-                color="default"
-                icon
-                size="small"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-dots-vertical"
-                />
-              </VBtn>
+              <MoreBtn class="align-self-sm-center" />
             </div>
           </VCardText>
 
@@ -383,10 +333,14 @@ const updateMailLabel = (label: Email['labels'][number]) => {
 }
 
 .mail-content-container {
-  background-color: rgb(var(--v-theme-grey-100));
+  background-color: var(--v-mail-content-bg);
 
   .mail-header {
     min-block-size: 84px;
+  }
+
+  .v-card {
+    border: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
   }
 }
 </style>

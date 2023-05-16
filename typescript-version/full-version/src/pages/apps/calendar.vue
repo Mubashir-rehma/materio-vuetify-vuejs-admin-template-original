@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import '@fullcalendar/core/vdom' // solves problem with Vite
-
-// Local imports
 import FullCalendar from '@fullcalendar/vue3'
 import { blankEvent, useCalendar } from '@/views/apps/calendar/useCalendar'
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
@@ -78,9 +75,8 @@ const checkAll = computed({
               <div class="d-flex flex-column calendars-checkbox">
                 <VCheckbox
                   v-model="checkAll"
-                  label="View all"
+                  label="View All"
                   color="secondary"
-                  density="default"
                 />
                 <VCheckbox
                   v-for="calendar in store.availableCalendars"
@@ -89,7 +85,7 @@ const checkAll = computed({
                   :value="calendar.label"
                   :color="calendar.color"
                   :label="calendar.label"
-                  density="default"
+                  class="pt-1"
                 />
               </div>
             </div>
@@ -120,13 +116,13 @@ const checkAll = computed({
 
 .calendars-checkbox {
   .v-label {
-    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
     opacity: var(--v-high-emphasis-opacity);
   }
 }
 
 .calendar-add-event-drawer {
-  &.v-navigation-drawer {
+  &.v-navigation-drawer:not(.v-navigation-drawer--temporary) {
     border-end-start-radius: 0.375rem;
     border-start-start-radius: 0.375rem;
   }

@@ -122,17 +122,7 @@ const analytics = [
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            color="default"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -155,15 +145,16 @@ const analytics = [
           {{ item.title }}
         </h6>
         <VSpacer />
-        <p class="me-6 mb-0">
+        <p class="me-4 mb-0">
           {{ item.amount }}
         </p>
-        <h6 class="text-sm font-weight-medium me-6">
+        <h6 class="text-sm font-weight-medium me-4">
           {{ item.percentage }}
         </h6>
         <VIcon
           :color="item.profit ? 'success' : 'error'"
           :icon="item.profit ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+          size="24"
         />
       </div>
     </VCardText>

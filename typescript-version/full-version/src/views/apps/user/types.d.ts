@@ -3,6 +3,5 @@ export interface UserParams {
   role: string,
   plan: string,
   status: string,
-  perPage: number,
-  currentPage: number,
+  options: object,
 }

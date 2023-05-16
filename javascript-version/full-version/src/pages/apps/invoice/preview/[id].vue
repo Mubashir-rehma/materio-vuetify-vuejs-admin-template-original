@@ -73,7 +73,7 @@ const printInvoice = () => {
           <!-- SECTION Header -->
           <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row print-row">
             <!-- 👉 Left Content -->
-            <div class="mb-4">
+            <div class="mb-5">
               <div class="d-flex align-center mb-6">
                 <!-- 👉 Logo -->
                 <VNodeRenderer
@@ -82,7 +82,7 @@ const printInvoice = () => {
                 />
 
                 <!-- 👉 Title -->
-                <h6 class="font-weight-medium text-xl text-uppercase">
+                <h6 class="text-xl text-uppercase">
                   {{ themeConfig.app.title }}
                 </h6>
               </div>
@@ -102,7 +102,7 @@ const printInvoice = () => {
             <!-- 👉 Right Content -->
             <div class="mb-4">
               <!-- 👉 Invoice ID -->
-              <h6 class="font-weight-medium text-xl mb-6">
+              <h6 class="text-h5 mb-4">
                 Invoice #{{ invoiceData.id }}
               </h6>
 
@@ -125,7 +125,7 @@ const printInvoice = () => {
 
           <!-- 👉 Payment Details -->
           <VCardText class="d-flex justify-space-between flex-wrap flex-column flex-sm-row print-row">
-            <div class="my-4">
+            <div class="my-5">
               <h6 class="text-sm font-weight-medium mb-3">
                 Invoice To:
               </h6>
@@ -146,7 +146,7 @@ const printInvoice = () => {
               </p>
             </div>
 
-            <div class="my-4">
+            <div class="my-5">
               <h6 class="text-sm font-weight-medium mb-3">
                 Bill To:
               </h6>
@@ -198,7 +198,7 @@ const printInvoice = () => {
           <!-- 👉 Table -->
           <VDivider />
 
-          <VTable>
+          <VTable class="text-sm text-high-emphasis">
             <thead>
               <tr>
                 <th scope="col">
@@ -252,7 +252,7 @@ const printInvoice = () => {
             </tbody>
           </VTable>
 
-          <VDivider class="my-2" />
+          <VDivider class="mb-2" />
 
           <!-- Total -->
           <VCardText class="d-flex justify-space-between flex-column flex-sm-row print-row">
@@ -266,7 +266,7 @@ const printInvoice = () => {
               <p>Thanks for your business</p>
             </div>
 
-            <div>
+            <div class="mb-1">
               <table class="w-100">
                 <tr>
                   <td class="pe-16">
@@ -327,7 +327,7 @@ const printInvoice = () => {
               <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</span>
             </div>
 
-            <div class="d-flex flex-wrap justify-end d-print-none gap-4 mt-10">
+            <div class="d-flex flex-wrap justify-end d-print-none gap-5 mt-10">
               <VBtn @click="printInvoice">
                 Print
               </VBtn>
@@ -418,5 +418,15 @@ const printInvoice = () => {
   .layout-content-wrapper {
     padding-inline-start: 0 !important;
   }
+}
+</style>
+
+<style lang="scss" scoped>
+.v-table {
+  --v-table-header-height: 48px !important;
+}
+
+.v-table--density-default > .v-table__wrapper > table > tbody > tr > td {
+  block-size: 48px !important;
 }
 </style>

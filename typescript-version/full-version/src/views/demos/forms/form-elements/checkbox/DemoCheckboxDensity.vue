@@ -13,7 +13,7 @@ const capitalizedLabel = (label: boolean) => {
   <div class="demo-space-x">
     <VCheckbox
       v-model="checkboxOne"
-      density="compact"
+      density="comfortable"
       :label="capitalizedLabel(checkboxOne)"
     />
 

@@ -50,21 +50,10 @@ const handleDrawerModelValueUpdate = val => {
     @update:model-value="handleDrawerModelValueUpdate"
   >
     <!-- 👉 Header -->
-    <div class="d-flex align-center bg-var-theme-background px-5 py-2">
-      <h6 class="text-h6">
-        Send Invoice
-      </h6>
-
-      <VSpacer />
-
-      <VBtn
-        size="small"
-        color="secondary"
-        variant="text"
-        icon="mdi-close"
-        @click="$emit('update:isDrawerOpen', false)"
-      />
-    </div>
+    <AppDrawerHeaderSection
+      title="Send Invoice"
+      @cancel="$emit('update:isDrawerOpen', false)"
+    />
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>

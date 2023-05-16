@@ -18,7 +18,7 @@ const solidCardData = [
     cardBg: '#3B5998',
     title: 'Facebook Card',
     icon: 'mdi-facebook',
-    text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients in an.',
+    text: 'You\'ve read about the importance of being courageous, rebellious and imaginative. These are all vital ingredients.',
     avatarImg: avatar1,
     avatarName: 'Eugene Clarke',
     likes: '3.2k',
@@ -50,7 +50,7 @@ const solidCardData = [
         <VCardItem>
           <template #prepend>
             <VIcon
-              size="1.9rem"
+              size="30"
               color="white"
               :icon="data.icon"
             />
@@ -60,8 +60,10 @@ const solidCardData = [
           </VCardTitle>
         </VCardItem>
 
-        <VCardText class="text-white">
-          {{ data.text }}
+        <VCardText>
+          <p class="clamp-text text-white mb-0">
+            {{ data.text }}
+          </p>
         </VCardText>
 
         <VCardText class="d-flex justify-space-between align-center flex-wrap">
@@ -73,21 +75,29 @@ const solidCardData = [
             <span class="text-white ms-2">{{ data.avatarName }}</span>
           </div>
 
-          <div>
-            <VIcon
-              icon="mdi-heart"
+          <div class="d-flex align-center">
+            <IconBtn
               color="white"
-              size="1.2rem"
-              class="me-2 cursor-pointer"
-            />
-            <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
+              class="me-1"
+              density="comfortable"
+            >
+              <VIcon
+                icon="mdi-thumb-up"
+                size="20"
+              />
+            </IconBtn>
+            <span class="text-subtitle-2 text-white me-2">{{ data.likes }}</span>
 
-            <VIcon
-              icon="mdi-share-variant"
+            <IconBtn
               color="white"
-              size="1.2rem"
-              class="me-2 cursor-pointer"
-            />
+              class="me-1"
+              density="comfortable"
+            >
+              <VIcon
+                icon="mdi-share-variant"
+                size="20"
+              />
+            </IconBtn>
             <span class="text-subtitle-2 text-white">{{ data.share }}</span>
           </div>
         </VCardText>

@@ -78,17 +78,7 @@ const formateAmount = (amount: number) => {
       <!-- 👉 menu -->
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -145,6 +135,6 @@ const formateAmount = (amount: number) => {
 
  <style lang="scss" scoped>
   .card-list {
-    --v-card-list-gap: 1.625rem;
+    --v-card-list-gap: 1.3rem;
   }
   </style>

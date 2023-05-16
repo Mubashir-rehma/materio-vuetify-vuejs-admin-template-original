@@ -57,7 +57,10 @@ const isCPasswordVisible = ref(false)
 
   <VCard flat>
     <VCardText>
-      <VWindow v-model="tab">
+      <VWindow
+        v-model="tab"
+        class="disable-tab-transition"
+      >
         <VWindowItem value="personal-info">
           <VForm class="mt-2">
             <VRow>

@@ -41,9 +41,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
         md="8"
         class="d-none d-md-flex align-center justify-center position-relative"
       >
-        <div
-          class="d-flex align-center justify-center w-100 pa-10 pe-0"
-        >
+        <div class="d-flex align-center justify-center w-100 pa-10 pe-0">
           <VImg
             max-width="768px"
             :src="authThemeImg"
@@ -88,6 +86,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                 <VCol cols="12">
                   <VTextField
                     v-model="email"
+                    autofocus
                     label="Email"
                     type="email"
                   />

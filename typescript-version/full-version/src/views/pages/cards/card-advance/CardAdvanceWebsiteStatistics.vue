@@ -84,17 +84,7 @@ const websiteStatistics = [
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -105,7 +95,7 @@ const websiteStatistics = [
           <h3 class="text-h3">
             4,590
           </h3>
-          <span>Total Traffic</span>
+          <span class="text-xs">Total Traffic</span>
         </div>
         <div style="max-width: 7.5rem; height: 5rem;">
           <VueApexCharts

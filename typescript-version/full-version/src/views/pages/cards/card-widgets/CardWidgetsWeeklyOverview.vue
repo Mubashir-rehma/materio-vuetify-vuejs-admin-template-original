@@ -38,12 +38,12 @@ const options = controlledComputed(theme, () => {
     grid: { borderColor, strokeDashArray: 7 },
     dataLabels: { enabled: false },
     colors: [
-      currentTheme.value.background,
-      currentTheme.value.background,
-      currentTheme.value.background,
+      currentTheme.value['grey-100'],
+      currentTheme.value['grey-100'],
+      currentTheme.value['grey-100'],
       currentTheme.value.primary,
-      currentTheme.value.background,
-      currentTheme.value.background,
+      currentTheme.value['grey-100'],
+      currentTheme.value['grey-100'],
     ],
     states: {
       hover: { filter: { type: 'none' } },
@@ -82,17 +82,7 @@ const series = [{ data: [37, 57, 45, 75, 57, 40, 65] }]
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            color="default"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -120,4 +110,3 @@ const series = [{ data: [37, 57, 45, 75, 57, 40, 65] }]
     </VCardText>
   </VCard>
 </template>
-

@@ -82,6 +82,18 @@
       @include vuetifyStates.states($active: false);
     }
 
+    .popper-content {
+      @extend %horizontal-nav-popper-content-hidden;
+      @extend %horizontal-nav-popper-content;
+
+      background-color: rgb(var(--v-theme-surface));
+
+      // Set max-height for the popper content
+      > div {
+        max-block-size: variables.$horizontal-nav-popper-content-max-height;
+      }
+    }
+
     // 👉 Top level group
     &:not(.sub-item) {
       > .popper-triggerer {
@@ -168,20 +180,14 @@
       @extend %horizontal-nav-item-title;
     }
 
-    .popper-content {
-      @extend %horizontal-nav-popper-content-hidden;
-      @extend %horizontal-nav-popper-content;
-
-      background-color: rgb(var(--v-theme-surface));
-
-      // Set max-height for the popper content
-      > div {
-        max-block-size: variables.$horizontal-nav-popper-content-max-height;
+    &.show-content {
+      > .popper-content {
+        @extend %horizontal-nav-popper-content-visible;
       }
-    }
 
-    &.show-content > .popper-content {
-      @extend %horizontal-nav-popper-content-visible;
+      &:not(.active) {
+        @include mixins.selected-states("> .popper-triggerer > .nav-group-label::before");
+      }
     }
   }
 

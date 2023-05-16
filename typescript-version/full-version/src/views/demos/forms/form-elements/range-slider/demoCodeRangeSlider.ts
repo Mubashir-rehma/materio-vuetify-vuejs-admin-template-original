@@ -199,4 +199,3 @@ const sliderValues = ref([
 </template>
 `,
 }
-

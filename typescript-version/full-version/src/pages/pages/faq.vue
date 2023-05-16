@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { FaqCategory } from '@/@fake-db/types'
 import axios from '@axios'
-import AppSearchHeader from '@core/components/AppSearchHeader.vue'
 import illustrationJohn from '@images/cards/illustration-john.png'
 
 const faqSearchQuery = ref('')
@@ -111,7 +110,7 @@ const contactUs = [
                 size="large"
               >
                 <VIcon
-                  :size="36"
+                  :size="30"
                   :icon="faq.faqIcon"
                 />
               </VAvatar>
@@ -159,16 +158,17 @@ const contactUs = [
     <div class="text-center pt-15">
       <VChip
         color="primary"
-        size="small"
-        class="mb-2"
+        density="comfortable"
       >
-        QUESTION?
+        <span class="text-xs">
+          Question?
+        </span>
       </VChip>
 
-      <h6 class="text-h6 mb-1">
+      <h6 class="text-h5 my-2">
         You still have a question?
       </h6>
-      <p>
+      <p class="text-sm">
         If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
       </p>
 
@@ -190,15 +190,19 @@ const contactUs = [
                 color="primary"
                 variant="tonal"
                 class="me-3"
+                size="50"
               >
-                <VIcon :icon="contact.icon" />
+                <VIcon
+                  :icon="contact.icon"
+                  size="30"
+                />
               </VAvatar>
             </VCardText>
             <VCardText>
-              <h6 class="text-h6 mb-2">
+              <h6 class="text-h5 mb-2">
                 {{ contact.via }}
               </h6>
-              <span>{{ contact.tagLine }}</span>
+              <span class="text-base">{{ contact.tagLine }}</span>
             </VCardText>
           </VCard>
         </VCol>

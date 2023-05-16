@@ -80,7 +80,7 @@ const resetPaymentForm = () => {
             >
               <div>
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-medium mb-1">
                     Your Current Plan is Basic
                   </h3>
                   <p class="text-base">
@@ -89,7 +89,7 @@ const resetPaymentForm = () => {
                 </div>
 
                 <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-medium mb-1">
                     Active until Dec 09, 2021
                   </h3>
                   <p class="text-base">
@@ -98,11 +98,11 @@ const resetPaymentForm = () => {
                 </div>
 
                 <div>
-                  <h3 class="text-base font-weight-medium mb-2">
+                  <h3 class="text-base font-weight-medium mb-1">
                     <span class="me-3">$199 Per Month</span>
                     <VChip
                       color="primary"
-                      size="small"
+                      density="comfortable"
                     >
                       Popular
                     </VChip>
@@ -122,6 +122,13 @@ const resetPaymentForm = () => {
                 variant="tonal"
                 type="warning"
               >
+                <template #prepend>
+                  <VIcon
+                    icon="mdi-alert-outline"
+                    size="22"
+                    color="warning"
+                  />
+                </template>
                 <VAlertTitle class="mb-1">
                   We need your attention!
                 </VAlertTitle>
@@ -130,7 +137,7 @@ const resetPaymentForm = () => {
               </VAlert>
 
               <!-- progress -->
-              <div class="d-flex font-weight-medium text-base mt-8 mb-2">
+              <div class="d-flex font-weight-medium text-sm text-high-emphasis mt-8 mb-2">
                 <span>Days</span>
                 <VSpacer />
                 <span>24 of 30 Days</span>
@@ -138,10 +145,10 @@ const resetPaymentForm = () => {
               <VProgressLinear
                 color="primary"
                 rounded
-                height="12"
+                height="8"
                 model-value="75"
               />
-              <p class="text-base mt-2">
+              <p class="text-xs mt-2">
                 6 days remaining until your plan requires update
               </p>
             </VCol>
@@ -157,7 +164,7 @@ const resetPaymentForm = () => {
 
                 <VBtn
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   @click="isConfirmDialogVisible = true"
                 >
                   Cancel Subscription
@@ -169,20 +176,15 @@ const resetPaymentForm = () => {
           <!-- 👉 Confirm Dialog -->
           <ConfirmDialog
             v-model:isDialogVisible="isConfirmDialogVisible"
-            confirmation-msg="Are you sure to cancel your subscription?"
+            confirmation-question="Are you sure to cancel your subscription?"
+            cancel-msg="Unsubscription Cancelled!!"
+            cancel-title="Cancelled"
+            confirm-msg="Your subscription cancelled successfully."
+            confirm-title="Unsubscribed!"
           />
 
           <!-- 👉 plan and pricing dialog -->
-          <VDialog
-            v-model="isPricingPlanDialogVisible"
-            class="v-dialog-xl"
-          >
-            <VCard class="pricing-dialog pa-5 pa-sm-15">
-              <VCardText>
-                <AppPricing lg="4" />
-              </VCardText>
-            </VCard>
-          </VDialog>
+          <PricingPlanDialog v-model:is-dialog-visible="isPricingPlanDialogVisible" />
         </VCardText>
       </VCard>
     </VCol>
@@ -257,7 +259,7 @@ const resetPaymentForm = () => {
                       >
                         <VTextField
                           v-model="cardCvv"
-                          type="password"
+                          type="number"
                           label="CVV Code"
                         />
                       </VCol>
@@ -310,18 +312,20 @@ const resetPaymentForm = () => {
                           :src="card.image"
                           width="46"
                         />
-                        <h4 class="font-weight-medium my-3">
-                          {{ card.name }}
+                        <h4 class="text-base font-weight-medium my-3">
+                          <span class="me-4">
+                            {{ card.name }}
+                          </span>
                           <VChip
                             v-if="card.isPrimary"
                             label
                             color="primary"
-                            size="small"
+                            density="comfortable"
                           >
                             Primary
                           </VChip>
                         </h4>
-                        <span class="text-base">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
+                        <span class="text-sm">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
                       </div>
 
                       <VSpacer />
@@ -329,14 +333,14 @@ const resetPaymentForm = () => {
                       <div class="d-flex flex-column text-sm-end">
                         <div class="d-flex flex-wrap gap-4 order-sm-0 order-1">
                           <VBtn
-                            variant="tonal"
+                            variant="outlined"
                             @click="openEditCardDialog(card)"
                           >
                             Edit
                           </VBtn>
                           <VBtn
                             color="secondary"
-                            variant="tonal"
+                            variant="outlined"
                           >
                             Delete
                           </VBtn>
@@ -351,7 +355,6 @@ const resetPaymentForm = () => {
                 <CardAddEditDialog
                   v-model:isDialogVisible="isCardEditDialogVisible"
                   :card-details="currentCardDetails"
-                  class="v-dialog-lg"
                 />
               </VCol>
 
@@ -365,7 +368,7 @@ const resetPaymentForm = () => {
                 </VBtn>
                 <VBtn
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   @click="resetPaymentForm"
                 >
                   Reset
@@ -457,7 +460,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="Zip Code" />
+                <VTextField
+                  label="Zip Code"
+                  type="number"
+                />
               </VCol>
 
               <!-- 👉 Actions Button -->
@@ -471,7 +477,7 @@ const resetPaymentForm = () => {
                 <VBtn
                   type="reset"
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                 >
                   Reset
                 </VBtn>

@@ -98,17 +98,7 @@ const series = [{ name: 'Traffic Rate', data: [300, 450, 350, 600, 500, 700] }]
 
       <template #append>
         <div class="me-n3 mt-n3">
-          <VBtn
-            icon
-            size="x-small"
-            color="default"
-            variant="text"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>

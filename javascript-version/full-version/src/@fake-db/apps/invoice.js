@@ -1,3 +1,5 @@
+import mock from '@/@fake-db/mock'
+import { paginateArray } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -6,8 +8,6 @@ import avatar5 from '@images/avatars/avatar-5.png'
 import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 import avatar8 from '@images/avatars/avatar-8.png'
-import { paginateArray } from '@/@fake-db/utlis'
-import mock from '@/@fake-db/mock'
 
 const now = new Date()
 const currentMonth = now.toLocaleString('default', { month: '2-digit' })
@@ -28,7 +28,7 @@ const database = [
     total: 3428,
     avatar: '',
     invoiceStatus: 'Paid',
-    balance: '$724',
+    balance: 724,
     dueDate: `${now.getFullYear()}-${currentMonth}-23`,
   },
   {
@@ -100,7 +100,7 @@ const database = [
     total: 4056,
     avatar: avatar4,
     invoiceStatus: 'Draft',
-    balance: '$815',
+    balance: 815,
     dueDate: `${now.getFullYear()}-${currentMonth}-30`,
   },
   {
@@ -118,7 +118,7 @@ const database = [
     total: 2771,
     avatar: '',
     invoiceStatus: 'Paid',
-    balance: '$2771',
+    balance: 2771,
     dueDate: `${now.getFullYear()}-${currentMonth}-24`,
   },
   {
@@ -136,7 +136,7 @@ const database = [
     total: 2713,
     avatar: '',
     invoiceStatus: 'Draft',
-    balance: '$407',
+    balance: 407,
     dueDate: `${now.getFullYear()}-${currentMonth}-22`,
   },
   {
@@ -154,7 +154,7 @@ const database = [
     total: 4309,
     avatar: avatar5,
     invoiceStatus: 'Paid',
-    balance: '-$205',
+    balance: -205,
     dueDate: `${now.getFullYear()}-${currentMonth}-13`,
   },
   {
@@ -190,7 +190,7 @@ const database = [
     total: 4776,
     avatar: avatar7,
     invoiceStatus: 'Downloaded',
-    balance: '$305',
+    balance: 305,
     dueDate: `${now.getFullYear()}-${currentMonth}-02`,
   },
   {
@@ -208,7 +208,7 @@ const database = [
     total: 3789,
     avatar: avatar8,
     invoiceStatus: 'Partial Payment',
-    balance: '$666',
+    balance: 666,
     dueDate: `${now.getFullYear()}-${currentMonth}-18`,
   },
   {
@@ -280,7 +280,7 @@ const database = [
     total: 5285,
     avatar: avatar6,
     invoiceStatus: 'Partial Payment',
-    balance: '-$202',
+    balance: -202,
     dueDate: `${now.getFullYear()}-${currentMonth}-02`,
   },
   {
@@ -298,7 +298,7 @@ const database = [
     total: 3668,
     avatar: avatar5,
     invoiceStatus: 'Downloaded',
-    balance: '$731',
+    balance: 731,
     dueDate: `${now.getFullYear()}-${currentMonth}-15`,
   },
   {
@@ -316,7 +316,7 @@ const database = [
     total: 4372,
     avatar: '',
     invoiceStatus: 'Sent',
-    balance: '-$344',
+    balance: -344,
     dueDate: `${now.getFullYear()}-${currentMonth}-17`,
   },
   {
@@ -334,7 +334,7 @@ const database = [
     total: 3198,
     avatar: avatar4,
     invoiceStatus: 'Partial Payment',
-    balance: '-$253',
+    balance: -253,
     dueDate: `${now.getFullYear()}-${currentMonth}-16`,
   },
   {
@@ -370,7 +370,7 @@ const database = [
     total: 5612,
     avatar: avatar3,
     invoiceStatus: 'Downloaded',
-    balance: '$883',
+    balance: 883,
     dueDate: `${now.getFullYear()}-${currentMonth}-12`,
   },
   {
@@ -550,7 +550,7 @@ const database = [
     total: 3904,
     avatar: '',
     invoiceStatus: 'Paid',
-    balance: '$951',
+    balance: 951,
     dueDate: `${now.getFullYear()}-${currentMonth}-30`,
   },
   {
@@ -568,7 +568,7 @@ const database = [
     total: 3102,
     avatar: avatar3,
     invoiceStatus: 'Partial Payment',
-    balance: '-$153',
+    balance: -153,
     dueDate: `${now.getFullYear()}-${currentMonth}-25`,
   },
   {
@@ -604,7 +604,7 @@ const database = [
     total: 2825,
     avatar: avatar1,
     invoiceStatus: 'Partial Payment',
-    balance: '-$459',
+    balance: -459,
     dueDate: `${now.getFullYear()}-${currentMonth}-14`,
   },
   {
@@ -766,7 +766,7 @@ const database = [
     total: 3325,
     avatar: '',
     invoiceStatus: 'Paid',
-    balance: '$361',
+    balance: 361,
     dueDate: `${now.getFullYear()}-${currentMonth}-02`,
   },
   {
@@ -892,7 +892,7 @@ const database = [
     total: 4263,
     avatar: '',
     invoiceStatus: 'Draft',
-    balance: '$762',
+    balance: 762,
     dueDate: `${now.getFullYear()}-${currentMonth}-12`,
   },
   {
@@ -910,17 +910,73 @@ const database = [
     total: 3171,
     avatar: avatar3,
     invoiceStatus: 'Paid',
-    balance: '-$205',
+    balance: -205,
     dueDate: `${now.getFullYear()}-${currentMonth}-25`,
   },
 ]
 
+
+// 👉 Get invoice list
+// eslint-disable-next-line sonarjs/cognitive-complexity
 mock.onGet('/apps/invoices').reply(config => {
-  const { q = '', status = null, perPage = 0, currentPage = 1, startDate = '', endDate = '' } = config.params ?? {}
+  const { q = '', status = null, startDate = '', endDate = '', options = {} } = config.params ?? {}
+  const { sortBy = '', page = 1, itemsPerPage = 10 } = options
+  const sort = JSON.parse(JSON.stringify(sortBy))
   const queryLowered = q.toLowerCase()
+
+  // Filtering invoices
   let filteredInvoices = database.filter(invoice => ((invoice.client.name.toLowerCase().includes(queryLowered)
-        || invoice.client.companyEmail.toLowerCase().includes(queryLowered))
+        || invoice.client.companyEmail.toLowerCase().includes(queryLowered)
+        || invoice.total.toString().includes(queryLowered)
+        || invoice.issuedDate.toString().includes(queryLowered)
+        || invoice.id.toString().includes(queryLowered))
         && invoice.invoiceStatus === (status || invoice.invoiceStatus))).reverse()
+
+  // Sorting invoices
+  if (sort.length) {
+    if (sort[0]?.key === 'client') {
+      filteredInvoices = filteredInvoices.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.client.name.localeCompare(b.client.name)
+        
+        return b.client.name.localeCompare(a.client.name)
+      })
+    }
+    else if (sort[0]?.key === 'total') {
+      filteredInvoices = filteredInvoices.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.total - b.total
+        
+        return b.total - a.total
+      })
+    }
+    else if (sort[0]?.key === 'id') {
+      filteredInvoices = filteredInvoices.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.id - b.id
+        
+        return b.id - a.id
+      })
+    }
+    else if (sort[0]?.key === 'date') {
+      filteredInvoices = filteredInvoices.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return new Date(a.issuedDate).getTime() - new Date(b.issuedDate).getTime()
+        
+        return new Date(b.issuedDate).getTime() - new Date(a.issuedDate).getTime()
+      })
+    }
+    else if (sort[0]?.key === 'balance') {
+      filteredInvoices = filteredInvoices.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.balance - b.balance
+        
+        return b.balance - a.balance
+      })
+    }
+  }
+
+  // filtering invoices by date
   if (startDate && endDate) {
     filteredInvoices = filteredInvoices.filter(invoiceObj => {
       const start = new Date(startDate).getTime()
@@ -930,10 +986,9 @@ mock.onGet('/apps/invoices').reply(config => {
       return issuedDate >= start && issuedDate <= end
     })
   }
-  const totalPage = Math.round(filteredInvoices.length / perPage) ? Math.round(filteredInvoices.length / perPage) : 1
   const totalInvoices = filteredInvoices.length
   
-  return [200, { invoices: paginateArray(filteredInvoices, perPage, currentPage), totalPage, totalInvoices }]
+  return [200, { invoices: paginateArray(filteredInvoices, itemsPerPage, page), totalInvoices, page: page > Math.ceil(totalInvoices / itemsPerPage) ? 1 : page }]
 })
 
 // 👉 Get a single invoice
@@ -966,4 +1021,21 @@ mock.onGet('/apps/invoice/clients').reply(() => {
   const clients = database.map(invoice => invoice.client)
   
   return [200, clients.slice(0, 5)]
+})
+
+// 👉 Delete Invoice
+mock.onDelete(/\/apps\/invoices\/\d+/).reply(config => {
+  // Get event id from URL
+  const invoiceId = config.url?.substring(config.url.lastIndexOf('/') + 1)
+
+  // Convert Id to number
+  const id = Number(invoiceId)
+  const invoiceIndex = database.findIndex(e => e.id === id)
+  if (invoiceIndex >= 0) {
+    database.splice(invoiceIndex, 1)
+    
+    return [200]
+  }
+  
+  return [400]
 })

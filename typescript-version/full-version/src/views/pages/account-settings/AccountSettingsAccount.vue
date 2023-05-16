@@ -114,17 +114,14 @@ const currencies = [
           <!-- 👉 Avatar -->
           <VAvatar
             rounded="sm"
-            size="100"
+            size="120"
             class="me-6"
             :image="accountDataLocal.avatarImg"
           />
 
           <!-- 👉 Upload Photo -->
-          <form
-            ref="refForm"
-            class="d-flex flex-column justify-center gap-3"
-          >
-            <div class="d-flex flex-wrap gap-2">
+          <form class="d-flex flex-column justify-center gap-4">
+            <div class="d-flex flex-wrap gap-4">
               <VBtn
                 color="primary"
                 @click="refInputEl?.click()"
@@ -254,6 +251,7 @@ const currencies = [
               >
                 <VTextField
                   v-model="accountDataLocal.zip"
+
                   label="Zip Code"
                 />
               </VCol>
@@ -317,7 +315,7 @@ const currencies = [
 
                 <VBtn
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   type="reset"
                   @click.prevent="resetForm"
                 >
@@ -357,6 +355,10 @@ const currencies = [
   <!-- Confirm Dialog -->
   <ConfirmDialog
     v-model:isDialogVisible="isConfirmDialogOpen"
-    confirmation-msg="Are you sure you want to deactivate your account?"
+    confirmation-question="Are you sure you want to deactivate your account?"
+    confirm-title="Deactivated!"
+    confirm-msg="Your account has been deactivated successfully."
+    cancel-title="Cancelled"
+    cancel-msg="Account Deactivation Cancelled!"
   />
 </template>

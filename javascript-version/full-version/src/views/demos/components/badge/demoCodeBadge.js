@@ -96,7 +96,9 @@ export const color = { ts: `<template>
   <div class="demo-space-x">
     <VBadge
       dot
-      color="primary"
+      color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -107,6 +109,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="secondary"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -117,6 +121,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -127,6 +133,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="info"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -137,6 +145,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="warning"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -147,6 +157,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="error"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -159,7 +171,9 @@ export const color = { ts: `<template>
   <div class="demo-space-x">
     <VBadge
       dot
-      color="primary"
+      color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -170,6 +184,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="secondary"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -180,6 +196,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="success"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -190,6 +208,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="info"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -200,6 +220,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="warning"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -210,6 +232,8 @@ export const color = { ts: `<template>
     <VBadge
       dot
       color="error"
+      offset-x="-1"
+      offset-y="-1"
     >
       <VIcon
         size="25"
@@ -331,6 +355,88 @@ import avatar1 from '@images/avatars/avatar-1.png'
     <!-- icon -->
     <VBadge icon="mdi-lock-open-outline">
       <VAvatar>
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+` }
+
+export const maximumValue = { ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBadge
+      content="99"
+      max="99"
+      offset-x="5"
+      offset-y="-1"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      content="100"
+      max="99"
+      offset-x="5"
+      offset-y="-1"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      content="1000"
+      max="999"
+      offset-x="5"
+      offset-y="-1"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+  </div>
+</template>
+`, js: `<script setup>
+import avatar1 from '@images/avatars/avatar-1.png'
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VBadge
+      content="99"
+      max="99"
+      offset-x="5"
+      offset-y="-1"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      content="100"
+      max="99"
+      offset-x="5"
+      offset-y="-1"
+    >
+      <VAvatar size="48">
+        <VImg :src="avatar1" />
+      </VAvatar>
+    </VBadge>
+
+    <VBadge
+      content="1000"
+      max="999"
+      offset-x="5"
+      offset-y="-1"
+    >
+      <VAvatar size="48">
         <VImg :src="avatar1" />
       </VAvatar>
     </VBadge>

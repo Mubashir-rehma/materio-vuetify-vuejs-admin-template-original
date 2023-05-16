@@ -54,7 +54,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Phone No" />
+              <VTextField
+                label="Phone No"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Address -->
@@ -70,7 +73,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Pincode" />
+              <VTextField
+                label="Pincode"
+                type="number"
+              />
             </VCol>
 
             <!-- 👉 Landmark -->
@@ -246,7 +252,10 @@ const paymentMethods = [
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
                 <VCol cols="12">
-                  <VTextField label="Card Number" />
+                  <VTextField
+                    label="Card Number"
+                    type="number"
+                  />
                 </VCol>
 
                 <!-- 👉 Name -->
@@ -262,7 +271,10 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <VTextField label="Expiry Date" />
+                  <VTextField
+                    label="Expiry Date"
+                    type="string"
+                  />
                 </VCol>
 
                 <!-- 👉 CVV Code -->
@@ -270,7 +282,10 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <VTextField label="CVV Code" />
+                  <VTextField
+                    label="CVV Code"
+                    type="number"
+                  />
                 </VCol>
               </VRow>
             </VForm>

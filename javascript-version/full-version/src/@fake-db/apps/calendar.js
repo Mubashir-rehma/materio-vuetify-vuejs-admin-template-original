@@ -1,4 +1,5 @@
 import mock from '@/@fake-db/mock'
+import { genId } from '@/@fake-db/utils'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
@@ -11,8 +12,8 @@ const data = {
       id: '1',
       url: '',
       title: 'Design Review',
-      start: date.toUTCString(),
-      end: nextDay.toUTCString(),
+      start: date,
+      end: nextDay,
       allDay: false,
       extendedProps: {
         calendar: 'Business',
@@ -22,8 +23,8 @@ const data = {
       id: '2',
       url: '',
       title: 'Meeting With Client',
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -11).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -10).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
       extendedProps: {
         calendar: 'Business',
@@ -34,8 +35,8 @@ const data = {
       url: '',
       title: 'Family Trip',
       allDay: true,
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -9).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -7).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
       extendedProps: {
         calendar: 'Holiday',
       },
@@ -44,8 +45,8 @@ const data = {
       id: '4',
       url: '',
       title: 'Doctor\'s Appointment',
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -11).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -10).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
       extendedProps: {
         calendar: 'Personal',
@@ -55,8 +56,8 @@ const data = {
       id: '5',
       url: '',
       title: 'Dart Game?',
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -13).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -12).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
         calendar: 'ETC',
@@ -66,8 +67,8 @@ const data = {
       id: '6',
       url: '',
       title: 'Meditation',
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -13).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -12).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
         calendar: 'Personal',
@@ -77,8 +78,8 @@ const data = {
       id: '7',
       url: '',
       title: 'Dinner',
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -13).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -12).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
         calendar: 'Family',
@@ -88,8 +89,8 @@ const data = {
       id: '8',
       url: '',
       title: 'Product Review',
-      start: new Date(date.getFullYear(), date.getMonth() + 1, -13).toUTCString(),
-      end: new Date(date.getFullYear(), date.getMonth() + 1, -12).toUTCString(),
+      start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
+      end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
         calendar: 'Business',
@@ -99,8 +100,8 @@ const data = {
       id: '9',
       url: '',
       title: 'Monthly Meeting',
-      start: nextMonth.toUTCString(),
-      end: nextMonth.toUTCString(),
+      start: nextMonth,
+      end: nextMonth,
       allDay: true,
       extendedProps: {
         calendar: 'Business',
@@ -110,8 +111,8 @@ const data = {
       id: '10',
       url: '',
       title: 'Monthly Checkup',
-      start: prevMonth.toUTCString(),
-      end: prevMonth.toUTCString(),
+      start: prevMonth,
+      end: prevMonth,
       allDay: true,
       extendedProps: {
         calendar: 'Personal',
@@ -137,11 +138,8 @@ mock.onGet('/apps/calendar/events').reply(config => {
 mock.onPost('/apps/calendar/events').reply(config => {
   // Get event from post data
   const { event } = JSON.parse(config.data)
-  const { length } = data.events
-  let lastIndex = 0
-  if (length)
-    lastIndex = Number(data.events[length - 1].id)
-  event.id = String(lastIndex + 1)
+
+  event.id = String(genId(data.events))
   data.events.push(event)
   
   return [201, { event }]

@@ -43,8 +43,8 @@ const isChatContactActive = computed(() => {
     >
       <VAvatar
         size="40"
-        variant="tonal"
-        :color="resolveAvatarBadgeVariant(props.user.status)"
+        :variant="!props.user.avatar ? 'tonal' : undefined"
+        :color="!props.user.avatar ? resolveAvatarBadgeVariant(props.user.status) : undefined"
       >
         <VImg
           v-if="props.user.avatar"
@@ -80,29 +80,27 @@ const isChatContactActive = computed(() => {
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 
 .chat-contact {
-  border-radius: vuetify.$card-border-radius;
-  padding-block: 10px;
+  border-radius: vuetify.$border-radius-root;
+  margin-block-end: 6px;
+  padding-block: 12px;
   padding-inline: var(--chat-content-spacing-x);
 
   @include mixins.before-pseudo;
   @include vuetifyStates.states($active: false);
 
   &.chat-contact-active {
+    background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, #fff 300%);
+    color: #fff;
+
+    --v-theme-on-background: #fff;
+
     .v-avatar {
       background: #fff;
-      outline: 2px solid #fff;
     }
   }
 
   .v-badge--bordered .v-badge__badge::after {
     color: #fff;
-  }
-
-  &.chat-contact-active {
-    background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, #fff 300%);
-    color: #fff;
-
-    --v-theme-on-background: #fff;
   }
 }
 </style>

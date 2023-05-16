@@ -7,8 +7,8 @@ import { hexToRgb } from '@layouts/utils'
 const vuetifyTheme = useTheme()
 const { theme } = useThemeConfig()
 
-const currentTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.colors })
-const variableTheme = controlledComputed(theme, () => { return vuetifyTheme.current.value.variables })
+const currentTheme = controlledComputed(theme, () => vuetifyTheme.current.value.colors)
+const variableTheme = controlledComputed(theme, () => vuetifyTheme.current.value.variables)
 
 const chartOptions = controlledComputed(theme, () => {
   return {
@@ -85,7 +85,10 @@ const chartOptions = controlledComputed(theme, () => {
             $25,980
           </h6>
           <span class="text-success text-xs text-no-wrap">
-            <VIcon icon="mdi-chevron-up" />
+            <VIcon
+              icon="mdi-chevron-up"
+              size="24"
+            />
             <span>15.6%</span>
           </span>
         </div>

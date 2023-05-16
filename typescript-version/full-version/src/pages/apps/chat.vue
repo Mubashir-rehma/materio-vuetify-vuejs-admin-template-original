@@ -89,6 +89,14 @@ const isActiveChatUserProfileSidebarOpen = ref(false)
 
 // file input
 const refInputEl = ref<HTMLElement>()
+
+const moreList = [
+  { title: 'View Contact', value: 'View Contact' },
+  { title: 'Mute Notifications', value: 'Mute Notifications' },
+  { title: 'Block Contact', value: 'Block Contact' },
+  { title: 'Clear Chat', value: 'Clear Chat' },
+  { title: 'Report', value: 'Report' },
+]
 </script>
 
 <template>
@@ -149,19 +157,12 @@ const refInputEl = ref<HTMLElement>()
         <!-- 👉 Active chat header -->
         <div class="active-chat-header d-flex align-center text-medium-emphasis">
           <!-- Sidebar toggler -->
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
+          <IconBtn
             class="d-md-none me-3"
             @click="isLeftSidebarOpen = true"
           >
-            <VIcon
-              size="24"
-              icon="mdi-menu"
-            />
-          </VBtn>
+            <VIcon icon="mdi-menu" />
+          </IconBtn>
 
           <!-- avatar -->
           <div
@@ -178,8 +179,8 @@ const refInputEl = ref<HTMLElement>()
             >
               <VAvatar
                 size="40"
-                variant="tonal"
-                :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
+                :variant="!store.activeChat.contact.avatar ? 'tonal' : undefined"
+                :color="!store.activeChat.contact.avatar ? resolveAvatarBadgeVariant(store.activeChat.contact.status) : undefined"
                 class="cursor-pointer"
               >
                 <VImg
@@ -192,7 +193,7 @@ const refInputEl = ref<HTMLElement>()
             </VBadge>
 
             <div class="flex-grow-1 ms-4 overflow-hidden">
-              <h6 class="text-base font-weight-regular">
+              <h6 class="text-base font-weight-regular text-medium-emphasis">
                 {{ store.activeChat.contact.fullName }}
               </h6>
               <span class="d-block text-sm text-truncate text-disabled">{{ store.activeChat.contact.role }}</span>
@@ -203,64 +204,18 @@ const refInputEl = ref<HTMLElement>()
 
           <!-- Header right content -->
           <div class="d-sm-flex align-center d-none">
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-phone"
-              />
-            </VBtn>
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-video-outline"
-              />
-            </VBtn>
-            <VBtn
-              variant="text"
-              color="default"
-              icon
-              size="small"
-            >
-              <VIcon
-                size="24"
-                icon="mdi-magnify"
-              />
-            </VBtn>
+            <IconBtn>
+              <VIcon icon="mdi-phone" />
+            </IconBtn>
+            <IconBtn>
+              <VIcon icon="mdi-video-outline" />
+            </IconBtn>
+            <IconBtn>
+              <VIcon icon="mdi-magnify" />
+            </IconBtn>
           </div>
 
-          <VBtn
-            variant="text"
-            color="default"
-            icon
-            size="small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-
-            <VMenu activator="parent">
-              <VList>
-                <VListItem
-                  v-for="(item, index) in ['View Contact', 'Mute Notifications', 'Block Contact', 'Clear Chat', 'Report']"
-                  :key="index"
-                  :value="index"
-                >
-                  <VListItemTitle>{{ item }}</VListItemTitle>
-                </VListItem>
-              </VList>
-            </VMenu>
-          </VBtn>
+          <MoreBtn :menu-list="moreList" />
         </div>
 
         <VDivider />
@@ -289,31 +244,22 @@ const refInputEl = ref<HTMLElement>()
             autofocus
           >
             <template #append-inner>
-              <VBtn
-                icon
-                size="small"
-                variant="text"
-                color="default"
-              >
+              <IconBtn>
                 <VIcon
-                  size="24"
                   icon="mdi-microphone-outline"
+                  size="22"
                 />
-              </VBtn>
+              </IconBtn>
 
-              <VBtn
-                icon
-                size="small"
-                variant="text"
-                color="default"
+              <IconBtn
                 class="me-4"
                 @click="refInputEl?.click()"
               >
                 <VIcon
-                  size="24"
                   icon="mdi-attachment"
+                  size="22"
                 />
-              </VBtn>
+              </IconBtn>
 
               <VBtn @click="sendMessage">
                 Send
@@ -366,7 +312,6 @@ meta:
 <style lang="scss">
 @use "@styles/variables/_vuetify.scss";
 @use "@core/scss/base/_mixins.scss";
-@use "vuetify/lib/styles/tools/elevation" as elevation;
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // Variables
@@ -383,7 +328,7 @@ $chat-app-header-height: 68px;
 .chat-app-layout {
   border-radius: vuetify.$card-border-radius;
 
-  @include elevation.elevation(vuetify.$card-elevation);
+  @include mixins.elevation(vuetify.$card-elevation);
 
   $sel-chat-app-layout: &;
 
@@ -444,6 +389,10 @@ $chat-app-header-height: 68px;
     .v-field__append-inner {
       align-items: center;
       padding-block-start: 0;
+    }
+
+    .v-field--appended {
+      padding-inline-end: 6px;
     }
   }
 }

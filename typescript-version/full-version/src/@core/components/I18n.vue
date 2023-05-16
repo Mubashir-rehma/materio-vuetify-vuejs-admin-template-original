@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Anchor } from 'vuetify/lib/components'
 import type { I18nLanguage } from '@layouts/types'
 
 const props = withDefaults(defineProps<Props>(), {
@@ -12,25 +11,23 @@ defineEmits<{
 
 interface Props {
   languages: I18nLanguage[]
-  location?: Anchor
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  location?: any
 }
 
 const { locale } = useI18n({ useScope: 'global' })
+
+watch(locale, val => {
+  document.documentElement.setAttribute('lang', val as string)
+})
 
 const currentLang = ref(['en'])
 </script>
 
 <template>
-  <VBtn
-    icon
-    variant="text"
-    color="default"
-    size="small"
-  >
-    <VIcon
-      icon="mdi-translate"
-      size="24"
-    />
+  <IconBtn>
+    <VIcon icon="mdi-translate" />
+
     <!-- Menu -->
     <VMenu
       activator="parent"
@@ -55,5 +52,5 @@ const currentLang = ref(['en'])
         </VListItem>
       </VList>
     </VMenu>
-  </VBtn>
+  </IconBtn>
 </template>

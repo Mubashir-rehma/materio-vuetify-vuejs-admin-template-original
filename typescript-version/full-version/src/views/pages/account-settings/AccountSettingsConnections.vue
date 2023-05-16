@@ -2,7 +2,7 @@
 import asana from '@images/icons/brands/asana.png'
 import behance from '@images/icons/brands/behance.png'
 import dribbble from '@images/icons/brands/dribbble.png'
-import facebook from '@images/icons/brands/facebook.png'
+import facebook from '@images/icons/brands/facebook1.png'
 import github from '@images/icons/brands/github.png'
 import google from '@images/icons/brands/google.png'
 import intagram from '@images/icons/brands/instagram.png'
@@ -87,25 +87,28 @@ const socialAccounts = ref([
         <VCard
           flat
           title="Connected Accounts"
-          subtitle="Display content from your connected accounts on your site"
         >
+          <template #subtitle>
+            <span class="text-base">Display content from your connected accounts on your site</span>
+          </template>
           <VCardText>
             <VList class="card-list">
               <VListItem
                 v-for="item in connectedAccounts"
                 :key="item.logo"
-                :title="item.name"
               >
                 <template #prepend>
-                  <VAvatar start>
-                    <VImg
-                      :src="item.logo"
-                      height="30"
-                    />
-                  </VAvatar>
+                  <VAvatar
+                    start
+                    :image="item.logo"
+                    size="30"
+                  />
                 </template>
+                <VListItemTitle>
+                  <span class="font-weight-medium">{{ item.name }}</span>
+                </VListItemTitle>
 
-                <VListItemSubtitle class="text-xs">
+                <VListItemSubtitle>
                   {{ item.subtitle }}
                 </VListItemSubtitle>
 
@@ -132,29 +135,35 @@ const socialAccounts = ref([
         <VCard
           flat
           title="Social Accounts"
-          subtitle="Display content from social accounts on your site"
         >
+          <template #subtitle>
+            <span class="text-base">Display content from social accounts on your site</span>
+          </template>
+
           <VCardText>
             <VList class="card-list">
               <VListItem
                 v-for="item in socialAccounts"
                 :key="item.logo"
-                :title="item.name"
               >
                 <template #prepend>
-                  <VAvatar start>
-                    <VImg
-                      :src="item.logo"
-                      height="30"
-                    />
-                  </VAvatar>
+                  <VAvatar
+                    start
+                    :image="item.logo"
+                    size="36"
+                  />
                 </template>
+
+                <VListItemTitle>
+                  <span class="font-weight-medium">{{ item.name }}</span>
+                </VListItemTitle>
 
                 <VListItemSubtitle
                   v-if="item.links?.link"
                   tag="a"
                   :href="item.links?.link"
                   style="opacity: 1;"
+                  class="text-primary"
                 >
                   {{ item.links?.username }}
                 </VListItemSubtitle>
@@ -170,13 +179,13 @@ const socialAccounts = ref([
                   <VListItemAction>
                     <VBtn
                       icon
-                      variant="tonal"
+                      variant="outlined"
                       size="small"
                       :color="item.connected ? 'error' : 'secondary'"
                       class="rounded"
                     >
                       <VIcon
-                        size="20"
+                        size="24"
                         :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
                       />
                     </VBtn>
@@ -190,3 +199,9 @@ const socialAccounts = ref([
     </VRow>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 0.625rem;
+}
+</style>

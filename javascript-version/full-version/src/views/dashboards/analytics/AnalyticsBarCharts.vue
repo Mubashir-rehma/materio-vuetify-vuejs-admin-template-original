@@ -5,10 +5,7 @@ import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 const vuetifyTheme = useTheme()
 const { theme } = useThemeConfig()
-
-const currentTheme = controlledComputed(theme, () => {
-  return vuetifyTheme.current.value.colors
-})
+const currentTheme = controlledComputed(theme, () => vuetifyTheme.current.value.colors)
 
 const series = [{
   name: '2020',
@@ -93,9 +90,9 @@ const chartOptions = controlledComputed(theme, () => {
         :height="95"
       />
 
-      <p class="text-center font-weight-medium mb-0">
+      <h6 class="text-sm text-center font-weight-medium">
         Sessions
-      </p>
+      </h6>
     </VCardText>
   </VCard>
 </template>

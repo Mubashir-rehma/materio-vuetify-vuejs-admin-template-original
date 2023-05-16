@@ -42,17 +42,7 @@ const analytics = [
 
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -67,8 +57,10 @@ const analytics = [
             <VAvatar :image="item.img.value" />
           </template>
 
-          <VListItemTitle class="text-h6 mb-1">
-            {{ item.title }}
+          <VListItemTitle>
+            <span class="text-h6">
+              {{ item.title }}
+            </span>
           </VListItemTitle>
           <VListItemSubtitle class="text-xs">
             {{ item.subtitle }}

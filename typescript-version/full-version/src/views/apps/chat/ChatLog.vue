@@ -75,9 +75,7 @@ const msgGroups = computed(() => {
 </script>
 
 <template>
-  <div
-    class="chat-log pa-5"
-  >
+  <div class="chat-log pa-5">
     <div
       v-for="(msgGrp, index) in msgGroups"
       :key="msgGrp.senderId + String(index)"
@@ -91,7 +89,7 @@ const msgGroups = computed(() => {
         class="chat-avatar"
         :class="msgGrp.senderId !== contact.id ? 'ms-4' : 'me-4'"
       >
-        <VAvatar size="38">
+        <VAvatar size="32">
           <VImg :src="msgGrp.senderId === contact.id ? contact.avatar : store.profileUser?.avatar" />
         </VAvatar>
       </div>
@@ -105,7 +103,7 @@ const msgGroups = computed(() => {
           class="chat-content text-sm py-3 px-4 elevation-1"
           :class="[
             msgGrp.senderId === contact.id ? 'bg-surface chat-left' : 'bg-primary text-white chat-right',
-            msgGrp.messages.length - 1 !== msgIndex ? 'mb-2' : 'mb-1',
+            msgGrp.messages.length - 1 !== msgIndex ? 'mb-3' : 'mb-1',
           ]"
         >
           {{ msgData.message }}

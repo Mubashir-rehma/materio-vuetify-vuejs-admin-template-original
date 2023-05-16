@@ -40,24 +40,17 @@ const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 <style lang="scss">
 @use "@layouts/styles/mixins" as layoutsMixins;
 
-.triangle-bg {
+.v-card .triangle-bg {
   position: absolute;
   inline-size: 10.375rem;
   inset-block-end: 0;
   inset-inline-end: 0;
 }
 
-.trophy {
+.v-card .trophy {
   position: absolute;
   inline-size: 4.9375rem;
   inset-block-end: 2rem;
   inset-inline-end: 2rem;
-}
-
-// for rtl only
-.flip-in-rtl {
-  @include layoutsMixins.rtl {
-    transform: scaleX(-1);
-  }
 }
 </style>

@@ -153,23 +153,13 @@ const lastThreeTransactions = [
 
           <template #append>
             <div class="mt-n7 me-n3">
-              <VBtn
-                icon
-                size="x-small"
-                color="default"
-                variant="text"
-              >
-                <VIcon
-                  size="24"
-                  icon="mdi-dots-vertical"
-                />
-              </VBtn>
+              <MoreBtn />
             </div>
           </template>
         </VCardItem>
 
         <VCardText class="pt-2">
-          <VList class="card-list">
+          <VList class="card-list mt-2">
             <VListItem
               v-for="transaction in lastThreeTransactions"
               :key="transaction.title"
@@ -195,7 +185,7 @@ const lastThreeTransactions = [
 
           <VBtn
             block
-            class="mt-6"
+            class="mt-4"
           >
             View Report
           </VBtn>
@@ -219,4 +209,10 @@ $responsive-border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity
     border-block-end: $responsive-border;
   }
 }
+</style>
+
+<style lang="scss" scoped>
+  .card-list {
+    --v-card-list-gap: 1rem;
+  }
 </style>

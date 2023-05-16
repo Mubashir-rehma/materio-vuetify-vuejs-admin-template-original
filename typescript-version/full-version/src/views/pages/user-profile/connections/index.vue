@@ -19,6 +19,13 @@ const fetchProjectData = () => {
 }
 
 watch(router, fetchProjectData, { immediate: true })
+
+const moreBtnList = [
+  { title: 'Share connection', value: 'Share connection' },
+  { title: 'Block connection', value: 'Block connection' },
+  { type: 'divider', class: 'my-2' },
+  { title: 'Delete', value: 'Delete', class: 'text-error' },
+]
 </script>
 
 <template>
@@ -32,37 +39,10 @@ watch(router, fetchProjectData, { immediate: true })
     >
       <VCard>
         <div class="vertical-more">
-          <VBtn
-            icon
-            variant="text"
-            color="default"
-            size="x-small"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-
-            <VMenu activator="parent">
-              <VList density="compact">
-                <VListItem
-                  v-for="(item, index) in ['Share connection', 'Block connection']"
-                  :key="index"
-                  :value="index"
-                >
-                  <VListItemTitle>{{ item }}</VListItemTitle>
-                </VListItem>
-
-                <VDivider class="my-2" />
-
-                <VListItem
-                  title="Delete"
-                  value="Delete"
-                  class="text-error"
-                />
-              </VList>
-            </VMenu>
-          </VBtn>
+          <MoreBtn
+            item-props
+            :menu-list="moreBtnList"
+          />
         </div>
 
         <VCardItem>
@@ -73,7 +53,7 @@ watch(router, fetchProjectData, { immediate: true })
               class="mt-3"
             />
 
-            <p class="mt-5 mb-0">
+            <p class="mt-6 mb-0">
               {{ data.name }}
             </p>
             <span class="text-body-1">{{ data.designation }}</span>
@@ -83,16 +63,18 @@ watch(router, fetchProjectData, { immediate: true })
                 v-for="chip in data.chips"
                 :key="chip.title"
                 :color="chip.color"
-                size="small"
+                density="compact"
               >
-                {{ chip.title }}
+                <span class="text-xs">
+                  {{ chip.title }}
+                </span>
               </VChip>
             </div>
           </VCardTitle>
         </VCardItem>
 
         <VCardText>
-          <div class="d-flex justify-space-around">
+          <div class="d-flex justify-space-around mt-1">
             <div class="text-center">
               <h6 class="text-h6">
                 {{ data.projects }}
@@ -115,24 +97,18 @@ watch(router, fetchProjectData, { immediate: true })
 
           <div class="d-flex justify-center gap-4 mt-6">
             <VBtn
-              prepend-icon="mdi-account-check-outline"
+              :prepend-icon="data.isConnected ? 'mdi-account-check-outline' : 'mdi-account-plus-outline'"
               :variant="data.isConnected ? 'elevated' : 'tonal'"
             >
-              Connected
+              {{ data.isConnected ? 'connected' : 'connect' }}
             </VBtn>
 
-            <VBtn
-              icon
+            <IconBtn
               variant="tonal"
-              color="default"
-              size="small"
               class="rounded"
             >
-              <VIcon
-                size="24"
-                icon="mdi-email-outline"
-              />
-            </VBtn>
+              <VIcon icon="mdi-email-outline" />
+            </IconBtn>
           </div>
         </VCardText>
       </VCard>

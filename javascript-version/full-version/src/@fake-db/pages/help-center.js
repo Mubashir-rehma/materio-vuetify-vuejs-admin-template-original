@@ -15,7 +15,7 @@ const data = {
       slug: 'getting-started',
       title: 'Getting Started',
       img: rocket,
-      subtitle: 'Whether you\'re new or you\'re a power user, this article will…',
+      subtitle: 'Whether you\'re new or you\'re a power user, this article will',
     },
     {
       slug: 'first-steps',
@@ -27,7 +27,7 @@ const data = {
       slug: 'external-content',
       title: 'Add External Content',
       img: keyboard,
-      subtitle: 'This article will show you how to expand the functionality of...',
+      subtitle: 'This article will show you how to expand the functionality of App',
     },
   ],
   categories: [

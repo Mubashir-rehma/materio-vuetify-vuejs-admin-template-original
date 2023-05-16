@@ -27,13 +27,13 @@ const props = defineProps<Props>()
             />
           </template>
           <VListItemTitle>
-            <span class="font-weight-medium me-1">{{ item.property }}:</span>
+            <span class="font-weight-medium me-2">{{ item.property }}:</span>
             <span>{{ item.value }}</span>
           </VListItemTitle>
         </VListItem>
       </VList>
 
-      <p class="text-xs mt-5">
+      <p class="text-xs mb-5 mt-6">
         CONTACTS
       </p>
 
@@ -56,7 +56,7 @@ const props = defineProps<Props>()
         </VListItem>
       </VList>
 
-      <p class="text-xs mt-5">
+      <p class="text-xs mb-5 mt-6">
         TEAMS
       </p>
 
@@ -84,7 +84,7 @@ const props = defineProps<Props>()
 
   <VCard>
     <VCardText>
-      <p class="text-xs">
+      <p class="text-xs mb-5">
         OVERVIEW
       </p>
 

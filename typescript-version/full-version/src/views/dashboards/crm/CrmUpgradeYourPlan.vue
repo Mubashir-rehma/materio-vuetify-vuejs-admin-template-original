@@ -27,17 +27,7 @@ const savedCards = [
       <!-- 👉 menu -->
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -72,7 +62,7 @@ const savedCards = [
         <VSpacer />
         <div class="d-flex align-center">
           <sup>
-            <h6 class="text-xs font-weight-regular">$</h6>
+            <h6 class="text-sm font-weight-regular">$</h6>
           </sup>
           <span class="text-h5">5250</span>
           <sub>
@@ -83,15 +73,14 @@ const savedCards = [
       <!-- !SECTION -->
 
       <!-- SECTION Payment Details -->
+      <div class="font-weight-medium mt-3 text-high-emphasis">
+        Payment Details
+      </div>
       <VList class="card-list mt-1">
-        <VListSubheader class="font-weight-medium">
-          Payment details
-        </VListSubheader>
-
         <VListItem
           v-for="card in savedCards"
           :key="card.logo"
-          class="mb-3"
+          class="my-3"
         >
           <!-- 👉 Avatar -->
           <template #prepend>
@@ -99,8 +88,9 @@ const savedCards = [
               rounded
               start
               :size="45"
-              :image="card.logo"
-            />
+            >
+              <VImg :src="card.logo" />
+            </VAvatar>
           </template>
 
           <!-- 👉 Title and Subtitle -->
@@ -140,6 +130,7 @@ const savedCards = [
           <VCol cols="12">
             <VTextField
               placeholder="Email Address"
+              density="compact"
               class="mb-3"
             />
             <VBtn

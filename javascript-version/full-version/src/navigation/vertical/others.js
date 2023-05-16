@@ -5,7 +5,7 @@ export default [
     icon: { icon: 'mdi-shield-outline' },
     to: 'access-control',
     action: 'read',
-    subject: 'Auth',
+    subject: 'AclDemo',
   },
   {
     title: 'Nav Levels',

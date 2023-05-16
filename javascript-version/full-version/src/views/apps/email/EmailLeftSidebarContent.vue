@@ -8,6 +8,10 @@ const folders = [
     title: 'Inbox',
     prependIcon: 'mdi-email-outline',
     to: { name: 'apps-email' },
+    badge: {
+      content: '21',
+      color: 'primary',
+    },
   },
   {
     title: 'Sent',
@@ -24,6 +28,10 @@ const folders = [
       name: 'apps-email-filter',
       params: { filter: 'draft' },
     },
+    badge: {
+      content: '1',
+      color: 'warning',
+    },
   },
   {
     title: 'Starred',
@@ -39,6 +47,10 @@ const folders = [
     to: {
       name: 'apps-email-filter',
       params: { filter: 'spam' },
+    },
+    badge: {
+      content: '6',
+      color: 'error',
     },
   },
   {
@@ -104,12 +116,12 @@ const labels = [
       :options="{ wheelPropagation: false }"
       class="h-100"
     >
-      <ul class="email-filters-labels">
+      <ul class="email-filters-labels pt-3">
         <RouterLink
           v-for="folder in folders"
           :key="folder.title"
           v-slot="{ isActive, href, navigate }"
-          class="d-flex items-center cursor-pointer"
+          class="d-flex align-center cursor-pointer"
           :to="folder.to"
           custom
         >
@@ -117,7 +129,7 @@ const labels = [
             v-bind="$attrs"
             :href="href"
             :class="isActive && 'email-filter-active text-primary'"
-            class="cursor-pointer"
+            class="d-flex align-center cursor-pointer"
             @click="navigate"
           >
             <VIcon
@@ -126,18 +138,30 @@ const labels = [
               size="20"
             />
             <span>{{ folder.title }}</span>
+
+            <VSpacer />
+
+            <VChip
+              v-if="folder.badge?.content"
+              size="x-small"
+              :color="folder.badge.color"
+            >
+              <span class="text-xs">
+                {{ folder.badge.content }}
+              </span>
+            </VChip>
           </li>
         </RouterLink>
 
         <!-- 👉 Labels -->
-        <li class="text-xs d-block text-uppercase text-disabled mt-6">
+        <li class="text-xs d-block text-uppercase text-disabled mt-8">
           LABELS
         </li>
         <RouterLink
           v-for="label in labels"
           :key="label.title"
           v-slot="{ isActive, href, navigate }"
-          class="d-flex items-center"
+          class="d-flex align-center"
           :to="label.to"
           custom
         >

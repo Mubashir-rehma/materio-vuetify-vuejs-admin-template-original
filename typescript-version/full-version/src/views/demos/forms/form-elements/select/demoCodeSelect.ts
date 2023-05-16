@@ -532,7 +532,6 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
         :items="items"
         label="Underlined"
         variant="underlined"
-        density="default"
       />
     </VCol>
   </VRow>
@@ -599,11 +598,9 @@ const items = [
         :items="items"
         label="Underlined"
         variant="underlined"
-        density="default"
       />
     </VCol>
   </VRow>
 </template>
 `,
 }
-

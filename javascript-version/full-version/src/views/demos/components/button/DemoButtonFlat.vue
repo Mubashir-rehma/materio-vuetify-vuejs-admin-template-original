@@ -1,7 +1,7 @@
 <template>
   <div class="demo-space-x">
     <VBtn variant="flat">
-      primary
+      Primary
     </VBtn>
 
     <VBtn

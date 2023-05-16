@@ -22,18 +22,12 @@ const isMenuVisible = ref(false)
 
         <template #append>
           <VListItemAction class="ms-1">
-            <VBtn
-              icon
-              variant="text"
-              size="x-small"
-              color="default"
-              @click="isMenuVisible = false"
-            >
+            <IconBtn @click="isMenuVisible = false">
               <VIcon
                 size="20"
                 icon="mdi-close"
               />
-            </VBtn>
+            </IconBtn>
           </VListItemAction>
         </template>
       </VListItem>

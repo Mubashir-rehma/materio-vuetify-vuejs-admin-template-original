@@ -47,6 +47,5 @@ export const createLayouts = userConfig => {
     _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }
 }
-export const injectionKeyIsVerticalNavHovered = Symbol('isVerticalNavHovered')
 export * from './components'
 export { useLayouts } from './composable/useLayouts'

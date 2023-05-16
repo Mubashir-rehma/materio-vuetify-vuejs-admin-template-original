@@ -39,12 +39,18 @@ const isDialogVisible = ref(false)
 
     <!-- Dialog Content -->
     <VCard>
+      <DialogCloseBtn
+        variant="text"
+        size="small"
+        @click="isDialogVisible = false"
+      />
+
       <VCardItem>
         <VCardTitle>Select Country</VCardTitle>
       </VCardItem>
 
       <VDivider />
-      <VCardText style="height: 300px;">
+      <VCardText style="block-size: 300px;">
         <VRadioGroup
           v-model="selectedCountry"
           :inline="false"

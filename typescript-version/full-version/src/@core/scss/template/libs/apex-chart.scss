@@ -1,13 +1,15 @@
+@use "@styles/variables/_vuetify.scss" as vuetify;
 @use "vuetify/lib/styles/tools/_elevation" as mixins_elevation;
 @use "@layouts/styles/mixins" as layoutsMixins;
+@use "@core/scss/base/mixins";
 
-.apexcharts-canvas {
+.v-application .apexcharts-canvas {
   &line[stroke="transparent"] {
     display: "none";
   }
 
   .apexcharts-tooltip {
-    @include mixins_elevation.elevation(3);
+    @include mixins.elevation(3);
 
     border-color: rgba(var(--v-border-color), var(--v-border-opacity));
     background: rgb(var(--v-theme-surface));
@@ -76,7 +78,7 @@
   .apexcharts-xaxistooltip-text,
   .apexcharts-yaxistooltip-text,
   .apexcharts-legend-text {
-    font-family: inherit !important;
+    font-family: vuetify.$body-font-family !important;
   }
 
   .apexcharts-pie-label {
@@ -90,5 +92,9 @@
 
   .apexcharts-legend-marker {
     margin-inline-end: 0.3875rem !important;
+
+    @include layoutsMixins.rtl {
+      margin-inline-end: 0.75rem !important;
+    }
   }
 }

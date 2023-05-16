@@ -27,17 +27,7 @@ const savedCards = [
       <!-- 👉 menu -->
       <template #append>
         <div class="me-n3">
-          <VBtn
-            icon
-            size="x-small"
-            variant="text"
-            color="default"
-          >
-            <VIcon
-              size="24"
-              icon="mdi-dots-vertical"
-            />
-          </VBtn>
+          <MoreBtn />
         </div>
       </template>
     </VCardItem>
@@ -99,16 +89,17 @@ const savedCards = [
               rounded
               start
               :size="45"
-              :image="card.logo"
-            />
+            >
+              <VImg :src="card.logo" />
+            </VAvatar>
           </template>
 
           <!-- 👉 Title and Subtitle -->
 
-          <VListItemTitle class="text-sm font-weight-medium mb-1">
+          <VListItemTitle class="font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
-          <VListItemSubtitle class="text-xs">
+          <VListItemSubtitle class="me-1">
             {{ card.number }}
           </VListItemSubtitle>
 
@@ -140,6 +131,7 @@ const savedCards = [
           <VCol cols="12">
             <VTextField
               placeholder="Email Address"
+              density="compact"
               class="mb-3"
             />
             <VBtn

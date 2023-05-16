@@ -9,7 +9,6 @@ import CrmTotalSales from '@/views/dashboards/crm/CrmTotalSales.vue'
 import CrmTransactions from '@/views/dashboards/crm/CrmTransactions.vue'
 import CrmUpgradeYourPlan from '@/views/dashboards/crm/CrmUpgradeYourPlan.vue'
 import CrmWeeklySales from '@/views/dashboards/crm/CrmWeeklySales.vue'
-import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
 import illustration1 from '@images/cards/illustration-1.png'
 import illustration2 from '@images/cards/illustration-2.png'
 
@@ -18,7 +17,7 @@ const statisticsWithImages = [
     title: 'Ratings',
     subtitle: 'Year of 2021',
     stats: '13k',
-    change: 38,
+    change: 15.6,
     image: illustration1,
     color: 'primary',
   },
@@ -44,7 +43,7 @@ const statistic = {
 
 <template>
   <section>
-    <VRow class="mb-2">
+    <VRow class="match-height">
       <VCol
         v-for="statistics in statisticsWithImages"
         :key="statistics.title"
@@ -148,3 +147,7 @@ const statistic = {
     </VRow>
   </section>
 </template>
+
+<style lang="scss">
+@use "@core/scss/template/libs/apex-chart.scss";
+</style>

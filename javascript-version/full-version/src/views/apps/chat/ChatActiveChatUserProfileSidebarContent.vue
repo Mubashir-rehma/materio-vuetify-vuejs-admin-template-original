@@ -17,19 +17,12 @@ const { resolveAvatarBadgeVariant } = useChat()
       class="pt-2 me-2"
       :class="$vuetify.locale.isRtl ? 'text-left' : 'text-right'"
     >
-      <VBtn
-        variant="text"
-        color="default"
-        icon
-        size="small"
-        @click="$emit('close')"
-      >
+      <IconBtn @click="$emit('close')">
         <VIcon
-          size="24"
           icon="mdi-close"
           class="text-medium-emphasis"
         />
-      </VBtn>
+      </IconBtn>
     </div>
 
     <!-- User Avatar + Name + Role -->
@@ -40,13 +33,12 @@ const { resolveAvatarBadgeVariant } = useChat()
         offset-y="4"
         bordered
         :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
-        class="chat-user-profile-badge mb-5"
+        class="chat-user-profile-badge mb-4"
       >
         <VAvatar
-          size="80"
-          class="bg-surface"
-          variant="tonal"
-          :class="`text-${resolveAvatarBadgeVariant(store.activeChat.contact.status)}`"
+          size="84"
+          :variant="!store.activeChat.contact.avatar ? 'tonal' : undefined"
+          :color="!store.activeChat.contact.avatar ? resolveAvatarBadgeVariant(store.activeChat.contact.status) : undefined"
         >
           <VImg
             v-if="store.activeChat.contact.avatar"
@@ -72,12 +64,12 @@ const { resolveAvatarBadgeVariant } = useChat()
       :options="{ wheelPropagation: false }"
     >
       <!-- About -->
-      <div class="my-8">
+      <div class="mt-8 mb-6">
         <span
           for="textarea-user-about"
           class="text-sm text-disabled"
         >ABOUT</span>
-        <p class="mt-2">
+        <p class="mt-1 text-sm">
           {{ store.activeChat.contact.about }}
         </p>
       </div>
@@ -90,16 +82,16 @@ const { resolveAvatarBadgeVariant } = useChat()
             class="me-2"
             icon="mdi-email-outline"
           />
-          <span>lucifer@email.com</span>
+          <span class="text-sm">lucifer@email.com</span>
         </div>
-        <div class="d-flex align-center my-3">
+        <div class="d-flex align-center text-sm my-4">
           <VIcon
             class="me-2"
             icon="mdi-phone-outline"
           />
           <span>+1(123) 456 - 7890</span>
         </div>
-        <div class="d-flex align-center">
+        <div class="d-flex align-center text-sm">
           <VIcon
             class="me-2"
             icon="mdi-clock-outline"
@@ -116,28 +108,28 @@ const { resolveAvatarBadgeVariant } = useChat()
             class="me-2"
             icon="mdi-bookmark-outline"
           />
-          <span>Add Tag</span>
+          <span class="text-sm">Add Tag</span>
         </div>
         <div class="d-flex align-center my-3">
           <VIcon
             class="me-2"
             icon="mdi-star-outline"
           />
-          <span>Important Contact</span>
+          <span class="text-sm">Important Contact</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
             class="me-2"
             icon="mdi-image-outline"
           />
-          <span>Shared Media</span>
+          <span class="text-sm">Shared Media</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
             class="me-2"
             icon="mdi-trash-can-outline"
           />
-          <span>Delete Contact</span>
+          <span class="text-sm">Delete Contact</span>
         </div>
         <div class="d-flex align-center">
           <VIcon
@@ -145,7 +137,7 @@ const { resolveAvatarBadgeVariant } = useChat()
             size="16"
             icon="mdi-block-helper"
           />
-          <span>Block Contact</span>
+          <span class="text-sm">Block Contact</span>
         </div>
       </div>
     </PerfectScrollbar>

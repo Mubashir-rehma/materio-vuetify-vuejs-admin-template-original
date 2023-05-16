@@ -107,8 +107,8 @@ const withdraws = [
                   rounded
                 >
                   <VImg
-                    :height="29"
-                    :width="28"
+                    :height="30"
+                    :width="30"
                     :src="deposit.logo"
                   />
                 </VAvatar>
@@ -163,8 +163,8 @@ const withdraws = [
                   rounded
                 >
                   <VImg
-                    :height="29"
-                    :width="28"
+                    :height="30"
+                    :width="30"
                     :src="withdraw.logo"
                   />
                 </VAvatar>

@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import illustration1 from '@images/cards/illustration-1.png'
-import illustration2 from '@images/cards/illustration-2.png'
-import illustration3 from '@images/cards/illustration-3.png'
-import illustration4 from '@images/cards/illustration-4.png'
 import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
 import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
 import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
@@ -11,9 +7,10 @@ import CardStatisticsTotalRevenueLineCharts from '@/views/pages/cards/card-stati
 import CardStatisticsTotalRevenueRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueRadialBarCharts.vue'
 import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
 import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
-import CardStatisticsHorizontal from '@core/components/CardStatisticsHorizontal.vue'
-import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue'
-import CardStatisticsWithImages from '@core/components/CardStatisticsWithImages.vue'
+import illustration1 from '@images/cards/illustration-1.png'
+import illustration2 from '@images/cards/illustration-2.png'
+import illustration3 from '@images/cards/illustration-3.png'
+import illustration4 from '@images/cards/illustration-4.png'
 
 const statisticsHorizontal = [
   {
@@ -174,9 +171,7 @@ const statisticsWithImages = [
     </VCol>
 
     <!-- 👉 Blank Column for make space above the Images cards -->
-    <VCol
-      cols="12"
-    />
+    <VCol cols="12" />
 
     <!-- 👉 Images Cards -->
     <VCol

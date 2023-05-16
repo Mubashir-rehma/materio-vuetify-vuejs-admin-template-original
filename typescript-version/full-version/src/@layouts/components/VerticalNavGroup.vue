@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { injectionKeyIsVerticalNavHovered, useLayouts } from '@layouts'
+import { useLayouts } from '@layouts'
 import { TransitionExpand, VerticalNavLink } from '@layouts/components'
 import { config } from '@layouts/config'
 import { canViewNavMenuGroup } from '@layouts/plugins/casl'
+import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 import type { NavGroup } from '@layouts/types'
 import { isNavGroupActive, openGroups } from '@layouts/utils'
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
-import { confirmedValidator, emailValidator, passwordValidator, requiredValidator } from '@core/utils/validators'
+import { confirmedValidator, emailValidator, lengthValidator, passwordValidator, requiredValidator, urlValidator } from '@core/utils/validators'
 
 const numberedSteps = [
   {
@@ -126,7 +126,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="accountForm.username"
                   placeholder="CarterLeonardo"
-                  :rules="[requiredValidator]"
+                  :rules="[requiredValidator, lengthValidator(accountForm.username, 6)]"
                   label="Username"
                 />
               </VCol>
@@ -150,6 +150,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="accountForm.password"
                   label="Password"
+                  placeholder="Enter Password"
                   :rules="[requiredValidator, passwordValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
@@ -164,6 +165,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="accountForm.c_password"
                   label="Confirm Password"
+                  placeholder="Confirm Password"
                   :rules="[requiredValidator, confirmedValidator(accountForm.c_password, accountForm.password)]"
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
@@ -315,8 +317,8 @@ const validateSocialLinkForm = () => {
               >
                 <VTextField
                   v-model="socialForm.twitter"
-                  placeholder="Twitter"
-                  :rules="[requiredValidator]"
+                  placeholder="https://twitter.com/abc"
+                  :rules="[requiredValidator, urlValidator]"
                   label="Twitter"
                 />
               </VCol>
@@ -327,8 +329,8 @@ const validateSocialLinkForm = () => {
               >
                 <VTextField
                   v-model="socialForm.facebook"
-                  placeholder="Facebook"
-                  :rules="[requiredValidator]"
+                  placeholder="https://facebook.com/abc"
+                  :rules="[requiredValidator, urlValidator]"
                   label="Facebook"
                 />
               </VCol>
@@ -339,8 +341,8 @@ const validateSocialLinkForm = () => {
               >
                 <VTextField
                   v-model="socialForm.googlePlus"
-                  placeholder="Google+"
-                  :rules="[requiredValidator]"
+                  placeholder="https://plus.google.com/abc"
+                  :rules="[requiredValidator, urlValidator]"
                   label="Google+"
                 />
               </VCol>
@@ -351,8 +353,8 @@ const validateSocialLinkForm = () => {
               >
                 <VTextField
                   v-model="socialForm.linkedIn"
-                  placeholder="LinkedIn"
-                  :rules="[requiredValidator]"
+                  placeholder="https://likedin.com/abc"
+                  :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
                 />
               </VCol>

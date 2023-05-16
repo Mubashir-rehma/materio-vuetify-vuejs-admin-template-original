@@ -4,6 +4,44 @@
 
 All notable changes to this template will be documented in this file
 
+## v2.2.0 (2023-05-16)
+
+### Added
+
+- Added "system" theme (Auto update theme based on your system ✨)
+- Added Roles and Permissions app
+- Pages  
+  - Multi-step register
+- Demo pages
+  - DataTable
+  - Simple table
+  - Autocomplete
+- New components
+  - DataTable
+  - Autocomplete
+  - Tour
+  - Custom input (Radio & Checkbox)
+  - IconBtn (virtual component)
+  - AppStepper (Wizard)
+- Wizard Example
+  - Checkout
+  - Property listing
+  - Create deal
+- Dialog examples
+  - App dialog
+  - Roles and Permissions
+
+### Updated
+
+- Updated all dependencies and devDependencies
+- Improved Navbar Notification components
+- Updated Simple tables with vuetify datables in all the pages and apps
+
+### Fixed
+
+- Fixed Horizontal Menu popup issue in RTL
+- Fixed AppDateTimePicker open below dialog
+
 ## v2.1.1 (2022-12-15)
 
 ### Added

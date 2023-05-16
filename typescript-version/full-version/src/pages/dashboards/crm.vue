@@ -43,7 +43,7 @@ const statistic = {
 
 <template>
   <section>
-    <VRow>
+    <VRow class="match-height">
       <VCol
         v-for="statistics in statisticsWithImages"
         :key="statistics.title"

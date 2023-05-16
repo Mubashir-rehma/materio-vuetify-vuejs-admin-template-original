@@ -58,7 +58,7 @@ const clickMe = () => {
     <template #append>
       <VBtn
         :size="$vuetify.display.smAndDown ? 'small' : 'large'"
-        class="mt-n3"
+        class="mt-n2"
         :icon="$vuetify.display.smAndDown"
         @click="clickMe"
       >

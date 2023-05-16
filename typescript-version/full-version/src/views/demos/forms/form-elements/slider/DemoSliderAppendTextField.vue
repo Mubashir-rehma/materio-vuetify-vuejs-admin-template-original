@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const redColorValue = ref(161)
 const greenColorValue = ref(105)
-const blueColorValue = ref(255)
+const blueColorValue = ref(225)
 </script>
 
 <template>
@@ -13,65 +13,58 @@ const blueColorValue = ref(255)
   <VRow class="mt-5">
     <VCol cols="12">
       <!-- R -->
-      <VSlider
-        v-model="redColorValue"
-        :max="255"
-        :step="1"
-        prepend-icon="mdi-alpha-r"
-      >
-        <template #append>
-          <div style="width: 3rem;">
-            <VTextField
-              v-model="redColorValue"
-              type="number"
-              variant="underlined"
-              :max="255"
-            />
-          </div>
-        </template>
-      </VSlider>
+      <div class="d-flex justify-space-between">
+        <VSlider
+          v-model="redColorValue"
+          :max="255"
+          :step="1"
+          prepend-icon="mdi-alpha-r"
+        />
+
+        <VTextField
+          v-model="redColorValue"
+          type="number"
+          :max="255"
+          style="max-inline-size: 5rem;"
+        />
+      </div>
     </VCol>
 
     <VCol cols="12">
       <!-- G -->
-      <VSlider
-        v-model="greenColorValue"
-        :max="255"
-        :step="1"
-        prepend-icon="mdi-alpha-g"
-      >
-        <template #append>
-          <div style="width: 3rem;">
-            <VTextField
-              v-model="greenColorValue"
-              type="number"
-              variant="underlined"
-              :max="255"
-            />
-          </div>
-        </template>
-      </VSlider>
+      <div class="d-flex justify-space-between">
+        <VSlider
+          v-model="greenColorValue"
+          :max="255"
+          :step="1"
+          prepend-icon="mdi-alpha-g"
+        />
+
+        <VTextField
+          v-model="greenColorValue"
+          type="number"
+          :max="255"
+          style="max-inline-size: 5rem;"
+        />
+      </div>
     </VCol>
 
     <VCol cols="12">
       <!-- B -->
-      <VSlider
-        v-model="blueColorValue"
-        :max="255"
-        :step="1"
-        prepend-icon="mdi-alpha-b"
-      >
-        <template #append>
-          <div style="width: 3rem;">
-            <VTextField
-              v-model="blueColorValue"
-              type="number"
-              variant="underlined"
-              :max="255"
-            />
-          </div>
-        </template>
-      </VSlider>
+      <div class="d-flex justify-space-between">
+        <VSlider
+          v-model="blueColorValue"
+          :max="255"
+          :step="1"
+          prepend-icon="mdi-alpha-b"
+        />
+        <VTextField
+          v-model="blueColorValue"
+          type="number"
+          :max="255"
+          style="max-inline-size: 5rem;"
+        />
+      </div>
     </VCol>
   </VRow>
 </template>

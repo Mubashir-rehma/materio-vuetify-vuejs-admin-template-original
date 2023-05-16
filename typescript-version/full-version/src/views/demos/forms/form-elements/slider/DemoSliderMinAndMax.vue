@@ -5,19 +5,18 @@ const slider = ref(40)
 </script>
 
 <template>
-  <VSlider
-    v-model="slider"
-    :max="max"
-    :min="min"
-    :step="1"
-  >
-    <template #append>
-      <VTextField
-        v-model="slider"
-        variant="underlined"
-        type="number"
-        style="inline-size: 60px;"
-      />
-    </template>
-  </VSlider>
+  <div class="d-flex justify-space-between">
+    <VSlider
+      v-model="slider"
+      :max="max"
+      :min="min"
+      :step="1"
+    />
+
+    <VTextField
+      v-model="slider"
+      type="number"
+      style="max-inline-size: 5rem;"
+    />
+  </div>
 </template>

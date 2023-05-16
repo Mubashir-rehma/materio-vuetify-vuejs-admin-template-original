@@ -119,5 +119,5 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-@use "@/@core/scss/template/libs/shepherd.scss";
+@use "@core/scss/template/libs/shepherd.scss";
 </style>

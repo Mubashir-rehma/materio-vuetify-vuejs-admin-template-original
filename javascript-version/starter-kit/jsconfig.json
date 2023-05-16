@@ -1,9 +1,13 @@
 {
   "include": [
     "vite.config.*",
+    "env.d.js",
+    "shims.d.js",
     "src/**/*",
     "src/**/*.vue",
-    "themeConfig.js"
+    "themeConfig.js",
+    "auto-imports.d.js",
+    "componenjs.d.js"
   ],
   "exclude": [
     "dist",

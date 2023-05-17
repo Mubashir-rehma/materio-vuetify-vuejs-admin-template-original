@@ -339,7 +339,7 @@ const resolveStatusVariant = (status: string) => {
           <span v-else>{{ avatarText(item.raw.full_name) }}</span>
         </VAvatar>
         <div class="d-flex flex-column ms-3">
-          <span class="d-block font-weight-medium text--primary text-truncate">{{ item.raw.full_name }}</span>
+          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.raw.full_name }}</span>
           <small>{{ item.raw.post }}</small>
         </div>
       </div>

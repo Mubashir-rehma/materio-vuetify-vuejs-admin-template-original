@@ -116,7 +116,7 @@ onMounted(() => {
             />
           </div>
           <div class="d-flex flex-column ms-3">
-            <span class="d-block font-weight-medium text-truncate text--primary">{{ item.raw.product.name }}</span>
+            <span class="d-block font-weight-medium text-truncate text-high-emphasis">{{ item.raw.product.name }}</span>
             <span class="text-xs">{{ item.raw.product.brand }}</span>
           </div>
         </div>
@@ -158,7 +158,7 @@ onMounted(() => {
             />
             <span v-else>{{ item.raw.buyer.name.slice(0, 2).toUpperCase() }}</span>
           </VAvatar>
-          <span class="text-no-wrap font-weight-medium text--primary ms-2">{{ item.raw.buyer.name }}</span>
+          <span class="text-no-wrap font-weight-medium text-high-emphasis ms-2">{{ item.raw.buyer.name }}</span>
         </div>
       </template>
 
@@ -166,7 +166,7 @@ onMounted(() => {
       <template #item.payment="{ item }">
         <div class="d-flex flex-column">
           <div class="d-flex align-center">
-            <span class="text-primary font-weight-medium">${{ item.raw.payment.paid_amount }}</span>
+            <span class="text-high-emphasis font-weight-medium">${{ item.raw.payment.paid_amount }}</span>
             <span v-if="item.raw.payment.paid_amount !== item.raw.payment.total">/{{ item.raw.payment.total }}</span>
           </div>
           <span class="text-xs text-no-wrap">{{ item.raw.payment.received_payment_status }}</span>

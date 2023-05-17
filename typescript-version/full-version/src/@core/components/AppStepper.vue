@@ -213,7 +213,6 @@ watchEffect(() => {
       .stepper-subtitle {
         font-weight: 400 !important;
         line-height: normal;
-        text-transform: uppercase;
       }
 
       .stepper-title {
@@ -232,6 +231,15 @@ watchEffect(() => {
         .stepper-icon {
           background-color: rgb(var(--v-theme-primary));
           color: rgba(var(--v-theme-on-primary));
+        }
+      }
+    }
+
+    .stepper-steps-completed {
+      .stepper-icon-step {
+        .stepper-icon {
+          background: rgba(var(--v-theme-primary), 0.08);
+          color: rgba(var(--v-theme-primary));
         }
       }
     }

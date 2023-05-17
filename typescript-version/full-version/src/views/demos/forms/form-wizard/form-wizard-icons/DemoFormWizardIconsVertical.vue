@@ -249,7 +249,7 @@ const onSubmit = () => {
               </VWindowItem>
             </VWindow>
 
-            <div class="d-flex justify-space-between mt-8">
+            <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
               <VBtn
                 color="secondary"
                 variant="tonal"
@@ -257,7 +257,7 @@ const onSubmit = () => {
                 @click="currentStep--"
               >
                 <VIcon
-                  icon="mdi-chevron-left"
+                  icon="mdi-arrow-left"
                   start
                   class="flip-in-rtl"
                 />
@@ -280,7 +280,7 @@ const onSubmit = () => {
                 Next
 
                 <VIcon
-                  icon="mdi-chevron-right"
+                  icon="mdi-arrow-right"
                   end
                   class="flip-in-rtl"
                 />

@@ -193,14 +193,14 @@ const validateSocialLinkForm = () => {
               </VCol>
 
               <VCol cols="12">
-                <div class="d-flex justify-space-between">
+                <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
                     variant="tonal"
                     disabled
                   >
                     <VIcon
-                      icon="mdi-chevron-left"
+                      icon="mdi-arrow-left"
                       start
                       class="flip-in-rtl"
                     />
@@ -210,7 +210,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-chevron-right"
+                      icon="mdi-arrow-right"
                       end
                       class="flip-in-rtl"
                     />
@@ -287,14 +287,14 @@ const validateSocialLinkForm = () => {
               </VCol>
 
               <VCol cols="12">
-                <div class="d-flex justify-space-between">
+                <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
                     variant="tonal"
                     @click="currentStep--"
                   >
                     <VIcon
-                      icon="mdi-chevron-left"
+                      icon="mdi-arrow-left"
                       start
                       class="flip-in-rtl"
                     />
@@ -304,7 +304,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-chevron-right"
+                      icon="mdi-arrow-right"
                       end
                       class="flip-in-rtl"
                     />
@@ -380,14 +380,14 @@ const validateSocialLinkForm = () => {
               </VCol>
 
               <VCol cols="12">
-                <div class="d-flex justify-space-between">
+                <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
                     variant="tonal"
                     @click="currentStep--"
                   >
                     <VIcon
-                      icon="mdi-chevron-left"
+                      icon="mdi-arrow-left"
                       start
                       class="flip-in-rtl"
                     />
@@ -397,7 +397,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-chevron-right"
+                      icon="mdi-arrow-right"
                       end
                       class="flip-in-rtl"
                     />
@@ -472,14 +472,14 @@ const validateSocialLinkForm = () => {
               </VCol>
 
               <VCol cols="12">
-                <div class="d-flex justify-space-between">
+                <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
                     variant="tonal"
                     @click="currentStep--"
                   >
                     <VIcon
-                      icon="mdi-chevron-left"
+                      icon="mdi-arrow-left"
                       start
                       class="flip-in-rtl"
                     />
@@ -489,7 +489,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-chevron-right"
+                      icon="mdi-arrow-right"
                       end
                       class="flip-in-rtl"
                     />

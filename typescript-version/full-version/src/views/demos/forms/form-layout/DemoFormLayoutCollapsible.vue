@@ -38,7 +38,7 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Delivery Address</VExpansionPanelTitle>
 
-      <VExpansionPanelText>
+      <VExpansionPanelText class="pt-4 pb-2">
         <VForm @submit.prevent="() => {}">
           <VRow>
             <!-- 👉 Full Name -->
@@ -46,7 +46,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Full Name" />
+              <VTextField
+                label="Full Name"
+                placeholder="John Doe"
+              />
             </VCol>
 
             <!-- 👉 Phone No -->
@@ -57,6 +60,7 @@ const paymentMethods = [
               <VTextField
                 label="Phone No"
                 type="number"
+                placeholder="+1 123 456 7890"
               />
             </VCol>
 
@@ -75,6 +79,7 @@ const paymentMethods = [
             >
               <VTextField
                 label="Pincode"
+                placeholder="123456"
                 type="number"
               />
             </VCol>
@@ -84,7 +89,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="Landmark" />
+              <VTextField
+                label="Landmark"
+                placeholder="Near City Mall"
+              />
             </VCol>
 
             <!-- 👉 City -->
@@ -92,7 +100,10 @@ const paymentMethods = [
               cols="12"
               md="6"
             >
-              <VTextField label="City" />
+              <VTextField
+                label="City"
+                placeholder="New York"
+              />
             </VCol>
 
             <!-- 👉 State -->
@@ -103,6 +114,7 @@ const paymentMethods = [
               <VSelect
                 :items="stateList"
                 label="State"
+                placeholder="Select State"
               />
             </VCol>
 
@@ -137,7 +149,7 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Delivery Options</VExpansionPanelTitle>
 
-      <VExpansionPanelText>
+      <VExpansionPanelText class="pt-4 pb-2">
         <!-- 👉 Radio Group -->
         <VRadioGroup
           v-model="deliveryOption"
@@ -218,7 +230,7 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
-      <VExpansionPanelText>
+      <VExpansionPanelText class="pt-4 pb-2">
         <VRow>
           <VCol
             md="6"
@@ -255,6 +267,7 @@ const paymentMethods = [
                   <VTextField
                     label="Card Number"
                     type="number"
+                    placeholder="1234 5678 9012 3456"
                   />
                 </VCol>
 
@@ -263,7 +276,10 @@ const paymentMethods = [
                   cols="12"
                   md="6"
                 >
-                  <VTextField label="Name" />
+                  <VTextField
+                    label="Name"
+                    placeholder="john doe"
+                  />
                 </VCol>
 
                 <!-- 👉 Expire Date -->
@@ -271,7 +287,10 @@ const paymentMethods = [
                   cols="6"
                   md="3"
                 >
-                  <VTextField label="Expiry Date" />
+                  <VTextField
+                    label="Expiry Date"
+                    placeholder="DD-MM-YY"
+                  />
                 </VCol>
 
                 <!-- 👉 CVV Code -->
@@ -283,6 +302,7 @@ const paymentMethods = [
                     label="CVV Code"
                     type="number"
                     max="3"
+                    placeholder="123"
                   />
                 </VCol>
               </VRow>
@@ -310,6 +330,8 @@ const paymentMethods = [
 
 <style lang="scss">
 .delivery-options {
+  cursor: pointer;
+
   .v-selection-control-group {
     inline-size: 100%;
   }

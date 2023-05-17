@@ -22,6 +22,7 @@ const form = ref<VForm>()
           v-model="name"
           :rules="[requiredValidator]"
           label="Name"
+          placeholder="John Doe"
           required
         />
       </VCol>
@@ -31,6 +32,7 @@ const form = ref<VForm>()
           v-model="email"
           :rules="[emailValidator, requiredValidator]"
           label="E-mail"
+          placeholder="johndoe@email.com"
           required
         />
       </VCol>
@@ -40,6 +42,7 @@ const form = ref<VForm>()
           v-model="select"
           :items="items"
           :rules="[requiredValidator]"
+          placeholder="Select an Item"
           label="Item"
           name="select"
           require

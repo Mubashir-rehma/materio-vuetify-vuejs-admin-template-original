@@ -51,6 +51,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="firstName"
                   label="First name"
+                  placeholder="John"
                 />
               </VCol>
 
@@ -61,6 +62,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="lastName"
                   label="Last name"
+                  placeholder="Doe"
                 />
               </VCol>
 
@@ -72,6 +74,7 @@ const isCPasswordVisible = ref(false)
                   v-model="country"
                   :items="countryList"
                   label="Country"
+                  placeholder="Select Country"
                 />
               </VCol>
 
@@ -86,6 +89,7 @@ const isCPasswordVisible = ref(false)
                   chips
                   clearable
                   label="Language"
+                  placeholder="Select Language"
                 />
               </VCol>
               <VCol
@@ -106,6 +110,7 @@ const isCPasswordVisible = ref(false)
                   v-model="phoneNo"
                   type="number"
                   label="Phone No."
+                  placeholder="+1 123 456 7890"
                 />
               </VCol>
             </VRow>
@@ -122,6 +127,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="username"
                   label="Username"
+                  placeholder="johndoe"
                 />
               </VCol>
 
@@ -133,6 +139,7 @@ const isCPasswordVisible = ref(false)
                   v-model="email"
                   label="Email"
                   suffix="@example.com"
+                  placeholder="johndoe@email.com"
                 />
               </VCol>
 
@@ -143,6 +150,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="password"
                   label="Password"
+                  placeholder="Enter Password"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -156,6 +164,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="cPassword"
                   label="Confirm Password"
+                  placeholder="Confirm Password"
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
@@ -175,6 +184,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="twitterLink"
                   label="Twitter"
+                  placeholder="https://twitter.com/username"
                 />
               </VCol>
               <VCol
@@ -184,6 +194,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="facebookLink"
                   label="Facebook"
+                  placeholder="https://facebook.com/username"
                 />
               </VCol>
               <VCol
@@ -193,6 +204,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="googlePlusLink"
                   label="Google+"
+                  placeholder="https://plus.google.com/username"
                 />
               </VCol>
               <VCol
@@ -202,6 +214,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="linkedInLink"
                   label="LinkedIn"
+                  placeholder="https://linkedin.com/username"
                 />
               </VCol>
               <VCol
@@ -211,6 +224,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="instagramLink"
                   label="Instagram"
+                  placeholder="https://instagram.com/username"
                 />
               </VCol>
               <VCol
@@ -220,6 +234,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="quoraLink"
                   label="Quora"
+                  placeholder="https://quora.com/username"
                 />
               </VCol>
             </VRow>

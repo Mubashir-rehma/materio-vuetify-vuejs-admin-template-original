@@ -116,6 +116,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.username"
                     label="Username"
+                    placeholder="John Doe"
                   />
                 </VCol>
 
@@ -126,6 +127,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.email"
                     label="Email"
+                    placeholder="johndoe@email.com"
                   />
                 </VCol>
 
@@ -136,6 +138,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.password"
                     label="Password"
+                    placeholder="Enter Password"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -149,6 +152,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.confirmPassword"
                     label="Confirm Password"
+                    placeholder="Enter Confirm Password"
                     :type="isConfirmPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
@@ -159,6 +163,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.link"
                     label="Profile Link"
+                    placeholder="johndoe/profile"
                     type="url"
                   />
                 </VCol>
@@ -181,6 +186,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.firstName"
                     label="First Name"
+                    placeholder="John"
                   />
                 </VCol>
 
@@ -191,6 +197,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.lastName"
                     label="Last Name"
+                    placeholder="Doe"
                   />
                 </VCol>
 
@@ -202,6 +209,7 @@ const onSubmit = () => {
                     v-model="form.mobile"
                     type="number"
                     label="Mobile"
+                    placeholder="98 7654 3210"
                   />
                 </VCol>
 
@@ -213,6 +221,7 @@ const onSubmit = () => {
                     v-model="form.pincode"
                     type="number"
                     label="Pincode"
+                    placeholder="123456"
                   />
                 </VCol>
 
@@ -220,6 +229,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.address"
                     label="Address"
+                    placeholder="1234 Main St, New York, NY 10001, USA"
                   />
                 </VCol>
 
@@ -227,6 +237,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.landmark"
                     label="Landmark"
+                    placeholder="Near Central Park"
                   />
                 </VCol>
 
@@ -237,6 +248,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.city"
                     label="City"
+                    placeholder="New York"
                   />
                 </VCol>
 
@@ -247,6 +259,7 @@ const onSubmit = () => {
                   <VSelect
                     v-model="form.state"
                     label="State"
+                    placeholder="Select State"
                     :items="['New York', 'California', 'Florida', 'Washington', 'Texas']"
                   />
                 </VCol>
@@ -299,6 +312,7 @@ const onSubmit = () => {
                     v-model="form.cardNumber"
                     type="number"
                     label="Card Number"
+                    placeholder="1234 1234 1234 1234"
                   />
                 </VCol>
 
@@ -309,6 +323,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.cardName"
                     label="Name on Card"
+                    placeholder="John Doe"
                   />
                 </VCol>
 
@@ -319,6 +334,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.expiryDate"
                     label="Expiry"
+                    placeholder="MM/YY"
                   />
                 </VCol>
 
@@ -330,6 +346,7 @@ const onSubmit = () => {
                     v-model="form.cvv"
                     type="number"
                     label="CVV"
+                    placeholder="123"
                   />
                 </VCol>
               </VRow>
@@ -337,14 +354,14 @@ const onSubmit = () => {
           </VForm>
         </VWindow>
 
-        <div class="d-flex justify-space-between mt-8">
+        <div class="d-flex flex-wrap justify-sm-space-between justify-center gap-x-4 gap-y-2 mt-8">
           <VBtn
             color="secondary"
             :disabled="currentStep === 0"
             @click="currentStep--"
           >
             <VIcon
-              icon="mdi-chevron-left"
+              icon="mdi-arrow-left"
               start
               class="flip-in-rtl"
             />
@@ -367,7 +384,7 @@ const onSubmit = () => {
             Next
 
             <VIcon
-              icon="mdi-chevron-right"
+              icon="mdi-arrow-right"
               end
               class="flip-in-rtl"
             />

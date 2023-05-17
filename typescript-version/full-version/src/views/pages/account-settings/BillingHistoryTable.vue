@@ -269,17 +269,15 @@ watchEffect(() => {
         <!-- Balance -->
         <template #item.balance="{ item }">
           <VChip
+            v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'"
             :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color"
             size="small"
           >
-            <template v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'">
-              {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
-            </template>
-
-            <template v-else>
-              {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
-            </template>
+            {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
           </VChip>
+          <span v-else>
+            {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
+          </span>
         </template>
 
         <!-- Actions -->

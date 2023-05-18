@@ -220,6 +220,7 @@ const resetPaymentForm = () => {
                         <VTextField
                           v-model="cardNumber"
                           label="Card Number"
+                          placeholder="1234 1234 1234 1234"
                           type="number"
                         />
                       </VCol>
@@ -232,6 +233,7 @@ const resetPaymentForm = () => {
                         <VTextField
                           v-model="cardName"
                           label="Name"
+                          placeholder="John Doe"
                         />
                       </VCol>
 
@@ -243,6 +245,7 @@ const resetPaymentForm = () => {
                         <VTextField
                           v-model="cardExpiryDate"
                           label="Expiry Date"
+                          placeholder="MM/YY"
                         />
                       </VCol>
 
@@ -255,6 +258,7 @@ const resetPaymentForm = () => {
                           v-model="cardCvv"
                           type="number"
                           label="CVV Code"
+                          placeholder="123"
                         />
                       </VCol>
 
@@ -383,7 +387,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="Company Name" />
+                <VTextField
+                  label="Company Name"
+                  placeholder="Pixinvent"
+                />
               </VCol>
 
               <!-- 👉 Billing Email -->
@@ -391,7 +398,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="Billing Email" />
+                <VTextField
+                  label="Billing Email"
+                  placeholder="pixinvent@email.com"
+                />
               </VCol>
 
               <!-- 👉 Tax ID -->
@@ -399,7 +409,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="Tax ID" />
+                <VTextField
+                  label="Tax ID"
+                  placeholder="123 123 1233"
+                />
               </VCol>
 
               <!-- 👉 Vat Number -->
@@ -407,7 +420,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="VAT Number" />
+                <VTextField
+                  label="VAT Number"
+                  placeholder="121212"
+                />
               </VCol>
 
               <!-- 👉 Mobile -->
@@ -420,6 +436,7 @@ const resetPaymentForm = () => {
                   label="Phone Number"
                   type="number"
                   prefix="US (+1)"
+                  placeholder="+1 123 456 7890"
                 />
               </VCol>
 
@@ -431,12 +448,16 @@ const resetPaymentForm = () => {
                 <VSelect
                   label="Country"
                   :items="countryList"
+                  placeholder="Select Country"
                 />
               </VCol>
 
               <!-- 👉 Billing Address -->
               <VCol cols="12">
-                <VTextField label="Billing Address" />
+                <VTextField
+                  label="Billing Address"
+                  placeholder="1234 Main St"
+                />
               </VCol>
 
               <!-- 👉 State -->
@@ -444,7 +465,10 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <VTextField label="State" />
+                <VTextField
+                  label="State"
+                  placeholder="New York"
+                />
               </VCol>
 
               <!-- 👉 Zip Code -->
@@ -455,6 +479,7 @@ const resetPaymentForm = () => {
                 <VTextField
                   label="Zip Code"
                   type="number"
+                  placeholder="100006"
                 />
               </VCol>
 

@@ -73,6 +73,7 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.number"
                 label="Card Number"
+                placeholder="1234 1234 1234 1234"
                 type="number"
               />
             </VCol>
@@ -85,6 +86,7 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.name"
                 label="Name"
+                placeholder="John Doe"
               />
             </VCol>
 
@@ -96,6 +98,7 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.expiry"
                 label="Expiry Date"
+                placeholder="MM-YY"
               />
             </VCol>
 
@@ -108,6 +111,7 @@ const formSubmit = () => {
                 v-model="cardDetails.cvv"
                 type="number"
                 label="CVV Code"
+                placeholder="123"
               />
             </VCol>
 

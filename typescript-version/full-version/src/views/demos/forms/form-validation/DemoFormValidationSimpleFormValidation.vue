@@ -22,6 +22,7 @@ const refForm = ref<VForm>()
         <VTextField
           v-model="firstName"
           label="First Name"
+          placeholder="John"
           :rules="[requiredValidator]"
         />
       </VCol>
@@ -33,6 +34,7 @@ const refForm = ref<VForm>()
         <VTextField
           v-model="email"
           label="Email"
+          placeholder="john@email.com"
           :rules="[requiredValidator, emailValidator]"
         />
       </VCol>

@@ -131,6 +131,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.companyName"
                 label="Company Name"
+                placeholder="Company Name"
               />
             </VCol>
 
@@ -142,6 +143,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.billingEmail"
                 label="Email"
+                placeholder="john@emaill.com"
               />
             </VCol>
 
@@ -153,6 +155,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.taxID"
                 label="Tax ID"
+                placeholder="Tax ID"
               />
             </VCol>
 
@@ -164,6 +167,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.vatNumber"
                 label="VAT Number"
+                placeholder="VAT Number"
               />
             </VCol>
 
@@ -184,6 +188,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.contact"
                 label="Contact"
+                placeholder="+1 23 456 7890"
               />
             </VCol>
 
@@ -195,6 +200,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.country"
                 label="Country"
+                placeholder="Country"
               />
             </VCol>
 
@@ -206,6 +212,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.state"
                 label="State"
+                placeholder="State"
               />
             </VCol>
 
@@ -217,6 +224,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.zipCode"
                 label="Zip Code"
+                placeholder="123123"
                 type="number"
               />
             </VCol>

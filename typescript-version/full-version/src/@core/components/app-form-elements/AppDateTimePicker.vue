@@ -184,6 +184,7 @@ const emitModelValue = (val: string) => {
 <style lang="scss">
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
+@use "@core/scss/base/mixins" as mixins;
 
 .flat-picker-custom-style {
   position: absolute;
@@ -203,6 +204,8 @@ input[altinputclass="inlinePicker"] {
 }
 
 .flatpickr-calendar {
+  @include mixins.elevation(6);
+
   background-color: rgb(var(--v-theme-surface));
   margin-block-start: 0.1875rem;
 

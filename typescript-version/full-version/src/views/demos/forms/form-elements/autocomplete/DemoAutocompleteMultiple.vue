@@ -6,6 +6,7 @@ const items = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming
   <VAutocomplete
     label="States"
     :items="items"
+    placeholder="Select State"
     multiple
   />
 </template>

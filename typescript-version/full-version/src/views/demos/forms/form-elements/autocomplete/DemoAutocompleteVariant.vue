@@ -13,6 +13,7 @@ const items = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming
         variant="solo"
         label="solo"
         :items="items"
+        placeholder="Select State"
       />
     </VCol>
 
@@ -24,6 +25,7 @@ const items = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming
       <VAutocomplete
         variant="outlined"
         label="outlined"
+        placeholder="Select State"
         :items="items"
       />
     </VCol>
@@ -36,6 +38,7 @@ const items = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming
       <VAutocomplete
         variant="underlined"
         label="underlined"
+        placeholder="Select State"
         :items="items"
       />
     </VCol>
@@ -48,6 +51,7 @@ const items = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming
       <VAutocomplete
         variant="filled"
         label="filled"
+        placeholder="Select State"
         :items="items"
       />
     </VCol>
@@ -60,6 +64,7 @@ const items = ['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming
       <VAutocomplete
         variant="plain"
         label="plain"
+        placeholder="Select State"
         :items="items"
       />
     </VCol>

@@ -22,6 +22,7 @@ const clickMe = () => {
     clearable
     clear-icon="mdi-close-circle-outline"
     label="Message"
+    placeholder="Hey!!"
     type="text"
   >
     <!-- Prepend -->

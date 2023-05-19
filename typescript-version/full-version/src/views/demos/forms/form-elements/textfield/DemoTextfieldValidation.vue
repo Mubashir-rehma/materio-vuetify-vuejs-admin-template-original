@@ -9,6 +9,7 @@ const email = ref('')
     <VTextField
       v-model="email"
       :rules="[requiredValidator, emailValidator]"
+      placeholder="johnedoe@email.com"
       label="E-mail"
     />
   </VForm>

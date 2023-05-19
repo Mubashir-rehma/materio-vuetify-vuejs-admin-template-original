@@ -4,7 +4,10 @@
       cols="12"
       md="6"
     >
-      <VTextField label="Outlined" />
+      <VTextField
+        label="Outlined"
+        placeholder="Placeholder Text"
+      />
     </VCol>
 
     <VCol
@@ -14,6 +17,7 @@
       <VTextField
         label="Filled"
         variant="filled"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -24,6 +28,7 @@
       <VTextField
         label="Solo"
         variant="solo"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -34,6 +39,7 @@
       <VTextField
         label="Plain"
         variant="plain"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -44,6 +50,7 @@
       <VTextField
         label="Underlined"
         variant="underlined"
+        placeholder="Placeholder Text"
       />
     </VCol>
   </VRow>

@@ -24,6 +24,7 @@ const rules = {
         name="input-10-1"
         label="Normal with hint text"
         hint="At least 8 characters"
+        placeholder="********"
         counter
         @click:append-inner="show1 = !show1"
       />
@@ -39,6 +40,7 @@ const rules = {
         :rules="[rules.required, rules.min]"
         :type="show2 ? 'text' : 'password'"
         name="input-10-2"
+        placeholder="********"
         label="Visible"
         hint="At least 8 characters"
         @click:append-inner="show2 = !show2"

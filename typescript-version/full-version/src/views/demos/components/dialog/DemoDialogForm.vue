@@ -39,6 +39,7 @@ const interest = ref<string[]>([])
             <VTextField
               v-model="firstName"
               label="First Name"
+              placeholder="John"
             />
           </VCol>
           <VCol
@@ -49,6 +50,7 @@ const interest = ref<string[]>([])
             <VTextField
               v-model="middleName"
               label="Middle Name"
+              placeholder="peter"
             />
           </VCol>
           <VCol
@@ -60,12 +62,14 @@ const interest = ref<string[]>([])
               v-model="lastName"
               label="Last Name"
               persistent-hint
+              placeholder="Doe"
             />
           </VCol>
           <VCol cols="12">
             <VTextField
               v-model="email"
               label="Email"
+              placeholder="johndoe@email.com"
             />
           </VCol>
           <VCol cols="12">
@@ -73,6 +77,7 @@ const interest = ref<string[]>([])
               v-model="password"
               label="Password"
               type="password"
+              placeholder="********"
             />
           </VCol>
           <VCol
@@ -83,6 +88,7 @@ const interest = ref<string[]>([])
               v-model="age"
               label="Age"
               type="number"
+              placeholder="18"
             />
           </VCol>
           <VCol
@@ -92,6 +98,7 @@ const interest = ref<string[]>([])
             <VTextField
               v-model="interest"
               label="Interests"
+              placeholder="Sports, Music, Movies"
             />
           </VCol>
         </VRow>

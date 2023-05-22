@@ -125,7 +125,7 @@ const emitModelValue = (val: string) => {
       class="position-relative v-text-field"
       :style="props.style"
     >
-      <template #default="{ id, isDirty, isValid, isDisabled }">
+      <template #default="{ id, isDirty, isValid, isDisabled, isReadonly }">
         <!-- v-field -->
         <VField
           v-bind="{ ...fieldProps }"
@@ -147,6 +147,7 @@ const emitModelValue = (val: string) => {
                 ref="refFlatPicker"
                 :model-value="modelValue"
                 :placeholder="props.placeholder"
+                :readonly="isReadonly.value"
                 class="flat-picker-custom-style"
                 :disabled="isReadonly.value"
                 @on-open="isCalendarOpen = true"
@@ -159,6 +160,7 @@ const emitModelValue = (val: string) => {
                 v-if="isInlinePicker"
                 :value="modelValue"
                 :placeholder="props.placeholder"
+                :readonly="isReadonly.value"
                 class="flat-picker-custom-style"
                 type="text"
               >
@@ -345,7 +347,6 @@ input[altinputclass="inlinePicker"] {
 .flatpickr-input ~ .form-control[readonly],
 .flatpickr-human-friendly[readonly] {
   background-color: inherit;
-  opacity: 1 !important;
 }
 
 // week sections

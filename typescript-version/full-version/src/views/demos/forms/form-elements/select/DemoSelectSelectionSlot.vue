@@ -23,6 +23,7 @@ const value = ref(['Sandra Adams'])
     item-title="name"
     item-value="name"
     label="Select Item"
+    placeholder="Select Item"
     multiple
     clearable
     clear-icon="mdi-close"

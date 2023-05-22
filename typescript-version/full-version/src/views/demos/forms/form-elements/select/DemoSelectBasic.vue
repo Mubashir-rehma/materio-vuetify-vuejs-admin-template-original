@@ -6,5 +6,6 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
   <VSelect
     :items="items"
     label="Standard"
+    placeholder="Select Item"
   />
 </template>

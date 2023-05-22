@@ -5,6 +5,7 @@
         disabled
         label="Disabled"
         hint="Hint text"
+        placeholder="placeholder text"
         rows="2"
       />
     </VCol>
@@ -14,6 +15,7 @@
         readonly
         rows="2"
         label="Readonly"
+        placeholder="placeholder text"
         hint="Hint text"
       />
     </VCol>

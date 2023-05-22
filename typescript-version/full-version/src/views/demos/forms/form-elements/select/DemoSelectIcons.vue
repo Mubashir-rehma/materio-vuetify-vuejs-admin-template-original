@@ -30,6 +30,7 @@ const states = [
         prepend-icon="mdi-map-outline"
         single-line
         variant="filled"
+        placeholder="Select State"
       />
     </VCol>
 
@@ -41,6 +42,7 @@ const states = [
         label="Select"
         single-line
         variant="filled"
+        placeholder="Select State"
       />
     </VCol>
   </VRow>

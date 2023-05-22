@@ -8,5 +8,6 @@ const textareaValue = ref('This is clearable text.')
     clearable
     clear-icon="mdi-close-circle-outline"
     label="Text"
+    placeholder="placeholder text"
   />
 </template>

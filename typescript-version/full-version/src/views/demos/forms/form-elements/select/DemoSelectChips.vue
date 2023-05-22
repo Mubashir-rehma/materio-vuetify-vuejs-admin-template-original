@@ -7,6 +7,7 @@ const selected = ref(['foo', 'bar', 'fizz', 'buzz'])
   <VSelect
     v-model="selected"
     :items="items"
+    placeholder="Select Item"
     label="Chips"
     chips
     multiple

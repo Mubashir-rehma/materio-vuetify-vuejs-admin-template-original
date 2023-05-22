@@ -44,6 +44,7 @@ const form = ref({
                 autofocus
                 label="Email"
                 type="email"
+                placeholder="johndoe@email.com"
               />
             </VCol>
 

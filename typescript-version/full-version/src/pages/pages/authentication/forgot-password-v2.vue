@@ -43,6 +43,7 @@ const email = ref('')
                   v-model="email"
                   autofocus
                   label="Email"
+                  placeholder="johndoe@email.com"
                   type="email"
                 />
               </VCol>

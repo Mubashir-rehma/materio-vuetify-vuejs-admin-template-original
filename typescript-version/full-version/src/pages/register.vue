@@ -110,6 +110,7 @@ const onSubmit = () => {
                   autofocus
                   :rules="[requiredValidator, alphaDashValidator]"
                   label="Username"
+                  placeholder="johnDoe"
                 />
               </VCol>
 
@@ -119,6 +120,7 @@ const onSubmit = () => {
                   v-model="email"
                   :rules="[requiredValidator, emailValidator]"
                   label="Email"
+                  placeholder="johndoe@email.com"
                   type="email"
                 />
               </VCol>
@@ -129,6 +131,7 @@ const onSubmit = () => {
                   v-model="password"
                   :rules="[requiredValidator]"
                   label="Password"
+                  placeholder="********"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"

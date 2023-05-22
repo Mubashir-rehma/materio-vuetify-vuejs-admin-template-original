@@ -69,6 +69,7 @@ const resetAuthCode = () => {
             v-model="authCode"
             name="auth-code"
             label="Enter Authentication Code"
+            placeholder="123 456"
             class="mb-4"
           />
 

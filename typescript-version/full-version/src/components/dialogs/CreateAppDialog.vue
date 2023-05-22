@@ -320,6 +320,7 @@ const onSubmit = () => {
                       <VTextField
                         v-model="createAppData.cardNumber"
                         label="Card Number"
+                        placeholder="0000 0000 0000 0000"
                         type="number"
                       />
                     </VCol>
@@ -331,6 +332,7 @@ const onSubmit = () => {
                       <VTextField
                         v-model="createAppData.cardName"
                         label="Name on Card"
+                        placeholder="John Doe"
                       />
                     </VCol>
 
@@ -341,6 +343,7 @@ const onSubmit = () => {
                       <VTextField
                         v-model="createAppData.cardExpiry"
                         label="Expiry"
+                        placeholder="MM/YY"
                       />
                     </VCol>
 
@@ -351,6 +354,7 @@ const onSubmit = () => {
                       <VTextField
                         v-model="createAppData.cardCvv"
                         label="CVV"
+                        placeholder="000"
                       />
                     </VCol>
 

@@ -110,6 +110,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="email"
                   label="Email"
+                  placeholder="johndoe@email.com"
                   type="email"
                   autofocus
                   :rules="[requiredValidator, emailValidator]"
@@ -122,6 +123,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="password"
                   label="Password"
+                  placeholder="******"
                   :rules="[requiredValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :error-messages="errors.password"

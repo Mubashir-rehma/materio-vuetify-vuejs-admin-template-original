@@ -49,6 +49,7 @@ const isConfirmPasswordVisible = ref(false)
                   v-model="form.newPassword"
                   autofocus
                   label="New Password"
+                  placeholder="********"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -60,6 +61,7 @@ const isConfirmPasswordVisible = ref(false)
                 <VTextField
                   v-model="form.confirmPassword"
                   label="Confirm Password"
+                  placeholder="********"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"

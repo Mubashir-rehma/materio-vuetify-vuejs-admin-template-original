@@ -8,6 +8,8 @@ const email = ref('')
 const refForm = ref<VForm>()
 const password = ref('')
 const confirmPassword = ref('')
+const isPasswordVisible = ref(false)
+const isConfirmPasswordVisible = ref(false)
 </script>
 
 <template>
@@ -46,12 +48,13 @@ const confirmPassword = ref('')
       >
         <VTextField
           v-model="password"
-          type="password"
-          placeholder="Your Password"
-          :append-inner-icon="password ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-          persistent-placeholder
+          :type="isPasswordVisible ? 'text' : 'password'"
+          :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+          label="password"
+          placeholder="Enter Password"
           :rules="[requiredValidator, passwordValidator]"
           autocomplete="on"
+          @click:append-inner="isPasswordVisible = !isPasswordVisible"
         />
       </VCol>
 
@@ -61,12 +64,13 @@ const confirmPassword = ref('')
       >
         <VTextField
           v-model="confirmPassword"
-          type="password"
+          :type="isConfirmPasswordVisible ? 'text' : 'password'"
           placeholder="Confirm Password"
           persistent-placeholder
           :append-inner-icon="confirmPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
           autocomplete="on"
+          @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
         />
       </VCol>
 

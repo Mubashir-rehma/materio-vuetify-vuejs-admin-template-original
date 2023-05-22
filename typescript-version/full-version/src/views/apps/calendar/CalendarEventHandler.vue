@@ -231,6 +231,7 @@ const endDateTimePickerConfig = computed(() => {
                 <VSelect
                   v-model="event.extendedProps.guests"
                   label="Guests"
+                  placeholder="Select guests"
                   :items="guestsOptions"
                   :item-title="item => item.name"
                   :item-value="item => item.name"

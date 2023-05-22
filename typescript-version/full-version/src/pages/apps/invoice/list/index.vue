@@ -149,6 +149,7 @@ watchEffect(() => {
             <VSelect
               v-model="selectedStatus"
               label="Select Status"
+              placeholder="Select Status"
               clearable
               clear-icon="mdi-close"
               :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
@@ -328,7 +329,6 @@ watchEffect(() => {
         </template>
       </VDataTableServer>
       <!-- !SECTION -->
-      <VDivider />
     </VCard>
   </section>
 </template>

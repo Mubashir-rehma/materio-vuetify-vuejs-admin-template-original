@@ -49,6 +49,7 @@ const resetPhoneNumber = () => {
             v-model="phoneNumber"
             name="mobile"
             label="Phone Number"
+            placeholder="+1 123 456 7890"
             type="number"
             class="mb-4"
           />

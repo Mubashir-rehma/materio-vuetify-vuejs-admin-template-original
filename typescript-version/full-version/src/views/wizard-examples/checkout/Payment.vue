@@ -100,6 +100,7 @@ watch(() => prop.currentStep, updateCartData)
                   v-model="cardFormData.cardNumber"
                   type="number"
                   label="Card Number"
+                  placeholder="0000 0000 0000 0000"
                 />
               </VCol>
 
@@ -110,6 +111,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardName"
                   label="Name"
+                  placeholder="John Doe"
                 />
               </VCol>
 
@@ -120,6 +122,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardExpiry"
                   label="Expiry"
+                  placeholder="MM/YY"
                 />
               </VCol>
 
@@ -130,6 +133,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardCvv"
                   label="CVV"
+                  placeholder="000"
                   type="number"
                 >
                   <template #append-inner>
@@ -175,7 +179,7 @@ watch(() => prop.currentStep, updateCartData)
         </VWindowItem>
 
         <VWindowItem value="cash-on-delivery">
-          <p class="text-base text-high-emphasis">
+          <p class="text-base text-high-emphasis my-6">
             Cash on Delivery is a type of payment method where the recipient make payment for the order at the time of delivery rather than in advance.
           </p>
 
@@ -185,7 +189,7 @@ watch(() => prop.currentStep, updateCartData)
         </VWindowItem>
 
         <VWindowItem value="gift-card">
-          <h6 class="text-base font-weight-medium mb-4">
+          <h6 class="text-base font-weight-medium my-6">
             Enter Gift Card Details
           </h6>
           <VForm>

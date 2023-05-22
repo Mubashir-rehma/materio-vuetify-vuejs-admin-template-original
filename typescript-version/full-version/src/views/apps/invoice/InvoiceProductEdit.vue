@@ -78,12 +78,12 @@ watch(totalPrice, () => {
 <template>
   <!-- eslint-disable vue/no-mutating-props -->
   <div class="add-products-header mb-2 d-none d-md-flex ps-5 pe-16">
-    <VRow class="font-weight-medium">
+    <VRow>
       <VCol
         cols="12"
         md="6"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Item
         </h6>
       </VCol>
@@ -91,7 +91,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Cost
         </h6>
       </VCol>
@@ -99,7 +99,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Hours
         </h6>
       </VCol>
@@ -107,7 +107,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm">
+        <h6 class="text-sm font-weight-medium">
           Price
         </h6>
       </VCol>

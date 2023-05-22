@@ -110,6 +110,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.fullName"
                 label="Full Name"
+                placeholder="John Doe"
               />
             </VCol>
 
@@ -121,6 +122,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.username"
                 label="Username"
+                placeholder="johndoe"
               />
             </VCol>
 
@@ -132,6 +134,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.email"
                 label="Billing Email"
+                placeholder="johndoe@email.com"
               />
             </VCol>
 
@@ -143,6 +146,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.status"
                 label="Status"
+                placeholder="Active"
               />
             </VCol>
 
@@ -154,6 +158,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.taxId"
                 label="Tax Id"
+                placeholder="123456789"
               />
             </VCol>
 
@@ -165,6 +170,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.contact"
                 label="Contact"
+                placeholder="+1 9876543210"
               />
             </VCol>
 
@@ -176,6 +182,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.language"
                 label="Language"
+                placeholder="English"
               />
             </VCol>
 
@@ -187,6 +194,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.country"
                 label="Country"
+                placeholder="United States"
               />
             </VCol>
 

@@ -75,12 +75,12 @@ const editPermission = (name: string) => {
 
     <VCol cols="12">
       <VCard>
-        <VCardText class="d-flex align-center justify-space-between">
+        <VCardText class="d-flex align-center justify-sm-space-between justify-center gap-4 flex-wrap">
           <VTextField
             v-model="search"
             placeholder="Search"
             density="compact"
-            style="max-width: 14.375rem;"
+            style="min-width: 12rem;max-width: 15rem;"
           />
 
           <VBtn

@@ -138,6 +138,7 @@ const deleteUser = (id: number) => {
           <VSelect
             v-model="selectedRole"
             label="Select Role"
+            placeholder="Select Role"
             :items="roles"
             density="compact"
             clearable

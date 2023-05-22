@@ -131,7 +131,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.companyName"
                 label="Company Name"
-                placeholder="Company Name"
+                placeholder="Pixinvent"
               />
             </VCol>
 
@@ -155,7 +155,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.taxID"
                 label="Tax ID"
-                placeholder="Tax ID"
+                placeholder="123 345 32"
               />
             </VCol>
 
@@ -167,7 +167,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.vatNumber"
                 label="VAT Number"
-                placeholder="VAT Number"
+                placeholder="123 12 1223"
               />
             </VCol>
 
@@ -177,6 +177,7 @@ const addressTypes = [
                 v-model="billingAddress.address"
                 rows="2"
                 label="Billing Address"
+                placeholder="1, Pixinvent Street, USA"
               />
             </VCol>
 
@@ -200,7 +201,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.country"
                 label="Country"
-                placeholder="Country"
+                placeholder="USA"
               />
             </VCol>
 
@@ -212,7 +213,7 @@ const addressTypes = [
               <VTextField
                 v-model="billingAddress.state"
                 label="State"
-                placeholder="State"
+                placeholder="New York"
               />
             </VCol>
 

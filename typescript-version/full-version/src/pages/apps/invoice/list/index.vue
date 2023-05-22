@@ -181,7 +181,7 @@ watchEffect(() => {
           <VSelect
             density="compact"
             label="Actions"
-            placeholder="action"
+            placeholder="select"
             :items="['Delete', 'Edit', 'Send']"
             class="invoice-list-actions"
             :disabled="!selectedRows.length"

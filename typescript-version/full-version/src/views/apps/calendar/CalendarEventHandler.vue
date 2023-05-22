@@ -149,6 +149,7 @@ const endDateTimePickerConfig = computed(() => {
                 <VTextField
                   v-model="event.title"
                   label="Title"
+                  placeholder="Meeting with Jane"
                   :rules="[requiredValidator]"
                 />
               </VCol>
@@ -158,6 +159,7 @@ const endDateTimePickerConfig = computed(() => {
                 <VSelect
                   v-model="event.extendedProps.calendar"
                   label="Calendar"
+                  placeholder="Select Event Type"
                   :rules="[requiredValidator]"
                   :items="store.availableCalendars"
                   :item-title="item => item.label"
@@ -173,7 +175,7 @@ const endDateTimePickerConfig = computed(() => {
                         :color="item.raw.color"
                         inline
                         dot
-                        class="pa-1"
+                        class="pa-1 mb-1"
                       />
                       <span>{{ item.raw.label }}</span>
                     </div>
@@ -218,6 +220,7 @@ const endDateTimePickerConfig = computed(() => {
                 <VTextField
                   v-model="event.url"
                   label="Event URL"
+                  placeholder="https://event.com/meeting"
                   :rules="[urlValidator]"
                   type="url"
                 />
@@ -242,6 +245,7 @@ const endDateTimePickerConfig = computed(() => {
                 <VTextField
                   v-model="event.extendedProps.location"
                   label="Location"
+                  placeholder="Meeting room"
                 />
               </VCol>
 
@@ -250,6 +254,7 @@ const endDateTimePickerConfig = computed(() => {
                 <VTextarea
                   v-model="event.extendedProps.description"
                   label="Description"
+                  placeholder="Meeting description"
                 />
               </VCol>
 
@@ -262,7 +267,7 @@ const endDateTimePickerConfig = computed(() => {
                   Submit
                 </VBtn>
                 <VBtn
-                  variant="tonal"
+                  variant="outlined"
                   color="secondary"
                   @click="onCancel"
                 >

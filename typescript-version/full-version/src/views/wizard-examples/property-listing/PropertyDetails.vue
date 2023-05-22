@@ -122,6 +122,7 @@ watch(formData, () => {
         <VTextarea
           v-model="formData.address"
           label="Address"
+          placeholder="112, 1st Cross, 1st Stage, 1st Phase, BTM Layout, Bangalore - 560068"
           rows="2"
         />
       </VCol>

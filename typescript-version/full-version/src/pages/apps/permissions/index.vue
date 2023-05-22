@@ -75,7 +75,7 @@ const editPermission = (name: string) => {
 
     <VCol cols="12">
       <VCard>
-        <VCardText class="d-flex align-center justify-sm-space-between justify-center gap-4 flex-wrap">
+        <VCardText class="d-flex align-center justify-sm-space-between justify-start gap-4 flex-wrap">
           <VTextField
             v-model="search"
             placeholder="Search"

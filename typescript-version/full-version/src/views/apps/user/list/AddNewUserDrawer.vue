@@ -101,6 +101,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="fullName"
                   :rules="[requiredValidator]"
                   label="Full Name"
+                  placeholder="John Doe"
                 />
               </VCol>
 
@@ -110,6 +111,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="userName"
                   :rules="[requiredValidator]"
                   label="Username"
+                  placeholder="johndoe"
                 />
               </VCol>
 
@@ -119,6 +121,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="email"
                   :rules="[requiredValidator, emailValidator]"
                   label="Email"
+                  placeholder="johndoe@email.com"
                 />
               </VCol>
 
@@ -128,6 +131,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="company"
                   :rules="[requiredValidator]"
                   label="Company"
+                  placeholder="PixInvent"
                 />
               </VCol>
 
@@ -137,6 +141,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="country"
                   :rules="[requiredValidator]"
                   label="Country"
+                  placeholder="USA"
                 />
               </VCol>
 
@@ -147,6 +152,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   type="number"
                   :rules="[requiredValidator]"
                   label="Contact"
+                  placeholder="+1-541-754-3010"
                 />
               </VCol>
 
@@ -155,6 +161,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VSelect
                   v-model="role"
                   label="Select Role"
+                  placeholder="Select Role"
                   :rules="[requiredValidator]"
                   :items="['Admin', 'Author', 'Editor', 'Maintainer', 'Subscriber']"
                 />
@@ -165,6 +172,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VSelect
                   v-model="plan"
                   label="Select Plan"
+                  placeholder="Select Plan"
                   :rules="[requiredValidator]"
                   :items="['Basic', 'Company', 'Enterprise', 'Team']"
                 />
@@ -175,6 +183,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VSelect
                   v-model="status"
                   label="Select Status"
+                  placeholder="Select Status"
                   :rules="[requiredValidator]"
                   :items="[{ title: 'Active', value: 'active' }, { title: 'Inactive', value: 'inactive' }, { title: 'Pending', value: 'pending' }]"
                 />
@@ -190,7 +199,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 </VBtn>
                 <VBtn
                   type="reset"
-                  variant="tonal"
+                  variant="outlined"
                   color="secondary"
                   @click="closeNavigationDrawer"
                 >

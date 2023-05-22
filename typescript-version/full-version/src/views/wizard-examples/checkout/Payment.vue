@@ -100,7 +100,7 @@ watch(() => prop.currentStep, updateCartData)
                   v-model="cardFormData.cardNumber"
                   type="number"
                   label="Card Number"
-                  placeholder="0000 0000 0000 0000"
+                  placeholder="1234 5678 9012 3456"
                 />
               </VCol>
 
@@ -133,7 +133,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="cardFormData.cardCvv"
                   label="CVV"
-                  placeholder="000"
+                  placeholder="123"
                   type="number"
                 >
                   <template #append-inner>

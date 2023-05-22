@@ -91,6 +91,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VSelect
                   v-model="paymentMethod"
                   label="Select Payment Method"
+                  placeholder="Select Payment Method"
                   :items="['Cash', 'Bank Transfer', 'Debit', 'Credit', 'Paypal']"
                 />
               </VCol>

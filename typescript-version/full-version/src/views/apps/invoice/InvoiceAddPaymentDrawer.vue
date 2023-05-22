@@ -66,6 +66,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="invoiceBalance"
                   label="Invoice Balance"
                   type="number"
+                  placeholder="$99"
                 />
               </VCol>
 
@@ -74,6 +75,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="paymentAmount"
                   label="Payment Amount"
                   type="number"
+                  placeholder="$99"
                 />
               </VCol>
 
@@ -81,6 +83,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <AppDateTimePicker
                   v-model="paymentDate"
                   label="Payment Date"
+                  placeholder="YYYY-MM-DD"
                 />
               </VCol>
 
@@ -96,6 +99,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VTextarea
                   v-model="paymentNote"
                   label="Internal Payment Note"
+                  placeholder="Internal Payment Note"
                 />
               </VCol>
 

@@ -48,6 +48,7 @@ const confirmPassword = ref('')
           v-model="password"
           type="password"
           placeholder="Your Password"
+          :append-inner-icon="password ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
           persistent-placeholder
           :rules="[requiredValidator, passwordValidator]"
           autocomplete="on"
@@ -63,6 +64,7 @@ const confirmPassword = ref('')
           type="password"
           placeholder="Confirm Password"
           persistent-placeholder
+          :append-inner-icon="confirmPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
           autocomplete="on"
         />

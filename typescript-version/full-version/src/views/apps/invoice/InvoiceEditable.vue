@@ -105,7 +105,6 @@ const removeProduct = (id: number) => {
               v-model="props.data.invoice.issuedDate"
               density="compact"
               placeholder="YYYY-MM-DD"
-
               :config="{ position: 'auto right' }"
             />
           </span>

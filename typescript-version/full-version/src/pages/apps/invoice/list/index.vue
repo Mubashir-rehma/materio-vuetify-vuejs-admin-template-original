@@ -167,6 +167,7 @@ watchEffect(() => {
               clear-icon="mdi-close"
               clearable
               :config="{ mode: 'range' }"
+              placeholder="Select Date"
             />
           </VCol>
         </VRow>

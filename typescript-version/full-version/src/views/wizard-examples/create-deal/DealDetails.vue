@@ -92,6 +92,7 @@ watch(formData, () => {
         <AppDateTimePicker
           v-model="formData.dealDuration"
           label="Deal Duration"
+          placeholder="Select Date"
           :config="{ mode: 'range' }"
         />
       </VCol>

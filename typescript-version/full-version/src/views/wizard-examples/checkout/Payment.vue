@@ -141,9 +141,9 @@ watch(() => prop.currentStep, updateCartData)
                       text="Card Verification Value"
                       location="bottom"
                     >
-                      <template #activator="{ props }">
+                      <template #activator="{ props: tooltipProps }">
                         <VIcon
-                          v-bind="props"
+                          v-bind="tooltipProps"
                           size="20"
                           icon="mdi-help-circle-outline"
                         />

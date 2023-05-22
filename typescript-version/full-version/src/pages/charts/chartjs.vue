@@ -121,6 +121,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
             </div>
@@ -148,6 +149,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
             </div>
@@ -176,6 +178,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
                 model-value="2022-06-09"
                 prepend-inner-icon="mdi-calendar-blank-outline"
                 density="compact"
+                placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
             </div>

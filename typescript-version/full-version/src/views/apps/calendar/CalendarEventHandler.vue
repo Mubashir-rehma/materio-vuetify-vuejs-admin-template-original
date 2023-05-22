@@ -188,6 +188,7 @@ const endDateTimePickerConfig = computed(() => {
                   v-model="event.start"
                   :rules="[requiredValidator]"
                   label="Start date"
+                  placeholder="Select Date"
                   :config="startDateTimePickerConfig"
                 />
               </VCol>
@@ -199,6 +200,7 @@ const endDateTimePickerConfig = computed(() => {
                   v-model="event.end"
                   :rules="[requiredValidator]"
                   label="End date"
+                  placeholder="Select End Date"
                   :config="endDateTimePickerConfig"
                 />
               </VCol>

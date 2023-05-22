@@ -145,7 +145,7 @@ const removeProduct = (id: number) => {
           :items="clients"
           item-title="name"
           item-value="name"
-          placeholder="Select Customer"
+          placeholder="Select Client"
           return-object
           class="mb-6"
           density="compact"
@@ -249,6 +249,7 @@ const removeProduct = (id: number) => {
           <VTextField
             v-model="props.data.salesperson"
             style="inline-size: 8rem;"
+            placeholder="John Doe"
           />
         </div>
 
@@ -315,6 +316,7 @@ const removeProduct = (id: number) => {
       </p>
       <VTextarea
         v-model="props.data.note"
+        placeholder="Write note here..."
         :rows="2"
       />
     </VCardText>

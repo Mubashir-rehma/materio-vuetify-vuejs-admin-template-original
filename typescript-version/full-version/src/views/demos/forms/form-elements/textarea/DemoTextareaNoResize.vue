@@ -8,6 +8,6 @@ const value = ref('Marshmallow tiramisu pie dessert gingerbread tart caramels ma
     label="Text"
     no-resize
     rows="2"
-    placeholder="placeholder text"
+    placeholder="Placeholder Text"
   />
 </template>

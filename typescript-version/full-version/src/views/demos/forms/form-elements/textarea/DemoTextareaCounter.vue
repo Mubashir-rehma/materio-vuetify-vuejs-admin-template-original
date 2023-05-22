@@ -7,6 +7,6 @@ const textareaValue = ref('Hello!')
     v-model="textareaValue"
     counter
     label="Text"
-    placeholder="placeholder text"
+    placeholder="Placeholder Text"
   />
 </template>

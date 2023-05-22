@@ -131,7 +131,7 @@ const onSubmit = () => {
                   v-model="password"
                   :rules="[requiredValidator]"
                   label="Password"
-                  placeholder="********"
+                  placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"

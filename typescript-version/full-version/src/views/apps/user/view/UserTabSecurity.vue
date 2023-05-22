@@ -70,7 +70,7 @@ const recentDevices = [
               >
                 <VTextField
                   label="New Password"
-                  placeholder="********"
+                  placeholder="············"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
@@ -82,7 +82,7 @@ const recentDevices = [
               >
                 <VTextField
                   label="Confirm Password"
-                  placeholder="********"
+                  placeholder="············"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"

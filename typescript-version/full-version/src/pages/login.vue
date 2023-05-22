@@ -123,7 +123,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="password"
                   label="Password"
-                  placeholder="******"
+                  placeholder="············"
                   :rules="[requiredValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :error-messages="errors.password"

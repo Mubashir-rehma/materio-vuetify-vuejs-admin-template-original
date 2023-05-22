@@ -18,7 +18,7 @@ const isInputEnabled = ref(false)
     >
       <VTextField
         label="Include files"
-        placeholder="placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
   </VRow>
@@ -38,7 +38,7 @@ const isInputEnabled = ref(false)
       <VTextField
         :disabled="!isInputEnabled"
         label="I only work if you check the box"
-        placeholder="placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
   </VRow>

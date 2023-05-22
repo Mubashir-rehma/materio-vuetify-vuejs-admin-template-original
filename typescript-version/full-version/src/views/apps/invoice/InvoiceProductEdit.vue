@@ -132,6 +132,7 @@ watch(totalPrice, () => {
             item-title="title"
             item-value="title"
             label="Select Item"
+            placeholder="Select Item"
             class="mb-3"
           />
 
@@ -139,7 +140,7 @@ watch(totalPrice, () => {
             v-model="localProductData.description"
             rows="3"
             label="Description"
-            placeholder="Description"
+            placeholder="Item description"
           />
         </VCol>
         <VCol
@@ -151,6 +152,7 @@ watch(totalPrice, () => {
             v-model="localProductData.cost"
             type="number"
             label="Cost"
+            placeholder="100"
           />
 
           <div class="text-body-2 mt-4">
@@ -177,6 +179,7 @@ watch(totalPrice, () => {
             v-model="localProductData.hours"
             type="number"
             label="Hours"
+            placeholder="5"
           />
         </VCol>
         <VCol

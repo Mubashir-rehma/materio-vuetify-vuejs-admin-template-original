@@ -24,7 +24,7 @@ const rules = {
         name="input-10-1"
         label="Normal with hint text"
         hint="At least 8 characters"
-        placeholder="********"
+        placeholder="············"
         counter
         @click:append-inner="show1 = !show1"
       />
@@ -40,7 +40,7 @@ const rules = {
         :append-inner-icon="show2 ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
         :type="show2 ? 'text' : 'password'"
         name="input-10-2"
-        placeholder="********"
+        placeholder="············"
         label="Visible"
         hint="At least 8 characters"
         @click:append-inner="show2 = !show2"

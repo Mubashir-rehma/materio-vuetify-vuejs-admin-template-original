@@ -30,7 +30,7 @@
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </p>
             <h6 class="text-base font-weight-medium">
-              ******1234
+              ············1234
             </h6>
           </VCardText>
 

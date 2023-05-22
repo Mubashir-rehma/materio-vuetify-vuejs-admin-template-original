@@ -1,6 +1,6 @@
 <template>
   <VTextarea
     label="Default"
-    placeholder="placeholder text"
+    placeholder="Placeholder Text"
   />
 </template>

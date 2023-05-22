@@ -9,7 +9,7 @@
         auto-grow
         rows="1"
         row-height="15"
-        placeholder="placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -21,7 +21,7 @@
         auto-grow
         label="Two rows"
         rows="2"
-        placeholder="placeholder text"
+        placeholder="Placeholder Text"
         row-height="20"
       />
     </VCol>
@@ -34,7 +34,7 @@
         label="Three rows"
         auto-grow
         rows="3"
-        placeholder="placeholder text"
+        placeholder="Placeholder Text"
         row-height="25"
       />
     </VCol>
@@ -46,7 +46,7 @@
       <VTextarea
         auto-grow
         label="Four rows"
-        placeholder="placeholder text"
+        placeholder="Placeholder Text"
         rows="4"
         row-height="30"
       />

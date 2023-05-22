@@ -44,7 +44,7 @@ const checkbox = ref(false)
           prepend-inner-icon="mdi-lock-outline"
           label="Password"
           type="password"
-          placeholder="********"
+          placeholder="············"
         />
       </VCol>
 

@@ -6,7 +6,7 @@ const textareaValue = ref('The Woodman set to work at once, and so sharp was his
   <VTextarea
     v-model="textareaValue"
     label="Auto Grow"
-    placeholder="placeholder text"
+    placeholder="Placeholder Text"
     auto-grow
   />
 </template>

@@ -4,7 +4,7 @@
       <VTextField
         label="Prepend"
         prepend-icon="mdi-map-marker-outline"
-        placeholder="Placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -12,7 +12,7 @@
       <VTextField
         label="Prepend Inner"
         prepend-inner-icon="mdi-map-marker-outline"
-        placeholder="Placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -20,7 +20,7 @@
       <VTextField
         label="Append"
         append-icon="mdi-map-marker-outline"
-        placeholder="Placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
 
@@ -28,7 +28,7 @@
       <VTextField
         label="Append Inner"
         append-inner-icon="mdi-map-marker-outline"
-        placeholder="Placeholder text"
+        placeholder="Placeholder Text"
       />
     </VCol>
   </VRow>

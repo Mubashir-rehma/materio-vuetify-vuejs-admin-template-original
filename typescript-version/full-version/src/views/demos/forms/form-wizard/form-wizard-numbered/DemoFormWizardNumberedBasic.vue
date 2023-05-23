@@ -99,7 +99,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="formData.password"
                   label="Password"
-                  placeholder="Enter Password"
+                  placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -113,7 +113,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="formData.c_password"
                   label="Confirm Password"
-                  placeholder="Enter Confirm Password"
+                  placeholder="············"
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
@@ -162,7 +162,7 @@ const onSubmit = () => {
                 <VSelect
                   v-model="formData.country"
                   label="Country"
-                  placeholder="Country"
+                  placeholder="Select Country"
                   :items="['UK', 'USA', 'Canada', 'Australia', 'Germany']"
                 />
               </VCol>
@@ -174,7 +174,7 @@ const onSubmit = () => {
                 <VSelect
                   v-model="formData.language"
                   label="Language"
-                  placeholder="Language"
+                  placeholder="Select Language"
                   :items="['English', 'Spanish', 'French', 'Russian', 'German']"
                 />
               </VCol>

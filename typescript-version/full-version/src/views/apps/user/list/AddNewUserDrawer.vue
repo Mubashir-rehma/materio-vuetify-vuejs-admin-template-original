@@ -111,7 +111,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="userName"
                   :rules="[requiredValidator]"
                   label="Username"
-                  placeholder="johndoe"
+                  placeholder="Johndoe"
                 />
               </VCol>
 

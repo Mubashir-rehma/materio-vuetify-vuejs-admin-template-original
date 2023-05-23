@@ -98,7 +98,7 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.expiry"
                 label="Expiry Date"
-                placeholder="MM-YY"
+                placeholder="MM/YY"
               />
             </VCol>
 

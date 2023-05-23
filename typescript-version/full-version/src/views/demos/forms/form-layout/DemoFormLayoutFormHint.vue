@@ -15,7 +15,7 @@ const values = ref<typeof items[number][]>([])
         <VTextField
           v-model="username"
           label="Username"
-          placeholder="johndoe"
+          placeholder="Johndoe"
         />
       </VCol>
 

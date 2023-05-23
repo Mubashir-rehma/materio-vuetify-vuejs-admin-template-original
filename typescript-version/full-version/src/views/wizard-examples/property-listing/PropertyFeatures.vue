@@ -60,6 +60,7 @@ watch(formData, () => {
         <VSelect
           v-model="formData.furnishedStatus"
           label="Furnished Status"
+          placeholder="Select Furnished Status"
           :items="['Fully Furnished', 'Furnished', 'Semi-Furnished', 'Unfurnished']"
         />
       </VCol>
@@ -68,6 +69,7 @@ watch(formData, () => {
         <VSelect
           v-model="formData.furnishingDetails"
           label="Furnishing Details"
+          placeholder="Select Furnishing Details"
           multiple
           :items="['TV', 'AC', 'RO', 'Bed', 'Fridge', 'Wifi', 'Sofa', 'Cupboard', 'Microwave', 'Dining Table', 'Washing Machine']"
         />

@@ -52,6 +52,7 @@ watch(formData, () => {
         <VSelect
           v-model="formData.propertyType"
           label="Property type"
+          placeholder="Select Property Type"
           :items="['Residential', 'Commercial']"
         />
       </VCol>
@@ -77,6 +78,7 @@ watch(formData, () => {
         <VSelect
           v-model="formData.country"
           label="Country"
+          placeholder="Select country"
           :items="['India', 'UK', 'USA', 'AUS', 'Germany']"
         />
       </VCol>

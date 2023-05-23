@@ -133,7 +133,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                   :type="isNewPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   label="New Password"
-                  placeholder="············*"
+                  placeholder="············"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
                 />
               </VCol>

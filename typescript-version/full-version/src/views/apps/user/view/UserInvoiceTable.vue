@@ -28,10 +28,9 @@ const isLoading = ref(false)
 const headers = [
   { title: '#ID', key: 'id' },
   { title: 'Trending', key: 'trending', sortable: false },
-
   { title: 'Total', key: 'total' },
   { title: 'Date', key: 'date' },
-
+  { title: 'Balance', key: 'balance' },
   { title: 'Actions', key: 'actions', sortable: false },
 ]
 
@@ -55,6 +54,17 @@ const fetchInvoices = (query: string, currentStatus: string, firstDate: string, 
   })
 
   isLoading.value = false
+}
+
+// 👉 Invoice balance variant resolver
+const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {
+  if (balance === total)
+    return { status: 'Unpaid', chip: { color: 'error' } }
+
+  if (balance === 0)
+    return { status: 'Paid', chip: { color: 'success' } }
+
+  return { status: balance, chip: { variant: 'text' } }
 }
 
 // 👉 Invoice status variant resolver
@@ -151,6 +161,7 @@ watchEffect(() => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        class="text-no-wrap"
         @update:options="options = $event"
       >
         <!-- Trending Header -->
@@ -204,6 +215,22 @@ watchEffect(() => {
         <!-- issued Date -->
         <template #item.date="{ item }">
           {{ item.raw.issuedDate }}
+        </template>
+
+        <!-- Balance -->
+        <template #item.balance="{ item }">
+          <VChip
+            v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'"
+            :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color"
+          >
+            {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
+          </VChip>
+          <span
+            v-else
+            class="text-sm text-high-emphasis"
+          >
+            {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
+          </span>
         </template>
 
         <!-- Actions -->

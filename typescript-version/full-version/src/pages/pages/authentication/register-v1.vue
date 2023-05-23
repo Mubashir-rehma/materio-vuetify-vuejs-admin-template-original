@@ -49,7 +49,7 @@ const isPasswordVisible = ref(false)
                 v-model="form.username"
                 autofocus
                 label="Username"
-                placeholder="johnDoe"
+                placeholder="Johndoe"
               />
             </VCol>
             <!-- email -->

@@ -225,7 +225,7 @@ const currencies = [
                 <VTextField
                   v-model="accountDataLocal.phone"
                   label="Phone Number"
-                  placholder="+1 (917) 543-9876"
+                  placeholder="+1 (917) 543-9876"
                 />
               </VCol>
 

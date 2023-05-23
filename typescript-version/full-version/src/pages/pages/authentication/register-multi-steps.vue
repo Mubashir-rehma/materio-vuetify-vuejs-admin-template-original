@@ -116,7 +116,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.username"
                     label="Username"
-                    placeholder="John Doe"
+                    placeholder="Johndoe"
                   />
                 </VCol>
 
@@ -138,7 +138,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.password"
                     label="Password"
-                    placeholder="Enter Password"
+                    placeholder="············"
                     :type="isPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -152,7 +152,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.confirmPassword"
                     label="Confirm Password"
-                    placeholder="Enter Confirm Password"
+                    placeholder="············"
                     :type="isConfirmPasswordVisible ? 'text' : 'password'"
                     :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                     @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
@@ -163,7 +163,7 @@ const onSubmit = () => {
                   <VTextField
                     v-model="form.link"
                     label="Profile Link"
-                    placeholder="johndoe/profile"
+                    placeholder="https://profile.com/johndoe"
                     type="url"
                   />
                 </VCol>
@@ -209,7 +209,7 @@ const onSubmit = () => {
                     v-model="form.mobile"
                     type="number"
                     label="Mobile"
-                    placeholder="98 7654 3210"
+                    placeholder="+1 123 456 7890"
                   />
                 </VCol>
 

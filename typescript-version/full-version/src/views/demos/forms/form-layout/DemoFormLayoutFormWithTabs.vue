@@ -96,10 +96,10 @@ const isCPasswordVisible = ref(false)
                 cols="12"
                 md="6"
               >
-                <VTextField
+                <AppDateTimePicker
                   v-model="birthDate"
                   label="Birth Date"
-                  placeholder="YYYY-MM-DD"
+                  placeholder="Select Birth Date"
                 />
               </VCol>
               <VCol
@@ -127,7 +127,7 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="username"
                   label="Username"
-                  placeholder="johndoe"
+                  placeholder="Johndoe"
                 />
               </VCol>
 
@@ -150,9 +150,9 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="password"
                   label="Password"
-                  placeholder="Enter Password"
+                  placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
               </VCol>
@@ -164,9 +164,9 @@ const isCPasswordVisible = ref(false)
                 <VTextField
                   v-model="cPassword"
                   label="Confirm Password"
-                  placeholder="Confirm Password"
+                  placeholder="············"
                   :type="isCPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isCPasswordVisible ? 'mdi-eye-outline' : 'mdi-eye-off-outline'"
+                  :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
                 />
               </VCol>

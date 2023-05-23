@@ -68,6 +68,7 @@ const paymentMethods = [
             <VCol cols="12">
               <VTextarea
                 label="Address"
+                placeholder="1234 Main St, New York, NY 10001, USA"
                 rows="3"
               />
             </VCol>
@@ -289,7 +290,7 @@ const paymentMethods = [
                 >
                   <VTextField
                     label="Expiry Date"
-                    placeholder="DD-MM-YY"
+                    placeholder="MM/YY"
                   />
                 </VCol>
 

@@ -83,7 +83,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <AppDateTimePicker
                   v-model="paymentDate"
                   label="Payment Date"
-                  placeholder="YYYY-MM-DD"
+                  placeholder="Select Date"
                 />
               </VCol>
 

@@ -9,6 +9,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
       <VCombobox
         v-model="selectedItem"
         :items="items"
+        placeholder="deployment"
         label="Select a favorite activity or create a new one"
         multiple
       />
@@ -18,6 +19,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
       <VCombobox
         v-model="selectedItem"
         :items="items"
+        placeholder="deployment"
         label="I use chips"
         multiple
         chips
@@ -27,6 +29,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     <VCol cols="12">
       <VCombobox
         v-model="selectedItem"
+        placeholder="deployment"
         label="I'm readonly"
         chips
         multiple
@@ -38,6 +41,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
       <VCombobox
         v-model="selectedItem"
         :items="items"
+        placeholder="deployment"
         label="I use selection slot"
         multiple
       >

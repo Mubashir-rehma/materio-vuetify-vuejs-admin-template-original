@@ -297,7 +297,9 @@ const removeProduct = (id: number) => {
 
         <table class="w-100">
           <tr>
-            <td>Total:</td>
+            <td class="pe-16">
+              Total:
+            </td>
             <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
               <h6 class="text-sm">
                 $1690

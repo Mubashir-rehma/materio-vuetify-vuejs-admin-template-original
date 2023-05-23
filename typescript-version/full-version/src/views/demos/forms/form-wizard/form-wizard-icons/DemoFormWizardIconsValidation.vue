@@ -374,7 +374,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="addressForm.city"
                   :rules="[requiredValidator]"
-                  placeholder="California"
+                  placeholder="New York"
                   label="City"
                 />
               </VCol>

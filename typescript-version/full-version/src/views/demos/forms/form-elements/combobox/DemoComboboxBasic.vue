@@ -7,5 +7,6 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
   <VCombobox
     v-model="selectedItem"
     :items="items"
+    placeholder="deployment"
   />
 </template>

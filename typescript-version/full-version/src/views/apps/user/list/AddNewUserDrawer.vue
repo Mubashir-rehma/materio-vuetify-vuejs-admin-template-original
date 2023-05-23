@@ -24,7 +24,7 @@ const fullName = ref('')
 const userName = ref('')
 const email = ref('')
 const company = ref('')
-const country = ref('')
+const country = ref()
 const contact = ref('')
 const role = ref()
 const plan = ref()
@@ -137,11 +137,12 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
 
               <!-- 👉 Country -->
               <VCol cols="12">
-                <VTextField
+                <VSelect
                   v-model="country"
+                  label="Select Country"
+                  placeholder="Select Country"
                   :rules="[requiredValidator]"
-                  label="Country"
-                  placeholder="USA"
+                  :items="['USA', 'UK', 'India', 'Australia']"
                 />
               </VCol>
 

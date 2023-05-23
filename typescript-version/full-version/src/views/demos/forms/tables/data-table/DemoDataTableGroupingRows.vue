@@ -354,5 +354,23 @@ const resolveStatusVariant = (status: string) => {
         {{ item.raw.status }}
       </VChip>
     </template>
+
+    <template #data-table-group="{ props, item, count }">
+      <td>
+        <VBtn
+          v-bind="props"
+          variant="text"
+          density="comfortable"
+        >
+          <VIcon
+            class="flip-in-rtl"
+            :icon="props.icon"
+          />
+        </VBtn>
+
+        <span>{{ item.value }}</span>
+        <span>({{ count }})</span>
+      </td>
+    </template>
   </VDataTable>
 </template>

@@ -205,6 +205,10 @@ input[altinputclass="inlinePicker"] {
   display: none;
 }
 
+.flatpickr-time input.flatpickr-hour {
+  font-weight: 400;
+}
+
 .flatpickr-calendar {
   @include mixins.elevation(6);
 

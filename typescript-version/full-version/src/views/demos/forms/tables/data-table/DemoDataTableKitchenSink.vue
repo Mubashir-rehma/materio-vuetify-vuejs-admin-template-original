@@ -88,6 +88,7 @@ onMounted(() => {
             v-model="search"
             density="compact"
             label="Search"
+            placeholder="Search ..."
             append-inner-icon="mdi-magnify"
             single-line
             hide-details

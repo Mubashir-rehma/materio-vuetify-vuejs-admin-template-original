@@ -16,6 +16,7 @@ const slider = ref(40)
     <VTextField
       v-model="slider"
       type="number"
+      placeholder="10"
       style="max-inline-size: 5rem;"
     />
   </div>

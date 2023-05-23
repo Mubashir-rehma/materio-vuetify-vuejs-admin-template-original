@@ -50,7 +50,6 @@ const isConfirmPasswordVisible = ref(false)
           v-model="password"
           :type="isPasswordVisible ? 'text' : 'password'"
           :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
-          label="password"
           placeholder="Enter Password"
           :rules="[requiredValidator, passwordValidator]"
           autocomplete="on"

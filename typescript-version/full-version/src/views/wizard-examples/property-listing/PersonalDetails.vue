@@ -83,7 +83,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.username"
           label="Username"
-          placeholder="John.Doe"
+          placeholder="Johndoe"
         />
       </VCol>
 
@@ -96,6 +96,7 @@ watch(formData, () => {
           v-model="formData.password"
           type="password"
           label="Password"
+          placeholder="············"
         />
       </VCol>
 
@@ -121,7 +122,7 @@ watch(formData, () => {
           v-model="formData.contact"
           type="number"
           label="Contact"
-          placeholder="7897897899"
+          placeholder="+1 123 456 7890"
         />
       </VCol>
     </VRow>

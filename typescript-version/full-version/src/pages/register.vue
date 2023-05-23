@@ -110,7 +110,7 @@ const onSubmit = () => {
                   autofocus
                   :rules="[requiredValidator, alphaDashValidator]"
                   label="Username"
-                  placeholder="johnDoe"
+                  placeholder="Johndoe"
                 />
               </VCol>
 

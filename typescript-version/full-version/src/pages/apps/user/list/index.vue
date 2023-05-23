@@ -139,6 +139,7 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedRole"
               label="Select Role"
+              placeholder="Select Role"
               :items="roles"
               clearable
               clear-icon="mdi-close"
@@ -153,6 +154,7 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedPlan"
               label="Select Plan"
+              placeholder="Select Plan"
               :items="plans"
               clearable
               clear-icon="mdi-close"
@@ -167,6 +169,7 @@ const deleteUser = (id: number) => {
             <VSelect
               v-model="selectedStatus"
               label="Select Status"
+              placeholder="Select Status"
               :items="status"
               clearable
               clear-icon="mdi-close"

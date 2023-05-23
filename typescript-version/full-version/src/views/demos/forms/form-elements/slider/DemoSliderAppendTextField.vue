@@ -24,6 +24,7 @@ const blueColorValue = ref(225)
         <VTextField
           v-model="redColorValue"
           type="number"
+          placeholder="10"
           :max="255"
           style="max-inline-size: 5rem;"
         />
@@ -43,6 +44,7 @@ const blueColorValue = ref(225)
         <VTextField
           v-model="greenColorValue"
           type="number"
+          placeholder="20"
           :max="255"
           style="max-inline-size: 5rem;"
         />
@@ -61,6 +63,7 @@ const blueColorValue = ref(225)
         <VTextField
           v-model="blueColorValue"
           type="number"
+          placeholder="30"
           :max="255"
           style="max-inline-size: 5rem;"
         />

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
-import { confirmedValidator, emailValidator, lengthValidator, passwordValidator, requiredValidator, urlValidator } from '@core/utils/validators'
+import { confirmedValidator, emailValidator, passwordValidator, requiredValidator, urlValidator } from '@core/utils/validators'
 
 const iconsSteps = [
   {
@@ -145,7 +145,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="accountForm.username"
                   placeholder="CarterLeonardo"
-                  :rules="[requiredValidator, lengthValidator(accountForm.username, 6)]"
+                  :rules="[requiredValidator]"
                   label="Username"
                 />
               </VCol>
@@ -168,7 +168,7 @@ const validateSocialLinkForm = () => {
               >
                 <VTextField
                   v-model="accountForm.password"
-                  placeholder="Enter Password"
+                  placeholder="············"
                   label="Password"
                   :rules="[requiredValidator, passwordValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
@@ -183,7 +183,7 @@ const validateSocialLinkForm = () => {
               >
                 <VTextField
                   v-model="accountForm.c_password"
-                  placeholder="Enter Confirm Password"
+                  placeholder="············"
                   label="Confirm Password"
                   :rules="[requiredValidator, confirmedValidator(accountForm.c_password, accountForm.password)]"
                   :type="isCPasswordVisible ? 'text' : 'password'"
@@ -268,7 +268,7 @@ const validateSocialLinkForm = () => {
                   v-model="personalForm.country"
                   label="Country"
                   :rules="[requiredValidator]"
-                  placeholder="Country"
+                  placeholder="Select Country"
                   :items="['UK', 'USA', 'Canada', 'Australia', 'Germany']"
                 />
               </VCol>
@@ -281,7 +281,7 @@ const validateSocialLinkForm = () => {
                   v-model="personalForm.language"
                   label="Language"
                   :rules="[requiredValidator]"
-                  placeholder="Language"
+                  placeholder="Select Language"
                   :items="['English', 'Spanish', 'French', 'Russian', 'German']"
                 />
               </VCol>
@@ -374,7 +374,7 @@ const validateSocialLinkForm = () => {
                 <VTextField
                   v-model="addressForm.city"
                   :rules="[requiredValidator]"
-                  placeholder="City"
+                  placeholder="California"
                   label="City"
                 />
               </VCol>

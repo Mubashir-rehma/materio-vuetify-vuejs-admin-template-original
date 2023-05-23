@@ -197,7 +197,10 @@ const onSubmit = () => {
             >
               <!-- 👉 category -->
               <VWindowItem>
-                <VTextField label="Application Name" />
+                <VTextField
+                  label="Application Name"
+                  placeholder="myRider"
+                />
 
                 <h6 class="text-h6 my-4">
                   Category
@@ -272,7 +275,10 @@ const onSubmit = () => {
 
               <!-- 👉 Database Engine -->
               <VWindowItem>
-                <VTextField label="Database Name" />
+                <VTextField
+                  label="Database Name"
+                  placeholder="userDB"
+                />
 
                 <h6 class="text-h6 my-4">
                   Select Database Engine
@@ -320,7 +326,7 @@ const onSubmit = () => {
                       <VTextField
                         v-model="createAppData.cardNumber"
                         label="Card Number"
-                        placeholder="0000 0000 0000 0000"
+                        placeholder="1234 1234 1234 1234"
                         type="number"
                       />
                     </VCol>
@@ -354,7 +360,7 @@ const onSubmit = () => {
                       <VTextField
                         v-model="createAppData.cardCvv"
                         label="CVV"
-                        placeholder="000"
+                        placeholder="123"
                       />
                     </VCol>
 

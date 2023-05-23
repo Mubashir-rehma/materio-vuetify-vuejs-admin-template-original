@@ -198,6 +198,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="giftCardFormData.giftCardNumber"
                   label="Gift Card Number"
+                  placeholder="1234 5678 9012 3456"
                 />
               </VCol>
 
@@ -205,6 +206,7 @@ watch(() => prop.currentStep, updateCartData)
                 <VTextField
                   v-model="giftCardFormData.giftCardPin"
                   label="Gift Card Pin"
+                  placeholder="1234"
                 />
               </VCol>
 

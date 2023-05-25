@@ -68,6 +68,7 @@ export default defineConfig({
             { text: 'Demo Configs', link: '/guide/getting-started/demo-configs' },
             { text: 'RTL', link: '/guide/getting-started/rtl' },
             { text: 'Icons', link: '/guide/icons' },
+            { text: 'Docker', link: '/guide/docker' },
           ],
         },
         {

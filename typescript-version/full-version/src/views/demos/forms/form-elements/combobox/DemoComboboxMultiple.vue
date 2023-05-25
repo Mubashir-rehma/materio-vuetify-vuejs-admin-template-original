@@ -47,12 +47,15 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
       >
         <template #selection="{ item }">
           <VChip class="mt-1">
-            <VAvatar
-              start
-              color="primary"
-            >
-              {{ String(item.title).charAt(0).toUpperCase() }}
-            </VAvatar>
+            <template #prepend>
+              <VAvatar
+                start
+                color="primary"
+              >
+                {{ String(item.title).charAt(0).toUpperCase() }}
+              </VAvatar>
+            </template>
+
             {{ item.title }}
           </VChip>
         </template>

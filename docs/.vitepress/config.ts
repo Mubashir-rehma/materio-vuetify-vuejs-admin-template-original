@@ -144,6 +144,7 @@ export default defineConfig({
       '/contribution/': [
         { text: 'Welcome', link: '' },
         { text: 'ThemeConfig', link: '/contribution/themeconfig' },
+        { text: 'Styles', link: '/contribution/styles' },
       ],
       'code-examples/': [
         {

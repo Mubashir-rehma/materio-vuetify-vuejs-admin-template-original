@@ -42,16 +42,16 @@ const { ctrl_k, meta_k } = useMagicKeys({
 })
 
 const refSearchList = ref<VList>()
-const searchQuery = ref(structuredClone(toRaw(props.searchQuery)))
+const searchQueryLocal = ref(structuredClone(toRaw(props.searchQuery)))
 const refSearchInput = ref<HTMLInputElement>()
 const isLocalDialogVisible = ref(structuredClone(toRaw(props.isDialogVisible)))
-const searchResults = ref(structuredClone(toRaw(props.searchResults)))
+const searchResultsLocal = ref(structuredClone(toRaw(props.searchResults)))
 
 // 👉 Watching props change
 watch(props, () => {
   isLocalDialogVisible.value = structuredClone(toRaw(props.isDialogVisible))
-  searchResults.value = structuredClone(toRaw(props.searchResults))
-  searchQuery.value = structuredClone(toRaw(props.searchQuery))
+  searchResultsLocal.value = structuredClone(toRaw(props.searchResults))
+  searchQueryLocal.value = structuredClone(toRaw(props.searchQuery))
 })
 
 // 👉 watching control + / to open dialog
@@ -67,8 +67,8 @@ const clearSearchAndCloseDialog = () => {
 }
 
 watchEffect(() => {
-  if (!searchQuery.value.length)
-    searchResults.value = []
+  if (!searchQueryLocal.value.length)
+    searchResultsLocal.value = []
 })
 
 // 👉 get fucus on search list
@@ -131,14 +131,14 @@ const resolveCategories = (val: string) => {
         <!-- 👉 Search Input -->
         <VTextField
           ref="refSearchInput"
-          v-model="searchQuery"
+          v-model="searchQueryLocal"
           autofocus
           density="comfortable"
           variant="plain"
           class="app-bar-autocomplete-box"
           @keyup.esc="clearSearchAndCloseDialog"
           @keydown="getFocusOnSearchList"
-          @update:model-value="$emit('update:searchQuery', searchQuery)"
+          @update:model-value="$emit('update:searchQuery', searchQueryLocal)"
         >
           <!-- 👉 Prepend Inner -->
           <template #prepend-inner>
@@ -180,14 +180,14 @@ const resolveCategories = (val: string) => {
       >
         <!-- 👉 Search List -->
         <VList
-          v-show="searchQuery.length && !!searchResults.length"
+          v-show="searchQueryLocal.length && !!searchResultsLocal.length"
           ref="refSearchList"
           density="compact"
           class="app-bar-search-list"
         >
           <!-- 👉 list Item /List Sub header -->
           <template
-            v-for="item in searchResults"
+            v-for="item in searchResultsLocal"
             :key="item.title"
           >
             <VListSubheader
@@ -233,7 +233,7 @@ const resolveCategories = (val: string) => {
 
         <!-- 👉 Suggestions -->
         <div
-          v-show="!!searchResults && !searchQuery"
+          v-show="!!searchResultsLocal && !searchQueryLocal"
           class="h-100"
         >
           <slot name="suggestions">
@@ -279,7 +279,7 @@ const resolveCategories = (val: string) => {
 
         <!-- 👉 No Data found -->
         <div
-          v-show="!searchResults.length && searchQuery.length"
+          v-show="!searchResultsLocal.length && searchQueryLocal.length"
           class="h-100"
         >
           <slot name="noData">
@@ -291,7 +291,7 @@ const resolveCategories = (val: string) => {
                 />
                 <div class="d-flex align-center flex-wrap justify-center gap-2 text-h6 my-3">
                   <span>No Result For </span>
-                  <span>"{{ searchQuery }}"</span>
+                  <span>"{{ searchQueryLocal }}"</span>
                 </div>
                 <div
                   v-if="props.noDataSuggestion"

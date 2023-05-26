@@ -78,9 +78,15 @@ export default defineConfig({
               text: 'Components',
               collapsed: false,
               items: [
-                { text: 'Theme Switcher', link: '/guide/core/components/theme-switcher' },
+                { text: 'Stepper', link: '/guide/core/components/stepper' },
+                { text: 'Otp Input', link: '/guide/core/components/otp-input' },
+                { text: 'Custom Input', link: '/guide/core/components/custom-input' },
                 { text: 'Navbar I18n', link: '/guide/core/components/navbar-i18n' },
+                { text: 'App Card Code', link: '/guide/core/components/app-card-code' },
+                { text: 'App Card Actions', link: '/guide/core/components/app-card-actions' },
+                { text: 'Theme Switcher', link: '/guide/core/components/theme-switcher' },
                 { text: 'Navbar Notifications', link: '/guide/core/components/navbar-notifications' },
+                { text: 'Navbar Shortcuts', link: '/guide/core/components/navbar-shortcuts' },
               ],
             },
           ],
@@ -114,10 +120,8 @@ export default defineConfig({
           text: 'Components',
           collapsed: false,
           items: [
-            { text: 'Form Components', link: '/guide/components/form-components' },
             { text: 'Dialog', link: '/guide/components/dialog' },
             { text: 'Tour', link: '/guide/components/tour' },
-            { text: 'Stepper', link: '/guide/components/stepper' },
           ],
         },
         {

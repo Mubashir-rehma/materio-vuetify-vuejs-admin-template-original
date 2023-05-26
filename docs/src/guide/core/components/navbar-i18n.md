@@ -1,6 +1,6 @@
 # Navbar I18n
 
-> File: src/@core/components/I18n.value
+> File: src/@core/components/I18n.vue
 
 ---
 

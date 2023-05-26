@@ -18,12 +18,14 @@ export default defineConfig({
     vue(),
     vueJsx(),
 
-    // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+    // Docs: https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin
     vuetify({
       styles: {
         configFile: 'src/styles/variables/_vuetify.scss',
       },
     }),
+
+    // Docs: https://github.com/hannoeru/vite-plugin-pages#vite-plugin-pages
     Pages({
       dirs: ['./src/pages'],
 
@@ -54,17 +56,25 @@ export default defineConfig({
         ...routes,
       ],
     }),
+
+    // Docs: https://github.com/johncampionjr/vite-plugin-vue-layouts#vite-plugin-vue-layouts
     Layouts({
       layoutsDirs: './src/layouts/',
     }),
+
+    // Docs: https://github.com/antfu/unplugin-vue-components#unplugin-vue-components
     Components({
       dirs: ['src/@core/components', 'src/views/demos', 'src/components'],
       dts: true,
     }),
+
+    // Docs: https://github.com/antfu/unplugin-auto-import#unplugin-auto-import
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'vue-i18n', 'pinia'],
       vueTemplate: true,
     }),
+
+    // Docs: https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n#intlifyunplugin-vue-i18n
     VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
@@ -72,6 +82,8 @@ export default defineConfig({
         fileURLToPath(new URL('./src/plugins/i18n/locales/**', import.meta.url)),
       ],
     }),
+
+    // Docs: https://github.com/sxzz/vue-macros/tree/main/packages/define-options#readme
     DefineOptions(),
   ],
   define: { 'process.env': {} },

@@ -79,7 +79,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'Stepper', link: '/guide/core/components/stepper' },
-                { text: 'Otp Input', link: '/guide/core/components/otp-input' },
+                { text: 'OTP Input', link: '/guide/core/components/otp-input' },
                 { text: 'Custom Input', link: '/guide/core/components/custom-input' },
                 { text: 'Navbar I18n', link: '/guide/core/components/navbar-i18n' },
                 { text: 'App Card Code', link: '/guide/core/components/app-card-code' },

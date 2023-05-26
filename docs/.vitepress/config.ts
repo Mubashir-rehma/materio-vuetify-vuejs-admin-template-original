@@ -36,8 +36,6 @@ export default defineConfig({
       {
         text: 'Other',
         items: [
-          { text: '@core', link: '/core/', activeMatch: '/core/' },
-          { text: '@layouts', link: '/layouts/', activeMatch: '/layouts/' },
           { text: 'Contribution', link: '/contribution/' },
         ],
       },
@@ -72,9 +70,26 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Layout',
+          text: '@core',
           collapsed: false,
           items: [
+            { text: 'Introduction', link: '/guide/core/' },
+            {
+              text: 'Components',
+              collapsed: false,
+              items: [
+                { text: 'Theme Switcher', link: '/guide/core/components/theme-switcher' },
+                { text: 'Navbar I18n', link: '/guide/core/components/navbar-i18n' },
+                { text: 'Navbar Notifications', link: '/guide/core/components/navbar-notifications' },
+              ],
+            },
+          ],
+        },
+        {
+          text: '@layouts',
+          collapsed: false,
+          items: [
+            { text: 'Introduction', link: '/guide/layouts/' },
             { text: 'Layouts Plugin', link: '/guide/layouts/layouts-plugin' },
             { text: 'Layout Types', link: '/guide/layouts/layout-types' },
           ],
@@ -119,27 +134,6 @@ export default defineConfig({
           items: [
             { text: 'Getting Support', link: '/guide/getting-support' },
             { text: 'Github Access', link: '/guide/github-access' },
-          ],
-        },
-      ],
-      '/core/': [
-        { text: 'Introduction', link: '' },
-        {
-          text: 'Components',
-          collapsed: false,
-          items: [
-            { text: 'Theme Switcher', link: '/core/components/theme-switcher' },
-          ],
-        },
-      ],
-      '/layouts/': [
-        { text: 'Introduction', link: '' },
-        {
-          text: 'Components',
-          collapsed: false,
-          items: [
-            { text: 'Navbar I18n', link: '/layouts/components/navbar-i18n' },
-            { text: 'Navbar notifications', link: '/layouts/components/navbar-notifications' },
           ],
         },
       ],

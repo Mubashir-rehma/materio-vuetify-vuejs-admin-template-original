@@ -1,6 +1,6 @@
 # Navbar Notifications
 
-> File: src/@layouts/components/navbar/Notifications.vue
+> File: src/@core/components/Notifications.vue
 
 ---
 

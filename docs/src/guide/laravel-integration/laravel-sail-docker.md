@@ -16,7 +16,7 @@ Docker is a tool for running applications and services in small, light-weight "c
 
 ## Installation & Setup
 
-Laravel Sail is automatically installed with all new Laravel applications so you may start using it immediately. To learn how to create a new Laravel application, please consult Laravel's [installation documentation](https://laravel.com/docs/9.x/installation) for your operating system.
+Laravel Sail is automatically installed with all new Laravel applications so you may start using it immediately. To learn how to create a new Laravel application, please consult Laravel's [installation documentation](https://laravel.com/docs/10.x/installation) for your operating system.
 
 ## Installing Sail Into Existing Applications
 
@@ -49,7 +49,7 @@ By default, Sail commands are invoked using the `vendor/bin/sail` script that is
 However, instead of repeatedly typing `vendor/bin/sail` to execute Sail commands, you may wish to configure a Bash alias that allows you to execute Sail's commands more easily:
 
 ```sh
-alias sail='bash vendor/bin/sail'
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 ```
 
 Once the Bash alias has been configured, you may execute Sail commands by simply typing `sail`. The remainder of this documentation's examples will assume that you have configured this alias:
@@ -79,12 +79,12 @@ Once the application's containers have been started, you may access the project 
 To stop all of the containers, you may simply press Control + C to stop the container's execution. Or, if the containers are running in the background, you may use the `down` command:
 
 ```sh
-sail down
+sail stop
 ```
 
-## How to run the Master template with docker?
+## How to run the template with docker?
 
-You can run our template in docker environment using sail. After, successfully installed [docker](https://www.docker.com/products/docker-desktop) in your system run the below command to install sail and composer in the template.
+You can run our template in docker environment using sail. After, successfully installed [docker](https://www.docker.com/products/docker-desktop) in your system run the below command to install sail and composer modules in the template.
 
 ```sh
 docker run --rm \
@@ -95,28 +95,30 @@ docker run --rm \
     composer install --ignore-platform-reqs
 ```
 
+Now, run the below command to start the sail.
+
+```sh
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'  //created alias
+
+sail up
+```
+
 In the root directory, you will find a file named `.env.example`, rename the given file name to `.env` and run the following command to generate the key (and you can also edit your database credentials here).
 
 ```sh
-php artisan key:generate
+sail php artisan key:generate
 ```
 
 By running the following command, you will be able to get all the dependencies in your `node_modules` folder:
 
 ```sh
-npm install
+sail yarn
 ```
 
-To run the project, you need to run following command in the project directory. It will compile the php files & all the other project files. If you are making any changes in any of the php file then you need to run the given command again.
+To run the project in development mode , you need to run following command in the project directory. It will compile the php files & all the other project files. It will also enable hot module replacement.
 
 ```sh
-npm run dev
+sail yarn dev
 ```
 
-Now, run the below command to create docker container and serve the template.
-
-```sh
-alias sail='bash vendor/bin/sail'  //created alias
-
-sail up
-```
+Now, your project served on: <http://localhost/>

@@ -39,6 +39,11 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     type: 'sticky',
     transition: 'slide-y-reverse-transition',
   },
+
+  /*
+  // ℹ️  In below Icons section, you can specify icon for each component. Also you can use other props of v-icon component like `color` and `size` for each icon.
+  // Such as: chevronDown: { icon: 'mdi-chevron-down', color:'primary', size: '24' },
+  */
   icons: {
     chevronDown: { icon: 'mdi-chevron-down' },
     chevronRight: { icon: 'mdi-chevron-right' },

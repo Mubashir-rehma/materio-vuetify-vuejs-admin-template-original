@@ -36,8 +36,6 @@ export default defineConfig({
       {
         text: 'Other',
         items: [
-          { text: '@core', link: '/core/', activeMatch: '/core/' },
-          { text: '@layouts', link: '/layouts/', activeMatch: '/layouts/' },
           { text: 'Contribution', link: '/contribution/' },
         ],
       },
@@ -68,12 +66,36 @@ export default defineConfig({
             { text: 'Demo Configs', link: '/guide/getting-started/demo-configs' },
             { text: 'RTL', link: '/guide/getting-started/rtl' },
             { text: 'Icons', link: '/guide/icons' },
+            { text: 'Docker', link: '/guide/docker' },
           ],
         },
         {
-          text: 'Layout',
+          text: '@core',
           collapsed: false,
           items: [
+            { text: 'Introduction', link: '/guide/core/' },
+            {
+              text: 'Components',
+              collapsed: false,
+              items: [
+                { text: 'Stepper', link: '/guide/core/components/stepper' },
+                { text: 'OTP Input', link: '/guide/core/components/otp-input' },
+                { text: 'Custom Input', link: '/guide/core/components/custom-input' },
+                { text: 'Navbar I18n', link: '/guide/core/components/navbar-i18n' },
+                { text: 'App Card Code', link: '/guide/core/components/app-card-code' },
+                { text: 'App Card Actions', link: '/guide/core/components/app-card-actions' },
+                { text: 'Theme Switcher', link: '/guide/core/components/theme-switcher' },
+                { text: 'Navbar Notifications', link: '/guide/core/components/navbar-notifications' },
+                { text: 'Navbar Shortcuts', link: '/guide/core/components/navbar-shortcuts' },
+              ],
+            },
+          ],
+        },
+        {
+          text: '@layouts',
+          collapsed: false,
+          items: [
+            { text: 'Introduction', link: '/guide/layouts/' },
             { text: 'Layouts Plugin', link: '/guide/layouts/layouts-plugin' },
             { text: 'Layout Types', link: '/guide/layouts/layout-types' },
           ],
@@ -98,10 +120,8 @@ export default defineConfig({
           text: 'Components',
           collapsed: false,
           items: [
-            { text: 'Form Components', link: '/guide/components/form-components' },
             { text: 'Dialog', link: '/guide/components/dialog' },
             { text: 'Tour', link: '/guide/components/tour' },
-            { text: 'Stepper', link: '/guide/components/stepper' },
           ],
         },
         {
@@ -121,30 +141,10 @@ export default defineConfig({
           ],
         },
       ],
-      '/core/': [
-        { text: 'Introduction', link: '' },
-        {
-          text: 'Components',
-          collapsed: false,
-          items: [
-            { text: 'Theme Switcher', link: '/core/components/theme-switcher' },
-          ],
-        },
-      ],
-      '/layouts/': [
-        { text: 'Introduction', link: '' },
-        {
-          text: 'Components',
-          collapsed: false,
-          items: [
-            { text: 'Navbar I18n', link: '/layouts/components/navbar-i18n' },
-            { text: 'Navbar notifications', link: '/layouts/components/navbar-notifications' },
-          ],
-        },
-      ],
       '/contribution/': [
         { text: 'Welcome', link: '' },
         { text: 'ThemeConfig', link: '/contribution/themeconfig' },
+        { text: 'Styles', link: '/contribution/styles' },
       ],
       'code-examples/': [
         {

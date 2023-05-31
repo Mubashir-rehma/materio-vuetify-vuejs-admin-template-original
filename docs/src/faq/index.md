@@ -47,7 +47,7 @@ After following about steps still, you are getting the error please [raise suppo
 - Mention which command you are running
 - Mention If you have any other machine, are you able to run our template on that machine
 
-## Error: `[plugin:vite:css] [sass] Can't find stylesheet to import`
+## Error: *[plugin:vite:css] [sass] Can't find stylesheet to import*
 
 Please refer to the danger note at [installation](/guide/installation.html#getting-started) section of the documentation.
 
@@ -98,7 +98,7 @@ We are using the Vuetify framework for our components, however, a stable version
 
 DataTable in Vuetify is still in alpha phase and under vuetify labs. **Vuetify's documentation** strongly says:
 
-> _Components available through Labs are considered NOT production ready and only to be used for testing purposes. Breaking changes will be introduced in patch releases and no support will be provided._
+> *Components available through Labs are considered NOT production ready and only to be used for testing purposes. Breaking changes will be introduced in patch releases and no support will be provided.*
 
 As our template is production ready and we don't want you to experience any serious issues during development and in production, we decided to provide DataTable in our template after it's stable. However, we will check it's usability in BETA as well to provide it as soon as possible.
 
@@ -195,3 +195,25 @@ This FAQ will improve over time so please let us know your feedback if we missed
 ## Laravel and InertiaJs support?
 
 Our template is primarily focused on utilizing Laravel as an API backend, and while we have not included explicit support for InertiaJs, it can be integrated with the template using the official documentation or tutorial guides provided by InertiaJs. Please keep in mind that we have not extensively tested the compatibility of our template with InertiaJs and we do not provide customer support for inertiaJs.
+
+## What is a CORS error?
+
+CORS stands for Cross-Origin Resource Sharing. It is a security mechanism implemented in web browsers that controls access to resources (such as fonts, images, scripts, or API endpoints) on a web page from different domains.
+
+CORS errors can be caused by either the frontend or the backend. On the frontend, the error can be caused by a misconfiguration of the browser's CORS settings. On the backend, the error can be caused by a misconfiguration of the server's CORS settings.
+
+To troubleshoot a CORS error, you can use the following steps:
+
+1. Check the browser's CORS settings. Make sure that the browser is configured to allow cross-origin requests.
+2. Check the server's CORS settings. Make sure that the server is configured to allow cross-origin requests.
+3. If the browser and server are both configured to allow cross-origin requests, then the error is likely caused by a misconfiguration of the browser or server. In this case, you will need to consult the documentation for the browser or server to find out how to fix the error.
+
+Here are some common causes of CORS errors:
+
+- The browser is not configured to allow cross-origin requests.
+- The server is not configured to allow cross-origin requests.
+- The request is using a method that is not allowed by the server.
+- The request is using a header that is not allowed by the server.
+- The request is using a cookie that is not allowed by the server.
+
+In most cases, CORS errors occur because the server is not configured to allow cross-origin requests. Therefore, it is important to ensure that your server is properly configured to handle such requests. To diagnose and address the issue, you can attempt to replicate it in a blank Vue project. If the error persists in the blank project, it indicates that the server needs to be configured correctly. By resolving the server's CORS configuration, you can ensure that the issue will be resolved not only in the template but also in your specific project.

@@ -55,6 +55,7 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
                 {{ String(item.title).charAt(0).toUpperCase() }}
               </VAvatar>
             </template>
+
             {{ item.title }}
           </VChip>
         </template>

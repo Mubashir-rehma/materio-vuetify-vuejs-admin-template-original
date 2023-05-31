@@ -1,6 +1,6 @@
 # Theme Switcher
 
-> File: src/@core/components/navbar/ThemeSwitcher.vue
+> File: src/@core/components/ThemeSwitcher.vue
 ---
 
 `ThemeSwitcher` requires `themes` prop for providing options to select the theme. This component will update the current theme in themeConfig and in turn it will also get updated in vuetify instance. This component is used in `src/layouts/components/NavbarThemeSwitcher.vue` file.

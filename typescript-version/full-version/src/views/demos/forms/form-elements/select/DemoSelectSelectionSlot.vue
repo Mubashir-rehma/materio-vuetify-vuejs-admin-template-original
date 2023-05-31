@@ -30,10 +30,13 @@ const value = ref(['Sandra Adams'])
   >
     <template #selection="{ item }">
       <VChip>
-        <VAvatar
-          start
-          :image="item.raw.avatar"
-        />
+        <template #prepend>
+          <VAvatar
+            start
+            :image="item.raw.avatar"
+          />
+        </template>
+
         <span>{{ item.title }}</span>
       </VChip>
     </template>

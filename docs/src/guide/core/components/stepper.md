@@ -1,5 +1,9 @@
 # Stepper
 
+> File: src/@core/components/AppStepper.vue
+
+---
+
 The Stepper component is a useful tool for simplifying complex processes into a series of step-by-step instructions. There are two types of steppers available in this component:
 
 - Default stepper (without icons)

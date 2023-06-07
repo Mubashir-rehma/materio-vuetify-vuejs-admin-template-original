@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
+const { currentRoute: route } = useRouter()
 const vm = getCurrentInstance()
 
 const buyNowUrl = ref(vm?.appContext.config.globalProperties.buyNowUrl || 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
@@ -11,12 +9,14 @@ watch(buyNowUrl, val => {
     vm.appContext.config.globalProperties.buyNowUrl = val
 })
 
-onMounted(() => {
-  const { marketplace } = route.query
+;(async () => {
+  await until(() => route.value.name).not.toBeUndefined()
+
+  const { marketplace } = route.value.query
 
   if (marketplace === 'vuetify')
     buyNowUrl.value = 'https://store.vuetifyjs.com/products/materio-vuetify-vuejs-admin-template'
-})
+})()
 </script>
 
 <template>

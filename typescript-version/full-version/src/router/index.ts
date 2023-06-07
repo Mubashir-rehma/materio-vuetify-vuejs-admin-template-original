@@ -66,10 +66,18 @@ router.beforeEach(to => {
       return '/'
   }
   else {
-    if (isLoggedIn)
+    if (isLoggedIn) {
       return { name: 'not-authorized' }
-    else
-      return { name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } }
+    }
+    else {
+      return {
+        name: 'login',
+        query: {
+          ...to.query,
+          to: to.name !== 'index' ? to.path : undefined,
+        },
+      }
+    }
   }
 })
 

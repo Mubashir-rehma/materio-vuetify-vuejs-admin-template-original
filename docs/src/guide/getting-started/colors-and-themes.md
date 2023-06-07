@@ -42,4 +42,4 @@ For detailed docs on how to use themes please visit vuetify's official [docs](ht
 
 **Related pages**
 
-- [`ThemeSwitcher` component](/core/components/theme-switcher)
+- [`ThemeSwitcher` component](../core/components/theme-switcher)

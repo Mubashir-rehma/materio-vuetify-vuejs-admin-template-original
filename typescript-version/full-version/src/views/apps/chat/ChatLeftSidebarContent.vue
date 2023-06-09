@@ -74,7 +74,7 @@ const store = useChatStore()
     class="chat-contacts-list px-3"
     :options="{ wheelPropagation: false }"
   >
-    <li>
+    <li class="list-none">
       <span class="chat-contact-header d-block text-primary text-xl font-weight-medium">Chats</span>
     </li>
     <ChatContact
@@ -88,7 +88,7 @@ const store = useChatStore()
       v-show="!store.chatsContacts.length"
       class="no-chat-items-text text-disabled"
     >No chats found</span>
-    <li>
+    <li class="list-none">
       <span class="chat-contact-header d-block text-primary text-xl font-weight-medium">Contacts</span>
     </li>
     <ChatContact

@@ -1,22 +1,7 @@
 <script lang="ts" setup>
-const { currentRoute: route } = useRouter()
-const vm = getCurrentInstance()
-
-const buyNowUrl = ref(vm?.appContext.config.globalProperties.buyNowUrl || 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/')
-
-watch(buyNowUrl, val => {
-  if (vm)
-    vm.appContext.config.globalProperties.buyNowUrl = val
-})
-
-;(async () => {
-  await until(() => route.value.name).not.toBeUndefined()
-
-  const { marketplace } = route.value.query
-
-  if (marketplace === 'vuetify')
-    buyNowUrl.value = 'https://store.vuetifyjs.com/products/materio-vuetify-vuejs-admin-template'
-})()
+const buyNowUrl = ('isMarketplace' in window && window.isMarketplace)
+  ? 'https://store.vuetifyjs.com/products/materio-vuetify-vuejs-admin-template'
+  : 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/'
 </script>
 
 <template>

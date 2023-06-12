@@ -158,6 +158,7 @@ const deleteUser = (id: number) => {
         :items-length="totalUsers"
         :headers="headers"
         show-select
+        class="text-no-wrap"
         @update:options="options = $event"
       >
         <!-- User -->

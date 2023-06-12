@@ -97,6 +97,7 @@ const editPermission = (name: string) => {
           :items-length="totalPermissions"
           :headers="headers"
           :items="permissions"
+          class="text-no-wrap"
           @update:options="options = $event"
         >
           <!-- Assigned To -->

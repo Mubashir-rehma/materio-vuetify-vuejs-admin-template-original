@@ -167,6 +167,7 @@ watchEffect(() => {
             v-model="selectedStatus"
             density="compact"
             label="Select Status"
+            placeholder="Select Status"
             clearable
             clear-icon="mdi-close"
             :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
@@ -187,6 +188,7 @@ watchEffect(() => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        class="text-no-wrap"
         @update:options="options = $event"
       >
         <!-- Trending Header -->

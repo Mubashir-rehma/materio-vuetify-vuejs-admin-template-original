@@ -20,6 +20,7 @@ export const isEmptyArray = (arr: unknown): boolean => {
 export const isObject = (obj: unknown): obj is Record<string, unknown> =>
   obj !== null && !!obj && typeof obj === 'object' && !Array.isArray(obj)
 
+// 👉 IsToday
 export const isToday = (date: Date) => {
   const today = new Date()
 

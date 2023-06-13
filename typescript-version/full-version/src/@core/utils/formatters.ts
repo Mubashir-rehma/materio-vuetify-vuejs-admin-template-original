@@ -1,4 +1,4 @@
-import { isToday } from './index'
+import { isToday } from './helpers'
 
 export const avatarText = (value: string) => {
   if (!value)

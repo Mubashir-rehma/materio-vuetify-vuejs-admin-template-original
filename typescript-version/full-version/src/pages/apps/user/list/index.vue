@@ -4,7 +4,6 @@ import type { UserProperties } from '@/@fake-db/types'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import type { Options } from '@core/types'
-import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
 const userListStore = useUserListStore()

@@ -71,6 +71,7 @@ export default defineConfig({
     // Docs: https://github.com/antfu/unplugin-auto-import#unplugin-auto-import
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'vue-i18n', 'pinia'],
+      dirs: ['./src/@core/utils'],
       vueTemplate: true,
     }),
 
@@ -97,7 +98,6 @@ export default defineConfig({
       '@styles': fileURLToPath(new URL('./src/styles/', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/styles/variables/_template.scss', import.meta.url)),
       '@axios': fileURLToPath(new URL('./src/plugins/axios', import.meta.url)),
-      '@validators': fileURLToPath(new URL('./src/@core/utils/validators', import.meta.url)),
       'apexcharts': fileURLToPath(new URL('node_modules/apexcharts-clevision', import.meta.url)),
     },
   },

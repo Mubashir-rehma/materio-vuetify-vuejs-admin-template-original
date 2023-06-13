@@ -1,5 +1,4 @@
 import type { VuetifyOptions } from 'vuetify'
-import { resolveVuetifyTheme } from '@core/utils/vuetify'
 import { themeConfig } from '@themeConfig'
 
 export const staticPrimaryColor = '#a169ff'

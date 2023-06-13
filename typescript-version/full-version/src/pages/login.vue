@@ -5,7 +5,6 @@ import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import axios from '@axios'
 import { themeConfig } from '@themeConfig'
-import { emailValidator, requiredValidator } from '@validators'
 
 const isPasswordVisible = ref(false)
 

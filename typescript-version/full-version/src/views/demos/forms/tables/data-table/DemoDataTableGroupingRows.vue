@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import { avatarText } from '@/@core/utils/formatters'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

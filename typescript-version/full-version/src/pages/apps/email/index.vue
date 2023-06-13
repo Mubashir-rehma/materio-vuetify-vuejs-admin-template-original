@@ -8,7 +8,6 @@ import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import { useEmailStore } from '@/views/apps/email/useEmailStore'
 import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
-import { formatDateToMonthShort } from '@core/utils/formatters'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 

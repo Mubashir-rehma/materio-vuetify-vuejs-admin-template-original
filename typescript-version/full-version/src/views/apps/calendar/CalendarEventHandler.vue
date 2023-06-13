@@ -12,8 +12,6 @@ import avatar5 from '@images/avatars/avatar-5.png'
 import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 
-import { requiredValidator, urlValidator } from '@validators'
-
 const props = defineProps<Props>()
 
 const emit = defineEmits<{

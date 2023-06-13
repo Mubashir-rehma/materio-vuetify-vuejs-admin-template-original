@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { avatarText, kFormatter } from '@core/utils/formatters'
-
 interface Props {
   userData: {
     id: number

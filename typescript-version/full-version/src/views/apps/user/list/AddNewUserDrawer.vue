@@ -4,7 +4,6 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import type { VForm } from 'vuetify/components/VForm'
 
 import type { UserProperties } from '@/@fake-db/types'
-import { emailValidator, requiredValidator } from '@validators'
 
 interface Emit {
   (e: 'update:isDrawerOpen', value: boolean): void

@@ -4,7 +4,6 @@ import type { Email } from '@/@fake-db/types'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import { useEmailStore } from '@/views/apps/email/useEmailStore'
-import { formatDate } from '@core/utils/formatters'
 
 interface Props {
   email: Email | null

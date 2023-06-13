@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
-import { confirmedValidator, emailValidator, passwordValidator, requiredValidator, urlValidator } from '@core/utils/validators'
 
 const numberedSteps = [
   {

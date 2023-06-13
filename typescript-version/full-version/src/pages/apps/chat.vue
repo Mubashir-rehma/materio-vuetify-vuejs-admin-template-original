@@ -9,7 +9,6 @@ import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSide
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
-import { avatarText } from '@core/utils/formatters'
 
 // composables
 const vuetifyDisplays = useDisplay()

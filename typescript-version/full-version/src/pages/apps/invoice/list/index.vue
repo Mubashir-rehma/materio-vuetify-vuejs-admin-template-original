@@ -4,7 +4,6 @@ import type { Invoice } from '@/@fake-db/types'
 import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
 
 import type { Options } from '@core/types'
-import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
 const invoiceListStore = useInvoiceStore()

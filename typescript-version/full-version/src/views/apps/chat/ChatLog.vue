@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { ChatOut } from '@/@fake-db/types'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
-import { formatDate } from '@core/utils/formatters'
 
 const store = useChatStore()
 

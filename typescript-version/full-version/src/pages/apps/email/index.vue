@@ -7,7 +7,6 @@ import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import { useEmailStore } from '@/views/apps/email/useEmailStore'
-import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 

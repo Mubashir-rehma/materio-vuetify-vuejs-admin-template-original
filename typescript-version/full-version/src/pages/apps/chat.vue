@@ -8,7 +8,6 @@ import ChatLog from '@/views/apps/chat/ChatLog.vue'
 import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSidebarContent.vue'
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
-import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
 
 // composables
 const vuetifyDisplays = useDisplay()

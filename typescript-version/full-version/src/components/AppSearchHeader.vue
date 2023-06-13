@@ -2,8 +2,6 @@
 import AppSearchHeaderBgDark from '@images/pages/app-search-header-bg-dark.png'
 import AppSearchHeaderBgLight from '@images/pages/app-search-header-bg-light.png'
 
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-
 interface Props {
   title?: string
   subtitle?: string

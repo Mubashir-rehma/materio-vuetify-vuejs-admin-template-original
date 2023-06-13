@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import type { ThemeSwitcherTheme } from '@layouts/types'
 
 const props = defineProps<{

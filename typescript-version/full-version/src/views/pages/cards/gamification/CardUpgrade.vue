@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
 import poseM9 from '@images/cards/pose-m-9.png'
 import triangleDark from '@images/misc/triangle-dark.png'
 import triangleLight from '@images/misc/triangle-light.png'

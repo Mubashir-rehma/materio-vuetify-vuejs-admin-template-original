@@ -5,7 +5,6 @@ import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import type { Ref } from 'vue'
 import type { Event, NewEvent } from './types'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
 
 export const blankEvent = {

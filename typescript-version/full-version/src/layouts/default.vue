@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useSkins } from '@core/composable/useSkins'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
 
 // @layouts plugin
 import { AppContentLayoutNav } from '@layouts/enums'

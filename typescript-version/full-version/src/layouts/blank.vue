@@ -1,6 +1,4 @@
 <script lang="ts">
-import { useSkins } from '@core/composable/useSkins'
-
 export default defineComponent({
   setup() {
     const routerView = resolveComponent('router-view')

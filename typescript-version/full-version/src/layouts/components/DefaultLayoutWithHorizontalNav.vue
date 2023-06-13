@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import navItems from '@/navigation/horizontal'
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+
 import { themeConfig } from '@themeConfig'
 
 // Components

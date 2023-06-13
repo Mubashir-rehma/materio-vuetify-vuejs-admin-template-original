@@ -1,4 +1,3 @@
-import { isDarkPreferred } from '@core/composable/useThemeConfig'
 import { themeConfig } from '@themeConfig'
 
 export const resolveVuetifyTheme = () => {

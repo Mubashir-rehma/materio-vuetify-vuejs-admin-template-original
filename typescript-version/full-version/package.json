@@ -8,7 +8,7 @@
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . -c .eslintrc.js --fix --rulesdir eslint-internal-rules/ --ext .ts,.js,.vue,.tsx,.jsx",
-    "build:icons": "tsc -b src/@iconify && node src/@iconify/build-icons.js",
+    "build:icons": "tsx src/assets/icons/build-icons.ts",
     "postinstall": "npm run build:icons"
   },
   "dependencies": {
@@ -72,6 +72,7 @@
     "stylelint-config-idiomatic-order": "9.0.0",
     "stylelint-config-standard-scss": "6.1.0",
     "stylelint-use-logical-spec": "4.1.0",
+    "tsx": "^3.12.7",
     "type-fest": "^3.11.0",
     "typescript": "^5.0.4",
     "unplugin-auto-import": "^0.16.1",

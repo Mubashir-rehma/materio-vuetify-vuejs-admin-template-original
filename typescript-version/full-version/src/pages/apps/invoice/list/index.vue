@@ -23,6 +23,13 @@ const options = ref<Options>({
   search: undefined,
 })
 
+const widgetData = ref([
+  { title: 'Clients', value: 24, icon: 'mdi-account-outline' },
+  { title: 'Invoices', value: 165, icon: 'mdi-clipboard-outline' },
+  { title: 'Paid', value: '$2.46k', icon: 'mdi-currency-usd' },
+  { title: 'Unpaid', value: '$876', icon: 'mdi-currency-usd-off' },
+])
+
 const isLoading = ref(false)
 
 // 👉 headers
@@ -133,6 +140,48 @@ watchEffect(() => {
 
 <template>
   <section v-if="invoices">
+    <!-- 👉 Invoice Widgets -->
+    <VCard class="mb-6">
+      <VCardText>
+        <VRow>
+          <template
+            v-for="(data, id) in widgetData"
+            :key="id"
+          >
+            <VCol
+              cols="12"
+              sm="6"
+              md="3"
+              class="px-6"
+            >
+              <div class="d-flex justify-space-between">
+                <div class="d-flex flex-column gap-y-1">
+                  <span class="text-h5 text-high-emphasis">{{ data.value }}</span>
+                  <span class="text-base text-capitalize">{{ data.title }}</span>
+                </div>
+
+                <VAvatar
+                  color="rgba(var(--v-theme-on-background), var(--v-hover-opacity))"
+                  rounded
+                  class="text-high-emphasis"
+                  size="38"
+                >
+                  <VIcon
+                    :icon="data.icon"
+                    size="26"
+                  />
+                </VAvatar>
+              </div>
+            </VCol>
+            <VDivider
+              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1 : $vuetify.display.smAndUp ? id % 2 === 0 : false"
+              vertical
+              inset
+            />
+          </template>
+        </VRow>
+      </VCardText>
+    </VCard>
     <!-- 👉 Invoice Filters  -->
     <VCard
       title="Filters"

@@ -120,9 +120,63 @@ const deleteUser = (id: number) => {
   // refetch User
   fetchUsers()
 }
+
+const widgetData = ref([
+  { title: 'Session', value: '21,459', change: 29, desc: 'Total Users', icon: 'mdi-account-outline', iconColor: 'primary' },
+  { title: 'Paid Users', value: '4,567', change: 18, desc: 'Last Week Analytics', icon: 'mdi-account-plus-outline', iconColor: 'error' },
+  { title: 'Active Users', value: '19,860', change: -14, desc: 'Last Week Analytics', icon: 'mdi-account-check-outline', iconColor: 'success' },
+  { title: 'Pending Users', value: '237', change: 42, desc: 'Last Week Analytics', icon: 'mdi-account-search-outline', iconColor: 'warning' },
+
+])
 </script>
 
 <template>
+  <div class="d-flex mb-6">
+    <VRow>
+      <template
+        v-for="(data, id) in widgetData"
+        :key="id"
+      >
+        <VCol
+          cols="12"
+          md="3"
+          sm="6"
+        >
+          <VCard>
+            <VCardText>
+              <div class="d-flex justify-space-between">
+                <div class="d-flex flex-column gap-y-1">
+                  <span class="text-body-1 text-high-emphasis">{{ data.title }}</span>
+                  <div>
+                    <h5 class="text-h5">
+                      {{ data.value }}
+                      <span
+                        class="text-base "
+                        :class="data.change > 0 ? 'text-success' : 'text-error'"
+                      >({{ data.change > 0 ? '+' : '' }}{{ data.change }}%)</span>
+                    </h5>
+                  </div>
+                  <span class="text-sm">{{ data.desc }}</span>
+                </div>
+
+                <VAvatar
+                  :color="data.iconColor"
+                  variant="tonal"
+                  rounded
+                  size="38"
+                >
+                  <VIcon
+                    :icon="data.icon"
+                    size="26"
+                  />
+                </VAvatar>
+              </div>
+            </VCardText>
+          </VCard>
+        </VCol>
+      </template>
+    </VRow>
+  </div>
   <section>
     <VCard
       title="Filters"

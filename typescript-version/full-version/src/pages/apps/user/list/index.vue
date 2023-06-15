@@ -131,6 +131,7 @@ const widgetData = ref([
 </script>
 
 <template>
+  <!-- 👉 Widgets -->
   <div class="d-flex mb-6">
     <VRow>
       <template

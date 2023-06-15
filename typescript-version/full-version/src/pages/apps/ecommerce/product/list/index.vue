@@ -1,0 +1,335 @@
+<script setup lang="ts">
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { EcommerceProduct } from '@/@fake-db/types'
+import { useEcommerceStore } from '@/views/apps/ecommerce/useEcommerceStore'
+import type { Options } from '@core/types'
+
+const products = ref<EcommerceProduct[]>([])
+const EcommerceStore = useEcommerceStore()
+const totalProduct = ref(0)
+
+const widgetData = ref([
+  { title: 'In-Store Sales', value: '$5,345.43', icon: 'mdi-home-outline', desc: '5k orders', change: 5.7 },
+  { title: 'Website Sales', value: '$674,347.12', icon: 'mdi-laptop', desc: '21k orders', change: 12.4 },
+  { title: 'Discount', value: '$14,235.12', icon: 'mdi-wallet-giftcard', desc: '6k orders' },
+  { title: 'Affiliate', value: '$8,345.23', icon: 'mdi-currency-usd', desc: '150 orders', change: -3.5 },
+])
+
+const headers = [
+  { title: 'Product', key: 'product' },
+  { title: 'Category', key: 'category' },
+  { title: 'Stock', key: 'stock' },
+  { title: 'SKU', key: 'sku' },
+  { title: 'Price', key: 'price' },
+  { title: 'QTY', key: 'qty' },
+  { title: 'Status', key: 'status' },
+  { title: 'Actions', key: 'actions' },
+]
+
+const selectedStatus = ref()
+const selectedCategory = ref()
+const selectedStock = ref()
+const searchQuery = ref('')
+
+const status = ref([
+  { title: 'Scheduled', value: 1 },
+  { title: 'Publish', value: 2 },
+  { title: 'Inactive', value: 3 },
+])
+
+const categories = ref([
+  { title: 'Accessories', value: 0 },
+  { title: 'Home Decor', value: 1 },
+  { title: 'Electronics', value: 2 },
+  { title: 'Shoes', value: 3 },
+  { title: 'Office', value: 4 },
+  { title: 'Games', value: 5 },
+])
+
+const stockStatus = ref([
+  { title: 'In Stock', value: true },
+  { title: 'Out of Stock', value: false },
+])
+
+const options = ref<Options>({
+  page: 1,
+  itemsPerPage: 10,
+  sortBy: [],
+  groupBy: [],
+  search: undefined,
+})
+
+const computedMoreList = computed(() => {
+  return (paramId: number) => ([
+    { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+    {
+      title: 'Edit',
+      value: 'edit',
+      prependIcon: 'mdi-pencil-outline',
+      to: { name: 'apps-invoice-edit-id', params: { id: paramId } },
+    },
+    { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+  ])
+})
+
+const resolveCategory = (category: number) => {
+  if (category === 0)
+    return { text: 'Accessories', color: 'error', icon: 'mdi-watch' }
+  if (category === 1)
+    return { text: 'Home Decor', color: 'info', icon: 'mdi-home-outline' }
+  if (category === 2)
+    return { text: 'Electronics', color: 'primary', icon: 'mdi-desktop-mac' }
+  if (category === 3)
+    return { text: 'Shoes', color: 'success', icon: 'mdi-shoe-formal' }
+  if (category === 4)
+    return { text: 'Office', color: 'warning', icon: 'mdi-briefcase-outline' }
+  if (category === 5)
+    return { text: 'Games', color: 'primary', icon: 'mdi-controller-classic-outline' }
+}
+
+const resolveStatus = (status_id: number) => {
+  if (status_id === 1)
+    return { text: 'Scheduled', color: 'warning' }
+  if (status_id === 2)
+    return { text: 'Publish', color: 'success' }
+  if (status_id === 3)
+    return { text: 'Inactive', color: 'error' }
+}
+
+const fetchProducts = () => {
+  EcommerceStore.fetchProducts({
+    q: searchQuery.value,
+    stock: selectedStock.value,
+    category: selectedCategory.value,
+    status: selectedStatus.value,
+    options: options.value,
+  }).then(res => {
+    console.log(res.data)
+    products.value = res.data.products
+    totalProduct.value = res.data.total
+  })
+}
+
+watchEffect(fetchProducts)
+</script>
+
+<template>
+  <!-- 👉 widgets -->
+  <VCard class="mb-6">
+    <VCardText>
+      <VRow>
+        <template
+          v-for="(data, id) in widgetData"
+          :key="id"
+        >
+          <VCol
+            cols="12"
+            sm="6"
+            md="3"
+            class="px-6"
+          >
+            <div class="d-flex justify-space-between">
+              <div class="d-flex flex-column gap-y-1">
+                <span class="text-base text-capitalize">{{ data.title }}</span>
+                <span class="text-h5 text-high-emphasis">{{ data.value }}</span>
+                <div>
+                  <span class="me-2">
+                    {{ data.desc }}
+                  </span>
+                  <VChip
+                    v-if="data.change"
+                    density="comfortable"
+                    :color="data.change > 0 ? 'success' : 'error'"
+                  >
+                    {{ data.change > 0 ? '+' : '' }}{{ data?.change }}%
+                  </VChip>
+                </div>
+              </div>
+
+              <VAvatar
+                color="rgba(var(--v-theme-on-background), var(--v-hover-opacity))"
+                rounded
+                size="38"
+              >
+                <VIcon
+                  :icon="data.icon"
+                  size="28"
+                />
+              </VAvatar>
+            </div>
+          </VCol>
+          <VDivider
+            v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1 : $vuetify.display.smAndUp ? id % 2 === 0 : false"
+            vertical
+            inset
+            length="88"
+          />
+        </template>
+      </VRow>
+    </VCardText>
+  </VCard>
+
+  <!-- 👉 products -->
+  <VCard
+    title="Filters"
+    class="mb-6"
+  >
+    <VCardText>
+      <VRow>
+        <!-- 👉 Select Status -->
+        <VCol
+          cols="12"
+          sm="4"
+        >
+          <VSelect
+            v-model="selectedStatus"
+            label="Select Status"
+            placeholder="Select Status"
+            :items="status"
+            clearable
+            clear-icon="mdi-close"
+          />
+        </VCol>
+
+        <!-- 👉 Select Category -->
+        <VCol
+          cols="12"
+          sm="4"
+        >
+          <VSelect
+            v-model="selectedCategory"
+            label="Category"
+            placeholder="Select Category"
+            :items="categories"
+            clearable
+            clear-icon="mdi-close"
+          />
+        </VCol>
+
+        <!-- 👉 Select Stock Status -->
+        <VCol
+          cols="12"
+          sm="4"
+        >
+          <VSelect
+            v-model="selectedStock"
+            label="Stock"
+            placeholder="Stock"
+            :items="stockStatus"
+            clearable
+            clear-icon="mdi-close"
+          />
+        </VCol>
+      </VRow>
+
+      <VDivider class="my-4" />
+
+      <div class="d-flex flex-wrap gap-4">
+        <div class="d-flex align-center">
+          <!-- 👉 Search  -->
+          <VTextField
+            v-model="searchQuery"
+            placeholder="Search Product"
+            density="compact"
+            style="width: 200px;"
+            class="me-3"
+          />
+        </div>
+
+        <VSpacer />
+        <div class="d-flex gap-x-4">
+          <VSelect
+            v-model="options.itemsPerPage"
+            density="compact"
+            :items="[10, 25, 50, 100]"
+          />
+          <!-- 👉 Export button -->
+          <VBtn
+            variant="outlined"
+            color="secondary"
+            prepend-icon="mdi-tray-arrow-up"
+          >
+            Export
+          </VBtn>
+
+          <VBtn
+            color="primary"
+            prepend-icon="mdi-plus"
+          >
+            Add Product
+          </VBtn>
+        </div>
+      </div>
+
+      <!-- 👉 Datatable  -->
+      <VDataTableServer
+        v-model:items-per-page="options.itemsPerPage"
+        v-model:page="options.page"
+        :headers="headers"
+        show-select
+        :items="products"
+        :items-length="totalProduct"
+        class="text-no-wrap"
+        @update:options="options = $event"
+      >
+        <!-- product  -->
+        <template #item.product="{ item }">
+          <div class="d-flex align-center gap-x-2">
+            <VAvatar
+              v-if="item.raw.image"
+              size="38"
+              variant="tonal"
+              rounded
+            >
+              <VImg :src="item.raw.image" />
+            </VAvatar>
+            <div class="d-flex flex-column">
+              <span class="text-high-emphasis font-weight-medium">{{ item.raw.product_name }}</span>
+              <span class="text-xs">{{ item.raw.product_brand }}</span>
+            </div>
+          </div>
+        </template>
+
+        <!-- category -->
+        <template #item.category="{ item }">
+          <VAvatar
+            size="30"
+            variant="tonal"
+            :color="resolveCategory(item.raw.category)?.color"
+            class="me-2"
+          >
+            <VIcon
+              :icon="resolveCategory(item.raw.category)?.icon"
+              size="18"
+            />
+          </VAvatar>
+          <span class="font-weight-medium text-high-emphasis">{{ resolveCategory(item.raw.category)?.text }}</span>
+        </template>
+
+        <!-- stock -->
+        <template #item.stock="{ item }">
+          <VSwitch v-model="item.raw.stock" />
+        </template>
+
+        <!-- status -->
+        <template #item.status="{ item }">
+          <VChip
+            v-bind="resolveStatus(item.raw.status)"
+            density="comfortable"
+          />
+        </template>
+
+        <!-- Actions -->
+        <template #item.actions="{ item }">
+          <IconBtn>
+            <VIcon icon="mdi-pencil-outline" />
+          </IconBtn>
+          <MoreBtn
+            :menu-list="computedMoreList(item.raw.id)"
+            item-props
+          />
+        </template>
+      </VDataTableServer>
+    </VCardText>
+  </VCard>
+</template>

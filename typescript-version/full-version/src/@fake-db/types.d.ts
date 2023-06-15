@@ -214,6 +214,21 @@ export interface CalendarEvent {
 }
 // !SECTION
 
+// SECTION App: Ecommerce
+export interface EcommerceProduct {
+  id: number
+  product_name: string
+  category: number
+  stock: boolean
+  sku: number
+  price: string
+  qty: number
+  status: number
+  image: string
+  product_brand: string
+}
+// !SECTION
+
 // SECTION App: Invoice
 
 // 👉 Client

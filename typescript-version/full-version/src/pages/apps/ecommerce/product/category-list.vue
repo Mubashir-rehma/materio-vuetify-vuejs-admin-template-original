@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
+import EcommerceAddCategoryDrawer from '@/views/apps/ecommerce/EcommerceAddCategoryDrawer.vue'
 
 import product1 from '@images/ecommerce-images/product-1.png'
 import product10 from '@images/ecommerce-images/product-10.png'
@@ -209,80 +210,5 @@ const isAddProductDrawerOpen = ref(false)
     </VCardText>
   </VCard>
 
-  <VNavigationDrawer
-    v-model="isAddProductDrawerOpen"
-    temporary
-    location="end"
-    width="370"
-  >
-    <div class="d-flex justify-space-between pa-6">
-      <h6 class="text-h6">
-        Add Category
-      </h6>
-      <IconBtn
-        density="comfortable"
-        @click="isAddProductDrawerOpen = !isAddProductDrawerOpen"
-      >
-        <VIcon icon="mdi-close" />
-      </IconBtn>
-    </div>
-
-    <VDivider class="mb-3" />
-
-    <div class="px-6">
-      <VRow>
-        <VCol cols="12">
-          <VTextField
-            label="Title"
-            placeholder="Enter Category Title"
-          />
-        </VCol>
-        <VCol cols="12">
-          <VTextField
-            label="Slug"
-            placeholder="Enter Slug"
-          />
-        </VCol>
-        <VCol cols="12">
-          <VTextField
-            type="file"
-            label="Attachment"
-          />
-        </VCol>
-        <VCol cols="12">
-          <VSelect
-            label="Parent Category"
-            placeholder="Select Parent Category"
-            :items="['HouseHold', 'Management', 'Electronics', 'Office', 'Accessories']"
-          />
-        </VCol>
-        <VCol cols="12">
-          <VTextarea placeholder="Write A comment" />
-        </VCol>
-        <VCol>
-          <VSelect
-            placeholder="Select Category Status"
-            label="Parent Status"
-            :items="['Published', 'Inactive', 'Scheduled']"
-          />
-        </VCol>
-      </VRow>
-
-      <div class="d-flex justify-start mt-6">
-        <VBtn
-          color="primary"
-          class="me-4"
-        >
-          Add
-        </VBtn>
-        <VBtn
-          color="error"
-          variant="outlined"
-          @click="isAddProductDrawerOpen = !isAddProductDrawerOpen"
-        >
-          Discard
-        </VBtn>
-      </div>
-    </div>
-  </VNavigationDrawer>
+  <EcommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />
 </template>

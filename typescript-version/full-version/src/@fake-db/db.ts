@@ -13,6 +13,7 @@ import './apps/chat'
 import './apps/ecommerce'
 import './apps/email'
 import './apps/invoice'
+import './apps/order'
 import './apps/permissions'
 
 // forwards the matched request over network

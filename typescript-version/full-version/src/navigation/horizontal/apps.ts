@@ -4,6 +4,11 @@ export default [
     icon: { icon: 'mdi-package-variant' },
     children: [
       {
+        title: 'Ecommerce',
+        icon: { icon: 'mdi-cart-plus' },
+        to: 'apps-ecommerce',
+      },
+      {
         title: 'Email',
         icon: { icon: 'mdi-email-outline' },
         to: 'apps-email',

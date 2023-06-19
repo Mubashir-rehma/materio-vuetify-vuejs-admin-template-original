@@ -229,6 +229,22 @@ export interface EcommerceProduct {
 }
 // !SECTION
 
+// SECTION App: Order
+export interface Order {
+  id: number,
+  order: number,
+  customer: string,
+  email: string,
+  avatar: string,
+  payment: number,
+  status: number,
+  spent: string,
+  method: string,
+  date: string,
+  time: string,
+  method_number: number,
+}
+
 // SECTION App: Invoice
 
 // 👉 Client

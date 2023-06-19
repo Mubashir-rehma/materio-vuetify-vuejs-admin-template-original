@@ -5,3 +5,8 @@ export interface productParams {
   status: string,
   options: object,
 }
+
+export interface orderParams {
+  q: string,
+  options: object,
+}

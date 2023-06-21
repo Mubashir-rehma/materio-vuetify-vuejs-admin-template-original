@@ -214,6 +214,37 @@ export interface CalendarEvent {
 }
 // !SECTION
 
+// SECTION App: Customer
+export interface Customer {
+  id: number
+  customer: string
+  customer_id: number
+  email: string
+  country: string
+  country_code: string
+  order: number
+  total_spent: string
+  avatar: string
+}
+// !SECTION 
+
+// SECTION App: Review
+export interface Review {
+  id: number
+  product: string
+  company_name: string
+  product_image: string
+  reviewer: string
+  email: string
+  avatar: string
+  date: string
+  status: string
+  review: number
+  head: string
+  para: string
+}
+// !SECTION
+
 // SECTION App: Ecommerce
 export interface EcommerceProduct {
   id: number

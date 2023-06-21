@@ -126,89 +126,92 @@ const isAddProductDrawerOpen = ref(false)
 </script>
 
 <template>
-  <VCard>
-    <VCardText>
-      <div class="d-flex justify-md-space-between flex-wrap gap-y-4 justify-center mb-6">
-        <VTextField
-          v-model="searchQuery"
-          placeholder="Search"
-          density="compact"
-          style=" min-width: 200px;max-width: 200px;"
-        />
-
-        <div class="d-flex align-center  flex-wrap gap-4">
-          <VSelect
-            v-model="itemsPerPage"
-            :items="[10, 25, 50, 100]"
+  <div>
+    <VCard>
+      <VCardText>
+        <div class="d-flex justify-md-space-between flex-wrap gap-y-4 justify-center mb-6">
+          <VTextField
+            v-model="searchQuery"
+            placeholder="Search"
             density="compact"
+            style=" min-width: 200px;max-width: 200px;"
           />
-          <VBtn
-            prepend-icon="mdi-export-variant"
-            color="secondary"
-            variant="outlined"
-          >
-            Export
-          </VBtn>
-          <VBtn
-            prepend-icon="mdi-plus"
-            @click="isAddProductDrawerOpen = !isAddProductDrawerOpen"
-          >
-            Add Product
-          </VBtn>
-        </div>
-      </div>
 
-      <VDataTable
-        v-model:items-per-page="itemsPerPage"
-        :headers="headers"
-        :items="category_data"
-        :search="searchQuery"
-        show-select
-      >
-        <template #item.actions>
-          <IconBtn>
-            <VIcon icon="mdi-pencil-outline" />
-          </IconBtn>
-          <MoreBtn
-            :menu-list="computedMoreList()"
-            item-props
-          />
-        </template>
-
-        <template #item.category_title="{ item }">
-          <div class="d-flex gap-x-3">
-            <VAvatar
-              variant="tonal"
-              rounded
-              size="38"
+          <div class="d-flex align-center  flex-wrap gap-4">
+            <VSelect
+              v-model="itemsPerPage"
+              :items="[10, 25, 50, 100]"
+              density="compact"
+            />
+            <VBtn
+              prepend-icon="mdi-export-variant"
+              color="secondary"
+              variant="outlined"
             >
-              <img
-                :src="item.raw.image"
-                :alt="item.raw.category_title"
-                width="38"
-                height="38"
+              Export
+            </VBtn>
+            <VBtn
+              prepend-icon="mdi-plus"
+              @click="isAddProductDrawerOpen = !isAddProductDrawerOpen"
+            >
+              Add Product
+            </VBtn>
+          </div>
+        </div>
+
+        <VDataTable
+          v-model:items-per-page="itemsPerPage"
+          :headers="headers"
+          :items="category_data"
+          :search="searchQuery"
+          show-select
+          class="text-no-wrap"
+        >
+          <template #item.actions>
+            <IconBtn>
+              <VIcon icon="mdi-pencil-outline" />
+            </IconBtn>
+            <MoreBtn
+              :menu-list="computedMoreList()"
+              item-props
+            />
+          </template>
+
+          <template #item.category_title="{ item }">
+            <div class="d-flex gap-x-3">
+              <VAvatar
+                variant="tonal"
+                rounded
+                size="38"
               >
-            </VAvatar>
-            <div>
-              <div class="text-sm text-high-emphasis font-weight-medium">
-                {{ item.raw.category_title }}
-              </div>
-              <div class="text-caption">
-                {{ item.raw.description }}
+                <img
+                  :src="item.raw.image"
+                  :alt="item.raw.category_title"
+                  width="38"
+                  height="38"
+                >
+              </VAvatar>
+              <div>
+                <div class="text-sm text-high-emphasis font-weight-medium">
+                  {{ item.raw.category_title }}
+                </div>
+                <div class="text-caption">
+                  {{ item.raw.description }}
+                </div>
               </div>
             </div>
-          </div>
-        </template>
+          </template>
 
-        <template #item.total_earning="{ item }">
-          {{ (item.raw.total_earning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
-        </template>
-        <template #item.total_product="{ item }">
-          {{ (item.raw.total_product).toLocaleString() }}
-        </template>
-      </VDataTable>
-    </VCardText>
-  </VCard>
+          <template #item.total_earning="{ item }">
+            {{ (item.raw.total_earning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
+          </template>
+          <template #item.total_product="{ item }">
+            {{ (item.raw.total_product).toLocaleString() }}
+          </template>
+        </VDataTable>
+      </VCardText>
+    </VCard>
 
-  <EcommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />
+    <EcommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />
+  </div>
 </template>

@@ -10,6 +10,7 @@ import './pages/profile'
 // Apps
 import './apps/calendar'
 import './apps/chat'
+import './apps/customer'
 import './apps/ecommerce'
 import './apps/email'
 import './apps/invoice'

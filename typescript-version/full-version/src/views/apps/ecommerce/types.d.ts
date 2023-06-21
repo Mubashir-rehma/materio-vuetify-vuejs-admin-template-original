@@ -10,3 +10,13 @@ export interface orderParams {
   q: string,
   options: object,
 }
+
+export interface customerParams {
+  q: string,
+  options: object,
+}
+
+export interface reviewParams {
+  q: string,
+  options: object,
+}

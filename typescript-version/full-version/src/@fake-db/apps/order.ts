@@ -1422,6 +1422,7 @@ const order_data: Order[] = [
 
 console.log(order_data)
 
+// 👉 Get Order list
 mock.onGet('/apps/ecommerce/orders/list').reply(config => {
   const { q = '', options = {} } = config.params ?? {}
   const { sortBy = '', page = 1, itemsPerPage = 10 } = options
@@ -1468,4 +1469,22 @@ mock.onGet('/apps/ecommerce/orders/list').reply(config => {
   }
 
   return [200, { orders: paginateArray(filterOrders, itemsPerPage, page), total: filterOrders.length }]
+})
+
+// 👉 Delete Order
+mock.onDelete(/\/apps\/ecommerce\/orders\/\d+/).reply(config => {
+  const id = Number(config.url?.substring(config.url?.lastIndexOf('/') + 1))
+
+  console.log(id)
+
+  const orderIndex = order_data.findIndex(o => o.id === id)
+
+  console.log(orderIndex)
+  if (orderIndex >= 0) {
+    order_data.splice(orderIndex, 1)
+
+    return [200]
+  }
+
+  return [400]
 })

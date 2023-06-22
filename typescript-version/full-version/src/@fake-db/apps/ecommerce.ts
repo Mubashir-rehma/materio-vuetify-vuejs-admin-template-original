@@ -1,4 +1,4 @@
-import type { EcommerceProduct, Review } from '../types'
+import type { ECommerceProduct, Review } from '../types'
 import mock from '@/@fake-db/mock'
 import { paginateArray } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
@@ -38,7 +38,7 @@ import product7 from '@images/ecommerce-images/product-7.png'
 import product8 from '@images/ecommerce-images/product-8.png'
 import product9 from '@images/ecommerce-images/product-9.png'
 
-const products: EcommerceProduct[] = [
+const products: ECommerceProduct[] = [
   {
     id: 1,
     product_name: 'iPhone 14 Pro',

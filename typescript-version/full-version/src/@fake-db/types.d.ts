@@ -246,7 +246,7 @@ export interface Review {
 // !SECTION
 
 // SECTION App: Ecommerce
-export interface EcommerceProduct {
+export interface ECommerceProduct {
   id: number
   product_name: string
   category: number

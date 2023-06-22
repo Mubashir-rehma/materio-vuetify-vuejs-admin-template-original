@@ -5,10 +5,10 @@ import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/userInfo.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
-import { useEcommerceStore } from '@/views/apps/ecommerce/useEcommerceStore'
+import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const EcommerceStore = useEcommerceStore()
+const ECommerceStore = useECommerceStore()
 
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
@@ -47,7 +47,7 @@ const headers = [
 ]
 
 const fetchReferrals = () => {
-  EcommerceStore.fetchReferrals({
+  ECommerceStore.fetchReferrals({
     options: options.value,
   }).then(res => {
     console.log(res.data)

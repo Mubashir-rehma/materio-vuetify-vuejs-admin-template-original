@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import { useEcommerceStore } from '@/views/apps/ecommerce/useEcommerceStore'
+import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const EcommerceStore = useEcommerceStore()
+const ECommerceStore = useECommerceStore()
 
 const customers = ref([])
 const totalCustomers = ref(0)
@@ -18,7 +18,7 @@ const options = ref<Options>({
 })
 
 const fetchCustomers = () => {
-  EcommerceStore.fetchCustomers({
+  ECommerceStore.fetchCustomers({
     q: searchQuery.value,
     options: options.value,
   }).then(res => {

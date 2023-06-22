@@ -5,9 +5,9 @@ import CustomerTabAddressAndBilling from '@/views/apps/ecommerce/customer/view/C
 import CustomerTabNotification from '@/views/apps/ecommerce/customer/view/CustomerTabNotification.vue'
 import CustomerTabOverview from '@/views/apps/ecommerce/customer/view/CustomerTabOverview.vue'
 import CustomerTabSecurity from '@/views/apps/ecommerce/customer/view/CustomerTabSecurity.vue'
-import { useEcommerceStore } from '@/views/apps/ecommerce/useEcommerceStore'
+import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 
-const EcommerceStore = useEcommerceStore()
+const ECommerceStore = useECommerceStore()
 const route = useRoute()
 const customerData = ref()
 const userTab = ref(null)
@@ -19,7 +19,7 @@ const tabs = [
   { icon: 'mdi-bell-outline', title: 'Notifications' },
 ]
 
-EcommerceStore.fetchSingleCustomer(route.params.id).then(res => {
+ECommerceStore.fetchSingleCustomer(route.params.id).then(res => {
   customerData.value = res.data
   console.log(customerData.value)
 })

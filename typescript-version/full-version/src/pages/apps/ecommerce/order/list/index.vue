@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Order } from '@/@fake-db/types'
-import { useEcommerceStore } from '@/views/apps/ecommerce/useEcommerceStore'
+import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 import mastercard from '@images/cards/logo-mastercard-small.png'
 import paypal from '@images/cards/paypal_primary.png'
@@ -13,7 +13,7 @@ const widgetData = ref([
   { title: 'Failed', value: 32, icon: 'mdi-alert-octagon-outline' },
 ])
 
-const EcommerceStore = useEcommerceStore()
+const ECommerceStore = useECommerceStore()
 const orders = ref<Order[]>([])
 const searchQuery = ref('')
 const totalOrder = ref(0)
@@ -59,7 +59,7 @@ const resolveStatus = (status: number) => {
 }
 
 const fetchOrders = () => {
-  EcommerceStore.fetchOrders({
+  ECommerceStore.fetchOrders({
     q: searchQuery.value,
     options: options.value,
   }).then(res => {
@@ -70,7 +70,7 @@ const fetchOrders = () => {
 }
 
 const deleteOrder = (id: number) => {
-  EcommerceStore.deleteOrder(id)
+  ECommerceStore.deleteOrder(id)
 
   fetchOrders()
 }

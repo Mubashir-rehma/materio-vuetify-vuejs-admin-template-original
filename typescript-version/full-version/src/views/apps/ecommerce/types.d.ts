@@ -1,4 +1,4 @@
-export interface productParams {
+export interface ProductParams {
   q: string,
   stock: string,
   category: string,
@@ -6,21 +6,21 @@ export interface productParams {
   options: object,
 }
 
-export interface orderParams {
+export interface OrderParams {
   q: string,
   options: object,
 }
 
-export interface customerParams {
+export interface CustomerParams {
   q: string,
   options: object,
 }
 
-export interface reviewParams {
+export interface ReviewParams {
   q: string,
   options: object,
 }
 
-export interface referralParams {
+export interface ReferralParams {
   options: object
 }

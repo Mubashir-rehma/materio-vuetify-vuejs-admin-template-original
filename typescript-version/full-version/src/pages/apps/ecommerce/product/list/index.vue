@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { EcommerceProduct } from '@/@fake-db/types'
-import { useEcommerceStore } from '@/views/apps/ecommerce/useEcommerceStore'
+import type { ECommerceProduct } from '@/@fake-db/types'
+import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const products = ref<EcommerceProduct[]>([])
-const EcommerceStore = useEcommerceStore()
+const products = ref<ECommerceProduct[]>([])
+const ECommerceStore = useECommerceStore()
 const totalProduct = ref(0)
 
 const widgetData = ref([
@@ -97,7 +97,7 @@ const resolveStatus = (status_id: number) => {
 }
 
 const fetchProducts = () => {
-  EcommerceStore.fetchProducts({
+  ECommerceStore.fetchProducts({
     q: searchQuery.value,
     stock: selectedStock.value,
     category: selectedCategory.value,

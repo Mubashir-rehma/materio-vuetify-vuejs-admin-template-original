@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { customerParams, orderParams, productParams, reviewParams } from './types'
+import type { customerParams, orderParams, productParams, referralParams, reviewParams } from './types'
 
 // import type { productParams } from '@/views/apps/ecommerce/types'
 import axios from '@axios'
@@ -20,5 +20,7 @@ export const useEcommerceStore = defineStore('EcommerceStore', {
     fetchReviews(params: reviewParams) { return axios.get('/apps/ecommerce/reviews/list', { params }) },
 
     deleteReview(id: number) { return axios.delete(`/apps/ecommerce/reviews/${id}`) },
+
+    fetchReferrals(params: referralParams) { return axios.get('/apps/ecommerce/referrals', { params }) },
   },
 })

@@ -158,58 +158,59 @@ const isAddProductDrawerOpen = ref(false)
             </VBtn>
           </div>
         </div>
+      </VCardText>
 
-        <VDataTable
-          v-model:items-per-page="itemsPerPage"
-          :headers="headers"
-          :items="category_data"
-          :search="searchQuery"
-          show-select
-          class="text-no-wrap"
-        >
-          <template #item.actions>
-            <IconBtn>
-              <VIcon icon="mdi-pencil-outline" />
-            </IconBtn>
-            <MoreBtn
-              :menu-list="computedMoreList()"
-              item-props
-            />
-          </template>
+      <VDataTable
+        v-model:items-per-page="itemsPerPage"
+        :headers="headers"
+        :items="category_data"
+        item-value="category_title"
+        :search="searchQuery"
+        show-select
+        class="text-no-wrap"
+      >
+        <template #item.actions>
+          <IconBtn>
+            <VIcon icon="mdi-pencil-outline" />
+          </IconBtn>
+          <MoreBtn
+            :menu-list="computedMoreList()"
+            item-props
+          />
+        </template>
 
-          <template #item.category_title="{ item }">
-            <div class="d-flex gap-x-3">
-              <VAvatar
-                variant="tonal"
-                rounded
-                size="38"
+        <template #item.category_title="{ item }">
+          <div class="d-flex gap-x-3">
+            <VAvatar
+              variant="tonal"
+              rounded
+              size="38"
+            >
+              <img
+                :src="item.raw.image"
+                :alt="item.raw.category_title"
+                width="38"
+                height="38"
               >
-                <img
-                  :src="item.raw.image"
-                  :alt="item.raw.category_title"
-                  width="38"
-                  height="38"
-                >
-              </VAvatar>
-              <div>
-                <div class="text-sm text-high-emphasis font-weight-medium">
-                  {{ item.raw.category_title }}
-                </div>
-                <div class="text-caption">
-                  {{ item.raw.description }}
-                </div>
+            </VAvatar>
+            <div>
+              <div class="text-sm text-high-emphasis font-weight-medium">
+                {{ item.raw.category_title }}
+              </div>
+              <div class="text-caption">
+                {{ item.raw.description }}
               </div>
             </div>
-          </template>
+          </div>
+        </template>
 
-          <template #item.total_earning="{ item }">
-            {{ (item.raw.total_earning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
-          </template>
-          <template #item.total_product="{ item }">
-            {{ (item.raw.total_product).toLocaleString() }}
-          </template>
-        </VDataTable>
-      </VCardText>
+        <template #item.total_earning="{ item }">
+          {{ (item.raw.total_earning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
+        </template>
+        <template #item.total_product="{ item }">
+          {{ (item.raw.total_product).toLocaleString() }}
+        </template>
+      </VDataTable>
     </VCard>
 
     <EcommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />

@@ -20,3 +20,7 @@ export interface reviewParams {
   q: string,
   options: object,
 }
+
+export interface referralParams {
+  options: object
+}

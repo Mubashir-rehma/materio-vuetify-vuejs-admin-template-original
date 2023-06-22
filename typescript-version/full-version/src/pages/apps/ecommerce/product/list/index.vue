@@ -103,10 +103,9 @@ const fetchProducts = () => {
     category: selectedCategory.value,
     status: selectedStatus.value,
     options: options.value,
-  }).then(res => {
-    console.log(res.data)
-    products.value = res.data.products
-    totalProduct.value = res.data.total
+  }).then(({ data }) => {
+    products.value = data.products
+    totalProduct.value = data.total
   })
 }
 

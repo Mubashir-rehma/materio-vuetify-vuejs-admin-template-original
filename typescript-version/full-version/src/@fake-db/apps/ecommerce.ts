@@ -2644,6 +2644,461 @@ const reviews: Review[] = [
   },
 ]
 
+const referrals = [
+
+  {
+    id: 1,
+    user: 'Koressa Leyfield',
+    email: 'kleyfield0@columbia.edu',
+    avatar: avatar1,
+    referred_id: 3398,
+    status: 2,
+    value: '$6655.92',
+    earning: '$380.17',
+  },
+  {
+    id: 2,
+    user: 'Tania Brotherhood',
+    email: 'tbrotherhood1@bing.com',
+    avatar: avatar13,
+    referred_id: 6740,
+    status: 2,
+    value: '$2113.04',
+    earning: '$716.72',
+  },
+  {
+    id: 3,
+    user: 'Clemmie Montgomery',
+    email: 'cmontgomery2@fema.gov',
+    avatar: avatar1,
+    referred_id: 2749,
+    status: 2,
+    value: '$6717.09',
+    earning: '$699.02',
+  },
+  {
+    id: 4,
+    user: 'Job Jope',
+    email: 'jjope3@istockphoto.com',
+    avatar: avatar15,
+    referred_id: 1413,
+    status: 3,
+    value: '$9465.13',
+    earning: '$98.23',
+  },
+  {
+    id: 5,
+    user: 'Christoffer Derell',
+    email: 'cderell4@apple.com',
+    avatar: avatar1,
+    referred_id: 9176,
+    status: 3,
+    value: '$6202.81',
+    earning: '$882.51',
+  },
+  {
+    id: 6,
+    user: 'Herminia Eyree',
+    email: 'heyree5@gizmodo.com',
+    avatar: avatar8,
+    referred_id: 6975,
+    status: 2,
+    value: '$9802.40',
+    earning: '$219.52',
+  },
+  {
+    id: 7,
+    user: 'Dela Lathwell',
+    email: 'dlathwell6@webmd.com',
+    avatar: avatar9,
+    referred_id: 4552,
+    status: 3,
+    value: '$6470.46',
+    earning: '$831.45',
+  },
+  {
+    id: 8,
+    user: 'Kirbie Greenhow',
+    email: 'kgreenhow7@sina.com.cn',
+    avatar: avatar1,
+    referred_id: 4131,
+    status: 2,
+    value: '$6199.28',
+    earning: '$856.00',
+  },
+  {
+    id: 9,
+    user: 'Adrienne Tourne',
+    email: 'atourne8@fotki.com',
+    avatar: avatar1,
+    referred_id: 4072,
+    status: 2,
+    value: '$6774.33',
+    earning: '$821.78',
+  },
+  {
+    id: 10,
+    user: 'Vanya Hearons',
+    email: 'vhearons9@blogspot.com',
+    avatar: avatar9,
+    referred_id: 3070,
+    status: 2,
+    value: '$1067.14',
+    earning: '$804.91',
+  },
+  {
+    id: 11,
+    user: 'Garnette Abramcik',
+    email: 'gabramcika@google.com',
+    avatar: avatar11,
+    referred_id: 7828,
+    status: 2,
+    value: '$5375.10',
+    earning: '$447.01',
+  },
+  {
+    id: 12,
+    user: 'Akim Korba',
+    email: 'akorbab@flickr.com',
+    avatar: avatar11,
+    referred_id: 8561,
+    status: 2,
+    value: '$3104.91',
+    earning: '$552.75',
+  },
+  {
+    id: 13,
+    user: 'Cull Scipsey',
+    email: 'cscipseyc@adobe.com',
+    avatar: avatar2,
+    referred_id: 9287,
+    status: 3,
+    value: '$9375.13',
+    earning: '$690.75',
+  },
+  {
+    id: 14,
+    user: 'Anabal Hakking',
+    email: 'ahakkingd@paginegialle.it',
+    avatar: avatar7,
+    referred_id: 4892,
+    status: 3,
+    value: '$8797.12',
+    earning: '$679.71',
+  },
+  {
+    id: 15,
+    user: 'Linzy Swiers',
+    email: 'lswierse@flickr.com',
+    avatar: avatar5,
+    referred_id: 9180,
+    status: 2,
+    value: '$2996.63',
+    earning: '$610.27',
+  },
+  {
+    id: 16,
+    user: 'Willy Espinet',
+    email: 'wespinetf@addtoany.com',
+    avatar: avatar1,
+    referred_id: 9102,
+    status: 3,
+    value: '$7048.18',
+    earning: '$369.06',
+  },
+  {
+    id: 17,
+    user: 'Carter Gommowe',
+    email: 'cgommoweg@purevolume.com',
+    avatar: avatar9,
+    referred_id: 7049,
+    status: 2,
+    value: '$6049.95',
+    earning: '$642.78',
+  },
+  {
+    id: 18,
+    user: 'Andre Kenway',
+    email: 'akenwayh@rambler.ru',
+    avatar: avatar6,
+    referred_id: 9826,
+    status: 3,
+    value: '$2221.71',
+    earning: '$347.19',
+  },
+  {
+    id: 19,
+    user: 'Quintina Endacott',
+    email: 'qendacotti@answers.com',
+    avatar: avatar9,
+    referred_id: 4555,
+    status: 3,
+    value: '$5918.70',
+    earning: '$543.44',
+  },
+  {
+    id: 20,
+    user: 'Shurwood Cabble',
+    email: 'scabblej@twitpic.com',
+    avatar: avatar4,
+    referred_id: 5591,
+    status: 3,
+    value: '$9073.50',
+    earning: '$980.62',
+  },
+  {
+    id: 21,
+    user: 'Thatch Borchardt',
+    email: 'tborchardtk@bing.com',
+    avatar: avatar1,
+    referred_id: 4491,
+    status: 2,
+    value: '$8389.56',
+    earning: '$746.81',
+  },
+  {
+    id: 22,
+    user: 'Fawne O\'Scanlan',
+    email: 'foscanlanl@europa.eu',
+    avatar: avatar8,
+    referred_id: 2946,
+    status: 3,
+    value: '$7471.34',
+    earning: '$747.24',
+  },
+  {
+    id: 23,
+    user: 'Ode Birts',
+    email: 'obirtsm@sphinn.com',
+    avatar: avatar10,
+    referred_id: 2328,
+    status: 3,
+    value: '$8484.83',
+    earning: '$815.79',
+  },
+  {
+    id: 24,
+    user: 'Bella Michelle',
+    email: 'bmichellen@npr.org',
+    avatar: avatar2,
+    referred_id: 5725,
+    status: 3,
+    value: '$7088.56',
+    earning: '$329.64',
+  },
+  {
+    id: 25,
+    user: 'Aurora Skpsey',
+    email: 'askpseyo@cdc.gov',
+    avatar: avatar14,
+    referred_id: 2821,
+    status: 2,
+    value: '$2938.87',
+    earning: '$317.42',
+  },
+  {
+    id: 26,
+    user: 'Neddie Maunders',
+    email: 'nmaundersp@blogspot.com',
+    avatar: avatar15,
+    referred_id: 1661,
+    status: 2,
+    value: '$6256.70',
+    earning: '$521.01',
+  },
+  {
+    id: 27,
+    user: 'Andria Chisnell',
+    email: 'achisnellq@imageshack.us',
+    avatar: avatar12,
+    referred_id: 3363,
+    status: 2,
+    value: '$9106.99',
+    earning: '$705.15',
+  },
+  {
+    id: 28,
+    user: 'Reggy Arnao',
+    email: 'rarnaor@kickstarter.com',
+    avatar: avatar3,
+    referred_id: 7814,
+    status: 1,
+    value: '$6300.60',
+    earning: '$234.28',
+  },
+  {
+    id: 29,
+    user: 'Shaylah Hasselby',
+    email: 'shasselbys@odnoklassniki.ru',
+    avatar: avatar4,
+    referred_id: 8324,
+    status: 3,
+    value: '$1874.21',
+    earning: '$899.72',
+  },
+  {
+    id: 30,
+    user: 'Althea Dayce',
+    email: 'adaycet@youtu.be',
+    avatar: avatar8,
+    referred_id: 6069,
+    status: 3,
+    value: '$6098.09',
+    earning: '$269.32',
+  },
+  {
+    id: 31,
+    user: 'Hector Biaggioli',
+    email: 'hbiaggioliu@umich.edu',
+    avatar: avatar13,
+    referred_id: 5286,
+    status: 3,
+    value: '$4752.66',
+    earning: '$546.63',
+  },
+  {
+    id: 32,
+    user: 'Mycah Gotcher',
+    email: 'mgotcherv@yellowbook.com',
+    avatar: avatar1,
+    referred_id: 7944,
+    status: 2,
+    value: '$5959.05',
+    earning: '$888.10',
+  },
+  {
+    id: 33,
+    user: 'Garv Scruton',
+    email: 'gscrutonw@sun.com',
+    avatar: avatar13,
+    referred_id: 6876,
+    status: 2,
+    value: '$6588.37',
+    earning: '$680.51',
+  },
+  {
+    id: 34,
+    user: 'Renell Gurnett',
+    email: 'rgurnettx@businessweek.com',
+    avatar: avatar2,
+    referred_id: 7802,
+    status: 1,
+    value: '$7542.30',
+    earning: '$208.96',
+  },
+  {
+    id: 35,
+    user: 'Toinette Kilgrew',
+    email: 'tkilgrewy@wikispaces.com',
+    avatar: avatar15,
+    referred_id: 6946,
+    status: 3,
+    value: '$4447.48',
+    earning: '$410.48',
+  },
+  {
+    id: 36,
+    user: 'Corinne Cockshtt',
+    email: 'ccockshttz@house.gov',
+    avatar: avatar7,
+    referred_id: 1372,
+    status: 3,
+    value: '$3700.16',
+    earning: '$858.94',
+  },
+  {
+    id: 37,
+    user: 'Isis Yurkiewicz',
+    email: 'iyurkiewicz10@addthis.com',
+    avatar: avatar4,
+    referred_id: 2384,
+    status: 2,
+    value: '$7456.86',
+    earning: '$280.52',
+  },
+  {
+    id: 38,
+    user: 'Gerianna Nott',
+    email: 'gnott11@youtu.be',
+    avatar: avatar5,
+    referred_id: 1971,
+    status: 3,
+    value: '$5563.94',
+    earning: '$515.34',
+  },
+  {
+    id: 39,
+    user: 'Calli Mewes',
+    email: 'cmewes12@mit.edu',
+    avatar: avatar13,
+    referred_id: 7323,
+    status: 2,
+    value: '$7400.29',
+    earning: '$167.44',
+  },
+  {
+    id: 40,
+    user: 'Sonnnie Keeltagh',
+    email: 'skeeltagh13@typepad.com',
+    avatar: avatar7,
+    referred_id: 5719,
+    status: 3,
+    value: '$1977.34',
+    earning: '$652.01',
+  },
+  {
+    id: 41,
+    user: 'Penelope Hause',
+    email: 'phause14@netlog.com',
+    avatar: avatar3,
+    referred_id: 9347,
+    status: 3,
+    value: '$2155.12',
+    earning: '$101.49',
+  },
+  {
+    id: 42,
+    user: 'Dannie Romeo',
+    email: 'dromeo15@ask.com',
+    avatar: avatar1,
+    referred_id: 1559,
+    status: 1,
+    value: '$7110.30',
+    earning: '$95.40',
+  },
+  {
+    id: 43,
+    user: 'Keely Giannazzi',
+    email: 'kgiannazzi16@mit.edu',
+    avatar: avatar8,
+    referred_id: 3307,
+    status: 3,
+    value: '$2178.00',
+    earning: '$173.10',
+  },
+  {
+    id: 44,
+    user: 'Kassia Mottini',
+    email: 'kmottini17@usa.gov',
+    avatar: avatar7,
+    referred_id: 4426,
+    status: 1,
+    value: '$6921.60',
+    earning: '$365.93',
+  },
+  {
+    id: 45,
+    user: 'Burr Scrauniage',
+    email: 'bscrauniage18@wunderground.com',
+    avatar: avatar8,
+    referred_id: 3570,
+    status: 3,
+    value: '$6891.09',
+    earning: '$900.25',
+  },
+
+]
+
 // eslint-disable-next-line sonarjs/cognitive-complexity
 mock.onGet('/apps/ecommerce/products/list').reply(config => {
   const { q = '', stock = undefined, category = null, status = null, options = {} } = config.params ?? {}
@@ -2798,6 +3253,56 @@ mock.onGet('/apps/ecommerce/reviews/list').reply(config => {
   }
 
   return [200, { reviews: paginateArray(filteredReviews, itemsPerPage, page), total: reviews.length }]
+})
+
+mock.onGet('/apps/ecommerce/referrals').reply(config => {
+  const { options = {} } = config.params ?? {}
+
+  const { sortBy = '', itemsPerPage = 10, page = 1 } = options
+
+  const sort = JSON.parse(JSON.stringify(sortBy))
+
+  console.log(sort)
+
+  const filteredReferrals = referrals
+  if (sort.length) {
+    console.log('inside sort', filteredReferrals)
+    if (sort[0]?.key === 'users') {
+      filteredReferrals.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.user.toLowerCase() > b.user.toLowerCase() ? 1 : -1
+        else if (sort[0]?.order === 'desc')
+          return a.user.toLowerCase() < b.user.toLowerCase() ? 1 : -1
+
+        return 0
+      })
+    }
+
+    if (sort[0]?.key === 'referred-id') {
+      filteredReferrals.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return a.referred_id - b.referred_id
+        else if (sort[0]?.order === 'desc')
+          return b.referred_id - a.referred_id
+
+        return 0
+      })
+    }
+
+    if (sort[0]?.key === 'earning') {
+      filteredReferrals.sort((a, b) => {
+        if (sort[0]?.order === 'asc')
+          return Number(a.earning.slice(1)) - Number(b.earning.slice(1))
+        else if (sort[0]?.order === 'desc')
+          return Number(b.earning.slice(1)) - Number(a.earning.slice(1))
+
+        return 0
+      })
+    }
+  }
+  console.log(filteredReferrals)
+
+  return [200, { referrals: paginateArray(filteredReferrals, itemsPerPage, page), total: referrals.length }]
 })
 
 mock.onDelete(/\/apps\/ecommerce\/reviews\/\d+/).reply(config => {

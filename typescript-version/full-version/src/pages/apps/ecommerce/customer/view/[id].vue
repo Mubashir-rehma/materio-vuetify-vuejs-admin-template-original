@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
 import CustomerBioPanel from '@/views/apps/ecommerce/customer/view/CustomerBioPanel.vue'
 import CustomerTabAddressAndBilling from '@/views/apps/ecommerce/customer/view/CustomerTabAddressAndBilling.vue'
 import CustomerTabNotification from '@/views/apps/ecommerce/customer/view/CustomerTabNotification.vue'
@@ -23,6 +24,8 @@ ECommerceStore.fetchSingleCustomer(route.params.id).then(res => {
   customerData.value = res.data
   console.log(customerData.value)
 })
+
+const isAddCustomerDrawerOpen = ref(false)
 </script>
 
 <template>
@@ -47,8 +50,11 @@ ECommerceStore.fetchSingleCustomer(route.params.id).then(res => {
       >
         medium
       </VBtn>
-      <VBtn prepend-icon="mdi-plus">
-        Add Product
+      <VBtn
+        prepend-icon="mdi-plus"
+        @click="isAddCustomerDrawerOpen = !isAddCustomerDrawerOpen"
+      >
+        Add Customer
       </VBtn>
     </div>
   </div>
@@ -107,4 +113,5 @@ ECommerceStore.fetchSingleCustomer(route.params.id).then(res => {
       </VWindow>
     </VCol>
   </VRow>
+  <ECommerceAddCustomerDrawer v-model:is-drawer-open="isAddCustomerDrawerOpen" />
 </template>

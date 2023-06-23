@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
 import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
@@ -8,6 +9,7 @@ const ECommerceStore = useECommerceStore()
 const customers = ref([])
 const totalCustomers = ref(0)
 const searchQuery = ref('')
+const isAddCustomerDrawerOpen = ref(false)
 
 const options = ref<Options>({
   page: 1,
@@ -62,8 +64,11 @@ watchEffect(fetchCustomers)
           >
             Export
           </VBtn>
-          <VBtn prepend-icon="mdi-plus">
-            Add Product
+          <VBtn
+            prepend-icon="mdi-plus"
+            @click="isAddCustomerDrawerOpen = !isAddCustomerDrawerOpen"
+          >
+            Add Customer
           </VBtn>
         </div>
       </div>
@@ -104,4 +109,5 @@ watchEffect(fetchCustomers)
       </template>
     </VDataTableServer>
   </VCard>
+  <ECommerceAddCustomerDrawer v-model:is-drawer-open="isAddCustomerDrawerOpen" />
 </template>

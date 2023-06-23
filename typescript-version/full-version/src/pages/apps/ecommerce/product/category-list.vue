@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import EcommerceAddCategoryDrawer from '@/views/apps/ecommerce/EcommerceAddCategoryDrawer.vue'
+import ECommerceAddCategoryDrawer from '@/views/apps/ecommerce/ECommerceAddCategoryDrawer.vue'
 
 import product1 from '@images/ecommerce-images/product-1.png'
 import product10 from '@images/ecommerce-images/product-10.png'
@@ -213,6 +213,6 @@ const isAddProductDrawerOpen = ref(false)
       </VDataTable>
     </VCard>
 
-    <EcommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />
+    <ECommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />
   </div>
 </template>

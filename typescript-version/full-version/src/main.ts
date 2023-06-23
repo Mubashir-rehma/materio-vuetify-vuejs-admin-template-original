@@ -1,7 +1,7 @@
 /* eslint-disable import/order */
 import '@/@fake-db/db'
 import App from '@/App.vue'
-import '@/assets/icons/index'
+import '@/assets/icons'
 import ability from '@/plugins/casl/ability'
 import i18n from '@/plugins/i18n'
 import layoutsPlugin from '@/plugins/layouts'

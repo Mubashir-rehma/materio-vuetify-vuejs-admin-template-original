@@ -249,12 +249,12 @@ export interface Review {
 export interface ECommerceProduct {
   id: number
   product_name: string
-  category: number
+  category: string
   stock: boolean
   sku: number
   price: string
   qty: number
-  status: number
+  status: string
   image: string
   product_brand: string
 }
@@ -268,7 +268,7 @@ export interface Order {
   email: string,
   avatar: string,
   payment: number,
-  status: number,
+  status: string,
   spent: string,
   method: string,
   date: string,

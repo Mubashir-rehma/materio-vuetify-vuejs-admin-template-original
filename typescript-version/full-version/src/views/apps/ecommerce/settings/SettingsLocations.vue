@@ -97,11 +97,21 @@
           >
             <VTextField
               label="PIN code"
-              placeholder="123 , New Street"
+              placeholder="123897"
             />
           </VCol>
         </VRow>
       </VCardText>
     </VCard>
+
+    <div class="d-flex justify-end gap-x-4 mt-6">
+      <VBtn
+        variant="outlined"
+        color="secondary"
+      >
+        Discard
+      </VBtn>
+      <VBtn>Save</VBtn>
+    </div>
   </div>
 </template>

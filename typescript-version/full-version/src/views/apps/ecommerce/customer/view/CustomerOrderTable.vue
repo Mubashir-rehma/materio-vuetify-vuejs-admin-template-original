@@ -4,7 +4,7 @@ import type { Order } from '@/@fake-db/types'
 import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const ECommerceStore = useECommerceStore()
+const eCommerceStore = useECommerceStore()
 const orders = ref<Order[]>([])
 const searchQuery = ref('')
 const totalOrder = ref(0)
@@ -38,18 +38,17 @@ const resolveStatus = (status: number) => {
 }
 
 const fetchOrders = () => {
-  ECommerceStore.fetchOrders({
+  eCommerceStore.fetchOrders({
     q: searchQuery.value,
     options: options.value,
   }).then(res => {
-    console.log(res)
     orders.value = res.data.orders
     totalOrder.value = res.data.total
   })
 }
 
 const deleteOrder = (id: number) => {
-  ECommerceStore.deleteOrder(id)
+  eCommerceStore.deleteOrder(id)
 
   fetchOrders()
 }

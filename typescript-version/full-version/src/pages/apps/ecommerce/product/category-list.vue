@@ -6,14 +6,15 @@ import product1 from '@images/ecommerce-images/product-1.png'
 import product10 from '@images/ecommerce-images/product-10.png'
 import product11 from '@images/ecommerce-images/product-11.png'
 import product12 from '@images/ecommerce-images/product-12.png'
+import product14 from '@images/ecommerce-images/product-14.png'
+import product17 from '@images/ecommerce-images/product-17.png'
+import product19 from '@images/ecommerce-images/product-19.png'
 import product2 from '@images/ecommerce-images/product-2.png'
-import product4 from '@images/ecommerce-images/product-4.png'
-import product5 from '@images/ecommerce-images/product-5.png'
-import product7 from '@images/ecommerce-images/product-7.png'
-import product8 from '@images/ecommerce-images/product-8.png'
+import product25 from '@images/ecommerce-images/product-25.png'
+import product28 from '@images/ecommerce-images/product-28.png'
 import product9 from '@images/ecommerce-images/product-9.png'
 
-const category_data = [
+const categoryData = [
   {
     category_title: 'Smart Phone',
     description: 'Choose from wide range of smartphones online at best prices.',
@@ -40,14 +41,14 @@ const category_data = [
     description: 'Explore beauty and personal care products, shop makeup and etc.',
     total_product: 12548,
     total_earning: 98784,
-    image: product4,
+    image: product19,
   },
   {
     category_title: 'Books',
     description: 'Over 25 million titles across categories such as business  and etc.',
     total_product: 12548,
     total_earning: 98784,
-    image: product5,
+    image: product25,
   },
   {
     category_title: 'Games',
@@ -61,21 +62,21 @@ const category_data = [
     description: 'Buy baby products across different categories from top brands.',
     total_product: 12548,
     total_earning: 98784,
-    image: product7,
+    image: product14,
   },
   {
     category_title: 'Growsari',
     description: 'Shop grocery Items through at best prices in India.',
     total_product: 12548,
     total_earning: 98784,
-    image: product8,
+    image: product28,
   },
   {
     category_title: 'Computer Accessories',
     description: 'Enhance your computing experience with our range of computer accessories.',
     total_product: 9876,
     total_earning: 65421,
-    image: product9,
+    image: product17,
   },
   {
     category_title: 'Fitness Tracker',
@@ -108,18 +109,6 @@ const headers = [
   { title: 'Action', key: 'actions' },
 ]
 
-const computedMoreList = computed(() => {
-  return () => ([
-    { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
-    {
-      title: 'Edit',
-      value: 'edit',
-      prependIcon: 'mdi-pencil-outline',
-    },
-    { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
-  ])
-})
-
 const itemsPerPage = ref(10)
 const searchQuery = ref('')
 const isAddProductDrawerOpen = ref(false)
@@ -138,11 +127,6 @@ const isAddProductDrawerOpen = ref(false)
           />
 
           <div class="d-flex align-center  flex-wrap gap-4">
-            <VSelect
-              v-model="itemsPerPage"
-              :items="[10, 25, 50, 100]"
-              density="compact"
-            />
             <VBtn
               prepend-icon="mdi-export-variant"
               color="secondary"
@@ -154,7 +138,7 @@ const isAddProductDrawerOpen = ref(false)
               prepend-icon="mdi-plus"
               @click="isAddProductDrawerOpen = !isAddProductDrawerOpen"
             >
-              Add Product
+              Add Category
             </VBtn>
           </div>
         </div>
@@ -163,7 +147,7 @@ const isAddProductDrawerOpen = ref(false)
       <VDataTable
         v-model:items-per-page="itemsPerPage"
         :headers="headers"
-        :items="category_data"
+        :items="categoryData"
         item-value="category_title"
         :search="searchQuery"
         show-select
@@ -174,7 +158,15 @@ const isAddProductDrawerOpen = ref(false)
             <VIcon icon="mdi-pencil-outline" />
           </IconBtn>
           <MoreBtn
-            :menu-list="computedMoreList()"
+            :menu-list="[
+              { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+              {
+                title: 'Edit',
+                value: 'edit',
+                prependIcon: 'mdi-pencil-outline',
+              },
+              { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+            ]"
             item-props
           />
         </template>

@@ -1,31 +1,58 @@
 <script setup lang="ts">
-import { useDropZone, useFileDialog } from '@vueuse/core'
+import { useDropZone } from '@vueuse/core'
 
-const { files, open } = useFileDialog()
+const { open, onChange } = useFileDialog({ accept: 'image/*' })
 
-const filesData = ref<{ name: string; size: number; type: string; lastModified: number }[]>([])
+const filesData = ref<File[]>([])
+
 function onDrop(DroppedFiles: File[] | null) {
-  filesData.value = []
-  if (files) {
-    filesData.value = DroppedFiles.map(file => ({
-      name: file.name,
-      size: file.size,
-      type: file.type,
-      lastModified: file.lastModified,
-    }))
-  }
+  DroppedFiles?.forEach(file => {
+    if (file.type.slice(0, 6) !== 'image/') {
+      alert('Only image files are allowed')
+
+      return
+    }
+
+    filesData.value.push(file)
+  },
+  )
 }
+
+onChange(selectedFiles => {
+  if (!selectedFiles)
+    return
+
+  for (const file of selectedFiles)
+    filesData.value.push(file)
+})
 
 const dropZoneRef = ref<HTMLElement>()
 
-const { isOverDropZone } = useDropZone(dropZoneRef, onDrop)
+useDropZone(dropZoneRef, onDrop)
 
 const activeTab = ref('Restock')
+
+const shippingList = [
+  { desc: 'You\'ll be responsible for product delivery.Any damage or delay during shipping may cost you a Damage fee', title: 'Fulfilled by Seller', value: 'Fulfilled by Seller' },
+  { desc: 'Your product, Our responsibility.For a measly fee, we will handle the delivery process for you.', title: 'Fulfilled by Company name', value: 'Fulfilled by Company name' },
+]
+
+const moreList = [
+  { title: 'Edit Product', value: 'Edit Product' },
+]
+
+const inventoryTabsData = [
+  { icon: 'mdi-plus', title: 'Restock', value: 'Restock' },
+  { icon: 'mdi-airplane', title: 'Shipping', value: 'Shipping' },
+  { icon: 'mdi-map-marker-outline', title: 'Global Delivery', value: 'Global Delivery' },
+  { icon: 'mdi-attachment', title: 'Attributes', value: 'Attributes' },
+  { icon: 'mdi-lock-open-outline', title: 'Advanced', value: 'Advanced' },
+]
 </script>
 
 <template>
   <div>
-    <div class="d-flex flex-wrap justify-center justify-md-space-between gap-y-4 mb-6">
+    <div class="d-flex flex-wrap justify-center justify-md-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
         <h5 class="text-h5 font-weight-medium">
           Add a new product
@@ -52,18 +79,23 @@ const activeTab = ref('Restock')
 
     <VRow>
       <VCol md="8">
-        <!-- 👉 Change Password -->
+        <!-- 👉 Product Information -->
         <VCard class="mb-6">
-          <VCardItem
-            title="Change Password"
-            append-icon="mdi-dots-vertical"
-          />
+          <VCardItem title="Product Information">
+            <template #append>
+              <MoreBtn
+                :menu-list="moreList"
+                item-props
+              />
+            </template>
+          </VCardItem>
+
           <VCardText>
             <VRow>
               <VCol cols="12">
                 <VTextField
                   label="Name"
-                  placeholder="Product Title"
+                  placeholder="Iphone 14"
                 />
               </VCol>
               <VCol
@@ -72,7 +104,7 @@ const activeTab = ref('Restock')
               >
                 <VTextField
                   label="SKU"
-                  placeholder="Product SKU"
+                  placeholder="FXSK123U"
                 />
               </VCol>
               <VCol
@@ -81,7 +113,7 @@ const activeTab = ref('Restock')
               >
                 <VTextField
                   label="Barcode"
-                  placeholder="Product BarCode"
+                  placeholder="0123-4567"
                 />
               </VCol>
               <VCol>
@@ -108,59 +140,82 @@ const activeTab = ref('Restock')
           <VCardText>
             <div class="flex">
               <div class="w-full h-auto relative">
-                <div ref="dropZoneRef">
-                  <div :value="isOverDropZone">
-                    <div class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone">
-                      <VAvatar
-                        variant="tonal"
-                        rounded
-                        size="44"
-                      >
-                        <VIcon
-                          icon="mdi-upload"
-                          size="24"
-                        />
-                      </VAvatar>
-                      <div class="text-base text-high-emphasis font-weight-medium">
-                        Drag and Drop Your Image Here.
-                      </div>
-                      <span class="text-disabled">or</span>
-
-                      <VBtn
-                        variant="outlined"
-                        @click="open"
-                      >
-                        Browse Images
-                      </VBtn>
+                <div
+                  ref="dropZoneRef"
+                  class="cursor-pointer"
+                  @click="() => open()"
+                >
+                  <div
+                    v-if="filesData.length === 0"
+                    class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone"
+                  >
+                    <VAvatar
+                      variant="tonal"
+                      rounded
+                      size="44"
+                    >
+                      <VIcon
+                        icon="mdi-upload"
+                        size="24"
+                      />
+                    </VAvatar>
+                    <div class="text-base text-high-emphasis font-weight-medium">
+                      Drag and Drop Your Image Here.
                     </div>
+                    <span class="text-disabled">or</span>
+
+                    <VBtn variant="outlined">
+                      Browse Images
+                    </VBtn>
                   </div>
 
-                  <!-- Selected File Details -->
-                  <div class="flex flex-wrap justify-center items-center">
-                    <span v-if="filesData.length > 0">
-                      You have dropped {{ filesData.length }} files
-                    </span>
-                    <div
-                      v-for="(file, index) in filesData"
-                      :key="index"
-                    >
-                      <p>Name: {{ file.name }}</p>
-                      <p>Size: {{ file.size }} Bytes</p>
-                      <p>Type: {{ file.type }}</p>
-                      <p>Last modified: {{ file.lastModified }}</p>
-                    </div>
-                    <template v-if="files">
-                      <p>You have selected: <b>{{ files.length }} files</b></p>
-                      <div
-                        v-for="file of files"
-                        :key="file.name"
+                  <div
+                    v-else
+                    class="d-flex justify-center align-center gap-3 pa-5 border-dashed drop-zone flex-wrap"
+                  >
+                    <VRow>
+                      <template
+                        v-for="(file, index) in filesData"
+                        :key="index"
                       >
-                        <p>Name: {{ file.name }}</p>
-                        <p>Size: {{ file.size }} Bytes</p>
-                        <p>Type: {{ file.type }}</p>
-                        <p>Last modified: {{ file.lastModified }}</p>
-                      </div>
-                    </template>
+                        <VCol
+                          cols="12"
+                          md="3"
+                          @click.stop
+                        >
+                          <VCard
+                            max-width="200px"
+                            :ripple="false"
+                          >
+                            <VCardText class="d-flex flex-column align-center">
+                              <VImg
+                                :src="useObjectUrl(file).value"
+                                width="50px"
+                                height="50px"
+                              />
+                              <div class="mt-2">
+                                <div class="text-truncate">
+                                  {{ file.name }}
+                                </div>
+
+                                <div>
+                                  {{ file.size / 1000 }} KB
+                                </div>
+                              </div>
+                            </VCardText>
+                            <VCardActions>
+                              <VBtn
+                                variant="text"
+                                block
+                                @click.stop="filesData.splice(index, 1)"
+                              >
+                                Remove File
+                              </VBtn>
+                            </VCardActions>
+                          </VCard>
+                        </VCol>
+                      </template>
+                    </VRow>
                   </div>
                 </div>
               </div>
@@ -190,7 +245,7 @@ const activeTab = ref('Restock')
                 md="8"
               >
                 <VTextField
-                  placeholder="Enter Size"
+                  placeholder="38"
                   label="Size"
                 />
               </VCol>
@@ -216,44 +271,22 @@ const activeTab = ref('Restock')
                   color="primary"
                   class="v-tabs-pill"
                 >
-                  <VTab value="Restock">
+                  <VTab
+                    v-for="(tab, index) in inventoryTabsData"
+                    :key="index"
+                    :value="tab.value"
+                  >
                     <VIcon
-                      icon="mdi-plus"
+                      :icon="tab.icon"
                       class="me-2"
                     />
-                    <span>Restock</span>
-                  </VTab>
-                  <VTab value="Shipping">
-                    <VIcon
-                      icon="mdi-airplane"
-                      class="me-2"
-                    />
-                    <span>Shipping</span>
-                  </VTab>
-                  <VTab value="Global Delivery">
-                    <VIcon
-                      icon="mdi-map-marker-outline"
-                      class="me-2"
-                    />
-                    <span>Global Delivery</span>
-                  </VTab>
-                  <VTab value="Attributes">
-                    <VIcon
-                      icon="mdi-attachment"
-                      class="me-2"
-                    />
-                    <span>Attributes</span>
-                  </VTab>
-                  <VTab value="Advanced">
-                    <VIcon
-                      icon="mdi-lock-open-outline"
-                      class="me-2"
-                    />
-                    <span>Advanced</span>
+                    <span>{{ tab.title }}</span>
                   </VTab>
                 </VTabs>
               </VCol>
-              <VDivider vertical />
+
+              <VDivider :vertical="$vuetify.display.mdAndUp ? true : false" />
+
               <VCol
                 cols="12"
                 md="8"
@@ -261,6 +294,7 @@ const activeTab = ref('Restock')
                 <VWindow
                   v-model="activeTab"
                   class="w-100"
+                  :touch="false"
                 >
                   <VWindowItem value="Restock">
                     <div class="d-flex flex-column gap-y-4">
@@ -270,7 +304,7 @@ const activeTab = ref('Restock')
                       <div class="d-flex gap-x-4 align-center">
                         <VTextField
                           label="Add to stock"
-                          placeholder="Quantity"
+                          placeholder="100"
                           density="compact"
                         />
                         <VBtn prepend-icon="mdi-check">
@@ -295,46 +329,126 @@ const activeTab = ref('Restock')
                   </VWindowItem>
 
                   <VWindowItem value="Shipping">
-                    <VRadioGroup>
-                      <VRadio value="seller">
+                    <VRadioGroup
+                      label="Shipping Type"
+                      class="ms-3"
+                    >
+                      <VRadio
+                        v-for="item in shippingList"
+                        :key="item.value"
+                        :value="item.value"
+                        class="mb-4"
+                      >
                         <template #label>
                           <div>
-                            <div class="text-body-1 font-weight-medium text-high-emphasis mb-1">
-                              Fulfilled by Seller
+                            <div class="text-high-emphasis font-weight-medium mb-1">
+                              {{ item.title }}
                             </div>
-                            <small class="text-sm text-high-emphasis">
-                              You'll be responsible for product delivery. <br>
-                              Any damage or delay during shipping may cost you a Damage fee.
-                            </small>
-                          </div>
-                        </template>
-                      </VRadio>
-                      <VRadio value="company">
-                        <template #label>
-                          <div>
-                            <div class="text-body-1 font-weight-medium text-high-emphasis mb-1">
-                              Fulfilled by Company name
-                              <VChip
-                                color="warning"
-                                density="compact"
-                                label
-                              >
-                                Recommended
-                              </VChip>
+                            <div class="text-sm">
+                              {{ item.desc }}
                             </div>
-                            <small class="text-sm text-high-emphasis">
-                              You'll be responsible for product delivery. <br>
-                              Any damage or delay during shipping may cost you a Damage fee.
-                            </small>
                           </div>
                         </template>
                       </VRadio>
                     </VRadioGroup>
                   </VWindowItem>
 
-                  <VWindowItem value="Global Delivery" />
+                  <VWindowItem value="Global Delivery">
+                    <div>
+                      <VRadioGroup
+                        label="Global Delivery"
+                        class="ms-3"
+                      >
+                        <VRadio
+                          value="Worldwide delivery"
+                          class="mb-4"
+                        >
+                          <template #label>
+                            <div>
+                              <div class="text-high-emphasis font-weight-medium mb-1">
+                                Worldwide delivery
+                              </div>
+                              <div class="text-sm">
+                                Only available with Shipping method:
+                                <span class="text-primary">
+                                  Fulfilled by Company name
+                                </span>
+                              </div>
+                            </div>
+                          </template>
+                        </VRadio>
 
-                  <VWindowItem value="Attributes" />
+                        <VRadio
+                          value="Selected Countries"
+                          class="mb-4"
+                        >
+                          <template #label>
+                            <div>
+                              <div class="text-high-emphasis font-weight-medium mb-1">
+                                Selected Countries
+                              </div>
+                              <VTextField
+                                placeholder="USA"
+                                density="compact"
+                                style="min-width: 200px;"
+                              />
+                            </div>
+                          </template>
+                        </VRadio>
+
+                        <VRadio>
+                          <template #label>
+                            <div>
+                              <div class="text-high-emphasis font-weight-medium mb-1">
+                                Local delivery
+                              </div>
+                              <div class="text-sm">
+                                Deliver to your country of residence
+                                <span class="text-primary">
+                                  Change profile address
+                                </span>
+                              </div>
+                            </div>
+                          </template>
+                        </VRadio>
+                      </VRadioGroup>
+                    </div>
+                  </VWindowItem>
+
+                  <VWindowItem value="Attributes">
+                    <div class="mb-6 text-h6">
+                      Attributes
+                    </div>
+                    <div>
+                      <VCheckbox label="Fragile Product" />
+                      <VCheckbox label="Biodegradable" />
+                      <VCheckbox>
+                        <template #label>
+                          <div class="d-flex flex-column mb-1">
+                            <div>Frozen Product</div>
+                            <VTextField
+                              placeholder="40 C"
+                              type="number"
+                              style="min-width: 250px;"
+                            />
+                          </div>
+                        </template>
+                      </VCheckbox>
+
+                      <VCheckbox>
+                        <template #label>
+                          <div class="d-flex flex-column mb-1">
+                            <div>Expiry Date of Product</div>
+                            <AppDateTimePicker
+                              model-value="2025-06-14"
+                              placeholder="Select a Date"
+                              density="compact"
+                            />
+                          </div>
+                        </template>
+                      </VCheckbox>
+                    </div>
+                  </VWindowItem>
 
                   <VWindowItem value="Advanced">
                     <div class="mb-6 text-h6">
@@ -344,7 +458,7 @@ const activeTab = ref('Restock')
                       <VCol>
                         <VSelect
                           label="Product ID Type"
-                          placeholder="Select Type"
+                          placeholder="Select Product Type"
                           :items="['ISBN', 'UPC', 'EAN', 'JAN']"
                         />
                       </VCol>
@@ -352,7 +466,7 @@ const activeTab = ref('Restock')
                       <VCol>
                         <VTextField
                           label="Product Id"
-                          placeholder="Product ID"
+                          placeholder="100023"
                           type="number"
                         />
                       </VCol>
@@ -369,20 +483,20 @@ const activeTab = ref('Restock')
         md="4"
         cols="12"
       >
-        <!-- 👉 Change Password -->
+        <!-- 👉 Pricing -->
         <VCard
-          title="Change Password"
+          title="Pricing"
           class="mb-6"
         >
           <VCardText>
             <VTextField
               label="Name"
-              placeholder="Product Title"
+              placeholder="IPhone 14"
               class="mb-6"
             />
             <VTextField
               label="Discounted Price"
-              placeholder="Discounted Price"
+              placeholder="$499"
               class="mb-4"
             />
             <VCheckbox label="Charge Tax on this product" />
@@ -411,7 +525,7 @@ const activeTab = ref('Restock')
                 :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
               />
               <VSelect
-                placeholder="Collection"
+                placeholder="Select Collection"
                 label="Collection"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
@@ -422,7 +536,7 @@ const activeTab = ref('Restock')
               />
               <VTextField
                 label="Tags"
-                placeholder="Enter Tags"
+                placeholder="Fashion, Trending, Summer"
               />
             </div>
           </VCardText>
@@ -437,4 +551,17 @@ const activeTab = ref('Restock')
     border: 1px dashed rgba(var(--v-theme-on-surface), 0.12);
     border-radius: 6px;
   }
+</style>
+
+<style lang="scss">
+.v-radio-group,
+.v-checkbox {
+  .v-selection-control {
+    align-items: start !important;
+  }
+
+  .v-label.custom-input {
+    border: none !important;
+  }
+}
 </style>

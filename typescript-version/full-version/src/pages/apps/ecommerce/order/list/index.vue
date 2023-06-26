@@ -13,7 +13,7 @@ const widgetData = ref([
   { title: 'Failed', value: 32, icon: 'mdi-alert-octagon-outline' },
 ])
 
-const ECommerceStore = useECommerceStore()
+const eCommerceStore = useECommerceStore()
 const orders = ref<Order[]>([])
 const searchQuery = ref('')
 const totalOrder = ref(0)
@@ -47,30 +47,29 @@ const resolvePaymentStatus = (status: number) => {
     return { text: 'Failed', color: 'error' }
 }
 
-const resolveStatus = (status: number) => {
-  if (status === 1)
+const resolveStatus = (status: string) => {
+  if (status === 'Delivered')
     return { text: 'Delivered', color: 'success' }
-  if (status === 2)
+  if (status === 'Out for Delivery')
     return { text: 'Out for Delivery', color: 'primary' }
-  if (status === 3)
+  if (status === 'Ready to Pickup')
     return { text: 'Ready to Pickup', color: 'info' }
-  if (status === 4)
+  if (status === 'Dispatched')
     return { text: 'Dispatched', color: 'warning' }
 }
 
 const fetchOrders = () => {
-  ECommerceStore.fetchOrders({
+  eCommerceStore.fetchOrders({
     q: searchQuery.value,
     options: options.value,
   }).then(res => {
-    console.log(res)
     orders.value = res.data.orders
     totalOrder.value = res.data.total
   })
 }
 
 const deleteOrder = (id: number) => {
-  ECommerceStore.deleteOrder(id)
+  eCommerceStore.deleteOrder(id)
 
   fetchOrders()
 }
@@ -114,7 +113,9 @@ watchEffect(fetchOrders)
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1 : $vuetify.display.smAndUp ? id % 2 === 0 : false"
+              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
+                : $vuetify.display.smAndUp ? id % 2 === 0
+                  : false"
               vertical
               inset
               length="88"
@@ -133,17 +134,10 @@ watchEffect(fetchOrders)
             placeholder="Serach Order"
             style=" min-width: 200px; max-width: 200px;"
           />
-          <div class="d-flex align-center">
-            <VSelect
-              v-model="options.itemsPerPage"
-              density="compact"
-              :items="[10, 25, 50, 100]"
-              class="me-4"
-            />
-            <VBtn prepend-icon="mdi-export-variant">
-              Export
-            </VBtn>
-          </div>
+
+          <VBtn prepend-icon="mdi-export-variant">
+            Export
+          </VBtn>
         </div>
       </VCardText>
       <VDataTableServer

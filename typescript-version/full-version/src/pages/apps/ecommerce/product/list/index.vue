@@ -5,7 +5,7 @@ import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
 const products = ref<ECommerceProduct[]>([])
-const ECommerceStore = useECommerceStore()
+const eCommerceStore = useECommerceStore()
 const totalProduct = ref(0)
 
 const widgetData = ref([
@@ -32,18 +32,18 @@ const selectedStock = ref()
 const searchQuery = ref('')
 
 const status = ref([
-  { title: 'Scheduled', value: 1 },
-  { title: 'Publish', value: 2 },
-  { title: 'Inactive', value: 3 },
+  { title: 'Scheduled', value: 'Scheduled' },
+  { title: 'Publish', value: 'Publish' },
+  { title: 'Inactive', value: 'Inactive' },
 ])
 
 const categories = ref([
-  { title: 'Accessories', value: 0 },
-  { title: 'Home Decor', value: 1 },
-  { title: 'Electronics', value: 2 },
-  { title: 'Shoes', value: 3 },
-  { title: 'Office', value: 4 },
-  { title: 'Games', value: 5 },
+  { title: 'Accessories', value: 'Accessories' },
+  { title: 'Home Decor', value: 'Home Decor' },
+  { title: 'Electronics', value: 'Electronics' },
+  { title: 'Shoes', value: 'Shoes' },
+  { title: 'Office', value: 'Office' },
+  { title: 'Games', value: 'Games' },
 ])
 
 const stockStatus = ref([
@@ -59,45 +59,32 @@ const options = ref<Options>({
   search: undefined,
 })
 
-const computedMoreList = computed(() => {
-  return (paramId: number) => ([
-    { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
-    {
-      title: 'Edit',
-      value: 'edit',
-      prependIcon: 'mdi-pencil-outline',
-      to: { name: 'apps-invoice-edit-id', params: { id: paramId } },
-    },
-    { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
-  ])
-})
-
-const resolveCategory = (category: number) => {
-  if (category === 0)
-    return { text: 'Accessories', color: 'error', icon: 'mdi-watch' }
-  if (category === 1)
-    return { text: 'Home Decor', color: 'info', icon: 'mdi-home-outline' }
-  if (category === 2)
-    return { text: 'Electronics', color: 'primary', icon: 'mdi-desktop-mac' }
-  if (category === 3)
-    return { text: 'Shoes', color: 'success', icon: 'mdi-shoe-formal' }
-  if (category === 4)
-    return { text: 'Office', color: 'warning', icon: 'mdi-briefcase-outline' }
-  if (category === 5)
-    return { text: 'Games', color: 'primary', icon: 'mdi-controller-classic-outline' }
+const resolveCategory = (category: string) => {
+  if (category === 'Accessories')
+    return { color: 'error', icon: 'mdi-watch' }
+  if (category === 'Home Decor')
+    return { color: 'info', icon: 'mdi-home-outline' }
+  if (category === 'Electronics')
+    return { color: 'primary', icon: 'mdi-desktop-mac' }
+  if (category === 'Shoes')
+    return { color: 'success', icon: 'mdi-shoe-formal' }
+  if (category === 'Office')
+    return { color: 'warning', icon: 'mdi-briefcase-outline' }
+  if (category === 'Games')
+    return { color: 'primary', icon: 'mdi-controller-classic-outline' }
 }
 
-const resolveStatus = (status_id: number) => {
-  if (status_id === 1)
+const resolveStatus = (statusMsg: string) => {
+  if (statusMsg === 'Scheduled')
     return { text: 'Scheduled', color: 'warning' }
-  if (status_id === 2)
+  if (statusMsg === 'Published')
     return { text: 'Publish', color: 'success' }
-  if (status_id === 3)
+  if (statusMsg === 'Inactive')
     return { text: 'Inactive', color: 'error' }
 }
 
 const fetchProducts = () => {
-  ECommerceStore.fetchProducts({
+  eCommerceStore.fetchProducts({
     q: searchQuery.value,
     stock: selectedStock.value,
     category: selectedCategory.value,
@@ -141,7 +128,7 @@ watchEffect(fetchProducts)
                       density="comfortable"
                       :color="data.change > 0 ? 'success' : 'error'"
                     >
-                      {{ data.change > 0 ? '+' : '' }}{{ data?.change }}%
+                      {{ prefixWithPlus(data.change) }}%
                     </VChip>
                   </div>
                 </div>
@@ -159,7 +146,9 @@ watchEffect(fetchProducts)
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1 : $vuetify.display.smAndUp ? id % 2 === 0 : false"
+              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
+                : $vuetify.display.smAndUp ? id % 2 === 0
+                  : false"
               vertical
               inset
               length="88"
@@ -221,116 +210,117 @@ watchEffect(fetchProducts)
             />
           </VCol>
         </VRow>
+      </VCardText>
+      <VDivider class="my-4" />
 
-        <VDivider class="my-4" />
-
-        <div class="d-flex flex-wrap gap-4">
-          <div class="d-flex align-center">
-            <!-- 👉 Search  -->
-            <VTextField
-              v-model="searchQuery"
-              placeholder="Search Product"
-              density="compact"
-              style="width: 200px;"
-              class="me-3"
-            />
-          </div>
-
-          <VSpacer />
-          <div class="d-flex gap-x-4">
-            <VSelect
-              v-model="options.itemsPerPage"
-              density="compact"
-              :items="[10, 25, 50, 100]"
-            />
-            <!-- 👉 Export button -->
-            <VBtn
-              variant="outlined"
-              color="secondary"
-              prepend-icon="mdi-tray-arrow-up"
-            >
-              Export
-            </VBtn>
-
-            <VBtn
-              color="primary"
-              prepend-icon="mdi-plus"
-            >
-              Add Product
-            </VBtn>
-          </div>
+      <div class="d-flex flex-wrap gap-4 mx-5">
+        <div class="d-flex align-center">
+          <!-- 👉 Search  -->
+          <VTextField
+            v-model="searchQuery"
+            placeholder="Search Product"
+            density="compact"
+            style="width: 200px;"
+            class="me-3"
+          />
         </div>
 
-        <!-- 👉 Datatable  -->
-        <VDataTableServer
-          v-model:items-per-page="options.itemsPerPage"
-          v-model:page="options.page"
-          :headers="headers"
-          show-select
-          :items="products"
-          :items-length="totalProduct"
-          class="text-no-wrap"
-          @update:options="options = $event"
-        >
-          <!-- product  -->
-          <template #item.product="{ item }">
-            <div class="d-flex align-center gap-x-2">
-              <VAvatar
-                v-if="item.raw.image"
-                size="38"
-                variant="tonal"
-                rounded
-              >
-                <VImg :src="item.raw.image" />
-              </VAvatar>
-              <div class="d-flex flex-column">
-                <span class="text-high-emphasis font-weight-medium">{{ item.raw.product_name }}</span>
-                <span class="text-xs">{{ item.raw.product_brand }}</span>
-              </div>
-            </div>
-          </template>
+        <VSpacer />
+        <div class="d-flex gap-x-4">
+          <!-- 👉 Export button -->
+          <VBtn
+            variant="outlined"
+            color="secondary"
+            prepend-icon="mdi-tray-arrow-up"
+          >
+            Export
+          </VBtn>
 
-          <!-- category -->
-          <template #item.category="{ item }">
+          <VBtn
+            color="primary"
+            prepend-icon="mdi-plus"
+          >
+            Add Product
+          </VBtn>
+        </div>
+      </div>
+
+      <!-- 👉 Datatable  -->
+      <VDataTableServer
+        v-model:items-per-page="options.itemsPerPage"
+        v-model:page="options.page"
+        :headers="headers"
+        show-select
+        :items="products"
+        :items-length="totalProduct"
+        class="text-no-wrap"
+        @update:options="options = $event"
+      >
+        <!-- product  -->
+        <template #item.product="{ item }">
+          <div class="d-flex align-center gap-x-2">
             <VAvatar
-              size="30"
+              v-if="item.raw.image"
+              size="38"
               variant="tonal"
-              :color="resolveCategory(item.raw.category)?.color"
-              class="me-2"
-            >
-              <VIcon
-                :icon="resolveCategory(item.raw.category)?.icon"
-                size="18"
-              />
-            </VAvatar>
-            <span class="font-weight-medium text-high-emphasis">{{ resolveCategory(item.raw.category)?.text }}</span>
-          </template>
-
-          <!-- stock -->
-          <template #item.stock="{ item }">
-            <VSwitch v-model="item.raw.stock" />
-          </template>
-
-          <!-- status -->
-          <template #item.status="{ item }">
-            <VChip
-              v-bind="resolveStatus(item.raw.status)"
-              density="comfortable"
+              rounded
+              :image="item.raw.image"
             />
-          </template>
+            <div class="d-flex flex-column">
+              <span class="text-high-emphasis font-weight-medium">{{ item.raw.product_name }}</span>
+              <span class="text-xs">{{ item.raw.product_brand }}</span>
+            </div>
+          </div>
+        </template>
 
-          <!-- Actions -->
-          <template #item.actions="{ item }">
-            <IconBtn>
-              <VIcon icon="mdi-pencil-outline" />
-            </IconBtn>
-            <MoreBtn
-              :menu-list="computedMoreList(item.raw.id)"
-              item-props
+        <!-- category -->
+        <template #item.category="{ item }">
+          <VAvatar
+            size="30"
+            variant="tonal"
+            :color="resolveCategory(item.raw.category)?.color"
+            class="me-2"
+          >
+            <VIcon
+              :icon="resolveCategory(item.raw.category)?.icon"
+              size="18"
             />
-          </template>
-        </VDataTableServer>
-      </VCardText>
+          </VAvatar>
+          <span class="font-weight-medium text-high-emphasis">{{ item.raw.category }}</span>
+        </template>
+
+        <!-- stock -->
+        <template #item.stock="{ item }">
+          <VSwitch v-model="item.raw.stock" />
+        </template>
+
+        <!-- status -->
+        <template #item.status="{ item }">
+          <VChip
+            v-bind="resolveStatus(item.raw.status)"
+            density="comfortable"
+          />
+        </template>
+
+        <!-- Actions -->
+        <template #item.actions>
+          <IconBtn>
+            <VIcon icon="mdi-pencil-outline" />
+          </IconBtn>
+          <MoreBtn
+            :menu-list="[
+              { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+              {
+                title: 'Edit',
+                value: 'edit',
+                prependIcon: 'mdi-pencil-outline',
+              },
+              { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+            ]"
+            item-props
+          />
+        </template>
+      </VDataTableServer>
     </VCard>
   </div>
 </template>

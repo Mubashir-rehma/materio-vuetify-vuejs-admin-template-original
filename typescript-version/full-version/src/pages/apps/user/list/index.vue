@@ -154,7 +154,7 @@ const widgetData = ref([
                       <span
                         class="text-base "
                         :class="data.change > 0 ? 'text-success' : 'text-error'"
-                      >({{ data.change > 0 ? '+' : '' }}{{ data.change }}%)</span>
+                      >({{ prefixWithPlus(data.change) }}%)</span>
                     </h5>
                   </div>
                   <span class="text-sm">{{ data.desc }}</span>
@@ -178,6 +178,7 @@ const widgetData = ref([
       </template>
     </VRow>
   </div>
+
   <section>
     <VCard
       title="Filters"

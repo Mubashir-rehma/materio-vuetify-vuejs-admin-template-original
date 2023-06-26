@@ -3,7 +3,7 @@ import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const ECommerceStore = useECommerceStore()
+const eCommerceStore = useECommerceStore()
 const reviews = ref([])
 const totalReviews = ref(0)
 
@@ -18,7 +18,7 @@ const options = ref<Options>({
 const searchQuery = ref('')
 
 const fetchReviews = () => {
-  ECommerceStore.fetchReviews({
+  eCommerceStore.fetchReviews({
     q: searchQuery.value,
     options: options.value,
   }).then(res => {
@@ -28,7 +28,7 @@ const fetchReviews = () => {
 }
 
 const delterReview = (id: number) => {
-  ECommerceStore.deleteReview(id).then(() => {
+  eCommerceStore.deleteReview(id).then(() => {
     fetchReviews()
   })
 }

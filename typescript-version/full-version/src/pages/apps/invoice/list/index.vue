@@ -174,7 +174,9 @@ watchEffect(() => {
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1 : $vuetify.display.smAndUp ? id % 2 === 0 : false"
+              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
+                : $vuetify.display.smAndUp ? id % 2 === 0
+                  : false"
               vertical
               inset
             />

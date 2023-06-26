@@ -20,8 +20,6 @@ const checkoutCartDataLocal = ref(props.checkoutData)
 // remove item from cart
 const removeItem = (item: CartItem) => {
   checkoutCartDataLocal.value.cartItems = checkoutCartDataLocal.value.cartItems.filter(i => i.id !== item.id)
-
-  console.log(checkoutCartDataLocal.value.cartItems)
 }
 
 //  cart total

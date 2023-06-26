@@ -8,7 +8,7 @@ import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const ECommerceStore = useECommerceStore()
+const eCommerceStore = useECommerceStore()
 
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
@@ -47,21 +47,20 @@ const headers = [
 ]
 
 const fetchReferrals = () => {
-  ECommerceStore.fetchReferrals({
+  eCommerceStore.fetchReferrals({
     options: options.value,
   }).then(res => {
-    console.log(res.data)
     referrals.value = res.data.referrals
     totalReferrals.value = res.data.total
   })
 }
 
-const resolveStatus = (status: number) => {
-  if (status === 1)
+const resolveStatus = (status: string) => {
+  if (status === 'Rejected')
     return { text: 'Rejected', color: 'error' }
-  if (status === 2)
+  if (status === 'Unpaid')
     return { text: 'Unpaid', color: 'warning' }
-  if (status === 3)
+  if (status === 'Paid')
     return { text: 'Paid', color: 'success' }
 }
 

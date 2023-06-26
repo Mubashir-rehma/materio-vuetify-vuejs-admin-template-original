@@ -8,7 +8,7 @@ import CustomerTabOverview from '@/views/apps/ecommerce/customer/view/CustomerTa
 import CustomerTabSecurity from '@/views/apps/ecommerce/customer/view/CustomerTabSecurity.vue'
 import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 
-const ECommerceStore = useECommerceStore()
+const eCommerceStore = useECommerceStore()
 const route = useRoute()
 const customerData = ref()
 const userTab = ref(null)
@@ -20,9 +20,8 @@ const tabs = [
   { icon: 'mdi-bell-outline', title: 'Notifications' },
 ]
 
-ECommerceStore.fetchSingleCustomer(route.params.id).then(res => {
+eCommerceStore.fetchSingleCustomer(route.params.id).then(res => {
   customerData.value = res.data
-  console.log(customerData.value)
 })
 
 const isAddCustomerDrawerOpen = ref(false)

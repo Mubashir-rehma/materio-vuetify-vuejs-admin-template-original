@@ -31,4 +31,4 @@ dist-ssr
 .yarn
 
 # iconify dist files
-src/assets/icons/*.js
+src/assets/icons/index.js

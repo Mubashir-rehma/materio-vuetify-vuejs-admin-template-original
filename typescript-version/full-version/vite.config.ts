@@ -7,6 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports, getPascalCaseRouteName } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
 
@@ -26,6 +27,7 @@ export default defineConfig({
           .toLowerCase()
       },
     }),
+    VueDevTools(),
     vue(),
     vueJsx(),
 

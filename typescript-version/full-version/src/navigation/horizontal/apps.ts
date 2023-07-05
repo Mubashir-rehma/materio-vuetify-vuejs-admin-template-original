@@ -27,7 +27,7 @@ export default [
             children: [
               {
                 title: 'List',
-                to: 'apps-ecommerce-customer-list'
+                to: 'apps-ecommerce-customer-list',
               },
             ],
           },

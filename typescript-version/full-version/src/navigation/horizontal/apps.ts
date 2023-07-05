@@ -6,7 +6,32 @@ export default [
       {
         title: 'Ecommerce',
         icon: { icon: 'mdi-cart-plus' },
-        to: 'apps-ecommerce',
+        children: [
+          {
+            title: 'Product',
+            children: [
+              { title: 'List', to: 'apps-ecommerce-product-list' },
+              { title: 'Add', to: 'apps-ecommerce-product-add' },
+              { title: 'Category', to: 'apps-ecommerce-product-category-list' },
+            ],
+          },
+          {
+            title: 'Order',
+            children: [
+              { title: 'List', to: 'apps-ecommerce-order-list' },
+              { title: 'Details', to: { name: 'apps-ecommerce-order-details-id', params: { id: '9042' } } },
+            ],
+          },
+          {
+            title: 'Customer',
+            children: [
+              {
+                title: 'List',
+                to: 'apps-ecommerce-customer-list'
+              },
+            ],
+          },
+        ],
       },
       {
         title: 'Email',

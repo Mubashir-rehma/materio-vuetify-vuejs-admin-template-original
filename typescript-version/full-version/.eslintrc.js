@@ -25,7 +25,7 @@ module.exports = {
     '@typescript-eslint',
     'regex',
   ],
-  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts'],
+  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts', 'vendor'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',

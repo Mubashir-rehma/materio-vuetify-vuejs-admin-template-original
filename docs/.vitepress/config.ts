@@ -129,7 +129,6 @@ export default defineConfig({
           text: 'Plugins',
           collapsed: false,
           items: [
-            { text: 'Axios', link: '/guide/plugins/axios' },
             { text: 'Perfect Scrollbar', link: '/guide/plugins/perfect-scrollbar' },
           ],
         },

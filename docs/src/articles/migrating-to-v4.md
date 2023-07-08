@@ -1,8 +1,14 @@
 # Migrating to v4
 
-## Plugin Registration
+## Plugins
 
-Please refer to [Plugins](/guide/getting-started/plugins) guide for migration.
+Please refer to [Plugins](/guide/getting-started/plugins) guide for understanding how new plugin registration mechanism works.
+
+Moreover, We moved all the plugins to `src/plugins` directory. Below is list of plugins there were not present in plugins directory before:
+
+- Router (_was at `src/router`_)
+- Pinia (_was in `src/main.ts`_)
+- Iconify (_was at `src/@iconify`_)
 
 ## Axios
 

@@ -196,9 +196,9 @@ module.exports = {
           message: 'Use \'@images\' path alias for image imports',
         },
         {
-          regex: '@/styles',
+          regex: '@/assets/styles',
           replacement: '@styles',
-          message: 'Use \'@styles\' path alias for importing styles from \'src/styles\'',
+          message: 'Use \'@styles\' path alias for importing styles from \'src/assets/styles\'',
         },
 
         // {

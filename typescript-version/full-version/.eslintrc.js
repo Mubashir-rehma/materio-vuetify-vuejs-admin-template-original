@@ -11,6 +11,7 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:case-police/recommended',
 
     // 'plugin:unicorn/recommended',
   ],

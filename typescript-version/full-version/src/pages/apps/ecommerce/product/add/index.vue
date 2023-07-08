@@ -95,7 +95,7 @@ const inventoryTabsData = [
               <VCol cols="12">
                 <VTextField
                   label="Name"
-                  placeholder="Iphone 14"
+                  placeholder="iPhone 14"
                 />
               </VCol>
               <VCol
@@ -491,7 +491,7 @@ const inventoryTabsData = [
           <VCardText>
             <VTextField
               label="Name"
-              placeholder="IPhone 14"
+              placeholder="iPhone 14"
               class="mb-6"
             />
             <VTextField

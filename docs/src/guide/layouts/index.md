@@ -1,6 +1,6 @@
 # Introduction
 
-Our template comes with `layouts` plugin which is standalone package you can use in any vue project. You can find it in `/src/@layouts` directory.
+Our template comes with `layouts` plugin which is standalone package you can use in any vue project. You can find it in `src/@layouts` directory.
 
 This plugin provides bare minimum styles, components, composables, etc to build the layout quickly.
 
@@ -10,7 +10,7 @@ This plugin provides bare minimum styles, components, composables, etc to build 
 Our template already configured the plugin installation. Below is just for completeness of the documentation.
 :::
 
-Create a new plugin file `/src/plugins/layouts.ts` with below content:
+Create a new plugin file `src/plugins/layouts.ts` with below content:
 
 ```ts
 import { createLayouts } from '@layouts'

@@ -1,6 +1,6 @@
 # How to create a new page
 
-Just create new file in `/src/pages` directory and you will have new page with auto generated route.
+Just create new file in `src/pages` directory and you will have new page with auto generated route.
 
 :::warning
 Pages must have a single root element to allow route transitions between pages.
@@ -8,7 +8,7 @@ Pages must have a single root element to allow route transitions between pages.
 
 ## Creating about page <Badge text="/about" vertical="middle" />
 
-Create a new file named `about.vue` in `/src/pages` directory with the following content:
+Create a new file named `about.vue` in `src/pages` directory with the following content:
 
 ```vue
 <template>
@@ -30,7 +30,7 @@ Let's say we don't want url to be `/about`, we want `/about-us`. For this just r
 
 To create a URL which has something like `http://localhost:8080/dashboard/analytics`, we need to create `dashboard` directory and have to place `analytics.vue` file inside `dashboard` directory.
 
-Let's create a new directory named `dashboard` in `/src/pages` directory. Inside this directory let's create a new file `analytics.vue` with the following content.
+Let's create a new directory named `dashboard` in `src/pages` directory. Inside this directory let's create a new file `analytics.vue` with the following content.
 
 ```vue
 <template>
@@ -48,7 +48,7 @@ Generally we want to create a page which can accept id as parameter and we want 
 
 Let's assume we want to create a dynamic route like `http://localhost:8080/users/<id>`, where `id` can be any number.
 
-For this create new directory named `users` in `/src/pages` and inside `/src/pages/users` create a new file with the name `[id].vue`. Place below content inside this newly create file:
+For this create new directory named `users` in `src/pages` and inside `src/pages/users` create a new file with the name `[id].vue`. Place below content inside this newly create file:
 
 ```vue
 <template>
@@ -67,7 +67,7 @@ If you visit <http://localhost:5173/users/2> then it will render `Current user i
 
 ## 404 page - Catching all URLs
 
-For this all you have to do is create `[...404].vue` file inside `/src/pages` directory.
+For this all you have to do is create `[...404].vue` file inside `src/pages` directory.
 
 ```vue
 <template>
@@ -84,11 +84,11 @@ Now, your 404 page is ready. Visit any URL you haven't created (i.e. <http://loc
 
 ## Using different layout
 
-The pages we created so far are rendered in `default` layout (`/src/layouts/default.vue`).
+The pages we created so far are rendered in `default` layout (`src/layouts/default.vue`).
 
 We want to render 404 page in blank layout instead of default layout (of course we don't want vertical nav in 404 page).
 
-For this you have to create `route` block in your vue file to define layout. Update `/src/pages/[...404].vue` as below:
+For this you have to create `route` block in your vue file to define layout. Update `src/pages/[...404].vue` as below:
 
 <!-- prettier-ignore-start -->
 ```vue

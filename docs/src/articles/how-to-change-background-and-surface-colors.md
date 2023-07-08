@@ -37,7 +37,7 @@ const theme: VuetifyOptions['theme'] = {
 export default theme
 ```
 
-In the above example, you can see a sample `theme.ts` file located in the `/src/plugins/vuetify` directory. This file defines a custom theme object for Vuetify. The theme object contains a themes property, which is an object that defines two themes: `light` and `dark`.
+In the above example, you can see a sample `theme.ts` file located in the `src/plugins/vuetify` directory. This file defines a custom theme object for Vuetify. The theme object contains a themes property, which is an object that defines two themes: `light` and `dark`.
 
 Each theme object includes a dark property that determines whether the theme is a dark or light theme. Additionally, each theme object includes a colors property, which is an object that defines custom color variables that can be used throughout the application. In the example, you can see that custom variables such as `skin-bordered-background` and `skin-bordered-surface` have been defined for a bordered skin.
 

@@ -60,6 +60,7 @@ export default defineConfig({
             { text: 'How To Create A New Page', link: '/guide/how-to-create-a-new-page' },
             { text: 'Styles', link: '/guide/styles' },
             { text: 'Navigation Menu', link: '/guide/navigation-menu' },
+            { text: 'Plugins', link: '/guide/getting-started/plugins' },
             { text: 'Authentication', link: '/guide/authentication' },
             { text: 'Access Control', link: '/guide/access-control' },
             { text: 'Splash Screen', link: '/guide/splash-screen' },

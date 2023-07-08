@@ -1,5 +1,6 @@
 # Articles
 
+- [Migrating to v4](/articles/migrating-to-v4.md)
 - [How to change logo](/articles/how-to-change-logo.md)
 - [How to change typography](/articles/how-to-change-typography.md)
 - [What is the system theme?](/articles/what-is-the-system-theme.md)

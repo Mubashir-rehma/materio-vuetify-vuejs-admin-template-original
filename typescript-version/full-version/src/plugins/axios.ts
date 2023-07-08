@@ -1,5 +1,5 @@
 import axios from 'axios'
-import router from '@/router'
+import { router } from '@/plugins/router'
 
 const axiosIns = axios.create({
   // You can add your headers here
@@ -50,4 +50,4 @@ axiosIns.interceptors.response.use(response => {
   }
 })
 
-export default axiosIns
+export { axiosIns as axios }

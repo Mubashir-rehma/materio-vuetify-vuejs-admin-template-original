@@ -10,7 +10,7 @@ Please make sure to import the axios instance in your code instead of using `axi
 
 ```ts
 import axios from 'axios' // [!code --]
-import axios from '@axios' // [!code ++]
+import { axios } from '@axios' // [!code ++]
 ```
 
 `@axios` is alias we created in `vite.config.ts` file. It points to `/src/plugins/axios` file.

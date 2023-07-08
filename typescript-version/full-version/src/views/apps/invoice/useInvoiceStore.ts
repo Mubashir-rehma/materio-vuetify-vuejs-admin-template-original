@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { InvoiceParams } from './types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 export const useInvoiceStore = defineStore('InvoiceStore', {
   actions: {

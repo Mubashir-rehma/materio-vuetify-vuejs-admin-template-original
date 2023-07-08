@@ -4,7 +4,7 @@ import type { RegisterResponse } from '@/@fake-db/types'
 
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import axios from '@axios'
+import { axios } from '@axios'
 
 const refVForm = ref<VForm>()
 const username = ref('johnDoe')

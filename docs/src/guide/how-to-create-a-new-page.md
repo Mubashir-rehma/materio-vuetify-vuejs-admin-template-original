@@ -73,7 +73,7 @@ For this all you have to do is create `[...404].vue` file inside `/src/pages` di
 <template>
   <div>
     <p>Oops, You are lost</p>
-    <router-link tag="p" to="/">Go back home</router-link>
+    <RouterLink tag="p" to="/">Go back home</RouterLink>
   </div>
 </template>
 ```
@@ -95,7 +95,7 @@ For this you have to create `route` block in your vue file to define layout. Upd
 <template>
   <div>
     <p>Oops, You are lost</p>
-    <router-link tag="p" to="/">Go back home</router-link>
+    <RouterLink tag="p" to="/">Go back home</RouterLink>
   </div>
 </template>
 

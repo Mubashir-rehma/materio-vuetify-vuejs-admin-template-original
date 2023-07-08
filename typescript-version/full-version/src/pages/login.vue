@@ -3,7 +3,7 @@ import { VForm } from 'vuetify/components/VForm'
 import type { LoginResponse } from '@/@fake-db/types'
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import axios from '@axios'
+import { axios } from '@axios'
 import { themeConfig } from '@themeConfig'
 
 const isPasswordVisible = ref(false)

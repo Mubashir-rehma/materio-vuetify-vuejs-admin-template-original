@@ -2,7 +2,7 @@ import type { AxiosResponse } from 'axios'
 import { defineStore } from 'pinia'
 import type { UserProperties } from '@/@fake-db/types'
 import type { UserParams } from '@/views/apps/user/types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 export const useUserListStore = defineStore('UserListStore', {
   actions: {

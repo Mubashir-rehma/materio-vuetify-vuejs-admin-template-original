@@ -1,3 +1,5 @@
+import type { App } from 'vue'
+
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 import { createRouter, createWebHistory } from 'vue-router/auto'
@@ -108,4 +110,8 @@ router.beforeEach(to => {
   }
 })
 
-export default router
+export { router }
+
+export default function (app: App) {
+  app.use(router)
+}

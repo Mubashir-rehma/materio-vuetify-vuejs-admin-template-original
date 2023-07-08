@@ -197,9 +197,9 @@ module.exports = {
           message: 'Use \'@images\' path alias for image imports',
         },
         {
-          regex: '@/styles',
+          regex: '@/assets/styles',
           replacement: '@styles',
-          message: 'Use \'@styles\' path alias for importing styles from \'src/styles\'',
+          message: 'Use \'@styles\' path alias for importing styles from \'src/assets/styles\'',
         },
 
         // {
@@ -224,7 +224,7 @@ module.exports = {
         },
         {
           regex: 'import axios from \'axios\'',
-          replacement: 'import axios from \'@axios\'',
+          replacement: 'import { axios } from \'@axios\'',
           message: 'Use axios instances created in \'src/plugin/axios.ts\' instead of unconfigured axios',
           files: {
             ignore: '^.*plugins/axios.ts.*',

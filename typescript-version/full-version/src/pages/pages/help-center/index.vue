@@ -7,7 +7,7 @@ import type {
 import HelpCenterLandingArticlesOverview from '@/views/pages/help-center/HelpCenterLandingArticlesOverview.vue'
 import HelpCenterLandingFooter from '@/views/pages/help-center/HelpCenterLandingFooter.vue'
 import HelpCenterLandingKnowledgeBase from '@/views/pages/help-center/HelpCenterLandingKnowledgeBase.vue'
-import axios from '@axios'
+import { axios } from '@axios'
 
 interface ApiDataType {
   categories: HelpCenterCategoriesType[]

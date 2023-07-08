@@ -36,7 +36,7 @@
         "src/assets/images/*"
       ],
       "@styles/*": [
-        "src/styles/*"
+        "src/assets/styles/*"
       ],
       "@axios": [
         "src/plugins/axios"

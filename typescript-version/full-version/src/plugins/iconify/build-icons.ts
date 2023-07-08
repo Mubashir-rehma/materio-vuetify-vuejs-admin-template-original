@@ -115,7 +115,7 @@ const component = '@iconify/vue'
 const commonJS = false
 
 // File to save bundle to
-const target = join(__dirname, 'index.js');
+const target = join(__dirname, 'icons.js');
 
 /**
  * Do stuff!

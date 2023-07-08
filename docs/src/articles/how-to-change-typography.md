@@ -23,7 +23,7 @@ Next, just update the the font family via vuetify variables:
 
 :::code-group
 
-```scss [src/styles/styles.scss]
+```scss [src/assets/styles/styles.scss]
 @use "vuetify/styles" as * with (
   $body-font-family: "Montserrat",
 );

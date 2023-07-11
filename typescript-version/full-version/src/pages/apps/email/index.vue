@@ -8,6 +8,12 @@ import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import { useEmailStore } from '@/views/apps/email/useEmailStore'
 
+definePage({
+  meta: {
+    layoutWrapperClasses: 'layout-content-height-fixed',
+  },
+})
+
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // Composables
@@ -450,11 +456,6 @@ const refreshOpenedEmail = async () => {
     </VMain>
   </VLayout>
 </template>
-
-<route lang="yaml">
-meta:
-  layoutWrapperClasses: layout-content-height-fixed
-</route>
 
 <style lang="scss">
 @use "@styles/variables/_vuetify.scss";

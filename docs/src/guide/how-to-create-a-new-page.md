@@ -92,6 +92,14 @@ For this you have to create `route` block in your vue file to define layout. Upd
 
 <!-- prettier-ignore-start -->
 ```vue
+<script lang="ts" setup>
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
+</script>
 <template>
   <div>
     <p>Oops, You are lost</p>
@@ -99,10 +107,6 @@ For this you have to create `route` block in your vue file to define layout. Upd
   </div>
 </template>
 
-<route lang="yaml">
-meta:
-  layout: blank
-</route>
 ```
 <!-- prettier-ignore-end -->
 

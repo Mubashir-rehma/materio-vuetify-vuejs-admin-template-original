@@ -4,6 +4,12 @@ import { axios } from '@axios'
 
 import type { HelpCenterCategoriesType } from '@/@fake-db/types'
 
+definePage({
+  meta: {
+    navActiveLink: 'pages-help-center',
+  },
+})
+
 const route = useRoute()
 
 const apiData = ref<HelpCenterCategoriesType>()
@@ -125,8 +131,3 @@ watch(activeTab, fetchHelpCenterCategoriesData, { immediate: true })
     </VCol>
   </VRow>
 </template>
-
-<route lang="yaml">
-meta:
-  navActiveLink: pages-help-center
-</route>

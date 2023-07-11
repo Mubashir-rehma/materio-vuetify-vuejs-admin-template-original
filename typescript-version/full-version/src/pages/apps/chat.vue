@@ -9,6 +9,12 @@ import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSide
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 
+definePage({
+  meta: {
+    layoutWrapperClasses: 'layout-content-height-fixed',
+  },
+})
+
 // composables
 const vuetifyDisplays = useDisplay()
 const store = useChatStore()
@@ -295,11 +301,6 @@ const moreList = [
     </VMain>
   </VLayout>
 </template>
-
-<route lang="yaml">
-meta:
-  layoutWrapperClasses: layout-content-height-fixed
-</route>
 
 <style lang="scss">
 @use "@styles/variables/_vuetify.scss";

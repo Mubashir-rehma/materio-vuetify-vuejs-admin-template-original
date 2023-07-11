@@ -1,6 +1,6 @@
 import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-import { ContentWidth, FooterType, NavbarType } from './enums'
+import type { ContentWidth, FooterType, NavbarType } from './enums'
 
 export interface UserConfig {
   app: {
@@ -18,7 +18,7 @@ export interface UserConfig {
     navbarBlur: boolean
   }
   footer: {
-    type:typeof FooterType[keyof typeof FooterType]
+    type: typeof FooterType[keyof typeof FooterType]
   }
   verticalNav: {
     isVerticalNavCollapsed: boolean
@@ -143,7 +143,7 @@ interface I18nLanguage {
 // avatar | text | icon
 // Thanks: https://stackoverflow.com/a/60617060/10796681
 type Notification = {
-  id:number
+  id: number
   title: string
   subtitle: string
   time: string

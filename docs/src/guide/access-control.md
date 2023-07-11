@@ -33,12 +33,20 @@ Let's create a new page with below content:
 
 ```vue [TS]
 <script lang="ts" setup>
+definePage({
+  meta: {
+    action: 'read',
+    subject: 'AclDemo',
+  },
+})
+
 const user = {
   action: 'read' as const,
 
   // `subject` property type is `Subjects` ("src/plugins/casl/AppAbility.ts")
   subject: 'Admin' as const,
 }
+
 </script>
 
 <template>
@@ -50,15 +58,17 @@ const user = {
   </p>
 </template>
 
-<route lang="yaml">
-meta:
-  action: read
-  subject: AclDemo
-</route>
 ```
 
 ```vue [JS]
 <script lang="ts" setup>
+definePage({
+  meta: {
+    action: 'read',
+    subject: 'AclDemo',
+  },
+})
+
 const user = {
   action: 'read',
   subject: 'Admin',
@@ -73,12 +83,6 @@ const user = {
     You don't have enough permission to view the finance data
   </p>
 </template>
-
-<route lang="yaml">
-meta:
-  action: read
-  subject: AclDemo
-</route>
 ```
 
 :::
@@ -216,21 +220,25 @@ localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
 
 We have configured [`router.beforeEach`](https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards) hook so users can only visit the route they have ability to. You can check its source code in `src/router/index.ts` file.
 
-For protecting routes based on ability, all you have to do is add meta to that route via [`route`](https://github.com/hannoeru/vite-plugin-pages#sfc-custom-block-for-route-data) block.
+For protecting routes based on ability, all you have to do is add meta to `definePage` macro block.
 
 In [How to create a new page](/guide/how-to-create-a-new-page.md) guide we created a dashboard analytics page. Let's add `action` & `subject` meta to this route by updating the file as below:
 
 <!-- prettier-ignore-start -->
 ```vue{5-9}
+<script lang="ts" setup>
+definePage({
+  meta: {
+    action: 'read',
+    subject: 'Web',
+  },
+})
+</script>
+
 <template>
   <p>This is analytics page inside dashboard directory.</p>
 </template>
 
-<route lang="yaml">
-meta:
-  action: read
-  subject: Web
-</route>
 ```
 <!-- prettier-ignore-end -->
 

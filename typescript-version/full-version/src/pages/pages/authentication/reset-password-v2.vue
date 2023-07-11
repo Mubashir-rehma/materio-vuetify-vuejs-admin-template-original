@@ -1,4 +1,10 @@
 <script setup lang="ts">
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
 const form = ref({
   newPassword: '',
   confirmPassword: '',
@@ -102,8 +108,3 @@ const isConfirmPasswordVisible = ref(false)
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

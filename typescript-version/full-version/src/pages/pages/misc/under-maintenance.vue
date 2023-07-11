@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import miscUnderMaintenance from '@images/pages/misc-under-maintenance.png'
+
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
 </script>
 
 <template>
@@ -33,8 +39,3 @@ import miscUnderMaintenance from '@images/pages/misc-under-maintenance.png'
 <style lang="scss">
 @use "@core/scss/template/pages/misc.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

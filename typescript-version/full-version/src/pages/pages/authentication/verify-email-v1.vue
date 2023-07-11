@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
 </script>
 
 <template>
@@ -48,8 +54,3 @@ import { themeConfig } from '@themeConfig'
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
 const email = ref('')
 </script>
 
@@ -82,8 +88,3 @@ const email = ref('')
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

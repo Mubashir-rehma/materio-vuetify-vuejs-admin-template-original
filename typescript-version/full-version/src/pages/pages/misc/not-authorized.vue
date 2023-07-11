@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import pages401 from '@images/pages/401.png'
+
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
 </script>
 
 <template>
   <div class="misc-wrapper">
     <ErrorHeader
-      error-code="401"
-      error-title="You are not authorized! 🔐"
-      error-description="You don't have permission to access this page. Go Home!"
+      status-code="401"
+      title="You are not authorized! 🔐"
+      description="You don't have permission to access this page. Go Home!"
     />
 
     <!-- 👉 Image -->
@@ -31,8 +37,3 @@ import pages401 from '@images/pages/401.png'
 <style lang="scss">
 @use "@core/scss/template/pages/misc.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

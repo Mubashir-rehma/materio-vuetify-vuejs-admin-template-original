@@ -220,7 +220,7 @@ localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
 
 We have configured [`router.beforeEach`](https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards) hook so users can only visit the route they have ability to. You can check its source code in `src/router/index.ts` file.
 
-For protecting routes based on ability, all you have to do is add meta to that route via [`route`](https://github.com/hannoeru/vite-plugin-pages#sfc-custom-block-for-route-data) block.
+For protecting routes based on ability, all you have to do is add meta to `definePage` macro block.
 
 In [How to create a new page](/guide/how-to-create-a-new-page.md) guide we created a dashboard analytics page. Let's add `action` & `subject` meta to this route by updating the file as below:
 

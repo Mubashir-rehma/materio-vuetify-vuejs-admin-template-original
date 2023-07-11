@@ -7,7 +7,7 @@ hero:
   text: "Admin Template"
   tagline: Production Ready, Carefully Crafted, Extensive Vuetify Admin Template
   image:
-    src: https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.svg
+    src: https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg
     alt: Master Logo
   actions:
     - theme: brand

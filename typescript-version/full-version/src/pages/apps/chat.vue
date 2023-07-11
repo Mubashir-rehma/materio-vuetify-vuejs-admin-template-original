@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useDisplay } from 'vuetify'
+import { useDisplay, useTheme } from 'vuetify'
 import type { ChatContact as TypeChatContact } from '@/@fake-db/types'
+import vuetifyInitialThemes from '@/plugins/vuetify/theme'
 import ChatActiveChatUserProfileSidebarContent from '@/views/apps/chat/ChatActiveChatUserProfileSidebarContent.vue'
 import ChatLeftSidebarContent from '@/views/apps/chat/ChatLeftSidebarContent.vue'
 import ChatLog from '@/views/apps/chat/ChatLog.vue'
@@ -101,6 +102,17 @@ const moreList = [
   { title: 'Clear Chat', value: 'Clear Chat' },
   { title: 'Report', value: 'Report' },
 ]
+
+const { name } = useTheme()
+
+const chatContentContainerBg = computed(() => {
+  let color = 'transparent'
+
+  if (vuetifyInitialThemes)
+    color = vuetifyInitialThemes.themes?.[name.value].colors?.background as string
+
+  return color
+})
 </script>
 
 <template>
@@ -375,7 +387,8 @@ $chat-app-header-height: 68px;
 }
 
 .chat-content-container {
-  background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+  /* stylelint-disable-next-line value-keyword-case */
+  background-color: v-bind(chatContentContainerBg);
 
   // Adjust the padding so text field height stays 48px
   .chat-message-input {

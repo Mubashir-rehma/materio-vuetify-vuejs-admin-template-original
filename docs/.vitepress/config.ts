@@ -12,7 +12,7 @@ export default defineConfig({
   srcDir: 'src',
   base: process.env.BASE || '/',
   head: [
-    ["link", { rel: "icon", href: "https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.svg" }],
+    ["link", { rel: "icon", href: "https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg" }],
     ["meta", { name: "theme-color", content: "#9155FD" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
@@ -22,7 +22,7 @@ export default defineConfig({
   ],
   ignoreDeadLinks: 'localhostLinks',
   themeConfig: {
-    logo: 'https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template/logo/logo.svg',
+    logo: 'https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg',
     search: {
       provider: 'local',
     },

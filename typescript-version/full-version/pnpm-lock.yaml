@@ -44,9 +44,6 @@ dependencies:
   roboto-fontface:
     specifier: ^0.10.0
     version: 0.10.0
-  sass:
-    specifier: ^1.59.3
-    version: 1.59.3
   shepherd.js:
     specifier: ^11.1.1
     version: 11.1.1
@@ -175,6 +172,9 @@ devDependencies:
   postcss-scss:
     specifier: ^4.0.6
     version: 4.0.6(postcss@8.4.25)
+  sass:
+    specifier: ^1.59.3
+    version: 1.59.3
   stylelint:
     specifier: 14.15.0
     version: 14.15.0

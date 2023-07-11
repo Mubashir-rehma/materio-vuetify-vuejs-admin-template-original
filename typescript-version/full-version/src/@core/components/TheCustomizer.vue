@@ -188,16 +188,31 @@ watch([
   () => appContentWidth,
   () => isVerticalNavCollapsed,
 ], () => {
-  isLocalStorageHasAnyValue.value = [`${themeConfig.app.title}-lightThemePrimaryColor`,
-    `${themeConfig.app.title}-darkThemePrimaryColor`,
-    `${themeConfig.app.title}-theme`,
-    `${themeConfig.app.title}-skin`,
-    `${themeConfig.app.title}-isVerticalNavSemiDark`,
-    `${themeConfig.app.title}-isVerticalNavCollapsed`,
-    `${themeConfig.app.title}-contentWidth`,
-    `${themeConfig.app.title}-isRtl`,
-    `${themeConfig.app.title}-transition`]
-    .some(key => localStorage.getItem(key) !== null)
+  const initialConfigValue = [
+    staticPrimaryColor,
+    staticPrimaryColor,
+    initialConfig.app.theme,
+    initialConfig.app.skin,
+    initialConfig.verticalNav.isVerticalNavSemiDark,
+    initialConfig.verticalNav.isVerticalNavCollapsed,
+    initialConfig.app.contentWidth,
+    initialConfig.app.isRtl,
+    initialConfig.app.routeTransition,
+  ]
+
+  const themeConfigValue = [
+    vuetifyTheme.themes.value.light.colors.primary,
+    vuetifyTheme.themes.value.dark.colors.primary,
+    themeConfig.app.theme.value,
+    themeConfig.app.skin.value,
+    themeConfig.verticalNav.isVerticalNavSemiDark.value,
+    themeConfig.verticalNav.isVerticalNavCollapsed.value,
+    themeConfig.app.contentWidth.value,
+    themeConfig.app.isRtl.value,
+    themeConfig.app.routeTransition.value,
+  ]
+
+  isLocalStorageHasAnyValue.value = JSON.stringify(themeConfigValue) !== JSON.stringify(initialConfigValue)
 }, { deep: true, immediate: true })
 
 // remove all theme related values from localStorage

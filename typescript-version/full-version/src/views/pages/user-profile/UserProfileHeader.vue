@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ProfileHeader } from '@/@fake-db/types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 const profileHeaderData = ref<ProfileHeader>()
 

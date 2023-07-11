@@ -11,6 +11,7 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:case-police/recommended',
 
     // 'plugin:unicorn/recommended',
   ],
@@ -25,7 +26,7 @@ module.exports = {
     '@typescript-eslint',
     'regex',
   ],
-  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts'],
+  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts', 'vendor'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -196,9 +197,9 @@ module.exports = {
           message: 'Use \'@images\' path alias for image imports',
         },
         {
-          regex: '@/styles',
+          regex: '@/assets/styles',
           replacement: '@styles',
-          message: 'Use \'@styles\' path alias for importing styles from \'src/styles\'',
+          message: 'Use \'@styles\' path alias for importing styles from \'src/assets/styles\'',
         },
 
         // {
@@ -223,7 +224,7 @@ module.exports = {
         },
         {
           regex: 'import axios from \'axios\'',
-          replacement: 'import axios from \'@axios\'',
+          replacement: 'import { axios } from \'@axios\'',
           message: 'Use axios instances created in \'src/plugin/axios.ts\' instead of unconfigured axios',
           files: {
             ignore: '^.*plugins/axios.ts.*',

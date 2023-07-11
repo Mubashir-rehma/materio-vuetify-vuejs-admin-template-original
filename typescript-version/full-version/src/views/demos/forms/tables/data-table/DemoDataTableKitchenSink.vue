@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
 import type { SalesDetails } from '@/@fake-db/types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 const search = ref('')
 const productList = ref<SalesDetails[]>([])
@@ -37,15 +37,15 @@ const categoryIcons = [
   { name: 'Shoes', icon: 'mdi-shoe-sneaker', color: 'success' },
   { name: 'Electronics', icon: 'mdi-flash', color: 'info' },
   { name: 'Projector', icon: 'mdi-projector', color: 'warning' },
-  { name: 'IPod', icon: 'mdi-ipod', color: 'error' },
+  { name: 'iPod', icon: 'mdi-ipod', color: 'error' },
   { name: 'Keyboard', icon: 'mdi-keyboard-variant', color: 'primary' },
   { name: 'Smart Phone', icon: 'mdi-cellphone', color: 'success' },
   { name: 'Smart TV', icon: 'mdi-television', color: 'info' },
   { name: 'Google Home', icon: 'mdi-google-home', color: 'warning' },
   { name: 'Mac', icon: 'mdi-apple', color: 'error' },
   { name: 'Headphone', icon: 'mdi-headphones', color: 'primary' },
-  { name: 'IMac', icon: 'mdi-desktop-mac', color: 'success' },
-  { name: 'IPhone', icon: 'mdi-apple', color: 'warning' },
+  { name: 'iMac', icon: 'mdi-desktop-mac', color: 'success' },
+  { name: 'iPhone', icon: 'mdi-apple', color: 'warning' },
 ]
 
 const resolveStatusColor = (status: string) => {

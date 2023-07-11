@@ -4,7 +4,7 @@ import ActivityTimeline from './ActivityTimeline.vue'
 import Connection from './Connection.vue'
 import ProjectList from './ProjectList.vue'
 import Teams from './Teams.vue'
-import axios from '@axios'
+import { axios } from '@axios'
 import type { ProfileTab } from '@/@fake-db/types'
 
 const router = useRoute()

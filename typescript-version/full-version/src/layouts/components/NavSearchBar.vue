@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 interface Suggestion {
   icon: string
   title: string
   url: object
 }
+defineOptions({
+  inheritAttrs: false,
+})
+
 const { appContentLayoutNav } = useThemeConfig()
 
 interface SuggestionGroup {
   title: string
   content: Suggestion[]
 }
-
-defineOptions({
-  inheritAttrs: false,
-})
 
 // 👉 Is App Search Bar Visible
 const isAppSearchBarVisible = ref(false)

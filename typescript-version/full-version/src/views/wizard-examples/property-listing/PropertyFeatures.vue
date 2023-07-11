@@ -71,7 +71,7 @@ watch(formData, () => {
           label="Furnishing Details"
           placeholder="Select Furnishing Details"
           multiple
-          :items="['TV', 'AC', 'RO', 'Bed', 'Fridge', 'Wifi', 'Sofa', 'Cupboard', 'Microwave', 'Dining Table', 'Washing Machine']"
+          :items="['TV', 'AC', 'RO', 'Bed', 'Fridge', 'Wi-Fi', 'Sofa', 'Cupboard', 'Microwave', 'Dining Table', 'Washing Machine']"
         />
       </VCol>
       <VCol

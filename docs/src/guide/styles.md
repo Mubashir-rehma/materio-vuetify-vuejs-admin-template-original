@@ -2,11 +2,11 @@
 
 ## Writing your own SCSS
 
-You can write your own SCSS in `/src/styles/styles.scss` file.
+You can write your own SCSS in `src/assets/styles/styles.scss` file.
 
 ## Overriding variables
 
-If you want to override any of vuetify or our custom variable then you can override it in `/src/styles/variables/{_vuetify|_template}.scss` folder.
+If you want to override any of vuetify or our custom variable then you can override it in `src/assets/styles/variables/{_vuetify|_template}.scss` folder.
 
 In this folder you can find two variable files.
 
@@ -44,7 +44,7 @@ You can override variables like below:
 
 You can get list of variables you can override in below locations:
 
-- Check `/src/@core/scss/base/_variables.scss` and `/src/@core/scss/template/_variables.scss` files for our custom variables
+- Check `src/@core/scss/base/_variables.scss` and `src/@core/scss/template/_variables.scss` files for our custom variables
 
 ## Mixins
 
@@ -105,7 +105,7 @@ You have to use this mixin if you are writing RTL styles. This will scope the wr
 However, it does more than just generating RTL styles. It will only generate the styles if you have enabled generating RTL styles.
 
 ```scss
-// File: /src/styles/_variables.scss
+// File: /src/assets/styles/_variables.scss
 
 /*
 If you have disable generating RTL styles by setting `$enable-rtl-styles: false`

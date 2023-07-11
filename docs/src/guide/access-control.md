@@ -214,7 +214,7 @@ localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
 
 ## Route Protection
 
-We have configured [`router.beforeEach`](https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards) hook so users can only visit the route they have ability to. You can check its source code in `/src/router/index.ts` file.
+We have configured [`router.beforeEach`](https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards) hook so users can only visit the route they have ability to. You can check its source code in `src/router/index.ts` file.
 
 For protecting routes based on ability, all you have to do is add meta to that route via [`route`](https://github.com/hannoeru/vite-plugin-pages#sfc-custom-block-for-route-data) block.
 
@@ -259,7 +259,7 @@ Hence, we omitted defining `action` and `subject` meta for pages/routes in our s
 
 Our template allows hiding & showing navigation items based on user ability.
 
-When you define navigation items in `/src/navigation/{vertical|horizontal}/index.ts` along with properties like `title`, you can write `action` & `subject` for hiding item if user don't have enough ability.
+When you define navigation items in `src/navigation/{vertical|horizontal}/index.ts` along with properties like `title`, you can write `action` & `subject` for hiding item if user don't have enough ability.
 
 ::: code-group
 

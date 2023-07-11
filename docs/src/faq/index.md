@@ -217,3 +217,9 @@ Here are some common causes of CORS errors:
 - The request is using a cookie that is not allowed by the server.
 
 In most cases, CORS errors occur because the server is not configured to allow cross-origin requests. Therefore, it is important to ensure that your server is properly configured to handle such requests. To diagnose and address the issue, you can attempt to replicate it in a blank Vue project. If the error persists in the blank project, it indicates that the server needs to be configured correctly. By resolving the server's CORS configuration, you can ensure that the issue will be resolved not only in the template but also in your specific project.
+
+## How to set title for each Individual page
+
+Typically, there is no need to modify the title in admin panels. However, if you still wish to make changes, you can achieve this by integrating the `unhead/vue` library into your project.
+
+For detailed instructions regarding implementation, please visit the following link: [Unhead Setup](https://unhead.harlanzw.com/integrations/vue/setup)

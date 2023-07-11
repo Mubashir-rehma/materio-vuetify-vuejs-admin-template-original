@@ -92,7 +92,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   v-model="paymentMethod"
                   label="Select Payment Method"
                   placeholder="Select Payment Method"
-                  :items="['Cash', 'Bank Transfer', 'Debit', 'Credit', 'Paypal']"
+                  :items="['Cash', 'Bank Transfer', 'Debit', 'Credit', 'PayPal']"
                 />
               </VCol>
 

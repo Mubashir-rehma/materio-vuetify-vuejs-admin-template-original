@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import pages404 from '@images/pages/404.png'
+
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
 </script>
 
 <template>
@@ -31,8 +37,3 @@ import pages404 from '@images/pages/404.png'
 <style lang="scss">
 @use "@core/scss/template/pages/misc.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

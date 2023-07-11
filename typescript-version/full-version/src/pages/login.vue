@@ -6,6 +6,15 @@ import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { axios } from '@axios'
 import { themeConfig } from '@themeConfig'
 
+definePage({
+  meta: {
+    layout: 'blank',
+    action: 'read',
+    subject: 'Auth',
+    redirectIfLoggedIn: true,
+  },
+})
+
 const isPasswordVisible = ref(false)
 
 const route = useRoute()
@@ -191,11 +200,3 @@ const onSubmit = () => {
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-  action: read
-  subject: Auth
-  redirectIfLoggedIn: true
-</route>

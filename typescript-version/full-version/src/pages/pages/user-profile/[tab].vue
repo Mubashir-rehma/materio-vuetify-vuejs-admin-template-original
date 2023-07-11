@@ -1,10 +1,16 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import UserProfileHeader from '@/views/pages/user-profile/UserProfileHeader.vue'
 import UserConnections from '@/views/pages/user-profile/connections/index.vue'
 import UserProfile from '@/views/pages/user-profile/profile/index.vue'
 import UserProjects from '@/views/pages/user-profile/projects/index.vue'
 import UserTeam from '@/views/pages/user-profile/team/index.vue'
-import UserProfileHeader from '@/views/pages/user-profile/UserProfileHeader.vue'
+
+definePage({
+  meta: {
+    navActiveLink: 'pages-user-profile-tab',
+  },
+})
 
 const route = useRoute()
 
@@ -70,8 +76,3 @@ const tabs = [
     </VWindow>
   </div>
 </template>
-
-<route lang="yaml">
-meta:
-  navActiveLink: pages-user-profile-tab
-</route>

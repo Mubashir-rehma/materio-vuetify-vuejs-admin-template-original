@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { CustomInputContent } from '@core/types'
 
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
 const currentStep = ref(0)
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
@@ -398,8 +404,3 @@ const onSubmit = () => {
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

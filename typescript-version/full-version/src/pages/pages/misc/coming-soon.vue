@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import miscComingSoon from '@images/pages/misc-coming-soon.png'
 
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
 const email = ref('')
 </script>
 
@@ -55,8 +61,3 @@ const email = ref('')
   min-inline-size: 12.5rem;
 }
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

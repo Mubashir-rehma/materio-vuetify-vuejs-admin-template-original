@@ -2,6 +2,12 @@
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { themeConfig } from '@themeConfig'
 
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
 const form = ref({
   email: '',
   password: '',
@@ -129,8 +135,3 @@ const isPasswordVisible = ref(false)
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

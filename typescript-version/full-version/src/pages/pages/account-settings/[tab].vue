@@ -18,6 +18,12 @@ const tabs = [
   { title: 'Notifications', icon: 'mdi-bell-outline', tab: 'notification' },
   { title: 'Connections', icon: 'mdi-link-variant', tab: 'connection' },
 ]
+
+definePage({
+  meta: {
+    navActiveLink: 'pages-account-settings-tab',
+  },
+})
 </script>
 
 <template>
@@ -71,8 +77,3 @@ const tabs = [
     </VWindow>
   </div>
 </template>
-
-<route lang="yaml">
-meta:
-  navActiveLink: pages-account-settings-tab
-</route>

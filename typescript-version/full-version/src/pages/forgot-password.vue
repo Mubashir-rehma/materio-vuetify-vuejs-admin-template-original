@@ -1,5 +1,14 @@
 <script setup lang="ts">
 const email = ref('')
+
+definePage({
+  meta: {
+    layout: 'blank',
+    action: 'read',
+    subject: 'Auth',
+    redirectIfLoggedIn: true,
+  },
+})
 </script>
 
 <template>
@@ -85,11 +94,3 @@ const email = ref('')
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-  action: read
-  subject: Auth
-  redirectIfLoggedIn: true
-</route>

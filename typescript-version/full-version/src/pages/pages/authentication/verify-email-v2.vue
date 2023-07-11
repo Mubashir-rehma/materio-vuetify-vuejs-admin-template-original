@@ -1,3 +1,11 @@
+<script setup lang="ts">
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+</script>
+
 <template>
   <VRow
     class="auth-wrapper"
@@ -49,8 +57,3 @@
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

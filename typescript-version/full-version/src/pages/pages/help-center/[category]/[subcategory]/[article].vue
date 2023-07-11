@@ -3,6 +3,12 @@ import { useRoute } from 'vue-router'
 import type { HelpCenterSubcategoriesType, HelpCenterSubcategoryArticlesType } from '@/@fake-db/types'
 import { axios } from '@axios'
 
+definePage({
+  meta: {
+    navActiveLink: 'pages-help-center',
+  },
+})
+
 const route = useRoute()
 
 const apiData = ref<HelpCenterSubcategoriesType>()
@@ -146,11 +152,6 @@ watch(activeTab, fetchHelpCenterArticlesData, { immediate: true })
     </VCol>
   </VRow>
 </template>
-
-<route lang="yaml">
-meta:
-  navActiveLink: pages-help-center
-</route>
 
 <style lang="scss">
 .help-center-article-content {

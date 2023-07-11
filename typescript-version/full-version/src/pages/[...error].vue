@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import misc404 from '@images/pages/404.png'
+
+definePage({
+  meta: {
+    layout: 'blank',
+    action: 'read',
+    subject: 'Auth',
+  },
+})
 </script>
 
 <template>
@@ -31,10 +39,3 @@ import misc404 from '@images/pages/404.png'
 <style lang="scss">
 @use "@core/scss/template/pages/misc.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-  action: read
-  subject: Auth
-</route>

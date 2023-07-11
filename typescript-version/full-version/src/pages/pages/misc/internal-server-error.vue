@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import pages500 from '@images/pages/500.png'
+import pages500 from '@images/pages/500.png';
+definePage({
+  meta: {
+    layout: 'blank',
+  }
+})
 </script>
 
 <template>
@@ -31,8 +36,3 @@ import pages500 from '@images/pages/500.png'
 <style lang="scss">
 @use "@core/scss/template/pages/misc.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-</route>

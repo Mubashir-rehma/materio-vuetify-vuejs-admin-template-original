@@ -6,6 +6,15 @@ import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { axios } from '@axios'
 
+definePage({
+  meta: {
+    layout: 'blank',
+    action: 'read',
+    subject: 'Auth',
+    redirectIfLoggedIn: true,
+  },
+})
+
 const refVForm = ref<VForm>()
 const username = ref('johnDoe')
 const email = ref('john@example.com')
@@ -204,11 +213,3 @@ const onSubmit = () => {
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
 </style>
-
-<route lang="yaml">
-meta:
-  layout: blank
-  action: read
-  subject: Auth
-  redirectIfLoggedIn: true
-</route>

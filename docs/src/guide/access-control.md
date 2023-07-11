@@ -33,12 +33,20 @@ Let's create a new page with below content:
 
 ```vue [TS]
 <script lang="ts" setup>
+definePage({
+  meta: {
+    action: 'read',
+    subject: 'AclDemo',
+  },
+})
+
 const user = {
   action: 'read' as const,
 
   // `subject` property type is `Subjects` ("src/plugins/casl/AppAbility.ts")
   subject: 'Admin' as const,
 }
+
 </script>
 
 <template>
@@ -50,15 +58,17 @@ const user = {
   </p>
 </template>
 
-<route lang="yaml">
-meta:
-  action: read
-  subject: AclDemo
-</route>
 ```
 
 ```vue [JS]
 <script lang="ts" setup>
+definePage({
+  meta: {
+    action: 'read',
+    subject: 'AclDemo',
+  },
+})
+
 const user = {
   action: 'read',
   subject: 'Admin',
@@ -73,12 +83,6 @@ const user = {
     You don't have enough permission to view the finance data
   </p>
 </template>
-
-<route lang="yaml">
-meta:
-  action: read
-  subject: AclDemo
-</route>
 ```
 
 :::
@@ -222,15 +226,19 @@ In [How to create a new page](/guide/how-to-create-a-new-page.md) guide we creat
 
 <!-- prettier-ignore-start -->
 ```vue{5-9}
+<script lang="ts" setup>
+definePage({
+  meta: {
+    action: 'read',
+    subject: 'Web',
+  },
+})
+</script>
+
 <template>
   <p>This is analytics page inside dashboard directory.</p>
 </template>
 
-<route lang="yaml">
-meta:
-  action: read
-  subject: Web
-</route>
 ```
 <!-- prettier-ignore-end -->
 

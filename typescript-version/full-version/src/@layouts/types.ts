@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { ContentWidth, FooterType, NavbarType } from './enums'
@@ -78,7 +79,7 @@ export interface Config {
   }
 }
 
-interface AclProperties {
+export interface AclProperties {
   action: string
   subject: string
 }
@@ -135,14 +136,14 @@ export declare type HorizontalNavItems = (NavLink | NavGroup)[]
 
 // 👉 Components ========================
 
-interface I18nLanguage {
+export interface I18nLanguage {
   label: string
   i18nLang: string
 }
 
 // avatar | text | icon
 // Thanks: https://stackoverflow.com/a/60617060/10796681
-type Notification = {
+export type Notification = {
   id: number
   title: string
   subtitle: string
@@ -155,7 +156,7 @@ type Notification = {
   | { img?: never; text?: never; icon: string }
 )
 
-interface ThemeSwitcherTheme {
+export interface ThemeSwitcherTheme {
   name: string
   icon: string
 }

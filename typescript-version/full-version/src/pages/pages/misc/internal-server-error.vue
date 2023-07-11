@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import pages500 from '@images/pages/500.png';
+import pages500 from '@images/pages/500.png'
+
 definePage({
   meta: {
     layout: 'blank',
-  }
+  },
 })
 </script>
 
 <template>
   <div class="misc-wrapper">
     <ErrorHeader
-      error-code="500"
-      error-title="Internal server error 👨🏻‍💻"
-      error-description="Oops, something went wrong!"
+      status-code="500"
+      title="Internal server error 👨🏻‍💻"
+      description="Oops, something went wrong!"
     />
 
     <!-- 👉 Image -->

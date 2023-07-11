@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import pages404 from '@images/pages/404.png'
+import pages404 from '@images/pages/404.png';
 
 definePage({
   meta: {
@@ -11,9 +11,9 @@ definePage({
 <template>
   <div class="misc-wrapper">
     <ErrorHeader
-      error-code="404"
-      error-title="Page Not Found ⚠️"
-      error-description="We couldn't find the page you are looking for."
+      status-code="404"
+      title="Page Not Found ⚠️"
+      description="We couldn't find the page you are looking for."
     />
 
     <!-- 👉 Image -->

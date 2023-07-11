@@ -11,9 +11,9 @@ definePage({
 <template>
   <div class="misc-wrapper">
     <ErrorHeader
-      error-code="401"
-      error-title="You are not authorized! 🔐"
-      error-description="You don't have permission to access this page. Go Home!"
+      status-code="401"
+      title="You are not authorized! 🔐"
+      description="You don't have permission to access this page. Go Home!"
     />
 
     <!-- 👉 Image -->

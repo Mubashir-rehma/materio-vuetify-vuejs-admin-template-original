@@ -393,9 +393,9 @@ const printInvoice = () => {
 
 <style lang="scss">
 @media print {
-  .v-theme--dark{
-    --v-theme-surface: 255,255,255;
-    --v-theme-on-surface: 94,86,105;
+  .v-theme--dark {
+    --v-theme-surface: 255, 255, 255;
+    --v-theme-on-surface: 94, 86, 105;
   }
 
   .v-application {
@@ -427,9 +427,8 @@ const printInvoice = () => {
     padding-inline-start: 0 !important;
   }
 
-  .v-table__wrapper{
+  .v-table__wrapper {
     overflow: hidden !important;
   }
-
 }
 </style>

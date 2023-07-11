@@ -67,7 +67,7 @@ const recentDevices = [
     deviceIcon: { icon: 'mdi-android', color: 'success' },
   },
   {
-    browser: 'Chrome on MacOS',
+    browser: 'Chrome on macOS',
     device: 'Apple iMac',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',

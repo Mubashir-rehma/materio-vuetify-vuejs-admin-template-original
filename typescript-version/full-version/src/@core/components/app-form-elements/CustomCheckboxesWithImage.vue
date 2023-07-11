@@ -55,8 +55,6 @@ watch(selectedOption, () => {
 .custom-checkbox {
   position: relative;
   padding: 0;
-  border-width: 2px;
-  transition: all 0.5s;
 
   .custom-checkbox-image {
     block-size: 100%;
@@ -69,6 +67,10 @@ watch(selectedOption, () => {
     inset-block-start: 0;
     inset-inline-end: 0;
     visibility: hidden;
+  }
+
+  &.active {
+    border-width: 2px;
   }
 
   &:hover,

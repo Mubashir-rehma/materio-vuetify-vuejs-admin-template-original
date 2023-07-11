@@ -73,7 +73,7 @@ Now let's consume above API endpoint and pass response to our nav menu so it ren
 ```vue
 <script lang="ts" setup>
 import navItems from '@/navigation/vertical' // [!code --]
-import axios from '@axios' // [!code ++]
+import { axios } from '@axios' // [!code ++]
 const navItems = ref([]) // [!code ++]
 axios.get('nav-items') // [!code ++]
   .then(({ data }) => { // [!code ++]

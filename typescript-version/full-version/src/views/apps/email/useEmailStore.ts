@@ -1,6 +1,6 @@
 import type { PartialDeep } from 'type-fest'
 import type { Email, FetchEmailsPayload } from '@/@fake-db/types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 interface State {
   emails: Email[]

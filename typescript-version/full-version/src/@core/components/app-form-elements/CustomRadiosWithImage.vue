@@ -36,11 +36,16 @@ watch(selectedOption, () => {
           class="custom-input custom-radio rounded cursor-pointer w-100"
           :class="selectedOption === item.value ? 'active' : ''"
         >
-          <img
-            :src="item.bgImage"
-            alt="bg-img"
-            class="custom-radio-image"
+          <slot
+            name="content"
+            :item="item"
           >
+            <img
+              :src="item.bgImage"
+              alt="bg-img"
+              class="custom-radio-image"
+            >
+          </slot>
           <VRadio :value="item.value" />
         </VLabel>
       </VCol>
@@ -51,7 +56,10 @@ watch(selectedOption, () => {
 <style lang="scss" scoped>
 .custom-radio {
   padding: 0;
-  border-width: 2px;
+
+  &.active {
+    border-width: 2px;
+  }
 
   .custom-radio-image {
     block-size: 100%;

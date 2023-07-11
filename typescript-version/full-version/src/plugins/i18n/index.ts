@@ -1,3 +1,5 @@
+import type { App } from 'vue'
+
 import { createI18n } from 'vue-i18n'
 
 const messages = Object.fromEntries(
@@ -7,9 +9,13 @@ const messages = Object.fromEntries(
     .map(([key, value]) => [key.slice(10, -5), value.default]),
 )
 
-export default createI18n({
+const i18n = createI18n({
   legacy: false,
   locale: 'en',
   fallbackLocale: 'en',
   messages,
 })
+
+export default function (app: App) {
+  app.use(i18n)
+}

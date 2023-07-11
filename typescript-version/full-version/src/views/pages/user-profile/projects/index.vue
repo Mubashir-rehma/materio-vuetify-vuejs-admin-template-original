@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import type { ProjectsTab } from '@/@fake-db/types'
-import axios from '@axios'
+import { axios } from '@axios'
 
 const router = useRoute()
 const projectData = ref<ProjectsTab[]>([])

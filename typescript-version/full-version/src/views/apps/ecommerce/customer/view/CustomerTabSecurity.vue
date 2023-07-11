@@ -31,7 +31,7 @@ const recentDevices = [
     activity: '11, Jan 2020 10:16',
   },
   {
-    browser: 'Chrome on MacOS',
+    browser: 'Chrome on macOS',
     logo: chrome,
     device: 'Apple iMac',
     location: 'Mayotte',

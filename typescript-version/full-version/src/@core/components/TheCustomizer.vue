@@ -2,11 +2,30 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
-import { RouteTransitions, Skins } from '@core/enums'
-import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
-import { themeConfig } from '@themeConfig'
+import { RouteTransitions } from '@core/enums'
+import { AppContentLayoutNav } from '@layouts/enums'
+import { initialConfig, themeConfig } from '@themeConfig'
 
-// import { useTheme } from 'vuetify'
+import borderSkinDark from '@images/customizer-icons/border-dark.svg'
+import borderSkinLight from '@images/customizer-icons/border-light.svg'
+import collapsedDark from '@images/customizer-icons/collapsed-dark.svg'
+import collapsedLight from '@images/customizer-icons/collapsed-light.svg'
+import compactDark from '@images/customizer-icons/compact-dark.svg'
+import compactLight from '@images/customizer-icons/compact-light.svg'
+import darkThemeDark from '@images/customizer-icons/dark-theme-dark.svg'
+import darkThemeLight from '@images/customizer-icons/dark-theme-light.svg'
+import defaultSkinDark from '@images/customizer-icons/default-dark.svg'
+import defaultSkinLight from '@images/customizer-icons/default-light.svg'
+import lightThemeDark from '@images/customizer-icons/light-theme-dark.svg'
+import lightThemeLight from '@images/customizer-icons/light-theme-light.svg'
+import ltrDark from '@images/customizer-icons/ltr-dark.svg'
+import ltrLight from '@images/customizer-icons/ltr-light.svg'
+import rtlDark from '@images/customizer-icons/rtl-dark.svg'
+import rtlLight from '@images/customizer-icons/rtl-light.svg'
+import systemThemeDark from '@images/customizer-icons/system-theme-dark.svg'
+import systemThemeLight from '@images/customizer-icons/system-theme-light.svg'
+import wideDark from '@images/customizer-icons/wide-dark.svg'
+import wideLight from '@images/customizer-icons/wide-light.svg'
 
 const isNavDrawerOpen = ref(false)
 
@@ -14,24 +33,19 @@ const {
   theme,
   skin,
   appRouteTransition,
-  navbarType,
-  footerType,
   isVerticalNavCollapsed,
   isVerticalNavSemiDark,
   appContentWidth,
   appContentLayoutNav,
   isAppRtl,
-  isNavbarBlurEnabled,
   isLessThanOverlayNavBreakpoint,
 } = useThemeConfig()
 
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
 
-// const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
-
-const initialThemeColors = JSON.parse(JSON.stringify(vuetifyTheme.current.value.colors))
-const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
+const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
+const customPrimaryColor = ref('')
 
 // ℹ️ It will set primary color for current theme only
 const setPrimaryColor = (color: string) => {
@@ -46,22 +60,177 @@ const setPrimaryColor = (color: string) => {
   localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, color)
 }
 
-/*
-  ℹ️ This will return static color for first indexed color
-  If we don't make first (primary) color as static then when another color is selected then we will have two theme colors with same hex codes and it will show two check marks
-*/
-const getBoxColor = (color: string, index: number) => index ? color : staticPrimaryColor
-
 const { width: windowWidth } = useWindowSize()
 
-const headerValues = computed(() => {
-  const entries = Object.entries(NavbarType)
+const lightTheme = useGenerateImageVariant(lightThemeLight, lightThemeDark)
+const darkTheme = useGenerateImageVariant(darkThemeLight, darkThemeDark)
+const systemTheme = useGenerateImageVariant(systemThemeLight, systemThemeDark)
+const defaultSkin = useGenerateImageVariant(defaultSkinLight, defaultSkinDark)
+const borderSkin = useGenerateImageVariant(borderSkinLight, borderSkinDark)
+const collapsed = useGenerateImageVariant(collapsedLight, collapsedDark)
+const compact = useGenerateImageVariant(compactLight, compactDark)
+const compactContent = useGenerateImageVariant(compactLight, compactDark)
+const wideContent = useGenerateImageVariant(wideLight, wideDark)
+const ltrImg = useGenerateImageVariant(ltrLight, ltrDark)
+const rtlImg = useGenerateImageVariant(rtlLight, rtlDark)
 
-  if (appContentLayoutNav.value === AppContentLayoutNav.Horizontal)
-    return entries.filter(([_, val]) => val !== NavbarType.Hidden)
-
-  return entries
+// 👉 Mode
+const themeMode = computed(() => {
+  return [
+    {
+      bgImage: lightTheme.value,
+      value: 'light',
+    },
+    {
+      bgImage: darkTheme.value,
+      value: 'dark',
+    },
+    {
+      bgImage: systemTheme.value,
+      value: 'system',
+    },
+  ] as { bgImage: string; value: string }[]
 })
+
+// 👉 Skin
+const themeSkin = computed(() => {
+  return [
+    {
+      bgImage: defaultSkin.value,
+      value: 'default',
+    },
+    {
+      bgImage: borderSkin.value,
+      value: 'bordered',
+    },
+  ] as { bgImage: string; value: string }[]
+})
+
+// 👉 Layout
+const layouts = computed(() => {
+  return [
+    {
+      bgImage: defaultSkin.value,
+      value: 'vertical',
+    },
+    {
+      bgImage: collapsed.value,
+      value: 'collapsed',
+    },
+    {
+      bgImage: compact.value,
+      value: 'horizontal',
+    },
+  ] as { bgImage: string; value: string }[]
+})
+
+const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : 'vertical')
+
+watch(currentLayout, () => {
+  if (currentLayout.value === 'collapsed') {
+    isVerticalNavCollapsed.value = true
+    appContentLayoutNav.value = AppContentLayoutNav.Vertical
+  }
+  else {
+    isVerticalNavCollapsed.value = false
+    appContentLayoutNav.value = currentLayout.value
+  }
+})
+
+// 👉 Content Width
+const contentWidth = computed(() => {
+  return [
+    {
+      bgImage: compactContent.value,
+      value: 'boxed',
+    },
+    {
+      bgImage: wideContent.value,
+      value: 'fluid',
+    },
+  ] as { bgImage: string; value: string }[]
+})
+
+// 👉 Direction
+const currentDir = ref(isAppRtl.value ? 'rtl' : 'ltr')
+
+const direction = computed(() => {
+  return [
+    {
+      bgImage: ltrImg.value,
+      value: 'ltr',
+    },
+    {
+      bgImage: rtlImg.value,
+      value: 'rtl',
+    },
+  ] as { bgImage: string; value: string }[]
+})
+
+watch(currentDir, () => {
+  if (currentDir.value === 'rtl') {
+    isAppRtl.value = true
+    currentDir.value = 'rtl'
+  }
+  else {
+    isAppRtl.value = false
+    currentDir.value = 'ltr'
+  }
+})
+
+// check if any value set in localStorage
+const isLocalStorageHasAnyValue = ref(false)
+
+watch([
+  () => themeConfig,
+  () => vuetifyTheme.current.value.colors.primary,
+  () => isAppRtl,
+  () => appContentWidth,
+  () => isVerticalNavCollapsed,
+], () => {
+  isLocalStorageHasAnyValue.value = [`${themeConfig.app.title}-lightThemePrimaryColor`,
+    `${themeConfig.app.title}-darkThemePrimaryColor`,
+    `${themeConfig.app.title}-theme`,
+    `${themeConfig.app.title}-skin`,
+    `${themeConfig.app.title}-isVerticalNavSemiDark`,
+    `${themeConfig.app.title}-isVerticalNavCollapsed`,
+    `${themeConfig.app.title}-contentWidth`,
+    `${themeConfig.app.title}-isRtl`,
+    `${themeConfig.app.title}-transition`]
+    .some(key => localStorage.getItem(key) !== null)
+}, { deep: true, immediate: true })
+
+// remove all theme related values from localStorage
+const resetCustomizer = async () => {
+  // reset themeConfig values
+  vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
+  vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
+
+  theme.value = initialConfig.app.theme
+  skin.value = initialConfig.app.skin
+  isVerticalNavSemiDark.value = initialConfig.verticalNav.isVerticalNavSemiDark
+  appContentLayoutNav.value = initialConfig.app.contentLayoutNav
+  appContentWidth.value = initialConfig.app.contentWidth
+  isAppRtl.value = initialConfig.app.isRtl
+  appRouteTransition.value = initialConfig.app.routeTransition
+  isVerticalNavCollapsed.value = initialConfig.verticalNav.isVerticalNavCollapsed
+  localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, staticPrimaryColor)
+  currentLayout.value = 'vertical'
+
+  await nextTick()
+
+  ;[`${themeConfig.app.title}-lightThemePrimaryColor`,
+    `${themeConfig.app.title}-darkThemePrimaryColor`,
+    `${themeConfig.app.title}-theme`,
+    `${themeConfig.app.title}-skin`,
+    `${themeConfig.app.title}-isVerticalNavSemiDark`,
+    `${themeConfig.app.title}-isVerticalNavCollapsed`,
+    `${themeConfig.app.title}-contentWidth`,
+    `${themeConfig.app.title}-isRtl`,
+    `${themeConfig.app.title}-transition`]
+    .forEach(key => localStorage.removeItem(key))
+  isLocalStorageHasAnyValue.value = false
+}
 </script>
 
 <template>
@@ -88,22 +257,46 @@ const headerValues = computed(() => {
       <div class="customizer-heading d-flex align-center justify-space-between">
         <div>
           <h6 class="text-h6">
-            THEME CUSTOMIZER
+            Theme Customizer
           </h6>
           <span class="text-body-1">Customize & Preview in Real Time</span>
         </div>
-        <VBtn
-          icon
-          variant="text"
-          color="secondary"
-          size="x-small"
-          @click="isNavDrawerOpen = false"
-        >
-          <VIcon
-            icon="mdi-close"
-            size="20"
-          />
-        </VBtn>
+
+        <div class="d-flex align-center gap-1">
+          <VBtn
+            icon
+            variant="text"
+            size="small"
+            color="default"
+            @click="resetCustomizer"
+          >
+            <VBadge
+              v-show="isLocalStorageHasAnyValue"
+              dot
+              color="error"
+              offset-x="-30"
+              offset-y="-15"
+            />
+
+            <VIcon
+              size="22"
+              icon="mdi-refresh"
+            />
+          </VBtn>
+
+          <VBtn
+            icon
+            variant="text"
+            color="secondary"
+            size="small"
+            @click="isNavDrawerOpen = false"
+          >
+            <VIcon
+              icon="mdi-close"
+              size="22"
+            />
+          </VBtn>
+        </div>
       </div>
 
       <VDivider />
@@ -114,186 +307,126 @@ const headerValues = computed(() => {
       >
         <!-- SECTION Theming -->
         <CustomizerSection
-          title="THEMING"
+          title="Theming"
           :divider="false"
         >
-          <!-- 👉 Skin -->
-          <h6 class="text-base font-weight-regular">
-            Skins
-          </h6>
-          <VRadioGroup
-            v-model="skin"
-            inline
-          >
-            <VRadio
-              v-for="[key, val] in Object.entries(Skins)"
-              :key="key"
-              :label="key"
-              :value="val"
-            />
-          </VRadioGroup>
+          <!-- 👉 Primary Color -->
+          <div class="d-flex flex-column gap-3">
+            <h6 class="text-base font-weight-medium">
+              Primary Color
+            </h6>
+
+            <div
+              class="d-flex"
+              style="column-gap: 0.7rem;"
+            >
+              <div
+                v-for="color in colors"
+                :key="color"
+                style="
+              padding: 0.5rem 0.625rem;
+              border-radius: 0.375rem;
+              outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));"
+                class="cursor-pointer"
+                :style="vuetifyTheme.current.value.colors.primary === color ? `outline-color: ${color}; outline-width:2px;` : ''"
+                @click="setPrimaryColor(color)"
+              >
+                <div
+                  style="border-radius: 0.375rem;block-size: 2.25rem; inline-size: 2rem;"
+                  :style="{ backgroundColor: color }"
+                />
+              </div>
+
+              <div
+                style="padding: 0.5rem 0.625rem;
+              border-radius: 0.375rem;
+              outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));"
+                :style="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? `outline-color: ${customPrimaryColor}; outline-width:2px;` : ''"
+              >
+                <VBtn
+                  icon
+                  size="small"
+                  :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? customPrimaryColor : '#3A354114'"
+                  variant="flat"
+                  style="border-radius: 0.375rem;"
+                >
+                  <VIcon
+                    size="22"
+                    icon="mdi-eyedropper-variant"
+                    :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'rgb(var(--v-theme-on-primary))' : ''"
+                  />
+                  <VMenu
+                    activator="parent"
+                    :close-on-content-click="false"
+                  >
+                    <VList>
+                      <VListItem>
+                        <VColorPicker
+                          v-model="customPrimaryColor"
+                          @update:model-value="setPrimaryColor"
+                        />
+                      </VListItem>
+                    </VList>
+                  </VMenu>
+                </VBtn>
+              </div>
+            </div>
+          </div>
 
           <!-- 👉 Theme -->
-          <h6 class="mt-3 text-base font-weight-regular">
-            Theme
-          </h6>
-          <VRadioGroup
-            v-model="theme"
-            inline
-          >
-            <VRadio
-              v-for="themeOption in ['system', 'light', 'dark']"
-              :key="themeOption"
-              :label="themeOption"
-              :value="themeOption"
-              class="text-capitalize"
-            />
-          </VRadioGroup>
+          <div class="d-flex flex-column gap-3">
+            <h6 class="text-base font-weight-medium">
+              Theme
+            </h6>
 
-          <!-- 👉 Primary color -->
-          <h6 class="mt-3 text-base font-weight-regular">
-            Primary Color
-          </h6>
-          <div class="d-flex gap-x-4 mt-2">
-            <div
-              v-for="(color, index) in colors"
-              :key="color"
-              style=" border-radius: 0.5rem; block-size: 2.5rem;inline-size: 2.5rem; transition: all 0.25s ease;"
-              :style="{ backgroundColor: getBoxColor(initialThemeColors[color], index) }"
-              class="cursor-pointer d-flex align-center justify-center"
-              :class="{ 'elevation-4': vuetifyTheme.current.value.colors.primary === getBoxColor(initialThemeColors[color], index) }"
-              @click="setPrimaryColor(getBoxColor(initialThemeColors[color], index))"
-            >
-              <VFadeTransition>
-                <VIcon
-                  v-show="vuetifyTheme.current.value.colors.primary === (getBoxColor(initialThemeColors[color], index))"
-                  icon="mdi-check"
-                  color="white"
-                />
-              </VFadeTransition>
-            </div>
+            <CustomRadiosWithImage
+              :key="theme"
+              v-model:selected-radio="theme"
+              :radio-content="themeMode"
+              :grid-column="{ cols: '4' }"
+            />
           </div>
-        </CustomizerSection>
-        <!-- !SECTION -->
 
-        <!-- SECTION LAYOUT -->
-        <CustomizerSection title="LAYOUT">
-          <!-- 👉 Content Width -->
-          <h6 class="text-base font-weight-regular">
-            Content width
-          </h6>
-          <VRadioGroup
-            v-model="appContentWidth"
-            inline
-          >
-            <VRadio
-              v-for="[key, val] in Object.entries(ContentWidth)"
-              :key="key"
-              :label="key"
-              :value="val"
+          <!-- 👉 Skin -->
+          <div class="d-flex flex-column gap-3">
+            <h6 class="text-base font-weight-medium">
+              Skins
+            </h6>
+
+            <CustomRadiosWithImage
+              :key="skin"
+              v-model:selected-radio="skin"
+              :radio-content="themeSkin"
+              :grid-column="{ cols: '4' }"
             />
-          </VRadioGroup>
-          <!-- 👉 Navbar Type -->
-          <h6 class="mt-3 text-base font-weight-regular">
-            {{ appContentLayoutNav === AppContentLayoutNav.Vertical ? 'Navbar' : 'Header' }} Type
-          </h6>
-          <VRadioGroup
-            v-model="navbarType"
-            inline
-          >
-            <VRadio
-              v-for="[key, val] in headerValues"
-              :key="key"
-              :label="key"
-              :value="val"
-            />
-          </VRadioGroup>
-          <!-- 👉 Footer Type -->
-          <h6 class="mt-3 text-base font-weight-regular">
-            Footer Type
-          </h6>
-          <VRadioGroup
-            v-model="footerType"
-            inline
-          >
-            <VRadio
-              v-for="[key, val] in Object.entries(FooterType)"
-              :key="key"
-              :label="key"
-              :value="val"
-            />
-          </VRadioGroup>
+
+            <VRow>
+              <VCol
+                v-for="i in ['Default', 'Border']"
+                :key="i"
+                cols="4"
+                class="pt-0 text-sm text-medium-emphasis"
+              >
+                {{ i }}
+              </VCol>
+            </VRow>
+          </div>
+
           <!-- 👉 Navbar blur -->
-          <div class="d-flex align-center justify-space-between">
-            <VLabel
-              for="customizer-navbar-blur"
-              class="text-high-emphasis"
-            >
-              Navbar Blur
-            </VLabel>
-            <div>
-              <VSwitch
-                id="customizer-navbar-blur"
-                v-model="isNavbarBlurEnabled"
-                class="ms-2"
-              />
-            </div>
-          </div>
-        </CustomizerSection>
-        <!-- !SECTION -->
-
-        <!-- SECTION Menu -->
-        <CustomizerSection title="MENU">
-          <!-- 👉 Menu Type -->
-          <h6 class="text-base font-weight-regular">
-            Menu Type
-          </h6>
-          <VRadioGroup
-            v-model="appContentLayoutNav"
-            inline
-          >
-            <VRadio
-              v-for="[key, val] in Object.entries(AppContentLayoutNav)"
-              :key="key"
-              :label="key"
-              :value="val"
-            />
-          </VRadioGroup>
-
-          <!-- 👉 Collapsed Menu -->
-          <div
-            v-if="appContentLayoutNav === AppContentLayoutNav.Vertical"
-            class="d-flex align-center justify-space-between"
-          >
-            <VLabel
-              for="customizer-menu-collapsed"
-              class="text-high-emphasis"
-            >
-              Collapsed Menu
-            </VLabel>
-            <div>
-              <VSwitch
-                id="customizer-menu-collapsed"
-                v-model="isVerticalNavCollapsed"
-                class="ms-2"
-              />
-            </div>
-          </div>
-
-          <!-- 👉 Semi Dark Menu -->
           <div
             class="align-center justify-space-between"
             :class="vuetifyTheme.global.name.value === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
             <VLabel
-              for="customizer-menu-semi-dark"
+              for="customizer-semi-dark"
               class="text-high-emphasis"
             >
               Semi Dark Menu
             </VLabel>
+
             <div>
               <VSwitch
-                id="customizer-menu-semi-dark"
+                id="customizer-semi-dark"
                 v-model="isVerticalNavSemiDark"
                 class="ms-2"
               />
@@ -302,51 +435,97 @@ const headerValues = computed(() => {
         </CustomizerSection>
         <!-- !SECTION -->
 
-        <!-- SECTION MISC -->
-        <CustomizerSection title="MISC">
-          <!-- 👉 RTL -->
-          <div class="d-flex align-center justify-space-between">
-            <VLabel
-              for="customizer-rtl"
-              class="text-high-emphasis"
-            >
-              RTL
-            </VLabel>
-            <div>
-              <VSwitch
-                id="customizer-rtl"
-                v-model="isAppRtl"
-                class="ms-2"
-              />
-            </div>
-          </div>
+        <!-- SECTION LAYOUT -->
+        <CustomizerSection title="Layout">
+          <!-- 👉 Layouts -->
+          <div class="d-flex flex-column gap-3">
+            <h6 class="text-base font-weight-medium">
+              Layouts
+            </h6>
 
-          <!-- 👉 Route Transition -->
-          <div class="mt-6">
+            <CustomRadiosWithImage
+              :key="currentLayout"
+              v-model:selected-radio="currentLayout"
+              :radio-content="layouts"
+              :grid-column="{ cols: '4' }"
+            />
+
             <VRow>
               <VCol
-                cols="5"
-                class="d-flex align-center"
+                v-for="i in ['Vertical', 'Collapsed', 'Horizontal']"
+                :key="i"
+                cols="4"
+                class="pt-0 text-sm text-medium-emphasis"
               >
-                <VLabel
-                  for="route-transition"
-                  class="text-high-emphasis"
-                >
-                  Router Transition
-                </VLabel>
-              </VCol>
-
-              <VCol cols="7">
-                <VSelect
-                  id="route-transition"
-                  v-model="appRouteTransition"
-                  :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
-                  item-title="key"
-                  item-value="value"
-                  single-line
-                />
+                {{ i }}
               </VCol>
             </VRow>
+          </div>
+
+          <!-- 👉 Content Width -->
+          <div class="d-flex flex-column gap-3">
+            <h6 class="text-base font-weight-medium">
+              Content
+            </h6>
+
+            <CustomRadiosWithImage
+              :key="appContentWidth"
+              v-model:selected-radio="appContentWidth"
+              :radio-content="contentWidth"
+              :grid-column="{ cols: '4' }"
+            />
+
+            <VRow>
+              <VCol
+                v-for="i in ['Compact', 'Wide']"
+                :key="i"
+                cols="4"
+                class="pt-0 text-sm text-medium-emphasis"
+              >
+                {{ i }}
+              </VCol>
+            </VRow>
+          </div>
+
+          <!-- 👉 Direction -->
+          <div class="d-flex flex-column gap-3">
+            <h6 class="text-base font-weight-medium">
+              Direction
+            </h6>
+
+            <CustomRadiosWithImage
+              :key="currentDir"
+              v-model:selected-radio="currentDir"
+              :radio-content="direction"
+              :grid-column="{ cols: '4' }"
+            />
+
+            <VRow>
+              <VCol
+                v-for="i in ['Left to right', 'Right to left']"
+                :key="i"
+                cols="4"
+                class="pt-0 text-sm text-medium-emphasis"
+              >
+                {{ i }}
+              </VCol>
+            </VRow>
+          </div>
+
+          <!-- 👉 Router Transition -->
+          <div class="d-flex flex-column gap-4">
+            <h6 class="text-base font-weight-medium">
+              Router Transition
+            </h6>
+
+            <VSelect
+              id="route-transition"
+              v-model="appRouteTransition"
+              label="Animation"
+              :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
+              item-title="key"
+              item-value="value"
+            />
           </div>
         </CustomizerSection>
         <!-- !SECTION -->
@@ -358,11 +537,14 @@ const headerValues = computed(() => {
 <style lang="scss">
 .app-customizer {
   .customizer-section {
+    display: flex;
+    flex-direction: column;
     padding: 1.25rem;
+    gap: 1.5rem;
   }
 
   .customizer-heading {
-    padding-block: 0.875rem;
+    padding-block: 1.125rem;
     padding-inline: 1.25rem;
   }
 

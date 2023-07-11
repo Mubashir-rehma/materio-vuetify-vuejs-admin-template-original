@@ -49,7 +49,7 @@ const isMenuOpen = ref(false)
             </VAvatar>
 
             <VBtn variant="text">
-              Activate Paypal
+              Activate PayPal
             </VBtn>
           </div>
           <VDivider />
@@ -59,7 +59,7 @@ const isMenuOpen = ref(false)
                 Provider
               </div>
               <div class="text-body-1 text-high-emphasis">
-                Paypal
+                PayPal
               </div>
             </div>
 

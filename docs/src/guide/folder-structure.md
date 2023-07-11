@@ -74,7 +74,7 @@ Place your app's layouts in this directory. This is used in conjunction with [vi
 
 ## navigation
 
-This directory contains vertical nav & horizontal nav items. Items written in `/src/navigation/vertical/index.ts` will be for vertical nav and items written in `/src/navigation/horizontal/index.ts` will be for horizontal nav. Both files are imported in `/src/layouts/default.vue`).
+This directory contains vertical nav & horizontal nav items. Items written in `src/navigation/vertical/index.ts` will be for vertical nav and items written in `src/navigation/horizontal/index.ts` will be for horizontal nav. Both files are imported in `src/layouts/default.vue`).
 
 Related: [Fetching navigation items from database via API](#) <br>
 Related: [How to create vertical navigation](#) <br>
@@ -86,7 +86,7 @@ Contains your app pages. Just create a new file and new route will be auto gener
 
 :::details Show me basic example 👀
 
-1. Create a new file in pages directory `/src/pages/about.vue` with following content
+1. Create a new file in pages directory `src/pages/about.vue` with following content
 
    ```vue
    <template>

@@ -7,9 +7,10 @@ import logo from '@images/logo.svg?raw'
 
 import { defineThemeConfig } from '@core'
 import { RouteTransitions, Skins } from '@core/enums'
+import type { UserThemeConfig } from '@core/types'
 import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 
-export const { themeConfig, layoutConfig } = defineThemeConfig({
+export const initialConfig = Object.freeze({
   app: {
     title: 'master',
 
@@ -52,4 +53,6 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
     sectionTitlePlaceholder: { icon: 'mdi-minus' },
   },
-})
+} satisfies UserThemeConfig)
+
+export const { themeConfig, layoutConfig } = defineThemeConfig(initialConfig)

@@ -70,10 +70,11 @@
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.6",
     "sass": "^1.59.3",
-    "stylelint": "14.15.0",
+    "stylelint": "15.10.0",
+    "stylelint-codeguide": "^0.2.0",
     "stylelint-config-idiomatic-order": "9.0.0",
-    "stylelint-config-standard-scss": "6.1.0",
-    "stylelint-use-logical-spec": "4.1.0",
+    "stylelint-config-standard-scss": "10.0.0",
+    "stylelint-use-logical-spec": "5.0.0",
     "tsx": "^3.12.7",
     "type-fest": "^3.11.0",
     "typescript": "^5.0.4",
@@ -86,6 +87,12 @@
     "vite-plugin-vuetify": "1.0.2",
     "vue-shepherd": "^3.0.0",
     "vue-tsc": "^1.6.5"
+  },
+  "resolutions": {
+    "stylelint-order": "6.0.3"
+  },
+  "overrides": {
+    "stylelint-order": "6.0.3"
   },
   "packageManager": "pnpm@8.6.2"
 }

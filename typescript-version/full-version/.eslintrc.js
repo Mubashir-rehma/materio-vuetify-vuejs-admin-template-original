@@ -26,7 +26,7 @@ module.exports = {
     '@typescript-eslint',
     'regex',
   ],
-  ignorePatterns: ['src/@iconify/*.js', 'node_modules', 'dist', '*.d.ts', 'vendor'],
+  ignorePatterns: ['src/plugins/iconify/*.js', 'node_modules', 'dist', '*.d.ts', 'vendor'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -150,8 +150,7 @@ module.exports = {
     'vue/no-child-content': 'error',
     'vue/require-default-prop': 'off',
 
-    // NOTE this rule only supported in SFC,  Users of the unplugin-vue-define-options should disable that rule: https://github.com/vuejs/eslint-plugin-vue/issues/1886
-    // 'vue/no-duplicate-attr-inheritance': 'error',
+    'vue/no-duplicate-attr-inheritance': 'error',
     'vue/no-empty-component-block': 'error',
     'vue/no-multiple-objects-in-class': 'error',
     'vue/no-reserved-component-names': 'error',

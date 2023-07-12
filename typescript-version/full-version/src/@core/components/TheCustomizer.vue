@@ -124,7 +124,7 @@ const layouts = computed(() => {
   ] as { bgImage: string; value: string }[]
 })
 
-const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : 'vertical')
+const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value)
 
 watch(currentLayout, () => {
   if (currentLayout.value === 'collapsed') {
@@ -197,6 +197,7 @@ watch([
     initialConfig.verticalNav.isVerticalNavCollapsed,
     initialConfig.app.contentWidth,
     initialConfig.app.isRtl,
+    initialConfig.app.contentLayoutNav,
     initialConfig.app.routeTransition,
   ]
 
@@ -206,9 +207,10 @@ watch([
     themeConfig.app.theme.value,
     themeConfig.app.skin.value,
     themeConfig.verticalNav.isVerticalNavSemiDark.value,
-    themeConfig.verticalNav.isVerticalNavCollapsed.value,
-    themeConfig.app.contentWidth.value,
-    themeConfig.app.isRtl.value,
+    isVerticalNavCollapsed.value,
+    appContentWidth.value,
+    isAppRtl.value,
+    appContentLayoutNav.value,
     themeConfig.app.routeTransition.value,
   ]
 
@@ -339,9 +341,10 @@ const resetCustomizer = async () => {
                 v-for="color in colors"
                 :key="color"
                 style="
-              padding: 0.5rem 0.625rem;
               border-radius: 0.375rem;
-              outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));"
+              outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+              padding-block: 0.5rem;
+              padding-inline: 0.625rem;"
                 class="cursor-pointer"
                 :style="vuetifyTheme.current.value.colors.primary === color ? `outline-color: ${color}; outline-width:2px;` : ''"
                 @click="setPrimaryColor(color)"
@@ -353,9 +356,11 @@ const resetCustomizer = async () => {
               </div>
 
               <div
-                style="padding: 0.5rem 0.625rem;
+                style="
               border-radius: 0.375rem;
-              outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));"
+              outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+              padding-block: 0.5rem;
+              padding-inline: 0.625rem;"
                 :style="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? `outline-color: ${customPrimaryColor}; outline-width:2px;` : ''"
               >
                 <VBtn

@@ -107,6 +107,14 @@ import * as demoCode from '@/views/demos/forms/form-layout/demoCodeFormLayout'
         </h4>
         <DemoFormLayoutCollapsible />
       </VCol>
+
+      <VCol cols="12">
+        <!-- 👉 Sticky Section -->
+        <h4 class="text-h6 font-weight-medium mb-5">
+          Sticky Section
+        </h4>
+        <DemoFormLayoutFormSticky />
+      </VCol>
     </VRow>
   </div>
 </template>

@@ -169,6 +169,7 @@ declare module '@vue/runtime-core' {
     DemoFileInputVariant: typeof import('./src/views/demos/forms/form-elements/file-input/DemoFileInputVariant.vue')['default']
     DemoFormLayoutCollapsible: typeof import('./src/views/demos/forms/form-layout/DemoFormLayoutCollapsible.vue')['default']
     DemoFormLayoutFormHint: typeof import('./src/views/demos/forms/form-layout/DemoFormLayoutFormHint.vue')['default']
+    DemoFormLayoutFormSticky: typeof import('./src/views/demos/forms/form-layout/DemoFormLayoutFormSticky.vue')['default']
     DemoFormLayoutFormValidation: typeof import('./src/views/demos/forms/form-layout/DemoFormLayoutFormValidation.vue')['default']
     DemoFormLayoutFormWithTabs: typeof import('./src/views/demos/forms/form-layout/DemoFormLayoutFormWithTabs.vue')['default']
     DemoFormLayoutHorizontalForm: typeof import('./src/views/demos/forms/form-layout/DemoFormLayoutHorizontalForm.vue')['default']

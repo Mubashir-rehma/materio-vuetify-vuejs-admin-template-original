@@ -15,3 +15,5 @@ export const formWithTabs = { ts: '', js: '' }
 export const collapsible = { ts: '', js: '' }
 
 export const formValidation = { ts: '', js: '' }
+
+export const formSticky = { ts: '', js: '' }

@@ -51,3 +51,7 @@ axiosIns.interceptors.response.use(response => {
 })
 
 export { axiosIns as axios }
+
+export default function () {
+  // This plugin just requires icons import
+}

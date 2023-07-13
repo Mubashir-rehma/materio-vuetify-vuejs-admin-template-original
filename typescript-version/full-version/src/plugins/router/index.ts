@@ -76,9 +76,8 @@ const routesToExtend: RouteRecordRaw[] = [
     path: '/dashboards/ecommerce',
     name: 'dashboards-ecommerce',
     component: eCommerceComponent,
-  }
+  },
 ]
-
 
 // 👉 Router
 const router = createRouter({

@@ -55,3 +55,7 @@ This component uses `layouts` plugin's `HorizontalNavLayout` component.
 Blank layout is really simple. It just have `div` wrapper for adding layout classes and default slot to render content.
 
 This is useful if you want to create a page without any layout components. Best candidates can be login pages, 404 pages, etc.
+
+::: tip
+If you define a new layout, please don't forget to add its types in env.d.ts file for getting better type suggestions.
+:::

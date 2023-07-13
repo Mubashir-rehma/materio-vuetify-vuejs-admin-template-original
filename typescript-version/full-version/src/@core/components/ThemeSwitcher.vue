@@ -6,11 +6,7 @@ const props = defineProps<{
 }>()
 
 const { theme } = useThemeConfig()
-const { state: currentThemeName, next: getNextThemeName, index: currentThemeIndex } = useCycleList(props.themes.map(t => t.name), { initialValue: theme.value })
-
-const changeTheme = () => {
-  theme.value = getNextThemeName()
-}
+const currentThemeName = ref(theme.value)
 
 // Update icon if theme is changed from other sources
 watch(theme, val => {
@@ -19,8 +15,8 @@ watch(theme, val => {
 </script>
 
 <template>
-  <IconBtn @click="changeTheme">
-    <VIcon :icon="props.themes[currentThemeIndex].icon" />
+  <IconBtn>
+    <VIcon :icon="props.themes.find(t => t.name === currentThemeName)?.icon" />
     <VTooltip
       activator="parent"
       open-delay="1000"
@@ -28,5 +24,18 @@ watch(theme, val => {
     >
       <span class="text-capitalize">{{ currentThemeName }}</span>
     </VTooltip>
+    <VMenu activator="parent">
+      <VList>
+        <VListItem
+          v-for="{ name, icon } in props.themes"
+          :key="name"
+          :prepend-icon="icon"
+          class="text-capitalize"
+          @click="() => { theme = name }"
+        >
+          {{ name }}
+        </VListItem>
+      </VList>
+    </VMenu>
   </IconBtn>
 </template>

@@ -351,6 +351,7 @@ declare module '@vue/runtime-core' {
     TimelineBasic: typeof import('./src/views/demos/components/timeline/TimelineBasic.vue')['default']
     TimelineFilled: typeof import('./src/views/demos/components/timeline/TimelineFilled.vue')['default']
     TimelineWithIcons: typeof import('./src/views/demos/components/timeline/TimelineWithIcons.vue')['default']
+    Tiptap: typeof import('./src/components/Tiptap.vue')['default']
     TwoFactorAuthDialog: typeof import('./src/components/dialogs/TwoFactorAuthDialog.vue')['default']
     UserInfoEditDialog: typeof import('./src/components/dialogs/UserInfoEditDialog.vue')['default']
     UserUpgradePlanDialog: typeof import('./src/components/dialogs/UserUpgradePlanDialog.vue')['default']

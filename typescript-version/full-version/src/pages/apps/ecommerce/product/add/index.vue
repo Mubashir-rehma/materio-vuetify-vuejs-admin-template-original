@@ -1,5 +1,33 @@
 <script setup lang="ts">
+import Highlight from '@tiptap/extension-highlight'
+import Placeholder from '@tiptap/extension-placeholder'
+import TextAlign from '@tiptap/extension-text-align'
+import Underline from '@tiptap/extension-underline'
+import StarterKit from '@tiptap/starter-kit'
+import { EditorContent, useEditor } from '@tiptap/vue-3'
 import { useDropZone } from '@vueuse/core'
+
+const editor = useEditor({
+  content: `
+    <p>
+      This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That’s it. It’s probably too much for real minimalists though.
+    </p>
+    <p>
+      The paragraph extension is not really required, but you need at least one node. Sure, that node can be something different.
+    </p>
+  `,
+  extensions: [
+    StarterKit,
+    TextAlign.configure({
+      types: ['heading', 'paragraph'],
+    }),
+    Placeholder.configure({
+      placeholder: 'Write something here...',
+    }),
+    Highlight,
+    Underline,
+  ],
+})
 
 const { open, onChange } = useFileDialog({ accept: 'image/*' })
 
@@ -117,10 +145,90 @@ const inventoryTabsData = [
                 />
               </VCol>
               <VCol>
-                <VTextarea
-                  label="Description(Optional)"
-                  placeholder="Keep your account secure with authentication step."
-                />
+                <div class="border rounded pa-2">
+                  <div
+                    v-if="editor"
+                    class="d-flex gap-x-4 pa-2"
+                  >
+                    <VBtn
+                      :class="{ 'is-active': editor.isActive('bold') }"
+                      icon="mdi-format-bold"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      @click="editor.chain().focus().toggleBold().run()"
+                    />
+                    <VBtn
+                      :class="{ 'is-active': editor.isActive('bold') }"
+                      icon="mdi-format-underline"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      @click="editor.commands.toggleUnderline()"
+                    />
+                    <VBtn
+                      icon="mdi-format-italic"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      :class="{ 'is-active': editor.isActive('italic') }"
+                      @click="editor.chain().focus().toggleItalic().run()"
+                    />
+                    <VBtn
+                      icon="mdi-format-strikethrough"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      :class="{ 'is-active': editor.isActive('strike') }"
+                      @click="editor.chain().focus().toggleStrike().run()"
+                    />
+                    <VBtn
+                      icon="mdi-format-align-left"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      :class="{ 'is-active': editor.isActive({ textAlign: 'left' }) }"
+                      @click="editor.chain().focus().setTextAlign('left').run()"
+                    />
+                    <VBtn
+                      icon="mdi-format-align-center"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      :class="{ 'is-active': editor.isActive({ textAlign: 'center' }) }"
+                      @click="editor.chain().focus().setTextAlign('center').run()"
+                    />
+                    <VBtn
+                      icon="mdi-format-align-left"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      :class="{ 'is-active': editor.isActive({ textAlign: 'right' }) }"
+                      @click="editor.chain().focus().setTextAlign('right').run()"
+                    />
+                    <VBtn
+                      icon="mdi-format-align-justify"
+                      class="rounded"
+                      density="comfortable"
+                      variant="outlined"
+                      color="default"
+                      :class="{ 'is-active': editor.isActive({ textAlign: 'justify' }) }"
+                      @click="editor.chain().focus().setTextAlign('justify').run()"
+                    />
+                  </div>
+                  <VDivider />
+                  <EditorContent
+                    :editor="editor"
+                    class="text-high-emphasis"
+                  />
+                </div>
               </VCol>
             </VRow>
           </VCardText>
@@ -563,5 +671,24 @@ const inventoryTabsData = [
   .v-label.custom-input {
     border: none !important;
   }
+}
+
+.ProseMirror{
+  p{
+    margin-bottom: 0;
+  }
+  padding: 0.5rem;
+
+  p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+  }
+}
+
+.ProseMirror-focused{
+  border: none;
 }
 </style>

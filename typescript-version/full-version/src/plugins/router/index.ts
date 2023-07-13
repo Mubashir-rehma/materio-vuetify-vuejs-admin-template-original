@@ -1,10 +1,10 @@
 import type { App } from 'vue'
 
-import { canNavigate } from '@layouts/plugins/casl'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { isUserLoggedIn } from './utils'
+import { canNavigate } from '@layouts/plugins/casl'
 
 function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
   if (route.children) {
@@ -17,6 +17,7 @@ function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
   return setupLayouts([route])[0]
 }
 
+// SECTION Additional Routes
 // 👉 Redirects
 export const redirects: RouteRecordRaw[] = [
   // ℹ️ We are redirecting to different pages based on role.
@@ -76,9 +77,10 @@ const routesToExtend: RouteRecordRaw[] = [
     path: '/dashboards/ecommerce',
     name: 'dashboards-ecommerce',
     component: eCommerceComponent,
-  }
+  },
 ]
 
+// !SECTION
 
 // 👉 Router
 const router = createRouter({

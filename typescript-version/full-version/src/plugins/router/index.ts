@@ -47,6 +47,7 @@ export const redirects: RouteRecordRaw[] = [
 
 // 👉 Routes to extend
 const emailRouteComponent = () => import('/src/pages/apps/email/index.vue')
+const eCommerceComponent = () => import('/src/pages/apps/ecommerce/product/list/index.vue')
 
 const routesToExtend: RouteRecordRaw[] = [
   // Email filter
@@ -71,16 +72,13 @@ const routesToExtend: RouteRecordRaw[] = [
       layoutWrapperClasses: 'layout-content-height-fixed',
     },
   },
-]
-
-const eCommerceComponent = () => import('/src/pages/apps/ecommerce/product/list/index.vue')
-const dashboardRoutes: RouteRecordRaw[] = [
   {
     path: '/dashboards/ecommerce',
     name: 'dashboards-ecommerce',
     component: eCommerceComponent,
   }
 ]
+
 
 // 👉 Router
 const router = createRouter({
@@ -89,7 +87,6 @@ const router = createRouter({
     ...redirects,
     ...[
       ...routes,
-      ...dashboardRoutes,
       ...routesToExtend,
     ].map(route => recursiveLayouts(route)),
   ],

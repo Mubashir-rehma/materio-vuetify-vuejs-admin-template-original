@@ -1,10 +1,10 @@
 import type { App } from 'vue'
 
+import { canNavigate } from '@layouts/plugins/casl'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { isUserLoggedIn } from './utils'
-import { canNavigate } from '@layouts/plugins/casl'
 
 function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
   if (route.children) {
@@ -73,6 +73,15 @@ const routesToExtend: RouteRecordRaw[] = [
   },
 ]
 
+const eCommerceComponent = () => import('/src/pages/apps/ecommerce/product/list/index.vue')
+const dashboardRoutes: RouteRecordRaw[] = [
+  {
+    path: '/dashboards/ecommerce',
+    name: 'dashboards-ecommerce',
+    component: eCommerceComponent,
+  }
+]
+
 // 👉 Router
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -80,6 +89,7 @@ const router = createRouter({
     ...redirects,
     ...[
       ...routes,
+      ...dashboardRoutes,
       ...routesToExtend,
     ].map(route => recursiveLayouts(route)),
   ],

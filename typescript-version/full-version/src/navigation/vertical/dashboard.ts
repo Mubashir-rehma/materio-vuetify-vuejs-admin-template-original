@@ -11,6 +11,10 @@ export default [
         title: 'CRM',
         to: 'dashboards-crm',
       },
+      {
+        title: 'ecommerce',
+        to: 'dashboards-ecommerce'
+      },
     ],
     badgeContent: '2',
     badgeClass: 'bg-primary',

@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { ECommerceProduct } from '@/@fake-db/types'
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
-import type { Options } from '@core/types'
+import type { ECommerceProduct } from '@/@fake-db/types';
+import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore';
+import type { Options } from '@core/types';
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
+
+definePage({
+  alias:'/dashboards/ecommerce'
+})
+
 
 const products = ref<ECommerceProduct[]>([])
 const eCommerceStore = useECommerceStore()

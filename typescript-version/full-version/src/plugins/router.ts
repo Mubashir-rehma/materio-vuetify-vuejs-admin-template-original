@@ -3,7 +3,6 @@ import type { App } from 'vue'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { RouteRecordRaw } from 'vue-router/auto'
 import { createRouter, createWebHistory } from 'vue-router/auto'
-import { isUserLoggedIn } from './utils'
 import { canNavigate } from '@layouts/plugins/casl'
 
 function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
@@ -19,7 +18,7 @@ function recursiveLayouts(route: RouteRecordRaw): RouteRecordRaw {
 
 // SECTION Additional Routes
 // 👉 Redirects
-export const redirects: RouteRecordRaw[] = [
+const redirects: RouteRecordRaw[] = [
   // ℹ️ We are redirecting to different pages based on role.
   // NOTE: Role is just for UI purposes. ACL is based on abilities.
   {
@@ -47,8 +46,8 @@ export const redirects: RouteRecordRaw[] = [
 ]
 
 // 👉 Routes to extend
-const emailRouteComponent = () => import('/src/pages/apps/email/index.vue')
-const eCommerceComponent = () => import('/src/pages/apps/ecommerce/product/list/index.vue')
+const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
+const eCommerceComponent = () => import('@/pages/apps/ecommerce/product/list/index.vue')
 
 const routesToExtend: RouteRecordRaw[] = [
   // Email filter
@@ -97,7 +96,11 @@ const router = createRouter({
 // 👉 router.beforeEach
 // Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
 router.beforeEach(to => {
-  const isLoggedIn = isUserLoggedIn()
+  /**
+   * Check if user is logged in by checking if token & user data exists in local storage
+   * Feel free to update this logic to suit your needs
+   */
+  const isLoggedIn = !!(localStorage.getItem('userData') && localStorage.getItem('accessToken'))
 
   if (canNavigate(to)) {
     if (to.meta.redirectIfLoggedIn && isLoggedIn)

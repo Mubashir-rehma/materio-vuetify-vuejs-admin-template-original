@@ -132,6 +132,16 @@
   "Wizard Pages": "Pages de l'assistant",
   "Form Wizard": "Assistant de formulaire",
   "Numbered": "Numéroté",
+  "ecommerce": "commerce électronique",
+  "Ecommerce": "Commerce électronique",
+  "Product": "Produit",
+  "Category": "Catégorie",
+  "Order": "Ordre",
+  "Details": "Détails",
+  "Customer": "Client",
+  "Manage Review": "Gérer la revue",
+  "Referrals": "Références",
+  "Settings": "Paramètres",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

@@ -130,6 +130,16 @@
   "Wizard Pages": "Wizard Pages",
   "Form Wizard": "Form Wizard",
   "Numbered": "Numbered",
+  "ecommerce": "ecommerce",
+  "Ecommerce": "Ecommerce",
+  "Product": "Product",
+  "Category": "Category",
+  "Order": "Order",
+  "Details": "Details",
+  "Customer": "Customer",
+  "Manage Review": "Manage Review",
+  "Referrals": "Referrals",
+  "Settings": "Settings",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

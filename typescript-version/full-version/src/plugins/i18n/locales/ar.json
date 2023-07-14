@@ -131,6 +131,16 @@
   "Wizard Pages": "صفحات المعالج",
   "Form Wizard": "معالج النموذج",
   "Numbered": "مرقم",
+  "ecommerce": "التجارة الإلكترونية",
+  "Ecommerce": "التجارة الإلكترونية",
+  "Product": "المنتج",
+  "Category": "الفئة",
+  "Order": "طلب",
+  "Details": "تفاصيل",
+  "Customer": "الزبون",
+  "Manage Review": "إدارة المراجعة",
+  "Referrals": "الإحالات",
+  "Settings": "الإعدادات",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

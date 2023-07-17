@@ -157,7 +157,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    min-block-size: calc(var(--vh, 1vh) * 100);
+    min-block-size: 100dvh;
     transition: padding-inline-start 0.2s ease-in-out;
     will-change: padding-inline-start;
   }
@@ -227,7 +227,7 @@ export default defineComponent({
   // 👉 Content height fixed
   &.layout-content-height-fixed {
     .layout-content-wrapper {
-      max-block-size: calc(var(--vh) * 100);
+      max-block-size: 100dvh;
     }
 
     .layout-page-content {

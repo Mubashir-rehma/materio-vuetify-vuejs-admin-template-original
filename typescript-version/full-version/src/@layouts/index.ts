@@ -1,5 +1,4 @@
 import type { Plugin } from 'vue'
-import { useDynamicVhCssProperty } from './composable/useDynamicVhCssProperty'
 import { config } from './config'
 import { ContentWidth } from './enums'
 import type { UserConfig } from './types'
@@ -51,8 +50,6 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.icons.sectionTitlePlaceholder = userConfig.icons.sectionTitlePlaceholder
 
   return (): void => {
-    useDynamicVhCssProperty()
-
     _setAppDir(config.app.isRtl.value ? 'rtl' : 'ltr')
   }
 }

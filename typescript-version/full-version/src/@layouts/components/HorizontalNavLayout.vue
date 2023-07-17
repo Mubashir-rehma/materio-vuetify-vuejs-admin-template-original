@@ -84,7 +84,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
     // // TODO(v2): Check why we need height in vertical nav & min-height in horizontal nav
     // min-height: 100%;
-    min-block-size: calc(var(--vh, 1vh) * 100);
+    min-block-size: 100dvh;
 
     .layout-navbar-and-nav-container {
       z-index: 1;
@@ -114,7 +114,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
     // 👉   Content height fixed
     &.layout-content-height-fixed {
-      max-block-size: calc(var(--vh) * 100);
+      max-block-size: 100dvh;
 
       .layout-page-content {
         overflow: hidden;

@@ -101,7 +101,7 @@ $horizontal-nav-items-icon-margin-inline-end: 0.625rem !default;
 
 // ℹ️ We used SCSS variable because we want to allow users to update max height of popper content
 // 120px is combined height of navbar & horizontal nav
-$horizontal-nav-popper-content-max-height: calc((var(--vh, 1vh) * 100) - 120px - 4rem) !default;
+$horizontal-nav-popper-content-max-height: calc(100dvh - 120px - 4rem) !default;
 
 // ℹ️ This variable is used for horizontal nav popper content's `margin-top` and "The bridge"'s height. We need to sync both values.
 $horizontal-nav-popper-content-top: calc($horizontal-nav-padding + 0.375rem) !default;

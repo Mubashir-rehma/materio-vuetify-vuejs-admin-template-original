@@ -131,55 +131,54 @@ const widgetData = ref([
 </script>
 
 <template>
-  <!-- 👉 Widgets -->
-  <div class="d-flex mb-6">
-    <VRow>
-      <template
-        v-for="(data, id) in widgetData"
-        :key="id"
-      >
-        <VCol
-          cols="12"
-          md="3"
-          sm="6"
-        >
-          <VCard>
-            <VCardText>
-              <div class="d-flex justify-space-between">
-                <div class="d-flex flex-column gap-y-1">
-                  <span class="text-body-1 text-high-emphasis">{{ data.title }}</span>
-                  <div>
-                    <h5 class="text-h5">
-                      {{ data.value }}
-                      <span
-                        class="text-base "
-                        :class="data.change > 0 ? 'text-success' : 'text-error'"
-                      >({{ prefixWithPlus(data.change) }}%)</span>
-                    </h5>
-                  </div>
-                  <span class="text-sm">{{ data.desc }}</span>
-                </div>
-
-                <VAvatar
-                  :color="data.iconColor"
-                  variant="tonal"
-                  rounded
-                  size="38"
-                >
-                  <VIcon
-                    :icon="data.icon"
-                    size="26"
-                  />
-                </VAvatar>
-              </div>
-            </VCardText>
-          </VCard>
-        </VCol>
-      </template>
-    </VRow>
-  </div>
-
   <section>
+    <!-- 👉 Widgets -->
+    <div class="d-flex mb-6">
+      <VRow>
+        <template
+          v-for="(data, id) in widgetData"
+          :key="id"
+        >
+          <VCol
+            cols="12"
+            md="3"
+            sm="6"
+          >
+            <VCard>
+              <VCardText>
+                <div class="d-flex justify-space-between">
+                  <div class="d-flex flex-column gap-y-1">
+                    <span class="text-body-1 text-high-emphasis">{{ data.title }}</span>
+                    <div>
+                      <h5 class="text-h5">
+                        {{ data.value }}
+                        <span
+                          class="text-base "
+                          :class="data.change > 0 ? 'text-success' : 'text-error'"
+                        >({{ prefixWithPlus(data.change) }}%)</span>
+                      </h5>
+                    </div>
+                    <span class="text-sm">{{ data.desc }}</span>
+                  </div>
+                  <VAvatar
+                    :color="data.iconColor"
+                    variant="tonal"
+                    rounded
+                    size="38"
+                  >
+                    <VIcon
+                      :icon="data.icon"
+                      size="26"
+                    />
+                  </VAvatar>
+                </div>
+              </VCardText>
+            </VCard>
+          </VCol>
+        </template>
+      </VRow>
+    </div>
+
     <VCard
       title="Filters"
       class="mb-6"
@@ -200,7 +199,6 @@ const widgetData = ref([
               clear-icon="mdi-close"
             />
           </VCol>
-
           <!-- 👉 Select Plan -->
           <VCol
             cols="12"
@@ -215,7 +213,6 @@ const widgetData = ref([
               clear-icon="mdi-close"
             />
           </VCol>
-
           <!-- 👉 Select Status -->
           <VCol
             cols="12"
@@ -233,7 +230,6 @@ const widgetData = ref([
         </VRow>
       </VCardText>
     </VCard>
-
     <VCard>
       <VCardText class="d-flex flex-wrap gap-4">
         <!-- 👉 Export button -->
@@ -244,9 +240,7 @@ const widgetData = ref([
         >
           Export
         </VBtn>
-
         <VSpacer />
-
         <div class="app-user-search-filter d-flex align-center">
           <!-- 👉 Search  -->
           <VTextField
@@ -255,16 +249,13 @@ const widgetData = ref([
             density="compact"
             class="me-3"
           />
-
           <!-- 👉 Add user button -->
           <VBtn @click="isAddNewUserDrawerVisible = true">
             Add User
           </VBtn>
         </div>
       </VCardText>
-
       <VDivider />
-
       <!-- SECTION datatable -->
       <VDataTableServer
         v-model:items-per-page="options.itemsPerPage"
@@ -290,7 +281,6 @@ const widgetData = ref([
               />
               <span v-else>{{ avatarText(item.raw.fullName) }}</span>
             </VAvatar>
-
             <div class="d-flex flex-column">
               <h6 class="text-sm">
                 <RouterLink
@@ -300,12 +290,10 @@ const widgetData = ref([
                   {{ item.raw.fullName }}
                 </RouterLink>
               </h6>
-
               <span class="text-xs text-medium-emphasis">@{{ item.raw.username }}</span>
             </div>
           </div>
         </template>
-
         <!-- Role -->
         <template #item.role="{ item }">
           <div class="d-flex gap-4">
@@ -316,12 +304,10 @@ const widgetData = ref([
             <span class="text-capitalize">{{ item.raw.role }}</span>
           </div>
         </template>
-
         <!-- Plan -->
         <template #item.plan="{ item }">
           <span class="text-capitalize">{{ item.raw.currentPlan }}</span>
         </template>
-
         <!-- Status -->
         <template #item.status="{ item }">
           <VChip
@@ -332,7 +318,6 @@ const widgetData = ref([
             {{ item.raw.status }}
           </VChip>
         </template>
-
         <!-- Actions -->
         <template #item.actions="{ item }">
           <VBtn
@@ -345,7 +330,6 @@ const widgetData = ref([
               size="24"
               icon="mdi-dots-vertical"
             />
-
             <VMenu activator="parent">
               <VList>
                 <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }">
@@ -373,7 +357,6 @@ const widgetData = ref([
       </VDataTableServer>
       <!-- SECTION -->
     </VCard>
-
     <!-- 👉 Add New User -->
     <AddNewUserDrawer
       v-model:isDrawerOpen="isAddNewUserDrawerVisible"

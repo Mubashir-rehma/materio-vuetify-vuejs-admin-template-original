@@ -38,10 +38,6 @@ export default [
         title: 'Settings',
         to: 'apps-ecommerce-settings',
       },
-      {
-        title: 'Settings',
-        to: { name: 'apps-ecommerce-settings' },
-      },
     ],
   },
   {

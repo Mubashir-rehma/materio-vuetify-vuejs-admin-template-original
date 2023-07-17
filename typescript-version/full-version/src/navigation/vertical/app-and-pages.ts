@@ -38,6 +38,19 @@ export default [
         title: 'Settings',
         to: 'apps-ecommerce-settings',
       },
+      {
+        title: 'Settings',
+        to: { name: 'apps-ecommerce-settings' },
+      },
+    ],
+  },
+  {
+    title: 'Academy',
+    icon: { icon: 'mdi-book-open-outline' },
+    children: [
+      { title: 'Overview', to: 'apps-academy-overview' },
+      { title: 'My Course', to: 'apps-academy-my-course' },
+      { title: 'Course Details', to: 'apps-academy-course-details' },
     ],
   },
   {

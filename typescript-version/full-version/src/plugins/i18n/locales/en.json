@@ -140,6 +140,10 @@
   "Manage Review": "Manage Review",
   "Referrals": "Referrals",
   "Settings": "Settings",
+  "Overview": "Overview",
+  "My Course": "My Course",
+  "Course Details": "Course Details",
+  "Academy": "Academy",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

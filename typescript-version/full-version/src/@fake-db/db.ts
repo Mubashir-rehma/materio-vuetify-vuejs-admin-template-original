@@ -8,6 +8,7 @@ import './pages/help-center'
 import './pages/profile'
 
 // Apps
+import './apps/academy'
 import './apps/calendar'
 import './apps/chat'
 import './apps/ecommerce'

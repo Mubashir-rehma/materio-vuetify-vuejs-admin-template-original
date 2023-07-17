@@ -141,6 +141,10 @@
   "Manage Review": "إدارة المراجعة",
   "Referrals": "الإحالات",
   "Settings": "الإعدادات",
+  "Course Details": "تفاصيل الدورة التدريبية",
+  "My Course": "دورتي",
+  "Overview": "نظرة عامة",
+  "Academy": "أكاديمية",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

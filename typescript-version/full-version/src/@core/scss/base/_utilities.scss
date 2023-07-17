@@ -73,6 +73,14 @@ $card-spacer-content: 16px;
   text-overflow: ellipsis;
 }
 
+.custom-badge {
+  .v-badge__badge {
+    border-radius: 6px !important;
+    block-size: 12px !important;
+    inline-size: 12px !important;
+  }
+}
+
 .leading-normal {
   line-height: normal !important;
 }

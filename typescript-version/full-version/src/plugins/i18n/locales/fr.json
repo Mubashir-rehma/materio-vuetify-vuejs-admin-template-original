@@ -142,6 +142,10 @@
   "Manage Review": "Gérer la revue",
   "Referrals": "Références",
   "Settings": "Paramètres",
+  "Course Details": "Détails du cours",
+  "My Course": "Mon cours",
+  "Overview": "Aperçu",
+  "Academy": "Académie",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

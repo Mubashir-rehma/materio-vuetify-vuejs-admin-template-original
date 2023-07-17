@@ -62,7 +62,7 @@ export const getScatterChartConfig = (themeColors: ThemeInstance['themes']['valu
       },
       labels: {
         style: { colors: themeDisabledTextColor },
-        formatter: (val: string) => parseFloat(val).toFixed(1),
+        formatter: (val: string) => Number.parseFloat(val).toFixed(1),
       },
     },
   }
@@ -324,7 +324,7 @@ export const getDonutChartConfig = (themeColors: ThemeInstance['themes']['value'
     colors: [donutColors.series1, donutColors.series5, donutColors.series3, donutColors.series2],
     dataLabels: {
       enabled: true,
-      formatter: (val: string) => `${parseInt(val, 10)}%`,
+      formatter: (val: string) => `${Number.parseInt(val, 10)}%`,
     },
     legend: {
       position: 'bottom',
@@ -346,7 +346,7 @@ export const getDonutChartConfig = (themeColors: ThemeInstance['themes']['value'
             value: {
               fontSize: '1.5rem',
               color: themeSecondaryTextColor,
-              formatter: (val: string) => `${parseInt(val, 10)}`,
+              formatter: (val: string) => `${Number.parseInt(val, 10)}`,
             },
             total: {
               show: true,

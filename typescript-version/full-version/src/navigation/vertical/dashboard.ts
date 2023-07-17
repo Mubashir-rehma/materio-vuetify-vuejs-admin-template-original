@@ -15,6 +15,10 @@ export default [
         title: 'ecommerce',
         to: 'dashboards-ecommerce'
       },
+      {
+        title: 'Academy',
+        to: 'apps-academy-overview',
+      },
     ],
     badgeContent: '2',
     badgeClass: 'bg-primary',

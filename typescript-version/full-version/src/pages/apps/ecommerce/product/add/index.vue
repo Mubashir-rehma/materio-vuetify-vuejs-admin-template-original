@@ -16,6 +16,7 @@ const content = ref(
 function onDrop(DroppedFiles: File[] | null) {
   DroppedFiles?.forEach(file => {
     if (file.type.slice(0, 6) !== 'image/') {
+      // eslint-disable-next-line no-alert
       alert('Only image files are allowed')
 
       return

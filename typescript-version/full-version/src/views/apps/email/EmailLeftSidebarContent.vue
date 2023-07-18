@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 defineEmits<{
   (e: 'toggleComposeDialogVisibility'): void
 }>()

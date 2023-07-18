@@ -11,6 +11,11 @@ import { VInput, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
 // @ts-expect-error There won't be declaration file for it
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
 
+// inherit Attribute make false
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = defineProps({
   autofocus: Boolean,
   counter: [Boolean, Number, String] as PropType<true | number | string>,
@@ -45,11 +50,6 @@ interface Emit {
   (e: 'update:modelValue', val: string): void
   (e: 'click:clear', el: MouseEvent): void
 }
-
-// inherit Attribute make false
-defineOptions({
-  inheritAttrs: false,
-})
 
 const attrs = useAttrs()
 

@@ -33,6 +33,7 @@ const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
 // 👉 Hotkey
+// eslint-disable-next-line camelcase
 const { ctrl_k, meta_k } = useMagicKeys({
   passive: false,
   onEventFired(e) {
@@ -55,6 +56,7 @@ watch(props, () => {
 })
 
 // 👉 watching control + / to open dialog
+// eslint-disable-next-line camelcase
 watch([ctrl_k, meta_k], () => {
   isLocalDialogVisible.value = true
   emit('update:isDialogVisible', true)

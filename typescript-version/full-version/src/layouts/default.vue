@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-
-// @layouts plugin
 import { AppContentLayoutNav } from '@layouts/enums'
 
 const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))

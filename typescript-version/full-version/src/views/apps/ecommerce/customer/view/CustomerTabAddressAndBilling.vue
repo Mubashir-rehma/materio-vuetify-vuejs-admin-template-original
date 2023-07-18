@@ -13,10 +13,10 @@ const addressData = [
     owner: 'Violet Mendoza',
     defaultAdderss: true,
     address: ` 23 Shatinon Mekalan,
-                <br>
-                Melbourne, VIC 3000,
-                <br>
-                LondonUK`,
+    <br>
+    Melbourne, VIC 3000,
+    <br>
+    LondonUK`,
   },
   {
     title: 'Office',
@@ -24,12 +24,12 @@ const addressData = [
     owner: 'Violet Mendoza',
     defaultAdderss: false,
     address: ` 45 Rocker Terrace,
-                <br>
-                Latheronwheel,
-                <br>
-                KW5 8NW, London,
-                <br>
-                UK`,
+    <br>
+    Latheronwheel,
+    <br>
+    KW5 8NW, London,
+    <br>
+    UK`,
   },
   {
     title: 'Family',
@@ -37,10 +37,10 @@ const addressData = [
     owner: 'Violet Mendoza',
     defaultAdderss: false,
     address: ` 512 Water Plant,
-                <br>
-                Melbourne, VIC 3000,
-                <br>
-                LondonUK`,
+    <br>
+    Melbourne, VIC 3000,
+    <br>
+    LondonUK`,
   },
 ]
 
@@ -67,6 +67,8 @@ const paymentData = [
 </script>
 
 <template>
+  <!-- eslint-disable vue/no-v-html -->
+
   <!-- 👉 Address Book -->
   <VCard class="mb-6">
     <VCardItem>

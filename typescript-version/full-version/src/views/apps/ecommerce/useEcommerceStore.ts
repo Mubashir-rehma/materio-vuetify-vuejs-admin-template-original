@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import type { CustomerParams, OrderParams, ProductParams, ReferralParams, ReviewParams } from './types'
 
-// import type { productParams } from '@/views/apps/ecommerce/types'
 import { axios } from '@axios'
 
 export const useECommerceStore = defineStore('ECommerceStore', {

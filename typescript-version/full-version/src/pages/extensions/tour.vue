@@ -5,6 +5,7 @@ import { useShepherd } from 'vue-shepherd'
 const route = useRoute()
 
 // 👉 Hotkey
+// eslint-disable-next-line camelcase
 const { ctrl_k, meta_k } = useMagicKeys()
 
 // 👉 Tour initialization
@@ -12,6 +13,7 @@ const { ctrl_k, meta_k } = useMagicKeys()
 let tour: any = null
 
 // 👉 watch command palette and route change
+// eslint-disable-next-line camelcase
 watch([ctrl_k, meta_k, () => route.path], () => {
   if (tour.isActive())
     tour.cancel()

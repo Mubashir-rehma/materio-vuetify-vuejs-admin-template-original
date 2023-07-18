@@ -13,7 +13,7 @@ export default [
       },
       {
         title: 'ecommerce',
-        to: 'dashboards-ecommerce'
+        to: 'dashboards-ecommerce',
       },
       {
         title: 'Academy',

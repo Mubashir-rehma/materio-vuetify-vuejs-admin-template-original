@@ -20,6 +20,7 @@ const refInputEl = ref<HTMLElement>()
 
 const selectedFile = ref<File>()
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const changeInput = (e: any) => {
   selectedFile.value = e.target.files[0].name
 }

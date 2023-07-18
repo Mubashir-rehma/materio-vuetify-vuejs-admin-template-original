@@ -8,11 +8,11 @@ interface Props {
   customClass?: string
 }
 
-const props = defineProps<Props>()
-
 defineOptions({
   inheritAttrs: false,
 })
+
+const props = defineProps<Props>()
 
 const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSearchHeaderBgDark)
 </script>

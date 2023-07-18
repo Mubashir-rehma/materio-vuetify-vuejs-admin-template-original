@@ -58,7 +58,7 @@ specifiers:
   sass: ^1.59.3
   shepherd.js: ^11.1.1
   stylelint: 15.10.0
-  stylelint-codeguide: ^0.2.0
+  stylelint-codeguide: 0.2.0
   stylelint-config-idiomatic-order: 9.0.0
   stylelint-config-standard-scss: 10.0.0
   stylelint-use-logical-spec: 5.0.0
@@ -153,7 +153,7 @@ devDependencies:
   postcss-scss: 4.0.6_postcss@8.4.26
   sass: 1.63.6
   stylelint: 15.10.0
-  stylelint-codeguide: 0.2.1_stylelint@15.10.0
+  stylelint-codeguide: 0.2.0_stylelint@15.10.0
   stylelint-config-idiomatic-order: 9.0.0_stylelint@15.10.0
   stylelint-config-standard-scss: 10.0.0_s7k2le6sbswft4cturb55vs2tm
   stylelint-use-logical-spec: 5.0.0_stylelint@15.10.0
@@ -6997,11 +6997,11 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: false
 
-  /stylelint-codeguide/0.2.1_stylelint@15.10.0:
-    resolution: {integrity: sha512-kIlGUM6UI9/3oGxVUBOBhg71lvUgtO/27qPzHpf5QHXW8vt4IZZDZ2naWaXWbFa7iCtYo37R3DGW2X2R4SZjtQ==}
-    engines: {node: ^18.12.0}
+  /stylelint-codeguide/0.2.0_stylelint@15.10.0:
+    resolution: {integrity: sha512-JtemtmQf5eNcs5VtKc8SVHDykXJN6BAUMeTHCnxxl/9BEk6TIl66k2gKgwIGINWzhTN2smhtqu/1QxMFN32YUQ==}
+    engines: {node: ^18.16.1}
     peerDependencies:
-      stylelint: ^15.0.0
+      stylelint: ^15.9.0
     dependencies:
       is-plain-object: 5.0.0
       postcss-media-query-parser: 0.2.3

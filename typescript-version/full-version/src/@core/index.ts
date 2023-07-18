@@ -1,25 +1,12 @@
+import { useStorage } from '@vueuse/core'
+import type { ValueOf } from 'type-fest'
 import type { ThemeConfig, UserThemeConfig } from './types'
-import { RouteTransitions, Skins } from '@core/enums'
 import type { UserConfig as LayoutConfig } from '@layouts/types'
+import type { RouteTransitions, Skins } from '@core/enums'
 
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
 ): { themeConfig: ThemeConfig; layoutConfig: LayoutConfig } => {
-  const localStorageTheme = localStorage.getItem(`${userConfig.app.title}-theme`)
-  const localStorageIsVerticalNavSemiDark = localStorage.getItem(`${userConfig.app.title}-isVerticalNavSemiDark`)
-
-  const localStorageSkin = (() => {
-    const storageValue = localStorage.getItem(`${userConfig.app.title}-skin`)
-
-    return Object.values(Skins).find(v => v === storageValue)
-  })()
-
-  const localStorageTransition = (() => {
-    const storageValue = localStorage.getItem(`${userConfig.app.title}-transition`)
-
-    return Object.values(RouteTransitions).find(v => v === storageValue)
-  })()
-
   return {
     themeConfig: {
       app: {
@@ -29,10 +16,10 @@ export const defineThemeConfig = (
         contentLayoutNav: ref(userConfig.app.contentLayoutNav),
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
         enableI18n: userConfig.app.enableI18n,
-        theme: ref(localStorageTheme || userConfig.app.theme),
+        theme: useStorage(`${userConfig.app.title}-theme`, userConfig.app.theme),
         isRtl: ref(userConfig.app.isRtl),
-        skin: ref(localStorageSkin || userConfig.app.skin),
-        routeTransition: ref(localStorageTransition || userConfig.app.routeTransition),
+        skin: useStorage<ValueOf<typeof Skins>>(`${userConfig.app.title}-skin`, userConfig.app.skin),
+        routeTransition: useStorage<ValueOf<typeof RouteTransitions>>(`${userConfig.app.title}-transition`, userConfig.app.routeTransition),
         iconRenderer: userConfig.app.iconRenderer,
       },
       navbar: {
@@ -43,7 +30,7 @@ export const defineThemeConfig = (
       verticalNav: {
         isVerticalNavCollapsed: ref(userConfig.verticalNav.isVerticalNavCollapsed),
         defaultNavItemIconProps: userConfig.verticalNav.defaultNavItemIconProps,
-        isVerticalNavSemiDark: ref(localStorageIsVerticalNavSemiDark ? JSON.parse(localStorageIsVerticalNavSemiDark) : userConfig.verticalNav.isVerticalNavSemiDark),
+        isVerticalNavSemiDark: useStorage(`${userConfig.app.title}-isVerticalNavSemiDark`, userConfig.verticalNav.isVerticalNavSemiDark),
       },
       horizontalNav: {
         type: ref(userConfig.horizontalNav.type),

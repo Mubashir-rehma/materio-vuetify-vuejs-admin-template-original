@@ -1,3 +1,4 @@
+import { useStorage } from '@vueuse/core'
 import type { VuetifyOptions } from 'vuetify'
 import { themeConfig } from '@themeConfig'
 
@@ -9,7 +10,7 @@ const theme: VuetifyOptions['theme'] = {
     light: {
       dark: false,
       colors: {
-        'primary': localStorage.getItem(`${themeConfig.app.title}-lightThemePrimaryColor`) || staticPrimaryColor,
+        'primary': useStorage(`${themeConfig.app.title}-lightThemePrimaryColor`, staticPrimaryColor).value,
         'secondary': '#677492',
         'on-secondary': '#fff',
         'success': '#40c057',
@@ -54,7 +55,7 @@ const theme: VuetifyOptions['theme'] = {
     dark: {
       dark: true,
       colors: {
-        'primary': localStorage.getItem(`${themeConfig.app.title}-darkThemePrimaryColor`) || staticPrimaryColor,
+        'primary': useStorage(`${themeConfig.app.title}-darkThemePrimaryColor`, staticPrimaryColor).value,
         'secondary': '#677492',
         'on-secondary': '#fff',
         'success': '#40c057',

@@ -6,18 +6,20 @@ import { useLayouts } from '@layouts'
 
 const { _setAppDir } = useLayouts()
 
+const getStoredItem = (item: string) => typeof localStorage !== 'undefined' ? localStorage.getItem(item) : null
+
 // 🔌 Plugin
 export const createLayouts = (userConfig: UserConfig): Plugin => {
-  const localStorageIsRtl = localStorage.getItem(`${userConfig.app.title}-isRtl`)
-  const localStorageIsVerticalNavCollapsed = localStorage.getItem(`${userConfig.app.title}-isVerticalNavCollapsed`)
+  const localStorageIsRtl = getStoredItem(`${userConfig.app.title}-isRtl`)
+  const localStorageIsVerticalNavCollapsed = getStoredItem(`${userConfig.app.title}-isVerticalNavCollapsed`)
 
   const localStorageContentWidth = (() => {
-    const storageValue = localStorage.getItem(`${userConfig.app.title}-contentWidth`)
+    const storageValue = getStoredItem(`${userConfig.app.title}-contentWidth`)
 
     return Object.values(ContentWidth).find(v => v === storageValue)
   })()
 
-  const localStorageNavbarBlur = localStorage.getItem(`${userConfig.app.title}-navbarBlur`)
+  const localStorageNavbarBlur = getStoredItem(`${userConfig.app.title}-navbarBlur`)
 
   config.app.title = userConfig.app.title
   config.app.logo = userConfig.app.logo

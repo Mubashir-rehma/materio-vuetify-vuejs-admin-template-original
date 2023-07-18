@@ -25,7 +25,9 @@ export const useLayouts = () => {
   })
 
   const _setAppDir = (dir: 'ltr' | 'rtl') => {
-    document.documentElement.setAttribute('dir', dir)
+    // Check if document exists for SSR
+    if (typeof document !== 'undefined')
+      document.documentElement.setAttribute('dir', dir)
   }
 
   const footerType = computed({

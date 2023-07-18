@@ -1,3 +1,4 @@
+import type { ValueOf } from 'type-fest'
 import type { Ref } from 'vue'
 import type { RouteTransitions, Skins } from './enums'
 import type { UserConfig as UserLayoutConfig } from '@layouts/types'
@@ -12,8 +13,8 @@ export interface UserThemeConfig {
     enableI18n: UserLayoutConfig['app']['enableI18n']
     theme: string
     isRtl: UserLayoutConfig['app']['isRtl']
-    skin: typeof Skins[keyof typeof Skins]
-    routeTransition: typeof RouteTransitions[keyof typeof RouteTransitions]
+    skin: ValueOf<typeof Skins>
+    routeTransition: ValueOf<typeof RouteTransitions>
     iconRenderer: UserLayoutConfig['app']['iconRenderer']
   }
   navbar: {

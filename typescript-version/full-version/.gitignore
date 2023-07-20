@@ -32,3 +32,6 @@ dist-ssr
 
 # iconify dist files
 src/plugins/iconify/icons.js
+
+# Ignore MSW script
+public/mockServiceWorker.js

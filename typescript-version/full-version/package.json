@@ -9,6 +9,7 @@
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . -c .eslintrc.js --fix --rulesdir eslint-internal-rules/ --ext .ts,.js,.vue,.tsx,.jsx",
     "build:icons": "tsx src/plugins/iconify/build-icons.ts",
+    "msw:init": "msw init public/ --save",
     "postinstall": "npm run build:icons"
   },
   "dependencies": {
@@ -75,6 +76,7 @@
     "eslint-plugin-sonarjs": "^0.19.0",
     "eslint-plugin-unicorn": "^47.0.0",
     "eslint-plugin-vue": "^9.13.0",
+    "msw": "^1.2.3",
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.6",
     "sass": "^1.59.3",
@@ -103,5 +105,8 @@
   "overrides": {
     "stylelint-order": "6.0.3"
   },
-  "packageManager": "pnpm@8.6.2"
+  "packageManager": "pnpm@8.6.2",
+  "msw": {
+    "workerDirectory": "public"
+  }
 }

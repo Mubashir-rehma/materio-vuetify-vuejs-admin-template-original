@@ -53,7 +53,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Installation', link: '/guide/installation' },
-            { text: 'Vscode Setup', link: '/guide/vscode-setup' },
+            { text: 'VS Code Setup', link: '/guide/vscode-setup' },
             { text: 'Folder Structure', link: '/guide/folder-structure' },
             { text: 'Colors And Themes', link: '/guide/getting-started/colors-and-themes' },
             { text: 'Theme Configuration', link: '/guide/getting-started/theme-configuration' },
@@ -61,6 +61,7 @@ export default defineConfig({
             { text: 'Styles', link: '/guide/styles' },
             { text: 'Navigation Menu', link: '/guide/navigation-menu' },
             { text: 'Plugins', link: '/guide/getting-started/plugins' },
+            { text: 'Date Fetching', link: '/guide/getting-started/data-fetching' },
             { text: 'Authentication', link: '/guide/authentication' },
             { text: 'Access Control', link: '/guide/access-control' },
             { text: 'Splash Screen', link: '/guide/splash-screen' },

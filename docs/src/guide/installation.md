@@ -42,13 +42,28 @@ Enable show hidden files feature in your system to view the hidden files if you 
 4. Open terminal in that directory
 5. Run below commands:
 
-```bash
+::: code-group
+
+```bash [Vue]
+# It will install all packages
+yarn
+
+# Create MSW script for faking API calls
+yarn msw:init
+
+# Will start the dev server
+yarn dev
+```
+
+```bash [Nuxt]
 # It will install all packages
 yarn
 
 # Will start the dev server
 yarn dev
 ```
+
+:::
 
 1. Open the dev server URL in browser. Probably it will be <http://localhost:5173>
 
@@ -82,5 +97,5 @@ Make sure you are in the project directory before running above commands and als
 :::
 
 :::tip
-Refer this documentation for detailed deployment guid: <https://vitejs.dev/guide/static-deploy.html>
+Refer to [this](https://vitejs.dev/guide/static-deploy.html) documentation for detailed deployment guide.
 :::

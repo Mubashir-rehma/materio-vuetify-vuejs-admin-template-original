@@ -1,10 +1,10 @@
 <script setup lang="tsx">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
 import { RouteTransitions } from '@core/enums'
 import { AppContentLayoutNav } from '@layouts/enums'
 import { initialConfig, themeConfig } from '@themeConfig'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 
 import borderSkinDark from '@images/customizer-icons/border-dark.svg'
 import borderSkinLight from '@images/customizer-icons/border-light.svg'
@@ -135,6 +135,11 @@ watch(currentLayout, () => {
     isVerticalNavCollapsed.value = false
     appContentLayoutNav.value = currentLayout.value
   }
+})
+
+// watch vertical sidebar collapse state
+watch(isVerticalNavCollapsed, () => {
+  currentLayout.value = isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value
 })
 
 // 👉 Content Width

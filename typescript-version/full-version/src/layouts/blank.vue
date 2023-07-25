@@ -1,16 +1,17 @@
-<script lang="ts">
-export default defineComponent({
-  setup() {
-    const routerView = resolveComponent('router-view')
-    const { injectSkinClasses } = useSkins()
+<script lang="ts" setup>
+const { injectSkinClasses } = useSkins()
 
-    // ℹ️ This will inject classes in body tag for accurate styling
-    injectSkinClasses()
-
-    return () => h('div', { class: 'layout-wrapper layout-blank' }, h(routerView))
-  },
-})
+// ℹ️ This will inject classes in body tag for accurate styling
+injectSkinClasses()
 </script>
+
+<template>
+  <Suspense>
+    <div class="layout-wrapper layout-blank">
+      <RouterView />
+    </div>
+  </Suspense>
+</template>
 
 <style>
 .layout-wrapper.layout-blank {

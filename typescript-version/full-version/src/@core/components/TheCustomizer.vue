@@ -1,10 +1,10 @@
 <script setup lang="tsx">
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
 import { RouteTransitions } from '@core/enums'
 import { AppContentLayoutNav } from '@layouts/enums'
 import { initialConfig, themeConfig } from '@themeConfig'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useTheme } from 'vuetify'
 
 import borderSkinDark from '@images/customizer-icons/border-dark.svg'
 import borderSkinLight from '@images/customizer-icons/border-light.svg'
@@ -173,18 +173,16 @@ const direction = computed(() => {
 })
 
 watch(currentDir, () => {
-  if (currentDir.value === 'rtl') {
+  if (currentDir.value === 'rtl')
     isAppRtl.value = true
-    currentDir.value = 'rtl'
-  }
-  else {
+
+  else
     isAppRtl.value = false
-    currentDir.value = 'ltr'
-  }
 })
 
 // check if any value set in localStorage
 const isLocalStorageHasAnyValue = ref(false)
+const INITIAL_IS_RTL = false
 
 watch([
   () => themeConfig,
@@ -201,7 +199,7 @@ watch([
     initialConfig.verticalNav.isVerticalNavSemiDark,
     initialConfig.verticalNav.isVerticalNavCollapsed,
     initialConfig.app.contentWidth,
-    initialConfig.app.isRtl,
+    INITIAL_IS_RTL,
     initialConfig.app.contentLayoutNav,
     initialConfig.app.routeTransition,
   ]
@@ -219,6 +217,7 @@ watch([
     themeConfig.app.routeTransition.value,
   ]
 
+  currentDir.value = isAppRtl.value ? 'rtl' : 'ltr'
   isLocalStorageHasAnyValue.value = JSON.stringify(themeConfigValue) !== JSON.stringify(initialConfigValue)
 }, { deep: true, immediate: true })
 
@@ -233,7 +232,7 @@ const resetCustomizer = async () => {
   isVerticalNavSemiDark.value = initialConfig.verticalNav.isVerticalNavSemiDark
   appContentLayoutNav.value = initialConfig.app.contentLayoutNav
   appContentWidth.value = initialConfig.app.contentWidth
-  isAppRtl.value = initialConfig.app.isRtl
+  isAppRtl.value = INITIAL_IS_RTL
   appRouteTransition.value = initialConfig.app.routeTransition
   isVerticalNavCollapsed.value = initialConfig.verticalNav.isVerticalNavCollapsed
   localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, staticPrimaryColor)

@@ -184,7 +184,6 @@ export const useLayouts = () => {
     },
     set(value: typeof config.app.isRtl.value) {
       config.app.isRtl.value = value
-      localStorage.setItem(`${config.app.title}-isRtl`, value.toString())
       _setAppDir(value ? 'rtl' : 'ltr')
     },
   })

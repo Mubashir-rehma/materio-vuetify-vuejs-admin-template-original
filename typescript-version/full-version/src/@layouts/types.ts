@@ -11,7 +11,6 @@ export interface UserConfig {
     contentLayoutNav: typeof AppContentLayoutNav[keyof typeof AppContentLayoutNav]
     overlayNavFromBreakpoint: number
     enableI18n: boolean
-    isRtl: boolean
     iconRenderer?: Component
   }
   navbar: {
@@ -51,7 +50,7 @@ export interface Config {
     contentLayoutNav: Ref<UserConfig['app']['contentLayoutNav']>
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserConfig['app']['enableI18n']
-    isRtl: Ref<UserConfig['app']['isRtl']>
+    isRtl: Ref<boolean>
     iconRenderer?: UserConfig['app']['iconRenderer']
   }
   navbar: {
@@ -139,6 +138,7 @@ export declare type HorizontalNavItems = (NavLink | NavGroup)[]
 export interface I18nLanguage {
   label: string
   i18nLang: string
+  isRTL: boolean
 }
 
 // avatar | text | icon

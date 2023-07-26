@@ -3,6 +3,7 @@ import type { Ref } from 'vue'
 import type { RouteTransitions, Skins } from './enums'
 import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 
+// Type for config passed by user when registering plugin
 export interface UserThemeConfig {
   app: {
     title: UserLayoutConfig['app']['title']
@@ -12,7 +13,7 @@ export interface UserThemeConfig {
     overlayNavFromBreakpoint: UserLayoutConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserLayoutConfig['app']['enableI18n']
     theme: string
-    isRtl: UserLayoutConfig['app']['isRtl']
+    i18nLanguage: string
     skin: ValueOf<typeof Skins>
     routeTransition: ValueOf<typeof RouteTransitions>
     iconRenderer: UserLayoutConfig['app']['iconRenderer']
@@ -47,6 +48,7 @@ export interface UserThemeConfig {
   TODO: use MergeDeep for DRY
    Waiting for https://github.com/sindresorhus/type-fest/issues/150
 */
+// Type for config of this plugin
 export interface ThemeConfig {
   app: {
     title: UserThemeConfig['app']['title']
@@ -55,8 +57,8 @@ export interface ThemeConfig {
     contentLayoutNav: Ref<UserThemeConfig['app']['contentLayoutNav']>
     overlayNavFromBreakpoint: UserThemeConfig['app']['overlayNavFromBreakpoint']
     enableI18n: UserThemeConfig['app']['enableI18n']
+    i18nLanguage: string
     theme: Ref<UserThemeConfig['app']['theme']>
-    isRtl: Ref<UserThemeConfig['app']['isRtl']>
     skin: Ref<UserThemeConfig['app']['skin']>
     routeTransition: Ref<UserThemeConfig['app']['routeTransition']>
     iconRenderer?: UserThemeConfig['app']['iconRenderer']

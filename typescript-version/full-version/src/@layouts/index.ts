@@ -10,7 +10,6 @@ const getStoredItem = (item: string) => typeof localStorage !== 'undefined' ? lo
 
 // 🔌 Plugin
 export const createLayouts = (userConfig: UserConfig): Plugin => {
-  const localStorageIsRtl = getStoredItem(`${userConfig.app.title}-isRtl`)
   const localStorageIsVerticalNavCollapsed = getStoredItem(`${userConfig.app.title}-isVerticalNavCollapsed`)
 
   const localStorageContentWidth = (() => {
@@ -27,7 +26,7 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.app.contentLayoutNav.value = userConfig.app.contentLayoutNav
   config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
   config.app.enableI18n = userConfig.app.enableI18n
-  config.app.isRtl.value = localStorageIsRtl ? JSON.parse(localStorageIsRtl) : userConfig.app.isRtl
+  config.app.isRtl.value = false
   config.app.iconRenderer = userConfig.app.iconRenderer
 
   config.navbar.type.value = userConfig.navbar.type

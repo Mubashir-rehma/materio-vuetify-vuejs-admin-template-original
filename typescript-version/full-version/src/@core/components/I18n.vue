@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import type { I18nLanguage } from '@layouts/types'
+import { themeConfig } from '@themeConfig'
 
 const props = withDefaults(defineProps<Props>(), {
   location: 'bottom end',
 })
-
-defineEmits<{
-  (e: 'change', id: string): void
-}>()
 
 interface Props {
   languages: I18nLanguage[]
@@ -16,12 +13,28 @@ interface Props {
 }
 
 const { locale } = useI18n({ useScope: 'global' })
+const { setLocale, isAppRtl } = useThemeConfig()
 
 watch(locale, val => {
   document.documentElement.setAttribute('lang', val as string)
 })
 
-const currentLang = ref(['en'])
+const currentLang = ref([localStorage.getItem(`${themeConfig.app.title}-language`) || setLocale.value])
+
+// set isAppRtl on mounted hook
+onMounted(() => {
+  props.languages.forEach(lang => {
+    if (lang.i18nLang === currentLang.value[0])
+      isAppRtl.value = lang.isRTL
+  })
+})
+
+// change language and isAppRtl on click
+const changeLang = (lang: I18nLanguage) => {
+  setLocale.value = lang.i18nLang
+  locale.value = lang.i18nLang
+  isAppRtl.value = lang.isRTL
+}
 </script>
 
 <template>
@@ -45,7 +58,7 @@ const currentLang = ref(['en'])
           v-for="lang in props.languages"
           :key="lang.i18nLang"
           :value="lang.i18nLang"
-          @click="locale = lang.i18nLang; $emit('change', lang.i18nLang)"
+          @click="changeLang(lang)"
         >
           <!-- Language label -->
           <VListItemTitle>{{ lang.label }}</VListItemTitle>

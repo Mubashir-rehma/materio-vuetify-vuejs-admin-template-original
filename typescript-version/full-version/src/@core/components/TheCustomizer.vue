@@ -2,8 +2,8 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
-import { RouteTransitions } from '@core/enums'
-import { AppContentLayoutNav } from '@layouts/enums'
+import { Direction, Layout, RouteTransitions, Skins, Theme } from '@core/enums'
+import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
 import { initialConfig, themeConfig } from '@themeConfig'
 
 import borderSkinDark from '@images/customizer-icons/border-dark.svg'
@@ -79,17 +79,17 @@ const themeMode = computed(() => {
   return [
     {
       bgImage: lightTheme.value,
-      value: 'light',
+      value: Theme.Light,
     },
     {
       bgImage: darkTheme.value,
-      value: 'dark',
+      value: Theme.Dark,
     },
     {
       bgImage: systemTheme.value,
-      value: 'system',
+      value: Theme.System,
     },
-  ] as { bgImage: string; value: string }[]
+  ]
 })
 
 // 👉 Skin
@@ -97,13 +97,13 @@ const themeSkin = computed(() => {
   return [
     {
       bgImage: defaultSkin.value,
-      value: 'default',
+      value: Skins.Default,
     },
     {
       bgImage: borderSkin.value,
-      value: 'bordered',
+      value: Skins.Bordered,
     },
-  ] as { bgImage: string; value: string }[]
+  ]
 })
 
 // 👉 Layout
@@ -111,17 +111,17 @@ const layouts = computed(() => {
   return [
     {
       bgImage: defaultSkin.value,
-      value: 'vertical',
+      value: Layout.Vertical,
     },
     {
       bgImage: collapsed.value,
-      value: 'collapsed',
+      value: Layout.Collapsed,
     },
     {
       bgImage: compact.value,
-      value: 'horizontal',
+      value: Layout.Horizontal,
     },
-  ] as { bgImage: string; value: string }[]
+  ]
 })
 
 const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value)
@@ -147,13 +147,13 @@ const contentWidth = computed(() => {
   return [
     {
       bgImage: compactContent.value,
-      value: 'boxed',
+      value: ContentWidth.Boxed,
     },
     {
       bgImage: wideContent.value,
-      value: 'fluid',
+      value: ContentWidth.Fluid,
     },
-  ] as { bgImage: string; value: string }[]
+  ]
 })
 
 // 👉 Direction
@@ -163,13 +163,13 @@ const direction = computed(() => {
   return [
     {
       bgImage: ltrImg.value,
-      value: 'ltr',
+      value: Direction.Ltr,
     },
     {
       bgImage: rtlImg.value,
-      value: 'rtl',
+      value: Direction.Rtl,
     },
-  ] as { bgImage: string; value: string }[]
+  ]
 })
 
 watch(currentDir, () => {

@@ -3,7 +3,7 @@ import type { GridColumn } from '@core/types'
 
 interface Props {
   selectedRadio: string
-  radioContent: { bgImage: string; value: string }[]
+  radioContent: { bgImage: string | undefined; value: string }[]
   gridColumn?: GridColumn
 }
 
@@ -41,6 +41,7 @@ watch(selectedOption, () => {
             :item="item"
           >
             <img
+              v-if="item.bgImage"
               :src="item.bgImage"
               alt="bg-img"
               class="custom-radio-image"

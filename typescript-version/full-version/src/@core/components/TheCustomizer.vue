@@ -45,16 +45,21 @@ const {
 const vuetifyTheme = useTheme()
 
 const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
-const customPrimaryColor = ref('')
+const customPrimaryColor = ref('#0C752E')
+
+watch(theme, () => {
+  const localStoragePrimaryColor = localStorage.getItem(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`) || ''
+
+  if (!colors.includes(localStoragePrimaryColor))
+    customPrimaryColor.value = localStoragePrimaryColor
+}, { immediate: true })
 
 // ℹ️ It will set primary color for current theme only
 const setPrimaryColor = (color: string) => {
-  const currentThemeName = vuetifyTheme.name.value
-
-  vuetifyTheme.themes.value[currentThemeName].colors.primary = color
+  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color
 
   // ℹ️ We need to store this color value in localStorage so vuetify plugin can pick on next reload
-  localStorage.setItem(`${themeConfig.app.title}-${currentThemeName}ThemePrimaryColor`, color)
+  localStorage.setItem(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, color)
 
   // ℹ️ Update initial loader color
   localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, color)
@@ -347,8 +352,8 @@ const resetCustomizer = async () => {
                 style="
               border-radius: 0.375rem;
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-              padding-block: 0.5rem;
-              padding-inline: 0.625rem;"
+              padding-block: 0.45rem;
+              padding-inline: 0.55rem;"
                 class="cursor-pointer"
                 :style="vuetifyTheme.current.value.colors.primary === color ? `outline-color: ${color}; outline-width:2px;` : ''"
                 @click="setPrimaryColor(color)"
@@ -360,17 +365,18 @@ const resetCustomizer = async () => {
               </div>
 
               <div
+                class="cursor-pointer"
                 style="
               border-radius: 0.375rem;
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-              padding-block: 0.5rem;
-              padding-inline: 0.625rem;"
+              padding-block: 0.45rem;
+              padding-inline: 0.55rem;"
                 :style="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? `outline-color: ${customPrimaryColor}; outline-width:2px;` : ''"
               >
                 <VBtn
                   icon
                   size="small"
-                  :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? customPrimaryColor : '#3A354114'"
+                  :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? customPrimaryColor : $vuetify.theme.current.dark ? '#8692d029' : '#4b465c29'"
                   variant="flat"
                   style="border-radius: 0.375rem;"
                 >
@@ -379,20 +385,21 @@ const resetCustomizer = async () => {
                     icon="mdi-eyedropper-variant"
                     :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'rgb(var(--v-theme-on-primary))' : ''"
                   />
-                  <VMenu
-                    activator="parent"
-                    :close-on-content-click="false"
-                  >
-                    <VList>
-                      <VListItem>
-                        <VColorPicker
-                          v-model="customPrimaryColor"
-                          @update:model-value="setPrimaryColor"
-                        />
-                      </VListItem>
-                    </VList>
-                  </VMenu>
                 </VBtn>
+
+                <VMenu
+                  activator="parent"
+                  :close-on-content-click="false"
+                >
+                  <VList>
+                    <VListItem>
+                      <VColorPicker
+                        v-model="customPrimaryColor"
+                        @update:model-value="setPrimaryColor"
+                      />
+                    </VListItem>
+                  </VList>
+                </VMenu>
               </div>
             </div>
           </div>

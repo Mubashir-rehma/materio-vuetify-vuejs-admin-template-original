@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { FaqCategory } from '@/@fake-db/types'
-import { axios } from '@axios'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 
@@ -8,16 +7,15 @@ const faqSearchQuery = ref('')
 
 const faqs = ref<FaqCategory[]>([])
 
-const fetchFaqs = () => {
-  return axios.get('/pages/faqs', {
-    params: {
-      q: faqSearchQuery.value,
-    },
-  }).then(response => {
-    faqs.value = response.data
-  }).catch(error => {
-    console.error(error)
-  })
+const fetchFaqs = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/pages/faq', {
+    q: faqSearchQuery.value,
+  }))
+
+  if (error.value)
+    console.error(error.value)
+  else
+    faqs.value = data.value
 }
 
 const activeTab = ref('Payment')

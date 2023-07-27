@@ -5,7 +5,6 @@ import academyCourseIllustration1 from '@images/pages/academy-course-illustratio
 import academyCourseIllustration2 from '@images/pages/academy-course-illustration2.png'
 import boyIllustration from '@images/pages/boy-illustration.png'
 import forgotPasswordIllustration from '@images/pages/forgot-password-illustration.png'
-import 'video.js/dist/video-js.css'
 </script>
 
 <template>
@@ -29,7 +28,7 @@ import 'video.js/dist/video-js.css'
           <div class="d-flex justify-center align-center gap-x-4">
             <VTextField
               placeholder="Find your course"
-              style="max-width: 400px;"
+              style="max-inline-size: 400px;"
               density="compact"
             />
             <VBtn
@@ -222,6 +221,8 @@ import 'video.js/dist/video-js.css'
 </template>
 
 <style lang="scss">
+@import 'video.js/dist/video-js.css';
+
 .illustration1 {
   position: absolute;
   inset-block-end: 0;

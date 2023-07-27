@@ -7,11 +7,9 @@ import CustomerTabAddressAndBilling from '@/views/apps/ecommerce/customer/view/C
 import CustomerTabNotification from '@/views/apps/ecommerce/customer/view/CustomerTabNotification.vue'
 import CustomerTabOverview from '@/views/apps/ecommerce/customer/view/CustomerTabOverview.vue'
 import CustomerTabSecurity from '@/views/apps/ecommerce/customer/view/CustomerTabSecurity.vue'
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 
-const eCommerceStore = useECommerceStore()
 const route = useRoute()
-const customerData = ref<Customer | null>()
+const customerData = ref<Customer>()
 const userTab = ref(null)
 
 const tabs = [
@@ -21,9 +19,17 @@ const tabs = [
   { icon: 'mdi-bell-outline', title: 'Notifications' },
 ]
 
-eCommerceStore.fetchSingleCustomer(route.params.id).then(res => {
-  customerData.value = res.data
-})
+const fetchCustomer = async () => {
+  const { data, error } = await useApi<any>(CreateUrl(`/apps/ecommerce/customers/${route.params.id}`))
+
+  if (error.value)
+    console.log(error.value)
+  else
+    customerData.value = data.value
+  console.log(customerData.value)
+}
+
+fetchCustomer()
 
 const isAddCustomerDrawerOpen = ref(false)
 </script>
@@ -60,7 +66,7 @@ const isAddCustomerDrawerOpen = ref(false)
       </div>
     </div>
     <!-- 👉 Customer Profile  -->
-    <VRow>
+    <VRow v-if="customerData">
       <VCol
         cols="12"
         md="5"

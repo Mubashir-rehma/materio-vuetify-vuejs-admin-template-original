@@ -123,7 +123,7 @@ const isAddProductDrawerOpen = ref(false)
             v-model="searchQuery"
             placeholder="Search"
             density="compact"
-            style=" min-width: 200px;max-width: 200px;"
+            style="max-inline-size: 200px; min-inline-size: 200px;"
           />
 
           <div class="d-flex align-center  flex-wrap gap-4">

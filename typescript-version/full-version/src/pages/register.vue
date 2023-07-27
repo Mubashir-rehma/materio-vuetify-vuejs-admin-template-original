@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
-import type { RegisterResponse } from '@/@fake-db/types'
 
 import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import { axios } from '@axios'
 
 definePage({
   meta: {
@@ -34,32 +32,34 @@ const errors = ref<Record<string, string | undefined>>({
   password: undefined,
 })
 
-const register = () => {
-  axios.post<RegisterResponse>('/auth/register', {
-    username: username.value,
-    email: email.value,
-    password: password.value,
-  })
-    .then(r => {
-      const { accessToken, userData, userAbilities } = r.data
-
-      localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-      ability.update(userAbilities)
-
-      localStorage.setItem('userData', JSON.stringify(userData))
-      localStorage.setItem('accessToken', JSON.stringify(accessToken))
-
-      // Redirect to `to` query if exist or redirect to index route
-      router.replace(route.query.to ? String(route.query.to) : '/')
-
-      return null
+const register = async () => {
+  try {
+    const res = await $api('/auth/register', {
+      method: 'POST',
+      body: {
+        username: username.value,
+        email: email.value,
+        password: password.value,
+      },
+      onResponseError({ response }) {
+        errors.value = response._data.errors
+      },
     })
-    .catch(e => {
-      const { errors: formErrors } = e.response.data
 
-      errors.value = formErrors
-      console.error(e.response.data)
-    })
+    const { accessToken, userData, userAbilities } = res
+
+    localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+    ability.update(userAbilities)
+
+    localStorage.setItem('userData', JSON.stringify(userData))
+    localStorage.setItem('accessToken', JSON.stringify(accessToken))
+
+    // Redirect to `to` query if exist or redirect to index route
+    router.replace(route.query.to ? String(route.query.to) : '/')
+  }
+  catch (err) {
+    console.error(err)
+  }
 }
 
 const isPasswordVisible = ref(false)
@@ -119,6 +119,7 @@ const onSubmit = () => {
                   :rules="[requiredValidator, alphaDashValidator]"
                   label="Username"
                   placeholder="Johndoe"
+                  :error-messages="errors.username"
                 />
               </VCol>
 
@@ -130,6 +131,7 @@ const onSubmit = () => {
                   label="Email"
                   placeholder="johndoe@email.com"
                   type="email"
+                  :error-messages="errors.email"
                 />
               </VCol>
 

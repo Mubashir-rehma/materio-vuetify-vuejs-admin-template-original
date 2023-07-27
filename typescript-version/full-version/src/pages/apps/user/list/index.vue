@@ -2,11 +2,9 @@
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/@fake-db/types'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
-import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import type { Options } from '@core/types'
 
 // 👉 Store
-const userListStore = useUserListStore()
 const searchQuery = ref('')
 const selectedRole = ref()
 const selectedPlan = ref()
@@ -34,20 +32,29 @@ const headers = [
 ]
 
 // 👉 Fetching users
-const fetchUsers = () => {
-  userListStore.fetchUsers({
+const fetchUsers = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/users', {
     q: searchQuery.value,
     status: selectedStatus.value,
     plan: selectedPlan.value,
     role: selectedRole.value,
-    options: options.value,
-  }).then(response => {
-    users.value = response.data.users
-    totalPage.value = response.data.totalPage
-    totalUsers.value = response.data.totalUsers
-  }).catch(error => {
-    console.error(error)
-  })
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    users.value = data.value.users
+    totalPage.value = data.value.totalPage
+    totalUsers.value = data.value.totalUsers
+  }
 }
 
 watchEffect(fetchUsers)
@@ -106,18 +113,25 @@ const resolveUserStatusVariant = (stat: string) => {
 const isAddNewUserDrawerVisible = ref(false)
 
 // 👉 Add new user
-const addNewUser = (userData: UserProperties) => {
-  userListStore.addUser(userData)
+const addNewUser = async (userData: UserProperties) => {
+  // userListStore.addUser(userData)
+  await $api('/apps/users', {
+    method: 'POST',
+    body: userData,
+  })
 
   // refetch User
   fetchUsers()
 }
 
 // 👉 Delete user
-const deleteUser = (id: number) => {
-  userListStore.deleteUser(id)
+const deleteUser = async (id: number) => {
+  await $api(`/apps/users/${id}`, {
+    method: 'DELETE',
+  })
 
   // refetch User
+  // TODO: Make this async
   fetchUsers()
 }
 
@@ -256,6 +270,7 @@ const widgetData = ref([
         </div>
       </VCardText>
       <VDivider />
+
       <!-- SECTION datatable -->
       <VDataTableServer
         v-model:items-per-page="options.itemsPerPage"
@@ -264,6 +279,7 @@ const widgetData = ref([
         :items-length="totalUsers"
         :headers="headers"
         show-select
+        class="text-no-wrap"
         @update:options="options = $event"
       >
         <!-- User -->

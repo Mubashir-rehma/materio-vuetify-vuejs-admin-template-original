@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
 import type { SalesDetails } from '@/@fake-db/types'
-import { axios } from '@axios'
 
 const search = ref('')
 const productList = ref<SalesDetails[]>([])
@@ -68,10 +67,13 @@ const categoryIconFilter = (categoryName: string): {
   return [{ icon: 'mdi-help-circle-outline', color: 'primary' }]
 }
 
-onMounted(() => {
-  axios.get('pages/datatables').then(res => {
-    productList.value = res.data
-  })
+onMounted(async () => {
+  const { data, error } = await useApi<any>('pages/datatable')
+
+  if (error.value)
+    console.error(error.value)
+  else
+    productList.value = data.value
 })
 </script>
 

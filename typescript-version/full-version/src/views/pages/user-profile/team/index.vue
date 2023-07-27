@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import type { TeamsTab } from '@/@fake-db/types'
-import { axios } from '@axios'
 
 const router = useRoute()
 const teamData = ref<TeamsTab[]>([])
 
-const fetchTeamData = () => {
+const fetchTeamData = async () => {
   if (router.params.tab === 'teams') {
-    axios.get('/pages/profile', {
-      params: {
-        tab: router.params.tab,
-      },
-    }).then(response => {
-      teamData.value = response.data
-    })
+    const { data, error } = await useApi<any>(CreateUrl('/pages/profile', {
+      tab: router.params.tab,
+    }))
+
+    if (error.value)
+      console.error(error.value)
+    else
+      teamData.value = data.value
   }
 }
 

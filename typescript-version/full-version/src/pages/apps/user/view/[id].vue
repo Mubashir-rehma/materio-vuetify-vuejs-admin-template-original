@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useUserListStore } from '@/views/apps/user/useUserListStore'
 import UserBioPanel from '@/views/apps/user/view/UserBioPanel.vue'
 import UserTabBillingsPlans from '@/views/apps/user/view/UserTabBillingsPlans.vue'
 import UserTabConnections from '@/views/apps/user/view/UserTabConnections.vue'
@@ -7,11 +6,8 @@ import UserTabNotifications from '@/views/apps/user/view/UserTabNotifications.vu
 import UserTabOverview from '@/views/apps/user/view/UserTabOverview.vue'
 import UserTabSecurity from '@/views/apps/user/view/UserTabSecurity.vue'
 
-// 👉 Store
-const userListStore = useUserListStore()
-
 const route = useRoute()
-const userData = ref()
+
 const userTab = ref(null)
 
 const tabs = [
@@ -22,9 +18,7 @@ const tabs = [
   { icon: 'mdi-link-variant', title: 'Connections' },
 ]
 
-userListStore.fetchUser(Number(route.params.id)).then(response => {
-  userData.value = response.data
-})
+const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)
 </script>
 
 <template>
@@ -84,4 +78,9 @@ userListStore.fetchUser(Number(route.params.id)).then(response => {
       </VWindow>
     </VCol>
   </VRow>
+  <VCard v-else>
+    <VCardTitle class="text-center">
+      No User Found
+    </VCardTitle>
+  </VCard>
 </template>

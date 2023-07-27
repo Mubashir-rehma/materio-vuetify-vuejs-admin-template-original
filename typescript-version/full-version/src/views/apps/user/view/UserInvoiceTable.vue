@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Invoice } from '@/@fake-db/types'
-import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
 import type { Options } from '@core/types'
 
-// 👉 Store
-const invoiceListStore = useInvoiceStore()
+type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
 const searchQuery = ref('')
 const dateRange = ref('')
 const selectedStatus = ref()
-const totalPage = ref(1)
 const totalInvoices = ref(0)
 const invoices = ref<Invoice[]>([])
 
@@ -35,23 +32,30 @@ const headers = [
 ]
 
 // 👉 Fetch Invoices
-const fetchInvoices = (query: string, currentStatus: string, firstDate: string, lastDate: string, option: object) => {
+const fetchInvoices = async (query: string, currentStatus: invoiceStatus, firstDate: string, lastDate: string, option: Options) => {
   isLoading.value = true
-  invoiceListStore.fetchInvoices(
-    {
-      q: query,
-      status: currentStatus,
-      startDate: firstDate,
-      endDate: lastDate,
-      options: option,
-    },
-  ).then(response => {
-    invoices.value = response.data.invoices
-    totalPage.value = response.data.totalPage
-    totalInvoices.value = response.data.totalInvoices
-  }).catch(error => {
-    console.log(error)
-  })
+
+  const { data, error } = await useApi<any>(CreateUrl('/apps/invoice', {
+    q: query,
+    status: currentStatus,
+    startDate: firstDate?.trim(),
+    endDate: lastDate?.trim(),
+    ...option,
+    ...(option.sortBy
+     && {
+       sortBy: (option.sortBy)[0]?.key,
+       orderBy: (option.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    invoices.value = data.value.invoices
+    totalInvoices.value = data.value.totalInvoices
+  }
 
   isLoading.value = false
 }
@@ -99,20 +103,19 @@ const computedMoreList = computed(() => {
 })
 
 // 👉 Delete Invoice
-const deleteInvoice = (id: number) => {
-  invoiceListStore.deleteInvoice(id)
-    .then(() => {
-      fetchInvoices(
-        searchQuery.value,
-        selectedStatus.value,
-        dateRange.value?.split('to')[0],
-        dateRange.value?.split('to')[1],
-        options.value,
-      )
-    })
-    .catch(error => {
-      console.log(error)
-    })
+const deleteInvoice = async (id: number) => {
+  const { error } = await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
+
+  if (error.value)
+    console.log(error.value)
+
+  fetchInvoices(
+    searchQuery.value,
+    selectedStatus.value,
+    dateRange.value?.split('to')[0],
+    dateRange.value?.split('to')[1],
+    options.value,
+  )
 }
 
 // 👉 watch for data table options like itemsPerPage,page,searchQuery,sortBy etc...
@@ -142,10 +145,7 @@ watchEffect(() => {
 
         <div class="d-flex align-center flex-wrap gap-4">
           <!-- 👉 Export invoice -->
-          <VBtn
-            prepend-icon="mdi-plus"
-            :to="{ name: 'apps-invoice-add' }"
-          >
+          <VBtn prepend-icon="mdi-plus">
             Export
           </VBtn>
         </div>

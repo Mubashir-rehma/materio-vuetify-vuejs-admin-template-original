@@ -218,6 +218,8 @@ export interface Customer {
   order: number
   total_spent: string
   avatar: string
+  status?: string
+  contact?: string
 }
 
 // !SECTION

@@ -3,13 +3,7 @@ defineEmits<{
   (e: 'close'): void
 }>()
 
-const content = ref(
-  `<p>
-      This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That’s it. It’s probably too much for real minimalists though.
-    </p>
-    <p>
-      The paragraph extension is not really required, but you need at least one node. Sure, that node can be something different.
-    </p>`)
+const content = ref('')
 
 const to = ref('')
 const subject = ref('')
@@ -146,16 +140,17 @@ const resetValues = () => {
 
 .ProseMirror{
   p{
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
+
   padding: 0.5rem;
 
   p.is-editor-empty:first-child::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: #adb5bd;
-  pointer-events: none;
-  height: 0;
+    block-size: 0;
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: inline-start;
+    pointer-events: none;
   }
 }
 </style>

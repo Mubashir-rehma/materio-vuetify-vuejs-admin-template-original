@@ -5,10 +5,7 @@ import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/userInfo.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
-
-const eCommerceStore = useECommerceStore()
 
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
@@ -46,13 +43,24 @@ const headers = [
   { title: 'Earnings', key: 'earning' },
 ]
 
-const fetchReferrals = () => {
-  eCommerceStore.fetchReferrals({
-    options: options.value,
-  }).then(res => {
-    referrals.value = res.data.referrals
-    totalReferrals.value = res.data.total
-  })
+const fetchReferrals = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/referrals', {
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    referrals.value = data.value.referrals
+    totalReferrals.value = data.value.total
+  }
 }
 
 const resolveStatus = (status: string) => {
@@ -64,7 +72,7 @@ const resolveStatus = (status: string) => {
     return { text: 'Paid', color: 'success' }
 }
 
-watchEffect(fetchReferrals)
+watch(options, fetchReferrals)
 </script>
 
 <template>
@@ -205,7 +213,7 @@ watchEffect(fetchReferrals)
                 <VSelect
                   v-model="options.itemsPerPage"
                   :items="[10, 25, 50, 100]"
-                  style="min-width: 200px;max-width: 250px;"
+                  style="max-inline-size: 250px;min-inline-size: 200px;"
                   density="compact"
                 />
                 <VBtn prepend-icon="mdi-export-variant">

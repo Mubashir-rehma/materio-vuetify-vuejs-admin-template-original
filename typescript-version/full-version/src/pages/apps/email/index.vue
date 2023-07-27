@@ -109,6 +109,7 @@ const fetchEmails = async () => {
 
   😊 For simplicity of the code and possible of modification, we kept it simple.
 */
+
 const handleActionClick = async (
   action: 'trash' | 'unread' | 'read' | 'spam' | 'star' | 'unstar',
   emailIds: Email['id'][] = selectedEmails.value,

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import InvoiceProductEdit from './InvoiceProductEdit.vue'
 import type { InvoiceData } from './types'
-import { useInvoiceStore } from './useInvoiceStore'
 import type { Client } from '@/@fake-db/types'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
@@ -11,17 +10,21 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const invoiceListStore = useInvoiceStore()
 
 // 👉 Clients
 const clients = ref<Client[]>([])
 
 // 👉 fetchClients
-invoiceListStore.fetchClients().then(response => {
-  clients.value = response.data
-}).catch(err => {
-  console.log(err)
-})
+const fetchClients = async () => {
+  const { data, error } = await useApi<any>('/apps/invoice/clients')
+
+  if (error.value)
+    console.log(error.value)
+  else
+    clients.value = data.value
+}
+
+fetchClients()
 
 // 👉 Add item function
 const addItem = () => {

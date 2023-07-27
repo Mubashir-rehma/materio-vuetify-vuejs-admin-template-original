@@ -1,20 +1,9 @@
 <script setup lang="ts">
+import type { Customer } from '@/@fake-db/types'
 import rocketImg from '@images/eCommerce/rocket.png'
 
 interface Props {
-  customerData: {
-    avatar: string
-    country: string
-    country_code: string
-    customer: string
-    customer_id: number
-    email: string
-    id: number
-    order: number
-    total_spent: string
-    status: string
-    contact: string
-  }
+  customerData: Customer
 }
 
 const props = defineProps<Props>()

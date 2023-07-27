@@ -1,7 +1,7 @@
+import { fileURLToPath } from 'node:url'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { fileURLToPath } from 'node:url'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports, getPascalCaseRouteName } from 'unplugin-vue-router'
@@ -49,7 +49,7 @@ export default defineConfig({
     // Docs: https://github.com/antfu/unplugin-auto-import#unplugin-auto-import
     AutoImport({
       imports: ['vue', VueRouterAutoImports, '@vueuse/core', '@vueuse/math', 'vue-i18n', 'pinia'],
-      dirs: ['./src/@core/utils', './src/@core/composable/', './src/composables/'],
+      dirs: ['./src/@core/utils', './src/@core/composable/', './src/composables/', './src/utils/'],
       vueTemplate: true,
     }),
 

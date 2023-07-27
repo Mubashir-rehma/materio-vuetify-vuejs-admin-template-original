@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Course } from '@/@fake-db/types'
-import { axios } from '@axios'
 import type { Options } from '@core/types'
 
 const courseData = ref<Course[]>([])
@@ -23,18 +22,25 @@ const headers = [
   { title: 'Status', key: 'status' },
 ]
 
-const fetchCourses = () => {
-  axios.get('/apps/academy/courses', {
-    params: {
-      options: options.value,
-      q: searchQuery.value,
-      hideCompleted: false,
-      status: 'all',
-    },
-  }).then(res => {
-    courseData.value = res.data.courses
-    totalCourse.value = res.data.total
-  })
+const fetchCourses = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/academy/courses', {
+    q: searchQuery.value,
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    courseData.value = data.value.courses
+    totalCourse.value = data.value.total
+  }
 }
 
 watchEffect(fetchCourses)
@@ -42,13 +48,13 @@ watchEffect(fetchCourses)
 
 <template>
   <VCard>
-    <VCardItem title="Course you are taking">
+    <VCardItem title="Courses you are taking">
       <template #append>
         <VTextField
           v-model="searchQuery"
           placeholder="Search"
           density="comfortable"
-          style="min-width: 200px;"
+          style="min-inline-size: 200px;"
         />
       </template>
     </VCardItem>
@@ -98,7 +104,7 @@ watchEffect(fetchCourses)
       <template #item.progress="{ item }">
         <div
           class="d-flex align-center gap-x-4 mb-2"
-          style="width: 15.625rem;"
+          style="inline-size: 15.625rem;"
         >
           <div class="text-no-wrap">
             {{ Math.floor((item.raw.completedTasks / item.raw.totalTasks) * 100) }}%

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Order } from '@/@fake-db/types'
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 import mastercard from '@images/cards/logo-mastercard-small.png'
 import paypal from '@images/cards/paypal_primary.png'
@@ -13,7 +12,6 @@ const widgetData = ref([
   { title: 'Failed', value: 32, icon: 'mdi-alert-octagon-outline' },
 ])
 
-const eCommerceStore = useECommerceStore()
 const orders = ref<Order[]>([])
 const searchQuery = ref('')
 const totalOrder = ref(0)
@@ -58,19 +56,31 @@ const resolveStatus = (status: string) => {
     return { text: 'Dispatched', color: 'warning' }
 }
 
-const fetchOrders = () => {
-  eCommerceStore.fetchOrders({
+const fetchOrders = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/orders', {
     q: searchQuery.value,
-    options: options.value,
-  }).then(res => {
-    orders.value = res.data.orders
-    totalOrder.value = res.data.total
-  })
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    orders.value = data.value.orders
+    totalOrder.value = data.value.total
+  }
 }
 
-const deleteOrder = (id: number) => {
-  eCommerceStore.deleteOrder(id)
-
+const deleteOrder = async (id: number) => {
+  await $api(`/apps/ecommerce/orders/${id}`, {
+    method: 'DELETE',
+  })
   fetchOrders()
 }
 
@@ -132,7 +142,7 @@ watchEffect(fetchOrders)
             v-model="searchQuery"
             density="compact"
             placeholder="Serach Order"
-            style=" min-width: 200px; max-width: 200px;"
+            style=" max-inline-size: 200px; min-inline-size: 200px;"
           />
 
           <VBtn prepend-icon="mdi-export-variant">

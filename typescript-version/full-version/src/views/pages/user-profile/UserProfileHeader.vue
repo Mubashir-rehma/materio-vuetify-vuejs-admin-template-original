@@ -1,13 +1,15 @@
 <script lang="ts" setup>
 import type { ProfileHeader } from '@/@fake-db/types'
-import { axios } from '@axios'
 
 const profileHeaderData = ref<ProfileHeader>()
 
-const fetchHeaderData = () => {
-  axios.get('/pages/profile-header').then(response => {
-    profileHeaderData.value = response.data
-  })
+const fetchHeaderData = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/pages/profile/header'))
+
+  if (error.value)
+    console.log(error.value)
+  else
+    profileHeaderData.value = data.value
 }
 
 fetchHeaderData()

@@ -7,40 +7,46 @@ import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDra
 import type { InvoiceData } from '@/views/apps/invoice/types'
 
 // Store
-import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
 
-const invoiceListStore = useInvoiceStore()
 const route = useRoute()
 
 const invoiceData = ref<InvoiceData>()
 
 // 👉 fetchInvoice
-invoiceListStore.fetchInvoice(Number(route.params.id)).then(response => {
-  invoiceData.value = {
-    invoice: response.data.invoice,
-    paymentDetails: response.data.paymentDetails,
 
-    /*
+const fetchInvoice = async () => {
+  const { data, error } = await useApi<any>(`/apps/invoice/${route.params.id}`)
+
+  if (error.value)
+    console.log(error.value)
+
+  if (data.value) {
+    invoiceData.value = {
+      invoice: data.value.invoice,
+      paymentDetails: data.value.paymentDetails,
+
+      /*
       We are adding some extra data in response for data purpose
       Your response will contain this extra data
       Purpose is to make it more API friendly and less static as possible
     */
-    purchasedProducts: [
-      {
-        title: 'App Design',
-        cost: 24,
-        hours: 2,
-        description: 'Designed UI kit & app pages.',
-      },
-    ],
-    note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
-    paymentMethod: 'Bank Account',
-    salesperson: 'Tom Cook',
-    thanksNote: 'Thanks for your business',
+      purchasedProducts: [
+        {
+          title: 'App Design',
+          cost: 24,
+          hours: 2,
+          description: 'Designed UI kit & app pages.',
+        },
+      ],
+      note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
+      paymentMethod: 'Bank Account',
+      salesperson: 'Tom Cook',
+      thanksNote: 'Thanks for your business',
+    }
   }
-}).catch(error => {
-  console.log(error)
-})
+}
+
+fetchInvoice()
 
 const isSendSidebarActive = ref(false)
 const isAddPaymentSidebarActive = ref(false)
@@ -60,6 +66,17 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
       md="9"
     >
       <InvoiceEditable :data="invoiceData" />
+    </VCol>
+    <VCol
+      v-else
+      cols="12"
+      md="9"
+    >
+      <VCard>
+        <VCardTitle class="text-center">
+          No Invoice Found
+        </VCardTitle>
+      </VCard>
     </VCol>
 
     <!-- 👉 Right Column: Invoice Action -->

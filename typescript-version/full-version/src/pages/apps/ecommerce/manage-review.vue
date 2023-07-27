@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
-const eCommerceStore = useECommerceStore()
 const reviews = ref([])
 const totalReviews = ref(0)
 
@@ -17,23 +15,36 @@ const options = ref<Options>({
 
 const searchQuery = ref('')
 
-const fetchReviews = () => {
-  eCommerceStore.fetchReviews({
+const fetchReviews = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/reviews', {
     q: searchQuery.value,
-    options: options.value,
-  }).then(res => {
-    reviews.value = res.data.reviews
-    totalReviews.value = res.data.total
-  })
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    reviews.value = data.value.reviews
+    totalReviews.value = data.value.total
+  }
 }
 
-const delterReview = (id: number) => {
-  eCommerceStore.deleteReview(id).then(() => {
-    fetchReviews()
+const deleteReview = async (id: number) => {
+  await $api(`/apps/ecommerce/reviews/${id}`, {
+    method: 'DELETE',
   })
+
+  fetchReviews()
 }
 
-watchEffect(fetchReviews)
+watch ([searchQuery, options], fetchReviews)
 
 const reviewData = [
   { rating: 5, value: 124 },
@@ -160,7 +171,7 @@ const headers = [
           <div class="d-flex justify-space-between flex-wrap gap-y-4">
             <VTextField
               v-model="searchQuery"
-              style=" min-width: 200px;max-width: 200px;"
+              style="max-inline-size: 200px; min-inline-size: 200px;"
               placeholder="Search .."
               density="compact"
             />
@@ -260,7 +271,7 @@ const headers = [
                   </VListItem>
                   <VListItem
                     value="delete"
-                    @click="delterReview(item.raw.id)"
+                    @click="deleteReview(item.raw.id)"
                   >
                     Delete
                   </VListItem>

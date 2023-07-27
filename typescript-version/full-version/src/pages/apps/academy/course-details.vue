@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { VideoPlayer } from '@videojs-player/vue'
 import type { CourseDetails } from '@/@fake-db/types'
-import { axios } from '@axios'
 import 'video.js/dist/video-js.css'
 
 const courseDetails = ref<CourseDetails>()
 
-const fetchCourseDetails = () => {
-  axios.get('/apps/academy/course-details').then(res => {
-    courseDetails.value = res.data
-  })
+const fetchCourseDetails = async () => {
+  const { data, error } = await useApi<any>('/apps/academy/course-details')
+
+  if (error.value)
+    console.log(error.value)
+  else
+    courseDetails.value = data.value
 }
 
 fetchCourseDetails()

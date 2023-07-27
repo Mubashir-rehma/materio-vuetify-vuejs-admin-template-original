@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
-import type { Options } from '@core/types'
 
-const eCommerceStore = useECommerceStore()
+import type { Options } from '@core/types'
 
 const customers = ref([])
 const totalCustomers = ref(0)
@@ -19,14 +17,25 @@ const options = ref<Options>({
   search: undefined,
 })
 
-const fetchCustomers = () => {
-  eCommerceStore.fetchCustomers({
+const fetchCustomers = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/customers', {
     q: searchQuery.value,
-    options: options.value,
-  }).then(res => {
-    customers.value = res.data.customers
-    totalCustomers.value = res.data.total
-  })
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    customers.value = data.value.customers
+    totalCustomers.value = data.value.total
+  }
 }
 
 const headers = [
@@ -47,7 +56,7 @@ watchEffect(fetchCustomers)
         <div class="d-flex justify-space-between flex-wrap gap-y-4">
           <VTextField
             v-model="searchQuery"
-            style=" min-width: 200px;max-width: 200px;"
+            style="max-inline-size: 200px; min-inline-size: 200px;"
             placeholder="Search .."
             density="compact"
           />

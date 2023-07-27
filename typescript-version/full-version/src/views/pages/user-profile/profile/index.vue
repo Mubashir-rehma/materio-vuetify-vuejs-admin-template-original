@@ -4,21 +4,21 @@ import ActivityTimeline from './ActivityTimeline.vue'
 import Connection from './Connection.vue'
 import ProjectList from './ProjectList.vue'
 import Teams from './Teams.vue'
-import { axios } from '@axios'
 import type { ProfileTab } from '@/@fake-db/types'
 
 const router = useRoute()
 const profileTabData = ref<ProfileTab>()
 
-const fetchAboutData = () => {
+const fetchAboutData = async () => {
   if (router.params.tab === 'profile') {
-    axios.get('/pages/profile', {
-      params: {
-        tab: router.params.tab,
-      },
-    }).then(response => {
-      profileTabData.value = response.data
-    })
+    const { data, error } = await useApi<any>(CreateUrl('/pages/profile', {
+      tab: router.params.tab,
+    }))
+
+    if (error.value)
+      console.error(error.value)
+    else
+      profileTabData.value = data.value
   }
 }
 

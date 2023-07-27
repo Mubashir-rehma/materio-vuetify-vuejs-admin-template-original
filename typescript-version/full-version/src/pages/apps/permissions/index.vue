@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Permission } from '@/@fake-db/types'
-import { axios } from '@axios'
 import type { Options } from '@core/types'
 
 // 👉 headers
@@ -38,21 +37,26 @@ const colors: any = {
   'restricted-user': { color: 'error', text: 'Restricted User' },
 }
 
-const fetchPermissions = () => {
-  axios.get('/apps/permissions/data', {
-    params: {
-      q: search.value,
-      options: options.value,
-    },
-  }).then(response => {
-    permissions.value = response.data.permissions
-    totalPermissions.value = response.data.totalPermissions
-  }).catch(error => {
-    console.log(error)
-  })
-}
+const fetchPermissions = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/permissions', {
+    q: search.value,
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
 
-onMounted(fetchPermissions)
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    permissions.value = data.value.permissions
+    totalPermissions.value = data.value.totalPermissions
+  }
+}
 
 watchEffect(fetchPermissions)
 
@@ -80,7 +84,7 @@ const editPermission = (name: string) => {
             v-model="search"
             placeholder="Search"
             density="compact"
-            style="min-width: 12rem;max-width: 15rem;"
+            style="max-inline-size: 15rem;min-inline-size: 12rem;"
           />
 
           <VBtn

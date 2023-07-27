@@ -81,7 +81,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
     store.fetchEvents()
       .then(r => {
-        successCallback(r.data.map((e: Event) => ({
+        successCallback(r.map((e: Event) => ({
           ...e,
 
           // Convert string representation of date to Date object
@@ -154,13 +154,15 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
   // 👉 Update event
   const updateEvent = (_event: Event) => {
+    console.log(_event.id, typeof _event.id)
     store.updateEvent(_event)
       .then(r => {
         const propsToUpdate = ['id', 'title', 'url'] as (keyof Event)[]
         const extendedPropsToUpdate = ['calendar', 'guests', 'location', 'description'] as (keyof Event['extendedProps'])[]
 
-        updateEventInCalendar(r.data.event, propsToUpdate, extendedPropsToUpdate)
+        updateEventInCalendar(r, propsToUpdate, extendedPropsToUpdate)
       })
+    refetchEvents()
   }
 
   // 👉 Remove event

@@ -6,11 +6,6 @@ import { themeConfig } from '@themeConfig'
 import InvoiceAddPaymentDrawer from '@/views/apps/invoice/InvoiceAddPaymentDrawer.vue'
 import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
 
-// Store
-import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
-
-const invoiceListStore = useInvoiceStore()
-
 const route = useRoute()
 
 const invoiceData = ref()
@@ -19,12 +14,19 @@ const isAddPaymentSidebarVisible = ref(false)
 const isSendPaymentSidebarVisible = ref(false)
 
 // 👉 fetchInvoice
-invoiceListStore.fetchInvoice(Number(route.params.id)).then(response => {
-  invoiceData.value = response.data.invoice
-  paymentDetails.value = response.data.paymentDetails
-}).catch(error => {
-  console.log(error)
-})
+const fetchInvoice = async (id: number) => {
+  const { data, error } = await useApi<any>(`/apps/invoice/${id}`)
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    invoiceData.value = data.value.invoice
+    paymentDetails.value = data.value.paymentDetails
+  }
+}
+
+fetchInvoice(route.params.id)
 
 // 👉 Invoice Description
 // ℹ️ Your real data will contain this information
@@ -388,6 +390,13 @@ const printInvoice = () => {
 
     <!-- 👉 Send Invoice Sidebar -->
     <InvoiceSendInvoiceDrawer v-model:isDrawerOpen="isSendPaymentSidebarVisible" />
+  </section>
+  <section v-else>
+    <VCard>
+      <VCardTitle class="text-center">
+        No Invoice found
+      </VCardTitle>
+    </VCard>
   </section>
 </template>
 

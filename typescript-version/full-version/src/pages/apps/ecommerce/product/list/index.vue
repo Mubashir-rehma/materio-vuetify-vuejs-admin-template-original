@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { ECommerceProduct } from '@/@fake-db/types'
-import { useECommerceStore } from '@/views/apps/ecommerce/useECommerceStore'
 import type { Options } from '@core/types'
 
 definePage({
@@ -9,7 +8,7 @@ definePage({
 })
 
 const products = ref<ECommerceProduct[]>([])
-const eCommerceStore = useECommerceStore()
+
 const totalProduct = ref(0)
 
 const widgetData = ref([
@@ -32,7 +31,7 @@ const headers = [
 
 const selectedStatus = ref()
 const selectedCategory = ref()
-const selectedStock = ref()
+const selectedStock = ref<boolean | undefined>()
 const searchQuery = ref('')
 
 const status = ref([
@@ -87,17 +86,28 @@ const resolveStatus = (statusMsg: string) => {
     return { text: 'Inactive', color: 'error' }
 }
 
-const fetchProducts = () => {
-  eCommerceStore.fetchProducts({
+const fetchProducts = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/products', {
     q: searchQuery.value,
     stock: selectedStock.value,
     category: selectedCategory.value,
     status: selectedStatus.value,
-    options: options.value,
-  }).then(({ data }) => {
-    products.value = data.products
-    totalProduct.value = data.total
-  })
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    products.value = data.value.products
+    totalProduct.value = data.value.total
+  }
 }
 
 watchEffect(fetchProducts)
@@ -122,11 +132,14 @@ watchEffect(fetchProducts)
               <div class="d-flex justify-space-between">
                 <div class="d-flex flex-column gap-y-1">
                   <span class="text-base text-capitalize">{{ data.title }}</span>
+
                   <span class="text-h5 text-high-emphasis">{{ data.value }}</span>
+
                   <div>
                     <span class="me-2">
                       {{ data.desc }}
                     </span>
+
                     <VChip
                       v-if="data.change"
                       density="comfortable"
@@ -149,6 +162,7 @@ watchEffect(fetchProducts)
                 </VAvatar>
               </div>
             </VCol>
+
             <VDivider
               v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
                 : $vuetify.display.smAndUp ? id % 2 === 0
@@ -224,7 +238,7 @@ watchEffect(fetchProducts)
             v-model="searchQuery"
             placeholder="Search Product"
             density="compact"
-            style="width: 200px;"
+            style="inline-size: 200px;"
             class="me-3"
           />
         </div>

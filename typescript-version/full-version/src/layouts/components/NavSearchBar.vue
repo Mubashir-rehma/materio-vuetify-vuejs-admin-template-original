@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
 import type { SearchHeader, SearchItem } from '@/@fake-db/types'
-import { axios } from '@axios'
 
 interface Suggestion {
   icon: string
@@ -86,14 +85,12 @@ const searchResult = ref<(SearchItem | SearchHeader)[]>([])
 const router = useRouter()
 
 // 👉 fetch search result API
-watchEffect(() => {
-  axios.get('/app-bar/search', {
-    params: {
-      q: searchQuery.value,
-    },
-  }).then(response => {
-    searchResult.value = response.data
-  })
+watchEffect(async () => {
+  const { data } = await useApi<any>(CreateUrl('/app-bar/search', {
+    q: searchQuery.value,
+  }))
+
+  searchResult.value = data.value
 })
 
 // 👉 redirect the selected page

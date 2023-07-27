@@ -1,5 +1,5 @@
 import mock from '@/@fake-db/mock'
-import type { User, UserOut } from '@/@fake-db/types.d'
+import type { User, UserOut } from '@/@fake-db/types'
 import { genId } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

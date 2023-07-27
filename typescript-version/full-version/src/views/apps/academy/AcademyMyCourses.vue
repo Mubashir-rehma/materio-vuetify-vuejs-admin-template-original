@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Course } from '@/@fake-db/types'
-import { axios } from '@axios'
 import type { Options } from '@core/types'
 
 const searchQuery = ref('')
@@ -18,18 +17,27 @@ const totalCourse = ref(0)
 const hideCompleted = ref(false)
 const status = ref('all')
 
-const fetchCourses = () => {
-  axios.get('/apps/academy/courses', {
-    params: {
-      options: options.value,
-      q: searchQuery.value,
-      hideCompleted: hideCompleted.value,
-      status: status.value,
-    },
-  }).then(res => {
-    courseData.value = res.data.courses
-    totalCourse.value = res.data.total
-  })
+const fetchCourses = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/academy/courses', () => ({
+    q: searchQuery.value,
+    hideCompleted: hideCompleted.value,
+    status: status.value,
+    ...options.value,
+    ...(options.value.sortBy
+     && {
+       sortBy: (options.value.sortBy)[0]?.key,
+       orderBy: (options.value.sortBy)[0]?.order,
+     }
+    ),
+  })))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    courseData.value = data.value.courses
+    totalCourse.value = data.value.total
+  }
 }
 
 watchEffect(fetchCourses)
@@ -70,7 +78,7 @@ const resolveChipColor = (tags: string) => {
             v-model="status"
             :items="[{ title: 'All Courses', value: 'all' }, { title: 'Completed', value: 'completed' }]"
             density="compact"
-            style="min-width: 250px;"
+            style="min-inline-size: 250px;"
             class="me-4"
           />
 

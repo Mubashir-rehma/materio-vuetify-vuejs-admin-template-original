@@ -19,6 +19,10 @@ export default [
         title: 'Academy',
         to: 'apps-academy-overview',
       },
+      {
+        title: 'Logistics',
+        to: { path: '/dashboards/logistics' },
+      },
     ],
     badgeContent: '2',
     badgeClass: 'bg-primary',

@@ -46,6 +46,14 @@ export default [
           { title: 'Course Details', to: 'apps-academy-course-details' },
         ],
       },
+       {
+        title: 'Logistics',
+        icon: { icon: 'mdi-truck-outline' },
+        children: [
+          { title: 'Dashboard', to: 'apps-logistics-overview' },
+          { title: 'fleet', to: 'apps-logistics-fleet' },
+        ],
+      },
       {
         title: 'Email',
         icon: { icon: 'mdi-email-outline' },

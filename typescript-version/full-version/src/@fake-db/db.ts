@@ -14,6 +14,7 @@ import './apps/chat'
 import './apps/ecommerce'
 import './apps/email'
 import './apps/invoice'
+import './apps/logistics'
 import './apps/permissions'
 
 // forwards the matched request over network

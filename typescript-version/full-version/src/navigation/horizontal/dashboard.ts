@@ -13,6 +13,10 @@ export default [
         to: 'dashboards-crm',
         icon: { icon: 'mdi-monitor-dashboard' },
       },
+      {
+        title: 'Logistics',
+        to: 'apps-logistics-overview',
+      },
     ],
   },
 ]

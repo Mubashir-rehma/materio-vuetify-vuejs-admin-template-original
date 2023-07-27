@@ -23,7 +23,6 @@ const headers = [
   { title: 'Status', key: 'status' },
   { title: 'Spent', key: 'spent' },
   { title: 'Actions', key: 'actions' },
-
 ]
 
 const resolveStatus = (status: number) => {

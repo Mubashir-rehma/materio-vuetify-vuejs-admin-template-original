@@ -50,6 +50,14 @@ export default [
     ],
   },
   {
+    title: 'Logistics',
+    icon: { icon: 'mdi-truck-outline' },
+    children: [
+      { title: 'Dashboard', to: 'apps-logistics-overview' },
+      { title: 'fleet', to: 'apps-logistics-fleet' },
+    ],
+  },
+  {
     title: 'Email',
     icon: { icon: 'mdi-email-outline' },
     to: 'apps-email',

@@ -77,14 +77,14 @@ const handleNavScroll = (evt: Event) => {
       <slot name="nav-header">
         <RouterLink
           to="/"
-          class="app-logo d-flex align-center gap-x-3 app-title-wrapper"
+          class="app-logo app-title-wrapper"
         >
           <VNodeRenderer :nodes="config.app.logo" />
 
           <Transition name="vertical-nav-app-title">
             <h1
               v-show="!hideTitleAndIcon"
-              class="font-weight-medium leading-normal text-xl text-uppercase"
+              class="app-logo-title leading-normal"
             >
               {{ config.app.title }}
             </h1>
@@ -142,6 +142,21 @@ const handleNavScroll = (evt: Event) => {
     </slot>
   </Component>
 </template>
+
+<style lang="scss" scoped>
+.app-logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+
+  .app-logo-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    text-transform: uppercase;
+  }
+}
+</style>
 
 <style lang="scss">
 @use "@configured-variables" as variables;

@@ -6,6 +6,10 @@ import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vu
 import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
+definePage({
+  alias: '/dashboards/academy',
+})
+
 // Topics Charts config
 const topicsChartConfig = {
   chart: {
@@ -227,7 +231,7 @@ const topicsData = [
 
           <div
             class="mb-2 text-wrap"
-            style="max-width: 400px;"
+            style="max-inline-size: 400px;"
           >
             Your progress this week is Awesome. let's keep it up
             and get a lot of points reward!
@@ -342,7 +346,7 @@ const topicsData = [
               >
                 <div
                   class="d-flex flex-wrap gap-x-4 gap-y-10 mx-auto"
-                  style="width: 300px;"
+                  style="inline-size: 300px;"
                 >
                   <div
                     v-for="topic in topicsData"
@@ -358,7 +362,7 @@ const topicsData = [
                     <div>
                       <div
                         class="text-body-2"
-                        style="min-width: 90px;"
+                        style="min-inline-size: 90px;"
                       >
                         {{ topic.title }}
                       </div>

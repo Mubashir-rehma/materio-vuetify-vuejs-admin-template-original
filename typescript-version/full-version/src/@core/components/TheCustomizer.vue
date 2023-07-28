@@ -45,7 +45,7 @@ const {
 const vuetifyTheme = useTheme()
 
 const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
-const customPrimaryColor = ref('#0C752E')
+const customPrimaryColor = ref('#ffffff')
 
 watch(theme, () => {
   const localStoragePrimaryColor = localStorage.getItem(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`) || ''
@@ -55,7 +55,7 @@ watch(theme, () => {
 }, { immediate: true })
 
 // ℹ️ It will set primary color for current theme only
-const setPrimaryColor = (color: string) => {
+const setPrimaryColor = useDebounceFn((color: string) => {
   vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color
 
   // ℹ️ We need to store this color value in localStorage so vuetify plugin can pick on next reload
@@ -63,7 +63,7 @@ const setPrimaryColor = (color: string) => {
 
   // ℹ️ Update initial loader color
   localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, color)
-}
+}, 100)
 
 const { width: windowWidth } = useWindowSize()
 
@@ -256,6 +256,8 @@ const resetCustomizer = async () => {
     `${themeConfig.app.title}-transition`]
     .forEach(key => localStorage.removeItem(key))
   isLocalStorageHasAnyValue.value = false
+
+  customPrimaryColor.value = '#ffffff'
 }
 </script>
 
@@ -293,7 +295,7 @@ const resetCustomizer = async () => {
             icon
             variant="text"
             size="small"
-            color="default"
+            color="medium-emphasis"
             @click="resetCustomizer"
           >
             <VBadge
@@ -313,7 +315,7 @@ const resetCustomizer = async () => {
           <VBtn
             icon
             variant="text"
-            color="secondary"
+            color="medium-emphasis"
             size="small"
             @click="isNavDrawerOpen = false"
           >

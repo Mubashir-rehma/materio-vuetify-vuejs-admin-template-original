@@ -43,9 +43,9 @@
     },
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
-    "eslint.packageManager": "yarn",
+    "eslint.packageManager": "pnpm",
     // Extension: Stylelint
-    "stylelint.packageManager": "yarn",
+    "stylelint.packageManager": "pnpm",
     "stylelint.validate": [
         "css",
         "scss",

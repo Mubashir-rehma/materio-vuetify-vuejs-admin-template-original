@@ -144,6 +144,9 @@
   "My Course": "My Course",
   "Course Details": "Course Details",
   "Academy": "Academy",
+  "Logistics": "Logistics",
+  "Dashboard": "Dashboard",
+  "fleet": "fleet",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

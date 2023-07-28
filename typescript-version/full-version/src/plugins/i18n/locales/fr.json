@@ -146,6 +146,9 @@
   "My Course": "Mon cours",
   "Overview": "Aperçu",
   "Academy": "Académie",
+  "Logistics": "Logistique",
+  "Dashboard": "Tableau de bord",
+  "fleet": "flotte",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

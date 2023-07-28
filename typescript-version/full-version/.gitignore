@@ -35,3 +35,7 @@ src/plugins/iconify/icons.js
 
 # Ignore MSW script
 public/mockServiceWorker.js
+
+# Env files
+.env.*
+!.env.example

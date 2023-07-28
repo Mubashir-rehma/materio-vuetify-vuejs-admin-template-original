@@ -10,6 +10,7 @@
     "vue.volar",
     "antfu.iconify",
     "cipchk.cssrem",
-    "matijao.vue-nuxt-snippets"
+    "matijao.vue-nuxt-snippets",
+    "dongido.sync-env"
   ]
 }

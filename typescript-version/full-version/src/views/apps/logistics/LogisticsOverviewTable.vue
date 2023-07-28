@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import { useLogisticsStore } from '@/views/apps/logistics/useLogisticsStore'
 import type { Options } from '@core/types'
 
 const vehiclesData = ref([])
 const totalVehicles = ref(0)
-
-const logisticStore = useLogisticsStore()
 
 const options = ref<Options>({
   page: 1,
@@ -16,13 +13,26 @@ const options = ref<Options>({
   search: undefined,
 })
 
-const fetchVehicles = () => {
-  logisticStore.fetchVehicles({
-    options: options.value,
-  }).then(res => {
-    vehiclesData.value = res.data.vehicles
-    totalVehicles.value = res.data.totalVehicles
-  })
+const fetchVehicles = async () => {
+  const { data, error } = await useApi<any>(CreateUrl('/apps/logistics/vehicles', {
+    ...options.value,
+
+    ...(options.value.sortBy
+    && {
+      sortBy: options.value.sortBy[0]?.key,
+      orderBy: options.value.sortBy[0]?.order,
+    }
+    ),
+
+  }))
+
+  if (error.value) {
+    console.log(error.value)
+  }
+  else {
+    vehiclesData.value = data.value.vehicles
+    totalVehicles.value = data.value.totalVehicles
+  }
 }
 
 const headers = [
@@ -65,6 +75,7 @@ watchEffect(fetchVehicles)
       :headers="headers"
       show-select
       class="text-no-wrap"
+      @update:options="options = $event"
     >
       <template #item.location="{ item }">
         <VAvatar

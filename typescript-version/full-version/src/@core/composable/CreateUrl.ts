@@ -1,53 +1,55 @@
-import { cleanDoubleSlashes, joinURL } from 'ufo'
+import { stringifyQuery } from 'ufo'
 import type { MaybeRefOrGetter } from 'vue'
 
 export const CreateUrl = (url: MaybeRefOrGetter<string>, params?: MaybeRefOrGetter<Record<string, any>>) => {
   const _url = toValue(url)
   const _params = toValue(params)
 
-  let _filteredParams = _params
+  return `${_url}${_params ? `?${stringifyQuery(_params)}` : ''}`
 
-  if (_params) {
-    _filteredParams = Object.fromEntries(Object.entries(_params).filter(([_, value]) => {
-      let rawValue = value
+  // let _filteredParams = _params
 
-      if (isReactive(rawValue))
-        rawValue = toRefs(rawValue)
+  // if (_params) {
+  //   _filteredParams = Object.fromEntries(Object.entries(_params).filter(([_, value]) => {
+  //     let rawValue = value
 
-      rawValue = toValue(rawValue)
+  //     if (isReactive(rawValue))
+  //       rawValue = toRefs(rawValue)
 
-      return rawValue !== null && rawValue !== undefined && rawValue !== '' && rawValue.length !== 0
-    }))
-  }
+  //     rawValue = toValue(rawValue)
 
-  if (!_filteredParams)
-    return url
+  //     return rawValue !== null && rawValue !== undefined && rawValue !== '' && rawValue.length !== 0
+  //   }))
+  // }
 
-  const newSearchParams = new URLSearchParams(toValue(
-    typeof _filteredParams === 'object' ? reactive(_filteredParams) : _filteredParams,
-  ))
+  // if (!_filteredParams)
+  //   return url
 
-  let dummyUrlIns: null | URL = null
-  const fakeDomain = 'https://fa.ke/'
+  // const newSearchParams = new URLSearchParams(toValue(
+  //   typeof _filteredParams === 'object' ? reactive(_filteredParams) : _filteredParams,
+  // ))
 
-  try {
-    dummyUrlIns = new URL(_url)
-  }
-  catch (error) {
-    dummyUrlIns = new URL(`${fakeDomain}${_url}`)
-  }
+  // let dummyUrlIns: null | URL = null
+  // const fakeDomain = 'https://fa.ke/'
 
-  const existingSearchParams = dummyUrlIns.searchParams
+  // try {
+  //   dummyUrlIns = new URL(_url)
+  // }
+  // catch (error) {
+  //   dummyUrlIns = new URL(`${fakeDomain}${_url}`)
+  // }
 
-  const searchParams = new URLSearchParams({
-    ...Object.fromEntries(existingSearchParams),
-    ...Object.fromEntries(newSearchParams),
-  })
+  // const existingSearchParams = dummyUrlIns.searchParams
 
-  // Create new url with new params
-  const appendQueries = searchParams.size ? `?${searchParams}` : ''
+  // const searchParams = new URLSearchParams({
+  //   ...Object.fromEntries(existingSearchParams),
+  //   ...Object.fromEntries(newSearchParams),
+  // })
 
-  const newUrl = new URL(cleanDoubleSlashes(joinURL(dummyUrlIns.origin, dummyUrlIns.pathname, appendQueries)))
+  // // Create new url with new params
+  // const appendQueries = searchParams.size ? `?${searchParams}` : ''
 
-  return newUrl.href.replace(fakeDomain, '')
+  // const newUrl = new URL(cleanDoubleSlashes(joinURL(dummyUrlIns.origin, dummyUrlIns.pathname, appendQueries)))
+
+  // return newUrl.href.replace(fakeDomain, '')
 }

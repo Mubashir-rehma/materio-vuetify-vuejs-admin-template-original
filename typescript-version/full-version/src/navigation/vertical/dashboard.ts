@@ -17,11 +17,11 @@ export default [
       },
       {
         title: 'Academy',
-        to: 'apps-academy-overview',
+        to: 'dashboards-academy',
       },
       {
         title: 'Logistics',
-        to: { path: '/dashboards/logistics' },
+        to: 'dashboards-logistics',
       },
     ],
     badgeContent: '2',

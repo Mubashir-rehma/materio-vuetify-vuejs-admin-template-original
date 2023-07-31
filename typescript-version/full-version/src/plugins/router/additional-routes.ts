@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router/auto'
 
 const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
 const eCommerceComponent = () => import('@/pages/apps/ecommerce/product/list/index.vue')
+const logisticsComponent = () => import('@/pages/apps/logistics/overview.vue')
 
 // 👉 Redirects
 export const redirects: RouteRecordRaw[] = [
@@ -62,5 +63,15 @@ export const routes: RouteRecordRaw[] = [
     path: '/dashboards/ecommerce',
     name: 'dashboards-ecommerce',
     component: eCommerceComponent,
+  },
+  {
+    path: '/dashboards/logistics',
+    name: 'dashboards-logistics',
+    component: logisticsComponent,
+  },
+  {
+    path: '/dashboards/academy',
+    name: 'dashboards-academy',
+    component: () => import('@/pages/apps/academy/overview.vue'),
   },
 ]

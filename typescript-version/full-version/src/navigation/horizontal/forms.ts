@@ -24,6 +24,10 @@ export default [
             to: 'forms-date-time-picker',
           },
           {
+            title: 'Editors',
+            to: 'forms-editors',
+          },
+          {
             title: 'File Input',
             to: 'forms-file-input',
           },

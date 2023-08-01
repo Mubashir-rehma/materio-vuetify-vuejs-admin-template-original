@@ -8,6 +8,7 @@ export default [
       { title: 'Checkbox', to: 'forms-checkbox' },
       { title: 'Combobox', to: 'forms-combobox' },
       { title: 'Date Time Picker', to: 'forms-date-time-picker' },
+      { title: 'Editors', to: 'forms-editors' },
       { title: 'File Input', to: 'forms-file-input' },
       { title: 'Radio', to: 'forms-radio' },
       { title: 'Custom Input', to: 'forms-custom-input' },

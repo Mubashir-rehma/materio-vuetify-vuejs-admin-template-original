@@ -579,6 +579,7 @@ const inventoryTabsData = [
     margin-bottom: 0;
   }
   padding: 0.5rem;
+  outline: none;
 
   p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);

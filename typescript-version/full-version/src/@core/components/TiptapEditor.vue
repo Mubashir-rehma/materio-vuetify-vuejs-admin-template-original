@@ -13,6 +13,8 @@ const emits = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
 
+const editorRef = ref()
+
 const editor = useEditor({
   content: props.modelValue,
   extensions: [
@@ -47,7 +49,7 @@ watch(() => props.modelValue, () => {
   <div>
     <div
       v-if="editor"
-      class="d-flex gap-x-4 pa-2"
+      class="d-flex gap-x-3 pa-2"
     >
       <VBtn
         :class="{ 'is-active': editor.isActive('bold') }"
@@ -123,16 +125,36 @@ watch(() => props.modelValue, () => {
       />
     </div>
     <VDivider />
-    <EditorContent :editor="editor" />
+    <EditorContent
+      ref="editorRef"
+      :editor="editor"
+    />
   </div>
 </template>
 
 <style lang="scss">
-.ProseMirror{
+.ProseMirror {
+  padding: 0.5rem;
   min-block-size: 15vh;
-}
 
-.is-active{
-  background-color: rgba(0, 0, 0, 0.08);
+  p {
+    margin-block-end: 0;
+  }
+
+  p.is-editor-empty:first-child::before {
+    block-size: 0;
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: inline-start;
+    pointer-events: none;
+  }
+}
+</style>
+
+<style lang="scss">
+.is-active {
+  border-color: rgba(var(--v-theme-primary), var(--v-border-opacity)) !important;
+  background-color: rgba(var(--v-theme-primary), var(--v-activated-opacity));
+  color: rgb(var(--v-theme-primary));
 }
 </style>

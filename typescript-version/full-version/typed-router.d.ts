@@ -94,6 +94,7 @@ declare module 'vue-router/auto/routes' {
     'forms-combobox': RouteRecordInfo<'forms-combobox', '/forms/combobox', Record<never, never>, Record<never, never>>,
     'forms-custom-input': RouteRecordInfo<'forms-custom-input', '/forms/custom-input', Record<never, never>, Record<never, never>>,
     'forms-date-time-picker': RouteRecordInfo<'forms-date-time-picker', '/forms/date-time-picker', Record<never, never>, Record<never, never>>,
+    'forms-editors': RouteRecordInfo<'forms-editors', '/forms/editors', Record<never, never>, Record<never, never>>,
     'forms-file-input': RouteRecordInfo<'forms-file-input', '/forms/file-input', Record<never, never>, Record<never, never>>,
     'forms-form-layouts': RouteRecordInfo<'forms-form-layouts', '/forms/form-layouts', Record<never, never>, Record<never, never>>,
     'forms-form-validation': RouteRecordInfo<'forms-form-validation', '/forms/form-validation', Record<never, never>, Record<never, never>>,

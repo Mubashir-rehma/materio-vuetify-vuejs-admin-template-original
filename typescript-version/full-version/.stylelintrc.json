@@ -32,7 +32,14 @@
     "liberty/use-logical-spec": true,
     "selector-class-pattern": null,
     "color-function-notation": null,
-    "annotation-no-unknown": true,
+    "annotation-no-unknown": [
+      true,
+      {
+        "ignoreAnnotations": [
+          "default"
+        ]
+      }
+    ],
     "media-feature-range-notation": null
   }
 }

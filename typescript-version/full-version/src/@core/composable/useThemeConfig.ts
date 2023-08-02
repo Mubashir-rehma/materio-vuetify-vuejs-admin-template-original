@@ -72,7 +72,7 @@ export const useThemeConfig = () => {
     },
   })
 
-  const setLocale = computed({
+  const appLocale = computed({
     get() {
       return themeConfig.app.i18nLanguage
     },
@@ -168,7 +168,7 @@ export const useThemeConfig = () => {
     skin,
     handleSkinChanges,
     appRouteTransition,
-    setLocale,
+    appLocale,
 
     // @layouts exports
     navbarType,

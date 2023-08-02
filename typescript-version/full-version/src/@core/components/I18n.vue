@@ -13,15 +13,17 @@ interface Props {
 }
 
 const { locale } = useI18n({ useScope: 'global' })
-const { setLocale, isAppRtl } = useThemeConfig()
+const { appLocale, isAppRtl } = useThemeConfig()
 
+// watch and change lang attribute of html on language change
 watch(locale, val => {
   document.documentElement.setAttribute('lang', val as string)
 })
 
-const currentLang = ref([localStorage.getItem(`${themeConfig.app.title}-language`) || setLocale.value])
+// get current language from localstorage or use default
+const currentLang = ref([localStorage.getItem(`${themeConfig.app.title}-language`) || appLocale.value])
 
-// set isAppRtl on mounted hook
+// set isAppRtl value on mounted based on current language
 onMounted(() => {
   props.languages.forEach(lang => {
     if (lang.i18nLang === currentLang.value[0])
@@ -31,7 +33,7 @@ onMounted(() => {
 
 // change language and isAppRtl on click
 const changeLang = (lang: I18nLanguage) => {
-  setLocale.value = lang.i18nLang
+  appLocale.value = lang.i18nLang
   locale.value = lang.i18nLang
   isAppRtl.value = lang.isRTL
 }

@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
-import type { SearchHeader, SearchItem } from '@/@fake-db/types'
+import type { RouteLocationRaw } from 'vue-router'
+import type { SearchResults } from '@/@fake-db/types'
 
 interface Suggestion {
   icon: string
   title: string
-  url: object
+  url: RouteLocationRaw
 }
+
 defineOptions({
   inheritAttrs: false,
 })
@@ -22,6 +24,7 @@ interface SuggestionGroup {
 const isAppSearchBarVisible = ref(false)
 
 // 👉 Default suggestions
+
 const suggestionGroups: SuggestionGroup[] = [
   {
     title: 'Popular Searches',
@@ -81,22 +84,21 @@ const noDataSuggestions: Suggestion[] = [
 ]
 
 const searchQuery = ref('')
-const searchResult = ref<(SearchItem | SearchHeader)[]>([])
+const searchResult = ref<SearchResults[]>([])
 const router = useRouter()
 
 // 👉 fetch search result API
-watchEffect(async () => {
+watch(searchQuery, async () => {
   const { data } = await useApi<any>(CreateUrl('/app-bar/search', {
     q: searchQuery.value,
-  }))
+  }), { immediate: true })
 
   searchResult.value = data.value
 })
 
 // 👉 redirect the selected page
 const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
-  router.push(selected.url)
-
+  router.push(selected.url as string)
   isAppSearchBarVisible.value = false
   searchQuery.value = ''
 }
@@ -133,29 +135,103 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   <!-- 👉 App Bar Search -->
   <LazyAppBarSearch
     v-model:isDialogVisible="isAppSearchBarVisible"
-    v-model:search-query="searchQuery"
     :search-results="searchResult"
-    :suggestions="suggestionGroups"
-    :no-data-suggestion="noDataSuggestions"
-    @item-selected="redirectToSuggestedOrSearchedPage"
+    @search="searchQuery = $event"
   >
-    <!--
-      <template #suggestions>
-      use this slot if you want to override default suggestions
-      </template>
-    -->
+    <!-- suggestion -->
+    <template #suggestions>
+      <VCardText class="app-bar-search-suggestions h-100 pa-10">
+        <VRow
+          v-if="suggestionGroups"
+          class="gap-y-4"
+        >
+          <VCol
+            v-for="suggestion in suggestionGroups"
+            :key="suggestion.title"
+            cols="12"
+            sm="6"
+            class="ps-6"
+          >
+            <p class="text-xs text-disabled text-uppercase">
+              {{ suggestion.title }}
+            </p>
 
-    <!--
-      <template #noData>
-      use this slot to change the view of no data section
-      </template>
-    -->
+            <VList class="card-list">
+              <VListItem
+                v-for="item in suggestion.content"
+                :key="item.title"
+                link
+                :title="item.title"
+                class="app-bar-search-suggestion"
+                @click="redirectToSuggestedOrSearchedPage(item)"
+              >
+                <template #prepend>
+                  <VIcon
+                    :icon="item.icon"
+                    size="20"
+                    class="me-2"
+                  />
+                </template>
+              </VListItem>
+            </VList>
+          </VCol>
+        </VRow>
+      </VCardText>
+    </template>
 
-    <!--
-      <template #searchResult="{ item }">
-      use this slot to change the search item
-      </template>
-    -->
+    <!-- no data suggestion -->
+    <template #noDataSuggestion>
+      <div class="mt-8">
+        <span class="d-flex justify-center text-disabled">Try searching for</span>
+        <h6
+          v-for="suggestion in noDataSuggestions"
+          :key="suggestion.title"
+          class="app-bar-search-suggestion text-sm font-weight-regular cursor-pointer mt-3"
+          @click="redirectToSuggestedOrSearchedPage(suggestion)"
+        >
+          <VIcon
+            size="20"
+            :icon="suggestion.icon"
+            class="me-3"
+          />
+          <span class="text-sm">{{ suggestion.title }}</span>
+        </h6>
+      </div>
+    </template>
+
+    <!-- search result -->
+    <template #searchResult="{ item }">
+      <VListSubheader class="text-disabled">
+        {{ item.title }}
+      </VListSubheader>
+
+      <VListItem
+        v-for="list in item.children"
+        :key="list.title"
+        link
+        @click="redirectToSuggestedOrSearchedPage(list)"
+      >
+        <template #prepend>
+          <VIcon
+            size="20"
+            :icon="list.icon"
+            class="me-3"
+          />
+        </template>
+
+        <template #append>
+          <VIcon
+            size="20"
+            icon="mdi-subdirectory-arrow-left"
+            class="enter-icon text-disabled"
+          />
+        </template>
+
+        <VListItemTitle>
+          {{ list.title }}
+        </VListItemTitle>
+      </VListItem>
+    </template>
   </LazyAppBarSearch>
 </template>
 

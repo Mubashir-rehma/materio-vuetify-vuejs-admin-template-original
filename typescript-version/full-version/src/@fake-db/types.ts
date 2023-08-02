@@ -1,3 +1,4 @@
+import type { RouteLocationRaw } from 'vue-router'
 import type { UserAbility } from '@/plugins/casl/AppAbility'
 
 // 👉 Help center
@@ -488,16 +489,16 @@ export interface ChatContactWithChat extends ChatContact {
 // 👉 Template Search
 // ----------------
 export interface SearchItem {
-  id: number
-  url: { name: string; params?: object }
+  url: RouteLocationRaw
   icon: string
   title: string
   category: string
 }
 
-export interface SearchHeader {
-  header: string
+export interface SearchResults {
   title: string
+  category: string
+  children: SearchItem[]
 }
 
 export interface Permission {

@@ -148,6 +148,7 @@
   "Logistics": "الخدمات اللوجستية",
   "Dashboard": "لوحة القيادة",
   "fleet": "الأسطول",
+  "Editors": "المحررين",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

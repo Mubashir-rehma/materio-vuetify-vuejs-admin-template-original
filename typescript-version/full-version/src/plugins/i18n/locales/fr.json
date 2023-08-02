@@ -149,6 +149,7 @@
   "Logistics": "Logistique",
   "Dashboard": "Tableau de bord",
   "fleet": "flotte",
+  "Editors": "Éditeurs",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

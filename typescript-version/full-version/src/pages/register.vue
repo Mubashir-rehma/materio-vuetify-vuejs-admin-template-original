@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 
 definePage({
   meta: {
@@ -9,7 +9,6 @@ definePage({
     redirectIfLoggedIn: true,
   },
 })
-
 
 const form = ref({
   username: '',

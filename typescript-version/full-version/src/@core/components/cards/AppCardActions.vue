@@ -14,11 +14,6 @@ interface Emit {
   (e: 'trash'): void
 }
 
-// inherit Attribute make false
-defineOptions({
-  inheritAttrs: false,
-})
-
 const props = withDefaults(defineProps<Props>(), {
   collapsed: false,
   noActions: false,
@@ -29,6 +24,11 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emit = defineEmits<Emit>()
+
+// inherit Attribute make false
+defineOptions({
+  inheritAttrs: false,
+})
 
 const isContentCollapsed = ref(props.collapsed)
 const isCardRemoved = ref(false)

@@ -26,7 +26,7 @@ const radioContent: CustomInputContent[] = [
     images: visa.value,
   },
   {
-    title: 'Paypal',
+    title: 'PayPal',
     value: 'paypal',
     images: paypal.value,
   },

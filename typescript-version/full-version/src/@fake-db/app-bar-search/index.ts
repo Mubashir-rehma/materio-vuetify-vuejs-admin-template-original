@@ -1,6 +1,6 @@
 // ** Mock Adapter
-import mock from '@/@fake-db/mock'
 import is from '@sindresorhus/is'
+import mock from '@/@fake-db/mock'
 
 // ** Types
 import type { SearchResults } from '@/@fake-db/types'

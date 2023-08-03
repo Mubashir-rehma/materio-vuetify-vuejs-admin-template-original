@@ -1,7 +1,7 @@
-import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 import type { ValueOf } from 'type-fest'
 import type { Ref } from 'vue'
 import type { RouteTransitions, Skins } from './enums'
+import type { UserConfig as UserLayoutConfig } from '@layouts/types'
 
 // Type for config passed by user when registering plugin
 export interface UserThemeConfig {
@@ -96,7 +96,7 @@ export interface CustomInputContent {
   value: string
   subtitle?: string
   icon?: string
-  images?:string 
+  images?: string
 }
 
 export interface GridColumn {
@@ -117,4 +117,4 @@ export interface Options {
   sortBy: readonly SortItem[]
   groupBy: readonly SortItem[]
   search: string | undefined
-}   
+}

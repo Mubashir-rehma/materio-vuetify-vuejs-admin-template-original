@@ -1,3 +1,5 @@
+import laptop from '@images/svg/laptop.svg'
+import lightbulb from '@images/svg/lightbulb.svg'
 import type {
   HelpCenterAllCategoryArticlesType,
   HelpCenterArticlesOverviewType,
@@ -10,8 +12,6 @@ import { themeConfig } from '@themeConfig'
 import discord from '@images/svg/discord.svg'
 import gift from '@images/svg/gift.svg'
 import keyboard from '@images/svg/keyboard.svg'
-import laptop from '@images/svg/laptop.svg'
-import lightbulb from '@images/svg/lightbulb.svg'
 import rocket from '@images/svg/rocket.svg'
 
 interface Data {

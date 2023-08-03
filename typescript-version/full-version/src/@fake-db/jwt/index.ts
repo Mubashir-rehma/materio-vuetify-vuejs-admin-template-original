@@ -27,7 +27,8 @@ const database: User[] = [
     fullName: 'John Doe',
     username: 'johndoe',
     password: 'admin',
-    // we are accessing the image from the public folder to avoid hashing issue in production 
+
+    // we are accessing the image from the public folder to avoid hashing issue in production
     avatar: '/images/avatars/avatar-1.png',
     email: 'admin@demo.com',
     role: 'admin',
@@ -43,7 +44,8 @@ const database: User[] = [
     fullName: 'Jane Doe',
     username: 'janedoe',
     password: 'client',
-    // we are accessing the image from the public folder to avoid hashing issue in production 
+
+    // we are accessing the image from the public folder to avoid hashing issue in production
     avatar: '/images/avatars/avatar-2.png',
     email: 'client@demo.com',
     role: 'client',

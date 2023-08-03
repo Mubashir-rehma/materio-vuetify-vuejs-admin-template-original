@@ -14,7 +14,6 @@ export default [
         to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
       },
       { title: 'FAQ', icon: { icon: 'mdi-help-circle-outline' }, to: 'pages-faq' },
-      { title: 'Help Center', icon: { icon: 'mdi-help-circle-outline' }, to: 'pages-help-center' },
       { title: 'Pricing', icon: { icon: 'mdi-currency-usd' }, to: 'pages-pricing' },
       {
         title: 'Misc',

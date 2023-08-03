@@ -1,5 +1,5 @@
-import type { RouteLocationRaw } from 'vue-router'
 import type { UserAbility } from '@/plugins/casl/AppAbility'
+import type { RouteLocationRaw } from 'vue-router'
 
 // 👉 Help center
 export interface HelpCenterSubcategoryArticlesType {
@@ -7,7 +7,12 @@ export interface HelpCenterSubcategoryArticlesType {
   title: string
   content: string
 }
-export interface HelpCenterSubcategoriesType {
+export type HelpCenterAllCategoryArticlesType = {
+  title: string
+  icon: string
+  articles: { title: string}[]
+}
+export type HelpCenterSubcategoriesType = {
   icon: string
   slug: string
   title: string

@@ -104,7 +104,6 @@ export default [
     title: 'Pages',
     icon: { icon: 'mdi-file-outline' },
     children: [
-      { title: 'Help Center', to: 'pages-help-center' },
       { title: 'User Profile', to: { name: 'pages-user-profile-tab', params: { tab: 'profile' } } },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
       { title: 'Pricing', to: 'pages-pricing' },

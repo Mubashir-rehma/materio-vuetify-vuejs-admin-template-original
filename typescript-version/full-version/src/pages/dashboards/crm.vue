@@ -1,3 +1,3 @@
 <template>
-  <p>crm</p>
+  <h1>Crm</h1>
 </template>

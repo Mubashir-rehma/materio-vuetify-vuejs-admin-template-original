@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { VForm } from 'vuetify/components/VForm'
-
-import { useAppAbility } from '@/plugins/casl/useAppAbility'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
 
 definePage({
   meta: {
@@ -13,64 +10,15 @@ definePage({
   },
 })
 
-const refVForm = ref<VForm>()
-const username = ref('johnDoe')
-const email = ref('john@example.com')
-const password = ref('john@MATERIO#123')
-const privacyPolicies = ref(true)
 
-// Router
-const route = useRoute()
-const router = useRouter()
-
-// Ability
-const ability = useAppAbility()
-
-// Form Errors
-const errors = ref<Record<string, string | undefined>>({
-  email: undefined,
-  password: undefined,
+const form = ref({
+  username: '',
+  email: '',
+  password: '',
+  privacyPolicies: false,
 })
 
-const register = async () => {
-  try {
-    const res = await $api('/auth/register', {
-      method: 'POST',
-      body: {
-        username: username.value,
-        email: email.value,
-        password: password.value,
-      },
-      onResponseError({ response }) {
-        errors.value = response._data.errors
-      },
-    })
-
-    const { accessToken, userData, userAbilities } = res
-
-    localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-    ability.update(userAbilities)
-
-    localStorage.setItem('userData', JSON.stringify(userData))
-    localStorage.setItem('accessToken', JSON.stringify(accessToken))
-
-    // Redirect to `to` query if exist or redirect to index route
-    router.replace(route.query.to ? String(route.query.to) : '/')
-  }
-  catch (err) {
-    console.error(err)
-  }
-}
-
 const isPasswordVisible = ref(false)
-
-const onSubmit = () => {
-  refVForm.value?.validate()
-    .then(({ valid: isValid }) => {
-      if (isValid)
-        register()
-    })
-}
 </script>
 
 <template>
@@ -79,16 +27,16 @@ const onSubmit = () => {
     class="auth-wrapper"
   >
     <VCol
-      lg="8"
-      class="d-none d-lg-flex"
+      md="8"
+      class="d-none d-md-flex"
     >
-      <!-- here your illustrator -->
+      <!-- here your illustration -->
     </VCol>
 
     <VCol
       cols="12"
-      lg="4"
-      class="d-flex align-center justify-center"
+      md="4"
+      class="auth-card-v2 d-flex align-center justify-center"
       style="background-color: rgb(var(--v-theme-surface));"
     >
       <VCard
@@ -106,40 +54,32 @@ const onSubmit = () => {
         </VCardText>
 
         <VCardText>
-          <VForm
-            ref="refVForm"
-            @submit.prevent="onSubmit"
-          >
+          <VForm @submit.prevent="() => {}">
             <VRow>
               <!-- Username -->
               <VCol cols="12">
                 <VTextField
-                  v-model="username"
+                  v-model="form.username"
                   autofocus
-                  :rules="[requiredValidator, alphaDashValidator]"
                   label="Username"
                   placeholder="Johndoe"
-                  :error-messages="errors.username"
                 />
               </VCol>
 
               <!-- email -->
               <VCol cols="12">
                 <VTextField
-                  v-model="email"
-                  :rules="[requiredValidator, emailValidator]"
+                  v-model="form.email"
                   label="Email"
-                  placeholder="johndoe@email.com"
                   type="email"
-                  :error-messages="errors.email"
+                  placeholder="johndoe@email.com"
                 />
               </VCol>
 
               <!-- password -->
               <VCol cols="12">
                 <VTextField
-                  v-model="password"
-                  :rules="[requiredValidator]"
+                  v-model="form.password"
                   label="Password"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
@@ -150,20 +90,19 @@ const onSubmit = () => {
                 <div class="d-flex align-center mt-1 mb-4">
                   <VCheckbox
                     id="privacy-policy"
-                    v-model="privacyPolicies"
-                    :rules="[requiredValidator]"
+                    v-model="form.privacyPolicies"
                     inline
+                  />
+                  <VLabel
+                    for="privacy-policy"
+                    style="opacity: 1;"
                   >
-                    <template #label>
-                      <span class="me-1">
-                        I agree to
-                        <a
-                          href="javascript:void(0)"
-                          class="text-primary"
-                        >privacy policy & terms</a>
-                      </span>
-                    </template>
-                  </VCheckbox>
+                    <span class="me-1">I agree to</span>
+                    <a
+                      href="javascript:void(0)"
+                      class="text-primary"
+                    >privacy policy & terms</a>
+                  </VLabel>
                 </div>
 
                 <VBtn
@@ -182,7 +121,7 @@ const onSubmit = () => {
                 <span>Already have an account?</span>
                 <RouterLink
                   class="text-primary ms-2"
-                  :to="{ name: 'login' }"
+                  :to="{ name: 'pages-authentication-login-v2' }"
                 >
                   Sign in instead
                 </RouterLink>

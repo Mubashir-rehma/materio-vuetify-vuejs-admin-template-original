@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import americanExpress from '@images/icons/payments/img/american-express.png'
 import mastercard from '@images/icons/payments/img/mastercard.png'
-import visa from '@images/icons/payments/img/visa.png'
+import visa from '@images/icons/payments/img/visa-light.png'
 
 const show = ref([true, false, false])
 const paymentShow = ref([true, false, false])

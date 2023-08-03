@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AppContentLayoutNav } from '@layouts/enums';
+import { AppContentLayoutNav } from '@layouts/enums'
 
 const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))
 const DefaultLayoutWithVerticalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithVerticalNav.vue'))

@@ -92,7 +92,7 @@ export interface ThemeConfig {
 // SECTION Custom Input
 export interface CustomInputContent {
   title: string
-  desc: string
+  desc?: string
   value: string
   subtitle?: string
   icon?: string

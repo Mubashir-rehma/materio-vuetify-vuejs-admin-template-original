@@ -24,11 +24,9 @@ watch(locale, val => {
 const currentLang = ref([localStorage.getItem(`${themeConfig.app.title}-language`) || appLocale.value])
 
 // set isAppRtl value on mounted based on current language
-onMounted(() => {
-  props.languages.forEach(lang => {
-    if (lang.i18nLang === currentLang.value[0])
-      isAppRtl.value = lang.isRTL
-  })
+props.languages.forEach(lang => {
+  if (lang.i18nLang === currentLang.value[0])
+    isAppRtl.value = lang.isRTL
 })
 
 // change language and isAppRtl on click

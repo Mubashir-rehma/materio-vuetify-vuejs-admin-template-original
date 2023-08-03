@@ -14,13 +14,13 @@ interface Props {
   isSubItem?: boolean
 }
 
-defineOptions({
-  name: 'HorizontalNavGroup',
-})
-
 const props = withDefaults(defineProps<Props>(), {
   childrenAtEnd: false,
   isSubItem: false,
+})
+
+defineOptions({
+  name: 'HorizontalNavGroup',
 })
 
 const route = useRoute()

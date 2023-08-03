@@ -1,0 +1,354 @@
+<script setup lang="ts">
+import Footer from '@/views/front-pages/front-page-footer.vue'
+import Navbar from '@/views/front-pages/front-page-navbar.vue'
+import poseFs9 from '@images/pages/pose-fs-9.png'
+
+definePage({
+  meta: {
+    layout: 'blank',
+  },
+})
+
+const features = [
+  {
+    feature: '14-days free trial',
+    starter: true,
+    pro: true,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: false,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'No user limit',
+    starter: false,
+    pro: false,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: false,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'Product Support',
+    starter: false,
+    pro: true,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: false,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'Email Support',
+    starter: false,
+    pro: false,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: true,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'Integrations',
+    starter: false,
+    pro: true,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: false,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'Removal of Front branding',
+    starter: false,
+    pro: false,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: true,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'Active maintenance & support',
+    starter: false,
+    pro: false,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: false,
+      enterprise: false,
+    },
+  },
+  {
+    feature: 'Data storage for 365 days',
+    starter: false,
+    pro: false,
+    enterprise: true,
+    addOnAvailable: {
+      starter: false,
+      pro: false,
+      enterprise: false,
+    },
+  },
+]
+
+const faqs = [
+  {
+    question: 'General settings',
+    answer: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
+  },
+  {
+    question: 'Users',
+    answer: 'We accept Visa®, MasterCard®, American Express®, and PayPal®. So you can be confident that your credit card information will be kept safe and secure.',
+  },
+  {
+    question: 'Personal data',
+    answer: '2Checkout accepts all types of credit and debit cards.',
+  },
+  {
+    question: 'Advanced settings',
+    answer: 'Yes. You may request a refund within 30 days of your purchase without any additional explanations.',
+  },
+]
+</script>
+
+<template>
+  <div class="pricing-page">
+    <Navbar />
+
+    <VCard class="pt-6 pricing-card">
+      <VCardText class="pt-12 mb-16 pb-16">
+        <!-- 👉 App Pricing components -->
+        <VContainer>
+          <AppPricing md="4" />
+        </VContainer>
+      </VCardText>
+
+      <!-- 👉 Free trial Banner -->
+      <div class="page-pricing-free-trial-banner-bg">
+        <VContainer>
+          <div class="d-flex align-center flex-md-row flex-column position-relative">
+            <div class="text-center text-md-start py-10 px-10 px-sm-0">
+              <h3 class="text-h5 text-primary mb-2">
+                Still not convinced? Start with a 14-day FREE trial!
+              </h3>
+              <p class="text-sm">
+                You will get full access to all the features for 14 days.
+              </p>
+              <VBtn class="mt-4">
+                Start-14-day FREE trial
+              </VBtn>
+            </div>
+            <div class="free-trial-illustrator">
+              <VImg
+                :src="poseFs9"
+                :width="250"
+              />
+            </div>
+          </div>
+        </VContainer>
+      </div>
+
+      <!-- 👉 Plans -->
+      <VCardText class="text-center mt-16">
+        <h4 class="text-h5 mb-2">
+          Pick a plan that works best for you
+        </h4>
+        <p>Stay cool, we have a 48-hour money back guarantee!</p>
+      </VCardText>
+
+      <!-- 👉 Features & Tables -->
+      <VCardText class="mb-16 mt-2">
+        <VContainer>
+          <VTable class="text-no-wrap border rounded">
+            <!-- 👉 Table head -->
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                  class="py-4"
+                >
+                  <h6 class="text-xs font-weight-medium mb-1">
+                    FEATURES
+                  </h6>
+
+                  <h6 class="font-weight-regular text-xs">
+                    Native Front Features
+                  </h6>
+                </th>
+
+                <th
+                  v-for="{ plan, price } in [
+                    { plan: 'STARTER', price: 'FREE' },
+                    { plan: 'PRO', price: '$7.5/MONTH' },
+                    { plan: 'ENTERPRISE', price: '$16/MONTH' },
+                  ]"
+                  :key="plan"
+                  scope="col"
+                  class="text-center py-4"
+                >
+                  <h6 class="text-xs mb-1 text-high-emphasis font-weight-medium position-relative">
+                    {{ plan }}
+
+                    <VIcon
+                      v-if="plan === 'PRO'"
+                      icon="mdi-star-circle"
+                      size="20"
+                      color="primary"
+                      class="position-absolute ms-2"
+                      style="bottom: 3px;"
+                    />
+                  </h6>
+                  <h6 class="font-weight-regular text-xs">
+                    {{ price }}
+                  </h6>
+                </th>
+              </tr>
+            </thead>
+            <!-- 👉 Table Body -->
+            <tbody>
+              <tr
+                v-for="feature in features"
+                :key="feature.feature"
+              >
+                <td>{{ feature.feature }}</td>
+                <td class="text-center">
+                  <VIcon
+                    v-if="!feature.addOnAvailable.starter"
+                    :color="feature.starter ? 'primary' : 'disabled'"
+                    size="20"
+                    :icon="feature.starter ? 'mdi-check-circle' : 'mdi-close-circle'"
+                  />
+
+                  <VChip
+                    v-if="feature.addOnAvailable.starter"
+                    color="primary"
+                    size="small"
+                  >
+                    ADD-ON AVAILABLE
+                  </VChip>
+                </td>
+
+                <td class="text-center">
+                  <VIcon
+                    v-if="!feature.addOnAvailable.pro"
+                    :color="feature.pro ? 'primary' : 'disabled'"
+                    size="20"
+                    :icon="feature.pro ? 'mdi-check-circle' : 'mdi-close-circle'"
+                  />
+
+                  <VChip
+                    v-if="feature.addOnAvailable.pro"
+                    color="primary"
+                    size="small"
+                  >
+                    ADD-ON AVAILABLE
+                  </VChip>
+                </td>
+                <td class="text-center">
+                  <VIcon
+                    v-if="!feature.addOnAvailable.enterprise"
+                    :color="feature.enterprise ? 'primary' : 'disabled'"
+                    size="20"
+                    :icon="feature.enterprise ? 'mdi-check-circle' : 'mdi-close-circle'"
+                  />
+
+                  <VChip
+                    v-if="feature.addOnAvailable.enterprise"
+                    color="primary"
+                    size="small"
+                  >
+                    ADD-ON AVAILABLE
+                  </VChip>
+                </td>
+              </tr>
+            </tbody>
+            <!-- 👉 Table footer -->
+            <tfoot>
+              <tr>
+                <td class="py-4">
+                  Data storage for 365 days
+                </td>
+                <td class="text-center py-4">
+                  <VBtn variant="outlined">
+                    Choose Plan
+                  </VBtn>
+                </td>
+                <td class="text-center py-4">
+                  <VBtn>
+                    Choose Plan
+                  </VBtn>
+                </td>
+                <td class="text-center py-4">
+                  <VBtn variant="outlined">
+                    Choose Plan
+                  </VBtn>
+                </td>
+              </tr>
+            </tfoot>
+          </VTable>
+        </VContainer>
+      </VCardText>
+      <!-- 👉 FAQ -->
+      <div style="background-color: rgba(var(--v-theme-background));">
+        <VContainer>
+          <VCardText class="py-10 px-0 py-sm-16">
+            <div class="text-center">
+              <h5 class="text-h5 mb-2">
+                FAQ's
+              </h5>
+              <p>
+                Let us help answer the most common questions.
+              </p>
+            </div>
+            <div class="py-sm-6">
+              <VExpansionPanels>
+                <VExpansionPanel
+                  v-for="faq in faqs"
+                  :key="faq.question"
+                  :title="faq.question"
+                  :text="faq.answer"
+                />
+              </VExpansionPanels>
+            </div>
+          </VCardText>
+        </VContainer>
+      </div>
+      <Footer />
+    </VCard>
+  </div>
+</template>
+
+<style lang="scss">
+.page-pricing-free-trial-banner-bg {
+  /* stylelint-disable-next-line color-function-notation */
+  background-color: rgba(var(--v-theme-primary), var(--v-idle-opacity));
+}
+
+.pricing-card {
+  padding-block-start: 6.25rem !important;
+}
+
+@media screen and (min-width: 960px) {
+  .free-trial-illustrator {
+    position: absolute;
+    inset-block-end: -1rem !important;
+    inset-inline-end: 10%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .free-trial-illustrator {
+    position: relative;
+    inset-block-end: -1rem !important;
+  }
+}
+</style>

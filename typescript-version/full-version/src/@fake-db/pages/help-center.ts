@@ -1,7 +1,9 @@
+import laptop from '@images/svg/laptop.svg'
+import lightbulb from '@images/svg/lightbulb.svg'
 import type {
+  HelpCenterAllCategoryArticlesType,
   HelpCenterArticlesOverviewType,
   HelpCenterCategoriesType,
-  HelpCenterSubcategoryArticlesType,
 } from '../types.d'
 import mock from '@/@fake-db/mock'
 import { themeConfig } from '@themeConfig'
@@ -10,12 +12,11 @@ import { themeConfig } from '@themeConfig'
 import discord from '@images/svg/discord.svg'
 import gift from '@images/svg/gift.svg'
 import keyboard from '@images/svg/keyboard.svg'
-import laptop from '@images/svg/laptop.svg'
-import lightbulb from '@images/svg/lightbulb.svg'
 import rocket from '@images/svg/rocket.svg'
 
 interface Data {
   categories: HelpCenterCategoriesType[]
+  allArticles: HelpCenterAllCategoryArticlesType[]
   keepLearning: HelpCenterArticlesOverviewType[]
   popularArticles: HelpCenterArticlesOverviewType[]
 }
@@ -38,7 +39,7 @@ const data: Data = {
       slug: 'external-content',
       title: 'Add External Content',
       img: keyboard,
-      subtitle: 'This article will show you how to expand the functionality of App',
+      subtitle: 'Article will show you how to expand the functionality of App',
     },
   ],
   categories: [
@@ -593,6 +594,81 @@ const data: Data = {
       ],
     },
   ],
+  allArticles: [
+    {
+      title: 'Buying',
+      icon: 'mdi-cart-plus',
+      articles: [
+        { title: 'What are Favourites?' },
+        { title: 'How do I purchase an item?' },
+        { title: 'How do i add or change my details?' },
+        { title: 'How do refunds work?' },
+        { title: 'Can I Get A Refund?' },
+        { title: 'I\'m trying to find a specific item' },
+      ],
+    },
+    {
+      title: 'Item Support',
+      icon: 'mdi-cart-plus',
+      articles: [
+        { title: 'What is Item Support?' },
+        { title: 'How to contact an author?' },
+        { title: 'Where Is My Purchase Code?' },
+        { title: 'Extend or renew Item Support' },
+        { title: 'Item Support FAQ' },
+        { title: 'Why has my item been removed?' },
+      ],
+    },
+    {
+      title: 'Licenses',
+      icon: 'mdi-currency-usd',
+      articles: [
+        { title: 'Can I use the same license for the...' },
+        { title: 'How to contact an author?' },
+        { title: 'I’m making a test site - it’s not for ...' },
+        { title: 'which license do I need?' },
+        { title: 'I want to make multiple end prod ...' },
+        { title: 'For logo what license do I need?' },
+      ],
+    },
+    {
+      title: 'Template Kits',
+      icon: 'mdi-format-color-fill',
+      articles: [
+        { title: 'Template Kits' },
+        { title: 'Elementor Template Kits: PHP Zip ...' },
+        { title: 'Template Kits - Imported template ...' },
+        { title: 'Troubleshooting Import Problems' },
+        { title: 'How to use the WordPress Plugin ...' },
+        { title: 'How to use the Template Kit Import ...' },
+      ],
+    },
+    {
+      title: 'Account & Password',
+      icon: 'mdi-lock-open-outline',
+      articles: [
+        { title: 'Signing in with a social account' },
+        { title: 'Locked Out of Account' },
+        { title: 'I\'m not receiving the verification email' },
+        { title: 'Forgotten Username Or Password' },
+        { title: 'New password not accepted' },
+        { title: 'What is Sign In Verification?' },
+      ],
+    },
+    {
+      title: 'Account Settings',
+      icon: 'mdi-account-outline',
+      articles: [
+        { title: 'How do I change my password?' },
+        { title: 'How do I change my username?' },
+        { title: 'How do I close my account?' },
+        { title: 'How do I change my email address?' },
+        { title: 'How can I regain access to my a ...' },
+        { title: 'Are RSS feeds available on Market?' },
+      ],
+    },
+
+  ],
   keepLearning: [
     {
       slug: 'blogging',
@@ -616,15 +692,9 @@ const data: Data = {
 }
 
 mock.onGet('/pages/help-center/landing').reply(() => {
-  const allArticles: HelpCenterSubcategoryArticlesType[] = []
-
-  data.categories.map(category =>
-    category.subCategories.map(subCategory => subCategory.articles.map(article => allArticles.push(article))),
-  )
-
   return [
     200,
-    { allArticles, categories: data.categories, popularArticles: data.popularArticles, keepLearning: data.keepLearning },
+    { allArticles: data.allArticles, categories: data.categories, popularArticles: data.popularArticles, keepLearning: data.keepLearning },
   ]
 })
 

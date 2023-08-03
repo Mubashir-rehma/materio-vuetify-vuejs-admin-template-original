@@ -7,13 +7,13 @@ import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 import type { NavGroup } from '@layouts/types'
 import { isNavGroupActive, openGroups } from '@layouts/utils'
 
-defineOptions({
-  name: 'VerticalNavGroup',
-})
-
 const props = defineProps<{
   item: NavGroup
 }>()
+
+defineOptions({
+  name: 'VerticalNavGroup',
+})
 
 const route = useRoute()
 const router = useRouter()

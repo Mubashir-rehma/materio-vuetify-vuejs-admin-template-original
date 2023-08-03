@@ -7,6 +7,11 @@ export interface HelpCenterSubcategoryArticlesType {
   title: string
   content: string
 }
+export interface HelpCenterAllCategoryArticlesType {
+  title: string
+  icon: string
+  articles: { title: string }[]
+}
 export interface HelpCenterSubcategoriesType {
   icon: string
   slug: string

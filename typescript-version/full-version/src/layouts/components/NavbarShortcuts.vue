@@ -30,12 +30,7 @@ const shortcuts = [
     subtitle: 'Account Settings',
     to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
   },
-  {
-    icon: 'mdi-help-circle-outline',
-    title: 'Help Center',
-    subtitle: 'FAQs & Articles',
-    to: { name: 'pages-help-center' },
-  },
+
 ]
 </script>
 

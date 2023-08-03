@@ -87,6 +87,7 @@ declare module 'vue-router/auto/routes' {
     'components-tooltip': RouteRecordInfo<'components-tooltip', '/components/tooltip', Record<never, never>, Record<never, never>>,
     'dashboards-analytics': RouteRecordInfo<'dashboards-analytics', '/dashboards/analytics', Record<never, never>, Record<never, never>>,
     'dashboards-crm': RouteRecordInfo<'dashboards-crm', '/dashboards/crm', Record<never, never>, Record<never, never>>,
+    'extensions-swiper': RouteRecordInfo<'extensions-swiper', '/extensions/swiper', Record<never, never>, Record<never, never>>,
     'extensions-tour': RouteRecordInfo<'extensions-tour', '/extensions/tour', Record<never, never>, Record<never, never>>,
     'forgot-password': RouteRecordInfo<'forgot-password', '/forgot-password', Record<never, never>, Record<never, never>>,
     'forms-autocomplete': RouteRecordInfo<'forms-autocomplete', '/forms/autocomplete', Record<never, never>, Record<never, never>>,

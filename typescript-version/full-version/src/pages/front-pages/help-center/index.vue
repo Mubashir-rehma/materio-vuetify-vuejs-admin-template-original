@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type {
-  HelpCenterAllCategoryArticlesType,
-  HelpCenterArticlesOverviewType,
-  HelpCenterCategoriesType,
+  HelpCenterAllCategoryArticles,
+  HelpCenterArticlesOverview,
 } from '@/@fake-db/types'
 import Footer from '@/views/front-pages/front-page-footer.vue'
 import Navbar from '@/views/front-pages/front-page-navbar.vue'
@@ -10,7 +9,6 @@ import Navbar from '@/views/front-pages/front-page-navbar.vue'
 import HelpCenterLandingArticlesOverview from '@/views/pages/help-center/HelpCenterLandingArticlesOverview.vue'
 import HelpCenterLandingFooter from '@/views/pages/help-center/HelpCenterLandingFooter.vue'
 import HelpCenterLandingKnowledgeBase from '@/views/pages/help-center/HelpCenterLandingKnowledgeBase.vue'
-import axios from '@axios'
 
 definePage({
   meta: {
@@ -19,19 +17,21 @@ definePage({
 })
 
 interface ApiDataType {
-  categories: HelpCenterCategoriesType[]
-  keepLearning: HelpCenterArticlesOverviewType[]
-  popularArticles: HelpCenterArticlesOverviewType[]
-  allArticles: HelpCenterAllCategoryArticlesType[]
+  keepLearning: HelpCenterArticlesOverview[]
+  popularArticles: HelpCenterArticlesOverview[]
+  allArticles: HelpCenterAllCategoryArticles[]
 }
 
 const apiData = ref<ApiDataType>()
 
 // fetching data from the @fake-db
-const fetchHelpCenterData = () => {
-  return axios.get('/pages/help-center/landing').then(res => {
-    apiData.value = res.data
-  })
+const fetchHelpCenterData = async () => {
+  const { data, error } = await useApi<any>('/pages/help-center')
+
+  if (error.value)
+    console.log(error.value)
+  else
+    apiData.value = data.value
 }
 
 fetchHelpCenterData()

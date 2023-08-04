@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type {
-  HelpCenterArticlesOverviewType,
+  HelpCenterArticlesOverview,
 } from '@/@fake-db/types'
 
 interface Props {
-  articles: HelpCenterArticlesOverviewType[]
+  articles: HelpCenterArticlesOverview[]
 }
 
 const props = defineProps<Props>()
@@ -41,7 +41,11 @@ const props = defineProps<Props>()
             size="small"
             variant="outlined"
             :to="{
-              name: 'front-pages-help-center-how-to-add-product',
+              name: 'front-pages-help-center-article-title',
+              params: {
+                title: 'how-to-add-product-in-cart',
+              },
+
             }"
           >
             Read More

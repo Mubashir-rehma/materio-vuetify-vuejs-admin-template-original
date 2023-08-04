@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { HelpCenterAllCategoryArticlesType } from '@/@fake-db/types'
+import type { HelpCenterAllCategoryArticles } from '@/@fake-db/types'
 
 interface Props {
-  categories: HelpCenterAllCategoryArticlesType[]
+  categories: HelpCenterAllCategoryArticles[]
 }
 
 const props = defineProps<Props>()
@@ -37,7 +37,10 @@ const props = defineProps<Props>()
             >
               <RouterLink
                 :to="{
-                  name: 'front-pages-help-center-how-to-add-product',
+                  name: 'front-pages-help-center-article-title',
+                  params: {
+                    title: 'how-to-add-product-in-cart',
+                  },
                 }"
                 class="text-high-emphasis"
               >
@@ -49,7 +52,10 @@ const props = defineProps<Props>()
           <div class="mt-4">
             <RouterLink
               :to="{
-                name: 'front-pages-help-center-how-to-add-product',
+                name: 'front-pages-help-center-article-title',
+                params: {
+                  title: 'how-to-add-product-in-cart',
+                },
               }"
               class="text-base font-weight-medium"
             >

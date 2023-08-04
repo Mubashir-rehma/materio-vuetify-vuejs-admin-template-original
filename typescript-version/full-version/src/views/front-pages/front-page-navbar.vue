@@ -14,7 +14,7 @@ const props = defineProps({
 
 interface navItem {
   name: string
-  to: RouteLocationNamedRaw
+  to: RouteLocationNamedRaw | RouteLocationRaw
 }
 
 interface MenuItem {
@@ -63,7 +63,7 @@ const menuItems: MenuItem[] = [
       { name: 'Error', to: { name: 'pages-misc-internal-server-error' } },
       { name: 'Under Maintenance', to: { name: 'pages-misc-under-maintenance' } },
       { name: 'Coming Soon', to: { name: 'pages-misc-coming-soon' } },
-      { name: 'Not Authorized', to: { name: 'pages-misc-not-authorized' } },
+      { name: 'Not Authorized', to: { path: '/pages/not-authorized' } },
       { name: 'Verify Email (Basic)', to: { name: 'pages-authentication-verify-email-v1' } },
       { name: 'Verify Email (Cover)', to: { name: 'pages-authentication-verify-email-v2' } },
       { name: 'Two Steps (Basic)', to: { name: 'pages-authentication-two-steps-v1' } },
@@ -76,7 +76,7 @@ const isCurrentRoute = (to: RouteLocationNamedRaw) => {
   return route.name.startsWith(to.name as string)
 }
 
-const isPageActive = computed(() => menuItems.some(item => item.navItems.some(listItem => isCurrentRoute(listItem.to))))
+const isPageActive = computed(() => menuItems.some(item => item.navItems.some(listItem => isCurrentRoute(listItem.to as RouteLocationNamedRaw))))
 </script>
 
 <template>
@@ -137,7 +137,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                   :to="listItem.to as RouteLocationRaw"
                   target="_blank"
                   class="nav-link"
-                  :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
+                  :class="isCurrentRoute(listItem.to as RouteLocationNamedRaw) ? 'active-link' : 'text-high-emphasis'"
                 >
                   <VIcon
                     icon="mdi-circle-outline"
@@ -231,7 +231,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
               location="bottom center"
               offset="20"
             >
-              <VCard style="min-width: 960px;">
+              <VCard style="min-inline-size: 960px;">
                 <VCardText class="pa-8">
                   <div class="d-flex gap-x-12">
                     <div
@@ -260,7 +260,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                             :to="listItem.to as RouteLocationRaw"
                             target="_blank"
                             class="nav-link"
-                            :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
+                            :class="isCurrentRoute(listItem.to as RouteLocationNamedRaw) ? 'active-link' : 'text-high-emphasis'"
                           >
                             <VIcon
                               icon="mdi-circle-outline"

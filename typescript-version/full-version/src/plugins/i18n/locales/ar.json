@@ -149,6 +149,11 @@
   "Dashboard": "لوحة القيادة",
   "fleet": "الأسطول",
   "Editors": "المحررين",
+  "Front Pages": "الصفحات الأمامية",
+  "Landing Page": "الصفحة المقصودة",
+  "checkout": "الدفع",
+  "Payment": "دفع",
+  "Swiper": "المنزلق",
   "$vuetify": {
     "badge": "شارة",
     "pagination": {

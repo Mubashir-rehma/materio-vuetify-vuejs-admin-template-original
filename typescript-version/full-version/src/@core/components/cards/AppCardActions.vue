@@ -5,13 +5,16 @@ interface Props {
   actionCollapsed?: boolean
   actionRefresh?: boolean
   actionRemove?: boolean
+  loading?: boolean | undefined
   title?: string
 }
 
 interface Emit {
   (e: 'collapsed', isContentCollapsed: boolean): void
-  (e: 'refresh', hideOverlay: () => void): void
+  (e: 'refresh', stopLoading: () => void): void
   (e: 'trash'): void
+  (e: 'initialLoad'): void
+  (e: 'update:loading', loading: boolean): void
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -20,10 +23,23 @@ const props = withDefaults(defineProps<Props>(), {
   actionCollapsed: false,
   actionRefresh: false,
   actionRemove: false,
+  loading: undefined,
   title: undefined,
 })
 
 const emit = defineEmits<Emit>()
+
+const _loading = ref(false)
+
+const $loading = computed({
+  get() {
+    return props.loading !== undefined ? props.loading : _loading.value
+  },
+
+  set(value: boolean) {
+    props.loading !== undefined ? emit('update:loading', value) : _loading.value = value
+  },
+})
 
 // inherit Attribute make false
 defineOptions({
@@ -32,11 +48,10 @@ defineOptions({
 
 const isContentCollapsed = ref(props.collapsed)
 const isCardRemoved = ref(false)
-const isOverlayVisible = ref(false)
 
-// hiding overlay
-const hideOverlay = () => {
-  isOverlayVisible.value = false
+// stop loading
+const stopLoading = () => {
+  $loading.value = false
 }
 
 // trigger collapse
@@ -47,8 +62,8 @@ const triggerCollapse = () => {
 
 // trigger refresh
 const triggerRefresh = () => {
-  isOverlayVisible.value = true
-  emit('refresh', hideOverlay)
+  $loading.value = true
+  emit('refresh', stopLoading)
 }
 
 // trigger removal
@@ -85,7 +100,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="mdi-chevron-up"
+                  icon="tabler-chevron-up"
                   :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : null }"
                   style="transition-duration: 0.28s;"
                 />
@@ -98,7 +113,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="mdi-refresh"
+                  icon="tabler-refresh"
                 />
               </IconBtn>
 
@@ -109,7 +124,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="mdi-close"
+                  icon="tabler-x"
                 />
               </IconBtn>
             </div>
@@ -129,9 +144,10 @@ const triggeredRemove = () => {
 
         <!-- 👉 Overlay -->
         <VOverlay
-          v-model="isOverlayVisible"
+          v-model="$loading"
           contained
           persistent
+          scroll-strategy="none"
           class="align-center justify-center"
         >
           <VProgressCircular indeterminate />

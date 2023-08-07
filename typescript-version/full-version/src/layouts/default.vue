@@ -17,14 +17,12 @@ injectSkinClasses()
 </script>
 
 <template>
-  <Suspense>
-    <template v-if="appContentLayoutNav === AppContentLayoutNav.Vertical">
-      <DefaultLayoutWithVerticalNav v-bind="layoutAttrs" />
-    </template>
-    <template v-else>
-      <DefaultLayoutWithHorizontalNav v-bind="layoutAttrs" />
-    </template>
-  </Suspense>
+  <template v-if="appContentLayoutNav === AppContentLayoutNav.Vertical">
+    <DefaultLayoutWithVerticalNav v-bind="layoutAttrs" />
+  </template>
+  <template v-else>
+    <DefaultLayoutWithHorizontalNav v-bind="layoutAttrs" />
+  </template>
 </template>
 
 <style lang="scss">

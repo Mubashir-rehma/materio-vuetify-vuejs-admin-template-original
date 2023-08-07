@@ -24,15 +24,15 @@ const headers = [
   { title: 'Actions', key: 'actions' },
 ]
 
-const resolveStatus = (status: number) => {
-  if (status === 1)
-    return { text: 'Delivered', color: 'success' }
-  if (status === 2)
-    return { text: 'Out for Delivery', color: 'primary' }
-  if (status === 3)
-    return { text: 'Ready to Pickup', color: 'info' }
-  if (status === 4)
-    return { text: 'Dispatched', color: 'warning' }
+const resolveStatus = (status: string) => {
+  if (status === 'Delivered')
+    return { color: 'success' }
+  if (status === 'Out for Delivery')
+    return { color: 'primary' }
+  if (status === 'Ready to Pickup')
+    return { color: 'info' }
+  if (status === 'Dispatched')
+    return { color: 'warning' }
 }
 
 const fetchOrders = async () => {
@@ -105,9 +105,16 @@ watchEffect(fetchOrders)
       <!-- Status -->
       <template #item.status="{ item }">
         <VChip
-          v-bind="resolveStatus(item.raw.status)"
           density="comfortable"
-        />
+          :color="resolveStatus(item.raw.status)?.color"
+        >
+          {{ item.raw.status }}
+        </VChip>
+      </template>
+
+      <!-- Spent -->
+      <template #item.spent="{ item }">
+        ${{ item.raw.spent }}
       </template>
 
       <!-- Actions -->

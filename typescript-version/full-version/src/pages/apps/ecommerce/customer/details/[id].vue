@@ -26,7 +26,6 @@ const fetchCustomer = async () => {
     console.log(error.value)
   else
     customerData.value = data.value
-  console.log(customerData.value)
 }
 
 fetchCustomer()

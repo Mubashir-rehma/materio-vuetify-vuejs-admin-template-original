@@ -2,7 +2,7 @@
 import { useRoute } from 'vue-router'
 import type { ProjectsTab } from '@/@fake-db/types'
 
-const router = useRoute()
+const router = useRoute('pages-user-profile-tab')
 const projectData = ref<ProjectsTab[]>([])
 
 const fetchProjectData = async () => {

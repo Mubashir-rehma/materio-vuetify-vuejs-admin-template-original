@@ -8,7 +8,7 @@ import type { InvoiceData } from '@/views/apps/invoice/types'
 
 // Store
 
-const route = useRoute()
+const route = useRoute('apps-invoice-edit-id')
 
 const invoiceData = ref<InvoiceData>()
 

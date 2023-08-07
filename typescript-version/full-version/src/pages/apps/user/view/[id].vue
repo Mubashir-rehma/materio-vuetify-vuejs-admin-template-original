@@ -6,7 +6,7 @@ import UserTabNotifications from '@/views/apps/user/view/UserTabNotifications.vu
 import UserTabOverview from '@/views/apps/user/view/UserTabOverview.vue'
 import UserTabSecurity from '@/views/apps/user/view/UserTabSecurity.vue'
 
-const route = useRoute()
+const route = useRoute('apps-user-view-id')
 
 const userTab = ref(null)
 

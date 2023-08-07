@@ -6,7 +6,7 @@ import ProjectList from './ProjectList.vue'
 import Teams from './Teams.vue'
 import type { ProfileTab } from '@/@fake-db/types'
 
-const router = useRoute()
+const router = useRoute('pages-user-profile-tab')
 const profileTabData = ref<ProfileTab>()
 
 const fetchAboutData = async () => {

@@ -15,6 +15,20 @@ import { VerticalNavLayout } from '@layouts'
 
 const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
 const { width: windowWidth } = useWindowSize()
+
+const isFallbackStateActive = ref(false)
+const refLoadingIndicator = ref<any>(null)
+
+// watching if the fallback state is active and the refLoadingIndicator component is available
+watch([isFallbackStateActive, refLoadingIndicator], () => {
+  if (isFallbackStateActive.value && refLoadingIndicator.value)
+    refLoadingIndicator.value.fallbackHandle()
+
+  if (!isFallbackStateActive.value && refLoadingIndicator.value)
+    refLoadingIndicator.value.resolveHandle()
+}, {
+  immediate: true,
+})
 </script>
 
 <template>
@@ -43,13 +57,21 @@ const { width: windowWidth } = useWindowSize()
       </div>
     </template>
 
+    <AppLoadingIndicator ref="refLoadingIndicator" />
+
     <!-- 👉 Pages -->
     <RouterView v-slot="{ Component }">
       <Transition
         :name="appRouteTransition"
         mode="out-in"
       >
-        <Component :is="Component" />
+        <Suspense
+          :timeout="0"
+          @fallback="isFallbackStateActive = true"
+          @resolve="isFallbackStateActive = false"
+        >
+          <Component :is="Component" />
+        </Suspense>
       </Transition>
     </RouterView>
 

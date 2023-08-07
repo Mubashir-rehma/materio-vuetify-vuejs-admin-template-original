@@ -13,16 +13,6 @@ defineProps<{
 const { y: windowScrollY } = useWindowScroll()
 const { width: windowWidth } = useWindowSize()
 
-const router = useRouter()
-const shallShowPageLoading = ref(false)
-
-router.beforeEach(() => {
-  shallShowPageLoading.value = true
-})
-router.afterEach(() => {
-  shallShowPageLoading.value = false
-})
-
 const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 </script>
 
@@ -50,17 +40,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
     </div>
 
     <main class="layout-page-content">
-      <template v-if="$slots['content-loading']">
-        <template v-if="shallShowPageLoading">
-          <slot name="content-loading" />
-        </template>
-        <template v-else>
-          <slot />
-        </template>
-      </template>
-      <template v-else>
-        <slot />
-      </template>
+      <slot />
     </main>
 
     <!-- 👉 Footer -->

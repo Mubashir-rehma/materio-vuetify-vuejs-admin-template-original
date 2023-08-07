@@ -14,7 +14,6 @@ export default [
         to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
       },
       { title: 'FAQ', icon: { icon: 'mdi-help-circle-outline' }, to: 'pages-faq' },
-      { title: 'Help Center', icon: { icon: 'mdi-help-circle-outline' }, to: 'pages-help-center' },
       { title: 'Pricing', icon: { icon: 'mdi-currency-usd' }, to: 'pages-pricing' },
       {
         title: 'Misc',
@@ -22,8 +21,8 @@ export default [
         children: [
           { title: 'Coming Soon', to: 'pages-misc-coming-soon' },
           { title: 'Under Maintenance', to: 'pages-misc-under-maintenance', target: '_blank' },
-          { title: 'Page Not Found - 404', to: 'pages-misc-not-found', target: '_blank' },
-          { title: 'Not Authorized - 401', to: 'pages-misc-not-authorized', target: '_blank' },
+          { title: 'Page Not Found - 404', to: { path: '/pages/misc/not-found' }, target: '_blank' },
+          { title: 'Not Authorized - 401', to: { path: '/pages/misc/not-authorized' }, target: '_blank' },
           { title: 'Server Error - 500', to: 'pages-misc-internal-server-error', target: '_blank' },
         ],
       },

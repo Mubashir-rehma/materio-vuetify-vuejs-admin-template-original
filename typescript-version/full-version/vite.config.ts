@@ -24,8 +24,14 @@ export default defineConfig({
           .toLowerCase()
       },
     }),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag === 'swiper-container' || tag === 'swiper-slide',
+        },
+      },
+    }),
     VueDevTools(),
-    vue(),
     vueJsx(),
 
     // Docs: https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin

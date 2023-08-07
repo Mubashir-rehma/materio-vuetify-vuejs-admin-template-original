@@ -17,7 +17,7 @@ definePage({
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // Composables
-const route = useRoute()
+const route = useRoute('apps-email')
 const store = useEmailStore()
 
 const {

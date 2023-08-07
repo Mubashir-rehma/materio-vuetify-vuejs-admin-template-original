@@ -46,7 +46,7 @@ export default [
           { title: 'Course Details', to: 'apps-academy-course-details' },
         ],
       },
-       {
+      {
         title: 'Logistics',
         icon: { icon: 'mdi-truck-outline' },
         children: [

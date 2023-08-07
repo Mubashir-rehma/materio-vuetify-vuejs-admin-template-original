@@ -1,80 +1,75 @@
 <script setup lang="ts">
-import type {
-  HelpCenterCategoriesType,
-} from '@/@fake-db/types'
+import type { HelpCenterAllCategoryArticles } from '@/@fake-db/types'
 
 interface Props {
-  categories: HelpCenterCategoriesType[]
+  categories: HelpCenterAllCategoryArticles[]
 }
 
 const props = defineProps<Props>()
-
-const totalArticles = (category: HelpCenterCategoriesType) => {
-  return category.subCategories.map(subCategory => subCategory.articles.length).reduce((partialSum, a) => partialSum + a, 0)
-}
 </script>
 
 <template>
   <VRow>
     <VCol
+      v-for="article in props.categories"
+      :key="article.title"
       cols="12"
-      lg="10"
-      class="mx-auto mb-8"
+      sm="6"
+      lg="4"
     >
-      <VRow>
-        <VCol
-          v-for="article in props.categories"
-          :key="article.title"
-          cols="12"
-          sm="6"
-          md="4"
-        >
-          <VCard :title="article.title">
-            <template #prepend>
-              <VAvatar
-                :icon="article.icon"
-                rounded
-                :color="article.avatarColor"
-                variant="tonal"
-              />
-            </template>
+      <VCard :title="article.title">
+        <template #prepend>
+          <VAvatar
+            :icon="article.icon"
+            rounded
+            color="primary"
+            variant="tonal"
+          />
+        </template>
 
-            <VCardText>
-              <ul
-                class="ps-6"
-                style="list-style: disc;"
+        <VCardText>
+          <VList class="card-list">
+            <VListItem
+              v-for="(item, index) in article.articles"
+              :key="index"
+              class="text-body-1"
+              append-icon="mdi-chevron-right"
+            >
+              <RouterLink
+                :to="{
+                  name: 'front-pages-help-center-article-title',
+                  params: {
+                    title: 'how-to-add-product-in-cart',
+                  },
+                }"
+                class="text-high-emphasis"
               >
-                <li
-                  v-for="item in article.subCategories"
-                  :key="item.title"
-                  class="text-primary mb-2"
-                >
-                  <RouterLink
-                    :to="{
-                      name: 'pages-help-center-category-subcategory',
-                      params: { category: article.slug, subcategory: item.slug },
-                    }"
-                  >
-                    {{ item.title }}
-                  </RouterLink>
-                </li>
-              </ul>
+                {{ item.title }}
+              </RouterLink>
+            </VListItem>
+          </VList>
 
-              <div class="mt-4">
-                <RouterLink
-                  :to="{
-                    name: 'pages-help-center-category-subcategory',
-                    params: { category: article.slug, subcategory: article.subCategories[0].slug },
-                  }"
-                  class="text-base font-weight-medium"
-                >
-                  {{ totalArticles(article) }} articles
-                </RouterLink>
-              </div>
-            </VCardText>
-          </VCard>
-        </VCol>
-      </VRow>
+          <div class="mt-4">
+            <RouterLink
+              :to="{
+                name: 'front-pages-help-center-article-title',
+                params: {
+                  title: 'how-to-add-product-in-cart',
+                },
+              }"
+              class="text-base font-weight-medium"
+            >
+              See All Articles
+            </RouterLink>
+          </div>
+        </VCardText>
+      </VCard>
     </VCol>
   </VRow>
 </template>
+
+<style lang="scss">
+.card-list {
+  --v-card-list-gap: 0.5rem;
+}
+</style>

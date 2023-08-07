@@ -45,6 +45,14 @@ export default [
           { title: 'Tooltip', to: 'components-tooltip' },
         ],
       },
+      {
+        title: 'Extensions',
+        icon: { icon: 'mdi-cube-outline' },
+        children: [
+          { title: 'Tour', to: 'extensions-tour' },
+          { title: 'Swiper', to: 'extensions-swiper' },
+        ],
+      },
     ],
   },
 ]

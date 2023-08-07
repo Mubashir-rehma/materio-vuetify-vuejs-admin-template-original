@@ -8,7 +8,7 @@ import CustomerTabNotification from '@/views/apps/ecommerce/customer/view/Custom
 import CustomerTabOverview from '@/views/apps/ecommerce/customer/view/CustomerTabOverview.vue'
 import CustomerTabSecurity from '@/views/apps/ecommerce/customer/view/CustomerTabSecurity.vue'
 
-const route = useRoute()
+const route = useRoute('apps-ecommerce-customer-details-id')
 const customerData = ref<Customer>()
 const userTab = ref(null)
 
@@ -41,7 +41,7 @@ const isAddCustomerDrawerOpen = ref(false)
       <div>
         <div class="d-flex gap-2 align-center mb-2 flex-wrap">
           <h5 class="text-h5 font-weight-medium">
-            Customer ID #{{ $route.params.id }}
+            Customer ID #{{ route.params.id }}
           </h5>
         </div>
         <div>

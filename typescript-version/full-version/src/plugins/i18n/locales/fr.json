@@ -150,6 +150,11 @@
   "Dashboard": "Tableau de bord",
   "fleet": "flotte",
   "Editors": "Éditeurs",
+  "Front Pages": "Pages frontales",
+  "Landing Page": "Page d'atterrissage",
+  "checkout": "Check-out",
+  "Payment": "Paiement",
+  "Swiper": "Swiper",
   "$vuetify": {
     "badge": "Badge",
     "pagination": {

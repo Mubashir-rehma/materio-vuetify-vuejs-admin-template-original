@@ -6,7 +6,7 @@ import AccountSettingsConnections from '@/views/pages/account-settings/AccountSe
 import AccountSettingsNotification from '@/views/pages/account-settings/AccountSettingsNotification.vue'
 import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSettingsSecurity.vue'
 
-const route = useRoute()
+const route = useRoute('pages-account-settings-tab')
 
 const activeTab = ref(route.params.tab)
 

@@ -12,6 +12,8 @@ const currentThemeName = ref(theme.value)
 watch(theme, val => {
   currentThemeName.value = val
 })
+
+const selectedItem = ref([currentThemeName.value])
 </script>
 
 <template>
@@ -25,11 +27,13 @@ watch(theme, val => {
       <span class="text-capitalize">{{ currentThemeName }}</span>
     </VTooltip>
     <VMenu activator="parent">
-      <VList>
+      <VList v-model:selected="selectedItem">
         <VListItem
           v-for="{ name, icon } in props.themes"
           :key="name"
+          :value="name"
           :prepend-icon="icon"
+          color="primary"
           class="text-capitalize"
           @click="() => { theme = name }"
         >

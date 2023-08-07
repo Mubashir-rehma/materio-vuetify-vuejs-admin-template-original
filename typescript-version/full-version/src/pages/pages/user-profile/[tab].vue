@@ -12,7 +12,7 @@ definePage({
   },
 })
 
-const route = useRoute()
+const route = useRoute('pages-user-profile-tab')
 
 const activeTab = ref(route.params.tab)
 

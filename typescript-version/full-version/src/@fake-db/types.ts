@@ -2,25 +2,24 @@ import type { RouteLocationRaw } from 'vue-router'
 import type { Rule as UserAbilityRule } from '@/plugins/casl/ability'
 
 // 👉 Help center
-export interface HelpCenterSubcategoryArticlesType {
-  slug: string
+
+export interface HelpCenterAllCategoryArticles {
   title: string
-  content: string
-}
-export interface HelpCenterSubcategoriesType {
   icon: string
-  slug: string
-  title: string
-  articles: HelpCenterSubcategoryArticlesType[]
+  articles: { title: string }[]
 }
-export interface HelpCenterCategoriesType {
-  icon: string
-  slug: string
+
+export interface HelpCenterArticle {
   title: string
-  avatarColor: string
-  subCategories: HelpCenterSubcategoriesType[]
+  lastUpdated: string
+  productContent: string
+  productImg: string
+  checkoutContent: string
+  checkoutImg: string
+  articleList: string[]
 }
-export interface HelpCenterArticlesOverviewType {
+
+export interface HelpCenterArticlesOverview {
   img: string
   slug: string
   title: string

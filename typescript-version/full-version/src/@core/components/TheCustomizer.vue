@@ -276,6 +276,7 @@ const resetCustomizer = async () => {
     <VNavigationDrawer
       v-model="isNavDrawerOpen"
       temporary
+      touchless
       location="end"
       width="400"
       :scrim="false"

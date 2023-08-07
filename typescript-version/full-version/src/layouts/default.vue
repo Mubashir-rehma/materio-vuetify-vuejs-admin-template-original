@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AppContentLayoutNav } from '@layouts/enums';
+import { AppContentLayoutNav } from '@layouts/enums'
 
 const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))
 const DefaultLayoutWithVerticalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithVerticalNav.vue'))
@@ -17,14 +17,12 @@ injectSkinClasses()
 </script>
 
 <template>
-  <Suspense>
-    <template v-if="appContentLayoutNav === AppContentLayoutNav.Vertical">
-      <DefaultLayoutWithVerticalNav v-bind="layoutAttrs" />
-    </template>
-    <template v-else>
-      <DefaultLayoutWithHorizontalNav v-bind="layoutAttrs" />
-    </template>
-  </Suspense>
+  <template v-if="appContentLayoutNav === AppContentLayoutNav.Vertical">
+    <DefaultLayoutWithVerticalNav v-bind="layoutAttrs" />
+  </template>
+  <template v-else>
+    <DefaultLayoutWithHorizontalNav v-bind="layoutAttrs" />
+  </template>
 </template>
 
 <style lang="scss">

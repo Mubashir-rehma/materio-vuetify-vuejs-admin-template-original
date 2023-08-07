@@ -7,6 +7,8 @@ import product22 from '@images/ecommerce-images/product-22.png'
 import product23 from '@images/ecommerce-images/product-23.png'
 import product24 from '@images/ecommerce-images/product-24.png'
 
+const route = useRoute('apps-ecommerce-order-details-id')
+
 const headers = [
   { title: 'Product', key: 'product_name' },
   { title: 'Price', key: 'price' },
@@ -53,7 +55,7 @@ const orderData = [
       <div>
         <div class="d-flex gap-2 align-center mb-2 flex-wrap">
           <h5 class="text-h5">
-            Order #{{ $route.params.id }}
+            Order #{{ route.params.id }}
           </h5>
           <div class="d-flex gap-x-2">
             <VChip

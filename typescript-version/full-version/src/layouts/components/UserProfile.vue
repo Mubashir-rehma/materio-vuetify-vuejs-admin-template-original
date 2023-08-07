@@ -30,7 +30,7 @@ const userProfileList = [
   { type: 'navItem', icon: 'mdi-cog-outline', title: 'settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
   { type: 'navItem', icon: 'mdi-credit-card-outline', title: 'Billing', to: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } }, badgeProps: { color: 'light-error', content: '3', textColor: 'error' } },
   { type: 'divider' },
-  { type: 'navItem', icon: 'mdi-lifebuoy', title: 'Help', to: { name: 'pages-help-center' } },
+  { type: 'navItem', icon: 'mdi-lifebuoy', title: 'Help', to: { name: 'front-pages-help-center' } },
   { type: 'navItem', icon: 'mdi-currency-usd', title: 'Pricing', to: { name: 'pages-pricing' } },
   { type: 'navItem', icon: 'mdi-help-circle-outline', title: 'FAQ', to: { name: 'pages-faq' } },
   { type: 'divider' },

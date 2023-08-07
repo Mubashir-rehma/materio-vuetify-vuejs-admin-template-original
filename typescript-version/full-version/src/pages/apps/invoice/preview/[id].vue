@@ -6,7 +6,7 @@ import { themeConfig } from '@themeConfig'
 import InvoiceAddPaymentDrawer from '@/views/apps/invoice/InvoiceAddPaymentDrawer.vue'
 import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
 
-const route = useRoute()
+const route = useRoute('apps-invoice-preview-id')
 
 const invoiceData = ref()
 const paymentDetails = ref()
@@ -26,7 +26,7 @@ const fetchInvoice = async (id: number) => {
   }
 }
 
-fetchInvoice(route.params.id)
+fetchInvoice(Number(route.params.id))
 
 // 👉 Invoice Description
 // ℹ️ Your real data will contain this information

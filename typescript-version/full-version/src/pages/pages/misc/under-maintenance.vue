@@ -4,6 +4,7 @@ import miscUnderMaintenance from '@images/pages/misc-under-maintenance.png'
 definePage({
   meta: {
     layout: 'blank',
+    public: false,
   },
 })
 </script>

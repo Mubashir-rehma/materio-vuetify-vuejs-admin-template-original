@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { initialAbility } from '@/plugins/casl/ability'
-import { useAppAbility } from '@/plugins/casl/useAppAbility'
 
 const router = useRouter()
-const ability = useAppAbility()
+const ability = useAbility()
 const userData = JSON.parse(localStorage.getItem('userData') || 'null')
 
 const logout = () => {
@@ -22,7 +20,7 @@ const logout = () => {
       localStorage.removeItem('userAbilities')
 
       // Reset ability to initial ability
-      ability.update(initialAbility)
+      ability.update([])
     })
 }
 

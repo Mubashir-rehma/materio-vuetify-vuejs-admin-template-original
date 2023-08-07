@@ -6,6 +6,7 @@ declare module 'vue-router' {
     layoutWrapperClasses?: string
     navActiveLink?: RouteLocationRaw
     layout?: 'blank' | 'default'
-    redirectIfLoggedIn?: boolean
+    unauthenticatedOnly?: boolean
+    public?: boolean
   }
 }

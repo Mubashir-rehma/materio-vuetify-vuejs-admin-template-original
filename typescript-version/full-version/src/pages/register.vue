@@ -1,15 +1,12 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
 
-import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 
 definePage({
   meta: {
     layout: 'blank',
-    action: 'read',
-    subject: 'Auth',
-    redirectIfLoggedIn: true,
+    unauthenticatedOnly: true,
   },
 })
 
@@ -24,7 +21,7 @@ const route = useRoute()
 const router = useRouter()
 
 // Ability
-const ability = useAppAbility()
+const ability = useAbility()
 
 // Form Errors
 const errors = ref<Record<string, string | undefined>>({

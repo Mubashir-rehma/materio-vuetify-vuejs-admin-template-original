@@ -33,7 +33,7 @@ const database: User[] = [
     avatar: avatar1,
     email: 'admin@demo.com',
     role: 'admin',
-    abilities: [
+    abilityRules: [
       {
         action: 'manage',
         subject: 'all',
@@ -49,16 +49,7 @@ const database: User[] = [
     avatar: avatar2,
     email: 'client@demo.com',
     role: 'client',
-    abilities: [
-      {
-        action: 'read',
-        subject: 'Auth',
-      },
-      {
-        action: 'read',
-        subject: 'AclDemo',
-      },
-    ],
+    abilityRules: [],
   },
 ]
 
@@ -86,7 +77,7 @@ mock.onPost('/auth/login').reply(request => {
       ) as UserOut['userData']
 
       const response: UserOut = {
-        userAbilities: userData.abilities,
+        userAbilities: userData.abilityRules,
         accessToken,
         userData: userOutData,
       }
@@ -147,7 +138,7 @@ mock.onPost('/auth/register').reply(request => {
       username,
       fullName: '',
       role: 'admin',
-      abilities: [
+      abilityRules: [
         {
           action: 'manage',
           subject: 'all',
@@ -160,7 +151,7 @@ mock.onPost('/auth/register').reply(request => {
     const accessToken = userTokens[userData.id]
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password: _, abilities, ...user } = userData
+    const { password: _, abilityRules: abilities, ...user } = userData
 
     const response = {
       userData: user,

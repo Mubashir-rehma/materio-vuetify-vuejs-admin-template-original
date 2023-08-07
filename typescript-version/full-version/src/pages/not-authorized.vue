@@ -4,8 +4,7 @@ import page401 from '@images/pages/401.png'
 definePage({
   meta: {
     layout: 'blank',
-    action: 'read',
-    subject: 'Auth',
+    public: true,
   },
 })
 </script>

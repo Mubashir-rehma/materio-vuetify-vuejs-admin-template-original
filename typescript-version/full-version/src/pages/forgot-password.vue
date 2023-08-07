@@ -4,9 +4,7 @@ const email = ref('')
 definePage({
   meta: {
     layout: 'blank',
-    action: 'read',
-    subject: 'Auth',
-    redirectIfLoggedIn: true,
+    unauthenticatedOnly: true,
   },
 })
 </script>

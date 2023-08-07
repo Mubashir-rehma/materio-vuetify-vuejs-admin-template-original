@@ -4,6 +4,7 @@ import pages500 from '@images/pages/500.png'
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 </script>

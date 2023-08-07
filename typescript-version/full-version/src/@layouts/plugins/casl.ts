@@ -1,5 +1,5 @@
+import { useAbility } from '@casl/vue'
 import type { RouteLocationNormalized } from 'vue-router'
-import ability from '@/plugins/casl/ability'
 import type { NavGroup } from '@layouts/types'
 
 /**
@@ -41,6 +41,8 @@ export const canViewNavMenuGroup = (item: NavGroup) => {
 }
 
 export const canNavigate = (to: RouteLocationNormalized) => {
+  const ability = useAbility()
+
   // @ts-expect-error We should allow passing string | undefined to can because for admin ability we omit defining action & subject
   return to.matched.some(route => ability.can(route.meta.action, route.meta.subject))
 }

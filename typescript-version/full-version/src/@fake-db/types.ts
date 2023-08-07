@@ -1,5 +1,5 @@
 import type { RouteLocationRaw } from 'vue-router'
-import type { UserAbility } from '@/plugins/casl/AppAbility'
+import type { Rule as UserAbilityRule } from '@/plugins/casl/ability'
 
 // 👉 Help center
 export interface HelpCenterSubcategoryArticlesType {
@@ -153,11 +153,11 @@ export interface User {
   avatar?: string
   email: string
   role: string
-  abilities: UserAbility[]
+  abilityRules: UserAbilityRule[]
 }
 
 export interface UserOut {
-  userAbilities: User['abilities']
+  userAbilities: User['abilityRules']
   accessToken: string
   userData: Omit<User, 'abilities' | 'password'>
 }
@@ -165,13 +165,13 @@ export interface UserOut {
 export interface LoginResponse {
   accessToken: string
   userData: AuthUserOut
-  userAbilities: UserAbility[]
+  userAbilities: UserAbilityRule[]
 }
 
 export interface RegisterResponse {
   accessToken: string
   userData: AuthUserOut
-  userAbilities: UserAbility[]
+  userAbilities: UserAbilityRule[]
 }
 
 // !SECTION

@@ -1,6 +1,6 @@
+import { canNavigate } from '@layouts/plugins/casl'
 import { useStorage } from '@vueuse/core'
 import type { Router } from 'vue-router'
-import { canNavigate } from '@layouts/plugins/casl'
 
 export const setupGuards = (router: Router) => {
   // 👉 router.beforeEach
@@ -25,7 +25,10 @@ export const setupGuards = (router: Router) => {
       (WARN: Don't allow executing further by return statement because next code will check for permissions)
      */
     if (to.meta.unauthenticatedOnly)
-      return isLoggedIn ? '/' : true
+      if (isLoggedIn)
+        return '/'
+      else
+        return undefined
 
     if (!canNavigate(to)) {
       /* eslint-disable indent */

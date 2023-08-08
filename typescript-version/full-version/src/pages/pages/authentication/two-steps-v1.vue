@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+import { VOtpInput } from 'vuetify/labs/VOtpInput'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
@@ -7,6 +9,19 @@ definePage({
     layout: 'blank',
   },
 })
+
+const router = useRouter()
+const otp = ref('')
+const isOtpInserted = ref(false)
+
+const onFinish = () => {
+  isOtpInserted.value = true
+
+  setTimeout(() => {
+    isOtpInserted.value = false
+    router.push('/')
+  }, 2000)
+}
 </script>
 
 <template>
@@ -37,6 +52,10 @@ definePage({
         <h6 class="text-base font-weight-medium">
           ············1234
         </h6>
+
+        <h6 class="text-base font-weight-medium mt-3">
+          Type your 6 digit security code
+        </h6>
       </VCardText>
 
       <VCardText>
@@ -44,12 +63,20 @@ definePage({
           <VRow>
             <!-- email -->
             <VCol cols="12">
-              <AppOtpInput />
+              <VOtpInput
+                v-model="otp"
+                :disabled="isOtpInserted"
+                type="number"
+                class="pa-0"
+                @finish="onFinish"
+              />
             </VCol>
 
             <!-- reset password -->
             <VCol cols="12">
               <VBtn
+                :loading="isOtpInserted"
+                :disabled="isOtpInserted"
                 block
                 type="submit"
               >

@@ -32,6 +32,10 @@ export default [
             to: 'forms-file-input',
           },
           {
+            title: 'Otp Input',
+            to: 'forms-otp-input',
+          },
+          {
             title: 'Radio',
             to: 'forms-radio',
           },

@@ -4,19 +4,30 @@ import { themeConfig } from '@themeConfig'
 const { isAppRtl, theme, skin } = useThemeConfig()
 
 const _syncAppRtl = () => {
-  const localStorageLang = ref(localStorage.getItem(`${themeConfig.app.title}-language`))
+  const storedLang = useCookie(`${themeConfig.app.title}-language`)
 
   const { locale } = useI18n({ useScope: 'global' })
 
-  document.documentElement.setAttribute('lang', locale.value as string)
+  // watch and change lang attribute of html on language change
+  watch(
+    locale,
+    val => {
+      // Update lang attribute of html tag
+      document.documentElement.setAttribute('lang', val as string)
 
-  // set isAppRtl value on mounted based on current language
-  if (themeConfig.app.i18n.langConfig && themeConfig.app.i18n.langConfig.length) {
-    themeConfig.app.i18n.langConfig.forEach(lang => {
-      if (lang.i18nLang === localStorageLang.value)
-        isAppRtl.value = lang.isRTL
-    })
-  }
+      // Store selected language in cookie
+      storedLang.value = val as string
+
+      // set isAppRtl value based on selected language
+      if (themeConfig.app.i18n.langConfig && themeConfig.app.i18n.langConfig.length) {
+        themeConfig.app.i18n.langConfig.forEach(lang => {
+          if (lang.i18nLang === storedLang.value)
+            isAppRtl.value = lang.isRTL
+        })
+      }
+    },
+    { immediate: true },
+  )
 }
 
 const _handleSkinChanges = () => {

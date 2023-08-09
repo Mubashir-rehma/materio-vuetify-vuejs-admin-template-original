@@ -49,7 +49,11 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 
       <NavSearchBar trigger-btn-class="ms-lg-n3" />
 
-      <NavBarI18n />
+      <NavBarI18n
+        v-if="themeConfig.app.i18n.enable && themeConfig.app.i18n.langConfig?.length"
+        :languages="themeConfig.app.i18n.langConfig"
+      />
+
       <NavbarThemeSwitcher />
       <NavbarShortcuts />
       <NavBarNotifications class="me-2" />

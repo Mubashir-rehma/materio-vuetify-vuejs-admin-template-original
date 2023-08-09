@@ -7,7 +7,7 @@ const teamData = ref<TeamsTab[]>([])
 
 const fetchTeamData = async () => {
   if (router.params.tab === 'teams') {
-    const { data, error } = await useApi<any>(CreateUrl('/pages/profile', {
+    const { data, error } = await useApi<any>(createUrl('/pages/profile', {
       tab: router.params.tab,
     }))
 

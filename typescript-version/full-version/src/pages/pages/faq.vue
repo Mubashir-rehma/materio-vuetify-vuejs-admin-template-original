@@ -8,7 +8,7 @@ const faqSearchQuery = ref('')
 const faqs = ref<FaqCategory[]>([])
 
 const fetchFaqs = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/pages/faq', {
+  const { data, error } = await useApi<any>(createUrl('/pages/faq', {
     q: faqSearchQuery.value,
   }))
 

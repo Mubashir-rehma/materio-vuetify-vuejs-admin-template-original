@@ -18,7 +18,7 @@ const hideCompleted = ref(false)
 const status = ref('all')
 
 const fetchCourses = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/academy/courses', () => ({
+  const { data, error } = await useApi<any>(createUrl('/apps/academy/courses', () => ({
     q: searchQuery.value,
     hideCompleted: hideCompleted.value,
     status: status.value,

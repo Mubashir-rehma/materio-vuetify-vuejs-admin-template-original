@@ -89,7 +89,7 @@ const router = useRouter()
 
 // 👉 fetch search result API
 watch(searchQuery, async () => {
-  const { data } = await useApi<any>(CreateUrl('/app-bar/search', {
+  const { data } = await useApi<any>(createUrl('/app-bar/search', {
     q: searchQuery.value,
   }), { immediate: true })
 

@@ -33,7 +33,7 @@ const headers = [
 // 👉 Fetching users
 
 const fetchUsers = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/users', {
+  const { data, error } = await useApi<any>(createUrl('/apps/users', {
     q: searchQuery.value,
     status: selectedStatus.value,
     plan: selectedPlan.value,

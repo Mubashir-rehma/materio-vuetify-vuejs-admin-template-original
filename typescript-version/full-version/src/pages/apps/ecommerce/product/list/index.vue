@@ -87,7 +87,7 @@ const resolveStatus = (statusMsg: string) => {
 }
 
 const fetchProducts = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/products', {
+  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/products', {
     q: searchQuery.value,
     stock: selectedStock.value,
     category: selectedCategory.value,

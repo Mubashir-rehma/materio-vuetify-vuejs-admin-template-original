@@ -4,7 +4,7 @@ import type { ProfileHeader } from '@/@fake-db/types'
 const profileHeaderData = ref<ProfileHeader>()
 
 const fetchHeaderData = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/pages/profile/header'))
+  const { data, error } = await useApi<any>(createUrl('/pages/profile/header'))
 
   if (error.value)
     console.log(error.value)

@@ -16,7 +16,7 @@ const options = ref<Options>({
 const searchQuery = ref('')
 
 const fetchReviews = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/reviews', {
+  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/reviews', {
     q: searchQuery.value,
     ...options.value,
     ...(options.value.sortBy

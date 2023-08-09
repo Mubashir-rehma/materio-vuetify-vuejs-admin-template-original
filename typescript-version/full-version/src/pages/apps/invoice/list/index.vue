@@ -44,7 +44,7 @@ const headers = [
 const fetchInvoices = async (query: string, currentStatus: invoiceStatus, firstDate: string, lastDate: string, option: Options) => {
   isLoading.value = true
 
-  const { data, error } = await useApi<any>(CreateUrl('/apps/invoice', {
+  const { data, error } = await useApi<any>(createUrl('/apps/invoice', {
     q: query,
     status: currentStatus,
     startDate: firstDate?.trim(),

@@ -7,7 +7,7 @@ const connectionData = ref<ConnectionsTab[]>([])
 
 const fetchProjectData = async () => {
   if (router.params.tab === 'connections') {
-    const { data, error } = await useApi<any>(CreateUrl('/pages/profile', {
+    const { data, error } = await useApi<any>(createUrl('/pages/profile', {
       tab: router.params.tab,
     }))
 

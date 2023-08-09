@@ -23,7 +23,7 @@ const headers = [
 ]
 
 const fetchCourses = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/academy/courses', {
+  const { data, error } = await useApi<any>(createUrl('/apps/academy/courses', {
     q: searchQuery.value,
     ...options.value,
     ...(options.value.sortBy

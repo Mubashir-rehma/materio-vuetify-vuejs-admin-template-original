@@ -57,7 +57,7 @@ const resolveStatus = (status: string) => {
 }
 
 const fetchOrders = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/orders', {
+  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/orders', {
     q: searchQuery.value,
     ...options.value,
     ...(options.value.sortBy

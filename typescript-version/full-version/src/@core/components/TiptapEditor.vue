@@ -49,7 +49,7 @@ watch(() => props.modelValue, () => {
   <div>
     <div
       v-if="editor"
-      class="d-flex gap-x-3 pa-2"
+      class="d-flex gap-3 pa-2 flex-wrap"
     >
       <VBtn
         :class="{ 'is-active': editor.isActive('bold') }"

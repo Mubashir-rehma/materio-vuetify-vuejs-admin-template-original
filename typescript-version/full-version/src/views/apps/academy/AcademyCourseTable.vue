@@ -17,9 +17,9 @@ const options = ref<Options>({
 
 const headers = [
   { title: 'Course Name', key: 'courseName' },
-  { title: 'Time', key: 'time' },
+  { title: 'Time', key: 'time', sortable: false },
   { title: 'Progress', key: 'progress' },
-  { title: 'Status', key: 'status' },
+  { title: 'Status', key: 'status', sortable: false },
 ]
 
 const fetchCourses = async () => {
@@ -43,7 +43,7 @@ const fetchCourses = async () => {
   }
 }
 
-watchEffect(fetchCourses)
+watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
 </script>
 
 <template>

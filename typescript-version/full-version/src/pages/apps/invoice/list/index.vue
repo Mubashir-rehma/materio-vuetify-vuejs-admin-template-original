@@ -128,17 +128,25 @@ const deleteInvoice = async (id: number) => {
 }
 
 // 👉 watch for data table options like itemsPerPage,page,searchQuery,sortBy etc...
-watchEffect(() => {
+
+const selectedDateRange = computed(() => {
   const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
 
+  return {
+    start,
+    end,
+  }
+})
+
+watch([searchQuery, selectedStatus, selectedDateRange, options], () => {
   fetchInvoices(
     searchQuery.value,
     selectedStatus.value,
-    start,
-    end,
+    selectedDateRange.value.start,
+    selectedDateRange.value.end,
     options.value,
   )
-})
+}, { deep: true, immediate: true })
 </script>
 
 <template>

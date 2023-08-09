@@ -58,7 +58,7 @@ const fetchPermissions = async () => {
   }
 }
 
-watchEffect(fetchPermissions)
+watch([search, options], fetchPermissions, { deep: true, immediate: true })
 
 const editPermission = (name: string) => {
   isPermissionDialogVisible.value = true

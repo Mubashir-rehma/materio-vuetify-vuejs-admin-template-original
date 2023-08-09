@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import { useDropZone } from '@vueuse/core'
+import { useDropZone, useFileDialog, useObjectUrl } from '@vueuse/core'
+import { ref } from 'vue'
 
+const dropZoneRef = ref<HTMLDivElement>()
+interface FileData {
+  file: File
+  url: string
+}
+
+const fileData = ref<FileData[]>([])
 const { open, onChange } = useFileDialog({ accept: 'image/*' })
-
-const filesData = ref<File[]>([])
-
-const content = ref(
-  `<p>
-      This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That’s it. It’s probably too much for real minimalists though.
-    </p>
-    <p>
-      The paragraph extension is not really required, but you need at least one node. Sure, that node can be something different.
-    </p>`)
 
 function onDrop(DroppedFiles: File[] | null) {
   DroppedFiles?.forEach(file => {
@@ -22,7 +20,10 @@ function onDrop(DroppedFiles: File[] | null) {
       return
     }
 
-    filesData.value.push(file)
+    fileData.value.push({
+      file,
+      url: useObjectUrl(file).value ?? '',
+    })
   },
   )
 }
@@ -31,13 +32,23 @@ onChange(selectedFiles => {
   if (!selectedFiles)
     return
 
-  for (const file of selectedFiles)
-    filesData.value.push(file)
+  for (const file of selectedFiles) {
+    fileData.value.push({
+      file,
+      url: useObjectUrl(file).value ?? '',
+    })
+  }
 })
 
-const dropZoneRef = ref<HTMLElement>()
-
 useDropZone(dropZoneRef, onDrop)
+
+const content = ref(
+  `<p>
+      This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That’s it. It’s probably too much for real minimalists though.
+    </p>
+    <p>
+      The paragraph extension is not really required, but you need at least one node. Sure, that node can be something different.
+    </p>`)
 
 const activeTab = ref('Restock')
 
@@ -136,6 +147,7 @@ const inventoryTabsData = [
         </VCard>
 
         <!-- 👉 Media -->
+        <!-- 👉 Media -->
         <VCard class="mb-6">
           <VCardItem>
             <template #title>
@@ -155,7 +167,7 @@ const inventoryTabsData = [
                   @click="() => open()"
                 >
                   <div
-                    v-if="filesData.length === 0"
+                    v-if="fileData.length === 0"
                     class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone"
                   >
                     <VAvatar
@@ -184,12 +196,12 @@ const inventoryTabsData = [
                   >
                     <VRow>
                       <template
-                        v-for="(file, index) in filesData"
+                        v-for="(item, index) in fileData"
                         :key="index"
                       >
                         <VCol
                           cols="12"
-                          md="3"
+                          sm="4"
                           @click.stop
                         >
                           <VCard
@@ -198,17 +210,17 @@ const inventoryTabsData = [
                           >
                             <VCardText class="d-flex flex-column align-center">
                               <VImg
-                                :src="useObjectUrl(file).value"
-                                width="50px"
-                                height="50px"
+                                :src="item.url"
+                                width="150px"
+                                height="100px"
                               />
                               <div class="mt-2">
-                                <div class="text-truncate">
-                                  {{ file.name }}
+                                <div class="text-wrap clamp-text">
+                                  {{ item.file.name }}
                                 </div>
 
                                 <div>
-                                  {{ file.size / 1000 }} KB
+                                  {{ item.file.size / 1000 }} KB
                                 </div>
                               </div>
                             </VCardText>
@@ -216,7 +228,7 @@ const inventoryTabsData = [
                               <VBtn
                                 variant="text"
                                 block
-                                @click.stop="filesData.splice(index, 1)"
+                                @click.stop="fileData.splice(index, 1)"
                               >
                                 Remove File
                               </VBtn>

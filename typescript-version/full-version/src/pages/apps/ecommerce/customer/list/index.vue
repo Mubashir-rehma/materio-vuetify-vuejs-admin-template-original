@@ -18,7 +18,7 @@ const options = ref<Options>({
 })
 
 const fetchCustomers = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/customers', {
+  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/customers', {
     q: searchQuery.value,
     ...options.value,
     ...(options.value.sortBy

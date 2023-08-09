@@ -29,7 +29,7 @@ export const useCalendarStore = defineStore('calendar', {
   }),
   actions: {
     async fetchEvents() {
-      const { data, error } = await useApi<any>(CreateUrl('/apps/calendar', { calendars: this.selectedCalendars }))
+      const { data, error } = await useApi<any>(createUrl('/apps/calendar', { calendars: this.selectedCalendars }))
 
       if (error.value)
         return error.value

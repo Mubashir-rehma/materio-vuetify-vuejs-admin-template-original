@@ -14,7 +14,7 @@ const options = ref<Options>({
 })
 
 const fetchVehicles = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/logistics/vehicles', {
+  const { data, error } = await useApi<any>(createUrl('/apps/logistics/vehicles', {
     ...options.value,
 
     ...(options.value.sortBy

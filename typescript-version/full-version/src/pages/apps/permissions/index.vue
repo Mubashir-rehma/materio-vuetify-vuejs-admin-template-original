@@ -38,7 +38,7 @@ const colors: any = {
 }
 
 const fetchPermissions = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/permissions', {
+  const { data, error } = await useApi<any>(createUrl('/apps/permissions', {
     q: search.value,
     ...options.value,
     ...(options.value.sortBy

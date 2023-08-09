@@ -44,7 +44,7 @@ const headers = [
 ]
 
 const fetchReferrals = async () => {
-  const { data, error } = await useApi<any>(CreateUrl('/apps/ecommerce/referrals', {
+  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/referrals', {
     ...options.value,
     ...(options.value.sortBy
      && {

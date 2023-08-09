@@ -171,7 +171,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   </VNavigationDrawer>
 
   <!-- 👉 Navbar for desktop devices  -->
-  <div class="navbar elevation-3 rounded-lg">
+  <div class="front-page-navbar elevation-3 rounded-lg">
     <VAppBar
       :color="$vuetify.theme.current.dark ? 'rgba(var(--v-theme-background))' : '#fff'"
       class="rounded-b-lg"
@@ -325,7 +325,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
 <style lang="scss" scoped>
 @media (min-width: 1920px) {
-  .navbar {
+  .front-page-navbar {
     .v-toolbar {
       max-inline-size: calc(1440px - 32px);
     }
@@ -333,7 +333,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 @media (min-width: 1280px) and (max-width: 1919px) {
-  .navbar {
+  .front-page-navbar {
     .v-toolbar {
       max-inline-size: calc(1200px - 32px);
     }
@@ -341,7 +341,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 @media (min-width: 960px) and (max-width: 1279px) {
-  .navbar {
+  .front-page-navbar {
     .v-toolbar {
       max-inline-size: calc(900px - 32px);
     }
@@ -349,7 +349,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  .navbar {
+  .front-page-navbar {
     .v-toolbar {
       max-inline-size: calc(100% - 64px);
     }
@@ -357,7 +357,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 @media (max-width: 600px) {
-  .navbar {
+  .front-page-navbar {
     .v-toolbar {
       max-inline-size: calc(100% - 32px);
     }
@@ -375,15 +375,18 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </style>
 
 <style lang="scss">
-.navbar {
+@use "@layouts/styles/mixins" as layoutMixins;
+
+.front-page-navbar {
   .v-toolbar__content {
     padding-inline: 1.5rem !important;
   }
 
   .v-toolbar {
-    inset-inline-start: 50% !important;
-    transform: translate(-50%) !important;
+    inset-inline: 0 !important;
+    margin-inline: auto !important;
   }
+
 }
 
 .nav-link {

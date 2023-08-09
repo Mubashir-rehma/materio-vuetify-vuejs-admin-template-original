@@ -20,13 +20,12 @@ const tabs = [
 ]
 
 const fetchCustomer = async () => {
-  const { data, error } = await useApi<any>(CreateUrl(`/apps/ecommerce/customers/${route.params.id}`))
+  const { data, error } = await useApi<any>(createUrl(`/apps/ecommerce/customers/${route.params.id}`))
 
   if (error.value)
     console.log(error.value)
   else
     customerData.value = data.value
-  console.log(customerData.value)
 }
 
 fetchCustomer()

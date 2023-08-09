@@ -63,22 +63,11 @@ export const useThemeConfig = () => {
     switchToVerticalNavOnLtOverlayNavBreakpoint,
   } = useLayouts()
 
-  const appLocale = computed({
-    get() {
-      return themeConfig.app.i18n.defaultLocale
-    },
-    set(value: typeof themeConfig.app.i18n.defaultLocale) {
-      themeConfig.app.i18n.defaultLocale = value
-      localStorage.setItem(`${themeConfig.app.title}-language`, value)
-    },
-  })
-
   return {
     theme,
     isVerticalNavSemiDark,
     skin,
     appRouteTransition,
-    appLocale,
 
     // @layouts exports
     navbarType,

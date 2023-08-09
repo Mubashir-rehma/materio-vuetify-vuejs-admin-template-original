@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import navItems from '@/navigation/vertical'
+import { themeConfig } from '@themeConfig'
 
 // Components
 import Footer from '@/layouts/components/Footer.vue'
@@ -49,7 +50,10 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 
         <VSpacer />
 
-        <NavBarI18n />
+        <NavBarI18n
+          v-if="themeConfig.app.i18n.enable && themeConfig.app.i18n.langConfig?.length"
+          :languages="themeConfig.app.i18n.langConfig"
+        />
         <NavbarThemeSwitcher />
         <NavbarShortcuts />
         <NavBarNotifications class="me-2" />

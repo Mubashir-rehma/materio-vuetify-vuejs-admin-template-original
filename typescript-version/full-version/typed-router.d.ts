@@ -101,6 +101,7 @@ declare module 'vue-router/auto/routes' {
     'forms-form-validation': RouteRecordInfo<'forms-form-validation', '/forms/form-validation', Record<never, never>, Record<never, never>>,
     'forms-form-wizard-icons': RouteRecordInfo<'forms-form-wizard-icons', '/forms/form-wizard-icons', Record<never, never>, Record<never, never>>,
     'forms-form-wizard-numbered': RouteRecordInfo<'forms-form-wizard-numbered', '/forms/form-wizard-numbered', Record<never, never>, Record<never, never>>,
+    'forms-otp-input': RouteRecordInfo<'forms-otp-input', '/forms/otp-input', Record<never, never>, Record<never, never>>,
     'forms-radio': RouteRecordInfo<'forms-radio', '/forms/radio', Record<never, never>, Record<never, never>>,
     'forms-range-slider': RouteRecordInfo<'forms-range-slider', '/forms/range-slider', Record<never, never>, Record<never, never>>,
     'forms-rating': RouteRecordInfo<'forms-rating', '/forms/rating', Record<never, never>, Record<never, never>>,

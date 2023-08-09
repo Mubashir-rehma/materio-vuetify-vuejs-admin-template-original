@@ -4,9 +4,7 @@ import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 definePage({
   meta: {
     layout: 'blank',
-    action: 'read',
-    subject: 'Auth',
-    redirectIfLoggedIn: true,
+    unauthenticatedOnly: true,
   },
 })
 

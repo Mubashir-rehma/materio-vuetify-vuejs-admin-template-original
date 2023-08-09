@@ -485,6 +485,12 @@ const database: SearchResults[] = [
         category: 'formsTables',
       },
       {
+        url: { name: 'forms-otp-input' },
+        icon: 'mdi-two-factor-authentication',
+        title: 'Otp Input',
+        category: 'formsTables',
+      },
+      {
         url: { name: 'forms-rating' },
         icon: 'mdi-star-outline',
         title: 'Form Rating',

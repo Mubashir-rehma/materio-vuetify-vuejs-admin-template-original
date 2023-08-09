@@ -1,9 +1,24 @@
 <script setup lang="ts">
+import { VOtpInput } from 'vuetify/labs/VOtpInput'
+
 definePage({
   meta: {
     layout: 'blank',
   },
 })
+
+const router = useRouter()
+const otp = ref('')
+const isOtpInserted = ref(false)
+
+const onFinish = () => {
+  isOtpInserted.value = true
+
+  setTimeout(() => {
+    isOtpInserted.value = false
+    router.push('/')
+  }, 2000)
+}
 </script>
 
 <template>
@@ -47,13 +62,21 @@ definePage({
               <VRow>
                 <!-- email -->
                 <VCol cols="12">
-                  <AppOtpInput />
+                  <VOtpInput
+                    v-model="otp"
+                    :disabled="isOtpInserted"
+                    type="number"
+                    class="pa-0"
+                    @finish="onFinish"
+                  />
                 </VCol>
 
                 <!-- reset password -->
                 <VCol cols="12">
                   <VBtn
                     block
+                    :loading="isOtpInserted"
+                    :disabled="isOtpInserted"
                     type="submit"
                   >
                     Verify my account

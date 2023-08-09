@@ -5,8 +5,7 @@ definePage({
   alias: '/pages/misc/not-found',
   meta: {
     layout: 'blank',
-    action: 'read',
-    subject: 'Auth',
+    public: true,
   },
 })
 </script>

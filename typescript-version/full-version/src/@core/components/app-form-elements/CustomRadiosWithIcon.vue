@@ -14,17 +14,16 @@ interface Emit {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const selectedOption = ref(structuredClone(toRaw(props.selectedRadio)))
-
-watch(selectedOption, () => {
-  emit('update:selectedRadio', selectedOption.value)
-})
+const updateSelectedOption = (value: string) => {
+  emit('update:selectedRadio', value)
+}
 </script>
 
 <template>
   <VRadioGroup
     v-if="props.radioContent"
-    v-model="selectedOption"
+    :model-value="props.selectedRadio"
+    @update:model-value="updateSelectedOption"
   >
     <VRow>
       <VCol
@@ -34,7 +33,7 @@ watch(selectedOption, () => {
       >
         <VLabel
           class="custom-input custom-radio-icon rounded cursor-pointer"
-          :class="selectedOption === item.value ? 'active' : ''"
+          :class="props.selectedRadio === item.value ? 'active' : ''"
         >
           <slot :item="item">
             <div class="d-flex flex-column align-center text-center gap-2">

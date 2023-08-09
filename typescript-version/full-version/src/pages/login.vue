@@ -1,16 +1,13 @@
 <!-- ❗Errors in the form are set on line 60 -->
 <script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
-import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { themeConfig } from '@themeConfig'
 
 definePage({
   meta: {
     layout: 'blank',
-    action: 'read',
-    subject: 'Auth',
-    redirectIfLoggedIn: true,
+    unauthenticatedOnly: true,
   },
 })
 
@@ -19,7 +16,7 @@ const isPasswordVisible = ref(false)
 const route = useRoute()
 const router = useRouter()
 
-const ability = useAppAbility()
+const ability = useAbility()
 
 const errors = ref<Record<string, string | undefined>>({
   email: undefined,
@@ -44,10 +41,10 @@ const login = async () => {
       },
     })
 
-    const { accessToken, userData, userAbilities } = res
+    const { accessToken, userData, userAbilityRules } = res
 
-    localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-    ability.update(userAbilities)
+    localStorage.setItem('userAbilityRules', JSON.stringify(userAbilityRules))
+    ability.update(userAbilityRules)
 
     localStorage.setItem('userData', JSON.stringify(userData))
     localStorage.setItem('accessToken', JSON.stringify(accessToken))

@@ -1,6 +1,7 @@
+import { themeConfig } from '@themeConfig'
+import { useStorage } from '@vueuse/core'
 import type { App } from 'vue'
 import { createI18n } from 'vue-i18n'
-import { themeConfig } from '@themeConfig'
 
 const messages = Object.fromEntries(
   Object.entries(
@@ -11,7 +12,7 @@ const messages = Object.fromEntries(
 
 const i18n = createI18n({
   legacy: false,
-  locale: localStorage.getItem(`${themeConfig.app.title}-language`) || themeConfig.app.i18nLanguage,
+  locale: useStorage(`${themeConfig.app.title}-language`, null).value || themeConfig.app.i18nLanguage,
   fallbackLocale: 'en',
   messages,
 })

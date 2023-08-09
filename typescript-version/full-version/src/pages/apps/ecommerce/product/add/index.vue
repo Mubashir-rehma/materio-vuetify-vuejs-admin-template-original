@@ -399,7 +399,7 @@ const inventoryTabsData = [
                               <VTextField
                                 placeholder="USA"
                                 density="compact"
-                                style="min-width: 200px;"
+                                style="min-inline-size: 200px;"
                               />
                             </div>
                           </template>
@@ -438,7 +438,7 @@ const inventoryTabsData = [
                             <VTextField
                               placeholder="40 C"
                               type="number"
-                              style="min-width: 250px;"
+                              style="min-inline-size: 250px;"
                             />
                           </div>
                         </template>
@@ -576,17 +576,18 @@ const inventoryTabsData = [
 
 .ProseMirror{
   p{
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
+
   padding: 0.5rem;
   outline: none;
 
   p.is-editor-empty:first-child::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: #adb5bd;
-  pointer-events: none;
-  height: 0;
+    block-size: 0;
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: inline-start;
+    pointer-events: none;
   }
 }
 

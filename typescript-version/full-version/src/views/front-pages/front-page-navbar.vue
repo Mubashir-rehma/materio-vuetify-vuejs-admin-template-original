@@ -375,15 +375,18 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </style>
 
 <style lang="scss">
+@use "@layouts/styles/mixins" as layoutMixins;
+
 .navbar {
   .v-toolbar__content {
     padding-inline: 1.5rem !important;
   }
 
   .v-toolbar {
-    inset-inline-start: 50% !important;
-    transform: translate(-50%) !important;
+    inset-inline: 0 !important;
+    margin-inline: auto !important;
   }
+
 }
 
 .nav-link {

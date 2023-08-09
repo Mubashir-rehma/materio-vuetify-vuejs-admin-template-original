@@ -75,7 +75,7 @@ const translateMouse = computed(() => (speed: number) => {
             </RouterLink>
           </div>
 
-          <div class="position-absolute hero-elements-img">
+          <div class="hero-elements-img">
             <RouterLink
               to="/"
               target="_blank"
@@ -108,10 +108,11 @@ section {
 }
 
 .hero-elements-img {
+  position: absolute;
   inline-size: 90%;
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  margin-block: 15%;
+  margin-inline: auto;
 }
 
 .container {

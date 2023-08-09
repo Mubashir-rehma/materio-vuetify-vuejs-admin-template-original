@@ -2,15 +2,18 @@
 import type { I18nLanguage } from '@layouts/types'
 import { themeConfig } from '@themeConfig'
 
-const props = withDefaults(defineProps<Props>(), {
-  location: 'bottom end',
-})
-
 interface Props {
-  languages: I18nLanguage[]
+  languages?: I18nLanguage[]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   location?: any
 }
+
+const props = withDefaults(defineProps<Props>(), {
+  location: 'bottom end',
+
+  // @ts-expect-error unknown type issue
+  languages: themeConfig.app.i18n.langConfig,
+})
 
 const { locale } = useI18n({ useScope: 'global' })
 const { appLocale, isAppRtl } = useThemeConfig()
@@ -18,16 +21,12 @@ const { appLocale, isAppRtl } = useThemeConfig()
 // watch and change lang attribute of html on language change
 watch(locale, val => {
   document.documentElement.setAttribute('lang', val as string)
+}, {
+  immediate: true,
 })
 
 // get current language from localstorage or use default
-const currentLang = ref([localStorage.getItem(`${themeConfig.app.title}-language`) || appLocale.value])
-
-// set isAppRtl value on mounted based on current language
-props.languages.forEach(lang => {
-  if (lang.i18nLang === currentLang.value[0])
-    isAppRtl.value = lang.isRTL
-})
+const currentLang = ref([locale.value])
 
 // change language and isAppRtl on click
 const changeLang = (lang: I18nLanguage) => {
@@ -35,10 +34,14 @@ const changeLang = (lang: I18nLanguage) => {
   locale.value = lang.i18nLang
   isAppRtl.value = lang.isRTL
 }
+
+const isLocaleEnabled = computed(() => {
+  return themeConfig.app.i18n.enable && props.languages && props.languages.length
+})
 </script>
 
 <template>
-  <IconBtn>
+  <IconBtn v-if="isLocaleEnabled">
     <VIcon icon="mdi-translate" />
 
     <!-- Menu -->

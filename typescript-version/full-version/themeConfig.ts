@@ -1,5 +1,4 @@
 import { breakpointsVuetify } from '@vueuse/core'
-
 import { VIcon } from 'vuetify/components/VIcon'
 
 // ❗ Logo SVG must be imported with ?raw suffix
@@ -19,8 +18,27 @@ export const initialConfig = Object.freeze({
     contentWidth: ContentWidth.Boxed,
     contentLayoutNav: AppContentLayoutNav.Vertical,
     overlayNavFromBreakpoint: breakpointsVuetify.md + 16, // 16 for scrollbar. Docs: https://next.vuetifyjs.com/en/features/display-and-platform/
-    enableI18n: true,
-    i18nLanguage: 'en',
+    i18n: {
+      enable: true,
+      defaultLocale: 'en',
+      langConfig: [
+        {
+          label: 'English',
+          i18nLang: 'en',
+          isRTL: false,
+        },
+        {
+          label: 'French',
+          i18nLang: 'fr',
+          isRTL: false,
+        },
+        {
+          label: 'Arabic',
+          i18nLang: 'ar',
+          isRTL: true,
+        },
+      ],
+    },
     theme: 'system',
     skin: Skins.Default,
     routeTransition: RouteTransitions.Fade,

@@ -167,7 +167,7 @@ export const useLayouts = () => {
   }
 
   const dynamicI18nProps = computed(() => (key: string, tag = 'span') => {
-    if (config.app.enableI18n) {
+    if (config.app.i18n.enable) {
       return {
         keypath: key,
         tag,

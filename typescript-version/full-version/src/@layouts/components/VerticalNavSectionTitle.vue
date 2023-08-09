@@ -24,7 +24,7 @@ const shallRenderIcon = isVerticalNavMini(windowWidth)
         mode="out-in"
       >
         <Component
-          :is="shallRenderIcon ? config.app.iconRenderer : config.app.enableI18n ? 'i18n-t' : 'span'"
+          :is="shallRenderIcon ? config.app.iconRenderer : config.app.i18n.enable ? 'i18n-t' : 'span'"
           :key="shallRenderIcon"
           :class="shallRenderIcon ? 'placeholder-icon' : 'title-text'"
           v-bind="{ ...config.icons.sectionTitlePlaceholder, ...dynamicI18nProps(item.heading, 'span') }"

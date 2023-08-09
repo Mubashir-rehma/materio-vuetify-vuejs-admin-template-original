@@ -10,7 +10,10 @@ export interface UserConfig {
     contentWidth: typeof ContentWidth[keyof typeof ContentWidth]
     contentLayoutNav: typeof AppContentLayoutNav[keyof typeof AppContentLayoutNav]
     overlayNavFromBreakpoint: number
-    enableI18n: boolean
+    i18n: {
+      enable: boolean
+      defaultLocale?: string
+    }
     iconRenderer?: Component
   }
   navbar: {
@@ -49,7 +52,10 @@ export interface Config {
     contentWidth: Ref<UserConfig['app']['contentWidth']>
     contentLayoutNav: Ref<UserConfig['app']['contentLayoutNav']>
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
-    enableI18n: UserConfig['app']['enableI18n']
+    i18n: {
+      enable: boolean
+      defaultLocale: string
+    }
     isRtl: Ref<boolean>
     iconRenderer?: UserConfig['app']['iconRenderer']
   }

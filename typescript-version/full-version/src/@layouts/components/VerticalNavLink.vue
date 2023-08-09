@@ -34,7 +34,7 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
       <TransitionGroup name="transition-slide-x">
         <!-- 👉 Title -->
         <Component
-          :is="config.app.enableI18n ? 'i18n-t' : 'span'"
+          :is="config.app.i18n.enable ? 'i18n-t' : 'span'"
           v-show="!hideTitleAndBadge"
           key="title"
           class="nav-item-title"
@@ -45,7 +45,7 @@ const hideTitleAndBadge = isVerticalNavMini(windowWidth)
 
         <!-- 👉 Badge -->
         <Component
-          :is="config.app.enableI18n ? 'i18n-t' : 'span'"
+          :is="config.app.i18n.enable ? 'i18n-t' : 'span'"
           v-if="item.badgeContent"
           v-show="!hideTitleAndBadge"
           key="badge"

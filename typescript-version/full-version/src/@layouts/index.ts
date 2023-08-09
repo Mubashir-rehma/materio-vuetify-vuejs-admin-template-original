@@ -25,7 +25,8 @@ export const createLayouts = (userConfig: UserConfig): Plugin => {
   config.app.contentWidth.value = localStorageContentWidth || userConfig.app.contentWidth
   config.app.contentLayoutNav.value = userConfig.app.contentLayoutNav
   config.app.overlayNavFromBreakpoint = userConfig.app.overlayNavFromBreakpoint
-  config.app.enableI18n = userConfig.app.enableI18n
+  config.app.i18n.enable = userConfig.app.i18n.enable
+  config.app.i18n.defaultLocale = userConfig.app.i18n.defaultLocale
   config.app.isRtl.value = false
   config.app.iconRenderer = userConfig.app.iconRenderer
 

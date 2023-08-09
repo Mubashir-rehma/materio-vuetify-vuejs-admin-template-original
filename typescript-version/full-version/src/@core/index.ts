@@ -15,8 +15,11 @@ export const defineThemeConfig = (
         contentWidth: ref(userConfig.app.contentWidth),
         contentLayoutNav: ref(userConfig.app.contentLayoutNav),
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
-        enableI18n: userConfig.app.enableI18n,
-        i18nLanguage: userConfig.app.i18nLanguage,
+        i18n: {
+          enable: userConfig.app.i18n.enable,
+          defaultLocale: userConfig.app.i18n.defaultLocale,
+          langConfig: userConfig.app.i18n.langConfig,
+        },
         theme: useStorage(`${userConfig.app.title}-theme`, userConfig.app.theme),
         skin: useStorage<ValueOf<typeof Skins>>(`${userConfig.app.title}-skin`, userConfig.app.skin),
         routeTransition: useStorage<ValueOf<typeof RouteTransitions>>(`${userConfig.app.title}-transition`, userConfig.app.routeTransition),
@@ -52,7 +55,10 @@ export const defineThemeConfig = (
         contentWidth: userConfig.app.contentWidth,
         contentLayoutNav: userConfig.app.contentLayoutNav,
         overlayNavFromBreakpoint: userConfig.app.overlayNavFromBreakpoint,
-        enableI18n: userConfig.app.enableI18n,
+        i18n: {
+          enable: userConfig.app.i18n.enable,
+          defaultLocale: userConfig.app.i18n.defaultLocale,
+        },
         iconRenderer: userConfig.app.iconRenderer,
       },
       navbar: {

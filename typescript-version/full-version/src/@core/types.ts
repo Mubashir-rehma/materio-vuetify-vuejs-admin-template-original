@@ -1,9 +1,15 @@
 import type { ValueOf } from 'type-fest'
 import type { Ref } from 'vue'
 import type { RouteTransitions, Skins } from './enums'
-import type { UserConfig as UserLayoutConfig } from '@layouts/types'
+import type { I18nLanguage, UserConfig as UserLayoutConfig } from '@layouts/types'
 
 // Type for config passed by user when registering plugin
+interface i18nType {
+  enable: boolean
+  defaultLocale?: string
+  langConfig?: I18nLanguage[]
+}
+
 export interface UserThemeConfig {
   app: {
     title: UserLayoutConfig['app']['title']
@@ -11,9 +17,8 @@ export interface UserThemeConfig {
     contentWidth: UserLayoutConfig['app']['contentWidth']
     contentLayoutNav: UserLayoutConfig['app']['contentLayoutNav']
     overlayNavFromBreakpoint: UserLayoutConfig['app']['overlayNavFromBreakpoint']
-    enableI18n: UserLayoutConfig['app']['enableI18n']
     theme: string
-    i18nLanguage: string
+    i18n: i18nType
     skin: ValueOf<typeof Skins>
     routeTransition: ValueOf<typeof RouteTransitions>
     iconRenderer: UserLayoutConfig['app']['iconRenderer']
@@ -56,8 +61,7 @@ export interface ThemeConfig {
     contentWidth: Ref<UserThemeConfig['app']['contentWidth']>
     contentLayoutNav: Ref<UserThemeConfig['app']['contentLayoutNav']>
     overlayNavFromBreakpoint: UserThemeConfig['app']['overlayNavFromBreakpoint']
-    enableI18n: UserThemeConfig['app']['enableI18n']
-    i18nLanguage: string
+    i18n: i18nType
     theme: Ref<UserThemeConfig['app']['theme']>
     skin: Ref<UserThemeConfig['app']['skin']>
     routeTransition: Ref<UserThemeConfig['app']['routeTransition']>

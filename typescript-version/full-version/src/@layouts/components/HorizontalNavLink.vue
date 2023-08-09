@@ -39,7 +39,7 @@ const { dynamicI18nProps } = useLayouts()
         v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
       />
       <Component
-        :is="config.app.enableI18n ? 'i18n-t' : 'span'"
+        :is="config.app.i18n.enable ? 'i18n-t' : 'span'"
         class="nav-item-title"
         v-bind="dynamicI18nProps(item.title, 'span')"
       >

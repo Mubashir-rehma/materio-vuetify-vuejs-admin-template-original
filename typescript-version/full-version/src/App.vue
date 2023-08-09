@@ -2,17 +2,15 @@
 import { useTheme } from 'vuetify'
 import BuyNow from '@core/components/BuyNow.vue'
 import ScrollToTop from '@core/components/ScrollToTop.vue'
-
+import initCore from '@core/initCore'
 import { hexToRgb } from '@layouts/utils'
 
-const { syncInitialLoaderTheme, syncVuetifyThemeWithTheme: syncConfigThemeWithVuetifyTheme, isAppRtl, handleSkinChanges } = useThemeConfig()
+const { isAppRtl } = useThemeConfig()
 
 const { global } = useTheme()
 
 // ℹ️ Sync current theme with initial loader theme
-syncInitialLoaderTheme()
-syncConfigThemeWithVuetifyTheme()
-handleSkinChanges()
+initCore()
 </script>
 
 <template>

@@ -11,7 +11,10 @@ export const config: Config = {
     contentWidth: ref(ContentWidth.Boxed),
     contentLayoutNav: ref(AppContentLayoutNav.Vertical),
     overlayNavFromBreakpoint: breakpointsVuetify.md,
-    enableI18n: true,
+    i18n: {
+      enable: true,
+      defaultLocale: 'en',
+    },
     isRtl: ref(false),
   },
   navbar: {

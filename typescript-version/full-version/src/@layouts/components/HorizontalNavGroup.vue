@@ -63,7 +63,7 @@ watch(() => route.path, () => {
         v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
       />
       <Component
-        :is="config.app.enableI18n ? 'i18n-t' : 'span'"
+        :is="config.app.i18n.enable ? 'i18n-t' : 'span'"
         v-bind="dynamicI18nProps(item.title, 'span')"
         class="nav-item-title"
       >

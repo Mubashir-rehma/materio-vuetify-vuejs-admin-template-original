@@ -63,6 +63,9 @@ export default defineConfig({
         './src/plugins/*/composables/*',
       ],
       vueTemplate: true,
+
+      // ℹ️ Disabled to avoid confusion & accidental usage
+      ignore: ['useCookies'],
     }),
 
     // Docs: https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n#intlifyunplugin-vue-i18n

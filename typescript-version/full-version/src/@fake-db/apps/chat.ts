@@ -1,6 +1,4 @@
-import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from './../types.d'
-import mock from '@/@fake-db/mock'
-import { genId } from '@/@fake-db/utils'
+import type { Chat, ChatContact } from './../types.d'
 
 // Images
 import avatar1 from '@images/avatars/avatar-1.png'
@@ -309,101 +307,101 @@ const database: Database = {
 // ------------------------------------------------
 // GET: Return Chats Contacts and Contacts
 // ------------------------------------------------
-mock.onGet('/apps/chat/chats-and-contacts').reply(config => {
-  const { q = '' }: { q?: string } = config.params
+// mock.onGet('/apps/chat/chats-and-contacts').reply(config => {
+//   const { q = '' }: { q?: string } = config.params
 
-  const qLowered = q.toLowerCase()
+//   const qLowered = q.toLowerCase()
 
-  const chatsContacts: ChatContactWithChat[] = database.chats
-    .map(chat => {
-      const contact = JSON.parse(JSON.stringify((database.contacts.find(c => c.id === chat.userId) as ChatContact)))
+//   const chatsContacts: ChatContactWithChat[] = database.chats
+//     .map(chat => {
+//       const contact = JSON.parse(JSON.stringify((database.contacts.find(c => c.id === chat.userId) as ChatContact)))
 
-      contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages.at(-1) }
+//       contact.chat = { id: chat.id, unseenMsgs: chat.unseenMsgs, lastMessage: chat.messages.at(-1) }
 
-      return contact
-    })
-    .reverse()
+//       return contact
+//     })
+//     .reverse()
 
-  const profileUserData: ChatContact = database.profileUser
+//   const profileUserData: ChatContact = database.profileUser
 
-  const response = {
-    chatsContacts: chatsContacts.filter(c => c.fullName.toLowerCase().includes(qLowered)),
-    contacts: database.contacts.filter(c => c.fullName.toLowerCase().includes(qLowered)),
-    profileUser: profileUserData,
-  }
+//   const response = {
+//     chatsContacts: chatsContacts.filter(c => c.fullName.toLowerCase().includes(qLowered)),
+//     contacts: database.contacts.filter(c => c.fullName.toLowerCase().includes(qLowered)),
+//     profileUser: profileUserData,
+//   }
 
-  return [200, response]
-})
-
-// ------------------------------------------------
-// GET: Return Single Chat
-// ------------------------------------------------
-mock.onGet('/apps/chat/users/profile-user').reply(() => [200, database.profileUser])
+//   return [200, response]
+// })
 
 // ------------------------------------------------
 // GET: Return Single Chat
 // ------------------------------------------------
-mock.onGet(/\/apps\/chat\/chats\/\d+/).reply(config => {
-  // Get user id from URL
-  const userId = Number(config.url?.substring(config.url.lastIndexOf('/') + 1))
+// mock.onGet('/apps/chat/users/profile-user').reply(() => [200, database.profileUser])
 
-  const chat = database.chats.find(c => c.userId === userId)
-  if (chat)
-    chat.unseenMsgs = 0
+// ------------------------------------------------
+// GET: Return Single Chat
+// ------------------------------------------------
+// mock.onGet(/\/apps\/chat\/chats\/\d+/).reply(config => {
+//   // Get user id from URL
+//   const userId = Number(config.url?.substring(config.url.lastIndexOf('/') + 1))
 
-  return [
-    200,
-    {
-      chat,
-      contact: database.contacts.find(c => c.id === userId),
-    },
-  ]
-})
+//   const chat = database.chats.find(c => c.userId === userId)
+//   if (chat)
+//     chat.unseenMsgs = 0
+
+//   return [
+//     200,
+//     {
+//       chat,
+//       contact: database.contacts.find(c => c.id === userId),
+//     },
+//   ]
+// })
 
 // ------------------------------------------------
 // POST: Add new chat message
 // ------------------------------------------------
-mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
-  // Get user id from URL
-  const contactId = Number(config.url?.substring(config.url.lastIndexOf('/') + 1))
+// mock.onPost(/\/apps\/chat\/chats\/\d+/).reply(config => {
+//   // Get user id from URL
+//   const contactId = Number(config.url?.substring(config.url.lastIndexOf('/') + 1))
 
-  // Get message from post data
-  const { message, senderId } = JSON.parse(config.data)
+//   // Get message from post data
+//   const { message, senderId } = JSON.parse(config.data)
 
-  let activeChat = database.chats.find(chat => chat.userId === contactId)
+//   let activeChat = database.chats.find(chat => chat.userId === contactId)
 
-  const newMessageData: ChatMessage = {
-    message,
-    time: String(new Date()),
-    senderId,
-    feedback: {
-      isSent: true,
-      isDelivered: false,
-      isSeen: false,
-    },
-  }
+//   const newMessageData: ChatMessage = {
+//     message,
+//     time: String(new Date()),
+//     senderId,
+//     feedback: {
+//       isSent: true,
+//       isDelivered: false,
+//       isSeen: false,
+//     },
+//   }
 
-  // If there's new chat for user create one
-  let isNewChat = false
-  if (activeChat === undefined) {
-    isNewChat = true
+//   // If there's new chat for user create one
+//   let isNewChat = false
+//   if (activeChat === undefined) {
+//     isNewChat = true
 
-    database.chats.push({
-      id: genId(database.chats),
-      userId: contactId,
-      unseenMsgs: 0,
-      messages: [],
-    })
-    activeChat = database.chats.at(-1)
-  }
-  else {
-    activeChat.messages.push(newMessageData)
-  }
+//     database.chats.push({
+//       id: genId(database.chats),
+//       userId: contactId,
+//       unseenMsgs: 0,
+//       messages: [],
+//     })
+//     activeChat = database.chats.at(-1)
+//   }
+//   else {
+//     activeChat.messages.push(newMessageData)
+//   }
 
-  const response: { msg: ChatMessage; chat?: Chat } = { msg: newMessageData }
+//   const response: { msg: ChatMessage; chat?: Chat } = { msg: newMessageData }
 
-  if (isNewChat)
-    response.chat = activeChat
+//   if (isNewChat)
+//     response.chat = activeChat
 
-  return [201, response]
-})
+//   return [201, response]
+// })

@@ -1,6 +1,4 @@
 import type { Course } from '../types'
-import mock from '@/@fake-db/mock'
-import { paginateArray } from '@/@fake-db/utils'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar12 from '@images/avatars/avatar-12.png'
@@ -578,50 +576,49 @@ const courseDetails = {
   ],
 }
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/academy/courses').reply(config => {
-  const { q = '', options = {}, hideCompleted = false, status = 'all' } = config.params ?? {}
+// mock.onGet('/apps/academy/courses').reply(config => {
+//   const { q = '', options = {}, hideCompleted = false, status = 'all' } = config.params ?? {}
 
-  const { sortBy = '', page = 1, itemsPerPage = 10 } = options
+//   const { sortBy = '', page = 1, itemsPerPage = 10 } = options
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  const queryLowered = q.toLowerCase()
+//   const queryLowered = q.toLowerCase()
 
-  const filteredCourses = courses.filter(course => {
-    return (
+//   const filteredCourses = courses.filter(course => {
+//     return (
 
-      (
-        course.courseTitle.toLowerCase().includes(queryLowered)
-        || course.user.toLowerCase().includes(queryLowered)
-      )
-        && !(hideCompleted && course.completedTasks === course.totalTasks)
-        && (status === 'completed' ? course.completedTasks === course.totalTasks : true)
-    )
-  })
+//       (
+//         course.courseTitle.toLowerCase().includes(queryLowered)
+//         || course.user.toLowerCase().includes(queryLowered)
+//       )
+//         && !(hideCompleted && course.completedTasks === course.totalTasks)
+//         && (status === 'completed' ? course.completedTasks === course.totalTasks : true)
+//     )
+//   })
 
-  if (sort.length) {
-    if (sort[0].key === 'courseName') {
-      filteredCourses.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.courseTitle.localeCompare(b.courseTitle)
-        else
-          return b.courseTitle.localeCompare(a.courseTitle)
-      })
-    }
-    if (sort[0].key === 'progress') {
-      filteredCourses.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return (a.completedTasks / a.totalTasks) - (b.completedTasks / b.totalTasks)
-        else
-          return (b.completedTasks / b.totalTasks) - (a.completedTasks / a.totalTasks)
-      })
-    }
-  }
+//   if (sort.length) {
+//     if (sort[0].key === 'courseName') {
+//       filteredCourses.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.courseTitle.localeCompare(b.courseTitle)
+//         else
+//           return b.courseTitle.localeCompare(a.courseTitle)
+//       })
+//     }
+//     if (sort[0].key === 'progress') {
+//       filteredCourses.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return (a.completedTasks / a.totalTasks) - (b.completedTasks / b.totalTasks)
+//         else
+//           return (b.completedTasks / b.totalTasks) - (a.completedTasks / a.totalTasks)
+//       })
+//     }
+//   }
 
-  return [200, { courses: paginateArray(filteredCourses, itemsPerPage, page), total: filteredCourses.length }]
-})
+//   return [200, { courses: paginateArray(filteredCourses, itemsPerPage, page), total: filteredCourses.length }]
+// })
 
-mock.onGet('/apps/academy/course-details').reply(() => {
-  return [200, courseDetails]
-})
+// mock.onGet('/apps/academy/course-details').reply(() => {
+//   return [200, courseDetails]
+// })

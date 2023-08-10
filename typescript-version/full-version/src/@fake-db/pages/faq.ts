@@ -1,4 +1,3 @@
-import mock from '@/@fake-db/mock'
 import type { FaqCategory } from '@/@fake-db/types'
 
 const database: FaqCategory[] = [
@@ -109,21 +108,21 @@ const database: FaqCategory[] = [
   },
 ]
 
-mock.onGet('/pages/faqs').reply(config => {
-  const { q = '' } = config.params ?? { }
+// mock.onGet('/pages/faqs').reply(config => {
+//   const { q = '' } = config.params ?? { }
 
-  const queryLowered = q.toLowerCase()
+//   const queryLowered = q.toLowerCase()
 
-  const filteredData: FaqCategory[] = []
+//   const filteredData: FaqCategory[] = []
 
-  Object.entries(database).forEach(([_, faqObj]) => {
-    const filteredQAndA = faqObj.faqs.filter(obj => {
-      return obj.question.toLowerCase().includes(queryLowered)
-    })
+//   Object.entries(database).forEach(([_, faqObj]) => {
+//     const filteredQAndA = faqObj.faqs.filter(obj => {
+//       return obj.question.toLowerCase().includes(queryLowered)
+//     })
 
-    if (filteredQAndA.length)
-      filteredData.push({ ...faqObj, faqs: filteredQAndA })
-  })
+//     if (filteredQAndA.length)
+//       filteredData.push({ ...faqObj, faqs: filteredQAndA })
+//   })
 
-  return [200, filteredData]
-})
+//   return [200, filteredData]
+// })

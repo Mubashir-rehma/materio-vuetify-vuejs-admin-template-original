@@ -1,6 +1,4 @@
 // ** Mock Adapter
-import is from '@sindresorhus/is'
-import mock from '@/@fake-db/mock'
 
 // ** Types
 import type { SearchResults } from '@/@fake-db/types'
@@ -586,39 +584,39 @@ const database: SearchResults[] = [
 
 // ** GET Search Data
 
-mock.onGet('/app-bar/search').reply(config => {
-  const { q = '' } = config.params
-  const searchQuery = is.string(q) ? q : undefined
-  const queryLowered = (searchQuery ?? '').toString().toLowerCase()
+// mock.onGet('/app-bar/search').reply(config => {
+//   const { q = '' } = config.params
+//   const searchQuery = is.string(q) ? q : undefined
+//   const queryLowered = (searchQuery ?? '').toString().toLowerCase()
 
-  const filteredSearchData = [] as SearchResults[]
+//   const filteredSearchData = [] as SearchResults[]
 
-  database.forEach(item => {
-    if (item.children) {
-      const matchingChildren = item.children.filter(
-        child => child.title.toLowerCase().includes(queryLowered) || child.category.toLowerCase().includes(queryLowered),
-      )
+//   database.forEach(item => {
+//     if (item.children) {
+//       const matchingChildren = item.children.filter(
+//         child => child.title.toLowerCase().includes(queryLowered) || child.category.toLowerCase().includes(queryLowered),
+//       )
 
-      if (matchingChildren.length > 0) {
-        const parentCopy = { ...item }
+//       if (matchingChildren.length > 0) {
+//         const parentCopy = { ...item }
 
-        if (matchingChildren.length > 5)
-          parentCopy.children = matchingChildren.slice(0, 5)
+//         if (matchingChildren.length > 5)
+//           parentCopy.children = matchingChildren.slice(0, 5)
 
-        else
-          parentCopy.children = matchingChildren
+//         else
+//           parentCopy.children = matchingChildren
 
-        filteredSearchData.push(parentCopy)
-      }
-    }
-  })
+//         filteredSearchData.push(parentCopy)
+//       }
+//     }
+//   })
 
-  if (filteredSearchData.length > 1) {
-    filteredSearchData.forEach((item, index) => {
-      if (item.children.length > 3)
-        filteredSearchData[index].children.splice(0, 3)
-    })
-  }
+//   if (filteredSearchData.length > 1) {
+//     filteredSearchData.forEach((item, index) => {
+//       if (item.children.length > 3)
+//         filteredSearchData[index].children.splice(0, 3)
+//     })
+//   }
 
-  return [200, [...filteredSearchData]]
-})
+//   return [200, [...filteredSearchData]]
+// })

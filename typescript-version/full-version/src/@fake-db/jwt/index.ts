@@ -1,6 +1,4 @@
-import mock from '@/@fake-db/mock'
-import type { User, UserOut } from '@/@fake-db/types'
-import { genId } from '@/@fake-db/utils'
+import type { User } from '@/@fake-db/types'
 
 // TODO: Use jsonwebtoken pkg
 // ℹ️ Created from https://jwt.io/ using HS256 algorithm
@@ -53,114 +51,114 @@ const database: User[] = [
   },
 ]
 
-mock.onPost('/auth/login').reply(request => {
-  const { email, password } = JSON.parse(request.data)
+// mock.onPost('/auth/login').reply(request => {
+//   const { email, password } = JSON.parse(request.data)
 
-  let errors: Record<string, string[]> = {
-    email: ['Something went wrong'],
-  }
+//   let errors: Record<string, string[]> = {
+//     email: ['Something went wrong'],
+//   }
 
-  const user = database.find(u => u.email === email && u.password === password)
+//   const user = database.find(u => u.email === email && u.password === password)
 
-  if (user) {
-    try {
-      const accessToken = userTokens[user.id]
+//   if (user) {
+//     try {
+//       const accessToken = userTokens[user.id]
 
-      // We are duplicating user here
-      const userData = { ...user }
+//       // We are duplicating user here
+//       const userData = { ...user }
 
-      const userOutData = Object.fromEntries(
-        Object.entries(userData)
-          .filter(
-            ([key, _]) => !(key === 'password' || key === 'abilities'),
-          ),
-      ) as UserOut['userData']
+//       const userOutData = Object.fromEntries(
+//         Object.entries(userData)
+//           .filter(
+//             ([key, _]) => !(key === 'password' || key === 'abilities'),
+//           ),
+//       ) as UserOut['userData']
 
-      const response: UserOut = {
-        userAbilities: userData.abilityRules,
-        accessToken,
-        userData: userOutData,
-      }
+//       const response: UserOut = {
+//         userAbilities: userData.abilityRules,
+//         accessToken,
+//         userData: userOutData,
+//       }
 
-      //   const accessToken = jwt.sign({ id: user.id }, jwtSecret)
+//       //   const accessToken = jwt.sign({ id: user.id }, jwtSecret)
 
-      return [200, response]
-    }
-    catch (e: unknown) {
-      errors = { email: [e as string] }
-    }
-  }
-  else {
-    errors = {
-      email: ['Email or Password is Invalid'],
-    }
-  }
+//       return [200, response]
+//     }
+//     catch (e: unknown) {
+//       errors = { email: [e as string] }
+//     }
+//   }
+//   else {
+//     errors = {
+//       email: ['Email or Password is Invalid'],
+//     }
+//   }
 
-  return [400, { errors }]
-})
+//   return [400, { errors }]
+// })
 
-mock.onPost('/auth/register').reply(request => {
-  const { username, email, password } = JSON.parse(request.data)
+// mock.onPost('/auth/register').reply(request => {
+//   const { username, email, password } = JSON.parse(request.data)
 
-  // If not any of data is missing return 400
-  if (!(username && email && password))
-    return [400]
+//   // If not any of data is missing return 400
+//   if (!(username && email && password))
+//     return [400]
 
-  const isEmailAlreadyInUse = database.find(user => user.email === email)
-  const isUsernameAlreadyInUse = database.find(user => user.username === username)
+//   const isEmailAlreadyInUse = database.find(user => user.email === email)
+//   const isUsernameAlreadyInUse = database.find(user => user.username === username)
 
-  const errors = {
-    password: !password ? ['Please enter password'] : null,
-    email: (() => {
-      if (!email)
-        return ['Please enter your email.']
-      if (isEmailAlreadyInUse)
-        return ['This email is already in use.']
+//   const errors = {
+//     password: !password ? ['Please enter password'] : null,
+//     email: (() => {
+//       if (!email)
+//         return ['Please enter your email.']
+//       if (isEmailAlreadyInUse)
+//         return ['This email is already in use.']
 
-      return null
-    })(),
-    username: (() => {
-      if (!username)
-        return ['Please enter your username.']
-      if (isUsernameAlreadyInUse)
-        return ['This username is already in use.']
+//       return null
+//     })(),
+//     username: (() => {
+//       if (!username)
+//         return ['Please enter your username.']
+//       if (isUsernameAlreadyInUse)
+//         return ['This username is already in use.']
 
-      return null
-    })(),
-  }
+//       return null
+//     })(),
+//   }
 
-  if (!errors.username && !errors.email) {
-    // Calculate user id
-    const userData: User = {
-      id: genId(database),
-      email,
-      password,
-      username,
-      fullName: '',
-      role: 'admin',
-      abilityRules: [
-        {
-          action: 'manage',
-          subject: 'all',
-        },
-      ],
-    }
+//   if (!errors.username && !errors.email) {
+//     // Calculate user id
+//     const userData: User = {
+//       id: genId(database),
+//       email,
+//       password,
+//       username,
+//       fullName: '',
+//       role: 'admin',
+//       abilityRules: [
+//         {
+//           action: 'manage',
+//           subject: 'all',
+//         },
+//       ],
+//     }
 
-    database.push(userData)
+//     database.push(userData)
 
-    const accessToken = userTokens[userData.id]
+//     const accessToken = userTokens[userData.id]
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password: _, abilityRules: abilities, ...user } = userData
+//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//     const { password: _, abilityRules: abilities, ...user } = userData
 
-    const response = {
-      userData: user,
-      accessToken,
-      userAbilities: abilities,
-    }
+//     const response = {
+//       userData: user,
+//       accessToken,
+//       userAbilities: abilities,
+//     }
 
-    return [200, response]
-  }
+//     return [200, response]
+//   }
 
-  return [400, { error: errors }]
-})
+//   return [400, { error: errors }]
+// })

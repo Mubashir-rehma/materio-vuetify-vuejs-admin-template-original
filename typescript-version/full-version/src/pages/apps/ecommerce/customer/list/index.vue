@@ -46,7 +46,7 @@ const headers = [
   { title: 'Total Spent', key: 'total_spent' },
 ]
 
-watchEffect(fetchCustomers)
+watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
 </script>
 
 <template>

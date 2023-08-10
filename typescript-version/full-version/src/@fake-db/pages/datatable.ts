@@ -1,4 +1,3 @@
-import mock from '@/@fake-db/mock'
 import type { SalesDetails } from '@/@fake-db/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
@@ -1358,4 +1357,4 @@ const data: SalesDetails[] = [
   },
 ]
 
-mock.onGet('/pages/datatables').reply(() => [200, data])
+// mock.onGet('/pages/datatables').reply(() => [200, data])

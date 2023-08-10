@@ -1,6 +1,4 @@
-import mock from '@/@fake-db/mock'
 import type { Invoice } from '@/@fake-db/types'
-import { paginateArray } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -917,135 +915,135 @@ const database: Invoice[] = [
 ]
 
 // 👉 Get invoice list
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/invoices').reply(config => {
-  const { q = '', status = null, startDate = '', endDate = '', options = {} } = config.params ?? {}
 
-  const { sortBy = '', page = 1, itemsPerPage = 10 } = options
+// mock.onGet('/apps/invoices').reply(config => {
+//   const { q = '', status = null, startDate = '', endDate = '', options = {} } = config.params ?? {}
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const { sortBy = '', page = 1, itemsPerPage = 10 } = options
 
-  const queryLowered = q.toLowerCase()
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  // Filtering invoices
-  let filteredInvoices = database.filter(
-    invoice => (
-      (
-        invoice.client.name.toLowerCase().includes(queryLowered)
-        || invoice.client.companyEmail.toLowerCase().includes(queryLowered))
-        && invoice.invoiceStatus === (status || invoice.invoiceStatus)
-    ),
-  ).reverse()
+//   const queryLowered = q.toLowerCase()
 
-  // Sorting invoices
-  if (sort.length) {
-    if (sort[0]?.key === 'client') {
-      filteredInvoices = filteredInvoices.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.client.name.localeCompare(b.client.name)
+//   // Filtering invoices
+//   let filteredInvoices = database.filter(
+//     invoice => (
+//       (
+//         invoice.client.name.toLowerCase().includes(queryLowered)
+//         || invoice.client.companyEmail.toLowerCase().includes(queryLowered))
+//         && invoice.invoiceStatus === (status || invoice.invoiceStatus)
+//     ),
+//   ).reverse()
 
-        return b.client.name.localeCompare(a.client.name)
-      })
-    }
-    else if (sort[0]?.key === 'total') {
-      filteredInvoices = filteredInvoices.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.total - b.total
+//   // Sorting invoices
+//   if (sort.length) {
+//     if (sort[0]?.key === 'client') {
+//       filteredInvoices = filteredInvoices.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.client.name.localeCompare(b.client.name)
 
-        return b.total - a.total
-      })
-    }
-    else if (sort[0]?.key === 'id') {
-      filteredInvoices = filteredInvoices.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.id - b.id
+//         return b.client.name.localeCompare(a.client.name)
+//       })
+//     }
+//     else if (sort[0]?.key === 'total') {
+//       filteredInvoices = filteredInvoices.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.total - b.total
 
-        return b.id - a.id
-      })
-    }
-    else if (sort[0]?.key === 'date') {
-      filteredInvoices = filteredInvoices.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return new Date(a.issuedDate).getTime() - new Date(b.issuedDate).getTime()
+//         return b.total - a.total
+//       })
+//     }
+//     else if (sort[0]?.key === 'id') {
+//       filteredInvoices = filteredInvoices.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.id - b.id
 
-        return new Date(b.issuedDate).getTime() - new Date(a.issuedDate).getTime()
-      })
-    }
-    else if (sort[0]?.key === 'balance') {
-      filteredInvoices = filteredInvoices.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.balance - b.balance
+//         return b.id - a.id
+//       })
+//     }
+//     else if (sort[0]?.key === 'date') {
+//       filteredInvoices = filteredInvoices.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return new Date(a.issuedDate).getTime() - new Date(b.issuedDate).getTime()
 
-        return b.balance - a.balance
-      })
-    }
-  }
+//         return new Date(b.issuedDate).getTime() - new Date(a.issuedDate).getTime()
+//       })
+//     }
+//     else if (sort[0]?.key === 'balance') {
+//       filteredInvoices = filteredInvoices.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.balance - b.balance
 
-  // filtering invoices by date
-  if (startDate && endDate) {
-    filteredInvoices = filteredInvoices.filter(invoiceObj => {
-      const start = new Date(startDate).getTime()
-      const end = new Date(endDate).getTime()
-      const issuedDate = new Date(invoiceObj.issuedDate).getTime()
+//         return b.balance - a.balance
+//       })
+//     }
+//   }
 
-      return issuedDate >= start && issuedDate <= end
-    })
-  }
+//   // filtering invoices by date
+//   if (startDate && endDate) {
+//     filteredInvoices = filteredInvoices.filter(invoiceObj => {
+//       const start = new Date(startDate).getTime()
+//       const end = new Date(endDate).getTime()
+//       const issuedDate = new Date(invoiceObj.issuedDate).getTime()
 
-  const totalInvoices = filteredInvoices.length
+//       return issuedDate >= start && issuedDate <= end
+//     })
+//   }
 
-  return [200, { invoices: paginateArray(filteredInvoices, itemsPerPage, page), totalInvoices, page: page > Math.ceil(totalInvoices / itemsPerPage) ? 1 : page }]
-})
+//   const totalInvoices = filteredInvoices.length
 
-// 👉 Get a single invoice
-mock.onGet(/\/apps\/invoices\/\d+/).reply(config => {
-  // Get event id from URL
-  const invoiceId = config.url?.substring(config.url.lastIndexOf('/') + 1)
+//   return [200, { invoices: paginateArray(filteredInvoices, itemsPerPage, page), totalInvoices, page: page > Math.ceil(totalInvoices / itemsPerPage) ? 1 : page }]
+// })
 
-  // Convert Id to number
-  const id = Number(invoiceId)
+// // 👉 Get a single invoice
+// mock.onGet(/\/apps\/invoices\/\d+/).reply(config => {
+//   // Get event id from URL
+//   const invoiceId = config.url?.substring(config.url.lastIndexOf('/') + 1)
 
-  const invoice = database.find(e => e.id === id)
+//   // Convert Id to number
+//   const id = Number(invoiceId)
 
-  if (!invoice)
-    return [404, { message: 'Unable to find the requested invoice' }]
+//   const invoice = database.find(e => e.id === id)
 
-  const responseData = {
-    invoice,
-    paymentDetails: {
-      totalDue: '$12,110.55',
-      bankName: 'American Bank',
-      country: 'United States',
-      iban: 'ETD95476213874685',
-      swiftCode: 'BR91905',
-    },
-  }
+//   if (!invoice)
+//     return [404, { message: 'Unable to find the requested invoice' }]
 
-  return [200, responseData]
-})
+//   const responseData = {
+//     invoice,
+//     paymentDetails: {
+//       totalDue: '$12,110.55',
+//       bankName: 'American Bank',
+//       country: 'United States',
+//       iban: 'ETD95476213874685',
+//       swiftCode: 'BR91905',
+//     },
+//   }
 
-// 👉 Get Client
-mock.onGet('/apps/invoice/clients').reply(() => {
-  const clients = database.map(invoice => invoice.client)
+//   return [200, responseData]
+// })
 
-  return [200, clients.slice(0, 5)]
-})
+// // 👉 Get Client
+// mock.onGet('/apps/invoice/clients').reply(() => {
+//   const clients = database.map(invoice => invoice.client)
 
-// 👉 Delete Invoice
-mock.onDelete(/\/apps\/invoices\/\d+/).reply(config => {
-  // Get event id from URL
-  const invoiceId = config.url?.substring(config.url.lastIndexOf('/') + 1)
+//   return [200, clients.slice(0, 5)]
+// })
 
-  // Convert Id to number
-  const id = Number(invoiceId)
+// // 👉 Delete Invoice
+// mock.onDelete(/\/apps\/invoices\/\d+/).reply(config => {
+//   // Get event id from URL
+//   const invoiceId = config.url?.substring(config.url.lastIndexOf('/') + 1)
 
-  const invoiceIndex = database.findIndex(e => e.id === id)
+//   // Convert Id to number
+//   const id = Number(invoiceId)
 
-  if (invoiceIndex >= 0) {
-    database.splice(invoiceIndex, 1)
+//   const invoiceIndex = database.findIndex(e => e.id === id)
 
-    return [200]
-  }
+//   if (invoiceIndex >= 0) {
+//     database.splice(invoiceIndex, 1)
 
-  return [400]
-})
+//     return [200]
+//   }
+
+//   return [400]
+// })

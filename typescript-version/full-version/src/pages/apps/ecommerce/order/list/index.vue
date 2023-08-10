@@ -84,7 +84,7 @@ const deleteOrder = async (id: number) => {
   fetchOrders()
 }
 
-watchEffect(fetchOrders)
+watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
 </script>
 
 <template>

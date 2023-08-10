@@ -2,7 +2,7 @@
 import misc404 from '@images/pages/404.png'
 
 definePage({
-  alias: '/pages/misc/not-found',
+  alias: '/pages/misc/not-found/:error(.*)',
   meta: {
     layout: 'blank',
     public: true,

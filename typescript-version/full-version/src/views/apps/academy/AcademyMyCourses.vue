@@ -40,10 +40,11 @@ const fetchCourses = async () => {
   }
 }
 
-watchEffect(fetchCourses)
 watch([hideCompleted, status], () => {
   options.value.page = 1
 })
+
+watch([searchQuery, options, hideCompleted, status], fetchCourses, { deep: true, immediate: true })
 
 const resolveChipColor = (tags: string) => {
   if (tags === 'Web')

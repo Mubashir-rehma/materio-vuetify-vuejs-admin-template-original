@@ -57,7 +57,7 @@ const fetchUsers = async () => {
   }
 }
 
-watchEffect(fetchUsers)
+watch([searchQuery, selectedRole, selectedPlan, selectedStatus, options], fetchUsers, { deep: true, immediate: true })
 
 // 👉 search filters
 const roles = [

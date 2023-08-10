@@ -56,7 +56,7 @@ const resolveChipColor = (warning: string) => {
     return 'info'
 }
 
-watchEffect(fetchVehicles)
+watch([options], fetchVehicles, { deep: true, immediate: true })
 </script>
 
 <template>

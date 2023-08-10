@@ -1,6 +1,4 @@
-import mock from '@/@fake-db/mock'
 import type { CalendarEvent } from '@/@fake-db/types'
-import { genId } from '@/@fake-db/utils'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
@@ -125,53 +123,53 @@ const data: { events: CalendarEvent[] } = {
 // ------------------------------------------------
 // GET: Return calendar events
 // ------------------------------------------------
-mock.onGet('/apps/calendar/events').reply(config => {
-  // Get requested calendars as Array
-  const calendars = config.params.calendars.split(',')
+// mock.onGet('/apps/calendar/events').reply(config => {
+//   // Get requested calendars as Array
+//   const calendars = config.params.calendars.split(',')
 
-  return [200, data.events.filter(event => calendars.includes(event.extendedProps.calendar))]
-})
+//   return [200, data.events.filter(event => calendars.includes(event.extendedProps.calendar))]
+// })
 
 // ------------------------------------------------
 // POST: Add new event
 // ------------------------------------------------
-mock.onPost('/apps/calendar/events').reply(config => {
-  // Get event from post data
-  const { event } = JSON.parse(config.data)
+// mock.onPost('/apps/calendar/events').reply(config => {
+//   // Get event from post data
+//   const { event } = JSON.parse(config.data)
 
-  event.id = String(genId(data.events))
+//   event.id = String(genId(data.events))
 
-  data.events.push(event)
+//   data.events.push(event)
 
-  return [201, { event }]
-})
+//   return [201, { event }]
+// })
 
 // ------------------------------------------------
 // POST: Update Event
 // ------------------------------------------------
-mock.onPost(/\/apps\/calendar\/events\/\d+/).reply(config => {
-  const { event: eventData } = JSON.parse(config.data)
+// mock.onPost(/\/apps\/calendar\/events\/\d+/).reply(config => {
+//   const { event: eventData } = JSON.parse(config.data)
 
-  const event = data.events.find(e => e.id === eventData.id)
-  if (event) {
-    Object.assign(event, eventData)
+//   const event = data.events.find(e => e.id === eventData.id)
+//   if (event) {
+//     Object.assign(event, eventData)
 
-    return [200, { event }]
-  }
+//     return [200, { event }]
+//   }
 
-  return [400, { message: 'Something went wrong' }]
-})
+//   return [400, { message: 'Something went wrong' }]
+// })
 
 // ------------------------------------------------
 // DELETE: Remove Event
 // ------------------------------------------------
-mock.onDelete(/\/apps\/calendar\/events\/\d+/).reply(config => {
-  // Get event id from URL
-  const eventId = config.url?.substring(config.url.lastIndexOf('/') + 1)
+// mock.onDelete(/\/apps\/calendar\/events\/\d+/).reply(config => {
+//   // Get event id from URL
+//   const eventId = config.url?.substring(config.url.lastIndexOf('/') + 1)
 
-  const eventIndex = data.events.findIndex(e => e.id === eventId)
+//   const eventIndex = data.events.findIndex(e => e.id === eventId)
 
-  data.events.splice(eventIndex, 1)
+//   data.events.splice(eventIndex, 1)
 
-  return [200]
-})
+//   return [200]
+// })

@@ -1,5 +1,4 @@
 // ** Mock Adapter
-import mock from '@/@fake-db/mock'
 
 // ** Types
 import type {
@@ -673,27 +672,27 @@ const projectTable: ProjectTableRow[] = [
   },
 ]
 
-mock.onGet('/pages/profile').reply(config => {
-  const { tab = '' } = config.params ?? ''
+// mock.onGet('/pages/profile').reply(config => {
+//   const { tab = '' } = config.params ?? ''
 
-  return [200, data[tab as keyof typeof data]]
-})
+//   return [200, data[tab as keyof typeof data]]
+// })
 
-mock.onGet('/pages/profile-header').reply(() => {
-  return [200, data.profileHeader]
-})
+// mock.onGet('/pages/profile-header').reply(() => {
+//   return [200, data.profileHeader]
+// })
 
-mock.onGet('/pages/profile-table').reply(config => {
-  const { q = '' } = config.params ?? ''
-  const queryLowered = q.toLowerCase()
+// mock.onGet('/pages/profile-table').reply(config => {
+//   const { q = '' } = config.params ?? ''
+//   const queryLowered = q.toLowerCase()
 
-  const filteredData = projectTable.filter(row => {
-    return (
-      row.name.toLowerCase().includes(queryLowered)
-      || row.date.toLowerCase().includes(queryLowered)
-      || row.leader.toLowerCase().includes(queryLowered)
-    )
-  })
+//   const filteredData = projectTable.filter(row => {
+//     return (
+//       row.name.toLowerCase().includes(queryLowered)
+//       || row.date.toLowerCase().includes(queryLowered)
+//       || row.leader.toLowerCase().includes(queryLowered)
+//     )
+//   })
 
-  return [200, filteredData]
-})
+//   return [200, filteredData]
+// })

@@ -110,7 +110,7 @@ const fetchProducts = async () => {
   }
 }
 
-watchEffect(fetchProducts)
+watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], fetchProducts, { deep: true, immediate: true })
 </script>
 
 <template>

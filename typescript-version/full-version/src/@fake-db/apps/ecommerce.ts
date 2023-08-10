@@ -1,6 +1,4 @@
 import type { Customer, ECommerceProduct, Order, Review } from '../types'
-import mock from '@/@fake-db/mock'
-import { paginateArray } from '@/@fake-db/utils'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar10 from '@images/avatars/avatar-10.png'
 import avatar11 from '@images/avatars/avatar-11.png'
@@ -5007,356 +5005,356 @@ const customerData = <Customer[]> [
 ]
 
 // 👉 Get Customers List
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/ecommerce/customers/list').reply(config => {
-  const { q = '', options = {} } = config.params ?? {}
 
-  const { sortBy = '', page = 1, itemsPerPage = 10 } = options
+// mock.onGet('/apps/ecommerce/customers/list').reply(config => {
+//   const { q = '', options = {} } = config.params ?? {}
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const { sortBy = '', page = 1, itemsPerPage = 10 } = options
 
-  const queryLowered = q.toLowerCase()
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  const filteredCustomers = customerData.filter(customer => {
-    return (
-      customer.customer.toLowerCase().includes(queryLowered)
-      || customer.country.toLowerCase().includes(queryLowered)
-      || customer.email.toLowerCase().includes(queryLowered)
-    )
-  }).reverse()
+//   const queryLowered = q.toLowerCase()
 
-  // Sort Customers
-  if (sort.length) {
-    if (sort[0].key === 'customer') {
-      filteredCustomers.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.customer.localeCompare(b.customer)
+//   const filteredCustomers = customerData.filter(customer => {
+//     return (
+//       customer.customer.toLowerCase().includes(queryLowered)
+//       || customer.country.toLowerCase().includes(queryLowered)
+//       || customer.email.toLowerCase().includes(queryLowered)
+//     )
+//   }).reverse()
 
-        return b.customer.localeCompare(a.customer)
-      })
-    }
-    if (sort[0].key === 'country') {
-      filteredCustomers.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.country.localeCompare(b.country)
+//   // Sort Customers
+//   if (sort.length) {
+//     if (sort[0].key === 'customer') {
+//       filteredCustomers.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.customer.localeCompare(b.customer)
 
-        return b.country.localeCompare(a.country)
-      })
-    }
+//         return b.customer.localeCompare(a.customer)
+//       })
+//     }
+//     if (sort[0].key === 'country') {
+//       filteredCustomers.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.country.localeCompare(b.country)
 
-    if (sort[0].key === 'customerId') {
-      filteredCustomers.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.customer_id - b.customer_id
+//         return b.country.localeCompare(a.country)
+//       })
+//     }
 
-        return b.customer_id - a.customer_id
-      })
-    }
+//     if (sort[0].key === 'customerId') {
+//       filteredCustomers.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.customer_id - b.customer_id
 
-    if (sort[0].key === 'orders') {
-      filteredCustomers.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.order - b.order
+//         return b.customer_id - a.customer_id
+//       })
+//     }
 
-        return b.order - a.order
-      })
-    }
-  }
+//     if (sort[0].key === 'orders') {
+//       filteredCustomers.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.order - b.order
 
-  return [200, { customers: paginateArray(filteredCustomers, itemsPerPage, page), total: filteredCustomers.length }]
-})
+//         return b.order - a.order
+//       })
+//     }
+//   }
+
+//   return [200, { customers: paginateArray(filteredCustomers, itemsPerPage, page), total: filteredCustomers.length }]
+// })
 
 // 👉 Get Single Customer
-mock.onGet(/\/apps\/ecommerce\/customers\/\d+/).reply(config => {
-  const customerId = config.url?.substring(config.url.lastIndexOf('/') + 1)
+// mock.onGet(/\/apps\/ecommerce\/customers\/\d+/).reply(config => {
+//   const customerId = config.url?.substring(config.url.lastIndexOf('/') + 1)
 
-  const id = Number(customerId)
+//   const id = Number(customerId)
 
-  const customerIndex = customerData.findIndex(e => e.customer_id === id)
+//   const customerIndex = customerData.findIndex(e => e.customer_id === id)
 
-  const customer = customerData[customerIndex]
+//   const customer = customerData[customerIndex]
 
-  Object.assign(customer, {
-    status: 'Active',
-    contact: '+1 (234) 567 890',
-  })
+//   Object.assign(customer, {
+//     status: 'Active',
+//     contact: '+1 (234) 567 890',
+//   })
 
-  if (customer)
-    return [200, customer]
-  else return [404]
-})
+//   if (customer)
+//     return [200, customer]
+//   else return [404]
+// })
 
 // 👉 Get Order list
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/ecommerce/orders/list').reply(config => {
-  const { q = '', options = {} } = config.params ?? {}
-  const { sortBy = '', page = 1, itemsPerPage = 10 } = options
-  const queryLower = q.toLowerCase()
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+// mock.onGet('/apps/ecommerce/orders/list').reply(config => {
+//   const { q = '', options = {} } = config.params ?? {}
+//   const { sortBy = '', page = 1, itemsPerPage = 10 } = options
+//   const queryLower = q.toLowerCase()
 
-  const filterOrders = orderData.filter(order => {
-    return (
-      order.customer.toLowerCase().includes(queryLower)
-      || order.email.toLowerCase().includes(queryLower)
-      || order.order.toString().includes(queryLower)
-    )
-  }).reverse()
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  if (sort.length) {
-    if (sort[0]?.key === 'order') {
-      filterOrders.sort((a, b) => {
-        if (sort[0]?.order === 'desc')
-          return b.order - a.order
-        else
-          return a.order - b.order
-      })
-    }
-    if (sort[0]?.key === 'customers') {
-      filterOrders.sort((a, b) => {
-        if (sort[0]?.order === 'desc')
-          return b.customer.localeCompare(a.customer)
-        else
-          return a.customer.localeCompare(b.customer)
-      })
-    }
+//   const filterOrders = orderData.filter(order => {
+//     return (
+//       order.customer.toLowerCase().includes(queryLower)
+//       || order.email.toLowerCase().includes(queryLower)
+//       || order.order.toString().includes(queryLower)
+//     )
+//   }).reverse()
 
-    if (sort[0]?.key === 'date') {
-      filterOrders.sort((a, b) => {
-        if (sort[0]?.order === 'desc')
-          return Number(new Date(b.date)) - Number(new Date(a.date))
-        else
-          return Number(new Date(a.date)) - Number(new Date(b.date))
-      })
-    }
-  }
+//   if (sort.length) {
+//     if (sort[0]?.key === 'order') {
+//       filterOrders.sort((a, b) => {
+//         if (sort[0]?.order === 'desc')
+//           return b.order - a.order
+//         else
+//           return a.order - b.order
+//       })
+//     }
+//     if (sort[0]?.key === 'customers') {
+//       filterOrders.sort((a, b) => {
+//         if (sort[0]?.order === 'desc')
+//           return b.customer.localeCompare(a.customer)
+//         else
+//           return a.customer.localeCompare(b.customer)
+//       })
+//     }
 
-  return [200, { orders: paginateArray(filterOrders, itemsPerPage, page), total: filterOrders.length }]
-})
+//     if (sort[0]?.key === 'date') {
+//       filterOrders.sort((a, b) => {
+//         if (sort[0]?.order === 'desc')
+//           return Number(new Date(b.date)) - Number(new Date(a.date))
+//         else
+//           return Number(new Date(a.date)) - Number(new Date(b.date))
+//       })
+//     }
+//   }
+
+//   return [200, { orders: paginateArray(filterOrders, itemsPerPage, page), total: filterOrders.length }]
+// })
 
 // 👉 Delete Order
-mock.onDelete(/\/apps\/ecommerce\/orders\/\d+/).reply(config => {
-  const id = Number(config.url?.substring(config.url?.lastIndexOf('/') + 1))
+// mock.onDelete(/\/apps\/ecommerce\/orders\/\d+/).reply(config => {
+//   const id = Number(config.url?.substring(config.url?.lastIndexOf('/') + 1))
 
-  const orderIndex = orderData.findIndex(o => o.id === id)
+//   const orderIndex = orderData.findIndex(o => o.id === id)
 
-  if (orderIndex >= 0) {
-    orderData.splice(orderIndex, 1)
+//   if (orderIndex >= 0) {
+//     orderData.splice(orderIndex, 1)
 
-    return [200]
-  }
+//     return [200]
+//   }
 
-  return [400]
-})
+//   return [400]
+// })
 
 // 👉 Get Product List
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/ecommerce/products/list').reply(config => {
-  const { q = '', stock = null, category = null, status = null, options = {} } = config.params ?? {}
 
-  const { sortBy = '', itemsPerPage = 10, page = 1 } = options
+// mock.onGet('/apps/ecommerce/products/list').reply(config => {
+//   const { q = '', stock = null, category = null, status = null, options = {} } = config.params ?? {}
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const { sortBy = '', itemsPerPage = 10, page = 1 } = options
 
-  const queryLower = q.toLowerCase()
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  // Filtering Products
-  let filteredProducts = products.filter(product => (
-    (product.product_name.toLowerCase().includes(queryLower) || product.product_brand.toLowerCase().includes(queryLower))
-    && product.category === (category || product.category) && product.status === (status || product.status) && (stock === null || product.stock === stock)
-  )).reverse()
+//   const queryLower = q.toLowerCase()
 
-  // Sort
-  if (sort.length) {
-    if (sort[0].key === 'product') {
-      filteredProducts = filteredProducts.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.product_name.toLowerCase() > b.product_name.toLowerCase() ? 1 : -1
-        else if (sort[0].order === 'desc')
-          return a.product_name.toLowerCase() < b.product_name.toLowerCase() ? 1 : -1
+//   // Filtering Products
+//   let filteredProducts = products.filter(product => (
+//     (product.product_name.toLowerCase().includes(queryLower) || product.product_brand.toLowerCase().includes(queryLower))
+//     && product.category === (category || product.category) && product.status === (status || product.status) && (stock === null || product.stock === stock)
+//   )).reverse()
 
-        return 0
-      })
-    }
+//   // Sort
+//   if (sort.length) {
+//     if (sort[0].key === 'product') {
+//       filteredProducts = filteredProducts.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.product_name.toLowerCase() > b.product_name.toLowerCase() ? 1 : -1
+//         else if (sort[0].order === 'desc')
+//           return a.product_name.toLowerCase() < b.product_name.toLowerCase() ? 1 : -1
 
-    if (sort[0].key === 'category') {
-      filteredProducts = filteredProducts.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.category > b.category ? 1 : -1
-        else if (sort[0].order === 'desc')
-          return a.category < b.category ? 1 : -1
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
+//     if (sort[0].key === 'category') {
+//       filteredProducts = filteredProducts.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.category > b.category ? 1 : -1
+//         else if (sort[0].order === 'desc')
+//           return a.category < b.category ? 1 : -1
 
-    if (sort[0].key === 'status') {
-      filteredProducts = filteredProducts.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.status > b.status ? 1 : -1
-        else if (sort[0].order === 'desc')
-          return a.status < b.status ? 1 : -1
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
+//     if (sort[0].key === 'status') {
+//       filteredProducts = filteredProducts.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.status > b.status ? 1 : -1
+//         else if (sort[0].order === 'desc')
+//           return a.status < b.status ? 1 : -1
 
-    if (sort[0].key === 'price') {
-      filteredProducts = filteredProducts.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return Number(a.price.slice(1)) > Number(b.price.slice(1)) ? 1 : -1
-        else if (sort[0].order === 'desc')
-          return Number(a.price.slice(1)) < Number(b.price.slice(1)) ? 1 : -1
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
+//     if (sort[0].key === 'price') {
+//       filteredProducts = filteredProducts.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return Number(a.price.slice(1)) > Number(b.price.slice(1)) ? 1 : -1
+//         else if (sort[0].order === 'desc')
+//           return Number(a.price.slice(1)) < Number(b.price.slice(1)) ? 1 : -1
 
-    if (sort[0].key === 'qty') {
-      filteredProducts = filteredProducts.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.qty > b.qty ? 1 : -1
-        else if (sort[0].order === 'desc')
-          return a.qty < b.qty ? 1 : -1
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
+//     if (sort[0].key === 'qty') {
+//       filteredProducts = filteredProducts.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.qty > b.qty ? 1 : -1
+//         else if (sort[0].order === 'desc')
+//           return a.qty < b.qty ? 1 : -1
 
-    if (sort[0].key === 'sku') {
-      filteredProducts = filteredProducts.sort((a, b) => {
-        if (sort[0].order === 'asc')
-          return a.sku > b.sku ? 1 : -1
-        else if (sort[0].order === 'desc')
-          return a.sku < b.sku ? 1 : -1
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
-  }
+//     if (sort[0].key === 'sku') {
+//       filteredProducts = filteredProducts.sort((a, b) => {
+//         if (sort[0].order === 'asc')
+//           return a.sku > b.sku ? 1 : -1
+//         else if (sort[0].order === 'desc')
+//           return a.sku < b.sku ? 1 : -1
 
-  return [200, { products: paginateArray(filteredProducts, itemsPerPage, page), total: filteredProducts.length }]
-})
+//         return 0
+//       })
+//     }
+//   }
+
+//   return [200, { products: paginateArray(filteredProducts, itemsPerPage, page), total: filteredProducts.length }]
+// })
 
 // 👉 Get Review List
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/ecommerce/reviews/list').reply(config => {
-  const { q = '', options = {} } = config.params ?? {}
 
-  const { sortBy = '', itemsPerPage = 10, page = 1 } = options
+// mock.onGet('/apps/ecommerce/reviews/list').reply(config => {
+//   const { q = '', options = {} } = config.params ?? {}
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const { sortBy = '', itemsPerPage = 10, page = 1 } = options
 
-  const queryLower = q.toLowerCase()
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  // Filtering Reviews
+//   const queryLower = q.toLowerCase()
 
-  const filteredReviews = reviews.filter(review => {
-    const { product, reviewer, email } = review
+//   // Filtering Reviews
 
-    return (
-      (product.toLowerCase().includes(queryLower) || reviewer.toLowerCase().includes(queryLower) || email.toLowerCase().includes(queryLower) || review.head.toLowerCase().includes(queryLower) || review.para.toLowerCase().includes(queryLower))
-    )
-  })
+//   const filteredReviews = reviews.filter(review => {
+//     const { product, reviewer, email } = review
 
-  // Sort
-  if (sort.length) {
-    if (sort[0]?.key === 'product') {
-      filteredReviews.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.product.toLowerCase() > b.product.toLowerCase() ? 1 : -1
-        else if (sort[0]?.order === 'desc')
-          return a.product.toLowerCase() < b.product.toLowerCase() ? 1 : -1
+//     return (
+//       (product.toLowerCase().includes(queryLower) || reviewer.toLowerCase().includes(queryLower) || email.toLowerCase().includes(queryLower) || review.head.toLowerCase().includes(queryLower) || review.para.toLowerCase().includes(queryLower))
+//     )
+//   })
 
-        return 0
-      })
-    }
+//   // Sort
+//   if (sort.length) {
+//     if (sort[0]?.key === 'product') {
+//       filteredReviews.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.product.toLowerCase() > b.product.toLowerCase() ? 1 : -1
+//         else if (sort[0]?.order === 'desc')
+//           return a.product.toLowerCase() < b.product.toLowerCase() ? 1 : -1
 
-    if (sort[0]?.key === 'reviewer') {
-      filteredReviews.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.reviewer.toLowerCase() > b.reviewer.toLowerCase() ? 1 : -1
-        else if (sort[0]?.order === 'desc')
-          return a.reviewer.toLowerCase() < b.reviewer.toLowerCase() ? 1 : -1
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
+//     if (sort[0]?.key === 'reviewer') {
+//       filteredReviews.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.reviewer.toLowerCase() > b.reviewer.toLowerCase() ? 1 : -1
+//         else if (sort[0]?.order === 'desc')
+//           return a.reviewer.toLowerCase() < b.reviewer.toLowerCase() ? 1 : -1
 
-    if (sort[0]?.key === 'date') {
-      filteredReviews.sort((a, b) => {
-        if (sort[0]?.order === 'desc')
-          return Number(new Date(b.date)) - Number(new Date(a.date))
-        else if (sort[0]?.order === 'asc')
-          return Number(new Date(a.date)) - Number(new Date(b.date))
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
-  }
+//     if (sort[0]?.key === 'date') {
+//       filteredReviews.sort((a, b) => {
+//         if (sort[0]?.order === 'desc')
+//           return Number(new Date(b.date)) - Number(new Date(a.date))
+//         else if (sort[0]?.order === 'asc')
+//           return Number(new Date(a.date)) - Number(new Date(b.date))
 
-  return [200, { reviews: paginateArray(filteredReviews, itemsPerPage, page), total: reviews.length }]
-})
+//         return 0
+//       })
+//     }
+//   }
+
+//   return [200, { reviews: paginateArray(filteredReviews, itemsPerPage, page), total: reviews.length }]
+// })
 
 // 👉 Delete Review
-mock.onDelete(/\/apps\/ecommerce\/reviews\/\d+/).reply(config => {
-  const id = Number(config.url?.substring(config.url?.lastIndexOf('/') + 1))
+// mock.onDelete(/\/apps\/ecommerce\/reviews\/\d+/).reply(config => {
+//   const id = Number(config.url?.substring(config.url?.lastIndexOf('/') + 1))
 
-  const index = reviews.findIndex(review => review.id === id)
+//   const index = reviews.findIndex(review => review.id === id)
 
-  if (index > -1) {
-    reviews.splice(index, 1)
+//   if (index > -1) {
+//     reviews.splice(index, 1)
 
-    return [200]
-  }
+//     return [200]
+//   }
 
-  return [400]
-})
+//   return [400]
+// })
 
 // 👉 Get Referral List
-// eslint-disable-next-line sonarjs/cognitive-complexity
-mock.onGet('/apps/ecommerce/referrals').reply(config => {
-  const { options = {} } = config.params ?? {}
 
-  const { sortBy = '', itemsPerPage = 10, page = 1 } = options
+// mock.onGet('/apps/ecommerce/referrals').reply(config => {
+//   const { options = {} } = config.params ?? {}
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const { sortBy = '', itemsPerPage = 10, page = 1 } = options
 
-  const filteredReferrals = referrals
-  if (sort.length) {
-    if (sort[0]?.key === 'users') {
-      filteredReferrals.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.user.toLowerCase() > b.user.toLowerCase() ? 1 : -1
-        else if (sort[0]?.order === 'desc')
-          return a.user.toLowerCase() < b.user.toLowerCase() ? 1 : -1
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-        return 0
-      })
-    }
+//   const filteredReferrals = referrals
+//   if (sort.length) {
+//     if (sort[0]?.key === 'users') {
+//       filteredReferrals.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.user.toLowerCase() > b.user.toLowerCase() ? 1 : -1
+//         else if (sort[0]?.order === 'desc')
+//           return a.user.toLowerCase() < b.user.toLowerCase() ? 1 : -1
 
-    if (sort[0]?.key === 'referred-id') {
-      filteredReferrals.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return a.referred_id - b.referred_id
-        else if (sort[0]?.order === 'desc')
-          return b.referred_id - a.referred_id
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
+//     if (sort[0]?.key === 'referred-id') {
+//       filteredReferrals.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return a.referred_id - b.referred_id
+//         else if (sort[0]?.order === 'desc')
+//           return b.referred_id - a.referred_id
 
-    if (sort[0]?.key === 'earning') {
-      filteredReferrals.sort((a, b) => {
-        if (sort[0]?.order === 'asc')
-          return Number(a.earning.slice(1)) - Number(b.earning.slice(1))
-        else if (sort[0]?.order === 'desc')
-          return Number(b.earning.slice(1)) - Number(a.earning.slice(1))
+//         return 0
+//       })
+//     }
 
-        return 0
-      })
-    }
-  }
+//     if (sort[0]?.key === 'earning') {
+//       filteredReferrals.sort((a, b) => {
+//         if (sort[0]?.order === 'asc')
+//           return Number(a.earning.slice(1)) - Number(b.earning.slice(1))
+//         else if (sort[0]?.order === 'desc')
+//           return Number(b.earning.slice(1)) - Number(a.earning.slice(1))
 
-  return [200, { referrals: paginateArray(filteredReferrals, itemsPerPage, page), total: referrals.length }]
-})
+//         return 0
+//       })
+//     }
+//   }
+
+//   return [200, { referrals: paginateArray(filteredReferrals, itemsPerPage, page), total: referrals.length }]
+// })

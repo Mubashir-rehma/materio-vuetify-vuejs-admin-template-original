@@ -7,8 +7,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 import avatar8 from '@images/avatars/avatar-8.png'
 
-import mock from '@/@fake-db/mock'
-import type { Email, FetchEmailsPayload } from '@/@fake-db/types'
+import type { Email } from '@/@fake-db/types'
 import txt from '@images/icons/file/txt.png'
 import xls from '@images/icons/file/xls.png'
 
@@ -2163,84 +2162,84 @@ const data: Database = {
 // ------------------------------------------------
 // GET: Return Emails
 // ------------------------------------------------
-mock.onGet('/apps/email/emails').reply(config => {
-  const { q = '', filter = 'inbox', label } = config.params as FetchEmailsPayload
+// mock.onGet('/apps/email/emails').reply(config => {
+//   const { q = '', filter = 'inbox', label } = config.params as FetchEmailsPayload
 
-  const queryLowered = q.toLowerCase()
+//   const queryLowered = q.toLowerCase()
 
-  function isInFolder(email: Email) {
-    if (filter === 'trashed')
-      return email.isDeleted
-    if (filter === 'starred')
-      return email.isStarred && !email.isDeleted
+//   function isInFolder(email: Email) {
+//     if (filter === 'trashed')
+//       return email.isDeleted
+//     if (filter === 'starred')
+//       return email.isStarred && !email.isDeleted
 
-    return email.folder === (filter || email.folder) && !email.isDeleted
-  }
+//     return email.folder === (filter || email.folder) && !email.isDeleted
+//   }
 
-  const filteredData = data.emails.filter(
-    email =>
-      (email.from.name.toLowerCase().includes(queryLowered) || email.subject.toLowerCase().includes(queryLowered))
-      && isInFolder(email)
-      && (label ? email.labels.includes(label) : true),
-  )
+//   const filteredData = data.emails.filter(
+//     email =>
+//       (email.from.name.toLowerCase().includes(queryLowered) || email.subject.toLowerCase().includes(queryLowered))
+//       && isInFolder(email)
+//       && (label ? email.labels.includes(label) : true),
+//   )
 
-  // ------------------------------------------------
-  // Email Meta
-  // ------------------------------------------------
-  const emailsMeta = {
-    inbox: data.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'inbox').length,
-    draft: data.emails.filter(email => email.folder === 'draft').length,
-    spam: data.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'spam').length,
-  }
+//   // ------------------------------------------------
+//   // Email Meta
+//   // ------------------------------------------------
+//   const emailsMeta = {
+//     inbox: data.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'inbox').length,
+//     draft: data.emails.filter(email => email.folder === 'draft').length,
+//     spam: data.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'spam').length,
+//   }
 
-  return [
-    200,
-    {
-      emails: filteredData.reverse(),
-      emailsMeta,
-    },
-  ]
-})
+//   return [
+//     200,
+//     {
+//       emails: filteredData.reverse(),
+//       emailsMeta,
+//     },
+//   ]
+// })
 
 // ------------------------------------------------
 // POST: Update Email
 // ------------------------------------------------
-mock.onPost('/apps/email/update-emails/').reply(config => {
-  const { ids: emailIds, data: dataToUpdate } = JSON.parse(config.data)
+// mock.onPost('/apps/email/update-emails/').reply(config => {
+//   const { ids: emailIds, data: dataToUpdate } = JSON.parse(config.data)
 
-  function updateMailData(email: Email) {
-    Object.assign(email, dataToUpdate)
-  }
+//   function updateMailData(email: Email) {
+//     Object.assign(email, dataToUpdate)
+//   }
 
-  data.emails.forEach((email: Email) => {
-    if (emailIds.includes(email.id))
-      updateMailData(email)
-  })
+//   data.emails.forEach((email: Email) => {
+//     if (emailIds.includes(email.id))
+//       updateMailData(email)
+//   })
 
-  return [200]
-})
+//   return [200]
+// })
 
 // ------------------------------------------------
 // POST: Update Emails Label
 // ------------------------------------------------
-mock.onPost('/apps/email/update-emails-label').reply(config => {
-  const { ids: emailIds, label } = JSON.parse(config.data)
+// mock.onPost('/apps/email/update-emails-label').reply(config => {
+//   const { ids: emailIds, label } = JSON.parse(config.data)
 
-  function updateMailLabels(email: Email) {
-    const labelIndex = email.labels.indexOf(label)
+//   function updateMailLabels(email: Email) {
+//     const labelIndex = email.labels.indexOf(label)
 
-    if (labelIndex === -1)
-      email.labels.push(label)
-    else email.labels.splice(labelIndex, 1)
-  }
+//     if (labelIndex === -1)
+//       email.labels.push(label)
+//     else email.labels.splice(labelIndex, 1)
+//   }
 
-  data.emails.forEach(email => {
-    if (emailIds.includes(email.id))
-      updateMailLabels(email)
-  })
+//   data.emails.forEach(email => {
+//     if (emailIds.includes(email.id))
+//       updateMailLabels(email)
+//   })
 
-  return [200]
-})
+//   return [200]
+// })
 
 // ------------------------------------------------
 // GET: Paginate Existing Email

@@ -1,6 +1,4 @@
-import mock from '@/@fake-db/mock'
 import type { Permission } from '@/@fake-db/types'
-import { paginateArray } from '@/@fake-db/utils'
 
 const data: { permissions: Permission[] } = {
   permissions: [
@@ -64,37 +62,37 @@ const data: { permissions: Permission[] } = {
 // ------------------------------------------------
 // GET: Return Permissions List
 // ------------------------------------------------
-mock.onGet('/apps/permissions/data').reply(config => {
-  const { q = '', options = {} } = config.params ?? {}
+// mock.onGet('/apps/permissions/data').reply(config => {
+//   const { q = '', options = {} } = config.params ?? {}
 
-  const { sortBy = '', page = 1, itemsPerPage = 10 } = options
+//   const { sortBy = '', page = 1, itemsPerPage = 10 } = options
 
-  const sort = JSON.parse(JSON.stringify(sortBy))
+//   const sort = JSON.parse(JSON.stringify(sortBy))
 
-  const queryLowered = q.toLowerCase()
+//   const queryLowered = q.toLowerCase()
 
-  let filteredData = data.permissions.filter(
-    permissions =>
-      permissions.name.toLowerCase().includes(queryLowered)
-      || permissions.createdDate.toLowerCase().includes(queryLowered)
-      || permissions.assignedTo.some((i: string) => i.toLowerCase().startsWith(queryLowered)),
-  )
+//   let filteredData = data.permissions.filter(
+//     permissions =>
+//       permissions.name.toLowerCase().includes(queryLowered)
+//       || permissions.createdDate.toLowerCase().includes(queryLowered)
+//       || permissions.assignedTo.some((i: string) => i.toLowerCase().startsWith(queryLowered)),
+//   )
 
-  // Sorting invoices
-  if (sort.length && sort[0]?.key === 'name') {
-    filteredData = filteredData.sort((a, b) => {
-      if (sort[0]?.order === 'asc')
-        return a.name.localeCompare(b.name)
+//   // Sorting invoices
+//   if (sort.length && sort[0]?.key === 'name') {
+//     filteredData = filteredData.sort((a, b) => {
+//       if (sort[0]?.order === 'asc')
+//         return a.name.localeCompare(b.name)
 
-      return b.name.localeCompare(a.name)
-    })
-  }
+//       return b.name.localeCompare(a.name)
+//     })
+//   }
 
-  return [
-    200,
-    {
-      permissions: paginateArray(filteredData, itemsPerPage, page),
-      totalPermissions: filteredData.length,
-    },
-  ]
-})
+//   return [
+//     200,
+//     {
+//       permissions: paginateArray(filteredData, itemsPerPage, page),
+//       totalPermissions: filteredData.length,
+//     },
+//   ]
+// })

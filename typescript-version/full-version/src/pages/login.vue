@@ -43,11 +43,11 @@ const login = async () => {
 
     const { accessToken, userData, userAbilityRules } = res
 
-    localStorage.setItem('userAbilityRules', JSON.stringify(userAbilityRules))
+    useCookie('userAbilityRules').value = userAbilityRules
     ability.update(userAbilityRules)
 
-    localStorage.setItem('userData', JSON.stringify(userData))
-    localStorage.setItem('accessToken', JSON.stringify(accessToken))
+    useCookie('userData').value = userData
+    useCookie('accessToken').value = accessToken
 
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')

@@ -1,4 +1,3 @@
-import { useStorage } from '@vueuse/core'
 import type { RouteRecordRaw } from 'vue-router/auto'
 
 const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
@@ -13,8 +12,9 @@ export const redirects: RouteRecordRaw[] = [
     path: '/',
     name: 'index',
     redirect: to => {
-      const userData = useStorage<Record<string, unknown>>('userData', {}).value
-      const userRole = userData.role
+      // TODO: Get type from backend
+      const userData = useCookie<Record<string, unknown> | null | undefined>('userData')
+      const userRole = userData.value?.role
 
       if (userRole === 'admin')
         return { name: 'dashboards-crm' }

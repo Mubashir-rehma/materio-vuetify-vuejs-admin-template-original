@@ -154,7 +154,6 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
   // 👉 Update event
   const updateEvent = (_event: Event) => {
-    console.log(_event.id, typeof _event.id)
     store.updateEvent(_event)
       .then(r => {
         const propsToUpdate = ['id', 'title', 'url'] as (keyof Event)[]

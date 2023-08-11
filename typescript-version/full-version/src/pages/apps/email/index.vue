@@ -118,17 +118,17 @@ const handleActionClick = async (
     return
 
   if (action === 'trash')
-    store.updateEmails(emailIds, { isDeleted: true })
+    await store.updateEmails(emailIds, { isDeleted: true })
   else if (action === 'spam')
-    store.updateEmails(emailIds, { folder: 'spam' })
+    await store.updateEmails(emailIds, { folder: 'spam' })
   else if (action === 'unread')
-    store.updateEmails(emailIds, { isRead: false })
+    await store.updateEmails(emailIds, { isRead: false })
   else if (action === 'read')
-    store.updateEmails(emailIds, { isRead: true })
+    await store.updateEmails(emailIds, { isRead: true })
   else if (action === 'star')
-    store.updateEmails(emailIds, { isStarred: true })
+    await store.updateEmails(emailIds, { isStarred: true })
   else if (action === 'unstar')
-    store.updateEmails(emailIds, { isStarred: false })
+    await store.updateEmails(emailIds, { isStarred: false })
 
   await fetchEmails()
 }

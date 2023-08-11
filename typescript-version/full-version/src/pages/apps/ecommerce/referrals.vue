@@ -72,7 +72,7 @@ const resolveStatus = (status: string) => {
     return { text: 'Paid', color: 'success' }
 }
 
-watch(options, fetchReferrals)
+watch(options, fetchReferrals, { deep: true })
 </script>
 
 <template>

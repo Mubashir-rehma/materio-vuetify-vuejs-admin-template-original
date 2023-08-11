@@ -7,6 +7,8 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+console.log(typeof props.customerData.customer, props.customerData.customer)
 </script>
 
 <template>
@@ -19,7 +21,7 @@ const props = defineProps<Props>()
           <VAvatar
             rounded
             :size="120"
-            :color="!props.customerData.avatar ? 'primary' : undefined"
+            :color="!props.customerData.customer ? 'primary' : undefined"
             :variant="!props.customerData.avatar ? 'tonal' : undefined"
           >
             <VImg
@@ -30,7 +32,7 @@ const props = defineProps<Props>()
               v-else
               class="text-5xl font-weight-medium"
             >
-              {{ avatarText(props.customerData.customer) }}
+              deep
             </span>
           </VAvatar>
 

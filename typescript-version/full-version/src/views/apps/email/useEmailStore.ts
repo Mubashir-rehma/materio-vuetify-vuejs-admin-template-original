@@ -24,7 +24,9 @@ export const useEmailStore = defineStore('email', {
     async fetchEmails(payload: FetchEmailsPayload) {
       const { data, error } = await useApi<any>(createUrl('/apps/email', payload))
 
-      if (error.value) { console.log(error.value) }
+      if (error.value) {
+        console.log(error.value)
+      }
       else {
         const { emails, emailsMeta } = data.value as { emails: Email[]; emailsMeta: State['emailsMeta'] }
 

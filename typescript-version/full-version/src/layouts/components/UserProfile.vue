@@ -3,21 +3,23 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 const router = useRouter()
 const ability = useAbility()
-const userData = JSON.parse(localStorage.getItem('userData') || 'null')
+
+// TODO: Get type from backend
+const userData = useCookie<any>('userData')
 
 const logout = () => {
-  // Remove "userData" from localStorage
-  localStorage.removeItem('userData')
+  // Remove "userData" from cookie
+  userData.value = null
 
   // Remove "accessToken" from localStorage
-  localStorage.removeItem('accessToken')
+  useCookie('accessToken').value = null
 
   // Redirect to login page
   router.push('/login')
     .then(() => {
       // ℹ️ We had to remove abilities in then block because if we don't nav menu items mutation is visible while redirecting user to login page
       // Remove "userAbilities" from localStorage
-      localStorage.removeItem('userAbilities')
+      useCookie('userAbilities').value = null
 
       // Reset ability to initial ability
       ability.update([])

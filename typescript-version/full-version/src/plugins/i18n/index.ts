@@ -9,13 +9,13 @@ const messages = Object.fromEntries(
     .map(([key, value]) => [key.slice(10, -5), value.default]),
 )
 
-const i18n = createI18n({
-  legacy: false,
-  locale: useCookie(`${themeConfig.app.title}-language`).value || themeConfig.app.i18n.defaultLocale,
-  fallbackLocale: 'en',
-  messages,
-})
-
 export default function (app: App) {
+  const i18n = createI18n({
+    legacy: false,
+    locale: useCookie(`${themeConfig.app.title}-language`).value || themeConfig.app.i18n.defaultLocale,
+    fallbackLocale: 'en',
+    messages,
+  })
+
   app.use(i18n)
 }

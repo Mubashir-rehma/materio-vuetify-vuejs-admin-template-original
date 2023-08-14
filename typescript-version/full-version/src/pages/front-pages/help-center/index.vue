@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type {
-  HelpCenterAllCategoryArticles,
-  HelpCenterArticlesOverview,
-} from '@/@fake-db/types'
+import type { HelpCenterAllCategoryArticles, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/type'
+
 import Footer from '@/views/front-pages/front-page-footer.vue'
 import Navbar from '@/views/front-pages/front-page-navbar.vue'
 
@@ -24,7 +22,7 @@ interface ApiDataType {
 
 const apiData = ref<ApiDataType>()
 
-// fetching data from the @fake-db
+// fetching data from fake-api
 const fetchHelpCenterData = async () => {
   const { data, error } = await useApi<any>('/pages/help-center')
 

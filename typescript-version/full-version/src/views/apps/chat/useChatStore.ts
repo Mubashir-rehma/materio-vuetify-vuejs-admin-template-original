@@ -1,5 +1,5 @@
 import type { ActiveChat } from './useChat'
-import type { ChatContact, ChatContactWithChat, ChatMessage, ChatOut } from '@/@fake-db/types'
+import type { ChatContact, ChatContactWithChat, ChatMessage, ChatOut } from '@/plugins/fake-api/handlers/apps/chat/type'
 
 interface State {
   chatsContacts: ChatContactWithChat[]

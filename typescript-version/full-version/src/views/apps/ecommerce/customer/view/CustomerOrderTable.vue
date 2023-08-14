@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Order } from '@/@fake-db/types'
+import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 
 import type { Options } from '@core/types'
 

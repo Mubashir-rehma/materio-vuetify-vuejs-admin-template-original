@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import type { SalesDetails } from '@/@fake-db/types'
+import type { SalesDetails } from '@/plugins/fake-api/handlers/pages/datatable/type'
 
 const search = ref('')
 const productList = ref<SalesDetails[]>([])

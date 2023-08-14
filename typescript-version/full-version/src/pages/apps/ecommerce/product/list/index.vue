@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { ECommerceProduct } from '@/@fake-db/types'
+import type { ECommerceProduct } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import type { Options } from '@core/types'
 
 definePage({

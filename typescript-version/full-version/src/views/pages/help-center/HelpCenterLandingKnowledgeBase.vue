@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HelpCenterAllCategoryArticles } from '@/@fake-db/types'
+import type { HelpCenterAllCategoryArticles } from '@/plugins/fake-api/handlers/pages/help-center/type'
 
 interface Props {
   categories: HelpCenterAllCategoryArticles[]

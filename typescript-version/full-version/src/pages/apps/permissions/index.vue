@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Permission } from '@/@fake-db/types'
+import type { Permission } from '@/plugins/fake-api/handlers/apps/permission/type'
 import type { Options } from '@core/types'
 
 // 👉 headers

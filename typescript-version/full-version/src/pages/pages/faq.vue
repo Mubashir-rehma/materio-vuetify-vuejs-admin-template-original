@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FaqCategory } from '@/@fake-db/types'
+import type { FaqCategory } from '@/plugins/fake-api/handlers/pages/faq/type'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
 import type { RouteLocationRaw } from 'vue-router'
-import type { SearchResults } from '@/@fake-db/types'
+import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/type'
 
 interface Suggestion {
   icon: string

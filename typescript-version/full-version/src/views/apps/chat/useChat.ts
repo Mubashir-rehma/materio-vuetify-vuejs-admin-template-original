@@ -1,4 +1,4 @@
-import type { Chat, ChatContact, ChatStatus } from '@/@fake-db/types'
+import type { Chat, ChatContact, ChatStatus } from '@/plugins/fake-api/handlers/apps/chat/type'
 
 export type ActiveChat = {
   chat?: Chat

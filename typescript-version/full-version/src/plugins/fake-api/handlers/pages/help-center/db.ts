@@ -1,4 +1,4 @@
-import type { HelpCenterAllCategoryArticlesType, HelpCenterArticleType, HelpCenterArticlesOverviewType } from '@/plugins/fake-api/handlers/pages/help-center/type'
+import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/type'
 import checkoutImg from '@images/front-pages/misc/checkout-image.png'
 import productImg from '@images/front-pages/misc/product-image.png'
 import laptop from '@images/iconify-svg/laptop.svg'
@@ -11,10 +11,10 @@ import keyboard from '@images/svg/keyboard.svg'
 import rocket from '@images/svg/rocket.svg'
 
 interface DB {
-  allArticles: HelpCenterAllCategoryArticlesType[]
-  keepLearning: HelpCenterArticlesOverviewType[]
-  popularArticles: HelpCenterArticlesOverviewType[]
-  articleData: HelpCenterArticleType
+  allArticles: HelpCenterAllCategoryArticles[]
+  keepLearning: HelpCenterArticlesOverview[]
+  popularArticles: HelpCenterArticlesOverview[]
+  articleData: HelpCenterArticle
 }
 
 export const db: DB = {

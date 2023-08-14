@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Course } from '@/@fake-db/types'
+import type { Course } from '@/plugins/fake-api/handlers/apps/academy/type'
 import type { Options } from '@core/types'
 
 const searchQuery = ref('')

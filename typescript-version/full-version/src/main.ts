@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 
-import '@/@fake-db/db'
 import App from '@/App.vue'
 import { registerPlugins } from '@core/utils/plugins'
 

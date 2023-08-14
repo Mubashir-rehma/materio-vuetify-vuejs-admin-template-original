@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Customer } from '@/@fake-db/types'
+import type { Customer } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import rocketImg from '@images/eCommerce/rocket.png'
 
 interface Props {

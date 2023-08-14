@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import type { Data } from '@/@fake-db/types'
+import type { Data } from '@/plugins/fake-api/handlers/pages/datatable/type'
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const userList = ref<Data[]>([])
@@ -86,7 +86,7 @@ onMounted(() => {
             max="15"
             hide-details
             variant="underlined"
-            style="min-width: 5rem;max-width: 8rem;"
+            style="max-inline-size: 8rem;min-inline-size: 5rem;"
           />
 
           <VPagination

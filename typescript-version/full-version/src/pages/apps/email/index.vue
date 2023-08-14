@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Email, EmailFilter, EmailLabel } from '@/@fake-db/types'
+import type { Email, EmailFilter, EmailLabel } from '@/plugins/fake-api/handlers/apps/email/type'
 import ComposeDialog from '@/views/apps/email/ComposeDialog.vue'
 import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.vue'
 import EmailView from '@/views/apps/email/EmailView.vue'

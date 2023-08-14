@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileConnections } from '@/@fake-db/types'
+import type { ProfileConnections } from '@/plugins/fake-api/handlers/pages/profile/type'
 
 interface Props {
   connectionsData: ProfileConnections[]

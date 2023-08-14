@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useChat } from './useChat'
-import type { ChatContact as TypeChatContact } from '@/@fake-db/types'
+import type { ChatContact as TypeChatContact } from '@/plugins/fake-api/handlers/apps/chat/type'
 import ChatContact from '@/views/apps/chat/ChatContact.vue'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 

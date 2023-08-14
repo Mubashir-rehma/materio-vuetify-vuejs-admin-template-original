@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Course } from '@/@fake-db/types'
+import type { Course } from '@/plugins/fake-api/handlers/apps/academy/type'
 import type { Options } from '@core/types'
 
 const courseData = ref<Course[]>([])

@@ -1,4 +1,4 @@
-import type { Data } from '@/@fake-db/types'
+import type { Data } from '@/plugins/fake-api/handlers/pages/datatable/type'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'

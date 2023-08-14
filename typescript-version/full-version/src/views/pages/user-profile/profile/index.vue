@@ -4,7 +4,7 @@ import ActivityTimeline from './ActivityTimeline.vue'
 import Connection from './Connection.vue'
 import ProjectList from './ProjectList.vue'
 import Teams from './Teams.vue'
-import type { ProfileTab } from '@/@fake-db/types'
+import type { ProfileTab } from '@/plugins/fake-api/handlers/pages/profile/type'
 
 const router = useRoute('pages-user-profile-tab')
 const profileTabData = ref<ProfileTab>()

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ChatContact, ChatContactWithChat } from '@/@fake-db/types'
+import type { ChatContact, ChatContactWithChat } from '@/plugins/fake-api/handlers/apps/chat/type'
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 

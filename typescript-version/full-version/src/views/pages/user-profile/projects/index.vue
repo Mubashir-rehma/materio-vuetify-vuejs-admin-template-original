@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import type { ProjectsTab } from '@/@fake-db/types'
+import type { ProjectsTab } from '@/plugins/fake-api/handlers/pages/profile/type'
 
 const router = useRoute('pages-user-profile-tab')
 const projectData = ref<ProjectsTab[]>([])

@@ -1,5 +1,5 @@
 import type { PartialDeep } from 'type-fest'
-import type { Email, FetchEmailsPayload } from '@/@fake-db/types'
+import type { Email, FetchEmailsPayload } from '@/plugins/fake-api/handlers/apps/email/type'
 
 interface State {
   emails: Email[]

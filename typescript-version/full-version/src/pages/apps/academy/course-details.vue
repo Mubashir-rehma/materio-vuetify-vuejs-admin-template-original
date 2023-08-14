@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VideoPlayer } from '@videojs-player/vue'
-import type { CourseDetails } from '@/@fake-db/types'
+import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type'
 import 'video.js/dist/video-js.css'
 
 const courseDetails = ref<CourseDetails>()

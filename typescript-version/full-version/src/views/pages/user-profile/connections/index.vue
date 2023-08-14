@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import type { ConnectionsTab } from '@/@fake-db/types'
+import type { ConnectionsTab } from '@/plugins/fake-api/handlers/pages/profile/type'
 
 const router = useRoute('pages-user-profile-tab')
 const connectionData = ref<ConnectionsTab[]>([])

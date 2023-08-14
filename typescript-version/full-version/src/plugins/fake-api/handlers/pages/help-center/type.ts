@@ -1,35 +1,35 @@
 // 👉 Help center
-export interface HelpCenterSubcategoryArticlesType {
+export interface HelpCenterSubcategoryArticles {
   slug: string
   title: string
   content: string
 }
-export interface HelpCenterAllCategoryArticlesType {
+export interface HelpCenterAllCategoryArticles {
   title: string
   icon: string
   articles: { title: string }[]
 }
-export interface HelpCenterSubcategoriesType {
+export interface HelpCenterSubcategories {
   icon: string
   slug: string
   title: string
-  articles: HelpCenterSubcategoryArticlesType[]
+  articles: HelpCenterSubcategoryArticles[]
 }
-export interface HelpCenterCategoriesType {
+export interface HelpCenterCategories {
   icon: string
   slug: string
   title: string
   avatarColor: string
-  subCategories: HelpCenterSubcategoriesType[]
+  subCategories: HelpCenterSubcategories[]
 }
-export interface HelpCenterArticlesOverviewType {
+export interface HelpCenterArticlesOverview {
   img: string
   slug: string
   title: string
   subtitle: string
 }
 
-export interface HelpCenterArticleType {
+export interface HelpCenterArticle {
   title: string
   lastUpdated: string
   productContent: string

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay, useTheme } from 'vuetify'
-import type { ChatContact as TypeChatContact } from '@/@fake-db/types'
+import type { ChatContact as TypeChatContact } from '@/plugins/fake-api/handlers/apps/chat/type'
 import vuetifyInitialThemes from '@/plugins/vuetify/theme'
 import ChatActiveChatUserProfileSidebarContent from '@/views/apps/chat/ChatActiveChatUserProfileSidebarContent.vue'
 import ChatLeftSidebarContent from '@/views/apps/chat/ChatLeftSidebarContent.vue'

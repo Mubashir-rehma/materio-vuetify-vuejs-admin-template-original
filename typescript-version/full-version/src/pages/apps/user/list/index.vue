@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { UserProperties } from '@/@fake-db/types'
+import type { UserProperties } from '@/plugins/fake-api/handlers/apps/users/type'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import type { Options } from '@core/types'
 

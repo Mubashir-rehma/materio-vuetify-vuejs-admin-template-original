@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ChatOut } from '@/@fake-db/types'
+import type { ChatOut } from '@/plugins/fake-api/handlers/apps/chat/type'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 
 const store = useChatStore()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import InvoiceProductEdit from './InvoiceProductEdit.vue'
 import type { InvoiceData } from './types'
-import type { Client } from '@/@fake-db/types'
+import type { Client } from '@/plugins/fake-api/handlers/apps/invoice/type'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 

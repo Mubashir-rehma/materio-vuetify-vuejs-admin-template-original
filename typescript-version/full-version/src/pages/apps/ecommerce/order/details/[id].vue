@@ -80,6 +80,7 @@ const orderData = [
           </span>
         </div>
       </div>
+
       <VBtn
         variant="outlined"
         color="error"
@@ -118,10 +119,12 @@ const orderData = [
                   :image="item.raw.product_image"
                   :rounded="0"
                 />
+
                 <div class="d-flex flex-column">
                   <span class="text-body-1 font-weight-medium text-high-emphasis">
                     {{ item.raw.product_name }}
                   </span>
+
                   <span class="text-caption">
                     {{ item.raw.brand }}
                   </span>

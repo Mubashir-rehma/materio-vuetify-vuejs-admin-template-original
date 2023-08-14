@@ -268,6 +268,7 @@ const inventoryTabsData = [
                 <VTextField
                   placeholder="38"
                   label="Size"
+                  type="number"
                 />
               </VCol>
             </VRow>

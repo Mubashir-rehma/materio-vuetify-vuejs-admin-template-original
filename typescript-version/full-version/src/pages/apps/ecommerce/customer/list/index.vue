@@ -109,7 +109,7 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
         </template>
 
         <template #item.total_spent="{ item }">
-          <span class="text-body-1 font-weight-medium text-high-emphasis">{{ item.raw.total_spent }}</span>
+          <span class="text-body-1 font-weight-medium text-high-emphasis">${{ item.raw.total_spent }}</span>
         </template>
       </VDataTableServer>
     </VCard>

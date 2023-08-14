@@ -151,22 +151,40 @@ export const handlerAppsEcommerce = [
     }).reverse()
 
     if (sortByLocal) {
-      const sortOrders = (a: any, b: any, field: string, order: string) => {
-        if (order === 'desc')
-          return b[field] > a[field] ? 1 : -1
-
-        else
-          return a[field] > b[field] ? 1 : -1
+      if (sortByLocal === 'order') {
+        filterOrders.sort((a, b) => {
+          if (orderByLocal === 'desc')
+            return b.order - a.order
+          else
+            return a.order - b.order
+        })
+      }
+      if (sortByLocal === 'customers') {
+        filterOrders.sort((a, b) => {
+          if (orderByLocal === 'desc')
+            return b.customer.localeCompare(a.customer)
+          else
+            return a.customer.localeCompare(b.customer)
+        })
       }
 
-      if (sortByLocal === 'order')
-        filterOrders.sort((a, b) => sortOrders(a, b, 'order', orderByLocal))
+      if (sortByLocal === 'date') {
+        filterOrders.sort((a, b) => {
+          if (orderByLocal === 'desc')
+            return Number(new Date(b.date)) - Number(new Date(a.date))
+          else
+            return Number(new Date(a.date)) - Number(new Date(b.date))
+        })
+      }
 
-      if (sortByLocal === 'customers')
-        filterOrders.sort((a, b) => sortOrders(a, b, 'customer', orderByLocal))
-
-      if (sortByLocal === 'date')
-        filterOrders.sort((a, b) => sortOrders(a, b, 'date', orderByLocal))
+      if (sortByLocal === 'status') {
+        filterOrders.sort((a, b) => {
+          if (orderByLocal === 'desc')
+            return b.status.localeCompare(a.status)
+          else
+            return a.status.localeCompare(b.status)
+        })
+      }
     }
 
     return res(
@@ -253,6 +271,7 @@ export const handlerAppsEcommerce = [
 
     // Sort Customers
     if (sortByLocal) {
+      console.log(sortByLocal)
       if (sortByLocal === 'customer') {
         filteredCustomers.sort((a, b) => {
           if (orderByLocal === 'asc')
@@ -287,6 +306,15 @@ export const handlerAppsEcommerce = [
           return b.order - a.order
         })
       }
+    }
+
+    if (sortByLocal === 'total_spent') {
+      filteredCustomers.sort((a, b) => {
+        if (orderByLocal === 'asc')
+          return a.total_spent - b.total_spent
+
+        return b.total_spent - a.total_spent
+      })
     }
 
     return res(

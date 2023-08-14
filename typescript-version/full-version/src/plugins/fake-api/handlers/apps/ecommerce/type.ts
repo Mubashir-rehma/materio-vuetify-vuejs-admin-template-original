@@ -7,7 +7,7 @@ export interface Customer {
   country: string
   country_code: string
   order: number
-  total_spent: string
+  total_spent: number
   avatar: string
 }
 

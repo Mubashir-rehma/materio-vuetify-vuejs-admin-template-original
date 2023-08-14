@@ -3915,7 +3915,7 @@ export const db: DB = {
       country: 'Sri Lanka',
       country_code: 'lk',
       order: 157,
-      total_spent: '$2074.22',
+      total_spent: 2074.22,
       avatar: avatar1,
     },
     {
@@ -3926,7 +3926,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 663,
-      total_spent: '$2404.19',
+      total_spent: 2404.19,
       avatar: avatar2,
     },
     {
@@ -3937,7 +3937,7 @@ export const db: DB = {
       country: 'Guatemala',
       country_code: 'gt',
       order: 64,
-      total_spent: '$8821.40',
+      total_spent: 8821.40,
       avatar: avatar3,
     },
     {
@@ -3948,7 +3948,7 @@ export const db: DB = {
       country: 'Portugal',
       country_code: 'pt',
       order: 640,
-      total_spent: '$5294.35',
+      total_spent: 5294.35,
       avatar: avatar4,
     },
     {
@@ -3959,7 +3959,7 @@ export const db: DB = {
       country: 'France',
       country_code: 'fr',
       order: 184,
-      total_spent: '$1003.30',
+      total_spent: 1003.30,
       avatar: avatar5,
     },
     {
@@ -3970,7 +3970,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 965,
-      total_spent: '$3876.92',
+      total_spent: 3876.92,
       avatar: avatar6,
     },
     {
@@ -3981,7 +3981,7 @@ export const db: DB = {
       country: 'Brazil',
       country_code: 'br',
       order: 514,
-      total_spent: '$7936.85',
+      total_spent: 7936.85,
       avatar: avatar7,
     },
     {
@@ -3992,7 +3992,7 @@ export const db: DB = {
       country: 'Guatemala',
       country_code: 'gt',
       order: 584,
-      total_spent: '$4150.97',
+      total_spent: 4150.97,
       avatar: avatar8,
     },
     {
@@ -4003,7 +4003,7 @@ export const db: DB = {
       country: 'Ukraine',
       country_code: 'ua',
       order: 539,
-      total_spent: '$3430.05',
+      total_spent: 3430.05,
       avatar: avatar9,
     },
     {
@@ -4014,7 +4014,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 4,
-      total_spent: '$8646.75',
+      total_spent: 8646.75,
       avatar: avatar10,
     },
     {
@@ -4025,7 +4025,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 602,
-      total_spent: '$5807.99',
+      total_spent: 5807.99,
       avatar: avatar11,
     },
     {
@@ -4036,7 +4036,7 @@ export const db: DB = {
       country: 'Bolivia',
       country_code: 'bo',
       order: 779,
-      total_spent: '$6677.41',
+      total_spent: 6677.41,
       avatar: avatar12,
     },
     {
@@ -4047,7 +4047,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 267,
-      total_spent: '$3340.41',
+      total_spent: 3340.41,
       avatar: avatar13,
     },
     {
@@ -4058,7 +4058,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 611,
-      total_spent: '$5768.17',
+      total_spent: 5768.17,
       avatar: avatar14,
     },
     {
@@ -4069,7 +4069,7 @@ export const db: DB = {
       country: 'Japan',
       country_code: 'jp',
       order: 90,
-      total_spent: '$4488.03',
+      total_spent: 4488.03,
       avatar: avatar15,
     },
     {
@@ -4080,7 +4080,7 @@ export const db: DB = {
       country: 'Ukraine',
       country_code: 'ua',
       order: 597,
-      total_spent: '$6936.49',
+      total_spent: 6936.49,
       avatar: avatar1,
     },
     {
@@ -4091,7 +4091,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 30,
-      total_spent: '$7994.11',
+      total_spent: 7994.11,
       avatar: avatar2,
     },
     {
@@ -4102,7 +4102,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 322,
-      total_spent: '$5710.25',
+      total_spent: 5710.25,
       avatar: avatar3,
     },
     {
@@ -4113,7 +4113,7 @@ export const db: DB = {
       country: 'Mexico',
       country_code: 'mx',
       order: 863,
-      total_spent: '$7537.74',
+      total_spent: 7537.74,
       avatar: avatar4,
     },
     {
@@ -4124,7 +4124,7 @@ export const db: DB = {
       country: 'Czech Republic',
       country_code: 'cz',
       order: 812,
-      total_spent: '$7801.46',
+      total_spent: 7801.46,
       avatar: avatar5,
     },
     {
@@ -4135,7 +4135,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 705,
-      total_spent: '$1371.44',
+      total_spent: 1371.44,
       avatar: avatar6,
     },
     {
@@ -4146,7 +4146,7 @@ export const db: DB = {
       country: 'United States',
       country_code: 'us',
       order: 956,
-      total_spent: '$8632.52',
+      total_spent: 8632.52,
       avatar: avatar7,
     },
     {
@@ -4157,7 +4157,7 @@ export const db: DB = {
       country: 'Malaysia',
       country_code: 'my',
       order: 326,
-      total_spent: '$7241.74',
+      total_spent: 7241.74,
       avatar: avatar8,
     },
     {
@@ -4168,7 +4168,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 748,
-      total_spent: '$5821.27',
+      total_spent: 5821.27,
       avatar: avatar9,
     },
     {
@@ -4179,7 +4179,7 @@ export const db: DB = {
       country: 'Nigeria',
       country_code: 'ng',
       order: 535,
-      total_spent: '$900.54',
+      total_spent: 900.54,
       avatar: avatar10,
     },
     {
@@ -4190,7 +4190,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 645,
-      total_spent: '$3200.38',
+      total_spent: 3200.38,
       avatar: avatar11,
     },
     {
@@ -4201,7 +4201,7 @@ export const db: DB = {
       country: 'Chile',
       country_code: 'cl',
       order: 709,
-      total_spent: '$376.46',
+      total_spent: 376.46,
       avatar: avatar12,
     },
     {
@@ -4212,7 +4212,7 @@ export const db: DB = {
       country: 'Bhutan',
       country_code: 'bt',
       order: 535,
-      total_spent: '$3654.39',
+      total_spent: 3654.39,
       avatar: avatar13,
     },
     {
@@ -4223,7 +4223,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 763,
-      total_spent: '$1136.68',
+      total_spent: 1136.68,
       avatar: avatar14,
     },
     {
@@ -4234,7 +4234,7 @@ export const db: DB = {
       country: 'Brazil',
       country_code: 'br',
       order: 63,
-      total_spent: '$1955.91',
+      total_spent: 1955.91,
       avatar: avatar15,
     },
     {
@@ -4245,7 +4245,7 @@ export const db: DB = {
       country: 'Sweden',
       country_code: 'se',
       order: 452,
-      total_spent: '$191.11',
+      total_spent: 191.11,
       avatar: avatar1,
     },
     {
@@ -4256,7 +4256,7 @@ export const db: DB = {
       country: 'Chile',
       country_code: 'cl',
       order: 415,
-      total_spent: '$5285.45',
+      total_spent: 5285.45,
       avatar: avatar7,
     },
     {
@@ -4267,7 +4267,7 @@ export const db: DB = {
       country: 'Czech Republic',
       country_code: 'cz',
       order: 651,
-      total_spent: '$4284.88',
+      total_spent: 4284.88,
       avatar: avatar2,
     },
     {
@@ -4278,7 +4278,7 @@ export const db: DB = {
       country: 'Kenya',
       country_code: 'ke',
       order: 219,
-      total_spent: '$6698.44',
+      total_spent: 6698.44,
       avatar: avatar3,
     },
     {
@@ -4289,7 +4289,7 @@ export const db: DB = {
       country: 'Brazil',
       country_code: 'br',
       order: 11,
-      total_spent: '$3496.34',
+      total_spent: 3496.34,
       avatar: avatar4,
     },
     {
@@ -4300,7 +4300,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 316,
-      total_spent: '$5328.02',
+      total_spent: 5328.02,
       avatar: avatar15,
     },
     {
@@ -4311,7 +4311,7 @@ export const db: DB = {
       country: 'Peru',
       country_code: 'pe',
       order: 931,
-      total_spent: '$5868.06',
+      total_spent: 5868.06,
       avatar: avatar13,
     },
     {
@@ -4322,7 +4322,7 @@ export const db: DB = {
       country: 'Czech Republic',
       country_code: 'cz',
       order: 30,
-      total_spent: '$4134.97',
+      total_spent: 4134.97,
       avatar: avatar1,
     },
     {
@@ -4333,7 +4333,7 @@ export const db: DB = {
       country: 'Brazil',
       country_code: 'br',
       order: 215,
-      total_spent: '$1869.06',
+      total_spent: 1869.06,
       avatar: avatar6,
     },
     {
@@ -4344,7 +4344,7 @@ export const db: DB = {
       country: 'Bolivia',
       country_code: 'bo',
       order: 696,
-      total_spent: '$2585.57',
+      total_spent: 2585.57,
       avatar: avatar7,
     },
     {
@@ -4355,7 +4355,7 @@ export const db: DB = {
       country: 'Bangladesh',
       country_code: 'bd',
       order: 956,
-      total_spent: '$1741.83',
+      total_spent: 1741.83,
       avatar: avatar8,
     },
     {
@@ -4366,7 +4366,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 172,
-      total_spent: '$1733.66',
+      total_spent: 1733.66,
       avatar: avatar9,
     },
     {
@@ -4377,7 +4377,7 @@ export const db: DB = {
       country: 'Nigeria',
       country_code: 'ng',
       order: 822,
-      total_spent: '$3930.51',
+      total_spent: 3930.51,
       avatar: avatar10,
     },
     {
@@ -4388,7 +4388,7 @@ export const db: DB = {
       country: 'Canada',
       country_code: 'ca',
       order: 51,
-      total_spent: '$4638.94',
+      total_spent: 4638.94,
       avatar: avatar11,
     },
     {
@@ -4399,7 +4399,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 559,
-      total_spent: '$3614.00',
+      total_spent: 3614.00,
       avatar: avatar12,
     },
     {
@@ -4410,7 +4410,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 945,
-      total_spent: '$5413.53',
+      total_spent: 5413.53,
       avatar: avatar13,
     },
     {
@@ -4421,7 +4421,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 149,
-      total_spent: '$589.72',
+      total_spent: 589.72,
       avatar: avatar1,
     },
     {
@@ -4432,7 +4432,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 438,
-      total_spent: '$8949.26',
+      total_spent: 8949.26,
       avatar: avatar14,
     },
     {
@@ -4443,7 +4443,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 716,
-      total_spent: '$4466.54',
+      total_spent: 4466.54,
       avatar: avatar15,
     },
     {
@@ -4454,7 +4454,7 @@ export const db: DB = {
       country: 'Poland',
       country_code: 'pl',
       order: 307,
-      total_spent: '$4382.72',
+      total_spent: 4382.72,
       avatar: avatar1,
     },
     {
@@ -4465,7 +4465,7 @@ export const db: DB = {
       country: 'United States',
       country_code: 'us',
       order: 684,
-      total_spent: '$4671.06',
+      total_spent: 4671.06,
       avatar: avatar2,
     },
     {
@@ -4476,7 +4476,7 @@ export const db: DB = {
       country: 'Portugal',
       country_code: 'pt',
       order: 315,
-      total_spent: '$6261.53',
+      total_spent: 6261.53,
       avatar: avatar2,
     },
     {
@@ -4487,7 +4487,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 797,
-      total_spent: '$741.89',
+      total_spent: 741.89,
       avatar: avatar3,
     },
     {
@@ -4498,7 +4498,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 145,
-      total_spent: '$4360.35',
+      total_spent: 4360.35,
       avatar: avatar4,
     },
     {
@@ -4509,7 +4509,7 @@ export const db: DB = {
       country: 'Colombia',
       country_code: 'co',
       order: 574,
-      total_spent: '$8328.19',
+      total_spent: 8328.19,
       avatar: avatar5,
     },
     {
@@ -4520,7 +4520,7 @@ export const db: DB = {
       country: 'Egypt',
       country_code: 'eg',
       order: 948,
-      total_spent: '$9899.06',
+      total_spent: 9899.06,
       avatar: avatar6,
     },
     {
@@ -4531,7 +4531,7 @@ export const db: DB = {
       country: 'Tanzania',
       country_code: 'tz',
       order: 541,
-      total_spent: '$9285.65',
+      total_spent: 9285.65,
       avatar: avatar7,
     },
     {
@@ -4542,7 +4542,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 99,
-      total_spent: '$3660.80',
+      total_spent: 3660.80,
       avatar: avatar8,
     },
     {
@@ -4553,7 +4553,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 108,
-      total_spent: '$1978.61',
+      total_spent: 1978.61,
       avatar: avatar9,
     },
     {
@@ -4564,7 +4564,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 483,
-      total_spent: '$772.98',
+      total_spent: 772.98,
       avatar: avatar10,
     },
     {
@@ -4575,7 +4575,7 @@ export const db: DB = {
       country: 'Macedonia',
       country_code: 'mk',
       order: 69,
-      total_spent: '$4227.77',
+      total_spent: 4227.77,
       avatar: avatar11,
     },
     {
@@ -4586,7 +4586,7 @@ export const db: DB = {
       country: 'France',
       country_code: 'fr',
       order: 147,
-      total_spent: '$6637.38',
+      total_spent: 6637.38,
       avatar: avatar12,
     },
     {
@@ -4597,7 +4597,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 444,
-      total_spent: '$1730.64',
+      total_spent: 1730.64,
       avatar: avatar13,
     },
     {
@@ -4608,7 +4608,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 831,
-      total_spent: '$9996.22',
+      total_spent: 9996.22,
       avatar: avatar14,
     },
     {
@@ -4619,7 +4619,7 @@ export const db: DB = {
       country: 'Finland',
       country_code: 'fi',
       order: 311,
-      total_spent: '$3459.82',
+      total_spent: 3459.82,
       avatar: avatar15,
     },
     {
@@ -4630,7 +4630,7 @@ export const db: DB = {
       country: 'Libya',
       country_code: 'ly',
       order: 473,
-      total_spent: '$5218.22',
+      total_spent: 5218.22,
       avatar: avatar10,
     },
     {
@@ -4641,7 +4641,7 @@ export const db: DB = {
       country: 'Argentina',
       country_code: 'ar',
       order: 752,
-      total_spent: '$5984.53',
+      total_spent: 5984.53,
       avatar: avatar11,
     },
     {
@@ -4652,7 +4652,7 @@ export const db: DB = {
       country: 'Norway',
       country_code: 'no',
       order: 582,
-      total_spent: '$5565.85',
+      total_spent: 5565.85,
       avatar: avatar12,
     },
     {
@@ -4663,7 +4663,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 751,
-      total_spent: '$9042.56',
+      total_spent: 9042.56,
       avatar: avatar13,
     },
     {
@@ -4674,7 +4674,7 @@ export const db: DB = {
       country: 'Peru',
       country_code: 'pe',
       order: 689,
-      total_spent: '$4508.42',
+      total_spent: 4508.42,
       avatar: avatar14,
     },
     {
@@ -4685,7 +4685,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 837,
-      total_spent: '$6379.88',
+      total_spent: 6379.88,
       avatar: avatar15,
     },
     {
@@ -4696,7 +4696,7 @@ export const db: DB = {
       country: 'Ecuador',
       country_code: 'ec',
       order: 724,
-      total_spent: '$2933.59',
+      total_spent: 2933.59,
       avatar: avatar10,
     },
     {
@@ -4707,7 +4707,7 @@ export const db: DB = {
       country: 'Brazil',
       country_code: 'br',
       order: 455,
-      total_spent: '$724.68',
+      total_spent: 724.68,
       avatar: avatar2,
     },
     {
@@ -4718,7 +4718,7 @@ export const db: DB = {
       country: 'Serbia',
       country_code: 'rs',
       order: 51,
-      total_spent: '$8287.03',
+      total_spent: 8287.03,
       avatar: avatar3,
     },
     {
@@ -4729,7 +4729,7 @@ export const db: DB = {
       country: 'Portugal',
       country_code: 'pt',
       order: 462,
-      total_spent: '$9157.04',
+      total_spent: 9157.04,
       avatar: avatar4,
     },
     {
@@ -4740,7 +4740,7 @@ export const db: DB = {
       country: 'Dominican Republic',
       country_code: 'do',
       order: 952,
-      total_spent: '$6106.41',
+      total_spent: 6106.41,
       avatar: avatar5,
     },
     {
@@ -4751,7 +4751,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 794,
-      total_spent: '$9053.56',
+      total_spent: 9053.56,
       avatar: avatar6,
     },
     {
@@ -4762,7 +4762,7 @@ export const db: DB = {
       country: 'Hong Kong',
       country_code: 'hk',
       order: 454,
-      total_spent: '$8180.20',
+      total_spent: 8180.20,
       avatar: avatar7,
     },
     {
@@ -4773,7 +4773,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 320,
-      total_spent: '$210.84',
+      total_spent: 210.84,
       avatar: avatar8,
     },
     {
@@ -4784,7 +4784,7 @@ export const db: DB = {
       country: 'Mexico',
       country_code: 'mx',
       order: 515,
-      total_spent: '$8571.28',
+      total_spent: 8571.28,
       avatar: avatar9,
     },
     {
@@ -4795,7 +4795,7 @@ export const db: DB = {
       country: 'Sweden',
       country_code: 'se',
       order: 906,
-      total_spent: '$620.57',
+      total_spent: 620.57,
       avatar: avatar10,
     },
     {
@@ -4806,7 +4806,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 519,
-      total_spent: '$332.44',
+      total_spent: 332.44,
       avatar: avatar11,
     },
     {
@@ -4817,7 +4817,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 313,
-      total_spent: '$2481.60',
+      total_spent: 2481.60,
       avatar: avatar12,
     },
     {
@@ -4828,7 +4828,7 @@ export const db: DB = {
       country: 'Nicaragua',
       country_code: 'ni',
       order: 623,
-      total_spent: '$8466.96',
+      total_spent: 8466.96,
       avatar: avatar13,
     },
     {
@@ -4839,7 +4839,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 835,
-      total_spent: '$9048.31',
+      total_spent: 9048.31,
       avatar: avatar14,
     },
     {
@@ -4850,7 +4850,7 @@ export const db: DB = {
       country: 'Egypt',
       country_code: 'eg',
       order: 361,
-      total_spent: '$9159.23',
+      total_spent: 9159.23,
       avatar: avatar15,
     },
     {
@@ -4861,7 +4861,7 @@ export const db: DB = {
       country: 'Jordan',
       country_code: 'jo',
       order: 527,
-      total_spent: '$9289.92',
+      total_spent: 9289.92,
       avatar: avatar1,
     },
     {
@@ -4872,7 +4872,7 @@ export const db: DB = {
       country: 'India',
       country_code: 'in',
       order: 25,
-      total_spent: '$4920.68',
+      total_spent: 4920.68,
       avatar: avatar2,
     },
     {
@@ -4883,7 +4883,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 404,
-      total_spent: '$7369.58',
+      total_spent: 7369.58,
       avatar: avatar3,
     },
     {
@@ -4894,7 +4894,7 @@ export const db: DB = {
       country: 'Turkmenistan',
       country_code: 'tm',
       order: 550,
-      total_spent: '$9083.15',
+      total_spent: 9083.15,
       avatar: avatar4,
     },
     {
@@ -4905,7 +4905,7 @@ export const db: DB = {
       country: 'United States',
       country_code: 'us',
       order: 792,
-      total_spent: '$2634.36',
+      total_spent: 2634.36,
       avatar: avatar5,
     },
     {
@@ -4916,7 +4916,7 @@ export const db: DB = {
       country: 'Russia',
       country_code: 'ru',
       order: 605,
-      total_spent: '$9381.83',
+      total_spent: 9381.83,
       avatar: avatar6,
     },
     {
@@ -4927,7 +4927,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 892,
-      total_spent: '$3957.06',
+      total_spent: 3957.06,
       avatar: avatar7,
     },
     {
@@ -4938,7 +4938,7 @@ export const db: DB = {
       country: 'Poland',
       country_code: 'pl',
       order: 894,
-      total_spent: '$1450.01',
+      total_spent: 1450.01,
       avatar: avatar11,
     },
     {
@@ -4949,7 +4949,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 866,
-      total_spent: '$8713.73',
+      total_spent: 8713.73,
       avatar: avatar12,
     },
     {
@@ -4960,7 +4960,7 @@ export const db: DB = {
       country: 'China',
       country_code: 'cn',
       order: 145,
-      total_spent: '$8589.40',
+      total_spent: 8589.40,
       avatar: avatar13,
     },
     {
@@ -4971,7 +4971,7 @@ export const db: DB = {
       country: 'Indonesia',
       country_code: 'id',
       order: 766,
-      total_spent: '$7119.15',
+      total_spent: 7119.15,
       avatar: avatar14,
     },
     {
@@ -4982,7 +4982,7 @@ export const db: DB = {
       country: 'North Korea',
       country_code: 'kp',
       order: 70,
-      total_spent: '$4403.22',
+      total_spent: 4403.22,
       avatar: avatar15,
     },
     {
@@ -4993,7 +4993,7 @@ export const db: DB = {
       country: 'Czech Republic',
       country_code: 'cz',
       order: 471,
-      total_spent: '$7696.67',
+      total_spent: 7696.67,
       avatar: avatar1,
     },
     {
@@ -5004,7 +5004,7 @@ export const db: DB = {
       country: 'Japan',
       country_code: 'jp',
       order: 181,
-      total_spent: '$2838.35',
+      total_spent: 2838.35,
       avatar: avatar15,
     },
   ],

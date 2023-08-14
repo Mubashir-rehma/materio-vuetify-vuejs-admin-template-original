@@ -21,12 +21,12 @@ const widgetData = ref([
 const headers = [
   { title: 'Product', key: 'product' },
   { title: 'Category', key: 'category' },
-  { title: 'Stock', key: 'stock' },
+  { title: 'Stock', key: 'stock', sortable: false },
   { title: 'SKU', key: 'sku' },
   { title: 'Price', key: 'price' },
   { title: 'QTY', key: 'qty' },
   { title: 'Status', key: 'status' },
-  { title: 'Actions', key: 'actions' },
+  { title: 'Actions', key: 'actions', sortable: false },
 ]
 
 const selectedStatus = ref()
@@ -36,7 +36,7 @@ const searchQuery = ref('')
 
 const status = ref([
   { title: 'Scheduled', value: 'Scheduled' },
-  { title: 'Publish', value: 'Publish' },
+  { title: 'Publish', value: 'Published' },
   { title: 'Inactive', value: 'Inactive' },
 ])
 

@@ -106,7 +106,7 @@ const headers = [
   { title: 'Category', key: 'category_title' },
   { title: 'Total Products', key: 'total_product' },
   { title: 'Total Earning', key: 'total_earning' },
-  { title: 'Action', key: 'actions' },
+  { title: 'Action', key: 'actions', sortable: false },
 ]
 
 const itemsPerPage = ref(10)

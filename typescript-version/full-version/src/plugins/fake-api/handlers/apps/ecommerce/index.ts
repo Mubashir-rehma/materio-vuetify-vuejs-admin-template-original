@@ -187,6 +187,15 @@ export const handlerAppsEcommerce = [
       }
     }
 
+    if (sortByLocal === 'spent') {
+      filterOrders.sort((a, b) => {
+        if (orderByLocal === 'desc')
+          return Number(b.spent) - Number(a.spent)
+        else
+          return Number(a.spent) - Number(b.spent)
+      })
+    }
+
     return res(
       ctx.status(200),
       ctx.json({
@@ -395,6 +404,17 @@ export const handlerAppsEcommerce = [
       }
     }
 
+    if (sortByLocal === 'status') {
+      filteredReviews.sort((a, b) => {
+        if (orderByLocal === 'asc')
+          return a.status.toLowerCase() > b.status.toLowerCase() ? 1 : -1
+        else if (orderByLocal === 'desc')
+          return a.status.toLowerCase() < b.status.toLowerCase() ? 1 : -1
+        else
+          return 0
+      })
+    }
+
     return res(
       ctx.status(200),
       ctx.json({
@@ -442,16 +462,15 @@ export const handlerAppsEcommerce = [
     const itemsPerPageLocal = is.number(parsedItemsPerPage) ? parsedItemsPerPage : 10
     const pageLocal = is.number(parsedPage) ? parsedPage : 1
 
-    const filteredReferrals = db.referrals
+    const filteredReferrals = [...db.referrals]
+
     if (sortByLocal) {
       if (sortByLocal === 'users') {
         filteredReferrals.sort((a, b) => {
           if (orderByLocal === 'asc')
-            return a.user.toLowerCase() > b.user.toLowerCase() ? 1 : -1
-          else if (orderByLocal === 'desc')
-            return a.user.toLowerCase() < b.user.toLowerCase() ? 1 : -1
-
-          return 0
+            return a.user.localeCompare(b.user)
+          else
+            return b.user.localeCompare(a.user)
         })
       }
 
@@ -472,6 +491,17 @@ export const handlerAppsEcommerce = [
             return Number(a.earning.slice(1)) - Number(b.earning.slice(1))
           else if (orderByLocal === 'desc')
             return Number(b.earning.slice(1)) - Number(a.earning.slice(1))
+
+          return 0
+        })
+      }
+
+      if (sortByLocal === 'value') {
+        filteredReferrals.sort((a, b) => {
+          if (orderByLocal === 'asc')
+            return Number(a.value.slice(1)) - Number(b.value.slice(1))
+          else if (orderByLocal === 'desc')
+            return Number(b.value.slice(1)) - Number(a.value.slice(1))
 
           return 0
         })

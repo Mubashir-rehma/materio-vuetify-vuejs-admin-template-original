@@ -28,9 +28,9 @@ const headers = [
   { title: 'Order', key: 'order' },
   { title: 'Date', key: 'date' },
   { title: 'Customers', key: 'customers' },
-  { title: 'Payment', key: 'payment' },
+  { title: 'Payment', key: 'payment', sortable: false },
   { title: 'Status', key: 'status' },
-  { title: 'Method', key: 'method' },
+  { title: 'Method', key: 'method', sortable: false },
   { title: 'Actions', key: 'actions' },
 ]
 

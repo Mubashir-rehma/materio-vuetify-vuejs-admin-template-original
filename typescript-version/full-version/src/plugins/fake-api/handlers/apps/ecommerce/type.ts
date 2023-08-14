@@ -59,7 +59,7 @@ export interface Order {
   avatar: string
   payment: number
   status: string
-  spent: string
+  spent: number
   method: string
   date: string
   time: string

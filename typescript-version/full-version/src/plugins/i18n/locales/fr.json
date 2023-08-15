@@ -158,6 +158,11 @@
   "Swiper": "Swiper",
   "$vuetify": {
     "badge": "Badge",
+    "dataFooter": {
+      "itemsPerPageText": "Objets par page:",
+      "itemsPerPageAll": "Tout",
+      "pageText": "{0}-{1} of {2}"
+    },
     "pagination": {
       "ariaLabel": {
         "root": "racine",

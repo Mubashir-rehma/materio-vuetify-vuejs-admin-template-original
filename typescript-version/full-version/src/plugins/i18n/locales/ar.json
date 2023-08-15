@@ -157,6 +157,11 @@
   "Swiper": "المنزلق",
   "$vuetify": {
     "badge": "شارة",
+    "dataFooter": {
+      "itemsPerPageText": "مواد لكل صفحة:",
+      "itemsPerPageAll": "الجميع",
+      "pageText": "{0} - {1} من {2}"
+    },
     "pagination": {
       "ariaLabel": {
         "root": "جذر",

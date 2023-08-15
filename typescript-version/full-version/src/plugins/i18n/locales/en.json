@@ -156,6 +156,11 @@
   "fleet": "fleet",
   "$vuetify": {
     "badge": "Badge",
+    "dataFooter": {
+      "itemsPerPageText": "Items per page:",
+      "itemsPerPageAll": "All",
+      "pageText": "{0}-{1} of {2}"
+    },
     "pagination": {
       "ariaLabel": {
         "root": "root",

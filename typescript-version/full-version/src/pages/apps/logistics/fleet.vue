@@ -4,6 +4,8 @@ import mapboxgl from 'mapbox-gl'
 import { onMounted, ref } from 'vue'
 import fleetImg from '@images/misc/fleet-car.png'
 
+const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
+
 const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfSaWsHvktHrRtpydQ'
 const map = ref()
 const refCars = ref([])
@@ -99,17 +101,28 @@ const flyToLocation = (geolocation: number[], index: number) => {
 </script>
 
 <template>
-  <VCard>
-    <VRow>
-      <VCol
-        cols="12"
-        md="4"
+  <VLayout class="fleet-app-layout">
+    <VNavigationDrawer
+      v-model="isLeftSidebarOpen"
+      width="320"
+      absolute
+      touchless
+      location="start"
+    >
+      <VCard
+        class="h-100"
+        flat
       >
+        <IconBtn
+          class="navigation-close-btn d-lg-none"
+          @click="isLeftSidebarOpen = !isLeftSidebarOpen"
+        >
+          <VIcon icon="tabler-x" />
+        </IconBtn>
         <VCardText>
           <h6 class="pb-6 text-h6">
             Fleet
           </h6>
-
           <div
             v-for="(vehicle, index) in vehicleTrackingData"
             :key="index"
@@ -124,23 +137,19 @@ const flyToLocation = (geolocation: number[], index: number) => {
                   icon="mdi-bus"
                   variant="tonal"
                 />
-
                 <div>
                   <div class="text-body-1 text-high-emphasis">
                     {{ vehicle.name }}
                   </div>
-
                   <div class="text-body-2">
                     {{ vehicle.location }}
                   </div>
                 </div>
               </div>
-
               <IconBtn density="comfortable">
                 <VIcon :icon="showPanel[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'" />
               </IconBtn>
             </div>
-
             <VExpandTransition mode="out-in">
               <div v-show="showPanel[index]">
                 <div class="py-4 mb-4">
@@ -148,7 +157,6 @@ const flyToLocation = (geolocation: number[], index: number) => {
                     <span class="text-body-1 text-high-emphasis ">Delivery Process</span>
                     <span class="text-body-2">{{ vehicle.progress }}%</span>
                   </div>
-
                   <VProgressLinear
                     model-value="88"
                     color="primary"
@@ -156,7 +164,6 @@ const flyToLocation = (geolocation: number[], index: number) => {
                     height="6"
                   />
                 </div>
-
                 <div>
                   <VTimeline
                     align="start"
@@ -184,7 +191,6 @@ const flyToLocation = (geolocation: number[], index: number) => {
                         Sep 01, 7:53 AM
                       </div>
                     </VTimelineItem>
-
                     <VTimelineItem
                       icon="mdi-check-circle-outline"
                       dot-color="rgb(var(--v-theme-surface))"
@@ -203,7 +209,6 @@ const flyToLocation = (geolocation: number[], index: number) => {
                         Sep 03, 8:02 AM
                       </div>
                     </VTimelineItem>
-
                     <VTimelineItem
                       icon="mdi-map-marker-outline"
                       dot-color="rgb(var(--v-theme-surface))"
@@ -228,38 +233,70 @@ const flyToLocation = (geolocation: number[], index: number) => {
             </VExpandTransition>
           </div>
         </VCardText>
-      </VCol>
+      </VCard>
+    </VNavigationDrawer>
 
-      <!-- 👉 Fleet map  -->
-      <VCol
-        cols="12"
-        md="8"
-      >
+    <VMain>
+      <div>
+        <IconBtn
+          class="d-lg-none navigation-toggle-btn rounded-sm"
+          variant="elevated"
+          @click="isLeftSidebarOpen = true"
+        >
+          <VIcon icon="tabler-menu-2" />
+        </IconBtn>
+        <!-- 👉 Fleet map  -->
         <div
           id="mapContainer"
           class="basemap"
         />
-
-        <template
+        <img
           v-for="i in 4"
+          ref="refCars"
           :key="i"
+          :class="i === activeIndex + 1 ? 'marker-focus' : ''"
+          :src="fleetImg"
+          alt="car Img marker"
+          height="42"
+          width="20"
         >
-          <img
-            ref="refCars"
-            :class="i === activeIndex + 1 ? 'marker-focus' : ''"
-            :src="fleetImg"
-            alt="car Img marker"
-            height="42"
-            width="20"
-          >
-        </template>
-      </VCol>
-    </VRow>
-  </VCard>
+      </div>
+    </VMain>
+  </VLayout>
 </template>
 
 <style lang="scss">
+@use "@styles/variables/_vuetify.scss";
+@use "@core/scss/base/_mixins.scss";
 @import "mapbox-gl/dist/mapbox-gl.css";
+
+.fleet-app-layout {
+  border-radius: vuetify.$card-border-radius;
+
+  @include mixins.elevation(vuetify.$card-elevation);
+
+  $sel-fleet-app-layout: &;
+
+  @at-root {
+    .skin--bordered {
+      @include mixins.bordered-skin($sel-fleet-app-layout);
+    }
+  }
+}
+
+.navigation-toggle-btn{
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+}
+
+.navigation-close-btn{
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+}
 
 .basemap {
   block-size: 80vh;

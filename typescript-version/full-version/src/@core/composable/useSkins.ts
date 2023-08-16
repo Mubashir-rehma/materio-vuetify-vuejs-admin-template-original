@@ -19,13 +19,15 @@ export const useSkins = () => {
   }))
 
   const injectSkinClasses = () => {
-    const bodyClasses = document.body.classList
-    const genSkinClass = (_skin?: string) => `skin--${_skin}`
+    if (typeof document !== 'undefined') {
+      const bodyClasses = document.body.classList
+      const genSkinClass = (_skin?: string) => `skin--${_skin}`
 
-    watch(skin, (val, oldVal) => {
-      bodyClasses.remove(genSkinClass(oldVal))
-      bodyClasses.add(genSkinClass(val))
-    }, { immediate: true })
+      watch(skin, (val, oldVal) => {
+        bodyClasses.remove(genSkinClass(oldVal))
+        bodyClasses.add(genSkinClass(val))
+      }, { immediate: true })
+    }
   }
 
   return {

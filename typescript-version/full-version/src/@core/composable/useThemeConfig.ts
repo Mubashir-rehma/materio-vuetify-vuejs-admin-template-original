@@ -1,3 +1,4 @@
+import { useStorage } from '@vueuse/core'
 import { useLayouts } from '@layouts'
 import { themeConfig } from '@themeConfig'
 
@@ -10,7 +11,7 @@ export const useThemeConfig = () => {
     },
     set(value: typeof themeConfig.app.theme.value) {
       themeConfig.app.theme.value = value
-      localStorage.setItem(`${themeConfig.app.title}-theme`, value.toString())
+      useStorage<typeof themeConfig.app.theme.value>(`${themeConfig.app.title}-theme`, null).value = value.toString()
 
       // ℹ️ We will not reset semi dark value when turning off dark mode because some user think it as bug
       // if (value !== 'light')
@@ -25,7 +26,7 @@ export const useThemeConfig = () => {
     },
     set(value: typeof themeConfig.verticalNav.isVerticalNavSemiDark.value) {
       themeConfig.verticalNav.isVerticalNavSemiDark.value = value
-      localStorage.setItem(`${themeConfig.app.title}-isVerticalNavSemiDark`, value.toString())
+      useStorage<typeof themeConfig.verticalNav.isVerticalNavSemiDark.value>(`${themeConfig.app.title}-isVerticalNavSemiDark`, null).value = value
     },
   })
 
@@ -35,7 +36,7 @@ export const useThemeConfig = () => {
     },
     set(value: typeof themeConfig.app.skin.value) {
       themeConfig.app.skin.value = value
-      localStorage.setItem(`${themeConfig.app.title}-skin`, value)
+      useStorage<typeof themeConfig.app.skin.value>(`${themeConfig.app.title}-skin`, null).value = value
     },
   })
 
@@ -45,7 +46,7 @@ export const useThemeConfig = () => {
     },
     set(value: typeof themeConfig.app.routeTransition.value) {
       themeConfig.app.routeTransition.value = value
-      localStorage.setItem(`${themeConfig.app.title}-transition`, value)
+      useStorage<typeof themeConfig.app.routeTransition.value>(`${themeConfig.app.title}-transition`, null).value = value
     },
   })
 

@@ -9,13 +9,22 @@ const messages = Object.fromEntries(
     .map(([key, value]) => [key.slice(10, -5), value.default]),
 )
 
-export const i18n = createI18n({
-  legacy: false,
-  locale: useCookie(`${themeConfig.app.title}-language`).value || themeConfig.app.i18n.defaultLocale,
-  fallbackLocale: 'en',
-  messages,
-})
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let _i18n: any = null
+
+export const getI18n = () => {
+  if (_i18n === null) {
+    _i18n = createI18n({
+      legacy: false,
+      locale: useCookie(`${themeConfig.app.title}-language`).value || themeConfig.app.i18n.defaultLocale,
+      fallbackLocale: 'en',
+      messages,
+    })
+  }
+
+  return _i18n
+}
 
 export default function (app: App) {
-  app.use(i18n)
+  app.use(getI18n())
 }

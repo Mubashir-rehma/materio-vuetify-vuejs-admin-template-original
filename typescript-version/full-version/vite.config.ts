@@ -65,7 +65,7 @@ export default defineConfig({
       vueTemplate: true,
 
       // ℹ️ Disabled to avoid confusion & accidental usage
-      ignore: ['useCookies'],
+      ignore: ['useCookies', 'useStorage'],
     }),
 
     // Docs: https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n#intlifyunplugin-vue-i18n

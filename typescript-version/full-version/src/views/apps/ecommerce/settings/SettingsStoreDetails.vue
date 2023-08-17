@@ -220,7 +220,10 @@
           cols="12"
           md="6"
         >
-          <VTextField label="Suffix" />
+          <VTextField
+            label="Suffix"
+            suffix="$"
+          />
         </VCol>
       </VRow>
 

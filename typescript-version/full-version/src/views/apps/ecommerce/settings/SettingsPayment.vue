@@ -1,242 +1,134 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import paypal from '@images/cards/paypal_primary.png'
+
+const isMenuOpen = ref(false)
+</script>
+
 <template>
-  <VCard
-    title="Profile"
-    class="mb-6"
-  >
-    <VCardText>
-      <VRow>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Store name"
-            placeholder="ABCD"
-          />
-        </VCol>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Phone"
-            placeholder="+(123) 456-7890"
-          />
-        </VCol>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Store contact email"
-            placeholder="johndoe@email.com"
-          />
-        </VCol>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Sender email"
-            placeholder="johndoe@email.com"
-          />
-        </VCol>
-        <VCol>
-          <VAlert
-            color="warning"
-            closable
-            variant="tonal"
-          >
-            <template #prepend>
-              <VAvatar
-                size="28"
-                icon="mdi-bell-outline"
-                variant="elevated"
-                color="warning"
-                rounded
-              />
-            </template>
-            Confirm that you have access to johndoe@gmail.com in sender email settings.
-          </VAlert>
-        </VCol>
-      </VRow>
-    </VCardText>
-  </VCard>
-
-  <VCard
-    title="Billing Information"
-    class="mb-6"
-  >
-    <VCardText>
-      <VRow>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Legal business name"
-            placeholder="Themeselection"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VSelect
-            label="Country*"
-            :items="['United States', 'Canada', 'UK']"
-            placeholder="Canada"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            placeholder="126, New Street"
-            label="Address"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Apartment,suit, etc."
-            placeholder="Empire Heights"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="4"
-        >
-          <VTextField
-            label="City"
-            placeholder="New York"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="4"
-        >
-          <VTextField
-            label="State"
-            placeholder="NY"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="4"
-        >
-          <VTextField
-            label="PIN Code"
-            placeholder="111011"
-          />
-        </VCol>
-      </VRow>
-    </VCardText>
-  </VCard>
-
-  <VCard
-    title="Time zone and units of measurement"
-    subtitle="Used to calculate product prices, shipping weights, and order times."
-    class="mb-6"
-  >
-    <VCardText>
-      <VRow>
-        <VCol cols="12">
-          <VSelect
-            label="Time zone"
-            :items="['(UTC-12:00) International Date Line West', '(UTC-11:00) Coordinated Universal Time-11', '(UTC-09:00) Alaska', '(UTC-08:00) Baja California']"
-            placeholder="(UTC-12:00) International Date Line West"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VSelect
-            label="Unit system"
-            :items="['Metric System', 'Imperial', 'International System']"
-            placeholder="Metric System"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VSelect
-            label="Default weight unit"
-            placeholder="Kilogram"
-            :items="['Kilogram', 'Pounds', 'Gram']"
-          />
-        </VCol>
-      </VRow>
-    </VCardText>
-  </VCard>
-
-  <VCard
-    title="Store currency"
-    subtitle="The currency your products are sold in."
-    class="mb-6"
-  >
-    <VCardText>
-      <VCol>
-        <VSelect
-          label="Store currency"
-          :items="['USD', 'INR', 'Euro', 'Pound']"
-          placeholder="USD"
-        />
-      </VCol>
-    </VCardText>
-  </VCard>
-
-  <VCard
-    title="Order id format"
-    subtitle="Shown on the Orders page, customer pages, and customer order notifications to identify orders."
-    class="mb-6"
-  >
-    <VCardText>
-      <VRow>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField
-            label="Prefix"
-            prefix="#"
-          />
-        </VCol>
-
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VTextField label="Suffix" />
-        </VCol>
-      </VRow>
-
-      <div class="mt-2">
-        Your order ID will appear as #1001, #1002, #1003 ...
-      </div>
-    </VCardText>
-  </VCard>
-
-  <div class="d-flex justify-end gap-x-4">
-    <VBtn
-      variant="outlined"
-      color="secondary"
+  <div>
+    <!-- 👉 Payment Providers  -->
+    <VCard
+      class="mb-6"
+      title="Payment providers"
     >
-      Discard
-    </VBtn>
-    <VBtn>Save</VBtn>
+      <VCardText>
+        <div class="text-sm mb-4">
+          Providers that enable you to accept payment methods at a rate set by the third-party. An additional fee will apply to new orders once you select a plan.
+        </div>
+        <VBtn variant="outlined">
+          Choose a provider
+        </VBtn>
+      </VCardText>
+    </VCard>
+
+    <!-- 👉 Supported Payment Methods -->
+    <VCard
+      title="Supported payment methods"
+      subtitle="Payment methods that are available with one of Vuexy's approved payment providers."
+      class="mb-6"
+    >
+      <VCardText>
+        <div class="text-body-1 font-weight-medium text-high-emphasis mb-6">
+          Default
+        </div>
+        <div class="my-class mb-6">
+          <div class="d-flex justify-space-between align-center mb-6">
+            <VAvatar
+
+              variant="elevated"
+              color="#ffffff"
+              rounded
+              class="px-1"
+            >
+              <VImg
+                :src="paypal"
+                height="21"
+                width="21"
+              />
+            </VAvatar>
+
+            <VBtn variant="text">
+              Activate PayPal
+            </VBtn>
+          </div>
+          <VDivider />
+          <div class="d-flex justify-space-between flex-wrap mt-6 gap-x-4">
+            <div>
+              <div class="text-body-2 mb-1">
+                Provider
+              </div>
+              <div class="text-body-1 text-high-emphasis">
+                PayPal
+              </div>
+            </div>
+
+            <div>
+              <div class="text-body-2 mb-1">
+                Status
+              </div>
+              <VChip
+                color="warning"
+                density="comfortable"
+              >
+                Inactive
+              </VChip>
+            </div>
+
+            <div>
+              <div class="text-body-2 mb-1">
+                Transaction Fee
+              </div>
+              <div class="text-body-1 text-high-emphasis">
+                2.99%
+              </div>
+            </div>
+          </div>
+        </div>
+        <VBtn variant="outlined">
+          Add Payment Method
+        </VBtn>
+      </VCardText>
+    </VCard>
+
+    <!-- 👉 Manual Payment Methods -->
+    <VCard
+      title="Manual payment methods"
+      class="mb-6"
+    >
+      <VCardText>
+        <p>Payments that are made outside your online store. When a customer selects a manual payment method such as cash on delivery, you'll need to approve their order before it can be fulfilled.</p>
+        <VBtnGroup
+          color="primary"
+          divided
+          density="comfortable"
+        >
+          <VBtn variant="outlined">
+            Add Manual Payment Methods
+          </VBtn>
+          <VBtn
+            icon
+            variant="outlined"
+          >
+            <VIcon
+              :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down' "
+              size="24"
+            />
+          </VBtn>
+        </VBtnGroup>
+      </VCardText>
+    </VCard>
+
+    <div class="d-flex justify-end gap-x-4">
+      <VBtn
+        color="secondary"
+        variant="outlined"
+      >
+        medium
+      </VBtn>
+      <VBtn color="primary">
+        medium
+      </VBtn>
+    </div>
   </div>
 </template>

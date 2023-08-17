@@ -118,7 +118,7 @@ const isAddProductDrawerOpen = ref(false)
   <div>
     <VCard>
       <VCardText>
-        <div class="d-flex justify-md-space-between flex-wrap gap-y-4 justify-center mb-6">
+        <div class="d-flex justify-md-space-between flex-wrap gap-4 justify-center">
           <VTextField
             v-model="searchQuery"
             placeholder="Search"
@@ -126,7 +126,7 @@ const isAddProductDrawerOpen = ref(false)
             style="max-inline-size: 200px; min-inline-size: 200px;"
           />
 
-          <div class="d-flex align-center  flex-wrap gap-4">
+          <div class="d-flex align-center flex-wrap gap-4">
             <VBtn
               prepend-icon="mdi-export-variant"
               color="secondary"
@@ -208,3 +208,9 @@ const isAddProductDrawerOpen = ref(false)
     <ECommerceAddCategoryDrawer v-model:isDrawerOpen="isAddProductDrawerOpen" />
   </div>
 </template>
+
+<style lang="scss">
+.ProseMirror-focused{
+  border: none;
+}
+</style>

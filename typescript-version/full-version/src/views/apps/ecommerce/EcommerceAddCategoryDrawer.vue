@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { Link } from '@tiptap/extension-link'
+import { Placeholder } from '@tiptap/extension-placeholder'
+import { StarterKit } from '@tiptap/starter-kit'
+import { EditorContent, useEditor } from '@tiptap/vue-3'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 interface Props {
@@ -16,13 +20,53 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
   emit('update:isDrawerOpen', val)
 }
 
-const refInputEl = ref<HTMLElement>()
+const editorRef = ref()
 
-const selectedFile = ref<File>()
+const editor = useEditor({
+  content: '',
+  extensions: [
+    StarterKit,
+    Placeholder.configure({
+      placeholder: 'Write something here...',
+    }),
+    Link.configure(
+      {
+        HTMLAttributes: {
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        },
+      },
+    ),
+  ],
+})
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const changeInput = (e: any) => {
-  selectedFile.value = e.target.files[0].name
+const setLink = () => {
+  const previousUrl = editorRef.value.getAttributes('link').href
+  const url = window.prompt('URL', previousUrl)
+
+  // cancelled
+  if (url === null)
+    return
+
+  // empty
+  if (url === '') {
+    editor
+      .chain()
+      .focus()
+      .extendMarkRange('link')
+      .unsetLink()
+      .run()
+
+    return
+  }
+
+  // update link
+  editorRef.value
+    .chain()
+    .focus()
+    .extendMarkRange('link')
+    .setLink({ href: url })
+    .run()
 }
 </script>
 
@@ -42,7 +86,10 @@ const changeInput = (e: any) => {
       />
 
       <PerfectScrollbar :options="{ wheelPropagation: false }">
-        <VCard flat>
+        <VCard
+          flat
+          class="add-category-card"
+        >
           <VCardText>
             <VForm @submit.prevent="">
               <VRow>
@@ -61,31 +108,19 @@ const changeInput = (e: any) => {
                 </VCol>
 
                 <VCol cols="12">
-                  <VTextField
-                    v-model="selectedFile"
+                  <VFileInput
                     prepend-icon=""
-                    label="Attachment"
                     density="compact"
                     placeholder="No file chosen"
                     clearable
                   >
-                    <template #append>
-                      <VBtn
-                        color="primary"
-                        variant="outlined"
-                        @click="() => refInputEl?.click()"
-                      >
-                        Choose File
-                      </VBtn>
+                    <template #prepend-inner>
+                      <div class="text-no-wrap pe-2 cursor-pointer">
+                        Choose Image
+                      </div>
+                      <VDivider vertical />
                     </template>
-                  </VTextField>
-                  <input
-                    ref="refInputEl"
-                    type="file"
-                    name="file"
-                    hidden
-                    @input="changeInput($event)"
-                  >
+                  </VFileInput>
                 </VCol>
 
                 <VCol cols="12">
@@ -97,10 +132,61 @@ const changeInput = (e: any) => {
                 </VCol>
 
                 <VCol cols="12">
-                  <VTextarea
-                    placeholder="Write A comment"
-                    label="Comment"
-                  />
+                  <p class="mb-2">
+                    Description
+                  </p>
+                  <div class="border rounded py-2 px-4">
+                    <EditorContent
+                      ref="editorRef"
+                      :editor="editor"
+                    />
+                    <div
+                      v-if="editor"
+                      class="d-flex justify-end flex-wrap gap-x-2"
+                    >
+                      <VIcon
+                        icon="tabler-bold"
+                        :color="editor.isActive('bold') ? 'primary' : ''"
+                        size="20"
+                        @click="editor.chain().focus().toggleBold().run()"
+                      />
+
+                      <VIcon
+                        :color="editor.isActive('underline') ? 'primary' : ''"
+                        icon="tabler-underline"
+                        size="20"
+                        @click="editor.commands.toggleUnderline()"
+                      />
+
+                      <VIcon
+                        :color="editor.isActive('italic') ? 'primary' : ''"
+                        icon="tabler-italic"
+                        size="20"
+                        @click="editor.chain().focus().toggleItalic().run()"
+                      />
+
+                      <VIcon
+                        :color="editor.isActive('bulletList') ? 'primary' : ''"
+                        icon="tabler-list"
+                        size="20"
+                        @click="editor.chain().focus().toggleBulletList().run()"
+                      />
+
+                      <VIcon
+                        :color="editor.isActive('orderedList') ? 'primary' : ''"
+                        icon="tabler-list-numbers"
+                        size="20"
+                        @click="editor.chain().focus().toggleOrderedList().run()"
+                      />
+
+                      <VIcon
+                        :color="editor.isActive('orderedList') ? 'primary' : ''"
+                        icon="tabler-link"
+                        size="20"
+                        @click="setLink"
+                      />
+                    </div>
+                  </div>
                 </VCol>
 
                 <VCol cols="12">
@@ -136,3 +222,28 @@ const changeInput = (e: any) => {
     </VNavigationDrawer>
   </div>
 </template>
+
+<style lang="scss">
+.add-category-card{
+  .ProseMirror {
+    padding: 0.5rem;
+    min-block-size: 15vh;
+
+    p {
+      margin-block-end: 0;
+    }
+
+    p.is-editor-empty:first-child::before {
+      block-size: 0;
+      color: #adb5bd;
+      content: attr(data-placeholder);
+      float: inline-start;
+      pointer-events: none;
+    }
+  }
+
+  .ProseMirror-focused{
+    outline: none;
+  }
+}
+</style>

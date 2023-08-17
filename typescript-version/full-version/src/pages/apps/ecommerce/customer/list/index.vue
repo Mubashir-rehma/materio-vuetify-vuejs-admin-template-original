@@ -61,6 +61,12 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
             density="compact"
           />
           <div class="d-flex flex-row gap-4 align-center flex-wrap">
+            <VSelect
+              v-model="options.itemsPerPage"
+              density="compact"
+              :items="[5, 10, 20, 50, 100]"
+            />
+
             <VBtn
               prepend-icon="mdi-export-variant"
               variant="outlined"
@@ -95,7 +101,12 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
               :image="item.raw.avatar"
             />
             <div class="d-flex flex-column">
-              <span class="text-sm font-weight-medium">{{ item.raw.customer }}</span>
+              <RouterLink
+                :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: item.raw.customer_id } }"
+                class="text-sm font-weight-medium"
+              >
+                {{ item.raw.customer }}
+              </RouterLink>
               <span class="text-xs">{{ item.raw.email }}</span>
             </div>
           </div>
@@ -106,6 +117,17 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
 
         <template #item.orders="{ item }">
           {{ item.raw.order }}
+        </template>
+
+        <template #item.country="{ item }">
+          <div class="d-flex gap-x-2">
+            <img
+              :src="item.raw.country_flag"
+              height="22"
+              width="22"
+            >
+            <span class="text-body-1">{{ item.raw.country }}</span>
+          </div>
         </template>
 
         <template #item.total_spent="{ item }">

@@ -598,8 +598,4 @@ const inventoryTabsData = [
     pointer-events: none;
   }
 }
-
-.ProseMirror-focused{
-  border: none;
-}
 </style>

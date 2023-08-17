@@ -271,7 +271,7 @@ const reviewStatChartConfig = {
 </script>
 
 <template>
-  <VRow>
+  <VRow class="match-height">
     <VCol
       cols="12"
       md="6"
@@ -339,7 +339,10 @@ const reviewStatChartConfig = {
       <VCard>
         <VCardText>
           <VRow>
-            <VCol cols="6">
+            <VCol
+              cols="12"
+              md="6"
+            >
               <div>
                 <h6 class="text-h6">
                   Reviews statistics
@@ -365,10 +368,14 @@ const reviewStatChartConfig = {
               </div>
             </VCol>
 
-            <VCol>
+            <VCol
+              cols="12"
+              md="6"
+            >
               <VueApexCharts
                 id="shipment-statistics"
                 type="bar"
+                height="160"
                 :options="reviewStatChartConfig"
                 :series="reviewStatChartSeries"
               />
@@ -443,8 +450,13 @@ const reviewStatChartConfig = {
                 size="34"
               />
               <div class="d-flex flex-column">
-                <span>{{ item.raw.reviewer }}</span>
-                <span>{{ item.raw.email }}</span>
+                <RouterLink
+                  :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: 478426 } }"
+                  class="font-weight-medium"
+                >
+                  {{ item.raw.reviewer }}
+                </RouterLink>
+                <span class="text-disabled text-sm">{{ item.raw.email }}</span>
               </div>
             </div>
           </template>

@@ -151,7 +151,10 @@ fetchCourseDetails()
       </VCard>
     </VCol>
 
-    <VCol>
+    <VCol
+      cols="12"
+      md="4"
+    >
       <div class="course-content">
         <VExpansionPanels variant="accordion">
           <VExpansionPanel
@@ -172,7 +175,7 @@ fetchCourseDetails()
               </div>
             </template>
             <template #text>
-              <VList>
+              <VList class="card-list">
                 <VListItem
                   v-for="(topic, id) in section.topics"
                   :key="id"
@@ -201,6 +204,7 @@ fetchCourseDetails()
 <style lang="scss" scoped>
 .course-content {
   position: sticky;
+  inset-block-end: 0;
   inset-block-start: 4rem;
 }
 </style>

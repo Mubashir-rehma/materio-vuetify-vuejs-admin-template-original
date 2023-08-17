@@ -153,13 +153,24 @@
   "Academy": "Academy",
   "Logistics": "Logistics",
   "Dashboard": "Dashboard",
-  "fleet": "fleet",
+  "Fleet": "Fleet",
+  "5": "5",
+  "10": "10",
+  "25": "25",
+  "50": "50",
+  "100": "100",
   "$vuetify": {
     "badge": "Badge",
+    "noDataText": "No data available",
+    "close": "Close",
     "dataFooter": {
       "itemsPerPageText": "Items per page:",
       "itemsPerPageAll": "All",
-      "pageText": "{0}-{1} of {2}"
+      "pageText": "{0}-{1} of {2}",
+      "firstPage": "First Page",
+      "prevPage": "Previous Page",
+      "nextPage": "Next Page",
+      "lastPage": "Last Page"
     },
     "pagination": {
       "ariaLabel": {
@@ -174,7 +185,8 @@
       "clear": "clear",
       "appendAction": "appendAction",
       "prependAction": "prependAction",
-      "counterSize": "counterSize"
+      "counterSize": "counterSize",
+      "otp": "otp"
     },
     "fileInput": {
       "counterSize": "counterSize"

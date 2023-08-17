@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VueApexCharts from 'vue3-apexcharts'
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Options } from '@core/types'
 
@@ -44,7 +45,7 @@ const deleteReview = async (id: number) => {
   fetchReviews()
 }
 
-watch ([searchQuery, options], fetchReviews)
+watch ([searchQuery, options], fetchReviews, { deep: true })
 
 const reviewData = [
   { rating: 5, value: 124 },
@@ -62,6 +63,209 @@ const headers = [
   { title: 'Status', key: 'status' },
   { title: 'Actions', key: 'actions' },
 ]
+
+const labelColor = 'rgba(var(--v-theme-on-surface), var(--v-disabled-opacity))'
+
+const config = {
+  colors_label: {
+    success: '#28c76f29',
+  },
+  colors: {
+    success: '#28c76f',
+  },
+}
+
+const reviewStatChartSeries = [
+  {
+    data: [20, 40, 60, 80, 100, 80, 60],
+  },
+]
+
+const reviewStatChartConfig = {
+  chart: {
+    height: 160,
+    width: 190,
+    type: 'bar',
+    toolbar: {
+      show: false,
+    },
+  },
+  legend: {
+    show: false,
+  },
+  grid: {
+    show: false,
+    padding: {
+      top: -25,
+      bottom: -12,
+    },
+  },
+  colors: [config.colors_label.success, config.colors_label.success, config.colors_label.success, config.colors_label.success, config.colors.success, config.colors_label.success, config.colors_label.success],
+  plotOptions: {
+    bar: {
+      barHeight: '75%',
+      columnWidth: '40%',
+      startingShape: 'rounded',
+      endingShape: 'rounded',
+      borderRadius: 5,
+      distributed: true,
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  xaxis: {
+    categories: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    labels: {
+      style: {
+        colors: labelColor,
+        fontSize: '13px',
+      },
+    },
+  },
+  yaxis: {
+    labels: {
+      show: false,
+    },
+  },
+  responsive: [{
+    breakpoint: 0,
+    options: {
+      chart: {
+        width: '100%',
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 1440,
+    options: {
+      chart: {
+        height: 150,
+        width: 190,
+        toolbar: {
+          show: !1,
+        },
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 6,
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 1400,
+    options: {
+      plotOptions: {
+        bar: {
+          borderRadius: 6,
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 1200,
+    options: {
+      chart: {
+        height: 130,
+        width: 190,
+        toolbar: {
+          show: !1,
+        },
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 6,
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 992,
+    chart: {
+      height: 150,
+      width: 190,
+      toolbar: {
+        show: !1,
+      },
+    },
+    options: {
+      plotOptions: {
+        bar: {
+          borderRadius: 5,
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 883,
+    options: {
+      plotOptions: {
+        bar: {
+          borderRadius: 5,
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 768,
+    options: {
+      chart: {
+        height: 150,
+        width: 190,
+        toolbar: {
+          show: !1,
+        },
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 4,
+          columnWidth: '40%',
+        },
+      },
+    },
+  }, {
+    breakpoint: 576,
+    options: {
+      chart: {
+        width: '100%',
+        height: '200',
+        type: 'bar',
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 6,
+          columnWidth: '30% ',
+        },
+      },
+    },
+  }, {
+    breakpoint: 420,
+    options: {
+      plotOptions: {
+        chart: {
+          width: '100%',
+          height: '200',
+          type: 'bar',
+        },
+        bar: {
+          borderRadius: 3,
+          columnWidth: '30%',
+        },
+      },
+    },
+  }],
+}
 </script>
 
 <template>
@@ -94,7 +298,7 @@ const headers = [
                 </div>
                 <VChip
                   color="primary"
-                  density="comfortable"
+                  label
                 >
                   +5 This week
                 </VChip>
@@ -114,7 +318,7 @@ const headers = [
                   <VProgressLinear
                     color="primary"
                     height="8"
-                    :model-value="data.value"
+                    :model-value="(data.value / 185) * 100"
                     rounded
                   />
                 </div>
@@ -125,6 +329,7 @@ const headers = [
         </VCardText>
       </VCard>
     </VCol>
+
     <VCol
       cols="12"
       md="6"
@@ -141,7 +346,7 @@ const headers = [
                   <span class="me-2">12 New Reviews</span>
                   <VChip
                     color="success"
-                    density="comfortable"
+                    label
                   >
                     +8.4%
                   </VChip>
@@ -157,8 +362,14 @@ const headers = [
                 </div>
               </div>
             </VCol>
+
             <VCol>
-              <!-- Add Chart here -->
+              <VueApexCharts
+                id="shipment-statistics"
+                type="bar"
+                :options="reviewStatChartConfig"
+                :series="reviewStatChartSeries"
+              />
             </VCol>
           </VRow>
         </VCardText>

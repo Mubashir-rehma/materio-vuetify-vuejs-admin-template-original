@@ -152,47 +152,55 @@ fetchCourseDetails()
     </VCol>
 
     <VCol>
-      <VExpansionPanels variant="accordion">
-        <VExpansionPanel
-          v-for="(section, index) in courseDetails?.content"
-          :key="index"
-          collapse-icon="mdi-chevron-down"
-          expand-icon="mdi-chevron-right"
-        >
-          <template #title>
-            <div>
-              <h6 class="text-h6">
-                {{ section.title }}
-              </h6>
-              <br>
+      <div class="course-content">
+        <VExpansionPanels variant="accordion">
+          <VExpansionPanel
+            v-for="(section, index) in courseDetails?.content"
+            :key="index"
+            collapse-icon="mdi-chevron-down"
+            expand-icon="mdi-chevron-right"
+          >
+            <template #title>
               <div>
-                {{ section.status }} | {{ section.time }}
+                <h6 class="text-h6">
+                  {{ section.title }}
+                </h6>
+                <br>
+                <div>
+                  {{ section.status }} | {{ section.time }}
+                </div>
               </div>
-            </div>
-          </template>
-
-          <template #text>
-            <VList>
-              <VListItem
-                v-for="(topic, id) in section.topics"
-                :key="id"
-                class="py-4"
-              >
-                <template #prepend>
-                  <VCheckbox
-                    class="me-3"
-                    :model-value="topic.isCompleted"
-                  />
-                </template>
-                <VListItemTitle class="text-high-emphasis font-weight-medium">
-                  {{ topic.title }}
-                </VListItemTitle>
-                <VListItemSubtitle>{{ topic.time }}</VListItemSubtitle>
-              </VListItem>
-            </VList>
-          </template>
-        </VExpansionPanel>
-      </VExpansionPanels>
+            </template>
+            <template #text>
+              <VList>
+                <VListItem
+                  v-for="(topic, id) in section.topics"
+                  :key="id"
+                  class="py-4"
+                >
+                  <template #prepend>
+                    <VCheckbox
+                      class="me-3"
+                      :model-value="topic.isCompleted"
+                    />
+                  </template>
+                  <VListItemTitle class="text-high-emphasis font-weight-medium">
+                    {{ topic.title }}
+                  </VListItemTitle>
+                  <VListItemSubtitle>{{ topic.time }}</VListItemSubtitle>
+                </VListItem>
+              </VList>
+            </template>
+          </VExpansionPanel>
+        </VExpansionPanels>
+      </div>
     </VCol>
   </VRow>
 </template>
+
+<style lang="scss" scoped>
+.course-content {
+  position: sticky;
+  inset-block-start: 4rem;
+}
+</style>

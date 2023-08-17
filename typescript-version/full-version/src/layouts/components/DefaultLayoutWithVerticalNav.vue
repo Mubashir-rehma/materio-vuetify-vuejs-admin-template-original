@@ -17,6 +17,7 @@ import { VerticalNavLayout } from '@layouts'
 const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
 const { width: windowWidth } = useWindowSize()
 
+// SECTION: Loading Indicator
 const isFallbackStateActive = ref(false)
 const refLoadingIndicator = ref<any>(null)
 
@@ -30,6 +31,8 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 }, {
   immediate: true,
 })
+
+// !SECTION
 </script>
 
 <template>

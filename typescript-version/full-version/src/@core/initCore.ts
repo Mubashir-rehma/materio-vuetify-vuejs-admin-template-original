@@ -1,3 +1,4 @@
+import { useStorage } from '@vueuse/core'
 import { useTheme } from 'vuetify'
 import { themeConfig } from '@themeConfig'
 
@@ -13,7 +14,8 @@ const _syncAppRtl = () => {
     locale,
     val => {
       // Update lang attribute of html tag
-      document.documentElement.setAttribute('lang', val as string)
+      if (typeof document !== 'undefined')
+        document.documentElement.setAttribute('lang', val as string)
 
       // Store selected language in cookie
       storedLang.value = val as string
@@ -76,8 +78,8 @@ const _syncInitialLoaderTheme = () => {
 
   watch(theme, () => {
     // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
-    localStorage.setItem(`${themeConfig.app.title}-initial-loader-bg`, vuetifyTheme.current.value.colors.surface)
-    localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, vuetifyTheme.current.value.colors.primary)
+    useStorage<string | null>(`${themeConfig.app.title}-initial-loader-bg`, null).value = vuetifyTheme.current.value.colors.surface
+    useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = vuetifyTheme.current.value.colors.primary
   }, {
     immediate: true,
   })

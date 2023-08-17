@@ -1,4 +1,5 @@
 <script setup lang="tsx">
+import { useStorage } from '@vueuse/core'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
@@ -48,7 +49,7 @@ const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
 const customPrimaryColor = ref('#ffffff')
 
 watch(theme, () => {
-  const localStoragePrimaryColor = localStorage.getItem(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`) || ''
+  const localStoragePrimaryColor = useStorage(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, '').value
 
   if (!colors.includes(localStoragePrimaryColor))
     customPrimaryColor.value = localStoragePrimaryColor
@@ -59,10 +60,10 @@ const setPrimaryColor = useDebounceFn((color: string) => {
   vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color
 
   // ℹ️ We need to store this color value in localStorage so vuetify plugin can pick on next reload
-  localStorage.setItem(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, color)
+  useStorage<string | null>(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color
 
   // ℹ️ Update initial loader color
-  localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, color)
+  useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = color
 }, 100)
 
 const { width: windowWidth } = useWindowSize()
@@ -240,7 +241,7 @@ const resetCustomizer = async () => {
   isAppRtl.value = INITIAL_IS_RTL
   appRouteTransition.value = initialConfig.app.routeTransition
   isVerticalNavCollapsed.value = initialConfig.verticalNav.isVerticalNavCollapsed
-  localStorage.setItem(`${themeConfig.app.title}-initial-loader-color`, staticPrimaryColor)
+  useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = staticPrimaryColor
   currentLayout.value = 'vertical'
 
   await nextTick()

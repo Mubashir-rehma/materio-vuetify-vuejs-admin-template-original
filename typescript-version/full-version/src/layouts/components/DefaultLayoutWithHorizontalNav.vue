@@ -16,6 +16,7 @@ import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const { appRouteTransition } = useThemeConfig()
 
+// SECTION: Loading Indicator
 const isFallbackStateActive = ref(false)
 const refLoadingIndicator = ref<any>(null)
 
@@ -29,6 +30,8 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 }, {
   immediate: true,
 })
+
+// !SECTION
 </script>
 
 <template>

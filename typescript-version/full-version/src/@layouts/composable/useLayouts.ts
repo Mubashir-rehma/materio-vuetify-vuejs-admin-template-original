@@ -1,3 +1,4 @@
+import { useStorage } from '@vueuse/core'
 import type { MaybeRef } from '@vueuse/shared'
 import type { Ref } from 'vue'
 import { AppContentLayoutNav, NavbarType } from '../enums'
@@ -20,7 +21,7 @@ export const useLayouts = () => {
     },
     set(value: typeof config.navbar.navbarBlur.value) {
       config.navbar.navbarBlur.value = value
-      localStorage.setItem(`${config.app.title}-navbarBlur`, value.toString())
+      useStorage<typeof config.navbar.navbarBlur.value>(`${config.app.title}-navbarBlur`, null).value = value
     },
   })
 
@@ -45,7 +46,7 @@ export const useLayouts = () => {
     },
     set(val: typeof config.verticalNav.isVerticalNavCollapsed.value) {
       config.verticalNav.isVerticalNavCollapsed.value = val
-      localStorage.setItem(`${config.app.title}-isVerticalNavCollapsed`, val.toString())
+      useStorage<typeof config.verticalNav.isVerticalNavCollapsed.value>(`${config.app.title}-isVerticalNavCollapsed`, null).value = val
     },
   })
 
@@ -55,7 +56,7 @@ export const useLayouts = () => {
     },
     set(val: typeof config.app.contentWidth.value) {
       config.app.contentWidth.value = val
-      localStorage.setItem(`${config.app.title}-contentWidth`, val.toString())
+      useStorage<typeof config.app.contentWidth.value>(`${config.app.title}-contentWidth`, null).value = val
     },
   })
 

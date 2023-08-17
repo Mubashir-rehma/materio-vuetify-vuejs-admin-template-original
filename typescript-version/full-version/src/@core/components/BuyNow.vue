@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const buyNowUrl = ('isMarketplace' in window && window.isMarketplace)
+const buyNowUrl = (typeof window !== 'undefined' && 'isMarketplace' in window && window.isMarketplace)
   ? 'https://store.vuetifyjs.com/products/materio-vuetify-vuejs-admin-template'
   : 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/'
 </script>

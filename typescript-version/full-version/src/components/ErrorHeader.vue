@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  statusCode?: string
+  statusCode?: string | number
   title?: string
   description?: string
 }

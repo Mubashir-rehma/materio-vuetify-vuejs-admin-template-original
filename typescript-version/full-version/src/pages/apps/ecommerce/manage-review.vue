@@ -5,6 +5,7 @@ import type { Options } from '@core/types'
 
 const reviews = ref([])
 const totalReviews = ref(0)
+const selectedStatus = ref('All')
 
 const options = ref<Options>({
   page: 1,
@@ -19,6 +20,7 @@ const searchQuery = ref('')
 const fetchReviews = async () => {
   const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/reviews', {
     q: searchQuery.value,
+    status: selectedStatus.value,
     ...options.value,
     ...(options.value.sortBy
      && {
@@ -45,7 +47,7 @@ const deleteReview = async (id: number) => {
   fetchReviews()
 }
 
-watch ([searchQuery, options], fetchReviews, { deep: true })
+watch ([searchQuery, selectedStatus, options], fetchReviews, { deep: true })
 
 const reviewData = [
   { rating: 5, value: 124 },
@@ -392,13 +394,16 @@ const reviewStatChartConfig = {
                 :items="[10, 25, 50, 100]"
                 density="compact"
               />
-              <VBtn
-                prepend-icon="mdi-export-variant"
-                variant="outlined"
-                color="secondary"
-              >
-                Export
-              </VBtn>
+              <VSelect
+                v-model="selectedStatus"
+                style="min-inline-size: 6.25rem;"
+                density="compact"
+                :items="[
+                  { title: 'All', value: 'All' },
+                  { title: 'Published', value: 'Published' },
+                  { title: 'Pending', value: 'Pending' },
+                ]"
+              />
               <VBtn prepend-icon="mdi-plus">
                 Add Product
               </VBtn>

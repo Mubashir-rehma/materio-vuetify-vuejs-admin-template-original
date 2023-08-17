@@ -341,7 +341,10 @@ export const handlerAppsEcommerce = [
     const sortBy = req.url.searchParams.get('sortBy')
     const orderBy = req.url.searchParams.get('orderBy')
     const itemsPerPage = req.url.searchParams.get('itemsPerPage')
+    const status = req.url.searchParams.get('status')
     const page = req.url.searchParams.get('page')
+
+    console.log(status, typeof status)
 
     const parsedSortBy = destr(sortBy)
     const sortByLocal = is.string(parsedSortBy) ? parsedSortBy : ''
@@ -365,6 +368,7 @@ export const handlerAppsEcommerce = [
 
       return (
         (product.toLowerCase().includes(queryLower) || reviewer.toLowerCase().includes(queryLower) || email.toLowerCase().includes(queryLower) || review.head.toLowerCase().includes(queryLower) || review.para.toLowerCase().includes(queryLower))
+        && (review.status === status || status === 'All')
       )
     })
 

@@ -149,19 +149,30 @@
   "Academy": "Académie",
   "Logistics": "Logistique",
   "Dashboard": "Tableau de bord",
-  "fleet": "flotte",
+  "Fleet": "Flotte",
   "Editors": "Éditeurs",
   "Front Pages": "Pages frontales",
   "Landing Page": "Page d'atterrissage",
   "checkout": "Check-out",
   "Payment": "Paiement",
   "Swiper": "Swiper",
+  "5": "5",
+  "10": "10",
+  "25": "25",
+  "50": "50",
+  "100": "100",
   "$vuetify": {
     "badge": "Badge",
+    "noDataText": "Pas de données disponibles",
+    "close": "Fermer",
     "dataFooter": {
       "itemsPerPageText": "Objets par page:",
       "itemsPerPageAll": "Tout",
-      "pageText": "{0}-{1} of {2}"
+      "pageText": "{0}-{1} of {2}",
+      "firstPage": "Première page",
+      "prevPage": "Page précédente",
+      "nextPage": "Page suivante",
+      "lastPage": "Dernière page"
     },
     "pagination": {
       "ariaLabel": {
@@ -175,7 +186,8 @@
     "input": {
       "clear": "dégager",
       "appendAction": "ajouter une action",
-      "prependAction": "préfixer l'action"
+      "prependAction": "préfixer l'action",
+      "otp": "otp"
     },
     "fileInput": {
       "counterSize": "Taille du compteur"

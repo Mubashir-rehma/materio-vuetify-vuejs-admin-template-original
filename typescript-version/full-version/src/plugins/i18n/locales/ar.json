@@ -148,19 +148,30 @@
   "Academy": "أكاديمية",
   "Logistics": "الخدمات اللوجستية",
   "Dashboard": "لوحة القيادة",
-  "fleet": "الأسطول",
+  "Fleet": "الأسطول",
   "Editors": "المحررين",
   "Front Pages": "الصفحات الأمامية",
   "Landing Page": "الصفحة المقصودة",
   "checkout": "الدفع",
   "Payment": "دفع",
   "Swiper": "المنزلق",
+  "5": "5",
+  "10": "10",
+  "25": "25",
+  "50": "50",
+  "100": "100",
   "$vuetify": {
     "badge": "شارة",
+    "noDataText": "لا تتوافر بيانات",
+    "close": "قريب",
     "dataFooter": {
       "itemsPerPageText": "مواد لكل صفحة:",
       "itemsPerPageAll": "الجميع",
-      "pageText": "{0} - {1} من {2}"
+      "pageText": "{0} - {1} من {2}",
+      "firstPage": "الصفحة الأولى",
+      "prevPage": "الصفحة السابقة",
+      "nextPage": "الصفحة التالية",
+      "lastPage": "آخر صفحة"
     },
     "pagination": {
       "ariaLabel": {
@@ -174,7 +185,8 @@
     "input": {
       "clear": "صافي",
       "appendAction": "إلحاق الإجراء",
-      "prependAction": "قبل العمل"
+      "prependAction": "قبل العمل",
+      "otp": "أوتب"
     },
     "fileInput": {
       "counterSize": "حجم العداد"

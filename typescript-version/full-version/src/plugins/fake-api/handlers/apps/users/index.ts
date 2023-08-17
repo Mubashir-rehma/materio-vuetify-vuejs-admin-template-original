@@ -115,7 +115,15 @@ export const handlerAppsUsers = [
       return res(
         ctx.status(200),
         ctx.json(
-          user,
+          {
+            ...user,
+            ...{
+              taskDone: 1230,
+              projectDone: 568,
+              taxId: 'Tax-8894',
+              language: 'English',
+            },
+          },
         ),
       )
     }

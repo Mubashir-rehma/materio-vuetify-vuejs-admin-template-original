@@ -51,7 +51,7 @@ export default [
         icon: { icon: 'mdi-truck-outline' },
         children: [
           { title: 'Dashboard', to: 'apps-logistics-overview' },
-          { title: 'fleet', to: 'apps-logistics-fleet' },
+          { title: 'Fleet', to: 'apps-logistics-fleet' },
         ],
       },
       {

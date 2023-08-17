@@ -110,14 +110,14 @@ watch(options, fetchReferrals, { deep: true })
         md="6"
       >
         <VCard>
-          <VCardText>
-            <div class="mb-6">
-              <h6 class="text-h6">
-                How to use
-              </h6>
-              <span class="text-body-1">Integrate your referral code in 3 easy steps.</span>
-            </div>
+          <VCardItem>
+            <VCardTitle> How to use</VCardTitle>
+            <VCardSubtitle>
+              Integrate your referral code in 3 easy steps.
+            </VCardSubtitle>
+          </VCardItem>
 
+          <VCardText>
             <div class="d-flex gap-x-4 justify-center">
               <div
                 v-for="(step, index) in stepsData"
@@ -202,13 +202,9 @@ watch(options, fetchReferrals, { deep: true })
       <!-- 👉 Referral Table -->
 
       <VCol cols="12">
-        <VCard>
-          <VCardText>
+        <VCard title="Referred Users">
+          <template #append>
             <div class="d-flex flex-wrap gap-4">
-              <h6 class="text-h6">
-                Referred Users
-              </h6>
-              <VSpacer />
               <div class="d-flex gap-4 align-center flex-wrap">
                 <VSelect
                   v-model="options.itemsPerPage"
@@ -221,7 +217,7 @@ watch(options, fetchReferrals, { deep: true })
                 </VBtn>
               </div>
             </div>
-          </VCardText>
+          </template>
 
           <VDataTableServer
             v-model:items-per-page="options.itemsPerPage"

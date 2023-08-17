@@ -37,25 +37,6 @@ const promoCodeList = [
   },
 ]
 
-const refStickyHeader = ref<HTMLElement>()
-const isSticky = ref(false)
-
-const getHeaderOffset = () => {
-  const Offset = refStickyHeader.value?.getBoundingClientRect() || { top: 0 }
-
-  if (Offset.top <= 65)
-    isSticky.value = true
-
-  else
-    isSticky.value = false
-}
-
-window.addEventListener('scroll', getHeaderOffset)
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', getHeaderOffset)
-})
-
 const formData = ref({
   fullName: '',
   email: '',
@@ -79,27 +60,19 @@ const formData = ref({
 </script>
 
 <template>
-  <VCard>
-    <div ref="refStickyHeader">
-      <div
-        class="w-100"
-        :class="isSticky ? 'sticky-header' : ''"
-      >
-        <div
-          class="d-flex align-center gap-4 flex-wrap bg-background pa-6"
-          :class="isSticky ? 'me-12' : ''"
-        >
-          <VCardTitle>Sticky Action Bar</VCardTitle>
-          <VSpacer />
-          <div>
-            <VBtn
-              variant="tonal"
-              class="me-5"
-            >
-              Back
-            </VBtn>
-            <VBtn>Place Order</VBtn>
-          </div>
+  <VCard class="overflow-visible">
+    <div class="w-100 sticky-header">
+      <div class=" d-flex align-center gap-4 flex-wrap bg-background pa-6">
+        <VCardTitle>Sticky Action Bar</VCardTitle>
+        <VSpacer />
+        <div>
+          <VBtn
+            variant="tonal"
+            class="me-5"
+          >
+            Back
+          </VBtn>
+          <VBtn>Place Order</VBtn>
         </div>
       </div>
     </div>
@@ -369,11 +342,12 @@ const formData = ref({
   </VCard>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sticky-header {
-  position: fixed;
+  position: sticky;
   z-index: 9;
-  inset-block-start: 64px;
+  inset-block-end: 0;
+  inset-block-start: 4rem;
   transition: all 0.3s ease-in-out;
 }
 </style>

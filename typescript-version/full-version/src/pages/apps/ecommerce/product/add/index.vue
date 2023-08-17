@@ -147,7 +147,6 @@ const inventoryTabsData = [
         </VCard>
 
         <!-- 👉 Media -->
-        <!-- 👉 Media -->
         <VCard class="mb-6">
           <VCardItem>
             <template #title>
@@ -170,16 +169,12 @@ const inventoryTabsData = [
                     v-if="fileData.length === 0"
                     class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone"
                   >
-                    <VAvatar
+                    <IconBtn
                       variant="tonal"
-                      rounded
-                      size="44"
+                      class="rounded-sm"
                     >
-                      <VIcon
-                        icon="mdi-upload"
-                        size="24"
-                      />
-                    </VAvatar>
+                      <VIcon icon="tabler-upload" />
+                    </IconBtn>
                     <div class="text-base text-high-emphasis font-weight-medium">
                       Drag and Drop Your Image Here.
                     </div>

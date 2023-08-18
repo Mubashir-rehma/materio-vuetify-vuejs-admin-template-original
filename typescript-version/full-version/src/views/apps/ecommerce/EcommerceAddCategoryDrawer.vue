@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Image } from '@tiptap/extension-image'
 import { Link } from '@tiptap/extension-link'
 import { Placeholder } from '@tiptap/extension-placeholder'
 import { StarterKit } from '@tiptap/starter-kit'
@@ -20,28 +21,24 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
   emit('update:isDrawerOpen', val)
 }
 
-const editorRef = ref()
-
 const editor = useEditor({
   content: '',
   extensions: [
     StarterKit,
+    Image,
     Placeholder.configure({
       placeholder: 'Write something here...',
     }),
     Link.configure(
       {
-        HTMLAttributes: {
-          target: '_blank',
-          rel: 'noopener noreferrer',
-        },
+        openOnClick: false,
       },
     ),
   ],
 })
 
 const setLink = () => {
-  const previousUrl = editorRef.value.getAttributes('link').href
+  const previousUrl = editor.value?.getAttributes('link').href
   const url = window.prompt('URL', previousUrl)
 
   // cancelled
@@ -50,23 +47,20 @@ const setLink = () => {
 
   // empty
   if (url === '') {
-    editor
-      .chain()
-      .focus()
-      .extendMarkRange('link')
-      .unsetLink()
-      .run()
+    editor.value?.chain().focus().extendMarkRange('link').unsetLink().run()
 
     return
   }
 
   // update link
-  editorRef.value
-    .chain()
-    .focus()
-    .extendMarkRange('link')
-    .setLink({ href: url })
-    .run()
+  editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
+}
+
+const addImage = () => {
+  const url = window.prompt('URL')
+
+  if (url)
+    editor.value?.chain().focus().setImage({ src: url }).run()
 }
 </script>
 
@@ -136,10 +130,7 @@ const setLink = () => {
                     Description
                   </p>
                   <div class="border rounded py-2 px-4">
-                    <EditorContent
-                      ref="editorRef"
-                      :editor="editor"
-                    />
+                    <EditorContent :editor="editor" />
                     <div
                       v-if="editor"
                       class="d-flex justify-end flex-wrap gap-x-2"
@@ -180,10 +171,15 @@ const setLink = () => {
                       />
 
                       <VIcon
-                        :color="editor.isActive('orderedList') ? 'primary' : ''"
                         icon="tabler-link"
                         size="20"
                         @click="setLink"
+                      />
+
+                      <VIcon
+                        icon="tabler-photo"
+                        size="20"
+                        @click="addImage"
                       />
                     </div>
                   </div>

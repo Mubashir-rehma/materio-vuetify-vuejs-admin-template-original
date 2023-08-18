@@ -19,6 +19,9 @@ dependencies:
   '@tiptap/extension-highlight':
     specifier: ^2.0.3
     version: 2.0.3(@tiptap/core@2.0.4)
+  '@tiptap/extension-image':
+    specifier: ^2.1.2
+    version: 2.1.2(@tiptap/core@2.0.4)
   '@tiptap/extension-link':
     specifier: ^2.1.1
     version: 2.1.1(@tiptap/core@2.0.4)(@tiptap/pm@2.0.3)
@@ -1658,6 +1661,14 @@ packages:
     dependencies:
       '@tiptap/core': 2.0.4(@tiptap/pm@2.0.3)
       '@tiptap/pm': 2.0.3(@tiptap/core@2.0.4)
+    dev: false
+
+  /@tiptap/extension-image@2.1.2(@tiptap/core@2.0.4):
+    resolution: {integrity: sha512-fCY+2yCepgrOm3Vyfm+y+1MlhS5msTKtiJLuls13C+W+xxLK2iMeO0GeuAgS/4qHt/ejI9j3vr1+AGx6a8G2Ng==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.4(@tiptap/pm@2.0.3)
     dev: false
 
   /@tiptap/extension-italic@2.0.4(@tiptap/core@2.0.4):

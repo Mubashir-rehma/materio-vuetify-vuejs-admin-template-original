@@ -1,5 +1,6 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup lang="ts">
+import type { LngLatLike } from 'mapbox-gl'
 import mapboxgl from 'mapbox-gl'
 import { onMounted, ref } from 'vue'
 import fleetImg from '@images/misc/fleet-car.png'
@@ -63,8 +64,9 @@ onMounted(() => {
   })
 
   for (let index = 0; index < geojson.features.length; index++)
-    new mapboxgl.Marker({ element: refCars.value[index] }).setLngLat(geojson.features[index].geometry.coordinates).addTo(map.value)
+    new mapboxgl.Marker({ element: refCars.value[index] }).setLngLat(geojson.features[index].geometry.coordinates as LngLatLike).addTo(map.value)
 
+  console.log(typeof refCars.value[activeIndex.value])
   refCars.value[activeIndex.value].classList.add('marker-focus')
 })
 

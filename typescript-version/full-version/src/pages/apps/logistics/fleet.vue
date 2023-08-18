@@ -8,7 +8,11 @@ const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfSaWsHvktHrRtpydQ'
 const map = ref()
+
+const carImgs = ref([fleetImg, fleetImg, fleetImg, fleetImg])
 const refCars = ref([])
+
+console.log(carImgs.value)
 
 const showPanel = ref([true, false, false, false])
 
@@ -46,6 +50,8 @@ const geojson = {
   ],
 }
 
+const activeIndex = ref(0)
+
 onMounted(() => {
   mapboxgl.accessToken = accessToken
 
@@ -57,7 +63,9 @@ onMounted(() => {
   })
 
   for (let index = 0; index < geojson.features.length; index++)
-    new mapboxgl.Marker(refCars.value[index]).setLngLat(geojson.features[index].geometry.coordinates).addTo(map.value)
+    new mapboxgl.Marker({ element: refCars.value[index] }).setLngLat(geojson.features[index].geometry.coordinates).addTo(map.value)
+
+  refCars.value[activeIndex.value].classList.add('marker-focus')
 })
 
 const vehicleTrackingData = [
@@ -87,8 +95,6 @@ const vehicleTrackingData = [
   },
 ]
 
-const activeIndex = ref(0)
-
 const flyToLocation = (geolocation: number[], index: number) => {
   activeIndex.value = index
   showPanel.value.fill(false)
@@ -98,6 +104,15 @@ const flyToLocation = (geolocation: number[], index: number) => {
     zoom: 16,
   })
 }
+
+watch(activeIndex, () => {
+  refCars.value.forEach((car, index) => {
+    if (index === activeIndex.value)
+      car.classList.add('marker-focus')
+    else
+      car.classList.remove('marker-focus')
+  })
+})
 </script>
 
 <template>
@@ -157,6 +172,7 @@ const flyToLocation = (geolocation: number[], index: number) => {
                     <span class="text-body-1 text-high-emphasis ">Delivery Process</span>
                     <span class="text-body-2">{{ vehicle.progress }}%</span>
                   </div>
+
                   <VProgressLinear
                     model-value="88"
                     color="primary"
@@ -164,6 +180,7 @@ const flyToLocation = (geolocation: number[], index: number) => {
                     height="6"
                   />
                 </div>
+
                 <div>
                   <VTimeline
                     align="start"
@@ -245,17 +262,18 @@ const flyToLocation = (geolocation: number[], index: number) => {
         >
           <VIcon icon="tabler-menu-2" />
         </IconBtn>
+
         <!-- 👉 Fleet map  -->
         <div
           id="mapContainer"
           class="basemap"
         />
+
         <img
-          v-for="i in 4"
+          v-for="(car, index) in carImgs"
+          :key="index"
           ref="refCars"
-          :key="i"
-          :class="i === activeIndex + 1 ? 'marker-focus' : ''"
-          :src="fleetImg"
+          :src="car"
           alt="car Img marker"
           height="42"
           width="20"

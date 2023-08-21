@@ -54,4 +54,4 @@ jobs:
     runs-on: ubuntu-latest
     name: Remove Awaiting Reply Label
     steps:
-      - run: gh label delete awaiting-reply --yes --repo ${{ github.repository }}
+      - run: gh issue edit --remove-label awaiting-reply --repo ${{ github.repository }}

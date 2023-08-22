@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { TransitionGroup } from 'vue'
 import { useLayouts } from '@layouts'
 import { TransitionExpand, VerticalNavLink } from '@layouts/components'
 import { config } from '@layouts/config'
@@ -169,6 +170,8 @@ watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
 //       isGroupOpen.value = false
 //   }
 // })
+
+const isMounted = useMounted()
 </script>
 
 <template>
@@ -192,7 +195,14 @@ watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
         v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
-      <TransitionGroup name="transition-slide-x">
+      <!--
+        ℹ️ isMounted is workaround of nuxt's hydration issue:
+        https://github.com/vuejs/core/issues/6715
+      -->
+      <Component
+        :is="isMounted ? TransitionGroup : 'div'"
+        name="transition-slide-x"
+      >
         <!-- 👉 Title -->
         <Component
           :is=" config.app.i18n.enable ? 'i18n-t' : 'span'"
@@ -223,7 +233,7 @@ watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
           key="arrow"
           class="nav-group-arrow"
         />
-      </TransitionGroup>
+      </Component>
     </div>
     <TransitionExpand>
       <ul

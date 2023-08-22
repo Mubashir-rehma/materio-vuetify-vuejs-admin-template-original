@@ -167,17 +167,16 @@ export const useLayouts = () => {
     return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value && !isLessThanOverlayNavBreakpoint.value(unref(windowWidth)))
   }
 
-  const dynamicI18nProps = computed(() => (key: string, tag = 'span') => {
-    if (config.app.i18n.enable) {
-      return {
-        keypath: key,
-        tag,
-        scope: 'global',
-      }
-    }
+  const dynamicI18nProps = (key: string, tag = 'span') => {
+    if (!config.app.i18n.enable)
+      return {}
 
-    return {}
-  })
+    return {
+      keypath: key,
+      tag,
+      scope: 'global',
+    }
+  }
 
   const isAppRtl = computed({
     get() {

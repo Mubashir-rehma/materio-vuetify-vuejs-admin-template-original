@@ -399,6 +399,8 @@ const resetCustomizer = async () => {
                     <VListItem>
                       <VColorPicker
                         v-model="customPrimaryColor"
+                        mode="hex"
+                        :modes="['hex']"
                         @update:model-value="setPrimaryColor"
                       />
                     </VListItem>

@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import paypal from '@images/cards/paypal_primary.png'
 
 const isMenuOpen = ref(false)
+const isAddPaymentMethodsDialogVisible = ref(false)
+const isPaymentProvidersDialogVisible = ref(false)
 </script>
 
 <template>
@@ -16,7 +18,10 @@ const isMenuOpen = ref(false)
         <div class="text-sm mb-4">
           Providers that enable you to accept payment methods at a rate set by the third-party. An additional fee will apply to new orders once you select a plan.
         </div>
-        <VBtn variant="outlined">
+        <VBtn
+          variant="outlined"
+          @click="isPaymentProvidersDialogVisible = !isPaymentProvidersDialogVisible"
+        >
           Choose a provider
         </VBtn>
       </VCardText>
@@ -85,7 +90,10 @@ const isMenuOpen = ref(false)
             </div>
           </div>
         </div>
-        <VBtn variant="outlined">
+        <VBtn
+          variant="outlined"
+          @click="isAddPaymentMethodsDialogVisible = !isAddPaymentMethodsDialogVisible"
+        >
           Add Payment Method
         </VBtn>
       </VCardText>
@@ -114,6 +122,18 @@ const isMenuOpen = ref(false)
               :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down' "
               size="24"
             />
+
+            <VMenu activator="parent">
+              <VList>
+                <VListItem
+                  v-for="(item, index) in ['Create custom payment method', 'Bank Deposit', 'Money Order', 'Cash on Delivery(COD)']"
+                  :key="index"
+                  :value="index"
+                >
+                  <VListItemTitle>{{ item }}</VListItemTitle>
+                </VListItem>
+              </VList>
+            </VMenu>
           </VBtn>
         </VBtnGroup>
       </VCardText>
@@ -131,4 +151,7 @@ const isMenuOpen = ref(false)
       </VBtn>
     </div>
   </div>
+
+  <AddPaymentMethodDialog v-model:is-dialog-visible="isAddPaymentMethodsDialogVisible" />
+  <PaymentProvidersDialog v-model:is-dialog-visible="isPaymentProvidersDialogVisible" />
 </template>

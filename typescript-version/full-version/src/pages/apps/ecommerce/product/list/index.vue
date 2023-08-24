@@ -3,10 +3,6 @@ import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { ECommerceProduct } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import type { Options } from '@core/types'
 
-definePage({
-  alias: '/dashboards/ecommerce',
-})
-
 const products = ref<ECommerceProduct[]>([])
 
 const totalProduct = ref(0)

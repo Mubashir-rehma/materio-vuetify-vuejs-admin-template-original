@@ -14,9 +14,9 @@ export default [
         icon: { icon: 'mdi-monitor-dashboard' },
       },
       {
-        title: 'Logistics',
-        to: 'apps-logistics-overview',
-        icon: { icon: 'mdi-truck-outline' },
+        title: 'Ecommerce',
+        to: 'dashboards-ecommerce',
+        icon: { icon: 'mdi-cart-outline' },
       },
       {
         title: 'Academy',

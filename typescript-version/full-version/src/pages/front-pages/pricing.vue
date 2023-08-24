@@ -143,7 +143,10 @@ const faqs = [
               <p class="text-sm">
                 You will get full access to all the features for 14 days.
               </p>
-              <VBtn class="mt-4">
+              <VBtn
+                class="mt-4"
+                :to="{ name: 'front-pages-payment' }"
+              >
                 Start-14-day FREE trial
               </VBtn>
             </div>
@@ -204,7 +207,7 @@ const faqs = [
                       size="20"
                       color="primary"
                       class="position-absolute ms-2"
-                      style="bottom: 3px;"
+                      style="inset-block-end: 3px;"
                     />
                   </h6>
                   <h6 class="font-weight-regular text-xs">
@@ -274,21 +277,27 @@ const faqs = [
             <!-- 👉 Table footer -->
             <tfoot>
               <tr>
-                <td class="py-4">
-                  Data storage for 365 days
-                </td>
+                <td class="py-4" />
                 <td class="text-center py-4">
-                  <VBtn variant="outlined">
+                  <VBtn
+                    variant="outlined"
+                    :to="{ name: 'front-pages-payment' }"
+                  >
                     Choose Plan
                   </VBtn>
                 </td>
+
                 <td class="text-center py-4">
-                  <VBtn>
+                  <VBtn :to="{ name: 'front-pages-payment' }">
                     Choose Plan
                   </VBtn>
                 </td>
+
                 <td class="text-center py-4">
-                  <VBtn variant="outlined">
+                  <VBtn
+                    variant="outlined"
+                    :to="{ name: 'front-pages-payment' }"
+                  >
                     Choose Plan
                   </VBtn>
                 </td>

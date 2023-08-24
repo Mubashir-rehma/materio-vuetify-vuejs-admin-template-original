@@ -237,7 +237,7 @@ const topicsData = [
             and get a lot of points reward!
           </div>
 
-          <div class="d-flex justify-space-between flex-wrap gap-4">
+          <div class="d-flex justify-space-between flex-wrap gap-4 flex-column flex-md-row">
             <div
               v-for="{ title, value, icon, color } in [
                 { title: 'Hours Spent', value: '34h', icon: 'custom-laptop', color: 'primary' },

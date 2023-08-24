@@ -5,6 +5,8 @@ import academyCourseIllustration1 from '@images/pages/academy-course-illustratio
 import academyCourseIllustration2 from '@images/pages/academy-course-illustration2.png'
 import boyIllustration from '@images/pages/boy-illustration.png'
 import forgotPasswordIllustration from '@images/pages/forgot-password-illustration.png'
+
+const searchQuery = ref()
 </script>
 
 <template>
@@ -27,6 +29,7 @@ import forgotPasswordIllustration from '@images/pages/forgot-password-illustrati
           </p>
           <div class="d-flex justify-center align-center gap-x-4">
             <VTextField
+              v-model="searchQuery"
               placeholder="Find your course"
               style="max-inline-size: 400px;"
               density="compact"
@@ -51,7 +54,7 @@ import forgotPasswordIllustration from '@images/pages/forgot-password-illustrati
       </VCardText>
     </VCard>
 
-    <AcademyMyCourses />
+    <AcademyMyCourses :search-query="searchQuery" />
 
     <div class="mb-6">
       <VRow>
@@ -76,17 +79,16 @@ import forgotPasswordIllustration from '@images/pages/forgot-password-illustrati
                   <VBtn>View Programs</VBtn>
                 </div>
 
-                <VAlert
+                <VCard
                   variant="tonal"
                   color="primary"
-                  min-width="180"
-                  max-height="127"
+                  class="flex-grow-1 d-flex justify-center align-end"
                 >
-                  <VImg
+                  <img
                     :src="boyIllustration"
                     height="119"
-                  />
-                </VAlert>
+                  >
+                </VCard>
               </div>
             </VCardText>
           </VCard>
@@ -114,17 +116,17 @@ import forgotPasswordIllustration from '@images/pages/forgot-password-illustrati
                     View Courses
                   </VBtn>
                 </div>
-                <VAlert
+
+                <VCard
                   variant="tonal"
                   color="error"
-                  min-width="180"
-                  max-height="127"
+                  class="flex-grow-1 d-flex justify-center align-end"
                 >
-                  <VImg
+                  <img
                     :src="forgotPasswordIllustration"
                     height="119"
-                  />
-                </VAlert>
+                  >
+                </VCard>
               </div>
             </VCardText>
           </VCard>

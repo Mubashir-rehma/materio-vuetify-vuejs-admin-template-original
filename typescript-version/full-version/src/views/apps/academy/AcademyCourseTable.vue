@@ -48,16 +48,19 @@ watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
 
 <template>
   <VCard>
-    <VCardItem title="Courses you are taking">
-      <template #append>
+    <VCardText>
+      <div class="d-flex flex-wrap justify-space-between align-center gap-4">
+        <h5 class="text-h5 font-weight-medium">
+          Courses you are taking
+        </h5>
         <VTextField
           v-model="searchQuery"
           placeholder="Search"
           density="comfortable"
-          style="min-inline-size: 200px;"
+          style="min-inline-size: 200px; max-inline-size: 200px;"
         />
-      </template>
-    </VCardItem>
+      </div>
+    </VCardText>
     <VDataTableServer
       v-model:items-per-page="options.itemsPerPage"
       v-model:page="options.page"
@@ -80,7 +83,7 @@ watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
           </VAvatar>
           <div>
             <span class="text-sm font-weight-medium">
-              {{ item.raw.courseTitle }}
+              <RouterLink :to="{ name: 'apps-academy-course-details' }">{{ item.raw.courseTitle }}</RouterLink>
             </span>
             <div>
               <VAvatar

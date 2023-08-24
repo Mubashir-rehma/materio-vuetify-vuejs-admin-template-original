@@ -30,7 +30,7 @@ import { themeConfig } from '@themeConfig'
                   label="Subscribe to newsletter"
                   placeholder="john@email.com"
                   density="compact"
-                  style="min-width: 250px;max-width: 500px;"
+                  style="max-inline-size: 500px;min-inline-size: 250px;"
                 />
                 <VBtn>Subscribe</VBtn>
               </VForm>
@@ -178,12 +178,24 @@ import { themeConfig } from '@themeConfig'
               class="text-white ms-1"
             >ThemeSelection</a>
           </span>
-          <div class="d-flex gap-x-6">
+          <div class="d-flex gap-x-2">
             <template
-              v-for="(icon, index) in ['mdi-github', 'mdi-facebook', 'mdi-twitter', 'mdi-google']"
+              v-for="(item, index) in [
+                { title: 'github', icon: 'mdi-github', href: 'https://github.com/themeselection' },
+                { title: 'facebook', icon: 'mdi-facebook', href: 'https://www.facebook.com/ThemeSelections/' },
+                { title: 'twitter', icon: 'mdi-twitter', href: 'https://twitter.com/Theme_Selection' },
+                { title: 'instagram', icon: 'mdi-instagram', href: 'https://www.instagram.com/themeselection/' },
+              ]"
               :key="index"
             >
-              <VIcon :icon="icon" />
+              <IconBtn
+                density="comfortable"
+                :href="item.href"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <VIcon :icon="item.icon" />
+              </IconBtn>
             </template>
           </div>
         </div>
@@ -213,7 +225,7 @@ import { themeConfig } from '@themeConfig'
 
   .v-field {
     input.v-field__input::placeholder {
-      color: rgba(231, 227, 252, var(--v-high-emphasis-opacity)) !important;
+      color: rgba(231, 227, 252, var(--v-disabled-opacity)) !important;
     }
   }
 }

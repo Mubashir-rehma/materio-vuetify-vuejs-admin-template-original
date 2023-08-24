@@ -110,6 +110,14 @@ const fetchProducts = async () => {
   }
 }
 
+const deleteProduct = async (id: number) => {
+  await $api(`apps/ecommerce/products/${id}`, {
+    method: 'DELETE',
+  })
+
+  fetchProducts()
+}
+
 watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], fetchProducts, { deep: true, immediate: true })
 </script>
 
@@ -151,7 +159,7 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
                 </div>
 
                 <VAvatar
-                  color="rgba(var(--v-theme-on-background), var(--v-hover-opacity))"
+                  variant="tonal"
                   rounded
                   size="38"
                 >
@@ -257,6 +265,7 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
           <VBtn
             color="primary"
             prepend-icon="mdi-plus"
+            @click="$router.push('/apps/ecommerce/product/add')"
           >
             Add Product
           </VBtn>
@@ -321,22 +330,39 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
         </template>
 
         <!-- Actions -->
-        <template #item.actions>
+        <template #item.actions="{ item }">
           <IconBtn>
             <VIcon icon="mdi-pencil-outline" />
           </IconBtn>
-          <MoreBtn
-            :menu-list="[
-              { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
-              {
-                title: 'Edit',
-                value: 'edit',
-                prependIcon: 'mdi-pencil-outline',
-              },
-              { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
-            ]"
-            item-props
-          />
+
+          <IconBtn>
+            <VIcon icon="mdi-dots-vertical" />
+            <VMenu activator="parent">
+              <VList>
+                <VListItem
+                  value="download"
+                  prepend-icon="mdi-download-outline"
+                >
+                  Download
+                </VListItem>
+
+                <VListItem
+                  value="delete"
+                  prepend-icon="mdi-delete-outline"
+                  @click="deleteProduct(item.raw.id)"
+                >
+                  Delete
+                </VListItem>
+
+                <VListItem
+                  value="duplicate"
+                  prepend-icon="mdi-layers-outline"
+                >
+                  Duplicate
+                </VListItem>
+              </VList>
+            </VMenu>
+          </IconBtn>
         </template>
       </VDataTableServer>
     </VCard>

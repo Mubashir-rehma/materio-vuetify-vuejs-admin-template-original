@@ -1,9 +1,9 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup lang="ts">
-import type { LngLatLike } from 'mapbox-gl'
-import mapboxgl from 'mapbox-gl'
-import { onMounted, ref } from 'vue'
-import fleetImg from '@images/misc/fleet-car.png'
+import fleetImg from '@images/misc/fleet-car.png';
+import type { LngLatLike } from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl';
+import { onMounted, ref } from 'vue';
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
@@ -13,7 +13,6 @@ const map = ref()
 const carImgs = ref([fleetImg, fleetImg, fleetImg, fleetImg])
 const refCars = ref([])
 
-console.log(carImgs.value)
 
 const showPanel = ref([true, false, false, false])
 
@@ -66,7 +65,6 @@ onMounted(() => {
   for (let index = 0; index < geojson.features.length; index++)
     new mapboxgl.Marker({ element: refCars.value[index] }).setLngLat(geojson.features[index].geometry.coordinates as LngLatLike).addTo(map.value)
 
-  console.log(typeof refCars.value[activeIndex.value])
   refCars.value[activeIndex.value].classList.add('marker-focus')
 })
 
@@ -140,6 +138,7 @@ watch(activeIndex, () => {
           <h6 class="pb-6 text-h6">
             Fleet
           </h6>
+
           <div
             v-for="(vehicle, index) in vehicleTrackingData"
             :key="index"
@@ -164,7 +163,7 @@ watch(activeIndex, () => {
                 </div>
               </div>
               <IconBtn density="comfortable">
-                <VIcon :icon="showPanel[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'" />
+                <VIcon :icon="showPanel[index] ? 'mdi-chevron-down' : $vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'" />
               </IconBtn>
             </div>
             <VExpandTransition mode="out-in">
@@ -174,15 +173,13 @@ watch(activeIndex, () => {
                     <span class="text-body-1 text-high-emphasis ">Delivery Process</span>
                     <span class="text-body-2">{{ vehicle.progress }}%</span>
                   </div>
-
                   <VProgressLinear
-                    model-value="88"
+                    :model-value="vehicle.progress"
                     color="primary"
                     rounded
                     height="6"
                   />
                 </div>
-
                 <div>
                   <VTimeline
                     align="start"

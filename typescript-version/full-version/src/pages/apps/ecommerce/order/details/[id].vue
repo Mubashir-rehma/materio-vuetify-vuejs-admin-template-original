@@ -8,6 +8,9 @@ import product23 from '@images/ecommerce-images/product-23.png'
 import product24 from '@images/ecommerce-images/product-24.png'
 
 const route = useRoute('apps-ecommerce-order-details-id')
+const isConfirmDialogVisible = ref(false)
+const isUserInfoEditDialogVisible = ref(false)
+const isEditAddressDialogVisible = ref(false)
 
 const headers = [
   { title: 'Product', key: 'product_name' },
@@ -45,7 +48,6 @@ const orderData = [
     price: 299,
     quantity: 2,
   },
-
 ]
 </script>
 
@@ -84,6 +86,7 @@ const orderData = [
       <VBtn
         variant="outlined"
         color="error"
+        @click="isConfirmDialogVisible = !isConfirmDialogVisible"
       >
         Delete Order
       </VBtn>
@@ -103,13 +106,14 @@ const orderData = [
               </h5>
             </template>
             <template #append>
-              <span>Edit</span>
+              <span class="text-primary cursor-pointer">Edit</span>
             </template>
           </VCardItem>
 
           <VDataTable
             :headers="headers"
             :items="orderData"
+            item-value="product_name"
             show-select
           >
             <template #item.product_name="{ item }">
@@ -309,7 +313,10 @@ const orderData = [
             <div class="d-flex flex-column gap-y-1">
               <div class="d-flex justify-space-between text-body-2">
                 <span class="text-body-2 text-high-emphasis font-weight-medium">Contact Info</span>
-                <span class="text-primary font-weight-medium">Edit</span>
+                <span
+                  class="text-primary font-weight-medium cursor-pointer"
+                  @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible"
+                >Edit</span>
               </div>
               <span>Email: Sheldon88@yahoo.com</span>
               <span>Mobile: +1 (609) 972-22-22</span>
@@ -324,7 +331,10 @@ const orderData = [
               <div class="text-body-1 text-high-emphasis font-weight-medium">
                 Shipping Address
               </div>
-              <span class="text-body-2 text-primary font-weight-medium">Edit</span>
+              <span
+                class="text-body-2 text-primary font-weight-medium cursor-pointer"
+                @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
+              >Edit</span>
             </div>
             <div>
               45 Rocker Terrace <br> Latheronwheel <br> KW5 8NW, London <br> UK
@@ -339,7 +349,10 @@ const orderData = [
               <div class="text-body-1 text-high-emphasis font-weight-medium">
                 Billing Address
               </div>
-              <span class="text-body-2 text-primary font-weight-medium">Edit</span>
+              <span
+                class="text-body-2 text-primary font-weight-medium cursor-pointer"
+                @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
+              >Edit</span>
             </div>
             <div>
               45 Rocker Terrace <br> Latheronwheel <br> KW5 8NW, London <br> UK
@@ -357,5 +370,18 @@ const orderData = [
         </VCard>
       </VCol>
     </VRow>
+
+    <ConfirmDialog
+      v-model:isDialogVisible="isConfirmDialogVisible"
+      confirmation-question="Are you sure to cancel your Order?"
+      cancel-msg="Order cancelled!!"
+      cancel-title="Cancelled"
+      confirm-msg="Your order cancelled successfully."
+      confirm-title="Cancelled!"
+    />
+
+    <UserInfoEditDialog v-model:isDialogVisible="isUserInfoEditDialogVisible" />
+
+    <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
   </div>
 </template>

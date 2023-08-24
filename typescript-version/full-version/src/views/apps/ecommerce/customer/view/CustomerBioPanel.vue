@@ -2,13 +2,12 @@
 import type { Customer } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import rocketImg from '@images/eCommerce/rocket.png'
 
+const props = defineProps<Props>()
+const isUserInfoEditDialogVisible = ref(false)
+const isUpgradePlanDialogVisible = ref(false)
 interface Props {
   customerData: Customer
 }
-
-const props = defineProps<Props>()
-
-console.log(typeof props.customerData.customer, props.customerData.customer)
 </script>
 
 <template>
@@ -32,7 +31,7 @@ console.log(typeof props.customerData.customer, props.customerData.customer)
               v-else
               class="text-5xl font-weight-medium"
             >
-              deep
+              User Not Availaable
             </span>
           </VAvatar>
 
@@ -130,7 +129,7 @@ console.log(typeof props.customerData.customer, props.customerData.customer)
         </VCardText>
 
         <VCardText class="text-center">
-          <VBtn>
+          <VBtn @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible">
             Edit Details
           </VBtn>
         </VCardText>
@@ -167,6 +166,7 @@ console.log(typeof props.customerData.customer, props.customerData.customer)
             color="light"
             class="text-primary"
             block
+            @click="isUpgradePlanDialogVisible = !isUpgradePlanDialogVisible"
           >
             Upgrade to Premium
           </VBtn>
@@ -175,6 +175,8 @@ console.log(typeof props.customerData.customer, props.customerData.customer)
     </VCol>
     <!-- !SECTION -->
   </VRow>
+  <UserInfoEditDialog v-model:isDialogVisible="isUserInfoEditDialogVisible" />
+  <UserUpgradePlanDialog v-model:isDialogVisible="isUpgradePlanDialogVisible" />
 </template>
 
 <style lang="scss" scoped>

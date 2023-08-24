@@ -32,7 +32,7 @@ const assignmentData = [
               </span>
             </VProgressCircular>
           </template>
-          <VListItemTitle class="font-weight-medium">
+          <VListItemTitle class="font-weight-medium me-4">
             {{ assignment.title }}
           </VListItemTitle>
           <VListItemSubtitle>{{ assignment.tasks }} Tasks</VListItemSubtitle>
@@ -42,8 +42,12 @@ const assignmentData = [
               color="default"
               class="rounded"
               size="28"
-              icon="mdi-chevron-right"
-            />
+            >
+              <VIcon
+                icon="mdi-chevron-right"
+                class="flip-in-rtl"
+              />
+            </VBtn>
           </template>
         </VListItem>
       </VList>

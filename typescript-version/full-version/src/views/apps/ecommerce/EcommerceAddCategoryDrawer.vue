@@ -2,9 +2,11 @@
 import { Image } from '@tiptap/extension-image'
 import { Link } from '@tiptap/extension-link'
 import { Placeholder } from '@tiptap/extension-placeholder'
+import { Underline } from '@tiptap/extension-underline'
 import { StarterKit } from '@tiptap/starter-kit'
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { VForm } from 'vuetify/components/VForm'
 
 interface Props {
   isDrawerOpen: boolean
@@ -29,6 +31,7 @@ const editor = useEditor({
     Placeholder.configure({
       placeholder: 'Write something here...',
     }),
+    Underline,
     Link.configure(
       {
         openOnClick: false,
@@ -62,6 +65,18 @@ const addImage = () => {
   if (url)
     editor.value?.chain().focus().setImage({ src: url }).run()
 }
+
+const refVForm = ref<VForm>()
+const categoryTitle = ref()
+const categorySlug = ref()
+const categoryImg = ref()
+const parentCategory = ref()
+const parentStatus = ref()
+
+const resetForm = () => {
+  emit('update:isDrawerOpen', false)
+  refVForm.value?.reset()
+}
 </script>
 
 <template>
@@ -85,26 +100,35 @@ const addImage = () => {
           class="add-category-card"
         >
           <VCardText>
-            <VForm @submit.prevent="">
+            <VForm
+              ref="refVForm"
+              @submit.prevent=""
+            >
               <VRow>
                 <VCol cols="12">
                   <VTextField
+                    v-model="categoryTitle"
                     label="Title"
+                    :rules="[requiredValidator]"
                     placeholder="Fashion"
                   />
                 </VCol>
 
                 <VCol cols="12">
                   <VTextField
+                    v-model="categorySlug"
                     label="Slug"
+                    :rules="[requiredValidator]"
                     placeholder="Trends fashion"
                   />
                 </VCol>
 
                 <VCol cols="12">
                   <VFileInput
+                    v-model="categoryImg"
                     prepend-icon=""
                     density="compact"
+                    :rules="[requiredValidator]"
                     placeholder="No file chosen"
                     clearable
                   >
@@ -119,6 +143,8 @@ const addImage = () => {
 
                 <VCol cols="12">
                   <VSelect
+                    v-model="parentCategory"
+                    :rules="[requiredValidator]"
                     label="Parent Category"
                     placeholder="Select Parent Category"
                     :items="['HouseHold', 'Management', 'Electronics', 'Office', 'Accessories']"
@@ -187,6 +213,8 @@ const addImage = () => {
 
                 <VCol cols="12">
                   <VSelect
+                    v-model="parentStatus"
+                    :rules="[requiredValidator]"
                     placeholder="Select Category Status"
                     label="Parent Status"
                     :items="['Published', 'Inactive', 'Scheduled']"
@@ -196,6 +224,7 @@ const addImage = () => {
                 <VCol cols="12">
                   <div class="d-flex justify-start">
                     <VBtn
+                      type="submit"
                       color="primary"
                       class="me-4"
                     >
@@ -204,7 +233,7 @@ const addImage = () => {
                     <VBtn
                       color="error"
                       variant="outlined"
-                      @click="$emit('update:isDrawerOpen', false)"
+                      @click="resetForm"
                     >
                       Discard
                     </VBtn>

@@ -99,7 +99,7 @@ watch(() => props.currentStep, updateCartData)
 
             <div
               class="d-flex w-100"
-              :class="$vuetify.display.width <= 700 ? 'flex-column' : 'flex-row'"
+              :class="(($vuetify.display.width <= 1280 && $vuetify.display.width >= 960) || $vuetify.display.width <= 700) ? 'flex-column' : 'flex-row'"
             >
               <div>
                 <h6 class="text-base font-weight-regular mb-4">
@@ -138,7 +138,7 @@ watch(() => props.currentStep, updateCartData)
 
               <div
                 class="d-flex flex-column justify-space-between mt-5"
-                :class="$vuetify.display.width <= 700 ? 'text-start' : 'text-end'"
+                :class="(($vuetify.display.width <= 1280 && $vuetify.display.width >= 960) || $vuetify.display.width <= 700) ? 'text-start' : 'text-end'"
               >
                 <p class="text-base">
                   <span class="text-primary">${{ item.price }}</span>

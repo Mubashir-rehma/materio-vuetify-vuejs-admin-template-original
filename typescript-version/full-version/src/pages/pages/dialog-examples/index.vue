@@ -6,6 +6,7 @@ const isTwoFactorDialogOpen = ref(false)
 const isUserInfoEditDialogVisible = ref(false)
 const isShareProjectDialogVisible = ref(false)
 const isReferAndEarnDialogVisible = ref(false)
+const isPaymentProvidersDialogVisible = ref(false)
 const isCreateAppVisible = ref(false)
 
 const userData = {
@@ -282,6 +283,38 @@ const userData = {
           v-model:isDialogVisible="isUserInfoEditDialogVisible"
           :user-data="userData"
         />
+      </VCard>
+    </VCol>
+
+     <!-- 👉 Payment Providers Dialog -->
+     <VCol
+      cols="12"
+      sm="6"
+      md="4"
+    >
+      <VCard class="text-high-emphasis text-center">
+        <VCardItem class="d-flex flex-column gap-2">
+          <template #prepend>
+            <VIcon
+              size="34"
+              icon="mdi-gift-outline"
+            />
+          </template>
+          <VCardTitle>Payment Providers</VCardTitle>
+        </VCardItem>
+
+        <VCardText>
+          <p class="text-base clamp-text">
+            Elegant payment options modal popup example, easy to use in any page.
+          </p>
+
+          <VBtn @click="isPaymentProvidersDialogVisible = !isPaymentProvidersDialogVisible">
+            Show
+          </VBtn>
+        </VCardText>
+
+        <!-- 👉 plan and pricing dialog -->
+        <PaymentProvidersDialog v-model:is-dialog-visible="isPaymentProvidersDialogVisible" />
       </VCard>
     </VCol>
   </VRow>

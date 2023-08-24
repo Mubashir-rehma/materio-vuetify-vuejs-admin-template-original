@@ -50,8 +50,8 @@ const isConfirmDialogVisible = ref(false)
 
       <VCardText class="d-flex align-center flex-column flex-sm-nowrap px-15">
         <CustomRadios
+          v-model:selected-radio="selectedPlan"
           :radio-content="plansList"
-          :selected-radio="selectedPlan"
           :grid-column="{ cols: '12', sm: '6' }"
         />
         <VBtn class="mt-5">

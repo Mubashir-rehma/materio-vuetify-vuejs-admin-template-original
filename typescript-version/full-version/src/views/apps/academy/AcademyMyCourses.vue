@@ -2,7 +2,11 @@
 import type { Course } from '@/plugins/fake-api/handlers/apps/academy/type'
 import type { Options } from '@core/types'
 
-const searchQuery = ref('')
+interface Props {
+  searchQuery: string
+}
+
+const props = defineProps<Props>()
 
 const options = ref<Options>({
   page: 1,
@@ -15,13 +19,13 @@ const options = ref<Options>({
 const courseData = ref<Course[]>([])
 const totalCourse = ref(0)
 const hideCompleted = ref(false)
-const status = ref('all')
+const label = ref('All Courses')
 
 const fetchCourses = async () => {
   const { data, error } = await useApi<any>(createUrl('/apps/academy/courses', () => ({
-    q: searchQuery.value,
+    q: props.searchQuery,
     hideCompleted: hideCompleted.value,
-    status: status.value,
+    label: label.value,
     ...options.value,
     ...(options.value.sortBy
      && {
@@ -35,16 +39,17 @@ const fetchCourses = async () => {
     console.log(error.value)
   }
   else {
+    console.log('data')
     courseData.value = data.value.courses
     totalCourse.value = data.value.total
   }
 }
 
-watch([hideCompleted, status], () => {
+watch([hideCompleted, label], () => {
   options.value.page = 1
 })
 
-watch([searchQuery, options, hideCompleted, status], fetchCourses, { deep: true, immediate: true })
+watch([() => props.searchQuery, options, hideCompleted, label], fetchCourses, { deep: true, immediate: true })
 
 const resolveChipColor = (tags: string) => {
   if (tags === 'Web')
@@ -76,13 +81,19 @@ const resolveChipColor = (tags: string) => {
 
         <div class="d-flex flex-wrap">
           <VSelect
-            v-model="status"
-            :items="[{ title: 'All Courses', value: 'all' }, { title: 'Completed', value: 'completed' }]"
+            v-model="label"
+            :items="[
+              { title: 'Web', value: 'web' },
+              { title: 'Art', value: 'art' },
+              { title: 'UI/UX', value: 'ui/ux' },
+              { title: 'Psychology', value: 'psychology' },
+              { title: 'Design', value: 'design' },
+              { title: 'All Courses', value: 'All Courses' },
+            ]"
             density="compact"
             style="min-inline-size: 250px;"
             class="me-4"
           />
-
           <VSwitch
             v-model="hideCompleted"
             label="Hide Completed"
@@ -106,11 +117,13 @@ const resolveChipColor = (tags: string) => {
                 flat
                 border
               >
-                <VImg
-                  :src="course.tutorImg"
-                  class="pa-2 cursor-pointer"
-                  @click="() => $router.push({ name: 'apps-academy-course-details' })"
-                />
+                <div class="pa-2">
+                  <VImg
+                    :src="course.tutorImg"
+                    class="cursor-pointer"
+                    @click="() => $router.push({ name: 'apps-academy-course-details' })"
+                  />
+                </div>
                 <VCardText>
                   <div class="d-flex justify-space-between align-center mb-4">
                     <VChip
@@ -134,7 +147,12 @@ const resolveChipColor = (tags: string) => {
                   </div>
 
                   <h6 class="text-h6">
-                    {{ course.courseTitle }}
+                    <RouterLink
+                      :to="{ name: 'apps-academy-course-details' }"
+                      class="text-high-emphasis"
+                    >
+                      {{ course.courseTitle }}
+                    </RouterLink>
                   </h6>
                   <p>
                     {{ course.desc }}
@@ -173,21 +191,31 @@ const resolveChipColor = (tags: string) => {
 
                   <div class="d-flex flex-wrap gap-4">
                     <VBtn
-                      prepend-icon="mdi-refresh"
                       variant="outlined"
                       color="secondary"
                       class="flex-grow-1"
                       :to="{ name: 'apps-academy-course-details' }"
                     >
+                      <template #append>
+                        <VIcon
+                          icon="mdi-refresh"
+                          class="flip-in-rtl"
+                        />
+                      </template>
                       Start Over
                     </VBtn>
                     <VBtn
                       v-if="course.completedTasks !== course.totalTasks"
-                      append-icon="mdi-arrow-right"
                       variant="outlined"
                       class="flex-grow-1"
                       :to="{ name: 'apps-academy-course-details' }"
                     >
+                      <template #append>
+                        <VIcon
+                          icon="mdi-arrow-right"
+                          class="flip-in-rtl"
+                        />
+                      </template>
                       Continue
                     </VBtn>
                   </div>

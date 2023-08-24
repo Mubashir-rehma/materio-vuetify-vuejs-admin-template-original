@@ -75,7 +75,7 @@ fetchCourseDetails()
               <h6 class="text-h6 mb-3">
                 By the numbers
               </h6>
-              <div class="d-flex gap-x-12">
+              <div class="d-flex gap-x-12 gap-y-5 flex-wrap">
                 <div>
                   <VList class="card-list">
                     <VListItem>
@@ -161,7 +161,7 @@ fetchCourseDetails()
             v-for="(section, index) in courseDetails?.content"
             :key="index"
             collapse-icon="mdi-chevron-down"
-            expand-icon="mdi-chevron-right"
+            :expand-icon="$vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'"
           >
             <template #title>
               <div>

@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import type { RouteLocationNamedRaw } from 'vue-router'
 import type { RouteLocationRaw } from 'vue-router/auto'
+import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
-
 import navImgDark from '@images/front-pages/misc/nav-img-dark.png'
 import navImgLight from '@images/front-pages/misc/nav-img-light.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
 
 const props = defineProps({
   activeId: String,
 })
+
+const display = useDisplay()
 
 interface navItem {
   name: string
@@ -28,11 +30,16 @@ const route = useRoute()
 const navImg = useGenerateImageVariant(navImgLight, navImgDark)
 
 const sidebar = ref(false)
+
+watch(() => display, () => {
+  return display.mdAndUp ? sidebar.value = false : sidebar.value
+}, { deep: true })
+
 const isMenuOpen = ref(false)
 
 const menuItems: MenuItem[] = [
   {
-    listTitle: 'Other',
+    listTitle: 'Page',
     listIcon: 'mdi-view-grid-outline',
     navItems: [
       { name: 'Pricing', to: { name: 'front-pages-pricing' } },
@@ -135,7 +142,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
               >
                 <RouterLink
                   :to="listItem.to as RouteLocationRaw"
-                  target="_blank"
+                  :target="item.listTitle === 'Page' ? '_self' : '_blank'"
                   class="nav-link"
                   :class="isCurrentRoute(listItem.to as RouteLocationNamedRaw) ? 'active-link' : 'text-high-emphasis'"
                 >
@@ -144,7 +151,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                     :size="10"
                     class="me-2"
                   />
-                  <span>{{ listItem.name }}</span>
+                  <span>  {{ listItem.name }}</span>
                 </RouterLink>
               </li>
             </ul>
@@ -181,7 +188,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
         :class="$vuetify.display.mdAndUp ? 'd-none' : 'd-inline-block'"
         class="ms-0"
         color="high-emphasis"
-        @click="sidebar = !sidebar"
+        @click="() => sidebar = !sidebar"
       />
 
       <!-- Title and Landing page sections -->
@@ -196,7 +203,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
               <VNodeRenderer :nodes="themeConfig.app.logo" />
               <h6
                 class="text-h6 text-capitalize text-truncate"
-                :class="$vuetify.display.smAndUp ? 'd-block' : 'd-none'"
+                :class="[$vuetify.display.lgAndUp ? 'd-block' : 'd-none', $vuetify.display.mdAndUp ? 'd-none' : 'd-block']"
               >
                 {{ themeConfig.app.title }}
               </h6>
@@ -231,7 +238,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
               location="bottom center"
               offset="20"
             >
-              <VCard style="min-inline-size: 960px;">
+              <VCard>
                 <VCardText class="pa-8">
                   <div class="d-flex gap-x-12">
                     <div
@@ -258,7 +265,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                         >
                           <RouterLink
                             :to="listItem.to as RouteLocationRaw"
-                            target="_blank"
+                            :target="item.listTitle === 'Page' ? '_self' : '_blank'"
                             class="nav-link"
                             :class="isCurrentRoute(listItem.to as RouteLocationNamedRaw) ? 'active-link' : 'text-high-emphasis'"
                           >
@@ -278,8 +285,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                       alt="Navigation Image"
                       class="d-inline-block rounded-lg"
                       style="border: 10px solid rgb(var(--v-theme-background));"
-                      width="330"
-                      height="330"
+                      :width="$vuetify.display.lgAndUp ? '330' : '250'"
+                      :height="$vuetify.display.lgAndUp ? '330' : '250'"
                     >
                   </div>
                 </VCardText>
@@ -307,6 +314,9 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           prepend-icon="mdi-cart-plus"
           variant="elevated"
           color="primary"
+          href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Purchase Now
         </VBtn>
@@ -315,6 +325,9 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           v-else
           variant="elevated"
           color="primary"
+          href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <VIcon icon="mdi-cart-plus" />
         </VBtn>

@@ -54,7 +54,7 @@ const pricingPlans = [
 </script>
 
 <template>
-  <VContainer>
+  <VContainer id="pricing-plan">
     <div class="pricing-plans">
       <!-- 👉 Headers  -->
       <div class="headers d-flex justify-center flex-column align-center mb-16">
@@ -160,6 +160,7 @@ const pricingPlans = [
               <VBtn
                 block
                 :variant="plan.current ? 'elevated' : 'outlined'"
+                :to="{ name: 'front-pages-payment' }"
               >
                 Get Started
               </VBtn>

@@ -31,7 +31,7 @@ const headers = [
   { title: 'Payment', key: 'payment', sortable: false },
   { title: 'Status', key: 'status' },
   { title: 'Method', key: 'method', sortable: false },
-  { title: 'Actions', key: 'actions' },
+  { title: 'Actions', key: 'actions', sortable: false },
 ]
 
 const resolvePaymentStatus = (status: number) => {
@@ -111,7 +111,7 @@ watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
                 </div>
 
                 <VAvatar
-                  color="rgba(var(--v-theme-on-background), var(--v-hover-opacity))"
+                  variant="tonal"
                   rounded
                   size="38"
                 >
@@ -193,7 +193,11 @@ watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
             </VAvatar>
 
             <div class="d-flex flex-column">
-              <span class="text-high-emphasis font-weight-medium">{{ item.raw.customer }}</span>
+              <RouterLink :to="{ name: 'pages-user-profile-tab', params: { tab: 'profile' } }">
+                <div class="text-high-emphasis font-weight-medium">
+                  {{ item.raw.customer }}
+                </div>
+              </RouterLink>
               <span class="text-sm">{{ item.raw.email }}</span>
             </div>
           </div>
@@ -247,7 +251,10 @@ watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
             <VMenu activator="parent">
               <VList>
                 <VListItem value="view">
-                  <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }">
+                  <RouterLink
+                    :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }"
+                    class="text-high-emphasis"
+                  >
                     View
                   </RouterLink>
                 </VListItem>
@@ -265,3 +272,11 @@ watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
     </VCard>
   </div>
 </template>
+
+<style lang="scss" scoped>
+#customer-link{
+  &:hover{
+    color: '#000' !important
+  }
+}
+</style>

@@ -2,6 +2,8 @@
 import { useDropZone, useFileDialog, useObjectUrl } from '@vueuse/core'
 import { ref } from 'vue'
 
+const optionCounter = ref(1)
+
 const dropZoneRef = ref<HTMLDivElement>()
 interface FileData {
   file: File
@@ -57,10 +59,6 @@ const shippingList = [
   { desc: 'Your product, Our responsibility.For a measly fee, we will handle the delivery process for you.', title: 'Fulfilled by Company name', value: 'Fulfilled by Company name' },
 ]
 
-const moreList = [
-  { title: 'Edit Product', value: 'Edit Product' },
-]
-
 const inventoryTabsData = [
   { icon: 'mdi-plus', title: 'Restock', value: 'Restock' },
   { icon: 'mdi-airplane', title: 'Shipping', value: 'Shipping' },
@@ -100,16 +98,10 @@ const inventoryTabsData = [
     <VRow>
       <VCol md="8">
         <!-- 👉 Product Information -->
-        <VCard class="mb-6">
-          <VCardItem title="Product Information">
-            <template #append>
-              <MoreBtn
-                :menu-list="moreList"
-                item-props
-              />
-            </template>
-          </VCardItem>
-
+        <VCard
+          class="mb-6"
+          title="Product Information"
+        >
           <VCardText>
             <VRow>
               <VCol cols="12">
@@ -245,37 +237,46 @@ const inventoryTabsData = [
           class="mb-6"
         >
           <VCardText>
-            <VRow>
-              <VCol
-                cols="12"
-                md="4"
-              >
-                <VSelect
-                  label="Size"
-                  :items="['Size', 'Color', 'Weight', 'Smell']"
-                  placeholder="Select Variant"
-                />
-              </VCol>
-              <VCol
-                cols="12"
-                md="8"
-              >
-                <VTextField
-                  placeholder="38"
-                  label="Size"
-                  type="number"
-                />
-              </VCol>
-            </VRow>
+            <template
+              v-for="i in optionCounter"
+              :key="i"
+            >
+              <VRow>
+                <VCol
+                  cols="12"
+                  md="4"
+                >
+                  <VSelect
+                    :items="['Size', 'Color', 'Weight', 'Smell']"
+                    placeholder="Select Variant"
+                  />
+                </VCol>
+                <VCol
+                  cols="12"
+                  md="8"
+                >
+                  <VTextField
+                    placeholder="38"
+                    type="number"
+                  />
+                </VCol>
+              </VRow>
+            </template>
 
-            <VBtn class="mt-6">
+            <VBtn
+              class="mt-6"
+              @click="optionCounter++"
+            >
               Add another option
             </VBtn>
           </VCardText>
         </VCard>
 
         <!-- 👉 Inventory -->
-        <VCard title="Inventory">
+        <VCard
+          title="Inventory"
+          class="inventory-card"
+        >
           <VCardText>
             <VRow>
               <VCol
@@ -571,14 +572,16 @@ const inventoryTabsData = [
 </style>
 
 <style lang="scss">
-.v-radio-group,
-.v-checkbox {
-  .v-selection-control {
-    align-items: start !important;
-  }
+.inventory-card{
+  .v-radio-group,
+  .v-checkbox {
+    .v-selection-control {
+      align-items: start !important;
+    }
 
-  .v-label.custom-input {
-    border: none !important;
+    .v-label.custom-input {
+      border: none !important;
+    }
   }
 }
 

@@ -280,8 +280,11 @@ const reviewStatChartConfig = {
       <VCard>
         <VCardText>
           <VRow>
-            <VCol cols="6">
-              <div class="border-e">
+            <VCol
+              cols="12"
+              sm="6"
+            >
+              <div :class="$vuetify.display.smAndUp ? 'border-e' : 'border-b'">
                 <div class="d-flex align-center gap-x-2">
                   <h4 class="text-h4 text-primary">
                     4.89
@@ -301,13 +304,17 @@ const reviewStatChartConfig = {
                 <VChip
                   color="primary"
                   label
+                  :class="$vuetify.display.smAndUp ? '' : 'mb-4'"
                 >
                   +5 This week
                 </VChip>
               </div>
             </VCol>
 
-            <VCol cols="6">
+            <VCol
+              cols="12"
+              sm="6"
+            >
               <div
                 v-for="(data, index) in reviewData"
                 :key="index"
@@ -397,11 +404,6 @@ const reviewStatChartConfig = {
             />
             <div class="d-flex flex-row gap-4 align-center flex-wrap">
               <VSelect
-                v-model="options.itemsPerPage"
-                :items="[10, 25, 50, 100]"
-                density="compact"
-              />
-              <VSelect
                 v-model="selectedStatus"
                 style="min-inline-size: 6.25rem;"
                 density="compact"
@@ -411,8 +413,8 @@ const reviewStatChartConfig = {
                   { title: 'Pending', value: 'Pending' },
                 ]"
               />
-              <VBtn prepend-icon="mdi-plus">
-                Add Product
+              <VBtn prepend-icon="mdi-export-variant">
+                Export
               </VBtn>
             </div>
           </div>
@@ -463,6 +465,7 @@ const reviewStatChartConfig = {
 
           <template #item.review="{ item }">
             <VRating
+              readonly
               :model-value="item.raw.review"
               density="compact"
             />

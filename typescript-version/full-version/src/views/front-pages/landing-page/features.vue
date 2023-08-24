@@ -37,7 +37,7 @@ const featuresData = [
           v-for="(data, index) in featuresData"
           :key="index"
           class="text-center"
-          style="max-width: 310px;"
+          style="max-inline-size: 310px;"
         >
           <VAvatar
             size="82"

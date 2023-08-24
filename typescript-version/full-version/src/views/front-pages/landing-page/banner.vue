@@ -3,7 +3,7 @@ import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
 </script>
 
 <template>
-  <div class="landing-cta position-relative bg-surface">
+  <div class="landing-cta position-relative bg-surface px-4">
     <VRow>
       <VCol
         class="d-flex justify-center align-center"
@@ -17,10 +17,10 @@ import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
           <div class="text-sm font-weight-medium mb-8">
             Start your project with a 14-day free trial
           </div>
-
           <VBtn
             color="primary"
-            append-icon="mdi-arrow-right"
+            :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
+            :to="{ name: 'front-pages-payment' }"
           >
             Get Started
           </VBtn>

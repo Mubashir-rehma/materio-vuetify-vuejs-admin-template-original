@@ -1,15 +1,19 @@
+<script setup lang="ts">
+const statData = ref([
+  { title: 'Completed Sites', value: 137, icon: 'custom-layout-right', color: 'primary', isHover: false },
+  { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success', isHover: false },
+  { title: 'Happy Customers', value: 137, icon: 'custom-people-tag', color: 'warning', isHover: false },
+  { title: 'Awards Winning', value: 23, icon: 'custom-medal', color: 'info', isHover: false },
+])
+</script>
+
 <template>
   <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">
     <VContainer>
       <div class="py-12">
         <VRow>
           <VCol
-            v-for="(product, index) in [
-              { title: 'Completed Sites', value: 137, icon: 'custom-layout-right', color: 'primary' },
-              { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success' },
-              { title: 'Happy Customers', value: 137, icon: 'custom-people-tag', color: 'warning' },
-              { title: 'Awards Winning', value: 23, icon: 'custom-medal', color: 'info' },
-            ]"
+            v-for="(product, index) in statData"
             :key="index"
           >
             <VCard flat>
@@ -17,8 +21,10 @@
                 <VAvatar
                   size="82"
                   :color="product.color"
-                  variant="tonal"
-                  class="mb-6"
+                  :variant="product.isHover ? 'elevated' : 'tonal'"
+                  class="mb-6 cursor-pointer"
+                  @mouseenter="() => product.isHover = true"
+                  @mouseleave="product.isHover = false"
                 >
                   <VIcon
                     :icon="product.icon"

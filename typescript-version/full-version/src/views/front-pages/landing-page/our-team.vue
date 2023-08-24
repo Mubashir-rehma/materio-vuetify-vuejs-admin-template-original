@@ -34,14 +34,14 @@ const teamData = [
         <p>Who is behind these great-looking interfaces?</p>
       </div>
 
-      <div class="d-flex gap-6 gap-y-14 flex-wrap justify-center">
+      <div class="d-flex gap-x-6 gap-y-16 flex-wrap justify-center">
         <VCard
           v-for="(data, index) in teamData"
           :key="index"
           flat
           variant="outlined"
           min-width="262"
-          class="position-relative overflow-visible"
+          class="position-relative overflow-visible mb-4"
         >
           <VImg
             :src="data.image"

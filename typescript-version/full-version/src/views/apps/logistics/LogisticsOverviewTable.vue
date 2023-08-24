@@ -87,9 +87,12 @@ watch([options], fetchVehicles, { deep: true, immediate: true })
             size="28"
           />
         </VAvatar>
-        <span class="text-body-2 text-high-emphasis font-weight-medium">
+        <RouterLink
+          class="text-body-2 text-high-emphasis font-weight-medium"
+          :to="{ name: 'apps-academy-course-details' }"
+        >
           VOL-{{ item.raw.location }}
-        </span>
+        </RouterLink>
       </template>
 
       <template #item.startRoute="{ item }">

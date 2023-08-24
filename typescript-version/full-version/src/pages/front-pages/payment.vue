@@ -33,9 +33,13 @@ const radioContent: CustomInputContent[] = [
 ]
 
 const selectedRadio = ref('credit card')
+const selectedCountry = ref('USA')
+const isPricingPlanDialogVisible = ref(false)
 </script>
 
 <template>
+  <!-- eslint-disable vue/attribute-hyphenation -->
+
   <div class="payment-page">
     <!-- 👉 Navbar -->
     <Navbar />
@@ -62,9 +66,9 @@ const selectedRadio = ref('credit card')
                 </div>
 
                 <CustomRadios
+                  v-model:selected-radio="selectedRadio"
                   :radio-content="radioContent"
                   :grid-column="{ cols: '12', sm: '6' }"
-                  :selected-radio="selectedRadio"
                   class="my-8"
                 >
                   <template #default="{ item }">
@@ -103,7 +107,7 @@ const selectedRadio = ref('credit card')
                       <VTextField
                         label="Password"
                         type="password"
-                        placeholder="*******"
+                        placeholder="············"
                       />
                     </VCol>
                     <VCol
@@ -111,6 +115,7 @@ const selectedRadio = ref('credit card')
                       md="6"
                     >
                       <VSelect
+                        v-model="selectedCountry"
                         label="Billing Country"
                         :items="['USA', 'Canada', 'UK', 'AUS']"
                       />
@@ -129,7 +134,10 @@ const selectedRadio = ref('credit card')
                 </div>
 
                 <!-- Credit card info -->
-                <div class="mb-8">
+                <div
+                  class="mb-8"
+                  :class="selectedRadio === 'paypal' ? 'd-none' : 'd-block'"
+                >
                   <h6 class="text-h6 mb-6">
                     Credit Card Info
                   </h6>
@@ -157,7 +165,7 @@ const selectedRadio = ref('credit card')
                       <AppDateTimePicker
                         v-model="date"
                         label="Exp. date"
-                        type="date"
+                        :config="{ dateFormat: 'm/Y' }"
                         placeholder="05/2020"
                       />
                     </VCol>
@@ -206,6 +214,7 @@ const selectedRadio = ref('credit card')
                       <VBtn
                         variant="outlined"
                         block
+                        @click="isPricingPlanDialogVisible = !isPricingPlanDialogVisible"
                       >
                         Change Plan
                       </VBtn>
@@ -230,7 +239,7 @@ const selectedRadio = ref('credit card')
                 </div>
 
                 <VBtn
-                  append-icon="mdi-arrow-right"
+                  :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
                   block
                   color="success"
                   class="mb-8"
@@ -250,6 +259,8 @@ const selectedRadio = ref('credit card')
 
     <!-- 👉 Footer -->
     <Footer />
+
+    <PricingPlanDialog v-model:is-dialog-visible="isPricingPlanDialogVisible" />
   </div>
 </template>
 

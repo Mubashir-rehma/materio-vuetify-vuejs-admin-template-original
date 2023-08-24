@@ -1,10 +1,12 @@
 <script setup lang="ts">
-const logisticData = [
-  { icon: 'mdi-car-estate', color: 'primary', title: 'On route vehicles', value: 42, change: 18.2 },
-  { icon: 'mdi-alert-outline', color: 'warning', title: 'Vehicles with errors', value: 8, change: -8.7 },
-  { icon: 'mdi-source-branch', color: 'error', title: 'Deviated from route', value: 27, change: 4.3 },
-  { icon: 'mdi-timer-outline', color: 'info', title: 'Late vehicles', value: 13, change: -2.5 },
-]
+const logisticData = ref([
+  { icon: 'mdi-car-estate', color: 'primary', title: 'On route vehicles', value: 42, change: 18.2, isHover: false},
+  { icon: 'mdi-alert-outline', color: 'warning', title: 'Vehicles with errors', value: 8, change: -8.7 , isHover: false},
+  { icon: 'mdi-source-branch', color: 'error', title: 'Deviated from route', value: 27, change: 4.3 , isHover: false},
+  { icon: 'mdi-timer-outline', color: 'info', title: 'Late vehicles', value: 13, change: -2.5 , isHover: false},
+])
+
+
 </script>
 
 <template>
@@ -16,10 +18,7 @@ const logisticData = [
       md="3"
       sm="6"
     >
-      <VCard
-        class="logistics-card-statistics cursor-pointer"
-        :style="{ 'border-block-end': `2px solid`, 'border-block-end-color': `rgb(var(--v-theme-${data.color}))` }"
-      >
+      <VCard class="logistics-card-statistics cursor-pointer" @mouseenter="data.isHover=true"  @mouseleave="data.isHover=false"  :style="data.isHover ? {'border-block-end': `3px solid rgba(var(--v-theme-${data.color}))`} :  {'border-block-end': `2px solid rgba(var(--v-theme-${data.color}), var(--v-disabled-opacity))`}">
         <VCardText>
           <div class="d-flex align-center gap-x-4 mb-2">
             <VAvatar
@@ -52,11 +51,8 @@ const logisticData = [
 <style lang="scss">
 @use "@core/scss/base/mixins" as mixins;
 
-.border-card {
-  border-block-end: 3px solid rgb(var(--v-theme-primary));
-}
-
 .logistics-card-statistics:hover {
-  @include mixins.elevation(9);
+  @include mixins.elevation(12);
+  transition: all 0.1s ease-out;
 }
 </style>

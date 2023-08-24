@@ -39,7 +39,9 @@ export const handlerAppsEcommerce = [
     // Filtering Products
     let filteredProducts = db.products.filter(product => (
       (product.product_name.toLowerCase().includes(queryLower) || product.product_brand.toLowerCase().includes(queryLower))
-        && product.category === (category || product.category) && (product.status === (status || product.status)) && (stockLocal === null || product.stock === (stockLocal === 'true'))
+        && product.category === (category || product.category)
+        && (product.status === (status || product.status))
+        && (stockLocal === null || product.stock === (stockLocal === 'true'))
     )).reverse()
 
     // Sort
@@ -116,6 +118,26 @@ export const handlerAppsEcommerce = [
       ctx.json({
         products: paginateArray(filteredProducts, itemsPerPageLocal, pageLocal), total: filteredProducts.length,
       }))
+  }),
+
+  // 👉 Delete Product
+  rest.delete(buildURL('apps/ecommerce/products/:id'), (req, res, ctx) => {
+    const id = Number(req.params.id)
+
+    const productIndex = db.products.findIndex(e => e.id === id)
+
+    console.log(productIndex)
+    if (productIndex >= 0) {
+      db.products.splice(productIndex, 1)
+
+      return res(
+        ctx.status(204),
+      )
+    }
+
+    return res(
+      ctx.status(404),
+    )
   }),
 
   // 👉 Orders

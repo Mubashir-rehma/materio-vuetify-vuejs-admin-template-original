@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { VForm } from 'vuetify/components/VForm'
 
 interface Props {
   isDrawerOpen: boolean
@@ -14,6 +15,23 @@ const emit = defineEmits<Emit>()
 
 const handleDrawerModelValueUpdate = (val: boolean) => {
   emit('update:isDrawerOpen', val)
+}
+
+const refVForm = ref<VForm>()
+const name = ref()
+const email = ref()
+const mobile = ref()
+const addressline1 = ref()
+const addressline2 = ref()
+const town = ref()
+const state = ref()
+const postCode = ref()
+const country = ref()
+const isBillingAddress = ref(false)
+
+const resetForm = () => {
+  refVForm.value?.reset()
+  emit('update:isDrawerOpen', false)
 }
 </script>
 
@@ -37,7 +55,10 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
         class="h-100"
       >
         <VCardText style="height: calc(100vh - 5rem);">
-          <VForm @submit.prevent="">
+          <VForm
+            ref="refVForm"
+            @submit.prevent=""
+          >
             <VRow>
               <VCol>
                 <div class="text-body-1 font-weight-medium text-high-emphasis">
@@ -47,21 +68,27 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
 
               <VCol cols="12">
                 <VTextField
+                  v-model="name"
                   label="Name*"
+                  :rules="[requiredValidator]"
                   placeholder="John Doe"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VTextField
+                  v-model="email"
                   label="Email*"
+                  :rules="[requiredValidator, emailValidator]"
                   placeholder="johndoe@email.com"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VTextField
+                  v-model="mobile"
                   label="mobile*"
+                  :rules="[requiredValidator]"
                   placeholder="+(123) 456-7890"
                 />
               </VCol>
@@ -74,49 +101,55 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
 
               <VCol cols="12">
                 <VTextField
+                  v-model="addressline1"
                   label="Address Line 1*"
+                  :rules="[requiredValidator]"
                   placeholder="45, Rocker Terrace"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VTextField
+                  v-model="addressline2"
                   placeholder="Empire Heights,"
+                  :rules="[requiredValidator]"
                   label="Address Line 2*"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VTextField
+                  v-model="town"
                   label="Town*"
+                  :rules="[requiredValidator]"
                   placeholder="New York"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VTextField
-                  label="State*"
-                  placeholder="Southern tip"
+                  v-model="state"
+                  placeholder="Texas"
+                  :rules="[requiredValidator]"
+                  label="State/Province*"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VTextField
-                  placeholder="Town*"
-                  label="New York"
-                />
-              </VCol>
-
-              <VCol cols="12">
-                <VTextField
+                  v-model="postCode"
                   label="Post Code*"
+                  type="number"
+                  :rules="[requiredValidator]"
                   placeholder="982347"
                 />
               </VCol>
 
               <VCol cols="12">
                 <VSelect
+                  v-model="country"
                   placeholder="United States"
+                  :rules="[requiredValidator]"
                   label="Country"
                   :items="['United States', 'United Kingdom', 'Canada']"
                 />
@@ -130,13 +163,14 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                     </div>
                     <span>Please check budget for more info</span>
                   </div>
-                  <VSwitch />
+                  <VSwitch v-model="isBillingAddress" />
                 </div>
               </VCol>
 
               <VCol cols="12">
                 <div class="d-flex justify-start">
                   <VBtn
+                    type="submit"
                     color="primary"
                     class="me-4"
                   >
@@ -145,7 +179,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   <VBtn
                     color="error"
                     variant="outlined"
-                    @click="$emit('update:isDrawerOpen', false)"
+                    @click="resetForm"
                   >
                     Discard
                   </VBtn>

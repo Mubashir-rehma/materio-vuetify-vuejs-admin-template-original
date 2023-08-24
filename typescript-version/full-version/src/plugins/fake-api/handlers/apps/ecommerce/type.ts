@@ -9,6 +9,8 @@ export interface Customer {
   order: number
   total_spent: number
   avatar: string
+  status: string
+  contact: string
 }
 
 export interface Referrals {

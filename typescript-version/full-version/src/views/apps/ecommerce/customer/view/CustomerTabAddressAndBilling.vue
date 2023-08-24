@@ -5,6 +5,8 @@ import visa from '@images/icons/payments/img/visa-light.png'
 
 const show = ref([true, false, false])
 const paymentShow = ref([true, false, false])
+const isEditAddressDialogVisible = ref(false)
+const isCardAddDialogVisible = ref(false)
 
 const addressData = [
   {
@@ -71,33 +73,36 @@ const paymentData = [
 
   <!-- 👉 Address Book -->
   <VCard class="mb-6">
-    <VCardItem>
-      <template #title>
-        Address Book
-      </template>
-      <template #append>
-        <VBtn variant="outlined">
-          Add new address
-        </VBtn>
-      </template>
-    </VCardItem>
-
     <VCardText>
+      <div class="d-flex justify-space-between mb-6 flex-wrap align-center gap-y-4 gap-x-6">
+        <h5 class="text-h5">
+          Address Book
+        </h5>
+        <VBtn
+          variant="outlined"
+          @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
+        >
+          Add new Address
+        </VBtn>
+      </div>
       <template
         v-for="(address, index) in addressData"
         :key="index"
       >
-        <div class="d-flex justify-space-between mb-2">
+        <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
           <div class="d-flex align-center gap-x-1">
             <IconBtn
               density="comfortable"
               @click="show[index] = !show[index]"
             >
-              <VIcon :icon="show[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'" />
+              <VIcon
+                :icon="show[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'"
+                class="flip-in-rtl"
+              />
             </IconBtn>
             <div>
               <div>
-                <span class="text-subtitle-2 me-2">{{ address.title }}</span>
+                <span class="text-subtitle-2 text-high-emphasis me-2">{{ address.title }}</span>
                 <VChip
                   v-if="address.defaultAdderss"
                   color="success"
@@ -109,15 +114,25 @@ const paymentData = [
               <span class="text-body-2">{{ address.subtitle }}</span>
             </div>
           </div>
-          <div>
+
+          <div class="ms-5">
             <IconBtn>
-              <VIcon icon="mdi-pencil-outline" />
+              <VIcon
+                icon="mdi-pencil-outline"
+                class="flip-in-rtl"
+              />
             </IconBtn>
             <IconBtn>
-              <VIcon icon="mdi-delete-outline" />
+              <VIcon
+                icon="mdi-delete-outline"
+                class="flip-in-rtl"
+              />
             </IconBtn>
             <IconBtn>
-              <VIcon icon="mdi-dots-vertical" />
+              <VIcon
+                icon="mdi-dots-vertical"
+                class="flip-in-rtl"
+              />
             </IconBtn>
           </div>
         </div>
@@ -125,8 +140,12 @@ const paymentData = [
           <div
             v-show="show[index]"
             class="px-8"
-            v-html="address.address"
-          />
+          >
+            <div class="mb-1 font-weight-medium text-high-emphasis">
+              {{ address.owner }}
+            </div>
+            <div v-html="address.address" />
+          </div>
         </VExpandTransition>
         <VDivider
           v-if="index !== addressData.length - 1"
@@ -136,31 +155,34 @@ const paymentData = [
     </VCardText>
   </VCard>
 
-  <!-- 👉 Address Book -->
+  <!-- 👉 Payment Methods -->
   <VCard>
-    <VCardItem>
-      <template #title>
-        Payment Method
-      </template>
-      <template #append>
-        <VBtn variant="outlined">
-          Add new payment method
-        </VBtn>
-      </template>
-    </VCardItem>
-
     <VCardText>
+      <div class="d-flex justify-space-between mb-6 flex-wrap align-center gap-y-4 gap-x-6">
+        <h5 class="text-h5">
+          Payment Methods
+        </h5>
+        <VBtn
+          variant="outlined"
+          @click="isCardAddDialogVisible = !isCardAddDialogVisible"
+        >
+          Add Payment Methods
+        </VBtn>
+      </div>
       <template
         v-for="(payment, index) in paymentData"
         :key="index"
       >
-        <div class="d-flex justify-space-between mb-2">
-          <div class="d-flex align-center gap-x-1">
+        <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
+          <div class="d-flex align-center">
             <IconBtn
               density="comfortable"
               @click="paymentShow[index] = !paymentShow[index]"
             >
-              <VIcon :icon="paymentShow[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'" />
+              <VIcon
+                :icon="paymentShow[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'"
+                class="flip-in-rtl"
+              />
             </IconBtn>
 
             <VImg
@@ -185,15 +207,24 @@ const paymentData = [
             </div>
           </div>
 
-          <div>
+          <div class="ms-5">
             <IconBtn>
-              <VIcon icon="mdi-pencil-outline" />
+              <VIcon
+                icon="mdi-pencil-outline"
+                class="flip-in-rtl"
+              />
             </IconBtn>
             <IconBtn>
-              <VIcon icon="mdi-delete-outline" />
+              <VIcon
+                icon="mdi-delete-outline"
+                class="flip-in-rtl"
+              />
             </IconBtn>
             <IconBtn>
-              <VIcon icon="mdi-dots-vertical" />
+              <VIcon
+                icon="mdi-dots-vertical"
+                class="flip-in-rtl"
+              />
             </IconBtn>
           </div>
         </div>
@@ -240,7 +271,7 @@ const paymentData = [
               >
                 <VTable>
                   <tr>
-                    <td>Billing Phone: </td>
+                    <td>Billing: </td>
                     <td>United Kingdom</td>
                   </tr>
                   <tr>
@@ -271,4 +302,6 @@ const paymentData = [
       </template>
     </VCardText>
   </VCard>
+  <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
+  <CardAddEditDialog v-model:isDialogVisible="isCardAddDialogVisible" />
 </template>

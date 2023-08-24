@@ -21,7 +21,7 @@ const headers = [
   { title: 'Date', key: 'date' },
   { title: 'Status', key: 'status' },
   { title: 'Spent', key: 'spent' },
-  { title: 'Actions', key: 'actions' },
+  { title: 'Actions', key: 'actions', sortable: false },
 ]
 
 const resolveStatus = (status: string) => {
@@ -124,7 +124,10 @@ watch([searchQuery, options], fetchOrders, { immediate: true, deep: true })
           <VMenu activator="parent">
             <VList>
               <VListItem value="view">
-                <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }">
+                <RouterLink
+                  :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }"
+                  class="text-high-emphasis"
+                >
                   View
                 </RouterLink>
               </VListItem>

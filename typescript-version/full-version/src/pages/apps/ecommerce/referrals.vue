@@ -78,7 +78,7 @@ watch(options, fetchReferrals, { deep: true })
 <template>
   <div>
     <!-- 👉 Header -->
-    <VRow>
+    <VRow class="match-height">
       <!-- 👉 Widgets -->
       <VCol
         v-for="(data, index) in widgetData"
@@ -118,11 +118,12 @@ watch(options, fetchReferrals, { deep: true })
           </VCardItem>
 
           <VCardText>
-            <div class="d-flex gap-x-4 justify-center">
+            <div class="d-flex gap-x-4 justify-center flex-wrap gap-4 gap-y-8">
               <div
                 v-for="(step, index) in stepsData"
                 :key="index"
                 class="d-flex flex-column align-center gap-y-2"
+                style="max-width: 185px;"
               >
                 <div class="icon-container">
                   <VNodeRenderer :nodes="step.icon" />
@@ -148,9 +149,8 @@ watch(options, fetchReferrals, { deep: true })
               <h6 class="text-h6 mb-5">
                 Invite your friends
               </h6>
-              <div class="d-flex gap-x-4 align-center">
+              <div class="d-flex align-center flex-wrap gap-4">
                 <VTextField
-                  label="Enter friend's email address and invite them"
                   placeholder="Email Addresss"
                   density="compact"
                 />
@@ -162,9 +162,8 @@ watch(options, fetchReferrals, { deep: true })
               <h6 class="text-h6 mb-5">
                 Share the referral link
               </h6>
-              <div class="d-flex gap-x-4 align-center">
+              <div class="d-flex align-center flex-wrap gap-4">
                 <VTextField
-                  label="Share referral link in social media"
                   placeholder="pixinvent.com/?ref=6478"
                   density="compact"
                 />
@@ -202,22 +201,27 @@ watch(options, fetchReferrals, { deep: true })
       <!-- 👉 Referral Table -->
 
       <VCol cols="12">
-        <VCard title="Referred Users">
-          <template #append>
-            <div class="d-flex flex-wrap gap-4">
-              <div class="d-flex gap-4 align-center flex-wrap">
-                <VSelect
-                  v-model="options.itemsPerPage"
-                  :items="[10, 25, 50, 100]"
-                  style="max-inline-size: 250px;min-inline-size: 200px;"
-                  density="compact"
-                />
-                <VBtn prepend-icon="mdi-export-variant">
-                  Export
-                </VBtn>
+        <VCard>
+          <VCardText>
+            <div class="d-flex justify-space-between align-center flex-wrap gap-4">
+              <h5 class="text-h5">
+                Referred Users
+              </h5>
+              <div class="d-flex flex-wrap gap-4">
+                <div class="d-flex gap-4 align-center flex-wrap">
+                  <VSelect
+                    v-model="options.itemsPerPage"
+                    :items="[10, 25, 50, 100]"
+                    style="max-inline-size: 250px;min-inline-size: 200px;"
+                    density="compact"
+                  />
+                  <VBtn prepend-icon="mdi-export-variant">
+                    Export
+                  </VBtn>
+                </div>
               </div>
             </div>
-          </template>
+          </VCardText>
 
           <VDataTableServer
             v-model:items-per-page="options.itemsPerPage"
@@ -236,7 +240,9 @@ watch(options, fetchReferrals, { deep: true })
                 />
                 <div>
                   <div class="font-weight-medium text-sm text-high-emphasis">
-                    {{ item.raw.user }}
+                    <RouterLink :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: 478426 } }">
+                      {{ item.raw.user }}
+                    </RouterLink>
                   </div>
                   <div class="text-sm">
                     {{ item.raw.email }}

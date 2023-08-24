@@ -17,12 +17,10 @@ injectSkinClasses()
 </script>
 
 <template>
-  <template v-if="appContentLayoutNav === AppContentLayoutNav.Vertical">
-    <DefaultLayoutWithVerticalNav v-bind="layoutAttrs" />
-  </template>
-  <template v-else>
-    <DefaultLayoutWithHorizontalNav v-bind="layoutAttrs" />
-  </template>
+  <Component
+    v-bind="layoutAttrs"
+    :is="appContentLayoutNav === AppContentLayoutNav.Vertical ? DefaultLayoutWithVerticalNav : DefaultLayoutWithHorizontalNav"
+  />
 </template>
 
 <style lang="scss">

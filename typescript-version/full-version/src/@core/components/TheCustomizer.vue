@@ -49,9 +49,9 @@ const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
 const customPrimaryColor = ref('#ffffff')
 
 watch(theme, () => {
-  const localStoragePrimaryColor = useStorage(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, '').value
+  const localStoragePrimaryColor = useStorage(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, null).value
 
-  if (!colors.includes(localStoragePrimaryColor))
+  if (localStoragePrimaryColor && !colors.includes(localStoragePrimaryColor))
     customPrimaryColor.value = localStoragePrimaryColor
 }, { immediate: true })
 
@@ -399,6 +399,8 @@ const resetCustomizer = async () => {
                     <VListItem>
                       <VColorPicker
                         v-model="customPrimaryColor"
+                        mode="hex"
+                        :modes="['hex']"
                         @update:model-value="setPrimaryColor"
                       />
                     </VListItem>

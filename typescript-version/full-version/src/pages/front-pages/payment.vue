@@ -11,7 +11,7 @@ import type { CustomInputContent } from '@core/types'
 
 const visa = useGenerateImageVariant(visaLight, visaDark)
 const paypal = useGenerateImageVariant(paypalLight, paypalDark)
-const date = '2020-05-20'
+const date = ref('2020-05-20')
 
 definePage({
   meta: {

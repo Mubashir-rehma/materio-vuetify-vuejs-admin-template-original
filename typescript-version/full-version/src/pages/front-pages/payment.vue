@@ -11,7 +11,6 @@ import type { CustomInputContent } from '@core/types'
 
 const visa = useGenerateImageVariant(visaLight, visaDark)
 const paypal = useGenerateImageVariant(paypalLight, paypalDark)
-const date = ref('2020-05-20')
 
 definePage({
   meta: {
@@ -168,7 +167,6 @@ const isPricingPlanDialogVisible = ref(false)
                       md="4"
                     >
                       <VTextField
-                        v-model="date"
                         label="Exp. date"
                         placeholder="05/2020"
                       />

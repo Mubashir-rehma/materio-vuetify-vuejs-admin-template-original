@@ -92,7 +92,7 @@ watch([options], fetchVehicles, { deep: true, immediate: true })
         </VAvatar>
         <RouterLink
           class="text-body-2 text-high-emphasis font-weight-medium"
-          :to="{ name: 'apps-academy-course-details' }"
+          :to="{ name: 'apps-logistics-fleet' }"
         >
           VOL-{{ item.raw.location }}
         </RouterLink>

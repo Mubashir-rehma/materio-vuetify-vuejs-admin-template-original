@@ -59,11 +59,7 @@ export const routes: RouteRecordRaw[] = [
       layoutWrapperClasses: 'layout-content-height-fixed',
     },
   },
-  {
-    path: '/dashboards/ecommerce',
-    name: 'dashboards-ecommerce',
-    component: eCommerceComponent,
-  },
+
   {
     path: '/dashboards/logistics',
     name: 'dashboards-logistics',

@@ -61,6 +61,7 @@ watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
         />
       </div>
     </VCardText>
+
     <VDataTableServer
       v-model:items-per-page="options.itemsPerPage"
       v-model:page="options.page"

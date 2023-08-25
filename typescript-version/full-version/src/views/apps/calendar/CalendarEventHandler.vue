@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Options } from 'flatpickr'
+import type { Options } from 'flatpickr/dist/types/options'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VForm } from 'vuetify/components/VForm'
 
@@ -43,7 +43,7 @@ const resetEvent = () => {
 watch(() => props.isDrawerOpen, resetEvent)
 
 const removeEvent = () => {
-  emit('removeEvent', event.value.id)
+  emit('removeEvent', String((event.value as Event).id))
 
   // Close drawer
   emit('update:isDrawerOpen', false)
@@ -117,12 +117,12 @@ const endDateTimePickerConfig = computed(() => {
   >
     <!-- 👉 Header -->
     <AppDrawerHeaderSection
-      :title="event.id ? 'Update Event' : 'Add Event'"
+      :title="(event as Event).id ? 'Update Event' : 'Add Event'"
       @cancel="$emit('update:isDrawerOpen', false)"
     >
       <template #beforeClose>
         <IconBtn
-          v-show="event.id"
+          v-show="(event as Event).id"
           @click="removeEvent"
         >
           <VIcon

@@ -26,12 +26,12 @@ export interface UserOut {
 
 export interface LoginResponse {
   accessToken: string
-  userData: AuthUserOut
+  userData: User
   userAbilityRules: User['abilityRules']
 }
 
 export interface RegisterResponse {
   accessToken: string
-  userData: AuthUserOut
+  userData: User
   userAbilityRules: User['abilityRules']
 }

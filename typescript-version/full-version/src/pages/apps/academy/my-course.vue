@@ -6,7 +6,7 @@ import academyCourseIllustration2 from '@images/pages/academy-course-illustratio
 import boyIllustration from '@images/pages/boy-illustration.png'
 import forgotPasswordIllustration from '@images/pages/forgot-password-illustration.png'
 
-const searchQuery = ref()
+const searchQuery = ref('')
 </script>
 
 <template>

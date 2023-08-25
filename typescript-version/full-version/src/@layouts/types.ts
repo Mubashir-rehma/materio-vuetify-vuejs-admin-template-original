@@ -1,6 +1,6 @@
 import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-import type { ContentWidth, FooterType, NavbarType } from './enums'
+import type { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from './enums'
 
 export interface UserConfig {
   app: {

@@ -11,7 +11,7 @@ const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfS
 const map = ref()
 
 const carImgs = ref([fleetImg, fleetImg, fleetImg, fleetImg])
-const refCars = ref([])
+const refCars = ref<HTMLElement[]>([])
 
 const showPanel = ref([true, false, false, false])
 

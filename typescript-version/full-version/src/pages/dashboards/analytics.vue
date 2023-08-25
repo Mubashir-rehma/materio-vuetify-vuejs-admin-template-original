@@ -7,7 +7,7 @@ const sizes = [
   'x-large',
 ]
 
-const densities = [
+const densities: any = [
   'default',
   'comfortable',
   'compact',

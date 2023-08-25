@@ -26,7 +26,7 @@ export const handlerAppsEmail = [
       email =>
         (email.from.name.toLowerCase().includes(queryLowered) || email.subject.toLowerCase().includes(queryLowered))
             && isInFolder(email as Email)
-            && (label ? email.labels.includes(label) : true),
+            && (label ? email.labels.includes(label as EmailLabel) : true),
     )
 
     // ------------------------------------------------

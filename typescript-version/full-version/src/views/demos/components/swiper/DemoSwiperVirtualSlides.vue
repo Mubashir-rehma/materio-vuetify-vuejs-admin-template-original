@@ -4,7 +4,7 @@ import { register } from 'swiper/element/bundle'
 register()
 
 const slides = Array.from({ length: 500 }, (_, index) => `Slides ${index + 1}`)
-const swiperEl = ref(null)
+const swiperEl = ref<any>(null)
 const prependNumber = ref(1)
 const appendNumber = ref(500)
 

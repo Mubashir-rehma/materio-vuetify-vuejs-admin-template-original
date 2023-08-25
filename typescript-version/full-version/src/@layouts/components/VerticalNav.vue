@@ -31,7 +31,7 @@ const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isV
 
 const hideTitleAndIcon = isVerticalNavMini(windowWidth, isHovered)
 
-const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup) => {
+const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup): unknown => {
   if ('heading' in item)
     return VerticalNavSectionTitle
   if ('children' in item)

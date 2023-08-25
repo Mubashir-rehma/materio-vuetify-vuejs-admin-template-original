@@ -3,14 +3,13 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import type { Ref } from 'vue'
 import type { Event, NewEvent } from './types'
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
 
-export const blankEvent = {
+export const blankEvent: Event | NewEvent = {
   title: '',
-  start: '',
-  end: '',
+  start: new Date(),
+  end: new Date(),
   allDay: false,
   url: '',
   extendedProps: {
@@ -99,7 +98,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
   // 👉 Update event in calendar [UI]
   const updateEventInCalendar = (updatedEventData: Event, propsToUpdate: (keyof Event)[], extendedPropsToUpdate: (keyof Event['extendedProps'])[]) => {
-    const existingEvent = calendarApi.value?.getEventById(updatedEventData.id)
+    const existingEvent = calendarApi.value?.getEventById(String(updatedEventData.id))
 
     if (!existingEvent) {
       console.warn('Can\'t found event in calendar to update')

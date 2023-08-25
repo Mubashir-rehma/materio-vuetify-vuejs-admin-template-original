@@ -101,7 +101,7 @@ const triggeredRemove = () => {
                 <VIcon
                   size="20"
                   icon="tabler-chevron-up"
-                  :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : null }"
+                  :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : undefined }"
                   style="transition-duration: 0.28s;"
                 />
               </IconBtn>

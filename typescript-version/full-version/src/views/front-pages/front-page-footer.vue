@@ -60,7 +60,7 @@ import { themeConfig } from '@themeConfig'
                 >
                   <RouterLink
                     class="text-white-variant"
-                    :to="item.to"
+                    :to="item.to as any"
                     target="_blank"
                   >
                     {{ item.name }}

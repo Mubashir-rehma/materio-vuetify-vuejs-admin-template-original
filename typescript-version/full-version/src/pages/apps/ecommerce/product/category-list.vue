@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import ECommerceAddCategoryDrawer from '@/views/apps/ecommerce/ECommerceAddCategoryDrawer.vue'
+import ECommerceAddCategoryDrawer from '@/views/apps/ecommerce/EcommerceAddCategoryDrawer.vue'
 
 import product1 from '@images/ecommerce-images/product-1.png'
 import product10 from '@images/ecommerce-images/product-10.png'

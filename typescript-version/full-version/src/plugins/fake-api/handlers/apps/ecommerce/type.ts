@@ -6,11 +6,12 @@ export interface Customer {
   email: string
   country: string
   country_code: string
+  country_flag?: string
   order: number
   total_spent: number
   avatar: string
-  status: string
-  contact: string
+  status?: string
+  contact?: string
 }
 
 export interface Referrals {

@@ -20,3 +20,12 @@ export interface Invoice {
   balance: number
   dueDate: string
 }
+
+// Payment details
+export interface PaymentDetails {
+  totalDue: string
+  bankName: string
+  country: string
+  iban: string
+  swiftCode: string
+}

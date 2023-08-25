@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { ReferenceElement } from '@floating-ui/dom'
 import { computePosition, flip, shift } from '@floating-ui/dom'
 import { useLayouts } from '@layouts/composable/useLayouts'
 import { config } from '@layouts/config'
@@ -18,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   isRTL: false,
 })
 
-const refPopperContainer = ref<HTMLElement>()
+const refPopperContainer = ref<ReferenceElement>()
 const refPopper = ref<HTMLElement>()
 
 const popperContentStyles = ref({
@@ -27,16 +28,18 @@ const popperContentStyles = ref({
 })
 
 const updatePopper = async () => {
-  const { x, y } = await computePosition(refPopperContainer.value, refPopper.value, {
-    placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : 'bottom-start',
-    middleware: [
+  if (refPopperContainer.value !== undefined && refPopper.value !== undefined) {
+    const { x, y } = await computePosition(refPopperContainer.value,
+      refPopper.value, {
+        placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : 'bottom-start',
+        middleware: [
 
-      flip({ boundary: document.querySelector('body')! }),
+          flip({ boundary: document.querySelector('body')! }),
 
-      shift({ boundary: document.querySelector('body')! }),
-    ],
+          shift({ boundary: document.querySelector('body')! }),
+        ],
 
-    /*
+        /*
       ℹ️ Why we are not using fixed positioning?
 
       `position: fixed` doesn't work as expected when some CSS properties like `transform` is applied on its parent element.
@@ -49,11 +52,12 @@ const updatePopper = async () => {
 
       NOTE: This issue starts from third level children (Top Level > Sub item > Sub item).
     */
-    // strategy: 'fixed',
-  })
+        // strategy: 'fixed',
+      })
 
-  popperContentStyles.value.left = `${x}px`
-  popperContentStyles.value.top = `${y}px`
+    popperContentStyles.value.left = `${x}px`
+    popperContentStyles.value.top = `${y}px`
+  }
 }
 
 /*

@@ -21,7 +21,7 @@ definePage({
       </VCard>
     </VCol>
     <VCol
-      v-if="$can('read', 'Admin')"
+      v-if="$can('read', 'all')"
       cols="12"
       md="6"
     >

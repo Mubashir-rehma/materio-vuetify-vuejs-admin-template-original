@@ -3,12 +3,19 @@
 import type { LngLatLike } from 'mapbox-gl'
 import mapboxgl from 'mapbox-gl'
 import { onMounted, ref } from 'vue'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfSaWsHvktHrRtpydQ'
 const map = ref()
+
+definePage({
+  meta: {
+    layoutWrapperClasses: 'layout-content-height-fixed',
+  },
+})
 
 const carImgs = ref([fleetImg, fleetImg, fleetImg, fleetImg])
 const refCars = ref<HTMLElement[]>([])
@@ -127,132 +134,143 @@ watch(activeIndex, () => {
         class="h-100"
         flat
       >
-        <IconBtn
-          class="navigation-close-btn d-lg-none"
-          @click="isLeftSidebarOpen = !isLeftSidebarOpen"
-        >
-          <VIcon icon="tabler-x" />
-        </IconBtn>
-        <VCardText>
-          <h6 class="pb-6 text-h6">
+        <VCardItem>
+          <VCardTitle>
             Fleet
-          </h6>
+          </VCardTitle>
 
-          <div
-            v-for="(vehicle, index) in vehicleTrackingData"
-            :key="index"
-            class="mb-6"
-          >
-            <div
-              class="d-flex align-center justify-space-between cursor-pointer"
-              @click="flyToLocation(geojson.features[index].geometry.coordinates, index)"
+          <template #append>
+            <IconBtn
+              class="d-lg-none"
+              @click="isLeftSidebarOpen = !isLeftSidebarOpen"
             >
-              <div class="d-flex gap-x-4">
-                <VAvatar
-                  icon="mdi-bus"
-                  variant="tonal"
-                />
-                <div>
-                  <div class="text-body-1 text-high-emphasis">
-                    {{ vehicle.name }}
-                  </div>
-                  <div class="text-body-2">
-                    {{ vehicle.location }}
-                  </div>
-                </div>
-              </div>
-              <IconBtn density="comfortable">
-                <VIcon :icon="showPanel[index] ? 'mdi-chevron-down' : $vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'" />
-              </IconBtn>
-            </div>
-            <VExpandTransition mode="out-in">
-              <div v-show="showPanel[index]">
-                <div class="py-4 mb-4">
-                  <div class="d-flex justify-space-between mb-2">
-                    <span class="text-body-1 text-high-emphasis ">Delivery Process</span>
-                    <span class="text-body-2">{{ vehicle.progress }}%</span>
-                  </div>
-                  <VProgressLinear
-                    :model-value="vehicle.progress"
-                    color="primary"
-                    rounded
-                    height="6"
+              <VIcon icon="tabler-x" />
+            </IconBtn>
+          </template>
+        </VCardItem>
+
+        <!-- 👉 Perfect Scrollbar -->
+        <PerfectScrollbar
+          :options="{ wheelPropagation: false, suppressScrollX: true }"
+          style="block-size: calc(100% - 60px);"
+        >
+          <VCardText class="pt-0">
+            <div
+              v-for="(vehicle, index) in vehicleTrackingData"
+              :key="index"
+              class="mb-6"
+            >
+              <div
+                class="d-flex align-center justify-space-between cursor-pointer"
+                @click="flyToLocation(geojson.features[index].geometry.coordinates, index)"
+              >
+                <div class="d-flex gap-x-4">
+                  <VAvatar
+                    icon="mdi-bus"
+                    variant="tonal"
                   />
+                  <div>
+                    <div class="text-body-1 text-high-emphasis">
+                      {{ vehicle.name }}
+                    </div>
+                    <div class="text-body-2">
+                      {{ vehicle.location }}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <VTimeline
-                    align="start"
-                    truncate-line="both"
-                    side="end"
-                    density="compact"
-                    line-thickness="1"
-                    class="ps-2"
-                  >
-                    <VTimelineItem
-                      icon="mdi-check-circle-outline"
-                      dot-color="rgb(var(--v-theme-surface))"
-                      icon-color="success"
-                      fill-dot
-                      size="22"
-                      :elevation="0"
-                    >
-                      <div class="text-caption text-uppercase text-success">
-                        TRACKING NUMBER CREATED
-                      </div>
-                      <div class="app-timeline-title">
-                        {{ vehicle.driverName }}
-                      </div>
-                      <div class="app-timeline-text">
-                        Sep 01, 7:53 AM
-                      </div>
-                    </VTimelineItem>
-                    <VTimelineItem
-                      icon="mdi-check-circle-outline"
-                      dot-color="rgb(var(--v-theme-surface))"
-                      icon-color="success"
-                      fill-dot
-                      size="22"
-                      :elevation="0"
-                    >
-                      <div class="text-caption text-uppercase text-success">
-                        OUT FOR DELIVERY
-                      </div>
-                      <div class="app-timeline-title">
-                        Veronica Herman
-                      </div>
-                      <div class="app-timeline-text">
-                        Sep 03, 8:02 AM
-                      </div>
-                    </VTimelineItem>
-                    <VTimelineItem
-                      icon="mdi-map-marker-outline"
-                      dot-color="rgb(var(--v-theme-surface))"
-                      icon-color="primary"
-                      fill-dot
-                      size="22"
-                      :elevation="0"
-                    >
-                      <div class="text-caption text-uppercase text-success">
-                        ARRIVED
-                      </div>
-                      <div class="app-timeline-title">
-                        Veronica Herman
-                      </div>
-                      <div class="app-timeline-text">
-                        Sep 04, 8:18 AM
-                      </div>
-                    </VTimelineItem>
-                  </VTimeline>
-                </div>
+                <IconBtn density="comfortable">
+                  <VIcon :icon="showPanel[index] ? 'mdi-chevron-down' : $vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'" />
+                </IconBtn>
               </div>
-            </VExpandTransition>
-          </div>
-        </VCardText>
+              <VExpandTransition mode="out-in">
+                <div v-show="showPanel[index]">
+                  <div class="py-4 mb-4">
+                    <div class="d-flex justify-space-between mb-2">
+                      <span class="text-body-1 text-high-emphasis ">Delivery Process</span>
+                      <span class="text-body-2">{{ vehicle.progress }}%</span>
+                    </div>
+                    <VProgressLinear
+                      :model-value="vehicle.progress"
+                      color="primary"
+                      rounded
+                      height="6"
+                    />
+                  </div>
+                  <div>
+                    <VTimeline
+                      align="start"
+                      truncate-line="both"
+                      side="end"
+                      density="compact"
+                      line-thickness="1"
+                      class="ps-2"
+                    >
+                      <VTimelineItem
+                        icon="mdi-check-circle-outline"
+                        dot-color="rgb(var(--v-theme-surface))"
+                        icon-color="success"
+                        fill-dot
+                        size="22"
+                        :elevation="0"
+                      >
+                        <div class="text-caption text-uppercase text-success">
+                          TRACKING NUMBER CREATED
+                        </div>
+                        <div class="app-timeline-title">
+                          {{ vehicle.driverName }}
+                        </div>
+                        <div class="app-timeline-text">
+                          Sep 01, 7:53 AM
+                        </div>
+                      </VTimelineItem>
+                      <VTimelineItem
+                        icon="mdi-check-circle-outline"
+                        dot-color="rgb(var(--v-theme-surface))"
+                        icon-color="success"
+                        fill-dot
+                        size="22"
+                        :elevation="0"
+                      >
+                        <div class="text-caption text-uppercase text-success">
+                          OUT FOR DELIVERY
+                        </div>
+                        <div class="app-timeline-title">
+                          Veronica Herman
+                        </div>
+                        <div class="app-timeline-text">
+                          Sep 03, 8:02 AM
+                        </div>
+                      </VTimelineItem>
+                      <VTimelineItem
+                        icon="mdi-map-marker-outline"
+                        dot-color="rgb(var(--v-theme-surface))"
+                        icon-color="primary"
+                        fill-dot
+                        size="22"
+                        :elevation="0"
+                      >
+                        <div class="text-caption text-uppercase text-success">
+                          ARRIVED
+                        </div>
+                        <div class="app-timeline-title">
+                          Veronica Herman
+                        </div>
+                        <div class="app-timeline-text">
+                          Sep 04, 8:18 AM
+                        </div>
+                      </VTimelineItem>
+                    </VTimeline>
+                  </div>
+                </div>
+              </VExpandTransition>
+            </div>
+          </VCardText>
+        </PerfectScrollbar>
       </VCard>
     </VNavigationDrawer>
 
     <VMain>
-      <div>
+      <div class="h-100">
         <IconBtn
           class="d-lg-none navigation-toggle-btn rounded-sm"
           variant="elevated"
@@ -315,7 +333,7 @@ watch(activeIndex, () => {
 }
 
 .basemap {
-  block-size: 80vh;
+  block-size: 100%;
   inline-size: 100%;
 }
 

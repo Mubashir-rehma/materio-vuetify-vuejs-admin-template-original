@@ -65,7 +65,7 @@ const faqData = [
           cols="12"
           md="6"
         >
-          <VExpansionPanels class="pa-4">
+          <VExpansionPanels class="py-4 ps-4">
             <VExpansionPanel
               v-for="faq in faqData"
               :key="faq.question"

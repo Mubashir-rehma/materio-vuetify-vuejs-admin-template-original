@@ -13,6 +13,8 @@ import logo3 from '@images/front-pages/branding/logo-3.png'
 import logo4dark from '@images/front-pages/branding/logo-4-dark.png'
 import logo4light from '@images/front-pages/branding/logo-4-light.png'
 import logo4 from '@images/front-pages/branding/logo-4.png'
+import logo5dark from '@images/front-pages/branding/logo-5-dark.png'
+import logo5light from '@images/front-pages/branding/logo-5-light.png'
 
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
@@ -22,6 +24,7 @@ const brandLogo1 = useGenerateImageVariant(logo1light, logo1dark)
 const brandLogo2 = useGenerateImageVariant(logo2light, logo2dark)
 const brandLogo3 = useGenerateImageVariant(logo3light, logo3dark)
 const brandLogo4 = useGenerateImageVariant(logo4light, logo4dark)
+const brandLogo5 = useGenerateImageVariant(logo5light, logo5dark)
 
 const reviewData = [
   {
@@ -196,10 +199,10 @@ const reviewData = [
 
     <VDivider />
 
+    <!-- 👉 Brand-logo Swiper  -->
     <div class="swiper-brands-carousel mt-8">
       <swiper-container
         slides-per-view="1"
-        autoplay-delay="3000"
         loop="true"
         :breakpoints="{
           992: {
@@ -209,32 +212,18 @@ const reviewData = [
             centeredSlides: true,
             slidesPerView: 3,
           },
+          580: {
+            centeredSlides: true,
+            slidesPerView: 2,
+          },
         }"
       >
-        <swiper-slide>
+        <swiper-slide
+          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
+          :key="index"
+        >
           <VImg
-            :src="brandLogo1"
-            height="28"
-          />
-        </swiper-slide>
-
-        <swiper-slide>
-          <VImg
-            :src="brandLogo2"
-            height="28"
-          />
-        </swiper-slide>
-
-        <swiper-slide>
-          <VImg
-            :src="brandLogo3"
-            height="28"
-          />
-        </swiper-slide>
-
-        <swiper-slide>
-          <VImg
-            :src="brandLogo4"
+            :src="img"
             height="28"
           />
         </swiper-slide>

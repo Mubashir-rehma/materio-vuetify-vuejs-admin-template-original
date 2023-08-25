@@ -9,21 +9,20 @@ const userData = useCookie<any>('userData')
 
 const logout = async () => {
   // Remove "userData" from cookie
-  useCookie('userData').value = null
 
   // Remove "accessToken" from localStorage
   useCookie('accessToken').value = null
+  userData.value = null
 
   // Redirect to login page
-  router.push('/login')
-    .then(() => {
-      // ℹ️ We had to remove abilities in then block because if we don't nav menu items mutation is visible while redirecting user to login page
-      // Remove "userAbilities" from localStorage
-      useCookie('userAbilities').value = null
+  await router.push('/login')
 
-      // Reset ability to initial ability
-      ability.update([])
-    })
+  // ℹ️ We had to remove abilities in then block because if we don't nav menu items mutation is visible while redirecting user to login page
+  // Remove "userAbilities" from localStorage
+  useCookie('userAbilityRules').value = null
+
+  // Reset ability to initial ability
+  ability.update([])
 }
 
 const userProfileList = [
@@ -41,6 +40,7 @@ const userProfileList = [
 
 <template>
   <VBadge
+    v-if="userData"
     dot
     bordered
     location="bottom right"

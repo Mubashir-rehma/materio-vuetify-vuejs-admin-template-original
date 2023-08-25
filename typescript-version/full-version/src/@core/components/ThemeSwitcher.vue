@@ -17,7 +17,7 @@ const selectedItem = ref([currentThemeName.value])
 </script>
 
 <template>
-  <IconBtn>
+  <IconBtn color="rgb(var(--v-theme-on-surface))">
     <VIcon :icon="props.themes.find(t => t.name === currentThemeName)?.icon" />
     <VTooltip
       activator="parent"

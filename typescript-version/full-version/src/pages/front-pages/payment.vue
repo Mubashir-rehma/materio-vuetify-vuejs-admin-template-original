@@ -100,6 +100,7 @@ const isPricingPlanDialogVisible = ref(false)
                         placeholder="johndoe@email.com"
                       />
                     </VCol>
+
                     <VCol
                       cols="12"
                       md="6"
@@ -110,6 +111,7 @@ const isPricingPlanDialogVisible = ref(false)
                         placeholder="············"
                       />
                     </VCol>
+
                     <VCol
                       cols="12"
                       md="6"
@@ -120,6 +122,7 @@ const isPricingPlanDialogVisible = ref(false)
                         :items="['USA', 'Canada', 'UK', 'AUS']"
                       />
                     </VCol>
+
                     <VCol
                       cols="12"
                       md="6"
@@ -149,6 +152,7 @@ const isPricingPlanDialogVisible = ref(false)
                         type="number"
                       />
                     </VCol>
+
                     <VCol
                       cols="12"
                       md="4"
@@ -158,17 +162,18 @@ const isPricingPlanDialogVisible = ref(false)
                         placeholder="John Doe"
                       />
                     </VCol>
+
                     <VCol
                       cols="12"
                       md="4"
                     >
-                      <AppDateTimePicker
+                      <VTextField
                         v-model="date"
                         label="Exp. date"
-                        :config="{ dateFormat: 'm/Y' }"
                         placeholder="05/2020"
                       />
                     </VCol>
+
                     <VCol
                       cols="12"
                       md="4"

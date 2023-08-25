@@ -19,6 +19,12 @@ const shortcuts = [
     to: { name: 'apps-user-list' },
   },
   {
+    icon: 'mdi-lock-outline',
+    title: 'Role Management',
+    subtitle: 'Permission',
+    to: { name: 'apps-roles' },
+  },
+  {
     icon: 'mdi-view-dashboard-outline',
     title: 'Dashboard',
     subtitle: 'Dashboard Analytics',

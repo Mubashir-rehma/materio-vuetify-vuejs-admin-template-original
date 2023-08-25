@@ -123,7 +123,7 @@ export const db: DB = {
           title: 'Ecommerce - Settings',
         },
         {
-          url: { name: 'apps-academy-overview' },
+          url: { name: 'apps-academy-dashboard' },
           icon: 'mdi-book-open-outline',
           title: 'Academy - Overview',
         },
@@ -138,7 +138,7 @@ export const db: DB = {
           title: 'Academy - Course Details',
         },
         {
-          url: { name: 'apps-logistics-overview' },
+          url: { name: 'apps-logistics-dashboard' },
           icon: 'mdi-book-open-outline',
           title: 'Logistics - Dashboard',
         },

@@ -1,9 +1,9 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup lang="ts">
-import fleetImg from '@images/misc/fleet-car.png';
-import type { LngLatLike } from 'mapbox-gl';
-import mapboxgl from 'mapbox-gl';
-import { onMounted, ref } from 'vue';
+import type { LngLatLike } from 'mapbox-gl'
+import mapboxgl from 'mapbox-gl'
+import { onMounted, ref } from 'vue'
+import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
@@ -12,7 +12,6 @@ const map = ref()
 
 const carImgs = ref([fleetImg, fleetImg, fleetImg, fleetImg])
 const refCars = ref([])
-
 
 const showPanel = ref([true, false, false, false])
 

@@ -69,7 +69,7 @@ export const db: DB = {
       articles: [
         { title: 'Can I use the same license for the...' },
         { title: 'How to contact an author?' },
-        { title: 'I’m making a test site - it’s not for ...' },
+        { title: 'I\'m making a test site - it\'s not for ...' },
         { title: 'which license do I need?' },
         { title: 'I want to make multiple end prod ...' },
         { title: 'For logo what license do I need?' },

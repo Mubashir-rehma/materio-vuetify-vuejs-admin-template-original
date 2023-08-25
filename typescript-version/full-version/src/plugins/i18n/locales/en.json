@@ -163,6 +163,7 @@
     "badge": "Badge",
     "noDataText": "No data available",
     "close": "Close",
+    "open": "open",
     "dataFooter": {
       "itemsPerPageText": "Items per page:",
       "itemsPerPageAll": "All",

@@ -53,8 +53,10 @@ const fetchInvoices = async (query: string, currentStatus: invoiceStatus, firstD
     console.log(error.value)
   }
   else {
-    invoices.value = data.value.invoices
-    totalInvoices.value = data.value.totalInvoices
+    if (data.value) {
+      invoices.value = data.value.invoices
+      totalInvoices.value = data.value.totalInvoices
+    }
   }
 
   isLoading.value = false

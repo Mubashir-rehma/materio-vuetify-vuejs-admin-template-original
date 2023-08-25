@@ -11,6 +11,7 @@ const profileTabData = ref<ProfileTab>()
 
 const fetchAboutData = async () => {
   if (router.params.tab === 'profile') {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { data, error } = await useApi<any>(createUrl('/pages/profile', {
       tab: router.params.tab,
     }))

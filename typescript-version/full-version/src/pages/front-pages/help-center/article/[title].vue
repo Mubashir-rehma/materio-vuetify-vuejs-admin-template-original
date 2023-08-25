@@ -11,7 +11,6 @@ definePage({
 
 const articleData = ref<HelpCenterArticle>()
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { data, error } = await useApi<any>('/pages/help-center/article')
 
 if (error.value)

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ThemeInstance } from 'vuetify'
 import { hexToRgb } from '@layouts/utils'
 
@@ -94,7 +95,6 @@ export const getLineChartSimpleConfig = (themeColors: ThemeInstance['themes']['v
       },
     },
     tooltip: {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       custom(data: any) {
         return `<div class='bar-chart pa-2'>
           <span>${data.series[data.seriesIndex][data.dataPointIndex]}%</span>
@@ -282,7 +282,7 @@ export const getRadialBarChartConfig = (themeColors: ThemeInstance['themes']['va
             fontSize: '1.125rem',
 
             color: themePrimaryTextColor,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
             formatter(w: { globals: { seriesTotals: any[]; series: string | any[] } }) {
               const totalValue
                 = w.globals.seriesTotals.reduce((a: number, b: number) => {

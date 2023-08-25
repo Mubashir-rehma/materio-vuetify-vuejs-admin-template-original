@@ -21,9 +21,6 @@ const heroBgUrl = computed(() => {
     return lightBg
 })
 
-console.log(heroBgUrl.value)
-console.log(isDark.value)
-
 const heroElementsImg = useGenerateImageVariant(heroElementsImgLight, heroElementsImgDark)
 const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDashboardImgDark)
 

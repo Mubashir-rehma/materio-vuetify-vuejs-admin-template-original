@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ConnectImg from '@images/front-pages/landing-page/let’s-contact.png'
+import ConnectImg from '@images/front-pages/landing-page/lets-contact.png'
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
 const name = ref('')

@@ -39,14 +39,14 @@ const reviewData = [
     position: 'Founder of Levis',
   },
   {
-    desc: 'This template is superior in so many ways. The code, the design, the regular updates, the support.. It’s the whole package. Excellent Work.',
+    desc: 'This template is superior in so many ways. The code, the design, the regular updates, the support.. It\'s the whole package. Excellent Work.',
     img: logo3,
     rating: 4,
     name: 'Eugenia Moore',
     position: 'CTO of Airbnb',
   },
   {
-    desc: 'All the requirements for developers have been taken into consideration, so I’m able to build any interface I want.',
+    desc: 'All the requirements for developers have been taken into consideration, so I\'m able to build any interface I want.',
     img: logo4,
     rating: 5,
     name: 'Sara Smith',
@@ -74,14 +74,14 @@ const reviewData = [
     position: 'Founder of Levis',
   },
   {
-    desc: 'This template is superior in so many ways. The code, the design, the regular updates, the support.. It’s the whole package. Excellent Work.',
+    desc: 'This template is superior in so many ways. The code, the design, the regular updates, the support.. It\'s the whole package. Excellent Work.',
     img: logo3,
     rating: 4,
     name: 'Eugenia Moore',
     position: 'CTO of Airbnb',
   },
   {
-    desc: 'All the requirements for developers have been taken into consideration, so I’m able to build any interface I want.',
+    desc: 'All the requirements for developers have been taken into consideration, so I\'m able to build any interface I want.',
     img: logo4,
     rating: 5,
     name: 'Sara Smith',
@@ -170,7 +170,7 @@ const reviewData = [
             <VCardText class="pa-6 d-flex flex-column justify-space-between align-center">
               <img
                 :src="data.img"
-                style="height: 1.75rem;"
+                style="block-size: 1.75rem;"
               >
 
               <div class="text-body-1 text-high-emphasis text-center">

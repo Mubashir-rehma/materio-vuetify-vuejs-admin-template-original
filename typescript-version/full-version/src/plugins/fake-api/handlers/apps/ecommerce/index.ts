@@ -22,7 +22,8 @@ export const handlerAppsEcommerce = [
     const searchQuery = is.string(q) ? q : undefined
     const queryLower = (searchQuery ?? '').toString().toLowerCase()
 
-    const stockLocal = is.string(stock) ? stock : null
+    const parsedStock = destr(stock)
+    const stockLocal = is.boolean(parsedStock) ? parsedStock : undefined
 
     const parsedSortBy = destr(sortBy)
     const sortByLocal = is.string(parsedSortBy) ? parsedSortBy : ''
@@ -41,7 +42,7 @@ export const handlerAppsEcommerce = [
       (product.product_name.toLowerCase().includes(queryLower) || product.product_brand.toLowerCase().includes(queryLower))
         && product.category === (category || product.category)
         && (product.status === (status || product.status))
-        && (stockLocal === null || product.stock === (stockLocal === 'true'))
+        && (typeof stockLocal === 'undefined' ? true : (product.stock === stockLocal))
     )).reverse()
 
     // Sort

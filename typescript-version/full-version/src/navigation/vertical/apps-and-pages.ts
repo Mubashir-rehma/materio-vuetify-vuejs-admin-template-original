@@ -44,7 +44,7 @@ export default [
     title: 'Academy',
     icon: { icon: 'mdi-book-open-outline' },
     children: [
-      { title: 'Overview', to: 'apps-academy-overview' },
+      { title: 'Overview', to: 'apps-academy-dashboard' },
       { title: 'My Course', to: 'apps-academy-my-course' },
       { title: 'Course Details', to: 'apps-academy-course-details' },
     ],
@@ -53,7 +53,7 @@ export default [
     title: 'Logistics',
     icon: { icon: 'mdi-truck-outline' },
     children: [
-      { title: 'Dashboard', to: 'apps-logistics-overview' },
+      { title: 'Dashboard', to: 'apps-logistics-dashboard' },
       { title: 'Fleet', to: 'apps-logistics-fleet' },
     ],
   },

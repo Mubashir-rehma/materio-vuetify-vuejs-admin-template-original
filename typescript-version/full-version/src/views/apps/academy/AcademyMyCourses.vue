@@ -39,7 +39,6 @@ const fetchCourses = async () => {
     console.log(error.value)
   }
   else {
-    console.log('data')
     courseData.value = data.value.courses
     totalCourse.value = data.value.total
   }

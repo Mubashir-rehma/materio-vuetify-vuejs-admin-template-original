@@ -380,18 +380,18 @@ watch([searchQuery, selectedStatus, selectedDateRange, options], () => {
 
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <IconBtn @click="deleteInvoice(item.raw.id)">
-            <VIcon icon="mdi-delete-outline" />
-          </IconBtn>
-
-          <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.raw.id } }">
-            <VIcon icon="mdi-eye-outline" />
-          </IconBtn>
-
-          <MoreBtn
-            :menu-list="computedMoreList(item.raw.id)"
-            item-props
-          />
+          <div class="text-no-wrap">
+            <IconBtn @click="deleteInvoice(item.raw.id)">
+              <VIcon icon="mdi-delete-outline" />
+            </IconBtn>
+            <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.raw.id } }">
+              <VIcon icon="mdi-eye-outline" />
+            </IconBtn>
+            <MoreBtn
+              :menu-list="computedMoreList(item.raw.id)"
+              item-props
+            />
+          </div>
         </template>
       </VDataTableServer>
       <!-- !SECTION -->

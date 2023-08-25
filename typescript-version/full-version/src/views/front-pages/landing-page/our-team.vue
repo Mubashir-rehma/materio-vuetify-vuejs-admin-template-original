@@ -5,12 +5,12 @@ import teamPerson2 from '@images/pages/teamPerson2.png'
 import teamPerson3 from '@images/pages/teamPerson3.png'
 import teamPerson4 from '@images/pages/teamPerson4.png'
 
-const teamData = [
-  { name: 'Sophie Gilbert', position: 'Project Manager', image: teamPerson1, backgroundColor: 'rgba(144, 85, 253, 0.16)' },
-  { name: 'Nannie Ford', position: 'Development Lead', image: teamPerson2, backgroundColor: 'rgba(255, 76, 81, 0.16)' },
-  { name: 'Chris Watkins', position: 'Marketing Manager', image: teamPerson3, backgroundColor: 'rgba(86, 202, 0, 0.16)' },
-  { name: 'Paul Miles', position: 'UI Designer', image: teamPerson4, backgroundColor: 'rgba(22, 177, 255, 0.16)' },
-]
+const teamData = ref([
+  { name: 'Sophie Gilbert', position: 'Project Manager', image: teamPerson1, backgroundColor: 'rgba(144, 85, 253, 0.16)', borderColor: 'rgba(144, 85, 253,0.6)', isHover: false },
+  { name: 'Nannie Ford', position: 'Development Lead', image: teamPerson2, backgroundColor: 'rgba(255, 76, 81, 0.16)', borderColor: 'rgba(255, 76, 81,0.6)', isHover: false },
+  { name: 'Chris Watkins', position: 'Marketing Manager', image: teamPerson3, backgroundColor: 'rgba(86, 202, 0, 0.16)', borderColor: 'rgba(86, 202, 0,0.6)', isHover: false },
+  { name: 'Paul Miles', position: 'UI Designer', image: teamPerson4, backgroundColor: 'rgba(22, 177, 255, 0.16)', borderColor: 'rgba(22, 177, 255,0.6)', isHover: false },
+])
 </script>
 
 <template>
@@ -42,6 +42,9 @@ const teamData = [
           variant="outlined"
           min-width="262"
           class="position-relative overflow-visible mb-4"
+          :style="data.isHover ? { border: `1px solid ${data.borderColor}` } : {}"
+          @mouseenter="data.isHover = true"
+          @mouseleave="data.isHover = false"
         >
           <VImg
             :src="data.image"

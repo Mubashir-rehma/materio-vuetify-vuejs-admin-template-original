@@ -123,6 +123,7 @@ fetchCourseDetails()
                 </div>
               </div>
               <VDivider class="my-6" />
+              <!-- eslint-disable-next-line vue/no-v-html -->
               <div v-html="courseDetails?.description" />
 
               <VDivider class="my-6" />

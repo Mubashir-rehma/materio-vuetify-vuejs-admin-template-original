@@ -1,12 +1,10 @@
 <script setup lang="ts">
 const logisticData = ref([
-  { icon: 'mdi-car-estate', color: 'primary', title: 'On route vehicles', value: 42, change: 18.2, isHover: false},
-  { icon: 'mdi-alert-outline', color: 'warning', title: 'Vehicles with errors', value: 8, change: -8.7 , isHover: false},
-  { icon: 'mdi-source-branch', color: 'error', title: 'Deviated from route', value: 27, change: 4.3 , isHover: false},
-  { icon: 'mdi-timer-outline', color: 'info', title: 'Late vehicles', value: 13, change: -2.5 , isHover: false},
+  { icon: 'mdi-car-estate', color: 'primary', title: 'On route vehicles', value: 42, change: 18.2, isHover: false },
+  { icon: 'mdi-alert-outline', color: 'warning', title: 'Vehicles with errors', value: 8, change: -8.7, isHover: false },
+  { icon: 'mdi-source-branch', color: 'error', title: 'Deviated from route', value: 27, change: 4.3, isHover: false },
+  { icon: 'mdi-timer-outline', color: 'info', title: 'Late vehicles', value: 13, change: -2.5, isHover: false },
 ])
-
-
 </script>
 
 <template>
@@ -18,7 +16,12 @@ const logisticData = ref([
       md="3"
       sm="6"
     >
-      <VCard class="logistics-card-statistics cursor-pointer" @mouseenter="data.isHover=true"  @mouseleave="data.isHover=false"  :style="data.isHover ? {'border-block-end': `3px solid rgba(var(--v-theme-${data.color}))`} :  {'border-block-end': `2px solid rgba(var(--v-theme-${data.color}), var(--v-disabled-opacity))`}">
+      <VCard
+        class="logistics-card-statistics cursor-pointer"
+        :style="data.isHover ? { 'border-block-end': `3px solid rgba(var(--v-theme-${data.color}))` } : { 'border-block-end': `2px solid rgba(var(--v-theme-${data.color}), var(--v-disabled-opacity))` }"
+        @mouseenter="data.isHover = true"
+        @mouseleave="data.isHover = false"
+      >
         <VCardText>
           <div class="d-flex align-center gap-x-4 mb-2">
             <VAvatar

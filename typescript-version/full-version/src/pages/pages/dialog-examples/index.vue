@@ -286,8 +286,8 @@ const userData = {
       </VCard>
     </VCol>
 
-     <!-- 👉 Payment Providers Dialog -->
-     <VCol
+    <!-- 👉 Payment Providers Dialog -->
+    <VCol
       cols="12"
       sm="6"
       md="4"

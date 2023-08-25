@@ -68,12 +68,15 @@ const categoryIconFilter = (categoryName: string): {
 }
 
 onMounted(async () => {
-  const { data, error } = await useApi<any>('pages/datatable')
+  const { data, error } = await useApi<SalesDetails[]>('pages/datatable')
 
-  if (error.value)
+  if (error.value) {
     console.error(error.value)
-  else
-    productList.value = data.value
+  }
+  else {
+    if (data.value)
+      productList.value = data.value
+  }
 })
 </script>
 

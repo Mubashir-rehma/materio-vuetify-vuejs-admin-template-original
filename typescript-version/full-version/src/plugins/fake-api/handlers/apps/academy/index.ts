@@ -35,8 +35,6 @@ export const handlerAppsAcademy = [
     const itemsPerPageLocal = is.number(parsedItemsPerPage) ? parsedItemsPerPage : 10
     const pageLocal = is.number(parsedPage) ? parsedPage : 1
 
-    console.log(label)
-
     const filteredCourses = db.courses.filter(course => {
       return (
         (

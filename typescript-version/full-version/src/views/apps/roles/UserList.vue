@@ -31,7 +31,6 @@ const headers = [
 ]
 
 // 👉 Fetching users
-
 const fetchUsers = async () => {
   const { data, error } = await useApi<any>(createUrl('/apps/users', {
     q: searchQuery.value,
@@ -51,9 +50,11 @@ const fetchUsers = async () => {
     console.log(error.value)
   }
   else {
-    users.value = data.value.users
-    totalPage.value = data.value.totalPage
-    totalUsers.value = data.value.totalUsers
+    if (data.value) {
+      users.value = data.value.users
+      totalPage.value = data.value.totalPage
+      totalUsers.value = data.value.totalUsers
+    }
   }
 }
 

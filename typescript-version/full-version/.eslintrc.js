@@ -34,6 +34,8 @@ module.exports = {
     // indentation (Already present in TypeScript)
     'comma-spacing': ['error', { before: false, after: true }],
     'key-spacing': ['error', { afterColon: true }],
+    'n/prefer-global/process': ['off'],
+    'sonarjs/cognitive-complexity': ['off'],
 
     'vue/first-attribute-linebreak': ['error', {
       singleline: 'beside',
@@ -41,6 +43,7 @@ module.exports = {
     }],
 
     'antfu/top-level-function': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
 
     // indentation (Already present in TypeScript)
     'indent': ['error', 2],

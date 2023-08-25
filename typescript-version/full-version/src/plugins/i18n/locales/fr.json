@@ -165,6 +165,7 @@
     "badge": "Badge",
     "noDataText": "Pas de données disponibles",
     "close": "Fermer",
+    "open": "Ouvert",
     "dataFooter": {
       "itemsPerPageText": "Objets par page:",
       "itemsPerPageAll": "Tout",

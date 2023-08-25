@@ -21,8 +21,6 @@ export const handlerAppsInvoice = [
   // 👉 Invoice
   // Get Invoice List
   rest.get(buildURL('apps/invoice'), (req, res, ctx) => {
-    // const { q, status, startDate = '', endDate = '', sortBy = '', page = 1, itemsPerPage = 10, orderBy } = getQuery(event)
-
     const q = req.url.searchParams.get('q')
     const status = req.url.searchParams.get('status')
     const startDate = req.url.searchParams.get('startDate')

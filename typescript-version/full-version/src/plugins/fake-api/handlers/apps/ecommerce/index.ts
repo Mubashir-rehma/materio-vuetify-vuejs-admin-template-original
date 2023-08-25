@@ -126,7 +126,6 @@ export const handlerAppsEcommerce = [
 
     const productIndex = db.products.findIndex(e => e.id === id)
 
-    console.log(productIndex)
     if (productIndex >= 0) {
       db.products.splice(productIndex, 1)
 
@@ -302,7 +301,6 @@ export const handlerAppsEcommerce = [
 
     // Sort Customers
     if (sortByLocal) {
-      console.log(sortByLocal)
       if (sortByLocal === 'customer') {
         filteredCustomers.sort((a, b) => {
           if (orderByLocal === 'asc')
@@ -365,8 +363,6 @@ export const handlerAppsEcommerce = [
     const itemsPerPage = req.url.searchParams.get('itemsPerPage')
     const status = req.url.searchParams.get('status')
     const page = req.url.searchParams.get('page')
-
-    console.log(status, typeof status)
 
     const parsedSortBy = destr(sortBy)
     const sortByLocal = is.string(parsedSortBy) ? parsedSortBy : ''

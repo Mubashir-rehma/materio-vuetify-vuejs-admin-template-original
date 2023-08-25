@@ -150,7 +150,7 @@ export const db: DB = {
           { avatar: avatar4, name: 'George Burrill' },
         ],
         description:
-                  'We don’t make assumptions about the rest of your technology stack, so you can develop new features in React.',
+                  'We don\'t make assumptions about the rest of your technology stack, so you can develop new features in React.',
         chips: [
           {
             title: 'React',

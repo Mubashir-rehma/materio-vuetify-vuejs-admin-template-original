@@ -107,7 +107,7 @@ export const db: DB = {
         },
         {
           question: 'How can I purchase additional warranty coverage?',
-          answer: 'For the peace of your mind, we offer extended warranty plans that add additional year(s) of protection to the standard manufacturer’s warranty provided by us. To purchase or find out more about the extended warranty program, visit Extended Warranty section here.',
+          answer: 'For the peace of your mind, we offer extended warranty plans that add additional year(s) of protection to the standard manufacturer\'s warranty provided by us. To purchase or find out more about the extended warranty program, visit Extended Warranty section here.',
         },
       ],
     },

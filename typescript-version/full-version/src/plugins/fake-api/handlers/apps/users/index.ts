@@ -8,8 +8,6 @@ import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
 export const handlerAppsUsers = [
   // Get Users Details
   rest.get(buildURL('apps/users'), (req, res, ctx) => {
-    // const { q = '', role = null, plan = null, status = null, sortBy, itemsPerPage = 10, page = 1, orderBy } = getQuery(event)
-
     const q = req.url.searchParams.get('q')
     const role = req.url.searchParams.get('role')
     const plan = req.url.searchParams.get('plan')

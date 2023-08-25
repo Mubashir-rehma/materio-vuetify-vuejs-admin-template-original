@@ -17,6 +17,11 @@ interface Emit {
   (e: 'update:loading', loading: boolean): void
 }
 
+// inherit Attribute make false
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<Props>(), {
   collapsed: false,
   noActions: false,
@@ -39,11 +44,6 @@ const $loading = computed({
   set(value: boolean) {
     props.loading !== undefined ? emit('update:loading', value) : _loading.value = value
   },
-})
-
-// inherit Attribute make false
-defineOptions({
-  inheritAttrs: false,
 })
 
 const isContentCollapsed = ref(props.collapsed)

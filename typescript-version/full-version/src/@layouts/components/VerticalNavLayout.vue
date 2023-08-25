@@ -44,9 +44,6 @@ export default defineComponent({
         isLayoutOverlayVisible.value = false
     })
 
-    const router = useRouter()
-    const shallShowPageLoading = ref(false)
-
     return () => {
       const verticalNavAttrs = toRef(props, 'verticalNavAttrs')
 

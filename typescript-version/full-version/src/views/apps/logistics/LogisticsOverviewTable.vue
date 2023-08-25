@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Vehicle } from '@/plugins/fake-api/handlers/apps/logistics/type'
 import type { Options } from '@core/types'
 
-const vehiclesData = ref([])
+const vehiclesData = ref<Vehicle[]>([])
 const totalVehicles = ref(0)
 
 const options = ref<Options>({
@@ -30,8 +31,10 @@ const fetchVehicles = async () => {
     console.log(error.value)
   }
   else {
-    vehiclesData.value = data.value.vehicles
-    totalVehicles.value = data.value.totalVehicles
+    if (data.value) {
+      vehiclesData.value = data.value.vehicles
+      totalVehicles.value = data.value.totalVehicles
+    }
   }
 }
 

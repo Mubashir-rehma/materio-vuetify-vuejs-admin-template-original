@@ -9,7 +9,23 @@ defineEmits<{
   (e: 'toggleComposeDialogVisibility'): void
 }>()
 
-const folders = [
+interface Folder {
+  title: string
+  prependIcon: string
+  to: any
+  badge?: {
+    content: string
+    color: string
+  }
+}
+
+interface Label {
+  title: string
+  color: string
+  to: any
+}
+
+const folders: Folder[] = [
   {
     title: 'Inbox',
     prependIcon: 'mdi-email-outline',
@@ -60,7 +76,7 @@ const folders = [
   },
 ]
 
-const labels = [
+const labels: Label[] = [
   {
     title: 'Personal',
     color: 'success',

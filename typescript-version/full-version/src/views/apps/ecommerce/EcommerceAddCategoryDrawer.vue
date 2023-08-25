@@ -42,6 +42,7 @@ const editor = useEditor({
 
 const setLink = () => {
   const previousUrl = editor.value?.getAttributes('link').href
+  // eslint-disable-next-line no-alert
   const url = window.prompt('URL', previousUrl)
 
   // cancelled
@@ -60,6 +61,7 @@ const setLink = () => {
 }
 
 const addImage = () => {
+  // eslint-disable-next-line no-alert
   const url = window.prompt('URL')
 
   if (url)

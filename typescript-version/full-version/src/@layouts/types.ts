@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 import type { ContentWidth, FooterType, NavbarType } from './enums'
@@ -54,7 +53,7 @@ export interface Config {
     overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
     i18n: {
       enable: boolean
-      defaultLocale: string
+      defaultLocale: string | undefined
     }
     isRtl: Ref<boolean>
     iconRenderer?: UserConfig['app']['iconRenderer']

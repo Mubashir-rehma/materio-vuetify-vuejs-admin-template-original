@@ -1,7 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router/auto'
 
 const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
-const eCommerceComponent = () => import('@/pages/apps/ecommerce/product/list/index.vue')
 const logisticsComponent = () => import('@/pages/apps/logistics/overview.vue')
 
 // 👉 Redirects

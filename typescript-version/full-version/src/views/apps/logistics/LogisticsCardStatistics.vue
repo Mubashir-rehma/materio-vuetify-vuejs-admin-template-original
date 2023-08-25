@@ -19,7 +19,7 @@ const logisticData = ref([
       <div>
         <VCard
           class="logistics-card-statistics cursor-pointer"
-          :style="data.isHover ? { 'border-block-end': `3px solid rgba(var(--v-theme-${data.color}))` } : { 'border-block-end': `2px solid rgba(var(--v-theme-${data.color}), var(--v-disabled-opacity))` }"
+          :style="data.isHover ? { 'border-block-end': `2px solid rgba(var(--v-theme-${data.color}))` } : { 'border-block-end': `2px solid rgba(var(--v-theme-${data.color}), var(--v-disabled-opacity))` }"
           @mouseenter="data.isHover = true"
           @mouseleave="data.isHover = false"
         >
@@ -53,7 +53,7 @@ const logisticData = ref([
   </VRow>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@core/scss/base/mixins" as mixins;
 
 .logistics-card-statistics:hover {

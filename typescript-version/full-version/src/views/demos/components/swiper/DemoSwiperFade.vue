@@ -15,6 +15,7 @@ register()
     pagination="true"
     navigation="true"
     effect="fade"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

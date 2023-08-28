@@ -12,6 +12,7 @@ register()
       centered-slides="true"
       space-between="30"
       slides-per-view="1"
+      events-prefix="swiper-"
       :injectStyles="[
         `
         .swiper-button-next, .swiper-button-prev{

@@ -21,6 +21,7 @@ register()
     space-between="30"
     grid-rows="2"
     pagination-clickable="true"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

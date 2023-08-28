@@ -14,6 +14,7 @@ register()
   <swiper-container
     navigation="true"
     pagination-type="progressbar"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

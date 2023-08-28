@@ -25,6 +25,7 @@ register()
     coverflow-effect-depth="100"
     coverflow-effect-modifier="1"
     coverflow-effect-slide-shadows="true"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

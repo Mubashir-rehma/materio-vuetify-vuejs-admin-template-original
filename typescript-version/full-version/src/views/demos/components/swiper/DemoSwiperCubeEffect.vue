@@ -17,6 +17,7 @@ register()
     cube-effect-shadow="true"
     cube-effect-slide-shadows="true"
     cube-effect-shadow-scale="0.94"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

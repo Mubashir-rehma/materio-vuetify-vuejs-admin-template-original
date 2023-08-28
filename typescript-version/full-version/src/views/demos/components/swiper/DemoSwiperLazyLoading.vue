@@ -15,6 +15,7 @@ register()
     pagination-clickable="true"
     autoplay="true"
     navigation="true"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

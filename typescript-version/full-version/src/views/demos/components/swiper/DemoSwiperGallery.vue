@@ -18,6 +18,7 @@ register()
     space-between="10"
     navigation="true"
     centered-slides="true"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [
@@ -44,6 +45,7 @@ register()
     class="mySwiper2"
     loop="true"
     free-mode="true"
+    events-prefix="swiper-"
     slides-per-view="4"
   >
     <swiper-slide

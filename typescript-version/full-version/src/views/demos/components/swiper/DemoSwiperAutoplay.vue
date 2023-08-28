@@ -16,6 +16,7 @@ register()
     navigation="true"
     autoplay="true"
     centered-slides="true"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in

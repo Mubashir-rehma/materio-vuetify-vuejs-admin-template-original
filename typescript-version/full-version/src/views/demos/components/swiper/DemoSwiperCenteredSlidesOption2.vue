@@ -9,6 +9,7 @@ register()
     centered-slides="true"
     space-between="30"
     slides-per-view="1"
+    events-prefix="swiper-"
     :breakpoints="{
       992: {
         slidesPerView: 4,

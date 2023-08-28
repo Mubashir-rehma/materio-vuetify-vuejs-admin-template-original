@@ -36,6 +36,7 @@ const appendSlide = () => {
       slides-per-view="5"
       space-between="50"
       free-mode="true"
+      events-prefix="swiper-"
       :breakpoints="{
         1024: {
           slidesPerView: 4,

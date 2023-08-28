@@ -18,6 +18,7 @@ register()
     pagination-clickable="true"
     slides-per-view="5"
     space-between="50"
+    events-prefix="swiper-"
     :breakpoints="{
       1024: {
         slidesPerView: 4,

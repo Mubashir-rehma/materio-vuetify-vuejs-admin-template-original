@@ -14,6 +14,7 @@ register()
     pagination="true"
     slides-per-view="3"
     space-between="25"
+    events-prefix="swiper-"
   >
     <swiper-slide
       v-for="swiperImg in [

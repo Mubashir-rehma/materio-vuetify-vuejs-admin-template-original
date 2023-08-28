@@ -132,6 +132,7 @@ const reviewData = [
         loop="true"
         autoplay-delay="3000"
         autoplay-disable-on-interaction="false"
+        events-prefix="swiper-"
         :pagination="{
           clickable: 'true',
         }"
@@ -204,6 +205,7 @@ const reviewData = [
       <swiper-container
         slides-per-view="1"
         loop="true"
+        events-prefix="swiper-"
         :breakpoints="{
           992: {
             slidesPerView: 5,

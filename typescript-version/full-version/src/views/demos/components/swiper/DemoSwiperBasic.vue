@@ -11,7 +11,7 @@ register()
 </script>
 
 <template>
-  <swiper-container>
+  <swiper-container events-prefix="swiper-">
     <swiper-slide
       v-for="swiperImg in [
         swiper1,

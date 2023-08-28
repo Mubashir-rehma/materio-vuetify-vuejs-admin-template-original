@@ -363,7 +363,7 @@ const resolveStatusVariant = (status: string) => {
         >
           <VIcon
             class="flip-in-rtl"
-            :icon="props.icon"
+            :icon="(props as any).icon"
           />
         </VBtn>
 

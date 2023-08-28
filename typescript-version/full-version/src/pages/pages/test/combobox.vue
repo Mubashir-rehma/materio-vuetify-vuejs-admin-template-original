@@ -260,11 +260,11 @@
                 <template #selection="data">
                   <VChip
                     :key="JSON.stringify(data.item)"
-                    v-bind="(data as any).attrs"
-                    :model-value="(data as any).selected"
-                    :disabled="(data as any).disabled"
+                    v-bind="data.attrs"
+                    :model-value="data.selected"
+                    :disabled="data.disabled"
                     size="small"
-                    @click:close="(data as any).parent.selectItem(data.item)"
+                    @click:close="data.parent.selectItem(data.item)"
                   >
                     <template #prepend>
                       <VAvatar
@@ -289,11 +289,11 @@
                 <template #selection="data">
                   <VChip
                     :key="JSON.stringify(data.item)"
-                    v-bind="(data as any).attrs"
-                    :model-value="(data as any).selected"
-                    :disabled="(data as any).disabled"
+                    v-bind="data.attrs"
+                    :model-value="data.selected"
+                    :disabled="data.disabled"
                     size="small"
-                    @click:close="(data as any).parent.selectItem(data.item)"
+                    @click:close="data.parent.selectItem(data.item)"
                   >
                     <template #prepend>
                       <VAvatar
@@ -318,11 +318,11 @@
                 <template #selection="data">
                   <VChip
                     :key="JSON.stringify(data.item)"
-                    v-bind="(data as any).attrs"
-                    :model-value="(data as any).selected"
-                    :disabled="(data as any).disabled"
+                    v-bind="data.attrs"
+                    :model-value="data.selected"
+                    :disabled="data.disabled"
                     size="small"
-                    @click:close="(data as any).parent.selectItem(data.item)"
+                    @click:close="data.parent.selectItem(data.item)"
                   >
                     <template #prepend>
                       <VAvatar

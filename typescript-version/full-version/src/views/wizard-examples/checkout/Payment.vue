@@ -90,7 +90,7 @@ watch(() => prop.currentStep, updateCartData)
       <VWindow
         v-model="selectedPaymentMethod"
         class="mt-5"
-        style="max-width: 600px;"
+        style="max-inline-size: 600px;"
       >
         <VWindowItem value="card">
           <VForm class="mt-3">

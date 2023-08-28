@@ -61,22 +61,14 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
   <VRow>
     <!-- 👉 InvoiceEditable   -->
     <VCol
-      v-if="invoiceData?.invoice"
+
       cols="12"
       md="9"
     >
-      <InvoiceEditable :data="invoiceData" />
-    </VCol>
-    <VCol
-      v-else
-      cols="12"
-      md="9"
-    >
-      <VCard>
-        <VCardTitle class="text-center">
-          No Invoice Found
-        </VCardTitle>
-      </VCard>
+      <InvoiceEditable
+        v-if="invoiceData?.invoice"
+        :data="invoiceData"
+      />
     </VCol>
 
     <!-- 👉 Right Column: Invoice Action -->

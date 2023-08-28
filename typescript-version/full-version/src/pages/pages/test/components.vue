@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
 
-const mode = ref('rgb')
+const mode = ref<'rgb'>('rgb')
 const modes = ref (['hsla', 'rgba', 'hexa'])
 const color = ref('#ff00ff')
 </script>

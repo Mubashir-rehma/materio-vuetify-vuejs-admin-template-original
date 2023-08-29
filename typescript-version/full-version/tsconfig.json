@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -15,31 +14,31 @@
     "esModuleInterop": true,
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ],
       "@themeConfig": [
-        "themeConfig.ts"
+        "./themeConfig.ts"
       ],
       "@layouts/*": [
-        "src/@layouts/*"
+        "./src/@layouts/*"
       ],
       "@layouts": [
-        "src/@layouts"
+        "./src/@layouts"
       ],
       "@core/*": [
-        "src/@core/*"
+        "./src/@core/*"
       ],
       "@core": [
-        "src/@core"
+        "./src/@core"
       ],
       "@images/*": [
-        "src/assets/images/*"
+        "./src/assets/images/*"
       ],
       "@styles/*": [
-        "src/assets/styles/*"
+        "./src/assets/styles/*"
       ],
       "@validators": [
-        "src/@core/utils/validators"
+        "./src/@core/utils/validators"
       ]
     },
     "lib": [
@@ -55,19 +54,19 @@
     ]
   },
   "include": [
-    "typed-router.d.ts",
-    "vite.config.*",
-    "env.d.ts",
-    "shims.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "themeConfig.ts",
-    "auto-imports.d.ts",
-    "components.d.ts"
+    "./typed-router.d.ts",
+    "./vite.config.*",
+    "./env.d.ts",
+    "./shims.d.ts",
+    "./src/**/*",
+    "./src/**/*.vue",
+    "./themeConfig.ts",
+    "./auto-imports.d.ts",
+    "./components.d.ts"
   ],
   "exclude": [
-    "dist",
-    "node_modules",
-    "src/@iconify/*"
+    "./dist",
+    "./node_modules",
+    "./src/@iconify/*"
   ]
 }

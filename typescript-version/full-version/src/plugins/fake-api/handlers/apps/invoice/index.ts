@@ -163,11 +163,17 @@ export const handlerAppsInvoice = [
 
     const invoiceIndex = database.findIndex(e => e.id === Number(invoiceId))
 
-    if (invoiceIndex >= 0)
+    if (invoiceIndex >= 0) {
       database.splice(invoiceIndex, 1)
 
+      return res(
+        ctx.status(200),
+      )
+    }
+
     return res(
-      ctx.status(200),
+      ctx.status(404),
+      ctx.json({ error: 'something went wrong' }),
     )
   }),
 

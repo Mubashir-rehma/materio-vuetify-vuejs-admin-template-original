@@ -440,7 +440,7 @@ const reviewStatChartConfig = {
               />
               <div class="d-flex flex-column">
                 <span class="text-body-2 text-high-emphasis font-weight-medium">{{ item.raw.product }}</span>
-                <span class="text-xs">{{ item.raw.company_name }}</span>
+                <span class="text-xs text-wrap clamp-text">{{ item.raw.company_name }}</span>
               </div>
             </div>
           </template>

@@ -44,7 +44,7 @@ export default [
     title: 'Academy',
     icon: { icon: 'mdi-book-open-outline' },
     children: [
-      { title: 'Overview', to: 'apps-academy-dashboard' },
+      { title: 'Dashboard', to: 'apps-academy-dashboard' },
       { title: 'My Course', to: 'apps-academy-my-course' },
       { title: 'Course Details', to: 'apps-academy-course-details' },
     ],

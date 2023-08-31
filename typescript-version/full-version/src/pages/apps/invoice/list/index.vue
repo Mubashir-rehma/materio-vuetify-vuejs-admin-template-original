@@ -113,10 +113,7 @@ const computedMoreList = computed(() => {
 
 // 👉 Delete Invoice
 const deleteInvoice = async (id: number) => {
-  const { error } = await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
-
-  if (error)
-    console.log(error)
+  await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
 
   fetchInvoices(
     searchQuery.value,

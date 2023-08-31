@@ -11,7 +11,6 @@ import heroElementsImgDark from '@images/front-pages/landing-page/hero-elements-
 import heroElementsImgLight from '@images/front-pages/landing-page/hero-elements-light.png'
 
 const theme = useTheme()
-const isHover = ref(false)
 const isDark = ref(theme.name)
 
 const heroBgUrl = computed(() => {
@@ -27,10 +26,7 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 const { x, y } = useMouse({ touch: false })
 
 const translateMouse = computed(() => (speed: number) => {
-  if (isHover.value)
-    return { transform: `translate(${(window.innerWidth - x.value) * speed / 100}px,${(window.innerWidth - y.value) * speed / 100}px` }
-
-  return { transform: 'translate(0, 0)' }
+  return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(window.innerWidth - (y.value * speed)) / 100}px` }
 })
 </script>
 
@@ -38,8 +34,6 @@ const translateMouse = computed(() => (speed: number) => {
   <section
     id="home"
     :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }"
-    @mouseenter="isHover = true"
-    @mouseleave="isHover = false"
   >
     <div
       id="landingHero"

@@ -23,6 +23,10 @@ export default defineConfig({
           .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
           .toLowerCase()
       },
+      beforeWriteFiles: root => {
+        root.insert('/apps/email/:filter', '/src/pages/apps/email/index.vue')
+        root.insert('/apps/email/:label', '/src/pages/apps/email/index.vue')
+      },
     }),
     vue({
       template: {

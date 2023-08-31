@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import VueApexCharts from 'vue3-apexcharts'
-
 const chartColors = {
   line: {
     series1: '#FFB400',

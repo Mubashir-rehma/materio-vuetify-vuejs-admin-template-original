@@ -391,13 +391,6 @@ const printInvoice = () => {
     <!-- 👉 Send Invoice Sidebar -->
     <InvoiceSendInvoiceDrawer v-model:isDrawerOpen="isSendPaymentSidebarVisible" />
   </section>
-  <section v-else>
-    <VCard>
-      <VCardTitle class="text-center">
-        No Invoice found
-      </VCardTitle>
-    </VCard>
-  </section>
 </template>
 
 <style lang="scss">

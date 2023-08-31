@@ -11,7 +11,7 @@ export default defineComponent({
       required: true,
     },
     verticalNavAttrs: {
-      type: Object as PropType<Record<string, unknown>>,
+      type: Object as PropType<Record<string, null>>,
       default: () => ({}),
     },
   },

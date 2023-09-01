@@ -3,7 +3,7 @@ import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import type { Options } from '@core/types'
 import mastercard from '@images/cards/logo-mastercard-small.png'
-import paypal from '@images/cards/paypal_primary.png'
+import paypal from '@images/cards/paypal-primary.png'
 
 const widgetData = ref([
   { title: 'Pending Payment', value: 56, icon: 'mdi-calendar-clock-outline' },

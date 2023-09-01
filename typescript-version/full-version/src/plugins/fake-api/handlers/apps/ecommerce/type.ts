@@ -2,13 +2,13 @@
 export interface Customer {
   id: number
   customer: string
-  customer_id: number
+  customerId: number
   email: string
   country: string
-  country_code: string
-  country_flag?: string
+  countryCode: string
+  countryFlag?: string
   order: number
-  total_spent: number
+  totalSpent: number
   avatar: string
   status?: string
   contact?: string
@@ -19,7 +19,7 @@ export interface Referrals {
   user: string
   email: string
   avatar: string
-  referred_id: number
+  referredId: number
   status: string
   value: string
   earning: string
@@ -29,8 +29,8 @@ export interface Referrals {
 export interface Review {
   id: number
   product: string
-  company_name: string
-  product_image: string
+  companyName: string
+  productImage: string
   reviewer: string
   email: string
   avatar: string
@@ -43,7 +43,7 @@ export interface Review {
 
 export interface ECommerceProduct {
   id: number
-  product_name: string
+  productName: string
   category: string
   stock: boolean
   sku: number
@@ -51,7 +51,7 @@ export interface ECommerceProduct {
   qty: number
   status: string
   image: string
-  product_brand: string
+  productBrand: string
 }
 
 export interface Order {
@@ -66,5 +66,5 @@ export interface Order {
   method: string
   date: string
   time: string
-  method_number: number
+  methodNumber: number
 }

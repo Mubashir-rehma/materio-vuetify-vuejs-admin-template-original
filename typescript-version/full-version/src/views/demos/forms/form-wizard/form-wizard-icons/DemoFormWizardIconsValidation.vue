@@ -37,7 +37,7 @@ const accountForm = ref({
   username: '',
   email: '',
   password: '',
-  c_password: '',
+  cPassword: '',
 })
 
 const personalForm = ref({
@@ -181,10 +181,10 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="accountForm.c_password"
+                  v-model="accountForm.cPassword"
                   placeholder="············"
                   label="Confirm Password"
-                  :rules="[requiredValidator, confirmedValidator(accountForm.c_password, accountForm.password)]"
+                  :rules="[requiredValidator, confirmedValidator(accountForm.cPassword, accountForm.password)]"
                   :type="isCPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"

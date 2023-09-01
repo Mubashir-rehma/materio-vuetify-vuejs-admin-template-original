@@ -16,96 +16,96 @@ import product9 from '@images/ecommerce-images/product-9.png'
 
 const categoryData = [
   {
-    category_title: 'Smart Phone',
+    categoryTitle: 'Smart Phone',
     description: 'Choose from wide range of smartphones online at best prices.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product1,
   },
   {
-    category_title: 'Clothing, Shoes, and jewellery',
+    categoryTitle: 'Clothing, Shoes, and jewellery',
     description: 'Fashion for a wide selection of clothing, shoes, jewellery and watches.',
-    total_product: 4689,
-    total_earning: 45627,
+    totalProduct: 4689,
+    totalEarning: 45627,
     image: product9,
   },
   {
-    category_title: 'Home and Kitchen',
+    categoryTitle: 'Home and Kitchen',
     description: 'Browse through the wide range of Home and kitchen products.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product10,
   },
   {
-    category_title: 'Beauty and Personal Care',
+    categoryTitle: 'Beauty and Personal Care',
     description: 'Explore beauty and personal care products, shop makeup and etc.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product19,
   },
   {
-    category_title: 'Books',
+    categoryTitle: 'Books',
     description: 'Over 25 million titles across categories such as business  and etc.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product25,
   },
   {
-    category_title: 'Games',
+    categoryTitle: 'Games',
     description: 'Every month, get exclusive in-game loot, free games, a free subscription.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product12,
   },
   {
-    category_title: 'Baby Products',
+    categoryTitle: 'Baby Products',
     description: 'Buy baby products across different categories from top brands.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product14,
   },
   {
-    category_title: 'Growsari',
+    categoryTitle: 'Growsari',
     description: 'Shop grocery Items through at best prices in India.',
-    total_product: 12548,
-    total_earning: 98784,
+    totalProduct: 12548,
+    totalEarning: 98784,
     image: product28,
   },
   {
-    category_title: 'Computer Accessories',
+    categoryTitle: 'Computer Accessories',
     description: 'Enhance your computing experience with our range of computer accessories.',
-    total_product: 9876,
-    total_earning: 65421,
+    totalProduct: 9876,
+    totalEarning: 65421,
     image: product17,
   },
   {
-    category_title: 'Fitness Tracker',
+    categoryTitle: 'Fitness Tracker',
     description: 'Monitor your health and fitness goals with our range of advanced fitness trackers.',
-    total_product: 1987,
-    total_earning: 32067,
+    totalProduct: 1987,
+    totalEarning: 32067,
     image: product10,
   },
   {
-    category_title: 'Smart Home Devices',
+    categoryTitle: 'Smart Home Devices',
     description: 'Transform your home into a smart home with our innovative smart home devices.',
-    total_product: 2345,
-    total_earning: 87654,
+    totalProduct: 2345,
+    totalEarning: 87654,
     image: product11,
   },
   {
-    category_title: 'Audio Speakers',
+    categoryTitle: 'Audio Speakers',
     description: 'Immerse yourself in rich audio quality with our wide range of speakers.',
-    total_product: 5678,
-    total_earning: 32145,
+    totalProduct: 5678,
+    totalEarning: 32145,
     image: product2,
   },
 
 ]
 
 const headers = [
-  { title: 'Category', key: 'category_title' },
-  { title: 'Total Products', key: 'total_product' },
-  { title: 'Total Earning', key: 'total_earning' },
+  { title: 'Category', key: 'categoryTitle' },
+  { title: 'Total Products', key: 'totalProduct' },
+  { title: 'Total Earning', key: 'totalEarning' },
   { title: 'Action', key: 'actions', sortable: false },
 ]
 
@@ -148,7 +148,7 @@ const isAddProductDrawerOpen = ref(false)
         v-model:items-per-page="itemsPerPage"
         :headers="headers"
         :items="categoryData"
-        item-value="category_title"
+        item-value="categoryTitle"
         :search="searchQuery"
         show-select
         class="text-no-wrap"
@@ -171,7 +171,7 @@ const isAddProductDrawerOpen = ref(false)
           />
         </template>
 
-        <template #item.category_title="{ item }">
+        <template #item.categoryTitle="{ item }">
           <div class="d-flex gap-x-3">
             <VAvatar
               variant="tonal"
@@ -180,14 +180,14 @@ const isAddProductDrawerOpen = ref(false)
             >
               <img
                 :src="item.raw.image"
-                :alt="item.raw.category_title"
+                :alt="item.raw.categoryTitle"
                 width="38"
                 height="38"
               >
             </VAvatar>
             <div>
               <div class="text-sm text-high-emphasis font-weight-medium">
-                {{ item.raw.category_title }}
+                {{ item.raw.categoryTitle }}
               </div>
               <div class="text-caption">
                 {{ item.raw.description }}
@@ -196,11 +196,11 @@ const isAddProductDrawerOpen = ref(false)
           </div>
         </template>
 
-        <template #item.total_earning="{ item }">
-          {{ (item.raw.total_earning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
+        <template #item.totalEarning="{ item }">
+          {{ (item.raw.totalEarning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
         </template>
-        <template #item.total_product="{ item }">
-          {{ (item.raw.total_product).toLocaleString() }}
+        <template #item.totalProduct="{ item }">
+          {{ (item.raw.totalProduct).toLocaleString() }}
         </template>
       </VDataTable>
     </VCard>

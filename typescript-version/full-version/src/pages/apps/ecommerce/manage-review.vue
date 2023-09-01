@@ -69,7 +69,7 @@ const headers = [
 const labelColor = 'rgba(var(--v-theme-on-surface), var(--v-disabled-opacity))'
 
 const config = {
-  colors_label: {
+  colorsLabel: {
     success: '#28c76f29',
   },
   colors: {
@@ -102,7 +102,7 @@ const reviewStatChartConfig = {
       bottom: -12,
     },
   },
-  colors: [config.colors_label.success, config.colors_label.success, config.colors_label.success, config.colors_label.success, config.colors.success, config.colors_label.success, config.colors_label.success],
+  colors: [config.colorsLabel.success, config.colorsLabel.success, config.colorsLabel.success, config.colorsLabel.success, config.colors.success, config.colorsLabel.success, config.colorsLabel.success],
   plotOptions: {
     bar: {
       barHeight: '75%',
@@ -433,14 +433,14 @@ const reviewStatChartConfig = {
           <template #item.product="{ item }">
             <div class="d-flex gap-x-3 align-center">
               <VAvatar
-                :image="item.raw.product_image"
+                :image="item.raw.productImage"
                 :size="38"
                 variant="tonal"
                 rounded
               />
               <div class="d-flex flex-column">
                 <span class="text-body-2 text-high-emphasis font-weight-medium">{{ item.raw.product }}</span>
-                <span class="text-xs text-wrap clamp-text">{{ item.raw.company_name }}</span>
+                <span class="text-xs text-wrap clamp-text">{{ item.raw.companyName }}</span>
               </div>
             </div>
           </template>

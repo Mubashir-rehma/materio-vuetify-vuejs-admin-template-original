@@ -123,7 +123,7 @@ watch(options, fetchReferrals, { deep: true })
                 v-for="(step, index) in stepsData"
                 :key="index"
                 class="d-flex flex-column align-center gap-y-2"
-                style="max-width: 185px;"
+                style="max-inline-size: 185px;"
               >
                 <div class="icon-container">
                   <VNodeRenderer :nodes="step.icon" />
@@ -252,7 +252,7 @@ watch(options, fetchReferrals, { deep: true })
             </template>
 
             <template #item.referred-id="{ item }">
-              {{ item.raw.referred_id }}
+              {{ item.raw.referredId }}
             </template>
 
             <template #item.status="{ item }">

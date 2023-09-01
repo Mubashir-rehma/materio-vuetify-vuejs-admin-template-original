@@ -13,7 +13,7 @@ const isUserInfoEditDialogVisible = ref(false)
 const isEditAddressDialogVisible = ref(false)
 
 const headers = [
-  { title: 'Product', key: 'product_name' },
+  { title: 'Product', key: 'productName' },
   { title: 'Price', key: 'price' },
   { title: 'Quantity', key: 'quantity' },
   { title: 'Total', key: 'total', sortable: false },
@@ -21,29 +21,29 @@ const headers = [
 
 const orderData = [
   {
-    product_name: 'OnePlus 7 Pro',
-    product_image: product21,
+    productName: 'OnePlus 7 Pro',
+    productImage: product21,
     brand: 'OnePlus',
     price: 799,
     quantity: 1,
   },
   {
-    product_name: 'Magic Mouse',
-    product_image: product22,
+    productName: 'Magic Mouse',
+    productImage: product22,
     brand: 'Apple',
     price: 89,
     quantity: 1,
   },
   {
-    product_name: 'Wooden Chair',
-    product_image: product23,
+    productName: 'Wooden Chair',
+    productImage: product23,
     brand: 'insofer',
     price: 289,
     quantity: 2,
   },
   {
-    product_name: 'Air Jorden',
-    product_image: product24,
+    productName: 'Air Jorden',
+    productImage: product24,
     brand: 'Nike',
     price: 299,
     quantity: 2,
@@ -113,20 +113,20 @@ const orderData = [
           <VDataTable
             :headers="headers"
             :items="orderData"
-            item-value="product_name"
+            item-value="productName"
             show-select
           >
-            <template #item.product_name="{ item }">
+            <template #item.productName="{ item }">
               <div class="d-flex gap-x-3">
                 <VAvatar
                   size="38"
-                  :image="item.raw.product_image"
+                  :image="item.raw.productImage"
                   :rounded="0"
                 />
 
                 <div class="d-flex flex-column">
                   <span class="text-body-1 font-weight-medium text-high-emphasis">
-                    {{ item.raw.product_name }}
+                    {{ item.raw.productName }}
                   </span>
 
                   <span class="text-caption">

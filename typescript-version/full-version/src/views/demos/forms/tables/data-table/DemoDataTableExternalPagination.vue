@@ -8,9 +8,9 @@ const options = ref({ page: 1, itemsPerPage: 5, sortBy: [''], sortDesc: [false] 
 
 // headers
 const headers = [
-  { title: 'NAME', key: 'full_name' },
+  { title: 'NAME', key: 'fullName' },
   { title: 'EMAIL', key: 'email' },
-  { title: 'DATE', key: 'start_date' },
+  { title: 'DATE', key: 'startDate' },
   { title: 'SALARY', key: 'salary' },
   { title: 'AGE', key: 'age' },
   { title: 'STATUS', key: 'status' },
@@ -43,7 +43,7 @@ onMounted(() => {
     @update:options="options = $event"
   >
     <!-- full name -->
-    <template #item.full_name="{ item }">
+    <template #item.fullName="{ item }">
       <div class="d-flex align-center">
         <VAvatar
           size="32"
@@ -55,10 +55,10 @@ onMounted(() => {
             v-if="item.raw.avatar"
             :src="item.raw.avatar"
           />
-          <span v-else>{{ avatarText(item.raw.full_name) }}</span>
+          <span v-else>{{ avatarText(item.raw.fullName) }}</span>
         </VAvatar>
         <div class="d-flex flex-column ms-3">
-          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.raw.full_name }}</span>
+          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.raw.fullName }}</span>
           <small>{{ item.raw.post }}</small>
         </div>
       </div>

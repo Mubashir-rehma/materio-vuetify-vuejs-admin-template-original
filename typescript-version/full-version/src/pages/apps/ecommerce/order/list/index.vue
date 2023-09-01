@@ -235,7 +235,7 @@ watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
                 class="me-2"
               />
               <span v-if="item.raw.method === 'mastercard'">
-                {{ item.raw.method_number }}
+                {{ item.raw.methodNumber }}
               </span>
               <span v-else>
                 @gmail.com

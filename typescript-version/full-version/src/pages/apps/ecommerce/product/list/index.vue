@@ -290,8 +290,8 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
               :image="item.raw.image"
             />
             <div class="d-flex flex-column">
-              <span class="text-high-emphasis font-weight-medium">{{ item.raw.product_name }}</span>
-              <span class="text-xs">{{ item.raw.product_brand }}</span>
+              <span class="text-high-emphasis font-weight-medium">{{ item.raw.productName }}</span>
+              <span class="text-xs">{{ item.raw.productBrand }}</span>
             </div>
           </div>
         </template>

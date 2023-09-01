@@ -39,7 +39,7 @@ interface Props {
           <h6 class="text-h6 mt-4">
             {{ props.customerData.customer }}
           </h6>
-          <span class="text-body-1">Customer ID #{{ props.customerData.customer_id }}</span>
+          <span class="text-body-1">Customer ID #{{ props.customerData.customerId }}</span>
 
           <div class="d-flex justify-center gap-x-6 mt-6">
             <div class="d-flex align-center">
@@ -66,7 +66,7 @@ interface Props {
                 <VIcon icon="mdi-currency-usd" />
               </VAvatar>
               <div class="d-flex flex-column align-start">
-                <span class="text-body-1 font-weight-medium text-high-emphasis">{{ props.customerData.total_spent }}</span>
+                <span class="text-body-1 font-weight-medium text-high-emphasis">{{ props.customerData.totalSpent }}</span>
                 <span class="text-body-1">Spent</span>
               </div>
             </div>

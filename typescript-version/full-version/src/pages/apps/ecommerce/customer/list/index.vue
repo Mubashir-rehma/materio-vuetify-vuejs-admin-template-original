@@ -43,7 +43,7 @@ const headers = [
   { title: 'Customer Id', key: 'customerId' },
   { title: 'Country', key: 'country' },
   { title: 'Orders', key: 'orders' },
-  { title: 'Total Spent', key: 'total_spent' },
+  { title: 'Total Spent', key: 'totalSpent' },
 ]
 
 watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
@@ -102,7 +102,7 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
             />
             <div class="d-flex flex-column">
               <RouterLink
-                :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: item.raw.customer_id } }"
+                :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: item.raw.customerId } }"
                 class="text-sm font-weight-medium"
               >
                 {{ item.raw.customer }}
@@ -112,7 +112,7 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
           </div>
         </template>
         <template #item.customerId="{ item }">
-          #{{ item.raw.customer_id }}
+          #{{ item.raw.customerId }}
         </template>
 
         <template #item.orders="{ item }">
@@ -122,7 +122,7 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
         <template #item.country="{ item }">
           <div class="d-flex gap-x-2">
             <img
-              :src="item.raw.country_flag"
+              :src="item.raw.countryFlag"
               height="22"
               width="22"
             >
@@ -130,8 +130,8 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
           </div>
         </template>
 
-        <template #item.total_spent="{ item }">
-          <span class="text-body-1 font-weight-medium text-high-emphasis">${{ item.raw.total_spent }}</span>
+        <template #item.totalSpent="{ item }">
+          <span class="text-body-1 font-weight-medium text-high-emphasis">${{ item.raw.totalSpent }}</span>
         </template>
       </VDataTableServer>
     </VCard>

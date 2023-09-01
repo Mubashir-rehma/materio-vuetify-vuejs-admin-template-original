@@ -172,10 +172,10 @@ onMounted(async () => {
       <template #item.payment="{ item }">
         <div class="d-flex flex-column">
           <div class="d-flex align-center">
-            <span class="text-high-emphasis font-weight-medium">${{ item.raw.payment.paid_amount }}</span>
-            <span v-if="item.raw.payment.paid_amount !== item.raw.payment.total">/{{ item.raw.payment.total }}</span>
+            <span class="text-high-emphasis font-weight-medium">${{ item.raw.payment.paidAmount }}</span>
+            <span v-if="item.raw.payment.paidAmount !== item.raw.payment.total">/{{ item.raw.payment.total }}</span>
           </div>
-          <span class="text-xs text-no-wrap">{{ item.raw.payment.received_payment_status }}</span>
+          <span class="text-xs text-no-wrap">{{ item.raw.payment.receivedPaymentStatus }}</span>
         </div>
       </template>
 

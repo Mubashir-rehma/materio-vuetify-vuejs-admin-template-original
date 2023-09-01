@@ -7,14 +7,14 @@ const editDialog = ref(false)
 const deleteDialog = ref(false)
 
 const defaultItem = ref<Data>({
-  responsive_id: '',
+  responsiveId: '',
   id: -1,
   avatar: '',
-  full_name: '',
+  fullName: '',
   post: '',
   email: '',
   city: '',
-  start_date: '',
+  startDate: '',
   salary: -1,
   age: '',
   experience: '',
@@ -36,9 +36,9 @@ const selectedOptions = [
 
 // headers
 const headers = [
-  { title: 'NAME', key: 'full_name' },
+  { title: 'NAME', key: 'fullName' },
   { title: 'EMAIL', key: 'email' },
-  { title: 'DATE', key: 'start_date' },
+  { title: 'DATE', key: 'startDate' },
   { title: 'SALARY', key: 'salary' },
   { title: 'AGE', key: 'age' },
   { title: 'STATUS', key: 'status' },
@@ -111,7 +111,7 @@ onMounted(() => {
     :items-per-page="5"
   >
     <!-- full name -->
-    <template #item.full_name="{ item }">
+    <template #item.fullName="{ item }">
       <div class="d-flex align-center">
         <!-- avatar -->
         <VAvatar
@@ -124,11 +124,11 @@ onMounted(() => {
             v-if="item.raw.avatar"
             :src="item.raw.avatar"
           />
-          <span v-else>{{ avatarText(item.raw.full_name) }}</span>
+          <span v-else>{{ avatarText(item.raw.fullName) }}</span>
         </VAvatar>
 
         <div class="d-flex flex-column ms-3">
-          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.raw.full_name }}</span>
+          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.raw.fullName }}</span>
           <small>{{ item.raw.post }}</small>
         </div>
       </div>
@@ -168,17 +168,17 @@ onMounted(() => {
       </VCardTitle>
 
       <VCardText>
-        {{ editedItem?.full_name }}
+        {{ editedItem?.fullName }}
         <VContainer>
           <VRow>
-            <!-- full_name -->
+            <!-- fullName -->
             <VCol
               cols="12"
               sm="6"
               md="4"
             >
               <VTextField
-                v-model="editedItem.full_name"
+                v-model="editedItem.fullName"
                 label="User name"
               />
             </VCol>
@@ -229,7 +229,7 @@ onMounted(() => {
               md="4"
             >
               <VTextField
-                v-model="editedItem.start_date"
+                v-model="editedItem.startDate"
                 label="Date"
               />
             </VCol>

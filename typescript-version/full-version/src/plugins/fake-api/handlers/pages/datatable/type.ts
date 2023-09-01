@@ -25,20 +25,20 @@ export interface Buyer {
 
 export interface Payment {
   total: number
-  received_payment_status: string
-  paid_amount: number
+  receivedPaymentStatus: string
+  paidAmount: number
   status: string
 }
 
 export interface Data {
-  responsive_id: string
+  responsiveId: string
   id: number
   avatar: string
-  full_name: string
+  fullName: string
   post: string
   email: string
   city: string
-  start_date: string
+  startDate: string
   salary: number
   age: string | number
   experience: string

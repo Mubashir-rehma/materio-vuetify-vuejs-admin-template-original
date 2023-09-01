@@ -22,7 +22,7 @@ const formData = ref({
   username: '',
   email: '',
   password: '',
-  c_password: '',
+  cPassword: '',
   firstName: '',
   lastName: '',
   country: undefined,
@@ -121,7 +121,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.c_password"
+                      v-model="formData.cPassword"
                       label="Confirm Password"
                       placeholder="············"
                       :type="isCPasswordVisible ? 'text' : 'password'"

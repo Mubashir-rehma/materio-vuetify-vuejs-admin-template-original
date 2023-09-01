@@ -39,7 +39,7 @@ export const handlerAppsEcommerce = [
 
     // Filtering Products
     let filteredProducts = db.products.filter(product => (
-      (product.product_name.toLowerCase().includes(queryLower) || product.product_brand.toLowerCase().includes(queryLower))
+      (product.productName.toLowerCase().includes(queryLower) || product.productBrand.toLowerCase().includes(queryLower))
         && product.category === (category || product.category)
         && (product.status === (status || product.status))
         && (typeof stockLocal === 'undefined' ? true : (product.stock === stockLocal))
@@ -50,9 +50,9 @@ export const handlerAppsEcommerce = [
       if (sortByLocal === 'product') {
         filteredProducts = filteredProducts.sort((a, b) => {
           if (orderByLocal === 'asc')
-            return a.product_name.toLowerCase() > b.product_name.toLowerCase() ? 1 : -1
+            return a.productName.toLowerCase() > b.productName.toLowerCase() ? 1 : -1
           else if (orderByLocal === 'desc')
-            return a.product_name.toLowerCase() < b.product_name.toLowerCase() ? 1 : -1
+            return a.productName.toLowerCase() < b.productName.toLowerCase() ? 1 : -1
 
           return 0
         })
@@ -245,7 +245,7 @@ export const handlerAppsEcommerce = [
   rest.get(buildURL('apps/ecommerce/customers/:id'), (req, res, ctx) => {
     const customerId = Number(req.params.id)
 
-    const customerIndex = db.customerData.findIndex(e => e.customer_id === customerId)
+    const customerIndex = db.customerData.findIndex(e => e.customerId === customerId)
 
     const customer = db.customerData[customerIndex]
 
@@ -322,9 +322,9 @@ export const handlerAppsEcommerce = [
       if (sortByLocal === 'customerId') {
         filteredCustomers.sort((a, b) => {
           if (orderByLocal === 'asc')
-            return a.customer_id - b.customer_id
+            return a.customerId - b.customerId
 
-          return b.customer_id - a.customer_id
+          return b.customerId - a.customerId
         })
       }
 
@@ -338,12 +338,12 @@ export const handlerAppsEcommerce = [
       }
     }
 
-    if (sortByLocal === 'total_spent') {
+    if (sortByLocal === 'totalSpent') {
       filteredCustomers.sort((a, b) => {
         if (orderByLocal === 'asc')
-          return a.total_spent - b.total_spent
+          return a.totalSpent - b.totalSpent
 
-        return b.total_spent - a.total_spent
+        return b.totalSpent - a.totalSpent
       })
     }
 
@@ -500,9 +500,9 @@ export const handlerAppsEcommerce = [
       if (sortByLocal === 'referred-id') {
         filteredReferrals.sort((a, b) => {
           if (orderByLocal === 'asc')
-            return a.referred_id - b.referred_id
+            return a.referredId - b.referredId
           else if (orderByLocal === 'desc')
-            return b.referred_id - a.referred_id
+            return b.referredId - a.referredId
 
           return 0
         })

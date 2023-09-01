@@ -5,7 +5,7 @@ import { useEmailStore } from '@/views/apps/email/useEmailStore'
 export type MoveEmailToAction = 'inbox' | 'spam' | 'trash'
 
 export const useEmail = () => {
-  const route = useRoute()
+  const route = useRoute('apps-email-filter')
   const store = useEmailStore()
 
   const emailMoveToFolderActions: { action: MoveEmailToAction; icon: string }[] = [

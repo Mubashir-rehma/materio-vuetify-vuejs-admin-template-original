@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import VueApexCharts from 'vue3-apexcharts'
 import AcademyAssignmentProgress from '@/views/apps/academy/AcademyAssignmentProgress.vue'
 import AcademyCardPopularInstructors from '@/views/apps/academy/AcademyCardPopularInstructors.vue'
 import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vue'

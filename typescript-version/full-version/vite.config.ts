@@ -23,6 +23,10 @@ export default defineConfig({
           .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
           .toLowerCase()
       },
+      beforeWriteFiles: root => {
+        root.insert('/apps/email/:filter', '/src/pages/apps/email/index.vue')
+        root.insert('/apps/email/:label', '/src/pages/apps/email/index.vue')
+      },
     }),
     vue({
       template: {
@@ -50,6 +54,13 @@ export default defineConfig({
     Components({
       dirs: ['src/@core/components', 'src/views/demos', 'src/components'],
       dts: true,
+      resolvers: [
+        componentName => {
+          // Auto import `VueApexCharts`
+          if (componentName === 'VueApexCharts')
+            return { name: 'default', from: 'vue3-apexcharts', as: 'VueApexCharts' }
+        },
+      ],
     }),
 
     // Docs: https://github.com/antfu/unplugin-auto-import#unplugin-auto-import

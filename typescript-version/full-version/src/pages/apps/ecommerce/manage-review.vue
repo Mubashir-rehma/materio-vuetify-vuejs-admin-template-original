@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import VueApexCharts from 'vue3-apexcharts'
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Options } from '@core/types'
 

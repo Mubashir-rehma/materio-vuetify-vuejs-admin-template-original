@@ -17,7 +17,7 @@ definePage({
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // Composables
-const route = useRoute('apps-email')
+const route = useRoute<'apps-email-filter' | 'apps-email-label'>()
 const store = useEmailStore()
 
 const {
@@ -92,8 +92,8 @@ const fetchEmails = async () => {
   selectedEmails.value = []
   await store.fetchEmails({
     q: q.value,
-    filter: route.params.filter as EmailFilter,
-    label: route.params.label as EmailLabel,
+    filter: 'filter' in route.params ? route.params.filter as EmailFilter : undefined,
+    label: 'label' in route.params ? route.params.label as EmailLabel : undefined,
   })
 }
 
@@ -134,14 +134,10 @@ const handleActionClick = async (
 }
 
 // fetch emails on search & route change
-watch([q, () => route.params.filter, () => route.params.label], fetchEmails, {
-  immediate: true,
-})
-
-// Reset opened email (close email view) when route is changed
-watch([() => route.params.filter, () => route.params.label], () => {
+watch([q, () => 'filter' in route.params ? route.params.filter : {}, () => 'label' in route.params ? route.params.label : {}], () => {
+  fetchEmails()
   openedEmail.value = null
-})
+}, { immediate: true })
 
 // Email actions
 const handleMoveMailsTo = (action: MoveEmailToAction) => {
@@ -229,9 +225,7 @@ const refreshOpenedEmail = async () => {
             placeholder="Search email"
           />
         </div>
-
         <VDivider />
-
         <!-- 👉 Action bar -->
         <div class="py-2 px-5 d-flex align-center">
           <!-- TODO: Make checkbox primary on indeterminate state -->
@@ -240,7 +234,6 @@ const refreshOpenedEmail = async () => {
             :indeterminate="isSelectAllEmailCheckboxIndeterminate"
             @update:model-value="selectAllCheckboxUpdate"
           />
-
           <div
             class="w-100 d-flex align-center action-bar-actions"
             :style="{
@@ -252,7 +245,7 @@ const refreshOpenedEmail = async () => {
           >
             <!-- Trash -->
             <IconBtn
-              v-show="$route.params.filter !== 'trashed'"
+              v-show=" 'filter' in route.params && route.params.filter !== 'trashed'"
               @click="handleActionClick('trash')"
             >
               <VIcon icon="mdi-delete-outline" />
@@ -263,7 +256,6 @@ const refreshOpenedEmail = async () => {
                 Delete Mail
               </VTooltip>
             </IconBtn>
-
             <!-- Mark unread/read -->
             <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
               <VIcon :icon="isAllMarkRead ? 'tabler-mail' : 'tabler-mail-opened'" />
@@ -274,7 +266,6 @@ const refreshOpenedEmail = async () => {
                 {{ isAllMarkRead ? 'Mark as Unread' : 'Mark as Read' }}
               </VTooltip>
             </IconBtn>
-
             <!-- Move to folder -->
             <IconBtn>
               <VIcon icon="mdi-folder-outline" />
@@ -284,7 +275,6 @@ const refreshOpenedEmail = async () => {
               >
                 Folder
               </VTooltip>
-
               <VMenu activator="parent">
                 <VList density="compact">
                   <template
@@ -314,7 +304,6 @@ const refreshOpenedEmail = async () => {
                 </VList>
               </VMenu>
             </IconBtn>
-
             <!-- Update labels -->
             <IconBtn>
               <VIcon icon="mdi-label-outline" />
@@ -354,7 +343,6 @@ const refreshOpenedEmail = async () => {
           <MoreBtn />
         </div>
         <VDivider />
-
         <!-- 👉 Emails list -->
         <PerfectScrollbar
           tag="ul"
@@ -410,7 +398,6 @@ const refreshOpenedEmail = async () => {
                 formatDateToMonthShort(email.time)
               }}</small>
             </div>
-
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
               <IconBtn @click.stop="handleActionClick('trash', [email.id])">

@@ -232,10 +232,12 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
+      typescript: {
+        project: 'tsconfig.json',
+      },
       node: {
         extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs', '.png', '.jpg'],
       },
-      typescript: {},
     },
   },
 }

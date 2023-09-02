@@ -23,24 +23,21 @@ const headers = [
 ]
 
 const fetchCourses = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/academy/courses', {
-    q: searchQuery.value,
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/academy/courses', {
+    query: {
+      q: searchQuery.value,
+      ...options.value,
+      ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+      ),
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    courseData.value = data.value.courses
-    totalCourse.value = data.value.total
-  }
+  courseData.value = data.courses
+  totalCourse.value = data.total
 }
 
 watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
@@ -57,7 +54,7 @@ watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
           v-model="searchQuery"
           placeholder="Search"
           density="comfortable"
-          style="min-inline-size: 200px; max-inline-size: 200px;"
+          style=" max-inline-size: 200px;min-inline-size: 200px;"
         />
       </div>
     </VCardText>

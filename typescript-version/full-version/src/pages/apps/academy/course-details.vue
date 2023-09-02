@@ -6,12 +6,9 @@ import 'video.js/dist/video-js.css'
 const courseDetails = ref<CourseDetails>()
 
 const fetchCourseDetails = async () => {
-  const { data, error } = await useApi<any>('/apps/academy/course-details')
+  const data = await $api('/apps/academy/course-details').catch(err => console.log(err))
 
-  if (error.value)
-    console.log(error.value)
-  else
-    courseDetails.value = data.value
+  courseDetails.value = data
 }
 
 fetchCourseDetails()

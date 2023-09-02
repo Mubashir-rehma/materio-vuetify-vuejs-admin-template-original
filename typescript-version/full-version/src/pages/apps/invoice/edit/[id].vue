@@ -15,34 +15,29 @@ const invoiceData = ref<InvoiceData>()
 // 👉 fetchInvoice
 
 const fetchInvoice = async () => {
-  const { data, error } = await useApi<any>(`/apps/invoice/${route.params.id}`)
+  const data = await $api(`/apps/invoice/${route.params.id}`).catch(err => console.log(err))
 
-  if (error.value)
-    console.log(error.value)
+  invoiceData.value = {
+    invoice: data.invoice,
+    paymentDetails: data.paymentDetails,
 
-  if (data.value) {
-    invoiceData.value = {
-      invoice: data.value.invoice,
-      paymentDetails: data.value.paymentDetails,
-
-      /*
+    /*
       We are adding some extra data in response for data purpose
       Your response will contain this extra data
       Purpose is to make it more API friendly and less static as possible
     */
-      purchasedProducts: [
-        {
-          title: 'App Design',
-          cost: 24,
-          hours: 2,
-          description: 'Designed UI kit & app pages.',
-        },
-      ],
-      note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
-      paymentMethod: 'Bank Account',
-      salesperson: 'Tom Cook',
-      thanksNote: 'Thanks for your business',
-    }
+    purchasedProducts: [
+      {
+        title: 'App Design',
+        cost: 24,
+        hours: 2,
+        description: 'Designed UI kit & app pages.',
+      },
+    ],
+    note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
+    paymentMethod: 'Bank Account',
+    salesperson: 'Tom Cook',
+    thanksNote: 'Thanks for your business',
   }
 }
 

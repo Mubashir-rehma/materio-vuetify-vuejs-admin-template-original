@@ -44,23 +44,20 @@ const headers = [
 ]
 
 const fetchReferrals = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/referrals', {
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/ecommerce/referrals', {
+    query: {
+      ...options.value,
+      ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+      ),
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    referrals.value = data.value.referrals
-    totalReferrals.value = data.value.total
-  }
+  referrals.value = data.referrals
+  totalReferrals.value = data.total
 }
 
 const resolveStatus = (status: string) => {

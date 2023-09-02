@@ -15,27 +15,22 @@ const options = ref<Options>({
 })
 
 const fetchVehicles = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/logistics/vehicles', {
-    ...options.value,
+  const data = await $api('/apps/logistics/vehicles', {
+    query: {
+      ...options.value,
 
-    ...(options.value.sortBy
+      ...(options.value.sortBy
     && {
       sortBy: options.value.sortBy[0]?.key,
       orderBy: options.value.sortBy[0]?.order,
     }
-    ),
+      ),
 
-  }))
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    if (data.value) {
-      vehiclesData.value = data.value.vehicles
-      totalVehicles.value = data.value.totalVehicles
-    }
-  }
+  vehiclesData.value = data.vehicles
+  totalVehicles.value = data.totalVehicles
 }
 
 const headers = [

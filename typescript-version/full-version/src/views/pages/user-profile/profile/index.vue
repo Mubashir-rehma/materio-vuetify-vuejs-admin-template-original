@@ -11,15 +11,13 @@ const profileTabData = ref<ProfileTab>()
 
 const fetchAboutData = async () => {
   if (router.params.tab === 'profile') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { data, error } = await useApi<any>(createUrl('/pages/profile', {
-      tab: router.params.tab,
-    }))
+    const data = await $api('/pages/profile', {
+      query: {
+        tab: router.params.tab,
+      },
+    }).catch(err => console.log(err))
 
-    if (error.value)
-      console.error(error.value)
-    else
-      profileTabData.value = data.value
+    profileTabData.value = data
   }
 }
 

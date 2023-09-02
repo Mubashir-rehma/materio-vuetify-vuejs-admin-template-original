@@ -44,27 +44,24 @@ const headers = [
 const fetchInvoices = async (query: string, currentStatus: invoiceStatus, firstDate: string, lastDate: string, option: Options) => {
   isLoading.value = true
 
-  const { data, error } = await useApi<any>(createUrl('/apps/invoice', {
-    q: query,
-    status: currentStatus,
-    startDate: firstDate?.trim(),
-    endDate: lastDate?.trim(),
-    ...option,
-    ...(option.sortBy
+  const data = await $api('/apps/invoice', {
+    query: {
+      q: query,
+      status: currentStatus,
+      startDate: firstDate?.trim(),
+      endDate: lastDate?.trim(),
+      ...option,
+      ...(option.sortBy
      && {
        sortBy: (option.sortBy)[0]?.key,
        orderBy: (option.sortBy)[0]?.order,
      }
-    ),
-  }))
+      ),
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    invoices.value = data.value.invoices
-    totalInvoices.value = data.value.totalInvoices
-  }
+  invoices.value = data.invoices
+  totalInvoices.value = data.totalInvoices
 
   isLoading.value = false
 }

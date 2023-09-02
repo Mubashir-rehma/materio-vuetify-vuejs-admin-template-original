@@ -32,30 +32,25 @@ const headers = [
 
 // 👉 Fetching users
 const fetchUsers = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/users', {
-    q: searchQuery.value,
-    status: selectedStatus.value,
-    plan: selectedPlan.value,
-    role: selectedRole.value,
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/users', {
+    query: {
+      q: searchQuery.value,
+      status: selectedStatus.value,
+      plan: selectedPlan.value,
+      role: selectedRole.value,
+      ...options.value,
+      ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+      ),
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    if (data.value) {
-      users.value = data.value.users
-      totalPage.value = data.value.totalPage
-      totalUsers.value = data.value.totalUsers
-    }
-  }
+  users.value = data.users
+  totalPage.value = data.totalPage
+  totalUsers.value = data.totalUsers
 }
 
 watch([searchQuery, selectedRole, selectedPlan, selectedStatus, options], fetchUsers, { deep: true, immediate: true })

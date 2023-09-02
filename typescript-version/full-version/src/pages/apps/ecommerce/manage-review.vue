@@ -17,25 +17,23 @@ const options = ref<Options>({
 const searchQuery = ref('')
 
 const fetchReviews = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/reviews', {
-    q: searchQuery.value,
-    status: selectedStatus.value,
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/ecommerce/reviews', {
+    query: {
+      q: searchQuery.value,
+      status: selectedStatus.value,
+      ...options.value,
+      ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+      ),
+    },
+  },
+  ).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    reviews.value = data.value.reviews
-    totalReviews.value = data.value.total
-  }
+  reviews.value = data.reviews
+  totalReviews.value = data.total
 }
 
 const deleteReview = async (id: number) => {

@@ -15,15 +15,10 @@ const isSendPaymentSidebarVisible = ref(false)
 
 // 👉 fetchInvoice
 const fetchInvoice = async (id: number) => {
-  const { data, error } = await useApi<any>(`/apps/invoice/${id}`)
+  const data = await $api(`/apps/invoice/${id}`)
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    invoiceData.value = data.value.invoice
-    paymentDetails.value = data.value.paymentDetails
-  }
+  invoiceData.value = data.invoice
+  paymentDetails.value = data.paymentDetails
 }
 
 fetchInvoice(Number(route.params.id))

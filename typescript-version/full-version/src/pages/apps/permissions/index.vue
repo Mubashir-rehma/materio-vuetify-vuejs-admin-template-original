@@ -38,24 +38,21 @@ const colors: any = {
 }
 
 const fetchPermissions = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/permissions', {
-    q: search.value,
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/permissions', {
+    query: {
+      q: search.value,
+      ...options.value,
+      ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+      ),
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    permissions.value = data.value.permissions
-    totalPermissions.value = data.value.totalPermissions
-  }
+  permissions.value = data.permissions
+  totalPermissions.value = data.totalPermissions
 }
 
 watch([search, options], fetchPermissions, { deep: true, immediate: true })

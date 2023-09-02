@@ -7,15 +7,13 @@ const teamData = ref<TeamsTab[]>([])
 
 const fetchTeamData = async () => {
   if (router.params.tab === 'teams') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { data, error } = await useApi<any>(createUrl('/pages/profile', {
-      tab: router.params.tab,
-    }))
+    const data = await $api('/pages/profile', {
+      query: {
+        tab: router.params.tab,
+      },
+    }).catch(err => console.log(err))
 
-    if (error.value)
-      console.error(error.value)
-    else
-      teamData.value = data.value
+    teamData.value = data
   }
 }
 

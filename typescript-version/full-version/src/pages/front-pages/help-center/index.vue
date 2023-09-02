@@ -24,12 +24,9 @@ const apiData = ref<ApiDataType>()
 
 // fetching data from fake-api
 const fetchHelpCenterData = async () => {
-  const { data, error } = await useApi<any>('/pages/help-center')
+  const data = await $api('/pages/help-center').catch(err => console.log(err))
 
-  if (error.value)
-    console.log(error.value)
-  else
-    apiData.value = data.value
+  apiData.value = data
 }
 
 fetchHelpCenterData()

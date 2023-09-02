@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-// Chart Colors
 const chartColors = {
   donut: {
     series1: '#56ca00',

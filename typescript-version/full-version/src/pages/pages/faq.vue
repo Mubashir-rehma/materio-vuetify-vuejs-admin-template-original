@@ -8,14 +8,13 @@ const faqSearchQuery = ref('')
 const faqs = ref<FaqCategory[]>([])
 
 const fetchFaqs = async () => {
-  const { data, error } = await useApi<any>(createUrl('/pages/faq', {
-    q: faqSearchQuery.value,
-  }))
+  const data = await $api('/pages/faq', {
+    query: {
+      q: faqSearchQuery.value,
+    },
+  }).catch(err => console.log(err))
 
-  if (error.value)
-    console.error(error.value)
-  else
-    faqs.value = data.value
+  faqs.value = data
 }
 
 const activeTab = ref('Payment')

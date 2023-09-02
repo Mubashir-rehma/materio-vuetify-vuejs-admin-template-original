@@ -7,15 +7,13 @@ const projectData = ref<ProjectsTab[]>([])
 
 const fetchProjectData = async () => {
   if (router.params.tab === 'projects') {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { data, error } = await useApi<any>(createUrl('/pages/profile', {
-      tab: router.params.tab,
-    }))
+    const data = await $api('/pages/profile', {
+      query: {
+        tab: router.params.tab,
+      },
+    }).catch(err => console.log(err))
 
-    if (error.value)
-      console.error(error.value)
-    else
-      projectData.value = data.value
+    projectData.value = data
   }
 }
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import type { Options } from '@core/types'
 import mastercard from '@images/cards/logo-mastercard-small.png'
 import paypal from '@images/cards/paypal-primary.png'
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 const widgetData = ref([
   { title: 'Pending Payment', value: 56, icon: 'mdi-calendar-clock-outline' },
@@ -57,24 +57,23 @@ const resolveStatus = (status: string) => {
 }
 
 const fetchOrders = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/orders', {
-    q: searchQuery.value,
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/ecommerce/orders',
+    {
+      query: {
+        q: searchQuery.value,
+        ...options.value,
+        ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+        ),
+      },
+    },
+  ).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    orders.value = data.value.orders
-    totalOrder.value = data.value.total
-  }
+  orders.value = data.orders
+  totalOrder.value = data.total
 }
 
 const deleteOrder = async (id: number) => {

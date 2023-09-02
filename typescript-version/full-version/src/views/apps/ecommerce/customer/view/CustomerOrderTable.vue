@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
+import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type';
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
-import type { Options } from '@core/types'
+import type { Options } from '@core/types';
 
 const orders = ref<Order[]>([])
 const searchQuery = ref('')
@@ -36,24 +36,25 @@ const resolveStatus = (status: string) => {
 }
 
 const fetchOrders = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/orders', {
-    q: searchQuery.value,
+  const data = await $api('/apps/ecommerce/orders', {
+    query: {
+      q: searchQuery.value,
     ...options.value,
     ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+    )
+    }
+  }
+  ).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    orders.value = data.value.orders
-    totalOrder.value = data.value.total
-  }
+  
+  
+    orders.value = data.orders
+    totalOrder.value = data.total
+  
 }
 
 const deleteOrder = async (id: number) => {

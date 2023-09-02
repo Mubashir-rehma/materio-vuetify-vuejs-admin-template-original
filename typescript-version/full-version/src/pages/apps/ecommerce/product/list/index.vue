@@ -83,27 +83,27 @@ const resolveStatus = (statusMsg: string) => {
 }
 
 const fetchProducts = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/products', {
-    q: searchQuery.value,
-    stock: selectedStock.value,
-    category: selectedCategory.value,
-    status: selectedStatus.value,
-    ...options.value,
-    ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-    ),
-  }))
+  const data = await $api('/apps/ecommerce/products',
+    {
+      method: 'GET',
+      query: {
+        q: searchQuery.value,
+        stock: selectedStock.value,
+        category: selectedCategory.value,
+        status: selectedStatus.value,
+        ...options.value,
+        ...(options.value.sortBy
+      && {
+        sortBy: (options.value.sortBy)[0]?.key,
+        orderBy: (options.value.sortBy)[0]?.order,
+      }
+        ),
+      },
+    },
+  ).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    products.value = data.value.products
-    totalProduct.value = data.value.total
-  }
+  products.value = data.products
+  totalProduct.value = data.total
 }
 
 const deleteProduct = async (id: number) => {

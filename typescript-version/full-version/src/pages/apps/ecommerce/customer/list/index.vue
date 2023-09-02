@@ -18,24 +18,23 @@ const options = ref<Options>({
 })
 
 const fetchCustomers = async () => {
-  const { data, error } = await useApi<any>(createUrl('/apps/ecommerce/customers', {
-    q: searchQuery.value,
-    ...options.value,
-    ...(options.value.sortBy
+  const data = await $api('/apps/ecommerce/customers',
+    {
+      query: {
+        q: searchQuery.value,
+        ...options.value,
+        ...(options.value.sortBy
      && {
        sortBy: (options.value.sortBy)[0]?.key,
        orderBy: (options.value.sortBy)[0]?.order,
      }
-    ),
-  }))
+        ),
+      },
+    },
+  ).catch(err => console.log(err))
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    customers.value = data.value.customers
-    totalCustomers.value = data.value.total
-  }
+  customers.value = data.customers
+  totalCustomers.value = data.total
 }
 
 const headers = [

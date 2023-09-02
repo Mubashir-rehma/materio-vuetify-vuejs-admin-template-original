@@ -87,14 +87,15 @@ const searchQuery = ref('')
 const searchResult = ref<SearchResults[]>([])
 const router = useRouter()
 
-// 👉 fetch search result API
 watch(searchQuery, async () => {
-  const { data } = await useApi<any>(createUrl('/app-bar/search', {
-    q: searchQuery.value,
-  }), { immediate: true })
+  const data = await $api('/app-bar/search', {
+    query: {
+      q: searchQuery.value,
+    },
+  }).catch(err => console.log(err))
 
-  searchResult.value = data.value
-})
+  searchResult.value = data
+}, { immediate: true })
 
 // 👉 redirect the selected page
 const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {

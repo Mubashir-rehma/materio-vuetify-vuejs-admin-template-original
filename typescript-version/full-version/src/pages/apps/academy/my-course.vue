@@ -63,32 +63,27 @@ const searchQuery = ref('')
           md="6"
         >
           <VCard
-            variant="tonal"
             flat
-            color="primary"
+            color="rgba(115, 103, 240, 0.08)"
           >
             <VCardText>
-              <div class="d-flex gap-4 flex-wrap">
-                <div>
-                  <h6 class="text-h6 text-primary mb-1">
+              <div class="d-flex justify-space-between gap-4 flex-column-reverse flex-sm-row">
+                <div class="text-center text-sm-start">
+                  <h5 class="text-h5 text-primary mb-1">
                     Earn a Certificate
-                  </h6>
-                  <p class="text-body-1 text-high-emphasis text-wrap w-75">
+                  </h5>
+                  <p class="text-body-1 text-high-emphasis mb-6">
                     Get the right professional certificate program for you.
                   </p>
                   <VBtn>View Programs</VBtn>
                 </div>
 
-                <VCard
-                  variant="tonal"
-                  color="primary"
-                  class="flex-grow-1 d-flex justify-center align-end"
-                >
+                <div class="align-self-center">
                   <img
                     :src="boyIllustration"
-                    height="119"
+                    height="127"
                   >
-                </VCard>
+                </div>
               </div>
             </VCardText>
           </VCard>
@@ -104,12 +99,12 @@ const searchQuery = ref('')
             color="error"
           >
             <VCardText>
-              <div class="d-flex gap-4 flex-wrap">
-                <div>
-                  <h6 class="text-h6 text-error mb-1">
+              <div class="d-flex flex-column-reverse flex-sm-row gap-4 justify-space-between">
+                <div class="text-center text-sm-start">
+                  <h5 class="text-h5 text-error mb-1">
                     Best Rated Courses
-                  </h6>
-                  <p class="text-body-1 text-high-emphasis text-wrap w-75">
+                  </h5>
+                  <p class="text-body-1 text-high-emphasis text-wrap mb-6">
                     Enroll now in the most popular and best rated courses.
                   </p>
                   <VBtn color="error">
@@ -117,16 +112,12 @@ const searchQuery = ref('')
                   </VBtn>
                 </div>
 
-                <VCard
-                  variant="tonal"
-                  color="error"
-                  class="flex-grow-1 d-flex justify-center align-end"
-                >
+                <div class="align-self-center">
                   <img
                     :src="forgotPasswordIllustration"
-                    height="119"
+                    height="127"
                   >
-                </VCard>
+                </div>
               </div>
             </VCardText>
           </VCard>

@@ -133,20 +133,31 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
               md="3"
               class="px-6"
             >
-              <div class="d-flex justify-space-between">
+              <div
+                class="d-flex justify-space-between"
+                :class="$vuetify.display.xs
+                  ? 'product-widget'
+                  : $vuetify.display.sm
+                    ? id < 2 ? 'product-widget' : ''
+                    : ''"
+              >
                 <div class="d-flex flex-column gap-y-1">
-                  <span class="text-base text-capitalize">{{ data.title }}</span>
+                  <h6 class="text-h6 text-capitalize">
+                    {{ data.title }}
+                  </h6>
 
-                  <span class="text-h5 text-high-emphasis">{{ data.value }}</span>
+                  <h6 class="text-h6 my-1">
+                    {{ data.value }}
+                  </h6>
 
-                  <div>
-                    <span class="me-2">
+                  <div class="d-flex">
+                    <div class="me-2 text-disabled text-no-wrap">
                       {{ data.desc }}
-                    </span>
+                    </div>
 
                     <VChip
                       v-if="data.change"
-                      density="comfortable"
+                      label
                       :color="data.change > 0 ? 'success' : 'error'"
                     >
                       {{ prefixWithPlus(data.change) }}%
@@ -166,20 +177,18 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
                 </VAvatar>
               </div>
             </VCol>
-
             <VDivider
               v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
                 : $vuetify.display.smAndUp ? id % 2 === 0
                   : false"
               vertical
               inset
-              length="88"
+              length="100"
             />
           </template>
         </VRow>
       </VCardText>
     </VCard>
-
     <!-- 👉 products -->
     <VCard
       title="Filters"
@@ -364,3 +373,10 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
     </VCard>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.product-widget{
+  border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
+  padding-block-end: 1rem;
+}
+</style>

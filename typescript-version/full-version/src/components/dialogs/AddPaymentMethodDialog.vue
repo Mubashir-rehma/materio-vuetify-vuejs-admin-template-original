@@ -97,7 +97,9 @@ const paymentMethodsData = [
               />
               <div>{{ item.title }}</div>
             </div>
-            <div>{{ item.type }}</div>
+            <div class="d-none d-sm-block">
+              {{ item.type }}
+            </div>
           </div>
           <VDivider />
         </div>

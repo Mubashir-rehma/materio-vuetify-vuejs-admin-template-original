@@ -93,18 +93,18 @@ const paymentProvidersData = [
           v-for="(item, index) in paymentProvidersData"
           :key="index"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap py-4">
+          <div class="d-flex flex-column flex-sm-row justify-space-between align-center gap-2 flex-wrap py-4">
             <div class="text-high-emphasis font-weight-medium">
               {{ item.title }}
             </div>
             <div class="d-flex gap-4 flex-wrap">
-              <VImg
+              <img
                 v-for="(img, iterator) in item.providers"
                 :key="iterator"
                 :src="img.value"
                 height="30"
                 width="50"
-              />
+              >
             </div>
           </div>
           <VDivider />

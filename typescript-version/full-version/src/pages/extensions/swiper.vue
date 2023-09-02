@@ -152,5 +152,5 @@ import * as demoCode from '@/views/demos/components/swiper/demoCodeSwiper'
 </template>
 
 <style lang="scss">
-@use "@/@core/scss/template/libs/swiper.scss"
+@use "@core/scss/template/libs/swiper.scss"
 </style>

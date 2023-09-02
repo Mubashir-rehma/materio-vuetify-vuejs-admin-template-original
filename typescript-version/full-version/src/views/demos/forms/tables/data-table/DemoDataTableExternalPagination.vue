@@ -40,7 +40,7 @@ onMounted(() => {
     :items="userList"
     :items-per-page="options.itemsPerPage"
     :page="options.page"
-    @update:options="options = $event"
+    :options="options"
   >
     <!-- full name -->
     <template #item.fullName="{ item }">

@@ -16,7 +16,7 @@ const display = useDisplay()
 
 interface navItem {
   name: string
-  to: RouteLocationNamedRaw | RouteLocationRaw
+  to: RouteLocationRaw
 }
 
 interface MenuItem {
@@ -79,7 +79,7 @@ const menuItems: MenuItem[] = [
   },
 ]
 
-const isCurrentRoute = (to: RouteLocationNamedRaw) => {
+const isCurrentRoute = (to: any) => {
   return route.name.startsWith(to.name as string)
 }
 
@@ -141,10 +141,10 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                 class="text-body-2 mb-4"
               >
                 <RouterLink
-                  :to="listItem.to as RouteLocationRaw"
+                  :to="listItem.to"
                   :target="item.listTitle === 'Page' ? '_self' : '_blank'"
                   class="nav-link"
-                  :class="isCurrentRoute(listItem.to as RouteLocationNamedRaw) ? 'active-link' : 'text-high-emphasis'"
+                  :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
                 >
                   <VIcon
                     icon="mdi-circle-outline"
@@ -264,10 +264,10 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                           class="text-body-2 mb-4"
                         >
                           <RouterLink
-                            :to="listItem.to as RouteLocationRaw"
+                            :to="listItem.to"
                             :target="item.listTitle === 'Page' ? '_self' : '_blank'"
                             class="nav-link"
-                            :class="isCurrentRoute(listItem.to as RouteLocationNamedRaw) ? 'active-link' : 'text-high-emphasis'"
+                            :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
                           >
                             <VIcon
                               icon="mdi-circle-outline"

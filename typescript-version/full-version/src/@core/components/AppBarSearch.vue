@@ -30,10 +30,13 @@ const refSearchInput = ref<HTMLInputElement>()
 const searchQueryLocal = ref('')
 
 // 👉 watching control + / to open dialog
-// eslint-disable-next-line camelcase
-watch([ctrl_k, meta_k], () => {
+/* eslint-disable camelcase */
+watch([
+  ctrl_k, meta_k,
+], () => {
   emit('update:isDialogVisible', true)
 })
+/* eslint-enable */
 
 // 👉 clear search result and close the dialog
 const clearSearchAndCloseDialog = () => {

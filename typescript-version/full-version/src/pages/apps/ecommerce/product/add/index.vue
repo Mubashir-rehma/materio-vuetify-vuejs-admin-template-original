@@ -179,9 +179,9 @@ const inventoryTabsData = [
 
                   <div
                     v-else
-                    class="d-flex justify-center align-center gap-3 pa-5 border-dashed drop-zone flex-wrap"
+                    class="d-flex justify-center align-center gap-3 pa-8 border-dashed drop-zone flex-wrap"
                   >
-                    <VRow>
+                    <VRow class="match-height">
                       <template
                         v-for="(item, index) in fileData"
                         :key="index"
@@ -189,23 +189,21 @@ const inventoryTabsData = [
                         <VCol
                           cols="12"
                           sm="4"
-                          @click.stop
                         >
-                          <VCard
-                            max-width="200px"
-                            :ripple="false"
-                          >
-                            <VCardText class="d-flex flex-column align-center">
+                          <VCard :ripple="false">
+                            <VCardText
+                              class="d-flex flex-column align-center"
+                              @click.stop
+                            >
                               <VImg
                                 :src="item.url"
                                 width="150px"
                                 height="100px"
                               />
                               <div class="mt-2">
-                                <div class="text-wrap clamp-text">
+                                <div class="clamp-text text-wrap">
                                   {{ item.file.name }}
                                 </div>
-
                                 <div>
                                   {{ item.file.size / 1000 }} KB
                                 </div>

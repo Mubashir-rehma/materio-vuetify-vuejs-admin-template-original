@@ -8,12 +8,14 @@ const props = defineProps<{
 const { theme } = useThemeConfig()
 const currentThemeName = ref(theme.value)
 
+const selectedItem = ref([theme.value])
+
 // Update icon if theme is changed from other sources
 watch(theme, val => {
   currentThemeName.value = val
-})
 
-const selectedItem = ref([currentThemeName.value])
+  selectedItem.value = [theme.value]
+}, { deep: true })
 </script>
 
 <template>

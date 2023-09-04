@@ -31,7 +31,7 @@ const store = useCalendarStore()
 const refForm = ref<VForm>()
 
 // 👉 Event
-const event = ref<Event | NewEvent>(JSON.parse(JSON.stringify(props.event)))
+const event = ref<Event>(JSON.parse(JSON.stringify(props.event)))
 
 const resetEvent = () => {
   event.value = JSON.parse(JSON.stringify(props.event))
@@ -117,12 +117,12 @@ const endDateTimePickerConfig = computed(() => {
   >
     <!-- 👉 Header -->
     <AppDrawerHeaderSection
-      :title="(event as Event).id ? 'Update Event' : 'Add Event'"
+      :title="event.id ? 'Update Event' : 'Add Event'"
       @cancel="$emit('update:isDrawerOpen', false)"
     >
       <template #beforeClose>
         <IconBtn
-          v-show="(event as Event).id"
+          v-show="event.id"
           @click="removeEvent"
         >
           <VIcon

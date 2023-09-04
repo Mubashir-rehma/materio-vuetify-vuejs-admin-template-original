@@ -3,6 +3,19 @@ import appleImg from '@images/front-pages/landing-page/apple-icon.png'
 import googlePlayImg from '@images/front-pages/landing-page/google-play-icon.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+
+interface Menu {
+  name: string
+  to: any
+  isNew?: boolean
+}
+
+const menus: Menu[] = [
+  { name: 'Pricing', to: { name: 'front-pages-pricing' } },
+  { name: 'Payment', to: { name: 'front-pages-payment' }, isNew: true },
+  { name: 'Maintenance', to: { name: 'pages-misc-under-maintenance' } },
+  { name: 'Comming Soon', to: { name: 'pages-misc-coming-soon' } },
+]
 </script>
 
 <template>
@@ -49,18 +62,13 @@ import { themeConfig } from '@themeConfig'
               </div>
               <ul style="list-style: none;">
                 <li
-                  v-for="(item, index) in [
-                    { name: 'Pricing', to: { name: 'front-pages-pricing' } },
-                    { name: 'Payment', to: { name: 'front-pages-payment' }, isNew: true },
-                    { name: 'Maintenance', to: { name: 'pages-misc-under-maintenance' } },
-                    { name: 'Comming Soon', to: { name: 'pages-misc-coming-soon' } },
-                  ]"
+                  v-for="(item, index) in menus"
                   :key="index"
                   class="mb-4"
                 >
                   <RouterLink
                     class="text-white-variant"
-                    :to="item.to as any"
+                    :to="item.to"
                     target="_blank"
                   >
                     {{ item.name }}

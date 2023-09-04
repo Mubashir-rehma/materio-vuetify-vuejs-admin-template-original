@@ -313,6 +313,8 @@ const resolveStatusVariant = (status: string) => {
   else
     return { color: 'info' }
 }
+
+const getIcon = (props: Record<string, unknown>) => props.icon as any
 </script>
 
 <template>
@@ -363,7 +365,7 @@ const resolveStatusVariant = (status: string) => {
         >
           <VIcon
             class="flip-in-rtl"
-            :icon="(props as any).icon"
+            :icon="getIcon(props)"
           />
         </VBtn>
 

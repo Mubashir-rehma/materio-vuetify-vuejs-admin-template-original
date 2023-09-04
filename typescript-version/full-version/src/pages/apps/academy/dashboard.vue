@@ -420,3 +420,7 @@ const topicsData = [
     </VRow>
   </div>
 </template>
+
+<style lang="scss">
+@use "@core/scss/template/libs/apex-chart.scss";
+</style>

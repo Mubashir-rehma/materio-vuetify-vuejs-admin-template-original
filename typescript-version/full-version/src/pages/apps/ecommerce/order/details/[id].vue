@@ -115,6 +115,7 @@ const orderData = [
             :items="orderData"
             item-value="productName"
             show-select
+            class="text-no-wrap"
           >
             <template #item.productName="{ item }">
               <div class="d-flex gap-x-3">
@@ -124,12 +125,12 @@ const orderData = [
                   :rounded="0"
                 />
 
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column align-center">
                   <span class="text-body-1 font-weight-medium text-high-emphasis">
                     {{ item.raw.productName }}
                   </span>
 
-                  <span class="text-caption">
+                  <span class="text-caption text-start align-self-start">
                     {{ item.raw.brand }}
                   </span>
                 </div>

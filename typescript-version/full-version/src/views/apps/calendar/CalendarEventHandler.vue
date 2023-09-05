@@ -156,8 +156,8 @@ const endDateTimePickerConfig = computed(() => {
               <VCol cols="12">
                 <VSelect
                   v-model="event.extendedProps.calendar"
-                  label="Calendar"
-                  placeholder="Select Event Type"
+                  label="Label"
+                  placeholder="Select Event Label"
                   :rules="[requiredValidator]"
                   :items="store.availableCalendars"
                   :item-title="item => item.label"

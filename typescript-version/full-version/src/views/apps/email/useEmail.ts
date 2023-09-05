@@ -1,12 +1,24 @@
 import type { PartialDeep } from 'type-fest'
 import type { Email } from '@/plugins/fake-api/handlers/apps/email/type'
-import { useEmailStore } from '@/views/apps/email/useEmailStore'
 
 export type MoveEmailToAction = 'inbox' | 'spam' | 'trash'
 
 export const useEmail = () => {
   const route = useRoute('apps-email-filter')
-  const store = useEmailStore()
+
+  const updateEmails = async (ids: Email['id'][], data: PartialDeep<Email>) => {
+    await $api('apps/email', {
+      method: 'POST',
+      body: JSON.stringify({ ids, data }),
+    })
+  }
+
+  const updateEmailLabels = async (ids: Email['id'][], label: Email['labels'][number]) => {
+    await $api('/apps/email', {
+      method: 'POST',
+      body: { ids, label },
+    })
+  }
 
   const emailMoveToFolderActions: { action: MoveEmailToAction; icon: string }[] = [
     { action: 'inbox', icon: 'mdi-email-outline' },
@@ -82,7 +94,7 @@ export const useEmail = () => {
       dataToUpdate.isDeleted = true
     }
 
-    store.updateEmails(selectedEmails, dataToUpdate)
+    updateEmails(selectedEmails, dataToUpdate)
   }
 
   return {
@@ -91,5 +103,7 @@ export const useEmail = () => {
     shallShowMoveToActionFor,
     emailMoveToFolderActions,
     moveSelectedEmailTo,
+    updateEmails,
+    updateEmailLabels,
   }
 }

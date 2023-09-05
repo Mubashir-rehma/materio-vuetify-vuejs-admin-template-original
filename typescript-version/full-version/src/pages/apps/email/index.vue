@@ -6,7 +6,6 @@ import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.
 import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
-import { useEmailStore } from '@/views/apps/email/useEmailStore'
 
 definePage({
   meta: {
@@ -18,7 +17,6 @@ const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // Composables
 const route = useRoute<'apps-email-filter' | 'apps-email-label'>()
-const store = useEmailStore()
 
 const {
   labels,
@@ -26,6 +24,8 @@ const {
   emailMoveToFolderActions,
   shallShowMoveToActionFor,
   moveSelectedEmailTo,
+  updateEmails,
+  updateEmailLabels,
 } = useEmail()
 
 // Compose dialog
@@ -33,6 +33,7 @@ const isComposeDialogVisible = ref(false)
 
 // Ref
 const q = ref('')
+const emails = ref<Email[]>([])
 
 // ------------------------------------------------
 // Email Selection
@@ -47,22 +48,22 @@ const toggleSelectedEmail = (emailId: Email['id']) => {
 }
 
 const selectAllEmailCheckbox = computed(
-  () => store.emails.length && store.emails.length === selectedEmails.value.length,
+  () => emails.value.length && emails.value.length === selectedEmails.value.length,
 )
 
 const isSelectAllEmailCheckboxIndeterminate = computed(
   () =>
     Boolean(selectedEmails.value.length)
-    && store.emails.length !== selectedEmails.value.length,
+    && emails.value.length !== selectedEmails.value.length,
 )
 
 const isAllMarkRead = computed (() => {
-  return selectedEmails.value.every(emailId => store.emails.find(email => email.id === emailId)?.isRead)
+  return selectedEmails.value.every(emailId => emails.value.find(email => email.id === emailId)?.isRead)
 })
 
 const selectAllCheckboxUpdate = () => {
   selectedEmails.value = !selectAllEmailCheckbox.value
-    ? store.emails.map(email => email.id)
+    ? emails.value.map(email => email.id)
     : []
 }
 
@@ -76,12 +77,12 @@ const emailViewMeta = computed(() => {
   }
 
   if (openedEmail.value) {
-    const openedEmailIndex = store.emails.findIndex(
+    const openedEmailIndex = emails.value.findIndex(
       e => e.id === (openedEmail.value as Email).id,
     )
 
-    returnValue.hasNextEmail = !!store.emails[openedEmailIndex + 1]
-    returnValue.hasPreviousEmail = !!store.emails[openedEmailIndex - 1]
+    returnValue.hasNextEmail = !!emails.value[openedEmailIndex + 1]
+    returnValue.hasPreviousEmail = !!emails.value[openedEmailIndex - 1]
   }
 
   return returnValue
@@ -90,11 +91,16 @@ const emailViewMeta = computed(() => {
 // Fetch emails
 const fetchEmails = async () => {
   selectedEmails.value = []
-  await store.fetchEmails({
-    q: q.value,
-    filter: 'filter' in route.params ? route.params.filter as EmailFilter : undefined,
-    label: 'label' in route.params ? route.params.label as EmailLabel : undefined,
+
+  const data = await $api('/apps/email', {
+    query: {
+      q: q.value,
+      filter: 'filter' in route.params ? route.params.filter as EmailFilter : undefined,
+      label: 'label' in route.params ? route.params.label as EmailLabel : undefined,
+    },
   })
+
+  emails.value = data.emails
 }
 
 /*
@@ -118,17 +124,17 @@ const handleActionClick = async (
     return
 
   if (action === 'trash')
-    await store.updateEmails(emailIds, { isDeleted: true })
+    await updateEmails(emailIds, { isDeleted: true })
   else if (action === 'spam')
-    await store.updateEmails(emailIds, { folder: 'spam' })
+    await updateEmails(emailIds, { folder: 'spam' })
   else if (action === 'unread')
-    await store.updateEmails(emailIds, { isRead: false })
+    await updateEmails(emailIds, { isRead: false })
   else if (action === 'read')
-    await store.updateEmails(emailIds, { isRead: true })
+    await updateEmails(emailIds, { isRead: true })
   else if (action === 'star')
-    await store.updateEmails(emailIds, { isStarred: true })
+    await updateEmails(emailIds, { isStarred: true })
   else if (action === 'unstar')
-    await store.updateEmails(emailIds, { isStarred: false })
+    await updateEmails(emailIds, { isStarred: false })
 
   await fetchEmails()
 }
@@ -145,24 +151,18 @@ const handleMoveMailsTo = (action: MoveEmailToAction) => {
   fetchEmails()
 }
 
-const updateLabel = (label: Email['labels'][number]) => {
-  store.updateEmailLabels(selectedEmails.value, label)
-
-  fetchEmails()
-}
-
 // Email view
 const changeOpenedEmail = (dir: 'previous' | 'next') => {
   if (!openedEmail.value)
     return
 
-  const openedEmailIndex = store.emails.findIndex(
+  const openedEmailIndex = emails.value.findIndex(
     e => e.id === (openedEmail.value as Email).id,
   )
 
   const newEmailIndex = dir === 'previous' ? openedEmailIndex - 1 : openedEmailIndex + 1
 
-  openedEmail.value = store.emails[newEmailIndex]
+  openedEmail.value = emails.value[newEmailIndex]
 }
 
 const openEmail = (email: Email) => {
@@ -175,7 +175,7 @@ const refreshOpenedEmail = async () => {
   await fetchEmails()
 
   if (openedEmail.value) {
-    openedEmail.value = store.emails.find(
+    openedEmail.value = emails.value.find(
       e => e.id === (openedEmail.value as Email).id,
     ) as Email
   }
@@ -319,7 +319,7 @@ const refreshOpenedEmail = async () => {
                     v-for="label in labels"
                     :key="label.title"
                     href="#"
-                    @click="updateLabel(label.title)"
+                    @click="updateEmailLabels(selectedEmails, label.title)"
                   >
                     <template #prepend>
                       <VBadge
@@ -350,8 +350,8 @@ const refreshOpenedEmail = async () => {
           class="email-list"
         >
           <li
-            v-for="email in store.emails"
-            v-show="store.emails.length"
+            v-for="email in emails"
+            v-show="emails?.length"
             :key="email.id"
             class="email-item d-flex align-center py-2 px-5 cursor-pointer"
             :class="[{ 'email-read': email.isRead }]"
@@ -430,7 +430,7 @@ const refreshOpenedEmail = async () => {
             </div>
           </li>
           <li
-            v-show="!store.emails.length"
+            v-show="!emails.length"
             class="py-4 px-5 text-center"
           >
             <span class="text-high-emphasis">No items found.</span>

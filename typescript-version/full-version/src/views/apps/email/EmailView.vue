@@ -3,7 +3,6 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import type { Email } from '@/plugins/fake-api/handlers/apps/email/type'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
-import { useEmailStore } from '@/views/apps/email/useEmailStore'
 
 interface Props {
   email: Email | null
@@ -26,7 +25,7 @@ const emit = defineEmits<{
   (e: 'unstar'): void
 }>()
 
-const store = useEmailStore()
+const { updateEmailLabels } = useEmail()
 
 const { labels, resolveLabelColor, emailMoveToFolderActions, shallShowMoveToActionFor, moveSelectedEmailTo } = useEmail()
 
@@ -36,8 +35,8 @@ const handleMoveMailsTo = (action: MoveEmailToAction) => {
   emit('close')
 }
 
-const updateMailLabel = (label: Email['labels'][number]) => {
-  store.updateEmailLabels([(props.email as Email).id], label)
+const updateMailLabel = async (label: Email['labels'][number]) => {
+  await updateEmailLabels([(props.email as Email).id], label)
 
   emit('refresh')
 }

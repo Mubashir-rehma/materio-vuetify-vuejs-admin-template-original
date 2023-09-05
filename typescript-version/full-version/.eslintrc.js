@@ -232,9 +232,7 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: {
-        extensions: ['.ts', '.js', '.tsx', '.jsx', '.mjs', '.png', '.jpg'],
-      },
+      node: true,
       typescript: {},
     },
   },

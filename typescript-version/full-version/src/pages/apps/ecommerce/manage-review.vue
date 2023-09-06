@@ -345,12 +345,12 @@ const reviewStatChartConfig = {
           <VRow>
             <VCol
               cols="12"
-              md="6"
+              sm="5"
             >
               <div>
-                <h6 class="text-h6">
+                <h4 class="text-h4 mb-2">
                   Reviews statistics
-                </h6>
+                </h4>
                 <div class="mb-9">
                   <span class="me-2">12 New Reviews</span>
                   <VChip
@@ -362,10 +362,10 @@ const reviewStatChartConfig = {
                 </div>
 
                 <div>
-                  <div class="text-high-emphasis text-body-1">
+                  <div class="text-high-emphasis text-body-1 font-weight-medium mb-2">
                     <span class="text-success">87%</span> Positive Reviews
                   </div>
-                  <div class="text-body-1">
+                  <div class="text-body-1 text-disabled">
                     Weekly Report
                   </div>
                 </div>
@@ -374,15 +374,17 @@ const reviewStatChartConfig = {
 
             <VCol
               cols="12"
-              md="6"
+              sm="7"
             >
-              <VueApexCharts
-                id="shipment-statistics"
-                type="bar"
-                height="160"
-                :options="reviewStatChartConfig"
-                :series="reviewStatChartSeries"
-              />
+              <div class="d-flex justify-start justify-sm-end">
+                <VueApexCharts
+                  id="shipment-statistics"
+                  type="bar"
+                  height="160"
+                  :options="reviewStatChartConfig"
+                  :series="reviewStatChartSeries"
+                />
+              </div>
             </VCol>
           </VRow>
         </VCardText>
@@ -492,10 +494,11 @@ const reviewStatChartConfig = {
               <VIcon icon="mdi-dots-vertical" />
               <VMenu activator="parent">
                 <VList>
-                  <VListItem value="view">
-                    <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.id } }">
-                      View
-                    </RouterLink>
+                  <VListItem
+                    value="view"
+                    :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.id } }"
+                  >
+                    View
                   </VListItem>
                   <VListItem
                     value="delete"

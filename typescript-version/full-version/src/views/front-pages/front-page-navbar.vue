@@ -235,11 +235,12 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             <VMenu
               open-on-hover
               activator="parent"
-              location="bottom center"
-              offset="20"
+              offset="13"
+              location-strategy="static"
+              content-class="w-100"
             >
-              <VCard>
-                <VCardText class="pa-8">
+              <VSheet class="mega-menu">
+                <div class="pa-8">
                   <div class="d-flex gap-x-12">
                     <div
                       v-for="(item, index) in menuItems"
@@ -279,7 +280,6 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                         </li>
                       </ul>
                     </div>
-
                     <img
                       :src="navImg"
                       alt="Navigation Image"
@@ -289,8 +289,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                       :height="$vuetify.display.lgAndUp ? '330' : '250'"
                     >
                   </div>
-                </VCardText>
-              </VCard>
+                </div>
+              </VSheet>
             </VMenu>
           </span>
 
@@ -337,6 +337,12 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </template>
 
 <style lang="scss" scoped>
+.mega-menu{
+  margin-block-start: 65px;
+  margin-inline: auto;
+  max-inline-size: 900px;
+}
+
 @media (min-width: 1920px) {
   .front-page-navbar {
     .v-toolbar {

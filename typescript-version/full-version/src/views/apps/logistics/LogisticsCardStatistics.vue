@@ -39,7 +39,7 @@ const logisticData = ref([
                 {{ data.value }}
               </h5>
             </div>
-            <div class="text-high-emphasis text-body-1">
+            <div class="text-body-1">
               {{ data.title }}
             </div>
             <div>
@@ -58,6 +58,7 @@ const logisticData = ref([
 
 .logistics-card-statistics:hover {
   @include mixins.elevation(12);
+
   transition: all 0.1s ease-out;
 }
 </style>

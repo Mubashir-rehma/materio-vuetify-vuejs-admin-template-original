@@ -37,6 +37,7 @@
           <VCol cols="12">
             <VSelect
               label="Country/religion"
+              placeholder="Select Country"
               :items="['United States', 'UK', 'Canada']"
             />
           </VCol>

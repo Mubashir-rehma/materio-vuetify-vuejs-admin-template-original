@@ -53,10 +53,6 @@ export const db: DB = {
       abilityRules: [
         {
           action: 'read',
-          subject: 'Auth',
-        },
-        {
-          action: 'read',
           subject: 'AclDemo',
         },
       ],

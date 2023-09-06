@@ -47,6 +47,7 @@ export const handlerAppsEmail = [
   // 👉 Update Email Meta
   rest.post(buildURL('apps/email'), (req, res, ctx) => {
     const { ids, data, label } = req.body as { ids: Email['id'] | Email['id'][]; data: Partial<Email>; label: EmailLabel }
+
     const labelLocal = destr(label)
 
     if (!labelLocal) {

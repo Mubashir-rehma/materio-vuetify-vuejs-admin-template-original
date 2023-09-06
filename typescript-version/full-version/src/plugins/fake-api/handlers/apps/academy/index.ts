@@ -75,7 +75,7 @@ export const handlerAppsAcademy = [
   }),
 
   // 👉 Course Details
-  rest.get(buildURL('apps/academy/course-details'), (req, res, ctx) => {
+  rest.get('/api/apps/academy/course-details', (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json(

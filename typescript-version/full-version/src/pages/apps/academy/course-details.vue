@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VideoPlayer } from '@videojs-player/vue'
-import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type'
-import 'video.js/dist/video-js.css'
+import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type';
+import { VideoPlayer } from '@videojs-player/vue';
+import 'video.js/dist/video-js.css';
 
 const courseDetails = ref<CourseDetails>()
 
@@ -9,6 +9,7 @@ const fetchCourseDetails = async () => {
   const data = await $api('/apps/academy/course-details').catch(err => console.log(err))
 
   courseDetails.value = data
+  console.log(courseDetails.value);
 }
 
 fetchCourseDetails()
@@ -159,7 +160,7 @@ fetchCourseDetails()
             v-for="(section, index) in courseDetails?.content"
             :key="index"
             collapse-icon="mdi-chevron-down"
-            :expand-icon="$vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'"
+            :expand-icon="$vuetify.locale.isRtl ? 'tabler-chevron-left' : 'tabler-chevron-right'"
           >
             <template #title>
               <div>

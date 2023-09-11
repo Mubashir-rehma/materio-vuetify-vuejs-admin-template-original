@@ -1,9 +1,9 @@
-import is from '@sindresorhus/is'
-import destr from 'destr'
-import { rest } from 'msw'
 import { db } from '@/plugins/fake-api/handlers/apps/academy/db'
 import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import is from '@sindresorhus/is'
+import destr from 'destr'
+import { rest } from 'msw'
 
 export const handlerAppsAcademy = [
 
@@ -75,7 +75,7 @@ export const handlerAppsAcademy = [
   }),
 
   // 👉 Course Details
-  rest.get('/api/apps/academy/course-details', (req, res, ctx) => {
+  rest.get(buildURL('apps/academy/course-details'), (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json(

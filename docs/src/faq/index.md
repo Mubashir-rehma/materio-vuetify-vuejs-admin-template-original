@@ -90,18 +90,6 @@ Apart from this, On first load you might feel template is taking the time to loa
 
 In summary, this is due to vue dev tool and dev mode. Try checking our the live demo and you will find it's smooth and slick 😍
 
-## When Data table will be available?
-
-DataTable in Vuetify is still in alpha phase and under vuetify labs. **Vuetify's documentation** strongly says:
-
-> *Components available through Labs are considered NOT production ready and only to be used for testing purposes. Breaking changes will be introduced in patch releases and no support will be provided.*
-
-As our template is production ready and we don't want you to experience any serious issues during development and in production, we decided to provide DataTable in our template after it's stable. However, we will check it's usability in BETA as well to provide it as soon as possible.
-
-We know how crucial DataTable component is but due to mentioned reasons we can't provide it officially in our template. You are free to use it in our template though by updating vuetify to the latest version and using it. Do note that, as we can't officially provide component under labs, we won't able to assist you with those components. Moreover, if you use data table component now most likely you will have to update it frequently until it's out of BETA.
-
-I hope you will understand 🙏
-
 ## Why reproduce issue/bug in starter-kit?
 
 Reproducing the issue/bug in our starter-kit with minimal dependencies can help in resolving issue/bug as quickly as possible rather than asking to try various things which will cost you valuable time.

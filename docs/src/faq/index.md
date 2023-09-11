@@ -90,10 +90,6 @@ Apart from this, On first load you might feel template is taking the time to loa
 
 In summary, this is due to vue dev tool and dev mode. Try checking our the live demo and you will find it's smooth and slick 😍
 
-## Missing datatables,form wizards and its related pages
-
-We are using the Vuetify framework for our components, however, a stable version of the datatable and form wizard component has not yet been released by Vuetify. In the meantime, we could use a third-party component for the datatable and form wizards, but you will again need to switch back to Vuetify's datatable and form wizard once they are released officially. Therefore, we plan to integrate these components into our templates once Vuetify releases its stable version, along with the related pages.
-
 ## When Data table will be available?
 
 DataTable in Vuetify is still in alpha phase and under vuetify labs. **Vuetify's documentation** strongly says:

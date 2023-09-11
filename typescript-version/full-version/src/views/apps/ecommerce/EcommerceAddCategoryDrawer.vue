@@ -60,6 +60,11 @@ const setLink = () => {
   editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
 }
 
+// clears data on discard
+const clearData = () => {
+  editor.value?.commands.clearContent()
+}
+
 const addImage = () => {
   // eslint-disable-next-line no-alert
   const url = window.prompt('URL')
@@ -78,6 +83,7 @@ const parentStatus = ref()
 const resetForm = () => {
   emit('update:isDrawerOpen', false)
   refVForm.value?.reset()
+  clearData()
 }
 </script>
 

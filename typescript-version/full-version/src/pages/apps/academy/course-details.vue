@@ -9,7 +9,6 @@ const fetchCourseDetails = async () => {
   const data = await $api('/apps/academy/course-details').catch(err => console.log(err))
 
   courseDetails.value = data
-  console.log(courseDetails.value);
 }
 
 fetchCourseDetails()

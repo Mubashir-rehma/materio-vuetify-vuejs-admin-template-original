@@ -14,7 +14,7 @@ import NavBarI18n from '@core/components/I18n.vue'
 // @layouts plugin
 import { VerticalNavLayout } from '@layouts'
 
-const { appRouteTransition, isLessThanOverlayNavBreakpoint } = useThemeConfig()
+const { isLessThanOverlayNavBreakpoint } = useThemeConfig()
 const { width: windowWidth } = useWindowSize()
 
 // SECTION: Loading Indicator
@@ -68,18 +68,13 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 
     <!-- 👉 Pages -->
     <RouterView v-slot="{ Component }">
-      <Transition
-        :name="appRouteTransition"
-        mode="out-in"
+      <Suspense
+        :timeout="0"
+        @fallback="isFallbackStateActive = true"
+        @resolve="isFallbackStateActive = false"
       >
-        <Suspense
-          :timeout="0"
-          @fallback="isFallbackStateActive = true"
-          @resolve="isFallbackStateActive = false"
-        >
-          <Component :is="Component" />
-        </Suspense>
-      </Transition>
+        <Component :is="Component" />
+      </Suspense>
     </RouterView>
 
     <!-- 👉 Footer -->

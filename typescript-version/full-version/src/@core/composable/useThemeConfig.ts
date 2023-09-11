@@ -40,16 +40,6 @@ export const useThemeConfig = () => {
     },
   })
 
-  const appRouteTransition = computed({
-    get() {
-      return themeConfig.app.routeTransition.value
-    },
-    set(value: typeof themeConfig.app.routeTransition.value) {
-      themeConfig.app.routeTransition.value = value
-      useStorage<typeof themeConfig.app.routeTransition.value>(`${themeConfig.app.title}-transition`, null).value = value
-    },
-  })
-
   // `@layouts` exports
   const {
     navbarType,
@@ -68,7 +58,6 @@ export const useThemeConfig = () => {
     theme,
     isVerticalNavSemiDark,
     skin,
-    appRouteTransition,
 
     // @layouts exports
     navbarType,

@@ -1,6 +1,6 @@
 import type { ValueOf } from 'type-fest'
 import type { Ref } from 'vue'
-import type { RouteTransitions, Skins } from './enums'
+import type { Skins } from './enums'
 import type { I18nLanguage, UserConfig as UserLayoutConfig } from '@layouts/types'
 
 // Type for config passed by user when registering plugin
@@ -20,7 +20,6 @@ export interface UserThemeConfig {
     theme: string
     i18n: i18nType
     skin: ValueOf<typeof Skins>
-    routeTransition: ValueOf<typeof RouteTransitions>
     iconRenderer: UserLayoutConfig['app']['iconRenderer']
   }
   navbar: {
@@ -64,7 +63,6 @@ export interface ThemeConfig {
     i18n: i18nType
     theme: Ref<UserThemeConfig['app']['theme']>
     skin: Ref<UserThemeConfig['app']['skin']>
-    routeTransition: Ref<UserThemeConfig['app']['routeTransition']>
     iconRenderer?: UserThemeConfig['app']['iconRenderer']
   }
   navbar: {

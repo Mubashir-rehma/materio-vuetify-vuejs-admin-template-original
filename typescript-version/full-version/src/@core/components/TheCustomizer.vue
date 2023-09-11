@@ -3,7 +3,7 @@ import { useStorage } from '@vueuse/core'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
-import { Direction, Layout, RouteTransitions, Skins, Theme } from '@core/enums'
+import { Direction, Layout, Skins, Theme } from '@core/enums'
 import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
 import { initialConfig, themeConfig } from '@themeConfig'
 
@@ -33,7 +33,6 @@ const isNavDrawerOpen = ref(false)
 const {
   theme,
   skin,
-  appRouteTransition,
   isVerticalNavCollapsed,
   isVerticalNavSemiDark,
   appContentWidth,
@@ -207,7 +206,6 @@ watch([
     initialConfig.app.contentWidth,
     INITIAL_IS_RTL,
     initialConfig.app.contentLayoutNav,
-    initialConfig.app.routeTransition,
   ]
 
   const themeConfigValue = [
@@ -220,7 +218,6 @@ watch([
     appContentWidth.value,
     isAppRtl.value,
     appContentLayoutNav.value,
-    themeConfig.app.routeTransition.value,
   ]
 
   currentDir.value = isAppRtl.value ? 'rtl' : 'ltr'
@@ -239,7 +236,6 @@ const resetCustomizer = async () => {
   appContentLayoutNav.value = initialConfig.app.contentLayoutNav
   appContentWidth.value = initialConfig.app.contentWidth
   isAppRtl.value = INITIAL_IS_RTL
-  appRouteTransition.value = initialConfig.app.routeTransition
   isVerticalNavCollapsed.value = initialConfig.verticalNav.isVerticalNavCollapsed
   useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = staticPrimaryColor
   currentLayout.value = 'vertical'
@@ -547,22 +543,6 @@ const resetCustomizer = async () => {
                 {{ i }}
               </VCol>
             </VRow>
-          </div>
-
-          <!-- 👉 Router Transition -->
-          <div class="d-flex flex-column gap-4">
-            <h6 class="text-base font-weight-medium">
-              Router Transition
-            </h6>
-
-            <VSelect
-              id="route-transition"
-              v-model="appRouteTransition"
-              label="Animation"
-              :items="Object.entries(RouteTransitions).map(([key, value]) => ({ key, value }))"
-              item-title="key"
-              item-value="value"
-            />
           </div>
         </CustomizerSection>
         <!-- !SECTION -->

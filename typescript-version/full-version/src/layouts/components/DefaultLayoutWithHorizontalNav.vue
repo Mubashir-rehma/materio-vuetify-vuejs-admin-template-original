@@ -14,8 +14,6 @@ import NavBarI18n from '@core/components/I18n.vue'
 import { HorizontalNavLayout } from '@layouts'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
-const { appRouteTransition } = useThemeConfig()
-
 // SECTION: Loading Indicator
 const isFallbackStateActive = ref(false)
 const refLoadingIndicator = ref<any>(null)
@@ -67,18 +65,13 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 
     <!-- 👉 Pages -->
     <RouterView v-slot="{ Component }">
-      <Transition
-        :name="appRouteTransition"
-        mode="out-in"
+      <Suspense
+        :timeout="0"
+        @fallback="isFallbackStateActive = true"
+        @resolve="isFallbackStateActive = false"
       >
-        <Suspense
-          :timeout="0"
-          @fallback="isFallbackStateActive = true"
-          @resolve="isFallbackStateActive = false"
-        >
-          <Component :is="Component" />
-        </Suspense>
-      </Transition>
+        <Component :is="Component" />
+      </Suspense>
     </RouterView>
 
     <!-- 👉 Footer -->

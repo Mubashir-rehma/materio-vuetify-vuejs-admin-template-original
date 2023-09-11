@@ -2,7 +2,7 @@ import { useStorage } from '@vueuse/core'
 import type { ValueOf } from 'type-fest'
 import type { ThemeConfig, UserThemeConfig } from './types'
 import type { UserConfig as LayoutConfig } from '@layouts/types'
-import type { RouteTransitions, Skins } from '@core/enums'
+import type { Skins } from '@core/enums'
 
 export const defineThemeConfig = (
   userConfig: UserThemeConfig,
@@ -22,7 +22,6 @@ export const defineThemeConfig = (
         },
         theme: useStorage(`${userConfig.app.title}-theme`, userConfig.app.theme),
         skin: useStorage<ValueOf<typeof Skins>>(`${userConfig.app.title}-skin`, userConfig.app.skin),
-        routeTransition: useStorage<ValueOf<typeof RouteTransitions>>(`${userConfig.app.title}-transition`, userConfig.app.routeTransition),
         iconRenderer: userConfig.app.iconRenderer,
       },
       navbar: {

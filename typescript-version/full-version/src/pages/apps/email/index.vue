@@ -385,7 +385,7 @@ const refreshOpenedEmail = async () => {
             <VSpacer />
             <div
               class="email-meta"
-              :class="$vuetify.display.xs ? 'd-none' : 'd-block'"
+              :class="$vuetify.display.xs ? 'd-none' : ''"
             >
               <VBadge
                 v-for="label in email.labels"

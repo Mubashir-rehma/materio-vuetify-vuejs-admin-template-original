@@ -243,11 +243,6 @@ export const db: DB = {
           title: 'Not Authorized - 401',
         },
         {
-          url: { name: 'pages-misc-internal-server-error' },
-          icon: 'mdi-view-list-outline',
-          title: 'Server Error - 500',
-        },
-        {
           url: { name: 'pages-authentication-login-v1' },
           icon: 'mdi-login',
           title: 'Login V1',

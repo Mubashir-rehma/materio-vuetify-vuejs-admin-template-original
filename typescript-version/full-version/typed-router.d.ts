@@ -143,7 +143,6 @@ declare module 'vue-router/auto/routes' {
     'pages-faq': RouteRecordInfo<'pages-faq', '/pages/faq', Record<never, never>, Record<never, never>>,
     'pages-icons': RouteRecordInfo<'pages-icons', '/pages/icons', Record<never, never>, Record<never, never>>,
     'pages-misc-coming-soon': RouteRecordInfo<'pages-misc-coming-soon', '/pages/misc/coming-soon', Record<never, never>, Record<never, never>>,
-    'pages-misc-internal-server-error': RouteRecordInfo<'pages-misc-internal-server-error', '/pages/misc/internal-server-error', Record<never, never>, Record<never, never>>,
     'pages-misc-under-maintenance': RouteRecordInfo<'pages-misc-under-maintenance', '/pages/misc/under-maintenance', Record<never, never>, Record<never, never>>,
     'pages-pricing': RouteRecordInfo<'pages-pricing', '/pages/pricing', Record<never, never>, Record<never, never>>,
     'pages-test-autocomplete': RouteRecordInfo<'pages-test-autocomplete', '/pages/test/autocomplete', Record<never, never>, Record<never, never>>,

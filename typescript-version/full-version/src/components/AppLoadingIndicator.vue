@@ -2,7 +2,7 @@
 const bufferValue = ref(20)
 const progressValue = ref(10)
 const isFallbackState = ref(false)
-const interval = ref<any>(0)
+const interval = ref<ReturnType<typeof setInterval>>()
 const showProgress = ref(false)
 
 watch([progressValue, isFallbackState], () => {

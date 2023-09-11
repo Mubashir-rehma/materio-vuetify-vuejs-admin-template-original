@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
 import UserProfileHeader from '@/views/pages/user-profile/UserProfileHeader.vue'
 import UserConnections from '@/views/pages/user-profile/connections/index.vue'
 import UserProfile from '@/views/pages/user-profile/profile/index.vue'

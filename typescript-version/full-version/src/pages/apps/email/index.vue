@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Email, EmailFilter, EmailLabel } from '@/plugins/fake-api/handlers/apps/email/type'
+import type { Email } from '@/plugins/fake-api/handlers/apps/email/type'
 import ComposeDialog from '@/views/apps/email/ComposeDialog.vue'
 import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.vue'
 import EmailView from '@/views/apps/email/EmailView.vue'
@@ -95,8 +95,8 @@ const fetchEmails = async () => {
   const data = await $api('/apps/email', {
     query: {
       q: q.value,
-      filter: 'filter' in route.params ? route.params.filter as EmailFilter : undefined,
-      label: 'label' in route.params ? route.params.label as EmailLabel : undefined,
+      filter: 'filter' in route.params ? route.params.filter : undefined,
+      label: 'label' in route.params ? route.params.label : undefined,
     },
   })
 

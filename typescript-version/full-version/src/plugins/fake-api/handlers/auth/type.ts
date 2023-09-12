@@ -2,11 +2,6 @@ export type Actions = 'create' | 'read' | 'update' | 'delete' | 'manage'
 
 export type Subjects = 'Auth' | 'Admin' | 'AclDemo' | 'all'
 
-export interface TokenPayload {
-  id: string
-  exp: number
-}
-
 export interface UserAbilityRule {
   action: Actions
   subject: Subjects

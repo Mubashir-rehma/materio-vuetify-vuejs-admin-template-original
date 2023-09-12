@@ -1,13 +1,12 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
-import { db } from '@/plugins/fake-api/handlers/apps/users/db'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import { db } from '@/plugins/fake-api/handlers/apps/users/db'
 
 export const handlerAppsUsers = [
   // Get Users Details
-  rest.get(buildURL('apps/users'), (req, res, ctx) => {
+  rest.get(('/api/apps/users'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const role = req.url.searchParams.get('role')
     const plan = req.url.searchParams.get('plan')
@@ -96,7 +95,7 @@ export const handlerAppsUsers = [
   }),
 
   // Get Single User Detail
-  rest.get(buildURL('apps/users/:id'), (req, res, ctx) => {
+  rest.get(('/api/apps/users/:id'), (req, res, ctx) => {
     const userId = Number(req.params.id)
 
     const user = db.users.find(e => e.id === userId)
@@ -128,7 +127,7 @@ export const handlerAppsUsers = [
   }),
 
   // Delete User
-  rest.delete(buildURL('apps/users/:id'), (req, res, ctx) => {
+  rest.delete(('/api/apps/users/:id'), (req, res, ctx) => {
     const userId = Number(req.params.id)
 
     const userIndex = db.users.findIndex(e => e.id === userId)
@@ -151,7 +150,7 @@ export const handlerAppsUsers = [
   }),
 
   // 👉 Add user
-  rest.post(buildURL('apps/users'), async (req, res, ctx) => {
+  rest.post(('/api/apps/users'), async (req, res, ctx) => {
     const user = await req.body as any
 
     db.users.push({

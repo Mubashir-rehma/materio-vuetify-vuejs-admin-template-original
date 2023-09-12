@@ -2,11 +2,10 @@ import is from '@sindresorhus/is'
 import { rest } from 'msw'
 import { db } from '@/plugins/fake-api/handlers/app-bar-search/db'
 import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/type'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 
 export const handlerAppBarSearch = [
   // Get Search Items
-  rest.get(buildURL('app-bar/search'), (req, res, ctx) => {
+  rest.get('/api/app-bar/search', (req, res, ctx) => {
     const q = req.url.searchParams.get('q') ?? ''
     const searchQuery = is.string(q) ? q : undefined
     const queryLowered = (searchQuery ?? '').toString().toLowerCase()

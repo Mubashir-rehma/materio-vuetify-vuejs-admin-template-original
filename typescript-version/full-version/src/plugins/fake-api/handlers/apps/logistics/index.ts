@@ -1,12 +1,11 @@
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
 import { rest } from 'msw'
-import { db } from '@/plugins/fake-api/handlers/apps/logistics/db'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import { db } from '@/plugins/fake-api/handlers/apps/logistics/db'
 
 export const handlerAppLogistics = [
-  rest.get(buildURL('apps/logistics/vehicles'), (req, res, ctx) => {
+  rest.get(('/api/apps/logistics/vehicles'), (req, res, ctx) => {
     const sortBy = req.url.searchParams.get('sortBy')
     const page = req.url.searchParams.get('page') ?? 1
     const itemsPerPage = req.url.searchParams.get('itemsPerPage') ?? 10

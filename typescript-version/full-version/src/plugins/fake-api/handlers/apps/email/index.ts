@@ -2,11 +2,10 @@ import { destr } from 'destr'
 import { rest } from 'msw'
 import { db } from '@/plugins/fake-api/handlers/apps/email/db'
 import type { Email, EmailLabel } from '@/plugins/fake-api/handlers/apps/email/type'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 
 export const handlerAppsEmail = [
   // 👉 Get Email List
-  rest.get(buildURL('apps/email'), (req, res, ctx) => {
+  rest.get(('/api/apps/email'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q') || ''
     const filter = req.url.searchParams.get('filter') || 'inbox'
     const label = req.url.searchParams.get('label') || ''
@@ -45,7 +44,7 @@ export const handlerAppsEmail = [
   }),
 
   // 👉 Update Email Meta
-  rest.post(buildURL('apps/email'), (req, res, ctx) => {
+  rest.post(('/api/apps/email'), (req, res, ctx) => {
     const { ids, data, label } = req.body as { ids: Email['id'] | Email['id'][]; data: Partial<Email>; label: EmailLabel }
 
     const labelLocal = destr(label)

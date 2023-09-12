@@ -1,11 +1,10 @@
 import { rest } from 'msw'
 import { db } from '@/plugins/fake-api/handlers/auth/db'
 import type { UserOut } from '@/plugins/fake-api/handlers/auth/type'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 
 export const handlerAuth = [
 
-  rest.post(buildURL('auth/login'), async (req, res, ctx) => {
+  rest.post(('/api/auth/login'), async (req, res, ctx) => {
     const { email, password } = await req.body as { email: string; password: string }
 
     let errors: Record<string, string[]> = {

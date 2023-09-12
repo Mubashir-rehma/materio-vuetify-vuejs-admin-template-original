@@ -1,14 +1,13 @@
-import { db } from '@/plugins/fake-api/handlers/apps/academy/db'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
-import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
+import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import { db } from '@/plugins/fake-api/handlers/apps/academy/db'
 
 export const handlerAppsAcademy = [
 
   // 👉 Course
-  rest.get(buildURL('apps/academy/courses'), (req, res, ctx) => {
+  rest.get(('/api/apps/academy/courses'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const label = req.url.searchParams.get('label') || 'All Courses'
     const hideCompleted = req.url.searchParams.get('hideCompleted')
@@ -75,7 +74,7 @@ export const handlerAppsAcademy = [
   }),
 
   // 👉 Course Details
-  rest.get(buildURL('apps/academy/course-details'), (req, res, ctx) => {
+  rest.get(('/api/apps/academy/course-details'), (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json(

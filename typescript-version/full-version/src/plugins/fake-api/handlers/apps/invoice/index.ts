@@ -1,15 +1,14 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
-import { database } from '@/plugins/fake-api/handlers/apps/invoice/db'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import { database } from '@/plugins/fake-api/handlers/apps/invoice/db'
 
 export const handlerAppsInvoice = [
 
   // 👉 Client
   // Get Clients
-  rest.get(buildURL('apps/invoice/clients'), (req, res, ctx) => {
+  rest.get(('/api/apps/invoice/clients'), (req, res, ctx) => {
     const clients = database.map(invoice => invoice.client)
 
     return res(
@@ -20,7 +19,7 @@ export const handlerAppsInvoice = [
 
   // 👉 Invoice
   // Get Invoice List
-  rest.get(buildURL('apps/invoice'), (req, res, ctx) => {
+  rest.get(('/api/apps/invoice'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const status = req.url.searchParams.get('status')
     const startDate = req.url.searchParams.get('startDate')
@@ -128,7 +127,7 @@ export const handlerAppsInvoice = [
   }),
 
   // Get Single Invoice
-  rest.get(buildURL('apps/invoice/:id'), (req, res, ctx) => {
+  rest.get(('/api/apps/invoice/:id'), (req, res, ctx) => {
     const invoiceId = req.params.id
 
     const invoice = database.find(e => e.id === Number(invoiceId))
@@ -158,7 +157,7 @@ export const handlerAppsInvoice = [
   }),
 
   // Delete Invoice
-  rest.delete(buildURL('apps/invoice/:id'), (req, res, ctx) => {
+  rest.delete(('/api/apps/invoice/:id'), (req, res, ctx) => {
     const invoiceId = req.params.id
 
     const invoiceIndex = database.findIndex(e => e.id === Number(invoiceId))

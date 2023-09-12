@@ -1,13 +1,12 @@
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
 import { rest } from 'msw'
-import { db } from '@/plugins/fake-api/handlers/apps/permission/db'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import { db } from '@/plugins/fake-api/handlers/apps/permission/db'
 
 export const handlerAppsPermission = [
   // 👉 Get Permission List
-  rest.get(buildURL('apps/permissions'), (req, res, ctx) => {
+  rest.get(('/api/apps/permissions'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q') || ''
     const sortBy = req.url.searchParams.get('sortBy')
     const page = req.url.searchParams.get('page') || 1

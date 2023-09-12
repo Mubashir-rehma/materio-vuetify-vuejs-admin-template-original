@@ -1,14 +1,13 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
-import { db } from '@/plugins/fake-api/handlers/apps/calendar/db'
-import { buildURL } from '@/plugins/fake-api/utils/buildURL'
 import { genId } from '@/plugins/fake-api/utils/genId'
+import { db } from '@/plugins/fake-api/handlers/apps/calendar/db'
 
 export const handlerAppsCalendar = [
 
   // 👉 Get Calendar Events
-  rest.get(buildURL('apps/calendar'), (req, res, ctx) => {
+  rest.get(('/api/apps/calendar'), (req, res, ctx) => {
     const queries = req.url.searchParams.getAll('calendars')
 
     const parsedCalendars = destr(queries)
@@ -24,7 +23,7 @@ export const handlerAppsCalendar = [
   }),
 
   // 👉 Add Calendar Event
-  rest.post(buildURL('apps/calendar'), (req, res, ctx) => {
+  rest.post(('/api/apps/calendar'), (req, res, ctx) => {
     const event = req.body as typeof db.events[0]
 
     db.events.push({
@@ -39,7 +38,7 @@ export const handlerAppsCalendar = [
   }),
 
   // 👉 Update Calendar Event
-  rest.put(buildURL('apps/calendar/:id'), (req, res, ctx) => {
+  rest.put(('/api/apps/calendar/:id'), (req, res, ctx) => {
     const updatedEvent = req.body as typeof db.events[0]
 
     updatedEvent.id = Number(updatedEvent.id)
@@ -66,7 +65,7 @@ export const handlerAppsCalendar = [
   }),
 
   // 👉 Delete Calendar Event
-  rest.delete(buildURL('apps/calendar/:id'), (req, res, ctx) => {
+  rest.delete(('/api/apps/calendar/:id'), (req, res, ctx) => {
     const eventId = Number(req.params.id)
 
     const eventIndex = db.events.findIndex(e => e.id === eventId)

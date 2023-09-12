@@ -4,12 +4,15 @@ import type { LngLatLike } from 'mapbox-gl'
 import mapboxgl from 'mapbox-gl'
 import { onMounted, ref } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useDisplay } from 'vuetify'
 import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfSaWsHvktHrRtpydQ'
 const map = ref()
+
+const vuetifyDisplay = useDisplay()
 
 definePage({
   meta: {
@@ -105,6 +108,10 @@ const flyToLocation = (geolocation: number[], index: number) => {
   activeIndex.value = index
   showPanel.value.fill(false)
   showPanel.value[index] = !showPanel.value[index]
+
+  if (vuetifyDisplay.mdAndDown.value)
+    isLeftSidebarOpen.value = false
+
   map.value.flyTo({
     center: geolocation,
     zoom: 16,

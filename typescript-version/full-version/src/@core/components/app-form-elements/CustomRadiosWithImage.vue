@@ -3,7 +3,7 @@ import type { GridColumn } from '@core/types'
 
 interface Props {
   selectedRadio: string
-  radioContent: { bgImage: string | undefined; value: string }[]
+  radioContent: { bgImage: string | undefined; value: string; label?: string }[]
   gridColumn?: GridColumn
 }
 
@@ -46,7 +46,24 @@ const updateSelectedOption = (value: string) => {
               class="custom-radio-image"
             >
           </slot>
-          <VRadio :value="item.value" />
+
+          <VRadio
+            :id="`custom-radio-with-img-${item.value}`"
+            :value="item.value"
+          />
+        </VLabel>
+
+        <VLabel
+          v-if="item.label || $slots.label"
+          :for="`custom-radio-with-img-${item.value}`"
+          class="cursor-pointer"
+        >
+          <slot
+            name="label"
+            :label="item.label"
+          >
+            {{ item.label }}
+          </slot>
         </VLabel>
       </VCol>
     </VRow>

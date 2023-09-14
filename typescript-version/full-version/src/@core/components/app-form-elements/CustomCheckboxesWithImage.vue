@@ -3,7 +3,7 @@ import type { GridColumn } from '@core/types'
 
 interface Props {
   selectedCheckbox: string[]
-  checkboxContent: { bgImage: string; value: string }[]
+  checkboxContent: { bgImage: string; value: string; label?: string }[]
   gridColumn?: GridColumn
 }
 
@@ -33,6 +33,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
       >
         <div>
           <VCheckbox
+            :id="`custom-checkbox-with-img-${item.value}`"
             :model-value="props.selectedCheckbox"
             :value="item.value"
             @update:model-value="updateSelectedOption"
@@ -43,6 +44,19 @@ const updateSelectedOption = (value: string[] | boolean) => {
           alt="bg-img"
           class="custom-checkbox-image"
         >
+      </VLabel>
+
+      <VLabel
+        v-if="item.label || $slots.label"
+        :for="`custom-checkbox-with-img-${item.value}`"
+        class="cursor-pointer"
+      >
+        <slot
+          name="label"
+          :label="item.label"
+        >
+          {{ item.label }}
+        </slot>
       </VLabel>
     </VCol>
   </VRow>

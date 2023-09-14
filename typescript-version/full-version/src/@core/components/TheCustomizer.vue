@@ -103,33 +103,53 @@ const themeSkin = computed(() => {
     {
       bgImage: defaultSkin.value,
       value: Skins.Default,
+      label: 'Default',
     },
     {
       bgImage: borderSkin.value,
       value: Skins.Bordered,
+      label: 'Bordered',
     },
   ]
 })
 
 // 👉 Layout
+const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value)
+
 const layouts = computed(() => {
+  if (currentLayout.value === 'horizontal') {
+    return [
+      {
+        bgImage: defaultSkin.value,
+        value: Layout.Vertical,
+        label: 'Vertical',
+      },
+      {
+        bgImage: compact.value,
+        value: Layout.Horizontal,
+        label: 'Horizontal',
+      },
+    ]
+  }
+
   return [
     {
       bgImage: defaultSkin.value,
       value: Layout.Vertical,
+      label: 'Vertical',
     },
     {
       bgImage: collapsed.value,
       value: Layout.Collapsed,
+      label: 'Collapsed',
     },
     {
       bgImage: compact.value,
       value: Layout.Horizontal,
+      label: 'Horizontal',
     },
   ]
 })
-
-const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value)
 
 watch(currentLayout, () => {
   if (currentLayout.value === 'collapsed') {
@@ -153,10 +173,12 @@ const contentWidth = computed(() => {
     {
       bgImage: compactContent.value,
       value: ContentWidth.Boxed,
+      label: 'Compact',
     },
     {
       bgImage: wideContent.value,
       value: ContentWidth.Fluid,
+      label: 'Wide',
     },
   ]
 })
@@ -169,10 +191,12 @@ const direction = computed(() => {
     {
       bgImage: ltrImg.value,
       value: Direction.Ltr,
+      label: 'Left to right',
     },
     {
       bgImage: rtlImg.value,
       value: Direction.Rtl,
+      label: 'Right to left',
     },
   ]
 })
@@ -431,18 +455,11 @@ const resetCustomizer = async () => {
               v-model:selected-radio="skin"
               :radio-content="themeSkin"
               :grid-column="{ cols: '4' }"
-            />
-
-            <VRow>
-              <VCol
-                v-for="i in ['Default', 'Border']"
-                :key="i"
-                cols="4"
-                class="pt-0 text-sm text-medium-emphasis"
-              >
-                {{ i }}
-              </VCol>
-            </VRow>
+            >
+              <template #label="item">
+                <span class="text-sm text-medium-emphasis">{{ item?.label }}</span>
+              </template>
+            </CustomRadiosWithImage>
           </div>
 
           <!-- 👉 Navbar blur -->
@@ -481,18 +498,11 @@ const resetCustomizer = async () => {
               v-model:selected-radio="currentLayout"
               :radio-content="layouts"
               :grid-column="{ cols: '4' }"
-            />
-
-            <VRow>
-              <VCol
-                v-for="i in ['Vertical', 'Collapsed', 'Horizontal']"
-                :key="i"
-                cols="4"
-                class="pt-0 text-sm text-medium-emphasis"
-              >
-                {{ i }}
-              </VCol>
-            </VRow>
+            >
+              <template #label="item">
+                <span class="text-sm text-medium-emphasis">{{ item.label }}</span>
+              </template>
+            </CustomRadiosWithImage>
           </div>
 
           <!-- 👉 Content Width -->
@@ -506,18 +516,11 @@ const resetCustomizer = async () => {
               v-model:selected-radio="appContentWidth"
               :radio-content="contentWidth"
               :grid-column="{ cols: '4' }"
-            />
-
-            <VRow>
-              <VCol
-                v-for="i in ['Compact', 'Wide']"
-                :key="i"
-                cols="4"
-                class="pt-0 text-sm text-medium-emphasis"
-              >
-                {{ i }}
-              </VCol>
-            </VRow>
+            >
+              <template #label="item">
+                <span class="text-sm text-medium-emphasis">{{ item.label }}</span>
+              </template>
+            </CustomRadiosWithImage>
           </div>
 
           <!-- 👉 Direction -->
@@ -531,18 +534,11 @@ const resetCustomizer = async () => {
               v-model:selected-radio="currentDir"
               :radio-content="direction"
               :grid-column="{ cols: '4' }"
-            />
-
-            <VRow>
-              <VCol
-                v-for="i in ['Left to right', 'Right to left']"
-                :key="i"
-                cols="4"
-                class="pt-0 text-sm text-medium-emphasis"
-              >
-                {{ i }}
-              </VCol>
-            </VRow>
+            >
+              <template #label="item">
+                <span class="text-sm text-medium-emphasis">{{ item?.label }}</span>
+              </template>
+            </CustomRadiosWithImage>
           </div>
         </CustomizerSection>
         <!-- !SECTION -->

@@ -172,7 +172,7 @@ const handleNavScroll = (evt: Event) => {
   inline-size: variables.$layout-vertical-nav-width;
   inset-block-start: 0;
   inset-inline-start: 0;
-  transition: transform 0.25s ease-in-out, inline-size 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  transition: inline-size 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   will-change: transform, inline-size;
 
   .nav-header {
@@ -221,6 +221,13 @@ const handleNavScroll = (evt: Event) => {
         transform: translateX(variables.$layout-vertical-nav-width);
       }
     }
+  }
+}
+
+// small screen vertical nav transition
+@media (max-width:1279px) {
+  .layout-vertical-nav {
+    transition: transform 0.25s ease-in-out;
   }
 }
 </style>

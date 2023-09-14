@@ -38,7 +38,7 @@ export const setupGuards = (router: Router) => {
             name: 'login',
             query: {
               ...to.query,
-              to: to.name !== 'index' ? to.path : undefined,
+              to: to.fullPath !== '/' ? to.path : undefined,
             },
           }
       /* eslint-enable indent */

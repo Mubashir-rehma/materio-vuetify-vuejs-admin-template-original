@@ -8,10 +8,10 @@ const ability = useAbility()
 const userData = useCookie<any>('userData')
 
 const logout = async () => {
-  // Remove "userData" from cookie
-
   // Remove "accessToken" from localStorage
   useCookie('accessToken').value = null
+
+  // Remove "userData" from cookie
   userData.value = null
 
   // Redirect to login page

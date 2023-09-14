@@ -24,8 +24,12 @@ const errors = ref<Record<string, string | undefined>>({
 })
 
 const refVForm = ref<VForm>()
-const email = ref('admin@demo.com')
-const password = ref('admin')
+
+const credentials = ref({
+  email: 'admin@demo.com',
+  password: 'admin',
+})
+
 const rememberMe = ref(false)
 
 const login = async () => {
@@ -33,8 +37,8 @@ const login = async () => {
     const res = await $api('/auth/login', {
       method: 'POST',
       body: {
-        email: email.value,
-        password: password.value,
+        email: credentials.value.email,
+        password: credentials.value.password,
       },
       onResponseError({ response }) {
         errors.value = response._data.errors
@@ -119,7 +123,7 @@ const onSubmit = () => {
               <!-- email -->
               <VCol cols="12">
                 <VTextField
-                  v-model="email"
+                  v-model="credentials.email"
                   label="Email"
                   placeholder="johndoe@email.com"
                   type="email"
@@ -132,7 +136,7 @@ const onSubmit = () => {
               <!-- password -->
               <VCol cols="12">
                 <VTextField
-                  v-model="password"
+                  v-model="credentials.password"
                   label="Password"
                   placeholder="············"
                   :rules="[requiredValidator]"

@@ -1,7 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router/auto'
 
 const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
-const logisticsComponent = () => import('@/pages/apps/logistics/dashboard.vue')
 
 // 👉 Redirects
 export const redirects: RouteRecordRaw[] = [
@@ -62,7 +61,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/dashboards/logistics',
     name: 'dashboards-logistics',
-    component: logisticsComponent,
+    component: import('@/pages/apps/logistics/dashboard.vue'),
   },
   {
     path: '/dashboards/academy',

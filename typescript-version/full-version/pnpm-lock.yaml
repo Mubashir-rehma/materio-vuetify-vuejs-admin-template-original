@@ -22,16 +22,16 @@ dependencies:
     version: 6.0.0
   '@tiptap/extension-highlight':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)
   '@tiptap/extension-image':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)
   '@tiptap/extension-link':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)
   '@tiptap/extension-text-align':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)
   '@tiptap/pm':
     specifier: ^2.1.6
     version: 2.1.7
@@ -40,7 +40,7 @@ dependencies:
     version: 2.1.7(@tiptap/pm@2.1.7)
   '@tiptap/vue-3':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)(vue@3.3.4)
+    version: 2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)(vue@3.3.4)
   '@vueuse/core':
     specifier: ^10.3.0
     version: 10.4.1(vue@3.3.4)
@@ -111,8 +111,8 @@ dependencies:
     specifier: ^1.6.1
     version: 1.6.1(postcss@8.4.29)
   vuetify:
-    specifier: 3.3.14
-    version: 3.3.14(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4)
+    specifier: 3.3.16
+    version: 3.3.16(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4)
   webfontloader:
     specifier: ^1.6.28
     version: 1.6.28
@@ -156,19 +156,19 @@ devDependencies:
     version: 0.12.3(vue-i18n@9.2.2)
   '@tiptap/extension-character-count':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)
   '@tiptap/extension-placeholder':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)
   '@tiptap/extension-subscript':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)
   '@tiptap/extension-superscript':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)
   '@tiptap/extension-underline':
     specifier: ^2.1.6
-    version: 2.1.7(@tiptap/core@2.1.7)
+    version: 2.1.7(@tiptap/core@2.1.9)
   '@types/mapbox-gl':
     specifier: ^2.7.13
     version: 2.7.13
@@ -282,7 +282,7 @@ devDependencies:
     version: 0.8.0(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4)
   vite-plugin-vuetify:
     specifier: 1.0.2
-    version: 1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.14)
+    version: 1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.16)
   vue-shepherd:
     specifier: ^3.0.0
     version: 3.0.0(vue@3.3.4)
@@ -563,6 +563,11 @@ packages:
     resolution: {integrity: sha512-mM4COjgZox8U+JcXQwPijIZLElkgEpO5rsERVDJTc2qfCDfERyob6k5WegS14SX18IIjv+XD+GrqNumY5JRCDw==}
     engines: {node: '>=6.9.0'}
 
+  /@babel/helper-validator-identifier@7.22.19:
+    resolution: {integrity: sha512-Tinq7ybnEPFFXhlYOYFiSjespWQk0dq2dRNAiMdRTOYQzEGqnnNyrTxPYHP5r6wGjlF1rFgABdDV0g8EwD6Qbg==}
+    engines: {node: '>=6.9.0'}
+    dev: true
+
   /@babel/helper-validator-identifier@7.22.5:
     resolution: {integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==}
     engines: {node: '>=6.9.0'}
@@ -598,6 +603,14 @@ packages:
     hasBin: true
     dependencies:
       '@babel/types': 7.22.11
+
+  /@babel/parser@7.22.16:
+    resolution: {integrity: sha512-+gPfKv8UWeKKeJTUxe59+OobVcrYHETCsORl61EmSkmgymguYk/X5bp7GuUIXaFsc6y++v8ZxPsLSSuujqDphA==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+    dependencies:
+      '@babel/types': 7.22.19
+    dev: true
 
   /@babel/plugin-syntax-import-meta@7.10.4(@babel/core@7.22.11):
     resolution: {integrity: sha512-Yqfm+XDx0+Prh3VSeEQCPU81yC+JWZ2pDPFSS4ZdpfZhp4MkFMaDC1UqseovEKwSUpnIL7+vK+Clp7bfh0iD7g==}
@@ -682,6 +695,15 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
+
+  /@babel/types@7.22.19:
+    resolution: {integrity: sha512-P7LAw/LbojPzkgp5oznjE6tQEIWbp4PkkfrZDINTro9zgBRtI324/EYsiSI7lhPbpIQ+DCeR2NNmMWANGGfZsg==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-string-parser': 7.22.5
+      '@babel/helper-validator-identifier': 7.22.19
+      to-fast-properties: 2.0.0
+    dev: true
 
   /@casl/ability@6.5.0:
     resolution: {integrity: sha512-3guc94ugr5ylZQIpJTLz0CDfwNi0mxKVECj1vJUPAvs+Lwunh/dcuUjwzc4MHM9D8JOYX0XUZMEPedpB3vIbOw==}
@@ -1407,6 +1429,14 @@ packages:
       '@tiptap/pm': ^2.0.0
     dependencies:
       '@tiptap/pm': 2.1.7
+    dev: false
+
+  /@tiptap/core@2.1.9(@tiptap/pm@2.1.7):
+    resolution: {integrity: sha512-+qykwfh9GTDcvdixuQJiheYVsIFsMp7ZinVlRRm8fHg9CuTCzwZ1bz4BfWSJa7Ox8oB1J9MjGz2lr3BVr8KZ3g==}
+    peerDependencies:
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/pm': 2.1.7
 
   /@tiptap/extension-blockquote@2.1.7(@tiptap/core@2.1.7):
     resolution: {integrity: sha512-oAsUU1c0DDZKHwK7/uCtYpnTUQt0o3w+SsJSv4S2vlSHidiFl9gCQGozUQ/Alzc7GO1Y95rOscL28DJXgXESQg==}
@@ -1424,13 +1454,13 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-bubble-menu@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7):
+  /@tiptap/extension-bubble-menu@2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7):
     resolution: {integrity: sha512-VcwwUgiG17TEDZda1JBbyKCHLIBTu8B2OAzYrnd4ZqeRs5KTVAB279o/TVjsLVgEfC+c7IWwhhaPPMoXn/lJ3g==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
       '@tiptap/pm': 2.1.7
       tippy.js: 6.3.7
     dev: false
@@ -1443,13 +1473,13 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-character-count@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7):
+  /@tiptap/extension-character-count@2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7):
     resolution: {integrity: sha512-SDM5iTGbwDLFujmfubDv1oHKeBAHQPkvOe5Qwtae/xnbJcIxV3sUbQ3WrctjOpRrh+tSHEXS5JVhHzsoNZLRkQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
       '@tiptap/pm': 2.1.7
     dev: true
 
@@ -1489,13 +1519,13 @@ packages:
       '@tiptap/pm': 2.1.7
     dev: false
 
-  /@tiptap/extension-floating-menu@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7):
+  /@tiptap/extension-floating-menu@2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7):
     resolution: {integrity: sha512-K0bO7JKHAvgLM5MkhNgoYcD6SB0Z2tNIFhZHs5SCTuhg7dwduMSM3pC6QBrJGUk99DGsKuMPYQn3c2oG7MLbyQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
       '@tiptap/pm': 2.1.7
       tippy.js: 6.3.7
     dev: false
@@ -1526,12 +1556,12 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-highlight@2.1.7(@tiptap/core@2.1.7):
+  /@tiptap/extension-highlight@2.1.7(@tiptap/core@2.1.9):
     resolution: {integrity: sha512-3EXrnf1BQSdOe/iqzcTIr5Tf0NOhPQ+y1B9nMi/40v3MD8WzRBLaqj0lvpwO7xMAdgxm6IiL/XFYU41n9yFl/Q==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
     dev: false
 
   /@tiptap/extension-history@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7):
@@ -1554,12 +1584,12 @@ packages:
       '@tiptap/pm': 2.1.7
     dev: false
 
-  /@tiptap/extension-image@2.1.7(@tiptap/core@2.1.7):
+  /@tiptap/extension-image@2.1.7(@tiptap/core@2.1.9):
     resolution: {integrity: sha512-aWa/NPMc1U9Z6xuV0gk1O1nk4H7BAwQMwqXWdvUQCJhmW5+LJPdEiKvt3P6j+ClIN7sdyokZCgr6eGr817qTLA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
     dev: false
 
   /@tiptap/extension-italic@2.1.7(@tiptap/core@2.1.7):
@@ -1570,13 +1600,13 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-link@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7):
+  /@tiptap/extension-link@2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7):
     resolution: {integrity: sha512-NDfoMCkThng1B530pMg5y69+eWoghZXK2uCntrJH7Rs8jNeGMyt9wGIOd7N8ZYz0oJ2ZYKzZjS0RANdBDS17DA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
       '@tiptap/pm': 2.1.7
       linkifyjs: 4.1.1
     dev: false
@@ -1605,13 +1635,13 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-placeholder@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7):
+  /@tiptap/extension-placeholder@2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7):
     resolution: {integrity: sha512-IiBoItYYNS7hb/zmPitw3w6Cylmp9qX+zW+QKe3lDkCNPeKxyQr86AnVLcQYOuXg62cLV9dp+4azZzHoz9SOcg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
       '@tiptap/pm': 2.1.7
     dev: true
 
@@ -1623,28 +1653,28 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-subscript@2.1.7(@tiptap/core@2.1.7):
+  /@tiptap/extension-subscript@2.1.7(@tiptap/core@2.1.9):
     resolution: {integrity: sha512-MX+t74DsOq4Crk8GaU4Rv3r4SgbqEYj0LAeCqZfliPuItHOyqeUHo+Y7atQlyXrsPo/+fBAO4lmA84S3msRbMA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
     dev: true
 
-  /@tiptap/extension-superscript@2.1.7(@tiptap/core@2.1.7):
+  /@tiptap/extension-superscript@2.1.7(@tiptap/core@2.1.9):
     resolution: {integrity: sha512-Cd1GlrnF3OGdONysa20boVN4M/aegTb+Fg/KbiGV/ZJhhPfmktQesf2eL1nE6Y/mxQcF1+EolWrptv0n3C8WPQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
     dev: true
 
-  /@tiptap/extension-text-align@2.1.7(@tiptap/core@2.1.7):
+  /@tiptap/extension-text-align@2.1.7(@tiptap/core@2.1.9):
     resolution: {integrity: sha512-DiRvGzcFQfXotgU7CpQxgstxgu6ZUUmSVQ7pzAxg9CQHwNgKQ4uYeDabt/R/SLEeb3YfXoEScxFMbyO1ys8ZsQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
     dev: false
 
   /@tiptap/extension-text@2.1.7(@tiptap/core@2.1.7):
@@ -1655,12 +1685,12 @@ packages:
       '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
     dev: false
 
-  /@tiptap/extension-underline@2.1.7(@tiptap/core@2.1.7):
+  /@tiptap/extension-underline@2.1.7(@tiptap/core@2.1.9):
     resolution: {integrity: sha512-mL95afyEJvg+C2yrTVn7QltfyE9ja1+94+OUkRBbB8PN3N6HvfSL4K/QSqecOLQ38bSQm/6ZGPkBLDkDGhGPdw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
     dev: true
 
   /@tiptap/pm@2.1.7:
@@ -1711,16 +1741,16 @@ packages:
       - '@tiptap/pm'
     dev: false
 
-  /@tiptap/vue-3@2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)(vue@3.3.4):
+  /@tiptap/vue-3@2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)(vue@3.3.4):
     resolution: {integrity: sha512-JJRXWKLJ8mopb0uZV4JXyOW6vKQnarYoCj0hsy9ZT2LhSuLlPXY0D40NAbFVMMbQssewUtgPUFgVZ/TusMEysQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       vue: ^3.0.0
     dependencies:
-      '@tiptap/core': 2.1.7(@tiptap/pm@2.1.7)
-      '@tiptap/extension-bubble-menu': 2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)
-      '@tiptap/extension-floating-menu': 2.1.7(@tiptap/core@2.1.7)(@tiptap/pm@2.1.7)
+      '@tiptap/core': 2.1.9(@tiptap/pm@2.1.7)
+      '@tiptap/extension-bubble-menu': 2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)
+      '@tiptap/extension-floating-menu': 2.1.7(@tiptap/core@2.1.9)(@tiptap/pm@2.1.7)
       '@tiptap/pm': 2.1.7
       vue: 3.3.4
     dev: false
@@ -2315,7 +2345,7 @@ packages:
       - typescript
     dev: true
 
-  /@vuetify/loader-shared@1.7.1(vue@3.3.4)(vuetify@3.3.14):
+  /@vuetify/loader-shared@1.7.1(vue@3.3.4)(vuetify@3.3.16):
     resolution: {integrity: sha512-kLUvuAed6RCvkeeTNJzuy14pqnkur8lTuner7v7pNE/kVhPR97TuyXwBSBMR1cJeiLiOfu6SF5XlCYbXByEx1g==}
     peerDependencies:
       vue: ^3.0.0
@@ -2324,7 +2354,7 @@ packages:
       find-cache-dir: 3.3.2
       upath: 2.0.1
       vue: 3.3.4
-      vuetify: 3.3.14(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4)
+      vuetify: 3.3.16(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4)
 
   /@vueuse/core@10.4.1(vue@3.3.4):
     resolution: {integrity: sha512-DkHIfMIoSIBjMgRRvdIvxsyboRZQmImofLyOHADqiVbQVilP8VVHDhBX2ZqoItOgu7dWa8oXiNnScOdPLhdEXg==}
@@ -2625,7 +2655,7 @@ packages:
     resolution: {integrity: sha512-GAwkz0AihzY5bkwIY5QDR+LvsRQgB/B+1foMPvi0FZPMl5fjD7ICiznUiBdLYMH1QYe6vqu4gWYytZOccLouFw==}
     engines: {node: '>= 10.0.0'}
     dependencies:
-      '@babel/types': 7.22.11
+      '@babel/types': 7.22.19
     dev: true
 
   /balanced-match@1.0.2:
@@ -2955,8 +2985,8 @@ packages:
   /constantinople@4.0.1:
     resolution: {integrity: sha512-vCrqcSIq4//Gx74TXXCGnHpulY1dskqLTFGDmhrGxzeXL8lF8kvXv6mpNWlJj1uD4DW23D4ljAqbY4RRaaUZIw==}
     dependencies:
-      '@babel/parser': 7.22.14
-      '@babel/types': 7.22.11
+      '@babel/parser': 7.22.16
+      '@babel/types': 7.22.19
     dev: true
 
   /convert-source-map@1.9.0:
@@ -3633,7 +3663,7 @@ packages:
       get-tsconfig: 4.7.0
       is-glob: 4.0.3
       minimatch: 3.1.2
-      resolve: 1.22.4
+      resolve: 1.22.5
       semver: 7.5.4
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
@@ -5379,7 +5409,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.4
+      resolve: 1.22.5
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
     dev: true
@@ -6308,7 +6338,7 @@ packages:
       jstransformer: 1.0.0
       pug-error: 2.0.0
       pug-walk: 2.0.0
-      resolve: 1.22.4
+      resolve: 1.22.5
     dev: true
 
   /pug-lexer@5.0.1:
@@ -6521,6 +6551,15 @@ packages:
       is-core-module: 2.13.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+
+  /resolve@1.22.5:
+    resolution: {integrity: sha512-qWhv7PF1V95QPvRoUGHxOtnAlEvlXBylMZcjUR9pAumMmveFtcHJRXGIr+TkjfNJVQypqv2qcDiiars2y1PsSg==}
+    hasBin: true
+    dependencies:
+      is-core-module: 2.13.0
+      path-parse: 1.0.7
+      supports-preserve-symlinks-flag: 1.0.0
+    dev: true
 
   /restore-cursor@3.1.0:
     resolution: {integrity: sha512-l+sSefzHpj5qimhFSE5a8nufZYAM3sBSVMAPtYkmC+4EH2anSGaEMXSD0izRQbu9nfyQ9y5JrVmp7E8oZrUjvA==}
@@ -7698,18 +7737,18 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vuetify@1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.14):
+  /vite-plugin-vuetify@1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.16):
     resolution: {integrity: sha512-MubIcKD33O8wtgQXlbEXE7ccTEpHZ8nPpe77y9Wy3my2MWw/PgehP9VqTp92BLqr0R1dSL970Lynvisx3UxBFw==}
     engines: {node: '>=12'}
     peerDependencies:
       vite: ^2.7.0 || ^3.0.0 || ^4.0.0
       vuetify: ^3.0.0-beta.4
     dependencies:
-      '@vuetify/loader-shared': 1.7.1(vue@3.3.4)(vuetify@3.3.14)
+      '@vuetify/loader-shared': 1.7.1(vue@3.3.4)(vuetify@3.3.16)
       debug: 4.3.4
       upath: 2.0.1
       vite: 4.4.9(@types/node@20.5.7)(sass@1.66.1)
-      vuetify: 3.3.14(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4)
+      vuetify: 3.3.16(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4)
     transitivePeerDependencies:
       - supports-color
       - vue
@@ -7896,8 +7935,8 @@ packages:
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
       '@vue/shared': 3.3.4
 
-  /vuetify@3.3.14(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4):
-    resolution: {integrity: sha512-5kGnahj/cX5989bV9XM432k/BJ11fRdJ3CCdISjo1auCz+rLEeLJdjMeqyCJVd0FZsWcE1Z8799s9sLdLM3Deg==}
+  /vuetify@3.3.16(typescript@5.2.2)(vite-plugin-vuetify@1.0.2)(vue-i18n@9.2.2)(vue@3.3.4):
+    resolution: {integrity: sha512-vVfUroT5lSU+yOZAf7JlGm2j3dCR4BQml8Al27+/Uh0YW+97/CyUqOzo6IzMCt/bXLvnRerJ5fCAJtQYWnwfLA==}
     engines: {node: ^12.20 || >=14.13}
     peerDependencies:
       typescript: '>=4.7'
@@ -7916,7 +7955,7 @@ packages:
         optional: true
     dependencies:
       typescript: 5.2.2
-      vite-plugin-vuetify: 1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.14)
+      vite-plugin-vuetify: 1.0.2(vite@4.4.9)(vue@3.3.4)(vuetify@3.3.16)
       vue: 3.3.4
       vue-i18n: 9.2.2(vue@3.3.4)
 
@@ -7999,8 +8038,8 @@ packages:
     resolution: {integrity: sha512-RNGKj82nUPg3g5ygxkQl0R937xLyho1J24ItRCBTr/m1YnZkzJy1hUiHUJrc/VlsDQzsCnInEGSg3bci0Lmd4w==}
     engines: {node: '>= 10.0.0'}
     dependencies:
-      '@babel/parser': 7.22.14
-      '@babel/types': 7.22.11
+      '@babel/parser': 7.22.16
+      '@babel/types': 7.22.19
       assert-never: 1.2.1
       babel-walk: 3.0.0-canary-5
     dev: true

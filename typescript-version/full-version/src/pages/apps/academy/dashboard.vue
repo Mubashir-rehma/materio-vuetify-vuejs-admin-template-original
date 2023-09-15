@@ -5,10 +5,6 @@ import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vu
 import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
-definePage({
-  alias: '/dashboards/academy',
-})
-
 // Topics Charts config
 const topicsChartConfig = {
   chart: {

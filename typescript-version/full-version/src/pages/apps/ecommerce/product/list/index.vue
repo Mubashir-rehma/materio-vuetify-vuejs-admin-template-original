@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { ECommerceProduct } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
-import type { Options } from '@core/types'
-
-const products = ref<ECommerceProduct[]>([])
-
-const totalProduct = ref(0)
 
 const widgetData = ref([
   { title: 'In-Store Sales', value: '$5,345.43', icon: 'mdi-home-outline', desc: '5k orders', change: 5.7 },
@@ -50,13 +44,18 @@ const stockStatus = ref([
   { title: 'Out of Stock', value: false },
 ])
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 const resolveCategory = (category: string) => {
   if (category === 'Accessories')
@@ -82,29 +81,23 @@ const resolveStatus = (statusMsg: string) => {
     return { text: 'Inactive', color: 'error' }
 }
 
-const fetchProducts = async () => {
-  const data = await $api('/apps/ecommerce/products',
-    {
-      method: 'GET',
-      query: {
-        q: searchQuery.value,
-        stock: selectedStock.value,
-        category: selectedCategory.value,
-        status: selectedStatus.value,
-        ...options.value,
-        ...(options.value.sortBy
-      && {
-        sortBy: (options.value.sortBy)[0]?.key,
-        orderBy: (options.value.sortBy)[0]?.order,
-      }
-        ),
-      },
+const { data: productsData, execute: fetchProducts } = await useApi<any>(createUrl('/apps/ecommerce/products',
+  {
+    query: {
+      q: searchQuery,
+      stock: selectedStock,
+      category: selectedCategory,
+      status: selectedStatus,
+      page,
+      itemsPerPage,
+      sortBy,
+      orderBy,
     },
-  ).catch(err => console.log(err))
+  },
+))
 
-  products.value = data.products
-  totalProduct.value = data.total
-}
+const products = computed(() => productsData.value.products)
+const totalProduct = computed(() => productsData.value.total)
 
 const deleteProduct = async (id: number) => {
   await $api(`apps/ecommerce/products/${id}`, {
@@ -113,8 +106,6 @@ const deleteProduct = async (id: number) => {
 
   fetchProducts()
 }
-
-watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], fetchProducts, { deep: true, immediate: true })
 </script>
 
 <template>
@@ -189,6 +180,7 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
         </VRow>
       </VCardText>
     </VCard>
+
     <!-- 👉 products -->
     <VCard
       title="Filters"
@@ -279,14 +271,13 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
 
       <!-- 👉 Datatable  -->
       <VDataTableServer
-        v-model:items-per-page="options.itemsPerPage"
-        v-model:page="options.page"
+        v-model:items-per-page="itemsPerPage"
         :headers="headers"
         show-select
         :items="products"
         :items-length="totalProduct"
         class="text-no-wrap"
-        @update:options="options = $event"
+        @update:options="updateOptions"
       >
         <!-- product  -->
         <template #item.product="{ item }">
@@ -323,7 +314,7 @@ watch([searchQuery, selectedStock, selectedCategory, selectedStatus, options], f
 
         <!-- stock -->
         <template #item.stock="{ item }">
-          <VSwitch v-model="item.raw.stock" />
+          <VSwitch :model-value="item.raw.stock" />
         </template>
 
         <!-- status -->

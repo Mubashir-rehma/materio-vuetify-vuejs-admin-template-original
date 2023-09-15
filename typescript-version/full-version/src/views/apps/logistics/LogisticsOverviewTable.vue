@@ -1,37 +1,30 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Vehicle } from '@/plugins/fake-api/handlers/apps/logistics/type'
-import type { Options } from '@core/types'
 
-const vehiclesData = ref<Vehicle[]>([])
-const totalVehicles = ref(0)
+// Data table options
+const itemsPerPage = ref(5)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 5,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
-
-const fetchVehicles = async () => {
-  const data = await $api('/apps/logistics/vehicles', {
-    query: {
-      ...options.value,
-
-      ...(options.value.sortBy
-    && {
-      sortBy: options.value.sortBy[0]?.key,
-      orderBy: options.value.sortBy[0]?.order,
-    }
-      ),
-
-    },
-  }).catch(err => console.log(err))
-
-  vehiclesData.value = data.vehicles
-  totalVehicles.value = data.totalVehicles
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
 }
+
+const { data: vehiclesData } = await useApi<any>(createUrl('/apps/logistics/vehicles', {
+  query: {
+    page,
+    itemsPerPage,
+    sortBy,
+    orderBy,
+  },
+}))
+
+const vehicles = computed(() => vehiclesData.value.vehicles)
+const totalVehicles = computed(() => vehiclesData.value.totalVehicles)
 
 const headers = [
   { title: 'LOCATION', key: 'location' },
@@ -53,8 +46,6 @@ const resolveChipColor = (warning: string) => {
   if (warning === 'Oil Leakage')
     return 'info'
 }
-
-watch([options], fetchVehicles, { deep: true, immediate: true })
 </script>
 
 <template>
@@ -66,14 +57,19 @@ watch([options], fetchVehicles, { deep: true, immediate: true })
     </VCardItem>
 
     <VDataTableServer
-      v-model:items-per-page="options.itemsPerPage"
-      v-model:page="options.page"
+      v-model:items-per-page="itemsPerPage"
+      :items-per-page-options="[
+        { value: 5, title: '5' },
+        { value: 10, title: '10' },
+        { value: 20, title: '20' },
+        { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
+      ]"
       :items-length="totalVehicles"
-      :items="vehiclesData"
+      :items="vehicles"
       :headers="headers"
       show-select
       class="text-no-wrap"
-      @update:options="options = $event"
+      @update:options="updateOptions"
     >
       <template #item.location="{ item }">
         <VAvatar

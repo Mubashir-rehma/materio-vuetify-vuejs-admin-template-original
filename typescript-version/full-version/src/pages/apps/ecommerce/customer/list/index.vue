@@ -2,41 +2,16 @@
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
 
-import type { Options } from '@core/types'
-
-const customers = ref([])
-const totalCustomers = ref(0)
 const searchQuery = ref('')
 const isAddCustomerDrawerOpen = ref(false)
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
 
-const fetchCustomers = async () => {
-  const data = await $api('/apps/ecommerce/customers',
-    {
-      query: {
-        q: searchQuery.value,
-        ...options.value,
-        ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-        ),
-      },
-    },
-  ).catch(err => console.log(err))
-
-  customers.value = data.customers
-  totalCustomers.value = data.total
-}
-
+// Data table Headers
 const headers = [
   { title: 'Customer', key: 'customer' },
   { title: 'Customer Id', key: 'customerId' },
@@ -45,7 +20,28 @@ const headers = [
   { title: 'Total Spent', key: 'totalSpent' },
 ]
 
-watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
+
+// Fetch customers Data
+const { data: customerData } = await useApi<any>(createUrl('/apps/ecommerce/customers',
+  {
+    query: {
+      q: searchQuery,
+      itemsPerPage,
+      page,
+      sortBy,
+      orderBy,
+    },
+  }),
+)
+
+const customers = computed(() => customerData.value.customers)
+const totalCustomers = computed(() => customerData.value.total)
 </script>
 
 <template>
@@ -61,7 +57,7 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
           />
           <div class="d-flex flex-row gap-4 align-center flex-wrap">
             <VSelect
-              v-model="options.itemsPerPage"
+              v-model="itemsPerPage"
               density="compact"
               :items="[5, 10, 20, 50, 100]"
             />
@@ -84,14 +80,13 @@ watch([searchQuery, options], fetchCustomers, { deep: true, immediate: true })
       </VCardText>
 
       <VDataTableServer
-        v-model:items-per-page="options.itemsPerPage"
-        v-model:page="options.page"
+        v-model:items-per-page="itemsPerPage"
         :items="customers"
         :headers="headers"
         :items-length="totalCustomers"
         show-select
         class="text-no-wrap"
-        @update:options="options = $event"
+        @update:options="updateOptions"
       >
         <template #item.customer="{ item }">
           <div class="d-flex align-center gap-x-3">

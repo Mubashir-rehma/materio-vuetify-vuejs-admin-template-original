@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Permission } from '@/plugins/fake-api/handlers/apps/permission/type'
-import type { Options } from '@core/types'
 
 // 👉 headers
 const headers = [
@@ -11,18 +9,20 @@ const headers = [
   { title: 'Actions', key: 'actions', sortable: false },
 ]
 
-const permissions = ref<Permission[]>([])
 const search = ref('')
-const rowPerPage = ref(10)
-const totalPermissions = ref(0)
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 const isPermissionDialogVisible = ref(false)
 const isAddPermissionDialogVisible = ref(false)
@@ -37,25 +37,18 @@ const colors: any = {
   'restricted-user': { color: 'error', text: 'Restricted User' },
 }
 
-const fetchPermissions = async () => {
-  const data = await $api('/apps/permissions', {
-    query: {
-      q: search.value,
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
-    },
-  }).catch(err => console.log(err))
+const { data: permissionsData } = await useApi<any>(createUrl('/apps/permissions', {
+  query: {
+    q: search,
+    itemsPerPage,
+    page,
+    sortBy,
+    orderBy,
+  },
+}))
 
-  permissions.value = data.permissions
-  totalPermissions.value = data.totalPermissions
-}
-
-watch([search, options], fetchPermissions, { deep: true, immediate: true })
+const permissions = computed(() => permissionsData.value.permissions)
+const totalPermissions = computed(() => permissionsData.value.totalPermissions)
 
 const editPermission = (name: string) => {
   isPermissionDialogVisible.value = true
@@ -93,13 +86,17 @@ const editPermission = (name: string) => {
         </VCardText>
 
         <VDataTableServer
-          v-model:items-per-page="rowPerPage"
-          v-model:page="options.page"
+          v-model:items-per-page="itemsPerPage"
           :items-length="totalPermissions"
+          :items-per-page-options="[
+            { value: 5, title: '5' },
+            { value: 10, title: '10' },
+            { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
+          ]"
           :headers="headers"
           :items="permissions"
           class="text-no-wrap"
-          @update:options="options = $event"
+          @update:options="updateOptions"
         >
           <!-- Assigned To -->
           <template #item.assignedTo="{ item }">

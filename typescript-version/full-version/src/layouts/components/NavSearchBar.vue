@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
 import type { RouteLocationRaw } from 'vue-router'
-import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/type'
 
 interface Suggestion {
   icon: string
@@ -84,18 +83,26 @@ const noDataSuggestions: Suggestion[] = [
 ]
 
 const searchQuery = ref('')
-const searchResult = ref<SearchResults[]>([])
+
 const router = useRouter()
 
-watch(searchQuery, async () => {
-  const data = await $api('/app-bar/search', {
-    query: {
-      q: searchQuery.value,
-    },
-  }).catch(err => console.log(err))
+// watch(searchQuery, async () => {
+//   const data = await $api('/app-bar/search', {
+//     query: {
+//       q: searchQuery.value,
+//     },
+//   }).catch(err => console.log(err))
 
-  searchResult.value = data
-}, { immediate: true })
+//   searchResult.value = data
+// }, { immediate: true })
+
+const { data: searchResultsData } = await useApi(createUrl('/app-bar/search', {
+  query: {
+    q: searchQuery,
+  },
+}))
+
+const searchResult = computed(() => searchResultsData.value)
 
 // 👉 redirect the selected page
 const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {
@@ -156,7 +163,6 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
             <p class="text-xs text-disabled text-uppercase">
               {{ suggestion.title }}
             </p>
-
             <VList class="card-list">
               <VListItem
                 v-for="item in suggestion.content"
@@ -179,7 +185,6 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
         </VRow>
       </VCardText>
     </template>
-
     <!-- no data suggestion -->
     <template #noDataSuggestion>
       <div class="mt-8">
@@ -199,13 +204,11 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
         </h6>
       </div>
     </template>
-
     <!-- search result -->
     <template #searchResult="{ item }">
       <VListSubheader class="text-disabled">
         {{ item.title }}
       </VListSubheader>
-
       <VListItem
         v-for="list in item.children"
         :key="list.title"
@@ -219,7 +222,6 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
             class="me-3"
           />
         </template>
-
         <template #append>
           <VIcon
             size="20"
@@ -227,7 +229,6 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
             class="enter-icon text-disabled"
           />
         </template>
-
         <VListItemTitle>
           {{ list.title }}
         </VListItemTitle>

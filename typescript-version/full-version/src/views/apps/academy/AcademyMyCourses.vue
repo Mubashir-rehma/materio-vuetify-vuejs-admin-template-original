@@ -1,51 +1,37 @@
 <script setup lang="ts">
-import type { Course } from '@/plugins/fake-api/handlers/apps/academy/type'
-import type { Options } from '@core/types'
-
 interface Props {
   searchQuery: string
 }
 
 const props = defineProps<Props>()
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 6,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(6)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
 
-const courseData = ref<Course[]>([])
-const totalCourse = ref(0)
 const hideCompleted = ref(false)
 const label = ref('All Courses')
 
-const fetchCourses = async () => {
-  const data = await $api('/apps/academy/courses', {
-    query: {
-      q: props.searchQuery,
-      hideCompleted: hideCompleted.value,
-      label: label.value,
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
-    },
-  }).catch(err => console.log(err))
+const { data: coursesData } = await useApi<any>(createUrl('/apps/academy/courses', {
+  query: {
+    q: () => props.searchQuery,
+    hideCompleted,
+    label,
+    itemsPerPage,
+    page,
+    sortBy,
+    orderBy,
+  },
+}))
 
-  courseData.value = data.courses
-  totalCourse.value = data.total
-}
+const courses = computed(() => coursesData.value.courses)
+const totalCourse = computed(() => coursesData.value.total)
 
 watch([hideCompleted, label], () => {
-  options.value.page = 1
+  page.value = 1
 })
-
-watch([() => props.searchQuery, options, hideCompleted, label], fetchCourses, { deep: true, immediate: true })
 
 const resolveChipColor = (tags: string) => {
   if (tags === 'Web')
@@ -101,7 +87,7 @@ const resolveChipColor = (tags: string) => {
       <div class="mb-6">
         <VRow>
           <template
-            v-for="course in courseData"
+            v-for="course in courses"
             :key="course.id"
           >
             <VCol
@@ -221,9 +207,10 @@ const resolveChipColor = (tags: string) => {
           </template>
         </VRow>
       </div>
+
       <VPagination
-        v-model="options.page"
-        :length="Math.ceil(totalCourse / options.itemsPerPage)"
+        v-model="page"
+        :length="Math.ceil(totalCourse / itemsPerPage)"
       />
     </VCardText>
   </VCard>

@@ -2,24 +2,25 @@
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import type { UserProperties } from '@/plugins/fake-api/handlers/apps/users/type'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
-import type { Options } from '@core/types'
 
 // 👉 Store
 const searchQuery = ref('')
 const selectedRole = ref()
 const selectedPlan = ref()
 const selectedStatus = ref()
-const totalPage = ref(1)
-const totalUsers = ref(0)
-const users = ref<UserProperties[]>([])
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 // Headers
 const headers = [
@@ -32,29 +33,21 @@ const headers = [
 ]
 
 // 👉 Fetching users
-const fetchUsers = async () => {
-  const data = await $api('/apps/users', {
-    query: {
-      q: searchQuery.value,
-      status: selectedStatus.value,
-      plan: selectedPlan.value,
-      role: selectedRole.value,
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
-    },
-  }).catch(err => console.log(err))
+const { data: usersData, execute: fetchUsers } = await useApi<any>(createUrl('/apps/users', {
+  query: {
+    q: searchQuery,
+    status: selectedStatus,
+    plan: selectedPlan,
+    role: selectedRole,
+    itemsPerPage,
+    page,
+    sortBy,
+    orderBy,
+  },
+}))
 
-  users.value = data.users
-  totalPage.value = data.totalPage
-  totalUsers.value = data.totalUsers
-}
-
-watch([searchQuery, selectedRole, selectedPlan, selectedStatus, options], fetchUsers, { deep: true, immediate: true })
+const users = computed(() => usersData.value.users)
+const totalUsers = computed(() => usersData.value.totalUsers)
 
 // 👉 search filters
 const roles = [
@@ -270,14 +263,14 @@ const widgetData = ref([
 
       <!-- SECTION datatable -->
       <VDataTableServer
-        v-model:items-per-page="options.itemsPerPage"
-        v-model:page="options.page"
+        v-model:items-per-page="itemsPerPage"
+        v-model:page="page"
         :items="users"
         :items-length="totalUsers"
         :headers="headers"
         show-select
         class="text-no-wrap"
-        @update:options="options = $event"
+        @update:options="updateOptions"
       >
         <!-- User -->
         <template #item.user="{ item }">

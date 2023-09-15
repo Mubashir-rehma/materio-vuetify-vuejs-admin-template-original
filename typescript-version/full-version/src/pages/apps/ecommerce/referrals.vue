@@ -5,22 +5,9 @@ import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/userInfo.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
-import type { Options } from '@core/types'
-
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const paperIcon = h('div', { innerHTML: userInfoImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
-
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
-
-const referrals = ref([])
-const totalReferrals = ref(0)
 
 const widgetData = [
   { title: 'Total Earning', value: '$24,983', icon: 'mdi-currency-usd', color: 'primary' },
@@ -35,6 +22,13 @@ const stepsData = [
   { icon: paperIcon, desc: 'Get other friends to generate link and get', value: '$100' },
 ]
 
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
+
+// Data Table Headers
 const headers = [
   { title: 'Users', key: 'users' },
   { title: 'Referred ID', key: 'referred-id' },
@@ -43,22 +37,25 @@ const headers = [
   { title: 'Earnings', key: 'earning' },
 ]
 
-const fetchReferrals = async () => {
-  const data = await $api('/apps/ecommerce/referrals', {
-    query: {
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
-    },
-  }).catch(err => console.log(err))
-
-  referrals.value = data.referrals
-  totalReferrals.value = data.total
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
 }
+
+// Fetching Referral Data
+const { data: referralData } = await useApi<any>(createUrl('/apps/ecommerce/referrals', {
+  query: {
+    page,
+    itemsPerPage,
+    sortBy,
+    orderBy,
+  },
+}))
+
+const referrals = computed(() => referralData.value.referrals)
+const totalReferrals = computed(() => referralData.value.total)
 
 const resolveStatus = (status: string) => {
   if (status === 'Rejected')
@@ -68,8 +65,6 @@ const resolveStatus = (status: string) => {
   if (status === 'Paid')
     return { text: 'Paid', color: 'success' }
 }
-
-watch(options, fetchReferrals, { deep: true })
 </script>
 
 <template>
@@ -207,7 +202,7 @@ watch(options, fetchReferrals, { deep: true })
               <div class="d-flex flex-wrap gap-4">
                 <div class="d-flex gap-4 align-center flex-wrap">
                   <VSelect
-                    v-model="options.itemsPerPage"
+                    v-model="itemsPerPage"
                     :items="[10, 25, 50, 100]"
                     style="max-inline-size: 250px;min-inline-size: 200px;"
                     density="compact"
@@ -221,13 +216,13 @@ watch(options, fetchReferrals, { deep: true })
           </VCardText>
 
           <VDataTableServer
-            v-model:items-per-page="options.itemsPerPage"
-            v-model:page="options.page"
+            v-model:items-per-page="itemsPerPage"
+            v-model:page="page"
             :items="referrals"
             :headers="headers"
             :items-length="totalReferrals"
             show-select
-            @update:options="options = $event"
+            @update:options="updateOptions"
           >
             <template #item.users="{ item }">
               <div class="d-flex align-center gap-x-3">

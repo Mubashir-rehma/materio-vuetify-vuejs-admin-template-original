@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
-import type { Options } from '@core/types'
 import mastercard from '@images/cards/logo-mastercard-small.png'
 import paypal from '@images/cards/paypal-primary.png'
 
@@ -12,18 +10,15 @@ const widgetData = ref([
   { title: 'Failed', value: 32, icon: 'mdi-alert-octagon-outline' },
 ])
 
-const orders = ref<Order[]>([])
 const searchQuery = ref('')
-const totalOrder = ref(0)
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
 
+// Data table Headers
 const headers = [
   { title: 'Order', key: 'order' },
   { title: 'Date', key: 'date' },
@@ -33,6 +28,13 @@ const headers = [
   { title: 'Method', key: 'method', sortable: false },
   { title: 'Actions', key: 'actions', sortable: false },
 ]
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 const resolvePaymentStatus = (status: number) => {
   if (status === 1)
@@ -56,34 +58,29 @@ const resolveStatus = (status: string) => {
     return { text: 'Dispatched', color: 'warning' }
 }
 
-const fetchOrders = async () => {
-  const data = await $api('/apps/ecommerce/orders',
-    {
-      query: {
-        q: searchQuery.value,
-        ...options.value,
-        ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-        ),
-      },
+// Fetch Orders
+const { data: ordersData, execute: fetchOrders } = await useApi<any>(createUrl('/apps/ecommerce/orders',
+  {
+    query: {
+      q: searchQuery,
+      page,
+      itemsPerPage,
+      sortBy,
+      orderBy,
     },
-  ).catch(err => console.log(err))
+  },
+))
 
-  orders.value = data.orders
-  totalOrder.value = data.total
-}
+const orders = computed(() => ordersData.value.orders)
+const totalOrder = computed(() => ordersData.value.total)
 
+// Delete Orders
 const deleteOrder = async (id: number) => {
   await $api(`/apps/ecommerce/orders/${id}`, {
     method: 'DELETE',
   })
   fetchOrders()
 }
-
-watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
 </script>
 
 <template>
@@ -150,14 +147,13 @@ watch([searchQuery, options], fetchOrders, { deep: true, immediate: true })
         </div>
       </VCardText>
       <VDataTableServer
-        v-model:items-per-page="options.itemsPerPage"
-        v-model:page="options.page"
+        v-model:items-per-page="itemsPerPage"
         :headers="headers"
         :items="orders"
         :items-length="totalOrder"
         show-select
         class="text-no-wrap"
-        @update:options="options = $event"
+        @update:options="updateOptions"
       >
         <!-- Order ID -->
         <template #item.order="{ item }">

@@ -18,7 +18,11 @@ export const useChatStore = defineStore('chat', {
   }),
   actions: {
     async fetchChatsAndContacts(q: string) {
-      const { data, error } = await useApi<any>(createUrl('/apps/chat/chats-and-contacts', { q }))
+      const { data, error } = await useApi<any>(createUrl('/apps/chat/chats-and-contacts', {
+        query: {
+          q,
+        },
+      }))
 
       if (error.value) {
         console.log(error.value)

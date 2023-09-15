@@ -20,16 +20,11 @@ interface ApiDataType {
   allArticles: HelpCenterAllCategoryArticles[]
 }
 
-const apiData = ref<ApiDataType>()
-
 // fetching data from fake-api
-const fetchHelpCenterData = async () => {
-  const data = await $api('/pages/help-center').catch(err => console.log(err))
 
-  apiData.value = data
-}
+const { data: faqData } = await useApi<ApiDataType>('/pages/help-center')
 
-fetchHelpCenterData()
+const apiData = faqData.value
 </script>
 
 <template>

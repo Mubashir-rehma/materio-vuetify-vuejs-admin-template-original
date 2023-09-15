@@ -4,7 +4,7 @@ import type { ProfileHeader } from '@/plugins/fake-api/handlers/pages/profile/ty
 const profileHeaderData = ref<ProfileHeader>()
 
 const fetchHeaderData = async () => {
-  const { data, error } = await useApi<ProfileHeader>(createUrl('/pages/profile/header'))
+  const { data, error } = await useApi<ProfileHeader>('/pages/profile/header')
 
   if (error.value) {
     console.log(error.value)

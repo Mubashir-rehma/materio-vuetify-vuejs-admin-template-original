@@ -8,20 +8,13 @@ import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDra
 
 const route = useRoute('apps-invoice-preview-id')
 
-const invoiceData = ref()
-const paymentDetails = ref()
 const isAddPaymentSidebarVisible = ref(false)
 const isSendPaymentSidebarVisible = ref(false)
 
-// 👉 fetchInvoice
-const fetchInvoice = async (id: number) => {
-  const data = await $api(`/apps/invoice/${id}`)
+const { data: invoiceData } = await useApi<any>(`/apps/invoice/${Number(route.params.id)}`)
 
-  invoiceData.value = data.invoice
-  paymentDetails.value = data.paymentDetails
-}
-
-fetchInvoice(Number(route.params.id))
+const invoice = invoiceData.value.invoice
+const paymentDetails = invoiceData.value.paymentDetails
 
 // 👉 Invoice Description
 // ℹ️ Your real data will contain this information
@@ -103,19 +96,19 @@ const printInvoice = () => {
             <div class="mb-4">
               <!-- 👉 Invoice ID -->
               <h6 class="font-weight-medium text-xl mb-6">
-                Invoice #{{ invoiceData.id }}
+                Invoice #{{ invoice.id }}
               </h6>
 
               <!-- 👉 Issue Date -->
               <p class="mb-2">
                 <span>Date Issued: </span>
-                <span>{{ invoiceData.issuedDate }}</span>
+                <span>{{ invoice.issuedDate }}</span>
               </p>
 
               <!-- 👉 Due Date -->
               <p class="mb-2">
                 <span>Due Date: </span>
-                <span>{{ invoiceData.dueDate }}</span>
+                <span>{{ invoice.dueDate }}</span>
               </p>
             </div>
           </VCardText>
@@ -130,19 +123,19 @@ const printInvoice = () => {
                 Invoice To:
               </h6>
               <p class="mb-1">
-                {{ invoiceData.client.name }}
+                {{ invoice.client.name }}
               </p>
               <p class="mb-1">
-                {{ invoiceData.client.company }}
+                {{ invoice.client.company }}
               </p>
               <p class="mb-1">
-                {{ invoiceData.client.address }}, {{ invoiceData.client.country }}
+                {{ invoice.client.address }}, {{ invoice.client.country }}
               </p>
               <p class="mb-1">
-                {{ invoiceData.client.contact }}
+                {{ invoice.client.contact }}
               </p>
               <p class="mb-0">
-                {{ invoiceData.client.companyEmail }}
+                {{ invoice.client.companyEmail }}
               </p>
             </div>
 

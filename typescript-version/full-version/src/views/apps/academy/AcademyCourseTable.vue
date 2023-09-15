@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Course } from '@/plugins/fake-api/handlers/apps/academy/type'
-import type { Options } from '@core/types'
 
-const courseData = ref<Course[]>([])
-const totalCourse = ref(0)
 const searchQuery = ref('')
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 5,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(5)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 const headers = [
   { title: 'Course Name', key: 'courseName' },
@@ -22,25 +23,19 @@ const headers = [
   { title: 'Status', key: 'status', sortable: false },
 ]
 
-const fetchCourses = async () => {
-  const data = await $api('/apps/academy/courses', {
-    query: {
-      q: searchQuery.value,
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
-    },
-  }).catch(err => console.log(err))
+// Fetch course Data
+const { data: courseData } = await useApi<any>(createUrl('/apps/academy/courses', {
+  query: {
+    q: searchQuery,
+    itemsPerPage,
+    page,
+    sortBy,
+    orderBy,
+  },
+}))
 
-  courseData.value = data.courses
-  totalCourse.value = data.total
-}
-
-watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
+const courses = computed(() => courseData.value.courses)
+const totalCourse = computed(() => courseData.value.total)
 </script>
 
 <template>
@@ -60,15 +55,19 @@ watch([searchQuery, options], fetchCourses, { deep: true, immediate: true })
     </VCardText>
 
     <VDataTableServer
-      v-model:items-per-page="options.itemsPerPage"
-      v-model:page="options.page"
-      :items-per-page-options="[{ title: '5', value: 5 }, { title: '10', value: 10 }, { title: '25', value: 25 }]"
+      v-model:items-per-page="itemsPerPage"
+      :items-per-page-options="[
+        { value: 5, title: '5' },
+        { value: 10, title: '10' },
+        { value: 20, title: '20' },
+        { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
+      ]"
       :headers="headers"
-      :items="courseData"
+      :items="courses"
       :items-length="totalCourse"
       show-select
       class="text-no-wrap"
-      @update:options="options = $event"
+      @update:options="updateOptions"
     >
       <template #item.courseName="{ item }">
         <div class="d-flex align-center gap-x-4 py-2">

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import type { Customer } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
 import CustomerBioPanel from '@/views/apps/ecommerce/customer/view/CustomerBioPanel.vue'
@@ -19,13 +18,12 @@ const tabs = [
   { icon: 'mdi-bell-outline', title: 'Notifications' },
 ]
 
-const fetchCustomer = async () => {
-  const data = await $api(`/apps/ecommerce/customers/${route.params.id}`).catch(err => console.log(err))
+const { data, error } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
 
-  customerData.value = data
-}
-
-fetchCustomer()
+if (error.value)
+  console.log(error.value)
+else if (data.value)
+  customerData.value = data.value
 
 const isAddCustomerDrawerOpen = ref(false)
 </script>

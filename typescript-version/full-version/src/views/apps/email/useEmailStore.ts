@@ -22,7 +22,7 @@ export const useEmailStore = defineStore('email', {
   }),
   actions: {
     async fetchEmails(payload: FetchEmailsPayload) {
-      const { data, error } = await useApi<any>(createUrl('/apps/email', payload))
+      const { data, error } = await useApi<any>(createUrl('/apps/email', { query: { payload } }))
 
       if (error.value) {
         console.log(error.value)

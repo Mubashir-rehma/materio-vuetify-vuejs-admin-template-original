@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type';
-import { VideoPlayer } from '@videojs-player/vue';
-import 'video.js/dist/video-js.css';
+import { VideoPlayer } from '@videojs-player/vue'
+import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type'
+import 'video.js/dist/video-js.css'
 
 const courseDetails = ref<CourseDetails>()
 
 const fetchCourseDetails = async () => {
-  const data = await $api('/apps/academy/course-details').catch(err => console.log(err))
+  const { data, error } = await useApi<CourseDetails>('/apps/academy/course-details')
 
-  courseDetails.value = data
+  if (error.value)
+    console.log(error.value)
+  else if (data.value)
+    courseDetails.value = data.value
 }
 
 fetchCourseDetails()

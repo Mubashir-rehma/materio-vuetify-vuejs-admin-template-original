@@ -1,41 +1,38 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Options } from '@core/types'
 
-const reviews = ref([])
-const totalReviews = ref(0)
 const selectedStatus = ref('All')
-
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
-
 const searchQuery = ref('')
 
-const fetchReviews = async () => {
-  const data = await $api('/apps/ecommerce/reviews', {
-    query: {
-      q: searchQuery.value,
-      status: selectedStatus.value,
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
-    },
-  },
-  ).catch(err => console.log(err))
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
 
-  reviews.value = data.reviews
-  totalReviews.value = data.total
+// Fetch Reviews
+const { data: ReviewData, execute: fetchReviews } = await useApi<any>(createUrl('/apps/ecommerce/reviews', {
+  query: {
+    q: searchQuery,
+    status: selectedStatus,
+    page,
+    itemsPerPage,
+    sortBy,
+    orderBy,
+  },
+}))
+
+const reviews = computed(() => ReviewData.value.reviews)
+const totalReviews = computed(() => ReviewData.value.total)
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
 }
 
+// Delete Review
 const deleteReview = async (id: number) => {
   await $api(`/apps/ecommerce/reviews/${id}`, {
     method: 'DELETE',
@@ -44,9 +41,7 @@ const deleteReview = async (id: number) => {
   fetchReviews()
 }
 
-watch ([searchQuery, selectedStatus, options], fetchReviews, { deep: true })
-
-const reviewData = [
+const reviewCardData = [
   { rating: 5, value: 124 },
   { rating: 4, value: 40 },
   { rating: 3, value: 12 },
@@ -54,15 +49,17 @@ const reviewData = [
   { rating: 1, value: 2 },
 ]
 
+// Data table Headers
 const headers = [
   { title: 'Product', key: 'product' },
   { title: 'Reviewer', key: 'reviewer' },
-  { title: 'Review', key: 'review' },
+  { title: 'Review', key: 'review', sortable: false },
   { title: 'Date', key: 'date' },
   { title: 'Status', key: 'status' },
   { title: 'Actions', key: 'actions' },
 ]
 
+// Chart Configs
 const labelColor = 'rgba(var(--v-theme-on-surface), var(--v-disabled-opacity))'
 
 const config = {
@@ -313,22 +310,22 @@ const reviewStatChartConfig = {
               sm="6"
             >
               <div
-                v-for="(data, index) in reviewData"
+                v-for="(item, index) in reviewCardData"
                 :key="index"
                 class="d-flex align-center gap-x-4 mb-2"
               >
                 <div class="text-no-wrap">
-                  {{ data.rating }} Star
+                  {{ item.rating }} Star
                 </div>
                 <div class="w-100">
                   <VProgressLinear
                     color="primary"
                     height="8"
-                    :model-value="(data.value / 185) * 100"
+                    :model-value="(item.value / 185) * 100"
                     rounded
                   />
                 </div>
-                <div>{{ data.value }}</div>
+                <div>{{ item.value }}</div>
               </div>
             </VCol>
           </VRow>
@@ -420,14 +417,13 @@ const reviewStatChartConfig = {
         </VCardText>
 
         <VDataTableServer
-          v-model:items-per-page="options.itemsPerPage"
-          v-model:page="options.page"
+          v-model:items-per-page="itemsPerPage"
           :headers="headers"
           :items="reviews"
           show-select
           :items-length="totalReviews"
           class="text-no-wrap"
-          @update:options="options = $event"
+          @update:options="updateOptions"
         >
           <template #item.product="{ item }">
             <div class="d-flex gap-x-3 align-center">

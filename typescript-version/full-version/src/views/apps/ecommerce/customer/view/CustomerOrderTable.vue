@@ -1,20 +1,19 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Order } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 
-import type { Options } from '@core/types'
-
-const orders = ref<Order[]>([])
 const searchQuery = ref('')
-const totalOrder = ref(0)
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
+
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 const headers = [
   { title: 'Order', key: 'order' },
@@ -35,24 +34,20 @@ const resolveStatus = (status: string) => {
     return { color: 'warning' }
 }
 
-const fetchOrders = async () => {
-  const data = await $api('/apps/ecommerce/orders', {
+const { data: ordersData, execute: fetchOrders } = await useApi<any>(createUrl('/apps/ecommerce/orders',
+  {
     query: {
-      q: searchQuery.value,
-      ...options.value,
-      ...(options.value.sortBy
-     && {
-       sortBy: (options.value.sortBy)[0]?.key,
-       orderBy: (options.value.sortBy)[0]?.order,
-     }
-      ),
+      q: searchQuery,
+      page,
+      itemsPerPage,
+      sortBy,
+      orderBy,
     },
   },
-  ).catch(err => console.log(err))
+))
 
-  orders.value = data.orders
-  totalOrder.value = data.total
-}
+const orders = computed(() => ordersData.value.orders)
+const totalOrder = computed(() => ordersData.value.total)
 
 const deleteOrder = async (id: number) => {
   await $api(`/apps/ecommerce/orders/${id}`, {
@@ -60,8 +55,6 @@ const deleteOrder = async (id: number) => {
   })
   fetchOrders()
 }
-
-watch([searchQuery, options], fetchOrders, { immediate: true, deep: true })
 </script>
 
 <template>
@@ -80,13 +73,13 @@ watch([searchQuery, options], fetchOrders, { immediate: true, deep: true })
       </div>
     </VCardText>
     <VDataTableServer
-      v-model:items-per-page="options.itemsPerPage"
-      v-model:page="options.page"
+      v-model:items-per-page="itemsPerPage"
+      v-model:page="page"
       :headers="headers"
       :items="orders"
       :items-length="totalOrder"
       class="text-no-wrap"
-      @update:options="options = $event"
+      @update:options="updateOptions"
     >
       <!-- Order ID -->
       <template #item.order="{ item }">

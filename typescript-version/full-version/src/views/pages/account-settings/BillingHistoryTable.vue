@@ -1,26 +1,22 @@
 <script setup lang="ts">
 import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import type { Invoice } from '@/plugins/fake-api/handlers/apps/invoice/type'
-import type { Options } from '@core/types'
 
 const searchQuery = ref('')
-const dateRange = ref('')
 const selectedStatus = ref()
-const totalInvoices = ref(0)
-const invoices = ref<Invoice[]>([])
 const selectedRows = ref<string[]>([])
 
-type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
+// Data table options
+const itemsPerPage = ref(10)
+const page = ref(1)
+const sortBy = ref()
+const orderBy = ref()
 
-const options = ref<Options>({
-  page: 1,
-  itemsPerPage: 10,
-  sortBy: [],
-  groupBy: [],
-  search: undefined,
-})
-
-const isLoading = ref(false)
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+  sortBy.value = options.sortBy[0]?.key
+  orderBy.value = options.sortBy[0]?.order
+}
 
 // 👉 headers
 const headers = [
@@ -34,30 +30,19 @@ const headers = [
 ]
 
 // 👉 Fetch Invoices
-const fetchInvoices = async (query: string, currentStatus: invoiceStatus, firstDate: string, lastDate: string, option: Options) => {
-  isLoading.value = true
+const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUrl('/apps/invoice', {
+  query: {
+    q: searchQuery,
+    status: selectedStatus,
+    itemsPerPage,
+    page,
+    sortBy,
+    orderBy,
+  },
+}))
 
-  const data = await $api('/apps/invoice', {
-    query: {
-      q: query,
-      status: currentStatus,
-      startDate: firstDate?.trim(),
-      endDate: lastDate?.trim(),
-      ...option,
-      ...(option.sortBy
-     && {
-       sortBy: (option.sortBy)[0]?.key,
-       orderBy: (option.sortBy)[0]?.order,
-     }
-      ),
-    },
-  }).catch(err => console.log(err))
-
-  invoices.value = data.invoices
-  totalInvoices.value = data.totalInvoices
-
-  isLoading.value = false
-}
+const invoices = computed(() => invoiceData.value.invoices)
+const totalInvoices = computed(() => invoiceData.value.totalInvoices)
 
 // 👉 Invoice balance variant resolver
 const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {
@@ -103,39 +88,9 @@ const computedMoreList = computed(() => {
 
 // 👉 Delete Invoice
 const deleteInvoice = async (id: number) => {
-  const { error } = await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
-
-  if (error.value)
-    console.log(error.value)
-
-  fetchInvoices(
-    searchQuery.value,
-    selectedStatus.value,
-    dateRange.value?.split('to')[0],
-    dateRange.value?.split('to')[1],
-    options.value,
-  )
+  await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
+  fetchInvoices()
 }
-
-// 👉 watch for data table options like itemsPerPage,page,searchQuery,sortBy etc...
-const selectedDateRange = computed(() => {
-  const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
-
-  return {
-    start,
-    end,
-  }
-})
-
-watch([searchQuery, selectedStatus, selectedDateRange, options], () => {
-  fetchInvoices(
-    searchQuery.value,
-    selectedStatus.value,
-    selectedDateRange.value.start,
-    selectedDateRange.value.end,
-    options.value,
-  )
-}, { deep: true, immediate: true })
 </script>
 
 <template>
@@ -187,15 +142,14 @@ watch([searchQuery, selectedStatus, selectedDateRange, options], () => {
       <!-- SECTION Datatable -->
       <VDataTableServer
         v-model="selectedRows"
-        v-model:items-per-page="options.itemsPerPage"
-        v-model:page="options.page"
-        :loading="isLoading"
+        v-model:items-per-page="itemsPerPage"
+        v-model:page="page"
         show-select
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
         class="text-no-wrap"
-        @update:options="options = $event"
+        @update:options="updateOptions"
       >
         <!-- Trending Header -->
         <template #column.trending>

@@ -33,12 +33,22 @@ const isComposeDialogVisible = ref(false)
 
 // Ref
 const q = ref('')
-const emails = ref<Email[]>([])
 
 // ------------------------------------------------
 // Email Selection
 // ------------------------------------------------
 const selectedEmails = ref<Email['id'][]>([])
+
+// Fetch Emails
+const { data: emailData, execute: fetchEmails } = await useApi<any>(createUrl('/apps/email', {
+  query: {
+    q,
+    filter: () => 'filter' in route.params ? route.params.filter : undefined,
+    label: () => 'label' in route.params ? route.params.label : undefined,
+  },
+}))
+
+const emails = computed<Email[]>(() => emailData.value.emails)
 
 const toggleSelectedEmail = (emailId: Email['id']) => {
   const emailIndex = selectedEmails.value.indexOf(emailId)
@@ -78,7 +88,7 @@ const emailViewMeta = computed(() => {
 
   if (openedEmail.value) {
     const openedEmailIndex = emails.value.findIndex(
-      e => e.id === (openedEmail.value as Email).id,
+      e => e.id === openedEmail.value?.id,
     )
 
     returnValue.hasNextEmail = !!emails.value[openedEmailIndex + 1]
@@ -87,21 +97,6 @@ const emailViewMeta = computed(() => {
 
   return returnValue
 })
-
-// Fetch emails
-const fetchEmails = async () => {
-  selectedEmails.value = []
-
-  const data = await $api('/apps/email', {
-    query: {
-      q: q.value,
-      filter: 'filter' in route.params ? route.params.filter : undefined,
-      label: 'label' in route.params ? route.params.label : undefined,
-    },
-  })
-
-  emails.value = data.emails
-}
 
 /*
   ℹ️ You can optimize it so it doesn't fetch emails on each action.
@@ -139,12 +134,6 @@ const handleActionClick = async (
   await fetchEmails()
 }
 
-// fetch emails on search & route change
-watch([q, () => 'filter' in route.params ? route.params.filter : {}, () => 'label' in route.params ? route.params.label : {}], () => {
-  fetchEmails()
-  openedEmail.value = null
-}, { immediate: true })
-
 // Email actions
 const handleMoveMailsTo = (action: MoveEmailToAction) => {
   moveSelectedEmailTo(action, selectedEmails.value)
@@ -157,7 +146,7 @@ const changeOpenedEmail = (dir: 'previous' | 'next') => {
     return
 
   const openedEmailIndex = emails.value.findIndex(
-    e => e.id === (openedEmail.value as Email).id,
+    e => e.id === openedEmail.value?.id,
   )
 
   const newEmailIndex = dir === 'previous' ? openedEmailIndex - 1 : openedEmailIndex + 1
@@ -174,11 +163,8 @@ const openEmail = (email: Email) => {
 const refreshOpenedEmail = async () => {
   await fetchEmails()
 
-  if (openedEmail.value) {
-    openedEmail.value = emails.value.find(
-      e => e.id === (openedEmail.value as Email).id,
-    ) as Email
-  }
+  if (openedEmail.value)
+    openedEmail.value = emails.value.find(e => e.id === openedEmail.value?.id)!
 }
 </script>
 

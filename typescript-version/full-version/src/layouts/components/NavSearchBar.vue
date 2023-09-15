@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
 import type { RouteLocationRaw } from 'vue-router'
+import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/type'
 
 interface Suggestion {
   icon: string
@@ -85,24 +86,19 @@ const noDataSuggestions: Suggestion[] = [
 const searchQuery = ref('')
 
 const router = useRouter()
+const searchResult = ref<SearchResults[]>([])
 
-// watch(searchQuery, async () => {
-//   const data = await $api('/app-bar/search', {
-//     query: {
-//       q: searchQuery.value,
-//     },
-//   }).catch(err => console.log(err))
+const fetchResults = async () => {
+  const { data } = await useApi<any>(createUrl('/app-bar/search', {
+    query: {
+      q: searchQuery,
+    },
+  }))
 
-//   searchResult.value = data
-// }, { immediate: true })
+  searchResult.value = data.value
+}
 
-const { data: searchResultsData } = await useApi(createUrl('/app-bar/search', {
-  query: {
-    q: searchQuery,
-  },
-}))
-
-const searchResult = computed(() => searchResultsData.value)
+watch(searchQuery, fetchResults)
 
 // 👉 redirect the selected page
 const redirectToSuggestedOrSearchedPage = (selected: Suggestion) => {

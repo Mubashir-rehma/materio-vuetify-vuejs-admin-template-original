@@ -1,12 +1,11 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router/auto'
+import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import navImgDark from '@images/front-pages/misc/nav-img-dark.png'
 import navImgLight from '@images/front-pages/misc/nav-img-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import type { RouteLocationNamedRaw } from 'vue-router'
-import type { RouteLocationRaw } from 'vue-router/auto'
-import { useDisplay } from 'vuetify'
 
 const props = defineProps({
   activeId: String,
@@ -26,6 +25,7 @@ interface MenuItem {
 }
 
 const route = useRoute()
+const router = useRouter()
 
 const navImg = useGenerateImageVariant(navImgLight, navImgDark)
 
@@ -78,11 +78,11 @@ const menuItems: MenuItem[] = [
   },
 ]
 
-const isCurrentRoute = (to: any) => {
-  return route.name.startsWith(to.name as string)
+const isCurrentRoute = (to: RouteLocationRaw) => {
+  return route.matched.some(_route => _route.path === router.resolve(to).path)
 }
 
-const isPageActive = computed(() => menuItems.some(item => item.navItems.some(listItem => isCurrentRoute(listItem.to as RouteLocationNamedRaw))))
+const isPageActive = computed(() => menuItems.some(item => item.navItems.some(listItem => isCurrentRoute(listItem.to))))
 </script>
 
 <template>

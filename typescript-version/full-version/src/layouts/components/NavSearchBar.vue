@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Shepherd from 'shepherd.js'
+import { withQuery } from 'ufo'
 import type { RouteLocationRaw } from 'vue-router'
 import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/type'
 
@@ -89,11 +90,7 @@ const router = useRouter()
 const searchResult = ref<SearchResults[]>([])
 
 const fetchResults = async () => {
-  const { data } = await useApi<any>(createUrl('/app-bar/search', {
-    query: {
-      q: searchQuery,
-    },
-  }))
+  const { data } = await useApi<any>(withQuery('/app-bar/search', { q: searchQuery.value }))
 
   searchResult.value = data.value
 }

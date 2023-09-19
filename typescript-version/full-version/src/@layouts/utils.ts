@@ -40,7 +40,7 @@ export const resolveNavLinkRouteName = (link: NavLink, router: Router) => {
 
 /**
  * Check if nav-link is active
- * @param {Object} link nav-link object
+ * @param {object} link nav-link object
  */
 export const isNavLinkActive = (link: NavLink, router: Router) => {
   // Matched routes array of current route
@@ -90,7 +90,7 @@ export const hexToRgb = (hex: string) => {
 }
 
 /**
- ** RGBA color to Hex color with / without opacity
+ *RGBA color to Hex color with / without opacity
  */
 export const rgbaToHex = (rgba: string, forceRemoveAlpha = false) => {
   return (

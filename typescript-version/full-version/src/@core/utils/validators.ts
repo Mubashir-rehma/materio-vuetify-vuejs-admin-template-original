@@ -27,11 +27,7 @@ export const passwordValidator = (password: string) => {
 
   const validPassword = regExp.test(password)
 
-  return (
-    // eslint-disable-next-line operator-linebreak
-    validPassword ||
-    'Field must contain at least one uppercase, lowercase, special character and digit with min 8 chars'
-  )
+  return validPassword || 'Field must contain at least one uppercase, lowercase, special character and digit with min 8 chars'
 }
 
 // 👉 Confirm Password Validator

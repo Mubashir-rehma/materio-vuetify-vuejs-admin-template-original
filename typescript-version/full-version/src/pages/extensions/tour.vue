@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useShepherd } from 'vue-shepherd';
+import { useShepherd } from 'vue-shepherd'
 
 const route = useRoute()
 

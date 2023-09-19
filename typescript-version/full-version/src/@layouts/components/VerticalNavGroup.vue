@@ -45,12 +45,12 @@ const isGroupActive = ref(false)
 const isGroupOpen = ref(false)
 
 /**
-* Checks if any of children group is open or not.
-* This is helpful in preventing closing inactive parent group when inactive child group is opened. (i.e. Do not close "Nav Levels" group if child "Nav Level 2.2" is opened/clicked)
-*
-* @param {NavGroup['children']} children  - Nav group children
-* @return {boolean} returns if any of children is open or not.
-*/
+ * Checks if any of children group is open or not.
+ * This is helpful in preventing closing inactive parent group when inactive child group is opened. (i.e. Do not close "Nav Levels" group if child "Nav Level 2.2" is opened/clicked)
+ *
+ * @param {NavGroup['children']} children  - Nav group children
+ * @return {boolean} returns if any of children is open or not.
+ */
 const isAnyChildOpen = (children: NavGroup['children']): boolean => {
   return children.some(child => {
     let result = openGroups.value.includes(child.title)

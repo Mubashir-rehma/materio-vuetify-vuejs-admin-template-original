@@ -227,7 +227,7 @@ module.exports = {
       ],
 
       // Ignore files
-      '\.eslintrc\.js',
+      '\.eslintrc\.cjs',
     ],
   },
   settings: {

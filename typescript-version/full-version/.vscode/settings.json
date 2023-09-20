@@ -66,32 +66,29 @@
         "vuetify"
     ],
     // Extension: Comment Anchors
-    "commentAnchors.tags.list": [
-        {
-            "tag": "ℹ️",
+    "commentAnchors.tags.anchors": {
+        "ℹ️": {
             "scope": "hidden",
             // This color is taken from "Better Comments" Extension (?)
             "highlightColor": "#3498DB",
             "styleComment": true,
             "isItalic": false,
         },
-        {
-            "tag": "👉",
+        "👉": {
             "scope": "file",
             // This color is taken from "Better Comments" Extension (*)
             "highlightColor": "#98C379",
             "styleComment": true,
             "isItalic": false
         },
-        {
-            "tag": "❗",
+        "❗": {
             "scope": "hidden",
             // This color is taken from "Better Comments" Extension (*)
             "highlightColor": "#FF2D00",
             "styleComment": true,
             "isItalic": false,
         },
-    ],
+    },
     // Extension: fabiospampinato.vscode-highlight
     "highlight.regexFlags": "gi",
     "highlight.regexes": {

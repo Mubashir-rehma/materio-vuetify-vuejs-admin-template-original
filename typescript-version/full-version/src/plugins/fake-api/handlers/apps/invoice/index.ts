@@ -22,8 +22,7 @@ export const handlerAppsInvoice = [
   rest.get(('/api/apps/invoice'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const status = req.url.searchParams.get('status')
-    const startDate = req.url.searchParams.get('startDate')
-    const endDate = req.url.searchParams.get('endDate')
+    const selectedDateRange = req.url.searchParams.get('selectedDateRange')
     const page = req.url.searchParams.get('page')
     const itemsPerPage = req.url.searchParams.get('itemsPerPage')
     const sortBy = req.url.searchParams.get('sortBy')
@@ -44,8 +43,9 @@ export const handlerAppsInvoice = [
     const itemsPerPageLocal = is.number(parsedItemsPerPage) ? parsedItemsPerPage : 10
     const pageLocal = is.number(parsedPage) ? parsedPage : 1
 
-    const startDateLocal = destr(startDate) as unknown as Date
-    const endDateLocal = destr(endDate) as unknown as Date
+    const parsedDateRange = destr(selectedDateRange) as unknown as { start?: string; end?: string }
+    const startDateLocal = parsedDateRange.start
+    const endDateLocal = parsedDateRange.end
 
     // Filtering invoices
     let filteredInvoices = database.filter(

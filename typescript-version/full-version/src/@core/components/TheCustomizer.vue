@@ -117,21 +117,6 @@ const themeSkin = computed(() => {
 const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value)
 
 const layouts = computed(() => {
-  if (currentLayout.value === 'horizontal') {
-    return [
-      {
-        bgImage: defaultSkin.value,
-        value: Layout.Vertical,
-        label: 'Vertical',
-      },
-      {
-        bgImage: compact.value,
-        value: Layout.Horizontal,
-        label: 'Horizontal',
-      },
-    ]
-  }
-
   return [
     {
       bgImage: defaultSkin.value,
@@ -490,7 +475,7 @@ const resetCustomizer = async () => {
           <!-- 👉 Layouts -->
           <div class="d-flex flex-column gap-3">
             <h6 class="text-base font-weight-medium">
-              Layouts
+              Layout
             </h6>
 
             <CustomRadiosWithImage

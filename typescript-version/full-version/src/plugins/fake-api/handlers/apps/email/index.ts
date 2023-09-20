@@ -44,8 +44,8 @@ export const handlerAppsEmail = [
   }),
 
   // 👉 Update Email Meta
-  rest.post(('/api/apps/email'), (req, res, ctx) => {
-    const { ids, data, label } = req.body as { ids: Email['id'] | Email['id'][]; data: Partial<Email>; label: EmailLabel }
+  rest.post(('/api/apps/email'), async (req, res, ctx) => {
+    const { ids, data, label } = await req.json() as { ids: Email['id'] | Email['id'][]; data: Partial<Email>; label: EmailLabel }
 
     const labelLocal = destr(label)
 

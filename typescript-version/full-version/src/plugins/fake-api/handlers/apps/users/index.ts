@@ -151,7 +151,7 @@ export const handlerAppsUsers = [
 
   // 👉 Add user
   rest.post(('/api/apps/users'), async (req, res, ctx) => {
-    const user = await req.body as any
+    const user = await req.json() as any
 
     db.users.push({
       ...user,

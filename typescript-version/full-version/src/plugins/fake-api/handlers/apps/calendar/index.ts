@@ -23,8 +23,8 @@ export const handlerAppsCalendar = [
   }),
 
   // 👉 Add Calendar Event
-  rest.post(('/api/apps/calendar'), (req, res, ctx) => {
-    const event = req.body as typeof db.events[0]
+  rest.post(('/api/apps/calendar'), async (req, res, ctx) => {
+    const event = await req.json() as typeof db.events[0]
 
     db.events.push({
       ...event,
@@ -38,8 +38,8 @@ export const handlerAppsCalendar = [
   }),
 
   // 👉 Update Calendar Event
-  rest.put(('/api/apps/calendar/:id'), (req, res, ctx) => {
-    const updatedEvent = req.body as typeof db.events[0]
+  rest.put(('/api/apps/calendar/:id'), async (req, res, ctx) => {
+    const updatedEvent = await req.json() as typeof db.events[0]
 
     updatedEvent.id = Number(updatedEvent.id)
 

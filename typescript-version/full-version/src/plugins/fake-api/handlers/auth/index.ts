@@ -5,7 +5,7 @@ import type { UserOut } from '@/plugins/fake-api/handlers/auth/type'
 export const handlerAuth = [
 
   rest.post(('/api/auth/login'), async (req, res, ctx) => {
-    const { email, password } = await req.body as { email: string; password: string }
+    const { email, password } = await req.json() as { email: string; password: string }
 
     let errors: Record<string, string[]> = {
       email: ['Something went wrong'],

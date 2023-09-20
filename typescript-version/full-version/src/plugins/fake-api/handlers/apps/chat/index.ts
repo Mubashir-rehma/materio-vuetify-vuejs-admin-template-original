@@ -54,7 +54,7 @@ export const handlerAppsChat = [
     const chatId = Number(req.params.userId)
 
     // Get message from post data
-    const { message, senderId } = await req.body as { message: string; senderId: number }
+    const { message, senderId } = await req.json() as { message: string; senderId: number }
 
     let activeChat = db.chats.find(chat => chat.userId === chatId)
 

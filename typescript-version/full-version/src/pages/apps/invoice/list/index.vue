@@ -247,6 +247,7 @@ const deleteInvoice = async (id: number) => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        class="text-no-wrap"
         @update:options="updateOptions"
       >
         <!-- Trending Header -->

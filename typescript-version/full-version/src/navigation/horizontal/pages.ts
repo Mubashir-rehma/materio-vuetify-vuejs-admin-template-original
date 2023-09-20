@@ -90,7 +90,7 @@ export default [
         icon: { icon: 'mdi-flip-to-front' },
         children: [
           {
-            title: 'Landing Page',
+            title: 'Landing',
             to: 'front-pages-landing-page',
             target: '_blank',
 

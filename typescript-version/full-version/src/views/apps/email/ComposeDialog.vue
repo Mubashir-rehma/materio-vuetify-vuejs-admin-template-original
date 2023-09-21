@@ -152,5 +152,9 @@ const resetValues = () => {
     float: inline-start;
     pointer-events: none;
   }
+
+  &-focused{
+    outline: none
+  }
 }
 </style>

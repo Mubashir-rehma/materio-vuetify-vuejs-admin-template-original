@@ -31,7 +31,6 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
 }, {
   immediate: true,
 })
-
 // !SECTION
 </script>
 

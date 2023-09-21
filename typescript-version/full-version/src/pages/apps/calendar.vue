@@ -40,7 +40,6 @@ const checkAll = computed({
       store.selectedCalendars = []
   },
 })
-
 // !SECTION
 </script>
 

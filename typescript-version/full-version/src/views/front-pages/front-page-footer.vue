@@ -69,7 +69,6 @@ const menus: Menu[] = [
                   <RouterLink
                     class="text-white-variant"
                     :to="item.to"
-                    target="_blank"
                   >
                     {{ item.name }}
 

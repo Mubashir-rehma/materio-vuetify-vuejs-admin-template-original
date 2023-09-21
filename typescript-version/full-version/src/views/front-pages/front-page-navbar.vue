@@ -142,8 +142,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                 <RouterLink
                   :to="listItem.to"
                   :target="item.listTitle === 'Page' ? '_self' : '_blank'"
-                  class="nav-link"
-                  :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
+                  class="mega-menu-item"
+                  :class="isCurrentRoute(listItem.to) ? 'active-link' : ''"
                 >
                   <VIcon
                     icon="mdi-circle-outline"
@@ -160,7 +160,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
         <RouterLink
           to="/"
           target="_blank"
-          class="text-body-1 font-weight-medium text-high-emphasis"
+          class="text-body-1 font-weight-medium nav-link"
         >
           Admin
         </RouterLink>
@@ -219,8 +219,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             v-for="(item, index) in ['Home', 'Features', 'Team', 'FAQ', 'Contact us']"
             :key="index"
             :to="{ name: 'front-pages-landing-page', hash: `#${item.toLowerCase().replace(' ', '-')}` }"
-            class="font-weight-medium text-high-emphasis py-2 px-2 px-lg-4"
-            :class="[props.activeId?.toLocaleLowerCase().replace('-', ' ') === item.toLocaleLowerCase() ? 'active-link' : 'text-high-emphasis']"
+            class="nav-link font-weight-medium py-2 px-2 px-lg-4"
+            :class="[props.activeId?.toLocaleLowerCase().replace('-', ' ') === item.toLocaleLowerCase() ? 'active-link' : '']"
           >
             {{ item }}
           </RouterLink>
@@ -267,9 +267,9 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                           class="text-body-1 mb-4 text-no-wrap"
                         >
                           <RouterLink
+                            class="mega-menu-item"
                             :to="listItem.to"
                             :target="item.listTitle === 'Page' ? '_self' : '_blank'"
-                            class="nav-link"
                             :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
                           >
                             <div class="d-flex align-center">
@@ -302,7 +302,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           <RouterLink
             to="/"
             target="_blank"
-            class="text-high-emphasis font-weight-medium px-2 px-lg-4 py-2"
+            class="nav-link font-weight-medium px-2 px-lg-4 py-2"
           >
             Admin
           </RouterLink>
@@ -345,6 +345,12 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 .nav-menu{
   display: flex;
   gap: 3rem;
+}
+
+.nav-link{
+  &:not(:hover){
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))
+  }
 }
 
 @media (min-width: 1920px) {
@@ -395,6 +401,12 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 .active-link {
   color: rgb(var(--v-theme-primary)) !important;
 }
+
+.mega-menu-item {
+  &:hover {
+    color: rgb(var(--v-theme-primary)) !important;
+  }
+}
 </style>
 
 <style lang="scss">
@@ -417,12 +429,6 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
     margin-inline: auto !important;
   }
 
-}
-
-.nav-link {
-  &:hover {
-    color: rgb(var(--v-theme-primary)) !important;
-  }
 }
 
 #navigation-drawer-close-btn {

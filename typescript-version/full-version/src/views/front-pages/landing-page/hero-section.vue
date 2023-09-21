@@ -26,10 +26,11 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 const { x, y } = useMouse({ touch: false })
 
 const translateMouse = computed(() => (speed: number) => {
+  const positionY = computed(() => (window.innerWidth - (y.value * speed)))
+
+  console.log(positionY.value)
   if (typeof window !== 'undefined')
-    return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(window.innerWidth - (y.value * speed)) / 100}px` }
-  else
-    return {}
+    return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(positionY.value < -5000 ? -5000 : positionY.value) / 100}px` }
 })
 </script>
 

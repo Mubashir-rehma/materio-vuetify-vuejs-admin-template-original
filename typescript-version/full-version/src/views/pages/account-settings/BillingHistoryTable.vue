@@ -210,9 +210,12 @@ const deleteInvoice = async (id: number) => {
               <span v-else>{{ avatarText(item.raw.client.name) }}</span>
             </VAvatar>
             <div class="d-flex flex-column">
-              <h6 class="text-sm font-weight-medium mb-0">
+              <RouterLink
+                :to="{ name: 'pages-user-profile-tab', params: { tab: 'profile' } }"
+                class="client-title font-weight-medium mb-0"
+              >
                 {{ item.raw.client.name }}
-              </h6>
+              </RouterLink>
               <span class="text-caption">{{ item.raw.client.companyEmail }}</span>
             </div>
           </div>
@@ -272,6 +275,14 @@ const deleteInvoice = async (id: number) => {
 
   .invoice-list-search {
     inline-size: 12rem;
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+.client-title{
+  &:not(:hover){
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
   }
 }
 </style>

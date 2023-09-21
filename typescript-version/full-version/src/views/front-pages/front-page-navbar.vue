@@ -234,13 +234,16 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             <VMenu
               open-on-hover
               activator="parent"
-              offset="13"
+              transition="slide-y-transition"
+              location="bottom center"
+              offset="16"
+              content-class="mega-menu"
               location-strategy="static"
-              content-class="w-100"
+              close-on-content-click
             >
-              <VSheet class="mega-menu">
-                <div class="pa-8">
-                  <div class="d-flex gap-x-12">
+              <VCard max-width="1000">
+                <VCardText class="pa-8">
+                  <div class="nav-menu">
                     <div
                       v-for="(item, index) in menuItems"
                       :key="index"
@@ -261,7 +264,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                           v-for="listItem in item.navItems"
                           :key="listItem.name"
                           style="list-style: none;"
-                          class="text-body-2 mb-4"
+                          class="text-body-1 mb-4 text-no-wrap"
                         >
                           <RouterLink
                             :to="listItem.to"
@@ -269,12 +272,15 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                             class="nav-link"
                             :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
                           >
-                            <VIcon
-                              icon="mdi-circle-outline"
-                              :size="10"
-                              class="me-2"
-                            />
-                            <span>{{ listItem.name }}</span>
+                            <div class="d-flex align-center">
+                              <VIcon
+                                icon="tabler-circle"
+                                color="primary"
+                                :size="10"
+                                class="me-2"
+                              />
+                              <span>{{ listItem.name }}</span>
+                            </div>
                           </RouterLink>
                         </li>
                       </ul>
@@ -288,8 +294,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                       :height="$vuetify.display.lgAndUp ? '330' : '250'"
                     >
                   </div>
-                </div>
-              </VSheet>
+                </VCardText>
+              </VCard>
             </VMenu>
           </span>
 
@@ -336,10 +342,9 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </template>
 
 <style lang="scss" scoped>
-.mega-menu{
-  margin-block-start: 65px;
-  margin-inline: auto;
-  max-inline-size: 900px;
+.nav-menu{
+  display: flex;
+  gap: 3rem;
 }
 
 @media (min-width: 1920px) {
@@ -394,6 +399,13 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
 <style lang="scss">
 @use "@layouts/styles/mixins" as layoutMixins;
+
+.mega-menu{
+  position: fixed !important;
+  inset-block-start: 4.1rem;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+}
 
 .front-page-navbar {
   .v-toolbar__content {

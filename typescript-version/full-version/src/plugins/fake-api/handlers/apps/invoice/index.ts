@@ -44,8 +44,8 @@ export const handlerAppsInvoice = [
     const pageLocal = is.number(parsedPage) ? parsedPage : 1
 
     const parsedDateRange = destr(selectedDateRange) as unknown as { start?: string; end?: string }
-    const startDateLocal = parsedDateRange.start
-    const endDateLocal = parsedDateRange.end
+    const startDateLocal = parsedDateRange?.start
+    const endDateLocal = parsedDateRange?.end
 
     // Filtering invoices
     let filteredInvoices = database.filter(

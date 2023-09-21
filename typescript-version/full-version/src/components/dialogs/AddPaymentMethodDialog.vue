@@ -75,7 +75,7 @@ const paymentMethodsData = [
         @click="emit('update:isDialogVisible', false)"
       />
 
-      <VCardText class="pa-5 pa-sm-16">
+      <VCardText class="pa-8 pa-sm-16">
         <h5 class="text-h5 text-center mb-2">
           Add payment methods
         </h5>

@@ -79,6 +79,9 @@ module.exports = {
         allowClassStart: true,
         allowObjectStart: true,
         allowArrayStart: true,
+
+        // We don't want to add extra space above closing SECTION
+        ignorePattern: '!SECTION',
       },
     ],
 

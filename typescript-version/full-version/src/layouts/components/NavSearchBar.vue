@@ -32,7 +32,7 @@ const suggestionGroups: SuggestionGroup[] = [
     content: [
       { icon: 'mdi-chart-donut', title: 'Analytics', url: { name: 'dashboards-analytics' } },
       { icon: 'mdi-chart-bubble', title: 'CRM', url: { name: 'dashboards-crm' } },
-      { icon: 'mdi-file-outline', title: 'Invoice List', url: { name: 'apps-invoice-list' } },
+      { icon: 'mdi-file-document-outline', title: 'Landing Page', url: { name: 'front-pages-landing-page' } },
       { icon: 'mdi-account-group-outline', title: 'User List', url: { name: 'apps-user-list' } },
     ],
   },
@@ -40,9 +40,9 @@ const suggestionGroups: SuggestionGroup[] = [
     title: 'Apps & Pages',
     content: [
       { icon: 'mdi-calendar', title: 'Calendar', url: { name: 'apps-calendar' } },
-      { icon: 'mdi-file-plus-outline', title: 'Invoice Add', url: { name: 'apps-invoice-add' } },
-      { icon: 'mdi-currency-usd', title: 'Pricing', url: { name: 'pages-pricing' } },
-      { icon: 'mdi-account-cog-outline', title: 'Account Settings', url: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
+      { icon: 'mdi-cart-outline', title: 'ECommerce Product', url: { name: 'apps-ecommerce-product-list' } },
+      { icon: 'mdi-school-outline', title: 'Academy', url: { name: 'apps-academy-dashboard' } },
+      { icon: 'mdi-truck-outline', title: 'Logistic Fleet', url: { name: 'apps-logistics-fleet' } },
     ],
   },
   {
@@ -50,7 +50,7 @@ const suggestionGroups: SuggestionGroup[] = [
     content: [
       { icon: 'mdi-alpha-a-box-outline', title: 'Typography', url: { name: 'pages-typography' } },
       { icon: 'mdi-tab', title: 'Tabs', url: { name: 'components-tabs' } },
-      { icon: 'mdi-gesture-tap-button', title: 'Buttons', url: { name: 'components-button' } },
+      { icon: 'mdi-map', title: 'Tour', url: { name: 'extensions-tour' } },
       { icon: 'mdi-keyboard-settings-outline', title: 'Statistics', url: { name: 'pages-cards-card-statistics' } },
     ],
   },
@@ -58,9 +58,9 @@ const suggestionGroups: SuggestionGroup[] = [
     title: 'Popular Searches',
     content: [
       { icon: 'mdi-format-list-checkbox', title: 'Select', url: { name: 'forms-select' } },
-      { icon: 'mdi-lastpass', title: 'Combobox', url: { name: 'forms-combobox' } },
+      { icon: 'mdi-currency-usd', title: 'Payment', url: { name: 'front-pages-payment' } },
       { icon: 'mdi-calendar-range-outline', title: 'Date & Time Picker', url: { name: 'forms-date-time-picker' } },
-      { icon: 'mdi-hexagram-outline', title: 'Rating', url: { name: 'forms-rating' } },
+      { icon: 'mdi-home-outline', title: 'Property Listing Wizard', url: { name: 'wizard-examples-property-listing' } },
     ],
   },
 ]

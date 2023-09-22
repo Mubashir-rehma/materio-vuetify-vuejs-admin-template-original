@@ -106,6 +106,7 @@ const isPricingPlanDialogVisible = ref(false)
                     >
                       <VTextField
                         label="Password"
+                        autocomplete="on"
                         type="password"
                         placeholder="············"
                       />

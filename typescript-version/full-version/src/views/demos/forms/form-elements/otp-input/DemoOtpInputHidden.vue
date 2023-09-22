@@ -7,6 +7,7 @@ const otp = ref('')
 <template>
   <VOtpInput
     v-model="otp"
+    autocomplete="on"
     type="password"
     length="5"
   />

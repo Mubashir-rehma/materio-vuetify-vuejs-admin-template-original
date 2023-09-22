@@ -94,6 +94,7 @@ watch(formData, () => {
         <!-- 👉 Password -->
         <VTextField
           v-model="formData.password"
+          autocomplete="on"
           type="password"
           label="Password"
           placeholder="············"

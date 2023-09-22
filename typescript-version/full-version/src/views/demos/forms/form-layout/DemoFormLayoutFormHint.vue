@@ -34,6 +34,7 @@ const values = ref<typeof items[number][]>([])
         <VTextField
           v-model="password"
           label="Password"
+          autocomplete="on"
           type="password"
           persistent-hint
           placeholder="············"

@@ -76,6 +76,7 @@ const interest = ref<string[]>([])
             <VTextField
               v-model="password"
               label="Password"
+              autocomplete="on"
               type="password"
               placeholder="············"
             />

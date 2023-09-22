@@ -24,57 +24,60 @@ export const handlerAppLogistics = [
     const pageLocal = is.number(parsedPage) ? parsedPage : 1
 
     // Sorting Vehicles
+    let vehicles = [...db.vehicles]
 
-    if (sortByLocal && sortByLocal === 'location') {
-      db.vehicles = db.vehicles.sort((a, b) => {
-        if (orderByLocal === 'asc')
-          return a.location - b.location
+    if (sortBy) {
+      if (sortByLocal === 'location') {
+        vehicles = vehicles.sort((a, b) => {
+          if (orderByLocal === 'asc')
+            return a.location - b.location
 
-        return b.location - a.location
-      })
-    }
+          return b.location - a.location
+        })
+      }
 
-    if (sortByLocal && sortByLocal === 'startRoute') {
-      db.vehicles = db.vehicles.sort((a, b) => {
-        if (orderByLocal === 'asc')
-          return a.startCity.localeCompare(b.startCity)
+      if (sortByLocal === 'startRoute') {
+        vehicles = vehicles.sort((a, b) => {
+          if (orderByLocal === 'asc')
+            return a.startCity.localeCompare(b.startCity)
 
-        return b.startCity.localeCompare(a.startCity)
-      })
-    }
+          return b.startCity.localeCompare(a.startCity)
+        })
+      }
 
-    if (sortByLocal && sortByLocal === 'endRoute') {
-      db.vehicles = db.vehicles.sort((a, b) => {
-        if (orderByLocal === 'asc')
-          return a.endCity.localeCompare(b.endCity)
+      if (sortByLocal === 'endRoute') {
+        vehicles = vehicles.sort((a, b) => {
+          if (orderByLocal === 'asc')
+            return a.endCity.localeCompare(b.endCity)
 
-        return b.endCity.localeCompare(a.endCity)
-      })
-    }
+          return b.endCity.localeCompare(a.endCity)
+        })
+      }
 
-    if (sortByLocal && sortByLocal === 'warnings') {
-      db.vehicles = db.vehicles.sort((a, b) => {
-        if (orderByLocal === 'asc')
-          return a.warnings.localeCompare(b.warnings)
+      if (sortByLocal === 'warnings') {
+        vehicles = vehicles.sort((a, b) => {
+          if (orderByLocal === 'asc')
+            return a.warnings.localeCompare(b.warnings)
 
-        return b.warnings.localeCompare(a.warnings)
-      })
-    }
+          return b.warnings.localeCompare(a.warnings)
+        })
+      }
 
-    if (sortByLocal && sortByLocal === 'progress') {
-      db.vehicles = db.vehicles.sort((a, b) => {
-        if (orderByLocal === 'asc')
-          return a.progress - b.progress
+      if (sortByLocal === 'progress') {
+        vehicles = vehicles.sort((a, b) => {
+          if (orderByLocal === 'asc')
+            return a.progress - b.progress
 
-        return b.progress - a.progress
-      })
+          return b.progress - a.progress
+        })
+      }
     }
 
     return res(
       ctx.status(200),
       ctx.json({
-        vehicles: paginateArray(db.vehicles, itemsPerPageLocal, pageLocal),
-        totalVehicles: db.vehicles.length,
+        vehicles: paginateArray(vehicles, itemsPerPageLocal, pageLocal),
+        totalVehicles: vehicles.length,
       }),
     )
   }),

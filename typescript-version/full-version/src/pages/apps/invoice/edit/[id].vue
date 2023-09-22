@@ -4,7 +4,7 @@ import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue'
 import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
 
 // Type: Invoice data
-import type { InvoiceData } from '@/views/apps/invoice/types'
+import type { InvoiceData, PurchasedProduct } from '@/views/apps/invoice/types'
 
 // Store
 
@@ -43,6 +43,14 @@ const fetchInvoice = async () => {
 
 fetchInvoice()
 
+const addProduct = (value: PurchasedProduct) => {
+  invoiceData.value?.purchasedProducts.push(value)
+}
+
+const removeProduct = (id: number) => {
+  invoiceData.value?.purchasedProducts.splice(id, 1)
+}
+
 const isSendSidebarActive = ref(false)
 const isAddPaymentSidebarActive = ref(false)
 const paymentTerms = ref(true)
@@ -63,6 +71,8 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
       <InvoiceEditable
         v-if="invoiceData?.invoice"
         :data="invoiceData"
+        @push="addProduct"
+        @remove="removeProduct"
       />
     </VCol>
 

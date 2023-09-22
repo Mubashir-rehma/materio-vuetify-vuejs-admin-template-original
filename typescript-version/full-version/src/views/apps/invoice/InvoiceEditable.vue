@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import InvoiceProductEdit from './InvoiceProductEdit.vue'
-import type { InvoiceData } from './types'
+import type { InvoiceData, PurchasedProduct } from './types'
 import type { Client } from '@/plugins/fake-api/handlers/apps/invoice/type'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
@@ -10,6 +10,16 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const emits = defineEmits<{
+  (e: 'push', value: PurchasedProduct): void
+  (e: 'remove', id: number): void
+}>()
+
+const invoice = ref(props.data.invoice)
+const salesperson = ref(props.data.salesperson)
+const thanksNote = ref(props.data.thanksNote)
+const note = ref(props.data.note)
 
 // 👉 Clients
 const clients = ref<Client[]>([])
@@ -28,8 +38,7 @@ fetchClients()
 
 // 👉 Add item function
 const addItem = () => {
-  // eslint-disable-next-line vue/no-mutating-props
-  props.data.purchasedProducts.push({
+  emits('push', {
     title: 'App Design',
     cost: 24,
     hours: 1,
@@ -39,15 +48,14 @@ const addItem = () => {
 
 // 👉 Remove Product edit section
 const removeProduct = (id: number) => {
-  // eslint-disable-next-line vue/no-mutating-props
-  props.data.purchasedProducts.splice(id, 1)
+  emits('remove', id)
 }
 </script>
 
 <template>
   <VCard>
     <!-- SECTION Header -->
-    <!--  eslint-disable vue/no-mutating-props -->
+
     <VCardText class="d-flex flex-wrap justify-space-between gap-y-5 flex-column flex-sm-row">
       <!-- 👉 Left Content -->
       <div class="mb-6">
@@ -86,7 +94,7 @@ const removeProduct = (id: number) => {
           >Invoice:</span>
           <span>
             <VTextField
-              v-model="props.data.invoice.id"
+              v-model="invoice.id"
               disabled
               prefix="#"
               density="compact"
@@ -104,7 +112,7 @@ const removeProduct = (id: number) => {
 
           <span style="inline-size: 9.5rem;">
             <AppDateTimePicker
-              v-model="props.data.invoice.issuedDate"
+              v-model="invoice.issuedDate"
               density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
@@ -120,7 +128,7 @@ const removeProduct = (id: number) => {
           >Due Date:</span>
           <span style="min-inline-size: 9.5rem;">
             <AppDateTimePicker
-              v-model="props.data.invoice.dueDate"
+              v-model="invoice.dueDate"
               density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
@@ -143,7 +151,7 @@ const removeProduct = (id: number) => {
         </h6>
 
         <VSelect
-          v-model="props.data.invoice.client"
+          v-model="invoice.client"
           :items="clients"
           item-title="name"
           item-value="name"
@@ -153,22 +161,22 @@ const removeProduct = (id: number) => {
           density="compact"
         />
         <p class="mb-1">
-          {{ props.data.invoice.client.name }}
+          {{ invoice.client.name }}
         </p>
         <p class="mb-1">
-          {{ props.data.invoice.client.company }}
+          {{ invoice.client.company }}
         </p>
         <p
-          v-if="props.data.invoice.client.address"
+          v-if="invoice.client.address"
           class="mb-1"
         >
-          {{ props.data.invoice.client.address }}, {{ props.data.invoice.client.country }}
+          {{ invoice.client.address }}, {{ invoice.client.country }}
         </p>
         <p class="mb-1">
-          {{ props.data.invoice.client.contact }}
+          {{ invoice.client.contact }}
         </p>
         <p class="mb-1">
-          {{ props.data.invoice.client.companyEmail }}
+          {{ invoice.client.companyEmail }}
         </p>
       </div>
 
@@ -249,14 +257,14 @@ const removeProduct = (id: number) => {
             Salesperson:
           </h6>
           <VTextField
-            v-model="props.data.salesperson"
+            v-model="salesperson"
             style="inline-size: 8rem;"
             placeholder="John Doe"
           />
         </div>
 
         <VTextField
-          v-model="props.data.thanksNote"
+          v-model="thanksNote"
           placeholder="Thanks for your business"
         />
       </div>
@@ -319,7 +327,7 @@ const removeProduct = (id: number) => {
         Note:
       </p>
       <VTextarea
-        v-model="props.data.note"
+        v-model="note"
         placeholder="Write note here..."
         :rows="2"
       />

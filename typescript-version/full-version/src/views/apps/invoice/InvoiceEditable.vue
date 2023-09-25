@@ -104,7 +104,7 @@ const removeProduct = (id: number) => {
         </h6>
 
         <!-- 👉 Issue Date -->
-        <p class="d-flex align-center justify-sm-end mb-3">
+        <div class="d-flex align-center justify-sm-end mb-3">
           <span
             class="me-3"
             style="inline-size: 6rem;"
@@ -118,10 +118,10 @@ const removeProduct = (id: number) => {
               :config="{ position: 'auto right' }"
             />
           </span>
-        </p>
+        </div>
 
         <!-- 👉 Due Date -->
-        <p class="d-flex align-center justify-sm-end mb-0">
+        <div class="d-flex align-center justify-sm-end mb-0">
           <span
             class="me-3"
             style="inline-size: 6rem;"
@@ -134,7 +134,7 @@ const removeProduct = (id: number) => {
               :config="{ position: 'auto right' }"
             />
           </span>
-        </p>
+        </div>
       </div>
     </VCardText>
     <!-- !SECTION -->
@@ -271,51 +271,55 @@ const removeProduct = (id: number) => {
 
       <div>
         <table class="w-100">
-          <tr>
-            <td class="pe-16">
-              Subtotal:
-            </td>
-            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-              <h6 class="text-sm">
-                $1800
-              </h6>
-            </td>
-          </tr>
-          <tr>
-            <td class="pe-16">
-              Discount:
-            </td>
-            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-              <h6 class="text-sm">
-                $28
-              </h6>
-            </td>
-          </tr>
-          <tr>
-            <td class="pe-16">
-              Tax:
-            </td>
-            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-              <h6 class="text-sm">
-                21%
-              </h6>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td class="pe-16">
+                Subtotal:
+              </td>
+              <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                <h6 class="text-sm">
+                  $1800
+                </h6>
+              </td>
+            </tr>
+            <tr>
+              <td class="pe-16">
+                Discount:
+              </td>
+              <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                <h6 class="text-sm">
+                  $28
+                </h6>
+              </td>
+            </tr>
+            <tr>
+              <td class="pe-16">
+                Tax:
+              </td>
+              <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                <h6 class="text-sm">
+                  21%
+                </h6>
+              </td>
+            </tr>
+          </tbody>
         </table>
 
         <VDivider class="mt-4 mb-3" />
 
         <table class="w-100">
-          <tr>
-            <td class="pe-16">
-              Total:
-            </td>
-            <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-              <h6 class="text-sm">
-                $1690
-              </h6>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td class="pe-16">
+                Total:
+              </td>
+              <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                <h6 class="text-sm">
+                  $1690
+                </h6>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </VCardText>

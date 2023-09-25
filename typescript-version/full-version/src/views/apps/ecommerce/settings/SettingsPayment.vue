@@ -115,6 +115,7 @@ const isPaymentProvidersDialogVisible = ref(false)
             Add Manual Payment Methods
           </VBtn>
           <VBtn
+            v-if="$vuetify.display.sm"
             icon
             variant="outlined"
           >

@@ -10,7 +10,6 @@ export default [
       { title: 'Date Time Picker', to: 'forms-date-time-picker' },
       { title: 'Editors', to: 'forms-editors' },
       { title: 'File Input', to: 'forms-file-input' },
-      { title: 'Otp Input', to: 'forms-otp-input' },
       { title: 'Radio', to: 'forms-radio' },
       { title: 'Custom Input', to: 'forms-custom-input' },
       { title: 'Range Slider', to: 'forms-range-slider' },

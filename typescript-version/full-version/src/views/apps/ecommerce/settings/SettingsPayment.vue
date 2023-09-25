@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import paypal from '@images/cards/paypal-primary.png'
 
-const isMenuOpen = ref(false)
 const isAddPaymentMethodsDialogVisible = ref(false)
 const isPaymentProvidersDialogVisible = ref(false)
 </script>
@@ -106,37 +105,25 @@ const isPaymentProvidersDialogVisible = ref(false)
     >
       <VCardText>
         <p>Payments that are made outside your online store. When a customer selects a manual payment method such as cash on delivery, you'll need to approve their order before it can be fulfilled.</p>
-        <VBtnGroup
-          color="primary"
-          divided
-          density="comfortable"
-        >
-          <VBtn variant="outlined">
-            Add Manual Payment Methods
-          </VBtn>
-          <VBtn
-            v-if="$vuetify.display.sm"
-            icon
-            variant="outlined"
-          >
-            <VIcon
-              :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down' "
-              size="24"
-            />
 
-            <VMenu activator="parent">
-              <VList>
-                <VListItem
-                  v-for="(item, index) in ['Create custom payment method', 'Bank Deposit', 'Money Order', 'Cash on Delivery(COD)']"
-                  :key="index"
-                  :value="index"
-                >
-                  <VListItemTitle>{{ item }}</VListItemTitle>
-                </VListItem>
-              </VList>
-            </VMenu>
-          </VBtn>
-        </VBtnGroup>
+        <VBtn
+          variant="outlined"
+          :append-icon="$vuetify.display.smAndUp ? 'mdi-chevron-down' : ''"
+        >
+          <span>Add Manual Payment Methods</span>
+
+          <VMenu activator="parent">
+            <VList>
+              <VListItem
+                v-for="(item, index) in ['Create custom payment method', 'Bank Deposit', 'Money Order', 'Cash on Delivery(COD)']"
+                :key="index"
+                :value="index"
+              >
+                <VListItemTitle>{{ item }}</VListItemTitle>
+              </VListItem>
+            </VList>
+          </VMenu>
+        </VBtn>
       </VCardText>
     </VCard>
 

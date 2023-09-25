@@ -113,6 +113,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                   v-model="currentPassword"
                   :type="isCurrentPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isCurrentPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  autocomplete="on"
                   label="Current Password"
                   placeholder="············"
                   @click:append-inner="isCurrentPasswordVisible = !isCurrentPasswordVisible"
@@ -132,6 +133,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                   :type="isNewPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
                   label="New Password"
+                  autocomplete="on"
                   placeholder="············"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
                 />
@@ -146,6 +148,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                   v-model="confirmPassword"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  autocomplete="on"
                   label="Confirm New Password"
                   placeholder="············"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"

@@ -5,6 +5,8 @@ import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vu
 import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
+const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
+
 // Topics Charts config
 const topicsChartConfig = {
   chart: {
@@ -30,6 +32,7 @@ const topicsChartConfig = {
   ],
 
   grid: {
+    borderColor,
     strokeDashArray: 10,
     xaxis: {
       lines: {

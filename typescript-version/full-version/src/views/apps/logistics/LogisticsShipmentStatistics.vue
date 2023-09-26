@@ -9,6 +9,7 @@ const chartColors = {
 
 const headingColor = 'rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))'
 const labelColor = 'rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity))'
+const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 
 const series = [
   {
@@ -73,6 +74,7 @@ const shipmentConfig = {
   },
   grid: {
     strokeDashArray: 8,
+    borderColor
   },
   colors: [chartColors.line.series1, chartColors.line.series2],
   fill: {

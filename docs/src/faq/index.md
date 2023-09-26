@@ -114,12 +114,12 @@ If you are using our ACL provided in our template then it is ability-based ACL n
 
 ## How to check what frontend expects in API response
 
-You can find all our fake API responses in `src/@fake-db` folder.
+To determine what the frontend expects in API responses, you can refer to the fake API responses located in the `src/plugins/handlers/` folder.
 
-You can get list of fake API endpoints by searching for `mock.on` in "src/@fake-db" folder.
+For a specific list of fake API response endpoints related to a particular page, you can inspect the `index.ts` file within the corresponding page's directory. For instance, if you need the endpoints for the Invoice app, you can find them in the `index.ts` file located in the `apps/invoice` directory.
 
 ::: tip
-You can find authentication related fake responses in `src/@fake-db/jwt/index.ts` file.
+You can find authentication related fake responses in `src/plugins/fake-api/handlers/auth/index.ts` file.
 :::
 
 ## How to update logo and text

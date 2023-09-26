@@ -152,34 +152,36 @@ const orderData = [
 
           <VCardText>
             <div class="d-flex align-end flex-column">
-              <VTable class="text-high-emphasis">
-                <tr>
-                  <td width="200px">
-                    Subtotal:
-                  </td>
-                  <td class="font-weight-medium">
-                    $2,093
-                  </td>
-                </tr>
-                <tr>
-                  <td>Shipping Total: </td>
-                  <td class="font-weight-medium">
-                    $2
-                  </td>
-                </tr>
-                <tr>
-                  <td>Tax: </td>
-                  <td class="font-weight-medium">
-                    $28
-                  </td>
-                </tr>
-                <tr>
-                  <td>Total</td>
-                  <td class="font-weight-medium">
-                    $2,113
-                  </td>
-                </tr>
-              </VTable>
+              <table class="text-high-emphasis">
+                <tbody>
+                  <tr>
+                    <td width="200px">
+                      Subtotal:
+                    </td>
+                    <td class="font-weight-medium">
+                      $2,093
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Shipping Total: </td>
+                    <td class="font-weight-medium">
+                      $2
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tax: </td>
+                    <td class="font-weight-medium">
+                      $28
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td class="font-weight-medium">
+                      $2,113
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </VCardText>
         </VCard>

@@ -316,3 +316,8 @@ Navigation groups are intelligently hide and show them selves based on their chi
 :::warning CAVEAT
 As header in vertical navigation menu is independent of it's child items if you want to hide header if all it's below items are hidden then you need to specify resource & action as well with other following items.
 :::
+
+**Related Pages**
+
+- [Understand Authentication & ACL - First Visit](../articles/understanding-authentication-and-acl-first-visit-part-1.md)
+- [Understanding Login Flow](../articles/understanding-authentication-and-acl-login-flow-part-2.md)

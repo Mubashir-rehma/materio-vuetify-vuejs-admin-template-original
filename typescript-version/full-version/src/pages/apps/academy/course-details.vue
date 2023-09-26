@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VideoPlayer } from '@videojs-player/vue'
-import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type'
-import 'video.js/dist/video-js.css'
+import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type';
+import { VideoPlayer } from '@videojs-player/vue';
+import 'video.js/dist/video-js.css';
 
 const courseDetails = ref<CourseDetails>()
 
@@ -13,7 +13,7 @@ const fetchCourseDetails = async () => {
   else if (data.value)
     courseDetails.value = data.value
 }
-
+const panelStatus = ref(0)
 fetchCourseDetails()
 </script>
 
@@ -157,12 +157,13 @@ fetchCourseDetails()
       md="4"
     >
       <div class="course-content">
-        <VExpansionPanels variant="accordion">
+        <VExpansionPanels variant="accordion" v-model="panelStatus">
           <VExpansionPanel
             v-for="(section, index) in courseDetails?.content"
             :key="index"
             collapse-icon="mdi-chevron-down"
             :expand-icon="$vuetify.locale.isRtl ? 'tabler-chevron-left' : 'tabler-chevron-right'"
+            :value="index"
           >
             <template #title>
               <div>

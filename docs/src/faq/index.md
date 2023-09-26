@@ -207,3 +207,9 @@ In most cases, CORS errors occur because the server is not configured to allow c
 Typically, there is no need to modify the title in admin panels. However, if you still wish to make changes, you can achieve this by integrating the `unhead/vue` library into your project.
 
 For detailed instructions regarding implementation, please visit the following link: [Unhead Setup](https://unhead.harlanzw.com/integrations/vue/setup)
+
+## Why we have removed store from email app?
+
+In our email app, there is not any requirement to access states across multiple components. So, the need for a store in the email app has been eliminated. All essential functions have been moved to the `useEmail.ts` file.
+
+To review the changes made for the removal of the store, please refer to this [commit](https://github.com/themeselection/master-vue--material/pull/324)

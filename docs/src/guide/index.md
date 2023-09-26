@@ -10,11 +10,11 @@ Guide provides basic understanding of how our template works and how you can twe
 
 ### FAQs
 
-We also have FAQs so you can find instant answer to question might come up in your development process.
+We also have FAQs so you can find instant answer to question might come up in your development process. Refer to our [FAQ](../faq/).
 
 ### Articles
 
-We also have very helpful articles on particular topic to provide you more insight and detailed guide.
+We also have very helpful articles on particular topic to provide you more insight and detailed guide. Refer to our [articles](../articles/).
 
 ## Starter kit vs Full package
 

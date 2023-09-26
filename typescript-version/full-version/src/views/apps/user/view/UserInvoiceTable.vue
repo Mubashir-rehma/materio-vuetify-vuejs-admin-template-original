@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const searchQuery = ref('')
 const selectedStatus = ref()
@@ -41,8 +41,8 @@ const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUr
   },
 }))
 
-const invoices = computed(() => invoiceData.value.invoices)
-const totalInvoices = computed(() => invoiceData.value.totalInvoices)
+const invoices = computed(() => invoiceData.value?.invoices)
+const totalInvoices = computed(() => invoiceData.value?.totalInvoices)
 
 // 👉 Invoice balance variant resolver
 const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {
@@ -87,11 +87,9 @@ const computedMoreList = computed(() => {
 })
 
 // 👉 Delete Invoice
+// 👉 Delete Invoice
 const deleteInvoice = async (id: number) => {
-  const { error } = await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
-
-  if (error)
-    console.log(error.value)
+  await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
 
   fetchInvoices()
 }

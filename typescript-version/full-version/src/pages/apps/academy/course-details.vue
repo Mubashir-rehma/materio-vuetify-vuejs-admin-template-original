@@ -5,16 +5,15 @@ import 'video.js/dist/video-js.css';
 
 const courseDetails = ref<CourseDetails>()
 
-const fetchCourseDetails = async () => {
-  const { data, error } = await useApi<CourseDetails>('/apps/academy/course-details')
 
-  if (error.value)
-    console.log(error.value)
-  else if (data.value)
-    courseDetails.value = data.value
-}
+const { data, error } = await useApi<CourseDetails>('/apps/academy/course-details')
+
+if (error.value)
+  console.log(error.value)
+else if (data.value)
+  courseDetails.value = data.value
+
 const panelStatus = ref(0)
-fetchCourseDetails()
 </script>
 
 <template>

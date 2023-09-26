@@ -21,3 +21,4 @@
 - [How to remove fake-db from our template and use real API](/articles/how-to-remove-fake-db-and-use-real-api.md)
 - [How to use cookies instead of local storage.](/articles/how-to-use-cookies-instead-localstorage.md)
 - [How to use content-loading slot](/articles/how-to-use-content-loading-slot.md)
+- [How to display server-side errors](./how-to-display-server-side-error.md)

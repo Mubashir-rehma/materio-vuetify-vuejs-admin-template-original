@@ -27,7 +27,7 @@ To complete the integration of authentication in the starter-kit, you need to co
 
 ## How to use real database
 
-After verifying that the authentication system works properly with the **fake-db**, you can remove it and use your actual database. To do this, you can refer to the [article](how-to-remove-fake-db-and-use-real-api.md) that outlines the steps for removing the fake-db.
+After verifying that the authentication system works properly with the **fake-db**, you can remove it and use your actual database. To do this, you can refer to the [article](how-to-remove-fake-api-and-use-real-api.md) that outlines the steps for removing the fake-db.
 
 It is important to note that in addition to removing the fake-db, you will also need to make necessary changes to the API call endpoints(use your API endpoint) and logic to ensure that the application works seamlessly with the actual database.
 

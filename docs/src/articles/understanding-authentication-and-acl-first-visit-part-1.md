@@ -151,3 +151,7 @@ Next, we will check if user is logged in.
 - If user is not logged in that means, user is trying to access page that is only for logged in users. Here, we will simply redirect user to login page so user can login. Moreover, we will take URL of request route and pass it as `to` query while redirect user to login page so we can redirect user to requested page after successful login.
 
 Passing requested route's URL in `to` query param is useful in cases where someone sent link to some specific page (_e.g. invoice page_) and user directly tries to access it. In this case, user will get redirected to login page and after login we will redirect user to requested page (_in this example, invoide page_) instead of redirecting user to home page.
+
+**Related Pages**
+
+- [Access Control]('/src/guide/access-control.md')

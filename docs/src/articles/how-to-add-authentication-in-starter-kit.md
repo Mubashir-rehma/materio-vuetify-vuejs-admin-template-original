@@ -1,19 +1,12 @@
 # How to add authentication in Starter-kit
 
-## Add Fake-db
+## Add Fake-api
 
-The fake database that we have created using the Axios Mock Adapter plugin can be used for testing and development purposes. It allows you to simulate a real database without the need for an actual server. This can save time and resources while still providing reliable and accurate results.
+The fake database that we have created using the msw plugin can be used for testing and development purposes. It allows you to simulate a real database without the need for an actual server. This can save time and resources while still providing reliable and accurate results.
 
-To add the fake database to our starter-kit, all you need to do is copy the **@fake-db** folder from full-version. This includes all the necessary packages and configurations that have been set up in the full version. This will make it easy to get started with testing and development without the need to set up the fake database from scratch.
+To add the fake database to our starter-kit, all you need to do is copy the **fake-api** folder from full-version, which is located at `src/plugins/fake-api`. This includes all the necessary packages and configurations that have been set up in the full version. This will make it easy to get started with testing and development without the need to set up the fake database from scratch.
 
-Now, import the fake-db in main.ts or main.js file.
-
-```ts
-//main.ts or main.js
-import '@/@fake-db/db'
-```
-
-In the **@fake-db** folder, only the **jwt** folder contains the necessary logic for the authentication system. To keep the folder minimal and avoid unnecessary clutter, you can remove all other folders and the corresponding imports in the **db.ts** file. This will leave you with only the relevant files and code needed for the authentication system in the starter-kit.
+In the **fake-api** folder, only the **auth** folder contains the necessary logic for the authentication system. To keep the folder minimal and avoid unnecessary clutter, you can remove all other folders from the **handlers** folder. This will leave you with only the relevant files and code needed for the authentication system in the starter-kit.
 
 ## Register CASL
 

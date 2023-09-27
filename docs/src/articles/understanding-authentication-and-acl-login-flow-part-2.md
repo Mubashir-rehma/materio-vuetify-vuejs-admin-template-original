@@ -70,7 +70,7 @@ After successful API request, we will extarct Access token, user data and user a
 According to marked code, your API response must contain mentioned data:
 
 - `accessToken` - User access token, This will be used in subsequent API call. (_e.g. eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mn0.cat2xMrZLn0FwicdGtZNzL7ifDTAKWB0k1RurSWjdnw_)
-- `userData` - User's data, it can include name, full name, image URL etc. It completely depends on what you need from user after login. (_e.g. { id: 1, fullName: 'John Doe', username: 'johndoe', avatar: 'https://xyz.jpeg' }_)
+- `userData` - User's data, it can include name, full name, image URL etc. It completely depends on what you need from user after login. (_e.g. { id: 1, fullName: 'John Doe', username: 'johndoe', avatar: '<https://xyz.jpeg>' }_)
 - `userAbilities` - User's abilities, This is one of most important data for implmenting ACL. We will use these abilities later to update CASL's ability instance. (_e.g. [{ action: "manage", subject: "users" }, { ... }]_)
 
 If your API response sends different data then we used please make sure to carefully understand the Auth & ACL and later update the code.
@@ -90,3 +90,7 @@ Here, we are storing user's abilities in localStorage under `userAbilities` key.
 At the moment, user have initial abilities that allows user to visit public pages like login, registration, etc. However, now user is logged in and we know logged in user's abilities (_we retrieved it via API and stored in `userAbilities`_).
 
 So let's update the user abilities in CASL instance so `can` method can use our new abilities to check if user can access particular entity. For this, we will use `ability.update` method and pass abilities we get from API response.
+
+**Related Pages**
+
+- [Access Control]('/src/guide/access-control.md')

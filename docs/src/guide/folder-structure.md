@@ -9,15 +9,11 @@ Read more [here](./core/)
 
 Our template comes with layouts plugin which is standalone package you can use in any vue project. You can find it in /src/@layouts directory. Read more [here](./layouts/)
 
-## @fake-db
-
-It contains fake data we get back from API. This is only useful if you want to check what API call returns in response.
-
-## assets
+## Assets
 
 It contains logos and other static assets. You can place your static assets here.
 
-## components
+## Components
 
 Place your component in this directory. Components in this dir will be auto-registered and on-demand, thanks to [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components).
 
@@ -68,11 +64,11 @@ export default {
 read more [here](https://github.com/antfu/unplugin-vue-components).
 :::
 
-## layouts
+## Layouts
 
 Place your app's layouts in this directory. This is used in conjunction with [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) which is used for `pages` directory to generate routes based on directory structure just like [nuxt](https://nuxtjs.org/).
 
-## navigation
+## Navigation
 
 This directory contains vertical nav & horizontal nav items. Items written in `src/navigation/vertical/index.ts` will be for vertical nav and items written in `src/navigation/horizontal/index.ts` will be for horizontal nav. Both files are imported in `src/layouts/default.vue`).
 
@@ -80,7 +76,7 @@ Related: [Fetching navigation items from database via API](#) <br>
 Related: [How to create vertical navigation](#) <br>
 Related: [How to create horizontal navigation](#)
 
-## pages
+## Pages
 
 Contains your app pages. Just create a new file and new route will be auto generated based on file name and its placement in the `pages` directory.
 
@@ -101,19 +97,19 @@ Contains your app pages. Just create a new file and new route will be auto gener
 
 Related: [How to create a new page](/guide/how-to-create-a-new-page.html#creating-about-page)
 
-## plugins
+## <!-- prettier-ignore-start -->Plugins
 
 This directory contains plugins we used in our template.
 
-## router
+## Router
 
 This directory contains configuration related to router. It doesn't have any routes as they are auto generated but it has ACL configurations.
 
-## stores
+## Stores
 
-This contains [pinia](https://pinia.esm.dev/) store. With our template we haven't used any store so it is empty.
+This contains [pinia](https://pinia.esm.dev/) store. With our template we have used store in Calendar app and chat app.
 
-## styles
+## Styles
 
 You can write your styles in this directory.
 

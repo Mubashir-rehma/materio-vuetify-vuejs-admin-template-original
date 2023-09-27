@@ -38,12 +38,12 @@ First of all, We recommend you check out [how](https://developer.mozilla.org/en-
 
 After that,
 
-- For Vue template, Check out the `VueUse` composable documentation and understand the various options it provides.
+- For Vue template, Check out the [useFetch](https://vueuse.org/core/useFetch/) composable documentation and understand the various options it provides.
 - For Nuxt template, Checkout their docs on [Data Fetching](https://nuxt.com/docs/getting-started/data-fetching)  and [useFetch](https://nuxt.com/docs/api/composables/use-fetch).
 
 ## `useApi` vs `$api`
 
-If you have checked our source code then you might notice that we used `useFetch` & `api`/`$api` together. Nuxt developers already knows the difference between `useApi` *(useFetch under the hood)* & `$fetch`.
+If you have checked our source code then you might notice that we used `useApi` & `$api` together. Nuxt developers already knows the difference between `useApi` *(useFetch under the hood)* & `$fetch`.
 
 :::info Straight from the Nuxt docs
 `useFetch` is the most straightforward way to handle data fetching in a component setup function.

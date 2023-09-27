@@ -40,6 +40,10 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Hire Us',
+        link: 'https://themeselection.com/hire-us/',
+      },
+      {
         text: 'Demo',
         link: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1',
       },
@@ -61,7 +65,7 @@ export default defineConfig({
             { text: 'Styles', link: '/guide/styles' },
             { text: 'Navigation Menu', link: '/guide/navigation-menu' },
             { text: 'Plugins', link: '/guide/getting-started/plugins' },
-            { text: 'Date Fetching', link: '/guide/getting-started/data-fetching' },
+            { text: 'Data Fetching', link: '/guide/getting-started/data-fetching' },
             { text: 'Authentication', link: '/guide/authentication' },
             { text: 'Access Control', link: '/guide/access-control' },
             { text: 'Splash Screen', link: '/guide/splash-screen' },

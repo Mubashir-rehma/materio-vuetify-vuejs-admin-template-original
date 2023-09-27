@@ -59,3 +59,11 @@ This is useful if you want to create a page without any layout components. Best 
 ::: tip
 If you define a new layout, please don't forget to add its types in env.d.ts file for getting better type suggestions.
 :::
+
+## Suspense
+
+We have encapsulated all default and blank layouts with suspense. This will be triggered on top level await or lazy loading of the component and will display the fallback content until the asynchronous function is resolved.
+
+In our template, We are displaying a progress-bar using `AppLoadingIndicator.vue` component during the fallback state.
+
+For detailed implementation details regarding suspense in a specific layout, please refer to the self explanatory code in corresponding layout's file.

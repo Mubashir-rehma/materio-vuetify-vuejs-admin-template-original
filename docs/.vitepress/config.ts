@@ -85,7 +85,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'Stepper', link: '/guide/core/components/stepper' },
-                { text: 'OTP Input', link: '/guide/core/components/otp-input' },
+                { text: 'Tip tap Editor', link: '/guide/core/components/tiptap-editor' },
                 { text: 'Custom Input', link: '/guide/core/components/custom-input' },
                 { text: 'Navbar I18n', link: '/guide/core/components/navbar-i18n' },
                 { text: 'App Card Code', link: '/guide/core/components/app-card-code' },
@@ -94,6 +94,10 @@ export default defineConfig({
                 { text: 'Navbar Notifications', link: '/guide/core/components/navbar-notifications' },
                 { text: 'Navbar Shortcuts', link: '/guide/core/components/navbar-shortcuts' },
               ],
+            },
+            {
+              text: 'Composables',
+              link: '/guide/core/composables'
             },
           ],
         },

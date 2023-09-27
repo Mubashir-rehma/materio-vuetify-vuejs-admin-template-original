@@ -40,6 +40,10 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Hire Us',
+        link: 'https://themeselection.com/hire-us/',
+      },
+      {
         text: 'Demo',
         link: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1',
       },

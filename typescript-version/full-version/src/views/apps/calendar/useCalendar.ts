@@ -1,10 +1,10 @@
+import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
 import type { CalendarApi, CalendarOptions, EventApi, EventSourceFunc } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import type { Event, NewEvent } from './types'
-import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
 
 export const blankEvent: Event | NewEvent = {
   title: '',
@@ -72,6 +72,10 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     }
   }
 
+  // @ts-expect-error for nuxt workaround
+ if (process.server)
+   store.fetchEvents()
+  
   // 👉 Fetch events
   const fetchEvents: EventSourceFunc = (info, successCallback) => {
   // If there's no info => Don't make useless API call

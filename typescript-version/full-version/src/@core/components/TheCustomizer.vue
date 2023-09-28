@@ -38,7 +38,6 @@ const {
   appContentWidth,
   appContentLayoutNav,
   isAppRtl,
-  isLessThanOverlayNavBreakpoint,
 } = useThemeConfig()
 
 // 👉 Primary Color
@@ -64,8 +63,6 @@ const setPrimaryColor = useDebounceFn((color: string) => {
   // ℹ️ Update initial loader color
   useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = color
 }, 100)
-
-const { width: windowWidth } = useWindowSize()
 
 const lightTheme = useGenerateImageVariant(lightThemeLight, lightThemeDark)
 const darkTheme = useGenerateImageVariant(darkThemeLight, darkThemeDark)
@@ -268,7 +265,7 @@ const resetCustomizer = async () => {
 </script>
 
 <template>
-  <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
+  <div class="d-lg-block d-none">
     <VBtn
       icon
       size="small"
@@ -529,7 +526,7 @@ const resetCustomizer = async () => {
         <!-- !SECTION -->
       </PerfectScrollbar>
     </VNavigationDrawer>
-  </template>
+  </div>
 </template>
 
 <style lang="scss">

@@ -14,9 +14,6 @@ import NavBarI18n from '@core/components/I18n.vue'
 // @layouts plugin
 import { VerticalNavLayout } from '@layouts'
 
-const { isLessThanOverlayNavBreakpoint } = useThemeConfig()
-const { width: windowWidth } = useWindowSize()
-
 // SECTION: Loading Indicator
 const isFallbackStateActive = ref(false)
 const refLoadingIndicator = ref<any>(null)
@@ -38,9 +35,8 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
     <template #navbar="{ toggleVerticalOverlayNavActive }">
       <div class="d-flex h-100 align-center">
         <IconBtn
-          v-if="isLessThanOverlayNavBreakpoint(windowWidth)"
           id="vertical-nav-toggle-btn"
-          class="ms-n3"
+          class="ms-n3 d-lg-none"
           @click="toggleVerticalOverlayNavActive(true)"
         >
           <VIcon icon="mdi-menu" />

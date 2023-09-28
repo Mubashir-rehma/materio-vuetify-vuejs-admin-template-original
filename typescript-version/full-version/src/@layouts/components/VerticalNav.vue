@@ -92,30 +92,27 @@ const handleNavScroll = (evt: Event) => {
         </RouterLink>
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
-        <template v-if="!isLessThanOverlayNavBreakpoint(windowWidth)">
-          <Component
-            :is="config.app.iconRenderer || 'div'"
-            v-show="isCollapsed && !hideTitleAndIcon"
-            class="header-action"
-            v-bind="config.icons.verticalNavUnPinned"
-            @click="isCollapsed = !isCollapsed"
-          />
-          <Component
-            :is="config.app.iconRenderer || 'div'"
-            v-show="!isCollapsed && !hideTitleAndIcon"
-            class="header-action"
-            v-bind="config.icons.verticalNavPinned"
-            @click="isCollapsed = !isCollapsed"
-          />
-        </template>
-        <template v-else>
-          <Component
-            :is="config.app.iconRenderer || 'div'"
-            class="header-action"
-            v-bind="config.icons.close"
-            @click="toggleIsOverlayNavActive(false)"
-          />
-        </template>
+        <Component
+          :is="config.app.iconRenderer || 'div'"
+          v-show="isCollapsed && !hideTitleAndIcon && !isLessThanOverlayNavBreakpoint(windowWidth)"
+          class="header-action"
+          v-bind="config.icons.verticalNavUnPinned"
+          @click="isCollapsed = !isCollapsed"
+        />
+        <Component
+          :is="config.app.iconRenderer || 'div'"
+          v-show="!isCollapsed && !hideTitleAndIcon && !isLessThanOverlayNavBreakpoint(windowWidth)"
+          class="header-action"
+          v-bind="config.icons.verticalNavPinned"
+          @click="isCollapsed = !isCollapsed"
+        />
+        <Component
+          :is="config.app.iconRenderer || 'div'"
+          v-show="isLessThanOverlayNavBreakpoint(windowWidth)"
+          class="header-action"
+          v-bind="config.icons.close"
+          @click="toggleIsOverlayNavActive(false)"
+        />
       </slot>
     </div>
     <slot name="before-nav-items">

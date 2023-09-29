@@ -43,7 +43,11 @@ After that,
 
 ## `useApi` vs `$api`
 
-If you have checked our source code then you might notice that we used `useApi` & `$api` together. Nuxt developers already knows the difference between `useApi` *(useFetch under the hood)* & `$fetch`.
+If you have checked our source code then you might notice that we used `useApi` & `$api` together.
+
+For Nuxt,
+
+Nuxt developers already knows the difference between `useApi` *(useFetch under the hood)* & `$api` *(`$fetch` under the hood)*.
 
 :::info Straight from the Nuxt docs
 `useFetch` is the most straightforward way to handle data fetching in a component setup function.
@@ -53,11 +57,11 @@ On the other hand, when wanting to make a network request based on user interact
 
 For Vue,
 
-We have created `useApi` as a custom instance of [`useFetch`](https://vueuse.org/core/useFetch/) from `vueUse` and `$api` is a custom instance of [`ofetch`](https://github.com/unjs/ofetch).
+We initially decided to use `$api`(a custom instance of [`ofetch`](https://github.com/unjs/ofetch)) for data fetching due to the following reasons.
 
- However vue user can use any of the `useApi` and `$api` as per the convenience. but we recommend to use `useApi` for initial data fetching and `$api` for fetching data on the interaction like update, delete.
+1. **Efficient JSON Parsing**: `$api` intelligently parse JSON and native values from responses.
+2. **Error Handling**: It automatically triggers error handling when `response.ok` is `false`, providing users with clear error messages and concise stack traces for quick issue resolution.
 
- There are mainly two reason for using `$api` for fetching data on interaction.
+However, when it comes to the initial data fetching, we found that [`useFetch`](https://vueuse.org/core/useFetch/) offers distinct advantages. It enables us to effortlessly refresh data when the URL changes.So, We have created `useApi` as a custom instance of [`useFetch`](https://vueuse.org/core/useFetch/) from `vueUse` library.This provides Vue users the flexibility to choose between `useApi` and `$api` based on their specific needs.
 
-- it will smartly parse JSON and native values from response.
-- it will automatically throw errors when response.ok is false with a friendly error message and compact stack
+However vue user have flexibility to choose any of the `useApi` and `$api` for data fetching, but we recommend to use `useApi` for initial data fetching and `$api` for fetching data on the interactions like update, delete.

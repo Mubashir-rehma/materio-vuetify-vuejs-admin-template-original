@@ -1,11 +1,11 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup lang="ts">
+import fleetImg from '@images/misc/fleet-car.png'
 import type { LngLatLike } from 'mapbox-gl'
 import mapboxgl from 'mapbox-gl'
 import { onMounted, ref } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
@@ -351,5 +351,10 @@ watch(activeIndex, () => {
 .mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-right {
   display: none;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+#mapContainer {
+  block-size: 100vh !important;
 }
 </style>

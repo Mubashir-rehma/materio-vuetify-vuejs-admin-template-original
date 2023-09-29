@@ -1,6 +1,6 @@
 # How To Remove Fake Api And Use Real Api
 
-We used [msw](https://github.com/mswjs/msw) (opens new window)for mocking API calls. This makes our template API ready 😍 and more easier for you to communicate with your backend.
+We have used [msw](https://github.com/mswjs/msw) for mocking API calls. This makes our template API ready 😍 and more easier for you to communicate with your backend.
 
 However, you won't need fake-api if you are using real APIs. In this case please follow below steps to remove fake-db from template.
 

@@ -51,4 +51,13 @@ If you have checked our source code then you might notice that we used `useApi` 
 On the other hand, when wanting to make a network request based on user interaction, `$fetch` is almost always the right handler to go for.
 :::
 
-For Vue, development we recommend checking our Nuxt docs on...
+For Vue,
+
+We have created `useApi` as a custom instance of [`useFetch`](https://vueuse.org/core/useFetch/) from `vueUse` and `$api` is a custom instance of [`ofetch`](https://github.com/unjs/ofetch).
+
+ However vue user can use any of the `useApi` and `$api` as per the convenience. but we recommend to use `useApi` for initial data fetching and `$api` for fetching data on the interaction like update, delete.
+
+ There are mainly two reason for using `$api` for fetching data on interaction.
+
+- it will smartly parse JSON and native values from response.
+- it will automatically throw errors when response.ok is false with a friendly error message and compact stack

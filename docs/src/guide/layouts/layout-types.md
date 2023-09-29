@@ -66,4 +66,4 @@ We have encapsulated all default and blank layouts with suspense. This will be t
 
 In our template, We are displaying a progress-bar using `AppLoadingIndicator.vue` component during the fallback state.
 
-For detailed implementation details regarding suspense in a specific layout, please refer to the self explanatory code in corresponding layout's file.
+For a more detailed explanation of suspense in a specific layout, please refer to the self-explanatory code in the corresponding file.

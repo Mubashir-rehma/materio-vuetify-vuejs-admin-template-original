@@ -104,7 +104,10 @@ module.exports = {
     // Plugin: eslint-plugin-import
     'import/prefer-default-export': 'off',
     'import/newline-after-import': ['error', { count: 1 }],
-    'no-restricted-imports': ['error', 'vuetify/components'],
+    'no-restricted-imports': ['error', 'vuetify/components', {
+      name: 'vue3-apexcharts',
+      message: 'apexcharts are autoimported',
+    }],
 
     // For omitting extension for ts files
     'import/extensions': [

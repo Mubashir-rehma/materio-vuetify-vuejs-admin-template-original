@@ -97,7 +97,7 @@ Contains your app pages. Just create a new file and new route will be auto gener
 
 Related: [How to create a new page](/guide/how-to-create-a-new-page.html#creating-about-page)
 
-## <!-- prettier-ignore-start -->Plugins
+## Plugins
 
 This directory contains plugins we used in our template.
 

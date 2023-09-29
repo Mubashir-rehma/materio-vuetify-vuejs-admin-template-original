@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TeamsTab } from '@db-types/pages/profile/type'
+import type { TeamsTab } from '@db/pages/profile/types'
 
 const router = useRoute('pages-user-profile-tab')
 const teamData = ref<TeamsTab[]>([])
@@ -96,3 +96,4 @@ const moreList = [
     </VCol>
   </VRow>
 </template>
+@/plugins/fake-api/handlers/pages/profile/types

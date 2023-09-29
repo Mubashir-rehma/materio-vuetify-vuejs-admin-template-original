@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import { db } from '@db-types/pages/datatable/db'
+import { db } from '@db/pages/datatable/db'
 
 export const handlerPagesDatatable = [
   rest.get(('/api/pages/datatable'), (req, res, ctx) => {

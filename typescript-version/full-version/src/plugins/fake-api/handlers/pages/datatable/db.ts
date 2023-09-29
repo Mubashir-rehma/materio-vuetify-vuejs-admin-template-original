@@ -1,4 +1,4 @@
-import type { SalesDetails } from '@db-types/pages/datatable/type'
+import type { SalesDetails } from '@/plugins/fake-api/handlers/pages/datatable/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

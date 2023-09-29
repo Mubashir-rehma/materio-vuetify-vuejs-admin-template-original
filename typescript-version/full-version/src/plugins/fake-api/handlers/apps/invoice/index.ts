@@ -1,7 +1,7 @@
+import { database } from '@db/apps/invoice/db'
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
-import { database } from '@db-types/apps/invoice/db'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
 
 export const handlerAppsInvoice = [

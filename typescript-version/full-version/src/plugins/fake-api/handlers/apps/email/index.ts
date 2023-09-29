@@ -1,7 +1,7 @@
+import { db } from '@db/apps/email/db'
 import { destr } from 'destr'
 import { rest } from 'msw'
-import { db } from '@db-types/apps/email/db'
-import type { Email, EmailLabel } from '@db-types/apps/email/type'
+import type { Email, EmailLabel } from '@/plugins/fake-api/handlers/apps/email/types'
 
 export const handlerAppsEmail = [
   // 👉 Get Email List

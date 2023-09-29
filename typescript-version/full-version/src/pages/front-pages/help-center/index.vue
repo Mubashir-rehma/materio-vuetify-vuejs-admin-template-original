@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HelpCenterAllCategoryArticles, HelpCenterArticlesOverview } from '@db-types/pages/help-center/type'
+import type { HelpCenterAllCategoryArticles, HelpCenterArticlesOverview } from '@db/pages/help-center/types'
 
 import Footer from '@/views/front-pages/front-page-footer.vue'
 import Navbar from '@/views/front-pages/front-page-navbar.vue'
@@ -105,3 +105,4 @@ const apiData = faqData.value
   }
 }
 </style>
+@/plugins/fake-api/handlers/pages/help-center/types

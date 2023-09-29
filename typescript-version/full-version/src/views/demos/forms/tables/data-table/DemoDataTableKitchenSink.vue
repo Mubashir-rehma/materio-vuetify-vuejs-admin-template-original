@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import type { SalesDetails } from '@db/pages/datatable/types'
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import type { SalesDetails } from '@db-types/pages/datatable/type'
 
 const search = ref('')
 const productList = ref<SalesDetails[]>([])
@@ -200,3 +200,4 @@ onMounted(async () => {
     </VDataTable>
   </div>
 </template>
+@/plugins/fake-api/handlers/pages/datatable/types

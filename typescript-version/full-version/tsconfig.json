@@ -40,7 +40,7 @@
       "@validators": [
         "./src/@core/utils/validators"
       ],
-      "@db-types/*": [
+      "@db/*": [
         "./src/plugins/fake-api/handlers/*"
       ]
     },

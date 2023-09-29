@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FaqCategory } from '@db-types/pages/faq/type'
+import type { FaqCategory } from '@db/pages/faq/types'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 
@@ -213,3 +213,4 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
   }
 }
 </style>
+@/plugins/fake-api/handlers/pages/faq/types

@@ -1,7 +1,7 @@
 import is from '@sindresorhus/is'
 import { rest } from 'msw'
-import { db } from '@db-types/pages/faq/db'
-import type { FaqCategory } from '@db-types/pages/faq/type'
+import type { FaqCategory } from '@/plugins/fake-api/handlers/pages/faq/types'
+import { db } from '@db/pages/faq/db'
 
 export const handlerPagesFaq = [
   rest.get(('/api/pages/faq'), (req, res, ctx) => {

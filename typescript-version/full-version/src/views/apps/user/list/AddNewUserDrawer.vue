@@ -3,7 +3,7 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { VForm } from 'vuetify/components/VForm'
 
-import type { UserProperties } from '@db-types/apps/users/type'
+import type { UserProperties } from '@db/apps/users/types'
 
 interface Emit {
   (e: 'update:isDrawerOpen', value: boolean): void
@@ -213,3 +213,4 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
     </PerfectScrollbar>
   </VNavigationDrawer>
 </template>
+@/plugins/fake-api/handlers/apps/users/types

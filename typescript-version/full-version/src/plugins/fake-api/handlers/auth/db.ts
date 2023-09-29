@@ -1,4 +1,4 @@
-import type { User } from '@db-types/auth/type'
+import type { User } from '@/plugins/fake-api/handlers/auth/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

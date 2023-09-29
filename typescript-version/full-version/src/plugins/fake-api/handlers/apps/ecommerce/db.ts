@@ -1,4 +1,4 @@
-import type { Customer, ECommerceProduct, Order, Referrals, Review } from '@db-types/apps/ecommerce/type'
+import type { Customer, ECommerceProduct, Order, Referrals, Review } from '@/plugins/fake-api/handlers/apps/ecommerce/types'
 import auFlag from '@images/icons/countries/au.png'
 import brFlag from '@images/icons/countries/br.png'
 import cnFlag from '@images/icons/countries/cn.png'

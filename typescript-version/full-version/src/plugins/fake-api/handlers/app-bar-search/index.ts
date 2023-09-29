@@ -1,7 +1,7 @@
 import is from '@sindresorhus/is'
 import { rest } from 'msw'
-import { db } from '@db-types/app-bar-search/db'
-import type { SearchResults } from '@db-types/app-bar-search/type'
+import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/types'
+import { db } from '@db/app-bar-search/db'
 
 export const handlerAppBarSearch = [
   // Get Search Items

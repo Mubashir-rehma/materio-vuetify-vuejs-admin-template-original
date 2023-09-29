@@ -2,7 +2,7 @@
 import Shepherd from 'shepherd.js'
 import { withQuery } from 'ufo'
 import type { RouteLocationRaw } from 'vue-router'
-import type { SearchResults } from '@db-types/app-bar-search/type'
+import type { SearchResults } from '@db/app-bar-search/types'
 
 interface Suggestion {
   icon: string
@@ -242,3 +242,4 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   padding-inline: 0.25rem;
 }
 </style>
+@/plugins/fake-api/handlers/app-bar-search/types

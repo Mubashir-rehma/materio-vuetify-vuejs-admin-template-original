@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileConnections } from '@db-types/pages/profile/type'
+import type { ProfileConnections } from '@db/pages/profile/types'
 
 interface Props {
   connectionsData: ProfileConnections[]
@@ -75,3 +75,4 @@ const moreList = [
   --v-card-list-gap: 14px;
 }
 </style>
+@/plugins/fake-api/handlers/pages/profile/types

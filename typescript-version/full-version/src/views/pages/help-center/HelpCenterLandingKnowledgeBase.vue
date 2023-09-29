@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HelpCenterAllCategoryArticles } from '@db-types/pages/help-center/type'
+import type { HelpCenterAllCategoryArticles } from '@db/pages/help-center/types'
 
 interface Props {
   categories: HelpCenterAllCategoryArticles[]
@@ -73,3 +73,4 @@ const props = defineProps<Props>()
   --v-card-list-gap: 0.5rem;
 }
 </style>
+@/plugins/fake-api/handlers/pages/help-center/types

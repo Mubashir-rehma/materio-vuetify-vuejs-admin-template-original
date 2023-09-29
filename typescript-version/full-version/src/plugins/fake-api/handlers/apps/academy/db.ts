@@ -1,4 +1,4 @@
-import type { Course, CourseDetails } from '@db-types/apps/academy/type'
+import type { Course, CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar12 from '@images/avatars/avatar-12.png'

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Customer } from '@db-types/apps/ecommerce/type'
+import type { Customer } from '@db/apps/ecommerce/types'
 import rocketImg from '@images/eCommerce/rocket.png'
 
 const props = defineProps<Props>()
@@ -184,3 +184,4 @@ interface Props {
   --v-card-list-gap: 0.5rem;
 }
 </style>
+@/plugins/fake-api/handlers/apps/ecommerce/types

@@ -8,7 +8,7 @@ import ChatLog from '@/views/apps/chat/ChatLog.vue'
 import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSidebarContent.vue'
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
-import type { ChatContact as TypeChatContact } from '@db-types/apps/chat/type'
+import type { ChatContact as TypeChatContact } from '@db/apps/chat/types'
 
 definePage({
   meta: {
@@ -412,3 +412,4 @@ $chat-app-header-height: 68px;
   }
 }
 </style>
+@/plugins/fake-api/handlers/apps/chat/types

@@ -5,7 +5,7 @@ import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.
 import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
-import type { Email } from '@db-types/apps/email/type'
+import type { Email } from '@db/apps/email/types'
 
 definePage({
   meta: {
@@ -507,3 +507,4 @@ const refreshOpenedEmail = async () => {
   }
 }
 </style>
+@/plugins/fake-api/handlers/apps/email/types

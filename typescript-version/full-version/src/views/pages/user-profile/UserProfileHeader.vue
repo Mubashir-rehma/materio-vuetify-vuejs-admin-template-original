@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileHeader } from '@db-types/pages/profile/type'
+import type { ProfileHeader } from '@db/pages/profile/types'
 
 const profileHeaderData = ref<ProfileHeader>()
 
@@ -98,3 +98,4 @@ fetchHeaderData()
   }
 }
 </style>
+@/plugins/fake-api/handlers/pages/profile/types

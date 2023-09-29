@@ -1,4 +1,4 @@
-import type { CalendarEvent } from '@db-types/apps/calendar/type'
+import type { CalendarEvent } from '@/plugins/fake-api/handlers/apps/calendar/types'
 
 const date = new Date()
 const nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)

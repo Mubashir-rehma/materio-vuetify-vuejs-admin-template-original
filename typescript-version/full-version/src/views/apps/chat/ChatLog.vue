@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import type { ChatOut } from '@db/apps/chat/types'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
-import type { ChatOut } from '@db-types/apps/chat/type'
 
 const store = useChatStore()
 
@@ -136,3 +136,4 @@ const msgGroups = computed(() => {
   }
 }
 </style>
+@/plugins/fake-api/handlers/apps/chat/types

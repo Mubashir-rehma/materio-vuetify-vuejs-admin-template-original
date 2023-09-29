@@ -3,7 +3,7 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useChat } from './useChat'
 import ChatContact from '@/views/apps/chat/ChatContact.vue'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
-import type { ChatContact as TypeChatContact } from '@db-types/apps/chat/type'
+import type { ChatContact as TypeChatContact } from '@db/apps/chat/types'
 
 const props = defineProps<{
   search: string
@@ -121,3 +121,4 @@ const store = useChatStore()
   }
 }
 </style>
+@/plugins/fake-api/handlers/apps/chat/types

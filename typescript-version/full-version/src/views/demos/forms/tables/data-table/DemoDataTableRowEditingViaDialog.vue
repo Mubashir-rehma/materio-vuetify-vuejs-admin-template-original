@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
 import data from '@/views/demos/forms/tables/data-table/datatable'
-import type { Data } from '@db-types/pages/datatable/type'
+import type { Data } from '@db/pages/datatable/types'
 
 const editDialog = ref(false)
 const deleteDialog = ref(false)
@@ -310,3 +310,4 @@ onMounted(() => {
     </VCard>
   </VDialog>
 </template>
+@/plugins/fake-api/handlers/pages/datatable/types

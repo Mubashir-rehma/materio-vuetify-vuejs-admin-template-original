@@ -1,4 +1,4 @@
-import type { Permission } from '@db-types/apps/permission/type'
+import type { Permission } from '@/plugins/fake-api/handlers/apps/permission/types'
 
 interface DB {
   permissions: Permission[]

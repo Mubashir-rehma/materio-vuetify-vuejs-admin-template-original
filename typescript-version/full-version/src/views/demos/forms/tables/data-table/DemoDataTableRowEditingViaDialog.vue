@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import type { Data } from '@/plugins/fake-api/handlers/pages/datatable/type'
 import data from '@/views/demos/forms/tables/data-table/datatable'
+import type { Data } from '@db-types/pages/datatable/type'
 
 const editDialog = ref(false)
 const deleteDialog = ref(false)

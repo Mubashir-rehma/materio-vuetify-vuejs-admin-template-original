@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {
   HelpCenterArticlesOverview,
-} from '@/plugins/fake-api/handlers/pages/help-center/type'
+} from '@db-types/pages/help-center/type'
 
 interface Props {
   articles: HelpCenterArticlesOverview[]

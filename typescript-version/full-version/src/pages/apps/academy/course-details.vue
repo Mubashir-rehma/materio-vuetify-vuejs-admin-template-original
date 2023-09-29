@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type { CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/type';
-import { VideoPlayer } from '@videojs-player/vue';
-import 'video.js/dist/video-js.css';
+import { VideoPlayer } from '@videojs-player/vue'
+import type { CourseDetails } from '@db-types/apps/academy/type'
+import 'video.js/dist/video-js.css'
 
 const courseDetails = ref<CourseDetails>()
-
 
 const { data, error } = await useApi<CourseDetails>('/apps/academy/course-details')
 
@@ -156,7 +155,10 @@ const panelStatus = ref(0)
       md="4"
     >
       <div class="course-content">
-        <VExpansionPanels variant="accordion" v-model="panelStatus">
+        <VExpansionPanels
+          v-model="panelStatus"
+          variant="accordion"
+        >
           <VExpansionPanel
             v-for="(section, index) in courseDetails?.content"
             :key="index"

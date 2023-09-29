@@ -1,6 +1,6 @@
 import { rest } from 'msw'
-import { db } from '@/plugins/fake-api/handlers/apps/chat/db'
-import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@/plugins/fake-api/handlers/apps/chat/type'
+import { db } from '@db-types/apps/chat/db'
+import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@db-types/apps/chat/type'
 
 export const handlerAppsChat = [
   rest.get(('/api/apps/chat/chats-and-contacts'), (req, res, ctx) => {

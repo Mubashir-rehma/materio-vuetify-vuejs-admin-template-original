@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TeamsTab } from '@/plugins/fake-api/handlers/pages/profile/type'
+import type { TeamsTab } from '@db-types/pages/profile/type'
 
 const router = useRoute('pages-user-profile-tab')
 const teamData = ref<TeamsTab[]>([])

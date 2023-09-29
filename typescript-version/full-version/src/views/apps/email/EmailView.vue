@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Email } from '@/plugins/fake-api/handlers/apps/email/type'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
+import type { Email } from '@db-types/apps/email/type'
 
 interface Props {
   email: Email | null

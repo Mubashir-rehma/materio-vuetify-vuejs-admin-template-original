@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HelpCenterAllCategoryArticles, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/type'
+import type { HelpCenterAllCategoryArticles, HelpCenterArticlesOverview } from '@db-types/pages/help-center/type'
 
 import Footer from '@/views/front-pages/front-page-footer.vue'
 import Navbar from '@/views/front-pages/front-page-navbar.vue'

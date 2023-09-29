@@ -1,8 +1,8 @@
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
 import { rest } from 'msw'
+import { db } from '@db-types/apps/permission/db'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
-import { db } from '@/plugins/fake-api/handlers/apps/permission/db'
 
 export const handlerAppsPermission = [
   // 👉 Get Permission List

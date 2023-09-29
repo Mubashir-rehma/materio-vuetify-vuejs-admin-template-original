@@ -1,8 +1,8 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
+import { db } from '@db-types/apps/calendar/db'
 import { genId } from '@/plugins/fake-api/utils/genId'
-import { db } from '@/plugins/fake-api/handlers/apps/calendar/db'
 
 export const handlerAppsCalendar = [
 

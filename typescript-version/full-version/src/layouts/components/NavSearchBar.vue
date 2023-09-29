@@ -2,7 +2,7 @@
 import Shepherd from 'shepherd.js'
 import { withQuery } from 'ufo'
 import type { RouteLocationRaw } from 'vue-router'
-import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/type'
+import type { SearchResults } from '@db-types/app-bar-search/type'
 
 interface Suggestion {
   icon: string

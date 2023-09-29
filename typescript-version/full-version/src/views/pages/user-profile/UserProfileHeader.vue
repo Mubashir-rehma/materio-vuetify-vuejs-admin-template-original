@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileHeader } from '@/plugins/fake-api/handlers/pages/profile/type'
+import type { ProfileHeader } from '@db-types/pages/profile/type'
 
 const profileHeaderData = ref<ProfileHeader>()
 

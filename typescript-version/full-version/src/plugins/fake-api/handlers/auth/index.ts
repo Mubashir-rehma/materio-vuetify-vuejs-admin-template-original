@@ -1,6 +1,6 @@
 import { rest } from 'msw'
-import { db } from '@/plugins/fake-api/handlers/auth/db'
-import type { UserOut } from '@/plugins/fake-api/handlers/auth/type'
+import { db } from '@db-types/auth/db'
+import type { UserOut } from '@db-types/auth/type'
 
 export const handlerAuth = [
 

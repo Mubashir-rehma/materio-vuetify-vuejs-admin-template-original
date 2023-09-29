@@ -39,6 +39,9 @@
       ],
       "@validators": [
         "./src/@core/utils/validators"
+      ],
+      "@db-types/*": [
+        "./src/plugins/fake-api/handlers/*"
       ]
     },
     "lib": [

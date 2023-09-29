@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileTeamsTech } from '@/plugins/fake-api/handlers/pages/profile/type'
+import type { ProfileTeamsTech } from '@db-types/pages/profile/type'
 
 interface Props {
   teamsData: ProfileTeamsTech[]

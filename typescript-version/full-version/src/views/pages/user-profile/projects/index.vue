@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProjectsTab } from '@/plugins/fake-api/handlers/pages/profile/type'
+import type { ProjectsTab } from '@db-types/pages/profile/type'
 
 const router = useRoute('pages-user-profile-tab')
 const projectData = ref<ProjectsTab[]>([])

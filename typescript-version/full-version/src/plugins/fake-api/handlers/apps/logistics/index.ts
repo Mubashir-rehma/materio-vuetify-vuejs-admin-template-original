@@ -1,8 +1,8 @@
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
 import { rest } from 'msw'
+import { db } from '@db-types/apps/logistics/db'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
-import { db } from '@/plugins/fake-api/handlers/apps/logistics/db'
 
 export const handlerAppLogistics = [
   rest.get(('/api/apps/logistics/vehicles'), (req, res, ctx) => {

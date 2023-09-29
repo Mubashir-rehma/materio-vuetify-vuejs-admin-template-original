@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Customer } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
+import type { Customer } from '@db-types/apps/ecommerce/type'
 import rocketImg from '@images/eCommerce/rocket.png'
 
 const props = defineProps<Props>()

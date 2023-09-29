@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { Customer } from '@/plugins/fake-api/handlers/apps/ecommerce/type'
 import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
 import CustomerBioPanel from '@/views/apps/ecommerce/customer/view/CustomerBioPanel.vue'
 import CustomerTabAddressAndBilling from '@/views/apps/ecommerce/customer/view/CustomerTabAddressAndBilling.vue'
 import CustomerTabNotification from '@/views/apps/ecommerce/customer/view/CustomerTabNotification.vue'
 import CustomerTabOverview from '@/views/apps/ecommerce/customer/view/CustomerTabOverview.vue'
 import CustomerTabSecurity from '@/views/apps/ecommerce/customer/view/CustomerTabSecurity.vue'
+import type { Customer } from '@db-types/apps/ecommerce/type'
 
 const route = useRoute('apps-ecommerce-customer-details-id')
 const customerData = ref<Customer>()

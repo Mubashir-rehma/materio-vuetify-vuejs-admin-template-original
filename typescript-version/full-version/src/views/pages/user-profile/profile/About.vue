@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileTab } from '@/plugins/fake-api/handlers/pages/profile/type'
+import type { ProfileTab } from '@db-types/pages/profile/type'
 
 interface Props {
   data: ProfileTab

@@ -1,4 +1,4 @@
-import type { FaqCategory } from '@/plugins/fake-api/handlers/pages/faq/type'
+import type { FaqCategory } from '@db-types/pages/faq/type'
 
 interface DB {
   faqs: FaqCategory[]

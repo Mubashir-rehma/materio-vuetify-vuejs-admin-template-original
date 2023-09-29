@@ -1,8 +1,8 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
 import { rest } from 'msw'
+import { db } from '@db-types/apps/academy/db'
 import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
-import { db } from '@/plugins/fake-api/handlers/apps/academy/db'
 
 export const handlerAppsAcademy = [
 

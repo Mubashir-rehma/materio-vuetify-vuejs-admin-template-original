@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VDataTable } from 'vuetify/labs/VDataTable'
-import type { Data } from '@/plugins/fake-api/handlers/pages/datatable/type'
 import data from '@/views/demos/forms/tables/data-table/datatable'
+import type { Data } from '@db-types/pages/datatable/type'
 
 const userList = ref<Data[]>([])
 const options = ref({ page: 1, itemsPerPage: 5, sortBy: [''], sortDesc: [false] })

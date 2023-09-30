@@ -1,5 +1,4 @@
 import { useStorage } from '@vueuse/core'
-import type { MaybeRef } from '@vueuse/shared'
 import type { Ref } from 'vue'
 import { AppContentLayoutNav, NavbarType } from '../enums'
 import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
@@ -86,12 +85,11 @@ export const useLayouts = () => {
     },
   })
 
-  const isLessThanOverlayNavBreakpoint = computed(() => {
-    return (windowWidth: MaybeRef<number>) => unref(windowWidth) < config.app.overlayNavFromBreakpoint
-  })
+  const isLessThanOverlayNavBreakpoint = useMediaQuery(`(max-width: ${config.app.overlayNavFromBreakpoint}px)`)
 
-  const _layoutClasses = computed(() => (windowWidth: MaybeRef<number>, windowScrollY: MaybeRef<number>) => {
+  const _layoutClasses = computed(() => {
     const route = useRoute()
+    const { y: windowScrollY } = useWindowScroll()
 
     return [
       `layout-nav-type-${appContentLayoutNav.value}`,
@@ -101,17 +99,17 @@ export const useLayouts = () => {
         'layout-vertical-nav-collapsed':
           isVerticalNavCollapsed.value
           && appContentLayoutNav.value === 'vertical'
-          && !isLessThanOverlayNavBreakpoint.value(windowWidth),
+          && !isLessThanOverlayNavBreakpoint.value,
       },
       { [`horizontal-nav-${horizontalNavType.value}`]: appContentLayoutNav.value === 'horizontal' },
       `layout-content-width-${appContentWidth.value}`,
-      { 'layout-overlay-nav': isLessThanOverlayNavBreakpoint.value(windowWidth) },
+      { 'layout-overlay-nav': isLessThanOverlayNavBreakpoint.value },
       { 'window-scrolled': unref(windowScrollY) },
       route.meta.layoutWrapperClasses ? route.meta.layoutWrapperClasses : null,
     ]
   })
 
-  const switchToVerticalNavOnLtOverlayNavBreakpoint = (windowWidth: MaybeRef<number>) => {
+  const switchToVerticalNavOnLtOverlayNavBreakpoint = () => {
     /*
       ℹ️ This is flag will hold nav type need to render when switching between lgAndUp from mdAndDown window width
 
@@ -134,7 +132,7 @@ export const useLayouts = () => {
       For this we need to update the `lgAndUpNav` value if screen is `lgAndUp`
     */
     watch(appContentLayoutNav, value => {
-      if (!isLessThanOverlayNavBreakpoint.value(windowWidth))
+      if (!isLessThanOverlayNavBreakpoint.value)
         lgAndUpNav.value = value
     })
 
@@ -143,7 +141,7 @@ export const useLayouts = () => {
       If it's `mdAndDown` => We will use vertical nav no matter what previous nav type was
       Or if it's `lgAndUp` we need to switch back to `lgAndUp` nav type. For this we will tracker property `lgAndUpNav`
     */
-    watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth), val => {
+    watch(isLessThanOverlayNavBreakpoint, val => {
       if (!val)
         appContentLayoutNav.value = lgAndUpNav.value
       else
@@ -161,10 +159,10 @@ export const useLayouts = () => {
         we are using this in `VerticalNav.vue` component which provide it and I guess because
         same component is providing & injecting we are getting undefined error
   */
-  const isVerticalNavMini = (windowWidth: MaybeRef<number>, isVerticalNavHovered: Ref<boolean> | null = null) => {
+  const isVerticalNavMini = (isVerticalNavHovered: Ref<boolean> | null = null) => {
     const isVerticalNavHoveredLocal = isVerticalNavHovered || inject(injectionKeyIsVerticalNavHovered) || ref(false)
 
-    return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value && !isLessThanOverlayNavBreakpoint.value(unref(windowWidth)))
+    return computed(() => isVerticalNavCollapsed.value && !isVerticalNavHoveredLocal.value && !isLessThanOverlayNavBreakpoint.value)
   }
 
   const dynamicI18nProps = (key: string, tag = 'span') => {

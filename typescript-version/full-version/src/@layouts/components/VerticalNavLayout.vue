@@ -16,7 +16,6 @@ export default defineComponent({
     },
   },
   setup(props, { slots }) {
-    const { y: windowScrollY } = useWindowScroll()
     const { width: windowWidth } = useWindowSize()
     const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint, isNavbarBlurEnabled } = useLayouts()
 
@@ -39,8 +38,8 @@ export default defineComponent({
     // })
 
     // ℹ️ Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
-    watch(windowWidth, value => {
-      if (!isLessThanOverlayNavBreakpoint.value(value) && isLayoutOverlayVisible.value)
+    watch(windowWidth, () => {
+      if (!isLessThanOverlayNavBreakpoint.value && isLayoutOverlayVisible.value)
         isLayoutOverlayVisible.value = false
     })
 
@@ -105,7 +104,7 @@ export default defineComponent({
 
       return h(
         'div',
-        { class: ['layout-wrapper', ...layoutClasses.value(windowWidth.value, windowScrollY.value)] },
+        { class: ['layout-wrapper', ...layoutClasses.value] },
         [
           verticalNavWrapper ? h(verticalNavWrapper, verticalNavWrapperProps, { default: () => verticalNav }) : verticalNav,
           h(
@@ -141,6 +140,10 @@ export default defineComponent({
     min-block-size: 100dvh;
     transition: padding-inline-start 0.2s ease-in-out;
     will-change: padding-inline-start;
+
+    @media screen and (min-width: 1280px) {
+      padding-inline-start: variables.$layout-vertical-nav-width;
+    }
   }
 
   .layout-navbar {
@@ -194,10 +197,6 @@ export default defineComponent({
       opacity: 1;
       pointer-events: auto;
     }
-  }
-
-  &:not(.layout-overlay-nav) .layout-content-wrapper {
-    padding-inline-start: variables.$layout-vertical-nav-width;
   }
 
   // Adjust right column pl when vertical nav is collapsed

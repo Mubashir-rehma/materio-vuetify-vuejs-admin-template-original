@@ -21,15 +21,11 @@ const props = withDefaults(defineProps<Props>(), {
 
 const refNav = ref()
 
-const { width: windowWidth } = useWindowSize()
-
 const isHovered = useElementHover(refNav)
 
 provide(injectionKeyIsVerticalNavHovered, isHovered)
 
-const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isVerticalNavMini, isAppRtl } = useLayouts()
-
-const hideTitleAndIcon = isVerticalNavMini(windowWidth, isHovered)
+const { isVerticalNavCollapsed: isCollapsed, isLessThanOverlayNavBreakpoint, isAppRtl, isVerticalNavMini } = useLayouts()
 
 const resolveNavItemComponent = (item: NavLink | NavSectionTitle | NavGroup): unknown => {
   if ('heading' in item)
@@ -56,6 +52,8 @@ const updateIsVerticalNavScrolled = (val: boolean) => isVerticalNavScrolled.valu
 const handleNavScroll = (evt: Event) => {
   isVerticalNavScrolled.value = (evt.target as HTMLElement).scrollTop > 0
 }
+
+const hideTitleAndIcon = isVerticalNavMini(isHovered)
 </script>
 
 <template>
@@ -65,7 +63,7 @@ const handleNavScroll = (evt: Event) => {
     class="layout-vertical-nav"
     :class="[
       {
-        'overlay-nav': isLessThanOverlayNavBreakpoint(windowWidth),
+        'overlay-nav': isLessThanOverlayNavBreakpoint,
         'hovered': isHovered,
         'visible': isOverlayNavActive,
         'scrolled': isVerticalNavScrolled,
@@ -94,22 +92,23 @@ const handleNavScroll = (evt: Event) => {
         <!-- Show toggle collapsible in >md and close button in <md -->
         <Component
           :is="config.app.iconRenderer || 'div'"
-          v-show="isCollapsed && !hideTitleAndIcon && !isLessThanOverlayNavBreakpoint(windowWidth)"
-          class="header-action"
+          v-show="isCollapsed"
+          class="header-action d-none nav-unpin"
+          :class="isCollapsed && 'd-lg-block'"
           v-bind="config.icons.verticalNavUnPinned"
           @click="isCollapsed = !isCollapsed"
         />
         <Component
           :is="config.app.iconRenderer || 'div'"
-          v-show="!isCollapsed && !hideTitleAndIcon && !isLessThanOverlayNavBreakpoint(windowWidth)"
-          class="header-action"
+          v-show="!isCollapsed"
+          class="header-action d-none nav-pin"
+          :class="!isCollapsed && 'd-lg-block'"
           v-bind="config.icons.verticalNavPinned"
           @click="isCollapsed = !isCollapsed"
         />
         <Component
           :is="config.app.iconRenderer || 'div'"
-          v-show="isLessThanOverlayNavBreakpoint(windowWidth)"
-          class="header-action"
+          class="header-action d-lg-none"
           v-bind="config.icons.close"
           @click="toggleIsOverlayNavActive(false)"
         />
@@ -178,6 +177,15 @@ const handleNavScroll = (evt: Event) => {
 
     .header-action {
       cursor: pointer;
+
+      @at-root {
+        #{variables.$selector-vertical-nav-mini} .nav-header .header-action {
+          &.nav-pin,
+          &.nav-unpin {
+            display: none !important;
+          }
+        }
+      }
     }
   }
 
@@ -208,9 +216,11 @@ const handleNavScroll = (evt: Event) => {
       inline-size: variables.$layout-vertical-nav-collapsed-width;
     }
   }
+}
 
-  // 👉 Overlay nav
-  &.overlay-nav {
+// Small screen vertical nav transition
+@media (max-width:1279px) {
+  .layout-vertical-nav {
     &:not(.visible) {
       transform: translateX(-#{variables.$layout-vertical-nav-width});
 
@@ -218,12 +228,7 @@ const handleNavScroll = (evt: Event) => {
         transform: translateX(variables.$layout-vertical-nav-width);
       }
     }
-  }
-}
 
-// small screen vertical nav transition
-@media (max-width:1279px) {
-  .layout-vertical-nav {
     transition: transform 0.25s ease-in-out;
   }
 }

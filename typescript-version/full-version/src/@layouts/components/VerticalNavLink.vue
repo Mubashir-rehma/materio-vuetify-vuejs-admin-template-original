@@ -9,10 +9,9 @@ defineProps<{
   item: NavLink
 }>()
 
-const { width: windowWidth } = useWindowSize()
 const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
 
-const hideTitleAndBadge = isVerticalNavMini(windowWidth)
+const hideTitleAndBadge = isVerticalNavMini()
 </script>
 
 <template>

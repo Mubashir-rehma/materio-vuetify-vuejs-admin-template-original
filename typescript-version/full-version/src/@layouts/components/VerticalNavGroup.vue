@@ -20,7 +20,7 @@ const route = useRoute()
 const router = useRouter()
 const { width: windowWidth } = useWindowSize()
 const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
-const hideTitleAndBadge = isVerticalNavMini(windowWidth)
+const hideTitleAndBadge = isVerticalNavMini()
 
 /*
   ℹ️ We provided default value `ref(false)` because inject will return `T | undefined`
@@ -80,7 +80,7 @@ watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
   // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
-  isGroupOpen.value = isActive && !isVerticalNavMini(windowWidth, isVerticalNavHovered).value
+  isGroupOpen.value = isActive && !isVerticalNavMini(isVerticalNavHovered).value
   isGroupActive.value = isActive
 }, { immediate: true })
 
@@ -143,7 +143,7 @@ watch(openGroups, val => {
 }, { deep: true })
 
 // ℹ️ Previously instead of below watcher we were using two individual watcher for `isVerticalNavHovered`, `isVerticalNavCollapsed` & `isLessThanOverlayNavBreakpoint`
-watch(isVerticalNavMini(windowWidth, isVerticalNavHovered), val => {
+watch(isVerticalNavMini(isVerticalNavHovered), val => {
   isGroupOpen.value = val ? false : isGroupActive.value
 })
 
@@ -202,6 +202,7 @@ const isMounted = useMounted()
       <Component
         :is="isMounted ? TransitionGroup : 'div'"
         name="transition-slide-x"
+        v-bind="!isMounted ? { class: 'd-flex align-center flex-grow-1' } : undefined"
       >
         <!-- 👉 Title -->
         <Component

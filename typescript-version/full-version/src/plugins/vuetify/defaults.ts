@@ -17,6 +17,10 @@ export default {
     // ℹ️ Remove after next release
     variant: 'flat',
   },
+
+  // VImg: {
+  //   eager: true,
+  // },
   VBadge: {
     // set v-badge default color to primary
     color: 'primary',

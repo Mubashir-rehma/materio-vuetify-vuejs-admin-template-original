@@ -10,16 +10,13 @@ defineProps<{
   navItems: HorizontalNavItems
 }>()
 
-const { y: windowScrollY } = useWindowScroll()
-const { width: windowWidth } = useWindowSize()
-
 const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 </script>
 
 <template>
   <div
     class="layout-wrapper"
-    :class="layoutClasses(windowWidth, windowScrollY)"
+    :class="layoutClasses"
   >
     <div
       class="layout-navbar-and-nav-container"

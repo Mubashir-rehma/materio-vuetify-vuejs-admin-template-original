@@ -3,19 +3,15 @@ import type { ProfileHeader } from '@db/pages/profile/types';
 
 const profileHeaderData = ref<ProfileHeader>()
 
-const fetchHeaderData = async () => {
-  const { data, error } = await useApi<ProfileHeader>('/pages/profile/header')
+const { data, error } = await useApi<ProfileHeader>('/pages/profile/header')
 
-  if (error.value) {
-    console.log(error.value)
-  }
-  else {
-    if (data.value)
-      profileHeaderData.value = data.value
-  }
+if (error.value) {
+  console.log(error.value)
 }
-
-fetchHeaderData()
+else {
+  if (data.value)
+    profileHeaderData.value = data.value
+}
 </script>
 
 <template>

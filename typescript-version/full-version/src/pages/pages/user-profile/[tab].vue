@@ -36,7 +36,6 @@ const tabs = [
       <VTab
         v-for="item in tabs"
         :key="item.icon"
-        :value="item.tab"
         :to="{ name: 'pages-user-profile-tab', params: { tab: item.tab } }"
       >
         <VIcon

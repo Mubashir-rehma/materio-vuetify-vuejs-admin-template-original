@@ -412,4 +412,3 @@ $chat-app-header-height: 68px;
   }
 }
 </style>
-@/plugins/fake-api/handlers/apps/chat/types

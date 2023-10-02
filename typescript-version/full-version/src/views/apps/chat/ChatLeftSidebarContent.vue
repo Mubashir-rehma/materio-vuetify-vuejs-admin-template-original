@@ -121,4 +121,3 @@ const store = useChatStore()
   }
 }
 </style>
-@/plugins/fake-api/handlers/apps/chat/types

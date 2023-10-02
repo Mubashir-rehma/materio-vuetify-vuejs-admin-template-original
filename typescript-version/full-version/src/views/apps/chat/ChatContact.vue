@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { ChatContact, ChatContactWithChat } from '@db/apps/chat/types'
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
+import type { ChatContact, ChatContactWithChat } from '@db/apps/chat/types'
 
 interface Props {
   isChatContact?: boolean
@@ -103,4 +103,3 @@ const isChatContactActive = computed(() => {
   }
 }
 </style>
-@/plugins/fake-api/handlers/apps/chat/types

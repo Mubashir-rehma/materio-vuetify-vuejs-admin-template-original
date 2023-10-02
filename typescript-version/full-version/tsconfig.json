@@ -45,7 +45,7 @@
       ],
       "@api-utils/*": [
         "./src/plugins/fake-api/utils/*"
-      ],
+      ]
     },
     "lib": [
       "esnext",

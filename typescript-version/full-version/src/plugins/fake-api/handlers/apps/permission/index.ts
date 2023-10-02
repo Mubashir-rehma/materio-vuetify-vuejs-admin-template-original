@@ -1,8 +1,8 @@
-import { db } from '@db/apps/permission/db'
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
 import { rest } from 'msw'
-import { paginateArray } from '@/plugins/fake-api/utils/paginateArray'
+import { db } from '@db/apps/permission/db'
+import { paginateArray } from '@api-utils/paginateArray'
 
 export const handlerAppsPermission = [
   // 👉 Get Permission List

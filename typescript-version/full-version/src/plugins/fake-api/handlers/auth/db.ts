@@ -1,7 +1,5 @@
 import type { User } from '@/plugins/fake-api/handlers/auth/types'
 
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar2 from '@images/avatars/avatar-2.png'
 
 interface DB {
   userTokens: string[]
@@ -31,7 +29,7 @@ export const db: DB = {
       username: 'johndoe',
       password: 'admin',
 
-      avatar: avatar1,
+      avatar: '/images/avatars/avatar-1.png',
       email: 'admin@demo.com',
       role: 'admin',
       abilityRules: [
@@ -47,7 +45,7 @@ export const db: DB = {
       username: 'janedoe',
       password: 'client',
 
-      avatar: avatar2,
+      avatar: '/images/avatars/avatar-2.png',
       email: 'client@demo.com',
       role: 'client',
       abilityRules: [

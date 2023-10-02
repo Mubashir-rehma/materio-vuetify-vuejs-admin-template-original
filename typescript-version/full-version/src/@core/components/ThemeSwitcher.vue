@@ -19,7 +19,7 @@ watch(theme, val => {
 </script>
 
 <template>
-  <IconBtn color="rgb(var(--v-theme-on-surface))">
+  <IconBtn color="rgba(var(--v-theme-on-surface), var(--text-medium-emphasis))">
     <VIcon :icon="props.themes.find(t => t.name === currentThemeName)?.icon" />
     <VTooltip
       activator="parent"

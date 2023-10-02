@@ -54,7 +54,10 @@ const login = async () => {
     useCookie('accessToken').value = accessToken
 
     // Redirect to `to` query if exist or redirect to index route
-    router.replace(route.query.to ? String(route.query.to) : '/')
+    // ❗ nextTick is required to wait for DOM updates and later redirect
+    await nextTick(() => {
+      router.replace(route.query.to ? String(route.query.to) : '/')
+    })
   }
   catch (err) {
     console.error(err)

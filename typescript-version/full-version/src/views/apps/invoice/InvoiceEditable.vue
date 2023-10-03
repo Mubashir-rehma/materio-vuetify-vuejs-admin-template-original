@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import InvoiceProductEdit from './InvoiceProductEdit.vue'
-import type { InvoiceData, PurchasedProduct } from './types'
 import type { Client } from '@db/apps/invoice/types'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+import InvoiceProductEdit from './InvoiceProductEdit.vue'
+import type { InvoiceData, PurchasedProduct } from './types'
 
 interface Props {
   data: InvoiceData
@@ -338,4 +338,4 @@ const removeProduct = (id: number) => {
     </VCardText>
   </VCard>
 </template>
-@/plugins/fake-api/handlers/apps/invoice/types
+

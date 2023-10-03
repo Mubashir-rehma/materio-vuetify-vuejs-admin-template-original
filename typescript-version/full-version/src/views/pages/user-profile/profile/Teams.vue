@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileTeamsTech } from '@db/pages/profile/types'
+import type { ProfileTeamsTech } from '@db/pages/profile/types';
 
 interface Props {
   teamsData: ProfileTeamsTech[]
@@ -71,4 +71,3 @@ const moreList = [
   --v-card-list-gap: 14px;
 }
 </style>
-@/plugins/fake-api/handlers/pages/profile/types

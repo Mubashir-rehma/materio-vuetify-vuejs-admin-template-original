@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
-import type { UserProperties } from '@db/apps/users/types'
+import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue';
+import type { UserProperties } from '@db/apps/users/types';
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 // 👉 Store
 const searchQuery = ref('')
@@ -384,4 +384,3 @@ const widgetData = ref([
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 </style>
-@/plugins/fake-api/handlers/apps/users/types

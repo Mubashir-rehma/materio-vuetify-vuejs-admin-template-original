@@ -105,4 +105,3 @@ const apiData = faqData.value
   }
 }
 </style>
-@/plugins/fake-api/handlers/pages/help-center/types

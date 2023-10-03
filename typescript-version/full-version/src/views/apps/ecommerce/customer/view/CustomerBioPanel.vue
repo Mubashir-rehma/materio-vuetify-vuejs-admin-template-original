@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Customer } from '@db/apps/ecommerce/types'
-import rocketImg from '@images/eCommerce/rocket.png'
+import type { Customer } from '@db/apps/ecommerce/types';
+import rocketImg from '@images/eCommerce/rocket.png';
 
 const props = defineProps<Props>()
 const isUserInfoEditDialogVisible = ref(false)
@@ -184,4 +184,4 @@ interface Props {
   --v-card-list-gap: 0.5rem;
 }
 </style>
-@/plugins/fake-api/handlers/apps/ecommerce/types
+

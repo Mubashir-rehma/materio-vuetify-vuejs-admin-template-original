@@ -8,12 +8,13 @@ import UserTeam from '@/views/pages/user-profile/team/index.vue'
 definePage({
   meta: {
     navActiveLink: 'pages-user-profile-tab',
+    key:'tab', 
   },
 })
 
 const route = useRoute('pages-user-profile-tab')
 
-const activeTab = ref(route.params.tab)
+const activeTab = computed(() => route.params.tab)
 
 // tabs
 const tabs = [
@@ -36,6 +37,7 @@ const tabs = [
       <VTab
         v-for="item in tabs"
         :key="item.icon"
+        :value="item.tab"
         :to="{ name: 'pages-user-profile-tab', params: { tab: item.tab } }"
       >
         <VIcon

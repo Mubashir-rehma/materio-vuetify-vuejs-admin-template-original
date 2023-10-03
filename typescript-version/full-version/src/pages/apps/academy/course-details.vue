@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VideoPlayer } from '@videojs-player/vue'
-import type { CourseDetails } from '@db/apps/academy/types'
-import 'video.js/dist/video-js.css'
+import type { CourseDetails } from '@db/apps/academy/types';
+import { VideoPlayer } from '@videojs-player/vue';
+import 'video.js/dist/video-js.css';
 
 const courseDetails = ref<CourseDetails>()
 
@@ -211,4 +211,3 @@ const panelStatus = ref(0)
   inset-block-start: 4rem;
 }
 </style>
-@/plugins/fake-api/handlers/apps/academy/types

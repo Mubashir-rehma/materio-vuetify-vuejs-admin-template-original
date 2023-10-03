@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
-import { useEmail } from '@/views/apps/email/useEmail'
-import type { Email } from '@db/apps/email/types'
+import type { MoveEmailToAction } from '@/views/apps/email/useEmail';
+import { useEmail } from '@/views/apps/email/useEmail';
+import type { Email } from '@db/apps/email/types';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 interface Props {
   email: Email | null
@@ -336,4 +336,4 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
   }
 }
 </style>
-@/plugins/fake-api/handlers/apps/email/types
+

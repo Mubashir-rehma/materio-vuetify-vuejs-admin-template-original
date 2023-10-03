@@ -17,7 +17,6 @@ interface Emit {
   (e: 'update:loading', loading: boolean): void
 }
 
-// inherit Attribute make false
 defineOptions({
   inheritAttrs: false,
 })

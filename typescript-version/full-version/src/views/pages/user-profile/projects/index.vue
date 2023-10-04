@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProjectsTab } from '@db/pages/profile/types'
+import type { ProjectsTab } from '@db/pages/profile/types';
 
 const router = useRoute('pages-user-profile-tab')
 const projectData = ref<ProjectsTab[]>([])
@@ -139,4 +139,3 @@ const moreList = [
     </VCol>
   </VRow>
 </template>
-@/plugins/fake-api/handlers/pages/profile/types

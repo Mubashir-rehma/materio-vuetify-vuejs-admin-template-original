@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import ComposeDialog from '@/views/apps/email/ComposeDialog.vue'
 import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.vue'
 import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import type { Email } from '@db/apps/email/types'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 definePage({
   meta: {
@@ -507,4 +507,3 @@ const refreshOpenedEmail = async () => {
   }
 }
 </style>
-@/plugins/fake-api/handlers/apps/email/types

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {
-  HelpCenterArticlesOverview,
-} from '@db/pages/help-center/types'
+HelpCenterArticlesOverview,
+} from '@db/pages/help-center/types';
 
 interface Props {
   articles: HelpCenterArticlesOverview[]
@@ -55,4 +55,3 @@ const props = defineProps<Props>()
     </VCol>
   </VRow>
 </template>
-@/plugins/fake-api/handlers/pages/help-center/types

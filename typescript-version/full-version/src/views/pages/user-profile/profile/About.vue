@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileTab } from '@db/pages/profile/types'
+import type { ProfileTab } from '@db/pages/profile/types';
 
 interface Props {
   data: ProfileTab
@@ -115,4 +115,3 @@ const props = defineProps<Props>()
   --v-card-list-gap: 16px;
 }
 </style>
-@/plugins/fake-api/handlers/pages/profile/types

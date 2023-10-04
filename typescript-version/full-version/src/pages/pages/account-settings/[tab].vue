@@ -7,7 +7,7 @@ import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSetti
 
 const route = useRoute('pages-account-settings-tab')
 
-const activeTab = ref(route.params.tab)
+const activeTab = computed(() => route.params.tab)
 
 // tabs
 const tabs = [
@@ -21,6 +21,7 @@ const tabs = [
 definePage({
   meta: {
     navActiveLink: 'pages-account-settings-tab',
+    key:'tab',
   },
 })
 </script>
@@ -31,6 +32,7 @@ definePage({
       <VTab
         v-for="item in tabs"
         :key="item.icon"
+        :value="item.tab"
         :to="{ name: 'pages-account-settings-tab', params: { tab: item.tab } }"
       >
         <VIcon

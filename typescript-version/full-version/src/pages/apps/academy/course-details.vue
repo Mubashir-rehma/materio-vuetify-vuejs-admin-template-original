@@ -190,10 +190,12 @@ const panelStatus = ref(0)
                       :model-value="topic.isCompleted"
                     />
                   </template>
-                  <VListItemTitle class="text-high-emphasis font-weight-medium">
+                  <VListItemTitle class="text-body-1 font-weight-medium">
                     {{ topic.title }}
                   </VListItemTitle>
-                  <VListItemSubtitle>{{ topic.time }}</VListItemSubtitle>
+                  <VListItemSubtitle>
+                    {{ topic.time }}
+                  </VListItemSubtitle>
                 </VListItem>
               </VList>
             </template>
@@ -211,4 +213,3 @@ const panelStatus = ref(0)
   inset-block-start: 4rem;
 }
 </style>
-@/plugins/fake-api/handlers/apps/academy/types

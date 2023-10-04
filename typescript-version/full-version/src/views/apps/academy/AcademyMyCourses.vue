@@ -131,7 +131,7 @@ const resolveChipColor = (tags: string) => {
                   <h6 class="text-h6">
                     <RouterLink
                       :to="{ name: 'apps-academy-course-details' }"
-                      class="text-high-emphasis"
+                      class="course-title"
                     >
                       {{ course.courseTitle }}
                     </RouterLink>
@@ -215,3 +215,11 @@ const resolveChipColor = (tags: string) => {
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.course-title{
+  &:not(:hover){
+    color: rgba(var(--v-theme-on-surface), var(--v-text-high-emphasis))
+  }
+}
+</style>

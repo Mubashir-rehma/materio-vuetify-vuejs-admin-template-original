@@ -338,4 +338,3 @@ const removeProduct = (id: number) => {
     </VCardText>
   </VCard>
 </template>
-@/plugins/fake-api/handlers/apps/invoice/types

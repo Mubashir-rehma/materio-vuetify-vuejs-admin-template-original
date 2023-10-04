@@ -102,13 +102,13 @@ const printInvoice = () => {
               <!-- 👉 Issue Date -->
               <p class="mb-2">
                 <span>Date Issued: </span>
-                <span>{{ invoice.issuedDate }}</span>
+                <span>{{ new Date(invoice.issuedDate).toLocaleDateString('en-GB') }}</span>
               </p>
 
               <!-- 👉 Due Date -->
               <p class="mb-2">
                 <span>Due Date: </span>
-                <span>{{ invoice.dueDate }}</span>
+                <span>{{ new Date(invoice.dueDate).toLocaleDateString('en-GB') }}</span>
               </p>
             </div>
           </VCardText>

@@ -52,7 +52,7 @@ export const handlerAppsInvoice = [
       invoice => (
         (
           invoice.client.name.toLowerCase().includes(queryLowered)
-                  || invoice.client.companyEmail.toLowerCase().includes(queryLowered)
+                  || invoice.client.companyEmail.toLowerCase().includes(queryLowered) || invoice.id.toString().includes(queryLowered)
         )
               && invoice.invoiceStatus === (status || invoice.invoiceStatus)
       ),

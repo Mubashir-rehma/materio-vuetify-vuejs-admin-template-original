@@ -2,7 +2,7 @@
 import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue'
 
 // Type: Invoice data
-import type { InvoiceData } from '@/views/apps/invoice/types'
+import type { InvoiceData, PurchasedProduct } from '@/views/apps/invoice/types'
 
 // 👉 Default Blank Data
 const invoiceData = ref<InvoiceData>({
@@ -50,6 +50,14 @@ const clientNotes = ref(false)
 const paymentStub = ref(false)
 const selectedPaymentMethod = ref('Bank Account')
 const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
+
+const addProduct = (value: PurchasedProduct) => {
+  invoiceData.value?.purchasedProducts.push(value)
+}
+
+const removeProduct = (id: number) => {
+  invoiceData.value?.purchasedProducts.splice(id, 1)
+}
 </script>
 
 <template>
@@ -59,7 +67,11 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
       cols="12"
       md="9"
     >
-      <InvoiceEditable :data="invoiceData" />
+      <InvoiceEditable
+        :data="invoiceData"
+        @push="addProduct"
+        @remove="removeProduct"
+      />
     </VCol>
 
     <!-- 👉 Right Column: Invoice Action -->

@@ -6,42 +6,36 @@ import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDra
 // Type: Invoice data
 import type { InvoiceData, PurchasedProduct } from '@/views/apps/invoice/types'
 
-// Store
-
-const route = useRoute('apps-invoice-edit-id')
-
 const invoiceData = ref<InvoiceData>()
+const route = useRoute('apps-invoice-edit-id')
 
 // 👉 fetchInvoice
 
-const fetchInvoice = async () => {
-  const data = await $api(`/apps/invoice/${route.params.id}`).catch(err => console.log(err))
+const { data: invoiceDetails } = await useApi<any>(`/apps/invoice/${route.params.id}`)
 
-  invoiceData.value = {
-    invoice: data.invoice,
-    paymentDetails: data.paymentDetails,
+invoiceData.value = {
+  invoice: invoiceDetails.value.invoice,
+  paymentDetails: invoiceDetails.value.paymentDetails,
 
-    /*
+  /*
       We are adding some extra data in response for data purpose
       Your response will contain this extra data
       Purpose is to make it more API friendly and less static as possible
     */
-    purchasedProducts: [
-      {
-        title: 'App Design',
-        cost: 24,
-        hours: 2,
-        description: 'Designed UI kit & app pages.',
-      },
-    ],
-    note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
-    paymentMethod: 'Bank Account',
-    salesperson: 'Tom Cook',
-    thanksNote: 'Thanks for your business',
-  }
-}
 
-fetchInvoice()
+  purchasedProducts: [
+    {
+      title: 'App Design',
+      cost: 24,
+      hours: 2,
+      description: 'Designed UI kit & app pages.',
+    },
+  ],
+  note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
+  paymentMethod: 'Bank Account',
+  salesperson: 'Tom Cook',
+  thanksNote: 'Thanks for your business',
+}
 
 const addProduct = (value: PurchasedProduct) => {
   invoiceData.value?.purchasedProducts.push(value)
@@ -62,9 +56,8 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
 
 <template>
   <VRow>
-    <!-- 👉 InvoiceEditable   -->
+    <!-- 👉 InvoiceEditable -->
     <VCol
-
       cols="12"
       md="9"
     >

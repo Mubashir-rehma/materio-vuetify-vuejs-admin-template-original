@@ -41,6 +41,8 @@ const checkAll = computed({
   },
 })
 // !SECTION
+
+console.log(event)
 </script>
 
 <template>

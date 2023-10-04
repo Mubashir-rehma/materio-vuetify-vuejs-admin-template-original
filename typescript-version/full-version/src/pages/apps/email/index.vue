@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import ComposeDialog from '@/views/apps/email/ComposeDialog.vue'
 import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.vue'
 import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import type { Email } from '@db/apps/email/types'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 definePage({
   meta: {
@@ -231,7 +231,7 @@ const refreshOpenedEmail = async () => {
           >
             <!-- Trash -->
             <IconBtn
-              v-show=" 'filter' in route.params && route.params.filter !== 'trashed'"
+              v-show="('filter' in route.params ? route.params.filter !== 'trashed' : true)"
               @click="handleActionClick('trash')"
             >
               <VIcon icon="mdi-delete-outline" />
@@ -244,7 +244,7 @@ const refreshOpenedEmail = async () => {
             </IconBtn>
             <!-- Mark unread/read -->
             <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
-              <VIcon :icon="isAllMarkRead ? 'tabler-mail' : 'tabler-mail-opened'" />
+              <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
               <VTooltip
                 activator="parent"
                 location="top"

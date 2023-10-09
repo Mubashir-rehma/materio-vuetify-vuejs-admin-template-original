@@ -37,13 +37,13 @@ register()
 swiper-slide {
   background-position: center;
   background-size: cover;
-  block-size: 300px;
-  inline-size: 300px;
+  block-size: 250px;
+  inline-size: 250px;
 }
 
 swiper-container {
   margin: auto;
-  block-size: 300px;
-  inline-size: 300px;
+  block-size: 250px;
+  inline-size: 250px;
 }
 </style>

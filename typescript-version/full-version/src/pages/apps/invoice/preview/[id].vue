@@ -388,7 +388,7 @@ const printInvoice = () => {
     --v-theme-on-surface: 94, 86, 105;
   }
 
-  .v-application {
+  body {
     background: none !important;
   }
 

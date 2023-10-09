@@ -69,7 +69,7 @@ const menuItems: MenuItem[] = [
     navItems: [
       { name: 'Under Maintenance', to: { name: 'pages-misc-under-maintenance' } },
       { name: 'Coming Soon', to: { name: 'pages-misc-coming-soon' } },
-      { name: 'Not Authorized', to: { path: '/pages/not-authorized' } },
+      { name: 'Not Authorized', to: { path: '/not-authorized' } },
       { name: 'Verify Email (Basic)', to: { name: 'pages-authentication-verify-email-v1' } },
       { name: 'Verify Email (Cover)', to: { name: 'pages-authentication-verify-email-v2' } },
       { name: 'Two Steps (Basic)', to: { name: 'pages-authentication-two-steps-v1' } },

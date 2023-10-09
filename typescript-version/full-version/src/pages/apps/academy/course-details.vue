@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { CourseDetails } from '@db/apps/academy/types';
-import { VideoPlayer } from '@videojs-player/vue';
-import 'video.js/dist/video-js.css';
+import { VideoPlayer } from '@videojs-player/vue'
+import type { CourseDetails } from '@db/apps/academy/types'
+import 'video.js/dist/video-js.css'
 
 const courseDetails = ref<CourseDetails>()
 
@@ -163,7 +163,7 @@ const panelStatus = ref(0)
             v-for="(section, index) in courseDetails?.content"
             :key="index"
             collapse-icon="mdi-chevron-down"
-            :expand-icon="$vuetify.locale.isRtl ? 'tabler-chevron-left' : 'tabler-chevron-right'"
+            :expand-icon="$vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'"
             :value="index"
           >
             <template #title>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
+import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue';
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const searchQuery = ref('')
 const isAddCustomerDrawerOpen = ref(false)
@@ -92,40 +92,40 @@ const totalCustomers = computed(() => customerData.value.total)
           <div class="d-flex align-center gap-x-3">
             <VAvatar
               size="34"
-              :image="item.raw.avatar"
+              :image="item.avatar"
             />
             <div class="d-flex flex-column">
               <RouterLink
-                :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: item.raw.customerId } }"
+                :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: item.customerId } }"
                 class="text-sm font-weight-medium"
               >
-                {{ item.raw.customer }}
+                {{ item.customer }}
               </RouterLink>
-              <span class="text-xs">{{ item.raw.email }}</span>
+              <span class="text-xs">{{ item.email }}</span>
             </div>
           </div>
         </template>
         <template #item.customerId="{ item }">
-          #{{ item.raw.customerId }}
+          #{{ item.customerId }}
         </template>
 
         <template #item.orders="{ item }">
-          {{ item.raw.order }}
+          {{ item.order }}
         </template>
 
         <template #item.country="{ item }">
           <div class="d-flex gap-x-2">
             <img
-              :src="item.raw.countryFlag"
+              :src="item.countryFlag"
               height="22"
               width="22"
             >
-            <span class="text-body-1">{{ item.raw.country }}</span>
+            <span class="text-body-1">{{ item.country }}</span>
           </div>
         </template>
 
         <template #item.totalSpent="{ item }">
-          <span class="text-body-1 font-weight-medium text-high-emphasis">${{ item.raw.totalSpent }}</span>
+          <span class="text-body-1 font-weight-medium text-high-emphasis">${{ item.totalSpent }}</span>
         </template>
       </VDataTableServer>
     </VCard>

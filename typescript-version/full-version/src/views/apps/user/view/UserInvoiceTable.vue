@@ -138,7 +138,7 @@ const deleteInvoice = async (id: number) => {
         <!-- id -->
         <template #item.id="{ item }">
           <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }">
-            #{{ item.raw.id }}
+            #{{ item.id }}
           </RouterLink>
         </template>
 
@@ -149,65 +149,65 @@ const deleteInvoice = async (id: number) => {
               <VAvatar
                 :size="34"
                 v-bind="props"
-                :color="resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).variant"
+                :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
                 variant="tonal"
               >
                 <VIcon
                   :size="20"
-                  :icon="resolveInvoiceStatusVariantAndIcon(item.raw.invoiceStatus).icon"
+                  :icon="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).icon"
                 />
               </VAvatar>
             </template>
             <p class="mb-0">
-              {{ item.raw.invoiceStatus }}
+              {{ item.invoiceStatus }}
             </p>
             <p class="mb-0">
-              Balance: {{ item.raw.balance }}
+              Balance: {{ item.balance }}
             </p>
             <p class="mb-0">
-              Due date: {{ item.raw.dueDate }}
+              Due date: {{ item.dueDate }}
             </p>
           </VTooltip>
         </template>
 
         <!-- Total -->
         <template #item.total="{ item }">
-          ${{ item.raw.total }}
+          ${{ item.total }}
         </template>
 
         <!-- issued Date -->
         <template #item.date="{ item }">
-          {{ item.raw.issuedDate }}
+          {{ item.issuedDate }}
         </template>
 
         <!-- Balance -->
         <template #item.balance="{ item }">
           <VChip
-            v-if="typeof ((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) === 'string'"
-            :color="resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total).chip.color"
+            v-if="typeof ((resolveInvoiceBalanceVariant(item.balance, item.total)).status) === 'string'"
+            :color="resolveInvoiceBalanceVariant(item.balance, item.total).chip.color"
           >
-            {{ (resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status }}
+            {{ (resolveInvoiceBalanceVariant(item.balance, item.total)).status }}
           </VChip>
           <span
             v-else
             class="text-sm text-high-emphasis"
           >
-            {{ Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.raw.balance, item.raw.total)).status))}` }}
+            {{ Number((resolveInvoiceBalanceVariant(item.balance, item.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.balance, item.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.balance, item.total)).status))}` }}
           </span>
         </template>
 
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <IconBtn @click="deleteInvoice(item.raw.id)">
+          <IconBtn @click="deleteInvoice(item.id)">
             <VIcon icon="mdi-delete-outline" />
           </IconBtn>
 
-          <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.raw.id } }">
+          <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
             <VIcon icon="mdi-eye-outline" />
           </IconBtn>
 
           <MoreBtn
-            :menu-list="computedMoreList(item.raw.id)"
+            :menu-list="computedMoreList(item.id)"
             item-props
           />
         </template>

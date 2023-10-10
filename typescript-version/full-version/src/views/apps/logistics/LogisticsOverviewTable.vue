@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 // Data table options
 const itemsPerPage = ref(5)
@@ -85,24 +85,24 @@ const resolveChipColor = (warning: string) => {
           class="text-body-2 text-high-emphasis font-weight-medium"
           :to="{ name: 'apps-logistics-fleet' }"
         >
-          VOL-{{ item.raw.location }}
+          VOL-{{ item.location }}
         </RouterLink>
       </template>
 
       <template #item.startRoute="{ item }">
-        {{ item.raw.startCity }}, {{ item.raw.startCountry }}
+        {{ item.startCity }}, {{ item.startCountry }}
       </template>
 
       <template #item.endRoute="{ item }">
-        {{ item.raw.endCity }}, {{ item.raw.endCountry }}
+        {{ item.endCity }}, {{ item.endCountry }}
       </template>
 
       <template #item.warnings="{ item }">
         <VChip
-          :color="resolveChipColor(item.raw.warnings)"
+          :color="resolveChipColor(item.warnings)"
           density="comfortable"
         >
-          {{ item.raw.warnings }}
+          {{ item.warnings }}
         </VChip>
       </template>
 
@@ -113,14 +113,14 @@ const resolveChipColor = (warning: string) => {
         >
           <div class="w-100">
             <VProgressLinear
-              :model-value="item.raw.progress"
+              :model-value="item.progress"
               rounded
               color="primary"
               :height="8"
             />
           </div>
           <div>
-            {{ item.raw.progress }}%
+            {{ item.progress }}%
           </div>
         </div>
       </template>

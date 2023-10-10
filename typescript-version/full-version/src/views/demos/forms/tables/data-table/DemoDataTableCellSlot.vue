@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
+import { VDataTable } from 'vuetify/labs/VDataTable';
 
-import data from '@/views/demos/forms/tables/data-table/datatable'
+import data from '@/views/demos/forms/tables/data-table/datatable';
 
 const headers = [
   { title: 'NAME', key: 'fullName' },
@@ -37,30 +37,30 @@ const resolveStatusVariant = (status: number) => {
       <div class="d-flex align-center">
         <VAvatar
           size="32"
-          :color="item.raw.avatar ? '' : 'primary'"
-          :class="item.raw.avatar ? '' : 'v-avatar-light-bg primary--text'"
-          :variant="!item.raw.avatar ? 'tonal' : undefined"
+          :color="item.avatar ? '' : 'primary'"
+          :class="item.avatar ? '' : 'v-avatar-light-bg primary--text'"
+          :variant="!item.avatar ? 'tonal' : undefined"
         >
           <VImg
-            v-if="item.raw.avatar"
-            :src="item.raw.avatar"
+            v-if="item.avatar"
+            :src="item.avatar"
           />
-          <span v-else>{{ avatarText(item.raw.fullName) }}</span>
+          <span v-else>{{ avatarText(item.fullName) }}</span>
         </VAvatar>
         <div class="d-flex flex-column ms-3">
-          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.raw.fullName }}</span>
-          <small>{{ item.raw.post }}</small>
+          <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.fullName }}</span>
+          <small>{{ item.post }}</small>
         </div>
       </div>
     </template>
 
     <template #item.status="{ item }">
       <VChip
-        :color="resolveStatusVariant(item.raw.status).color"
+        :color="resolveStatusVariant(item.status).color"
         class="font-weight-medium"
         size="small"
       >
-        {{ resolveStatusVariant(item.raw.status).text }}
+        {{ resolveStatusVariant(item.status).text }}
       </VChip>
     </template>
   </VDataTable>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
-import chrome from '@images/logos/chrome.png'
+import chrome from '@images/logos/chrome.png';
+import { VDataTable } from 'vuetify/labs/VDataTable';
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
@@ -153,11 +153,11 @@ const recentDevices = [
           <template #item.browser="{ item }">
             <div class="d-flex">
               <VAvatar
-                :image="item.raw.logo"
+                :image="item.logo"
                 :size="22"
                 class="me-3"
               />
-              {{ item.raw.browser }}
+              {{ item.browser }}
             </div>
           </template>
           <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->

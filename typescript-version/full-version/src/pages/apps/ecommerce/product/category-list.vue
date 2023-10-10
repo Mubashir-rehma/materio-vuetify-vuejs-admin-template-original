@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import ECommerceAddCategoryDrawer from '@/views/apps/ecommerce/EcommerceAddCategoryDrawer.vue'
+import { VDataTable } from 'vuetify/labs/VDataTable'
 
 import product1 from '@images/ecommerce-images/product-1.png'
 import product10 from '@images/ecommerce-images/product-10.png'
@@ -179,28 +179,28 @@ const isAddProductDrawerOpen = ref(false)
               size="38"
             >
               <img
-                :src="item.raw.image"
-                :alt="item.raw.categoryTitle"
+                :src="item.image"
+                :alt="item.categoryTitle"
                 width="38"
                 height="38"
               >
             </VAvatar>
             <div>
               <div class="text-sm text-high-emphasis font-weight-medium">
-                {{ item.raw.categoryTitle }}
+                {{ item.categoryTitle }}
               </div>
               <div class="text-caption">
-                {{ item.raw.description }}
+                {{ item.description }}
               </div>
             </div>
           </div>
         </template>
 
         <template #item.totalEarning="{ item }">
-          {{ (item.raw.totalEarning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
+          {{ (item.totalEarning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
         </template>
         <template #item.totalProduct="{ item }">
-          {{ (item.raw.totalProduct).toLocaleString() }}
+          {{ (item.totalProduct).toLocaleString() }}
         </template>
       </VDataTable>
     </VCard>

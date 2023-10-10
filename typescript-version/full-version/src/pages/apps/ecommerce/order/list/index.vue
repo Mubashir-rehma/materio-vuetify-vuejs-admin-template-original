@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
-import mastercard from '@images/cards/logo-mastercard-small.png'
-import paypal from '@images/cards/paypal-primary.png'
+import mastercard from '@images/cards/logo-mastercard-small.png';
+import paypal from '@images/cards/paypal-primary.png';
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const widgetData = ref([
   { title: 'Pending Payment', value: 56, icon: 'mdi-calendar-clock-outline' },
@@ -157,14 +157,14 @@ const deleteOrder = async (id: number) => {
       >
         <!-- Order ID -->
         <template #item.order="{ item }">
-          <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }">
-            #{{ item.raw.order }}
+          <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.order } }">
+            #{{ item.order }}
           </RouterLink>
         </template>
 
         <!-- Date -->
         <template #item.date="{ item }">
-          {{ new Date(item.raw.date).toDateString() }}
+          {{ new Date(item.date).toDateString() }}
         </template>
 
         <!-- Customers  -->
@@ -172,28 +172,28 @@ const deleteOrder = async (id: number) => {
           <div class="d-flex align-center">
             <VAvatar
               size="34"
-              :variant="!item.raw.avatar.length ? 'tonal' : undefined"
+              :variant="!item.avatar.length ? 'tonal' : undefined"
               :rounded="1"
               class="me-2"
             >
               <VImg
-                v-if="item.raw.avatar"
-                :src="item.raw.avatar"
+                v-if="item.avatar"
+                :src="item.avatar"
               />
 
               <span
                 v-else
                 class="font-weight-medium"
-              >{{ avatarText(item.raw.customer) }}</span>
+              >{{ avatarText(item.customer) }}</span>
             </VAvatar>
 
             <div class="d-flex flex-column">
               <RouterLink :to="{ name: 'pages-user-profile-tab', params: { tab: 'profile' } }">
                 <div class="text-high-emphasis font-weight-medium">
-                  {{ item.raw.customer }}
+                  {{ item.customer }}
                 </div>
               </RouterLink>
-              <span class="text-sm">{{ item.raw.email }}</span>
+              <span class="text-sm">{{ item.email }}</span>
             </div>
           </div>
         </template>
@@ -201,17 +201,17 @@ const deleteOrder = async (id: number) => {
         <!-- Payments -->
         <template #item.payment="{ item }">
           <li
-            :class="`text-${resolvePaymentStatus(item.raw.payment)?.color}`"
+            :class="`text-${resolvePaymentStatus(item.payment)?.color}`"
             class="font-weight-medium"
           >
-            {{ resolvePaymentStatus(item.raw.payment)?.text }}
+            {{ resolvePaymentStatus(item.payment)?.text }}
           </li>
         </template>
 
         <!-- Status -->
         <template #item.status="{ item }">
           <VChip
-            v-bind="resolveStatus(item.raw.status)"
+            v-bind="resolveStatus(item.status)"
             density="comfortable"
           />
         </template>
@@ -220,7 +220,7 @@ const deleteOrder = async (id: number) => {
         <template #item.method="{ item }">
           <div class="d-flex align-start gap-x-2">
             <VImg
-              :src="item.raw.method === 'mastercard' ? mastercard : paypal"
+              :src="item.method === 'mastercard' ? mastercard : paypal"
               height="22"
               max-width="22"
             />
@@ -229,8 +229,8 @@ const deleteOrder = async (id: number) => {
                 icon="mdi-dots-horizontal"
                 class="me-2"
               />
-              <span v-if="item.raw.method === 'mastercard'">
-                {{ item.raw.methodNumber }}
+              <span v-if="item.method === 'mastercard'">
+                {{ item.methodNumber }}
               </span>
               <span v-else>
                 @gmail.com
@@ -247,7 +247,7 @@ const deleteOrder = async (id: number) => {
               <VList>
                 <VListItem value="view">
                   <RouterLink
-                    :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }"
+                    :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.order } }"
                     class="text-high-emphasis"
                   >
                     View
@@ -255,7 +255,7 @@ const deleteOrder = async (id: number) => {
                 </VListItem>
                 <VListItem
                   value="delete"
-                  @click="deleteOrder(item.raw.id)"
+                  @click="deleteOrder(item.id)"
                 >
                   Delete
                 </VListItem>

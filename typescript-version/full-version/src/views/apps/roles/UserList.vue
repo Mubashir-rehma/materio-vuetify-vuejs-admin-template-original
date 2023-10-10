@@ -173,26 +173,26 @@ const deleteUser = async (id: number) => {
           <div class="d-flex">
             <VAvatar
               size="34"
-              :variant="!item.raw.avatar ? 'tonal' : undefined"
-              :color="!item.raw.avatar ? resolveUserRoleVariant(item.raw.role).color : undefined"
+              :variant="!item.avatar ? 'tonal' : undefined"
+              :color="!item.avatar ? resolveUserRoleVariant(item.role).color : undefined"
               class="me-3"
             >
               <VImg
-                v-if="item.raw.avatar"
-                :src="item.raw.avatar"
+                v-if="item.avatar"
+                :src="item.avatar"
               />
-              <span v-else>{{ avatarText(item.raw.fullName) }}</span>
+              <span v-else>{{ avatarText(item.fullName) }}</span>
             </VAvatar>
             <div class="d-flex flex-column">
               <h6 class="text-sm">
                 <RouterLink
-                  :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }"
+                  :to="{ name: 'apps-user-view-id', params: { id: item.id } }"
                   class="font-weight-medium user-list-name"
                 >
-                  {{ item.raw.fullName }}
+                  {{ item.fullName }}
                 </RouterLink>
               </h6>
-              <span class="text-xs text-medium-emphasis">@{{ item.raw.username }}</span>
+              <span class="text-xs text-medium-emphasis">@{{ item.username }}</span>
             </div>
           </div>
         </template>
@@ -201,26 +201,26 @@ const deleteUser = async (id: number) => {
         <template #item.role="{ item }">
           <div class="d-flex gap-4">
             <VIcon
-              :icon="resolveUserRoleVariant(item.raw.role).icon"
-              :color="resolveUserRoleVariant(item.raw.role).color"
+              :icon="resolveUserRoleVariant(item.role).icon"
+              :color="resolveUserRoleVariant(item.role).color"
             />
-            <span class="text-capitalize">{{ item.raw.role }}</span>
+            <span class="text-capitalize">{{ item.role }}</span>
           </div>
         </template>
 
         <!-- Plan -->
         <template #item.plan="{ item }">
-          <span class="text-capitalize">{{ item.raw.currentPlan }}</span>
+          <span class="text-capitalize">{{ item.currentPlan }}</span>
         </template>
 
         <!-- Status -->
         <template #item.status="{ item }">
           <VChip
-            :color="resolveUserStatusVariant(item.raw.status)"
+            :color="resolveUserStatusVariant(item.status)"
             size="small"
             class="text-capitalize"
           >
-            {{ item.raw.status }}
+            {{ item.status }}
           </VChip>
         </template>
 
@@ -239,7 +239,7 @@ const deleteUser = async (id: number) => {
 
             <VMenu activator="parent">
               <VList>
-                <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.raw.id } }">
+                <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.id } }">
                   <template #prepend>
                     <VIcon icon="mdi-eye-outline" />
                   </template>
@@ -251,7 +251,7 @@ const deleteUser = async (id: number) => {
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
-                <VListItem @click="deleteUser(item.raw.id)">
+                <VListItem @click="deleteUser(item.id)">
                   <template #prepend>
                     <VIcon icon="mdi-delete-outline" />
                   </template>

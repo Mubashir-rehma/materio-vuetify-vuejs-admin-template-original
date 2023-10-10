@@ -111,14 +111,14 @@ const resolveUserProgressVariant = (progress: number) => {
               <VAvatar
                 :size="34"
                 class="me-3"
-                :image="item.raw.logo"
+                :image="item.logo"
               />
               <div>
                 <p class="font-weight-medium mb-0">
-                  {{ item.raw.name }}
+                  {{ item.name }}
                 </p>
                 <p class="text-xs text-medium-emphasis mb-0">
-                  {{ item.raw.project }}
+                  {{ item.project }}
                 </p>
               </div>
             </div>
@@ -126,12 +126,12 @@ const resolveUserProgressVariant = (progress: number) => {
 
           <!-- Progress -->
           <template #item.progress="{ item }">
-            <span>{{ item.raw.progress }}%</span>
+            <span>{{ item.progress }}%</span>
             <VProgressLinear
               :height="6"
-              :model-value="item.raw.progress"
+              :model-value="item.progress"
               rounded
-              :color="resolveUserProgressVariant(item.raw.progress)"
+              :color="resolveUserProgressVariant(item.progress)"
             />
           </template>
 

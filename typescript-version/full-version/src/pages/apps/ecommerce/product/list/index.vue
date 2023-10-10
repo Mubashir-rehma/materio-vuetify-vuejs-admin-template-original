@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const widgetData = ref([
   { title: 'In-Store Sales', value: '$5,345.43', icon: 'mdi-home-outline', desc: '5k orders', change: 5.7 },
@@ -283,15 +283,15 @@ const deleteProduct = async (id: number) => {
         <template #item.product="{ item }">
           <div class="d-flex align-center gap-x-2">
             <VAvatar
-              v-if="item.raw.image"
+              v-if="item.image"
               size="38"
               variant="tonal"
               rounded
-              :image="item.raw.image"
+              :image="item.image"
             />
             <div class="d-flex flex-column">
-              <span class="text-high-emphasis font-weight-medium">{{ item.raw.productName }}</span>
-              <span class="text-xs">{{ item.raw.productBrand }}</span>
+              <span class="text-high-emphasis font-weight-medium">{{ item.productName }}</span>
+              <span class="text-xs">{{ item.productBrand }}</span>
             </div>
           </div>
         </template>
@@ -301,26 +301,26 @@ const deleteProduct = async (id: number) => {
           <VAvatar
             size="30"
             variant="tonal"
-            :color="resolveCategory(item.raw.category)?.color"
+            :color="resolveCategory(item.category)?.color"
             class="me-2"
           >
             <VIcon
-              :icon="resolveCategory(item.raw.category)?.icon"
+              :icon="resolveCategory(item.category)?.icon"
               size="18"
             />
           </VAvatar>
-          <span class="font-weight-medium text-high-emphasis">{{ item.raw.category }}</span>
+          <span class="font-weight-medium text-high-emphasis">{{ item.category }}</span>
         </template>
 
         <!-- stock -->
         <template #item.stock="{ item }">
-          <VSwitch :model-value="item.raw.stock" />
+          <VSwitch :model-value="item.stock" />
         </template>
 
         <!-- status -->
         <template #item.status="{ item }">
           <VChip
-            v-bind="resolveStatus(item.raw.status)"
+            v-bind="resolveStatus(item.status)"
             density="comfortable"
           />
         </template>
@@ -345,7 +345,7 @@ const deleteProduct = async (id: number) => {
                 <VListItem
                   value="delete"
                   prepend-icon="mdi-delete-outline"
-                  @click="deleteProduct(item.raw.id)"
+                  @click="deleteProduct(item.id)"
                 >
                   Delete
                 </VListItem>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const selectedStatus = ref('All')
 const searchQuery = ref('')
@@ -428,14 +428,14 @@ const reviewStatChartConfig = {
           <template #item.product="{ item }">
             <div class="d-flex gap-x-3 align-center">
               <VAvatar
-                :image="item.raw.productImage"
+                :image="item.productImage"
                 :size="38"
                 variant="tonal"
                 rounded
               />
               <div class="d-flex flex-column">
-                <span class="text-body-2 text-high-emphasis font-weight-medium">{{ item.raw.product }}</span>
-                <span class="text-xs text-wrap clamp-text">{{ item.raw.companyName }}</span>
+                <span class="text-body-2 text-high-emphasis font-weight-medium">{{ item.product }}</span>
+                <span class="text-xs text-wrap clamp-text">{{ item.companyName }}</span>
               </div>
             </div>
           </template>
@@ -443,7 +443,7 @@ const reviewStatChartConfig = {
           <template #item.reviewer="{ item }">
             <div class="d-flex align-center gap-x-3">
               <VAvatar
-                :image="item.raw.avatar"
+                :image="item.avatar"
                 size="34"
               />
               <div class="d-flex flex-column">
@@ -451,9 +451,9 @@ const reviewStatChartConfig = {
                   :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: 478426 } }"
                   class="font-weight-medium"
                 >
-                  {{ item.raw.reviewer }}
+                  {{ item.reviewer }}
                 </RouterLink>
-                <span class="text-disabled text-sm">{{ item.raw.email }}</span>
+                <span class="text-disabled text-sm">{{ item.email }}</span>
               </div>
             </div>
           </template>
@@ -461,27 +461,27 @@ const reviewStatChartConfig = {
           <template #item.review="{ item }">
             <VRating
               readonly
-              :model-value="item.raw.review"
+              :model-value="item.review"
               density="compact"
             />
             <div class="text-sm font-weight-medium mb-1">
-              {{ item.raw.head }}
+              {{ item.head }}
             </div>
             <p class="text-sm text-medium-emphasis text-wrap">
-              {{ item.raw.para }}
+              {{ item.para }}
             </p>
           </template>
 
           <template #item.date="{ item }">
-            {{ new Date(item.raw.date).toDateString() }}
+            {{ new Date(item.date).toDateString() }}
           </template>
 
           <template #item.status="{ item }">
             <VChip
-              :color="item.raw.status === 'Published' ? 'success' : 'warning'"
+              :color="item.status === 'Published' ? 'success' : 'warning'"
               density="comfortable"
             >
-              {{ item.raw.status }}
+              {{ item.status }}
             </VChip>
           </template>
 
@@ -492,13 +492,13 @@ const reviewStatChartConfig = {
                 <VList>
                   <VListItem
                     value="view"
-                    :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.id } }"
+                    :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.id } }"
                   >
                     View
                   </VListItem>
                   <VListItem
                     value="delete"
-                    @click="deleteReview(item.raw.id)"
+                    @click="deleteReview(item.id)"
                   >
                     Delete
                   </VListItem>

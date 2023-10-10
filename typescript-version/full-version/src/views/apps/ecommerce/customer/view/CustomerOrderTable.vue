@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const searchQuery = ref('')
 
@@ -83,29 +83,29 @@ const deleteOrder = async (id: number) => {
     >
       <!-- Order ID -->
       <template #item.order="{ item }">
-        <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }">
-          #{{ item.raw.order }}
+        <RouterLink :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.order } }">
+          #{{ item.order }}
         </RouterLink>
       </template>
 
       <!-- Date -->
       <template #item.date="{ item }">
-        {{ new Date(item.raw.date).toDateString() }}
+        {{ new Date(item.date).toDateString() }}
       </template>
 
       <!-- Status -->
       <template #item.status="{ item }">
         <VChip
           density="comfortable"
-          :color="resolveStatus(item.raw.status)?.color"
+          :color="resolveStatus(item.status)?.color"
         >
-          {{ item.raw.status }}
+          {{ item.status }}
         </VChip>
       </template>
 
       <!-- Spent -->
       <template #item.spent="{ item }">
-        ${{ item.raw.spent }}
+        ${{ item.spent }}
       </template>
 
       <!-- Actions -->
@@ -116,7 +116,7 @@ const deleteOrder = async (id: number) => {
             <VList>
               <VListItem value="view">
                 <RouterLink
-                  :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.raw.order } }"
+                  :to="{ name: 'apps-ecommerce-order-details-id', params: { id: item.order } }"
                   class="text-high-emphasis"
                 >
                   View
@@ -124,7 +124,7 @@ const deleteOrder = async (id: number) => {
               </VListItem>
               <VListItem
                 value="delete"
-                @click="deleteOrder(item.raw.id)"
+                @click="deleteOrder(item.id)"
               >
                 Delete
               </VListItem>

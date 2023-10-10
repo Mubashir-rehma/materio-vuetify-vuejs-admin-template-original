@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import paperImg from '@images/svg/paper.svg?raw'
 import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/userInfo.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
@@ -227,29 +227,29 @@ const resolveStatus = (status: string) => {
             <template #item.users="{ item }">
               <div class="d-flex align-center gap-x-3">
                 <VAvatar
-                  :image="item.raw.avatar"
+                  :image="item.avatar"
                   :size="34"
                 />
                 <div>
                   <div class="font-weight-medium text-sm text-high-emphasis">
                     <RouterLink :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: 478426 } }">
-                      {{ item.raw.user }}
+                      {{ item.user }}
                     </RouterLink>
                   </div>
                   <div class="text-sm">
-                    {{ item.raw.email }}
+                    {{ item.email }}
                   </div>
                 </div>
               </div>
             </template>
 
             <template #item.referred-id="{ item }">
-              {{ item.raw.referredId }}
+              {{ item.referredId }}
             </template>
 
             <template #item.status="{ item }">
               <VChip
-                v-bind="resolveStatus(item.raw.status)"
+                v-bind="resolveStatus(item.status)"
                 density="comfortable"
               />
             </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import { VDataTableServer } from 'vuetify/labs/VDataTable';
 
 const searchQuery = ref('')
 
@@ -74,21 +74,21 @@ const totalCourse = computed(() => courseData.value.total)
           <VAvatar
             variant="tonal"
             rounded
-            :color="item.raw.color"
+            :color="item.color"
           >
-            <VIcon :icon="item.raw.logo" />
+            <VIcon :icon="item.logo" />
           </VAvatar>
           <div>
             <span class="text-sm font-weight-medium">
-              <RouterLink :to="{ name: 'apps-academy-course-details' }">{{ item.raw.courseTitle }}</RouterLink>
+              <RouterLink :to="{ name: 'apps-academy-course-details' }">{{ item.courseTitle }}</RouterLink>
             </span>
             <div>
               <VAvatar
                 size="22"
-                :image="item.raw.image"
+                :image="item.image"
               />
               <span class="text-sm ms-2">
-                {{ item.raw.user }}
+                {{ item.user }}
               </span>
             </div>
           </div>
@@ -97,7 +97,7 @@ const totalCourse = computed(() => courseData.value.total)
 
       <template #item.time="{ item }">
         <span class="text-sm text-high-emphasis font-weight-medium">
-          {{ item.raw.time }}
+          {{ item.time }}
         </span>
       </template>
 
@@ -107,18 +107,18 @@ const totalCourse = computed(() => courseData.value.total)
           style="inline-size: 15.625rem;"
         >
           <div class="text-no-wrap">
-            {{ Math.floor((item.raw.completedTasks / item.raw.totalTasks) * 100) }}%
+            {{ Math.floor((item.completedTasks / item.totalTasks) * 100) }}%
           </div>
           <div class="w-100">
             <VProgressLinear
               color="primary"
               height="8"
-              :model-value="Math.floor((item.raw.completedTasks / item.raw.totalTasks) * 100)"
+              :model-value="Math.floor((item.completedTasks / item.totalTasks) * 100)"
               rounded
             />
           </div>
           <div class="text-body-1">
-            {{ item.raw.completedTasks }}/{{ item.raw.totalTasks }}
+            {{ item.completedTasks }}/{{ item.totalTasks }}
           </div>
         </div>
       </template>
@@ -133,7 +133,7 @@ const totalCourse = computed(() => courseData.value.total)
               class="me-2"
             />
             <span class="text-body-1">
-              {{ item.raw.userCount }}
+              {{ item.userCount }}
             </span>
           </div>
           <div>
@@ -143,7 +143,7 @@ const totalCourse = computed(() => courseData.value.total)
               size="24"
               class="me-2"
             />
-            <span class="text-body-1">{{ item.raw.note }}</span>
+            <span class="text-body-1">{{ item.note }}</span>
           </div>
           <div>
             <VIcon
@@ -152,7 +152,7 @@ const totalCourse = computed(() => courseData.value.total)
               size="24"
               class="me-2"
             />
-            <span class="text-body-1">{{ item.raw.view }}</span>
+            <span class="text-body-1">{{ item.view }}</span>
           </div>
         </div>
       </template>

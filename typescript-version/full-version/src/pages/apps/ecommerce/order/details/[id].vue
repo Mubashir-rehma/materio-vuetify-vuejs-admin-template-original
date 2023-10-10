@@ -121,29 +121,29 @@ const orderData = [
               <div class="d-flex gap-x-3">
                 <VAvatar
                   size="38"
-                  :image="item.raw.productImage"
+                  :image="item.productImage"
                   :rounded="0"
                 />
 
                 <div class="d-flex flex-column align-center">
                   <span class="text-body-1 font-weight-medium text-high-emphasis">
-                    {{ item.raw.productName }}
+                    {{ item.productName }}
                   </span>
 
                   <span class="text-caption text-start align-self-start">
-                    {{ item.raw.brand }}
+                    {{ item.brand }}
                   </span>
                 </div>
               </div>
             </template>
 
             <template #item.price="{ item }">
-              <span>${{ item.raw.price }}</span>
+              <span>${{ item.price }}</span>
             </template>
 
             <template #item.total="{ item }">
               <span>
-                ${{ item.raw.price * item.raw.quantity }}
+                ${{ item.price * item.quantity }}
               </span>
             </template>
 

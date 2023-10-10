@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { VDataTable } from 'vuetify/labs/VDataTable'
-import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
+import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png';
+import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png';
+import { VDataTable } from 'vuetify/labs/VDataTable';
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)
@@ -340,11 +340,11 @@ const isOneTimePasswordDialogVisible = ref(false)
             <div class="d-flex">
               <VIcon
                 start
-                :icon="item.raw.deviceIcon.icon"
-                :color="item.raw.deviceIcon.color"
+                :icon="item.deviceIcon.icon"
+                :color="item.deviceIcon.color"
               />
               <span>
-                {{ item.raw.browser }}
+                {{ item.browser }}
               </span>
             </div>
           </template>

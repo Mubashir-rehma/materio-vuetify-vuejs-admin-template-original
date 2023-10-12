@@ -169,7 +169,10 @@ const refreshOpenedEmail = async () => {
 </script>
 
 <template>
-  <VLayout class="email-app-layout">
+  <VLayout
+    style="min-block-size: 100%;"
+    class="email-app-layout"
+  >
     <VNavigationDrawer
       v-model="isLeftSidebarOpen"
       absolute

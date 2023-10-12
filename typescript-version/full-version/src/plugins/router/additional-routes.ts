@@ -37,7 +37,7 @@ export const redirects: RouteRecordRaw[] = [
 export const routes: RouteRecordRaw[] = [
   // Email filter
   {
-    path: '/apps/email/:filter',
+    path: '/apps/email/filter/:filter',
     name: 'apps-email-filter',
     component: emailRouteComponent,
     meta: {

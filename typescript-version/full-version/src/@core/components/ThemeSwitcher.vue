@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ThemeSwitcherTheme } from '@layouts/types';
+import type { ThemeSwitcherTheme } from '@layouts/types'
 
 const props = defineProps<{
   themes: ThemeSwitcherTheme[]
@@ -19,8 +19,9 @@ watch(theme, val => {
 </script>
 
 <template>
-  <IconBtn color="rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))">
+  <IconBtn>
     <VIcon :icon="props.themes.find(t => t.name === currentThemeName)?.icon" />
+
     <VTooltip
       activator="parent"
       open-delay="1000"

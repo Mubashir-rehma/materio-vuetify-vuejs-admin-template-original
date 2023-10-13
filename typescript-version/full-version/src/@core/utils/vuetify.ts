@@ -1,7 +1,7 @@
 import { namespaceConfig } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
 
-export const resolveVuetifyTheme = () => {
+export const resolveVuetifyTheme = (): 'light' | 'dark' => {
   const isDarkPreferred = usePreferredDark()
   const storedTheme = useCookie(namespaceConfig('theme'), { default: () => themeConfig.app.theme }).value
 
@@ -9,5 +9,5 @@ export const resolveVuetifyTheme = () => {
     ? isDarkPreferred.value
       ? 'dark'
       : 'light'
-    : storedTheme
+    : storedTheme as 'light' | 'dark'
 }

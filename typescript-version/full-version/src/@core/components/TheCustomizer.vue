@@ -4,8 +4,10 @@ import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
 import { staticPrimaryColor } from '@/plugins/vuetify/theme'
 import { Direction, Layout, Skins, Theme } from '@core/enums'
+import { useConfigStore } from '@core/stores/config'
 import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
-import { initialConfig, themeConfig } from '@themeConfig'
+import { cookieRef, namespaceConfig } from '@layouts/stores/config'
+import { themeConfig } from '@themeConfig'
 
 import borderSkinDark from '@images/customizer-icons/border-dark.svg'
 import borderSkinLight from '@images/customizer-icons/border-light.svg'
@@ -30,15 +32,7 @@ import wideLight from '@images/customizer-icons/wide-light.svg'
 
 const isNavDrawerOpen = ref(false)
 
-const {
-  theme,
-  skin,
-  isVerticalNavCollapsed,
-  isVerticalNavSemiDark,
-  appContentWidth,
-  appContentLayoutNav,
-  isAppRtl,
-} = useThemeConfig()
+const configStore = useConfigStore()
 
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
@@ -46,22 +40,26 @@ const vuetifyTheme = useTheme()
 const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
 const customPrimaryColor = ref('#ffffff')
 
-watch(theme, () => {
-  const localStoragePrimaryColor = useStorage(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, null).value
+watch(
+  () => configStore.theme,
+  () => {
+    const cookiePrimaryColor = cookieRef(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value
 
-  if (localStoragePrimaryColor && !colors.includes(localStoragePrimaryColor))
-    customPrimaryColor.value = localStoragePrimaryColor
-}, { immediate: true })
+    if (cookiePrimaryColor && !colors.includes(cookiePrimaryColor))
+      customPrimaryColor.value = cookiePrimaryColor
+  },
+  { immediate: true },
+)
 
 // ℹ️ It will set primary color for current theme only
 const setPrimaryColor = useDebounceFn((color: string) => {
   vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color
 
-  // ℹ️ We need to store this color value in localStorage so vuetify plugin can pick on next reload
-  useStorage<string | null>(`${themeConfig.app.title}-${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color
+  // ℹ️ We need to store this color value in cookie so vuetify plugin can pick on next reload
+  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color
 
   // ℹ️ Update initial loader color
-  useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = color
+  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = color
 }, 100)
 
 const lightTheme = useGenerateImageVariant(lightThemeLight, lightThemeDark)
@@ -111,7 +109,7 @@ const themeSkin = computed(() => {
 })
 
 // 👉 Layout
-const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value)
+const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(configStore.isVerticalNavCollapsed ? 'collapsed' : configStore.appContentLayoutNav)
 
 const layouts = computed(() => {
   return [
@@ -135,19 +133,24 @@ const layouts = computed(() => {
 
 watch(currentLayout, () => {
   if (currentLayout.value === 'collapsed') {
-    isVerticalNavCollapsed.value = true
-    appContentLayoutNav.value = AppContentLayoutNav.Vertical
+    configStore.isVerticalNavCollapsed = true
+    configStore.appContentLayoutNav = AppContentLayoutNav.Vertical
   }
   else {
-    isVerticalNavCollapsed.value = false
-    appContentLayoutNav.value = currentLayout.value
+    configStore.isVerticalNavCollapsed = false
+    configStore.appContentLayoutNav = currentLayout.value
   }
 })
 
 // watch vertical sidebar collapse state
-watch(isVerticalNavCollapsed, () => {
-  currentLayout.value = isVerticalNavCollapsed.value ? 'collapsed' : appContentLayoutNav.value
-})
+watch(
+  () => configStore.isVerticalNavCollapsed,
+  () => {
+    currentLayout.value = configStore.isVerticalNavCollapsed
+      ? 'collapsed'
+      : configStore.appContentLayoutNav
+  },
+)
 
 // 👉 Content Width
 const contentWidth = computed(() => {
@@ -166,7 +169,7 @@ const contentWidth = computed(() => {
 })
 
 // 👉 Direction
-const currentDir = ref(isAppRtl.value ? 'rtl' : 'ltr')
+const currentDir = ref(configStore.isAppRTL ? 'rtl' : 'ltr')
 
 const direction = computed(() => {
   return [
@@ -185,49 +188,56 @@ const direction = computed(() => {
 
 watch(currentDir, () => {
   if (currentDir.value === 'rtl')
-    isAppRtl.value = true
+    configStore.isAppRTL = true
 
   else
-    isAppRtl.value = false
+    configStore.isAppRTL = false
 })
 
-// check if any value set in localStorage
-const isLocalStorageHasAnyValue = ref(false)
-const INITIAL_IS_RTL = false
+// check if any value set in cookie
+const isCookieHasAnyValue = ref(false)
+
+const { locale } = useI18n({ useScope: 'global' })
+
+const isActiveLangRTL = computed(() => {
+  const lang = themeConfig.app.i18n.langConfig.find(l => l.i18nLang === locale.value)
+
+  console.log('lang :>> ', lang)
+
+  return lang?.isRTL ?? false
+})
 
 watch([
-  () => themeConfig,
   () => vuetifyTheme.current.value.colors.primary,
-  () => isAppRtl,
-  () => appContentWidth,
-  () => isVerticalNavCollapsed,
+  configStore.$state,
 ], () => {
   const initialConfigValue = [
     staticPrimaryColor,
     staticPrimaryColor,
-    initialConfig.app.theme,
-    initialConfig.app.skin,
-    initialConfig.verticalNav.isVerticalNavSemiDark,
-    initialConfig.verticalNav.isVerticalNavCollapsed,
-    initialConfig.app.contentWidth,
-    INITIAL_IS_RTL,
-    initialConfig.app.contentLayoutNav,
+    themeConfig.app.theme,
+    themeConfig.app.skin,
+    themeConfig.verticalNav.isVerticalNavSemiDark,
+    themeConfig.verticalNav.isVerticalNavCollapsed,
+    themeConfig.app.contentWidth,
+    isActiveLangRTL.value,
+    themeConfig.app.contentLayoutNav,
   ]
 
   const themeConfigValue = [
     vuetifyTheme.themes.value.light.colors.primary,
     vuetifyTheme.themes.value.dark.colors.primary,
-    themeConfig.app.theme.value,
-    themeConfig.app.skin.value,
-    themeConfig.verticalNav.isVerticalNavSemiDark.value,
-    isVerticalNavCollapsed.value,
-    appContentWidth.value,
-    isAppRtl.value,
-    appContentLayoutNav.value,
+    configStore.theme,
+    configStore.skin,
+    configStore.isVerticalNavSemiDark,
+    configStore.isVerticalNavCollapsed,
+    configStore.appContentWidth,
+    configStore.isAppRTL,
+    configStore.appContentLayoutNav,
   ]
 
-  currentDir.value = isAppRtl.value ? 'rtl' : 'ltr'
-  isLocalStorageHasAnyValue.value = JSON.stringify(themeConfigValue) !== JSON.stringify(initialConfigValue)
+  currentDir.value = configStore.isAppRTL ? 'rtl' : 'ltr'
+
+  isCookieHasAnyValue.value = JSON.stringify(themeConfigValue) !== JSON.stringify(initialConfigValue)
 }, { deep: true, immediate: true })
 
 // remove all theme related values from localStorage
@@ -236,29 +246,22 @@ const resetCustomizer = async () => {
   vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
   vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
 
-  theme.value = initialConfig.app.theme
-  skin.value = initialConfig.app.skin
-  isVerticalNavSemiDark.value = initialConfig.verticalNav.isVerticalNavSemiDark
-  appContentLayoutNav.value = initialConfig.app.contentLayoutNav
-  appContentWidth.value = initialConfig.app.contentWidth
-  isAppRtl.value = INITIAL_IS_RTL
-  isVerticalNavCollapsed.value = initialConfig.verticalNav.isVerticalNavCollapsed
-  useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = staticPrimaryColor
+  configStore.theme = themeConfig.app.theme
+  configStore.skin = themeConfig.app.skin
+  configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
+  configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
+  configStore.appContentWidth = themeConfig.app.contentWidth
+  configStore.isAppRTL = isActiveLangRTL.value
+  configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
+  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
   currentLayout.value = 'vertical'
+
+  cookieRef('lightThemePrimaryColor', null).value = null
+  cookieRef('darkThemePrimaryColor', null).value = null
 
   await nextTick()
 
-  ;[`${themeConfig.app.title}-lightThemePrimaryColor`,
-    `${themeConfig.app.title}-darkThemePrimaryColor`,
-    `${themeConfig.app.title}-theme`,
-    `${themeConfig.app.title}-skin`,
-    `${themeConfig.app.title}-isVerticalNavSemiDark`,
-    `${themeConfig.app.title}-isVerticalNavCollapsed`,
-    `${themeConfig.app.title}-contentWidth`,
-    `${themeConfig.app.title}-isRtl`,
-    `${themeConfig.app.title}-transition`]
-    .forEach(key => localStorage.removeItem(key))
-  isLocalStorageHasAnyValue.value = false
+  isCookieHasAnyValue.value = false
 
   customPrimaryColor.value = '#ffffff'
 }
@@ -303,7 +306,7 @@ const resetCustomizer = async () => {
             @click="resetCustomizer"
           >
             <VBadge
-              v-show="isLocalStorageHasAnyValue"
+              v-show="isCookieHasAnyValue"
               dot
               color="error"
               offset-x="-30"
@@ -419,8 +422,8 @@ const resetCustomizer = async () => {
             </h6>
 
             <CustomRadiosWithImage
-              :key="theme"
-              v-model:selected-radio="theme"
+              :key="configStore.theme"
+              v-model:selected-radio="configStore.theme"
               :radio-content="themeMode"
               :grid-column="{ cols: '4' }"
             />
@@ -433,8 +436,8 @@ const resetCustomizer = async () => {
             </h6>
 
             <CustomRadiosWithImage
-              :key="skin"
-              v-model:selected-radio="skin"
+              :key="configStore.skin"
+              v-model:selected-radio="configStore.skin"
               :radio-content="themeSkin"
               :grid-column="{ cols: '4' }"
             >
@@ -444,10 +447,10 @@ const resetCustomizer = async () => {
             </CustomRadiosWithImage>
           </div>
 
-          <!-- 👉 Navbar blur -->
+          <!-- 👉 Semi Dark -->
           <div
             class="align-center justify-space-between"
-            :class="vuetifyTheme.global.name.value === 'light' && appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
+            :class="vuetifyTheme.global.name.value === 'light' && configStore.appContentLayoutNav === AppContentLayoutNav.Vertical ? 'd-flex' : 'd-none'"
           >
             <VLabel
               for="customizer-semi-dark"
@@ -459,7 +462,7 @@ const resetCustomizer = async () => {
             <div>
               <VSwitch
                 id="customizer-semi-dark"
-                v-model="isVerticalNavSemiDark"
+                v-model="configStore.isVerticalNavSemiDark"
                 class="ms-2"
               />
             </div>
@@ -494,8 +497,8 @@ const resetCustomizer = async () => {
             </h6>
 
             <CustomRadiosWithImage
-              :key="appContentWidth"
-              v-model:selected-radio="appContentWidth"
+              :key="configStore.appContentWidth"
+              v-model:selected-radio="configStore.appContentWidth"
               :radio-content="contentWidth"
               :grid-column="{ cols: '4' }"
             >

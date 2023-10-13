@@ -4,6 +4,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import type { Event, NewEvent } from './types'
+import { useConfigStore } from '@core/stores/config'
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
 
 export const blankEvent: Event | NewEvent = {
@@ -25,8 +26,7 @@ export const blankEvent: Event | NewEvent = {
 }
 
 export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarActive: Ref<boolean>, isLeftSidebarOpen: Ref<boolean>) => {
-  // 👉 themeConfig
-  const { isAppRtl } = useThemeConfig()
+  const configStore = useConfigStore()
 
   // 👉 Store
   const store = useCalendarStore()
@@ -274,9 +274,13 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     calendarApi.value = refCalendar.value.getApi()
   })
 
-  watch(isAppRtl, val => {
-    calendarApi.value?.setOption('direction', val ? 'rtl' : 'ltr')
-  }, { immediate: true })
+  watch(
+    () => configStore.isAppRTL,
+    val => {
+      calendarApi.value?.setOption('direction', val ? 'rtl' : 'ltr')
+    },
+    { immediate: true },
+  )
 
   return {
     refCalendar,

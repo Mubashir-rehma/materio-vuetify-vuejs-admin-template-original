@@ -41,6 +41,13 @@ import type { App } from 'vue'
  * ```
  */
 export const registerPlugins = (app: App) => {
-  Object.values(import.meta.glob<{ default: (app: App) => void }>(['../../plugins/*.{ts,js}', '../../plugins/*/index.{ts,js}'], { eager: true }))
-    .forEach(i => i.default?.(app))
+  const imports = import.meta.glob<{ default: (app: App) => void }>(['../../plugins/*.{ts,js}', '../../plugins/*/index.{ts,js}'], { eager: true })
+
+  const importPaths = Object.keys(imports).sort()
+
+  importPaths.forEach(path => {
+    const pluginImportModule = imports[path]
+
+    pluginImportModule.default?.(app)
+  })
 }

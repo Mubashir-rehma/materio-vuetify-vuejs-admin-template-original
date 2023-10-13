@@ -1,15 +1,14 @@
 import { breakpointsVuetify } from '@vueuse/core'
 import { VIcon } from 'vuetify/components/VIcon'
+import { defineThemeConfig } from '@core'
+import { Skins } from '@core/enums'
 
 // ❗ Logo SVG must be imported with ?raw suffix
 import logo from '@images/logo.svg?raw'
 
-import { defineThemeConfig } from '@core'
-import { Skins } from '@core/enums'
-import type { UserThemeConfig } from '@core/types'
 import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layouts/enums'
 
-export const initialConfig = Object.freeze({
+export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
     title: 'master',
 
@@ -70,6 +69,4 @@ export const initialConfig = Object.freeze({
     verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
     sectionTitlePlaceholder: { icon: 'mdi-minus' },
   },
-} satisfies UserThemeConfig)
-
-export const { themeConfig, layoutConfig } = defineThemeConfig(initialConfig)
+})

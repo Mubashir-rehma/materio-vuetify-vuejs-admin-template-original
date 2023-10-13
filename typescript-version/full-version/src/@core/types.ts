@@ -1,95 +1,22 @@
-import type { ValueOf } from 'type-fest'
-import type { Ref } from 'vue'
+import type { LiteralUnion, ValueOf } from 'type-fest'
 import type { Skins } from './enums'
-import type { I18nLanguage, UserConfig as UserLayoutConfig } from '@layouts/types'
+import type { I18nLanguage, LayoutConfig } from '@layouts/types'
 
-// Type for config passed by user when registering plugin
-interface i18nType {
-  enable: boolean
-  defaultLocale?: string
-  langConfig?: I18nLanguage[]
-}
-
-export interface UserThemeConfig {
+interface ExplicitThemeConfig {
   app: {
-    title: UserLayoutConfig['app']['title']
-    logo: UserLayoutConfig['app']['logo']
-    contentWidth: UserLayoutConfig['app']['contentWidth']
-    contentLayoutNav: UserLayoutConfig['app']['contentLayoutNav']
-    overlayNavFromBreakpoint: UserLayoutConfig['app']['overlayNavFromBreakpoint']
-    theme: string
-    i18n: i18nType
+    i18n: {
+      defaultLocale: string
+      langConfig: I18nLanguage[]
+    }
+    theme: LiteralUnion<'light' | 'dark' | 'system', string>
     skin: ValueOf<typeof Skins>
-    iconRenderer: UserLayoutConfig['app']['iconRenderer']
-  }
-  navbar: {
-    type: UserLayoutConfig['navbar']['type']
-    navbarBlur: UserLayoutConfig['navbar']['navbarBlur']
-  }
-  footer: {
-    type: UserLayoutConfig['footer']['type']
   }
   verticalNav: {
-    isVerticalNavCollapsed: UserLayoutConfig['verticalNav']['isVerticalNavCollapsed']
-    defaultNavItemIconProps: UserLayoutConfig['verticalNav']['defaultNavItemIconProps']
     isVerticalNavSemiDark: boolean
   }
-  horizontalNav: {
-    type: UserLayoutConfig['horizontalNav']['type']
-    transition?: UserLayoutConfig['horizontalNav']['transition']
-  }
-  icons: {
-    chevronDown: UserLayoutConfig['icons']['chevronDown']
-    chevronRight: UserLayoutConfig['icons']['chevronRight']
-    close: UserLayoutConfig['icons']['close']
-    verticalNavPinned: UserLayoutConfig['icons']['verticalNavPinned']
-    verticalNavUnPinned: UserLayoutConfig['icons']['verticalNavUnPinned']
-    sectionTitlePlaceholder: UserLayoutConfig['icons']['sectionTitlePlaceholder']
-  }
 }
 
-/*
-  TODO: use MergeDeep for DRY
-   Waiting for https://github.com/sindresorhus/type-fest/issues/150
-*/
-// Type for config of this plugin
-export interface ThemeConfig {
-  app: {
-    title: UserThemeConfig['app']['title']
-    logo: UserThemeConfig['app']['logo']
-    contentWidth: Ref<UserThemeConfig['app']['contentWidth']>
-    contentLayoutNav: Ref<UserThemeConfig['app']['contentLayoutNav']>
-    overlayNavFromBreakpoint: UserThemeConfig['app']['overlayNavFromBreakpoint']
-    i18n: i18nType
-    theme: Ref<UserThemeConfig['app']['theme']>
-    skin: Ref<UserThemeConfig['app']['skin']>
-    iconRenderer?: UserThemeConfig['app']['iconRenderer']
-  }
-  navbar: {
-    type: Ref<UserThemeConfig['navbar']['type']>
-    navbarBlur: Ref<UserThemeConfig['navbar']['navbarBlur']>
-  }
-  footer: {
-    type: Ref<UserThemeConfig['footer']['type']>
-  }
-  verticalNav: {
-    isVerticalNavCollapsed: Ref<UserThemeConfig['verticalNav']['isVerticalNavCollapsed']>
-    defaultNavItemIconProps: UserThemeConfig['verticalNav']['defaultNavItemIconProps']
-    isVerticalNavSemiDark: Ref<UserThemeConfig['verticalNav']['isVerticalNavSemiDark']>
-  }
-  horizontalNav: {
-    type: Ref<UserThemeConfig['horizontalNav']['type']>
-    transition?: UserThemeConfig['horizontalNav']['transition']
-  }
-  icons: {
-    chevronDown: UserThemeConfig['icons']['chevronDown']
-    chevronRight: UserThemeConfig['icons']['chevronRight']
-    close: UserThemeConfig['icons']['close']
-    verticalNavPinned: UserThemeConfig['icons']['verticalNavPinned']
-    verticalNavUnPinned: UserThemeConfig['icons']['verticalNavUnPinned']
-    sectionTitlePlaceholder: UserThemeConfig['icons']['sectionTitlePlaceholder']
-  }
-}
+export type UserThemeConfig = LayoutConfig & ExplicitThemeConfig
 
 // SECTION Custom Input
 export interface CustomInputContent {

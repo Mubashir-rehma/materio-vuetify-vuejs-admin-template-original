@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import type { ReferenceElement } from '@floating-ui/dom'
 import { computePosition, flip, shift } from '@floating-ui/dom'
-import { useLayouts } from '@layouts/composable/useLayouts'
-import { config } from '@layouts/config'
+import { useLayoutConfigStore } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
 
 interface Props {
@@ -19,6 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
   isRTL: false,
 })
 
+const configStore = useLayoutConfigStore()
 const refPopperContainer = ref<ReferenceElement>()
 const refPopper = ref<HTMLElement>()
 
@@ -64,7 +64,7 @@ const updatePopper = async () => {
  💡 Only add scroll event listener for updating position once horizontal nav is made static.
   We don't want to update position every time user scrolls when horizontal nav is sticky
 */
-until(config.horizontalNav.type)
+until(() => configStore.horizontalNavType)
   .toMatch(type => type === 'static')
   .then(() => { useEventListener('scroll', updatePopper) })
 
@@ -81,11 +81,14 @@ const hideContent = () => {
 
 onMounted(updatePopper)
 
-// Recalculate position when direction changes
-const { isAppRtl, appContentWidth } = useLayouts()
-
 // ℹ️ Recalculate popper position when it's triggerer changes its position
-watch([isAppRtl, appContentWidth], updatePopper)
+watch(
+  [
+    () => configStore.isAppRTL,
+    () => configStore.appContentWidth,
+  ],
+  updatePopper,
+)
 
 // Watch for route changes and close popper content if route is changed
 const route = useRoute()

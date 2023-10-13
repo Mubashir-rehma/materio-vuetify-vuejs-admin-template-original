@@ -1,10 +1,11 @@
 import { useStorage } from '@vueuse/core'
 import { useTheme } from 'vuetify'
+import { useConfigStore } from '@core/stores/config'
+import { namespaceConfig } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
 
-const { isAppRtl, theme, skin } = useThemeConfig()
-
 const _syncAppRtl = () => {
+  const configStore = useConfigStore()
   const storedLang = useCookie(`${themeConfig.app.title}-language`)
 
   const { locale } = useI18n({ useScope: 'global' })
@@ -24,7 +25,7 @@ const _syncAppRtl = () => {
       if (themeConfig.app.i18n.langConfig && themeConfig.app.i18n.langConfig.length) {
         themeConfig.app.i18n.langConfig.forEach(lang => {
           if (lang.i18nLang === storedLang.value)
-            isAppRtl.value = lang.isRTL
+            configStore.isAppRTL = lang.isRTL
         })
       }
     },
@@ -34,6 +35,7 @@ const _syncAppRtl = () => {
 
 const _handleSkinChanges = () => {
   const { themes } = useTheme()
+  const configStore = useConfigStore()
 
   // Create skin default color so that we can revert back to original (default skin) color when switch to default skin from bordered skin
   Object.values(themes.value).forEach(t => {
@@ -42,7 +44,7 @@ const _handleSkinChanges = () => {
   })
 
   watch(
-    skin,
+    () => configStore.skin,
     val => {
       Object.values(themes.value).forEach(t => {
         t.colors.background = t.colors[`skin-${val}-background`]
@@ -51,18 +53,6 @@ const _handleSkinChanges = () => {
     },
     { immediate: true },
   )
-}
-
-const _syncVuetifyThemeWithTheme = () => {
-  const vuetifyTheme = useTheme()
-
-  watch([theme, isDarkPreferred], ([val, _]) => {
-    vuetifyTheme.global.name.value = val === 'system'
-      ? isDarkPreferred.value
-        ? 'dark'
-        : 'light'
-      : val
-  })
 }
 
 /*
@@ -76,18 +66,19 @@ const _syncVuetifyThemeWithTheme = () => {
 const _syncInitialLoaderTheme = () => {
   const vuetifyTheme = useTheme()
 
-  watch(theme, () => {
-    // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
-    useStorage<string | null>(`${themeConfig.app.title}-initial-loader-bg`, null).value = vuetifyTheme.current.value.colors.surface
-    useStorage<string | null>(`${themeConfig.app.title}-initial-loader-color`, null).value = vuetifyTheme.current.value.colors.primary
-  }, {
-    immediate: true,
-  })
+  watch(
+    () => useConfigStore().theme,
+    () => {
+      // ℹ️ We are not using theme.current.colors.surface because watcher is independent and when this watcher is ran `theme` computed is not updated
+      useStorage<string | null>(namespaceConfig('initial-loader-bg'), null).value = vuetifyTheme.current.value.colors.surface
+      useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = vuetifyTheme.current.value.colors.primary
+    },
+    { immediate: true },
+  )
 }
 
 const initCore = () => {
   _syncInitialLoaderTheme()
-  _syncVuetifyThemeWithTheme()
   _handleSkinChanges()
   _syncAppRtl()
 }

@@ -2,19 +2,10 @@
 
 We have used [msw](https://github.com/mswjs/msw) for mocking API calls. This makes our template API ready 😍 and more easier for you to communicate with your backend.
 
-However, you won't need fake-api if you are using real APIs. In this case please follow below steps to remove fake-db from template.
+However, you won't need fake-api if you are using real APIs. In this case please follow below steps to remove fake-api from template.
 
-1. Remove @fake-api folder from `src/plugins` directory.
-2. Add endpoints of your real api in .env file.
-
-  :::code-group
-
-  ```ts [main.ts]
-  import '@/@fake-db/db' // [!code --]
-  ```
-
-  :::
-
+1. Remove fake-api folder from `src/plugins` directory.
+2. Add endpoints of your real api in `.env` file. Please refer `.env.example` for more info.
 3. Finally we don't need msw in our package any more so remove it from package.json
 
 :::code-group
@@ -29,7 +20,7 @@ However, you won't need fake-api if you are using real APIs. In this case please
 
 :::
 
-This will remove fake-db completely from your package. 🎉
+This will remove fake-api completely from your package. 🎉
 
 4. Replace all fake-api endpoints with real api endpoints.
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
@@ -260,7 +260,7 @@ const deleteInvoice = async (id: number) => {
 
         <!-- id -->
         <template #item.id="{ item }">
-          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }">
+          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
             #{{ item.id }}
           </RouterLink>
         </template>
@@ -352,9 +352,11 @@ const deleteInvoice = async (id: number) => {
             <IconBtn @click="deleteInvoice(item.id)">
               <VIcon icon="mdi-delete-outline" />
             </IconBtn>
+
             <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
               <VIcon icon="mdi-eye-outline" />
             </IconBtn>
+
             <MoreBtn
               :menu-list="computedMoreList(item.id)"
               item-props

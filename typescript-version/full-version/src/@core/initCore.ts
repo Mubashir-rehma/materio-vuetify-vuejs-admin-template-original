@@ -80,7 +80,10 @@ const _syncInitialLoaderTheme = () => {
 const initCore = () => {
   _syncInitialLoaderTheme()
   _handleSkinChanges()
-  _syncAppRtl()
+
+  // ℹ️ We don't want to trigger i18n in SK
+  if (themeConfig.app.i18n.enable)
+    _syncAppRtl()
 }
 
 export default initCore

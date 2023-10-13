@@ -208,6 +208,7 @@ const isActiveLangRTL = computed(() => {
 watch([
   () => vuetifyTheme.current.value.colors.primary,
   configStore.$state,
+  locale,
 ], () => {
   const initialConfigValue = [
     staticPrimaryColor,

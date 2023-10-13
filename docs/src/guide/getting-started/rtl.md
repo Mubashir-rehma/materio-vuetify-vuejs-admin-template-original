@@ -18,22 +18,21 @@ You need [stylelint extension](https://marketplace.visualstudio.com/items?itemNa
 
 ## Mutating direction at runtime
 
-To get current direction of the app, you can use `useThemeConfig` composable:
+To get current direction of the app, you can use `useConfigStore` composable:
 
 ```ts
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { useConfigStore } from '@core/stores/config'
 
-const { isAppRtl } = useThemeConfig()
+const configStore = useConfigStore()
 ```
-
-`isAppRtl` is [ref](https://vuejs.org/api/reactivity-core.html#ref), you can set boolean value to mutate the app direction.
 
 e.g. Set app direction to RTL via:
 
 ```ts
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { useConfigStore } from '@core/stores/config'
 
-const { isAppRtl } = useThemeConfig()
+const configStore = useConfigStore()
 
-isAppRtl.value = true
+configStore.isAppRTL = true
+
 ```

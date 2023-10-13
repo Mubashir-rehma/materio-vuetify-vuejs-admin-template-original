@@ -1,70 +1,55 @@
 # Fetching nav items from API
 
-In this code example. We will look at how to fetch nav items from API and render it in our layout.
+In this code example, We will look at how to fetch nav items from API and render it in our layout.
 
 <!-- TODO: Use starter-kit for code examples -->
 
 :::tip INFO
-We will use @fake-db to simulate API response.
+We will use fake-api to simulate API response.
 :::
 
 ## Fake API endpoint
 
-As this fake API we won't create a new file we will just update an existing file. Let's add fake API endpoint in `src/@fake-db/db.ts` file.
+For adding a new fake API endpoint let's create a new directory `navigation` in `src/plugins/fake-api/handlers` for handlers. Create two files inside this directory `index.ts` and `db.ts`.
 
-::: code-group
+In `db.ts`, we will place our navigation data
 
-```ts{4-19} [TS]
-import './jwt'
-import mock from './mock'
+```ts
 
-const navData = [
-  { heading: 'Dashboards' },
-  {
-    title: 'Home',
-    icon: { icon: 'mdi-home'},
-    to: 'index',
-    action: 'read',
-    subject: 'Auth',
-  },
-]
+// file: db.ts
 
-mock.onGet('/nav-items').reply(async () => {
-  await new Promise(resolve => setTimeout(resolve, 2000))
+export const db = {
+  navItems: [
+    { heading: 'Dashboards' },
+    {
+      title: 'Home',
+      icon: 'mdi-home',
+      to: 'index',
+      action: 'read',
+      subject: 'Auth',
+    },
+  ]
+}
 
-  return [200, navData]
-})
-
-// forwards the matched request over network
-mock.onAny().passThrough()
 ```
 
-```js{4-19} [JS]
-import './jwt'
-import mock from './mock'
+In `index.ts` we wil define our handler.
 
-const navData = [
-  { heading: 'Dashboards' },
-  {
-    title: 'Home',
-    icon: 'i-mdi-home',
-    to: 'index',
-    action: 'read',
-    subject: 'Auth',
-  },
+```ts
+
+import { rest } from 'msw'
+import { db } from './db'
+
+export const handlerNavItems = [
+  rest.get(('/api/nav-items'), (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({ navItems: db.navItems}),
+    )
+  }),
 ]
 
-mock.onGet('/nav-items').reply(async () => {
-  await new Promise(resolve => setTimeout(resolve, 2000))
-
-  return [200, navData]
-})
-
-// forwards the matched request over network
-mock.onAny().passThrough()
 ```
-
-:::
 
 ## Using nav items from API
 
@@ -73,12 +58,8 @@ Now let's consume above API endpoint and pass response to our nav menu so it ren
 ```vue
 <script lang="ts" setup>
 import navItems from '@/navigation/vertical' // [!code --]
-import { axios } from '@axios' // [!code ++]
-const navItems = ref([]) // [!code ++]
-axios.get('nav-items') // [!code ++]
-  .then(({ data }) => { // [!code ++]
-    navItems.value = data // [!code ++]
-  }) // [!code ++]
+const navItems = ref([])  // [!code ++]
+const { data:navItems, error } = await useApi('/nav-items') // [!code ++]
 </script>
 ```
 

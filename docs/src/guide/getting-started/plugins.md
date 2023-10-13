@@ -107,6 +107,14 @@ Below files will not 🙅🏻‍♂️ be registered as plugins even if they hav
 - `src/plugins/vuetify/plugin/index.ts`
 - `src/plugins/vuetify/plugin/vuetify.ts`
 
+## Plugin registration Priority
+
+For maintaining the order while registering the plugins, you need to prefix the number before the file/directory name.
+
+For instance, naming the router plugin file as `1.router` ensures that it will be registered first during the plugin registration and then all the plugins will be registered.
+
+You can check our template's `src/plugins` directory,  we have given first priority to `1.router`  and second priority to `2.pinia.ts`. After registering this two plugins, other plugins will be registered.
+
 ## How it works?
 
 All scanned plugins will get registered by below line in `main.ts`

@@ -1,6 +1,6 @@
 # Colors & Themes
 
-You can customize colors via theme in Vuetify. You can customize them as mentioned in theird [docs](https://next.vuetifyjs.com/en/features/theme/).
+You can customize colors via theme in Vuetify. You can customize them as mentioned in their [docs](https://next.vuetifyjs.com/en/features/theme/).
 
 Here, we will go over how you can customize the theme/colors in our template. Themes are defined in `src/plugins/vuetify/theme.ts`.
 
@@ -10,7 +10,6 @@ To update primary colors to something else navigate to above mentioned vuetify p
 
 ```ts
 theme: {
-  defaultTheme: localStorage.getItem(`${themeConfig.app.title}-theme`) || themeConfig.app.theme.value,
   themes: {
     light: {
       dark: false,

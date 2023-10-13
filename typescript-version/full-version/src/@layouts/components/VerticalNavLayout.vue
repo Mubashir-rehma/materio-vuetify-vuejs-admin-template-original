@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { PropType } from 'vue'
-import { useLayouts } from '@layouts'
 import { VerticalNav } from '@layouts/components'
+import { useLayoutConfigStore } from '@layouts/stores/config'
 import type { VerticalNavItems } from '@layouts/types'
 
 export default defineComponent({
@@ -17,7 +17,7 @@ export default defineComponent({
   },
   setup(props, { slots }) {
     const { width: windowWidth } = useWindowSize()
-    const { _layoutClasses: layoutClasses, isLessThanOverlayNavBreakpoint, isNavbarBlurEnabled } = useLayouts()
+    const configStore = useLayoutConfigStore()
 
     const isOverlayNavActive = ref(false)
     const isLayoutOverlayVisible = ref(false)
@@ -39,7 +39,7 @@ export default defineComponent({
 
     // ℹ️ Hide overlay if user open overlay nav in <md and increase the window width without closing overlay nav
     watch(windowWidth, () => {
-      if (!isLessThanOverlayNavBreakpoint.value && isLayoutOverlayVisible.value)
+      if (!configStore.isLessThanOverlayNavBreakpoint && isLayoutOverlayVisible.value)
         isLayoutOverlayVisible.value = false
     })
 
@@ -61,7 +61,7 @@ export default defineComponent({
       // 👉 Navbar
       const navbar = h(
         'header',
-        { class: ['layout-navbar', { 'navbar-blur': isNavbarBlurEnabled.value }] },
+        { class: ['layout-navbar', { 'navbar-blur': configStore.isNavbarBlurEnabled }] },
         [
           h(
             'div',
@@ -104,7 +104,7 @@ export default defineComponent({
 
       return h(
         'div',
-        { class: ['layout-wrapper', ...layoutClasses.value] },
+        { class: ['layout-wrapper', ...configStore._layoutClasses] },
         [
           verticalNavWrapper ? h(verticalNavWrapper, verticalNavWrapperProps, { default: () => verticalNav }) : verticalNav,
           h(

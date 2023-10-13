@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { SearchResults } from '@db/app-bar-search/types';
-import Shepherd from 'shepherd.js';
-import { withQuery } from 'ufo';
-import type { RouteLocationRaw } from 'vue-router';
+import Shepherd from 'shepherd.js'
+import { withQuery } from 'ufo'
+import type { RouteLocationRaw } from 'vue-router'
+import type { SearchResults } from '@db/app-bar-search/types'
+import { useConfigStore } from '@core/stores/config'
 
 interface Suggestion {
   icon: string
@@ -14,7 +15,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const { appContentLayoutNav } = useThemeConfig()
+const configStore = useConfigStore()
 
 interface SuggestionGroup {
   title: string
@@ -124,7 +125,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
     </IconBtn>
 
     <span
-      v-if="appContentLayoutNav === 'vertical'"
+      v-if="configStore.appContentLayoutNav === 'vertical'"
       class="d-none d-md-flex align-center text-disabled"
       @click="Shepherd.activeTour?.cancel()"
     >

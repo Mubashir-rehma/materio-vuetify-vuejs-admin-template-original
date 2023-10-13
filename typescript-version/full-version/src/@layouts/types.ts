@@ -1,19 +1,19 @@
-import type { Component, Ref, VNode } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-import type { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from './enums'
+import type { AppContentLayoutNav, ContentWidth, FooterType, HorizontalNavType, NavbarType } from '@layouts/enums'
 
-export interface UserConfig {
+export interface LayoutConfig {
   app: {
     title: Lowercase<string>
     logo: VNode
     contentWidth: typeof ContentWidth[keyof typeof ContentWidth]
     contentLayoutNav: typeof AppContentLayoutNav[keyof typeof AppContentLayoutNav]
     overlayNavFromBreakpoint: number
+
+    // isRTL: boolean
     i18n: {
       enable: boolean
-      defaultLocale?: string
     }
-    iconRenderer?: Component
+    iconRenderer: Component
   }
   navbar: {
     type: typeof NavbarType[keyof typeof NavbarType]
@@ -27,8 +27,8 @@ export interface UserConfig {
     defaultNavItemIconProps: unknown
   }
   horizontalNav: {
-    type: 'sticky' | 'static' | 'hidden'
-    transition?: string | Component
+    type: typeof HorizontalNavType[keyof typeof HorizontalNavType]
+    transition: string | Component
   }
   icons: {
     chevronDown: any
@@ -37,49 +37,6 @@ export interface UserConfig {
     verticalNavPinned: any
     verticalNavUnPinned: any
     sectionTitlePlaceholder: any
-  }
-}
-
-/*
-  TODO: use MergeDeep for DRY
-   Waiting for https://github.com/sindresorhus/type-fest/issues/150
-*/
-export interface Config {
-  app: {
-    title: UserConfig['app']['title']
-    logo: UserConfig['app']['logo']
-    contentWidth: Ref<UserConfig['app']['contentWidth']>
-    contentLayoutNav: Ref<UserConfig['app']['contentLayoutNav']>
-    overlayNavFromBreakpoint: UserConfig['app']['overlayNavFromBreakpoint']
-    i18n: {
-      enable: boolean
-      defaultLocale: string | undefined
-    }
-    isRtl: Ref<boolean>
-    iconRenderer?: UserConfig['app']['iconRenderer']
-  }
-  navbar: {
-    type: Ref<UserConfig['navbar']['type']>
-    navbarBlur: Ref<UserConfig['navbar']['navbarBlur']>
-  }
-  footer: {
-    type: Ref<UserConfig['footer']['type']>
-  }
-  verticalNav: {
-    isVerticalNavCollapsed: Ref<UserConfig['verticalNav']['isVerticalNavCollapsed']>
-    defaultNavItemIconProps: UserConfig['verticalNav']['defaultNavItemIconProps']
-  }
-  horizontalNav: {
-    type: Ref<UserConfig['horizontalNav']['type']>
-    transition?: UserConfig['horizontalNav']['transition']
-  }
-  icons: {
-    chevronDown: UserConfig['icons']['chevronDown']
-    chevronRight: UserConfig['icons']['chevronRight']
-    close: UserConfig['icons']['close']
-    verticalNavPinned: UserConfig['icons']['verticalNavPinned']
-    verticalNavUnPinned: UserConfig['icons']['verticalNavUnPinned']
-    sectionTitlePlaceholder: UserConfig['icons']['sectionTitlePlaceholder']
   }
 }
 

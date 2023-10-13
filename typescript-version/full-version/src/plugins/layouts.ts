@@ -1,6 +1,7 @@
 import type { App } from 'vue'
 
 import { createLayouts } from '@layouts'
+
 import { layoutConfig } from '@themeConfig'
 
 // Styles

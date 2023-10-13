@@ -1,33 +1,35 @@
 <script setup lang="ts">
+import { useConfigStore } from '@core/stores/config'
 import type { ThemeSwitcherTheme } from '@layouts/types'
 
 const props = defineProps<{
   themes: ThemeSwitcherTheme[]
 }>()
 
-const { theme } = useThemeConfig()
-const currentThemeName = ref(theme.value)
+const configStore = useConfigStore()
 
-const selectedItem = ref([theme.value])
+const selectedItem = ref([configStore.theme])
 
 // Update icon if theme is changed from other sources
-watch(theme, val => {
-  currentThemeName.value = val
-
-  selectedItem.value = [theme.value]
-}, { deep: true })
+watch(
+  () => configStore.theme,
+  () => {
+    selectedItem.value = [configStore.theme]
+  },
+  { deep: true },
+)
 </script>
 
 <template>
   <IconBtn>
-    <VIcon :icon="props.themes.find(t => t.name === currentThemeName)?.icon" />
+    <VIcon :icon="props.themes.find(t => t.name === configStore.theme)?.icon" />
 
     <VTooltip
       activator="parent"
       open-delay="1000"
       scroll-strategy="close"
     >
-      <span class="text-capitalize">{{ currentThemeName }}</span>
+      <span class="text-capitalize">{{ configStore.theme }}</span>
     </VTooltip>
     <VMenu activator="parent">
       <VList v-model:selected="selectedItem">
@@ -38,7 +40,7 @@ watch(theme, val => {
           :prepend-icon="icon"
           color="primary"
           class="text-capitalize"
-          @click="() => { theme = name }"
+          @click="() => { configStore.theme = name }"
         >
           {{ name }}
         </VListItem>

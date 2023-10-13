@@ -4,23 +4,23 @@ import type { HorizontalNavItems } from '@layouts/types'
 
 // ℹ️ Using import from `@layouts` causing build to hangup
 // import { useLayouts } from '@layouts'
-import { useLayouts } from '@layouts/composable/useLayouts'
+import { useLayoutConfigStore } from '@layouts/stores/config'
 
 defineProps<{
   navItems: HorizontalNavItems
 }>()
 
-const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
+const configStore = useLayoutConfigStore()
 </script>
 
 <template>
   <div
     class="layout-wrapper"
-    :class="layoutClasses"
+    :class="configStore._layoutClasses"
   >
     <div
       class="layout-navbar-and-nav-container"
-      :class="isNavbarBlurEnabled && 'header-blur'"
+      :class="configStore.isNavbarBlurEnabled && 'header-blur'"
     >
       <!-- 👉 Navbar -->
       <div class="layout-navbar">

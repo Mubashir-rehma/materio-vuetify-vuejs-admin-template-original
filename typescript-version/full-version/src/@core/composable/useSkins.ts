@@ -1,17 +1,18 @@
 import { VThemeProvider } from 'vuetify/components/VThemeProvider'
+import { useConfigStore } from '@core/stores/config'
 import { AppContentLayoutNav } from '@layouts/enums'
 
 // TODO: Use `VThemeProvider` from dist instead of lib (Using this component from dist causes navbar to loose sticky positioning)
 
 export const useSkins = () => {
-  const { isVerticalNavSemiDark, skin, appContentLayoutNav } = useThemeConfig()
+  const configStore = useConfigStore()
 
   const layoutAttrs = computed(() => ({
     verticalNavAttrs: {
       wrapper: h(VThemeProvider, { tag: 'aside' }),
       wrapperProps: {
         withBackground: true,
-        theme: (isVerticalNavSemiDark.value && appContentLayoutNav.value === AppContentLayoutNav.Vertical)
+        theme: (configStore.isVerticalNavSemiDark && configStore.appContentLayoutNav === AppContentLayoutNav.Vertical)
           ? 'dark'
           : undefined,
       },
@@ -23,10 +24,14 @@ export const useSkins = () => {
       const bodyClasses = document.body.classList
       const genSkinClass = (_skin?: string) => `skin--${_skin}`
 
-      watch(skin, (val, oldVal) => {
-        bodyClasses.remove(genSkinClass(oldVal))
-        bodyClasses.add(genSkinClass(val))
-      }, { immediate: true })
+      watch(
+        () => configStore.skin,
+        (val, oldVal) => {
+          bodyClasses.remove(genSkinClass(oldVal))
+          bodyClasses.add(genSkinClass(val))
+        },
+        { immediate: true },
+      )
     }
   }
 

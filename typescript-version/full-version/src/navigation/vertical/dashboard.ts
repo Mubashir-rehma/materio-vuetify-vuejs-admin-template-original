@@ -25,7 +25,7 @@ export default [
       },
     ],
     badgeContent: '2',
-    badgeClass: 'bg-primary',
+    badgeClass: 'bg-global-primary',
   },
   {
     title: 'Front Pages',

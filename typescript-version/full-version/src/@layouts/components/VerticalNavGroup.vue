@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { TransitionGroup } from 'vue'
-import { useLayouts } from '@layouts'
+import { layoutConfig } from '@layouts'
 import { TransitionExpand, VerticalNavLink } from '@layouts/components'
-import { config } from '@layouts/config'
 import { canViewNavMenuGroup } from '@layouts/plugins/casl'
+import { useLayoutConfigStore } from '@layouts/stores/config'
 import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 import type { NavGroup } from '@layouts/types'
-import { isNavGroupActive, openGroups } from '@layouts/utils'
+import { getDynamicI18nProps, isNavGroupActive, openGroups } from '@layouts/utils'
+import { TransitionGroup } from 'vue'
 
 defineOptions({
   name: 'VerticalNavGroup',
@@ -18,10 +18,8 @@ const props = defineProps<{
 
 const route = useRoute()
 const router = useRouter()
-
-// const { width: windowWidth } = useWindowSize()
-const { isVerticalNavMini, dynamicI18nProps } = useLayouts()
-const hideTitleAndBadge = isVerticalNavMini()
+const configStore = useLayoutConfigStore()
+const hideTitleAndBadge = configStore.isVerticalNavMini()
 
 /*
   ℹ️ We provided default value `ref(false)` because inject will return `T | undefined`
@@ -81,7 +79,7 @@ watch(() => route.path, () => {
   const isActive = isNavGroupActive(props.item.children, router)
 
   // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
-  isGroupOpen.value = isActive && !isVerticalNavMini(isVerticalNavHovered).value
+  isGroupOpen.value = isActive && !configStore.isVerticalNavMini(isVerticalNavHovered).value
   isGroupActive.value = isActive
 }, { immediate: true })
 
@@ -144,9 +142,12 @@ watch(openGroups, val => {
 }, { deep: true })
 
 // ℹ️ Previously instead of below watcher we were using two individual watcher for `isVerticalNavHovered`, `isVerticalNavCollapsed` & `isLessThanOverlayNavBreakpoint`
-watch(isVerticalNavMini(isVerticalNavHovered), val => {
-  isGroupOpen.value = val ? false : isGroupActive.value
-})
+watch(
+  configStore.isVerticalNavMini(isVerticalNavHovered),
+  val => {
+    isGroupOpen.value = val ? false : isGroupActive.value
+  },
+)
 
 // watch(isVerticalNavHovered, val => {
 //   // If menu is not collapsed ignore
@@ -192,8 +193,8 @@ const isMounted = useMounted()
       @click="isGroupOpen = !isGroupOpen"
     >
       <Component
-        :is="config.app.iconRenderer || 'div'"
-        v-bind="item.icon || config.verticalNav.defaultNavItemIconProps"
+        :is="layoutConfig.app.iconRenderer || 'div'"
+        v-bind="item.icon || layoutConfig.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
       <!--
@@ -207,8 +208,8 @@ const isMounted = useMounted()
       >
         <!-- 👉 Title -->
         <Component
-          :is=" config.app.i18n.enable ? 'i18n-t' : 'span'"
-          v-bind="dynamicI18nProps(item.title, 'span')"
+          :is=" layoutConfig.app.i18n.enable ? 'i18n-t' : 'span'"
+          v-bind="getDynamicI18nProps(item.title, 'span')"
           v-show="!hideTitleAndBadge"
           key="title"
           class="nav-item-title"
@@ -218,8 +219,8 @@ const isMounted = useMounted()
 
         <!-- 👉 Badge -->
         <Component
-          :is="config.app.i18n.enable ? 'i18n-t' : 'span'"
-          v-bind="dynamicI18nProps(item.badgeContent, 'span')"
+          :is="layoutConfig.app.i18n.enable ? 'i18n-t' : 'span'"
+          v-bind="getDynamicI18nProps(item.badgeContent, 'span')"
           v-show="!hideTitleAndBadge"
           v-if="item.badgeContent"
           key="badge"
@@ -229,9 +230,9 @@ const isMounted = useMounted()
           {{ item.badgeContent }}
         </Component>
         <Component
-          :is="config.app.iconRenderer || 'div'"
+          :is="layoutConfig.app.iconRenderer || 'div'"
           v-show="!hideTitleAndBadge"
-          v-bind="config.icons.chevronRight"
+          v-bind="layoutConfig.icons.chevronRight"
           key="arrow"
           class="nav-group-arrow"
         />

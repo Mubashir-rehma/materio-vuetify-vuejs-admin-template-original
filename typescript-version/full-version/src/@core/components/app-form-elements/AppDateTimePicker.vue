@@ -10,6 +10,7 @@ import { VInput, makeVInputProps } from 'vuetify/lib/components/VInput/VInput'
 
 // @ts-expect-error There won't be declaration file for it
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
+import { useConfigStore } from '@core/stores/config'
 
 // inherit Attribute make false
 defineOptions({
@@ -51,6 +52,7 @@ interface Emit {
   (e: 'click:clear', el: MouseEvent): void
 }
 
+const configStore = useConfigStore()
 const attrs = useAttrs()
 
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
@@ -81,7 +83,6 @@ const onClear = (el: MouseEvent) => {
   })
 }
 
-const { theme } = useThemeConfig()
 const vuetifyTheme = useTheme()
 
 const vuetifyThemesName = Object.keys(vuetifyTheme.themes.value)
@@ -98,7 +99,7 @@ const updateThemeClassInCalendar = () => {
   refFlatPicker.value.fp.calendarContainer.classList.add(`v-theme--${vuetifyTheme.global.name.value}`)
 }
 
-watch(theme, updateThemeClassInCalendar)
+watch(() => configStore.theme, updateThemeClassInCalendar)
 
 onMounted(() => {
   updateThemeClassInCalendar()

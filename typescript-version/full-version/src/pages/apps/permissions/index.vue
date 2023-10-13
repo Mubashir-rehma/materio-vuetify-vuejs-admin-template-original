@@ -28,7 +28,6 @@ const isPermissionDialogVisible = ref(false)
 const isAddPermissionDialogVisible = ref(false)
 const permissionName = ref('')
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const colors: any = {
   'support': { color: 'info', text: 'Support' },
   'users': { color: 'success', text: 'Users' },

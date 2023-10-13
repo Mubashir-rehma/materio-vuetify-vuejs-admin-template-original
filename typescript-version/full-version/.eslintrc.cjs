@@ -43,7 +43,7 @@ module.exports = {
     }],
 
     'antfu/top-level-function': 'off',
-    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // indentation (Already present in TypeScript)
     'indent': ['error', 2],

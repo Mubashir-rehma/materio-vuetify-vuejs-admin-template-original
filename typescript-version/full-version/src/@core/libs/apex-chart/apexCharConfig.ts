@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ThemeInstance } from 'vuetify'
 import { hexToRgb } from '@layouts/utils'
 

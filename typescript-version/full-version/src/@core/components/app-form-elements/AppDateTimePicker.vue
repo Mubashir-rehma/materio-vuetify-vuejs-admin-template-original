@@ -20,7 +20,6 @@ defineOptions({
 const props = defineProps({
   autofocus: Boolean,
   counter: [Boolean, Number, String] as PropType<true | number | string>,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   counterValue: Function as PropType<(value: any) => number>,
   prefix: String,
   placeholder: String,

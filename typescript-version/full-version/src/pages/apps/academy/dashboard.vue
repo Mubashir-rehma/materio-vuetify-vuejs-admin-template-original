@@ -62,7 +62,6 @@ const topicsChartConfig = {
     dropShadow: {
       enabled: false,
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     formatter(val: string, opt: any) {
       return topicsChartConfig.labels[opt.dataPointIndex]
     },

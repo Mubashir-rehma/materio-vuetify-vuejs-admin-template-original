@@ -5,7 +5,6 @@ import type { Notification } from '@layouts/types'
 interface Props {
   notifications: Notification[]
   badgeProps?: unknown
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   location?: any
 }
 interface Emit {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 // 👉 headers
 const headers = [
@@ -28,7 +28,6 @@ const isPermissionDialogVisible = ref(false)
 const isAddPermissionDialogVisible = ref(false)
 const permissionName = ref('')
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const colors: any = {
   'support': { color: 'info', text: 'Support' },
   'users': { color: 'success', text: 'Users' },
@@ -100,7 +99,6 @@ const editPermission = (name: string) => {
         >
           <!-- Assigned To -->
           <template #item.assignedTo="{ item }">
-
             <div class="d-flex gap-2">
               <VChip
                 v-for="text in item.assignedTo"

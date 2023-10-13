@@ -10,13 +10,11 @@ export interface EmailTo {
 export interface EmailFrom {
   email: string
   name: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   avatar: any
 }
 
 export interface EmailAttachment {
   fileName: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   thumbnail: any
   url: string
   size: string

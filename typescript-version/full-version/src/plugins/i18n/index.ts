@@ -4,12 +4,10 @@ import { themeConfig } from '@themeConfig'
 
 const messages = Object.fromEntries(
   Object.entries(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     import.meta.glob<{ default: any }>('./locales/*.json', { eager: true }))
     .map(([key, value]) => [key.slice(10, -5), value.default]),
 )
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let _i18n: any = null
 
 export const getI18n = () => {

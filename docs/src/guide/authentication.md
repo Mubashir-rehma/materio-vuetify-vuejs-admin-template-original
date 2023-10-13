@@ -18,4 +18,4 @@ You can find login related self explanatory code in `src/pages/login.vue` file's
 
 In logout we remove the stored data and reset the user abilities to initial abilities.
 
-You can find login related self explanatory code in `src/layouts/components/UserProfile.vue` file's `logout` method.
+You can find logout related self explanatory code in `src/layouts/components/UserProfile.vue` file's `logout` method.

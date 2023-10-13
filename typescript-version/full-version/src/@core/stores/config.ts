@@ -1,3 +1,4 @@
+import { storeToRefs } from 'pinia'
 import { useTheme } from 'vuetify'
 import { cookieRef, useLayoutConfigStore } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'

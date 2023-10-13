@@ -138,13 +138,9 @@ export const switchToVerticalNavOnLtOverlayNavBreakpoint = () => {
       If it's `mdAndDown` => We will use vertical nav no matter what previous nav type was
       Or if it's `lgAndUp` we need to switch back to `lgAndUp` nav type. For this we will tracker property `lgAndUpNav`
     */
-  watch(
-    () => configStore.isLessThanOverlayNavBreakpoint,
-    val => {
-      configStore.appContentLayoutNav = val ? AppContentLayoutNav.Vertical : lgAndUpNav.value
-    },
-    { immediate: true },
-  )
+  watch(() => configStore.isLessThanOverlayNavBreakpoint, val => {
+    configStore.appContentLayoutNav = val ? AppContentLayoutNav.Vertical : lgAndUpNav.value
+  }, { immediate: true })
 }
 
 /**

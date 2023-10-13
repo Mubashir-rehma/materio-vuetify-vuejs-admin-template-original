@@ -71,5 +71,10 @@ export const initConfigStore = () => {
           : 'light'
         : configStore.theme
     })
+
+  onMounted(() => {
+    if (configStore.theme === 'system')
+      vuetifyTheme.global.name.value = userPreferredColorScheme.value
+  })
 }
 // !SECTION

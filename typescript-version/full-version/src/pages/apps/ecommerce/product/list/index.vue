@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 const widgetData = ref([
   { title: 'In-Store Sales', value: '$5,345.43', icon: 'mdi-home-outline', desc: '5k orders', change: 5.7 },

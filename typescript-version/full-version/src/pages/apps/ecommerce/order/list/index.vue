@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import mastercard from '@images/cards/logo-mastercard-small.png';
-import paypal from '@images/cards/paypal-primary.png';
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import mastercard from '@images/cards/logo-mastercard-small.png'
+import paypal from '@images/cards/paypal-primary.png'
 
 const widgetData = ref([
   { title: 'Pending Payment', value: 56, icon: 'mdi-calendar-clock-outline' },

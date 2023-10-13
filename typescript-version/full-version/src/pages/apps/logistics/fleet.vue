@@ -1,11 +1,11 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup lang="ts">
-import fleetImg from '@images/misc/fleet-car.png'
 import type { LngLatLike } from 'mapbox-gl'
 import mapboxgl from 'mapbox-gl'
 import { onMounted, ref } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
+import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 

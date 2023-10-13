@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProfileHeader } from '@db/pages/profile/types';
+import type { ProfileHeader } from '@db/pages/profile/types'
 
 const profileHeaderData = ref<ProfileHeader>()
 

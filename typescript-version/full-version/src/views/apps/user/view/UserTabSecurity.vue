@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import chrome from '@images/logos/chrome.png';
-import { VDataTable } from 'vuetify/labs/VDataTable';
+import { VDataTable } from 'vuetify/labs/VDataTable'
+import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)

@@ -40,6 +40,7 @@ import type { App } from 'vue'
  * app.mount('#app')
  * ```
  */
+
 export const registerPlugins = (app: App) => {
   const imports = import.meta.glob<{ default: (app: App) => void }>(['../../plugins/*.{ts,js}', '../../plugins/*/index.{ts,js}'], { eager: true })
 

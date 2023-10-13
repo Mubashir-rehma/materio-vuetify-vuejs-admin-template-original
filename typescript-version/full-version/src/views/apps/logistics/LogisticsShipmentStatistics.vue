@@ -74,7 +74,7 @@ const shipmentConfig = {
   },
   grid: {
     strokeDashArray: 8,
-    borderColor
+    borderColor,
   },
   colors: [chartColors.line.series1, chartColors.line.series2],
   fill: {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import data from '@/views/demos/forms/tables/data-table/datatable';
-import type { Data } from '@db/pages/datatable/types';
-import { VDataTable } from 'vuetify/labs/VDataTable';
+import { VDataTable } from 'vuetify/labs/VDataTable'
+import data from '@/views/demos/forms/tables/data-table/datatable'
+import type { Data } from '@db/pages/datatable/types'
 
 const userList = ref<Data[]>([])
 const options = ref({ page: 1, itemsPerPage: 5, sortBy: [''], sortDesc: [false] })
@@ -99,4 +99,3 @@ onMounted(() => {
     </template>
   </VDataTable>
 </template>
-

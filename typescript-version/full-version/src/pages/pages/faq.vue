@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { FaqCategory } from '@db/pages/faq/types';
-import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png';
-import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png';
+import type { FaqCategory } from '@db/pages/faq/types'
+import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
+import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 
 const faqSearchQuery = ref('')
 

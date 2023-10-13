@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png';
-import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png';
-import { VDataTable } from 'vuetify/labs/VDataTable';
+import { VDataTable } from 'vuetify/labs/VDataTable'
+import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
+import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 
 const isCurrentPasswordVisible = ref(false)
 const isNewPasswordVisible = ref(false)

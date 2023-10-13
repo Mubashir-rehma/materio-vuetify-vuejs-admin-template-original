@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ConnectionsTab } from '@db/pages/profile/types';
+import type { ConnectionsTab } from '@db/pages/profile/types'
 
 const router = useRoute('pages-user-profile-tab')
 const connectionData = ref<ConnectionsTab[]>([])

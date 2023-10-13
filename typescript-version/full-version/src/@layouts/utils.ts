@@ -10,6 +10,7 @@ export const openGroups = ref<string[]>([])
  * Return nav link props to use
  * @param {Object, String} item navigation routeName or route Object provided in navigation data
  */
+
 export const getComputedNavLinkToProp = computed(() => (link: NavLink) => {
   const props: NavLinkProps = {
     target: link.target,
@@ -75,9 +76,9 @@ export const isNavGroupActive = (children: (NavLink | NavGroup)[], router: Route
   })
 
 /**
-   * Change `dir` attribute based on direction
-   * @param dir 'ltr' | 'rtl'
-   */
+ * Change `dir` attribute based on direction
+ * @param dir 'ltr' | 'rtl'
+ */
 export const _setDirAttr = (dir: 'ltr' | 'rtl') => {
   // Check if document exists for SSR
   if (typeof document !== 'undefined')

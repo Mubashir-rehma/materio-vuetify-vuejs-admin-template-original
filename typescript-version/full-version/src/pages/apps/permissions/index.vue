@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 // 👉 headers
 const headers = [
@@ -100,7 +100,6 @@ const editPermission = (name: string) => {
         >
           <!-- Assigned To -->
           <template #item.assignedTo="{ item }">
-
             <div class="d-flex gap-2">
               <VChip
                 v-for="text in item.assignedTo"

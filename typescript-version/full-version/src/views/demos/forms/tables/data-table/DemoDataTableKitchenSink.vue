@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { SalesDetails } from '@db/pages/datatable/types';
-import { VDataTable } from 'vuetify/labs/VDataTable';
+import { VDataTable } from 'vuetify/labs/VDataTable'
+import type { SalesDetails } from '@db/pages/datatable/types'
 
 const search = ref('')
 const productList = ref<SalesDetails[]>([])

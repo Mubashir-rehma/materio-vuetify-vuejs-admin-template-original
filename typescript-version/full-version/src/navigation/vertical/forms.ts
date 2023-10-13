@@ -41,7 +41,7 @@ export default [
   },
   {
     title: 'Tables',
-    icon: { icon: 'tabler-table' },
+    icon: { icon: 'mdi-table' },
     children: [
       { title: 'Simple Table', to: 'tables-simple-table' },
       { title: 'Data Table', to: 'tables-data-table' },

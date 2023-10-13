@@ -225,10 +225,10 @@ const target = join(__dirname, 'icons.css')
 
         // Update icon from SVG instance
         iconSet.fromSVG(name, svg)
-
-        // Collect the SVG icon
-        allIcons.push(iconSet.export())
       })
+
+      // Collect the SVG icon
+      allIcons.push(iconSet.export())
     }
   }
 

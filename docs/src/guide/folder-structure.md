@@ -7,7 +7,7 @@ Read more [here](./core/)
 
 ## @layouts
 
-Our template comes with layouts plugin which is standalone package you can use in any vue project. You can find it in /src/@layouts directory. Read more [here](./layouts/)
+Our template comes with layouts plugin which is standalone package you can use in any vue project. You can find it in `/src/@layouts` directory. Read more [here](./layouts/)
 
 ## Assets
 

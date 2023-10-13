@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [Yarn](https://yarnpkg.com/) package manager is recommended
+- [Pnpm](https://pnpm.io/) package manager is recommended
 - [Node](https://nodejs.org/) LTS version is required
 
 :::details How do I check my node version?
@@ -46,26 +46,26 @@ Enable show hidden files feature in your system to view the hidden files if you 
 
 ```bash [Vue]
 # It will install all packages
-yarn
+pnpm install
 
 # Create MSW script for faking API calls
-yarn msw:init
+pnpm msw:init
 
 # Will start the dev server
-yarn dev
+pnpm run dev
 ```
 
 ```bash [Nuxt]
 # It will install all packages
-yarn
+pnpm install
 
 # Will start the dev server
-yarn dev
+pnpm run dev
 ```
 
 :::
 
-1. Open the dev server URL in browser. Probably it will be <http://localhost:5173>
+6. Open the dev server URL in browser. Probably it will be <http://localhost:5173>
 
 ---
 **Related FAQ: [Template is slow](/faq/#template-is-slow)**
@@ -80,16 +80,22 @@ yarn dev
 
 // Using npm package manager
   npm run build
+
+// using pnpm package manager
+  pnpm run build
   ```
 
 2. Once the build is generated, you can preview it on your local system using the following commands:
 
 ```ts
 // Using yarn package manager
-yarn preview
+  yarn preview
 
 // Using npm package manager
-npm run preview
+  npm run preview
+
+// using pnpm package manager
+  pnpm run preview
 ```
 
 :::warning Note

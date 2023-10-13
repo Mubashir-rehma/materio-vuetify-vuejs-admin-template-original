@@ -6,7 +6,7 @@ export const resolveVuetifyTheme = (): 'light' | 'dark' => {
   const storedTheme = useCookie(namespaceConfig('theme'), { default: () => themeConfig.app.theme }).value
 
   return storedTheme === 'system'
-    ? cookieColorScheme.value
+    ? cookieColorScheme.value === 'dark'
       ? 'dark'
       : 'light'
     : storedTheme as 'light' | 'dark'

@@ -21,7 +21,6 @@ const tabs = [
 definePage({
   meta: {
     navActiveLink: 'pages-account-settings-tab',
-    key:'tab',
   },
 })
 </script>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import paperImg from '@images/svg/paper.svg?raw'
 import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/userInfo.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
 
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })

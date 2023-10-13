@@ -1,5 +1,5 @@
-import { db } from '@db/apps/chat/db'
 import { rest } from 'msw'
+import { db } from '@db/apps/chat/db'
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@/plugins/fake-api/handlers/apps/chat/types'
 
 export const handlerAppsChat = [

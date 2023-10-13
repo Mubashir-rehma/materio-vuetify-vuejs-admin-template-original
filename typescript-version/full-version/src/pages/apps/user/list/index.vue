@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue';
-import type { UserProperties } from '@db/apps/users/types';
-import { VDataTableServer } from 'vuetify/labs/VDataTable';
+import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
+import type { UserProperties } from '@db/apps/users/types'
 
 // 👉 Store
 const searchQuery = ref('')

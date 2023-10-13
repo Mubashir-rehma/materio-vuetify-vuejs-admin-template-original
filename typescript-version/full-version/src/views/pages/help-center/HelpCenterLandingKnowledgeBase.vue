@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HelpCenterAllCategoryArticles } from '@db/pages/help-center/types';
+import type { HelpCenterAllCategoryArticles } from '@db/pages/help-center/types'
 
 interface Props {
   categories: HelpCenterAllCategoryArticles[]

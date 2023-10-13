@@ -202,8 +202,6 @@ const { locale } = useI18n({ useScope: 'global' })
 const isActiveLangRTL = computed(() => {
   const lang = themeConfig.app.i18n.langConfig.find(l => l.i18nLang === locale.value)
 
-  console.log('lang :>> ', lang)
-
   return lang?.isRTL ?? false
 })
 

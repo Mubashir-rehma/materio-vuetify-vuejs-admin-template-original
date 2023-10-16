@@ -107,7 +107,7 @@ Below files will not 🙅🏻‍♂️ be registered as plugins even if they hav
 - `src/plugins/vuetify/plugin/index.ts`
 - `src/plugins/vuetify/plugin/vuetify.ts`
 
-## Plugin registration Priority
+## Plugin Registration Priority
 
 For maintaining the order while registering the plugins, you need to prefix the number before the file/directory name.
 

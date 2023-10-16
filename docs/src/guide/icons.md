@@ -8,11 +8,7 @@ We have used Material Design Icons from the **Iconify** library in the whole tem
 We are using the offline icons with the help of Iconify bundle and we suggest you do the same. If you want to use very few icons from other libraries, then you may use online icons directly from the public API of Iconify.
 :::
 
-::: danger Heads Up! (TypeScript version only)
-The `src/@iconify/tsconfig.json` file is different from the `tsconfig.json` file and thus do not delete the `src/@iconify/tsconfig.json` file from your project; otherwise, you will not be able to generate icon bundle from the `yarn build:icons` command.
-:::
-
-## Iconify Bundle
+## Iconify Plugin
 
 When Iconify icon component renders an icon, if icon data is not available, the component attempts to load data for an icon from Iconify API.
 
@@ -20,28 +16,20 @@ Even though loading icon data from API is very fast, it is not instant and it re
 
 This also allows rendering icons when internet access is not available and you are no longer relying on third-party service.
 
-The following files are necessary to generate Iconify bundle:
+## How to Generate Icon's css?
 
-- `src/@iconify/build-icons.js`
-- `src/@iconify/build-icons.ts (typescript version only)`
-- `src/@iconify/icons-bundle.js`
-- `src/@iconify/tsconfig.json`
-- `package.json`
-
-## How to Generate Bundle?
-
-You can generate the bundle with a wide variety of emojis, flags, brand logos, SVGs & icons and use them even when internet access is not available. To generate such icons, you just need to add your desired icon library, any specific icon(s), a custom JSON file created by you, custom SVG(s) created by you or any emoji(s).
+You can generate css Icons with a wide variety of emojis, flags, brand logos, SVGs & icons and use them even when internet access is not available. To generate such icons, you just need to add your desired icon library, any specific icon(s), a custom JSON file created by you, custom SVG(s) created by you or any emoji(s).
 
 ### Install the icon libraries
 
 To install an icon library from the Iconify collection, you will need to install the specific icon library that you want to use. Here's how you can do that:
 
 ```sh
-yarn add @iconify-json/library-name
+pnpm install @iconify-json/library-name
 
 # For Example
 
-yarn add @iconify-json/mdi
+pnpm install @iconify-json/mdi
 ```
 
 :::tip
@@ -302,7 +290,11 @@ Once you have set the target and updated the import statement, then you need to 
 
 ::: code-group
 
-```bash [YARN (Recommended)]
+```bash [PNPM (Recommended)]
+pnpm run build:icons
+```
+
+```bash [YARN]
 yarn build:icons
 ```
 
@@ -312,23 +304,15 @@ npm run build:icons
 
 :::
 
-## How is the bundle generated?
+## How is the css Icons are generated?
 
-### TypeScript
+Once you have added the icons, set the target css file and update the import statement in `build-icons.ts` file and run the above command, css icons are generated.
 
-The bundle is generated once you have added the icons, set the target, updated the import statement and run the command.
+When you run the command for generating css Icons,
 
-When you run the command, the `src/@iconify/build-icons.ts` file is compiled to the `src/@iconify/build-icons.js` file. Once the compilation is completed, the compiled file gets all the icon data from Iconify. After retrieving the icon data, the icon data is wrapped in a callback to create a JavaScript file. The callback function used is `addCollection()` which is provided by the `@iconify/vue` package.
+All the imports defined in `src/plugins/iconify/build-icons.ts` file, collects the icon data. Once all the icon data is collected, we use [`getIconsCss()`](https://iconify.design/docs/libraries/utils/get-icons-css.html) function from iconify to generate CSS icons.
 
-In our case, the final JavaScript file is created as the `src/@iconify/icons-bundle.js` file. In this file, the icon data is collected and wrapped with the `addCollection()` callback function. So you don't have to handle anything from your side. You just have to import this file into the `src/main.ts` file.
-
-### JavaScript
-
-The bundle is generated once you have added the icons, set the target, updated the import statement and run the command.
-
-When you run the command, the `src/@iconify/build-icons.js` file gets all the icon data from Iconify. After retrieving the icon data, the icon data is wrapped in a callback to create a JavaScript file. The callback function used is `addCollection()` which is provided by the `@iconify/vue` package.
-
-In our case, the final JavaScript file is created as the `src/@iconify/icons-bundle.js` file. In this file, the icon data is collected and wrapped with the `addCollection()` callback function. So you don't have to handle anything from your side. You just have to import this file into the `src/main.js` file.
+The generated CSS is saved to the `src/plugins/iconify/icons.css` file. This file contains all the CSS icons with their classes.
 
 ## Usage
 

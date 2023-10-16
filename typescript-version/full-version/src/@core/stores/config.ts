@@ -1,3 +1,4 @@
+import { storeToRefs } from 'pinia'
 import { useTheme } from 'vuetify'
 import { cookieRef, useLayoutConfigStore } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
@@ -70,5 +71,10 @@ export const initConfigStore = () => {
           : 'light'
         : configStore.theme
     })
+
+  onMounted(() => {
+    if (configStore.theme === 'system')
+      vuetifyTheme.global.name.value = userPreferredColorScheme.value
+  })
 }
 // !SECTION

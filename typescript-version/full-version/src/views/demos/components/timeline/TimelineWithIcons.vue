@@ -290,49 +290,51 @@ const serverSwitch = ref(false)
 
           <!-- 👉 Content -->
           <table class="w-100 mt-3">
-            <tr>
-              <td class="d-flex align-center pb-2">
-                <VIcon
-                  icon="mdi-web"
-                  class="me-1"
-                />
-                <span>IP Address</span>
-              </td>
+            <tbody>
+              <tr>
+                <td class="d-flex align-center pb-2">
+                  <VIcon
+                    icon="mdi-web"
+                    class="me-1"
+                  />
+                  <span>IP Address</span>
+                </td>
 
-              <td class="text-right">
-                192.654.8.566
-              </td>
-            </tr>
+                <td class="text-right">
+                  192.654.8.566
+                </td>
+              </tr>
 
-            <tr>
-              <td class="d-flex align-center pb-2">
-                <VIcon
-                  icon="mdi-cpu-32-bit"
-                  size="24"
-                  class="me-1"
-                />
-                <span>CPU</span>
-              </td>
+              <tr>
+                <td class="d-flex align-center pb-2">
+                  <VIcon
+                    icon="mdi-cpu-32-bit"
+                    size="24"
+                    class="me-1"
+                  />
+                  <span>CPU</span>
+                </td>
 
-              <td class="text-right">
-                4 Cores
-              </td>
-            </tr>
+                <td class="text-right">
+                  4 Cores
+                </td>
+              </tr>
 
-            <tr>
-              <td class="d-flex align-center pb-2">
-                <VIcon
-                  icon="mdi-memory"
-                  size="24"
-                  class="me-1"
-                />
-                <span>Memory</span>
-              </td>
+              <tr>
+                <td class="d-flex align-center pb-2">
+                  <VIcon
+                    icon="mdi-memory"
+                    size="24"
+                    class="me-1"
+                  />
+                  <span>Memory</span>
+                </td>
 
-              <td class="text-right">
-                2 GB
-              </td>
-            </tr>
+                <td class="text-right">
+                  2 GB
+                </td>
+              </tr>
+            </tbody>
           </table>
 
           <VDivider class="mt-3" />

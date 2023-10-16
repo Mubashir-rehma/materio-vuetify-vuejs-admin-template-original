@@ -16,9 +16,9 @@ jobs:
       DEPLOY_DIR: ${{ secrets.PROD_DIR }}${{ !inputs.is_production && 'staging/' || '' }}
     steps:
       - name: ⚙️ Setup pnpm
-          uses: pnpm/action-setup@v2
-          with:
-            version: 8
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: ⚙️ Set BRAND_NAME environment variable from repo name
         run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV

@@ -36,7 +36,17 @@ const worker = setupWorker(
 )
 
 export default function () {
+  console.log('import.meta.env.BASE_URL :>>')
+  console.log(import.meta.env.BASE_URL)
+
+  const workerUrl = `${import.meta.env.BASE_URL ?? '/'}mockServiceWorker.js`
+
+  console.log('workerUrl :>> ')
+  console.log(workerUrl)
   worker.start({
+    serviceWorker: {
+      url: workerUrl,
+    },
     onUnhandledRequest: 'bypass',
   })
 }

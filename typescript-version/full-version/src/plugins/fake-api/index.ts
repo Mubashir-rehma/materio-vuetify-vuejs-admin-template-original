@@ -35,10 +35,8 @@ const worker = setupWorker(
   ...handlerAuth,
 )
 
-worker.start({
-  onUnhandledRequest: 'bypass',
-})
-
 export default function () {
-  // This doesn't require app registration
+  worker.start({
+    onUnhandledRequest: 'bypass',
+  })
 }

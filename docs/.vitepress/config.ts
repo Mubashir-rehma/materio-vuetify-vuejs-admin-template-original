@@ -69,7 +69,6 @@ export default defineConfig({
             { text: 'Authentication', link: '/guide/authentication' },
             { text: 'Access Control', link: '/guide/access-control' },
             { text: 'Splash Screen', link: '/guide/splash-screen' },
-            { text: 'Demo Configs', link: '/guide/getting-started/demo-configs' },
             { text: 'RTL', link: '/guide/getting-started/rtl' },
             { text: 'Icons', link: '/guide/icons' },
             { text: 'Docker', link: '/guide/docker' },

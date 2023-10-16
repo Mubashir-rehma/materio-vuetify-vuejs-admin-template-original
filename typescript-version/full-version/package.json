@@ -111,9 +111,23 @@
     "vue-tsc": "^1.8.19"
   },
   "resolutions": {
+    "postcss": "^8",
+    "@tiptap/core": "^2",
+    "video.js": "^7",
+    "@types/video.js": "^7",
+    "pug": "^3",
+    "apexcharts": "^3",
     "stylelint-order": "6.0.3"
   },
   "overrides": {
+    "postcss": "^8",
+    "@tiptap/core": "^2",
+    "@videojs-player/vue": {
+      "video.js": "^7"
+    },
+    "@types/video.js": "^7",
+    "pug": "^3",
+    "apexcharts": "^3",
     "stylelint-order": "6.0.3"
   },
   "packageManager": "pnpm@8.6.2",

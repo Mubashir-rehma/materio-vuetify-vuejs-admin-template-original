@@ -43,7 +43,7 @@ jobs:
 
       - name: ⬇️ Install packages in automation-scripts dir
         working-directory: automation-scripts/vue
-        run: pnpm
+        run: pnpm i
 
       - name: 🛠️ Inject GTM code in SSR template
         working-directory: automation-scripts/vue

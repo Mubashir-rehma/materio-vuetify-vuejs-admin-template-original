@@ -15,6 +15,11 @@ jobs:
       STAG_DIR: ${{ secrets.PROD_DIR }}staging/
       DEPLOY_DIR: ${{ secrets.PROD_DIR }}${{ !inputs.is_production && 'staging/' || '' }}
     steps:
+      - name: ⚙️ Setup pnpm
+          uses: pnpm/action-setup@v2
+          with:
+            version: 8
+            
       - name: ⚙️ Set BRAND_NAME environment variable from repo name
         run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
 
@@ -32,15 +37,15 @@ jobs:
       
       - name: ⬇️ Install packages in automation-scripts dir
         working-directory: automation-scripts/vue
-        run: yarn
+        run: pnpm
 
       - name: ⬇️ Install packages in typescript full version
         working-directory: ${{ env.BRAND_NAME }}/vue/typescript-version/full-version
-        run: yarn
+        run: pnpm
 
       - name: 📦 Generate demos
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
+        run: pnpm tsx src/templates/${{ env.BRAND_NAME }}/scripts/genDemos.ts $([[ "${{ inputs.is_production }}" != "true" ]] && echo --staging)
 
       - name: 🗄️ Cleanup & Backup
         uses: appleboy/ssh-action@v0.1.5

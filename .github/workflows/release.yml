@@ -15,6 +15,11 @@ jobs:
       - name: ⚙️ Set BRAND_NAME environment variable from repo name
         run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
 
+      - name: ⚙️ Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: ⬇️ Checkout template
         uses: actions/checkout@v3
         with:
@@ -29,19 +34,19 @@ jobs:
       
       - name: ⬇️ Install packages in automation-scripts dir
         working-directory: automation-scripts/vue
-        run: yarn
+        run: pnpm
 
       - name: ⬇️ Install packages in typescript full version
         working-directory: ${{ env.BRAND_NAME }}/vue/typescript-version/full-version
-        run: yarn
+        run: pnpm
 
-      - name: ⬇️ Install packages in javascript full version. We need to install in both full version for linting the snippet files using `yarn lint`.
+      - name: ⬇️ Install packages in javascript full version. We need to install in both full version for linting the snippet files using `pnpm lint`.
         working-directory: ${{ env.BRAND_NAME }}/vue/javascript-version/full-version
-        run: yarn
+        run: pnpm
         
       - name: 📦 Generate package
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/genPkg.ts --version ${{ github.ref_name }}
+        run: pnpm tsx src/templates/${{ env.BRAND_NAME }}/scripts/genPkg.ts --version ${{ github.ref_name }}
 
       - name: 🚀 Release
         uses: softprops/action-gh-release@v1

@@ -15,6 +15,11 @@ jobs:
       STAG_DIR: ${{ secrets.PROD_DIR }}staging/
       DEPLOY_DIR: ${{ secrets.PROD_DIR }}${{ !inputs.is_production && 'staging/' || '' }}
     steps:
+      - name: ⚙️ Setup pnpm
+          uses: pnpm/action-setup@v2
+          with:
+            version: 8
+
       - name: ⚙️ Set BRAND_NAME environment variable from repo name
         run: echo BRAND_NAME=${{ github.event.repository.name }} | cut -d '-' -f1 >> $GITHUB_ENV
     
@@ -38,17 +43,17 @@ jobs:
 
       - name: ⬇️ Install packages in automation-scripts dir
         working-directory: automation-scripts/vue
-        run: yarn
+        run: pnpm
 
       - name: 🛠️ Inject GTM code in SSR template
         working-directory: automation-scripts/vue
-        run: yarn tsx src/templates/${{ env.BRAND_NAME }}/scripts/injectGtmInDocs.ts
+        run: pnpm tsx src/templates/${{ env.BRAND_NAME }}/scripts/injectGtmInDocs.ts
       
       - name: 📦 Build documentation
         run: |
           cd ${{ env.BRAND_NAME }}/vue/docs
-          yarn
-          yarn build
+          pnpm
+          pnpm build
           mv .vitepress/dist $GITHUB_WORKSPACE/documentation
         
       - name: 🗄️ Cleanup & Backup

@@ -1,14 +1,18 @@
+import { useConfigStore } from '@core/stores/config'
+import { cookieRef, namespaceConfig } from '@layouts/stores/config'
+import { themeConfig } from '@themeConfig'
 import { useStorage } from '@vueuse/core'
 import { useTheme } from 'vuetify'
-import { useConfigStore } from '@core/stores/config'
-import { namespaceConfig } from '@layouts/stores/config'
-import { themeConfig } from '@themeConfig'
 
 const _syncAppRtl = () => {
   const configStore = useConfigStore()
-  const storedLang = useCookie(`${themeConfig.app.title}-language`)
+  const storedLang = cookieRef<string | null>('language', null)
 
   const { locale } = useI18n({ useScope: 'global' })
+
+  // TODO: Handle case where i18n can't read persisted value
+  if (locale.value !== storedLang.value && storedLang.value)
+    locale.value = storedLang.value
 
   // watch and change lang attribute of html on language change
   watch(

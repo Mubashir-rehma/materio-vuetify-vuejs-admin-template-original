@@ -1,6 +1,7 @@
+import { cookieRef } from '@layouts/stores/config'
+import { themeConfig } from '@themeConfig'
 import type { App } from 'vue'
 import { createI18n } from 'vue-i18n'
-import { themeConfig } from '@themeConfig'
 
 const messages = Object.fromEntries(
   Object.entries(
@@ -14,7 +15,7 @@ export const getI18n = () => {
   if (_i18n === null) {
     _i18n = createI18n({
       legacy: false,
-      locale: useCookie(`${themeConfig.app.title}-language`).value || themeConfig.app.i18n.defaultLocale,
+      locale: cookieRef('language', themeConfig.app.i18n.defaultLocale).value,
       fallbackLocale: 'en',
       messages,
     })

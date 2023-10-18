@@ -118,6 +118,10 @@ AUTH_SECRET=YOUR_SECRET AUTH_ORIGIN=http://localhost:3000 node .output/server/in
 
 If you have more environment variables, You can add them like `AUTH_ORIGIN` and `AUTH_SECRET`.
 
+For more detailed guide please refer to Nuxt's [official guide](https://nuxt.com/docs/getting-started/deployment).
+
+<br>
+
 :::warning Note
 Make sure you are in the project directory before running above commands and also that you have pnpm or npm installed on your machine
 :::

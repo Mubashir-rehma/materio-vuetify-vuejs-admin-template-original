@@ -9,7 +9,7 @@ To change the background color of the template, you can modify the background th
 For example:
 
 ```js
-// /src/plugins/vuetify/theme.ts
+// src/plugins/vuetify/theme.ts
 
 const theme: VuetifyOptions['theme'] = {
   themes: {

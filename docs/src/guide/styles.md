@@ -105,7 +105,7 @@ You have to use this mixin if you are writing RTL styles. This will scope the wr
 However, it does more than just generating RTL styles. It will only generate the styles if you have enabled generating RTL styles.
 
 ```scss
-// File: /src/assets/styles/_variables.scss
+// File: src/assets/styles/_variables.scss
 
 /*
 If you have disable generating RTL styles by setting `$enable-rtl-styles: false`

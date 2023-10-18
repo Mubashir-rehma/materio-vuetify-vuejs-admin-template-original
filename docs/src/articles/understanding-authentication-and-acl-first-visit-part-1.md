@@ -5,7 +5,7 @@
 ```html
 <!-- file: index.html -->
 
-<script  type="module"  src="/src/main.ts"></script>
+<script  type="module"  src="src/main.ts"></script>
 ```
 
 ## 2. CASL initializes

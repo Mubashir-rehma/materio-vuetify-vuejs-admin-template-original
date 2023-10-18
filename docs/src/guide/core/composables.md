@@ -33,3 +33,28 @@ import lightImage from '/assets/imgLight.png'
 
 const lightTheme = useGenerateImageVariant(lightImage, darkImage)
 ```
+
+## useCookie
+
+This composable is used to set/get values in cookies. Please refer to below code snippet.
+
+```ts
+
+// Get cookie value
+const accessToken = useCookie('accessToken').value
+
+// Set cookie value
+useCookie('accessToken').value = null
+
+```
+
+## useResponsiveSidebar
+
+This composable function assesses the current width of the display and returns the status of the left sidebar through the variable `isLeftSidebarOpen`. This variable reflects whether the left sidebar is currently open or closed. It can be used in toggling the sidebar visibility based on the screen width.
+
+```ts
+const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
+
+<VNavigationDrawer v-model="isLeftSidebarOpen"> </VNavigationDrawer>
+
+```

@@ -6,11 +6,11 @@ We provide a themeConfig file for users to customize the look and feel of the te
 
 ### tl;dr
 
-- `UserThemeConfig`: user theme config object
-- `ThemeConfig`: `UserThemeConfig` with `Ref`
-- `UserConfig`: user layout config object for layout plugin. Aliases as `UserLayoutConfig` in `@core`.
-- `Config`: `UserConfig` with `Ref`. Its value has default config values.
-- As `UserThemeConfig` also have typings for `UserConfig` it should take them from `UserConfig` via `UserConfig['<propertyName>']`. _(e.g. `UserLayoutConfig['app']['title']`)_
+- `userConfig`: user theme config object.
+- `themeConfig`: same as `UserConfig`.
+- `layoutConfig`: user layout config object for layout plugin.
+- `UserThemeConfig`: Type for `userConfig`,`themeConfig`.
+- `UserLayoutConfig`: Type for `layoutConfig`.
 
 <br>
 
@@ -26,14 +26,10 @@ We have a bit complex types for themeConfig file because we have `@layouts` plug
 
 As `@layouts` should be independent and we will provide all the template related features via `@core` directory, Typing for themeConfig file is written in `@core` dir.
 
-themeConfig can be defined via `defineConfig` function. This function accepts `userConfig` and returns `{ themeConfig, layoutConfig}`.
+themeConfig can be defined via `defineThemeConfig` function. This function accepts `userConfig` and returns `{ themeConfig, layoutConfig}`.
 
 | config         | type              | desc                                                      |
 | -------------- | ----------------- | --------------------------------------------------------- |
 | `userConfig`   | `UserThemeConfig` | user theme config object                                  |
-| `themeConfig`  | `ThemeConfig`     | Same as `userConfig` but its some properties are reactive |
-| `layoutConfig` | `UserConfig`      | user layout config object for layout plugin               |
-
-Please refer to below diagram from clear explanation:
-
-![master-config-typings.drawio](/images/contributing/master-config-typings.drawio.png)
+| `themeConfig`  | `UserThemeConfig` | Same as `userConfig`                                      |
+| `layoutConfig` | `LayoutConfig`    | user layout config object for layout plugin               |

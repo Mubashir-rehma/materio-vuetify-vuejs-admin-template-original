@@ -213,3 +213,61 @@ For detailed instructions regarding implementation, please visit the following l
 In our email app, there is not any requirement to access states across multiple components. So, the need for a store in the email app has been eliminated. All essential functions have been moved to the `useEmail.ts` file.
 
 To review the changes made for the removal of the store, please refer to this [commit](https://github.com/themeselection/master-vue--material/pull/324)
+
+## Why am I seeing warnings related to Vuetify components when running my Nuxt.js Admin Dashboard in development mode?
+
+<Badge text='Nuxt Only' />
+
+The warnings you are encountering are due to the fact that Vuetify components are not fully Nuxt-ready by default. These warnings are typically triggered when you override Sass variables while using Vuetify components in a Nuxt.js project.
+
+## Are these warnings harmful, and do they affect the functionality of my Admin Dashboard?
+
+<Badge text='Nuxt Only' />
+
+No, these warnings are not harmful and do not impact the core functionality of your Admin Dashboard. They are primarily informational and are intended to alert you to potential compatibility issues between Vuetify and Nuxt.js when customizing the styling.
+
+## How can I resolve or suppress these warnings during development?
+
+<Badge text='Nuxt Only' />
+
+While the warnings can be safely ignored, there are a couple of approaches you can take to suppress them:
+
+Turn off SSR (Server-Side Rendering): This approach can suppress the warnings, but it may not be ideal if SSR is essential for your development. Disabling SSR can help alleviate the warnings but may impact the overall development experience.
+
+Vuetify Nuxt Module: Implementing the Vuetify Nuxt module can resolve the warnings. However, it's important to note that this approach may introduce some other issues, such as limitations with handling icon libraries other than the default Material Design Icons (MDI) used by Vuetify and potential challenges with the internationalization (i18n) setup for Vuetify components. Given these limitations, our development team has decided to wait for an official solution.
+
+## When can I expect these warnings to be resolved?
+
+<Badge text='Nuxt Only' />
+
+Both Vuetify and Nuxt.js communities are actively working towards improving compatibility. These warnings are expected to be addressed in future releases of either Vuetify or Nuxt.js.
+
+We apologize for any inconvenience caused in the meantime and are committed to resolving this issue as soon as a fix is available from either party.
+
+## How can I stay updated on the progress of this issue?
+
+<Badge text='Nuxt Only' />
+
+You can keep an eye on the official repositories and release notes for both Vuetify and Nuxt.js for updates on this issue. Additionally, we will also notify users through our official communication channels once a resolution is available.
+
+We would like to share few important reference links on this issue to keep track of this issue:
+
+<https://github.com/vuetifyjs/vuetify-loader/pull/313>
+
+<https://github.com/nuxt/nuxt/issues/14124>
+
+<https://github.com/vuetifyjs/vuetify-loader/issues/290>
+
+<https://github.com/nuxt/nuxt/issues/15412>
+
+## Is the warning related to Vuetify components a barrier to using my Admin Dashboard in production?
+
+<Badge text='Nuxt Only' />
+
+No, the warning related to Vuetify components is not a barrier to using your Admin Dashboard in production. This warning is purely a development-time informational message and does not affect the functionality, performance, or stability of your Admin Dashboard in a production environment.
+
+Rest assured that your Admin Dashboard is fully functional and reliable for use in production scenarios. You can confidently deploy and utilize your Dashboard without any concerns related to the warnings seen during development.
+
+We appreciate your understanding and patience as we work towards a smoother integration between Vuetify and Nuxt.js. In the meantime, if you have any other questions or encounter any issues, please don't hesitate to reach out to our support team for assistance.
+
+Thank you for choosing our Admin Dashboard, and we apologize for any inconvenience caused by these warnings.

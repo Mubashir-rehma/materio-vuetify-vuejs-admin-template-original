@@ -9,10 +9,8 @@ We can utilize the composable function [usePreferredDark](https://vueuse.org/cor
 How to get/calculate vuetify theme when system theme is enabled.
 
 ```ts
-// @core/utils/vuetify.ts/
-import { isDarkPreferred } from '@core/composable/useThemeConfig'
 
-console.log( isDarkPreferred.value ? 'dark' : 'light'); // dark/light
+console.log(usePreferredDark().value ? 'dark' : 'light' ); // dark/light
 ```
 
 ## Reading theme
@@ -26,9 +24,9 @@ const currentTheme = vuetify.theme.global.name.value // light/dark
 To get template’s current theme (light/dark/system), you can use:
 
 ```ts
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+import { useConfigStore } from '@core/stores/config'
 
-const { theme } = useThemeConfig()
+const configStore = useConfigStore()
 
-console.log(theme.value); //system/light/dark
+console.log(configStore.theme); //system/light/dark
 ```

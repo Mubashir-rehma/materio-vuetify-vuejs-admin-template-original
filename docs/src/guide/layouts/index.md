@@ -15,7 +15,7 @@ Create a new plugin file `src/plugins/layouts.ts` with below content:
 ```ts
 import { createLayouts } from '@layouts'
 import '@layouts/styles/index.scss'
-import { layoutConfig } from '@themeConfig'
+import { layoutConfig } from '@layouts'
 
 // ℹ️ We generate layout config from our themeConfig so you don't have to write config twice
 export default createLayouts(layoutConfig)
@@ -36,25 +36,26 @@ app.use(layoutsPlugin)
 
 You will never have to use layout config but if you are building something on your own and want to access the layout config please proceed below.
 
-You can import anything from `@layouts` dir but we recommend if you ever wanted to access the layout config you better import from themeConfig instead to avoid overhead of finding which config to import. All layout config is exported in `useThemeConfig` composable for ease of use.
+You can import anything from `@layouts` dir but we recommend if you ever wanted to access the layout config, you better access from `useConfigStore()` store instead to avoid overhead of finding which config to import. All layout configs are exported in `useConfigStore()` store for ease of use.
 
 ::: code-group
 
 ```vue [TS]
 <script setup lang="ts">
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+const configStore = useConfigStore()
 
-// `isLessThanOverlayNavBreakpoint` is actually export of `useLayouts`
-const { isLessThanOverlayNavBreakpoint } = useThemeConfig()
+// `isLessThanOverlayNavBreakpoint` is actually export of `useLayoutConfigStore`
+// configStore.isLessThanOverlayNavBreakpoint
 </script>
 ```
 
 ```vue [JS]
 <script setup>
-import { useThemeConfig } from '@core/composable/useThemeConfig'
+const configStore = useConfigStore()
 
-// `isLessThanOverlayNavBreakpoint` is actually export of `useLayouts`
-const { isLessThanOverlayNavBreakpoint } = useThemeConfig()
+// `isLessThanOverlayNavBreakpoint` is actually export of `useLayoutConfigStore`
+// configStore.isLessThanOverlayNavBreakpoint
+
 </script>
 ```
 

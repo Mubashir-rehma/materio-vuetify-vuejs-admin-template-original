@@ -1,6 +1,6 @@
 # Introduction
 
-`src/@core` directory in our template is core of our template. All styles, components, composables, etc reside in this dir. As this is the heart of our template most template updates will require updating this directory.
+`src/@core` directory in our template is core of our template. All styles, components, composables, etc reside in this dir. As this is the heart of our template, most template updates will require updating this directory.
 
 ## Components
 

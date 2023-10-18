@@ -214,7 +214,7 @@ In our email app, there is not any requirement to access states across multiple 
 
 To review the changes made for the removal of the store, please refer to this [commit](https://github.com/themeselection/master-vue--material/pull/324)
 
-## Nuxt Warnings
+## Nuxt Terminal Warnings
 
 #### Why am I seeing warnings related to Vuetify components when running nuxt?
 

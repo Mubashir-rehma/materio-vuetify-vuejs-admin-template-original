@@ -65,3 +65,7 @@ We initially decided to use `$api`(a custom instance of [`ofetch`](https://githu
 However, when it comes to the initial data fetching, we found that [`useFetch`](https://vueuse.org/core/useFetch/) offers distinct advantages. It enables us to effortlessly refresh data when the URL changes.So, We have created `useApi` as a custom instance of [`useFetch`](https://vueuse.org/core/useFetch/) from `vueUse` library.This provides Vue users the flexibility to choose between `useApi` and `$api` based on their specific needs.
 
 However vue user have flexibility to choose any of the `useApi` and `$api` for data fetching, but we recommend to use `useApi` for initial data fetching and `$api` for fetching data on the interactions like update, delete.
+
+:::tip
+To disable msw logs in console, add `{quiet: true}` option in worker.start(). For more info, please visit: <https://mswjs.io/docs/api/setup-worker/start#quiet>
+:::

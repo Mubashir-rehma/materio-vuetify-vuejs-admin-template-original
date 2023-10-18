@@ -36,9 +36,6 @@ Given below are the steps you need to follow to install the **full-version** / *
 - You can run the development server via the dev command, which is useful while developing locally. The development server will automatically detect changes to your files and instantly reflect them in any open browser windows.
 
   ```sh
-  # For yarn
-  yarn dev
-
   # For npm
   npm run dev
   ```
@@ -62,9 +59,6 @@ Given below are the steps you need to follow to install the **full-version** / *
   
   ```sh
   # Build and version the assets for production...
-
-  # For yarn
-  yarn build
 
   # For npm
   npm run build

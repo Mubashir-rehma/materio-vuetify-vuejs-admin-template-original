@@ -18,9 +18,6 @@ history: createWebHistory(import.meta.env.BASE_URL) => history: createWebHistory
 ```bash
 npm run build
 
-OR 
-
-yarn build
 ```
 
 - *We have successfully created build files.*

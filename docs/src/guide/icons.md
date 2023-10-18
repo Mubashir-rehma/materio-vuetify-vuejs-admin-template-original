@@ -288,10 +288,6 @@ Once you have set the target and updated the import statement, then you need to 
 pnpm run build:icons
 ```
 
-```bash [YARN]
-yarn build:icons
-```
-
 ```bash [NPM]
 npm run build:icons
 ```

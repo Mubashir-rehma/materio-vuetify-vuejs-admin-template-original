@@ -60,8 +60,6 @@ pnpm run dev
 1. To generate a production build, use the following commands:
 
  ```ts
- // Using yarn package manager
-  yarn build
 
 // Using npm package manager
   npm run build
@@ -73,8 +71,6 @@ pnpm run dev
 2. Once the build is generated, you can preview it on your local system using the following commands:
 
 ```ts
-// Using yarn package manager
-  yarn preview
 
 // Using npm package manager
   npm run preview

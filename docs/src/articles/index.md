@@ -13,7 +13,7 @@
 - [Understanding Authentication and ACL - Login flow (Part 2)](/articles/understanding-authentication-and-acl-login-flow-part-2.md)
 - [How to clear browser local storage](/articles/how-to-clear-browser-local-storage.md)
 - [How to update template to latest](/articles/how-to-update-template-to-latest-version.md)
-- [How to use useThemeConfig file.](/articles/how-to-use-theme-config.md)
+- [How to update/modify configs in our template .](/articles/how-to-update-configs.md)
 - [How to change background and surface colors.](/articles/how-to-change-background-and-surface-colors.md)
 - [How to remove fake-api from our template and use real API](/articles/how-to-remove-fake-api-and-use-real-api.md)
 - [How to use cookies instead of local storage.](/articles/how-to-use-cookies-instead-localstorage.md)

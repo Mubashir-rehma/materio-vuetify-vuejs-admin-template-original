@@ -1,20 +1,20 @@
-# How to use `useThemeConfig.ts` file
+# How to update/modify configs in our template?
 
-In our template, there is a composable function named `useThemeConfig.ts` which facilitates getting or setting a variety of configuration options related to the theme and template.
+In our template, we have defined a store `useConfigStore` which facilitates getting and setting a variety of configuration options related to the theme and template. You can find this store in `@core/store/config.ts` file.
 
-This function is used in the implementation of our customizer feature, which allows users to customize the theme and template according to their preferences. By utilizing useThemeConfig.ts, users can easily modify various configuration settings to achieve the desired appearance and functionality of the template.
+This store is used in the implementation of our customizer feature, which allows users to customize the theme and template according to their preferences. By utilizing `useConfigStore` store, users can easily modify various configuration settings to achieve the desired appearance and functionality of the template. Please refer to below code snippet for more info.
 
 - `theme`: You can get and set the current theme of the application.
 
 ```js
-import { useThemeConfig } from '@core/composable/useThemeConfig'
-const { theme } = useThemeConfig()
+import { useConfigStore } from '@core/stores/config'
+const configStore = useConfigStore()
 
 // Get
-console.log(theme.value); // system/dark/light
+console.log(configStore.theme); // system/dark/light
 
 // Set
-theme.value = 'dark'
+configStore.theme = 'dark'
 ```
 
 - `isVerticalNavSemiDark`: Semi dark options (`true` / `false`).

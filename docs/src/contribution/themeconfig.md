@@ -7,7 +7,7 @@ We provide a themeConfig file for users to customize the look and feel of the te
 ### tl;dr
 
 - `userConfig`: user theme config object.
-- `themeConfig`: same as `UserConfig`.
+- `themeConfig`: same as `userConfig`.
 - `layoutConfig`: user layout config object for layout plugin.
 - `UserThemeConfig`: Type for `userConfig`,`themeConfig`.
 - `UserLayoutConfig`: Type for `layoutConfig`.

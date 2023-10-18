@@ -28,11 +28,20 @@ Now, user will fill up the form and submit the form. Form submission will trigge
 
 ```ts
 //  file: src/pages/login.vue
+$api('/auth/login', {
+  method: 'POST',
+  body: {
+    email: credentials.value.email,
+    password: credentials.value.password,
+  },
+  onResponseError({ response }) {
+    errors.value = response._data.errors
+  },
+})
 
-axios.post<LoginResponse>('/auth/login', { email: email.value, password: password.value })
 ```
 
-Now, Vue app will make POST request using axios with `email` and `password`.
+Now, Vue app will make POST request with `email` and `password`.
 
 Do note that, in our demo we are mocking/facking API call. In you case, you will have real API endpoint so make sure to update URL `/auth/login` to your auth URL.
 
@@ -42,17 +51,19 @@ Moreover, make sure to disable mocking API calls by following our documentation.
 
 ```ts
 //  file: src/pages/login.vue
+const { accessToken, userData, userAbilityRules } = res
 
-const { accessToken, userData, userAbilities } = r.data
+useCookie('userAbilityRules').value = userAbilityRules
+ability.update(userAbilityRules)
 
-localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-ability.update(userAbilities)
-
-localStorage.setItem('userData', JSON.stringify(userData))
-localStorage.setItem('accessToken', JSON.stringify(accessToken))
+useCookie('userData').value = userData
+useCookie('accessToken').value = accessToken
 
 // Redirect to `to` query if exist or redirect to index route
-router.replace(route.query.to ? String(route.query.to) : '/')  
+// ❗ nextTick is required to wait for DOM updates and later redirect
+await nextTick(() => {
+  router.replace(route.query.to ? String(route.query.to) : '/')
+})
 ```
 
 When our API request is successful, it means that we have successfully logged in. In order to ensure that our login status is updated in Vue app & preserved even if we reload the browser, we need to make some changes to our Vue app.
@@ -62,10 +73,11 @@ When our API request is successful, it means that we have successfully logged in
 ```ts
 //  file: src/pages/login.vue
 
-const { accessToken, userData, userAbilities } = r.data
+const { accessToken, userData, userAbilityRules } = res
+
 ```
 
-After successful API request, we will extarct Access token, user data and user abilities from response (_`r.data`_) via [ES6 destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+After successful API request, we will extract Access token, user data and user abilities from response (_`res`_) via [ES6 destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 According to marked code, your API response must contain mentioned data:
 
@@ -73,19 +85,20 @@ According to marked code, your API response must contain mentioned data:
 - `userData` - User's data, it can include name, full name, image URL etc. It completely depends on what you need from user after login. (_e.g. { id: 1, fullName: 'John Doe', username: 'johndoe', avatar: '<https://xyz.jpeg>' }_)
 - `userAbilities` - User's abilities, This is one of most important data for implmenting ACL. We will use these abilities later to update CASL's ability instance. (_e.g. [{ action: "manage", subject: "users" }, { ... }]_)
 
-If your API response sends different data then we used please make sure to carefully understand the Auth & ACL and later update the code.
+If your API response sends different data then we used, please make sure to carefully understand the Auth & ACL and later update the code.
 
 ## 6. Updating user abilities
 
 ```ts
 //  file: src/pages/login.vue
 
-localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+useCookie('userAbilityRules').value = userAbilityRules
+ability.update(userAbilityRules)
 ```
 
-In previous step, we retrieved user abilities from response data. Now, let's store this retrieved user ability in localStorage so we can get it back even if users reload the page or come back after closing our app.
+In previous step, we retrieved user abilities from response data. Now, let's store this retrieved user ability in cookies so we can get it back even if users reload the page or come back after closing our app.
 
-Here, we are storing user's abilities in localStorage under `userAbilities` key.
+Here, we are storing user's abilities in cookies under `userAbilities` key.
 
 At the moment, user have initial abilities that allows user to visit public pages like login, registration, etc. However, now user is logged in and we know logged in user's abilities (_we retrieved it via API and stored in `userAbilities`_).
 
@@ -93,4 +106,4 @@ So let's update the user abilities in CASL instance so `can` method can use our 
 
 **Related Pages**
 
-- [Access Control]('/src/guide/access-control.md')
+- [Access Control](/guide/access-control.md)

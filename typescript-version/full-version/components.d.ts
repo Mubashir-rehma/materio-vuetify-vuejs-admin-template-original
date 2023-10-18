@@ -149,6 +149,8 @@ declare module 'vue' {
     DemoDialogOverflowed: typeof import('./src/views/demos/components/dialog/DemoDialogOverflowed.vue')['default']
     DemoDialogPersistent: typeof import('./src/views/demos/components/dialog/DemoDialogPersistent.vue')['default']
     DemoDialogScrollable: typeof import('./src/views/demos/components/dialog/DemoDialogScrollable.vue')['default']
+    DemoEditorBasicEditor: typeof import('./src/views/demos/forms/form-elements/editor/DemoEditorBasicEditor.vue')['default']
+    DemoEditorCustomEditor: typeof import('./src/views/demos/forms/form-elements/editor/DemoEditorCustomEditor.vue')['default']
     DemoExpansionPanelAccordion: typeof import('./src/views/demos/components/expansion-panel/DemoExpansionPanelAccordion.vue')['default']
     DemoExpansionPanelBasic: typeof import('./src/views/demos/components/expansion-panel/DemoExpansionPanelBasic.vue')['default']
     DemoExpansionPanelCustomIcon: typeof import('./src/views/demos/components/expansion-panel/DemoExpansionPanelCustomIcon.vue')['default']

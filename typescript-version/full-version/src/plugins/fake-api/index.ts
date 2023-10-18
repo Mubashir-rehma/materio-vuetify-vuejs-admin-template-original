@@ -35,10 +35,13 @@ const worker = setupWorker(
   ...handlerAuth,
 )
 
-worker.start({
-  onUnhandledRequest: 'bypass',
-})
-
 export default function () {
-  // This doesn't require app registration
+  const workerUrl = `${import.meta.env.BASE_URL ?? '/'}mockServiceWorker.js`
+
+  worker.start({
+    serviceWorker: {
+      url: workerUrl,
+    },
+    onUnhandledRequest: 'bypass',
+  })
 }

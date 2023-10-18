@@ -10,7 +10,7 @@
     "lint": "eslint . -c .eslintrc.cjs --fix --rulesdir eslint-internal-rules/ --ext .ts,.js,.cjs,.vue,.tsx,.jsx",
     "build:icons": "tsx src/plugins/iconify/build-icons.ts",
     "msw:init": "msw init public/ --save",
-    "postinstall": "npm run build:icons"
+    "postinstall": "npm run build:icons && npm run msw:init"
   },
   "dependencies": {
     "@casl/ability": "^6.5.0",
@@ -113,7 +113,6 @@
   "resolutions": {
     "postcss": "^8",
     "@tiptap/core": "^2",
-    "video.js": "^7",
     "@types/video.js": "^7",
     "pug": "^3",
     "apexcharts": "^3",
@@ -122,9 +121,6 @@
   "overrides": {
     "postcss": "^8",
     "@tiptap/core": "^2",
-    "@videojs-player/vue": {
-      "video.js": "^7"
-    },
     "@types/video.js": "^7",
     "pug": "^3",
     "apexcharts": "^3",

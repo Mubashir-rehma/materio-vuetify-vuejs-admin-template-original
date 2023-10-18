@@ -40,3 +40,9 @@ We made this decision because fetch API is now stable and everyone is using it. 
 :::info
 If you want to use axios then you can follow their [official guide](https://axios-http.com/docs/intro) to integrate it in our template.
 :::
+
+## Language Configuration
+
+You can now configure languages straight from the `themeConfig.ts` file. This will keep your code DRY and unlocks new feature of configuring LTR/RTL direction for each language.
+
+You can refer to `themeConfig.ts` file for more details.

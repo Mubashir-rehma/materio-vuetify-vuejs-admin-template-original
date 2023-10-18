@@ -28,7 +28,7 @@ export const db: DB = {
       username: 'johndoe',
       password: 'admin',
 
-      avatar: '/images/avatars/avatar-1.png',
+      avatar: `${import.meta.env.BASE_URL ?? '/'}images/avatars/avatar-1.png`,
       email: 'admin@demo.com',
       role: 'admin',
       abilityRules: [
@@ -44,7 +44,7 @@ export const db: DB = {
       username: 'janedoe',
       password: 'client',
 
-      avatar: '/images/avatars/avatar-2.png',
+      avatar: `${import.meta.env.BASE_URL ?? '/'}images/avatars/avatar-2.png`,
       email: 'client@demo.com',
       role: 'client',
       abilityRules: [

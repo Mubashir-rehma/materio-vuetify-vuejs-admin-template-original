@@ -59,3 +59,7 @@ const i18nCompLanguages: I18nLanguage[] = [
 ```
 
 :::
+
+::: tip
+We auto store the i18n language in cookies for later usage.
+:::

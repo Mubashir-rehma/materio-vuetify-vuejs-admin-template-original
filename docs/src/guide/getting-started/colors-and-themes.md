@@ -33,12 +33,6 @@ theme: {
 
 In above code snippet we just updated the primary color in light & dark theme. Now when you run the project `#000` color will be your primary color.
 
-## Themes
-
-With vuetify you are not limited to just light & dark. You can add as many themes as you like. In the same vuetify plugin file you can add or remove the themes.
-
-For detailed docs on how to use themes please visit vuetify's official [docs](https://next.vuetifyjs.com/en/features/theme/).
-
 **Related pages**
 
 - [`ThemeSwitcher` component](../core/components/theme-switcher)

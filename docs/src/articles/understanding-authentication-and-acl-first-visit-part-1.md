@@ -8,70 +8,59 @@
 <script  type="module"  src="src/main.ts"></script>
 ```
 
-## 2. CASL initializes
+## 2. Read Ability from Cookies
 
 ```ts
-// file: src/main.ts
+// file: src/plugins/casl/index.ts
+import type { Rule } from './ability'
 
-app.use(abilitiesPlugin, ability, {
-  useGlobalProperties: true,
-})
+const userAbilityRules = useCookie<Rule[]>('userAbilityRules')
+
 ```
 
-Along with other plugins, [CASL](https://casl.js.org/v6/en/package/casl-vue) (Access Control library) gets initialized.
+To determine the abilities of the user, we can check for the presence of the `userAbilityRules` key and its value in cookie.
 
-Notice we are assigning ability to user of the app by passing ability imported from @/plugins/casl/ability.
+This is necessary because when a user logs in and then reloads the page, the assigned abilities are lost and need to be retrieved from storage. By storing the user's abilities in cookies, we can ensure that they are persisted even after the page is reloaded.
 
-## 3. Read existing ability from localStorage
+## 3. Define initialAbility
 
 ```ts
-// file: src/plugins/casl/ability.ts
+// file: src/plugins/casl/index.ts
 
-// 👉 Handles auto fetching previous abilities if already logged in user
-// ℹ️ You can update this if you store user abilities to more secure place
-// ❗ Anyone can update localStorage so be careful and please update this
+import { createMongoAbility } from '@casl/ability'
 
-const stringifiedUserAbilities = localStorage.getItem('userAbilities')
+const userAbilityRules = useCookie<Rule[]>('userAbilityRules')
+const initialAbility = createMongoAbility(userAbilityRules.value ?? [])
+
 ```
 
-To determine the abilities of the user, we can check for the presence of the userAbilities key and its value in localStorage.
+After getting `userAbilityRules` from cookies, we will define `initialAbility` by passing `userAbilityRules` as parameter to `createMongoAbility` function. Here, please note that if we don't get `userAbilityRules` from cookies, we will pass an empty array to `createMongoAbility` function.
 
-This is necessary because when a user logs in and then reloads the page, the assigned abilities are lost and need to be retrieved from storage. By storing the user's abilities in localStorage, we can ensure that they are persisted even after the page is reloaded.
-
-## 4. Parse ability retrieved from localStorage
+## 4. Initialize CASL
 
 ```ts
-// file: src/plugins/casl/ability.ts
+// file: src/plugins/casl/index.ts
 
-// 👉 Handles auto fetching previous abilities if already logged in user
-// ℹ️ You can update this if you store user abilities to more secure place
-// ❗ Anyone can update localStorage so be careful and please update this
+import type { App } from 'vue'
 
-const stringifiedUserAbilities = localStorage.getItem('userAbilities')
-const existingAbility = stringifiedUserAbilities ? JSON.parse(stringifiedUserAbilities) : null
+import { createMongoAbility } from '@casl/ability'
+import { abilitiesPlugin } from '@casl/vue'
+import type { Rule } from './ability'
 
-export default new Ability(existingAbility || initialAbility)
+export default function (app: App) {
+  const userAbilityRules = useCookie<Rule[]>('userAbilityRules')
+  const initialAbility = createMongoAbility(userAbilityRules.value ?? [])
+
+  app.use(abilitiesPlugin, initialAbility, { // [!code focus]
+    useGlobalProperties: true, // [!code focus]                
+  }) // [!code focus]          
+}
+
 ```
 
-If the userAbilities key is present in localStorage, we will retrieve it as a string in the stringifiedUserAbilities variable. This is because we stored the ability object using JSON.stringify. In order to obtain the JavaScript object from the stringified object, we need to use JSON.parse.
+This will initialize [`CASL`](https://casl.js.org/v6/en/package/casl-vue) with `initialAbility`.
 
-The existingAbility constant will hold either the existing ability object or null if no ability is found.
-
-## 5. Create Ability instance
-
-```ts
-// file: src/plugins/casl/ability.ts
-
-export default new Ability(existingAbility || initialAbility)
-```
-
-To create an Ability instance, we use the code existingAbility || initialAbility. This means that if the user already has an existing ability, that ability will be used. Otherwise, the initial ability will be assigned. The initial ability is defined in initialAbility.
-
-When a user visits our Vue app for the first time, they will not have any existing ability, so they will always be assigned the initialAbility when they visit for the first time.
-
-It is important to make sure that there are enough abilities included in initialAbility so that first-time users can visit public pages such as the login page, the 404 page, the not authorized page, the register page, and the forgot password page.
-
-## 6. App starts navigation
+## 5. App starts navigation
 
 ```ts
 // file: src/main.ts
@@ -81,7 +70,7 @@ app.mount('#app')
 
 Now, all plugins are loaded and Vue Router starts navigation.
 
-## 7. Router's beforeEach guard (Routing ACL)
+## 6. Router's beforeEach guard (Routing ACL)
 
 ```ts
 // file: src/router/index.ts
@@ -95,7 +84,7 @@ Using this we are checking if the user has the necessary abilities to access the
 
 If the user has the enough abilities, the `beforeEach` guard will allow them to proceed to the requested page. This helps to ensure that users can only access pages that they are allowed to based on their abilities.
 
-## 8. Check user is logged in?
+## 7. Check user is logged in?
 
 ```ts
 // file: src/router/index.ts
@@ -107,7 +96,7 @@ To check if the user is logged in, we can check for the presence of `accessToken
 
 We will later use this variable in our navigation guard.
 
-## 9. Can user navigate to requested route?
+## 8. Can user navigate to requested route?
 
 ```ts  
 // file: src/router/index.ts
@@ -117,7 +106,7 @@ if (canNavigate(to))
 
 To determine if the user can navigate to the route, the `canNavigate` function uses the [`can`](https://casl.js.org/v6/en/guide/intro#basics) method from the CASL library. `canNavigate` read requested route's (_in this, it's `to`_) meta `action` & `subject` and pass it to `can` method.
 
-## 10. Redirect if accessing page that is forbidden for logged in users
+## 9. Redirect if accessing page that is forbidden for logged in users
 
 ```ts
 // file: src/router/index.ts
@@ -134,7 +123,7 @@ This is useful for ensuring that logged in users cannot access pages such as the
 
 If a route's meta doesn't have `redirectIfLoggedIn` set to `true`, then the user will be allowed to visit the page without any redirection occurring. This is common behavior when a user is logged in and trying to access pages that they are permitted to visit.
 
-## 11. Redirect user on appropriate location
+## 10. Redirect user on appropriate location
 
 ```ts
 // file: src/router/index.ts

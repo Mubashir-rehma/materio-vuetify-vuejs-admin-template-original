@@ -53,36 +53,71 @@ pnpm run dev
 6. Open the dev server URL in browser.
 
 ---
-**Related FAQ: [Template is slow](/faq/#template-is-slow)**
+
+**Related FAQ:**
+
+- [Template is slow](/faq/#template-is-slow)
+- [Nuxt Terminal Warning](/faq/#nuxt-terminal-warnings)
 
 ## Generating build for production
 
 1. To generate a production build, use the following commands:
 
- ```ts
+::: code-group
 
-// Using npm package manager
-  npm run build
-
-// using pnpm package manager
-  pnpm run build
-  ```
-
-2. Once the build is generated, you can preview it on your local system using the following commands:
-
-```ts
-
-// Using npm package manager
-  npm run preview
-
-// using pnpm package manager
-  pnpm run preview
+```bash [pnpm]
+pnpm build
 ```
 
-:::warning Note
-Make sure you are in the project directory before running above commands and also that you have yarn or npm installed on your machine
+```bash [npm]
+npm run build
+```
+
 :::
+
+2. Previewing build differs for both Vue and Nuxt. Please follow the guide for your framework:
+
+### Vue
+
+Once the build is generated, you can preview it on your local system using the following commands:
+
+::: code-group
+
+```bash [pnpm]
+pnpm preview
+```
+
+```bash [npm]
+npm run preview
+```
 
 :::tip
 Refer to [this](https://vitejs.dev/guide/static-deploy.html) documentation for detailed deployment guide.
+:::
+
+### Nuxt
+
+You can preview normal nuxt app via below command:
+
+```bash
+node .output/server/index.mjs
+```
+
+Above command will work for our starter-kit as well.
+
+However, we have in full version of the template we have need to set some environment variables before running above command. So, for full version of the template, run below command:
+
+```bash
+# ❗ Assuming preview will be on localhost:3000
+AUTH_SECRET=YOUR_SECRET AUTH_ORIGIN=http://localhost:3000 node .output/server/index.mjs
+```
+
+:::details What is `AUTH_SECRET`?
+`AUTH_SECRET` is just random but confidential
+:::
+
+If you have more environment variables, You can add them like `AUTH_ORIGIN` and `AUTH_SECRET`.
+
+:::warning Note
+Make sure you are in the project directory before running above commands and also that you have pnpm or npm installed on your machine
 :::

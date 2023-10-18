@@ -42,20 +42,7 @@ Enable show hidden files feature in your system to view the hidden files if you 
 4. Open terminal in that directory
 5. Run below commands:
 
-::: code-group
-
-```bash [Vue]
-# It will install all packages
-pnpm install
-
-# Create MSW script for faking API calls
-pnpm msw:init
-
-# Will start the dev server
-pnpm run dev
-```
-
-```bash [Nuxt]
+```bash
 # It will install all packages
 pnpm install
 
@@ -63,9 +50,7 @@ pnpm install
 pnpm run dev
 ```
 
-:::
-
-6. Open the dev server URL in browser. Probably it will be <http://localhost:5173>
+6. Open the dev server URL in browser.
 
 ---
 **Related FAQ: [Template is slow](/faq/#template-is-slow)**

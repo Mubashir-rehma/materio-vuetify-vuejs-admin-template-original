@@ -32,7 +32,7 @@ Starter-kit is minimal template from where you can start your project quickly in
 
 Use it if you don't want to clutter your project with extra libs which isn't required.
 
-Don't worry about configuring third party libs which if you want to use them in starter-kit, our template is so flexible that all you have to do is just import lib file in `main.ts` file and provided third party package is ready to use 😍
+Don't worry about configuring third party libs which if you want to use them in starter-kit, our template is so flexible that all you have to do is just copy them from full-version and place it under `src/plugins` directory and provided third party package is ready to use 😍
 
 :::tip
 Starter kit is helpful in providing reproduction steps if you have any technical query.

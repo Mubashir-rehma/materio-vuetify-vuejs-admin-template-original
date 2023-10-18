@@ -214,21 +214,21 @@ In our email app, there is not any requirement to access states across multiple 
 
 To review the changes made for the removal of the store, please refer to this [commit](https://github.com/themeselection/master-vue--material/pull/324)
 
-## Why am I seeing warnings related to Vuetify components when running my Nuxt.js Admin Dashboard in development mode?
+## Nuxt Warnings
 
-<Badge text='Nuxt Only' />
+#### Why am I seeing warnings related to Vuetify components when running nuxt?
 
 The warnings you are encountering are due to the fact that Vuetify components are not fully Nuxt-ready by default. These warnings are typically triggered when you override Sass variables while using Vuetify components in a Nuxt.js project.
 
-## Are these warnings harmful, and do they affect the functionality of my Admin Dashboard?
+<br>
 
-<Badge text='Nuxt Only' />
+#### Are these warnings harmful, and do they affect the functionality of my Admin Dashboard?
 
 No, these warnings are not harmful and do not impact the core functionality of your Admin Dashboard. They are primarily informational and are intended to alert you to potential compatibility issues between Vuetify and Nuxt.js when customizing the styling.
 
-## How can I resolve or suppress these warnings during development?
+<br>
 
-<Badge text='Nuxt Only' />
+#### How can I resolve or suppress these warnings during development?
 
 While the warnings can be safely ignored, there are a couple of approaches you can take to suppress them:
 
@@ -236,17 +236,17 @@ Turn off SSR (Server-Side Rendering): This approach can suppress the warnings, b
 
 Vuetify Nuxt Module: Implementing the Vuetify Nuxt module can resolve the warnings. However, it's important to note that this approach may introduce some other issues, such as limitations with handling icon libraries other than the default Material Design Icons (MDI) used by Vuetify and potential challenges with the internationalization (i18n) setup for Vuetify components. Given these limitations, our development team has decided to wait for an official solution.
 
-## When can I expect these warnings to be resolved?
+<br>
 
-<Badge text='Nuxt Only' />
+#### When can I expect these warnings to be resolved?
 
 Both Vuetify and Nuxt.js communities are actively working towards improving compatibility. These warnings are expected to be addressed in future releases of either Vuetify or Nuxt.js.
 
 We apologize for any inconvenience caused in the meantime and are committed to resolving this issue as soon as a fix is available from either party.
 
-## How can I stay updated on the progress of this issue?
+<br>
 
-<Badge text='Nuxt Only' />
+#### How can I stay updated on the progress of this issue?
 
 You can keep an eye on the official repositories and release notes for both Vuetify and Nuxt.js for updates on this issue. Additionally, we will also notify users through our official communication channels once a resolution is available.
 
@@ -260,9 +260,9 @@ We would like to share few important reference links on this issue to keep track
 
 <https://github.com/nuxt/nuxt/issues/15412>
 
-## Is the warning related to Vuetify components a barrier to using my Admin Dashboard in production?
+<br>
 
-<Badge text='Nuxt Only' />
+#### Is the warning related to Vuetify components a barrier to using my Admin Dashboard in production?
 
 No, the warning related to Vuetify components is not a barrier to using your Admin Dashboard in production. This warning is purely a development-time informational message and does not affect the functionality, performance, or stability of your Admin Dashboard in a production environment.
 

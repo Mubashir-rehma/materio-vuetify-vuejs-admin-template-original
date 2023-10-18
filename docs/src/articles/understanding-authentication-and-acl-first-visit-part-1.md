@@ -154,4 +154,4 @@ Passing requested route's URL in `to` query param is useful in cases where someo
 
 **Related Pages**
 
-- [Access Control]('/src/guide/access-control.md')
+- [Access Control](/guide/access-control.md)

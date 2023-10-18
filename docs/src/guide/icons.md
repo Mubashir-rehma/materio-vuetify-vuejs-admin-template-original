@@ -266,23 +266,17 @@ const sources = {
 
 :::
 
-<!-- ### Target & Import -->
+### Target & Import
 
-<!-- Once you have added all the icons that are necessary for your project, you need to set the file path in which the whole icon bundle gets generated.
+Once you have added all the icons that are necessary for your project, you need to set the file path in which the whole icon bundle gets generated.
 
-Search for the term `const target =` in the `src/@iconify/build-icons.ts` or `src/@iconify/build-icons.js` file and set a file path which is suitable for your project. Once the file path is set, you need to update that file path in the `src/main.ts` or `src/main.js` file as well. Once the import statement is updated in the `src/main.ts` or `src/main.js` file, you can use Iconify Vue Component anywhere in the template.
+Search for the term `const target =` in the `src/@iconify/build-icons.ts` or `src/@iconify/build-icons.js` file and set a file path which is suitable for your project.
 
 We have set the value of `target` as:
 
 ```ts
-const target = 'src/@iconify/icons-bundle.js'
+const target = join(__dirname, 'icons.css')
 ```
-
-and the import statement as:
-
-```tsx
-import '@/@iconify/icons-bundle'
-``` -->
 
 ### Run the command
 
@@ -306,11 +300,11 @@ npm run build:icons
 
 ## How is the css Icons are generated?
 
-Once you have added the icons, set the target css file and update the import statement in `build-icons.ts` file and run the above command, css icons are generated.
+Once you have added the icons, set the target css file and run the above command, css icons are generated.
 
 When you run the command for generating css Icons,
 
-All the imports defined in `src/plugins/iconify/build-icons.ts` file, collects the icon data. Once all the icon data is collected, we use [`getIconsCss()`](https://iconify.design/docs/libraries/utils/get-icons-css.html) function from iconify to generate CSS icons.
+All the imports defined in `src/plugins/iconify/build-icons.ts` file, collects the icon's data. Once all the icon's data is collected, we use [`getIconsCss()`](https://iconify.design/docs/libraries/utils/get-icons-css.html) function from iconify to generate CSS icons.
 
 The generated CSS is saved to the `src/plugins/iconify/icons.css` file. This file contains all the CSS icons with their classes.
 

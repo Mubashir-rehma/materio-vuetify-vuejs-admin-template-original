@@ -38,8 +38,11 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Delivery Address</VExpansionPanelTitle>
 
-      <VExpansionPanelText class="pt-4 pb-2">
-        <VForm @submit.prevent="() => {}">
+      <VExpansionPanelText>
+        <VForm
+          class="pt-4 pb-2"
+          @submit.prevent="() => {}"
+        >
           <VRow>
             <!-- 👉 Full Name -->
             <VCol
@@ -51,7 +54,6 @@ const paymentMethods = [
                 placeholder="John Doe"
               />
             </VCol>
-
             <!-- 👉 Phone No -->
             <VCol
               cols="12"
@@ -63,7 +65,6 @@ const paymentMethods = [
                 placeholder="+1 123 456 7890"
               />
             </VCol>
-
             <!-- 👉 Address -->
             <VCol cols="12">
               <VTextarea
@@ -72,7 +73,6 @@ const paymentMethods = [
                 rows="3"
               />
             </VCol>
-
             <!-- 👉 Pincode -->
             <VCol
               cols="12"
@@ -84,7 +84,6 @@ const paymentMethods = [
                 type="number"
               />
             </VCol>
-
             <!-- 👉 Landmark -->
             <VCol
               cols="12"
@@ -95,7 +94,6 @@ const paymentMethods = [
                 placeholder="Near City Mall"
               />
             </VCol>
-
             <!-- 👉 City -->
             <VCol
               cols="12"
@@ -106,7 +104,6 @@ const paymentMethods = [
                 placeholder="New York"
               />
             </VCol>
-
             <!-- 👉 State -->
             <VCol
               cols="12"
@@ -118,7 +115,6 @@ const paymentMethods = [
                 placeholder="Select State"
               />
             </VCol>
-
             <!-- 👉 Address Type  -->
             <VCol cols="12">
               <VLabel class="mb-3">
@@ -150,11 +146,11 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Delivery Options</VExpansionPanelTitle>
 
-      <VExpansionPanelText class="pt-4 pb-2">
+      <VExpansionPanelText>
         <!-- 👉 Radio Group -->
         <VRadioGroup
           v-model="deliveryOption"
-          class="delivery-options"
+          class="delivery-options pt-4 pb-2"
         >
           <div
             class="delivery-option d-flex rounded-t"
@@ -231,13 +227,13 @@ const paymentMethods = [
     <VExpansionPanel>
       <VExpansionPanelTitle>Payment Method</VExpansionPanelTitle>
 
-      <VExpansionPanelText class="pt-4 pb-2">
+      <VExpansionPanelText>
         <VRow>
           <VCol
             md="6"
             cols="12"
           >
-            <VForm>
+            <VForm class="pt-4 pb-2">
               <!-- 👉 Payment Method -->
               <div>
                 <VRadioGroup

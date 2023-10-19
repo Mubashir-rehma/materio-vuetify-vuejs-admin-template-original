@@ -466,7 +466,7 @@ export const db: DB = {
       ],
     },
     {
-      title: 'Forms Tables',
+      title: 'Forms & Tables',
       category: 'formsTables',
       children: [
         {

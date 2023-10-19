@@ -10,7 +10,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/editor/demoCodeEdit
         title="Basic Editor"
         :code="demoCode.basicEditor"
       >
-        <DemoCodeBasicEditor />
+        <DemoEditorBasicEditor />
       </AppCardCode>
     </VCol>
 
@@ -19,7 +19,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/editor/demoCodeEdit
         title="Custom Editor"
         :code="demoCode.customEditor"
       >
-        <DemoCodeCustomEditor />
+        <DemoEditorCustomEditor />
       </AppCardCode>
     </VCol>
   </VRow>

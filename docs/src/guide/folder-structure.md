@@ -39,9 +39,7 @@ In Vue, This is used in conjunction with [unplugin-vue-router](https://github.co
 
 This directory contains vertical nav & horizontal nav items. Items written in `src/navigation/vertical/index.ts` will be for vertical nav and items written in `src/navigation/horizontal/index.ts` will be for horizontal nav. Both files are imported in `src/layouts/default.vue`).
 
-Related: [Fetching navigation items from database via API](#) <br>
-Related: [How to create vertical navigation](#) <br>
-Related: [How to create horizontal navigation](#)
+Related: [Fetching navigation items from database via API](/code-examples/fetching-nav-items-from-api.html#fetching-nav-items-from-api) <br>
 
 ## `pages`
 

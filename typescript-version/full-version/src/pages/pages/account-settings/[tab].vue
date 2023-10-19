@@ -7,7 +7,10 @@ import AccountSettingsSecurity from '@/views/pages/account-settings/AccountSetti
 
 const route = useRoute('pages-account-settings-tab')
 
-const activeTab = computed(() => route.params.tab)
+const activeTab = computed({
+  get: () => route.params.tab,
+  set: () => route.params.tab,
+})
 
 // tabs
 const tabs = [

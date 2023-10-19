@@ -14,7 +14,10 @@ definePage({
 
 const route = useRoute('pages-user-profile-tab')
 
-const activeTab = computed(() => route.params.tab)
+const activeTab = computed({
+  get: () => route.params.tab,
+  set: () => route.params.tab,
+})
 
 // tabs
 const tabs = [

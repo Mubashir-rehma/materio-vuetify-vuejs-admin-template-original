@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [Pnpm](https://pnpm.io/) package manager is recommended
+- [pnpm](https://pnpm.io/) package manager is recommended
 - [Node](https://nodejs.org/) LTS version is required
 
 :::details How do I check my node version?
@@ -41,8 +41,8 @@ Enable show hidden files feature in your system to view the hidden files if you 
 
 4. Open terminal in that directory
 
-5. Set environment variables. For nuxt, you need to set environment variables in `.env` file as per `.env.example`.
-:::details Sample `.env` file
+5. In Vue it's optional to set environment variables but for nuxt we recommend you set environment variables. You can create `.env` file as per `.env.example` and add your environment variables in there.
+:::details Sample `.env` file for nuxt
 
 ```bash [pnpm]
 AUTH_ORIGIN=http://localhost:3000

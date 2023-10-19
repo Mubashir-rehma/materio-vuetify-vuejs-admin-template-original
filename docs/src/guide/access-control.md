@@ -179,34 +179,18 @@ When you store user ability in cookies, cookie key name must be `userAbilities`.
 
 On logout we need to reset ability. Resetting ability is same as updating to new ability, only difference is that we will pass empty array.
 
-::: code-group
-
-```ts{3,9,12} [TS]
+```ts
 
 // Use composable
 const ability = useAbility()
 
 // Update the ability using `update` method
-ability.update([])
-
-// Remove "userAbilities" from cookie
-useCookie('userAbilityRules').value = null
-```
-
-```js{2,8,11} [JS]
-
-// Use composable
-const ability = useAbility()
-
-// Update the ability using `update` method
-ability.update([])
+ability.update([]) // [!code hl]
 
 // Remove "userAbilities" from cookie
 useCookie('userAbilityRules').value = null
 
 ```
-
-:::
 
 ## Route Protection
 
@@ -216,10 +200,12 @@ For protecting routes based on ability, all you have to do is add meta to `defin
 
 In [How to create a new page](/guide/how-to-create-a-new-page.md) guide we created a dashboard analytics page. Let's add `action` & `subject` meta to this route by updating the file as below:
 
+:::code-group
+
 <!-- prettier-ignore-start -->
-```vue{5-9}
+```vue{2-7} [Vue]
 <script lang="ts" setup>
-definePage({
+definePage({ 
   meta: {
     action: 'read',
     subject: 'Web',
@@ -233,6 +219,24 @@ definePage({
 
 ```
 <!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+```vue{2-5} [Nuxt]
+<script lang="ts" setup>
+definePageMeta({
+  action: 'read',
+  subject: 'Web',
+})
+</script>
+
+<template>
+  <p>This is analytics page inside dashboard directory.</p>
+</template>
+
+```
+<!-- prettier-ignore-end -->
+
+:::
 
 This will only allow user to view the analytics dashboard if user have above mentioned ability.
 

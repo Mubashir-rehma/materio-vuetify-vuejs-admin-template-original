@@ -185,7 +185,7 @@ const inventoryTabsData = [
                     v-else
                     class="d-flex justify-center align-center gap-3 pa-8 border-dashed drop-zone flex-wrap"
                   >
-                    <VRow class="match-height">
+                    <VRow class="match-height w-100">
                       <template
                         v-for="(item, index) in fileData"
                         :key="index"

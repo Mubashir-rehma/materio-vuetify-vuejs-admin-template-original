@@ -115,6 +115,7 @@ const handleActionClick = async (
   action: 'trash' | 'unread' | 'read' | 'spam' | 'star' | 'unstar',
   emailIds: Email['id'][] = selectedEmails.value,
 ) => {
+  selectedEmails.value = []
   if (!emailIds.length)
     return
 
@@ -166,6 +167,12 @@ const refreshOpenedEmail = async () => {
   if (openedEmail.value)
     openedEmail.value = emails.value.find(e => e.id === openedEmail.value?.id)!
 }
+
+watch(
+  () => route.params,
+  () => { selectedEmails.value = [] },
+  { deep: true },
+)
 </script>
 
 <template>

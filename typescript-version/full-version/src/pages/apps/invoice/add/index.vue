@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue'
+import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
 
 // Type: Invoice data
 import type { InvoiceData, PurchasedProduct } from '@/views/apps/invoice/types'
@@ -50,6 +51,7 @@ const clientNotes = ref(false)
 const paymentStub = ref(false)
 const selectedPaymentMethod = ref('Bank Account')
 const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
+const isSendPaymentSidebarVisible = ref(false)
 
 const addProduct = (value: PurchasedProduct) => {
   invoiceData.value?.purchasedProducts.push(value)
@@ -86,6 +88,7 @@ const removeProduct = (id: number) => {
             block
             prepend-icon="mdi-send-outline"
             class="mb-3"
+            @click="isSendPaymentSidebarVisible = true"
           >
             Send Invoice
           </VBtn>
@@ -160,4 +163,7 @@ const removeProduct = (id: number) => {
       </div>
     </VCol>
   </VRow>
+
+  <!-- 👉 Send Invoice Sidebar -->
+  <InvoiceSendInvoiceDrawer v-model:isDrawerOpen="isSendPaymentSidebarVisible" />
 </template>

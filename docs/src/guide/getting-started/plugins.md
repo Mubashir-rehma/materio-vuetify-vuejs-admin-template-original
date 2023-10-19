@@ -4,7 +4,7 @@ We have improved the way plugins are registered in our template. We now use [nux
 
 ## Plugin Registration
 
-We now uses [nuxt like](https://nuxt.com/docs/guide/directory-structure/plugins#creating-plugins) plugin registration. From now on, You just have to create a file inside `src/plugins` directory and export default a function from it. This function will have `app` as a parameter. You can use this `app` to register your plugin.
+From now on, You just have to create a file inside `src/plugins` directory and export default a function from it. This function will have `app` as a parameter. You can use this `app` to register your plugin.
 
 ::: code-group
 

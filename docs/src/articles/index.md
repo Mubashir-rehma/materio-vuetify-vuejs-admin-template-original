@@ -11,7 +11,6 @@
 - [How to create datatable using simple table](/articles/how-to-create-datatable-using-simple-table.md)
 - [Understanding Authentication and ACL - First Visit (Part 1)](/articles/understanding-authentication-and-acl-first-visit-part-1.md)
 - [Understanding Authentication and ACL - Login flow (Part 2)](/articles/understanding-authentication-and-acl-login-flow-part-2.md)
-- [How to clear browser local storage](/articles/how-to-clear-browser-local-storage.md)
 - [How to update template to latest](/articles/how-to-update-template-to-latest-version.md)
 - [How to update/modify configs in our template .](/articles/how-to-update-configs.md)
 - [How to change background and surface colors.](/articles/how-to-change-background-and-surface-colors.md)

@@ -10,17 +10,17 @@ You can find access control related configuration in `src/plugins/casl` director
 
 <!-- TODO: Improve this. It looks boring. -->
 
-- `ability.ts`: It exports the `Ability` instance of CASL. It will read initial ability from themeConfig. It will also try to fetch any ability from localStorage and if found it will use ability fetched from localStorage rather than initial ability. This will help in persisting the ability between browser window reload/close.
-- `AppAbility.ts`: This is only available in our TypeScript template. It contains available actions & subjects in your app.
+- `index.ts`: It will read the abilities from `userAbilityRules` cookie and will define `initialAbility` using `userAbilityRules`. then, it will initialize `CASL` in our template with `initialAbility`.
+- `ability.ts`: It exports the `Ability` instance of `CASL` for defining abilities. In typescript version, It also exports types for `Actions` and `Subjects`.
 - `shims-ability.d.ts`: This is only available in our TypeScript template. This file is shims file for CASL.
-- `useAppAbility.ts`: This is only available in our TypeScript template. This file contains `useAppAbility` composable for ease so you don't have to import `AppAbility` from `AppAbility.ts` file.
+- `useAbility.ts`:  This file provides `useAbility` composable for ease so you don't have to import `ability` from `ability.ts` file.
 
-:::tip `useAbility` vs `useAppAbility`
-CASL provides `useAbility` composable but it requires providing `AppAbility` type as generic so when you use it you need two imports like `useAppAbility.ts` file.
+:::tip `useAbility`
 
-Whereas, with `useAppAbility` you need single import statement. Hence, it is **recommended** to use `useAppAbility` instead of `useAbility`.
+By default, CASL provides a `useAbility` composable, but using it directly would require us to import a `ability` type from `ability.ts` file every time we use it. To avoid this, we've defined our custom `useAbility` composable in `useAbility.ts` file.
 
-This is straight from official CASL docs [here](https://casl.js.org/v6/en/package/casl-vue#composition-api).
+Now, whenever we need to use the `useAbility` in our templates, we simply import it from `useAbility.ts` file.This way, we don't have to worry about importing additional type  every time we work with abilities in our application.
+
 :::
 
 ## Using ACL
@@ -96,8 +96,6 @@ You will definitely update ability in your app, most probably after login. To up
 ::: code-group
 
 ```ts [TS]
-import { useAbility } from '@casl/vue'
-import type { AppAbility } from '@/plugins/casl/AppAbility'
 
 // You will get below object on login's successful API response
 const userAbilities = [{
@@ -106,7 +104,7 @@ const userAbilities = [{
 }]
 
 // Use composable
-const ability = useAbility<AppAbility>()
+const ability = useAbility()
 
 // Update the ability using `update` method
 ability.update(userAbilities)
@@ -130,32 +128,11 @@ ability.update(userAbilities)
 
 :::
 
-That's all for updating ability. However, this ability update will get lost on page reload. To persist ability between page reload/close, you have to add ability to localStorage:
+That's all for updating ability. However, this ability update will get lost on page reload. To persist ability between page reload/close, you have to add ability to cookies:
 
 ::: code-group
 
 ```ts{16-17} [TS]
-import { useAbility } from '@casl/vue'
-import type { AppAbility } from '@/plugins/casl/AppAbility'
-
-// You will get below object on login's successful API response
-const userAbilities = [{
-  action: 'read',
-  subject: 'Admin',
-}]
-
-// Use composable
-const ability = useAbility<AppAbility>()
-
-// Update the ability using `update` method
-ability.update(userAbilities)
-
-// Adding ability to localStorage so template can pick it up on page reload
-localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-```
-
-```js{15-16} [JS]
-import { useAbility } from '@casl/vue'
 
 // You will get below object on login's successful API response
 const userAbilities = [{
@@ -169,49 +146,64 @@ const ability = useAbility()
 // Update the ability using `update` method
 ability.update(userAbilities)
 
-// Adding ability to localStorage so template can pick it up on page reload
-localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+// Adding ability to cookies so template can pick it up on page reload
+useCookie('userAbilityRules').value = userAbilityRules
+
+```
+
+```js{15-16} [JS]
+// You will get below object on login's successful API response
+const userAbilities = [{
+  action: 'read',
+  subject: 'Admin',
+}]
+
+// Use composable
+const ability = useAbility()
+
+// Update the ability using `update` method
+ability.update(userAbilities)
+
+// Adding ability to cookie so template can pick it up on page reload
+useCookie('userAbilityRules').value = userAbilityRules
+
 ```
 
 :::
 
 :::warning
-When you store user ability in localStorage, localStorage key name must be `userAbilities`. If you want to use different key name, make sure it is same as you have used in `src/plugins/casl/ability.ts` for retrieving user ability.
+When you store user ability in cookies, cookie key name must be `userAbilities`. If you want to use different key name, make sure it is same as you have used in `src/plugins/casl/index.ts` for retrieving user ability.
 :::
 
-### Resetting to initial ability
+### Resetting ability
 
-On logout we need to reset ability to initial ability. Resetting ability is same as updating to new ability, only difference is that we will pass `initialAbility` we have in `@/plugins/casl/ability` to `ability.update` method.
+On logout we need to reset ability. Resetting ability is same as updating to new ability, only difference is that we will pass empty array.
 
 ::: code-group
 
 ```ts{3,9,12} [TS]
-import { useAbility } from '@casl/vue'
-import type { AppAbility } from '@/plugins/casl/AppAbility'
-import { initialAbility } from '@/plugins/casl/ability'
-
-// Use composable
-const ability = useAbility<AppAbility>()
-
-// Update the ability using `update` method
-ability.update(initialAbility)
-
-// Adding ability to localStorage so template can pick it up on page reload
-localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
-```
-
-```js{2,8,11} [JS]
-import { useAbility } from '@casl/vue'
-import { initialAbility } from '@/plugins/casl/ability'
 
 // Use composable
 const ability = useAbility()
 
 // Update the ability using `update` method
-ability.update(initialAbility)
+ability.update([])
 
-// Adding ability to localStorage so template can pick it up on page reload
-localStorage.setItem('userAbilities', JSON.stringify(initialAbility))
+// Remove "userAbilities" from cookie
+useCookie('userAbilityRules').value = null
+```
+
+```js{2,8,11} [JS]
+
+// Use composable
+const ability = useAbility()
+
+// Update the ability using `update` method
+ability.update([])
+
+// Remove "userAbilities" from cookie
+useCookie('userAbilityRules').value = null
+
 ```
 
 :::

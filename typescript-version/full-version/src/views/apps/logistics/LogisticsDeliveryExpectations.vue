@@ -92,7 +92,7 @@ const deliveryExceptionsChartConfig = {
       breakpoint: 420,
       options: {
         chart: {
-          height: 300,
+          height: 400,
         },
       },
     },

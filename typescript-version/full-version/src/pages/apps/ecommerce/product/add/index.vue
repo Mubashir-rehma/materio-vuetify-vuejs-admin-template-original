@@ -57,7 +57,11 @@ const activeTab = ref('Restock')
 const shippingList = [
   { desc: 'You\'ll be responsible for product delivery.Any damage or delay during shipping may cost you a Damage fee', title: 'Fulfilled by Seller', value: 'Fulfilled by Seller' },
   { desc: 'Your product, Our responsibility.For a measly fee, we will handle the delivery process for you.', title: 'Fulfilled by Company name', value: 'Fulfilled by Company name' },
-]
+] as const
+
+const shippingType = ref<typeof shippingList[number]['value']>('Fulfilled by Company name')
+const deliveryType = ref('Worldwide delivery')
+const selectedAttrs = ref(['Biodegradable', 'Expiry Date'])
 
 const inventoryTabsData = [
   { icon: 'mdi-plus', title: 'Restock', value: 'Restock' },
@@ -350,6 +354,7 @@ const inventoryTabsData = [
 
                   <VWindowItem value="Shipping">
                     <VRadioGroup
+                      v-model="shippingType"
                       label="Shipping Type"
                       class="ms-3"
                     >
@@ -376,6 +381,7 @@ const inventoryTabsData = [
                   <VWindowItem value="Global Delivery">
                     <div>
                       <VRadioGroup
+                        v-model="deliveryType"
                         label="Global Delivery"
                         class="ms-3"
                       >
@@ -440,9 +446,20 @@ const inventoryTabsData = [
                       Attributes
                     </div>
                     <div>
-                      <VCheckbox label="Fragile Product" />
-                      <VCheckbox label="Biodegradable" />
-                      <VCheckbox>
+                      <VCheckbox
+                        v-model="selectedAttrs"
+                        label="Fragile Product"
+                        value="Fragile Product"
+                      />
+                      <VCheckbox
+                        v-model="selectedAttrs"
+                        value="Biodegradable"
+                        label="Biodegradable"
+                      />
+                      <VCheckbox
+                        v-model="selectedAttrs"
+                        value="Frozen Product"
+                      >
                         <template #label>
                           <div class="d-flex flex-column mb-1">
                             <div>Frozen Product</div>
@@ -455,7 +472,10 @@ const inventoryTabsData = [
                         </template>
                       </VCheckbox>
 
-                      <VCheckbox>
+                      <VCheckbox
+                        v-model="selectedAttrs"
+                        value="Expiry Date"
+                      >
                         <template #label>
                           <div class="d-flex flex-column mb-1">
                             <div>Expiry Date of Product</div>

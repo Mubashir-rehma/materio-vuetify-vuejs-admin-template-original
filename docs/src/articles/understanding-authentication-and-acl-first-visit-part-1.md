@@ -92,7 +92,7 @@ If the user has the enough abilities, the `beforeEach` guard will allow them to 
 const isLoggedIn = isUserLoggedIn()
 ```
 
-To check if the user is logged in, we can check for the presence of `accessToken` and `userData` in localStorage. If either of these values is missing, we can conclude that the user is not logged in and set `isLoggedIn` to `false`.
+To check if the user is logged in, we can check for the presence of `accessToken` and `userData` in cookie. If either of these values is missing, we can conclude that the user is not logged in and set `isLoggedIn` to `false`.
 
 We will later use this variable in our navigation guard.
 

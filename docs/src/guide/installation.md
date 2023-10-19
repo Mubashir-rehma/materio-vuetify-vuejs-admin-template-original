@@ -40,7 +40,19 @@ Enable show hidden files feature in your system to view the hidden files if you 
 :::
 
 4. Open terminal in that directory
-5. Run below commands:
+
+5. Set environment variables. For nuxt, you need to set environment variables in `.env` file as per `.env.example`.
+:::details Sample `.env` file
+
+```bash [pnpm]
+AUTH_ORIGIN=http://localhost:3000
+AUTH_SECRET=7af82237c4ac5d172db8c53816139f2bf25236231130898bfebe65dace465d5e
+
+```
+
+:::
+
+6. Run below commands:
 
 ::: code-group
 
@@ -62,7 +74,7 @@ pnpm run dev
 
 :::
 
-6. Open the dev server URL in browser.
+7. Open the dev server URL in browser.
 
 ---
 

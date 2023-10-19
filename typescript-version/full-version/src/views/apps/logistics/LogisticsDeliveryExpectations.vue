@@ -65,7 +65,7 @@ const deliveryExceptionsChartConfig = {
         labels: {
           show: true,
           value: {
-            fontSize: '34px',
+            fontSize: '26px',
             color: headingColor,
             fontWeight: 500,
             offsetY: -15,

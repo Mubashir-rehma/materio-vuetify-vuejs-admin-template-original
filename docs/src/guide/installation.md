@@ -42,13 +42,25 @@ Enable show hidden files feature in your system to view the hidden files if you 
 4. Open terminal in that directory
 5. Run below commands:
 
-```bash
+::: code-group
+
+```bash [Vue]
 # It will install all packages
 pnpm install
 
 # Will start the dev server
 pnpm run dev
 ```
+
+```bash [Nuxt]
+# It will install all packages
+pnpm install
+
+# Will start the dev server
+pnpm run dev
+```
+
+:::
 
 6. Open the dev server URL in browser.
 

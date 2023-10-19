@@ -165,7 +165,7 @@ const inventoryTabsData = [
                       variant="tonal"
                       class="rounded-sm"
                     >
-                      <VIcon icon="tabler-upload" />
+                      <VIcon icon="mdi-upload" />
                     </IconBtn>
                     <div class="text-base text-high-emphasis font-weight-medium">
                       Drag and Drop Your Image Here.
@@ -190,23 +190,27 @@ const inventoryTabsData = [
                           cols="12"
                           sm="4"
                         >
-                          <VCard :ripple="false">
+                          <VCard
+                            :ripple="false"
+                            border
+                          >
                             <VCardText
-                              class="d-flex flex-column align-center"
+                              class="d-flex flex-column"
                               @click.stop
                             >
                               <VImg
                                 :src="item.url"
-                                width="150px"
-                                height="100px"
+                                width="200px"
+                                height="150px"
+                                class="w-100 mx-auto"
                               />
                               <div class="mt-2">
-                                <div class="clamp-text text-wrap">
+                                <span class="clamp-text text-wrap">
                                   {{ item.file.name }}
-                                </div>
-                                <div>
+                                </span>
+                                <span>
                                   {{ item.file.size / 1000 }} KB
-                                </div>
+                                </span>
                               </div>
                             </VCardText>
                             <VCardActions>

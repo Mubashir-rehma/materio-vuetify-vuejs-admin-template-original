@@ -86,7 +86,7 @@ module.exports = {
     ],
 
     // Ignore _ as unused variable
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_+$' }],
+    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_+$' }],
 
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', 'consistent'],

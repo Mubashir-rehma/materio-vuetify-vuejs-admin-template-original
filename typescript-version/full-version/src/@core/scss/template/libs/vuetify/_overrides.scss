@@ -1,4 +1,22 @@
-@use "@core/scss/template/_mixins.scss";
+@use "@core/scss/base/utils";
+@use "@core/scss/template/mixins.scss";
+
+// 👉 Typography
+
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6,
+.text-subtitle-1, 
+.text-subtitle-2, 
+.text-body-1,
+.text-body-2,
+.text-caption, 
+.text-overline {
+  color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+}
 
 // 👉 Button
 @include mixins.update-tonal-bg('v-btn');

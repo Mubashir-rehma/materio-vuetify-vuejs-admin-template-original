@@ -8,8 +8,9 @@
     </VAlert>
 
     <VAlert
-      color="secondary"
+      color="error"
       icon="mdi-whatsapp"
+      variant="tonal"
     >
       Phasellus blandit leo ut odio. Morbi mattis ullamcorper velit.
     </VAlert>
@@ -17,6 +18,7 @@
     <VAlert
       color="success"
       icon="mdi-nodejs"
+      variant="outlined"
     >
       Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
     </VAlert>

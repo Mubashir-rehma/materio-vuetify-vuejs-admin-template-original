@@ -68,7 +68,6 @@
         &.bg-#{$color-name}{
           .v-alert__underlay{
             background: rgb(var(--v-theme-#{$color-name})) !important;
-            opacity: var(--v-activated-opacity) !important;
           }
 
           .v-alert__prepend{

@@ -1,5 +1,10 @@
 @use "@configured-variables" as variables;
 
+// 👉 VList
+.v-list .v-icon {
+  font-size: 1.375rem;
+}
+
 // 👉 Alert
 .v-alert{
   &:not(.v-alert--prominent) .v-alert__prepend{
@@ -46,7 +51,6 @@
       }
     }
   }
-
 }
 
 @each $color-name in variables.$theme-colors-name {
@@ -91,7 +95,7 @@
   }
 }
 
-
+// 👉 VTextField
 // Override Vuetify's default outline color for text fields to match the theme
 // ℹ️ We cannot override directly border color because it does not work with dirty or focus state
 .v-field__outline {
@@ -107,3 +111,9 @@
   --v-field-border-opacity: 0.54 !important;
 }
 
+// 👉 VMenu
+.v-menu {
+  .v-list-item--density-default:not(.v-list-item--nav).v-list-item--one-line {
+    padding-inline: 16px;
+  }
+}

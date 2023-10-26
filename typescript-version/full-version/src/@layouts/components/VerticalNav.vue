@@ -136,6 +136,8 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
         />
       </PerfectScrollbar>
     </slot>
+
+    <slot name="after-nav-items" />
   </Component>
 </template>
 

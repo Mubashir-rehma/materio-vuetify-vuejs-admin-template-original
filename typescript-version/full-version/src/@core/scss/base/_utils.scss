@@ -88,3 +88,10 @@
 .list-none {
   list-style-type: none;
 }
+
+// shadow utility class
+@each $name,$size in variables.$shadow {
+  .elevation-#{$name}{
+    box-shadow: $size !important;
+  }
+}

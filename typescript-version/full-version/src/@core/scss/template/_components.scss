@@ -1,0 +1,16 @@
+
+// Override Vuetify's default outline color for text fields to match the theme
+// ℹ️ We cannot override directly border color because it does not work with dirty or focus state
+.v-field__outline {
+  color: rgba(var(--v-theme-on-surface));
+
+  &:not([class*="text-"]) .v-label {
+    color:rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  }
+}
+
+// hover state outline color 
+.v-field:hover .v-field__outline {
+  --v-field-border-opacity: 0.54 !important;
+}
+

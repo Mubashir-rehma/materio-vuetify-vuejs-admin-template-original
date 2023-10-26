@@ -67,7 +67,6 @@ export default {
   },
   VSelect: {
     variant: 'outlined',
-    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },
@@ -96,31 +95,26 @@ export default {
   },
   VTextField: {
     variant: 'outlined',
-    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },
   VAutocomplete: {
     variant: 'outlined',
-    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },
   VCombobox: {
     variant: 'outlined',
-    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },
   VFileInput: {
     variant: 'outlined',
-    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },
   VTextarea: {
     variant: 'outlined',
-    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },

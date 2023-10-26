@@ -109,8 +109,6 @@ declare module 'vue' {
     DemoChipSizes: typeof import('./src/views/demos/components/chip/DemoChipSizes.vue')['default']
     DemoChipWithAvatar: typeof import('./src/views/demos/components/chip/DemoChipWithAvatar.vue')['default']
     DemoChipWithIcon: typeof import('./src/views/demos/components/chip/DemoChipWithIcon.vue')['default']
-    DemoCodeBasicEditor: typeof import('./src/views/demos/forms/form-elements/editor/DemoCodeBasicEditor.vue')['default']
-    DemoCodeCustomEditor: typeof import('./src/views/demos/forms/form-elements/editor/DemoCodeCustomEditor.vue')['default']
     DemoComboboxBasic: typeof import('./src/views/demos/forms/form-elements/combobox/DemoComboboxBasic.vue')['default']
     DemoComboboxClearable: typeof import('./src/views/demos/forms/form-elements/combobox/DemoComboboxClearable.vue')['default']
     DemoComboboxDensity: typeof import('./src/views/demos/forms/form-elements/combobox/DemoComboboxDensity.vue')['default']
@@ -378,6 +376,5 @@ declare module 'vue' {
     TwoFactorAuthDialog: typeof import('./src/components/dialogs/TwoFactorAuthDialog.vue')['default']
     UserInfoEditDialog: typeof import('./src/components/dialogs/UserInfoEditDialog.vue')['default']
     UserUpgradePlanDialog: typeof import('./src/components/dialogs/UserUpgradePlanDialog.vue')['default']
-    VueApexCharts: typeof import('vue3-apexcharts')['default']
   }
 }

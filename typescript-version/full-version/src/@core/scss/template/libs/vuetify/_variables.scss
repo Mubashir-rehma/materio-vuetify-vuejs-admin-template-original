@@ -1,6 +1,9 @@
 @forward "../../../base/libs/vuetify/variables" with (
   $body-font-family: 'Inter' !default,
   $border-radius-root: 6px,
+  
+  // 👉 VField
+  $field-outline-opacity: 0.28 !default,
 
   // 👉 Typography
   $typography: (

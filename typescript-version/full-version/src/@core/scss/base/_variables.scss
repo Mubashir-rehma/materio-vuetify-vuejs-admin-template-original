@@ -197,15 +197,4 @@ $gap: map-deep-merge(
   $gap
 );
 
-// 👉 Shadow 
-$shadow: () !default;
-$shadow: map-deep-merge(
-  (
-    "xs": 0 2px 4px 0 rgba(var(--v-theme-on-surface),14%),
-    "sm": 0 2px 8px 0 rgba(var(--v-theme-on-surface),16%),
-    "md": 0 4px 12px 0 rgba(var(--v-theme-on-surface),16%),
-    "lg": 0 6px 18px 0 rgba(var(--v-theme-on-surface),18%),
-    "xl": 0 8px 24px 0 rgba(var(--v-theme-on-surface),20%),
-  ),
-  $shadow
-);
+

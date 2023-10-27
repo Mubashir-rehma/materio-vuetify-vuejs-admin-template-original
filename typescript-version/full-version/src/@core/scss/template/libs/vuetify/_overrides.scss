@@ -39,32 +39,36 @@
     // We want darker background on hover instead of light
     &:not(.v-btn--loading, .v-btn--disabled) {
       &.bg-primary:hover {
-        background-color: #6c3bd6 !important;
+        background-color: #7540E8 !important;
       }
 
       &.bg-secondary:hover {
-        background-color: #4D5056 !important;
+        background-color: #7E8086 !important;
       }
 
       &.bg-info:hover {
-        background-color: #0E71A3 !important;
+        background-color: #14A1E8 !important;
       }
 
       &.bg-success:hover {
-        background-color: #378100 !important;
+        background-color: #4EB800 !important;
       }
 
       &.bg-warning:hover {
-        background-color: #A37300 !important;
+        background-color: #E8A400 !important;
       }
 
       &.bg-error:hover {
-        background-color: #A33134 !important;
+        background-color: #E8454A !important;
       }
 
       .v-btn__overlay {
         opacity: 0;
       }
+    }
+
+    &:hover{
+      box-shadow: 0 2px 8px 0 rgba(var(--v-shadow-key-umbra-color), 0.14), 0 0 transparent, 0 0 transparent
     }
   }
 

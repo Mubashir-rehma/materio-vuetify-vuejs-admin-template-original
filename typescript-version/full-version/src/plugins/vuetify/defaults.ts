@@ -120,6 +120,7 @@ export default {
   },
   VSwitch: {
     // set v-switch default color to primary
+    inset: true,
     color: 'primary',
     hideDetails: 'auto',
   },

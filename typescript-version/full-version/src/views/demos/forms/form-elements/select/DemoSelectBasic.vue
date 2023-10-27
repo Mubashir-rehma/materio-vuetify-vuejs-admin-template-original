@@ -7,5 +7,6 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
     :items="items"
     label="Standard"
     placeholder="Select Item"
+    eager
   />
 </template>

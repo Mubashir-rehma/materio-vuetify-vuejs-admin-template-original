@@ -51,9 +51,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'border-opacity': 0.23,
 
       // Shadows
-      'shadow-key-umbra-opacity': 'rgba(var(--v-theme-on-surface), 0.08)',
-      'shadow-key-penumbra-opacity': 'rgba(var(--v-theme-on-surface), 0.12)',
-      'shadow-key-ambient-opacity': 'rgba(var(--v-theme-on-surface), 0.04)',
+      'shadow-key-umbra-color': 'rgb(var(--v-theme-on-surface))',
     },
   },
   dark: {
@@ -105,9 +103,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'border-opacity': 0.23,
 
       // Shadows
-      'shadow-key-umbra-opacity': 'rgba(20, 18, 33, 0.08)',
-      'shadow-key-penumbra-opacity': 'rgba(20, 18, 33, 0.12)',
-      'shadow-key-ambient-opacity': 'rgba(20, 18, 33, 0.04)',
+      'shadow-key-umbra-color': 'rgb(19,17,32)',
     },
   },
 }

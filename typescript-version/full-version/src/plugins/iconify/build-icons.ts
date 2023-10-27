@@ -85,6 +85,9 @@ const sources: BundleScriptConfig = {
     // 'json/gg.json',
 
     // Iconify JSON file (@iconify/json is a package name, /json/ is directory where files are, then filename)
+    require.resolve('@iconify-json/ri/icons.json'),
+
+    // TODO remove mdi icons after replacing all icons with remix icons in template
     require.resolve('@iconify-json/mdi/icons.json'),
 
     // Custom file with only few icons

@@ -135,6 +135,37 @@
   }
 }
 
+// 👉 Expansion Panel
+
+.v-expansion-panels{
+  .v-expansion-panel{
+    &.v-expansion-panel--active{
+      box-shadow: 0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),0.16);
+    }
+    
+    .v-expansion-panel-title{
+      &--active{
+        .v-expansion-panel-title__overlay,
+        &:hover .v-expansion-panel-title__overlay
+        {
+          opacity: 0 !important;
+        }
+      }
+    
+      &:hover{
+        .v-expansion-panel-title__overlay{
+          opacity: 0 !important;
+        }
+      }
+    }
+
+    .v-expansion-panel-text{
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))
+    }
+  }
+
+}
+
 // 👉 VTextField
 // Override Vuetify's default outline color for text fields to match the theme
 // ℹ️ We cannot override directly border color because it does not work with dirty or focus state

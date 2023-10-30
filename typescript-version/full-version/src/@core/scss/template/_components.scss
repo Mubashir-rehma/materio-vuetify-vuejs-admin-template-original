@@ -1,4 +1,7 @@
 @use "@configured-variables" as variables;
+@use "sass:map";
+@use "@styles/variables/vuetify";
+@use "@core/scss/base/mixins";
 
 // 👉 VList
 .v-list .v-icon {
@@ -123,8 +126,31 @@
     padding-block: 0 !important;
     padding-inline: 10px !important;
   }
-
 }
+
+// 👉 checkbox box shadow
+// .v-checkbox-btn {
+//   &.v-selection-control--dirty {
+//     .v-selection-control__input {
+//       .v-icon .custom-checkbox-checked {
+//         // ℹ️ Using filter: drop-shadow() instead of box-shadow because box-shadow creates white background for SVG
+//         filter: drop-shadow(map.get(vuetify.$shadow-key-umbra, 2));
+//       }
+//     }
+//   }
+// }
+
+// 👉 Radio
+// .v-radio,
+// .v-radio-btn {
+//   &.v-selection-control--dirty {
+//     .v-selection-control__input {
+//       .custom-radio-checked {
+//         @include mixins.elevation(2); 
+//       }
+//     }
+//   }
+// }
 
 // 👉 Dialog
 .v-dialog{

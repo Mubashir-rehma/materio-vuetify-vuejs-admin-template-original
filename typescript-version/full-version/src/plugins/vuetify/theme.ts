@@ -51,7 +51,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'border-opacity': 0.23,
 
       // Shadows
-      'shadow-key-umbra-color': 'rgb(var(--v-theme-on-surface))',
+      'shadow-key-umbra-color': '#3A3541',
     },
   },
   dark: {
@@ -103,7 +103,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'border-opacity': 0.23,
 
       // Shadows
-      'shadow-key-umbra-color': 'rgb(19,17,32)',
+      'shadow-key-umbra-color': '#131120',
     },
   },
 }

@@ -106,6 +106,26 @@
   }
 }
 
+// 👉 Chip
+.v-chip{
+  .v-chip__close{
+    margin-inline: 0 !important;
+    opacity: 0.7
+  }
+
+  &.v-chip--size-small{
+    --v-chip-height: 24px !important;
+
+    font-size: 13px !important;
+  }
+
+  &.v-chip--size-default{
+    padding-block: 0 !important;
+    padding-inline: 10px !important;
+  }
+
+}
+
 // 👉 VTextField
 // Override Vuetify's default outline color for text fields to match the theme
 // ℹ️ We cannot override directly border color because it does not work with dirty or focus state

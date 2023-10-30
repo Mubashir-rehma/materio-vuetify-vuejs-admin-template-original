@@ -16,7 +16,7 @@ const aliases: IconAliases = {
   complete: 'ri-check-line',
   cancel: 'ri-close-line',
   close: 'ri-close-line',
-  delete: 'ri-close-line',
+  delete: 'ri-close-circle-fill',
   clear: 'ri-close-line',
   prev: 'ri-arrow-left-s-line',
   next: 'ri-arrow-right-s-line',

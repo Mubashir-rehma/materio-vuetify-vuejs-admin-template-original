@@ -10,6 +10,7 @@ import { defineConfig } from 'vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -87,6 +88,7 @@ export default defineConfig({
         fileURLToPath(new URL('./src/plugins/i18n/locales/**', import.meta.url)),
       ],
     }),
+    svgLoader(),
   ],
   define: { 'process.env': {} },
   resolve: {

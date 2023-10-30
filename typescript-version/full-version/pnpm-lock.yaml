@@ -290,6 +290,9 @@ devDependencies:
   vite-plugin-vuetify:
     specifier: 1.0.2
     version: 1.0.2(vite@4.4.11)(vue@3.3.4)(vuetify@3.3.22)
+  vite-svg-loader:
+    specifier: ^4.0.0
+    version: 4.0.0
   vue-shepherd:
     specifier: ^3.0.0
     version: 3.0.0(vue@3.3.4)
@@ -7852,6 +7855,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - vue
+
+  /vite-svg-loader@4.0.0:
+    resolution: {integrity: sha512-0MMf1yzzSYlV4MGePsLVAOqXsbF5IVxbn4EEzqRnWxTQl8BJg/cfwIzfQNmNQxZp5XXwd4kyRKF1LytuHZTnqA==}
+    dependencies:
+      '@vue/compiler-sfc': 3.3.4
+      svgo: 3.0.2
+    dev: true
 
   /vite@4.4.11(@types/node@20.8.6)(sass@1.69.4):
     resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}

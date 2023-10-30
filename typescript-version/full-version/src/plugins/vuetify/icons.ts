@@ -1,5 +1,11 @@
 import type { IconAliases } from 'vuetify'
 
+import checkboxChecked from '@images/svg/checkbox-checked.svg'
+import checkboxIndeterminate from '@images/svg/checkbox-indeterminate.svg'
+import checkboxUnchecked from '@images/svg/checkbox-unchecked.svg'
+import radioChecked from '@images/svg/radio-checked.svg'
+import radioUnchecked from '@images/svg/radio-unchecked.svg'
+
 const aliases: IconAliases = {
   info: 'ri-error-warning-line',
   success: 'ri-checkbox-circle-line',
@@ -14,17 +20,17 @@ const aliases: IconAliases = {
   clear: 'ri-close-line',
   prev: 'ri-arrow-left-s-line',
   next: 'ri-arrow-right-s-line',
-  checkboxOn: 'custom-checkbox-checked',
-  checkboxOff: 'custom-checkbox-unchecked',
-  checkboxIndeterminate: 'custom-checkbox-indeterminate',
+  checkboxOn: () => h(checkboxChecked),
+  checkboxOff: () => h(checkboxUnchecked),
+  checkboxIndeterminate: () => h(checkboxIndeterminate),
   delimiter: 'ri-circle-line',
   sort: 'ri-arrow-up-line',
   expand: 'ri-arrow-down-s-line',
   menu: 'ri-menu-line',
   subgroup: 'ri-arrow-down-s-fill',
   dropdown: 'ri-arrow-down-s-line',
-  radioOn: 'custom-radio-checked',
-  radioOff: 'custom-radio-unchecked',
+  radioOn: () => h(radioChecked),
+  radioOff: () => h(radioUnchecked),
   edit: 'ri-pencil-line',
   ratingEmpty: 'custom-star-empty',
   ratingFull: 'custom-star-fill',

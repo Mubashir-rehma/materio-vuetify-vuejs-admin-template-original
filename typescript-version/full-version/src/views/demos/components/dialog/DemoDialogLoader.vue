@@ -29,11 +29,12 @@ watch(isDialogVisible, value => {
       color="primary"
       width="300"
     >
-      <VCardText class="pt-3">
+      <VCardText class="pt-3 text-white">
         Please stand by
         <VProgressLinear
           indeterminate
-          class="mb-0"
+          class="mt-4"
+          color="#fff"
         />
       </VCardText>
     </VCard>

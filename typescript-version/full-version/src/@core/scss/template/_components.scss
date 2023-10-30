@@ -126,6 +126,15 @@
 
 }
 
+// 👉 Dialog
+.v-dialog{
+  .v-card{
+    .v-card-text{
+      color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    }
+  }
+}
+
 // 👉 VTextField
 // Override Vuetify's default outline color for text fields to match the theme
 // ℹ️ We cannot override directly border color because it does not work with dirty or focus state

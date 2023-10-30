@@ -142,6 +142,14 @@
   // 👉 Chip
   $chip-font-size: 13px !default,
   $chip-close-size: 20px !default,
+
+  // 👉 Dialogs
+  $dialog-elevation: 8 !default,
+  $dialog-card-header-padding: 20px !default,
+  $dialog-card-text-padding: 0 20px 20px !default,
+
+  // 👉 Cards
+  $card-actions-padding: 0 20px 20px !default,
   
   // 👉 List
   $list-item-one-line-min-height: 40 !default,

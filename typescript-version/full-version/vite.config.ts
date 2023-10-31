@@ -88,7 +88,9 @@ export default defineConfig({
         fileURLToPath(new URL('./src/plugins/i18n/locales/**', import.meta.url)),
       ],
     }),
-    svgLoader(),
+    svgLoader({
+      defaultImport: 'component',
+    }),
   ],
   define: { 'process.env': {} },
   resolve: {

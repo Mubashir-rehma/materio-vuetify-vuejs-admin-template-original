@@ -169,4 +169,12 @@
   $list-subheader-font-weight: 500 !default,
   $list-item-icon-margin-start: 12px !default,
 
+  // 👉 Snackbar
+  $snackbar-background: rgb(var(--v-tooltip-background)) !default,
+  $snackbar-color: rgb(var(--v-theme-surface)) !default,
+  $snackbar-content-padding: 8px 16px !default,
+  $snackbar-wrapper-padding: 0 !default,
+  $snackbar-wrapper-min-height: 38px !default,
+  $snackbar-elevation: 2 !default,
+  
 );

@@ -66,7 +66,10 @@
         opacity: 0;
       }
     }
+  }
 
+  
+  &--variant-elevated{
     &:hover{
       box-shadow: 0 2px 8px 0 rgba(var(--v-shadow-key-umbra-color), 0.14), 0 0 transparent, 0 0 transparent
     }

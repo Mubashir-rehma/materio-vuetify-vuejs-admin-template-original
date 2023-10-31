@@ -10,7 +10,7 @@
   
   $field-outline-opacity: 0.28 !default,
 
-  
+  // 👉 Typography
   $typography: (
     "h1": (
       "weight": 500,
@@ -50,18 +50,19 @@
   )!default,
 
 
+  //  👉 Shadows
   $shadow-key-umbra: (
     0: (0 0 0 0 rgba(var(--v-shadow-key-umbra-color), 1)),
     1: (0 2px 4px rgba(var(--v-shadow-key-umbra-color), 0.12)),
-    2: (0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color),0.14)),
+    2: (0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-xs-opacity))),
     3: (0 3px 8px rgba(var(--v-shadow-key-umbra-color), 0.14)),
-    4: (0 2px 8px 0 rgba(var(--v-shadow-key-umbra-color),0.16)),
+    4: (0 2px 8px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-sm-opacity))),
     5: (0 4px 10px rgba(var(--v-shadow-key-umbra-color), 0.15)),
-    6: (0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),0.16)),
+    6: (0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-md-opacity))),
     7: (0 4px 18px rgba(var(--v-shadow-key-umbra-color), 0.1)),
-    8: (0 6px 18px 0 rgba(var(--v-shadow-key-umbra-color),0.18)),
+    8: (0 6px 18px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-lg-opacity))),
     9: (0 5px 14px rgba(var(--v-shadow-key-umbra-color), 0.18)),
-    10: (0 8px 24px 0 rgba(var(--v-shadow-key-umbra-color),0.20)),
+    10: (0 8px 24px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-xl-opacity))),
     11: (0 5px 16px rgba(var(--v-shadow-key-umbra-color), 0.2)),
     12: (0 6px 17px rgba(var(--v-shadow-key-umbra-color), 0.22)),
     13: (0 6px 18px rgba(var(--v-shadow-key-umbra-color), 0.22)),
@@ -134,7 +135,7 @@
     24: (0 0 transparent),
   ) !default,
 
-  
+  // 👉 Buttons
   $button-height: 38px !default,
   $button-text-transform: capitalize !default,
   $button-padding-ratio: 2.15 !default,
@@ -144,25 +145,25 @@
   $button-text-letter-spacing: initial !default,
   $button-line-height: 20px !default,
 
-  
+  // 👉 Chip
   $chip-font-size: 13px !default,
   $chip-close-size: 20px !default,
 
-  
+  // 👉 Dialog 
   $dialog-elevation: 8 !default,
   $dialog-card-header-padding: 20px !default,
   $dialog-card-text-padding: 0 20px 20px !default,
 
-  
+  // 👉 Cards
   $card-actions-padding: 0 20px 20px !default,
 
-  
+  // 👉 Expansion Panel
   $expansion-panel-active-margin: 0.5rem !default,
   $expansion-panel-title-font-size: 1rem !default,
   $expansion-panel-text-padding: 0 20px 20px !default,
   $expansion-panel-title-padding: 16px 20px !default, 
   
-  
+  // 👉 List
   $list-item-one-line-min-height: 40 !default,
   $list-item-padding: 8px 20px !default,
   $list-subheader-font-weight: 500 !default,

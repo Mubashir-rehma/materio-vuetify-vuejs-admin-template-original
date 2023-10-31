@@ -52,6 +52,11 @@ export const themes: Record<string, ThemeDefinition> = {
 
       // Shadows
       'shadow-key-umbra-color': '#3A3541',
+      'shadow-xs-opacity': 0.14,
+      'shadow-sm-opacity': 0.16,
+      'shadow-md-opacity': 0.16,
+      'shadow-lg-opacity': 0.18,
+      'shadow-xl-opacity': 0.20,
     },
   },
   dark: {
@@ -104,6 +109,11 @@ export const themes: Record<string, ThemeDefinition> = {
 
       // Shadows
       'shadow-key-umbra-color': '#131120',
+      'shadow-xs-opacity': 0.18,
+      'shadow-sm-opacity': 0.22,
+      'shadow-md-opacity': 0.24,
+      'shadow-lg-opacity': 0.26,
+      'shadow-xl-opacity': 0.28,
     },
   },
 }

@@ -232,7 +232,7 @@
   }
 }
 
-// 👉 switch
+// 👉 Switch
 .v-switch.v-switch--inset {
   .v-switch__track,
   .v-selection-control__wrapper {
@@ -280,5 +280,12 @@
         background-color: #fff;
       }
     }
+  }
+}
+
+// 👉 Tooltip
+.v-tooltip.v-overlay{
+  .v-overlay__content{
+    font-weight: 500 !important;
   }
 }

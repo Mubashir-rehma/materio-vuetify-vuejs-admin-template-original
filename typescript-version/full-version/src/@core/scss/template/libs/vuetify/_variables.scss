@@ -180,6 +180,12 @@
   $snackbar-action-margin: 16px !default,
 
 
-
+  // 👉 Tooltip
+  $tooltip-background-color: rgb(var(--v-tooltip-background)) !default,
+  $tooltip-text-color: rgb(var(--v-theme-surface)) !default,
+  $tooltip-border-radius: 0.25rem !default,
+  $tooltip-font-size: 0.6875rem !default,
+  $tooltip-padding: 4px 8px !default,
+  $tooltip-line-height: 1.273 !default,
   
 );

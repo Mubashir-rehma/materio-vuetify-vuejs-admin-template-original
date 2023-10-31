@@ -1,11 +1,16 @@
 @forward "../../../base/libs/vuetify/variables" with (
   $body-font-family: 'Inter' !default,
   $border-radius-root: 6px,
+
   
-  // 👉 VField
+  $rounded: (
+    "shaped": 25px 0,
+  ) !default,
+  
+  
   $field-outline-opacity: 0.28 !default,
 
-  // 👉 Typography
+  
   $typography: (
     "h1": (
       "weight": 500,
@@ -129,7 +134,7 @@
     24: (0 0 transparent),
   ) !default,
 
-  // 👉 Btn
+  
   $button-height: 38px !default,
   $button-text-transform: capitalize !default,
   $button-padding-ratio: 2.15 !default,
@@ -139,26 +144,28 @@
   $button-text-letter-spacing: initial !default,
   $button-line-height: 20px !default,
 
-  // 👉 Chip
+  
   $chip-font-size: 13px !default,
   $chip-close-size: 20px !default,
 
-  // 👉 Dialogs
+  
   $dialog-elevation: 8 !default,
   $dialog-card-header-padding: 20px !default,
   $dialog-card-text-padding: 0 20px 20px !default,
 
-  // 👉 Cards
+  
   $card-actions-padding: 0 20px 20px !default,
 
-  // 👉 Expansion Panel
+  
   $expansion-panel-active-margin: 0.5rem !default,
   $expansion-panel-title-font-size: 1rem !default,
   $expansion-panel-text-padding: 0 20px 20px !default,
   $expansion-panel-title-padding: 16px 20px !default, 
   
-  // 👉 List
+  
   $list-item-one-line-min-height: 40 !default,
   $list-item-padding: 8px 20px !default,
   $list-subheader-font-weight: 500 !default,
+  $list-item-icon-margin-start: 12px !default,
+
 );

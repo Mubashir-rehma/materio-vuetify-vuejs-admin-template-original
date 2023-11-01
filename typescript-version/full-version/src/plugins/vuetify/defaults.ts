@@ -33,8 +33,9 @@ export default {
     elevation: 0,
   },
   VPagination: {
-    activeColor: 'primary',
     density: 'comfortable',
+    showFirstLastPage: true,
+    variant: 'tonal',
   },
   VTabs: {
     // set v-tabs default color to primary

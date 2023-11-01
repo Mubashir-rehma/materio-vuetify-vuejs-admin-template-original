@@ -126,6 +126,18 @@
   }
 }
 
+// 👉 VBadge
+.v-badge{
+  &.v-badge--inline{
+    .v-badge__wrapper{
+      .v-badge__badge{
+        padding-block: 4px;
+        padding-inline: 8px;
+      }
+    }
+  }
+}
+
 // 👉 Chip
 .v-chip{
   .v-chip__close{

@@ -135,6 +135,12 @@
     24: (0 0 transparent),
   ) !default,
 
+  // 👉 Badge
+  $badge-height: 1.375rem !default,
+  $badge-min-width: 1.375rem !default,
+  $badge-dot-height: 8px !default,
+  $badge-dot-width: 8px !default,
+  
   // 👉 Buttons
   $button-height: 38px !default,
   $button-text-transform: capitalize !default,

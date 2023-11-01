@@ -51,8 +51,6 @@ const aliases: Partial<IconAliases> = {
 
 export const iconify = {
   component: (props: IconProps) => {
-    console.log(props)
-
     // Load custom SVG directly instead of going through icon component
     if (typeof props.icon === 'string') {
       const iconComponent = customIcons[props.icon]

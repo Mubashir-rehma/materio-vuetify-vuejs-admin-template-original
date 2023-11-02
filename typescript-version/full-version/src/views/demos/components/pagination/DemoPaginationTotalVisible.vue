@@ -6,6 +6,6 @@ const currentPage = ref(1)
   <VPagination
     v-model="currentPage"
     :length="15"
-    :total-visible="$vuetify.display.mdAndUp ? 7 : 3"
+    :total-visible="$vuetify.display.mdAndUp ? 4 : $vuetify.display.sm ? 2 : 1 "
   />
 </template>

@@ -56,7 +56,6 @@ const attrs = useAttrs()
 
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [{ modelValue: _, ...inputProps }] = VInput.filterProps(props)
 const [fieldProps] = filterFieldProps(props)
 
@@ -184,7 +183,7 @@ const emitModelValue = (val: string) => {
 <style lang="scss">
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
-@use "@core/scss/base/mixins" as mixins;
+@use "@core/scss/base/mixins";
 
 .flat-picker-custom-style {
   position: absolute;
@@ -196,6 +195,7 @@ const emitModelValue = (val: string) => {
   padding-inline: var(--v-field-padding-start);
 }
 
+$heading-color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 $body-color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
 
 // hide the input when your picker is inline
@@ -203,19 +203,41 @@ input[altinputclass="inlinePicker"] {
   display: none;
 }
 
-.flatpickr-time input.flatpickr-hour {
-  font-weight: 400;
-}
-
 .flatpickr-calendar {
-  @include mixins.elevation(6);
-
   background-color: rgb(var(--v-theme-surface));
+  inline-size: 16.875rem;
   margin-block-start: 0.1875rem;
 
-  .flatpickr-day,
-  .flatpickr-weekday {
-    color: $body-color;
+  @include mixins.elevation(6);
+
+  .flatpickr-rContainer {
+    inline-size: 16.875rem;
+
+    .flatpickr-weekdays {
+      padding-inline: 0.5rem;
+    }
+
+    .flatpickr-days {
+      min-inline-size: 16.875rem;
+
+      .dayContainer {
+        justify-content: center !important;
+        inline-size: 16.875rem !important;
+        min-inline-size: 16.875rem !important;
+        padding-block: 0 0.5rem;
+
+        .flatpickr-day {
+          block-size: 36px;
+          line-height: 36px;
+          margin-block-start: 0 !important;
+          max-inline-size: 36px;
+        }
+      }
+    }
+  }
+
+  .flatpickr-day {
+    color: $heading-color;
 
     &.today {
       border-color: rgb(var(--v-theme-primary));
@@ -223,7 +245,7 @@ input[altinputclass="inlinePicker"] {
       &:hover {
         border-color: rgb(var(--v-theme-primary));
         background: transparent;
-        color: $body-color;
+        color: $heading-color;
       }
     }
 
@@ -232,21 +254,25 @@ input[altinputclass="inlinePicker"] {
       border-color: rgb(var(--v-theme-primary));
       background: rgb(var(--v-theme-primary));
       color: rgb(var(--v-theme-on-primary));
+
+      @include mixins.elevation(2);
     }
 
     &.inRange,
     &.inRange:hover {
       border: none;
-      background: rgba(var(--v-theme-primary), 30%) !important;
-      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%), 5px 0 0 rgba(var(--v-theme-primary), 17%) !important;
+      background: rgba(var(--v-theme-primary), 0.1) !important;
+      box-shadow: none !important;
+      color: rgb(var(--v-theme-primary));
     }
 
     &.startRange {
-      box-shadow: 5px 0 0 rgba(var(--v-theme-primary), 17%);
+      @include mixins.elevation(2);
+
     }
 
     &.endRange {
-      box-shadow: -5px 0 0 rgba(var(--v-theme-primary), 17%);
+      @include mixins.elevation(2);
     }
 
     &.startRange,
@@ -267,13 +293,20 @@ input[altinputclass="inlinePicker"] {
     &.flatpickr-disabled,
     &.prevMonthDay:not(.startRange,.inRange),
     &.nextMonthDay:not(.endRange,.inRange) {
-      opacity: var(--v-disabled-opacity);
+      color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity));
     }
 
     &:hover {
-      border-color: rgba(var(--v-theme-surface-variant), var(--v-hover-opacity));
-      background: rgba(var(--v-theme-surface-variant), var(--v-hover-opacity));
+      border-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+      background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
     }
+  }
+
+  .flatpickr-weekday {
+    color: $heading-color;
+    font-size: 14px;
+    font-weight: 500;
   }
 
   &::after,
@@ -282,20 +315,25 @@ input[altinputclass="inlinePicker"] {
   }
 
   .flatpickr-months {
+    padding-block-start: 0.5rem;
+
     .flatpickr-prev-month,
     .flatpickr-next-month {
-      fill: $body-color;
-      inset-block-start: -5px;
+      fill: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+
+      svg {
+        stroke: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      }
 
       &:hover i,
       &:hover svg {
-        fill: rgb(var(--v-theme-primary));
+        fill: $body-color;
       }
     }
   }
 
   .flatpickr-current-month span.cur-month {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   &.open {
@@ -321,10 +359,14 @@ input[altinputclass="inlinePicker"] {
 
 // Time picker
 .flatpickr-time {
+  input.flatpickr-hour {
+    font-weight: 400;
+  }
+
   .flatpickr-am-pm,
   .flatpickr-time-separator,
   input {
-    color: $body-color;
+    color: $heading-color;
   }
 
   .numInputWrapper {
@@ -353,25 +395,31 @@ input[altinputclass="inlinePicker"] {
 
 // week sections
 .flatpickr-weekdays {
-  margin-block-start: 8px;
+  margin-block: 8px;
 }
 
 // Month and year section
 .flatpickr-current-month {
   .flatpickr-monthDropdown-months {
     appearance: none;
+    block-size: 24px;
   }
 
   .flatpickr-monthDropdown-months,
   .numInputWrapper {
     padding: 2px;
     border-radius: 4px;
-    color: $body-color;
-    font-size: 1.1rem;
+    color: $heading-color;
+    font-size: 1rem;
+    font-weight: 400;
     transition: all 0.15s ease-out;
 
     span {
       display: none;
+    }
+
+    input.cur-year {
+      font-weight: 400 !important;
     }
 
     .flatpickr-monthDropdown-month {
@@ -385,19 +433,21 @@ input[altinputclass="inlinePicker"] {
   color: $body-color;
 }
 
-// removing box shadow of calendar in dark and added a border
-.v-theme--dark.flatpickr-calendar {
-  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-  box-shadow: none;
-}
-
 .flatpickr-months {
   padding-block: 0.3rem;
   padding-inline: 0;
 
   .flatpickr-prev-month,
   .flatpickr-next-month {
-    inset-block-start: 0.3rem !important;
+    inset-block-start: 0.5rem !important;
+  }
+
+  .flatpickr-next-month {
+    inset-inline-end: 0.375rem !important;
+  }
+
+  .flatpickr-prev-month {
+    inset-inline-start: 0.25rem !important;
   }
 }
 </style>

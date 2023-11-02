@@ -121,8 +121,6 @@
         }
       }
     }
-
-
   }
 }
 
@@ -158,28 +156,28 @@
 }
 
 // 👉 checkbox box shadow
-// .v-checkbox-btn {
-//   &.v-selection-control--dirty {
-//     .v-selection-control__input {
-//       .v-icon .custom-checkbox-checked {
-//         // ℹ️ Using filter: drop-shadow() instead of box-shadow because box-shadow creates white background for SVG
-//         filter: drop-shadow(map.get(vuetify.$shadow-key-umbra, 2));
-//       }
-//     }
-//   }
-// }
+.v-checkbox-btn {
+  &.v-selection-control--dirty {
+    .v-selection-control__input {
+      .v-icon.custom-checkbox-checked {
+        // ℹ️ Using filter: drop-shadow() instead of box-shadow because box-shadow creates white background for SVG
+        filter: drop-shadow(rgba(var(--v-shadow-key-umbra-color), 14%) 0 2px 4px);
+      }
+    }
+  }
+}
 
 // 👉 Radio
-// .v-radio,
-// .v-radio-btn {
-//   &.v-selection-control--dirty {
-//     .v-selection-control__input {
-//       .custom-radio-checked {
-//         @include mixins.elevation(2); 
-//       }
-//     }
-//   }
-// }
+.v-radio,
+.v-radio-btn {
+  &.v-selection-control--dirty {
+    .v-selection-control__input {
+      .custom-radio-checked {
+        filter: drop-shadow(rgba(var(--v-shadow-key-umbra-color), 14%) 0 2px 4px); 
+      }
+    }
+  }
+}
 
 // 👉 Dialog
 .v-dialog{

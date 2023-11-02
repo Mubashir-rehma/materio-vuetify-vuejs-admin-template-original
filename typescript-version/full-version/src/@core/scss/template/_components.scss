@@ -437,6 +437,10 @@
 // }
 
 .v-tabs{
+  .v-tab.v-btn{
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  }
+
   &:not(.v-tabs-pill){
     .v-tab{
       &.v-tab--selected{

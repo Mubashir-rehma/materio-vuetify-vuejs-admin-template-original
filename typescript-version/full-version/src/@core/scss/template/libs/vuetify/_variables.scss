@@ -186,7 +186,6 @@
   $snackbar-btn-padding: 0 10px !default,
   $snackbar-action-margin: 16px !default,
 
-
   // 👉 Tooltip
   $tooltip-background-color: rgb(var(--v-tooltip-background)) !default,
   $tooltip-text-color: rgb(var(--v-theme-surface)) !default,
@@ -197,6 +196,11 @@
   
   // 👉 VPagination
   $pagination-item-margin: 0.1875rem !default,
+
+  // 👉 Autocomplete
+  $autocomplete-content-elevation: 8 !default,
+  $combobox-content-elevation: 8 !default,
+  $select-content-elevation: 8 !default,
 
   // 👉 Tabs
   $tabs-height: 38px !default,

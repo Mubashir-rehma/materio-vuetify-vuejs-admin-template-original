@@ -492,6 +492,10 @@
         border: 1.5px dashed rgba(var(--v-border-color), var(--v-border-opacity)); 
         background: none;
       }
+
+      .v-timeline-divider__before{
+        background: none;
+      }
     }
   }
 }

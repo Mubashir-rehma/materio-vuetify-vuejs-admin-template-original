@@ -16,7 +16,7 @@ const currentTab = ref(0)
         <VTab>
           <VIcon
             start
-            icon="mdi-account-outline"
+            icon="ri-user-line"
           />
           Option 1
         </VTab>
@@ -24,7 +24,7 @@ const currentTab = ref(0)
         <VTab>
           <VIcon
             start
-            icon="mdi-lock-outline"
+            icon="ri-lock-line"
           />
           Option 2
         </VTab>
@@ -32,7 +32,7 @@ const currentTab = ref(0)
         <VTab>
           <VIcon
             start
-            icon="mdi-access-point"
+            icon="ri-rfid-line"
           />
           Option 3
         </VTab>

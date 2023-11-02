@@ -152,7 +152,7 @@ $card-spacer-content: 16px;
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
     font-size: 16px;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.3125rem;
   }
 
   .app-timeline-meta {
@@ -163,7 +163,7 @@ $card-spacer-content: 16px;
 
   .app-timeline-text {
     color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.25rem;
   }
 }

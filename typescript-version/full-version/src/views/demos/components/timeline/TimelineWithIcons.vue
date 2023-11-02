@@ -30,7 +30,7 @@ const serverSwitch = ref(false)
                 variant="tonal"
               >
                 <VIcon
-                  icon="mdi-airplane"
+                  icon="ri-plane-line"
                   size="20"
                 />
               </VAvatar>
@@ -38,19 +38,19 @@ const serverSwitch = ref(false)
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap align-center gap-2">
-            <span class="app-timeline-title">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-6">
+            <span class="app-timeline-title align-self-start">
               Get on the flight
             </span>
             <span class="app-timeline-meta">Wednesday</span>
           </div>
 
           <!-- 👉 Content -->
-          <p class="app-timeline-text mb-1">
+          <p class="app-timeline-text mb-2">
             <span>Charles de Gaulle Airport, Paris</span>
             <VIcon
               size="20"
-              icon="mdi-arrow-right"
+              icon="ri-arrow-right-line"
               class="mx-2"
             />
             <span>Heathrow Airport, London</span>
@@ -60,18 +60,22 @@ const serverSwitch = ref(false)
             6:30 AM
           </p>
 
-          <div class="d-flex align-center">
+          <VChip
+            variant="tonal"
+            color="default"
+            label
+          >
             <img
               :src="pdf"
-              width="22"
+              width="20"
               class="me-2"
               alt="img"
             >
 
-            <span class="app-timeline-text">
+            <span class="app-timeline-text font-weight-medium">
               booking-card.pdf
             </span>
-          </div>
+          </VChip>
         </VTimelineItem>
         <!-- !SECTION -->
 
@@ -90,14 +94,14 @@ const serverSwitch = ref(false)
               >
                 <VIcon
                   size="20"
-                  icon="mdi-clock-time-four-outline"
+                  icon="ri-time-line"
                 />
               </VAvatar>
             </div>
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-6">
             <span class="app-timeline-title">
               Interview Schedule
             </span>
@@ -109,35 +113,37 @@ const serverSwitch = ref(false)
           </p>
 
           <!-- 👉 Divider -->
-          <VDivider class="my-2" />
+          <VDivider class="my-4" />
 
           <!-- 👉 Person -->
           <div class="d-flex justify-space-between align-center flex-wrap">
             <!-- 👉 Avatar & Personal Info -->
-            <span class="d-flex align-bottom mt-2">
+            <div class="d-flex align-center">
               <VAvatar
                 size="32"
-                :image="avatar2"
                 class="me-2"
+                :image="avatar2"
               />
               <div>
-                <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
-                <span class="text-xs">JavaScript Developer</span>
+                <div class="text-body-2 font-weight-medium">
+                  Rebecca Godman
+                </div>
+                <span class="text-body-2 font-weight-normal">JavaScript Developer</span>
               </div>
-            </span>
+            </div>
 
             <!-- 👉 Person Actions -->
             <div>
               <IconBtn class="me-2">
                 <VIcon
                   size="20"
-                  icon="mdi-message-outline"
+                  icon="ri-message-line"
                 />
               </IconBtn>
               <IconBtn>
                 <VIcon
                   size="20"
-                  icon="mdi-phone"
+                  icon="ri-phone-line"
                 />
               </IconBtn>
             </div>
@@ -159,7 +165,7 @@ const serverSwitch = ref(false)
               >
                 <VIcon
                   size="20"
-                  icon="mdi-cart-outline"
+                  icon="ri-shopping-cart-line"
                 />
               </VAvatar>
             </div>
@@ -170,12 +176,12 @@ const serverSwitch = ref(false)
               aspect-ratio="1"
               width="100"
               :src="pumaShoes"
-              class="rounded me-4"
+              class="rounded me-4 mb-4"
             />
 
             <div>
               <!-- Header -->
-              <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+              <div class="d-flex justify-space-between align-center flex-wrap mb-2">
                 <span class="app-timeline-title">
                   Sold Puma POPX Blue Color
                 </span>
@@ -223,14 +229,14 @@ const serverSwitch = ref(false)
               >
                 <VIcon
                   size="20"
-                  icon="mdi-file-edit-outline"
+                  icon="ri-file-edit-line"
                 />
               </VAvatar>
             </div>
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap align-center gap-2">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-2">
             <span class="app-timeline-title">
               Design Review
             </span>
@@ -268,7 +274,7 @@ const serverSwitch = ref(false)
               >
                 <VIcon
                   size="18"
-                  icon="mdi-server"
+                  icon="ri-server-line"
                 />
               </VAvatar>
             </div>
@@ -289,12 +295,12 @@ const serverSwitch = ref(false)
           </div>
 
           <!-- 👉 Content -->
-          <table class="w-100 mt-3">
+          <table class="w-100 mt-6">
             <tbody>
               <tr>
                 <td class="d-flex align-center pb-2">
                   <VIcon
-                    icon="mdi-web"
+                    icon="ri-global-line"
                     class="me-1"
                   />
                   <span>IP Address</span>
@@ -308,7 +314,7 @@ const serverSwitch = ref(false)
               <tr>
                 <td class="d-flex align-center pb-2">
                   <VIcon
-                    icon="mdi-cpu-32-bit"
+                    icon="ri-cpu-line"
                     size="24"
                     class="me-1"
                   />
@@ -323,7 +329,7 @@ const serverSwitch = ref(false)
               <tr>
                 <td class="d-flex align-center pb-2">
                   <VIcon
-                    icon="mdi-memory"
+                    icon="ri-cpu-fill"
                     size="24"
                     class="me-1"
                   />
@@ -338,18 +344,18 @@ const serverSwitch = ref(false)
           </table>
 
           <VDivider class="mt-3" />
-          <div class="d-flex justify-space-between align-end">
+          <div class="d-flex justify-space-between align-center">
             <div>
               <IconBtn class="me-2">
                 <VIcon
                   size="20"
-                  icon="mdi-share-variant-outline"
+                  icon="ri-share-line"
                 />
               </IconBtn>
               <IconBtn>
                 <VIcon
                   size="20"
-                  icon="mdi-reload"
+                  icon="ri-restart-line"
                 />
               </IconBtn>
             </div>
@@ -373,17 +379,17 @@ const serverSwitch = ref(false)
               >
                 <VIcon
                   size="20"
-                  icon="mdi-map-marker-outline"
+                  icon="ri-map-pin-line"
                 />
               </VAvatar>
             </div>
           </template>
 
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between flex-wrap mb-1">
+          <div class="d-flex justify-space-between flex-wrap mb-6">
             <div class="d-flex align-end">
               <VIcon
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 class="me-1"
               />
 
@@ -413,20 +419,20 @@ const serverSwitch = ref(false)
               <IconBtn class="me-2">
                 <VIcon
                   size="20"
-                  icon="mdi-link-variant"
+                  icon="ri-links-line"
                 />
               </IconBtn>
 
               <IconBtn class="me-2">
                 <VIcon
                   size="20"
-                  icon="mdi-message-outline"
+                  icon="ri-chat-4-line"
                 />
               </IconBtn>
               <IconBtn>
                 <VIcon
                   size="20"
-                  icon="mdi-account-outline"
+                  icon="ri-user-line"
                 />
               </IconBtn>
             </div>

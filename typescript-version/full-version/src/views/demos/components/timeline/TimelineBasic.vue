@@ -12,7 +12,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
         side="end"
         align="start"
         line-inset="8"
-        truncate-line="both"
+        truncate-line="start"
         density="compact"
       >
         <!-- SECTION Timeline Item: Flight -->
@@ -21,19 +21,19 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           size="x-small"
         >
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
-            <span class="app-timeline-title">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-2">
+            <span class="app-timeline-title align-self-start">
               Get on the flight
             </span>
             <span class="app-timeline-meta">Wednesday</span>
           </div>
 
           <!-- 👉 Content -->
-          <p class="app-timeline-text mb-1">
+          <p class="app-timeline-text mb-2">
             <span>Charles de Gaulle Airport, Paris</span>
             <VIcon
               size="20"
-              icon="mdi-arrow-right"
+              icon="ri-arrow-right-line"
               class="mx-2"
             />
             <span>Heathrow Airport, London</span>
@@ -43,18 +43,22 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
             6:30 AM
           </p>
 
-          <div class="d-flex align-center">
+          <VChip
+            variant="tonal"
+            color="default"
+            label
+          >
             <img
               :src="pdf"
-              width="22"
+              width="20"
               class="me-2"
               alt="img"
             >
 
-            <span class="app-timeline-text">
+            <span class="app-timeline-text font-weight-medium">
               booking-card.pdf
             </span>
-          </div>
+          </VChip>
         </VTimelineItem>
         <!-- !SECTION -->
 
@@ -64,7 +68,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           dot-color="primary"
         >
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-2">
             <span class="app-timeline-title">
               Interview Schedule
             </span>
@@ -76,35 +80,37 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           </p>
 
           <!-- 👉 Divider -->
-          <VDivider class="my-2" />
+          <VDivider class="my-4" />
 
           <!-- 👉 Person -->
           <div class="d-flex justify-space-between align-center flex-wrap">
             <!-- 👉 Avatar & Personal Info -->
-            <span class="d-flex align-bottom mt-2">
+            <div class="d-flex align-center">
               <VAvatar
                 size="32"
                 class="me-2"
                 :image="avatar2"
               />
               <div>
-                <h6 class="text-sm font-weight-medium">Rebecca Godman</h6>
-                <span class="text-xs">JavaScript Developer</span>
+                <div class="text-body-2 font-weight-medium">
+                  Rebecca Godman
+                </div>
+                <span class="text-body-2 font-weight-normal">JavaScript Developer</span>
               </div>
-            </span>
+            </div>
 
             <!-- 👉 Person Actions -->
             <div>
               <IconBtn class="me-2">
                 <VIcon
                   size="20"
-                  icon="mdi-message-outline"
+                  icon="ri-message-line"
                 />
               </IconBtn>
               <IconBtn>
                 <VIcon
                   size="20"
-                  icon="mdi-phone"
+                  icon="ri-phone-line"
                 />
               </IconBtn>
             </div>
@@ -122,12 +128,12 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               aspect-ratio="1"
               width="100"
               :src="pumaShoes"
-              class="rounded me-4"
+              class="rounded me-4 mb-4"
             />
 
             <div>
               <!-- Header -->
-              <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+              <div class="d-flex justify-space-between align-center flex-wrap mb-2">
                 <span class="app-timeline-title">
                   Sold Puma POPX Blue Color
                 </span>
@@ -167,7 +173,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           dot-color="success"
         >
           <!-- 👉 Header -->
-          <div class="d-flex justify-space-between align-center gap-2 flex-wrap">
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-2">
             <span class="app-timeline-title">
               Design Review
             </span>
@@ -175,7 +181,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
           </div>
 
           <!-- 👉 Content -->
-          <p>
+          <p class="app-timeline-text">
             Weekly review of freshly prepared design for our new application.
           </p>
           <div class="d-flex align-center">

@@ -170,3 +170,24 @@
   -webkit-mask-image: none !important;
   mask-image: none !important;
 }
+
+// 👉 Timeline
+
+.v-timeline{
+  &.v-timeline--variant-outlined{
+    .v-timeline-item{
+      .v-timeline-divider{
+        .v-timeline-divider__dot{
+          background: none !important;
+        }
+      }
+
+      .v-timeline-divider__after{
+        border: 1.5px dashed rgba(var(--v-border-color), var(--v-border-opacity)); 
+        background: none;
+      }
+
+    }
+
+  }
+}

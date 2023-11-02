@@ -46,7 +46,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'disabled-opacity': 0.38,
       'pressed-opacity': 0.14,
       'dragged-opacity': 0.1,
-      'divider-opacity': 0.12,
+      'divider-opacity': 0.16,
       'border-color': '#3A3541',
       'border-opacity': 0.23,
 
@@ -103,7 +103,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'disabled-opacity': 0.38,
       'pressed-opacity': 0.14,
       'dragged-opacity': 0.1,
-      'divider-opacity': 0.12,
+      'divider-opacity': 0.16,
       'border-color': '#E7E3FC',
       'border-opacity': 0.23,
 

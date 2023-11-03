@@ -92,7 +92,9 @@ export default {
   VSlider: {
     // set v-slider default color to primary
     color: 'primary',
+    trackSize: 6,
     hideDetails: 'auto',
+    thumbSize: 22,
   },
   VTextField: {
     variant: 'outlined',

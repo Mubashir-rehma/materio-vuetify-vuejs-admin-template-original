@@ -2,8 +2,8 @@
   <VSlider
     :step="10"
     show-ticks
-    :thumb-size="13"
-    :tick-size="3"
-    :track-size="2"
+    :thumb-size="18"
+    :tick-size="4"
+    :track-size="4"
   />
 </template>

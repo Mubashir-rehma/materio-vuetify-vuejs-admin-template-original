@@ -1,3 +1,4 @@
+/* stylelint-disable length-zero-no-unit */
 @forward "../../../base/libs/vuetify/variables" with (
   $body-font-family: 'Inter' !default,
   $border-radius-root: 6px,
@@ -208,6 +209,10 @@
   // 👉 Timeline
   $timeline-divider-line-background: rgba(var(--v-border-color), var(--v-divider-opacity)) !default,
   $timeline-divider-line-thickness: 1.5px !default,
+
+  // 👉 Slider
+  $slider-track-active-size-offset: 0px !default,
+  $slider-thumb-label-border-radius: 6px !default,
 
   // 👉 Table
   $table-row-height: 50px !default,

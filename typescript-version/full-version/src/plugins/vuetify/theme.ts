@@ -50,6 +50,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'border-color': '#3A3541',
       'border-opacity': 0.23,
       'table-header-color': '#F6F7FB',
+      'slider-label-bg': '#1A0E33',
 
       // Shadows
       'shadow-key-umbra-color': '#3A3541',
@@ -108,6 +109,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'border-color': '#E7E3FC',
       'border-opacity': 0.23,
       'table-header-color': '#3D3759',
+      'slider-label-bg': '#F7F4FF',
 
       // Shadows
       'shadow-key-umbra-color': '#131120',

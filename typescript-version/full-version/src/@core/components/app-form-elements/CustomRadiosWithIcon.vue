@@ -46,7 +46,7 @@ const updateSelectedOption = (value: string) => {
                 {{ item.title }}
               </h6>
 
-              <p class="text-sm mb-0 clamp-text">
+              <p class="text-sm text-medium-emphasis mb-0 clamp-text">
                 {{ item.desc }}
               </p>
             </div>

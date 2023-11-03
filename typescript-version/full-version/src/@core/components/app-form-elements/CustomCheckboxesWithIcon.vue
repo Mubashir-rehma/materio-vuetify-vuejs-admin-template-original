@@ -42,7 +42,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
             <h6 class="cr-title text-base">
               {{ item.title }}
             </h6>
-            <p class="text-sm mb-0">
+            <p class="text-sm text-medium-emphasis clamp-text mb-0">
               {{ item.desc }}
             </p>
           </div>

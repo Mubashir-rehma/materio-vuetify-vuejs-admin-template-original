@@ -45,9 +45,12 @@ const updateSelectedOption = (value: string) => {
                   {{ item.title }}
                 </h6>
                 <VSpacer />
-                <span v-if="item.subtitle">{{ item.subtitle }}</span>
+                <span
+                  v-if="item.subtitle"
+                  class="text-disabled text-sm"
+                >{{ item.subtitle }}</span>
               </div>
-              <p class="text-sm mb-0">
+              <p class="text-sm text-medium-emphasis mb-0">
                 {{ item.desc }}
               </p>
             </div>

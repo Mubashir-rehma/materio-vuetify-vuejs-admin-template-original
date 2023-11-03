@@ -3,7 +3,7 @@ import { VDataTable } from 'vuetify/labs/VDataTable'
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
-  { title: 'ID', sortable: false, key: 'id' },
+  { title: 'ID', key: 'id' },
   { title: 'NAME', key: 'fullName' },
   { title: 'EMAIL', key: 'email' },
   { title: 'DATE', key: 'startDate' },
@@ -18,5 +18,6 @@ const headers = [
     :items="data"
     density="compact"
     :items-per-page="5"
+    class="text-no-wrap"
   />
 </template>

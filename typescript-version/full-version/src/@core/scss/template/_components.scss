@@ -499,3 +499,53 @@
     }
   }
 }
+
+// 👉 Datatable
+
+.v-data-table{
+  table{
+    tbody{
+      tr{
+        &.v-data-table-group-header-row{ 
+          td{
+            background:none;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+// 👉 Table
+
+.v-table{
+  .v-table__wrapper{
+    table{
+      thead{
+        tr{
+          th{
+            background: rgb(var(--v-table-header-color)) !important;
+            color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+            font-size: 12px;
+
+            // ℹ️ for separator in header (size need to refactor)
+            // .v-data-table-header__content{
+            //   border-inline-end: 2px solid rgba(var(--v-border-color), var(--v-divider-opacity));
+            // }
+            .v-selection-control.v-checkbox-btn{
+              svg{
+                block-size: 21px;
+                font-size: 21px;
+              }
+            }
+          }
+        }
+          
+      }
+    }
+  }
+}
+
+
+

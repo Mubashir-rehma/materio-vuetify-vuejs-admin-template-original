@@ -32,6 +32,7 @@ const resolveStatusVariant = (status: number) => {
     :headers="headers"
     :items="data"
     :items-per-page="5"
+    class="text-no-wrap"
     expand-on-click
   >
     <!-- Expanded Row Data -->
@@ -62,7 +63,10 @@ const resolveStatusVariant = (status: number) => {
             v-if="item.avatar"
             :src="item.avatar"
           />
-          <span v-else>{{ avatarText(item.fullName) }}</span>
+          <span
+            v-else
+            class="text-sm"
+          >{{ avatarText(item.fullName) }}</span>
         </VAvatar>
         <div class="d-flex flex-column ms-3">
           <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.fullName }}</span>

@@ -24,27 +24,27 @@ const deleteItem = (itemId: number) => {
 }
 
 const categoryIcons = [
-  { name: 'Mouse', icon: 'mdi-mouse', color: 'warning' },
+  { name: 'Mouse', icon: 'ri-mouse-fill', color: 'warning' },
   { name: 'Glass', icon: 'mdi-glasses', color: 'primary' },
-  { name: 'Smart Watch', icon: 'mdi-watch-variant', color: 'success' },
-  { name: 'Bag', icon: 'mdi-bag-personal-outline', color: 'info' },
-  { name: 'Storage Device', icon: 'mdi-tape-drive', color: 'warning' },
-  { name: 'Bluetooth', icon: 'mdi-bluetooth', color: 'error' },
-  { name: 'Gaming', icon: 'mdi-controller-classic-outline', color: 'warning' },
-  { name: 'Home', icon: 'mdi-home-outline', color: 'error' },
+  { name: 'Smart Watch', icon: 'ri-time-line', color: 'success' },
+  { name: 'Bag', icon: 'ri-shopping-bag-line', color: 'info' },
+  { name: 'Storage Device', icon: 'ri-tape-line', color: 'warning' },
+  { name: 'Bluetooth', icon: 'ri-bluetooth-line', color: 'error' },
+  { name: 'Gaming', icon: 'ri-gamepad-line', color: 'warning' },
+  { name: 'Home', icon: 'ri-home-line', color: 'error' },
   { name: 'VR', icon: 'mdi-virtual-reality', color: 'primary' },
   { name: 'Shoes', icon: 'mdi-shoe-sneaker', color: 'success' },
-  { name: 'Electronics', icon: 'mdi-flash', color: 'info' },
-  { name: 'Projector', icon: 'mdi-projector', color: 'warning' },
-  { name: 'iPod', icon: 'mdi-ipod', color: 'error' },
-  { name: 'Keyboard', icon: 'mdi-keyboard-variant', color: 'primary' },
-  { name: 'Smart Phone', icon: 'mdi-cellphone', color: 'success' },
-  { name: 'Smart TV', icon: 'mdi-television', color: 'info' },
+  { name: 'Electronics', icon: 'ri-flashlight-fill', color: 'info' },
+  { name: 'Projector', icon: 'ri-projector-line', color: 'warning' },
+  { name: 'iPod', icon: 'ri-music-line', color: 'error' },
+  { name: 'Keyboard', icon: 'ri-keyboard-box-line', color: 'primary' },
+  { name: 'Smart Phone', icon: 'ri-smartphone-line', color: 'success' },
+  { name: 'Smart TV', icon: 'ri-tv-line', color: 'info' },
   { name: 'Google Home', icon: 'mdi-google-home', color: 'warning' },
-  { name: 'Mac', icon: 'mdi-apple', color: 'error' },
-  { name: 'Headphone', icon: 'mdi-headphones', color: 'primary' },
-  { name: 'iMac', icon: 'mdi-desktop-mac', color: 'success' },
-  { name: 'iPhone', icon: 'mdi-apple', color: 'warning' },
+  { name: 'Mac', icon: 'ri-apple-line', color: 'error' },
+  { name: 'Headphone', icon: 'ri-headphone-line', color: 'primary' },
+  { name: 'iMac', icon: 'ri-computer-line', color: 'success' },
+  { name: 'iPhone', icon: 'ri-apple-line', color: 'warning' },
 ]
 
 const resolveStatusColor = (status: string) => {
@@ -64,7 +64,7 @@ const categoryIconFilter = (categoryName: string): {
   if (index !== -1)
     return [{ icon: categoryIcons[index].icon, color: categoryIcons[index].color }]
 
-  return [{ icon: 'mdi-help-circle-outline', color: 'primary' }]
+  return [{ icon: 'ri-question-line', color: 'primary' }]
 }
 
 onMounted(async () => {
@@ -162,7 +162,10 @@ onMounted(async () => {
               v-if="item.buyer.avatar"
               :src="item.buyer.avatar"
             />
-            <span v-else>{{ item.buyer.name.slice(0, 2).toUpperCase() }}</span>
+            <span
+              v-else
+              class="text-sm"
+            >{{ item.buyer.name.slice(0, 2).toUpperCase() }}</span>
           </VAvatar>
           <span class="text-no-wrap font-weight-medium text-high-emphasis ms-2">{{ item.buyer.name }}</span>
         </div>

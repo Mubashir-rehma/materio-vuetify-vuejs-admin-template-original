@@ -208,4 +208,9 @@
   // 👉 Timeline
   $timeline-divider-line-background: rgba(var(--v-border-color), var(--v-divider-opacity)) !default,
   $timeline-divider-line-thickness: 1.5px !default,
+
+  // 👉 Table
+  $table-row-height: 50px !default,
+  $table-header-font-size: 12px !default,
+  $table-header-font-weight: 600 !default,
 );

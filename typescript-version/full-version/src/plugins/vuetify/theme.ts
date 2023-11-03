@@ -49,6 +49,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'divider-opacity': 0.16,
       'border-color': '#3A3541',
       'border-opacity': 0.23,
+      'table-header-color': '#F6F7FB',
 
       // Shadows
       'shadow-key-umbra-color': '#3A3541',
@@ -106,6 +107,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'divider-opacity': 0.16,
       'border-color': '#E7E3FC',
       'border-opacity': 0.23,
+      'table-header-color': '#3D3759',
 
       // Shadows
       'shadow-key-umbra-color': '#131120',

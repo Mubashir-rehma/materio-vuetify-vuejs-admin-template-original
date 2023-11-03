@@ -41,6 +41,7 @@ onMounted(() => {
     :items-per-page="options.itemsPerPage"
     :page="options.page"
     :options="options"
+    class="text-no-wrap"
   >
     <!-- full name -->
     <template #item.fullName="{ item }">
@@ -55,7 +56,10 @@ onMounted(() => {
             v-if="item.avatar"
             :src="item.avatar"
           />
-          <span v-else>{{ avatarText(item.fullName) }}</span>
+          <span
+            v-else
+            class="text-sm"
+          >{{ avatarText(item.fullName) }}</span>
         </VAvatar>
         <div class="d-flex flex-column ms-3">
           <span class="d-block font-weight-medium text-high-emphasis text-truncate">{{ item.fullName }}</span>

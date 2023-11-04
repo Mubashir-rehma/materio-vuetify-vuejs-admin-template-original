@@ -107,6 +107,7 @@
     "vite-plugin-vue-devtools": "1.0.0-rc.5",
     "vite-plugin-vue-layouts": "^0.8.0",
     "vite-plugin-vuetify": "1.0.2",
+    "vite-svg-loader": "^4.0.0",
     "vue-shepherd": "^3.0.0",
     "vue-tsc": "^1.8.19"
   },

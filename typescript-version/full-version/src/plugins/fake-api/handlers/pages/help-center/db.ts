@@ -1,8 +1,8 @@
 import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/types'
 import checkoutImg from '@images/front-pages/misc/checkout-image.png'
 import productImg from '@images/front-pages/misc/product-image.png'
-import laptop from '@images/iconify-svg/laptop.svg'
-import lightbulb from '@images/iconify-svg/lightbulb.svg'
+import laptop from '@images/svg/laptop.svg'
+import lightbulb from '@images/svg/lightbulb.svg'
 
 // Images
 import discord from '@images/svg/discord.svg'

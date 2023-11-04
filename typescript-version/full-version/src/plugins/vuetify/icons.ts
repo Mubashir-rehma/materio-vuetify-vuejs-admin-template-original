@@ -5,6 +5,7 @@ const alertTypeIcon = {
   info: 'mdi-information-outline',
   warning: 'mdi-alert-outline',
   error: 'mdi-alert-circle-outline',
+
 }
 
 const modifiedAliases = Object.assign(aliases, alertTypeIcon)

@@ -2,63 +2,63 @@
   <div class="demo-space-x">
     <VChip>
       <VIcon
-        start
         size="18"
-        icon="mdi-account-outline"
+        icon="ri-user-line"
+        class="me-1"
       />
       Account
     </VChip>
 
     <VChip color="primary">
       <VIcon
-        start
         size="18"
-        icon="mdi-star-outline"
+        icon="ri-star-line"
+        class="me-1"
       />
       Premium
     </VChip>
 
     <VChip color="secondary">
       <VIcon
-        start
         size="18"
-        icon="mdi-cake"
+        class="me-1"
+        icon="ri-cake-line"
       />
       1 Year
     </VChip>
 
     <VChip color="success">
       <VIcon
-        start
         size="18"
-        icon="mdi-bell-outline"
+        class="me-1"
+        icon="ri-notification-line"
       />
       Notification
     </VChip>
 
     <VChip color="info">
       <VIcon
-        start
         size="18"
-        icon="mdi-forum-outline"
+        class="me-1"
+        icon="ri-message-line"
       />
       Message
     </VChip>
 
     <VChip color="warning">
       <VIcon
-        start
         size="18"
-        icon="mdi-alert-outline"
+        class="me-1"
+        icon="ri-alert-line"
       />
       Warning
     </VChip>
 
     <VChip color="error">
       <VIcon
-        start
         size="18"
-        icon="mdi-alert-circle-outline"
+        class="me-1"
+        icon="ri-error-warning-line"
       />
       Error
     </VChip>

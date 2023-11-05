@@ -219,7 +219,7 @@
 
 }
 
-// 👉 VTextField
+// 👉 VField
 // Override Vuetify's default outline color for text fields to match the theme
 // ℹ️ We cannot override directly border color because it does not work with dirty or focus state
 .v-field__outline {
@@ -231,8 +231,17 @@
 }
 
 // hover state outline color 
-.v-field:hover .v-field__outline {
+.v-field:not(.v-field--active):hover .v-field__outline {
   --v-field-border-opacity: 0.54 !important;
+}
+
+.v-field__prepend-inner, 
+.v-field__append-inner,
+.v-field__clearable {
+  /* stylelint-disable-next-line no-descending-specificity */
+  > .v-icon {
+    opacity: var(--v-high-emphasis-opacity) !important;
+  }
 }
 
 // 👉 VMenu
@@ -240,7 +249,14 @@
   .v-list-item--density-default:not(.v-list-item--nav).v-list-item--one-line {
     padding-inline: 16px;
   }
+
+  > .v-overlay__content {
+    .v-list {
+      margin-block: 2px !important;
+    }
+  }
 }
+
 
 // 👉 Switch
 .v-switch.v-switch--inset {
@@ -258,7 +274,6 @@
     background-color: rgba(var(--v-theme-on-surface), 0.12);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 16%) inset;
     opacity: 1;
-
   }
 
   .v-selection-control__input {

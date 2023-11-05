@@ -7,17 +7,19 @@ import avatar4 from '@images/avatars/avatar-4.png'
 
 <template>
   <div class="demo-space-x">
-    <VChip pill>
+    <VChip>
       <VAvatar
-        start
+        size="20"
         :image="avatar1"
+        class="me-1"
       />
-      <span>John Doe</span>
+      <span>Chip</span>
     </VChip>
 
     <VChip pill>
       <VAvatar
-        start
+        size="20"
+        class="me-1"
         :image="avatar2"
       />
       <span>Darcy Nooser</span>
@@ -25,15 +27,17 @@ import avatar4 from '@images/avatars/avatar-4.png'
 
     <VChip pill>
       <VAvatar
-        start
+        size="20"
+        class="me-1"
         :image="avatar3"
       />
       <span>Felicia Risker</span>
     </VChip>
 
-    <VChip pill>
+    <VChip>
       <VAvatar
-        start
+        size="20"
+        class="me-1"
         :image="avatar4"
       />
       <span>Minnie Mostly</span>

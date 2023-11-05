@@ -139,7 +139,7 @@ onMounted(async () => {
             variant="tonal"
           >
             <VIcon
-              size="20"
+              size="18"
               :color="category.color"
               class="rounded-0"
             >

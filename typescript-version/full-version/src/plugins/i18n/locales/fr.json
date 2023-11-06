@@ -183,7 +183,9 @@
         "previous": "précédente",
         "next": "suivante",
         "currentPage": "page actuelle",
-        "page": "page"
+        "page": "page",
+        "first": "première",
+        "last": "dernière"
       }
     },
     "input": {

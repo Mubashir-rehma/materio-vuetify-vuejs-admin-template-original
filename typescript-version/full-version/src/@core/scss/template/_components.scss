@@ -134,7 +134,21 @@
       }
     }
   }
+
+  &.v-badge--tonal{
+    @each $color-name in variables.$theme-colors-name{
+      .v-badge__wrapper{
+        .v-badge__badge.bg-#{$color-name}{
+          background-color: rgba(var(--v-theme-#{$color-name}), 0.08) !important;
+          color: rgb(var(--v-theme-#{$color-name})) !important;
+        }
+      }
+    }
+  }
 }
+
+
+  
 
 // 👉 Chip
 .v-chip{

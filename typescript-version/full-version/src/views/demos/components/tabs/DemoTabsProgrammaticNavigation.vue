@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const currentTab = ref(0)
+const currentTab = ref(1)
 const items = ['Appetizers', 'Entrees', 'Deserts', 'Cocktails']
 const tabItemText = 'Chocolate cake marshmallow toffee sweet caramels tootsie roll chocolate bar. Chocolate candy lemon drops cupcake macaroon liquorice. Icing tiramisu cake pastry jujubes lollipop gummies sugar plum pie.'
 const totalTabs = items.length

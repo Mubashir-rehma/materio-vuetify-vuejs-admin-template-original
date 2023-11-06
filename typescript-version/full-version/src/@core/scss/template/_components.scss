@@ -496,6 +496,10 @@
   }
 
   &.v-tabs-pill{
+    .v-slide-group__content{
+      gap: 0.25rem;
+    }
+
     .v-tab{
       &:not(.v-tab--selected){
         &.v-btn.v-btn--variant-text{
@@ -503,6 +507,11 @@
             color: rgb(var(--v-theme-primary));
           }
         }
+      }
+
+      &.v-tab--selected{
+        box-shadow: 0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-xs-opacity));
+
       }
     }
   }

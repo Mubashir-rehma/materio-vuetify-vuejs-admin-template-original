@@ -199,7 +199,9 @@
 .v-expansion-panels{
   .v-expansion-panel{
     &.v-expansion-panel--active{
-      box-shadow: 0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),0.16);
+      .v-expansion-panel__shadow{
+        box-shadow: 0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-md-opacity));
+      }
     }
     
     .v-expansion-panel-title{
@@ -208,6 +210,14 @@
         &:hover .v-expansion-panel-title__overlay
         {
           opacity: 0 !important;
+        }
+      }
+
+      .v-expansion-panel-title__icon{
+        .v-icon{
+          block-size: 1.25rem;
+          font-size: 1.25rem;
+          inline-size: 1.25rem;
         }
       }
     

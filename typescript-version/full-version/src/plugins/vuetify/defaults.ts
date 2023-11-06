@@ -32,6 +32,10 @@ export default {
   VChip: {
     elevation: 0,
   },
+
+  VMenu: {
+    offset: '2px',
+  },
   VPagination: {
     density: 'comfortable',
     showFirstLastPage: true,

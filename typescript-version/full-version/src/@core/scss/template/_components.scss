@@ -266,11 +266,12 @@
     padding-inline: 16px;
   }
 
-  > .v-overlay__content {
-    .v-list {
-      margin-block: 2px !important;
-    }
-  }
+  // Done with default props
+  // > .v-overlay__content {
+  //   .v-list {
+  //     margin-block: 2px !important;
+  //   }
+  // }
 }
 
 

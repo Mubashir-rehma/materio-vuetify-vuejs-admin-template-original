@@ -16,7 +16,10 @@ const tabs = [
 </script>
 
 <template>
-  <VTabs grow>
+  <VTabs
+    grow
+    height="52"
+  >
     <VTab
       v-for="tab in tabs"
       :key="tab.content"
@@ -24,8 +27,7 @@ const tabs = [
     >
       <VBadge
         :content="tab.badge"
-        :offset-x="-12"
-        :offset-y="-4"
+        floating
       >
         {{ tab.content }}
       </VBadge>

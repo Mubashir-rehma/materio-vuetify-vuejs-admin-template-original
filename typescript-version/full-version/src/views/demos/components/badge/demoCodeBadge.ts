@@ -15,3 +15,5 @@ export const tabs = { ts: '', js: '' }
 export const position = { ts: '', js: '' }
 
 export const maximumValue = { ts: '', js: '' }
+
+export const tonal = { ts: '', js: '' }

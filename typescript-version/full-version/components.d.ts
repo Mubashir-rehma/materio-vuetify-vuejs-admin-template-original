@@ -75,6 +75,7 @@ declare module 'vue' {
     DemoBadgeShowOnHover: typeof import('./src/views/demos/components/badge/DemoBadgeShowOnHover.vue')['default']
     DemoBadgeStyle: typeof import('./src/views/demos/components/badge/DemoBadgeStyle.vue')['default']
     DemoBadgeTabs: typeof import('./src/views/demos/components/badge/DemoBadgeTabs.vue')['default']
+    DemoBadgeTonal: typeof import('./src/views/demos/components/badge/DemoBadgeTonal.vue')['default']
     DemoButtonBlock: typeof import('./src/views/demos/components/button/DemoButtonBlock.vue')['default']
     DemoButtonColors: typeof import('./src/views/demos/components/button/DemoButtonColors.vue')['default']
     DemoButtonFlat: typeof import('./src/views/demos/components/button/DemoButtonFlat.vue')['default']

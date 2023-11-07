@@ -152,6 +152,7 @@
   $button-disabled-opacity: .45 !default,
   $button-text-letter-spacing: initial !default,
   $button-line-height: 20px !default,
+  $button-icon-density: ('default': 0.5, 'comfortable': 0, 'compact': -2) !default,
 
   // 👉 Chip
   $chip-font-size: 13px !default,

@@ -1,24 +1,30 @@
 <script setup lang="ts">
+import customWizardAccount from '@images/svg/wizard-account.svg'
+import customWizardAddress from '@images/svg/wizard-address.svg'
+import customWizardPersonal from '@images/svg/wizard-personal.svg'
+import customWizardSocialLink from '@images/svg/wizard-social-link.svg'
+import customWizardSubmit from '@images/svg/wizard-submit.svg'
+
 const iconsSteps = [
   {
     title: 'Account Details',
-    icon: 'custom-wizard-account',
+    icon: customWizardAccount,
   },
   {
     title: 'Personal Info',
-    icon: 'custom-wizard-personal',
+    icon: customWizardPersonal,
   },
   {
     title: 'Address',
-    icon: 'custom-wizard-address',
+    icon: customWizardAddress,
   },
   {
     title: 'Social Links',
-    icon: 'custom-wizard-social-link',
+    icon: customWizardSocialLink,
   },
   {
     title: 'Review & Submit',
-    icon: 'custom-wizard-submit',
+    icon: customWizardSubmit,
   },
 ]
 
@@ -111,7 +117,7 @@ const onSubmit = () => {
                   label="Password"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
               </VCol>
@@ -125,7 +131,7 @@ const onSubmit = () => {
                   label="Confirm Password"
                   placeholder="············"
                   :type="isCPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isCPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
                 />
               </VCol>
@@ -387,7 +393,7 @@ const onSubmit = () => {
             @click="currentStep--"
           >
             <VIcon
-              icon="mdi-arrow-left"
+              icon="ri-arrow-left-line"
               start
               class="flip-in-rtl"
             />
@@ -397,7 +403,7 @@ const onSubmit = () => {
           <VBtn
             v-if="iconsSteps.length - 1 === currentStep"
             color="success"
-            append-icon="mdi-check"
+            append-icon="ri-check-line"
             @click="onSubmit"
           >
             submit
@@ -410,7 +416,7 @@ const onSubmit = () => {
             Next
 
             <VIcon
-              icon="mdi-arrow-right"
+              icon="ri-arrow-right-line"
               end
               class="flip-in-rtl"
             />

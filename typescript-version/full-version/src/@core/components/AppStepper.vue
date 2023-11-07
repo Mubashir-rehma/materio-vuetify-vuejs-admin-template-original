@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Item {
   title: string
-  icon?: string
+  icon?: string | object
   size?: string
   subtitle?: string
 }
@@ -94,7 +94,12 @@ watchEffect(() => {
               :class="[props.direction === 'horizontal' && 'flex-column']"
             >
               <div class="stepper-icon">
+                <template v-if="typeof item.icon === 'object'">
+                  <Component :is="item.icon" />
+                </template>
+
                 <VIcon
+                  v-else
                   :icon="item.icon"
                   :size="item.size || props.iconSize"
                 />
@@ -116,7 +121,7 @@ watchEffect(() => {
               v-if="isHorizontalAndNotLastStep(index)"
               class="flip-in-rtl stepper-chevron-indicator mx-6"
               size="24"
-              icon="mdi-chevron-right"
+              icon="ri-arrow-right-s-line"
             />
           </div>
         </template>
@@ -139,7 +144,7 @@ watchEffect(() => {
 
                   <VIcon
                     v-else
-                    icon="mdi-alert-circle-outline"
+                    icon="ri-error-warning-line"
                     size="24"
                     color="error"
                   />
@@ -149,27 +154,27 @@ watchEffect(() => {
 
                 <VIcon
                   v-else
-                  icon="custom-check-circle"
+                  icon="ri-checkbox-circle-fill"
                   class="stepper-step-icon"
                   size="24"
                 />
               </div>
 
               <!-- 👉 Step Number -->
-              <h4 class="text-h4 step-number">
+              <h4 :class="`${!item.subtitle ? 'text-h6' : 'text-h4'} step-number`">
                 {{ (index + 1).toString().padStart(2, '0') }}
               </h4>
             </div>
 
             <!-- 👉 title and subtitle -->
             <div style="line-height: 0;">
-              <h6 class="text-sm font-weight-medium step-title">
+              <h6 class="text-base font-weight-medium step-title">
                 {{ item.title }}
               </h6>
 
               <span
                 v-if="item.subtitle"
-                class="text-xs step-subtitle"
+                class="text-sm step-subtitle"
               >
                 {{ item.subtitle }}
               </span>
@@ -181,6 +186,10 @@ watchEffect(() => {
               class="stepper-step-line"
             />
           </div>
+          <div
+            v-if="props.direction === 'vertical' && props.items.length - 1 !== index"
+            class="stepper-step-line vertical"
+          />
         </template>
         <!-- !SECTION  -->
       </div>
@@ -192,6 +201,10 @@ watchEffect(() => {
 .app-stepper {
   // 👉 stepper step with bg color
   &.stepper-icon-step-bg {
+    .v-slide-group__content{
+      row-gap: 1.5rem;
+    }
+
     .stepper-icon-step {
       .step-wrapper {
         flex-direction: row !important;
@@ -246,24 +259,30 @@ watchEffect(() => {
   }
 
   // 👉 stepper step with icon and  default
+  /* stylelint-disable-next-line no-descending-specificity */
   .v-slide-group__content {
-    row-gap: 1.5rem;
-
     .stepper-step-indicator {
       border: 0.3125rem solid rgb(var(--v-theme-primary));
       border-radius: 50%;
       background-color: rgb(var(--v-theme-surface));
       block-size: 1.25rem;
       inline-size: 1.25rem;
-      opacity: var(--v-activated-opacity);
+      opacity: var(--v-divider-opacity);
     }
 
     .stepper-step-line {
-      border-radius: 0.1875rem;
+      border-radius: 20px;
       background-color: rgb(var(--v-theme-primary));
       block-size: 0.1875rem;
       inline-size: 3.75rem;
-      opacity: var(--v-activated-opacity);
+      opacity: var(--v-divider-opacity);
+    }
+
+    .stepper-step-line.vertical {
+      block-size: 2.5rem;
+      inline-size: 0.1875rem;
+      margin-block:8px;
+      margin-inline-start: .6875rem;
     }
 
     .stepper-chevron-indicator {

@@ -56,7 +56,7 @@ watch(() => prop.currentStep, updateCartData)
       <VAlert
         color="success"
         variant="tonal"
-        icon="mdi-check-circle-outline"
+        icon="ri-checkbox-circle-line"
         class="mb-4"
       >
         <VAlertTitle class="text-body-1 text-success mb-1">
@@ -145,7 +145,7 @@ watch(() => prop.currentStep, updateCartData)
                         <VIcon
                           v-bind="tooltipProps"
                           size="20"
-                          icon="mdi-help-circle-outline"
+                          icon="ri-question-line"
                         />
                       </template>
                     </VTooltip>

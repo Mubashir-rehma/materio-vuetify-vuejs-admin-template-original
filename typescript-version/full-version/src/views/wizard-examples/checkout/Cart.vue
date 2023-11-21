@@ -51,7 +51,7 @@ watch(() => props.currentStep, updateCartData)
       <VAlert
         color="success"
         variant="tonal"
-        icon="mdi-check-circle-outline"
+        icon="ri-checkbox-circle-line"
       >
         <VAlertTitle class="text-body-1 text-success mb-1">
           Available Offers
@@ -86,7 +86,7 @@ watch(() => props.currentStep, updateCartData)
             >
               <VIcon
                 size="20"
-                icon="mdi-close"
+                icon="ri-close-line"
               />
             </IconBtn>
 
@@ -129,7 +129,7 @@ watch(() => props.currentStep, updateCartData)
                 <VTextField
                   v-model="item.quantity"
                   type="number"
-                  style="width: 7.5rem;"
+                  style="inline-size: 7.5rem;"
                   density="compact"
                 />
               </div>
@@ -161,7 +161,7 @@ watch(() => props.currentStep, updateCartData)
       <div class="d-flex align-center justify-space-between border rounded py-2 px-5 text-base mt-4">
         <a href="#">Add more products from wishlist</a>
         <VIcon
-          icon="mdi-chevron-right"
+          icon="ri-arrow-right-s-line"
           class="flip-in-rtl"
         />
       </div>

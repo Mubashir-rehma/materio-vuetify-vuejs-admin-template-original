@@ -279,7 +279,7 @@ watchEffect(() => {
     }
 
     .stepper-step-line.vertical {
-      block-size: 2.5rem;
+      block-size: 1.25rem;
       inline-size: 0.1875rem;
       margin-block:8px;
       margin-inline-start: .6875rem;

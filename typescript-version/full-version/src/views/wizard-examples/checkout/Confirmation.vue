@@ -43,7 +43,7 @@ const resolveDeliveryMethod = computed(() => {
       <div class="d-flex align-center gap-2 justify-center">
         <VIcon
           size="20"
-          icon="mdi-clock-outline"
+          icon="ri-time-line"
         />
         <span>Time placed: 25/05/2020 13:35pm</span>
       </div>
@@ -57,7 +57,7 @@ const resolveDeliveryMethod = computed(() => {
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
         <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-map-marker-outline" />
+          <VIcon icon="ri-map-pin-line" />
           <span class="text-base font-weight-medium">
             Shipping
           </span>
@@ -85,7 +85,7 @@ const resolveDeliveryMethod = computed(() => {
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
         <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-credit-card-outline" />
+          <VIcon icon="ri-bank-card-2-line" />
           <span class="text-base font-weight-medium">
             Billing Address
           </span>
@@ -112,7 +112,7 @@ const resolveDeliveryMethod = computed(() => {
         class="pa-5"
       >
         <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-archive-outline" />
+          <VIcon icon="ri-archive-line" />
           <span class="text-base font-weight-medium">
             Shipping Method
           </span>

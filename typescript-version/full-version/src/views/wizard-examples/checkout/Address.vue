@@ -18,19 +18,19 @@ const isEditAddressDialogVisible = ref(false)
 
 const deliveryOptions = [
   {
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
     title: 'Standard',
     desc: 'Get your product in 1 Week.',
     value: 'free',
   },
   {
-    icon: 'mdi-crown-outline',
+    icon: 'ri-vip-crown-line',
     title: 'Express',
     desc: 'Get your product in 3-4 days.',
     value: 'express',
   },
   {
-    icon: 'mdi-rocket-launch-outline',
+    icon: 'ri-rocket-line',
     title: 'Overnight',
     desc: 'Get your product in 1 day.',
     value: 'overnight',

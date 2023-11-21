@@ -124,6 +124,18 @@
       }
     }
   }
+
+  &--icon {
+    .v-icon{
+      --v-icon-size-multiplier: 1 !important;
+    }
+  }
+
+  
+
+  .v-icon{
+    --v-icon-size-multiplier: 0.762;
+  }
 }
 
 // 👉 VLabel

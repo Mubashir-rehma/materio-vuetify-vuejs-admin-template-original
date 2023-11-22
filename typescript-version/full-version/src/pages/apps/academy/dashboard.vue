@@ -22,7 +22,6 @@ const topicsChartConfig = {
       horizontal: true,
       barHeight: '70%',
       distributed: true,
-      startingShape: 'rounded',
       borderRadius: 7,
     },
   },

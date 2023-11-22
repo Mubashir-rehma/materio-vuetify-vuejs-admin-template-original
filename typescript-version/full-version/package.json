@@ -26,7 +26,7 @@
     "@tiptap/vue-3": "^2.1.12",
     "@vueuse/core": "^10.5.0",
     "@vueuse/math": "^10.5.0",
-    "apexcharts-clevision": "^3.28.5",
+    "apexcharts": "3.37.0",
     "chart.js": "^4.4.0",
     "cookie-es": "^1.0.0",
     "jwt-decode": "^3.1.2",

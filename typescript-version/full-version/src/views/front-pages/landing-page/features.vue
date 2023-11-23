@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
+import custom3dSelectSolid from '@images/svg/3d-select-solid.svg'
+import customEdit from '@images/svg/edit.svg'
+import customLaptopCharging from '@images/svg/laptop-charging.svg'
+import customLifebelt from '@images/svg/lifebelt.svg'
+import customTransitionUp from '@images/svg/transition-up.svg'
 
 const featuresData = [
-  { title: 'Quality Code', desc: 'Code structure that all developers will easily understand and fall in love with.', icon: 'custom-laptop-charging' },
-  { title: 'Continuous Updates', desc: 'Free updates for the next 12 months, including new demos and features.', icon: 'custom-transition-up' },
-  { title: 'Starter Kit', desc: 'Start your project quickly without having to remove unnecessary features.', icon: 'custom-edit' },
-  { title: 'API Ready', desc: 'Just change the endpoint and see your own data loaded within seconds.', icon: 'custom-3d-select-solid' },
-  { title: 'Excellent Support', desc: 'An easy-to-follow doc with lots of references and code examples.', icon: 'custom-lifebelt' },
-  { title: 'Well Documented', desc: 'An easy-to-follow doc with lots of references and code examples.', icon: 'custom-google-docs' },
+  { title: 'Quality Code', desc: 'Code structure that all developers will easily understand and fall in love with.', icon: customLaptopCharging },
+  { title: 'Continuous Updates', desc: 'Free updates for the next 12 months, including new demos and features.', icon: customTransitionUp },
+  { title: 'Starter Kit', desc: 'Start your project quickly without having to remove unnecessary features.', icon: customEdit },
+  { title: 'API Ready', desc: 'Just change the endpoint and see your own data loaded within seconds.', icon: custom3dSelectSolid },
+  { title: 'Excellent Support', desc: 'An easy-to-follow doc with lots of references and code examples.', icon: customLifebelt },
+  { title: 'Well Documented', desc: 'An easy-to-follow doc with lots of references and code examples.', icon: customLifebelt },
 ]
 </script>
 

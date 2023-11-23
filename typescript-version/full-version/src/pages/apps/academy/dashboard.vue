@@ -5,6 +5,10 @@ import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vu
 import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
+import customCheck from '@images/svg/Check.svg'
+import customLaptop from '@images/svg/laptop.svg'
+import customLightbulb from '@images/svg/lightbulb.svg'
+
 const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 
 // Topics Charts config
@@ -22,7 +26,6 @@ const topicsChartConfig = {
       horizontal: true,
       barHeight: '70%',
       distributed: true,
-      startingShape: 'rounded',
       borderRadius: 7,
     },
   },
@@ -237,9 +240,9 @@ const topicsData = [
           <div class="d-flex justify-space-between flex-wrap gap-4 flex-column flex-md-row">
             <div
               v-for="{ title, value, icon, color } in [
-                { title: 'Hours Spent', value: '34h', icon: 'custom-laptop', color: 'primary' },
-                { title: 'Test Results', value: '82%', icon: 'custom-lightbulb', color: 'info' },
-                { title: 'Course Completed', value: '14', icon: 'custom-check', color: 'warning' },
+                { title: 'Hours Spent', value: '34h', icon: customLaptop, color: 'primary' },
+                { title: 'Test Results', value: '82%', icon: customLightbulb, color: 'info' },
+                { title: 'Course Completed', value: '14', icon: customCheck, color: 'warning' },
               ]"
               :key="title"
             >

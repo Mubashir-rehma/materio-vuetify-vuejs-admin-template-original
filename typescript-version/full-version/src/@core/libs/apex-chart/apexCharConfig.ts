@@ -151,7 +151,6 @@ export const getBarChartConfig = (themeColors: ThemeInstance['themes']['value'][
         borderRadius: 8,
         barHeight: '30%',
         horizontal: true,
-        startingShape: 'rounded',
       },
     },
     grid: {

@@ -9,7 +9,7 @@ const props = defineProps<{
   modelValue: string
 }>()
 
-const emits = defineEmits<{
+const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
 
@@ -31,7 +31,7 @@ const editor = useEditor({
     if (!editor.value)
       return
 
-    emits('update:modelValue', editor.value.getHTML())
+    emit('update:modelValue', editor.value.getHTML())
   },
 })
 

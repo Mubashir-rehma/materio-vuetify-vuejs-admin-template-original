@@ -26,18 +26,13 @@ Given below are the steps you need to follow to install the **full-version** / *
 - By running the following command, you will be able to get all the dependencies in your node_modules folder:
 
   ```sh
-  # For Yarn
-  yarn
-
-  # For npm
-  npm install
+  pnpm install
   ```
 
 - You can run the development server via the dev command, which is useful while developing locally. The development server will automatically detect changes to your files and instantly reflect them in any open browser windows.
 
   ```sh
-  # For npm
-  npm run dev
+  pnpm run dev
   ```
 
 - To serve the application you need to run the following command in the project directory. (This will give you an address with port number 8000)
@@ -60,8 +55,7 @@ Given below are the steps you need to follow to install the **full-version** / *
   ```sh
   # Build and version the assets for production...
 
-  # For npm
-  npm run build
+  pnpm run build
   ```
 
 ### Required Permissions

@@ -186,6 +186,7 @@ watchEffect(() => {
               class="stepper-step-line"
             />
           </div>
+
           <div
             v-if="props.direction === 'vertical' && props.items.length - 1 !== index"
             class="stepper-step-line vertical"
@@ -275,14 +276,7 @@ watchEffect(() => {
       background-color: rgb(var(--v-theme-primary));
       block-size: 0.1875rem;
       inline-size: 3.75rem;
-      opacity: var(--v-divider-opacity);
-    }
-
-    .stepper-step-line.vertical {
-      block-size: 1.25rem;
-      inline-size: 0.1875rem;
-      margin-block:8px;
-      margin-inline-start: .6875rem;
+      opacity: var(--v-activated-opacity);
     }
 
     .stepper-chevron-indicator {

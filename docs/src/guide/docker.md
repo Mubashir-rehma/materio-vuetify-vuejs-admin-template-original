@@ -87,7 +87,7 @@ After your container is up and running, you can access your application at `http
 
 #### Using Docker Compose
 
-You can create a `docker-compose.prod.yml` file in the root directory of your project to run the container easily. Then, copy the contents of `docker-compose.dev.yml` into it. You need to customize the `docker-compose.prod.yml` file according to your needs, only copying the `docker-compose.dev.yml` file into the `docker-compose.prod.yml` file will not work. After updating your `docker-compose.prod.yml` file according to your needs, you can run the container by running the following command:
+You can find a `docker-compose.prod.yml` file in the root directory of your project to run the container easily. You need to customize the `docker-compose.prod.yml` file according to your needs. After updating your `docker-compose.prod.yml` file according to your needs, you can run the container by running the following command:
 
 ```sh
 docker compose -f docker-compose.prod.yml up -d
@@ -106,6 +106,10 @@ After building a Docker image, you can run a Docker container based on that imag
 ```sh
 docker run -d -p <host-port>:<container-port> --name <container-name> <image-name>
 ```
+
+:::warning
+We use Nginx in our Dockerfile to serve the production build in the production environment. Additionally, we have provided a basic nginx.conf file. You can modify this file according to your requirements, If you prefer, you can choose an alternative web server like Apache..
+:::
 
 ## Stopping a Docker container
 

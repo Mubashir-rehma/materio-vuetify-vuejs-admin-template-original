@@ -11,7 +11,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const emits = defineEmits<{
+const emit = defineEmits<{
   (e: 'push', value: PurchasedProduct): void
   (e: 'remove', id: number): void
 }>()
@@ -38,7 +38,7 @@ fetchClients()
 
 // 👉 Add item function
 const addItem = () => {
-  emits('push', {
+  emit('push', {
     title: 'App Design',
     cost: 24,
     hours: 1,
@@ -48,7 +48,7 @@ const addItem = () => {
 
 // 👉 Remove Product edit section
 const removeProduct = (id: number) => {
-  emits('remove', id)
+  emit('remove', id)
 }
 </script>
 

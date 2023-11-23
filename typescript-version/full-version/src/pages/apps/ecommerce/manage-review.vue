@@ -101,8 +101,6 @@ const reviewStatChartConfig = {
     bar: {
       barHeight: '75%',
       columnWidth: '40%',
-      startingShape: 'rounded',
-      endingShape: 'rounded',
       borderRadius: 5,
       distributed: true,
     },

@@ -1,24 +1,30 @@
 <script setup lang="ts">
+import customWizardAccount from '@images/svg/wizard-account.svg'
+import customWizardAddress from '@images/svg/wizard-address.svg'
+import customWizardPersonal from '@images/svg/wizard-personal.svg'
+import customWizardSocialLink from '@images/svg/wizard-social-link.svg'
+import customWizardSubmit from '@images/svg/wizard-submit.svg'
+
 const iconsSteps = [
   {
     title: 'Account Details',
-    icon: 'custom-wizard-account',
+    icon: customWizardAccount,
   },
   {
     title: 'Personal Info',
-    icon: 'custom-wizard-personal',
+    icon: customWizardPersonal,
   },
   {
     title: 'Address',
-    icon: 'custom-wizard-address',
+    icon: customWizardAddress,
   },
   {
     title: 'Social Links',
-    icon: 'custom-wizard-social-link',
+    icon: customWizardSocialLink,
   },
   {
     title: 'Review & Submit',
-    icon: 'custom-wizard-submit',
+    icon: customWizardSubmit,
   },
 ]
 

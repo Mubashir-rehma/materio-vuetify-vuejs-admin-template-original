@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Item {
   title: string
-  icon?: string
+  icon?: string | object
   size?: string
   subtitle?: string
 }
@@ -94,7 +94,12 @@ watchEffect(() => {
               :class="[props.direction === 'horizontal' && 'flex-column']"
             >
               <div class="stepper-icon">
+                <template v-if="typeof item.icon === 'object'">
+                  <Component :is="item.icon" />
+                </template>
+
                 <VIcon
+                  v-else
                   :icon="item.icon"
                   :size="item.size || props.iconSize"
                 />
@@ -149,7 +154,7 @@ watchEffect(() => {
 
                 <VIcon
                   v-else
-                  icon="custom-check-circle"
+                  icon="mdi-check-circle"
                   class="stepper-step-icon"
                   size="24"
                 />
@@ -181,6 +186,11 @@ watchEffect(() => {
               class="stepper-step-line"
             />
           </div>
+
+          <div
+            v-if="props.direction === 'vertical' && props.items.length - 1 !== index"
+            class="stepper-step-line vertical"
+          />
         </template>
         <!-- !SECTION  -->
       </div>
@@ -192,6 +202,10 @@ watchEffect(() => {
 .app-stepper {
   // 👉 stepper step with bg color
   &.stepper-icon-step-bg {
+    .v-slide-group__content{
+      row-gap: 1.5rem;
+    }
+
     .stepper-icon-step {
       .step-wrapper {
         flex-direction: row !important;
@@ -264,6 +278,13 @@ watchEffect(() => {
       block-size: 0.1875rem;
       inline-size: 3.75rem;
       opacity: var(--v-activated-opacity);
+    }
+
+    .stepper-step-line.vertical {
+      block-size: 2.5rem;
+      inline-size: 0.1875rem;
+      margin-block:8px;
+      margin-inline-start: .6875rem;
     }
 
     .stepper-chevron-indicator {

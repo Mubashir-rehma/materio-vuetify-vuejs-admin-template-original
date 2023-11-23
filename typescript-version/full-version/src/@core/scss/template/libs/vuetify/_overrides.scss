@@ -9,14 +9,13 @@
 .text-h4,
 .text-h5,
 .text-h6,
-.text-subtitle-1, 
-.text-subtitle-2, 
-.text-body-1,
-.text-body-2,
-.text-caption, 
 .text-overline,
 .v-input {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+}
+
+.text-caption{
+  color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity));
 }
 
 // 👉 Button

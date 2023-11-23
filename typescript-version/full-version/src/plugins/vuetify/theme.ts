@@ -1,6 +1,6 @@
 import type { ThemeDefinition } from 'vuetify'
 
-export const staticPrimaryColor = '#8146ff'
+export const staticPrimaryColor = '#8C57FF'
 
 export const themes: Record<string, ThemeDefinition> = {
   light: {
@@ -12,13 +12,15 @@ export const themes: Record<string, ThemeDefinition> = {
       'success': '#56CA00',
       'on-success': '#fff',
       'info': '#16B1FF',
+      'on-info': '#fff',
       'warning': '#FFB400',
       'on-warning': '#fff',
       'error': '#FF4C51',
-      'background': '#F4F5FA',
-      'on-background': '#3A3541',
-      'surface': '#FFFFFF',
-      'on-surface': '#3A3541',
+      'on-error': '#fff',
+      'background': '#f4f5fa',
+      'on-background': '#2E263D',
+      'surface': '#fff',
+      'on-surface': '#2E263D',
       'grey-50': '#FAFAFA',
       'grey-100': '#F5F5F5',
       'grey-200': '#EEEEEE',
@@ -29,38 +31,34 @@ export const themes: Record<string, ThemeDefinition> = {
       'grey-700': '#616161',
       'grey-800': '#424242',
       'grey-900': '#212121',
-      'perfect-scrollbar-thumb': '#DBDADE',
+      'perfect-scrollbar-thumb': '#F0F2F8',
       'skin-bordered-background': '#fff',
       'skin-bordered-surface': '#fff',
     },
 
     variables: {
       'code-color': '#d400ff',
-      'overlay-scrim-background': '#3A3541',
-      'overlay-scrim-opacity': 0.5,
+      'overlay-scrim-background': '#2E263D',
       'tooltip-background': '#1A0E33',
+      'overlay-scrim-opacity': 0.5,
       'hover-opacity': 0.04,
-      'activated-opacity': 0.08,
-      'focus-opacity': 0.12,
+      'focus-opacity': 0.1,
       'selected-opacity': 0.08,
-      'disabled-opacity': 0.38,
+      'activated-opacity': 0.08,
       'pressed-opacity': 0.14,
       'dragged-opacity': 0.1,
-      'divider-opacity': 0.16,
-      'border-color': '#3A3541',
+      'disabled-opacity': 0.4,
+      'border-color': '#2E263D',
       'border-opacity': 0.23,
       'table-header-color': '#F6F7FB',
-      'slider-label-bg': '#1A0E33',
+      'high-emphasis-opacity': 0.9,
+      'medium-emphasis-opacity': 0.7,
 
-      // Shadows
-      'shadow-key-umbra-color': '#3A3541',
-      'shadow-xs-opacity': 0.14,
-      'shadow-sm-opacity': 0.16,
-      'shadow-md-opacity': 0.16,
-      'shadow-lg-opacity': 0.18,
-      'shadow-xl-opacity': 0.20,
+      // 👉 shadows
+      'shadow-key-umbra-color': '#2E263D',
     },
   },
+
   dark: {
     dark: true,
     colors: {
@@ -77,7 +75,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'on-error': '#fff',
       'background': '#28243D',
       'on-background': '#E7E3FC',
-      'surface': '#312D4B',
+      'surface': '#312d4b',
       'on-surface': '#E7E3FC',
       'grey-50': '#2A2E42',
       'grey-100': '#2F3349',
@@ -89,35 +87,31 @@ export const themes: Record<string, ThemeDefinition> = {
       'grey-700': '#B6BEE3',
       'grey-800': '#CFD3EC',
       'grey-900': '#E7E9F6',
-      'perfect-scrollbar-thumb': '#4A5072',
+      'perfect-scrollbar-thumb': '#474360',
       'skin-bordered-background': '#312d4b',
       'skin-bordered-surface': '#312d4b',
     },
+
     variables: {
       'code-color': '#d400ff',
-      'overlay-scrim-background': '#3A3541',
-      'overlay-scrim-opacity': 0.5,
+      'overlay-scrim-background': '#312D4B',
       'tooltip-background': '#F7F4FF',
+      'overlay-scrim-opacity': 0.5,
       'hover-opacity': 0.04,
-      'focus-opacity': 0.12,
+      'focus-opacity': 0.1,
       'selected-opacity': 0.08,
       'activated-opacity': 0.08,
-      'disabled-opacity': 0.38,
       'pressed-opacity': 0.14,
+      'disabled-opacity': 0.4,
       'dragged-opacity': 0.1,
-      'divider-opacity': 0.16,
       'border-color': '#E7E3FC',
-      'border-opacity': 0.23,
+      'border-opacity': 0.22,
       'table-header-color': '#3D3759',
-      'slider-label-bg': '#F7F4FF',
+      'high-emphasis-opacity': 0.9,
+      'medium-emphasis-opacity': 0.7,
 
-      // Shadows
+      // 👉 Shadows
       'shadow-key-umbra-color': '#131120',
-      'shadow-xs-opacity': 0.18,
-      'shadow-sm-opacity': 0.22,
-      'shadow-md-opacity': 0.24,
-      'shadow-lg-opacity': 0.26,
-      'shadow-xl-opacity': 0.28,
     },
   },
 }

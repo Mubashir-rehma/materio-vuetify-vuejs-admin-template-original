@@ -14,56 +14,86 @@
   // 👉 Typography
   $typography: (
     "h1": (
+      "size": 2.875rem,
       "weight": 500,
-      "line-height": 7rem,
+      "line-height": 4.25rem,
+      "letter-spacing": normal,
     ),
     "h2": (
-      "weight": 500, 
-      "line-height": 4.5rem,
-    ),
-    "h3": (
+      "size": 2.375rem,
       "weight": 500,
       "line-height": 3.5rem,
+      "letter-spacing": normal,
     ),
-    "h4": (
+    "h3": (
+      "size": 1.75rem,
       "weight": 500,
       "line-height": 2.625rem,
+      "letter-spacing": normal,
+    ),
+    "h4": (
+      "size": 1.5rem,
+      "weight": 500,
+      "line-height": 2.375rem,
+      "letter-spacing": normal,
     ), 
     "h5": (
+      "size": 1.125rem,
       "weight": 500,
+      "line-height": 1.75rem,
+      "letter-spacing": normal,
     ),
     "h6": (
-      "line-height": 1.75rem,
+      "size": 0.9375rem,
+      "line-height": 1.5rem,
+      "letter-spacing": normal,
+    ),
+    "subtitle-1": (
+      "size": 0.9375rem,
+      "weight": 500,
+      "line-height": 1.5rem,
+      "letter-spacing": normal,
     ),
     "subtitle-2": (
+      "size": 0.8125rem,
       "line-height": 1.25rem,
+      "letter-spacing": normal,
+    ),
+    "body-1": (
+      "size": 0.9375rem,
+      "line-height": 1.375rem,
+      "letter-spacing": normal,
     ),
     "body-2": (
-      "line-height": 1.375rem,
+      "size": 0.8125rem,
+      "line-height": 1.25rem,
+      "letter-spacing": normal,
     ),
     "caption": (
-      "line-height": 0.875rem,
+      "size": 0.8125rem,
+      "line-height": 1.125rem,
+      "letter-spacing": 0.025rem,
     ),
     "overline": (
       "weight": 400,
       "line-height": 0.875rem,
-    )
+      "letter-spacing": 0.05rem,
+    ),
   )!default,
-
 
   //  👉 Shadows
   $shadow-key-umbra: (
     0: (0 0 0 0 rgba(var(--v-shadow-key-umbra-color), 1)),
     1: (0 2px 4px rgba(var(--v-shadow-key-umbra-color), 0.12)),
-    2: (0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-xs-opacity))),
+    2: (0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color), 0.16)),
     3: (0 3px 8px rgba(var(--v-shadow-key-umbra-color), 0.14)),
-    4: (0 2px 8px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-sm-opacity))),
+    4: (0 3px 6px 0 rgba(var(--v-shadow-key-umbra-color), 0.18)),
     5: (0 4px 10px rgba(var(--v-shadow-key-umbra-color), 0.15)),
-    6: (0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-md-opacity))),
+    6: (0 4px 10px 0 rgba(var(--v-shadow-key-umbra-color), 0.20)),
     7: (0 4px 18px rgba(var(--v-shadow-key-umbra-color), 0.1)),
-    8: (0 6px 18px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-lg-opacity))),
+    8: (0 6px 16px 0 rgba(var(--v-shadow-key-umbra-color), 0.22)),
     9: (0 5px 14px rgba(var(--v-shadow-key-umbra-color), 0.18)),
-    10: (0 8px 24px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-xl-opacity))),
+    10: (0 8px 28px 0 rgba(var(--v-shadow-key-umbra-color), 0.24)),
     11: (0 5px 16px rgba(var(--v-shadow-key-umbra-color), 0.2)),
     12: (0 6px 17px rgba(var(--v-shadow-key-umbra-color), 0.22)),
     13: (0 6px 18px rgba(var(--v-shadow-key-umbra-color), 0.22)),
@@ -135,6 +165,7 @@
     23: (0 0 transparent),
     24: (0 0 transparent),
   ) !default,
+
 
   // 👉 Badge
   $badge-height: 1.375rem !default,

@@ -10,7 +10,7 @@ import { AppContentLayoutNav, ContentWidth, FooterType, NavbarType } from '@layo
 
 export const { themeConfig, layoutConfig } = defineThemeConfig({
   app: {
-    title: 'master',
+    title: 'materio',
 
     // ❗ if you have SVG logo and want it to adapt according to theme color, you have to apply color as `color: rgb(var(--v-global-theme-primary))`
     logo: h('div', { innerHTML: logo, style: 'line-height:0; color: rgb(var(--v-global-theme-primary))' }),
@@ -49,7 +49,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   footer: { type: FooterType.Static },
   verticalNav: {
     isVerticalNavCollapsed: false,
-    defaultNavItemIconProps: { icon: 'mdi-circle-outline' },
+    defaultNavItemIconProps: { icon: 'ri-circle-line' },
     isVerticalNavSemiDark: false,
   },
   horizontalNav: {
@@ -59,14 +59,14 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
 
   /*
   // ℹ️  In below Icons section, you can specify icon for each component. Also you can use other props of v-icon component like `color` and `size` for each icon.
-  // Such as: chevronDown: { icon: 'mdi-chevron-down', color:'primary', size: '24' },
+  // Such as: chevronDown: { icon: 'ri-arrow-down-s-line', color:'primary', size: '24' },
   */
   icons: {
-    chevronDown: { icon: 'mdi-chevron-down' },
-    chevronRight: { icon: 'mdi-chevron-right' },
-    close: { icon: 'mdi-close' },
-    verticalNavPinned: { icon: 'mdi-radiobox-marked' },
-    verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
-    sectionTitlePlaceholder: { icon: 'mdi-minus' },
+    chevronDown: { icon: 'ri-arrow-down-s-line' },
+    chevronRight: { icon: 'ri-arrow-right-s-line' },
+    close: { icon: 'ri-close-line' },
+    verticalNavPinned: { icon: 'ri-radio-button-line' },
+    verticalNavUnPinned: { icon: 'ri-circle-line' },
+    sectionTitlePlaceholder: { icon: 'ri-subtract-line' },
   },
 })

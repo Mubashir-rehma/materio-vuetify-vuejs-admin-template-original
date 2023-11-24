@@ -76,6 +76,7 @@
   }
 }
 
+
 // Dialog responsive width
 .v-dialog {
   // dialog custom close btn
@@ -127,8 +128,23 @@
   }
 }
 
-// v-tab with pill support
+// 👉 Expansion panel
+.v-expansion-panels.customized-panels {
+  border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  border-radius: 4px;
 
+  .v-expansion-panel-title {
+    background-color: rgb(var(--v-theme-expansion-panel-text-custom-bg));
+    border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    margin-block-end: -1px;
+  }
+
+  .v-expansion-panel-text__wrapper {
+    padding: 20px;
+  }
+}
+
+// v-tab with pill support
 .v-tabs.v-tabs-pill {
   .v-tab.v-btn {
     border-radius: 0.25rem !important;

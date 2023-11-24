@@ -1,5 +1,6 @@
 @use "@core/scss/base/utils";
 @use "@core/scss/template/mixins.scss";
+@use "@configured-variables" as variables;
 
 // 👉 Typography
 
@@ -16,125 +17,6 @@
 
 .text-caption{
   color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity));
-}
-
-// 👉 Button
-@include mixins.update-tonal-bg('v-btn');
-
-.v-btn--size-small {
-  --v-btn-height: 32px;
-  --v-btn-size: 13px;
-}
-
-.v-btn--size-large {
-  --v-btn-height: 44px;
-  --v-btn-size: 15px;
-}
-
-.v-btn {
-  // Default (elevated) button
-  &--variant-elevated,
-  &--variant-flat {
-    // We want darker background on hover instead of light
-    &:not(.v-btn--loading, .v-btn--disabled) {
-      &.bg-primary {
-        &:hover, &:active, &:focus{
-          background-color: #7540E8 !important;
-        }
-      }
-
-      &.bg-secondary {
-        &:hover, &:active, &:focus{
-          background-color: #7E8086 !important;
-        }
-      }
-
-      &.bg-info {
-        &:hover, &:active, &:focus{
-          background-color: #14A1E8 !important;
-        }
-      }
-
-      &.bg-success {
-        &:hover, &:active, &:focus{
-          background-color: #4EB800 !important;
-        }
-      }
-
-      &.bg-warning {
-        &:hover, &:active, &:focus{
-          background-color: #E8A400 !important;
-        }
-      }
-
-      &.bg-error {
-        &:hover, &:active, &:focus{
-          background-color: #E8454A !important;
-        }
-      }
-
-      .v-btn__overlay {
-        opacity: 0;
-      }
-    }
-  }
-
-  
-  &--variant-elevated{
-    &:hover, &:focus{
-      box-shadow: 0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color), var(--v-shadow-xs-opacity)), 0 0 transparent, 0 0 transparent;
-    }
-
-    &:active{
-      box-shadow: none;
-    }
-  }
-
-  &--variant-outlined,
-  &--variant-text {
-    .v-btn__overlay {
-      --v-hover-opacity: 0.08;
-    }
-
-    &:active, &:focus{
-      .v-btn__overlay{
-        opacity: var(--v-hover-opacity);
-      }
-    }
-  }
-
-  &--variant-tonal {
-    .v-btn__overlay {
-      --v-hover-opacity: 0.16;
-    }
-
-    &:active, &:focus{
-      .v-btn__overlay{
-        opacity: var(--v-hover-opacity);
-      }
-    }
-  }
-
-  &--variant-elevated,
-  &--variant-flat {
-    &.v-btn--disabled {
-      .v-btn__overlay {
-        opacity: 0.45;
-      }
-    }
-  }
-
-  &--icon {
-    .v-icon{
-      --v-icon-size-multiplier: 1 !important;
-    }
-  }
-
-  
-
-  .v-icon{
-    --v-icon-size-multiplier: 0.762;
-  }
 }
 
 // 👉 VLabel

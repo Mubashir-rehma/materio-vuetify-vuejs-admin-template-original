@@ -1,8 +1,8 @@
+$font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 /* stylelint-disable length-zero-no-unit */
 @forward "../../../base/libs/vuetify/variables" with (
-  $body-font-family: 'Inter' !default,
+  $body-font-family: $font-family-custom !default,
   $border-radius-root: 6px,
-
   
   $rounded: (
     "shaped": 25px 0,
@@ -78,6 +78,13 @@
       "weight": 400,
       "line-height": 0.875rem,
       "letter-spacing": 0.05rem,
+    ),
+    'button': (
+      'size': 0.9375rem,
+      'weight': 500,
+      'letter-spacing': normal,
+      'font-family': $font-family-custom,
+      'text-transform': capitalize,
     ),
   )!default,
 
@@ -176,14 +183,14 @@
   
   // 👉 Buttons
   $button-height: 38px !default,
-  $button-text-transform: capitalize !default,
   $button-padding-ratio: 2.15 !default,
   $button-margin-start: 0 !default,
-  $button-margin-end: 8px !default,
   $button-disabled-opacity: .45 !default,
-  $button-text-letter-spacing: initial !default,
-  $button-line-height: 20px !default,
-  $button-icon-density: ('default': 0.5, 'comfortable': 0, 'compact': -2) !default,
+  $button-elevation: ('default': 2, 'hover': 2, 'active': 0) !default,
+  $button-density: ('default': 0, 'comfortable': -1, 'compact': -2) !default,
+  $button-line-height: 1.375rem !default,
+  $button-margin-end: 0.375rem !default,
+  // $button-icon-density: ('default': 1, 'comfortable': 0, 'compact': -1) !default,
 
   // 👉 Chip
   $chip-font-size: 13px !default,

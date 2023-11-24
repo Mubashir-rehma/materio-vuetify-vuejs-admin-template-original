@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 @use "@configured-variables" as variables;
 @use "sass:map";
 @use "@styles/variables/vuetify";
@@ -210,15 +211,11 @@
 
 // 👉 Expansion Panel
 
-.v-expansion-panels{
+.v-expansion-panels {
   .v-expansion-panel{
-    &.v-expansion-panel--active{
-      .v-expansion-panel__shadow{
-        box-shadow: 0 4px 12px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-md-opacity));
-      }
-    }
-    
-    .v-expansion-panel-title{
+    .v-expansion-panel-title {
+      font-weight: 500;
+
       &--active{
         .v-expansion-panel-title__overlay,
         &:hover .v-expansion-panel-title__overlay
@@ -227,7 +224,7 @@
         }
       }
 
-      .v-expansion-panel-title__icon{
+      .v-expansion-panel-title__icon {
         .v-icon{
           block-size: 1.25rem;
           font-size: 1.25rem;
@@ -243,7 +240,19 @@
     }
 
     .v-expansion-panel-text{
-      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      font-size:15px;
+      line-height: 1.375rem;
+    }
+  }
+
+  &:not(.v-expansion-panels--variant-accordion) {
+    .v-expansion-panel {
+      &.v-expansion-panel--active {
+        .v-expansion-panel__shadow {
+          @include mixins.elevation(6);
+        }
+      }
     }
   }
 
@@ -268,7 +277,6 @@
 .v-field__prepend-inner, 
 .v-field__append-inner,
 .v-field__clearable {
-  /* stylelint-disable-next-line no-descending-specificity */
   > .v-icon {
     opacity: var(--v-high-emphasis-opacity) !important;
   }
@@ -510,8 +518,7 @@
       }
 
       &.v-tab--selected{
-        box-shadow: 0 2px 4px 0 rgba(var(--v-shadow-key-umbra-color),var(--v-shadow-xs-opacity));
-
+        @include mixins.elevation(2);
       }
     }
   }

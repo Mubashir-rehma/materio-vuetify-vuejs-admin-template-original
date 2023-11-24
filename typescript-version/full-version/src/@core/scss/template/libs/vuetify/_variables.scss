@@ -166,6 +166,8 @@
     24: (0 0 transparent),
   ) !default,
 
+  // 👉 Avatar
+  $avatar-color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !default,
 
   // 👉 Badge
   $badge-height: 1.375rem !default,

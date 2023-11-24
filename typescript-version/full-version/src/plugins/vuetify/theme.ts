@@ -91,7 +91,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'perfect-scrollbar-thumb': '#474360',
       'skin-bordered-background': '#312d4b',
       'skin-bordered-surface': '#312d4b',
-      'expansion-panel-text-custom-bg': '#3a3e5b',
+      'expansion-panel-text-custom-bg': '#373350',
     },
 
     variables: {

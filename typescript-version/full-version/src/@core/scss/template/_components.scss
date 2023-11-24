@@ -4,7 +4,6 @@
 @use "@styles/variables/vuetify";
 @use "@core/scss/base/mixins";
 @use "@core/scss/base/utils";
-@use "@core/scss/template/mixins.scss" as templateMixins;
 
 // 👉 VList
 .v-list {
@@ -135,7 +134,7 @@
 }
 
 // 👉 Button
-@include templateMixins.update-tonal-bg('v-btn');
+
 
 .v-btn {
   &--variant-elevated,
@@ -152,6 +151,13 @@
   &--variant-elevated,
   &--variant-flat {
     // We want darker background on hover instead of light
+
+    &:hover{
+      .v-btn__overlay{
+        opacity: 0;
+      }
+    }
+
     &:not(.v-btn--loading, .v-btn--disabled) {
       @each $color-name in variables.$theme-colors-name {
         &.bg-#{$color-name}{
@@ -164,7 +170,6 @@
 
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
   &--variant-elevated{
     &:active{
       box-shadow: none;
@@ -174,21 +179,6 @@
   // Outlined variant
   &--variant-outlined,
   &--variant-text {
-    /* stylelint-disable-next-line no-descending-specificity */
-    .v-btn__overlay {
-      --v-hover-opacity: 0.08;
-    }
-
-    &:active{
-      .v-btn__overlay{
-        opacity: var(--v-hover-opacity);
-      }
-    }
-  }
-
-  // Tonal variant
-  &--variant-tonal {
-    /* stylelint-disable-next-line no-descending-specificity */
     .v-btn__overlay {
       --v-hover-opacity: 0.16;
     }
@@ -200,36 +190,50 @@
     }
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
+  // Tonal variant
+  &--variant-tonal {
+    &:hover{
+      .v-btn__underlay{
+        opacity: 0;
+      }
+    }
+
+    .v-btn__overlay {
+      --v-hover-opacity: 0.24;
+    }
+
+    &:active{
+      .v-btn__overlay{
+        opacity: var(--v-hover-opacity);
+      }
+    }
+  }
+
+
   &--icon {
-    /* stylelint-disable-next-line no-descending-specificity */
-    
     block-size: var(--v-btn-height) !important;
     inline-size: var(--v-btn-height) !important;
 
     &.v-btn--size-default{
-      /* stylelint-disable-next-line no-descending-specificity */
       .v-icon{
         --v-icon-size-multiplier: 1.0835 !important;
       }
     }
 
     &.v-btn--size-small{
-      /* stylelint-disable-next-line no-descending-specificity */
       .v-icon{
         --v-icon-size-multiplier: 1.129 !important;
       }
     }
 
     &.v-btn--size-large{
-      /* stylelint-disable-next-line no-descending-specificity */
       .v-icon{
         --v-icon-size-multiplier: 1.1765 !important;
       }
     }
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
+
   .v-icon{
     --v-icon-size-multiplier: 0.7115;
 
@@ -293,7 +297,6 @@
         inline-size: 36px !important;
       }
 
-      /* stylelint-disable-next-line no-descending-specificity */
       .v-icon {
         font-size: 24px;
       }

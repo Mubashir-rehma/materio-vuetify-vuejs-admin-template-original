@@ -206,9 +206,10 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Expansion Panel
   $expansion-panel-active-margin: 0.5rem !default,
-  $expansion-panel-title-font-size: 1rem !default,
   $expansion-panel-text-padding: 0 20px 20px !default,
-  $expansion-panel-title-padding: 16px 20px !default, 
+  $expansion-panel-title-padding: 12px 20px !default,
+  $expansion-panel-title-min-height: 46px !default,
+  $expansion-panel-active-title-min-height: 46px !default,
   
   // 👉 List
   $list-item-one-line-min-height: 40 !default,
@@ -221,7 +222,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $snackbar-color: rgb(var(--v-theme-surface)) !default,
   $snackbar-content-padding: 8px 16px !default,
   $snackbar-wrapper-padding: 0 !default,
-  $snackbar-wrapper-min-height: 38px !default,
+  $snackbar-wrapper-min-height: 36px !default,
   $snackbar-elevation: 2 !default,
   $snackbar-btn-padding: 0 10px !default,
   $snackbar-action-margin: 16px !default,

@@ -34,6 +34,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'perfect-scrollbar-thumb': '#F0F2F8',
       'skin-bordered-background': '#fff',
       'skin-bordered-surface': '#fff',
+      'expansion-panel-text-custom-bg': '#fafafa',
     },
 
     variables: {
@@ -61,7 +62,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'dragged-opacity': 0.1,
       'disabled-opacity': 0.4,
       'border-color': '#2E263D',
-      'border-opacity': 0.23,
+      'border-opacity': 0.12,
       'table-header-color': '#F6F7FB',
       'high-emphasis-opacity': 0.9,
       'medium-emphasis-opacity': 0.7,
@@ -102,6 +103,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'perfect-scrollbar-thumb': '#474360',
       'skin-bordered-background': '#312d4b',
       'skin-bordered-surface': '#312d4b',
+      'expansion-panel-text-custom-bg': '#373350',
     },
 
     variables: {
@@ -129,7 +131,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'disabled-opacity': 0.4,
       'dragged-opacity': 0.1,
       'border-color': '#E7E3FC',
-      'border-opacity': 0.22,
+      'border-opacity': 0.12,
       'table-header-color': '#3D3759',
       'high-emphasis-opacity': 0.9,
       'medium-emphasis-opacity': 0.7,

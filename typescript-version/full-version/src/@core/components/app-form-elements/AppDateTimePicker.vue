@@ -184,6 +184,7 @@ const emitModelValue = (val: string) => {
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
 @use "@core/scss/base/mixins";
+@use "@styles/variables/_vuetify.scss" as vuetify;
 
 .flat-picker-custom-style {
   position: absolute;
@@ -204,6 +205,7 @@ input[altinputclass="inlinePicker"] {
 }
 
 .flatpickr-calendar {
+  border-radius: vuetify.$border-radius-root;
   background-color: rgb(var(--v-theme-surface));
   inline-size: 16.875rem;
   margin-block-start: 0.1875rem;
@@ -218,6 +220,7 @@ input[altinputclass="inlinePicker"] {
     }
 
     .flatpickr-days {
+      font-size: .9375rem;
       min-inline-size: 16.875rem;
 
       .dayContainer {
@@ -297,7 +300,7 @@ input[altinputclass="inlinePicker"] {
     }
 
     &:hover {
-      border-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+      border-color: transparent;
       background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
       color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
     }
@@ -305,7 +308,7 @@ input[altinputclass="inlinePicker"] {
 
   .flatpickr-weekday {
     color: $heading-color;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
   }
 
@@ -322,6 +325,8 @@ input[altinputclass="inlinePicker"] {
       fill: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
 
       svg {
+        block-size: 13px;
+        inline-size: 13px;
         stroke: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
       }
 
@@ -332,8 +337,13 @@ input[altinputclass="inlinePicker"] {
     }
   }
 
-  .flatpickr-current-month span.cur-month {
-    font-weight: 400;
+  .flatpickr-current-month {
+    padding-block: 3px 0;
+    padding-inline: 0;
+
+    span.cur-month {
+      font-weight: 400;
+    }
   }
 
   &.open {
@@ -410,7 +420,7 @@ input[altinputclass="inlinePicker"] {
     padding: 2px;
     border-radius: 4px;
     color: $heading-color;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 400;
     transition: all 0.15s ease-out;
 
@@ -439,7 +449,7 @@ input[altinputclass="inlinePicker"] {
 
   .flatpickr-prev-month,
   .flatpickr-next-month {
-    inset-block-start: 0.5rem !important;
+    inset-block-start: .2rem !important;
   }
 
   .flatpickr-next-month {

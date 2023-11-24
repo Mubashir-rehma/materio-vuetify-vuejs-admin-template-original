@@ -1,36 +1,36 @@
 <template>
   <div class="demo-space-x">
     <VBtn
-      icon="mdi-briefcase-download-outline"
+      icon="ri-suitcase-line"
       variant="text"
     />
 
     <VBtn
-      icon="mdi-account-plus-outline"
       variant="text"
+      icon="ri-user-add-line"
       color="secondary"
     />
 
     <VBtn
-      icon="mdi-magnify"
+      icon="ri-search-line"
       variant="text"
       color="success"
     />
 
     <VBtn
-      icon="mdi-thumb-up-outline"
+      icon="ri-thumb-up-line"
       variant="text"
       color="info"
     />
 
     <VBtn
-      icon="mdi-star-outline"
+      icon="ri-star-line"
       variant="text"
       color="warning"
     />
 
     <VBtn
-      icon="mdi-heart-outline"
+      icon="ri-heart-line"
       variant="text"
       color="error"
     />

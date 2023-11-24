@@ -3,6 +3,8 @@
 @use "sass:map";
 @use "@styles/variables/vuetify";
 @use "@core/scss/base/mixins";
+@use "@core/scss/base/utils";
+@use "@core/scss/template/mixins.scss" as templateMixins;
 
 // 👉 VList
 .v-list {
@@ -129,6 +131,190 @@
         }
       }
     }
+  }
+}
+
+// 👉 Button
+@include templateMixins.update-tonal-bg('v-btn');
+
+.v-btn {
+  &--variant-elevated,
+  &--variant-flat {
+    &.v-btn--disabled {
+      .v-btn__overlay {
+        opacity: 0.45;
+      }
+    }
+  }
+
+  // Default (elevated) button
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  &--variant-elevated,
+  &--variant-flat {
+    // We want darker background on hover instead of light
+    &:not(.v-btn--loading, .v-btn--disabled) {
+      @each $color-name in variables.$theme-colors-name {
+        &.bg-#{$color-name}{
+          &:hover, &:active {
+            background-color: rgb(var(--v-#{$color-name}-dark)) !important;
+          }
+        }
+      }
+    }
+
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &--variant-elevated{
+    &:active{
+      box-shadow: none;
+    }
+  }
+
+  // Outlined variant
+  &--variant-outlined,
+  &--variant-text {
+    /* stylelint-disable-next-line no-descending-specificity */
+    .v-btn__overlay {
+      --v-hover-opacity: 0.08;
+    }
+
+    &:active{
+      .v-btn__overlay{
+        opacity: var(--v-hover-opacity);
+      }
+    }
+  }
+
+  // Tonal variant
+  &--variant-tonal {
+    /* stylelint-disable-next-line no-descending-specificity */
+    .v-btn__overlay {
+      --v-hover-opacity: 0.16;
+    }
+
+    &:active{
+      .v-btn__overlay{
+        opacity: var(--v-hover-opacity);
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &--icon {
+    /* stylelint-disable-next-line no-descending-specificity */
+    
+    block-size: var(--v-btn-height) !important;
+    inline-size: var(--v-btn-height) !important;
+
+    &.v-btn--size-default{
+      /* stylelint-disable-next-line no-descending-specificity */
+      .v-icon{
+        --v-icon-size-multiplier: 1.0835 !important;
+      }
+    }
+
+    &.v-btn--size-small{
+      /* stylelint-disable-next-line no-descending-specificity */
+      .v-icon{
+        --v-icon-size-multiplier: 1.129 !important;
+      }
+    }
+
+    &.v-btn--size-large{
+      /* stylelint-disable-next-line no-descending-specificity */
+      .v-icon{
+        --v-icon-size-multiplier: 1.1765 !important;
+      }
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .v-icon{
+    --v-icon-size-multiplier: 0.7115;
+
+    inline-size: auto;
+  }
+
+
+  // Button Size
+  &--size-x-small{
+    --v-btn-height: 28px;
+    --v-btn-size: 11px;
+  
+    line-height: 14px;
+    padding-block: 0;
+    padding-inline: 10px;
+  }
+  
+  &--size-small {
+    --v-btn-height: 34px;
+    --v-btn-size: 13px;
+  
+    line-height: 18px;
+    padding-block: 0;
+    padding-inline: 14px;
+  }
+  
+  &--size-large {
+    --v-btn-height: 42px;
+    --v-btn-size: 17px;
+  
+    line-height: 26px;
+    padding-block: 0;
+    padding-inline: 22px;
+  }
+  
+  &--size-x-large{
+    --v-btn-height: 48px;
+    --v-btn-size: 19px;
+  
+    line-height: 30px;
+    padding-block: 0;
+    padding-inline: 26px;
+  }
+
+  // Toggle Button
+  &-toggle{
+    .v-btn {
+      border-radius: 0.375rem;
+      block-size: 52px !important;
+      border-inline-end: none;
+      inline-size: 52px !important;
+
+
+      &.v-btn--density-comfortable{
+        block-size: 44px !important;
+        inline-size: 44px !important;
+      }
+
+      &.v-btn--density-compact{
+        block-size: 36px !important;
+        inline-size: 36px !important;
+      }
+
+      /* stylelint-disable-next-line no-descending-specificity */
+      .v-icon {
+        font-size: 24px;
+      }
+    }
+
+    &.v-btn-group{
+      align-items: center;
+      padding: 7px;
+      border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+      block-size: 66px;
+
+      &.v-btn-group--density-compact{
+        block-size: 50px;
+      }
+
+      &.v-btn-group--density-comfortable{
+        block-size: 58px;
+      }
+      
+    }
+  
   }
 }
 
@@ -615,9 +801,6 @@
     }
   }
 }
-
-
-
 
 // 👉 Slider
 .v-slider-thumb {

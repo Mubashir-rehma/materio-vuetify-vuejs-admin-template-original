@@ -9,8 +9,8 @@
       elevation="0"
     >
       <VExpansionPanelTitle
-        collapse-icon="mdi-minus"
-        expand-icon="mdi-plus"
+        collapse-icon="ri-subtract-line"
+        expand-icon="ri-add-line"
       >
         Accordion {{ item }}
       </VExpansionPanelTitle>

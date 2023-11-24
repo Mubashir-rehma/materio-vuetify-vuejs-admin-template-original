@@ -9,7 +9,7 @@ const panel = ref(0)
         Server Down
         <template #actions>
           <VIcon
-            icon="mdi-alert-circle-outline"
+            icon="ri-error-warning-line"
             color="error"
           />
         </template>
@@ -24,7 +24,7 @@ const panel = ref(0)
         Sales report generated
         <template #actions>
           <VIcon
-            icon="mdi-check"
+            icon="ri-check-line"
             color="success"
           />
         </template>
@@ -39,7 +39,7 @@ const panel = ref(0)
         High Memory usage
         <template #actions>
           <VIcon
-            icon="mdi-alert-outline"
+            icon="ri-alert-line"
             color="warning"
           />
         </template>

@@ -1,15 +1,7 @@
-<script setup lang="ts">
-import { useTheme } from 'vuetify'
-
-const theme = useTheme()
-
-const isDark = ref(theme.name)
-</script>
-
 <template>
   <VExpansionPanels
     variant="accordion"
-    class="customized-panels border rounded"
+    class="customized-panels"
   >
     <VExpansionPanel
       v-for="item in 4"
@@ -19,7 +11,6 @@ const isDark = ref(theme.name)
       <VExpansionPanelTitle
         collapse-icon="mdi-minus"
         expand-icon="mdi-plus"
-        :style="`background-color: ${isDark === 'light' ? 'var(--v-title-bg-light)' : 'var(--v-title-bg-dark)'}`"
       >
         Accordion {{ item }}
       </VExpansionPanelTitle>
@@ -30,19 +21,3 @@ const isDark = ref(theme.name)
     </VExpansionPanel>
   </VExpansionPanels>
 </template>
-
-<style lang="scss">
-.v-expansion-panels.customized-panels {
-  --v-title-bg-light: #fafafa;
-  --v-title-bg-dark: #373350;
-
-  .v-expansion-panel-title {
-    border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-    margin-block-end: -1px;
-  }
-
-  .v-expansion-panel-text__wrapper {
-    padding: 20px;
-  }
-}
-</style>

@@ -2,32 +2,32 @@
   <div class="demo-space-x">
     <VAvatar
       color="primary"
-      icon="mdi-home-outline"
+      icon="ri-home-line"
     />
 
     <VAvatar
       color="secondary"
-      icon="mdi-cloud-outline"
+      icon="ri-cloud-line"
     />
 
     <VAvatar
       color="success"
-      icon="mdi-bell-outline"
+      icon="ri-bell-line"
     />
 
     <VAvatar
       color="info"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
 
     <VAvatar
       color="warning"
-      icon="mdi-alert-outline"
+      icon="ri-alert-line"
     />
 
     <VAvatar
       color="error"
-      icon="mdi-message-outline"
+      icon="ri-message-line"
     />
   </div>
 </template>

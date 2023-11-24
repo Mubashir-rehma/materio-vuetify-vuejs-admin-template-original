@@ -2,6 +2,7 @@
 @use "@layouts/styles/placeholders";
 @use "@layouts/styles/mixins" as layoutMixins;
 @use "@configured-variables" as variables;
+@use "@styles/variables/_vuetify.scss" as vuetify;
 
 // 👉 Avatar group
 .v-avatar-group {
@@ -131,7 +132,7 @@
 // 👉 Expansion panel
 .v-expansion-panels.customized-panels {
   border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-  border-radius: 4px;
+  border-radius: vuetify.$border-radius-root;
 
   .v-expansion-panel-title {
     background-color: rgb(var(--v-theme-expansion-panel-text-custom-bg));

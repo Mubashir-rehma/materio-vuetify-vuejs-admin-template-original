@@ -246,9 +246,9 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $tooltip-background-color: rgb(var(--v-tooltip-background)) !default,
   $tooltip-text-color: rgb(var(--v-theme-surface)) !default,
   $tooltip-border-radius: 0.25rem !default,
-  $tooltip-font-size: 0.6875rem !default,
-  $tooltip-padding: 4px 8px !default,
-  $tooltip-line-height: 1.273 !default,
+  $tooltip-font-size: 0.8125rem !default,
+  $tooltip-padding: 4px 12px !default,
+  $tooltip-line-height: 1.25rem !default,
   
   // 👉 VPagination
   $pagination-item-margin: 0.1875rem !default,

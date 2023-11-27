@@ -482,15 +482,11 @@
 
 // 👉 Dialog
 .v-dialog{
-  .v-card{
-    .v-card-text{
-      color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
-    }
-  }
+  font-size: .9375rem;
+  line-height: 1.375rem;
 }
 
 // 👉 Expansion Panel
-
 .v-expansion-panels {
   .v-expansion-panel{
     .v-expansion-panel-title {

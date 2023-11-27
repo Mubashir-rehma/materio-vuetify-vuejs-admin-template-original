@@ -134,9 +134,11 @@
 }
 
 // 👉 Button
-
-
 .v-btn {
+  &:not(.v-btn--block) {
+    min-inline-size: auto;
+  }
+
   &--variant-elevated,
   &--variant-flat {
     &.v-btn--disabled {
@@ -213,6 +215,7 @@
   &--icon {
     block-size: var(--v-btn-height) !important;
     inline-size: var(--v-btn-height) !important;
+    padding-inline: 6px !important;
 
     &.v-btn--size-default{
       .v-icon{
@@ -240,6 +243,12 @@
     inline-size: auto;
   }
 
+  &--variant-text,
+  &--variant-plain {
+    &:not(.v-btn--icon){
+      padding-inline: 14px;
+    }
+  }
 
   // Button Size
   &--size-x-small{
@@ -776,7 +785,6 @@
 }
 
 // 👉 Table
-
 .v-table{
   .v-table__wrapper{
     table{
@@ -803,6 +811,11 @@
       }
     }
   }
+}
+
+// Rating
+.v-rating {
+  margin-inline-start: -6px;
 }
 
 // 👉 Slider

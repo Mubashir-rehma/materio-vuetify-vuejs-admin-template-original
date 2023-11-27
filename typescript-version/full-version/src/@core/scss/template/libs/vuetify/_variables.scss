@@ -173,6 +173,10 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   // 👉 Avatar
   $avatar-color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !default,
 
+  // 👉 Alert
+  $alert-title-font-size: 1.125rem !default,
+  $alert-text-line-height: 1.625rem !default,
+
   // 👉 Badge
   $badge-height: 1.375rem !default,
   $badge-min-width: 1.375rem !default,
@@ -193,6 +197,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   
   // 👉 Chip
   $chip-font-size: 13px !default,
+  $chip-icon-font-size: 1.25rem !default,
   $chip-close-size: 20px !default,
 
   // 👉 Cards

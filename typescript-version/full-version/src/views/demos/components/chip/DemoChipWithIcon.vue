@@ -1,65 +1,48 @@
 <template>
   <div class="demo-space-x">
-    <VChip>
-      <VIcon
-        size="18"
-        icon="ri-user-line"
-        class="me-1"
-      />
+    <VChip prepend-icon="ri-user-line">
       Account
     </VChip>
 
-    <VChip color="primary">
-      <VIcon
-        size="18"
-        icon="ri-star-line"
-        class="me-1"
-      />
+    <VChip
+      color="primary"
+      prepend-icon="ri-star-line"
+    >
       Premium
     </VChip>
 
-    <VChip color="secondary">
-      <VIcon
-        size="18"
-        class="me-1"
-        icon="ri-cake-line"
-      />
+    <VChip
+      color="secondary"
+      prepend-icon="ri-cake-line"
+    >
       1 Year
     </VChip>
 
-    <VChip color="success">
-      <VIcon
-        size="18"
-        class="me-1"
-        icon="ri-notification-line"
-      />
+    <VChip
+      color="success"
+      prepend-icon="ri-notification-line"
+    >
       Notification
     </VChip>
 
-    <VChip color="info">
-      <VIcon
-        size="18"
-        class="me-1"
-        icon="ri-message-line"
-      />
+    <VChip
+      color="info"
+      prepend-icon="ri-message-line"
+    >
       Message
     </VChip>
 
-    <VChip color="warning">
-      <VIcon
-        size="18"
-        class="me-1"
-        icon="ri-alert-line"
-      />
+    <VChip
+      color="warning"
+      prepend-icon="ri-error-warning-line"
+    >
       Warning
     </VChip>
 
-    <VChip color="error">
-      <VIcon
-        size="18"
-        class="me-1"
-        icon="ri-error-warning-line"
-      />
+    <VChip
+      color="error"
+      prepend-icon="ri-error-warning-line"
+    >
       Error
     </VChip>
   </div>

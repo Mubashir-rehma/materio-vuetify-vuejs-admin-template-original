@@ -211,7 +211,7 @@ watchEffect(() => {
   // 👉 stepper step with icon and  default
   .v-slide-group__content {
     .stepper-step-indicator {
-      border: 0.3125rem solid rgb(var(--v-theme-primary));
+      border: .1875rem solid rgb(var(--v-theme-primary));
       border-radius: 50%;
       background-color: rgb(var(--v-theme-surface));
       block-size: 1.25rem;
@@ -234,8 +234,8 @@ watchEffect(() => {
     .stepper-step-line.vertical {
       block-size: 2.5rem;
       inline-size: 0.1875rem;
-      margin-block:8px;
-      margin-inline-start: .6875rem;
+      margin-block:3px;
+      margin-inline-start: 0.625rem;
     }
 
     .stepper-chevron-indicator {
@@ -250,6 +250,7 @@ watchEffect(() => {
       }
 
       .stepper-step-indicator {
+        border-width: 0.3125rem;
         opacity: 1;
       }
     }
@@ -362,5 +363,12 @@ watchEffect(() => {
     }
   }
 
+  &.app-stepper-icons {
+    .app-stepper-step:not(.stepper-steps-active,.stepper-steps-completed) {
+      .stepper-title {
+        color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      }
+    }
+  }
 }
 </style>

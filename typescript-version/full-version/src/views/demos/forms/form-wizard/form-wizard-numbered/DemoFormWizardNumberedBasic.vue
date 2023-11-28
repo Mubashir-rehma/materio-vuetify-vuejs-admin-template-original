@@ -45,7 +45,6 @@ const onSubmit = () => {
       <!-- 👉 Stepper -->
       <AppStepper
         v-model:current-step="currentStep"
-        align="start"
         :items="numberedSteps"
       />
     </VCardText>

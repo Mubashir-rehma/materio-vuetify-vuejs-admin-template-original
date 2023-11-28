@@ -89,7 +89,6 @@ const validateSocialLinkForm = () => {
       <AppStepper
         v-model:current-step="currentStep"
         :items="numberedSteps"
-        align="start"
         :is-active-step-valid="isCurrentStepValid"
       />
     </VCardText>

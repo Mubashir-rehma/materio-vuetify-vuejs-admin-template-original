@@ -14,7 +14,7 @@ interface Props {
   direction?: Direction
   iconSize?: string | number
   isActiveStepValid?: boolean
-  align?: 'start' | 'center' | 'end'
+  align?: 'start' | 'center' | 'end' | 'default'
 }
 
 interface Emit {
@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
   direction: 'horizontal',
   iconSize: 52,
   isActiveStepValid: undefined,
-  align: 'center',
+  align: 'default',
 })
 
 const emit = defineEmits<Emit>()
@@ -78,7 +78,7 @@ watchEffect(() => {
       :value="index"
     >
       <div
-        class="cursor-pointer mx-1"
+        class="cursor-pointer app-stepper-step mx-1"
         :class="[
           (!props.isActiveStepValid && (isValidationEnabled)) && 'stepper-steps-invalid',
           activeOrCompletedStepsClasses(index),
@@ -167,7 +167,10 @@ watchEffect(() => {
             </div>
 
             <!-- 👉 title and subtitle -->
-            <div style="line-height: 0;">
+            <div
+              class="app-stepper-title-wrapper"
+              style="line-height: 0;"
+            >
               <h6 class="text-base font-weight-medium step-title">
                 {{ item.title }}
               </h6>
@@ -200,6 +203,80 @@ watchEffect(() => {
 
 <style lang="scss">
 .app-stepper {
+  &.app-stepper-default .app-stepper-step:not(:last-child) {
+    inline-size: 100%;
+  }
+
+  // 👉 stepper step with icon and  default
+  .v-slide-group__content {
+    .stepper-step-indicator {
+      border: 0.3125rem solid rgb(var(--v-theme-primary));
+      border-radius: 50%;
+      background-color: rgb(var(--v-theme-surface));
+      block-size: 1.25rem;
+      inline-size: 1.25rem;
+      opacity: var(--v-activated-opacity);
+    }
+
+    .stepper-step-line {
+      border-radius: 0.1875rem;
+      background-color: rgb(var(--v-theme-primary));
+      block-size: 0.1875rem;
+      opacity: var(--v-activated-opacity);
+    }
+
+    .stepper-step-line:not(.vertical) {
+      inline-size: 100%;
+      min-inline-size: 3rem;
+    }
+
+    .stepper-step-line.vertical {
+      block-size: 2.5rem;
+      inline-size: 0.1875rem;
+      margin-block:8px;
+      margin-inline-start: .6875rem;
+    }
+
+    .stepper-chevron-indicator {
+      color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+    }
+
+    .stepper-steps-completed,
+    .stepper-steps-active {
+      .stepper-icon-step,
+      .stepper-step-icon {
+        color: rgb(var(--v-theme-primary)) !important;
+      }
+
+      .stepper-step-indicator {
+        opacity: 1;
+      }
+    }
+
+    .stepper-steps-completed {
+      .stepper-step-line {
+        opacity: 1;
+      }
+
+      .stepper-chevron-indicator {
+        color: rgb(var(--v-theme-primary));
+      }
+    }
+
+    .stepper-steps-invalid.stepper-steps-active {
+      .stepper-icon-step,
+      .step-number,
+      .step-title,
+      .step-subtitle {
+        color: rgb(var(--v-theme-error)) !important;
+      }
+    }
+  }
+
+  .app-stepper-title-wrapper{
+    text-wrap: nowrap;
+  }
+
   // 👉 stepper step with bg color
   &.stepper-icon-step-bg {
     .v-slide-group__content{
@@ -259,70 +336,20 @@ watchEffect(() => {
     }
   }
 
-  // 👉 stepper step with icon and  default
-  /* stylelint-disable-next-line no-descending-specificity */
-  .v-slide-group__content {
-    .stepper-step-indicator {
-      border: 0.3125rem solid rgb(var(--v-theme-primary));
-      border-radius: 50%;
-      background-color: rgb(var(--v-theme-surface));
-      block-size: 1.25rem;
-      inline-size: 1.25rem;
-      opacity: var(--v-divider-opacity);
-    }
-
-    .stepper-step-line {
-      border-radius: 20px;
-      background-color: rgb(var(--v-theme-primary));
-      block-size: 0.1875rem;
-      inline-size: 3.75rem;
-      opacity: var(--v-activated-opacity);
-    }
-
-    .stepper-chevron-indicator {
-      color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
-    }
-
-    .stepper-steps-completed,
-    .stepper-steps-active {
-      .stepper-icon-step,
-      .stepper-step-icon {
-        color: rgb(var(--v-theme-primary)) !important;
-      }
-
-      .stepper-step-indicator {
-        opacity: 1;
-      }
-    }
-
-    .stepper-steps-completed {
-      .stepper-step-line {
-        opacity: 1;
-      }
-
-      .stepper-chevron-indicator {
-        color: rgb(var(--v-theme-primary));
-      }
-    }
-
-    .stepper-steps-invalid.stepper-steps-active {
-      .stepper-icon-step,
-      .step-number,
-      .step-title,
-      .step-subtitle {
-        color: rgb(var(--v-theme-error)) !important;
-      }
+  // 👉 stepper alignment
+  &.app-stepper-default {
+    .v-slide-group__content {
+      justify-content: space-between;
     }
   }
 
-  // 👉 stepper alignment
   &.app-stepper-center {
     .v-slide-group__content {
       justify-content: center;
     }
   }
 
-  &.app-stepper-start {
+  &.app-stepper- {
     .v-slide-group__content {
       justify-content: start;
     }
@@ -333,5 +360,6 @@ watchEffect(() => {
       justify-content: end;
     }
   }
+
 }
 </style>

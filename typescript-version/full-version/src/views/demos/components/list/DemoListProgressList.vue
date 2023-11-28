@@ -16,31 +16,31 @@ interface Progress {
 
 const languageProgress: Progress[] = [
   {
-    avatar: 'mdi-react',
+    avatar: 'ri-reactjs-line',
     title: 'React is a JavaScript library for building user interfaces',
     language: 'react',
     amount: 90,
   },
   {
-    avatar: 'mdi-bootstrap',
+    avatar: 'ri-bootstrap-line',
     title: 'Bootstrap is an open source toolkit',
     language: 'bootstrap',
     amount: 80,
   },
   {
-    avatar: 'mdi-vuejs',
+    avatar: 'ri-vuejs-line',
     title: 'Vue.js is the Progressive JavaScript Framework',
     language: 'vue',
     amount: 65,
   },
   {
-    avatar: 'mdi-angularjs',
+    avatar: 'ri-angularjs-line',
     title: 'Angular implements Functional Programming concepts',
     language: 'angular',
     amount: 75,
   },
   {
-    avatar: 'mdi-language-javascript',
+    avatar: 'ri-javascript-line',
     title: 'JavaScript is the programming language of the Web',
     language: 'javascript',
     amount: 70,

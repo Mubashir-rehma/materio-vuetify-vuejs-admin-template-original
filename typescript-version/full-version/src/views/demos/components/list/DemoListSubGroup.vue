@@ -2,22 +2,22 @@
 const open = ref(['Users', 'Admin'])
 
 const admins = [
-  ['Management', 'mdi-account-multiple-outline'],
-  ['Settings', 'mdi-cog-outline'],
+  ['Management', 'ri-group-line'],
+  ['Settings', 'ri-settings-5-line'],
 ]
 
 const cruds = [
-  ['Create', 'mdi-plus-outline'],
-  ['Read', 'mdi-file-outline'],
-  ['Update', 'mdi-update'],
-  ['Delete', 'mdi-delete-outline'],
+  ['Create', 'ri-add-line'],
+  ['Read', 'ri-file-line'],
+  ['Update', 'ri-refresh-line'],
+  ['Delete', 'ri-delete-bin-line'],
 ]
 </script>
 
 <template>
   <VList v-model:opened="open">
     <VListItem
-      prepend-icon="mdi-home-outline"
+      prepend-icon="ri-home-line"
       title="Home"
       value="Home"
     />
@@ -26,7 +26,7 @@ const cruds = [
       <template #activator="{ props }">
         <VListItem
           v-bind="props"
-          prepend-icon="mdi-account-circle-outline"
+          prepend-icon="ri-user-line"
           title="Users"
         />
       </template>

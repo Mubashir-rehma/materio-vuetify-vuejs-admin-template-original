@@ -202,6 +202,7 @@ watchEffect(() => {
 </template>
 
 <style lang="scss">
+/* stylelint-disable no-descending-specificity */
 .app-stepper {
   &.app-stepper-default .app-stepper-step:not(:last-child) {
     inline-size: 100%;

@@ -63,6 +63,7 @@ const onSubmit = () => {
       <AppStepper
         v-model:current-step="currentStep"
         :items="iconsSteps"
+        align="center"
       />
     </VCardText>
 

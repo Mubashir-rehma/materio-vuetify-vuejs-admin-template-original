@@ -90,6 +90,7 @@ const currentStep = ref(0)
         class="checkout-stepper"
         :items="checkoutSteps"
         :direction="$vuetify.display.mdAndUp ? 'horizontal' : 'vertical'"
+        align="center"
       />
     </VCardText>
 

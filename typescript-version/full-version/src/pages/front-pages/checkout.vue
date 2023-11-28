@@ -20,7 +20,7 @@ definePage({
 })
 
 const checkoutSteps = [
-{
+  {
     title: 'Cart',
     icon: customCart,
   },
@@ -102,6 +102,7 @@ const currentStep = ref(0)
               class="checkout-stepper"
               :items="checkoutSteps"
               :direction="$vuetify.display.mdAndUp ? 'horizontal' : 'vertical'"
+              align="center"
             />
           </VCardText>
           <VDivider />
@@ -152,8 +153,7 @@ const currentStep = ref(0)
 }
 
 .checkout-card {
-  margin-block-end: 6.25rem;
-  margin-block-start: 9.75rem;
+  margin-block: 9.75rem 6.25rem;
 }
 
 @media (max-width: 960px) and (min-width: 600px) {

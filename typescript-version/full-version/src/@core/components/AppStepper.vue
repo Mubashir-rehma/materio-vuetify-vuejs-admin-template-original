@@ -70,7 +70,7 @@ watchEffect(() => {
     class="app-stepper"
     show-arrows
     :direction="props.direction"
-    :class="`app-stepper-${props.align}`"
+    :class="`app-stepper-${props.align} ${props.items[0].icon ? 'app-stepper-icons' : ''}`"
   >
     <VSlideGroupItem
       v-for="(item, index) in props.items"
@@ -204,7 +204,7 @@ watchEffect(() => {
 <style lang="scss">
 /* stylelint-disable no-descending-specificity */
 .app-stepper {
-  &.app-stepper-default .app-stepper-step:not(:last-child) {
+  &.app-stepper-default:not(.app-stepper-icons) .app-stepper-step:not(:last-child) {
     inline-size: 100%;
   }
 

@@ -11,7 +11,6 @@ import customCart from '@images/svg/cart.svg'
 import customPayment from '@images/svg/payment.svg'
 import customTrending from '@images/svg/trending.svg'
 
-
 const checkoutSteps = [
   {
     title: 'Cart',
@@ -91,6 +90,7 @@ const currentStep = ref(0)
         class="checkout-stepper"
         :items="checkoutSteps"
         :direction="$vuetify.display.mdAndUp ? 'horizontal' : 'vertical'"
+        align="center"
       />
     </VCardText>
 

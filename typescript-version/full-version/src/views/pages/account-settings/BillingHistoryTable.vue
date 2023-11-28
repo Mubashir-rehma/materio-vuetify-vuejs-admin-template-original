@@ -161,7 +161,7 @@ const deleteInvoice = async (id: number) => {
 
         <!-- id -->
         <template #item.id="{ item }">
-          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }">
+          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
             #{{ item.id }}
           </RouterLink>
         </template>

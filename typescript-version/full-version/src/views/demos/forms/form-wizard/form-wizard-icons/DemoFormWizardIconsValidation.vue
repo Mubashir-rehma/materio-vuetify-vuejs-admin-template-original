@@ -115,6 +115,7 @@ const validateSocialLinkForm = () => {
         v-model:current-step="currentStep"
         :items="iconsSteps"
         :is-active-step-valid="isCurrentStepValid"
+        align="center"
       />
     </VCardText>
 

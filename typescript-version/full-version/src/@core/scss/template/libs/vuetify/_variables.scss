@@ -229,11 +229,17 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $field-outline-opacity: 0.28 !default,
   
   // 👉 List
-  $list-item-one-line-min-height: 40 !default,
+  $list-item-one-line-min-height: 38px !default,
+  $list-subheader-min-height: 38px !default,
   $list-item-padding: 8px 20px !default,
   $list-subheader-font-weight: 500 !default,
   $list-item-icon-margin-start: 12px !default,
-
+  $list-item-min-height: 38px !default,
+  $list-item-nav-title-font-size: 0.9375rem !default,
+  $list-item-nav-title-font-weight: 400 !default,
+  $list-item-nav-subtitle-font-size: 0.8125rem !default,
+  $list-item-subtitle-line-height: 1.25rem !default,
+  
   // 👉 Snackbar
   $snackbar-background: rgb(var(--v-tooltip-background)) !default,
   $snackbar-color: rgb(var(--v-theme-surface)) !default,

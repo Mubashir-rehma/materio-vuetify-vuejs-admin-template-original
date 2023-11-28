@@ -4,7 +4,7 @@ const items = [
     title: 'Cupcake sesame snaps dessert marzipan.',
     value: 1,
     props: {
-      prependIcon: 'mdi-instagram',
+      prependIcon: 'ri-dribbble-line',
       rounded: 'xl',
     },
   },
@@ -12,7 +12,7 @@ const items = [
     title: 'Jelly beans jelly-o gummi bears chupa chups marshmallow.',
     value: 2,
     props: {
-      prependIcon: 'mdi-facebook',
+      prependIcon: 'ri-facebook-circle-line',
       rounded: 'xl',
     },
   },
@@ -20,7 +20,7 @@ const items = [
     title: 'Bonbon macaroon gummies pie jelly',
     value: 3,
     props: {
-      prependIcon: 'mdi-twitter',
+      prependIcon: 'ri-twitter-line',
       rounded: 'xl',
     },
   },
@@ -28,7 +28,7 @@ const items = [
     title: 'halvah icing marshmallow',
     value: 4,
     props: {
-      prependIcon: 'mdi-instagram',
+      prependIcon: 'ri-instagram-line',
       rounded: 'xl',
     },
   },

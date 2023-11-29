@@ -841,21 +841,15 @@
 // 👉 Timeline
 
 .v-timeline{
-  .v-timeline-item {
-    .app-timeline-title {
-      color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-  
-    .app-timeline-text {
-      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
-      font-size: 16px;
-      line-height: 1.5rem;
+  .v-timeline-item{
+    .timeline-chip{
+      border-radius: 6px;
+      background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity)); 
+      padding-block: 5px;
+      padding-inline: 10px
     }
   }
-  
+
   &.v-timeline--variant-outlined{
     .v-timeline-item{
       .v-timeline-divider{
@@ -865,7 +859,7 @@
       }
 
       .v-timeline-divider__after{
-        border: 1.5px dashed rgba(var(--v-border-color), var(--v-border-opacity)); 
+        border: 1px dashed rgba(var(--v-border-color), var(--v-border-opacity));
         background: none;
       }
 

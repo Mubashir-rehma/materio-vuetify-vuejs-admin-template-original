@@ -548,13 +548,16 @@
 
 // hover state outline color 
 .v-field:not(.v-field--active):hover .v-field__outline {
-  --v-field-border-opacity: 0.54 !important;
+  --v-field-border-opacity: 0.6 !important;
 }
 
 .v-field__prepend-inner, 
 .v-field__append-inner,
-.v-field__clearable {
+.v-field__clearable,
+.v-input__prepend,
+.v-input__append {
   > .v-icon {
+    font-size: 20px;
     opacity: var(--v-high-emphasis-opacity) !important;
   }
 }
@@ -564,13 +567,6 @@
   .v-list-item--density-default:not(.v-list-item--nav).v-list-item--one-line {
     padding-inline: 16px;
   }
-
-  // Done with default props
-  // > .v-overlay__content {
-  //   .v-list {
-  //     margin-block: 2px !important;
-  //   }
-  // }
 }
 
 

@@ -102,6 +102,7 @@ export default {
   },
   VTextField: {
     variant: 'outlined',
+    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },

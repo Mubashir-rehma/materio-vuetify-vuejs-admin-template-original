@@ -18,9 +18,3 @@
   color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity));
 }
 
-// 👉 VLabel
-.v-label {
-  &:not(.v-field-label--floating) {
-    color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
-  }
-}

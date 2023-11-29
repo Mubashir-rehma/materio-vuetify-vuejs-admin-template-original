@@ -39,8 +39,13 @@ const updateSelectedOption = (value: string) => {
             name="content"
             :item="item"
           >
-            <img
+            <Component
+              :is="item.bgImage"
               v-if="item.bgImage"
+              class="custom-radio-image"
+            />
+            <img
+              v-else
               :src="item.bgImage"
               alt="bg-img"
               class="custom-radio-image"

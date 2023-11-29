@@ -17,10 +17,6 @@ export default {
     // ℹ️ Remove after next release
     variant: 'flat',
   },
-
-  // VImg: {
-  //   eager: true,
-  // },
   VBadge: {
     // set v-badge default color to primary
     color: 'primary',
@@ -32,7 +28,6 @@ export default {
   VChip: {
     elevation: 0,
   },
-
   VMenu: {
     offset: '2px',
   },
@@ -74,6 +69,7 @@ export default {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VRangeSlider: {
     // set v-range-slider default color to primary
@@ -109,22 +105,26 @@ export default {
   VAutocomplete: {
     variant: 'outlined',
     color: 'primary',
+    density: 'comfortable',
     hideDetails: 'auto',
   },
   VCombobox: {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VFileInput: {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VTextarea: {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VSwitch: {
     // set v-switch default color to primary

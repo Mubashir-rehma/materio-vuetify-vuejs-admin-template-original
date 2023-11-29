@@ -43,344 +43,318 @@ const earnings = [
 </script>
 
 <template>
-  <VCard
-    title="Timeline With Icons"
-    variant="text"
-  >
-    <VCardText>
-      <VTimeline
-        align="start"
-        line-inset="20"
-        truncate-line="start"
-        justify="center"
-        :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
-        class="mt-4"
+  <div class="my-6">
+    <div>
+      <h5 class="text-h5">
+        Timeline with icons
+      </h5>
+    </div>
+    <VTimeline
+      align="start"
+      line-inset="20"
+      truncate-line="start"
+      justify="center"
+      :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
+      class="mt-4"
+    >
+      <!-- SECTION Timeline Item: Document -->
+      <VTimelineItem
+        fill-dot
+        size="small"
       >
-        <!-- SECTION Timeline Item: Document -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-        >
-          <template #opposite>
-            <span class="app-timeline-meta">
-              2 months ago
-            </span>
-          </template>
-          <template #icon>
-            <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar
-                size="32"
-                color="error"
-                variant="tonal"
+        <template #opposite>
+          <span class="app-timeline-meta">
+            2 months ago
+          </span>
+        </template>
+        <template #icon>
+          <div class="v-timeline-avatar-wrapper rounded-circle">
+            <VAvatar
+              size="32"
+              color="error"
+              variant="tonal"
+            >
+              <VIcon
+                icon="mdi-file-document-outline"
+                size="20"
+              />
+            </VAvatar>
+          </div>
+        </template>
+        <!-- 👉 Header -->
+        <VCard class="mt-n4">
+          <VCardItem>
+            <VCardTitle>You've uploaded doc pdf to the Themeselection project</VCardTitle>
+          </VCardItem>
+          <VCardText>
+            <!-- 👉 Content -->
+            <p class="app-timeline-text mb-3">
+              he process of recording the key project details and producing the documents that are required to implement it successfully. Simply put, it's an umbrella term which includes all the documents created over the course of the project.
+            </p>
+            <div class="d-inline-flex align-items-center timeline-chip">
+              <img
+                :src="pdf"
+                width="20"
+                class="me-2"
+                alt="img"
               >
-                <VIcon
-                  icon="ri-plane-line"
-                  size="20"
-                />
-              </VAvatar>
+              <span class="app-timeline-text font-weight-medium">
+                documentation.pdf
+              </span>
             </div>
-          </template>
-
-          <!-- 👉 Header -->
-          <VCard class="mt-n4">
-            <VCardItem>
-              <VCardTitle>You've uploaded doc pdf to the Themeselection project</VCardTitle>
-            </VCardItem>
-
-            <VCardText>
-              <!-- 👉 Content -->
-              <p class="app-timeline-text mb-3">
-                he process of recording the key project details and producing the documents that are required to implement it successfully. Simply put, it's an umbrella term which includes all the documents created over the course of the project.
-              </p>
-
-              <div class="d-inline-flex align-items-center timeline-chip">
-                <img
-                  :src="pdf"
-                  width="20"
+          </VCardText>
+        </VCard>
+      </VTimelineItem>
+      <!-- !SECTION -->
+      <!-- SECTION Timeline Item: Image Album -->
+      <VTimelineItem
+        fill-dot
+        size="small"
+      >
+        <template #opposite>
+          <span class="app-timeline-meta">
+            24days ago
+          </span>
+        </template>
+        <template #icon>
+          <div class="v-timeline-avatar-wrapper rounded-circle">
+            <VAvatar
+              size="32"
+              color="success"
+              variant="tonal"
+            >
+              <VIcon
+                size="20"
+                icon="mdi-clock-time-four-outline"
+              />
+            </VAvatar>
+          </div>
+        </template>
+        <VCard class="mt-n4">
+          <VCardItem>
+            <VCardTitle>Heather added 4 images to the Team album</VCardTitle>
+          </VCardItem>
+          <VCardText>
+            <p class="mb-3">
+              In the Select Image for Project dialog box, choose one of the following: Under the Upload New Image section
+            </p>
+            <div class="d-flex gap-4 flex-wrap">
+              <template
+                v-for="(img, i) in albumImages"
+                :key="i"
+              >
+                <VImg :src="img" />
+              </template>
+            </div>
+          </VCardText>
+        </VCard>
+      </VTimelineItem>
+      <!-- !SECTION -->
+      <!-- SECTION Timeline Item: Review -->
+      <VTimelineItem
+        fill-dot
+        size="small"
+      >
+        <template #opposite>
+          <span class="app-timeline-meta">
+            6 days ago
+          </span>
+        </template>
+        <template #icon>
+          <div class="v-timeline-avatar-wrapper rounded-circle">
+            <VAvatar
+              size="32"
+              color="warning"
+              variant="tonal"
+            >
+              <VIcon
+                size="20"
+                icon="mdi-cart-outline"
+              />
+            </VAvatar>
+          </div>
+        </template>
+        <VCard class="mt-n4">
+          <VCardItem>
+            <VCardTitle>
+              Loretta write a review on Themeselection
+            </VCardTitle>
+          </VCardItem>
+          <VCardText>
+            <div>
+              <div class="d-flex align-center mb-3">
+                <VAvatar
+                  size="32"
                   class="me-2"
-                  alt="img"
-                >
-
-                <span class="app-timeline-text font-weight-medium">
-                  documentation.pdf
-                </span>
-              </div>
-            </VCardText>
-          </VCard>
-        </VTimelineItem>
-        <!-- !SECTION -->
-
-        <!-- SECTION Timeline Item: Image Album -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-        >
-          <template #opposite>
-            <span class="app-timeline-meta">
-              24days ago
-            </span>
-          </template>
-
-          <template #icon>
-            <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar
-                size="32"
-                color="success"
-                variant="tonal"
-              >
-                <VIcon
-                  size="20"
-                  icon="ri-time-line"
+                  :image="avatar8"
                 />
-              </VAvatar>
-            </div>
-          </template>
-
-          <VCard class="mt-n4">
-            <VCardItem>
-              <VCardTitle>Heather added 4 images to the Team album</VCardTitle>
-            </VCardItem>
-            <VCardText>
-              <p class="mb-3">
-                In the Select Image for Project dialog box, choose one of the following: Under the Upload New Image section
-              </p>
-
-              <div class="d-flex gap-4 flex-wrap">
-                <template
-                  v-for="(img, i) in albumImages"
-                  :key="i"
-                >
-                  <VImg :src="img" />
-                </template>
-              </div>
-            </VCardText>
-          </VCard>
-        </VTimelineItem>
-        <!-- !SECTION -->
-
-        <!-- SECTION Timeline Item: Review -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-        >
-          <template #opposite>
-            <span class="app-timeline-meta">
-              6 days ago
-            </span>
-          </template>
-          <template #icon>
-            <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar
-                size="32"
-                color="warning"
-                variant="tonal"
-              >
-                <VIcon
-                  size="20"
-                  icon="ri-shopping-cart-line"
-                />
-              </VAvatar>
-            </div>
-          </template>
-
-          <VCard class="mt-n4">
-            <VCardItem>
-              <VCardTitle>
-                Loretta write a review on Themeselection
-              </VCardTitle>
-            </VCardItem>
-            <VCardText>
-              <div>
-                <div class="d-flex align-center mb-3">
-                  <VAvatar
-                    size="32"
-                    class="me-2"
-                    :image="avatar8"
-                  />
-                  <div>
-                    <h6 class="font-weight-medium text-base">
-                      Loretta Moore
-                    </h6>
-                    <span class="text-body-2">CTO of Airbnb</span>
-                  </div>
-                </div>
-
-                <div class="d-flex align-center justify-space-between mb-3">
-                  <VRating
-                    size="28"
-                    :model-value="5"
-                  />
-                  <VChip
-                    color="success"
-                    density="comfortable"
-                  >
-                    <template #prepend>
-                      <VAvatar
-                        start
-                        :image="avatar8"
-                        size="16"
-                      />
-                    </template>
-                    VERIFIED BUYER
-                  </VChip>
-                </div>
-
                 <div>
-                  I wish I could select more than one main reason for rating this. I love how they constantly work on to make the template better. I am so thankful for this. Also, in the past, they had responded well to my tickets. Thank you for this great theme, for such an amazing support, for the better updates. I wish I could rate this for so many times. I highly recommend this template!
+                  <h6 class="font-weight-medium text-base">
+                    Loretta Moore
+                  </h6>
+                  <span class="text-body-2">CTO of Airbnb</span>
                 </div>
               </div>
-            </VCardText>
-          </VCard>
-        </VTimelineItem>
-        <!-- !SECTION -->
-
-        <!-- SECTION Timeline Item: Earning Report -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-        >
-          <template #opposite>
-            <span class="app-timeline-meta">
-              2 days ago
-            </span>
-          </template>
-
-          <template #icon>
-            <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar
-                size="32"
-                color="info"
-                variant="tonal"
-              >
-                <VIcon
-                  size="20"
-                  icon="ri-file-edit-line"
+              <div class="d-flex align-center justify-space-between mb-3">
+                <VRating
+                  size="28"
+                  :model-value="5"
                 />
-              </VAvatar>
-            </div>
-          </template>
-
-          <VCard class="mt-n4">
-            <VCardItem>
-              <VCardTitle>Julia stiles shared an earnings report</VCardTitle>
-            </VCardItem>
-
-            <VCardText>
-              <div class="mb-3">
-                <div class="d-flex align-center">
-                  <h4 class="text-h4 me-2">
-                    $24,895
-                  </h4>
-                  <span class="text-success">
-                    <VIcon
-                      size="30"
-                      icon="mdi-menu-up"
-                    />
-                    <span>10%</span>
-                  </span>
-                </div>
-                <span class="text-xs">Compared to $84,325 last year</span>
-              </div>
-
-              <VList class="card-list">
-                <VListItem
-                  v-for="earning in earnings"
-                  :key="earning.title"
+                <VChip
+                  color="success"
+                  density="comfortable"
                 >
                   <template #prepend>
                     <VAvatar
-                      rounded
-                      :image="earning.avatar"
+                      start
+                      :image="avatar8"
+                      size="16"
                     />
                   </template>
-
-                  <VListItemTitle class="text-sm font-weight-medium mb-1">
-                    {{ earning.title }}
-                  </VListItemTitle>
-                  <VListItemSubtitle class="text-xs">
-                    {{ earning.subtitle }}
-                  </VListItemSubtitle>
-
-                  <template #append>
-                    <div>
-                      <h6 class="text-sm font-weight-medium mb-2">
-                        {{ earning.amount }}
-                      </h6>
-                      <VProgressLinear
-                        :color="earning.progress"
-                        model-value="80"
-                      />
-                    </div>
-                  </template>
-                </VListItem>
-              </VList>
-            </VCardText>
-          </VCard>
-        </VTimelineItem>
-        <!-- !SECTION -->
-
-        <!-- SECTION Timeline Item: Progress Report -->
-        <VTimelineItem
-          fill-dot
-          size="small"
-        >
-          <template #icon>
-            <div class="v-timeline-avatar-wrapper rounded-circle">
-              <VAvatar
-                size="32"
-                color="error"
-                variant="tonal"
-              >
-                <VIcon
-                  size="18"
-                  icon="ri-server-line"
-                />
-              </VAvatar>
+                  VERIFIED BUYER
+                </VChip>
+              </div>
+              <div>
+                I wish I could select more than one main reason for rating this. I love how they constantly work on to make the template better. I am so thankful for this. Also, in the past, they had responded well to my tickets. Thank you for this great theme, for such an amazing support, for the better updates. I wish I could rate this for so many times. I highly recommend this template!
+              </div>
             </div>
-          </template>
-
-          <template #opposite>
-            <span class="app-timeline-meta">
-              2 days ago
-            </span>
-          </template>
-
-          <VCard class="mt-n4">
-            <VCardItem>
-              <VCardTitle>josh johnson shared Next js project progress report</VCardTitle>
-            </VCardItem>
-
-            <VCardText>
-              <p class="mb-3">
-                The structure and process are defined in the project organization considering the attainment of the corporate objectives and therefore also project objectives. The components of the project process are
-              </p>
-
-              <div class="d-inline-flex align-items-center timeline-chip mb-3">
-                <img
-                  :src="xls"
-                  width="20"
-                  class="me-2"
-                  alt="img"
-                >
-
-                <span class="app-timeline-text font-weight-medium">
-                  progress-report.xls
+          </VCardText>
+        </VCard>
+      </VTimelineItem>
+      <!-- !SECTION -->
+      <!-- SECTION Timeline Item: Earning Report -->
+      <VTimelineItem
+        fill-dot
+        size="small"
+      >
+        <template #opposite>
+          <span class="app-timeline-meta">
+            2 days ago
+          </span>
+        </template>
+        <template #icon>
+          <div class="v-timeline-avatar-wrapper rounded-circle">
+            <VAvatar
+              size="32"
+              color="info"
+              variant="tonal"
+            >
+              <VIcon
+                size="20"
+                icon="mdi-file-edit-outline"
+              />
+            </VAvatar>
+          </div>
+        </template>
+        <VCard class="mt-n4">
+          <VCardItem>
+            <VCardTitle>Julia stiles shared an earnings report</VCardTitle>
+          </VCardItem>
+          <VCardText>
+            <div class="mb-3">
+              <div class="d-flex align-center">
+                <h4 class="text-h4 me-2">
+                  $24,895
+                </h4>
+                <span class="text-success">
+                  <VIcon
+                    size="30"
+                    icon="mdi-menu-up"
+                  />
+                  <span>10%</span>
                 </span>
               </div>
-
-              <div class="d-flex gap-4 align-center">
-                <div class="flex-grow-1">
-                  <VProgressLinear :model-value="34" />
-                </div>
-                <div>34%</div>
+              <span class="text-xs">Compared to $84,325 last year</span>
+            </div>
+            <VList class="card-list">
+              <VListItem
+                v-for="earning in earnings"
+                :key="earning.title"
+              >
+                <template #prepend>
+                  <VAvatar
+                    rounded
+                    :image="earning.avatar"
+                  />
+                </template>
+                <VListItemTitle class="text-sm font-weight-medium mb-1">
+                  {{ earning.title }}
+                </VListItemTitle>
+                <VListItemSubtitle class="text-xs">
+                  {{ earning.subtitle }}
+                </VListItemSubtitle>
+                <template #append>
+                  <div>
+                    <h6 class="text-sm font-weight-medium mb-2">
+                      {{ earning.amount }}
+                    </h6>
+                    <VProgressLinear
+                      :color="earning.progress"
+                      model-value="80"
+                    />
+                  </div>
+                </template>
+              </VListItem>
+            </VList>
+          </VCardText>
+        </VCard>
+      </VTimelineItem>
+      <!-- !SECTION -->
+      <!-- SECTION Timeline Item: Progress Report -->
+      <VTimelineItem
+        fill-dot
+        size="small"
+      >
+        <template #icon>
+          <div class="v-timeline-avatar-wrapper rounded-circle">
+            <VAvatar
+              size="32"
+              color="error"
+              variant="tonal"
+            >
+              <VIcon
+                size="18"
+                icon="mdi-server"
+              />
+            </VAvatar>
+          </div>
+        </template>
+        <template #opposite>
+          <span class="app-timeline-meta">
+            2 days ago
+          </span>
+        </template>
+        <VCard class="mt-n4">
+          <VCardItem>
+            <VCardTitle>josh johnson shared Next js project progress report</VCardTitle>
+          </VCardItem>
+          <VCardText>
+            <p class="mb-3">
+              The structure and process are defined in the project organization considering the attainment of the corporate objectives and therefore also project objectives. The components of the project process are
+            </p>
+            <div class="d-inline-flex align-items-center timeline-chip mb-3">
+              <img
+                :src="xls"
+                width="20"
+                class="me-2"
+                alt="img"
+              >
+              <span class="app-timeline-text font-weight-medium">
+                progress-report.xls
+              </span>
+            </div>
+            <div class="d-flex gap-4 align-center">
+              <div class="flex-grow-1">
+                <VProgressLinear :model-value="34" />
               </div>
-            </VCardText>
-          </VCard>
-        </VTimelineItem>
-        <!-- !SECTION -->
-      </VTimeline>
-    </VCardText>
-  </VCard>
+              <div>34%</div>
+            </div>
+          </VCardText>
+        </VCard>
+      </VTimelineItem>
+      <!-- !SECTION -->
+    </VTimeline>
+  </div>
 </template>
 
 <style lang="scss">

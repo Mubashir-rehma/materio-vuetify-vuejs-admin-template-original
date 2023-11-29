@@ -73,7 +73,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
   }
 
   // @ts-expect-error for nuxt workaround
-  if (process.server)
+  if (typeof process !== 'undefined' && process.server)
     store.fetchEvents()
 
   // 👉 Fetch events

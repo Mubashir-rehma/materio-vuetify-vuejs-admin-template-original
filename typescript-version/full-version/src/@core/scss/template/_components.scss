@@ -209,11 +209,12 @@
       .v-btn__underlay{
         opacity: 0;
       }
+
+      .v-btn__overlay {
+        --v-hover-opacity: 0.24;
+      }
     }
 
-    .v-btn__overlay {
-      --v-hover-opacity: 0.24;
-    }
 
     &:active{
       .v-btn__overlay{
@@ -640,13 +641,15 @@
         font-weight: 400;
 
         &--variant-tonal{
+          --v-activated-opacity: 0.08;
+
           &:hover{
             .v-btn__underlay{
               opacity: 0;
             }
 
             .v-btn__overlay{
-              --v-hover-opacity: 0.12;
+              --v-hover-opacity: 0.16;
             }
           }
         }
@@ -682,6 +685,8 @@
     .v-pagination__item--is-active{
       .v-btn.v-btn--variant-tonal{
         .v-btn__overlay{
+          --v-hover-opacity: 0.16;
+
           background: rgb(var(--v-theme-primary));
           opacity: var(--v-hover-opacity);
         }
@@ -696,14 +701,14 @@
       
         &:hover{
           .v-btn__overlay{
-            --v-hover-opacity:0.32;
+            --v-hover-opacity:0.24;
           }
         }
       }
 
       @each $color-name in variables.$theme-colors-name {
         .v-btn.v-btn--variant-tonal.text-#{$color-name}{
-          box-shadow: 0 2px 4px 0 rgba(58,53,65,14%);
+          @include mixins.elevation(2);
 
           .v-btn__overlay{
             background: rgb(var(--v-theme-#{$color-name}));

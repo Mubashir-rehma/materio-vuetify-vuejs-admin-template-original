@@ -234,6 +234,10 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Input
   $input-density: ('default': 0, 'comfortable': -2.5, 'compact': -5) !default,
+
+  // 👉 Label
+  $label-font-size: 0.9375rem !default,
+  $label-letter-spacing: normal !default,
   
   // 👉 List
   $list-item-one-line-min-height: 38px !default,

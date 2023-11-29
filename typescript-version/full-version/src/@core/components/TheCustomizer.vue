@@ -275,7 +275,7 @@ const resetCustomizer = async () => {
       style="z-index: 1001;"
       @click="isNavDrawerOpen = true"
     >
-      <VIcon icon="mdi-cog" />
+      <VIcon icon="ri-settings-3-fill" />
     </VBtn>
 
     <VNavigationDrawer
@@ -314,7 +314,7 @@ const resetCustomizer = async () => {
 
             <VIcon
               size="22"
-              icon="mdi-refresh"
+              icon="ri-refresh-line"
             />
           </VBtn>
 
@@ -326,7 +326,7 @@ const resetCustomizer = async () => {
             @click="isNavDrawerOpen = false"
           >
             <VIcon
-              icon="mdi-close"
+              icon="ri-close-line"
               size="22"
             />
           </VBtn>
@@ -390,7 +390,7 @@ const resetCustomizer = async () => {
                 >
                   <VIcon
                     size="22"
-                    icon="mdi-eyedropper-variant"
+                    icon="ri-palette-line"
                     :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'rgb(var(--v-theme-on-primary))' : ''"
                   />
                 </VBtn>

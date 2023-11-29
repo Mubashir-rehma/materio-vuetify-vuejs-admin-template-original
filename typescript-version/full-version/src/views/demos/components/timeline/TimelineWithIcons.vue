@@ -75,7 +75,7 @@ const earnings = [
               variant="tonal"
             >
               <VIcon
-                icon="mdi-file-document-outline"
+                icon="ri-file-word-line"
                 size="20"
               />
             </VAvatar>
@@ -125,7 +125,7 @@ const earnings = [
             >
               <VIcon
                 size="20"
-                icon="mdi-clock-time-four-outline"
+                icon="ri-image-line"
               />
             </VAvatar>
           </div>
@@ -169,7 +169,7 @@ const earnings = [
             >
               <VIcon
                 size="20"
-                icon="mdi-cart-outline"
+                icon="ri-star-smile-line"
               />
             </VAvatar>
           </div>
@@ -241,7 +241,7 @@ const earnings = [
             >
               <VIcon
                 size="20"
-                icon="mdi-file-edit-outline"
+                icon="ri-pie-chart-line"
               />
             </VAvatar>
           </div>
@@ -309,12 +309,12 @@ const earnings = [
           <div class="v-timeline-avatar-wrapper rounded-circle">
             <VAvatar
               size="32"
-              color="error"
+              color="primary"
               variant="tonal"
             >
               <VIcon
                 size="18"
-                icon="mdi-server"
+                icon="ri-folder-3-line"
               />
             </VAvatar>
           </div>

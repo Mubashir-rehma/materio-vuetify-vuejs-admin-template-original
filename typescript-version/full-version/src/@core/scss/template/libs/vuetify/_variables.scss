@@ -177,6 +177,11 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $alert-title-font-size: 1.125rem !default,
   $alert-text-line-height: 1.625rem !default,
 
+  // 👉 Autocomplete
+  $autocomplete-content-elevation: 8 !default,
+  $combobox-content-elevation: 8 !default,
+  $select-content-elevation: 8 !default,
+  
   // 👉 Badge
   $badge-height: 1.375rem !default,
   $badge-min-width: 1.375rem !default,
@@ -185,7 +190,6 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $badge-border-radius: 50px !default,
   $badge-font-size: 0.8125rem !default,
 
-  
   // 👉 Buttons
   $button-height: 38px !default,
   $button-padding-ratio: 2.15 !default,
@@ -228,6 +232,9 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   // 👉 Field
   $field-outline-opacity: 0.28 !default,
 
+  // 👉 Input
+  $input-density: ('default': 0, 'comfortable': -2.5, 'compact': -5) !default,
+
   // 👉 Label
   $label-font-size: 0.9375rem !default,
   $label-letter-spacing: normal !default,
@@ -243,6 +250,9 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $list-item-nav-title-font-weight: 400 !default,
   $list-item-nav-subtitle-font-size: 0.8125rem !default,
   $list-item-subtitle-line-height: 1.25rem !default,
+
+  // 👉 label
+  $field-label-floating-scale: 0.8125 !default,
   
   // 👉 Snackbar
   $snackbar-background: rgb(var(--v-tooltip-background)) !default,
@@ -265,11 +275,6 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   // 👉 VPagination
   $pagination-item-margin: 0.1875rem !default,
 
-  // 👉 Autocomplete
-  $autocomplete-content-elevation: 8 !default,
-  $combobox-content-elevation: 8 !default,
-  $select-content-elevation: 8 !default,
-
   // 👉 Tabs
   $tabs-height: 38px !default,
 
@@ -286,4 +291,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $table-row-height: 50px !default,
   $table-header-font-size: 12px !default,
   $table-header-font-weight: 600 !default,
+
+  // 👉 Messages
+  $messages-font-size: 13px !default,
 );

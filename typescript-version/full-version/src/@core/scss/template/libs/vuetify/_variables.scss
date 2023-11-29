@@ -270,7 +270,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $tabs-height: 38px !default,
 
   // 👉 Timeline
-  $timeline-divider-line-background: rgba(var(--v-border-color), var(--v-divider-opacity)) !default,
+  $timeline-divider-line-background: rgba(var(--v-border-color), var(--v-border-opacity)) !default,
   $timeline-divider-line-thickness: 1.5px !default,
 
   // 👉 Slider

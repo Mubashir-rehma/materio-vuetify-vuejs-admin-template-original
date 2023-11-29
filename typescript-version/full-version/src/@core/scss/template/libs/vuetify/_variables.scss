@@ -227,6 +227,10 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Field
   $field-outline-opacity: 0.28 !default,
+
+  // 👉 Label
+  $label-font-size: 0.9375rem !default,
+  $label-letter-spacing: normal !default,
   
   // 👉 List
   $list-item-one-line-min-height: 38px !default,

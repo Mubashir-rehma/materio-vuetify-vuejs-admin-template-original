@@ -463,7 +463,15 @@
     .v-selection-control__input {
       .v-icon.custom-checkbox-checked {
         // ℹ️ Using filter: drop-shadow() instead of box-shadow because box-shadow creates white background for SVG
-        filter: drop-shadow(rgba(var(--v-shadow-key-umbra-color), 14%) 0 2px 4px);
+        filter: drop-shadow(rgba(var(--v-shadow-key-umbra-color), 16%) 0 2px 4px);
+      }
+    }
+  }
+
+  &.v-selection-control{
+    .v-selection-control__input{
+      svg{
+        font-size: 1.5rem;
       }
     }
   }
@@ -475,7 +483,7 @@
   &.v-selection-control--dirty {
     .v-selection-control__input {
       .custom-radio-checked {
-        filter: drop-shadow(rgba(var(--v-shadow-key-umbra-color), 14%) 0 2px 4px); 
+        filter: drop-shadow(rgba(var(--v-shadow-key-umbra-color), 16%) 0 2px 4px); 
       }
     }
   }

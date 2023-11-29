@@ -15,23 +15,23 @@ const capitalizedLabel = (label: boolean) => {
     <VCheckbox
       v-model="toggleCheckboxOne"
       :label="capitalizedLabel(toggleCheckboxOne)"
-      true-icon="mdi-check"
-      false-icon="mdi-close"
+      true-icon="ri-check-line"
+      false-icon="ri-close-line"
     />
 
     <VCheckbox
       v-model="toggleCheckboxTwo"
       :label="capitalizedLabel(toggleCheckboxTwo)"
-      true-icon="mdi-alarm-check"
-      false-icon="mdi-alarm"
+      true-icon="ri-alarm-line"
+      false-icon="ri-alarm-line"
       color="success"
     />
 
     <VCheckbox
       v-model="toggleCheckboxThree"
       :label="capitalizedLabel(toggleCheckboxThree)"
-      true-icon="mdi-check-circle"
-      false-icon="mdi-close-circle"
+      true-icon="ri-checkbox-circle-fill"
+      false-icon="ri-close-circle-fill"
       color="error"
     />
   </div>

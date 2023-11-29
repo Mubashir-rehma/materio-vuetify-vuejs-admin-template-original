@@ -240,7 +240,7 @@ body,
 // 👉 VMessages
 .v-messages {
   color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 // 👉 Alert close btn

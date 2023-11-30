@@ -5,15 +5,6 @@
 @use "@core/scss/base/mixins";
 @use "@core/scss/base/utils";
 
-// 👉 Autocomplete and select comfortable and compact height fix
-.v-input--density-comfortable {
-  --v-input-control-height: 48px !important;
-}
-
-.v-input--density-compact{
-  --v-input-control-height: 40px !important;
-}
-
 // 👉 Avatar
 .v-avatar {
   font-size: .9375rem;
@@ -554,6 +545,25 @@
 
   &:not([class*="text-"]) .v-label {
     color:rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  }
+}
+
+// override input height on comfortable and compact density
+.v-text-field,
+.v-autocomplete,
+.v-combobox,
+.v-file-input,
+.v-select {
+  &.v-input.v-input--density-default:not(.v-textarea) .v-field__input {
+    min-block-size: 56px;
+  }
+
+  &.v-input.v-input--density-comfortable:not(.v-textarea) .v-field__input {
+    min-block-size: 48px;
+  }
+
+  &.v-input.v-input--density-compact:not(.v-textarea) .v-field__input {
+    min-block-size: 40px;
   }
 }
 

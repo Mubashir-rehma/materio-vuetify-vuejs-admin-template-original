@@ -59,7 +59,6 @@ const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
         label="Underlined"
         variant="underlined"
         placeholder="Select Item"
-        density="default"
       />
     </VCol>
   </VRow>

@@ -1,21 +1,28 @@
 import type { ThemeDefinition } from 'vuetify'
 
 export const staticPrimaryColor = '#8C57FF'
+export const staticPrimaryDarkenColor = '#7E4EE6'
 
 export const themes: Record<string, ThemeDefinition> = {
   light: {
     dark: false,
     colors: {
       'primary': staticPrimaryColor,
+      'primary-darken-1': '#7E4EE6',
       'secondary': '#8A8D93',
+      'secondary-darken-1': '#7C7F84',
       'on-secondary': '#fff',
       'success': '#56CA00',
+      'success-darken-1': '#4DB600',
       'on-success': '#fff',
       'info': '#16B1FF',
+      'info-darken-1': '#149FE6',
       'on-info': '#fff',
       'warning': '#FFB400',
+      'warning-darken-1': '#E6A200',
       'on-warning': '#fff',
       'error': '#FF4C51',
+      'error-darken-1': '#E64449',
       'on-error': '#fff',
       'background': '#f4f5fa',
       'on-background': '#2E263D',
@@ -38,18 +45,6 @@ export const themes: Record<string, ThemeDefinition> = {
     },
 
     variables: {
-      'primary-dark': '#7E4EE6',
-      'primary-light': '#A379FF',
-      'secondary-dark': '#7C7F84',
-      'secondary-light': '#A1A4A9',
-      'success-dark': '#4DB600',
-      'success-light': '#78D533',
-      'info-dark': '#149FE6',
-      'info-light': '#45C1FF',
-      'warning-dark': '#E6A200',
-      'warning-light': '#FFC333',
-      'error-dark': '#E64449',
-      'error-light': '#FF7074',
       'code-color': '#d400ff',
       'overlay-scrim-background': '#2E263D',
       'tooltip-background': '#1A0E33',
@@ -76,15 +71,21 @@ export const themes: Record<string, ThemeDefinition> = {
     dark: true,
     colors: {
       'primary': staticPrimaryColor,
+      'primary-darken-1': '#7E4EE6',
       'secondary': '#8A8D93',
+      'secondary-darken-1': '#7C7F84',
       'on-secondary': '#fff',
       'success': '#56CA00',
+      'success-darken-1': '#4DB600',
       'on-success': '#fff',
       'info': '#16B1FF',
+      'info-darken-1': '#149FE6',
       'on-info': '#fff',
       'warning': '#FFB400',
+      'warning-darken-1': '#E6A200',
       'on-warning': '#fff',
       'error': '#FF4C51',
+      'error-darken-1': '#E64449',
       'on-error': '#fff',
       'background': '#28243D',
       'on-background': '#E7E3FC',
@@ -107,18 +108,6 @@ export const themes: Record<string, ThemeDefinition> = {
     },
 
     variables: {
-      'primary-dark': '#7E4EE6',
-      'primary-light': '#A379FF',
-      'secondary-dark': '#7C7F84',
-      'secondary-light': '#A1A4A9',
-      'success-dark': '#4DB600',
-      'success-light': '#78D533',
-      'info-dark': '#149FE6',
-      'info-light': '#45C1FF',
-      'warning-dark': '#E6A200',
-      'warning-light': '#FFC333',
-      'error-dark': '#E64449',
-      'error-light': '#FF7074',
       'code-color': '#d400ff',
       'overlay-scrim-background': '#312D4B',
       'tooltip-background': '#F7F4FF',

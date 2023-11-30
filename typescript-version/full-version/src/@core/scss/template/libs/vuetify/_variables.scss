@@ -231,6 +231,8 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Field
   $field-outline-opacity: 0.28 !default,
+  $field-control-affixed-padding: 16px !default,
+  $field-control-affixed-inner-padding: 10px !default,
 
   // 👉 Input
   $input-density: ('default': 0, 'comfortable': -2.5, 'compact': -5) !default,

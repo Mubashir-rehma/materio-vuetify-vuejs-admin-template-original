@@ -469,6 +469,10 @@
   }
 
   &.v-selection-control{
+    .v-label{
+      color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))
+    }
+
     .v-selection-control__input{
       svg{
         font-size: 1.5rem;
@@ -493,6 +497,10 @@
       svg{
         font-size: 1.5rem;
       }
+    }
+
+    .v-label{
+      color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))
     }
   }
 }
@@ -587,6 +595,14 @@
 
 
 // 👉 Switch
+
+.v-switch{
+  .v-label{
+    color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+    line-height: 22px;
+  }
+}
+
 .v-switch.v-switch--inset {
   .v-switch__track,
   .v-selection-control__wrapper {
@@ -599,7 +615,7 @@
   }
 
   .v-switch__track {
-    background-color: rgba(var(--v-theme-on-surface), 0.12);
+    background-color: rgba(var(--v-theme-on-surface), var(--v-focus-opacity));
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 16%) inset;
     opacity: 1;
   }

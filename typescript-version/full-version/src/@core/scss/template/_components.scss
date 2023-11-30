@@ -162,7 +162,7 @@
       @each $color-name in variables.$theme-colors-name {
         &.bg-#{$color-name}{
           &:hover, &:active {
-            background-color: rgb(var(--v-#{$color-name}-dark)) !important;
+            background-color: rgb(var(--v-theme-#{$color-name}-darken-1)) !important;
           }
         }
       }

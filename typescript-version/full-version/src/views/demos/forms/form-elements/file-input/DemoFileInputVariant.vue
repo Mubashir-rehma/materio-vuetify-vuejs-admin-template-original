@@ -43,7 +43,6 @@
       <VFileInput
         label="Underlined"
         variant="underlined"
-        density="default"
       />
     </VCol>
   </VRow>

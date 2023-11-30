@@ -31,11 +31,7 @@ const radios = ref('DuckDuckGo')
 </template>
 
 <style lang="scss">
-.v-input{
-  .v-input__control{
-    .v-label{
-      margin-inline-start: 0;
-    }
-  }
+.v-input.v-radio-group>.v-input__control>.v-label {
+  margin-inline-start: 0;
 }
 </style>

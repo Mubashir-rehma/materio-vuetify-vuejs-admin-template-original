@@ -967,9 +967,11 @@
   }
 
   .v-slider-thumb__label{
-    background-color: rgb(var(--v-slider-label-bg));
+    background-color: rgb(var(--v-tooltip-background));
     color: rgb(var(--v-theme-surface));
     font-weight: 500;
+    letter-spacing: 0.15px;
+    line-height: 1.25rem;
 
     &::before{
       content: none;

@@ -285,6 +285,8 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   // 👉 Slider
   $slider-track-active-size-offset: 0px !default,
   $slider-thumb-label-border-radius: 6px !default,
+  $slider-thumb-label-height: 28px !default,
+  $slider-thumb-label-padding: 4px 10px !default,
 
   // 👉 Table
   $table-row-height: 50px !default,

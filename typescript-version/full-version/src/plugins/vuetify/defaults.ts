@@ -74,9 +74,11 @@ export default {
   VRangeSlider: {
     // set v-range-slider default color to primary
     color: 'primary',
-    density: 'comfortable',
     thumbLabel: true,
     hideDetails: 'auto',
+    trackSize: 6,
+    thumbSize: 22,
+    elevation: 4,
   },
   VRating: {
     // set v-rating default color to primary
@@ -95,6 +97,7 @@ export default {
     trackSize: 6,
     hideDetails: 'auto',
     thumbSize: 22,
+    elevation: 4,
   },
   VTextField: {
     variant: 'outlined',

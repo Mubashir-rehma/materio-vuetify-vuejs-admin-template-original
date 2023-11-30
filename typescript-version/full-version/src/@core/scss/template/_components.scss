@@ -958,6 +958,13 @@
 }
 
 // 👉 Slider
+
+.v-slider{
+  .v-slider-track__background--opacity{
+    opacity: 0.16;
+  }
+}
+
 .v-slider-thumb {
   .v-slider-thumb__surface::after {
     border-radius: 50%;

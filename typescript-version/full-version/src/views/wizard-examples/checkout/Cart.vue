@@ -51,13 +51,14 @@ watch(() => props.currentStep, updateCartData)
       <VAlert
         color="success"
         variant="tonal"
-        icon="ri-checkbox-circle-line"
+        icon="ri-percent-line"
+        closable
       >
-        <VAlertTitle class="text-body-1 text-success mb-1">
+        <VAlertTitle class="text-success mb-1">
           Available Offers
         </VAlertTitle>
 
-        <p class="mb-1">
+        <p class="mb-0">
           - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
         </p>
         <p class="mb-0">
@@ -65,9 +66,9 @@ watch(() => props.currentStep, updateCartData)
         </p>
       </VAlert>
 
-      <h6 class="text-h6 my-4">
+      <h5 class="text-h5 my-4">
         My Shopping Bag ({{ checkoutCartDataLocal.cartItems.length }} Items)
-      </h6>
+      </h5>
 
       <!-- 👉 Cart items -->
       <div class="border rounded">
@@ -82,6 +83,7 @@ watch(() => props.currentStep, updateCartData)
             <IconBtn
               size="x-small"
               class="checkout-item-remove-btn"
+              color="disabled"
               @click="removeItem(item)"
             >
               <VIcon
@@ -102,7 +104,7 @@ watch(() => props.currentStep, updateCartData)
               :class="(($vuetify.display.width <= 1280 && $vuetify.display.width >= 960) || $vuetify.display.width <= 700) ? 'flex-column' : 'flex-row'"
             >
               <div>
-                <h6 class="text-base font-weight-regular mb-4">
+                <h6 class="text-base font-weight-regular mb-2">
                   {{ item.name }}
                 </h6>
                 <div class="d-flex align-center text-no-wrap gap-2 text-base">
@@ -110,7 +112,7 @@ watch(() => props.currentStep, updateCartData)
                   <span class="text-primary">{{ item.seller }}</span>
                   <VChip
                     :color="item.inStock ? 'success' : 'error'"
-                    density="compact"
+                    density="comfortable"
                   >
                     <span class="text-xs">
                       {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
@@ -120,9 +122,8 @@ watch(() => props.currentStep, updateCartData)
 
                 <div class="mt-1">
                   <VRating
-                    density="compact"
                     :model-value="item.rating"
-                    readonly
+                    size="small"
                   />
                 </div>
 
@@ -137,7 +138,7 @@ watch(() => props.currentStep, updateCartData)
               <VSpacer />
 
               <div
-                class="d-flex flex-column justify-space-between mt-5"
+                class="d-flex flex-column mt-5"
                 :class="(($vuetify.display.width <= 1280 && $vuetify.display.width >= 960) || $vuetify.display.width <= 700) ? 'text-start' : 'text-end'"
               >
                 <p class="text-base">
@@ -147,7 +148,10 @@ watch(() => props.currentStep, updateCartData)
                 </p>
 
                 <div>
-                  <VBtn variant="tonal">
+                  <VBtn
+                    size="small"
+                    variant="outlined"
+                  >
                     move to wishlist
                   </VBtn>
                 </div>
@@ -159,10 +163,15 @@ watch(() => props.currentStep, updateCartData)
 
       <!-- 👉 Add more from wishlist -->
       <div class="d-flex align-center justify-space-between border rounded py-2 px-5 text-base mt-4">
-        <a href="#">Add more products from wishlist</a>
+        <a
+          href="#"
+          class="font-weight-medium"
+        >Add more products from wishlist</a>
         <VIcon
-          icon="ri-arrow-right-s-line"
+          icon="ri-arrow-right-line"
           class="flip-in-rtl"
+          size="16"
+          color="primary"
         />
       </div>
     </VCol>
@@ -189,7 +198,7 @@ watch(() => props.currentStep, updateCartData)
             />
 
             <VBtn
-              variant="tonal"
+              variant="outlined"
               @click="updateCartData"
             >
               Apply
@@ -201,13 +210,13 @@ watch(() => props.currentStep, updateCartData)
             <h6 class="text-base font-weight-medium mb-1">
               Buying gift for a loved one?
             </h6>
-            <p>
+            <p class="mb-2">
               Gift wrap and personalized message on card, Only for $2.
             </p>
 
             <a
               href="#"
-              class="font-weight-medium"
+              class="text-sm font-weight-medium"
             >Add a gift wrap</a>
           </div>
         </VCardText>
@@ -220,7 +229,7 @@ watch(() => props.currentStep, updateCartData)
             Price Details
           </h6>
 
-          <div class="text-high-emphasis">
+          <div class="text-sm text-high-emphasis">
             <div class="d-flex justify-space-between mb-2">
               <span>Bag Total</span>
               <span>${{ totalCost }}.00</span>

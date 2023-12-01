@@ -106,7 +106,7 @@ watchEffect(() => {
               </div>
 
               <div>
-                <p class="stepper-title text-base mb-0">
+                <p class="stepper-title font-weight-medium text-base mb-0">
                   {{ item.title }}
                 </p>
                 <span
@@ -120,7 +120,7 @@ watchEffect(() => {
             <VIcon
               v-if="isHorizontalAndNotLastStep(index)"
               class="flip-in-rtl stepper-chevron-indicator mx-6"
-              size="24"
+              size="18"
               icon="ri-arrow-right-s-line"
             />
           </div>
@@ -304,18 +304,18 @@ watchEffect(() => {
 
       .stepper-title,
       .stepper-subtitle {
-        font-weight: 400 !important;
         line-height: normal;
       }
 
       .stepper-title {
         color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
-        font-size: 0.875rem;
+        font-size: 0.9375rem;
       }
 
       .stepper-subtitle {
         color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
         font-size: 0.75rem;
+        font-weight: 400 ;
       }
     }
 
@@ -367,6 +367,19 @@ watchEffect(() => {
     .app-stepper-step:not(.stepper-steps-active,.stepper-steps-completed) {
       .stepper-title {
         color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      }
+    }
+
+    &:not(.stepper-icon-step-bg) {
+      .step-wrapper {
+        padding-block: 1.25rem;
+        padding-inline: 1.875rem;
+      }
+    }
+
+    &.v-slide-group--vertical{
+      .step-wrapper {
+        padding-inline: 0;
       }
     }
   }

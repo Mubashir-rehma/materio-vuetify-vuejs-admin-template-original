@@ -82,7 +82,9 @@ export default {
   },
   VRating: {
     // set v-rating default color to primary
-    color: 'warning',
+    activeColor: 'warning',
+    color: 'disabled',
+
   },
   VProgressCircular: {
     // set v-progress-circular default color to primary

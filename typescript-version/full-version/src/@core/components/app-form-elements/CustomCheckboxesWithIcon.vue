@@ -34,7 +34,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
         <slot :item="item">
           <div class="d-flex flex-column align-center text-center gap-2">
             <VIcon
-              size="32"
+              size="28"
               :icon="item.icon"
               class="text-high-emphasis"
             />
@@ -63,7 +63,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
 .custom-checkbox-icon {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.5rem;
 
   .v-checkbox {
     margin-block-end: -0.375rem;

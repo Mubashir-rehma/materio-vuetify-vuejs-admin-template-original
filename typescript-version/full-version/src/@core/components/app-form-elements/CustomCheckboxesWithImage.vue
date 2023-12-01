@@ -81,7 +81,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
   }
 
   &.active {
-    border-width: 2px;
+    border-width: 1px;
   }
 
   &:hover,

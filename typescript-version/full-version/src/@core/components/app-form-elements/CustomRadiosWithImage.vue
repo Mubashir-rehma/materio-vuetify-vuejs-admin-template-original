@@ -81,7 +81,7 @@ const updateSelectedOption = (value: string) => {
   padding: 0;
 
   &.active {
-    border-width: 2px;
+    border-width: 1px;
   }
 
   .custom-radio-image {

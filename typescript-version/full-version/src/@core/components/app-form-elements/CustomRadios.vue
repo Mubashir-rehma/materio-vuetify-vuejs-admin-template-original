@@ -40,7 +40,7 @@ const updateSelectedOption = (value: string) => {
           </div>
           <slot :item="item">
             <div class="flex-grow-1">
-              <div class="d-flex align-center mb-1">
+              <div class="d-flex align-center mb-2">
                 <h6 class="cr-title text-base">
                   {{ item.title }}
                 </h6>
@@ -65,7 +65,7 @@ const updateSelectedOption = (value: string) => {
 .custom-radio {
   display: flex;
   align-items: flex-start;
-  gap: 0.375rem;
+  gap: 0.25rem;
 
   .v-radio {
     margin-block-start: -0.45rem;

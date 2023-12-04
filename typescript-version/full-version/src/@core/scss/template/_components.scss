@@ -398,6 +398,12 @@
         margin-inline: 4px -8px;
       }
     }
+
+    .v-chip__close{
+      font-size: 16px;
+      max-block-size: 16px;
+      max-inline-size: 16px;
+    }
   }
 
   &.v-chip--size-default{
@@ -458,6 +464,13 @@
       }
     }
   }
+
+  &:not(.v-selection-control--dirty) {
+    .v-selection-control__input > .v-icon {
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      opacity: 1;
+    }
+  }
 }
 
 // 👉 Radio
@@ -482,6 +495,19 @@
       color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))
     }
   }
+  
+  &:not(.v-selection-control--dirty) {
+    .v-selection-control__input > .v-icon {
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+      opacity: 1;
+    }
+  } 
+}
+
+.v-radio-group.v-input > .v-input__control > .v-label {
+  font-size: .8125rem;
+  font-weight: 500;
+  margin-inline-start: 0;
 }
 
 // 👉 Dialog

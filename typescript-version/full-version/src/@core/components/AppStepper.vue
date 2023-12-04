@@ -232,9 +232,9 @@ watchEffect(() => {
     }
 
     .stepper-step-line.vertical {
-      block-size: 2.5rem;
+      border-radius: 0.1875rem;
+      block-size: 1.25rem;
       inline-size: 0.1875rem;
-      margin-block:3px;
       margin-inline-start: 0.625rem;
     }
 
@@ -271,6 +271,12 @@ watchEffect(() => {
       .step-title,
       .step-subtitle {
         color: rgb(var(--v-theme-error)) !important;
+      }
+    }
+
+    .app-stepper-step:not(.stepper-steps-active,.stepper-steps-completed) {
+      .step-number{
+        color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
       }
     }
   }

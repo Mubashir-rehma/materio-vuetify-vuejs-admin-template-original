@@ -94,8 +94,7 @@ watch(() => props.currentStep, updateAddressData)
 
               <VChip
                 :color="resolveAddressBadgeColor[item.value]"
-                density="comfortable"
-                class="text-capitalize"
+                size="small"
               >
                 {{ item.value }}
               </VChip>
@@ -223,7 +222,7 @@ watch(() => props.currentStep, updateAddressData)
             <div>
               <VChip
                 v-if="checkoutAddressDataLocal.deliverySpeed === 'free'"
-                density="comfortable"
+                size="small"
                 color="success"
               >
                 Free

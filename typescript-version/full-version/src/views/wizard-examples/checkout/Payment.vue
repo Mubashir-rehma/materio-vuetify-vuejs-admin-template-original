@@ -270,7 +270,6 @@ watch(() => prop.currentStep, updateCartData)
             <VChip
               color="primary"
               size="small"
-              class="text-capitalize"
             >
               {{ checkoutPaymentDataLocal.deliveryAddress }}
             </VChip>

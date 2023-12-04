@@ -112,11 +112,9 @@ watch(() => props.currentStep, updateCartData)
                   <span class="text-primary">{{ item.seller }}</span>
                   <VChip
                     :color="item.inStock ? 'success' : 'error'"
-                    density="comfortable"
+                    size="small"
                   >
-                    <span class="text-xs">
-                      {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
-                    </span>
+                    {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
                   </VChip>
                 </div>
 
@@ -254,7 +252,7 @@ watch(() => props.currentStep, updateCartData)
               <div>
                 <span class="text-decoration-line-through me-2">$5.00</span>
                 <VChip
-                  density="comfortable"
+                  size="small"
                   color="success"
                 >
                   Free

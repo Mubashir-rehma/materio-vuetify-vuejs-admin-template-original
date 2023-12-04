@@ -165,11 +165,9 @@ const resolveDeliveryMethod = computed(() => {
                     </div>
                     <VChip
                       :color="item.inStock ? 'success' : 'error'"
-                      density="compact"
+                      size="small"
                     >
-                      <span class="text-xs">
-                        {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
-                      </span>
+                      {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
                     </VChip>
                   </div>
                 </div>

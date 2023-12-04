@@ -42,7 +42,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-file-document-outline"
+              icon="ri-file-pdf-line"
             />
           </template>
           <VCardTitle>Share Project</VCardTitle>
@@ -73,7 +73,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-credit-card-outline"
+              icon="ri-bank-card-line"
             />
           </template>
           <VCardTitle>Add New Card</VCardTitle>
@@ -104,7 +104,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-currency-usd"
+              icon="ri-money-dollar-circle-line"
             />
           </template>
           <VCardTitle>Pricing</VCardTitle>
@@ -136,7 +136,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-gift-outline"
+              icon="ri-gift-line"
             />
           </template>
           <VCardTitle>Refer & Earn</VCardTitle>
@@ -168,7 +168,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-home-outline"
+              icon="ri-home-3-line"
             />
           </template>
           <VCardTitle>Add New Address</VCardTitle>
@@ -200,7 +200,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-cube-outline"
+              icon="ri-box-3-line"
             />
           </template>
           <VCardTitle>Create App</VCardTitle>
@@ -230,7 +230,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-lock-outline"
+              icon="ri-lock-line"
             />
           </template>
           <VCardTitle>Two Factor Auth</VCardTitle>
@@ -263,7 +263,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-lock-outline"
+              icon="ri-lock-line"
             />
           </template>
           <VCardTitle>Edit User Info</VCardTitle>
@@ -298,7 +298,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-credit-card"
+              icon="ri-bank-card-fill"
             />
           </template>
           <VCardTitle>Payment Providers</VCardTitle>
@@ -330,7 +330,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="34"
-              icon="mdi-credit-card"
+              icon="ri-bank-card-fill"
             />
           </template>
           <VCardTitle>Add Payment Methods</VCardTitle>

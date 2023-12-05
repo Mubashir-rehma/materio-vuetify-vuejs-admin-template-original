@@ -56,8 +56,8 @@ const attrs = useAttrs()
 
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
 
-const [{ modelValue: _, ...inputProps }] = VInput.filterProps(props)
-const [fieldProps] = filterFieldProps(props)
+const { modelValue: _, ...inputProps } = VInput.filterProps(props)
+const fieldProps = filterFieldProps(props)
 
 const refFlatPicker = ref()
 const { focused } = useFocus(refFlatPicker)

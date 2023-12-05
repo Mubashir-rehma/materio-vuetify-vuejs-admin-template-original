@@ -442,8 +442,8 @@ watch(
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
-@use "@core/scss/base/_mixins.scss";
+@use "@styles/variables/vuetify.scss";
+@use "@core/scss/base/mixins.scss";
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {

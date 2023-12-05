@@ -103,7 +103,7 @@ const onSubmit = () => {
         <VWindow
           v-model="currentStep"
           class="disable-tab-transition"
-          style="max-width: 650px;"
+          style="max-inline-size: 650px;"
         >
           <VForm>
             <VWindowItem>

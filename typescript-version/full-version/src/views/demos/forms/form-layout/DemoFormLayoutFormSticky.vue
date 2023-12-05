@@ -346,8 +346,7 @@ const formData = ref({
 .sticky-header {
   position: sticky;
   z-index: 9;
-  inset-block-end: 0;
-  inset-block-start: 4rem;
+  inset-block: 4rem 0;
   transition: all 0.3s ease-in-out;
 }
 </style>

@@ -111,8 +111,7 @@ const store = useChatStore()
   padding-block-end: 0.75rem;
 
   .chat-contact-header {
-    margin-block-end: 1rem;
-    margin-block-start: 1.25rem;
+    margin-block: 1.25rem 1rem;
   }
 
   .chat-contact-header,

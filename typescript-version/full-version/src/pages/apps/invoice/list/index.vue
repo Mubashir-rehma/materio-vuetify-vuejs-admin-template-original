@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Invoice } from '@db/apps/invoice/types'
 
 type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
@@ -61,7 +61,7 @@ const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUr
   },
 }))
 
-const invoices = computed(() => invoiceData.value.invoices)
+const invoices = computed((): Invoice[] => invoiceData.value.invoices)
 const totalInvoices = computed(() => invoiceData.value.totalInvoices)
 
 // 👉 Invoice balance variant resolver
@@ -247,11 +247,12 @@ const deleteInvoice = async (id: number) => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        item-value="id"
         class="text-no-wrap"
         @update:options="updateOptions"
       >
         <!-- Trending Header -->
-        <template #column.trending>
+        <template #header.trending>
           <VIcon
             size="22"
             icon="mdi-trending-up"

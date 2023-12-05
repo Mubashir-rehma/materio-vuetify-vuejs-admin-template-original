@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
+import type { Customer } from '@db/apps/ecommerce/types'
 
 const searchQuery = ref('')
 const isAddCustomerDrawerOpen = ref(false)
@@ -40,7 +40,7 @@ const { data: customerData } = await useApi<any>(createUrl('/apps/ecommerce/cust
   }),
 )
 
-const customers = computed(() => customerData.value.customers)
+const customers = computed((): Customer[] => customerData.value.customers)
 const totalCustomers = computed(() => customerData.value.total)
 </script>
 
@@ -82,6 +82,7 @@ const totalCustomers = computed(() => customerData.value.total)
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
         :items="customers"
+        item-value="customer"
         :headers="headers"
         :items-length="totalCustomers"
         show-select

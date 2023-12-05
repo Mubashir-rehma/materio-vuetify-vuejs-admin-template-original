@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Order } from '@db/apps/ecommerce/types'
 
 const searchQuery = ref('')
 
@@ -46,7 +46,7 @@ const { data: ordersData, execute: fetchOrders } = await useApi<any>(createUrl('
   },
 ))
 
-const orders = computed(() => ordersData.value.orders)
+const orders = computed((): Order[] => ordersData.value.orders)
 const totalOrder = computed(() => ordersData.value.total)
 
 const deleteOrder = async (id: number) => {
@@ -77,6 +77,7 @@ const deleteOrder = async (id: number) => {
       v-model:page="page"
       :headers="headers"
       :items="orders"
+      item-value="id"
       :items-length="totalOrder"
       class="text-no-wrap"
       @update:options="updateOptions"

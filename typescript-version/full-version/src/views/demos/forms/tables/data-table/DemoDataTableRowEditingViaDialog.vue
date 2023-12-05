@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import data from '@/views/demos/forms/tables/data-table/datatable'
 import type { Data } from '@db/pages/datatable/types'
 
@@ -151,10 +150,10 @@ onMounted(() => {
     <!-- Actions -->
     <template #item.actions="{ item }">
       <div class="d-flex gap-1">
-        <IconBtn @click="editItem(item.raw)">
+        <IconBtn @click="editItem(item)">
           <VIcon icon="ri-pencil-line" />
         </IconBtn>
-        <IconBtn @click="deleteItem(item.raw)">
+        <IconBtn @click="deleteItem(item)">
           <VIcon icon="ri-delete-bin-line" />
         </IconBtn>
       </div>

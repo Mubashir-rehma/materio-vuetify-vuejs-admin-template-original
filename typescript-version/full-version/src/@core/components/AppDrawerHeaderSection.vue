@@ -19,7 +19,7 @@ defineEmits<Emit>()
 
     <slot name="beforeClose" />
 
-    <IconBtn @click="$emit('cancel')">
+    <IconBtn @click="(event:MouseEvent) => $emit('cancel', event)">
       <VIcon
         size="18"
         icon="mdi-close"

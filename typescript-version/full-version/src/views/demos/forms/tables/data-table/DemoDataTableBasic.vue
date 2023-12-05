@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -18,5 +17,9 @@ const headers = [
     :items="data"
     :items-per-page="5"
     class="text-no-wrap"
-  />
+  >
+    <template #item.id="{ item }">
+      <span class="text-h6">{{ item.id }}</span>
+    </template>
+  </VDataTable>
 </template>

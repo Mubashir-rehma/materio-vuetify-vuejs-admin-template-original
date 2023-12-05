@@ -14,8 +14,9 @@ interface Emit {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const updateSelectedOption = (value: string) => {
-  emit('update:selectedRadio', value)
+const updateSelectedOption = (value: string | null) => {
+  if (value !== null)
+    emit('update:selectedRadio', value)
 }
 </script>
 

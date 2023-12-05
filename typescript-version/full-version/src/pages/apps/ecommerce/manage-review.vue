@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Review } from '@db/apps/ecommerce/types'
 
 const selectedStatus = ref('All')
 const searchQuery = ref('')
@@ -22,7 +22,7 @@ const { data: ReviewData, execute: fetchReviews } = await useApi<any>(createUrl(
   },
 }))
 
-const reviews = computed(() => ReviewData.value.reviews)
+const reviews = computed((): Review[] => ReviewData.value.reviews)
 const totalReviews = computed(() => ReviewData.value.total)
 
 // Update data table options
@@ -420,6 +420,7 @@ const reviewStatChartConfig = {
           :items="reviews"
           show-select
           :items-length="totalReviews"
+          item-value="product"
           class="text-no-wrap"
           @update:options="updateOptions"
         >

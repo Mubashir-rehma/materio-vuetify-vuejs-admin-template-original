@@ -271,15 +271,13 @@ swiper-container::part(bullet) {
   }
 
   .swiper-pagination {
-    inset-block-end: 0 !important;
-    inset-block-start: 0 !important;
+    inset-block: 0 !important;
   }
 }
 </style>
 
 <style lang="scss" scoped>
 .customer-reviews {
-  margin-block-end: 2rem;
-  margin-block-start: 6.25rem;
+  margin-block: 6.25rem 2rem;
 }
 </style>

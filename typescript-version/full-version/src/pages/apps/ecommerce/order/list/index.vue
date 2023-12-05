@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Order } from '@db/apps/ecommerce/types'
 import mastercard from '@images/cards/logo-mastercard-small.png'
 import paypal from '@images/cards/paypal-primary.png'
 
@@ -71,7 +71,7 @@ const { data: ordersData, execute: fetchOrders } = await useApi<any>(createUrl('
   },
 ))
 
-const orders = computed(() => ordersData.value.orders)
+const orders = computed((): Order[] => ordersData.value.orders)
 const totalOrder = computed(() => ordersData.value.total)
 
 // Delete Orders
@@ -150,6 +150,7 @@ const deleteOrder = async (id: number) => {
         v-model:items-per-page="itemsPerPage"
         :headers="headers"
         :items="orders"
+        item-value="order"
         :items-length="totalOrder"
         show-select
         class="text-no-wrap"

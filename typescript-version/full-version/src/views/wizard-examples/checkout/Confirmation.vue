@@ -30,14 +30,14 @@ const resolveDeliveryMethod = computed(() => {
 <template>
   <section class="text-base">
     <div class="text-center">
-      <h5 class="text-h5 mb-3">
+      <h5 class="text-h4 mb-3">
         Thank You! 😇
       </h5>
       <p>
-        Your order <span class="text-primary">#1536548131</span> has been placed!
+        Your order <span class="text-high-emphasis font-weight-medium">#1536548131</span> has been placed!
       </p>
       <p class="mb-0">
-        We sent an email to <span class="text-primary">john.doe@example.com</span> with your order confirmation and receipt.
+        We sent an email to <span class="text-high-emphasis font-weight-medium">john.doe@example.com</span> with your order confirmation and receipt.
       </p>
       <p>If the email hasn't arrived within two minutes, please check your spam folder to see if the email was routed there.</p>
       <div class="d-flex align-center gap-2 justify-center">
@@ -155,19 +155,19 @@ const resolveDeliveryMethod = computed(() => {
                 :class="$vuetify.display.width <= 700 ? 'flex-column' : 'flex-row'"
               >
                 <div>
-                  <h6 class="text-base font-weight-regular mb-4">
+                  <h6 class="text-base font-weight-medium mb-2">
                     {{ item.name }}
                   </h6>
-                  <div class="d-flex align-center text-no-wrap gap-2 text-base">
-                    <span class="text-disabled">Sold by:</span>
-                    <span class="text-primary">{{ item.seller }}</span>
+                  <div class="d-flex flex-column align-start text-no-wrap gap-2 text-base">
+                    <div>
+                      <span class="text-disabled">Sold by:</span>
+                      <span class="text-primary">{{ item.seller }}</span>
+                    </div>
                     <VChip
                       :color="item.inStock ? 'success' : 'error'"
-                      density="compact"
+                      size="small"
                     >
-                      <span class="text-xs">
-                        {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
-                      </span>
+                      {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
                     </VChip>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ const resolveDeliveryMethod = computed(() => {
                   <p class="text-base mb-0">
                     <span class="text-primary">${{ item.price }}</span>
                     <span>/</span>
-                    <span class="text-decoration-line-through">${{ item.discountPrice }}</span>
+                    <span class="text-disabled">${{ item.discountPrice }}</span>
                   </p>
                 </div>
               </div>

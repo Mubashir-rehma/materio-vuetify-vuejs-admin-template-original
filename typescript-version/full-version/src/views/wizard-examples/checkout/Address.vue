@@ -94,14 +94,13 @@ watch(() => props.currentStep, updateAddressData)
 
               <VChip
                 :color="resolveAddressBadgeColor[item.value]"
-                density="comfortable"
-                class="text-capitalize"
+                size="small"
               >
                 {{ item.value }}
               </VChip>
             </div>
 
-            <p class="mb-0">
+            <p class="text-sm mb-0">
               {{ item.desc }}
             </p>
             <p>
@@ -121,8 +120,9 @@ watch(() => props.currentStep, updateAddressData)
 
       <!-- 👉 Add New Address -->
       <VBtn
-        variant="tonal"
-        class="mt-5 mb-8"
+        variant="outlined"
+        class="mt-4 mb-6"
+        size="small"
         @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
       >
         Add New Address
@@ -179,7 +179,7 @@ watch(() => props.currentStep, updateAddressData)
       >
         <!-- 👉 Delivery estimate date -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-5">
+          <h6 class="text-base font-weight-medium mb-4">
             Estimated Delivery Date
           </h6>
 
@@ -208,21 +208,21 @@ watch(() => props.currentStep, updateAddressData)
 
         <!-- 👉 Price details -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-5">
+          <h6 class="text-base font-weight-medium mb-4">
             Price Details
           </h6>
 
-          <div class="d-flex align-center justify-space-between mb-2">
+          <div class="d-flex align-center justify-space-between text-sm mb-2">
             <span class="text-high-emphasis">Order Total</span>
             <span>${{ checkoutAddressDataLocal.orderAmount }}</span>
           </div>
 
-          <div class="d-flex align-center justify-space-between">
+          <div class="d-flex align-center justify-space-between text-sm">
             <span class="text-high-emphasis">Delivery Charges</span>
             <div>
               <VChip
                 v-if="checkoutAddressDataLocal.deliverySpeed === 'free'"
-                density="comfortable"
+                size="small"
                 color="success"
               >
                 Free
@@ -253,3 +253,9 @@ watch(() => props.currentStep, updateAddressData)
   </VRow>
   <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 16px;
+}
+</style>

@@ -85,12 +85,10 @@ watch(formData, () => {
           <VRadio
             value="Under Construciton"
             label="Under Construction"
-            class="ms-2"
           />
           <VRadio
             value="Ready to Move"
             label="Ready to Move"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>
@@ -108,12 +106,10 @@ watch(formData, () => {
           <VRadio
             value="New Property"
             label="New Property"
-            class="ms-2"
           />
           <VRadio
             value="Resale"
             label="Resale"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>
@@ -131,12 +127,10 @@ watch(formData, () => {
           <VRadio
             value="Yes"
             label="Yes"
-            class="ms-2"
           />
           <VRadio
             value="No"
             label="No"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>
@@ -154,12 +148,10 @@ watch(formData, () => {
           <VRadio
             value="Yes"
             label="Yes"
-            class="ms-2"
           />
           <VRadio
             value="No"
             label="No"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>

@@ -110,12 +110,10 @@ watch(formData, () => {
           <VRadio
             label="Negotiable"
             value="Negotiable"
-            class="ms-2"
           />
           <VRadio
             label="Call For Price"
             value="Call For Price"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>

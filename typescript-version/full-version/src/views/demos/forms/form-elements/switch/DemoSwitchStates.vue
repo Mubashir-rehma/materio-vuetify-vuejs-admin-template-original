@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const switchOn = ref('on')
 const switchOnDisabled = ref('on')
-const switchOnLoading = ref('on')
+const switchOnLoading = ref(true)
 </script>
 
 <template>
@@ -29,13 +29,7 @@ const switchOnLoading = ref('on')
     <VSwitch
       v-model="switchOnLoading"
       loading="warning"
-      value="on"
-      label="On loading"
-    />
-
-    <VSwitch
-      loading="warning"
-      label="Off loading"
+      :label="`${switchOnLoading ? 'On' : 'Off'} loading`"
     />
   </div>
 </template>

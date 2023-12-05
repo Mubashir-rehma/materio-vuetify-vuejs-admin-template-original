@@ -14,20 +14,20 @@ const propertyRadioContent: CustomInputContent[] = [
   {
     title: 'I am the builder',
     desc: 'List property as Builder, list your project and get highest reach fast.',
-    icon: 'ri-building-line',
+    icon: 'ri-home-6-line',
     value: 'builder',
   },
   {
     title: 'I am the owner',
     desc: 'Submit property as an Individual. Lease, Rent or Sell at the best price.',
-    icon: 'ri-vip-crown-line',
+    icon: 'ri-user-3-line',
     value: 'owner',
   },
   {
     title: 'I am the broker',
     desc: 'Earn highest commission by listing your clients properties at best price.',
     value: 'broker',
-    icon: 'ri-gift-line',
+    icon: 'ri-money-dollar-circle-line',
   },
 ]
 

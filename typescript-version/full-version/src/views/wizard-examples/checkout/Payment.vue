@@ -56,14 +56,15 @@ watch(() => prop.currentStep, updateCartData)
       <VAlert
         color="success"
         variant="tonal"
-        icon="ri-checkbox-circle-line"
+        icon="ri-percent-line"
+        closable
         class="mb-4"
       >
-        <VAlertTitle class="text-body-1 text-success mb-1">
+        <VAlertTitle class="text-success mb-1">
           Available Offers
         </VAlertTitle>
 
-        <p class="mb-1">
+        <p class="mb-0">
           - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
         </p>
         <p class="mb-0">
@@ -159,15 +160,15 @@ watch(() => prop.currentStep, updateCartData)
                   label="Save Card for future billing?"
                 />
 
-                <div class="mt-4">
+                <div class="mt-6">
                   <VBtn
-                    class="me-3"
+                    class="me-4"
                     @click="nextStep"
                   >
                     Checkout
                   </VBtn>
                   <VBtn
-                    variant="tonal"
+                    variant="outlined"
                     color="secondary"
                   >
                     Reset
@@ -234,12 +235,12 @@ watch(() => prop.currentStep, updateCartData)
             Price Details
           </h6>
 
-          <div class="d-flex justify-space-between text-base mb-2">
+          <div class="d-flex justify-space-between text-sm mb-2">
             <span class="text-high-emphasis">Order Total</span>
             <span>${{ checkoutPaymentDataLocal.orderAmount }}.00</span>
           </div>
 
-          <div class="d-flex justify-space-between text-base">
+          <div class="d-flex justify-space-between text-sm">
             <span class="text-high-emphasis">Delivery Charges</span>
             <div v-if="checkoutPaymentDataLocal.deliverySpeed === 'free'">
               <span class="text-decoration-line-through me-2">$5.00</span>
@@ -269,7 +270,6 @@ watch(() => prop.currentStep, updateCartData)
             <VChip
               color="primary"
               size="small"
-              class="text-capitalize"
             >
               {{ checkoutPaymentDataLocal.deliveryAddress }}
             </VChip>
@@ -285,7 +285,7 @@ watch(() => prop.currentStep, updateCartData)
             <p class="text-base mb-1">
               {{ item.desc }}
             </p>
-            <p class="text-base mb-3">
+            <p class="text-base mb-4">
               Mobile : {{ item.subtitle }}
             </p>
           </template>

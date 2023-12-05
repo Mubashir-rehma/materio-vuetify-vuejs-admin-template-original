@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import layoutRight from '@images/svg/layout-right.svg'
-import medal from '@images/svg/medal.svg'
-import peopleTag from '@images/svg/people-tag.svg'
-
 const statData = ref([
-  { title: 'Completed Sites', value: 137, icon: layoutRight, color: 'primary', isHover: false },
-  { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success', isHover: false },
-  { title: 'Happy Customers', value: 137, icon: peopleTag, color: 'warning', isHover: false },
-  { title: 'Awards Winning', value: 23, icon: medal, color: 'info', isHover: false },
+  { title: 'Completed Sites', value: 137, icon: 'ri-layout-line', color: 'primary', isHover: false },
+  { title: 'Working Hours', value: 1100, icon: 'ri-time-line', color: 'success', isHover: false },
+  { title: 'Happy Customers', value: 137, icon: 'ri-user-smile-line', color: 'warning', isHover: false },
+  { title: 'Awards Winning', value: 23, icon: 'ri-award-line', color: 'info', isHover: false },
 ])
 </script>
 
@@ -36,9 +32,9 @@ const statData = ref([
                   />
                 </VAvatar>
                 <h4 class="text-h4 font-weight-bold">
-                  {{ product.value }}+
+                  {{ kFormatter(product.value) }}+
                 </h4>
-                <span class="text-body-1">{{ product.title }}</span>
+                <span class="text-body-1 text-medium-emphasis font-weight-medium">{{ product.title }}</span>
               </VCardText>
             </VCard>
           </VCol>

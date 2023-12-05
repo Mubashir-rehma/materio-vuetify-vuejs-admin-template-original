@@ -5,39 +5,27 @@ import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
 <template>
   <div class="landing-cta position-relative bg-surface">
     <VContainer>
-      <VRow>
-        <VCol
-          class="d-flex justify-start align-center"
-          cols="12"
-          md="6"
+      <div>
+        <h4 class="text-h4 text-primary font-weight-bold">
+          Ready to Get Started?
+        </h4>
+        <div class="text-sm font-weight-medium mb-8">
+          Start your project with a 14-day free trial
+        </div>
+        <VBtn
+          color="primary"
+          :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
+          :to="{ name: 'front-pages-payment' }"
         >
-          <div>
-            <h4 class="text-h4 text-primary font-weight-bold">
-              Ready to Get Started?
-            </h4>
-            <div class="text-sm font-weight-medium mb-8">
-              Start your project with a 14-day free trial
-            </div>
-            <VBtn
-              color="primary"
-              :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
-              :to="{ name: 'front-pages-payment' }"
-            >
-              Get Started
-            </VBtn>
-          </div>
-        </VCol>
-        <VCol
-          class="d-flex align-center justify-center pb-0 pt-15"
-          cols="12"
-          md="6"
-        >
-          <VImg
-            :src="ctaDashborad"
-            :width="500"
-          />
-        </VCol>
-      </VRow>
+          Get Started
+        </VBtn>
+      </div>
+
+      <VImg
+        :src="ctaDashborad"
+        max-width="600"
+        cover
+      />
     </VContainer>
   </div>
 </template>

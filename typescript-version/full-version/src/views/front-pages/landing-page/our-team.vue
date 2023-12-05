@@ -21,8 +21,8 @@ const teamData = ref([
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="20"
-            width="20"
+            height="25"
+            width="25"
           >
           <span>
             OUR GREAT TEAM
@@ -31,7 +31,9 @@ const teamData = ref([
         <h5 class="text-h5 mb-2">
           <span class="font-weight-bold"> Supported </span> by Real People
         </h5>
-        <p>Who is behind these great-looking interfaces?</p>
+        <p class="font-weight-medium text-medium-emphasis">
+          Who is behind these great-looking interfaces?
+        </p>
       </div>
 
       <VRow>
@@ -46,7 +48,7 @@ const teamData = ref([
             flat
             variant="outlined"
             min-width="262"
-            class="position-relative overflow-visible mb-12"
+            class="position-relative overflow-visible mt-16"
             :style="data.isHover ? { border: `1px solid ${data.borderColor}` } : {}"
             @mouseenter="data.isHover = true"
             @mouseleave="data.isHover = false"
@@ -61,13 +63,13 @@ const teamData = ref([
               <h6 class="text-h6">
                 {{ data.name }}
               </h6>
-              <span class="text-body-2">{{ data.position }}</span>
+              <span class="text-body-2 text-medium-emphasis">{{ data.position }}</span>
               <div class="d-flex gap-x-2 align-center justify-center mt-3">
                 <VBtn
                   v-for="{ icon, color } in [
-                    { icon: 'mdi-facebook', color: 'rgba(59, 89, 152, 1)' },
-                    { icon: 'mdi-twitter', color: 'rgba(0, 172, 238, 1)' },
-                    { icon: 'mdi-linkedin', color: 'rgba(0, 119, 181, 1)' },
+                    { icon: 'ri-facebook-circle-line', color: 'rgba(59, 89, 152, 1)' },
+                    { icon: 'ri-twitter-line', color: 'rgba(0, 172, 238, 1)' },
+                    { icon: 'ri-linkedin-box-line', color: 'rgba(0, 119, 181, 1)' },
                   ]"
                   :key="icon"
                   icon
@@ -79,7 +81,7 @@ const teamData = ref([
                   <VIcon
                     :icon="icon"
                     size="22"
-                    :color="color"
+                    :color="data.isHover ? color : ''"
                   />
                 </VBtn>
               </div>
@@ -99,7 +101,7 @@ const teamData = ref([
 }
 
 .headers {
-  margin-block-end: 7rem;
+  margin-block-end: 1.25rem;
 }
 
 .our-team {

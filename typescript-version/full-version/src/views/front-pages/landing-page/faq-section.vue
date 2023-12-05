@@ -2,14 +2,12 @@
 import sittingGirlWithLaptop from '@images/front-pages/landing-page/sitting-girl-with-laptop.png'
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
+const panels = ref([1])
+
 const faqData = [
   {
     question: 'Do you charge for each upgrade?',
     answer: 'Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing marzipan gummi bears macaroon dragée danish caramels powder. Bear claw dragée pastry topping soufflé. Wafer gummi bears marshmallow pastry pie.',
-  },
-  {
-    question: 'Do I need to purchase a license for each website?',
-    answer: 'Dessert ice cream donut oat cake jelly-o pie sugar plum cheesecake. Bear claw dragée oat cake dragée ice cream halvah tootsie roll. Danish cake oat cake pie macaroon tart donut gummies. Jelly beans candy canes carrot cake. Fruitcake chocolate chupa chups.',
   },
   {
     question: 'What is regular license?',
@@ -35,8 +33,8 @@ const faqData = [
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="20"
-            width="20"
+            height="25"
+            width="25"
           >
           <span>
             FAQ
@@ -45,27 +43,26 @@ const faqData = [
         <h5 class="text-h5 mb-2">
           Frequently Asked <span class="font-weight-bold">questions</span>
         </h5>
-        <p>
+        <p class="text-body-1 text-medium-emphasis font-weight-medium">
           Browse through these FAQs to find answers to commonly asked questions.
         </p>
       </div>
-      <VRow>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <div class="d-flex align-center justify-center h-100">
-            <VImg
-              :src="sittingGirlWithLaptop"
-              height="340"
-            />
-          </div>
-        </VCol>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VExpansionPanels class="py-4 ps-4">
+
+      <div
+        class="d-flex align-center justify-space-between flex-wrap flex-md-nowrap"
+        style="gap: 6.25rem"
+      >
+        <VImg
+          :src="sittingGirlWithLaptop"
+          height="340"
+          width="320"
+        />
+
+        <div>
+          <VExpansionPanels
+            v-model="panels"
+            class="py-4"
+          >
             <VExpansionPanel
               v-for="faq in faqData"
               :key="faq.question"
@@ -78,8 +75,8 @@ const faqData = [
               </VExpansionPanelText>
             </VExpansionPanel>
           </VExpansionPanels>
-        </VCol>
-      </VRow>
+        </div>
+      </div>
     </div>
   </VContainer>
 </template>

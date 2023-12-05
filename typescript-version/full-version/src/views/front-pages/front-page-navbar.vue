@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useWindowScroll } from '@vueuse/core'
 import type { RouteLocationRaw } from 'vue-router/auto'
 import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
@@ -28,6 +29,7 @@ const route = useRoute()
 const router = useRouter()
 
 const navImg = useGenerateImageVariant(navImgLight, navImgDark)
+const { y } = useWindowScroll()
 
 const sidebar = ref(false)
 
@@ -177,9 +179,10 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   </VNavigationDrawer>
 
   <!-- 👉 Navbar for desktop devices  -->
-  <div class="front-page-navbar elevation-3 rounded-lg">
+  <div class="front-page-navbar">
     <VAppBar
       :color="$vuetify.theme.current.dark ? 'rgba(var(--v-theme-background))' : '#fff'"
+      :elevation="y > 10 ? 3 : 0"
       class="rounded-b-lg"
     >
       <!-- toggle icon for mobile device -->

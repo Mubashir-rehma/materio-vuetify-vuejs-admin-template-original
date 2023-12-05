@@ -25,11 +25,16 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 
 const { x, y } = useMouse({ touch: false })
 
+console.log('window.innerWidth :>> ', window.innerWidth)
+console.log('window.innerHeight :>> ', window.innerHeight)
+
 const translateMouse = computed(() => (speed: number) => {
   if (typeof window !== 'undefined') {
-    const positionY = computed(() => (window.innerWidth - (y.value * speed)))
+    console.log(x.value * speed, y.value * speed)
 
-    return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(positionY.value < -5000 ? -5000 : positionY.value) / 100}px` }
+    // const positionY = computed(() => (window.innerHeight - (y.value * speed)))
+
+    return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(window.innerHeight - (y.value * speed)) / 100}px` }
   }
 })
 </script>
@@ -44,25 +49,28 @@ const translateMouse = computed(() => (speed: number) => {
       class="landing-hero"
       :style="{ backgroundImage: `url(${heroBgUrl})` }"
     >
-      <div class="container">
+      <VContainer>
         <div class="hero-text-box text-center px-6">
           <h5 class="text-primary text-h4 font-weight-bold text-wrap mb-4">
-            All in one sass application for your business
+            <p class="mb-0">
+              All in one sass application
+            </p>
+            <p class="mb-0">
+              for your business
+            </p>
           </h5>
-          <div class="text-body-1 mb-4">
+          <div class="text-body-1 pb-8 font-weight-medium">
             <p class="mb-0">
               No coding required to make customization
             </p>
-
             <p class="mb-0">
-              The live customer has everything your marketing neeeds
+              The live customer has everything your marketing needs
             </p>
           </div>
           <VBtn :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }">
             Get Early Access
           </VBtn>
         </div>
-
         <div class="position-relative">
           <div class="hero-dashboard-img text-center">
             <RouterLink
@@ -76,7 +84,6 @@ const translateMouse = computed(() => (speed: number) => {
               >
             </RouterLink>
           </div>
-
           <div class="hero-elements-img">
             <RouterLink
               to="/"
@@ -91,7 +98,7 @@ const translateMouse = computed(() => (speed: number) => {
             </RouterLink>
           </div>
         </div>
-      </div>
+      </VContainer>
     </div>
   </section>
 </template>
@@ -111,10 +118,10 @@ section {
 
 .hero-elements-img {
   position: absolute;
-  inline-size: 90%;
-  inset: 0;
-  margin-block: 15%;
-  margin-inline: auto;
+  inline-size: 100%;
+  inset-block-start:50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .container {

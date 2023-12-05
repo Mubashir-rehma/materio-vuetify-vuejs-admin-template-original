@@ -16,8 +16,8 @@ const message = ref('')
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="20"
-            width="20"
+            height="25"
+            width="25"
           >
           <span>
             CONTACT US
@@ -26,7 +26,7 @@ const message = ref('')
         <h5 class="text-h5 mb-2">
           <span class="font-weight-bold">Let's Work</span> together
         </h5>
-        <p>
+        <p class="text-medium-emphasis font-weight-medium">
           Any question or remark? just write us a message
         </p>
       </div>
@@ -42,7 +42,7 @@ const message = ref('')
               color="#9055FD"
               class="text-white"
             >
-              <VCardText>
+              <VCardText class="pa-8">
                 <div class="text-base mb-1">
                   Let's contact with us
                 </div>
@@ -70,11 +70,10 @@ const message = ref('')
               flat
               elevation="0"
             >
-              <VCardTitle class="text-h5">
-                Share your ideas
-              </VCardTitle>
-
               <VCardText>
+                <div class="text-h5 mb-5">
+                  Share your ideas
+                </div>
                 <VForm @submit.prevent="() => {}">
                   <VRow>
                     <VCol

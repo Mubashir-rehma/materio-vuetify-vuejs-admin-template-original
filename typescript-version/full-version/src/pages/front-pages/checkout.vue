@@ -144,14 +144,6 @@ const currentStep = ref(0)
 </template>
 
 <style lang="scss">
-.checkout-stepper {
-  .stepper-icon-step {
-    .step-wrapper + svg {
-      margin-inline: 3.5rem !important;
-    }
-  }
-}
-
 .checkout-card {
   margin-block: 9.75rem 6.25rem;
 }

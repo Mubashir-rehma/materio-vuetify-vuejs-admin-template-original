@@ -34,7 +34,7 @@ const isConfirmDialogVisible = ref(false)
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="$emit('update:isDialogVisible', false)"
       />
 

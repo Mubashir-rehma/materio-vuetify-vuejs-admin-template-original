@@ -16,7 +16,7 @@ const isDialogTwoShow = ref(false)
     <VCard title="Dialog">
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="isDialogVisible = false"
       />
 
@@ -47,7 +47,7 @@ const isDialogTwoShow = ref(false)
     <VCard title="Dialog 2">
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="isDialogTwoShow = false"
       />
 

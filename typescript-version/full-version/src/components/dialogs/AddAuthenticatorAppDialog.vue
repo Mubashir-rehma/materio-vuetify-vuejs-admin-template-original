@@ -29,26 +29,24 @@ const resetAuthCode = () => {
 
 <template>
   <VDialog
-    max-width="600"
+    max-width="900"
     :model-value="props.isDialogVisible"
+    persistent
     @update:model-value="(val) => $emit('update:isDialogVisible', val)"
   >
-    <VCard class="pa-5 pa-sm-8">
+    <VCard class="pa-sm-11 pa-3">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="resetAuthCode"
       />
 
-      <VCardItem>
-        <VCardTitle class="text-h5 font-weight-medium text-center">
+      <VCardText class="pt-5">
+        <h4 class="text-h4 text-center mb-6">
           Add Authenticator App
-        </VCardTitle>
-      </VCardItem>
-
-      <VCardText class="pt-6">
-        <h6 class="text-h6 font-weight-medium mb-3">
+        </h4>
+        <h6 class="text-h6 font-weight-medium mb-2">
           Authenticator Apps
         </h6>
 
@@ -58,11 +56,22 @@ const resetAuthCode = () => {
 
         <div class="my-6">
           <VImg
-            width="122"
+            width="150"
             :src="themeselectionQr"
             class="mx-auto"
           />
         </div>
+
+        <VAlert
+          color="warning"
+          variant="tonal"
+          class="my-4"
+        >
+          <template #title>
+            ASDLKNASDA9AHS678dGhASD78AB
+          </template>
+          If you're having trouble using the QR code, select manual entry on your app
+        </VAlert>
 
         <VForm @submit.prevent="() => {}">
           <VTextField
@@ -70,13 +79,13 @@ const resetAuthCode = () => {
             name="auth-code"
             label="Enter Authentication Code"
             placeholder="123 456"
-            class="mb-4"
+            class="mb-8"
           />
 
-          <div class="d-flex justify-end flex-wrap gap-3">
+          <div class="d-flex justify-end flex-wrap gap-4">
             <VBtn
               color="secondary"
-              variant="tonal"
+              variant="outlined"
               @click="resetAuthCode"
             >
               Cancel
@@ -86,10 +95,10 @@ const resetAuthCode = () => {
               type="submit"
               @click="formSubmit"
             >
-              Continue
+              Submit
               <VIcon
                 end
-                icon="mdi-chevron-right"
+                icon="ri-check-line"
                 class="flip-in-rtl"
               />
             </VBtn>

@@ -25,7 +25,7 @@ const interest = ref<string[]>([])
     <VCard title="User Profile">
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="isDialogVisible = false"
       />
 

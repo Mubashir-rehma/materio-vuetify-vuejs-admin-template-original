@@ -17,17 +17,17 @@ const dialogVisibleUpdate = (val: boolean) => {
 
 const referAndEarnSteps = [
   {
-    icon: 'mdi-message-outline',
+    icon: 'ri-send-plane-2-line',
     title: 'Send Invitation 👍🏻',
     subtitle: 'Send your referral link to your friend',
   },
   {
-    icon: 'mdi-clipboard-outline',
+    icon: 'ri-pages-line',
     title: 'Registration 😎',
     subtitle: 'Let them register to our services',
   },
   {
-    icon: 'mdi-medal-outline',
+    icon: 'ri-gift-line',
     title: 'Free Trial  🎉',
     subtitle: 'Your friend will get 30 days free trial',
   },
@@ -40,58 +40,67 @@ const referAndEarnSteps = [
     max-width="900"
     @update:model-value="dialogVisibleUpdate"
   >
-    <VCard class="refer-and-earn-dialog">
+    <VCard class="refer-and-earn-dialog pa-sm-11 pa-3">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="emit('update:isDialogVisible', false)"
       />
 
-      <VCardText class="pa-5 pa-sm-10">
-        <h5 class="text-h5 text-center mb-2">
-          Refer & Earn
-        </h5>
-        <p class="text-sm-body-1 text-center">
-          Invite your friend to vuexy, if they sign up, you and your friend will get 30 days free trial
-        </p>
+      <VCardText class="pt-5">
+        <div class="text-center pb-3">
+          <h4 class="text-h4 pb-2">
+            Refer & Earn
+          </h4>
 
-        <VRow class="text-center mt-6">
+          <div class="text-body-1">
+            Invite your friend to Vuexy, if they sign up, you and your friend will get 30 days free trial
+          </div>
+        </div>
+
+        <VRow class="text-center my-6">
           <VCol
             v-for="step in referAndEarnSteps"
             :key="step.title"
             cols="12"
             sm="4"
           >
-            <VAvatar
-              variant="tonal"
-              size="100"
-              color="primary"
-            >
-              <VIcon
-                size="40"
-                :icon="step.icon"
-              />
-            </VAvatar>
+            <div>
+              <VAvatar
+                variant="tonal"
+                size="88"
+                color="primary"
+                class="mb-4"
+              >
+                <VIcon
+                  size="40"
+                  :icon="step.icon"
+                />
+              </VAvatar>
 
-            <h6 class="text-base mt-3 mb-1">
-              {{ step.title }}
-            </h6>
-            <span class="text-sm">{{ step.subtitle }}</span>
+              <div class="text-body-1 font-weight-medium mb-2 text-high-emphasis">
+                {{ step.title }}
+              </div>
+
+              <div class="text-body-1">
+                {{ step.subtitle }}
+              </div>
+            </div>
           </VCol>
         </VRow>
-      </VCardText>
 
-      <VDivider />
+        <VDivider class="mt-9 mb-6" />
 
-      <VCardText class="pa-5 pa-sm-10">
-        <h6 class="text-h6 mb-3">
+        <h5 class="text-h5 mb-5">
           Invite your friends
-        </h6>
+        </h5>
 
-        <p>Enter your friend's email address and invite them to join Materio 😍</p>
+        <p class="mb-2">
+          Enter your friend's email address and invite them to join Materio 😍
+        </p>
         <VForm
-          class="d-flex align-center gap-4"
+          class="d-flex align-center gap-4 mb-6"
           @submit.prevent="() => {}"
         >
           <VTextField
@@ -104,19 +113,21 @@ const referAndEarnSteps = [
           </VBtn>
         </VForm>
 
-        <h6 class="text-h6 mb-3 mt-8">
+        <h5 class="text-h5 mb-5">
           Share the referral link
-        </h6>
+        </h5>
 
-        <p>You can also copy and send it or share it on your social media. 🚀</p>
+        <p class="mb-2">
+          You can also copy and send it or share it on your social media. 🚀
+        </p>
         <VForm
-          class="d-flex align-center flex-wrap gap-3"
+          class="d-flex align-center flex-wrap gap-4"
           @submit.prevent="() => {}"
         >
           <VTextField
             density="compact"
             placeholder="http://referral.link"
-            class="refer-link-input me-1"
+            class="refer-link-input"
           >
             <template #append-inner>
               <VBtn variant="text">
@@ -125,7 +136,7 @@ const referAndEarnSteps = [
             </template>
           </VTextField>
 
-          <div class="d-flex gap-3">
+          <div class="d-flex gap-1">
             <VBtn
               icon
               class="rounded"
@@ -133,7 +144,7 @@ const referAndEarnSteps = [
             >
               <VIcon
                 color="white"
-                icon="mdi-facebook"
+                icon="ri-facebook-circle-line"
               />
             </VBtn>
 
@@ -144,7 +155,7 @@ const referAndEarnSteps = [
             >
               <VIcon
                 color="white"
-                icon="mdi-twitter"
+                icon="ri-twitter-line"
               />
             </VBtn>
 
@@ -155,7 +166,7 @@ const referAndEarnSteps = [
             >
               <VIcon
                 color="white"
-                icon="mdi-linkedin"
+                icon="ri-linkedin-line"
               />
             </VBtn>
           </div>

@@ -12,20 +12,16 @@ const isCreateAppVisible = ref(false)
 
 const userData = {
   id: 110,
-  fullName: 'Selena Kyle',
-  company: 'pixinvent',
-  role: 'Web developer',
-  username: 'charwomen1940',
+  firstName: 'Selena',
+  lastName: 'Kyle',
+  userName: 'charwomen1940',
   country: 'USA',
   contact: '(829) 537-0057',
   email: 'irena.dubrovna@wayne.com',
-  currentPlan: '',
+  isBillingAddress: true,
   status: 'active',
-  avatar: '',
-  taskDone: null,
-  projectDone: null,
   taxId: 'Tax-8894',
-  language: 'English',
+  language: ['English'],
 }
 </script>
 

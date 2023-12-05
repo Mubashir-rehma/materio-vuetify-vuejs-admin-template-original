@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import illustrationJohn from '@images/pages/illustration-john.png'
 
+import angularIcon from '@images/icons/brands/angular.png'
+import laravelIcon from '@images/icons/brands/laravel.png'
+import reactIcon from '@images/icons/brands/react.png'
+import vueIcon from '@images/icons/brands/vue.png'
+
+import awsIcon from '@images/icons/brands/aws.png'
+import firebaseIcon from '@images/icons/brands/firebase.png'
+import mysqlIcon from '@images/icons/brands/mysql.png'
+
 const props = defineProps<{
   isDialogVisible: boolean
 }>()
@@ -14,27 +23,27 @@ const currentStep = ref(0)
 
 const createApp = [
   {
-    icon: 'mdi-clipboard-outline',
+    icon: 'ri-file-text-line',
     title: 'Details',
     subtitle: 'Enter Details',
   },
   {
-    icon: 'mdi-cube-outline',
+    icon: 'ri-star-smile-line',
     title: 'Frameworks',
     subtitle: 'Select Framework',
   },
   {
-    icon: 'mdi-database-outline',
+    icon: 'ri-pie-chart-2-line',
     title: 'Database',
     subtitle: 'Select Database',
   },
   {
-    icon: 'mdi-credit-card-outline',
+    icon: 'ri-bank-card-line',
     title: 'Billing',
     subtitle: 'Payment Details',
   },
   {
-    icon: 'mdi-check',
+    icon: 'ri-check-double-line',
     title: 'Submit',
     subtitle: 'submit',
   },
@@ -42,21 +51,21 @@ const createApp = [
 
 const categories = [
   {
-    icon: 'mdi-briefcase-outline',
+    icon: 'ri-bar-chart-box-line',
     color: 'info',
     title: 'CRM Application',
     subtitle: 'Scales with any business',
     slug: 'crm-application',
   },
   {
-    icon: 'mdi-cart-outline',
+    icon: 'ri-shopping-cart-line',
     color: 'success',
     title: 'Ecommerce Platforms',
     subtitle: 'Grow Your Business With App',
     slug: 'ecommerce-application',
   },
   {
-    icon: 'mdi-star-circle',
+    icon: 'ri-video-upload-line',
     color: 'error',
     title: 'Online Learning platform',
     subtitle: 'Start learning today',
@@ -66,28 +75,28 @@ const categories = [
 
 const frameworks = [
   {
-    icon: 'mdi-react',
+    icon: reactIcon,
     color: 'info',
     title: 'React Native',
     subtitle: 'Create truly native apps',
     slug: 'react-framework',
   },
   {
-    icon: 'mdi-angular',
+    icon: angularIcon,
     color: 'error',
     title: 'Angular',
     subtitle: 'Most suited for your application',
     slug: 'angular-framework',
   },
   {
-    icon: 'mdi-vuejs',
+    icon: vueIcon,
     color: 'success',
     title: 'Vue',
     subtitle: 'Progressive Framework',
     slug: 'vue-framework',
   },
   {
-    icon: 'mdi-laravel',
+    icon: laravelIcon,
     color: 'warning',
     title: 'Laravel',
     subtitle: 'PHP web frameworks',
@@ -97,21 +106,21 @@ const frameworks = [
 
 const databases = [
   {
-    icon: 'mdi-firebase',
-    color: 'error',
+    icon: firebaseIcon,
+    color: 'warning',
     title: 'Firebase',
     subtitle: 'Cloud Firestore',
     slug: 'firebase-database',
   },
   {
-    icon: 'mdi-aws',
-    color: 'warning',
+    icon: awsIcon,
+    color: 'secondary',
     title: 'AWS',
     subtitle: 'Amazon Fast NoSQL Database',
     slug: 'aws-database',
   },
   {
-    icon: 'mdi-database-outline',
+    icon: mysqlIcon,
     color: 'info',
     title: 'MySQL',
     subtitle: 'Basic MySQL database',
@@ -151,23 +160,26 @@ const onSubmit = () => {
   <VDialog
     :model-value="props.isDialogVisible"
     max-width="900"
+    persistent
     @update:model-value="dialogVisibleUpdate"
   >
-    <VCard class="create-app-dialog">
+    <VCard class="create-app-dialog pa-sm-11 pa-3">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="emit('update:isDialogVisible', false)"
       />
 
-      <VCardText class="pa-5 pa-sm-10">
-        <h5 class="text-h5 text-center mb-2">
-          Create App
-        </h5>
-        <p class="text-sm text-center mb-8">
-          Provide data with this form to create your app.
-        </p>
+      <VCardText class="pt-5">
+        <div class="text-center mb-6">
+          <h4 class="text-h4 text-center mb-2">
+            Create App
+          </h4>
+          <div class="text-body-1">
+            Provide data with this form to create your app.
+          </div>
+        </div>
 
         <VRow>
           <VCol
@@ -202,7 +214,7 @@ const onSubmit = () => {
                   placeholder="myRider"
                 />
 
-                <h6 class="text-h6 my-4">
+                <h6 class="text-h6 mb-4 mt-8">
                   Category
                 </h6>
                 <VRadioGroup v-model="createAppData.category">
@@ -222,10 +234,10 @@ const onSubmit = () => {
                         />
                       </template>
 
-                      <VListItemTitle class="mb-1">
+                      <VListItemTitle class="text-body-1 text-high-emphasis mb-1">
                         {{ category.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle>
+                      <VListItemSubtitle class="text-body-2 text-disabled">
                         {{ category.subtitle }}
                       </VListItemSubtitle>
 
@@ -256,7 +268,7 @@ const onSubmit = () => {
                           variant="tonal"
                           :color="framework.color"
                         >
-                          <VIcon :icon="framework.icon" />
+                          <img :src="framework.icon">
                         </VAvatar>
                       </template>
                       <VListItemTitle class="mb-1">
@@ -297,7 +309,7 @@ const onSubmit = () => {
                           variant="tonal"
                           :color="database.color"
                         >
-                          <VIcon :icon="database.icon" />
+                          <img :src="database.icon">
                         </VAvatar>
                       </template>
                       <VListItemTitle class="mb-1">
@@ -375,16 +387,16 @@ const onSubmit = () => {
               </VWindowItem>
 
               <VWindowItem class="text-center">
-                <h6 class="text-h6 mb-2">
+                <h5 class="text-h5 mb-2">
                   Submit 🥳
-                </h6>
-                <p class="text-sm mb-6">
+                </h5>
+                <p class="text-body-2 mb-4">
                   Submit to kickstart your project.
                 </p>
 
                 <VImg
                   :src="illustrationJohn"
-                  width="250"
+                  width="252"
                   class="mx-auto"
                 />
               </VWindowItem>
@@ -392,13 +404,13 @@ const onSubmit = () => {
 
             <div class="d-flex justify-space-between mt-8">
               <VBtn
-                variant="tonal"
+                variant="outlined"
                 color="secondary"
                 :disabled="currentStep === 0"
                 @click="currentStep--"
               >
                 <VIcon
-                  icon="mdi-arrow-left"
+                  icon="ri-arrow-left-line"
                   start
                   class="flip-in-rtl"
                 />
@@ -408,6 +420,7 @@ const onSubmit = () => {
               <VBtn
                 v-if="createApp.length - 1 === currentStep"
                 color="success"
+                append-icon="ri-check-line"
                 @click="onSubmit"
               >
                 submit
@@ -420,7 +433,7 @@ const onSubmit = () => {
                 Next
 
                 <VIcon
-                  icon="mdi-arrow-right"
+                  icon="ri-arrow-right-line"
                   end
                   class="flip-in-rtl"
                 />
@@ -435,6 +448,6 @@ const onSubmit = () => {
 
 <style lang="scss">
 .stepper-content .card-list {
-  --v-card-list-gap: 24px;
+  --v-card-list-gap: 1rem;
 }
 </style>

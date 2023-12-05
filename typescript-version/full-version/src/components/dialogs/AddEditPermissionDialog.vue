@@ -41,7 +41,7 @@ watch(props, () => {
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="onReset"
       />
 

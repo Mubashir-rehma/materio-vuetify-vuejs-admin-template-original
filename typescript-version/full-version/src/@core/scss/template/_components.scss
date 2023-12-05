@@ -257,6 +257,10 @@
     line-height: 18px;
     padding-block: 0;
     padding-inline: 14px;
+
+    .v-icon{
+      --v-icon-size-multiplier: 0.718;
+    }
   }
   
   &--size-large {
@@ -487,6 +491,10 @@
 .v-dialog{
   font-size: .9375rem;
   line-height: 1.375rem;
+
+  .v-dialog-close-btn {
+    color: rgb(var(--v-theme-secondary)) !important;
+  }
 }
 
 // 👉 Expansion Panel

@@ -178,11 +178,6 @@ export const db: DB = {
           title: 'User View',
         },
         {
-          url: { name: 'pages-help-center' },
-          icon: 'mdi-help-circle-outline',
-          title: 'Help Center',
-        },
-        {
           url: { name: 'pages-user-profile-tab', params: { tab: 'profile' } },
           icon: 'mdi-account-cog-outline',
           title: 'User Profile - Profile',

@@ -98,8 +98,7 @@ const apiData = faqData.value
 @media (max-width: 599px) {
   .help-center-page {
     .search-header {
-      padding-block-end: 2rem !important;
-      padding-block-start: 4rem !important;
+      padding-block: 4rem 2rem !important;
       padding-inline: 2rem !important;
     }
   }

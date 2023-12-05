@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VOtpInput } from 'vuetify/labs/VOtpInput'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 

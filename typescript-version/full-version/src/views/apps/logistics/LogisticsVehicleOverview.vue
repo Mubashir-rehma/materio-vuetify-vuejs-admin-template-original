@@ -16,7 +16,7 @@ const vehicleData = [
     </VCardItem>
     <VCardText>
       <div class="d-flex mb-8">
-        <div style="width: 39.7%;">
+        <div style="inline-size: 39.7%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             On the way
           </div>
@@ -29,7 +29,7 @@ const vehicleData = [
             <strong class="text-start vehicle-progress-text">39.7%</strong>
           </VProgressLinear>
         </div>
-        <div style="width: 28.3%;">
+        <div style="inline-size: 28.3%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             Unloading
           </div>
@@ -41,7 +41,7 @@ const vehicleData = [
             <strong class="text-white vehicle-progress-text">28.3%</strong>
           </VProgressLinear>
         </div>
-        <div style="width: 17.4%;">
+        <div style="inline-size: 17.4%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             Loading
           </div>
@@ -53,7 +53,7 @@ const vehicleData = [
             <strong class="text-white vehicle-progress-text">17.4%</strong>
           </VProgressLinear>
         </div>
-        <div style="width: 14.6%;">
+        <div style="inline-size: 14.6%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             Waiting
           </div>

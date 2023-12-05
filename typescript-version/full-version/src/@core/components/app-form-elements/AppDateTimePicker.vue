@@ -56,9 +56,8 @@ const attrs = useAttrs()
 
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const [{ modelValue: _, ...inputProps }] = VInput.filterProps(props)
-const [fieldProps] = filterFieldProps(props)
+const { modelValue: _, ...inputProps } = VInput.filterProps(props)
+const fieldProps = filterFieldProps(props)
 
 const refFlatPicker = ref()
 const { focused } = useFocus(refFlatPicker)

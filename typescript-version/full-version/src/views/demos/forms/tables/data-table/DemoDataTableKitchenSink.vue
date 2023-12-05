@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import type { SalesDetails } from '@db/pages/datatable/types'
 
 const search = ref('')
@@ -155,8 +154,8 @@ onMounted(async () => {
         <div class="d-flex align-center">
           <VAvatar
             size="1.875rem"
-            :color="!item.avatar ? 'primary' : undefined"
-            :variant="!item.avatar ? 'tonal' : undefined"
+            :color="!item.buyer.avatar ? 'primary' : undefined"
+            :variant="!item.buyer.avatar ? 'tonal' : undefined"
           >
             <VImg
               v-if="item.buyer.avatar"

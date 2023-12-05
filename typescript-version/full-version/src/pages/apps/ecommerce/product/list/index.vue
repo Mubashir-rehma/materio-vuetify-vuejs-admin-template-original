@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { ECommerceProduct } from '@db/apps/ecommerce/types'
 
 const widgetData = ref([
   { title: 'In-Store Sales', value: '$5,345.43', icon: 'mdi-home-outline', desc: '5k orders', change: 5.7 },
@@ -96,7 +96,7 @@ const { data: productsData, execute: fetchProducts } = await useApi<any>(createU
   },
 ))
 
-const products = computed(() => productsData.value.products)
+const products = computed((): ECommerceProduct[] => productsData.value.products)
 const totalProduct = computed(() => productsData.value.total)
 
 const deleteProduct = async (id: number) => {
@@ -275,6 +275,7 @@ const deleteProduct = async (id: number) => {
         :headers="headers"
         show-select
         :items="products"
+        item-value="product"
         :items-length="totalProduct"
         class="text-no-wrap"
         @update:options="updateOptions"

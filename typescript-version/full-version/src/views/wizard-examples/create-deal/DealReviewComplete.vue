@@ -31,7 +31,7 @@ watch(formData, () => {
 
       <table class="text-base">
         <tr>
-          <td style="width: 202px;">
+          <td style="inline-size: 202px;">
             <p class="font-weight-medium mb-2">
               Deal Type
             </p>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { VOtpInput } from 'vuetify/labs/VOtpInput'
-
 definePage({
   meta: {
     layout: 'blank',

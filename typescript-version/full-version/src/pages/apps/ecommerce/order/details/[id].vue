@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
-
 import avatar1 from '@images/avatars/avatar-1.png'
 import product21 from '@images/ecommerce-images/product-21.png'
 import product22 from '@images/ecommerce-images/product-22.png'

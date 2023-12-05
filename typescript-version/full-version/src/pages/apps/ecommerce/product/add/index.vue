@@ -30,7 +30,7 @@ function onDrop(DroppedFiles: File[] | null) {
   )
 }
 
-onChange(selectedFiles => {
+onChange((selectedFiles: any) => {
   if (!selectedFiles)
     return
 

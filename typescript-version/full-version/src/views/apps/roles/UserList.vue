@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import type { UserProperties } from '@db/apps/users/types'
 
@@ -46,7 +45,7 @@ const { data: usersData, execute: fetchUsers } = await useApi<any>(createUrl('/a
   },
 }))
 
-const users = computed(() => usersData.value.users)
+const users = computed((): UserProperties[] => usersData.value.users)
 const totalUsers = computed(() => usersData.value.totalUsers)
 
 // 👉 search filters
@@ -162,6 +161,7 @@ const deleteUser = async (id: number) => {
           { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
         ]"
         :items="users"
+        item-value="user"
         :items-length="totalUsers"
         :headers="headers"
         show-select

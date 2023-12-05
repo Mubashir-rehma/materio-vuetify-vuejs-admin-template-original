@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Referrals } from '@db/apps/ecommerce/types'
 import paperImg from '@images/svg/paper.svg?raw'
 import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/userInfo.svg?raw'
@@ -54,7 +54,7 @@ const { data: referralData } = await useApi<any>(createUrl('/apps/ecommerce/refe
   },
 }))
 
-const referrals = computed(() => referralData.value.referrals)
+const referrals = computed((): Referrals[] => referralData.value.referrals)
 const totalReferrals = computed(() => referralData.value.total)
 
 const resolveStatus = (status: string) => {
@@ -221,6 +221,7 @@ const resolveStatus = (status: string) => {
             :items="referrals"
             :headers="headers"
             :items-length="totalReferrals"
+            item-value="users"
             show-select
             @update:options="updateOptions"
           >

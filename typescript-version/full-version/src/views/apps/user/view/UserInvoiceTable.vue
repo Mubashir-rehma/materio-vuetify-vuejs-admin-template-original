@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Invoice } from '@db/apps/invoice/types'
 
 const searchQuery = ref('')
 const selectedStatus = ref()
@@ -41,7 +41,7 @@ const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUr
   },
 }))
 
-const invoices = computed(() => invoiceData.value?.invoices)
+const invoices = computed((): Invoice[] => invoiceData.value?.invoices)
 const totalInvoices = computed(() => invoiceData.value?.totalInvoices)
 
 // 👉 Invoice balance variant resolver
@@ -124,11 +124,12 @@ const deleteInvoice = async (id: number) => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        item-value="id"
         class="text-no-wrap text-sm rounded-0"
         @update:options="updateOptions"
       >
         <!-- Trending Header -->
-        <template #column.trending>
+        <template #header.trending>
           <VIcon
             size="22"
             icon="mdi-trending-up"
@@ -137,7 +138,7 @@ const deleteInvoice = async (id: number) => {
 
         <!-- id -->
         <template #item.id="{ item }">
-          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.value } }">
+          <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
             #{{ item.id }}
           </RouterLink>
         </template>

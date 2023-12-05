@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay, useTheme } from 'vuetify'
-import vuetifyInitialThemes from '@/plugins/vuetify/theme'
+import { themes } from '@/plugins/vuetify/theme'
 import ChatActiveChatUserProfileSidebarContent from '@/views/apps/chat/ChatActiveChatUserProfileSidebarContent.vue'
 import ChatLeftSidebarContent from '@/views/apps/chat/ChatLeftSidebarContent.vue'
 import ChatLog from '@/views/apps/chat/ChatLog.vue'
@@ -108,8 +108,8 @@ const { name } = useTheme()
 const chatContentContainerBg = computed(() => {
   let color = 'transparent'
 
-  if (vuetifyInitialThemes)
-    color = vuetifyInitialThemes.themes?.[name.value].colors?.background as string
+  if (themes)
+    color = themes?.[name.value].colors?.background as string
 
   return color
 })
@@ -315,8 +315,8 @@ const chatContentContainerBg = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
-@use "@core/scss/base/_mixins.scss";
+@use "@styles/variables/vuetify.scss";
+@use "@core/scss/base/mixins.scss";
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // Variables

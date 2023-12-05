@@ -7,10 +7,10 @@ const states = [
   { name: 'New York', abbr: 'NY', id: 5 },
 ]
 
-function customFilter(item: string, queryText: string, itemText: { title: string; value: string }) {
-  const textOne = itemText.title.toLowerCase()
-  const textTwo = itemText.value.toLowerCase()
-  const searchText = queryText.toLocaleLowerCase()
+function customFilter(itemTitle: any, queryText: any, item: any) {
+  const textOne = item.raw.name.toLowerCase()
+  const textTwo = item.raw.abbr.toLowerCase()
+  const searchText = queryText.toLowerCase()
 
   return textOne.includes(searchText) || textTwo.includes(searchText)
 }

@@ -209,7 +209,6 @@ const panelStatus = ref(0)
 <style lang="scss" scoped>
 .course-content {
   position: sticky;
-  inset-block-end: 0;
-  inset-block-start: 4rem;
+  inset-block: 4rem 0;
 }
 </style>

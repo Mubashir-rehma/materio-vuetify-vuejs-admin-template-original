@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Course } from '@db/apps/academy/types'
 
 const searchQuery = ref('')
 
@@ -34,7 +34,7 @@ const { data: courseData } = await useApi<any>(createUrl('/apps/academy/courses'
   },
 }))
 
-const courses = computed(() => courseData.value.courses)
+const courses = computed((): Course[] => courseData.value.courses)
 const totalCourse = computed(() => courseData.value.total)
 </script>
 
@@ -64,6 +64,7 @@ const totalCourse = computed(() => courseData.value.total)
       ]"
       :headers="headers"
       :items="courses"
+      item-value="courseName"
       :items-length="totalCourse"
       show-select
       class="text-no-wrap"

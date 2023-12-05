@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import type { VForm } from 'vuetify/components/VForm'
+import { VForm } from 'vuetify/components/VForm'
 
 const name = ref('')
 const email = ref('')

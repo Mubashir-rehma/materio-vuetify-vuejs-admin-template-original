@@ -1,7 +1,7 @@
-import { cookieRef } from '@layouts/stores/config'
-import { themeConfig } from '@themeConfig'
 import type { App } from 'vue'
 import { createI18n } from 'vue-i18n'
+import { cookieRef } from '@layouts/stores/config'
+import { themeConfig } from '@themeConfig'
 
 const messages = Object.fromEntries(
   Object.entries(

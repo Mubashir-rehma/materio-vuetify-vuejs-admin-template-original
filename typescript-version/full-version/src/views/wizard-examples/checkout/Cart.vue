@@ -129,7 +129,7 @@ watch(() => props.currentStep, updateCartData)
                 <VTextField
                   v-model="item.quantity"
                   type="number"
-                  style="width: 7.5rem;"
+                  style="inline-size: 7.5rem;"
                   density="compact"
                 />
               </div>

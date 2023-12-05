@@ -307,8 +307,8 @@ watch(activeIndex, () => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
-@use "@core/scss/base/_mixins.scss";
+@use "@styles/variables/vuetify.scss";
+@use "@core/scss/base/mixins.scss";
 @import "mapbox-gl/dist/mapbox-gl.css";
 
 .fleet-app-layout {

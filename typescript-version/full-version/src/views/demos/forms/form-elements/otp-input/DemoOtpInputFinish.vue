@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { VOtpInput } from 'vuetify/labs/VOtpInput'
-
 const loading = ref(false)
 const snackbar = ref(false)
 const snackbarColor = ref('default')

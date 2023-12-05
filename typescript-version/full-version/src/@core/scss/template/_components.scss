@@ -603,8 +603,10 @@
 }
 
 // hover state outline color 
-.v-field:not(.v-field--active):hover .v-field__outline {
-  --v-field-border-opacity: 0.6 !important;
+@media (hover: hover) {
+  .v-field:not(.v-field--focused):hover .v-field__outline {
+    --v-field-border-opacity: 0.6 !important;
+  }
 }
 
 .v-field__prepend-inner, 

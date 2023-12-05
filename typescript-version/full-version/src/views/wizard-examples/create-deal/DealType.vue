@@ -12,19 +12,19 @@ const emit = defineEmits<{
 
 const discountOffers = [
   {
-    icon: 'mdi-tag-outline',
+    icon: 'ri-percent-line',
     title: 'Percentage',
     desc: 'Create a deal which offer uses some % off (i.e 5% OFF) on total.',
     value: 'percentage',
   },
   {
-    icon: 'mdi-currency-usd',
+    icon: 'ri-money-dollar-circle-line',
     title: 'Flat Amount',
     desc: 'Create a deal which offer uses some flat amount (i.e $5 OFF) on total.',
     value: 'flat',
   },
   {
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
     title: 'Prime member',
     desc: 'Create prime member only deal to encourage the prime members.',
     value: 'prime',
@@ -45,6 +45,7 @@ watch(formData, () => {
       <VCol cols="12">
         <VImg
           :src="ShoppingGirl"
+          max-height="240"
           class="border rounded"
         />
       </VCol>

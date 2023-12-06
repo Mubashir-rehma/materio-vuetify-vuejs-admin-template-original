@@ -118,14 +118,14 @@
                 density="default"
                 class="my-5"
                 placeholder="Enter city"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 clearable
               />
               <VTextField
                 label="City"
                 class="my-5"
                 placeholder="Enter city"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 clearable
                 density="comfortable"
               />
@@ -133,7 +133,7 @@
                 label="City"
                 density="compact"
                 clearable
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 placeholder="Enter city"
                 class="my-5"
               />
@@ -157,14 +157,14 @@
                 density="default"
                 class="my-5"
                 placeholder="Enter city"
-                append-inner-icon="mdi-city"
+                append-inner-icon="ri-building-line"
                 clearable
               />
               <VTextField
                 label="City"
                 class="my-5"
                 placeholder="Enter city"
-                append-inner-icon="mdi-city"
+                append-inner-icon="ri-building-line"
                 clearable
                 density="comfortable"
               />
@@ -172,7 +172,7 @@
                 label="City"
                 density="compact"
                 clearable
-                append-inner-icon="mdi-city"
+                append-inner-icon="ri-building-line"
                 placeholder="Enter city"
                 class="my-5"
               />

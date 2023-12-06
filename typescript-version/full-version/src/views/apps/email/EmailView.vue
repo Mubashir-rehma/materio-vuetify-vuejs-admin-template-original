@@ -62,7 +62,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
         >
           <VIcon
             size="32"
-            icon="mdi-chevron-left"
+            icon="ri-arrow-left-s-line"
           />
         </IconBtn>
 
@@ -91,7 +91,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
             class="flip-in-rtl"
             @click="$emit('navigated', 'previous')"
           >
-            <VIcon icon="mdi-chevron-left" />
+            <VIcon icon="ri-arrow-left-s-line" />
           </IconBtn>
           <IconBtn
             variant="plain"
@@ -99,7 +99,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
             :disabled="!props.emailMeta.hasNextEmail"
             @click="$emit('navigated', 'next')"
           >
-            <VIcon icon="mdi-chevron-right" />
+            <VIcon icon="ri-arrow-right-s-line" />
           </IconBtn>
         </div>
       </div>
@@ -113,7 +113,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           v-show="!props.email.isDeleted"
           @click="$emit('trash'); $emit('close')"
         >
-          <VIcon icon="mdi-delete-outline" />
+          <VIcon icon="ri-delete-bin-line" />
           <VTooltip
             activator="parent"
             location="top"
@@ -124,7 +124,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
         <!-- Read/Unread -->
         <IconBtn @click.stop="$emit('unread'); $emit('close')">
-          <VIcon icon="mdi-email-outline" />
+          <VIcon icon="ri-mail-line" />
           <VTooltip
             activator="parent"
             location="top"
@@ -135,7 +135,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
         <!-- Move to folder -->
         <IconBtn>
-          <VIcon icon="mdi-folder-outline" />
+          <VIcon icon="ri-folder-line" />
           <VTooltip
             activator="parent"
             location="top"
@@ -173,7 +173,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
         <!-- Update labels -->
         <IconBtn>
-          <VIcon icon="mdi-label-outline" />
+          <VIcon icon="ri-price-tag-3-line" />
           <VTooltip
             activator="parent"
             location="top"
@@ -211,7 +211,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           :color="props.email.isStarred ? 'warning' : 'default'"
           @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
         >
-          <VIcon icon="mdi-star-outline" />
+          <VIcon icon="ri-star-fill-outline" />
         </IconBtn>
 
         <!-- Dots vertical -->
@@ -247,7 +247,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
                 <div class="d-flex align-center">
                   <span class="me-2">{{ formatDate(props.email.time) }}</span>
                   <IconBtn v-show="props.email.attachments.length">
-                    <VIcon icon="mdi-attachment" />
+                    <VIcon icon="ri-attachment-2" />
                   </IconBtn>
                 </div>
               </div>

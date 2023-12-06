@@ -74,7 +74,7 @@ else
         >
           <div class="mt-16">
             <VTextField
-              prepend-inner-icon="mdi-magnify"
+              prepend-inner-icon="ri-search-line"
               placeholder="Search..."
               class="pt-2 mb-8"
             />
@@ -93,7 +93,7 @@ else
                   v-for="(item, index) in articleData?.articleList"
                   :key="index"
                   link
-                  append-icon="mdi-chevron-right"
+                  append-icon="ri-arrow-right-s-line"
                 >
                   {{ item }}
                 </VListItem>

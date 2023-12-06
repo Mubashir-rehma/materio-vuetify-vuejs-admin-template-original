@@ -6,7 +6,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
   <VCard>
     <VCardItem>
       <template #prepend>
-        <VIcon icon="mdi-chart-timeline-variant" />
+        <VIcon icon="ri-line-chart-line" />
       </template>
 
       <VCardTitle>Activity Timeline</VCardTitle>
@@ -36,7 +36,7 @@ import avatar2 from '@images/avatars/avatar-2.png'
           <div class="d-flex align-center mt-2">
             <VIcon
               color="error"
-              icon="mdi-file-pdf-box"
+              icon="ri-file-pdf-line"
               size="24"
               class="me-2"
             />

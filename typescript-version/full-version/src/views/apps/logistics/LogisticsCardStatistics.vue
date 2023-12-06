@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const logisticData = ref([
-  { icon: 'mdi-car-estate', color: 'primary', title: 'On route vehicles', value: 42, change: 18.2, isHover: false },
-  { icon: 'mdi-alert-outline', color: 'warning', title: 'Vehicles with errors', value: 8, change: -8.7, isHover: false },
-  { icon: 'mdi-source-branch', color: 'error', title: 'Deviated from route', value: 27, change: 4.3, isHover: false },
-  { icon: 'mdi-timer-outline', color: 'info', title: 'Late vehicles', value: 13, change: -2.5, isHover: false },
+  { icon: 'ri-car-line', color: 'primary', title: 'On route vehicles', value: 42, change: 18.2, isHover: false },
+  { icon: 'ri-alert-line-outline', color: 'warning', title: 'Vehicles with errors', value: 8, change: -8.7, isHover: false },
+  { icon: 'ri-stackshare-line', color: 'error', title: 'Deviated from route', value: 27, change: 4.3, isHover: false },
+  { icon: 'ri-timer-line', color: 'info', title: 'Late vehicles', value: 13, change: -2.5, isHover: false },
 ])
 </script>
 

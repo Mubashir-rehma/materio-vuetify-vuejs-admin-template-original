@@ -128,7 +128,7 @@ const totalCourse = computed(() => courseData.value.total)
         <div class="d-flex justify-space-between gap-x-4">
           <div>
             <VIcon
-              icon="mdi-account-outline"
+              icon="ri-user-line"
               color="primary"
               size="24"
               class="me-2"
@@ -139,7 +139,7 @@ const totalCourse = computed(() => courseData.value.total)
           </div>
           <div>
             <VIcon
-              icon="mdi-laptop"
+              icon="ri-macbook-line"
               color="info"
               size="24"
               class="me-2"
@@ -148,7 +148,7 @@ const totalCourse = computed(() => courseData.value.total)
           </div>
           <div>
             <VIcon
-              icon="mdi-video-outline"
+              icon="ri-vidicon-line"
               color="error"
               size="24"
               class="me-2"

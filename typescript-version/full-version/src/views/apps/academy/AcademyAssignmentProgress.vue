@@ -44,7 +44,7 @@ const assignmentData = [
               size="28"
             >
               <VIcon
-                icon="mdi-chevron-right"
+                icon="ri-arrow-right-s-line"
                 class="flip-in-rtl"
               />
             </VBtn>

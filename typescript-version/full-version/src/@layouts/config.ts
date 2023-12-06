@@ -25,18 +25,18 @@ export const layoutConfig: LayoutConfig = {
   },
   verticalNav: {
     isVerticalNavCollapsed: false,
-    defaultNavItemIconProps: { icon: 'mdi-circle-outline' },
+    defaultNavItemIconProps: { icon: 'ri-circle-line' },
   },
   horizontalNav: {
     type: HorizontalNavType.Sticky,
     transition: 'none',
   },
   icons: {
-    chevronDown: { icon: 'mdi-chevron-down' },
-    chevronRight: { icon: 'mdi-chevron-right' },
-    close: { icon: 'mdi-close' },
-    verticalNavPinned: { icon: 'mdi-record-circle-outline' },
-    verticalNavUnPinned: { icon: 'mdi-radiobox-blank' },
-    sectionTitlePlaceholder: { icon: 'mdi-minus' },
+    chevronDown: { icon: 'ri-arrow-down-line' },
+    chevronRight: { icon: 'ri-arrow-right-line' },
+    close: { icon: 'ri-close-line' },
+    verticalNavPinned: { icon: 'ri-record-circle-line' },
+    verticalNavUnPinned: { icon: 'ri-circle-line' },
+    sectionTitlePlaceholder: { icon: 'ri-subtract-line' },
   },
 }

@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { useConfigStore } from '@core/stores/config'
+import type { SearchResults } from '@db/app-bar-search/types'
 import Shepherd from 'shepherd.js'
 import { withQuery } from 'ufo'
 import type { RouteLocationRaw } from 'vue-router'
-import type { SearchResults } from '@db/app-bar-search/types'
-import { useConfigStore } from '@core/stores/config'
 
 interface Suggestion {
   icon: string
@@ -31,37 +31,37 @@ const suggestionGroups: SuggestionGroup[] = [
   {
     title: 'Popular Searches',
     content: [
-      { icon: 'mdi-chart-donut', title: 'Analytics', url: { name: 'dashboards-analytics' } },
-      { icon: 'mdi-chart-bubble', title: 'CRM', url: { name: 'dashboards-crm' } },
-      { icon: 'mdi-file-document-outline', title: 'Landing Page', url: { name: 'front-pages-landing-page' } },
-      { icon: 'mdi-account-group-outline', title: 'User List', url: { name: 'apps-user-list' } },
+      { icon: 'ri-donut-chart-line', title: 'Analytics', url: { name: 'dashboards-analytics' } },
+      { icon: 'ri-bubble-chart-line', title: 'CRM', url: { name: 'dashboards-crm' } },
+      { icon: 'ri-article-line', title: 'Landing Page', url: { name: 'front-pages-landing-page' } },
+      { icon: 'ri-group-line', title: 'User List', url: { name: 'apps-user-list' } },
     ],
   },
   {
     title: 'Apps & Pages',
     content: [
-      { icon: 'mdi-calendar', title: 'Calendar', url: { name: 'apps-calendar' } },
-      { icon: 'mdi-cart-outline', title: 'ECommerce Product', url: { name: 'apps-ecommerce-product-list' } },
-      { icon: 'mdi-school-outline', title: 'Academy', url: { name: 'apps-academy-dashboard' } },
-      { icon: 'mdi-truck-outline', title: 'Logistic Fleet', url: { name: 'apps-logistics-fleet' } },
+      { icon: 'ri-calendar-line', title: 'Calendar', url: { name: 'apps-calendar' } },
+      { icon: 'ri-shopping-cart-2-line', title: 'ECommerce Product', url: { name: 'apps-ecommerce-product-list' } },
+      { icon: 'ri-school-line', title: 'Academy', url: { name: 'apps-academy-dashboard' } },
+      { icon: 'ri-truck-line', title: 'Logistic Fleet', url: { name: 'apps-logistics-fleet' } },
     ],
   },
   {
     title: 'User Interface',
     content: [
-      { icon: 'mdi-alpha-a-box-outline', title: 'Typography', url: { name: 'pages-typography' } },
-      { icon: 'mdi-tab', title: 'Tabs', url: { name: 'components-tabs' } },
-      { icon: 'mdi-map', title: 'Tour', url: { name: 'extensions-tour' } },
-      { icon: 'mdi-keyboard-settings-outline', title: 'Statistics', url: { name: 'pages-cards-card-statistics' } },
+      { icon: 'ri-font-family', title: 'Typography', url: { name: 'pages-typography' } },
+      { icon: 'ri-window-2-line', title: 'Tabs', url: { name: 'components-tabs' } },
+      { icon: 'ri-map-line', title: 'Tour', url: { name: 'extensions-tour' } },
+      { icon: 'ri-keyboard-box-line', title: 'Statistics', url: { name: 'pages-cards-card-statistics' } },
     ],
   },
   {
     title: 'Popular Searches',
     content: [
-      { icon: 'mdi-format-list-checkbox', title: 'Select', url: { name: 'forms-select' } },
-      { icon: 'mdi-currency-usd', title: 'Payment', url: { name: 'front-pages-payment' } },
-      { icon: 'mdi-calendar-range-outline', title: 'Date & Time Picker', url: { name: 'forms-date-time-picker' } },
-      { icon: 'mdi-home-outline', title: 'Property Listing Wizard', url: { name: 'wizard-examples-property-listing' } },
+      { icon: 'ri-list-check', title: 'Select', url: { name: 'forms-select' } },
+      { icon: 'ri-money-rupee-circle-line', title: 'Payment', url: { name: 'front-pages-payment' } },
+      { icon: 'ri-calendar-2-line', title: 'Date & Time Picker', url: { name: 'forms-date-time-picker' } },
+      { icon: 'ri-home-line', title: 'Property Listing Wizard', url: { name: 'wizard-examples-property-listing' } },
     ],
   },
 ]
@@ -70,17 +70,17 @@ const suggestionGroups: SuggestionGroup[] = [
 const noDataSuggestions: Suggestion[] = [
   {
     title: 'Analytics Dashboard',
-    icon: 'mdi-cart-outline',
+    icon: 'ri-shopping-cart-line',
     url: { name: 'dashboards-analytics' },
   },
   {
     title: 'Account Settings',
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
     url: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
   },
   {
     title: 'Pricing Page',
-    icon: 'mdi-cash',
+    icon: 'ri-cash-line',
     url: { name: 'pages-pricing' },
   },
 ]
@@ -121,7 +121,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
       class="me-1"
       @click="Shepherd.activeTour?.cancel()"
     >
-      <VIcon icon="mdi-magnify" />
+      <VIcon icon="ri-search-line" />
     </IconBtn>
 
     <span
@@ -219,7 +219,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
         <template #append>
           <VIcon
             size="20"
-            icon="mdi-subdirectory-arrow-left"
+            icon="ri-corner-down-left-line"
             class="enter-icon text-disabled"
           />
         </template>
@@ -232,7 +232,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 </template>
 
 <style lang="scss" scoped>
-@use "@styles/variables/_vuetify.scss";
+@use "@styles/variables/vuetify.scss";
 
 .meta-key {
   border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));

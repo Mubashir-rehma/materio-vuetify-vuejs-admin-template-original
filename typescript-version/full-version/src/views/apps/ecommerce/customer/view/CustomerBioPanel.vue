@@ -49,7 +49,7 @@ interface Props {
                 rounded
                 class="me-3"
               >
-                <VIcon icon="mdi-cart-plus" />
+                <VIcon icon="ri-shopping-cart-line" />
               </VAvatar>
               <div class="d-flex flex-column align-start">
                 <span class="text-body-1 font-weight-medium text-high-emphasis">{{ props.customerData.order }}</span>
@@ -63,7 +63,7 @@ interface Props {
                 rounded
                 class="me-3"
               >
-                <VIcon icon="mdi-currency-usd" />
+                <VIcon icon="ri-money-dollar-circle-line" />
               </VAvatar>
               <div class="d-flex flex-column align-start">
                 <span class="text-body-1 font-weight-medium text-high-emphasis">{{ props.customerData.totalSpent }}</span>

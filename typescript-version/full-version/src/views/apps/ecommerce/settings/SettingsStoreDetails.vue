@@ -50,7 +50,7 @@
             <template #prepend>
               <VAvatar
                 size="28"
-                icon="mdi-bell-outline"
+                icon="ri-notification-3-line"
                 variant="elevated"
                 color="warning"
                 rounded

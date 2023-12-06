@@ -40,7 +40,7 @@ const isMenuOpen = ref(false)
 const menuItems: MenuItem[] = [
   {
     listTitle: 'Page',
-    listIcon: 'mdi-view-grid-outline',
+    listIcon: 'ri-layout-grid-line',
     navItems: [
       { name: 'Pricing', to: { name: 'front-pages-pricing' } },
       { name: 'Payment', to: { name: 'front-pages-payment' } },
@@ -50,7 +50,7 @@ const menuItems: MenuItem[] = [
   },
   {
     listTitle: 'Auth Demo',
-    listIcon: 'mdi-lock-open-outline',
+    listIcon: 'ri-lock-unlock-line',
     navItems: [
       { name: 'Login (Basic)', to: { name: 'pages-authentication-login-v1' } },
       { name: 'Login (Cover)', to: { name: 'pages-authentication-login-v2' } },
@@ -65,7 +65,7 @@ const menuItems: MenuItem[] = [
   },
   {
     listTitle: 'Other',
-    listIcon: 'mdi-image-outline',
+    listIcon: 'ri-file-image-line',
     navItems: [
       { name: 'Under Maintenance', to: { name: 'pages-misc-under-maintenance' } },
       { name: 'Coming Soon', to: { name: 'pages-misc-coming-soon' } },
@@ -112,7 +112,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             :class="isMenuOpen ? 'mb-6' : ''"
             @click="isMenuOpen = !isMenuOpen"
           >
-            Pages <VIcon :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
+            Pages <VIcon :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
           </div>
 
           <div
@@ -146,7 +146,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                   :class="isCurrentRoute(listItem.to) ? 'active-link' : ''"
                 >
                   <VIcon
-                    icon="mdi-circle-outline"
+                    icon="ri-circle-line"
                     :size="10"
                     class="me-2"
                   />
@@ -170,7 +170,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
     <!-- Navigation drawer close icon -->
     <VIcon
       id="navigation-drawer-close-btn"
-      icon="mdi-close"
+      icon="ri-close-line"
       size="20"
       @click="sidebar = !sidebar"
     />
@@ -230,7 +230,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             class="text-high-emphasis font-weight-medium cursor-pointer px-2 px-lg-4 py-2"
             :class="isPageActive ? 'active-link' : 'text-high-emphasis'"
           >
-            Pages <VIcon icon="mdi-chevron-down" />
+            Pages <VIcon icon="ri-arrow-down-s-line" />
             <VMenu
               open-on-hover
               activator="parent"
@@ -316,7 +316,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
         <VBtn
           v-if="$vuetify.display.lgAndUp"
-          prepend-icon="mdi-cart-plus"
+          prepend-icon="ri-shopping-cart-line"
           variant="elevated"
           color="primary"
           href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/"
@@ -334,7 +334,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           target="_blank"
           rel="noopener noreferrer"
         >
-          <VIcon icon="mdi-cart-plus" />
+          <VIcon icon="ri-shopping-cart-line" />
         </VBtn>
       </div>
     </VAppBar>

@@ -21,9 +21,9 @@ export const useEmail = () => {
   }
 
   const emailMoveToFolderActions: { action: MoveEmailToAction; icon: string }[] = [
-    { action: 'inbox', icon: 'mdi-email-outline' },
-    { action: 'spam', icon: 'mdi-alert-octagon-outline' },
-    { action: 'trash', icon: 'mdi-delete-outline' },
+    { action: 'inbox', icon: 'ri-mail-line' },
+    { action: 'spam', icon: 'ri-spam-2-line' },
+    { action: 'trash', icon: 'ri-delete-bin-line' },
   ]
 
   const labels: { title: Email['labels'][number]; color: string }[] = [

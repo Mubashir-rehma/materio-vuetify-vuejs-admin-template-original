@@ -174,7 +174,7 @@ const socialAccounts = ref([
                   >
                     <VIcon
                       size="20"
-                      :icon="item.connected ? 'mdi-delete-outline' : 'mdi-link-variant' "
+                      :icon="item.connected ? 'ri-delete-bin-line' : 'ri-link' "
                     />
                   </VBtn>
                 </VListItemAction>

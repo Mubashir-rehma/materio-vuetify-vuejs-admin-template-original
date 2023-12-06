@@ -15,7 +15,7 @@ const isTooltipVisible = ref(false)
       <template #activator="{ props }">
         <VIcon
           v-bind="props"
-          icon="mdi-instagram"
+          icon="ri-instagram-line"
         />
       </template>
       <span>Programmatic tooltip</span>

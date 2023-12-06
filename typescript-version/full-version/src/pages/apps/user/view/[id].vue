@@ -11,11 +11,11 @@ const route = useRoute('apps-user-view-id')
 const userTab = ref(null)
 
 const tabs = [
-  { icon: 'mdi-account-outline', title: 'Overview' },
-  { icon: 'mdi-lock-outline', title: 'Security' },
-  { icon: 'mdi-bookmark-outline', title: 'Billing & Plan' },
-  { icon: 'mdi-bell-outline', title: 'Notifications' },
-  { icon: 'mdi-link-variant', title: 'Connections' },
+  { icon: 'ri-user-line', title: 'Overview' },
+  { icon: 'ri-lock-line', title: 'Security' },
+  { icon: 'ri-bookmark-line', title: 'Billing & Plan' },
+  { icon: 'ri-notification-3-line', title: 'Notifications' },
+  { icon: 'ri-link', title: 'Connections' },
 ]
 
 const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)

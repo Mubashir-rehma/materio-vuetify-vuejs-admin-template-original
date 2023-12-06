@@ -14,7 +14,7 @@ import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
         </div>
         <VBtn
           color="primary"
-          :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
+          :append-icon="$vuetify.locale.isRtl ? 'ri-arrow-left-line' : 'ri-arrow-right-line'"
           :to="{ name: 'front-pages-payment' }"
         >
           Get Started

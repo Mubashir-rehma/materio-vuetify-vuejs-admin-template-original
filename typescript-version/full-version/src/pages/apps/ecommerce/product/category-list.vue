@@ -127,14 +127,14 @@ const isAddProductDrawerOpen = ref(false)
 
           <div class="d-flex align-center flex-wrap gap-4">
             <VBtn
-              prepend-icon="mdi-export-variant"
+              prepend-icon="ri-upload-2-line"
               color="secondary"
               variant="outlined"
             >
               Export
             </VBtn>
             <VBtn
-              prepend-icon="mdi-plus"
+              prepend-icon="ri-add-line"
               @click="isAddProductDrawerOpen = !isAddProductDrawerOpen"
             >
               Add Category
@@ -154,17 +154,17 @@ const isAddProductDrawerOpen = ref(false)
       >
         <template #item.actions>
           <IconBtn>
-            <VIcon icon="mdi-pencil-outline" />
+            <VIcon icon="ri-pencil-line" />
           </IconBtn>
           <MoreBtn
             :menu-list="[
-              { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+              { title: 'Download', value: 'download', prependIcon: 'ri-download-line' },
               {
                 title: 'Edit',
                 value: 'edit',
-                prependIcon: 'mdi-pencil-outline',
+                prependIcon: 'ri-pencil-line',
               },
-              { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+              { title: 'Duplicate', value: 'duplicate', prependIcon: 'ri-stack-line' },
             ]"
             item-props
           />

@@ -21,7 +21,7 @@ const { resolveAvatarBadgeVariant } = useChat()
     >
       <IconBtn @click="$emit('close')">
         <VIcon
-          icon="mdi-close"
+          icon="ri-close-line"
           class="text-medium-emphasis"
         />
       </IconBtn>
@@ -82,21 +82,21 @@ const { resolveAvatarBadgeVariant } = useChat()
         <div class="d-flex align-center">
           <VIcon
             class="me-2"
-            icon="mdi-email-outline"
+            icon="ri-mail-line"
           />
           <span>lucifer@email.com</span>
         </div>
         <div class="d-flex align-center my-3">
           <VIcon
             class="me-2"
-            icon="mdi-phone-outline"
+            icon="ri-phone-line-outline"
           />
           <span>+1(123) 456 - 7890</span>
         </div>
         <div class="d-flex align-center">
           <VIcon
             class="me-2"
-            icon="mdi-clock-outline"
+            icon="ri-time-line"
           />
           <span>Mon - Fri 10AM - 8PM</span>
         </div>
@@ -108,28 +108,28 @@ const { resolveAvatarBadgeVariant } = useChat()
         <div class="d-flex align-center">
           <VIcon
             class="me-2"
-            icon="mdi-bookmark-outline"
+            icon="ri-bookmark-line"
           />
           <span>Add Tag</span>
         </div>
         <div class="d-flex align-center my-3">
           <VIcon
             class="me-2"
-            icon="mdi-star-outline"
+            icon="ri-star-fill-outline"
           />
           <span>Important Contact</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
             class="me-2"
-            icon="mdi-image-outline"
+            icon="ri-file-image-line"
           />
           <span>Shared Media</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
             class="me-2"
-            icon="mdi-trash-can-outline"
+            icon="ri-delete-bin-line"
           />
           <span>Delete Contact</span>
         </div>
@@ -137,7 +137,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             class="me-3 ms-1"
             size="16"
-            icon="mdi-block-helper"
+            icon="ri-forbid-line"
           />
           <span>Block Contact</span>
         </div>

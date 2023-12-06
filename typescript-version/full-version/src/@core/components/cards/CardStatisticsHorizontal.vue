@@ -38,7 +38,7 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
             v-if="props.change"
             :class="`${isPositive ? 'text-success' : 'text-error'} mt-1`"
           >
-            <VIcon :icon="isPositive ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
+            <VIcon :icon="isPositive ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
             <span class="text-caption">{{ Math.abs(props.change) }}%</span>
           </div>
         </div>

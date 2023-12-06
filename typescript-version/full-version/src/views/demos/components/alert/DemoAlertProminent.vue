@@ -11,14 +11,14 @@
 
     <VAlert
       color="success"
-      icon="mdi-school-outline"
+      icon="ri-school-line"
       prominent
     >
       Cotton candy tart tiramisu lollipop gummi bears oat cake cupcake macaroon.
     </VAlert>
 
     <VAlert
-      icon="mdi-shield-lock-outline"
+      icon="ri-shield-keyhole-line"
       prominent
       type="warning"
     >

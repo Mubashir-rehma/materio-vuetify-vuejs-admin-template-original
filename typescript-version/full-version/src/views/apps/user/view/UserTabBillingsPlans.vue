@@ -163,7 +163,7 @@ const currentBillingAddress = {
       <VCard title="Payment Methods">
         <template #append>
           <VBtn
-            prepend-icon="mdi-plus"
+            prepend-icon="ri-add-line"
             @click="isCardAddDialogVisible = !isCardAddDialogVisible"
           >
             Add Card

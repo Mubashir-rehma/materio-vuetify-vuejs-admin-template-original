@@ -45,7 +45,7 @@ const markAllReadOrUnread = () => {
       offset-x="1"
       offset-y="1"
     >
-      <VIcon icon="mdi-bell-outline" />
+      <VIcon icon="ri-notification-line" />
     </VBadge>
 
     <VMenu
@@ -67,7 +67,7 @@ const markAllReadOrUnread = () => {
               v-show="props.notifications.length"
               @click="markAllReadOrUnread"
             >
-              <VIcon :icon="!isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline' " />
+              <VIcon :icon="!isAllMarkRead ? 'ri-mail-line' : 'ri-mail-open-line' " />
 
               <VTooltip
                 activator="parent"
@@ -137,7 +137,7 @@ const markAllReadOrUnread = () => {
                       >
                         <VIcon
                           size="20"
-                          icon="mdi-close"
+                          icon="ri-close-line"
                         />
                       </IconBtn>
                     </div>

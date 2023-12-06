@@ -8,7 +8,7 @@ const files = ref<File[]>([])
     multiple
     placeholder="Upload your documents"
     label="File input"
-    prepend-icon="mdi-paperclip"
+    prepend-icon="ri-attachment-line"
   >
     <template #selection="{ fileNames }">
       <template

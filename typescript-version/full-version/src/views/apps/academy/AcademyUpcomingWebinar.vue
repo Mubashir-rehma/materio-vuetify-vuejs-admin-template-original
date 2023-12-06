@@ -19,7 +19,7 @@ import girlWithLaptop from '@images/pages/pose-fs-9.png'
         <span class="text-body-2">Next Generation Frontend Architecture Using Layout Engine And Vue.</span>
         <div class="d-flex justify-space-between my-4 flex-wrap">
           <div
-            v-for="{ icon, title, value } in [{ icon: 'mdi-calendar-blank', title: '17 Nov 23', value: 'Date' }, { icon: 'mdi-clock-outline', title: '32 Minutes', value: 'Duration' }]"
+            v-for="{ icon, title, value } in [{ icon: 'ri-calendar-line', title: '17 Nov 23', value: 'Date' }, { icon: 'ri-time-line', title: '32 Minutes', value: 'Duration' }]"
             :key="title"
             class="d-flex gap-x-3 align-center"
           >

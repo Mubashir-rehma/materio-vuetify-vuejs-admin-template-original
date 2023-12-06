@@ -4,10 +4,10 @@ import mastercard from '@images/cards/logo-mastercard-small.png'
 import paypal from '@images/cards/paypal-primary.png'
 
 const widgetData = ref([
-  { title: 'Pending Payment', value: 56, icon: 'mdi-calendar-clock-outline' },
-  { title: 'Completed', value: 12689, icon: 'mdi-check-all' },
-  { title: 'Refunded', value: 124, icon: 'mdi-wallet-outline' },
-  { title: 'Failed', value: 32, icon: 'mdi-alert-octagon-outline' },
+  { title: 'Pending Payment', value: 56, icon: 'ri-calendar-schedule-line' },
+  { title: 'Completed', value: 12689, icon: 'ri-check-line-all' },
+  { title: 'Refunded', value: 124, icon: 'ri-wallet-line' },
+  { title: 'Failed', value: 32, icon: 'ri-spam-line' },
 ])
 
 const searchQuery = ref('')
@@ -141,7 +141,7 @@ const deleteOrder = async (id: number) => {
             style=" max-inline-size: 200px; min-inline-size: 200px;"
           />
 
-          <VBtn prepend-icon="mdi-export-variant">
+          <VBtn prepend-icon="ri-upload-2-line">
             Export
           </VBtn>
         </div>
@@ -227,7 +227,7 @@ const deleteOrder = async (id: number) => {
             />
             <div>
               <VIcon
-                icon="mdi-dots-horizontal"
+                icon="ri-more-line"
                 class="me-2"
               />
               <span v-if="item.method === 'mastercard'">
@@ -243,7 +243,7 @@ const deleteOrder = async (id: number) => {
         <!-- Actions -->
         <template #item.actions="{ item }">
           <IconBtn>
-            <VIcon icon="mdi-dots-vertical" />
+            <VIcon icon="ri-more-2-line" />
             <VMenu activator="parent">
               <VList>
                 <VListItem value="view">

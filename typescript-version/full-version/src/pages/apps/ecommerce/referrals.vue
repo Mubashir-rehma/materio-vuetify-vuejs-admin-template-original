@@ -10,10 +10,10 @@ const userInfoIcon = h('div', { innerHTML: paperImg, style: 'font-size: 2.625rem
 const paperIcon = h('div', { innerHTML: userInfoImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })
 
 const widgetData = [
-  { title: 'Total Earning', value: '$24,983', icon: 'mdi-currency-usd', color: 'primary' },
-  { title: 'Total Orders', value: '$8,647', icon: 'mdi-wallet-giftcard', color: 'success' },
-  { title: 'Total Products', value: '$2,367', icon: 'mdi-account-outline', color: 'error' },
-  { title: 'Total Customers', value: '4.5%', icon: 'mdi-refresh', color: 'info' },
+  { title: 'Total Earning', value: '$24,983', icon: 'ri-money-dollar-circle-line', color: 'primary' },
+  { title: 'Total Orders', value: '$8,647', icon: 'ri-gift-line', color: 'success' },
+  { title: 'Total Products', value: '$2,367', icon: 'ri-user-line', color: 'error' },
+  { title: 'Total Customers', value: '4.5%', icon: 'ri-refresh-line', color: 'info' },
 ]
 
 const stepsData = [
@@ -168,7 +168,7 @@ const resolveStatus = (status: string) => {
                   >
                     <VIcon
                       color="white"
-                      icon="mdi-facebook"
+                      icon="ri-facebook-circle-line"
                     />
                   </VBtn>
 
@@ -180,7 +180,7 @@ const resolveStatus = (status: string) => {
                   >
                     <VIcon
                       color="white"
-                      icon="mdi-twitter"
+                      icon="ri-twitter-line"
                     />
                   </VBtn>
                 </div>
@@ -207,7 +207,7 @@ const resolveStatus = (status: string) => {
                     style="max-inline-size: 250px;min-inline-size: 200px;"
                     density="compact"
                   />
-                  <VBtn prepend-icon="mdi-export-variant">
+                  <VBtn prepend-icon="ri-upload-2-line">
                     Export
                   </VBtn>
                 </div>

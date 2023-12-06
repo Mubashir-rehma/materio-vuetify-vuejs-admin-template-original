@@ -22,7 +22,7 @@ const scrollToTop = () => {
     >
       <VIcon
         size="22"
-        icon="mdi-arrow-up"
+        icon="ri-arrow-up-line"
       />
     </VBtn>
   </VScaleTransition>

@@ -342,7 +342,7 @@ const printInvoice = () => {
             <!-- 👉 Send Invoice Trigger button -->
             <VBtn
               block
-              prepend-icon="mdi-send-outline"
+              prepend-icon="ri-send-plane-2-line"
               class="mb-4"
               @click="isSendPaymentSidebarVisible = true"
             >
@@ -362,7 +362,7 @@ const printInvoice = () => {
             <!-- 👉  Add Payment trigger button  -->
             <VBtn
               block
-              prepend-icon="mdi-currency-usd"
+              prepend-icon="ri-money-dollar-circle-line"
               color="success"
               @click="isAddPaymentSidebarVisible = true"
             >

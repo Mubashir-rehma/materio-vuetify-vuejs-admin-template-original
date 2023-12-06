@@ -100,7 +100,7 @@ watch(
             <div class="d-flex align-center text-high-emphasis me-1">
               <VIcon
                 size="22"
-                icon="mdi-magnify"
+                icon="ri-search-line"
                 style=" margin-block-start:1px; opacity: 1;"
               />
             </div>
@@ -120,7 +120,7 @@ watch(
                 class="mt-n2"
                 @click="clearSearchAndCloseDialog"
               >
-                <VIcon icon="mdi-close" />
+                <VIcon icon="ri-close-line" />
               </IconBtn>
             </div>
           </template>
@@ -176,7 +176,7 @@ watch(
               <div class="app-bar-search-suggestions d-flex flex-column align-center justify-center text-high-emphasis h-100">
                 <VIcon
                   size="75"
-                  icon="mdi-file-remove-outline"
+                  icon="ri-file-close-line"
                 />
                 <div class="d-flex align-center flex-wrap justify-center gap-2 text-h6 my-3">
                   <span>No Result For </span>

@@ -126,7 +126,7 @@ const editPermission = (name: string) => {
             >
               <VIcon
                 size="24"
-                icon="mdi-pencil-outline"
+                icon="ri-pencil-line"
               />
             </VBtn>
             <VBtn
@@ -137,7 +137,7 @@ const editPermission = (name: string) => {
             >
               <VIcon
                 size="24"
-                icon="mdi-delete-outline"
+                icon="ri-delete-bin-line"
               />
             </VBtn>
           </template>

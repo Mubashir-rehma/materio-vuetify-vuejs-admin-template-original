@@ -20,7 +20,7 @@ const clickMe = () => {
   <VTextField
     v-model="message"
     clearable
-    clear-icon="mdi-close-circle-outline"
+    clear-icon="ri-close-line"
     label="Message"
     placeholder="Hey!!"
     type="text"
@@ -31,7 +31,7 @@ const clickMe = () => {
         <template #activator="{ props }">
           <VIcon
             v-bind="props"
-            icon="mdi-help-circle-outline"
+            icon="ri-question-line"
           />
         </template>
         I'm a tooltip
@@ -63,7 +63,7 @@ const clickMe = () => {
         :icon="$vuetify.display.smAndDown"
         @click="clickMe"
       >
-        <VIcon icon="mdi-target" />
+        <VIcon icon="ri-focus-3-line" />
         <span
           v-if="$vuetify.display.mdAndUp"
           class="ms-3"

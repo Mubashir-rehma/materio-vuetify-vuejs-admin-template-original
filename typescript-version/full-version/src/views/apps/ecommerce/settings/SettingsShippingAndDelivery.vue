@@ -44,10 +44,10 @@ const InternationalTableData = [
           <VSpacer />
           <div>
             <IconBtn>
-              <VIcon icon="mdi-pencil-outline" />
+              <VIcon icon="ri-pencil-line" />
             </IconBtn>
             <IconBtn>
-              <VIcon icon="mdi-delete-outline" />
+              <VIcon icon="ri-delete-bin-line" />
             </IconBtn>
           </div>
         </div>
@@ -71,7 +71,7 @@ const InternationalTableData = [
               <td>{{ data.price }}</td>
               <td>
                 <IconBtn>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </IconBtn>
               </td>
             </tr>
@@ -99,10 +99,10 @@ const InternationalTableData = [
           <VSpacer />
           <div>
             <IconBtn>
-              <VIcon icon="mdi-pencil-outline" />
+              <VIcon icon="ri-pencil-line" />
             </IconBtn>
             <IconBtn>
-              <VIcon icon="mdi-delete-outline" />
+              <VIcon icon="ri-delete-bin-line" />
             </IconBtn>
           </div>
         </div>
@@ -126,7 +126,7 @@ const InternationalTableData = [
               <td>{{ data.price }}</td>
               <td>
                 <IconBtn>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </IconBtn>
               </td>
             </tr>

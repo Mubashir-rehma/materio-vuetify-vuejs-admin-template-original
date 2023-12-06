@@ -6,19 +6,19 @@ const checkboxContent: CustomInputContent[] = [
     title: 'Backup',
     desc: 'Backup every file from your project.',
     value: 'backup',
-    icon: 'mdi-server',
+    icon: 'ri-server-line',
   },
   {
     title: 'Encrypt',
     desc: 'Translate your data to encrypted text.',
     value: 'encrypt',
-    icon: 'mdi-shield-outline',
+    icon: 'ri-shield-line',
   },
   {
     title: 'Site Lock',
     desc: 'Security tool to protect your website.',
     value: 'site-lock',
-    icon: 'mdi-lock-outline',
+    icon: 'ri-lock-line',
   },
 ]
 

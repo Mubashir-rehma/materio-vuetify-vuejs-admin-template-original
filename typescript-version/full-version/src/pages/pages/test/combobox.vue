@@ -353,14 +353,14 @@
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
               />
 
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 class="my-5"
               />
 
@@ -368,7 +368,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 class="my-5"
               />
             </VCol>
@@ -388,14 +388,14 @@
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="default"
                 class="my-5"
-                prepend-icon="mdi-city"
+                prepend-icon="ri-building-line"
               />
 
               <VCombobox
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="comfortable"
-                prepend-icon="mdi-city"
+                prepend-icon="ri-building-line"
                 class="my-5"
               />
 
@@ -403,7 +403,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 density="compact"
-                prepend-icon="mdi-city"
+                prepend-icon="ri-building-line"
                 class="my-5"
               />
             </VCol>

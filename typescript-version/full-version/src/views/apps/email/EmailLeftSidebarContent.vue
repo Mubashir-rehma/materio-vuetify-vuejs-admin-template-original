@@ -28,13 +28,13 @@ interface Label {
 const folders: Folder[] = [
   {
     title: 'Inbox',
-    prependIcon: 'mdi-email-outline',
+    prependIcon: 'ri-mail-line',
     to: { name: 'apps-email' },
     badge: { content: '21', color: 'primary' },
   },
   {
     title: 'Sent',
-    prependIcon: 'mdi-send-outline',
+    prependIcon: 'ri-send-plane-2-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'sent' },
@@ -42,7 +42,7 @@ const folders: Folder[] = [
   },
   {
     title: 'Draft',
-    prependIcon: 'mdi-pencil-outline',
+    prependIcon: 'ri-pencil-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'draft' },
@@ -51,7 +51,7 @@ const folders: Folder[] = [
   },
   {
     title: 'Starred',
-    prependIcon: 'mdi-star-outline',
+    prependIcon: 'ri-star-fill-outline',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'starred' },
@@ -59,7 +59,7 @@ const folders: Folder[] = [
   },
   {
     title: 'Spam',
-    prependIcon: 'mdi-information-outline',
+    prependIcon: 'ri-information-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'spam' },
@@ -68,7 +68,7 @@ const folders: Folder[] = [
   },
   {
     title: 'Trash',
-    prependIcon: 'mdi-delete-outline',
+    prependIcon: 'ri-delete-bin-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'trashed' },

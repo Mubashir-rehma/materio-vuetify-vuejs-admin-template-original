@@ -74,17 +74,17 @@ const resolveUserRoleVariant = (role: string) => {
   const roleLowerCase = role.toLowerCase()
 
   if (roleLowerCase === 'subscriber')
-    return { color: 'primary', icon: 'mdi-account-outline' }
+    return { color: 'primary', icon: 'ri-user-line' }
   if (roleLowerCase === 'author')
-    return { color: 'warning', icon: 'mdi-cog-outline' }
+    return { color: 'warning', icon: 'ri-settings-2-line' }
   if (roleLowerCase === 'maintainer')
-    return { color: 'success', icon: 'mdi-chart-donut' }
+    return { color: 'success', icon: 'ri-donut-chart-line' }
   if (roleLowerCase === 'editor')
-    return { color: 'info', icon: 'mdi-pencil-outline' }
+    return { color: 'info', icon: 'ri-pencil-line' }
   if (roleLowerCase === 'admin')
-    return { color: 'error', icon: 'mdi-laptop' }
+    return { color: 'error', icon: 'ri-macbook-line' }
 
-  return { color: 'primary', icon: 'mdi-account-outline' }
+  return { color: 'primary', icon: 'ri-user-line' }
 }
 
 const resolveUserStatusVariant = (stat: string) => {
@@ -125,10 +125,10 @@ const deleteUser = async (id: number) => {
 }
 
 const widgetData = ref([
-  { title: 'Session', value: '21,459', change: 29, desc: 'Total Users', icon: 'mdi-account-outline', iconColor: 'primary' },
-  { title: 'Paid Users', value: '4,567', change: 18, desc: 'Last Week Analytics', icon: 'mdi-account-plus-outline', iconColor: 'error' },
-  { title: 'Active Users', value: '19,860', change: -14, desc: 'Last Week Analytics', icon: 'mdi-account-check-outline', iconColor: 'success' },
-  { title: 'Pending Users', value: '237', change: 42, desc: 'Last Week Analytics', icon: 'mdi-account-search-outline', iconColor: 'warning' },
+  { title: 'Session', value: '21,459', change: 29, desc: 'Total Users', icon: 'ri-user-line', iconColor: 'primary' },
+  { title: 'Paid Users', value: '4,567', change: 18, desc: 'Last Week Analytics', icon: 'ri-user-add-line', iconColor: 'error' },
+  { title: 'Active Users', value: '19,860', change: -14, desc: 'Last Week Analytics', icon: 'ri-user-follow-line', iconColor: 'success' },
+  { title: 'Pending Users', value: '237', change: 42, desc: 'Last Week Analytics', icon: 'ri-user-search-line', iconColor: 'warning' },
 
 ])
 </script>
@@ -199,7 +199,7 @@ const widgetData = ref([
               placeholder="Select Role"
               :items="roles"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
             />
           </VCol>
           <!-- 👉 Select Plan -->
@@ -213,7 +213,7 @@ const widgetData = ref([
               placeholder="Select Plan"
               :items="plans"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
             />
           </VCol>
           <!-- 👉 Select Status -->
@@ -227,7 +227,7 @@ const widgetData = ref([
               placeholder="Select Status"
               :items="status"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
             />
           </VCol>
         </VRow>
@@ -239,7 +239,7 @@ const widgetData = ref([
         <VBtn
           variant="tonal"
           color="secondary"
-          prepend-icon="mdi-tray-arrow-up"
+          prepend-icon="ri-upload-2-line"
         >
           Export
         </VBtn>
@@ -334,25 +334,25 @@ const widgetData = ref([
           >
             <VIcon
               size="24"
-              icon="mdi-dots-vertical"
+              icon="ri-more-2-line"
             />
             <VMenu activator="parent">
               <VList>
                 <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.id } }">
                   <template #prepend>
-                    <VIcon icon="mdi-eye-outline" />
+                    <VIcon icon="ri-eye-line" />
                   </template>
                   <VListItemTitle>View</VListItemTitle>
                 </VListItem>
                 <VListItem link>
                   <template #prepend>
-                    <VIcon icon="mdi-pencil-outline" />
+                    <VIcon icon="ri-pencil-line" />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
                 <VListItem @click="deleteUser(item.id)">
                   <template #prepend>
-                    <VIcon icon="mdi-delete-outline" />
+                    <VIcon icon="ri-delete-bin-line" />
                   </template>
                   <VListItemTitle>Delete</VListItemTitle>
                 </VListItem>

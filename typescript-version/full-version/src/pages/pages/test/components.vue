@@ -16,12 +16,12 @@ const color = ref('#ff00ff')
             <VCol cols="12">
               <p>VToolbar density</p>
               <VToolbar :elevation="7">
-                <VAppBarNavIcon icon="mdi-magnify" />
+                <VAppBarNavIcon icon="ri-search-line" />
                 <VToolbarTitle>VToolBar default density</VToolbarTitle>
                 <VSpacer />
 
                 <VBtn icon>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </VBtn>
               </VToolbar>
             </VCol>
@@ -36,7 +36,7 @@ const color = ref('#ff00ff')
                 <VSpacer />
 
                 <VBtn icon>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </VBtn>
               </VToolbar>
             </VCol>
@@ -51,7 +51,7 @@ const color = ref('#ff00ff')
                 <VSpacer />
 
                 <VBtn icon>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </VBtn>
               </VToolbar>
             </VCol>
@@ -70,11 +70,11 @@ const color = ref('#ff00ff')
                   color="primary"
                 >
                   <VBtn icon>
-                    <VIcon icon="mdi-heart" />
+                    <VIcon icon="ri-heart-fill" />
                   </VBtn>
 
                   <VBtn icon>
-                    <VIcon icon="mdi-dots-vertical" />
+                    <VIcon icon="ri-more-2-line" />
                   </VBtn>
                 </VToolbarItems>
               </VToolbar>
@@ -94,11 +94,11 @@ const color = ref('#ff00ff')
                 <VSpacer />
 
                 <VBtn icon>
-                  <VIcon icon="mdi-heart" />
+                  <VIcon icon="ri-heart-fill" />
                 </VBtn>
 
                 <VBtn icon>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </VBtn>
               </VToolbar>
             </VCol>
@@ -114,11 +114,11 @@ const color = ref('#ff00ff')
                 <VSpacer />
 
                 <VBtn icon>
-                  <VIcon icon="mdi-heart" />
+                  <VIcon icon="ri-heart-fill" />
                 </VBtn>
 
                 <VBtn icon>
-                  <VIcon icon="mdi-dots-vertical" />
+                  <VIcon icon="ri-more-2-line" />
                 </VBtn>
               </VToolbar>
             </VCol>
@@ -157,12 +157,12 @@ const color = ref('#ff00ff')
               sm="6"
             >
               <VCarousel
-                delimiter-icon="mdi-triangle-outline"
+                delimiter-icon="ri-alert-line"
                 color="primary"
                 direction="vertical"
                 hide-delimiter-background
-                next-icon="mdi-chevron-down"
-                prev-icon="mdi-chevron-up"
+                next-icon="ri-arrow-down-s-line"
+                prev-icon="ri-arrow-up-s-line"
               >
                 <VCarouselItem
                   src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
@@ -221,7 +221,7 @@ const color = ref('#ff00ff')
               <p>VBanner Density</p>
               <VBanner
                 lines="two"
-                icon="mdi-check-circle"
+                icon="ri-checkbox-circle-line"
                 color="primary"
                 class="my-4"
                 density="default"
@@ -235,7 +235,7 @@ const color = ref('#ff00ff')
 
               <VBanner
                 lines="two"
-                icon="mdi-alert"
+                icon="ri-alert-line"
                 color="error"
                 class="my-4"
                 density="comfortable"
@@ -249,7 +249,7 @@ const color = ref('#ff00ff')
 
               <VBanner
                 lines="two"
-                icon="mdi-lock"
+                icon="ri-lock-line"
                 color="warning"
                 class="my-4"
                 density="compact"
@@ -270,7 +270,7 @@ const color = ref('#ff00ff')
               <p>VBanner Height & width</p>
               <VBanner
                 lines="two"
-                icon="mdi-check-circle"
+                icon="ri-checkbox-circle-line"
                 color="primary"
                 class="my-4"
                 height="140"
@@ -288,7 +288,7 @@ const color = ref('#ff00ff')
               <p>Banner Actions Density</p>
               <VBanner
                 lines="two"
-                icon="mdi-check-circle"
+                icon="ri-checkbox-circle-line"
                 color="primary"
                 class="my-4"
                 theme="dark"
@@ -526,7 +526,7 @@ const color = ref('#ff00ff')
               >
                 <VTimelineItem
                   dot-color="error"
-                  icon="mdi-star"
+                  icon="ri-star-fill"
                   fill-dot
                   icon-color="rgba(0,255,0)"
                 >

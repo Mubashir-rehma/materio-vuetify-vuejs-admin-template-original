@@ -27,7 +27,7 @@ const states = [
         v-model="selectedOption1"
         :items="states"
         label="Select"
-        prepend-icon="mdi-map-outline"
+        prepend-icon="ri-map-2-line"
         single-line
         variant="filled"
         placeholder="Select State"
@@ -38,7 +38,7 @@ const states = [
       <VSelect
         v-model="selectedOption2"
         :items="states"
-        append-icon="mdi-map-outline"
+        append-icon="ri-map-2-line"
         label="Select"
         single-line
         variant="filled"

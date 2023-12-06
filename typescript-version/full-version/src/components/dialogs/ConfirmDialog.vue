@@ -95,7 +95,7 @@ const onCancel = () => {
           style=" block-size: 88px;inline-size: 88px; pointer-events: none;"
         >
           <span class="text-3xl">
-            <VIcon icon="mdi-check" />
+            <VIcon icon="ri-check-line" />
           </span>
         </VBtn>
 

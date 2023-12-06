@@ -2,14 +2,14 @@ export default [
   { heading: 'Others' },
   {
     title: 'Access Control',
-    icon: { icon: 'mdi-shield-outline' },
+    icon: { icon: 'ri-shield-line' },
     to: 'access-control',
     action: 'read',
     subject: 'AclDemo',
   },
   {
     title: 'Nav Levels',
-    icon: { icon: 'mdi-menu' },
+    icon: { icon: 'ri-menu-line' },
     children: [
       {
         title: 'Level 2.1',
@@ -33,19 +33,19 @@ export default [
   {
     title: 'Disabled Menu',
     to: null,
-    icon: { icon: 'mdi-eye-off-outline' },
+    icon: { icon: 'ri-eye-off-line' },
     disable: true,
   },
   {
     title: 'Raise Support',
     href: 'https://themeselection.com/support/',
-    icon: { icon: 'mdi-lifebuoy' },
+    icon: { icon: 'ri-lifebuoy-line' },
     target: '_blank',
   },
   {
     title: 'Documentation',
     href: 'https://demos.themeselection.com/master-vuetify-vuejs-admin-template/documentation/',
-    icon: { icon: 'mdi-file-document-outline' },
+    icon: { icon: 'ri-article-line' },
     target: '_blank',
   },
 ]

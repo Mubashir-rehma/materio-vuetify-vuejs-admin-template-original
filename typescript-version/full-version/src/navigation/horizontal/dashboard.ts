@@ -1,32 +1,32 @@
 export default [
   {
     title: 'Dashboards',
-    icon: { icon: 'mdi-home-outline' },
+    icon: { icon: 'ri-home-line' },
     children: [
       {
         title: 'Analytics',
         to: 'dashboards-analytics',
-        icon: { icon: 'mdi-chart-timeline-variant' },
+        icon: { icon: 'ri-flow-chart' },
       },
       {
         title: 'CRM',
         to: 'dashboards-crm',
-        icon: { icon: 'mdi-monitor-dashboard' },
+        icon: { icon: 'ri-computer-line' },
       },
       {
         title: 'Ecommerce',
         to: 'dashboards-ecommerce',
-        icon: { icon: 'mdi-cart-outline' },
+        icon: { icon: 'ri-shopping-cart-2-line' },
       },
       {
         title: 'Academy',
         to: 'dashboards-academy',
-        icon: { icon: 'mdi-book-open-variant' },
+        icon: { icon: 'ri-book-open-line' },
       },
       {
         title: 'Logistics',
         to: 'dashboards-logistics',
-        icon: { icon: 'mdi-truck-outline' },
+        icon: { icon: 'ri-truck-line' },
       },
     ],
   },

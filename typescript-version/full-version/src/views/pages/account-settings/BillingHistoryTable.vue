@@ -58,31 +58,31 @@ const resolveInvoiceBalanceVariant = (balance: string | number, total: number) =
 // 👉 Invoice status variant resolver
 const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   if (status === 'Partial Payment')
-    return { variant: 'warning', icon: 'mdi-chart-timeline-variant' }
+    return { variant: 'warning', icon: 'ri-line-chart-line' }
   if (status === 'Paid')
-    return { variant: 'success', icon: 'mdi-check' }
+    return { variant: 'success', icon: 'ri-check-line' }
   if (status === 'Downloaded')
-    return { variant: 'info', icon: 'mdi-arrow-down' }
+    return { variant: 'info', icon: 'ri-arrow-down-line' }
   if (status === 'Draft')
-    return { variant: 'secondary', icon: 'mdi-content-save-outline' }
+    return { variant: 'secondary', icon: 'ri-save-line' }
   if (status === 'Sent')
-    return { variant: 'primary', icon: 'mdi-email-outline' }
+    return { variant: 'primary', icon: 'ri-mail-line' }
   if (status === 'Past Due')
-    return { variant: 'error', icon: 'mdi-alert-circle-outline' }
+    return { variant: 'error', icon: 'ri-error-warning-line' }
 
-  return { variant: 'secondary', icon: 'mdi-close' }
+  return { variant: 'secondary', icon: 'ri-close-line' }
 }
 
 const computedMoreList = computed(() => {
   return (paramId: number) => ([
-    { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+    { title: 'Download', value: 'download', prependIcon: 'ri-download-line' },
     {
       title: 'Edit',
       value: 'edit',
-      prependIcon: 'mdi-pencil-outline',
+      prependIcon: 'ri-pencil-line',
       to: { name: 'apps-invoice-edit-id', params: { id: paramId } },
     },
-    { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+    { title: 'Duplicate', value: 'duplicate', prependIcon: 'ri-stack-line' },
   ])
 })
 
@@ -103,7 +103,7 @@ const deleteInvoice = async (id: number) => {
         <div class="me-3">
           <!-- 👉 Create invoice -->
           <VBtn
-            prepend-icon="mdi-plus"
+            prepend-icon="ri-add-line"
             :to="{ name: 'apps-invoice-add' }"
           >
             Create invoice
@@ -130,7 +130,7 @@ const deleteInvoice = async (id: number) => {
             label="Select Status"
             placeholder="Select Status"
             clearable
-            clear-icon="mdi-close"
+            clear-icon="ri-close-line"
             :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
             style="inline-size: 12rem;"
           />
@@ -156,7 +156,7 @@ const deleteInvoice = async (id: number) => {
         <template #header.trending>
           <VIcon
             size="22"
-            icon="mdi-trending-up"
+            icon="ri-pulse-line"
           />
         </template>
 
@@ -249,11 +249,11 @@ const deleteInvoice = async (id: number) => {
         <!-- Actions -->
         <template #item.actions="{ item }">
           <IconBtn @click="deleteInvoice(item.id)">
-            <VIcon icon="mdi-delete-outline" />
+            <VIcon icon="ri-delete-bin-line" />
           </IconBtn>
 
           <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
-            <VIcon icon="mdi-eye-outline" />
+            <VIcon icon="ri-eye-line" />
           </IconBtn>
 
           <MoreBtn

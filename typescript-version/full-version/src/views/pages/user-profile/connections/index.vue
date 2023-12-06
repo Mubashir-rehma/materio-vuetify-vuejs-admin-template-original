@@ -92,7 +92,7 @@ const moreBtnList = [
 
           <div class="d-flex justify-center gap-4 mt-4">
             <VBtn
-              :prepend-icon="data.isConnected ? 'mdi-account-check-outline' : 'mdi-account-plus-outline'"
+              :prepend-icon="data.isConnected ? 'ri-user-follow-line' : 'ri-user-add-line'"
               :variant="data.isConnected ? 'elevated' : 'tonal'"
             >
               {{ data.isConnected ? 'connected' : 'connect' }}
@@ -102,7 +102,7 @@ const moreBtnList = [
               variant="tonal"
               class="rounded"
             >
-              <VIcon icon="mdi-email-outline" />
+              <VIcon icon="ri-mail-line" />
             </IconBtn>
           </div>
         </VCardText>

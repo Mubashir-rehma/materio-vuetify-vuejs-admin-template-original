@@ -57,7 +57,7 @@ const isConfirmPasswordVisible = ref(false)
                   label="New Password"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
               </VCol>
@@ -69,7 +69,7 @@ const isConfirmPasswordVisible = ref(false)
                   label="Confirm Password"
                   placeholder="············"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                 />
               </VCol>
@@ -91,7 +91,7 @@ const isConfirmPasswordVisible = ref(false)
                   :to="{ name: 'pages-authentication-login-v2' }"
                 >
                   <VIcon
-                    icon="mdi-chevron-left"
+                    icon="ri-arrow-left-s-line"
                     class="flip-in-rtl"
                   />
                   <span>Back to login</span>

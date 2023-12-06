@@ -169,7 +169,7 @@ const resolveUserProgressVariant = (progress: number) => {
               <div class="d-flex align-center mt-2">
                 <VIcon
                   color="error"
-                  icon="mdi-file-pdf-box"
+                  icon="ri-file-pdf-line"
                   size="24"
                   class="me-2"
                 />

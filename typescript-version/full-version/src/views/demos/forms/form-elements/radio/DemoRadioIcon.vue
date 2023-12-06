@@ -5,8 +5,8 @@ const radioGroup = ref(1)
 <template>
   <VRadioGroup
     v-model="radioGroup"
-    false-icon="mdi-bell-off-outline"
-    true-icon="mdi-bell-outline"
+    false-icon="ri-notification-off-line"
+    true-icon="ri-notification-3-line"
   >
     <VRadio
       v-for="n in 2"

@@ -1,24 +1,24 @@
 export default [
   {
     title: 'Pages',
-    icon: { icon: 'mdi-file-outline' },
+    icon: { icon: 'ri-file-line' },
     children: [
 
       {
         title: 'User Profile',
-        icon: { icon: 'mdi-account-circle-outline' },
+        icon: { icon: 'ri-account-circle-line' },
         to: { name: 'pages-user-profile-tab', params: { tab: 'profile' } },
       },
       {
         title: 'Account Settings',
-        icon: { icon: 'mdi-cog-outline' },
+        icon: { icon: 'ri-settings-2-line' },
         to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
       },
-      { title: 'FAQ', icon: { icon: 'mdi-help-circle-outline' }, to: 'pages-faq' },
-      { title: 'Pricing', icon: { icon: 'mdi-currency-usd' }, to: 'pages-pricing' },
+      { title: 'FAQ', icon: { icon: 'ri-question-line' }, to: 'pages-faq' },
+      { title: 'Pricing', icon: { icon: 'ri-money-dollar-circle-line' }, to: 'pages-pricing' },
       {
         title: 'Misc',
-        icon: { icon: 'mdi-file-outline' },
+        icon: { icon: 'ri-file-line' },
         children: [
           { title: 'Coming Soon', to: 'pages-misc-coming-soon' },
           { title: 'Under Maintenance', to: 'pages-misc-under-maintenance', target: '_blank' },
@@ -28,7 +28,7 @@ export default [
       },
       {
         title: 'Authentication',
-        icon: { icon: 'mdi-lock-outline' },
+        icon: { icon: 'ri-lock-line' },
         children: [
           {
             title: 'Login',
@@ -77,17 +77,17 @@ export default [
       },
       {
         title: 'Wizard Pages',
-        icon: { icon: 'mdi-ray-start-vertex-end' },
+        icon: { icon: 'ri-more-fill' },
         children: [
           { title: 'Checkout', to: { name: 'wizard-examples-checkout' } },
           { title: 'Property Listing', to: { name: 'wizard-examples-property-listing' } },
           { title: 'Create Deal', to: { name: 'wizard-examples-create-deal' } },
         ],
       },
-      { title: 'Dialog Examples', icon: { icon: 'mdi-content-copy' }, to: 'pages-dialog-examples' },
+      { title: 'Dialog Examples', icon: { icon: 'ri-file-copy-line' }, to: 'pages-dialog-examples' },
       {
         title: 'Front Pages',
-        icon: { icon: 'mdi-flip-to-front' },
+        icon: { icon: 'ri-checkbox-multiple-blank-line' },
         children: [
           {
             title: 'Landing',

@@ -5,22 +5,22 @@ const { global } = useTheme()
 
 const authProviders = [
   {
-    icon: 'mdi-facebook',
+    icon: 'ri-facebook-circle-line',
     color: '#4267b2',
     colorInDark: '#4267b2',
   },
   {
-    icon: 'mdi-twitter',
+    icon: 'ri-twitter-line',
     color: '#1da1f2',
     colorInDark: '#1da1f2',
   },
   {
-    icon: 'mdi-github',
+    icon: 'ri-github-fill',
     color: '#272727',
     colorInDark: '#fff',
   },
   {
-    icon: 'mdi-google',
+    icon: 'ri-google-line',
     color: '#db4437',
     colorInDark: '#db4437',
   },

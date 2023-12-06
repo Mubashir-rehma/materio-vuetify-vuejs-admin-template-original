@@ -1,37 +1,37 @@
 <script setup lang="ts">
 const shortcuts = [
   {
-    icon: 'mdi-calendar',
+    icon: 'ri-calendar-line',
     title: 'Calendar',
     subtitle: 'Appointments',
     to: { name: 'apps-calendar' },
   },
   {
-    icon: 'mdi-file-document-outline',
+    icon: 'ri-file-line',
     title: 'Invoice App',
     subtitle: 'Manage Accounts',
     to: { name: 'apps-invoice-list' },
   },
   {
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
     title: 'Users',
     subtitle: 'Manage Users',
     to: { name: 'apps-user-list' },
   },
   {
-    icon: 'mdi-lock-outline',
+    icon: 'ri-lock-line',
     title: 'Role Management',
     subtitle: 'Permission',
     to: { name: 'apps-roles' },
   },
   {
-    icon: 'mdi-view-dashboard-outline',
+    icon: 'ri-dashboard-line',
     title: 'Dashboard',
     subtitle: 'Dashboard Analytics',
     to: { name: 'dashboards-analytics' },
   },
   {
-    icon: 'mdi-cog-outline',
+    icon: 'ri-settings-3-line',
     title: 'Settings',
     subtitle: 'Account Settings',
     to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },

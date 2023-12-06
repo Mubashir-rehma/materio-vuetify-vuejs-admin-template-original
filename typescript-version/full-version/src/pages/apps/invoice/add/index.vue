@@ -86,7 +86,7 @@ const removeProduct = (id: number) => {
           <!-- 👉 Send Invoice -->
           <VBtn
             block
-            prepend-icon="mdi-send-outline"
+            prepend-icon="ri-send-plane-2-line"
             class="mb-3"
             @click="isSendPaymentSidebarVisible = true"
           >

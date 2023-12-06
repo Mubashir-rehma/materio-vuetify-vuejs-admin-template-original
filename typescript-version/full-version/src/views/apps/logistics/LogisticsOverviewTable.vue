@@ -77,7 +77,7 @@ const resolveChipColor = (warning: string) => {
           class="me-4"
         >
           <VIcon
-            icon="mdi-bus"
+            icon="ri-bus-line"
             size="28"
           />
         </VAvatar>

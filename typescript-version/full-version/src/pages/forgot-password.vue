@@ -76,7 +76,7 @@ definePage({
                 >
                   <VIcon
                     class="flip-in-rtl"
-                    icon="mdi-chevron-left"
+                    icon="ri-arrow-left-s-line"
                   />
                   <span>Back to login</span>
                 </RouterLink>

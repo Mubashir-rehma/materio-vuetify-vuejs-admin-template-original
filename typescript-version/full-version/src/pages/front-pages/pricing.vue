@@ -203,7 +203,7 @@ const faqs = [
 
                     <VIcon
                       v-if="plan === 'PRO'"
-                      icon="mdi-star-circle"
+                      icon="ri-star-fill-circle"
                       size="20"
                       color="primary"
                       class="position-absolute ms-2"
@@ -228,7 +228,7 @@ const faqs = [
                     v-if="!feature.addOnAvailable.starter"
                     :color="feature.starter ? 'primary' : 'disabled'"
                     size="20"
-                    :icon="feature.starter ? 'mdi-check-circle' : 'mdi-close-circle'"
+                    :icon="feature.starter ? 'ri-check-line' : 'ri-close-line'"
                   />
 
                   <VChip
@@ -245,7 +245,7 @@ const faqs = [
                     v-if="!feature.addOnAvailable.pro"
                     :color="feature.pro ? 'primary' : 'disabled'"
                     size="20"
-                    :icon="feature.pro ? 'mdi-check-circle' : 'mdi-close-circle'"
+                    :icon="feature.pro ? 'ri-checkbox-circle-line' : 'ri-close-line'"
                   />
 
                   <VChip
@@ -261,7 +261,7 @@ const faqs = [
                     v-if="!feature.addOnAvailable.enterprise"
                     :color="feature.enterprise ? 'primary' : 'disabled'"
                     size="20"
-                    :icon="feature.enterprise ? 'mdi-check-circle' : 'mdi-close-circle'"
+                    :icon="feature.enterprise ? 'ri-checkbox-circle-line' : 'ri-close-line'"
                   />
 
                   <VChip

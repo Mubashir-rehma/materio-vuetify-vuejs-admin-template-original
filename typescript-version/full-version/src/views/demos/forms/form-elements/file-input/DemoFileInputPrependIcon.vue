@@ -1,6 +1,6 @@
 <template>
   <VFileInput
     label="File input"
-    prepend-icon="mdi-camera-outline"
+    prepend-icon="ri-camera-line"
   />
 </template>

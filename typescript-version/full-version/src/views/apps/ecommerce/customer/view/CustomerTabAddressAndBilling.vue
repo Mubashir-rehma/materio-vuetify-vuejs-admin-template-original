@@ -96,7 +96,7 @@ const paymentData = [
               @click="show[index] = !show[index]"
             >
               <VIcon
-                :icon="show[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'"
+                :icon="show[index] ? 'ri-arrow-down-s-line' : 'ri-arrow-right-s-line'"
                 class="flip-in-rtl"
               />
             </IconBtn>
@@ -118,19 +118,19 @@ const paymentData = [
           <div class="ms-5">
             <IconBtn>
               <VIcon
-                icon="mdi-pencil-outline"
+                icon="ri-pencil-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="mdi-delete-outline"
+                icon="ri-delete-bin-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="mdi-dots-vertical"
+                icon="ri-more-2-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
@@ -180,7 +180,7 @@ const paymentData = [
               @click="paymentShow[index] = !paymentShow[index]"
             >
               <VIcon
-                :icon="paymentShow[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'"
+                :icon="paymentShow[index] ? 'ri-arrow-down-s-line' : 'ri-arrow-right-s-line'"
                 class="flip-in-rtl"
               />
             </IconBtn>
@@ -210,19 +210,19 @@ const paymentData = [
           <div class="ms-5">
             <IconBtn>
               <VIcon
-                icon="mdi-pencil-outline"
+                icon="ri-pencil-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="mdi-delete-outline"
+                icon="ri-delete-bin-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="mdi-dots-vertical"
+                icon="ri-more-2-line"
                 class="flip-in-rtl"
               />
             </IconBtn>

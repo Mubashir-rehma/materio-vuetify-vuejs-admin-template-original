@@ -39,7 +39,7 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
           class="ms-n3 d-lg-none"
           @click="toggleVerticalOverlayNavActive(true)"
         >
-          <VIcon icon="mdi-menu" />
+          <VIcon icon="ri-menu-line" />
         </IconBtn>
 
         <NavSearchBar class="ms-lg-n3" />

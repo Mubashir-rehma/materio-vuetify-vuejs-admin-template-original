@@ -259,7 +259,7 @@ const earnings = [
                 <span class="text-success">
                   <VIcon
                     size="30"
-                    icon="mdi-menu-up"
+                    icon="ri-menu-line-up"
                   />
                   <span>10%</span>
                 </span>

@@ -63,7 +63,7 @@ const increment = () => {
       >
         <VIcon
           size="large"
-          :icon="isPlaying ? 'mdi-pause' : 'mdi-play'"
+          :icon="isPlaying ? 'ri-pause-line' : 'ri-play-line'"
         />
       </VBtn>
     </div>
@@ -81,7 +81,7 @@ const increment = () => {
       <VBtn
         size="small"
         variant="text"
-        icon="mdi-minus"
+        icon="ri-subtract-line"
         :color="color"
         @click="decrement"
       />
@@ -91,7 +91,7 @@ const increment = () => {
       <VBtn
         size="small"
         variant="text"
-        icon="mdi-plus"
+        icon="ri-add-line"
         :color="color"
         @click="increment"
       />

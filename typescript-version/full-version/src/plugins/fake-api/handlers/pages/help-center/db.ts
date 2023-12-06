@@ -41,7 +41,7 @@ export const db: DB = {
   allArticles: [
     {
       title: 'Buying',
-      icon: 'mdi-cart-plus',
+      icon: 'ri-shopping-cart-line',
       articles: [
         { title: 'What are Favourites?' },
         { title: 'How do I purchase an item?' },
@@ -53,7 +53,7 @@ export const db: DB = {
     },
     {
       title: 'Item Support',
-      icon: 'mdi-cart-plus',
+      icon: 'ri-shopping-cart-line',
       articles: [
         { title: 'What is Item Support?' },
         { title: 'How to contact an author?' },
@@ -65,7 +65,7 @@ export const db: DB = {
     },
     {
       title: 'Licenses',
-      icon: 'mdi-currency-usd',
+      icon: 'ri-money-dollar-circle-line',
       articles: [
         { title: 'Can I use the same license for the...' },
         { title: 'How to contact an author?' },
@@ -77,7 +77,7 @@ export const db: DB = {
     },
     {
       title: 'Template Kits',
-      icon: 'mdi-format-color-fill',
+      icon: 'ri-palette-line',
       articles: [
         { title: 'Template Kits' },
         { title: 'Elementor Template Kits: PHP Zip ...' },
@@ -89,7 +89,7 @@ export const db: DB = {
     },
     {
       title: 'Account & Password',
-      icon: 'mdi-lock-open-outline',
+      icon: 'ri-lock-unlock-line',
       articles: [
         { title: 'Signing in with a social account' },
         { title: 'Locked Out of Account' },
@@ -101,7 +101,7 @@ export const db: DB = {
     },
     {
       title: 'Account Settings',
-      icon: 'mdi-account-outline',
+      icon: 'ri-user-line',
       articles: [
         { title: 'How do I change my password?' },
         { title: 'How do I change my username?' },

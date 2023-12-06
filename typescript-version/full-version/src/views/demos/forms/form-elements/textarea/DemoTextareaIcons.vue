@@ -5,13 +5,13 @@
         label="prepend-icon"
         rows="1"
         placeholder="Placeholder Text"
-        prepend-icon="mdi-comment-outline"
+        prepend-icon="ri-chat-2-line"
       />
     </VCol>
 
     <VCol cols="12">
       <VTextarea
-        append-icon="mdi-comment-outline"
+        append-icon="ri-chat-2-line"
         placeholder="Placeholder Text"
         label="append-icon"
         rows="1"
@@ -20,7 +20,7 @@
 
     <VCol cols="12">
       <VTextarea
-        prepend-inner-icon="mdi-comment-outline"
+        prepend-inner-icon="ri-chat-2-line"
         label="prepend-inner-icon"
         placeholder="Placeholder Text"
         rows="1"
@@ -29,7 +29,7 @@
 
     <VCol cols="12">
       <VTextarea
-        append-inner-icon="mdi-comment-outline"
+        append-inner-icon="ri-chat-2-line"
         label="append-inner-icon"
         placeholder="Placeholder Text"
         rows="1"

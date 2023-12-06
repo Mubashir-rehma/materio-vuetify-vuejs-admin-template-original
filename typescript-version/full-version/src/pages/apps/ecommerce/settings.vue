@@ -7,12 +7,12 @@ import SettingsShippingAndDelivery from '@/views/apps/ecommerce/settings/Setting
 import SettingsStoreDetails from '@/views/apps/ecommerce/settings/SettingsStoreDetails.vue'
 
 const tabsData = [
-  { icon: 'mdi-storefront', title: 'Store Details' },
-  { icon: 'mdi-credit-card-outline', title: 'Payments' },
-  { icon: 'mdi-cart-plus', title: 'Checkout' },
-  { icon: 'mdi-airplane', title: 'Shipping & Delivery' },
-  { icon: 'mdi-map-marker-outline', title: 'Location' },
-  { icon: 'mdi-bell-outline', title: 'Notifications' },
+  { icon: 'ri-store-2-line', title: 'Store Details' },
+  { icon: 'ri-bank-card-line', title: 'Payments' },
+  { icon: 'ri-shopping-cart-line', title: 'Checkout' },
+  { icon: 'ri-flight-takeoff-line', title: 'Shipping & Delivery' },
+  { icon: 'ri-map-pin-line', title: 'Location' },
+  { icon: 'ri-notification-3-line', title: 'Notifications' },
 ]
 
 const activeTab = ref(null)

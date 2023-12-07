@@ -27,7 +27,6 @@ interface MenuItem {
 
 const route = useRoute()
 const router = useRouter()
-const { y } = useWindowScroll()
 
 const navImg = useGenerateImageVariant(navImgLight, navImgDark)
 const { y } = useWindowScroll()

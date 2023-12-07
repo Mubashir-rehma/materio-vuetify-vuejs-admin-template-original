@@ -76,9 +76,9 @@ const inventoryTabsData = [
   <div>
     <div class="d-flex flex-wrap justify-center justify-md-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
-        <h5 class="text-h5 font-weight-medium">
+        <h4 class="text-h4">
           Add a new product
-        </h5>
+        </h4>
         <span>Orders placed across your store</span>
       </div>
 
@@ -110,8 +110,9 @@ const inventoryTabsData = [
             <VRow>
               <VCol cols="12">
                 <VTextField
-                  label="Name"
+                  label="Product Name"
                   placeholder="iPhone 14"
+                  density="compact"
                 />
               </VCol>
               <VCol
@@ -121,6 +122,7 @@ const inventoryTabsData = [
                 <VTextField
                   label="SKU"
                   placeholder="FXSK123U"
+                  density="compact"
                 />
               </VCol>
               <VCol
@@ -129,10 +131,14 @@ const inventoryTabsData = [
               >
                 <VTextField
                   label="Barcode"
+                  density="compact"
                   placeholder="0123-4567"
                 />
               </VCol>
               <VCol>
+                <VLabel class="mb-1">
+                  Description (Optional)
+                </VLabel>
                 <TiptapEditor
                   v-model="content"
                   class="border rounded"
@@ -142,14 +148,16 @@ const inventoryTabsData = [
           </VCardText>
         </VCard>
 
-        <!-- 👉 Media -->
+        <!-- 👉 Product Image -->
         <VCard class="mb-6">
           <VCardItem>
             <template #title>
-              Media
+              Product Image
             </template>
             <template #append>
-              <span class="text-primary font-weight-medium text-sm cursor-pointer">Add Media from URL</span>
+              <div class="text-primary font-weight-medium cursor-pointer">
+                Add Media from URL
+              </div>
             </template>
           </VCardItem>
 
@@ -163,17 +171,18 @@ const inventoryTabsData = [
                 >
                   <div
                     v-if="fileData.length === 0"
-                    class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone"
+                    class="d-flex flex-column justify-center align-center gap-y-2 pa-12 border-dashed drop-zone"
                   >
-                    <IconBtn
+                    <VAvatar
                       variant="tonal"
-                      class="rounded-sm"
+                      color="secondary"
+                      rounded
                     >
-                      <VIcon icon="ri-upload-line" />
-                    </IconBtn>
-                    <div class="text-base text-high-emphasis font-weight-medium">
+                      <VIcon icon="ri-upload-2-line" />
+                    </VAvatar>
+                    <h4 class="text-h4">
                       Drag and Drop Your Image Here.
-                    </div>
+                    </h4>
                     <span class="text-disabled">or</span>
 
                     <VBtn variant="outlined">
@@ -255,6 +264,8 @@ const inventoryTabsData = [
                   <VSelect
                     :items="['Size', 'Color', 'Weight', 'Smell']"
                     placeholder="Select Variant"
+                    label="Select Variant"
+                    density="compact"
                   />
                 </VCol>
                 <VCol
@@ -262,8 +273,10 @@ const inventoryTabsData = [
                   md="8"
                 >
                   <VTextField
-                    placeholder="38"
+                    label="Variant Value"
+                    density="compact"
                     type="number"
+                    placeholder="Enter Variant Value"
                   />
                 </VCol>
               </VRow>
@@ -335,17 +348,17 @@ const inventoryTabsData = [
                           Confirm
                         </VBtn>
                       </div>
-                      <div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                      <div class="d-flex flex-column gap-2 text-high-emphasis">
+                        <div>
                           Product in stock now: 54
                         </div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                        <div>
                           Product in transit: 390
                         </div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                        <div>
                           Last time restocked: 24th June, 2022
                         </div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                        <div>
                           Total stock over lifetime: 2,430
                         </div>
                       </div>
@@ -356,7 +369,6 @@ const inventoryTabsData = [
                     <VRadioGroup
                       v-model="shippingType"
                       label="Shipping Type"
-                      class="ms-3"
                     >
                       <VRadio
                         v-for="item in shippingList"
@@ -383,7 +395,6 @@ const inventoryTabsData = [
                       <VRadioGroup
                         v-model="deliveryType"
                         label="Global Delivery"
-                        class="ms-3"
                       >
                         <VRadio
                           value="Worldwide delivery"
@@ -500,6 +511,7 @@ const inventoryTabsData = [
                           label="Product ID Type"
                           placeholder="Select Product Type"
                           :items="['ISBN', 'UPC', 'EAN', 'JAN']"
+                          density="compact"
                         />
                       </VCol>
 
@@ -508,6 +520,7 @@ const inventoryTabsData = [
                           label="Product Id"
                           placeholder="100023"
                           type="number"
+                          density="compact"
                         />
                       </VCol>
                     </VRow>
@@ -530,14 +543,16 @@ const inventoryTabsData = [
         >
           <VCardText>
             <VTextField
-              label="Name"
+              label="Base Price"
               placeholder="iPhone 14"
               class="mb-6"
+              density="compact"
             />
             <VTextField
               label="Discounted Price"
               placeholder="$499"
               class="mb-4"
+              density="compact"
             />
             <VCheckbox label="Charge Tax on this product" />
 
@@ -557,25 +572,30 @@ const inventoryTabsData = [
               <VSelect
                 placeholder="Select Vendor"
                 label="Vendor"
+                density="compact"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
                 placeholder="Select Category"
                 label="Category"
+                density="compact"
                 :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
               />
               <VSelect
                 placeholder="Select Collection"
                 label="Collection"
+                density="compact"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
                 placeholder="Select Status"
                 label="Status"
+                density="compact"
                 :items="['Published', 'Inactive', 'Scheduled']"
               />
               <VTextField
                 label="Tags"
+                density="compact"
                 placeholder="Fashion, Trending, Summer"
               />
             </div>

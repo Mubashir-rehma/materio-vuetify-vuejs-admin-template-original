@@ -46,17 +46,17 @@ watch(() => props.modelValue, () => {
 </script>
 
 <template>
-  <div>
+  <div class="pa-5">
     <div
       v-if="editor"
-      class="d-flex gap-3 pa-2 flex-wrap"
+      class="d-flex gap-3 flex-wrap"
     >
       <VBtn
         :class="{ 'is-active': editor.isActive('bold') }"
         icon="ri-bold"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         @click="editor.chain().focus().toggleBold().run()"
       />
@@ -64,16 +64,16 @@ watch(() => props.modelValue, () => {
         :class="{ 'is-active': editor.isActive('underline') }"
         icon="ri-underline"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         @click="editor.commands.toggleUnderline()"
       />
       <VBtn
         icon="ri-italic"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         :class="{ 'is-active': editor.isActive('italic') }"
         @click="editor.chain().focus().toggleItalic().run()"
@@ -81,17 +81,17 @@ watch(() => props.modelValue, () => {
       <VBtn
         icon="ri-strikethrough"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         :class="{ 'is-active': editor.isActive('strike') }"
         @click="editor.chain().focus().toggleStrike().run()"
       />
       <VBtn
-        icon="ri--align-left"
+        icon="ri-align-left"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         :class="{ 'is-active': editor.isActive({ textAlign: 'left' }) }"
         @click="editor.chain().focus().setTextAlign('left').run()"
@@ -99,8 +99,8 @@ watch(() => props.modelValue, () => {
       <VBtn
         icon="ri-align-center"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         :class="{ 'is-active': editor.isActive({ textAlign: 'center' }) }"
         @click="editor.chain().focus().setTextAlign('center').run()"
@@ -108,8 +108,8 @@ watch(() => props.modelValue, () => {
       <VBtn
         icon="ri-align-right"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         :class="{ 'is-active': editor.isActive({ textAlign: 'right' }) }"
         @click="editor.chain().focus().setTextAlign('right').run()"
@@ -117,14 +117,14 @@ watch(() => props.modelValue, () => {
       <VBtn
         icon="ri-align-justify"
         class="rounded"
-        density="comfortable"
-        variant="outlined"
+        size="small"
+        variant="text"
         color="default"
         :class="{ 'is-active': editor.isActive({ textAlign: 'justify' }) }"
         @click="editor.chain().focus().setTextAlign('justify').run()"
       />
     </div>
-    <VDivider />
+    <VDivider class="my-4" />
     <EditorContent
       ref="editorRef"
       :editor="editor"

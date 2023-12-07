@@ -2,7 +2,7 @@ export default [
   { heading: 'Apps & Pages' },
   {
     title: 'Ecommerce',
-    icon: { icon: 'mdi-cart-plus' },
+    icon: { icon: 'ri-shopping-cart-2-line' },
     children: [
       {
         title: 'Product',
@@ -42,7 +42,7 @@ export default [
   },
   {
     title: 'Academy',
-    icon: { icon: 'mdi-book-open-outline' },
+    icon: { icon: 'ri-book-open-line' },
     children: [
       { title: 'Dashboard', to: 'apps-academy-dashboard' },
       { title: 'My Course', to: 'apps-academy-my-course' },
@@ -51,7 +51,7 @@ export default [
   },
   {
     title: 'Logistics',
-    icon: { icon: 'mdi-truck-outline' },
+    icon: { icon: 'ri-truck-line' },
     children: [
       { title: 'Dashboard', to: 'apps-logistics-dashboard' },
       { title: 'Fleet', to: 'apps-logistics-fleet' },
@@ -59,22 +59,22 @@ export default [
   },
   {
     title: 'Email',
-    icon: { icon: 'mdi-email-outline' },
+    icon: { icon: 'ri-mail-line' },
     to: 'apps-email',
   },
   {
     title: 'Chat',
-    icon: { icon: 'mdi-message-outline' },
+    icon: { icon: 'ri-message-line' },
     to: 'apps-chat',
   },
   {
     title: 'Calendar',
-    icon: { icon: 'mdi-calendar-blank-outline' },
+    icon: { icon: 'ri-calendar-line' },
     to: 'apps-calendar',
   },
   {
     title: 'Invoice',
-    icon: { icon: 'mdi-file-document-outline' },
+    icon: { icon: 'ri-article-line' },
 
     children: [
       { title: 'List', to: 'apps-invoice-list' },
@@ -85,7 +85,7 @@ export default [
   },
   {
     title: 'User',
-    icon: { icon: 'mdi-account-outline' },
+    icon: { icon: 'ri-user-line' },
     children: [
       { title: 'List', to: 'apps-user-list' },
       { title: 'View', to: { name: 'apps-user-view-id', params: { id: 21 } } },
@@ -93,7 +93,7 @@ export default [
   },
   {
     title: 'Roles & Permissions',
-    icon: { icon: 'mdi-shield-account-outline' },
+    icon: { icon: 'ri-shield-user-line' },
     children: [
       { title: 'Roles', to: 'apps-roles' },
       { title: 'Permissions', to: 'apps-permissions' },
@@ -102,7 +102,7 @@ export default [
 
   {
     title: 'Pages',
-    icon: { icon: 'mdi-file-outline' },
+    icon: { icon: 'ri-file-line' },
     children: [
       { title: 'User Profile', to: { name: 'pages-user-profile-tab', params: { tab: 'profile' } } },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
@@ -121,7 +121,7 @@ export default [
   },
   {
     title: 'Authentication',
-    icon: { icon: 'mdi-lock-outline' },
+    icon: { icon: 'ri-lock-line' },
     children: [
       {
         title: 'Login',
@@ -170,7 +170,7 @@ export default [
   },
   {
     title: 'Wizard Examples',
-    icon: { icon: 'mdi-ray-start-vertex-end' },
+    icon: { icon: 'ri-more-fill' },
     children: [
       { title: 'Checkout', to: { name: 'wizard-examples-checkout' } },
       { title: 'Property Listing', to: { name: 'wizard-examples-property-listing' } },
@@ -179,7 +179,7 @@ export default [
   },
   {
     title: 'Dialog Examples',
-    icon: { icon: 'mdi-square-outline' },
+    icon: { icon: 'ri-square-line' },
     to: 'pages-dialog-examples',
   },
 ]

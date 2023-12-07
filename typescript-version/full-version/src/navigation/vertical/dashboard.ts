@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Dashboards',
-    icon: { icon: 'mdi-home-outline' },
+    icon: { icon: 'ri-home-line' },
     children: [
       {
         title: 'Analytics',
@@ -29,7 +29,7 @@ export default [
   },
   {
     title: 'Front Pages',
-    icon: { icon: 'mdi-flip-to-front' },
+    icon: { icon: 'ri-file-copy-line' },
     children: [
       {
         title: 'Landing',

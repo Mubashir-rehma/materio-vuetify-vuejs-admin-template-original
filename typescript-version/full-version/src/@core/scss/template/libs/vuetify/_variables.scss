@@ -205,6 +205,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $chip-font-size: 13px !default,
   $chip-icon-font-size: 1.25rem !default,
   $chip-close-size: 20px !default,
+  $chip-font-weight: 500 !default,
 
   // 👉 Cards
   $card-actions-padding: 0 6px 6px !default,
@@ -292,8 +293,8 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Table
   $table-row-height: 50px !default,
-  $table-header-font-size: 12px !default,
-  $table-header-font-weight: 600 !default,
+  $table-header-font-size: 13px !default,
+  $table-header-font-weight: 500 !default,
 
   // 👉 Messages
   $messages-font-size: 13px !default,

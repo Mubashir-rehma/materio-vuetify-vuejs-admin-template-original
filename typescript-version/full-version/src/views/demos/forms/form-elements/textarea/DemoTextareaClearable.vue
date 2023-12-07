@@ -6,7 +6,7 @@ const textareaValue = ref('This is clearable text.')
   <VTextarea
     v-model="textareaValue"
     clearable
-    clear-icon="mdi-close-circle-outline"
+    clear-icon="ri-close-line"
     label="Text"
     placeholder="Placeholder Text"
   />

@@ -979,7 +979,7 @@
           th{
             background: rgb(var(--v-table-header-color)) !important;
             color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
-            font-size: 12px;
+            line-height: 24px;
 
             // ℹ️ for separator in header (size need to refactor)
             // .v-data-table-header__content{

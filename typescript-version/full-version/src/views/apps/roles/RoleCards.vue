@@ -260,7 +260,7 @@ const editPermission = (value: RoleDetails) => {
             >
               <VIcon
                 size="24"
-                icon="mdi-content-copy"
+                icon="ri-file-copy-line"
               />
             </VBtn>
           </div>

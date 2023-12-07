@@ -47,7 +47,7 @@ const isConfirmPasswordVisible = ref(false)
         <VTextField
           v-model="password"
           :type="isPasswordVisible ? 'text' : 'password'"
-          :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+          :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
           placeholder="Enter Password"
           :rules="[requiredValidator, passwordValidator]"
           autocomplete="on"
@@ -64,7 +64,7 @@ const isConfirmPasswordVisible = ref(false)
           :type="isConfirmPasswordVisible ? 'text' : 'password'"
           placeholder="Confirm Password"
           persistent-placeholder
-          :append-inner-icon="confirmPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+          :append-inner-icon="confirmPassword ? 'ri-eye-off-line' : 'ri-eye-line'"
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
           autocomplete="on"
           @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"

@@ -9,22 +9,22 @@ const zoomInOut = ref(10)
     <VCol cols="12">
       <VSlider
         v-model="mediaSlider"
-        prepend-icon="mdi-volume"
+        prepend-icon="ri-volume-up-line"
       />
     </VCol>
 
     <VCol cols="12">
       <VSlider
         v-model="alarmSlider"
-        append-icon="mdi-alarm"
+        append-icon="ri-alarm-line"
       />
     </VCol>
 
     <VCol cols="12">
       <VSlider
         v-model="zoomInOut"
-        append-icon="mdi-magnify-plus-outline"
-        prepend-icon="mdi-magnify-minus-outline"
+        append-icon="ri-search-line-plus-outline"
+        prepend-icon="ri-search-line-minus-outline"
       />
     </VCol>
   </VRow>

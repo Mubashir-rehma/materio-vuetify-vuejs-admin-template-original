@@ -26,7 +26,7 @@ const value = ref(['Sandra Adams'])
     placeholder="Select Item"
     multiple
     clearable
-    clear-icon="mdi-close"
+    clear-icon="ri-close-line"
   >
     <template #selection="{ item }">
       <VChip>

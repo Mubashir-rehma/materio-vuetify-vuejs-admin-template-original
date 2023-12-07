@@ -163,7 +163,7 @@ const socialAccounts = ref([
                 >
                   <VIcon
                     size="20"
-                    :icon="account.connected ? 'mdi-close' : 'mdi-link-variant'"
+                    :icon="account.connected ? 'ri-close-line' : 'ri-link'"
                   />
                 </VBtn>
               </template>

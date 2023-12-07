@@ -8,7 +8,7 @@ export const db: DB = {
   faqs: [
     {
       faqTitle: 'Payment',
-      faqIcon: 'mdi-credit-card-outline',
+      faqIcon: 'ri-bank-card-line',
       faqSubtitle: 'Get help with payment',
       faqs: [
         {
@@ -35,7 +35,7 @@ export const db: DB = {
     },
     {
       faqTitle: 'Delivery',
-      faqIcon: 'mdi-shopping-outline',
+      faqIcon: 'ri-shopping-bag-line',
       faqSubtitle: 'Get help with delivery',
       faqs: [
         {
@@ -54,7 +54,7 @@ export const db: DB = {
     },
     {
       faqTitle: 'Cancellation',
-      faqIcon: 'mdi-refresh',
+      faqIcon: 'ri-refresh-line',
       faqSubtitle: 'Get help with cancellation & return',
       faqs: [
         {
@@ -73,7 +73,7 @@ export const db: DB = {
     },
     {
       faqTitle: 'My Orders',
-      faqIcon: 'mdi-archive-outline',
+      faqIcon: 'ri-archive-line',
       faqSubtitle: 'Order details',
       faqs: [
         {
@@ -94,7 +94,7 @@ export const db: DB = {
     },
     {
       faqTitle: 'Services',
-      faqIcon: 'mdi-cog-outline',
+      faqIcon: 'ri-settings-2-line',
       faqSubtitle: 'Get help with product & services',
       faqs: [
         {

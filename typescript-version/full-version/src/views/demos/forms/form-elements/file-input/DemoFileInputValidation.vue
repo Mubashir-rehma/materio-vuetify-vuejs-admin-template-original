@@ -10,6 +10,6 @@ const rules = [
     label="Avatar"
     accept="image/png, image/jpeg, image/bmp"
     placeholder="Pick an avatar"
-    prepend-icon="mdi-camera-outline"
+    prepend-icon="ri-camera-2-line"
   />
 </template>

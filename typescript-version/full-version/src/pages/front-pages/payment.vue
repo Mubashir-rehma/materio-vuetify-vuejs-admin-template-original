@@ -243,7 +243,7 @@ const isPricingPlanDialogVisible = ref(false)
                 </div>
 
                 <VBtn
-                  :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
+                  :append-icon="$vuetify.locale.isRtl ? 'ri-arrow-left-line' : 'ri-arrow-right-line'"
                   block
                   color="success"
                   class="mb-8"

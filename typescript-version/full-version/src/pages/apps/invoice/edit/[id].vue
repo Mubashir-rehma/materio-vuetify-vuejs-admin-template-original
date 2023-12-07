@@ -79,7 +79,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <!-- 👉 Send Invoice Trigger button -->
           <VBtn
             block
-            prepend-icon="mdi-send-outline"
+            prepend-icon="ri-send-plane-2-line"
             class="mb-3"
             @click="isSendSidebarActive = true"
           >
@@ -111,7 +111,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <VBtn
             block
             color="success"
-            prepend-icon="mdi-currency-usd"
+            prepend-icon="ri-money-dollar-circle-line"
             @click="isAddPaymentSidebarActive = true"
           >
             Add Payment

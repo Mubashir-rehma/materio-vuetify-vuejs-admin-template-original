@@ -53,7 +53,7 @@ const store = useChatStore()
       v-model="search"
       density="compact"
       placeholder="Search..."
-      prepend-inner-icon="mdi-magnify"
+      prepend-inner-icon="ri-search-line"
       class="ms-4 me-1 chat-list-search"
     />
 
@@ -62,7 +62,7 @@ const store = useChatStore()
       @click="$emit('close')"
     >
       <VIcon
-        icon="mdi-close"
+        icon="ri-close-line"
         class="text-medium-emphasis"
       />
     </IconBtn>

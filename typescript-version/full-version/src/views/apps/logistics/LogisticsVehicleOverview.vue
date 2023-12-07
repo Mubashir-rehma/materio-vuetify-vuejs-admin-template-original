@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const vehicleData = [
-  { icon: 'mdi-car-estate', title: 'On the way', time: '2hr 10min', percentage: 39.7 },
-  { icon: 'mdi-progress-download', title: 'Unloading', time: '3hr 15min', percentage: 28.3 },
-  { icon: 'mdi-upload', title: 'Loading', time: '1hr 24min', percentage: 17.4 },
-  { icon: 'mdi-timer-outline', title: 'Waiting', time: '5hr 19min', percentage: 14.6 },
+  { icon: 'ri-car-line', title: 'On the way', time: '2hr 10min', percentage: 39.7 },
+  { icon: 'ri-download-cloud-2-line', title: 'Unloading', time: '3hr 15min', percentage: 28.3 },
+  { icon: 'ri-upload-line', title: 'Loading', time: '1hr 24min', percentage: 17.4 },
+  { icon: 'ri-timer-line', title: 'Waiting', time: '5hr 19min', percentage: 14.6 },
 ]
 </script>
 

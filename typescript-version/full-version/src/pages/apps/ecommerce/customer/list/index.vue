@@ -63,14 +63,14 @@ const totalCustomers = computed(() => customerData.value.total)
             />
 
             <VBtn
-              prepend-icon="mdi-export-variant"
+              prepend-icon="ri-upload-2-line"
               variant="outlined"
               color="secondary"
             >
               Export
             </VBtn>
             <VBtn
-              prepend-icon="mdi-plus"
+              prepend-icon="ri-add-line"
               @click="isAddCustomerDrawerOpen = !isAddCustomerDrawerOpen"
             >
               Add Customer

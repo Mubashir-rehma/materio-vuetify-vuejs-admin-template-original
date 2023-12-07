@@ -64,11 +64,11 @@ const deliveryType = ref('Worldwide delivery')
 const selectedAttrs = ref(['Biodegradable', 'Expiry Date'])
 
 const inventoryTabsData = [
-  { icon: 'mdi-plus', title: 'Restock', value: 'Restock' },
-  { icon: 'mdi-airplane', title: 'Shipping', value: 'Shipping' },
-  { icon: 'mdi-map-marker-outline', title: 'Global Delivery', value: 'Global Delivery' },
-  { icon: 'mdi-attachment', title: 'Attributes', value: 'Attributes' },
-  { icon: 'mdi-lock-open-outline', title: 'Advanced', value: 'Advanced' },
+  { icon: 'ri-add-line', title: 'Restock', value: 'Restock' },
+  { icon: 'ri-flight-takeoff-line', title: 'Shipping', value: 'Shipping' },
+  { icon: 'ri-map-pin-line', title: 'Global Delivery', value: 'Global Delivery' },
+  { icon: 'ri-attachment-2', title: 'Attributes', value: 'Attributes' },
+  { icon: 'ri-lock-unlock-line', title: 'Advanced', value: 'Advanced' },
 ]
 </script>
 
@@ -169,7 +169,7 @@ const inventoryTabsData = [
                       variant="tonal"
                       class="rounded-sm"
                     >
-                      <VIcon icon="mdi-upload" />
+                      <VIcon icon="ri-upload-line" />
                     </IconBtn>
                     <div class="text-base text-high-emphasis font-weight-medium">
                       Drag and Drop Your Image Here.
@@ -331,7 +331,7 @@ const inventoryTabsData = [
                           placeholder="100"
                           density="compact"
                         />
-                        <VBtn prepend-icon="mdi-check">
+                        <VBtn prepend-icon="ri-check-line">
                           Confirm
                         </VBtn>
                       </div>

@@ -232,7 +232,7 @@ watchEffect(() => {
     }
 
     .stepper-step-line.vertical {
-      border-radius: 0.1875rem;
+      border-radius: 1.25rem;
       block-size: 1.25rem;
       inline-size: 0.1875rem;
       margin-inline-start: 0.625rem;

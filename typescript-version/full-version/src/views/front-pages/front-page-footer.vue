@@ -173,7 +173,7 @@ const menus: Menu[] = [
             {{ new Date().getFullYear() }}
             Made With
             <VIcon
-              icon="mdi-heart"
+              icon="ri-heart-fill"
               color="error"
               size="1.25rem"
               class="mx-1"
@@ -188,10 +188,10 @@ const menus: Menu[] = [
           <div class="d-flex gap-x-2">
             <template
               v-for="(item, index) in [
-                { title: 'github', icon: 'mdi-github', href: 'https://github.com/themeselection' },
-                { title: 'facebook', icon: 'mdi-facebook', href: 'https://www.facebook.com/ThemeSelections/' },
-                { title: 'twitter', icon: 'mdi-twitter', href: 'https://twitter.com/Theme_Selection' },
-                { title: 'instagram', icon: 'mdi-instagram', href: 'https://www.instagram.com/themeselection/' },
+                { title: 'github', icon: 'ri-github-fill', href: 'https://github.com/themeselection' },
+                { title: 'facebook', icon: 'ri-facebook-circle-line', href: 'https://www.facebook.com/ThemeSelections/' },
+                { title: 'twitter', icon: 'ri-twitter-line', href: 'https://twitter.com/Theme_Selection' },
+                { title: 'instagram', icon: 'ri-instagram-line', href: 'https://www.instagram.com/themeselection/' },
               ]"
               :key="index"
             >

@@ -145,7 +145,7 @@ const onSubmit = () => {
                   :rules="[requiredValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :error-messages="errors.password"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
 

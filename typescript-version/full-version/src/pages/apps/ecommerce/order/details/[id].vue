@@ -306,7 +306,7 @@ const orderData = [
                 color="success"
                 class="me-3"
               >
-                <VIcon icon="mdi-cart-plus" />
+                <VIcon icon="ri-shopping-cart-line" />
               </VAvatar>
               <span class="text-sm font-weight-medium text-high-emphasis">12 Orders</span>
             </div>

@@ -112,7 +112,7 @@ const deleteOrder = async (id: number) => {
       <!-- Actions -->
       <template #item.actions="{ item }">
         <IconBtn>
-          <VIcon icon="mdi-dots-vertical" />
+          <VIcon icon="ri-more-2-line" />
           <VMenu activator="parent">
             <VList>
               <VListItem value="view">

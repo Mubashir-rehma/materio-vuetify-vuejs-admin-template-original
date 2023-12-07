@@ -14,7 +14,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  togglerIcon: 'mdi-view-grid-plus-outline',
+  togglerIcon: 'ri-apps-line',
 })
 
 const router = useRouter()
@@ -39,7 +39,7 @@ const router = useRouter()
 
           <template #append>
             <IconBtn>
-              <VIcon icon="mdi-view-grid-plus-outline" />
+              <VIcon icon="ri-apps-line" />
             </IconBtn>
           </template>
         </VCardItem>

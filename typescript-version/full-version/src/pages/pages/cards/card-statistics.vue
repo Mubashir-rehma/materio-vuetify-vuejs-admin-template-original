@@ -15,28 +15,28 @@ const statisticsHorizontal = [
   {
     title: 'New Customers',
     color: 'primary',
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
     stats: 2856,
     change: 5,
   },
   {
     title: 'Total Revenue',
     color: 'success',
-    icon: 'mdi-currency-usd',
+    icon: 'ri-money-dollar-circle-line',
     stats: 28600,
     change: 25.8,
   },
   {
     title: 'New Transactions',
     color: 'info',
-    icon: 'mdi-trending-up',
+    icon: 'ri-pulse-line',
     stats: 13600,
     change: -12.1,
   },
   {
     title: 'Total Profit',
     color: 'warning',
-    icon: 'mdi-poll',
+    icon: 'ri-bar-chart-line',
     stats: 2856,
     change: 54.6,
   },
@@ -46,7 +46,7 @@ const statisticsVertical = [
   {
     title: 'New Project',
     color: 'primary',
-    icon: 'mdi-label-variant-outline',
+    icon: 'ri-price-tag-3-line',
     stats: '862',
     change: -18,
     subtitle: 'Yearly Project',
@@ -54,7 +54,7 @@ const statisticsVertical = [
   {
     title: 'Total Profit',
     color: 'secondary',
-    icon: 'mdi-poll',
+    icon: 'ri-bar-chart-line',
     stats: '$25.6k',
     change: 42,
     subtitle: 'Weekly Project',
@@ -62,7 +62,7 @@ const statisticsVertical = [
   {
     title: 'Revenue',
     color: 'success',
-    icon: 'mdi-currency-usd',
+    icon: 'ri-money-dollar-circle-line',
     stats: '$95.2k',
     change: 12,
     subtitle: 'Revenue Increase',
@@ -70,7 +70,7 @@ const statisticsVertical = [
   {
     title: 'Logistics',
     color: 'error',
-    icon: 'mdi-truck-outline',
+    icon: 'ri-truck-line',
     stats: '44.10k',
     change: 12,
     subtitle: 'Revenue Increase',
@@ -78,7 +78,7 @@ const statisticsVertical = [
   {
     title: 'Reports',
     color: 'warning',
-    icon: 'mdi-check',
+    icon: 'ri-check-line',
     stats: '268',
     change: -8,
     subtitle: 'System Bugs',
@@ -86,7 +86,7 @@ const statisticsVertical = [
   {
     title: 'Transactions',
     color: 'info',
-    icon: 'mdi-trending-up',
+    icon: 'ri-pulse-line',
     stats: '12k',
     change: 32,
     subtitle: 'Daily Transactions',

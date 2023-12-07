@@ -374,7 +374,7 @@
                 variant="outlined"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
-                prepend-icon="mdi-account-check"
+                prepend-icon="ri-user-follow-line"
                 label="select city"
               />
             </VCol>
@@ -393,7 +393,7 @@
                 variant="outlined"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
-                prepend-inner-icon="mdi-account-check"
+                prepend-inner-icon="ri-user-follow-line"
               />
             </VCol>
           </VRow>
@@ -411,7 +411,7 @@
                 variant="outlined"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
-                append-icon="mdi-account-check"
+                append-icon="ri-user-follow-line"
                 label="select city"
               />
             </VCol>
@@ -430,7 +430,7 @@
                 variant="outlined"
                 :items="['Mumbai', 'Delhi', 'Ahmedabad']"
                 class="my-3"
-                append-inner-icon="mdi-chevron-down"
+                append-inner-icon="ri-arrow-down-s-line"
                 placeholder="select city"
               />
             </VCol>

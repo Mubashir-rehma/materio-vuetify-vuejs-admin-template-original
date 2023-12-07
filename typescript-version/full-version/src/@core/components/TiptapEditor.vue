@@ -53,7 +53,7 @@ watch(() => props.modelValue, () => {
     >
       <VBtn
         :class="{ 'is-active': editor.isActive('bold') }"
-        icon="mdi-format-bold"
+        icon="ri-bold"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -62,7 +62,7 @@ watch(() => props.modelValue, () => {
       />
       <VBtn
         :class="{ 'is-active': editor.isActive('underline') }"
-        icon="mdi-format-underline"
+        icon="ri-underline"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -70,7 +70,7 @@ watch(() => props.modelValue, () => {
         @click="editor.commands.toggleUnderline()"
       />
       <VBtn
-        icon="mdi-format-italic"
+        icon="ri-italic"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -79,7 +79,7 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().toggleItalic().run()"
       />
       <VBtn
-        icon="mdi-format-strikethrough"
+        icon="ri-strikethrough"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -88,7 +88,7 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().toggleStrike().run()"
       />
       <VBtn
-        icon="mdi-format-align-left"
+        icon="ri--align-left"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -97,7 +97,7 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().setTextAlign('left').run()"
       />
       <VBtn
-        icon="mdi-format-align-center"
+        icon="ri-align-center"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -106,7 +106,7 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().setTextAlign('center').run()"
       />
       <VBtn
-        icon="mdi-format-align-right"
+        icon="ri-align-right"
         class="rounded"
         density="comfortable"
         variant="outlined"
@@ -115,7 +115,7 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().setTextAlign('right').run()"
       />
       <VBtn
-        icon="mdi-format-align-justify"
+        icon="ri-align-justify"
         class="rounded"
         density="comfortable"
         variant="outlined"

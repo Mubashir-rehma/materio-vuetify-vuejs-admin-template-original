@@ -22,7 +22,7 @@ defineEmits<Emit>()
     <IconBtn @click="(event:MouseEvent) => $emit('cancel', event)">
       <VIcon
         size="18"
-        icon="mdi-close"
+        icon="ri-close-line"
       />
     </IconBtn>
   </div>

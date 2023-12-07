@@ -24,22 +24,22 @@ const deleteItem = (itemId: number) => {
 
 const categoryIcons = [
   { name: 'Mouse', icon: 'ri-mouse-fill', color: 'warning' },
-  { name: 'Glass', icon: 'mdi-glasses', color: 'primary' },
+  { name: 'Glass', icon: 'ri-glasses-line', color: 'primary' },
   { name: 'Smart Watch', icon: 'ri-time-line', color: 'success' },
   { name: 'Bag', icon: 'ri-shopping-bag-line', color: 'info' },
   { name: 'Storage Device', icon: 'ri-tape-line', color: 'warning' },
   { name: 'Bluetooth', icon: 'ri-bluetooth-line', color: 'error' },
   { name: 'Gaming', icon: 'ri-gamepad-line', color: 'warning' },
   { name: 'Home', icon: 'ri-home-line', color: 'error' },
-  { name: 'VR', icon: 'mdi-virtual-reality', color: 'primary' },
-  { name: 'Shoes', icon: 'mdi-shoe-sneaker', color: 'success' },
+  { name: 'VR', icon: 'ri-goggles-line', color: 'primary' },
+  { name: 'Shoes', icon: 'ri-omega', color: 'success' },
   { name: 'Electronics', icon: 'ri-flashlight-fill', color: 'info' },
   { name: 'Projector', icon: 'ri-projector-line', color: 'warning' },
   { name: 'iPod', icon: 'ri-music-line', color: 'error' },
   { name: 'Keyboard', icon: 'ri-keyboard-box-line', color: 'primary' },
   { name: 'Smart Phone', icon: 'ri-smartphone-line', color: 'success' },
   { name: 'Smart TV', icon: 'ri-tv-line', color: 'info' },
-  { name: 'Google Home', icon: 'mdi-google-home', color: 'warning' },
+  { name: 'Google Home', icon: 'ri-google-line', color: 'warning' },
   { name: 'Mac', icon: 'ri-apple-line', color: 'error' },
   { name: 'Headphone', icon: 'ri-headphone-line', color: 'primary' },
   { name: 'iMac', icon: 'ri-computer-line', color: 'success' },
@@ -93,7 +93,7 @@ onMounted(async () => {
             density="compact"
             label="Search"
             placeholder="Search ..."
-            append-inner-icon="mdi-magnify"
+            append-inner-icon="ri-search-line"
             single-line
             hide-details
             dense
@@ -196,7 +196,7 @@ onMounted(async () => {
       <!-- Delete -->
       <template #item.delete="{ item }">
         <IconBtn @click="deleteItem(item.product.id)">
-          <VIcon icon="mdi-delete-outline" />
+          <VIcon icon="ri-delete-bin-line" />
         </IconBtn>
       </template>
     </VDataTable>

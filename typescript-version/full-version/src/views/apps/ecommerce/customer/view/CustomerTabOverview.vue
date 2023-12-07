@@ -13,7 +13,7 @@ import CustomerOrderTable from './CustomerOrderTable.vue'
           <VAvatar
             variant="tonal"
             color="primary"
-            icon="mdi-currency-usd"
+            icon="ri-money-dollar-circle-line"
             rounded
           />
           <h6 class="text-h6">
@@ -39,7 +39,7 @@ import CustomerOrderTable from './CustomerOrderTable.vue'
           <VAvatar
             variant="tonal"
             color="success"
-            icon="mdi-wallet-giftcard"
+            icon="ri-gift-line"
             rounded
           />
           <h6 class="text-h6">
@@ -70,7 +70,7 @@ import CustomerOrderTable from './CustomerOrderTable.vue'
           <VAvatar
             variant="tonal"
             color="warning"
-            icon="mdi-star-outline"
+            icon="ri-star-fill-outline"
             rounded
           />
           <h6 class="text-h6">
@@ -96,7 +96,7 @@ import CustomerOrderTable from './CustomerOrderTable.vue'
           <VAvatar
             variant="tonal"
             color="info"
-            icon="mdi-crown-outline"
+            icon="ri-vip-crown-line"
             rounded
           />
           <h6 class="text-h6">

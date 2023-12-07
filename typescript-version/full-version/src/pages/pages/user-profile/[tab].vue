@@ -21,10 +21,10 @@ const activeTab = computed({
 
 // tabs
 const tabs = [
-  { title: 'Profile', icon: 'mdi-account-outline', tab: 'profile' },
-  { title: 'Team', icon: 'mdi-account-group-outline', tab: 'teams' },
-  { title: 'Projects', icon: 'mdi-view-grid-outline', tab: 'projects' },
-  { title: 'Connections', icon: 'mdi-link', tab: 'connections' },
+  { title: 'Profile', icon: 'ri-user-line', tab: 'profile' },
+  { title: 'Team', icon: 'ri-group-line', tab: 'teams' },
+  { title: 'Projects', icon: 'ri-layout-grid-line', tab: 'projects' },
+  { title: 'Connections', icon: 'ri-links-line', tab: 'connections' },
 ]
 </script>
 

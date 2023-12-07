@@ -109,7 +109,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                   >
                     <VIcon
                       start
-                      icon="mdi-link"
+                      icon="ri-links-line"
                     />
                     Invoice Attached
                   </VChip>

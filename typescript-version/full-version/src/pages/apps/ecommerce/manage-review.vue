@@ -282,7 +282,7 @@ const reviewStatChartConfig = {
                     4.89
                   </h4>
                   <VIcon
-                    icon="mdi-star"
+                    icon="ri-star-fill"
                     color="primary"
                     size="32"
                   />
@@ -407,7 +407,7 @@ const reviewStatChartConfig = {
                   { title: 'Pending', value: 'Pending' },
                 ]"
               />
-              <VBtn prepend-icon="mdi-export-variant">
+              <VBtn prepend-icon="ri-upload-2-line">
                 Export
               </VBtn>
             </div>
@@ -486,7 +486,7 @@ const reviewStatChartConfig = {
 
           <template #item.actions="{ item }">
             <IconBtn>
-              <VIcon icon="mdi-dots-vertical" />
+              <VIcon icon="ri-more-2-line" />
               <VMenu activator="parent">
                 <VList>
                   <VListItem

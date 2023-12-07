@@ -2,10 +2,10 @@
 import type { ECommerceProduct } from '@db/apps/ecommerce/types'
 
 const widgetData = ref([
-  { title: 'In-Store Sales', value: '$5,345.43', icon: 'mdi-home-outline', desc: '5k orders', change: 5.7 },
-  { title: 'Website Sales', value: '$674,347.12', icon: 'mdi-laptop', desc: '21k orders', change: 12.4 },
-  { title: 'Discount', value: '$14,235.12', icon: 'mdi-wallet-giftcard', desc: '6k orders' },
-  { title: 'Affiliate', value: '$8,345.23', icon: 'mdi-currency-usd', desc: '150 orders', change: -3.5 },
+  { title: 'In-Store Sales', value: '$5,345.43', icon: 'ri-home-line', desc: '5k orders', change: 5.7 },
+  { title: 'Website Sales', value: '$674,347.12', icon: 'ri-macbook-line', desc: '21k orders', change: 12.4 },
+  { title: 'Discount', value: '$14,235.12', icon: 'ri-gift-line', desc: '6k orders' },
+  { title: 'Affiliate', value: '$8,345.23', icon: 'ri-money-dollar-circle-line', desc: '150 orders', change: -3.5 },
 ])
 
 const headers = [
@@ -59,17 +59,17 @@ const updateOptions = (options: any) => {
 
 const resolveCategory = (category: string) => {
   if (category === 'Accessories')
-    return { color: 'error', icon: 'mdi-watch' }
+    return { color: 'error', icon: 'ri-timer-flash-line' }
   if (category === 'Home Decor')
-    return { color: 'info', icon: 'mdi-home-outline' }
+    return { color: 'info', icon: 'ri-home-line' }
   if (category === 'Electronics')
-    return { color: 'primary', icon: 'mdi-desktop-mac' }
+    return { color: 'primary', icon: 'ri-mac-line' }
   if (category === 'Shoes')
-    return { color: 'success', icon: 'mdi-shoe-formal' }
+    return { color: 'success', icon: 'ri-play-line' }
   if (category === 'Office')
-    return { color: 'warning', icon: 'mdi-briefcase-outline' }
+    return { color: 'warning', icon: 'ri-briefcase-line' }
   if (category === 'Games')
-    return { color: 'primary', icon: 'mdi-controller-classic-outline' }
+    return { color: 'primary', icon: 'ri-gamepad-line' }
 }
 
 const resolveStatus = (statusMsg: string) => {
@@ -199,7 +199,7 @@ const deleteProduct = async (id: number) => {
               placeholder="Select Status"
               :items="status"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
             />
           </VCol>
 
@@ -214,7 +214,7 @@ const deleteProduct = async (id: number) => {
               placeholder="Select Category"
               :items="categories"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
             />
           </VCol>
 
@@ -229,7 +229,7 @@ const deleteProduct = async (id: number) => {
               placeholder="Stock"
               :items="stockStatus"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
             />
           </VCol>
         </VRow>
@@ -254,14 +254,14 @@ const deleteProduct = async (id: number) => {
           <VBtn
             variant="outlined"
             color="secondary"
-            prepend-icon="mdi-tray-arrow-up"
+            prepend-icon="ri-upload-2-line"
           >
             Export
           </VBtn>
 
           <VBtn
             color="primary"
-            prepend-icon="mdi-plus"
+            prepend-icon="ri-add-line"
             @click="$router.push('/apps/ecommerce/product/add')"
           >
             Add Product
@@ -329,23 +329,23 @@ const deleteProduct = async (id: number) => {
         <!-- Actions -->
         <template #item.actions="{ item }">
           <IconBtn>
-            <VIcon icon="mdi-pencil-outline" />
+            <VIcon icon="ri-pencil-line" />
           </IconBtn>
 
           <IconBtn>
-            <VIcon icon="mdi-dots-vertical" />
+            <VIcon icon="ri-more-2-line" />
             <VMenu activator="parent">
               <VList>
                 <VListItem
                   value="download"
-                  prepend-icon="mdi-download-outline"
+                  prepend-icon="ri-download-line"
                 >
                   Download
                 </VListItem>
 
                 <VListItem
                   value="delete"
-                  prepend-icon="mdi-delete-outline"
+                  prepend-icon="ri-delete-bin-line"
                   @click="deleteProduct(item.id)"
                 >
                   Delete
@@ -353,7 +353,7 @@ const deleteProduct = async (id: number) => {
 
                 <VListItem
                   value="duplicate"
-                  prepend-icon="mdi-layers-outline"
+                  prepend-icon="ri-stack-line"
                 >
                   Duplicate
                 </VListItem>

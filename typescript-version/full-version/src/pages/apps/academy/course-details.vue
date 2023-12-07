@@ -38,10 +38,10 @@ const panelStatus = ref(0)
                 UI/UX
               </VChip>
               <IconBtn>
-                <VIcon icon="mdi-share-variant-outline" />
+                <VIcon icon="ri-share-line" />
               </IconBtn>
               <IconBtn>
-                <VIcon icon="mdi-bookmark-outline" />
+                <VIcon icon="ri-bookmark-line" />
               </IconBtn>
             </div>
           </template>
@@ -78,25 +78,25 @@ const panelStatus = ref(0)
                   <VList class="card-list">
                     <VListItem>
                       <template #prepend>
-                        <VIcon icon="mdi-check" />
+                        <VIcon icon="ri-check-line" />
                       </template>
                       <VListItemTitle>Skill Level: {{ courseDetails?.skillLevel }}</VListItemTitle>
                     </VListItem>
                     <VListItem>
                       <template #prepend>
-                        <VIcon icon="mdi-account-outline" />
+                        <VIcon icon="ri-user-line" />
                       </template>
                       <VListItemTitle>Students: {{ courseDetails?.totalStudents }}</VListItemTitle>
                     </VListItem>
                     <VListItem>
                       <template #prepend>
-                        <VIcon icon="mdi-web" />
+                        <VIcon icon="ri-global-line" />
                       </template>
                       <VListItemTitle>Languages: {{ courseDetails?.language }}</VListItemTitle>
                     </VListItem>
                     <VListItem>
                       <template #prepend>
-                        <VIcon icon="mdi-closed-caption-outline" />
+                        <VIcon icon="ri-closed-captioning-line" />
                       </template>
                       <VListItemTitle>Captions: {{ courseDetails?.isCaptions }}</VListItemTitle>
                     </VListItem>
@@ -107,13 +107,13 @@ const panelStatus = ref(0)
                   <VList class="card-list">
                     <VListItem>
                       <template #prepend>
-                        <VIcon icon="mdi-pencil-outline" />
+                        <VIcon icon="ri-pencil-line" />
                       </template>
                       <VListItemTitle>Lectures: {{ courseDetails?.totalLectures }}</VListItemTitle>
                     </VListItem>
                     <VListItem>
                       <template #prepend>
-                        <VIcon icon="mdi-clock-outline" />
+                        <VIcon icon="ri-time-line" />
                       </template>
                       <VListItemTitle>Video: {{ courseDetails?.length }}</VListItemTitle>
                     </VListItem>
@@ -162,8 +162,8 @@ const panelStatus = ref(0)
           <VExpansionPanel
             v-for="(section, index) in courseDetails?.content"
             :key="index"
-            collapse-icon="mdi-chevron-down"
-            :expand-icon="$vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'"
+            collapse-icon="ri-arrow-down-s-line"
+            :expand-icon="$vuetify.locale.isRtl ? 'ri-arrow-left-s-line' : 'ri-arrow-right-s-line'"
             :value="index"
           >
             <template #title>

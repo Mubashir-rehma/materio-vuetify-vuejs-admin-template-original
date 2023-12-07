@@ -38,7 +38,7 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
       >
         <template #prepend-inner>
           <VIcon
-            icon="mdi-magnify"
+            icon="ri-search-line"
             size="23"
           />
         </template>

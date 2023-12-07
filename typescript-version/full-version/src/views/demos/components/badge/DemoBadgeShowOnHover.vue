@@ -18,7 +18,7 @@ const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
       <VIcon
         ref="tRefTwitterBadge"
         size="25"
-        icon="mdi-twitter"
+        icon="ri-twitter-line"
       />
     </VBadge>
 
@@ -30,7 +30,7 @@ const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
       <VIcon
         ref="tRefInstagramBadge"
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
 
@@ -42,7 +42,7 @@ const showWhatsappBadgeOnHover = useElementHover(tRefWhatsappBadge)
       <VIcon
         ref="tRefWhatsappBadge"
         size="25"
-        icon="mdi-whatsapp"
+        icon="ri-whatsapp-line"
       />
     </VBadge>
   </div>

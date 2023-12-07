@@ -1,10 +1,10 @@
 export default [
   {
     title: 'Tables',
-    icon: { icon: 'mdi-table' },
+    icon: { icon: 'ri-table-line' },
     children: [
-      { title: 'Simple Table', icon: { icon: 'mdi-grid-large' }, to: 'tables-simple-table' },
-      { title: 'Data Table', icon: { icon: 'mdi-grid' }, to: 'tables-data-table' },
+      { title: 'Simple Table', icon: { icon: 'ri-layout-grid-line' }, to: 'tables-simple-table' },
+      { title: 'Data Table', icon: { icon: 'ri-grid-line' }, to: 'tables-data-table' },
     ],
   },
 ]

@@ -12,10 +12,10 @@ const customerData = ref<Customer>()
 const userTab = ref(null)
 
 const tabs = [
-  { icon: 'mdi-account-outline', title: 'Overview' },
-  { icon: 'mdi-lock-outline', title: 'Security' },
-  { icon: 'mdi-bookmark-outline', title: 'Billing & Plan' },
-  { icon: 'mdi-bell-outline', title: 'Notifications' },
+  { icon: 'ri-user-line', title: 'Overview' },
+  { icon: 'ri-lock-line', title: 'Security' },
+  { icon: 'ri-bookmark-line', title: 'Billing & Plan' },
+  { icon: 'ri-notification-3-line', title: 'Notifications' },
 ]
 
 const { data, error } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
@@ -52,7 +52,7 @@ const isAddCustomerDrawerOpen = ref(false)
           medium
         </VBtn>
         <VBtn
-          prepend-icon="mdi-plus"
+          prepend-icon="ri-add-line"
           @click="isAddCustomerDrawerOpen = !isAddCustomerDrawerOpen"
         >
           Add Customer

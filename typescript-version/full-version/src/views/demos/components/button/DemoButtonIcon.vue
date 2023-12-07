@@ -4,14 +4,14 @@
       Accept
       <VIcon
         end
-        icon="mdi-checkbox-marked-circle-outline"
+        icon="ri-check-linebox-marked-circle-outline"
       />
     </VBtn>
 
     <VBtn color="secondary">
       <VIcon
         start
-        icon="mdi-minus-circle-outline"
+        icon="ri-subtract-line"
       />Cancel
     </VBtn>
 
@@ -19,24 +19,24 @@
       Upload
       <VIcon
         end
-        icon="mdi-cloud-upload-outline"
+        icon="ri-upload-cloud-line"
       />
     </VBtn>
 
     <VBtn color="info">
       <VIcon
         start
-        icon="mdi-arrow-left"
+        icon="ri-arrow-left-line"
       />
       Back
     </VBtn>
 
     <VBtn color="warning">
-      <VIcon icon="mdi-wrench-outline" />
+      <VIcon icon="ri-hammer-line" />
     </VBtn>
 
     <VBtn color="error">
-      <VIcon icon="mdi-cancel" />
+      <VIcon icon="ri-prohibited-line" />
     </VBtn>
   </div>
 </template>

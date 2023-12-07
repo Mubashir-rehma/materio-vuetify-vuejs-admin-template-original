@@ -43,7 +43,7 @@ else {
             <span class="d-flex align-center">
               <VIcon
                 size="24"
-                icon="mdi-invert-colors"
+                icon="ri-pantone-line"
                 class="me-2"
               />
               <span class="text-body-1 font-weight-medium">
@@ -54,7 +54,7 @@ else {
             <span class="d-flex align-center">
               <VIcon
                 size="24"
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 class="me-2"
               />
               <span class="text-body-1 font-weight-medium">
@@ -65,7 +65,7 @@ else {
             <span class="d-flex align-center">
               <VIcon
                 size="24"
-                icon="mdi-calendar-blank"
+                icon="ri-calendar-line"
                 class="me-2"
               />
               <span class="text-body-1 font-weight-medium">
@@ -74,7 +74,7 @@ else {
             </span>
           </div>
 
-          <VBtn prepend-icon="mdi-account-check-outline">
+          <VBtn prepend-icon="ri-user-follow-line">
             Connected
           </VBtn>
         </div>

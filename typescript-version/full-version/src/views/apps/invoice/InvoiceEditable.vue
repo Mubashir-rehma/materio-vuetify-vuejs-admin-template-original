@@ -240,7 +240,7 @@ const removeProduct = (id: number) => {
 
       <VBtn
         size="small"
-        prepend-icon="mdi-plus"
+        prepend-icon="ri-add-line"
         @click="addItem"
       >
         Add Item

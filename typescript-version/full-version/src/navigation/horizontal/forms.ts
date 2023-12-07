@@ -1,11 +1,11 @@
 export default [
   {
     title: 'Forms',
-    icon: { icon: 'mdi-checkbox-multiple-outline' },
+    icon: { icon: 'ri-checkbox-multiple-line' },
     children: [
       {
         title: 'Form Elements',
-        icon: { icon: 'mdi-content-copy' },
+        icon: { icon: 'ri-file-copy-line' },
         children: [
           {
             title: 'Autocomplete',
@@ -68,12 +68,12 @@ export default [
       },
       {
         title: 'Form Layouts',
-        icon: { icon: 'mdi-checkbox-marked-circle-outline' },
+        icon: { icon: 'ri-checkbox-circle-line' },
         to: 'forms-form-layouts',
       },
       {
         title: 'Form Wizard',
-        icon: { icon: 'mdi-align-vertical-distribute' },
+        icon: { icon: 'ri-align-vertically' },
         children: [
           { title: 'Numbered', to: 'forms-form-wizard-numbered' },
           { title: 'Icons', to: 'forms-form-wizard-icons' },
@@ -81,7 +81,7 @@ export default [
       },
       {
         title: 'Form Validation',
-        icon: { icon: 'mdi-checkbox-marked-circle-outline' },
+        icon: { icon: 'ri-checkbox-circle-line' },
         to: 'forms-form-validation',
       },
     ],

@@ -4,15 +4,15 @@ import type { ThemeSwitcherTheme } from '@layouts/types'
 const themes: ThemeSwitcherTheme[] = [
   {
     name: 'system',
-    icon: 'mdi-laptop',
+    icon: 'ri-macbook-line',
   },
   {
     name: 'light',
-    icon: 'mdi-weather-sunny',
+    icon: 'ri-sun-line',
   },
   {
     name: 'dark',
-    icon: 'mdi-weather-night',
+    icon: 'ri-moon-clear-line',
   },
 ]
 </script>

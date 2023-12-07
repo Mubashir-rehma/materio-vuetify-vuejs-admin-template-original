@@ -205,7 +205,7 @@ const shipmentConfig = {
           </VBtn>
 
           <VBtn
-            icon="mdi-menu-down"
+            icon="ri-menu-line-down"
             color="primary"
           />
         </VBtnGroup>

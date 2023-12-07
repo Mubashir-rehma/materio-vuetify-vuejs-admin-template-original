@@ -35,7 +35,7 @@ const densities: any = [
         <VBtn
           v-for="size in sizes"
           :key="size"
-          icon="mdi-home"
+          icon="ri-home-line"
           :size="size"
         />
 
@@ -49,7 +49,7 @@ const densities: any = [
         <VBtn
           v-for="density in densities"
           :key="density"
-          icon="mdi-home"
+          icon="ri-home-line"
           :density="density"
         />
 
@@ -58,7 +58,7 @@ const densities: any = [
 
         <!-- Done -->
         <VBtn
-          icon="mdi-home"
+          icon="ri-home-line"
           density="compact"
         />
         <!--
@@ -69,14 +69,14 @@ const densities: any = [
           >
           <VIcon
           size="22"
-          icon="mdi-home"
+          icon="ri-home-line"
           />
           </VBtn>
         -->
 
         <!-- Done -->
         <VBtn
-          icon="mdi-home"
+          icon="ri-home-line"
           density="comfortable"
         />
 
@@ -88,7 +88,7 @@ const densities: any = [
         >
           <VIcon
             size="24"
-            icon="mdi-home"
+            icon="ri-home-line"
           />
         </VBtn>
       </VCardText>

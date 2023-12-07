@@ -36,7 +36,7 @@ const searchQuery = ref('')
             />
             <VBtn
               color="primary"
-              icon="mdi-magnify"
+              icon="ri-search-line"
               class="rounded"
             />
           </div>
@@ -140,7 +140,7 @@ const searchQuery = ref('')
                 color="primary"
               >
                 <VIcon
-                  icon="mdi-wallet-giftcard"
+                  icon="ri-gift-line"
                   size="36"
                 />
               </VAvatar>

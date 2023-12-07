@@ -12,7 +12,7 @@ const notifications = ref<number>()
     >
       <VIcon
         size="40"
-        icon="mdi-vuetify"
+        icon="ri-vuejs-line"
       />
     </VBadge>
 

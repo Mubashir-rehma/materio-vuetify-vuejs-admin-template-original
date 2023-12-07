@@ -127,7 +127,7 @@ const endDateTimePickerConfig = computed(() => {
         >
           <VIcon
             size="18"
-            icon="mdi-trash-can-outline"
+            icon="ri-delete-bin-line"
           />
         </IconBtn>
       </template>

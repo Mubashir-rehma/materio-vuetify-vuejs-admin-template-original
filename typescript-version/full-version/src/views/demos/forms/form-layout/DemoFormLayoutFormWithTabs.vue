@@ -152,7 +152,7 @@ const isCPasswordVisible = ref(false)
                   label="Password"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
               </VCol>
@@ -166,7 +166,7 @@ const isCPasswordVisible = ref(false)
                   label="Confirm Password"
                   placeholder="············"
                   :type="isCPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isCPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
                 />
               </VCol>

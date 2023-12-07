@@ -33,7 +33,7 @@ const props = defineProps<Props>()
               v-for="(item, index) in article.articles"
               :key="index"
               class="text-body-1"
-              append-icon="mdi-chevron-right"
+              append-icon="ri-arrow-right-s-line"
             >
               <RouterLink
                 :to="{

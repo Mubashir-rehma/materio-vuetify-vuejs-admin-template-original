@@ -30,6 +30,7 @@ const router = useRouter()
 const { y } = useWindowScroll()
 
 const navImg = useGenerateImageVariant(navImgLight, navImgDark)
+const { y } = useWindowScroll()
 
 const sidebar = ref(false)
 
@@ -114,7 +115,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             :class="isMenuOpen ? 'mb-6' : ''"
             @click="isMenuOpen = !isMenuOpen"
           >
-            Pages <VIcon :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down'" />
+            Pages <VIcon :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
           </div>
 
           <div
@@ -172,7 +173,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
     <!-- Navigation drawer close icon -->
     <VIcon
       id="navigation-drawer-close-btn"
-      icon="mdi-close"
+      icon="ri-close-line"
       size="20"
       @click="sidebar = !sidebar"
     />

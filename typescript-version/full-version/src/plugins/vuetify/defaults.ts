@@ -1,6 +1,7 @@
 export default {
   IconBtn: {
     icon: true,
+    size: 'small',
     color: 'default',
     variant: 'text',
     VIcon: {

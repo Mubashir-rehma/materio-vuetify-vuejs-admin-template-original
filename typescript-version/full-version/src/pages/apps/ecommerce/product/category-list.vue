@@ -102,15 +102,21 @@ const categoryData = [
 ]
 
 const headers = [
-  { title: 'Category', key: 'categoryTitle' },
-  { title: 'Total Products', key: 'totalProduct' },
-  { title: 'Total Earning', key: 'totalEarning' },
+  { title: 'Categories', key: 'categoryTitle' },
+  { title: 'Total Products', key: 'totalProduct', align: 'end' },
+  { title: 'Total Earning', key: 'totalEarning', align: 'end' },
   { title: 'Action', key: 'actions', sortable: false },
 ]
 
 const itemsPerPage = ref(10)
 const searchQuery = ref('')
 const isAddProductDrawerOpen = ref(false)
+const page = ref(1)
+
+// Update data table options
+const updateOptions = (options: any) => {
+  page.value = options.page
+}
 </script>
 
 <template>
@@ -122,7 +128,7 @@ const isAddProductDrawerOpen = ref(false)
             v-model="searchQuery"
             placeholder="Search"
             density="compact"
-            style="max-inline-size: 200px; min-inline-size: 200px;"
+            style="max-inline-size: 280px; min-inline-size: 200px;"
           />
 
           <div class="d-flex align-center flex-wrap gap-4">
@@ -146,25 +152,36 @@ const isAddProductDrawerOpen = ref(false)
       <VDataTable
         v-model:items-per-page="itemsPerPage"
         :headers="headers"
+        :page="page"
         :items="categoryData"
         item-value="categoryTitle"
         :search="searchQuery"
         show-select
         class="text-no-wrap"
+        @update:options="updateOptions"
       >
         <template #item.actions>
           <IconBtn>
-            <VIcon icon="ri-pencil-line" />
+            <VIcon icon="ri-edit-box-line" />
           </IconBtn>
+
           <MoreBtn
             :menu-list="[
-              { title: 'Download', value: 'download', prependIcon: 'ri-download-line' },
+              {
+                title: 'Download',
+                value: 'download',
+                prependIcon: 'ri-download-line',
+              },
               {
                 title: 'Edit',
                 value: 'edit',
                 prependIcon: 'ri-pencil-line',
               },
-              { title: 'Duplicate', value: 'duplicate', prependIcon: 'ri-stack-line' },
+              {
+                title: 'Duplicate',
+                value: 'duplicate',
+                prependIcon: 'ri-stack-line',
+              },
             ]"
             item-props
           />
@@ -185,10 +202,10 @@ const isAddProductDrawerOpen = ref(false)
               >
             </VAvatar>
             <div>
-              <div class="text-sm text-high-emphasis font-weight-medium">
+              <p class="text-high-emphasis font-weight-medium mb-0">
                 {{ item.categoryTitle }}
-              </div>
-              <div class="text-caption">
+              </p>
+              <div class="text-body-2">
                 {{ item.description }}
               </div>
             </div>
@@ -198,8 +215,52 @@ const isAddProductDrawerOpen = ref(false)
         <template #item.totalEarning="{ item }">
           {{ (item.totalEarning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
         </template>
+
         <template #item.totalProduct="{ item }">
           {{ (item.totalProduct).toLocaleString() }}
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, categoryData.length) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(categoryData.length / itemsPerPage)"
+                @click="page >= Math.ceil(categoryData.length / itemsPerPage) ? page = Math.ceil(categoryData.length / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTable>
     </VCard>

@@ -838,8 +838,6 @@
 
 .v-tabs{
   .v-tab.v-btn{
-    display: flex;
-    justify-content: center;
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
     padding-block: 0;
     padding-inline: 1.375rem;
@@ -1005,7 +1003,7 @@
 // 👉 Slider
 
 .v-slider{
-  .v-slider-track__background--opacity{
+  .v-slider-track__background--opacity {
     opacity: 0.16;
   }
 }
@@ -1018,7 +1016,7 @@
     inline-size: calc(var(--v-slider-thumb-size) - 10px);
   }
 
-  .v-slider-thumb__label{
+  .v-slider-thumb__label {
     background-color: rgb(var(--v-tooltip-background));
     color: rgb(var(--v-theme-surface));
     font-weight: 500;

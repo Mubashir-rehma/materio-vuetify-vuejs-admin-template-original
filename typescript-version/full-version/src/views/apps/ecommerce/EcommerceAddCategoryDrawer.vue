@@ -30,7 +30,7 @@ const editor = useEditor({
     StarterKit,
     Image,
     Placeholder.configure({
-      placeholder: 'Write something here...',
+      placeholder: 'Write a Comment...',
     }),
     Underline,
     Link.configure(
@@ -112,6 +112,7 @@ const resetForm = () => {
                 <VTextField
                   v-model="categoryTitle"
                   label="Title"
+                  density="compact"
                   :rules="[requiredValidator]"
                   placeholder="Fashion"
                 />
@@ -121,28 +122,25 @@ const resetForm = () => {
                 <VTextField
                   v-model="categorySlug"
                   label="Slug"
+                  density="compact"
                   :rules="[requiredValidator]"
                   placeholder="Trends fashion"
                 />
               </VCol>
 
               <VCol cols="12">
-                <VLabel>
-                  <span class="text-sm text-high-emphasis mb-1">Attachment</span>
-                </VLabel>
                 <VFileInput
                   v-model="categoryImg"
                   prepend-icon=""
                   density="compact"
                   :rules="[requiredValidator]"
-                  placeholder="No file chosen"
+                  label="No file chosen"
                   clearable
                 >
-                  <template #prepend-inner>
-                    <div class="text-no-wrap pe-2 cursor-pointer">
-                      Choose Image
-                    </div>
-                    <VDivider vertical />
+                  <template #append>
+                    <VBtn variant="outlined">
+                      Choose
+                    </VBtn>
                   </template>
                 </VFileInput>
               </VCol>
@@ -152,23 +150,21 @@ const resetForm = () => {
                   v-model="parentCategory"
                   :rules="[requiredValidator]"
                   label="Parent Category"
+                  density="compact"
                   placeholder="Select Parent Category"
                   :items="['HouseHold', 'Management', 'Electronics', 'Office', 'Accessories']"
                 />
               </VCol>
 
               <VCol cols="12">
-                <p class="mb-2">
-                  Description
-                </p>
-                <div class="border rounded py-2 px-4">
+                <div class="tiptap-editor-wrapper rounded py-2 px-4">
                   <EditorContent :editor="editor" />
                   <div
                     v-if="editor"
                     class="d-flex justify-end flex-wrap gap-x-2"
                   >
                     <VIcon
-                      icon="tabler-bold"
+                      icon="ri-bold"
                       :color="editor.isActive('bold') ? 'primary' : ''"
                       size="20"
                       @click="editor.chain().focus().toggleBold().run()"
@@ -176,40 +172,40 @@ const resetForm = () => {
 
                     <VIcon
                       :color="editor.isActive('underline') ? 'primary' : ''"
-                      icon="tabler-underline"
+                      icon="ri-underline"
                       size="20"
                       @click="editor.commands.toggleUnderline()"
                     />
 
                     <VIcon
                       :color="editor.isActive('italic') ? 'primary' : ''"
-                      icon="tabler-italic"
+                      icon="ri-italic"
                       size="20"
                       @click="editor.chain().focus().toggleItalic().run()"
                     />
 
                     <VIcon
                       :color="editor.isActive('bulletList') ? 'primary' : ''"
-                      icon="tabler-list"
+                      icon="ri-list-check"
                       size="20"
                       @click="editor.chain().focus().toggleBulletList().run()"
                     />
 
                     <VIcon
                       :color="editor.isActive('orderedList') ? 'primary' : ''"
-                      icon="tabler-list-numbers"
+                      icon="ri-list-ordered-2"
                       size="20"
                       @click="editor.chain().focus().toggleOrderedList().run()"
                     />
 
                     <VIcon
-                      icon="tabler-link"
+                      icon="ri-links-line"
                       size="20"
                       @click="setLink"
                     />
 
                     <VIcon
-                      icon="tabler-photo"
+                      icon="ri-image-line"
                       size="20"
                       @click="addImage"
                     />
@@ -223,6 +219,7 @@ const resetForm = () => {
                   :rules="[requiredValidator]"
                   placeholder="Select Category Status"
                   label="Parent Status"
+                  density="compact"
                   :items="['Published', 'Inactive', 'Scheduled']"
                 />
               </VCol>
@@ -254,7 +251,7 @@ const resetForm = () => {
 </template>
 
 <style lang="scss">
-.category-navigation-drawer{
+.category-navigation-drawer {
   .ProseMirror {
     padding: 0.5rem;
     min-block-size: 15vh;
@@ -280,6 +277,14 @@ const resetForm = () => {
 
   .ProseMirror-focused{
     outline: none !important;
+  }
+}
+
+.tiptap-editor-wrapper {
+  border: 1px solid rgba(var(--v-border-color), 0.22);
+
+  &:hover {
+    border-color: rgba(var(--v-border-color), 0.6);
   }
 }
 </style>

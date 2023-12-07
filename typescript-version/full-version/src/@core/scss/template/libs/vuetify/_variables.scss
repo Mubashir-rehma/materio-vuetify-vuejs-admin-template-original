@@ -234,6 +234,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $field-outline-opacity: 0.22 !default,
   $field-control-affixed-padding: 16px !default,
   $field-control-affixed-inner-padding: 10px !default,
+  $field-font-size: 15px !default,
 
   // 👉 Input
   $input-density: ('default': 0, 'comfortable': -2.5, 'compact': -5) !default,
@@ -293,8 +294,9 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Table
   $table-row-height: 50px !default,
-  $table-header-font-size: 13px !default,
   $table-header-font-weight: 500 !default,
+  $table-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !default,
+  $table-font-size: 15px !default,
 
   // 👉 Messages
   $messages-font-size: 13px !default,

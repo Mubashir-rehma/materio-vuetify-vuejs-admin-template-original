@@ -2,10 +2,10 @@
 import type { ECommerceProduct } from '@db/apps/ecommerce/types'
 
 const widgetData = ref([
-  { title: 'In-Store Sales', value: '$5,345.43', icon: 'ri-home-line', desc: '5k orders', change: 5.7 },
-  { title: 'Website Sales', value: '$674,347.12', icon: 'ri-macbook-line', desc: '21k orders', change: 12.4 },
-  { title: 'Discount', value: '$14,235.12', icon: 'ri-gift-line', desc: '6k orders' },
-  { title: 'Affiliate', value: '$8,345.23', icon: 'ri-money-dollar-circle-line', desc: '150 orders', change: -3.5 },
+  { title: 'In-Store Sales', value: '$5,345', icon: 'ri-home-6-line', desc: '5k orders', change: 5.7 },
+  { title: 'Website Sales', value: '$74,347', icon: 'ri-computer-line', desc: '21k orders', change: 12.4 },
+  { title: 'Discount', value: '$14,235', icon: 'ri-gift-line', desc: '6k orders' },
+  { title: 'Affiliate', value: '$8,345', icon: 'ri-money-dollar-circle-line', desc: '150 orders', change: -3.5 },
 ])
 
 const headers = [
@@ -59,13 +59,13 @@ const updateOptions = (options: any) => {
 
 const resolveCategory = (category: string) => {
   if (category === 'Accessories')
-    return { color: 'error', icon: 'ri-timer-flash-line' }
+    return { color: 'error', icon: 'ri-headphone-line' }
   if (category === 'Home Decor')
-    return { color: 'info', icon: 'ri-home-line' }
+    return { color: 'info', icon: 'ri-home-6-line' }
   if (category === 'Electronics')
-    return { color: 'primary', icon: 'ri-mac-line' }
+    return { color: 'primary', icon: 'ri-computer-line' }
   if (category === 'Shoes')
-    return { color: 'success', icon: 'ri-play-line' }
+    return { color: 'success', icon: 'ri-footprint-line' }
   if (category === 'Office')
     return { color: 'warning', icon: 'ri-briefcase-line' }
   if (category === 'Games')
@@ -112,11 +112,11 @@ const deleteProduct = async (id: number) => {
   <div>
     <!-- 👉 widgets -->
     <VCard class="mb-6">
-      <VCardText>
+      <VCardText class="px-2">
         <VRow>
           <template
-            v-for="(data, id) in widgetData"
-            :key="id"
+            v-for="(data, index) in widgetData"
+            :key="index"
           >
             <VCol
               cols="12"
@@ -126,29 +126,25 @@ const deleteProduct = async (id: number) => {
             >
               <div
                 class="d-flex justify-space-between"
-                :class="$vuetify.display.xs
-                  ? 'product-widget'
-                  : $vuetify.display.sm
-                    ? id < 2 ? 'product-widget' : ''
-                    : ''"
+                :class="$vuetify.display.xs ? 'product-widget' : $vuetify.display.sm ? index < 2 ? 'product-widget' : '' : ''"
               >
                 <div class="d-flex flex-column gap-y-1">
-                  <h6 class="text-h6 text-capitalize">
+                  <p class="text-capitalize mb-0">
                     {{ data.title }}
-                  </h6>
+                  </p>
 
-                  <h6 class="text-h6 my-1">
+                  <h6 class="text-h4">
                     {{ data.value }}
                   </h6>
 
-                  <div class="d-flex">
-                    <div class="me-2 text-disabled text-no-wrap">
+                  <div class="d-flex align-center">
+                    <div class="text-no-wrap me-2">
                       {{ data.desc }}
                     </div>
 
                     <VChip
                       v-if="data.change"
-                      label
+                      size="small"
                       :color="data.change > 0 ? 'success' : 'error'"
                     >
                       {{ prefixWithPlus(data.change) }}%
@@ -159,19 +155,18 @@ const deleteProduct = async (id: number) => {
                 <VAvatar
                   variant="tonal"
                   rounded
-                  size="38"
+                  size="44"
                 >
                   <VIcon
                     :icon="data.icon"
                     size="28"
+                    color="high-emphasis"
                   />
                 </VAvatar>
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
-                : $vuetify.display.smAndUp ? id % 2 === 0
-                  : false"
+              v-if="$vuetify.display.mdAndUp ? index !== widgetData.length - 1 : $vuetify.display.smAndUp ? index % 2 === 0 : false"
               vertical
               inset
               length="100"
@@ -182,10 +177,7 @@ const deleteProduct = async (id: number) => {
     </VCard>
 
     <!-- 👉 products -->
-    <VCard
-      title="Filters"
-      class="mb-6"
-    >
+    <VCard title="Filters">
       <VCardText>
         <VRow>
           <!-- 👉 Select Status -->
@@ -234,9 +226,10 @@ const deleteProduct = async (id: number) => {
           </VCol>
         </VRow>
       </VCardText>
-      <VDivider class="my-4" />
 
-      <div class="d-flex flex-wrap gap-4 mx-5">
+      <VDivider />
+
+      <VCardText class="d-flex flex-wrap gap-4">
         <div class="d-flex align-center">
           <!-- 👉 Search  -->
           <VTextField
@@ -249,6 +242,7 @@ const deleteProduct = async (id: number) => {
         </div>
 
         <VSpacer />
+
         <div class="d-flex gap-x-4">
           <!-- 👉 Export button -->
           <VBtn
@@ -267,7 +261,7 @@ const deleteProduct = async (id: number) => {
             Add Product
           </VBtn>
         </div>
-      </div>
+      </VCardText>
 
       <!-- 👉 Datatable  -->
       <VDataTableServer
@@ -277,12 +271,12 @@ const deleteProduct = async (id: number) => {
         :items="products"
         item-value="product"
         :items-length="totalProduct"
-        class="text-no-wrap"
+        class="text-no-wrap rounded-0"
         @update:options="updateOptions"
       >
         <!-- product  -->
         <template #item.product="{ item }">
-          <div class="d-flex align-center gap-x-2">
+          <div class="d-flex align-center gap-x-4">
             <VAvatar
               v-if="item.image"
               size="38"
@@ -291,8 +285,8 @@ const deleteProduct = async (id: number) => {
               :image="item.image"
             />
             <div class="d-flex flex-column">
-              <span class="text-high-emphasis font-weight-medium">{{ item.productName }}</span>
-              <span class="text-xs">{{ item.productBrand }}</span>
+              <span class="text-base text-high-emphasis font-weight-medium">{{ item.productName }}</span>
+              <span class="text-sm">{{ item.productBrand }}</span>
             </div>
           </div>
         </template>
@@ -303,14 +297,14 @@ const deleteProduct = async (id: number) => {
             size="30"
             variant="tonal"
             :color="resolveCategory(item.category)?.color"
-            class="me-2"
+            class="me-4"
           >
             <VIcon
               :icon="resolveCategory(item.category)?.icon"
               size="18"
             />
           </VAvatar>
-          <span class="font-weight-medium text-high-emphasis">{{ item.category }}</span>
+          <span class="text-base text-high-emphasis">{{ item.category }}</span>
         </template>
 
         <!-- stock -->
@@ -322,18 +316,19 @@ const deleteProduct = async (id: number) => {
         <template #item.status="{ item }">
           <VChip
             v-bind="resolveStatus(item.status)"
-            density="comfortable"
+            size="small"
           />
         </template>
 
         <!-- Actions -->
         <template #item.actions="{ item }">
           <IconBtn>
-            <VIcon icon="ri-pencil-line" />
+            <VIcon icon="ri-edit-box-line" />
           </IconBtn>
 
           <IconBtn>
-            <VIcon icon="ri-more-2-line" />
+            <VIcon icon="ri-more-2-fill" />
+
             <VMenu activator="parent">
               <VList>
                 <VListItem
@@ -360,6 +355,49 @@ const deleteProduct = async (id: number) => {
               </VList>
             </VMenu>
           </IconBtn>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, totalProduct) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(totalProduct / itemsPerPage)"
+                @click="page >= Math.ceil(totalProduct / itemsPerPage) ? page = Math.ceil(totalProduct / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
     </VCard>

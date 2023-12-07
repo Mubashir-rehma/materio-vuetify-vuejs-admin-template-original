@@ -21,21 +21,34 @@ const featuresData = [
   <VContainer id="features">
     <div class="feature-cards">
       <div class="headers d-flex justify-center flex-column align-center mb-6">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-3">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="25"
+            height="24"
             width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             USEFUL FEATURES
-          </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          <span class="font-weight-bold">Everything you need</span>  to start your next project
-        </h5>
-        <p class="font-weight-medium text-medium-emphasis">
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            Everything you need
+          </span> <span class="text-h5 d-inline-block">to start your next project</span>
+        </div>
+
+        <p
+          class="text-body-1 font-weight-medium text-center"
+          style="letter-spacing: 0.15px !important;"
+        >
           Not just a set of tools, the package includes ready-to-deploy conceptual application.
         </p>
       </div>
@@ -44,7 +57,8 @@ const featuresData = [
         <VCol
           v-for="(data, index) in featuresData"
           :key="index"
-          cols="6"
+          cols="12"
+          sm="6"
           md="4"
         >
           <div class="feature d-flex flex-column gap-y-2 align-center justify-center mt-2">
@@ -54,16 +68,16 @@ const featuresData = [
               color="primary"
               class="mb-2"
             >
-              <VImg
+              <img
                 :src="data.img"
                 height="42"
                 width="42"
-              />
+              >
             </VAvatar>
 
-            <h6 class="text-h6">
+            <h5 class="text-h5">
               {{ data.title }}
-            </h6>
+            </h5>
             <p
               class="text-center text-medium-emphasis"
               style="max-inline-size: 360px;"

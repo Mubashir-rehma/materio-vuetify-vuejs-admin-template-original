@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 import listArrowIcon from '@images/svg/list-arrow-icon.svg?url'
-import vectorIcon from '@images/svg/vector.svg?url'
+import VectorIcon from '@images/svg/vector.svg'
 
 const pricingPlans = [
   {
@@ -60,25 +60,35 @@ const pricingPlans = [
     <div class="pricing-plans d-flex flex-column gap-12">
       <!-- 👉 Headers  -->
       <div class="headers d-flex justify-center flex-column align-center">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="25"
+            height="24"
             width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             PRICING PLANS
-          </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          <span class="font-weight-bold">Tailored Pricing Plans</span> designed for you
-        </h5>
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            Tailored pricing plans
+          </span> <span class="text-h5 d-inline-block">designed for you</span>
+        </div>
+
         <p
-          class="font-weight-medium text-medium-emphasis text-center"
-          style="max-inline-size: 600px;"
+          class="text-body-1 font-weight-medium text-center"
+          style="letter-spacing: 0.15px !important;"
         >
-          All plans include 40+ advanced tools and features to boost your product.
+          All plans include 40+ advanced tools and features to boost your product. <br>
           Choose the best plan to fit your needs.
         </p>
       </div>
@@ -97,6 +107,9 @@ const pricingPlans = [
         <VCol
           v-for="(plan, index) in pricingPlans"
           :key="index"
+          cols="12"
+          md="6"
+          lg="4"
         >
           <VCard
             flat
@@ -106,38 +119,33 @@ const pricingPlans = [
             <VCardText class="pa-8">
               <div class="d-flex flex-column gap-y-8">
                 <div class="d-flex flex-column  gap-y-3">
-                  <h5 class="text-h5 text-center">
+                  <h4 class="text-h4 text-center">
                     {{ plan.title }}
-                  </h5>
+                  </h4>
 
                   <div class="d-flex align-center gap-x-3">
                     <div class="d-flex">
-                      <span
-                        class="text-h6"
+                      <h5
+                        class="text-h5"
                         style="margin-block-start: 0.35rem;"
                       >
                         $
-                      </span>
-                      <span class="text-h3 font-weight-bold">
+                      </h5>
+                      <div class="plan-price-text">
                         {{ plan.price }}
-                      </span>
+                      </div>
                     </div>
                     <div>
-                      <div class="text-body-1 font-weight-medium">
+                      <div class="text-body-1 font-weight-medium text-high-emphasis">
                         Per month
                       </div>
-                      <div class="text-caption text-medium-emphasis text-no-wrap">
+                      <div class="text-body-2">
                         10% off for yearly subscription
                       </div>
                     </div>
                   </div>
 
-                  <img
-                    :src="vectorIcon"
-                    width="68"
-                    height="7"
-                    class="ms-2"
-                  >
+                  <VectorIcon />
                 </div>
 
                 <div class="d-flex flex-column">
@@ -145,20 +153,17 @@ const pricingPlans = [
                     <VListItem
                       v-for="(item, i) in plan.features"
                       :key="i"
-                      class="text-no-wrap"
                     >
                       <template #prepend>
-                        <VImg
+                        <img
                           :src="listArrowIcon"
-                          :height="16"
-                          :width="16"
                           color="primary"
                           class="me-3"
-                        />
+                        >
                       </template>
-                      <div class="text-body-1 font-weight-medium text-high-emphasis">
+                      <h5 class="text-h5">
                         {{ item }}
-                      </div>
+                      </h5>
                     </VListItem>
                   </VList>
 
@@ -166,13 +171,14 @@ const pricingPlans = [
 
                   <div class="d-flex align-center justify-space-between flex-wrap gap-2">
                     <div>
-                      <div class="text-body-2 font-weight-medium mb-1">
+                      <div class="text-body-1 font-weight-medium text-high-emphasis mb-1">
                         {{ plan.supportType }} Support
                       </div>
-                      <div class="text-caption text-medium-emphasis">
+                      <div class="text-body-2">
                         {{ plan.supportMedium }}
                       </div>
                     </div>
+
                     <VChip
                       variant="tonal"
                       color="primary"
@@ -207,5 +213,14 @@ const pricingPlans = [
 
 .pricing-plans {
   margin-block: 5.25rem;
+}
+</style>
+
+<style lang="scss" scoped>
+.plan-price-text{
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px
 }
 </style>

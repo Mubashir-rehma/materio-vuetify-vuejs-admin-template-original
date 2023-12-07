@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useWindowScroll } from '@vueuse/core'
 import type { RouteLocationRaw } from 'vue-router/auto'
 import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
@@ -26,6 +27,7 @@ interface MenuItem {
 
 const route = useRoute()
 const router = useRouter()
+const { y } = useWindowScroll()
 
 const navImg = useGenerateImageVariant(navImgLight, navImgDark)
 
@@ -40,7 +42,7 @@ const isMenuOpen = ref(false)
 const menuItems: MenuItem[] = [
   {
     listTitle: 'Page',
-    listIcon: 'mdi-view-grid-outline',
+    listIcon: 'ri-layout-grid-line',
     navItems: [
       { name: 'Pricing', to: { name: 'front-pages-pricing' } },
       { name: 'Payment', to: { name: 'front-pages-payment' } },
@@ -50,7 +52,7 @@ const menuItems: MenuItem[] = [
   },
   {
     listTitle: 'Auth Demo',
-    listIcon: 'mdi-lock-open-outline',
+    listIcon: 'ri-lock-unlock-line',
     navItems: [
       { name: 'Login (Basic)', to: { name: 'pages-authentication-login-v1' } },
       { name: 'Login (Cover)', to: { name: 'pages-authentication-login-v2' } },
@@ -65,7 +67,7 @@ const menuItems: MenuItem[] = [
   },
   {
     listTitle: 'Other',
-    listIcon: 'mdi-image-outline',
+    listIcon: 'ri-image-line',
     navItems: [
       { name: 'Under Maintenance', to: { name: 'pages-misc-under-maintenance' } },
       { name: 'Coming Soon', to: { name: 'pages-misc-coming-soon' } },
@@ -146,7 +148,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                   :class="isCurrentRoute(listItem.to) ? 'active-link' : ''"
                 >
                   <VIcon
-                    icon="mdi-circle-outline"
+                    icon="ri-circle-line"
                     :size="10"
                     class="me-2"
                   />
@@ -177,9 +179,10 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   </VNavigationDrawer>
 
   <!-- 👉 Navbar for desktop devices  -->
-  <div class="front-page-navbar elevation-3 rounded-lg">
+  <div class="front-page-navbar">
     <VAppBar
       :color="$vuetify.theme.current.dark ? 'rgba(var(--v-theme-background))' : '#fff'"
+      :elevation="y > 20 ? 4 : 0"
       class="rounded-b-lg"
     >
       <!-- toggle icon for mobile device -->
@@ -200,12 +203,13 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           >
             <div class="d-flex gap-x-3 align-center">
               <VNodeRenderer :nodes="themeConfig.app.logo" />
-              <h6
-                class="text-h6 text-capitalize text-truncate"
+
+              <div
+                class="nav-title text-uppercase text-truncate"
                 :class="[$vuetify.display.lgAndUp ? 'd-block' : 'd-none', $vuetify.display.mdAndUp ? 'd-none' : 'd-block']"
               >
                 {{ themeConfig.app.title }}
-              </h6>
+              </div>
             </div>
           </RouterLink>
         </VAppBarTitle>
@@ -213,13 +217,13 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
         <!-- landing page sections -->
         <div
           :class="$vuetify.display.mdAndUp ? 'd-flex' : 'd-none'"
-          class="text-base align-center"
+          class="text-base align-center gap-x-2"
         >
           <RouterLink
             v-for="(item, index) in ['Home', 'Features', 'Team', 'FAQ', 'Contact us']"
             :key="index"
             :to="{ name: 'front-pages-landing-page', hash: `#${item.toLowerCase().replace(' ', '-')}` }"
-            class="nav-link font-weight-medium py-2 px-2 px-lg-4"
+            class="nav-link font-weight-medium"
             :class="[props.activeId?.toLocaleLowerCase().replace('-', ' ') === item.toLocaleLowerCase() ? 'active-link' : '']"
           >
             {{ item }}
@@ -227,10 +231,16 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
           <!-- Pages Menu -->
           <span
-            class="text-high-emphasis font-weight-medium cursor-pointer px-2 px-lg-4 py-2"
+            class="font-weight-medium cursor-pointer nav-link"
             :class="isPageActive ? 'active-link' : 'text-high-emphasis'"
           >
-            Pages <VIcon icon="mdi-chevron-down" />
+            Pages
+            <VIcon
+              icon="ri-arrow-down-s-line"
+              size="20"
+              class="ms-2"
+            />
+
             <VMenu
               open-on-hover
               activator="parent"
@@ -274,7 +284,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                           >
                             <div class="d-flex align-center">
                               <VIcon
-                                icon="tabler-circle"
+                                icon="ri-circle-line"
                                 color="primary"
                                 :size="10"
                                 class="me-2"
@@ -302,7 +312,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           <RouterLink
             to="/"
             target="_blank"
-            class="nav-link font-weight-medium px-2 px-lg-4 py-2"
+            class="nav-link font-weight-medium"
           >
             Admin
           </RouterLink>
@@ -311,12 +321,12 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
       <VSpacer />
 
-      <div class="d-flex gap-x-4">
+      <div class="d-flex gap-x-6 align-center">
         <NavbarThemeSwitcher />
 
         <VBtn
           v-if="$vuetify.display.lgAndUp"
-          prepend-icon="mdi-cart-plus"
+          prepend-icon="ri-shopping-cart-line"
           variant="elevated"
           color="primary"
           href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/"
@@ -334,7 +344,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
           target="_blank"
           rel="noopener noreferrer"
         >
-          <VIcon icon="mdi-cart-plus" />
+          <VIcon icon="ri-shopping-cart-line" />
         </VBtn>
       </div>
     </VAppBar>
@@ -347,7 +357,18 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   gap: 3rem;
 }
 
+.nav-title{
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  line-height: 1.5rem;
+}
+
 .nav-link{
+  letter-spacing: 0.15px;
+  padding-inline: 0.625rem;
+
   &:not(:hover){
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))
   }
@@ -421,14 +442,13 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
 .front-page-navbar {
   .v-toolbar__content {
-    padding-inline: 1.5rem !important;
+    padding-inline: 2rem !important;
   }
 
   .v-toolbar {
     inset-inline: 0 !important;
     margin-inline: auto !important;
   }
-
 }
 
 #navigation-drawer-close-btn {
@@ -436,5 +456,21 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   cursor: pointer;
   inset-block-start: 0.5rem;
   inset-inline-end: 1rem;
+}
+
+@media (max-width: 600px) {
+  .front-page-navbar {
+    .v-toolbar__content {
+      padding-inline: 0.75rem !important;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .front-page-navbar {
+    .v-toolbar__content {
+      padding-inline: 1rem !important;
+    }
+  }
 }
 </style>

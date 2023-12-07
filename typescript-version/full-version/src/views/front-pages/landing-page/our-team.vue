@@ -17,21 +17,34 @@ const teamData = ref([
   <VContainer id="team">
     <div class="our-team">
       <div class="headers d-flex justify-center flex-column align-center">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="25"
+            height="24"
             width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             OUR GREAT TEAM
-          </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          <span class="font-weight-bold"> Supported </span> by Real People
-        </h5>
-        <p class="font-weight-medium text-medium-emphasis">
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            Supported
+          </span> <span class="text-h5 d-inline-block">by Real People</span>
+        </div>
+
+        <p
+          class="text-body-1 font-weight-medium text-center"
+          style="letter-spacing: 0.15px !important;"
+        >
           Who is behind these great-looking interfaces?
         </p>
       </div>
@@ -47,7 +60,7 @@ const teamData = ref([
           <VCard
             flat
             variant="outlined"
-            min-width="262"
+            min-width="267"
             class="position-relative overflow-visible mt-16"
             :style="data.isHover ? { border: `1px solid ${data.borderColor}` } : {}"
             @mouseenter="data.isHover = true"
@@ -60,30 +73,31 @@ const teamData = ref([
             />
             <div :style="{ maxHeight: '185px', minHeight: '185px', backgroundColor: data.backgroundColor }" />
             <VCardText class="text-center">
-              <h6 class="text-h6">
-                {{ data.name }}
-              </h6>
-              <span class="text-body-2 text-medium-emphasis">{{ data.position }}</span>
-              <div class="d-flex gap-x-2 align-center justify-center mt-3">
-                <VBtn
+              <div class="mb-3">
+                <h5 class="text-h5">
+                  {{ data.name }}
+                </h5>
+                <div class="text-body-1 text-medium-emphasis">
+                  {{ data.position }}
+                </div>
+              </div>
+
+              <div class="d-flex gap-x-2 align-center justify-center">
+                <template
                   v-for="{ icon, color } in [
-                    { icon: 'ri-facebook-circle-line', color: 'rgba(59, 89, 152, 1)' },
-                    { icon: 'ri-twitter-line', color: 'rgba(0, 172, 238, 1)' },
-                    { icon: 'ri-linkedin-box-line', color: 'rgba(0, 119, 181, 1)' },
+                    { icon: 'ri-facebook-circle-line', color: 'rgba(59, 89, 152, 1)', link: 'https://www.facebook.com/' },
+                    { icon: 'ri-twitter-line', color: 'rgba(0, 172, 238, 1)', link: 'https://twitter.com/' },
+                    { icon: 'ri-linkedin-box-line', color: 'rgba(0, 119, 181, 1)', link: 'https://linkedin.com' },
                   ]"
-                  :key="icon"
-                  icon
-                  color="none"
-                  variant="text"
-                  size="22"
-                  :ripple="false"
+                  :key="color"
                 >
                   <VIcon
                     :icon="icon"
                     size="22"
                     :color="data.isHover ? color : ''"
+                    class="cursor-pointer"
                   />
-                </VBtn>
+                </template>
               </div>
             </VCardText>
           </VCard>

@@ -30,11 +30,10 @@ console.log('window.innerHeight :>> ', window.innerHeight)
 
 const translateMouse = computed(() => (speed: number) => {
   if (typeof window !== 'undefined') {
-    console.log(x.value * speed, y.value * speed)
+    const positionX = computed (() => (window.innerWidth - (x.value * speed)) / 100)
+    const positionY = computed (() => Math.max((window.innerHeight - (y.value * speed)) / 100, -40))
 
-    // const positionY = computed(() => (window.innerHeight - (y.value * speed)))
-
-    return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(window.innerHeight - (y.value * speed)) / 100}px` }
+    return { transform: `translate(${positionX.value}px,${positionY.value}px` }
   }
 })
 </script>
@@ -51,15 +50,15 @@ const translateMouse = computed(() => (speed: number) => {
     >
       <VContainer>
         <div class="hero-text-box text-center px-6">
-          <h5 class="text-primary text-h4 font-weight-bold text-wrap mb-4">
-            <p class="mb-0">
+          <div class="mb-4">
+            <div class="landing-page-title">
               All in one sass application
-            </p>
-            <p class="mb-0">
+            </div>
+            <div class="landing-page-title">
               for your business
-            </p>
-          </h5>
-          <div class="text-body-1 pb-8 font-weight-medium">
+            </div>
+          </div>
+          <div class="text-body-1 font-weight-medium text-high-emphasis pb-8">
             <p class="mb-0">
               No coding required to make customization
             </p>
@@ -71,6 +70,7 @@ const translateMouse = computed(() => (speed: number) => {
             Get Early Access
           </VBtn>
         </div>
+
         <div class="position-relative">
           <div class="hero-dashboard-img text-center">
             <RouterLink
@@ -79,8 +79,8 @@ const translateMouse = computed(() => (speed: number) => {
             >
               <img
                 :src="heroDashboardImg"
-                class="mx-auto cursor-pointer w-75"
-                :style="translateMouse(5)"
+                class="mx-auto cursor-pointer"
+                :style="translateMouse(3)"
               >
             </RouterLink>
           </div>
@@ -90,9 +90,9 @@ const translateMouse = computed(() => (speed: number) => {
               target="_blank"
             >
               <img
-                class="cursor-pointer w-100"
+                class="cursor-pointer"
                 :src="heroElementsImg"
-                :style="translateMouse(2.5)"
+                :style="translateMouse(5)"
                 target="_blank"
               >
             </RouterLink>
@@ -116,12 +116,22 @@ section {
   padding-block-start: 9rem;
 }
 
+.hero-dashboard-img {
+  img {
+    inline-size: 85%;
+  }
+}
+
 .hero-elements-img {
   position: absolute;
   inline-size: 100%;
-  inset-block-start:50%;
+  inset-block-start: 50%;
   inset-inline-start: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+
+  img {
+    inline-size: 100%;
+  }
 }
 
 .container {
@@ -131,5 +141,12 @@ section {
 
 .feature-cards {
   margin-block-start: 6.25rem;
+}
+
+.landing-page-title{
+  color: rgb(var(--v-theme-primary));
+  font-size: 2.375rem;
+  font-weight: 800;
+  line-height: 2.75rem
 }
 </style>

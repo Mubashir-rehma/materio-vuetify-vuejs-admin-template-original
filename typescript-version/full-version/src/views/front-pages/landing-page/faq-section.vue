@@ -28,22 +28,35 @@ const faqData = [
   <VContainer id="faq">
     <!-- 👉 Header  -->
     <div class="faq-section">
-      <div class="headers d-flex justify-center flex-column align-center my-16">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+      <div class="headers d-flex justify-center flex-column align-center my-12">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="25"
+            height="24"
             width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             FAQ
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span class="text-h5 d-inline-block">Frequently Asked</span> <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            questions
           </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          Frequently Asked <span class="font-weight-bold">questions</span>
-        </h5>
-        <p class="text-body-1 text-medium-emphasis font-weight-medium">
+        </div>
+
+        <p
+          class="text-body-1 font-weight-medium text-center mb-0"
+          style="letter-spacing: 0.15px !important;"
+        >
           Browse through these FAQs to find answers to commonly asked questions.
         </p>
       </div>
@@ -83,6 +96,6 @@ const faqData = [
 
 <style lang="scss" scoped>
 .faq-section {
-  margin-block: 5.25rem;
+  margin-block: 5.25rem 4.25rem;
 }
 </style>

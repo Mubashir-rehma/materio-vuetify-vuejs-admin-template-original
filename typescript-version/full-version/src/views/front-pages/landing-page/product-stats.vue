@@ -31,10 +31,12 @@ const statData = ref([
                     size="42"
                   />
                 </VAvatar>
-                <h4 class="text-h4 font-weight-bold">
+                <div class="product-stat-text">
                   {{ kFormatter(product.value) }}+
-                </h4>
-                <span class="text-body-1 text-medium-emphasis font-weight-medium">{{ product.title }}</span>
+                </div>
+                <div class="text-body-1 font-weight-medium">
+                  {{ product.title }}
+                </div>
               </VCardText>
             </VCard>
           </VCol>
@@ -43,3 +45,13 @@ const statData = ref([
     </VContainer>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.product-stat-text{
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  line-height: 42px;
+}
+</style>

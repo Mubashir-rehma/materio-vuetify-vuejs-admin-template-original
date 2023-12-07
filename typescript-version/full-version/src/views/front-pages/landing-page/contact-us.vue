@@ -11,22 +11,32 @@ const message = ref('')
   <VContainer id="contact-us">
     <!-- 👉 Headers  -->
     <div class="contact-us-section">
-      <div class="headers d-flex justify-center flex-column align-center py-12">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+      <div class="headers d-flex justify-center flex-column align-center pb-15">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="25"
+            height="24"
             width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             CONTACT US
-          </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          <span class="font-weight-bold">Let's Work</span> together
-        </h5>
-        <p class="text-medium-emphasis font-weight-medium">
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            Let's work
+          </span> <span class="text-h5 d-inline-block">together</span>
+        </div>
+
+        <p class="text-body-1 font-weight-medium text-center mb-0">
           Any question or remark? just write us a message
         </p>
       </div>
@@ -39,24 +49,24 @@ const message = ref('')
             <VCard
               flat
               elevation="0"
-              color="#9055FD"
-              class="text-white"
+              color="primary"
+              theme="dark"
             >
               <VCardText class="pa-8">
-                <div class="text-base mb-1">
+                <h6 class="text-h6 mb-1">
                   Let's contact with us
-                </div>
+                </h6>
 
-                <h5 class="text-h5 text-white">
+                <h4 class="text-h4">
                   Share your ideas or requirement with our experts.
-                </h5>
+                </h4>
 
                 <VImg
                   :src="ConnectImg"
-                  height="160"
+                  class="my-5"
                 />
 
-                <div class="text-sm">
+                <div class="text-body-1">
                   Looking for more customization, more features, and more anything? Don't worry, We've provide you with an entire team of experienced professionals.
                 </div>
               </VCardText>

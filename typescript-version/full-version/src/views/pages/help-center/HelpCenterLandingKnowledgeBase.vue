@@ -17,23 +17,30 @@ const props = defineProps<Props>()
       sm="6"
       lg="4"
     >
-      <VCard :title="article.title">
-        <template #prepend>
-          <VAvatar
-            :icon="article.icon"
-            rounded
-            color="primary"
-            variant="tonal"
-          />
-        </template>
+      <VCard>
+        <VCardItem class="pb-6">
+          <div class="d-flex align-center">
+            <VAvatar
+              rounded
+              color="primary"
+              variant="tonal"
+              class="me-3"
+              size="32"
+            >
+              <VIcon
+                :icon="article.icon"
+                size="20"
+              />
+            </VAvatar>
+            <VCardTitle>{{ article.title }}</VCardTitle>
+          </div>
+        </VCardItem>
 
         <VCardText>
           <VList class="card-list">
             <VListItem
               v-for="(item, index) in article.articles"
               :key="index"
-              class="text-body-1"
-              append-icon="ri-arrow-right-s-line"
             >
               <RouterLink
                 :to="{
@@ -46,10 +53,18 @@ const props = defineProps<Props>()
               >
                 {{ item.title }}
               </RouterLink>
+
+              <template #append>
+                <VIcon
+                  icon="ri-arrow-right-s-line"
+                  size="20"
+                  class="text-disabled"
+                />
+              </template>
             </VListItem>
           </VList>
 
-          <div class="mt-4">
+          <div class="text-base font-weight-medium mt-4 d-flex align-center gap-x-3">
             <RouterLink
               :to="{
                 name: 'front-pages-help-center-article-title',
@@ -57,9 +72,17 @@ const props = defineProps<Props>()
                   title: 'how-to-add-product-in-cart',
                 },
               }"
-              class="text-base font-weight-medium"
             >
-              See All Articles
+              <div class="d-flex align-center gap-x-3">
+                <div>
+                  See all {{ article.articles.length }} Articles
+                </div>
+                <VIcon
+                  icon="ri-arrow-right-line"
+                  size="18"
+                  color="primary"
+                />
+              </div>
             </RouterLink>
           </div>
         </VCardText>

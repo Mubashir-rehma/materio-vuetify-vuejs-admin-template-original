@@ -38,31 +38,31 @@ const apiData = faqData.value
       />
 
       <!-- 👉 Popular Articles -->
-      <div class="py-16 bg-surface">
+      <div class="bg-surface help-center-section">
         <VContainer>
-          <h5 class="text-h5 text-center mb-6">
+          <h4 class="text-h4 text-center mb-6">
             Popular Articles
-          </h5>
+          </h4>
           <HelpCenterLandingArticlesOverview :articles="apiData.popularArticles" />
         </VContainer>
       </div>
 
       <!-- 👉 Knowledge Base -->
-      <div class="bg-var-theme-background py-12">
+      <div class="help-center-section">
         <VContainer>
-          <h5 class="text-h5 text-center my-6">
+          <h4 class="text-h4 text-center mb-6">
             Knowledge Base
-          </h5>
+          </h4>
           <HelpCenterLandingKnowledgeBase :categories="apiData.allArticles" />
         </VContainer>
       </div>
 
       <!-- 👉 Keep Learning -->
-      <div class="py-16 bg-surface">
+      <div class="bg-surface help-center-section">
         <VContainer>
-          <h5 class="text-h5 text-center mb-6">
+          <h4 class="text-h4 text-center mb-6">
             Keep Learning
-          </h5>
+          </h4>
           <HelpCenterLandingArticlesOverview :articles="apiData.keepLearning" />
         </VContainer>
       </div>
@@ -79,7 +79,7 @@ const apiData = faqData.value
 .help-center-page {
   .search-header {
     background-size: cover !important;
-    padding-block-start: 7rem !important;
+    padding-block-start: 9rem !important;
   }
 }
 
@@ -102,5 +102,11 @@ const apiData = faqData.value
       padding-inline: 2rem !important;
     }
   }
+}
+</style>
+
+<style lang="scss" scoped>
+.help-center-section{
+  padding-block: 5.25rem;
 }
 </style>

@@ -3,6 +3,19 @@ import Footer from '@/views/front-pages/front-page-footer.vue'
 import Navbar from '@/views/front-pages/front-page-navbar.vue'
 import type { HelpCenterArticle } from '@db/pages/help-center/types'
 
+const breadCrumbItems = [
+  {
+    title: 'Help Center',
+    to: { name: 'front-pages-help-center' },
+  },
+  {
+    title: 'Buying and item support',
+  },
+  {
+    title: 'Template kits',
+  },
+]
+
 definePage({
   meta: {
     layout: 'blank',
@@ -20,97 +33,109 @@ else
 </script>
 
 <template>
-  <div class="bg-surface">
+  <div class="bg-surface help-center-article">
     <!-- 👉 Navbar  -->
     <Navbar />
 
     <!-- 👉 Content -->
     <VContainer>
-      <VRow class="mt-4">
-        <VCol
-          cols="12"
-          md="8"
-        >
-          <div class="mt-16">
+      <div
+        class="d-flex gap-6 flex-lg-row flex-column"
+        style=" margin-block: 9.25rem 5.25rem"
+      >
+        <div>
+          <div>
             <VBreadcrumbs
-              class="px-0 py-3"
-              :items="[{ title: 'Help Center', to: { name: 'front-pages-help-center' } }, { title: 'how to add product in cart' }]"
-            />
-
-            <h5 class="text-h5 mb-3">
+              class="px-0 py-2"
+              :items="breadCrumbItems"
+            >
+              <template #item="{ item, index }">
+                <div class="d-flex align-center">
+                  <VIcon
+                    size="20"
+                    icon="ri-star-fill"
+                    class="me-1"
+                    :class="index === breadCrumbItems.length - 1 ? 'text-high-emphasis' : 'text-medium-emphasis'"
+                  />
+                  <div
+                    class="text-body-1"
+                    :class="index === breadCrumbItems.length - 1 ? 'text-high-emphasis' : 'text-medium-emphasis'"
+                  >
+                    {{ item.title }}
+                  </div>
+                </div>
+              </template>
+            </VBreadcrumbs>
+            <h4 class="text-h4 mb-2">
               {{ articleData?.title }}
-            </h5>
-
-            <div class="text-sm">
+            </h4>
+            <div class="text-body-1">
               {{ articleData?.lastUpdated }}
             </div>
           </div>
 
-          <VDivider class="my-8" />
+          <VDivider class="my-6" />
 
           <div
-            class="mb-8"
+            class="mb-6"
             v-html="articleData?.productContent"
           />
 
-          <VImg
-            class="rounded-lg"
-            :src="articleData?.productImg"
-          />
+          <VImg :src="articleData?.productImg" />
 
-          <p class="my-8">
+          <p class="my-6 text-body-1">
             {{ articleData?.checkoutContent }}
           </p>
 
-          <VImg
-            class="rounded-lg"
-            :src="articleData?.checkoutImg"
+          <VImg :src="articleData?.checkoutImg" />
+        </div>
+
+        <div style="min-inline-size: 300px;">
+          <VTextField
+            prepend-inner-icon="ri-search-line"
+            placeholder="Search..."
+            class="pt-2 mb-8"
           />
-        </VCol>
 
-        <VCol
-          cols="12"
-          md="4"
-        >
-          <div class="mt-16">
-            <VTextField
-              prepend-inner-icon="ri-search-line"
-              placeholder="Search..."
-              class="pt-2 mb-8"
-            />
+          <div>
+            <!-- 👉 Article List  -->
+            <h6
+              class="text-h6 px-4 py-2 mb-4 rounded"
+              style="background: rgba(var(--v-theme-on-surface),var(--v-hover-opacity));"
+            >
+              Articles in this section
+            </h6>
 
-            <div>
-              <!-- 👉 Article List  -->
-              <h6
-                class="text-h6 px-4 py-2 mb-4 rounded"
-                style="background: rgba(58, 53, 65, 4%);"
+            <VList class="card-list">
+              <VListItem
+                v-for="(item, index) in articleData?.articleList"
+                :key="index"
+                link
+                append-icon="ri-arrow-right-s-line"
               >
-                Articles in this section
-              </h6>
-
-              <VList class="card-list">
-                <VListItem
-                  v-for="(item, index) in articleData?.articleList"
-                  :key="index"
-                  link
-                  append-icon="ri-arrow-right-s-line"
-                >
-                  {{ item }}
-                </VListItem>
-              </VList>
-            </div>
+                {{ item }}
+              </VListItem>
+            </VList>
           </div>
-        </VCol>
-      </VRow>
+        </div>
+      </div>
     </VContainer>
 
     <!-- 👉 Footer  -->
-    <Footer class="mt-15" />
+    <Footer />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 1rem;
+}
+
+.help-center-article{
+  @media (min-width: 600px) and (max-width: 960px) {
+    .v-container {
+      padding-inline: 2rem !important;
+    }
+  }
 }
 </style>

@@ -23,13 +23,13 @@ export const db: DB = {
       slug: 'getting-started',
       title: 'Getting Started',
       img: rocket,
-      subtitle: 'Whether you\'re new or you\'re a power user, this article will',
+      subtitle: 'Whether you\'re new or you\'re a power user, this article will help you to',
     },
     {
       slug: 'first-steps',
       title: 'First Steps',
       img: gift,
-      subtitle: 'Are you a new customer wondering how to get started?',
+      subtitle: 'Are you a new customer wondering on how to get started?',
     },
     {
       slug: 'external-content',
@@ -53,7 +53,7 @@ export const db: DB = {
     },
     {
       title: 'Item Support',
-      icon: 'ri-shopping-cart-line',
+      icon: 'ri-question-line',
       articles: [
         { title: 'What is Item Support?' },
         { title: 'How to contact an author?' },
@@ -65,7 +65,7 @@ export const db: DB = {
     },
     {
       title: 'Licenses',
-      icon: 'ri-money-dollar-circle-line',
+      icon: 'ri-file-text-line',
       articles: [
         { title: 'Can I use the same license for the...' },
         { title: 'How to contact an author?' },
@@ -89,7 +89,7 @@ export const db: DB = {
     },
     {
       title: 'Account & Password',
-      icon: 'ri-lock-unlock-line',
+      icon: 'ri-lock-line',
       articles: [
         { title: 'Signing in with a social account' },
         { title: 'Locked Out of Account' },
@@ -101,7 +101,7 @@ export const db: DB = {
     },
     {
       title: 'Account Settings',
-      icon: 'ri-user-line',
+      icon: 'ri-user-3-line',
       articles: [
         { title: 'How do I change my password?' },
         { title: 'How do I change my username?' },
@@ -137,10 +137,10 @@ export const db: DB = {
     title: 'How to add product in cart?',
     lastUpdated: '1 month ago  -  Updated',
     productContent: `
-            <p>
+            <p class='text-body-1'>
               If you're after only one item, simply choose the 'Buy Now' option on the item page. This will take you directly to Checkout.
             </p>
-            <p>
+            <p class='text-body-1'>
               If you want several items, use the 'Add to Cart' button and then choose 'Keep Browsing' to continue shopping or 'Checkout' to finalize your purchase.
             </p>
         `,

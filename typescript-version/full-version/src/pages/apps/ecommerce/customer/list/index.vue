@@ -92,16 +92,18 @@ const totalCustomers = computed(() => customerData.value.total)
             <div class="d-flex flex-column">
               <RouterLink
                 :to="{ name: 'apps-ecommerce-customer-details-id', params: { id: item.customerId } }"
-                class="text-sm font-weight-medium"
+                class="text-h6 font-weight-medium"
               >
                 {{ item.customer }}
               </RouterLink>
-              <span class="text-xs">{{ item.email }}</span>
+              <span class="text-sm">{{ item.email }}</span>
             </div>
           </div>
         </template>
         <template #item.customerId="{ item }">
-          #{{ item.customerId }}
+          <h6 class="text-h6 font-weight-regular">
+            #{{ item.customerId }}
+          </h6>
         </template>
 
         <template #item.orders="{ item }">
@@ -120,7 +122,52 @@ const totalCustomers = computed(() => customerData.value.total)
         </template>
 
         <template #item.totalSpent="{ item }">
-          <span class="text-body-1 font-weight-medium text-high-emphasis">${{ item.totalSpent }}</span>
+          <h6 class="text-h6">
+            ${{ item.totalSpent }}
+          </h6>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, totalCustomers) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(totalCustomers / itemsPerPage)"
+                @click="page >= Math.ceil(totalCustomers / itemsPerPage) ? page = Math.ceil(totalCustomers / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
     </VCard>

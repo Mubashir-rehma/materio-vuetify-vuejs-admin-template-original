@@ -36,10 +36,12 @@ interface Props {
           </VAvatar>
 
           <!-- 👉 Customer fullName -->
-          <h6 class="text-h6 mt-4">
+          <h6 class="text-h5 mt-4">
             {{ props.customerData.customer }}
           </h6>
-          <span class="text-body-1">Customer ID #{{ props.customerData.customerId }}</span>
+          <p class="text-body-1 mb-0">
+            Customer ID #{{ props.customerData.customerId }}
+          </p>
 
           <div class="d-flex justify-center gap-x-6 mt-6">
             <div class="d-flex align-center">
@@ -47,12 +49,14 @@ interface Props {
                 variant="tonal"
                 color="primary"
                 rounded
-                class="me-3"
+                class="me-4"
               >
                 <VIcon icon="ri-shopping-cart-line" />
               </VAvatar>
               <div class="d-flex flex-column align-start">
-                <span class="text-body-1 font-weight-medium text-high-emphasis">{{ props.customerData.order }}</span>
+                <h5 class="text-h5">
+                  {{ props.customerData.order }}
+                </h5>
                 <span class="text-body-1">Orders</span>
               </div>
             </div>
@@ -61,12 +65,14 @@ interface Props {
                 variant="tonal"
                 color="primary"
                 rounded
-                class="me-3"
+                class="me-4"
               >
                 <VIcon icon="ri-money-dollar-circle-line" />
               </VAvatar>
               <div class="d-flex flex-column align-start">
-                <span class="text-body-1 font-weight-medium text-high-emphasis">{{ props.customerData.totalSpent }}</span>
+                <h5 class="text-h5">
+                  {{ props.customerData.totalSpent }}
+                </h5>
                 <span class="text-body-1">Spent</span>
               </div>
             </div>
@@ -75,63 +81,63 @@ interface Props {
 
         <!-- 👉 Customer Details -->
         <VCardText>
-          <div class="text-h6">
+          <h5 class="text-h5">
             Details
-          </div>
+          </h5>
           <VDivider class="my-4" />
 
           <VList class="card-list mt-2">
             <VListItem>
-              <VListItemTitle class="text-sm">
+              <VListItemTitle>
                 <span class="font-weight-medium me-2">Username:</span>
-                <span class="text-body-2">
+                <span class="text-body-1">
                   {{ props.customerData.customer }}
                 </span>
               </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemTitle class="text-sm">
+              <VListItemTitle>
                 <span class="font-weight-medium me-2">Billing Email:</span>
-                <span class="text-body-2">
+                <span class="text-body-1">
                   {{ props.customerData.email }}
                 </span>
               </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemTitle class="text-sm">
+              <VListItemTitle>
                 <span class="font-weight-medium me-2">Status:</span>
-                <span class="text-body-2">
+                <span class="text-body-1">
                   {{ props.customerData.status }}
                 </span>
               </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemTitle class="text-sm">
+              <VListItemTitle>
                 <span class="font-weight-medium me-2">Contact:</span>
-                <span class="text-body-2">
+                <span class="text-body-1">
                   {{ props.customerData.contact }}
                 </span>
               </VListItemTitle>
             </VListItem>
 
             <VListItem>
-              <VListItemTitle class="text-sm">
+              <VListItemTitle>
                 <span class="font-weight-medium me-2">Country:</span>
-                <span class="text-body-2">
+                <span class="text-body-1">
                   {{ props.customerData.country }}
                 </span>
               </VListItemTitle>
             </VListItem>
           </VList>
-        </VCardText>
 
-        <VCardText class="text-center">
-          <VBtn @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible">
-            Edit Details
-          </VBtn>
+          <div class="mt-6 text-center">
+            <VBtn @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible">
+              Edit Details
+            </VBtn>
+          </div>
         </VCardText>
       </VCard>
     </VCol>
@@ -163,7 +169,7 @@ interface Props {
             </div>
           </div>
           <VBtn
-            color="light"
+            color="#fff"
             class="text-primary"
             block
             @click="isUpgradePlanDialogVisible = !isUpgradePlanDialogVisible"

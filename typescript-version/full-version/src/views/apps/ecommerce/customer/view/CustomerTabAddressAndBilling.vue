@@ -13,7 +13,7 @@ const addressData = [
     title: 'Home',
     subtitle: '23 Shatinon Mekalan',
     owner: 'Violet Mendoza',
-    defaultAdderss: true,
+    defaultAddress: true,
     address: ` 23 Shatinon Mekalan,
     <br>
     Melbourne, VIC 3000,
@@ -24,7 +24,7 @@ const addressData = [
     title: 'Office',
     subtitle: '45 Rocker Terrace',
     owner: 'Violet Mendoza',
-    defaultAdderss: false,
+    defaultAddress: false,
     address: ` 45 Rocker Terrace,
     <br>
     Latheronwheel,
@@ -37,7 +37,7 @@ const addressData = [
     title: 'Family',
     subtitle: '512 Water Plant',
     owner: 'Violet Mendoza',
-    defaultAdderss: false,
+    defaultAddress: false,
     address: ` 512 Water Plant,
     <br>
     Melbourne, VIC 3000,
@@ -70,16 +70,16 @@ const paymentData = [
 
 <template>
   <!-- eslint-disable vue/no-v-html -->
-
   <!-- 👉 Address Book -->
   <VCard class="mb-6">
     <VCardText>
-      <div class="d-flex justify-space-between mb-6 flex-wrap align-center gap-y-4 gap-x-6">
+      <div class="d-flex justify-space-between mb-5 flex-wrap align-center gap-y-4 gap-x-6">
         <h5 class="text-h5">
           Address Book
         </h5>
         <VBtn
           variant="outlined"
+          size="small"
           @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
         >
           Add new Address
@@ -89,8 +89,8 @@ const paymentData = [
         v-for="(address, index) in addressData"
         :key="index"
       >
-        <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
-          <div class="d-flex align-center gap-x-1">
+        <div class="d-flex justify-space-between mb-3 gap-y-2 flex-wrap align-center">
+          <div class="d-flex align-center gap-x-2">
             <IconBtn
               density="comfortable"
               @click="show[index] = !show[index]"
@@ -100,37 +100,40 @@ const paymentData = [
                 class="flip-in-rtl"
               />
             </IconBtn>
+
             <div>
-              <div>
-                <span class="text-subtitle-2 text-high-emphasis me-2">{{ address.title }}</span>
+              <div class="d-flex align-center mb-1">
+                <h6 class="text-h6 me-2">
+                  {{ address.title }}
+                </h6>
                 <VChip
-                  v-if="address.defaultAdderss"
+                  v-if="address.defaultAddress"
                   color="success"
-                  density="comfortable"
+                  size="small"
                 >
                   Default Address
                 </VChip>
               </div>
-              <span class="text-body-2">{{ address.subtitle }}</span>
+              <span class="text-body-1">{{ address.subtitle }}</span>
             </div>
           </div>
 
           <div class="ms-5">
             <IconBtn>
               <VIcon
-                icon="ri-pencil-line"
+                icon="ri-edit-box-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="ri-delete-bin-line"
+                icon="ri-delete-bin-7-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="ri-more-2-line"
+                icon="ri-more-2-fill"
                 class="flip-in-rtl"
               />
             </IconBtn>
@@ -139,7 +142,7 @@ const paymentData = [
         <VExpandTransition>
           <div
             v-show="show[index]"
-            class="px-8"
+            class="px-10"
           >
             <div class="mb-1 font-weight-medium text-high-emphasis">
               {{ address.owner }}
@@ -149,7 +152,7 @@ const paymentData = [
         </VExpandTransition>
         <VDivider
           v-if="index !== addressData.length - 1"
-          class="my-4"
+          class="my-3"
         />
       </template>
     </VCardText>
@@ -158,12 +161,13 @@ const paymentData = [
   <!-- 👉 Payment Methods -->
   <VCard>
     <VCardText>
-      <div class="d-flex justify-space-between mb-6 flex-wrap align-center gap-y-4 gap-x-6">
+      <div class="d-flex justify-space-between mb-5 flex-wrap align-center gap-y-4 gap-x-6">
         <h5 class="text-h5">
           Payment Methods
         </h5>
         <VBtn
           variant="outlined"
+          size="small"
           @click="isCardAddDialogVisible = !isCardAddDialogVisible"
         >
           Add Payment Methods
@@ -174,7 +178,7 @@ const paymentData = [
         :key="index"
       >
         <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
-          <div class="d-flex align-center">
+          <div class="d-flex align-center gap-2">
             <IconBtn
               density="comfortable"
               @click="paymentShow[index] = !paymentShow[index]"
@@ -189,12 +193,14 @@ const paymentData = [
               :src="payment.image"
               height="30"
               width="50"
-              class="me-3"
+              class="me-4"
             />
 
             <div>
-              <div>
-                <span class="text-subtitle-2 me-2">{{ payment.title }}</span>
+              <div class="mb-1">
+                <h6 class="text-h6 me-2">
+                  {{ payment.title }}
+                </h6>
                 <VChip
                   v-if="payment.isDefaultMethod"
                   color="success"
@@ -203,26 +209,26 @@ const paymentData = [
                   Default Method
                 </VChip>
               </div>
-              <span class="text-body-2">{{ payment.subtitle }}</span>
+              <span class="text-body-1">{{ payment.subtitle }}</span>
             </div>
           </div>
 
           <div class="ms-5">
             <IconBtn>
               <VIcon
-                icon="ri-pencil-line"
+                icon="ri-edit-box-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="ri-delete-bin-line"
+                icon="ri-delete-bin-7-line"
                 class="flip-in-rtl"
               />
             </IconBtn>
             <IconBtn>
               <VIcon
-                icon="ri-more-2-line"
+                icon="ri-more-2-fill"
                 class="flip-in-rtl"
               />
             </IconBtn>
@@ -231,7 +237,7 @@ const paymentData = [
         <VExpandTransition>
           <div
             v-show="paymentShow[index]"
-            class="px-8"
+            class="px-10"
           >
             <VRow>
               <VCol
@@ -240,28 +246,52 @@ const paymentData = [
               >
                 <VTable>
                   <tr>
-                    <td>Name: </td>
-                    <td>Violet Mendoza</td>
+                    <td class="text-sm pb-1">
+                      Name
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      Violet Mendoza
+                    </td>
                   </tr>
                   <tr>
-                    <td>Number: </td>
-                    <td>**** 4487</td>
+                    <td class="text-sm pb-1">
+                      Number
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      **** 4487
+                    </td>
                   </tr>
                   <tr>
-                    <td>Expires: </td>
-                    <td>08/2028</td>
+                    <td class="text-sm pb-1">
+                      Expires
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      08/2028
+                    </td>
                   </tr>
                   <tr>
-                    <td>Type: </td>
-                    <td>Master Card</td>
+                    <td class="text-sm pb-1">
+                      Type
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      Master Card
+                    </td>
                   </tr>
                   <tr>
-                    <td>Issuer: </td>
-                    <td>VICBANK</td>
+                    <td class="text-sm pb-1">
+                      Issuer
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      VICBANK
+                    </td>
                   </tr>
                   <tr>
-                    <td>ID: </td>
-                    <td>DH73DJ8</td>
+                    <td class="text-sm pb-1">
+                      ID
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      DH73DJ8
+                    </td>
                   </tr>
                 </VTable>
               </VCol>
@@ -271,24 +301,44 @@ const paymentData = [
               >
                 <VTable>
                   <tr>
-                    <td>Billing: </td>
-                    <td>United Kingdom</td>
+                    <td class="text-sm pb-1">
+                      Billing
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      United Kingdom
+                    </td>
                   </tr>
                   <tr>
-                    <td>Number</td>
-                    <td>+7634 983 637</td>
+                    <td class="text-sm pb-1">
+                      Number
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      +7634 983 637
+                    </td>
                   </tr>
                   <tr>
-                    <td>Email</td>
-                    <td>vafgot@vultukir.org</td>
+                    <td class="text-sm pb-1">
+                      Email
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      vafgot@vultukir.org
+                    </td>
                   </tr>
                   <tr>
-                    <td>Origin</td>
-                    <td>United States</td>
+                    <td class="text-sm pb-1">
+                      Origin
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      United States
+                    </td>
                   </tr>
                   <tr>
-                    <td>CVC Check</td>
-                    <td>Passed</td>
+                    <td class="text-sm pb-1">
+                      CVC Check
+                    </td>
+                    <td class="text-sm text-high-emphasis font-weight-medium">
+                      Passed
+                    </td>
                   </tr>
                 </VTable>
               </VCol>

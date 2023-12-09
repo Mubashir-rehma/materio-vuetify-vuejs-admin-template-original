@@ -22,145 +22,123 @@ const menus: Menu[] = [
   <div class="footer">
     <div class="footer-top pt-15">
       <VContainer>
-        <VRow>
+        <div class="d-flex flex-wrap">
           <!-- 👉 Footer  -->
-          <VCol
-            cols="12"
-            md="5"
-          >
-            <div class="mb-4">
-              <div class="d-flex align-center gap-x-3 mb-5">
-                <VNodeRenderer :nodes="themeConfig.app.logo" />
-                <h5 class="text-h5 text-white">
-                  MATERIO
-                </h5>
-              </div>
-              <div class="text-body-2 text-white mb-8 footer-text">
-                Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
-              </div>
-              <VForm class="subscribe-form d-flex flex-wrap align-center gap-4">
-                <VTextField
-                  label="Subscribe to newsletter"
-                  placeholder="john@email.com"
-                  density="compact"
-                  style="max-inline-size: 500px;min-inline-size: 250px;"
-                />
-                <VBtn>Subscribe</VBtn>
-              </VForm>
+          <div class="mb-4">
+            <div class="d-flex align-center gap-x-3 mb-5">
+              <VNodeRenderer :nodes="themeConfig.app.logo" />
+              <h5 class="text-h5 text-white">
+                MATERIO
+              </h5>
             </div>
-          </VCol>
+            <div class="text-body-1 text-white mb-6">
+              Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
+            </div>
+            <VForm class="subscribe-form d-flex align-center gap-4">
+              <VTextField
+                label="Subscribe to newsletter"
+                placeholder="john@email.com"
+                density="compact"
+              />
+              <VBtn>Subscribe</VBtn>
+            </VForm>
+          </div>
 
           <!-- 👉 Pages -->
-          <VCol
-            cols="12"
-            md="2"
-            sm="4"
-          >
-            <div>
-              <div class="font-weight-medium mb-6">
-                Pages
-              </div>
-              <ul style="list-style: none;">
-                <li
-                  v-for="(item, index) in menus"
-                  :key="index"
-                  class="mb-4"
-                >
-                  <RouterLink
-                    class="text-white-variant"
-                    :to="item.to"
-                  >
-                    {{ item.name }}
-
-                    <template v-if="item.isNew">
-                      <VChip
-                        color="primary"
-                        variant="elevated"
-                        size="x-small"
-                        class="ms-2"
-                      >
-                        New
-                      </VChip>
-                    </template>
-                  </RouterLink>
-                </li>
-              </ul>
+          <div>
+            <div class="font-weight-medium mb-6">
+              Pages
             </div>
-          </VCol>
+
+            <ul style="list-style: none;">
+              <li
+                v-for="(item, index) in menus"
+                :key="index"
+                class="mb-4"
+              >
+                <RouterLink
+                  class="text-white-variant"
+                  :to="item.to"
+                >
+                  {{ item.name }}
+                  <template v-if="item.isNew">
+                    <VChip
+                      color="primary"
+                      variant="elevated"
+                      size="x-small"
+                      class="ms-2"
+                    >
+                      New
+                    </VChip>
+                  </template>
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
 
           <!-- 👉 Products  -->
-          <VCol
-            cols="12"
-            md="2"
-            sm="4"
-          >
-            <div>
-              <div class="font-weight-medium mb-6">
-                Products
-              </div>
-              <ul>
-                <li
-                  v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
-                  :key="index"
-                  class="mb-4"
-                  style="list-style: none;"
-                >
-                  <RouterLink
-                    to=""
-                    class="text-white-variant"
-                  >
-                    {{ item }}
-                  </RouterLink>
-                </li>
-              </ul>
+          <div>
+            <div class="font-weight-medium mb-6">
+              Products
             </div>
-          </VCol>
+
+            <ul>
+              <li
+                v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
+                :key="index"
+                class="mb-4"
+                style="list-style: none;"
+              >
+                <RouterLink
+                  to=""
+                  class="text-white-variant"
+                >
+                  {{ item }}
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
 
           <!-- 👉 Download App -->
-          <VCol
-            cols="12"
-            md="3"
-            sm="4"
-          >
+          <div>
+            <div class="font-weight-medium mb-6">
+              Download our app
+            </div>
+
             <div>
-              <div class="font-weight-medium mb-6">
-                Download our app
-              </div>
-              <div>
-                <VBtn
-                  v-for="(item, index) in [
-                    { image: appleImg, store: 'App Store' },
-                    { image: googlePlayImg, store: 'Google Play' },
-                  ]"
-                  :key="index"
-                  color="#211B2C"
-                  size="x-large"
-                  class="mb-4 d-block"
-                >
-                  <template #default>
-                    <div class="d-flex gap-x-3">
-                      <div>
-                        <VImg
-                          :src="item.image"
-                          height="34"
-                          width="34"
-                        />
+              <VBtn
+                v-for="(item, index) in [
+                  { image: appleImg, store: 'App Store' },
+                  { image: googlePlayImg, store: 'Google Play' },
+                ]"
+                :key="index"
+                color="#211B2C"
+                size="x-large"
+                class="mb-4 d-block"
+              >
+                <template #default>
+                  <div class="d-flex gap-x-3">
+                    <div>
+                      <VImg
+                        :src="item.image"
+                        height="34"
+                        width="34"
+                      />
+                    </div>
+                    <div>
+                      <div class="text-body-2 text-white">
+                        Download on the
                       </div>
-                      <div>
-                        <div class="text-body-2 text-white">
-                          Download on the
-                        </div>
-                        <div class="text-body-2 font-weight-medium text-white">
-                          {{ item.store }}
-                        </div>
+                      <div class="text-body-2 font-weight-medium text-white">
+                        {{ item.store }}
                       </div>
                     </div>
-                  </template>
-                </VBtn>
-              </div>
+                  </div>
+                </template>
+              </VBtn>
             </div>
-          </VCol>
-        </VRow>
+          </div>
+        </div>
       </VContainer>
     </div>
 
@@ -182,7 +160,7 @@ const menus: Menu[] = [
               href="https://themeselection.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-white ms-1"
+              class="text-white ms-1 font-weight-medium"
             >ThemeSelection</a>
           </span>
           <div class="d-flex gap-x-2">

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { HelpCenterArticlesOverview } from '@db/pages/help-center/types';
+import type { HelpCenterArticlesOverview } from '@db/pages/help-center/types'
 
 interface Props {
   articles: HelpCenterArticlesOverview[]
@@ -27,16 +27,14 @@ const props = defineProps<Props>()
             width="58"
             class="mx-auto"
           />
-
-          <h6 class="text-h6 my-3">
+          <h5 class="text-h5 my-3">
             {{ article.title }}
-          </h6>
-          <p class="clamp-text">
+          </h5>
+          <p class="clamp-text text-body-1 mb-3 mx-auto">
             {{ article.subtitle }}
           </p>
 
           <VBtn
-            size="small"
             variant="outlined"
             :to="{
               name: 'front-pages-help-center-article-title',

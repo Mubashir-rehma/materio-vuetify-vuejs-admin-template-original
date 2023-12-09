@@ -1,18 +1,19 @@
 <template>
-  <div class="bg-var-theme-background py-12">
-    <VCardText class="text-center py-6">
-      <h5 class="text-h5 text-center mb-6">
-        Still need help?
-      </h5>
-      <p>
-        Our specialists are always happy to help. Contact us during standard business hours or email us
-        <br>
-        24/7 and we'll get back to you.
-      </p>
-      <div class="d-flex justify-center gap-4 flex-wrap">
-        <VBtn>Visit our community</VBtn>
-        <VBtn>Contact us</VBtn>
-      </div>
-    </VCardText>
+  <div
+    class="text-center"
+    style="padding-block: 6.25rem;"
+  >
+    <h4 class="text-h4 text-center mb-4">
+      Still need help?
+    </h4>
+    <p class="text-body-1">
+      Our specialists are always happy to help.
+      <br>
+      Contact us during standard business hours or email us 24/7 and we'll get back to you.
+    </p>
+    <div class="d-flex justify-center gap-4 flex-wrap">
+      <VBtn>Visit our community</VBtn>
+      <VBtn>Contact us</VBtn>
+    </div>
   </div>
 </template>

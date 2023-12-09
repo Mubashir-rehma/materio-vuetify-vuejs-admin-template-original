@@ -208,32 +208,31 @@
   }
 
 
-  &--icon {
-    block-size: var(--v-btn-height) !important;
-    inline-size: var(--v-btn-height) !important;
-    padding-inline: 6px !important;
+  &--icon.v-btn--density-default {
+    block-size: var(--v-btn-height);
+    inline-size: var(--v-btn-height);
+    padding-inline: 6px;
 
-    &.v-btn--size-default{
+    &.v-btn--size-default {
       .v-icon{
-        --v-icon-size-multiplier: 1.0835 !important;
+        --v-icon-size-multiplier: 1 !important;
       }
     }
 
-    &.v-btn--size-small{
+    &.v-btn--size-small {
       .v-icon{
         --v-icon-size-multiplier: 1.129 !important;
       }
     }
 
-    &.v-btn--size-large{
+    &.v-btn--size-large {
       .v-icon{
         --v-icon-size-multiplier: 1.1765 !important;
       }
     }
   }
 
-
-  .v-icon{
+  &:not(.v-btn--icon) .v-icon {
     --v-icon-size-multiplier: 0.7115;
 
     inline-size: auto;

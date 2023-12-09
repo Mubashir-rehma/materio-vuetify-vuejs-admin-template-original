@@ -62,15 +62,6 @@ const headers = [
 // Chart Configs
 const labelColor = 'rgba(var(--v-theme-on-surface), var(--v-disabled-opacity))'
 
-const config = {
-  colorsLabel: {
-    success: '#28c76f29',
-  },
-  colors: {
-    success: '#28c76f',
-  },
-}
-
 const reviewStatChartSeries = [
   {
     data: [20, 40, 60, 80, 100, 80, 60],
@@ -96,11 +87,19 @@ const reviewStatChartConfig = {
       bottom: -12,
     },
   },
-  colors: [config.colorsLabel.success, config.colorsLabel.success, config.colorsLabel.success, config.colorsLabel.success, config.colors.success, config.colorsLabel.success, config.colorsLabel.success],
+  colors: [
+    'rgba(var(--v-theme-success), var(--v-activated-opacity))',
+    'rgba(var(--v-theme-success), var(--v-activated-opacity))',
+    'rgba(var(--v-theme-success), var(--v-activated-opacity))',
+    'rgba(var(--v-theme-success), var(--v-activated-opacity))',
+    'rgba(var(--v-theme-success), 1)',
+    'rgba(var(--v-theme-success), var(--v-activated-opacity))',
+    'rgba(var(--v-theme-success), var(--v-activated-opacity))',
+  ],
   plotOptions: {
     bar: {
       barHeight: '75%',
-      columnWidth: '40%',
+      columnWidth: '35%',
       borderRadius: 5,
       distributed: true,
     },
@@ -278,24 +277,24 @@ const reviewStatChartConfig = {
             >
               <div :class="$vuetify.display.smAndUp ? 'border-e' : 'border-b'">
                 <div class="d-flex align-center gap-x-2">
-                  <h4 class="text-h4 text-primary">
+                  <h4 class="text-h3 text-primary">
                     4.89
                   </h4>
                   <VIcon
-                    icon="ri-star-fill"
+                    icon="ri-star-smile-line"
                     color="primary"
                     size="32"
                   />
                 </div>
-                <div class="my-2 text-body-2 font-weight-medium text-high-emphasis">
+                <h6 class="my-2 text-h6">
                   Total 187 reviews
-                </div>
+                </h6>
                 <div class="mb-2">
                   All reviews are from genuine customers
                 </div>
                 <VChip
                   color="primary"
-                  label
+                  size="small"
                   :class="$vuetify.display.smAndUp ? '' : 'mb-4'"
                 >
                   +5 This week
@@ -310,9 +309,9 @@ const reviewStatChartConfig = {
               <div
                 v-for="(item, index) in reviewCardData"
                 :key="index"
-                class="d-flex align-center gap-x-4 mb-2"
+                class="d-flex align-center gap-4 mb-3"
               >
-                <div class="text-no-wrap">
+                <div class="text-sm text-no-wrap">
                   {{ item.rating }} Star
                 </div>
                 <div class="w-100">
@@ -323,7 +322,9 @@ const reviewStatChartConfig = {
                     rounded
                   />
                 </div>
-                <div>{{ item.value }}</div>
+                <div class="text-sm">
+                  {{ item.value }}
+                </div>
               </div>
             </VCol>
           </VRow>
@@ -343,24 +344,24 @@ const reviewStatChartConfig = {
               sm="5"
             >
               <div>
-                <h4 class="text-h4 mb-2">
+                <h5 class="text-h5 mb-2">
                   Reviews statistics
-                </h4>
+                </h5>
                 <div class="mb-9">
                   <span class="me-2">12 New Reviews</span>
                   <VChip
                     color="success"
-                    label
+                    size="small"
                   >
                     +8.4%
                   </VChip>
                 </div>
 
                 <div>
-                  <div class="text-high-emphasis text-body-1 font-weight-medium mb-2">
+                  <div class="text-high-emphasis text-body-1 mb-2">
                     <span class="text-success">87%</span> Positive Reviews
                   </div>
-                  <div class="text-body-1 text-disabled">
+                  <div class="text-body-2">
                     Weekly Report
                   </div>
                 </div>
@@ -375,7 +376,7 @@ const reviewStatChartConfig = {
                 <VueApexCharts
                   id="shipment-statistics"
                   type="bar"
-                  height="160"
+                  height="150"
                   :options="reviewStatChartConfig"
                   :series="reviewStatChartSeries"
                 />
@@ -392,8 +393,8 @@ const reviewStatChartConfig = {
           <div class="d-flex justify-space-between flex-wrap gap-y-4">
             <VTextField
               v-model="searchQuery"
-              style="max-inline-size: 200px; min-inline-size: 200px;"
-              placeholder="Search .."
+              style="max-inline-size: 250px; min-inline-size: 200px;"
+              placeholder="Search"
               density="compact"
             />
             <div class="d-flex flex-row gap-4 align-center flex-wrap">
@@ -421,11 +422,11 @@ const reviewStatChartConfig = {
           show-select
           :items-length="totalReviews"
           item-value="product"
-          class="text-no-wrap"
+          class="text-no-wrap rounded-0"
           @update:options="updateOptions"
         >
           <template #item.product="{ item }">
-            <div class="d-flex gap-x-3 align-center">
+            <div class="d-flex gap-x-4 align-center">
               <VAvatar
                 :image="item.productImage"
                 :size="38"
@@ -433,14 +434,16 @@ const reviewStatChartConfig = {
                 rounded
               />
               <div class="d-flex flex-column">
-                <span class="text-body-2 text-high-emphasis font-weight-medium">{{ item.product }}</span>
-                <span class="text-xs text-wrap clamp-text">{{ item.companyName }}</span>
+                <h6 class="text-h6">
+                  {{ item.product }}
+                </h6>
+                <span class="text-sm text-wrap clamp-text">{{ item.companyName }}</span>
               </div>
             </div>
           </template>
 
           <template #item.reviewer="{ item }">
-            <div class="d-flex align-center gap-x-3">
+            <div class="d-flex align-center gap-x-4">
               <VAvatar
                 :image="item.avatar"
                 size="34"
@@ -452,33 +455,35 @@ const reviewStatChartConfig = {
                 >
                   {{ item.reviewer }}
                 </RouterLink>
-                <span class="text-disabled text-sm">{{ item.email }}</span>
+                <span class="text-body-2">{{ item.email }}</span>
               </div>
             </div>
           </template>
 
           <template #item.review="{ item }">
-            <VRating
-              readonly
-              :model-value="item.review"
-              density="compact"
-            />
-            <div class="text-sm font-weight-medium mb-1">
-              {{ item.head }}
+            <div class="py-4">
+              <VRating
+                :size="24"
+                readonly
+                :model-value="item.review"
+              />
+              <h6 class="text-h6 mb-1">
+                {{ item.head }}
+              </h6>
+              <p class="text-sm text-medium-emphasis text-wrap mb-0">
+                {{ item.para }}
+              </p>
             </div>
-            <p class="text-sm text-medium-emphasis text-wrap">
-              {{ item.para }}
-            </p>
           </template>
 
           <template #item.date="{ item }">
-            {{ new Date(item.date).toDateString() }}
+            <span class="text-body-1">{{ new Date(item.date).toDateString() }}</span>
           </template>
 
           <template #item.status="{ item }">
             <VChip
               :color="item.status === 'Published' ? 'success' : 'warning'"
-              density="comfortable"
+              size="small"
             >
               {{ item.status }}
             </VChip>
@@ -504,6 +509,49 @@ const reviewStatChartConfig = {
                 </VList>
               </VMenu>
             </IconBtn>
+          </template>
+
+          <!-- Pagination -->
+          <template #bottom>
+            <VDivider />
+
+            <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+              <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+                Rows Per Page:
+                <VSelect
+                  v-model="itemsPerPage"
+                  class="per-page-select"
+                  variant="plain"
+                  :items="[10, 20, 25, 50, 100]"
+                />
+              </div>
+
+              <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+                {{ paginationMeta({ page, itemsPerPage }, totalReviews) }}
+              </p>
+
+              <div class="d-flex gap-x-2 align-center me-2">
+                <VBtn
+                  class="flip-in-rtl"
+                  icon="ri-arrow-left-s-line"
+                  variant="text"
+                  density="comfortable"
+                  color="default"
+                  :disabled="page <= 1"
+                  @click="page <= 1 ? page = 1 : page--"
+                />
+
+                <VBtn
+                  class="flip-in-rtl"
+                  icon="ri-arrow-right-s-line"
+                  density="comfortable"
+                  variant="text"
+                  color="default"
+                  :disabled="page >= Math.ceil(totalReviews / itemsPerPage)"
+                  @click="page >= Math.ceil(totalReviews / itemsPerPage) ? page = Math.ceil(totalReviews / itemsPerPage) : page++ "
+                />
+              </div>
+            </div>
           </template>
         </VDataTableServer>
       </VCard>

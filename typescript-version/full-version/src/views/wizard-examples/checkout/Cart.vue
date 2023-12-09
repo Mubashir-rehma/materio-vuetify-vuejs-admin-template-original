@@ -59,10 +59,10 @@ watch(() => props.currentStep, updateCartData)
         </VAlertTitle>
 
         <p class="mb-0">
-          - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
+          - 0% Instant Discount on Bank of America Corp Bank Debit and Credit cards
         </p>
         <p class="mb-0">
-          - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
+          - 50% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
         </p>
       </VAlert>
 
@@ -87,7 +87,7 @@ watch(() => props.currentStep, updateCartData)
               @click="removeItem(item)"
             >
               <VIcon
-                size="20"
+                size="18"
                 icon="ri-close-line"
               />
             </IconBtn>
@@ -104,9 +104,9 @@ watch(() => props.currentStep, updateCartData)
               :class="(($vuetify.display.width <= 1280 && $vuetify.display.width >= 960) || $vuetify.display.width <= 700) ? 'flex-column' : 'flex-row'"
             >
               <div>
-                <h6 class="text-base font-weight-regular mb-2">
+                <div class="text-body-1 font-weight-medium text-high-emphasis mb-2">
                   {{ item.name }}
-                </h6>
+                </div>
                 <div class="d-flex align-center text-no-wrap gap-2 text-base">
                   <span class="text-disabled">Sold by:</span>
                   <span class="text-primary">{{ item.seller }}</span>
@@ -118,7 +118,7 @@ watch(() => props.currentStep, updateCartData)
                   </VChip>
                 </div>
 
-                <div class="mt-1">
+                <div class="my-2">
                   <VRating
                     :model-value="item.rating"
                     size="small"
@@ -184,7 +184,7 @@ watch(() => props.currentStep, updateCartData)
       >
         <!-- 👉 payment offer -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-3">
+          <h6 class="text-h6 mb-3">
             Offer
           </h6>
 
@@ -205,16 +205,17 @@ watch(() => props.currentStep, updateCartData)
 
           <!-- 👉 Gift wrap banner -->
           <div class="bg-var-theme-background rounded pa-5 mt-4">
-            <h6 class="text-base font-weight-medium mb-1">
+            <h6 class="text-h6">
               Buying gift for a loved one?
             </h6>
-            <p class="mb-2">
+
+            <p class="my-2 text-body-1">
               Gift wrap and personalized message on card, Only for $2.
             </p>
 
             <a
               href="#"
-              class="text-sm font-weight-medium"
+              class="font-weight-medium d-inline-block"
             >Add a gift wrap</a>
           </div>
         </VCardText>
@@ -223,34 +224,48 @@ watch(() => props.currentStep, updateCartData)
 
         <!-- 👉 Price details -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-3">
+          <h6 class="text-h6 mb-4">
             Price Details
           </h6>
 
           <div class="text-sm text-high-emphasis">
             <div class="d-flex justify-space-between mb-2">
-              <span>Bag Total</span>
-              <span>${{ totalCost }}.00</span>
+              <div class="text-body-1 text-high-emphasis">
+                Bag Total
+              </div>
+              <div class="text-body-1">
+                ${{ totalCost }}.00
+              </div>
             </div>
 
             <div class="d-flex justify-space-between mb-2">
-              <span>Coupon Discount</span>
+              <div class="text-body-1 text-high-emphasis">
+                Coupon Discount
+              </div>
               <a
                 href="#"
-                class="font-weight-medium"
+                class="font-weight-medium d-inline-block"
               >Apply Coupon</a>
             </div>
 
             <div class="d-flex justify-space-between mb-2">
-              <span>Order Total</span>
-              <span>${{ totalCost }}.00</span>
+              <div class="text-body-1 text-high-emphasis">
+                Order Total
+              </div>
+              <div class="text-body-1">
+                ${{ totalCost }}.00
+              </div>
             </div>
 
             <div class="d-flex justify-space-between">
-              <span>Delivery Charges</span>
+              <div class="text-body-1 text-high-emphasis">
+                Delivery Charges
+              </div>
 
-              <div>
-                <span class="text-decoration-line-through me-2">$5.00</span>
+              <div class="d-flex gap-x-2">
+                <div class="text-decoration-line-through text-body-1 text-disabled">
+                  $5.00
+                </div>
                 <VChip
                   size="small"
                   color="success"
@@ -265,10 +280,10 @@ watch(() => props.currentStep, updateCartData)
         <VDivider />
 
         <VCardText class="d-flex justify-space-between py-4">
-          <h6 class="text-base font-weight-medium">
+          <h6 class="text-h6">
             Total
           </h6>
-          <h6 class="text-base font-weight-medium">
+          <h6 class="text-h6">
             ${{ totalCost }}.00
           </h6>
         </VCardText>

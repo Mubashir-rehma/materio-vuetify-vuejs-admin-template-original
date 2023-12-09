@@ -58,7 +58,7 @@ watch(() => prop.currentStep, updateCartData)
         variant="tonal"
         icon="ri-percent-line"
         closable
-        class="mb-4"
+        class="mb-6"
       >
         <VAlertTitle class="text-success mb-1">
           Available Offers
@@ -90,11 +90,11 @@ watch(() => prop.currentStep, updateCartData)
 
       <VWindow
         v-model="selectedPaymentMethod"
-        class="mt-5"
+        class="mt-6"
         style="max-inline-size: 600px;"
       >
         <VWindowItem value="card">
-          <VForm class="mt-3">
+          <VForm>
             <VRow>
               <VCol cols="12">
                 <VTextField
@@ -160,12 +160,12 @@ watch(() => prop.currentStep, updateCartData)
                   label="Save Card for future billing?"
                 />
 
-                <div class="mt-6">
+                <div class="mt-4">
                   <VBtn
                     class="me-4"
                     @click="nextStep"
                   >
-                    Checkout
+                    Save Changes
                   </VBtn>
                   <VBtn
                     variant="outlined"
@@ -231,24 +231,35 @@ watch(() => prop.currentStep, updateCartData)
         variant="outlined"
       >
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-4">
+          <h6 class="text-h6 mb-4">
             Price Details
           </h6>
 
           <div class="d-flex justify-space-between text-sm mb-2">
-            <span class="text-high-emphasis">Order Total</span>
-            <span>${{ checkoutPaymentDataLocal.orderAmount }}.00</span>
+            <div class="text-body-1 text-high-emphasis">
+              Order Total
+            </div>
+            <div class="text-body-1">
+              ${{ checkoutPaymentDataLocal.orderAmount }}.00
+            </div>
           </div>
 
           <div class="d-flex justify-space-between text-sm">
-            <span class="text-high-emphasis">Delivery Charges</span>
-            <div v-if="checkoutPaymentDataLocal.deliverySpeed === 'free'">
-              <span class="text-decoration-line-through me-2">$5.00</span>
+            <div class="text-high-emphasis text-body-1">
+              Delivery Charges
+            </div>
+            <div
+              v-if="checkoutPaymentDataLocal.deliverySpeed === 'free'"
+              class="d-flex align-center"
+            >
+              <div class="text-body-1 text-disabled me-2">
+                $5.00
+              </div>
               <VChip
                 color="success"
                 size="small"
               >
-                Free
+                FREE
               </VChip>
             </div>
             <div v-else>
@@ -261,15 +272,22 @@ watch(() => prop.currentStep, updateCartData)
 
         <VCardText>
           <div class="d-flex justify-space-between text-base mb-2">
-            <span class="text-high-emphasis font-weight-medium">Total</span>
-            <span>${{ checkoutPaymentDataLocal.orderAmount + checkoutPaymentDataLocal.deliveryCharges }}.00</span>
+            <div class="text-high-emphasis font-weight-medium">
+              Total
+            </div>
+            <h6 class="text-h6 text-medium-emphasis">
+              ${{ checkoutPaymentDataLocal.orderAmount + checkoutPaymentDataLocal.deliveryCharges }}.00
+            </h6>
           </div>
 
           <div class="d-flex justify-space-between text-base mb-4">
-            <span class="text-high-emphasis font-weight-medium">Deliver to:</span>
+            <h6 class="text-h6">
+              Deliver to:
+            </h6>
             <VChip
               color="primary"
               size="small"
+              class="text-capitalize"
             >
               {{ checkoutPaymentDataLocal.deliveryAddress }}
             </VChip>
@@ -279,10 +297,10 @@ watch(() => prop.currentStep, updateCartData)
             v-for="item in selectedDeliveryAddress"
             :key="item.value"
           >
-            <h6 class="text-base font-weight-medium">
+            <h6 class="text-h6">
               {{ item.title }}
             </h6>
-            <p class="text-base mb-1">
+            <p class="text-body-1 mb-1">
               {{ item.desc }}
             </p>
             <p class="text-base mb-4">
@@ -292,7 +310,7 @@ watch(() => prop.currentStep, updateCartData)
 
           <a
             href="#"
-            class="font-weight-medium text-base"
+            class="font-weight-medium text-base d-inline-block"
           >Change address</a>
         </VCardText>
       </VCard>

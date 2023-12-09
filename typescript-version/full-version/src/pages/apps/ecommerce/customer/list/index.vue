@@ -56,12 +56,6 @@ const totalCustomers = computed(() => customerData.value.total)
             density="compact"
           />
           <div class="d-flex flex-row gap-4 align-center flex-wrap">
-            <VSelect
-              v-model="itemsPerPage"
-              density="compact"
-              :items="[5, 10, 20, 50, 100]"
-            />
-
             <VBtn
               prepend-icon="mdi-export-variant"
               variant="outlined"

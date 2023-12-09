@@ -51,9 +51,9 @@ const onCancel = () => {
           variant="outlined"
           color="warning"
           class="my-4"
-          style=" block-size: 88px;inline-size: 88px; pointer-events: none;"
+          size="x-large"
         >
-          <span class="text-5xl">!</span>
+          <span class="text-4xl">!</span>
         </VBtn>
 
         <h6 class="text-lg font-weight-medium">
@@ -92,9 +92,9 @@ const onCancel = () => {
           variant="outlined"
           color="success"
           class="my-4"
-          style=" block-size: 88px;inline-size: 88px; pointer-events: none;"
+          size="x-large"
         >
-          <span class="text-3xl">
+          <span class="text-4xl">
             <VIcon icon="ri-check-line" />
           </span>
         </VBtn>
@@ -127,9 +127,9 @@ const onCancel = () => {
           variant="outlined"
           color="error"
           class="my-4"
-          style=" block-size: 88px;inline-size: 88px; pointer-events: none;"
+          size="x-large"
         >
-          <span class="text-5xl font-weight-light">X</span>
+          <span class="text-4xl font-weight-light">X</span>
         </VBtn>
 
         <h1 class="text-h4 mb-4">

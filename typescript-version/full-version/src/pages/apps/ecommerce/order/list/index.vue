@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type { Order } from '@db/apps/ecommerce/types'
-import mastercard from '@images/cards/logo-mastercard-small.png'
-import paypal from '@images/cards/paypal-primary.png'
+import paypal from '@images/cards/paypal.png'
+import mastercard from '@images/icons/payments/mastercard.png'
 
 const widgetData = ref([
-  { title: 'Pending Payment', value: 56, icon: 'ri-calendar-schedule-line' },
-  { title: 'Completed', value: 12689, icon: 'ri-check-line-all' },
-  { title: 'Refunded', value: 124, icon: 'ri-wallet-line' },
+  { title: 'Pending Payment', value: 56, icon: 'ri-calendar-2-line' },
+  { title: 'Completed', value: 12689, icon: 'ri-check-double-line' },
+  { title: 'Refunded', value: 124, icon: 'ri-wallet-3-line' },
   { title: 'Failed', value: 32, icon: 'ri-spam-line' },
 ])
 
@@ -86,7 +86,7 @@ const deleteOrder = async (id: number) => {
 <template>
   <div>
     <VCard class="mb-6">
-      <VCardText>
+      <VCardText class="px-2">
         <VRow>
           <template
             v-for="(data, id) in widgetData"
@@ -100,20 +100,21 @@ const deleteOrder = async (id: number) => {
             >
               <div class="d-flex justify-space-between">
                 <div class="d-flex flex-column gap-y-1">
-                  <span class="text-h5 text-high-emphasis">{{ data.value }}</span>
-                  <h6 class="text-base text-capitalize font-weight-medium">
+                  <h4 class="text-h4">
+                    {{ data.value }}
+                  </h4>
+                  <span class="text-base text-capitalize">
                     {{ data.title }}
-                  </h6>
+                  </span>
                 </div>
 
                 <VAvatar
                   variant="tonal"
                   rounded
-                  size="38"
                 >
                   <VIcon
                     :icon="data.icon"
-                    size="26"
+                    size="24"
                   />
                 </VAvatar>
               </div>
@@ -137,7 +138,7 @@ const deleteOrder = async (id: number) => {
           <VTextField
             v-model="searchQuery"
             density="compact"
-            placeholder="Serach Order"
+            placeholder="Search Order"
             style=" max-inline-size: 200px; min-inline-size: 200px;"
           />
 
@@ -146,6 +147,7 @@ const deleteOrder = async (id: number) => {
           </VBtn>
         </div>
       </VCardText>
+
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
         :headers="headers"
@@ -175,7 +177,7 @@ const deleteOrder = async (id: number) => {
               size="34"
               :variant="!item.avatar.length ? 'tonal' : undefined"
               :rounded="1"
-              class="me-2"
+              class="me-4"
             >
               <VImg
                 v-if="item.avatar"
@@ -201,19 +203,24 @@ const deleteOrder = async (id: number) => {
 
         <!-- Payments -->
         <template #item.payment="{ item }">
-          <li
+          <div
             :class="`text-${resolvePaymentStatus(item.payment)?.color}`"
-            class="font-weight-medium"
+            class="d-flex align-center font-weight-medium"
           >
-            {{ resolvePaymentStatus(item.payment)?.text }}
-          </li>
+            <VIcon
+              size="14"
+              icon="ri-circle-fill"
+              class="me-2"
+            />
+            <span>{{ resolvePaymentStatus(item.payment)?.text }}</span>
+          </div>
         </template>
 
         <!-- Status -->
         <template #item.status="{ item }">
           <VChip
             v-bind="resolveStatus(item.status)"
-            density="comfortable"
+            size="small"
           />
         </template>
 
@@ -224,6 +231,7 @@ const deleteOrder = async (id: number) => {
               :src="item.method === 'mastercard' ? mastercard : paypal"
               height="22"
               max-width="22"
+              width="22"
             />
             <div>
               <VIcon
@@ -263,6 +271,49 @@ const deleteOrder = async (id: number) => {
               </VList>
             </VMenu>
           </IconBtn>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, totalOrder) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(totalOrder / itemsPerPage)"
+                @click="page >= Math.ceil(totalOrder / itemsPerPage) ? page = Math.ceil(totalOrder / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
     </VCard>

@@ -6,7 +6,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   icon: 'ri-close-line',
-  iconSize: '26',
+  iconSize: '24',
 })
 </script>
 

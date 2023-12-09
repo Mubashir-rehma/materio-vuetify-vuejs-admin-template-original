@@ -130,13 +130,3 @@ const currentStep = ref(0)
     </VCardText>
   </VCard>
 </template>
-
-<style lang="scss">
-.checkout-stepper {
-  .stepper-icon-step {
-    .step-wrapper + svg {
-      margin-inline: 3.5rem !important;
-    }
-  }
-}
-</style>

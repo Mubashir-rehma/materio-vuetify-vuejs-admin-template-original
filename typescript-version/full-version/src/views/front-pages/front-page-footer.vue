@@ -22,10 +22,10 @@ const menus: Menu[] = [
   <div class="footer">
     <div class="footer-top pt-15">
       <VContainer>
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-lg-row flex-column gap-16">
           <!-- 👉 Footer  -->
           <div class="mb-4">
-            <div class="d-flex align-center gap-x-3 mb-5">
+            <div class="d-flex align-center gap-x-3 mb-6">
               <VNodeRenderer :nodes="themeConfig.app.logo" />
               <h5 class="text-h5 text-white">
                 MATERIO
@@ -39,103 +39,101 @@ const menus: Menu[] = [
                 label="Subscribe to newsletter"
                 placeholder="john@email.com"
                 density="compact"
+                theme="dark"
               />
               <VBtn>Subscribe</VBtn>
             </VForm>
           </div>
 
           <!-- 👉 Pages -->
-          <div>
-            <div class="font-weight-medium mb-6">
-              Pages
-            </div>
-
-            <ul style="list-style: none;">
-              <li
-                v-for="(item, index) in menus"
-                :key="index"
-                class="mb-4"
-              >
-                <RouterLink
-                  class="text-white-variant"
-                  :to="item.to"
-                >
-                  {{ item.name }}
-                  <template v-if="item.isNew">
-                    <VChip
-                      color="primary"
-                      variant="elevated"
-                      size="x-small"
-                      class="ms-2"
-                    >
-                      New
-                    </VChip>
-                  </template>
-                </RouterLink>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 👉 Products  -->
-          <div>
-            <div class="font-weight-medium mb-6">
-              Products
-            </div>
-
-            <ul>
-              <li
-                v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
-                :key="index"
-                class="mb-4"
-                style="list-style: none;"
-              >
-                <RouterLink
-                  to=""
-                  class="text-white-variant"
-                >
-                  {{ item }}
-                </RouterLink>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 👉 Download App -->
-          <div>
-            <div class="font-weight-medium mb-6">
-              Download our app
-            </div>
-
+          <div class="d-flex justify-space-between  flex-grow-1 gap-x-16 gap-y-8 flex-md-row flex-column">
             <div>
-              <VBtn
-                v-for="(item, index) in [
-                  { image: appleImg, store: 'App Store' },
-                  { image: googlePlayImg, store: 'Google Play' },
-                ]"
-                :key="index"
-                color="#211B2C"
-                size="x-large"
-                class="mb-4 d-block"
-              >
-                <template #default>
-                  <div class="d-flex gap-x-3">
-                    <div>
-                      <VImg
-                        :src="item.image"
-                        height="34"
-                        width="34"
-                      />
-                    </div>
-                    <div>
-                      <div class="text-body-2 text-white">
-                        Download on the
+              <div class="font-weight-medium mb-6">
+                Pages
+              </div>
+              <ul style="list-style: none;">
+                <li
+                  v-for="(item, index) in menus"
+                  :key="index"
+                  class="mb-4"
+                >
+                  <RouterLink
+                    class="text-white-variant text-no-wrap"
+                    :to="item.to"
+                  >
+                    {{ item.name }}
+                    <template v-if="item.isNew">
+                      <VChip
+                        color="primary"
+                        variant="elevated"
+                        size="x-small"
+                        class="ms-2"
+                      >
+                        New
+                      </VChip>
+                    </template>
+                  </RouterLink>
+                </li>
+              </ul>
+            </div>
+            <!-- 👉 Products  -->
+            <div>
+              <div class="font-weight-medium mb-6">
+                Products
+              </div>
+              <ul>
+                <li
+                  v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
+                  :key="index"
+                  class="mb-4"
+                  style="list-style: none;"
+                >
+                  <RouterLink
+                    to=""
+                    class="text-white-variant text-no-wrap"
+                  >
+                    {{ item }}
+                  </RouterLink>
+                </li>
+              </ul>
+            </div>
+            <!-- 👉 Download App -->
+            <div>
+              <div class="font-weight-medium mb-6">
+                Download our app
+              </div>
+              <div>
+                <VBtn
+                  v-for="(item, index) in [
+                    { image: appleImg, store: 'App Store' },
+                    { image: googlePlayImg, store: 'Google Play' },
+                  ]"
+                  :key="index"
+                  color="#211B2C"
+                  size="x-large"
+                  class="mb-4 d-block"
+                >
+                  <template #default>
+                    <div class="d-flex gap-x-3">
+                      <div>
+                        <VImg
+                          :src="item.image"
+                          height="34"
+                          width="34"
+                        />
                       </div>
-                      <div class="text-body-2 font-weight-medium text-white">
-                        {{ item.store }}
+                      <div>
+                        <div class="text-body-2 text-white">
+                          Download on the
+                        </div>
+                        <div class="text-body-2 font-weight-medium text-white">
+                          {{ item.store }}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </template>
-              </VBtn>
+                  </template>
+                </VBtn>
+              </div>
             </div>
           </div>
         </div>
@@ -204,15 +202,7 @@ const menus: Menu[] = [
 
 <style lang="scss">
 .subscribe-form {
-  .v-label.v-field-label {
-    color: rgba(231, 227, 252, var(--v-high-emphasis-opacity));
-  }
-
-  .v-field {
-    input.v-field__input::placeholder {
-      color: rgba(231, 227, 252, var(--v-disabled-opacity)) !important;
-    }
-  }
+  color: #fff;
 }
 
 .footer {

@@ -249,7 +249,6 @@ const widgetData = ref([
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
-            density="compact"
             class="me-3"
           />
           <!-- 👉 Add user button -->

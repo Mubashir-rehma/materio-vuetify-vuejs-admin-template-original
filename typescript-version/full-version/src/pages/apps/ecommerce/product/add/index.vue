@@ -112,7 +112,6 @@ const inventoryTabsData = [
                 <VTextField
                   label="Product Name"
                   placeholder="iPhone 14"
-                  density="compact"
                 />
               </VCol>
               <VCol
@@ -122,7 +121,6 @@ const inventoryTabsData = [
                 <VTextField
                   label="SKU"
                   placeholder="FXSK123U"
-                  density="compact"
                 />
               </VCol>
               <VCol
@@ -131,7 +129,6 @@ const inventoryTabsData = [
               >
                 <VTextField
                   label="Barcode"
-                  density="compact"
                   placeholder="0123-4567"
                 />
               </VCol>
@@ -265,7 +262,6 @@ const inventoryTabsData = [
                     :items="['Size', 'Color', 'Weight', 'Smell']"
                     placeholder="Select Variant"
                     label="Select Variant"
-                    density="compact"
                   />
                 </VCol>
                 <VCol
@@ -274,7 +270,6 @@ const inventoryTabsData = [
                 >
                   <VTextField
                     label="Variant Value"
-                    density="compact"
                     type="number"
                     placeholder="Enter Variant Value"
                   />
@@ -342,7 +337,6 @@ const inventoryTabsData = [
                         <VTextField
                           label="Add to stock"
                           placeholder="100"
-                          density="compact"
                         />
                         <VBtn prepend-icon="ri-check-line">
                           Confirm
@@ -426,7 +420,6 @@ const inventoryTabsData = [
                               </div>
                               <VTextField
                                 placeholder="USA"
-                                density="compact"
                                 style="min-inline-size: 200px;"
                               />
                             </div>
@@ -493,7 +486,6 @@ const inventoryTabsData = [
                             <AppDateTimePicker
                               model-value="2025-06-14"
                               placeholder="Select a Date"
-                              density="compact"
                             />
                           </div>
                         </template>
@@ -511,7 +503,6 @@ const inventoryTabsData = [
                           label="Product ID Type"
                           placeholder="Select Product Type"
                           :items="['ISBN', 'UPC', 'EAN', 'JAN']"
-                          density="compact"
                         />
                       </VCol>
 
@@ -520,7 +511,6 @@ const inventoryTabsData = [
                           label="Product Id"
                           placeholder="100023"
                           type="number"
-                          density="compact"
                         />
                       </VCol>
                     </VRow>
@@ -546,13 +536,11 @@ const inventoryTabsData = [
               label="Base Price"
               placeholder="iPhone 14"
               class="mb-6"
-              density="compact"
             />
             <VTextField
               label="Discounted Price"
               placeholder="$499"
               class="mb-4"
-              density="compact"
             />
             <VCheckbox label="Charge Tax on this product" />
 
@@ -572,30 +560,25 @@ const inventoryTabsData = [
               <VSelect
                 placeholder="Select Vendor"
                 label="Vendor"
-                density="compact"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
                 placeholder="Select Category"
                 label="Category"
-                density="compact"
                 :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
               />
               <VSelect
                 placeholder="Select Collection"
                 label="Collection"
-                density="compact"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
                 placeholder="Select Status"
                 label="Status"
-                density="compact"
                 :items="['Published', 'Inactive', 'Scheduled']"
               />
               <VTextField
                 label="Tags"
-                density="compact"
                 placeholder="Fashion, Trending, Summer"
               />
             </div>

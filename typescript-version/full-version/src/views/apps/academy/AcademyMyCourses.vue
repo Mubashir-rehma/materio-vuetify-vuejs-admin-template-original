@@ -72,7 +72,6 @@ const resolveChipColor = (tags: string) => {
               { title: 'Design', value: 'design' },
               { title: 'All Courses', value: 'All Courses' },
             ]"
-            density="compact"
             style="min-inline-size: 250px;"
             class="me-4"
           />

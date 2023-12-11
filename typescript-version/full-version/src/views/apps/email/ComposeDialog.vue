@@ -40,10 +40,7 @@ const resetValues = () => {
     </VCardItem>
 
     <div class="pe-5">
-      <VTextField
-        v-model="to"
-        density="compact"
-      >
+      <VTextField v-model="to">
         <template #prepend-inner>
           <div class="text-sm text-disabled">
             To:
@@ -57,10 +54,7 @@ const resetValues = () => {
 
     <VDivider />
 
-    <VTextField
-      v-model="subject"
-      density="compact"
-    >
+    <VTextField v-model="subject">
       <template #prepend-inner>
         <div class="text-sm text-disabled">
           Subject:

@@ -25,7 +25,6 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="ri-calendar-line"
-                density="compact"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -50,7 +49,6 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="ri-calendar-line"
-                density="compact"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -139,7 +137,6 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="ri-calendar-line"
-                density="compact"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -168,7 +165,6 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <AppDateTimePicker
                 model-value="2022-06-09"
                 prepend-inner-icon="ri-calendar-line"
-                density="compact"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />

@@ -73,7 +73,6 @@ const resetForm = () => {
                   label="Full Name"
                   :rules="[requiredValidator]"
                   placeholder="John Doe"
-                  density="compact"
                 />
               </VCol>
 
@@ -83,7 +82,6 @@ const resetForm = () => {
                   label="Email Address"
                   :rules="[requiredValidator, emailValidator]"
                   placeholder="johndoe@email.com"
-                  density="compact"
                 />
               </VCol>
 
@@ -93,7 +91,6 @@ const resetForm = () => {
                   label="Mobile Number"
                   :rules="[requiredValidator]"
                   placeholder="+(123) 456-7890"
-                  density="compact"
                 />
               </VCol>
 
@@ -108,7 +105,6 @@ const resetForm = () => {
                   v-model="addressLine1"
                   label="Address Line 1*"
                   :rules="[requiredValidator]"
-                  density="compact"
                   placeholder="45, Rocker Terrace"
                 />
               </VCol>
@@ -116,7 +112,6 @@ const resetForm = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="addressLine2"
-                  density="compact"
                   placeholder="Empire Heights,"
                   :rules="[requiredValidator]"
                   label="Address Line 2*"
@@ -127,7 +122,6 @@ const resetForm = () => {
                 <VTextField
                   v-model="town"
                   label="Town*"
-                  density="compact"
                   :rules="[requiredValidator]"
                   placeholder="New York"
                 />
@@ -137,7 +131,6 @@ const resetForm = () => {
                 <VTextField
                   v-model="state"
                   placeholder="Texas"
-                  density="compact"
                   :rules="[requiredValidator]"
                   label="State/Province*"
                 />
@@ -148,7 +141,6 @@ const resetForm = () => {
                   v-model="postCode"
                   label="Post Code*"
                   type="number"
-                  density="compact"
                   :rules="[requiredValidator]"
                   placeholder="982347"
                 />
@@ -160,7 +152,6 @@ const resetForm = () => {
                   placeholder="United States"
                   :rules="[requiredValidator]"
                   label="Country"
-                  density="compact"
                   :items="['United States', 'United Kingdom', 'Canada']"
                 />
               </VCol>

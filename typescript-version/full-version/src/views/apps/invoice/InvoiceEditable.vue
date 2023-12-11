@@ -97,7 +97,6 @@ const removeProduct = (id: number) => {
               v-model="invoice.id"
               disabled
               prefix="#"
-              density="compact"
               style="inline-size: 9.5rem;"
             />
           </span>
@@ -113,7 +112,6 @@ const removeProduct = (id: number) => {
           <span style="inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="invoice.issuedDate"
-              density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
             />
@@ -129,7 +127,6 @@ const removeProduct = (id: number) => {
           <span style="min-inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="invoice.dueDate"
-              density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
             />
@@ -158,7 +155,6 @@ const removeProduct = (id: number) => {
           placeholder="Select Client"
           return-object
           class="mb-6"
-          density="compact"
         />
         <p class="mb-1">
           {{ invoice.client.name }}

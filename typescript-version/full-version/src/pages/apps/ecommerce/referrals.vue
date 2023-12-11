@@ -142,10 +142,7 @@ const resolveStatus = (status: string) => {
                 Invite your friends
               </h5>
               <div class="d-flex align-center flex-wrap gap-4">
-                <VTextField
-                  placeholder="Email Addresss"
-                  density="compact"
-                />
+                <VTextField placeholder="Email Addresss" />
                 <VBtn>
                   <VIcon
                     start
@@ -161,10 +158,7 @@ const resolveStatus = (status: string) => {
                 Share the referral link
               </h5>
               <div class="d-flex align-center flex-wrap gap-4">
-                <VTextField
-                  placeholder="pixinvent.com/?ref=6478"
-                  density="compact"
-                />
+                <VTextField placeholder="pixinvent.com/?ref=6478" />
                 <div class="d-flex gap-x-4">
                   <VBtn
                     icon

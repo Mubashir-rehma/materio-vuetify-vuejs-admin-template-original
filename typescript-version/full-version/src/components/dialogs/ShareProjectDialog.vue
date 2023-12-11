@@ -118,7 +118,6 @@ const membersList: Member[] = [
             item-title="name"
             item-value="name"
             placeholder="Add project members..."
-            density="compact"
           >
             <template #item="{ props: listItemProp, item }">
               <VListItem v-bind="listItemProp">

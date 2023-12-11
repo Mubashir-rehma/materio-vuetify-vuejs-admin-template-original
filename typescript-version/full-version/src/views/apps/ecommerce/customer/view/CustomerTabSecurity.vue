@@ -114,7 +114,6 @@ const recentDevices = [
             <VTextField
               variant="outlined"
               :model-value="smsVerificationNumber"
-              density="compact"
               readonly
             >
               <template #append>

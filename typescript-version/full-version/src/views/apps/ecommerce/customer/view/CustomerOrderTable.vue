@@ -66,7 +66,6 @@ const deleteOrder = async (id: number) => {
         </div>
         <VTextField
           v-model="searchQuery"
-          density="compact"
           placeholder="Search Order"
           style=" max-inline-size: 250px; min-inline-size: 200px;"
         />

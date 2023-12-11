@@ -208,7 +208,6 @@ watch(activeIndex, () => {
                       align="start"
                       truncate-line="both"
                       side="end"
-                      density="compact"
                       line-thickness="1"
                       class="ps-2"
                     >

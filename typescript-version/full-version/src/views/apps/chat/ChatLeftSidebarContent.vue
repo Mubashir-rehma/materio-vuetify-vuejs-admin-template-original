@@ -51,7 +51,6 @@ const store = useChatStore()
 
     <VTextField
       v-model="search"
-      density="compact"
       placeholder="Search..."
       prepend-inner-icon="ri-search-line"
       class="ms-4 me-1 chat-list-search"

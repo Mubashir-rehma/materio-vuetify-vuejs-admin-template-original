@@ -131,7 +131,6 @@ const deleteUser = async (id: number) => {
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
-            density="compact"
             class="me-3"
           />
 
@@ -141,7 +140,6 @@ const deleteUser = async (id: number) => {
             label="Select Role"
             placeholder="Select Role"
             :items="roles"
-            density="compact"
             clearable
             clear-icon="ri-close-line"
             style="inline-size: 5rem;"

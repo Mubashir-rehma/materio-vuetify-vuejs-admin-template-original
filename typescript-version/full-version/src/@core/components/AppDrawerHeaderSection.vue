@@ -1,13 +1,11 @@
 <script setup lang="ts">
-interface Props {
+const props = defineProps<{
   title: string
-}
-interface Emit {
-  (e: 'cancel', el: MouseEvent): void
-}
-const props = defineProps<Props>()
+}>()
 
-defineEmits<Emit>()
+defineEmits<{
+  (e: 'cancel', el: MouseEvent): void
+}>()
 </script>
 
 <template>
@@ -22,7 +20,7 @@ defineEmits<Emit>()
     <IconBtn
       class="text-medium-emphasis"
       size="x-small"
-      @click="(event:MouseEvent) => $emit('cancel', event)"
+      @click="$emit('cancel', $event)"
     >
       <VIcon icon="ri-close-line" />
     </IconBtn>

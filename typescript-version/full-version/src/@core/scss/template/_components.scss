@@ -177,7 +177,7 @@
   &--variant-outlined,
   &--variant-text {
     .v-btn__overlay {
-      --v-hover-opacity: 0.16;
+      --v-hover-opacity: 0.08;
     }
 
     &:active{
@@ -221,13 +221,17 @@
 
     &.v-btn--size-small {
       .v-icon{
-        --v-icon-size-multiplier: 1.129 !important;
+        block-size: 20px;
+        font-size: 20px;
+        inline-size: 20px;
       }
     }
 
     &.v-btn--size-large {
       .v-icon{
-        --v-icon-size-multiplier: 1.1765 !important;
+        block-size: 28px;
+        font-size: 28px;
+        inline-size: 28px;
       }
     }
   }
@@ -357,6 +361,8 @@
 
 // 👉 Chip
 .v-chip{
+  line-height: 1.25rem !important;
+
   &:not(.v-chip--variant-elevated){
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
   }
@@ -369,6 +375,9 @@
     }
   }
 
+  &:not([class*="text-"]){
+    --v-activated-opacity: 0.08;
+  }
 
 
   &.v-chip--size-small{

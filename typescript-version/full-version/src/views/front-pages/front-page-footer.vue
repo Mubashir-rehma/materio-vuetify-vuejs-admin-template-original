@@ -27,9 +27,9 @@ const menus: Menu[] = [
           <div class="mb-4">
             <div class="d-flex align-center gap-x-3 mb-6">
               <VNodeRenderer :nodes="themeConfig.app.logo" />
-              <h5 class="text-h5 text-white">
+              <div class="footer-title">
                 MATERIO
-              </h5>
+              </div>
             </div>
             <div class="text-body-1 text-white mb-6">
               Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
@@ -189,10 +189,15 @@ const menus: Menu[] = [
 
 <style lang="scss" scoped>
 .footer-top {
-  background: #2e253e;
-  background-image: url("@images/front-pages/backgrounds/footer-bg.png");
-  background-size: cover;
+  background: url("@images/front-pages/backgrounds/footer-bg.png") lightgray 50% / cover no-repeat;
+}
+
+.footer-title{
   color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  line-height: 1.5rem;
 }
 
 .footer-line {
@@ -201,10 +206,6 @@ const menus: Menu[] = [
 </style>
 
 <style lang="scss">
-.subscribe-form {
-  color: #fff;
-}
-
 .footer {
   @media (min-width: 600px) and (max-width: 960px) {
     .v-container {

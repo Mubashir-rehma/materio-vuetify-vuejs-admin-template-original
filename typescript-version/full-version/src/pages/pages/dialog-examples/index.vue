@@ -37,7 +37,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-file-pdf-line"
             />
           </template>
@@ -68,7 +68,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-bank-card-line"
             />
           </template>
@@ -99,7 +99,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-money-dollar-circle-line"
             />
           </template>
@@ -131,7 +131,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-gift-line"
             />
           </template>
@@ -163,7 +163,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-home-3-line"
             />
           </template>
@@ -195,7 +195,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-box-3-line"
             />
           </template>
@@ -225,7 +225,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-lock-line"
             />
           </template>
@@ -258,7 +258,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-lock-line"
             />
           </template>
@@ -293,7 +293,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-bank-card-fill"
             />
           </template>
@@ -325,7 +325,7 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
+              size="28"
               icon="ri-bank-card-fill"
             />
           </template>

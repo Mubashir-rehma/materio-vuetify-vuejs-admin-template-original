@@ -32,11 +32,10 @@ const searchQuery = ref('')
               v-model="searchQuery"
               placeholder="Find your course"
               style="max-inline-size: 400px;"
-              density="compact"
             />
             <VBtn
               color="primary"
-              icon="mdi-magnify"
+              icon="ri-search-line"
               class="rounded"
             />
           </div>
@@ -140,7 +139,7 @@ const searchQuery = ref('')
                 color="primary"
               >
                 <VIcon
-                  icon="mdi-wallet-giftcard"
+                  icon="ri-gift-line"
                   size="36"
                 />
               </VAvatar>

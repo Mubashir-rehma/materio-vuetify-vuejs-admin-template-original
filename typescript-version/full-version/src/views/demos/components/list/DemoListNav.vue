@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 const items = [
-  { title: 'My Files', value: 1, prependIcon: 'mdi-folder-outline' },
-  { title: 'Shared with me', value: 2, prependIcon: 'mdi-account-multiple-outline' },
-  { title: 'Starred', value: 3, prependIcon: 'mdi-star-outline' },
-  { title: 'Recent', value: 4, prependIcon: 'mdi-history' },
-  { title: 'Offline', value: 5, prependIcon: 'mdi-check-circle-outline' },
-  { title: 'Uploads', value: 6, prependIcon: 'mdi-upload-outline' },
-  { title: 'Backups', value: 7, prependIcon: 'mdi-cloud-upload-outline' },
+  { title: 'My Files', value: 1, prependIcon: 'ri-folder-line' },
+  { title: 'Shared with me', value: 2, prependIcon: 'ri-group-line' },
+  { title: 'Starred', value: 3, prependIcon: 'ri-star-line' },
+  { title: 'Recent', value: 4, prependIcon: 'ri-history-line' },
+  { title: 'Offline', value: 5, prependIcon: 'ri-checkbox-circle-line' },
+  { title: 'Uploads', value: 6, prependIcon: 'ri-upload-line' },
+  { title: 'Backups', value: 7, prependIcon: 'ri-upload-cloud-line' },
 ]
 </script>
 

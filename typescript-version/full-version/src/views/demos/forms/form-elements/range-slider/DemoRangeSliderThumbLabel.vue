@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const seasons = ['Winter', 'Spring', 'Summer', 'Fall']
-const icons = ['mdi-snowflake', 'mdi-leaf', 'mdi-fire', 'mdi-water']
+const icons = ['ri-snowy-line', 'ri-leaf-line', 'ri-fire-line', 'ri-drop-line']
 const sliderValues = ref([1, 2])
 </script>
 

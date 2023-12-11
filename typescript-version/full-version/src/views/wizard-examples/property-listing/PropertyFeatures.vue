@@ -71,6 +71,8 @@ watch(formData, () => {
           label="Furnishing Details"
           placeholder="Select Furnishing Details"
           multiple
+          chips
+          closable-chips
           :items="['TV', 'AC', 'RO', 'Bed', 'Fridge', 'Wi-Fi', 'Sofa', 'Cupboard', 'Microwave', 'Dining Table', 'Washing Machine']"
         />
       </VCol>
@@ -88,12 +90,10 @@ watch(formData, () => {
           <VRadio
             label="Yes"
             value="true"
-            class="ms-2"
           />
           <VRadio
             label="No"
             value="false"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>
@@ -111,12 +111,10 @@ watch(formData, () => {
           <VRadio
             label="Yes"
             value="true"
-            class="ms-2"
           />
           <VRadio
             label="No"
             value="false"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Vehicle } from '@db/apps/logistics/types'
 
-// Data table options
 const itemsPerPage = ref(5)
 const page = ref(1)
 const sortBy = ref()
@@ -23,7 +22,7 @@ const { data: vehiclesData } = await useApi<any>(createUrl('/apps/logistics/vehi
   },
 }))
 
-const vehicles = computed(() => vehiclesData.value.vehicles)
+const vehicles = computed((): Vehicle[] => vehiclesData.value.vehicles)
 const totalVehicles = computed(() => vehiclesData.value.totalVehicles)
 
 const headers = [
@@ -66,6 +65,7 @@ const resolveChipColor = (warning: string) => {
       ]"
       :items-length="totalVehicles"
       :items="vehicles"
+      item-value="location"
       :headers="headers"
       show-select
       class="text-no-wrap"
@@ -77,7 +77,7 @@ const resolveChipColor = (warning: string) => {
           class="me-4"
         >
           <VIcon
-            icon="mdi-bus"
+            icon="ri-bus-line"
             size="28"
           />
         </VAvatar>

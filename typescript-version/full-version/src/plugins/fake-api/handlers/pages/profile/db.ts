@@ -48,25 +48,25 @@ export const db: DB = {
     },
     profile: {
       about: [
-        { property: 'Full Name', value: 'John Doe', icon: 'mdi-account-outline' },
-        { property: 'Status', value: 'active', icon: 'mdi-check' },
-        { property: 'Role', value: 'Developer', icon: 'mdi-star-outline' },
-        { property: 'Country', value: 'USA', icon: 'mdi-flag-outline' },
-        { property: 'Language', value: 'English', icon: 'mdi-translate' },
+        { property: 'Full Name', value: 'John Doe', icon: 'ri-user-line' },
+        { property: 'Status', value: 'active', icon: 'ri-check-line' },
+        { property: 'Role', value: 'Developer', icon: 'ri-star-fill-outline' },
+        { property: 'Country', value: 'USA', icon: 'ri-flag-line' },
+        { property: 'Language', value: 'English', icon: 'ri-translate-2' },
       ],
       contacts: [
-        { property: 'Contact', value: '(123) 456-7890', icon: 'mdi-phone-outline' },
-        { property: 'Skype', value: 'john.doe', icon: 'mdi-message-outline' },
-        { property: 'Email', value: 'john.doe@example.com', icon: 'mdi-email-outline' },
+        { property: 'Contact', value: '(123) 456-7890', icon: 'ri-phone-line-outline' },
+        { property: 'Skype', value: 'john.doe', icon: 'ri-message-line' },
+        { property: 'Email', value: 'john.doe@example.com', icon: 'ri-mail-line' },
       ],
       teams: [
-        { property: 'Backend Developer', value: '(126 Members)', icon: 'mdi-github', color: 'secondary' },
-        { property: 'VueJS Developer', value: '(98 Members)', icon: 'mdi-vuejs', color: 'success' },
+        { property: 'Backend Developer', value: '(126 Members)', icon: 'ri-github-fill', color: 'secondary' },
+        { property: 'VueJS Developer', value: '(98 Members)', icon: 'ri-vuejs-line', color: 'success' },
       ],
       overview: [
-        { property: 'Task Compiled', value: '13.5k', icon: 'mdi-check' },
-        { property: 'Connections', value: '897', icon: 'mdi-account-outline' },
-        { property: 'Projects Compiled', value: '146', icon: 'mdi-view-grid-plus-outline' },
+        { property: 'Task Compiled', value: '13.5k', icon: 'ri-check-line' },
+        { property: 'Connections', value: '897', icon: 'ri-user-line' },
+        { property: 'Projects Compiled', value: '146', icon: 'ri-grid-line' },
       ],
       connections: [
         {

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
-
 import avatar1 from '@images/avatars/avatar-1.png'
 import product21 from '@images/ecommerce-images/product-21.png'
 import product22 from '@images/ecommerce-images/product-22.png'
@@ -63,14 +61,14 @@ const orderData = [
             <VChip
               variant="tonal"
               color="success"
-              density="compact"
+              size="small"
             >
               Paid
             </VChip>
             <VChip
               variant="tonal"
               color="info"
-              density="compact"
+              size="small"
             >
               Ready to Pickup
             </VChip>
@@ -120,17 +118,18 @@ const orderData = [
             <template #item.productName="{ item }">
               <div class="d-flex gap-x-3">
                 <VAvatar
-                  size="38"
+                  size="34"
+                  variant="tonal"
                   :image="item.productImage"
-                  :rounded="0"
+                  rounded
                 />
 
                 <div class="d-flex flex-column align-center">
-                  <span class="text-body-1 font-weight-medium text-high-emphasis">
+                  <h6 class="text-h6">
                     {{ item.productName }}
-                  </span>
+                  </h6>
 
-                  <span class="text-caption text-start align-self-start">
+                  <span class="text-sm text-start align-self-start">
                     {{ item.brand }}
                   </span>
                 </div>
@@ -149,6 +148,7 @@ const orderData = [
 
             <template #bottom />
           </VDataTable>
+          <VDivider />
 
           <VCardText>
             <div class="d-flex align-end flex-column">
@@ -202,10 +202,11 @@ const orderData = [
                 dot-color="primary"
                 size="x-small"
               >
-                <div class="app-timeline-title mb-3">
-                  Main
+                <div class="d-flex justify-space-between align-center mb-3">
+                  <span class="app-timeline-title">Order was placed (Order ID: #32543)</span>
+                  <span class="app-timeline-meta">Tuesday 11:29 AM</span>
                 </div>
-                <p class="app-timeline-text">
+                <p class="app-timeline-text mb-0">
                   Your order has been placed successfully
                 </p>
               </VTimelineItem>
@@ -218,7 +219,7 @@ const orderData = [
                   <span class="app-timeline-title">Pick-up</span>
                   <span class="app-timeline-meta">Wednesday 11:29 AM</span>
                 </div>
-                <p class="app-timeline-text">
+                <p class="app-timeline-text mb-0">
                   Pick-up scheduled with courier
                 </p>
               </VTimelineItem>
@@ -231,7 +232,7 @@ const orderData = [
                   <span class="app-timeline-title">Dispatched</span>
                   <span class="app-timeline-meta">Thursday 8:15 AM</span>
                 </div>
-                <p class="app-timeline-text">
+                <p class="app-timeline-text mb-0">
                   Item has been picked up by courier.
                 </p>
               </VTimelineItem>
@@ -244,7 +245,7 @@ const orderData = [
                   <span class="app-timeline-title">Package arrived</span>
                   <span class="app-timeline-meta">Saturday 15:20 AM</span>
                 </div>
-                <p class="app-timeline-text">
+                <p class="app-timeline-text mb-0">
                   Package arrived at an Amazon facility, NY
                 </p>
               </VTimelineItem>
@@ -257,19 +258,19 @@ const orderData = [
                   <span class="app-timeline-title">Dispatched for delivery</span>
                   <span class="app-timeline-meta">Today 14:12 PM</span>
                 </div>
-                <p class="app-timeline-text">
+                <p class="app-timeline-text mb-0">
                   Package has left an Amazon facility , NY
                 </p>
               </VTimelineItem>
 
               <VTimelineItem
-                dot-color="secondary"
+                dot-color="primary"
                 size="x-small"
               >
                 <div class="d-flex justify-space-between align-center mb-3">
                   <span class="app-timeline-title">Delivery</span>
                 </div>
-                <p class="app-timeline-text">
+                <p class="app-timeline-text mb-0">
                   Package will be delivered by tomorrow
                 </p>
               </VTimelineItem>
@@ -298,28 +299,35 @@ const orderData = [
                 <div class="text-body-1 text-high-emphasis font-weight-medium">
                   Shamus Tuttle
                 </div>
-                <span class="text-caption">Customer ID: #47389</span>
+                <span>Customer ID: #47389</span>
               </div>
             </div>
 
-            <div>
+            <div class="d-flex align-center">
               <VAvatar
                 variant="tonal"
                 color="success"
                 class="me-3"
               >
-                <VIcon icon="mdi-cart-plus" />
+                <VIcon icon="ri-shopping-cart-line" />
               </VAvatar>
-              <span class="text-sm font-weight-medium text-high-emphasis">12 Orders</span>
+
+              <h6 class="text-h6">
+                12 Orders
+              </h6>
             </div>
 
             <div class="d-flex flex-column gap-y-1">
-              <div class="d-flex justify-space-between text-body-2">
-                <span class="text-body-2 text-high-emphasis font-weight-medium">Contact Info</span>
+              <div class="d-flex justify-space-between gap-1 text-body-2">
+                <h6 class="text-h6">
+                  Contact Info
+                </h6>
                 <span
-                  class="text-primary font-weight-medium cursor-pointer"
+                  class="text-base text-primary font-weight-medium cursor-pointer"
                   @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible"
-                >Edit</span>
+                >
+                  Edit
+                </span>
               </div>
               <span>Email: Sheldon88@yahoo.com</span>
               <span>Mobile: +1 (609) 972-22-22</span>
@@ -330,12 +338,12 @@ const orderData = [
         <!-- 👉 Shipping Address -->
         <VCard class="mb-6">
           <VCardText>
-            <div class="d-flex align-center justify-space-between mb-6">
+            <div class="d-flex align-center justify-space-between gap-1 mb-6">
               <div class="text-body-1 text-high-emphasis font-weight-medium">
                 Shipping Address
               </div>
               <span
-                class="text-body-2 text-primary font-weight-medium cursor-pointer"
+                class="text-base text-primary font-weight-medium cursor-pointer"
                 @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
               >Edit</span>
             </div>
@@ -348,12 +356,12 @@ const orderData = [
         <!-- 👉 Billing Address -->
         <VCard>
           <VCardText>
-            <div class="d-flex align-center justify-space-between mb-3">
+            <div class="d-flex align-center justify-space-between gap-1 mb-3">
               <div class="text-body-1 text-high-emphasis font-weight-medium">
                 Billing Address
               </div>
               <span
-                class="text-body-2 text-primary font-weight-medium cursor-pointer"
+                class="text-base text-primary font-weight-medium cursor-pointer"
                 @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
               >Edit</span>
             </div>
@@ -362,10 +370,10 @@ const orderData = [
             </div>
 
             <div class="mt-6">
-              <div class="text-body-1 text-body-1 text-high-emphasis font-weight-medium">
+              <h6 class="text-h6 mb-1">
                 Mastercard
-              </div>
-              <div class="text-body-2">
+              </h6>
+              <div class="text-base">
                 Card Number: ******4291
               </div>
             </div>

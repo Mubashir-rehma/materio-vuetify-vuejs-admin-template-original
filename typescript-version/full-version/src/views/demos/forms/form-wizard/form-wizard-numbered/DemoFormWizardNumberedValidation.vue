@@ -89,7 +89,6 @@ const validateSocialLinkForm = () => {
       <AppStepper
         v-model:current-step="currentStep"
         :items="numberedSteps"
-        align="start"
         :is-active-step-valid="isCurrentStepValid"
       />
     </VCardText>
@@ -152,7 +151,7 @@ const validateSocialLinkForm = () => {
                   placeholder="············"
                   :rules="[requiredValidator, passwordValidator]"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
               </VCol>
@@ -167,7 +166,7 @@ const validateSocialLinkForm = () => {
                   placeholder="············"
                   :rules="[requiredValidator, confirmedValidator(accountForm.cPassword, accountForm.password)]"
                   :type="isCPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isCPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
                 />
               </VCol>
@@ -180,7 +179,7 @@ const validateSocialLinkForm = () => {
                     disabled
                   >
                     <VIcon
-                      icon="mdi-arrow-left"
+                      icon="ri-arrow-left-line"
                       start
                       class="flip-in-rtl"
                     />
@@ -190,7 +189,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-arrow-right"
+                      icon="ri-arrow-right-line"
                       end
                       class="flip-in-rtl"
                     />
@@ -274,7 +273,7 @@ const validateSocialLinkForm = () => {
                     @click="currentStep--"
                   >
                     <VIcon
-                      icon="mdi-arrow-left"
+                      icon="ri-arrow-left-line"
                       start
                       class="flip-in-rtl"
                     />
@@ -284,7 +283,7 @@ const validateSocialLinkForm = () => {
                   <VBtn type="submit">
                     Next
                     <VIcon
-                      icon="mdi-arrow-right"
+                      icon="ri-arrow-right-line"
                       end
                       class="flip-in-rtl"
                     />
@@ -366,7 +365,7 @@ const validateSocialLinkForm = () => {
                     @click="currentStep--"
                   >
                     <VIcon
-                      icon="mdi-arrow-left"
+                      icon="ri-arrow-left-line"
                       start
                       class="flip-in-rtl"
                     />

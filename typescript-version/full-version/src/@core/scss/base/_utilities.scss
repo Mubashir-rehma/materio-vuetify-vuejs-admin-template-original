@@ -166,4 +166,11 @@ $card-spacer-content: 16px;
     font-size: 14px;
     line-height: 1.25rem;
   }
+
+  .timeline-chip{
+    border-radius: 6px;
+    background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity)); 
+    padding-block: 5px;
+    padding-inline: 10px
+  }
 }

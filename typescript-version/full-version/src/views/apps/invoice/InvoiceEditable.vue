@@ -11,7 +11,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const emits = defineEmits<{
+const emit = defineEmits<{
   (e: 'push', value: PurchasedProduct): void
   (e: 'remove', id: number): void
 }>()
@@ -38,7 +38,7 @@ fetchClients()
 
 // 👉 Add item function
 const addItem = () => {
-  emits('push', {
+  emit('push', {
     title: 'App Design',
     cost: 24,
     hours: 1,
@@ -48,7 +48,7 @@ const addItem = () => {
 
 // 👉 Remove Product edit section
 const removeProduct = (id: number) => {
-  emits('remove', id)
+  emit('remove', id)
 }
 </script>
 
@@ -97,7 +97,6 @@ const removeProduct = (id: number) => {
               v-model="invoice.id"
               disabled
               prefix="#"
-              density="compact"
               style="inline-size: 9.5rem;"
             />
           </span>
@@ -113,7 +112,6 @@ const removeProduct = (id: number) => {
           <span style="inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="invoice.issuedDate"
-              density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
             />
@@ -129,7 +127,6 @@ const removeProduct = (id: number) => {
           <span style="min-inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="invoice.dueDate"
-              density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
             />
@@ -158,7 +155,6 @@ const removeProduct = (id: number) => {
           placeholder="Select Client"
           return-object
           class="mb-6"
-          density="compact"
         />
         <p class="mb-1">
           {{ invoice.client.name }}
@@ -240,7 +236,7 @@ const removeProduct = (id: number) => {
 
       <VBtn
         size="small"
-        prepend-icon="mdi-plus"
+        prepend-icon="ri-add-line"
         @click="addItem"
       >
         Add Item

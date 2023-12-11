@@ -1,14 +1,14 @@
 import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/types'
 import checkoutImg from '@images/front-pages/misc/checkout-image.png'
 import productImg from '@images/front-pages/misc/product-image.png'
-import laptop from '@images/iconify-svg/laptop.svg'
-import lightbulb from '@images/iconify-svg/lightbulb.svg'
+import laptop from '@images/svg/laptop.svg?url'
+import lightbulb from '@images/svg/lightbulb.svg?url'
 
 // Images
-import discord from '@images/svg/discord.svg'
-import gift from '@images/svg/gift.svg'
-import keyboard from '@images/svg/keyboard.svg'
-import rocket from '@images/svg/rocket.svg'
+import discord from '@images/svg/discord.svg?url'
+import gift from '@images/svg/gift.svg?url'
+import keyboard from '@images/svg/keyboard.svg?url'
+import rocket from '@images/svg/rocket.svg?url'
 
 interface DB {
   allArticles: HelpCenterAllCategoryArticles[]
@@ -23,13 +23,13 @@ export const db: DB = {
       slug: 'getting-started',
       title: 'Getting Started',
       img: rocket,
-      subtitle: 'Whether you\'re new or you\'re a power user, this article will',
+      subtitle: 'Whether you\'re new or you\'re a power user, this article will help you to',
     },
     {
       slug: 'first-steps',
       title: 'First Steps',
       img: gift,
-      subtitle: 'Are you a new customer wondering how to get started?',
+      subtitle: 'Are you a new customer wondering on how to get started?',
     },
     {
       slug: 'external-content',
@@ -41,7 +41,7 @@ export const db: DB = {
   allArticles: [
     {
       title: 'Buying',
-      icon: 'mdi-cart-plus',
+      icon: 'ri-shopping-cart-line',
       articles: [
         { title: 'What are Favourites?' },
         { title: 'How do I purchase an item?' },
@@ -53,7 +53,7 @@ export const db: DB = {
     },
     {
       title: 'Item Support',
-      icon: 'mdi-cart-plus',
+      icon: 'ri-question-line',
       articles: [
         { title: 'What is Item Support?' },
         { title: 'How to contact an author?' },
@@ -65,7 +65,7 @@ export const db: DB = {
     },
     {
       title: 'Licenses',
-      icon: 'mdi-currency-usd',
+      icon: 'ri-file-text-line',
       articles: [
         { title: 'Can I use the same license for the...' },
         { title: 'How to contact an author?' },
@@ -77,7 +77,7 @@ export const db: DB = {
     },
     {
       title: 'Template Kits',
-      icon: 'mdi-format-color-fill',
+      icon: 'ri-palette-line',
       articles: [
         { title: 'Template Kits' },
         { title: 'Elementor Template Kits: PHP Zip ...' },
@@ -89,7 +89,7 @@ export const db: DB = {
     },
     {
       title: 'Account & Password',
-      icon: 'mdi-lock-open-outline',
+      icon: 'ri-lock-line',
       articles: [
         { title: 'Signing in with a social account' },
         { title: 'Locked Out of Account' },
@@ -101,7 +101,7 @@ export const db: DB = {
     },
     {
       title: 'Account Settings',
-      icon: 'mdi-account-outline',
+      icon: 'ri-user-3-line',
       articles: [
         { title: 'How do I change my password?' },
         { title: 'How do I change my username?' },
@@ -137,10 +137,10 @@ export const db: DB = {
     title: 'How to add product in cart?',
     lastUpdated: '1 month ago  -  Updated',
     productContent: `
-            <p>
+            <p class='text-body-1'>
               If you're after only one item, simply choose the 'Buy Now' option on the item page. This will take you directly to Checkout.
             </p>
-            <p>
+            <p class='text-body-1'>
               If you want several items, use the 'Add to Cart' button and then choose 'Keep Browsing' to continue shopping or 'Checkout' to finalize your purchase.
             </p>
         `,

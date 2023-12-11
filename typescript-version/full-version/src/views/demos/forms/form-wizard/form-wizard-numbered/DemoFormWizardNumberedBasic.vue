@@ -45,7 +45,6 @@ const onSubmit = () => {
       <!-- 👉 Stepper -->
       <AppStepper
         v-model:current-step="currentStep"
-        align="start"
         :items="numberedSteps"
       />
     </VCardText>
@@ -101,7 +100,7 @@ const onSubmit = () => {
                   label="Password"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
               </VCol>
@@ -115,7 +114,7 @@ const onSubmit = () => {
                   label="Confirm Password"
                   placeholder="············"
                   :type="isCPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isCPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isCPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isCPasswordVisible = !isCPasswordVisible"
                 />
               </VCol>
@@ -247,7 +246,7 @@ const onSubmit = () => {
             @click="currentStep--"
           >
             <VIcon
-              icon="mdi-arrow-left"
+              icon="ri-arrow-left-line"
               start
               class="flip-in-rtl"
             />
@@ -257,7 +256,7 @@ const onSubmit = () => {
           <VBtn
             v-if="numberedSteps.length - 1 === currentStep"
             color="success"
-            append-icon="mdi-check"
+            append-icon="ri-check-line"
             @click="onSubmit"
           >
             submit
@@ -270,7 +269,7 @@ const onSubmit = () => {
             Next
 
             <VIcon
-              icon="mdi-arrow-right"
+              icon="ri-arrow-right-line"
               end
               class="flip-in-rtl"
             />

@@ -26,7 +26,7 @@ const userStatusRadioOptions = [
       <IconBtn @click="$emit('close')">
         <VIcon
           class="text-medium-emphasis"
-          icon="mdi-close"
+          icon="ri-close-line"
         />
       </IconBtn>
     </div>
@@ -107,28 +107,28 @@ const userStatusRadioOptions = [
         <div class="d-flex align-center my-3">
           <VIcon
             class="me-2"
-            icon="mdi-check-circle-outline"
+            icon="ri-checkbox-circle-line"
           />
           <span>Two-step Verification</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
             class="me-2"
-            icon="mdi-bell-outline"
+            icon="ri-notification-3-line"
           />
           <span>Notification</span>
         </div>
         <div class="d-flex align-center mb-3">
           <VIcon
             class="me-2"
-            icon="mdi-account-outline"
+            icon="ri-user-line"
           />
           <span>Invite Friends</span>
         </div>
         <div class="d-flex align-center">
           <VIcon
             class="me-2"
-            icon="mdi-trash-can-outline"
+            icon="ri-delete-bin-line"
           />
           <span>Delete Account</span>
         </div>

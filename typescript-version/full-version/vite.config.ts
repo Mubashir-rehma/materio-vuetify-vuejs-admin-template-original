@@ -10,6 +10,7 @@ import { defineConfig } from 'vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import vuetify from 'vite-plugin-vuetify'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -87,6 +88,9 @@ export default defineConfig({
         fileURLToPath(new URL('./src/plugins/i18n/locales/**', import.meta.url)),
       ],
     }),
+    svgLoader({
+      defaultImport: 'component',
+    }),
   ],
   define: { 'process.env': {} },
   resolve: {
@@ -98,7 +102,6 @@ export default defineConfig({
       '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),
       '@styles': fileURLToPath(new URL('./src/assets/styles/', import.meta.url)),
       '@configured-variables': fileURLToPath(new URL('./src/assets/styles/variables/_template.scss', import.meta.url)),
-      'apexcharts': fileURLToPath(new URL('node_modules/apexcharts-clevision', import.meta.url)),
       '@db': fileURLToPath(new URL('./src/plugins/fake-api/handlers/', import.meta.url)),
       '@api-utils': fileURLToPath(new URL('./src/plugins/fake-api/utils/', import.meta.url)),
     },

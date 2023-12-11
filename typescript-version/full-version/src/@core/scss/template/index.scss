@@ -1,4 +1,10 @@
 @use "@core/scss/base";
 
+// Skins
+@use "skins";
+
 // Components
 @use "components";
+
+// Utilities
+@use "utilities";

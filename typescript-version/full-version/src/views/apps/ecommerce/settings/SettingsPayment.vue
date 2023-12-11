@@ -108,7 +108,7 @@ const isPaymentProvidersDialogVisible = ref(false)
 
         <VBtn
           variant="outlined"
-          :append-icon="$vuetify.display.smAndUp ? 'mdi-chevron-down' : ''"
+          :append-icon="$vuetify.display.smAndUp ? 'ri-arrow-down-s-line' : ''"
         >
           <span>Add Manual Payment Methods</span>
 

@@ -10,7 +10,7 @@ const rating = ref(4.5)
         :size="25"
         :color="props.isFilled ? 'success' : 'secondary'"
         class="me-3"
-        :icon="props.isFilled ? 'mdi-emoticon-excited-outline' : 'mdi-emoticon-sad-outline'"
+        :icon="props.isFilled ? 'ri-emotion-happy-line' : 'ri-emotion-unhappy-line'"
       />
     </template>
   </VRating>

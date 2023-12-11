@@ -27,14 +27,14 @@ const logout = async () => {
 
 const userProfileList = [
   { type: 'divider' },
-  { type: 'navItem', icon: 'mdi-account-outline', title: 'Profile', to: { name: 'apps-user-view-id', params: { id: 21 } } },
-  { type: 'navItem', icon: 'mdi-cog-outline', title: 'settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
-  { type: 'navItem', icon: 'mdi-credit-card-outline', title: 'Billing', to: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } }, badgeProps: { color: 'light-error', content: '3', textColor: 'error' } },
+  { type: 'navItem', icon: 'ri-user-line', title: 'Profile', to: { name: 'apps-user-view-id', params: { id: 21 } } },
+  { type: 'navItem', icon: 'ri-settings-2-line', title: 'settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
+  { type: 'navItem', icon: 'ri-bank-card-line', title: 'Billing', to: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } }, badgeProps: { color: 'light-error', content: '3', textColor: 'error' } },
   { type: 'divider' },
-  { type: 'navItem', icon: 'mdi-currency-usd', title: 'Pricing', to: { name: 'pages-pricing' } },
-  { type: 'navItem', icon: 'mdi-help-circle-outline', title: 'FAQ', to: { name: 'pages-faq' } },
+  { type: 'navItem', icon: 'ri-money-dollar-circle-line', title: 'Pricing', to: { name: 'pages-pricing' } },
+  { type: 'navItem', icon: 'ri-question-line', title: 'FAQ', to: { name: 'pages-faq' } },
   { type: 'divider' },
-  { type: 'navItem', icon: 'mdi-logout', title: 'Logout', onClick: logout },
+  { type: 'navItem', icon: 'ri-logout-box-line', title: 'Logout', onClick: logout },
 ]
 </script>
 
@@ -59,7 +59,7 @@ const userProfileList = [
       />
       <VIcon
         v-else
-        icon="mdi-account-outline"
+        icon="ri-user-line"
       />
 
       <!-- SECTION Menu -->
@@ -90,7 +90,7 @@ const userProfileList = [
                     />
                     <VIcon
                       v-else
-                      icon="mdi-account-outline"
+                      icon="ri-user-line"
                     />
                   </VAvatar>
                 </VBadge>

@@ -14,8 +14,9 @@ interface Emit {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const updateSelectedOption = (value: string) => {
-  emit('update:selectedRadio', value)
+const updateSelectedOption = (value: string | null) => {
+  if (value !== null)
+    emit('update:selectedRadio', value)
 }
 </script>
 
@@ -39,8 +40,14 @@ const updateSelectedOption = (value: string) => {
             name="content"
             :item="item"
           >
+            <template v-if="typeof item.bgImage === 'object'">
+              <Component
+                :is="item.bgImage"
+                class="custom-radio-image"
+              />
+            </template>
             <img
-              v-if="item.bgImage"
+              v-else
               :src="item.bgImage"
               alt="bg-img"
               class="custom-radio-image"
@@ -75,7 +82,7 @@ const updateSelectedOption = (value: string) => {
   padding: 0;
 
   &.active {
-    border-width: 2px;
+    border-width: 1px;
   }
 
   .custom-radio-image {

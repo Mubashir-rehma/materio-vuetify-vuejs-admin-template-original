@@ -18,7 +18,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarTopVisible = true"
     >
-      <VIcon icon="mdi-arrow-up" />
+      <VIcon icon="ri-arrow-up-line" />
     </VBtn>
 
     <VSnackbar
@@ -34,7 +34,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarTopEndVisible = true"
     >
-      <VIcon icon="mdi-arrow-top-right" />
+      <VIcon icon="ri-arrow-right-up-line" />
     </VBtn>
 
     <VSnackbar
@@ -50,7 +50,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarEndVisible = true"
     >
-      <VIcon icon="mdi-arrow-right" />
+      <VIcon icon="ri-arrow-right-line" />
     </VBtn>
 
     <VSnackbar
@@ -66,7 +66,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarBottomEndVisible = true"
     >
-      <VIcon icon="mdi-arrow-bottom-right" />
+      <VIcon icon="ri-arrow-right-down-fill" />
     </VBtn>
 
     <VSnackbar
@@ -82,7 +82,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarBottomVisible = true"
     >
-      <VIcon icon="mdi-arrow-down" />
+      <VIcon icon="ri-arrow-down-line" />
     </VBtn>
 
     <VSnackbar v-model="isSnackbarBottomVisible">
@@ -95,7 +95,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarBottomStartVisible = true"
     >
-      <VIcon icon="mdi-arrow-bottom-left" />
+      <VIcon icon="ri-arrow-left-down-fill" />
     </VBtn>
 
     <VSnackbar
@@ -111,7 +111,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarStartVisible = true"
     >
-      <VIcon icon="mdi-arrow-left" />
+      <VIcon icon="ri-arrow-left-line" />
     </VBtn>
 
     <VSnackbar
@@ -127,7 +127,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarTopStartVisible = true"
     >
-      <VIcon icon="mdi-arrow-top-left" />
+      <VIcon icon="ri-arrow-left-up-line" />
     </VBtn>
 
     <VSnackbar
@@ -143,7 +143,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarCenteredVisible = true"
     >
-      <VIcon icon="mdi-arrow-collapse-all" />
+      <VIcon icon="ri-drag-move-fill" />
     </VBtn>
 
     <VSnackbar

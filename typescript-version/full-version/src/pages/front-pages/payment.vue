@@ -53,13 +53,16 @@ const isPricingPlanDialogVisible = ref(false)
               md="8"
               :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
             >
-              <VCardText>
+              <VCardText
+                class="pa-8"
+                :class="$vuetify.display.smAndDown ? 'pb-5' : 'pe-5'"
+              >
                 <!-- Checkout header -->
                 <div>
-                  <div class="text-h5 mb-2">
+                  <h4 class="text-h4 mb-2">
                     Checkout
-                  </div>
-                  <div class="text-body-2">
+                  </h4>
+                  <div class="text-body-1">
                     All plans include 40+ advanced tools and features to boost your product. Choose the best plan to fit your needs.
                   </div>
                 </div>
@@ -72,11 +75,12 @@ const isPricingPlanDialogVisible = ref(false)
                 >
                   <template #default="{ item }">
                     <div class="d-flex align-center gap-x-4">
-                      <VImg
+                      <img
                         :src="item.images"
-                        height="35"
-                      />
-                      <div class="font-weight-medium text-high-emphasis">
+                        height="34"
+                        width="58"
+                      >
+                      <div class="text-body-1 text-high-emphasis">
                         {{ item.title }}
                       </div>
                     </div>
@@ -84,11 +88,12 @@ const isPricingPlanDialogVisible = ref(false)
                 </CustomRadios>
 
                 <!-- billing Details -->
-                <div class="mb-8">
-                  <h6 class="text-h6 mb-6">
+                <div class="mb-7">
+                  <h4 class="text-h4 mb-6">
                     Billing Details
-                  </h6>
-                  <VRow>
+                  </h4>
+
+                  <VRow class="my-0">
                     <VCol
                       cols="12"
                       md="6"
@@ -137,14 +142,11 @@ const isPricingPlanDialogVisible = ref(false)
                 </div>
 
                 <!-- Credit card info -->
-                <div
-                  class="mb-8"
-                  :class="selectedRadio === 'paypal' ? 'd-none' : 'd-block'"
-                >
-                  <h6 class="text-h6 mb-6">
+                <div :class="selectedRadio === 'paypal' ? 'd-none' : 'd-block'">
+                  <h4 class="text-h4 mb-6">
                     Credit Card Info
-                  </h6>
-                  <VRow>
+                  </h4>
+                  <VRow class="my-0">
                     <VCol cols="12">
                       <VTextField
                         label="Card Number"
@@ -192,28 +194,35 @@ const isPricingPlanDialogVisible = ref(false)
               cols="12"
               md="4"
             >
-              <VCardText>
+              <VCardText
+                class="pa-8"
+                :class="$vuetify.display.smAndDown ? '' : 'ps-5'"
+              >
                 <!-- order summary -->
                 <div class="mb-8">
-                  <div class="text-h5 mb-2">
+                  <h4 class="text-h4 mb-2">
                     Order Summary
-                  </div>
-                  <div class="text-body-2">
+                  </h4>
+                  <div class="text-body-1">
                     It can help you manage and service orders before, during, and after fulfilment.
                   </div>
                 </div>
 
                 <VCard
                   flat
-                  variant="tonal"
+                  color="rgba(var(--v-theme-on-surface), var(--v-hover-opacity))"
                 >
-                  <VCardText>
+                  <VCardText class="pa-6">
                     <div>
-                      <div class="text-body-2">
+                      <div class="text-body-1">
                         A simple start for everyone
                       </div>
                       <div class="my-4">
-                        <span class="text-h3">$59.99</span> / month
+                        <h3 class="text-h3 d-inline-block">
+                          $59.99
+                        </h3> <div class="text-body-1 font-weight-medium d-inline-block">
+                          / month
+                        </div>
                       </div>
                       <VBtn
                         variant="outlined"
@@ -227,23 +236,35 @@ const isPricingPlanDialogVisible = ref(false)
                 </VCard>
 
                 <div class="my-5">
-                  <div class="d-flex justify-space-between">
-                    <span>Subscription</span>
-                    <span>$85.99</span>
+                  <div class="d-flex justify-space-between mb-2">
+                    <div class="text-body-1">
+                      Subscription
+                    </div>
+                    <div class="text-body-1 font-weight-medium text-high-emphasis">
+                      $85.99
+                    </div>
                   </div>
                   <div class="d-flex justify-space-between">
-                    <span>Tax</span>
-                    <span>$4.99</span>
+                    <div class="text-body-1">
+                      Tax
+                    </div>
+                    <div class="text-body-1 font-weight-medium text-high-emphasis">
+                      $4.99
+                    </div>
                   </div>
                   <VDivider class="my-4" />
                   <div class="d-flex justify-space-between">
-                    <span>Total</span>
-                    <span>$90.98</span>
+                    <div class="text-body-1">
+                      Total
+                    </div>
+                    <div class="text-body-1 font-weight-medium text-high-emphasis">
+                      $90.98
+                    </div>
                   </div>
                 </div>
 
                 <VBtn
-                  :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
+                  :append-icon="$vuetify.locale.isRtl ? 'ri-arrow-left-line' : 'ri-arrow-right-line'"
                   block
                   color="success"
                   class="mb-8"
@@ -251,7 +272,7 @@ const isPricingPlanDialogVisible = ref(false)
                   Proceed With Payment
                 </VBtn>
 
-                <div class="text-body-2">
+                <div class="text-body-1">
                   By continuing, you accept to our Terms of Services and Privacy Policy. Please note that payments are non-refundable.
                 </div>
               </VCardText>

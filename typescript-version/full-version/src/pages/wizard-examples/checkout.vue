@@ -6,23 +6,27 @@ import PaymentContent from '@/views/wizard-examples/checkout/Payment.vue'
 import type { CheckoutData } from '@/views/wizard-examples/checkout/types'
 import googleHome from '@images/pages/google-home.png'
 import iphone11 from '@images/pages/iphone-11.png'
+import customAddress from '@images/svg/address.svg'
+import customCart from '@images/svg/cart.svg'
+import customPayment from '@images/svg/payment.svg'
+import customTrending from '@images/svg/trending.svg'
 
 const checkoutSteps = [
   {
     title: 'Cart',
-    icon: 'custom-cart',
+    icon: customCart,
   },
   {
     title: 'Address',
-    icon: 'custom-address',
+    icon: customAddress,
   },
   {
     title: 'Payment',
-    icon: 'custom-payment',
+    icon: customPayment,
   },
   {
     title: 'Confirmation',
-    icon: 'custom-trending',
+    icon: customTrending,
   },
 ]
 
@@ -86,6 +90,7 @@ const currentStep = ref(0)
         class="checkout-stepper"
         :items="checkoutSteps"
         :direction="$vuetify.display.mdAndUp ? 'horizontal' : 'vertical'"
+        align="center"
       />
     </VCardText>
 
@@ -125,13 +130,3 @@ const currentStep = ref(0)
     </VCardText>
   </VCard>
 </template>
-
-<style lang="scss">
-.checkout-stepper {
-  .stepper-icon-step {
-    .step-wrapper + svg {
-      margin-inline: 3.5rem !important;
-    }
-  }
-}
-</style>

@@ -29,7 +29,7 @@ const load = (i: number) => {
       Upload
       <VIcon
         end
-        icon="mdi-cloud-upload-outline"
+        icon="ri-upload-cloud-line"
       />
     </VBtn>
 
@@ -54,7 +54,7 @@ const load = (i: number) => {
       Icon Loader
       <template #loader>
         <span class="custom-loader">
-          <VIcon icon="mdi-cached" />
+          <VIcon icon="ri-refresh-line" />
         </span>
       </template>
     </VBtn>
@@ -63,7 +63,7 @@ const load = (i: number) => {
       :loading="loadings[4]"
       :disabled="loadings[4]"
       color="warning"
-      icon="mdi-cloud-upload-outline"
+      icon="ri-upload-cloud-line"
       @click="load(4)"
     />
   </div>

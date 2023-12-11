@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ECommerceAddCustomerDrawer from '@/views/apps/ecommerce/ECommerceAddCustomerDrawer.vue'
 import CustomerBioPanel from '@/views/apps/ecommerce/customer/view/CustomerBioPanel.vue'
 import CustomerTabAddressAndBilling from '@/views/apps/ecommerce/customer/view/CustomerTabAddressAndBilling.vue'
 import CustomerTabNotification from '@/views/apps/ecommerce/customer/view/CustomerTabNotification.vue'
@@ -12,10 +11,10 @@ const customerData = ref<Customer>()
 const userTab = ref(null)
 
 const tabs = [
-  { icon: 'mdi-account-outline', title: 'Overview' },
-  { icon: 'mdi-lock-outline', title: 'Security' },
-  { icon: 'mdi-bookmark-outline', title: 'Billing & Plan' },
-  { icon: 'mdi-bell-outline', title: 'Notifications' },
+  { icon: 'ri-group-line', title: 'Overview' },
+  { icon: 'ri-lock-line', title: 'Security' },
+  { icon: 'ri-map-pin-line', title: 'Address & Billing' },
+  { icon: 'ri-notification-3-line', title: 'Notifications' },
 ]
 
 const { data, error } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
@@ -24,8 +23,6 @@ if (error.value)
   console.log(error.value)
 else if (data.value)
   customerData.value = data.value
-
-const isAddCustomerDrawerOpen = ref(false)
 </script>
 
 <template>
@@ -33,31 +30,19 @@ const isAddCustomerDrawerOpen = ref(false)
     <!-- 👉 Header  -->
     <div class="d-flex justify-space-between align-center flex-wrap gap-y-4 mb-6">
       <div>
-        <div class="d-flex gap-2 align-center mb-2 flex-wrap">
-          <h5 class="text-h5 font-weight-medium">
-            Customer ID #{{ route.params.id }}
-          </h5>
-        </div>
-        <div>
-          <span class="text-body-1">
-            Aug 17, 2020, 5:48 (ET)
-          </span>
-        </div>
+        <h4 class="text-h4">
+          Customer ID #{{ route.params.id }}
+        </h4>
+        <p class="text-body-1 mb-0">
+          Aug 17, 2020, 5:48 (ET)
+        </p>
       </div>
-      <div class="d-flex gap-4">
-        <VBtn
-          variant="outlined"
-          color="error"
-        >
-          medium
-        </VBtn>
-        <VBtn
-          prepend-icon="mdi-plus"
-          @click="isAddCustomerDrawerOpen = !isAddCustomerDrawerOpen"
-        >
-          Add Customer
-        </VBtn>
-      </div>
+      <VBtn
+        variant="outlined"
+        color="error"
+      >
+        Delete Customer
+      </VBtn>
     </div>
     <!-- 👉 Customer Profile  -->
     <VRow v-if="customerData">
@@ -83,7 +68,6 @@ const isAddCustomerDrawerOpen = ref(false)
           >
             <VIcon
               start
-              :size="24"
               :icon="tab.icon"
             />
             <span>{{ tab.title }}</span>
@@ -109,6 +93,5 @@ const isAddCustomerDrawerOpen = ref(false)
         </VWindow>
       </VCol>
     </VRow>
-    <ECommerceAddCustomerDrawer v-model:is-drawer-open="isAddCustomerDrawerOpen" />
   </div>
 </template>

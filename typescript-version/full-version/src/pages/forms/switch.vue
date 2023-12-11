@@ -28,7 +28,7 @@ import * as demoCode from '@/views/demos/forms/form-elements/switch/demoCodeSwit
         title="Inset"
         :code="demoCode.inset"
       >
-        <p>You can make switch render in inset mode.</p>
+        <p>To change the default <code>inset</code> switch, simply modify the inset prop to a <code>false</code> value.</p>
 
         <DemoSwitchInset />
       </AppCardCode>

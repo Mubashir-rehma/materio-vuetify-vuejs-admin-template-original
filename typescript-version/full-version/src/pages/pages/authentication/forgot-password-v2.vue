@@ -71,7 +71,7 @@ const email = ref('')
                   :to="{ name: 'pages-authentication-login-v2' }"
                 >
                   <VIcon
-                    icon="mdi-chevron-left"
+                    icon="ri-arrow-left-s-line"
                     class="flip-in-rtl"
                   />
                   <span>Back to login</span>

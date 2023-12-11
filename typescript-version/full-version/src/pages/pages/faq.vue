@@ -25,12 +25,12 @@ watch(faqSearchQuery, fetchFaqs, { immediate: true })
 
 const contactUs = [
   {
-    icon: 'mdi-phone',
+    icon: 'ri-phone-line',
     via: '+ (810) 2548 2568',
     tagLine: 'We are always happy to help!',
   },
   {
-    icon: 'mdi-email-outline',
+    icon: 'ri-mail-line',
     via: 'hello@help.com',
     tagLine: 'Best way to get answer faster!',
   },
@@ -144,7 +144,7 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
         :class="!faqs.length ? 'd-flex justify-center align-center' : ''"
       >
         <VIcon
-          icon="mdi-help-circle-outline"
+          icon="ri-question-line"
           start
           size="20"
         />

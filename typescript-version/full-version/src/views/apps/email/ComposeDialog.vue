@@ -27,23 +27,20 @@ const resetValues = () => {
         <VSpacer />
         <VIcon
           size="20"
-          icon="mdi-minus"
+          icon="ri-subtract-line"
           class="me-4"
           @click="$emit('close')"
         />
         <VIcon
           size="20"
-          icon="mdi-close"
+          icon="ri-close-line"
           @click="$emit('close'); resetValues()"
         />
       </div>
     </VCardItem>
 
     <div class="pe-5">
-      <VTextField
-        v-model="to"
-        density="compact"
-      >
+      <VTextField v-model="to">
         <template #prepend-inner>
           <div class="text-sm text-disabled">
             To:
@@ -57,10 +54,7 @@ const resetValues = () => {
 
     <VDivider />
 
-    <VTextField
-      v-model="subject"
-      density="compact"
-    >
+    <VTextField v-model="subject">
       <template #prepend-inner>
         <div class="text-sm text-disabled">
           Subject:
@@ -87,7 +81,7 @@ const resetValues = () => {
           @click="() => isMenuOpen = !isMenuOpen"
         >
           <VIcon
-            :icon="isMenuOpen ? 'mdi-chevron-up' : 'mdi-chevron-down' "
+            :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line' "
             size="24"
           />
           <VMenu activator="parent">
@@ -96,19 +90,19 @@ const resetValues = () => {
         </VBtn>
       </VBtnGroup>
       <VIcon
-        icon="mdi-attachment"
+        icon="ri-attachment-2"
         class="ms-4 cursor-pointer"
       />
 
       <VSpacer />
 
       <VIcon
-        icon="mdi-dots-vertical"
+        icon="ri-more-2-line"
         size="20"
         class="cursor-pointer"
       />
       <VIcon
-        icon="mdi-delete-outline"
+        icon="ri-delete-bin-line"
         size="20"
         class="ms-4 cursor-pointer"
         @click="$emit('close'); resetValues()"

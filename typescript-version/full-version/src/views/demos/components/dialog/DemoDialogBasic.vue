@@ -18,7 +18,7 @@ const isDialogVisible = ref(false)
     <VCard title="Privacy Policy">
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="isDialogVisible = false"
       />
 

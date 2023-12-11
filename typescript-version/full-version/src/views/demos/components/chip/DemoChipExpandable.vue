@@ -25,7 +25,7 @@ const isMenuVisible = ref(false)
             <IconBtn @click="isMenuVisible = false">
               <VIcon
                 size="20"
-                icon="mdi-close"
+                icon="ri-close-line"
               />
             </IconBtn>
           </VListItemAction>

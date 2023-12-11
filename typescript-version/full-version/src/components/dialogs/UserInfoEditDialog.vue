@@ -1,20 +1,16 @@
 <script setup lang="ts">
 interface UserData {
   id: number | null
-  fullName: string
-  company: string
-  role: string
-  username: string
-  country: string
-  contact: string
+  firstName: string
+  lastName: string
+  userName: string
+  country: string | null
+  contact: string | null
   email: string
-  currentPlan: string
-  status: string
-  avatar: string
-  taskDone: number | null
-  projectDone: number | null
+  status: string | null
+  isBillingAddress: boolean
   taxId: string
-  language: string
+  language: string[] | null
 }
 
 interface Props {
@@ -30,27 +26,24 @@ interface Emit {
 const props = withDefaults(defineProps<Props>(), {
   userData: () => ({
     id: 0,
-    fullName: '',
-    company: '',
-    role: '',
-    username: '',
-    country: '',
-    contact: '',
+    firstName: '',
+    lastName: '',
+    userName: '',
     email: '',
-    currentPlan: '',
-    status: '',
+    country: null,
+    language: null,
+    contact: '',
+    status: null,
     avatar: '',
     taskDone: null,
-    projectDone: null,
+    isBillingAddress: true,
     taxId: '',
-    language: '',
   }),
 })
 
 const emit = defineEmits<Emit>()
 
 const userData = ref<UserData>(structuredClone(toRaw(props.userData)))
-const isUseAsBillingAddress = ref(false)
 
 watch(props, () => {
   userData.value = structuredClone(toRaw(props.userData))
@@ -74,55 +67,65 @@ const dialogVisibleUpdate = (val: boolean) => {
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 650 "
+    :width="$vuetify.display.smAndDown ? 'auto' : 900 "
     :model-value="props.isDialogVisible"
     @update:model-value="dialogVisibleUpdate"
   >
-    <VCard class="pa-sm-9 pa-5">
+    <VCard class="pa-sm-11 pa-3">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="onFormReset"
       />
 
-      <VCardItem class="text-center">
-        <VCardTitle class="text-h5">
-          Edit User Information
-        </VCardTitle>
-        <VCardSubtitle>
-          Updating user details will receive a privacy audit.
-        </VCardSubtitle>
-      </VCardItem>
+      <VCardText class="pt-5">
+        <div class="text-center pb-6">
+          <h4 class="text-h4 mb-2">
+            Edit User Information
+          </h4>
+          <div class="text-body-1">
+            Updating user details will receive a privacy audit.
+          </div>
+        </div>
 
-      <VCardText>
         <!-- 👉 Form -->
         <VForm
-          class="mt-6"
+          class="mt-4"
           @submit.prevent="onFormSubmit"
         >
           <VRow>
-            <!-- 👉 Full Name -->
+            <!-- 👉 First Name -->
             <VCol
               cols="12"
               md="6"
             >
               <VTextField
-                v-model="userData.fullName"
-                label="Full Name"
-                placeholder="John Doe"
+                v-model="userData.firstName"
+                label="First Name"
+                placeholder="John"
               />
             </VCol>
 
-            <!-- 👉 Username -->
+            <!-- 👉 Last Name -->
             <VCol
               cols="12"
               md="6"
             >
               <VTextField
-                v-model="userData.username"
+                v-model="userData.lastName"
+                label="Last Name"
+                placeholder="doe"
+              />
+            </VCol>
+
+            <!-- 👉 User Name  -->
+
+            <VCol cols="12">
+              <VTextField
+                v-model="userData.userName"
                 label="Username"
-                placeholder="johndoe"
+                placeholder="John Doe"
               />
             </VCol>
 
@@ -143,10 +146,11 @@ const dialogVisibleUpdate = (val: boolean) => {
               cols="12"
               md="6"
             >
-              <VTextField
+              <VSelect
                 v-model="userData.status"
+                :items="['Active', 'Inactive', 'Pending']"
                 label="Status"
-                placeholder="Active"
+                placeholder="Status"
               />
             </VCol>
 
@@ -158,7 +162,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               <VTextField
                 v-model="userData.taxId"
                 label="Tax Id"
-                placeholder="123456789"
+                placeholder="Tax-3456789"
               />
             </VCol>
 
@@ -179,10 +183,14 @@ const dialogVisibleUpdate = (val: boolean) => {
               cols="12"
               md="6"
             >
-              <VTextField
+              <VSelect
                 v-model="userData.language"
+                :items="['English', 'Spanish', 'French']"
                 label="Language"
                 placeholder="English"
+                chips
+                closable-chips
+                multiple
               />
             </VCol>
 
@@ -191,8 +199,9 @@ const dialogVisibleUpdate = (val: boolean) => {
               cols="12"
               md="6"
             >
-              <VTextField
+              <VSelect
                 v-model="userData.country"
+                :items="['United States', 'United Kingdom', 'France']"
                 label="Country"
                 placeholder="United States"
               />
@@ -201,7 +210,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             <!-- 👉 Switch -->
             <VCol cols="12">
               <VSwitch
-                v-model="isUseAsBillingAddress"
+                v-model="userData.isBillingAddress"
                 density="compact"
                 label="Use as a billing address?"
               />
@@ -218,7 +227,7 @@ const dialogVisibleUpdate = (val: boolean) => {
 
               <VBtn
                 color="secondary"
-                variant="tonal"
+                variant="outlined"
                 @click="onFormReset"
               >
                 Cancel

@@ -6,19 +6,19 @@ const radioContent: CustomInputContent[] = [
     title: 'Standard',
     desc: 'Delivery in 3-5 days.',
     value: 'standard',
-    icon: 'mdi-briefcase-outline',
+    icon: 'ri-briefcase-line',
   },
   {
     title: 'Express',
     desc: 'Delivery within 2 days.',
     value: 'express',
-    icon: 'mdi-rocket-launch-outline',
+    icon: 'ri-rocket-line',
   },
   {
     title: 'Overnight',
     desc: 'Delivery within a days.',
     value: 'overnight',
-    icon: 'mdi-crown-outline',
+    icon: 'ri-vip-crown-line',
   },
 ]
 
@@ -346,8 +346,7 @@ const formData = ref({
 .sticky-header {
   position: sticky;
   z-index: 9;
-  inset-block-end: 0;
-  inset-block-start: 4rem;
+  inset-block: 4rem 0;
   transition: all 0.3s ease-in-out;
 }
 </style>

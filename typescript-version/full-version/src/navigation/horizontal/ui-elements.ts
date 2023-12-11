@@ -1,21 +1,21 @@
 export default [
   {
     title: 'User Interface',
-    icon: { icon: 'mdi-layers-outline' },
+    icon: { icon: 'ri-stack-line' },
     children: [
       {
         title: 'Icons',
-        icon: { icon: 'mdi-eye-outline' },
+        icon: { icon: 'ri-eye-line' },
         to: 'pages-icons',
       },
       {
         title: 'Typography',
-        icon: { icon: 'mdi-alpha-t-box-outline' },
+        icon: { icon: 'ri-font-size-2' },
         to: 'pages-typography',
       },
       {
         title: 'Cards',
-        icon: { icon: 'mdi-credit-card-outline' },
+        icon: { icon: 'ri-bank-card-line' },
         children: [
           { title: 'Basic', to: 'pages-cards-card-basic' },
           { title: 'Statistics', to: 'pages-cards-card-statistics' },
@@ -25,7 +25,7 @@ export default [
       },
       {
         title: 'Components',
-        icon: { icon: 'mdi-archive-outline' },
+        icon: { icon: 'ri-archive-line' },
         children: [
           { title: 'Alert', to: 'components-alert' },
           { title: 'Avatar', to: 'components-avatar' },
@@ -47,7 +47,7 @@ export default [
       },
       {
         title: 'Extensions',
-        icon: { icon: 'mdi-cube-outline' },
+        icon: { icon: 'ri-box-3-line' },
         children: [
           { title: 'Tour', to: 'extensions-tour' },
           { title: 'Swiper', to: 'extensions-swiper' },

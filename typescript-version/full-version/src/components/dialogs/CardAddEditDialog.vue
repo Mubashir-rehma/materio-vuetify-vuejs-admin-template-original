@@ -43,29 +43,29 @@ const formSubmit = () => {
 
 <template>
   <VDialog
-    :width="$vuetify.display.smAndDown ? 'auto' : 650"
+    :width="$vuetify.display.smAndDown ? 'auto' : 600"
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
-    <VCard class="pa-5 pa-sm-8">
+    <VCard class="pa-sm-11 pa-3">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="$emit('update:isDialogVisible', false)"
       />
 
-      <!-- 👉 Title -->
-      <VCardItem class="text-center">
-        <VCardTitle class="text-2xl">
-          {{ props.cardDetails.name ? 'Edit Card' : 'Add New Card' }}
-        </VCardTitle>
-        <VCardSubtitle>
-          {{ props.cardDetails.name ? 'Edit your saved card details' : 'Add your saved card details' }}
-        </VCardSubtitle>
-      </VCardItem>
+      <VCardText class="pt-5">
+        <!-- 👉 Title -->
+        <div class="text-center mb-6">
+          <h4 class="text-h4 mb-2">
+            {{ props.cardDetails.name ? 'Edit Card' : 'Add New Card' }}
+          </h4>
+          <div class="text-body-1">
+            {{ props.cardDetails.name ? 'Edit your saved card details' : 'Add your saved card details' }}
+          </div>
+        </div>
 
-      <VCardText class="mt-6">
         <VForm @submit.prevent="() => {}">
           <VRow>
             <!-- 👉 Card Number -->
@@ -97,7 +97,7 @@ const formSubmit = () => {
             >
               <VTextField
                 v-model="cardDetails.expiry"
-                label="Expiry Date"
+                label="Expiry"
                 placeholder="MM/YY"
               />
             </VCol>
@@ -110,7 +110,7 @@ const formSubmit = () => {
               <VTextField
                 v-model="cardDetails.cvv"
                 type="number"
-                label="CVV Code"
+                label="CVV"
                 placeholder="123"
               />
             </VCol>
@@ -119,7 +119,7 @@ const formSubmit = () => {
             <VCol cols="12">
               <VSwitch
                 v-model="cardDetails.isPrimary"
-                label="Set as primary card"
+                label="Save Card for future billing?"
               />
             </VCol>
 
@@ -129,7 +129,7 @@ const formSubmit = () => {
               class="text-center"
             >
               <VBtn
-                class="me-3"
+                class="me-4"
                 type="submit"
                 @click="formSubmit"
               >
@@ -137,7 +137,7 @@ const formSubmit = () => {
               </VBtn>
               <VBtn
                 color="secondary"
-                variant="tonal"
+                variant="outlined"
                 @click="$emit('update:isDialogVisible', false)"
               >
                 Cancel

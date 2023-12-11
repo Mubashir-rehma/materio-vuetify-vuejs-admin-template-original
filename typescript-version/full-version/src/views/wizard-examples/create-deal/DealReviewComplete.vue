@@ -23,15 +23,15 @@ watch(formData, () => {
       cols="12"
       md="7"
     >
-      <h5 class="text-h5 mb-5">
+      <h4 class="text-h4 mb-4">
         Almost done! 🚀
-      </h5>
+      </h4>
 
       <p>Confirm your deal details information and submit to create it.</p>
 
       <table class="text-base">
         <tr>
-          <td style="width: 202px;">
+          <td style="inline-size: 202px;">
             <p class="font-weight-medium mb-2">
               Deal Type
             </p>

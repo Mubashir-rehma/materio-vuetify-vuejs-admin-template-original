@@ -18,19 +18,19 @@ const isEditAddressDialogVisible = ref(false)
 
 const deliveryOptions = [
   {
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
     title: 'Standard',
     desc: 'Get your product in 1 Week.',
     value: 'free',
   },
   {
-    icon: 'mdi-crown-outline',
+    icon: 'ri-vip-crown-line',
     title: 'Express',
     desc: 'Get your product in 3-4 days.',
     value: 'express',
   },
   {
-    icon: 'mdi-rocket-launch-outline',
+    icon: 'ri-rocket-line',
     title: 'Overnight',
     desc: 'Get your product in 1 day.',
     value: 'overnight',
@@ -75,9 +75,9 @@ watch(() => props.currentStep, updateAddressData)
       md="8"
     >
       <!-- 👉 Address options -->
-      <h6 class="text-base font-weight-regular mb-4">
+      <div class="text-body-1 text-high-emphasis mb-4">
         Select your preferable address
-      </h6>
+      </div>
 
       <!-- 👉 Address custom input -->
       <CustomRadios
@@ -87,33 +87,38 @@ watch(() => props.currentStep, updateAddressData)
       >
         <template #default="{ item }">
           <div class="w-100">
-            <div class="d-flex justify-space-between mb-3">
-              <h6 class="text-base font-weight-medium">
+            <div class="d-flex justify-space-between mb-4">
+              <div class="text-body-1 text-high-emphasis">
                 {{ item.title }}
-              </h6>
+              </div>
 
               <VChip
                 :color="resolveAddressBadgeColor[item.value]"
-                density="comfortable"
+                size="small"
                 class="text-capitalize"
               >
                 {{ item.value }}
               </VChip>
             </div>
 
-            <p class="mb-0">
+            <p class="text-body-1 mb-0">
               {{ item.desc }}
             </p>
-            <p>
+            <p class="text-body-1 mb-3">
               Mobile: {{ item.subtitle }}
             </p>
-            <VDivider />
-            <div class="pt-4">
+
+            <VDivider class="pb-2" />
+
+            <div class="d-flex gap-x-4 py-2">
               <a
                 href="#"
-                class="me-3"
+                class="text-base"
               >Edit</a>
-              <a href="#">Remove</a>
+              <a
+                href="#"
+                class="text-base"
+              >Remove</a>
             </div>
           </div>
         </template>
@@ -121,17 +126,18 @@ watch(() => props.currentStep, updateAddressData)
 
       <!-- 👉 Add New Address -->
       <VBtn
-        variant="tonal"
-        class="mt-5 mb-8"
+        variant="outlined"
+        class="mt-4 mb-6"
+        size="small"
         @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
       >
         Add New Address
       </VBtn>
 
       <!-- 👉 Delivery options -->
-      <h6 class="text-base font-weight-regular mb-4">
+      <div class="text-body-1 text-high-emphasis mb-4">
         Choose Delivery Speed
-      </h6>
+      </div>
 
       <!-- 👉 Delivery options custom input -->
       <CustomRadiosWithIcon
@@ -156,12 +162,13 @@ watch(() => props.currentStep, updateAddressData)
             <VIcon
               size="28"
               :icon="item.icon"
+              class="text-high-emphasis"
             />
 
-            <h6 class="text-base font-weight-medium">
+            <h6 class="text-h6">
               {{ item.title }}
             </h6>
-            <p class="text-sm text-center mb-0">
+            <p class="text-body-2 mb-0">
               {{ item.desc }}
             </p>
           </div>
@@ -179,7 +186,7 @@ watch(() => props.currentStep, updateAddressData)
       >
         <!-- 👉 Delivery estimate date -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-5">
+          <h6 class="text-h6 mb-4">
             Estimated Delivery Date
           </h6>
 
@@ -190,16 +197,19 @@ watch(() => props.currentStep, updateAddressData)
             >
               <template #prepend>
                 <VImg
-                  width="60"
+                  width="54"
+                  height="70"
                   :src="product.image"
                   class="me-2"
                 />
               </template>
 
-              <VListItemSubtitle>{{ product.name }}</VListItemSubtitle>
-              <span class="font-weight-medium text-sm">
+              <div class="text-body-1">
+                {{ product.name }}
+              </div>
+              <div class="text-body-1 font-weight-medium">
                 {{ product.estimatedDelivery }}
-              </span>
+              </div>
             </VListItem>
           </VList>
         </VCardText>
@@ -208,33 +218,41 @@ watch(() => props.currentStep, updateAddressData)
 
         <!-- 👉 Price details -->
         <VCardText>
-          <h6 class="text-base font-weight-medium mb-5">
+          <h6 class="text-h6 mb-4">
             Price Details
           </h6>
 
-          <div class="d-flex align-center justify-space-between mb-2">
-            <span class="text-high-emphasis">Order Total</span>
-            <span>${{ checkoutAddressDataLocal.orderAmount }}</span>
+          <div class="d-flex align-center justify-space-between text-sm mb-2">
+            <div class="text-high-emphasis text-body-1">
+              Order Total
+            </div>
+            <div class="text-body-1">
+              ${{ checkoutAddressDataLocal.orderAmount }}
+            </div>
           </div>
 
-          <div class="d-flex align-center justify-space-between">
-            <span class="text-high-emphasis">Delivery Charges</span>
-            <div>
+          <div class="d-flex justify-space-between">
+            <div class="text-body-1 text-high-emphasis">
+              Delivery Charges
+            </div>
+
+            <div class="d-flex gap-x-2">
+              <div class="text-body-1 text-disabled">
+                $5.00
+              </div>
               <VChip
-                v-if="checkoutAddressDataLocal.deliverySpeed === 'free'"
-                density="comfortable"
+                size="small"
                 color="success"
               >
                 Free
               </VChip>
-              <span v-else>${{ resolveDeliveryBadgeData[checkoutAddressDataLocal.deliverySpeed ].price }}.00</span>
             </div>
           </div>
         </VCardText>
 
         <VDivider />
 
-        <VCardText class="d-flex align-center justify-space-between text-high-emphasis py-3">
+        <VCardText class="d-flex align-center justify-space-between text-high-emphasis">
           <span class="text-base font-weight-medium">Total</span>
           <span class="text-base font-weight-medium">
             ${{ totalPriceWithDeliveryCharges }}
@@ -253,3 +271,9 @@ watch(() => props.currentStep, updateAddressData)
   </VRow>
   <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 16px;
+}
+</style>

@@ -33,8 +33,6 @@ const refForm = ref<VForm>()
 // 👉 Event
 const event = ref<Event>(JSON.parse(JSON.stringify(props.event)))
 
-console.log(event)
-
 const resetEvent = () => {
   event.value = JSON.parse(JSON.stringify(props.event))
   nextTick(() => {
@@ -129,7 +127,7 @@ const endDateTimePickerConfig = computed(() => {
         >
           <VIcon
             size="18"
-            icon="mdi-trash-can-outline"
+            icon="ri-delete-bin-line"
           />
         </IconBtn>
       </template>

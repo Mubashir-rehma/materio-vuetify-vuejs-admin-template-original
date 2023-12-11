@@ -72,7 +72,6 @@ const resolveChipColor = (tags: string) => {
               { title: 'Design', value: 'design' },
               { title: 'All Courses', value: 'All Courses' },
             ]"
-            density="compact"
             style="min-inline-size: 250px;"
             class="me-4"
           />
@@ -120,7 +119,7 @@ const resolveChipColor = (tags: string) => {
                         {{ course.rating }}
                       </span>
                       <VIcon
-                        icon="mdi-star"
+                        icon="ri-star-fill"
                         color="warning"
                         class="me-2"
                       />
@@ -145,7 +144,7 @@ const resolveChipColor = (tags: string) => {
                     class="d-flex align-center mb-2"
                   >
                     <VIcon
-                      icon="mdi-clock-outline"
+                      icon="ri-time-line"
                       size="24"
                       class="me-1"
                     />
@@ -156,7 +155,7 @@ const resolveChipColor = (tags: string) => {
                     class="mb-2"
                   >
                     <VIcon
-                      icon="mdi-check"
+                      icon="ri-check-line"
                       color="success"
                       class="me-1"
                     />
@@ -180,7 +179,7 @@ const resolveChipColor = (tags: string) => {
                     >
                       <template #append>
                         <VIcon
-                          icon="mdi-refresh"
+                          icon="ri-refresh-line"
                           class="flip-in-rtl"
                         />
                       </template>
@@ -194,7 +193,7 @@ const resolveChipColor = (tags: string) => {
                     >
                       <template #append>
                         <VIcon
-                          icon="mdi-arrow-right"
+                          icon="ri-arrow-right-line"
                           class="flip-in-rtl"
                         />
                       </template>

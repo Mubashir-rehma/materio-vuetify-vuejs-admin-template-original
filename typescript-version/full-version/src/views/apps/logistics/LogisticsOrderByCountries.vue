@@ -39,7 +39,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               line-thickness="1"
             >
               <VTimelineItem
-                icon="mdi-check-circle-outline"
+                icon="ri-checkbox-circle-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
@@ -57,7 +57,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
               <VTimelineItem
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
@@ -87,7 +87,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               line-thickness="1"
             >
               <VTimelineItem
-                icon="mdi-check-circle-outline"
+                icon="ri-checkbox-circle-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
@@ -105,7 +105,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
               <VTimelineItem
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
@@ -136,7 +136,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               line-thickness="1"
             >
               <VTimelineItem
-                icon="mdi-check-circle-outline"
+                icon="ri-checkbox-circle-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
@@ -154,7 +154,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
               <VTimelineItem
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
@@ -183,7 +183,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               line-thickness="1"
             >
               <VTimelineItem
-                icon="mdi-check-circle-outline"
+                icon="ri-checkbox-circle-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
@@ -201,7 +201,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
               <VTimelineItem
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
@@ -232,7 +232,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               line-thickness="1"
             >
               <VTimelineItem
-                icon="mdi-check-circle-outline"
+                icon="ri-checkbox-circle-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
@@ -250,7 +250,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
               <VTimelineItem
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
@@ -277,7 +277,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               line-thickness="1"
             >
               <VTimelineItem
-                icon="mdi-check-circle-outline"
+                icon="ri-checkbox-circle-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
@@ -295,7 +295,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
               <VTimelineItem
-                icon="mdi-map-marker-outline"
+                icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot

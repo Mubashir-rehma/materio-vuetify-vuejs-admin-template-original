@@ -43,11 +43,11 @@ register()
     >
       <swiper-slide
         v-for="{ icon, text } in [
-          { icon: 'mdi-github', text: 'Getting Started' },
-          { icon: 'mdi-facebook', text: 'Pricing & Plans' },
-          { icon: 'mdi-twitter', text: 'Sales Question' },
-          { icon: 'mdi-instagram', text: 'Usage Guidelines' },
-          { icon: 'mdi-gitlab', text: 'General Guide' },
+          { icon: 'ri-github-fill', text: 'Getting Started' },
+          { icon: 'ri-facebook-circle-line', text: 'Pricing & Plans' },
+          { icon: 'ri-twitter-line', text: 'Sales Question' },
+          { icon: 'ri-instagram-line', text: 'Usage Guidelines' },
+          { icon: 'ri-gitlab-line', text: 'General Guide' },
         ]"
         :key="text"
       >

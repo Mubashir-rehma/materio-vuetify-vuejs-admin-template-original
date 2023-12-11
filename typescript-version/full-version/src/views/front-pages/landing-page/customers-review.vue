@@ -103,27 +103,40 @@ const reviewData = [
 <template>
   <div class="customer-reviews">
     <!-- 👉 Headers  -->
-    <div class="headers d-flex justify-center flex-column align-center mb-16">
-      <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+    <div class="headers d-flex justify-center flex-column align-center mb-8">
+      <div class="d-flex gap-x-3 mb-6">
         <img
           :src="sectionTitleIcon"
           alt="section title icon"
-          height="20"
-          width="20"
+          height="24"
+          width="25"
         >
-        <span>
+        <div
+          class="text-body-1 text-high-emphasis font-weight-medium"
+          style="letter-spacing: 0.15px !important;"
+        >
           REAL CUSTOMERS REVIEWS
-        </span>
-      </h6>
-      <h5 class="text-h5 mb-2">
-        <span class="font-weight-bold">Success Stories</span> from Clients
-      </h5>
-      <p>
+        </div>
+      </div>
+
+      <div class="mb-2 text-center">
+        <span
+          class="text-h4 d-inline-block font-weight-bold"
+          style="line-height: 2rem;"
+        >
+          Success stories
+        </span> <span class="text-h5 d-inline-block">from clients</span>
+      </div>
+
+      <p
+        class="text-body-1 font-weight-medium text-center"
+        style="letter-spacing: 0.15px !important;"
+      >
         See what our customers have to say about their experience.
       </p>
     </div>
 
-    <div class="swiper-reviews-carousel py-4 mb-10">
+    <div class="swiper-reviews-carousel py-4 mb-6">
       <!-- eslint-disable vue/attribute-hyphenation -->
       <swiper-container
         slides-per-view="1"
@@ -148,7 +161,7 @@ const reviewData = [
 
       `]"
         :breakpoints="{
-          1200: {
+          1400: {
             slidesPerView: 4,
             spaceBetween: 20,
           },
@@ -166,12 +179,8 @@ const reviewData = [
           v-for="(data, index) in reviewData"
           :key="index"
         >
-          <VCard
-            flat
-            border
-            class="h-100 d-flex align-stretch"
-          >
-            <VCardText class="pa-6 d-flex flex-column justify-space-between align-center">
+          <VCard class="h-100 d-flex align-stretch">
+            <VCardText class="pa-4 pa-sm-6 pa-md-8 d-flex flex-column justify-space-between align-center">
               <img
                 :src="data.img"
                 style="block-size: 1.75rem;"
@@ -180,17 +189,23 @@ const reviewData = [
               <div class="text-body-1 text-high-emphasis text-center">
                 {{ data.desc }}
               </div>
-              <VRating
-                :model-value="data.rating"
-                color="warning"
-                readonly
-              />
+
+              <div>
+                <VRating
+                  :model-value="data.rating"
+                  color="warning"
+                  readonly
+                />
+              </div>
+
               <div class="text-center">
-                <span class="text-body-1 text-high-emphasis font-weight-medium">
+                <div class="text-body-1 text-high-emphasis font-weight-medium">
                   {{ data.name }}
-                </span>
-                <br>
-                <span class="text-body-2">{{ data.position }}</span>
+                </div>
+
+                <div class="text-body-2">
+                  {{ data.position }}
+                </div>
               </div>
             </VCardText>
           </VCard>
@@ -198,10 +213,8 @@ const reviewData = [
       </swiper-container>
     </div>
 
-    <VDivider />
-
     <!-- 👉 Brand-logo Swiper  -->
-    <div class="swiper-brands-carousel mt-8">
+    <div class="swiper-brands-carousel mt-4">
       <swiper-container
         slides-per-view="1"
         loop="true"
@@ -247,10 +260,15 @@ swiper-container::part(bullet) {
   background-color: rgba(var(--v-theme-on-background));
 }
 
+swiper-container::part(pagination) {
+  margin-block: 1.5rem;
+}
+
 .swiper-reviews-carousel {
   swiper-container {
     --swiper-pagination-bullet-width: 10px;
     --swiper-pagination-bullet-height: 10px;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
 
     .swiper {
       padding-block-end: 3rem;
@@ -271,15 +289,13 @@ swiper-container::part(bullet) {
   }
 
   .swiper-pagination {
-    inset-block-end: 0 !important;
-    inset-block-start: 0 !important;
+    inset-block: 0 0 !important;
   }
 }
 </style>
 
 <style lang="scss" scoped>
 .customer-reviews {
-  margin-block-end: 2rem;
-  margin-block-start: 6.25rem;
+  margin-block: 6.25rem;
 }
 </style>

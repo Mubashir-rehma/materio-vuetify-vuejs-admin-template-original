@@ -119,8 +119,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -147,8 +146,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -176,8 +174,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />

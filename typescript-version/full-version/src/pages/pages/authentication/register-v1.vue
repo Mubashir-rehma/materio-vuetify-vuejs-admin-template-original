@@ -75,7 +75,7 @@ const isPasswordVisible = ref(false)
                 label="Password"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"
-                :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
               <div class="d-flex align-center mt-1 mb-4">

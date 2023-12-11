@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
+import listArrowIcon from '@images/svg/list-arrow-icon.svg?url'
+import VectorIcon from '@images/svg/vector.svg'
 
 const pricingPlans = [
   {
@@ -55,25 +57,38 @@ const pricingPlans = [
 
 <template>
   <VContainer id="pricing-plan">
-    <div class="pricing-plans">
+    <div class="pricing-plans d-flex flex-column gap-12">
       <!-- 👉 Headers  -->
-      <div class="headers d-flex justify-center flex-column align-center mb-16">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+      <div class="headers d-flex justify-center flex-column align-center">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="20"
-            width="20"
+            height="24"
+            width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             PRICING PLANS
-          </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          <span class="font-weight-bold">Tailored Pricing Plans</span> designed for you
-        </h5>
-        <p>
-          All plans include 40+ advanced tools and features to boost your product.
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            Tailored pricing plans
+          </span> <span class="text-h5 d-inline-block">designed for you</span>
+        </div>
+
+        <p
+          class="text-body-1 font-weight-medium text-center"
+          style="letter-spacing: 0.15px !important;"
+        >
+          All plans include 40+ advanced tools and features to boost your product. <br>
           Choose the best plan to fit your needs.
         </p>
       </div>
@@ -84,7 +99,7 @@ const pricingPlans = [
           model-value="458"
           color="primary"
           thumb-label="always"
-          class="mb-16"
+          class="mt-12"
         />
       </div>
 
@@ -92,78 +107,97 @@ const pricingPlans = [
         <VCol
           v-for="(plan, index) in pricingPlans"
           :key="index"
+          cols="12"
+          md="6"
+          lg="4"
         >
           <VCard
             flat
             border
             :style="plan.current ? 'border:2px solid rgb(var(--v-theme-primary))' : ''"
           >
-            <VCardText>
-              <h5 class="text-h5 mb-5">
-                {{ plan.title }}
-              </h5>
+            <VCardText class="pa-8">
+              <div class="d-flex flex-column gap-y-8">
+                <div class="d-flex flex-column  gap-y-3">
+                  <h4 class="text-h4 text-center">
+                    {{ plan.title }}
+                  </h4>
 
-              <div class="d-flex justify-space-between mb-8">
-                <div class="d-flex align-start">
-                  <span class="text-h6">
-                    $
-                  </span>
-                  <span class="text-h3">
-                    {{ plan.price }}
-                  </span>
-                </div>
-
-                <div>
-                  <div class="text-body-1">
-                    Per month
-                  </div>
-                  <div class="text-caption">
-                    10% off for yearly subscription
-                  </div>
-                </div>
-              </div>
-
-              <VList class="card-list">
-                <VListItem
-                  v-for="(item, i) in plan.features"
-                  :key="i"
-                >
-                  <template #prepend>
-                    <VIcon
-                      icon="custom-list-arrow-icon"
-                      size="20"
-                      color="primary"
-                    />
-                    <div class="text-body-1 font-weight-medium text-high-emphasis">
-                      {{ item }}
+                  <div class="d-flex align-center gap-x-3">
+                    <div class="d-flex">
+                      <h5
+                        class="text-h5"
+                        style="margin-block-start: 0.35rem;"
+                      >
+                        $
+                      </h5>
+                      <div class="plan-price-text">
+                        {{ plan.price }}
+                      </div>
                     </div>
-                  </template>
-                </VListItem>
-              </VList>
+                    <div>
+                      <div class="text-body-1 font-weight-medium text-high-emphasis">
+                        Per month
+                      </div>
+                      <div class="text-body-2">
+                        10% off for yearly subscription
+                      </div>
+                    </div>
+                  </div>
 
-              <VDivider class="my-4" />
-
-              <div class="d-flex align-center justify-space-between mb-8 flex-wrap">
-                <div>
-                  <div>{{ plan.supportType }}</div>
-                  <div>{{ plan.supportMedium }}</div>
+                  <VectorIcon />
                 </div>
-                <VChip
-                  variant="tonal"
-                  color="primary"
-                  density="comfortable"
-                >
-                  {{ plan.respondTime }}
-                </VChip>
-              </div>
 
-              <VBtn
-                block
-                :variant="plan.current ? 'elevated' : 'outlined'"
-                :to="{ name: 'front-pages-payment' }"
-              >
-                Get Started
-              </VBtn>
+                <div class="d-flex flex-column">
+                  <VList class="card-list">
+                    <VListItem
+                      v-for="(item, i) in plan.features"
+                      :key="i"
+                    >
+                      <template #prepend>
+                        <img
+                          :src="listArrowIcon"
+                          color="primary"
+                          class="me-3"
+                        >
+                      </template>
+                      <h5 class="text-h5">
+                        {{ item }}
+                      </h5>
+                    </VListItem>
+                  </VList>
+
+                  <VDivider class="my-4" />
+
+                  <div class="d-flex align-center justify-space-between flex-wrap gap-2">
+                    <div>
+                      <div class="text-body-1 font-weight-medium text-high-emphasis mb-1">
+                        {{ plan.supportType }} Support
+                      </div>
+                      <div class="text-body-2">
+                        {{ plan.supportMedium }}
+                      </div>
+                    </div>
+
+                    <VChip
+                      variant="tonal"
+                      color="primary"
+                      density="comfortable"
+                      class="font-weight-medium"
+                    >
+                      {{ plan.respondTime }}
+                    </VChip>
+                  </div>
+                </div>
+
+                <VBtn
+                  block
+                  :variant="plan.current ? 'elevated' : 'outlined'"
+                  :to="{ name: 'front-pages-payment' }"
+                >
+                  Get Started
+                </VBtn>
+              </div>
             </VCardText>
           </VCard>
         </VCol>
@@ -179,5 +213,14 @@ const pricingPlans = [
 
 .pricing-plans {
   margin-block: 5.25rem;
+}
+</style>
+
+<style lang="scss" scoped>
+.plan-price-text{
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px
 }
 </style>

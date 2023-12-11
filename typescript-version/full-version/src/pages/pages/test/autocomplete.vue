@@ -204,7 +204,7 @@
 
     <!-- 👉 Autocomplete closable chips with clearable -->
     <VCol cols="12">
-      <VCard title="closable chip with  clearble">
+      <VCard title="closable chip with  clearable">
         <VCardText>
           <VRow>
             <VCol cols="12">
@@ -296,7 +296,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 class="my-5"
                 multiple
                 density="default"
@@ -305,7 +305,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 class="my-5"
                 multiple
                 density="comfortable"
@@ -314,7 +314,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
-                prepend-inner-icon="mdi-city"
+                prepend-inner-icon="ri-building-line"
                 variant="outlined"
                 multiple
                 density="compact"
@@ -335,7 +335,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                prepend-icon="mdi-city"
+                prepend-icon="ri-building-line"
                 class="my-5"
                 multiple
                 density="default"
@@ -344,7 +344,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                prepend-icon="mdi-city"
+                prepend-icon="ri-building-line"
                 class="my-5"
                 multiple
                 density="comfortable"
@@ -353,7 +353,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
-                prepend-icon="mdi-city"
+                prepend-icon="ri-building-line"
                 variant="outlined"
                 multiple
                 density="compact"
@@ -374,7 +374,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                append-icon="mdi-city"
+                append-icon="ri-building-line"
                 class="my-5"
                 multiple
                 density="default"
@@ -383,7 +383,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                append-icon="mdi-city"
+                append-icon="ri-building-line"
                 class="my-5"
                 multiple
                 density="comfortable"
@@ -392,7 +392,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
-                append-icon="mdi-city"
+                append-icon="ri-building-line"
                 variant="outlined"
                 multiple
                 density="compact"
@@ -413,7 +413,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                append-icon="mdi-city"
+                append-icon="ri-building-line"
                 class="my-5"
                 loading
                 multiple
@@ -423,7 +423,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 variant="outlined"
-                append-icon="mdi-city"
+                append-icon="ri-building-line"
                 class="my-5"
                 loading
                 multiple
@@ -433,7 +433,7 @@
                 label="City"
                 :items="['Delhi', 'Mumbai', 'Ahemedabad', 'Bangalore', 'Jaipur']"
                 class="my-5"
-                append-icon="mdi-city"
+                append-icon="ri-building-line"
                 variant="outlined"
                 loading
                 multiple

@@ -14,8 +14,8 @@ interface Emit {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const updateSelectedOption = (value: string[] | boolean) => {
-  if (typeof value !== 'boolean')
+const updateSelectedOption = (value: string[] | null) => {
+  if (typeof value !== 'boolean' && value !== null)
     emit('update:selectedCheckbox', value)
 }
 </script>
@@ -34,7 +34,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
         <slot :item="item">
           <div class="d-flex flex-column align-center text-center gap-2">
             <VIcon
-              size="32"
+              size="28"
               :icon="item.icon"
               class="text-high-emphasis"
             />
@@ -42,7 +42,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
             <h6 class="cr-title text-base">
               {{ item.title }}
             </h6>
-            <p class="text-sm mb-0">
+            <p class="text-sm text-medium-emphasis clamp-text mb-0">
               {{ item.desc }}
             </p>
           </div>
@@ -63,7 +63,7 @@ const updateSelectedOption = (value: string[] | boolean) => {
 .custom-checkbox-icon {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.5rem;
 
   .v-checkbox {
     margin-block-end: -0.375rem;

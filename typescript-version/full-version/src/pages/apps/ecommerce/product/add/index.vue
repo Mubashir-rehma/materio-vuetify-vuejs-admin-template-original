@@ -30,7 +30,7 @@ function onDrop(DroppedFiles: File[] | null) {
   )
 }
 
-onChange(selectedFiles => {
+onChange((selectedFiles: any) => {
   if (!selectedFiles)
     return
 
@@ -64,11 +64,11 @@ const deliveryType = ref('Worldwide delivery')
 const selectedAttrs = ref(['Biodegradable', 'Expiry Date'])
 
 const inventoryTabsData = [
-  { icon: 'mdi-plus', title: 'Restock', value: 'Restock' },
-  { icon: 'mdi-airplane', title: 'Shipping', value: 'Shipping' },
-  { icon: 'mdi-map-marker-outline', title: 'Global Delivery', value: 'Global Delivery' },
-  { icon: 'mdi-attachment', title: 'Attributes', value: 'Attributes' },
-  { icon: 'mdi-lock-open-outline', title: 'Advanced', value: 'Advanced' },
+  { icon: 'ri-add-line', title: 'Restock', value: 'Restock' },
+  { icon: 'ri-flight-takeoff-line', title: 'Shipping', value: 'Shipping' },
+  { icon: 'ri-map-pin-line', title: 'Global Delivery', value: 'Global Delivery' },
+  { icon: 'ri-attachment-2', title: 'Attributes', value: 'Attributes' },
+  { icon: 'ri-lock-unlock-line', title: 'Advanced', value: 'Advanced' },
 ]
 </script>
 
@@ -76,9 +76,9 @@ const inventoryTabsData = [
   <div>
     <div class="d-flex flex-wrap justify-center justify-md-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
-        <h5 class="text-h5 font-weight-medium">
+        <h4 class="text-h4">
           Add a new product
-        </h5>
+        </h4>
         <span>Orders placed across your store</span>
       </div>
 
@@ -110,7 +110,7 @@ const inventoryTabsData = [
             <VRow>
               <VCol cols="12">
                 <VTextField
-                  label="Name"
+                  label="Product Name"
                   placeholder="iPhone 14"
                 />
               </VCol>
@@ -133,6 +133,9 @@ const inventoryTabsData = [
                 />
               </VCol>
               <VCol>
+                <VLabel class="mb-1">
+                  Description (Optional)
+                </VLabel>
                 <TiptapEditor
                   v-model="content"
                   class="border rounded"
@@ -142,14 +145,16 @@ const inventoryTabsData = [
           </VCardText>
         </VCard>
 
-        <!-- 👉 Media -->
+        <!-- 👉 Product Image -->
         <VCard class="mb-6">
           <VCardItem>
             <template #title>
-              Media
+              Product Image
             </template>
             <template #append>
-              <span class="text-primary font-weight-medium text-sm cursor-pointer">Add Media from URL</span>
+              <div class="text-primary font-weight-medium cursor-pointer">
+                Add Media from URL
+              </div>
             </template>
           </VCardItem>
 
@@ -163,17 +168,18 @@ const inventoryTabsData = [
                 >
                   <div
                     v-if="fileData.length === 0"
-                    class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone"
+                    class="d-flex flex-column justify-center align-center gap-y-2 pa-12 border-dashed drop-zone"
                   >
-                    <IconBtn
+                    <VAvatar
                       variant="tonal"
-                      class="rounded-sm"
+                      color="secondary"
+                      rounded
                     >
-                      <VIcon icon="mdi-upload" />
-                    </IconBtn>
-                    <div class="text-base text-high-emphasis font-weight-medium">
+                      <VIcon icon="ri-upload-2-line" />
+                    </VAvatar>
+                    <h4 class="text-h4">
                       Drag and Drop Your Image Here.
-                    </div>
+                    </h4>
                     <span class="text-disabled">or</span>
 
                     <VBtn variant="outlined">
@@ -255,6 +261,7 @@ const inventoryTabsData = [
                   <VSelect
                     :items="['Size', 'Color', 'Weight', 'Smell']"
                     placeholder="Select Variant"
+                    label="Select Variant"
                   />
                 </VCol>
                 <VCol
@@ -262,8 +269,9 @@ const inventoryTabsData = [
                   md="8"
                 >
                   <VTextField
-                    placeholder="38"
+                    label="Variant Value"
                     type="number"
+                    placeholder="Enter Variant Value"
                   />
                 </VCol>
               </VRow>
@@ -329,23 +337,22 @@ const inventoryTabsData = [
                         <VTextField
                           label="Add to stock"
                           placeholder="100"
-                          density="compact"
                         />
-                        <VBtn prepend-icon="mdi-check">
+                        <VBtn prepend-icon="ri-check-line">
                           Confirm
                         </VBtn>
                       </div>
-                      <div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                      <div class="d-flex flex-column gap-2 text-high-emphasis">
+                        <div>
                           Product in stock now: 54
                         </div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                        <div>
                           Product in transit: 390
                         </div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                        <div>
                           Last time restocked: 24th June, 2022
                         </div>
-                        <div class="text-sm text-high-emphasis mb-2">
+                        <div>
                           Total stock over lifetime: 2,430
                         </div>
                       </div>
@@ -356,7 +363,6 @@ const inventoryTabsData = [
                     <VRadioGroup
                       v-model="shippingType"
                       label="Shipping Type"
-                      class="ms-3"
                     >
                       <VRadio
                         v-for="item in shippingList"
@@ -383,7 +389,6 @@ const inventoryTabsData = [
                       <VRadioGroup
                         v-model="deliveryType"
                         label="Global Delivery"
-                        class="ms-3"
                       >
                         <VRadio
                           value="Worldwide delivery"
@@ -415,7 +420,6 @@ const inventoryTabsData = [
                               </div>
                               <VTextField
                                 placeholder="USA"
-                                density="compact"
                                 style="min-inline-size: 200px;"
                               />
                             </div>
@@ -482,7 +486,6 @@ const inventoryTabsData = [
                             <AppDateTimePicker
                               model-value="2025-06-14"
                               placeholder="Select a Date"
-                              density="compact"
                             />
                           </div>
                         </template>
@@ -530,7 +533,7 @@ const inventoryTabsData = [
         >
           <VCardText>
             <VTextField
-              label="Name"
+              label="Base Price"
               placeholder="iPhone 14"
               class="mb-6"
             />

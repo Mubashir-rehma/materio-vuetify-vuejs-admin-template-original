@@ -41,7 +41,7 @@ watch(props, () => {
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="onReset"
       />
 
@@ -71,7 +71,6 @@ watch(props, () => {
           <div class="d-flex align-center gap-3 mb-3">
             <VTextField
               v-model="currentPermissionName"
-              density="compact"
               label="Permission Name"
               placeholder="Enter Permission Name"
             />

@@ -3,36 +3,36 @@
     <VAvatar
       rounded="0"
       color="primary"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
 
     <VAvatar
       rounded="sm"
       color="secondary"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
 
     <VAvatar
       rounded
       color="success"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
 
     <VAvatar
       rounded="lg"
       color="info"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
 
     <VAvatar
       rounded="xl"
       color="warning"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
 
     <VAvatar
       color="error"
-      icon="mdi-account-outline"
+      icon="ri-user-line"
     />
   </div>
 </template>

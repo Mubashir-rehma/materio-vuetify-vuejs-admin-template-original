@@ -203,7 +203,7 @@ watch(totalPrice, () => {
       <IconBtn @click="removeProduct">
         <VIcon
           :size="20"
-          icon="mdi-close"
+          icon="ri-close-line"
         />
       </IconBtn>
     </div>

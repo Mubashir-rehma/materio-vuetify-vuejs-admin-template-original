@@ -22,12 +22,12 @@ const paymentMethods = [
   {
     radioValue: 'credit-debit-card',
     radioLabel: 'Credit/Debit/ATM Card',
-    icon: 'mdi-credit-card-outline',
+    icon: 'ri-bank-card-line',
   },
   {
     radioValue: 'cash-on-delivery',
     radioLabel: 'Cash On Delivery',
-    icon: 'mdi-help-circle-outline',
+    icon: 'ri-question-line',
   },
 ]
 </script>

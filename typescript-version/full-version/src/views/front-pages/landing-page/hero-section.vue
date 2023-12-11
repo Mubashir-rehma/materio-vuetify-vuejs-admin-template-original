@@ -25,11 +25,15 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 
 const { x, y } = useMouse({ touch: false })
 
+console.log('window.innerWidth :>> ', window.innerWidth)
+console.log('window.innerHeight :>> ', window.innerHeight)
+
 const translateMouse = computed(() => (speed: number) => {
   if (typeof window !== 'undefined') {
-    const positionY = computed(() => (window.innerWidth - (y.value * speed)))
+    const positionX = computed (() => (window.innerWidth - (x.value * speed)) / 100)
+    const positionY = computed (() => Math.max((window.innerHeight - (y.value * speed)) / 100, -40))
 
-    return { transform: `translate(${(window.innerWidth - (x.value * speed)) / 100}px,${(positionY.value < -5000 ? -5000 : positionY.value) / 100}px` }
+    return { transform: `translate(${positionX.value}px,${positionY.value}px` }
   }
 })
 </script>
@@ -44,18 +48,22 @@ const translateMouse = computed(() => (speed: number) => {
       class="landing-hero"
       :style="{ backgroundImage: `url(${heroBgUrl})` }"
     >
-      <div class="container">
+      <VContainer>
         <div class="hero-text-box text-center px-6">
-          <h5 class="text-primary text-h4 font-weight-bold text-wrap mb-4">
-            All in one sass application for your business
-          </h5>
-          <div class="text-body-1 mb-4">
+          <div class="mb-4">
+            <div class="landing-page-title">
+              All in one sass application
+            </div>
+            <div class="landing-page-title">
+              for your business
+            </div>
+          </div>
+          <div class="text-body-1 font-weight-medium text-high-emphasis pb-8">
             <p class="mb-0">
               No coding required to make customization
             </p>
-
             <p class="mb-0">
-              The live customer has everything your marketing neeeds
+              The live customer has everything your marketing needs
             </p>
           </div>
           <VBtn :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }">
@@ -71,27 +79,26 @@ const translateMouse = computed(() => (speed: number) => {
             >
               <img
                 :src="heroDashboardImg"
-                class="mx-auto cursor-pointer w-75"
-                :style="translateMouse(5)"
+                class="mx-auto cursor-pointer"
+                :style="translateMouse(3)"
               >
             </RouterLink>
           </div>
-
           <div class="hero-elements-img">
             <RouterLink
               to="/"
               target="_blank"
             >
               <img
-                class="cursor-pointer w-100"
+                class="cursor-pointer"
                 :src="heroElementsImg"
-                :style="translateMouse(2.5)"
+                :style="translateMouse(5)"
                 target="_blank"
               >
             </RouterLink>
           </div>
         </div>
-      </div>
+      </VContainer>
     </div>
   </section>
 </template>
@@ -109,12 +116,22 @@ section {
   padding-block-start: 9rem;
 }
 
+.hero-dashboard-img {
+  img {
+    inline-size: 85%;
+  }
+}
+
 .hero-elements-img {
   position: absolute;
-  inline-size: 90%;
-  inset: 0;
-  margin-block: 15%;
-  margin-inline: auto;
+  inline-size: 100%;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    inline-size: 100%;
+  }
 }
 
 .container {
@@ -124,5 +141,12 @@ section {
 
 .feature-cards {
   margin-block-start: 6.25rem;
+}
+
+.landing-page-title{
+  color: rgb(var(--v-theme-primary));
+  font-size: 2.375rem;
+  font-weight: 800;
+  line-height: 2.75rem
 }
 </style>

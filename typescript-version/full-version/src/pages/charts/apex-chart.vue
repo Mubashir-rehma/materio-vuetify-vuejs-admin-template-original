@@ -24,8 +24,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -49,8 +48,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -109,7 +107,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               >
                 <VIcon
                   start
-                  icon="mdi-arrow-up"
+                  icon="ri-arrow-up-line"
                   size="15"
                 />
                 <span>22%</span>
@@ -138,8 +136,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />
@@ -167,8 +164,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
             <div class="date-picker-wrapper">
               <AppDateTimePicker
                 model-value="2022-06-09"
-                prepend-inner-icon="mdi-calendar-blank-outline"
-                density="compact"
+                prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
               />

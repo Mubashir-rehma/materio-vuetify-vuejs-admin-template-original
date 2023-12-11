@@ -14,8 +14,9 @@ interface Emit {
 const props = defineProps<Props>()
 const emit = defineEmits<Emit>()
 
-const updateSelectedOption = (value: string) => {
-  emit('update:selectedRadio', value)
+const updateSelectedOption = (value: string | null) => {
+  if (value !== null)
+    emit('update:selectedRadio', value)
 }
 </script>
 
@@ -38,7 +39,7 @@ const updateSelectedOption = (value: string) => {
           <slot :item="item">
             <div class="d-flex flex-column align-center text-center gap-2">
               <VIcon
-                size="32"
+                size="28"
                 :icon="item.icon"
                 class="text-high-emphasis"
               />
@@ -46,7 +47,7 @@ const updateSelectedOption = (value: string) => {
                 {{ item.title }}
               </h6>
 
-              <p class="text-sm mb-0 clamp-text">
+              <p class="text-sm text-medium-emphasis mb-0 clamp-text">
                 {{ item.desc }}
               </p>
             </div>
@@ -65,7 +66,7 @@ const updateSelectedOption = (value: string) => {
 .custom-radio-icon {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.5rem;
 
   .v-radio {
     margin-block-end: -0.25rem;

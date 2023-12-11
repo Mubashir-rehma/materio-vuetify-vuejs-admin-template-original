@@ -102,22 +102,24 @@ const features = [
 
 const faqs = [
   {
-    question: 'General settings',
+    question: 'What counts towards the 100 responses limit?',
     answer: 'Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar diam eros in elit. Pellentesque convallis laoreet laoreet.',
   },
   {
-    question: 'Users',
+    question: 'How do you process payments?',
     answer: 'We accept Visa®, MasterCard®, American Express®, and PayPal®. So you can be confident that your credit card information will be kept safe and secure.',
   },
   {
-    question: 'Personal data',
+    question: 'Do you have a money-back guarantee?',
     answer: '2Checkout accepts all types of credit and debit cards.',
   },
   {
-    question: 'Advanced settings',
+    question: 'I have more questions. Where can I get help?',
     answer: 'Yes. You may request a refund within 30 days of your purchase without any additional explanations.',
   },
 ]
+
+const activeQuestion = ref(1)
 </script>
 
 <template>
@@ -125,7 +127,10 @@ const faqs = [
     <Navbar />
 
     <VCard class="pt-6 pricing-card">
-      <VCardText class="pt-12 mb-16 pb-16">
+      <VCardText
+        class="pt-12 pb-16"
+        style="margin-block-end: 5rem;"
+      >
         <!-- 👉 App Pricing components -->
         <VContainer>
           <AppPricing md="4" />
@@ -137,10 +142,10 @@ const faqs = [
         <VContainer>
           <div class="d-flex align-center flex-md-row flex-column position-relative">
             <div class="text-center text-md-start py-10 px-10 px-sm-0">
-              <h3 class="text-h5 text-primary mb-2">
+              <h4 class="text-h4 text-primary mb-2">
                 Still not convinced? Start with a 14-day FREE trial!
-              </h3>
-              <p class="text-sm">
+              </h4>
+              <p class="text-body-1">
                 You will get full access to all the features for 14 days.
               </p>
               <VBtn
@@ -161,17 +166,19 @@ const faqs = [
       </div>
 
       <!-- 👉 Plans -->
-      <VCardText class="text-center mt-16">
-        <h4 class="text-h5 mb-2">
+      <VCardText class="text-center mt-16 pb-0">
+        <div class="pricing-table-title mb-2">
           Pick a plan that works best for you
-        </h4>
-        <p>Stay cool, we have a 48-hour money back guarantee!</p>
+        </div>
+        <p class="text-body-1 mb-0">
+          Stay cool, we have a 48-hour money back guarantee!
+        </p>
       </VCardText>
 
       <!-- 👉 Features & Tables -->
       <VCardText class="mb-16 mt-2">
         <VContainer>
-          <VTable class="text-no-wrap border rounded">
+          <VTable class="text-no-wrap border rounded pricing-table">
             <!-- 👉 Table head -->
             <thead>
               <tr>
@@ -179,40 +186,39 @@ const faqs = [
                   scope="col"
                   class="py-4"
                 >
-                  <h6 class="text-xs font-weight-medium mb-1">
-                    FEATURES
-                  </h6>
-
-                  <h6 class="font-weight-regular text-xs">
-                    Native Front Features
-                  </h6>
+                  TIME
                 </th>
 
                 <th
                   v-for="{ plan, price } in [
-                    { plan: 'STARTER', price: 'FREE' },
-                    { plan: 'PRO', price: '$7.5/MONTH' },
-                    { plan: 'ENTERPRISE', price: '$16/MONTH' },
+                    { plan: 'STARTER', price: 'Free' },
+                    { plan: 'PRO', price: '$7.5/Month' },
+                    { plan: 'ENTERPRISE', price: '$16/Month' },
                   ]"
                   :key="plan"
                   scope="col"
                   class="text-center py-4"
                 >
-                  <h6 class="text-xs mb-1 text-high-emphasis font-weight-medium position-relative">
+                  <div class="position-relative">
                     {{ plan }}
 
-                    <VIcon
+                    <VAvatar
                       v-if="plan === 'PRO'"
-                      icon="mdi-star-circle"
-                      size="20"
+                      rounded="lg"
                       color="primary"
+                      size="18"
                       class="position-absolute ms-2"
-                      style="inset-block-end: 3px;"
-                    />
-                  </h6>
-                  <h6 class="font-weight-regular text-xs">
+                      style="inset-block-start: -0.25rem;"
+                    >
+                      <VIcon
+                        icon="ri-star-s-fill"
+                        size="14"
+                      />
+                    </VAvatar>
+                  </div>
+                  <div class="text-body-2">
                     {{ price }}
-                  </h6>
+                  </div>
                 </th>
               </tr>
             </thead>
@@ -226,9 +232,9 @@ const faqs = [
                 <td class="text-center">
                   <VIcon
                     v-if="!feature.addOnAvailable.starter"
-                    :color="feature.starter ? 'primary' : 'disabled'"
+                    :color="feature.starter ? 'primary' : ''"
                     size="20"
-                    :icon="feature.starter ? 'mdi-check-circle' : 'mdi-close-circle'"
+                    :icon="feature.starter ? 'ri-checkbox-circle-line' : 'ri-close-circle-line'"
                   />
 
                   <VChip
@@ -236,16 +242,16 @@ const faqs = [
                     color="primary"
                     size="small"
                   >
-                    ADD-ON AVAILABLE
+                    Add-On-Available
                   </VChip>
                 </td>
 
                 <td class="text-center">
                   <VIcon
                     v-if="!feature.addOnAvailable.pro"
-                    :color="feature.pro ? 'primary' : 'disabled'"
+                    :color="feature.pro ? 'primary' : ''"
                     size="20"
-                    :icon="feature.pro ? 'mdi-check-circle' : 'mdi-close-circle'"
+                    :icon="feature.pro ? 'ri-checkbox-circle-line' : 'ri-close-circle-line'"
                   />
 
                   <VChip
@@ -253,15 +259,15 @@ const faqs = [
                     color="primary"
                     size="small"
                   >
-                    ADD-ON AVAILABLE
+                    Add-On-Available
                   </VChip>
                 </td>
                 <td class="text-center">
                   <VIcon
                     v-if="!feature.addOnAvailable.enterprise"
-                    :color="feature.enterprise ? 'primary' : 'disabled'"
+                    :color="feature.enterprise ? 'primary' : ''"
                     size="20"
-                    :icon="feature.enterprise ? 'mdi-check-circle' : 'mdi-close-circle'"
+                    :icon="feature.enterprise ? 'ri-checkbox-circle-line' : 'ri-close-circle-line'"
                   />
 
                   <VChip
@@ -269,7 +275,7 @@ const faqs = [
                     color="primary"
                     size="small"
                   >
-                    ADD-ON AVAILABLE
+                    Add-On-Available
                   </VChip>
                 </td>
               </tr>
@@ -311,15 +317,15 @@ const faqs = [
         <VContainer>
           <VCardText class="py-10 px-0 py-sm-16">
             <div class="text-center">
-              <h5 class="text-h5 mb-2">
+              <div class="pricing-table-title mb-2">
                 FAQ's
-              </h5>
-              <p>
+              </div>
+              <p class="text-body-1 mb-0">
                 Let us help answer the most common questions.
               </p>
             </div>
             <div class="py-sm-6">
-              <VExpansionPanels>
+              <VExpansionPanels v-model="activeQuestion">
                 <VExpansionPanel
                   v-for="faq in faqs"
                   :key="faq.question"
@@ -336,21 +342,28 @@ const faqs = [
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page-pricing-free-trial-banner-bg {
   /* stylelint-disable-next-line color-function-notation */
-  background-color: rgba(var(--v-theme-primary), var(--v-idle-opacity));
+  background-color: rgba(var(--v-theme-primary), 0.16);
 }
 
 .pricing-card {
   padding-block-start: 6.25rem !important;
 }
 
+.pricing-table-title{
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.625rem;
+}
+
 @media screen and (min-width: 960px) {
   .free-trial-illustrator {
     position: absolute;
     inset-block-end: -1rem !important;
-    inset-inline-end: 10%;
+    inset-inline-end: 5%;
   }
 }
 
@@ -358,6 +371,32 @@ const faqs = [
   .free-trial-illustrator {
     position: relative;
     inset-block-end: -1rem !important;
+  }
+}
+</style>
+
+<style lang="scss">
+.pricing-table{
+  --v-table-header-color: rgb(var(--v-theme-surface));
+
+  &.v-table{
+    .v-table__wrapper{
+      table{
+        thead {
+          tr{
+            th{
+              border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity)) !important;
+            }
+          }
+        }
+
+        tbody{
+          tr:nth-child(even){
+            background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+          }
+        }
+      }
+    }
   }
 }
 </style>

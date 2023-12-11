@@ -74,7 +74,7 @@ const isChatContactActive = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
+@use "@styles/variables/vuetify.scss";
 @use "@core/scss/base/mixins";
 @use "vuetify/lib/styles/tools/states" as vuetifyStates;
 

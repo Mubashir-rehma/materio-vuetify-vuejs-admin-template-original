@@ -51,9 +51,8 @@ const store = useChatStore()
 
     <VTextField
       v-model="search"
-      density="compact"
       placeholder="Search..."
-      prepend-inner-icon="mdi-magnify"
+      prepend-inner-icon="ri-search-line"
       class="ms-4 me-1 chat-list-search"
     />
 
@@ -62,7 +61,7 @@ const store = useChatStore()
       @click="$emit('close')"
     >
       <VIcon
-        icon="mdi-close"
+        icon="ri-close-line"
         class="text-medium-emphasis"
       />
     </IconBtn>
@@ -111,8 +110,7 @@ const store = useChatStore()
   padding-block-end: 0.75rem;
 
   .chat-contact-header {
-    margin-block-end: 1rem;
-    margin-block-start: 1.25rem;
+    margin-block: 1.25rem 1rem;
   }
 
   .chat-contact-header,

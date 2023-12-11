@@ -11,7 +11,7 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
   >
     <VTab value="tab-1">
       <VIcon
-        icon="mdi-phone"
+        icon="ri-phone-line"
         class="mb-2"
       />
       <span>Recent</span>
@@ -19,7 +19,7 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
 
     <VTab value="tab-2">
       <VIcon
-        icon="mdi-heart-outline"
+        icon="ri-heart-line"
         class="mb-2"
       />
       <span>Favorites</span>
@@ -27,7 +27,7 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
 
     <VTab value="tab-3">
       <VIcon
-        icon="mdi-account-box-outline"
+        icon="ri-account-box-line"
         class="mb-2"
       />
       <span>Nearby</span>

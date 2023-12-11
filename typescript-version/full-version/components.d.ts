@@ -75,6 +75,7 @@ declare module 'vue' {
     DemoBadgeShowOnHover: typeof import('./src/views/demos/components/badge/DemoBadgeShowOnHover.vue')['default']
     DemoBadgeStyle: typeof import('./src/views/demos/components/badge/DemoBadgeStyle.vue')['default']
     DemoBadgeTabs: typeof import('./src/views/demos/components/badge/DemoBadgeTabs.vue')['default']
+    DemoBadgeTonal: typeof import('./src/views/demos/components/badge/DemoBadgeTonal.vue')['default']
     DemoButtonBlock: typeof import('./src/views/demos/components/button/DemoButtonBlock.vue')['default']
     DemoButtonColors: typeof import('./src/views/demos/components/button/DemoButtonColors.vue')['default']
     DemoButtonFlat: typeof import('./src/views/demos/components/button/DemoButtonFlat.vue')['default']
@@ -370,11 +371,12 @@ declare module 'vue' {
     TheCustomizer: typeof import('./src/@core/components/TheCustomizer.vue')['default']
     ThemeSwitcher: typeof import('./src/@core/components/ThemeSwitcher.vue')['default']
     TimelineBasic: typeof import('./src/views/demos/components/timeline/TimelineBasic.vue')['default']
-    TimelineFilled: typeof import('./src/views/demos/components/timeline/TimelineFilled.vue')['default']
+    TimelineOutlined: typeof import('./src/views/demos/components/timeline/TimelineOutlined.vue')['default']
     TimelineWithIcons: typeof import('./src/views/demos/components/timeline/TimelineWithIcons.vue')['default']
     TiptapEditor: typeof import('./src/@core/components/TiptapEditor.vue')['default']
     TwoFactorAuthDialog: typeof import('./src/components/dialogs/TwoFactorAuthDialog.vue')['default']
     UserInfoEditDialog: typeof import('./src/components/dialogs/UserInfoEditDialog.vue')['default']
     UserUpgradePlanDialog: typeof import('./src/components/dialogs/UserUpgradePlanDialog.vue')['default']
+    VueApexCharts: typeof import('vue3-apexcharts')['default']
   }
 }

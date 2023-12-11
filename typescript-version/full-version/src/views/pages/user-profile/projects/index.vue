@@ -128,7 +128,7 @@ const moreList = [
 
             <span>
               <VIcon
-                icon="mdi-message-outline"
+                icon="ri-message-line"
                 class="me-1"
               />
               <span>{{ data.comments }}</span>

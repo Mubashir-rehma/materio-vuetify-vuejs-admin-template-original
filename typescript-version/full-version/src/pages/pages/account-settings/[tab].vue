@@ -14,11 +14,11 @@ const activeTab = computed({
 
 // tabs
 const tabs = [
-  { title: 'Account', icon: 'mdi-account-outline', tab: 'account' },
-  { title: 'Security', icon: 'mdi-lock-open-outline', tab: 'security' },
-  { title: 'Billing & Plans', icon: 'mdi-bookmark-outline', tab: 'billing-plans' },
-  { title: 'Notifications', icon: 'mdi-bell-outline', tab: 'notification' },
-  { title: 'Connections', icon: 'mdi-link-variant', tab: 'connection' },
+  { title: 'Account', icon: 'ri-user-line', tab: 'account' },
+  { title: 'Security', icon: 'ri-lock-unlock-line', tab: 'security' },
+  { title: 'Billing & Plans', icon: 'ri-bookmark-line', tab: 'billing-plans' },
+  { title: 'Notifications', icon: 'ri-notification-3-line', tab: 'notification' },
+  { title: 'Connections', icon: 'ri-link', tab: 'connection' },
 ]
 
 definePage({

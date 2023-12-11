@@ -49,7 +49,7 @@ const moreList = [
             >
               <VIcon
                 size="24"
-                icon="mdi-account-outline"
+                icon="ri-user-line"
               />
             </VBtn>
           </template>

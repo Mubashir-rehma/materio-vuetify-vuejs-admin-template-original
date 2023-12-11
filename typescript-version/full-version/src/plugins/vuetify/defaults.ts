@@ -17,10 +17,6 @@ export default {
     // ℹ️ Remove after next release
     variant: 'flat',
   },
-
-  // VImg: {
-  //   eager: true,
-  // },
   VBadge: {
     // set v-badge default color to primary
     color: 'primary',
@@ -32,9 +28,13 @@ export default {
   VChip: {
     elevation: 0,
   },
+  VMenu: {
+    offset: '2px',
+  },
   VPagination: {
-    activeColor: 'primary',
     density: 'comfortable',
+    showFirstLastPage: true,
+    variant: 'tonal',
   },
   VTabs: {
     // set v-tabs default color to primary
@@ -69,17 +69,21 @@ export default {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VRangeSlider: {
     // set v-range-slider default color to primary
     color: 'primary',
-    density: 'comfortable',
     thumbLabel: true,
     hideDetails: 'auto',
+    trackSize: 6,
+    thumbSize: 22,
+    elevation: 4,
   },
   VRating: {
     // set v-rating default color to primary
-    color: 'warning',
+    activeColor: 'warning',
+    color: 'disabled',
   },
   VProgressCircular: {
     // set v-progress-circular default color to primary
@@ -91,35 +95,44 @@ export default {
   VSlider: {
     // set v-slider default color to primary
     color: 'primary',
+    trackSize: 6,
     hideDetails: 'auto',
+    thumbSize: 22,
+    elevation: 4,
   },
   VTextField: {
     variant: 'outlined',
+    density: 'comfortable',
     color: 'primary',
     hideDetails: 'auto',
   },
   VAutocomplete: {
     variant: 'outlined',
     color: 'primary',
+    density: 'comfortable',
     hideDetails: 'auto',
   },
   VCombobox: {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VFileInput: {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VTextarea: {
     variant: 'outlined',
     color: 'primary',
     hideDetails: 'auto',
+    density: 'comfortable',
   },
   VSwitch: {
     // set v-switch default color to primary
+    inset: true,
     color: 'primary',
     hideDetails: 'auto',
   },

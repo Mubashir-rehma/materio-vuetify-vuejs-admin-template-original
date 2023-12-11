@@ -28,7 +28,7 @@ watch(formData, () => {
           v-model="formData.expectedPrice"
           label="Expected Price"
           type="number"
-          append-inner-icon="mdi-currency-usd"
+          append-inner-icon="ri-money-dollar-circle-line"
           placeholder="25,000"
         />
       </VCol>
@@ -40,7 +40,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.pricePerSqft"
           label="Price Per SQFT"
-          append-inner-icon="mdi-currency-usd"
+          append-inner-icon="ri-money-dollar-circle-line"
           type="number"
           placeholder="500"
         />
@@ -53,7 +53,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.maintenanceCharge"
           label="Maintenance Charge"
-          append-inner-icon="mdi-currency-usd"
+          append-inner-icon="ri-money-dollar-circle-line"
           type="number"
           placeholder="50"
         />
@@ -78,7 +78,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.bookingAmount"
           label="Booking/Token Amount"
-          append-inner-icon="mdi-currency-usd"
+          append-inner-icon="ri-money-dollar-circle-line"
           type="number"
           placeholder="250"
         />
@@ -91,7 +91,7 @@ watch(formData, () => {
         <VTextField
           v-model="formData.otherAmount"
           label="Other Amount"
-          append-inner-icon="mdi-currency-usd"
+          append-inner-icon="ri-money-dollar-circle-line"
           type="number"
           placeholder="500"
         />
@@ -110,12 +110,10 @@ watch(formData, () => {
           <VRadio
             label="Negotiable"
             value="Negotiable"
-            class="ms-2"
           />
           <VRadio
             label="Call For Price"
             value="Call For Price"
-            class="ms-2"
           />
         </VRadioGroup>
       </VCol>

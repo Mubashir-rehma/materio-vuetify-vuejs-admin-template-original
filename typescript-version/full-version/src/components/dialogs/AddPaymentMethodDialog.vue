@@ -71,37 +71,41 @@ const paymentMethodsData = [
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="emit('update:isDialogVisible', false)"
       />
 
       <VCardText class="pa-8 pa-sm-16">
-        <h5 class="text-h5 text-center mb-2">
-          Add payment methods
-        </h5>
-        <p class="text-sm-body-1 text-center text-disabled">
-          Supported payment methods
-        </p>
+        <div class="mb-6">
+          <h4 class="text-h4 text-center mb-2">
+            Add payment methods
+          </h4>
+          <p class="text-sm-body-1 text-center text-disabled">
+            Supported payment methods
+          </p>
+        </div>
 
         <div
           v-for="(item, index) in paymentMethodsData"
           :key="index"
         >
-          <div class="d-flex justify-space-between align-center py-4 text-high-emphasis font-weight-medium gap-x-4">
+          <div class="d-flex justify-space-between align-center py-4 gap-x-4">
             <div class="d-flex align-center">
               <VImg
                 :src="item.img.value"
                 height="30"
                 width="50"
-                class="me-3"
+                class="me-4"
               />
-              <div>{{ item.title }}</div>
+              <div class="text-body-1 font-weight-medium text-high-emphasis">
+                {{ item.title }}
+              </div>
             </div>
-            <div class="d-none d-sm-block">
+            <div class="d-none d-sm-block text-body-1">
               {{ item.type }}
             </div>
           </div>
-          <VDivider />
+          <VDivider v-show="index !== paymentMethodsData.length - 1" />
         </div>
       </VCardText>
     </VCard>

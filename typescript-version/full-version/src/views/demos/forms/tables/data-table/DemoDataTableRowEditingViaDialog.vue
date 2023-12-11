@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import data from '@/views/demos/forms/tables/data-table/datatable'
 import type { Data } from '@db/pages/datatable/types'
 
@@ -109,6 +108,7 @@ onMounted(() => {
     :headers="headers"
     :items="userList"
     :items-per-page="5"
+    class="text-no-wrap"
   >
     <!-- full name -->
     <template #item.fullName="{ item }">
@@ -124,7 +124,10 @@ onMounted(() => {
             v-if="item.avatar"
             :src="item.avatar"
           />
-          <span v-else>{{ avatarText(item.fullName) }}</span>
+          <span
+            v-else
+            class="text-sm"
+          >{{ avatarText(item.fullName) }}</span>
         </VAvatar>
 
         <div class="d-flex flex-column ms-3">
@@ -147,11 +150,11 @@ onMounted(() => {
     <!-- Actions -->
     <template #item.actions="{ item }">
       <div class="d-flex gap-1">
-        <IconBtn @click="editItem(item.raw)">
-          <VIcon icon="mdi-pencil-outline" />
+        <IconBtn @click="editItem(item)">
+          <VIcon icon="ri-pencil-line" />
         </IconBtn>
-        <IconBtn @click="deleteItem(item.raw)">
-          <VIcon icon="mdi-delete-outline" />
+        <IconBtn @click="deleteItem(item)">
+          <VIcon icon="ri-delete-bin-line" />
         </IconBtn>
       </div>
     </template>
@@ -168,7 +171,6 @@ onMounted(() => {
       </VCardTitle>
 
       <VCardText>
-        {{ editedItem?.fullName }}
         <VContainer>
           <VRow>
             <!-- fullName -->
@@ -245,9 +247,8 @@ onMounted(() => {
                 :items="selectedOptions"
                 item-title="text"
                 item-value="value"
-                label="Standard"
-                variant="underlined"
-                readonly
+                label="Status"
+                variant="outlined"
               />
             </VCol>
           </VRow>

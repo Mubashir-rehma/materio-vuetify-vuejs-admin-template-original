@@ -2,7 +2,7 @@
 import { useStorage } from '@vueuse/core'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
-import { staticPrimaryColor } from '@/plugins/vuetify/theme'
+import { staticPrimaryColor, staticPrimaryDarkenColor } from '@/plugins/vuetify/theme'
 import { Direction, Layout, Skins, Theme } from '@core/enums'
 import { useConfigStore } from '@core/stores/config'
 import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
@@ -37,7 +37,14 @@ const configStore = useConfigStore()
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
 
-const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
+const colors: { main: string; darken: string }[] = [
+  { main: staticPrimaryColor, darken: '#7E4EE6' },
+  { main: '#0D9394', darken: '#0C8485' },
+  { main: '#FFB400', darken: '#E6A200' },
+  { main: '#FF4C51', darken: '#E64449' },
+  { main: '#16B1FF', darken: '#149FE6' },
+]
+
 const customPrimaryColor = ref('#ffffff')
 
 watch(
@@ -45,21 +52,23 @@ watch(
   () => {
     const cookiePrimaryColor = cookieRef(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value
 
-    if (cookiePrimaryColor && !colors.includes(cookiePrimaryColor))
+    if (cookiePrimaryColor && !colors.some(color => color.main === cookiePrimaryColor))
       customPrimaryColor.value = cookiePrimaryColor
   },
   { immediate: true },
 )
 
 // ℹ️ It will set primary color for current theme only
-const setPrimaryColor = useDebounceFn((color: string) => {
-  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color
+const setPrimaryColor = useDebounceFn((color: { main: string; darken: string }) => {
+  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color.main
+  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors['primary-darken-1'] = color.darken
 
   // ℹ️ We need to store this color value in cookie so vuetify plugin can pick on next reload
-  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color
+  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color.main
+  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryDarkenColor`, null).value = color.darken
 
   // ℹ️ Update initial loader color
-  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = color
+  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = color.main
 }, 100)
 
 const lightTheme = useGenerateImageVariant(lightThemeLight, lightThemeDark)
@@ -244,6 +253,8 @@ const resetCustomizer = async () => {
   // reset themeConfig values
   vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
   vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
+  vuetifyTheme.themes.value.light.colors['primary-darken-1'] = staticPrimaryDarkenColor
+  vuetifyTheme.themes.value.dark.colors['primary-darken-1'] = staticPrimaryDarkenColor
 
   configStore.theme = themeConfig.app.theme
   configStore.skin = themeConfig.app.skin
@@ -257,6 +268,8 @@ const resetCustomizer = async () => {
 
   cookieRef('lightThemePrimaryColor', null).value = null
   cookieRef('darkThemePrimaryColor', null).value = null
+  cookieRef('lightThemePrimaryDarkenColor', null).value = null
+  cookieRef('darkThemePrimaryDarkenColor', null).value = null
 
   await nextTick()
 
@@ -275,7 +288,7 @@ const resetCustomizer = async () => {
       style="z-index: 1001;"
       @click="isNavDrawerOpen = true"
     >
-      <VIcon icon="mdi-cog" />
+      <VIcon icon="ri-settings-3-fill" />
     </VBtn>
 
     <VNavigationDrawer
@@ -314,7 +327,7 @@ const resetCustomizer = async () => {
 
             <VIcon
               size="22"
-              icon="mdi-refresh"
+              icon="ri-refresh-line"
             />
           </VBtn>
 
@@ -326,7 +339,7 @@ const resetCustomizer = async () => {
             @click="isNavDrawerOpen = false"
           >
             <VIcon
-              icon="mdi-close"
+              icon="ri-close-line"
               size="22"
             />
           </VBtn>
@@ -356,19 +369,19 @@ const resetCustomizer = async () => {
             >
               <div
                 v-for="color in colors"
-                :key="color"
+                :key="color.main"
                 style="
               border-radius: 0.375rem;
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
               padding-block: 0.45rem;
               padding-inline: 0.55rem;"
                 class="cursor-pointer"
-                :style="vuetifyTheme.current.value.colors.primary === color ? `outline-color: ${color}; outline-width:2px;` : ''"
+                :style="vuetifyTheme.current.value.colors.primary === color.main ? `outline-color: ${color.main}; outline-width:2px;` : ''"
                 @click="setPrimaryColor(color)"
               >
                 <div
                   style="border-radius: 0.375rem;block-size: 2.25rem; inline-size: 2rem;"
-                  :style="{ backgroundColor: color }"
+                  :style="{ backgroundColor: color.main }"
                 />
               </div>
 
@@ -390,7 +403,7 @@ const resetCustomizer = async () => {
                 >
                   <VIcon
                     size="22"
-                    icon="mdi-eyedropper-variant"
+                    icon="ri-palette-line"
                     :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'rgb(var(--v-theme-on-primary))' : ''"
                   />
                 </VBtn>
@@ -405,7 +418,7 @@ const resetCustomizer = async () => {
                         v-model="customPrimaryColor"
                         mode="hex"
                         :modes="['hex']"
-                        @update:model-value="setPrimaryColor"
+                        @update:model-value="setPrimaryColor({ main: customPrimaryColor, darken: customPrimaryColor })"
                       />
                     </VListItem>
                   </VList>

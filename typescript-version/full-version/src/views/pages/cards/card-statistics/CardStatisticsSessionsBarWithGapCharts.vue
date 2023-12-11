@@ -53,8 +53,6 @@ const chartOptions = computed(() => {
       bar: {
         borderRadius: 4,
         columnWidth: '25%',
-        endingShape: 'rounded',
-        startingShape: 'rounded',
       },
     },
     states: {

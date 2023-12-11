@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const vehicleData = [
-  { icon: 'mdi-car-estate', title: 'On the way', time: '2hr 10min', percentage: 39.7 },
-  { icon: 'mdi-progress-download', title: 'Unloading', time: '3hr 15min', percentage: 28.3 },
-  { icon: 'mdi-upload', title: 'Loading', time: '1hr 24min', percentage: 17.4 },
-  { icon: 'mdi-timer-outline', title: 'Waiting', time: '5hr 19min', percentage: 14.6 },
+  { icon: 'ri-car-line', title: 'On the way', time: '2hr 10min', percentage: 39.7 },
+  { icon: 'ri-download-cloud-2-line', title: 'Unloading', time: '3hr 15min', percentage: 28.3 },
+  { icon: 'ri-upload-line', title: 'Loading', time: '1hr 24min', percentage: 17.4 },
+  { icon: 'ri-timer-line', title: 'Waiting', time: '5hr 19min', percentage: 14.6 },
 ]
 </script>
 
@@ -16,7 +16,7 @@ const vehicleData = [
     </VCardItem>
     <VCardText>
       <div class="d-flex mb-8">
-        <div style="width: 39.7%;">
+        <div style="inline-size: 39.7%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             On the way
           </div>
@@ -29,7 +29,7 @@ const vehicleData = [
             <strong class="text-start vehicle-progress-text">39.7%</strong>
           </VProgressLinear>
         </div>
-        <div style="width: 28.3%;">
+        <div style="inline-size: 28.3%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             Unloading
           </div>
@@ -41,7 +41,7 @@ const vehicleData = [
             <strong class="text-white vehicle-progress-text">28.3%</strong>
           </VProgressLinear>
         </div>
-        <div style="width: 17.4%;">
+        <div style="inline-size: 17.4%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             Loading
           </div>
@@ -53,7 +53,7 @@ const vehicleData = [
             <strong class="text-white vehicle-progress-text">17.4%</strong>
           </VProgressLinear>
         </div>
-        <div style="width: 14.6%;">
+        <div style="inline-size: 14.6%;">
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
             Waiting
           </div>

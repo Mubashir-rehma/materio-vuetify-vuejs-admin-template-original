@@ -1,7 +1,8 @@
 <template>
   <VTabs
-    next-icon="mdi-arrow-right"
-    prev-icon="mdi-arrow-left"
+    next-icon="ri-arrow-right-line"
+    prev-icon="ri-arrow-left-line"
+    show-arrows
   >
     <VTab
       v-for="i in 10"

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Permission } from '@db/apps/permission/types'
 
-// 👉 headers
 const headers = [
   { title: 'Name', key: 'name' },
   { title: 'Assigned To', key: 'assignedTo', sortable: false },
@@ -46,7 +45,7 @@ const { data: permissionsData } = await useApi<any>(createUrl('/apps/permissions
   },
 }))
 
-const permissions = computed(() => permissionsData.value.permissions)
+const permissions = computed((): Permission[] => permissionsData.value.permissions)
 const totalPermissions = computed(() => permissionsData.value.totalPermissions)
 
 const editPermission = (name: string) => {
@@ -72,7 +71,6 @@ const editPermission = (name: string) => {
           <VTextField
             v-model="search"
             placeholder="Search"
-            density="compact"
             style="max-inline-size: 15rem;min-inline-size: 12rem;"
           />
 
@@ -94,6 +92,7 @@ const editPermission = (name: string) => {
           ]"
           :headers="headers"
           :items="permissions"
+          item-value="name"
           class="text-no-wrap"
           @update:options="updateOptions"
         >
@@ -126,7 +125,7 @@ const editPermission = (name: string) => {
             >
               <VIcon
                 size="24"
-                icon="mdi-pencil-outline"
+                icon="ri-pencil-line"
               />
             </VBtn>
             <VBtn
@@ -137,7 +136,7 @@ const editPermission = (name: string) => {
             >
               <VIcon
                 size="24"
-                icon="mdi-delete-outline"
+                icon="ri-delete-bin-line"
               />
             </VBtn>
           </template>

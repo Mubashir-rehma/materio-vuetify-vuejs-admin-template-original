@@ -46,7 +46,7 @@ export const useLayoutConfigStore = defineStore('layoutConfig', () => {
   const footerType = ref(layoutConfig.footer.type)
 
   // 👉 Misc
-  const isLessThanOverlayNavBreakpoint = useMediaQuery(`(max-width: ${layoutConfig.app.overlayNavFromBreakpoint}px)`)
+  const isLessThanOverlayNavBreakpoint = computed(() => useMediaQuery(`(max-width: ${layoutConfig.app.overlayNavFromBreakpoint}px)`).value)
 
   // 👉 Layout Classes
   const _layoutClasses = computed(() => {

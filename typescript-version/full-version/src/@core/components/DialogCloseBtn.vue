@@ -5,8 +5,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  icon: 'mdi-close',
-  iconSize: '22',
+  icon: 'ri-close-line',
+  iconSize: '24',
 })
 </script>
 

@@ -26,25 +26,27 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
-      <h5 class="text-h5 font-weight-medium text-primary">
+      <h4 class="text-h4 text-primary">
         {{ props.title }}
-      </h5>
+      </h4>
 
       <!-- 👉 Search Input -->
       <VTextField
         v-bind="$attrs"
         placeholder="Ask a question.."
-        class="search-header-input mx-auto my-3"
+        class="search-header-input mx-auto my-4"
       >
         <template #prepend-inner>
           <VIcon
-            icon="mdi-magnify"
+            icon="ri-search-line"
             size="23"
           />
         </template>
       </VTextField>
 
-      <p>{{ props.subtitle }}</p>
+      <p class="text-body-1">
+        {{ props.subtitle }}
+      </p>
     </VCardText>
   </VCard>
 </template>

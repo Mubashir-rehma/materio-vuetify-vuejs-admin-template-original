@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Invoice } from '@db/apps/invoice/types'
 
 type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
@@ -22,10 +22,10 @@ const updateOptions = (options: any) => {
 }
 
 const widgetData = ref([
-  { title: 'Clients', value: 24, icon: 'mdi-account-outline' },
-  { title: 'Invoices', value: 165, icon: 'mdi-clipboard-outline' },
-  { title: 'Paid', value: '$2.46k', icon: 'mdi-currency-usd' },
-  { title: 'Unpaid', value: '$876', icon: 'mdi-currency-usd-off' },
+  { title: 'Clients', value: 24, icon: 'ri-user-line' },
+  { title: 'Invoices', value: 165, icon: 'ri-clipboard-line' },
+  { title: 'Paid', value: '$2.46k', icon: 'ri-money-dollar-circle-line' },
+  { title: 'Unpaid', value: '$876', icon: 'ri-money-dollar-circle-line-off' },
 ])
 
 // 👉 headers
@@ -61,7 +61,7 @@ const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUr
   },
 }))
 
-const invoices = computed(() => invoiceData.value.invoices)
+const invoices = computed((): Invoice[] => invoiceData.value.invoices)
 const totalInvoices = computed(() => invoiceData.value.totalInvoices)
 
 // 👉 Invoice balance variant resolver
@@ -78,31 +78,31 @@ const resolveInvoiceBalanceVariant = (balance: string | number, total: number) =
 // 👉 Invoice status variant resolver
 const resolveInvoiceStatusVariantAndIcon = (status: string) => {
   if (status === 'Partial Payment')
-    return { variant: 'warning', icon: 'mdi-chart-timeline-variant' }
+    return { variant: 'warning', icon: 'ri-line-chart-line' }
   if (status === 'Paid')
-    return { variant: 'success', icon: 'mdi-check' }
+    return { variant: 'success', icon: 'ri-check-line' }
   if (status === 'Downloaded')
-    return { variant: 'info', icon: 'mdi-arrow-down' }
+    return { variant: 'info', icon: 'ri-arrow-down-line' }
   if (status === 'Draft')
-    return { variant: 'secondary', icon: 'mdi-content-save-outline' }
+    return { variant: 'secondary', icon: 'ri-save-line' }
   if (status === 'Sent')
-    return { variant: 'primary', icon: 'mdi-email-outline' }
+    return { variant: 'primary', icon: 'ri-mail-line' }
   if (status === 'Past Due')
-    return { variant: 'error', icon: 'mdi-alert-circle-outline' }
+    return { variant: 'error', icon: 'ri-error-warning-line' }
 
-  return { variant: 'secondary', icon: 'mdi-close' }
+  return { variant: 'secondary', icon: 'ri-close-line' }
 }
 
 const computedMoreList = computed(() => {
   return (paramId: number) => ([
-    { title: 'Download', value: 'download', prependIcon: 'mdi-download-outline' },
+    { title: 'Download', value: 'download', prependIcon: 'ri-download-line' },
     {
       title: 'Edit',
       value: 'edit',
-      prependIcon: 'mdi-pencil-outline',
+      prependIcon: 'ri-pencil-line',
       to: { name: 'apps-invoice-edit-id', params: { id: paramId } },
     },
-    { title: 'Duplicate', value: 'duplicate', prependIcon: 'mdi-layers-outline' },
+    { title: 'Duplicate', value: 'duplicate', prependIcon: 'ri-stack-line' },
   ])
 })
 
@@ -177,7 +177,7 @@ const deleteInvoice = async (id: number) => {
               label="Select Status"
               placeholder="Select Status"
               clearable
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
               :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
             />
           </VCol>
@@ -190,7 +190,7 @@ const deleteInvoice = async (id: number) => {
             <AppDateTimePicker
               v-model="dateRange"
               label="Invoice Date"
-              clear-icon="mdi-close"
+              clear-icon="ri-close-line"
               clearable
               :config="{ mode: 'range' }"
               placeholder="Select Date"
@@ -205,7 +205,6 @@ const deleteInvoice = async (id: number) => {
         <!-- 👉 Actions  -->
         <div class="me-3">
           <VSelect
-            density="compact"
             label="Actions"
             placeholder="Select"
             :items="['Delete', 'Edit', 'Send']"
@@ -222,13 +221,12 @@ const deleteInvoice = async (id: number) => {
             <VTextField
               v-model="searchQuery"
               placeholder="Search Invoice"
-              density="compact"
             />
           </div>
 
           <!-- 👉 Create invoice -->
           <VBtn
-            prepend-icon="mdi-plus"
+            prepend-icon="ri-add-line"
             :to="{ name: 'apps-invoice-add' }"
           >
             Create invoice
@@ -247,14 +245,15 @@ const deleteInvoice = async (id: number) => {
         :items-length="totalInvoices"
         :headers="headers"
         :items="invoices"
+        item-value="id"
         class="text-no-wrap"
         @update:options="updateOptions"
       >
         <!-- Trending Header -->
-        <template #column.trending>
+        <template #header.trending>
           <VIcon
             size="22"
-            icon="mdi-trending-up"
+            icon="ri-pulse-line"
           />
         </template>
 
@@ -350,11 +349,11 @@ const deleteInvoice = async (id: number) => {
         <template #item.actions="{ item }">
           <div class="text-no-wrap">
             <IconBtn @click="deleteInvoice(item.id)">
-              <VIcon icon="mdi-delete-outline" />
+              <VIcon icon="ri-delete-bin-line" />
             </IconBtn>
 
             <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
-              <VIcon icon="mdi-eye-outline" />
+              <VIcon icon="ri-eye-line" />
             </IconBtn>
 
             <MoreBtn

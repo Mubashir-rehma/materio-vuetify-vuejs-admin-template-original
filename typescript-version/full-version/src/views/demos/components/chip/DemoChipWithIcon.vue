@@ -1,65 +1,48 @@
 <template>
   <div class="demo-space-x">
-    <VChip>
-      <VIcon
-        start
-        size="18"
-        icon="mdi-account-outline"
-      />
+    <VChip prepend-icon="ri-user-line">
       Account
     </VChip>
 
-    <VChip color="primary">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-star-outline"
-      />
+    <VChip
+      color="primary"
+      prepend-icon="ri-star-line"
+    >
       Premium
     </VChip>
 
-    <VChip color="secondary">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-cake"
-      />
+    <VChip
+      color="secondary"
+      prepend-icon="ri-cake-line"
+    >
       1 Year
     </VChip>
 
-    <VChip color="success">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-bell-outline"
-      />
+    <VChip
+      color="success"
+      prepend-icon="ri-notification-line"
+    >
       Notification
     </VChip>
 
-    <VChip color="info">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-forum-outline"
-      />
+    <VChip
+      color="info"
+      prepend-icon="ri-message-line"
+    >
       Message
     </VChip>
 
-    <VChip color="warning">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-alert-outline"
-      />
+    <VChip
+      color="warning"
+      prepend-icon="ri-error-warning-line"
+    >
       Warning
     </VChip>
 
-    <VChip color="error">
-      <VIcon
-        start
-        size="18"
-        icon="mdi-alert-circle-outline"
-      />
+    <VChip
+      color="error"
+      prepend-icon="ri-error-warning-line"
+    >
       Error
     </VChip>
   </div>

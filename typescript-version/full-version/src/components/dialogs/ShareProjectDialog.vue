@@ -91,49 +91,52 @@ const membersList: Member[] = [
     max-width="900"
     @update:model-value="dialogVisibleUpdate"
   >
-    <VCard class="share-project-dialog pa-5 pa-sm-8">
-      <!-- 👉 dialog close btn -->
-      <DialogCloseBtn
-        variant="text"
-        size="small"
-        @click="emit('update:isDialogVisible', false)"
-      />
+    <!-- 👉 dialog close btn -->
+    <DialogCloseBtn
+      size="default"
+      variant="text"
+      @click="emit('update:isDialogVisible', false)"
+    />
 
-      <VCardText>
-        <h5 class="text-h5 text-center mb-2">
-          Share Project
-        </h5>
-        <p class="text-sm-body-1 text-center">
-          Share project with a team members
-        </p>
+    <VCard class="share-project-dialog pa-sm-11 pa-3">
+      <VCardText class="pt-5">
+        <div class="text-center mb-6">
+          <h4 class="text-h4 mb-2">
+            Share Project
+          </h4>
+          <p class="text-body-1">
+            Share project with the team members
+          </p>
+        </div>
 
-        <p class="text-xl font-weight-medium mb-2">
-          Add Members
-        </p>
-        <VAutocomplete
-          :items="membersList"
-          item-title="name"
-          item-value="name"
-          placeholder="Add project members..."
-          density="compact"
-        >
-          <template #item="{ props: listItemProp, item }">
-            <VListItem v-bind="listItemProp">
-              <template #prepend>
-                <VAvatar
-                  :image="item.raw.avatar"
-                  size="30"
-                />
-              </template>
-            </VListItem>
-          </template>
-        </VAutocomplete>
+        <div class="mb-6">
+          <h5 class="text-h5 mb-2">
+            Add Members
+          </h5>
+          <VAutocomplete
+            :items="membersList"
+            item-title="name"
+            item-value="name"
+            placeholder="Add project members..."
+          >
+            <template #item="{ props: listItemProp, item }">
+              <VListItem v-bind="listItemProp">
+                <template #prepend>
+                  <VAvatar
+                    :image="item.raw.avatar"
+                    size="30"
+                  />
+                </template>
+              </VListItem>
+            </template>
+          </VAutocomplete>
+        </div>
 
-        <h6 class="text-h6 mb-3 mt-8">
+        <h6 class="text-h6 mb-4">
           8 Members
         </h6>
 
-        <VList class="card-list">
+        <VList class="card-list mb-6">
           <VListItem
             v-for="member in membersList"
             :key="member.name"
@@ -142,7 +145,7 @@ const membersList: Member[] = [
               <VAvatar :image="member.avatar" />
             </template>
 
-            <VListItemTitle class="text-sm">
+            <VListItemTitle class="text-high-emphasis">
               {{ member.name }}
             </VListItemTitle>
             <VListItemSubtitle>
@@ -155,8 +158,15 @@ const membersList: Member[] = [
                 color="default"
                 :icon="$vuetify.display.xs"
               >
-                <span class="d-none d-sm-block">{{ member.permission }}</span>
-                <VIcon icon="mdi-chevron-down" />
+                <template v-if="!$vuetify.display.xs">
+                  {{ member.permission }}
+                </template>
+                <VIcon
+                  end
+                  icon="ri-arrow-down-s-line"
+                  size="16"
+                  :class="$vuetify.display.xs ? 'ms-0' : ''"
+                />
 
                 <VMenu activator="parent">
                   <VList :selected="[member.permission]">
@@ -174,18 +184,20 @@ const membersList: Member[] = [
           </VListItem>
         </VList>
 
-        <div class="d-flex justify-space-between align-center flex-wrap gap-3 mt-4">
-          <h6 class="text-sm font-weight-medium d-flex align-center">
+        <div class="d-flex justify-space-between align-center flex-wrap gap-3">
+          <div class="text-body-1 text-high-emphasis font-weight-medium d-flex align-center">
             <VIcon
-              icon="mdi-account-group-outline"
+              icon="ri-group-line"
+              size="20"
               class="me-2"
             />
             <span>Public to Master - ThemeSelection</span>
-          </h6>
+          </div>
 
           <VBtn
-            variant="text"
-            prepend-icon="mdi-link"
+            variant="outlined"
+            prepend-icon="ri-link"
+            size="small"
           >
             Copy Project Link
           </VBtn>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
@@ -72,7 +71,7 @@ const recentDevices = [
                   label="New Password"
                   placeholder="············"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isNewPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
                 />
               </VCol>
@@ -84,7 +83,7 @@ const recentDevices = [
                   label="Confirm Password"
                   placeholder="············"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                 />
               </VCol>
@@ -119,12 +118,12 @@ const recentDevices = [
               <template #append-inner>
                 <IconBtn variant="plain">
                   <VIcon
-                    icon="mdi-square-edit-outline"
+                    icon="ri-edit-box-line"
                     @click="isTwoFactorDialogOpen = true"
                   />
                 </IconBtn>
                 <IconBtn variant="plain">
-                  <VIcon icon="mdi-delete-outline" />
+                  <VIcon icon="ri-delete-bin-line" />
                 </IconBtn>
               </template>
             </VTextField>

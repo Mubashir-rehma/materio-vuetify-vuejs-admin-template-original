@@ -6,19 +6,19 @@ const radioContent: CustomInputContent[] = [
     title: 'Starter',
     desc: 'A simple start for everyone.',
     value: 'starter',
-    icon: 'mdi-rocket-launch-outline',
+    icon: 'ri-rocket-line',
   },
   {
     title: 'Standard',
     desc: 'For small to medium businesses.',
     value: 'standard',
-    icon: 'mdi-account-outline',
+    icon: 'ri-user-line',
   },
   {
     title: 'Enterprise',
     desc: 'Solution for big organizations.',
     value: 'enterprise',
-    icon: 'mdi-crown-outline',
+    icon: 'ri-vip-crown-line',
   },
 ]
 

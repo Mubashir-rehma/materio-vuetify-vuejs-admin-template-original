@@ -2,14 +2,12 @@
 import sittingGirlWithLaptop from '@images/front-pages/landing-page/sitting-girl-with-laptop.png'
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
+const panels = ref([1])
+
 const faqData = [
   {
     question: 'Do you charge for each upgrade?',
     answer: 'Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing marzipan gummi bears macaroon dragée danish caramels powder. Bear claw dragée pastry topping soufflé. Wafer gummi bears marshmallow pastry pie.',
-  },
-  {
-    question: 'Do I need to purchase a license for each website?',
-    answer: 'Dessert ice cream donut oat cake jelly-o pie sugar plum cheesecake. Bear claw dragée oat cake dragée ice cream halvah tootsie roll. Danish cake oat cake pie macaroon tart donut gummies. Jelly beans candy canes carrot cake. Fruitcake chocolate chupa chups.',
   },
   {
     question: 'What is regular license?',
@@ -30,42 +28,54 @@ const faqData = [
   <VContainer id="faq">
     <!-- 👉 Header  -->
     <div class="faq-section">
-      <div class="headers d-flex justify-center flex-column align-center my-16">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+      <div class="headers d-flex justify-center flex-column align-center my-12">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="20"
-            width="20"
+            height="24"
+            width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             FAQ
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span class="text-h5 d-inline-block">Frequently Asked</span> <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            questions
           </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          Frequently Asked <span class="font-weight-bold">questions</span>
-        </h5>
-        <p>
+        </div>
+
+        <p
+          class="text-body-1 font-weight-medium text-center mb-0"
+          style="letter-spacing: 0.15px !important;"
+        >
           Browse through these FAQs to find answers to commonly asked questions.
         </p>
       </div>
-      <VRow>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <div class="d-flex align-center justify-center h-100">
-            <VImg
-              :src="sittingGirlWithLaptop"
-              height="340"
-            />
-          </div>
-        </VCol>
-        <VCol
-          cols="12"
-          md="6"
-        >
-          <VExpansionPanels class="py-4 ps-4">
+
+      <div
+        class="d-flex align-center justify-space-between flex-wrap flex-md-nowrap"
+        style="gap: 6.25rem"
+      >
+        <VImg
+          :src="sittingGirlWithLaptop"
+          height="340"
+          width="320"
+        />
+
+        <div>
+          <VExpansionPanels
+            v-model="panels"
+            class="py-4"
+          >
             <VExpansionPanel
               v-for="faq in faqData"
               :key="faq.question"
@@ -78,14 +88,14 @@ const faqData = [
               </VExpansionPanelText>
             </VExpansionPanel>
           </VExpansionPanels>
-        </VCol>
-      </VRow>
+        </div>
+      </div>
     </div>
   </VContainer>
 </template>
 
 <style lang="scss" scoped>
 .faq-section {
-  margin-block: 5.25rem;
+  margin-block: 5.25rem 4.25rem;
 }
 </style>

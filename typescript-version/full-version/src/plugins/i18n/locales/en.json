@@ -181,7 +181,9 @@
         "previous": "previous",
         "next": "next",
         "currentPage": "currentPage",
-        "page": "page"
+        "page": "page",
+        "first": "first",
+        "last": "last"
       }
     },
     "input": {

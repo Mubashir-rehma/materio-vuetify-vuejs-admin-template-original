@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
 import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
 
@@ -50,42 +49,42 @@ const recentDevices = [
     device: 'HP Spectre 360',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',
-    deviceIcon: { icon: 'mdi-microsoft-windows', color: 'primary' },
+    deviceIcon: { icon: 'ri-windows-fill', color: 'primary' },
   },
   {
     browser: 'Chrome on iPhone',
     device: 'iPhone 12x',
     location: 'Los Angeles, CA',
     recentActivity: '20 Apr 2022, 10:20',
-    deviceIcon: { icon: 'mdi-cellphone', color: 'error' },
+    deviceIcon: { icon: 'ri-smartphone-line', color: 'error' },
   },
   {
     browser: 'Chrome on Android',
     device: 'Oneplus 9 Pro',
     location: 'San Francisco, CA',
     recentActivity: '16 Apr 2022, 04:20',
-    deviceIcon: { icon: 'mdi-android', color: 'success' },
+    deviceIcon: { icon: 'ri-android-line', color: 'success' },
   },
   {
     browser: 'Chrome on macOS',
     device: 'Apple iMac',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',
-    deviceIcon: { icon: 'mdi-apple', color: 'secondary' },
+    deviceIcon: { icon: 'ri-apple-line', color: 'secondary' },
   },
   {
     browser: 'Chrome on Windows',
     device: 'HP Spectre 360',
     location: 'Los Angeles, CA',
     recentActivity: '20 Apr 2022, 10:20',
-    deviceIcon: { icon: 'mdi-microsoft-windows', color: 'primary' },
+    deviceIcon: { icon: 'ri-windows-fill', color: 'primary' },
   },
   {
     browser: 'Chrome on Android',
     device: 'Oneplus 9 Pro',
     location: 'San Francisco, CA',
     recentActivity: '16 Apr 2022, 04:20',
-    deviceIcon: { icon: 'mdi-android', color: 'success' },
+    deviceIcon: { icon: 'ri-android-line', color: 'success' },
   },
 ]
 
@@ -112,7 +111,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 <VTextField
                   v-model="currentPassword"
                   :type="isCurrentPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isCurrentPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isCurrentPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   autocomplete="on"
                   label="Current Password"
                   placeholder="············"
@@ -131,7 +130,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 <VTextField
                   v-model="newPassword"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isNewPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   label="New Password"
                   autocomplete="on"
                   placeholder="············"
@@ -147,7 +146,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 <VTextField
                   v-model="confirmPassword"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   autocomplete="on"
                   label="Confirm New Password"
                   placeholder="············"
@@ -172,7 +171,7 @@ const isOneTimePasswordDialogVisible = ref(false)
                 <div>
                   <VIcon
                     size="7"
-                    icon="mdi-circle"
+                    icon="ri-circle-line"
                     class="me-3"
                   />
                 </div>
@@ -315,7 +314,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               <span class="me-3">{{ serverKey.key }}</span>
               <VIcon
                 :size="18"
-                icon="mdi-content-copy"
+                icon="ri-file-copy-line"
                 class="cursor-pointer"
               />
             </p>

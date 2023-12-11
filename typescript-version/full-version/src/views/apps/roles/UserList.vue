@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
 import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import type { UserProperties } from '@db/apps/users/types'
 
@@ -46,7 +45,7 @@ const { data: usersData, execute: fetchUsers } = await useApi<any>(createUrl('/a
   },
 }))
 
-const users = computed(() => usersData.value.users)
+const users = computed((): UserProperties[] => usersData.value.users)
 const totalUsers = computed(() => usersData.value.totalUsers)
 
 // 👉 search filters
@@ -62,17 +61,17 @@ const resolveUserRoleVariant = (role: string) => {
   const roleLowerCase = role.toLowerCase()
 
   if (roleLowerCase === 'subscriber')
-    return { color: 'primary', icon: 'mdi-account-outline' }
+    return { color: 'primary', icon: 'ri-user-line' }
   if (roleLowerCase === 'author')
-    return { color: 'warning', icon: 'mdi-cog-outline' }
+    return { color: 'warning', icon: 'ri-settings-2-line' }
   if (roleLowerCase === 'maintainer')
-    return { color: 'success', icon: 'mdi-chart-donut' }
+    return { color: 'success', icon: 'ri-donut-chart-line' }
   if (roleLowerCase === 'editor')
-    return { color: 'info', icon: 'mdi-pencil-outline' }
+    return { color: 'info', icon: 'ri-pencil-line' }
   if (roleLowerCase === 'admin')
-    return { color: 'error', icon: 'mdi-laptop' }
+    return { color: 'error', icon: 'ri-macbook-line' }
 
-  return { color: 'primary', icon: 'mdi-account-outline' }
+  return { color: 'primary', icon: 'ri-user-line' }
 }
 
 const resolveUserStatusVariant = (stat: string) => {
@@ -120,7 +119,7 @@ const deleteUser = async (id: number) => {
         <VBtn
           variant="tonal"
           color="secondary"
-          prepend-icon="mdi-tray-arrow-up"
+          prepend-icon="ri-upload-2-line"
         >
           Export
         </VBtn>
@@ -132,7 +131,6 @@ const deleteUser = async (id: number) => {
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
-            density="compact"
             class="me-3"
           />
 
@@ -142,9 +140,8 @@ const deleteUser = async (id: number) => {
             label="Select Role"
             placeholder="Select Role"
             :items="roles"
-            density="compact"
             clearable
-            clear-icon="mdi-close"
+            clear-icon="ri-close-line"
             style="inline-size: 5rem;"
           />
         </div>
@@ -162,6 +159,7 @@ const deleteUser = async (id: number) => {
           { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
         ]"
         :items="users"
+        item-value="user"
         :items-length="totalUsers"
         :headers="headers"
         show-select
@@ -234,26 +232,26 @@ const deleteUser = async (id: number) => {
           >
             <VIcon
               size="24"
-              icon="mdi-dots-vertical"
+              icon="ri-more-2-line"
             />
 
             <VMenu activator="parent">
               <VList>
                 <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.id } }">
                   <template #prepend>
-                    <VIcon icon="mdi-eye-outline" />
+                    <VIcon icon="ri-eye-line" />
                   </template>
                   <VListItemTitle>View</VListItemTitle>
                 </VListItem>
                 <VListItem link>
                   <template #prepend>
-                    <VIcon icon="mdi-pencil-outline" />
+                    <VIcon icon="ri-pencil-line" />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
                 <VListItem @click="deleteUser(item.id)">
                   <template #prepend>
-                    <VIcon icon="mdi-delete-outline" />
+                    <VIcon icon="ri-delete-bin-line" />
                   </template>
                   <VListItemTitle>Delete</VListItemTitle>
                 </VListItem>

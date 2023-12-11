@@ -83,8 +83,6 @@ const shipmentConfig = {
   plotOptions: {
     bar: {
       columnWidth: '30%',
-      startingShape: 'rounded',
-      endingShape: 'rounded',
       borderRadius: 4,
     },
   },
@@ -207,7 +205,7 @@ const shipmentConfig = {
           </VBtn>
 
           <VBtn
-            icon="mdi-menu-down"
+            icon="ri-menu-line-down"
             color="primary"
           />
         </VBtnGroup>
@@ -243,8 +241,7 @@ const shipmentConfig = {
     border-radius: 0.375rem;
     block-size: 83%;
     padding-block: 4px;
-    padding-inline-end: 12px;
-    padding-inline-start: 16px;
+    padding-inline: 16px 12px;
   }
 }
 </style>

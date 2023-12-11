@@ -28,7 +28,7 @@ const isDialogVisible = ref(false)
           >
             <VIcon
               color="white"
-              icon="mdi-close"
+              icon="ri-close-line"
             />
           </VBtn>
 

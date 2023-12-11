@@ -12,27 +12,15 @@ const currentTab = ref(0)
         v-model="currentTab"
         direction="vertical"
       >
-        <VTab>
-          <VIcon
-            start
-            icon="mdi-account-outline"
-          />
+        <VTab prepend-icon="ri-user-line">
           Option 1
         </VTab>
 
-        <VTab>
-          <VIcon
-            start
-            icon="mdi-lock-outline"
-          />
+        <VTab prepend-icon="ri-lock-line">
           Option 2
         </VTab>
 
-        <VTab>
-          <VIcon
-            start
-            icon="mdi-access-point"
-          />
+        <VTab prepend-icon="ri-rfid-line">
           Option 3
         </VTab>
       </VTabs>

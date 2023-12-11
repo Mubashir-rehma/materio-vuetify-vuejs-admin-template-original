@@ -30,37 +30,40 @@ const resolveDeliveryMethod = computed(() => {
 <template>
   <section class="text-base">
     <div class="text-center">
-      <h5 class="text-h5 mb-3">
+      <h4 class="text-h4 mb-3">
         Thank You! 😇
-      </h5>
-      <p>
-        Your order <span class="text-primary">#1536548131</span> has been placed!
+      </h4>
+      <p class="text-body-1">
+        Your order <span class="text-high-emphasis font-weight-medium">#1536548131</span> has been placed!
       </p>
       <p class="mb-0">
-        We sent an email to <span class="text-primary">john.doe@example.com</span> with your order confirmation and receipt.
+        We sent an email to <span class="text-high-emphasis font-weight-medium">john.doe@example.com</span> with your order confirmation and receipt.
       </p>
       <p>If the email hasn't arrived within two minutes, please check your spam folder to see if the email was routed there.</p>
       <div class="d-flex align-center gap-2 justify-center">
         <VIcon
           size="20"
-          icon="mdi-clock-outline"
+          icon="ri-time-line"
         />
         <span>Time placed: 25/05/2020 13:35pm</span>
       </div>
     </div>
 
-    <VRow class="border rounded ma-0 mt-6">
+    <VRow class="border rounded ma-0 mt-5">
       <VCol
         cols="12"
         md="4"
         class="pa-5"
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
-        <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-map-marker-outline" />
-          <span class="text-base font-weight-medium">
+        <div class="d-flex align-center gap-2 text-high-emphasis mb-4">
+          <VIcon
+            icon="ri-map-pin-line"
+            size="20"
+          />
+          <div class="text-h6">
             Shipping
-          </span>
+          </div>
         </div>
 
         <template
@@ -70,11 +73,13 @@ const resolveDeliveryMethod = computed(() => {
           <p class="mb-1">
             {{ item.title }}
           </p>
-          <p class="mb-3">
+          <p>
             {{ item.desc }}
           </p>
 
-          <span class="font-weight-medium">+{{ item.subtitle }}</span>
+          <h6 class="text-h6 text-medium-emphasis">
+            +{{ item.subtitle }}
+          </h6>
         </template>
       </VCol>
 
@@ -84,8 +89,11 @@ const resolveDeliveryMethod = computed(() => {
         class="pa-5"
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
-        <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-credit-card-outline" />
+        <div class="d-flex align-center gap-2 text-high-emphasis mb-4">
+          <VIcon
+            icon="ri-bank-card-line"
+            size="20"
+          />
           <span class="text-base font-weight-medium">
             Billing Address
           </span>
@@ -98,11 +106,13 @@ const resolveDeliveryMethod = computed(() => {
           <p class="mb-1">
             {{ item.title }}
           </p>
-          <p class="mb-3">
+          <p>
             {{ item.desc }}
           </p>
 
-          <span class="font-weight-medium">+{{ item.subtitle }}</span>
+          <h6 class="text-h6 text-medium-emphasis">
+            +{{ item.subtitle }}
+          </h6>
         </template>
       </VCol>
 
@@ -111,8 +121,11 @@ const resolveDeliveryMethod = computed(() => {
         md="4"
         class="pa-5"
       >
-        <div class="d-flex align-center gap-2 text-high-emphasis mb-6">
-          <VIcon icon="mdi-archive-outline" />
+        <div class="d-flex align-center gap-2 text-high-emphasis mb-4">
+          <VIcon
+            icon="ri-ship-2-line"
+            size="20"
+          />
           <span class="text-base font-weight-medium">
             Shipping Method
           </span>
@@ -124,7 +137,9 @@ const resolveDeliveryMethod = computed(() => {
         <p class="mb-0">
           {{ resolveDeliveryMethod.method }}
         </p>
-        <span>( {{ resolveDeliveryMethod.desc }} )</span>
+        <p class="mb-0">
+          ( {{ resolveDeliveryMethod.desc }} )
+        </p>
       </VCol>
     </VRow>
 
@@ -140,7 +155,7 @@ const resolveDeliveryMethod = computed(() => {
             :key="item.name"
           >
             <div
-              class="d-flex align-start gap-3 pa-5 position-relative flex-column flex-sm-row"
+              class="d-flex align-start gap-3 pa-5 position-relative flex-column flex-sm-row align-center"
               :class="index ? 'border-t' : ''"
             >
               <div>
@@ -151,23 +166,23 @@ const resolveDeliveryMethod = computed(() => {
               </div>
 
               <div
-                class="d-flex w-100 pt-3"
+                class="d-flex w-100"
                 :class="$vuetify.display.width <= 700 ? 'flex-column' : 'flex-row'"
               >
                 <div>
-                  <h6 class="text-base font-weight-regular mb-4">
+                  <h6 class="text-h6 mb-2">
                     {{ item.name }}
                   </h6>
-                  <div class="d-flex align-center text-no-wrap gap-2 text-base">
-                    <span class="text-disabled">Sold by:</span>
-                    <span class="text-primary">{{ item.seller }}</span>
+                  <div class="d-flex flex-column align-start text-no-wrap gap-2 text-base">
+                    <div>
+                      <span class="text-body-1 d-inline-block">Sold by:</span> <span class="text-primary text-body-1 d-inline-block">{{ item.seller }}</span>
+                    </div>
                     <VChip
+                      v-if="index !== props.checkoutData.cartItems.length - 1"
                       :color="item.inStock ? 'success' : 'error'"
-                      density="compact"
+                      size="small"
                     >
-                      <span class="text-xs">
-                        {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
-                      </span>
+                      {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
                     </VChip>
                   </div>
                 </div>
@@ -175,13 +190,13 @@ const resolveDeliveryMethod = computed(() => {
                 <VSpacer />
 
                 <div
-                  class="d-flex flex-column justify-space-between mt-3"
+                  class="d-flex flex-column justify-center"
                   :class="$vuetify.display.width <= 700 ? 'text-start' : 'text-end'"
                 >
                   <p class="text-base mb-0">
                     <span class="text-primary">${{ item.price }}</span>
                     <span>/</span>
-                    <span class="text-decoration-line-through">${{ item.discountPrice }}</span>
+                    <span class="text-disabled">${{ item.discountPrice }}</span>
                   </p>
                 </div>
               </div>
@@ -196,24 +211,35 @@ const resolveDeliveryMethod = computed(() => {
       >
         <div class="border rounded">
           <div class="border-b pa-5">
-            <h6 class="text-base font-weight-medium mb-3">
+            <h6 class="text-h6 mb-4">
               Price Details
             </h6>
 
-            <div class="d-flex align-center justify-space-between text-sm mb-3">
-              <span class="text-high-emphasis">Order Total</span>
-              <span>${{ props.checkoutData.orderAmount }}.00</span>
+            <div class="d-flex align-center justify-space-between text-sm mb-4">
+              <div class="text-body-1">
+                Order Total
+              </div>
+              <div class="text-body-1">
+                ${{ props.checkoutData.orderAmount }}.00
+              </div>
             </div>
 
             <div class="d-flex align-center justify-space-between text-sm">
-              <span class="text-high-emphasis">Delivery Charges</span>
-              <div v-if="props.checkoutData.deliverySpeed === 'free'">
-                <span class="text-decoration-line-through me-2">$5.00</span>
+              <div class="text-body-1">
+                Charges
+              </div>
+              <div
+                v-if="props.checkoutData.deliverySpeed === 'free'"
+                class="d-flex align-center"
+              >
+                <div class="me-2 text-body-1 text-disabled">
+                  $5.00
+                </div>
                 <VChip
                   color="success"
                   size="small"
                 >
-                  Free
+                  FREE
                 </VChip>
               </div>
               <div v-else>
@@ -221,7 +247,7 @@ const resolveDeliveryMethod = computed(() => {
               </div>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between text-high-emphasis font-weight-medium px-5 py-3">
+          <div class="d-flex align-center justify-space-between text-h6 pa-5">
             <span>Total</span>
             <span>${{ props.checkoutData.orderAmount + props.checkoutData.deliveryCharges }}.00</span>
           </div>

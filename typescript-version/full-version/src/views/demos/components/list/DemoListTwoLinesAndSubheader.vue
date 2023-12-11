@@ -2,13 +2,13 @@
 const files = [
   {
     color: 'blue',
-    icon: 'mdi-clipboard-text',
+    icon: 'ri-clipboard-line',
     subtitle: 'Jan 20, 2014',
     title: 'Vacation itinerary',
   },
   {
     color: 'amber',
-    icon: 'mdi-gesture-tap-button',
+    icon: 'ri-hard-drive-2-line',
     subtitle: 'Jan 10, 2014',
     title: 'Kitchen remodel',
   },
@@ -49,7 +49,7 @@ const folders = [
         >
           <VIcon
             :size="26"
-            icon="mdi-folder-outline"
+            icon="ri-folder-line"
           />
         </VAvatar>
       </template>
@@ -58,7 +58,7 @@ const folders = [
         <VBtn
           variant="text"
           color="default"
-          icon="mdi-information-outline"
+          icon="ri-information-line"
         />
       </template>
     </VListItem>
@@ -91,7 +91,7 @@ const folders = [
         <VBtn
           variant="text"
           color="default"
-          icon="mdi-information-outline"
+          icon="ri-information-line"
         />
       </template>
     </VListItem>

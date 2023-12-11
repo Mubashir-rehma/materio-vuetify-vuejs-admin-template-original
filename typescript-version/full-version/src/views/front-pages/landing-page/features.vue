@@ -1,70 +1,113 @@
 <script setup lang="ts">
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
+import selectSolid from '@images/svg/3d-select-solid.svg?url'
+import edit from '@images/svg/edit.svg?url'
+import googleDocs from '@images/svg/google-docs.svg?url'
+import laptopCharging from '@images/svg/laptop-charging.svg?url'
+import lifebelt from '@images/svg/lifebelt.svg?url'
+import transitionUp from '@images/svg/transition-up.svg?url'
 
 const featuresData = [
-  { title: 'Quality Code', desc: 'Code structure that all developers will easily understand and fall in love with.', icon: 'custom-laptop-charging' },
-  { title: 'Continuous Updates', desc: 'Free updates for the next 12 months, including new demos and features.', icon: 'custom-transition-up' },
-  { title: 'Starter Kit', desc: 'Start your project quickly without having to remove unnecessary features.', icon: 'custom-edit' },
-  { title: 'API Ready', desc: 'Just change the endpoint and see your own data loaded within seconds.', icon: 'custom-3d-select-solid' },
-  { title: 'Excellent Support', desc: 'An easy-to-follow doc with lots of references and code examples.', icon: 'custom-lifebelt' },
-  { title: 'Well Documented', desc: 'An easy-to-follow doc with lots of references and code examples.', icon: 'custom-google-docs' },
+  { title: 'Quality Code', desc: 'Code structure that all developers will easily understand and fall in love with.', img: laptopCharging },
+  { title: 'Continuous Updates', desc: 'Free updates for the next 12 months, including new demos and features.', img: transitionUp },
+  { title: 'Starter Kit', desc: 'Start your project quickly without having to remove unnecessary features.', img: edit },
+  { title: 'API Ready', desc: 'Just change the endpoint and see your own data loaded within seconds.', img: selectSolid },
+  { title: 'Well Documented', desc: 'An easy-to-follow doc with lots of references and code examples.', img: lifebelt },
+  { title: 'Excellent Support', desc: 'An easy-to-follow doc with lots of references and code examples.', img: googleDocs },
 ]
 </script>
 
 <template>
   <VContainer id="features">
     <div class="feature-cards">
-      <div class="headers d-flex justify-center flex-column align-center">
-        <h6 class="text-base mb-6 font-weight-medium my-auto d-flex gap-x-2">
+      <div class="headers d-flex justify-center flex-column align-center mb-6">
+        <div class="d-flex gap-x-3 mb-6">
           <img
             :src="sectionTitleIcon"
             alt="section title icon"
-            height="20"
-            width="20"
+            height="24"
+            width="25"
           >
-          <span>
+          <div
+            class="text-body-1 text-high-emphasis font-weight-medium"
+            style="letter-spacing: 0.15px !important;"
+          >
             USEFUL FEATURES
-          </span>
-        </h6>
-        <h5 class="text-h5 mb-2">
-          <span class="font-weight-bold">Everything you need</span>  to start your next project
-        </h5>
-        <p>Not just a set of tools, the package includes ready-to-deploy conceptual application.</p>
+          </div>
+        </div>
+
+        <div class="mb-2 text-center">
+          <span
+            class="text-h4 d-inline-block font-weight-bold"
+            style="line-height: 2rem;"
+          >
+            Everything you need
+          </span> <span class="text-h5 d-inline-block">to start your next project</span>
+        </div>
+
+        <p
+          class="text-body-1 font-weight-medium text-center"
+          style="letter-spacing: 0.15px !important;"
+        >
+          Not just a set of tools, the package includes ready-to-deploy conceptual application.
+        </p>
       </div>
 
-      <div class="d-flex flex-wrap gap-x-20 gap-y-10 align-center justify-center">
-        <div
+      <VRow>
+        <VCol
           v-for="(data, index) in featuresData"
           :key="index"
-          class="text-center"
-          style="max-inline-size: 310px;"
+          cols="12"
+          sm="6"
+          md="4"
         >
-          <VAvatar
-            size="82"
-            class="border border-primary mb-4"
-          >
-            <VIcon
-              :icon="data.icon"
-              size="42"
+          <div class="feature d-flex flex-column gap-y-2 align-center justify-center mt-2">
+            <VAvatar
+              variant="outlined"
+              size="84"
               color="primary"
-            />
-          </VAvatar>
+              class="mb-2"
+            >
+              <img
+                :src="data.img"
+                height="42"
+                width="42"
+              >
+            </VAvatar>
 
-          <h6 class="text-h6 mb-1">
-            {{ data.title }}
-          </h6>
-
-          <p class="text-wrap">
-            {{ data.desc }}
-          </p>
-        </div>
-      </div>
+            <h5 class="text-h5">
+              {{ data.title }}
+            </h5>
+            <p
+              class="text-center text-medium-emphasis"
+              style="max-inline-size: 360px;"
+            >
+              {{ data.desc }}
+            </p>
+          </div>
+        </VCol>
+      </VRow>
     </div>
   </VContainer>
 </template>
 
 <style lang="scss" scoped>
 .feature-cards {
-  margin-block-end: 5.25rem;
+  margin-block-end: 4.25rem;
+}
+</style>
+
+<style lang="scss">
+.feature{
+  .v-avatar{
+    &.v-avatar--variant-outlined{
+      border: 2px solid rgba(var(--v-theme-primary), 0.32);
+
+      &:hover{
+        background: rgba(var(--v-theme-primary), 0.08);
+        cursor: pointer;
+      }
+    }
+  }
 }
 </style>

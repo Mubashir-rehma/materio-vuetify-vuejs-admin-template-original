@@ -21,7 +21,7 @@ const isDialogVisible = ref(false)
     <VCard title="Use Google's location service?">
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="isDialogVisible = false"
       />
 

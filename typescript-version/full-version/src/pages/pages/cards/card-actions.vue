@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const tableData = [
   {
-    action: 'Collapse', icon: 'mdi-chevron-up', details: 'Collapse card content using collapse action.',
+    action: 'Collapse', icon: 'ri-arrow-up-s-line', details: 'Collapse card content using collapse action.',
   },
   {
-    action: 'Refresh Content', icon: 'mdi-refresh', details: 'Refresh your card content using refresh action.',
+    action: 'Refresh Content', icon: 'ri-refresh-line', details: 'Refresh your card content using refresh action.',
   },
   {
-    action: 'Remove Card', icon: 'mdi-close', details: 'Remove card from page using remove card action',
+    action: 'Remove Card', icon: 'ri-close-line', details: 'Remove card from page using remove card action',
   },
 ]
 
@@ -99,7 +99,7 @@ const refetchData = (hideOverlay: () => void) => {
           <p>You can specifically add collapsible action using <code>actionCollapse</code> prop</p>
           <span>Click on <VIcon
             size="20"
-            icon="mdi-chevron-up"
+            icon="ri-arrow-up-s-line"
           /> icon to see it in action</span>
         </VCardText>
       </AppCardActions>
@@ -119,7 +119,7 @@ const refetchData = (hideOverlay: () => void) => {
           <p>You can specifically add refresh action using <code>actionRefresh</code> prop</p>
           <span>Click on <VIcon
             size="20"
-            icon="mdi-refresh"
+            icon="ri-refresh-line"
           /> icon to see it in action</span>
         </VCardText>
       </AppCardActions>
@@ -138,7 +138,7 @@ const refetchData = (hideOverlay: () => void) => {
           <p>You can specifically add remove action using <code>actionRemove</code> prop</p>
           <span>Click on <VIcon
             size="20"
-            icon="mdi-close"
+            icon="ri-close-line"
           /> icon to see it in action</span>
         </VCardText>
       </AppCardActions>

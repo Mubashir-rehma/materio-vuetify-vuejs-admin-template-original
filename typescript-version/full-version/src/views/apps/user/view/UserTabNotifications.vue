@@ -31,7 +31,6 @@ const notifications = ref([
   <VCard
     title="Notifications"
     subtitle="You will receive notification for the below selected items."
-    class="user-tab-notification"
   >
     <VTable class="text-no-wrap">
       <thead>

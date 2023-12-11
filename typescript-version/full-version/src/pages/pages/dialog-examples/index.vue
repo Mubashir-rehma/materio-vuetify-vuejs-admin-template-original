@@ -12,20 +12,16 @@ const isCreateAppVisible = ref(false)
 
 const userData = {
   id: 110,
-  fullName: 'Selena Kyle',
-  company: 'pixinvent',
-  role: 'Web developer',
-  username: 'charwomen1940',
+  firstName: 'Selena',
+  lastName: 'Kyle',
+  userName: 'charwomen1940',
   country: 'USA',
   contact: '(829) 537-0057',
   email: 'irena.dubrovna@wayne.com',
-  currentPlan: '',
+  isBillingAddress: true,
   status: 'active',
-  avatar: '',
-  taskDone: null,
-  projectDone: null,
   taxId: 'Tax-8894',
-  language: 'English',
+  language: ['English'],
 }
 </script>
 
@@ -41,8 +37,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-file-document-outline"
+              size="28"
+              icon="ri-file-pdf-line"
             />
           </template>
           <VCardTitle>Share Project</VCardTitle>
@@ -72,8 +68,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-credit-card-outline"
+              size="28"
+              icon="ri-bank-card-line"
             />
           </template>
           <VCardTitle>Add New Card</VCardTitle>
@@ -103,8 +99,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-currency-usd"
+              size="28"
+              icon="ri-money-dollar-circle-line"
             />
           </template>
           <VCardTitle>Pricing</VCardTitle>
@@ -135,8 +131,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-gift-outline"
+              size="28"
+              icon="ri-gift-line"
             />
           </template>
           <VCardTitle>Refer & Earn</VCardTitle>
@@ -167,8 +163,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-home-outline"
+              size="28"
+              icon="ri-home-3-line"
             />
           </template>
           <VCardTitle>Add New Address</VCardTitle>
@@ -199,8 +195,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-cube-outline"
+              size="28"
+              icon="ri-box-3-line"
             />
           </template>
           <VCardTitle>Create App</VCardTitle>
@@ -229,8 +225,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-lock-outline"
+              size="28"
+              icon="ri-lock-line"
             />
           </template>
           <VCardTitle>Two Factor Auth</VCardTitle>
@@ -262,8 +258,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-lock-outline"
+              size="28"
+              icon="ri-lock-line"
             />
           </template>
           <VCardTitle>Edit User Info</VCardTitle>
@@ -297,8 +293,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-credit-card"
+              size="28"
+              icon="ri-bank-card-fill"
             />
           </template>
           <VCardTitle>Payment Providers</VCardTitle>
@@ -329,8 +325,8 @@ const userData = {
         <VCardItem class="d-flex flex-column gap-2">
           <template #prepend>
             <VIcon
-              size="34"
-              icon="mdi-credit-card"
+              size="28"
+              icon="ri-bank-card-fill"
             />
           </template>
           <VCardTitle>Add Payment Methods</VCardTitle>

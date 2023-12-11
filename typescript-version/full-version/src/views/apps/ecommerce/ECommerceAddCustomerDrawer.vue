@@ -21,8 +21,8 @@ const refVForm = ref<VForm>()
 const name = ref()
 const email = ref()
 const mobile = ref()
-const addressline1 = ref()
-const addressline2 = ref()
+const addressLine1 = ref()
+const addressLine2 = ref()
 const town = ref()
 const state = ref()
 const postCode = ref()
@@ -48,13 +48,14 @@ const resetForm = () => {
       title="Add a Customer"
       @cancel="$emit('update:isDrawerOpen', false)"
     />
+    <VDivider />
 
     <VCard flat>
       <PerfectScrollbar
         :options="{ wheelPropagation: false }"
         class="h-100"
       >
-        <VCardText style="height: calc(100vh - 5rem);">
+        <VCardText style="block-size: calc(100vh - 5rem);">
           <VForm
             ref="refVForm"
             @submit.prevent=""
@@ -69,7 +70,7 @@ const resetForm = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="name"
-                  label="Name*"
+                  label="Full Name"
                   :rules="[requiredValidator]"
                   placeholder="John Doe"
                 />
@@ -78,7 +79,7 @@ const resetForm = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="email"
-                  label="Email*"
+                  label="Email Address"
                   :rules="[requiredValidator, emailValidator]"
                   placeholder="johndoe@email.com"
                 />
@@ -87,7 +88,7 @@ const resetForm = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="mobile"
-                  label="mobile*"
+                  label="Mobile Number"
                   :rules="[requiredValidator]"
                   placeholder="+(123) 456-7890"
                 />
@@ -101,7 +102,7 @@ const resetForm = () => {
 
               <VCol cols="12">
                 <VTextField
-                  v-model="addressline1"
+                  v-model="addressLine1"
                   label="Address Line 1*"
                   :rules="[requiredValidator]"
                   placeholder="45, Rocker Terrace"
@@ -110,7 +111,7 @@ const resetForm = () => {
 
               <VCol cols="12">
                 <VTextField
-                  v-model="addressline2"
+                  v-model="addressLine2"
                   placeholder="Empire Heights,"
                   :rules="[requiredValidator]"
                   label="Address Line 2*"
@@ -158,10 +159,10 @@ const resetForm = () => {
               <VCol cols="12">
                 <div class="d-flex justify-space-between">
                   <div class="d-flex flex-column gap-y-1">
-                    <div class="text-body-2 font-weight-medium text-high-emphasis">
+                    <h6 class="text-h6">
                       Use as a billing address?
-                    </div>
-                    <span>Please check budget for more info</span>
+                    </h6>
+                    <span class="text-sm">Please check budget for more info</span>
                   </div>
                   <VSwitch v-model="isBillingAddress" />
                 </div>

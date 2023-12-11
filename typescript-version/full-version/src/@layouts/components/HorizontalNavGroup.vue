@@ -102,8 +102,7 @@ watch(() => route.path, () => {
       z-index: 1;
 
       > div {
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden auto;
       }
     }
   }

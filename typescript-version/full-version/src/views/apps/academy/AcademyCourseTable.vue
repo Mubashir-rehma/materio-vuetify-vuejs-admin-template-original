@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Course } from '@db/apps/academy/types'
 
 const searchQuery = ref('')
 
@@ -34,7 +34,7 @@ const { data: courseData } = await useApi<any>(createUrl('/apps/academy/courses'
   },
 }))
 
-const courses = computed(() => courseData.value.courses)
+const courses = computed((): Course[] => courseData.value.courses)
 const totalCourse = computed(() => courseData.value.total)
 </script>
 
@@ -64,6 +64,7 @@ const totalCourse = computed(() => courseData.value.total)
       ]"
       :headers="headers"
       :items="courses"
+      item-value="courseName"
       :items-length="totalCourse"
       show-select
       class="text-no-wrap"
@@ -127,7 +128,7 @@ const totalCourse = computed(() => courseData.value.total)
         <div class="d-flex justify-space-between gap-x-4">
           <div>
             <VIcon
-              icon="mdi-account-outline"
+              icon="ri-user-line"
               color="primary"
               size="24"
               class="me-2"
@@ -138,7 +139,7 @@ const totalCourse = computed(() => courseData.value.total)
           </div>
           <div>
             <VIcon
-              icon="mdi-laptop"
+              icon="ri-macbook-line"
               color="info"
               size="24"
               class="me-2"
@@ -147,7 +148,7 @@ const totalCourse = computed(() => courseData.value.total)
           </div>
           <div>
             <VIcon
-              icon="mdi-video-outline"
+              icon="ri-vidicon-line"
               color="error"
               size="24"
               class="me-2"

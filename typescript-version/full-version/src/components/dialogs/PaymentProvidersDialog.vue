@@ -73,31 +73,33 @@ const paymentProvidersData = [
     max-width="900"
     @update:model-value="dialogVisibleUpdate"
   >
-    <VCard class="refer-and-earn-dialog">
+    <VCard class="refer-and-earn-dialog pa-3 pa-sm-11">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="emit('update:isDialogVisible', false)"
       />
 
-      <VCardText class="pa-8 pa-sm-16">
-        <h5 class="text-h5 text-center mb-2">
-          Select Payment Providers
-        </h5>
-        <p class="text-sm-body-1 text-center text-disabled">
-          Third-party payment providers
-        </p>
+      <VCardText class="pt-5">
+        <div class="mb-6">
+          <h4 class="text-h4 text-center mb-2">
+            Select Payment Providers
+          </h4>
+          <p class="text-sm-body-1 text-center text-disabled">
+            Third-party payment providers
+          </p>
+        </div>
 
         <div
           v-for="(item, index) in paymentProvidersData"
           :key="index"
         >
-          <div class="d-flex flex-column flex-sm-row justify-space-between align-start gap-2 flex-wrap py-4">
+          <div class="d-flex flex-column flex-sm-row justify-space-between align-sm-center align-start gap-4 flex-wrap py-4">
             <div class="text-high-emphasis font-weight-medium">
               {{ item.title }}
             </div>
-            <div class="d-flex gap-2 flex-wrap">
+            <div class="d-flex gap-x-4 gap-y-2 flex-wrap">
               <img
                 v-for="(img, iterator) in item.providers"
                 :key="iterator"
@@ -107,7 +109,7 @@ const paymentProvidersData = [
               >
             </div>
           </div>
-          <VDivider />
+          <VDivider v-show="index !== paymentProvidersData.length - 1" />
         </div>
       </VCardText>
     </VCard>

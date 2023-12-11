@@ -29,7 +29,7 @@ import avatar4 from '@images/avatars/avatar-4.png'
         <VIcon
           v-bind="props"
           size="30"
-          icon="mdi-account-outline"
+          icon="ri-user-line"
         />
       </template>
       <span>Tooltip on Icon</span>

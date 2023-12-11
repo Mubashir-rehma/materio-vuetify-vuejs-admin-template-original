@@ -110,15 +110,15 @@ const onSubmit = () => {
             </VWindowItem>
           </VWindow>
 
-          <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
+          <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-6">
             <VBtn
               color="secondary"
-              variant="tonal"
+              variant="outlined"
               :disabled="currentStep === 0"
               @click="currentStep--"
             >
               <VIcon
-                icon="mdi-arrow-left"
+                icon="ri-arrow-left-line"
                 start
                 class="flip-in-rtl"
               />
@@ -128,7 +128,7 @@ const onSubmit = () => {
             <VBtn
               v-if="createDealSteps.length - 1 === currentStep"
               color="success"
-              append-icon="mdi-check"
+              append-icon="ri-check-line"
               @click="onSubmit"
             >
               submit
@@ -141,7 +141,7 @@ const onSubmit = () => {
               Next
 
               <VIcon
-                icon="mdi-arrow-right"
+                icon="ri-arrow-right-line"
                 end
                 class="flip-in-rtl"
               />

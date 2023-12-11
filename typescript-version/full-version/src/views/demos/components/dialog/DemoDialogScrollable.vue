@@ -41,7 +41,7 @@ const isDialogVisible = ref(false)
     <VCard>
       <DialogCloseBtn
         variant="text"
-        size="small"
+        size="default"
         @click="isDialogVisible = false"
       />
 

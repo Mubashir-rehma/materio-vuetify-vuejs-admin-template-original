@@ -74,7 +74,7 @@ const states = [
     :readonly="!isEditing"
     :label="`State — ${isEditing ? 'Editable' : 'Readonly'}`"
     persistent-hint
-    prepend-icon="mdi-city"
+    prepend-icon="ri-building-line"
     :menu-props="{ maxHeight: '200px' }"
   >
     <template #append>
@@ -82,7 +82,7 @@ const states = [
         <VIcon
           :key="`icon-${isEditing}`"
           :color="isEditing ? 'success' : 'info'"
-          :icon="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
+          :icon="isEditing ? 'ri-check-line' : 'ri-edit-circle-line'"
           @click="isEditing = !isEditing"
         />
       </VSlideXReverseTransition>

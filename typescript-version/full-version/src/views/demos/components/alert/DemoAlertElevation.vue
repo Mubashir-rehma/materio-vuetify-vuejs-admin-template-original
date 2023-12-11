@@ -10,6 +10,7 @@ const alertShadow = ref(5)
     :min="0"
     :step="1"
     thumb-label
+    class="mb-4"
   />
 
   <VAlert

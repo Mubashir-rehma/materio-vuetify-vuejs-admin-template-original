@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VDataTable } from 'vuetify/labs/VDataTable'
 import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
@@ -56,7 +55,8 @@ const recentDevices = [
           <VAlert
             variant="tonal"
             color="warning"
-            class="mb-6"
+            closable
+            class="mb-4"
           >
             <VAlertTitle>Ensure that these requirements are met</VAlertTitle>
             <span>Minimum 8 characters long, uppercase & symbol</span>
@@ -72,7 +72,7 @@ const recentDevices = [
                   label="New Password"
                   placeholder="············"
                   :type="isNewPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isNewPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isNewPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isNewPasswordVisible = !isNewPasswordVisible"
                 />
               </VCol>
@@ -84,7 +84,7 @@ const recentDevices = [
                   label="Confirm Password"
                   placeholder="············"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isConfirmPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                   @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                 />
               </VCol>
@@ -112,20 +112,35 @@ const recentDevices = [
               SMS
             </h4>
             <VTextField
-              variant="underlined"
+              variant="outlined"
               :model-value="smsVerificationNumber"
               readonly
             >
-              <template #append-inner>
-                <IconBtn variant="plain">
+              <template #append>
+                <VBtn
+                  icon
+                  rounded
+                  variant="outlined"
+                  color="secondary"
+                  class="me-2"
+                >
                   <VIcon
-                    icon="mdi-square-edit-outline"
+                    icon="ri-edit-box-line"
+                    size="24"
                     @click="isTwoFactorDialogOpen = true"
                   />
-                </IconBtn>
-                <IconBtn variant="plain">
-                  <VIcon icon="mdi-delete-outline" />
-                </IconBtn>
+                </VBtn>
+                <VBtn
+                  icon
+                  rounded
+                  variant="outlined"
+                  color="secondary"
+                >
+                  <VIcon
+                    size="24"
+                    icon="ri-delete-bin-line"
+                  />
+                </VBtn>
               </template>
             </VTextField>
           </div>
@@ -143,19 +158,18 @@ const recentDevices = [
     <VCol cols="12">
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
-        <VDivider />
         <VDataTable
           :items="recentDevices"
           :headers="recentDeviceHeader"
           hide-default-footer
-          class="text-no-wrap"
+          class="text-no-wrap rounded-0"
         >
           <template #item.browser="{ item }">
-            <div class="d-flex">
+            <div class="d-flex text-high-emphasis">
               <VAvatar
                 :image="item.logo"
                 :size="22"
-                class="me-3"
+                class="me-4"
               />
               {{ item.browser }}
             </div>

@@ -17,11 +17,11 @@ const contact = computed(() => ({
 // Feedback icon
 const resolveFeedbackIcon = (feedback: ChatOut['messages'][number]['feedback']) => {
   if (feedback.isSeen)
-    return { icon: 'mdi-check-all', color: 'success' }
+    return { icon: 'ri-check-line-all', color: 'success' }
   else if (feedback.isDelivered)
-    return { icon: 'mdi-check-all', color: undefined }
+    return { icon: 'ri-check-line-all', color: undefined }
   else
-    return { icon: 'mdi-check', color: undefined }
+    return { icon: 'ri-check-line', color: undefined }
 }
 
 const msgGroups = computed(() => {

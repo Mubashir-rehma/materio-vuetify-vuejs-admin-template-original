@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const statData = ref([
-  { title: 'Completed Sites', value: 137, icon: 'custom-layout-right', color: 'primary', isHover: false },
-  { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success', isHover: false },
-  { title: 'Happy Customers', value: 137, icon: 'custom-people-tag', color: 'warning', isHover: false },
-  { title: 'Awards Winning', value: 23, icon: 'custom-medal', color: 'info', isHover: false },
+  { title: 'Completed Sites', value: 137, icon: 'ri-layout-line', color: 'primary', isHover: false },
+  { title: 'Working Hours', value: 1100, icon: 'ri-time-line', color: 'success', isHover: false },
+  { title: 'Happy Customers', value: 137, icon: 'ri-user-smile-line', color: 'warning', isHover: false },
+  { title: 'Awards Winning', value: 23, icon: 'ri-award-line', color: 'info', isHover: false },
 ])
 </script>
 
@@ -31,10 +31,12 @@ const statData = ref([
                     size="42"
                   />
                 </VAvatar>
-                <h4 class="text-h4 font-weight-bold">
-                  {{ product.value }}+
-                </h4>
-                <span class="text-body-1">{{ product.title }}</span>
+                <div class="product-stat-text">
+                  {{ kFormatter(product.value) }}+
+                </div>
+                <div class="text-body-1 font-weight-medium">
+                  {{ product.title }}
+                </div>
               </VCardText>
             </VCard>
           </VCol>
@@ -43,3 +45,13 @@ const statData = ref([
     </VContainer>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.product-stat-text{
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  line-height: 42px;
+}
+</style>

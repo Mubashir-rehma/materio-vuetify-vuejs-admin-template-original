@@ -10,9 +10,9 @@ const items = ref(['Streaming', 'Eating', 'Programming', 'Playing games', 'Sleep
     clearable
     multiple
     closable-chips
-    clear-icon="mdi-close-circle-outline"
+    clear-icon="ri-close-circle-line"
     :items="items"
     label="Your favorite hobbies"
-    prepend-icon="mdi-filter-variant"
+    prepend-icon="ri-filter-3-line"
   />
 </template>

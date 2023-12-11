@@ -98,8 +98,7 @@ body .fc {
   .fc-header-toolbar {
     flex-wrap: wrap;
     margin: 1.25rem;
-    column-gap: 0.5rem;
-    row-gap: 1rem;
+    gap: 1rem 0.5rem;
   }
 
   .fc-toolbar-chunk {

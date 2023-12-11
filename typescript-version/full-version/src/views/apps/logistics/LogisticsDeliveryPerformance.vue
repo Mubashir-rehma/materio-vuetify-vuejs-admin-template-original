@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const deliveryData = [
-  { title: 'Packages in transit', value: '10k', change: 25.8, icon: 'mdi-wallet-giftcard', color: 'primary' },
-  { title: 'Packages out for delivery', value: '5k', change: 4.3, icon: 'mdi-car-estate', color: 'info' },
-  { title: 'Packages delivered', value: '15k', change: -12.5, icon: 'mdi-check', color: 'success' },
-  { title: 'Delivery success rate', value: '95%', change: 35.6, icon: 'mdi-home-outline', color: 'warning' },
-  { title: 'Average delivery time', value: '2.5 Days', change: -2.15, icon: 'mdi-timer-outline', color: 'secondary' },
-  { title: 'Customer satisfaction', value: '4.5/5', change: 5.7, icon: 'mdi-account-outline', color: 'error' },
+  { title: 'Packages in transit', value: '10k', change: 25.8, icon: 'ri-gift-line', color: 'primary' },
+  { title: 'Packages out for delivery', value: '5k', change: 4.3, icon: 'ri-car-line', color: 'info' },
+  { title: 'Packages delivered', value: '15k', change: -12.5, icon: 'ri-check-line', color: 'success' },
+  { title: 'Delivery success rate', value: '95%', change: 35.6, icon: 'ri-home-line', color: 'warning' },
+  { title: 'Average delivery time', value: '2.5 Days', change: -2.15, icon: 'ri-timer-line', color: 'secondary' },
+  { title: 'Customer satisfaction', value: '4.5/5', change: 5.7, icon: 'ri-user-line', color: 'error' },
 ]
 </script>
 
@@ -46,7 +46,7 @@ const deliveryData = [
               class="d-flex align-center"
             >
               <VIcon
-                :icon="data.change > 0 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                :icon="data.change > 0 ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"
                 class="me-1"
               />
               <span>{{ data.change }}%</span>

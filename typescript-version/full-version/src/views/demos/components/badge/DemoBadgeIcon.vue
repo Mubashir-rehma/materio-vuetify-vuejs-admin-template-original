@@ -7,7 +7,7 @@ import avatar1 from '@images/avatars/avatar-1.png'
     <!-- avatar -->
     <VBadge>
       <template #badge>
-        <VIcon icon="mdi-information-variant" />
+        <VIcon icon="ri-error-warning-line" />
       </template>
 
       <VAvatar>
@@ -16,7 +16,7 @@ import avatar1 from '@images/avatars/avatar-1.png'
     </VBadge>
 
     <!-- icon -->
-    <VBadge icon="mdi-lock-open-outline">
+    <VBadge icon="ri-lock-unlock-line">
       <VAvatar>
         <VImg :src="avatar1" />
       </VAvatar>

@@ -1,92 +1,25 @@
 @use "@core/scss/base/utils";
-@use "@core/scss/template/mixins.scss";
+@use "@configured-variables" as variables;
+
+// 👉 Body
+// set body font size 15px
+body {
+  font-size: 15px !important;
+}
 
 // 👉 Typography
-
 .text-h1,
 .text-h2,
 .text-h3,
 .text-h4,
 .text-h5,
 .text-h6,
-.text-subtitle-1, 
-.text-subtitle-2, 
-.text-body-1,
-.text-body-2,
-.text-caption, 
 .text-overline,
 .v-input {
   color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
 }
 
-// 👉 Button
-@include mixins.update-tonal-bg('v-btn');
-
-.v-btn--size-small {
-  --v-btn-height: 32px;
-  --v-btn-size: 13px;
+.text-caption{
+  color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity));
 }
 
-.v-btn--size-large {
-  --v-btn-height: 44px;
-  --v-btn-size: 15px;
-}
-
-.v-btn {
-  // Default (elevated) button
-  &--variant-elevated,
-  &--variant-flat {
-    // We want darker background on hover instead of light
-    &:not(.v-btn--loading, .v-btn--disabled) {
-      &.bg-primary:hover {
-        background-color: #6c3bd6 !important;
-      }
-
-      &.bg-secondary:hover {
-        background-color: #4D5056 !important;
-      }
-
-      &.bg-info:hover {
-        background-color: #0E71A3 !important;
-      }
-
-      &.bg-success:hover {
-        background-color: #378100 !important;
-      }
-
-      &.bg-warning:hover {
-        background-color: #A37300 !important;
-      }
-
-      &.bg-error:hover {
-        background-color: #A33134 !important;
-      }
-
-      .v-btn__overlay {
-        opacity: 0;
-      }
-    }
-  }
-
-  &--variant-outlined,
-  &--variant-text {
-    .v-btn__overlay {
-      --v-hover-opacity: .08;
-    }
-  }
-
-  &--variant-tonal {
-    .v-btn__overlay {
-      --v-hover-opacity: .16;
-    }
-  }
-
-  &--variant-elevated,
-  &--variant-flat {
-    &.v-btn--disabled {
-      .v-btn__overlay {
-        opacity: 0.45;
-      }
-    }
-  }
-}

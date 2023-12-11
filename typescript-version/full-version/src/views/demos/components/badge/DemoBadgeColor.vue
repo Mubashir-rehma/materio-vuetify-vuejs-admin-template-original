@@ -6,7 +6,7 @@
     >
       <VIcon
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
 
@@ -16,7 +16,7 @@
     >
       <VIcon
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
 
@@ -26,7 +26,7 @@
     >
       <VIcon
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
 
@@ -36,7 +36,7 @@
     >
       <VIcon
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
 
@@ -46,7 +46,7 @@
     >
       <VIcon
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
 
@@ -56,7 +56,7 @@
     >
       <VIcon
         size="25"
-        icon="mdi-instagram"
+        icon="ri-instagram-line"
       />
     </VBadge>
   </div>

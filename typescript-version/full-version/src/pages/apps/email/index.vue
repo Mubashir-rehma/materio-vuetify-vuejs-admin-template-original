@@ -210,14 +210,14 @@ watch(
             class="d-lg-none ms-3"
             @click="isLeftSidebarOpen = true"
           >
-            <VIcon icon="mdi-menu" />
+            <VIcon icon="ri-menu-line" />
           </IconBtn>
           <!-- 👉 Search -->
           <VTextField
             v-model="q"
             density="default"
             class="email-search px-1 flex-grow-1"
-            prepend-inner-icon="mdi-magnify"
+            prepend-inner-icon="ri-search-line"
             placeholder="Search email"
           />
         </div>
@@ -244,7 +244,7 @@ watch(
               v-show="('filter' in route.params ? route.params.filter !== 'trashed' : true)"
               @click="handleActionClick('trash')"
             >
-              <VIcon icon="mdi-delete-outline" />
+              <VIcon icon="ri-delete-bin-line" />
               <VTooltip
                 activator="parent"
                 location="top"
@@ -254,7 +254,7 @@ watch(
             </IconBtn>
             <!-- Mark unread/read -->
             <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
-              <VIcon :icon="isAllMarkRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+              <VIcon :icon="isAllMarkRead ? 'ri-mail-line' : 'ri-mail-open-line'" />
               <VTooltip
                 activator="parent"
                 location="top"
@@ -264,7 +264,7 @@ watch(
             </IconBtn>
             <!-- Move to folder -->
             <IconBtn>
-              <VIcon icon="mdi-folder-outline" />
+              <VIcon icon="ri-folder-line" />
               <VTooltip
                 activator="parent"
                 location="top"
@@ -302,7 +302,7 @@ watch(
             </IconBtn>
             <!-- Update labels -->
             <IconBtn>
-              <VIcon icon="mdi-label-outline" />
+              <VIcon icon="ri-price-tag-3-line" />
               <VTooltip
                 activator="parent"
                 location="top"
@@ -334,7 +334,7 @@ watch(
           </div>
           <VSpacer />
           <IconBtn @click="fetchEmails">
-            <VIcon icon="mdi-reload" />
+            <VIcon icon="ri-restart-line" />
           </IconBtn>
           <MoreBtn />
         </div>
@@ -363,7 +363,7 @@ watch(
               :color="email.isStarred ? 'warning' : 'default'"
               @click.stop=" handleActionClick(email.isStarred ? 'unstar' : 'star', [email.id])"
             >
-              <VIcon icon="mdi-star-outline" />
+              <VIcon icon="ri-star-fill-outline" />
             </IconBtn>
             <VAvatar
               class="mx-2"
@@ -397,7 +397,7 @@ watch(
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
               <IconBtn @click.stop="handleActionClick('trash', [email.id])">
-                <VIcon icon="mdi-delete-outline" />
+                <VIcon icon="ri-delete-bin-line" />
                 <VTooltip
                   activator="parent"
                   location="top"
@@ -406,7 +406,7 @@ watch(
                 </VTooltip>
               </IconBtn>
               <IconBtn @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])">
-                <VIcon :icon="email.isRead ? 'mdi-email-outline' : 'mdi-email-open-outline'" />
+                <VIcon :icon="email.isRead ? 'ri-mail-line' : 'ri-mail-open-line'" />
                 <VTooltip
                   activator="parent"
                   location="top"
@@ -415,7 +415,7 @@ watch(
                 </VTooltip>
               </IconBtn>
               <IconBtn @click.stop="handleActionClick('spam', [email.id])">
-                <VIcon icon="mdi-alert-octagon-outline" />
+                <VIcon icon="ri-spam-2-line" />
                 <VTooltip
                   activator="parent"
                   location="top"
@@ -442,8 +442,8 @@ watch(
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
-@use "@core/scss/base/_mixins.scss";
+@use "@styles/variables/vuetify.scss";
+@use "@core/scss/base/mixins.scss";
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {

@@ -16,8 +16,8 @@ master-vuejs-laravel-template/
 ├── bootstrap                # Contains cache and app.php
 ├── config                   # Application's configuration files
 ├── database                 # Migrations, model factories, & seeds
-├── lang                     # Laravel default localization
 ├── public                   # index.php ,static folder & Build
+│   ├── images/              # Public images
 │   ├── favicon.ico           # Favicon
 │   └── index.php             # Main php file
 ├── resources                # Views, Layouts, store and vue.js components

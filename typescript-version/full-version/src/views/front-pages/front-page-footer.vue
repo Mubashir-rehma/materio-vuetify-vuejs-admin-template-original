@@ -22,40 +22,30 @@ const menus: Menu[] = [
   <div class="footer">
     <div class="footer-top pt-15">
       <VContainer>
-        <VRow>
+        <div class="d-flex flex-lg-row flex-column gap-16">
           <!-- 👉 Footer  -->
-          <VCol
-            cols="12"
-            md="5"
-          >
-            <div class="mb-4">
-              <div class="d-flex align-center gap-x-3 mb-5">
-                <VNodeRenderer :nodes="themeConfig.app.logo" />
-                <h5 class="text-h5 text-white">
-                  MATERIO
-                </h5>
+          <div class="mb-4">
+            <div class="d-flex align-center gap-x-3 mb-6">
+              <VNodeRenderer :nodes="themeConfig.app.logo" />
+              <div class="footer-title">
+                MATERIO
               </div>
-              <div class="text-body-2 text-white mb-8 footer-text">
-                Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
-              </div>
-              <VForm class="subscribe-form d-flex flex-wrap align-center gap-4">
-                <VTextField
-                  label="Subscribe to newsletter"
-                  placeholder="john@email.com"
-                  density="compact"
-                  style="max-inline-size: 500px;min-inline-size: 250px;"
-                />
-                <VBtn>Subscribe</VBtn>
-              </VForm>
             </div>
-          </VCol>
+            <div class="text-body-1 text-white mb-6">
+              Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
+            </div>
+            <VForm class="subscribe-form d-flex align-center gap-4">
+              <VTextField
+                label="Subscribe to newsletter"
+                placeholder="john@email.com"
+                theme="dark"
+              />
+              <VBtn>Subscribe</VBtn>
+            </VForm>
+          </div>
 
           <!-- 👉 Pages -->
-          <VCol
-            cols="12"
-            md="2"
-            sm="4"
-          >
+          <div class="d-flex justify-space-between  flex-grow-1 gap-x-16 gap-y-8 flex-md-row flex-column">
             <div>
               <div class="font-weight-medium mb-6">
                 Pages
@@ -67,11 +57,10 @@ const menus: Menu[] = [
                   class="mb-4"
                 >
                   <RouterLink
-                    class="text-white-variant"
+                    class="text-white-variant text-no-wrap"
                     :to="item.to"
                   >
                     {{ item.name }}
-
                     <template v-if="item.isNew">
                       <VChip
                         color="primary"
@@ -86,14 +75,7 @@ const menus: Menu[] = [
                 </li>
               </ul>
             </div>
-          </VCol>
-
-          <!-- 👉 Products  -->
-          <VCol
-            cols="12"
-            md="2"
-            sm="4"
-          >
+            <!-- 👉 Products  -->
             <div>
               <div class="font-weight-medium mb-6">
                 Products
@@ -107,21 +89,14 @@ const menus: Menu[] = [
                 >
                   <RouterLink
                     to=""
-                    class="text-white-variant"
+                    class="text-white-variant text-no-wrap"
                   >
                     {{ item }}
                   </RouterLink>
                 </li>
               </ul>
             </div>
-          </VCol>
-
-          <!-- 👉 Download App -->
-          <VCol
-            cols="12"
-            md="3"
-            sm="4"
-          >
+            <!-- 👉 Download App -->
             <div>
               <div class="font-weight-medium mb-6">
                 Download our app
@@ -159,8 +134,8 @@ const menus: Menu[] = [
                 </VBtn>
               </div>
             </div>
-          </VCol>
-        </VRow>
+          </div>
+        </div>
       </VContainer>
     </div>
 
@@ -173,7 +148,7 @@ const menus: Menu[] = [
             {{ new Date().getFullYear() }}
             Made With
             <VIcon
-              icon="mdi-heart"
+              icon="ri-heart-fill"
               color="error"
               size="1.25rem"
               class="mx-1"
@@ -182,16 +157,16 @@ const menus: Menu[] = [
               href="https://themeselection.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-white ms-1"
+              class="text-white ms-1 font-weight-medium"
             >ThemeSelection</a>
           </span>
           <div class="d-flex gap-x-2">
             <template
               v-for="(item, index) in [
-                { title: 'github', icon: 'mdi-github', href: 'https://github.com/themeselection' },
-                { title: 'facebook', icon: 'mdi-facebook', href: 'https://www.facebook.com/ThemeSelections/' },
-                { title: 'twitter', icon: 'mdi-twitter', href: 'https://twitter.com/Theme_Selection' },
-                { title: 'instagram', icon: 'mdi-instagram', href: 'https://www.instagram.com/themeselection/' },
+                { title: 'github', icon: 'ri-github-fill', href: 'https://github.com/themeselection' },
+                { title: 'facebook', icon: 'ri-facebook-circle-line', href: 'https://www.facebook.com/ThemeSelections/' },
+                { title: 'twitter', icon: 'ri-twitter-line', href: 'https://twitter.com/Theme_Selection' },
+                { title: 'instagram', icon: 'ri-instagram-line', href: 'https://www.instagram.com/themeselection/' },
               ]"
               :key="index"
             >
@@ -213,10 +188,15 @@ const menus: Menu[] = [
 
 <style lang="scss" scoped>
 .footer-top {
-  background: #2e253e;
-  background-image: url("@images/front-pages/backgrounds/footer-bg.png");
-  background-size: cover;
+  background: url("@images/front-pages/backgrounds/footer-bg.png") lightgray 50% / cover no-repeat;
+}
+
+.footer-title{
   color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  line-height: 1.5rem;
 }
 
 .footer-line {
@@ -225,18 +205,6 @@ const menus: Menu[] = [
 </style>
 
 <style lang="scss">
-.subscribe-form {
-  .v-label.v-field-label {
-    color: rgba(231, 227, 252, var(--v-high-emphasis-opacity));
-  }
-
-  .v-field {
-    input.v-field__input::placeholder {
-      color: rgba(231, 227, 252, var(--v-disabled-opacity)) !important;
-    }
-  }
-}
-
 .footer {
   @media (min-width: 600px) and (max-width: 960px) {
     .v-container {

@@ -20,7 +20,7 @@
           <template #prepend>
             <VAvatar
               size="28"
-              icon="mdi-information-outline"
+              icon="ri-information-line"
               variant="elevated"
               color="info"
               rounded

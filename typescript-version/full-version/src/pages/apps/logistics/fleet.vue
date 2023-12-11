@@ -173,7 +173,7 @@ watch(activeIndex, () => {
               >
                 <div class="d-flex gap-x-4">
                   <VAvatar
-                    icon="mdi-bus"
+                    icon="ri-bus-line"
                     variant="tonal"
                   />
                   <div>
@@ -186,7 +186,7 @@ watch(activeIndex, () => {
                   </div>
                 </div>
                 <IconBtn density="comfortable">
-                  <VIcon :icon="showPanel[index] ? 'mdi-chevron-down' : $vuetify.locale.isRtl ? 'mdi-chevron-left' : 'mdi-chevron-right'" />
+                  <VIcon :icon="showPanel[index] ? 'ri-arrow-down-s-line' : $vuetify.locale.isRtl ? 'ri-arrow-left-s-line' : 'ri-arrow-right-s-line'" />
                 </IconBtn>
               </div>
               <VExpandTransition mode="out-in">
@@ -208,12 +208,11 @@ watch(activeIndex, () => {
                       align="start"
                       truncate-line="both"
                       side="end"
-                      density="compact"
                       line-thickness="1"
                       class="ps-2"
                     >
                       <VTimelineItem
-                        icon="mdi-check-circle-outline"
+                        icon="ri-checkbox-circle-line"
                         dot-color="rgb(var(--v-theme-surface))"
                         icon-color="success"
                         fill-dot
@@ -231,7 +230,7 @@ watch(activeIndex, () => {
                         </div>
                       </VTimelineItem>
                       <VTimelineItem
-                        icon="mdi-check-circle-outline"
+                        icon="ri-checkbox-circle-line"
                         dot-color="rgb(var(--v-theme-surface))"
                         icon-color="success"
                         fill-dot
@@ -249,7 +248,7 @@ watch(activeIndex, () => {
                         </div>
                       </VTimelineItem>
                       <VTimelineItem
-                        icon="mdi-map-marker-outline"
+                        icon="ri-map-pin-line"
                         dot-color="rgb(var(--v-theme-surface))"
                         icon-color="primary"
                         fill-dot
@@ -307,8 +306,8 @@ watch(activeIndex, () => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
-@use "@core/scss/base/_mixins.scss";
+@use "@styles/variables/vuetify.scss";
+@use "@core/scss/base/mixins.scss";
 @import "mapbox-gl/dist/mapbox-gl.css";
 
 .fleet-app-layout {

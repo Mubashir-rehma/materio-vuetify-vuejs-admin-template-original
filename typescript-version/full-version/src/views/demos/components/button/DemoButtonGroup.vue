@@ -5,13 +5,11 @@ const toggleExclusive = ref(1)
 <template>
   <VBtnToggle
     v-model="toggleExclusive"
-    divided
-    color="primary"
-    variant="outlined"
+    density="compact"
   >
-    <VBtn icon="mdi-format-align-left" />
-    <VBtn icon="mdi-format-align-center" />
-    <VBtn icon="mdi-format-align-right" />
-    <VBtn icon="mdi-format-align-justify" />
+    <VBtn icon="ri-align-left" />
+    <VBtn icon="ri-align-center" />
+    <VBtn icon="ri-align-right" />
+    <VBtn icon="ri-align-justify" />
   </VBtnToggle>
 </template>

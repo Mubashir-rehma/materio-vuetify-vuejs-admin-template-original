@@ -45,17 +45,17 @@ const resolveUserStatusVariant = (stat: string) => {
 // 👉 Role variant resolver
 const resolveUserRoleVariant = (role: string) => {
   if (role === 'subscriber')
-    return { color: 'primary', icon: 'mdi-account-outline' }
+    return { color: 'primary', icon: 'ri-user-line' }
   if (role === 'author')
-    return { color: 'warning', icon: 'mdi-cog-outline' }
+    return { color: 'warning', icon: 'ri-settings-2-line' }
   if (role === 'maintainer')
-    return { color: 'success', icon: 'mdi-database-outline' }
+    return { color: 'success', icon: 'ri-database-2-line' }
   if (role === 'editor')
-    return { color: 'info', icon: 'mdi-pencil-outline' }
+    return { color: 'info', icon: 'ri-pencil-line' }
   if (role === 'admin')
-    return { color: 'error', icon: 'mdi-dns-outline' }
+    return { color: 'error', icon: 'ri-server-line' }
 
-  return { color: 'primary', icon: 'mdi-account-outline' }
+  return { color: 'primary', icon: 'ri-user-line' }
 }
 </script>
 
@@ -112,7 +112,7 @@ const resolveUserRoleVariant = (role: string) => {
             >
               <VIcon
                 size="22"
-                icon="mdi-check"
+                icon="ri-check-line"
               />
             </VAvatar>
 
@@ -135,7 +135,7 @@ const resolveUserRoleVariant = (role: string) => {
             >
               <VIcon
                 size="22"
-                icon="mdi-briefcase-variant-outline"
+                icon="ri-briefcase-4-line"
               />
             </VAvatar>
 
@@ -298,7 +298,7 @@ const resolveUserRoleVariant = (role: string) => {
                 size="10"
                 color="#E0E0E0"
                 class="me-2"
-                icon="mdi-checkbox-blank-circle"
+                icon="ri-check-linebox-blank-circle"
               />
               <span>{{ benefit }}</span>
             </VListItem>

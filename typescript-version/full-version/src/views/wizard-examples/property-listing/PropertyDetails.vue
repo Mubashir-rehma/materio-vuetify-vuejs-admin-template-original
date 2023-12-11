@@ -14,13 +14,13 @@ const radioContent: CustomInputContent[] = [
   {
     title: 'Sell the property',
     desc: 'Post your property for sale. Unlimited free listing.',
-    icon: 'mdi-currency-usd',
+    icon: 'ri-money-dollar-circle-line',
     value: 'sell',
   },
   {
     title: 'Rent the property',
     desc: 'Post your property for rent. Unlimited free listing.',
-    icon: 'mdi-bank',
+    icon: 'ri-home-6-line',
     value: 'rent',
   },
 ]
@@ -125,7 +125,6 @@ watch(formData, () => {
           v-model="formData.address"
           label="Address"
           placeholder="112, 1st Cross, 1st Stage, 1st Phase, BTM Layout, Bangalore - 560068"
-          rows="2"
         />
       </VCol>
     </VRow>

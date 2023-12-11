@@ -5,47 +5,47 @@ import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
 <template>
   <div class="landing-cta position-relative bg-surface">
     <VContainer>
-      <VRow>
-        <VCol
-          class="d-flex justify-start align-center"
-          cols="12"
-          md="6"
-        >
-          <div>
-            <h4 class="text-h4 text-primary font-weight-bold">
-              Ready to Get Started?
-            </h4>
-            <div class="text-sm font-weight-medium mb-8">
-              Start your project with a 14-day free trial
-            </div>
-            <VBtn
-              color="primary"
-              :append-icon="$vuetify.locale.isRtl ? 'mdi-arrow-left' : 'mdi-arrow-right'"
-              :to="{ name: 'front-pages-payment' }"
-            >
-              Get Started
-            </VBtn>
+      <div class="d-flex align-center justify-sm-space-between flex-column flex-md-row gap-y-4">
+        <div class="text-sm-start text-center">
+          <div class="banner-text pb-1">
+            Ready to Get Started?
           </div>
-        </VCol>
-        <VCol
-          class="d-flex align-center justify-center pb-0 pt-15"
-          cols="12"
-          md="6"
-        >
-          <VImg
-            :src="ctaDashborad"
-            :width="500"
-          />
-        </VCol>
-      </VRow>
+          <div class="text-body-1 font-weight-medium mb-8">
+            Start your project with a 14-day free trial
+          </div>
+          <VBtn
+            color="primary"
+            :append-icon="$vuetify.locale.isRtl ? 'ri-arrow-left-line' : 'ri-arrow-right-line'"
+            :to="{ name: 'front-pages-payment' }"
+          >
+            Get Started
+          </VBtn>
+        </div>
+
+        <VImg
+          :src="ctaDashborad"
+          :max-width="$vuetify.display.mdAndUp ? 600 : ''"
+          max-height="250"
+          width="auto"
+          class="mb-n4"
+        />
+      </div>
     </VContainer>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .landing-cta {
   background-image: url("@images/front-pages/backgrounds/cta-bg.png");
   background-size: cover;
   margin-block: auto;
+}
+
+.banner-text{
+  color: rgb(var(--v-theme-primary));
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  line-height: 42px;
 }
 </style>

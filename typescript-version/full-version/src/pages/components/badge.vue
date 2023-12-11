@@ -138,5 +138,19 @@ import * as demoCode from '@/views/demos/components/badge/demoCodeBadge'
         <DemoBadgeMaximumValue />
       </AppCardCode>
     </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <AppCardCode
+        title="Tonal"
+        :code="demoCode.tonal"
+      >
+        <p>Use class <code>v-badge--tonal</code> for using tonal variant badge.</p>
+
+        <DemoBadgeTonal />
+      </AppCardCode>
+    </VCol>
   </VRow>
 </template>

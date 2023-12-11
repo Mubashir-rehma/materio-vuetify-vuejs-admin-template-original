@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VDataTableServer } from 'vuetify/labs/VDataTable'
+import type { Order } from '@db/apps/ecommerce/types'
 
 const searchQuery = ref('')
 
@@ -46,7 +46,7 @@ const { data: ordersData, execute: fetchOrders } = await useApi<any>(createUrl('
   },
 ))
 
-const orders = computed(() => ordersData.value.orders)
+const orders = computed((): Order[] => ordersData.value.orders)
 const totalOrder = computed(() => ordersData.value.total)
 
 const deleteOrder = async (id: number) => {
@@ -60,15 +60,14 @@ const deleteOrder = async (id: number) => {
 <template>
   <VCard>
     <VCardText>
-      <div class="d-flex justify-sm-space-between justify-start flex-wrap gap-4">
-        <div class="text-h6">
+      <div class="d-flex align-center justify-sm-space-between justify-start flex-wrap gap-4">
+        <div class="text-h5">
           Orders placed
         </div>
         <VTextField
           v-model="searchQuery"
-          density="compact"
-          placeholder="Serach Order"
-          style=" max-inline-size: 200px; min-inline-size: 200px;"
+          placeholder="Search Order"
+          style=" max-inline-size: 250px; min-inline-size: 200px;"
         />
       </div>
     </VCardText>
@@ -77,8 +76,9 @@ const deleteOrder = async (id: number) => {
       v-model:page="page"
       :headers="headers"
       :items="orders"
+      item-value="id"
       :items-length="totalOrder"
-      class="text-no-wrap"
+      class="text-no-wrap rounded-0"
       @update:options="updateOptions"
     >
       <!-- Order ID -->
@@ -96,7 +96,7 @@ const deleteOrder = async (id: number) => {
       <!-- Status -->
       <template #item.status="{ item }">
         <VChip
-          density="comfortable"
+          size="small"
           :color="resolveStatus(item.status)?.color"
         >
           {{ item.status }}
@@ -111,7 +111,7 @@ const deleteOrder = async (id: number) => {
       <!-- Actions -->
       <template #item.actions="{ item }">
         <IconBtn>
-          <VIcon icon="mdi-dots-vertical" />
+          <VIcon icon="ri-more-2-fill" />
           <VMenu activator="parent">
             <VList>
               <VListItem value="view">
@@ -131,6 +131,49 @@ const deleteOrder = async (id: number) => {
             </VList>
           </VMenu>
         </IconBtn>
+      </template>
+
+      <!-- Pagination -->
+      <template #bottom>
+        <VDivider />
+
+        <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+          <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+            Rows Per Page:
+            <VSelect
+              v-model="itemsPerPage"
+              class="per-page-select"
+              variant="plain"
+              :items="[10, 20, 25, 50, 100]"
+            />
+          </div>
+
+          <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+            {{ paginationMeta({ page, itemsPerPage }, totalOrder) }}
+          </p>
+
+          <div class="d-flex gap-x-2 align-center me-2">
+            <VBtn
+              class="flip-in-rtl"
+              icon="ri-arrow-left-s-line"
+              variant="text"
+              density="comfortable"
+              color="default"
+              :disabled="page <= 1"
+              @click="page <= 1 ? page = 1 : page--"
+            />
+
+            <VBtn
+              class="flip-in-rtl"
+              icon="ri-arrow-right-s-line"
+              density="comfortable"
+              variant="text"
+              color="default"
+              :disabled="page >= Math.ceil(totalOrder / itemsPerPage)"
+              @click="page >= Math.ceil(totalOrder / itemsPerPage) ? page = Math.ceil(totalOrder / itemsPerPage) : page++ "
+            />
+          </div>
+        </div>
       </template>
     </VDataTableServer>
   </VCard>

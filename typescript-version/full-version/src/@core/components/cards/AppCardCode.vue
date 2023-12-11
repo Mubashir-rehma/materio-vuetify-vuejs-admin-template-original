@@ -41,7 +41,7 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
         >
           <VIcon
             size="20"
-            icon="mdi-code-tags"
+            icon="ri-code-s-line"
           />
         </IconBtn>
       </template>
@@ -59,30 +59,13 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
             <VBtnToggle
               v-model="preferredCodeLanguage"
               mandatory
-              variant="outlined"
               density="compact"
             >
-              <VBtn
-                size="x-small"
-                value="ts"
-                :color="preferredCodeLanguage === 'ts' ? 'primary' : 'default'"
-              >
-                <VIcon
-                  size="x-large"
-                  icon="mdi-language-typescript"
-                  :color="preferredCodeLanguage === 'ts' ? 'primary' : 'secondary'"
-                />
+              <VBtn value="ts">
+                <VIcon icon="mdi-language-typescript" />
               </VBtn>
-              <VBtn
-                size="x-small"
-                value="js"
-                :color="preferredCodeLanguage === 'js' ? 'primary' : 'default'"
-              >
-                <VIcon
-                  size="x-large"
-                  icon="mdi-language-javascript"
-                  :color="preferredCodeLanguage === 'js' ? 'primary' : 'secondary'"
-                />
+              <VBtn value="js">
+                <VIcon icon="mdi-language-javascript" />
               </VBtn>
             </VBtnToggle>
           </div>
@@ -101,7 +84,7 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
               @click="() => { copy() }"
             >
               <VIcon
-                :icon="copied ? 'mdi-check' : 'mdi-content-copy'"
+                :icon="copied ? 'ri-check-line' : 'ri-file-copy-line'"
                 size="20"
               />
             </IconBtn>
@@ -113,7 +96,7 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
 </template>
 
 <style lang="scss">
-@use "@styles/variables/_vuetify.scss";
+@use "@styles/variables/vuetify.scss";
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {

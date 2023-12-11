@@ -4,7 +4,7 @@
       Accept
       <VIcon
         end
-        icon="ri-check-linebox-marked-circle-outline"
+        icon="ri-checkbox-circle-line"
       />
     </VBtn>
 

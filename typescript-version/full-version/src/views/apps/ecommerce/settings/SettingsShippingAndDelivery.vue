@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
+import americaFlag from '@images/icons/countries/us.png'
 
 const domesticTableData = [
   { rate: 'Weight', condition: '5Kg-10Kg', price: '$9' },
@@ -35,24 +36,29 @@ const InternationalTableData = [
             size="34"
             class="me-4"
           />
+
           <div>
-            <div class="text-high-emphasis">
+            <h6 class="text-h6">
               Domestic
-            </div>
-            <div>United state of America</div>
+            </h6>
+            <p class="text-body-2 mb-0">
+              United state of America
+            </p>
           </div>
+
           <VSpacer />
+
           <div>
-            <IconBtn>
+            <IconBtn size="large">
               <VIcon icon="ri-pencil-line" />
             </IconBtn>
-            <IconBtn>
-              <VIcon icon="ri-delete-bin-line" />
+            <IconBtn size="large">
+              <VIcon icon="ri-delete-bin-7-line" />
             </IconBtn>
           </div>
         </div>
 
-        <VTable class="mb-4">
+        <VTable class="border rounded mb-4">
           <thead>
             <tr>
               <th>RATE NAME</th>
@@ -69,7 +75,7 @@ const InternationalTableData = [
               <td>{{ data.rate }}</td>
               <td>{{ data.condition }}</td>
               <td>{{ data.price }}</td>
-              <td>
+              <td style="inline-size: 2rem;">
                 <IconBtn>
                   <VIcon icon="ri-more-2-line" />
                 </IconBtn>
@@ -86,28 +92,33 @@ const InternationalTableData = [
       <div>
         <div class="d-flex flex-wrap align-center mb-4">
           <VAvatar
-            :image="avatar1"
+            :image="americaFlag"
             size="34"
             class="me-4"
           />
+
           <div>
-            <div class="text-high-emphasis">
+            <h6 class="text-h6">
               International
-            </div>
-            <div>United state of America</div>
+            </h6>
+            <p class="text-body-2 mb-0">
+              United state of America
+            </p>
           </div>
+
           <VSpacer />
+
           <div>
-            <IconBtn>
+            <IconBtn size="large">
               <VIcon icon="ri-pencil-line" />
             </IconBtn>
-            <IconBtn>
-              <VIcon icon="ri-delete-bin-line" />
+            <IconBtn size="large">
+              <VIcon icon="ri-delete-bin-7-line" />
             </IconBtn>
           </div>
         </div>
 
-        <VTable class="mb-4">
+        <VTable class="border rounded mb-4">
           <thead>
             <tr>
               <th>RATE NAME</th>
@@ -124,7 +135,7 @@ const InternationalTableData = [
               <td>{{ data.rate }}</td>
               <td>{{ data.condition }}</td>
               <td>{{ data.price }}</td>
-              <td>
+              <td style="inline-size: 2rem;">
                 <IconBtn>
                   <VIcon icon="ri-more-2-line" />
                 </IconBtn>
@@ -142,11 +153,11 @@ const InternationalTableData = [
 
   <div class="d-flex justify-end gap-x-4">
     <VBtn
-      variant="outlined"
       color="secondary"
+      variant="outlined"
     >
       Discard
     </VBtn>
-    <VBtn>Save</VBtn>
+    <VBtn>Save Changes</VBtn>
   </div>
 </template>

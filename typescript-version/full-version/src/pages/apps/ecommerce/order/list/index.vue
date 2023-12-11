@@ -137,7 +137,6 @@ const deleteOrder = async (id: number) => {
         <div class="d-flex justify-sm-space-between justify-start flex-wrap gap-4">
           <VTextField
             v-model="searchQuery"
-            density="compact"
             placeholder="Search Order"
             style=" max-inline-size: 200px; min-inline-size: 200px;"
           />

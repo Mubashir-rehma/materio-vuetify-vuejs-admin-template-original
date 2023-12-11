@@ -32,7 +32,6 @@ const searchQuery = ref('')
               v-model="searchQuery"
               placeholder="Find your course"
               style="max-inline-size: 400px;"
-              density="compact"
             />
             <VBtn
               color="primary"

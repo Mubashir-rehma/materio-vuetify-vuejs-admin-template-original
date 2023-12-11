@@ -127,7 +127,6 @@ const updateOptions = (options: any) => {
           <VTextField
             v-model="searchQuery"
             placeholder="Search"
-            density="compact"
             style="max-inline-size: 280px; min-inline-size: 200px;"
           />
 

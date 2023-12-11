@@ -205,7 +205,6 @@ const deleteInvoice = async (id: number) => {
         <!-- 👉 Actions  -->
         <div class="me-3">
           <VSelect
-            density="compact"
             label="Actions"
             placeholder="Select"
             :items="['Delete', 'Edit', 'Send']"
@@ -222,7 +221,6 @@ const deleteInvoice = async (id: number) => {
             <VTextField
               v-model="searchQuery"
               placeholder="Search Invoice"
-              density="compact"
             />
           </div>
 

@@ -129,7 +129,6 @@ watch(() => props.currentStep, updateCartData)
                   v-model="item.quantity"
                   type="number"
                   style="inline-size: 7.5rem;"
-                  density="compact"
                 />
               </div>
 
@@ -191,7 +190,6 @@ watch(() => props.currentStep, updateCartData)
           <div class="d-flex align-center gap-4">
             <VTextField
               v-model="checkoutCartDataLocal.promoCode"
-              density="compact"
               placeholder="Enter Promo Code"
             />
 

@@ -38,7 +38,6 @@ const menus: Menu[] = [
               <VTextField
                 label="Subscribe to newsletter"
                 placeholder="john@email.com"
-                density="compact"
                 theme="dark"
               />
               <VBtn>Subscribe</VBtn>

@@ -118,7 +118,6 @@ const deleteInvoice = async (id: number) => {
             <VTextField
               v-model="searchQuery"
               placeholder="Search Invoice"
-              density="compact"
             />
           </div>
 
@@ -126,7 +125,6 @@ const deleteInvoice = async (id: number) => {
 
           <VSelect
             v-model="selectedStatus"
-            density="compact"
             label="Select Status"
             placeholder="Select Status"
             clearable

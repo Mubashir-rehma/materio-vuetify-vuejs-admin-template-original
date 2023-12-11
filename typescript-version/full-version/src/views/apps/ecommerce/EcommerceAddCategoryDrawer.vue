@@ -112,7 +112,6 @@ const resetForm = () => {
                 <VTextField
                   v-model="categoryTitle"
                   label="Title"
-                  density="compact"
                   :rules="[requiredValidator]"
                   placeholder="Fashion"
                 />
@@ -122,7 +121,6 @@ const resetForm = () => {
                 <VTextField
                   v-model="categorySlug"
                   label="Slug"
-                  density="compact"
                   :rules="[requiredValidator]"
                   placeholder="Trends fashion"
                 />
@@ -132,7 +130,6 @@ const resetForm = () => {
                 <VFileInput
                   v-model="categoryImg"
                   prepend-icon=""
-                  density="compact"
                   :rules="[requiredValidator]"
                   label="No file chosen"
                   clearable
@@ -150,7 +147,6 @@ const resetForm = () => {
                   v-model="parentCategory"
                   :rules="[requiredValidator]"
                   label="Parent Category"
-                  density="compact"
                   placeholder="Select Parent Category"
                   :items="['HouseHold', 'Management', 'Electronics', 'Office', 'Accessories']"
                 />
@@ -219,7 +215,6 @@ const resetForm = () => {
                   :rules="[requiredValidator]"
                   placeholder="Select Category Status"
                   label="Parent Status"
-                  density="compact"
                   :items="['Published', 'Inactive', 'Scheduled']"
                 />
               </VCol>

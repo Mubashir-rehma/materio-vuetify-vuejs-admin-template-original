@@ -53,7 +53,6 @@ const totalCustomers = computed(() => customerData.value.total)
             v-model="searchQuery"
             style="max-inline-size: 200px; min-inline-size: 200px;"
             placeholder="Search .."
-            density="compact"
           />
           <div class="d-flex flex-row gap-4 align-center flex-wrap">
             <VBtn

@@ -90,7 +90,6 @@ onMounted(async () => {
         >
           <VTextField
             v-model="search"
-            density="compact"
             label="Search"
             placeholder="Search ..."
             append-inner-icon="ri-search-line"

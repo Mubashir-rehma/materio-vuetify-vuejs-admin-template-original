@@ -395,13 +395,11 @@ const reviewStatChartConfig = {
               v-model="searchQuery"
               style="max-inline-size: 250px; min-inline-size: 200px;"
               placeholder="Search"
-              density="compact"
             />
             <div class="d-flex flex-row gap-4 align-center flex-wrap">
               <VSelect
                 v-model="selectedStatus"
                 style="min-inline-size: 6.25rem;"
-                density="compact"
                 :items="[
                   { title: 'All', value: 'All' },
                   { title: 'Published', value: 'Published' },

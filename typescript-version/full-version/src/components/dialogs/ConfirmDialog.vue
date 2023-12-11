@@ -94,7 +94,7 @@ const onCancel = () => {
           class="my-4"
           size="x-large"
         >
-          <span class="text-4xl">
+          <span class="text-xl">
             <VIcon icon="ri-check-line" />
           </span>
         </VBtn>
@@ -129,7 +129,7 @@ const onCancel = () => {
           class="my-4"
           size="x-large"
         >
-          <span class="text-4xl font-weight-light">X</span>
+          <span class="text-2xl font-weight-light">X</span>
         </VBtn>
 
         <h1 class="text-h4 mb-4">

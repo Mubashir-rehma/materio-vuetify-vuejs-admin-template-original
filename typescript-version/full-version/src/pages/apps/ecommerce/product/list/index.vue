@@ -235,7 +235,6 @@ const deleteProduct = async (id: number) => {
           <VTextField
             v-model="searchQuery"
             placeholder="Search Product"
-            density="compact"
             style="inline-size: 200px;"
             class="me-3"
           />

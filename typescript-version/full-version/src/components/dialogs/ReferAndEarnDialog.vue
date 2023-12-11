@@ -103,10 +103,7 @@ const referAndEarnSteps = [
           class="d-flex align-center gap-4 mb-6"
           @submit.prevent="() => {}"
         >
-          <VTextField
-            density="compact"
-            placeholder="johnDoe@gmail.com"
-          />
+          <VTextField placeholder="johnDoe@gmail.com" />
 
           <VBtn type="submit">
             Submit
@@ -125,7 +122,6 @@ const referAndEarnSteps = [
           @submit.prevent="() => {}"
         >
           <VTextField
-            density="compact"
             placeholder="http://referral.link"
             class="refer-link-input"
           >

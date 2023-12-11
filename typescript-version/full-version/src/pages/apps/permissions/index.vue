@@ -71,7 +71,6 @@ const editPermission = (name: string) => {
           <VTextField
             v-model="search"
             placeholder="Search"
-            density="compact"
             style="max-inline-size: 15rem;min-inline-size: 12rem;"
           />
 

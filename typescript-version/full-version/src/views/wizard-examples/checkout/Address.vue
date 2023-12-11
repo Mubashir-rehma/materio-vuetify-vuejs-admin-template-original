@@ -24,13 +24,13 @@ const deliveryOptions = [
     value: 'free',
   },
   {
-    icon: 'ri-vip-crown-line',
+    icon: 'ri-star-smile-line',
     title: 'Express',
     desc: 'Get your product in 3-4 days.',
     value: 'express',
   },
   {
-    icon: 'ri-rocket-line',
+    icon: 'ri-vip-crown-line',
     title: 'Overnight',
     desc: 'Get your product in 1 day.',
     value: 'overnight',
@@ -101,11 +101,14 @@ watch(() => props.currentStep, updateAddressData)
               </VChip>
             </div>
 
-            <p class="text-body-1 mb-0">
+            <p class="text-body-2 mb-0">
               {{ item.desc }}
             </p>
-            <p class="text-body-1 mb-3">
+            <p class="text-body-2 mb-0">
               Mobile: {{ item.subtitle }}
+            </p>
+            <p class="text-body-2 mb-3">
+              Cash/Card on delivery available
             </p>
 
             <VDivider class="pb-2" />

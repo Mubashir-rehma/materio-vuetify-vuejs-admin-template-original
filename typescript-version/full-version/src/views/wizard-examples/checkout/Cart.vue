@@ -104,9 +104,9 @@ watch(() => props.currentStep, updateCartData)
               :class="(($vuetify.display.width <= 1280 && $vuetify.display.width >= 960) || $vuetify.display.width <= 700) ? 'flex-column' : 'flex-row'"
             >
               <div>
-                <div class="text-body-1 font-weight-medium text-high-emphasis mb-2">
+                <h6 class="text-h6 mb-2">
                   {{ item.name }}
-                </div>
+                </h6>
                 <div class="d-flex align-center text-no-wrap gap-2 text-base">
                   <span class="text-disabled">Sold by:</span>
                   <span class="text-primary">{{ item.seller }}</span>
@@ -121,7 +121,7 @@ watch(() => props.currentStep, updateCartData)
                 <div class="my-2">
                   <VRating
                     :model-value="item.rating"
-                    size="small"
+                    size="24"
                   />
                 </div>
 
@@ -183,7 +183,7 @@ watch(() => props.currentStep, updateCartData)
       >
         <!-- 👉 payment offer -->
         <VCardText>
-          <h6 class="text-h6 mb-3">
+          <h6 class="text-h6 mb-4">
             Offer
           </h6>
 
@@ -191,6 +191,7 @@ watch(() => props.currentStep, updateCartData)
             <VTextField
               v-model="checkoutCartDataLocal.promoCode"
               placeholder="Enter Promo Code"
+              density="compact"
             />
 
             <VBtn
@@ -242,7 +243,7 @@ watch(() => props.currentStep, updateCartData)
               </div>
               <a
                 href="#"
-                class="font-weight-medium d-inline-block"
+                class="text-base d-inline-block"
               >Apply Coupon</a>
             </div>
 

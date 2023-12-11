@@ -1,4 +1,5 @@
-$font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+  "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 /* stylelint-disable length-zero-no-unit */
 @forward "../../../base/libs/vuetify/variables" with (
   $body-font-family: $font-family-custom !default,
@@ -280,6 +281,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Tabs
   $tabs-height: 38px !default,
+  $tab-min-width: 60px !default,
 
   // 👉 Timeline
   $timeline-divider-line-background: rgba(var(--v-border-color), var(--v-border-opacity)) !default,

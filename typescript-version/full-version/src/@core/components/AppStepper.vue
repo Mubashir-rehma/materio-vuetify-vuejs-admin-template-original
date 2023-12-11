@@ -109,10 +109,12 @@ watchEffect(() => {
                 <p class="stepper-title font-weight-medium text-base mb-0">
                   {{ item.title }}
                 </p>
-                <span
+                <p
                   v-if="item.subtitle"
-                  class="stepper-subtitle text-sm"
-                >{{ item.subtitle }}</span>
+                  class="stepper-subtitle text-sm mb-0"
+                >
+                  {{ item.subtitle }}
+                </p>
               </div>
             </div>
 
@@ -175,12 +177,12 @@ watchEffect(() => {
                 {{ item.title }}
               </h6>
 
-              <span
+              <p
                 v-if="item.subtitle"
-                class="text-sm step-subtitle"
+                class="text-sm step-subtitle mb-0"
               >
                 {{ item.subtitle }}
-              </span>
+              </p>
             </div>
 
             <!-- 👉 stepper step line -->

@@ -70,7 +70,7 @@ const resolveDeliveryMethod = computed(() => {
           v-for="item in selectedDeliveryAddress"
           :key="item.value"
         >
-          <p class="mb-1">
+          <p class="mb-0">
             {{ item.title }}
           </p>
           <p>
@@ -103,7 +103,7 @@ const resolveDeliveryMethod = computed(() => {
           v-for="item in selectedDeliveryAddress"
           :key="item.value"
         >
-          <p class="mb-1">
+          <p class="mb-0">
             {{ item.title }}
           </p>
           <p>

@@ -36,10 +36,7 @@ const isPaymentProvidersDialogVisible = ref(false)
         <h6 class="text-h6 mb-5">
           Default
         </h6>
-        <div
-          class="rounded pa-5 mb-6"
-          style="background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));"
-        >
+        <div class="rounded bg-var-theme-background pa-5 mb-6">
           <div class="d-flex justify-space-between align-center mb-6">
             <VAvatar
               variant="elevated"

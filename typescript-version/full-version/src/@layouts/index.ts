@@ -15,7 +15,7 @@ export const createLayouts = (userConfig: PartialDeep<LayoutConfig>): Plugin => 
     layoutConfig.app.logo = userConfig.app?.logo ?? layoutConfig.app.logo as any
     layoutConfig.app.overlayNavFromBreakpoint = userConfig.app?.overlayNavFromBreakpoint ?? layoutConfig.app.overlayNavFromBreakpoint
     layoutConfig.app.i18n.enable = userConfig.app?.i18n?.enable ?? layoutConfig.app.i18n.enable
-    layoutConfig.app.iconRenderer = userConfig.app?.iconRenderer ?? layoutConfig.app.iconRenderer
+    layoutConfig.app.iconRenderer = userConfig.app?.iconRenderer as LayoutConfig['app']['iconRenderer'] ?? layoutConfig.app.iconRenderer
 
     layoutConfig.verticalNav.defaultNavItemIconProps = userConfig.verticalNav?.defaultNavItemIconProps ?? layoutConfig.verticalNav.defaultNavItemIconProps
 
@@ -36,7 +36,7 @@ export const createLayouts = (userConfig: PartialDeep<LayoutConfig>): Plugin => 
       isVerticalNavCollapsed: cookieRef('isVerticalNavCollapsed', userConfig.verticalNav?.isVerticalNavCollapsed ?? layoutConfig.verticalNav.isVerticalNavCollapsed).value,
 
       // isAppRTL: userConfig.app?.isRTL ?? config.app.isRTL,
-      isLessThanOverlayNavBreakpoint: false,
+      // isLessThanOverlayNavBreakpoint: false,
       horizontalNavType: cookieRef('horizontalNavType', userConfig.horizontalNav?.type ?? layoutConfig.horizontalNav.type).value,
     })
 

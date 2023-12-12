@@ -7,10 +7,10 @@ import SettingsShippingAndDelivery from '@/views/apps/ecommerce/settings/Setting
 import SettingsStoreDetails from '@/views/apps/ecommerce/settings/SettingsStoreDetails.vue'
 
 const tabsData = [
-  { icon: 'ri-store-2-line', title: 'Store Details' },
+  { icon: 'ri-store-line', title: 'Store Details' },
   { icon: 'ri-bank-card-line', title: 'Payments' },
   { icon: 'ri-shopping-cart-line', title: 'Checkout' },
-  { icon: 'ri-flight-takeoff-line', title: 'Shipping & Delivery' },
+  { icon: 'ri-car-line', title: 'Shipping & Delivery' },
   { icon: 'ri-map-pin-line', title: 'Location' },
   { icon: 'ri-notification-3-line', title: 'Notifications' },
 ]
@@ -79,11 +79,3 @@ const activeTab = ref(null)
     </VCol>
   </VRow>
 </template>
-
-<style lang="scss">
-.my-class {
-  padding: 1.25rem;
-  border-radius: 0.375rem;
-  background-color: rgba(58, 53, 65, 4%);
-}
-</style>

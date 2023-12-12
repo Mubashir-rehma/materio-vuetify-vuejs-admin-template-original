@@ -14,7 +14,6 @@
         </div>
         <VAlert
           color="info"
-          closable
           variant="tonal"
         >
           <template #prepend>
@@ -26,7 +25,9 @@
               rounded
             />
           </template>
-          This is your default location. To change whether you fulfill online orders from this location, select another default location first.
+          <VAlertTitle class="mb-0">
+            This is your default location. To change whether you fulfill online orders from this location, select another default location first.
+          </VAlertTitle>
         </VAlert>
       </VCardText>
     </VCard>
@@ -107,12 +108,12 @@
 
     <div class="d-flex justify-end gap-x-4 mt-6">
       <VBtn
-        variant="outlined"
         color="secondary"
+        variant="outlined"
       >
         Discard
       </VBtn>
-      <VBtn>Save</VBtn>
+      <VBtn>Save Changes</VBtn>
     </div>
   </div>
 </template>

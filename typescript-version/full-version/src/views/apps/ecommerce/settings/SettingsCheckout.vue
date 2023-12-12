@@ -29,7 +29,6 @@ const shippingAddress = ref('Optional')
 
       <VAlert
         color="warning"
-        closable
         variant="tonal"
       >
         <template #prepend>
@@ -41,7 +40,7 @@ const shippingAddress = ref('Optional')
             rounded
           />
         </template>
-        To send SMS updates, you need to install an SMS App.
+        <VAlertTitle>To send SMS updates, you need to install an SMS App.</VAlertTitle>
       </VAlert>
     </VCardText>
   </VCard>
@@ -59,12 +58,10 @@ const shippingAddress = ref('Optional')
         <VRadio
           value="Only require last name"
           label="Only require last name"
-          class="ms-4"
         />
         <VRadio
           value="Require first and last name"
           label="Require first and last name"
-          class="ms-4"
         />
       </VRadioGroup>
 
@@ -76,17 +73,14 @@ const shippingAddress = ref('Optional')
         <VRadio
           value="Don't include"
           label="Don't include"
-          class="ms-4"
         />
         <VRadio
           value="Optional"
           label="Optional"
-          class="ms-4"
         />
         <VRadio
           value="Required"
           label="Required"
-          class="ms-4"
         />
       </VRadioGroup>
 
@@ -98,17 +92,14 @@ const shippingAddress = ref('Optional')
         <VRadio
           value="Don't include"
           label="Don't include"
-          class="ms-4"
         />
         <VRadio
           value="Optional"
           label="Optional"
-          class="ms-4"
         />
         <VRadio
           value="Required"
           label="Required"
-          class="ms-4"
         />
       </VRadioGroup>
 
@@ -120,17 +111,14 @@ const shippingAddress = ref('Optional')
         <VRadio
           value="Don't include"
           label="Don't include"
-          class="ms-4"
         />
         <VRadio
           value="Optional"
           label="Optional"
-          class="ms-4"
         />
         <VRadio
           value="Required"
           label="Required"
-          class="ms-4"
         />
       </VRadioGroup>
     </VCardText>
@@ -138,11 +126,11 @@ const shippingAddress = ref('Optional')
 
   <div class="d-flex justify-end gap-x-4">
     <VBtn
-      variant="outlined"
       color="secondary"
+      variant="outlined"
     >
       Discard
     </VBtn>
-    <VBtn>Save</VBtn>
+    <VBtn>Save Changes</VBtn>
   </div>
 </template>

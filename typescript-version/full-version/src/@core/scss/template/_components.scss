@@ -333,6 +333,15 @@
   }
 }
 
+// 👉 Btn group
+.v-btn-group {
+  border: none;
+
+  &.v-btn-group--divided .v-btn:not(:last-child){
+    border-inline-end-color: unset;
+  }
+}
+
 // 👉 VBadge
 .v-badge{
   &.v-badge--inline{
@@ -523,8 +532,8 @@
 }
 
 .v-radio-group.v-input > .v-input__control > .v-label {
-  font-size: .8125rem;
-  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 22px;
   margin-inline-start: 0;
 }
 

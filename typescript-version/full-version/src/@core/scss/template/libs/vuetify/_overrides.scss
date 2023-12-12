@@ -23,3 +23,8 @@ body {
   color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity));
 }
 
+.v-card-subtitle,
+.text-subtitle-1,
+.text-subtitle-2 {
+  color: rgba(var(--v-theme-on-background), 0.55);
+}

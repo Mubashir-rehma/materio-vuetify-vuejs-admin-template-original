@@ -44,7 +44,6 @@
         <VCol>
           <VAlert
             color="warning"
-            closable
             variant="tonal"
           >
             <template #prepend>
@@ -189,13 +188,11 @@
     class="mb-6"
   >
     <VCardText>
-      <VCol>
-        <VSelect
-          label="Store currency"
-          :items="['USD', 'INR', 'Euro', 'Pound']"
-          placeholder="USD"
-        />
-      </VCol>
+      <VSelect
+        label="Store currency"
+        :items="['USD', 'INR', 'Euro', 'Pound']"
+        placeholder="USD"
+      />
     </VCardText>
   </VCard>
 
@@ -235,11 +232,11 @@
 
   <div class="d-flex justify-end gap-x-4">
     <VBtn
-      variant="outlined"
       color="secondary"
+      variant="outlined"
     >
       Discard
     </VBtn>
-    <VBtn>Save</VBtn>
+    <VBtn>Save Changes</VBtn>
   </div>
 </template>

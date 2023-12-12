@@ -1,5 +1,5 @@
-import { db } from '@db/pages/help-center/db';
-import { rest } from 'msw';
+import { rest } from 'msw'
+import { db } from '@db/pages/help-center/db'
 
 export const handlerPagesHelpCenter = [
   rest.get(('/api/pages/help-center'), (req, res, ctx) => {

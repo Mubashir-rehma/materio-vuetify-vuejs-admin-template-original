@@ -1,4 +1,5 @@
-$font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+  "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 /* stylelint-disable length-zero-no-unit */
 @forward "../../../base/libs/vuetify/variables" with (
   $body-font-family: $font-family-custom !default,
@@ -47,8 +48,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
     ),
     "subtitle-1": (
       "size": 0.9375rem,
-      "weight": 500,
-      "line-height": 1.5rem,
+      "line-height": 1.375rem,
       "letter-spacing": normal,
     ),
     "subtitle-2": (
@@ -214,8 +214,8 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $card-text-font-size: 0.9375rem !default,
   $card-text-line-height: 1.375rem !default,
   $card-subtitle-font-size: 0.9375rem !default,
-  $card-subtitle-line-height: 1.5rem !default,
-  $card-subtitle-font-weight: 500 !default,
+  $card-subtitle-line-height: 1.375rem !default,
+  $card-subtitle-font-weight: 400 !default,
   $card-subtitle-header-padding: 0 !default,
 
   // 👉 Dialog 
@@ -281,6 +281,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // 👉 Tabs
   $tabs-height: 38px !default,
+  $tab-min-width: 60px !default,
 
   // 👉 Timeline
   $timeline-divider-line-background: rgba(var(--v-border-color), var(--v-border-opacity)) !default,

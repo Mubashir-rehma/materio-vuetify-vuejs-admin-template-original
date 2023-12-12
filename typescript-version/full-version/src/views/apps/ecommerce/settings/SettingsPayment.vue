@@ -14,9 +14,9 @@ const isPaymentProvidersDialogVisible = ref(false)
       title="Payment providers"
     >
       <VCardText>
-        <div class="text-sm mb-4">
+        <p>
           Providers that enable you to accept payment methods at a rate set by the third-party. An additional fee will apply to new orders once you select a plan.
-        </div>
+        </p>
         <VBtn
           variant="outlined"
           @click="isPaymentProvidersDialogVisible = !isPaymentProvidersDialogVisible"
@@ -33,13 +33,12 @@ const isPaymentProvidersDialogVisible = ref(false)
       class="mb-6"
     >
       <VCardText>
-        <div class="text-body-1 font-weight-medium text-high-emphasis mb-6">
+        <h6 class="text-h6 mb-5">
           Default
-        </div>
-        <div class="my-class mb-6">
+        </h6>
+        <div class="rounded bg-var-theme-background pa-5 mb-6">
           <div class="d-flex justify-space-between align-center mb-6">
             <VAvatar
-
               variant="elevated"
               color="#ffffff"
               rounded
@@ -56,36 +55,38 @@ const isPaymentProvidersDialogVisible = ref(false)
               Activate PayPal
             </VBtn>
           </div>
+
           <VDivider />
+
           <div class="d-flex justify-space-between flex-wrap mt-6 gap-x-4">
             <div>
-              <div class="text-body-2 mb-1">
+              <div class="text-body-2 mb-2">
                 Provider
               </div>
-              <div class="text-body-1 text-high-emphasis">
+              <h6 class="text-h6">
                 PayPal
-              </div>
+              </h6>
             </div>
 
             <div>
-              <div class="text-body-2 mb-1">
+              <div class="text-body-2 mb-2">
                 Status
               </div>
               <VChip
                 color="warning"
-                density="comfortable"
+                size="small"
               >
                 Inactive
               </VChip>
             </div>
 
             <div>
-              <div class="text-body-2 mb-1">
+              <div class="text-body-2 mb-2">
                 Transaction Fee
               </div>
-              <div class="text-body-1 text-high-emphasis">
+              <h6 class="text-h6">
                 2.99%
-              </div>
+              </h6>
             </div>
           </div>
         </div>
@@ -106,24 +107,33 @@ const isPaymentProvidersDialogVisible = ref(false)
       <VCardText>
         <p>Payments that are made outside your online store. When a customer selects a manual payment method such as cash on delivery, you'll need to approve their order before it can be fulfilled.</p>
 
-        <VBtn
+        <VBtnGroup
+          divided
+          density="compact"
           variant="outlined"
-          :append-icon="$vuetify.display.smAndUp ? 'ri-arrow-down-s-line' : ''"
+          color="primary"
         >
-          <span>Add Manual Payment Methods</span>
-
-          <VMenu activator="parent">
-            <VList>
-              <VListItem
-                v-for="(item, index) in ['Create custom payment method', 'Bank Deposit', 'Money Order', 'Cash on Delivery(COD)']"
-                :key="index"
-                :value="index"
-              >
-                <VListItemTitle>{{ item }}</VListItemTitle>
-              </VListItem>
-            </VList>
-          </VMenu>
-        </VBtn>
+          <VBtn>
+            Add Manual Payment Methods
+          </VBtn>
+          <VBtn>
+            <VIcon
+              size="20"
+              icon="ri-arrow-down-s-line"
+            />
+            <VMenu activator="parent">
+              <VList>
+                <VListItem
+                  v-for="(item, index) in ['Create custom payment method', 'Bank Deposit', 'Money Order', 'Cash on Delivery(COD)']"
+                  :key="index"
+                  :value="index"
+                >
+                  <VListItemTitle>{{ item }}</VListItemTitle>
+                </VListItem>
+              </VList>
+            </VMenu>
+          </VBtn>
+        </VBtnGroup>
       </VCardText>
     </VCard>
 
@@ -132,11 +142,9 @@ const isPaymentProvidersDialogVisible = ref(false)
         color="secondary"
         variant="outlined"
       >
-        medium
+        Discard
       </VBtn>
-      <VBtn color="primary">
-        medium
-      </VBtn>
+      <VBtn>Save Changes</VBtn>
     </div>
   </div>
 

@@ -70,10 +70,10 @@ const ordersNotification = ref([
 <template>
   <VCard class="mb-4">
     <VCardText>
-      <div class="text-h6">
+      <h5 class="text-h5 mb-4">
         Customer
-      </div>
-      <VTable class="text-no-wrap mb-6">
+      </h5>
+      <VTable class="text-no-wrap text-high-emphasis border rounded mb-6">
         <thead>
           <tr>
             <th scope="col">
@@ -107,10 +107,10 @@ const ordersNotification = ref([
         </tbody>
       </VTable>
 
-      <div class="text-h6">
+      <h5 class="text-h5 mb-4">
         Orders
-      </div>
-      <VTable class="text-no-wrap mb-6">
+      </h5>
+      <VTable class="border rounded text-high-emphasis text-no-wrap mb-6">
         <thead>
           <tr>
             <th scope="col">
@@ -144,10 +144,10 @@ const ordersNotification = ref([
         </tbody>
       </VTable>
 
-      <div class="text-h6">
+      <h5 class="text-h5 mb-4">
         Shipping
-      </div>
-      <VTable class="text-no-wrap mb-6">
+      </h5>
+      <VTable class="border rounded text-high-emphasis text-no-wrap mb-6">
         <thead>
           <tr>
             <th scope="col">
@@ -185,11 +185,11 @@ const ordersNotification = ref([
 
   <div class="d-flex justify-end gap-x-4">
     <VBtn
-      variant="outlined"
       color="secondary"
+      variant="outlined"
     >
       Discard
     </VBtn>
-    <VBtn>Save</VBtn>
+    <VBtn>Save Changes</VBtn>
   </div>
 </template>

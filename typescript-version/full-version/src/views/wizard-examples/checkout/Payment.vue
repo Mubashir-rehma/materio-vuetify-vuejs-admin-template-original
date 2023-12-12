@@ -75,7 +75,6 @@ watch(() => prop.currentStep, updateCartData)
       <VTabs
         v-model="selectedPaymentMethod"
         class="v-tabs-pill"
-        density="comfortable"
       >
         <VTab value="card">
           Card
@@ -90,7 +89,7 @@ watch(() => prop.currentStep, updateCartData)
 
       <VWindow
         v-model="selectedPaymentMethod"
-        class="mt-6"
+        class="pt-6"
         style="max-inline-size: 600px;"
       >
         <VWindowItem value="card">

@@ -20,7 +20,7 @@ else
 </script>
 
 <template>
-  <div class="bg-surface">
+  <div class="bg-surface help-center-article">
     <!-- 👉 Navbar  -->
     <Navbar />
 
@@ -83,7 +83,7 @@ else
               <!-- 👉 Article List  -->
               <h6
                 class="text-h6 px-4 py-2 mb-4 rounded"
-                style="background: rgba(58, 53, 65, 4%);"
+                style="background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));"
               >
                 Articles in this section
               </h6>
@@ -112,5 +112,13 @@ else
 <style lang="scss" scoped>
 .card-list {
   --v-card-list-gap: 1rem;
+}
+
+.help-center-article{
+  @media (min-width: 600px) and (max-width: 960px) {
+    .v-container {
+      padding-inline: 2rem !important;
+    }
+  }
 }
 </style>

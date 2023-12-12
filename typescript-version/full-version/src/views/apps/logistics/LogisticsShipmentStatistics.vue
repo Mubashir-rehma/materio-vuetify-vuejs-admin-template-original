@@ -3,24 +3,23 @@ const chartColors = {
   line: {
     series1: '#FFB400',
     series2: '#9055FD',
-    series3: '#7367f029',
   },
 }
 
 const headingColor = 'rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))'
-const labelColor = 'rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity))'
+const labelColor = 'rgba(var(--v-theme-on-background), var(--v-disabled-opacity))'
 const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 
 const series = [
   {
     name: 'Shipment',
     type: 'column',
-    data: [38, 45, 33, 38, 32, 48, 45, 40, 42, 37],
+    data: [38, 45, 33, 38, 32, 50, 48, 40, 42, 37],
   },
   {
     name: 'Delivery',
     type: 'line',
-    data: [23, 28, 23, 32, 25, 42, 32, 32, 26, 24],
+    data: [23, 28, 23, 32, 28, 44, 32, 38, 26, 34],
   },
 ]
 
@@ -59,22 +58,27 @@ const shipmentConfig = {
       offsetX: -3,
     },
     height: 40,
+    offsetY: 10,
     itemMargin: {
       horizontal: 10,
       vertical: 0,
     },
     fontSize: '15px',
-    fontFamily: 'Open Sans',
+    fontFamily: 'Inter',
     fontWeight: 400,
     labels: {
       colors: headingColor,
       useSeriesColors: !1,
     },
-    offsetY: 10,
   },
   grid: {
     strokeDashArray: 8,
     borderColor,
+    xaxis: {
+      lines: {
+        show: false,
+      },
+    },
   },
   colors: [chartColors.line.series1, chartColors.line.series2],
   fill: {
@@ -84,6 +88,7 @@ const shipmentConfig = {
     bar: {
       columnWidth: '30%',
       borderRadius: 4,
+      borderRadiusApplication: 'around',
     },
   },
   dataLabels: {
@@ -96,11 +101,13 @@ const shipmentConfig = {
       style: {
         colors: labelColor,
         fontSize: '13px',
+        fontFamily: 'Inter',
         fontWeight: 400,
       },
     },
     axisBorder: {
       show: false,
+      offsetY: 8,
     },
     axisTicks: {
       show: false,
@@ -114,6 +121,7 @@ const shipmentConfig = {
       style: {
         colors: labelColor,
         fontSize: '13px',
+        fontFamily: 'Inter',
         fontWeight: 400,
       },
       formatter(val: string) {
@@ -126,7 +134,7 @@ const shipmentConfig = {
       breakpoint: 1400,
       options: {
         chart: {
-          height: 320,
+          height: 310,
         },
         xaxis: {
           labels: {
@@ -194,18 +202,16 @@ const shipmentConfig = {
           density="compact"
           variant="outlined"
           divided
-          style="border-color: rgba(var(--v-theme-primary), 0.5);"
         >
           <VBtn
             variant="outlined"
             color="primary"
-            border="primary"
           >
             January
           </VBtn>
 
           <VBtn
-            icon="ri-menu-line-down"
+            icon="ri-arrow-down-s-line"
             color="primary"
           />
         </VBtnGroup>
@@ -215,7 +221,6 @@ const shipmentConfig = {
     <VCardText>
       <VueApexCharts
         id="shipment-statistics"
-        type="line"
         height="320"
         :options="shipmentConfig"
         :series="series"
@@ -236,12 +241,14 @@ const shipmentConfig = {
     font-size: 16px !important;
   }
 
-  .apexcharts-legend-series {
-    border: 1px solid rgba(var(--v-theme-on-surface), 0.12);
-    border-radius: 0.375rem;
-    block-size: 83%;
-    padding-block: 4px;
-    padding-inline: 16px 12px;
+  .apexcharts-legend{
+    .apexcharts-legend-series {
+      border: 1px solid rgba(var(--v-theme-on-surface), 0.12);
+      border-radius: 0.375rem;
+      block-size: 83%;
+      padding-block: 4px;
+      padding-inline: 16px 12px;
+    }
   }
 }
 </style>

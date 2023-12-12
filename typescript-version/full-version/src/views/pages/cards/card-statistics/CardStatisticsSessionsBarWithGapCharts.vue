@@ -48,11 +48,13 @@ const chartOptions = computed(() => {
     dataLabels: {
       enabled: false,
     },
-    colors: [currentTheme.value.secondary, currentTheme.value.error],
+    colors: [currentTheme.value['on-background'], currentTheme.value.error],
     plotOptions: {
       bar: {
-        borderRadius: 4,
+        borderRadius: 5,
         columnWidth: '25%',
+        borderRadiusApplication: 'around',
+        borderRadiusWhenStacked: 'all',
       },
     },
     states: {
@@ -81,17 +83,17 @@ const chartOptions = computed(() => {
 <template>
   <VCard>
     <VCardText>
-      <h6 class="text-h6">
+      <h4 class="text-h4">
         4,350
-      </h6>
+      </h4>
       <VueApexCharts
         id="sessions-chart"
         :options="chartOptions"
         :series="series"
-        :height="116"
+        :height="110"
       />
 
-      <h6 class="text-sm text-center font-weight-medium">
+      <h6 class="text-h6 text-center">
         Sessions
       </h6>
     </VCardText>

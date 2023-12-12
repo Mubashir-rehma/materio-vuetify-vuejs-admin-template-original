@@ -3,19 +3,19 @@ const statistics = [
   {
     title: 'Sales',
     stats: '245k',
-    icon: 'ri-pulse-line',
+    icon: 'ri-pie-chart-2-line',
     color: 'primary',
   },
   {
     title: 'Customers',
     stats: '12.5k',
-    icon: 'ri-user-line',
+    icon: 'ri-group-line',
     color: 'success',
   },
   {
     title: 'Product',
     stats: '1.54k',
-    icon: 'ri-macbook-line',
+    icon: 'ri-computer-line',
     color: 'warning',
   },
   {
@@ -29,6 +29,11 @@ const statistics = [
 
 <template>
   <VCard title="Transactions">
+    <template #subtitle>
+      <div class="text-body-1">
+        <span class="font-weight-medium text-high-emphasis">Total 48.5% Growth</span> <span class="text-high-emphasis">😎</span> this month
+      </div>
+    </template>
     <VCardText>
       <VRow>
         <VCol
@@ -41,7 +46,7 @@ const statistics = [
             <VAvatar
               :color="item.color"
               rounded
-              size="42"
+              size="40"
               class="elevation-1 me-3"
             >
               <VIcon
@@ -51,10 +56,12 @@ const statistics = [
             </VAvatar>
 
             <div class="d-flex flex-column">
-              <span class="text-caption">
+              <div class="text-body-1">
                 {{ item.title }}
-              </span>
-              <span class="text-h6 font-weight-medium">{{ item.stats }}</span>
+              </div>
+              <h5 class="text-h5">
+                {{ item.stats }}
+              </h5>
             </div>
           </div>
         </VCol>

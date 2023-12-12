@@ -39,6 +39,8 @@ const chartOptions = computed(() => {
         horizontal: false,
         columnWidth: '20%',
         borderRadius: 4,
+        startingShape: 'rounded',
+        endingShape: 'rounded',
         distributed: true,
         colors: {
           backgroundBarColors: [backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor],
@@ -76,9 +78,9 @@ const chartOptions = computed(() => {
 <template>
   <VCard>
     <VCardText>
-      <h6 class="text-h6">
+      <h4 class="text-h4">
         2,856
-      </h6>
+      </h4>
 
       <VueApexCharts
         :options="chartOptions"
@@ -86,7 +88,7 @@ const chartOptions = computed(() => {
         :height="110"
       />
 
-      <h6 class="text-sm text-center font-weight-medium">
+      <h6 class="text-h6 text-center">
         Sessions
       </h6>
     </VCardText>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { kFormatter } from '@core/utils/formatters'
+
 interface Props {
   title: string
   color?: string
@@ -15,34 +17,56 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
 </script>
 
 <template>
-  <VCard>
+  <VCard
+    variant="text"
+    border
+  >
     <VCardText class="d-flex align-center">
       <VAvatar
-        size="44"
+        size="40"
         rounded
-        :color="props.color"
-        variant="tonal"
-        class="me-4"
+        class="elevation-2 me-4"
+        style="background-color: rgb(var(--v-theme-surface));"
       >
         <VIcon
+          :color="props.color"
           :icon="props.icon"
-          size="30"
+          :size="24"
         />
       </VAvatar>
 
       <div>
-        <span class="text-caption">{{ props.title }}</span>
+        <div class="text-body-1">
+          {{ props.title }}
+        </div>
         <div class="d-flex align-center flex-wrap">
-          <span class="text-h6">{{ kFormatter(props.stats) }}</span>
+          <h5 class="text-h5">
+            {{ kFormatter(props.stats) }}
+          </h5>
+
           <div
             v-if="props.change"
             :class="`${isPositive ? 'text-success' : 'text-error'} mt-1`"
           >
-            <VIcon :icon="isPositive ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
-            <span class="text-caption">{{ Math.abs(props.change) }}%</span>
+            <VIcon
+              :icon="isPositive ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"
+              size="24"
+            />
+            <span class="text-base">
+              {{ Math.abs(props.change) }}%
+            </span>
           </div>
         </div>
       </div>
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss">
+.skin--bordered {
+  .v-avatar {
+    border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    box-shadow: none !important;
+  }
+}
+</style>

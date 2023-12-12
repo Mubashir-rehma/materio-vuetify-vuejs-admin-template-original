@@ -1,10 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
 import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
 import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
 import CardStatisticsTotalProfitLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalProfitLineCharts.vue'
 import CardStatisticsTotalRevenueLineCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueLineCharts.vue'
 import CardStatisticsTotalRevenueRadialBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalRevenueRadialBarCharts.vue'
+import CardStatisticsTotalSalesCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalSalesCharts.vue'
 import CardStatisticsTransactions from '@/views/pages/cards/card-statistics/CardStatisticsTransactions.vue'
 import illustration1 from '@images/cards/illustration-1.png'
 import illustration2 from '@images/cards/illustration-2.png'
@@ -15,9 +16,9 @@ const statisticsHorizontal = [
   {
     title: 'New Customers',
     color: 'primary',
-    icon: 'ri-user-line',
+    icon: 'ri-group-line',
     stats: 2856,
-    change: 5,
+    change: -11.9,
   },
   {
     title: 'Total Revenue',
@@ -29,24 +30,31 @@ const statisticsHorizontal = [
   {
     title: 'New Transactions',
     color: 'info',
-    icon: 'ri-pulse-line',
+    icon: 'ri-pie-chart-2-line',
     stats: 13600,
-    change: -12.1,
+    change: -42.4,
   },
   {
     title: 'Total Profit',
     color: 'warning',
     icon: 'ri-bar-chart-line',
     stats: 2856,
-    change: 54.6,
+    change: 18.2,
   },
+]
+
+const statisticsWithIcon = [
+  { title: 'Session', value: '21,459', change: 29, desc: 'Total Users', icon: 'ri-group-line', iconColor: 'primary' },
+  { title: 'Paid Users', value: '4,567', change: 18, desc: 'Last Week Analytics', icon: 'ri-user-add-line', iconColor: 'error' },
+  { title: 'Active Users', value: '19,860', change: -14, desc: 'Last Week Analytics', icon: 'ri-user-follow-line', iconColor: 'success' },
+  { title: 'Pending Users', value: '237', change: 42, desc: 'Last Week Analytics', icon: 'ri-user-search-line', iconColor: 'warning' },
 ]
 
 const statisticsVertical = [
   {
     title: 'New Project',
     color: 'primary',
-    icon: 'ri-price-tag-3-line',
+    icon: 'ri-file-word-2-line',
     stats: '862',
     change: -18,
     subtitle: 'Yearly Project',
@@ -54,7 +62,7 @@ const statisticsVertical = [
   {
     title: 'Total Profit',
     color: 'secondary',
-    icon: 'ri-bar-chart-line',
+    icon: 'ri-pie-chart-2-line',
     stats: '$25.6k',
     change: 42,
     subtitle: 'Weekly Project',
@@ -70,7 +78,7 @@ const statisticsVertical = [
   {
     title: 'Logistics',
     color: 'error',
-    icon: 'ri-truck-line',
+    icon: 'ri-car-line',
     stats: '44.10k',
     change: 12,
     subtitle: 'Revenue Increase',
@@ -78,7 +86,7 @@ const statisticsVertical = [
   {
     title: 'Reports',
     color: 'warning',
-    icon: 'ri-check-line',
+    icon: 'ri-file-chart-line',
     stats: '268',
     change: -8,
     subtitle: 'System Bugs',
@@ -86,7 +94,7 @@ const statisticsVertical = [
   {
     title: 'Transactions',
     color: 'info',
-    icon: 'ri-pulse-line',
+    icon: 'ri-bank-card-line',
     stats: '12k',
     change: 32,
     subtitle: 'Daily Transactions',
@@ -142,6 +150,16 @@ const statisticsWithImages = [
       <CardStatisticsHorizontal v-bind="statistics" />
     </VCol>
 
+    <VCol
+      v-for="statistics in statisticsWithIcon"
+      :key="statistics.title"
+      cols="12"
+      sm="6"
+      md="3"
+    >
+      <CardStatisticsWithIcon v-bind="statistics" />
+    </VCol>
+
     <!-- 👉 Transition Card  -->
     <VCol
       cols="12"
@@ -150,11 +168,13 @@ const statisticsWithImages = [
       <CardStatisticsTransactions />
     </VCol>
 
-    <!-- 👉 Blank Column for make a blank space  -->
+    <!-- 👉 Total sales -->
     <VCol
-      md="4"
       cols="12"
-    />
+      md="4"
+    >
+      <CardStatisticsTotalSalesCharts />
+    </VCol>
 
     <!-- 👉 Vertical Cards -->
     <VCol

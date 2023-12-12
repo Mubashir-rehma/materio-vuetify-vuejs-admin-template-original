@@ -365,13 +365,23 @@ export const db: DB = {
         },
         {
           url: { name: 'pages-cards-card-gamification' },
-          icon: 'ri-car-lined-account-details-outline',
+          icon: 'ri-gamepad-line',
           title: 'Card Gamification',
         },
         {
           url: { name: 'pages-cards-card-actions' },
-          icon: 'ri-car-lined-plus-outline',
+          icon: 'ri-keyboard-line',
           title: 'Card Actions',
+        },
+        {
+          url: { name: 'pages-cards-card-widgets' },
+          icon: 'ri-layout-grid-line',
+          title: 'Card Widgets',
+        },
+        {
+          url: { name: 'pages-cards-card-advance' },
+          icon: 'ri-list-view',
+          title: 'Card Advance',
         },
         {
           url: { name: 'components-alert' },

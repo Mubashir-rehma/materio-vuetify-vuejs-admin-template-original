@@ -99,7 +99,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="tabler-chevron-up"
+                  icon="ri-arrow-up-s-line"
                   :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : undefined }"
                   style="transition-duration: 0.28s;"
                 />
@@ -112,7 +112,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="tabler-refresh"
+                  icon="ri-refresh-line"
                 />
               </IconBtn>
 
@@ -123,7 +123,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="tabler-x"
+                  icon="ri-close-line"
                 />
               </IconBtn>
             </div>

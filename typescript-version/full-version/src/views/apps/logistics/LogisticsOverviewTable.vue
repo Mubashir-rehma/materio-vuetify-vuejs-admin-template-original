@@ -72,21 +72,24 @@ const resolveChipColor = (warning: string) => {
       @update:options="updateOptions"
     >
       <template #item.location="{ item }">
-        <VAvatar
-          variant="tonal"
-          class="me-4"
-        >
-          <VIcon
-            icon="ri-bus-line"
-            size="28"
-          />
-        </VAvatar>
-        <RouterLink
-          class="text-body-2 text-high-emphasis font-weight-medium"
-          :to="{ name: 'apps-logistics-fleet' }"
-        >
-          VOL-{{ item.location }}
-        </RouterLink>
+        <div class="py-2">
+          <VAvatar
+            variant="tonal"
+            class="me-4"
+            color="secondary"
+          >
+            <VIcon
+              icon="ri-bus-line"
+              size="28"
+            />
+          </VAvatar>
+          <RouterLink
+            :to="{ name: 'apps-logistics-fleet' }"
+            class="text-sm font-weight-medium text-high-emphasis"
+          >
+            VOL-{{ item.location }}
+          </RouterLink>
+        </div>
       </template>
 
       <template #item.startRoute="{ item }">
@@ -100,7 +103,7 @@ const resolveChipColor = (warning: string) => {
       <template #item.warnings="{ item }">
         <VChip
           :color="resolveChipColor(item.warnings)"
-          density="comfortable"
+          size="small"
         >
           {{ item.warnings }}
         </VChip>
@@ -121,6 +124,49 @@ const resolveChipColor = (warning: string) => {
           </div>
           <div>
             {{ item.progress }}%
+          </div>
+        </div>
+      </template>
+
+      <!-- Pagination -->
+      <template #bottom>
+        <VDivider />
+
+        <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+          <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+            Rows Per Page:
+            <VSelect
+              v-model="itemsPerPage"
+              class="per-page-select"
+              variant="plain"
+              :items="[10, 20, 25, 50, 100]"
+            />
+          </div>
+
+          <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+            {{ paginationMeta({ page, itemsPerPage }, totalVehicles) }}
+          </p>
+
+          <div class="d-flex gap-x-2 align-center me-2">
+            <VBtn
+              class="flip-in-rtl"
+              icon="ri-arrow-left-s-line"
+              variant="text"
+              density="comfortable"
+              color="default"
+              :disabled="page <= 1"
+              @click="page <= 1 ? page = 1 : page--"
+            />
+
+            <VBtn
+              class="flip-in-rtl"
+              icon="ri-arrow-right-s-line"
+              density="comfortable"
+              variant="text"
+              color="default"
+              :disabled="page >= Math.ceil(totalVehicles / itemsPerPage)"
+              @click="page >= Math.ceil(totalVehicles / itemsPerPage) ? page = Math.ceil(totalVehicles / itemsPerPage) : page++ "
+            />
           </div>
         </div>
       </template>

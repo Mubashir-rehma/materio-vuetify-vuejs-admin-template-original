@@ -135,6 +135,7 @@ watch(activeIndex, () => {
       width="320"
       absolute
       touchless
+      :border="0"
       location="start"
     >
       <VCard
@@ -151,7 +152,7 @@ watch(activeIndex, () => {
               class="d-lg-none"
               @click="isLeftSidebarOpen = !isLeftSidebarOpen"
             >
-              <VIcon icon="tabler-x" />
+              <VIcon icon="ri-close-line" />
             </IconBtn>
           </template>
         </VCardItem>
@@ -175,12 +176,13 @@ watch(activeIndex, () => {
                   <VAvatar
                     icon="ri-bus-line"
                     variant="tonal"
+                    color="secondary"
                   />
                   <div>
-                    <div class="text-body-1 text-high-emphasis">
+                    <h6 class="text-h6 font-weight-regular">
                       {{ vehicle.name }}
-                    </div>
-                    <div class="text-body-2">
+                    </h6>
+                    <div class="text-body-1">
                       {{ vehicle.location }}
                     </div>
                   </div>
@@ -192,31 +194,32 @@ watch(activeIndex, () => {
               <VExpandTransition mode="out-in">
                 <div v-show="showPanel[index]">
                   <div class="py-4 mb-4">
-                    <div class="d-flex justify-space-between mb-2">
-                      <span class="text-body-1 text-high-emphasis ">Delivery Process</span>
-                      <span class="text-body-2">{{ vehicle.progress }}%</span>
+                    <div class="d-flex justify-space-between text-body-1 mb-1">
+                      <span class="text-high-emphasis ">Delivery Process</span>
+                      <span>{{ vehicle.progress }}%</span>
                     </div>
                     <VProgressLinear
                       :model-value="vehicle.progress"
                       color="primary"
                       rounded
+                      rounded-bar
                       height="6"
                     />
                   </div>
                   <div>
                     <VTimeline
+                      side="end"
                       align="start"
                       truncate-line="both"
-                      side="end"
-                      line-thickness="1"
-                      class="ps-2"
+                      density="compact"
+                      class="v-timeline--variant-outlined"
                     >
                       <VTimelineItem
                         icon="ri-checkbox-circle-line"
                         dot-color="rgb(var(--v-theme-surface))"
                         icon-color="success"
                         fill-dot
-                        size="22"
+                        size="20"
                         :elevation="0"
                       >
                         <div class="text-caption text-uppercase text-success">
@@ -225,7 +228,7 @@ watch(activeIndex, () => {
                         <div class="app-timeline-title">
                           {{ vehicle.driverName }}
                         </div>
-                        <div class="app-timeline-text">
+                        <div class="text-body-2 mb-1">
                           Sep 01, 7:53 AM
                         </div>
                       </VTimelineItem>
@@ -234,7 +237,7 @@ watch(activeIndex, () => {
                         dot-color="rgb(var(--v-theme-surface))"
                         icon-color="success"
                         fill-dot
-                        size="22"
+                        size="20"
                         :elevation="0"
                       >
                         <div class="text-caption text-uppercase text-success">
@@ -243,7 +246,7 @@ watch(activeIndex, () => {
                         <div class="app-timeline-title">
                           Veronica Herman
                         </div>
-                        <div class="app-timeline-text">
+                        <div class="app-timeline-text mb-1">
                           Sep 03, 8:02 AM
                         </div>
                       </VTimelineItem>
@@ -252,10 +255,10 @@ watch(activeIndex, () => {
                         dot-color="rgb(var(--v-theme-surface))"
                         icon-color="primary"
                         fill-dot
-                        size="22"
+                        size="20"
                         :elevation="0"
                       >
-                        <div class="text-caption text-uppercase text-success">
+                        <div class="text-caption text-uppercase text-primary">
                           ARRIVED
                         </div>
                         <div class="app-timeline-title">
@@ -282,7 +285,7 @@ watch(activeIndex, () => {
           variant="elevated"
           @click="isLeftSidebarOpen = true"
         >
-          <VIcon icon="tabler-menu-2" />
+          <VIcon icon="ri-menu-line" />
         </IconBtn>
 
         <!-- 👉 Fleet map  -->

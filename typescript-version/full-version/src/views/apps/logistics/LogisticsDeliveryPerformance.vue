@@ -16,7 +16,7 @@ const deliveryData = [
       subtitle="12% increase in this month"
     >
       <template #append>
-        <MoreBtn />
+        <MoreBtn class="mt-n5" />
       </template>
     </VCardItem>
 
@@ -31,7 +31,7 @@ const deliveryData = [
               :color="data.color"
               variant="tonal"
               rounded
-              size="38"
+              size="42"
             >
               <VIcon
                 :icon="data.icon"
@@ -47,6 +47,7 @@ const deliveryData = [
             >
               <VIcon
                 :icon="data.change > 0 ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"
+                size="24"
                 class="me-1"
               />
               <span>{{ data.change }}%</span>
@@ -62,9 +63,3 @@ const deliveryData = [
     </VCardText>
   </VCard>
 </template>
-
-<style lang="scss" scoped>
-.card-list {
-  --v-card-list-gap: 23px;
-}
-</style>

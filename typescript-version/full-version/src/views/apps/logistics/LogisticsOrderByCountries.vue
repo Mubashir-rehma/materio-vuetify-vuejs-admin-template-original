@@ -10,7 +10,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
       subtitle="62 deliveries in progress"
     >
       <template #append>
-        <MoreBtn />
+        <MoreBtn class="mt-n5" />
       </template>
     </VCardItem>
 
@@ -37,6 +37,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               side="end"
               density="compact"
               line-thickness="1"
+              class="v-timeline--variant-outlined"
             >
               <VTimelineItem
                 icon="ri-checkbox-circle-line"
@@ -52,10 +53,11 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Myrtle Ullrich
                 </div>
-                <div class="app-timeline-text">
+                <div class="app-timeline-text mb-1">
                   101 Boulder, California(CA), 95959
                 </div>
               </VTimelineItem>
+
               <VTimelineItem
                 icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
@@ -75,16 +77,19 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
             </VTimeline>
+
             <VDivider
-              class="my-5"
+              class="my-4"
               style="border-style: dashed;"
             />
+
             <VTimeline
               align="start"
               truncate-line="both"
               side="end"
               density="compact"
               line-thickness="1"
+              class="v-timeline--variant-outlined"
             >
               <VTimelineItem
                 icon="ri-checkbox-circle-line"
@@ -100,10 +105,11 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Veronica Herman
                 </div>
-                <div class="app-timeline-text">
+                <div class="app-timeline-text mb-1">
                   162  Windsor, California(CA), 95492
                 </div>
               </VTimelineItem>
+
               <VTimelineItem
                 icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
@@ -134,6 +140,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               side="end"
               density="compact"
               line-thickness="1"
+              class="v-timeline--variant-outlined"
             >
               <VTimelineItem
                 icon="ri-checkbox-circle-line"
@@ -153,6 +160,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                   939 Orange, California(CA), 92118
                 </div>
               </VTimelineItem>
+
               <VTimelineItem
                 icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
@@ -173,7 +181,10 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               </VTimelineItem>
             </VTimeline>
 
-            <VDivider class="my-6" />
+            <VDivider
+              class="my-4"
+              style="border-style: dashed;"
+            />
 
             <VTimeline
               align="start"
@@ -181,6 +192,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               side="end"
               density="compact"
               line-thickness="1"
+              class="v-timeline--variant-outlined"
             >
               <VTimelineItem
                 icon="ri-checkbox-circle-line"
@@ -200,6 +212,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                   162  Windsor, California(CA), 95492
                 </div>
               </VTimelineItem>
+
               <VTimelineItem
                 icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"
@@ -230,6 +243,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
               side="end"
               density="compact"
               line-thickness="1"
+              class="v-timeline--variant-outlined"
             >
               <VTimelineItem
                 icon="ri-checkbox-circle-line"
@@ -268,13 +282,19 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 </div>
               </VTimelineItem>
             </VTimeline>
-            <VDivider class="my-6" />
+
+            <VDivider
+              class="my-4"
+              style="border-style: dashed;"
+            />
+
             <VTimeline
               align="start"
               truncate-line="both"
               side="end"
               density="compact"
               line-thickness="1"
+              class="v-timeline--variant-outlined"
             >
               <VTimelineItem
                 icon="ri-checkbox-circle-line"
@@ -294,6 +314,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                   162  Windsor, California(CA), 95492
                 </div>
               </VTimelineItem>
+
               <VTimelineItem
                 icon="ri-map-pin-line"
                 dot-color="rgba(var(--v-theme-surface))"

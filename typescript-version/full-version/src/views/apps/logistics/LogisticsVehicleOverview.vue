@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const vehicleData = [
-  { icon: 'ri-car-line', title: 'On the way', time: '2hr 10min', percentage: 39.7 },
-  { icon: 'ri-download-cloud-2-line', title: 'Unloading', time: '3hr 15min', percentage: 28.3 },
-  { icon: 'ri-upload-line', title: 'Loading', time: '1hr 24min', percentage: 17.4 },
-  { icon: 'ri-timer-line', title: 'Waiting', time: '5hr 19min', percentage: 14.6 },
+  { icon: 'ri-car-line', title: 'On the way', time: '2hr 10min', percentage: 39.7, color: 'rgba(var(--v-theme-on-surface), var(--v-hover-opacity))' },
+  { icon: 'ri-download-cloud-2-line', title: 'Unloading', time: '3hr 15min', percentage: 28.3, color: 'rgb(var(--v-theme-primary))' },
+  { icon: 'ri-upload-line', title: 'Loading', time: '1hr 24min', percentage: 17.4, color: 'rgb(var(--v-theme-info))' },
+  { icon: 'ri-timer-line', title: 'Waiting', time: '5hr 19min', percentage: 14.6, color: '#1A0E33' },
 ]
 </script>
 
@@ -15,55 +15,27 @@ const vehicleData = [
       </template>
     </VCardItem>
     <VCardText>
-      <div class="d-flex mb-8">
-        <div style="inline-size: 39.7%;">
+      <div class="d-flex mb-6">
+        <div
+          v-for="(item, index) in vehicleData"
+          :key="item.title"
+          :style="`inline-size: ${item.percentage}%;`"
+        >
           <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
-            On the way
+            {{ item.title }}
           </div>
           <VProgressLinear
-            color="rgba(var(--v-theme-on-surface), var(--v-hover-opacity))"
+            :color="item.color"
             model-value="100"
             height="46"
-            class="rounded-s"
+            :class="index === 0 ? 'rounded-s' : index === vehicleData.length - 1 ? 'rounded-e' : ''"
           >
-            <strong class="text-start vehicle-progress-text">39.7%</strong>
-          </VProgressLinear>
-        </div>
-        <div style="inline-size: 28.3%;">
-          <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
-            Unloading
-          </div>
-          <VProgressLinear
-            color="rgb(var(--v-theme-primary))"
-            model-value="100"
-            height="46"
-          >
-            <strong class="text-white vehicle-progress-text">28.3%</strong>
-          </VProgressLinear>
-        </div>
-        <div style="inline-size: 17.4%;">
-          <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
-            Loading
-          </div>
-          <VProgressLinear
-            color="rgb(var(--v-theme-info))"
-            model-value="100"
-            height="46"
-          >
-            <strong class="text-white vehicle-progress-text">17.4%</strong>
-          </VProgressLinear>
-        </div>
-        <div style="inline-size: 14.6%;">
-          <div class="vehicle-progress-label position-relative mb-4 text-body-1 d-none d-sm-block">
-            Waiting
-          </div>
-          <VProgressLinear
-            color="#212121"
-            model-value="100"
-            height="46"
-            class="rounded-e"
-          >
-            <strong class="text-white vehicle-progress-text">14.6%</strong>
+            <p
+              class="text-sm font-weight-medium mb-0"
+              :class="index ? 'text-white' : 'text-high-emphasis'"
+            >
+              {{ item.percentage }}%
+            </p>
           </VProgressLinear>
         </div>
       </div>
@@ -74,17 +46,21 @@ const vehicleData = [
             :key="index"
           >
             <td width="70%">
-              <VIcon
-                :icon="vehicle.icon"
-                size="24"
-                class="me-2"
-              />
-              <span class="text-body-1 text-high-emphasis">{{ vehicle.title }}</span>
+              <div class="d-flex align-center text-high-emphasis">
+                <VIcon
+                  :icon="vehicle.icon"
+                  size="24"
+                  class="me-2"
+                />
+                <h6 class="text-h6 font-weight-regular">
+                  {{ vehicle.title }}
+                </h6>
+              </div>
             </td>
             <td>
-              <div class="font-weight-medium text-body-1 text-high-emphasis">
+              <h6 class="text-h6">
                 {{ vehicle.time }}
-              </div>
+              </h6>
             </td>
             <td>
               <span class="text-body-1">{{ vehicle.percentage }}%</span>
@@ -103,7 +79,7 @@ const vehicleData = [
   &::after {
     position: absolute;
     display: inline-block;
-    background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
+    background-color: rgba(var(--v-theme-on-surface), var(--v-border-opacity));
     block-size: 10px;
     content: "";
     inline-size: 2px;
@@ -122,28 +98,18 @@ const vehicleData = [
   justify-content: start;
   padding-inline-start: 1rem;
 
-  .vehicle-progress-text {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 1080px) {
   .v-progress-linear__content {
     padding-inline-start: 0.75rem !important;
 
-    .vehicle-progress-text {
-      font-size: 0.75rem !important;
-    }
   }
 }
 
 @media (max-width: 576px) {
   .v-progress-linear__content {
     padding-inline-start: 0.3rem !important;
-
-    .vehicle-progress-text {
-      font-size: 0.75rem !important;
-    }
   }
 }
 </style>

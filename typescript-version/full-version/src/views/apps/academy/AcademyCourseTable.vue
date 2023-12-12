@@ -42,14 +42,14 @@ const totalCourse = computed(() => courseData.value.total)
   <VCard>
     <VCardText>
       <div class="d-flex flex-wrap justify-space-between align-center gap-4">
-        <h5 class="text-h5 font-weight-medium">
+        <h5 class="text-h5">
           Courses you are taking
         </h5>
         <VTextField
           v-model="searchQuery"
-          placeholder="Search"
-          density="comfortable"
-          style=" max-inline-size: 200px;min-inline-size: 200px;"
+          placeholder="Search Course"
+          density="compact"
+          style="max-inline-size: 400px;min-inline-size: 300px;"
         />
       </div>
     </VCardText>
@@ -77,29 +77,36 @@ const totalCourse = computed(() => courseData.value.total)
             rounded
             :color="item.color"
           >
-            <VIcon :icon="item.logo" />
+            <VIcon
+              :icon="item.logo"
+              size="28"
+            />
           </VAvatar>
           <div>
-            <span class="text-sm font-weight-medium">
-              <RouterLink :to="{ name: 'apps-academy-course-details' }">{{ item.courseTitle }}</RouterLink>
-            </span>
-            <div>
+            <RouterLink
+              :to="{ name: 'apps-academy-course-details' }"
+              class="d-inline-block text-h6 mb-1"
+            >
+              {{ item.courseTitle }}
+            </RouterLink>
+            <div class="d-flex align-center">
               <VAvatar
                 size="22"
                 :image="item.image"
+                class="me-2"
               />
-              <span class="text-sm ms-2">
+              <div class="text-body-2 text-high-emphasis">
                 {{ item.user }}
-              </span>
+              </div>
             </div>
           </div>
         </div>
       </template>
 
       <template #item.time="{ item }">
-        <span class="text-sm text-high-emphasis font-weight-medium">
+        <h6 class="text-h6">
           {{ item.time }}
-        </span>
+        </h6>
       </template>
 
       <template #item.progress="{ item }">
@@ -107,7 +114,7 @@ const totalCourse = computed(() => courseData.value.total)
           class="d-flex align-center gap-x-4 mb-2"
           style="inline-size: 15.625rem;"
         >
-          <div class="text-no-wrap">
+          <div class="text-no-wrap text-h6">
             {{ Math.floor((item.completedTasks / item.totalTasks) * 100) }}%
           </div>
           <div class="w-100">
@@ -118,7 +125,7 @@ const totalCourse = computed(() => courseData.value.total)
               rounded
             />
           </div>
-          <div class="text-body-1">
+          <div class="text-body-2">
             {{ item.completedTasks }}/{{ item.totalTasks }}
           </div>
         </div>
@@ -126,34 +133,74 @@ const totalCourse = computed(() => courseData.value.total)
 
       <template #item.status="{ item }">
         <div class="d-flex justify-space-between gap-x-4">
-          <div>
+          <div class="d-flex gap-x-2 align-center">
             <VIcon
-              icon="ri-user-line"
+              icon="ri-group-line"
               color="primary"
               size="24"
-              class="me-2"
             />
             <span class="text-body-1">
               {{ item.userCount }}
             </span>
           </div>
-          <div>
+          <div class="d-flex gap-x-2 align-center">
             <VIcon
-              icon="ri-macbook-line"
+              icon="ri-computer-line"
               color="info"
               size="24"
-              class="me-2"
             />
             <span class="text-body-1">{{ item.note }}</span>
           </div>
-          <div>
+          <div class="d-flex gap-x-2 align-center">
             <VIcon
-              icon="ri-vidicon-line"
+              icon="ri-video-upload-line"
               color="error"
               size="24"
-              class="me-2"
             />
             <span class="text-body-1">{{ item.view }}</span>
+          </div>
+        </div>
+      </template>
+
+      <!-- Pagination -->
+      <template #bottom>
+        <VDivider />
+
+        <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+          <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+            Rows Per Page:
+            <VSelect
+              v-model="itemsPerPage"
+              class="per-page-select"
+              variant="plain"
+              :items="[10, 20, 25, 50, 100]"
+            />
+          </div>
+
+          <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+            {{ paginationMeta({ page, itemsPerPage }, totalCourse) }}
+          </p>
+
+          <div class="d-flex gap-x-2 align-center me-2">
+            <VBtn
+              class="flip-in-rtl text-high-emphasis"
+              icon="ri-arrow-left-s-line"
+              variant="text"
+              density="comfortable"
+              color="default"
+              :disabled="page <= 1"
+              @click="page <= 1 ? page = 1 : page--"
+            />
+
+            <VBtn
+              class="flip-in-rtl text-high-emphasis"
+              icon="ri-arrow-right-s-line"
+              density="comfortable"
+              variant="text"
+              color="default"
+              :disabled="page >= Math.ceil(totalCourse / itemsPerPage)"
+              @click="page >= Math.ceil(totalCourse / itemsPerPage) ? page = Math.ceil(totalCourse / itemsPerPage) : page++ "
+            />
           </div>
         </div>
       </template>

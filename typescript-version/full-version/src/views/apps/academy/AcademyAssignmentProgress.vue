@@ -27,24 +27,28 @@ const assignmentData = [
               class="me-4"
               :color="assignment.color"
             >
-              <span class="text-body-1 text-high-emphasis font-weight-medium">
+              <h6 class="text-h6">
                 {{ assignment.progress }}%
-              </span>
+              </h6>
             </VProgressCircular>
           </template>
-          <VListItemTitle class="font-weight-medium me-4">
-            {{ assignment.title }}
-          </VListItemTitle>
+          <template #title>
+            <div class="text-h6 me-4 mb-2 text-truncate">
+              {{ assignment.title }}
+            </div>
+          </template>
+
           <VListItemSubtitle>{{ assignment.tasks }} Tasks</VListItemSubtitle>
           <template #append>
             <VBtn
               variant="tonal"
-              color="default"
+              color="primary"
               class="rounded"
-              size="28"
+              size="34"
             >
               <VIcon
                 icon="ri-arrow-right-s-line"
+                size="20"
                 class="flip-in-rtl"
               />
             </VBtn>
@@ -54,3 +58,9 @@ const assignmentData = [
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 1.5rem;
+}
+</style>

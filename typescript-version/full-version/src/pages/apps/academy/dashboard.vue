@@ -6,8 +6,8 @@ import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
 import customCheck from '@images/svg/Check.svg'
-import customLaptop from '@images/svg/laptop.svg'
-import customLightbulb from '@images/svg/lightbulb.svg'
+import customLaptop from '@images/svg/Laptop.svg'
+import customLightbulb from '@images/svg/Lightbulb.svg'
 
 const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 
@@ -31,7 +31,7 @@ const topicsChartConfig = {
   },
 
   colors: [
-    '#9055FD', '#16B1FF', '#56CA00', '#8A8D93', '#FF4C51', '#FFB400',
+    '#8C57FF', '#16B1FF', '#56CA00', '#8A8D93', '#FF4C51', '#FFB400',
   ],
 
   grid: {
@@ -217,7 +217,7 @@ const topicsData = [
 
 <template>
   <div>
-    <VRow class="py-6">
+    <VRow class="py-5">
       <!-- 👉 Welcome -->
       <VCol
         cols="12"
@@ -225,19 +225,21 @@ const topicsData = [
         :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
       >
         <div class="pe-3">
-          <h5 class="text-h5 text-high-emphasis mb-1">
-            Welcome back,<span class="font-weight-medium"> Felecia 👋🏻 </span>
+          <h5 class="text-h5 text-high-emphasis mb-2">
+            Welcome back, <h4 class="text-h4 d-inline-block">
+              Felecia 👋🏻
+            </h4>
           </h5>
 
           <div
-            class="mb-2 text-wrap"
+            class="text-wrap text-medium-emphasis mb-4"
             style="max-inline-size: 400px;"
           >
             Your progress this week is Awesome. let's keep it up
             and get a lot of points reward!
           </div>
 
-          <div class="d-flex justify-space-between flex-wrap gap-4 flex-column flex-md-row">
+          <div class="d-flex justify-space-between flex-wrap gap-6 flex-column flex-md-row">
             <div
               v-for="{ title, value, icon, color } in [
                 { title: 'Hours Spent', value: '34h', icon: customLaptop, color: 'primary' },
@@ -260,13 +262,15 @@ const topicsData = [
                   />
                 </VAvatar>
                 <div>
-                  <span class="text-sm">{{ title }}</span>
-                  <h5
-                    class="text-h5 font-weight-medium"
+                  <h6 class="text-h6 text-medium-emphasis">
+                    {{ title }}
+                  </h6>
+                  <h4
+                    class="text-h4 font-weight-medium"
                     :class="`text-${color}`"
                   >
                     {{ value }}
-                  </h5>
+                  </h4>
                 </div>
               </div>
             </div>
@@ -281,13 +285,15 @@ const topicsData = [
       >
         <div class="d-flex justify-space-between align-center">
           <div class="d-flex flex-column ps-3">
-            <h6 class="text-h6 text-high-emphasis mb-1 text-no-wrap">
+            <h5 class="text-h5 mb-1 text-no-wrap">
               Time Spendings
-            </h6>
-            <span class="mb-6">Weekly Report</span>
-            <div class="text-h5 mb-2">
-              231<span class="text-medium-emphasis">h</span> 14<span class="text-medium-emphasis">m</span>
+            </h5>
+            <div class="mb-6 text-body-1">
+              Weekly Report
             </div>
+            <h4 class="text-h4 mb-2">
+              231<span class="text-medium-emphasis">h</span> 14<span class="text-medium-emphasis">m</span>
+            </h4>
             <div>
               <VChip
                 color="success"
@@ -317,7 +323,7 @@ const topicsData = [
         md="8"
       >
         <!-- 👉 Topic You are Interested in -->
-        <VCard>
+        <VCard class="topicCard">
           <VCardItem title="Topic you are interested in">
             <template #append>
               <MoreBtn />
@@ -351,24 +357,24 @@ const topicsData = [
                   <div
                     v-for="topic in topicsData"
                     :key="topic.title"
-                    class="d-flex gap-x-4"
+                    class="d-flex gap-x-3"
                   >
                     <VBadge
                       dot
-                      inline
-                      class="mt-1 custom-badge"
                       :color="topic.color"
+                      offset-x="5"
+                      offset-y="9"
                     />
                     <div>
                       <div
-                        class="text-body-2"
+                        class="text-body-1"
                         style="min-inline-size: 90px;"
                       >
                         {{ topic.title }}
                       </div>
-                      <h6 class="text-h6">
+                      <h5 class="text-h5">
                         {{ topic.value }}%
-                      </h6>
+                      </h5>
                     </div>
                   </div>
                 </div>
@@ -424,4 +430,14 @@ const topicsData = [
 
 <style lang="scss">
 @use "@core/scss/template/libs/apex-chart.scss";
+
+.topicCard{
+  .v-badge.v-badge--dot{
+    .v-badge__badge{
+      border-radius: 6px;
+      block-size: 12px;
+      inline-size: 12px;
+    }
+  }
+}
 </style>

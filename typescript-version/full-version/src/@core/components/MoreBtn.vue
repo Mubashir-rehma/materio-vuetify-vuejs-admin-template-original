@@ -9,7 +9,10 @@ const props = defineProps<Props>()
 
 <template>
   <IconBtn>
-    <VIcon icon="ri-more-2-fill" />
+    <VIcon
+      icon="ri-more-2-line"
+      class="text-high-emphasis"
+    />
 
     <VMenu
       v-if="props.menuList"

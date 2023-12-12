@@ -13,9 +13,9 @@ import avatar4 from '@images/avatars/avatar-4.png'
       </template>
     </VCardItem>
     <VDivider />
-    <div class="text-overline d-flex justify-space-between px-5">
-      <span>instructors</span>
-      <span>Courses</span>
+    <div class="text-overline d-flex justify-space-between px-5 py-4">
+      <div>instructors</div>
+      <div>Courses</div>
     </div>
     <VDivider />
     <VCardText>
@@ -31,20 +31,31 @@ import avatar4 from '@images/avatars/avatar-4.png'
         >
           <template #prepend>
             <VAvatar
-              size="36"
+              size="34"
               :image="instructor.avatar"
             />
           </template>
-          <VListItemTitle>{{ instructor.name }}</VListItemTitle>
-          <VListItemSubtitle>{{ instructor.profession }}</VListItemSubtitle>
+          <h6 class="text-h6">
+            {{ instructor.name }}
+          </h6>
+          <div class="text-caption text-medium-emphasis">
+            {{ instructor.profession }}
+          </div>
 
           <template #append>
-            <span class="text-body-1 text-high-emphasis">
+            <div class="text-body-1 text-high-emphasis">
               {{ instructor.totalCourses }}
-            </span>
+            </div>
           </template>
         </VListItem>
       </VList>
     </VCardText>
   </VCard>
 </template>
+
+<style lang="scss" scoped>
+.card-list{
+  --v-card-list-gap: 16px;
+
+}
+</style>

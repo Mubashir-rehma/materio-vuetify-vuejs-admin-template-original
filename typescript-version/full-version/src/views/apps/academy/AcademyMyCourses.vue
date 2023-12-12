@@ -11,7 +11,7 @@ const page = ref(1)
 const sortBy = ref()
 const orderBy = ref()
 
-const hideCompleted = ref(false)
+const hideCompleted = ref(true)
 const label = ref('All Courses')
 
 const { data: coursesData } = await useApi<any>(createUrl('/apps/academy/courses', {
@@ -53,17 +53,18 @@ const resolveChipColor = (tags: string) => {
       <!-- 👉 Header -->
       <div class="d-flex justify-space-between align-center flex-wrap gap-4 mb-6">
         <div>
-          <h6 class="text-h6">
+          <h5 class="text-h5">
             My Courses
-          </h6>
+          </h5>
           <div class="text-body-1">
             Total 6 course you have purchased
           </div>
         </div>
 
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap align-center">
           <VSelect
             v-model="label"
+            density="compact"
             :items="[
               { title: 'Web', value: 'web' },
               { title: 'Art', value: 'art' },
@@ -105,50 +106,54 @@ const resolveChipColor = (tags: string) => {
                     @click="() => $router.push({ name: 'apps-academy-course-details' })"
                   />
                 </div>
-                <VCardText>
+                <VCardText class="pt-3">
                   <div class="d-flex justify-space-between align-center mb-4">
                     <VChip
                       variant="tonal"
                       :color="resolveChipColor(course.tags)"
-                      density="comfortable"
+                      size="small"
                     >
                       {{ course.tags }}
                     </VChip>
                     <div class="d-flex">
-                      <span class="text-body-1 align-center">
+                      <h6 class="text-h6 text-medium-emphasis me-1">
                         {{ course.rating }}
-                      </span>
+                      </h6>
                       <VIcon
                         icon="ri-star-fill"
                         color="warning"
                         class="me-2"
                       />
-                      <span class="text-body-1">({{ course.ratingCount }})</span>
+                      <div class="text-body-1">
+                        ({{ course.ratingCount }})
+                      </div>
                     </div>
                   </div>
 
-                  <h6 class="text-h6">
+                  <h5 class="text-h5 mb-1">
                     <RouterLink
                       :to="{ name: 'apps-academy-course-details' }"
                       class="course-title"
                     >
                       {{ course.courseTitle }}
                     </RouterLink>
-                  </h6>
+                  </h5>
                   <p>
                     {{ course.desc }}
                   </p>
 
                   <div
                     v-if="course.completedTasks !== course.totalTasks"
-                    class="d-flex align-center mb-2"
+                    class="d-flex align-center mb-1"
                   >
                     <VIcon
                       icon="ri-time-line"
-                      size="24"
+                      size="20"
                       class="me-1"
                     />
-                    <span class="text-body-1 my-auto"> {{ course.time }}</span>
+                    <div class="text-body-1 my-auto">
+                      {{ course.time }}
+                    </div>
                   </div>
                   <div
                     v-else
@@ -167,7 +172,7 @@ const resolveChipColor = (tags: string) => {
                     rounded
                     color="primary"
                     height="8"
-                    class="mb-6"
+                    class="mb-4"
                   />
 
                   <div class="d-flex flex-wrap gap-4">
@@ -209,6 +214,8 @@ const resolveChipColor = (tags: string) => {
 
       <VPagination
         v-model="page"
+        rounded
+        color="primary"
         :length="Math.ceil(totalCourse / itemsPerPage)"
       />
     </VCardText>

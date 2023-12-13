@@ -50,7 +50,7 @@ export const db: DB = {
       about: [
         { property: 'Full Name', value: 'John Doe', icon: 'ri-user-line' },
         { property: 'Status', value: 'active', icon: 'ri-check-line' },
-        { property: 'Role', value: 'Developer', icon: 'ri-star-fill-outline' },
+        { property: 'Role', value: 'Developer', icon: 'ri-star-line' },
         { property: 'Country', value: 'USA', icon: 'ri-flag-line' },
         { property: 'Language', value: 'English', icon: 'ri-translate-2' },
       ],

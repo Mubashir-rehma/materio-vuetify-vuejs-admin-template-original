@@ -115,7 +115,7 @@ const { resolveAvatarBadgeVariant } = useChat()
         <div class="d-flex align-center my-3">
           <VIcon
             class="me-2"
-            icon="ri-star-fill-outline"
+            icon="ri-star-line"
           />
           <span>Important Contact</span>
         </div>

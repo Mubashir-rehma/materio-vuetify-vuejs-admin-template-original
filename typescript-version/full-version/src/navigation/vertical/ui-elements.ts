@@ -15,6 +15,8 @@ export default [
     icon: { icon: 'ri-bank-card-line' },
     children: [
       { title: 'Basic', to: 'pages-cards-card-basic' },
+      { title: 'Advance', to: 'pages-cards-card-advance' },
+      { title: 'Widgets', to: 'pages-cards-card-widgets' },
       { title: 'Statistics', to: 'pages-cards-card-statistics' },
       { title: 'Gamification', to: 'pages-cards-card-gamification' },
       { title: 'Actions', to: 'pages-cards-card-actions' },

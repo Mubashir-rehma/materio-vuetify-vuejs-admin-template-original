@@ -50,9 +50,9 @@ const chartOptions = computed(() => {
 <template>
   <VCard>
     <VCardText>
-      <h6 class="text-h6">
+      <h4 class="text-h4">
         135k
-      </h6>
+      </h4>
       <VueApexCharts
         id="stats-radial-bar-chart"
         :options="chartOptions"
@@ -61,7 +61,7 @@ const chartOptions = computed(() => {
         :height="150"
       />
 
-      <h6 class="text-sm text-center font-weight-medium mt-9">
+      <h6 class="text-h6 text-center mt-6">
         Total Revenue
       </h6>
     </VCardText>

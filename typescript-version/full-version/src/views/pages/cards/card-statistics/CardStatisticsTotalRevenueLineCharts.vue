@@ -88,16 +88,16 @@ const chartOptions = computed(() => {
 <template>
   <VCard>
     <VCardText>
-      <h6 class="text-h6">
+      <h4 class="text-h4">
         $35.4k
-      </h6>
+      </h4>
       <VueApexCharts
         :options="chartOptions"
         :series="series"
-        :height="116"
+        :height="110"
       />
 
-      <h6 class="text-sm text-center font-weight-medium">
+      <h6 class="text-h6 text-center">
         Total Revenue
       </h6>
     </VCardText>

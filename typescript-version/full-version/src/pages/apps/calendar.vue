@@ -21,7 +21,7 @@ watch(isEventHandlerSidebarActive, val => {
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 
 // 👉 useCalendar
-const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent } = useCalendar(event, isEventHandlerSidebarActive, isLeftSidebarOpen)
+const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent, jumpToDate } = useCalendar(event, isEventHandlerSidebarActive, isLeftSidebarOpen)
 
 // SECTION Sidebar
 // 👉 Check all
@@ -51,44 +51,57 @@ const checkAll = computed({
         <!-- 👉 Navigation drawer -->
         <VNavigationDrawer
           v-model="isLeftSidebarOpen"
-          width="250"
+          width="292"
           absolute
           touchless
           location="start"
           class="calendar-add-event-drawer"
           :temporary="$vuetify.display.mdAndDown"
         >
-          <div class="pa-5 d-flex flex-column gap-y-8">
+          <div class="pa-5">
             <VBtn
               block
+              prepend-icon="ri-add-line"
               @click="isEventHandlerSidebarActive = true"
             >
               Add event
             </VBtn>
-            <div>
-              <p class="text-sm text-uppercase text-medium-emphasis mb-3">
-                Calendars
-              </p>
+          </div>
 
-              <div class="d-flex flex-column calendars-checkbox">
-                <VCheckbox
-                  v-model="checkAll"
-                  label="View all"
-                  density="default"
-                />
-                <VCheckbox
-                  v-for="calendar in store.availableCalendars"
-                  :key="calendar.label"
-                  v-model="store.selectedCalendars"
-                  :value="calendar.label"
-                  :color="calendar.color"
-                  :label="calendar.label"
-                  density="default"
-                />
-              </div>
+          <VDivider />
+
+          <div class="d-flex align-center justify-center pa-2">
+            <AppDateTimePicker
+              :model-value="new Date().toJSON().slice(0, 10)"
+              :config="{ inline: true }"
+              class="calendar-date-picker"
+              @update:model-value="(val: string) => jumpToDate(val)"
+            />
+          </div>
+
+          <VDivider />
+          <div class="pa-5">
+            <h5 class="text-h5 mb-4">
+              Event Filters
+            </h5>
+
+            <div class="d-flex flex-column calendars-checkbox">
+              <VCheckbox
+                v-model="checkAll"
+                label="View all"
+              />
+              <VCheckbox
+                v-for="calendar in store.availableCalendars"
+                :key="calendar.label"
+                v-model="store.selectedCalendars"
+                :value="calendar.label"
+                :color="calendar.color"
+                :label="calendar.label"
+              />
             </div>
           </div>
         </VNavigationDrawer>
+
         <VMain>
           <VCard flat>
             <FullCalendar
@@ -123,6 +136,25 @@ const checkAll = computed({
   &.v-navigation-drawer:not(.v-navigation-drawer--temporary) {
     border-end-start-radius: 0.375rem;
     border-start-start-radius: 0.375rem;
+  }
+}
+
+.calendar-date-picker {
+  display: none;
+
+  +.flatpickr-input {
+    +.flatpickr-calendar.inline {
+      border: none;
+      box-shadow: none;
+
+      .flatpickr-months {
+        border-block-end: none;
+      }
+    }
+  }
+
+  & ~ .flatpickr-calendar .flatpickr-weekdays {
+    margin-block: 0 4px;
   }
 }
 </style>

@@ -104,6 +104,10 @@ const endDateTimePickerConfig = computed(() => {
 
   return config
 })
+
+const dialogModelValueUpdate = (val: boolean) => {
+  emit('update:isDrawerOpen', val)
+}
 </script>
 
 <template>
@@ -113,7 +117,7 @@ const endDateTimePickerConfig = computed(() => {
     :model-value="props.isDrawerOpen"
     width="420"
     class="scrollable-content"
-    @update:model-value="(val) => $emit('update:isDrawerOpen', val)"
+    @update:model-value="dialogModelValueUpdate"
   >
     <!-- 👉 Header -->
     <AppDrawerHeaderSection
@@ -127,7 +131,7 @@ const endDateTimePickerConfig = computed(() => {
         >
           <VIcon
             size="18"
-            icon="ri-delete-bin-line"
+            icon="tabler-trash"
           />
         </IconBtn>
       </template>
@@ -173,7 +177,7 @@ const endDateTimePickerConfig = computed(() => {
                         :color="item.raw.color"
                         inline
                         dot
-                        class="pa-1 mb-1"
+                        class="pa-1 pb-2"
                       />
                       <span>{{ item.raw.label }}</span>
                     </div>

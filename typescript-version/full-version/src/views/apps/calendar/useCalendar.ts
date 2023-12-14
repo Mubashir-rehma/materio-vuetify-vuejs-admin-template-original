@@ -274,6 +274,11 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     calendarApi.value = refCalendar.value.getApi()
   })
 
+  // 👉 Jump to date on sidebar(inline) calendar change
+  const jumpToDate = (currentDate: string) => {
+    calendarApi.value?.gotoDate(new Date(currentDate))
+  }
+
   watch(
     () => configStore.isAppRTL,
     val => {
@@ -290,5 +295,6 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     addEvent,
     updateEvent,
     removeEvent,
+    jumpToDate,
   }
 }

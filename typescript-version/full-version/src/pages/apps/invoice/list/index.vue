@@ -4,7 +4,6 @@ import type { Invoice } from '@db/apps/invoice/types'
 type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
 const searchQuery = ref('')
-const dateRange = ref('')
 const selectedStatus = ref<invoiceStatus>(null)
 const selectedRows = ref<string[]>([])
 
@@ -39,21 +38,11 @@ const headers = [
   { title: 'Actions', key: 'actions', sortable: false },
 ]
 
-const selectedDateRange = computed(() => {
-  const [start, end] = dateRange.value ? dateRange.value.split('to') : ''
-
-  return {
-    start,
-    end,
-  }
-})
-
 // 👉 Fetch Invoices
 const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUrl('/apps/invoice', {
   query: {
     q: searchQuery,
     status: selectedStatus,
-    selectedDateRange,
     itemsPerPage,
     page,
     sortBy,
@@ -160,58 +149,16 @@ const deleteInvoice = async (id: number) => {
         </VRow>
       </VCardText>
     </VCard>
-    <!-- 👉 Invoice Filters  -->
-    <VCard
-      title="Filters"
-      class="mb-6"
-    >
-      <VCardText>
-        <VRow>
-          <!-- 👉 Status filter -->
-          <VCol
-            cols="12"
-            md="6"
-          >
-            <VSelect
-              v-model="selectedStatus"
-              label="Select Status"
-              placeholder="Select Status"
-              clearable
-              clear-icon="ri-close-line"
-              :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
-            />
-          </VCol>
-
-          <!-- 👉 DateRange filter -->
-          <VCol
-            cols="12"
-            md="6"
-          >
-            <AppDateTimePicker
-              v-model="dateRange"
-              label="Invoice Date"
-              clear-icon="ri-close-line"
-              clearable
-              :config="{ mode: 'range' }"
-              placeholder="Select Date"
-            />
-          </VCol>
-        </VRow>
-      </VCardText>
-    </VCard>
 
     <VCard id="invoice-list">
       <VCardText class="d-flex align-center flex-wrap gap-4">
-        <!-- 👉 Actions  -->
-        <div class="me-3">
-          <VSelect
-            label="Actions"
-            placeholder="Select"
-            :items="['Delete', 'Edit', 'Send']"
-            class="invoice-list-actions"
-            :disabled="!selectedRows.length"
-          />
-        </div>
+        <!-- 👉 Create invoice -->
+        <VBtn
+          prepend-icon="ri-add-line"
+          :to="{ name: 'apps-invoice-add' }"
+        >
+          Create invoice
+        </VBtn>
 
         <VSpacer />
 
@@ -223,14 +170,17 @@ const deleteInvoice = async (id: number) => {
               placeholder="Search Invoice"
             />
           </div>
-
-          <!-- 👉 Create invoice -->
-          <VBtn
-            prepend-icon="ri-add-line"
-            :to="{ name: 'apps-invoice-add' }"
-          >
-            Create invoice
-          </VBtn>
+          <div class="invoice-list-search">
+            <VSelect
+              v-model="selectedStatus"
+              label="Invoice Status"
+              placeholder="Invoice Status"
+              clearable
+              density="compact"
+              clear-icon="ri-close-line"
+              :items="['Downloaded', 'Draft', 'Sent', 'Paid', 'Partial Payment', 'Past Due']"
+            />
+          </div>
         </div>
       </VCardText>
 

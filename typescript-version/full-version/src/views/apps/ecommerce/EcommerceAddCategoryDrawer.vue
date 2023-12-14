@@ -249,7 +249,8 @@ const resetForm = () => {
 .category-navigation-drawer {
   .ProseMirror {
     padding: 0.5rem;
-    min-block-size: 15vh;
+    block-size: auto;
+    min-block-size: 6.25rem;
 
     p {
       margin-block-end: 0;

@@ -161,7 +161,7 @@ const isCardDetailsVisible = ref(false)
               Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″ display Apple A13 Bionic
             </VCardText>
 
-            <VCardText class="text-subtitle-1">
+            <VCardText class="text-body-1">
               <span>Price :</span> <span class="font-weight-medium">$899</span>
             </VCardText>
 

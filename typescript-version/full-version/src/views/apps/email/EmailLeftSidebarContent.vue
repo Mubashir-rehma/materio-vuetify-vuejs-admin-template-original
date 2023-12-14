@@ -51,7 +51,7 @@ const folders: Folder[] = [
   },
   {
     title: 'Starred',
-    prependIcon: 'ri-star-fill-outline',
+    prependIcon: 'ri-star-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'starred' },
@@ -127,7 +127,7 @@ const labels: Label[] = [
     <!-- 👉 Folders -->
     <PerfectScrollbar
       :options="{ wheelPropagation: false }"
-      class="h-100"
+      class="h-100 pt-4"
     >
       <ul class="email-filters-labels">
         <RouterLink
@@ -165,7 +165,7 @@ const labels: Label[] = [
         </RouterLink>
 
         <!-- 👉 Labels -->
-        <li class="text-xs d-block text-uppercase text-disabled mt-6">
+        <li class="text-sm d-block text-uppercase text-disabled mt-9 mb-4">
           LABELS
         </li>
         <RouterLink

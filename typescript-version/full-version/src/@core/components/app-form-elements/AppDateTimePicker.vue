@@ -244,12 +244,14 @@ input[altinputclass="inlinePicker"] {
     color: $heading-color;
 
     &.today {
-      border-color: rgb(var(--v-theme-primary));
+      border-color: transparent;
+      background-color: rgb(var(--v-theme-primary), var(--v-border-opacity));
+      color: rgba(var(--v-theme-primary));
 
       &:hover {
-        border-color: rgb(var(--v-theme-primary));
-        background: transparent;
-        color: $heading-color;
+        border-color: transparent;
+        background-color: rgb(var(--v-theme-primary), var(--v-border-opacity));
+        color: rgba(var(--v-theme-primary));
       }
     }
 
@@ -268,6 +270,10 @@ input[altinputclass="inlinePicker"] {
       background: rgba(var(--v-theme-primary), 0.1) !important;
       box-shadow: none !important;
       color: rgb(var(--v-theme-primary));
+    }
+
+    &.inRange.today {
+      background: rgba(var(--v-theme-primary), 0.24) !important;
     }
 
     &.startRange {

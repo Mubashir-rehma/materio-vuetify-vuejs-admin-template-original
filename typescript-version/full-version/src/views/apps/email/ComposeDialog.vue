@@ -1,17 +1,71 @@
 <script lang="ts" setup>
+import { Image } from '@tiptap/extension-image'
+import { Link } from '@tiptap/extension-link'
+import { Placeholder } from '@tiptap/extension-placeholder'
+import { Underline } from '@tiptap/extension-underline'
+import { StarterKit } from '@tiptap/starter-kit'
+import { EditorContent, useEditor } from '@tiptap/vue-3'
+
 defineEmits<{
   (e: 'close'): void
 }>()
 
-const content = ref('')
-
 const to = ref('')
+const cc = ref('')
+const bcc = ref('')
 const subject = ref('')
 const message = ref('')
-const isMenuOpen = ref(false)
+const emailCc = ref(false)
+const emailBcc = ref(false)
 
 const resetValues = () => {
   to.value = subject.value = message.value = ''
+}
+
+const editor = useEditor({
+  content: '',
+
+  extensions: [
+    StarterKit,
+    Image,
+    Placeholder.configure({
+      placeholder: 'Message',
+    }),
+    Underline,
+    Link.configure(
+      {
+        openOnClick: false,
+      },
+    ),
+  ],
+})
+
+const setLink = () => {
+  const previousUrl = editor.value?.getAttributes('link').href
+  // eslint-disable-next-line no-alert
+  const url = window.prompt('URL', previousUrl)
+
+  // cancelled
+  if (url === null)
+    return
+
+  // empty
+  if (url === '') {
+    editor.value?.chain().focus().extendMarkRange('link').unsetLink().run()
+
+    return
+  }
+
+  // update link
+  editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
+}
+
+const addImage = () => {
+  // eslint-disable-next-line no-alert
+  const url = window.prompt('URL')
+
+  if (url)
+    editor.value?.chain().focus().setImage({ src: url }).run()
 }
 </script>
 
@@ -21,42 +75,84 @@ const resetValues = () => {
     elevation="24"
     max-width="30vw"
   >
-    <VCardItem class="py-3 px-5">
-      <div class="d-flex align-center">
-        <span class="font-weight-medium">Compose Mail</span>
-        <VSpacer />
-        <VIcon
-          size="20"
-          icon="ri-subtract-line"
-          class="me-4"
-          @click="$emit('close')"
-        />
-        <VIcon
-          size="20"
-          icon="ri-close-line"
-          @click="$emit('close'); resetValues()"
-        />
-      </div>
+    <VCardItem class="py-3">
+      <VCardTitle class="text-medium-emphasis">
+        Compose Mail
+      </VCardTitle>
+
+      <template #append>
+        <IconBtn @click="$emit('close')">
+          <VIcon icon="ri-subtract-line" />
+        </IconBtn>
+
+        <IconBtn @click="$emit('close'); resetValues()">
+          <VIcon icon="ri-close-line" />
+        </IconBtn>
+      </template>
     </VCardItem>
 
     <div class="pe-5">
-      <VTextField v-model="to">
+      <VTextField
+        v-model="to"
+        density="compact"
+      >
         <template #prepend-inner>
-          <div class="text-sm text-disabled">
+          <div class="text-disabled font-weight-medium">
             To:
           </div>
         </template>
         <template #append>
-          <span class="cursor-pointer">Cc | Bcc</span>
+          <span class="cursor-pointer text-medium-emphasis">
+            <span @click="emailCc = !emailCc">Cc</span>
+            <span class="mx-1">|</span>
+            <span @click="emailBcc = !emailBcc">Bcc</span>
+          </span>
         </template>
       </VTextField>
     </div>
 
+    <VExpandTransition>
+      <div v-if="emailCc">
+        <VDivider />
+
+        <VTextField
+          v-model="cc"
+          density="compact"
+        >
+          <template #prepend-inner>
+            <div class="text-disabled font-weight-medium">
+              Cc:
+            </div>
+          </template>
+        </VTextField>
+      </div>
+    </VExpandTransition>
+
+    <VExpandTransition>
+      <div v-if="emailBcc">
+        <VDivider />
+
+        <VTextField
+          v-model="bcc"
+          density="compact"
+        >
+          <template #prepend-inner>
+            <div class="text-disabled font-weight-medium">
+              Bcc:
+            </div>
+          </template>
+        </VTextField>
+      </div>
+    </VExpandTransition>
+
     <VDivider />
 
-    <VTextField v-model="subject">
+    <VTextField
+      v-model="subject"
+      density="compact"
+    >
       <template #prepend-inner>
-        <div class="text-sm text-disabled">
+        <div class="text-disabled font-weight-medium">
           Subject:
         </div>
       </template>
@@ -64,49 +160,100 @@ const resetValues = () => {
 
     <VDivider />
 
-    <!-- 👉 Tiptap Editor  -->
-    <TiptapEditor v-model="content" />
-
-    <VDivider />
-
-    <div class="d-flex align-center px-5 py-4">
-      <VBtnGroup
-        color="primary"
-        divided
-        density="comfortable"
+    <!-- 👉 Tiptap editor -->
+    <div class="tiptap-editor-wrapper">
+      <div
+        v-if="editor"
+        class="d-flex flex-wrap gap-x-1 px-4 py-2"
       >
-        <VBtn>Send</VBtn>
-        <VBtn
-          icon
-          @click="() => isMenuOpen = !isMenuOpen"
+        <IconBtn
+          rounded
+          :color="editor.isActive('bold') ? 'primary' : ''"
+          :variant="editor.isActive('bold') ? 'tonal' : 'text'"
+          @click="editor.chain().focus().toggleBold().run()"
         >
-          <VIcon
-            :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line' "
-            size="24"
-          />
-          <VMenu activator="parent">
-            <VList :items="['Schedule Mail', 'Save Draft']" />
-          </VMenu>
-        </VBtn>
-      </VBtnGroup>
-      <VIcon
-        icon="ri-attachment-2"
-        class="ms-4 cursor-pointer"
-      />
+          <VIcon icon="ri-bold" />
+        </IconBtn>
+
+        <IconBtn
+          rounded
+          :color="editor.isActive('underline') ? 'primary' : ''"
+          :variant="editor.isActive('underline') ? 'tonal' : 'text'"
+          @click="editor.commands.toggleUnderline()"
+        >
+          <VIcon icon="ri-underline" />
+        </IconBtn>
+
+        <IconBtn
+          rounded
+          :color="editor.isActive('italic') ? 'primary' : ''"
+          :variant="editor.isActive('italic') ? 'tonal' : 'text'"
+          @click="editor.chain().focus().toggleItalic().run()"
+        >
+          <VIcon icon="ri-italic" />
+        </IconBtn>
+
+        <IconBtn
+          rounded
+          :color="editor.isActive('bulletList') ? 'primary' : ''"
+          :variant="editor.isActive('bulletList') ? 'tonal' : 'text'"
+          @click="editor.chain().focus().toggleBulletList().run()"
+        >
+          <VIcon icon="ri-list-check" />
+        </IconBtn>
+
+        <IconBtn
+          rounded
+          :color="editor.isActive('orderedList') ? 'primary' : ''"
+          :variant="editor.isActive('orderedList') ? 'tonal' : 'text'"
+          @click="editor.chain().focus().toggleOrderedList().run()"
+        >
+          <VIcon icon="ri-list-ordered-2" />
+        </IconBtn>
+
+        <IconBtn
+          rounded
+          @click="setLink"
+        >
+          <VIcon icon="ri-links-line" />
+        </IconBtn>
+
+        <IconBtn
+          rounded
+          @click="addImage"
+        >
+          <VIcon icon="ri-image-line" />
+        </IconBtn>
+      </div>
+
+      <VDivider />
+
+      <div class="mx-5">
+        <EditorContent :editor="editor" />
+      </div>
+    </div>
+
+    <div class="d-flex align-center px-5 py-4 gap-4">
+      <VBtn append-icon="ri-send-plane-line">
+        Send
+        <VMenu activator="parent">
+          <VList :items="['Schedule Mail', 'Save Draft']" />
+        </VMenu>
+      </VBtn>
+
+      <IconBtn>
+        <VIcon icon="ri-attachment-2" />
+      </IconBtn>
 
       <VSpacer />
 
-      <VIcon
-        icon="ri-more-2-line"
-        size="20"
-        class="cursor-pointer"
-      />
-      <VIcon
-        icon="ri-delete-bin-line"
-        size="20"
-        class="ms-4 cursor-pointer"
-        @click="$emit('close'); resetValues()"
-      />
+      <IconBtn>
+        <VIcon icon="ri-more-2-line" />
+      </IconBtn>
+
+      <IconBtn @click="$emit('close'); resetValues()">
+        <VIcon icon="ri-delete-bin-7-line" />
+      </IconBtn>
     </div>
   </VCard>
 </template>
@@ -130,25 +277,27 @@ const resetValues = () => {
   .v-field__outline {
     display: none;
   }
-}
 
-.ProseMirror{
-  p{
-    margin-block-end: 0;
-  }
+  .ProseMirror {
+    block-size: auto;
+    min-block-size: 6.25rem;
+    padding-block: .5rem;
 
-  padding: 0.5rem;
+    &:focus-visible {
+      outline: none;
+    }
 
-  p.is-editor-empty:first-child::before {
-    block-size: 0;
-    color: #adb5bd;
-    content: attr(data-placeholder);
-    float: inline-start;
-    pointer-events: none;
-  }
+    p {
+      margin-block-end: 0;
+    }
 
-  &-focused{
-    outline: none
+    p.is-editor-empty:first-child::before {
+      block-size: 0;
+      color: #adb5bd;
+      content: attr(data-placeholder);
+      float: inline-start;
+      pointer-events: none;
+    }
   }
 }
 </style>

@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { Image } from '@tiptap/extension-image'
+import { Link } from '@tiptap/extension-link'
+import { Placeholder } from '@tiptap/extension-placeholder'
+import { Underline } from '@tiptap/extension-underline'
+import { StarterKit } from '@tiptap/starter-kit'
+import { EditorContent, useEditor } from '@tiptap/vue-3'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
-import { useEmail } from '@/views/apps/email/useEmail'
 import type { Email } from '@db/apps/email/types'
+import { useEmail } from '@/views/apps/email/useEmail'
+import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 
 interface Props {
   email: Email | null
@@ -40,6 +46,52 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
   emit('refresh')
 }
+
+const editor = useEditor({
+  content: '',
+
+  extensions: [
+    StarterKit,
+    Image,
+    Placeholder.configure({
+      placeholder: 'Write a Comment...',
+    }),
+    Underline,
+    Link.configure(
+      {
+        openOnClick: false,
+      },
+    ),
+  ],
+})
+
+const setLink = () => {
+  const previousUrl = editor.value?.getAttributes('link').href
+  // eslint-disable-next-line no-alert
+  const url = window.prompt('URL', previousUrl)
+
+  // cancelled
+  if (url === null)
+    return
+
+  // empty
+  if (url === '') {
+    editor.value?.chain().focus().extendMarkRange('link').unsetLink().run()
+
+    return
+  }
+
+  // update link
+  editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
+}
+
+const addImage = () => {
+  // eslint-disable-next-line no-alert
+  const url = window.prompt('URL')
+
+  if (url)
+    editor.value?.chain().focus().setImage({ src: url }).run()
+}
 </script>
 
 <template>
@@ -55,28 +107,25 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
     <template v-if="props.email">
       <!-- 👉 header -->
 
-      <div class="email-view-header d-flex align-center px-5 py-3">
+      <div class="email-view-header d-flex align-center px-5 py-4">
         <IconBtn
-          class="me-4 flip-in-rtl"
+          class="me-2 flip-in-rtl"
           @click="$emit('close')"
         >
-          <VIcon
-            size="32"
-            icon="ri-arrow-left-s-line"
-          />
+          <VIcon icon="ri-arrow-left-s-line" />
         </IconBtn>
 
         <div class="d-flex align-center flex-wrap flex-grow-1 overflow-hidden gap-2">
-          <h2 class="text-body-1 font-weight-medium text-high-emphasis text-truncate">
+          <h6 class="text-h6 font-weight-regular text-truncate">
             {{ props.email.subject }}
-          </h2>
+          </h6>
 
           <div class="d-flex flex-wrap gap-1">
             <VChip
               v-for="label in props.email.labels"
               :key="label"
               :color="resolveLabelColor(label)"
-              density="comfortable"
+              size="small"
               class="px-2 text-capitalize me-2 flex-shrink-0"
             >
               {{ label }}
@@ -107,13 +156,13 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
       <VDivider />
 
       <!-- 👉 Action bar -->
-      <div class="email-view-action-bar d-flex align-center text-medium-emphasis px-5">
+      <div class="email-view-action-bar d-flex align-center text-medium-emphasis gap-1 px-5">
         <!-- Trash -->
         <IconBtn
           v-show="!props.email.isDeleted"
           @click="$emit('trash'); $emit('close')"
         >
-          <VIcon icon="ri-delete-bin-line" />
+          <VIcon icon="ri-delete-bin-7-line" />
           <VTooltip
             activator="parent"
             location="top"
@@ -211,7 +260,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           :color="props.email.isStarred ? 'warning' : 'default'"
           @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
         >
-          <VIcon icon="ri-star-fill-outline" />
+          <VIcon icon="ri-star-line" />
         </IconBtn>
 
         <!-- Dots vertical -->
@@ -226,10 +275,13 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
         class="mail-content-container flex-grow-1"
         :options="{ wheelPropagation: false }"
       >
-        <VCard class="ma-5">
+        <VCard class="ma-6 mb-4">
           <VCardText class="mail-header">
             <div class="d-flex align-start">
-              <VAvatar class="me-3">
+              <VAvatar
+                size="38"
+                class="me-3"
+              >
                 <VImg
                   :src="props.email.from.avatar"
                   :alt="props.email.from.name"
@@ -238,14 +290,18 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
               <div class="d-flex flex-wrap flex-grow-1 overflow-hidden">
                 <div class="text-truncate">
-                  <span class="d-block text-high-emphasis font-weight-medium text-truncate">{{ props.email.from.name }}</span>
-                  <span class="text-sm text-disabled">{{ props.email.from.email }}</span>
+                  <h6 class="text-h6 font-weight-regular text-truncate">
+                    {{ props.email.from.name }}
+                  </h6>
+                  <p class="text-body-2 mb-0">
+                    {{ props.email.from.email }}
+                  </p>
                 </div>
 
                 <VSpacer />
 
                 <div class="d-flex align-center">
-                  <span class="me-2">{{ formatDate(props.email.time) }}</span>
+                  <span class="text-disabled me-4">{{ formatDate(props.email.time) }}</span>
                   <IconBtn v-show="props.email.attachments.length">
                     <VIcon icon="ri-attachment-2" />
                   </IconBtn>
@@ -290,14 +346,81 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           </template>
         </VCard>
 
-        <VCard class="mx-5 mb-5">
-          <VCardText class="font-weight-medium text-high-emphasis">
-            <div class="text-base">
-              Click here to <span class="text-primary cursor-pointer">
-                Reply
-              </span> or <span class="text-primary cursor-pointer">
-                Forward
-              </span>
+        <VCard class="ma-6">
+          <VCardText>
+            <h6 class="text-h6 font-weight-regular mb-6">
+              Reply to Ross Geller
+            </h6>
+            <!-- 👉 Tiptap editor -->
+            <div class="tiptap-editor-wrapper">
+              <div
+                v-if="editor"
+                class="d-flex flex-wrap gap-x-2 mb-6"
+              >
+                <VIcon
+                  icon="ri-bold"
+                  :color="editor.isActive('bold') ? 'primary' : ''"
+                  size="20"
+                  @click="editor.chain().focus().toggleBold().run()"
+                />
+
+                <VIcon
+                  :color="editor.isActive('underline') ? 'primary' : ''"
+                  icon="ri-underline"
+                  size="20"
+                  @click="editor.commands.toggleUnderline()"
+                />
+
+                <VIcon
+                  :color="editor.isActive('italic') ? 'primary' : ''"
+                  icon="ri-italic"
+                  size="20"
+                  @click="editor.chain().focus().toggleItalic().run()"
+                />
+
+                <VIcon
+                  :color="editor.isActive('bulletList') ? 'primary' : ''"
+                  icon="ri-list-check"
+                  size="20"
+                  @click="editor.chain().focus().toggleBulletList().run()"
+                />
+
+                <VIcon
+                  :color="editor.isActive('orderedList') ? 'primary' : ''"
+                  icon="ri-list-ordered-2"
+                  size="20"
+                  @click="editor.chain().focus().toggleOrderedList().run()"
+                />
+
+                <VIcon
+                  icon="ri-links-line"
+                  size="20"
+                  @click="setLink"
+                />
+
+                <VIcon
+                  icon="ri-image-line"
+                  size="20"
+                  @click="addImage"
+                />
+              </div>
+
+              <EditorContent :editor="editor" />
+            </div>
+
+            <div class="d-flex align-center justify-end mt-6">
+              <VBtn
+                color="secondary"
+                variant="plain"
+                class="me-4"
+              >
+                <VIcon icon="ri-attachment-2" />
+                <span>Attachments</span>
+              </VBtn>
+              <VBtn>
+                <span>Send</span>
+                <VIcon icon="ri-send-plane-line" />
+              </VBtn>
             </div>
           </VCardText>
         </VCard>
@@ -318,10 +441,38 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
     display: flex;
     flex-direction: column;
   }
+
+  .ProseMirror {
+    padding: 0;
+    block-size: auto;
+    min-block-size: 2.5rem;
+
+    p {
+      margin-block-end: 0;
+    }
+
+    p.is-editor-empty:first-child::before {
+      block-size: 0;
+      color: #adb5bd;
+      content: attr(data-placeholder);
+      float: inline-start;
+      pointer-events: none;
+    }
+  }
+
+  .is-active {
+    border-color: rgba(var(--v-theme-primary), var(--v-border-opacity)) !important;
+    background-color: rgba(var(--v-theme-primary), var(--v-activated-opacity));
+    color: rgb(var(--v-theme-primary));
+  }
+
+  .ProseMirror-focused{
+    outline: none !important;
+  }
 }
 
 .email-view-action-bar {
-  min-block-size: 56px;
+  min-block-size: 54px;
 }
 
 .mail-content-container {

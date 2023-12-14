@@ -81,14 +81,14 @@ const solidCardData = [
               color="white"
               class="me-1"
             />
-            <span class="text-subtitle-2 text-white me-4">{{ data.likes }}</span>
+            <span class="text-body-2 text-white me-4">{{ data.likes }}</span>
 
             <IconBtn
               icon="ri-share-line"
               color="white"
               class="me-1"
             />
-            <span class="text-subtitle-2 text-white">{{ data.share }}</span>
+            <span class="text-body-2 text-white">{{ data.share }}</span>
           </div>
         </VCardText>
       </VCard>

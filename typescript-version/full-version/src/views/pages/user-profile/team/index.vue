@@ -47,7 +47,7 @@ const moreList = [
         <template #append>
           <div class="me-n3">
             <IconBtn>
-              <VIcon icon="ri-star-fill-outline" />
+              <VIcon icon="ri-star-line" />
             </IconBtn>
             <MoreBtn
               item-props

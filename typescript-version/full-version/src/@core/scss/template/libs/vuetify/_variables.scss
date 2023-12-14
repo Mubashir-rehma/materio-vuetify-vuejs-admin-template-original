@@ -261,9 +261,9 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   // 👉 Snackbar
   $snackbar-background: rgb(var(--v-tooltip-background)) !default,
   $snackbar-color: rgb(var(--v-theme-surface)) !default,
-  $snackbar-content-padding: 8px 16px !default,
+  $snackbar-content-padding: 12px 16px !default,
   $snackbar-wrapper-padding: 0 !default,
-  $snackbar-wrapper-min-height: 36px !default,
+  $snackbar-wrapper-min-height: 44px !default,
   $snackbar-elevation: 2 !default,
   $snackbar-btn-padding: 0 10px !default,
   $snackbar-action-margin: 16px !default,

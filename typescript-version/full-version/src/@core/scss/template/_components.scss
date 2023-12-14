@@ -344,7 +344,7 @@
 
 // 👉 VBadge
 .v-badge{
-  &.v-badge--inline{
+  &.v-badge--inline:not(.v-badge--dot) {
     .v-badge__wrapper{
       .v-badge__badge{
         padding-block: 4px;

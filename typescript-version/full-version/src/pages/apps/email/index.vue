@@ -228,10 +228,11 @@ watch(
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
             :indeterminate="isSelectAllEmailCheckboxIndeterminate"
+            class="me-1"
             @update:model-value="selectAllCheckboxUpdate"
           />
           <div
-            class="w-100 d-flex align-center action-bar-actions"
+            class="w-100 d-flex align-center action-bar-actions gap-1"
             :style="{
               visibility:
                 isSelectAllEmailCheckboxIndeterminate || selectAllEmailCheckbox
@@ -244,7 +245,7 @@ watch(
               v-show="('filter' in route.params ? route.params.filter !== 'trashed' : true)"
               @click="handleActionClick('trash')"
             >
-              <VIcon icon="ri-delete-bin-line" />
+              <VIcon icon="ri-delete-bin-7-line" />
               <VTooltip
                 activator="parent"
                 location="top"
@@ -252,6 +253,7 @@ watch(
                 Delete Mail
               </VTooltip>
             </IconBtn>
+
             <!-- Mark unread/read -->
             <IconBtn @click="isAllMarkRead ? handleActionClick('unread') : handleActionClick('read') ">
               <VIcon :icon="isAllMarkRead ? 'ri-mail-line' : 'ri-mail-open-line'" />
@@ -262,6 +264,7 @@ watch(
                 {{ isAllMarkRead ? 'Mark as Unread' : 'Mark as Read' }}
               </VTooltip>
             </IconBtn>
+
             <!-- Move to folder -->
             <IconBtn>
               <VIcon icon="ri-folder-line" />
@@ -271,6 +274,7 @@ watch(
               >
                 Folder
               </VTooltip>
+
               <VMenu activator="parent">
                 <VList density="compact">
                   <template
@@ -300,6 +304,7 @@ watch(
                 </VList>
               </VMenu>
             </IconBtn>
+
             <!-- Update labels -->
             <IconBtn>
               <VIcon icon="ri-price-tag-3-line" />
@@ -309,6 +314,7 @@ watch(
               >
                 Label
               </VTooltip>
+
               <VMenu activator="parent">
                 <VList density="compact">
                   <VListItem
@@ -332,10 +338,13 @@ watch(
               </VMenu>
             </IconBtn>
           </div>
+
           <VSpacer />
+
           <IconBtn @click="fetchEmails">
-            <VIcon icon="ri-restart-line" />
+            <VIcon icon="ri-refresh-line" />
           </IconBtn>
+
           <MoreBtn />
         </div>
         <VDivider />
@@ -349,7 +358,7 @@ watch(
             v-for="email in emails"
             v-show="emails?.length"
             :key="email.id"
-            class="email-item d-flex align-center py-2 px-5 cursor-pointer"
+            class="email-item d-flex align-center pa-4 gap-2 cursor-pointer"
             :class="[{ 'email-read': email.isRead }]"
             @click="openEmail(email)"
           >
@@ -363,22 +372,22 @@ watch(
               :color="email.isStarred ? 'warning' : 'default'"
               @click.stop=" handleActionClick(email.isStarred ? 'unstar' : 'star', [email.id])"
             >
-              <VIcon icon="ri-star-fill-outline" />
+              <VIcon icon="ri-star-line" />
             </IconBtn>
-            <VAvatar
-              class="mx-2"
-              size="32"
-            >
+            <VAvatar size="32">
               <VImg
                 :src="email.from.avatar"
                 :alt="email.from.name"
               />
             </VAvatar>
-            <h6 class="mx-2 text-body-1 font-weight-medium text-high-emphasis">
+            <h6 class="text-h6">
               {{ email.from.name }}
             </h6>
-            <span class="truncate">{{ email.subject }}</span>
+            <span class="text-body-2 truncate">{{ email.subject }}</span>
+
             <VSpacer />
+
+            <!-- 👉 Email meta -->
             <div
               class="email-meta"
               :class="$vuetify.display.xs ? 'd-none' : ''"
@@ -386,18 +395,18 @@ watch(
               <VBadge
                 v-for="label in email.labels"
                 :key="label"
-                inline
                 :color="resolveLabelColor(label)"
                 dot
+                inline
               />
-              <small class="text-disabled ms-2">{{
+              <span class="text-sm text-disabled ms-2">{{
                 formatDateToMonthShort(email.time)
-              }}</small>
+              }}</span>
             </div>
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
               <IconBtn @click.stop="handleActionClick('trash', [email.id])">
-                <VIcon icon="ri-delete-bin-line" />
+                <VIcon icon="ri-delete-bin-7-line" />
                 <VTooltip
                   activator="parent"
                   location="top"
@@ -405,7 +414,10 @@ watch(
                   Delete Mail
                 </VTooltip>
               </IconBtn>
-              <IconBtn @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])">
+              <IconBtn
+                class="mx-2"
+                @click.stop=" handleActionClick(email.isRead ? 'unread' : 'read', [email.id])"
+              >
                 <VIcon :icon="email.isRead ? 'ri-mail-line' : 'ri-mail-open-line'" />
                 <VTooltip
                   activator="parent"
@@ -415,7 +427,7 @@ watch(
                 </VTooltip>
               </IconBtn>
               <IconBtn @click.stop="handleActionClick('spam', [email.id])">
-                <VIcon icon="ri-spam-2-line" />
+                <VIcon icon="ri-error-warning-line" />
                 <VTooltip
                   activator="parent"
                   location="top"
@@ -490,7 +502,7 @@ watch(
   .email-item:hover {
     transform: translateY(-2px);
 
-    @include mixins.elevation(3);
+    @include mixins.elevation(4);
 
     .email-actions {
       display: block !important;

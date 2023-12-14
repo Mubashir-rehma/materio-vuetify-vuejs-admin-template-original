@@ -74,38 +74,42 @@ const salesByCountries = [
               :color="data.color"
               variant="tonal"
               size="40"
-              class="me-3"
             >
               {{ data.abbr }}
             </VAvatar>
           </template>
 
-          <VListItemTitle class="mb-1">
-            <span class="text-sm font-weight-medium">{{ data.amount }}</span>
+          <VListItemTitle class="mb-1 d-flex align-center">
+            <h6 class="text-h6">
+              {{ data.amount }}
+            </h6>
             <VIcon
               size="24"
               :color="data.change.charAt(0) === '+' ? 'success' : 'error'"
               class="mx-1"
             >
-              {{ data.change.charAt(0) === '+' ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
+              {{ data.change.charAt(0) === '+' ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line' }}
             </VIcon>
-            <span :class="`text-xs ${data.change.charAt(0) === '+' ? 'text-success' : 'text-error'}`">
+            <div
+              :class="`${data.change.charAt(0) === '+' ? 'text-success' : 'text-error'}`"
+              class="text-body-1"
+            >
               {{ data.change.slice(1) }}
-            </span>
+            </div>
           </VListItemTitle>
 
-          <VListItemSubtitle>
-            <span class="text-xs">
-              {{ data.country }}
-            </span>
+          <VListItemSubtitle class="text-body-1 me-2">
+            {{ data.country }}
           </VListItemSubtitle>
 
           <template #append>
             <div>
-              <h4 class="font-weight-medium">
+              <h6 class="text-h6 mb-1">
                 {{ data.sales }}
-              </h4>
-              <span class="text-xs text-medium-emphasis">Sales</span>
+              </h6>
+              <div class="text-body-2 text-disabled">
+                Sales
+              </div>
             </div>
           </template>
         </VListItem>

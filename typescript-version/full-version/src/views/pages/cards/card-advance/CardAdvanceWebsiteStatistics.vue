@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import VueApexCharts from 'vue3-apexcharts'
-
 const chartOptions = {
+
   chart: {
     type: 'bar',
     parentHeightOffset: 0,
@@ -12,11 +11,12 @@ const chartOptions = {
   colors: ['rgba(var(--v-theme-primary))'],
   plotOptions: {
     bar: {
-      horizontal: false,
-      columnWidth: '30%',
+      barHeight: '85%',
+      columnWidth: '35px',
       startingShape: 'rounded',
       endingShape: 'rounded',
-      borderRadius: 4,
+      borderRadius: 3,
+      distributed: true,
     },
   },
   legend: { show: false },
@@ -90,71 +90,63 @@ const websiteStatistics = [
     </VCardItem>
 
     <VCardText class="pt-3">
-      <div class="d-flex align-center justify-space-between mb-4">
+      <div class="d-flex align-center justify-space-between mb-5">
         <div>
-          <h3 class="text-h3">
+          <h1 class="text-h1 mb-2">
             4,590
-          </h3>
-          <span class="text-xs">Total Traffic</span>
+          </h1>
+          <div class="text-body-2">
+            Total Traffic
+          </div>
         </div>
-        <div style="max-width: 7.5rem; height: 5rem;">
+
+        <div>
           <VueApexCharts
             :options="chartOptions"
             :series="series"
+            height="80"
+            width="120"
           />
         </div>
       </div>
 
       <div
-        v-for="data in websiteStatistics"
+        v-for="(data, index) in websiteStatistics"
         :key="data.title"
-        class="statistics-table d-flex align-center"
       >
-        <VBadge
-          :color="data.color"
-          variant="elevated"
-          class="badge-size"
-        />
-
-        <h6 class="text-sm font-weight-regular">
-          {{ data.title }}
-        </h6>
-        <VSpacer />
-        <h6 class="text-sm font-weight-medium me-6">
-          {{ data.traffic }}
-        </h6>
-        <h6 class="text-sm font-weight-medium me-1">
-          {{ data.percentage.slice(1) }}%
-        </h6>
-        <VIcon
-          :size="24"
-          :color="data.percentage.charAt(0) === '+' ? 'success' : 'error'"
-        >
-          {{ data.percentage.charAt(0) === '+' ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
-        </VIcon>
+        <div class="d-flex py-3 align-center">
+          <div
+            class="bubble"
+            :class="`bg-${data.color}`"
+          />
+          <div class="text-body-1 text-high-emphasis">
+            {{ data.title }}
+          </div>
+          <VSpacer />
+          <h6 class="text-h6 me-6">
+            {{ data.traffic }}
+          </h6>
+          <h6 class="text-h6 me-1">
+            {{ data.percentage.slice(1) }}%
+          </h6>
+          <VIcon
+            :size="24"
+            :color="data.percentage.charAt(0) === '+' ? 'success' : 'error'"
+          >
+            {{ data.percentage.charAt(0) === '+' ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line' }}
+          </VIcon>
+        </div>
+        <VDivider v-if="index !== websiteStatistics.length - 1" />
       </div>
     </VCardText>
   </VCard>
 </template>
 
-<style lang="scss">
-.chart-wrapper {
-  max-inline-size: 130px;
-}
-
-.statistics-table {
-  border-block-start: solid 1px rgba(var(--v-border-color), var(--v-border-opacity));
-  padding-block: 0.64rem;
-
-  .badge-size {
-    block-size: 0.4375rem;
-    inline-size: 0.75rem;
-    margin-inline-end: 0.8rem;
-
-    .v-badge__badge {
-      block-size: 0.8125rem;
-      min-inline-size: 0.8125rem;
-    }
-  }
+<style lang="scss" scoped>
+.bubble {
+  border-radius: 50%;
+  block-size: 1rem;
+  inline-size: 1rem;
+  margin-inline-end: 0.5rem;
 }
 </style>

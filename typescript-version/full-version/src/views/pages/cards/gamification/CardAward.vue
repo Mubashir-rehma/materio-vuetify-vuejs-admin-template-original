@@ -1,30 +1,23 @@
 <script setup lang="ts">
-import triangleDark from '@images/misc/triangle-dark.png'
-import triangleLight from '@images/misc/triangle-light.png'
 import trophy from '@images/misc/trophy.png'
-
-const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 </script>
 
 <template>
-  <VCard
-    title="Congratulations John! 🥳"
-    subtitle="Best seller of the month"
-    class="position-relative"
-  >
+  <VCard class="position-relative">
+    <VCardItem>
+      <VCardTitle>Congratulations John! <span class="text-high-emphasis">🎉</span></VCardTitle>
+      <VCardSubtitle>Best seller of the month</VCardSubtitle>
+    </VCardItem>
+
     <VCardText>
-      <h5 class="text-2xl font-weight-medium text-primary">
+      <h4 class="text-h4 text-primary">
         $42.8k
-      </h5>
-      <p>78% of target 🚀</p>
+      </h4>
+      <div class="text-body-1 mb-3">
+        78% of target <span class="text-high-emphasis">🚀</span>
+      </div>
       <VBtn>View Sales</VBtn>
     </VCardText>
-
-    <!-- Triangle Background -->
-    <VImg
-      :src="triangleBg"
-      class="triangle-bg flip-in-rtl"
-    />
 
     <!-- Trophy -->
     <VImg

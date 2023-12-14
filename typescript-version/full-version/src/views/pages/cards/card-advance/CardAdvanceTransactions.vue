@@ -8,7 +8,7 @@ import paypal from '@images/cards/paypal.png'
 import wallet from '@images/cards/wallet.png'
 
 interface Colors {
-  'Paypal': string
+  'PayPal': string
   'Credit Card': string
   'Mastercard': string
   'Wallet': string
@@ -20,49 +20,56 @@ interface Transactions {
   for: string
   amount: number
   img: string
+  imgHeight?: number
 }
 
 const transactions: Transactions[] = [
   {
-    gateway: 'Paypal',
-    for: 'Freelance Work',
+    gateway: 'PayPal',
+    for: 'Received Money',
     amount: 2482,
     img: paypal,
+    imgHeight: 22,
   },
   {
     gateway: 'Credit Card',
-    for: 'Digital Ocean',
+    for: 'DigitalOcean',
     amount: -1250,
     img: creditCard,
+    imgHeight: 15,
   },
   {
     gateway: 'Mastercard',
     for: 'Netflix',
     amount: -99,
     img: atmCard,
+    imgHeight: 15,
   },
   {
     gateway: 'Wallet',
     for: 'Mac\'D',
     amount: -82,
     img: wallet,
+    imgHeight: 18,
   },
   {
     gateway: 'Transfer',
     for: 'Refund',
     amount: 8934,
     img: arrowGrowth,
+    imgHeight: 12,
   },
   {
     gateway: 'Wallet',
     for: 'Buy Apple Watch',
     amount: -399,
     img: wallet,
+    imgHeight: 18,
   },
 ]
 
 const transactionsColors: Colors = {
-  'Paypal': 'error',
+  'PayPal': 'error',
   'Credit Card': 'success',
   'Mastercard': 'warning',
   'Wallet': 'primary',
@@ -103,31 +110,36 @@ const formateAmount = (amount: number) => {
               rounded
               variant="tonal"
               :color="transactionsColors[transaction.gateway]"
-              class="me-3"
             >
-              <VImg
-                height="20"
+              <img
                 :src="transaction.img"
-              />
+                :height="transaction.imgHeight"
+              >
             </VAvatar>
           </template>
 
           <!-- 👉 Title and Subtitle  -->
-          <VListItemTitle class="font-weight-medium mb-1">
-            {{ transaction.gateway }}
+          <VListItemTitle>
+            <h6 class="text-h6">
+              {{ transaction.gateway }}
+            </h6>
           </VListItemTitle>
           <VListItemSubtitle>
-            {{ transaction.for }}
+            <div class="text-body-1">
+              {{ transaction.for }}
+            </div>
           </VListItemSubtitle>
 
           <!-- 👉 Amounts -->
           <template #append>
-            <VListItemAction class="font-weight-medium">
-              <span class="text-base me-3">{{ formateAmount(transaction.amount) }}</span>
+            <VListItemAction>
+              <h6 class="text-h6 me-2">
+                {{ formateAmount(transaction.amount) }}
+              </h6>
               <VIcon
                 :size="24"
                 :color="Math.sign(transaction.amount) === 1 ? 'success' : 'error'"
-                :icon="Math.sign(transaction.amount) === 1 ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                :icon="Math.sign(transaction.amount) === 1 ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"
               />
             </VListItemAction>
           </template>
@@ -140,6 +152,6 @@ const formateAmount = (amount: number) => {
 
  <style lang="scss" scoped>
   .card-list {
-    --v-card-list-gap: 1.875rem;
+    --v-card-list-gap: 1.5rem;
   }
   </style>

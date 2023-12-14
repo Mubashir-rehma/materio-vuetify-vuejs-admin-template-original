@@ -3,22 +3,25 @@ import illustrationJohn from '@images/cards/illustration-john.png'
 </script>
 
 <template>
-  <VCard class="pa-2 overflow-visible">
+  <VCard class="overflow-visible">
     <VRow no-gutters>
       <VCol
         cols="12"
         sm="6"
       >
         <VCardItem>
-          <VCardTitle class="text-md-h5 flex-wrap">
-            <span class="me-1">Welcome back</span><strong class="me-1">John!</strong><span>🥳</span>
+          <VCardTitle>
+            <h4 class="text-h4 text-wrap">
+              Welcome back <strong>John!</strong> <span class="text-high-emphasis">🥳</span>
+            </h4>
           </VCardTitle>
         </VCardItem>
 
-        <VCardText class="mt-3">
-          You have 4 tasks to finish today,
-          <br>
-          You already completed 68% 😍 tasks. Good job!
+        <VCardText class="pt-4">
+          <div class="text-body-1 me-2">
+            You have 4 tasks to finish today,
+            You already completed 68% <span class="text-high-emphasis">😍</span> tasks. Good job!
+          </div>
         </VCardText>
       </VCol>
 
@@ -40,7 +43,7 @@ import illustrationJohn from '@images/cards/illustration-john.png'
 
 <style lang="scss" scoped>
 .john-illustration {
-  inset-block-end: -0.0625rem;
+  inset-block-end: 0;
   inset-inline-end: 0;
 }
 </style>

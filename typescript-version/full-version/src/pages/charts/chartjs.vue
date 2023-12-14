@@ -73,7 +73,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
     <VCol cols="12">
       <VCard title="Bubble Chart">
         <template #append>
-          <span class="text-subtitle-2">$ 100,000</span>
+          <span class="text-body-2">$ 100,000</span>
         </template>
 
         <VCardText>

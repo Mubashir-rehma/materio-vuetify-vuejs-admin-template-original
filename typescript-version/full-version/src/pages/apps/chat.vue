@@ -109,7 +109,7 @@ const chatContentContainerBg = computed(() => {
   let color = 'transparent'
 
   if (themes)
-    color = themes?.[name.value].colors?.background as string
+    color = themes?.[name.value].colors?.['chat-bg'] as string
 
   return color
 })
@@ -174,7 +174,7 @@ const chatContentContainerBg = computed(() => {
         <div class="active-chat-header d-flex align-center text-medium-emphasis">
           <!-- Sidebar toggler -->
           <IconBtn
-            class="d-md-none me-3"
+            class="d-md-none me-4"
             @click="isLeftSidebarOpen = true"
           >
             <VIcon icon="ri-menu-line" />
@@ -192,6 +192,7 @@ const chatContentContainerBg = computed(() => {
               offset-y="3"
               :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
               bordered
+              class="me-4"
             >
               <VAvatar
                 size="40"
@@ -208,11 +209,13 @@ const chatContentContainerBg = computed(() => {
               </VAvatar>
             </VBadge>
 
-            <div class="flex-grow-1 ms-4 overflow-hidden">
-              <h6 class="text-base font-weight-regular">
+            <div class="flex-grow-1 overflow-hidden">
+              <p class="text-body-1 mb-0">
                 {{ store.activeChat.contact.fullName }}
-              </h6>
-              <span class="d-block text-sm text-truncate text-disabled">{{ store.activeChat.contact.role }}</span>
+              </p>
+              <p class="text-sm text-truncate text-disabled mb-0">
+                {{ store.activeChat.contact.role }}
+              </p>
             </div>
           </div>
 
@@ -255,6 +258,7 @@ const chatContentContainerBg = computed(() => {
             :key="store.activeChat?.contact.id"
             v-model="msg"
             variant="solo"
+            density="default"
             class="chat-message-input"
             placeholder="Type your message..."
             autofocus
@@ -271,7 +275,10 @@ const chatContentContainerBg = computed(() => {
                 <VIcon icon="ri-attachment-2" />
               </IconBtn>
 
-              <VBtn @click="sendMessage">
+              <VBtn
+                append-icon="ri-send-plane-line"
+                @click="sendMessage"
+              >
                 Send
               </VBtn>
             </template>
@@ -320,14 +327,14 @@ const chatContentContainerBg = computed(() => {
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // Variables
-$chat-app-header-height: 68px;
+$chat-app-header-height: 76px;
 
 // Placeholders
 %chat-header {
   display: flex;
   align-items: center;
   min-block-size: $chat-app-header-height;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
 }
 
 .chat-app-layout {

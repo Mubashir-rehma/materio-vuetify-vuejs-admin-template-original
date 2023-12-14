@@ -17,9 +17,9 @@ const contact = computed(() => ({
 // Feedback icon
 const resolveFeedbackIcon = (feedback: ChatOut['messages'][number]['feedback']) => {
   if (feedback.isSeen)
-    return { icon: 'ri-check-line-all', color: 'success' }
+    return { icon: 'ri-check-double-line', color: 'success' }
   else if (feedback.isDelivered)
-    return { icon: 'ri-check-line-all', color: undefined }
+    return { icon: 'ri-check-double-line', color: undefined }
   else
     return { icon: 'ri-check-line', color: undefined }
 }
@@ -86,7 +86,7 @@ const msgGroups = computed(() => {
         class="chat-avatar"
         :class="msgGrp.senderId !== contact.id ? 'ms-4' : 'me-4'"
       >
-        <VAvatar size="38">
+        <VAvatar size="32">
           <VImg :src="msgGrp.senderId === contact.id ? contact.avatar : store.profileUser?.avatar" />
         </VAvatar>
       </div>
@@ -97,7 +97,7 @@ const msgGroups = computed(() => {
         <p
           v-for="(msgData, msgIndex) in msgGrp.messages"
           :key="msgData.time"
-          class="chat-content text-sm py-3 px-4 elevation-1"
+          class="chat-content text-body-1 py-2 px-4 elevation-2"
           :class="[
             msgGrp.senderId === contact.id ? 'bg-surface chat-left' : 'bg-primary text-white chat-right',
             msgGrp.messages.length - 1 !== msgIndex ? 'mb-2' : 'mb-1',
@@ -105,8 +105,10 @@ const msgGroups = computed(() => {
         >
           {{ msgData.message }}
         </p>
-        <div :class="{ 'text-right': msgGrp.senderId !== contact.id }">
-          <span class="text-xs me-1 text-disabled">{{ formatDate(msgGrp.messages[msgGrp.messages.length - 1].time, { hour: 'numeric', minute: 'numeric' }) }}</span>
+        <div
+          :class="{ 'text-right': msgGrp.senderId !== contact.id }"
+          class="d-flex align-center gap-2"
+        >
           <VIcon
             v-if="msgGrp.senderId !== contact.id"
             size="16"
@@ -114,6 +116,9 @@ const msgGroups = computed(() => {
           >
             {{ resolveFeedbackIcon(msgGrp.messages[msgGrp.messages.length - 1].feedback).icon }}
           </VIcon>
+          <p class="text-sm text-disabled mb-0">
+            {{ formatDate(msgGrp.messages[msgGrp.messages.length - 1].time, { hour: 'numeric', minute: 'numeric' }) }}
+          </p>
         </div>
       </div>
     </div>
@@ -125,6 +130,10 @@ const msgGroups = computed(() => {
   .chat-content {
     border-end-end-radius: 6px;
     border-end-start-radius: 6px;
+
+    &.bg-surface{
+      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
+    }
 
     &.chat-left {
       border-start-end-radius: 6px;

@@ -27,7 +27,7 @@ const store = useChatStore()
   <!-- 👉 Chat list header -->
   <div
     v-if="store.profileUser"
-    class="chat-list-header"
+    class="chat-list-header gap-4"
   >
     <VBadge
       dot
@@ -38,7 +38,6 @@ const store = useChatStore()
       bordered
     >
       <VAvatar
-        size="38"
         class="cursor-pointer"
         @click="$emit('showUserProfile')"
       >
@@ -53,7 +52,8 @@ const store = useChatStore()
       v-model="search"
       placeholder="Search..."
       prepend-inner-icon="ri-search-line"
-      class="ms-4 me-1 chat-list-search"
+      density="compact"
+      class="chat-list-search"
     />
 
     <IconBtn
@@ -70,11 +70,11 @@ const store = useChatStore()
 
   <PerfectScrollbar
     tag="ul"
-    class="chat-contacts-list px-3"
+    class="chat-contacts-list px-3 d-flex flex-column gap-1"
     :options="{ wheelPropagation: false }"
   >
     <li class="list-none">
-      <span class="chat-contact-header d-block text-primary text-xl font-weight-medium">Chats</span>
+      <span class="chat-contact-header d-block text-primary text-lg font-weight-medium">Chats</span>
     </li>
     <ChatContact
       v-for="contact in store.chatsContacts"
@@ -110,10 +110,10 @@ const store = useChatStore()
   padding-block-end: 0.75rem;
 
   .chat-contact-header {
-    margin-block: 1.25rem 1rem;
+    margin-block: 1rem 4px;
+    margin-inline: 1rem;
   }
 
-  .chat-contact-header,
   .no-chat-items-text {
     margin-inline: var(--chat-content-spacing-x);
   }

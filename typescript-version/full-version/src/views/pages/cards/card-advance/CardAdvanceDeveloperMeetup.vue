@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import cardMeetup from '@images/cards/card-meetup.png'
+import cardMeetup from '@images/cards/meetup-img.png'
 
 const developerMeetup = [
-  { icon: 'mdi-clock-outline', title: 'Tuesday, 24 january, 10:20 - 12:30', subtitle: 'After 1 week' },
-  { icon: 'mdi-map-marker-outline', title: 'The Richard NYC', subtitle: '1305 Lexington Ave, New York' },
+  { icon: 'ri-time-line', title: 'Tuesday, 24 january, 10:20 - 12:30', subtitle: 'After 1 week' },
+  { icon: 'ri-map-pin-line', title: 'The Richard NYC', subtitle: '1305 Lexington Ave, New York' },
 ]
 </script>
 
@@ -17,109 +17,96 @@ const developerMeetup = [
 
     <VCardText>
       <div class="d-flex align-center pb-4">
-        <div class="me-3">
+        <div class="me-4">
           <VAvatar
             rounded
-            size="56"
+            size="58"
             color="primary"
             variant="tonal"
           >
             <div class="py-2">
-              <p class="text-sm mb-1">
+              <div class="text-body-1 text-primary mb-1">
                 Jan
-              </p>
-              <p class="text-xl font-weight-medium mb-0">
+              </div>
+              <h5 class="text-h5 text-primary">
                 24
-              </p>
+              </h5>
             </div>
           </VAvatar>
         </div>
 
         <div>
-          <h6 class="text-base font-weight-medium mb-1">
+          <h6 class="text-h6 mb-1">
             Developer Meetup
           </h6>
-          <span class="text-xs text-two-line-ellipsis">The WordPress open source,free software project is the community behind the…</span>
+          <div class="text-body-2">
+            The WordPress open source,free software project is the community behind the…
+          </div>
         </div>
       </div>
 
-      <VRow class="border-t border-b ma-0">
-        <VCol
-          cols="3"
-          class="text-center"
-        >
-          <div class="mb-1">
-            <VIcon
-              size="24"
-              icon="mdi-star-outline"
-            />
-          </div>
+      <VDivider />
 
-          <span class="text-xs text-no-wrap">
+      <div class="d-flex justify-space-between align-center my-4">
+        <div class="text-center">
+          <VIcon
+            size="24"
+            icon="ri-star-smile-line"
+          />
+          <div class="text-body-1">
             Interested
-          </span>
-        </VCol>
-        <VCol
-          cols="3"
-          class="text-center"
-        >
-          <div class="mb-1">
-            <VIcon
-              size="24"
-              icon="mdi-check-circle-outline"
-            />
           </div>
+        </div>
 
-          <span class="text-xs text-no-wrap">
+        <div class="text-center">
+          <VIcon
+            size="24"
+            icon="ri-check-double-line"
+          />
+          <div class="text-body-1">
             Joined
-          </span>
-        </VCol>
-        <VCol
-          cols="3"
-          class="text-center text-primary"
-        >
-          <div class="mb-1">
-            <VIcon
-              size="24"
-              icon="mdi-account-outline"
-            />
           </div>
+        </div>
 
-          <span class="text-xs text-no-wrap">
+        <div class="text-center">
+          <VIcon
+            size="24"
+            icon="ri-group-line"
+            color="primary"
+          />
+          <div class="text-body-1 text-primary">
             Invited
-          </span>
-        </VCol>
-        <VCol
-          cols="3"
-          class="text-center"
-        >
+          </div>
+        </div>
+
+        <div class="text-center">
           <div class="mb-1">
             <VIcon
               size="24"
-              icon="mdi-dots-horizontal"
+              icon="ri-more-line"
             />
           </div>
-
           <span class="text-xs text-no-wrap">
             More
           </span>
-        </VCol>
-      </VRow>
+        </div>
+      </div>
+
+      <VDivider class="mb-4" />
 
       <div
-        v-for="meetup in developerMeetup"
+        v-for="(meetup, index) in developerMeetup"
         :key="meetup.icon"
-        class="d-flex align-start pt-3"
+        class="d-flex align-start gap-x-2"
+        :class="index !== developerMeetup.length - 1 ? 'mb-2' : ''"
       >
         <VIcon
           :icon="meetup.icon"
-          class="me-2"
+          size="20"
         />
         <div>
-          <p class="mb-1">
-            {{ meetup.title }}
-          </p>
-          <span>{{ meetup.subtitle }}</span>
+          <div>{{ meetup.title }}</div>
+          <div>{{ meetup.subtitle }}</div>
         </div>
       </div>
     </VCardText>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar2 from '@images/avatars/avatar-2.png'
-import avatar3 from '@images/avatars/avatar-3.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 </script>
 
 <template>
@@ -12,111 +12,98 @@ import avatar3 from '@images/avatars/avatar-3.png'
 
       <template #append>
         <VAvatar
-          size="48"
+          size="44"
           color="primary"
           variant="tonal"
         >
           <VIcon
             size="28"
-            icon="mdi-help-circle-outline"
+            icon="ri-question-line"
           />
         </VAvatar>
       </template>
     </VCardItem>
 
-    <VCardText class="pt-3">
-      <VRow class="gap-y-1">
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <p class="mb-1">
-            Annual Companies Taxes
-          </p>
-          <h6 class="text-h6">
-            $1450.35
-          </h6>
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <p class="mb-1">
-            Next Tax Review Date
-          </p>
-          <h6 class="text-h6">
-            July 14, 2021
-          </h6>
-        </VCol>
-
-        <VCol
-          cols="12"
-          sm="6"
-        >
-          <p class="mb-1">
-            Average Product Price
-          </p>
-          <h6 class="text-h6">
-            $85.50
-          </h6>
-        </VCol>
-
-        <VCol>
-          <p>Satisfaction Rate</p>
-          <div
-            class="d-flex align-center gap-5"
-            style="width: 130px;"
-          >
-            <div class="flex-grow-1">
-              <VProgressLinear
-                color="primary"
-                :model-value="75"
-                :height="6"
-              />
+    <VCardText>
+      <div class="d-flex flex-column gap-y-6">
+        <div class="d-flex flex-wrap gap-y-4">
+          <div style="min-inline-size: 210px;">
+            <div class="mb-1">
+              Annual Companies Taxes
             </div>
-            <span>75%</span>
+            <h5 class="text-h5">
+              $1450.35
+            </h5>
           </div>
-        </VCol>
+          <div>
+            <div class="mb-1">
+              Next Tax Review Date
+            </div>
+            <h5 class="text-h5">
+              July 14, 2021
+            </h5>
+          </div>
+        </div>
 
-        <VCol
-          cols="12"
-          sm="6"
-        >
+        <div class="d-flex flex-wrap gap-y-4">
+          <div style="min-inline-size: 210px;">
+            <div class="mb-1">
+              Average Product Price
+            </div>
+            <h5 class="text-h5">
+              $85.50
+            </h5>
+          </div>
+
+          <div>
+            <div class="mb-1">
+              Satisfaction Rate
+            </div>
+            <div
+              class="d-flex align-center gap-5"
+              style="inline-size: 130px;"
+            >
+              <div class="flex-grow-1">
+                <VProgressLinear
+                  color="primary"
+                  rounded
+                  :model-value="75"
+                  :height="6"
+                />
+              </div>
+              <span>75%</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-space-between align-center">
           <div class="v-avatar-group">
             <VAvatar
               :size="40"
-              :image="avatar1"
+              :image="avatar7"
             />
             <VAvatar
               :size="40"
-              :image="avatar2"
+              :image="avatar8"
             />
             <VAvatar
               :size="40"
-              :image="avatar3"
+              :image="avatar6"
             />
             <VAvatar
-              color="grey-200"
+              :color="$vuetify.theme.current.dark ? '#3A3B59' : '#F0EFF0'"
               :size="40"
             >
-              <span class="text-secondary"> +3</span>
+              +3
             </VAvatar>
           </div>
-        </VCol>
-
-        <VCol>
           <VChip
             color="primary"
-            density="compact"
-            class="mt-2"
+            size="small"
           >
-            <span class="text-xs">
-              5 days Ago
-            </span>
+            5 days Ago
           </VChip>
-        </VCol>
-      </VRow>
+        </div>
+      </div>
     </VCardText>
   </VCard>
 </template>

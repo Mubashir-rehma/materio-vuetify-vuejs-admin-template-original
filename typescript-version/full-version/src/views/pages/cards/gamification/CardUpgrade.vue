@@ -1,30 +1,22 @@
 <script setup lang="ts">
 import poseM9 from '@images/cards/pose-m-9.png'
-import triangleDark from '@images/misc/triangle-dark.png'
-import triangleLight from '@images/misc/triangle-light.png'
-
-const triangleBg = useGenerateImageVariant(triangleLight, triangleDark)
 </script>
 
 <template>
-  <VCard
-    title="Upgrade Account 👩🏻‍💻"
-    subtitle="Add 15 team members"
-    class="position-relative"
-  >
+  <VCard class="position-relative">
+    <VCardItem>
+      <VCardTitle>Upgrade Account <span class="text-high-emphasis">😀</span></VCardTitle>
+      <VCardSubtitle>Add 15 team members</VCardSubtitle>
+    </VCardItem>
     <VCardText>
-      <h5 class="text-2xl font-weight-medium text-primary">
+      <h4 class="text-h4 text-primary">
         $199
-      </h5>
-      <p>40% OFF 🤩</p>
+      </h4>
+      <div class="text-body-1 mb-3">
+        40% OFF <span class="text-high-emphasis">😍</span>
+      </div>
       <VBtn>Upgrade Plan</VBtn>
     </VCardText>
-
-    <!-- Triangle Background -->
-    <VImg
-      :src="triangleBg"
-      class="triangle-bg flip-in-rtl"
-    />
 
     <!-- Trophy -->
     <VImg

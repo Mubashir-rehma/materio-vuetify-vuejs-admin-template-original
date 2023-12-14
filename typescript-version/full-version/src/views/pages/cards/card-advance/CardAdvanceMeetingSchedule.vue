@@ -107,25 +107,23 @@ const meetingTypeUiColors: UiColors = {
           <VListItemTitle class="font-weight-medium mb-1">
             {{ meeting.with }}
           </VListItemTitle>
-          <VListItemSubtitle class="text-no-wrap">
+          <VListItemSubtitle class="me-2">
             <VIcon
-              start
               size="16"
-              icon="mdi-calendar-blank"
+              start
+              icon="ri-calendar-line"
             />
-            <span>{{ meeting.dateTime }}</span>
+            {{ meeting.dateTime }}
           </VListItemSubtitle>
 
           <!-- 👉 Business Types -->
           <template #append>
             <VListItemAction>
               <VChip
-                density="compact"
+                size="small"
                 :color="meetingTypeUiColors[meeting.type]"
               >
-                <span class="text-xs">
-                  {{ meeting.type }}
-                </span>
+                {{ meeting.type }}
               </VChip>
             </VListItemAction>
           </template>
@@ -138,6 +136,6 @@ const meetingTypeUiColors: UiColors = {
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 1.875rem;
+  --v-card-list-gap: 1.5rem;
 }
 </style>

@@ -9,6 +9,7 @@ overrides:
   '@tiptap/core': ^2
   '@types/video.js': ^7
   pug: ^3
+  apexcharts: ^3
   stylelint-order: 6.0.3
 
 dependencies:
@@ -55,7 +56,7 @@ dependencies:
     specifier: ^10.5.0
     version: 10.7.0(vue@3.3.11)
   apexcharts:
-    specifier: 3.37.0
+    specifier: ^3
     version: 3.37.0
   chart.js:
     specifier: ^4.4.0
@@ -8359,7 +8360,7 @@ packages:
   /vue3-apexcharts@1.4.4(apexcharts@3.37.0)(vue@3.3.11):
     resolution: {integrity: sha512-TH89uZrxGjaDvkaYAISvj8+k6Bf1rUKFillc8oJirs5XZEPiwM1ELKZQ786wz0rfPqkSHHny2lqqUCK7Rw+LcQ==}
     peerDependencies:
-      apexcharts: '> 3.0.0'
+      apexcharts: ^3
       vue: '> 3.0.0'
     dependencies:
       apexcharts: 3.37.0

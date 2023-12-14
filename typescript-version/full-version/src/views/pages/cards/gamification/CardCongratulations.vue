@@ -3,7 +3,7 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
 </script>
 
 <template>
-  <VCard class="pa-2 overflow-visible">
+  <VCard class="overflow-visible">
     <VRow no-gutters>
       <VCol
         cols="12"
@@ -12,15 +12,18 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
         order-sm="1"
       >
         <VCardItem>
-          <VCardTitle class="text-md-h5">
-            <span class="me-1">Congratulations</span><strong class="me-1">John!</strong><span>🎉</span>
+          <VCardTitle>
+            <h4 class="text-h4 text-wrap">
+              Congratulations <strong>John!</strong> <span class="text-high-emphasis">🎉</span>
+            </h4>
           </VCardTitle>
         </VCardItem>
 
-        <VCardText class="mt-3">
-          You have done 72% 🤩 more sales today.
-          <br>
-          Check your new raising badge in your profile.
+        <VCardText class="pt-4">
+          <div class="mb-0 text-body-1 me-2">
+            You have done 72% <span class="text-high-emphasis">😎</span> more sales today.
+            Check your new raising badge in your profile.
+          </div>
         </VCardText>
       </VCol>
 

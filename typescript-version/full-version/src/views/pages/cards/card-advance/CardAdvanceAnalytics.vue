@@ -1,34 +1,33 @@
 <script setup lang="ts">
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import chartDark from '@images/cards/chart-dark.png'
-import chartLight from '@images/cards/chart-light.png'
-import heartDark from '@images/cards/heart-dark.png'
-import heartLight from '@images/cards/heart-light.png'
-import messageDark from '@images/cards/message-dark.png'
-import messageLight from '@images/cards/message-light.png'
-import userDark from '@images/cards/user-dark.png'
-import userLight from '@images/cards/user-light.png'
+import message from '@images/cards/comment-alt-lines.svg'
+import chart from '@images/cards/graph-bar.svg'
+import heart from '@images/cards/heart-medical.svg'
+import user from '@images/cards/user.svg'
 
 const analytics = [
   {
     title: '42.8k',
     subtitle: 'Number of like',
-    img: useGenerateImageVariant(heartLight, heartDark),
+    img: heart,
+    color: 'primary',
   },
   {
     title: '21.2k',
     subtitle: 'Number of Followers',
-    img: useGenerateImageVariant(chartLight, chartDark),
+    img: chart,
+    color: 'warning',
   },
   {
     title: '2.4k',
     subtitle: 'Number of Comments',
-    img: useGenerateImageVariant(messageLight, messageDark),
+    img: message,
+    color: 'info',
   },
   {
     title: '389.50k',
     subtitle: 'Number of Visits',
-    img: useGenerateImageVariant(userLight, userDark),
+    img: user,
+    color: 'success',
   },
 ]
 </script>
@@ -54,16 +53,25 @@ const analytics = [
           :key="item.title"
         >
           <template #prepend>
-            <VAvatar :image="item.img.value" />
+            <VAvatar
+              size="40"
+              :color="item.color"
+              variant="tonal"
+            >
+              <component :is="item.img" />
+            </VAvatar>
           </template>
 
           <VListItemTitle>
-            <span class="text-h6">
+            <h5 class="text-h5">
               {{ item.title }}
-            </span>
+            </h5>
           </VListItemTitle>
-          <VListItemSubtitle class="text-xs">
-            {{ item.subtitle }}
+
+          <VListItemSubtitle>
+            <div class="text-body-1">
+              {{ item.subtitle }}
+            </div>
           </VListItemSubtitle>
         </VListItem>
       </VList>

@@ -34,12 +34,12 @@ const savedCards = [
     <!-- !SECTION -->
 
     <VCardText>
-      <p class="text-xs">
+      <p class="text-body-2">
         Please make the payment to start enjoying all the features of our premium plan as soon as possible.
       </p>
 
       <!-- SECTION Upgrade plan banner -->
-      <div class="plan-upgrade-banner pa-3 d-flex bg-light-primary rounded align-center">
+      <div class="plan-upgrade-banner pa-4 d-flex rounded align-center">
         <VAvatar
           rounded
           size="40"
@@ -48,25 +48,26 @@ const savedCards = [
           <VImg
             :src="briefcase"
             alt="briefcase"
-            width="23"
             height="20"
           />
         </VAvatar>
 
         <div class="d-flex flex-column">
-          <h6 class="text-sm font-weight-medium mb-1">
+          <h6 class="text-h6">
             Platinum
           </h6>
-          <span class="text-primary text-xs">Upgrade Plan</span>
+          <span class="text-primary text-body-2">Upgrade Plan</span>
         </div>
         <VSpacer />
         <div class="d-flex align-center">
           <sup>
-            <h6 class="text-xs font-weight-regular">$</h6>
+            <div class="text-body-2 text-high-emphasis">$</div>
           </sup>
-          <span class="text-h5">5250</span>
+          <h4 class="text-h4">
+            5250
+          </h4>
           <sub>
-            <h6 class="text-sm font-weight-regular">/Year</h6>
+            <div class="text-body-2 text-high-emphasis">/Year</div>
           </sub>
         </div>
       </div>
@@ -74,24 +75,23 @@ const savedCards = [
 
       <!-- SECTION Payment Details -->
       <VList class="card-list mt-1">
-        <VListSubheader class="text-high-emphasis font-weight-medium">
+        <h6 class="text-h6 my-2">
           Payment details
-        </VListSubheader>
+        </h6>
 
         <VListItem
           v-for="card in savedCards"
           :key="card.logo"
-          class="mb-3"
+          class="mb-2"
         >
           <!-- 👉 Avatar -->
           <template #prepend>
-            <VAvatar
-              rounded
-              start
-              :size="45"
+            <img
+              :src="card.logo"
+              height="30"
+              width="42"
+              class="me-3"
             >
-              <VImg :src="card.logo" />
-            </VAvatar>
           </template>
 
           <!-- 👉 Title and Subtitle -->
@@ -99,7 +99,7 @@ const savedCards = [
           <VListItemTitle class="font-weight-medium mb-1">
             {{ card.type }}
           </VListItemTitle>
-          <VListItemSubtitle class="me-1">
+          <VListItemSubtitle class="me-2">
             {{ card.number }}
           </VListItemSubtitle>
 
@@ -109,18 +109,15 @@ const savedCards = [
               <VTextField
                 density="compact"
                 label="CVV"
-                style="width: 5rem;"
+                style="inline-size: 5rem;"
               />
             </VListItemAction>
           </template>
         </VListItem>
 
         <!-- 👉 Add Payment  -->
-        <VListItem class="mb-3">
-          <a
-            href="javascript:void(0)"
-            class="text-xs"
-          >Add Payment Method</a>
+        <VListItem class="mb-3 text-body-1">
+          <a href="javascript:void(0)">Add Payment Method</a>
         </VListItem>
       </VList>
       <!-- !SECTION -->
@@ -134,11 +131,8 @@ const savedCards = [
               density="compact"
               class="mb-3"
             />
-            <VBtn
-              block
-              append-icon="mdi-arrow-right"
-            >
-              Process To Payment
+            <VBtn block>
+              Contact Now
             </VBtn>
           </VCol>
         </VRow>
@@ -152,6 +146,8 @@ const savedCards = [
   .plan-details {
     border: 1px solid rgb(var(--v-theme-primary));
   }
+
+  background-color: rgba(var(--v-theme-primary), 0.16);
 }
 
 .card-list {

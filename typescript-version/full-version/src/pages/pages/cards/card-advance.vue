@@ -12,6 +12,13 @@ import CardAdvanceTotalEarning from '@/views/pages/cards/card-advance/CardAdvanc
 import CardAdvanceTransactions from '@/views/pages/cards/card-advance/CardAdvanceTransactions.vue'
 import CardAdvanceUpgradeYourPlan from '@/views/pages/cards/card-advance/CardAdvanceUpgradeYourPlan.vue'
 import CardAdvanceWebsiteStatistics from '@/views/pages/cards/card-advance/CardAdvanceWebsiteStatistics.vue'
+
+import CardAdvancedAssignmentProgress from '@/views/pages/cards/card-advance/CardAdvancedAssignmentProgress.vue'
+import CardAdvancedDeliveryPerformance from '@/views/pages/cards/card-advance/CardAdvancedDeliveryPerformance.vue'
+import CardAdvancedOrderByCountries from '@/views/pages/cards/card-advance/CardAdvancedOrderByCountries.vue'
+import CardAdvancedPopularInstructors from '@/views/pages/cards/card-advance/CardAdvancedPopularInstructors.vue'
+import CardAdvancedTopCourses from '@/views/pages/cards/card-advance/CardAdvancedTopCourses.vue'
+import CardAdvancedUpcomingWebinar from '@/views/pages/cards/card-advance/CardAdvancedUpcomingWebinar.vue'
 </script>
 
 <template>
@@ -38,6 +45,54 @@ import CardAdvanceWebsiteStatistics from '@/views/pages/cards/card-advance/CardA
       lg="4"
     >
       <CardAdvanceMeetingSchedule />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+      lg="4"
+    >
+      <CardAdvancedTopCourses />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+      lg="4"
+    >
+      <CardAdvancedUpcomingWebinar />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+      lg="4"
+    >
+      <CardAdvancedAssignmentProgress />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+      lg="4"
+    >
+      <CardAdvancedPopularInstructors />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+      lg="4"
+    >
+      <CardAdvancedOrderByCountries />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="6"
+      lg="4"
+    >
+      <CardAdvancedDeliveryPerformance />
     </VCol>
 
     <VCol

@@ -72,31 +72,19 @@ const teamMembers = [
     <!-- !SECTION -->
 
     <!-- TODO try to remove table border -->
-    <VTable class="text-no-wrap">
+    <VTable class="text-no-wrap team-members-table">
       <thead>
         <tr>
-          <th
-            scope="col"
-            class="text-uppercase"
-          >
+          <th scope="col">
             Name
           </th>
-          <th
-            scope="col"
-            class="text-uppercase"
-          >
+          <th scope="col">
             Project
           </th>
-          <th
-            scope="col"
-            class="text-uppercase"
-          >
+          <th scope="col">
             Tasks
           </th>
-          <th
-            scope="col"
-            class="text-uppercase text-center"
-          >
+          <th scope="col">
             Progress
           </th>
         </tr>
@@ -107,8 +95,8 @@ const teamMembers = [
           v-for="member in teamMembers"
           :key="member.name"
         >
-          <td class="table-spacing border-0">
-            <div class="d-flex">
+          <td>
+            <div class="d-flex align-center">
               <div class="me-3">
                 <VAvatar
                   size="38"
@@ -116,32 +104,38 @@ const teamMembers = [
                 />
               </div>
               <div>
-                <p class="text-sm font-weight-medium mb-0 text-high-emphasis">
+                <h6 class="text-h6">
                   {{ member.name }}
-                </p>
-                <span class="text-xs text-medium-emphasis">{{ member.designation }}</span>
+                </h6>
+                <div class="text-body-1">
+                  {{ member.designation }}
+                </div>
               </div>
             </div>
           </td>
 
-          <td class="table-spacing border-0">
+          <td>
             <VChip
               :color="member.projectIndication"
-              density="compact"
+              size="small"
             >
-              <span class="text-xs">
-                {{ member.project }}
-              </span>
+              {{ member.project }}
             </VChip>
           </td>
 
-          <td class="table-spacing border-0 font-weight-medium">
-            <span class="text-primary">{{ member.task.split('/')[0] }}</span>
-            <span>/</span>
-            <span>{{ member.task.split('/')[1] }}</span>
+          <td>
+            <div class="d-flex font-weight-medium">
+              <div class="text-primary">
+                {{ member.task.split('/')[0] }}
+              </div>
+              <div>/</div>
+              <h6 class="text-h6">
+                {{ member.task.split('/')[1] }}
+              </h6>
+            </div>
           </td>
 
-          <td class="table-spacing text-center border-0">
+          <td class="text-center">
             <VProgressCircular
               :color="member.projectIndication"
               :model-value="member.progress"
@@ -154,8 +148,67 @@ const teamMembers = [
 </template>
 
 <style lang="scss">
-.table-spacing {
-  padding-block-end: 0.65rem !important;
-  padding-block-start: 0.65rem !important;
+.team-members-table {
+  &.v-table{
+    --v-table-header-height: 2rem;
+
+    .v-table__wrapper{
+      table{
+        thead{
+          tr{
+            th{
+              background: none !important;
+              border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+              margin-block-end: 0.75rem !important;
+
+              &:first-child{
+                padding-inline-start: 1.25rem;
+              }
+
+              &:last-child{
+                padding-inline-end: 1.25rem;
+              }
+            }
+          }
+        }
+
+        tbody{
+          tr{
+            td{
+              padding-block: 0.5rem;
+              padding-inline: 1rem;
+
+              &:first-child{
+                padding-inline-start: 1.25rem;
+              }
+
+              &:last-child{
+                padding-inline-end: 1.25rem;
+              }
+            }
+
+            &:not(:last-child){
+              td{
+                border-block-end: none ;
+              }
+            }
+
+            &:last-child{
+              td{
+                padding-block-end: 1.25rem;
+              }
+            }
+
+            &:first-child{
+              td{
+                padding-block-start: 1.25rem;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
 }
 </style>

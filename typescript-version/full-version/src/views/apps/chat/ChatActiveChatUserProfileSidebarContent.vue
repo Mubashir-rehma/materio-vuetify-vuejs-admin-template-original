@@ -35,10 +35,10 @@ const { resolveAvatarBadgeVariant } = useChat()
         offset-y="4"
         bordered
         :color="resolveAvatarBadgeVariant(store.activeChat.contact.status)"
-        class="chat-user-profile-badge mb-5"
+        class="chat-user-profile-badge mb-4"
       >
         <VAvatar
-          size="80"
+          size="84"
           :variant="!store.activeChat.contact.avatar ? 'tonal' : undefined"
           :color="!store.activeChat.contact.avatar ? resolveAvatarBadgeVariant(store.activeChat.contact.status) : undefined"
         >
@@ -52,10 +52,10 @@ const { resolveAvatarBadgeVariant } = useChat()
           >{{ avatarText(store.activeChat.contact.fullName) }}</span>
         </VAvatar>
       </VBadge>
-      <h2 class="mb-1 font-weight-medium text-high-emphasis text-base">
+      <h5 class="text-h5">
         {{ store.activeChat.contact.fullName }}
-      </h2>
-      <p class="text-capitalize text-sm text-medium-emphasis">
+      </h5>
+      <p class="text-body-1 mb-0">
         {{ store.activeChat.contact.role }}
       </p>
     </div>
@@ -66,82 +66,121 @@ const { resolveAvatarBadgeVariant } = useChat()
       :options="{ wheelPropagation: false }"
     >
       <!-- About -->
-      <div class="my-8">
-        <span
+      <div class="my-6">
+        <p
           for="textarea-user-about"
-          class="text-sm text-disabled"
-        >ABOUT</span>
-        <p class="mt-2">
+          class="text-base text-disabled mb-1"
+        >
+          ABOUT
+        </p>
+        <p class="mb-0">
           {{ store.activeChat.contact.about }}
         </p>
       </div>
 
       <!-- Personal Information -->
-      <div class="mb-8">
-        <span class="d-block text-sm text-disabled mb-3">PERSONAL INFORMATION</span>
-        <div class="d-flex align-center">
+      <div class="mb-6">
+        <p class="text-base text-disabled mb-1">
+          PERSONAL INFORMATION
+        </p>
+
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
+            size="22"
             icon="ri-mail-line"
           />
-          <span>lucifer@email.com</span>
+          <h6 class="text-h6 font-weight-regular">
+            lucifer@email.com
+          </h6>
         </div>
-        <div class="d-flex align-center my-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
-            icon="ri-phone-line-outline"
+            size="22"
+            icon="ri-phone-line"
           />
-          <span>+1(123) 456 - 7890</span>
+          <h6 class="text-h6 font-weight-regular">
+            +1(123) 456 - 7890
+          </h6>
         </div>
-        <div class="d-flex align-center">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
+            size="22"
             icon="ri-time-line"
           />
-          <span>Mon - Fri 10AM - 8PM</span>
+          <h6 class="text-h6 font-weight-regular">
+            Mon - Fri 10AM - 8PM
+          </h6>
         </div>
       </div>
 
       <!-- Options -->
       <div>
-        <span class="d-block text-sm text-disabled mb-3">OPTIONS</span>
-        <div class="d-flex align-center">
+        <p class="text-base text-disabled mb-1">
+          OPTIONS
+        </p>
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
+            size="22"
             icon="ri-bookmark-line"
           />
-          <span>Add Tag</span>
+          <h6 class="text-h6 font-weight-regular">
+            Add Tag
+          </h6>
         </div>
-        <div class="d-flex align-center my-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
+            size="22"
             icon="ri-star-line"
           />
-          <span>Important Contact</span>
+          <h6 class="text-h6 font-weight-regular">
+            Important Contact
+          </h6>
         </div>
-        <div class="d-flex align-center mb-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
+            size="22"
             icon="ri-file-image-line"
           />
-          <span>Shared Media</span>
+          <h6 class="text-h6 font-weight-regular">
+            Shared Media
+          </h6>
         </div>
-        <div class="d-flex align-center mb-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
-            class="me-2"
             icon="ri-delete-bin-line"
+            size="22"
+            class="me-2"
           />
-          <span>Delete Contact</span>
+          <h6 class="text-h6 font-weight-regular">
+            Delete Contact
+          </h6>
         </div>
-        <div class="d-flex align-center">
+        <div class="d-flex align-center pa-2">
           <VIcon
-            class="me-3 ms-1"
-            size="16"
+            size="22"
             icon="ri-forbid-line"
+            class="me-2"
           />
-          <span>Block Contact</span>
+          <h6 class="text-h6 font-weight-regular">
+            Block Contact
+          </h6>
         </div>
       </div>
+
+      <VBtn
+        block
+        color="error"
+        append-icon="ri-delete-bin-7-line"
+        class="mt-12"
+      >
+        Delete Contact
+      </VBtn>
     </PerfectScrollbar>
   </template>
 </template>

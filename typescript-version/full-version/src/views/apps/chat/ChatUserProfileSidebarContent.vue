@@ -17,6 +17,9 @@ const userStatusRadioOptions = [
   { title: 'Do not disturb', value: 'busy', color: 'error' },
   { title: 'Offline', value: 'offline', color: 'secondary' },
 ]
+
+const isTwoStepVerified = ref(true)
+const isNotificationEnabled = ref(false)
 </script>
 
 <template>
@@ -39,7 +42,7 @@ const userStatusRadioOptions = [
         offset-y="4"
         bordered
         :color="resolveAvatarBadgeVariant(store.profileUser.status)"
-        class="chat-user-profile-badge mb-5"
+        class="chat-user-profile-badge mb-4"
       >
         <VAvatar
           size="84"
@@ -56,10 +59,10 @@ const userStatusRadioOptions = [
           >{{ avatarText(store.profileUser.fullName) }}</span>
         </VAvatar>
       </VBadge>
-      <h2 class="mb-1 text-high-emphasis font-weight-medium text-base">
+      <h5 class="text-h5">
         {{ store.profileUser.fullName }}
-      </h2>
-      <p class="text-capitalize text-medium-emphasis text-sm">
+      </h5>
+      <p class="text-body-1 text-capitalize mb-0">
         {{ store.profileUser.role }}
       </p>
     </div>
@@ -70,26 +73,28 @@ const userStatusRadioOptions = [
       :options="{ wheelPropagation: false }"
     >
       <!-- About -->
-      <div class="my-5 text-medium-emphasis">
-        <span
+      <div class="my-6 text-medium-emphasis">
+        <p
           for="textarea-user-about"
-          class="text-sm text-disabled"
-        >ABOUT</span>
+          class="text-base text-disabled mb-0"
+        >
+          ABOUT
+        </p>
         <VTextarea
           id="textarea-user-about"
           v-model="store.profileUser.about"
           auto-grow
           class="mt-1"
-          rows="4"
+          rows="3"
         />
       </div>
 
       <!-- Status -->
-      <div class="mb-5">
+      <div class="mb-6">
         <span class="text-sm text-disabled">STATUS</span>
         <VRadioGroup
           v-model="store.profileUser.status"
-          class="mt-1"
+          class="ms-2 mt-1"
         >
           <VRadio
             v-for="radioOption in userStatusRadioOptions"
@@ -104,40 +109,62 @@ const userStatusRadioOptions = [
       <!-- Settings -->
       <div class="text-medium-emphasis">
         <span class="text-sm text-disabled">SETTINGS</span>
-        <div class="d-flex align-center my-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
             icon="ri-checkbox-circle-line"
+            size="22"
           />
-          <span>Two-step Verification</span>
+          <h6 class="text-h6 font-weight-regular">
+            Two-step Verification
+          </h6>
+
+          <VSpacer />
+
+          <VSwitch v-model="isTwoStepVerified" />
         </div>
-        <div class="d-flex align-center mb-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
             icon="ri-notification-3-line"
+            size="22"
           />
-          <span>Notification</span>
+          <h6 class="text-h6 font-weight-regular">
+            Notification
+          </h6>
+
+          <VSpacer />
+
+          <VSwitch v-model="isNotificationEnabled" />
         </div>
-        <div class="d-flex align-center mb-3">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
             icon="ri-user-line"
+            size="22"
           />
-          <span>Invite Friends</span>
+          <h6 class="text-h6 font-weight-regular">
+            Invite Friends
+          </h6>
         </div>
-        <div class="d-flex align-center">
+        <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
             icon="ri-delete-bin-line"
+            size="22"
           />
-          <span>Delete Account</span>
+          <h6 class="text-h6 font-weight-regular">
+            Delete Account
+          </h6>
         </div>
       </div>
 
       <!-- Logout Button -->
       <VBtn
+        block
         color="primary"
         class="mt-11"
+        append-icon="ri-logout-box-r-line"
       >
         Logout
       </VBtn>

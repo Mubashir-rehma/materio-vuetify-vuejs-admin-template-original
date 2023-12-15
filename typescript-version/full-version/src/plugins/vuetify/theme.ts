@@ -39,11 +39,12 @@ export const themes: Record<string, ThemeDefinition> = {
       'grey-700': '#616161',
       'grey-800': '#424242',
       'grey-900': '#212121',
-      'perfect-scrollbar-thumb': '#F0F2F8',
+      'perfect-scrollbar-thumb': '#dbdade',
       'skin-bordered-background': '#fff',
       'skin-bordered-surface': '#fff',
       'expansion-panel-text-custom-bg': '#fafafa',
       'track-bg': '#F0F2F8',
+      'chat-bg': '#F7F6FA',
     },
 
     variables: {
@@ -109,11 +110,12 @@ export const themes: Record<string, ThemeDefinition> = {
       'grey-700': '#B6BEE3',
       'grey-800': '#CFD3EC',
       'grey-900': '#E7E9F6',
-      'perfect-scrollbar-thumb': '#474360',
+      'perfect-scrollbar-thumb': '#4a5072',
       'skin-bordered-background': '#312d4b',
       'skin-bordered-surface': '#312d4b',
       'expansion-panel-text-custom-bg': '#373350',
       'track-bg': '#474360',
+      'chat-bg': '#373452',
     },
 
     variables: {

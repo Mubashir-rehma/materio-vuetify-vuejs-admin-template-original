@@ -54,14 +54,16 @@ const isChatContactActive = computed(() => {
       </VAvatar>
     </VBadge>
     <div class="flex-grow-1 ms-4 overflow-hidden">
-      <span>{{ props.user.fullName }}</span>
-      <span class="d-block text-sm text-truncate text-disabled">{{ props.isChatContact && 'chat' in props.user ? props.user.chat.lastMessage.message : props.user.about }}</span>
+      <p class="text-base mb-0">
+        {{ props.user.fullName }}
+      </p>
+      <span class="d-block text-body-2 text-truncate">{{ props.isChatContact && 'chat' in props.user ? props.user.chat.lastMessage.message : props.user.about }}</span>
     </div>
     <div
       v-if="props.isChatContact && 'chat' in props.user"
       class="d-flex flex-column align-self-start"
     >
-      <span class="d-block text-disabled whitespace-no-wrap">{{ formatDateToMonthShort(props.user.chat.lastMessage.time) }}</span>
+      <span class="d-block text-sm text-disabled whitespace-no-wrap">{{ formatDateToMonthShort(props.user.chat.lastMessage.time) }}</span>
       <VBadge
         v-if="props.user.chat.unseenMsgs"
         color="error"
@@ -80,20 +82,21 @@ const isChatContactActive = computed(() => {
 
 .chat-contact {
   border-radius: vuetify.$border-radius-root;
-  padding-block: 10px;
+  padding-block: 8px;
   padding-inline: var(--chat-content-spacing-x);
 
   @include mixins.before-pseudo;
   @include vuetifyStates.states($active: false);
 
   &.chat-contact-active {
-    background: linear-gradient(270deg, rgb(var(--v-theme-primary)) 0%, #fff 300%);
+    @include mixins.elevation(2);
+
+    background: rgb(var(--v-theme-primary));
     color: #fff;
 
     --v-theme-on-background: #fff;
 
     .v-avatar {
-      border: 2px solid #fff;
       background: #fff;
     }
   }

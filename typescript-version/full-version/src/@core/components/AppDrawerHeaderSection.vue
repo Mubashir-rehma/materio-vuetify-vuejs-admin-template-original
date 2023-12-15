@@ -25,5 +25,4 @@ defineEmits<{
       <VIcon icon="ri-close-line" />
     </IconBtn>
   </div>
-  <VDivider />
 </template>

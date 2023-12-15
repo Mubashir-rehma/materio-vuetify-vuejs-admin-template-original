@@ -84,6 +84,8 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
       @cancel="closeNavigationDrawer"
     />
 
+    <VDivider />
+
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>

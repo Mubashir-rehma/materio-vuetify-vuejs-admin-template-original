@@ -365,7 +365,7 @@ const printInvoice = () => {
             <!-- 👉  Add Payment trigger button  -->
             <VBtn
               block
-              prepend-icon="ri-send-plane-line"
+              prepend-icon="ri-money-dollar-circle-line"
               color="success"
               @click="isAddPaymentSidebarVisible = true"
             >

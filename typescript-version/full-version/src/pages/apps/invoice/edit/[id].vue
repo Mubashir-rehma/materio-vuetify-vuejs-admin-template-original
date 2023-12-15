@@ -111,7 +111,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <VBtn
             block
             color="success"
-            prepend-icon="ri-send-plane-line"
+            prepend-icon="ri-money-dollar-circle-line"
             @click="isAddPaymentSidebarActive = true"
           >
             Add Payment

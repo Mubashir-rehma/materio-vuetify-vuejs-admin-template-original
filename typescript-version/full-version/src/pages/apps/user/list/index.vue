@@ -74,17 +74,17 @@ const resolveUserRoleVariant = (role: string) => {
   const roleLowerCase = role.toLowerCase()
 
   if (roleLowerCase === 'subscriber')
-    return { color: 'primary', icon: 'ri-user-line' }
+    return { color: 'success', icon: 'ri-user-line' }
   if (roleLowerCase === 'author')
-    return { color: 'warning', icon: 'ri-settings-2-line' }
+    return { color: 'error', icon: 'ri-computer-line' }
   if (roleLowerCase === 'maintainer')
-    return { color: 'success', icon: 'ri-donut-chart-line' }
+    return { color: 'info', icon: 'ri-pie-chart-line' }
   if (roleLowerCase === 'editor')
-    return { color: 'info', icon: 'ri-pencil-line' }
+    return { color: 'warning', icon: 'ri-edit-box-line' }
   if (roleLowerCase === 'admin')
-    return { color: 'error', icon: 'ri-macbook-line' }
+    return { color: 'primary', icon: 'ri-vip-crown-line' }
 
-  return { color: 'primary', icon: 'ri-user-line' }
+  return { color: 'success', icon: 'ri-user-line' }
 }
 
 const resolveUserStatusVariant = (stat: string) => {
@@ -151,23 +151,24 @@ const widgetData = ref([
               <VCardText>
                 <div class="d-flex justify-space-between">
                   <div class="d-flex flex-column gap-y-1">
-                    <span class="text-body-1 text-high-emphasis">{{ data.title }}</span>
-                    <div>
-                      <h5 class="text-h5">
-                        {{ data.value }}
-                        <span
-                          class="text-base "
-                          :class="data.change > 0 ? 'text-success' : 'text-error'"
-                        >({{ prefixWithPlus(data.change) }}%)</span>
-                      </h5>
-                    </div>
-                    <span class="text-sm">{{ data.desc }}</span>
+                    <span class="text-base text-high-emphasis">{{ data.title }}</span>
+                    <h4 class="text-h4">
+                      {{ data.value }}
+                      <span
+                        class="text-base "
+                        :class="data.change > 0 ? 'text-success' : 'text-error'"
+                      >({{ prefixWithPlus(data.change) }}%)</span>
+                    </h4>
+
+                    <p class="text-sm mb-0">
+                      {{ data.desc }}
+                    </p>
                   </div>
                   <VAvatar
                     :color="data.iconColor"
                     variant="tonal"
                     rounded
-                    size="38"
+                    size="42"
                   >
                     <VIcon
                       :icon="data.icon"
@@ -232,12 +233,13 @@ const widgetData = ref([
           </VCol>
         </VRow>
       </VCardText>
-    </VCard>
-    <VCard>
+
+      <VDivider />
+
       <VCardText class="d-flex flex-wrap gap-4">
         <!-- 👉 Export button -->
         <VBtn
-          variant="tonal"
+          variant="outlined"
           color="secondary"
           prepend-icon="ri-upload-2-line"
         >
@@ -249,15 +251,15 @@ const widgetData = ref([
           <VTextField
             v-model="searchQuery"
             placeholder="Search User"
-            class="me-3"
+            density="compact"
+            class="me-4"
           />
           <!-- 👉 Add user button -->
           <VBtn @click="isAddNewUserDrawerVisible = true">
-            Add User
+            Add New User
           </VBtn>
         </div>
       </VCardText>
-      <VDivider />
 
       <!-- SECTION datatable -->
       <VDataTableServer
@@ -268,7 +270,7 @@ const widgetData = ref([
         :items-length="totalUsers"
         :headers="headers"
         show-select
-        class="text-no-wrap"
+        class="text-no-wrap rounded-0"
         @update:options="updateOptions"
       >
         <!-- User -->
@@ -286,8 +288,9 @@ const widgetData = ref([
               />
               <span v-else>{{ avatarText(item.fullName) }}</span>
             </VAvatar>
+
             <div class="d-flex flex-column">
-              <h6 class="text-sm">
+              <h6 class="text-h6">
                 <RouterLink
                   :to="{ name: 'apps-user-view-id', params: { id: item.id } }"
                   class="font-weight-medium user-list-name"
@@ -295,7 +298,7 @@ const widgetData = ref([
                   {{ item.fullName }}
                 </RouterLink>
               </h6>
-              <span class="text-xs text-medium-emphasis">@{{ item.username }}</span>
+              <span class="text-sm text-medium-emphasis">@{{ item.username }}</span>
             </div>
           </div>
         </template>
@@ -306,12 +309,12 @@ const widgetData = ref([
               :icon="resolveUserRoleVariant(item.role).icon"
               :color="resolveUserRoleVariant(item.role).color"
             />
-            <span class="text-capitalize">{{ item.role }}</span>
+            <span class="text-capitalize text-high-emphasis">{{ item.role }}</span>
           </div>
         </template>
         <!-- Plan -->
         <template #item.plan="{ item }">
-          <span class="text-capitalize">{{ item.currentPlan }}</span>
+          <span class="text-capitalize text-high-emphasis">{{ item.currentPlan }}</span>
         </template>
         <!-- Status -->
         <template #item.status="{ item }">
@@ -323,41 +326,83 @@ const widgetData = ref([
             {{ item.status }}
           </VChip>
         </template>
+
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <VBtn
-            icon
-            variant="text"
-            size="small"
-            color="medium-emphasis"
-          >
+          <IconBtn @click="deleteUser(item.id)">
+            <VIcon icon="ri-delete-bin-7-line" />
+          </IconBtn>
+
+          <IconBtn :to="{ name: 'apps-user-view-id', params: { id: item.id } }">
+            <VIcon icon="ri-eye-line" />
+          </IconBtn>
+
+          <IconBtn color="medium-emphasis">
             <VIcon
               size="24"
               icon="ri-more-2-line"
             />
+
             <VMenu activator="parent">
               <VList>
-                <VListItem :to="{ name: 'apps-user-view-id', params: { id: item.id } }">
+                <VListItem>
                   <template #prepend>
-                    <VIcon icon="ri-eye-line" />
+                    <VIcon icon="ri-download-line" />
                   </template>
-                  <VListItemTitle>View</VListItemTitle>
+                  <VListItemTitle>Download</VListItemTitle>
                 </VListItem>
                 <VListItem link>
                   <template #prepend>
-                    <VIcon icon="ri-pencil-line" />
+                    <VIcon icon="ri-edit-box-line" />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
-                <VListItem @click="deleteUser(item.id)">
-                  <template #prepend>
-                    <VIcon icon="ri-delete-bin-line" />
-                  </template>
-                  <VListItemTitle>Delete</VListItemTitle>
-                </VListItem>
               </VList>
             </VMenu>
-          </VBtn>
+          </IconBtn>
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, totalUsers) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(totalUsers / itemsPerPage)"
+                @click="page >= Math.ceil(totalUsers / itemsPerPage) ? page = Math.ceil(totalUsers / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
       <!-- SECTION -->

@@ -193,14 +193,14 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
               <VCol cols="12">
                 <VBtn
                   type="submit"
-                  class="me-3"
+                  class="me-4"
                 >
                   Submit
                 </VBtn>
                 <VBtn
                   type="reset"
                   variant="outlined"
-                  color="secondary"
+                  color="error"
                   @click="closeNavigationDrawer"
                 >
                   Cancel

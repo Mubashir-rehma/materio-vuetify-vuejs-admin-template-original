@@ -79,39 +79,39 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
           <!-- 👉 Send Invoice Trigger button -->
           <VBtn
             block
-            prepend-icon="ri-send-plane-2-line"
-            class="mb-3"
+            prepend-icon="ri-send-plane-line"
+            class="mb-4"
             @click="isSendSidebarActive = true"
           >
             Send Invoice
           </VBtn>
 
-          <!-- 👉  Preview button -->
-          <VBtn
-            block
-            color="secondary"
-            variant="outlined"
-            class="mb-3"
-            :to="{ name: 'apps-invoice-preview-id', params: { id: route.params.id } }"
-          >
-            Preview
-          </VBtn>
+          <div class="d-flex flex-wrap gap-4">
+            <!-- 👉  Preview button -->
+            <VBtn
+              color="secondary"
+              variant="outlined"
+              class="flex-grow-1"
+              :to="{ name: 'apps-invoice-preview-id', params: { id: route.params.id } }"
+            >
+              Preview
+            </VBtn>
 
-          <!-- 👉 Save button -->
-          <VBtn
-            block
-            color="secondary"
-            variant="outlined"
-            class="mb-3"
-          >
-            Save
-          </VBtn>
+            <!-- 👉 Save button -->
+            <VBtn
+              color="secondary"
+              variant="outlined"
+              class="mb-4 flex-grow-1"
+            >
+              Save
+            </VBtn>
+          </div>
 
           <!-- 👉 Add Payment trigger button -->
           <VBtn
             block
             color="success"
-            prepend-icon="ri-money-dollar-circle-line"
+            prepend-icon="ri-send-plane-line"
             @click="isAddPaymentSidebarActive = true"
           >
             Add Payment
@@ -128,7 +128,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
       />
 
       <!-- 👉 Payment Terms -->
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between mb-2">
         <VLabel for="payment-terms">
           Payment Terms
         </VLabel>
@@ -141,7 +141,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
       </div>
 
       <!-- 👉 Client Notes -->
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between mb-2">
         <VLabel for="client-notes">
           Client Notes
         </VLabel>

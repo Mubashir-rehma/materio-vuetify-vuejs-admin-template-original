@@ -123,7 +123,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
 
                 <VBtn
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   @click="$emit('update:isDrawerOpen', false)"
                 >
                   Cancel

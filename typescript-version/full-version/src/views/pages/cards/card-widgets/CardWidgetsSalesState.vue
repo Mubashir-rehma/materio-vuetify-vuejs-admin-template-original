@@ -34,7 +34,7 @@ const options = controlledComputed(() => configStore.theme, () => {
         opacityTo: 0.7,
         opacityFrom: 0.5,
         shadeIntensity: 1,
-        stops: [0, 90, 100],
+        stops: [0, 100],
         colorStops: [
           [
             {
@@ -86,21 +86,24 @@ const options = controlledComputed(() => configStore.theme, () => {
   }
 })
 
-const series = [{ name: 'Traffic Rate', data: [300, 450, 350, 600, 500, 700] }]
+const series = [{ name: 'Traffic Rate', data: [35, 180, 100, 300, 220, 400] }]
 </script>
 
 <template>
   <VCard>
-    <VCardItem>
-      <VCardTitle>Sales State</VCardTitle>
-      <VCardSubtitle>Total $42,580 Sales</VCardSubtitle>
-
-      <template #append>
-        <div class="me-n3 mt-n3">
-          <MoreBtn />
+    <VCardText>
+      <div class="d-flex justify-space-between">
+        <div>
+          <h5 class="text-h5">
+            Sales State
+          </h5>
+          <div class="text-body-1">
+            Total $42,580 Sales
+          </div>
         </div>
-      </template>
-    </VCardItem>
+        <MoreBtn />
+      </div>
+    </VCardText>
 
     <VueApexCharts
       type="area"

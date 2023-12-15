@@ -10,7 +10,7 @@ const options = controlledComputed(() => configStore.theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
 
-  const disabledColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['disabled-opacity']})`
+  const secondaryColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['medium-emphasis-opacity']})`
 
   return {
     chart: {
@@ -29,13 +29,13 @@ const options = controlledComputed(() => configStore.theme, () => {
     legend: { show: false },
     dataLabels: { enabled: false },
     colors: [
-      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.1)`,
-      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.1)`,
-      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.1)`,
-      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.1)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.16)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.16)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.16)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.16)`,
       currentTheme.value.primary,
-      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.1)`,
-      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.1)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.16)`,
+      `rgba(${hexToRgb(currentTheme.value.primary)}, 0.16)`,
     ],
     states: {
       hover: {
@@ -53,8 +53,8 @@ const options = controlledComputed(() => configStore.theme, () => {
       tickPlacement: 'on',
       labels: {
         style: {
-          fontSize: '12px',
-          colors: disabledColor,
+          fontSize: '13px',
+          colors: secondaryColor,
         },
       },
     },
@@ -78,7 +78,7 @@ const series = [{ data: [40, 60, 50, 60, 90, 40, 50] }]
 const weeklySalesData = [
   {
     avatar: {
-      icon: 'mdi-trending-up',
+      icon: 'ri-pie-chart-2-line',
       color: 'primary',
     },
     title: '34.6k',
@@ -86,7 +86,7 @@ const weeklySalesData = [
   },
   {
     avatar: {
-      icon: 'mdi-currency-usd',
+      icon: 'ri-money-dollar-circle-line',
       color: 'success',
     },
     title: '$482k',
@@ -103,7 +103,7 @@ const weeklySalesData = [
 
       <template #append>
         <div class="mt-n7 me-n3">
-          <MoreBtn />
+          <MoreBtn density="compact" />
         </div>
       </template>
     </VCardItem>
@@ -128,17 +128,19 @@ const weeklySalesData = [
             rounded
             :color="data.avatar.color"
             variant="tonal"
-            class="me-4"
+            class="me-3"
           >
             <VIcon :icon="data.avatar.icon" />
           </VAvatar>
         </div>
 
         <div>
-          <h6 class="text-base font-weight-medium">
+          <h6 class="text-h6">
             {{ data.title }}
           </h6>
-          <span class="text-sm text-no-wrap">{{ data.subtitle }}</span>
+          <div class="text-base text-no-wrap">
+            {{ data.subtitle }}
+          </div>
         </div>
       </div>
     </VCardText>

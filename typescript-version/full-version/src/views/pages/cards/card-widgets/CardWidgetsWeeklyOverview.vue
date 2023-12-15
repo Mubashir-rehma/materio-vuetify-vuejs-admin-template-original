@@ -22,9 +22,9 @@ const options = controlledComputed(() => configStore.theme, () => {
     },
     plotOptions: {
       bar: {
-        borderRadius: 9,
+        borderRadius: 6,
         distributed: true,
-        columnWidth: '40%',
+        columnWidth: '30%',
         endingShape: 'rounded',
         startingShape: 'rounded',
       },
@@ -34,15 +34,19 @@ const options = controlledComputed(() => configStore.theme, () => {
       colors: [currentTheme.value.surface],
     },
     legend: { show: false },
-    grid: { borderColor, strokeDashArray: 7 },
+    grid: {
+      borderColor,
+      strokeDashArray: 7,
+      xaxis: { lines: { show: false } },
+    },
     dataLabels: { enabled: false },
     colors: [
-      currentTheme.value['grey-100'],
-      currentTheme.value['grey-100'],
-      currentTheme.value['grey-100'],
+      currentTheme.value['track-bg'],
+      currentTheme.value['track-bg'],
+      currentTheme.value['track-bg'],
       currentTheme.value.primary,
-      currentTheme.value['grey-100'],
-      currentTheme.value['grey-100'],
+      currentTheme.value['track-bg'],
+      currentTheme.value['track-bg'],
     ],
     states: {
       hover: { filter: { type: 'none' } },
@@ -62,12 +66,34 @@ const options = controlledComputed(() => configStore.theme, () => {
       labels: {
         style: {
           colors: disabledColor,
-          fontSize: '12px',
+          fontSize: '13px',
         },
 
         formatter: (value: number) => `${value > 999 ? `${(value / 1000).toFixed(0)}` : value}k`,
       },
     },
+    responsive: [
+      {
+        breakpoint: 1560,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '35%',
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 1380,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '45%',
+            },
+          },
+        },
+      },
+    ],
   }
 })
 
@@ -94,12 +120,12 @@ const series = [{ data: [37, 57, 45, 75, 57, 40, 65] }]
         :height="200"
       />
 
-      <div class="d-flex align-center mb-3">
-        <h5 class="text-h5 me-4">
+      <div class="d-flex align-center mb-3 gap-x-4">
+        <h4 class="text-h4">
           45%
-        </h5>
+        </h4>
         <p class="mb-0">
-          Your sales performance is 45% 😎 better compared to last month
+          Your sales performance is 45% <span class="text-high-emphasis">😎</span> better compared to last month
         </p>
       </div>
 

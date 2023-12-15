@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { useDisplay, useTheme } from 'vuetify'
+import { useTheme } from 'vuetify'
 import { useConfigStore } from '@core/stores/config'
 
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
 const configStore = useConfigStore()
-const { thresholds } = useDisplay()
 
 const options = controlledComputed(() => configStore.theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
@@ -18,28 +17,29 @@ const options = controlledComputed(() => configStore.theme, () => {
   return {
     chart: {
       stacked: true,
+      height: 260,
       parentHeightOffset: 0,
       toolbar: { show: false },
     },
     plotOptions: {
       bar: {
-        borderRadius: 10,
+        borderRadius: 8,
         columnWidth: '30%',
-        endingShape: 'rounded',
-        startingShape: 'rounded',
+        borderRadiusApplication: 'around',
+        borderRadiusWhenStacked: 'all',
       },
     },
     xaxis: {
       axisTicks: { show: false },
       crosshairs: { opacity: 0 },
       axisBorder: { show: false },
-      categories: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
-      labels: { style: { fontSize: '12px', colors: disabledColor, fontFamily: 'inter' } },
+      categories: [2015, 2016, 2017, 2018, 2019, 2020, 2021],
+      labels: { style: { fontSize: '13px', colors: disabledColor, fontFamily: 'inter' } },
     },
     yaxis: {
       labels: {
         style: {
-          fontSize: '12px',
+          fontSize: '13px',
           colors: disabledColor,
           fontFamily: 'inter',
         },
@@ -48,6 +48,7 @@ const options = controlledComputed(() => configStore.theme, () => {
     },
     colors: [currentTheme.value.primary, currentTheme.value.success, currentTheme.value.secondary],
     grid: {
+      xaxis: { lines: { show: false } },
       borderColor,
       strokeDashArray: 7,
       padding: { bottom: -10 },
@@ -66,20 +67,128 @@ const options = controlledComputed(() => configStore.theme, () => {
     },
     responsive: [
       {
-        breakpoint: thresholds.value.xl,
-        options: { plotOptions: { bar: { columnWidth: '45%' } } },
+        breakpoint: 1560,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '35%',
+            },
+          },
+        },
       },
       {
-        breakpoint: thresholds.value.lg,
-        options: { plotOptions: { bar: { columnWidth: '50%' } } },
+        breakpoint: 1441,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '40%',
+              borderRadius: 8,
+            },
+          },
+        },
       },
       {
-        breakpoint: thresholds.value.sm,
-        options: { plotOptions: { bar: { columnWidth: '45%' } } },
+        breakpoint: 1280,
+        charts: {
+          height: 200,
+        },
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '40%',
+              borderRadius: 8,
+            },
+          },
+        },
       },
       {
-        breakpoint: 430,
-        options: { plotOptions: { bar: { columnWidth: '55%' } } },
+        breakpoint: 1160,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '40%',
+              borderRadius: 6,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 960,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '30%',
+              borderRadius: 6,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 800,
+
+        chart: {
+          height: 250,
+          offsetX: -10,
+        },
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '40%',
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 650,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '50%',
+              borderRadius: 6,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 600,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '35%',
+              borderRadius: 6,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            height: 250,
+            offsetX: -10,
+          },
+          plotOptions: {
+            bar: {
+              columnWidth: '45%',
+            },
+          },
+          xaxis: {
+            labels: {
+              rotate: 315,
+              rotateAlways: true,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 420,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '60%',
+            },
+          },
+        },
       },
     ],
   }
@@ -87,32 +196,32 @@ const options = controlledComputed(() => configStore.theme, () => {
 
 const series = [
   {
-    name: 'Product A',
+    name: 'Revenue',
     data: [29000, 22000, 25000, 18500, 29000, 20000, 34500],
   },
   {
-    name: 'Product B',
+    name: 'Transactions',
     data: [0, 16000, 11000, 15500, 0, 12500, 9500],
   },
   {
-    name: 'Product C',
+    name: 'Total Profit',
     data: [0, 0, 0, 14000, 0, 11500, 12000],
   },
 ]
 
 const lastThreeTransactions = [
   {
-    avatar: { icon: 'mdi-trending-up', color: 'success' },
+    avatar: { icon: 'ri-pie-chart-2-line', color: 'success' },
     title: '$48,568.20',
     subtitle: 'Total Profit',
   },
   {
-    avatar: { icon: 'mdi-account-outline', color: 'primary' },
+    avatar: { icon: 'ri-money-dollar-circle-line', color: 'primary' },
     title: '$38,453.25',
     subtitle: 'Total Income',
   },
   {
-    avatar: { icon: 'mdi-cellphone-link', color: 'secondary' },
+    avatar: { icon: 'ri-bank-card-line', color: 'secondary' },
     title: '$2,453.45',
     subtitle: 'Total Expense',
   },
@@ -124,41 +233,40 @@ const lastThreeTransactions = [
     <VRow no-gutters>
       <VCol
         cols="12"
-        sm="7"
+        sm="8"
         class="responsive-border"
       >
         <VCardText>
-          <h6 class="text-h6">
+          <h5 class="text-h5">
             Total Profit
-          </h6>
+          </h5>
 
           <VueApexCharts
             type="bar"
             :options="options"
             :series="series"
-            :height="280"
           />
         </VCardText>
       </VCol>
 
       <VCol
         cols="12"
-        sm="5"
+        sm="4"
       >
         <VCardItem>
-          <VCardTitle class="text-h5">
+          <VCardTitle>
             $482.85k
           </VCardTitle>
           <VCardSubtitle>Last month balance $234.40k</VCardSubtitle>
 
           <template #append>
             <div class="mt-n7 me-n3">
-              <MoreBtn />
+              <MoreBtn density="compact" />
             </div>
           </template>
         </VCardItem>
 
-        <VCardText class="pt-2">
+        <VCardText class="pt-1">
           <VList class="card-list mt-2">
             <VListItem
               v-for="transaction in lastThreeTransactions"
@@ -178,7 +286,9 @@ const lastThreeTransactions = [
                 {{ transaction.title }}
               </VListItemTitle>
               <VListItemSubtitle>
-                {{ transaction.subtitle }}
+                <div class="text-body-1">
+                  {{ transaction.subtitle }}
+                </div>
               </VListItemSubtitle>
             </VListItem>
           </VList>

@@ -30,7 +30,7 @@ const chartOptions = computed(() => {
           },
           value: {
             fontSize: '1.25rem',
-            fontWeight: '600',
+            fontWeight: '500',
             offsetY: 0,
             color: `rgba(${hexToRgb(currentTheme['on-surface'])},${variableTheme['high-emphasis-opacity']})`,
           },

@@ -10,7 +10,7 @@ const options = controlledComputed(() => configStore.theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
 
-  const disabledColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['disabled-opacity']})`
+  const secondaryTextColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['medium-emphasis-opacity']})`
 
   return {
     chart: {
@@ -22,6 +22,9 @@ const options = controlledComputed(() => configStore.theme, () => {
       yaxis: {
         lines: { show: false },
       },
+      xaxis: {
+        lines: { show: false },
+      },
       padding: {
         left: 0,
         right: 0,
@@ -29,9 +32,10 @@ const options = controlledComputed(() => configStore.theme, () => {
     },
     legend: {
       offsetY: 8,
-      markers: { radius: 15 },
+      fontSize: '15px',
+      markers: { radius: 15, width: 10, height: 10 },
       labels: {
-        colors: disabledColor,
+        colors: secondaryTextColor,
       },
     },
     stroke: {
@@ -42,10 +46,11 @@ const options = controlledComputed(() => configStore.theme, () => {
     colors: [currentTheme.value.success, currentTheme.value.secondary],
     plotOptions: {
       bar: {
-        borderRadius: 8,
-        columnWidth: '50%',
-        endingShape: 'rounded',
-        startingShape: 'rounded',
+        borderRadius: 6,
+        columnWidth: '45%',
+        borderRadiusApplication: 'around',
+        borderRadiusWhenStacked: 'all',
+
       },
     },
     states: {
@@ -67,6 +72,40 @@ const options = controlledComputed(() => configStore.theme, () => {
       labels: { show: false },
     },
     tooltip: { enabled: false },
+    responsive: [
+      {
+        breakpoint: 1560,
+        options: { plotOptions: { bar: { columnWidth: '50%', borderRadius: 6 } } },
+      },
+      {
+        breakpoint: 1380,
+        options: { plotOptions: { bar: { columnWidth: '60%', borderRadius: 6 } } },
+      },
+      {
+        breakpoint: 1080,
+        options: { plotOptions: { bar: { borderRadius: 4 } } },
+      },
+      {
+        breakpoint: 960,
+        options: { plotOptions: { bar: { columnWidth: '45%', borderRadius: 4 } } },
+      },
+      {
+        breakpoint: 768,
+        options: { plotOptions: { bar: { columnWidth: '55%', borderRadius: 4 } } },
+      },
+      {
+        breakpoint: 600,
+        options: { plotOptions: { bar: { columnWidth: '30%', borderRadius: 6 } } },
+      },
+      {
+        breakpoint: 460,
+        options: { plotOptions: { bar: { columnWidth: '45%' } } },
+      },
+      {
+        breakpoint: 400,
+        options: { plotOptions: { bar: { columnWidth: '35%', borderRadius: 4 } } },
+      },
+    ],
   }
 })
 

@@ -1,0 +1,188 @@
+<script setup lang="ts">
+const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
+
+// Topics Charts config
+const topicsChartConfig = {
+  chart: {
+    height: 270,
+    type: 'bar',
+    toolbar: {
+      show: false,
+    },
+  },
+
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '70%',
+      distributed: true,
+      borderRadius: 7,
+    },
+  },
+
+  colors: [
+    '#8C57FF', '#16B1FF', '#56CA00', '#8A8D93', '#FF4C51', '#FFB400',
+  ],
+
+  grid: {
+    borderColor,
+    strokeDashArray: 10,
+    xaxis: {
+      lines: {
+        show: true,
+      },
+    },
+    yaxis: {
+      lines: {
+        show: false,
+      },
+    },
+    padding: {
+      top: -35,
+      bottom: -12,
+    },
+  },
+
+  dataLabels: {
+    enabled: true,
+    style: {
+      colors: ['#fff'],
+      fontWeight: 200,
+      fontSize: '13px',
+
+    },
+    offsetX: 0,
+    dropShadow: {
+      enabled: false,
+    },
+    formatter(val: string, opt: any) {
+      return topicsChartConfig.labels[opt.dataPointIndex]
+    },
+  },
+  labels: ['UI Design', 'UX Design', 'Music', 'Animation', 'Vue', 'SEO'],
+
+  xaxis: {
+    categories: ['6', '5', '4', '3', '2', '1'],
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+    labels: {
+      style: {
+        colors: 'rgba(var(--v-theme-on-background), var(--v-disabled-opacity))',
+        fontSize: '13px',
+      },
+      formatter(val: string) {
+        return `${val}%`
+      },
+    },
+  },
+
+  yaxis: {
+    max: 35,
+    labels: {
+      style: {
+        colors: 'rgba(var(--v-theme-on-background), var(--v-disabled-opacity))',
+        fontSize: '13px',
+      },
+    },
+  },
+
+  tooltip: {
+    enabled: true,
+    style: {
+      fontSize: '12px',
+    },
+    onDatasetHover: {
+      highlightDataSeries: false,
+    },
+  },
+  legend: {
+    show: false,
+  },
+
+}
+
+const topicsChartSeries = [
+  {
+    data: [35, 20, 14, 12, 10, 9],
+  },
+]
+
+const topicsData = [
+  { title: 'UI Design', value: 35, color: 'primary' },
+  { title: 'UX Design', value: 20, color: 'info' },
+  { title: 'Music', value: 14, color: 'success' },
+  { title: 'Animation', value: 12, color: 'secondary' },
+  { title: 'Vue', value: 10, color: 'error' },
+  { title: 'SEO', value: 9, color: 'warning' },
+]
+</script>
+
+<template>
+  <VCard class="topicCard">
+    <VCardItem title="Topic you are interested in">
+      <template #append>
+        <MoreBtn />
+      </template>
+    </VCardItem>
+
+    <VCardText>
+      <div class="d-md-flex d-block justify-space-between flex-wrap gap-6">
+        <div :style="{ 'min-inline-size': $vuetify.display.smAndUp ? '400px' : 'auto' }">
+          <VueApexCharts
+            type="bar"
+            height="300"
+            :options="topicsChartConfig"
+            :series="topicsChartSeries"
+            class="mb-md-0 mb-6"
+          />
+        </div>
+
+        <div
+          class="d-flex flex-wrap gap-x-4 gap-y-10 mx-auto mx-md-0"
+          style="max-inline-size: 270px;"
+        >
+          <div
+            v-for="topic in topicsData"
+            :key="topic.title"
+            class="d-flex gap-x-2"
+          >
+            <VBadge
+              inline
+              dot
+              :color="topic.color"
+            />
+            <div>
+              <div
+                class="text-body-1"
+                style="min-inline-size: 90px;"
+              >
+                {{ topic.title }}
+              </div>
+              <h5 class="text-h5">
+                {{ topic.value }}%
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </VCardText>
+  </VCard>
+</template>
+
+<style lang="scss" scoped>
+@use "@core/scss/template/libs/apex-chart.scss";
+
+.topicCard{
+  .v-badge.v-badge--dot{
+    .v-badge__badge{
+      border-radius: 6px;
+      block-size: 12px;
+      inline-size: 12px;
+    }
+  }
+}
+</style>

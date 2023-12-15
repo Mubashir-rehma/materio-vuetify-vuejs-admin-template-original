@@ -43,6 +43,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'skin-bordered-background': '#fff',
       'skin-bordered-surface': '#fff',
       'expansion-panel-text-custom-bg': '#fafafa',
+      'track-bg': '#F0F2F8',
       'chat-bg': '#F7F6FA',
     },
 
@@ -113,6 +114,7 @@ export const themes: Record<string, ThemeDefinition> = {
       'skin-bordered-background': '#312d4b',
       'skin-bordered-surface': '#312d4b',
       'expansion-panel-text-custom-bg': '#373350',
+      'track-bg': '#474360',
       'chat-bg': '#373452',
     },
 

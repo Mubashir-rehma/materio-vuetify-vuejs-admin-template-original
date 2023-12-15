@@ -29,7 +29,7 @@ const options = controlledComputed(() => configStore.theme, () => {
         },
       },
     },
-    legend: { labels: { colors: secondaryTextColor } },
+    legend: { labels: { colors: secondaryTextColor }, fontSize: '15px', markers: { width: '10px', height: '10px' } },
     fill: {
       type: 'gradient',
       gradient: {
@@ -50,7 +50,7 @@ const options = controlledComputed(() => configStore.theme, () => {
       labels: {
         show: true,
         style: {
-          fontSize: '14px',
+          fontSize: '13px',
           colors: [
             disabledColor, disabledColor, disabledColor, disabledColor, disabledColor, disabledColor,
           ],

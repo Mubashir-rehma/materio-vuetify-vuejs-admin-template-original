@@ -4,11 +4,15 @@ import poseM9 from '@images/cards/pose-m-9.png'
 
 <template>
   <VCard class="position-relative">
-    <VCardItem>
-      <VCardTitle>Upgrade Account <span class="text-high-emphasis">😀</span></VCardTitle>
-      <VCardSubtitle>Add 15 team members</VCardSubtitle>
-    </VCardItem>
     <VCardText>
+      <div class="mb-3">
+        <h5 class="text-h5">
+          Upgrade Account <span class="text-high-emphasis">😀</span>
+        </h5>
+        <div class="text-body-1">
+          Add 15 team members
+        </div>
+      </div>
       <h4 class="text-h4 text-primary">
         $199
       </h4>

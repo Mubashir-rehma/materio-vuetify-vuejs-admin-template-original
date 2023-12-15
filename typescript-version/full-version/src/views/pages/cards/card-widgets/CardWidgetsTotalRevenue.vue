@@ -60,6 +60,12 @@ const options = controlledComputed(() => configStore.theme, () => {
 })
 
 const series = [71, 78, 86]
+
+const revenueData = [
+  { title: 'New User', value: 856, color: 'success' },
+  { title: 'Returning', value: 345, color: 'primary' },
+  { title: 'Referrals', value: 258, color: 'warning' },
+]
 </script>
 
 <template>
@@ -82,54 +88,33 @@ const series = [71, 78, 86]
         :height="243"
       />
 
-      <div class="d-flex justify-space-around mt-2">
-        <div>
-          <div class="d-flex align-center">
-            <VIcon
-              size="12"
-              color="success"
-              icon="mdi-checkbox-blank-circle"
-              class="me-1"
-            />
-            <h6 class="text-sm font-weight-medium">
-              856
-            </h6>
-          </div>
+      <div class="d-flex justify-space-around mt-4">
+        <template
+          v-for="(item, index) in revenueData"
+          :key="index"
+        >
+          <div>
+            <div class="d-flex align-center">
+              <VIcon
+                size="10"
+                :color="item.color"
+                icon="ri-circle-fill"
+                class="me-2"
+              />
+              <h6 class="text-h6">
+                {{ item.value }}
+              </h6>
+            </div>
 
-          <span class="text-xs">New User</span>
-        </div>
-        <VDivider vertical />
-        <div>
-          <div class="d-flex align-center">
-            <VIcon
-              size="12"
-              color="primary"
-              icon="mdi-checkbox-blank-circle"
-              class="me-1"
-            />
-            <h6 class="text-sm font-weight-medium">
-              345
-            </h6>
+            <div class="text-base">
+              {{ item.title }}
+            </div>
           </div>
-
-          <span class="text-xs">Returning</span>
-        </div>
-        <VDivider vertical />
-        <div>
-          <div class="d-flex align-center">
-            <VIcon
-              size="12"
-              color="warning"
-              icon="mdi-checkbox-blank-circle"
-              class="me-1"
-            />
-            <h6 class="text-sm font-weight-medium">
-              258
-            </h6>
-          </div>
-
-          <span class="text-xs">Referrals</span>
-        </div>
+          <VDivider
+            v-if="index !== revenueData.length - 1"
+            vertical
+          />
+        </template>
       </div>
     </VCardText>
   </VCard>

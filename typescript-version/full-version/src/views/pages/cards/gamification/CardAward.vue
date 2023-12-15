@@ -4,12 +4,15 @@ import trophy from '@images/misc/trophy.png'
 
 <template>
   <VCard class="position-relative">
-    <VCardItem>
-      <VCardTitle>Congratulations John! <span class="text-high-emphasis">🎉</span></VCardTitle>
-      <VCardSubtitle>Best seller of the month</VCardSubtitle>
-    </VCardItem>
-
     <VCardText>
+      <div class="mb-3">
+        <h5 class="text-h5">
+          Congratulations John! <span class="text-high-emphasis">🎉</span>
+        </h5>
+        <div class="text-body-1">
+          Best seller of the month
+        </div>
+      </div>
       <h4 class="text-h4 text-primary">
         $42.8k
       </h4>

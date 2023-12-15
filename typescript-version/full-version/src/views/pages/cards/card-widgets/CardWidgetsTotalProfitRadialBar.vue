@@ -37,7 +37,7 @@ const options = controlledComputed(() => configStore.theme, () => {
           name: { show: false },
           value: {
             offsetY: -5,
-            fontSize: '20px',
+            fontSize: '18px',
             fontWeight: 500,
             color: primaryTextColor,
             formatter: (val: number) => {
@@ -67,16 +67,14 @@ const series = [80]
       </template>
     </VCardItem>
 
+    <VueApexCharts
+      type="radialBar"
+      :options="options"
+      :series="series"
+    />
     <VCardText class="text-center">
-      <VueApexCharts
-        type="radialBar"
-        :options="options"
-        :series="series"
-        :height="243"
-      />
-
-      <div class="mt-16">
-        <p class="text-xs mb-2 mt-4">
+      <div class="mt-5">
+        <p class="text-body-1 mb-2">
           18k new sales
         </p>
         <VChip

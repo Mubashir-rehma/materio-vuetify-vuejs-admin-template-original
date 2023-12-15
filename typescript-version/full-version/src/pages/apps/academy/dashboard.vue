@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import AcademyAssignmentProgress from '@/views/apps/academy/AcademyAssignmentProgress.vue'
+import AcademyCardInterestedTopics from '@/views/apps/academy/AcademyCardInterestedTopics.vue'
 import AcademyCardPopularInstructors from '@/views/apps/academy/AcademyCardPopularInstructors.vue'
 import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vue'
 import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
 import customCheck from '@images/svg/Check.svg'
-import customLaptop from '@images/svg/Laptop.svg'
-import customLightbulb from '@images/svg/Lightbulb.svg'
+import customLaptop from '@images/svg/laptop.svg'
+import customLightbulb from '@images/svg/lightbulb.svg'
 
 const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 
@@ -204,15 +205,6 @@ const timeSpendingChartConfig = {
 }
 
 const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23]
-
-const topicsData = [
-  { title: 'UI Design', value: 35, color: 'primary' },
-  { title: 'UX Design', value: 20, color: 'info' },
-  { title: 'Music', value: 14, color: 'success' },
-  { title: 'Animation', value: 12, color: 'secondary' },
-  { title: 'Vue', value: 10, color: 'error' },
-  { title: 'SEO', value: 9, color: 'warning' },
-]
 </script>
 
 <template>
@@ -317,71 +309,12 @@ const topicsData = [
     </VRow>
 
     <VRow>
-      <!-- 👉 Topics you are interested in -->
       <VCol
         cols="12"
         md="8"
       >
         <!-- 👉 Topic You are Interested in -->
-        <VCard class="topicCard">
-          <VCardItem title="Topic you are interested in">
-            <template #append>
-              <MoreBtn />
-            </template>
-          </VCardItem>
-
-          <VCardText>
-            <VRow>
-              <VCol
-                cols="12"
-                md="6"
-              >
-                <div>
-                  <VueApexCharts
-                    type="bar"
-                    height="260"
-                    :options="topicsChartConfig"
-                    :series="topicsChartSeries"
-                  />
-                </div>
-              </VCol>
-
-              <VCol
-                cols="12"
-                md="6"
-              >
-                <div
-                  class="d-flex flex-wrap gap-x-4 gap-y-10 mx-auto"
-                  style="inline-size: 300px;"
-                >
-                  <div
-                    v-for="topic in topicsData"
-                    :key="topic.title"
-                    class="d-flex gap-x-3"
-                  >
-                    <VBadge
-                      dot
-                      :color="topic.color"
-                      offset-x="5"
-                      offset-y="9"
-                    />
-                    <div>
-                      <div
-                        class="text-body-1"
-                        style="min-inline-size: 90px;"
-                      >
-                        {{ topic.title }}
-                      </div>
-                      <h5 class="text-h5">
-                        {{ topic.value }}%
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </VCol>
-            </VRow>
-          </VCardText>
-        </VCard>
+        <AcademyCardInterestedTopics />
       </VCol>
 
       <!-- 👉 Popular Instructors  -->

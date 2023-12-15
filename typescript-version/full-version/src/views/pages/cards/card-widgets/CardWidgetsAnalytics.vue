@@ -23,14 +23,15 @@ const options = controlledComputed(() => configStore.theme, () => {
     },
     plotOptions: {
       bar: {
-        borderRadius: 10,
+        borderRadius: 8,
         columnWidth: '35%',
-        endingShape: 'rounded',
-        startingShape: 'rounded',
+        borderRadiusApplication: 'around',
+        borderRadiusWhenStacked: 'all',
       },
     },
     legend: { show: false },
     grid: {
+      xaxis: { lines: { show: false } },
       borderColor,
       strokeDashArray: 10,
       padding: {
@@ -59,20 +60,32 @@ const options = controlledComputed(() => configStore.theme, () => {
     },
     responsive: [
       {
-        breakpoint: thresholds.value.xl,
-        options: { plotOptions: { bar: { columnWidth: '40%' } } },
+        breakpoint: 1560,
+        options: { plotOptions: { bar: { columnWidth: '40%', borderRadius: 6 } } },
       },
       {
         breakpoint: thresholds.value.lg,
-        options: { plotOptions: { bar: { columnWidth: '50%' } } },
+        options: { plotOptions: { bar: { columnWidth: '40%' } } },
+      },
+      {
+        breakpoint: thresholds.value.md,
+        options: { plotOptions: { bar: { columnWidth: '45%', borderRadius: 8 } } },
+      },
+      {
+        breakpoint: 768,
+        options: { plotOptions: { bar: { columnWidth: '55%', borderRadius: 6 } } },
       },
       {
         breakpoint: thresholds.value.sm,
         options: { plotOptions: { bar: { columnWidth: '35%' } } },
       },
       {
-        breakpoint: 430,
+        breakpoint: 460,
         options: { plotOptions: { bar: { columnWidth: '45%' } } },
+      },
+      {
+        breakpoint: 400,
+        options: { plotOptions: { bar: { columnWidth: '45%', borderRadius: 6 } } },
       },
     ],
   }
@@ -141,19 +154,19 @@ const analytics = [
         class="d-flex align-center"
         :class="index > 0 ? 'mt-3' : ''"
       >
-        <h6 class="text-sm font-weight-medium">
+        <h6 class="text-h6">
           {{ item.title }}
         </h6>
         <VSpacer />
-        <p class="me-4 mb-0">
+        <div class="text-body-1 me-4 mb-0">
           {{ item.amount }}
-        </p>
-        <h6 class="text-sm font-weight-medium me-4">
+        </div>
+        <h6 class="text-h6 me-4">
           {{ item.percentage }}
         </h6>
         <VIcon
           :color="item.profit ? 'success' : 'error'"
-          :icon="item.profit ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+          :icon="item.profit ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'"
           size="24"
         />
       </div>

@@ -22,7 +22,7 @@ const options = controlledComputed(() => configStore.theme, () => {
       currentTheme.value.primary,
       `rgba(${hexToRgb(currentTheme.value.primary)}, 0.7)`,
       `rgba(${hexToRgb(currentTheme.value.primary)}, 0.5)`,
-      currentTheme.value['grey-100'],
+      currentTheme.value['track-bg'],
     ],
     stroke: { width: 0 },
     legend: { show: false },
@@ -49,7 +49,7 @@ const options = controlledComputed(() => configStore.theme, () => {
             },
             value: {
               offsetY: -15,
-              fontWeight: 600,
+              fontWeight: 500,
               fontSize: '24px',
               color: primaryTextColor,
               formatter: (value: unknown) => `${value}k`,
@@ -57,7 +57,7 @@ const options = controlledComputed(() => configStore.theme, () => {
             total: {
               show: true,
               label: 'Weekly Sales',
-              fontSize: '12px',
+              fontSize: '15px',
               color: secondaryTextColor,
 
               formatter: (value: { globals: { seriesTotals: any[] } }) => `${value.globals.seriesTotals.reduce((total: number, num: number) => total + num)}k`,
@@ -103,24 +103,19 @@ const salesOverviews = [
       </template>
     </VCardItem>
 
-    <VCardText class="pt-11">
-      <VRow>
-        <VCol
-          sm="6"
-          cols="12"
-        >
+    <VCardText class="pt-5">
+      <div class="d-flex gap-4 flex-lg-row flex-column">
+        <div class="mx-auto">
           <VueApexCharts
             type="donut"
             :options="options"
             :series="series"
             :height="220"
+            :width="220"
           />
-        </VCol>
+        </div>
 
-        <VCol
-          cols="12"
-          sm="6"
-        >
+        <div>
           <div class="d-flex align-center">
             <div class="me-3">
               <VAvatar
@@ -128,43 +123,41 @@ const salesOverviews = [
                 color="primary"
                 variant="tonal"
               >
-                <VIcon icon="mdi-currency-usd" />
+                <VIcon icon="ri-wallet-line" />
               </VAvatar>
             </div>
-
             <div>
               <p class="mb-0">
                 Number of Sales
               </p>
-              <h6 class="text-h6">
+              <h5 class="text-h5">
                 $86,400
-              </h6>
+              </h5>
             </div>
           </div>
-
-          <VDivider class="my-3" />
+          <VDivider class="my-6" />
           <VRow>
             <VCol
               v-for="sale in salesOverviews"
               :key="sale.product"
               cols="6"
             >
-              <p class="mb-1">
+              <div class="d-flex align-center mb-1">
                 <VIcon
-                  icon="mdi-checkbox-blank-circle"
+                  icon="ri-circle-fill"
                   color="primary"
-                  size="12"
+                  size="10"
                   class="me-2"
                 />
-                <span>{{ sale.product }}</span>
-              </p>
-              <p class="text-base font-weight-medium mb-0">
+                <div>{{ sale.product }}</div>
+              </div>
+              <h6 class="text-h6 text-medium-emphasis">
                 {{ sale.sales }}
-              </p>
+              </h6>
             </VCol>
           </VRow>
-        </VCol>
-      </VRow>
+        </div>
+      </div>
     </VCardText>
   </VCard>
 </template>

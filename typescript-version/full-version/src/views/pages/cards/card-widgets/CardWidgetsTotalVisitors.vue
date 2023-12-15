@@ -18,7 +18,7 @@ const options = controlledComputed(() => configStore.theme, () => {
       currentTheme.value.primary,
       `rgba(${hexToRgb(currentTheme.value.primary)}, 0.7)`,
       `rgba(${hexToRgb(currentTheme.value.primary)}, 0.5)`,
-      currentTheme.value['grey-100'],
+      currentTheme.value['track-bg'],
     ],
     stroke: { width: 0 },
     dataLabels: { enabled: false },
@@ -45,14 +45,15 @@ const options = controlledComputed(() => configStore.theme, () => {
             },
             value: {
               offsetY: -15,
-              fontWeight: 600,
+              fontWeight: 500,
+              fontSize: '24px',
               color: primaryTextColor,
               formatter: (value: unknown) => `${value}%`,
             },
             total: {
               show: true,
               label: 'Weekly Visits',
-              fontSize: '12px',
+              fontSize: '15px',
               color: secondaryTextColor,
 
               formatter: (value: { globals: { seriesTotals: any[] } }) => `${value.globals.seriesTotals.reduce((total: number, num: number) => total + num)}%`,
@@ -73,7 +74,7 @@ const series = [12, 25, 13, 50]
       <VCardTitle>Total Visitors</VCardTitle>
       <template #append>
         <div class="me-n3">
-          <MoreBtn />
+          <MoreBtn density="compact" />
         </div>
       </template>
     </VCardItem>

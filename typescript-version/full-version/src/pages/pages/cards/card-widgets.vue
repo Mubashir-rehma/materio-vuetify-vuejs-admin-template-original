@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CardWidgetsActivityTimeline from '@/views/pages/cards/card-widgets/CardWidgetsActivityTimeline.vue'
 import CardWidgetsAnalytics from '@/views/pages/cards/card-widgets/CardWidgetsAnalytics.vue'
+import CardWidgetsDeliveryExceptions from '@/views/pages/cards/card-widgets/CardWidgetsDeliveryExceptions.vue'
 import CardWidgetsPerformance from '@/views/pages/cards/card-widgets/CardWidgetsPerformance.vue'
 import CardWidgetsRevenueReport from '@/views/pages/cards/card-widgets/CardWidgetsRevenueReport.vue'
 import CardWidgetsSalesOverview from '@/views/pages/cards/card-widgets/CardWidgetsSalesOverview.vue'
@@ -13,6 +14,7 @@ import CardWidgetsTotalVisitors from '@/views/pages/cards/card-widgets/CardWidge
 import CardWidgetsTotalVisits from '@/views/pages/cards/card-widgets/CardWidgetsTotalVisits.vue'
 import CardWidgetsWeeklyOverview from '@/views/pages/cards/card-widgets/CardWidgetsWeeklyOverview.vue'
 import CardWidgetsWeeklySales from '@/views/pages/cards/card-widgets/CardWidgetsWeeklySales.vue'
+import CardWidgetsInterestedTopics from '@/views/pages/cards/card-widgets/cardWidgetsInterestedTopics.vue'
 </script>
 
 <template>
@@ -124,6 +126,20 @@ import CardWidgetsWeeklySales from '@/views/pages/cards/card-widgets/CardWidgets
       md="6"
     >
       <CardWidgetsSalesOverview />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="8"
+    >
+      <CardWidgetsInterestedTopics />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <CardWidgetsDeliveryExceptions />
     </VCol>
   </VRow>
 </template>

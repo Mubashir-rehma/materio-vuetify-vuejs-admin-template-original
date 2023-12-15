@@ -11,7 +11,7 @@ const options = controlledComputed(() => configStore.theme, () => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
 
-  const disabledColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['disabled-opacity']})`
+  const secondaryTextColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['medium-emphasis-opacity']})`
 
   return {
     chart: {
@@ -49,7 +49,7 @@ const options = controlledComputed(() => configStore.theme, () => {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
       labels: {
         style: {
-          colors: disabledColor,
+          colors: secondaryTextColor,
         },
       },
     },
@@ -66,14 +66,10 @@ const series = [{ name: 'Total Sales', data: [0, 258, 30, 240, 150, 400] }]
 <template>
   <VCard>
     <VCardItem>
-      <VCardTitle>
-        <p class="mb-0">
-          Total Sales
-        </p>
-        <p class="mb-0">
-          $21,845
-        </p>
+      <VCardTitle class="mb-1">
+        Total Sales
       </VCardTitle>
+      <VCardSubtitle>$21,845</VCardSubtitle>
 
       <template #append>
         <div class="mt-n7 me-n3">

@@ -66,8 +66,8 @@ const options = controlledComputed(() => configStore.theme, () => {
           total: {
             show: true,
             label: 'Growth',
-            fontSize: '14px',
-            fontWeight: 400,
+            fontSize: '15px',
+            fontWeight: 500,
             color: secondaryTextColor,
           },
         },
@@ -85,21 +85,21 @@ const series = [78]
       <VCardTitle>Total Visits</VCardTitle>
       <template #append>
         <div class="me-n3">
-          <MoreBtn />
+          <MoreBtn density="compact" />
         </div>
       </template>
     </VCardItem>
 
-    <VCardText class="text-center">
-      <VueApexCharts
-        type="radialBar"
-        :options="options"
-        :series="series"
-        :height="199"
-      />
-      <p class="text-xs mb-2">
+    <VueApexCharts
+      type="radialBar"
+      :options="options"
+      :series="series"
+      :height="199"
+    />
+    <VCardText class="text-center pt-0">
+      <div class="text-body-1 mb-2">
         42.2k new visits
-      </p>
+      </div>
 
       <VChip
         color="info"

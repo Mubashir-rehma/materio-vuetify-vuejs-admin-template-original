@@ -476,7 +476,7 @@ const addImage = () => {
 }
 
 .mail-content-container {
-  background-color: rgb(var(--v-theme-grey-100));
+  background-color: rgb(var(--v-theme-on-background), var(--v-hover-opacity));
 
   .mail-header {
     min-block-size: 84px;

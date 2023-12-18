@@ -27,51 +27,54 @@ else {
       <div class="d-flex h-0">
         <VAvatar
           rounded
-          size="120"
+          size="130"
           :image="profileHeaderData.profileImg"
           class="user-profile-avatar mx-auto"
-        />
+        >
+          <VImg
+            :src="profileHeaderData.profileImg"
+            height="120"
+            width="120"
+          />
+        </VAvatar>
       </div>
 
       <div class="user-profile-info w-100 mt-16 pt-6 pt-sm-0 mt-sm-0">
-        <h5 class="text-h5 text-center text-sm-start font-weight-medium mb-3">
+        <h4 class="text-h4 text-center text-sm-start mb-2">
           {{ profileHeaderData.fullName }}
-        </h5>
+        </h4>
 
         <div class="d-flex align-center justify-center justify-sm-space-between flex-wrap gap-4">
-          <div class="d-flex flex-wrap justify-center justify-sm-start flex-grow-1 gap-3">
-            <span class="d-flex align-center">
+          <div class="d-flex flex-wrap justify-center justify-sm-start flex-grow-1 gap-6">
+            <div class="d-flex align-center gap-x-2">
               <VIcon
                 size="24"
-                icon="ri-pantone-line"
-                class="me-2"
+                icon="ri-palette-line"
               />
-              <span class="text-body-1 font-weight-medium">
+              <div class="text-body-1 font-weight-medium">
                 {{ profileHeaderData.designation }}
-              </span>
-            </span>
+              </div>
+            </div>
 
-            <span class="d-flex align-center">
+            <div class="d-flex align-center gap-x-2">
               <VIcon
                 size="24"
                 icon="ri-map-pin-line"
-                class="me-2"
               />
-              <span class="text-body-1 font-weight-medium">
+              <div class="text-body-1 font-weight-medium">
                 {{ profileHeaderData.location }}
-              </span>
-            </span>
+              </div>
+            </div>
 
-            <span class="d-flex align-center">
+            <div class="d-flex align-center gap-x-2">
               <VIcon
                 size="24"
                 icon="ri-calendar-line"
-                class="me-2"
               />
-              <span class="text-body-1 font-weight-medium">
+              <div class="text-body-1 font-weight-medium">
                 {{ profileHeaderData.joiningDate }}
-              </span>
-            </span>
+              </div>
+            </div>
           </div>
 
           <VBtn prepend-icon="ri-user-follow-line">
@@ -90,7 +93,7 @@ else {
   inset-block-start: -3rem;
 
   .v-img__img {
-    border-radius: 0.125rem;
+    border-radius: 0.375rem;
   }
 }
 </style>

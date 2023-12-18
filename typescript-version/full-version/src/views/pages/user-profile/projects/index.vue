@@ -37,22 +37,26 @@ const moreList = [
       lg="4"
     >
       <VCard>
-        <VCardItem>
+        <VCardItem class="pb-4">
           <template #prepend>
-            <VAvatar :image="data.avatar" />
+            <VAvatar
+              :image="data.avatar"
+              size="38"
+            />
           </template>
 
           <VCardTitle>{{ data.title }}</VCardTitle>
-          <p class="mb-0">
-            <span class="font-weight-medium me-1">Client:</span>
-            <span>{{ data.client }}</span>
-          </p>
+          <div>
+            <span class="font-weight-medium">Client:</span>
+            {{ data.client }}
+          </div>
 
           <template #append>
-            <div class="mt-n8 me-n3">
+            <div>
               <MoreBtn
                 item-props
                 :menu-list="moreList"
+                density="compact"
               />
             </div>
           </template>
@@ -60,18 +64,18 @@ const moreList = [
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-x-2 gap-y-4">
-            <div class="pa-2 bg-var-theme-background rounded">
-              <h6 class="text-base font-weight-medium">
-                {{ data.budgetSpent }} <span class="text-body-1">/ {{ data.budget }}</span>
-              </h6>
-              <span>Total Budget</span>
+            <div class="py-2 px-3 bg-var-theme-background rounded">
+              <div>
+                <span class="text-high-emphasis font-weight-medium">{{ data.budgetSpent }}</span>/{{ data.budget }}
+              </div>
+              <div>Total Budget</div>
             </div>
 
             <div>
+              <div>
+                <span class="text-high-emphasis font-weight-medium">Start Date:</span> {{ data.startDate }}
+              </div>
               <h6 class="text-base font-weight-medium">
-                Start Date: <span class="text-body-1">{{ data.startDate }}</span>
-              </h6>
-              <h6 class="text-base font-weight-medium mb-1">
                 Deadline: <span class="text-body-1">{{ data.deadline }}</span>
               </h6>
             </div>
@@ -86,32 +90,31 @@ const moreList = [
 
         <VCardText>
           <div class="d-flex align-center justify-space-between flex-wrap gap-2">
-            <h6 class="text-base font-weight-medium">
-              All Hours: <span class="text-body-1">{{ data.hours }}</span>
-            </h6>
+            <div>
+              <span class="font-weight-medium text-high-emphasis">All Hours:</span> {{ data.hours }}
+            </div>
 
             <VChip
               :color="data.chipColor"
               size="small"
             >
-              {{ data.daysLeft }} Days left
+              {{ data.chipText }}
             </VChip>
           </div>
 
-          <div class="d-flex align-center justify-space-between flex-wrap text-xs mt-4 mb-2">
-            <span>Task: {{ data.tasks }}</span>
-            <span>{{ Math.round((data.completedTask / data.totalTask) * 100) }}% Completed</span>
+          <div class="d-flex align-center justify-space-between flex-wrap text-caption text-medium-emphasis mt-4 mb-2">
+            <div>Task: {{ data.tasks }}</div>
+            <div>{{ Math.round((data.completedTask / data.totalTask) * 100) }}% Completed</div>
           </div>
           <VProgressLinear
             rounded
-            rounded-bar
             height="8"
             :model-value="data.completedTask"
             :max="data.totalTask"
             color="primary"
           />
 
-          <div class="d-flex align-center justify-space-between flex-wrap gap-2 mt-3">
+          <div class="d-flex align-center justify-space-between flex-wrap gap-2 mt-4">
             <div class="d-flex align-center">
               <div class="v-avatar-group me-2">
                 <VAvatar
@@ -121,18 +124,18 @@ const moreList = [
                   :size="32"
                 />
               </div>
-              <span class="text-xs">
+              <div class="text-sm">
                 {{ data.members }}
-              </span>
+              </div>
             </div>
 
-            <span>
+            <div class="d-flex gap-x-1 align-center text-disabled">
               <VIcon
-                icon="ri-message-line"
-                class="me-1"
+                icon="ri-wechat-line"
+                size="24"
               />
-              <span>{{ data.comments }}</span>
-            </span>
+              <div>{{ data.comments }}</div>
+            </div>
           </div>
         </VCardText>
       </VCard>

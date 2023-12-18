@@ -55,9 +55,9 @@ export const db: DB = {
         { property: 'Language', value: 'English', icon: 'ri-translate-2' },
       ],
       contacts: [
-        { property: 'Contact', value: '(123) 456-7890', icon: 'ri-phone-line-outline' },
-        { property: 'Skype', value: 'john.doe', icon: 'ri-message-line' },
-        { property: 'Email', value: 'john.doe@example.com', icon: 'ri-mail-line' },
+        { property: 'Contact', value: '(123) 456-7890', icon: 'ri-phone-line' },
+        { property: 'Skype', value: 'john.doe', icon: 'ri-wechat-line' },
+        { property: 'Email', value: 'john.doe@example.com', icon: 'ri-mail-open-line' },
       ],
       teams: [
         { property: 'Backend Developer', value: '(126 Members)', icon: 'ri-github-fill', color: 'secondary' },
@@ -66,7 +66,7 @@ export const db: DB = {
       overview: [
         { property: 'Task Compiled', value: '13.5k', icon: 'ri-check-line' },
         { property: 'Connections', value: '897', icon: 'ri-user-line' },
-        { property: 'Projects Compiled', value: '146', icon: 'ri-grid-line' },
+        { property: 'Projects Compiled', value: '146', icon: 'ri-star-smile-line' },
       ],
       connections: [
         {
@@ -140,7 +140,7 @@ export const db: DB = {
     },
     teams: [
       {
-        extraMembers: 25,
+        extraMembers: 9,
         title: 'React Developers',
         avatar: reactLabel,
         avatarGroup: [
@@ -163,7 +163,7 @@ export const db: DB = {
         ],
       },
       {
-        extraMembers: 15,
+        extraMembers: 4,
         title: 'Vue.js Dev Team',
         avatar: vueLabel,
         avatarGroup: [
@@ -186,7 +186,7 @@ export const db: DB = {
         ],
       },
       {
-        extraMembers: 55,
+        extraMembers: 2,
         title: 'Creative Designers',
         avatar: xdLabel,
         avatarGroup: [
@@ -196,7 +196,7 @@ export const db: DB = {
           { avatar: avatar4, name: 'Alicia Littleton' },
         ],
         description:
-                  'A design or product team is more than just the people on it. A team includes the people, the roles they play.',
+                  'A design or product team is more than just the people on it. A team includes the creative people, the roles they play.',
         chips: [
           {
             title: 'Sketch',
@@ -209,7 +209,7 @@ export const db: DB = {
         ],
       },
       {
-        extraMembers: 35,
+        extraMembers: 7,
         title: 'Support Team',
         avatar: supportLabel,
         avatarGroup: [
@@ -228,7 +228,6 @@ export const db: DB = {
         ],
       },
       {
-        extraMembers: 19,
         title: 'Digital Marketing',
         avatar: socialLabel,
         avatarGroup: [
@@ -238,7 +237,7 @@ export const db: DB = {
           { avatar: avatar4, name: 'Margorie Whitmire' },
         ],
         description:
-                  'Digital marketing refers to advertising delivered through digital channels such as search engines, websites…',
+                  'Digital marketing refers to advertising delivered through digital channels such as search engines,social media, websites…',
         chips: [
           {
             color: 'primary',
@@ -252,7 +251,7 @@ export const db: DB = {
       },
       {
         title: 'Event',
-        extraMembers: 55,
+        extraMembers: 2,
         avatar: eventLabel,
         avatarGroup: [
           { avatar: avatar5, name: 'Vinnie Mostowy' },
@@ -270,7 +269,6 @@ export const db: DB = {
         ],
       },
       {
-        extraMembers: 45,
         title: 'Figma Resources',
         avatar: figmaLabel,
         avatarGroup: [
@@ -288,12 +286,29 @@ export const db: DB = {
           },
           {
             title: 'Figma',
-            color: 'secondary',
+            color: 'warning',
           },
         ],
       },
       {
-        extraMembers: 50,
+        title: 'Native Mobile App',
+        avatar: reactLabel,
+        avatarGroup: [
+          { avatar: avatar1, name: 'Andrew Mostowy' },
+          { avatar: avatar2, name: 'Micky Ressula' },
+          { avatar: avatar3, name: 'Michel Pal' },
+        ],
+        description:
+                  'Explore, install, use, and remix thousands of plugins and files published to the Figma Community by designers and developers.',
+        chips: [
+          {
+            title: 'React',
+            color: 'primary',
+          },
+        ],
+      },
+      {
+        extraMembers: 8,
         title: 'Only Beginners',
         avatar: htmlLabel,
         avatarGroup: [
@@ -311,14 +326,13 @@ export const db: DB = {
           },
           {
             title: 'HTML',
-            color: 'warning',
+            color: 'primary',
           },
         ],
       },
     ],
     projects: [
       {
-        daysLeft: 28,
         comments: 15,
         totalTask: 344,
         hours: '380/244',
@@ -326,7 +340,8 @@ export const db: DB = {
         budget: '$18.2k',
         completedTask: 328,
         deadline: '28/2/22',
-        chipColor: 'success',
+        chipColor: 'error',
+        chipText: 'Developer',
         startDate: '14/2/21',
         budgetSpent: '$24.8k',
         members: '280 members',
@@ -341,7 +356,7 @@ export const db: DB = {
         ],
       },
       {
-        daysLeft: 15,
+        chipText: '15 days left',
         comments: 236,
         totalTask: 90,
         tasks: '12/90',
@@ -364,7 +379,7 @@ export const db: DB = {
         description: 'Time is our most valuable asset, that\'s why we want to help you save it by creating…',
       },
       {
-        daysLeft: 45,
+        chipText: 'Developer',
         comments: 98,
         budget: '$420',
         totalTask: 140,
@@ -388,7 +403,7 @@ export const db: DB = {
       },
       {
         comments: 120,
-        daysLeft: 126,
+        chipText: 'Developer',
         totalTask: 420,
         budget: '2.43k',
         tasks: '237/420',
@@ -396,7 +411,7 @@ export const db: DB = {
         completedTask: 302,
         deadline: '12/9/22',
         budgetSpent: '$8.5k',
-        chipColor: 'warning',
+        chipColor: 'error',
         startDate: '10/2/19',
         members: '137 members',
         client: 'Hulda Wright',
@@ -410,13 +425,13 @@ export const db: DB = {
         ],
       },
       {
-        daysLeft: 5,
+        chipText: '15 days left',
         comments: 20,
         totalTask: 285,
         tasks: '29/285',
         budget: '28.4k',
         hours: '142/420',
-        chipColor: 'error',
+        chipColor: 'warning',
         completedTask: 100,
         deadline: '25/12/21',
         startDate: '12/12/20',
@@ -433,15 +448,15 @@ export const db: DB = {
         ],
       },
       {
-        daysLeft: 4,
-        comments: 16,
+        chipText: 'Developer',
+        comments: 98,
         budget: '$655',
         totalTask: 290,
         tasks: '29/290',
         hours: '580/445',
         completedTask: 290,
         budgetSpent: '$1.3k',
-        chipColor: 'success',
+        chipColor: 'error',
         deadline: '02/11/21',
         startDate: '17/8/21',
         title: 'Logo Design',
@@ -464,7 +479,7 @@ export const db: DB = {
         connections: '129',
         name: 'Mark Gilbert',
         designation: 'UI Designer',
-        avatar: avatar1,
+        avatar: avatar3,
         chips: [
           {
             title: 'Figma',
@@ -483,7 +498,7 @@ export const db: DB = {
         connections: '1.28k',
         name: 'Eugenia Parsons',
         designation: 'Developer',
-        avatar: avatar2,
+        avatar: avatar4,
         chips: [
           {
             color: 'error',
@@ -502,7 +517,7 @@ export const db: DB = {
         connections: '890',
         name: 'Francis Byrd',
         designation: 'Developer',
-        avatar: avatar3,
+        avatar: avatar5,
         chips: [
           {
             title: 'HTML',
@@ -521,7 +536,7 @@ export const db: DB = {
         connections: '890',
         name: 'Leon Lucas',
         designation: 'UI/UX Designer',
-        avatar: avatar4,
+        avatar: avatar6,
         chips: [
           {
             title: 'Figma',
@@ -544,7 +559,7 @@ export const db: DB = {
         connections: '2.14k',
         name: 'Jayden Rogers',
         designation: 'Full Stack Developer',
-        avatar: avatar5,
+        avatar: avatar1,
         chips: [
           {
             color: 'info',
@@ -567,7 +582,7 @@ export const db: DB = {
         designation: 'SEO',
         connections: '1.27k',
         name: 'Jeanette Powell',
-        avatar: avatar6,
+        avatar: avatar2,
         chips: [
           {
             title: 'Analysis',
@@ -575,7 +590,7 @@ export const db: DB = {
           },
           {
             color: 'success',
-            title: 'Writing',
+            title: 'Node.js',
           },
         ],
       },

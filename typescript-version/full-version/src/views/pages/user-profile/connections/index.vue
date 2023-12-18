@@ -43,19 +43,22 @@ const moreBtnList = [
           />
         </div>
 
-        <VCardItem>
-          <VCardTitle class="d-flex flex-column align-center justify-center">
+        <VCardText>
+          <div class="d-flex flex-column align-center justify-center">
             <VAvatar
               size="100"
               :image="data.avatar"
+              class="mb-6"
             />
 
-            <p class="mt-4 mb-0">
+            <h5 class="text-h5">
               {{ data.name }}
-            </p>
-            <span class="text-body-1">{{ data.designation }}</span>
+            </h5>
+            <div class="text-body-1">
+              {{ data.designation }}
+            </div>
 
-            <div class="d-flex align-center flex-wrap gap-2 mt-2">
+            <div class="d-flex align-center flex-wrap gap-4 my-6">
               <VChip
                 v-for="chip in data.chips"
                 :key="chip.title"
@@ -65,44 +68,49 @@ const moreBtnList = [
                 {{ chip.title }}
               </VChip>
             </div>
-          </VCardTitle>
-        </VCardItem>
+          </div>
 
-        <VCardText>
           <div class="d-flex justify-space-around">
             <div class="text-center">
-              <h6 class="text-h6">
+              <h5 class="text-h5">
                 {{ data.projects }}
-              </h6>
-              <span class="text-body-1">Projects</span>
+              </h5>
+              <div class="text-body-1">
+                Projects
+              </div>
             </div>
             <div class="text-center">
-              <h6 class="text-h6">
+              <h5 class="text-h5">
                 {{ data.tasks }}
-              </h6>
-              <span class="text-body-1">Tasks</span>
+              </h5>
+              <div class="text-body-1">
+                Tasks
+              </div>
             </div>
             <div class="text-center">
-              <h6 class="text-h6">
+              <h5 class="text-h5">
                 {{ data.connections }}
-              </h6>
-              <span class="text-body-1">Connections</span>
+              </h5>
+              <div class="text-body-1">
+                Connections
+              </div>
             </div>
           </div>
 
-          <div class="d-flex justify-center gap-4 mt-4">
+          <div class="d-flex justify-center gap-4 mt-6">
             <VBtn
               :prepend-icon="data.isConnected ? 'ri-user-follow-line' : 'ri-user-add-line'"
-              :variant="data.isConnected ? 'elevated' : 'tonal'"
+              :variant="data.isConnected ? 'elevated' : 'outlined'"
             >
               {{ data.isConnected ? 'connected' : 'connect' }}
             </VBtn>
 
             <IconBtn
-              variant="tonal"
-              class="rounded"
+              color="secondary"
+              variant="outlined"
+              rounded
             >
-              <VIcon icon="ri-mail-line" />
+              <VIcon icon="ri-mail-open-line" />
             </IconBtn>
           </div>
         </VCardText>

@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
 import figma from '@images/icons/project-icons/figma.png'
 import html5 from '@images/icons/project-icons/html5.png'
 import python from '@images/icons/project-icons/python.png'
@@ -11,6 +19,7 @@ import xamarin from '@images/icons/project-icons/xamarin.png'
 const projectTableHeaders = [
   { title: 'PROJECT', key: 'project' },
   { title: 'LEADER', key: 'leader' },
+  { title: 'Team', key: 'team' },
   { title: 'PROGRESS', key: 'progress' },
   { title: 'Action', key: 'Action', sortable: false },
 ]
@@ -23,6 +32,8 @@ const projects = [
     leader: 'Eileen',
     progress: 78,
     hours: '18:42',
+    team: [avatar1, avatar8, avatar6],
+    extraMembers: 3,
   },
   {
     logo: figma,
@@ -31,6 +42,7 @@ const projects = [
     leader: 'Owen',
     progress: 25,
     hours: '20:42',
+    team: [avatar5, avatar2],
   },
   {
     logo: vue,
@@ -39,6 +51,7 @@ const projects = [
     leader: 'Keith',
     progress: 62,
     hours: '120:87',
+    team: [avatar8, avatar2, avatar1],
   },
   {
     logo: xamarin,
@@ -47,6 +60,8 @@ const projects = [
     leader: 'Merline',
     progress: 8,
     hours: '120:87',
+    team: [avatar3, avatar4, avatar7],
+    extraMembers: 8,
   },
   {
     logo: python,
@@ -55,6 +70,8 @@ const projects = [
     leader: 'Harmonia',
     progress: 51,
     hours: '230:10',
+    team: [avatar4, avatar3, avatar1],
+    extraMembers: 5,
   },
   {
     logo: sketch,
@@ -63,6 +80,7 @@ const projects = [
     leader: 'Allyson',
     progress: 92,
     hours: '342:41',
+    team: [avatar1, avatar8],
   },
   {
     logo: html5,
@@ -71,21 +89,9 @@ const projects = [
     leader: 'Georgie',
     progress: 80,
     hours: '12:45',
+    team: [avatar1, avatar8, avatar6],
   },
 ]
-
-const resolveUserProgressVariant = (progress: number) => {
-  if (progress <= 25)
-    return 'error'
-  if (progress > 25 && progress <= 50)
-    return 'warning'
-  if (progress > 50 && progress <= 75)
-    return 'primary'
-  if (progress > 75 && progress <= 100)
-    return 'success'
-
-  return 'secondary'
-}
 
 const moreList = [
   { title: 'Download', value: 'Download' },
@@ -95,8 +101,10 @@ const moreList = [
 </script>
 
 <template>
-  <VCard title="Project List">
-    <VDivider />
+  <VCard
+    title="Project List"
+    class="projectList"
+  >
     <!-- 👉 User Project List Table -->
 
     <!-- SECTION Datatable -->
@@ -104,22 +112,53 @@ const moreList = [
       :headers="projectTableHeaders"
       :items="projects"
       hide-default-footer
+      show-select
+      item-value="name"
     >
       <!-- projects -->
       <template #item.project="{ item }">
-        <div class="d-flex">
+        <div class="d-flex align-center gap-x-3">
           <VAvatar
             :size="34"
-            class="me-3"
             :image="item.logo"
           />
           <div>
-            <p class="font-weight-medium mb-0">
+            <h6 class="text-h6">
               {{ item.name }}
-            </p>
-            <p class="text-xs text-medium-emphasis mb-0">
+            </h6>
+            <div class="text-body-2">
               {{ item.project }}
-            </p>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <template #item.leader="{ item }">
+        <div class="text-base text-high-emphasis">
+          {{ item.leader }}
+        </div>
+      </template>
+
+      <!-- Team -->
+      <template #item.team="{ item }">
+        <div class="d-flex">
+          <div class="v-avatar-group">
+            <VAvatar
+              v-for="(data, index) in item.team"
+              :key="index"
+              size="26"
+            >
+              <VImg :src="data" />
+            </VAvatar>
+            <VAvatar
+              v-if="item.extraMembers"
+              :color="$vuetify.theme.current.dark ? '#3A3B59' : '#F0EFF0'"
+              :size="26"
+            >
+              <div class="text-caption text-high-emphasis">
+                +{{ item.extraMembers }}
+              </div>
+            </VAvatar>
           </div>
         </div>
       </template>
@@ -132,16 +171,20 @@ const moreList = [
               :height="6"
               :model-value="item.progress"
               rounded
-              :color="resolveUserProgressVariant(item.progress)"
             />
           </div>
-          <span>{{ item.progress }}%</span>
+          <div class="text-high-emphasis">
+            {{ item.progress }}%
+          </div>
         </div>
       </template>
 
       <!-- Action -->
       <template #item.Action>
-        <MoreBtn :menu-list="moreList" />
+        <MoreBtn
+          :menu-list="moreList"
+          density="compact"
+        />
       </template>
 
       <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->
@@ -150,3 +193,25 @@ const moreList = [
     <!-- !SECTION -->
   </VCard>
 </template>
+
+<style lang="scss">
+.projectList{
+  .v-table{
+    &--density-default{
+      .v-table__wrapper{
+        border-radius: 0;
+
+        table{
+          tbody{
+            tr{
+              td{
+                block-size: 56px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>

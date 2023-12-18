@@ -79,7 +79,7 @@ export interface ProjectsTab {
   client: string
   avatar: string
   members: string
-  daysLeft: number
+  chipText: string
   comments: number
   deadline: string
   startDate: string
@@ -96,7 +96,7 @@ export interface TeamsTab {
   title: string
   avatar: string
   description: string
-  extraMembers: number
+  extraMembers?: number
   chips: ProfileChip[]
   avatarGroup: ProfileAvatarGroup[]
 }

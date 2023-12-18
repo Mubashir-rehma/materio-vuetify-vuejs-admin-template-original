@@ -116,12 +116,6 @@ const topicsChartConfig = {
 
 }
 
-const topicsChartSeries = [
-  {
-    data: [35, 20, 14, 12, 10, 9],
-  },
-]
-
 // Donut Chart Colors
 const donutChartColors = {
   donut: {

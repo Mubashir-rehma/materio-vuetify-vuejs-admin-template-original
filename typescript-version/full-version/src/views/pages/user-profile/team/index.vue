@@ -36,60 +36,74 @@ const moreList = [
       md="6"
       lg="4"
     >
-      <VCard :title="team.title">
-        <template #prepend>
-          <VAvatar
-            size="38"
-            :image="team?.avatar"
-          />
-        </template>
-
-        <template #append>
-          <div class="me-n3">
-            <IconBtn>
-              <VIcon icon="ri-star-line" />
-            </IconBtn>
-            <MoreBtn
-              item-props
-              :menu-list="moreList"
+      <VCard>
+        <VCardItem class="pb-4">
+          <template #prepend>
+            <VAvatar
+              size="38"
+              :image="team?.avatar"
             />
-          </div>
-        </template>
+          </template>
+
+          <VCardTitle>{{ team.title }}</VCardTitle>
+          <template #append>
+            <div class="me-n3">
+              <IconBtn>
+                <VIcon
+                  icon="ri-star-line"
+                  color="disabled"
+                />
+              </IconBtn>
+              <MoreBtn
+                item-props
+                :menu-list="moreList"
+                color="disabled"
+              />
+            </div>
+          </template>
+        </VCardItem>
 
         <VCardText>
-          <span class="text-base">{{ team.description }}</span>
-        </VCardText>
-
-        <VCardText class="d-flex align-center">
-          <div class="v-avatar-group">
-            <VAvatar
-              v-for="data in team.avatarGroup"
-              :key="data.name"
-              size="32"
-            >
-              <VImg :src="data.avatar" />
-
-              <VTooltip
-                activator="parent"
-                location="top"
-              >
-                {{ data.name }}
-              </VTooltip>
-            </VAvatar>
+          <div class="text-base mb-4">
+            {{ team.description }}
           </div>
 
-          <VSpacer />
-
-          <div class="d-flex align-center gap-2">
-            <VChip
-              v-for="data in team.chips"
-              :key="data.title"
-              :color="data.color"
-              size="small"
-              class="font-weight-medium"
-            >
-              {{ data.title }}
-            </VChip>
+          <div class="d-flex">
+            <div class="v-avatar-group">
+              <VAvatar
+                v-for="data in team.avatarGroup"
+                :key="data.name"
+                size="32"
+              >
+                <VImg :src="data.avatar" />
+                <VTooltip
+                  activator="parent"
+                  location="top"
+                >
+                  {{ data.name }}
+                </VTooltip>
+              </VAvatar>
+              <VAvatar
+                v-if="team.extraMembers"
+                :color="$vuetify.theme.current.dark ? '#3A3B59' : '#F0EFF0'"
+                :size="32"
+              >
+                <div class="text-body-2 text-high-emphasis font-weight-medium">
+                  +{{ team.extraMembers }}
+                </div>
+              </VAvatar>
+            </div>
+            <VSpacer />
+            <div class="d-flex align-center gap-2">
+              <VChip
+                v-for="data in team.chips"
+                :key="data.title"
+                :color="data.color"
+                size="small"
+              >
+                {{ data.title }}
+              </VChip>
+            </div>
           </div>
         </VCardText>
       </VCard>

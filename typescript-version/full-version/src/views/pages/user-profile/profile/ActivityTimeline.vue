@@ -1,12 +1,15 @@
-<script lang="ts" setup>
-import avatar2 from '@images/avatars/avatar-2.png'
+<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar8 from '@images/avatars/avatar-8.png'
+import pdf from '@images/icons/project-icons/pdf.png'
 </script>
 
 <template>
   <VCard>
     <VCardItem>
       <template #prepend>
-        <VIcon icon="ri-line-chart-line" />
+        <VIcon icon="ri-bar-chart-2-line" />
       </template>
 
       <VCardTitle>Activity Timeline</VCardTitle>
@@ -14,63 +17,75 @@ import avatar2 from '@images/avatars/avatar-2.png'
 
     <VCardText>
       <VTimeline
-        density="compact"
+        side="end"
         align="start"
-        truncate-line="both"
-        :line-inset="12"
-        class="v-timeline-density-compact"
+        line-inset="8"
+        truncate-line="start"
+        density="compact"
       >
         <VTimelineItem
-          dot-color="error"
+          dot-color="primary"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-1">
-            <span class="app-timeline-title">
-              8 Invoices have been paid
-            </span>
-            <span class="app-timeline-meta">Wednesday</span>
+          <!-- 👉 Header -->
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-3">
+            <div class="app-timeline-title align-self-start">
+              12 Invoices have been paid
+            </div>
+            <div class="app-timeline-meta">
+              12 min ago
+            </div>
           </div>
+
           <p class="app-timeline-text mb-2">
             Invoices have been paid to the company.
           </p>
-          <div class="d-flex align-center mt-2">
-            <VIcon
-              color="error"
-              icon="ri-file-pdf-line"
-              size="24"
-              class="me-2"
-            />
-            <h6 class="font-weight-medium text-sm">
-              Invoices.pdf
+
+          <div class="d-inline-flex align-items-center timeline-chip mb-4">
+            <img
+              :src="pdf"
+              width="20"
+              class="me-3"
+              alt="img"
+            >
+            <h6 class="text-h6 text-medium-emphasis">
+              invoice.pdf
             </h6>
           </div>
         </VTimelineItem>
 
         <VTimelineItem
-          dot-color="primary"
+          dot-color="success"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-1">
-            <span class="app-timeline-title">
-              Create a new project for client 😎
-            </span>
-            <span class="app-timeline-meta">April, 18</span>
+          <!-- 👉 Header -->
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-3">
+            <div class="app-timeline-title align-self-start">
+              Client Meeting
+            </div>
+            <div class="app-timeline-meta">
+              45 min ago
+            </div>
           </div>
 
-          <p class="app-timeline-text mb-1">
-            Invoices have been paid to the company.
+          <p class="app-timeline-text mb-2">
+            Project meeting with john @10:15am
           </p>
 
-          <div class="d-flex align-center mt-3">
+          <div class="d-flex align-center mb-2">
             <VAvatar
-              size="24"
-              class="me-2"
-              :image="avatar2"
+              size="32"
+              :image="avatar1"
+              class="me-3"
             />
+
             <div>
-              <span class="text-sm font-weight-medium mb-0">
-                John Doe (Client)
-              </span>
+              <div class="text-body-2 font-weight-medium">
+                Lester McCarthy (Client)
+              </div>
+              <div class="text-body-2">
+                CEO of ThemeSelection
+              </div>
             </div>
           </div>
         </VTimelineItem>
@@ -79,26 +94,38 @@ import avatar2 from '@images/avatars/avatar-2.png'
           dot-color="info"
           size="x-small"
         >
-          <div class="d-flex justify-space-between align-center flex-wrap mb-1 gap-2">
-            <span class="app-timeline-title">
-              Order #37745 from September
-            </span>
-            <span class="app-timeline-meta">January, 10</span>
+          <div class="d-flex justify-space-between align-center gap-2 flex-wrap mb-3">
+            <div class="app-timeline-title align-self-start">
+              Create a new project for client
+            </div>
+            <div class="app-timeline-meta">
+              2 Day Ago
+            </div>
           </div>
-          <p class="app-timeline-text mb-0">
-            Invoices have been paid to the company.
-          </p>
-        </VTimelineItem>
 
-        <VTimelineItem
-          dot-color="success"
-          size="x-small"
-        >
-          <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-1">
-            <span class="app-timeline-title">
-              Public Meeting
-            </span>
-            <span class="app-timeline-meta">September, 30</span>
+          <p class="mb-0 app-timeline-text mb-2">
+            6 team members in a project
+          </p>
+
+          <div class="v-avatar-group">
+            <VAvatar
+              :size="40"
+              :image="avatar1"
+            />
+            <VAvatar
+              :size="40"
+              :image="avatar8"
+            />
+            <VAvatar
+              :size="40"
+              :image="avatar6"
+            />
+            <VAvatar
+              :color="$vuetify.theme.current.dark ? '#3A3B59' : '#F0EFF0'"
+              :size="40"
+            >
+              +3
+            </VAvatar>
           </div>
         </VTimelineItem>
       </VTimeline>

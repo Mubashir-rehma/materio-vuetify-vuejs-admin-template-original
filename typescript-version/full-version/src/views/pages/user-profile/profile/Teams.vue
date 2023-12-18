@@ -15,10 +15,16 @@ const moreList = [
 </script>
 
 <template>
-  <VCard title="Teams">
+  <VCard
+    title="Teams"
+    class="teamsCard"
+  >
     <template #append>
       <div class="me-n2">
-        <MoreBtn :menu-list="moreList" />
+        <MoreBtn
+          :menu-list="moreList"
+          density="compact"
+        />
       </div>
     </template>
 
@@ -35,7 +41,7 @@ const moreList = [
             />
           </template>
 
-          <VListItemTitle class="font-weight-medium">
+          <VListItemTitle class="font-weight-medium mb-1">
             {{ data.title }}
           </VListItemTitle>
           <VListItemSubtitle>{{ data.members }} Members</VListItemSubtitle>
@@ -44,7 +50,6 @@ const moreList = [
             <VChip
               :color="data.ChipColor"
               size="small"
-              class="font-weight-medium"
             >
               {{ data.chipText }}
             </VChip>
@@ -68,6 +73,20 @@ const moreList = [
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 14px;
+  --v-card-list-gap: 16px;
+}
+</style>
+
+<style lang="scss">
+.teamsCard{
+  .v-list{
+    .v-list-item{
+      &__prepend{
+        .v-list-item__spacer{
+          inline-size: 8px !important;
+        }
+      }
+    }
+  }
 }
 </style>

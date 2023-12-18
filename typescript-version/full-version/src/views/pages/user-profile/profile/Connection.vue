@@ -15,10 +15,16 @@ const moreList = [
 </script>
 
 <template>
-  <VCard title="Connection">
+  <VCard
+    title="Connection"
+    class="connectionCard"
+  >
     <template #append>
       <div class="me-n2">
-        <MoreBtn :menu-list="moreList" />
+        <MoreBtn
+          :menu-list="moreList"
+          density="compact"
+        />
       </div>
     </template>
 
@@ -35,7 +41,7 @@ const moreList = [
             />
           </template>
 
-          <VListItemTitle class="font-weight-medium">
+          <VListItemTitle class="font-weight-medium mb-1">
             {{ data.name }}
           </VListItemTitle>
           <VListItemSubtitle>{{ data.connections }} Connections</VListItemSubtitle>
@@ -43,13 +49,12 @@ const moreList = [
           <template #append>
             <VBtn
               icon
-              size="34"
               class="rounded"
               :variant="data.isFriend ? 'elevated' : 'outlined' "
             >
               <VIcon
                 size="24"
-                icon="ri-user-line"
+                :icon="data.isFriend ? 'ri-user-line' : 'ri-user-add-line'"
               />
             </VBtn>
           </template>
@@ -72,6 +77,20 @@ const moreList = [
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: 14px;
+  --v-card-list-gap: 16px;
+}
+</style>
+
+<style lang="scss">
+.connectionCard{
+  .v-list{
+    .v-list-item{
+      &__prepend{
+        .v-list-item__spacer{
+          inline-size: 8px !important;
+        }
+      }
+    }
+  }
 }
 </style>

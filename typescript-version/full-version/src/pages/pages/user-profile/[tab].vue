@@ -22,9 +22,9 @@ const activeTab = computed({
 // tabs
 const tabs = [
   { title: 'Profile', icon: 'ri-user-line', tab: 'profile' },
-  { title: 'Team', icon: 'ri-group-line', tab: 'teams' },
-  { title: 'Projects', icon: 'ri-layout-grid-line', tab: 'projects' },
-  { title: 'Connections', icon: 'ri-links-line', tab: 'connections' },
+  { title: 'Team', icon: 'ri-team-line', tab: 'teams' },
+  { title: 'Projects', icon: 'ri-computer-line', tab: 'projects' },
+  { title: 'Connections', icon: 'ri-link', tab: 'connections' },
 ]
 </script>
 
@@ -35,7 +35,6 @@ const tabs = [
     <VTabs
       v-model="activeTab"
       class="v-tabs-pill"
-      density="compact"
     >
       <VTab
         v-for="item in tabs"
@@ -44,7 +43,6 @@ const tabs = [
         :to="{ name: 'pages-user-profile-tab', params: { tab: item.tab } }"
       >
         <VIcon
-          size="20"
           start
           :icon="item.icon"
         />

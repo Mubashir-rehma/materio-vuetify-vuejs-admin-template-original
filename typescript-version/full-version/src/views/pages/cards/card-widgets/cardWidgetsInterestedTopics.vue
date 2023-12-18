@@ -115,6 +115,9 @@ const topicsData = [
   { title: 'UI Design', value: 35, color: 'primary' },
   { title: 'UX Design', value: 20, color: 'info' },
   { title: 'Music', value: 14, color: 'success' },
+]
+
+const moreTopics = [
   { title: 'Animation', value: 12, color: 'secondary' },
   { title: 'Vue', value: 10, color: 'error' },
   { title: 'SEO', value: 9, color: 'warning' },
@@ -130,8 +133,11 @@ const topicsData = [
     </VCardItem>
 
     <VCardText>
-      <div class="d-md-flex d-block justify-space-between flex-wrap gap-6">
-        <div :style="{ 'min-inline-size': $vuetify.display.smAndUp ? '400px' : 'auto' }">
+      <VRow>
+        <VCol
+          cols="12"
+          lg="6"
+        >
           <VueApexCharts
             type="bar"
             height="300"
@@ -139,36 +145,62 @@ const topicsData = [
             :series="topicsChartSeries"
             class="mb-md-0 mb-6"
           />
-        </div>
+        </VCol>
 
-        <div
-          class="d-flex flex-wrap gap-x-4 gap-y-10 mx-auto mx-md-0"
-          style="max-inline-size: 270px;"
-        >
-          <div
-            v-for="topic in topicsData"
-            :key="topic.title"
-            class="d-flex gap-x-2"
-          >
-            <VBadge
-              inline
-              dot
-              :color="topic.color"
-            />
-            <div>
-              <div
-                class="text-body-1"
-                style="min-inline-size: 90px;"
-              >
-                {{ topic.title }}
+        <VCol class="d-flex justify-space-around align-center">
+          <div class="d-flex flex-column gap-y-12">
+            <div
+              v-for="topic in topicsData"
+              :key="topic.title"
+              class="d-flex gap-x-2"
+            >
+              <VBadge
+                inline
+                dot
+                :color="topic.color"
+                class="mt-1"
+              />
+              <div>
+                <div
+                  class="text-body-1"
+                  style="min-inline-size: 90px;"
+                >
+                  {{ topic.title }}
+                </div>
+                <h5 class="text-h5">
+                  {{ topic.value }}%
+                </h5>
               </div>
-              <h5 class="text-h5">
-                {{ topic.value }}%
-              </h5>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div class="d-flex flex-column gap-y-12">
+            <div
+              v-for="topic in moreTopics"
+              :key="topic.title"
+              class="d-flex gap-x-2"
+            >
+              <VBadge
+                inline
+                dot
+                :color="topic.color"
+                class="mt-1"
+              />
+              <div>
+                <div
+                  class="text-body-1"
+                  style="min-inline-size: 90px;"
+                >
+                  {{ topic.title }}
+                </div>
+                <h5 class="text-h5">
+                  {{ topic.value }}%
+                </h5>
+              </div>
+            </div>
+          </div>
+        </VCol>
+      </VRow>
     </VCardText>
   </VCard>
 </template>

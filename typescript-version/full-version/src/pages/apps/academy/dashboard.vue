@@ -116,12 +116,6 @@ const topicsChartConfig = {
 
 }
 
-const topicsChartSeries = [
-  {
-    data: [35, 20, 14, 12, 10, 9],
-  },
-]
-
 // Donut Chart Colors
 const donutChartColors = {
   donut: {
@@ -178,7 +172,7 @@ const timeSpendingChartConfig = {
         labels: {
           show: true,
           value: {
-            fontSize: '1.5rem',
+            fontSize: '1.125rem',
             color: 'rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity))',
             fontWeight: 500,
             offsetY: -15,

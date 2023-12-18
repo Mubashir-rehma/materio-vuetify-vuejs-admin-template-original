@@ -944,7 +944,22 @@
 
 // 👉 Timeline
 
-.v-timeline{
+.v-timeline {
+  &:not(.v-timeline--variant-outlined) .v-timeline-divider__dot {
+    background: none !important;
+
+    .v-timeline-divider__inner-dot {
+      box-shadow: 0 0 0 0.1875rem rgb(var(--v-theme-on-surface-variant));
+
+      @each $color-name in variables.$theme-colors-name {
+
+        &.bg-#{$color-name} {
+          box-shadow: 0 0 0 0.1875rem rgba(var(--v-theme-#{$color-name}), 0.12);
+        }
+      }
+    }
+  }
+
   .v-timeline-item{
     .timeline-chip{
       border-radius: 6px;

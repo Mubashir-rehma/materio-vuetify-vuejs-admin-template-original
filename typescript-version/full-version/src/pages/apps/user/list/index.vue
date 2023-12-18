@@ -275,7 +275,7 @@ const widgetData = ref([
       >
         <!-- User -->
         <template #item.user="{ item }">
-          <div class="d-flex">
+          <div class="d-flex align-center">
             <VAvatar
               size="34"
               :variant="!item.avatar ? 'tonal' : undefined"

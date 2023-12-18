@@ -1,8 +1,16 @@
 import type { UserProperties } from './types'
 import avatar1 from '@images/avatars/avatar-1.png'
+import avatar10 from '@images/avatars/avatar-10.png'
+import avatar11 from '@images/avatars/avatar-11.png'
+import avatar12 from '@images/avatars/avatar-12.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar7 from '@images/avatars/avatar-7.png'
+import avatar8 from '@images/avatars/avatar-8.png'
+import avatar9 from '@images/avatars/avatar-9.png'
 
 interface DB {
   users: UserProperties[]
@@ -463,7 +471,7 @@ export const db: DB = {
       email: 'smacgilfoyley@bigcartel.com',
       currentPlan: 'company',
       status: 'pending',
-      avatar: '',
+      avatar: avatar12,
     },
     {
       id: 36,
@@ -489,7 +497,7 @@ export const db: DB = {
       email: 'shebblethwaite10@arizona.edu',
       currentPlan: 'company',
       status: 'inactive',
-      avatar: '',
+      avatar: avatar11,
     },
     {
       id: 38,
@@ -515,7 +523,7 @@ export const db: DB = {
       email: 'twidmore12@bravesites.com',
       currentPlan: 'team',
       status: 'pending',
-      avatar: '',
+      avatar: avatar8,
     },
     {
       id: 40,
@@ -541,7 +549,7 @@ export const db: DB = {
       email: 'ebaldetti14@theguardian.com',
       currentPlan: 'team',
       status: 'pending',
-      avatar: '',
+      avatar: avatar10,
     },
     {
       id: 42,
@@ -554,7 +562,7 @@ export const db: DB = {
       email: 'brossiter15@craigslist.org',
       currentPlan: 'team',
       status: 'inactive',
-      avatar: '',
+      avatar: avatar9,
     },
     {
       id: 43,
@@ -580,7 +588,7 @@ export const db: DB = {
       email: 'vkoschek17@abc.net.au',
       currentPlan: 'team',
       status: 'active',
-      avatar: '',
+      avatar: avatar7,
     },
     {
       id: 45,
@@ -593,7 +601,7 @@ export const db: DB = {
       email: 'cperot18@goo.ne.jp',
       currentPlan: 'team',
       status: 'pending',
-      avatar: '',
+      avatar: avatar6,
     },
     {
       id: 46,
@@ -606,7 +614,7 @@ export const db: DB = {
       email: 'soffner19@mac.com',
       currentPlan: 'enterprise',
       status: 'pending',
-      avatar: '',
+      avatar: avatar5,
     },
     {
       id: 47,
@@ -619,7 +627,7 @@ export const db: DB = {
       email: 'kcourtliff1a@bbc.co.uk',
       currentPlan: 'basic',
       status: 'active',
-      avatar: '',
+      avatar: avatar4,
     },
     {
       id: 48,
@@ -632,7 +640,7 @@ export const db: DB = {
       email: 'owind1b@yandex.ru',
       currentPlan: 'basic',
       status: 'pending',
-      avatar: '',
+      avatar: avatar2,
     },
     {
       id: 49,
@@ -645,7 +653,7 @@ export const db: DB = {
       email: 'pdurber1c@gov.uk',
       currentPlan: 'team',
       status: 'inactive',
-      avatar: '',
+      avatar: avatar3,
     },
     {
       id: 50,
@@ -658,7 +666,7 @@ export const db: DB = {
       email: 'bkrabbe1d@home.pl',
       currentPlan: 'company',
       status: 'active',
-      avatar: '',
+      avatar: avatar1,
     },
   ],
 }

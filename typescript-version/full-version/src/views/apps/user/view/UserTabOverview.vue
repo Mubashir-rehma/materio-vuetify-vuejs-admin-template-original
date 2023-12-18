@@ -1,8 +1,13 @@
 <script lang="ts" setup>
+import { useTheme } from 'vuetify'
 import UserInvoiceTable from './UserInvoiceTable.vue'
+import pdf from '@images/icons/project-icons/pdf.png'
 
 // Images
 import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
 import figma from '@images/icons/project-icons/figma.png'
 import html5 from '@images/icons/project-icons/html5.png'
 import python from '@images/icons/project-icons/python.png'
@@ -18,6 +23,8 @@ const projectTableHeaders = [
   { title: 'PROGRESS', key: 'progress' },
   { title: 'HOURS', key: 'hours' },
 ]
+
+const { name } = useTheme()
 
 const projects = [
   {
@@ -90,42 +97,63 @@ const resolveUserProgressVariant = (progress: number) => {
 
   return 'secondary'
 }
+
+const search = ref('')
 </script>
 
 <template>
   <VRow>
     <VCol cols="12">
       <VCard title="Project List">
-        <VDivider />
+        <template #append>
+          <VTextField
+            v-model="search"
+            placeholder="Search Project"
+            density="compact"
+            single-line
+            style="inline-size: 10rem;"
+          />
+        </template>
         <!-- 👉 User Project List Table -->
 
         <!-- SECTION Datatable -->
         <VDataTable
+          :search="search"
           :headers="projectTableHeaders"
           :items="projects"
+          class="text-no-wrap rounded-0"
         >
           <!-- projects -->
           <template #item.project="{ item }">
-            <div class="d-flex">
+            <div class="d-flex align-center">
               <VAvatar
                 :size="34"
                 class="me-3"
                 :image="item.logo"
               />
               <div>
-                <p class="font-weight-medium mb-0">
+                <h6 class="text-h6 mb-0">
                   {{ item.name }}
-                </p>
-                <p class="text-xs text-medium-emphasis mb-0">
+                </h6>
+                <p class="text-sm text-medium-emphasis mb-0">
                   {{ item.project }}
                 </p>
               </div>
             </div>
           </template>
 
+          <!-- total task -->
+          <template #item.totalTask="{ item }">
+            <div class="text-high-emphasis">
+              {{ item.totalTask }}
+            </div>
+          </template>
+
           <!-- Progress -->
           <template #item.progress="{ item }">
-            <span>{{ item.progress }}%</span>
+            <div class="text-high-emphasis">
+              {{ item.progress }}%
+            </div>
             <VProgressLinear
               :height="6"
               :model-value="item.progress"
@@ -150,6 +178,7 @@ const resolveUserProgressVariant = (progress: number) => {
             density="compact"
             align="start"
             truncate-line="both"
+            :line-inset="8"
             class="v-timeline-density-compact"
           >
             <VTimelineItem
@@ -166,16 +195,17 @@ const resolveUserProgressVariant = (progress: number) => {
               <p class="app-timeline-text mb-2">
                 Invoices have been paid to the company
               </p>
-              <div class="d-flex align-center mt-2">
-                <VIcon
-                  color="error"
-                  icon="ri-file-pdf-line"
-                  size="24"
+              <div class="d-inline-flex align-items-center timeline-chip">
+                <img
+                  :src="pdf"
+                  width="20"
                   class="me-2"
-                />
-                <h6 class="font-weight-medium text-sm">
-                  Invoices.pdf
-                </h6>
+                  alt="img"
+                >
+
+                <span class="app-timeline-text font-weight-medium">
+                  invoice.pdf
+                </span>
               </div>
             </VTimelineItem>
 
@@ -185,12 +215,12 @@ const resolveUserProgressVariant = (progress: number) => {
             >
               <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
                 <span class="app-timeline-title">
-                  Meeting with john
+                  Client Meeting
                 </span>
                 <span class="app-timeline-meta">45 min ago</span>
               </div>
 
-              <p class="app-timeline-text mb-1">
+              <p class="app-timeline-text mb-2">
                 React Project meeting with john @10:15am
               </p>
 
@@ -201,10 +231,10 @@ const resolveUserProgressVariant = (progress: number) => {
                   :image="avatar2"
                 />
                 <div>
-                  <h6 class="text-sm font-weight-medium mb-0">
-                    John Doe (Client)
-                  </h6>
-                  <span class="text-xs">CEO of Kelly Group</span>
+                  <p class="text-sm font-weight-medium mb-0">
+                    Lester McCarthy (Client)
+                  </p>
+                  <span class="text-sm">CEO of Kelly Group</span>
                 </div>
               </div>
             </VTimelineItem>
@@ -215,29 +245,25 @@ const resolveUserProgressVariant = (progress: number) => {
             >
               <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
                 <span class="app-timeline-title">
-                  Create a new react project for client
+                  Create a new project for client
                 </span>
                 <span class="app-timeline-meta">2 day ago</span>
               </div>
 
-              <p class="app-timeline-text mb-0">
-                Add files to new design folder
+              <p class="app-timeline-text mb-2">
+                6 team members in a project
               </p>
-            </VTimelineItem>
 
-            <VTimelineItem
-              dot-color="success"
-              size="x-small"
-            >
-              <div class="d-flex justify-space-between align-center flex-wrap gap-2 mb-3">
-                <span class="app-timeline-title">
-                  12 Create invoices for client
-                </span>
-                <span class="app-timeline-meta">5 day ago</span>
+              <div class="v-avatar-group">
+                <VAvatar
+                  v-for="avatar in [avatar2, avatar3, avatar4, avatar5]"
+                  :key="avatar"
+                  :image="avatar"
+                />
+                <VAvatar :color="name === 'light' ? '#F0EFF0' : '#3F3B59'">
+                  <span class="text-high-emphasis">+3</span>
+                </VAvatar>
               </div>
-              <p class="app-timeline-text mb-0">
-                Weekly review of freshly prepared design for our new app.
-              </p>
             </VTimelineItem>
           </VTimeline>
         </VCardText>

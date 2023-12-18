@@ -1,16 +1,20 @@
 <script setup lang="ts">
 interface UserData {
-  id: number | null
-  firstName: string
-  lastName: string
-  userName: string
-  country: string | null
-  contact: string | null
+  id: number
+  fullName: string
+  company: string
+  role: string
+  username: string
+  country: string
+  contact: string
   email: string
-  status: string | null
-  isBillingAddress: boolean
+  currentPlan: string
+  status: string
+  avatar: string
+  taskDone: number
+  projectDone: number
   taxId: string
-  language: string[] | null
+  language: string[]
 }
 
 interface Props {
@@ -25,18 +29,20 @@ interface Emit {
 
 const props = withDefaults(defineProps<Props>(), {
   userData: () => ({
-    id: 0,
-    firstName: '',
-    lastName: '',
-    userName: '',
-    email: '',
-    country: null,
-    language: null,
-    contact: '',
-    status: null,
     avatar: '',
-    taskDone: null,
-    isBillingAddress: true,
+    company: '',
+    contact: '',
+    country: '',
+    currentPlan: '',
+    email: ' ',
+    fullName: '',
+    id: 0,
+    role: '',
+    status: '',
+    username: '',
+    language: [''],
+    projectDone: 0,
+    taskDone: 0,
     taxId: '',
   }),
 })
@@ -101,7 +107,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               md="6"
             >
               <VTextField
-                v-model="userData.firstName"
+                v-model="userData.fullName.split(' ')[0]"
                 label="First Name"
                 placeholder="John"
               />
@@ -113,7 +119,7 @@ const dialogVisibleUpdate = (val: boolean) => {
               md="6"
             >
               <VTextField
-                v-model="userData.lastName"
+                v-model="userData.fullName.split(' ')[1]"
                 label="Last Name"
                 placeholder="doe"
               />
@@ -123,7 +129,7 @@ const dialogVisibleUpdate = (val: boolean) => {
 
             <VCol cols="12">
               <VTextField
-                v-model="userData.userName"
+                v-model="userData.username"
                 label="Username"
                 placeholder="John Doe"
               />
@@ -210,7 +216,6 @@ const dialogVisibleUpdate = (val: boolean) => {
             <!-- 👉 Switch -->
             <VCol cols="12">
               <VSwitch
-                v-model="userData.isBillingAddress"
                 density="compact"
                 label="Use as a billing address?"
               />

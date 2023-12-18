@@ -125,7 +125,7 @@ const deleteUser = async (id: number) => {
 }
 
 const widgetData = ref([
-  { title: 'Session', value: '21,459', change: 29, desc: 'Total Users', icon: 'ri-user-line', iconColor: 'primary' },
+  { title: 'Session', value: '21,459', change: 29, desc: 'Total Users', icon: 'ri-group-line', iconColor: 'primary' },
   { title: 'Paid Users', value: '4,567', change: 18, desc: 'Last Week Analytics', icon: 'ri-user-add-line', iconColor: 'error' },
   { title: 'Active Users', value: '19,860', change: -14, desc: 'Last Week Analytics', icon: 'ri-user-follow-line', iconColor: 'success' },
   { title: 'Pending Users', value: '237', change: 42, desc: 'Last Week Analytics', icon: 'ri-user-search-line', iconColor: 'warning' },
@@ -345,7 +345,7 @@ const widgetData = ref([
 
             <VMenu activator="parent">
               <VList>
-                <VListItem>
+                <VListItem link>
                   <template #prepend>
                     <VIcon icon="ri-download-line" />
                   </template>

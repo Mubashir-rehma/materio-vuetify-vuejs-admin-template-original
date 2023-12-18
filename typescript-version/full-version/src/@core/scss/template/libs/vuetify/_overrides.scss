@@ -28,3 +28,11 @@ body {
 .text-subtitle-2 {
   color: rgba(var(--v-theme-on-background), 0.55);
 }
+
+// 👉 Input placeholder alignment
+.v-input--density-compact{
+  input::placeholder { 
+    position: relative;
+    inset-block-start: 1px;
+  }
+}

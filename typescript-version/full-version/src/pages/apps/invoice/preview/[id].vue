@@ -62,11 +62,11 @@ const printInvoice = () => {
         cols="12"
         md="9"
       >
-        <VCard>
+        <VCard class="invoice-preview-wrapper pa-12">
           <!-- SECTION Header -->
-          <VCardText class="d-flex flex-wrap justify-space-between flex-column flex-sm-row print-row">
+          <div class="invoice-header-preview d-flex flex-wrap justify-space-between flex-column flex-sm-row print-row bg-var-theme-background gap-6 rounded pa-6 mb-6">
             <!-- 👉 Left Content -->
-            <div class="mb-4">
+            <div>
               <div class="d-flex align-center mb-6">
                 <!-- 👉 Logo -->
                 <VNodeRenderer
@@ -75,72 +75,71 @@ const printInvoice = () => {
                 />
 
                 <!-- 👉 Title -->
-                <h6 class="font-weight-medium text-xl text-uppercase">
+                <h6 class="text-xl font-weight-medium text-uppercase">
                   {{ themeConfig.app.title }}
                 </h6>
               </div>
 
               <!-- 👉 Address -->
-              <p class="mb-0">
+              <h6 class="text-h6 font-weight-regular">
                 Office 149, 450 South Brand Brooklyn
-              </p>
-              <p class="mb-0">
+              </h6>
+              <h6 class="text-h6 font-weight-regular">
                 San Diego County, CA 91905, USA
-              </p>
-              <p class="mb-0">
+              </h6>
+              <h6 class="text-h6 font-weight-regular">
                 +1 (123) 456 7891, +44 (876) 543 2198
-              </p>
+              </h6>
             </div>
 
             <!-- 👉 Right Content -->
-            <div class="mb-4">
+            <div>
               <!-- 👉 Invoice ID -->
-              <h6 class="font-weight-medium text-xl mb-6">
+              <h6 class="font-weight-medium text-lg mb-6">
                 Invoice #{{ invoice.id }}
               </h6>
 
               <!-- 👉 Issue Date -->
-              <p class="mb-2">
+              <h6 class="text-h6 font-weight-regular">
                 <span>Date Issued: </span>
                 <span>{{ new Date(invoice.issuedDate).toLocaleDateString('en-GB') }}</span>
-              </p>
+              </h6>
 
               <!-- 👉 Due Date -->
-              <p class="mb-2">
+              <h6 class="text-h6 font-weight-regular">
                 <span>Due Date: </span>
                 <span>{{ new Date(invoice.dueDate).toLocaleDateString('en-GB') }}</span>
-              </p>
+              </h6>
             </div>
-          </VCardText>
+          </div>
           <!-- !SECTION -->
 
-          <VDivider />
-
           <!-- 👉 Payment Details -->
-          <VCardText class="d-flex justify-space-between flex-wrap flex-column flex-sm-row print-row">
-            <div class="my-4">
-              <h6 class="text-sm font-weight-medium mb-3">
+          <VRow class="print-row mb-6">
+            <VCol class="text-no-wrap">
+              <h6 class="text-h6 mb-4">
                 Invoice To:
               </h6>
-              <p class="mb-1">
+
+              <p class="mb-0">
                 {{ invoice.client.name }}
               </p>
-              <p class="mb-1">
+              <p class="mb-0">
                 {{ invoice.client.company }}
               </p>
-              <p class="mb-1">
+              <p class="mb-0">
                 {{ invoice.client.address }}, {{ invoice.client.country }}
               </p>
-              <p class="mb-1">
+              <p class="mb-0">
                 {{ invoice.client.contact }}
               </p>
               <p class="mb-0">
                 {{ invoice.client.companyEmail }}
               </p>
-            </div>
+            </VCol>
 
-            <div class="my-4">
-              <h6 class="text-sm font-weight-medium mb-3">
+            <VCol class="text-no-wrap">
+              <h6 class="text-h6 mb-4">
                 Bill To:
               </h6>
               <table>
@@ -185,13 +184,11 @@ const printInvoice = () => {
                   </td>
                 </tr>
               </table>
-            </div>
-          </VCardText>
+            </VCol>
+          </VRow>
 
-          <!-- 👉 Table -->
-          <VDivider />
-
-          <VTable>
+          <!-- 👉 invoice Table -->
+          <VTable class="invoice-preview-table border text-high-emphasis mb-6">
             <thead>
               <tr>
                 <th scope="col">
@@ -245,13 +242,11 @@ const printInvoice = () => {
             </tbody>
           </VTable>
 
-          <VDivider class="my-2" />
-
-          <!-- Total -->
-          <VCardText class="d-flex justify-space-between flex-column flex-sm-row print-row">
+          <!-- 👉 Total -->
+          <div class="d-flex justify-space-between flex-column flex-sm-row print-row">
             <div class="mb-2">
               <div class="d-flex align-center mb-1">
-                <h6 class="text-sm font-weight-medium me-1">
+                <h6 class="text-h6 me-2">
                   Salesperson:
                 </h6>
                 <span>Jenny Parker</span>
@@ -266,7 +261,7 @@ const printInvoice = () => {
                     Subtotal:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-h6">
                       $1800
                     </h6>
                   </td>
@@ -276,7 +271,7 @@ const printInvoice = () => {
                     Discount:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-h6">
                       $28
                     </h6>
                   </td>
@@ -286,7 +281,7 @@ const printInvoice = () => {
                     Tax:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-h6">
                       21%
                     </h6>
                   </td>
@@ -301,34 +296,23 @@ const printInvoice = () => {
                     Total:
                   </td>
                   <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-sm">
+                    <h6 class="text-h6">
                       $1690
                     </h6>
                   </td>
                 </tr>
               </table>
             </div>
-          </VCardText>
+          </div>
 
-          <VDivider class="mt-2" />
+          <VDivider class="my-6 border-dashed" />
 
-          <VCardText>
-            <div class="d-flex">
-              <h6 class="text-sm font-weight-medium me-1">
-                Note:
-              </h6>
-              <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</span>
-            </div>
-
-            <div class="d-flex flex-wrap justify-end d-print-none gap-4 mt-10">
-              <VBtn @click="printInvoice">
-                Print
-              </VBtn>
-              <VBtn color="success">
-                Download
-              </VBtn>
-            </div>
-          </VCardText>
+          <p class="mb-0">
+            <span class="text-high-emphasis font-weight-medium me-1">
+              Note:
+            </span>
+            <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!</span>
+          </p>
         </VCard>
       </VCol>
 
@@ -342,7 +326,7 @@ const printInvoice = () => {
             <!-- 👉 Send Invoice Trigger button -->
             <VBtn
               block
-              prepend-icon="ri-send-plane-2-line"
+              prepend-icon="ri-send-plane-line"
               class="mb-4"
               @click="isSendPaymentSidebarVisible = true"
             >
@@ -354,10 +338,29 @@ const printInvoice = () => {
               color="secondary"
               variant="outlined"
               class="mb-4"
-              :to="{ name: 'apps-invoice-edit-id', params: { id: route.params.id } }"
             >
-              Edit Invoice
+              Download
             </VBtn>
+
+            <div class="d-flex flex-wrap gap-4">
+              <VBtn
+                variant="outlined"
+                color="secondary"
+                class="flex-grow-1"
+                @click="printInvoice"
+              >
+                Print
+              </VBtn>
+
+              <VBtn
+                color="secondary"
+                variant="outlined"
+                class="mb-4 flex-grow-1"
+                :to="{ name: 'apps-invoice-edit-id', params: { id: route.params.id } }"
+              >
+                Edit
+              </VBtn>
+            </div>
 
             <!-- 👉  Add Payment trigger button  -->
             <VBtn
@@ -382,6 +385,10 @@ const printInvoice = () => {
 </template>
 
 <style lang="scss">
+.invoice-preview-table {
+  --v-table-header-color: var(--v-theme-surface);
+}
+
 @media print {
   .v-theme--dark {
     --v-theme-surface: 255, 255, 255;
@@ -390,6 +397,11 @@ const printInvoice = () => {
 
   body {
     background: none !important;
+  }
+
+  .invoice-header-preview,
+  .invoice-preview-wrapper {
+    padding: 0 !important;
   }
 
   .product-buy-now {

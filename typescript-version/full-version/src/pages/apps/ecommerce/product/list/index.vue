@@ -236,6 +236,7 @@ const deleteProduct = async (id: number) => {
             v-model="searchQuery"
             placeholder="Search Product"
             style="inline-size: 200px;"
+            density="compact"
             class="me-3"
           />
         </div>

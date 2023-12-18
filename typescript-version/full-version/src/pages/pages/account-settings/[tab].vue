@@ -45,7 +45,6 @@ definePage({
         {{ item.title }}
       </VTab>
     </VTabs>
-    <VDivider />
 
     <VWindow
       v-model="activeTab"

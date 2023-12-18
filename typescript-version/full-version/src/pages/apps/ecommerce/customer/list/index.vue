@@ -52,6 +52,7 @@ const totalCustomers = computed(() => customerData.value.total)
           <VTextField
             v-model="searchQuery"
             style="max-inline-size: 200px; min-inline-size: 200px;"
+            density="compact"
             placeholder="Search .."
           />
           <div class="d-flex flex-row gap-4 align-center flex-wrap">

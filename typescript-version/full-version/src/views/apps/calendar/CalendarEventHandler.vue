@@ -131,11 +131,13 @@ const dialogModelValueUpdate = (val: boolean) => {
         >
           <VIcon
             size="18"
-            icon="tabler-trash"
+            icon="ri-delete-bin-7-line"
           />
         </IconBtn>
       </template>
     </AppDrawerHeaderSection>
+
+    <VDivider />
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>

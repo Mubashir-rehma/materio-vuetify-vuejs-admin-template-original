@@ -84,6 +84,8 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
       @cancel="closeNavigationDrawer"
     />
 
+    <VDivider />
+
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
@@ -193,14 +195,14 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
               <VCol cols="12">
                 <VBtn
                   type="submit"
-                  class="me-3"
+                  class="me-4"
                 >
                   Submit
                 </VBtn>
                 <VBtn
                   type="reset"
                   variant="outlined"
-                  color="secondary"
+                  color="error"
                   @click="closeNavigationDrawer"
                 >
                   Cancel

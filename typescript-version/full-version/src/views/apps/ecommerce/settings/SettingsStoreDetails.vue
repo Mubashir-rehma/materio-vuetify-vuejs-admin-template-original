@@ -45,16 +45,8 @@
           <VAlert
             color="warning"
             variant="tonal"
+            icon="ri-notification-3-line"
           >
-            <template #prepend>
-              <VAvatar
-                size="28"
-                icon="ri-notification-3-line"
-                variant="elevated"
-                color="warning"
-                rounded
-              />
-            </template>
             Confirm that you have access to johndoe@gmail.com in sender email settings.
           </VAlert>
         </VCol>

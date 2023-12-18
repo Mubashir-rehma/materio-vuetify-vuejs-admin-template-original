@@ -56,6 +56,8 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
       @cancel="$emit('update:isDrawerOpen', false)"
     />
 
+    <VDivider />
+
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
@@ -115,7 +117,7 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
                 <VBtn
                   type="reset"
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                   @click="$emit('update:isDrawerOpen', false)"
                 >
                   Cancel

@@ -86,7 +86,7 @@ const removeProduct = (id: number) => {
           <!-- 👉 Send Invoice -->
           <VBtn
             block
-            prepend-icon="ri-send-plane-2-line"
+            prepend-icon="ri-send-plane-line"
             class="mb-3"
             @click="isSendPaymentSidebarVisible = true"
           >
@@ -124,7 +124,7 @@ const removeProduct = (id: number) => {
       />
 
       <!-- 👉 Payment Terms -->
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between mb-2">
         <VLabel for="payment-terms">
           Payment Terms
         </VLabel>
@@ -137,7 +137,7 @@ const removeProduct = (id: number) => {
       </div>
 
       <!-- 👉  Client Notes -->
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between mb-2">
         <VLabel for="client-notes">
           Client Notes
         </VLabel>

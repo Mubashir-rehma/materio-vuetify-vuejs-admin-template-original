@@ -274,13 +274,13 @@ const resetForm = () => {
   .ProseMirror-focused{
     outline: none !important;
   }
-}
 
-.tiptap-editor-wrapper {
-  border: 1px solid rgba(var(--v-border-color), 0.22);
+  .tiptap-editor-wrapper {
+    border: 1px solid rgba(var(--v-border-color), 0.22);
 
-  &:hover {
-    border-color: rgba(var(--v-border-color), 0.6);
+    &:hover {
+      border-color: rgba(var(--v-border-color), 0.6);
+    }
   }
 }
 </style>

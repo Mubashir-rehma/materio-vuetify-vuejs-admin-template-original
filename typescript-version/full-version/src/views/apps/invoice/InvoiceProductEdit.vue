@@ -77,13 +77,13 @@ watch(totalPrice, () => {
 
 <template>
   <!-- eslint-disable vue/no-mutating-props -->
-  <div class="add-products-header mb-2 d-none d-md-flex ps-5 pe-16">
+  <div class="add-products-header mb-2 d-none d-md-flex mb-4">
     <VRow>
       <VCol
         cols="12"
         md="6"
       >
-        <h6 class="text-sm font-weight-medium">
+        <h6 class="text-h6">
           Item
         </h6>
       </VCol>
@@ -91,7 +91,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm font-weight-medium">
+        <h6 class="text-h6">
           Cost
         </h6>
       </VCol>
@@ -99,7 +99,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm font-weight-medium">
+        <h6 class="text-h6">
           Hours
         </h6>
       </VCol>
@@ -107,7 +107,7 @@ watch(totalPrice, () => {
         cols="12"
         md="2"
       >
-        <h6 class="text-sm font-weight-medium">
+        <h6 class="text-h6">
           Price
         </h6>
       </VCol>
@@ -133,12 +133,12 @@ watch(totalPrice, () => {
             item-value="title"
             label="Select Item"
             placeholder="Select Item"
-            class="mb-3"
+            class="mb-5"
           />
 
           <VTextarea
             v-model="localProductData.description"
-            rows="3"
+            rows="2"
             label="Description"
             placeholder="Item description"
           />
@@ -155,7 +155,7 @@ watch(totalPrice, () => {
             placeholder="100"
           />
 
-          <div class="text-body-2 mt-4">
+          <div class="text-high-emphasis mt-4">
             <p class="mb-1">
               Discount
             </p>
@@ -189,7 +189,7 @@ watch(totalPrice, () => {
         >
           <p class="my-2">
             <span class="d-inline d-md-none">Price: </span>
-            <span class="text-body-1">${{ totalPrice }}</span>
+            <span class="text-high-emphasis">${{ totalPrice }}</span>
           </p>
         </VCol>
       </VRow>
@@ -197,7 +197,7 @@ watch(totalPrice, () => {
 
     <!-- 👉 Item Actions -->
     <div
-      class="d-flex flex-column item-actions pa-1"
+      class="d-flex flex-column item-actions"
       :class="$vuetify.display.smAndUp ? 'border-s' : 'border-b' "
     >
       <IconBtn @click="removeProduct">

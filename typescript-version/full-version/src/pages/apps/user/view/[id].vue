@@ -49,7 +49,6 @@ const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)
           <span>{{ tab.title }}</span>
         </VTab>
       </VTabs>
-      <VDivider />
 
       <VWindow
         v-model="userTab"

@@ -193,14 +193,10 @@ const socialAccounts = ref([
                     <VBtn
                       icon
                       variant="outlined"
-                      size="small"
                       :color="item.connected ? 'error' : 'secondary'"
                       rounded
                     >
-                      <VIcon
-                        size="20"
-                        :icon="item.connected ? 'ri-delete-bin-line' : 'ri-link' "
-                      />
+                      <VIcon :icon="item.connected ? 'ri-delete-bin-line' : 'ri-link' " />
                     </VBtn>
                   </VListItemAction>
                 </template>

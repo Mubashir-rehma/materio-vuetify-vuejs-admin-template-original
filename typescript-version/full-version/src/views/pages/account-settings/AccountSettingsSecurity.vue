@@ -49,35 +49,35 @@ const recentDevices = [
     device: 'HP Spectre 360',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',
-    deviceIcon: { icon: 'ri-windows-fill', color: 'primary' },
+    deviceIcon: { icon: 'ri-macbook-line', color: 'primary' },
   },
   {
     browser: 'Chrome on iPhone',
     device: 'iPhone 12x',
     location: 'Los Angeles, CA',
     recentActivity: '20 Apr 2022, 10:20',
-    deviceIcon: { icon: 'ri-smartphone-line', color: 'error' },
+    deviceIcon: { icon: 'ri-android-line', color: 'error' },
   },
   {
     browser: 'Chrome on Android',
     device: 'Oneplus 9 Pro',
     location: 'San Francisco, CA',
     recentActivity: '16 Apr 2022, 04:20',
-    deviceIcon: { icon: 'ri-android-line', color: 'success' },
+    deviceIcon: { icon: 'ri-smartphone-line', color: 'success' },
   },
   {
     browser: 'Chrome on macOS',
     device: 'Apple iMac',
     location: 'New York, NY',
     recentActivity: '28 Apr 2022, 18:20',
-    deviceIcon: { icon: 'ri-apple-line', color: 'secondary' },
+    deviceIcon: { icon: 'ri-mac-line', color: 'secondary' },
   },
   {
     browser: 'Chrome on Windows',
     device: 'HP Spectre 360',
     location: 'Los Angeles, CA',
     recentActivity: '20 Apr 2022, 10:20',
-    deviceIcon: { icon: 'ri-windows-fill', color: 'primary' },
+    deviceIcon: { icon: 'ri-macbook-line', color: 'primary' },
   },
   {
     browser: 'Chrome on Android',
@@ -98,7 +98,10 @@ const isOneTimePasswordDialogVisible = ref(false)
   <VRow>
     <!-- SECTION: Change Password -->
     <VCol cols="12">
-      <VCard title="Change Password">
+      <VCard>
+        <VCardItem class="pb-6">
+          <VCardTitle>Change Password</VCardTitle>
+        </VCardItem>
         <VForm>
           <VCardText class="pt-0">
             <!-- 👉 Current Password -->
@@ -158,39 +161,41 @@ const isOneTimePasswordDialogVisible = ref(false)
 
           <!-- 👉 Password Requirements -->
           <VCardText>
-            <p class="text-base font-weight-medium mt-2">
+            <h6 class="text-h6 text-medium-emphasis mt-1">
               Password Requirements:
-            </p>
+            </h6>
 
-            <ul class="d-flex flex-column gap-y-3">
-              <li
-                v-for="item in passwordRequirements"
-                :key="item"
-                class="d-flex"
+            <VList>
+              <VListItem
+                v-for="(item, index) in passwordRequirements"
+                :key="index"
+                class="px-0"
               >
-                <div>
+                <template #prepend>
                   <VIcon
-                    size="7"
-                    icon="ri-circle-line"
-                    class="me-3"
+                    size="10"
+                    icon="ri-circle-fill"
+                    color="rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))"
                   />
-                </div>
-                <span class="font-weight-medium">{{ item }}</span>
-              </li>
-            </ul>
-          </VCardText>
+                </template>
+                <VListItemTitle class="text-medium-emphasis text-wrap">
+                  {{ item }}
+                </VListItemTitle>
+              </VListItem>
+            </VList>
 
-          <!-- 👉 Action Buttons -->
-          <VCardText class="d-flex flex-wrap gap-4">
-            <VBtn>Save changes</VBtn>
+            <!-- 👉 Action Buttons -->
+            <div class="d-flex flex-wrap gap-4">
+              <VBtn>Save changes</VBtn>
 
-            <VBtn
-              type="reset"
-              color="secondary"
-              variant="tonal"
-            >
-              Reset
-            </VBtn>
+              <VBtn
+                type="reset"
+                color="secondary"
+                variant="outlined"
+              >
+                Reset
+              </VBtn>
+            </div>
           </VCardText>
         </VForm>
       </VCard>
@@ -199,12 +204,15 @@ const isOneTimePasswordDialogVisible = ref(false)
 
     <!-- SECTION Two-steps verification -->
     <VCol cols="12">
-      <VCard title="Two-steps verification">
+      <VCard>
+        <VCardItem class="pb-6">
+          <VCardTitle>Two-steps verification</VCardTitle>
+        </VCardItem>
         <VCardText>
-          <p class="font-weight-medium">
+          <p>
             Two factor authentication is not enabled yet.
           </p>
-          <p>
+          <p class="mb-6">
             Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.
             <a
               href="javascript:void(0)"
@@ -231,36 +239,29 @@ const isOneTimePasswordDialogVisible = ref(false)
             order-md="0"
             order="1"
           >
-            <VCardText>
+            <VCardText class="pt-7">
               <VForm @submit.prevent="() => {}">
-                <VRow>
-                  <!-- 👉 Choose API Key -->
-                  <VCol cols="12">
-                    <VSelect
-                      label="Choose the API key type you want to create"
-                      placeholder="Select API key type"
-                      :items="['Full Control', 'Modify', 'Read & Execute', 'List Folder Contents', 'Read Only', 'Read & Write']"
-                    />
-                  </VCol>
+                <!-- 👉 Choose API Key -->
+                <VSelect
+                  label="Choose the API key type you want to create"
+                  placeholder="Select API key type"
+                  :items="['Full Control', 'Modify', 'Read & Execute', 'List Folder Contents', 'Read Only', 'Read & Write']"
+                />
 
-                  <!-- 👉 Name the API Key -->
-                  <VCol cols="12">
-                    <VTextField
-                      label="Name the API key"
-                      placeholder="Name the API key"
-                    />
-                  </VCol>
+                <!-- 👉 Name the API Key -->
+                <VTextField
+                  label="Name the API key"
+                  placeholder="Name the API key"
+                  class="my-5"
+                />
 
-                  <!-- 👉 Create Key Button -->
-                  <VCol cols="12">
-                    <VBtn
-                      type="submit"
-                      block
-                    >
-                      Create Key
-                    </VBtn>
-                  </VCol>
-                </VRow>
+                <!-- 👉 Create Key Button -->
+                <VBtn
+                  type="submit"
+                  block
+                >
+                  Create Key
+                </VBtn>
               </VForm>
             </VCardText>
           </VCol>
@@ -286,39 +287,47 @@ const isOneTimePasswordDialogVisible = ref(false)
 
     <VCol cols="12">
       <!-- SECTION: API Keys List -->
-      <VCard title="API Key List &amp; Access">
-        <VCardText>
-          An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
-        </VCardText>
+      <VCard>
+        <VCardItem class="pb-4">
+          <VCardTitle>API Key List &amp; Access</VCardTitle>
+        </VCardItem>
 
-        <!-- 👉 Server Status -->
-        <VCardText class="d-flex flex-column gap-y-4">
-          <div
-            v-for="serverKey in serverKeys"
-            :key="serverKey.key"
-            class="bg-var-theme-background pa-4"
-          >
-            <div class="d-flex align-center flex-wrap mb-3">
-              <h6 class="text-h6 mb-0 me-3">
-                {{ serverKey.name }}
+        <VCardText>
+          <p class="mb-6">
+            An API key is a simple encrypted string that identifies an application without any principal. They are useful for accessing public data anonymously, and are used to associate API requests with your project for quota and billing.
+          </p>
+
+          <!-- 👉 Server Status -->
+          <div class="d-flex flex-column gap-y-6">
+            <div
+              v-for="serverKey in serverKeys"
+              :key="serverKey.key"
+              class="bg-var-theme-background pa-4"
+            >
+              <div class="d-flex align-center flex-wrap mb-2 gap-x-3">
+                <h6 class="text-h6">
+                  {{ serverKey.name }}
+                </h6>
+                <VChip
+                  color="primary"
+                  size="small"
+                >
+                  {{ serverKey.permission }}
+                </VChip>
+              </div>
+
+              <h6 class="text-h6 d-flex gap-x-3 text-medium-emphasis align-center mb-2">
+                {{ serverKey.key }}
+                <VIcon
+                  :size="20"
+                  icon="ri-file-copy-line"
+                  class="cursor-pointer"
+                />
               </h6>
-              <VChip
-                label
-                color="primary"
-                size="small"
-              >
-                {{ serverKey.permission }}
-              </VChip>
+              <div class="text-disabled">
+                Created on {{ serverKey.createdOn }}
+              </div>
             </div>
-            <p class="text-base font-weight-medium">
-              <span class="me-3">{{ serverKey.key }}</span>
-              <VIcon
-                :size="18"
-                icon="ri-file-copy-line"
-                class="cursor-pointer"
-              />
-            </p>
-            <span>Created on {{ serverKey.createdOn }}</span>
           </div>
         </VCardText>
       </VCard>
@@ -328,7 +337,10 @@ const isOneTimePasswordDialogVisible = ref(false)
     <!-- SECTION Recent Devices -->
     <VCol cols="12">
       <!-- 👉 Table -->
-      <VCard title="Recent Devices">
+      <VCard
+        title="Recent Devices"
+        class="recentDeviceCard"
+      >
         <VDataTable
           :headers="recentDevicesHeaders"
           :items="recentDevices"
@@ -336,15 +348,15 @@ const isOneTimePasswordDialogVisible = ref(false)
           class="text-no-wrap"
         >
           <template #item.browser="{ item }">
-            <div class="d-flex">
+            <div class="d-flex gap-x-3">
               <VIcon
-                start
+                size="20"
                 :icon="item.deviceIcon.icon"
                 :color="item.deviceIcon.color"
               />
-              <span>
+              <h6 class="text-h6">
                 {{ item.browser }}
-              </span>
+              </h6>
             </div>
           </template>
           <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->

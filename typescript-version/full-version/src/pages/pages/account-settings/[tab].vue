@@ -14,8 +14,8 @@ const activeTab = computed({
 
 // tabs
 const tabs = [
-  { title: 'Account', icon: 'ri-user-line', tab: 'account' },
-  { title: 'Security', icon: 'ri-lock-unlock-line', tab: 'security' },
+  { title: 'Account', icon: 'ri-group-line', tab: 'account' },
+  { title: 'Security', icon: 'ri-lock-line', tab: 'security' },
   { title: 'Billing & Plans', icon: 'ri-bookmark-line', tab: 'billing-plans' },
   { title: 'Notifications', icon: 'ri-notification-3-line', tab: 'notification' },
   { title: 'Connections', icon: 'ri-link', tab: 'connection' },
@@ -30,7 +30,10 @@ definePage({
 
 <template>
   <div>
-    <VTabs v-model="activeTab">
+    <VTabs
+      v-model="activeTab"
+      class="v-tabs-pill"
+    >
       <VTab
         v-for="item in tabs"
         :key="item.icon"
@@ -38,7 +41,6 @@ definePage({
         :to="{ name: 'pages-account-settings-tab', params: { tab: item.tab } }"
       >
         <VIcon
-          size="20"
           start
           :icon="item.icon"
         />

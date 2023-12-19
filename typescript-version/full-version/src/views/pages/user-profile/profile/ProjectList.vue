@@ -123,7 +123,7 @@ const moreList = [
             :image="item.logo"
           />
           <div>
-            <h6 class="text-h6">
+            <h6 class="text-h6 text-no-wrap">
               {{ item.name }}
             </h6>
             <div class="text-body-2">
@@ -171,6 +171,7 @@ const moreList = [
               :height="6"
               :model-value="item.progress"
               rounded
+              rounded-bar
             />
           </div>
           <div class="text-high-emphasis">
@@ -199,8 +200,6 @@ const moreList = [
   .v-table{
     &--density-default{
       .v-table__wrapper{
-        border-radius: 0;
-
         table{
           tbody{
             tr{

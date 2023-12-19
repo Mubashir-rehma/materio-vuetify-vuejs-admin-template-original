@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { FaqCategory } from '@db/pages/faq/types'
-import sittingGirlWithLaptopDark from '@images/illustrations/sitting-girl-with-laptop-dark.png'
-import sittingGirlWithLaptopLight from '@images/illustrations/sitting-girl-with-laptop-light.png'
+import illustrationJohn from '@images/pages/illustration-john.png'
 
 const faqSearchQuery = ref('')
 
@@ -18,7 +17,7 @@ const fetchFaqs = async () => {
 }
 
 const activeTab = ref('Payment')
-const activeQuestion = ref(0)
+const activeQuestion = ref(1)
 
 watch(activeTab, () => activeQuestion.value = 0)
 watch(faqSearchQuery, fetchFaqs, { immediate: true })
@@ -35,8 +34,6 @@ const contactUs = [
     tagLine: 'Best way to get answer faster!',
   },
 ]
-
-const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight, sittingGirlWithLaptopDark)
 </script>
 
 <template>
@@ -44,19 +41,38 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
     <!-- 👉 Search -->
     <AppSearchHeader
       v-model="faqSearchQuery"
-      title="Hello, how can we help?"
-      subtitle="or choose a category to quickly find the help you need"
-      custom-class="mb-7"
-    />
+      custom-class="mb-6"
+    >
+      <template #default>
+        <h4 class="text-h4 text-primary mb-3">
+          Hello, how can we help?
+        </h4>
+
+        <p class="text-body-1 mb-7">
+          or choose a category to quickly find the help you need
+        </p>
+
+        <!-- 👉 Search Input -->
+        <VTextField
+          placeholder="search articles..."
+          class="search-header-input mx-auto my-4"
+        >
+          <template #prepend-inner>
+            <VIcon
+              icon="ri-search-line"
+              size="18"
+            />
+          </template>
+        </VTextField>
+      </template>
+    </AppSearchHeader>
 
     <!-- 👉 Faq sections and questions -->
     <VRow>
       <VCol
         v-show="faqs.length"
-        sd
         cols="12"
-        sm="4"
-        lg="3"
+        md="3"
         class="position-relative"
       >
         <!-- 👉 Tabs -->
@@ -73,23 +89,20 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
           >
             <VIcon
               :icon="faq.faqIcon"
-              :size="20"
               start
             />
             {{ faq.faqTitle }}
           </VTab>
         </VTabs>
         <VImg
-          :width="200"
-          :src="sitingGirlWithLaptop"
-          class="d-none d-sm-block mt-10"
+          :src="illustrationJohn"
+          class="d-none d-md-block mt-8"
         />
       </VCol>
 
       <VCol
         cols="12"
-        sm="8"
-        lg="9"
+        md="9"
       >
         <!-- 👉 Windows -->
         <VWindow
@@ -101,25 +114,26 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
             :key="faq.faqTitle"
             :value="faq.faqTitle"
           >
-            <div class="d-flex align-center mb-6">
+            <div class="d-flex align-center mb-4 gap-x-4">
               <VAvatar
                 rounded
                 color="primary"
                 variant="tonal"
-                class="me-3"
-                size="large"
+                size="50"
               >
                 <VIcon
-                  :size="36"
+                  :size="30"
                   :icon="faq.faqIcon"
                 />
               </VAvatar>
 
               <div>
-                <h6 class="text-h6">
+                <h5 class="text-h5">
                   {{ faq.faqTitle }}
-                </h6>
-                <span class="text-sm">{{ faq.faqSubtitle }}</span>
+                </h5>
+                <div class="text-body-1">
+                  {{ faq.faqSubtitle }}
+                </div>
               </div>
             </div>
 
@@ -155,24 +169,24 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
     </VRow>
 
     <!-- 👉 You still have a question? -->
-    <div class="text-center pt-15">
-      <VChip
-        label
-        color="primary"
-        size="small"
-      >
-        QUESTION?
-      </VChip>
-
-      <h6 class="text-h6">
-        You still have a question?
-      </h6>
-      <p>
-        If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
-      </p>
+    <div class="text-center mt-6">
+      <div class="py-6">
+        <VChip
+          color="primary"
+          size="small"
+        >
+          Question
+        </VChip>
+        <h4 class="text-h4 my-2">
+          You still have a question?
+        </h4>
+        <p class="text-body-1 mb-0">
+          If you cannot find a question in our FAQ, you can always contact us. We will answer to you shortly!
+        </p>
+      </div>
 
       <!-- contacts -->
-      <VRow class="mt-4">
+      <VRow class="mt-3">
         <VCol
           v-for="contact in contactUs"
           :key="contact.icon"
@@ -181,23 +195,28 @@ const sitingGirlWithLaptop = useGenerateImageVariant(sittingGirlWithLaptopLight,
         >
           <VCard
             flat
-            class="bg-var-theme-background"
+            color="rgba(var(--v-theme-on-surface), var(--v-hover-opacity))"
           >
-            <VCardText>
+            <VCardText class="pa-6">
               <VAvatar
                 rounded
                 color="primary"
                 variant="tonal"
-                class="me-3"
+                size="50"
+                class="mb-4"
               >
-                <VIcon :icon="contact.icon" />
+                <VIcon
+                  :icon="contact.icon"
+                  size="30"
+                />
               </VAvatar>
-            </VCardText>
-            <VCardText>
-              <h6 class="text-h6 mb-2">
+
+              <h5 class="text-h5 mb-1">
                 {{ contact.via }}
-              </h6>
-              <span>{{ contact.tagLine }}</span>
+              </h5>
+              <div class="text-body-1">
+                {{ contact.tagLine }}
+              </div>
             </VCardText>
           </VCard>
         </VCol>

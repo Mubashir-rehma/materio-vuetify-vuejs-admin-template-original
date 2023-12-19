@@ -62,9 +62,11 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
               density="compact"
             >
               <VBtn value="ts">
+                <!-- eslint-disable-next-line regex/invalid -->
                 <VIcon icon="mdi-language-typescript" />
               </VBtn>
               <VBtn value="js">
+                <!-- eslint-disable-next-line regex/invalid -->
                 <VIcon icon="mdi-language-javascript" />
               </VBtn>
             </VBtnToggle>

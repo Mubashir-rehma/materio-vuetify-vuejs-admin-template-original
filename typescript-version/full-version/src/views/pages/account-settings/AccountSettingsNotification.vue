@@ -32,11 +32,14 @@ const selectedNotification = ref('Only when I\'m online')
 </script>
 
 <template>
-  <VCard title="Recent Devices">
-    <VCardText>
-      We need permission from your browser to show notifications.
-      <a href="javascript:void(0)">Request Permission</a>
-    </VCardText>
+  <VCard>
+    <VCardItem>
+      <VCardTitle>Recent Devices</VCardTitle>
+      <VCardSubtitle>
+        We need permission from your browser to show notifications.
+        <a href="javascript:void(0)">Request Permission</a>
+      </VCardSubtitle>
+    </VCardItem>
 
     <VTable class="text-no-wrap">
       <thead>
@@ -60,7 +63,7 @@ const selectedNotification = ref('Only when I\'m online')
           v-for="device in recentDevices"
           :key="device.type"
         >
-          <td>
+          <td class="text-high-emphasis">
             {{ device.type }}
           </td>
           <td>
@@ -79,9 +82,9 @@ const selectedNotification = ref('Only when I\'m online')
 
     <VCardText>
       <VForm @submit.prevent="() => {}">
-        <p class="text-base font-weight-medium">
+        <div class="text-base font-weight-medium mb-6">
           When should we send you notifications?
-        </p>
+        </div>
 
         <VRow>
           <VCol
@@ -92,17 +95,18 @@ const selectedNotification = ref('Only when I\'m online')
               v-model="selectedNotification"
               mandatory
               :items="['Only when I\'m online', 'Anytime']"
+              class="mb-6"
             />
           </VCol>
         </VRow>
 
-        <div class="d-flex flex-wrap gap-4 mt-4">
+        <div class="d-flex flex-wrap gap-4">
           <VBtn type="submit">
             Save Changes
           </VBtn>
           <VBtn
             color="secondary"
-            variant="tonal"
+            variant="outlined"
             type="reset"
           >
             Reset

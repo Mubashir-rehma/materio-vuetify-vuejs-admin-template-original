@@ -29,7 +29,7 @@ const creditCards: CardDetails[] = [
     isPrimary: true,
     type: 'visa',
     cvv: '456',
-    image: visa,
+    image: mastercard,
   },
   {
     name: 'Mildred Wagner',
@@ -38,7 +38,7 @@ const creditCards: CardDetails[] = [
     isPrimary: false,
     type: 'mastercard',
     cvv: '123',
-    image: mastercard,
+    image: visa,
   },
 ]
 
@@ -78,36 +78,37 @@ const resetPaymentForm = () => {
               cols="12"
               md="6"
             >
-              <div>
-                <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+              <div class="d-flex flex-column gap-y-6">
+                <div class="d-flex flex-column gap-y-1">
+                  <h6 class="text-h6">
                     Your Current Plan is Basic
-                  </h3>
-                  <p class="text-base">
+                  </h6>
+                  <div>
                     A simple start for everyone
-                  </p>
+                  </div>
                 </div>
 
-                <div class="mb-6">
-                  <h3 class="text-base font-weight-medium mb-2">
+                <div class="d-flex flex-column gap-y-1">
+                  <h6 class="text-h6">
                     Active until Dec 09, 2021
-                  </h3>
-                  <p class="text-base">
+                  </h6>
+                  <div>
                     We will send you a notification upon Subscription expiration
-                  </p>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 class="text-base font-weight-medium mb-2">
-                    <span class="me-3">$199 Per Month</span>
+                <div class="d-flex flex-column gap-y-1">
+                  <div class="d-flex align-center gap-x-2">
+                    <h6 class="text-h6">
+                      $199 Per Month
+                    </h6>
                     <VChip
                       color="primary"
                       size="small"
-                      label
                     >
                       Popular
                     </VChip>
-                  </h3>
+                  </div>
                   <p class="text-base mb-0">
                     Standard plan for small to medium businesses
                   </p>
@@ -120,45 +121,37 @@ const resetPaymentForm = () => {
               md="6"
             >
               <VAlert
-                color="warning"
+                type="warning"
                 variant="tonal"
-              >
-                <VAlertTitle class="mb-1">
-                  We need your attention!
-                </VAlertTitle>
-
-                <span>Your plan requires update</span>
-              </VAlert>
+                title="We need your attention!"
+                text="Your plan requires update"
+              />
 
               <!-- progress -->
-              <div class="d-flex font-weight-bold text-base mt-8 mb-2">
-                <span>Days</span>
-                <VSpacer />
-                <span>24 of 30 Days</span>
-              </div>
+              <h6 class="d-flex text-h6 justify-space-between mt-6 mb-1">
+                <div>Days</div>
+                <div>12 of 30 Days</div>
+              </h6>
               <VProgressLinear
                 color="primary"
                 rounded
-                height="12"
+                height="6"
                 model-value="75"
               />
-              <p class="text-base mt-2">
-                6 days remaining until your plan requires update
+              <p class="text-base mt-1">
+                18 days remaining until your plan requires update
               </p>
             </VCol>
 
             <VCol cols="12">
-              <div class="d-flex flex-wrap gap-y-4">
-                <VBtn
-                  class="me-3"
-                  @click="isPricingPlanDialogVisible = true"
-                >
+              <div class="d-flex flex-wrap gap-4">
+                <VBtn @click="isPricingPlanDialogVisible = true">
                   upgrade plan
                 </VBtn>
 
                 <VBtn
-                  color="secondary"
-                  variant="tonal"
+                  color="error"
+                  variant="outlined"
                   @click="isConfirmDialogVisible = true"
                 >
                   Cancel Subscription
@@ -270,6 +263,23 @@ const resetPaymentForm = () => {
                           label="Save card for future billing?"
                         />
                       </VCol>
+
+                      <!-- 👉 Payment method action button -->
+                      <VCol
+                        cols="12"
+                        class="d-flex flex-wrap gap-4"
+                      >
+                        <VBtn type="submit">
+                          Save changes
+                        </VBtn>
+                        <VBtn
+                          color="secondary"
+                          variant="outlined"
+                          @click="resetPaymentForm"
+                        >
+                          Reset
+                        </VBtn>
+                      </VCol>
                     </VRow>
 
                     <p
@@ -293,35 +303,33 @@ const resetPaymentForm = () => {
                 cols="12"
                 md="6"
               >
-                <p class="text-base font-weight-medium">
+                <h6 class="text-h6 mb-6">
                   My Cards
-                </p>
+                </h6>
 
                 <div class="d-flex flex-column gap-y-4">
                   <VCard
                     v-for="card in creditCards"
                     :key="card.name"
-                    class="bg-var-theme-background"
+                    color="rgba(var(--v-theme-on-surface), var(--v-hover-opacity))"
                     flat
                   >
                     <VCardText class="d-flex flex-sm-row flex-column">
                       <div class="text-no-wrap">
-                        <VImg
-                          :src="card.image"
-                          width="46"
-                        />
-                        <h4 class="my-3">
-                          {{ card.name }}
+                        <img :src="card.image">
+                        <div class="d-flex align-center gap-x-4">
+                          <h6 class="text-h6 my-2">
+                            {{ card.name }}
+                          </h6>
                           <VChip
                             v-if="card.isPrimary"
-                            label
                             color="primary"
                             size="small"
                           >
                             Primary
                           </VChip>
-                        </h4>
-                        <span class="text-base">**** **** **** {{ card.number.substring(card.number.length - 4) }}</span>
+                        </div>
+                        <div>**** **** **** {{ card.number.substring(card.number.length - 4) }}</div>
                       </div>
 
                       <VSpacer />
@@ -329,19 +337,19 @@ const resetPaymentForm = () => {
                       <div class="d-flex flex-column text-sm-end">
                         <div class="d-flex flex-wrap gap-4 order-sm-0 order-1">
                           <VBtn
-                            variant="tonal"
+                            variant="outlined"
                             @click="openEditCardDialog(card)"
                           >
                             Edit
                           </VBtn>
                           <VBtn
                             color="secondary"
-                            variant="tonal"
+                            variant="outlined"
                           >
                             Delete
                           </VBtn>
                         </div>
-                        <span class="mt-sm-auto mb-sm-0 my-5 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
+                        <span class="my-4 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
                       </div>
                     </VCardText>
                   </VCard>
@@ -352,23 +360,6 @@ const resetPaymentForm = () => {
                   v-model:isDialogVisible="isCardEditDialogVisible"
                   :card-details="currentCardDetails"
                 />
-              </VCol>
-
-              <!-- 👉 Payment method action button -->
-              <VCol
-                cols="12"
-                class="d-flex flex-wrap gap-4"
-              >
-                <VBtn type="submit">
-                  Save changes
-                </VBtn>
-                <VBtn
-                  color="secondary"
-                  variant="tonal"
-                  @click="resetPaymentForm"
-                >
-                  Reset
-                </VBtn>
               </VCol>
             </VRow>
           </VForm>
@@ -494,7 +485,7 @@ const resetPaymentForm = () => {
                 <VBtn
                   type="reset"
                   color="secondary"
-                  variant="tonal"
+                  variant="outlined"
                 >
                   Reset
                 </VBtn>

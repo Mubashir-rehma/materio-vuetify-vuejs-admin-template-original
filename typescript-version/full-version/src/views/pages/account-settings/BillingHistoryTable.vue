@@ -20,13 +20,13 @@ const updateOptions = (options: any) => {
 
 // 👉 headers
 const headers = [
-  { title: '#ID', key: 'id' },
+  { title: '#', key: 'id' },
   { title: 'Trending', key: 'trending', sortable: false },
   { title: 'Client', key: 'client' },
   { title: 'Total', key: 'total' },
-  { title: 'Date', key: 'date' },
+  { title: 'Issued Date', key: 'date' },
   { title: 'Balance', key: 'balance' },
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'Action', key: 'actions', sortable: false },
 ]
 
 // 👉 Fetch Invoices
@@ -117,14 +117,16 @@ const deleteInvoice = async (id: number) => {
           <div class="invoice-list-search">
             <VTextField
               v-model="searchQuery"
+              density="compact"
               placeholder="Search Invoice"
             />
           </div>
 
-          <!-- 👉 Fileter Invoice  -->
+          <!-- 👉 Filter Invoice  -->
 
           <VSelect
             v-model="selectedStatus"
+            density="compact"
             label="Select Status"
             placeholder="Select Status"
             clearable
@@ -134,8 +136,6 @@ const deleteInvoice = async (id: number) => {
           />
         </div>
       </VCardText>
-
-      <VDivider />
 
       <!-- SECTION Datatable -->
       <VDataTableServer
@@ -147,17 +147,9 @@ const deleteInvoice = async (id: number) => {
         :headers="headers"
         :items="invoices"
         item-value="id"
-        class="text-no-wrap"
+        class="text-no-wrap billing-history-table"
         @update:options="updateOptions"
       >
-        <!-- Trending Header -->
-        <template #header.trending>
-          <VIcon
-            size="22"
-            icon="ri-pulse-line"
-          />
-        </template>
-
         <!-- id -->
         <template #item.id="{ item }">
           <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
@@ -170,13 +162,13 @@ const deleteInvoice = async (id: number) => {
           <VTooltip>
             <template #activator="{ props }">
               <VAvatar
-                :size="34"
+                :size="28"
                 v-bind="props"
                 :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
                 variant="tonal"
               >
                 <VIcon
-                  :size="20"
+                  :size="16"
                   :icon="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).icon"
                 />
               </VAvatar>
@@ -215,7 +207,9 @@ const deleteInvoice = async (id: number) => {
               >
                 {{ item.client.name }}
               </RouterLink>
-              <span class="text-caption">{{ item.client.companyEmail }}</span>
+              <div class="text-body-2">
+                {{ item.client.companyEmail }}
+              </div>
             </div>
           </div>
         </template>
@@ -239,29 +233,80 @@ const deleteInvoice = async (id: number) => {
           >
             {{ (resolveInvoiceBalanceVariant(item.balance, item.total)).status }}
           </VChip>
-          <span v-else>
+          <div
+            v-else
+            class="text-body-1 text-high-emphasis"
+          >
             {{ Number((resolveInvoiceBalanceVariant(item.balance, item.total)).status) > 0 ? `$${(resolveInvoiceBalanceVariant(item.balance, item.total)).status}` : `-$${Math.abs(Number((resolveInvoiceBalanceVariant(item.balance, item.total)).status))}` }}
-          </span>
+          </div>
         </template>
 
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <IconBtn @click="deleteInvoice(item.id)">
-            <VIcon icon="ri-delete-bin-line" />
-          </IconBtn>
+          <IconBtn
+            size="small"
+            icon="ri-delete-bin-7-line"
+            @click="deleteInvoice(item.id)"
+          />
 
-          <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
+          <IconBtn
+            :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }"
+            size="small"
+          >
             <VIcon icon="ri-eye-line" />
           </IconBtn>
 
           <MoreBtn
             :menu-list="computedMoreList(item.id)"
+            size="small"
             item-props
           />
         </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, totalInvoices) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(totalInvoices / itemsPerPage)"
+                @click="page >= Math.ceil(totalInvoices / itemsPerPage) ? page = Math.ceil(totalInvoices / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
+        </template>
       </VDataTableServer>
       <!-- !SECTION -->
-      <VDivider />
     </VCard>
   </section>
 </template>
@@ -274,6 +319,22 @@ const deleteInvoice = async (id: number) => {
 
   .invoice-list-search {
     inline-size: 12rem;
+  }
+}
+
+.billing-history-table{
+  &.v-table--density-default{
+    .v-table__wrapper{
+      table{
+        tbody{
+          tr{
+            td{
+              block-size: 60px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>

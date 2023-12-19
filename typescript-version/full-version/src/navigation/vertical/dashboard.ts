@@ -24,8 +24,8 @@ export default [
         to: 'dashboards-logistics',
       },
     ],
-    badgeContent: '2',
-    badgeClass: 'bg-global-primary',
+    badgeContent: '5',
+    badgeClass: 'bg-error',
   },
   {
     title: 'Front Pages',

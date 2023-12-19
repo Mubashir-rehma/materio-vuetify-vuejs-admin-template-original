@@ -343,7 +343,7 @@ const resetPaymentForm = () => {
                             Edit
                           </VBtn>
                           <VBtn
-                            color="secondary"
+                            color="error"
                             variant="outlined"
                           >
                             Delete

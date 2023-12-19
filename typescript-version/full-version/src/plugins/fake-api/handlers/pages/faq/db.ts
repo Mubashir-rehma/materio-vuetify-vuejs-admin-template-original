@@ -35,7 +35,7 @@ export const db: DB = {
     },
     {
       faqTitle: 'Delivery',
-      faqIcon: 'ri-shopping-bag-line',
+      faqIcon: 'ri-shopping-cart-line',
       faqSubtitle: 'Get help with delivery',
       faqs: [
         {
@@ -53,7 +53,7 @@ export const db: DB = {
       ],
     },
     {
-      faqTitle: 'Cancellation',
+      faqTitle: 'Cancellation & Return',
       faqIcon: 'ri-refresh-line',
       faqSubtitle: 'Get help with cancellation & return',
       faqs: [
@@ -72,8 +72,8 @@ export const db: DB = {
       ],
     },
     {
-      faqTitle: 'My Orders',
-      faqIcon: 'ri-archive-line',
+      faqTitle: 'My Order',
+      faqIcon: 'ri-inbox-archive-line',
       faqSubtitle: 'Order details',
       faqs: [
         {
@@ -93,8 +93,8 @@ export const db: DB = {
       ],
     },
     {
-      faqTitle: 'Services',
-      faqIcon: 'ri-settings-2-line',
+      faqTitle: 'Product & Services',
+      faqIcon: 'ri-settings-4-line',
       faqSubtitle: 'Get help with product & services',
       faqs: [
         {

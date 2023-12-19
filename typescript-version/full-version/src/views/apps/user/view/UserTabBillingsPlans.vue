@@ -107,7 +107,7 @@ const editBillingData: BillingAddress = {
               md="6"
             >
               <h6 class="text-h6 mb-1">
-                Your Current Plan is <strong>Basic</strong>
+                Your Current Plan is Basic
               </h6>
               <p>A simple start for everyone</p>
 

@@ -182,17 +182,18 @@ const onReset = () => {
         @click="onReset"
       />
 
-      <!-- 👉 Title -->
-      <VCardItem class="text-center">
-        <VCardTitle class="text-h5">
-          {{ props.rolePermissions.name ? 'Edit' : 'Add' }} Role
-        </VCardTitle>
-        <VCardSubtitle>
-          Set Role Permissions
-        </VCardSubtitle>
-      </VCardItem>
+      <VCardText class="mt-5">
+        <!-- 👉 Title -->
+        <div class="text-center mb-6">
+          <h4 class="text-h4 mb-2">
+            {{ props.rolePermissions.name ? 'Edit' : 'Add' }} Role
+          </h4>
 
-      <VCardText class="mt-6">
+          <p class="text-body-1">
+            {{ props.rolePermissions.name ? 'Edit' : 'Add' }} Role
+          </p>
+        </div>
+
         <!-- 👉 Form -->
         <VForm ref="refPermissionForm">
           <!-- 👉 Role name -->
@@ -202,24 +203,26 @@ const onReset = () => {
             placeholder="Enter Role Name"
           />
 
-          <h6 class="text-h6 mt-4">
+          <h5 class="text-h5 my-6">
             Role Permissions
-          </h6>
+          </h5>
 
           <!-- 👉 Role Permissions -->
 
           <VTable class="permission-table text-no-wrap">
             <!-- 👉 Admin  -->
             <tr>
-              <td>
+              <td class="text-h6">
                 Administrator Access
               </td>
               <td colspan="3">
-                <VCheckbox
-                  v-model="isSelectAll"
-                  v-model:indeterminate="isIndeterminate"
-                  label="Select All"
-                />
+                <div class="d-flex justify-end">
+                  <VCheckbox
+                    v-model="isSelectAll"
+                    v-model:indeterminate="isIndeterminate"
+                    label="Select All"
+                  />
+                </div>
               </td>
             </tr>
 
@@ -229,24 +232,32 @@ const onReset = () => {
               :key="permission.name"
             >
               <tr>
-                <td>{{ permission.name }}</td>
-                <td>
-                  <VCheckbox
-                    v-model="permission.read"
-                    label="Read"
-                  />
+                <td class="text-h6">
+                  {{ permission.name }}
                 </td>
-                <td>
-                  <VCheckbox
-                    v-model="permission.write"
-                    label="Write"
-                  />
+                <td style="inline-size: 5.75rem;">
+                  <div class="d-flex justify-end">
+                    <VCheckbox
+                      v-model="permission.read"
+                      label="Read"
+                    />
+                  </div>
                 </td>
-                <td>
-                  <VCheckbox
-                    v-model="permission.create"
-                    label="Create"
-                  />
+                <td style="inline-size: 5.75rem;">
+                  <div class="d-flex justify-end">
+                    <VCheckbox
+                      v-model="permission.write"
+                      label="Write"
+                    />
+                  </div>
+                </td>
+                <td style="inline-size: 5.75rem;">
+                  <div class="d-flex justify-end">
+                    <VCheckbox
+                      v-model="permission.create"
+                      label="Create"
+                    />
+                  </div>
                 </td>
               </tr>
             </template>

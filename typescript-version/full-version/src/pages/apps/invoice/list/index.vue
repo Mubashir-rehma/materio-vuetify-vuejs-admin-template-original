@@ -261,7 +261,7 @@ const deleteInvoice = async (id: number) => {
             <div class="d-flex flex-column">
               <RouterLink
                 :to="{ name: 'pages-user-profile-tab', params: { tab: 'profile' } }"
-                class="client-title font-weight-medium mb-0"
+                class="text-h6 font-weight-medium mb-0"
               >
                 {{ item.client.name }}
               </RouterLink>
@@ -376,14 +376,6 @@ const deleteInvoice = async (id: number) => {
 
   .invoice-list-search {
     inline-size: 12rem;
-  }
-}
-</style>
-
-<style lang="scss" scoped>
-.client-title{
-  &:not(:hover){
-    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
   }
 }
 </style>

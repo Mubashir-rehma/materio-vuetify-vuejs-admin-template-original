@@ -158,7 +158,7 @@ const resolveStatus = (status: string) => {
                 Share the referral link
               </h5>
               <div class="d-flex align-center flex-wrap gap-4">
-                <VTextField placeholder="pixinvent.com/?ref=6478" />
+                <VTextField placeholder="themeselection.com/?ref=6478" />
                 <div class="d-flex gap-x-4">
                   <VBtn
                     icon

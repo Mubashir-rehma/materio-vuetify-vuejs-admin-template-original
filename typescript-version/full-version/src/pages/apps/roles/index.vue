@@ -9,7 +9,7 @@ import UserList from '@/views/apps/roles/UserList.vue'
       <h5 class="text-h5">
         Roles List
       </h5>
-      <p class="text-sm mb-0">
+      <p class="text-body-1 mb-0">
         A role provided access to predefined menus and features so that depending on assigned role an administrator can have access to what he need
       </p>
     </VCol>
@@ -20,10 +20,10 @@ import UserList from '@/views/apps/roles/UserList.vue'
     </VCol>
 
     <VCol cols="12">
-      <h5 class="text-h5 mt-5">
+      <h5 class="text-h5 mt-6">
         Total users with their roles
       </h5>
-      <p class="text-sm mb-6">
+      <p class="text-body-1 mb-6">
         Find all of your company's administrator accounts and their associate roles.
       </p>
 

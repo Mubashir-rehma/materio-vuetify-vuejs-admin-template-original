@@ -11,11 +11,11 @@ const route = useRoute('apps-user-view-id')
 const userTab = ref(null)
 
 const tabs = [
-  { icon: 'ri-user-line', title: 'Overview' },
-  { icon: 'ri-lock-line', title: 'Security' },
+  { icon: 'ri-group-line', title: 'Overview' },
+  { icon: 'ri-lock-2-line', title: 'Security' },
   { icon: 'ri-bookmark-line', title: 'Billing & Plan' },
-  { icon: 'ri-notification-3-line', title: 'Notifications' },
-  { icon: 'ri-link', title: 'Connections' },
+  { icon: 'ri-notification-4-line', title: 'Notifications' },
+  { icon: 'ri-link-m', title: 'Connections' },
 ]
 
 const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)

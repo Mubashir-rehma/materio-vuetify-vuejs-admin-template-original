@@ -289,7 +289,7 @@ export const db: DB = {
       email: 'irena.dubrovna@wayne.com',
       currentPlan: 'team',
       status: 'active',
-      avatar: '',
+      avatar: avatar3,
     },
     {
       id: 22,
@@ -484,7 +484,7 @@ export const db: DB = {
       email: 'brosebothamz@tripadvisor.com',
       currentPlan: 'team',
       status: 'inactive',
-      avatar: '',
+      avatar: avatar6,
     },
     {
       id: 37,

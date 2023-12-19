@@ -133,7 +133,7 @@ const socialAccounts = ref([
               <template #prepend>
                 <VAvatar
                   start
-                  size="35"
+                  size="36"
                   rounded="0"
                   :image="account.img"
                 />

@@ -227,12 +227,9 @@ const editPermission = (value: RoleDetails) => {
             </template>
             <VAvatar
               v-if="item.users.length > 4"
-              color="#eee"
+              :color="$vuetify.theme.name === 'dark' ? '#3F3B59' : '#F0EFF0'"
             >
-              <span
-                class="text-lg"
-                :class="$vuetify.theme.current.dark ? 'text-background' : 'text-high-emphasis'"
-              >
+              <span class="text-high-emphasis">
                 +{{ item.users.length - 3 }}
               </span>
             </VAvatar>
@@ -240,9 +237,9 @@ const editPermission = (value: RoleDetails) => {
         </VCardText>
 
         <VCardText>
-          <p class="font-weight-medium text-xl mb-0">
+          <h5 class="text-h5">
             {{ item.role }}
-          </p>
+          </h5>
           <div class="d-flex align-center">
             <a
               href="javascript:void(0)"
@@ -252,17 +249,13 @@ const editPermission = (value: RoleDetails) => {
             </a>
 
             <VSpacer />
-            <VBtn
-              color="default"
-              variant="text"
-              icon
-              size="small"
+
+            <IconBtn
+              color="secondary"
+              class="mt-n2"
             >
-              <VIcon
-                size="24"
-                icon="ri-file-copy-line"
-              />
-            </VBtn>
+              <VIcon icon="ri-file-copy-line" />
+            </IconBtn>
           </div>
         </VCardText>
       </VCard>

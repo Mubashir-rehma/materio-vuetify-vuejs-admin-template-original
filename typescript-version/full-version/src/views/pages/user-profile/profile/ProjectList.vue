@@ -171,7 +171,6 @@ const moreList = [
               :height="6"
               :model-value="item.progress"
               rounded
-              rounded-bar
             />
           </div>
           <div class="text-high-emphasis">

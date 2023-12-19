@@ -202,7 +202,6 @@ watch(activeIndex, () => {
                       :model-value="vehicle.progress"
                       color="primary"
                       rounded
-                      rounded-bar
                       height="6"
                     />
                   </div>

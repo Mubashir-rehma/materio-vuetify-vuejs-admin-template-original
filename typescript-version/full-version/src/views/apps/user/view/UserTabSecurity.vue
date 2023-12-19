@@ -135,7 +135,7 @@ const recentDevices = [
                   variant="outlined"
                   color="secondary"
                 >
-                  <VIcon icon="ri-delete-bin-line" />
+                  <VIcon icon="ri-user-add-line" />
                 </IconBtn>
               </template>
             </VTextField>

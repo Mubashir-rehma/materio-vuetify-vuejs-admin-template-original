@@ -380,7 +380,7 @@ const resetPaymentForm = () => {
               >
                 <VTextField
                   label="Company Name"
-                  placeholder="Pixinvent"
+                  placeholder="Themeselection"
                 />
               </VCol>
 
@@ -391,7 +391,7 @@ const resetPaymentForm = () => {
               >
                 <VTextField
                   label="Billing Email"
-                  placeholder="pixinvent@email.com"
+                  placeholder="themeselection@email.com"
                 />
               </VCol>
 

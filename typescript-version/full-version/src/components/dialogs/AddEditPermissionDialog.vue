@@ -45,17 +45,18 @@ watch(props, () => {
         @click="onReset"
       />
 
-      <!-- 👉 Title -->
-      <VCardItem class="text-center">
-        <VCardTitle class="text-h5">
-          {{ props.permissionName ? 'Edit' : 'Add' }} Permission
-        </VCardTitle>
-        <VCardSubtitle>
-          {{ props.permissionName ? 'Edit' : 'Add' }}  permission as per your requirements.
-        </VCardSubtitle>
-      </VCardItem>
+      <VCardText class="mt-5">
+        <!-- 👉 Title -->
+        <div class="text-center mb-6">
+          <h4 class="text-h4 mb-2">
+            {{ props.permissionName ? 'Edit' : 'Add' }} Permission
+          </h4>
 
-      <VCardText class="mt-1">
+          <p class="text-body-1">
+            {{ props.permissionName ? 'Edit' : 'Add' }}  permission as per your requirements.
+          </p>
+        </div>
+
         <!-- 👉 Form -->
         <VForm>
           <VAlert
@@ -68,10 +69,11 @@ watch(props, () => {
           </VAlert>
 
           <!-- 👉 Role name -->
-          <div class="d-flex align-center gap-3 mb-3">
+          <div class="d-flex align-center gap-4 mb-4">
             <VTextField
               v-model="currentPermissionName"
               label="Permission Name"
+              density="compact"
               placeholder="Enter Permission Name"
             />
 

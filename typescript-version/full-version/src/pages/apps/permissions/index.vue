@@ -55,99 +55,122 @@ const editPermission = (name: string) => {
 </script>
 
 <template>
-  <VRow>
-    <VCol cols="12">
-      <h5 class="text-h5">
-        Permissions List
-      </h5>
-      <p class="text-sm mb-0">
-        Each category (Basic, Professional, and Business) includes the four predefined roles shown below.
-      </p>
-    </VCol>
-
-    <VCol cols="12">
-      <VCard>
-        <VCardText class="d-flex align-center justify-sm-space-between justify-start gap-4 flex-wrap">
-          <VTextField
-            v-model="search"
-            placeholder="Search"
-            style="max-inline-size: 15rem;min-inline-size: 12rem;"
-          />
-
-          <VBtn
-            density="default"
-            @click="isAddPermissionDialogVisible = true"
-          >
-            Add Permission
-          </VBtn>
-        </VCardText>
-
-        <VDataTableServer
-          v-model:items-per-page="itemsPerPage"
-          :items-length="totalPermissions"
-          :items-per-page-options="[
-            { value: 5, title: '5' },
-            { value: 10, title: '10' },
-            { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
-          ]"
-          :headers="headers"
-          :items="permissions"
-          item-value="name"
-          class="text-no-wrap"
-          @update:options="updateOptions"
-        >
-          <!-- Assigned To -->
-          <template #item.assignedTo="{ item }">
-            <div class="d-flex gap-2">
-              <VChip
-                v-for="text in item.assignedTo"
-                :key="text"
-                :color="colors[text].color"
-                density="comfortable"
-              >
-                {{ colors[text].text }}
-              </VChip>
-            </div>
-          </template>
-
-          <template #item.createdDate="{ item }">
-            <span class="text-sm text-medium-emphasis">{{ item.createdDate }}</span>
-          </template>
-
-          <!-- Actions -->
-          <template #item.actions="{ item }">
-            <VBtn
-              icon
-              size="small"
-              color="medium-emphasis"
-              variant="text"
-              @click="editPermission(item.name)"
-            >
-              <VIcon
-                size="24"
-                icon="ri-pencil-line"
-              />
-            </VBtn>
-            <VBtn
-              icon
-              size="small"
-              variant="text"
-              color="medium-emphasis"
-            >
-              <VIcon
-                size="24"
-                icon="ri-delete-bin-line"
-              />
-            </VBtn>
-          </template>
-        </VDataTableServer>
-      </VCard>
-
-      <AddEditPermissionDialog
-        v-model:isDialogVisible="isPermissionDialogVisible"
-        v-model:permission-name="permissionName"
+  <VCard>
+    <VCardText class="d-flex align-center justify-sm-space-between justify-start gap-4 flex-wrap">
+      <VTextField
+        v-model="search"
+        density="compact"
+        placeholder="Search Permission"
+        style="max-inline-size: 15rem;min-inline-size: 12rem;"
       />
-      <AddEditPermissionDialog v-model:isDialogVisible="isAddPermissionDialogVisible" />
-    </VCol>
-  </VRow>
+
+      <VBtn
+        density="default"
+        @click="isAddPermissionDialogVisible = true"
+      >
+        Add Permission
+      </VBtn>
+    </VCardText>
+
+    <VDataTableServer
+      v-model:items-per-page="itemsPerPage"
+      :items-length="totalPermissions"
+      :items-per-page-options="[
+        { value: 5, title: '5' },
+        { value: 10, title: '10' },
+        { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
+      ]"
+      :headers="headers"
+      :items="permissions"
+      item-value="name"
+      class="text-no-wrap"
+      @update:options="updateOptions"
+    >
+      <!-- Assigned To -->
+      <template #item.assignedTo="{ item }">
+        <div class="d-flex gap-2">
+          <VChip
+            v-for="text in item.assignedTo"
+            :key="text"
+            :color="colors[text].color"
+            size="small"
+          >
+            {{ colors[text].text }}
+          </VChip>
+        </div>
+      </template>
+
+      <!-- Name -->
+      <template #item.name="{ item }">
+        <h6 class="text-h6 font-weight-regular">
+          {{ item.name }}
+        </h6>
+      </template>
+
+      <template #item.createdDate="{ item }">
+        <span class="text-body-1">{{ item.createdDate }}</span>
+      </template>
+
+      <!-- Actions -->
+      <template #item.actions="{ item }">
+        <IconBtn
+          size="small"
+          @click="editPermission(item.name)"
+        >
+          <VIcon icon="ri-edit-box-line" />
+        </IconBtn>
+
+        <MoreBtn size="small" />
+      </template>
+
+      <!-- Pagination -->
+      <template #bottom>
+        <VDivider />
+
+        <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+          <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+            Rows Per Page:
+            <VSelect
+              v-model="itemsPerPage"
+              class="per-page-select"
+              variant="plain"
+              :items="[10, 20, 25, 50, 100]"
+            />
+          </div>
+
+          <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+            {{ paginationMeta({ page, itemsPerPage }, totalPermissions) }}
+          </p>
+
+          <div class="d-flex gap-x-2 align-center me-2">
+            <VBtn
+              class="flip-in-rtl"
+              icon="ri-arrow-left-s-line"
+              variant="text"
+              density="comfortable"
+              color="default"
+              :disabled="page <= 1"
+              @click="page <= 1 ? page = 1 : page--"
+            />
+
+            <VBtn
+              class="flip-in-rtl"
+              icon="ri-arrow-right-s-line"
+              density="comfortable"
+              variant="text"
+              color="default"
+              :disabled="page >= Math.ceil(totalPermissions / itemsPerPage)"
+              @click="page >= Math.ceil(totalPermissions / itemsPerPage) ? page = Math.ceil(totalPermissions / itemsPerPage) : page++ "
+            />
+          </div>
+        </div>
+      </template>
+    </VDataTableServer>
+  </VCard>
+
+  <AddEditPermissionDialog
+    v-model:isDialogVisible="isPermissionDialogVisible"
+    v-model:permission-name="permissionName"
+  />
+  <AddEditPermissionDialog v-model:isDialogVisible="isAddPermissionDialogVisible" />
 </template>

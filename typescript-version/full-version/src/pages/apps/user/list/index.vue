@@ -266,7 +266,7 @@ const widgetData = ref([
         v-model:items-per-page="itemsPerPage"
         v-model:page="page"
         :items="users"
-        item-value="user"
+        item-value="id"
         :items-length="totalUsers"
         :headers="headers"
         show-select
@@ -290,14 +290,13 @@ const widgetData = ref([
             </VAvatar>
 
             <div class="d-flex flex-column">
-              <h6 class="text-h6">
-                <RouterLink
-                  :to="{ name: 'apps-user-view-id', params: { id: item.id } }"
-                  class="font-weight-medium user-list-name"
-                >
-                  {{ item.fullName }}
-                </RouterLink>
-              </h6>
+              <RouterLink
+                :to="{ name: 'apps-user-view-id', params: { id: item.id } }"
+                class="text-h6 font-weight-medium user-list-name"
+              >
+                {{ item.fullName }}
+              </RouterLink>
+
               <span class="text-sm text-medium-emphasis">@{{ item.username }}</span>
             </div>
           </div>

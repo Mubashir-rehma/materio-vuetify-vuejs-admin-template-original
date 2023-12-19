@@ -29,27 +29,29 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
-      <h4 class="text-h4 text-primary">
-        {{ title }}
-      </h4>
+      <slot>
+        <h4 class="text-h4 text-primary">
+          {{ title }}
+        </h4>
 
-      <!-- 👉 Search Input -->
-      <VTextField
-        v-bind="$attrs"
-        :placeholder="placeholder"
-        class="search-header-input mx-auto my-4"
-      >
-        <template #prepend-inner>
-          <VIcon
-            icon="ri-search-line"
-            size="18"
-          />
-        </template>
-      </VTextField>
+        <!-- 👉 Search Input -->
+        <VTextField
+          v-bind="$attrs"
+          :placeholder="placeholder"
+          class="search-header-input mx-auto my-4"
+        >
+          <template #prepend-inner>
+            <VIcon
+              icon="ri-search-line"
+              size="18"
+            />
+          </template>
+        </VTextField>
 
-      <p class="text-body-1">
-        {{ subtitle }}
-      </p>
+        <p class="text-body-1">
+          {{ subtitle }}
+        </p>
+      </slot>
     </VCardText>
   </VCard>
 </template>
@@ -65,7 +67,6 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
   border-radius: 0.25rem !important;
   background-color: rgb(var(--v-theme-surface));
   max-inline-size: 32.125rem;
-
 }
 
 @media (max-width: 37.5rem) {

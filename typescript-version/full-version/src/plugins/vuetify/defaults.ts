@@ -3,9 +3,6 @@ export default {
     icon: true,
     color: 'default',
     variant: 'text',
-    VIcon: {
-      size: 24,
-    },
   },
   VAlert: {
     VBtn: {

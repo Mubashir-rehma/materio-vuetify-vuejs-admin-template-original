@@ -71,17 +71,22 @@ const pricingPlans = [
 <template>
   <!-- 👉 Title and subtitle -->
   <div class="text-center mb-6">
-    <h4 class="text-h4 pricing-title pb-2">
-      {{ props.title ? props.title : 'Pricing Plans' }}
-    </h4>
-    <p class="mb-0">
-      All plans include 40+ advanced tools and features to boost your product.
-      Choose the best plan to fit your needs.
-    </p>
+    <slot name="heading">
+      <h3 class="text-h3 pricing-title pb-2">
+        {{ props.title ? props.title : 'Pricing Plans' }}
+      </h3>
+    </slot>
+    <slot name="subtitle">
+      <p class="mb-0">
+        All plans include 40+ advanced tools and features to boost your product.
+        <br>
+        Choose the best plan to fit your needs.
+      </p>
+    </slot>
   </div>
 
   <!-- 👉 Annual and monthly price toggler -->
-  <div class="d-flex align-center justify-center mx-auto py-sm-10 py-4">
+  <div class="d-flex align-center justify-center mx-auto pt-sm-9 pb-sm-8 py-4">
     <VLabel
       for="pricing-plan-toggle"
       class="me-2"
@@ -109,8 +114,13 @@ const pricingPlans = [
       <VSwitch
         id="pricing-plan-toggle"
         v-model="annualMonthlyPlanPriceToggler"
-        label="Annual"
-      />
+      >
+        <template #label>
+          <div class="text-body-1">
+            Annually
+          </div>
+        </template>
+      </VSwitch>
     </div>
   </div>
 
@@ -187,14 +197,14 @@ const pricingPlans = [
               v-for="feature in plan.features"
               :key="feature"
             >
-              <template #prepend>
+              <template #prepend />
+
+              <VListItemTitle class="text-body-1 d-flex align-center">
                 <VIcon
                   :size="14"
                   icon="ri-circle-line"
+                  class="me-2"
                 />
-              </template>
-
-              <VListItemTitle class="text-body-1">
                 {{ feature }}
               </VListItemTitle>
             </VListItem>

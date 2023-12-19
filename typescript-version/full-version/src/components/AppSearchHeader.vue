@@ -6,13 +6,16 @@ interface Props {
   title?: string
   subtitle?: string
   customClass?: string
+  placeholder?: string
 }
 
 defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  placeholder: 'Ask a question..',
+})
 
 const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSearchHeaderBgDark)
 </script>
@@ -22,30 +25,30 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
   <VCard
     flat
     class="text-center search-header"
-    :class="props.customClass"
+    :class="customClass"
     :style="`background: url(${themeBackgroundImg});`"
   >
     <VCardText>
       <h4 class="text-h4 text-primary">
-        {{ props.title }}
+        {{ title }}
       </h4>
 
       <!-- 👉 Search Input -->
       <VTextField
         v-bind="$attrs"
-        placeholder="Ask a question.."
+        :placeholder="placeholder"
         class="search-header-input mx-auto my-4"
       >
         <template #prepend-inner>
           <VIcon
             icon="ri-search-line"
-            size="23"
+            size="18"
           />
         </template>
       </VTextField>
 
       <p class="text-body-1">
-        {{ props.subtitle }}
+        {{ subtitle }}
       </p>
     </VCardText>
   </VCard>
@@ -63,11 +66,6 @@ const themeBackgroundImg = useGenerateImageVariant(AppSearchHeaderBgLight, AppSe
   background-color: rgb(var(--v-theme-surface));
   max-inline-size: 32.125rem;
 
-  .v-field__prepend-inner {
-    i {
-      inset-block-start: 3px !important;
-    }
-  }
 }
 
 @media (max-width: 37.5rem) {

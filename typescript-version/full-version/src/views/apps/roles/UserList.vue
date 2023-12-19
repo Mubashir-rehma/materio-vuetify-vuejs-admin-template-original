@@ -138,7 +138,6 @@ const deleteUser = async (id: number) => {
           <!-- 👉 Add user button -->
           <VSelect
             v-model="selectedRole"
-            label="Select Role"
             placeholder="Select Role"
             :items="roles"
             density="compact"
@@ -197,6 +196,7 @@ const deleteUser = async (id: number) => {
         <template #item.role="{ item }">
           <div class="d-flex gap-4">
             <VIcon
+              size="22"
               :icon="resolveUserRoleVariant(item.role).icon"
               :color="resolveUserRoleVariant(item.role).color"
             />

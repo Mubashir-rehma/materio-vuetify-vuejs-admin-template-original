@@ -1,6 +1,6 @@
 <template>
-  <VCard class="pt-6">
-    <VCardText class="pt-12 mb-16 pb-16">
+  <VCard class="pt-4">
+    <VCardText class="pt-12 pb-16">
       <!-- 👉 App Pricing components -->
       <VRow>
         <VCol

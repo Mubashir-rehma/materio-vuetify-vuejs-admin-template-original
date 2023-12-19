@@ -36,14 +36,16 @@ const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)
       md="7"
       lg="8"
     >
-      <VTabs v-model="userTab">
+      <VTabs
+        v-model="userTab"
+        class="v-tabs-pill"
+      >
         <VTab
           v-for="tab in tabs"
           :key="tab.icon"
         >
           <VIcon
             start
-            :size="24"
             :icon="tab.icon"
           />
           <span>{{ tab.title }}</span>

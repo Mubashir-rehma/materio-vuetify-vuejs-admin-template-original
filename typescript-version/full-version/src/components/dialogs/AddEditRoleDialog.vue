@@ -260,7 +260,7 @@ const onReset = () => {
 
             <VBtn
               color="secondary"
-              variant="tonal"
+              variant="outlined"
               @click="onReset"
             >
               Cancel

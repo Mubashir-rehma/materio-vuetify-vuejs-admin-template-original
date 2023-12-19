@@ -89,16 +89,21 @@ const socialAccounts = ref([
             <VListItem
               v-for="account in connectedAccounts"
               :key="account.title"
-              :title="account.title"
-              :subtitle="account.text"
             >
               <template #prepend>
                 <VAvatar
                   start
-                  :size="35"
+                  :size="36"
                   :image="account.img"
                 />
               </template>
+
+              <VListItemTitle class="font-weight-medium">
+                {{ account.title }}
+              </VListItemTitle>
+              <VListItemSubtitle class="text-body-1">
+                {{ account.text }}
+              </VListItemSubtitle>
 
               <template #append>
                 <VSwitch
@@ -124,7 +129,6 @@ const socialAccounts = ref([
             <VListItem
               v-for="(account) in socialAccounts"
               :key="account.title"
-              :title="account.title"
             >
               <template #prepend>
                 <VAvatar
@@ -135,12 +139,16 @@ const socialAccounts = ref([
                 />
               </template>
 
+              <VListItemTitle class="font-weight-medium">
+                {{ account.title }}
+              </VListItemTitle>
+
               <VListItemSubtitle v-if="account.connected">
                 <a
                   :href="account.link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-caption"
+                  class="text-base text-primary"
                 >
                   {{ account.username }}
                 </a>
@@ -148,7 +156,7 @@ const socialAccounts = ref([
 
               <VListItemSubtitle
                 v-else
-                class="text-caption"
+                class="text-body-1"
               >
                 Not connected
               </VListItemSubtitle>
@@ -157,13 +165,12 @@ const socialAccounts = ref([
                 <VBtn
                   icon
                   color="secondary"
-                  variant="tonal"
-                  size="small"
+                  variant="outlined"
                   class="rounded"
                 >
                   <VIcon
                     size="20"
-                    :icon="account.connected ? 'ri-close-line' : 'ri-link'"
+                    :icon="account.connected ? 'ri-delete-bin-7-line' : 'ri-link'"
                   />
                 </VBtn>
               </template>
@@ -174,3 +181,9 @@ const socialAccounts = ref([
     </VCol>
   </VRow>
 </template>
+
+<style lang="scss" scoped>
+.card-list {
+  --v-card-list-gap: 16px;
+}
+</style>

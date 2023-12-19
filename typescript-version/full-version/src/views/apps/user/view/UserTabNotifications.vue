@@ -28,11 +28,14 @@ const notifications = ref([
 </script>
 
 <template>
-  <VCard
-    title="Notifications"
-    subtitle="You will receive notification for the below selected items."
-  >
-    <VTable class="text-no-wrap">
+  <VCard title="Notifications">
+    <VDivider />
+    <VCardText>
+      <h6 class="text-h6">
+        You will receive notification for the below selected items.
+      </h6>
+    </VCardText>
+    <VTable class="text-no-wrap rounded-0 text-high-emphasis">
       <thead>
         <tr>
           <th scope="col">
@@ -75,7 +78,7 @@ const notifications = ref([
       <VBtn>Save changes</VBtn>
       <VBtn
         color="secondary"
-        variant="tonal"
+        variant="outlined"
       >
         Discard
       </VBtn>

@@ -6,7 +6,6 @@ interface BillingAddress {
   addressLine1: string
   addressLine2: string
   landmark: string
-  address: string
   contact: string
   country: string | null
   state: string
@@ -89,7 +88,7 @@ const addressTypes = [
         <!-- 👉 Title -->
         <div class="text-center mb-6">
           <h4 class="text-h4 mb-2">
-            {{ props.billingAddress.address ? 'Edit' : 'Add New' }} Address
+            {{ props.billingAddress.firstName ? 'Edit' : 'Add New' }} Address
           </h4>
 
           <p class="text-body-1">

@@ -30,7 +30,7 @@ const isConfirmDialogVisible = ref(false)
     :model-value="props.isDialogVisible"
     @update:model-value="val => $emit('update:isDialogVisible', val)"
   >
-    <VCard class="py-8">
+    <VCard class="py-sm-11 py-3">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
@@ -38,14 +38,15 @@ const isConfirmDialogVisible = ref(false)
         @click="$emit('update:isDialogVisible', false)"
       />
 
-      <VCardItem class="text-center">
-        <VCardTitle class="text-h5 mb-5">
-          Upgrade Plan
-        </VCardTitle>
-
-        <VCardSubtitle>
-          Choose the best plan for user.
-        </VCardSubtitle>
+      <VCardItem class="text-center pb-10">
+        <div class="text-center">
+          <h4 class="text-h4 mb-2">
+            Upgrade Plan
+          </h4>
+          <div class="text-body-1">
+            Choose the best plan for user.
+          </div>
+        </div>
       </VCardItem>
 
       <VCardText class="d-flex align-center flex-column flex-sm-nowrap px-15">
@@ -59,7 +60,7 @@ const isConfirmDialogVisible = ref(false)
         </VBtn>
       </VCardText>
 
-      <VDivider class="my-3" />
+      <VDivider class="mb-5" />
 
       <VCardText class="px-15">
         <p class="font-weight-medium mb-2">
@@ -67,15 +68,15 @@ const isConfirmDialogVisible = ref(false)
         </p>
         <div class="d-flex justify-space-between flex-wrap">
           <div class="d-flex align-center me-3">
-            <sup class="text-primary">$</sup>
-            <h3 class="text-h3 text-primary">
+            <sup class="text-base text-primary">$</sup>
+            <h1 class="text-h1 text-primary">
               99
-            </h3>
-            <sub class="text-body-1 mt-3">/ month</sub>
+            </h1>
+            <sub class="text-body-2 mt-3">/month</sub>
           </div>
           <VBtn
             color="error"
-            variant="tonal"
+            variant="outlined"
             class="mt-3"
             @click="isConfirmDialogVisible = true"
           >

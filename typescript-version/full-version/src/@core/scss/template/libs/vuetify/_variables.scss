@@ -296,6 +296,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $table-header-font-weight: 500 !default,
   $table-color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !default,
   $table-font-size: 15px !default,
+  $table-column-padding: 0 20px !default,
 
   // navigation drawer
   $navigation-drawer-temporary-elevation: 8 !default,

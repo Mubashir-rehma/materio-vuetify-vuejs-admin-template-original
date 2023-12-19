@@ -72,7 +72,6 @@ const checkAll = computed({
 
           <div class="d-flex align-center justify-center pa-2">
             <AppDateTimePicker
-              :model-value="new Date().toJSON().slice(0, 10)"
               :config="{ inline: true }"
               class="calendar-date-picker"
               @update:model-value="(val: string) => jumpToDate(val)"

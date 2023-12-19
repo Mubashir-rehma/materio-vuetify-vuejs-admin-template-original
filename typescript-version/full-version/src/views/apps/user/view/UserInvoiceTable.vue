@@ -21,12 +21,11 @@ const isLoading = ref(false)
 
 // 👉 headers
 const headers = [
-  { title: '#ID', key: 'id' },
+  { title: '#', key: 'id' },
   { title: 'Trending', key: 'trending', sortable: false },
   { title: 'Total', key: 'total' },
-  { title: 'Date', key: 'date' },
-  { title: 'Balance', key: 'balance' },
-  { title: 'Actions', key: 'actions', sortable: false },
+  { title: 'Issued Date', key: 'date', width: '150px' },
+  { title: 'Actions', key: 'actions', sortable: false, width: '150px' },
 ]
 
 // 👉 Fetch Invoices
@@ -97,24 +96,16 @@ const deleteInvoice = async (id: number) => {
 
 <template>
   <section v-if="invoices">
-    <VCard id="invoice-list">
-      <VCardText class="d-flex align-center flex-wrap gap-4">
-        <!-- 👉 Actions  -->
-        <div class="me-3 text-h6">
-          Invoice List
-        </div>
-
-        <VSpacer />
-
-        <div class="d-flex align-center flex-wrap gap-4">
-          <!-- 👉 Export invoice -->
-          <VBtn prepend-icon="ri-add-line">
-            Export
-          </VBtn>
-        </div>
-      </VCardText>
-
-      <VDivider />
+    <VCard
+      id="invoice-list"
+      title=" Invoice List"
+    >
+      <template #append>
+        <!-- 👉 Export invoice -->
+        <VBtn append-icon="ri-arrow-right-line">
+          Export
+        </VBtn>
+      </template>
 
       <!-- SECTION Datatable -->
       <VDataTableServer
@@ -132,7 +123,7 @@ const deleteInvoice = async (id: number) => {
         <template #header.trending>
           <VIcon
             size="22"
-            icon="ri-pulse-line"
+            icon="ri-arrow-up-line"
           />
         </template>
 
@@ -200,7 +191,7 @@ const deleteInvoice = async (id: number) => {
         <!-- Actions -->
         <template #item.actions="{ item }">
           <IconBtn @click="deleteInvoice(item.id)">
-            <VIcon icon="ri-delete-bin-line" />
+            <VIcon icon="ri-delete-bin-7-line" />
           </IconBtn>
 
           <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
@@ -211,6 +202,49 @@ const deleteInvoice = async (id: number) => {
             :menu-list="computedMoreList(item.id)"
             item-props
           />
+        </template>
+
+        <!-- Pagination -->
+        <template #bottom>
+          <VDivider />
+
+          <div class="d-flex justify-end flex-wrap gap-x-6 px-2 py-1">
+            <div class="d-flex align-center gap-x-2 text-medium-emphasis text-base">
+              Rows Per Page:
+              <VSelect
+                v-model="itemsPerPage"
+                class="per-page-select"
+                variant="plain"
+                :items="[10, 20, 25, 50, 100]"
+              />
+            </div>
+
+            <p class="d-flex align-center text-base text-high-emphasis me-2 mb-0">
+              {{ paginationMeta({ page, itemsPerPage }, totalInvoices) }}
+            </p>
+
+            <div class="d-flex gap-x-2 align-center me-2">
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-left-s-line"
+                variant="text"
+                density="comfortable"
+                color="default"
+                :disabled="page <= 1"
+                @click="page <= 1 ? page = 1 : page--"
+              />
+
+              <VBtn
+                class="flip-in-rtl"
+                icon="ri-arrow-right-s-line"
+                density="comfortable"
+                variant="text"
+                color="default"
+                :disabled="page >= Math.ceil(totalInvoices / itemsPerPage)"
+                @click="page >= Math.ceil(totalInvoices / itemsPerPage) ? page = Math.ceil(totalInvoices / itemsPerPage) : page++ "
+              />
+            </div>
+          </div>
         </template>
       </VDataTableServer>
       <!-- !SECTION -->

@@ -3,7 +3,7 @@ import chrome from '@images/logos/chrome.png'
 
 const isNewPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
-const smsVerificationNumber = ref('+1(968) 819-2547')
+const smsVerificationNumber = ref('')
 const isTwoFactorDialogOpen = ref(false)
 
 // Recent devices Headers
@@ -55,6 +55,7 @@ const recentDevices = [
           <VAlert
             variant="tonal"
             color="warning"
+            closable
             class="mb-6"
           >
             <VAlertTitle>Ensure that these requirements are met</VAlertTitle>
@@ -111,18 +112,29 @@ const recentDevices = [
               SMS
             </h4>
             <VTextField
-              variant="underlined"
               :model-value="smsVerificationNumber"
               readonly
+              placeholder="+1(968) 819-2547"
+              density="compact"
             >
-              <template #append-inner>
-                <IconBtn variant="plain">
+              <template #append>
+                <IconBtn
+                  rounded
+                  variant="outlined"
+                  color="secondary"
+                  class="me-2"
+                >
                   <VIcon
                     icon="ri-edit-box-line"
                     @click="isTwoFactorDialogOpen = true"
                   />
                 </IconBtn>
-                <IconBtn variant="plain">
+
+                <IconBtn
+                  rounded
+                  variant="outlined"
+                  color="secondary"
+                >
                   <VIcon icon="ri-delete-bin-line" />
                 </IconBtn>
               </template>
@@ -142,21 +154,22 @@ const recentDevices = [
     <VCol cols="12">
       <!-- 👉 Recent devices -->
       <VCard title="Recent devices">
-        <VDivider />
         <VDataTable
           :items="recentDevices"
           :headers="recentDeviceHeader"
           hide-default-footer
-          class="text-no-wrap"
+          class="text-no-wrap rounded-0"
         >
           <template #item.browser="{ item }">
-            <div class="d-flex">
+            <div class="d-flex align-center">
               <VAvatar
                 :image="item.logo"
                 :size="22"
                 class="me-3"
               />
-              {{ item.browser }}
+              <h6 class="text-h6 font-weight-medium">
+                {{ item.browser }}
+              </h6>
             </div>
           </template>
           <!-- TODO Refactor this after vuetify provides proper solution for removing default footer -->

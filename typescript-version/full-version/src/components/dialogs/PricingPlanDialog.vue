@@ -36,9 +36,9 @@ const dialogVisibleUpdate = (val: boolean) => {
           md="4"
         >
           <template #heading>
-            <h3 class="text-h3 pb-2">
+            <h4 class="text-h4 pb-2">
               Pricing Plans
-            </h3>
+            </h4>
           </template>
           <template #subtitle>
             <div class="text-body-1">

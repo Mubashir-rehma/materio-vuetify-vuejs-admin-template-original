@@ -161,7 +161,7 @@ watch(() => props.currentStep, updateCartData)
       <!-- 👉 Add more from wishlist -->
       <div class="d-flex align-center justify-space-between border rounded py-2 px-5 text-base mt-4">
         <a
-          href="#"
+          href="javascript:void(0)"
           class="font-weight-medium"
         >Add more products from wishlist</a>
         <VIcon
@@ -213,7 +213,7 @@ watch(() => props.currentStep, updateCartData)
             </p>
 
             <a
-              href="#"
+              href="javascript:void(0)"
               class="font-weight-medium d-inline-block"
             >Add a gift wrap</a>
           </div>
@@ -242,7 +242,7 @@ watch(() => props.currentStep, updateCartData)
                 Coupon Discount
               </div>
               <a
-                href="#"
+                href="javascript:void(0)"
                 class="text-base d-inline-block"
               >Apply Coupon</a>
             </div>

@@ -34,7 +34,18 @@ const dialogVisibleUpdate = (val: boolean) => {
         <AppPricing
           title="Pricing Plan"
           md="4"
-        />
+        >
+          <template #heading>
+            <h3 class="text-h3 pb-2">
+              Pricing Plans
+            </h3>
+          </template>
+          <template #subtitle>
+            <div class="text-body-1">
+              All plans include 40+ advanced tools and features to boost your product. Choose the best plan to fit your needs.
+            </div>
+          </template>
+        </AppPricing>
       </VCardText>
     </VCard>
   </VDialog>

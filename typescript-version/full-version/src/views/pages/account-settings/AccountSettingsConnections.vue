@@ -59,7 +59,7 @@ const socialAccounts = ref([
   {
     logo: linkedin,
     name: 'LinkedIn',
-    links: { username: '@ThemeSelection', link: 'https://www.instagram.com/themeselection/' },
+    links: { username: '@ThemeSelection', link: 'https://in.linkedin.com/company/themeselection' },
     connected: true,
   },
   {
@@ -179,6 +179,8 @@ const socialAccounts = ref([
                 <VListItemSubtitle
                   v-if="item.links?.link"
                   tag="a"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   :href="item.links?.link"
                   style="opacity: 1;"
                 >
@@ -193,14 +195,10 @@ const socialAccounts = ref([
                     <VBtn
                       icon
                       variant="outlined"
-                      size="small"
                       :color="item.connected ? 'error' : 'secondary'"
                       rounded
                     >
-                      <VIcon
-                        size="20"
-                        :icon="item.connected ? 'ri-delete-bin-line' : 'ri-link' "
-                      />
+                      <VIcon :icon="item.connected ? 'ri-delete-bin-line' : 'ri-link' " />
                     </VBtn>
                   </VListItemAction>
                 </template>

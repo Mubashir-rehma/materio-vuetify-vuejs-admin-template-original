@@ -75,19 +75,17 @@ Contributions are always welcome and recommended! Here is how:
 - Contributions are only accepted through Github pull requests.
 - Finally, contributed code must work in all supported browsers.
 
-## Creators 😇
-
-- [ThemeSelection](https://themeselection.com/)
-
 ## Useful Links 🎁
 
 * [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
 * [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
 * [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
 
-## Social Media 🌍
+## Social Media :earth_africa:
 
-- Twitter : [https://twitter.com/Theme_Selection](https://twitter.com/Theme_Selection)
-- Facebook : [https://www.facebook.com/ThemeSelections/](https://www.facebook.com/ThemeSelections/)
-- Pinterest : [https://pinterest.com/themeselect/](https://pinterest.com/themeselect/)
-- Instagram : [https://www.instagram.com/themeselection/](https://www.instagram.com/themeselection/)
+- [Twitter](https://twitter.com/Theme_Selection)
+- [Facebook](https://www.facebook.com/ThemeSelections/)
+- [Pinterest](https://pinterest.com/themeselect/)
+- [Instagram](https://www.instagram.com/themeselection/)
+- [Discord](https://discord.gg/kBHkY7DekX)
+- [YouTube](https://www.youtube.com/channel/UCuryo5s0CW4aP83itLjIdZg)

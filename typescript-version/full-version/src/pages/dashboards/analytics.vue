@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const sizes = [
-  'xs-small',
+  'x-small',
   'small',
   'default',
   'large',

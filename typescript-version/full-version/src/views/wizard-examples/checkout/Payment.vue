@@ -308,7 +308,7 @@ watch(() => prop.currentStep, updateCartData)
           </template>
 
           <a
-            href="#"
+            href="javascript:void(0)"
             class="font-weight-medium text-base d-inline-block"
           >Change address</a>
         </VCardText>

@@ -115,11 +115,11 @@ watch(() => props.currentStep, updateAddressData)
 
             <div class="d-flex gap-x-4 py-2">
               <a
-                href="#"
+                href="javascript:void(0)"
                 class="text-base"
               >Edit</a>
               <a
-                href="#"
+                href="javascript:void(0)"
                 class="text-base"
               >Remove</a>
             </div>

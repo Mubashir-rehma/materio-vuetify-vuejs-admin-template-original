@@ -32,6 +32,8 @@ const markAllReadOrUnread = () => {
   else
     emit('read', allNotificationsIds)
 }
+
+const totalUnreadNotifications = computed(() => props.notifications.filter(item => !item.isSeen).length)
 </script>
 
 <template>
@@ -50,19 +52,29 @@ const markAllReadOrUnread = () => {
 
     <VMenu
       activator="parent"
-      width="380px"
+      width="380"
       :location="props.location"
-      offset="14px"
+      offset="15px"
       :close-on-content-click="false"
     >
       <VCard class="d-flex flex-column">
         <!-- 👉 Header -->
         <VCardItem class="notification-section">
-          <VCardTitle class="text-lg">
+          <h6 class="text-h6 text-truncate">
             Notifications
-          </VCardTitle>
+          </h6>
 
           <template #append>
+            <VChip
+              v-show="!!isAllMarkRead"
+              size="small"
+              class="me-3"
+              variant="tonal"
+              color="primary"
+            >
+              {{ totalUnreadNotifications }} new
+            </VChip>
+
             <IconBtn
               v-show="props.notifications.length"
               @click="markAllReadOrUnread"
@@ -84,7 +96,7 @@ const markAllReadOrUnread = () => {
         <!-- 👉 Notifications list -->
         <PerfectScrollbar
           :options="{ wheelPropagation: false }"
-          style="max-block-size: 23.75rem;"
+          style="max-block-size: 27rem"
         >
           <VList class="py-0">
             <template
@@ -96,32 +108,40 @@ const markAllReadOrUnread = () => {
                 link
                 lines="one"
                 min-height="66px"
-                class="list-item-hover-class"
+                class="list-item-hover-class py-3"
                 @click="$emit('click:notification', notification)"
               >
                 <!-- Slot: Prepend -->
                 <!-- Handles Avatar: Image, Icon, Text -->
-                <template #prepend>
-                  <VListItemAction start>
-                    <VAvatar
-                      size="40"
-                      :color="notification.color && notification.icon ? notification.color : undefined"
-                      :image="notification.img || undefined"
-                      :icon="notification.icon || undefined"
-                      :variant="notification.img ? undefined : 'tonal' "
+                <div class="d-flex align-start gap-3">
+                  <VAvatar
+                    size="40"
+                    :color="notification.color && !notification.img ? notification.color : undefined"
+                    :image="notification.img || undefined"
+                    :icon="notification.icon || undefined"
+                    :variant="notification.img ? undefined : 'tonal' "
+                  >
+                    <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
+                  </VAvatar>
+
+                  <div>
+                    <h6 class="text-sm font-weight-medium mb-1">
+                      {{ notification.title }}
+                    </h6>
+                    <p
+                      class="text-body-2 mb-2"
+                      style="line-height: 18px;"
                     >
-                      <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
-                    </VAvatar>
-                  </VListItemAction>
-                </template>
+                      {{ notification.subtitle }}
+                    </p>
+                    <p class="text-sm text-disabled mb-0">
+                      {{ notification.time }}
+                    </p>
+                  </div>
 
-                <VListItemTitle>{{ notification.title }}</VListItemTitle>
-                <VListItemSubtitle>{{ notification.subtitle }}</VListItemSubtitle>
-                <span class="text-xs text-disabled">{{ notification.time }}</span>
+                  <VSpacer />
 
-                <!-- Slot: Append -->
-                <template #append>
-                  <div class="d-flex flex-column align-center gap-4">
+                  <div class="d-flex flex-column align-end gap-4">
                     <VBadge
                       dot
                       :color="!notification.isSeen ? 'primary' : '#a8aaae'"
@@ -142,7 +162,7 @@ const markAllReadOrUnread = () => {
                       </IconBtn>
                     </div>
                   </div>
-                </template>
+                </div>
               </VListItem>
             </template>
 
@@ -159,14 +179,14 @@ const markAllReadOrUnread = () => {
         <VDivider />
 
         <!-- 👉 Footer -->
-        <VCardActions
+        <VCardText
           v-show="props.notifications.length"
-          class="notification-footer"
+          class="pa-4"
         >
           <VBtn block>
-            VIEW ALL NOTIFICATIONS
+            View All Notifications
           </VBtn>
-        </VCardActions>
+        </VCardText>
       </VCard>
     </VMenu>
   </IconBtn>
@@ -175,10 +195,6 @@ const markAllReadOrUnread = () => {
 <style lang="scss">
 .notification-section {
   padding: 14px !important;
-}
-
-.notification-footer {
-  padding: 6px !important;
 }
 
 .list-item-hover-class {

@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 import type { Notification } from '@layouts/types'
 
-import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
 import avatar5 from '@images/avatars/avatar-5.png'
-import paypal from '@images/cards/paypal-rounded.png'
 
 const notifications = ref<Notification[]>([
   {
@@ -17,11 +15,12 @@ const notifications = ref<Notification[]>([
   },
   {
     id: 2,
-    text: 'Tom Holland',
-    title: 'New user registered.',
-    subtitle: '5 hours ago',
-    time: 'Yesterday',
+    text: 'Cecilia Becker',
+    title: 'Cecilia Becker',
+    subtitle: 'Accepted your connection',
+    time: '12h ago',
     isSeen: false,
+    color: 'primary',
   },
   {
     id: 3,
@@ -33,20 +32,30 @@ const notifications = ref<Notification[]>([
   },
   {
     id: 4,
-    img: paypal,
-    title: 'PayPal',
-    subtitle: 'Received Payment',
-    time: '25 May',
+    icon: 'ri-bar-chart-line',
+    title: 'Monthly report generated',
+    subtitle: 'July month financial report is generated',
+    time: 'Apr 24, 10:30 AM',
     isSeen: false,
-    color: 'error',
+    color: 'info',
   },
   {
     id: 5,
-    img: avatar3,
-    title: 'Received Order 📦',
-    subtitle: 'New order received from john',
-    time: '19 Mar',
+    text: 'Meta Gadgets',
+    title: 'Application has been approved 🚀',
+    subtitle: 'Your Meta Gadgets project application has been approved.',
+    time: 'Feb 17, 12:17 PM',
+    isSeen: false,
+    color: 'success',
+  },
+  {
+    id: 6,
+    icon: 'ri-mail-line',
+    title: 'New message from Harry',
+    subtitle: 'You have new message from Harry',
+    time: 'Jan 6, 1:48 PM',
     isSeen: true,
+    color: 'error',
   },
 ])
 

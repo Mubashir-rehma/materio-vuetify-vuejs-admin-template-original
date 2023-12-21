@@ -117,19 +117,16 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   >
     <!-- 👉 Search Trigger button -->
     <!-- close active tour while opening search bar using icon -->
-    <IconBtn
-      class="me-1"
-      @click="Shepherd.activeTour?.cancel()"
-    >
+    <IconBtn @click="Shepherd.activeTour?.cancel()">
       <VIcon icon="ri-search-line" />
     </IconBtn>
 
     <span
       v-if="configStore.appContentLayoutNav === 'vertical'"
-      class="d-none d-md-flex align-center text-disabled"
+      class="d-none d-md-flex align-center text-disabled ms-2"
       @click="Shepherd.activeTour?.cancel()"
     >
-      <span class="me-3">Search</span>
+      <span class="me-1">Search</span>
       <span class="meta-key">&#8984;K</span>
     </span>
   </div>
@@ -235,11 +232,6 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 @use "@styles/variables/vuetify.scss";
 
 .meta-key {
-  border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
-  border-radius: 6px;
-  block-size: 1.5625rem;
-  line-height: 1.3125rem;
-  padding-block: 0.125rem;
-  padding-inline: 0.25rem;
+  line-height: 1.375rem;
 }
 </style>

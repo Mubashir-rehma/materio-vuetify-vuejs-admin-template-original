@@ -50,6 +50,7 @@ const userProfileList = [
   >
     <VAvatar
       class="cursor-pointer"
+      size="38"
       :color="!(userData && userData.avatar) ? 'primary' : undefined"
       :variant="!(userData && userData.avatar) ? 'tonal' : undefined"
     >

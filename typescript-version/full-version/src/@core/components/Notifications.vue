@@ -45,7 +45,7 @@ const markAllReadOrUnread = () => {
       offset-x="1"
       offset-y="1"
     >
-      <VIcon icon="ri-notification-line" />
+      <VIcon icon="ri-notification-2-line" />
     </VBadge>
 
     <VMenu

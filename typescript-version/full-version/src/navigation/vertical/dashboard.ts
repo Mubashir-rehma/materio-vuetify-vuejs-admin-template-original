@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Dashboards',
-    icon: { icon: 'ri-home-line' },
+    icon: { icon: 'ri-home-smile-line' },
     children: [
       {
         title: 'Analytics',

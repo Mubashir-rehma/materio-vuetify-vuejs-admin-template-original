@@ -2,12 +2,12 @@ export default [
   { heading: 'UI Elements' },
   {
     title: 'Typography',
-    icon: { icon: 'ri-font-family' },
+    icon: { icon: 'ri-text' },
     to: 'pages-typography',
   },
   {
     title: 'Icons',
-    icon: { icon: 'ri-eye-line' },
+    icon: { icon: 'ri-remixicon-line' },
     to: 'pages-icons',
   },
   {

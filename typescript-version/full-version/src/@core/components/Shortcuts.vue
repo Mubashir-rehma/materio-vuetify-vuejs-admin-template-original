@@ -14,7 +14,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  togglerIcon: 'ri-apps-line',
+  togglerIcon: 'ri-star-smile-line',
 })
 
 const router = useRouter()
@@ -39,7 +39,7 @@ const router = useRouter()
 
           <template #append>
             <IconBtn>
-              <VIcon icon="ri-apps-line" />
+              <VIcon :icon="props.togglerIcon" />
             </IconBtn>
           </template>
         </VCardItem>

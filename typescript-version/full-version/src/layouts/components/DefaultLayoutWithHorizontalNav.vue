@@ -35,17 +35,17 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
     <template #navbar>
       <RouterLink
         to="/"
-        class="d-flex align-start gap-x-3"
+        class="d-flex align-start gap-x-4"
       >
         <VNodeRenderer :nodes="themeConfig.app.logo" />
 
-        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
+        <h1 class="leading-normal text-xl text-uppercase">
           {{ themeConfig.app.title }}
         </h1>
       </RouterLink>
       <VSpacer />
 
-      <NavSearchBar trigger-btn-class="ms-lg-n3" />
+      <NavSearchBar />
 
       <NavBarI18n
         v-if="themeConfig.app.i18n.enable && themeConfig.app.i18n.langConfig?.length"

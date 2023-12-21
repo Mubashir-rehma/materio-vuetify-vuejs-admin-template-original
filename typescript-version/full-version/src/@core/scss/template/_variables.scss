@@ -38,4 +38,8 @@ $vertical-nav-items-icon-margin-inline-end: 0 !default;
   
   // 👉 Horizontal nav
   $horizontal-nav-padding: 0.625rem !default,
+  $horizontal-nav-third-level-icon-size: 0.75rem !default,
+  
+  // Gap between top level horizontal nav items
+  $horizontal-nav-top-level-items-gap: 8px !default,
 );

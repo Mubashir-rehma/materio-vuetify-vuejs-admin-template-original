@@ -42,6 +42,9 @@ export const useLayoutConfigStore = defineStore('layoutConfig', () => {
   // 👉 Horizontal Nav Type
   const horizontalNavType = ref(layoutConfig.horizontalNav.type)
 
+  //  👉 Horizontal Nav Popover Offset
+  const horizontalNavPopoverOffset = ref(layoutConfig.horizontalNav.popoverOffset)
+
   // 👉 Footer Type
   const footerType = ref(layoutConfig.footer.type)
 
@@ -102,6 +105,7 @@ export const useLayoutConfigStore = defineStore('layoutConfig', () => {
     isNavbarBlurEnabled,
     isVerticalNavCollapsed,
     horizontalNavType,
+    horizontalNavPopoverOffset,
     footerType,
     isLessThanOverlayNavBreakpoint,
     isAppRTL,

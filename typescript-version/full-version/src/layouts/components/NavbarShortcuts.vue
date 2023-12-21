@@ -7,7 +7,7 @@ const shortcuts = [
     to: { name: 'apps-calendar' },
   },
   {
-    icon: 'ri-file-line',
+    icon: 'ri-file-list-3-line',
     title: 'Invoice App',
     subtitle: 'Manage Accounts',
     to: { name: 'apps-invoice-list' },
@@ -19,19 +19,19 @@ const shortcuts = [
     to: { name: 'apps-user-list' },
   },
   {
-    icon: 'ri-lock-line',
+    icon: 'ri-computer-line',
     title: 'Role Management',
     subtitle: 'Permission',
     to: { name: 'apps-roles' },
   },
   {
-    icon: 'ri-dashboard-line',
+    icon: 'ri-pie-chart-2-line',
     title: 'Dashboard',
     subtitle: 'Dashboard Analytics',
     to: { name: 'dashboards-analytics' },
   },
   {
-    icon: 'ri-settings-3-line',
+    icon: 'ri-settings-4-line',
     title: 'Settings',
     subtitle: 'Account Settings',
     to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },

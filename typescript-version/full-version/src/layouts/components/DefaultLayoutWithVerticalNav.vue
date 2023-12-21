@@ -42,7 +42,7 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
           <VIcon icon="ri-menu-line" />
         </IconBtn>
 
-        <NavSearchBar class="ms-lg-n3" />
+        <NavSearchBar class="ms-lg-n2" />
 
         <VSpacer />
 

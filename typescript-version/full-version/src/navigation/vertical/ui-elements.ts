@@ -2,17 +2,17 @@ export default [
   { heading: 'UI Elements' },
   {
     title: 'Typography',
-    icon: { icon: 'ri-font-family' },
+    icon: { icon: 'ri-text' },
     to: 'pages-typography',
   },
   {
     title: 'Icons',
-    icon: { icon: 'ri-eye-line' },
+    icon: { icon: 'ri-remixicon-line' },
     to: 'pages-icons',
   },
   {
     title: 'Cards',
-    icon: { icon: 'ri-bank-card-line' },
+    icon: { icon: 'ri-bar-chart-box-line' },
     children: [
       { title: 'Basic', to: 'pages-cards-card-basic' },
       { title: 'Advance', to: 'pages-cards-card-advance' },
@@ -24,7 +24,7 @@ export default [
   },
   {
     title: 'Components',
-    icon: { icon: 'ri-archive-line' },
+    icon: { icon: 'ri-toggle-line' },
     children: [
       { title: 'Alert', to: 'components-alert' },
       { title: 'Avatar', to: 'components-avatar' },

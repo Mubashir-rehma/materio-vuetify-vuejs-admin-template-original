@@ -1,0 +1,15 @@
+// Add border radius to top level nav item
+%horizontal-nav-top-level-item {
+  border-radius: 3.125rem !important;
+}
+
+// Horizontal nav item styles (including nested)
+%horizontal-nav-item {
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+}
+
+// Horizontal nav item title
+%horizontal-nav-item-title {
+  margin-inline-end: 0.5rem;
+}

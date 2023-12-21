@@ -2,7 +2,7 @@ export default [
   { heading: 'Apps & Pages' },
   {
     title: 'Ecommerce',
-    icon: { icon: 'ri-shopping-cart-2-line' },
+    icon: { icon: 'ri-shopping-bag-3-line' },
     children: [
       {
         title: 'Product',
@@ -42,7 +42,7 @@ export default [
   },
   {
     title: 'Academy',
-    icon: { icon: 'ri-book-open-line' },
+    icon: { icon: 'ri-graduation-cap-line' },
     children: [
       { title: 'Dashboard', to: 'apps-academy-dashboard' },
       { title: 'My Course', to: 'apps-academy-my-course' },
@@ -51,7 +51,7 @@ export default [
   },
   {
     title: 'Logistics',
-    icon: { icon: 'ri-truck-line' },
+    icon: { icon: 'ri-car-line' },
     children: [
       { title: 'Dashboard', to: 'apps-logistics-dashboard' },
       { title: 'Fleet', to: 'apps-logistics-fleet' },
@@ -59,12 +59,12 @@ export default [
   },
   {
     title: 'Email',
-    icon: { icon: 'ri-mail-line' },
+    icon: { icon: 'ri-mail-open-line' },
     to: 'apps-email',
   },
   {
     title: 'Chat',
-    icon: { icon: 'ri-message-line' },
+    icon: { icon: 'ri-wechat-line' },
     to: 'apps-chat',
   },
   {
@@ -74,8 +74,7 @@ export default [
   },
   {
     title: 'Invoice',
-    icon: { icon: 'ri-article-line' },
-
+    icon: { icon: 'ri-bill-line' },
     children: [
       { title: 'List', to: 'apps-invoice-list' },
       { title: 'Preview', to: { name: 'apps-invoice-preview-id', params: { id: '5036' } } },
@@ -93,16 +92,15 @@ export default [
   },
   {
     title: 'Roles & Permissions',
-    icon: { icon: 'ri-shield-user-line' },
+    icon: { icon: 'ri-lock-2-line' },
     children: [
       { title: 'Roles', to: 'apps-roles' },
       { title: 'Permissions', to: 'apps-permissions' },
     ],
   },
-
   {
     title: 'Pages',
-    icon: { icon: 'ri-file-line' },
+    icon: { icon: 'ri-layout-left-line' },
     children: [
       { title: 'User Profile', to: { name: 'pages-user-profile-tab', params: { tab: 'profile' } } },
       { title: 'Account Settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
@@ -121,7 +119,7 @@ export default [
   },
   {
     title: 'Authentication',
-    icon: { icon: 'ri-lock-line' },
+    icon: { icon: 'ri-shield-keyhole-line' },
     children: [
       {
         title: 'Login',
@@ -170,7 +168,7 @@ export default [
   },
   {
     title: 'Wizard Examples',
-    icon: { icon: 'ri-more-fill' },
+    icon: { icon: 'ri-git-commit-line' },
     children: [
       { title: 'Checkout', to: { name: 'wizard-examples-checkout' } },
       { title: 'Property Listing', to: { name: 'wizard-examples-property-listing' } },
@@ -179,7 +177,7 @@ export default [
   },
   {
     title: 'Dialog Examples',
-    icon: { icon: 'ri-square-line' },
+    icon: { icon: 'ri-tv-2-line' },
     to: 'pages-dialog-examples',
   },
 ]

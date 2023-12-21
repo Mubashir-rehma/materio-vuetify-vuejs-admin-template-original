@@ -2,7 +2,7 @@ export default [
   { heading: 'Forms & Tables' },
   {
     title: 'Form Elements',
-    icon: { icon: 'ri-file-copy-line' },
+    icon: { icon: 'ri-radio-button-line' },
     children: [
       { title: 'Autocomplete', to: 'forms-autocomplete' },
       { title: 'Checkbox', to: 'forms-checkbox' },
@@ -23,12 +23,12 @@ export default [
   },
   {
     title: 'Form Layouts',
-    icon: { icon: 'ri-file-copy-line' },
+    icon: { icon: 'ri-layout-4-line' },
     to: 'forms-form-layouts',
   },
   {
     title: 'Form Wizard',
-    icon: { icon: 'ri-align-vertically' },
+    icon: { icon: 'ri-git-commit-line' },
     children: [
       { title: 'Numbered', to: 'forms-form-wizard-numbered' },
       { title: 'Icons', to: 'forms-form-wizard-icons' },
@@ -36,12 +36,12 @@ export default [
   },
   {
     title: 'Form Validation',
-    icon: { icon: 'ri-checkbox-circle-line' },
+    icon: { icon: 'ri-checkbox-multiple-line' },
     to: 'forms-form-validation',
   },
   {
     title: 'Tables',
-    icon: { icon: 'ri-table-line' },
+    icon: { icon: 'ri-table-alt-line' },
     children: [
       { title: 'Simple Table', to: 'tables-simple-table' },
       { title: 'Data Table', to: 'tables-data-table' },

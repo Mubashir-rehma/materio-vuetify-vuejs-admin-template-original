@@ -27,14 +27,40 @@ const logout = async () => {
 
 const userProfileList = [
   { type: 'divider' },
-  { type: 'navItem', icon: 'ri-user-line', title: 'Profile', to: { name: 'apps-user-view-id', params: { id: 21 } } },
-  { type: 'navItem', icon: 'ri-settings-2-line', title: 'settings', to: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
-  { type: 'navItem', icon: 'ri-bank-card-line', title: 'Billing', to: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } }, badgeProps: { color: 'light-error', content: '3', textColor: 'error' } },
+  {
+    type: 'navItem',
+    icon: 'ri-user-line',
+    title: 'Profile',
+    to: { name: 'apps-user-view-id', params: { id: 21 } },
+  },
+  {
+    type: 'navItem',
+    icon: 'ri-settings-4-line',
+    title: 'settings',
+    to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
+  },
+  {
+    type: 'navItem',
+    icon: 'ri-file-text-line',
+    title: 'Billing Plan',
+    to: { name: 'pages-account-settings-tab', params: { tab: 'billing-plans' } },
+    badgeProps: { color: 'error', content: '4' },
+  },
   { type: 'divider' },
-  { type: 'navItem', icon: 'ri-money-dollar-circle-line', title: 'Pricing', to: { name: 'pages-pricing' } },
-  { type: 'navItem', icon: 'ri-question-line', title: 'FAQ', to: { name: 'pages-faq' } },
+  {
+    type: 'navItem',
+    icon: 'ri-money-dollar-circle-line',
+    title: 'Pricing',
+    to: { name: 'pages-pricing' },
+  },
+  {
+    type: 'navItem',
+    icon: 'ri-question-line',
+    title: 'FAQ',
+    to: { name: 'pages-faq' },
+  },
   { type: 'divider' },
-  { type: 'navItem', icon: 'ri-logout-box-line', title: 'Logout', onClick: logout },
+
 ]
 </script>
 
@@ -98,10 +124,12 @@ const userProfileList = [
               </VListItemAction>
             </template>
 
-            <VListItemTitle class="font-weight-medium">
+            <h6 class="text-sm font-weight-medium">
               {{ userData.fullName || userData.username }}
-            </VListItemTitle>
-            <VListItemSubtitle>{{ userData.role }}</VListItemSubtitle>
+            </h6>
+            <VListItemSubtitle class="text-capitalize text-disabled">
+              {{ userData.role }}
+            </VListItemSubtitle>
           </VListItem>
 
           <PerfectScrollbar :options="{ wheelPropagation: false }">
@@ -112,11 +140,9 @@ const userProfileList = [
               <VListItem
                 v-if="item.type === 'navItem'"
                 :to="item.to"
-                @click="item.onClick && item.onClick()"
               >
                 <template #prepend>
                   <VIcon
-                    class="me-2"
                     :icon="item.icon"
                     size="22"
                   />
@@ -128,15 +154,29 @@ const userProfileList = [
                   v-if="item.badgeProps"
                   #append
                 >
-                  <VBadge v-bind="item.badgeProps" />
+                  <VBadge
+                    inline
+                    v-bind="item.badgeProps"
+                  />
                 </template>
               </VListItem>
 
               <VDivider
                 v-else
-                class="my-2"
+                class="my-1"
               />
             </template>
+
+            <VListItem>
+              <VBtn
+                block
+                color="error"
+                append-icon="ri-logout-box-r-line"
+                @click="logout"
+              >
+                Logout
+              </VBtn>
+            </VListItem>
           </PerfectScrollbar>
         </VList>
       </VMenu>

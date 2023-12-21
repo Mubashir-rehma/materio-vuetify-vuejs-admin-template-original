@@ -26,7 +26,7 @@ const router = useRouter()
 
     <VMenu
       activator="parent"
-      offset="14px"
+      offset="15px"
       location="bottom end"
     >
       <VCard

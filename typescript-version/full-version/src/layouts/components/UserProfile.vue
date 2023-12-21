@@ -94,7 +94,7 @@ const userProfileList = [
         activator="parent"
         width="230"
         location="bottom end"
-        offset="14px"
+        offset="15px"
       >
         <VList>
           <VListItem>

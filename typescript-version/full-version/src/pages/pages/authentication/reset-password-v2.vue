@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import tree3 from '@images/misc/tree3.png'
+import authV2ResetPasswordIllustrationBorderedDark from '@images/pages/auth-v2-reset-password-illustration-bordered-dark.png'
+import authV2ResetPasswordIllustrationBorderedLight from '@images/pages/auth-v2-reset-password-illustration-bordered-light.png'
+import authV2ResetPasswordIllustrationDark from '@images/pages/auth-v2-reset-password-illustration-dark.png'
+import authV2ResetPasswordIllustrationLight from '@images/pages/auth-v2-reset-password-illustration-light.png'
+
+import authV2MaskDark from '@images/pages/mask-v2-dark.png'
+import authV2MaskLight from '@images/pages/mask-v2-light.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
+
+const authThemeImg = useGenerateImageVariant(
+  authV2ResetPasswordIllustrationLight,
+  authV2ResetPasswordIllustrationDark,
+  authV2ResetPasswordIllustrationBorderedLight,
+  authV2ResetPasswordIllustrationBorderedDark,
+  true)
+
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+
 definePage({
   meta: {
     layout: 'blank',
@@ -15,15 +35,50 @@ const isConfirmPasswordVisible = ref(false)
 </script>
 
 <template>
+  <div class="auth-logo d-flex align-center gap-x-3">
+    <VNodeRenderer :nodes="themeConfig.app.logo" />
+
+    <h1 class="auth-title">
+      {{ themeConfig.app.title }}
+    </h1>
+  </div>
+
   <VRow
     no-gutters
     class="auth-wrapper"
   >
     <VCol
       md="8"
-      class="d-none d-md-flex"
+      class="d-none d-md-flex position-relative"
     >
-      <!-- here your illustrator -->
+      <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
+        <VImg
+          max-width="857"
+          :src="authThemeImg"
+          class="auth-illustration"
+        />
+      </div>
+
+      <img
+        class="auth-footer-mask"
+        height="360"
+        :src="authThemeMask"
+      >
+
+      <div class="d-flex gap-x-2 auth-footer-tree">
+        <img
+          :src="tree3"
+          alt="tree image"
+          height="140"
+        >
+        <img
+          :src="tree3"
+          alt="tree image"
+          height="90"
+          width="50"
+          class="align-self-end"
+        >
+      </div>
     </VCol>
 
     <VCol
@@ -38,9 +93,9 @@ const isConfirmPasswordVisible = ref(false)
         class="mt-12 mt-sm-0 pa-4"
       >
         <VCardText>
-          <h5 class="text-h5 mb-1">
+          <h4 class="text-h4 mb-1">
             Reset Password 🔒
-          </h5>
+          </h4>
           <p class="mb-0">
             Enter your email and we'll send you instructions to reset your password
           </p>

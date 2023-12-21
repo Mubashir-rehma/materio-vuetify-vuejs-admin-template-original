@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CustomInputContent } from '@core/types'
+import registerMultiStepIllustration from '@images/pages/register-multi-step-illustration.png'
 
 definePage({
   meta: {
@@ -81,6 +82,14 @@ const onSubmit = () => {
       class="d-none d-md-flex"
     >
       <!-- here your illustration -->
+
+      <div class="d-flex align-center w-100 h-100 justify-end pa-10 pe-0">
+        <VImg
+          max-width="359"
+          :src="registerMultiStepIllustration"
+          class="auth-illustration"
+        />
+      </div>
     </VCol>
 
     <VCol
@@ -97,7 +106,7 @@ const onSubmit = () => {
           v-model:current-step="currentStep"
           :items="items"
           :direction="$vuetify.display.smAndUp ? 'horizontal' : 'vertical'"
-          class="mb-8"
+          class="mb-12"
         />
 
         <VWindow
@@ -107,10 +116,10 @@ const onSubmit = () => {
         >
           <VForm>
             <VWindowItem>
-              <h5 class="text-h5 mb-1">
+              <h4 class="text-h4">
                 Account Information
-              </h5>
-              <p class="text-sm">
+              </h4>
+              <p class="mb-5">
                 Enter Your Account Details
               </p>
 
@@ -177,10 +186,10 @@ const onSubmit = () => {
             </VWindowItem>
 
             <VWindowItem>
-              <h5 class="text-h5 mb-1">
+              <h4 class="text-h4">
                 Personal Information
-              </h5>
-              <p class="text-sm">
+              </h4>
+              <p class="mb-5">
                 Enter Your Personal Information
               </p>
 
@@ -273,10 +282,10 @@ const onSubmit = () => {
             </VWindowItem>
 
             <VWindowItem>
-              <h5 class="text-h5">
+              <h4 class="text-h4">
                 Select Plan
-              </h5>
-              <p class="text-sm">
+              </h4>
+              <p class="mb-5">
                 Select plan as per your requirement
               </p>
 
@@ -287,28 +296,32 @@ const onSubmit = () => {
               >
                 <template #default="{ item }">
                   <div class="text-center">
-                    <h5 class="text-h5">
+                    <h6 class="text-h6 mb-2">
                       {{ item.title }}
-                    </h5>
-                    <p class="clamp-text">
+                    </h6>
+                    <p class="clamp-text text-body-2 mb-2">
                       {{ item.desc }}
                     </p>
 
                     <div class="d-flex align-center justify-center">
-                      <span class="text-primary mb-2">$</span>
-                      <span class="text-h4 text-primary">
+                      <div class="text-primary mb-2">
+                        $
+                      </div>
+                      <h4 class="text-h4 text-primary">
                         {{ item.value }}
-                      </span>
-                      <span class="mt-2">/month</span>
+                      </h4>
+                      <div class="text-body-2 text-disabled mt-2">
+                        /month
+                      </div>
                     </div>
                   </div>
                 </template>
               </CustomRadiosWithIcon>
 
-              <h5 class="text-h5 mt-10">
+              <h4 class="text-h4 mt-12">
                 Payment Information
-              </h5>
-              <p class="text-sm">
+              </h4>
+              <p class="mb-5">
                 Enter your card information
               </p>
 
@@ -360,9 +373,10 @@ const onSubmit = () => {
           </VForm>
         </VWindow>
 
-        <div class="d-flex flex-wrap justify-sm-space-between justify-center gap-x-4 gap-y-2 mt-8">
+        <div class="d-flex flex-wrap justify-sm-space-between justify-center gap-x-4 gap-y-2 mt-5">
           <VBtn
             color="secondary"
+            variant="outlined"
             :disabled="currentStep === 0"
             @click="currentStep--"
           >

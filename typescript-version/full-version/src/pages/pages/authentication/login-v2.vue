@@ -2,6 +2,24 @@
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { themeConfig } from '@themeConfig'
 
+import tree1 from '@images/misc/tree1.png'
+import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png'
+import authV2LoginIllustrationBorderedLight from '@images/pages/auth-v2-login-illustration-bordered-light.png'
+import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustration-dark.png'
+import authV2LoginIllustrationLight from '@images/pages/auth-v2-login-illustration-light.png'
+import authV2MaskDark from '@images/pages/mask-v2-dark.png'
+import authV2MaskLight from '@images/pages/mask-v2-light.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+
+const authThemeImg = useGenerateImageVariant(
+  authV2LoginIllustrationLight,
+  authV2LoginIllustrationDark,
+  authV2LoginIllustrationBorderedLight,
+  authV2LoginIllustrationBorderedDark,
+  true)
+
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+
 definePage({
   meta: {
     layout: 'blank',
@@ -18,15 +36,43 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
+  <div class="auth-logo d-flex align-center gap-x-3">
+    <VNodeRenderer :nodes="themeConfig.app.logo" />
+
+    <h1 class="auth-title">
+      {{ themeConfig.app.title }}
+    </h1>
+  </div>
+
   <VRow
     no-gutters
     class="auth-wrapper"
   >
     <VCol
       md="8"
-      class="d-none d-md-flex"
+      class="d-none d-md-flex position-relative"
     >
-      <!-- here your illustration -->
+      <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
+        <VImg
+          max-width="797"
+          :src="authThemeImg"
+          class="auth-illustration"
+        />
+      </div>
+
+      <img
+        class="auth-footer-mask"
+        height="360"
+        :src="authThemeMask"
+      >
+
+      <VImg
+        :src="tree1"
+        alt="tree image"
+        height="190"
+        width="90"
+        class="auth-footer-tree"
+      />
     </VCol>
 
     <VCol
@@ -41,9 +87,9 @@ const isPasswordVisible = ref(false)
         class="mt-12 mt-sm-0 pa-4"
       >
         <VCardText>
-          <h5 class="text-h5 mb-1">
+          <h4 class="text-h4 mb-1">
             Welcome to {{ themeConfig.app.title }}! 👋🏻
-          </h5>
+          </h4>
           <p class="mb-0">
             Please sign-in to your account and start the adventure
           </p>
@@ -73,13 +119,13 @@ const isPasswordVisible = ref(false)
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
 
-                <div class="d-flex align-center flex-wrap justify-space-between mt-1 mb-4">
+                <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-4">
                   <VCheckbox
                     v-model="form.remember"
                     label="Remember me"
                   />
                   <RouterLink
-                    class="text-primary ms-2 mb-1"
+                    class="text-primary"
                     :to="{ name: 'pages-authentication-forgot-password-v2' }"
                   >
                     Forgot Password?
@@ -101,7 +147,7 @@ const isPasswordVisible = ref(false)
               >
                 <span>New on our platform?</span>
                 <RouterLink
-                  class="text-primary ms-2"
+                  class="text-primary"
                   :to="{ name: 'pages-authentication-register-v2' }"
                 >
                   Create an account
@@ -113,7 +159,7 @@ const isPasswordVisible = ref(false)
                 class="d-flex align-center"
               >
                 <VDivider />
-                <span class="mx-4">or</span>
+                <span class="mx-2 text-high-emphasis">or</span>
                 <VDivider />
               </VCol>
 

@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import tree2 from '@images/misc/tree2.png'
+import authV2MaskDark from '@images/pages/mask-v2-dark.png'
+import authV2MaskLight from '@images/pages/mask-v2-light.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
+
+import authV2TwoStepsIllustrationBorderedDark from '@images/pages/auth-v2-two-steps-illustration-border-dark.png'
+import authV2TwoStepsIllustrationBorderedLight from '@images/pages/auth-v2-two-steps-illustration-border-light.png'
+import authV2TwoStepsIllustrationDark from '@images/pages/auth-v2-two-steps-illustration-dark.png'
+import authV2TwoStepsIllustrationLight from '@images/pages/auth-v2-two-steps-illustration-light.png'
+
+const authThemeImg = useGenerateImageVariant(
+  authV2TwoStepsIllustrationLight,
+  authV2TwoStepsIllustrationDark,
+  authV2TwoStepsIllustrationBorderedLight,
+  authV2TwoStepsIllustrationBorderedDark,
+  true)
+
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+
 definePage({
   meta: {
     layout: 'blank',
@@ -20,6 +40,14 @@ const onFinish = () => {
 </script>
 
 <template>
+  <div class="auth-logo d-flex align-center gap-x-3">
+    <VNodeRenderer :nodes="themeConfig.app.logo" />
+
+    <h1 class="auth-title">
+      {{ themeConfig.app.title }}
+    </h1>
+  </div>
+
   <div>
     <VRow
       class="auth-wrapper"
@@ -27,9 +55,37 @@ const onFinish = () => {
     >
       <VCol
         md="8"
-        class="d-none d-md-flex"
+        class="d-none d-md-flex position-relative"
       >
         <!-- Here your illustrator -->
+        <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
+          <VImg
+            max-width="753"
+            :src="authThemeImg"
+            class="auth-illustration"
+          />
+        </div>
+
+        <img
+          class="auth-footer-mask"
+          height="360"
+          :src="authThemeMask"
+        >
+        <div class="d-flex gap-x-2 auth-footer-tree">
+          <img
+            :src="tree2"
+            alt="tree image"
+            height="180"
+            width="48"
+          >
+          <img
+            :src="tree2"
+            alt="tree image"
+            height="120"
+            width="32"
+            class="align-self-end"
+          >
+        </div>
       </VCol>
 
       <VCol
@@ -43,20 +99,21 @@ const onFinish = () => {
           :max-width="500"
           class="mt-12 mt-sm-0 pa-4"
         >
-          <VCardText class="pt-2">
-            <h5 class="text-h5 mb-1">
+          <VCardText>
+            <h4 class="text-h4 mb-1">
               Two Step Verification 💬
-            </h5>
-            <p class="mb-2">
+            </h4>
+            <p class="mb-0">
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </p>
-            <h6 class="text-base font-weight-medium">
-              ············1234
+            <h6 class="text-h6">
+              ******1234
             </h6>
           </VCardText>
 
           <VCardText>
             <VForm @submit.prevent="() => {}">
+              <div>Type your 6 digit security code</div>
               <VRow>
                 <!-- email -->
                 <VCol cols="12">
@@ -70,7 +127,10 @@ const onFinish = () => {
                 </VCol>
 
                 <!-- reset password -->
-                <VCol cols="12">
+                <VCol
+                  cols="12"
+                  class="pt-0"
+                >
                   <VBtn
                     block
                     :loading="isOtpInserted"
@@ -99,4 +159,9 @@ const onFinish = () => {
 
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth.scss";
+
+// .auth-illustration{
+//   inset-block-end: 11.5rem;
+//   inset-inline-end: 1.25rem;
+// }
 </style>

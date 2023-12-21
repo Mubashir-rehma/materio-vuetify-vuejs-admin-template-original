@@ -77,6 +77,16 @@ const sources: BundleScriptConfig = {
     // TODO remove mdi icons after replacing all icons with remix icons in template
     require.resolve('@iconify-json/mdi/icons.json'),
 
+    {
+      filename: require.resolve('@iconify-json/bxl/icons.json'),
+      icons: [
+        'facebook',
+        'twitter',
+        'github',
+        'google',
+      ],
+    },
+
     // Custom file with only few icons
     // {
     //   filename: require.resolve('@iconify-json/line-md/icons.json'),

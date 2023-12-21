@@ -3,6 +3,13 @@ import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
+import miscMaskDark from '@images/misc/misc-mask-dark.png'
+import miscMaskLight from '@images/misc/misc-mask-light.png'
+import tree1 from '@images/misc/tree1.png'
+import tree3 from '@images/misc/tree3.png'
+
+const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
+
 definePage({
   meta: {
     layout: 'blank',
@@ -20,26 +27,18 @@ const isPasswordVisible = ref(false)
 
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
-    <VCard
-      class="auth-card pa-4 pt-7"
-      max-width="448"
-    >
-      <VCardItem class="justify-center">
-        <template #prepend>
-          <div class="d-flex">
-            <VNodeRenderer :nodes="themeConfig.app.logo" />
-          </div>
-        </template>
+    <VCard class="auth-card pa-sm-4 pa-md-7 pa-0">
+      <VCardText>
+        <div class="d-flex align-center gap-x-3 justify-center mb-6">
+          <VNodeRenderer :nodes="themeConfig.app.logo" />
 
-        <VCardTitle class="text-2xl text-uppercase">
-          {{ themeConfig.app.title }}
-        </VCardTitle>
-      </VCardItem>
-
-      <VCardText class="pt-2">
-        <h5 class="text-h5 mb-1">
+          <h1 class="auth-title">
+            {{ themeConfig.app.title }}
+          </h1>
+        </div>
+        <h4 class="text-h4 mb-1">
           Welcome to {{ themeConfig.app.title }}! 👋🏻
-        </h5>
+        </h4>
         <p class="mb-0">
           Please sign-in to your account and start the adventure
         </p>
@@ -47,87 +46,100 @@ const isPasswordVisible = ref(false)
 
       <VCardText>
         <VForm @submit.prevent="() => {}">
-          <VRow>
-            <!-- email -->
-            <VCol cols="12">
-              <VTextField
-                v-model="form.email"
-                autofocus
-                label="Email"
-                type="email"
-                placeholder="johndoe@email.com"
-              />
-            </VCol>
+          <!-- email -->
+          <VTextField
+            v-model="form.email"
+            autofocus
+            label="Email"
+            type="email"
+            placeholder="johndoe@email.com"
+            class="mb-5"
+          />
 
-            <!-- password -->
-            <VCol cols="12">
-              <VTextField
-                v-model="form.password"
-                label="Password"
-                placeholder="············"
-                :type="isPasswordVisible ? 'text' : 'password'"
-                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
-                @click:append-inner="isPasswordVisible = !isPasswordVisible"
-              />
+          <!-- password -->
+          <VTextField
+            v-model="form.password"
+            label="Password"
+            placeholder="············"
+            :type="isPasswordVisible ? 'text' : 'password'"
+            :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
+            @click:append-inner="isPasswordVisible = !isPasswordVisible"
+          />
 
-              <!-- remember me checkbox -->
-              <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
-                <VCheckbox
-                  v-model="form.remember"
-                  label="Remember me"
-                />
-
-                <RouterLink
-                  class="text-primary ms-2 mb-1"
-                  :to="{ name: 'pages-authentication-forgot-password-v1' }"
-                >
-                  Forgot Password?
-                </RouterLink>
-              </div>
-
-              <!-- login button -->
-              <VBtn
-                block
-                type="submit"
-              >
-                Login
-              </VBtn>
-            </VCol>
-
-            <!-- create account -->
-            <VCol
-              cols="12"
-              class="text-center text-base"
+          <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-4">
+            <VCheckbox
+              v-model="form.remember"
+              label="Remember me"
+            />
+            <RouterLink
+              class="text-primary"
+              :to="{ name: 'pages-authentication-forgot-password-v2' }"
             >
-              <span>New on our platform?</span>
-              <RouterLink
-                class="text-primary ms-2"
-                :to="{ name: 'pages-authentication-register-v1' }"
-              >
-                Create an account
-              </RouterLink>
-            </VCol>
+              Forgot Password?
+            </RouterLink>
+          </div>
 
-            <VCol
-              cols="12"
-              class="d-flex align-center"
-            >
-              <VDivider />
-              <span class="mx-4">or</span>
-              <VDivider />
-            </VCol>
+          <VBtn
+            block
+            type="submit"
+          >
+            Login
+          </VBtn>
 
-            <!-- auth providers -->
-            <VCol
-              cols="12"
-              class="text-center"
+          <!-- create account -->
+
+          <p class="my-5">
+            <span>New on our platform?</span>
+            <RouterLink
+              class="text-primary"
+              :to="{ name: 'pages-authentication-register-v2' }"
             >
-              <AuthProvider />
-            </VCol>
-          </VRow>
+              Create an account
+            </RouterLink>
+          </p>
+
+          <div class="d-flex align-center mb-5">
+            <VDivider />
+            <span class="mx-2 text-high-emphasis">or</span>
+            <VDivider />
+          </div>
+
+          <!-- auth providers -->
+          <div class="text-center">
+            <AuthProvider />
+          </div>
         </VForm>
       </VCardText>
     </VCard>
+
+    <div class="d-flex gap-x-2 auth-footer-start-tree">
+      <img
+        class="d-none d-md-block"
+        :src="tree3"
+        :height="120"
+        :width="67"
+      >
+      <img
+        class="d-none d-md-block align-self-end"
+        :src="tree3"
+        :height="70"
+        :width="40"
+      >
+    </div>
+
+    <img
+      :src="tree1"
+      class="auth-footer-end-tree d-none d-md-block"
+      :width="97"
+      :height="210"
+    >
+
+    <!-- bg img -->
+    <img
+      class="auth-footer-mask d-none d-md-block"
+      :src="authThemeMask"
+      height="172"
+    >
   </div>
 </template>
 

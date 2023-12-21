@@ -16,6 +16,7 @@
     "@casl/ability": "^6.5.0",
     "@casl/vue": "^2.2.1",
     "@floating-ui/dom": "1.5.3",
+    "@iconify-json/bxl": "^1.1.10",
     "@iconify-json/ri": "^1.1.12",
     "@sindresorhus/is": "^6.0.1",
     "@tiptap/extension-highlight": "^2.1.13",

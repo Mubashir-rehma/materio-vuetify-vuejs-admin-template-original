@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import miscMaskDark from '@images/misc/misc-mask-dark.png'
+import miscMaskLight from '@images/misc/misc-mask-light.png'
+import tree1 from '@images/misc/tree1.png'
+import tree3 from '@images/misc/tree3.png'
 import miscComingSoon from '@images/pages/misc-coming-soon.png'
+
+const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 
 definePage({
   meta: {
@@ -14,10 +20,10 @@ const email = ref('')
   <div class="misc-wrapper">
     <div>
       <!-- 👉 Title and subtitle -->
-      <div class="text-center mb-8">
-        <h5 class="text-h5 font-weight-medium mb-3">
+      <div class="text-center mb-10">
+        <h4 class="text-h4 mb-2">
           We are launching soon 🚀
-        </h5>
+        </h4>
         <p>Our website is opening soon. Please register to get notified when it's ready!</p>
       </div>
 
@@ -29,13 +35,10 @@ const email = ref('')
         <VTextField
           v-model="email"
           autofocus
-          placeholder="Enter your email"
+          placeholder="Enter your email or username"
           class="misc-email-input"
         />
-        <VBtn
-          type="submit"
-          size="large"
-        >
+        <VBtn type="submit">
           Notify
         </VBtn>
       </VForm>
@@ -47,9 +50,38 @@ const email = ref('')
         :src="miscComingSoon"
         alt="Coming Soon"
         :max-width="700"
+        height="500"
         class="mx-auto"
       />
     </div>
+
+    <div class="d-md-flex gap-x-2 misc-footer-tree d-none">
+      <img
+        :src="tree3"
+        alt="tree"
+        height="120"
+        width="68"
+      >
+      <img
+        :src="tree3"
+        alt="tree"
+        height="70"
+        width="40"
+        class="align-self-end"
+      >
+    </div>
+
+    <img
+      height="210"
+      :src="tree1"
+      class="misc-footer-tree-1 d-none d-md-block"
+    >
+    <img
+      cover
+      :src="authThemeMask"
+      height="172"
+      class="misc-footer-img d-none d-md-block flip-in-rtl"
+    >
   </div>
 </template>
 
@@ -58,6 +90,20 @@ const email = ref('')
 
 .misc-email-input {
   max-inline-size: 21.875rem;
-  min-inline-size: 12.5rem;
+  min-inline-size: 16rem;
+}
+
+.misc-footer-tree, .misc-footer-tree-1 {
+  position: absolute;
+}
+
+.misc-footer-tree {
+  inset-block-end: 3.75rem;
+  inset-inline-start: 3.75rem;
+}
+
+.misc-footer-tree-1 {
+  inset-block-end: 5rem;
+  inset-inline-end: 4.75rem;
 }
 </style>

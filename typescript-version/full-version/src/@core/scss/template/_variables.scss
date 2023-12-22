@@ -38,4 +38,11 @@ $vertical-nav-items-icon-margin-inline-end: 0 !default;
   
   // 👉 Horizontal nav
   $horizontal-nav-padding: 0.625rem !default,
+  $horizontal-nav-third-level-icon-size: 0.75rem !default,
+  
+  // Gap between top level horizontal nav items
+  $horizontal-nav-top-level-items-gap: 8px !default,
+
+  // ℹ️ This variable is used for horizontal nav popper content's `margin-top` and "The bridge"'s height. We need to sync both values.
+  $horizontal-nav-popper-content-top: calc(0.625rem + 0.375rem - 0.25rem) !default,
 );

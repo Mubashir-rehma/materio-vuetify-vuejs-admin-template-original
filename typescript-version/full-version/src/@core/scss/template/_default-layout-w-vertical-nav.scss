@@ -19,7 +19,6 @@ $header: ".layout-navbar";
         .layout-footer-sticky#{$ele-layout-footer} {
           .footer-content-container {
             box-shadow: 0 -4px 8px -4px rgba(var(--v-shadow-key-umbra-color), 42%);
-            color:rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
             padding-inline: 1.5rem;
           }
         }

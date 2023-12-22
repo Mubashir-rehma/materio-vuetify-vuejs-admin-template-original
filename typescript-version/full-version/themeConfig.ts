@@ -55,6 +55,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   horizontalNav: {
     type: 'sticky',
     transition: 'slide-y-reverse-transition',
+    popoverOffset: 4,
   },
 
   /*

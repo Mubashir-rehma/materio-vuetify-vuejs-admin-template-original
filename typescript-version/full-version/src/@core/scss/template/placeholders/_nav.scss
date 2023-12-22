@@ -4,6 +4,8 @@
   background: linear-gradient(-72.47deg, rgb(var(--v-global-theme-primary)) 22.16%,
   rgba(var(--v-global-theme-primary), 0.7) 76.47%) !important;
 
+  i { color: rgb(var(--v-theme-on-primary)) !important; }
+
   @include mixins.elevation(4);
 }
 

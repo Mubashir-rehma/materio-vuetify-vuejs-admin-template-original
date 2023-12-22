@@ -32,6 +32,7 @@ else
   articleData.value = data.value
 </script>
 
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="bg-surface help-center-article">
     <!-- 👉 Navbar  -->

@@ -36,7 +36,7 @@ const userProfileList = [
   {
     type: 'navItem',
     icon: 'ri-settings-4-line',
-    title: 'settings',
+    title: 'Settings',
     to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
   },
   {

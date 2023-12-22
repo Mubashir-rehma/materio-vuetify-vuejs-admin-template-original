@@ -42,7 +42,7 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
 
       <div
         v-if="props.change"
-        class="d-flex align-center mb-1"
+        class="d-flex align-center mb-1 flex-wrap"
       >
         <h4 class="text-h4 me-2">
           {{ props.stats }}

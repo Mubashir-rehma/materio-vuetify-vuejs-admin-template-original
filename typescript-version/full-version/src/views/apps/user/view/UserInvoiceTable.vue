@@ -248,7 +248,6 @@ const deleteInvoice = async (id: number) => {
         </template>
       </VDataTableServer>
       <!-- !SECTION -->
-      <VDivider />
     </VCard>
   </section>
 </template>

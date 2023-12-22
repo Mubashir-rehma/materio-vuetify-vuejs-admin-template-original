@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+
 import { useConfigStore } from '@core/stores/config'
 
 import { hexToRgb } from '@layouts/utils'
@@ -17,7 +18,6 @@ const options = controlledComputed(() => configStore.theme, () => {
   return {
     chart: {
       stacked: true,
-      height: 260,
       parentHeightOffset: 0,
       toolbar: { show: false },
     },
@@ -245,6 +245,7 @@ const lastThreeTransactions = [
             type="bar"
             :options="options"
             :series="series"
+            :height="280"
           />
         </VCardText>
       </VCol>

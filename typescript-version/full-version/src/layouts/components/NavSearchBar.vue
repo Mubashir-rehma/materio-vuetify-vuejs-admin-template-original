@@ -31,37 +31,37 @@ const suggestionGroups: SuggestionGroup[] = [
   {
     title: 'Popular Searches',
     content: [
-      { icon: 'ri-donut-chart-line', title: 'Analytics', url: { name: 'dashboards-analytics' } },
-      { icon: 'ri-bubble-chart-line', title: 'CRM', url: { name: 'dashboards-crm' } },
-      { icon: 'ri-article-line', title: 'Landing Page', url: { name: 'front-pages-landing-page' } },
-      { icon: 'ri-group-line', title: 'User List', url: { name: 'apps-user-list' } },
+      { icon: 'ri-bar-chart-line', title: 'Analytics', url: { name: 'dashboards-analytics' } },
+      { icon: 'ri-pie-chart-2-line', title: 'CRM', url: { name: 'dashboards-crm' } },
+      { icon: 'ri-shopping-bag-3-line', title: 'eCommerce', url: { name: 'dashboards-ecommerce' } },
+      { icon: 'ri-car-line', title: 'Logistics', url: { name: 'apps-logistics-dashboard' } },
     ],
   },
   {
     title: 'Apps & Pages',
     content: [
       { icon: 'ri-calendar-line', title: 'Calendar', url: { name: 'apps-calendar' } },
-      { icon: 'ri-shopping-cart-2-line', title: 'ECommerce Product', url: { name: 'apps-ecommerce-product-list' } },
-      { icon: 'ri-school-line', title: 'Academy', url: { name: 'apps-academy-dashboard' } },
-      { icon: 'ri-truck-line', title: 'Logistic Fleet', url: { name: 'apps-logistics-fleet' } },
+      { icon: 'ri-lock-unlock-line', title: 'Roles & Permissions', url: { name: 'apps-roles' } },
+      { icon: 'ri-settings-4-line', title: 'Account Settings', url: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
+      { icon: 'ri-file-copy-line', title: 'Dialog Examples', url: { name: 'pages-dialog-examples' } },
     ],
   },
   {
     title: 'User Interface',
     content: [
-      { icon: 'ri-font-family', title: 'Typography', url: { name: 'pages-typography' } },
-      { icon: 'ri-window-2-line', title: 'Tabs', url: { name: 'components-tabs' } },
-      { icon: 'ri-map-line', title: 'Tour', url: { name: 'extensions-tour' } },
-      { icon: 'ri-keyboard-box-line', title: 'Statistics', url: { name: 'pages-cards-card-statistics' } },
+      { icon: 'ri-text', title: 'Typography', url: { name: 'pages-typography' } },
+      { icon: 'ri-menu-line', title: 'Accordion', url: { name: 'components-expansion-panel' } },
+      { icon: 'ri-alert-line', title: 'Alerts', url: { name: 'components-alert' } },
+      { icon: 'ri-checkbox-blank-line', title: 'Cards', url: { name: 'pages-cards-card-basic' } },
     ],
   },
   {
-    title: 'Popular Searches',
+    title: 'Radio & Tables',
     content: [
-      { icon: 'ri-list-check', title: 'Select', url: { name: 'forms-select' } },
-      { icon: 'ri-money-rupee-circle-line', title: 'Payment', url: { name: 'front-pages-payment' } },
-      { icon: 'ri-calendar-2-line', title: 'Date & Time Picker', url: { name: 'forms-date-time-picker' } },
-      { icon: 'ri-home-line', title: 'Property Listing Wizard', url: { name: 'wizard-examples-property-listing' } },
+      { icon: 'ri-radio-button-line', title: 'Radio', url: { name: 'forms-radio' } },
+      { icon: 'ri-file-text-line', title: 'Form Layouts', url: { name: 'forms-form-layouts' } },
+      { icon: 'ri-table-line', title: 'Table', url: { name: 'tables-simple-table' } },
+      { icon: 'ri-edit-box-line', title: 'Editor', url: { name: 'forms-editors' } },
     ],
   },
 ]
@@ -139,19 +139,15 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   >
     <!-- suggestion -->
     <template #suggestions>
-      <VCardText class="app-bar-search-suggestions h-100 pa-10">
-        <VRow
-          v-if="suggestionGroups"
-          class="gap-y-4"
-        >
+      <VCardText class="app-bar-search-suggestions pa-12">
+        <VRow v-if="suggestionGroups">
           <VCol
             v-for="suggestion in suggestionGroups"
             :key="suggestion.title"
             cols="12"
             sm="6"
-            class="ps-6"
           >
-            <p class="text-xs text-disabled text-uppercase">
+            <p class="custom-letter-spacing text-xs text-disabled text-uppercase py-2 px-4 mb-0">
               {{ suggestion.title }}
             </p>
             <VList class="card-list">
@@ -159,15 +155,15 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
                 v-for="item in suggestion.content"
                 :key="item.title"
                 link
-                :title="item.title"
-                class="app-bar-search-suggestion"
+                class="app-bar-search-suggestion mx-4 mt-2"
                 @click="redirectToSuggestedOrSearchedPage(item)"
               >
+                <VListItemTitle>{{ item.title }}</VListItemTitle>
                 <template #prepend>
                   <VIcon
                     :icon="item.icon"
                     size="20"
-                    class="me-2"
+                    class="me-n1"
                   />
                 </template>
               </VListItem>
@@ -176,48 +172,49 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
         </VRow>
       </VCardText>
     </template>
+
     <!-- no data suggestion -->
     <template #noDataSuggestion>
-      <div class="mt-8">
+      <div class="mt-9">
         <span class="d-flex justify-center text-disabled">Try searching for</span>
         <h6
           v-for="suggestion in noDataSuggestions"
           :key="suggestion.title"
-          class="app-bar-search-suggestion text-sm font-weight-regular cursor-pointer mt-3"
+          class="app-bar-search-suggestion text-h6 font-weight-regular cursor-pointer py-2 px-4"
           @click="redirectToSuggestedOrSearchedPage(suggestion)"
         >
           <VIcon
             size="20"
             :icon="suggestion.icon"
-            class="me-3"
+            class="me-2"
           />
-          <span class="text-sm">{{ suggestion.title }}</span>
+          <span>{{ suggestion.title }}</span>
         </h6>
       </div>
     </template>
+
     <!-- search result -->
     <template #searchResult="{ item }">
-      <VListSubheader class="text-disabled">
+      <VListSubheader class="text-disabled custom-letter-spacing font-weight-regular ps-4">
         {{ item.title }}
       </VListSubheader>
       <VListItem
         v-for="list in item.children"
         :key="list.title"
-        link
         @click="redirectToSuggestedOrSearchedPage(list)"
       >
         <template #prepend>
           <VIcon
             size="20"
             :icon="list.icon"
-            class="me-3"
+            class="me-n1"
           />
         </template>
         <template #append>
           <VIcon
             size="20"
             icon="ri-corner-down-left-line"
-            class="enter-icon text-disabled"
+            class="enter-icon text-medium-emphasis"
           />
         </template>
         <VListItemTitle>
@@ -233,5 +230,15 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
 
 .meta-key {
   line-height: 1.375rem;
+}
+
+.app-bar-search-dialog {
+  .custom-letter-spacing {
+    letter-spacing: 0.8px;
+  }
+
+  .card-list {
+    --v-card-list-gap: 8px;
+  }
 }
 </style>

@@ -279,7 +279,7 @@ const resetCustomizer = async () => {
   <div class="d-lg-block d-none">
     <VBtn
       icon
-      class="app-customizer-toggler rounded-s rounded-0"
+      class="app-customizer-toggler rounded-s-xl rounded-0"
       style="z-index: 1001;"
       @click="isNavDrawerOpen = true"
     >
@@ -448,6 +448,7 @@ const resetCustomizer = async () => {
                   <VIcon
                     size="30"
                     :icon="item.bgImage"
+                    color="high-emphasis"
                   />
                 </div>
               </template>
@@ -587,7 +588,7 @@ const resetCustomizer = async () => {
   .customizer-skins{
     .custom-input.active{
       .customizer-skins-icon-wrapper {
-        background-color: rgba(var(--v-global-theme-primary), var(--v-activated-opacity));
+        background-color: rgba(var(--v-global-theme-primary), var(--v-selected-opacity));
       }
     }
   }

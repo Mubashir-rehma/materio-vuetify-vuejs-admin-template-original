@@ -72,7 +72,7 @@ watch(
   <VDialog
     max-width="600"
     :model-value="props.isDialogVisible"
-    :height="$vuetify.display.smAndUp ? '550' : '100%'"
+    :height="$vuetify.display.smAndUp ? '537' : '100%'"
     :fullscreen="$vuetify.display.width < 600"
     class="app-bar-search-dialog"
     @update:model-value="dialogModelValueUpdate"
@@ -83,13 +83,13 @@ watch(
       width="100%"
       class="position-relative"
     >
-      <VCardText class="pt-1 mb-1">
+      <VCardText class="py-3 px-4">
         <!-- 👉 Search Input -->
         <VTextField
           ref="refSearchInput"
           v-model="searchQueryLocal"
           autofocus
-          density="comfortable"
+          density="compact"
           variant="plain"
           @keyup.esc="clearSearchAndCloseDialog"
           @keydown="getFocusOnSearchList"
@@ -99,7 +99,7 @@ watch(
           <template #prepend-inner>
             <div class="d-flex align-center text-high-emphasis me-1">
               <VIcon
-                size="22"
+                size="24"
                 icon="ri-search-line"
                 style=" margin-block-start:1px; opacity: 1;"
               />
@@ -118,6 +118,7 @@ watch(
 
               <IconBtn
                 class="mt-n2"
+                color="medium-emphasis"
                 @click="clearSearchAndCloseDialog"
               >
                 <VIcon icon="ri-close-line" />
@@ -140,7 +141,7 @@ watch(
           v-show="searchQueryLocal.length && !!props.searchResults.length"
           ref="refSearchList"
           density="compact"
-          class="app-bar-search-list"
+          class="app-bar-search-list py-0"
         >
           <!-- 👉 list Item /List Sub header -->
           <template
@@ -173,12 +174,12 @@ watch(
         >
           <slot name="noData">
             <VCardText class="h-100">
-              <div class="app-bar-search-suggestions d-flex flex-column align-center justify-center text-high-emphasis h-100">
+              <div class="app-bar-search-suggestions d-flex flex-column align-center justify-center text-high-emphasis pa-12">
                 <VIcon
-                  size="75"
-                  icon="ri-file-close-line"
+                  size="64"
+                  icon="ri-file-forbid-line"
                 />
-                <div class="d-flex align-center flex-wrap justify-center gap-2 text-h6 my-3">
+                <div class="d-flex align-center flex-wrap justify-center gap-2 text-h5 my-3">
                   <span>No Result For </span>
                   <span>"{{ searchQueryLocal }}"</span>
                 </div>
@@ -207,15 +208,11 @@ watch(
     backdrop-filter: blur(4px);
   }
 
-  .v-list-item-title {
-    font-size: 0.875rem !important;
-  }
-
   .app-bar-search-list {
     .v-list-item,
     .v-list-subheader {
       font-size: 0.75rem;
-      padding-inline: 1.5rem !important;
+      padding-inline: 1rem;
     }
 
     .v-list-item {
@@ -239,8 +236,17 @@ watch(
     .v-list-subheader {
       line-height: 1;
       min-block-size: auto;
-      padding-block: 0.6875rem 0.3125rem;
+      padding-block: 16px 8px;
+      padding-inline-start: 1rem;
       text-transform: uppercase;
+    }
+  }
+}
+
+@supports selector(:focus-visible){
+  .app-bar-search-dialog {
+    .v-list-item:focus-visible::after {
+      content: none;
     }
   }
 }

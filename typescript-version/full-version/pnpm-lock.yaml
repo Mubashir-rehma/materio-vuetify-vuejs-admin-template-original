@@ -25,9 +25,6 @@ dependencies:
   '@iconify-json/bxl':
     specifier: ^1.1.10
     version: 1.1.10
-  '@iconify-json/ri':
-    specifier: ^1.1.12
-    version: 1.1.16
   '@sindresorhus/is':
     specifier: ^6.0.1
     version: 6.1.0
@@ -156,6 +153,9 @@ devDependencies:
   '@iconify-json/mdi':
     specifier: ^1.1.58
     version: 1.1.60
+  '@iconify-json/ri':
+    specifier: ^1.1.12
+    version: 1.1.16
   '@iconify/tools':
     specifier: ^3.0.5
     version: 3.0.7
@@ -1306,7 +1306,7 @@ packages:
     resolution: {integrity: sha512-/uptPZg9Y1v+jYko5/y/RT/EEvadWC1v1e33qWfgAdwJx38xTAZH/6s2Y2SybAYQDqfFGpx4TvYY7dHG1PDRGA==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: false
+    dev: true
 
   /@iconify/tools@3.0.7:
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}

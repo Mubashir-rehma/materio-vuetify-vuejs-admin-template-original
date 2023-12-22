@@ -188,12 +188,12 @@ const statisticsWithImages = [
     </VCol>
 
     <!-- 👉 Blank Column for make space above the Images cards -->
-    <VCol cols="12" />
 
     <!-- 👉 Images Cards -->
     <VCol
       v-for="statistics in statisticsWithImages"
       :key="statistics.title"
+      class="pt-8"
       cols="12"
       lg="3"
       sm="6"

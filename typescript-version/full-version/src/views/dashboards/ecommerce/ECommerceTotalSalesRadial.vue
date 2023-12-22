@@ -29,10 +29,10 @@ const chartOptions = computed(() => {
             show: false,
           },
           value: {
-            fontSize: '1.25rem',
+            fontSize: '1.125rem',
             fontWeight: '500',
             offsetY: 0,
-            color: `rgba(${hexToRgb(currentTheme['on-surface'])},${variableTheme['high-emphasis-opacity']})`,
+            color: `rgba(${hexToRgb(currentTheme['on-surface'])},${variableTheme['medium-emphasis-opacity']})`,
           },
         },
         track: {
@@ -67,15 +67,3 @@ const chartOptions = computed(() => {
     </VCardText>
   </VCard>
 </template>
-
-  <style lang="scss">
-  #stats-radial-bar-chart {
-    .apexcharts-canvas {
-      .apexcharts-text {
-        &.apexcharts-datalabel-value {
-          font-weight: 600;
-        }
-      }
-    }
-  }
-  </style>

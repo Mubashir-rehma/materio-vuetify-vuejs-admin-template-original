@@ -105,7 +105,7 @@ const statistic = {
         md="2"
         sm="4"
       >
-        <VRow>
+        <VRow class="match-height">
           <VCol
             cols="6"
             sm="12"

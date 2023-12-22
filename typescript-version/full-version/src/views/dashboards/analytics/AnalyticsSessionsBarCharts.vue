@@ -19,6 +19,7 @@ const chartOptions = computed(() => {
     chart: {
       type: 'bar',
       stacked: false,
+      width: 200,
       parentHeightOffset: 0,
       toolbar: {
         show: false,
@@ -71,6 +72,19 @@ const chartOptions = computed(() => {
     tooltip: {
       enabled: false,
     },
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '15%',
+              borderRadius: 6,
+            },
+          },
+        },
+      },
+    ],
   }
 })
 </script>

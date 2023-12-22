@@ -30,7 +30,7 @@ const newProject = {
 </script>
 
 <template>
-  <VRow>
+  <VRow class="match-height">
     <VCol
       cols="12"
       md="4"
@@ -48,6 +48,7 @@ const newProject = {
     <VCol
       cols="12"
       md="4"
+      sm="6"
     >
       <AnalyticsWeeklyOverview />
     </VCol>
@@ -55,6 +56,7 @@ const newProject = {
     <VCol
       cols="12"
       md="4"
+      sm="6"
     >
       <AnalyticsTotalEarning />
     </VCol>

@@ -16,14 +16,14 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
 </script>
 
 <template>
-  <VCard class="overflow-visible">
-    <div class="d-flex position-relative">
+  <VCard class="overflow-visible position-relative">
+    <div class="d-flex">
       <VCardText>
         <h6 class="text-h6 mb-5">
           {{ props.title }}
         </h6>
         <div class="d-flex align-center flex-wrap mb-3">
-          <h4 class="text-h5 me-2">
+          <h4 class="text-h4 me-2">
             {{ props.stats }}
           </h4>
           <div
@@ -61,5 +61,14 @@ const isPositive = controlledComputed(() => props.change, () => Math.sign(props.
   position: absolute;
   inset-block-end: 0;
   inset-inline-end: 5%;
+}
+
+@media (max-width: 1200px)  and (min-width: 960px) {
+  .illustrator-img {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+
+  }
+
 }
 </style>

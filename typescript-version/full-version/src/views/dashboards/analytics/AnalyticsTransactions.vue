@@ -34,20 +34,21 @@ const statistics = [
         <span class="d-inline-block font-weight-medium text-high-emphasis">Total 48.5% Growth</span> <span class="text-high-emphasis">😎</span> this month
       </p>
     </template>
-    <VCardText>
+    <VCardText class="pt-10">
       <VRow>
         <VCol
           v-for="item in statistics"
           :key="item.title"
-          cols="6"
+          cols="12"
+          sm="6"
           md="3"
         >
-          <div class="d-flex align-center">
+          <div class="d-flex align-center gap-x-3">
             <VAvatar
               :color="item.color"
               rounded
               size="40"
-              class="elevation-1 me-3"
+              class="elevation-2"
             >
               <VIcon
                 size="24"

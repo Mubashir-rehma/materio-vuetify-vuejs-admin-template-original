@@ -1,98 +1,125 @@
 <script setup lang="ts">
-const sizes = [
-  'x-small',
-  'small',
-  'default',
-  'large',
-  'x-large',
-]
+import AnalyticsAward from '@/views/dashboards/analytics/AnalyticsAward.vue'
+import AnalyticsDepositWithdraw from '@/views/dashboards/analytics/AnalyticsDepositWithdraw.vue'
+import AnalyticsPerformance from '@/views/dashboards/analytics/AnalyticsPerformance.vue'
+import AnalyticsSalesByCountries from '@/views/dashboards/analytics/AnalyticsSalesByCountries.vue'
+import AnalyticsSessionBarCharts from '@/views/dashboards/analytics/AnalyticsSessionsBarCharts.vue'
+import AnalyticsTotalEarning from '@/views/dashboards/analytics/AnalyticsTotalEarning.vue'
+import AnalyticsTotalProfit from '@/views/dashboards/analytics/AnalyticsTotalProfit.vue'
+import AnalyticsTransactions from '@/views/dashboards/analytics/AnalyticsTransactions.vue'
+import AnalyticsUserTable from '@/views/dashboards/analytics/AnalyticsUserTable.vue'
+import AnalyticsWeeklyOverview from '@/views/dashboards/analytics/AnalyticsWeeklyOverview.vue'
 
-const densities: any = [
-  'default',
-  'comfortable',
-  'compact',
-]
+const totalProfit = {
+  title: 'Total Profit',
+  color: 'secondary',
+  icon: 'ri-pie-chart-2-line',
+  stats: '$25.6k',
+  change: 42,
+  subtitle: 'Weekly Project',
+}
+
+const newProject = {
+  title: 'New Project',
+  color: 'primary',
+  icon: 'ri-file-word-2-line',
+  stats: '862',
+  change: -18,
+  subtitle: 'Yearly Project',
+}
 </script>
 
 <template>
-  <div>
-    <!--
-      <p
-      v-for="i in 1"
-      :key="i"
-      >
-      analytics
-      {{ String($vuetify.locale.isRtl) }}
-      </p>
-    -->
-    <VCard>
-      <!-- <VDefaultsProvider :defaults="{ VBtn: { color: 'default', variant: 'text' } }"> -->
-      <VCardText>
-        <!-- Size -->
-        <VBtn>
-          Button
-        </VBtn>
-        <VBtn
-          v-for="size in sizes"
-          :key="size"
-          icon="ri-home-line"
-          :size="size"
-        />
+  <VRow>
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <AnalyticsAward />
+    </VCol>
 
-        <!-- Divider -->
-        <VDivider class="my-4" />
+    <VCol
+      cols="12"
+      md="8"
+    >
+      <AnalyticsTransactions />
+    </VCol>
 
-        <!-- Density -->
-        <VBtn>
-          Button
-        </VBtn>
-        <VBtn
-          v-for="density in densities"
-          :key="density"
-          icon="ri-home-line"
-          :density="density"
-        />
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <AnalyticsWeeklyOverview />
+    </VCol>
 
-        <!-- Divider -->
-        <VDivider class="my-4" />
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <AnalyticsTotalEarning />
+    </VCol>
 
-        <!-- Done -->
-        <VBtn
-          icon="ri-home-line"
-          density="compact"
-        />
-        <!--
-          <VBtn
-          size="default"
-          icon
-          density="compact"
-          >
-          <VIcon
-          size="22"
-          icon="ri-home-line"
-          />
-          </VBtn>
-        -->
-
-        <!-- Done -->
-        <VBtn
-          icon="ri-home-line"
-          density="comfortable"
-        />
-
-        <!-- Done -->
-        <VBtn
-          size="large"
-          icon
-          density="compact"
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <VRow class="match-height">
+        <VCol
+          cols="12"
+          sm="6"
         >
-          <VIcon
-            size="24"
-            icon="ri-home-line"
-          />
-        </VBtn>
-      </VCardText>
-      <!-- </VDefaultsProvider> -->
-    </VCard>
-  </div>
+          <AnalyticsTotalProfit />
+        </VCol>
+
+        <VCol
+          cols="12"
+          sm="6"
+        >
+          <CardStatisticsVertical v-bind="totalProfit" />
+        </VCol>
+
+        <VCol
+          cols="12"
+          sm="6"
+        >
+          <CardStatisticsVertical v-bind="newProject" />
+        </VCol>
+
+        <VCol
+          cols="12"
+          sm="6"
+        >
+          <AnalyticsSessionBarCharts />
+        </VCol>
+      </VRow>
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <AnalyticsPerformance />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="8"
+    >
+      <AnalyticsDepositWithdraw />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="4"
+    >
+      <AnalyticsSalesByCountries />
+    </VCol>
+
+    <VCol
+      cols="12"
+      md="8"
+    >
+      <AnalyticsUserTable />
+    </VCol>
+  </VRow>
 </template>

@@ -18,19 +18,13 @@ const statistics = [
     icon: 'ri-macbook-line',
     color: 'warning',
   },
-  {
-    title: 'Revenue',
-    stats: '$88k',
-    icon: 'ri-money-dollar-circle-line',
-    color: 'info',
-  },
 ]
 </script>
 
 <template>
   <VCard title="Transactions">
     <template #subtitle>
-      <p class="text-body-1 mb-0">
+      <p class="text-body-2 mb-0">
         <span class="d-inline-block font-weight-medium text-high-emphasis">Total 48.5% Growth</span> <span class="text-high-emphasis">😎</span> this month
       </p>
     </template>
@@ -39,8 +33,8 @@ const statistics = [
         <VCol
           v-for="item in statistics"
           :key="item.title"
-          cols="6"
-          md="3"
+          cols="12"
+          sm="4"
         >
           <div class="d-flex align-center">
             <VAvatar

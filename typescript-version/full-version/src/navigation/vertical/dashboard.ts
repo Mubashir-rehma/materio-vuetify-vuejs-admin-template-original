@@ -12,7 +12,7 @@ export default [
         to: 'dashboards-crm',
       },
       {
-        title: 'ecommerce',
+        title: 'eCommerce',
         to: 'dashboards-ecommerce',
       },
       {

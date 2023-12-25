@@ -14,7 +14,7 @@ export default [
         icon: { icon: 'ri-computer-line' },
       },
       {
-        title: 'Ecommerce',
+        title: 'eCommerce',
         to: 'dashboards-ecommerce',
         icon: { icon: 'ri-shopping-cart-2-line' },
       },

@@ -225,7 +225,7 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   </LazyAppBarSearch>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "@styles/variables/vuetify.scss";
 
 .meta-key {

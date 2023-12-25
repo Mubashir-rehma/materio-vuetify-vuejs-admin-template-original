@@ -127,15 +127,18 @@ const activeQuestion = ref(1)
     <Navbar />
 
     <VCard class="pt-6 pricing-card">
-      <VCardText
-        class="pt-12 pb-16"
-        style="margin-block-end: 5rem;"
-      >
-        <!-- 👉 App Pricing components -->
-        <VContainer>
-          <AppPricing md="4" />
-        </VContainer>
-      </VCardText>
+      <!-- 👉 App Pricing components -->
+      <VContainer>
+        <div class="pricing-section">
+          <AppPricing md="4">
+            <template #heading>
+              <h2 class="text-h2 pb-2">
+                Pricing Plans
+              </h2>
+            </template>
+          </AppPricing>
+        </div>
+      </VContainer>
 
       <!-- 👉 Free trial Banner -->
       <div class="page-pricing-free-trial-banner-bg">
@@ -166,18 +169,17 @@ const activeQuestion = ref(1)
       </div>
 
       <!-- 👉 Plans -->
-      <VCardText class="text-center mt-16 pb-0">
-        <div class="pricing-table-title mb-2">
-          Pick a plan that works best for you
-        </div>
-        <p class="text-body-1 mb-0">
-          Stay cool, we have a 48-hour money back guarantee!
-        </p>
-      </VCardText>
-
-      <!-- 👉 Features & Tables -->
-      <VCardText class="mb-16 mt-2">
-        <VContainer>
+      <VContainer>
+        <div class="pricing-section">
+          <div class="text-center pb-6">
+            <h4 class="text-h4 mb-2">
+              Pick a plan that works best for you
+            </h4>
+            <p class="text-body-1 mb-0">
+              Stay cool, we have a 48-hour money back guarantee!
+            </p>
+          </div>
+          <!-- 👉 Features & Tables -->
           <VTable class="text-no-wrap border rounded pricing-table">
             <!-- 👉 Table head -->
             <thead>
@@ -188,7 +190,6 @@ const activeQuestion = ref(1)
                 >
                   TIME
                 </th>
-
                 <th
                   v-for="{ plan, price } in [
                     { plan: 'STARTER', price: 'Free' },
@@ -201,7 +202,6 @@ const activeQuestion = ref(1)
                 >
                   <div class="position-relative">
                     {{ plan }}
-
                     <VAvatar
                       v-if="plan === 'PRO'"
                       rounded="lg"
@@ -228,7 +228,9 @@ const activeQuestion = ref(1)
                 v-for="feature in features"
                 :key="feature.feature"
               >
-                <td>{{ feature.feature }}</td>
+                <td class="text-high-emphasis">
+                  {{ feature.feature }}
+                </td>
                 <td class="text-center">
                   <VIcon
                     v-if="!feature.addOnAvailable.starter"
@@ -236,7 +238,6 @@ const activeQuestion = ref(1)
                     size="20"
                     :icon="feature.starter ? 'ri-checkbox-circle-line' : 'ri-close-circle-line'"
                   />
-
                   <VChip
                     v-if="feature.addOnAvailable.starter"
                     color="primary"
@@ -245,7 +246,6 @@ const activeQuestion = ref(1)
                     Add-On-Available
                   </VChip>
                 </td>
-
                 <td class="text-center">
                   <VIcon
                     v-if="!feature.addOnAvailable.pro"
@@ -253,7 +253,6 @@ const activeQuestion = ref(1)
                     size="20"
                     :icon="feature.pro ? 'ri-checkbox-circle-line' : 'ri-close-circle-line'"
                   />
-
                   <VChip
                     v-if="feature.addOnAvailable.pro"
                     color="primary"
@@ -269,7 +268,6 @@ const activeQuestion = ref(1)
                     size="20"
                     :icon="feature.enterprise ? 'ri-checkbox-circle-line' : 'ri-close-circle-line'"
                   />
-
                   <VChip
                     v-if="feature.addOnAvailable.enterprise"
                     color="primary"
@@ -292,13 +290,11 @@ const activeQuestion = ref(1)
                     Choose Plan
                   </VBtn>
                 </td>
-
                 <td class="text-center py-4">
                   <VBtn :to="{ name: 'front-pages-payment' }">
                     Choose Plan
                   </VBtn>
                 </td>
-
                 <td class="text-center py-4">
                   <VBtn
                     variant="outlined"
@@ -310,16 +306,17 @@ const activeQuestion = ref(1)
               </tr>
             </tfoot>
           </VTable>
-        </VContainer>
-      </VCardText>
+        </div>
+      </VContainer>
+
       <!-- 👉 FAQ -->
       <div style="background-color: rgba(var(--v-theme-background));">
         <VContainer>
-          <VCardText class="py-10 px-0 py-sm-16">
+          <div class="py-10 px-0 py-sm-16">
             <div class="text-center">
-              <div class="pricing-table-title mb-2">
+              <h4 class="text-h4 mb-2">
                 FAQ's
-              </div>
+              </h4>
               <p class="text-body-1 mb-0">
                 Let us help answer the most common questions.
               </p>
@@ -334,7 +331,7 @@ const activeQuestion = ref(1)
                 />
               </VExpansionPanels>
             </div>
-          </VCardText>
+          </div>
         </VContainer>
       </div>
       <Footer />
@@ -343,6 +340,11 @@ const activeQuestion = ref(1)
 </template>
 
 <style lang="scss" scoped>
+.pricing-section{
+  padding-block: 5.25rem !important;
+  padding-inline: 0 !important;
+}
+
 .page-pricing-free-trial-banner-bg {
   /* stylelint-disable-next-line color-function-notation */
   background-color: rgba(var(--v-theme-primary), 0.16);
@@ -396,6 +398,14 @@ const activeQuestion = ref(1)
           }
         }
       }
+    }
+  }
+}
+
+.pricing-page{
+  @media (min-width: 600px) and (max-width: 960px) {
+    .v-container {
+      padding-inline: 2rem !important;
     }
   }
 }

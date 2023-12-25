@@ -162,7 +162,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
         <RouterLink
           to="/"
           target="_blank"
-          class="text-body-1 font-weight-medium nav-link"
+          class="text-body-1 font-weight-medium nav-link px-0"
         >
           Admin
         </RouterLink>
@@ -188,7 +188,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
       <!-- toggle icon for mobile device -->
       <VAppBarNavIcon
         :class="$vuetify.display.mdAndUp ? 'd-none' : 'd-inline-block'"
-        class="ms-0"
+        class="ms-0 me-1"
         color="high-emphasis"
         @click="() => sidebar = !sidebar"
       />
@@ -280,7 +280,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                             class="mega-menu-item"
                             :to="listItem.to"
                             :target="item.listTitle === 'Page' ? '_self' : '_blank'"
-                            :class="isCurrentRoute(listItem.to) ? 'active-link' : 'text-high-emphasis'"
+                            :class="isCurrentRoute(listItem.to) ? 'active-link' : ''"
                           >
                             <div class="d-flex align-center">
                               <VIcon
@@ -321,8 +321,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 
       <VSpacer />
 
-      <div class="d-flex gap-x-6 align-center">
-        <NavbarThemeSwitcher />
+      <div class="d-flex gap-x-4 align-center">
+        <NavbarThemeSwitcher class="me-0 me-sm-2" />
 
         <VBtn
           v-if="$vuetify.display.lgAndUp"
@@ -366,7 +366,6 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 .nav-link{
-  letter-spacing: 0.15px;
   padding-inline: 0.625rem;
 
   &:not(:hover){
@@ -396,6 +395,10 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
       max-inline-size: calc(900px - 32px);
     }
   }
+
+  .nav-menu{
+    gap: 2rem;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -424,8 +427,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 .mega-menu-item {
-  &:hover {
-    color: rgb(var(--v-theme-primary)) !important;
+  &:not(:hover){
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))
   }
 }
 </style>

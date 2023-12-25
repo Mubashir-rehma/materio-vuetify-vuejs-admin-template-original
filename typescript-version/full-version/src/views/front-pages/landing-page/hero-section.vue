@@ -25,9 +25,6 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 
 const { x, y } = useMouse({ touch: false })
 
-console.log('window.innerWidth :>> ', window.innerWidth)
-console.log('window.innerHeight :>> ', window.innerHeight)
-
 const translateMouse = computed(() => (speed: number) => {
   if (typeof window !== 'undefined') {
     const positionX = computed (() => (window.innerWidth - (x.value * speed)) / 100)
@@ -45,11 +42,11 @@ const translateMouse = computed(() => (speed: number) => {
   >
     <div
       id="landingHero"
-      class="landing-hero"
+      class="landing-hero section-py"
       :style="{ backgroundImage: `url(${heroBgUrl})` }"
     >
       <VContainer>
-        <div class="hero-text-box text-center px-6">
+        <div class="text-center px-6">
           <div class="mb-4">
             <div class="landing-page-title">
               All in one sass application
@@ -66,7 +63,10 @@ const translateMouse = computed(() => (speed: number) => {
               The live customer has everything your marketing needs
             </p>
           </div>
-          <VBtn :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }">
+          <VBtn
+            :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }"
+            size="small"
+          >
             Get Early Access
           </VBtn>
         </div>

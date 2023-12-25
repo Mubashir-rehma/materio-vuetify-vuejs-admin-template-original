@@ -173,7 +173,7 @@ const isOneTimePasswordDialogVisible = ref(false)
               >
                 <template #prepend>
                   <VIcon
-                    size="10"
+                    size="8"
                     icon="ri-circle-fill"
                     color="rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))"
                   />

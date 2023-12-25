@@ -89,7 +89,7 @@ const pricingPlans = [
   <div class="d-flex align-center justify-center mx-auto pt-sm-9 pb-sm-8 py-4">
     <VLabel
       for="pricing-plan-toggle"
-      class="me-2"
+      class="me-2 font-weight-medium"
     >
       Monthly
     </VLabel>
@@ -116,7 +116,7 @@ const pricingPlans = [
         v-model="annualMonthlyPlanPriceToggler"
       >
         <template #label>
-          <div class="text-body-1">
+          <div class="text-body-1 font-weight-medium">
             Annually
           </div>
         </template>

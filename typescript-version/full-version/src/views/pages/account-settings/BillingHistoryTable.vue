@@ -127,7 +127,6 @@ const deleteInvoice = async (id: number) => {
           <VSelect
             v-model="selectedStatus"
             density="compact"
-            label="Select Status"
             placeholder="Select Status"
             clearable
             clear-icon="ri-close-line"

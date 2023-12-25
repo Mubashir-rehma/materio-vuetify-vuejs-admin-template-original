@@ -203,7 +203,7 @@ const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23]
 
 <template>
   <div>
-    <VRow class="py-5">
+    <VRow class="py-5 match-height">
       <!-- 👉 Welcome -->
       <VCol
         cols="12"
@@ -302,7 +302,7 @@ const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23]
       </VCol>
     </VRow>
 
-    <VRow>
+    <VRow class="match-height">
       <VCol
         cols="12"
         md="8"

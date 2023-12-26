@@ -349,7 +349,9 @@ const resetPaymentForm = () => {
                             Delete
                           </VBtn>
                         </div>
-                        <span class="my-4 order-sm-1 order-0">Card expires at {{ card.expiry }}</span>
+                        <div class="my-4 text-body-2 order-sm-1 order-0">
+                          Card expires at {{ card.expiry }}
+                        </div>
                       </div>
                     </VCardText>
                   </VCard>

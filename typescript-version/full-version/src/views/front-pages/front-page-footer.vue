@@ -20,7 +20,10 @@ const menus: Menu[] = [
 
 <template>
   <div class="footer">
-    <div class="footer-top pt-15">
+    <VSheet
+      class="footer-top pt-15"
+      theme="dark"
+    >
       <VContainer>
         <div class="d-flex flex-lg-row flex-column gap-16">
           <!-- 👉 Footer  -->
@@ -31,7 +34,7 @@ const menus: Menu[] = [
                 MATERIO
               </div>
             </div>
-            <div class="text-body-1 text-white mb-6">
+            <div class="text-body-1 footer-text mb-6">
               Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
             </div>
             <VForm class="subscribe-form d-flex align-center gap-4">
@@ -39,15 +42,16 @@ const menus: Menu[] = [
                 label="Subscribe to newsletter"
                 placeholder="john@email.com"
                 theme="dark"
+                density="compact"
+                class="footer-text"
               />
               <VBtn>Subscribe</VBtn>
             </VForm>
           </div>
-
           <!-- 👉 Pages -->
           <div class="d-flex justify-space-between  flex-grow-1 gap-x-16 gap-y-8 flex-md-row flex-column">
             <div>
-              <div class="font-weight-medium mb-6">
+              <div class="footer-heading mb-6">
                 Pages
               </div>
               <ul style="list-style: none;">
@@ -57,27 +61,29 @@ const menus: Menu[] = [
                   class="mb-4"
                 >
                   <RouterLink
-                    class="text-white-variant text-no-wrap"
+                    class="footer-text text-no-wrap"
                     :to="item.to"
                   >
-                    {{ item.name }}
-                    <template v-if="item.isNew">
-                      <VChip
-                        color="primary"
-                        variant="elevated"
-                        size="x-small"
-                        class="ms-2"
-                      >
-                        New
-                      </VChip>
-                    </template>
+                    <div class="d-flex align-center">
+                      <div>{{ item.name }}</div>
+                      <template v-if="item.isNew">
+                        <VChip
+                          color="primary"
+                          variant="elevated"
+                          size="small"
+                          class="ms-2"
+                        >
+                          New
+                        </VChip>
+                      </template>
+                    </div>
                   </RouterLink>
                 </li>
               </ul>
             </div>
             <!-- 👉 Products  -->
             <div>
-              <div class="font-weight-medium mb-6">
+              <div class="footer-heading mb-6">
                 Products
               </div>
               <ul>
@@ -89,7 +95,7 @@ const menus: Menu[] = [
                 >
                   <RouterLink
                     to=""
-                    class="text-white-variant text-no-wrap"
+                    class="footer-text text-no-wrap"
                   >
                     {{ item }}
                   </RouterLink>
@@ -98,7 +104,7 @@ const menus: Menu[] = [
             </div>
             <!-- 👉 Download App -->
             <div>
-              <div class="font-weight-medium mb-6">
+              <div class="footer-heading mb-6">
                 Download our app
               </div>
               <div>
@@ -137,7 +143,7 @@ const menus: Menu[] = [
           </div>
         </div>
       </VContainer>
-    </div>
+    </VSheet>
 
     <div class="text-white footer-line w-100">
       <VContainer>
@@ -163,10 +169,10 @@ const menus: Menu[] = [
           <div class="d-flex gap-x-2">
             <template
               v-for="(item, index) in [
-                { title: 'github', icon: 'ri-github-fill', href: 'https://github.com/themeselection' },
-                { title: 'facebook', icon: 'ri-facebook-circle-line', href: 'https://www.facebook.com/ThemeSelections/' },
-                { title: 'twitter', icon: 'ri-twitter-line', href: 'https://twitter.com/Theme_Selection' },
-                { title: 'instagram', icon: 'ri-instagram-line', href: 'https://www.instagram.com/themeselection/' },
+                { title: 'github', icon: 'bxl-github', href: 'https://github.com/themeselection' },
+                { title: 'facebook', icon: 'bxl-facebook', href: 'https://www.facebook.com/ThemeSelections/' },
+                { title: 'twitter', icon: 'bxl-twitter', href: 'https://twitter.com/Theme_Selection' },
+                { title: 'instagram', icon: 'bxl-google', href: '#' },
               ]"
               :key="index"
             >
@@ -191,8 +197,17 @@ const menus: Menu[] = [
   background: url("@images/front-pages/backgrounds/footer-bg.png") lightgray 50% / cover no-repeat;
 }
 
+.footer-heading{
+  color: rgba(255, 255, 255, var(--v-high-emphasis-opacity));
+  font-weight: 500;
+}
+
+.footer-text{
+  color: rgba(255, 255, 255, var(--v-medium-emphasis-opacity));
+}
+
 .footer-title{
-  color: #fff;
+  color: rgba(255, 255, 255, var(--v-high-emphasis-opacity));
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.15px;
@@ -201,6 +216,10 @@ const menus: Menu[] = [
 
 .footer-line {
   background: #211b2c;
+}
+
+.footer{
+  color: rgba(255, 255, 255, 70%);
 }
 </style>
 

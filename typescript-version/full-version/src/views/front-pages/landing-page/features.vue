@@ -97,14 +97,14 @@ const featuresData = [
 }
 </style>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .feature{
   .v-avatar{
     &.v-avatar--variant-outlined{
       border: 2px solid rgba(var(--v-theme-primary), 0.32);
 
       &:hover{
-        background: rgba(var(--v-theme-primary), 0.08);
+        background: rgba(var(--v-theme-primary), 0.16);
         cursor: pointer;
       }
     }

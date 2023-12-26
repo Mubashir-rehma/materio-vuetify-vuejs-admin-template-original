@@ -5,8 +5,8 @@ import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
 <template>
   <div class="landing-cta position-relative bg-surface">
     <VContainer>
-      <div class="d-flex align-center justify-sm-space-between flex-column flex-md-row gap-y-4">
-        <div class="text-sm-start text-center">
+      <div class="d-flex align-center justify-sm-space-between flex-column flex-md-row gap-y-4 pt-9">
+        <div class="text-sm-start text-center py-8">
           <div class="banner-text pb-1">
             Ready to Get Started?
           </div>

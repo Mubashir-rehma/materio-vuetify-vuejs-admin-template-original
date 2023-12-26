@@ -146,14 +146,14 @@ const moreList = [
             <VAvatar
               v-for="(data, index) in item.team"
               :key="index"
-              size="26"
+              size="30"
             >
               <VImg :src="data" />
             </VAvatar>
             <VAvatar
               v-if="item.extraMembers"
               :color="$vuetify.theme.current.dark ? '#3A3B59' : '#F0EFF0'"
-              :size="26"
+              :size="30"
             >
               <div class="text-caption text-high-emphasis">
                 +{{ item.extraMembers }}

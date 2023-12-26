@@ -107,16 +107,13 @@ const pricingPlans = [
         <VCol
           v-for="(plan, index) in pricingPlans"
           :key="index"
-          cols="12"
-          md="6"
-          lg="4"
         >
           <VCard
             flat
             border
             :style="plan.current ? 'border:2px solid rgb(var(--v-theme-primary))' : ''"
           >
-            <VCardText class="pa-8">
+            <VCardText class="pa-lg-8 text-no-wrap">
               <div class="d-flex flex-column gap-y-8">
                 <div class="d-flex flex-column  gap-y-3">
                   <h4 class="text-h4 text-center">

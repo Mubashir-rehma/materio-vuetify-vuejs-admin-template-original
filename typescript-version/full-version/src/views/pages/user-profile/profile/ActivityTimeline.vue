@@ -9,7 +9,10 @@ import pdf from '@images/icons/project-icons/pdf.png'
   <VCard>
     <VCardItem>
       <template #prepend>
-        <VIcon icon="ri-bar-chart-2-line" />
+        <VIcon
+          icon="ri-bar-chart-2-line"
+          size="24"
+        />
       </template>
 
       <VCardTitle>Activity Timeline</VCardTitle>

@@ -103,8 +103,8 @@ const categoryData = [
 
 const headers = [
   { title: 'Categories', key: 'categoryTitle' },
-  { title: 'Total Products', key: 'totalProduct', align: 'end' },
-  { title: 'Total Earning', key: 'totalEarning', align: 'end' },
+  { title: 'Total Products', key: 'totalProduct' },
+  { title: 'Total Earning', key: 'totalEarning' },
   { title: 'Action', key: 'actions', sortable: false },
 ]
 
@@ -213,11 +213,15 @@ const updateOptions = (options: any) => {
         </template>
 
         <template #item.totalEarning="{ item }">
-          {{ (item.totalEarning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
+          <div class="text-end pe-4">
+            {{ (item.totalEarning).toLocaleString("en-IN", { style: "currency", currency: 'USD' }) }}
+          </div>
         </template>
 
         <template #item.totalProduct="{ item }">
-          {{ (item.totalProduct).toLocaleString() }}
+          <div class="text-end pe-4">
+            {{ (item.totalProduct).toLocaleString() }}
+          </div>
         </template>
 
         <!-- Pagination -->

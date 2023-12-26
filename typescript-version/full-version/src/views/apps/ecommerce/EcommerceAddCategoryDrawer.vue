@@ -131,6 +131,7 @@ const resetForm = () => {
                   v-model="categoryImg"
                   prepend-icon=""
                   :rules="[requiredValidator]"
+                  density="compact"
                   label="No file chosen"
                   clearable
                 >

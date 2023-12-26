@@ -70,16 +70,19 @@ const inventoryTabsData = [
   { icon: 'ri-attachment-2', title: 'Attributes', value: 'Attributes' },
   { icon: 'ri-lock-unlock-line', title: 'Advanced', value: 'Advanced' },
 ]
+
+const inStock = ref(true)
+const isTaxable = ref(true)
 </script>
 
 <template>
   <div>
-    <div class="d-flex flex-wrap justify-center justify-md-space-between gap-4 mb-6">
+    <div class="d-flex flex-wrap justify-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
         <h4 class="text-h4">
           Add a new product
         </h4>
-        <span>Orders placed across your store</span>
+        <span class="text-medium-emphasis">Orders placed across your store</span>
       </div>
 
       <div class="d-flex gap-4 align-center flex-wrap">
@@ -317,7 +320,10 @@ const inventoryTabsData = [
                 </VTabs>
               </VCol>
 
-              <VDivider :vertical="$vuetify.display.mdAndUp ? true : false" />
+              <VDivider
+                :vertical="$vuetify.display.mdAndUp ? true : false"
+                inset
+              />
 
               <VCol
                 cols="12"
@@ -337,6 +343,7 @@ const inventoryTabsData = [
                         <VTextField
                           label="Add to stock"
                           placeholder="100"
+                          density="compact"
                         />
                         <VBtn prepend-icon="ri-check-line">
                           Confirm
@@ -369,6 +376,7 @@ const inventoryTabsData = [
                         :key="item.value"
                         :value="item.value"
                         class="mb-4"
+                        inline
                       >
                         <template #label>
                           <div>
@@ -498,15 +506,24 @@ const inventoryTabsData = [
                       Advanced
                     </div>
                     <VRow>
-                      <VCol>
+                      <VCol
+                        cols="12"
+                        sm="6"
+                        md="7"
+                      >
                         <VSelect
+                          style="min-inline-size: 200px;"
                           label="Product ID Type"
                           placeholder="Select Product Type"
                           :items="['ISBN', 'UPC', 'EAN', 'JAN']"
                         />
                       </VCol>
 
-                      <VCol>
+                      <VCol
+                        cols="12"
+                        sm="6"
+                        md="5"
+                      >
                         <VTextField
                           label="Product Id"
                           placeholder="100023"
@@ -542,13 +559,19 @@ const inventoryTabsData = [
               placeholder="$499"
               class="mb-4"
             />
-            <VCheckbox label="Charge Tax on this product" />
+            <VCheckbox
+              v-model="isTaxable"
+              label="Charge Tax on this product"
+            />
 
             <VDivider class="my-2" />
 
             <div class="d-flex flex-raw align-center justify-space-between ">
               <span>In stock</span>
-              <VSwitch density="compact" />
+              <VSwitch
+                v-model="inStock"
+                density="compact"
+              />
             </div>
           </VCardText>
         </VCard>
@@ -563,10 +586,20 @@ const inventoryTabsData = [
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
+                density="compact"
                 placeholder="Select Category"
                 label="Category"
                 :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
-              />
+              >
+                <template #append>
+                  <IconBtn
+                    icon="ri-add-line"
+                    variant="outlined"
+                    color="primary"
+                    rounded
+                  />
+                </template>
+              </VSelect>
               <VSelect
                 placeholder="Select Collection"
                 label="Collection"

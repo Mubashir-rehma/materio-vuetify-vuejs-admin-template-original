@@ -10,9 +10,9 @@ defineEmits<{
 
 <template>
   <div class="pa-5 d-flex align-center">
-    <h3 class="font-weight-medium text-lg">
+    <h5 class="text-h5">
       {{ props.title }}
-    </h3>
+    </h5>
     <VSpacer />
 
     <slot name="beforeClose" />
@@ -22,7 +22,10 @@ defineEmits<{
       size="x-small"
       @click="$emit('cancel', $event)"
     >
-      <VIcon icon="ri-close-line" />
+      <VIcon
+        icon="ri-close-line"
+        size="24"
+      />
     </IconBtn>
   </div>
 </template>

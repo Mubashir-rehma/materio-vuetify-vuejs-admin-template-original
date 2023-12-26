@@ -4,9 +4,13 @@ export default [
     icon: { icon: 'ri-inbox-line' },
     children: [
       {
-        title: 'Ecommerce',
+        title: 'eCommerce',
         icon: { icon: 'ri-shopping-cart-2-line' },
         children: [
+          {
+            title: 'Dashboard',
+            to: 'apps-ecommerce-dashboard',
+          },
           {
             title: 'Product',
             children: [

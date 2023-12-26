@@ -60,9 +60,9 @@ const totalUnreadNotifications = computed(() => props.notifications.filter(item 
       <VCard class="d-flex flex-column">
         <!-- 👉 Header -->
         <VCardItem class="notification-section">
-          <h6 class="text-h6 text-truncate">
+          <h5 class="text-h5 text-truncate">
             Notifications
-          </h6>
+          </h5>
 
           <template #append>
             <VChip
@@ -79,7 +79,10 @@ const totalUnreadNotifications = computed(() => props.notifications.filter(item 
               v-show="props.notifications.length"
               @click="markAllReadOrUnread"
             >
-              <VIcon :icon="!isAllMarkRead ? 'ri-mail-line' : 'ri-mail-open-line' " />
+              <VIcon
+                color="high-emphasis"
+                :icon="!isAllMarkRead ? 'ri-mail-line' : 'ri-mail-open-line' "
+              />
 
               <VTooltip
                 activator="parent"
@@ -125,41 +128,42 @@ const totalUnreadNotifications = computed(() => props.notifications.filter(item 
                   </VAvatar>
 
                   <div>
-                    <h6 class="text-sm font-weight-medium mb-1">
+                    <h6 class="text-h6 mb-1">
                       {{ notification.title }}
                     </h6>
                     <p
                       class="text-body-2 mb-2"
-                      style="line-height: 18px;"
+                      style="letter-spacing: 0.4px !important; line-height: 18px;"
                     >
                       {{ notification.subtitle }}
                     </p>
-                    <p class="text-sm text-disabled mb-0">
+                    <p
+                      class="text-sm text-disabled mb-0"
+                      style="letter-spacing: 0.4px !important; line-height: 18px;"
+                    >
                       {{ notification.time }}
                     </p>
                   </div>
 
                   <VSpacer />
 
-                  <div class="d-flex flex-column align-end gap-4">
-                    <VBadge
-                      dot
+                  <div class="d-flex flex-column align-end gap-2">
+                    <VIcon
                       :color="!notification.isSeen ? 'primary' : '#a8aaae'"
                       :class="`${notification.isSeen ? 'visible-in-hover' : ''} ms-1`"
+                      size="10"
+                      icon="ri-circle-fill"
                       @click.stop="$emit(notification.isSeen ? 'unread' : 'read', [notification.id])"
                     />
 
-                    <div style="block-size: 28px; inline-size: 28px;">
-                      <IconBtn
-                        size="x-small"
+                    <div style="block-size: 20px; inline-size: 20px;">
+                      <VIcon
+                        size="20"
+                        icon="ri-close-line"
+                        color="secondary"
                         class="visible-in-hover"
                         @click="$emit('remove', notification.id)"
-                      >
-                        <VIcon
-                          size="20"
-                          icon="ri-close-line"
-                        />
-                      </IconBtn>
+                      />
                     </div>
                   </div>
                 </div>
@@ -183,7 +187,10 @@ const totalUnreadNotifications = computed(() => props.notifications.filter(item 
           v-show="props.notifications.length"
           class="pa-4"
         >
-          <VBtn block>
+          <VBtn
+            block
+            size="small"
+          >
             View All Notifications
           </VBtn>
         </VCardText>

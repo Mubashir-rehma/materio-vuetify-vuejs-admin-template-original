@@ -22,12 +22,12 @@ const { locale } = useI18n({ useScope: 'global' })
       activator="parent"
       :location="props.location"
       offset="15px"
+      width="160"
     >
       <!-- List -->
       <VList
         :selected="[locale]"
         color="primary"
-        min-width="175px"
         mandatory
       >
         <!-- List item -->

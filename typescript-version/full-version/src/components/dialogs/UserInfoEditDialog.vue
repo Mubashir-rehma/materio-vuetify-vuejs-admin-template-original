@@ -10,9 +10,9 @@ interface UserData {
   email: string
   currentPlan: string
   status: string
-  avatar: string
-  taskDone: number
-  projectDone: number
+  avatar?: string
+  taskDone?: number
+  projectDone?: number
   taxId: string
   language: string[]
 }

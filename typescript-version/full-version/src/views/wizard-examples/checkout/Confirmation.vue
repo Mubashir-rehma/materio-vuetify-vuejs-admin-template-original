@@ -196,7 +196,7 @@ const resolveDeliveryMethod = computed(() => {
                   <p class="text-base mb-0">
                     <span class="text-primary">${{ item.price }}</span>
                     <span>/</span>
-                    <span class="text-disabled">${{ item.discountPrice }}</span>
+                    <span class="text-disabled text-decoration-line-through">${{ item.discountPrice }}</span>
                   </p>
                 </div>
               </div>
@@ -216,7 +216,7 @@ const resolveDeliveryMethod = computed(() => {
             </h6>
 
             <div class="d-flex align-center justify-space-between text-sm mb-4">
-              <div class="text-body-1">
+              <div class="text-body-1 text-high-emphasis">
                 Order Total
               </div>
               <div class="text-body-1">
@@ -225,7 +225,7 @@ const resolveDeliveryMethod = computed(() => {
             </div>
 
             <div class="d-flex align-center justify-space-between text-sm">
-              <div class="text-body-1">
+              <div class="text-body-1 text-high-emphasis">
                 Charges
               </div>
               <div

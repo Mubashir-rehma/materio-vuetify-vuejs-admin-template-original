@@ -130,7 +130,10 @@ const activeQuestion = ref(1)
       <!-- 👉 App Pricing components -->
       <VContainer>
         <div class="pricing-section">
-          <AppPricing md="4">
+          <AppPricing
+            md="4"
+            cols="12"
+          >
             <template #heading>
               <h2 class="text-h2 pb-2">
                 Pricing Plans

@@ -91,14 +91,13 @@ const membersList: Member[] = [
     max-width="900"
     @update:model-value="dialogVisibleUpdate"
   >
-    <!-- 👉 dialog close btn -->
-    <DialogCloseBtn
-      size="default"
-      variant="text"
-      @click="emit('update:isDialogVisible', false)"
-    />
-
     <VCard class="share-project-dialog pa-sm-11 pa-3">
+      <!-- 👉 dialog close btn -->
+      <DialogCloseBtn
+        size="default"
+        variant="text"
+        @click="emit('update:isDialogVisible', false)"
+      />
       <VCardText class="pt-5">
         <div class="text-center mb-6">
           <h4 class="text-h4 mb-2">
@@ -117,6 +116,7 @@ const membersList: Member[] = [
             :items="membersList"
             item-title="name"
             item-value="name"
+            density="compact"
             placeholder="Add project members..."
           >
             <template #item="{ props: listItemProp, item }">
@@ -154,8 +154,8 @@ const membersList: Member[] = [
 
             <template #append>
               <VBtn
-                variant="plain"
-                color="default"
+                variant="text"
+                color="secondary"
                 :icon="$vuetify.display.xs"
               >
                 <template v-if="!$vuetify.display.xs">

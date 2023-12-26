@@ -46,9 +46,9 @@ const resetAuthCode = () => {
         <h4 class="text-h4 text-center mb-6">
           Add Authenticator App
         </h4>
-        <h6 class="text-h6 font-weight-medium mb-2">
+        <h5 class="text-h5 font-weight-medium mb-2">
           Authenticator Apps
-        </h6>
+        </h5>
 
         <p class="mb-6">
           Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the QR code. It will generate a 6 digit code for you to enter below.

@@ -128,6 +128,7 @@ watch(() => props.currentStep, updateCartData)
                 <VTextField
                   v-model="item.quantity"
                   type="number"
+                  density="compact"
                   style="inline-size: 7.5rem;"
                 />
               </div>
@@ -159,7 +160,10 @@ watch(() => props.currentStep, updateCartData)
       </div>
 
       <!-- 👉 Add more from wishlist -->
-      <div class="d-flex align-center justify-space-between border rounded py-2 px-5 text-base mt-4">
+      <div
+        class="d-flex align-center justify-space-between border rounded px-5 text-base mt-4"
+        style="padding-block:7px"
+      >
         <a
           href="javascript:void(0)"
           class="font-weight-medium"

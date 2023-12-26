@@ -80,7 +80,7 @@ const paymentMethodsData = [
           <h4 class="text-h4 text-center mb-2">
             Add payment methods
           </h4>
-          <p class="text-sm-body-1 text-center text-disabled">
+          <p class="text-sm-body-1 text-center">
             Supported payment methods
           </p>
         </div>

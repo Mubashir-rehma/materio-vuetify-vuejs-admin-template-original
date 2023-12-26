@@ -12,12 +12,16 @@ const isCreateAppVisible = ref(false)
 
 const userData = {
   id: 110,
+  fullName: 'Salena Kyle',
+  company: 'Wayne Enterprises',
   firstName: 'Selena',
   lastName: 'Kyle',
-  userName: 'charwomen1940',
+  username: 'charwomen1940',
+  role: 'Admin',
+  currentPlan: 'Pro',
   country: 'USA',
   contact: '(829) 537-0057',
-  email: 'irena.dubrovna@wayne.com',
+  email: 'salenakyle@gmail.com',
   isBillingAddress: true,
   status: 'active',
   taxId: 'Tax-8894',
@@ -259,7 +263,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="28"
-              icon="ri-lock-line"
+              icon="ri-user-line"
             />
           </template>
           <VCardTitle>Edit User Info</VCardTitle>
@@ -294,7 +298,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="28"
-              icon="ri-bank-card-fill"
+              icon="ri-bank-card-line"
             />
           </template>
           <VCardTitle>Payment Providers</VCardTitle>
@@ -326,7 +330,7 @@ const userData = {
           <template #prepend>
             <VIcon
               size="28"
-              icon="ri-bank-card-fill"
+              icon="ri-bank-card-2-line"
             />
           </template>
           <VCardTitle>Add Payment Methods</VCardTitle>

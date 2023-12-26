@@ -106,7 +106,7 @@ watchEffect(() => {
               </div>
 
               <div>
-                <p class="stepper-title font-weight-medium text-base mb-0">
+                <p class="stepper-title font-weight-medium text-base mb-1">
                   {{ item.title }}
                 </p>
                 <p
@@ -303,7 +303,7 @@ watchEffect(() => {
         align-items: center;
         justify-content: center;
         border-radius: 0.3125rem;
-        background-color: rgba(var(--v-theme-on-surface), var(--v-selected-opacity));
+        background-color: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
         block-size: 2.5rem;
         color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
         inline-size: 2.5rem;
@@ -316,14 +316,16 @@ watchEffect(() => {
       }
 
       .stepper-title {
-        color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+        color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
         font-size: 0.9375rem;
+        line-height: 1.375rem;
       }
 
       .stepper-subtitle {
         color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
-        font-size: 0.75rem;
-        font-weight: 400 ;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        line-height: 1.25rem;
       }
     }
 
@@ -339,7 +341,7 @@ watchEffect(() => {
     .stepper-steps-completed {
       .stepper-icon-step {
         .stepper-icon {
-          background: rgba(var(--v-theme-primary), 0.08);
+          background: rgba(var(--v-theme-primary), 0.16);
           color: rgba(var(--v-theme-primary));
         }
       }
@@ -374,7 +376,7 @@ watchEffect(() => {
   &.app-stepper-icons {
     .app-stepper-step:not(.stepper-steps-active,.stepper-steps-completed) {
       .stepper-title {
-        color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+        color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
       }
     }
 

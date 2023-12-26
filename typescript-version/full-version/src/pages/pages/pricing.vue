@@ -1,18 +1,11 @@
 <template>
-  <VCard class="pt-4">
-    <VCardText class="pt-12 pb-16">
+  <VCard>
+    <VCardText class="pt-12 pb-16 mx-5">
       <!-- 👉 App Pricing components -->
-      <VRow>
-        <VCol
-          cols="12"
-          sm="8"
-          md="12"
-          lg="10"
-          class="mx-auto"
-        >
-          <AppPricing md="4" />
-        </VCol>
-      </VRow>
+      <AppPricing
+        md="4"
+        cols="12"
+      />
     </VCardText>
   </VCard>
 </template>

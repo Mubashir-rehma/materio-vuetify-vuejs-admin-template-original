@@ -41,9 +41,9 @@ const resetPhoneNumber = () => {
 
       <VCardText class="pt-5">
         <div class="mb-6">
-          <h4 class="text-h4 mb-2">
+          <h5 class="text-h5 mb-2">
             Verify Your Mobile Number for SMS
-          </h4>
+          </h5>
 
           <div>
             Enter your mobile phone number with country code and  we will send you a verification code.

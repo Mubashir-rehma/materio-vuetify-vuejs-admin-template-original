@@ -5,7 +5,7 @@ import tree3 from '@images/misc/pricing-tree-3.png'
 
 interface Pricing {
   title?: string
-  xs?: number | string
+  cols?: number | string
   sm?: number | string
   md?: string | number
   lg?: string | number
@@ -130,7 +130,6 @@ const pricingPlans = [
       v-for="plan in pricingPlans"
       :key="plan.logo"
       v-bind="props"
-      cols="12"
     >
       <!-- 👉  Card -->
       <VCard
@@ -205,7 +204,9 @@ const pricingPlans = [
                   icon="ri-circle-line"
                   class="me-2"
                 />
-                {{ feature }}
+                <div class="text-truncate">
+                  {{ feature }}
+                </div>
               </VListItemTitle>
             </VListItem>
           </VList>

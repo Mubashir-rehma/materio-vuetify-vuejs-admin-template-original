@@ -78,7 +78,7 @@ watch(formData, () => {
         <!-- 👉 Possession Status -->
         <VRadioGroup v-model="formData.possessionStatus">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Possession Status
             </div>
           </template>
@@ -99,7 +99,7 @@ watch(formData, () => {
         <!-- 👉 Transaction Type -->
         <VRadioGroup v-model="formData.transactionType">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Transaction Type
             </div>
           </template>
@@ -120,7 +120,7 @@ watch(formData, () => {
         <!-- 👉 property Location -->
         <VRadioGroup v-model="formData.isOnMainRoad">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Is Property Facing Main Road?
             </div>
           </template>
@@ -141,7 +141,7 @@ watch(formData, () => {
         <!-- 👉 Gated Colony -->
         <VRadioGroup v-model="formData.isGatedColony">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Gated Colony
             </div>
           </template>

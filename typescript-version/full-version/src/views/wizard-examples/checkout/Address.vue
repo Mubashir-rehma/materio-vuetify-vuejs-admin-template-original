@@ -75,7 +75,7 @@ watch(() => props.currentStep, updateAddressData)
       md="8"
     >
       <!-- 👉 Address options -->
-      <div class="text-body-1 text-high-emphasis mb-4">
+      <div class="text-body-1 text-high-emphasis font-weight-medium mb-4">
         Select your preferable address
       </div>
 
@@ -138,7 +138,7 @@ watch(() => props.currentStep, updateAddressData)
       </VBtn>
 
       <!-- 👉 Delivery options -->
-      <div class="text-body-1 text-high-emphasis mb-4">
+      <div class="text-body-1 text-high-emphasis font-weight-medium mb-4">
         Choose Delivery Speed
       </div>
 

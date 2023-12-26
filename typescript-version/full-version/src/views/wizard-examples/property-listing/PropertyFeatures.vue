@@ -83,7 +83,7 @@ watch(formData, () => {
         <!-- 👉 xCommon Area? -->
         <VRadioGroup v-model="formData.isCommonArea1">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Is There Any Common Area?
             </div>
           </template>
@@ -104,7 +104,7 @@ watch(formData, () => {
         <!-- 👉 Common Area? -->
         <VRadioGroup v-model="formData.isCommonArea2">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Is There Any Common Area?
             </div>
           </template>

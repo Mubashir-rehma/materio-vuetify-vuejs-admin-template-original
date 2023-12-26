@@ -226,7 +226,7 @@ const onSubmit = () => {
                     >
                       <template #prepend>
                         <VAvatar
-                          size="48"
+                          size="46"
                           rounded
                           variant="tonal"
                           :color="category.color"
@@ -234,10 +234,10 @@ const onSubmit = () => {
                         />
                       </template>
 
-                      <VListItemTitle class="text-body-1 text-high-emphasis mb-1">
+                      <VListItemTitle class="font-weight-medium mb-1">
                         {{ category.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle class="text-body-2 text-disabled">
+                      <VListItemSubtitle class="text-body-2">
                         {{ category.subtitle }}
                       </VListItemSubtitle>
 
@@ -251,9 +251,9 @@ const onSubmit = () => {
 
               <!-- 👉 Frameworks -->
               <VWindowItem>
-                <h6 class="text-h6 mb-4">
+                <h5 class="text-h5 mb-4">
                   Select Framework
-                </h6>
+                </h5>
                 <VRadioGroup v-model="createAppData.framework">
                   <VList class="card-list">
                     <VListItem
@@ -263,7 +263,7 @@ const onSubmit = () => {
                     >
                       <template #prepend>
                         <VAvatar
-                          size="48"
+                          size="46"
                           rounded
                           variant="tonal"
                           :color="framework.color"
@@ -271,7 +271,7 @@ const onSubmit = () => {
                           <img :src="framework.icon">
                         </VAvatar>
                       </template>
-                      <VListItemTitle class="mb-1">
+                      <VListItemTitle class="mb-1 font-weight-medium">
                         {{ framework.title }}
                       </VListItemTitle>
                       <VListItemSubtitle>
@@ -292,7 +292,7 @@ const onSubmit = () => {
                   placeholder="userDB"
                 />
 
-                <h6 class="text-h6 my-4">
+                <h6 class="text-h6 mt-8 mb-4">
                   Select Database Engine
                 </h6>
                 <VRadioGroup v-model="createAppData.database">
@@ -304,7 +304,7 @@ const onSubmit = () => {
                     >
                       <template #prepend>
                         <VAvatar
-                          size="48"
+                          size="46"
                           rounded
                           variant="tonal"
                           :color="database.color"
@@ -312,7 +312,7 @@ const onSubmit = () => {
                           <img :src="database.icon">
                         </VAvatar>
                       </template>
-                      <VListItemTitle class="mb-1">
+                      <VListItemTitle class="mb-1 font-weight-medium">
                         {{ database.title }}
                       </VListItemTitle>
                       <VListItemSubtitle>
@@ -402,7 +402,7 @@ const onSubmit = () => {
               </VWindowItem>
             </VWindow>
 
-            <div class="d-flex justify-space-between mt-8">
+            <div class="d-flex justify-space-between mt-6">
               <VBtn
                 variant="outlined"
                 color="secondary"

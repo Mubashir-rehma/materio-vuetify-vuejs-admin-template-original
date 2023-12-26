@@ -86,7 +86,7 @@ const paymentProvidersData = [
           <h4 class="text-h4 text-center mb-2">
             Select Payment Providers
           </h4>
-          <p class="text-sm-body-1 text-center text-disabled">
+          <p class="text-sm-body-1 text-center">
             Third-party payment providers
           </p>
         </div>

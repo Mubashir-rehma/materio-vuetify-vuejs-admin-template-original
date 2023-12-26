@@ -55,7 +55,7 @@ const referAndEarnSteps = [
           </h4>
 
           <div class="text-body-1">
-            Invite your friend to Vuexy, if they sign up, you and your friend will get 30 days free trial
+            Invite your friend to Materio, if they sign up, you and your friend will get 30 days free trial
           </div>
         </div>
 
@@ -103,7 +103,10 @@ const referAndEarnSteps = [
           class="d-flex align-center gap-4 mb-6"
           @submit.prevent="() => {}"
         >
-          <VTextField placeholder="johnDoe@gmail.com" />
+          <VTextField
+            placeholder="johnDoe@gmail.com"
+            density="compact"
+          />
 
           <VBtn type="submit">
             Submit
@@ -124,6 +127,7 @@ const referAndEarnSteps = [
           <VTextField
             placeholder="http://referral.link"
             class="refer-link-input"
+            density="compact"
           >
             <template #append-inner>
               <VBtn variant="text">

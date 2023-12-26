@@ -103,7 +103,7 @@ watch(formData, () => {
         <!-- 👉 Show Price As  -->
         <VRadioGroup v-model="formData.priceDisplayType">
           <template #label>
-            <div class="text-high-emphasis">
+            <div>
               Show Price As
             </div>
           </template>
@@ -122,7 +122,7 @@ watch(formData, () => {
         sm="6"
       >
         <!-- 👉 Price Includes  -->
-        <div class="text-high-emphasis mb-2 text-base">
+        <div class="mb-2 text-base">
           Price Includes
         </div>
         <VCheckbox

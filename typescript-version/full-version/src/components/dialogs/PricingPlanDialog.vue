@@ -22,7 +22,7 @@ const dialogVisibleUpdate = (val: boolean) => {
     class="v-dialog-xl"
     @update:model-value="dialogVisibleUpdate"
   >
-    <VCard class="pricing-dialog pa-5 pa-sm-11">
+    <VCard class="pricing-dialog pa-2 pa-sm-11">
       <!-- 👉 dialog close btn -->
       <DialogCloseBtn
         variant="text"
@@ -34,6 +34,7 @@ const dialogVisibleUpdate = (val: boolean) => {
         <AppPricing
           title="Pricing Plan"
           md="4"
+          cols="12"
         >
           <template #heading>
             <h4 class="text-h4 pb-2">

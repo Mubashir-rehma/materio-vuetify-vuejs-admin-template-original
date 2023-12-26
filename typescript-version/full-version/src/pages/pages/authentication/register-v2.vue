@@ -37,19 +37,21 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div class="auth-logo d-flex align-center gap-x-3">
-    <VNodeRenderer :nodes="themeConfig.app.logo" />
-
-    <h1 class="auth-title">
-      {{ themeConfig.app.title }}
-    </h1>
-  </div>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
 
   <VRow
     no-gutters
     class="auth-wrapper"
   >
     <VCol
+      cols="12"
       md="8"
       class="d-none d-md-flex position-relative"
     >
@@ -146,7 +148,7 @@ const isPasswordVisible = ref(false)
                     for="privacy-policy"
                     style="opacity: 1;"
                   >
-                    <span class="me-1">I agree to</span>
+                    <span class="me-1 text-high-emphasis">I agree to</span>
                     <a
                       href="javascript:void(0)"
                       class="text-primary"
@@ -165,9 +167,8 @@ const isPasswordVisible = ref(false)
 
             <!-- create account -->
             <div class="text-center text-base my-5">
-              <span class="d-inline-block">Already have an account?</span>
-              <RouterLink
-                class="text-primary ms-2"
+              <span class="d-inline-block">Already have an account?</span> <RouterLink
+                class="text-primary d-inline-block"
                 :to="{ name: 'pages-authentication-login-v2' }"
               >
                 Sign in instead

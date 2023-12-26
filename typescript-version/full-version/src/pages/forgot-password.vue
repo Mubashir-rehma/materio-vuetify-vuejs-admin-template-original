@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import authV2ForgotPasswordIllustrationBorderedDark from '@images/pages/auth-v2-forgot-password-illustration-dark-border.png'
+import authV2ForgotPasswordIllustrationDark from '@images/pages/auth-v2-forgot-password-illustration-dark.png'
+import authV2ForgotPasswordIllustrationBorderedLight from '@images/pages/auth-v2-forgot-password-illustration-light-border.png'
+import authV2ForgotPasswordIllustrationLight from '@images/pages/auth-v2-forgot-password-illustration-light.png'
+
+import tree1 from '@images/misc/tree1.png'
+import authV2MaskDark from '@images/pages/mask-v2-dark.png'
+import authV2MaskLight from '@images/pages/mask-v2-light.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
+
+const authThemeImg = useGenerateImageVariant(
+  authV2ForgotPasswordIllustrationLight,
+  authV2ForgotPasswordIllustrationDark,
+  authV2ForgotPasswordIllustrationBorderedLight,
+  authV2ForgotPasswordIllustrationBorderedDark,
+  true)
+
+const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+
 const email = ref('')
 
 definePage({
@@ -10,21 +30,50 @@ definePage({
 </script>
 
 <template>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
+
   <VRow
     class="auth-wrapper"
     no-gutters
   >
     <VCol
-      lg="8"
-      class="d-none d-lg-flex align-center justify-center position-relative"
+      md="8"
+      class="d-none d-md-flex position-relative"
     >
-      <!-- here your illustrator -->
+      <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
+        <VImg
+          width="853"
+          height="684"
+          :src="authThemeImg"
+          class="auth-illustration"
+        />
+      </div>
+
+      <img
+        class="auth-footer-mask"
+        height="360"
+        :src="authThemeMask"
+      >
+
+      <img
+        :src="tree1"
+        alt="tree image"
+        height="140"
+        class="auth-footer-tree"
+      >
     </VCol>
 
     <VCol
       cols="12"
-      lg="4"
-      class="d-flex align-center justify-center"
+      md="4"
+      class="auth-card-v2 d-flex align-center justify-center"
       style="background-color: rgb(var(--v-theme-surface));"
     >
       <VCard
@@ -33,9 +82,9 @@ definePage({
         class="mt-12 mt-sm-0 pa-4"
       >
         <VCardText>
-          <h5 class="text-h5 mb-1">
+          <h4 class="text-h4 mb-1">
             Forgot Password? 🔒
-          </h5>
+          </h4>
           <p class="mb-0">
             Enter your email and we'll send you instructions to reset your password
           </p>
@@ -50,8 +99,8 @@ definePage({
                   v-model="email"
                   autofocus
                   label="Email"
-                  type="email"
                   placeholder="johndoe@email.com"
+                  type="email"
                 />
               </VCol>
 
@@ -66,17 +115,14 @@ definePage({
               </VCol>
 
               <!-- back to login -->
-              <VCol
-                cols="12"
-                class="text-center"
-              >
+              <VCol cols="12">
                 <RouterLink
-                  class="text-primary ms-2"
-                  :to="{ name: 'login' }"
+                  class="d-flex align-center justify-center"
+                  :to="{ name: 'pages-authentication-login-v2' }"
                 >
                   <VIcon
-                    class="flip-in-rtl"
                     icon="ri-arrow-left-s-line"
+                    class="flip-in-rtl"
                   />
                   <span>Back to login</span>
                 </RouterLink>

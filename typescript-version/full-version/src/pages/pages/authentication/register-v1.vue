@@ -51,63 +51,70 @@ const isPasswordVisible = ref(false)
 
       <VCardText>
         <VForm @submit.prevent="() => {}">
-          <!-- Username -->
-          <VTextField
-            v-model="form.username"
-            autofocus
-            label="Username"
-            placeholder="Johndoe"
-          />
-          <!-- email -->
-          <VTextField
-            v-model="form.email"
-            label="Email"
-            type="email"
-            placeholder="johndoe@email.com"
-            class="my-5"
-          />
+          <VRow>
+            <!-- Username -->
+            <VCol cols="12">
+              <VTextField
+                v-model="form.username"
+                autofocus
+                label="Username"
+                placeholder="Johndoe"
+              />
+            </VCol>
 
-          <!-- password -->
-          <VTextField
-            v-model="form.password"
-            label="Password"
-            placeholder="············"
-            :type="isPasswordVisible ? 'text' : 'password'"
-            :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
-            @click:append-inner="isPasswordVisible = !isPasswordVisible"
-          />
-          <div class="d-flex align-center my-5">
-            <VCheckbox
-              id="privacy-policy"
-              v-model="form.privacyPolicies"
-              inline
-            />
-            <VLabel
-              for="privacy-policy"
-              style="opacity: 1;"
-              class="text-high-emphasis"
-            >
-              <span class="me-1">I agree to</span>
-              <a
-                href="javascript:void(0)"
-                class="text-primary"
-              >privacy policy & terms</a>
-            </VLabel>
-          </div>
+            <!-- email -->
+            <VCol cols="12">
+              <VTextField
+                v-model="form.email"
+                label="Email"
+                type="email"
+                placeholder="johndoe@email.com"
+              />
+            </VCol>
 
-          <VBtn
-            block
-            type="submit"
-          >
-            Sign up
-          </VBtn>
+            <!-- password -->
+            <VCol cols="12">
+              <VTextField
+                v-model="form.password"
+                label="Password"
+                placeholder="············"
+                :type="isPasswordVisible ? 'text' : 'password'"
+                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
+                @click:append-inner="isPasswordVisible = !isPasswordVisible"
+              />
 
-          <!-- login instead -->
-          <div class="text-center text-base mt-5 mb-4">
-            <span class="d-inline-block mb-1">Already have an account?</span>
-            <RouterLink
-              class="text-primary ms-2 text-no-wrap"
-              :to="{ name: 'pages-authentication-login-v1' }"
+              <div class="d-flex align-center my-5">
+                <VCheckbox
+                  id="privacy-policy"
+                  v-model="form.privacyPolicies"
+                  inline
+                />
+                <VLabel
+                  for="privacy-policy"
+                  style="opacity: 1;"
+                >
+                  <span class="me-1 text-high-emphasis">I agree to</span>
+                  <a
+                    href="javascript:void(0)"
+                    class="text-primary"
+                  >privacy policy & terms</a>
+                </VLabel>
+              </div>
+
+              <VBtn
+                block
+                type="submit"
+              >
+                Sign up
+              </VBtn>
+            </VCol>
+          </VRow>
+
+          <!-- create account -->
+          <div class="text-center text-base my-5">
+            <span class="d-inline-block">Already have an account?</span> <RouterLink
+              class="text-primary d-inline-block"
+              :to="{ name: 'pages-authentication-login-v2' }"
             >
               Sign in instead
             </RouterLink>

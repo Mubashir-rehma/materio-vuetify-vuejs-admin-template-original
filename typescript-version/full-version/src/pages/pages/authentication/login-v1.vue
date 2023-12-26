@@ -27,7 +27,10 @@ const isPasswordVisible = ref(false)
 
 <template>
   <div class="auth-wrapper d-flex align-center justify-center pa-4">
-    <VCard class="auth-card pa-sm-4 pa-md-7 pa-0">
+    <VCard
+      class="auth-card pa-sm-4 pa-md-7 pa-0"
+      max-width="448"
+    >
       <VCardText>
         <div class="d-flex align-center gap-x-3 justify-center mb-6">
           <VNodeRenderer :nodes="themeConfig.app.logo" />
@@ -37,7 +40,7 @@ const isPasswordVisible = ref(false)
           </h1>
         </div>
         <h4 class="text-h4 mb-1">
-          Welcome to {{ themeConfig.app.title }}! 👋🏻
+          Welcome to <span class="text-capitalize">{{ themeConfig.app.title }}!</span> 👋🏻
         </h4>
         <p class="mb-0">
           Please sign-in to your account and start the adventure
@@ -46,68 +49,80 @@ const isPasswordVisible = ref(false)
 
       <VCardText>
         <VForm @submit.prevent="() => {}">
-          <!-- email -->
-          <VTextField
-            v-model="form.email"
-            autofocus
-            label="Email"
-            type="email"
-            placeholder="johndoe@email.com"
-            class="mb-5"
-          />
+          <VRow>
+            <!-- email -->
+            <VCol cols="12">
+              <VTextField
+                v-model="form.email"
+                autofocus
+                label="Email"
+                type="email"
+                placeholder="johndoe@email.com"
+              />
+            </VCol>
 
-          <!-- password -->
-          <VTextField
-            v-model="form.password"
-            label="Password"
-            placeholder="············"
-            :type="isPasswordVisible ? 'text' : 'password'"
-            :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
-            @click:append-inner="isPasswordVisible = !isPasswordVisible"
-          />
+            <!-- password -->
+            <VCol cols="12">
+              <VTextField
+                v-model="form.password"
+                label="Password"
+                placeholder="············"
+                :type="isPasswordVisible ? 'text' : 'password'"
+                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
+                @click:append-inner="isPasswordVisible = !isPasswordVisible"
+              />
 
-          <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-4">
-            <VCheckbox
-              v-model="form.remember"
-              label="Remember me"
-            />
-            <RouterLink
-              class="text-primary"
-              :to="{ name: 'pages-authentication-forgot-password-v2' }"
+              <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-4">
+                <VCheckbox
+                  v-model="form.remember"
+                  label="Remember me"
+                />
+                <RouterLink
+                  class="text-primary"
+                  :to="{ name: 'pages-authentication-forgot-password-v2' }"
+                >
+                  Forgot Password?
+                </RouterLink>
+              </div>
+
+              <VBtn
+                block
+                type="submit"
+              >
+                Login
+              </VBtn>
+            </VCol>
+
+            <!-- create account -->
+            <VCol
+              cols="12"
+              class="text-center text-base"
             >
-              Forgot Password?
-            </RouterLink>
-          </div>
+              <span>New on our platform?</span> <RouterLink
+                class="text-primary d-inline-block"
+                :to="{ name: 'pages-authentication-register-v2' }"
+              >
+                Create an account
+              </RouterLink>
+            </VCol>
 
-          <VBtn
-            block
-            type="submit"
-          >
-            Login
-          </VBtn>
-
-          <!-- create account -->
-
-          <p class="my-5">
-            <span>New on our platform?</span>
-            <RouterLink
-              class="text-primary"
-              :to="{ name: 'pages-authentication-register-v2' }"
+            <VCol
+              cols="12"
+              class="d-flex align-center"
             >
-              Create an account
-            </RouterLink>
-          </p>
+              <VDivider />
+              <span class="mx-2 text-high-emphasis">or</span>
+              <VDivider />
+            </VCol>
 
-          <div class="d-flex align-center mb-5">
-            <VDivider />
-            <span class="mx-2 text-high-emphasis">or</span>
-            <VDivider />
-          </div>
-
-          <!-- auth providers -->
-          <div class="text-center">
-            <AuthProvider />
-          </div>
+            <!-- auth providers -->
+            <VCol
+              cols="12"
+              class="text-center"
+            >
+              <AuthProvider />
+            </VCol>
+          </VRow>
         </VForm>
       </VCardText>
     </VCard>

@@ -36,13 +36,14 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div class="auth-logo d-flex align-center gap-x-3">
-    <VNodeRenderer :nodes="themeConfig.app.logo" />
-
-    <h1 class="auth-title">
-      {{ themeConfig.app.title }}
-    </h1>
-  </div>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
 
   <VRow
     no-gutters
@@ -88,7 +89,7 @@ const isPasswordVisible = ref(false)
       >
         <VCardText>
           <h4 class="text-h4 mb-1">
-            Welcome to {{ themeConfig.app.title }}! 👋🏻
+            Welcome to <span class="text-capitalize">{{ themeConfig.app.title }}!</span> 👋🏻
           </h4>
           <p class="mb-0">
             Please sign-in to your account and start the adventure
@@ -119,7 +120,7 @@ const isPasswordVisible = ref(false)
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
 
-                <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-4">
+                <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-2">
                   <VCheckbox
                     v-model="form.remember"
                     label="Remember me"
@@ -145,9 +146,8 @@ const isPasswordVisible = ref(false)
                 cols="12"
                 class="text-center text-base"
               >
-                <span>New on our platform?</span>
-                <RouterLink
-                  class="text-primary"
+                <span>New on our platform?</span> <RouterLink
+                  class="text-primary d-inline-block"
                   :to="{ name: 'pages-authentication-register-v2' }"
                 >
                   Create an account

@@ -41,6 +41,8 @@ const checkAll = computed({
   },
 })
 // !SECTION
+
+const calendarApi = ref(null)
 </script>
 
 <template>
@@ -72,9 +74,10 @@ const checkAll = computed({
 
           <div class="d-flex align-center justify-center pa-2">
             <AppDateTimePicker
+              v-model="calendarApi"
               :config="{ inline: true }"
               class="calendar-date-picker"
-              @update:model-value="(val: string) => jumpToDate(val)"
+              @update:model-value="jumpToDate($event)"
             />
           </div>
 

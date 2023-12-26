@@ -36,7 +36,7 @@ watch([isFallbackStateActive, refLoadingIndicator], () => {
       <div class="d-flex h-100 align-center">
         <IconBtn
           id="vertical-nav-toggle-btn"
-          class="ms-n3 d-lg-none"
+          class="ms-n2 d-lg-none"
           @click="toggleVerticalOverlayNavActive(true)"
         >
           <VIcon icon="ri-menu-line" />

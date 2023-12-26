@@ -34,14 +34,17 @@ const router = useRouter()
         max-height="560"
         class="d-flex flex-column"
       >
-        <VCardItem class="pa-4">
-          <h6 class="text-h6">
+        <VCardItem class="px-4 py-2">
+          <h5 class="text-h5">
             Shortcuts
-          </h6>
+          </h5>
 
           <template #append>
             <IconBtn>
-              <VIcon icon="ri-add-line" />
+              <VIcon
+                icon="ri-add-line"
+                color="high-emphasis"
+              />
               <VTooltip
                 activator="parent"
                 location="start"

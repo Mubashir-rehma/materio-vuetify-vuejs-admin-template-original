@@ -171,6 +171,7 @@ const userProfileList = [
               <VBtn
                 block
                 color="error"
+                size="small"
                 append-icon="ri-logout-box-r-line"
                 @click="logout"
               >

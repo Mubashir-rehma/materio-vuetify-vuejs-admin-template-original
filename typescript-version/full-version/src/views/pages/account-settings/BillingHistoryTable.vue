@@ -287,7 +287,7 @@ const deleteInvoice = async (id: number) => {
                 icon="ri-arrow-left-s-line"
                 variant="text"
                 density="comfortable"
-                color="default"
+                color="high-emphasis"
                 :disabled="page <= 1"
                 @click="page <= 1 ? page = 1 : page--"
               />
@@ -297,7 +297,7 @@ const deleteInvoice = async (id: number) => {
                 icon="ri-arrow-right-s-line"
                 density="comfortable"
                 variant="text"
-                color="default"
+                color="high-emphasis"
                 :disabled="page >= Math.ceil(totalInvoices / itemsPerPage)"
                 @click="page >= Math.ceil(totalInvoices / itemsPerPage) ? page = Math.ceil(totalInvoices / itemsPerPage) : page++ "
               />

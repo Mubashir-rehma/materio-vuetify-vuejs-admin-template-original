@@ -266,10 +266,10 @@ const deleteProduct = async (id: number) => {
       <!-- 👉 Datatable  -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:page="page"
         :headers="headers"
         show-select
         :items="products"
-        item-value="product"
         :items-length="totalProduct"
         class="text-no-wrap rounded-0"
         @update:options="updateOptions"
@@ -382,7 +382,7 @@ const deleteProduct = async (id: number) => {
                 icon="ri-arrow-left-s-line"
                 variant="text"
                 density="comfortable"
-                color="default"
+                color="high-emphasis"
                 :disabled="page <= 1"
                 @click="page <= 1 ? page = 1 : page--"
               />
@@ -392,7 +392,7 @@ const deleteProduct = async (id: number) => {
                 icon="ri-arrow-right-s-line"
                 density="comfortable"
                 variant="text"
-                color="default"
+                color="high-emphasis"
                 :disabled="page >= Math.ceil(totalProduct / itemsPerPage)"
                 @click="page >= Math.ceil(totalProduct / itemsPerPage) ? page = Math.ceil(totalProduct / itemsPerPage) : page++ "
               />

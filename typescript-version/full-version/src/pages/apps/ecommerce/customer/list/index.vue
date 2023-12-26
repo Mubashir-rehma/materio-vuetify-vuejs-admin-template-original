@@ -152,7 +152,7 @@ const totalCustomers = computed(() => customerData.value.total)
                 icon="ri-arrow-left-s-line"
                 variant="text"
                 density="comfortable"
-                color="default"
+                color="high-emphasis"
                 :disabled="page <= 1"
                 @click="page <= 1 ? page = 1 : page--"
               />
@@ -162,7 +162,7 @@ const totalCustomers = computed(() => customerData.value.total)
                 icon="ri-arrow-right-s-line"
                 density="comfortable"
                 variant="text"
-                color="default"
+                color="high-emphasis"
                 :disabled="page >= Math.ceil(totalCustomers / itemsPerPage)"
                 @click="page >= Math.ceil(totalCustomers / itemsPerPage) ? page = Math.ceil(totalCustomers / itemsPerPage) : page++ "
               />

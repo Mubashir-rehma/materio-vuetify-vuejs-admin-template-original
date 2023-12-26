@@ -13,5 +13,5 @@ export const autoplay = { ts: '', js: '' }
 export const parallax = { ts: '', js: '' }
 export const gallery = { ts: '', js: '' }
 export const lazyLoading = { ts: '', js: '' }
-export const responsiveBreakpoint = { ts: '', js: '' }
+export const responsiveBreakpoints = { ts: '', js: '' }
 export const virtualSlides = { ts: '', js: '' }

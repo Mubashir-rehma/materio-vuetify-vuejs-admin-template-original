@@ -119,7 +119,6 @@
     "@tiptap/core": "^2",
     "@types/video.js": "^7",
     "pug": "^3",
-    "apexcharts": "^3",
     "stylelint-order": "6.0.3"
   },
   "overrides": {
@@ -127,7 +126,6 @@
     "@tiptap/core": "^2",
     "@types/video.js": "^7",
     "pug": "^3",
-    "apexcharts": "^3",
     "stylelint-order": "6.0.3"
   },
   "packageManager": "pnpm@8.6.2",

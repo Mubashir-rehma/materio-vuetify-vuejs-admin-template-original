@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Invoice } from '@db/apps/invoice/types'
+import type { Invoice } from '@db/apps/invoice/types';
 
 const searchQuery = ref('')
 const selectedStatus = ref()
@@ -102,8 +102,9 @@ const deleteInvoice = async (id: number) => {
     >
       <template #append>
         <!-- 👉 Export invoice -->
-        <VBtn append-icon="ri-arrow-right-line">
+        <VBtn >
           Export
+          <v-icon end class="flip-in-rtl" icon="ri-arrow-right-line"></v-icon>
         </VBtn>
       </template>
 

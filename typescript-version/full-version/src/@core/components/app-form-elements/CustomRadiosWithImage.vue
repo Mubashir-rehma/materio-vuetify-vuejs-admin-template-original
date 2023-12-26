@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { GridColumn } from '@core/types'
+import type { GridColumn } from '@core/types';
 
 interface Props {
   selectedRadio: string
@@ -79,7 +79,7 @@ const updateSelectedOption = (value: string | null) => {
 
 <style lang="scss" scoped>
 .custom-radio {
-  padding: 0;
+  padding: 0 !important;
 
   &.active {
     border-width: 1px;

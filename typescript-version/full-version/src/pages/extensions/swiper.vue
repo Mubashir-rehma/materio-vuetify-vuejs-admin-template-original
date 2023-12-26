@@ -133,8 +133,8 @@ import * as demoCode from '@/views/demos/components/swiper/demoCodeSwiper'
 
     <VCol>
       <AppCardCode
-        title="Responsive Breakpoint"
-        :code="demoCode.responsiveBreakpoint"
+        title="Responsive Breakpoints"
+        :code="demoCode.responsiveBreakpoints"
       >
         <DemoSwiperResponsiveBreakpoints />
       </AppCardCode>

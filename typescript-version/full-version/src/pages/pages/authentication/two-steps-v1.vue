@@ -56,10 +56,10 @@ const onFinish = () => {
 
       <VCardText>
         <VForm @submit.prevent="() => {}">
-          <div>Type your 6 digit security code</div>
           <VRow>
             <!-- email -->
             <VCol cols="12">
+              <div>Type your 6 digit security code</div>
               <VOtpInput
                 v-model="otp"
                 :disabled="isOtpInserted"
@@ -70,10 +70,8 @@ const onFinish = () => {
             </VCol>
 
             <!-- reset password -->
-            <VCol
-              cols="12"
-              class="pt-0"
-            >
+
+            <VCol cols="12">
               <VBtn
                 block
                 :loading="isOtpInserted"

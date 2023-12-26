@@ -104,7 +104,7 @@ const onFinish = () => {
             <h4 class="text-h4 mb-1">
               Two Step Verification 💬
             </h4>
-            <p class="mb-0">
+            <p class="mb-1">
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </p>
             <h6 class="text-h6">
@@ -114,10 +114,10 @@ const onFinish = () => {
 
           <VCardText>
             <VForm @submit.prevent="() => {}">
-              <div>Type your 6 digit security code</div>
               <VRow>
                 <!-- email -->
                 <VCol cols="12">
+                  <div>Type your 6 digit security code</div>
                   <VOtpInput
                     v-model="otp"
                     :disabled="isOtpInserted"
@@ -128,10 +128,8 @@ const onFinish = () => {
                 </VCol>
 
                 <!-- reset password -->
-                <VCol
-                  cols="12"
-                  class="pt-0"
-                >
+
+                <VCol cols="12">
                   <VBtn
                     block
                     :loading="isOtpInserted"

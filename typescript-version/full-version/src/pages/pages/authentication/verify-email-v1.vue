@@ -40,7 +40,7 @@ definePage({
         <VBtn
           block
           to="/"
-          class="mb-6"
+          class="mb-5"
         >
           Skip for now
         </VBtn>

@@ -85,17 +85,19 @@ const isConfirmPasswordVisible = ref(false)
             </VCol>
 
             <!-- back to login -->
+            <VCol>
+              <div class="d-flex align-center justify-center">
+                <RouterLink :to="{ name: 'pages-authentication-login-v1' }">
+                  <VIcon
+                    icon="ri-arrow-left-s-line"
+                    size="20"
+                    class="flip-in-rtl me-2"
+                  />
+                  <span>Back to login</span>
+                </RouterLink>
+              </div>
+            </VCol>
           </VRow>
-          <div class="d-flex align-center justify-center mt-5">
-            <RouterLink :to="{ name: 'pages-authentication-login-v1' }">
-              <VIcon
-                icon="ri-arrow-left-s-line"
-                size="20"
-                class="flip-in-rtl me-2"
-              />
-              <span>Back to login</span>
-            </RouterLink>
-          </div>
         </VForm>
       </VCardText>
     </VCard>

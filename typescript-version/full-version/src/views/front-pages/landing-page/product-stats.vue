@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import layoutRight from '@images/svg/layout-right.svg'
-import medal from '@images/svg/medal.svg'
-import peopleTag from '@images/svg/people-tag.svg'
+import layoutRight from '@images/svg/layout-right.svg';
+import medal from '@images/svg/medal.svg';
+import peopleTag from '@images/svg/people-tag.svg';
 
-const statData = ref([
-  { title: 'Completed Sites', value: 137, icon: layoutRight, color: 'primary', isHover: false },
-  { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success', isHover: false },
-  { title: 'Happy Customers', value: 137, icon: peopleTag, color: 'warning', isHover: false },
-  { title: 'Awards Winning', value: 23, icon: medal, color: 'info', isHover: false },
-])
+const statData = [
+  { title: 'Completed Sites', value: 137, icon: layoutRight, color: 'primary' },
+  { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success' },
+  { title: 'Happy Customers', value: 137, icon: peopleTag, color: 'warning' },
+  { title: 'Awards Winning', value: 23, icon: medal, color: 'info' },
+]
 </script>
 
 <template>
@@ -25,10 +25,7 @@ const statData = ref([
                 <VAvatar
                   size="82"
                   :color="product.color"
-                  :variant="product.isHover ? 'elevated' : 'tonal'"
-                  class="mb-6 cursor-pointer"
-                  @mouseenter="() => product.isHover = true"
-                  @mouseleave="product.isHover = false"
+                  class="product-stats-avatar mb-6 cursor-pointer"
                 >
                   <VIcon
                     :icon="product.icon"

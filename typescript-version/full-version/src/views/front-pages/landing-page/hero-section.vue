@@ -42,7 +42,7 @@ const translateMouse = computed(() => (speed: number) => {
   >
     <div
       id="landingHero"
-      class="landing-hero section-py"
+      class="landing-hero"
       :style="{ backgroundImage: `url(${heroBgUrl})` }"
     >
       <VContainer>
@@ -65,7 +65,8 @@ const translateMouse = computed(() => (speed: number) => {
           </div>
           <VBtn
             :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }"
-            size="small"
+            size="large"
+            :active="false"
           >
             Get Early Access
           </VBtn>

@@ -24,7 +24,9 @@ const email = ref('')
         <h4 class="text-h4 mb-2">
           We are launching soon 🚀
         </h4>
-        <p>Our website is opening soon. Please register to get notified when it's ready!</p>
+        <p class="text-body-1">
+          Our website is opening soon. Please register to get notified when it's ready!
+        </p>
       </div>
 
       <!-- 👉 Email input -->
@@ -34,6 +36,7 @@ const email = ref('')
       >
         <VTextField
           v-model="email"
+          density="compact"
           autofocus
           placeholder="Enter your email or username"
           class="misc-email-input"

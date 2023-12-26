@@ -37,6 +37,7 @@ definePage({
       <VBtn
         to="/"
         class="mt-10"
+        style="z-index: 1;"
       >
         Back to Home
       </VBtn>

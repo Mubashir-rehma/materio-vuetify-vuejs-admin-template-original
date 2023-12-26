@@ -27,7 +27,7 @@ const props = defineProps<Props>()
 
     <p
       v-if="props.description"
-      class="mb-0"
+      class="mb-0 text-body-1"
     >
       {{ props.description }}
     </p>

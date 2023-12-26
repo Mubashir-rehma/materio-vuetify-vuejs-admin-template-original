@@ -17,12 +17,12 @@ definePage({
 
 <template>
   <div class="misc-wrapper">
-    <div class="text-center mb-4">
+    <div class="text-center mb-10">
       <!-- 👉 Title and subtitle -->
       <h4 class="text-h4 mb-2">
         Under Maintenance! 🚧
       </h4>
-      <p class="mb-0">
+      <p class="mb-0 text-body-1">
         Sorry for the inconvenience but we're performing some maintenance at the moment
       </p>
     </div>
@@ -32,12 +32,13 @@ definePage({
       <VImg
         :src="miscUnderMaintenance"
         alt="Coming Soon"
-        max-width="800"
+        max-width="750"
         class="mx-auto"
       />
       <VBtn
         to="/"
-        class="mt-6"
+        class="mt-10"
+        style="z-index: 1;"
       >
         Back to Home
       </VBtn>

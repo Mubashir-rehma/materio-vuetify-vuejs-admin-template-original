@@ -24,9 +24,9 @@ const activeTab = ref(null)
       cols="12"
       md="4"
     >
-      <h6 class="text-h6 mb-4">
+      <h5 class="text-h5 mb-4">
         Getting Started
-      </h6>
+      </h5>
 
       <VTabs
         v-model="activeTab"

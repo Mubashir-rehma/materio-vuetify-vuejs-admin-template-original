@@ -110,7 +110,7 @@ const resolveStatus = (status: string) => {
           </VCardItem>
 
           <VCardText>
-            <div class="d-flex gap-6 justify-center flex-wrap">
+            <div class="d-flex gap-6 justify-space-between align-center flex-sm-row flex-column">
               <div
                 v-for="(step, index) in stepsData"
                 :key="index"
@@ -142,7 +142,10 @@ const resolveStatus = (status: string) => {
                 Invite your friends
               </h5>
               <div class="d-flex align-center flex-wrap gap-4">
-                <VTextField placeholder="Email Addresss" />
+                <VTextField
+                  placeholder="Email Addresss"
+                  density="compact"
+                />
                 <VBtn>
                   <VIcon
                     start
@@ -158,8 +161,11 @@ const resolveStatus = (status: string) => {
                 Share the referral link
               </h5>
               <div class="d-flex align-center flex-wrap gap-4">
-                <VTextField placeholder="themeselection.com/?ref=6478" />
-                <div class="d-flex gap-x-4">
+                <VTextField
+                  placeholder="themeselection.com/?ref=6478"
+                  density="compact"
+                />
+                <div class="d-flex gap-x-2">
                   <VBtn
                     icon
                     class="rounded"
@@ -209,7 +215,6 @@ const resolveStatus = (status: string) => {
             :items="referrals"
             :headers="headers"
             :items-length="totalReferrals"
-            item-value="users"
             show-select
             class="text-high-emphasis"
             @update:options="updateOptions"

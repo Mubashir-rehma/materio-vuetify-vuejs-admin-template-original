@@ -192,6 +192,7 @@ const panelStatus = ref(0)
           <VExpansionPanel
             v-for="(section, index) in courseDetails?.content"
             :key="index"
+            elevation="0"
             collapse-icon="ri-arrow-down-s-line"
             :expand-icon="$vuetify.locale.isRtl ? 'ri-arrow-left-s-line' : 'ri-arrow-right-s-line'"
             :value="index"
@@ -254,6 +255,9 @@ const panelStatus = ref(0)
 <style lang="scss">
 .course-content{
   .v-expansion-panels{
+    border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+    border-radius: 6px;
+
     .v-expansion-panel{
       &--active{
         .v-expansion-panel-title--active{

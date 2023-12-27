@@ -29,7 +29,7 @@ const { data: coursesData } = await useApi<any>(createUrl('/apps/academy/courses
 const courses = computed(() => coursesData.value.courses)
 const totalCourse = computed(() => coursesData.value.total)
 
-watch([hideCompleted, label], () => {
+watch([hideCompleted, label, () => props.searchQuery], () => {
   page.value = 1
 })
 
@@ -61,7 +61,7 @@ const resolveChipColor = (tags: string) => {
           </div>
         </div>
 
-        <div class="d-flex flex-wrap align-center">
+        <div class="d-flex flex-wrap align-center gap-y-4">
           <VSelect
             v-model="label"
             density="compact"
@@ -85,7 +85,7 @@ const resolveChipColor = (tags: string) => {
 
       <!-- 👉 Course List -->
       <div class="mb-6">
-        <VRow>
+        <VRow class="match-height">
           <template
             v-for="course in courses"
             :key="course.id"
@@ -170,6 +170,7 @@ const resolveChipColor = (tags: string) => {
                   <VProgressLinear
                     :model-value="(course.completedTasks / course.totalTasks) * 100"
                     rounded
+                    rounded-bar
                     color="primary"
                     height="8"
                     class="mb-4"
@@ -182,7 +183,7 @@ const resolveChipColor = (tags: string) => {
                       class="flex-grow-1"
                       :to="{ name: 'apps-academy-course-details' }"
                     >
-                      <template #append>
+                      <template #prepend>
                         <VIcon
                           icon="ri-refresh-line"
                           class="flip-in-rtl"

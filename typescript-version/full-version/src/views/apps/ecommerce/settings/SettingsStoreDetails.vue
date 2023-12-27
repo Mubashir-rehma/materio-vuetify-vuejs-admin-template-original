@@ -47,7 +47,9 @@
             variant="tonal"
             icon="ri-notification-3-line"
           >
-            Confirm that you have access to johndoe@gmail.com in sender email settings.
+            <VAlertTitle class="mb-0">
+              Confirm that you have access to johndoe@gmail.com in sender email settings.
+            </VAlertTitle>
           </VAlert>
         </VCol>
       </VRow>

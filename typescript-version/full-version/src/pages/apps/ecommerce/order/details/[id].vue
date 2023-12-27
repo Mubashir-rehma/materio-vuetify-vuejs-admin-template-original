@@ -163,7 +163,7 @@ const orderData = [
                     </td>
                   </tr>
                   <tr>
-                    <td>Shipping Total: </td>
+                    <td>Shipping fee: </td>
                     <td class="font-weight-medium">
                       $2
                     </td>
@@ -175,7 +175,9 @@ const orderData = [
                     </td>
                   </tr>
                   <tr>
-                    <td>Total</td>
+                    <td class="font-weight-medium">
+                      Total:
+                    </td>
                     <td class="font-weight-medium">
                       $2,113
                     </td>
@@ -286,9 +288,9 @@ const orderData = [
         <!-- 👉 Customer Details  -->
         <VCard class="mb-6">
           <VCardText class="d-flex flex-column gap-y-6">
-            <div class="text-body-1 text-high-emphasis font-weight-medium">
+            <h5 class="text-h5">
               Customer Details
-            </div>
+            </h5>
 
             <div class="d-flex align-center">
               <VAvatar

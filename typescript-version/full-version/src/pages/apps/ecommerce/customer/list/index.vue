@@ -75,6 +75,7 @@ const totalCustomers = computed(() => customerData.value.total)
 
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:page="page"
         :items="customers"
         item-value="customer"
         :headers="headers"

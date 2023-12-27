@@ -3,7 +3,7 @@ import CustomerOrderTable from './CustomerOrderTable.vue'
 </script>
 
 <template>
-  <VRow>
+  <VRow class="match-height">
     <VCol
       cols="12"
       md="6"

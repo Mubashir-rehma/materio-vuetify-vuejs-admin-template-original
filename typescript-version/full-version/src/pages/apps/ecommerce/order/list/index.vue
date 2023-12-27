@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import type { Order } from '@db/apps/ecommerce/types'
-import paypal from '@images/cards/paypal.png'
-import mastercard from '@images/icons/payments/mastercard.png'
+import mastercard from '@images/logos/mastercard.png'
+import paypal from '@images/logos/paypal.png'
 
 const widgetData = ref([
   { title: 'Pending Payment', value: 56, icon: 'ri-calendar-2-line' },
   { title: 'Completed', value: 12689, icon: 'ri-check-double-line' },
   { title: 'Refunded', value: 124, icon: 'ri-wallet-3-line' },
-  { title: 'Failed', value: 32, icon: 'ri-spam-line' },
+  { title: 'Failed', value: 32, icon: 'ri-error-warning-line' },
 ])
 
 const searchQuery = ref('')
@@ -89,8 +89,8 @@ const deleteOrder = async (id: number) => {
       <VCardText class="px-2">
         <VRow>
           <template
-            v-for="(data, id) in widgetData"
-            :key="id"
+            v-for="(data, index) in widgetData"
+            :key="index"
           >
             <VCol
               cols="12"
@@ -98,7 +98,10 @@ const deleteOrder = async (id: number) => {
               md="3"
               class="px-6"
             >
-              <div class="d-flex justify-space-between">
+              <div
+                class="d-flex justify-space-between"
+                :class="$vuetify.display.xs ? 'product-widget' : $vuetify.display.sm ? index < 2 ? 'product-widget' : '' : ''"
+              >
                 <div class="d-flex flex-column gap-y-1">
                   <h4 class="text-h4">
                     {{ data.value }}
@@ -111,21 +114,20 @@ const deleteOrder = async (id: number) => {
                 <VAvatar
                   variant="tonal"
                   rounded
+                  size="42"
                 >
                   <VIcon
                     :icon="data.icon"
-                    size="24"
+                    size="26"
                   />
                 </VAvatar>
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? id !== widgetData.length - 1
-                : $vuetify.display.smAndUp ? id % 2 === 0
-                  : false"
+              v-if="$vuetify.display.mdAndUp ? index !== widgetData.length - 1 : $vuetify.display.smAndUp ? index % 2 === 0 : false"
               vertical
               inset
-              length="88"
+              length="100"
             />
           </template>
         </VRow>
@@ -134,7 +136,7 @@ const deleteOrder = async (id: number) => {
 
     <VCard>
       <VCardText>
-        <div class="d-flex justify-sm-space-between justify-start flex-wrap gap-4">
+        <div class="d-flex justify-sm-space-between align-center justify-start flex-wrap gap-4">
           <VTextField
             v-model="searchQuery"
             placeholder="Search Order"
@@ -150,6 +152,7 @@ const deleteOrder = async (id: number) => {
 
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:page="page"
         :headers="headers"
         :items="orders"
         item-value="order"
@@ -208,7 +211,7 @@ const deleteOrder = async (id: number) => {
             class="d-flex align-center font-weight-medium"
           >
             <VIcon
-              size="14"
+              size="10"
               icon="ri-circle-fill"
               class="me-2"
             />
@@ -227,12 +230,7 @@ const deleteOrder = async (id: number) => {
         <!-- Method -->
         <template #item.method="{ item }">
           <div class="d-flex align-start gap-x-2">
-            <VImg
-              :src="item.method === 'mastercard' ? mastercard : paypal"
-              height="22"
-              max-width="22"
-              width="22"
-            />
+            <img :src="item.method === 'mastercard' ? mastercard : paypal">
             <div>
               <VIcon
                 icon="ri-more-line"
@@ -325,5 +323,10 @@ const deleteOrder = async (id: number) => {
   &:hover{
     color: '#000' !important
   }
+}
+
+.product-widget{
+  border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
+  padding-block-end: 1rem;
 }
 </style>

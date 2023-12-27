@@ -11,7 +11,7 @@ const props = defineProps<Prop>()
 
 defineEmits<Emit>()
 
-const selectedPlan = ref('standard')
+const selectedPlan = ref('basic')
 
 const plansList = [
   { desc: 'Standard - $99/month', title: 'Standard', value: 'standard' },
@@ -49,13 +49,16 @@ const isConfirmDialogVisible = ref(false)
         </div>
       </VCardItem>
 
-      <VCardText class="d-flex align-center flex-column flex-sm-nowrap px-15">
-        <CustomRadios
-          v-model:selected-radio="selectedPlan"
-          :radio-content="plansList"
-          :grid-column="{ cols: '12', sm: '6' }"
+      <VCardText class="d-flex align-center justify-space-between flex-column flex-sm-row gap-4 px-15">
+        <VSelect
+          v-model="selectedPlan"
+          :items="plansList"
+          density="compact"
+          label="Choose a plan"
+          placeholder="Basic"
+          style="max-inline-size: 12.5rem; min-inline-size: 12.5rem;"
         />
-        <VBtn class="mt-5">
+        <VBtn>
           Upgrade
         </VBtn>
       </VCardText>

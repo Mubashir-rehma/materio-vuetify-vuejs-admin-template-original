@@ -346,7 +346,34 @@ const formData = ref({
 .sticky-header {
   position: sticky;
   z-index: 9;
-  inset-block: 4rem 0;
   transition: all 0.3s ease-in-out;
+}
+
+.layout-nav-type-vertical{
+  &.layout-navbar-sticky {
+    .sticky-header {
+      inset-block: 4rem 0;
+    }
+  }
+
+  &.layout-navbar-static{
+    .sticky-header {
+      inset-block: 0 0;
+    }
+  }
+}
+
+.layout-nav-type-horizontal{
+  &.horizontal-nav-static {
+    .sticky-header {
+      inset-block: 0 0;
+    }
+  }
+
+  &.layout-navbar-sticky:not(.horizontal-nav-static)  {
+    .sticky-header{
+      inset-block: 8.1rem 0;
+    }
+  }
 }
 </style>

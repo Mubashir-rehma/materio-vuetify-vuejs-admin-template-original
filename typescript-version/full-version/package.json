@@ -2,6 +2,7 @@
   "name": "master-vuetify-vuejs-admin-template",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -26,7 +27,7 @@
     "@tiptap/vue-3": "^2.1.13",
     "@vueuse/core": "^10.5.0",
     "@vueuse/math": "^10.5.0",
-    "apexcharts": "^3.44.1",
+    "apexcharts": "3.37.0",
     "chart.js": "^4.4.0",
     "cookie-es": "^1.0.0",
     "jwt-decode": "^4.0.0",
@@ -116,7 +117,6 @@
     "@tiptap/core": "^2",
     "@types/video.js": "^7",
     "pug": "^3",
-    "apexcharts": "^3",
     "stylelint-order": "6.0.3"
   },
   "overrides": {
@@ -124,7 +124,6 @@
     "@tiptap/core": "^2",
     "@types/video.js": "^7",
     "pug": "^3",
-    "apexcharts": "^3",
     "stylelint-order": "6.0.3"
   },
   "packageManager": "pnpm@8.6.2",

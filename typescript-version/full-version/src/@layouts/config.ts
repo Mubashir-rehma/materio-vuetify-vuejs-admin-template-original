@@ -30,6 +30,7 @@ export const layoutConfig: LayoutConfig = {
   horizontalNav: {
     type: HorizontalNavType.Sticky,
     transition: 'none',
+    popoverOffset: 0,
   },
   icons: {
     chevronDown: { icon: 'mdi-chevron-down' },

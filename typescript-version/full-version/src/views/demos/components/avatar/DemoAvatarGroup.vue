@@ -8,7 +8,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
 </script>
 
 <template>
-  <div class="v-avatar-group">
+  <div class="v-avatar-group demo-avatar-group">
     <VAvatar :size="45">
       <VImg :src="avatar1" />
       <VTooltip
@@ -68,5 +68,24 @@ import avatar6 from '@images/avatars/avatar-6.png'
         Angel Bishop
       </VTooltip>
     </VAvatar>
+
+    <VAvatar
+      :color="$vuetify.theme.current.dark ? '#3A3B59' : '#F0EFF0'"
+      :size="45"
+    >
+      +3
+    </VAvatar>
   </div>
 </template>
+
+<style lang="scss">
+.demo-avatar-group{
+  &.v-avatar-group {
+    .v-avatar{
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+}
+</style>

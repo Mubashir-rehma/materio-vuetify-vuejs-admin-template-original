@@ -188,7 +188,7 @@ const printInvoice = () => {
           </VRow>
 
           <!-- 👉 invoice Table -->
-          <VTable class="invoice-preview-table border text-high-emphasis mb-6">
+          <VTable class="invoice-preview-table border text-high-emphasis overflow-hidden mb-6">
             <thead>
               <tr>
                 <th scope="col">

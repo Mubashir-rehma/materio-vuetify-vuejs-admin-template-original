@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Apps',
-    icon: { icon: 'ri-inbox-line' },
+    icon: { icon: 'ri-mail-open-line' },
     children: [
       {
         title: 'eCommerce',

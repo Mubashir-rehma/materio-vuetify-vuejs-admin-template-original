@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Pages',
-    icon: { icon: 'ri-file-line' },
+    icon: { icon: 'ri-file-list-2-line' },
     children: [
 
       {

@@ -246,32 +246,34 @@ watch([
 
 // remove all theme related values from localStorage
 const resetCustomizer = async () => {
-  // reset themeConfig values
-  vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
-  vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
-  vuetifyTheme.themes.value.light.colors['primary-darken-1'] = staticPrimaryDarkenColor
-  vuetifyTheme.themes.value.dark.colors['primary-darken-1'] = staticPrimaryDarkenColor
+  if (isCookieHasAnyValue.value) {
+    // reset themeConfig values
+    vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
+    vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
+    vuetifyTheme.themes.value.light.colors['primary-darken-1'] = staticPrimaryDarkenColor
+    vuetifyTheme.themes.value.dark.colors['primary-darken-1'] = staticPrimaryDarkenColor
 
-  configStore.theme = themeConfig.app.theme
-  configStore.skin = themeConfig.app.skin
-  configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
-  configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
-  configStore.appContentWidth = themeConfig.app.contentWidth
-  configStore.isAppRTL = isActiveLangRTL.value
-  configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
-  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
-  currentLayout.value = 'vertical'
+    configStore.theme = themeConfig.app.theme
+    configStore.skin = themeConfig.app.skin
+    configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
+    configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
+    configStore.appContentWidth = themeConfig.app.contentWidth
+    configStore.isAppRTL = isActiveLangRTL.value
+    configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
+    useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
+    currentLayout.value = themeConfig.app.contentLayoutNav
 
-  cookieRef('lightThemePrimaryColor', null).value = null
-  cookieRef('darkThemePrimaryColor', null).value = null
-  cookieRef('lightThemePrimaryDarkenColor', null).value = null
-  cookieRef('darkThemePrimaryDarkenColor', null).value = null
+    cookieRef('lightThemePrimaryColor', null).value = null
+    cookieRef('darkThemePrimaryColor', null).value = null
+    cookieRef('lightThemePrimaryDarkenColor', null).value = null
+    cookieRef('darkThemePrimaryDarkenColor', null).value = null
 
-  await nextTick()
+    await nextTick()
 
-  isCookieHasAnyValue.value = false
+    isCookieHasAnyValue.value = false
 
-  customPrimaryColor.value = '#ffffff'
+    customPrimaryColor.value = '#ffffff'
+  }
 }
 </script>
 
@@ -361,7 +363,7 @@ const resetCustomizer = async () => {
             </h6>
 
             <div
-              class="d-flex"
+              class="d-flex app-customizer-primary-colors"
               style="column-gap: 0.7rem; margin-block-start: 2px;"
             >
               <div
@@ -372,8 +374,9 @@ const resetCustomizer = async () => {
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
               padding-block: 0.5rem;
               padding-inline: 0.625rem;"
-                class="cursor-pointer"
-                :style="vuetifyTheme.current.value.colors.primary === color.main ? `outline-color: ${color.main}; outline-width:2px;` : ''"
+                class="primary-color-wrapper cursor-pointer"
+                :class="vuetifyTheme.current.value.colors.primary === color.main ? 'active' : ''"
+                :style="vuetifyTheme.current.value.colors.primary === color.main ? `outline-color: ${color.main}; outline-width:2px;` : `--v-color:${color.main}`"
                 @click="setPrimaryColor(color)"
               >
                 <div
@@ -383,12 +386,13 @@ const resetCustomizer = async () => {
               </div>
 
               <div
-                class="cursor-pointer"
+                class="primary-color-wrapper cursor-pointer"
                 style="
               border-radius: 0.375rem;
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
               padding-block: 0.5rem;
               padding-inline: 0.625rem;"
+                :class="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'active' : ''"
                 :style="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? `outline-color: ${customPrimaryColor}; outline-width:2px;` : ''"
               >
                 <VBtn
@@ -578,17 +582,26 @@ const resetCustomizer = async () => {
   }
 
   .v-label.custom-input.active {
-    border-width: 2px;
+    border-color: transparent;
+    outline: 2px solid rgb(var(--v-theme-primary));
   }
 
   .v-label.custom-input:not(.active):hover{
-    border-color: rgba(var(--v-border-color), var(--v-border-opacity));
+    border-color: rgba(var(--v-border-color), 0.22);
   }
 
   .customizer-skins{
     .custom-input.active{
       .customizer-skins-icon-wrapper {
         background-color: rgba(var(--v-global-theme-primary), var(--v-selected-opacity));
+      }
+    }
+  }
+
+  .app-customizer-primary-colors {
+    .primary-color-wrapper:not(.active) {
+      &:hover{
+        outline-color: rgba(var(--v-border-color), 0.22) !important;
       }
     }
   }

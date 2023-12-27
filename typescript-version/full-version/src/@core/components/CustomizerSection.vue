@@ -18,6 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
         label
         size="small"
         color="primary"
+        rounded="sm"
       >
         {{ props.title }}
       </VChip>

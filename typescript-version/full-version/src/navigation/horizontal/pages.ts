@@ -14,8 +14,8 @@ export default [
         icon: { icon: 'ri-settings-2-line' },
         to: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
       },
-      { title: 'FAQ', icon: { icon: 'ri-question-line' }, to: 'pages-faq' },
       { title: 'Pricing', icon: { icon: 'ri-money-dollar-circle-line' }, to: 'pages-pricing' },
+      { title: 'FAQ', icon: { icon: 'ri-question-line' }, to: 'pages-faq' },
       {
         title: 'Misc',
         icon: { icon: 'ri-file-line' },

@@ -241,28 +241,30 @@ watch([
 
 // remove all theme related values from localStorage
 const resetCustomizer = async () => {
+  if (isCookieHasAnyValue) {
   // reset themeConfig values
-  vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
-  vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
+    vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
+    vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
 
-  configStore.theme = themeConfig.app.theme
-  configStore.skin = themeConfig.app.skin
-  configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
-  configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
-  configStore.appContentWidth = themeConfig.app.contentWidth
-  configStore.isAppRTL = isActiveLangRTL.value
-  configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
-  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
-  currentLayout.value = 'vertical'
+    configStore.theme = themeConfig.app.theme
+    configStore.skin = themeConfig.app.skin
+    configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
+    configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
+    configStore.appContentWidth = themeConfig.app.contentWidth
+    configStore.isAppRTL = isActiveLangRTL.value
+    configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
+    useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
+    currentLayout.value = themeConfig.app.contentLayoutNav
 
-  cookieRef('lightThemePrimaryColor', null).value = null
-  cookieRef('darkThemePrimaryColor', null).value = null
+    cookieRef('lightThemePrimaryColor', null).value = null
+    cookieRef('darkThemePrimaryColor', null).value = null
 
-  await nextTick()
+    await nextTick()
 
-  isCookieHasAnyValue.value = false
+    isCookieHasAnyValue.value = false
 
-  customPrimaryColor.value = '#ffffff'
+    customPrimaryColor.value = '#ffffff'
+  }
 }
 </script>
 

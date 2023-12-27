@@ -45,10 +45,11 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
           labels: {
             show: true,
             value: {
-              fontSize: '1.15rem',
+              fontSize: '1.125rem',
               fontFamily: 'Inter',
               fontWeight: 500,
               offsetY: -18,
+              color: 'rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))',
               formatter: (o: any) => `${Number.parseInt(o)}%`,
             },
             name: {
@@ -58,8 +59,8 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
             total: {
               label: '1 Quarter',
               show: true,
-              color: currentTheme.value['on-surface'],
-              fontSize: '0.75rem',
+              color: 'rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity))',
+              fontSize: '0.8125rem',
               fontWeight: 400,
               formatter: () => '28%',
             },
@@ -100,7 +101,7 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
       <VueApexCharts
         type="donut"
         :options="chartOptions"
-        :height="104"
+        :height="110"
         :series="[45, 10, 18, 27]"
         :width="110"
       />

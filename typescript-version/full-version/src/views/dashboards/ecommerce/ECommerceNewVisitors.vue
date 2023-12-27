@@ -84,7 +84,7 @@ const options = {
           <VCardTitle>New Visitors</VCardTitle>
         </VCardItem>
 
-        <VCardText>
+        <VCardText class="mt-5">
           <p class="text-body-1 mb-2">
             48% new visitors <br>
             this week.
@@ -110,7 +110,7 @@ const options = {
             type="bar"
             :options="options"
             :series="series"
-            :height="140"
+            :height="160"
           />
         </VCardText>
       </VCol>

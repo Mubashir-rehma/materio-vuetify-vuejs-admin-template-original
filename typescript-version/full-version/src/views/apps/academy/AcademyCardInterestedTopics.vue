@@ -136,7 +136,7 @@ const moreTopics = [
       <VRow>
         <VCol
           cols="12"
-          lg="6"
+          sm="6"
         >
           <VueApexCharts
             type="bar"

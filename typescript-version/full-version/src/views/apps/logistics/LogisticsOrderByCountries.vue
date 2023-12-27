@@ -44,7 +44,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-uppercase text-success">
@@ -53,7 +53,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Myrtle Ullrich
                 </div>
-                <div class="app-timeline-text mb-1">
+                <div class="text-body-2 mb-1">
                   101 Boulder, California(CA), 95959
                 </div>
               </VTimelineItem>
@@ -63,7 +63,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-primary text-uppercase">
@@ -72,7 +72,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Barry Schowalter
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   939 Orange, California(CA), 92118
                 </div>
               </VTimelineItem>
@@ -96,7 +96,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-uppercase text-success">
@@ -105,7 +105,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Veronica Herman
                 </div>
-                <div class="app-timeline-text mb-1">
+                <div class="text-body-2 mb-1">
                   162  Windsor, California(CA), 95492
                 </div>
               </VTimelineItem>
@@ -115,7 +115,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-primary text-uppercase">
@@ -124,7 +124,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Helen Jacobs
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   487 Sunset, California(CA), 94043
                 </div>
               </VTimelineItem>
@@ -147,7 +147,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-uppercase text-success">
@@ -156,7 +156,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Barry Schowalter
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   939 Orange, California(CA), 92118
                 </div>
               </VTimelineItem>
@@ -166,7 +166,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-primary text-uppercase">
@@ -175,7 +175,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Myrtle Ullrich
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   101 Boulder, California(CA), 95959
                 </div>
               </VTimelineItem>
@@ -199,7 +199,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-uppercase text-success">
@@ -208,7 +208,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Veronica Herman
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   162  Windsor, California(CA), 95492
                 </div>
               </VTimelineItem>
@@ -218,7 +218,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-primary text-uppercase">
@@ -227,7 +227,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Helen Jacobs
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   487 Sunset, California(CA), 94043
                 </div>
               </VTimelineItem>
@@ -250,7 +250,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-uppercase text-success">
@@ -259,7 +259,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Myrtle Ullrich
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   101 Boulder, California(CA), 95959
                 </div>
               </VTimelineItem>
@@ -268,7 +268,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-primary text-uppercase">
@@ -277,7 +277,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Barry Schowalter
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   939 Orange, California(CA), 92118
                 </div>
               </VTimelineItem>
@@ -301,7 +301,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="success"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-uppercase text-success">
@@ -310,7 +310,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Veronica Herman
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   162  Windsor, California(CA), 95492
                 </div>
               </VTimelineItem>
@@ -320,7 +320,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 dot-color="rgba(var(--v-theme-surface))"
                 icon-color="primary"
                 fill-dot
-                size="22"
+                size="20"
                 :elevation="0"
               >
                 <div class="text-caption text-primary text-uppercase">
@@ -329,7 +329,7 @@ const tabsData = ['New', 'Preparing', 'Shipping']
                 <div class="app-timeline-title">
                   Helen Jacobs
                 </div>
-                <div class="app-timeline-text">
+                <div class="text-body-2">
                   487 Sunset, California(CA), 94043
                 </div>
               </VTimelineItem>

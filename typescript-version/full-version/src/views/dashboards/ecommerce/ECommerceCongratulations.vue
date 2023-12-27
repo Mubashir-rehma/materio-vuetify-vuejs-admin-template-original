@@ -3,7 +3,7 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
 </script>
 
 <template>
-  <VCard class="overflow-visible">
+  <VCard class="overflow-visible mt-sm-10 mt-md-0">
     <VRow no-gutters>
       <VCol
         cols="12"
@@ -19,7 +19,7 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
           </VCardTitle>
         </VCardItem>
 
-        <VCardText class="pt-4">
+        <VCardText class="pt-sm-4">
           <div class="mb-0 text-body-1 me-2">
             You have done 72% <span class="text-high-emphasis">😎</span> more sales today.
             Check your new raising badge in your profile.
@@ -38,7 +38,7 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
           :src="illustrationJohn2"
           :height="$vuetify.display.xs ? '165' : '200'"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
-          class="john-illustration flip-in-rtl"
+          class="john-illustration flip-in-rtl mt-6 mt-sm-0"
         >
       </VCol>
     </VRow>

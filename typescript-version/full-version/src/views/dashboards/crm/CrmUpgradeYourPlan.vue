@@ -43,7 +43,7 @@ const savedCards = [
         <VAvatar
           rounded
           size="40"
-          class="plan-details me-2 border-opacity-100 border-primary"
+          class="plan-details border-opacity-100 border-primary me-4"
         >
           <VImg
             :src="briefcase"

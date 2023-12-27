@@ -73,6 +73,7 @@ const contactUs = [
         v-show="faqs.length"
         cols="12"
         md="3"
+        sm="5"
         class="position-relative"
       >
         <!-- 👉 Tabs -->
@@ -80,7 +81,6 @@ const contactUs = [
           v-model="activeTab"
           direction="vertical"
           class="v-tabs-pill"
-          grow
         >
           <VTab
             v-for="faq in faqs"
@@ -96,13 +96,14 @@ const contactUs = [
         </VTabs>
         <VImg
           :src="illustrationJohn"
-          class="d-none d-md-block mt-8"
+          class="d-none d-sm-block mt-8"
         />
       </VCol>
 
       <VCol
         cols="12"
         md="9"
+        sm="7"
       >
         <!-- 👉 Windows -->
         <VWindow

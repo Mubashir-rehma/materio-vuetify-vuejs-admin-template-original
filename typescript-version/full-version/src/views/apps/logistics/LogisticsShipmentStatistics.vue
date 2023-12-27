@@ -203,10 +203,7 @@ const shipmentConfig = {
           variant="outlined"
           divided
         >
-          <VBtn
-            variant="outlined"
-            color="primary"
-          >
+          <VBtn color="primary">
             January
           </VBtn>
 
@@ -238,7 +235,8 @@ const shipmentConfig = {
 
 #shipment-statistics {
   .apexcharts-legend-text {
-    font-size: 16px !important;
+    font-size: 15px !important;
+    line-height: 22px;
   }
 
   .apexcharts-legend{
@@ -247,7 +245,7 @@ const shipmentConfig = {
       border-radius: 0.375rem;
       block-size: 83%;
       padding-block: 4px;
-      padding-inline: 16px 12px;
+      padding-inline: 16px;
     }
   }
 }

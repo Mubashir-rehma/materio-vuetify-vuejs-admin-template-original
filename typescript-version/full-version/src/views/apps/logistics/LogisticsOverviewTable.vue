@@ -85,7 +85,7 @@ const resolveChipColor = (warning: string) => {
           </VAvatar>
           <RouterLink
             :to="{ name: 'apps-logistics-fleet' }"
-            class="text-sm font-weight-medium text-high-emphasis"
+            class="text-base text-high-emphasis"
           >
             VOL-{{ item.location }}
           </RouterLink>

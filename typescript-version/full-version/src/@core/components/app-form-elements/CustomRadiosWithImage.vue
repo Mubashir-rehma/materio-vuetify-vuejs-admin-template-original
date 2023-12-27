@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { GridColumn } from '@core/types';
+import type { GridColumn } from '@core/types'
 
 interface Props {
   selectedRadio: string

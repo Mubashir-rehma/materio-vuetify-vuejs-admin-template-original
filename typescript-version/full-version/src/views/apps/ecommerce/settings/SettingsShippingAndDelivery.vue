@@ -84,7 +84,10 @@ const InternationalTableData = [
           </tbody>
         </VTable>
 
-        <VBtn variant="outlined">
+        <VBtn
+          variant="outlined"
+          size="small"
+        >
           Add rate
         </VBtn>
       </div>
@@ -144,7 +147,10 @@ const InternationalTableData = [
           </tbody>
         </VTable>
 
-        <VBtn variant="outlined">
+        <VBtn
+          variant="outlined"
+          size="small"
+        >
           Add rate
         </VBtn>
       </div>

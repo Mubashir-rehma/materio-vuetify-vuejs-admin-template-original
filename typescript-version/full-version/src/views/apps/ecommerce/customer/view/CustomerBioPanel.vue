@@ -43,7 +43,7 @@ interface Props {
             Customer ID #{{ props.customerData.customerId }}
           </p>
 
-          <div class="d-flex justify-center gap-x-6 mt-6">
+          <div class="d-flex justify-space-evenly gap-x-12 mt-6">
             <div class="d-flex align-center">
               <VAvatar
                 variant="tonal"
@@ -71,7 +71,7 @@ interface Props {
               </VAvatar>
               <div class="d-flex flex-column align-start">
                 <h5 class="text-h5">
-                  {{ props.customerData.totalSpent }}
+                  {{ Math.round(props.customerData.totalSpent) }}
                 </h5>
                 <span class="text-body-1">Spent</span>
               </div>
@@ -134,7 +134,10 @@ interface Props {
           </VList>
 
           <div class="mt-6 text-center">
-            <VBtn @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible">
+            <VBtn
+              block
+              @click="isUserInfoEditDialogVisible = !isUserInfoEditDialogVisible"
+            >
               Edit Details
             </VBtn>
           </div>
@@ -153,9 +156,9 @@ interface Props {
         <VCardText>
           <div class="d-flex align-center">
             <div>
-              <div class="text-xl font-weight-medium mb-4">
+              <h5 class="text-h5 text-white mb-4">
                 Upgrade to premium
-              </div>
+              </h5>
               <p class="mb-6 text-wrap">
                 Upgrade customer to premium membership to access pro features.
               </p>

@@ -89,6 +89,7 @@ const resetForm = () => {
                 <VTextField
                   v-model="mobile"
                   label="Mobile Number"
+                  type="number"
                   :rules="[requiredValidator]"
                   placeholder="+(123) 456-7890"
                 />

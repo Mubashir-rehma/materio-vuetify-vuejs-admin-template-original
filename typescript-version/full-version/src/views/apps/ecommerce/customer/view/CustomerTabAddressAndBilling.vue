@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import usFlag from '@images/icons/countries/us.png'
 import americanExpress from '@images/icons/payments/img/american-express.png'
 import mastercard from '@images/icons/payments/img/mastercard.png'
 import visa from '@images/icons/payments/img/visa-light.png'
@@ -97,7 +98,7 @@ const paymentData = [
             >
               <VIcon
                 :icon="show[index] ? 'ri-arrow-down-s-line' : 'ri-arrow-right-s-line'"
-                class="flip-in-rtl"
+                class="flip-in-rtl text-high-emphasis"
               />
             </IconBtn>
 
@@ -118,8 +119,8 @@ const paymentData = [
             </div>
           </div>
 
-          <div class="ms-5">
-            <IconBtn>
+          <div class="ms-11">
+            <IconBtn @click="isEditAddressDialogVisible = true">
               <VIcon
                 icon="ri-edit-box-line"
                 class="flip-in-rtl"
@@ -142,7 +143,7 @@ const paymentData = [
         <VExpandTransition>
           <div
             v-show="show[index]"
-            class="px-10"
+            class="px-12"
           >
             <div class="mb-1 font-weight-medium text-high-emphasis">
               {{ address.owner }}
@@ -185,7 +186,7 @@ const paymentData = [
             >
               <VIcon
                 :icon="paymentShow[index] ? 'ri-arrow-down-s-line' : 'ri-arrow-right-s-line'"
-                class="flip-in-rtl"
+                class="flip-in-rtl text-high-emphasis"
               />
             </IconBtn>
 
@@ -197,7 +198,7 @@ const paymentData = [
             />
 
             <div>
-              <div class="mb-1">
+              <div class="d-flex mb-1">
                 <h6 class="text-h6 me-2">
                   {{ payment.title }}
                 </h6>
@@ -213,8 +214,8 @@ const paymentData = [
             </div>
           </div>
 
-          <div class="ms-5">
-            <IconBtn>
+          <div class="ms-11">
+            <IconBtn @click="isCardAddDialogVisible = true">
               <VIcon
                 icon="ri-edit-box-line"
                 class="flip-in-rtl"
@@ -237,7 +238,7 @@ const paymentData = [
         <VExpandTransition>
           <div
             v-show="paymentShow[index]"
-            class="px-10"
+            class="px-12"
           >
             <VRow>
               <VCol
@@ -328,16 +329,37 @@ const paymentData = [
                     <td class="text-sm pb-1">
                       Origin
                     </td>
-                    <td class="text-sm text-high-emphasis font-weight-medium">
-                      United States
+                    <td class="d-flex">
+                      <div class="text-body-2 font-weight-medium text-high-emphasis me-2">
+                        United States
+                      </div>
+                      <img
+                        :src="usFlag"
+                        height="20"
+                        width="20"
+                      >
                     </td>
                   </tr>
                   <tr>
                     <td class="text-sm pb-1">
                       CVC Check
                     </td>
-                    <td class="text-sm text-high-emphasis font-weight-medium">
-                      Passed
+                    <td class="d-flex">
+                      <div class="text-body-2 font-weight-medium text-high-emphasis me-2">
+                        Passed
+                      </div>
+                      <VAvatar
+                        variant="tonal"
+                        color="success"
+                        size="20"
+                        inline
+                      >
+                        <VIcon
+                          icon="ri-check-line"
+                          color="success"
+                          size="12"
+                        />
+                      </VAvatar>
                     </td>
                   </tr>
                 </VTable>

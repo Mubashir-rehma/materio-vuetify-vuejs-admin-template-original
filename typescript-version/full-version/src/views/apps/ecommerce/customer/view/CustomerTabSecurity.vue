@@ -112,6 +112,7 @@ const recentDevices = [
               SMS
             </h4>
             <VTextField
+              density="compact"
               variant="outlined"
               :model-value="smsVerificationNumber"
               readonly
@@ -138,7 +139,7 @@ const recentDevices = [
                 >
                   <VIcon
                     size="24"
-                    icon="ri-delete-bin-line"
+                    icon="ri-user-add-line"
                   />
                 </VBtn>
               </template>

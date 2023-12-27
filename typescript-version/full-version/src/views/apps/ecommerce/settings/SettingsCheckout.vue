@@ -30,17 +30,11 @@ const shippingAddress = ref('Optional')
       <VAlert
         color="warning"
         variant="tonal"
+        icon="ri-information-line"
       >
-        <template #prepend>
-          <VAvatar
-            size="28"
-            icon="ri-information-line"
-            variant="elevated"
-            color="warning"
-            rounded
-          />
-        </template>
-        <VAlertTitle>To send SMS updates, you need to install an SMS App.</VAlertTitle>
+        <VAlertTitle class="mb-0">
+          To send SMS updates, you need to install an SMS App.
+        </VAlertTitle>
       </VAlert>
     </VCardText>
   </VCard>

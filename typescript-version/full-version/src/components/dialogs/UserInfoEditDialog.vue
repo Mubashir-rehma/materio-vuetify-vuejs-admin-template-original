@@ -5,11 +5,11 @@ interface UserData {
   company: string
   role: string
   username: string
-  country: string
+  country: string | null
   contact: string
   email: string
   currentPlan: string
-  status: string
+  status: string | null
   avatar?: string
   taskDone?: number
   projectDone?: number
@@ -32,15 +32,15 @@ const props = withDefaults(defineProps<Props>(), {
     avatar: '',
     company: '',
     contact: '',
-    country: '',
+    country: null,
     currentPlan: '',
-    email: ' ',
+    email: '',
     fullName: '',
     id: 0,
     role: '',
-    status: '',
+    status: null,
     username: '',
-    language: [''],
+    language: [],
     projectDone: 0,
     taskDone: 0,
     taxId: '',

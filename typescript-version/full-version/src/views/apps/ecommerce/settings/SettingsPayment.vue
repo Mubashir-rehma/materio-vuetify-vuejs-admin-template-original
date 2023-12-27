@@ -108,6 +108,7 @@ const isPaymentProvidersDialogVisible = ref(false)
         <p>Payments that are made outside your online store. When a customer selects a manual payment method such as cash on delivery, you'll need to approve their order before it can be fulfilled.</p>
 
         <VBtnGroup
+          v-show="$vuetify.display.smAndUp"
           divided
           density="compact"
           variant="outlined"
@@ -134,6 +135,24 @@ const isPaymentProvidersDialogVisible = ref(false)
             </VMenu>
           </VBtn>
         </VBtnGroup>
+
+        <VBtn
+          variant="outlined"
+          class="d-block d-sm-none"
+        >
+          Add Manual Payment Methods
+          <VMenu activator="parent">
+            <VList>
+              <VListItem
+                v-for="(item, index) in ['Create custom payment method', 'Bank Deposit', 'Money Order', 'Cash on Delivery(COD)']"
+                :key="index"
+                :value="index"
+              >
+                <VListItemTitle>{{ item }}</VListItemTitle>
+              </VListItem>
+            </VList>
+          </VMenu>
+        </VBtn>
       </VCardText>
     </VCard>
 

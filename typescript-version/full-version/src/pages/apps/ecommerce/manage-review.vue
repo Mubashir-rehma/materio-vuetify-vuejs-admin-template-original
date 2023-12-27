@@ -56,7 +56,7 @@ const headers = [
   { title: 'Review', key: 'review', sortable: false },
   { title: 'Date', key: 'date' },
   { title: 'Status', key: 'status' },
-  { title: 'Actions', key: 'actions' },
+  { title: 'Actions', key: 'actions', sortable: false },
 ]
 
 // Chart Configs
@@ -417,11 +417,12 @@ const reviewStatChartConfig = {
 
         <VDataTableServer
           v-model:items-per-page="itemsPerPage"
+          v-model:page="page"
           :headers="headers"
           :items="reviews"
           show-select
           :items-length="totalReviews"
-          item-value="product"
+          item-value="id"
           class="text-no-wrap rounded-0"
           @update:options="updateOptions"
         >

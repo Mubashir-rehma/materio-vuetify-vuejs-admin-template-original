@@ -300,6 +300,7 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
 
   // navigation drawer
   $navigation-drawer-temporary-elevation: 8 !default,
+  $navigation-drawer-transition-duration: 0.4s !default,
 
   // 👉 Messages
   $messages-font-size: 13px !default,

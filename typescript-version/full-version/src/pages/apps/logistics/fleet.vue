@@ -87,7 +87,7 @@ const vehicleTrackingData = [
   {
     name: 'VOL-954784',
     location: 'Lincoln Harbor, NY, USA',
-    progress: 100,
+    progress: 90,
     driverName: 'Myrtle Ullrich',
   },
   {
@@ -174,7 +174,7 @@ watch(activeIndex, () => {
               >
                 <div class="d-flex gap-x-4">
                   <VAvatar
-                    icon="ri-bus-line"
+                    icon="ri-car-line"
                     variant="tonal"
                     color="secondary"
                   />

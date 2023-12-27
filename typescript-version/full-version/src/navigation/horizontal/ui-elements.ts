@@ -1,7 +1,7 @@
 export default [
   {
     title: 'User Interface',
-    icon: { icon: 'ri-stack-line' },
+    icon: { icon: 'ri-pantone-line' },
     children: [
       {
         title: 'Icons',

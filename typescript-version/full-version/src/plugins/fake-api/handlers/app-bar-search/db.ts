@@ -17,8 +17,23 @@ export const db: DB = {
         },
         {
           url: { name: 'dashboards-crm' },
-          icon: 'ri-shopping-cart-2-line',
+          icon: 'ri-computer-line',
           title: 'CRM Dashboard',
+        },
+        {
+          url: { name: 'dashboards-ecommerce' },
+          title: 'eCommerce Dashboard',
+          icon: 'ri-shopping-cart-2-line',
+        },
+        {
+          url: { name: 'dashboards-academy' },
+          title: 'Academy Dashboard',
+          icon: 'ri-book-open-line',
+        },
+        {
+          url: { name: 'dashboards-logistics' },
+          title: 'Logistics Dashboard',
+          icon: 'ri-truck-line',
         },
       ],
     },
@@ -33,22 +48,22 @@ export const db: DB = {
         },
         {
           url: { name: 'front-pages-pricing' },
-          icon: 'ri-article-line',
+          icon: 'ri-money-dollar-circle-line',
           title: 'Pricing Front',
         },
         {
           url: { name: 'front-pages-payment' },
-          icon: 'ri-article-line',
+          icon: 'ri-bank-card-line',
           title: 'Payment Front',
         },
         {
           url: { name: 'front-pages-checkout' },
-          icon: 'ri-article-line',
+          icon: 'ri-shopping-cart-2-line',
           title: 'Checkout Front',
         },
         {
           url: { name: 'front-pages-help-center' },
-          icon: 'ri-article-line',
+          icon: 'ri-question-line',
           title: 'Help Center Front',
         },
       ],
@@ -140,7 +155,7 @@ export const db: DB = {
         {
           url: { name: 'apps-logistics-dashboard' },
           icon: 'ri-book-open-line',
-          title: 'Logistics - Dashboard',
+          title: 'Logistics',
         },
         {
           url: { name: 'apps-logistics-fleet' },

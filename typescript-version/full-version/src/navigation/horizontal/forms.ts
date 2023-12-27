@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Forms',
-    icon: { icon: 'ri-checkbox-multiple-line' },
+    icon: { icon: 'ri-pages-line' },
     children: [
       {
         title: 'Form Elements',

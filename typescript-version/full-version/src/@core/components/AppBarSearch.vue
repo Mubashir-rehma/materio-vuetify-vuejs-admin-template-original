@@ -91,6 +91,7 @@ watch(
           autofocus
           density="compact"
           variant="plain"
+          class="app-bar-search-input"
           @keyup.esc="clearSearchAndCloseDialog"
           @keydown="getFocusOnSearchList"
           @update:model-value="$emit('search', searchQueryLocal)"
@@ -204,6 +205,12 @@ watch(
 }
 
 .app-bar-search-dialog {
+  .app-bar-search-input{
+    .v-field__input{
+      padding-block-start: 0.2rem;
+    }
+  }
+
   .v-overlay__scrim {
     backdrop-filter: blur(4px);
   }

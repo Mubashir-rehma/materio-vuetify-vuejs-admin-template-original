@@ -58,6 +58,20 @@ interface BundleScriptConfig {
 
 const sources: BundleScriptConfig = {
 
+  svg: [
+    // {
+    //   dir: 'src/assets/images/iconify-svg',
+    //   monotone: true,
+    //   prefix: 'custom',
+    // },
+
+    // {
+    //   dir: 'emojis',
+    //   monotone: false,
+    //   prefix: 'emoji',
+    // },
+  ],
+
   icons: [
     // 'mdi:home',
     // 'mdi:account',
@@ -73,10 +87,13 @@ const sources: BundleScriptConfig = {
 
     // Iconify JSON file (@iconify/json is a package name, /json/ is directory where files are, then filename)
     require.resolve('@iconify-json/ri/icons.json'),
-
-    // TODO remove mdi icons after replacing all icons with remix icons in template
-    require.resolve('@iconify-json/mdi/icons.json'),
-
+    {
+      filename: require.resolve('@iconify-json/mdi/icons.json'),
+      icons: [
+        'language-typescript',
+        'language-javascript',
+      ],
+    },
     {
       filename: require.resolve('@iconify-json/bxl/icons.json'),
       icons: [

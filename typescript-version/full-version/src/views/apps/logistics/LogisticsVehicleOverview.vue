@@ -3,7 +3,7 @@ const vehicleData = [
   { icon: 'ri-car-line', title: 'On the way', time: '2hr 10min', percentage: 39.7, color: 'rgba(var(--v-theme-on-surface), var(--v-hover-opacity))' },
   { icon: 'ri-download-cloud-2-line', title: 'Unloading', time: '3hr 15min', percentage: 28.3, color: 'rgb(var(--v-theme-primary))' },
   { icon: 'ri-upload-line', title: 'Loading', time: '1hr 24min', percentage: 17.4, color: 'rgb(var(--v-theme-info))' },
-  { icon: 'ri-timer-line', title: 'Waiting', time: '5hr 19min', percentage: 14.6, color: '#1A0E33' },
+  { icon: 'ri-timer-line', title: 'Waiting', time: '5hr 19min', percentage: 14.6, color: 'rgb(var(--v-tooltip-background))' },
 ]
 </script>
 
@@ -32,7 +32,7 @@ const vehicleData = [
           >
             <p
               class="text-sm font-weight-medium mb-0"
-              :class="index ? 'text-white' : 'text-high-emphasis'"
+              :style="`color:rgb(var(${index !== 0 || index === (vehicleData.length - 1) ? '--v-theme-surface' : 'text-high-emphasis'}))`"
             >
               {{ item.percentage }}%
             </p>
@@ -45,7 +45,10 @@ const vehicleData = [
             v-for="(vehicle, index) in vehicleData"
             :key="index"
           >
-            <td width="70%">
+            <td
+              width="70%"
+              class="ps-0"
+            >
               <div class="d-flex align-center text-high-emphasis">
                 <VIcon
                   :icon="vehicle.icon"

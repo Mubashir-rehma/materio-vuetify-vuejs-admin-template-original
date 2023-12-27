@@ -34,6 +34,11 @@ const statistics = [
         <span class="d-inline-block font-weight-medium text-high-emphasis">Total 48.5% Growth</span> <span class="text-high-emphasis">😎</span> this month
       </p>
     </template>
+
+    <template #append>
+      <MoreBtn class="mt-n5" />
+    </template>
+
     <VCardText class="pt-10">
       <VRow>
         <VCol

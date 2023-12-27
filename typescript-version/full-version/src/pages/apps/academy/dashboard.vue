@@ -208,7 +208,8 @@ const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23]
       <VCol
         cols="12"
         md="8"
-        :class="$vuetify.display.mdAndUp ? 'border-e' : 'border-b'"
+        sm="6"
+        :class="$vuetify.display.smAndUp ? 'border-e' : 'border-b'"
       >
         <div class="pe-3">
           <h5 class="text-h5 text-high-emphasis mb-2">
@@ -264,15 +265,16 @@ const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23]
         </div>
       </VCol>
 
-      <!-- 👉 Time Spendings -->
+      <!-- 👉 Time Spending -->
       <VCol
         cols="12"
         md="4"
+        sm="6"
       >
         <div class="d-flex justify-space-between align-center">
           <div class="d-flex flex-column ps-3">
             <h5 class="text-h5 mb-1 text-no-wrap">
-              Time Spendings
+              Time Spending
             </h5>
             <div class="mb-6 text-body-1">
               Weekly Report

@@ -23,7 +23,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
@@ -47,7 +47,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
@@ -69,7 +69,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
           <VCardTitle>New Technologies Data</VCardTitle>
 
           <template #append>
-            <VBtnToggle
+            <VBtnGroup
               density="compact"
               color="primary"
               variant="outlined"
@@ -78,7 +78,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
               <VBtn>Daily</VBtn>
               <VBtn>Monthly</VBtn>
               <VBtn>Yearly</VBtn>
-            </VBtnToggle>
+            </VBtnGroup>
           </template>
         </VCardItem>
 
@@ -135,7 +135,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
@@ -163,7 +163,7 @@ import ApexChartStocksPrices from '@/views/charts/apex-chart/ApexChartStocksPric
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"

@@ -108,6 +108,7 @@ onMounted(async () => {
       :items="productList"
       :search="search"
       :items-per-page="5"
+      class="text-no-wrap"
     >
       <!-- product -->
       <template #item.product.name="{ item }">
@@ -194,7 +195,10 @@ onMounted(async () => {
 
       <!-- Delete -->
       <template #item.delete="{ item }">
-        <IconBtn @click="deleteItem(item.product.id)">
+        <IconBtn
+          size="small"
+          @click="deleteItem(item.product.id)"
+        >
           <VIcon icon="ri-delete-bin-line" />
         </IconBtn>
       </template>

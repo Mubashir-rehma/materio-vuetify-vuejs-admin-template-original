@@ -328,15 +328,24 @@ const widgetData = ref([
 
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <IconBtn @click="deleteUser(item.id)">
+          <IconBtn
+            size="small"
+            @click="deleteUser(item.id)"
+          >
             <VIcon icon="ri-delete-bin-7-line" />
           </IconBtn>
 
-          <IconBtn :to="{ name: 'apps-user-view-id', params: { id: item.id } }">
+          <IconBtn
+            size="small"
+            :to="{ name: 'apps-user-view-id', params: { id: item.id } }"
+          >
             <VIcon icon="ri-eye-line" />
           </IconBtn>
 
-          <IconBtn color="medium-emphasis">
+          <IconBtn
+            size="small"
+            color="medium-emphasis"
+          >
             <VIcon
               size="24"
               icon="ri-more-2-line"

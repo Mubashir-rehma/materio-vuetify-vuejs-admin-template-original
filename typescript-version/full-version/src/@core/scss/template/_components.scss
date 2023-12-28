@@ -712,7 +712,10 @@
     --v-selection-control-size: 1.125rem;
 
     .v-switch__thumb {
+      background-color: #fff;
       block-size: 0.875rem;
+      box-shadow: none;
+      filter: drop-shadow(0 2px 4px rgba(var(--v-shadow-key-umbra-color), 16%));
       inline-size: 0.875rem;
       transform: scale(1);
     }
@@ -731,9 +734,7 @@
     .v-selection-control__input {
       transform: translateX(5px);
 
-      .v-switch__thumb {
-        background-color: #fff;
-      }
+   
     }
   }
 }

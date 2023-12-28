@@ -265,6 +265,9 @@ $font-family-custom: "Inter", sans-serif, -apple-system, blinkmacsystemfont, "Se
   $snackbar-btn-padding: 0 10px !default,
   $snackbar-action-margin: 16px !default,
 
+  // 👉 Slider
+  $slider-thumb-hover-opacity: var(--v-activated-opacity) !default,
+
   // 👉 Tooltip
   $tooltip-background-color: rgb(var(--v-tooltip-background)) !default,
   $tooltip-text-color: rgb(var(--v-theme-surface)) !default,

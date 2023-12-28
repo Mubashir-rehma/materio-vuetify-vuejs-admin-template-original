@@ -17,7 +17,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
     <VCol>
       <!-- 👉 Dense  -->
       <AppCardCode
-        title="dense"
+        title="Dense"
         :code="demoCode.dense"
       >
         <DemoDataTableDense />
@@ -27,7 +27,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
     <!-- 👉 Table Cell Slot  -->
     <VCol cols="12">
       <AppCardCode
-        title="cell Slot"
+        title="Cell Slot"
         :code="demoCode.cellSlot"
       >
         <DemoDataTableCellSlot />

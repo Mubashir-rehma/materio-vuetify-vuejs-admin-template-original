@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Review } from '@db/apps/ecommerce/types'
+import type { Review } from '@db/apps/ecommerce/types';
 
 const selectedStatus = ref('All')
 const searchQuery = ref('')
@@ -491,7 +491,7 @@ const reviewStatChartConfig = {
           </template>
 
           <template #item.actions="{ item }">
-            <IconBtn>
+            <IconBtn size="small">
               <VIcon icon="ri-more-2-line" />
               <VMenu activator="parent">
                 <VList>

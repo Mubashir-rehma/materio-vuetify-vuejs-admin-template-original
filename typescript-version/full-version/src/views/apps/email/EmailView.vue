@@ -120,20 +120,20 @@ const addImage = () => {
             {{ props.email.subject }}
           </h6>
 
-          <div class="d-flex flex-wrap gap-1">
+          <div class="d-flex flex-wrap gap-2">
             <VChip
               v-for="label in props.email.labels"
               :key="label"
               :color="resolveLabelColor(label)"
               size="small"
-              class="px-2 text-capitalize me-2 flex-shrink-0"
+              class="text-capitalize flex-shrink-0"
             >
               {{ label }}
             </VChip>
           </div>
         </div>
 
-        <div class="d-flex align-center">
+        <div class="d-flex align-center gap-2">
           <IconBtn
             variant="plain"
             :disabled="!props.emailMeta.hasPreviousEmail"

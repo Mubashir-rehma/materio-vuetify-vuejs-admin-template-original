@@ -64,6 +64,13 @@
       color: rgb(var(--v-theme-primary)) !important;
     }
   }
+
+  &.custom-checkbox,
+  &.custom-radio{
+    .v-input__control{
+      grid-area: none;
+    }
+  }
 }
 
 // 👉 Datatable

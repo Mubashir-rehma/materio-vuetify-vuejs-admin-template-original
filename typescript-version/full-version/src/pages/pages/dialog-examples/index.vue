@@ -38,15 +38,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-file-pdf-line"
-            />
-          </template>
-          <VCardTitle>Share Project</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-file-pdf-line"
+          />
+          <h5 class="text-h5">
+            Share Project
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -69,15 +69,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-bank-card-line"
-            />
-          </template>
-          <VCardTitle>Add New Card</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-bank-card-line"
+          />
+          <h5 class="text-h5">
+            Add New Card
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -100,15 +100,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-money-dollar-circle-line"
-            />
-          </template>
-          <VCardTitle>Pricing</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-money-dollar-circle-line"
+          />
+          <h5 class="text-h5">
+            Pricing
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -132,15 +132,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-gift-line"
-            />
-          </template>
-          <VCardTitle>Refer & Earn</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-gift-line"
+          />
+          <h5 class="text-h5">
+            Refer & Earn
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -164,15 +164,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-home-3-line"
-            />
-          </template>
-          <VCardTitle>Add New Address</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-home-3-line"
+          />
+          <h5 class="text-h5">
+            Add New Address
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -196,15 +196,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-box-3-line"
-            />
-          </template>
-          <VCardTitle>Create App</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-box-3-line"
+          />
+          <h5 class="text-h5">
+            Create App
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -226,15 +226,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-lock-line"
-            />
-          </template>
-          <VCardTitle>Two Factor Auth</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-lock-line"
+          />
+          <h5 class="text-h5">
+            Two Factor Auth
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -259,15 +259,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-user-line"
-            />
-          </template>
-          <VCardTitle>Edit User Info</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-user-line"
+          />
+          <h5 class="text-h5">
+            Edit User Info
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -294,15 +294,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-bank-card-line"
-            />
-          </template>
-          <VCardTitle>Payment Providers</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-bank-card-line"
+          />
+          <h5 class="text-h5">
+            Payment Providers
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">
@@ -326,15 +326,15 @@ const userData = {
       md="4"
     >
       <VCard class="text-high-emphasis text-center">
-        <VCardItem class="d-flex flex-column gap-2">
-          <template #prepend>
-            <VIcon
-              size="28"
-              icon="ri-bank-card-2-line"
-            />
-          </template>
-          <VCardTitle>Add Payment Methods</VCardTitle>
-        </VCardItem>
+        <VCardText class="d-flex flex-column align-center gap-2">
+          <VIcon
+            size="28"
+            icon="ri-bank-card-2-line"
+          />
+          <h5 class="text-h5">
+            Add Payment Methods
+          </h5>
+        </VCardText>
 
         <VCardText>
           <p class="text-base clamp-text">

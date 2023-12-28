@@ -4,12 +4,12 @@ export default [
     icon: { icon: 'ri-home-smile-line' },
     children: [
       {
-        title: 'Analytics',
-        to: 'dashboards-analytics',
-      },
-      {
         title: 'CRM',
         to: 'dashboards-crm',
+      },
+      {
+        title: 'Analytics',
+        to: 'dashboards-analytics',
       },
       {
         title: 'eCommerce',

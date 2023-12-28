@@ -89,15 +89,16 @@ const chartJsCustomColors: ChartJsCustomColors = {
           <VCardTitle>New Product Data</VCardTitle>
 
           <template #append>
-            <VBtnToggle
+            <VBtnGroup
               color="primary"
               variant="outlined"
               density="compact"
+              divided
             >
               <VBtn>Daily</VBtn>
               <VBtn>Monthly</VBtn>
               <VBtn>Yearly</VBtn>
-            </VBtnToggle>
+            </VBtnGroup>
           </template>
         </VCardItem>
 
@@ -118,7 +119,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
@@ -145,7 +146,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"
@@ -173,7 +174,7 @@ const chartJsCustomColors: ChartJsCustomColors = {
           <template #append>
             <div class="date-picker-wrapper">
               <AppDateTimePicker
-                model-value="2022-06-09"
+                :model-value="new Date().toISOString()"
                 prepend-inner-icon="ri-calendar-line"
                 placeholder="Select Date"
                 :config="{ position: 'auto right' }"

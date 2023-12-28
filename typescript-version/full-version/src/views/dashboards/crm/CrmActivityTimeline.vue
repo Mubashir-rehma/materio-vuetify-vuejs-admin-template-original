@@ -31,10 +31,10 @@ import pdf from '@images/icons/project-icons/pdf.png'
             Invoices have been paid to the company.
           </p>
 
-          <div class="d-inline-flex align-items-center timeline-chip mb-2">
+          <div class="d-inline-flex align-center timeline-chip mb-2">
             <img
               :src="pdf"
-              width="20"
+              height="20"
               class="me-3"
               alt="img"
             >

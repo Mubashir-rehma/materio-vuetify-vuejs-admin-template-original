@@ -67,21 +67,20 @@ const isDialogVisible = ref(false)
 
       <VDivider />
 
-      <VCardActions class="pt-3">
+      <VCardText class="pt-5 text-end">
         <VSpacer />
         <VBtn
-          color="error"
+          variant="outlined"
+          color="secondary"
+          class="me-4"
           @click="isDialogVisible = false"
         >
           Close
         </VBtn>
-        <VBtn
-          color="success"
-          @click="isDialogVisible = false"
-        >
-          Save
+        <VBtn @click="isDialogVisible = false">
+          Save Changes
         </VBtn>
-      </VCardActions>
+      </VCardText>
     </VCard>
   </VDialog>
 </template>

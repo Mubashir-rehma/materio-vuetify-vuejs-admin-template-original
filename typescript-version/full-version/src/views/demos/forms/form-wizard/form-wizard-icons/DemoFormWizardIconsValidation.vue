@@ -201,7 +201,7 @@ const validateSocialLinkForm = () => {
                 <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
-                    variant="tonal"
+                    variant="outlined"
                     disabled
                   >
                     <VIcon
@@ -295,7 +295,7 @@ const validateSocialLinkForm = () => {
                 <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
-                    variant="tonal"
+                    variant="outlined"
                     @click="currentStep--"
                   >
                     <VIcon
@@ -388,7 +388,7 @@ const validateSocialLinkForm = () => {
                 <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
-                    variant="tonal"
+                    variant="outlined"
                     @click="currentStep--"
                   >
                     <VIcon
@@ -480,7 +480,7 @@ const validateSocialLinkForm = () => {
                 <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
                   <VBtn
                     color="secondary"
-                    variant="tonal"
+                    variant="outlined"
                     @click="currentStep--"
                   >
                     <VIcon
@@ -574,6 +574,35 @@ const validateSocialLinkForm = () => {
             <p class="mb-1">
               {{ socialForm.linkedIn }}
             </p>
+          </div>
+
+          <div>
+            <div class="d-flex flex-wrap gap-4 justify-sm-space-between justify-center mt-8">
+              <VBtn
+                color="secondary"
+                variant="outlined"
+                @click="currentStep--"
+              >
+                <VIcon
+                  icon="ri-arrow-left-line"
+                  start
+                  class="flip-in-rtl"
+                />
+                Previous
+              </VBtn>
+
+              <VBtn
+                color="success"
+                type="submit"
+              >
+                Submit
+                <VIcon
+                  icon="ri-check-line"
+                  end
+                  class="flip-in-rtl"
+                />
+              </VBtn>
+            </div>
           </div>
         </VWindowItem>
       </VWindow>

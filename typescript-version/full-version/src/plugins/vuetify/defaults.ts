@@ -27,9 +27,6 @@ export default {
   VMenu: {
     offset: '2px',
   },
-  VNavigationDrawer: {
-    border: 'none',
-  },
   VPagination: {
     density: 'comfortable',
     showFirstLastPage: true,
@@ -98,6 +95,11 @@ export default {
     hideDetails: 'auto',
     thumbSize: 22,
     elevation: 4,
+  },
+  VSnackbar: {
+    VBtn: {
+      size: 'small',
+    },
   },
   VTextField: {
     variant: 'outlined',

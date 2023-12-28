@@ -209,7 +209,6 @@ input[altinputclass="inlinePicker"] {
   border-radius: vuetify.$border-radius-root;
   background-color: rgb(var(--v-theme-surface));
   inline-size: 16.875rem;
-  margin-block-start: 0.1875rem;
 
   @include mixins.elevation(6);
 
@@ -345,7 +344,7 @@ input[altinputclass="inlinePicker"] {
   }
 
   .flatpickr-current-month {
-    padding-block: 3px 0;
+    padding-block: 4px 0;
     padding-inline: 0;
 
     span.cur-month {
@@ -363,6 +362,10 @@ input[altinputclass="inlinePicker"] {
       border-color: rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: auto;
     }
+  }
+
+  &.hasTime .flatpickr-time:first-child {
+    border-color: transparent;
   }
 }
 

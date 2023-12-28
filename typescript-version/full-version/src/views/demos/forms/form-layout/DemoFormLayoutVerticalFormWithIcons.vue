@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const firstName = ref('')
 const email = ref('')
-const mobile = ref<number>()
+const mobile = ref('')
 const password = ref<string>()
 const checkbox = ref(false)
 </script>
@@ -34,7 +34,6 @@ const checkbox = ref(false)
           prepend-inner-icon="ri-smartphone-line"
           label="Mobile"
           placeholder="+1 123 456 7890"
-          type="number"
         />
       </VCol>
 
@@ -59,7 +58,7 @@ const checkbox = ref(false)
       <VCol cols="12">
         <VBtn
           type="submit"
-          class="me-2"
+          class="me-4"
         >
           Submit
         </VBtn>

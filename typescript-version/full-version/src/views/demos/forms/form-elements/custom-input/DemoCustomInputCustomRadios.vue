@@ -6,6 +6,7 @@ const radioContent: CustomInputContent[] = [
     title: 'Basic',
     desc: 'Get 2 projects with 2 team members.',
     value: 'basic',
+    subtitle: '$1.00',
   },
   {
     title: 'Premium',

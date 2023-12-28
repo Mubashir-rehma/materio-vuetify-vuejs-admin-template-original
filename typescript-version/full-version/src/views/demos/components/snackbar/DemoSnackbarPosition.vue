@@ -66,7 +66,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarBottomEndVisible = true"
     >
-      <VIcon icon="ri-arrow-right-down-fill" />
+      <VIcon icon="ri-arrow-right-down-line" />
     </VBtn>
 
     <VSnackbar
@@ -95,7 +95,7 @@ const isSnackbarCenteredVisible = ref(false)
       variant="text"
       @click="isSnackbarBottomStartVisible = true"
     >
-      <VIcon icon="ri-arrow-left-down-fill" />
+      <VIcon icon="ri-arrow-left-down-line" />
     </VBtn>
 
     <VSnackbar

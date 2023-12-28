@@ -150,10 +150,16 @@ onMounted(() => {
     <!-- Actions -->
     <template #item.actions="{ item }">
       <div class="d-flex gap-1">
-        <IconBtn @click="editItem(item)">
+        <IconBtn
+          size="small"
+          @click="editItem(item)"
+        >
           <VIcon icon="ri-pencil-line" />
         </IconBtn>
-        <IconBtn @click="deleteItem(item)">
+        <IconBtn
+          size="small"
+          @click="deleteItem(item)"
+        >
           <VIcon icon="ri-delete-bin-line" />
         </IconBtn>
       </div>

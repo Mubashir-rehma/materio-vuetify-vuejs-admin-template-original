@@ -300,15 +300,22 @@ const deleteInvoice = async (id: number) => {
         <!-- Actions -->
         <template #item.actions="{ item }">
           <div class="text-no-wrap">
-            <IconBtn @click="deleteInvoice(item.id)">
+            <IconBtn
+              size="small"
+              @click="deleteInvoice(item.id)"
+            >
               <VIcon icon="ri-delete-bin-7-line" />
             </IconBtn>
 
-            <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">
+            <IconBtn
+              size="small"
+              :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }"
+            >
               <VIcon icon="ri-eye-line" />
             </IconBtn>
 
             <MoreBtn
+              size="small"
               :menu-list="computedMoreList(item.id)"
               item-props
             />

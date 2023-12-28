@@ -60,3 +60,7 @@
   font-weight: 600;
   letter-spacing: .0094rem;
 }
+
+.bg-custom-background{
+  background-color: rgb(var(--v-table-header-color)) !important;
+}

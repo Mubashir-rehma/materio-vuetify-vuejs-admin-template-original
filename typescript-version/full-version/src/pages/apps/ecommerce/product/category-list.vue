@@ -161,11 +161,12 @@ const updateOptions = (options: any) => {
         @update:options="updateOptions"
       >
         <template #item.actions>
-          <IconBtn>
+          <IconBtn size="small">
             <VIcon icon="ri-edit-box-line" />
           </IconBtn>
 
           <MoreBtn
+            size="small"
             :menu-list="[
               {
                 title: 'Download',

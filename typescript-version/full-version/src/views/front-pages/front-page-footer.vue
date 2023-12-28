@@ -172,7 +172,7 @@ const menus: Menu[] = [
                 { title: 'github', icon: 'bxl-github', href: 'https://github.com/themeselection' },
                 { title: 'facebook', icon: 'bxl-facebook', href: 'https://www.facebook.com/ThemeSelections/' },
                 { title: 'twitter', icon: 'bxl-twitter', href: 'https://twitter.com/Theme_Selection' },
-                { title: 'instagram', icon: 'bxl-google', href: '#' },
+                { title: 'instagram', icon: 'bxl-linkedin', href: 'https://in.linkedin.com/company/themeselection' },
               ]"
               :key="index"
             >

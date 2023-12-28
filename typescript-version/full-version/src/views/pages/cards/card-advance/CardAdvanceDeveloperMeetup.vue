@@ -25,7 +25,7 @@ const developerMeetup = [
             variant="tonal"
           >
             <div class="py-2">
-              <div class="text-body-1 text-primary mb-1">
+              <div class="text-body-1 text-primary">
                 Jan
               </div>
               <h5 class="text-h5 text-primary">

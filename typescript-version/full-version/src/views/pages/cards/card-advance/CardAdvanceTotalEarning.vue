@@ -42,12 +42,12 @@ const earnings = [
 
     <VCardText>
       <div class="d-flex align-center">
-        <h3 class="text-h3 me-2">
+        <h3 class="text-h3">
           $24,895
         </h3>
 
         <VIcon
-          size="30"
+          size="24"
           icon="ri-arrow-up-s-line"
           color="success"
         />
@@ -88,6 +88,7 @@ const earnings = [
                 :color="earning.progress"
                 model-value="80"
                 rounded
+                rounded-bar
               />
             </div>
           </template>

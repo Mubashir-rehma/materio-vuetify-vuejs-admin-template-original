@@ -19,7 +19,9 @@ import trophy from '@images/misc/trophy.png'
       <div class="text-body-1 mb-3">
         78% of target <span class="text-high-emphasis">🚀</span>
       </div>
-      <VBtn>View Sales</VBtn>
+      <VBtn size="small">
+        View Sales
+      </VBtn>
     </VCardText>
 
     <!-- Trophy -->

@@ -37,7 +37,7 @@ const options = controlledComputed(() => configStore.theme, () => {
             color: secondaryTextColor,
           },
           value: {
-            fontSize: '2.125rem',
+            fontSize: '1.75rem',
             offsetY: -12,
             color: primaryTextColor,
             formatter(value: unknown) {
@@ -48,7 +48,8 @@ const options = controlledComputed(() => configStore.theme, () => {
             show: true,
             label: `${new Date().getFullYear()}`,
             color: secondaryTextColor,
-            fontSize: '12px',
+            fontSize: '13px',
+            fontWeight: 400,
             formatter(value: { globals: { seriesTotals: any[] } }) {
               return `${value.globals.seriesTotals.reduce((total: number, num: number) => total + num)}k`
             },

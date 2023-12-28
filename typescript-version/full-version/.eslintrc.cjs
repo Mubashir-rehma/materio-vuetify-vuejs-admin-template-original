@@ -129,6 +129,9 @@ module.exports = {
 
         // Ignore vite's ?raw imports
         '.*\?raw',
+
+        // Ignore nuxt auth in nuxt version
+        '#auth$',
       ],
     }],
 

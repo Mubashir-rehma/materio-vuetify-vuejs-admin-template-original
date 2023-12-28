@@ -44,7 +44,6 @@ const coursesData = [
           <template #append>
             <VChip
               variant="tonal"
-              color="secondary"
               size="small"
             >
               {{ course.views }} Views

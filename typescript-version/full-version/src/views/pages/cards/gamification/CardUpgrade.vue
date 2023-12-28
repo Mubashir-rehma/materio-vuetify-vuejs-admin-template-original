@@ -19,7 +19,9 @@ import poseM9 from '@images/cards/pose-m-9.png'
       <div class="text-body-1 mb-3">
         40% OFF <span class="text-high-emphasis">😍</span>
       </div>
-      <VBtn>Upgrade Plan</VBtn>
+      <VBtn size="small">
+        Upgrade Plan
+      </VBtn>
     </VCardText>
 
     <!-- Trophy -->

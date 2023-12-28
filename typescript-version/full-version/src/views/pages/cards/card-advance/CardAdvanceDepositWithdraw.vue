@@ -41,6 +41,12 @@ const deposits = [
     amount: '+$8,934',
     logo: citiBank,
   },
+  {
+    title: 'Gumroad Account',
+    subtitle: 'Sell Admin template',
+    amount: '+$8,190',
+    logo: gumroad,
+  },
 ]
 
 const withdraws = [
@@ -73,6 +79,12 @@ const withdraws = [
     subtitle: 'Choosing a Cloud Platform',
     amount: '-$21',
     logo: aws,
+  },
+  {
+    title: 'DigitalOcean',
+    subtitle: 'Cloud Hosting',
+    amount: '-$1030',
+    logo: digitalOcean,
   },
 ]
 </script>
@@ -168,7 +180,7 @@ const withdraws = [
               <VListItemTitle class="font-weight-medium">
                 {{ withdraw.title }}
               </VListItemTitle>
-              <VListItemSubtitle class="text-body-1">
+              <VListItemSubtitle class="text-body-1 me-1">
                 {{ withdraw.subtitle }}
               </VListItemSubtitle>
 

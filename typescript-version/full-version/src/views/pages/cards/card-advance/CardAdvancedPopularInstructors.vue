@@ -3,6 +3,8 @@ import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
 </script>
 
 <template>
@@ -26,6 +28,9 @@ import avatar4 from '@images/avatars/avatar-4.png'
             { name: 'Bentlee Emblin', profession: 'Digital Marketing', totalCourses: 52, avatar: avatar2 },
             { name: 'Benedetto Rossiter', profession: 'UI/UX Design', totalCourses: 12, avatar: avatar3 },
             { name: 'Beverlie Krabbe', profession: 'Vue', totalCourses: 8, avatar: avatar4 },
+            { name: 'Benette Rose', profession: 'React', totalCourses: 20, avatar: avatar5 },
+            { name: 'John Doe', profession: 'Public speaking', totalCourses: 30, avatar: avatar6 },
+
           ]"
           :key="instructor.name"
         >
@@ -43,9 +48,9 @@ import avatar4 from '@images/avatars/avatar-4.png'
           </div>
 
           <template #append>
-            <div class="text-body-1 text-high-emphasis">
+            <h6 class="text-h6">
               {{ instructor.totalCourses }}
-            </div>
+            </h6>
           </template>
         </VListItem>
       </VList>

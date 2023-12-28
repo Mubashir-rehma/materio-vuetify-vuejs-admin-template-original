@@ -46,4 +46,11 @@ import illustrationJohn from '@images/cards/illustration-john.png'
   inset-block-end: 0;
   inset-inline-end: 0;
 }
+
+@media (max-width: 600px) {
+  .john-illustration {
+    inset-block-end: -0.375rem;
+    inset-inline-end: 0;
+  }
+}
 </style>

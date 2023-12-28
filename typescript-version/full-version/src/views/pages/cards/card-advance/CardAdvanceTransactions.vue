@@ -125,7 +125,7 @@ const formateAmount = (amount: number) => {
             </h6>
           </VListItemTitle>
           <VListItemSubtitle>
-            <div class="text-body-1">
+            <div class="text-body-1 me-2">
               {{ transaction.for }}
             </div>
           </VListItemSubtitle>

@@ -103,8 +103,8 @@ const categoryData = [
 
 const headers = [
   { title: 'Categories', key: 'categoryTitle' },
-  { title: 'Total Products', key: 'totalProduct' },
-  { title: 'Total Earning', key: 'totalEarning' },
+  { title: 'Total Products', key: 'totalProduct', align: 'end' },
+  { title: 'Total Earning', key: 'totalEarning', align: 'end' },
   { title: 'Action', key: 'actions', sortable: false },
 ]
 
@@ -157,7 +157,7 @@ const updateOptions = (options: any) => {
         item-value="categoryTitle"
         :search="searchQuery"
         show-select
-        class="text-no-wrap"
+        class="text-no-wrap category-table"
         @update:options="updateOptions"
       >
         <template #item.actions>
@@ -277,5 +277,22 @@ const updateOptions = (options: any) => {
 <style lang="scss">
 .ProseMirror-focused{
   border: none;
+}
+
+.category-table.v-table.v-data-table{
+  .v-table__wrapper{
+    table{
+      thead{
+        tr{
+          th.v-data-table-column--align-end{
+            .v-data-table-header__content{
+              flex-direction: row;
+              justify-content: end;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </style>

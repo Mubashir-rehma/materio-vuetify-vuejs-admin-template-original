@@ -67,6 +67,7 @@ import avatar8 from '@images/avatars/avatar-8.png'
                 <VProgressLinear
                   color="primary"
                   rounded
+                  rounded-bar
                   :model-value="75"
                   :height="6"
                 />

@@ -25,6 +25,10 @@ const options = controlledComputed(() => configStore.theme, () => {
     legend: {
       show: true,
       position: 'bottom',
+      markers: {
+        width: 10,
+        height: 10,
+      },
       labels: { colors: secondaryTextColor },
     },
     labels: ['FR', 'UK', 'ESP', 'USA'],

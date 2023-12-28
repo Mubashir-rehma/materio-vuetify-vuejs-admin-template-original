@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 import { useConfigStore } from '@core/stores/config'
+import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
 const configStore = useConfigStore()
@@ -8,6 +9,11 @@ const configStore = useConfigStore()
 const currentTheme = controlledComputed(() => configStore.theme, () => vuetifyTheme.current.value.colors)
 
 const chartOptions = controlledComputed(() => configStore.theme, () => {
+  const variableTheme = ref(vuetifyTheme.current.value.variables)
+
+  const secondaryTextColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['medium-emphasis-opacity']})`
+  const primaryTextColor = `rgba(${hexToRgb(currentTheme.value['on-surface'])},${variableTheme.value['high-emphasis-opacity']})`
+
   return {
     chart: {
       sparkline: { enabled: true },
@@ -49,6 +55,7 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
               fontFamily: 'Inter',
               fontWeight: 500,
               offsetY: -18,
+              color: primaryTextColor,
               formatter: (o: any) => `${Number.parseInt(o)}%`,
             },
             name: {
@@ -58,7 +65,7 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
             total: {
               label: '1 Quarter',
               show: true,
-              color: currentTheme.value['on-surface'],
+              color: secondaryTextColor,
               fontSize: '0.75rem',
               fontWeight: 400,
               formatter: () => '28%',
@@ -82,7 +89,7 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
         <div class="text-body-1 mb-3">
           Calculated in last 7 days
         </div>
-        <div class="d-flex align-center">
+        <div class="d-flex align-center flex-wrap">
           <h4 class="text-h4">
             $25,980
           </h4>

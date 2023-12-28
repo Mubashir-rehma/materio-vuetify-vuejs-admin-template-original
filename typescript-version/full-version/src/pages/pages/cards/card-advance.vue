@@ -22,7 +22,7 @@ import CardAdvancedUpcomingWebinar from '@/views/pages/cards/card-advance/CardAd
 </script>
 
 <template>
-  <VRow>
+  <VRow class="match-height">
     <VCol
       cols="12"
       md="6"
@@ -157,14 +157,15 @@ import CardAdvancedUpcomingWebinar from '@/views/pages/cards/card-advance/CardAd
     >
       <CardAdvanceSalesByCountries />
     </VCol>
+  </VRow>
 
+  <VRow>
     <VCol
       cols="12"
       md="8"
     >
       <CardAdvanceActivityTimeline />
     </VCol>
-
     <VCol
       cols="12"
       md="4"

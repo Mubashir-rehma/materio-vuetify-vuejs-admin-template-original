@@ -38,7 +38,7 @@ import illustrationJohn2 from '@images/cards/illustration-john-2.png'
           :src="illustrationJohn2"
           :height="$vuetify.display.xs ? '165' : '200'"
           :class="$vuetify.display.xs ? 'position-relative' : 'position-absolute'"
-          class="john-illustration flip-in-rtl"
+          class="john-illustration flip-in-rtl mt-6 mt-sm-0"
         >
       </VCol>
     </VRow>

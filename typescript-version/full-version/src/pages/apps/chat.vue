@@ -210,10 +210,10 @@ const chatContentContainerBg = computed(() => {
             </VBadge>
 
             <div class="flex-grow-1 overflow-hidden">
-              <p class="text-body-1 mb-0">
+              <h6 class="text-h6 font-weight-regular">
                 {{ store.activeChat.contact.fullName }}
-              </p>
-              <p class="text-sm text-truncate text-disabled mb-0">
+              </h6>
+              <p class="text-body-2 text-truncate mb-0">
                 {{ store.activeChat.contact.role }}
               </p>
             </div>
@@ -300,17 +300,18 @@ const chatContentContainerBg = computed(() => {
         class="d-flex h-100 align-center justify-center flex-column"
       >
         <VAvatar
-          size="109"
-          class="elevation-3 mb-6 bg-surface"
+          size="98"
+          color="primary"
+          variant="tonal"
+          class="mb-5"
         >
           <VIcon
             size="50"
-            class="rounded-0 text-high-emphasis"
-            icon="ri-message-line"
+            icon="ri-wechat-line"
           />
         </VAvatar>
         <p
-          class="mb-0 px-6 py-1 font-weight-medium text-lg elevation-3 rounded-xl text-high-emphasis bg-surface"
+          class="mb-0 px-4 py-2 font-weight-medium elevation-2 rounded-xl bg-primary"
           :class="[{ 'cursor-pointer': $vuetify.display.smAndDown }]"
           @click="startConversation"
         >

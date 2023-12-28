@@ -159,7 +159,7 @@
     &:not(.v-btn--loading, .v-btn--disabled) {
       @each $color-name in variables.$theme-colors-name {
         &.bg-#{$color-name}{
-          &:hover, &:active {
+          &:hover, &:active, &:focus {
             background-color: rgb(var(--v-theme-#{$color-name}-darken-1)) !important;
           }
         }
@@ -186,6 +186,12 @@
         opacity: var(--v-hover-opacity);
       }
     }
+
+    &:focus{
+      .v-btn__overlay{
+        opacity: var(--v-hover-opacity);
+      }
+    }
   }
 
   // Tonal variant
@@ -203,7 +209,25 @@
 
     &:active{
       .v-btn__overlay{
+        --v-hover-opacity: 0.24;
+
         opacity: var(--v-hover-opacity);
+      }
+
+      .v-btn__underlay{
+        opacity: 0;
+      }
+    }
+
+    &:focus{
+      .v-btn__overlay{
+        --v-hover-opacity: 0.24;
+
+        opacity: var(--v-hover-opacity);
+      }
+
+      .v-btn__underlay{
+        opacity: 0;
       }
     }
   }
@@ -254,7 +278,11 @@
   &--size-x-small{
     --v-btn-height: 28px;
     --v-btn-size: 11px;
-  
+
+    &:not(.v-btn--icon){
+      border-radius: 0.125rem;
+    }
+
     line-height: 14px;
     padding-block: 0;
     padding-inline: 10px;
@@ -263,7 +291,11 @@
   &--size-small {
     --v-btn-height: 34px;
     --v-btn-size: 13px;
-  
+
+    &:not(.v-btn--icon){
+      border-radius: 0.25rem;
+    }
+
     line-height: 18px;
     padding-block: 0;
     padding-inline: 14px;
@@ -277,6 +309,10 @@
     --v-btn-height: 42px;
     --v-btn-size: 17px;
   
+    &:not(.v-btn--icon){
+      border-radius: 0.5rem;
+    }
+
     line-height: 26px;
     padding-block: 0;
     padding-inline: 22px;
@@ -285,7 +321,11 @@
   &--size-x-large{
     --v-btn-height: 48px;
     --v-btn-size: 19px;
-  
+
+    &:not(.v-btn--icon){
+      border-radius: 0.625rem;
+    }
+
     line-height: 30px;
     padding-block: 0;
     padding-inline: 26px;
@@ -320,6 +360,12 @@
       padding: 7px;
       border: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: 66px;
+
+      .v-btn.v-btn--active{
+        .v-btn__overlay{
+          --v-activated-opacity: 0.08;
+        }
+      }
 
       &.v-btn-group--density-compact{
         block-size: 50px;
@@ -750,6 +796,36 @@
 
 .v-pagination{
   .v-pagination__list{
+    .v-pagination__next, .v-pagination__last, .v-pagination__first,.v-pagination__prev{
+      .v-btn{
+        &.v-btn--icon{
+          &.v-btn--size-default{
+            .v-icon{
+              block-size: 1.375rem;
+              font-size: 1.375rem;
+              inline-size: 1.375rem;
+            }
+          }
+
+          &.v-btn--size-small{
+            .v-icon{
+              block-size: 1.25rem;
+              font-size: 1.25rem;
+              inline-size: 1.25rem;
+            }
+          }
+
+          &.v-btn--size-large{
+            .v-icon{
+              block-size: 1.5rem;
+              font-size: 1.5rem;
+              inline-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
     .v-pagination__item, .v-pagination__next, .v-pagination__last, .v-pagination__first,.v-pagination__prev {
       .v-btn{
         color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
@@ -843,17 +919,13 @@
         }
 
         .v-btn__overlay{
-          --v-hover-opacity:0.12;
+          --v-hover-opacity:0.16;
           
           background: rgb(var(--v-theme-primary));
           opacity: var(--v-hover-opacity);
         }
 
-        &:hover{
-          .v-btn__overlay{
-            --v-hover-opacity:0.24;
-          }
-        }
+        
       }
     }
   }

@@ -1,3 +1,4 @@
+@use "@core/scss/base/mixins";
 @use "shepherd.js/dist/css/shepherd.css";
 @use "@styles/variables/_vuetify.scss" as variables;
 
@@ -63,6 +64,8 @@
 }
 
 .shepherd-element {
+  @include mixins.elevation(8);
+  
   border-radius: variables.$card-border-radius;
   background: transparent;
 }

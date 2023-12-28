@@ -34,17 +34,17 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               <VIcon
                 size="20"
                 icon="ri-arrow-right-line"
-                class="mx-2"
+                class="mx-2 flip-in-rtl"
               />
               <span>Heathrow Airport, London</span>
             </p>
             <p class="app-timeline-meta">
               6:30 AM
             </p>
-            <div class="d-inline-flex align-items-center timeline-chip">
+            <div class="d-inline-flex align-center timeline-chip">
               <img
                 :src="pdf"
-                width="20"
+                height="20"
                 class="me-2"
                 alt="img"
               >
@@ -70,7 +70,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
               <span class="app-timeline-meta">April, 18</span>
             </div>
             <p class="app-timeline-text mb-0">
-              Bonbon gummies caramels brownie topping fruitcake gingerbread jelly-o marzipan.
+              Bonbon gummies caramels brownie topping <br> fruitcake gingerbread jelly-o marzipan.
             </p>
             <!-- 👉 Divider -->
             <VDivider class="my-4" />
@@ -84,7 +84,7 @@ import pumaShoes from '@images/pages/puma-shoes.jpeg'
                   :image="avatar2"
                 />
                 <div>
-                  <div class="text-body-2 font-weight-medium">
+                  <div class="text-body-2 font-weight-medium text-high-emphasis">
                     Rebecca Godman
                   </div>
                   <span class="text-body-2 font-weight-normal">JavaScript Developer</span>

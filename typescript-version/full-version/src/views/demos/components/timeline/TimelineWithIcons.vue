@@ -45,7 +45,7 @@ const earnings = [
 <template>
   <div class="my-6">
     <div>
-      <h5 class="text-h5">
+      <h5 class="text-h5 mb-6">
         Timeline with icons
       </h5>
     </div>
@@ -55,7 +55,7 @@ const earnings = [
       truncate-line="start"
       justify="center"
       :density="$vuetify.display.smAndDown ? 'compact' : 'default'"
-      class="mt-4"
+      class="mt-12"
     >
       <!-- SECTION Timeline Item: Document -->
       <VTimelineItem
@@ -82,7 +82,7 @@ const earnings = [
           </div>
         </template>
         <!-- 👉 Header -->
-        <VCard class="mt-n4">
+        <VCard class="mb-10 mt-n4">
           <VCardItem>
             <VCardTitle>You've uploaded doc pdf to the Themeselection project</VCardTitle>
           </VCardItem>
@@ -91,10 +91,10 @@ const earnings = [
             <p class="app-timeline-text mb-3">
               he process of recording the key project details and producing the documents that are required to implement it successfully. Simply put, it's an umbrella term which includes all the documents created over the course of the project.
             </p>
-            <div class="d-inline-flex align-items-center timeline-chip">
+            <div class="d-inline-flex align-center timeline-chip">
               <img
                 :src="pdf"
-                width="20"
+                height="20"
                 class="me-2"
                 alt="img"
               >
@@ -130,7 +130,7 @@ const earnings = [
             </VAvatar>
           </div>
         </template>
-        <VCard class="mt-n4">
+        <VCard class="mb-10 mt-n4">
           <VCardItem>
             <VCardTitle>Heather added 4 images to the Team album</VCardTitle>
           </VCardItem>
@@ -174,7 +174,7 @@ const earnings = [
             </VAvatar>
           </div>
         </template>
-        <VCard class="mt-n4">
+        <VCard class="mb-10 mt-n4">
           <VCardItem>
             <VCardTitle>
               Loretta write a review on Themeselection
@@ -184,8 +184,8 @@ const earnings = [
             <div>
               <div class="d-flex align-center mb-3">
                 <VAvatar
-                  size="32"
-                  class="me-2"
+                  size="38"
+                  class="me-4"
                   :image="avatar8"
                 />
                 <div>
@@ -195,11 +195,8 @@ const earnings = [
                   <span class="text-body-2">CTO of Airbnb</span>
                 </div>
               </div>
-              <div class="d-flex align-center justify-space-between mb-3">
-                <VRating
-                  size="28"
-                  :model-value="5"
-                />
+              <div class="d-flex align-center justify-space-between flex-wrap gap-2 mb-3">
+                <VRating :model-value="5" />
                 <VChip
                   color="success"
                   density="comfortable"
@@ -246,7 +243,7 @@ const earnings = [
             </VAvatar>
           </div>
         </template>
-        <VCard class="mt-n4">
+        <VCard class="mb-10 mt-n4">
           <VCardItem>
             <VCardTitle>Julia stiles shared an earnings report</VCardTitle>
           </VCardItem>
@@ -256,15 +253,18 @@ const earnings = [
                 <h4 class="text-h4 me-2">
                   $24,895
                 </h4>
-                <span class="text-success">
-                  <VIcon
-                    size="30"
-                    icon="ri-menu-line-up"
-                  />
-                  <span>10%</span>
-                </span>
+                <VIcon
+                  size="30"
+                  icon="ri-arrow-up-s-fill"
+                  color="success"
+                />
+                <div class="text-body-2 text-success">
+                  10%
+                </div>
               </div>
-              <span class="text-xs">Compared to $84,325 last year</span>
+              <div class="text-body-2">
+                Compared to $84,325 last year
+              </div>
             </div>
             <VList class="card-list">
               <VListItem
@@ -273,6 +273,7 @@ const earnings = [
               >
                 <template #prepend>
                   <VAvatar
+                    variant="tonal"
                     rounded
                     :image="earning.avatar"
                   />
@@ -290,6 +291,8 @@ const earnings = [
                     </h6>
                     <VProgressLinear
                       :color="earning.progress"
+                      rounded
+                      rounded-bar
                       model-value="80"
                     />
                   </div>
@@ -324,7 +327,7 @@ const earnings = [
             2 days ago
           </span>
         </template>
-        <VCard class="mt-n4">
+        <VCard class="mb-10 mt-n4">
           <VCardItem>
             <VCardTitle>josh johnson shared Next js project progress report</VCardTitle>
           </VCardItem>
@@ -332,10 +335,10 @@ const earnings = [
             <p class="mb-3">
               The structure and process are defined in the project organization considering the attainment of the corporate objectives and therefore also project objectives. The components of the project process are
             </p>
-            <div class="d-inline-flex align-items-center timeline-chip mb-3">
+            <div class="d-inline-flex align-center timeline-chip mb-3">
               <img
                 :src="xls"
-                width="20"
+                height="20"
                 class="me-2"
                 alt="img"
               >
@@ -345,7 +348,12 @@ const earnings = [
             </div>
             <div class="d-flex gap-4 align-center">
               <div class="flex-grow-1">
-                <VProgressLinear :model-value="34" />
+                <VProgressLinear
+                  :model-value="34"
+                  rounded
+                  rounded-bar
+                  height="6"
+                />
               </div>
               <div>34%</div>
             </div>

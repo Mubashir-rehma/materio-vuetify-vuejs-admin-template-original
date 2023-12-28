@@ -195,10 +195,10 @@ const search = ref('')
               <p class="app-timeline-text mb-2">
                 Invoices have been paid to the company
               </p>
-              <div class="d-inline-flex align-items-center timeline-chip">
+              <div class="d-inline-flex align-center timeline-chip">
                 <img
                   :src="pdf"
-                  width="20"
+                  height="20"
                   class="me-2"
                   alt="img"
                 >

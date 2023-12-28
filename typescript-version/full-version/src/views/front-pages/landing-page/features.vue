@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
-import selectSolid from '@images/svg/3d-select-solid.svg?url'
-import edit from '@images/svg/edit.svg?url'
-import googleDocs from '@images/svg/google-docs.svg?url'
-import laptopCharging from '@images/svg/laptop-charging.svg?url'
-import lifebelt from '@images/svg/lifebelt.svg?url'
-import transitionUp from '@images/svg/transition-up.svg?url'
+import SelectSolid from '@images/svg/3d-select-solid.svg'
+import Edit from '@images/svg/edit.svg'
+import GoogleDocs from '@images/svg/google-docs.svg'
+import LaptopCharging from '@images/svg/laptop-charging.svg'
+import Lifebelt from '@images/svg/lifebelt.svg'
+import TransitionUp from '@images/svg/transition-up.svg'
 
 const featuresData = [
-  { title: 'Quality Code', desc: 'Code structure that all developers will easily understand and fall in love with.', img: laptopCharging },
-  { title: 'Continuous Updates', desc: 'Free updates for the next 12 months, including new demos and features.', img: transitionUp },
-  { title: 'Starter Kit', desc: 'Start your project quickly without having to remove unnecessary features.', img: edit },
-  { title: 'API Ready', desc: 'Just change the endpoint and see your own data loaded within seconds.', img: selectSolid },
-  { title: 'Well Documented', desc: 'An easy-to-follow doc with lots of references and code examples.', img: lifebelt },
-  { title: 'Excellent Support', desc: 'An easy-to-follow doc with lots of references and code examples.', img: googleDocs },
+  { title: 'Quality Code', desc: 'Code structure that all developers will easily understand and fall in love with.', img: LaptopCharging },
+  { title: 'Continuous Updates', desc: 'Free updates for the next 12 months, including new demos and features.', img: TransitionUp },
+  { title: 'Starter Kit', desc: 'Start your project quickly without having to remove unnecessary features.', img: Edit },
+  { title: 'API Ready', desc: 'Just change the endpoint and see your own data loaded within seconds.', img: SelectSolid },
+  { title: 'Well Documented', desc: 'An easy-to-follow doc with lots of references and code examples.', img: Lifebelt },
+  { title: 'Excellent Support', desc: 'An easy-to-follow doc with lots of references and code examples.', img: GoogleDocs },
 ]
 </script>
 
@@ -68,11 +68,7 @@ const featuresData = [
               color="primary"
               class="mb-2"
             >
-              <img
-                :src="data.img"
-                height="42"
-                width="42"
-              >
+              <Component :is="data.img" />
             </VAvatar>
 
             <h5 class="text-h5">

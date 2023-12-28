@@ -245,13 +245,15 @@ const deleteProduct = async (id: number) => {
 
         <div class="d-flex gap-x-4">
           <!-- 👉 Export button -->
-          <VBtn
-            variant="outlined"
-            color="secondary"
-            prepend-icon="ri-upload-2-line"
-          >
-            Export
-          </VBtn>
+          <div>
+            <VBtn
+              variant="outlined"
+              color="secondary"
+              prepend-icon="ri-external-link-line"
+            >
+              Export
+            </VBtn>
+          </div>
 
           <VBtn
             color="primary"
@@ -322,11 +324,11 @@ const deleteProduct = async (id: number) => {
 
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <IconBtn>
+          <IconBtn size="small">
             <VIcon icon="ri-edit-box-line" />
           </IconBtn>
 
-          <IconBtn>
+          <IconBtn size="small">
             <VIcon icon="ri-more-2-fill" />
 
             <VMenu activator="parent">

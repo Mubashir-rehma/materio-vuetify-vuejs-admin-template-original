@@ -64,7 +64,7 @@ const savedCards = [
             <div class="text-body-2 text-high-emphasis">$</div>
           </sup>
           <h4 class="text-h4">
-            5250
+            5,250
           </h4>
           <sub>
             <div class="text-body-2 text-high-emphasis">/Year</div>

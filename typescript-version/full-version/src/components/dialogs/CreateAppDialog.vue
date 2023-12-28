@@ -160,7 +160,6 @@ const onSubmit = () => {
   <VDialog
     :model-value="props.isDialogVisible"
     max-width="900"
-    persistent
     @update:model-value="dialogVisibleUpdate"
   >
     <VCard class="create-app-dialog pa-sm-11 pa-3">

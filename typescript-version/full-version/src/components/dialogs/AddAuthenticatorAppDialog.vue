@@ -31,7 +31,6 @@ const resetAuthCode = () => {
   <VDialog
     max-width="900"
     :model-value="props.isDialogVisible"
-    persistent
     @update:model-value="(val) => $emit('update:isDialogVisible', val)"
   >
     <VCard class="pa-sm-11 pa-3">

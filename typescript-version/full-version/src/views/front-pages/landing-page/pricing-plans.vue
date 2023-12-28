@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
-import listArrowIcon from '@images/svg/list-arrow-icon.svg?url'
+import ListArrowIcon from '@images/svg/list-arrow-icon.svg'
 import VectorIcon from '@images/svg/vector.svg'
 
 const pricingPlans = [
@@ -152,11 +152,10 @@ const pricingPlans = [
                       :key="i"
                     >
                       <template #prepend>
-                        <img
-                          :src="listArrowIcon"
-                          color="primary"
+                        <Component
+                          :is="ListArrowIcon"
                           class="me-3"
-                        >
+                        />
                       </template>
                       <h5 class="text-h5">
                         {{ item }}

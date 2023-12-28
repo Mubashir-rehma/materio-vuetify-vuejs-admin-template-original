@@ -46,7 +46,7 @@ const formData = ref({
   pincode: null,
   Landmark: '',
   city: '',
-  state: '',
+  state: null,
   defaultAddress: false,
   addressType: 'home',
   deliveryType: 'standard',
@@ -61,14 +61,14 @@ const formData = ref({
 
 <template>
   <VCard class="overflow-visible">
-    <div class="w-100 sticky-header">
-      <div class=" d-flex align-center gap-4 flex-wrap bg-background pa-6">
+    <div class="w-100 sticky-header overflow-hidden rounded-t">
+      <div class=" d-flex align-center gap-4 flex-wrap bg-custom-background pa-6">
         <VCardTitle>Sticky Action Bar</VCardTitle>
         <VSpacer />
         <div>
           <VBtn
             variant="tonal"
-            class="me-5"
+            class="me-4"
           >
             Back
           </VBtn>
@@ -372,7 +372,7 @@ const formData = ref({
 
   &.layout-navbar-sticky:not(.horizontal-nav-static)  {
     .sticky-header{
-      inset-block: 8.1rem 0;
+      inset-block: 7.7rem 0;
     }
   }
 }

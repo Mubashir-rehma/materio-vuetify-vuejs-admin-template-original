@@ -34,7 +34,7 @@ const folders: Folder[] = [
   },
   {
     title: 'Sent',
-    prependIcon: 'ri-send-plane-2-line',
+    prependIcon: 'ri-send-plane-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'sent' },
@@ -42,12 +42,12 @@ const folders: Folder[] = [
   },
   {
     title: 'Draft',
-    prependIcon: 'ri-pencil-line',
+    prependIcon: 'ri-edit-box-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'draft' },
     },
-    badge: { content: '1', color: 'warning' },
+    badge: { content: '2', color: 'warning' },
   },
   {
     title: 'Starred',
@@ -59,16 +59,16 @@ const folders: Folder[] = [
   },
   {
     title: 'Spam',
-    prependIcon: 'ri-information-line',
+    prependIcon: 'ri-spam-2-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'spam' },
     },
-    badge: { content: '6', color: 'error' },
+    badge: { content: '4', color: 'error' },
   },
   {
     title: 'Trash',
-    prependIcon: 'ri-delete-bin-line',
+    prependIcon: 'ri-delete-bin-7-line',
     to: {
       name: 'apps-email-filter',
       params: { filter: 'trashed' },
@@ -147,7 +147,7 @@ const labels: Label[] = [
           >
             <VIcon
               :icon="folder.prependIcon"
-              class="me-3"
+              class="me-2"
               size="20"
             />
             <span>{{ folder.title }}</span>
@@ -183,11 +183,11 @@ const labels: Label[] = [
             class="cursor-pointer"
             @click="navigate"
           >
-            <VBadge
-              inline
-              dot
+            <VIcon
               :color="label.color"
-              class="me-4"
+              icon="ri-circle-fill"
+              size="12"
+              class="me-2"
             />
             <span>{{ label.title }}</span>
           </li>

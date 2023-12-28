@@ -7,5 +7,6 @@ const rating = ref(4.5)
     v-model="rating"
     half-increments
     hover
+    color="secondary"
   />
 </template>

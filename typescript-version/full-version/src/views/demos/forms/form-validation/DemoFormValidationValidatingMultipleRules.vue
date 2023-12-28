@@ -22,8 +22,8 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="name"
+          label="Name"
           placeholder="Your Name"
-          persistent-placeholder
           :rules="[requiredValidator]"
         />
       </VCol>
@@ -34,8 +34,8 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="email"
+          label="Email"
           placeholder="Your Email"
-          persistent-placeholder
           :rules="[requiredValidator, emailValidator]"
         />
       </VCol>
@@ -46,6 +46,7 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="password"
+          label="Password"
           :type="isPasswordVisible ? 'text' : 'password'"
           :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
           placeholder="Enter Password"
@@ -61,9 +62,9 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="confirmPassword"
+          label="Confirm Password"
           :type="isConfirmPasswordVisible ? 'text' : 'password'"
           placeholder="Confirm Password"
-          persistent-placeholder
           :append-inner-icon="confirmPassword ? 'ri-eye-off-line' : 'ri-eye-line'"
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
           autocomplete="on"

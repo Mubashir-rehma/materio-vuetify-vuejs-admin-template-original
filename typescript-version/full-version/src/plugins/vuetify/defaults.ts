@@ -27,9 +27,6 @@ export default {
   VMenu: {
     offset: '2px',
   },
-  VNavigationDrawer: {
-    border: 'none',
-  },
   VPagination: {
     density: 'comfortable',
     showFirstLastPage: true,

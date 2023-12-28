@@ -32,7 +32,7 @@ const options = controlledComputed(() => configStore.theme, () => {
         endAngle: 90,
         startAngle: -90,
         hollow: { size: '55%' },
-        track: { background: currentTheme.value.background },
+        track: { background: currentTheme.value['track-bg'] },
         dataLabels: {
           name: { show: false },
           value: {

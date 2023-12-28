@@ -36,7 +36,7 @@ const chartOptions = computed(() => {
           },
         },
         track: {
-          background: currentTheme.background,
+          background: currentTheme['track-bg'],
         },
       },
     },

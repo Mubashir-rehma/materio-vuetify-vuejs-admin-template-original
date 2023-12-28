@@ -52,7 +52,7 @@ const options = controlledComputed(() => configStore.theme, () => {
         inverseOrder: true,
         hollow: { size: '62%' },
         track: {
-          background: currentTheme.value.background,
+          background: currentTheme.value['track-bg'],
         },
         dataLabels: {
           name: { offsetY: 26 },

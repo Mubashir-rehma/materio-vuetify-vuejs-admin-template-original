@@ -4,14 +4,14 @@ export default [
     icon: { icon: 'ri-home-smile-line' },
     children: [
       {
-        title: 'Analytics',
-        to: 'dashboards-analytics',
-        icon: { icon: 'ri-flow-chart' },
-      },
-      {
         title: 'CRM',
         to: 'dashboards-crm',
         icon: { icon: 'ri-computer-line' },
+      },
+      {
+        title: 'Analytics',
+        to: 'dashboards-analytics',
+        icon: { icon: 'ri-bar-chart-line' },
       },
       {
         title: 'eCommerce',

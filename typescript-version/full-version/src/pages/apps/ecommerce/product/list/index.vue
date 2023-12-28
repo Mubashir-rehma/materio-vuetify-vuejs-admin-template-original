@@ -245,13 +245,15 @@ const deleteProduct = async (id: number) => {
 
         <div class="d-flex gap-x-4">
           <!-- 👉 Export button -->
-          <VBtn
-            variant="outlined"
-            color="secondary"
-            prepend-icon="ri-upload-2-line"
-          >
-            Export
-          </VBtn>
+          <div>
+            <VBtn
+              variant="outlined"
+              color="secondary"
+              prepend-icon="ri-external-link-line"
+            >
+              Export
+            </VBtn>
+          </div>
 
           <VBtn
             color="primary"

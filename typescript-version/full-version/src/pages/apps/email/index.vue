@@ -217,9 +217,16 @@ watch(
             v-model="q"
             density="default"
             class="email-search px-1 flex-grow-1"
-            prepend-inner-icon="ri-search-line"
-            placeholder="Search email"
-          />
+            placeholder="Search mail"
+          >
+            <template #prepend-inner>
+              <VIcon
+                color="disabled"
+                size="22"
+                icon="ri-search-line"
+              />
+            </template>
+          </VTextField>
         </div>
         <VDivider />
         <!-- 👉 Action bar -->
@@ -341,7 +348,10 @@ watch(
 
           <VSpacer />
 
-          <IconBtn @click="fetchEmails">
+          <IconBtn
+            class="me-1"
+            @click="fetchEmails"
+          >
             <VIcon icon="ri-refresh-line" />
           </IconBtn>
 
@@ -389,19 +399,20 @@ watch(
 
             <!-- 👉 Email meta -->
             <div
-              class="email-meta"
+              class="email-meta align-center gap-2"
               :class="$vuetify.display.xs ? 'd-none' : ''"
             >
-              <VBadge
+              <VIcon
                 v-for="label in email.labels"
                 :key="label"
+                icon="ri-circle-fill"
+                size="10"
                 :color="resolveLabelColor(label)"
-                dot
-                inline
               />
-              <span class="text-sm text-disabled ms-2">{{
-                formatDateToMonthShort(email.time)
-              }}</span>
+
+              <span class="text-sm text-disabled">
+                {{ formatDateToMonthShort(email.time) }}
+              </span>
             </div>
             <!-- 👉 Email actions -->
             <div class="email-actions d-none">
@@ -497,6 +508,10 @@ watch(
     & + .email-item {
       border-block-start: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
     }
+  }
+
+  .email-item .email-meta {
+    display: flex;
   }
 
   .email-item:hover {

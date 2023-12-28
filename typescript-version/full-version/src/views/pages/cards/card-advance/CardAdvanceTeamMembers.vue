@@ -128,8 +128,10 @@ const teamMembers = [
               <div class="text-primary">
                 {{ member.task.split('/')[0] }}
               </div>
-              <div>/</div>
-              <h6 class="text-h6">
+              <div class="text-primary">
+                /
+              </div>
+              <h6 class="text-h6 text-medium-emphasis">
                 {{ member.task.split('/')[1] }}
               </h6>
             </div>

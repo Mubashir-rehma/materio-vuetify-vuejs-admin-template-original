@@ -39,7 +39,9 @@ const deliveryData = [
               />
             </VAvatar>
           </template>
-          <VListItemTitle>{{ data.title }}</VListItemTitle>
+          <VListItemTitle class="me-1">
+            {{ data.title }}
+          </VListItemTitle>
           <VListItemSubtitle>
             <div
               :class="data.change > 0 ? 'text-success' : 'text-error'"

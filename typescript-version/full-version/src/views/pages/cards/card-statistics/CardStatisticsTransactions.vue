@@ -47,7 +47,7 @@ const statistics = [
               :color="item.color"
               rounded
               size="40"
-              class="elevation-1 me-3"
+              class="elevation-2 me-3"
             >
               <VIcon
                 size="24"

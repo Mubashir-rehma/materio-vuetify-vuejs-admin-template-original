@@ -205,7 +205,7 @@ const moreTopics = [
   </VCard>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "@core/scss/template/libs/apex-chart.scss";
 
 .topicCard{

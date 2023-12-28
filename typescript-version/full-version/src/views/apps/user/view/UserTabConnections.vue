@@ -164,7 +164,7 @@ const socialAccounts = ref([
               <template #append>
                 <VBtn
                   icon
-                  color="secondary"
+                  :color="account.connected ? 'error' : 'secondary'"
                   variant="outlined"
                   class="rounded"
                 >

@@ -109,6 +109,7 @@ const savedCards = [
               <VTextField
                 density="compact"
                 label="CVV"
+                placeholder="123"
                 style="inline-size: 5rem;"
               />
             </VListItemAction>

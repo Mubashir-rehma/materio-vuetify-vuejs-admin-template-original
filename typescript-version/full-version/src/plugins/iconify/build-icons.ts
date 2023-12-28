@@ -101,6 +101,7 @@ const sources: BundleScriptConfig = {
         'twitter',
         'github',
         'google',
+        'linkedin',
       ],
     },
 

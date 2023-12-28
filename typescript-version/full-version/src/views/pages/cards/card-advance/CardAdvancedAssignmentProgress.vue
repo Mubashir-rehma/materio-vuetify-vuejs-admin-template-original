@@ -42,7 +42,7 @@ const assignmentData = [
           <template #append>
             <VBtn
               variant="tonal"
-              color="primary"
+              color="secondary"
               class="rounded"
               size="34"
             >

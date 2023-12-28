@@ -99,6 +99,11 @@ export default {
     thumbSize: 22,
     elevation: 4,
   },
+  VSnackbar: {
+    VBtn: {
+      size: 'small',
+    },
+  },
   VTextField: {
     variant: 'outlined',
     density: 'comfortable',

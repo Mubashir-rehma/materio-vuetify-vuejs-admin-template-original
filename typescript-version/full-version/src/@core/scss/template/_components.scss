@@ -918,17 +918,13 @@
         }
 
         .v-btn__overlay{
-          --v-hover-opacity:0.12;
+          --v-hover-opacity:0.16;
           
           background: rgb(var(--v-theme-primary));
           opacity: var(--v-hover-opacity);
         }
 
-        &:hover{
-          .v-btn__overlay{
-            --v-hover-opacity:0.24;
-          }
-        }
+        
       }
     }
   }
